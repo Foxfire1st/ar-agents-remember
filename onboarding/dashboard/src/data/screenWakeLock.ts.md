@@ -22,8 +22,10 @@ The narrow local `WakeLockLike` shapes avoid making optional platform APIs globa
 
 ### Invariants And Boundaries
 
-The `acquiring` guard coalesces overlapping requests so only one sentinel is owned. Unsupported or denied
-APIs log one informational note and remain a no-op; the feature never implies that a wake lock is held.
+The `acquiring` guard coalesces overlapping requests so only one sentinel is owned. An unsupported API
+returns a silent no-op stop function before installing listeners. A rejected request logs at most one
+informational note per started lifecycle and records no held sentinel; later visible-state events may
+retry. Neither branch promises that a wake lock is held.
 
 ### Todos
 

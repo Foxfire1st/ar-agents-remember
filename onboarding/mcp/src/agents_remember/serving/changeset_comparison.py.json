@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
+        "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
         "content": "sha256:eb6fcb63db16588e6450691417a27bc7dd6da68480e749cd2771d86f94dd9a3d",
         "locator": {
-          "end": 113,
+          "end": 114,
           "kind": "line_range",
-          "start": 91
+          "start": 92
         }
       },
       "id": "RLZ-9JM0HE",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
+        "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
         "content": "sha256:2004ff3886977e74a42ca44019dd8aa47b7256e3bc806fc648423fd938eb54b1",
         "locator": {
           "end": 13,
@@ -41,8 +41,26 @@
     },
     {
       "anchor": {
-        "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
-        "content": "sha256:4b21a74e7d64f63a8df861e72f951fb8f24fa338f35f2da810ae512b27ab35f4",
+        "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+        "content": "sha256:292a565fa20247f7ae73b06e7365848c86656eee94a44026a7ad56c8e36df5e4",
+        "locator": {
+          "kind": "symbol",
+          "name": "comparison_file_path"
+        }
+      },
+      "id": "RLZ-ER94BN",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-4-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Applies lexical repository-path and historical memory-subtree confinement before historical media lookup.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+        "content": "sha256:85de5171571dbb9389a19b6c84f08efa64dd315b5f6a943bcd5a322b7f3837be",
         "locator": {
           "kind": "symbol",
           "name": "comparison_file_diff"
@@ -64,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
+            "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
             "content": "sha256:783ab7b384ab9f8d28393380340e929d7bf278f5c796745cd79c2abd4c23390c",
             "locator": {
               "kind": "symbol",
@@ -80,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
+            "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
             "content": "sha256:eb6fcb63db16588e6450691417a27bc7dd6da68480e749cd2771d86f94dd9a3d",
             "locator": {
               "kind": "symbol",
@@ -96,11 +114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
-            "content": "sha256:4b21a74e7d64f63a8df861e72f951fb8f24fa338f35f2da810ae512b27ab35f4",
+            "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+            "content": "sha256:f1250e083f28df506db724ab920e67b4449353656826a5f2ec91abff0d75233d",
             "locator": {
-              "kind": "symbol",
-              "name": "comparison_file_diff"
+              "end": 158,
+              "kind": "line_range",
+              "start": 117
             }
           },
           "kind": "code"

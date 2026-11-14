@@ -11,7 +11,7 @@ tree answering one question — *can a test assert against a payload the server 
 
 **Why a guard and not just `tsc`.** TypeScript already refuses an impossible field on a wire-typed
 object literal; `{ refusedPolarity: "amber" } satisfies EngineProcessEdge` does not compile. The leak is
-that a fixture can OPT OUT, and every opt-out is one token long. The header lists seven cit:(["as unknown as TaskEntry"], dashboard/src/test/wireFixtureGuard.ts:10-10):
+that a fixture can OPT OUT, and every opt-out is one token long. The header lists seven cit:(["as unknown as TaskEntry"], dashboard/src/test/wireFixtureGuard.ts:5-20):
 `as EngineProcessEdge`; `as unknown as TaskEntry`; `as never` / `as any`;
 `// @ts-expect-error`; `const raw = {…}; use(raw)` (a literal loses FRESHNESS in a variable, and
 excess-property checking only applies to fresh literals); `Object.assign(base, {…})` (the result is an
@@ -27,47 +27,49 @@ alone: a perfect mirror nobody is checked against, or fixtures checked against a
 
 ### Logic
 
-**Vocabulary discovery, never a list.** cit:([`MIRROR_MARKER`], dashboard/src/test/wireFixtureGuard.ts:108-108) is
+**Vocabulary discovery, never a list.** cit:([`MIRROR_MARKER`], dashboard/src/test/wireFixtureGuard.ts:106-106) is
 `/^\s*\/\/\s*(TypeScript|Browser) mirror of\b/` and it is tested against the **first line only**
-cit:([`declaresItselfAMirror`], dashboard/src/test/wireFixtureGuard.ts:110-112). cit:([`isWireModule`], dashboard/src/test/wireFixtureGuard.ts:114-116) is that marker OR a path under
-`src/types/`. `WireVocabulary`'s constructor cit:([`WireVocabulary`], dashboard/src/test/wireFixtureGuard.ts:241-411) collects every export of every wire module
-whose symbol flags include `Interface | TypeAlias | Enum`. cit:([`wireTypeNames`], dashboard/src/test/wireFixtureGuard.ts:466-482) is the same walk
+cit:([`declaresItselfAMirror`], dashboard/src/test/wireFixtureGuard.ts:108-110). cit:([`isWireModule`], dashboard/src/test/wireFixtureGuard.ts:112-114) is that marker OR a path under
+`src/types/`. `WireVocabulary`'s constructor cit:([`WireVocabulary`], dashboard/src/test/wireFixtureGuard.ts:238-406) collects every export of every wire module
+whose symbol flags include `Interface | TypeAlias | Enum`. cit:([`wireTypeNames`], dashboard/src/test/wireFixtureGuard.ts:461-477) is the same walk
 exported as `<relative>:<Name>` strings so the guard's own test can refuse a vacuous run.
 
-**Fixture surface.** cit:([`isFixtureSurface`], dashboard/src/test/wireFixtureGuard.ts:123-132): `*.test.ts(x)` / `*.spec.ts(x)`, anything matching
-`fixture(s)?` as a file or a directory, everything under `src/test/` and `src/dev/`, any `e2e*/` root,
-and `perf/`. `src/dev/` is in it because gallery fixtures are hydrated straight into the store.
+**Fixture surface.** `isFixtureSurface` admits `.test.ts(x)` and `.spec.ts(x)` suffixes, a path
+segment named `fixture` or `fixtures` followed by `.ts`, `.tsx` or `/`, and paths starting with
+`src/test/`, `src/dev/` or literal `e2e/`. An arbitrary `e2e*/` root or `perf/` is not independently
+admitted by this predicate. `src/dev/` is included because gallery fixtures are hydrated into the store. [4]
 
-**Program construction.** cit:([`SCANNED_ROOTS`], dashboard/src/test/wireFixtureGuard.ts:136-136) is `src`, `e2e`, `e2e-production`, `e2e-chats`, `perf`.
-cit:([`GUARD_COMPILER_OPTIONS`], dashboard/src/test/wireFixtureGuard.ts:138-149) is strict, bundler resolution, `resolveJsonModule` — and
+**Program construction.** `SCANNED_ROOTS` contains exactly `src` and `e2e`. `dashboardSourceFiles`
+walks those two roots for TypeScript files; this root population is distinct from the fixture predicate. [22]
+cit:([`GUARD_COMPILER_OPTIONS`], dashboard/src/test/wireFixtureGuard.ts:135-146) is strict, bundler resolution, `resolveJsonModule` — and
 deliberately does NOT set `exactOptionalPropertyTypes`, which is what makes `fixtureOverrides.test.ts`'s
-assertions meaningful. cit:([`dashboardRoot`], dashboard/src/test/wireFixtureGuard.ts:171-173) resolves from `import.meta.url`, not the process
+assertions meaningful. cit:([`dashboardRoot`], dashboard/src/test/wireFixtureGuard.ts:168-170) resolves from `import.meta.url`, not the process
 cwd.
 
-cit:([`buildProgramWithVirtualFiles`], dashboard/src/test/wireFixtureGuard.ts:188-230) lays in-memory files over the real tree so planted sources
+cit:([`buildProgramWithVirtualFiles`], dashboard/src/test/wireFixtureGuard.ts:185-227) lays in-memory files over the real tree so planted sources
 can import the REAL wire types. It overrides `getSourceFile`, `fileExists`, `readFile` **and
-`directoryExists`** — the last one is load-bearing and the comment says why cit:([`buildProgramWithVirtualFiles`], dashboard/src/test/wireFixtureGuard.ts:188-230): bundler
+`directoryExists`** — the last one is load-bearing and the comment says why cit:([`buildProgramWithVirtualFiles`], dashboard/src/test/wireFixtureGuard.ts:185-227): bundler
 resolution asks `directoryExists` before looking inside a folder, and the planted directory is not on
 disk, so without it a planted file importing another planted file fails to resolve, degrades to `any`,
-and rule 3 fires for the wrong reason. It also pulls the wire modules in explicitly cit:([`wireModules`], dashboard/src/test/wireFixtureGuard.ts:226-228), because
+and rule 3 fires for the wrong reason. It also pulls the wire modules in explicitly cit:([`wireModules`], dashboard/src/test/wireFixtureGuard.ts:223-225), because
 a virtual file that never imports them would leave the vocabulary empty and every rule vacuous.
 
-**Type resolution.** cit:([`mentionedByTypeNode`], dashboard/src/test/wireFixtureGuard.ts:289-335) walks a written type ANNOTATION, unaliasing
+**Type resolution.** cit:([`mentionedByTypeNode`], dashboard/src/test/wireFixtureGuard.ts:286-332) walks a written type ANNOTATION, unaliasing
 imports and local `type X = …` indirection and descending into arrays, unions and type arguments — so
 `Partial<TaskDocNode>`, `TaskEntry[]`, `Record<string, Analytics>` and `typeof someWireValue`
 all answer. Two deliberate behaviours: `as const` is skipped by name (it can only NARROW a literal), and
-a name the checker cannot bind returns cit:([`UNRESOLVED`], dashboard/src/test/wireFixtureGuard.ts:239-239) rather than `null` — "the guard did not
-understand this" must read as a failure, not a pass. cit:([`mentionedByType`], dashboard/src/test/wireFixtureGuard.ts:338-357) does the same for a
+a name the checker cannot bind returns cit:([`UNRESOLVED`], dashboard/src/test/wireFixtureGuard.ts:236-236) rather than `null` — "the guard did not
+understand this" must read as a failure, not a pass. cit:([`mentionedByType`], dashboard/src/test/wireFixtureGuard.ts:335-354) does the same for a
 resolved contextual type, which has no syntax.
 
-**`wireSlotTarget`** cit:([`wireSlotTarget`], dashboard/src/test/wireFixtureGuard.ts:376-394) is the union-aware half. It strips `undefined`/`null`, reads each
-remaining member through `wireObject` cit:([`wireObject`], dashboard/src/test/wireFixtureGuard.ts:397-410) (which unwraps a single-argument alias such as
+**`wireSlotTarget`** cit:([`wireSlotTarget`], dashboard/src/test/wireFixtureGuard.ts:371-389) is the union-aware half. It strips `undefined`/`null`, reads each
+remaining member through `wireObject` cit:([`wireObject`], dashboard/src/test/wireFixtureGuard.ts:392-405) (which unwraps a single-argument alias such as
 `Partial<TaskDocNode>` and bails on anything with an index signature), and **answers with EVERY member**.
 That is the point: TypeScript's excess-property check against a non-discriminated union only requires
 each property to exist in SOME member, so the current `TaskEntry | TaskSummary` example admits `key` from the entry and `objective` from the summary even though neither extra-forbid member admits the combined shape. Each member must be checked separately; the earlier SubTaskRow collapse is historical provenance, not a retained wire type. Conservative in the other direction: one member the guard cannot name abandons the whole slot rather
 than measuring against half a union.
 
-**The five rules**, in cit:([`collectWireFixtureFindings`], dashboard/src/test/wireFixtureGuard.ts:484-587):
+**The five rules**, in cit:([`collectWireFixtureFindings`], dashboard/src/test/wireFixtureGuard.ts:479-582):
 
 | # | `WireFixtureRule` | What it catches | Scope |
 | --- | --- | --- | --- |
@@ -81,19 +83,19 @@ Rule 1 runs everywhere because a builder that casts in app code is a fixture too
 fixture surface only: outside it, a cast to a wire type is the decode boundary saying "I am trusting the
 server", a different and legitimate act, and those sites are registry-listed rather than rewritten.
 
-Two details worth keeping. **Fresh object literals are skipped except against a union** cit:([`fresh`], dashboard/src/test/wireFixtureGuard.ts:541-541) —
+Two details worth keeping. **Fresh object literals are skipped except against a union** cit:([`fresh`], dashboard/src/test/wireFixtureGuard.ts:536-536) —
 checking a fresh literal is `tsc`'s own job, and the union is exactly where `tsc` stops doing it
-properly. And **suppressions are read as TOKENS, not lines** cit:([`directiveLines`, `DIRECTIVE`], dashboard/src/test/wireFixtureGuard.ts:434-452; dashboard/src/test/wireFixtureGuard.ts:459-459) (mirroring TypeScript's own `commentDirectiveRegEx`): `contract.test.ts` discusses
+properly. And **suppressions are read as TOKENS, not lines** cit:([`directiveLines`, `DIRECTIVE`], dashboard/src/test/wireFixtureGuard.ts:429-447; dashboard/src/test/wireFixtureGuard.ts:454-454) (mirroring TypeScript's own `commentDirectiveRegEx`): `contract.test.ts` discusses
 `@ts-expect-error` in prose three times without using it, and this guard's own test file carries planted
 directives inside template literals. A line-wise regex calls both a suppression; comment trivia sees
 neither.
 
-**`excessPropertyVerdict`** cit:([`excessPropertyVerdict`], dashboard/src/test/wireFixtureGuard.ts:609-658) returns either (a) the properties NO member declares, or (b) on a
+**`excessPropertyVerdict`** cit:([`excessPropertyVerdict`], dashboard/src/test/wireFixtureGuard.ts:604-653) returns either (a) the properties NO member declares, or (b) on a
 union, the "blend" no single member declares, with a message naming the mutually exclusive shapes. It
 reads an INTERSECTION on purpose — `Object.assign(node, {…})` answers `Wire & {…}`, assignable to the
 wire type — and declines a union VALUE, an `any`/`unknown`, or a value with its own index signature.
 
-**`reconcileWithRegistry`** cit:([`reconcileWithRegistry`], dashboard/src/test/wireFixtureGuard.ts:673-693) returns four lists: `unregistered` (a site no entry covers),
+**`reconcileWithRegistry`** cit:([`reconcileWithRegistry`], dashboard/src/test/wireFixtureGuard.ts:668-688) returns four lists: `unregistered` (a site no entry covers),
 `spent` (an entry matching nothing), `miscounted` (an entry whose occurrence count moved), `unreasoned`
 (an entry with no written reason). It counts occurrences per key rather than listing files, so a second
 cast in an already-listed file fails and an exemption cannot outlive its reason.
@@ -109,24 +111,31 @@ cast in an already-listed file fails and an exemption cannot outlive its reason.
 
 - **The vocabulary is discovered, never listed.** Adding a mirror module means writing the house marker
   on its first line; nothing here should grow a hard-coded type list.
-- The marker is matched on the FIRST LINE only. A module that moves its marker down a line silently
-  leaves the vocabulary.
+- The marker is matched on the FIRST LINE only. A module outside `src/types/` that moves its marker
+  below that line leaves the marker-discovered vocabulary; `src/types/` remains admitted by its path.
 - `GUARD_COMPILER_OPTIONS` must keep omitting `exactOptionalPropertyTypes`; `fixtureOverrides.test.ts`
   borrows this program specifically because the flag is off.
 - This module is a library. It performs no assertions and owns no policy — the registry, the planted
   bypasses and the vacuity checks all live in `wireFixtureGuard.test.ts`.
 
+### Historical Card Scope
+
+The pre-repair card described the fixture surface as “any `e2e*/` root, and `perf/`” and listed
+`src`, `e2e`, `e2e-production`, `e2e-chats`, `perf` as scan roots. These are superseded card accounts,
+not the current predicate or root population.
+
 ### Todos
 
 **WHAT THIS DOES NOT COVER** cit:(["WHAT THIS DOES NOT COVER"], dashboard/src/test/wireFixtureGuard.ts:39-39) — reproduced from the header, which records it "so the next
-reader knows the SHAPE of what is uncovered rather than inferring completeness from a clean run". Each
-was reproduced against this tree; none is fixed.
+reader knows the SHAPE of what is uncovered rather than inferring completeness from a clean run". The
+header records its earlier reproductions; no reproduction or measurement was executed for this memory
+repair. The retained syntactic limits are described below.
 
 1. **Rule 4 reads four node kinds.** `Identifier`, `CallExpression`, `PropertyAccessExpression`, and
-   (for the union case only) `ObjectLiteralExpression` — see cit:([`isCandidateForExcessCheck`], dashboard/src/test/wireFixtureGuard.ts:594-601).
-   `ElementAccessExpression` (`rows`) escapes, and so do `AwaitExpression`, `NewExpression` and
+   (for the union case only) `ObjectLiteralExpression` — see cit:([`isCandidateForExcessCheck`], dashboard/src/test/wireFixtureGuard.ts:589-596).
+   `ElementAccessExpression` (`rows[0]`) escapes, and so do `AwaitExpression`, `NewExpression` and
    `NonNullExpression` (`rows.at(0)!`). **This is the widest of the holes**, because array indexing and
-   `await` are the two most idiomatic fixture accessors in this suite: `const row = rows` reaching a
+   `await` are the two most idiomatic fixture accessors in this suite: `const row = rows[0]` reaching a
    wire slot is unread today, and so is `sink(await built())`.
 2. **A generic helper defeats rules 1 and 4 together.** `function make<T>(shape: object): T { return
    shape as T; }` names no wire type at the assertion (rule 1 sees a type PARAMETER, not vocabulary), and
@@ -150,8 +159,9 @@ was reproduced against this tree; none is fixed.
 5. **A value, not a name.** Every rule here measures property NAMES. An override whose names are all
    correct and whose VALUE is `undefined` on a field the server always sends is invisible to all five —
    `taskEntry({ stage: undefined })` asserts nothing, suppresses nothing and declares
-   nothing undeclared. `exactOptionalPropertyTypes` is the general answer and is NOT set on this project
-   (measured: 222 errors across 71 files); the builders carry the constraint themselves instead
+   nothing undeclared. `exactOptionalPropertyTypes` is the general answer and is not set in this guard’s compiler options
+(the prior card recorded 222 errors across 71 files as a historical measurement, not a count for
+this freeze); the builders carry the constraint themselves instead
    (`fixtures/overrides.ts`, proven by `fixtureOverrides.test.ts`).
 
 ## Evidence
@@ -192,7 +202,10 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 - Gap 3, live: the first line is a "Same-origin client for …" header, not a `mirror of` marker, so nothing this module declares enters the vocabulary. [16]
 - Same, for the read-only files API client. [17]
 
-- Same, for the coordination-notes API client: the types it declares are `FolderEntry`, `NotesFolder` and `NoteContent`, under the same "Same-origin client for …" header. [18]
+
+
+- The coordination-notes client declares FolderEntry, NotesFolder and NoteContent under its Same-origin client header; NoteContent now also carries media metadata and a media URL. [18]
+
 
 - Gap 5's answer: the call-site constraint the builders carry instead of the project-wide flag. [21]
 

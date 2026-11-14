@@ -35,14 +35,16 @@
       ]
     },
     "11": {
-      "note": "The column wrapper that mounts it and supplies `mode`/`collapse`.\n\nAnchor: `ChangeSetPane`",
+      "note": "The column wrapper that mounts it and supplies `mode`/`collapse`. Anchor: `ChangeSetPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
-            "content": "sha256:448d21db7f329cfabb94f17e943383f27d9f868c65fc937a457b060e0c07c9d8",
+            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "content": "sha256:3ca412c4768507decdebf23e38239e8715197ca0eada3f45f0446bc1902f17fd",
             "locator": {
-              "kind": "file"
+              "end": 318,
+              "kind": "line_range",
+              "start": 299
             },
             "path": "dashboard/src/panels/changeset/ChangeSetPane.tsx"
           },
@@ -51,14 +53,16 @@
       ]
     },
     "12": {
-      "note": "The `FileDiff` (before/after content) the caller passes through.\n\nAnchor: `FileDiff`",
+      "note": "The FileDiff contract carries before and after sides; each side can contain text or binary/media metadata, and an added or deleted side is null.",
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
-            "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:5617c790d8d9dec0e1f21326d049111bcfa70c63e09a01a33e1d39d08bee6d77",
             "locator": {
-              "kind": "file"
+              "end": 67,
+              "kind": "line_range",
+              "start": 49
             },
             "path": "dashboard/src/data/changeset.ts"
           },

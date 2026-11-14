@@ -63,7 +63,7 @@ No additional work is asserted by this card.
 The pinned planned-key set now includes `frameRevisions`, the archive class MIK-R103 rule 8 adds; the case fails on the previous set and passes on this one.
 
 
-The planned receipt classes include `explainerArtifacts`. An interrupted deletion of the archived task's external explainer workspace and generation counter is retried as attributed `alreadyAbsent` entries of that class, with `interrupted=true`; the test reads the actual deleted fixture paths and retry receipt.
+The planned receipt classes include `explainerArtifacts`. The interrupted archive fixture leaves the external workspace, old generation counter and old lock absent. The case documents workspace removal as retirement's step before the sweep; the retry asserts `interrupted=true` `alreadyAbsent` entries of that class for the migrated `seat-generation` counter path and the old lock path. It does not assert a workspace entry in that retry receipt.
 
 ## Evidence
 
@@ -92,7 +92,10 @@ No cross-repo boundary is crossed by this file.
 
 - A repeated attempt reports what is already absent, keeps the first receipt as attempt 1, and writes none when nothing is new. [9]
 
-- The planned receipt classes include `explainerArtifacts`. An interrupted deletion of the archived task's external explainer workspace and generation counter is retried as attributed `alreadyAbsent` entries of that class, with `interrupted=true`; the test reads the actual deleted fixture paths and retry receipt. [11]
+
+
 
 
 - The lane row. Source caption: "mcp/tests/test_review_artifact_cleanup.py" [8]
+
+- The planned receipt classes include `explainerArtifacts`. The interrupted archive fixture leaves the external workspace, old generation counter and old lock absent. The case documents workspace removal as retirement's step before the sweep; the retry asserts `interrupted=true` `alreadyAbsent` entries of that class for the migrated `seat-generation` counter path and the old lock path. It does not assert a workspace entry in that retry receipt. Anchor: `test_interrupted_external_explainer_deletion_replays_as_already_absent` [11]

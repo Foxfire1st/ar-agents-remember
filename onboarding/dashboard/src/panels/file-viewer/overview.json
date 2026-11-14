@@ -55,28 +55,16 @@
       ]
     },
     "12": {
-      "note": "DualPane passes the File Viewer repository and each file scope/path into the code pane.\n\nAnchor: `trayLines`",
+      "note": "For source text, CodeSide combines the File Viewer repository with the read file scope and path for FilePane's optional tray gutter. Picture and video content takes the media branch instead.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
-            "content": "sha256:52b581da67557a288f9edc15ad96aa47398c9c8f68f993e75f041a3201d3f677",
+            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+            "content": "sha256:f378e1680148157e4d21b978ca46026a49b74bdbb41786feb6916a06c3042bd6",
             "locator": {
-              "kind": "symbol",
-              "name": "CodeSide"
-            },
-            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
-            "content": "sha256:364d6dbe6d13e888384ff2cdfad1b9a8ae3a377cf3b927de45a92e13efe360fd",
-            "locator": {
-              "end": 76,
+              "end": 137,
               "kind": "line_range",
-              "start": 59
+              "start": 107
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
           },
@@ -85,16 +73,16 @@
       ]
     },
     "13": {
-      "note": "File Viewer owns independent Explorer visibility and active repository tray context.\n\nAnchor: `useSidebar`; `usePublishPageRepository`",
+      "note": "File Viewer owns independent Explorer visibility and active repository tray context. Anchor: `useSidebar`; `usePublishPageRepository`",
       "targets": [
         {
           "anchor": {
-            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
-            "content": "sha256:a5d8b94996e2ed9fb1315e934161156b9c6bb34036eece4e3f8db57fbeba095c",
+            "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+            "content": "sha256:26fb2fc5c00e3a80ea08e7b8dccbfc3a75c28131995fec6257b3b4b5ced954ab",
             "locator": {
-              "end": 224,
+              "end": 602,
               "kind": "line_range",
-              "start": 207
+              "start": 593
             },
             "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
           },
@@ -103,16 +91,29 @@
       ]
     },
     "14": {
-      "note": "The toolbar control remains outside the mounted hidden Explorer panel and handle.\n\nAnchor: `SidebarToggle`; `sidebarPanelProps`; `sidebarHandleProps`; `DualPane`",
+      "note": "The toolbar control remains outside the mounted hidden Explorer panel and handle. Anchor: `SidebarToggle`; `sidebarPanelProps`; `sidebarHandleProps`; `DualPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
-            "content": "sha256:adc11c80551bc38ef8a1216ce5a480e81c3a6d83ff1628e583e5d093d41f8149",
+            "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+            "content": "sha256:7f8d0f52528f321d813a55098ac47a483e1d05312380722968b47970067d7dd5",
             "locator": {
-              "end": 300,
+              "end": 535,
               "kind": "line_range",
-              "start": 269
+              "start": 497
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+            "content": "sha256:8b692e82e751ac7e5dd948cf27c26864c77fcc5aebd6a68b0f2e321493e92f2a",
+            "locator": {
+              "end": 589,
+              "kind": "line_range",
+              "start": 565
             },
             "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
           },
@@ -218,11 +219,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5192905782e8a6dadbc17d46fca11b4ec3254480",
-            "content": "sha256:da51ca697097554c9248eec35802c35d09b7b454412d3388dd88ff002b3cbef2",
+            "blob": "6f8e8df57dcb5a5fbd13671ea26ed6ad6557145f",
+            "content": "sha256:042b74dfb3a0962f582382f3030dcb1fbb6bbedcd6f58c53c2b1e7de54710669",
             "locator": {
-              "kind": "symbol",
-              "name": "register_files_routes"
+              "end": 412,
+              "kind": "line_range",
+              "start": 362
             },
             "path": "mcp/src/agents_remember/serving/files.py"
           },
@@ -235,7 +237,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
             "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
             "locator": {
               "kind": "symbol",
@@ -252,12 +254,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:569306adb3dd290f840dcaeb5ddc42fb8bbced63e529270a4bc4f7df6cdc0292",
             "locator": {
-              "end": 716,
+              "end": 574,
               "kind": "line_range",
-              "start": 711
+              "start": 569
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -265,7 +267,7 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:52b08d60b309c3dda6a0349577b96c3ebe2f1390414d68edcb6e9dc0b7ee250a",
             "locator": {
               "end": 80,
@@ -278,7 +280,7 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:3c93dc7f2fe3857b8a3f711ea54983fa385dbb79b676d1a3e1b127209dea89cc",
             "locator": {
               "end": 80,
@@ -291,7 +293,7 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:872cd410448e56a9478c502e6001bff04706a81fcd559a8e2b426284aed25ff3",
             "locator": {
               "end": 81,
@@ -304,7 +306,7 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:0b026a57754a1df551ff3f0ad05a198c53ec076fa6772025d7ff6bbe09ab3e36",
             "locator": {
               "end": 81,
@@ -317,7 +319,7 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:702b2c2e1862fc60409c48f729e89dc75f68be9c596c3cff68d7d516447731e5",
             "locator": {
               "end": 77,
@@ -331,26 +333,16 @@
       ]
     },
     "9": {
-      "note": "The markdown renderer the sidecar pane reuses.\n\nAnchor: `Markdown`",
+      "note": "The markdown renderer the sidecar pane reuses. Anchor: `Markdown`",
       "targets": [
         {
           "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+            "content": "sha256:9884644e2a94771b8bf70153c4f12814eb1eb12030dec3bba3622603c9a4d0bc",
             "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/grammar/Markdown.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:eff54d0360b790954af018d92a06694c3a335b1849a5d2a028b89a7d2a0e225b",
-            "locator": {
-              "kind": "symbol",
-              "name": "Markdown"
+              "end": 234,
+              "kind": "line_range",
+              "start": 187
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },

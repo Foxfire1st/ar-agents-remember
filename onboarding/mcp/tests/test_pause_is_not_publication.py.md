@@ -55,19 +55,20 @@ The docstring states the method's limits rather than implying completeness, and 
   session-wide check would see publication modules that *other tests* imported and therefore could not
   be this guard.
 
-So the guard proves the boundary over statically declared imports. It does not prove that no dynamic
-import could ever be added; it proves that none exists today and that the declared graph is clean and
-deep.
+The guard establishes this boundary over the statically declared imports its walker
+follows. Dynamic imports are outside that measurement; the walk does not establish
+that no dynamic-import path exists.
 
 ### Invariants And Boundaries
 
-- **Non-vacuity is the load-bearing half, and it is mutation-proof.** Measured on the frozen candidate:
-  the closure holds **60** modules including the root, the pause module's own direct imports are **5**,
-  and **54** modules lie beyond them, with **0 of 12** publication modules reached. The old defective
-  walker — marking a module expanded when it is *discovered* rather than when it is *expanded* —
-  reproduced here returns **6** (the root plus its five direct imports) with **0** deeper modules, so
-  `len(deeper) >= len(direct)` is `0 >= 5` and the case **fails**. The regression is therefore
-  detectable, where the same walker previously produced a green test.
+- **Non-vacuity is checked separately from publication disjointness.** Static AST
+  inspection of code tree `96bf7343` reaches **95** modules: the pause root,
+  **6** direct imports and **88** deeper modules, with **0 of 12** declared
+  publication modules reached. A depth-one walk would retain the root and its
+  six direct imports but no deeper module; the source's `len(deeper) >= len(direct)`
+  assertion would then compare `0 >= 6`. These are static population and assertion
+  readings, not a new execution of the test or of a mutant. The earlier card's
+  60/5/54 and depth-one 6 figures belong to its superseded measurement account.
 - The three checks are: `{PAUSE_MODULE} | direct ⊆ reachable`; `len(deeper) >= len(direct)`; and two
   **named witnesses** that are provably not direct imports — `agents_remember.worktrees.scheduling_mode`
   and `agents_remember.kernel.primitives.gate_vocab` — so the "transitive" claim is legible rather than
@@ -83,9 +84,9 @@ deep.
 
 ### Todos
 
-None recorded. The depth-1 defect this card originally recorded was repaired inside the same leaf
-(before its candidate was frozen), so the card documents the repaired walker and the mutation evidence
-that keeps it repaired.
+None recorded. The depth-one regression and the source's separate non-vacuity
+assertions are described above; earlier mutation evidence remains evidence of its
+original run rather than a fresh result for this code tree.
 
 ## Evidence
 
@@ -123,6 +124,8 @@ No meaningful cross-repository reference applies to this repository-owned struct
 
 
 - The route this guard exists to keep the stop away from. Anchor: `worktree_checkpoint_landing` [6]
+
+
 
 
 - The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py" [8]

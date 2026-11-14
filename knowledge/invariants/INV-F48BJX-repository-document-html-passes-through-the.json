@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The parsing pipeline, class cleanup and shared-mode selection together prevent repository HTML from executing or restyling the dashboard while keeping ordinary prose non-HTML."
+  },
+  "applicability": "HTML in rendered repository Markdown and the separate ordinary dashboard Markdown and notes rendering modes.",
+  "conditions": [
+    "Only repository-document mode installs the raw-HTML parsing and sanitizing pipeline.",
+    "Raw identifiers receive sanitizer prefixing; generated heading identifiers are assigned after cleaning."
+  ],
+  "exclusions": [
+    "Trusted application component markup outside Markdown content."
+  ],
+  "id": "INV-F48BJX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-R05@v1 §2; dashboard/src/grammar/DocumentMarkdown.test.tsx :: keeps GitHub's elements and drops script, handlers and style; dashboard/src/grammar/DocumentMarkdown.test.tsx :: prefixes a raw id and gives a heading the id it is linked by; dashboard/src/grammar/DocumentMarkdown.test.tsx :: removes every permitted class from a cleaned document; dashboard/src/grammar/DocumentMarkdown.test.tsx :: does not render raw HTML in ordinary dashboard Markdown; dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx :: does not parse raw HTML in a note, while keeping its links",
+        "Curator source inspection of exact code tree96bf73439f79ee12d2529b31a1d94866756c0c1c; these integration and wire declarations realize the existing requirement obligation, with no test execution claimed."
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-R05@v1 §2",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Repository-document HTML passes through the allowed-element sanitizer with prefixed IDs and stripped classes, while ordinary dashboard Markdown and notes do not parse raw HTML.",
+  "status": "proposed",
+  "supersedes": []
+}

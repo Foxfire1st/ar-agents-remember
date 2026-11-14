@@ -4,6 +4,23 @@
     {
       "anchor": {
         "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
+        "content": "sha256:509315701a0886b9294d6d557d528cf155195801b15cb1ea6a0770595a7bb0d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_interrupted_external_explainer_deletion_replays_as_already_absent"
+        }
+      },
+      "facet": "After interrupted archive cleanup, retry contains interrupted alreadyAbsent explainerArtifacts entries for the migrated seat-generation counter and the old lock. Workspace removal occurs before the sweep and is not asserted as a retry receipt entry.",
+      "id": "PRF-3XATMG",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "BUG-L5-M1-003-narrowed-proof",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
         "content": "sha256:acc10e08a3f05b05d8fc9f0b6ce20dea50a4aef973e6a4c30b76c193b54ecc7f",
         "locator": {
           "kind": "symbol",
@@ -33,23 +50,6 @@
       "origin": {
         "handoffEntry": "L82-MEM-M1-S-02",
         "leaf": "260928-MIK-L82"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
-        "content": "sha256:509315701a0886b9294d6d557d528cf155195801b15cb1ea6a0770595a7bb0d2",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_interrupted_external_explainer_deletion_replays_as_already_absent"
-        }
-      },
-      "facet": "An interrupted deletion of the exact external explainer workspace and generation counter replays as interrupted alreadyAbsent entries of class explainerArtifacts.",
-      "id": "PRF-HBW8R8",
-      "invariant": "INV-25AJSA",
-      "origin": {
-        "handoffEntry": "L183-curator-test-facet-08",
-        "leaf": "260928-MIK-L183"
       }
     },
     {
@@ -201,14 +201,16 @@
       ]
     },
     "11": {
-      "note": "The planned receipt classes include `explainerArtifacts`. An interrupted deletion of the archived task's external explainer workspace and generation counter is retried as attributed `alreadyAbsent` entries of that class, with `interrupted=true`; the test reads the actual deleted fixture paths and retry receipt.\n\nAnchor: `test_interrupted_external_explainer_deletion_replays_as_already_absent`",
+      "note": "The planned receipt classes include `explainerArtifacts`. The interrupted archive fixture leaves the external workspace, old generation counter and old lock absent. The case documents workspace removal as retirement's step before the sweep; the retry asserts `interrupted=true` `alreadyAbsent` entries of that class for the migrated `seat-generation` counter path and the old lock path. It does not assert a workspace entry in that retry receipt. Anchor: `test_interrupted_external_explainer_deletion_replays_as_already_absent`",
       "targets": [
         {
           "anchor": {
             "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
-            "content": "sha256:194e0fed2d1c8d9977473a1903d99421687422f445701a66fecd5026d2b4785c",
+            "content": "sha256:509315701a0886b9294d6d557d528cf155195801b15cb1ea6a0770595a7bb0d2",
             "locator": {
-              "kind": "file"
+              "end": 826,
+              "kind": "line_range",
+              "start": 790
             }
           },
           "kind": "test"
@@ -360,10 +362,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

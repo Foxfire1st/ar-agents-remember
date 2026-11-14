@@ -45,11 +45,11 @@ opened at a locator.
   `read_censuses` and `census_reports`. An unknown census ID is `not-found`, checked by membership (not by
   mapping a `KeyError`, F11); a read failure is `unavailable`; census file problems are listed.
 - **Code (F3).** `code_view` normalises the path, parses the locator first (`_parse_locator`: a JSON object
-  with a string `kind`, otherwise `ReaderRequestError`, which answers 400), reads the text (`files.code_text`,
+  with a string `kind`, otherwise `ReaderRequestError`, which answers 400), returns media state, blob, mediaType and size for fixed-media paths before decoding; for other paths it reads the text (`files.code_text`,
   which answers `absent`, `binary`, `too-large` or `unavailable` without bytes), and resolves the locator with
   L08's `CodeTrees.resolve` against the recorded blob. A well-formed locator that does not resolve is
   `unresolved` with the reason, not an error; a resolved one gives its line span. The answer names the code
-  tree and the file's language (`language_for`, the one line worker B added).
+  tree and the file's language (`language_for`).
 
 ### Paged history without eager reacquisition
 
@@ -77,7 +77,7 @@ policy.
   the named failure state. `census_view` returns `unavailable` with a detail on a read exception,
   or `not-found` for an unknown ID; `code_view` returns a locator marked `unresolved` with a detail
   when resolution fails. These are implementation branches, not three controls proved by the
-  original pair of named tests. [2] [4] [7] [8]
+  original pair of named tests.   [7]
 - **Named assertions:** `test_incident_and_facet_views_show_every_field_and_typed_links_both_ways`
   sets `RECORD_MODELS = {}` and asserts unavailable outgoing links.
   `test_the_census_view_shows_measures_and_each_routes_status_history` checks normal census
@@ -107,7 +107,10 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 
-- One record's truth view carries its links, kind part and timeline, now forwarding a continuation and lazy history callback. [2]
+
+
+- One record's truth view carries its links, kind part and timeline, now forwarding a continuation and lazy history callback. Anchor: `record_view` [2]
+
 
 - Invariant and family parts expose their own currentness, entries and locations; the invariant's dedicated membership array queries history independently of the timeline cache. [5]
 - Invariant truth retains its dedicated membership projection, while the timeline callback includes membership-subject rows alongside record history. [10]
@@ -118,11 +121,17 @@ No configured live documentation source was available for this pass.
 - The module's own statement of the truth views per kind and the census view. [1]
 - The kind's own part, and the entries that feed its timeline. [3]
 
-- Outgoing links, or the reason they could not be read (F11). [4]
+
+
+- Outgoing links, or the reason they could not be read (F11). Anchor: `_outgoing` `_links_of` [4]
+
 
 - Every record by kind. [6]
 - MIK-R20's census report; an unknown census by membership. [7]
-- A code file at a locator; a malformed locator is a bad request (F3). [8]
+
+
+- The code reader opens one selected code file, returning media type and measured size for pictures/videos or text with locator resolution for source. Malformed locator JSON or shape remains a bad request. [8]
+
 
 ### Cross-Repo References
 

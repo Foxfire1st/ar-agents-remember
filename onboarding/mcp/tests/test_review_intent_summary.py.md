@@ -10,7 +10,7 @@ Pins changed-intent summary counts and typed answer states over real before/afte
 
 ## Code Commentary
 
-Nine test definitions, including one parametrized definition, retain five summary/route cases and add four worklist, code-fact and verdict cases. The retained summary cases distinguish added/revised/removed statements and guarantees from
+Twelve top-level test definitions, including one parametrized definition, cover revision populations, summary/route behavior, worklist binding, code facts and verdicts. The first three definitions preserve revision population results (including empty identities and retained revisions) and require binding checks before the empty-unexplained-worklist shortcut; the remaining definitions include the previously documented five summary/route and four worklist, code-fact and verdict cases. The retained summary cases distinguish added/revised/removed statements and guarantees from
 realization-only and membership-only changes. A revised statement two families share counts once on
 each side. A record-only successor — the same text with a changed origin state, or only a new
 version — counts once on each side like any revision, while a successor that only changes a
@@ -96,6 +96,8 @@ No Domain Documentation source is configured for this slice.
 The route fixture's summary callback accepts the optional comparison-number argument before the read observer. Its counted and absent requests omit a number and select canned answers by leaf. The existing 200 counted/unavailable and 503 unwired assertions are unchanged; this callback adaptation supplies no separate numbered-comparison selection proof.
 
 - The comparison-shaped callback retains counted/unavailable 200 and unwired 503 assertions. [25]
+
+
 
 
 - The lane registration. Source caption: `test_review_intent_summary` [23]

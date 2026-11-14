@@ -22,20 +22,22 @@ opening a note is delegated to the task-artifact reader.
 - Result interfaces mirror the JSON shape one-for-one: `FolderEntry`
   (`name`/`path` notes-root-relative posix/`kind`/`size`/`language`), `NotesFolder`
   (`repo`/`master`/`path`/`entries[]`/`total`/`offset`/`limit`/`remaining`/`exists`/`reason`),
-  `NoteContent` (`language: "binary"` means undecodable, content empty),
-  `NoteResolution` (`reference`/`path`, null staying plain text).
-- `listFolder(repo, master, path, offset, base?)` and `readNote(repo, master, path, base?)` build their
-  query strings with `qs` and delegate to `getJson` (both imported from `./files`).
+  `NoteContent` (`language: "binary"` means content is not decoded, including recognized media),
+  `NoteResolution` (`reference`/`path`, null staying plain text). `NoteContent` also carries optional
+  `mediaType`, `tooLarge` and `mediaUrl`.
+- `listFolder(repo, master, path, offset, base?, signal?)` and `readNote(repo, master, path, base?)` build their
+  query strings with `qs` and delegate to `getJson` (both imported from `./files`). `readNote`
+  preserves the server answer and adds a notes-bytes URL only when mediaType is present, using
+  the returned note.path and the requested repository, master and base.
 - `resolveNoteReferences(repo, master, references, base?)` POSTs the document's references
   in one request; the server answers each with a notes path or null, so the page never
   fetches the paths of all notes. Bare filenames resolve only at the notes root, never by
   a tree walk (Parent ruling L126-REFERENCE-FORMAT-RULING).
-- The consuming `ReferenceList` now resolves requirement addresses first. An explicit
-  requirement address is not passed to the notes resolver; ordinary note references still use
-  this module's conservative matching rules.
+- The consuming `TaskNotes` reference rows give requirement links precedence when rendering. An explicit
+  requirement address suppresses the note link, while the resolution POST still carries the
+  document’s supplied references unchanged. Ordinary note references retain conservative matching.
 
-> 260928-MIK-L126 removed the client pure resolver (`resolveNoteReference`, `PATH_TOKEN`):
-> reference matching lives on the server (`resolveNoteReferences` above).
+
 
 ### Conventions
 
@@ -44,7 +46,9 @@ same-origin default, camelCase-typed results, no store mutation.
 
 ### Invariants And Boundaries
 
-Read-only: only GET URLs and one POST are ever built here. Resolution is conservative by design —
+Read-only: JSON reads use GET and reference resolution uses POST; generated media addresses name
+the read-only notes bytes route. The POST checks its resolution answer separately and throws a
+generic Error on an unsuccessful or malformed response. Resolution is conservative by design —
 a bare filename that exists only in a sub-folder stays plain text rather than being guessed,
 and the request carries only the paths the document names, never the paths of all notes.
 
@@ -77,8 +81,6 @@ No configured Domain Documentation source exists for this file.
 - The test suite for this module. [4]
 - The shared transport (`getJson`, `qs`, `FilesApiError`) reused here.
 
-Retired at the fifth freeze d59c3493: dashboard/src/data/files.ts:90-97 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 86639933d61528387ce106dbd4d7a334bd468671. Retired means the anchor no longer stands, not that the cited subject was deleted [2]
+
 
 ## Retirements
-
-- Retired at the fifth freeze d59c3493: dashboard/src/data/files.ts:90-97 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 86639933d61528387ce106dbd4d7a334bd468671. Retired means the anchor no longer stands, not that the cited subject was deleted.

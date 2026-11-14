@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Checks the read-only files endpoint through its configured temporary scope: a valid read returns source content and traversal returns 400 bad-path. Catalog, sidecar pairing, binary/oversize and other historical cases are not retained in this file.
+Checks the read-only files endpoint through its configured temporary scope: a valid read returns source content and traversal returns 400 bad-path. Catalog, sidecar pairing, oversize and other historical cases are not retained in this file. The retained cases also check a NUL-bearing text suffix, media metadata, picture/video byte ranges, typed range/suffix refusals, bytes-path confinement, and file/directory/missing-path resolution.
 
 ## Code Commentary
 

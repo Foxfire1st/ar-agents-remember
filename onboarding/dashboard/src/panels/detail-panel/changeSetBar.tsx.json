@@ -173,14 +173,29 @@
       ]
     },
     "14": {
-      "note": "The change-set client the counter read belongs to.\n\nAnchor: `taskChangeset` `TaskChangeset`",
+      "note": "The change-set client the counter read belongs to. Anchor: `taskChangeset` `TaskChangeset`",
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
-            "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:6f163169daa468cc79b5c5d149c9372db1fdc203f64dcf592ab2dd8f60b3a2ba",
             "locator": {
-              "kind": "file"
+              "end": 48,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:ab38ac33f4e1353dc181a904b1062896f0247eda64e4bce498866dc8d2ede5bc",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 228
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -220,16 +235,16 @@
       ]
     },
     "16": {
-      "note": "The closed leaf's recorded entry and the failed-summary case.",
+      "note": "The closed-leaf entry keeps its recorded label while opening review:{}, and the failed-summary case remains openable.",
       "targets": [
         {
           "anchor": {
             "blob": "2680883fd95c1837bd963491dd5d403fb3d0a345",
-            "content": "sha256:4f6c68b28c8b9600fe3036f05fc024127d4be3a03afb903830a5e53158f6806a",
+            "content": "sha256:8c88c637fadf02b981fe1031f99bebf0b8fcf9be3ffe220b326bae591094e838",
             "locator": {
-              "end": 99,
+              "end": 109,
               "kind": "line_range",
-              "start": 75
+              "start": 84
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
           },
@@ -238,11 +253,11 @@
         {
           "anchor": {
             "blob": "2680883fd95c1837bd963491dd5d403fb3d0a345",
-            "content": "sha256:acda4470f6b12da359781f42ad1f817d8d8c414bcf1710a152cbad3d21c8d469",
+            "content": "sha256:30d5a3cfdb261297835156ad1c45404171e1debd09e4daacdd98bb0535ace756",
             "locator": {
-              "end": 448,
+              "end": 497,
               "kind": "line_range",
-              "start": 417
+              "start": 466
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
           },

@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset_media.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4467505c5e53efbfc221f3906a7cb910b2d1c639",
+        "content": "sha256:04d6b67bae1f21d8c0985f999bdc9443adfec8b2b5b517bb82d17f00e4a8e44c",
+        "locator": {
+          "kind": "symbol",
+          "name": "selector_side_location"
+        }
+      },
+      "id": "RLZ-3XH8NY",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This resolver derives the selected state from the diff selectors rather than a client-supplied arbitrary revision.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4467505c5e53efbfc221f3906a7cb910b2d1c639",
+        "content": "sha256:9ac630424ad8270319f0624a186da96cd4be30bb35b2f27a3d7a2ed42d850861",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_selector"
+        }
+      },
+      "id": "RLZ-4XGTJW",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This validation rejects invalid sides, modes, kinds and option-shaped generation values before Git access.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4467505c5e53efbfc221f3906a7cb910b2d1c639",
+        "content": "sha256:c076dfa93790fcf69e2b13bb8dcdd332a515962c3914840435d2df790d813ab9",
+        "locator": {
+          "kind": "symbol",
+          "name": "media_for_location"
+        }
+      },
+      "id": "RLZ-BGKRTE",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This choice confines live paths and validates historical paths before serving either source.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Resolves a change set's before or after media source from its existing range selectors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4467505c5e53efbfc221f3906a7cb910b2d1c639",
+            "content": "sha256:da513f733a7e8ddff9d99cfd289e9ea94e790e1c3ea291e0e7e8da42e78238a2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

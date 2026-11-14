@@ -16,8 +16,7 @@ placeholder when an overview's body is unavailable.
 
 ### Logic
 
-`afterEach(cleanup)`; no `fetch` stub is needed because `DualPane` is presentational — every test renders
-it directly with explicit `code` / `sidecar` / `split` props. Suite 1 (`empty-state backdrop`) renders
+`afterEach(cleanup)` follows each direct render with explicit props. These fixtures contain no linked document requiring resolution; shared document and media children can load supplied addresses. Suite 1 (`empty-state backdrop`) renders
 `code={null} sidecar={{ state: "empty" }} split={true}` and asserts: the prompt text "Select a code file"
 is present; the `empty-backdrop` testid's `<video>` has `src` `/assets/sc2-siege-tank-boomerang.mp4`; its
 inline `style.opacity` is `"0.18"` (the brighter wash over the shared 0.14 default); and **no**
@@ -29,18 +28,19 @@ with `split={true}` falls back to a `pane-placeholder` whose text includes "Over
 
 ### Invariants And Boundaries
 
-The test is pure-render — no network, no store — so it depends only on `DualPane`'s prop contract. It
+The source renders DualPane directly with explicit props and makes no direct file API request; this does not establish a no-network boundary for its shared children. It
 encodes the L5 branch order: an `empty` sidecar shows the effects-gated `EmptyStateBackdrop` (the
 `empty-backdrop` testid only exists when `useShouldAnimate` is true, the jsdom default), and a partnerless
-`markdown` sidecar (`code === null`) renders `SidecarSide` full-pane regardless of `split`. Assertions key
-off stable hooks (`data-testid` `empty-backdrop` / `sidecar-pane` / `pane-placeholder`, the video `src`
-path, and the `0.18` opacity), so renaming those or changing the clip/opacity is a breaking change.
+`markdown` sidecar (`code === null`) renders `SidecarSide` full-pane regardless of `split`. Assertions inspect `empty-backdrop`, `sidecar-pane`, `pane-placeholder`, the video source and the `0.18` opacity.
 
 ## Evidence
 
 ### Repo-Internal References
 
 
-- The component under test — the `empty` backdrop branch, the partnerless-overview branch, and `SidecarSide`. [1]
+
+
+- The component under test — the `empty` backdrop branch, the partnerless-overview branch, and `SidecarSide`. Anchor: `DualPane` `SidecarSide` [1]
+
 
 - The effects-gated boomerang backdrop whose `video` `src`/`opacity` are asserted. [2]

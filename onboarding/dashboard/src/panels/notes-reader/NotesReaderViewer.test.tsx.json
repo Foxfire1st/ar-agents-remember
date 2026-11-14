@@ -1,6 +1,92 @@
 {
   "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e9ec75cc0a5b18ff4f512bf0e49061039c154dba",
+        "content": "sha256:595d683563b0d649ae793a9c241979c5e7a469f932003249043631fbfc11624a",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens a note below the old depth cap with its ancestor folders open"
+        }
+      },
+      "facet": "With the notes API fixture, the supplied reports/deep/d2/note.md address exposes its selected note row through the ancestor folders and reaches the shared sidecar pane. The finite fixture is not proof of an arbitrary-depth bound.",
+      "id": "PRF-14CTBF",
+      "invariant": "INV-X1JG4M",
+      "origin": {
+        "handoffEntry": "curator-BUG-L5-INV-X1JG4M-proofs",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e9ec75cc0a5b18ff4f512bf0e49061039c154dba",
+        "content": "sha256:5cd6c772c997d216803fb5e8025a92d569611d09556281e0e670b456a1f29803",
+        "locator": {
+          "kind": "symbol",
+          "name": "NotesReaderViewer content pane (reuses the File Viewer DualPane) > degrades a binary note to a byte-count placeholder instead of raw bytes"
+        }
+      },
+      "facet": "The shared note pane shows byte metadata.",
+      "id": "PRF-22KPE1",
+      "invariant": "INV-FZSASV",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §7",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e9ec75cc0a5b18ff4f512bf0e49061039c154dba",
+        "content": "sha256:6590c56bf7ad7b9a6e9d34c243dff637d11c8d2a7d5c7eb4c1c66c92c25b6ff2",
+        "locator": {
+          "kind": "symbol",
+          "name": "asks the parent to switch the open note when a file row is clicked (switch in place)"
+        }
+      },
+      "facet": "With a.md selected in the notes API fixture, clicking the b.md row invokes the parent selection callback with the exact b.md path; this is client address propagation, not a server confinement test.",
+      "id": "PRF-G7C08G",
+      "invariant": "INV-X1JG4M",
+      "origin": {
+        "handoffEntry": "curator-BUG-L5-INV-X1JG4M-proofs",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e9ec75cc0a5b18ff4f512bf0e49061039c154dba",
+        "content": "sha256:7a5dd5765d4ad00c66b6375d2548782ebf914c6b1e17b15de31ef31330c71c65",
+        "locator": {
+          "kind": "symbol",
+          "name": "NotesReaderViewer content pane (reuses the File Viewer DualPane) > follows a markdown note link to another note of the master"
+        }
+      },
+      "facet": "A valid note link invokes the note opener.",
+      "id": "PRF-KSZ0SG",
+      "invariant": "INV-B96PVR",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §9",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e9ec75cc0a5b18ff4f512bf0e49061039c154dba",
+        "content": "sha256:3139e5180e6e235a61aff8ae64ae50ec9634bfd55f20626e727ab390fbf2a73b",
+        "locator": {
+          "kind": "symbol",
+          "name": "NotesReaderViewer content pane (reuses the File Viewer DualPane) > does not parse raw HTML in a note, while keeping its links"
+        }
+      },
+      "facet": "Notes keep link handling without raw HTML.",
+      "id": "PRF-X0SCWQ",
+      "invariant": "INV-F48BJX",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §2",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "17": {
@@ -8,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+            "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
             "content": "sha256:bfb17be65e8b1a6843d4bd96e6535360bca70b17e394407885bc8bee06c47933",
             "locator": {
               "kind": "symbol",
@@ -21,14 +107,16 @@
       ]
     },
     "19": {
-      "note": "`masterDoc` and `seedMaster` — the cast-free seed, which builds its entry through the shared `taskEntry` builder instead of a double cast.\n\nAnchor: `masterDoc`",
+      "note": "`masterDoc` and `seedMaster` — the cast-free seed, which builds its entry through the shared `taskEntry` builder instead of a double cast. Anchor: `masterDoc`",
       "targets": [
         {
           "anchor": {
-            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
-            "content": "sha256:03e3c301f302e5a9f9a018a62b682cb232d944b516731c65b285b88018a36549",
+            "blob": "e9ec75cc0a5b18ff4f512bf0e49061039c154dba",
+            "content": "sha256:d3fbe3bfe813450342b8e88e7ef6e655ebcc0c9cdef095d52ba68232eaa9d85b",
             "locator": {
-              "kind": "file"
+              "end": 635,
+              "kind": "line_range",
+              "start": 616
             }
           },
           "kind": "test"
@@ -40,12 +128,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
+            "blob": "e9ec75cc0a5b18ff4f512bf0e49061039c154dba",
             "content": "sha256:10beaed89778ae765e6cbca0d77a221f451ff52944380dcdd3c372378f3d6ca1",
             "locator": {
-              "end": 765,
+              "end": 632,
               "kind": "line_range",
-              "start": 749
+              "start": 616
             }
           },
           "kind": "test"
@@ -100,10 +188,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
-            "content": "sha256:03e3c301f302e5a9f9a018a62b682cb232d944b516731c65b285b88018a36549",
+            "blob": "e9ec75cc0a5b18ff4f512bf0e49061039c154dba",
+            "content": "sha256:a1c1759e2993947577b1eee6a46c5a78c61582035c1cd828738befce9f21ece7",
             "locator": {
-              "kind": "file"
+              "end": 807,
+              "kind": "line_range",
+              "start": 733
             }
           },
           "kind": "test"
@@ -115,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+            "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
             "content": "sha256:bfb17be65e8b1a6843d4bd96e6535360bca70b17e394407885bc8bee06c47933",
             "locator": {
               "kind": "symbol",

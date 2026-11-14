@@ -12,13 +12,15 @@ Production dashboard chrome, retained product layers and the review page's share
 
 `Cockpit` connects shared state/events and ready hydration. `CockpitShell` owns presentation, wake-lock lifetime, the revalidation provider and page dispatch. It also holds
 the bell's agent request (`agentChat`) and the one handler that names an exact seat and switches to the chats
-view, so no panel below it has to write the observed-chat channel. A knowledge-reader URL selects Knowledge. A valid review URL selects Operations and places the review reading column beside the same right chat rail. Ordinary change-set and notes readers retain takeover dispatch; review targets do not pass through `ChangeSetTakeover`. Base review navigation carries repository/master/leaf and recorded-history state. The mounted reviewer separately reads and writes its selection and comparison in the hash using replaceState, without replacing that base target. [72] [97]
+view, so no panel below it has to write the observed-chat channel. A knowledge-reader URL selects Knowledge. A valid review URL selects Operations and places the review reading column beside the same right chat rail. Ordinary change-set and notes readers retain takeover dispatch; review targets do not pass through `ChangeSetTakeover`. Base review navigation carries repository/master/leaf and recorded-history state. The mounted reviewer separately reads and writes its selection and comparison in the hash, using pushState for new choices and replaceState for restoration, without replacing that base target. [72] [97]
 
 Operations, File Viewer, Knowledge and Role chats retain their layers. Entering the review hides the ordinary main layers and Operations task tree; it renders `ReviewMain` in a stable slot immediately before the existing right rail. Leaving review restores the ordinary main layers. Operations exposes independent left/right sidebar toggles outside the memoized detail panel. Hidden child owners receive active predicates separately from component retention. [88] [89]
 
+Switching to another tab keeps the Operations task view, ordinary change set, intent review or notes document mounted and hidden. Returning restores that view, including the selected diff file and filter. After task-list hydration, a retained reader whose task is absent gives way to the task view. Pressing Operations while it is already open returns to the task view.
+
 The right rail has one unkeyed chat wrapper for Operations and review. Operations retains the River/Chat switch and conditionally mounts Event River. Review supplies its task, open state and width to that same rail, uses chat only, and forwards closed-column preload. The shared DocumentChat remains in its wrapper across that transition; the rail gains neither a new frame wrapper nor a key. Component retention and active predicates remain separate from native iframe generations and view-switch timing. [92] [93]
 
-Wide Operations columns use saved widths and give a hidden sidebar's width to the document. The review grid has its reading track plus the open in-grid chat width, or a zero-width chat track and the review gutter when closed or overlaid. At at-most40rem the railed body is one column. Extracted shell styles still own narrow vertical scrolling and wrapped chrome. Only the ordinary change-set takeover consumes the fixed takeover body here. [65] [98]
+Wide Operations columns use saved widths and give a hidden sidebar's width to the document. The review grid has its reading track plus the open in-grid chat width, or a zero-width chat track and the review gutter when closed or overlaid. At at-most40rem the railed body is one column. Extracted shell styles still own narrow vertical scrolling and wrapped chrome. Only the ordinary change-set takeover consumes the fixed takeover body here. [65]
 
 The shell publishes the shown page and repository for tray provenance and filing scope: Review names its repository, Operations names the viewed document's repository, and File Viewer leaves repository publication to its own owner. The Tray button is outside the four-view tab group, and the page-wide tray layer is outside the railed body.
 
@@ -88,7 +90,10 @@ No separate cross-repository implementation claim.
 - The revalidation provider is shown only for ordinary Operations outside takeover and review.
 
 - RailedBody applies saved Operations sidebar widths or the review's reading/chat tracks; its narrow path uses one column. [65]
-- Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout. [66]
+
+
+- Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout. Anchor: "const FULL_BLEED_VIEWS: ReadonlySet<CockpitView> = new Set<CockpitView>(['files', 'knowledge', 'engine', 'topology', 'chats']);" [66]
+
 
 - Rail fade properties are selected by the animation permission.
 
@@ -112,12 +117,21 @@ No separate cross-repository implementation claim.
 - The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop. [96]
 
 
-- Base review navigation names repo/master/leaf and recorded history. Separate reviewer hash helpers persist selection/comparison through replaceState without changing that target or adding browser-history entries. [97]
+
+
+- Base review navigation names repo/master/leaf and recorded history. Separate reviewer hash helpers push new selection/comparison choices and replace restored state without changing the task target. [97]
+
+
+
 
 
 - At at-most40rem the shell admits vertical overflow and single-column railed content. The ordinary change-set takeover uses the fixed takeover body; review is rendered in the railed body. [98]
 
-- Review is explicitly excluded from takeover. [99]
+
+
+
+- Review is explicitly excluded from takeover. Anchor: `shellFlags` [99]
+
 - Independent Operations sidebar toggles outside DetailPanel. [100]
 - Review column shares the right rail and DocumentChat wrapper. [101]
 - Operations/sidebar and review/chat column sizing. [102]
@@ -128,3 +142,7 @@ No separate cross-repository implementation claim.
 - The top bar renders the serving-build stamp from its own module. [106]
 
 - The shared RightRail forwards the review leaf's explainer target into the same DocumentChat wrapper. Operations still uses its ordinary document chat; its active leaf document also mounts ViewedLeafExplainerControl, which can read and retire an existing explainer without visiting Review. The Operations active predicate is shared with DetailPanel, and switching pages adds neither a frame wrapper nor a frame key. [105]
+
+
+- Operations keeps its task, ordinary diff, intent review and notes document mounted while another bottom tab shows. [107]
+- Returning to Operations retains the remembered view unless its task is absent after hydration; pressing already-open Operations clears the reader. [108]

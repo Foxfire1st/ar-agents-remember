@@ -94,5 +94,11 @@ returned summary alone.
 - The benchmark asset sync retires the same startup files. [14]
 
 
+
+
 - The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_capsule_experiment_install.py` as an exact consumer. [6]
+
+
+
+
 - The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_capsule_experiment_install.py` as an exact consumer. [7]

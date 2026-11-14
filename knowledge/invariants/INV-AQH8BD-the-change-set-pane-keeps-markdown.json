@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Backend side classification and frontend side presentation must agree so a media or binary side cannot hide an independently valid text or absent side."
+  },
+  "applicability": "Before and after side presentation in the dashboard change-set pane.",
+  "conditions": [
+    "Markdown retains the existing line-diff mode and rendered after-content alternative.",
+    "Each side's own text, supported-media, other-binary or absent classification controls its presentation."
+  ],
+  "exclusions": [
+    "A rendered comparison between two Markdown documents.",
+    "Inventing content for the absent side of an addition or deletion."
+  ],
+  "id": "INV-AQH8BD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-R05@v1 §5; dashboard/src/panels/changeset/ChangeSetPane.test.tsx :: offers a 'rendered' toggle for markdown that draws the after-content as prose, not a raw diff; dashboard/src/panels/changeset/ChangeSetPane.test.tsx :: shows a text side beside a binary side instead of calling both binary; mcp/tests/test_serving_media.py::DiffSideTests::test_a_picture_side_names_media_and_a_nul_binary_side_names_binary; mcp/tests/test_serving_media.py::DiffSideTests::test_a_media_side_is_metadata_without_loading_the_blob",
+        "Curator source inspection of exact code tree96bf73439f79ee12d2529b31a1d94866756c0c1c; these integration and wire declarations realize the existing requirement obligation, with no test execution claimed."
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-R05@v1 §5",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The change-set pane keeps Markdown as a line diff with its rendered after-view, and presents media or binary sides separately with an explicit absent-side label.",
+  "status": "proposed",
+  "supersedes": []
+}

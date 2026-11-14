@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:4c1ee7ea52690bf26e08d81dae077c82c25e2b12b98eac954503f2824feda89e",
             "locator": {
               "kind": "symbol",
@@ -20,7 +20,7 @@
         },
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:8806057e1f4126c574302654a3671bcc196c4b79905ae08946128c0e758d9b13",
             "locator": {
               "end": 123,
@@ -142,16 +142,44 @@
       ]
     },
     "5": {
-      "note": "The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant.",
+      "note": "The series view reads net files separately from leaf attribution: the inspection list requests omit leaf rows, while the counter owner supplies the independently loaded attribution.",
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "blob": "dabedd63bf436902f54b6284e30b85c0db4d3eda",
+            "content": "sha256:3bf130738fe33807d123ab2e05acae690608ece7d0a09f03f70056cb8053f602",
             "locator": {
-              "kind": "file"
+              "end": 43,
+              "kind": "line_range",
+              "start": 23
             },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+            "path": "dashboard/src/panels/changeset/useInspectionChangeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d235f1ba58c0fe10b6c538e0a59b261cf9f44a9f",
+            "content": "sha256:510ce4ca905aa65319e68adc5cd85cdbe077a22e24e7c4704cd5ce1ccbd4be58",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/panels/changeset/useInspectionCounter.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d235f1ba58c0fe10b6c538e0a59b261cf9f44a9f",
+            "content": "sha256:c78b2b6d360dc7c005694a40785f04f638ff48a0c776fcbb35c84bd4a19112a2",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/src/panels/changeset/useInspectionCounter.ts"
           },
           "kind": "code"
         }
@@ -176,14 +204,16 @@
       ]
     },
     "53": {
-      "note": "The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection.\n\nAnchor: `ChangeSetRefusal` `ChangeSetMainPane`",
+      "note": "The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection. Anchor: `ChangeSetRefusal` `ChangeSetMainPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:c72e857cf6667ef0a5c3071ad6f9af112dacc1483de352c1cf91ce4795a04b9e",
             "locator": {
-              "kind": "file"
+              "end": 405,
+              "kind": "line_range",
+              "start": 343
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -191,23 +221,12 @@
         },
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
             "content": "sha256:cf43fee00e16b78d7ea5f392865ee87d6e0cd886d93c65ac825449aa77144cc2",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetRefusal"
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:c11005854198bb34a597f4a8554884b7a70ab19b0ed7aa7e5324dd998a9d47f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetMainPane"
+              "end": 362,
+              "kind": "line_range",
+              "start": 343
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -220,12 +239,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:c6d8679bc2ab3dfcca99e099a16580215951cfd6bf0ab93b32263f14e9d81f76",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "content": "sha256:e473f371233a736a99a0a4575250a4869b9a483dcbeacbb284753c2c11148217",
             "locator": {
-              "end": 433,
+              "end": 290,
               "kind": "line_range",
-              "start": 413
+              "start": 262
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -233,12 +252,12 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:fb95306a3be56b74a5a04d459fe7fa4ff6345e0b08807374cb7eef7ca62215ed",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "content": "sha256:5e982b6cf07ee24a3f0f043f09eed8bdda684da002e89c772ced4ff25c038a8c",
             "locator": {
-              "end": 863,
+              "end": 733,
               "kind": "line_range",
-              "start": 857
+              "start": 715
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -251,11 +270,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
             "content": "sha256:ab38ac33f4e1353dc181a904b1062896f0247eda64e4bce498866dc8d2ede5bc",
             "locator": {
-              "kind": "symbol",
-              "name": "taskChangeset"
+              "end": 229,
+              "kind": "line_range",
+              "start": 228
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -263,12 +283,12 @@
         },
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
             "content": "sha256:9cb7c1608471f6293a509aa3b3a4375373af844a648aa37982391749ac30f15b",
             "locator": {
-              "end": 79,
+              "end": 88,
               "kind": "line_range",
-              "start": 78
+              "start": 87
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -276,12 +296,12 @@
         },
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
             "content": "sha256:b52cb6555d13a6037152c24e113693ceb949967d977b1db78682129a9278753e",
             "locator": {
-              "end": 170,
+              "end": 179,
               "kind": "line_range",
-              "start": 170
+              "start": 179
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -289,10 +309,25 @@
         },
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
-            "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:6b0f4d5b11103cf0bb12fb25d385a4fdb2e45b0409387d209186935afb8a8f54",
             "locator": {
-              "kind": "file"
+              "end": 247,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:614da064ba7c4cc8bc02c444fdb7701ce5f607abad9401847265f8917ad6ee6d",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 277
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -305,11 +340,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:57e2f656bc20222f62328519d9d1cb2e901ebceaae50dfbc50c5bceaa6af534f",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "content": "sha256:4d23723268c3a9cd278fff9b81a13c978be1f47923c422b5a611ceb7f62d7970",
             "locator": {
-              "kind": "symbol",
-              "name": "CockpitShell"
+              "end": 744,
+              "kind": "line_range",
+              "start": 692
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "content": "sha256:2b01a1361fc0df1d8555788d19af33dbf64dc15d1fd518cd472ea382e63caad4",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 586
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -362,26 +411,16 @@
       ]
     },
     "59": {
-      "note": "The markdown renderer the sidecar column + rendered-markdown toggle reuse.\n\nAnchor: `Markdown`",
+      "note": "The markdown renderer the sidecar column + rendered-markdown toggle reuse. Anchor: `Markdown`",
       "targets": [
         {
           "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+            "content": "sha256:9884644e2a94771b8bf70153c4f12814eb1eb12030dec3bba3622603c9a4d0bc",
             "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/grammar/Markdown.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:eff54d0360b790954af018d92a06694c3a335b1849a5d2a028b89a7d2a0e225b",
-            "locator": {
-              "kind": "symbol",
-              "name": "Markdown"
+              "end": 234,
+              "kind": "line_range",
+              "start": 187
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },
@@ -394,24 +433,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:d0d69d2bd4ad7e19443d8c39e35a3e01e08cf8d037e8ec1ad55150ab28dbe8b0",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:4dd191c90c2785ccc989cc67caa118b07fbfd8cd19a60a8240d2ac8be01116e1",
             "locator": {
-              "kind": "symbol",
-              "name": "LeafBreakdown"
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:5611ac33e542ac5c58b051e77b25e9569281fbf36974e50e1f170e858dafaeeb",
-            "locator": {
-              "end": 528,
+              "end": 341,
               "kind": "line_range",
-              "start": 522
+              "start": 305
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -419,10 +446,25 @@
         },
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:0054650afde398a5ad4affd520ae8c41ba9a149acf06ff425dd02bdc9b4e9489",
             "locator": {
-              "kind": "file"
+              "end": 340,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:642c072d3472a0804a07589b349577d32f1f00d8bae7bac33c54972959b7f2e0",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 409
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -431,80 +473,65 @@
       ]
     },
     "60": {
-      "note": "The target variant this route's type gained.\n\nAnchor: `ChangeSetTarget`",
+      "note": "The review-capable target type is declared in changeSetTarget.",
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "blob": "5a02304ae81ae81a714191ba18520e2f94ae4d71",
             "content": "sha256:3f13ccac412f23f05699ce7cdae5be8adb30a1b2e71ece5c69d6b8ca0c2a8925",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetTarget"
+              "end": 30,
+              "kind": "line_range",
+              "start": 7
             },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+            "path": "dashboard/src/panels/changeset/changeSetTarget.ts"
           },
           "kind": "code"
         }
       ]
     },
     "61": {
-      "note": "The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector.\n\nAnchor: \"never mounted for one, so no change-set\"",
+      "note": "The optional review field carries a task-context or selected-subject review identity, with a historical flag for a closed leaf.",
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:820db497595b065edcce8a209717bec28e5769ccb4bf4e60888edc4bcd8879f6",
+            "blob": "5a02304ae81ae81a714191ba18520e2f94ae4d71",
+            "content": "sha256:d1856df9bef1762b1bfa0db90e78782cf050f6fa89b14dedfab37752a68b2878",
             "locator": {
-              "end": 58,
+              "end": 29,
               "kind": "line_range",
-              "start": 57
+              "start": 19
             },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+            "path": "dashboard/src/panels/changeset/changeSetTarget.ts"
           },
           "kind": "code"
         }
       ]
     },
     "62": {
-      "note": "**The reviewer entry: offered for every leaf beside the working/committed actions (the recorded comparison for a closed leaf, `ICR-R12`).**\n\nAnchor: \"Intent review\"",
+      "note": "**The reviewer entry is offered for every leaf beside the working/committed actions and opens review:{} for both live and closed leaves.**",
       "targets": [
         {
           "anchor": {
             "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
-            "content": "sha256:f4a7aed8100db99e8f239d60c9f5f1f3b42093d7bced0cc7bbe7958b4c35f240",
+            "content": "sha256:ae139b62867516ab944a9827975249a45b480e9af4e576e2d04d770d943f945a",
             "locator": {
-              "end": 7,
+              "end": 377,
               "kind": "line_range",
-              "start": 1
+              "start": 299
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "63": {
-      "note": "**The identity the entry carries instead of a filesystem path: the task context only — `review: {}` for every leaf, live or closed, so a landed leaf opens the review on the pair it delivered rather than its own numbered record.**",
-      "targets": [
+        },
         {
           "anchor": {
             "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
-            "content": "sha256:6ebaef16adb123fdbc9dfce0ae41188fc9e522428ad43e1ff2348ab0fcfdd31e",
+            "content": "sha256:fe43a64fc173e112b5718d9ccf6763bcd0d0fdffe683ba12fca5e6897ff61cac",
             "locator": {
-              "end": 171,
+              "end": 179,
               "kind": "line_range",
-              "start": 131
+              "start": 165
             },
             "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
           },
@@ -564,62 +591,80 @@
       ]
     },
     "65": {
-      "note": "**The entry’s code-or-memory worktree existence flags select the working control and live-versus-recorded review context.**",
+      "note": "**The entry’s code-or-memory worktree existence flags gate the working control and change the Intent review label; they do not select a different review target.**",
       "targets": [
         {
           "anchor": {
             "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
-            "content": "sha256:0a87fba4ecb4544157cf70cbcc24d00ad21e1dbf75db9704e93ef8d81673ddcc",
+            "content": "sha256:ae139b62867516ab944a9827975249a45b480e9af4e576e2d04d770d943f945a",
             "locator": {
               "end": 377,
               "kind": "line_range",
-              "start": 337
+              "start": 299
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:fe43a64fc173e112b5718d9ccf6763bcd0d0fdffe683ba12fca5e6897ff61cac",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "66": {
-      "note": "**The generation the open series view is bound to, and the caption that renders it.**\n\nAnchor: `boundSeriesGeneration` `SeriesGenerationTag`",
+      "note": "The counter owner binds the series generation used by file expansion, and SeriesGenerationTag renders its digest, currentness and integrated scope.",
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "blob": "d235f1ba58c0fe10b6c538e0a59b261cf9f44a9f",
+            "content": "sha256:c78b2b6d360dc7c005694a40785f04f638ff48a0c776fcbb35c84bd4a19112a2",
             "locator": {
-              "kind": "file"
+              "end": 45,
+              "kind": "line_range",
+              "start": 27
             },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+            "path": "dashboard/src/panels/changeset/useInspectionCounter.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d3ec2d37f322a4b5af50944cd67a47badc39ff8",
+            "content": "sha256:7c74efe5e82dcf491d36c200f6e8b7a0ab0f698a3694d7f15c9a0881dc59998f",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "dashboard/src/panels/changeset/MasterCounterStatus.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "67": {
-      "note": "**The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.**\n\nAnchor: `ChangeSetTarget`",
+      "note": "**The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** Anchor: `ChangeSetTarget`",
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "blob": "5a02304ae81ae81a714191ba18520e2f94ae4d71",
             "content": "sha256:3f13ccac412f23f05699ce7cdae5be8adb30a1b2e71ece5c69d6b8ca0c2a8925",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetTarget"
+              "end": 30,
+              "kind": "line_range",
+              "start": 7
             },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+            "path": "dashboard/src/panels/changeset/changeSetTarget.ts"
           },
           "kind": "code"
         }
@@ -690,13 +735,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:ceb70fcc398df510fd323bfc265183451ca0fbdac12b4d52a7258ef237d52e01",
+            "blob": "ae8afe679647ef92b7eed8cba3e813f864f50135",
+            "content": "sha256:b72d4b3f020832be1e4a9d2ba3c2c1921f925a47ef52e400b600b7f2079a58fa",
             "locator": {
-              "kind": "symbol",
-              "name": "diffRequestFor"
+              "end": 38,
+              "kind": "line_range",
+              "start": 3
             },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+            "path": "dashboard/src/panels/changeset/changeSetSelection.ts"
           },
           "kind": "code"
         }
@@ -768,24 +814,6 @@
               "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/langByExtension.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "74": {
-      "note": "No-mark gutters, collapsed-run expansion and marked-pane construction.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "850d93cf5ed952e2e11779b72cf7a029bb4290bd",
-            "content": "sha256:32f1e6e339afb152fa32dd761d7928a65b1259af7f099127c78e4db5b00be8c3",
-            "locator": {
-              "end": 153,
-              "kind": "line_range",
-              "start": 118
-            },
-            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
           },
           "kind": "code"
         }
@@ -881,10 +909,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
-            "content": "sha256:1444b2e010878f824abb27a9e29ef4d5fbd94c32bd3f1fd4216395a4873a9cbc",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "content": "sha256:c0ad04ef56c199e4145dee058c921ac7700e48c5b6c2392b857c0c04641fe5b9",
             "locator": {
-              "kind": "file"
+              "end": 380,
+              "kind": "line_range",
+              "start": 323
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "content": "sha256:5bab569843b75404aeee826ce4d9597cba896f8f2563eecba60aea8853334d45",
+            "locator": {
+              "end": 545,
+              "kind": "line_range",
+              "start": 444
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -965,56 +1008,57 @@
       ]
     },
     "82": {
-      "note": "Review dispatch, back, mode switches and node opens clear or replace the cockpit takeover.",
+      "note": "Opening a task or another reader explicitly replaces the Operations target, and Back closes the current takeover. Switching bottom tabs preserves the Operations reader and parks/restores review addressing; pressing Operations while already there returns to its task view.",
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:b6ff6b3b418437727eeee62cc37589b298849175b11cd98a6292a93e4afabe84",
+            "blob": "ed9fb578cafb5d3b2e46bc4771ceeafc0971a8a7",
+            "content": "sha256:2e96f5043c77b6eb3f4a0fbfd2032f6a1801c00229f9537cc5a1ac1117adc234",
             "locator": {
-              "kind": "symbol",
-              "name": "useTabChange"
+              "end": 75,
+              "kind": "line_range",
+              "start": 27
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/cockpit/tabMemory.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:ca59d839e82a68eafabc65aba27154fb1755c27619585ad9ea2ad66154e739ed",
+            "blob": "45bf722d8fb318fe1c2e26c0ac6e551df69ae861",
+            "content": "sha256:1b5b12bfd74d99397ef841064bdb5a38965b5c60730f950b66e3c5057cf10846",
             "locator": {
-              "end": 320,
+              "end": 26,
               "kind": "line_range",
-              "start": 305
+              "start": 12
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/cockpit/shellActions.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:2d691199e9ba8d902f25e36d5dc9f6d6d329d9b9326007511214b4eac5da4649",
+            "blob": "45bf722d8fb318fe1c2e26c0ac6e551df69ae861",
+            "content": "sha256:0203059cb9553bf9601b5998f3df56ac8c5c22ccf4167ee3bd0865f43f9f6d23",
             "locator": {
-              "end": 379,
+              "end": 105,
               "kind": "line_range",
-              "start": 373
+              "start": 79
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/cockpit/shellActions.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:737fadd8edc8a14ce5f3cdecb9bad04e3ccfb3bc92befd9f559ae1f3b9265e02",
+            "blob": "ed9fb578cafb5d3b2e46bc4771ceeafc0971a8a7",
+            "content": "sha256:5fbdf96688a7690ad4308b2899d2542f0afc1c0e5b8851665cb39bd5039f5390",
             "locator": {
-              "end": 388,
+              "end": 51,
               "kind": "line_range",
-              "start": 388
+              "start": 27
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/cockpit/tabMemory.ts"
           },
           "kind": "code"
         }
@@ -1069,12 +1113,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
-            "content": "sha256:ac5ebd9a1ca53dc02261f7adb8b724d6663fbab9eadbd9e46d34cc6802ed1fff",
+            "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+            "content": "sha256:6a285740046988cc5ec78f2b0a6286b2fc42bc59384a8da00b8afc0aca8f299d",
             "locator": {
-              "end": 153,
+              "end": 41,
               "kind": "line_range",
-              "start": 97
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_comparison.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+            "content": "sha256:eb6fcb63db16588e6450691417a27bc7dd6da68480e749cd2771d86f94dd9a3d",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_comparison.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97a5ce24723f1dcb3132d336f9f6786ecb750b0b",
+            "content": "sha256:85de5171571dbb9389a19b6c84f08efa64dd315b5f6a943bcd5a322b7f3837be",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 128
             },
             "path": "mcp/src/agents_remember/serving/changeset_comparison.py"
           },
@@ -1083,14 +1153,16 @@
       ]
     },
     "85": {
-      "note": "Target-addressed list loads share the current request/cache owner, and an available cached answer can be restored at selection.\n\nAnchor: `peekChangeSet` `loadChangeSet` `useChangesetLoad`",
+      "note": "Target-addressed list loads share the current request/cache owner and restore an available cached answer; useInspectionChangeset owns the list-loading hook.",
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
-            "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:face90fb5561f76eca677c7015acb011363a8156278cfcc9a73e1e1642ec7e0c",
             "locator": {
-              "kind": "file"
+              "end": 226,
+              "kind": "line_range",
+              "start": 202
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -1098,22 +1170,25 @@
         },
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "blob": "dabedd63bf436902f54b6284e30b85c0db4d3eda",
+            "content": "sha256:a808fe2612947c6ef4510e2f0cc696b20b09139b544abcfd3c49ec26d10ffb38",
             "locator": {
-              "kind": "file"
+              "end": 54,
+              "kind": "line_range",
+              "start": 23
             },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+            "path": "dashboard/src/panels/changeset/useInspectionChangeset.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
             "content": "sha256:c44d17e6c9922e6c44c6596244d1adc200e72881ff589d449d00e72eeb15d7e5",
             "locator": {
-              "kind": "symbol",
-              "name": "peekChangeSet"
+              "end": 221,
+              "kind": "line_range",
+              "start": 218
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -1121,11 +1196,12 @@
         },
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
             "content": "sha256:1353e8dabc40db1564c9fa6400aa2fbf25f36ea57c65eb39f91948b700b21c10",
             "locator": {
-              "kind": "symbol",
-              "name": "loadChangeSet"
+              "end": 226,
+              "kind": "line_range",
+              "start": 223
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -1134,14 +1210,16 @@
       ]
     },
     "86": {
-      "note": "A list problem and selected-file problem have distinct display owners rather than silently leaving a stale successful pane.\n\nAnchor: `ChangeSetWorkspace` `ChangeSetMainPane`",
+      "note": "A list problem and selected-file problem have distinct display owners rather than silently leaving a stale successful pane. Anchor: `ChangeSetWorkspace` `ChangeSetMainPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:266a209f5bea82af7b2cf301895e4b269ce400cd5ee1bef6e8176ff83787db52",
             "locator": {
-              "kind": "file"
+              "end": 580,
+              "kind": "line_range",
+              "start": 526
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -1149,23 +1227,12 @@
         },
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:afd812289d9346c54374fd2414f7fad7759ff57442ca8ccdfaffaf3b4072579b",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:c26fc04415522174e4b3489f17a76acb7409e49c4d482aaeb78d68123bea9953",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetWorkspace"
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:c11005854198bb34a597f4a8554884b7a70ab19b0ed7aa7e5324dd998a9d47f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetMainPane"
+              "end": 405,
+              "kind": "line_range",
+              "start": 367
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -1205,7 +1272,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
             "content": "sha256:2f219116e804e8824fe2db735a2565dcafba8aa6bc45afdac7fd2ad31aba0ea3",
             "locator": {
               "kind": "symbol",
@@ -1217,7 +1284,7 @@
         },
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
             "content": "sha256:de97b09bf077e170d0fe5fb0d988cd854779fd3f5ae6cbf2e38f438628e859c6",
             "locator": {
               "kind": "symbol",
@@ -1230,15 +1297,16 @@
       ]
     },
     "89": {
-      "note": "The changed-file rail remains mounted and shares one visibility state across wide and narrow workspace orientation.\n\nAnchor: `sidebarPanelProps`; `sidebarHandleProps`",
+      "note": "The changed-file rail remains mounted and shares one visibility state across wide and narrow workspace orientation.",
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:42857f34852a31b12829f01da6ad02b6ebad11f4cf54cc369b062f11fbc3d772",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:7cc44086fe9dd65d01ba64a00d91b0f369fc27c606a1684c805cfa7042f0c965",
             "locator": {
-              "kind": "symbol",
-              "name": "railOpen"
+              "end": 524,
+              "kind": "line_range",
+              "start": 455
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -1247,15 +1315,29 @@
       ]
     },
     "90": {
-      "note": "The header toggle owns changeset-left visibility outside the changed-file rail.\n\nAnchor: `useSidebar`; `SidebarToggle`\n\nRetired at the fifth freeze d59c3493: dashboard/src/panels/changeset/ChangeSetViewer.tsx:1008-1036 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 23cb164fa24dcbc4a98a56fa1324e1fb42c1bf41. Retired means the anchor no longer stands, not that the cited subject was deleted.",
+      "note": "The change-set header owns the changeset-left visibility toggle outside the changed-file rail; the workspace panel and handle use that visibility state.",
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:42857f34852a31b12829f01da6ad02b6ebad11f4cf54cc369b062f11fbc3d772",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:3fcdb3ffaccd4bcca087e954154481398a087ecefff277393efa330bd90247b0",
             "locator": {
-              "kind": "symbol",
-              "name": "railOpen"
+              "end": 851,
+              "kind": "line_range",
+              "start": 835
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:7cc44086fe9dd65d01ba64a00d91b0f369fc27c606a1684c805cfa7042f0c965",
+            "locator": {
+              "end": 524,
+              "kind": "line_range",
+              "start": 455
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },

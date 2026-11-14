@@ -12,7 +12,7 @@ base and the leaf's candidate, resolved and composed exactly as the reviewer doe
 kind and the review rounds' extra cases. It is the world the dashboard's `triage.*` bodies are captured from
 (`triage.capture-provenance.json`).
 
-`test_review_change_kinds.py` proves the MIK-R33 change-kind facts over a live leaf on four real Git trees, one member per badge kind. In W03 it also proves the outline: index-only reads, catalogue preservation, authored membership order, summary cuts, and the unknown/unavailable states. Four further test declarations cover leaf-wide code facts, unavailable code facts, public-gate worklist states and answering witnesses, and held-input validation (six parameterized variants).
+`test_review_change_kinds.py` proves the MIK-R33 change-kind facts over a live leaf on four real Git trees, one member per badge kind. In W03 it also proves the outline: index-only reads, catalogue preservation, authored membership order, summary cuts, and the unknown/unavailable states. Five further test declarations cover leaf-wide code-fact agreement, reuse of loaded entries without loading full invariants, unavailable code facts, public-gate worklist states and answering witnesses, and held-input validation (six parameterized variants).
 ## Code Commentary
 
 ### Logic
@@ -27,7 +27,7 @@ kind and the review rounds' extra cases. It is the world the dashboard's `triage
   `INV-SSSSSS` (a stale-at-base realization repaired: "re-anchored (stale at base)"), `INV-XXXXXX` (linked plus a
   stale entry in the changed test: `implementation` `+unknown`) and `INV-RRRRRR` (retired at the same revision:
   `intent`). `FAM-F00002`'s guarantee changes; `FAM-F00003`'s revision is bumped for a reorder with the same guarantee.
-- **The 12 cases:** every occurrence's kind; the shared member; a partial page describing only its returned members;
+- **The original 12-case change-kind cohort (within 19 current source test definitions):** every occurrence's kind; the shared member; a partial page describing only its returned members;
   an unreadable sidecar; an unreadable family record (guarantee and membership unknown, the membership reason apart
   from the change-kind reasons); unreadable trees; a changed non-text file; the moved entry, retired record and
   unresolved range in one family; an unread sidecar of a changed file beside an established fact (review R2-1 N5); the
@@ -99,4 +99,6 @@ The index-only outline case now includes `comparison` in the exact serialized fi
 - The index-only outline preserves exact catalogue fields including comparison. [13]
 
 
-- Its lane row.  Anchor: "mcp/tests/test_review_change_kinds.py" [7]
+
+
+- Its lane row. Anchor: "mcp/tests/test_review_change_kinds.py" Anchor: "mcp/tests/test_review_change_kinds.py" [7]

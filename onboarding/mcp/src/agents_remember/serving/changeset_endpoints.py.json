@@ -111,11 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
-            "content": "sha256:e108a3c317e025490ff19943c9e4cf5b0ac1c619561eb8f36991dd011867056b",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "content": "sha256:ba6854779ea5efa98f3955358664c086bcd7cf45a24315bb765b6a0453978d9d",
             "locator": {
-              "kind": "symbol",
-              "name": "_leaf_range"
+              "end": 499,
+              "kind": "line_range",
+              "start": 444
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -123,23 +124,12 @@
         },
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
             "locator": {
-              "kind": "symbol",
-              "name": "leaf_changeset"
-            },
-            "path": "mcp/src/agents_remember/serving/changeset.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
-            "content": "sha256:7ea5a0c462acdae6785d07dfc32269df86c64c5edaad40f655ecfb5f2a020f63",
-            "locator": {
-              "kind": "symbol",
-              "name": "leaf_file_diff"
+              "end": 546,
+              "kind": "line_range",
+              "start": 507
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },

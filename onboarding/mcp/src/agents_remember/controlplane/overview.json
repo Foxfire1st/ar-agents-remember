@@ -50,12 +50,12 @@
         },
         {
           "anchor": {
-            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "blob": "54b818118629a276761c14d24046428232306f6e",
             "content": "sha256:74cd97abd5406b17a2c7a00a502a873c545bfd7c790ef3cf3225bc0e788103e3",
             "locator": {
-              "end": 676,
+              "end": 685,
               "kind": "line_range",
-              "start": 656
+              "start": 665
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -63,12 +63,12 @@
         },
         {
           "anchor": {
-            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "blob": "54b818118629a276761c14d24046428232306f6e",
             "content": "sha256:cd162c9dc16ebab0c70a9b30b436d0b395dca696a73594d90cc13757e6fed8dd",
             "locator": {
-              "end": 777,
+              "end": 786,
               "kind": "line_range",
-              "start": 771
+              "start": 780
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

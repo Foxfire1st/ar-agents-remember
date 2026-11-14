@@ -1,5 +1,58 @@
 {
   "path": "mcp/tests/test_serving_files.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7d2cad198996ca9b1870b6f8883df9a2912bee96",
+        "content": "sha256:2b0fd17dd1fdffffbdf2bb01000761d3aeecf859a0bcb4b2d5d48c6732381cb4",
+        "locator": {
+          "kind": "symbol",
+          "name": "RouteTests.test_bytes_keeps_the_path_confinement"
+        }
+      },
+      "facet": "The file byte route rejects a confined-path escape.",
+      "id": "PRF-4R4JJJ",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7d2cad198996ca9b1870b6f8883df9a2912bee96",
+        "content": "sha256:35a316f8d1bfcbf2b6abf87802aa1dd6ddaad1f2d391e4afa882817bc9eefee6",
+        "locator": {
+          "kind": "symbol",
+          "name": "RouteTests.test_a_nul_bearing_text_suffix_is_binary_not_control_text"
+        }
+      },
+      "facet": "A binary file is not decoded as control text.",
+      "id": "PRF-KGBBHA",
+      "invariant": "INV-FZSASV",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §7",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7d2cad198996ca9b1870b6f8883df9a2912bee96",
+        "content": "sha256:7042b2a11d76c6933d05811e7da2d99f64bff893bbe263e3413ff1f975cac082",
+        "locator": {
+          "kind": "symbol",
+          "name": "RouteTests.test_bytes_refuses_a_suffix_outside_the_media_table"
+        }
+      },
+      "facet": "Unserved suffixes are refused.",
+      "id": "PRF-Z765BG",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf50d6f24f3c329785054bc125bcb2e7f727910f",
+            "blob": "7d2cad198996ca9b1870b6f8883df9a2912bee96",
             "content": "sha256:1f8059744de4acffe6ddd848a357df4d4b58424f2dd0a1d95cf7ba40c4757e22",
             "locator": {
               "kind": "symbol",
@@ -23,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf50d6f24f3c329785054bc125bcb2e7f727910f",
+            "blob": "7d2cad198996ca9b1870b6f8883df9a2912bee96",
             "content": "sha256:e757307225fa69bdacacc16ad27c48b3cb7098f1344afa0a3c1dc88e06fb2d87",
             "locator": {
               "kind": "symbol",
@@ -34,12 +87,12 @@
         },
         {
           "anchor": {
-            "blob": "bf50d6f24f3c329785054bc125bcb2e7f727910f",
+            "blob": "7d2cad198996ca9b1870b6f8883df9a2912bee96",
             "content": "sha256:b310efecd152371f37bfc60f9caf3778a3617feca7e7fb7a779caff2a6402684",
             "locator": {
-              "end": 82,
+              "end": 90,
               "kind": "line_range",
-              "start": 76
+              "start": 84
             }
           },
           "kind": "test"

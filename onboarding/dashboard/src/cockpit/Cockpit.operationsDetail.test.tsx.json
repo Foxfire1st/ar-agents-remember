@@ -1,18 +1,88 @@
 {
   "path": "dashboard/src/cockpit/Cockpit.operationsDetail.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "208c2980db67ae1ad79abd45d1822c8222d3020d",
+        "content": "sha256:37de3d826fe59fd35c0b0aee2791aa4c530ee0d7607ec752f8b2c6e06739afa3",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations detail without a selection > keeps its open diff viewer across a visit to another tab"
+        }
+      },
+      "facet": "The open diff remains mounted across tab changes.",
+      "id": "PRF-NYANHX",
+      "invariant": "INV-VFEYRJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §11",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "208c2980db67ae1ad79abd45d1822c8222d3020d",
+        "content": "sha256:ebcf9ca2fd64027d6e65cf1af8d81f80fd89a54a84fd8354d4533b5a81444b73",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations detail without a selection > keeps its selected task view across a visit to another tab"
+        }
+      },
+      "facet": "The selected task view remains mounted.",
+      "id": "PRF-RT3F5X",
+      "invariant": "INV-VFEYRJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §11",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "208c2980db67ae1ad79abd45d1822c8222d3020d",
+        "content": "sha256:5ed3979096eb4dc8669c3f7e4f7d87ccc91d41306b6221a5c3d31d4e7e4633c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations detail without a selection > keeps the notes reader across a visit to another tab"
+        }
+      },
+      "facet": "The notes reader remains mounted.",
+      "id": "PRF-VN7HZY",
+      "invariant": "INV-VFEYRJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §11",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Operations detail without selection: implementation/assertion boundary described above.\n\nAnchor: \"Operations detail without a selection\"",
+      "note": "Operations detail without selection: implementation/assertion boundary described above. Anchor: \"Operations detail without a selection\"",
       "targets": [
         {
           "anchor": {
-            "blob": "dd1aeee71fa140b4a713e5b50e3f80fc43c7f348",
-            "content": "sha256:2e08f4025a85f1d7a5c4e2b84abf1a0999b2b24fd9cdcd0451c1537dff0a2914",
+            "blob": "208c2980db67ae1ad79abd45d1822c8222d3020d",
+            "content": "sha256:8f78f7a955ad5ff3fa246f5897231067cd941a5b3a6158ad6e89bbfa5c1ff9cd",
             "locator": {
-              "end": 223,
+              "end": 228,
               "kind": "line_range",
-              "start": 180
+              "start": 186
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The same task, notes and ordinary diff nodes survive another tab; the removed-owner case dismisses the ordinary diff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "208c2980db67ae1ad79abd45d1822c8222d3020d",
+            "content": "sha256:3a1aa8c0711ee09c99da5677ff6714793b18a416cdf83b17e601afa4f996865b",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 230
             }
           },
           "kind": "test"

@@ -3,11 +3,29 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3a158f3f7810149facd26a0a18eaa8ca7c98cbbf",
-        "content": "sha256:5e600a0dd6062185bff83c84680e205c57d5a105baa0434650f89347997cbab3",
+        "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
+        "content": "sha256:a215a3abc88609a8eb7e29cbf46b9108e29b3f3bb4717744314c0f1bb2c63dab",
         "locator": {
           "kind": "symbol",
-          "name": "CodeView"
+          "name": "MediaCodeView"
+        }
+      },
+      "id": "RLZ-Y6YZT1",
+      "invariant": "INV-26X0GJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §3",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Knowledge code uses the same component with its selected source's bytes address.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
+        "content": "sha256:2988f2c274bf95a7a9f03a8f3b6c36675c3d4aa9f0b223cbe740662c7808512d",
+        "locator": {
+          "kind": "symbol",
+          "name": "TextCodeView"
         }
       },
       "id": "RLZ-Y7W0NG",
@@ -16,20 +34,34 @@
         "handoffEntry": "MIK-R79@v1 required behavior 9",
         "leaf": "260928-MIK-L79"
       },
-      "rationale": "CodeView owns the rendering or source-selection boundary that implements this obligation: Wide citations open in the existing code pane without moving prose; multiple targets are listed first and narrow code navigation retains Back.",
+      "rationale": "TextCodeView renders the selected text and resolved line marks through the existing FilePane; the existing citation-navigation owners retain wide and narrow return behavior.",
       "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "The cited code opens in the File Viewer's code pane at its lines.\n\nAnchor: `CodeView`",
+      "note": "The Knowledge reader's text-code view renders FilePane and passes the resolved cited line range as highlightedLines. Media citations use the separate media view.",
       "targets": [
         {
           "anchor": {
-            "blob": "3a158f3f7810149facd26a0a18eaa8ca7c98cbbf",
-            "content": "sha256:64359838b86f76f52089a57778b9d4a5af9930c78909d0722aea2259955bcecd",
+            "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
+            "content": "sha256:29ffa7b4a8507652fe5655b0898456dcd9b663afdd14bcc837d234b4017b3cf5",
             "locator": {
-              "kind": "file"
+              "end": 13,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
+            "content": "sha256:2988f2c274bf95a7a9f03a8f3b6c36675c3d4aa9f0b223cbe740662c7808512d",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 47
             }
           },
           "kind": "code"
@@ -53,14 +85,16 @@
       ]
     },
     "3": {
-      "note": "The unresolved locator is named, not guessed.\n\nAnchor: `CodeHeader`",
+      "note": "The unresolved locator is named, not guessed. Anchor: `CodeHeader`",
       "targets": [
         {
           "anchor": {
-            "blob": "3a158f3f7810149facd26a0a18eaa8ca7c98cbbf",
-            "content": "sha256:64359838b86f76f52089a57778b9d4a5af9930c78909d0722aea2259955bcecd",
+            "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
+            "content": "sha256:fd3cad27553fb3ca007b0af95a241f80721f89a4fc6b02dc72191f3468fae5df",
             "locator": {
-              "kind": "file"
+              "end": 83,
+              "kind": "line_range",
+              "start": 67
             }
           },
           "kind": "code"

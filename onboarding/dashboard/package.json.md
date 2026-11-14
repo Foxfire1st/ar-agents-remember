@@ -20,4 +20,6 @@ The dashboard’s npm manifest declares its dependency ranges, development tools
 ## Evidence
 
 - The manifest declares `@playwright/test` at `^1.65.0`. [1]
+
+
 - The manifest separates dashboard dependencies, development dependencies and executable scripts. [2]

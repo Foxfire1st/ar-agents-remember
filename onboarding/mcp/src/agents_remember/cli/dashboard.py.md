@@ -50,7 +50,12 @@ Configuration identity, admitted watch/reference roots, read availability, deliv
 
 - Live/sim composition and daemon supervision retain separate ownership and outcomes. [71]
 
-- The composition root wires PaseoExplainerHost, application ports and the master contract locator into serving. _master_contract uses the declared master series contract or existing canonical folder contract; no other line is borrowed. [72]
+
+
+- The composition root wires PaseoExplainerHost, application ports and the master contract locator into serving. _master_contract uses the declared master series contract or existing canonical folder contract; no other line is borrowed. Anchor: `PaseoExplainerHost` [72]
+
 
 - The daemon, status and stop commands delegate to the dashboard daemon adapter with this module's host observe and host start. [73]
-- The host-activity refresher is bound to the real bridge read in the composition root. [74]
+
+
+- The host-activity refresher is bound to the real bridge read in the composition root. Anchor: `host_activity_reconcile` [74]

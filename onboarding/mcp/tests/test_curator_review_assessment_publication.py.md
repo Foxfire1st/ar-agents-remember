@@ -7,9 +7,11 @@
 ## Purpose
 
 **The integration population for `KS-R15@v1`'s publication route, the evidence-byte destination and
-the read-back.** Every case drives the **production** curator-coherence publication against a real
-external-memory leaf enclosure built by the shared lifecycle fixture. Nothing here re-implements the
-publication path, fakes a contract, or asserts a survival it did not read back. Since `260915-KS-L23`
+the read-back.** The suite uses a real external-memory leaf enclosure built by the shared lifecycle
+fixture. It combines production publication/read-back cases, direct evidence-byte helper checks,
+and request/record-model validation. A model refusal is evidence about the model's accepted shape;
+an application refusal code is asserted only by the cases that call `curator_coherence_tool`.
+Nothing here re-implements the publication path or fakes a contract. Since `260915-KS-L23`
 it is also the integration population for the route's **caller address** (item 19) and for the
 durability of the attestation a publication binds (item 18's second half).
 
@@ -33,7 +35,7 @@ The load-bearing properties:
 
 ### Logic
 
-**Five** test classes — this card said three until `260915-KS-L23` added the last two:
+**Five** test classes contain **23** test definitions at code tree `96bf7343`, by complete AST inspection, without pytest collection or execution. The three-class, 18-case and 22-case accounts later in this card belong to their named earlier leaves:
 
 - `TestPublishedAssessment` — an assessment publishes to the canonical authority and reads back; the
   stored author is whatever the publication path supplied; each cited evidence byte is recorded with
@@ -43,11 +45,11 @@ The load-bearing properties:
   obligation; a leaf with no assessment publishes and reports `none-recorded`.
 - `TestReadStatesOverAStoredCollection` — a measured move marks the stored assessment stale and keeps
   it readable; `unresolved` is reported as its own state rather than as a clearance.
-- `TestAssessmentRefusals` — a submission supplying an author is refused as an undeclared field
-  **through the application boundary**, so the code asserted is the code a caller receives; a byte
-  that does not read back blocks with the destination and the digest; a published byte removed after
-  publication is a blocked absent state; a refused submission leaves the canonical authority
-  byte-identical.
+- `TestAssessmentRefusals` — the author-supplying case constructs `CuratorCoherenceRequest` and
+  asserts `ValidationError` containing `authorRef`; it does not call the application publication
+  boundary or assert a returned refusal code. Separate `_tool_publish` cases assert application
+  refusal codes and byte-identical canonical authority. Direct evidence-byte helper cases check
+  invalid destinations, digest mismatch, published copies and post-publication absence.
 - `TestPublisherCallerAddress` (class `:784-855`, case bodies `:795-855`) — item 19's two cases. A **bare** leaf-document file name
   that names the addressed document publishes, and the stored record's `taskDocumentRef.path` and
   `publishedBy` carry the canonical `<task-dir>/<leaf>.json` rather than the caller's spelling. A bare
@@ -77,12 +79,15 @@ the production path to drive.
 
 - Registered in `mcp/tests/test-evidence-lanes.toml` as an **integration** member: it stands up real
   repositories and an external-memory enclosure, which is the population that measures that behaviour.
-- Registered in `mcp/tests/evidence-lifecycle.toml` as a **consumer** of the shared support module
-  `mcp/tests/curator_coherence_test_support.py` (owner `curator-coherence-test-port`) and of
-  `mcp/tests/test_worktree_support.py`. This leaf added a consumer row; it did not add a contract or
-  an artifact, so the catalogue's counts stay at 13 contracts / 54 artifacts while its digest moves.
-- Refusal assertions are routed through the **application** boundary (`curator_coherence_tool`) rather
-  than the domain function, so claimed codes are the codes a caller receives.
+- The complete `mcp/tests/evidence-lifecycle.toml` declares this module as an exact
+  consumer of `_user_settings_guard.py`, `curator_coherence_test_support.py` and
+  `fixtures/repository_profiles/node/package-lock.json`. The current catalog has
+  **17 contracts and 116 artifacts**. The earlier 13/54 consumer-addition account
+  describes the creating leaf's source epoch and is not the current catalog population.
+- `_tool_publish` and `_tool_publish_bare_name` reach the **application** boundary
+  (`curator_coherence_tool`) for returned refusal-code assertions. The author-field case instead
+  checks request-model `ValidationError`; direct evidence-byte cases inspect
+  `AssessmentEvidenceBlockedError` from the domain helpers. These assertion classes are distinct.
 
 ### Invariants And Boundaries
 
@@ -90,8 +95,10 @@ the production path to drive.
   directory, asserts it is gone, and only then opens the recorded bytes.
 - **The record's own digest is not the bytes' read-back.** Each byte is opened by the path recorded on
   the assessment and compared to the digest recorded beside it.
-- **A refused publication leaves the authority byte-identical.** The refusal cases measure the
-  canonical file rather than only the raised error.
+- **Application publication refusals leave the authority byte-identical.** The no-evidence,
+  duplicate-identity and unresolved-citation cases compare the canonical file before and after
+  `_tool_publish`; the author-field and evidence-byte helper refusals assert their own model/domain
+  errors instead of that publication read-back.
 - **Exact coverage is a preservation boundary.** The case asserts the shipped obligation still refuses
   a mismatched judgment set on a record that carries assessments.
 
@@ -176,7 +183,7 @@ asserts `current` on both the subject status and the entry — so the two halves
 measured ⇒ `not-measured`; everything measured and agreeing ⇒ `current`) are pinned through the same
 closeout entry point the rest of the integration suite uses.
 
-The module grew 948 → 988 lines. Nothing else in it changed: the same fixture, the same published
+At that `260921-ICR-L15` source epoch, the recorded account was: the module grew 948 → 988 lines. Nothing else in it changed: the same fixture, the same published
 assessment, and the same `curator_coherence_subject_assessment_state` projection under test.
 
 
@@ -208,6 +215,16 @@ assessment, and the same `curator_coherence_subject_assessment_state` projection
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1951-1951 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
+
+
 - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" [1]
+
+
+
+
 - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" [2]
+
+
+
+
 - The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation. [3]

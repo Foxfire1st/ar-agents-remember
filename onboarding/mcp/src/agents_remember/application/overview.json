@@ -896,7 +896,7 @@
       ]
     },
     "17": {
-      "note": "Historical canonical-dataset generation account; references and targets retained for custody. Current boundary: with no explicit `generation_id`, a closed leaf's read resolves the delivered default first (`review_committed_leaf.py:156-165`), and a leaf that records no delivery keeps the recorded default; a delivery the enclosure claims and the read cannot establish is answered by the delivered resolution's own refusal, never by that default.",
+      "note": "Historical canonical-dataset generation account; references and targets retained for custody. Current boundary: with no explicit `generation_id`, a closed leaf's read resolves the delivered default first (`review_committed_leaf.py:164-168`), and a leaf that records no delivery keeps the recorded default; a delivery the enclosure claims and the read cannot establish is answered by the delivered resolution's own refusal, never by that default.",
       "targets": [
         {
           "anchor": {
@@ -2017,7 +2017,7 @@
       ]
     },
     "23": {
-      "note": "**The labelled Git inference measured on recorded repository identities: `external_git_movement` (`review_external_git_movement.py:298`) reaches `external_git_movement_for_contract` → `_measure_contract` → `_measure_generation` → `_findings` (`:337,358,382,538`) and measures the ancestry of recorded addresses, not similarity rename pairs; the rename command `--find-renames`, its three states and the sentence that it is not proof the invariant moved live in `review_rename_inference.py:43-45`.**",
+      "note": "**The labelled Git inference measured on recorded repository identities: `external_git_movement` (`review_external_git_movement.py:299`) reaches `external_git_movement_for_contract` → `_measure_contract` → `_measure_generation` → `_findings` (`:383,338,359,539`) and measures the ancestry of recorded addresses, not similarity rename pairs; the rename command `--find-renames`, its three states and the sentence that it is not proof the invariant moved live in `review_rename_inference.py:43-45`.**",
       "targets": [
         {
           "anchor": {
@@ -3447,14 +3447,29 @@
       ]
     },
     "284": {
-      "note": "The block, which never raises.\n\nAnchor: `read_currentness`",
+      "note": "evaluate_answer computes the named records' currentness and may raise CURRENTNESS_FAILURES; failure_document separately constructs the failure block with unverifiableReason.",
       "targets": [
         {
           "anchor": {
             "blob": "faef800be20876a094d800a6266d27c77247c850",
-            "content": "sha256:646c9a47cdd8579dae9ec7572e5eef61cfcfa5ae339fd54be8933b830a3f80df",
+            "content": "sha256:fcff3295136cb40d4b2888c977ad6ce8c543453fd63948ea1c5480eb6d75b0b5",
             "locator": {
-              "kind": "file"
+              "end": 106,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_currentness/surface.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "faef800be20876a094d800a6266d27c77247c850",
+            "content": "sha256:af20866a9e0e196ece227711b6656c595f7548fb99af9ac0fa8b011ef25fe7a9",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 109
             },
             "path": "mcp/src/agents_remember/application/knowledge_currentness/surface.py"
           },
@@ -4260,7 +4275,7 @@
       ]
     },
     "32": {
-      "note": "The retained-selection cases assert the single retained revision pair, the known-empty removal with the before head recorded, and the pane's own recorded statements; the former chain/fork policy cases are retired. These are source assertions, not a new execution claim.\n\nAnchor: `test_a_single_retained_revision_pair_compares_head_to_head` `test_a_known_empty_after_side_stays_a_removal_with_the_before_head_recorded` `test_heads_are_the_retained_population_in_sorted_order` `test_the_review_pane_renders_the_selected_head_pairs_own_statements`",
+      "note": "The retained-selection cases assert the single retained revision pair, the known-empty removal with the before head recorded, and the pane's own recorded statements; the former chain/fork policy cases are retired. These are source assertions, not a new execution claim.\n\nAnchor: `test_a_single_retained_revision_pair_compares_head_to_head`; `test_a_known_empty_after_side_stays_a_removal_with_the_before_head_recorded`; `test_the_review_pane_renders_the_selected_head_pairs_own_statements`",
       "targets": [
         {
           "anchor": {
@@ -6362,7 +6377,7 @@
       ]
     },
     "417": {
-      "note": "**The labelled Git inference measured on recorded repository identities: `external_git_movement` (`review_external_git_movement.py:298`) reaches `external_git_movement_for_contract` → `_measure_contract` → `_measure_generation` → `_findings` (`:337,358,382,538`) and measures the ancestry of recorded addresses, not similarity rename pairs; the rename command `--find-renames`, its three states and the sentence that it is not proof the invariant moved live in `review_rename_inference.py:43-45`.**",
+      "note": "**The labelled Git inference measured on recorded repository identities: `external_git_movement` (`review_external_git_movement.py:299`) reaches `external_git_movement_for_contract` → `_measure_contract` → `_measure_generation` → `_findings` (`:383,338,359,539`) and measures the ancestry of recorded addresses, not similarity rename pairs; the rename command `--find-renames`, its three states and the sentence that it is not proof the invariant moved live in `review_rename_inference.py:43-45`.**",
       "targets": [
         {
           "anchor": {
@@ -6906,7 +6921,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -6918,7 +6933,7 @@
         },
         {
           "anchor": {
-            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "blob": "54b818118629a276761c14d24046428232306f6e",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -7710,12 +7725,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee654cd82d489cde336684009e07dfa9403cc41a",
+            "blob": "c15192f37b3dd7db83aa2990f4d84805b9034711",
             "content": "sha256:25f1e60e009285e2e8defde6a9f74ebfcdb27135c493d5c2e7d5fea3548018b5",
             "locator": {
-              "end": 243,
+              "end": 246,
               "kind": "line_range",
-              "start": 218
+              "start": 221
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
           },
@@ -8547,7 +8562,7 @@
       ]
     },
     "53": {
-      "note": "**The acquisition owner: exact-path lookup, only `exact_recorded_blob` resolving, unread sides licensing nothing, R05's damage and empty-generation readers consumed.**\n\nAnchor: `review_attribution` `_RESOLVED_MAPPINGS` `_damaged_half` `_inspection_state`",
+      "note": "**The acquisition owner: exact-path lookup, only `exact_recorded_blob` resolving, unread sides licensing nothing, R05's damage and empty-generation readers consumed.**\n\nAnchor: `review_attribution`; `_RESOLVED_MAPPINGS`; `_inspection_state`",
       "targets": [
         {
           "anchor": {
@@ -8702,7 +8717,7 @@
       ]
     },
     "58": {
-      "note": "**The keystone record: the manifest, the layout under the one durable root, the deletion record, the re-derived id and the directory-name agreement.**\n\nAnchor: `ComparisonGenerationManifest` `read_manifest` `generation_identity` `assemble_manifest` `comparison_generations_root`",
+      "note": "**The keystone record: the manifest, the layout under the one durable root, the deletion record, the re-derived id and the directory-name agreement.**\n\nAnchor: `ComparisonGenerationManifest`; `read_manifest`; `generation_identity`; `comparison_generations_root`",
       "targets": [
         {
           "anchor": {

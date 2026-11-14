@@ -42,11 +42,13 @@ No meaningful cross-repo references found.
 - `test_a_damaged_knowledge_half_cannot_support_a_negative_attribution_conclusion` owns the current boundary described above. [11]
 > Retained earlier citation wording: - **The precedence cases: one unreadable half leaves the readable side attributed and the rest unknown; the same pair read completely confirms absence where the lost half could not; a damaged half cannot support a negative conclusion.** [12]
 > Retained earlier citation wording: - The unit-regression lane row, beside its sibling's.  Anchor: `test_knowledge_review_attribution_precedence`
-- The empty-base case: a real empty converted Git base counts as completely inspected for absence; no canonical origin record invents its emptiness.  Anchor: lines 122-151 [15]
+- The empty-base case: a real empty converted Git base counts as completely inspected for absence; no canonical origin record invents its emptiness.   [15]
 
 
 
 - **The precedence cases: one unreadable half leaves the readable side attributed and the rest unknown; the same pair read completely confirms absence where the lost half could not; a damaged half cannot support a negative conclusion.** [12]
+
+
 
 
 - The module's own unit-regression lane row. [14]

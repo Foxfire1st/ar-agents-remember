@@ -1,16 +1,73 @@
 {
   "path": "dashboard/src/panels/changeset/ChangeSetPane.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+        "content": "sha256:128ee2a5e822c2f4baec6dec17f35a8f75299c8a030dd286944d876e018e15ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "MediaDiff"
+        }
+      },
+      "id": "RLZ-20M5EE",
+      "invariant": "INV-26X0GJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §3",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "The change-set pane delegates each media side to the shared component.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+        "content": "sha256:128ee2a5e822c2f4baec6dec17f35a8f75299c8a030dd286944d876e018e15ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "MediaDiff"
+        }
+      },
+      "id": "RLZ-KMNWN6",
+      "invariant": "INV-AQH8BD",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §5",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This presentation distinguishes media, text, binary and missing states independently for each side.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+        "content": "sha256:a172299f30a6c70801116383e7abde892df492835192da40d4aca8a28c583b11",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangeSetBody"
+        }
+      },
+      "id": "RLZ-QYQMBT",
+      "invariant": "INV-AQH8BD",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §5",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This branch preserves the text diff and rendered Markdown alternatives while routing non-text sides to MediaDiff.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Four persisted toggles map onto the change-set / full-file / highlight-off / rendered states.\n\nAnchor: `ChangeSetPane`",
+      "note": "Four per-column persisted flags control text change-set/full-file layout, inline presentation, highlighting and rendered Markdown. Media or binary sides bypass the text-diff controls.",
       "targets": [
         {
           "anchor": {
-            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
-            "content": "sha256:448d21db7f329cfabb94f17e943383f27d9f868c65fc937a457b060e0c07c9d8",
+            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "content": "sha256:dd038e71dafb147cf5446a5b54122dbdd7d0a0ad59afa3940397f6035d982358",
             "locator": {
-              "kind": "file"
+              "end": 356,
+              "kind": "line_range",
+              "start": 330
             }
           },
           "kind": "code"
@@ -22,11 +79,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
-            "content": "sha256:2bc1398dd3ec7b90773d3096b013611104061ad8a5f0dbc3830875bd304a1f53",
+            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "content": "sha256:70949560962d7f995edb90ebc672b66ff7ef0e81be23dbb687b143c826016bc8",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetPane"
+              "end": 389,
+              "kind": "line_range",
+              "start": 330
             }
           },
           "kind": "code"
@@ -38,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
+            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
             "content": "sha256:9c92d46dd85a6c0e969025e71ea0f65f0278a2ff5ceb55c47151df81da0cfa01",
             "locator": {
               "kind": "symbol",
@@ -50,16 +108,28 @@
       ]
     },
     "12": {
-      "note": "Markdown files offer the rendered prose mode\n\nAnchor: `showRendered`",
+      "note": "Markdown text files offer a persisted rendered-prose mode; media or binary diffs do not use that toggle.",
       "targets": [
         {
           "anchor": {
-            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
-            "content": "sha256:b172c4b4c4ed43c82eed823fc213204d5ca676877d6c91939163b9a1b61c4109",
+            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "content": "sha256:abcd5973a2c7100a872156bea8fba4a4bc8356c08fca1f84d0f8d685dadfaca5",
             "locator": {
-              "end": 206,
+              "end": 227,
               "kind": "line_range",
-              "start": 201
+              "start": 217
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "content": "sha256:c854be72481f21921ce1c1b2daaf051be295fb1ad2d2d3a52ea64770006a029c",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 324
             }
           },
           "kind": "code"
@@ -67,14 +137,28 @@
       ]
     },
     "2": {
-      "note": "Highlight-off renders the plain L2 FilePane on the after-content.\n\nAnchor: `ChangeSetPane`",
+      "note": "For a text diff in full-file mode, disabling highlighting renders the plain FilePane with the after-content. Media and binary diffs use their own side rendering.",
       "targets": [
         {
           "anchor": {
-            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
-            "content": "sha256:448d21db7f329cfabb94f17e943383f27d9f868c65fc937a457b060e0c07c9d8",
+            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "content": "sha256:3ca412c4768507decdebf23e38239e8715197ca0eada3f45f0446bc1902f17fd",
             "locator": {
-              "kind": "file"
+              "end": 318,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+            "content": "sha256:3da4dd438a26ed98bbfc7119ea88185c51d121958158588c5d1fa038acd3f02e",
+            "locator": {
+              "end": 356,
+              "kind": "line_range",
+              "start": 341
             }
           },
           "kind": "code"
@@ -82,28 +166,28 @@
       ]
     },
     "3": {
-      "note": "Markdown files get a `rendered` toggle that swaps the diff for a `<Markdown>` view.\n\nAnchor: \"data-testid=\\\"changeset-rendered-toggle\\\"\"",
+      "note": "Nonbinary Markdown files get a rendered toggle that swaps the diff for rendered after-content.",
       "targets": [
         {
           "anchor": {
-            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
+            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
             "content": "sha256:6577e15cb433a3fa87ee590fdad65b256efb8ffa41bcc8e4eccc5e0d609ac42c",
             "locator": {
-              "end": 48,
+              "end": 50,
               "kind": "line_range",
-              "start": 48
+              "start": 50
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
+            "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
             "content": "sha256:880e74582cfcc0e7562bd4275a6fc3331a30b88537c2ac7198c199f3e91da3a3",
             "locator": {
-              "end": 92,
+              "end": 223,
               "kind": "line_range",
-              "start": 92
+              "start": 223
             }
           },
           "kind": "code"
@@ -111,14 +195,16 @@
       ]
     },
     "4": {
-      "note": "The markdown renderer reused for the rendered-markdown view.\n\nAnchor: `Markdown`",
+      "note": "The markdown renderer reused for the rendered-markdown view. Anchor: `Markdown`",
       "targets": [
         {
           "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+            "content": "sha256:9884644e2a94771b8bf70153c4f12814eb1eb12030dec3bba3622603c9a4d0bc",
             "locator": {
-              "kind": "file"
+              "end": 234,
+              "kind": "line_range",
+              "start": 187
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },
@@ -127,7 +213,7 @@
       ]
     },
     "5": {
-      "note": "Otherwise it mounts the DiffPane with mode/collapse.",
+      "note": "For nonbinary text in diff mode, DiffPane supplies mode and collapse controls.",
       "targets": [
         {
           "anchor": {
@@ -178,14 +264,16 @@
       ]
     },
     "8": {
-      "note": "The `FileDiff` shape it renders.\n\nAnchor: `FileDiff`",
+      "note": "The FileDiff contract carries before and after sides; each side can contain text or binary/media metadata, and an added or deleted side is null.",
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
-            "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:5617c790d8d9dec0e1f21326d049111bcfa70c63e09a01a33e1d39d08bee6d77",
             "locator": {
-              "kind": "file"
+              "end": 67,
+              "kind": "line_range",
+              "start": 49
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -194,14 +282,16 @@
       ]
     },
     "9": {
-      "note": "The screen that mounts it for the file + partner columns.\n\nAnchor: `ChangeSetViewer`",
+      "note": "The screen that mounts it for the file + partner columns. Anchor: `ChangeSetViewer`",
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:981589a67d99ff5ad71a688fa37ed1b0de43e54b0808bd0776eb24c47f640530",
             "locator": {
-              "kind": "file"
+              "end": 521,
+              "kind": "line_range",
+              "start": 488
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },

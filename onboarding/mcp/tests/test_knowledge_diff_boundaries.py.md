@@ -12,7 +12,7 @@ The sizes and catalog line addresses in the following original account are histo
 
 **The comparison's integration population: fifteen cases over a real committed Git pair, a real
 curated candidate database and the real application seam**, marked `pytestmark = pytest.mark.integration`
-and registered in the **integration** lane at `mcp/tests/test-evidence-lanes.toml:159`. It is the largest
+and registered in the **integration** lane at `mcp/tests/test-evidence-lanes.toml:696-696`. It is the largest
 new test module of the leaf at **840 lines** and still under the 1 200-line rail.
 
 The module owns the parts of the contract a hermetic unit case cannot honestly measure: what two **real**
@@ -38,7 +38,7 @@ The old InventoryFixture/build_inventory_fixture six-case inventory population w
 
 `request_for(fixture, …)` builds the typed request per case and `run_diff` drives
 `application.knowledge_diff.diff_knowledge_scope`, so the cases exercise the seam a caller uses.
-`run_diff` (`:116`–`:129`) supplies no probe override, and the application selects
+`run_diff` (`:117`–`:130`) supplies no probe override, and the application selects
 `git_tree_difference_probe` by default. Source inspection identifies twelve test functions
 using that driver, ten with positive-page assertions; two additional functions substitute
 the probe explicitly and one compares selected scopes directly. This is default-route
@@ -50,12 +50,12 @@ and default production observation support the integration classification.
 
 | Group | Nodes | The property |
 | --- | --- | --- |
-| the expansion and the visible gap | `:152`, `:198` | Both requested tree ids and both roots; the reproducing command carrying the two tree ids and no `HEAD`; the three authored changed paths are a subset of attributed paths, the attributed/unattributed lists are disjoint, and the unattributed list is exactly the singleton gap; this node does not assert attributed-set equality or exclude extra attributed paths; and the unattributed path listed, counted with its reason and surviving a display filter |
-| attributed source on the side that claims it | `:234` | A moved obligation's source is observed against **its own** side's tree — the candidate's new claim at `exact_recorded_blob`, the baseline's removed claim from the baseline |
-| paging and the display budget | `:270`, `:738` | A small budget pages the comparison without shrinking its totals, and a page of a selection is what the comparison **displays**, not what it **selected** — R07's byte-budget page is not reused as the comparison's scope |
-| refusal without substitution | `:316`, `:338`, `:438`, `:468` | A missing side refuses and substitutes no other snapshot; a real write to the candidate moves its logical digest and refuses the continuation with `continuation_binding_mismatch` and `detail` ending *"it binds another snapshot pair"*; a continuation presented against another selector refuses and returns **no page**; and a side naming another snapshot of its own file is refused by the per-side digest verification **before any page** |
-| the response's honesty | `:511`, `:540`, `:573` | Nine verdict words searched over the whole **serialized** response with a positive control; the two change statements as separate fields where neither implies the other; and the record comparison reporting exactly the payload field that changed |
-| the expansion's honesty | `:782`, `:804`, `:863` | No mounted UI and no approval the comparison cannot make; an unavailable observation reported as unavailable and **never** as a change set; and a probe that measured the trees being what makes a gap visible |
+| the expansion and the visible gap | `:153`, `:215` | Both requested tree ids and both roots; the reproducing command carrying the two tree ids and no `HEAD`; the three authored changed paths are a subset of attributed paths, the attributed/unattributed lists are disjoint, and the unattributed list is exactly the singleton gap; this node does not assert attributed-set equality or exclude extra attributed paths; and the unattributed path listed, counted with its reason and surviving a display filter |
+| attributed source on the side that claims it | `:251` | A moved obligation's source is observed against **its own** side's tree — the candidate's new claim at `exact_recorded_blob`, the baseline's removed claim from the baseline |
+| paging and the display budget | `:287`, `:755` | A small budget pages the comparison without shrinking its totals, and a page of a selection is what the comparison **displays**, not what it **selected** — R07's byte-budget page is not reused as the comparison's scope |
+| refusal without substitution | `:333`, `:355`, `:455`, `:485` | A missing side refuses and substitutes no other snapshot; a real write to the candidate moves its logical digest and refuses the continuation with `continuation_binding_mismatch` and `detail` ending *"it binds another snapshot pair"*; a continuation presented against another selector refuses and returns **no page**; and a side naming another snapshot of its own file is refused by the per-side digest verification **before any page** |
+| the response's honesty | `:528`, `:557`, `:590` | Nine verdict words searched over the whole **serialized** response with a positive control; the two change statements as separate fields where neither implies the other; and the record comparison reporting exactly the payload field that changed |
+| the expansion's honesty | `:799`, `:821`, `:880` | No mounted UI and no approval the comparison cannot make; an unavailable observation reported as unavailable and **never** as a change set; and a probe that measured the trees being what makes a gap visible |
 
 **The verdict-word case is the packet's *Forbidden Overreach* measured rather than asserted.** It searches
 the serialized response's **field names and values** for nine verdict words and includes a positive
@@ -210,6 +210,8 @@ No configured cross-repository evidence is claimed.
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:353-353 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:801-801 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1203-1203 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2030-2030 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2741-2741 - the bytes it recorded now occur 92 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2784-2784 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:624-624 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1937-1937 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1981-1981 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2336-2336 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
 
 
 - The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence. [50]

@@ -229,4 +229,6 @@ No repository or external-system boundary is proved by this module.
 - The sweep whose benign half this module completes, and the world both share. Anchor: `EntryPointWorld` [14]
 
 
+
+
 - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py" [16]

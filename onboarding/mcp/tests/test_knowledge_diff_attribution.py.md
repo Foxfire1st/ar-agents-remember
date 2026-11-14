@@ -6,8 +6,7 @@
 
 ## Purpose
 
-**The comparison's source attribution partition (`ICR-R04@v1`): nine unit cases, each asserting that
-every measured changed path lands in exactly one bucket.** `260921-ICR-L4` added these cases to
+**The comparison's source attribution partition (`ICR-R04@v1`) has ten current source test definitions.** The original nine-case cohort checks attribution buckets; the additional `test_registered_path_lookup_keeps_exact_path_namespace_and_claim_order` checks exact path namespaces and stored claim order. `260921-ICR-L4` added these cases to
 [`test_knowledge_diff_scope.py`](test_knowledge_diff_scope.py.md). `260921-ICR-L57` moved them here
 verbatim when that module crossed the 1200-line rail; no case was added, dropped or changed. The module
 runs the same real comparison, over the fixture-built candidate snapshots and real Git trees that
@@ -37,7 +36,7 @@ The comparison partitions the measured changed-path population into disjoint att
 
 Unresolved or stale locators do not establish attribution. An unread snapshot prevents a negative conclusion and qualifies outside-selection membership; a known-empty inspected side can support absence. An unavailable observation carries null totals, while a partial denominator names omitted uncarriable paths.
 
-The two-tree fixture and extra realization rows use test-only knowledge_rows_test_support constructors. `_author_candidate_claim` is a fixture helper despite its historical write-plane docstring. Surviving production anchor readers, source measurement and partition/comparison code supply the asserted output; this suite does not prove canonical write admission.
+The two-tree fixture and extra realization rows use test-only knowledge_rows_test_support constructors. The stale-mapping case constructs `RealizationSeed` values through its nested `_stale` helper and rebuilds the candidate fixture with `rebuild_after_tree`. Surviving production anchor readers, source measurement and partition/comparison code supply the asserted output; this suite does not prove canonical write admission.
 
 ### Logic
 
@@ -53,9 +52,7 @@ unavailable or partial observation), the case calls the partition owner directly
 (one complete observation of named paths) and `_inspected_sides` (two completely inspected snapshots).
 `entry_link` reads the link label one measured path carries.
 
-**The stale-mapping case authors real claims.** `_author_candidate_claim` writes one realization claim
-into the candidate snapshot through `create_realization_claim`, built on the fixture constructors
-(`anchor_fixture_models` drafts, `DiffFixture`), not the production write plane. `_candidate_claim_resolutions` then reads the shipped reader's own resolutions for that path. So the
+**The stale-mapping case rebuilds the candidate claims.** Its nested `_stale` helper constructs `RealizationSeed` values for a missing recorded blob and an unresolved symbol. `rebuild_after_tree` installs those fixture claims in the candidate tree; it does not drive canonical write admission. `_candidate_claim_resolutions` then reads the shipped reader's own resolutions for that path. So the
 precedence is measured through production composition, not injected.
 
 ### Conventions
@@ -68,9 +65,7 @@ precedence is measured through production composition, not injected.
 
 - **Unit lane by behaviour.** Everything is built under `tmp_path`; the
   only subprocesses are the fixture's own `git` calls.
-- **Behaviour-preserving split.** The nine cases and their helpers are byte-identical to the section they
-  came from. The collected node names match the pre-split population; only the module name in the node
-  id changed.
+- **Historical behaviour-preserving split.** The original nine cases and their helpers were recorded as byte-identical to the section they came from; the recorded collected-node comparison changed only the module name. That split account is not the current ten-definition population or a fresh collection result.
 - **Catalog footprint.** The module imports `diff_scope_test_support.py`, and reaches
   `read_scope_test_support.py` through it. The source-derived ownership census therefore names it on both
   artifacts' exact `consumers` rows, where it is declared beside its sibling. It registers no artifact of
@@ -124,7 +119,7 @@ No configured domain documentation could be checked.
 
 
 
-- The production-composition helpers the stale-mapping case authors and reads claims through. [26]
+- The stale-mapping case builds test-only fixture claims and reads their resolutions through `_candidate_claim_resolutions`; no current `_author_candidate_claim` helper is defined in this module. [26]
 
 
 - The incompleteness cases: one uninspected snapshot turns every unmapped change undetermined; a legitimately empty side counts as completely inspected. [27]
@@ -168,5 +163,11 @@ No configured cross-repository evidence is claimed.
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:352-352 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:800-800 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1202-1202 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2029-2029 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2740-2740 - the bytes it recorded now occur 50 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2783-2783 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3299-3299 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
+
+
 - The module's own unit-regression lane row. [30]
+
+
+
+
 - The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution. [31]

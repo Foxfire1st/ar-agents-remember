@@ -7,11 +7,11 @@
 ## Purpose
 
 **MIK-R09@v2's evidence: the currentness rules, the packet's examples, the per-kind dispatch, and the gate at each
-route (17 top-level test definitions and 1,334 physical source lines by static inspection, not fresh pytest collection).** The fixture is a converted leaf on real Git repositories: two invariants of
+route (17 top-level test definitions and 1,337 physical source lines by static inspection, not fresh pytest collection).** The fixture is a converted leaf on real Git repositories: two invariants of
 one family (`INV-AAAAAA` with entries on `land` and `keep` in `pkg/a.py`, `INV-BBBBBB` with `sibling` in `pkg/b.py`),
 the official `main` line in both repositories and the leaf's own `leaf` branches, so the parent line's memory tip and
 the leaf's own memory commits are different commits. Registered in the `unit-regression` lane
-(`test-evidence-lanes.toml:122`). The fixture world is module-local, by the dependency-ownership census's rule (a
+(`test-evidence-lanes.toml:214`). The fixture world is module-local, by the dependency-ownership census's rule (a
 separate support module was an unregistered evidence artifact on the worker's first integration run);
 `test_knowledge_gate_routes.py` imports it.
 
@@ -68,7 +68,7 @@ separate support module was an unregistered evidence artifact on the worker's fi
 ### Conventions
 
 - Real Git repositories under `tmp_path`, with a pinned environment (`git` helper); no network.
-- Static source population: 17 top-level test definitions and 1,334 physical lines. Earlier 17-definition/18-case/1,206-line figures are historical; no pytest collection, execution or limit enforcement was performed here.
+- Static source population: 17 top-level test definitions and 1,337 physical lines. Earlier 17-definition/18-case/1,206-line figures are historical; no pytest collection, execution or limit enforcement was performed here.
 
 ### Invariants And Boundaries
 
@@ -130,6 +130,8 @@ No cross-repo boundary is crossed by this file.
 - New invariants, recompute, incomplete runs and registry dispatch; added R53 predicate assertions cover source/membership/record currency. [4]
 - The closeout test answers the code commit's items with recomputed source-bound trace rows, then checks closure/restore and reaching the mutation seam, not a successful product memory commit. [11]
 - Current source delta inspected statically: Align renamed-but-unchanged test identifiers with four-item reopening and R53 source-bound predicates; replace stale population figures with actual static source counts, preserving the narrow closeout mutation-seam limit. [13]
+
+
 
 
 - The lane row. [10]

@@ -16,7 +16,7 @@
         "handoffEntry": "RP06",
         "leaf": "260928-MIK-L89"
       },
-      "rationale": "It replaces the existing hash history entry and omits the latest comparison override.",
+      "rationale": "writeReviewHashState preserves task-address parameters, pushes a new selection/comparison choice, and replaces the entry when the restoration owner requests that mode. It omits the latest comparison override.",
       "role": "enforcement"
     }
   ],
@@ -39,16 +39,16 @@
       ]
     },
     "7": {
-      "note": "Selection/comparison changes preserve task params and replace the current history entry.\n\nAnchor: \"// when it is not the latest (`comparison=<n>`). The page writes it with `history.replaceState`: a\"",
+      "note": "Selection/comparison changes preserve task params, push new choices and replace restored state.",
       "targets": [
         {
           "anchor": {
             "blob": "3a95dab3d3b1d2c6d67aa03480e0490509bfa53b",
-            "content": "sha256:70e077fc90707c90806c2fc0c52b4ff311b707bbec63a4fec37ee8aaa0cf7e42",
+            "content": "sha256:f33e24dbc5ce49e80acf7ffd034c71371ae1eedfd5411a08eeaf581fcf04f987",
             "locator": {
-              "end": 104,
+              "end": 52,
               "kind": "line_range",
-              "start": 91
+              "start": 34
             }
           },
           "kind": "code"
@@ -56,16 +56,15 @@
       ]
     },
     "8": {
-      "note": "The hook retains equal task targets and explicitly owns navigation state/listeners.\n\nAnchor: \"export function useReviewHash(\"",
+      "note": "The hook retains equal task targets and explicitly owns navigation state/listeners.",
       "targets": [
         {
           "anchor": {
             "blob": "3a95dab3d3b1d2c6d67aa03480e0490509bfa53b",
             "content": "sha256:75a46dd5a781e1822f41ad50d1db5987ffaf6cb7a13155a3fbfc53d1f3e4d44e",
             "locator": {
-              "end": 104,
-              "kind": "line_range",
-              "start": 55
+              "kind": "symbol",
+              "name": "useReviewHash"
             }
           },
           "kind": "code"

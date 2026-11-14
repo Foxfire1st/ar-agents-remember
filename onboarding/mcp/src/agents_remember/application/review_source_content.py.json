@@ -242,17 +242,21 @@
             "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
             "content": "sha256:dd8d91a91cd65fe4c2def41a42ee2ec108b32ed9ee94f9ca75321c0bc43b28c1",
             "locator": {
-              "kind": "file"
+              "end": 601,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
-            "content": "sha256:3961183c78ea5b46476a9f0f70ff4708efcfe33cf3f23935d58b54f2bde3259c",
+            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
+            "content": "sha256:2fae997a8c54667b84d6c17e203034c93bbada51cdab16588615a487be698f4a",
             "locator": {
-              "kind": "file"
+              "end": 101,
+              "kind": "line_range",
+              "start": 82
             },
             "path": "mcp/src/agents_remember/serving/scope.py"
           },
@@ -622,7 +626,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -634,7 +638,7 @@
         },
         {
           "anchor": {
-            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "blob": "54b818118629a276761c14d24046428232306f6e",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -692,7 +696,7 @@
       ]
     },
     "30": {
-      "note": "**The production-composition cases: both endpoints' own bytes against an independent `git show`, an unmapped addition's whole text, a deletion's whole base text, every non-text kind, a stated bounded expansion, generation binding across a branch advance, the pruned-blob and missing-object states, the unmeasured-generation confinement, a commit id refused, and the unwired process refused by name.**",
+      "note": "**The six linked composition cases check both endpoints' bytes against independent `git show`, an unmapped addition's whole candidate text, retained generation bytes after a branch advance, confinement of an unmeasured generation to the leaf's measured change set, refusal of a commit supplied as the tree generation, and the unwired route's HTTP 503 response. Deletion, non-text kinds, bounded expansion and missing/pruned objects are not assertions of these six linked cases.**",
       "targets": [
         {
           "anchor": {

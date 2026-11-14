@@ -108,7 +108,10 @@ A same-origin view over the local notes API; nothing crosses repositories.
 - TaskNotes imports the shared target under its existing local NotesReaderTarget name. [3]
 
 
+
+
 - The shared markdown renderer (inline reference rendering). [4]
+
 
 
 

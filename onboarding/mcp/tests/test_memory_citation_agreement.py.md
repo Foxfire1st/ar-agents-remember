@@ -70,7 +70,7 @@ rather than reach for a checkout that may not exist on the machine running them
 (`live_onboarding_root`, `:268-279`), and the mechanism cases build their worlds under
 `tempfile.TemporaryDirectory`.
 
-The lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:248-248`), so the module is in
+The lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:321-321`), so the module is in
 the **default selection** and the unit population a full run collects — it is not an integration-only
 or manually-invoked lane. The surviving live budget/worklist/heading cases additionally require `AR_ONBOARDING_ROOT` to name a
 memory tree ; without it they skip, and the retained mechanism cases still enforce their own budget/heading derivations. **A green lane run is therefore never evidence that the pins
@@ -327,6 +327,8 @@ trap rather than a green light.
 - The declaration assertion and stub screen use 10,000 unit and 2,000 integration cases; the overview citation range is derived from the actual declaration lines.  Anchor: `unit_case_budget` [34]
 
 - Both cells and the quote path preserve escaped/plain anchor agreement; the row case derives text from live cell spans. The separately retained budget-test range covers the declared-pair sentence, constant, marker-registration and older-budget-site assertions. [10]
+
+
 
 
 - The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [29]

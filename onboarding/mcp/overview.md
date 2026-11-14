@@ -96,7 +96,7 @@ The reviewer resolves one admitted comparison for subject inventory, rendering, 
 
 Expression cards group exact (path, range) locations, display authored rationale or its explicit gap, and use bounded exact-side excerpts/diffs with per-side currentness. Review change navigation now opens `ChangeSetViewer` through `ReviewSurface` using a recorded comparison; removed `SourceExplorer` and `LaneFileFocus` are not current owners. `serving/changeset_comparison.py` supplies recorded code/memory inventories and file diffs. The leaf-tree response and memo retain currentness/worklist rather than a knowledge diff; the shared diff helper remains for public `knowledge_diff`. Subject listing additionally carries an index-derived complete meaning/membership outline through `review_outline.py` and shared `review_record_changes.py` facts. Partial rosters state loaded versus total. Planning marks come from the same leaf-wide comparison. One shared lane classification serves gate linkage, unexplained/unknown navigation, counts, and server-computed change-kind facts; the client does not invent hunk arithmetic. Entry ranges count only at the recorded blob. Unknown/partial input cannot mean unchanged or gate-unexplained. Triage keeps unchanged siblings and does not force unreturned pages to load.
 
-The Knowledge reader is a separate taskless, read-only path/truth/code/census interface over memory trees and derived indexes. It names measured code-tree provenance, lists a directory's immediate children without continuation paging and pages recursive subtree entries, preserves full decision alternatives and reasons, links references, and combines record, history-row, and entry histories without authoring truth. Failed sources are partial/unavailable, not empty; invalid locators and control characters are refused; binary/oversized code yields bounded notices and a directory code request has a typed absence.
+The Knowledge reader is a separate taskless, read-only path/truth/code/census interface over memory trees and derived indexes. It names measured code-tree provenance, lists a directory's immediate children without continuation paging and pages recursive subtree entries, preserves full decision alternatives and reasons, links references, and combines record, history-row, and entry histories without authoring truth. Failed sources are partial/unavailable, not empty; invalid locators and control characters are refused; nonmedia binary or oversized text code yields bounded notices and a directory code request has a typed absence. Supported picture/video suffixes are classified first as `media`, with the selected code blob, media type and measured size. `ReaderCode` draws that state through the selected-memory-commit media URL. The separate bytes reader resolves the same selection and `blob_media` enforces the 16 MiB media-byte limit with HTTP 413; the code-result classification itself does not apply that byte limit, and `ReaderCode` does not supply `MediaView`'s `tooLarge` flag.
 
 Current tree review requires the judgment pane rather than projecting supporting-record channel bags, curator-assessment displays or applicability summaries. The pane carries this leaf’s selected-subject history rows in attempt order and proof entries with authored facets and after-code currentness; these are not executed proof results or inferred semantic conclusions. Measured no judgment and unreadable history remain distinct. Task context has no selected knowledge subject and reports unavailable judgment rather than an empty successful collection.
 
@@ -773,7 +773,10 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - The port field on the collaborators dataclass, and the rank reason it exists. [191]
 - **Retained historical source account — superseded by the current route account:** The registration that reads that port. [192]
 
+
+
 - The composition root's adapters for the review, the entry list, the source-content read, the tree view and the knowledge reader, each bound to this configuration. [193]
+
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [268]
 - **Retained historical source account — superseded by the current route account:** **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
@@ -791,7 +794,10 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** [214]
 - **Retained historical source account — superseded by the current route account:** **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [215]
 
+
+
 - **Retained historical source account — superseded by the current route account:** The composition root's third review port, and the registration call that passes all three collaborators. Anchor: `read_review_source_content` [216]
+
 
 - **Retained historical source account — superseded by the current route account:** **The two new owners this route reaches: the application module's own statement of what it answers and does not own, and the vocabulary's own statement of why it is separate from the review payload.** [217]
 - **Retained historical source account — superseded by the current route account:** The production-composition cases that drive the new route over a real enclosure: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set. [218]
@@ -871,7 +877,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - The port field on the collaborators dataclass, and the rank reason it exists. [359]
 - The registration that reads that port. [192]
 
-- The composition root supplies the application adapters to the serving collaborators. [360]
+
+
+- The composition root supplies the application adapters to the serving collaborators. Anchor: `ServingCollaborators` [360]
+
 
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:240-242 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7. Retired means the anchor no longer stands, not that the cited subject was deleted [361]
 - **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
@@ -1043,3 +1052,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.p
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [90]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [95]
 - Settings-selected launch requests same-build bound task server, preapproved surface and capsule system prompt without initial prompt; this is source wiring, not fresh native suppression acceptance. [383]
+
+- Supported code media is returned before text-size refusal and the reader renders its media state. [403]
+- Knowledge media URLs use the selected memory commit; byte delivery applies its actual16MiB bound. [404]

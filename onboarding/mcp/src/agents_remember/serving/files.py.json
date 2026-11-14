@@ -1,14 +1,69 @@
 {
   "path": "mcp/src/agents_remember/serving/files.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6f8e8df57dcb5a5fbd13671ea26ed6ad6557145f",
+        "content": "sha256:6976348371ba56a225a31c62f3f5a22f1338e76160d8c3b82957171b2ec42f17",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_file"
+        }
+      },
+      "id": "RLZ-2XQ3MA",
+      "invariant": "INV-FZSASV",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §7",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "The file content read returns binary metadata instead of control bytes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6f8e8df57dcb5a5fbd13671ea26ed6ad6557145f",
+        "content": "sha256:ba31b38fb67c978673f12086c71ccb590f648d08bfea0c02c69545018fb1127e",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_file_path"
+        }
+      },
+      "id": "RLZ-MKGKQD",
+      "invariant": "INV-0WMTQ4",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §8",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "The server resolves whether the confined repository path is an existing file.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6f8e8df57dcb5a5fbd13671ea26ed6ad6557145f",
+        "content": "sha256:1b57953bf09bf4b1ed6824b0316fb6efc5db34b084c8c4b17df80695f696aa17",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_media_file"
+        }
+      },
+      "id": "RLZ-PZTASD",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This file-viewer entry uses the same allowed scope before requesting media bytes.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `_resolve_within`) extracted to and imported from here (L3).",
       "targets": [
         {
           "anchor": {
-            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
+            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
             "content": "sha256:2fb25a3b0226d61a4674cd83a7e0bf5d9dd3d1448c5f61270f3cb50598a2bc1f",
             "locator": {
               "kind": "symbol",
@@ -25,12 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
             "content": "sha256:f1db24f3991040c0972bce367f03946a9c1e572104143b564792425e4c6972e9",
             "locator": {
-              "end": 174,
+              "end": 177,
               "kind": "line_range",
-              "start": 174
+              "start": 177
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -38,12 +93,12 @@
         },
         {
           "anchor": {
-            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
             "content": "sha256:27f6d2dab206e2569bfd327f5b82ed3e30f9cbb7ba0ae424701d962facad308f",
             "locator": {
-              "end": 219,
+              "end": 222,
               "kind": "line_range",
-              "start": 219
+              "start": 222
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -189,16 +244,43 @@
       ]
     },
     "9": {
-      "note": "The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper.\n\nAnchor: `discover_route_overviews`",
+      "note": "The files reader uses table_metadata for Markdown-table metadata and mirror_onboarding_path to derive the source-to-sidecar .md path.",
       "targets": [
         {
           "anchor": {
             "blob": "67a2ea5e0dc585ffaf0b58510d28387af2701164",
-            "content": "sha256:ef16e3d181bff438b06d21342ea3a7ca19450b970a8167b389bf5c8eeb47f3cc",
+            "content": "sha256:2cf0212c074e6e503105011826ed3a023433b3017f523d37b9fb88c36c1eb5ff",
             "locator": {
-              "kind": "file"
+              "end": 41,
+              "kind": "line_range",
+              "start": 28
             },
             "path": "mcp/src/agents_remember/kernel/onboarding_doc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+            "content": "sha256:8f09e6eb513ec1e3b96652de09519b0d96ef811cbc36202bf17ca56fc631bb35",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f8e8df57dcb5a5fbd13671ea26ed6ad6557145f",
+            "content": "sha256:677ce0c88d58cece6c17d4dff36f7a3ae00bc14cf3edc7fdd57f9b484ffe412d",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 282
+            }
           },
           "kind": "code"
         }

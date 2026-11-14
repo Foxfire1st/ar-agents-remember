@@ -36,13 +36,19 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 
 
-- Anchor: Current tree-child shutdown hook on collaborator and runtime. [13]
+
+
+- ServingCollaborators and _ServingRuntime both expose the optional tree-child shutdown callback. [13]
+
+
+
 
 
 
 
 
 - Anchor: Runtime without a terminal host or inbox registrar. [14]
+
 
 
 - [15]
@@ -87,7 +93,10 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 
 
+
+
 - Anchor: The retained runtime bundle shared by routes and loops. [27]
+
 
 
 
@@ -108,8 +117,14 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 - Serving lifespan teardown invokes a supplied review_trees_shutdown hook through the startup-owned worker helper before canceling and draining background tasks. [20]
 
-- ServingCollaborators and _ServingRuntime newly declare optional review_memory_root defaulting to None. ReviewMemoryRootPort is only a callable type alias. The projection stream route explicitly passes the runtime field to multiplex_review_memory. That helper skips root resolution for absent review identity, validates supplied selectors, resolves the port and reports missing adapter/root errors. The native worker enforces its own root-shape checks. These bodies do not prove the composition root's full leaf-admission policy. [31]
+
+
+- ServingCollaborators and _ServingRuntime declare optional review_memory_root defaulting to None. ReviewMemoryRootPort is a callable type alias. The projection stream passes the runtime field to multiplex_review_memory, which skips root resolution without review identity, validates supplied selectors, resolves the port and reports missing adapter/root errors. The memory-event subscription checks that the root is canonical, nonsymlink, a directory and outside provider-runtime paths. These bodies do not prove the composition root’s full leaf-admission policy. [31]
+
+
+
 
 - Composition carries application-tier explainer ports, native host and master-contract resolver without a serving-to-cli/application import; absence is surfaced as a named unavailable route rather than partial composition. [32]
+
 
 - SSE snapshots carry a supplied build-currentness reading in the served tail; deltas stay bare. [33]

@@ -9,9 +9,9 @@
 **The comparison's unit population: thirteen cases over the shared two-snapshot fixture, running
 in-process with no repository working tree, no network and no integration marker**
 (`pytestmark = pytest.mark.evidence_unit`). The module is registered in the **unit-regression** lane at
-`mcp/tests/test-evidence-lanes.toml:138`.
+`mcp/tests/test-evidence-lanes.toml:228`.
 
-**The attribution partition's nine cases live next door.** `260921-ICR-L4` appended nine `ICR-R04@v1`
+**The attribution partition's original nine-case cohort lives next door; that sibling now has ten source test definitions.** `260921-ICR-L4` appended nine `ICR-R04@v1`
 cases here (22 cases, 1384 lines). `260921-ICR-L57` moved them verbatim into
 [`test_knowledge_diff_attribution.py`](test_knowledge_diff_attribution.py.md) to bring this module back
 under the 1200-line rail, which leaves these thirteen cases in 714 lines. That module imports `diff_seed`
@@ -23,12 +23,13 @@ removed link, unchanged sibling, divergent revisions, explicit per-side selector
 present-outside-selection distinction, the display filter, the filter's binding, the limitation
 validator, truncation, and the no-trees expansion.
 
-**Frozen identity at review: 779 lines.** The bare `:NNN` line numbers in the prose below were measured
-against that file; the reference table cites the current 790-line module. The leaf's own evidence artifacts republish a **`M25`/`M26` citation pair that does
-not exist on these bytes** — `scope:640` / `:678` and `scope:565` / `:620`, which are the **pre-round
-741-line file's** numbers — and are carried to
-`KS-R09`/`L9` as documentation debt (ledger entry **A9**, finding **`L8-W1`**). **This card's numbers are
-the measured ones and the ledger is authoritative for the contested pair.**
+**Current source identity: 714 physical lines and thirteen top-level test definitions**
+at code tree `96bf7343`, measured by complete AST inspection. The earlier card's
+779-line review freeze, 741-line pre-round file, 790-line reference account and
+`M25`/`M26` citation dispute belong to earlier source epochs; those coordinates
+are not current navigation. The live function names and extents below describe
+this code tree. Earlier ledger/debt and mutation accounts remain historical
+provenance, with no new execution or verdict inferred.
 
 ## Code Commentary
 
@@ -57,16 +58,19 @@ absence, while forcing the second present turns a genuine deletion into a missin
 
 **The nodes that hold the response's honesty properties:**
 
-- `test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction` (`:603`, failing
-  assertion `:658`) — the limitation/omission check runs **in both directions**.
-- `test_a_truncated_comparison_cannot_be_presented_as_a_complete_one` (`:678`, failing assertion `:716`)
-  — a truncated comparison is never presentable as complete. **These two nodes are `M26` and `M25`
-  respectively**, and these are the measured line numbers (a verification report's `:570` is inside the
-  first node's docstring; the number pytest reports for its row is `:658`).
-- `test_the_filter_is_bound_into_the_comparison_identity_so_another_filter_cannot_reuse_it` (`:576`) —
-  a continuation cannot silently change the filter it was a position in.
-- `test_the_expansion_of_a_comparison_that_observed_no_trees_claims_no_change_set` (`:742`) — the
-  comparison whose sides named no code tree claims no change set.
+- `test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction`
+  (`:529-610`) checks limitation/omission agreement in both directions; the
+  model-owned refusal assertion is at `:604-607`.
+- `test_a_truncated_comparison_cannot_be_presented_as_a_complete_one`
+  (`:613-674`) checks honest complete/truncated pages and contradictory states;
+  the model-owned refusal assertion is at `:672-674`.
+- `test_the_filter_is_bound_into_the_comparison_identity_so_another_filter_cannot_reuse_it`
+  (`:502-523`) keeps continuation identity bound to the filter.
+- `test_the_expansion_of_a_comparison_that_observed_no_trees_claims_no_change_set`
+  (`:677-714`) reports the missing source observation without claiming an empty change set.
+
+The former `M26`/`M25` names are historical mutant attribution, not results of
+executing those mutants on this tree.
 
 ### Conventions
 
@@ -81,8 +85,7 @@ absence, while forcing the second present turns a genuine deletion into a missin
 - **Unit lane by behaviour, not by preference.** The module builds its two snapshots under `tmp_path`
   through the rows builder and drives the seam in-process; the only subprocesses are the
   fixture's own `git` calls.
-- **No weakened evidence.** No `skip`, `xfail`, `deselect`, per-file ignore, widened limit or deleted
-  node; thirteen cases before and after fix round 2's test-side edit.
+- **Historical fix-round boundary.** The earlier card recorded no `skip`, `xfail`, `deselect`, per-file ignore, widened limit or deleted node and thirteen cases before and after that fix round 2. That account is not fresh execution evidence for this tree.
 - **The evidence debt this module's numbers carry.** The mutation taxonomy over `M1`…`M27` is **19
   assertion kills, 1 exception death, 3 equivalent mutants, 3 covered gaps and 1 non-experiment = 27**;
   the four non-kill classes are disclosed as such and are recorded in
@@ -97,9 +100,7 @@ absence, while forcing the second present turns a genuine deletion into a missin
 
 ### Todos
 
-None recorded. `M25`/`M26`'s citations are correct **here** and must not be copied from the leaf's
-artifacts, whose pair is stale; if a successor needs the exact nodes, use the two entries in the
-"honesty properties" list above.
+None recorded. Use the current named functions and extents in the "honesty properties" list above. The earlier `M25`/`M26` citation dispute and its ledger account do not establish current source coordinates.
 
 ## Evidence
 
@@ -134,8 +135,8 @@ No configured domain documentation could be checked.
 
 - **The filter narrowing the display and never the comparison, and the filter bound into the comparison identity.** [10]
 
-- **`M26`'s node: the limitation validator, whose failing assertion on the frozen file is at `:658`.** [11]
-- **`M25`'s node: the truncated comparison, whose failing assertion on the frozen file is at `:716`.** [12]
+- The limitation/omission model guard, with honest construction and both mismatch directions checked in the named current function. Historical mutant attribution: `M26`. [11]
+- Complete/truncated page agreement and the model-owned contradiction refusal in the named current function. Historical mutant attribution: `M25`. [12]
 - The no-trees expansion that claims no change set. [13]
 
 - The fixture these cases run on. [14]
@@ -151,5 +152,11 @@ No configured cross-repository evidence is claimed.
 > Retained earlier citation wording: - **The unit-lane row this module occupies, and the governed support artifact it consumes.**
 
 
-- **The unit-lane row this module occupies, and the governed support artifact it consumes.**  Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [15]
-- **The unit-lane row this module occupies, and the governed support artifact it consumes.**  Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [16]
+
+
+- **The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [15]
+
+
+
+
+- **The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [16]

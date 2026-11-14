@@ -11,14 +11,15 @@ collection.** `D-15` measured the failure: `lifecycle_finalize_task` with `dry_r
 `state: cleanup-blocked` on a `driftSnapshot` blocker that carried no reason, while the real finalize
 on the same contract completed and reclaimed everything.
 
-The cause was **one missing keyword** in one branch. Every sibling collection in
-`terminal_result_blockers` (`mcp/src/agents_remember/worktrees/modules/terminal_validation.py:246-292`)
-propagates `preview=result.preview` into its `TerminalExpectation`; the `driftSnapshot` branch did
-not (`:280-286`). A preview's drift-snapshot entry answers `would_remove`, so read with the real
-call's pending key it looked like an entry that reclaimed nothing, and `_blocker`
-(`:644-660`) refused to invent the missing reason — correctly, because a blockage an operator cannot
-read is not a blockage. A preview therefore failed on exactly the contracts a real finalize
-completed.
+The historical cause was **one missing keyword** in the drift-snapshot branch. The current
+`terminal_result_blockers` is at
+`mcp/src/agents_remember/worktrees/modules/terminal_validation.py:260-312`; its drift-snapshot
+branch is at `:294-311` and now propagates `preview=result.preview` at line 309, as the sibling
+collections do. The retained defect account describes the earlier omission: a preview's
+`would_remove` entry was read with the real call's pending key and appeared to reclaim nothing.
+`_blocker` (currently `:715-731`) refuses a missing reason. The recorded failure therefore concerned
+previews of contracts that a real finalize completed; it is historical regression context, not a
+claim that the current branch still omits the keyword or a new execution result.
 
 ## Code Commentary
 
@@ -64,7 +65,7 @@ module-level functions with docstrings that state the role the value plays in th
 than restating its type, and every value is a plain `dict[str, object]` literal, which is what the
 validator's own signature accepts.
 
-**The lane registration is the manifest row**: this module carries **no `pytestmark`**, and its
+**Historical lane-registration account and coordinates:** this module carries **no `pytestmark`**, and its
 single lane row was **appended** to the end of `unit-regression` in
 `mcp/tests/test-evidence-lanes.toml:192` — item 16's half (a), because a mid-list insertion shifts
 every row below it.
@@ -118,6 +119,8 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented or measured in this file.
 
 No meaningful cross-repo references found.
+
+
 
 
 - The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution. [13]

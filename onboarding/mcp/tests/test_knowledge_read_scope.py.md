@@ -10,10 +10,12 @@ Pins exact scope stopping, retained-revision grouping, deterministic paging and 
 
 The sizes and catalog line addresses in the following original account are historical observations, not measurements of the present source tip.
 
-**The selective recorded-scope read's unit-lane population: the selection policy, revision grouping, the
-corrected count semantics, paging, budget, the execution bound and typed absence.** Twenty-one nodes in
-`unit-regression` (row `mcp/tests/test-evidence-lanes.toml:75`), all hermetic — temporary directories under
-`tmp_path`, in-process APSW databases, no repository working tree, no network, no integration marker.
+**The selective recorded-scope read's unit-lane population: the selection policy, revision grouping,
+count semantics, paging, budget, the execution bound and typed absence.** Each case builds isolated
+fixture state. The current fixture also creates a real Git tree, and `context_for` supplies its root
+and tree identity to anchor resolution; this is not a Git-free fixture. The earlier account recorded
+twenty-one `unit-regression` nodes and lane row `mcp/tests/test-evidence-lanes.toml:75`; those figures
+are retained as historical observations rather than a current population or address.
 
 **It is at 1 163 of the repository's 1 200-line hard limit: 37 lines of headroom. L8 must split it before
 adding cases**, which is exactly what fix round 2 did for the integration side rather than waiving the
@@ -32,36 +34,36 @@ The dataset is populated by read_scope_test_support and test-only knowledge_rows
 
 The nodes group by the property each protects, and the grouping is the useful reading:
 
-**The packet's stopping rule** (`:139`–`:390`) — the five nodes that measure the `P/I1/F/J1/G/K1` graph and
-its two subtleties: a path seed returns the sibling's realizations and **advertises** the unreached family;
+**The packet's stopping rule** (`:140`–`:389`) — the six nodes that measure the `P/I1/F/J1/G/K1` graph and
+its two subtleties: path and exact invariant-revision seeds close over directly containing families; a path seed returns the sibling's realizations and **advertises** the unreached family;
 an exact family revision seed stops after its own members; selecting the advertised family **explicitly** is
 what reaches the further realizations; the invariant seed and the family seed enumerate the same claims and
 locations; and a path seed and the exact invariant revision seed close over the same records. One node
-(`:510`) measures that a revision reached through two families appears **once** with both membership rows.
+(`:494`–`:525`) measures that a revision reached through two families appears **once** with both membership rows.
 
-**Revision grouping and the absent current-revision pointer** (`:391`–`:471`) — an identity seed returns
+**Revision grouping and the absent current-revision pointer** (`:395`–`:453`) — an identity seed returns
 the retained revision as its own group, and an exact revision seed selects only its named revision.
 The current text fixture records one revision per identity, not a sibling-history population. Nothing in either node can be read as a version or an insertion ordering.
 
-**Counts** (`:472`–`:543`) — claim identities and distinct source locations are counted **separately**
+**Counts** (`:459`–`:525`) — claim identities and distinct source locations are counted **separately**
 (a node that would pass under a single collapsed counter fails here).
 
-**Paging: completeness by continuation** (`:544`–`:958`) — the coverage the phase-1 candidate got wrong and
+**Paging: completeness by continuation** (`:531`–`:894`) — the coverage the phase-1 candidate got wrong and
 the review sealed:
 
-- **`test_a_page_budget_of_one_item_still_advertises_the_second_location`** (`:547`) is the node the
+- **`test_a_page_budget_of_one_item_still_advertises_the_second_location`** (`:531`–`:593`) is the node the
   requirement's own non-conforming example points at: a one-item page must not imply the invariant has one
   implementation. It asserts the corrected arithmetic — page 2's `primary_items_total` is the **declared**
   total, `primary_items_returned` is the walk's cumulative progress, and a later page's refusal still
   leaves every table and the logical digest unchanged.
-- **`test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection`** (`:658`)
+- **`test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection`** (`:642`–`:703`)
   derives the mandatory claim-id set from the **recorded rows** and compares the walk's union with it,
   rather than comparing the walk with the implementation's own full-budget page manifest. That
   circularity was the round-1 finding, and the derived comparison is the repair.
-- The truncation (`:838`), too-small-budget (`:872`), execution-bound (`:902`, `:930`) and
-  declared-order (`:722`) nodes.
+- The truncation (`:776`–`:807`), too-small-budget (`:810`–`:837`), execution-bound (`:840`–`:865`, `:868`–`:894`) and
+  declared-order (`:706`–`:773`) nodes.
 
-**Absence and the persisted-nothing property** (`:959`–`:1163`) — `registration_absent` for an
+**Absence and the persisted-nothing property** (`:900`–`:1041`) — `registration_absent` for an
 unregistered path, `selector_absent` for an identity that names nothing, a refused read leaving every table
 and the logical digest unchanged, and one node measuring file-selected topology and absent-path isolation.
 
@@ -82,21 +84,31 @@ and the logical digest unchanged, and one node measuring file-selected topology 
 - **Boundary.** This is a test module. It declares one lane, asserts behaviour and owns no production
   contract.
 
-### The ordering node, and why the fixture had to change
+### The current ordering node
 
-`test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label` (`:722`) is the node
-the baseline review sealed as **HIGH**: as published it was true for only about two of three fixture draws,
-because two successors share the `v2` label and a stable label sort can coincide with the stored-id order,
-so the leaf's own unit module was intermittently red. The repair is in the **fixture** (the three retry
-revision ids are now allocated with deterministic prefixes and the predecessor carries a distinct label)
-plus an assertion that the emitted page order **differs** from the label-major order, so the property is
-measured on every draw rather than on the draws that happen to disagree.
+`test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label` compares the
+emitted item keys with their sorted order, verifies the declared kind order, and checks stored
+revision-id order within each identity. The current text fixture retains one revision per identity;
+display versions are derived, so the earlier authored-label-disagreement fixture and its label-major
+assertion are gone. This is a source assertion account, not a new execution measurement.
 
-**The deterministic replacement for that property is the pure label-major key `(kind, label, item_id)`,
-measured at 20/20 across three samples.** The original draw-dependent `X1b` shape is **not** the row a
-successor should cite; the erratum's `4/6, 4/6, 6/6, 6/6` figures and the discarded 27-run total belong to
-the evidence apparatus, not to this module's contract.
+### Historical ordering-fixture investigation
 
+The following account records the earlier fixture and experiments; it does not describe the current
+single-revision fixture or claim current label-major coverage.
+
+> `test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label` (`:722`) is the node
+> the baseline review sealed as **HIGH**: as published it was true for only about two of three fixture draws,
+> because two successors share the `v2` label and a stable label sort can coincide with the stored-id order,
+> so the leaf's own unit module was intermittently red. The repair is in the **fixture** (the three retry
+> revision ids are now allocated with deterministic prefixes and the predecessor carries a distinct label)
+> plus an assertion that the emitted page order **differs** from the label-major order, so the property is
+> measured on every draw rather than on the draws that happen to disagree.
+>
+> **The deterministic replacement for that property is the pure label-major key `(kind, label, item_id)`,
+> measured at 20/20 across three samples.** The original draw-dependent `X1b` shape is **not** the row a
+> successor should cite; the erratum's `4/6, 4/6, 6/6, 6/6` figures and the discarded 27-run total belong to
+> the evidence apparatus, not to this module's contract.
 ### Todos
 
 The sizes and catalog line addresses in the following original account are historical observations, not measurements of the present source tip.
@@ -116,7 +128,6 @@ No Domain Documentation source is configured for this slice.
 
 - `test_an_exact_family_revision_seed_stops_after_its_own_members` supplies the current fixture or assertion described above. [19]
 
-- `test_an_identity_seed_returns_the_retained_revision_as_its_own_group` supplies the current fixture or assertion described above. [20]
 
 - `test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection` supplies the current fixture or assertion described above. [21]
 - `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged` supplies the current fixture or assertion described above. [22]
@@ -135,7 +146,6 @@ No configured domain documentation could be checked.
 - **The node the requirement's non-conformance example points at: a one-item page still advertises the second location, with the corrected counts.** [25]
 - **The completeness node that compares the walk against the mandatory set derived from recorded rows rather than against the implementation's own page manifest.** [26]
 
-- **The ordering node the review sealed as HIGH, and the fixture repair that made it deterministic.** [27]
 
 
 - The packet's stopping-rule nodes, including the explicit `G` expansion that reaches K1. [28]
@@ -143,7 +153,6 @@ No configured domain documentation could be checked.
 - The two equivalence nodes (invariant versus family seed; path versus exact revision seed). [29]
 
 
-- The revision-grouping nodes. [30]
 
 
 - The count-separation and multi-family-membership nodes. [31]
@@ -151,7 +160,6 @@ No configured domain documentation could be checked.
 - The truncation, too-small-budget, execution-bound and absence nodes. [32]
 
 
-- The persisted-nothing and current file-isolation nodes; the old requested-namespace fixture is not current coverage. [33]
 
 
 
@@ -183,4 +191,11 @@ No meaningful cross-repo references found.
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1-4036 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f2b7c648f540efb9d64ceea22e11e651cb5cc914. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
-- The lane row this module occupies.  Anchor: `test_knowledge_read_scope` [34]
+
+
+- The lane row this module occupies. Anchor: `test_knowledge_read_scope` Anchor: `test_knowledge_read_scope` [34]
+
+- **The current ordering node checks lexical stored-identity keys and declared kind order; the former authored-label-disagreement fixture is historical.** Anchor: `test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label` [27]
+- `test_an_identity_seed_returns_the_retained_revision_as_its_own_group` supplies the current fixture or assertion described above. Anchor: `test_an_identity_seed_returns_the_retained_revision_as_its_own_group` [20]
+- The revision-grouping nodes. Anchor: `test_an_exact_revision_seed_selects_only_the_named_revision` `test_an_identity_seed_returns_the_retained_revision_as_its_own_group` [30]
+- The persisted-nothing and current file-isolation nodes; the old requested-namespace fixture is not current coverage. Anchor: `test_an_unregistered_path_reports_registration_absence_rather_than_an_empty_scope` `test_a_selector_naming_no_recorded_identity_is_told_that_the_selector_is_absent` `test_each_dataset_file_is_selected_from_its_own_rows` `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged` [33]

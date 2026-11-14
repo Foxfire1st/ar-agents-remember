@@ -37,12 +37,12 @@ count are the same 37. The file was 599 lines / 27 cases when the worker deliver
 round rewrote the four live-state sites and left the case population alone, so this card is written
 against the current 1140 lines / 37 cases.**
 
-- `LeafDocumentAgainstContractTests` (257-357), **5 cases** — the historical master's seven
+- `LeafDocumentAgainstContractTests` (257-352), **5 cases** — the historical master's seven
   disagreements are reported with both populations stated; this master's two contracts and two
   documents agree at zero; the tolerant `L<n>` key is shown to find what the strict spelling
   under-reports; a contract with no leaf document is **counted rather than failed**; and a document
   reading `Completed` before its closeout has started is a finding, not a count.
-- `MasterRowAgainstLeafDocumentTests` (360-560), **7 cases** — the historical master's rows read
+- `MasterRowAgainstLeafDocumentTests` (360-555), **7 cases** — the historical master's rows read
   `Completed` over unlanded documents; this master's rows agree with their documents **at the
   declared leaf count** rather than at the live one; the boundary `D42` crossed is pinned from
   **both** sides by `test_a_row_is_never_completed_on_step_state_alone` (every step marked, document
@@ -54,12 +54,12 @@ against the current 1140 lines / 37 cases.**
   `test_a_row_completed_over_a_document_with_an_open_step_is_reported` (509) — reach the finding
   through the step-completeness conjunct rather than through the status, which is the half the
   sibling case cannot reach.
-- `RegisterOwnerArrowTests` (563-665), **5 cases** — this master's register is reported with its
+- `RegisterOwnerArrowTests` (563-660), **5 cases** — this master's register is reported with its
   arrow count stated **against the declared leaf set**, so the count the next leaf moves cannot red
   the case; a register whose arrows all resolve is clean; an arrow to an undeclared leaf is reported
   with **both** sets; only the State cell is graded, pinned as the reason the Owner cell is not; and
   a master with no leaf set **refuses** rather than reporting a zero.
-- `DeclaredFigureCurrencyTests` (668-1012), **12 cases** — the two shapes are measured from the source
+- `DeclaredFigureCurrencyTests` (668-1007), **12 cases** — the two shapes are measured from the source
   rather than declared by the test; the historical route documents are read **by Git object** at
   `e116e5ee`; a correct pair of figures is not a disagreement; a stale prose figure is reported
   against the current source; a correction sentence is graded at the value it corrected *to*; a
@@ -87,7 +87,7 @@ the artifact is absent, `_control_world` (102-109) copies whole task roots into 
 coordination tree, and `_memory_repository` (112-117) skips when the memory repository is absent.
 `_frozen_document` (120-141) writes out the bytes a **named revision** committed, because the working
 tree moves under a test and then the test lies about what it measured; it indexes the two route cards
-so two documents sharing a basename really are scanned as two. `_frozen_register_snapshot` (144-254)
+so two documents sharing a basename really are scanned as two. `_frozen_register_snapshot` (144-162)
 replaces the copied master's register with a snapshot that carries `R11`'s `→ L20` arrows **by
 construction** — pinning the live register would make the case assert the world's defect count, so
 repairing the world would turn the suite red precisely when the check it protects is right.
@@ -193,6 +193,8 @@ No separate cross-repository protocol is established by this file. The configure
 allowance is empty and no external source is relied upon here.
 
 No cross-repository evidence is required for these file-local claims.
+
+
 
 
 - The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [17]

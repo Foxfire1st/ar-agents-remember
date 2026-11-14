@@ -57,11 +57,11 @@ Two further cases hold the master net's endpoint-keyed reuse (L174 S7).
 `test_a_master_net_is_served_again_from_its_endpoint_commits` reads the real
 `/api/changeset/master` route twice on one registered app and requires the second read to
 add no net diff and no sidecar decision while both bodies match.
-cit:([`test_a_master_net_is_served_again_from_its_endpoint_commits`], mcp/tests/test_master_net_generation.py:741-788)
+cit:([`test_a_master_net_is_served_again_from_its_endpoint_commits`], mcp/tests/test_master_net_generation.py:743-790)
 `test_a_master_nets_sidecar_flags_follow_the_onboarding_index` requires a created or
 rewritten onboarding route index to move the `hasSidecar` flag on the next read, so the
 flags are observed rather than frozen.
-cit:([`test_a_master_nets_sidecar_flags_follow_the_onboarding_index`], mcp/tests/test_master_net_generation.py:791-842)
+cit:([`test_a_master_nets_sidecar_flags_follow_the_onboarding_index`], mcp/tests/test_master_net_generation.py:793-844)
 
 Additional address-preservation cases exercise quoted names, leading spaces and literal backslashes
 through inventory, closeout worklists, rename destinations and the changeset route. Their literal
@@ -69,9 +69,9 @@ addresses must survive routing unchanged; this source account is not a new execu
 
 The shared world is `MasterFixture` with its `master_fixture(tmp_path)` builder — a
 master-shaped fixture (series contract + two leaf contracts + real code/memory repos) that
-leaf one adds `src/feature.py` into and leaf two removes. cit:([`MasterFixture`], mcp/tests/test_master_net_generation.py:120-130) cit:([`master_fixture`], mcp/tests/test_master_net_generation.py:241-245)
+leaf one adds `src/feature.py` into and leaf two removes. cit:([`MasterFixture`], mcp/tests/test_master_net_generation.py:123-133) cit:([`master_fixture`], mcp/tests/test_master_net_generation.py:251-255)
 `pytestmark = pytest.mark.evidence_unit` declares the evidence lane; the lane row that makes
-these cases run at all is `mcp/tests/test-evidence-lanes.toml:113`.
+these cases run at all is `mcp/tests/test-evidence-lanes.toml:311-311`.
 
 ### Conventions
 
@@ -120,7 +120,12 @@ No applicable cross-repository source was found.
 
 
 
-- The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it. [5]
+
+
+- The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it. Anchor: `select_master_net` [5]
+
+
+
 
 
 - The lane manifest registers mcp/tests/test_master_net_generation.py in unit-regression. Membership selects evidence and does not establish execution. [4]

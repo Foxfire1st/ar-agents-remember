@@ -90,12 +90,15 @@ only the packet's boundary forbids it.
 
 ### Conventions
 
-`pytestmark = pytest.mark.evidence_unit` is the module's lane marker, and the module's path is
-registered in `mcp/tests/test-evidence-lanes.toml`'s `unit-regression` lane at `:111`. It also appears as a
-**source-derived consumer** in the two `consumer_scope = "exact"` rows of `mcp/tests/evidence-lifecycle.toml`
-that its imports make it a consumer of (`diff_scope_test_support.py` at `:1412`, `read_scope_test_support.py`
-at `:1445`) — so the catalog's consumer sets stay exact rather than approximate, and the leaf registers no
-artifact and no contract of its own.
+`pytestmark = pytest.mark.evidence_unit` is the module's marker; its current
+`unit-regression` declaration is `mcp/tests/test-evidence-lanes.toml:265`.
+The complete lifecycle catalog declares seven exact artifact-consumer
+relationships: `_user_settings_guard.py` (`:390`), `anchor_fixture_models.py`
+(`:910`), `diff_scope_test_support.py` (`:1318`), the Node `package-lock.json`
+fixture (`:2718`), `knowledge_row_codec_test_support.py` (`:3574`),
+`knowledge_rows_test_support.py` (`:3635`) and `read_scope_test_support.py`
+(`:4162`). These are catalog ownership declarations, not invocation or runtime
+consumption evidence. The earlier two-artifact account is superseded.
 
 Every case is deterministic: no case depends on wall-clock ordering, the Git observations pin `PATH`,
 `HOME` and `GIT_CONFIG_NOSYSTEM`, and the only subprocess is that observation — the route is
@@ -150,7 +153,7 @@ served body together.
 - **The shared R01 production fixture these cases extend rather than duplicate.** [5]
 
 
-- **The routes wired as the composition root wires them, over the real application owners.** 
+- **The routes wired as the composition root wires them, over the real application owners.**
 
 - The listing read and the expansion read, with the status carried beside the body so a refusal is asserted as one. [7]
 - The falsifiers for path confinement: the recorded base's paths that no change set contains. [8]
@@ -202,4 +205,6 @@ Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3372 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
-- The lane row and the two consumer rows this module's registration produced (diff-scope and read-scope shared support). [22]
+
+
+- The lane row and the two consumer rows declaring this module's membership (diff-scope and read-scope shared support). [22]

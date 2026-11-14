@@ -88,4 +88,6 @@ No meaningful cross-repo references found.
 No cross-repo boundary is exercised.
 
 
-- Lane registration.  Anchor: `test_knowledge_file_canonical` [15]
+
+
+- Lane registration. Anchor: `test_knowledge_file_canonical` Anchor: `test_knowledge_file_canonical` [15]

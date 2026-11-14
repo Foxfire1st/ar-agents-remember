@@ -827,7 +827,6 @@ The `memory_quality` application package shares its bounded run registry between
 - The writer's carry. [279]
 - The package map. [281]
 - The check order and the cache contract. [282]
-- The block, which never raises. [284]
 - The retained internal published-intent tree/block construction; it is not a published_intent field on the current registered read_ar_files naming response. [285]
 - The sides, refusing mixed formats. [287]
 - The cache path shared by the worklist and the gate. [290]
@@ -1078,3 +1077,5 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** **The owners this module calls instead of re-implementing: the inventory measurement and its side value, the resolution, and the shipped recheck.** [44]
 - Card measurements use the already-open after-side index and preserve named unavailable state. [504]
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:191-212 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted [341]
+
+- evaluate_answer computes the named records' currentness and may raise CURRENTNESS_FAILURES; failure_document separately constructs the failure block with unverifiableReason. [284]
