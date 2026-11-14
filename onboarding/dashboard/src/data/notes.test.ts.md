@@ -14,14 +14,14 @@ single-request reference resolution.
 
 ### Logic
 
-Two describe blocks in the `data/files.test.ts` idiom (a `stubFetch` handler by URL,
-`vi.unstubAllGlobals` after each test):
+Three cases in the single `data/notes client` describe block use the sibling suite’s fetch-stub
+idiom, with `vi.unstubAllGlobals` after each test:
 
 - **client** — `listFolder`/`readNote` build exactly
   `/api/notes/folder?repo&master&path&offset` and `/api/notes/read?repo&master&path` (path
   URL-encoded); a non-ok response rejects with the shared `FilesApiError`.
-- **resolveNoteReferences** — one POST carries the document's references and answers each
-  with a path or null; the client maps answered paths and throws on a malformed answer.
+- **resolveNoteReferences** — one POST carries the document’s references; a valid answer supplies
+  one path and one null. The case checks the retained path map, POST URL, method and JSON request body.
 
 ### Conventions
 
@@ -29,8 +29,9 @@ Pure unit tests — no component rendering, no store; fetch is stubbed per test.
 
 ### Invariants And Boundaries
 
-The suite pins the client contract: folder/read URLs, one POST for references, and a
-rejection on malformed answers, so the UI can never render a dead or guessed link.
+The suite checks folder/read URL construction, the valid reference-map POST, and a shared
+`FilesApiError` rejection for a non-ok read response. It supplies no malformed-answer or rendered-UI
+assertions, so it does not establish a guarantee about every link the UI can render.
 
 ## Evidence
 

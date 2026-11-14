@@ -53,11 +53,9 @@ payloads:
   storage defect rather than a new revision.
 - **The seal is verified on read, not only computed on write** — that is what the two read nodes
   establish.
-- **Boundary.** This module owns the sealed-field evidence only. The family revision *rules* are
-  `test_knowledge_family_revision.py`; the relation payload triggers are
-  `test_knowledge_relation_rules.py`. The digest mechanism itself is
-  `models/knowledge/digest.py` and the recomputation on read is `records.py`; neither is re-implemented
-  here.
+- **Boundary.** This module owns the sealed-field evidence only. The digest mechanism itself is
+  `models/knowledge/digest.py` and the recomputation on read is `memory/knowledge/records.py`;
+  neither is re-implemented here.
 
 ### Todos
 
@@ -106,5 +104,11 @@ No cross-repository behavior is implemented in this file.
 No meaningful cross-repo references found.
 
 
+
+
 - The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution. [10]
-- The unit-regression lane row this module is registered by.  Anchor: "mcp/tests/test_knowledge_revision_seals.py" [9]
+
+
+
+
+- The unit-regression lane row this module is registered by. Anchor: "mcp/tests/test_knowledge_revision_seals.py" Anchor: "mcp/tests/test_knowledge_revision_seals.py" [9]

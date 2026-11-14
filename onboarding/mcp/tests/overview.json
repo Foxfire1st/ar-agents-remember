@@ -73,14 +73,16 @@
       ]
     },
     "1414": {
-      "note": "**Retained historical source account — superseded by the current route account:** The lane row. Source caption: `mcp/tests/test_review_change_kinds.py`",
+      "note": "The lane row. Source caption: `mcp/tests/test_review_change_kinds.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -139,14 +141,16 @@
       ]
     },
     "1418": {
-      "note": "**Retained historical source account — superseded by the current route account:** The original two-lane-row caption names test_knowledge_closeout_gate.py. That module is currently declared in unit-regression; the historical count does not establish a second named current declaration or execution.",
+      "note": "The lane manifest declares test_knowledge_closeout_gate.py in unit-regression. Membership establishes no execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -208,14 +212,16 @@
       ]
     },
     "1422": {
-      "note": "Retained historical caption: The lane row. The current lane manifest declares mcp/tests/test_review_unexplained_lane.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance.",
+      "note": "The current lane manifest declares mcp/tests/test_review_unexplained_lane.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -240,14 +246,16 @@
       ]
     },
     "1424": {
-      "note": "Retained historical caption: The lane row. The current lane manifest declares mcp/tests/test_reconsideration_surfacing.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance.",
+      "note": "The current lane manifest declares mcp/tests/test_reconsideration_surfacing.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -308,14 +316,16 @@
       ]
     },
     "1428": {
-      "note": "**Retained historical source account — superseded by the current route account:** The lane row. Source caption: `mcp/tests/test_knowledge_reader.py`",
+      "note": "The lane row. Source caption: `mcp/tests/test_knowledge_reader.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -457,14 +467,16 @@
       ]
     },
     "1439": {
-      "note": "Retained historical caption: The two MIK-R25 lane rows. The current lane manifest declares mcp/tests/test_review_git_trees.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance.",
+      "note": "The current lane manifest declares mcp/tests/test_review_git_trees.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -507,14 +519,16 @@
       ]
     },
     "1442": {
-      "note": "**Retained historical source account — superseded by the current route account:** The decision-record lane row. Source caption: `mcp/tests/test_knowledge_decisions.py`",
+      "note": "The decision-record lane row. Source caption: `mcp/tests/test_knowledge_decisions.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -561,10 +575,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -577,10 +593,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -639,14 +657,16 @@
       ]
     },
     "1451": {
-      "note": "Retained historical caption: the planned-effects lane row. The current lane manifest declares test_planned_knowledge_effects.py in unit-regression; membership does not establish execution.",
+      "note": "The current lane manifest declares test_planned_knowledge_effects.py in unit-regression; membership does not establish execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -655,14 +675,16 @@
       ]
     },
     "1453": {
-      "note": "**Retained historical source account — superseded by the current route account:** The paging lane row.",
+      "note": "The lane manifest declares mcp/tests/test_knowledge_paging.py in unit-regression. Membership declares selection, not invocation.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -671,14 +693,16 @@
       ]
     },
     "1455": {
-      "note": "**Retained historical source account — superseded by the current route account:** The onboarding trace gate's lane row (`mcp/tests/test_onboarding_trace_gate.py`).",
+      "note": "The onboarding trace gate's lane row (`mcp/tests/test_onboarding_trace_gate.py`).",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -705,14 +729,16 @@
       ]
     },
     "1457": {
-      "note": "Retained historical caption: The lane row. The current lane manifest declares mcp/tests/test_knowledge_currentness.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance.",
+      "note": "The current lane manifest declares mcp/tests/test_knowledge_currentness.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -721,14 +747,16 @@
       ]
     },
     "1459": {
-      "note": "**Retained historical source account — superseded by the current route account:** The original two-lane-row caption names test_knowledge_worklist.py, currently declared in unit-regression. The historical count establishes no additional unnamed current module or execution.",
+      "note": "The lane manifest declares test_knowledge_worklist.py in unit-regression. Membership establishes no execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -741,10 +769,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -769,14 +799,16 @@
       ]
     },
     "1463": {
-      "note": "Retained historical caption: The three lane rows. The current lane manifest declares mcp/tests/test_knowledge_conversion.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance.",
+      "note": "The current lane manifest declares mcp/tests/test_knowledge_conversion.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -785,14 +817,16 @@
       ]
     },
     "1464": {
-      "note": "The lane manifest registers mcp/tests/test_knowledge_writer.py once in unit-regression. The former two-row caption is a historical account, not a claim of two current registrations. Membership does not establish execution.",
+      "note": "The lane manifest registers mcp/tests/test_knowledge_writer.py once in unit-regression. Membership does not establish execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -834,14 +868,16 @@
       ]
     },
     "1467": {
-      "note": "Retained historical caption: The two lane rows. The current lane manifest declares mcp/tests/test_knowledge_census_files.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance.",
+      "note": "The current lane manifest declares mcp/tests/test_knowledge_census_files.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -916,14 +952,16 @@
       ]
     },
     "1473": {
-      "note": "Historical three-lane-row caption: the original note names test_knowledge_index.py, currently declared in unit-regression. The historical count establishes no two additional unnamed current declarations or execution.",
+      "note": "The lane manifest declares test_knowledge_index.py in unit-regression. Membership establishes no execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -965,14 +1003,16 @@
       ]
     },
     "1476": {
-      "note": "**Retained historical source account — superseded by the current route account:** The original two-lane-row caption names test_knowledge_validator.py, currently declared in unit-regression. The historical count establishes no additional unnamed current module or execution.",
+      "note": "The lane manifest declares test_knowledge_validator.py in unit-regression. Membership establishes no execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1015,14 +1055,16 @@
       ]
     },
     "1479": {
-      "note": "Retained historical caption: The lane row. The current lane manifest declares mcp/tests/test_knowledge_history_files.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance.",
+      "note": "The current lane manifest declares mcp/tests/test_knowledge_history_files.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1048,14 +1090,16 @@
       ]
     },
     "1481": {
-      "note": "Retained historical caption: The two lane rows. The current lane manifest declares mcp/tests/test_knowledge_file_canonical.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance.",
+      "note": "The current lane manifest declares mcp/tests/test_knowledge_file_canonical.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1157,10 +1201,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1201,14 +1247,16 @@
       ]
     },
     "1491": {
-      "note": "**Retained historical source account — superseded by the current route account:** Its lane registration. Source caption: `mcp/tests/test_task_document_body_lookup.py`",
+      "note": "Its lane registration. Source caption: `mcp/tests/test_task_document_body_lookup.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1252,14 +1300,16 @@
       ]
     },
     "1497": {
-      "note": "Retained historical caption: Its lane registration. The current lane manifest declares mcp/tests/test_read_anchor_memo.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance.",
+      "note": "The current lane manifest declares mcp/tests/test_read_anchor_memo.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1268,14 +1318,16 @@
       ]
     },
     "1498": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 775 distinct test modules across its lane identities.",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 777 distinct test modules across its lane identities.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -1418,14 +1470,16 @@
       ]
     },
     "1507": {
-      "note": "**Retained historical source account — superseded by the current route account:** The unit-regression registry includes the revision-selection test module (`mcp/tests/test_knowledge_review_revision_selection.py`).",
+      "note": "The unit-regression registry includes the revision-selection test module (`mcp/tests/test_knowledge_review_revision_selection.py`).",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1807,14 +1861,16 @@
       ]
     },
     "1529": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 775 distinct test modules across its lane identities.",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 777 distinct test modules across its lane identities.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -1823,14 +1879,16 @@
       ]
     },
     "1530": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 775 distinct test modules across its lane identities.",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 777 distinct test modules across its lane identities.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2006,14 +2064,16 @@
       ]
     },
     "1541": {
-      "note": "Retained historical caption: **The lane row, inserted mid-list, and the row it displaced.** The current lane manifest declares mcp/tests/test_knowledge_review_one_sided_statements.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance.",
+      "note": "The current lane manifest declares mcp/tests/test_knowledge_review_one_sided_statements.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2124,7 +2184,7 @@
       ]
     },
     "1550": {
-      "note": "A task-attached launch's capsule is the compiler's own result for the same seat -- trusted instructions and semantic digest -- never a hand-built literal.\n\nAnchor: `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt`",
+      "note": "A task-attached launch's capsule is the compiler's own result for the same seat -- trusted instructions and semantic digest -- never a hand-built literal.\n\nAnchor: `test_a_task_attached_launch_carries_the_compilers_own_capsule_for_the_same_seat`",
       "targets": [
         {
           "anchor": {
@@ -2156,7 +2216,7 @@
       ]
     },
     "1552": {
-      "note": "One decision point with two answers: a capsule role compiles, and every other seat refuses with a status that names the role and delivers nothing.\n\nAnchor: `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect`",
+      "note": "One decision point with two answers: a capsule role compiles, and every other seat refuses with a status that names the role and delivers nothing.\n\nAnchor: `test_the_mode_gate_names_capsule_or_refused_for_every_seat_class`",
       "targets": [
         {
           "anchor": {
@@ -2172,7 +2232,7 @@
       ]
     },
     "1553": {
-      "note": "The free agent's admission names its absent task plane and its capsule identity moves with the seat; the replacement route refuses by name for an unmarked stage part, a role the stage lacks and a missing required file.\n\nAnchor: `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule`",
+      "note": "The free agent's admission names its absent task plane and its capsule identity moves with the seat; the replacement route refuses by name for an unmarked stage part, a role the stage lacks and a missing required file.\n\nAnchor: `test_the_free_agent_admission_names_its_absent_task_plane`; `test_the_free_agent_capsule_identity_moves_with_the_seat`; `test_role_start_replacement_route_names_an_unmarked_stage_part`; `test_role_start_replacement_route_names_a_role_the_stage_lacks`; `test_role_start_replacement_route_names_a_missing_required_file`",
       "targets": [
         {
           "anchor": {
@@ -2292,14 +2352,16 @@
       ]
     },
     "1561": {
-      "note": "The lane row selects mcp/tests/test_capsule_serving.py into unit-regression. The former integration classification was incorrect; membership is selection, not execution.",
+      "note": "The lane row selects mcp/tests/test_capsule_serving.py into unit-regression. Membership is selection, not execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2348,12 +2410,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2366,12 +2428,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2384,12 +2446,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2402,12 +2464,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2420,12 +2482,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2438,12 +2500,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2456,12 +2518,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2474,12 +2536,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2492,12 +2554,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2539,14 +2601,16 @@
       ]
     },
     "1584": {
-      "note": "**Retained historical source account — superseded by the current route account:** The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane.",
+      "note": "The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2607,14 +2671,16 @@
       ]
     },
     "1590": {
-      "note": "The lane manifest currently registers mcp/tests/test_memory_attribution_producers.py in unit-regression. Historical L4 account: this census module's lane row closed the gap the L4 route section recorded. The historical closure account is retained; the current membership declaration selects evidence and does not establish execution.",
+      "note": "The lane manifest currently registers mcp/tests/test_memory_attribution_producers.py in unit-regression. The current membership declaration selects evidence and does not establish execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2919,14 +2985,16 @@
       ]
     },
     "1615": {
-      "note": "**Retained historical source account — superseded by the current route account:** The read fixture and its registered contract.",
+      "note": "The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2935,14 +3003,16 @@
       ]
     },
     "1616": {
-      "note": "**Retained historical source account — superseded by the current route account:** The unit-lane row the read's selection module occupies.",
+      "note": "The lane manifest declares mcp/tests/test_knowledge_read_scope.py in unit-regression. Selection is not execution or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2951,14 +3021,16 @@
       ]
     },
     "1617": {
-      "note": "**Retained historical source account — superseded by the current route account:** The two integration-lane rows the read's boundary and path modules occupy.",
+      "note": "The lane manifest declares mcp/tests/test_knowledge_read_boundaries.py and mcp/tests/test_knowledge_read_paths.py in integration. Membership is selection, not execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2967,14 +3039,16 @@
       ]
     },
     "1618": {
-      "note": "**Retained historical source account — superseded by the current route account:** The read fixture and its registered contract.",
+      "note": "The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2983,14 +3057,16 @@
       ]
     },
     "1619": {
-      "note": "**Retained historical source account — superseded by the current route account:** The unit-lane row the read's selection module occupies.",
+      "note": "The lane manifest declares mcp/tests/test_knowledge_read_scope.py in unit-regression. Selection is not execution or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -3075,38 +3151,6 @@
               "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1625": {
-      "note": "**Retained historical source account — superseded by the current route account:** **The fixture and the governed contract it is registered under.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1626": {
-      "note": "**Retained historical source account — superseded by the current route account:** **The fixture and the governed contract it is registered under.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }
@@ -3283,10 +3327,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3295,14 +3341,16 @@
       ]
     },
     "1639": {
-      "note": "**Retained historical source account — superseded by the current route account:** The read fixture and its registered contract.",
+      "note": "The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3311,32 +3359,18 @@
       ]
     },
     "1640": {
-      "note": "**Retained historical source account — superseded by the current route account:** The two integration-lane rows the read's boundary and path modules occupy.",
+      "note": "The lane manifest declares mcp/tests/test_knowledge_read_boundaries.py and mcp/tests/test_knowledge_read_paths.py in integration. Membership is selection, not execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1641": {
-      "note": "**Retained historical source account — superseded by the current route account:** **The fixture and the governed contract it is registered under.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }
@@ -3430,14 +3464,16 @@
       ]
     },
     "1647": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 775 distinct test modules across its lane identities.",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 777 distinct test modules across its lane identities.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3849,12 +3885,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3867,12 +3903,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3885,12 +3921,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3903,12 +3939,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3921,12 +3957,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3939,12 +3975,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3957,12 +3993,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3975,12 +4011,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
             "content": "sha256:f5e44188b833ecd2f0bf2b4e6ecbdb61c26720d67c78fe6adebd5193a6c9e290",
             "locator": {
-              "end": 4906,
+              "end": 4910,
               "kind": "line_range",
-              "start": 4831
+              "start": 4835
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3989,14 +4025,16 @@
       ]
     },
     "1689": {
-      "note": "**Retained historical source account — superseded by the current route account:** The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane.",
+      "note": "The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4027,10 +4065,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4321,7 +4361,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
+            "blob": "92a6666695c3ec77242a1fd3109a44b485f1ce2b",
             "content": "sha256:d6e124db718e578f4b5a50d0d80ee21f849b2779c394622d527e846ee47ee59e",
             "locator": {
               "end": 159,
@@ -4721,14 +4761,16 @@
       ]
     },
     "1722": {
-      "note": "**Retained historical source account — superseded by the current route account:** The landing-report module (`mcp/tests/test_landing_report.py`) is selected in unit-regression; registration is not execution.",
+      "note": "The landing-report module (`mcp/tests/test_landing_report.py`) is selected in unit-regression; registration is not execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4741,12 +4783,53 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:a765e9d3152e20036f466b7a78a1b346674ef0982da12a06bb7cc0e11cfdbcf5",
+            "locator": {
+              "end": 881,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:614c2bf8ff9a6dbe99d62f089cac8d9e8b863313a1234e97b104f8e717a95bc3",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:f55f2cb63aa2086f6a03f7397289728ff4ed6119f0809d0d7f2c829f929a9785",
+            "locator": {
+              "end": 912,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
           },
           "kind": "test"
         }
@@ -5290,10 +5373,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -5935,7 +6020,7 @@
       ]
     },
     "1788": {
-      "note": "The selected frame-store case asserts that the largest admitted store reopens after a restart (`test_review_frame_store.py::test_f16_the_largest_admitted_store_reopens_after_a_restart`); binding, publication and reclamation are asserted by the module's other cases, not by this one.",
+      "note": "The selected frame-store case publishes ten revisions of one lineage, reopens revision 10 through a second store instance, reads revisions 10 and 1 and checks retained usage counters (`test_review_frame_store.py::test_f16_a_lineage_past_eight_revisions_reopens_after_a_restart`); binding, publication and reclamation are asserted by the module's other cases, not by this one.",
       "targets": [
         {
           "anchor": {
@@ -6457,14 +6542,16 @@
       ]
     },
     "1808": {
-      "note": "The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 17 lifecycle contracts and 116 artifacts. The parsed lane catalog contains 775 selected lane members.",
+      "note": "The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 17 lifecycle contracts and 116 artifacts. The parsed lane catalog contains 777 selected lane members.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

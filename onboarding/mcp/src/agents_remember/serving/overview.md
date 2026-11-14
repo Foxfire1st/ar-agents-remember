@@ -366,7 +366,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** [55]
 
-- **The caller resolves the two sides independently: an unselected repository returns an empty range before endpoint admission; caught `not-recorded` supplies a code detail and no memory detail, while other endpoint errors propagate.** [56]
+
+
+- **The caller that owns the degradation policy and (260921-ICR-L25) carries the code half's named absence instead of raising it: the two sides resolve independently, and only an unrecorded memory half empties.** [56]
+
 
 - **The doc-reader entry point that publishes the unrecorded state in the body.** [57]
 
@@ -374,11 +377,14 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - **The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.** [59]
 
+
+
 - **The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.** [60]
+
 
 - **The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.** [61]
 
-- **The nine cases that measure this route's half of the change, through real contracts, repos and routes.** [62]
+- The two cited cases assert a zero master net with nonzero leaf counters and a named refusal when a validated diff later fails; source inspection establishes their assertions, not a fresh execution. [62]
 
 - **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** [63]
 
@@ -474,7 +480,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [137]
 
+
+
 - The injected canonical memory-root port is carried from collaborators into the shared serving runtime, not resolved from arbitrary client roots. [138]
+
 
 - The existing state stream opts into review-memory invalidations only through supplied review identity; no-selector streams retain their ordinary event path. [139]
 

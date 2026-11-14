@@ -52,16 +52,17 @@ coordination root the other closeout boundary suites use. It drives production o
 (`graph_context`, `capture_projection_source`) and reads the classifier through its module-private
 `_problem`, because the classification decision is the subject rather than a public surface.
 
-The module is registered in the **integration** lane of `mcp/tests/test-evidence-lanes.toml`
-(entry row `:137`) by the same change set that created it: it composes the real `QueueFixture`
-over temporary Git repositories and drives the production graph admission and projection path, so
-that is its behaviour-preserving lane. It is a declared exact consumer of
-`mcp/tests/closeout_input_test_support.py` (consumer row `:307`) and
-`mcp/tests/curator_coherence_test_support.py` (consumer row `:366`) in
-`mcp/tests/evidence-lifecycle.toml`, both reached transitively through `test_closeout_queue`,
-which imports `curator_coherence_test_support` and `test_worktree_support`, and the latter imports
-`closeout_input_test_support`. Consumer declarations are ownership accounting only; they are not
-execution or acceptance evidence.
+The module is registered in the **integration** lane of
+`mcp/tests/test-evidence-lanes.toml:672`. It composes the real `QueueFixture` over
+temporary Git repositories and drives production graph admission and projection.
+The complete `mcp/tests/evidence-lifecycle.toml` declares four exact artifact
+consumer relationships: `_user_settings_guard.py` (`:203`),
+`curator_coherence_test_support.py` (`:1164`),
+`fixtures/repository_profiles/node/package-lock.json` (`:2531`) and
+`writer_worklist_test_support.py` (`:4782`). These declarations are dependency
+ownership accounting, not proof of runtime consumption, execution or acceptance.
+The earlier `closeout_input_test_support.py`/two-artifact and row137/307/366
+account is superseded; its creation/import narrative is retained in repair history.
 
 ### Invariants And Boundaries
 
@@ -151,5 +152,11 @@ Current source: The current lifecycle catalog declares this module as an exact c
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1041-1041 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1053-1053 - the bytes it recorded now occur 78 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1840-1840 - the bytes it recorded now occur 23 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1919-1919 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3891-3891 - the bytes it recorded now occur 311 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3903-3903 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:150-777 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a416985be1ec9cf8ec92f64882f50ca012518ac4; mcp/tests/evidence-lifecycle.toml:1040-1184 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/tests/evidence-lifecycle.toml:1827-2454 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ca4abf009f8afe94468f68137ddbae38930c0649. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
+
+
 - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_closeout_projection_source_classification.py" [10]
+
+
+
+
 - The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence. The `curator_coherence_test_support.py` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. The `writer_worklist_test_support.py` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. [9]

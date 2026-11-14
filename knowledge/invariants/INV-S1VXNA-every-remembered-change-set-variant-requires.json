@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The owner-validation test matrix prevents a stale change set from being restored merely because an enclosure or a same-ID task in another repository or master survives."
+  },
+  "applicability": "Remembered change-set targets, including leaf, review, comparison, master-net and enclosure-alias variants, when Operations validates ownership on return.",
+  "conditions": [
+    "Validation waits for task-population hydration.",
+    "The current task population carries the exact repository and master-qualified owner.",
+    "A server-carried task placeholder counts as present; no additional stub classification is imposed.",
+    "An enclosure alias must still identify its exact current leaf or master owner."
+  ],
+  "exclusions": [
+    "Inferring existence from a surviving enclosure alone.",
+    "Using another repository's or another master's task with the same ID as the owner."
+  ],
+  "id": "INV-S1VXNA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-L5-R1-014; dashboard/src/cockpit/tabMemory.test.ts :: keeps $name while its owning task exists; dashboard/src/cockpit/tabMemory.test.ts :: dismisses $name after its owning task is removed; dashboard/src/cockpit/tabMemory.test.ts :: dismisses $name when its task is gone and its enclosure is still projected; dashboard/src/cockpit/tabMemory.test.ts :: keeps $name until the task population is hydrated; dashboard/src/cockpit/tabMemory.test.ts :: dismisses $name when only another repository holds its task id; dashboard/src/cockpit/tabMemory.test.ts :: dismisses $name when only another master holds its task id; dashboard/src/cockpit/tabMemory.test.ts :: keeps $name from its task-bound worktree without a separate enclosure; dashboard/src/cockpit/tabMemory.test.ts :: keeps $name when its enclosure is projected apart from its task; dashboard/src/cockpit/tabMemory.test.ts :: dismisses $name when another task retains its orphaned worktree; dashboard/src/cockpit/tabMemory.test.ts :: dismisses an enclosure scope that no current task or enclosure names"
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-L5-R1-014",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every remembered change-set variant requires its current owning task in the same repository and master after hydration, even when its enclosure or another task survives.",
+  "status": "proposed",
+  "supersedes": []
+}

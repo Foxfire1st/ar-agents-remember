@@ -22,9 +22,10 @@ and the item still counted as blocked, and the only producer able to hand it `{"
 with no reason at all was `application/provider_runtime.py::remove_tree`'s post-reclaim
 "still present" branch.
 
-The cases are integration-lane members (`mcp/tests/test-evidence-lanes.toml`, entry row `:219`), and
-the module is registered as a declared exact consumer of nine `mcp/tests/evidence-lifecycle.toml`
-artifacts and of the ambient-role runner in `dependency_ownership.py`.
+The cases are integration-lane members (`mcp/tests/test-evidence-lanes.toml:753`).
+The complete lifecycle catalog declares this module as an exact consumer on **14**
+artifact rows. That dependency ownership and the ambient-role runner declaration
+are selection metadata, not execution evidence.
 
 ## Code Commentary
 
@@ -32,15 +33,15 @@ The existing first-call finalization case also calls public abandon preview befo
 
 ### Logic
 
-Ten cases in two groups: two drive the whole public tool, five pin the two invariant owners
+Ten cases: two drive the whole public tool, five pin the two invariant owners
 directly, and three (added by `260918-TSIP-L6`) hold the drift-snapshot preview repair.
 
-**The whole-tool boundary.** `_landed_leaf` (`:102-106`) builds a real applied landing from the shared
-external-memory authority fixture with `publish_closeout_evidence=True`, `_landed_leaf_config` (`:107-120`) completes the integration through the public `worktree_integrate_tool` under
-`auto_land_on_integration=True` and asserts `integrated`, and `_finalize` (`:127-133`) calls the
+**The whole-tool boundary.** `_landed_leaf` (`:108-110`) builds a real applied landing from the shared
+external-memory authority fixture with `publish_closeout_evidence=True`, `_landed_leaf_config` (`:113-124`) completes the integration through the public `worktree_integrate_tool` under
+`auto_land_on_integration=True` and asserts `integrated`, and `_finalize` (`:133-137`) calls the
 public `lifecycle_finalize_task_tool`.
 
-- `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` (`:134-190`) reproduces the L6
+- `test_a_torn_down_provider_runtime_finalizes_on_the_first_call` (`:140-194`) reproduces the L6
   shape. The provider-runtime tree is deleted first, so the port answers the teardown with
   `providerRuntime: {"removed": False, "reason": "already-absent"}` — a provider already reclaimed is
   not a blockage. The first and only finalize call must finalize the edge: `state: finalized`,
@@ -50,7 +51,7 @@ public `lifecycle_finalize_task_tool`.
   original physical event**: the case substitutes the port's own answer instead of re-enacting a
   prior real reclaim, so it pins the decision the tool makes given that answer, not the physical
   history that produced the reported payload.
-- `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason` (`:191-249`) is the
+- `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason` (`:197-253`) is the
   genuine counterpart. A real permission failure (`chmod 0o500`, no reclaim image configured) leaves
   the provider-runtime tree in place, and the refusal must be `cleanup-blocked` / `blocked`, must
   report `removed: False` with the reason `remove_tree` produces (`permission denied: ...`), must
@@ -61,26 +62,26 @@ public `lifecycle_finalize_task_tool`.
 
 **The two invariant owners directly.** These cases need no tool call.
 
-- `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason` (`:250-272`) is the
+- `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason` (`:256-276`) is the
   exact L6 input — `{"state": "torn-down", "providerRuntime": {"removed": False}}` — and asserts the
   one blocker names `no reason reported by the terminal result`.
-- `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` (`:273-288`) asserts `_blocker`
+- `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` (`:279-292`) asserts `_blocker`
   raises `RuntimeError` naming the component for `None`, `""`, `"   "` and `17`.
-- `test_an_empty_provider_reason_is_replaced_by_a_named_statement` (`:289-314`) pins that a blank
+- `test_an_empty_provider_reason_is_replaced_by_a_named_statement` (`:295-318`) pins that a blank
   producer reason — which `_blocked` correctly still reads as a blockage — cannot reach an operator
   as `reason: ""`.
-- `test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing` (`:315-340`) pins the sole
+- `test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing` (`:321-344`) pins the sole
   producer of that field: `already-absent` for a path that is not there, and a plain
   `{"removed": True}` with no reason for a real removal.
-- `test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived` (`:341-381`) drives the
+- `test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived` (`:347-385`) drives the
   branch that could answer silently: the first `rmtree` raises `PermissionError`, the ownership
   reclaim succeeds, the retry fails again, and the surviving tree must report
   `still present after docker ownership reclaim` alongside `reclaimedViaDocker: True`.
 
 ### Conventions
 
-The `bound_worktree_services` fixture (`:91-101`) rebinds the worktree services with a
-`citation_guard` double (`_NoManagedCitationCache`, `:77-90`) whose `guard` returns production's own
+The `bound_worktree_services` fixture (`:97-105`) rebinds the worktree services with a
+`citation_guard` double (`_NoManagedCitationCache`, `:77-93`) whose `guard` returns production's own
 authority-free `TerminalNamespaceGuard(None, None, None)`; only the cache reservation is a double, and
 it is the value production yields for a fixture leaf with no managed cache namespace. The module is
 marked `pytest.mark.integration` and drives real disposable repositories and real worktrees under
@@ -180,28 +181,27 @@ routes run at all. No production cross-repository authority is claimed by this f
 
 ## 260918-TSIP-L6 The Drift-Snapshot Preview Cases
 
-This leaf added three cases (`:382-480`) to the module, and the module grew **361 → 480 lines**:
-`test_a_drift_snapshot_preview_is_not_read_as_an_unreclaimed_result` (`:382-420`) drives the
-drift-snapshot expectation directly with `preview=True` and requires the entry to be pending
-rather than blocked; `test_a_real_reasonless_drift_snapshot_still_refuses_rather_than_passing_as_preview`
-(`:421-444`) is the counterpart that keeps the repair from becoming a blanket success; and
-`test_the_cleanup_preview_of_a_task_with_a_drift_snapshot_reports_no_blocker` (`:445-480`) drives
-the *tool-level* cleanup preview, which is the route the defect was found on (`T62`/`D49`).
+At the `260918-TSIP-L6` epoch, the earlier card recorded a growth from 361 to 480
+lines when three drift-snapshot preview cases were added. That account's line
+figures are historical. At code tree `96bf7343`, the complete module has **486**
+physical lines and **10** top-level test definitions. The current preview cases
+are `test_a_drift_snapshot_preview_is_not_read_as_an_unreclaimed_result`
+(`:388-424`),
+`test_a_real_reasonless_drift_snapshot_still_refuses_rather_than_passing_as_preview`
+(`:427-448`), and
+`test_the_cleanup_preview_of_a_task_with_a_drift_snapshot_reports_no_blocker`
+(`:451-486`). The first distinguishes a pending preview from a blocker, the
+second preserves a real reasonless refusal, and the last checks public cleanup
+preview. The current integration lane row is
+`mcp/tests/test-evidence-lanes.toml:753`. These coordinates describe the current
+source; no fresh test invocation is claimed.
 
-**Every line figure in this card's body and reference table is re-derived at this candidate**,
-not shifted: the module's definitions moved because the new cases are appended at the end and the
-`preview=result.preview` repair sits at `terminal_validation.py:285-292`. The case figures are
-`_landed_leaf` `:102-106`, `_landed_leaf_config` `:107-120`, `_landed_leaf_document` `:121-126`,
-`_finalize` `:127-133`, `test_a_torn_down_provider_runtime_finalizes_on_the_first_call`
-`:134-190`, `test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason`
-`:191-249`, `test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason`
-`:250-272`, `test_an_unnameable_blocker_reason_is_refused_at_its_own_source` `:273-288`,
-`test_an_empty_provider_reason_is_replaced_by_a_named_statement` `:289-314`,
-`test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing` `:315-340` and
-`test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived` `:341-381`. The module
-now has **ten** cases, not seven, and its lane row is
-`mcp/tests/test-evidence-lanes.toml:220` (it read `:177` when this card was written).
+
 
 
 - The integration lane declares test_terminal_blocker_reasons.py; membership is not execution evidence. [23]
+
+
+
+
 - The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation. [25]

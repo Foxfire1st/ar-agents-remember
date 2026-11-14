@@ -187,7 +187,7 @@ No configured live documentation source was available for this pass.
 - The free-agent admission case names its absent task plane with free-agent:bootstrap, checks is_taskless, requires a task-document parser refusal of that identity, and checks a sha256 capsule digest. [2]
 
 
-- The negative case: an un-compilable role refuses by name before any host effect. [3]
+- The mode-gate case checks that unaddressable roles yield a named refusal with no delivery; it also checks an admitted bootstrap capsule. It is not a host-effect measurement. [3]
 
 
 - The one decision point, for every seat class. [4]
@@ -243,5 +243,11 @@ the fixture it is pinned against lives in this repository.
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1064-1064 - the bytes it recorded now occur 91 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1885-1885 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:402-402 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:760-760 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
-- The lane row D9's fail-closed loader requires for every new test module.  Anchor: "mcp/tests/test_capsule_launch_wiring.py" [15]
+
+
+- The lane row D9's fail-closed loader requires for every new test module. Anchor: "mcp/tests/test_capsule_launch_wiring.py" Anchor: "mcp/tests/test_capsule_launch_wiring.py" [15]
+
+
+
+
 - The three governed-artifact rows registering this module as a consumer, beginning with the _user_settings_guard.py row. The `curator_coherence_test_support.py` row registers `test_capsule_launch_wiring.py` as a consumer. The `fixtures/repository_profiles/node/package-lock.json` row registers `test_capsule_launch_wiring.py` as a consumer. [21]

@@ -11,7 +11,7 @@ Git path spelling and lookup failure remain distinct from an absent source.
 The sizes and catalog line addresses in the following original account are historical observations, not measurements of the present source tip.
 
 **What a *path* is to this read: an address, not a pattern.** Five nodes in `integration` (row
-`mcp/tests/test-evidence-lanes.toml:158`) covering the one contract the review corrected most sharply — the
+`mcp/tests/test-evidence-lanes.toml:698-698`) covering the one contract the review corrected most sharply — the
 predicate that decides which spellings are addressable, and the requirement that **a refusal describe the
 actual cause**.
 
@@ -38,12 +38,12 @@ The current cases assert typed path-spelling refusal separately from lookup avai
 
 ### Logic
 
-**`test_a_pathspec_magic_spelling_is_refused_by_the_typed_path_and_never_answered_as_absence`** (`:178`) —
+**`test_a_pathspec_magic_spelling_is_refused_by_the_typed_path_and_never_answered_as_absence`** (`:183`) —
 the boundary node. It refuses a leading-`:` spelling at **both** typed boundaries (`SourceAnchorDraft`'s
 write path and `PathSeed`'s seed path) and measures the Git facts themselves with its own subprocess calls,
 so the premise is evidence rather than prose.
 
-**`test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob`** (`:256`) — the
+**`test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob`** (`:261`) — the
 node the review's correction rests on. It commits its own tree holding **both** `src/a1.py` and
 `src/a[1].py`, measures `git ls-tree` addressing `src/a[1].py` literally with `rc=0`, then (1) authors a
 `SourceAnchorDraft` at that path through the typed write path, (2) stores the claim and anchor through the
@@ -62,8 +62,8 @@ outcome to `unsupported_locator` — the exact flip the reviewer measured on the
 > in `detail`, **not** `path_absent`.
 
 
-**`test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path`** (`:445`) and
-**`test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path`** (`:539`) — the two producers of
+**`test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path`** (`:377`) and
+**`test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path`** (`:471`) — the two producers of
 `recorded_object_unavailable` pinned separately. The second drives the `OSError` producer by intercepting
 the single `ls-tree` call while delegating every other command to the real runner; the first reads a real
 stored anchor against a tree the repository does not hold and asserts the availability producer's own
@@ -86,7 +86,7 @@ command a stored anchor path is handed to.
 
 ### Invariants And Boundaries
 
-- **A sibling node in the boundaries module carries a `detail` assertion at `:521-526`** which is a
+- **Historical change-summary account, not a current source locator: a sibling node in the boundaries module carried a `detail` assertion at `:521-526`** which is a
   pre-existing node's extension, not a new case — a fact the round's own change summaries under-described.
   It is recorded here so a successor reading the change set sees four edits rather than three.
 - **Boundary.** This is a test module. It declares one lane, asserts behaviour and owns no production
@@ -111,7 +111,7 @@ None recorded.
 
 
 
-- Unsupported stored spelling is not absence. [3]
+- The linked current typed-path case refuses leading-colon pathspec spellings at the anchor-draft and PathSeed boundaries and separately admits literal glob spellings. [3]
 
 
 
@@ -147,7 +147,7 @@ No configured domain documentation could be checked.
 - **The glob-character node the review's correction rests on: authored, stored, seeded and resolved to its own blob.** [11]
 
 
-- **The unaddressable-stored-spelling node: a refusal of the spelling, never an absence from the tree.** [12]
+- The linked current typed-path case refuses leading-colon pathspec spellings at the anchor-draft and PathSeed boundaries and separately admits literal glob spellings. [12]
 
 - **The lookup that ran and could not answer, refused as unavailable rather than absent.** [13]
 
@@ -172,6 +172,8 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+
 
 
 - The lane row this module occupies. Source caption: `test_knowledge_read_paths` [18]

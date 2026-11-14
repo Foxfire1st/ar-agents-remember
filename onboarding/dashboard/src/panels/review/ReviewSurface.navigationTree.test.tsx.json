@@ -1,5 +1,24 @@
 {
   "path": "dashboard/src/panels/review/ReviewSurface.navigationTree.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c4badbc5b450c3684735f149ea466a2e8be4accf",
+        "content": "sha256:c60c23320c7310d8d36e50fede8795cec04aceaa6e265d463b89a41b53d2801c",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens each offered viewer filter, draws its first diff, and returns without reading or resetting state"
+        }
+      },
+      "facet": "With the review fetch fixture, each offered full-page trigger opens the existing changeset-viewer and a first diff; changeset requests use comparison 5 without mode, and Back restores trigger focus and the review column scroll without increasing the recorded request count after the pane has opened.",
+      "id": "PRF-117G0T",
+      "invariant": "INV-J1DFZS",
+      "origin": {
+        "handoffEntry": "curator-BUG-L5-INV-J1DFZS-proofs",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "5": {

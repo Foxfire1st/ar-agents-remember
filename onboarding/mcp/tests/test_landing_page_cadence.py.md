@@ -20,4 +20,6 @@ These are in-process assertions with a real app/refresher/subscription compositi
 
 - The suite owns composition, disconnect, age/reset and bounded-population assertions. [1]
 
-- Composition binds the same landing instance to the Projector's real subscriber predicate. [2]
+
+
+- Composition binds the same landing instance to the Projector's real subscriber predicate. Anchor: `_build_serving_runtime` [2]

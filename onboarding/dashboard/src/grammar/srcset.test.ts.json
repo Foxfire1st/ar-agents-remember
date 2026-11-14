@@ -1,0 +1,78 @@
+{
+  "path": "dashboard/src/grammar/srcset.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f4ca4bc95e8afc11132af6a1ec61963500d557f3",
+        "content": "sha256:e98ff31774c244cdbc0f1f35527b647ae1bd6f834006868fb2d26a19219696db",
+        "locator": {
+          "end": 47,
+          "kind": "line_range",
+          "start": 45
+        }
+      },
+      "facet": "The authored HTML tokenizer cases cover whitespace, commas, EOF, parentheses and neighboring candidates.",
+      "id": "PRF-064KKW",
+      "invariant": "INV-62DPD6",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-001",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f4ca4bc95e8afc11132af6a1ec61963500d557f3",
+        "content": "sha256:5402d0a7d52a5d292f0d47208436c5a1be2fcf89e191a1d5ad0b9787b7cdde10",
+        "locator": {
+          "end": 51,
+          "kind": "line_range",
+          "start": 49
+        }
+      },
+      "facet": "The accepted descriptor table covers density and width/future-height combinations.",
+      "id": "PRF-F261CV",
+      "invariant": "INV-62DPD6",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-001",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f4ca4bc95e8afc11132af6a1ec61963500d557f3",
+        "content": "sha256:da61d8f71a2d5461008fdbd7f394bc91d6e5249e9f99b4a5688c5f214aa6dda8",
+        "locator": {
+          "end": 57,
+          "kind": "line_range",
+          "start": 53
+        }
+      },
+      "facet": "Each authored rejected-descriptor case drops its candidate and retains the following delimiter-separated valid candidate.",
+      "id": "PRF-YNF089",
+      "invariant": "INV-62DPD6",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-001",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks source-set token boundaries and descriptor validity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4ca4bc95e8afc11132af6a1ec61963500d557f3",
+            "content": "sha256:2e03bc890a50386934a3ebb4f6c8052302eb13de9b4e093c6466c83d93b7c1c8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

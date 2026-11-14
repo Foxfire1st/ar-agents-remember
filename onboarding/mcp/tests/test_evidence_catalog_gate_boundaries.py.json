@@ -71,14 +71,16 @@
       ]
     },
     "25": {
-      "note": "The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.  Anchor: `test_evidence_catalog_gate_boundaries`\n\nAnchor: `test_evidence_catalog_gate_boundaries`",
+      "note": "The lane manifest declares mcp/tests/test_evidence_catalog_gate_boundaries.py in unit-regression. Membership is selection, not invocation.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -91,10 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -103,14 +107,16 @@
       ]
     },
     "27": {
-      "note": "The lane row this module holds in the sorted `unit-regression` list.  Anchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\"\n\nAnchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\"",
+      "note": "The lane row this module holds in the sorted `unit-regression` list. Anchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\" Anchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -27,7 +27,7 @@ Start at `SprintGraphView.tsx` for rendering, `styles.ts` for layout declaration
 
 ## How It Is Built
 
-- `SprintGraphView.tsx` exports the memoized `SprintGraphViewImpl`. `GraphBox` subscribes to the canonical task map with `taskReferenceKey(node.masterRef)` and obtains the word and tone through `taskStatusKey`/`StatusWord`. Missing qualified entries produce no task word and an accessible task-unavailable label, never a fallback frontier task status. `readinessOf` admits only ready, waiting or cycle for the separate dependency badge. The button's accessible name uses its master title and the same task word. Click, Enter or Space toggles the visual pin rather than task navigation.
+- `SprintGraphView.tsx` exports `SprintGraphView`, the memoized `SprintGraphViewImpl`. `GraphBox` subscribes to the canonical task map with `taskReferenceKey(node.masterRef)` and obtains the word and tone through `taskStatusKey`/`StatusWord`. Missing qualified entries produce no task word and an accessible task-unavailable label, never a fallback frontier task status. `readinessOf` admits only ready, waiting or cycle for the separate dependency badge. The button's accessible name uses its master title and the same task word. Click, Enter or Space toggles the visual pin rather than task navigation.
 - `styles.ts` exports `waveGridStyles` and `leafLineStyles`. The grid has three columns before wrapping and one column at viewport widths of 720px or less. Leaf lines use ellipsis with maximum widths of 30ch, 48ch at `sm`, and 72ch at `lg`, each bounded by the available width.
 - The serving layer walks the persisted graph, derives waves, resolves predecessor endpoints, joins titles, and supplies master facts to the observer's render-ready graph builder. The resulting `TaskExecutionGraphView` carries the facts needed by this route.
 - `SprintGraphView.test.tsx` defines independent zero-edge boxes, segmented masters across waves, predecessor reasons, the task-entry/dependency split, live task-map updates with an unchanged graph, qualified/missing-entry behavior, responsive grid declarations, and ellipsis declarations. The declaration checks establish the CSS contract; jsdom does not evaluate media queries or character-unit sizing.
@@ -69,5 +69,7 @@ Scenario reset uses the canonical dashboard-store reset rather than a second res
 
 
 - Only ready/waiting or an explicit cycle become dependency badges; absent qualified task entries have no fallback task word. [8]
+
+
 
 - The wave grid declares three columns and a single column at widths of 720px or less. Box titles and leaf lines use ellipsis. The dependency style recipe declares ready, waiting and cycle states. The dashboard manifest declares no @xyflow/react dependency. [2]

@@ -56,14 +56,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:9288132b13a09673ccfbc41319787f8f2fa29440da9e16ce13228c84cc4cdce9",
             "locator": {
-              "kind": "file"
+              "end": 878,
+              "kind": "line_range",
+              "start": 807
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71ebd8137b046fe1ba56246ac813a5eb757f37a0",
+            "content": "sha256:0ec69c220e86382ed95b3a0f607b5535c2618a87f61c401c5093a91f0906cab0",
+            "locator": {
+              "end": 539,
+              "kind": "line_range",
+              "start": 530
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "71ebd8137b046fe1ba56246ac813a5eb757f37a0",
+            "content": "sha256:32dc05715ce4c8a6ec24f33246f2faa1fcc722643d701143697945c6f580adfb",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 510
+            }
+          },
+          "kind": "test"
         }
       ]
     },

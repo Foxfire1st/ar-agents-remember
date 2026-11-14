@@ -213,7 +213,10 @@ bodies. Every anchor in a row occurs inside the range that row cites.
 - The task entry's brief word for the same tokens (`briefProblem`), shown on a control that never disappears, with the owner's full sentence in the disclosure beside it (`problemSentence`, since `260921-ICR-L47`). [45]
 
 
-- The change-set client and the route the routed debt belongs to — a different client, a different route and a different owner from the review transport, which is why this leaf leaves it untouched. [46]
+
+
+- The change-set client owns its route-specific refusal decoding separately from the review transport; taskChangeset uses that client rather than the generic status-only files decoder. [46]
+
 
 - **The cases that drive the real client functions against the measured route bodies, including the pair that shows `getJson` dropping the identical body this decode preserves.** [47]
 

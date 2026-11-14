@@ -19,16 +19,17 @@ application entry point, which emits a `read.packet` event and mutates the serve
 
 ### Logic
 
-Every function is pure over its `(root, rel)` arguments: it reads only the
-onboarding / route-index files it is explicitly asked about, raises no domain
-events, and writes nothing.
+These helpers confine paths and resolve source/card pairing. Confinement reads filesystem
+metadata through path resolution and, for the stricter artifact helper, `lstat`.
+Route-sidecar lookup reads the relevant governing indexes or paired-sidecar path.
+The module writes no files and raises no domain events.
 
 `confine_rel(code_root, requested)` is the path-confinement guard (formerly
-`read_files._confined_rel`). It rejects an absolute path, then `resolve()`s the
-candidate under `code_root` (following `..` and symlinks) and rejects it unless
-`path_is_relative_to` the root — so a traversal token, a symlinked escape, or a
-mid-path `..` is rejected, not just a literal `..`. Returns the posix-relative
-form.
+`read_files._confined_rel`). It rejects an absolute path, then resolves the candidate
+under `code_root`, following `..` and symlinks. It rejects the result only when the
+resolved path escapes the root; an in-root `a/../b` spelling and an in-root symlink
+are admitted and returned in resolved posix-relative form. The separate
+`confine_non_symlink_rel` has the stricter component and symlink policy.
 
 `route_sidecar_status(onboarding_root, rel)` walks the governing route-index chain
 nearest-first via `_governing_indexes` / `_load_route_index`, asking

@@ -35,4 +35,6 @@ No meaningful cross-repo references found.
 > Retained earlier citation wording: - The lane row this module was registered under, inside the array whose own key declares the classification.  Anchor: `test_knowledge_review_comparison_generation`
 
 
-- The lane row this module was registered under, inside the array whose own key declares the classification.  Anchor: `test_knowledge_review_comparison_generation` [27]
+
+
+- The lane row this module occupies, inside the array whose own key declares the classification. Anchor: `test_knowledge_review_comparison_generation` [27]

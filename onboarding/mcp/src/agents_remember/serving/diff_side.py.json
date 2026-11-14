@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/serving/diff_side.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1fa90af0019e758974452a4d3a76b87d61d319fb",
+        "content": "sha256:de18b8d5c69327b75d8deda9eef690ace391bfd085d8255316d47b62db0e7fba",
+        "locator": {
+          "kind": "symbol",
+          "name": "committed_side"
+        }
+      },
+      "id": "RLZ-0Z8Q69",
+      "invariant": "INV-AQH8BD",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §5",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Historical media returns metadata without loading and decoding its blob as text.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1fa90af0019e758974452a4d3a76b87d61d319fb",
+        "content": "sha256:0069ace6a9ec79f83a8e153ac33939772e91b76e017cf0c5352e6a145e2b94c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_classify"
+        }
+      },
+      "id": "RLZ-XR1QE7",
+      "invariant": "INV-AQH8BD",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §5",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This classifier marks supported media and other binary content before text decoding.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Classifies each present diff side as text, supported media or other binary content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fa90af0019e758974452a4d3a76b87d61d319fb",
+            "content": "sha256:52c39b3398f1ee8cf37d450583a4c8fdda77e6be7dc5d6366febc222ed6e7292",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

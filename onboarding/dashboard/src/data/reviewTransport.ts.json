@@ -314,14 +314,29 @@
       ]
     },
     "46": {
-      "note": "The change-set client and the route the routed debt belongs to — a different client, a different route and a different owner from the review transport, which is why this leaf leaves it untouched.\n\nAnchor: `taskChangeset`",
+      "note": "The change-set client owns its route-specific refusal decoding separately from the review transport; taskChangeset uses that client rather than the generic status-only files decoder.",
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
-            "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:ef9647cb60b62dba456f90edb66b12c4424a2a816fa17d51d19db2492bc8a79b",
             "locator": {
-              "kind": "file"
+              "end": 188,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:4f0c9a0cd5ec93f9f6c86debb4a2a5da0f0a4fda0433b70d3303ffe63a1127a0",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 228
             },
             "path": "dashboard/src/data/changeset.ts"
           },

@@ -1,10 +1,62 @@
 {
   "path": "dashboard/src/cockpit/sidebarChatStaysLoaded.test.tsx",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e5cf90e675870480710ad04782c0665904e5557c",
+        "content": "sha256:473b8ac7dc351c2ebb5ab8a0e7d39e20a741845595a0ce5d97e38a0e13f9e844",
+        "locator": {
+          "kind": "symbol",
+          "name": "hides the frame without unloading it where the selection has no agent, and switches back"
+        }
+      },
+      "facet": "With stubbed replies, selecting the ghost document shows the no-role notice and hides the same iframe under an aria-hidden wrapper without changing its generation; selecting the leaf shows that retained element again.",
+      "id": "PRF-PYGVMV",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "curator-BUG-L5-INV-VMREN3-proofs",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e5cf90e675870480710ad04782c0665904e5557c",
+        "content": "sha256:181a00e901fa5e47c727ff1c6f6c51c18d102088410f808e4347d1f50083a77c",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps the same frame element across the river toggle with the load count unchanged"
+        }
+      },
+      "facet": "With stubbed backend replies and a synthetic ready message, river/chat toggles retain the same iframe DOM element and generation while the retained wrapper changes aria-hidden. The assertions do not count actual document loads.",
+      "id": "PRF-SCMWPY",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "curator-BUG-L5-INV-VMREN3-proofs",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e5cf90e675870480710ad04782c0665904e5557c",
+        "content": "sha256:a00b11234c769b65249acc36f5eba0b72cdd5b62a42bcde21400db20680ce0dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "switches the selection by message without loading again"
+        }
+      },
+      "facet": "With stubbed backend replies and a synthetic ready message, leaf/master selection emits the exact ar.open agent/workspace messages and retains the iframe element and generation. The case does not measure a live host load or draft.",
+      "id": "PRF-XR0615",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "curator-BUG-L5-INV-VMREN3-proofs",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The river toggle keeps the same frame element with the load count unchanged.",
+      "note": "The river-toggle fixture retains iframe identity and generation while toggling its hidden wrapper.",
       "targets": [
         {
           "anchor": {
@@ -19,7 +71,7 @@
       ]
     },
     "2": {
-      "note": "Selection switches post ar.open with agent and workspace and never load again.",
+      "note": "The selection fixture posts the selected agent and workspace and retains iframe identity and generation.",
       "targets": [
         {
           "anchor": {
@@ -34,7 +86,7 @@
       ]
     },
     "3": {
-      "note": "The agentless selection hides the frame without unloading it and switches back.",
+      "note": "The agentless fixture hides the same iframe, retains generation and shows that element on return.",
       "targets": [
         {
           "anchor": {
@@ -49,7 +101,7 @@
       ]
     },
     "4": {
-      "note": "A not-ready burst loads nothing in between and brings only the latest selection forward.",
+      "note": "The not-ready burst retains generation, sends no early post and forwards only the latest selection after readiness.",
       "targets": [
         {
           "anchor": {

@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/data/media.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c245dc3b72f47b8dc1df74dee1e0e0fa577995e0",
+        "content": "sha256:2ea93deb64038519a1a55b7106a084168140cd2deb6d1ad03adab147f5a6ad90",
+        "locator": {
+          "kind": "symbol",
+          "name": "changeSetMediaUrl"
+        }
+      },
+      "id": "RLZ-Z4FCJZ",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This client builder sends the diff selectors and side to the server's byte route.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Shares supported media types, captions and bytes-route addresses across dashboard viewers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c245dc3b72f47b8dc1df74dee1e0e0fa577995e0",
+            "content": "sha256:c7ae50f3384452c91365ad2720a1c742f7402af3a8c706514c21fe761ac61b6e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

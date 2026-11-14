@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
-        "content": "sha256:5cad09326ea48bcab9f5af8d1664d30a8f8771efee378a43321831f5b224c5d8",
+        "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
+        "content": "sha256:30d9d240d5d27abb0c4b0386f5753dc079a093d7bcac5505a8111ff3ebb74671",
         "locator": {
           "kind": "symbol",
           "name": "ServingCollaborators"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
-        "content": "sha256:02f56e728141cdd8b2fab1348ef1f5706bc7fce3649e48be1db6789ef2f036fc",
+        "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
+        "content": "sha256:492c4efee13fcc6724a0e910caeec6af7651945afde2116c324995ad340cb1f6",
         "locator": {
           "kind": "file"
         }
@@ -40,11 +40,11 @@
   ],
   "references": {
     "13": {
-      "note": "Anchor: Current tree-child shutdown hook on collaborator and runtime.",
+      "note": "ServingCollaborators and _ServingRuntime both expose the optional tree-child shutdown callback.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:8d6e77bb4fda4c5987361be9ddd701b2dedf303a912722dd2047b97d174e2491",
             "locator": {
               "end": 238,
@@ -56,12 +56,12 @@
         },
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:7ac189ae7592dd608239e9552c1a0450c3e016715998955301efb46dd983edd7",
             "locator": {
-              "end": 324,
+              "end": 331,
               "kind": "line_range",
-              "start": 324
+              "start": 331
             }
           },
           "kind": "code"
@@ -73,24 +73,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:79e0c9120ffaa63a460678e5da5ca8c47f9158950d38aa833eabae6f748ed612",
             "locator": {
-              "end": 312,
+              "end": 319,
               "kind": "line_range",
-              "start": 283
+              "start": 290
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
-            "content": "sha256:1dc89d390cc38489a0c309f1cf403b221ba6dea43f1baa6c7f346804c5e94a02",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
+            "content": "sha256:10f53a60573c3d51d6a90b8ff6aaebed89149cc7db6d6175cb7e9f4da26c4c02",
             "locator": {
-              "end": 282,
+              "end": 349,
               "kind": "line_range",
-              "start": 262
+              "start": 314
             }
           },
           "kind": "code"
@@ -102,7 +102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:a06e67fbffa96fd7f1399df0a3fc48ebf4fac70da33ce5046b280463fbc4a0c5",
             "locator": {
               "kind": "symbol",
@@ -118,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:ae2b4c18cdda81c45f85995be669c79aa7a522faea00ca20a925d67e5076a012",
             "locator": {
               "end": 96,
@@ -130,7 +130,7 @@
         },
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:d7f754c60bcc13d6d72dbc562e5057a849d5dd6b57b5ed26c6b6d0f65f4fedef",
             "locator": {
               "end": 84,
@@ -147,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:7fa046b328c2a2b9d42cc99e06a227b6b1020c7a6dc2447e17c2538a55f19b56",
             "locator": {
               "end": 143,
@@ -195,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:cf794bb6735aa6d63c0f34e8e73eb5d431053cc73eb4a447a72da9e87b378986",
             "locator": {
               "end": 227,
@@ -212,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:2d14c228990d641ea4ff1b198e5e8aee848f5b34057ae51a1fe790f2949c8a10",
             "locator": {
               "end": 268,
@@ -229,24 +229,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:79e0c9120ffaa63a460678e5da5ca8c47f9158950d38aa833eabae6f748ed612",
             "locator": {
-              "end": 312,
+              "end": 319,
               "kind": "line_range",
-              "start": 283
+              "start": 290
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
-            "content": "sha256:1dc89d390cc38489a0c309f1cf403b221ba6dea43f1baa6c7f346804c5e94a02",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
+            "content": "sha256:10f53a60573c3d51d6a90b8ff6aaebed89149cc7db6d6175cb7e9f4da26c4c02",
             "locator": {
-              "end": 282,
+              "end": 349,
               "kind": "line_range",
-              "start": 262
+              "start": 314
             }
           },
           "kind": "code"
@@ -258,7 +258,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:f263dce88f19d45003f3f197cbb100d782e00676b9b18253938303799d8b0dea",
             "locator": {
               "end": 143,
@@ -275,7 +275,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:00d56fd1962e4063a0115620cd24feb8f0addcda24a3acf071bc4a8c721ae562",
             "locator": {
               "end": 218,
@@ -288,11 +288,11 @@
       ]
     },
     "31": {
-      "note": "ServingCollaborators and _ServingRuntime newly declare optional review_memory_root defaulting to None. ReviewMemoryRootPort is only a callable type alias. The projection stream route explicitly passes the runtime field to multiplex_review_memory. That helper skips root resolution for absent review identity, validates supplied selectors, resolves the port and reports missing adapter/root errors. The native worker enforces its own root-shape checks. These bodies do not prove the composition root's full leaf-admission policy.",
+      "note": "ServingCollaborators and _ServingRuntime declare optional review_memory_root defaulting to None. ReviewMemoryRootPort is a callable type alias. The projection stream passes the runtime field to multiplex_review_memory, which skips root resolution without review identity, validates supplied selectors, resolves the port and reports missing adapter/root errors. The memory-event subscription checks that the root is canonical, nonsymlink, a directory and outside provider-runtime paths. These bodies do not prove the composition root’s full leaf-admission policy.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:53efba79150ecf4558c1097ce70c27b115b9241158cbd9d0ae523197825caf8b",
             "locator": {
               "end": 241,
@@ -304,13 +304,39 @@
         },
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:6f9c5490a5fa34d1f26767a5cf38cf14dcd67753bad60fa486447665eb94e1e7",
             "locator": {
-              "end": 322,
+              "end": 329,
               "kind": "line_range",
-              "start": 322
+              "start": 329
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f884d317176ef56edeba08afba6ebc87737fa1b5",
+            "content": "sha256:45aee7b5a6ccdc8d2d902f1147b0bd188fabc1ed3a3515c163fdb65409008b24",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f884d317176ef56edeba08afba6ebc87737fa1b5",
+            "content": "sha256:078e6ab4d329b14829b54f6e024852b55c17bec276fe026f7ea44abaa7b35f84",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
           },
           "kind": "code"
         },
@@ -373,11 +399,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
-            "content": "sha256:5cad09326ea48bcab9f5af8d1664d30a8f8771efee378a43321831f5b224c5d8",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
+            "content": "sha256:ce2800a243c66b3baa851a9a7be8a8a13696a67d581b91576818da321515acab",
             "locator": {
-              "kind": "symbol",
-              "name": "ServingCollaborators"
+              "end": 195,
+              "kind": "line_range",
+              "start": 177
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
+            "content": "sha256:b0c0f47faacfd07480fb8dfa436494199df1d238e2d5fea998a3f10b5e172b4e",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 243
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
+            "content": "sha256:d3dadf43e3736353d1e38e2865ffacb26e12f1208bb1e2e39c94dddeeeba62e6",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 273
             }
           },
           "kind": "code"
@@ -389,7 +440,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:ec265d3b656ba74ff2a80249d4da45d57ecd8039b73106f1ea793a916e311525",
             "locator": {
               "end": 144,

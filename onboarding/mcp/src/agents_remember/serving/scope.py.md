@@ -7,9 +7,7 @@
 ## Purpose
 
 `scope.py` is the **shared browse-scope resolution + error map** for the read-only
-serving APIs. It was extracted from `serving/files.py` (cit:([`resolve_scope`], mcp/src/agents_remember/serving/files.py:18-18)) at operations-integration
-L3 so the Change-Set Viewer backend (`serving/changeset.py`) reuses one resolver and
-one HTTP error idiom instead of a parallel copy. A `{repo, mainline|enclosure}` request
+serving APIs. The Change-Set Viewer backend (`serving/changeset.py`) reuses this shared resolver and HTTP error idiom instead of a parallel copy. cit:([`resolve_scope`], mcp/src/agents_remember/serving/scope.py:166-215) A `{repo, mainline|enclosure}` request
 resolves to a frozen `FileScope` of roots; `run_scoped` runs a domain function over that
 scope and maps domain errors to the serving status-string `JSONResponse` idiom.
 
@@ -29,8 +27,7 @@ It then calls `resolve_coordination_context`, taking `code_worktree or
 code_repository_root` as the code root, and **degrades to a code-only scope**
 (`onboarding_root=None`) on `MissingMemoryError` rather than failing.
 
-`run_scoped(op, config, repo_id, scope_id) -> Response` (cit:([`run_scoped`], mcp/src/agents_remember/serving/scope.py:229-249)) is the error mapper
-(formerly `files._run`): an unknown repo → `404 unknown-repo`, an unknown enclosure
+`run_scoped(op, config, repo_id, scope_id) -> Response` (cit:([`run_scoped`], mcp/src/agents_remember/serving/scope.py:229-239)) wraps the shared error mapper (cit:([`run_scoped_response`], mcp/src/agents_remember/serving/scope.py:242-267)): an unknown repo → `404 unknown-repo`, an unknown enclosure
 (`_UnknownScope` (cit:([`_UnknownScope`], mcp/src/agents_remember/serving/scope.py:104-105))) → `404 unknown-scope`, an out-of-root / absolute path
 (`AuthorityError` from `confine_rel`) → `400 bad-path`, an absent file
 (`FileNotFoundError`) → `404 not-found`; success returns the domain dict at 200.
@@ -75,7 +72,7 @@ modules.
   scope (`onboarding_root=None`), never a failure.
 - **Enclosure enumeration is on-disk + per-request**, not projection-derived, so a
   newly started or closed worktree resolves without a projector tick.
-- Pure resolution: no domain events, no writes; `run_scoped` is the only HTTP shape here.
+- Pure resolution emits no domain events or writes; run_scoped wraps JSON, while run_scoped_response shares the error map with response-producing bytes operations.
 
 ## Evidence
 
@@ -83,31 +80,37 @@ modules.
 
 - The L1 files API that now imports + re-exports these helpers. [1]
 
-- The L3 change-set API imports and reuses FileScope, resolve_scope, run_scoped and language_for. [2]
+
+
+- The L3 change-set API imports and reuses FileScope, resolve_scope, run_scoped and language_for. Anchor: "from agents_remember.serving.scope import FileScope" [2]
+
 
 - The shared path-confinement helper (`confine_rel`) the scope uses. [3]
 - The scope resolver bridge + "MissingMemoryError,". [4]
 - The repo allow-list authority guard (`require_repo`). [5]
 
-- The catalog uses the notes/archive-excluding iterator and names foreign positional nonmembers before liveness filters. [6]
 
 
-> Retained earlier citation wording: - WorktreeContract retains the code-worktree, group and cleanup fields; its loader and named error own parsing. [7]
+- The catalog uses the notes/archive-excluding iterator and names foreign positional nonmembers before liveness filters. Anchor: `_iter_active_contracts` `iter_leaf_enclosure_contracts` [6]
 
 
 
-## 260718-CHATS-L5I Current Delta
+- WorktreeContract retains the code-worktree, group and cleanup fields; its loader and named error own parsing. [7]
+
+
+
+## Repository catalog discovery
 
 Repository scope discovery now supports the single-pass, repository-bucketed file listing used by the serving files API. It preserves repository ownership boundaries while eliminating repeated tree walks.
 
-This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
-## 260731-EFA-L2 Current Delta
+
+## Coordination request
 
 The coordination-context call packages `CoordinationHints`, `EnclosureSelector` and
 `WorktreeContractReader` inside `request=CoordinationRequest(...)`. The resolved scope and its
 missing-memory fallback are unchanged; loose `hints`/`selector` keywords are not the current call.
 
-This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
 
 - WorktreeContract retains the code-worktree, group and cleanup fields; its loader and named error own parsing.  Anchor: `WorktreeContract` `load_contract` `ContractError` [7]

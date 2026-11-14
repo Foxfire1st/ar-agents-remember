@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:0bc7e102d5d0320aa01152ab96f80761578200cdcfeab2d5b98782ba42543f7f",
             "locator": {
               "kind": "symbol",
@@ -21,7 +21,7 @@
       ]
     },
     "2": {
-      "note": "The task reader wraps its prose with the requirements provider that produces these targets.\n\nAnchor: `TaskRequirementBoundary`",
+      "note": "The task reader wraps its prose with the requirements provider that produces these targets.\n\nAnchor: `TaskRequirementLinksProvider`",
       "targets": [
         {
           "anchor": {
@@ -37,14 +37,16 @@
       ]
     },
     "3": {
-      "note": "The reader itself consumes the union (notes vs requirements listing/content).\n\nAnchor: `NotesReaderViewerImpl`",
+      "note": "The reader itself consumes the union (notes vs requirements listing/content). Anchor: `NotesReaderViewerImpl`",
       "targets": [
         {
           "anchor": {
-            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
-            "content": "sha256:823c3ae2201856ac82e1a2dd1cc4869cce669d6c1d863d3b5feb5ff30d227bb7",
+            "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+            "content": "sha256:9048fdf0e7738ca617a89afef0157be1ffa0acd470e4bf0b77d35b6b7208d20c",
             "locator": {
-              "kind": "file"
+              "end": 545,
+              "kind": "line_range",
+              "start": 496
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },

@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5192905782e8a6dadbc17d46fca11b4ec3254480",
+            "blob": "6f8e8df57dcb5a5fbd13671ea26ed6ad6557145f",
             "content": "sha256:07529da616c5edb1c5b9aadfda044208b0858941ffe31069f936362a0825c54a",
             "locator": {
               "end": 18,
@@ -22,16 +22,16 @@
       ]
     },
     "2": {
-      "note": "The L3 change-set API imports and reuses FileScope, resolve_scope, run_scoped and language_for.\n\nAnchor: \"from agents_remember.serving.scope import FileScope\"",
+      "note": "The L3 change-set API imports and reuses FileScope, resolve_scope, run_scoped and language_for. Anchor: \"from agents_remember.serving.scope import FileScope\"",
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
-            "content": "sha256:66b56015678e6a808098b76cdaf13c413267b851d4bf851d8827f7817ce66c47",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "content": "sha256:490eef4d4b2dc4538b33f5246162d525580e8cae3ec1489eaeb426127e86da12",
             "locator": {
               "end": 87,
               "kind": "line_range",
-              "start": 87
+              "start": 78
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -39,12 +39,12 @@
         },
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:5a806c50edfc5197e173a83194140f5608aa5687bdaf1bc524dc1ac65824d405",
             "locator": {
-              "end": 74,
+              "end": 73,
               "kind": "line_range",
-              "start": 74
+              "start": 73
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -105,14 +105,16 @@
       ]
     },
     "6": {
-      "note": "The catalog uses the notes/archive-excluding iterator and names foreign positional nonmembers before liveness filters.\n\nAnchor: `_iter_active_contracts` `iter_leaf_enclosure_contracts`",
+      "note": "The catalog uses the notes/archive-excluding iterator and names foreign positional nonmembers before liveness filters. Anchor: `_iter_active_contracts` `iter_leaf_enclosure_contracts`",
       "targets": [
         {
           "anchor": {
-            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
-            "content": "sha256:3961183c78ea5b46476a9f0f70ff4708efcfe33cf3f23935d58b54f2bde3259c",
+            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
+            "content": "sha256:680aed2e5f98f339c3ebdd83cb671ef11f9274bbfa1374819b6463dddd996e90",
             "locator": {
-              "kind": "file"
+              "end": 154,
+              "kind": "line_range",
+              "start": 122
             }
           },
           "kind": "code"
@@ -122,7 +124,9 @@
             "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
             "content": "sha256:3efba6b9c78b72fd1ff131c6f8f274da87a1ece4c8b1ea4715235f9ad48f5162",
             "locator": {
-              "kind": "file"
+              "end": 368,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/tasks/task_paths.py"
           },
@@ -130,11 +134,12 @@
         },
         {
           "anchor": {
-            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
+            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
             "content": "sha256:4af7773a9228a97bc4464a1fe1f54a7d4921e2aa987a327515001f4c54399e02",
             "locator": {
-              "kind": "symbol",
-              "name": "_iter_active_contracts"
+              "end": 154,
+              "kind": "line_range",
+              "start": 129
             }
           },
           "kind": "code"
@@ -144,8 +149,9 @@
             "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
             "content": "sha256:2a048328658ef57f37cf7e056285aa7ae07a945735bf69584367506efb2655f5",
             "locator": {
-              "kind": "symbol",
-              "name": "iter_leaf_enclosure_contracts"
+              "end": 299,
+              "kind": "line_range",
+              "start": 283
             },
             "path": "mcp/src/agents_remember/tasks/task_paths.py"
           },

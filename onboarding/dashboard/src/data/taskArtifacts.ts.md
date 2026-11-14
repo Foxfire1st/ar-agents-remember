@@ -39,10 +39,10 @@ rail showing the tree and the pane waiting for a selection.
   with product-written records muted.
 
 The module is type-only: it exports the union and nothing executable. Consumers
-(`Cockpit.tsx`, `DetailPanel.tsx`, `taskReader.tsx`,
-`TaskNotes.tsx`, `NotesReaderViewer.tsx`) import it under the local alias
-`NotesReaderTarget` so the callbacks keep their historical name while their
-payload type is the shared artifact union.
+(`Cockpit.tsx`, `DetailPanel.tsx`, `taskReader.tsx` and `TaskNotes.tsx`) import it under the local alias
+`NotesReaderTarget`, so those callbacks keep their historical name while their
+payload type is the shared artifact union. `NotesReaderViewer.tsx` instead imports and re-exports
+`TaskArtifactReaderTarget` under its current name.
 
 ### Conventions
 
@@ -78,7 +78,10 @@ No relevant domain documentation was found.
 - The task reader wraps its prose with the requirements provider that produces these targets. [2]
 
 
-- The reader itself consumes the union (notes vs requirements listing/content). [3]
+
+
+- The reader itself consumes the union (notes vs requirements listing/content). Anchor: `NotesReaderViewerImpl` [3]
+
 
 
 

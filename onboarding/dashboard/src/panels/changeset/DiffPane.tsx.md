@@ -60,10 +60,16 @@ only draws what it is given. The no-marks gutter remains empty. Fitted statement
 - The focused card that passes `firstLine` and `fit`. [10]
 
 
-- The column wrapper that mounts it and supplies `mode`/`collapse`. [11]
 
 
-- The `FileDiff` (before/after content) the caller passes through. [12]
+- The column wrapper that mounts it and supplies `mode`/`collapse`. Anchor: `ChangeSetPane` [11]
+
+
+
+
+
+- The FileDiff contract carries before and after sides; each side can contain text or binary/media metadata, and an added or deleted side is null. [12]
+
 
 
 - Fitted panes reconfigure marks in existing editors; content changes and ordinary mark changes rebuild with guarded teardown. [6]

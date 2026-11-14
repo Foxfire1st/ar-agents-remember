@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-        "content": "sha256:eff54d0360b790954af018d92a06694c3a335b1849a5d2a028b89a7d2a0e225b",
+        "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+        "content": "sha256:9884644e2a94771b8bf70153c4f12814eb1eb12030dec3bba3622603c9a4d0bc",
         "locator": {
           "kind": "symbol",
           "name": "Markdown"
@@ -21,12 +21,48 @@
     },
     {
       "anchor": {
-        "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-        "content": "sha256:eff54d0360b790954af018d92a06694c3a335b1849a5d2a028b89a7d2a0e225b",
+        "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+        "content": "sha256:9803220a6da7905fb1ec37f38d335b9f3997036c908ac45360e2bd21467cd2fe",
         "locator": {
-          "end": 194,
+          "kind": "symbol",
+          "name": "markdownSetup"
+        }
+      },
+      "id": "RLZ-76YYP9",
+      "invariant": "INV-F48BJX",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §2",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This choice limits the HTML-capable pipeline to a document context.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+        "content": "sha256:fe02a3ea4886a8ad29312f2e6908fe8c956881507c929d4e8d85901093bb331f",
+        "locator": {
+          "kind": "symbol",
+          "name": "documentHtmlAllowed"
+        }
+      },
+      "id": "RLZ-DG94CN",
+      "invariant": "INV-F48BJX",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-2-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "The document-context allowHtml flag decides whether repository HTML processing is enabled, separately from ordinary Markdown.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+        "content": "sha256:9884644e2a94771b8bf70153c4f12814eb1eb12030dec3bba3622603c9a4d0bc",
+        "locator": {
+          "end": 234,
           "kind": "line_range",
-          "start": 161
+          "start": 187
         }
       },
       "id": "RLZ-PTJE41",
@@ -40,12 +76,12 @@
     },
     {
       "anchor": {
-        "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+        "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
         "content": "sha256:eb4f030e0e9a5d0fd0de472440dcbf63ad6907cdfb4d857467dbf74ca3e03e26",
         "locator": {
-          "end": 205,
+          "end": 281,
           "kind": "line_range",
-          "start": 196
+          "start": 272
         }
       },
       "id": "RLZ-T9HEG6",
@@ -56,6 +92,24 @@
       },
       "rationale": "markdownPlugins installs the resources-backed cached parser after GFM and before reference/heading transforms. The retained syntax preparation stays separate from live requirement-link components/callbacks, not an immortal or stage-owning cache.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+        "content": "sha256:b475ffd51bd7bd9c4231a52467f655ac3803cbac68a120ecc849b23eee93dea2",
+        "locator": {
+          "kind": "symbol",
+          "name": "RequirementAnchor"
+        }
+      },
+      "id": "RLZ-X158P5",
+      "invariant": "INV-B96PVR",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §9",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Ordinary dashboard Markdown suppresses local navigation and opens supported outside links separately.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -92,14 +146,16 @@
       ]
     },
     "7": {
-      "note": "The renderer mounts its plugins only when the caller asks for markers or heading ids.",
+      "note": "For ordinary dashboard Markdown, the marker and heading-id plugins are added only when their caller opts in. Repository-document rendering uses its separate document setup.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+            "content": "sha256:9dfba777732dd4e3d8a9506c7fe76a563f06fe54dc12d2067be5c4fd3b9df6b8",
             "locator": {
-              "kind": "file"
+              "end": 281,
+              "kind": "line_range",
+              "start": 236
             }
           },
           "kind": "code"
@@ -111,10 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+            "content": "sha256:b475ffd51bd7bd9c4231a52467f655ac3803cbac68a120ecc849b23eee93dea2",
             "locator": {
-              "kind": "file"
+              "end": 178,
+              "kind": "line_range",
+              "start": 126
             }
           },
           "kind": "code"
@@ -126,10 +184,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+            "content": "sha256:849349d6873f4b93651f1c7b619a195f4a72f40404fe3243d3c34c0e4698d552",
             "locator": {
-              "kind": "file"
+              "end": 76,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+            "content": "sha256:5ac525e7a22040fc00b5953e3ae42c738f1f4f72ca2ed034c42ed429b7c37b48",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 224
             }
           },
           "kind": "code"

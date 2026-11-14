@@ -7,7 +7,7 @@
 ## Purpose
 
 The Knowledge reader's cited-code view (MIK-R79 rule 9): a code file opened at the citation's lines,
-rendered by the File Viewer's existing code pane rather than a private code view (rule 15). Where a
+Text uses the File Viewer's existing code pane; recognized media uses the shared MediaView rather than a private renderer. Where a
 citation has one code or test target it opens beside the text; several targets are listed first and
 one is chosen; an unresolved locator is named rather than guessed.
 
@@ -15,20 +15,18 @@ one is chosen; an unresolved locator is named rather than guessed.
 
 ### Logic
 
-- `CodeView` renders a non-`present` answer as a named line (`path: state — detail`). A `present`
-  answer renders a header with the path link, the blob prefix and the cited range, then `FilePane`
-  with `highlightedLines` when the locator resolved, so the cited lines are marked and scrolled to.
+CodeView first dispatches a media answer with mediaType to MediaCodeView. Other non-present answers show path, state and detail. A present text answer renders the path link, blob prefix and any resolved range, then FilePane with highlightedLines.
 - An `unresolved` locator adds a named line saying the locator does not resolve here, while the file
   still renders.
 
 ### Conventions
 
-- The pane is the shared `FilePane`; this module supplies only the header and the range.
+- Text uses the shared `FilePane`; recognized media uses the shared `MediaView`. This module supplies the header and appropriate rendering props.
 - The path is a reader navigation through `PathLink`.
 
 ### Invariants And Boundaries
 
-- **One code view exists**: the File Viewer's pane; no reader-private CodeMirror or highlighter.
+- Text citations use the File Viewer's `FilePane`, and media citations use the shared `MediaView`; this module builds no private CodeMirror editor or highlighter.
 - **A citation that cannot open says so in the pane** where it would have opened; the text stays in
   place.
 - **The read stays bound to its memory selection**: the answer comes from the address's selected
@@ -37,6 +35,8 @@ one is chosen; an unresolved locator is named rather than guessed.
 ### Todos
 
 No additional work is asserted by this card.
+
+A recognized media answer with a selection uses knowledgeMediaUrl with that selection's repository and memory commit, retains CodeHeader and supplies the measured size to MediaView. Cited Markdown that arrives as present text remains source in FilePane.
 
 ## Evidence
 
@@ -50,11 +50,17 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The cited code opens in the File Viewer's code pane at its lines. [1]
+
+
+- The Knowledge reader's text-code view renders FilePane and passes the resolved cited line range as highlightedLines. Media citations use the separate media view. [1]
+
 
 - The shared pane that marks the cited lines. [2]
 
-- The unresolved locator is named, not guessed. [3]
+
+
+- The unresolved locator is named, not guessed. Anchor: `CodeHeader` [3]
+
 
 ### Cross-Repo References
 

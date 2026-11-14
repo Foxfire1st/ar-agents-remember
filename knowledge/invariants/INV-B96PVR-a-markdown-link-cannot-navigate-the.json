@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Shared Markdown and context-specific openers prevent a document link from replacing the dashboard tab while permitting valid internal navigation."
+  },
+  "applicability": "Hyperlinks rendered by shared dashboard Markdown, repository-document links, and notes using the supplied notes document context.",
+  "conditions": [
+    "Ordinary relative links prevent navigation of the dashboard's browser tab.",
+    "Repository and note contexts route valid internal file links through their own openers.",
+    "Outside HTTP and HTTPS hyperlinks open separately and local fragment links remain within their document."
+  ],
+  "exclusions": [
+    "Browser navigation initiated outside rendered Markdown."
+  ],
+  "id": "INV-B96PVR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-R05@v1 §9; dashboard/src/grammar/DocumentMarkdown.test.tsx :: keeps a relative link from moving the dashboard's own tab; dashboard/src/grammar/DocumentMarkdown.test.tsx :: opens an outside address in a new tab and keeps an anchor in the page; dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx :: follows a markdown note link to another note of the master"
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-R05@v1 §9",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A Markdown link cannot navigate the dashboard's own browser tab, and notes follow valid internal links through their document context.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -193,14 +193,16 @@
       ]
     },
     "9": {
-      "note": "The lane registration.  Anchor: \"mcp/tests/test_read_anchor_memo.py\"\n\nAnchor: \"mcp/tests/test_read_anchor_memo.py\"",
+      "note": "The lane registration. Anchor: \"mcp/tests/test_read_anchor_memo.py\" Anchor: \"mcp/tests/test_read_anchor_memo.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

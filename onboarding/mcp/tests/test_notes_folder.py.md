@@ -10,7 +10,7 @@ Server tests for the one-folder notes answer: one level per request in a stable 
 
 ## Code Commentary
 
-Fifteen cases pin rule 2 and its edges: stable order with case-fold ties broken identically from any enumeration, parts above the ceiling, tree-size-independent work, live refresh on the next request, single-request reference resolution, the gone whole-tree route, the mid-request directory-swap confinement (L126-CODE-01), the escaping bare-link refusal with in-root alias (L126-CODE-05 area, Parent d388 format), scoped refusals with note reads, the three permission cases (readable-unsearchable 200 without children per INV-413DC8XE, searchable-unreadable and neither keeping baseline 500), and the Parent reference-format case (nested bare stays text, pathed links). Each regression fails on a targeted revert.
+Fifteen cases pin rule 2 and its edges: stable order with case-fold ties broken identically from any enumeration, parts above the ceiling, tree-size-independent work, live refresh on the next request, single-request reference resolution, the gone whole-tree route, the mid-request directory-swap confinement (L126-CODE-01), the escaping bare-link refusal with in-root alias (L126-CODE-05 area, Parent d388 format), scoped refusals with note reads, the three permission cases (readable-unsearchable 200 without children per INV-413DC8XE, searchable-unreadable and neither keeping baseline 500), and the Parent reference-format case (nested bare stays text, pathed links). Two further cases separately check picture-note range serving and initial-NUL binary classification.
 
 ## Evidence
 

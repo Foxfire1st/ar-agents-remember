@@ -181,7 +181,6 @@ cancellation is returned to the caller only after the real filesystem tick is
 drained, preventing a late atomic projection write from racing temporary
 worktree cleanup while preserving cancellation as the public outcome.
 
-- The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers.  Anchor: "def _publish_projection(" [1]
 - Subscription activation registers its queue before current-snapshot capture and removes it in `finally`.  Anchor: "self._subscribers.add(queue)"; "self._subscribers.discard(queue)" [2]
 
 
@@ -189,7 +188,6 @@ worktree cleanup while preserving cancellation as the public outcome.
 
 
 
-- All real tick outcomes reach completion only after actual work/drain.  Anchor: `Projector._tick` [4]
 
 
 - Landing interest reads the actual state-stream subscriber set without adding mutation or publication authority. [5]
@@ -201,3 +199,6 @@ worktree cleanup while preserving cancellation as the public outcome.
 tick's own `stable` form as `_tick_stable` for the publication step, which uses it instead of
 recomputing `stable_projection_state(current)`. One dump per tick replaces two. The tick's inputs,
 its write decision and the projection's content are unchanged.
+
+- All real tick outcomes reach completion only after actual work/drain. Anchor: `Projector._tick` [4]
+- The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. Anchor: "def _publish_projection(" [1]

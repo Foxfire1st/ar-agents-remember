@@ -11,7 +11,7 @@ verification metadata remains closeout-owned.
 
 ## Current owners and assertion bounds
 
-The main module retains `WorkflowChainTests`; its world, walk, classifier and declaration pins moved to `workflow_chain_guidance_test_support.py`. Existing inline line captions and explicitly historical measurements below retain their earlier source epoch, rather than naming current owner locations. The current own-address case checks each present truthy path and requires at least as many checks as observed hops. The sibling case requires a raw hint, rejects the sibling only for present paths, and checks public membership only when a top-level next tool exists. Callability claims stay bounded to the observed reachable hops and producers. Extraction does not widen them to every channel or every possible state.
+The main module retains `WorkflowChainTests`; its world, walk, classifier and declaration pins moved to `workflow_chain_guidance_test_support.py`. Current source captions name the present owners; explicitly historical line captions and measurements below retain their recorded source epoch. The current own-address case checks each present truthy path and requires at least as many checks as observed hops. The sibling case requires a raw hint, rejects the sibling only for present paths, and checks public membership only when a top-level next tool exists. Callability claims stay bounded to the observed reachable hops and producers. Extraction does not widen them to every channel or every possible state.
 
 ## Purpose
 
@@ -43,54 +43,54 @@ stale-base raiser.
 The shared disposable world drives registered operations and contract-addressed landing hints, with `unittest.TestCase` and no module pytest marks. Earlier case/pass totals and mutation reports below retain their historical epoch, not renewed collection or execution.
 
 - **The order** (`test_the_chain_runs_in_the_declared_order_through_the_registered_entry_points`,
-  `:1094-1109`; `…reaches_every_declared_state_and_the_terminal_contract`, `:1111-1124`;
-  `…each_hop_was_the_move_the_previous_response_named`, `:1126-1160`). `WORKFLOW_OPERATIONS`
-  (`:99-109`) is nine operations, with `worktree_integrate` and `lifecycle_finalize_task` appearing
+  `mcp/tests/test_workflow_chain_guidance.py:92-107`; `test_the_chain_reaches_every_declared_state_and_the_terminal_contract`, `mcp/tests/test_workflow_chain_guidance.py:109-122`;
+  `test_each_hop_was_the_move_the_previous_response_named`, `mcp/tests/test_workflow_chain_guidance.py:124-158`). `WORKFLOW_OPERATIONS`
+  (`mcp/tests/workflow_chain_guidance_test_support.py:51-61`) is nine operations, with `worktree_integrate` and `lifecycle_finalize_task` appearing
   **twice on purpose** — each is a preview followed by its apply, and the preview is the step `T62`
   broke. Case 1 asserts tuple equality against the observed hops, so a skipped or reordered hop
   changes the tuple and reds it; it also asserts every hop is on `PUBLIC_TOOLS` and that no hop lost
-  its envelope. Case 2 asserts each operation's own state vocabulary (`EXPECTED_STATES`, `:113-122`)
-  plus the terminal `cleanup` cell, and the phase progression (`EXPECTED_PHASES`, `:125-130`) read
+  its envelope. Case 2 asserts each operation's own state vocabulary (`EXPECTED_STATES`, `mcp/tests/workflow_chain_guidance_test_support.py:65-74`)
+  plus the terminal `cleanup` cell, and the phase progression (`EXPECTED_PHASES`, `mcp/tests/workflow_chain_guidance_test_support.py:77-82`) read
   from the product's state machine over the real contract file. Case 3 *derives* the order from the
   guidance rather than asserting it beside it: a named move must be the next hop or occur later
   in the remaining chain when the workflow interleaves a step; the case bounds its derivation (`forward >= 4`, `holds >= 1`).
 - **The two guidance channels.** Top-level nextAction/nextTool/nextArgs come from the response's own contract; nextStep/compact next comes from that addressed target path and is filtered by bound_next_step. The observation translates compact next back into its hint model. Both channels remain independent of any session lifecycle; withholding one does not erase a top-level operational move.
 - **The address guard and sibling premise.** The fixture starts a sibling without ending an ambient session. Raw guidance is computed for the target contract, and the sibling case requires `hop.raw_next` to be non-null. For each emitted channel it checks only present, truthy `contract_path`, `enclosure_path`, `contractPath` or `enclosurePath` values and asserts that none names the sibling. If `hop.top_next_tool is not None`, it also asserts that tool belongs to `PUBLIC_TOOLS`. It does not require an operational tool to exist, a path on every channel, or a present path to name this task; the separate own-task channel case supplies the positive address pin over the observed chain hops. That case checks each present address against the own contract and requires at least as many checked address values as hops, not a nonempty address on every individual channel. The old assertion that unguarded ambient guidance names the sibling is retired, not current coverage.
-- **The derived callability population** (`callability_population`, `:1053-1068`; `_as_given_call`,
-  `:709-729`; `classify_call`, `:238-252`; `missing_required_args`, `:275-283`;
-  `GUIDANCE_STEPS_MISSING_REQUIRED_ARGS`, `:166-168`;
-  `test_every_recommended_step_is_callable_with_the_args_its_guidance_supplies`, `:1222-1241`). Each
+- **The derived callability population** (`WorkflowChainObservation.callability_population`, `mcp/tests/workflow_chain_guidance_test_support.py:999-1014`; `WorkflowChainObservation._as_given_call`,
+  `mcp/tests/workflow_chain_guidance_test_support.py:662-682`; `classify_call`, `mcp/tests/workflow_chain_guidance_test_support.py:190-204`; `missing_required_args`, `mcp/tests/workflow_chain_guidance_test_support.py:227-235`;
+  `GUIDANCE_STEPS_MISSING_REQUIRED_ARGS`, `mcp/tests/workflow_chain_guidance_test_support.py:118-120`;
+  `test_every_recommended_step_is_callable_with_the_args_its_guidance_supplies`, `mcp/tests/test_workflow_chain_guidance.py:208-227`). Each
   hop is called first with **exactly what its own guidance supplied** (plus the arguments that
-  guidance itself declares as required), then again with only the fields the tool's own argument model
-  named as absent — so the chain can continue, because a check that stopped at the refusal could not
+  guidance itself declares as required). If that call does not answer, it is retried with only the fields
+  the tool's own argument model named as absent filled — so the chain can continue, because a check that stopped at the refusal could not
   tell an unusable recommendation from a broken chain. The two failure arms are separated by **model
   identity**, never by wording: the generated `<tool>Arguments` model refusing the call is an unusable
   recommendation, any other raise lost the envelope. The pin is asserted **equal in both directions**,
   so a recurrence and a widening both fail.
-- **The operational-triple probe** (`_probe_operational_triples`, `:957-973`; `_call_recommendation`,
-  `:943-955`; `RecommendedCall`, `:341-354`;
-  `…every_response_that_published_an_operational_triple_was_called_with_it`, `:1243-1293`). Every hop
+- **The operational-triple probe** (`WorkflowChainObservation._probe_operational_triples`, `mcp/tests/workflow_chain_guidance_test_support.py:906-922`; `WorkflowChainObservation._call_recommendation`,
+  `mcp/tests/workflow_chain_guidance_test_support.py:892-904`; `RecommendedCall`, `mcp/tests/workflow_chain_guidance_test_support.py:293-306`;
+  `test_every_response_that_published_an_operational_triple_was_called_with_it`, `mcp/tests/test_workflow_chain_guidance.py:229-279`). Every hop
   that publishes a `nextTool`/`nextArgs` triple is called **verbatim**, and the second producer of the
   same recommendation — `worktree_start(retry_provider_setup=True)` answering `blocked` — is **driven**
-  in the same world rather than cited (`_retry_provider_setup_arrangement`, `:975-1049`). The
+  in the same world rather than cited (`WorkflowChainObservation._retry_provider_setup_arrangement`, `mcp/tests/workflow_chain_guidance_test_support.py:924-995`). The
   population is asserted so it cannot silently shrink, and the negative fact is stated rather than left
   implicit: the only operations publishing no triple are the two terminal `lifecycle_finalize_task`
-  calls (`:1290-1293`).
-- **The classifier's own control** (`test_the_callability_arm_can_actually_fail`, `:1295-1325`).
+  calls (`mcp/tests/test_workflow_chain_guidance.py:276-279`).
+- **The classifier's own control** (`test_the_callability_arm_can_actually_fail`, `mcp/tests/test_workflow_chain_guidance.py:281-311`).
   `worktree_closeout_apply` called with nothing must be refused by **its own** model with
   `{contract_path, intent_note}`, the one-field-short shape must classify alike (the singular and
   plural refusal spellings), and a call that loses its envelope entirely must classify `raised` —
   otherwise an "answered" classification could be satisfied by a classifier that never refuses.
 - **The withhold, counted.** Responses lacking their own declared address still withhold unverifiable guidance. The test retains its exact tool/count pin and non-vacuity discriminator; it does not establish equality with a withheld overlay or prove every absent move is carried. This guard is independent of the removed session-state source.
-- **The previews and `T62`'s trigger** (`_walk`, `:773-852`;
-  `…every_preview_step_answered_and_the_drift_snapshot_was_actually_read`, `:1352-1392`). The drift
+- **The previews and `T62`'s trigger** (`WorkflowChainObservation._walk`, `mcp/tests/workflow_chain_guidance_test_support.py:725-805`;
+  `test_every_preview_step_answered_and_the_drift_snapshot_was_actually_read`, `mcp/tests/test_workflow_chain_guidance.py:353-393`). The drift
   snapshot is planted at the producer's own path (`drift_snapshot_path`,
   `mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:21-21`) before the cleanup and finalize
   previews; the case asserts it was **present** when they ran, that every preview answered
   (`would-*`/`closed`), that the snapshot **survived** the previews, and that the **real** finalize
   reclaimed it — so the preservation claim is not an artefact of nothing ever touching the file.
-- **The stale base and its raiser** (`STALE_BASE_RAISERS`, `:197-197`; `_stale_base_arrangement`,
-  `:904-939`; `test_a_stale_base_closes_the_envelope_by_raising_and_is_counted`, `:1394-1423`). The
+- **The stale base and its raiser** (`STALE_BASE_RAISERS`, `mcp/tests/workflow_chain_guidance_test_support.py:149`; `WorkflowChainObservation._stale_base_arrangement`,
+  `mcp/tests/workflow_chain_guidance_test_support.py:853-888`; `test_a_stale_base_closes_the_envelope_by_raising_and_is_counted`, `mcp/tests/test_workflow_chain_guidance.py:395-424`). The
   arrangement is measured, not described: the sibling enclosure's source branch is advanced the way a
   sibling's landing advances it, `worktree_sync` must answer `would-sync` (or the arm tested nothing),
   and the closing operations are driven in exactly that state. `worktree_closeout_preview` raises
@@ -99,33 +99,34 @@ The shared disposable world drives registered operations and contract-addressed 
   exist **in the exception text only**. The pin is asserted equal in both directions.
 - **The declared-requirement channel, `T109`**
   (`test_the_declared_requirement_channel_is_real_and_its_one_needed_case_is_unreachable`,
-  `:1427-1498`). Three measured facts in order: where the channel is reachable the product uses it
+  `mcp/tests/test_workflow_chain_guidance.py:428-499`). Three measured facts in order: where the channel is reachable the product uses it
   (the `cleanup-pending` phase declares `contract_path` for `lifecycle_finalize_task`, read at the one
   walk moment that phase is live); the phase that declares `intent_note` (`closeout-pending`) is
   **unreachable from the tools' own writers**, because the real apply leaves `approved_for_commit` and
   `closeout_status: completed` in the *same* contract write
-  (`mcp/src/agents_remember/worktrees/modules/closeout.py::_amended_closeout_contract` (current lines 595-629)); and the declaration is
+  (`mcp/src/agents_remember/worktrees/modules/closeout.py::_amended_closeout_contract` (current lines 680-714)); and the declaration is
   nonetheless real, asserted on the contract state that defines it — the real post-apply contract with
   only `closeout_status` rewritten.
 
 ### Conventions
 
-One hermetic world per class (`WorkflowWorld`, `:357-598`): converted memory is scaffolded
-with the layout marker and a `Code-Commit` trailer pairing the code base. After start, `_walk`
+One hermetic world per class (`WorkflowWorld`, `mcp/tests/workflow_chain_guidance_test_support.py:309-551`): converted memory is scaffolded
+with the layout marker and a `Code-Commit` trailer pairing the code base. After start, `WorkflowChainObservation._walk`
+(`mcp/tests/workflow_chain_guidance_test_support.py:725-805`)
 writes the real work file first, captures the actual code worktree with `CodeSnapshot`, then
 seeds open canonical leaf history with an `onboarding:{CODE_CHANGE}` `no_impact` row whose
 `sources` path/blob names that edited file. This is fixture setup, not an additional declared workflow operation.
 The world uses a single `TemporaryDirectory`, two real
 Git repositories with remote-tracking authority, real task documents, a real server built by
-`create_server`, and a real in-memory MCP client session per call (`:431-443`, through
+`create_server`, and a real in-memory MCP client session per call (`mcp/tests/workflow_chain_guidance_test_support.py:375-391`, through
 `create_connected_server_and_client_session`). `declare_test_process()` is called on
-construction (`:361-361`). No Docker, no network, no writes outside the temporary tree.
+construction (`mcp/tests/workflow_chain_guidance_test_support.py:313`). No Docker, no network, no writes outside the temporary tree.
 
 Every call goes through the **production entry point** — a registered tool over an MCP session — and
 `call` returns a three-way arm (`RAISED ToolError` with the payload, `RAISED <Exception>`, or
 `RETURNED` with `structuredContent`), so "did it raise" is itself the measurement.
 
-The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:362-362`, inside
+The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:630-630`, inside
 the array opening at `:5-5`). Registry placement is a source fact, not this survey’s collection
 or execution evidence. The original L8 loader refusal and **10 passed** budget/registry result
 are historical receipts, not a new result for the present candidate.
@@ -133,10 +134,10 @@ are historical receipts, not a new result for the present candidate.
 ### Invariants And Boundaries
 
 - **The pins are the workflow statement's, and they are exact in both directions.**
-  `GUIDANCE_STEPS_MISSING_REQUIRED_ARGS` (`:166-168`) carries exactly one entry,
+  `GUIDANCE_STEPS_MISSING_REQUIRED_ARGS` (`mcp/tests/workflow_chain_guidance_test_support.py:118-120`) carries exactly one entry,
   `worktree_closeout_apply` → `{intent_note}`, which is a **registered residual** rather than a
   tolerated omission: the fix belongs to the tool surface and the module's comment says so. Rule
-  stated at `:133-136`: repair it and delete the entry in the same change; never delete the constant,
+  stated at `mcp/tests/workflow_chain_guidance_test_support.py:117`: repair it and delete the entry in the same change; never delete the constant,
   never widen it.
 - **"Every recommended step is callable" is not what this module proves, and the honest statement is
   narrower.** What it pins is the callability of the recommendations **the walk reaches**, over the
@@ -147,19 +148,20 @@ are historical receipts, not a new result for the present candidate.
   where `:450` is the call and `:452` the `tool=` argument) recommends `worktree_status` with
   `{"contract_path"}` only, on a key that is *not* `nextTool`/`nextArgs`, so the module's probe
   structurally cannot see it; **`T130`** — a fourth `nextTool`/`nextArgs` producer,
-  `_projection_without_control` (`mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:535-545`),
-  whose `RecoveryRoute` tuple (`:48-48`) is unpacked and published as `nextTool`/`nextArgs` by
-  `public_payload` (`:68-81`); and **the phase channel's second repaired site** below.
-- **The phase channel is pinned at ONE of its two repaired sites.** `guidance.py` carries
-  `repo_id=contract.repo_name` on two `worktree_status` recommendations — `_post_integration_phase` (repo_id at current line 352) (the
-  `integration_status == "checkpointed"` branch of `_post_integration_phase`, phase
-  `worktree-started`) and `_pre_integration_phase` (repo_id at current line 414) (`_pre_integration_phase`, the pre-integration step). The walk
-  reaches only the second, so a **targeted** removal of `repo_id` at the checkpoint recommendation leaves this module at
-  **12 passed**. The successor verification's two-site mutation reds the module, but its red is fully
-  explained by `_pre_integration_phase` (repo_id at current line 414) alone, and that evidence shape must not be read as covering both. The bytes
-  are correct at both sites; this is a coverage boundary, and it is `T114`'s class.
+  `_projection_without_control` (`mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:457-467`),
+  whose `RecoveryRoute` tuple (`mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:46`) is unpacked and published as `nextTool`/`nextArgs` by
+  `TaskUnstartedEvidence.public_payload` (`mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:66-79`); and **the phase channel's second repaired site** below.
+- **The phase channel's two source sites and the historical coverage measurement are separate facts.**
+  Current `mcp/src/agents_remember/worktrees/modules/guidance.py` carries `repo_id=contract.repo_name` in `_post_integration_phase`'s checkpoint recommendation
+  (`:351-358`, argument at line356) and `_pre_integration_phase`'s status recommendation
+  (`:409-419`, argument at line418). The retained successor verification reported that the walk
+  reached only the second: a targeted checkpoint removal left **12 passed**, and its two-site mutation's
+  red was explained by `_pre_integration_phase` alone (then-line414). That historical result does not
+  establish fresh coverage at either current coordinate. The current arguments are present at both
+  sites; the earlier measured coverage boundary is `T114`'s class.
 - **The coverage case's population is every hop plus one named producer, not "every response".** Its
-  `expected` and `observed` sets are *both* derived from `self.hops` (`:1254-1260`), so it
+  `expected` and `observed` sets are *both* derived from `self.observation.hops`
+  (`mcp/tests/test_workflow_chain_guidance.py:239-245`), so it
   structurally cannot notice a triple-bearing response that is not a hop. The successor verification
   measured the gap rather than assuming it: in this fixture the only responses built outside the walk
   publish no triple, so the derivation is safe here — but the honest statement of the population is
@@ -167,13 +169,13 @@ are historical receipts, not a new result for the present candidate.
 - **The historical `A5c` account needs a current boundary.** The test docstring describes four
   requirement sites, but current `guidance.py` declares three: carryover, cleanup and closeout.
   Published-authority integration now changes summary text without `required_args`. The case
-  asserts cleanup and closeout; its four-site docstring is stale, not current population proof. Deleting the
-  `carryover-pending` declaration (`_post_integration_phase`, current line 304) leaves the module green — green **by
-  design**, and reproduced as such by the verification's `A5c` mutation.
+  asserts cleanup and closeout; its four-site docstring is stale, not current population proof. The current carryover declaration is in `mcp/src/agents_remember/worktrees/modules/guidance.py:288-310`. The retained verification
+  reported that deleting the `carryover-pending` declaration (`_post_integration_phase`, then-line304)
+  left the module green — green **by design**, reproduced by that historical `A5c` mutation.
 - **The module proves the mechanism and pins the populations; it repairs neither.** `T108`'s residual,
   `T109`'s missing field and `T34`'s stale-base raiser are statements this module carries for their
   owners, and the `### Todos` below record the same.
-- **Dead code and an unread field, recorded rather than smoothed.** `_apply_half` (`:634-642`) is
+- **Dead code and an unread field, recorded rather than smoothed.** `WorkflowChainObservation._apply_half` (`mcp/tests/workflow_chain_guidance_test_support.py:587-595`) is
   defined and never called, and `Hop.as_given_arm` — the field that carries *whether the guidance was
   followable at all* — is written and read by no assertion; the callability signal that survives into
   a case is `missing_args` alone, which case 6 pins. In case 10's preview predicate the arm
@@ -185,7 +187,7 @@ are historical receipts, not a new result for the present candidate.
 
 Verification metadata remains closeout-owned; this card records source inspection only. Owed to
 whatever change next touches the module: the three registered residuals above (`T127`, `T130`, the
-`guidance.py:369-369` coverage boundary), the dead `_apply_half` and the unread `Hop.as_given_arm`
+`_post_integration_phase` checkpoint recommendation at `mcp/src/agents_remember/worktrees/modules/guidance.py:351-358` coverage boundary), the dead `_apply_half` and the unread `Hop.as_given_arm`
 (either assert them or delete them), and the `nextRequiredArgs` pin `T109` asks for once the tool
 surface ships the field.
 
@@ -324,7 +326,7 @@ because the rows name modules that only exist once L8 and L9 have landed.
 - The closeout intent_note requirement is declared by _pre_integration_phase and asserted on a constructed declaring contract. [46]
 
 - The declaration `A5c` shows is not asserted (`carryover-pending`).  Anchor: `required_args` [47]
-- The `recommendedAction` residual (`T127`): the call at `:450`, the `tool=` argument at `:452`.  Anchor: `LifecycleRecommendedAction` [48]
+- The `recommendedAction` residual (`T127`): `_recommended_action` in `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:429-460` constructs `LifecycleRecommendedAction` at line 450 with `tool="worktree_status"` at line 452 and contract-only arguments at line 453.  Anchor: `LifecycleRecommendedAction` [48]
 - The `RecoveryRoute` producer (`T130`) that publishes an uncallable triple as `nextTool`/`nextArgs`. [49]
 - The tuple shape `T130` rests on: the value is a tuple element, not a tool-shaped key. [50]
 - Where the tuple becomes the operational triple a seat reads. [51]
@@ -416,6 +418,8 @@ because the rows name modules that only exist once L8 and L9 have landed.
 
 
 - The operational triple's declared home, and the reason it is a channel of the response's own contract.  Anchor: `nextArgs` [36]
+
+
 
 
 - The lane manifest declares test_workflow_chain_guidance.py in unit-regression; membership selects evidence and establishes no invocation. [35]

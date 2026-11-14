@@ -82,7 +82,7 @@
       ]
     },
     "11": {
-      "note": "**`M26`'s node: the limitation validator, whose failing assertion on the frozen file is at `:658`.**\n\nAnchor: \"test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction\"",
+      "note": "The limitation/omission model guard, with honest construction and both mismatch directions checked in the named current function. Historical mutant attribution: `M26`.\n\nAnchor: `test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction`",
       "targets": [
         {
           "anchor": {
@@ -99,7 +99,7 @@
       ]
     },
     "12": {
-      "note": "**`M25`'s node: the truncated comparison, whose failing assertion on the frozen file is at `:716`.**\n\nAnchor: \"test_a_truncated_comparison_cannot_be_presented_as_a_complete_one\"",
+      "note": "Complete/truncated page agreement and the model-owned contradiction refusal in the named current function. Historical mutant attribution: `M25`.\n\nAnchor: `test_a_truncated_comparison_cannot_be_presented_as_a_complete_one`",
       "targets": [
         {
           "anchor": {
@@ -199,14 +199,16 @@
       ]
     },
     "15": {
-      "note": "**The unit-lane row this module occupies, and the governed support artifact it consumes.**  Anchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\"\n\nAnchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\"",
+      "note": "**The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\" Anchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -215,14 +217,16 @@
       ]
     },
     "16": {
-      "note": "**The unit-lane row this module occupies, and the governed support artifact it consumes.**  Anchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\"\n\nAnchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\"",
+      "note": "**The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\" Anchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b8ba51e395bf787def585acaa1fdebea8559f65d",
-            "content": "sha256:9d6819d96f8bbd938c1f6d81c794761df1c45b8865842ba26231167146fd8742",
+            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
+            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
             "locator": {
-              "kind": "file"
+              "end": 4995,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

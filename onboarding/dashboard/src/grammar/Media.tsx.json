@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/grammar/Media.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5be275cdd2395153066434e87495d4996544b70a",
+        "content": "sha256:9815753ed932bf3ee5c39acfb28f9c3b232cc233fa4eeaf9b6d756e3ec230988",
+        "locator": {
+          "kind": "symbol",
+          "name": "MediaView"
+        }
+      },
+      "id": "RLZ-BFJ709",
+      "invariant": "INV-26X0GJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §3",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This component is the shared image or video presentation and supplies the type-and-size caption.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Draws supported pictures and videos consistently in file, change-set, notes and knowledge-code viewers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5be275cdd2395153066434e87495d4996544b70a",
+            "content": "sha256:c4993228b83818c76bbb0a9ce4e56fcc06649571efa84951a80441ac08976a7d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

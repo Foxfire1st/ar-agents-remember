@@ -4,11 +4,82 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
-        "content": "sha256:b163046c7b1bcd6d1b28fc0d8edaa933f8e5d44155c74ce61b2ca5db4a741c97",
+        "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+        "content": "sha256:c78c901b158cf2ad7882ecb9ef3d6f15a0e4da95293003956119487885285fca",
         "locator": {
           "kind": "symbol",
-          "name": "FileViewerImpl"
+          "name": "ViewerToolbar"
+        }
+      },
+      "id": "RLZ-3NQJ96",
+      "invariant": "INV-ZBD14W",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §10",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "The toolbar disables back and forward when the current index has no neighbor.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+        "content": "sha256:4e4861252562f9008e36cae9cb8b8f68aa106a64218c46e5dee17b149e0c9704",
+        "locator": {
+          "kind": "symbol",
+          "name": "RenderedToggle"
+        }
+      },
+      "id": "RLZ-40B8W7",
+      "invariant": "INV-EY37Q0",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §1",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This header control changes the same file between rendered prose and source.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+        "content": "sha256:b8348759e27172412b83706a4c4c503ccd2cd9f2834da91ce9ea70ddcf26890a",
+        "locator": {
+          "kind": "symbol",
+          "name": "useScrollRestore"
+        }
+      },
+      "id": "RLZ-5W6C2T",
+      "invariant": "INV-ZBD14W",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §10",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This hook restores an explicitly saved position, including zero, ahead of the original link anchor.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+        "content": "sha256:4d19014b3eab02425abae57ba9d596a7fe39e61efd831a92a171006a2dfa7f23",
+        "locator": {
+          "kind": "symbol",
+          "name": "useFileOpeners"
+        }
+      },
+      "id": "RLZ-6P3KJG",
+      "invariant": "INV-0WMTQ4",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §8",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Following a resolved internal link opens that repository file through the viewer's normal presentation selection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+        "content": "sha256:0295d01571e1af9b60e0fdfe508e3d5d0d2b158a2e03358576620714dcd3d44c",
+        "locator": {
+          "kind": "file"
         }
       },
       "id": "RLZ-6XBP0S",
@@ -17,13 +88,49 @@
         "handoffEntry": "RP16",
         "leaf": "260928-MIK-L89"
       },
-      "rationale": "Puts Explorer sidebar first in the external toolbar, binds its expanded state to the outer explorer panel and hides that mounted panel plus its resize handle together. The code/onboarding trees stay inside the hidden panel; the DualPane remains its sibling.",
+      "rationale": "FileViewerImpl passes one Explorer sidebar state to ViewerToolbar and ViewerBody; the toolbar places its toggle first, and the body hides the mounted explorer panel and resize handle together while keeping DualPane as their sibling.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
-        "content": "sha256:b163046c7b1bcd6d1b28fc0d8edaa933f8e5d44155c74ce61b2ca5db4a741c97",
+        "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+        "content": "sha256:8b2e718b031e07a7ff2a00f48a8aaf1a6be1e035f2c4af4d2e6e86386c0cc624",
+        "locator": {
+          "kind": "symbol",
+          "name": "useViewerHistory"
+        }
+      },
+      "id": "RLZ-82AC2D",
+      "invariant": "INV-ZBD14W",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §10",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This hook records the current scroll position before history navigation, retains per-entry presentation choices and applies releaseBodies when history entries change. Reloading a released body belongs to the FileViewerImpl effect, not this hook.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+        "content": "sha256:ef70b793abc648db90bd2a047b91ccd1f8cc4673076ede26e786d2fc8aaab0c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "openedEntry"
+        }
+      },
+      "id": "RLZ-R29VMG",
+      "invariant": "INV-EY37Q0",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §1",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This constructor sets the initial presentation for an opened repository file.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+        "content": "sha256:59a18f0facd696b2c333d3f07538908e5ca0051f985c0818d3ec93a19a425655",
         "locator": {
           "kind": "symbol",
           "name": "FileViewerImpl"
@@ -45,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
+            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
             "content": "sha256:791c8c3e29f6b010546e12bfc0932c791256b73eed84ce7b4085dae0294889fd",
             "locator": {
               "kind": "symbol",
@@ -58,16 +165,28 @@
       ]
     },
     "10": {
-      "note": "The Explorer remains mounted when hidden; its external toggle and code target stay in the page.\n\nAnchor: \"{/* MIK-R89 v2 rule 8: the explorer's shared toggle, first on the line above it. */}\"",
+      "note": "The Explorer remains mounted when hidden; its external toggle and code target stay in the page. Anchor: \"{/* MIK-R89 v2 rule 8: the explorer's shared toggle, first on the line above it. */}\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
-            "content": "sha256:c7fdc3daf8d97fab823f97fe21b9bd8df2c8e50c9e0a94b680decac306da941a",
+            "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+            "content": "sha256:7f8d0f52528f321d813a55098ac47a483e1d05312380722968b47970067d7dd5",
             "locator": {
-              "end": 300,
+              "end": 535,
               "kind": "line_range",
-              "start": 270
+              "start": 497
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+            "content": "sha256:8b692e82e751ac7e5dd948cf27c26864c77fcc5aebd6a68b0f2e321493e92f2a",
+            "locator": {
+              "end": 589,
+              "kind": "line_range",
+              "start": 565
             }
           },
           "kind": "code"
@@ -114,11 +233,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
             "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
             "locator": {
-              "kind": "symbol",
-              "name": "fetchRepos"
+              "end": 137,
+              "kind": "line_range",
+              "start": 134
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -126,11 +246,12 @@
         },
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
             "content": "sha256:e4ab790ad49ae4a24686b39e83f5038b85315bc6e2dbce5a9fc986beb3cc2f2d",
             "locator": {
-              "kind": "symbol",
-              "name": "readFile"
+              "end": 147,
+              "kind": "line_range",
+              "start": 142
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -138,11 +259,12 @@
         },
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
             "content": "sha256:17203a5a26c14b39c397cb26f7f7c7dafb5dce2e77618ddc150226164d34545b",
             "locator": {
-              "kind": "symbol",
-              "name": "resolveForward"
+              "end": 198,
+              "kind": "line_range",
+              "start": 190
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -150,11 +272,12 @@
         },
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
             "content": "sha256:75065c8f2fe955d2fe6565cb8fa85cf63f6f1cd57c302eb1b4d45c704998b159",
             "locator": {
-              "kind": "symbol",
-              "name": "resolveReverse"
+              "end": 208,
+              "kind": "line_range",
+              "start": 200
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -162,12 +285,12 @@
         },
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
             "content": "sha256:7f0b42eb80272b73f6e4ceef8790cab1991706ca24f1d8fe0cf84f6183dc0c85",
             "locator": {
-              "end": 128,
+              "end": 142,
               "kind": "line_range",
-              "start": 123
+              "start": 137
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -175,12 +298,12 @@
         },
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
-            "content": "sha256:d140673ef8d242ea5e4def8bdda96981236944e5d794bbee46c7ac1f0ff8f0b6",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
+            "content": "sha256:a412246f21eb91cbdb6a20fc4126e1ed993f88a006cdec3b02a19a63df96cd15",
             "locator": {
-              "end": 138,
+              "end": 155,
               "kind": "line_range",
-              "start": 130
+              "start": 134
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -188,12 +311,25 @@
         },
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
+            "content": "sha256:a1a747e2054c90e15ad1a591371788a012bc6bf941c522a8bbf11063e0af75fd",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
             "content": "sha256:d2684ca45e9472081c3b879f1c984d4349d5ec530eaa79255b01c7cd771caac3",
             "locator": {
-              "end": 148,
+              "end": 203,
               "kind": "line_range",
-              "start": 140
+              "start": 195
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -201,12 +337,12 @@
         },
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
             "content": "sha256:d172ffd91a44e4b0855c9e5359ede731c468dd64bfc04ad9ef9d0c05ff518631",
             "locator": {
-              "end": 94,
+              "end": 108,
               "kind": "line_range",
-              "start": 94
+              "start": 108
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -215,16 +351,16 @@
       ]
     },
     "5": {
-      "note": "The shell that registers + keeps this view mounted across tab switches.\n\nAnchor: `FileViewer`",
+      "note": "The shell that registers + keeps this view mounted across tab switches. Anchor: `FileViewer`",
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:569306adb3dd290f840dcaeb5ddc42fb8bbced63e529270a4bc4f7df6cdc0292",
             "locator": {
-              "end": 716,
+              "end": 574,
               "kind": "line_range",
-              "start": 711
+              "start": 569
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -232,12 +368,25 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:054d4cc1aaabba6284f7cdfeae8f609aba3d6af75651bac7e4bba96a06df3b1c",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "content": "sha256:3e60d8be764c89820a7bbd83686a05a499aad84240e6e89a1929958ce006a397",
             "locator": {
-              "end": 706,
+              "end": 574,
               "kind": "line_range",
-              "start": 425
+              "start": 568
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "content": "sha256:306832e2054f2394fcd3196d50acce4eda3ce48b61027b6db3c6995d8bb91a1b",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 460
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -246,16 +395,16 @@
       ]
     },
     "9": {
-      "note": "The page owns files-left visibility and publishes only its active repository for tray context.\n\nAnchor: \"const [repo, setRepo] = useState<string>(\"\");\"",
+      "note": "The page owns files-left visibility and publishes only its active repository for tray context. Anchor: \"const [repo, setRepo] = useState<string>(\"\");\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
-            "content": "sha256:9a29dd3d3f283feddc0611bd2e2aaa94c3e96f5195168ce96458c294136006c1",
+            "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+            "content": "sha256:26fb2fc5c00e3a80ea08e7b8dccbfc3a75c28131995fec6257b3b4b5ced954ab",
             "locator": {
-              "end": 225,
+              "end": 602,
               "kind": "line_range",
-              "start": 209
+              "start": 593
             }
           },
           "kind": "code"

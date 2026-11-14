@@ -132,4 +132,6 @@ No cross-repo boundary is crossed by this file.
 - Rich domain-unit tails expose rows and continuation without implying public overflow or pointer retrieval.
 
 
-- The lane row.  Anchor: `test_knowledge_leaf_read` [37]
+
+
+- The lane row. Anchor: `test_knowledge_leaf_read` Anchor: `test_knowledge_leaf_read` [37]

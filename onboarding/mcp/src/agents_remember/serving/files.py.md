@@ -12,18 +12,15 @@ series): the serving-layer bridge from the dashboard to the kernel
 (L3/L4) enumerate repositories and their `{mainline + active worktree
 enclosures}`, list a scoped directory level (code + paired onboarding), read one
 file's content + onboarding metadata, and resolve the 1:1 code↔onboarding sidecar
-pairing in both directions. It is the first serving module to resolve a
-`CoordinationContext` (the rest of `serving/` resolves only
-`coordination_root`/`workspace_root`).
+pairing in both directions. The shared serving/scope.py resolver supplies CoordinationContext-backed roots to this API and the change-set routes.
 
 ## Code Commentary
 
-### 260731-EFA-L4 Current Delta — The Four Routes Now Declare What They Answer With
+### JSON declarations and media routes
 
-All four routes gained a `response_model` cit:([`register_files_routes`], mcp/src/agents_remember/serving/files.py:296-325). Nothing about the wire changed: every
-handler still returns a `JSONResponse` it built itself, and FastAPI applies `response_model`
-only to values it serializes for you — so on these four the declaration contributes an OpenAPI
-schema and validates nothing at runtime. The former broad conformance suite was removed in IAS testing cleanup. Its historical execution is not current enforcement; the declarations remain the response contract.
+The catalog, listing, text read, path resolution and onboarding routes declare `response_model`; the bytes route returns media responses. cit:([`register_files_routes`], mcp/src/agents_remember/serving/files.py:362-412) Each JSON handler returns a `JSONResponse` it built itself, and FastAPI applies `response_model`
+only to values it serializes for you — so these declarations contribute an OpenAPI
+schema and validate nothing at runtime. The former broad conformance suite was removed in IAS testing cleanup. Its historical execution is not current enforcement; the declarations remain the response contract.
 
 The declarations, in `serving/response_contract.py`:
 
@@ -34,9 +31,8 @@ The declarations, in `serving/response_contract.py`:
 - `GET /api/files/read` → `FileContents`
 - `GET /api/files/onboarding` → `OnboardingResolution`
 
-The other three share `SCOPED_READ_RESPONSES` (400 / 404), which is `run_scoped`'s error map
-transcribed: `StatusRefusal` on 400, and `UnknownRepoRefusal | UnknownScopeRefusal |
-MissingPathRefusal` on 404.
+The listing, text read, path resolution, bytes and onboarding routes share `SCOPED_READ_RESPONSES` (400 / 404), which declares the shared scope error map: `StatusRefusal` on 400, and `UnknownRepoRefusal | UnknownScopeRefusal |
+MissingPathRefusal` on 404. The bytes route also maps the separate typed media refusals.
 
 `OnboardingResolution` is a **five-shape union**, and declaring it that way is the honest
 contract rather than a convenience: `direction` picks the forward/reverse pair
@@ -46,29 +42,21 @@ discriminates further. Declaring only the forward shape would have been a lie ab
 route's traffic. `DirectoryListing.code` carries the discriminated `CodeNode` union for the same
 reason — only a `kind: "file"` row may carry `language`/`hasSidecar`, and only it must.
 
-This entry supersedes any earlier description in this sidecar that conflicts with the current
-source behavior above; verification metadata stays pinned to the pre-commit source history until
-closeout.
+
 
 ### Logic
 
-**Operations-integration L3** extracted the shared scope layer (`FileScope`,
-`resolve_scope`, the `run_scoped` error mapper [was `_run`], `language_for` [was
-`_language_for`], `_iter_repo_contracts`/`_find_enclosure_contract`, `_resolve_within`,
-`_LANG_BY_EXT`) into the sibling `serving/scope.py` so the L3 change-set backend reuses
-it. `files.py` now imports them from `.scope` and **re-exports** `FileScope` +
-`_resolve_within` for existing callers/tests. The behaviour described below is unchanged
-— it is the same code, now shared with `serving/changeset.py`.
+The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `_iter_repo_contracts`/`_find_enclosure_contract`, `_resolve_within`, `_LANG_BY_EXT`) lives in sibling `serving/scope.py`, so `serving/changeset.py` reuses it. `files.py` imports `FileScope`, `_resolve_within`, `language_for` and `run_scoped` from `.scope`,
+along with its catalog, decoding and response helpers, and **re-exports** `FileScope` +
+`_resolve_within` for existing callers/tests. The scope resolver and error map are shared with `serving/changeset.py`.
 
-`register_files_routes(app, config)` registers four GET routes and **must** be
-called before the greedy static `/` mount in `serving/app.py` (it is, at the tail
-of `create_app`). Routes: `GET /api/files/repos` (catalog), `/api/files/list`,
-`/api/files/read`, `/api/files/onboarding?direction=forward|reverse`. Each route is
-a thin closure over `run_scoped` (in `serving/scope.py`), which resolves the scope and maps domain
+`register_files_routes(app, config)` registers six GET routes and **must** be
+called before the greedy static `/` mount in `serving/app.py` (its registration precedes the later APIs and static delivery). Routes: `GET /api/files/repos` (catalog), `/api/files/list`,
+`/api/files/read`, `/api/files/onboarding?direction=forward|reverse`, `/api/files/bytes` and `/api/files/resolve`. The scoped JSON routes are
+thin closures over `run_scoped` (in `serving/scope.py`), which resolves the scope and maps domain
 errors to the serving status-string `JSONResponse` idiom: an unknown repo →
 `404 unknown-repo`, an unknown enclosure → `404 unknown-scope`, an out-of-root /
-absolute path → `400 bad-path`, an absent file → `404 not-found`. Success returns a
-plain camelCase dict at 200.
+absolute path → `400 bad-path`, an absent file → `404 not-found`. The bytes route shares run_scoped_response; the catalog has no scoped operation. JSON operations return camelCase dictionaries at 200; the bytes operation returns the media response or its typed refusal.
 
 `resolve_scope(config, repo_id, scope_id)` maps `{repo, mainline|enclosure}` to a
 frozen `FileScope` (`code_root`, `onboarding_root | None`, `memory_root | None`,
@@ -82,8 +70,8 @@ to a code-only scope (`onboarding_root=None`) rather than failing — code stays
 browsable and onboarding resolves uniformly "missing".
 
 `list_repos(config)` is the catalog: every `config.allowed_repo_ids` entry with its
-mainline (always) and its active enclosures, enumerated **per request** from
-`iter_leaf_enclosure_contracts(coordination_root/"tasks")` via `_iter_repo_contracts`
+mainline (always) and its active enclosures, enumerated on a catalog TTL miss in one walk from
+`iter_leaf_enclosure_contracts(coordination_root/"tasks")` via `_assemble_repo_catalog` and `_iter_active_contracts`
 — filtered to the allow-listed `repo_name`, skipping `cleanup=="abandoned"` and any
 enclosure whose `code_worktree` no longer exists, and tolerating a malformed
 contract (`ContractError`/`OSError` → skip, never abort).
@@ -91,9 +79,9 @@ contract (`ContractError`/`OSError` → skip, never abort).
 `list_dir(scope, rel_dir)` lazily lists one level: code children from `code_root`
 (each file annotated with `language` and `hasSidecar` via `route_sidecar_status`)
 plus the parallel onboarding children from `onboarding_root` when present.
-`read_file(scope, rel)` serves a file's content (capped at `_MAX_FILE_BYTES` = 2
-MiB with a `truncated` flag; a non-UTF-8 file degrades to `language:"binary"`,
-empty content) — since 260703-L18 (finding 5) the cap goes through the shared
+`read_file(scope, rel)` returns fixed-media metadata without reading payload bytes; otherwise it serves a file's content (capped at `_MAX_FILE_BYTES` = 2
+MiB with a `truncated` flag; an initial-NUL or non-UTF-8 file degrades to `language:"binary"`,
+empty content) — the cap goes through the shared
 `scope.decode_capped`, cutting at a UTF-8 codepoint boundary so a multi-byte char
 straddling the cap returns the first ~2 MiB + `truncated:true` instead of empty
 `binary` — and `_onboarding_meta` (the drift-bearing
@@ -131,8 +119,7 @@ rejected, never silently re-rooted).
 - **The pairing logic is shared, not re-derived.** All sidecar resolution +
   confinement comes from `kernel/sidecar_pairing.py`; this module owns only the
   scope/catalog resolution, the HTTP shape, and the read cap.
-- **Enclosure enumeration is on-disk + per-request**, not projection-derived, so a
-  newly started or closed worktree appears without a projector tick.
+- **Enclosure catalog construction reads on-disk active contracts and uses the short catalog TTL**, not projection-derived enclosure rows, so a newly started or closed worktree appears after catalog refresh without a projector tick. Scope resolution still resolves its requested contract.
 - **The declared response models are the contract.** These handlers return `Response` objects, so the model declaration alone does not validate their bodies. The removed conformance suite is not current protection. A new key emitted by `list_dir`,
   `read_file`, `resolve_onboarding` or `resolve_partner` must land in the matching model in
   `serving/response_contract.py` in the same change — `extra="forbid"` makes an undeclared key a
@@ -142,8 +129,8 @@ rejected, never silently re-rooted).
 
 ### Repo-Internal References
 
-- The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `_resolve_within`) extracted to and imported from here (L3). [1]
-- The app factory that calls `register_files_routes(app, config)` immediately before `mount_static`. [2]
+- The shared scope layer in `serving/scope.py` owns `FileScope`, `resolve_scope`, `run_scoped`, `language_for` and `_resolve_within`. [1]
+- The app factory calls register_files_routes before the later API registrations and mount_static. [2]
 - The shared, side-effect-free sidecar pairing + path-confinement helpers this module reuses. [3]
 - The scope resolver + `CoordinationContext`/`MissingMemoryError` bridged here. [4]
 - The repo allow-list authority guard (`require_repo` → `RepositoryScope`). [5]
@@ -151,20 +138,19 @@ rejected, never silently re-rooted).
 
 - The leaf-enclosure contract enumerator the catalog walks. [7]
 
-> Retained earlier citation wording: - The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.
-
-- The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. [9]
+- The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.
 
 
-| The declared response models and the shared `SCOPED_READ_RESPONSES` refusal table these four routes name (`RepoCatalog`, `DirectoryListing`, `FileContents`, `OnboardingResolution`). | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:714-720 |
-| Current production declaration; the removed broad suite supplies no current execution proof. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:303-325; mcp/src/agents_remember/serving/files.py:298-298 |
 
-## 260718-CHATS-L5I Current Delta
+| The JSON routes declare `RepoCatalog`, `DirectoryListing`, `FileContents`, `FileResolution` and `OnboardingResolution`; the bytes route returns media responses under the shared scoped-read declarations. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:362-412 |
+| Current production declaration; the removed broad suite supplies no current execution proof. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:362-412 |
+
+## Repository catalog reuse
 
 `list_repos` now walks the task surface once, buckets entries by repository, and applies a short TTL memo. The repository-files API no longer repeats the same whole-task-tree traversal for each repository in one request.
 
-This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
-- The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.  Anchor: "coordination.worktree_group"
 
-- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/worktree_contract.py:97-1215 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c20a3292e667d227a3be0c1fb276f8a701df814f. Retired means the anchor no longer stands, not that the cited subject was deleted.
+- The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.
+
+- The files reader uses table_metadata for Markdown-table metadata and mirror_onboarding_path to derive the source-to-sidecar .md path. [9]

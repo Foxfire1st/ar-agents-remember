@@ -7,7 +7,7 @@
 ## Purpose
 
 **The read's real boundaries: a real Git tree, a real snapshot identity, a real publication.** Twenty
-nodes in `integration` (row `mcp/tests/test-evidence-lanes.toml:414`) — the properties the ordinary unit
+nodes in `integration` (row `mcp/tests/test-evidence-lanes.toml:697-697`) — the properties the ordinary unit
 path cannot fail from outside, because they need real committed bytes, a real database file and a real
 publication to exist at all.
 
@@ -79,7 +79,7 @@ selected scope — planning can read recorded knowledge with no leaf and no encl
   with the production line untouched; it is not coverage evidence. The current path
   suite independently stages exit 128 in
   `test_a_lookup_that_answered_non_zero_is_unavailable_rather_than_an_absent_path`
-  (`mcp/tests/test_knowledge_read_paths.py:579-680`), delegates the availability probe
+  (`mcp/tests/test_knowledge_read_paths.py:585-692`), delegates the availability probe
   to the real runner, and asserts `recorded_object_unavailable` and the exact exit-status
   detail. This is a source-inspected controlled producer witness, not a new mutation
   kill or fresh execution result. The `OSError` producer has its separate case at
@@ -144,6 +144,8 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+
 
 
 - The read boundary module occupies the integration lane row; registration is not execution evidence. [10]

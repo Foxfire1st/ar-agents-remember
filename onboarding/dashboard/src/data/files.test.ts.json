@@ -20,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "Asserts the catalog / list / read / onboarding URLs (including `%2F` path encoding and `direction`).\n\nAnchor: `direction`",
+      "note": "Asserts exact catalog/list/read URLs and the onboarding direction markers.",
       "targets": [
         {
           "anchor": {
             "blob": "1bf0be0e9be4bf1b4eb10ca84a79fed261108241",
-            "content": "sha256:e1b175c95c3dcf26d469a25b8faac337fae84dc61401497ab0eeaff1b425367b",
+            "content": "sha256:f54af9eb53fc3e2fd2c6232870bba31e9b382a5bb3ff356dcc6af6ba743a4ef0",
             "locator": {
-              "end": 47,
+              "end": 48,
               "kind": "line_range",
-              "start": 46
+              "start": 35
             }
           },
           "kind": "test"
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
             "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
             "locator": {
               "kind": "symbol",
@@ -75,28 +75,50 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
-            "content": "sha256:cf18e1b4612890662ae0cedcde62fdb7fd5948c9539a62b2526c69a1ea1f46c5",
+            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
+            "content": "sha256:c8d030f7ab11cf8eaf8cc31237b8b270746e02efab01606a44688eb3d51fb08d",
             "locator": {
-              "kind": "symbol",
-              "name": "run_scoped"
+              "end": 267,
+              "kind": "line_range",
+              "start": 229
             },
             "path": "mcp/src/agents_remember/serving/scope.py"
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "6": {
+      "note": "Owned JSON cases distinguish pre-abort, caller cancellation and timeout cancellation while clearing timers.",
+      "targets": [
         {
           "anchor": {
-            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
-            "content": "sha256:e4170303a7d55afacdbfe0fedf0f22c113a531a40de8fb126bd0c940f23fbd9e",
+            "blob": "1bf0be0e9be4bf1b4eb10ca84a79fed261108241",
+            "content": "sha256:a71f17b776df113f9fc057cc44ee92ccc7fa8fdf1c75c01c787746c1c21a9c3f",
             "locator": {
-              "end": 240,
+              "end": 85,
               "kind": "line_range",
-              "start": 220
-            },
-            "path": "mcp/src/agents_remember/serving/scope.py"
+              "start": 56
+            }
           },
-          "kind": "code"
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Catalog single-flight cases check sharing, shared rejection and retry, post-settlement reads and hung-read timeout release.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bf0be0e9be4bf1b4eb10ca84a79fed261108241",
+            "content": "sha256:28e1752b8671d6e0851a343aff6e40427191ae7a26fdfe608966889bda92ce80",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "test"
         }
       ]
     }

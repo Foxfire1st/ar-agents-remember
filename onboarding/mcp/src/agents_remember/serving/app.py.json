@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "79366831b556a7cf512bc53d396ac55a43734666",
-        "content": "sha256:d59ff148a41b13ec9104f58c10d25a3c17ca8f515680e0083ad04d24f6c5b595",
+        "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+        "content": "sha256:e54b251ae06512ee9d5a230152fe474661e632d8d1f74e1c0f3932bfe6e272cc",
         "locator": {
           "kind": "symbol",
           "name": "create_app"
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+        "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
         "content": "sha256:ce420730463b6f8b0ebb68ac51cde958f9401616bde6ddb051ddfd69664c1039",
         "locator": {
-          "end": 136,
+          "end": 139,
           "kind": "line_range",
-          "start": 86
+          "start": 89
         }
       },
       "id": "RLZ-K8504A",
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+        "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
         "content": "sha256:594e15b9b4fbc0139d61473bf108a57d9edcf8058d3d535c0c2ff0e90e8b6d51",
         "locator": {
           "kind": "symbol",
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "79366831b556a7cf512bc53d396ac55a43734666",
-        "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
+        "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+        "content": "sha256:0bb1a4aab5877866dbcaee91f59b60f9567981d21c2dd55fb6d62f9e8df38f90",
         "locator": {
           "kind": "file"
         }
@@ -81,10 +81,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
-            "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
+            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+            "content": "sha256:ea6bc0c8977ac3351029dda786631655235a60e1c455c755ee392518468c82aa",
             "locator": {
-              "kind": "file"
+              "end": 258,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+            "content": "sha256:19d37f2073afce4e2b986327eaf142bc27c860696d3f1bb6f37203a8baf3a27d",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 285
             }
           },
           "kind": "code"
@@ -96,10 +110,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
-            "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
+            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+            "content": "sha256:8cefbf065294bb243ae149ae0cbae2cb9eabf17fe9de232cab85532b576416f4",
             "locator": {
-              "kind": "file"
+              "end": 258,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+            "content": "sha256:19d37f2073afce4e2b986327eaf142bc27c860696d3f1bb6f37203a8baf3a27d",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 285
             }
           },
           "kind": "code"
@@ -107,14 +135,28 @@
       ]
     },
     "36": {
-      "note": "Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators.\n\nAnchor: `refuse_replaced_canvas_authoring`",
+      "note": "Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators. Anchor: `refuse_replaced_canvas_authoring`",
       "targets": [
         {
           "anchor": {
-            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
-            "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
+            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+            "content": "sha256:594e15b9b4fbc0139d61473bf108a57d9edcf8058d3d535c0c2ff0e90e8b6d51",
             "locator": {
-              "kind": "file"
+              "end": 188,
+              "kind": "line_range",
+              "start": 164
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+            "content": "sha256:56fd848ad8d50d4755644ec2b3082345a01488d076940b9a93fce9fce0955aba",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 250
             }
           },
           "kind": "code"

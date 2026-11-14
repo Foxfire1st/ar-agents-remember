@@ -97,4 +97,6 @@ No meaningful cross-repo references found: every repository is built under `tmp_
 No cross-repo boundary is crossed by this file.
 
 
-- The lane registration.  Anchor: "mcp/tests/test_knowledge_worklist.py" [15]
+
+
+- The lane registration. Anchor: "mcp/tests/test_knowledge_worklist.py" Anchor: "mcp/tests/test_knowledge_worklist.py" [15]

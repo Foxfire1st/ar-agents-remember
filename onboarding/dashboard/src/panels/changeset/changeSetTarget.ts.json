@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/changeset/changeSetTarget.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the change-set target and viewer prop types shared by workspace and tab selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a02304ae81ae81a714191ba18520e2f94ae4d71",
+            "content": "sha256:6447a2783bf7df14442277e0763b00a684b84de6c3456a2ec4b2828560e8d160",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

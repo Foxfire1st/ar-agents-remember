@@ -44,6 +44,8 @@ The task reader presents one track-and-knob Direct execution switch only on a pl
 
 Operations, File Viewer, Knowledge and Role Chats are mounted layers whose visibility changes. The File Viewer comment distinguishes retained reader state from its deferred boot catalog read. Notes are mounted after first opening and remain hidden after Back, preserving their listing and open note; a change-set target takes screen precedence. The review page mounts conditionally in the railed grid beside the existing right rail, with the Operations content hidden underneath. Retention claims belong to the layer that owns them.
 
+Operations keeps its last task view, change set, intent review or notes document across a visit to another tab. Returning restores the selected diff file and filter. A remembered reader whose task is absent after hydration gives way to the task view; pressing an already-open Operations tab also returns to that view.
+
 The shell's main viewport deliberately hides overflow: panels own their scrollports. This is a composition obligation, not proof that every possible injected panel is scrollable. Rails likewise delegate scrolling to their panel children. Memoized layers, stable callbacks and identity-stable store slices express the intent to avoid reconciling entire retained surfaces on each navigation change; old timing measurements do not certify present performance.
 
 The task list fills the left rail; attention lives behind its header bell in a bounded overlay rather than a sibling height-consuming block. Compact grouping, bell and Clear all controls share viewTabLook authority. These presentation changes retain the bell's placement and the row identity contracts; under the dismissal contract every served row is one acknowledgement per occurrence, Clear all included, and the reducer serves the newest entry first.
@@ -374,6 +376,10 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Retired at the fifth freeze d59c3493: dashboard/src/test/setup.ts:4-7 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cf5ef507f2542d6cd2f9d37a6b72148d3b91b340; dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/reviewTransport.ts:162-190 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d21bc8a6c5d30e2394a72d056bff216b766407c2; dashboard/src/data/files.ts::FilesApiError - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/review/ReviewReadCycle.ts::memoryWatchActions - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/Cockpit.tsx::ChangeSetTakeover - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/files.ts::getJson - cited by 2 anchors in this card; the name occurs 6 times in that file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/conditionalReads.ts::read - the symbol it cited now occurs 11 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.tsx - the component was deleted at the fifth freeze d59c3493; its behaviour now lives in dashboard/src/cockpit/roleChatExecutionView.ts and dashboard/src/cockpit/RoleChatsView.tsx, which the card cites; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.test.tsx - the test was deleted at the fifth freeze d59c3493 with the component it exercised; the catalog cases live in dashboard/src/cockpit/role-launcher/RoleLauncher.catalog.test.tsx. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
+- Operations retains its mounted task, ordinary diff, intent review and notes surfaces across a bottom-tab visit. [97]
+- The tab handler restores an owned remembered reader, dismisses one whose served task is absent after hydration, and resets on a repeated Operations press. [98]
+
+
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [73]
 
 - EngineRoomImpl builds its model from engineProcesses alone and selects the process/ledger data for enclosure presentation; it reads no lifecycle collection or provider projection. [42]
@@ -402,7 +408,10 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - **The entry that is offered for every leaf; since `260921-ICR-L47` the subject catalogue is read by the reviewer on entry (not by the task entry), and never gates it.** [25]
 
-- **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** [26]
+
+
+- **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** Anchor: `ChangeSetTarget` [26]
+
 
 - The case that measures the browser half: no subject offered, and the target is still a review. [30]
 
@@ -503,7 +512,10 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 - Current model owners for the review page account. [88]
 
 
+
+
 - Presence of ChangeSetTarget.review selects the Operations review page, including the empty task-context target. [18]
+
 
 - ReviewMain forwards task-context or named-subject targets to ReviewSurface; its retained comparison overlay separately mounts ChangeSetViewer. [19]
 
@@ -542,9 +554,15 @@ Anchor: `ReviewSourceInventory` `intentReview` [28]
 - The four-entry product bar and retained product layers remain distinct from injected views; review URL state can override ordinary opening view. [44]
 
 
+
+
 - Shell navigation, persistent layers and shared drivers. [6]
 
+
+
+
 - Responsive shell style and the actual narrow railed/takeover consumers are separate from reviewer-local scroll ownership. [74]
+
 
 - Question/read identity and memory-input epoch prevent superseded responses from display or inappropriate unshown reuse; live-watch notification is separately wired by the surface. [51]
 - Current lane owners for the review page account. [81]

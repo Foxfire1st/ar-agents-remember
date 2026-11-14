@@ -63,7 +63,10 @@ No relevant domain documentation was found.
 - The artifact target the `open` callback lifts. [2]
 
 
-- The markdown consumer that renders registered addresses as buttons. [3]
+
+
+- The markdown consumer that renders registered addresses as buttons. Anchor: `RequirementAnchor` [3]
+
 
 
 

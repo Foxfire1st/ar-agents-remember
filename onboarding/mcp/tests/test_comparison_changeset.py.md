@@ -17,4 +17,6 @@ The fixture builds four immutable trees with a real rename and an unchanged side
 - The body validates as the new comparison contract [1]
 - Exact lists, renames, scoped memory and refusal ladder [2]
 - Git calls are counted through the serving owner module [3]
+
+
 - Historical paths ignore current filesystem aliases [4]

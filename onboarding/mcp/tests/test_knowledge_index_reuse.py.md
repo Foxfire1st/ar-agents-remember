@@ -76,4 +76,6 @@ No meaningful cross-repo references found: every case builds its own repository 
 No cross-repo boundary is crossed by this file.
 
 
-- The lane row.  Anchor: `test_knowledge_index_reuse` [13]
+
+
+- The lane row. Anchor: `test_knowledge_index_reuse` Anchor: `test_knowledge_index_reuse` [13]

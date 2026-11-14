@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/cockpit/shellActions.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Connects shell-owned state to document, seat-chat, change-set and notes actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45bf722d8fb318fe1c2e26c0ac6e551df69ae861",
+            "content": "sha256:755936335f6507c166ac71b76bed4556f4a3c9deb34d0e6f9127e9ad088f034b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

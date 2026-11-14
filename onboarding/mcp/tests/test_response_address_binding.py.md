@@ -55,7 +55,7 @@ is driven by the envelope it will meet.
 it has no source file — arrived as a blank string, and the payload reported a `count` that
 included entries its own sample could not name.
 `test_the_refreshed_onboarding_census_names_every_entry_it_counts` (`:126-165`) drives
-`_refreshed_onboarding_paths` (`mcp/src/agents_remember/worktrees/modules/closeout.py:127-141`)
+`_refreshed_onboarding_paths` (`mcp/src/agents_remember/worktrees/modules/closeout.py:121-133`)
 and `_bounded_paths`, and requires each entry to be named by its `source_path` **or** its
 `onboarding_file`, with a blank refused rather than counted.
 
@@ -73,17 +73,22 @@ silently returning the hole.
 Plain module-level pytest functions plus the small builders and stubs above them
 (`_Contract` supplies the closed-result fixture); no `unittest`, no `pytest` marks, so the
 module is in the default selection and its lane is **`unit-regression`**
-(`mcp/tests/test-evidence-lanes.toml:112`). The constants `OWN`, `OWN_ENCLOSURE` and `OTHER` are the only literals the cases share.
+(`mcp/tests/test-evidence-lanes.toml:445-445`). The constants `OWN`, `OWN_ENCLOSURE` and `OTHER` are the only literals the cases share.
 
 ### Invariants And Boundaries
 
-- **The fixture uses the shape the product emits, not a convenient one.** Both spellings are the
-  contract FILE, measured on a real `worktree_status` response and on all four producers
-  (`worktrees/modules/guidance.py:171-176` and `:443-444`, `application/lifecycle/start_result.py:121`,
-  `application/lifecycle/reopen.py:104`). An earlier form of this fixture used a directory, a
-  shape no producer emits — that is `L6`'s `F3`, corrected before the leaf froze.
+- **The fixture uses the contract-file shape the product emits.** The real
+  `worktree_status` response is checked by the fixture. Current both-spelling producers put the
+  contract file in `enclosure_path` and `contract_path`: `contract_next_args`
+  (`mcp/src/agents_remember/worktrees/modules/guidance.py:179-184`), the status facts
+  (`mcp/src/agents_remember/worktrees/modules/guidance.py:476-491`), and the start-result facts
+  (`mcp/src/agents_remember/worktrees/modules/startup/start_result.py:117-128`). The current
+  reopen argument helpers instead publish `contract_path` alone, with their respective `dry_run`
+  value (`mcp/src/agents_remember/worktrees/reopen.py:96-101`). The earlier four-producer path list
+  is superseded by these source locations; it is not evidence that every producer emits both keys.
+  An earlier fixture used a directory, recorded as `L6`'s `F3` and corrected before that leaf froze.
 - **The directory tolerance in the guard is exactly the immediate container.** `_names_the_same_place`
-  (`mcp/src/agents_remember/application/tool_response.py:31-57`) accepts the contract file or
+  (`mcp/src/agents_remember/application/tool_response.py:64-88`) accepts the contract file or
   `dirname(file)`, and an earlier, wider form that accepted any ancestor was narrowed in the same
   leaf; no case here asserts the wider rule, so re-widening it would be visible.
 - These tests assert response guidance/census/envelope contracts, not migration outcomes or a real-tree write.
@@ -131,6 +136,8 @@ No cross-repository implementation evidence is required for these local response
 The cases build no repository and touch no real coordination root.
 
 No repository or external-system boundary is proved by this module.
+
+
 
 
 - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_response_address_binding.py" [16]

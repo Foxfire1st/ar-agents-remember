@@ -175,4 +175,6 @@ Current source: The literal PUBLIC_TOOLS source tuple contains 44 names. The con
 - Registered TaskDocResponse validation distinguishes available rows carrying requirements (including an empty list) from unavailable rows without them. Empty sibling populations are valid; unknown or missing states, incompatible requirements and extra fields fail. The description oracle requires the literal Kind: subTask or master. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [23]
 
 
+
+
 - The lane manifest registers mcp/tests/test_tool_response_conformance.py in architecture-fitness. Membership selects evidence and does not establish execution. [20]

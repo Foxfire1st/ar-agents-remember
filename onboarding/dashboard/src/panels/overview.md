@@ -9,7 +9,7 @@ This route contains reusable cockpit panels and focused reading and interaction 
 
 No session-cockpit directory remains as a current owner. Full-page native Chats belongs to cockpit/RoleChats.tsx; lifecycle-list and detail-panel compose Operations navigation and task reading; engine-room owns enclosure/process visualization; file-viewer, changeset and notes-reader own their readers; sprint-graph owns the optional execution graph. ReviewSurface composes the review page through review/reading and review/tree, governed in detail by the [review route overview](review/overview.md). Knowledge-reader composition remains governed here.
 
-`review/canvas/` holds the generated page's panel and its transport: `canvasApi` types the saved-first answer and carries a server refusal as its own error, `canvasModel` derives the panel's phase and keeps a saved page tied to the comparison number and entrypoint it was published against, `canvasHooks` reads a frame state and issues the one explicit start, `canvasDocument` watches the mounted frame for entry, departure and challenge answers so a departed document's channel is revoked, and `CanvasPanel` mounts the sandboxed frame above the untouched deterministic detail. Mounting the panel performs a read and starts no model; authoring begins only from its Generate, Replace presenter or Resume controls, each of which requires an admitted comparison or a recorded attempt. Native task-document chat lives under cockpit/document-chat/, outside this panels directory, and occupies the Operations right rail rather than another full-page Chats destination.
+`review/canvas/` retains shared revision-frame session and evidence protocol: `canvasApi` types the session and evidence destination, sends session revocation and evidence messages, and carries a server refusal as its own error; `canvasModel` checks exact evidence destinations against the shown task and comparison; `canvasHooks` bounds forwarded-message preparation and in-flight admission; and `canvasDocument` watches frame entry, departure and challenge answers so the caller can revoke a departed document's channel. The earlier saved-first phase/start/`CanvasPanel` account, including Generate, Replace presenter and Resume controls, describes a superseded panel. The current explainer chat column belongs to `explainer/ExplainerColumn.tsx`, outside this panels directory; showing it reads state and starts no model turn. Native task-document chat lives under cockpit/document-chat/, outside this panels directory, and occupies the Operations right rail rather than another full-page Chats destination.
 
 Panels present canonical task hierarchy, structural document-and-role seats, current occupants, source comparisons, knowledge and operational state. The inherited structural contract addresses a seat by document plus role; replacement changes its occupant. Spawn ancestry and lifecycle/session identifiers do not substitute for the task address. Native chat launch, submission and host-state authority belong to RoleChatsPane and document-chat with their retained backend ports; no removed session-cockpit owner is implied.
 
@@ -494,7 +494,10 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 
 - The persistent Chats layer mounts one RoleChatsPane; no SessionsView selected-context wiring is mounted. Anchor: `RoleChatsPane` [43]
 
+
+
 - `CockpitShell` defaults `initialView="chats"`; `VIEWS` is the four-entry product bar. [47]
+
 
 - ReviewSurface owns page markers around ReviewGrid and ReadingColumn; ReviewWorkspace supplies selected semantic content. [8]
 - Inline lane content and Full page actions share one comparison-bound lane read and retained overlay filters. [11]

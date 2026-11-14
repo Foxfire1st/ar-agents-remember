@@ -20,14 +20,16 @@
       ]
     },
     "20": {
-      "note": "`test_an_identity_seed_returns_the_retained_revision_as_its_own_group` supplies the current fixture or assertion described above.\n\nAnchor: `test_an_identity_seed_returns_every_retained_revision_as_its_own_group`",
+      "note": "`test_an_identity_seed_returns_the_retained_revision_as_its_own_group` supplies the current fixture or assertion described above. Anchor: `test_an_identity_seed_returns_the_retained_revision_as_its_own_group`",
       "targets": [
         {
           "anchor": {
             "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
-            "content": "sha256:41b4f8880b1e1bd669438976b92654f71166ea227e3b4a4eaf91b5d8f07b135f",
+            "content": "sha256:2076e93fa1162295a9f3c1a2e35cbbcb8598f4bd8286076b7cbbff253f6cc7ff",
             "locator": {
-              "kind": "file"
+              "end": 428,
+              "kind": "line_range",
+              "start": 395
             }
           },
           "kind": "test"
@@ -131,25 +133,16 @@
       ]
     },
     "27": {
-      "note": "**The ordering node the review sealed as HIGH, and the fixture repair that made it deterministic.**\n\nAnchor: `test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label`",
+      "note": "**The current ordering node checks lexical stored-identity keys and declared kind order; the former authored-label-disagreement fixture is historical.** Anchor: `test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label`",
       "targets": [
-        {
-          "anchor": {
-            "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
-            "content": "sha256:41b4f8880b1e1bd669438976b92654f71166ea227e3b4a4eaf91b5d8f07b135f",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
         {
           "anchor": {
             "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
             "content": "sha256:4c9454532027ceaf3637d8d55ad43812ac5202836f89ab3e55f6757cdbc089ac",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label"
+              "end": 773,
+              "kind": "line_range",
+              "start": 706
             }
           },
           "kind": "test"
@@ -233,14 +226,28 @@
       ]
     },
     "30": {
-      "note": "The revision-grouping nodes.\n\nAnchor: `test_an_exact_revision_seed_does_not_select_the_identitys_other_retained_revisions` `test_an_identity_seed_returns_every_retained_revision_as_its_own_group`",
+      "note": "The revision-grouping nodes. Anchor: `test_an_exact_revision_seed_selects_only_the_named_revision` `test_an_identity_seed_returns_the_retained_revision_as_its_own_group`",
       "targets": [
         {
           "anchor": {
             "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
-            "content": "sha256:41b4f8880b1e1bd669438976b92654f71166ea227e3b4a4eaf91b5d8f07b135f",
+            "content": "sha256:a294f1a14a3bd81de6e92df2f3cfddf3cbcae18f7eb66030c881062accd1f641",
             "locator": {
-              "kind": "file"
+              "end": 453,
+              "kind": "line_range",
+              "start": 431
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
+            "content": "sha256:2076e93fa1162295a9f3c1a2e35cbbcb8598f4bd8286076b7cbbff253f6cc7ff",
+            "locator": {
+              "end": 428,
+              "kind": "line_range",
+              "start": 395
             }
           },
           "kind": "test"
@@ -324,14 +331,52 @@
       ]
     },
     "33": {
-      "note": "The persisted-nothing and current file-isolation nodes; the old requested-namespace fixture is not current coverage.\n\nAnchor: `test_an_unregistered_path_reports_registration_absence_rather_than_an_empty_scope` `test_a_selector_naming_no_recorded_identity_is_told_that_the_selector_is_absent` `test_the_selection_reads_only_the_requested_namespace` `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged`",
+      "note": "The persisted-nothing and current file-isolation nodes; the old requested-namespace fixture is not current coverage. Anchor: `test_an_unregistered_path_reports_registration_absence_rather_than_an_empty_scope` `test_a_selector_naming_no_recorded_identity_is_told_that_the_selector_is_absent` `test_each_dataset_file_is_selected_from_its_own_rows` `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged`",
       "targets": [
         {
           "anchor": {
             "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
-            "content": "sha256:41b4f8880b1e1bd669438976b92654f71166ea227e3b4a4eaf91b5d8f07b135f",
+            "content": "sha256:46a35ba6c0e307cbccb6476689f0c09812559197fcb5cf946cc1facbfc3bfe8c",
             "locator": {
-              "kind": "file"
+              "end": 917,
+              "kind": "line_range",
+              "start": 900
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
+            "content": "sha256:4e20d86d7069c8b601c30d14ea6318e0c7e4713a7e8664e43ada5155eb3a2d8a",
+            "locator": {
+              "end": 936,
+              "kind": "line_range",
+              "start": 920
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
+            "content": "sha256:5b2b039e4eaa242c965b63659d2b4ab0b1cb5e7a6d9ac0e488efead9e281e4af",
+            "locator": {
+              "end": 1041,
+              "kind": "line_range",
+              "start": 997
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
+            "content": "sha256:e00b95cbcae777ba7efb5b0ae9f474bd053dc2d754293bdb12245f4ab8d64dae",
+            "locator": {
+              "end": 994,
+              "kind": "line_range",
+              "start": 939
             }
           },
           "kind": "test"
@@ -339,14 +384,16 @@
       ]
     },
     "34": {
-      "note": "The lane row this module occupies.  Anchor: `test_knowledge_read_scope`\n\nAnchor: `test_knowledge_read_scope`",
+      "note": "The lane row this module occupies. Anchor: `test_knowledge_read_scope` Anchor: `test_knowledge_read_scope`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4f7c2f203451c1db7472f64cfd079a9740c3410",
-            "content": "sha256:536665e5e5cb55daa96514c12b8fd5198e20554a394b810d3ec7df91043e7ab8",
+            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
             "locator": {
-              "kind": "file"
+              "end": 801,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

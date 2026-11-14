@@ -122,4 +122,6 @@ repository's history.
 No configured cross-repository evidence is claimed.
 
 
-- **The contract this module's artifact row is registered under.**  Anchor: `knowledge-diff-cases` [66]
+
+
+- **The contract this module's artifact row is registered under.** Anchor: `knowledge-diff-cases` Anchor: `knowledge-diff-cases` [66]

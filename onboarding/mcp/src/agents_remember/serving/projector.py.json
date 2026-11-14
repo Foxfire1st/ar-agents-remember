@@ -4,11 +4,10 @@
     {
       "anchor": {
         "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
-        "content": "sha256:113273088c3c6ab5c653e7f60278a1430d62ece461320b7df32192cf34ec222b",
+        "content": "sha256:10308a0613963b0c53443d0523ab6571288505f11f464a21d258bb53100d6f63",
         "locator": {
-          "end": 395,
-          "kind": "line_range",
-          "start": 367
+          "kind": "symbol",
+          "name": "Projector._tick"
         }
       },
       "id": "RLZ-7JZBQ0",
@@ -79,26 +78,14 @@
   ],
   "references": {
     "1": {
-      "note": "The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers.  Anchor: \"def _publish_projection(\"",
+      "note": "The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. Anchor: \"def _publish_projection(\"",
       "targets": [
         {
           "anchor": {
             "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
-            "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
+            "content": "sha256:423b7b342e99510b54abef0d7569587406efbad1ea0efb1f16ed354af17950d7",
             "locator": {
-              "end": 469,
-              "kind": "line_range",
-              "start": 469
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
-            "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
-            "locator": {
-              "end": 469,
+              "end": 497,
               "kind": "line_range",
               "start": 469
             }
@@ -165,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:ec265d3b656ba74ff2a80249d4da45d57ecd8039b73106f1ea793a916e311525",
             "locator": {
               "kind": "symbol",
@@ -178,16 +165,16 @@
       ]
     },
     "4": {
-      "note": "All real tick outcomes reach completion only after actual work/drain.  Anchor: `Projector._tick`",
+      "note": "All real tick outcomes reach completion only after actual work/drain. Anchor: `Projector._tick`",
       "targets": [
         {
           "anchor": {
             "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
-            "content": "sha256:d7a68aeb274b23edb4473420694dc423a382d7bfb0d6473b34f37cdcbada7cdb",
+            "content": "sha256:10308a0613963b0c53443d0523ab6571288505f11f464a21d258bb53100d6f63",
             "locator": {
-              "end": 380,
+              "end": 418,
               "kind": "line_range",
-              "start": 363
+              "start": 385
             }
           },
           "kind": "code"

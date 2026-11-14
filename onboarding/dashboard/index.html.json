@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/index.html",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7fe64f3da7571f4d7e514183e7d3ed0ec7861009",
+        "content": "sha256:047b9c20dab8614244c983bbf6b7e48c048a21a37f61c17eb37e3e87f2c42eec",
+        "locator": {
+          "end": 5,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-4H3FAW",
+      "invariant": "INV-62DPD6",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-001",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This page policy is set before assets load and suppresses referrers for document images, video sources, posters and nested sources.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7fe64f3da7571f4d7e514183e7d3ed0ec7861009",
+        "content": "sha256:047b9c20dab8614244c983bbf6b7e48c048a21a37f61c17eb37e3e87f2c42eec",
+        "locator": {
+          "end": 5,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-J5T56X",
+      "invariant": "INV-VENYDH",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §6",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This page policy is set before assets load and suppresses referrers for document images, video sources, posters and nested sources.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

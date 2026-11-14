@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Tokenizer, descriptor validation, per-candidate admission and page policy jointly prevent comma-bearing forbidden addresses from becoming fetches or suppressing permitted neighbors."
+  },
+  "applicability": "HTML source-set parsing and candidate media admission in rendered repository documents, together with their media referrer policy.",
+  "conditions": [
+    "URL and descriptor tokenization occurs before the caller admits each parsed candidate.",
+    "Invalid descriptors discard their candidate; parsing resumes after the delimiter recognized by the tokenizer.",
+    "An unclosed parentheses state consumes the remaining input.",
+    "The document page policy suppresses media referrers for elements without an individual policy attribute."
+  ],
+  "exclusions": [
+    "Splitting comma-bearing URLs into independent candidates.",
+    "A parser decision that by itself authorizes a network fetch."
+  ],
+  "id": "INV-62DPD6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-L5-R1-001; dashboard/src/grammar/srcset.test.ts :: it.each(parsingCases); dashboard/src/grammar/srcset.test.ts :: it.each(acceptedDescriptors); dashboard/src/grammar/srcset.test.ts :: it.each(rejectedDescriptors); dashboard/src/grammar/DocumentMarkdown.test.tsx :: `${tag} keeps $name`; dashboard/src/grammar/DocumentMarkdown.test.tsx :: omits %s source sets with no admitted candidate; owner-confirmed actual-route after-capture: /home/firefox/projects/ar-coordination/worktrees/agents-remember/05_viewers-show-documents-pictures-and-v-5d73e881dc-ar/role-reports/worker/d4db8591-6c82-4d4b-88df-c44055eceb61/evidence/browser/referrer-after/referrer-browser.json"
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-L5-R1-001",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Source-set parsing follows HTML tokenization and descriptor validation before the media rule is applied separately to each candidate, and repository-document media requests omit the referrer.",
+  "status": "proposed",
+  "supersedes": []
+}

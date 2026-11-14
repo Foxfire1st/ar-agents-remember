@@ -72,6 +72,23 @@
     {
       "anchor": {
         "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "content": "sha256:d68a2077c263ec62a9a28e3eedeba77b6d154acaa4bea2409c9dab2cb3d83dc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_current_history_retry_and_other_selections_preserve_every_artifact"
+        }
+      },
+      "facet": "With the host archive bridge patched, the source-defined case archives only the current/history receipts for the selected leaf, reports three alreadyArchived entries on retry without three more host calls, and preserves foreign receipts, report text, assignment text and running receipt statuses. It does not test worktree-removal ordering.",
+      "id": "PRF-4X8YX5",
+      "invariant": "INV-F1TY2E",
+      "origin": {
+        "handoffEntry": "curator-BUG-L5-INV-F1TY2E-proofs",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
         "content": "sha256:7c5646d2ecefbca4f02c8bad28c0666a5b791cc615334813c1bf867827a3ecc6",
         "locator": {
           "kind": "symbol",

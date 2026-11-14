@@ -380,4 +380,6 @@ Current source: The current lane catalog selects mcp/tests/test_tool_entry_point
 - Both ordinary and support worlds are exercised with RuntimeWarning messages that are nonempty or empty. The cases require the captured detail string, actual exception type and innermost traceback file:line. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [60]
 
 
+
+
 - The current lane catalog selects mcp/tests/test_tool_entry_point_sweep.py once in unit-regression. This declaration selects evidence and establishes no invocation or passing result. [40]

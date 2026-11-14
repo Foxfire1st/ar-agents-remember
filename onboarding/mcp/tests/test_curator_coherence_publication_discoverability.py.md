@@ -23,10 +23,10 @@ This module originated in the L23 split and retains publication discoverability 
 ### Logic
 
 **The authority is one declaration.** `PUBLICATION_MEMBERS`
-(`mcp/src/agents_remember/models/lifecycles/curator_coherence.py:320-332`) is a tuple of nine
-`PublicationMember` records (`:306-317`) in the request model's own field order, carrying the
+(`mcp/src/agents_remember/models/lifecycles/curator_coherence.py:348-358`) is a tuple of nine
+`PublicationMember` records (`:330-342`) in the request model's own field order, carrying the
 `caller_supplied` flag on the first two. The validator refuses on it, `publication_refusal`
-(`:360-384`) names what is missing from it, and `publication_input_statement` (`:393-418`) is the
+(`:394-418`) names what is missing from it, and `publication_input_statement` (`:427-456`) is the
 text `prepare` renders — so a member added to the declaration needs no second edit anywhere, which
 is what one case measures rather than asserts.
 
@@ -40,7 +40,7 @@ detail rather than whole-message substrings: the shipped opening sentence contai
 and the required callout contains "caller-supplied", so a substring search cannot tell those from a
 reported member.
 
-The eight cases (18 collected items, because three are parametrized):
+The source defines eight test functions. Two are parametrized over nine omitted-member values and three action values, giving eighteen statically derived items; no fresh collection or execution is claimed:
 
 | Case | What it pins |
 | --- | --- |
@@ -67,10 +67,15 @@ The module imports the production declaration rather than a copy (`PUBLICATION_M
 `CuratorCoherenceRequest`), and the three content-member names are used as constants so the exclusion
 set and the shape validator that refuses them cannot drift apart. `_CONTRACT_PATH` (`:52`) is a real
 enclosure-shaped path, and `_REFUSAL_PREFIX` (`:53`) is asserted before being stripped. The module
-carries **no `pytestmark`**; its lane row was **appended** to the end of `unit-regression` in
-`mcp/tests/test-evidence-lanes.toml:194`. It imports only `agents_remember` models, `pydantic` and
-`pytest`, so it is **not** a consumer of any governed support module and owes no
-`evidence-lifecycle.toml` row — measured with the oracle's own derivation, not assumed.
+carries **no `pytestmark`**; its current lane declaration is `unit-regression` at
+`mcp/tests/test-evidence-lanes.toml:133-133`. The former card
+recorded append-only registration at its earlier source epoch; this is not a claim that row133
+was appended at the end of the current catalog. Its direct imports include `agents_remember` models, `pydantic` and
+`pytest`; direct imports do not determine the complete governed consumer population. The frozen
+`mcp/tests/evidence-lifecycle.toml` records this module on two artifact consumer lists:
+`mcp/tests/_user_settings_guard.py` at line 234 and
+`mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2562.
+Those two rows are a complete catalog measurement, not a fresh oracle execution result.
 
 ### Invariants And Boundaries
 
@@ -140,4 +145,6 @@ repository's own model and publication route over a stubbed observation.
 No meaningful cross-repo references found.
 
 
-- The lane row this module was appended to.  Anchor: "mcp/tests/test_curator_coherence_publication_discoverability.py" [16]
+
+
+- The lane manifest declares mcp/tests/test_curator_coherence_publication_discoverability.py in unit-regression. Membership is selection, not invocation. [16]

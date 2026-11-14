@@ -1,0 +1,95 @@
+{
+  "path": "mcp/src/agents_remember/serving/media.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0cb4f51b0257d50eeb4b49ae6e90595d3aaec0ce",
+        "content": "sha256:d4442ccaecf700bfa34dd3315ee1bb5c41d331947797ea82fd22fd90d059118e",
+        "locator": {
+          "kind": "symbol",
+          "name": "media_response"
+        }
+      },
+      "id": "RLZ-6CQZK0",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This response builds the range, content type, no-store and SVG confinement headers.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0cb4f51b0257d50eeb4b49ae6e90595d3aaec0ce",
+        "content": "sha256:239cdc5bf20d0e1cfce774998786876c961a550e716a2eff2fb4bc002a8fd97b",
+        "locator": {
+          "kind": "symbol",
+          "name": "working_media"
+        }
+      },
+      "id": "RLZ-8XTV7H",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This source validates working-file type and size before any requested byte interval is read.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0cb4f51b0257d50eeb4b49ae6e90595d3aaec0ce",
+        "content": "sha256:65d787ad69344af98163fe4062bdd1ede0633bb782c60e0c1eb4e84b94d626ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "parse_range"
+        }
+      },
+      "id": "RLZ-AKMRKB",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This parser defines the accepted single-byte-range forms and rejects invalid or unsatisfiable ranges.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0cb4f51b0257d50eeb4b49ae6e90595d3aaec0ce",
+        "content": "sha256:e3575632226d497acca3d47f9ff1ebda11a7ab3986fc6d3560989d222ee35c50",
+        "locator": {
+          "kind": "symbol",
+          "name": "looks_binary"
+        }
+      },
+      "id": "RLZ-BF8D5S",
+      "invariant": "INV-FZSASV",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §7",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "The byte-prefix check identifies NUL-bearing non-text content before text decode.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Defines the served picture/video types, byte bound and HTTP media response.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cb4f51b0257d50eeb4b49ae6e90595d3aaec0ce",
+            "content": "sha256:d959782c5592ca3753cbbb05e6fdbdf4d59f14a135b2008d2f09595064dfbbb9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

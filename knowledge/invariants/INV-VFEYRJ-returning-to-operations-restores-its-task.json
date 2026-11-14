@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Source tests cover retained task, diff, review and notes views so a tab visit cannot discard reading state or resurrect a view after its owner truly disappears."
+  },
+  "applicability": "Operations task, change-set, intent-review and notes views during a visit to another bottom tab and return within the same session.",
+  "conditions": [
+    "Task existence follows membership in the served task population, including a server-carried placeholder.",
+    "Pending task hydration retains the view.",
+    "After hydration, true absence of the relevant owner dismisses its retained view.",
+    "A second press on Operations while already there returns to its task view."
+  ],
+  "exclusions": [
+    "Browser-reload persistence.",
+    "Treating an enclosure that survives alone as proof that its owner exists."
+  ],
+  "id": "INV-VFEYRJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-R05@v1 §11; dashboard/src/cockpit/Cockpit.operationsDetail.test.tsx :: keeps its selected task view across a visit to another tab; dashboard/src/cockpit/Cockpit.operationsDetail.test.tsx :: keeps the notes reader across a visit to another tab; dashboard/src/cockpit/Cockpit.operationsDetail.test.tsx :: keeps its open diff viewer across a visit to another tab; dashboard/src/cockpit/Cockpit.tabMemory.test.tsx :: his path: three invariants visited, then Chats, Knowledge and Operations: the same page, with no request; dashboard/src/cockpit/Cockpit.tabMemory.test.tsx :: a remembered review comes back when %s, and falls back to the task document otherwise; dashboard/src/cockpit/tabMemory.test.ts :: dismisses $name when its task is gone and its enclosure is still projected"
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-R05@v1 §11",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Returning to Operations restores its task, diff, review or notes view while the owning task exists; an absent owner dismisses the view, and pressing Operations again clears it.",
+  "status": "proposed",
+  "supersedes": []
+}

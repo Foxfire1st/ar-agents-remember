@@ -96,8 +96,9 @@ combined population delta as `+47 unit` against the base `e963a01c`.
 Two clauses are deliberately **not** carried by a case here, and the leaf recorded why rather than
 leaving the gap silent: §3.2's "a citation keeps both types" is a structural property (there is no
 function taking a signal and returning an assessment), and asserting the absence of an operation
-would be a source census rather than a behavioural check; and §6.9's scope refusal is the shipped,
-unmodified `_require_leaf_external_memory`, so a case would assert a rail this leaf did not touch.
+would be a source census rather than a behavioural check; and the leaf recorded §6.9's scope refusal as a pre-existing `_require_leaf_external_memory` rail that its patch did not touch. That is the historical omission rationale, not a current source address for the removed helper.
+
+
 
 
 - The lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_review_assessments.py"; "unit-regression = [" [1]

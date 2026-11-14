@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Opening, the shared pane and its controls jointly preserve a readable document while keeping marked source available, and source tests distinguish both presentations."
+  },
+  "applicability": "Repository Markdown opened in the dashboard File Viewer, including its Rendered and Source controls and marked source presentation.",
+  "conditions": [
+    "The opened file is Markdown content rather than a media or other binary result.",
+    "A citation opening with source-line marks retains the source presentation."
+  ],
+  "exclusions": [
+    "Rendering a diff between two Markdown versions.",
+    "Editing file contents through a viewer."
+  ],
+  "id": "INV-EY37Q0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-R05@v1 §1; dashboard/src/panels/file-viewer/FileViewer.test.tsx :: opens a document rendered, and Back and Forward lead through opened files; dashboard/src/panels/file-viewer/DualPane.test.tsx :: renders a repository document only in document mode; source mode stays source"
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-R05@v1 §1",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The file viewer opens repository Markdown rendered, offers Rendered and Source controls, and keeps marked source reads in the source pane.",
+  "status": "proposed",
+  "supersedes": []
+}

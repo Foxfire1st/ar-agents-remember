@@ -109,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
               "kind": "symbol",
@@ -126,11 +126,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:ee59bf32cd91e8947c89a98d01bb5870d522a6f8a849945813e9bf77551d943c",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "content": "sha256:3c3ded0e1f7a335a1f2d1fdfafdc0682f578b3ff8350dbf12d7fe6a27b391b68",
             "locator": {
-              "kind": "symbol",
-              "name": "shellFlags"
+              "end": 188,
+              "kind": "line_range",
+              "start": 176
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -232,12 +233,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:0e083528be45ad099dc01a9c0c450064660ea4947830ae120697f07fd2b38969",
             "locator": {
-              "end": 723,
+              "end": 581,
               "kind": "line_range",
-              "start": 720
+              "start": 578
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

@@ -25,9 +25,11 @@ The shared TreeReceiptFixture constructs the enclosure and its exact comparison 
 
 ### Invariants And Boundaries
 
-- **No prebuilt payload and no injected resolution.** Every case reaches the boundary through a real Git
-  operation in a real enclosure and then reads the shipped entry point; a case that asserted a
-  hand-built payload would prove nothing about the operation.
+- **The enclosure cases read measured production values.** Movement cases use the real Git enclosure
+  and shipped boundary read. The validator case forges fields on a published movement value to check
+  model contradictions. `test_documented_support_matrix_matches_the_measured_operations` is different:
+  it takes no enclosure fixture and compares `render_git_transition_support()` with repository Markdown;
+  it performs no Git movement or lifecycle operation.
 - **The documented matrix and the published matrix are one table.** `render_git_transition_support()`'s
   output must be a substring of `docs/reference/worktrees-c09.md`, so the document is generated from the
   production table rather than transcribed beside it.
@@ -66,7 +68,7 @@ None recorded.
 
 Every claim on this card is checkable in the module's own cases, in the fixtures it borrows from its
 siblings, and in the manifests that govern its population. The three details a reader should carry:
-**every case drives real Git and then reads a shipped entry point**; **the states that look similar each
+**the enclosure movement cases drive real Git and read the shipped boundary; the matrix case checks rendered support text against Markdown**; **the states that look similar each
 have their own case**; and **the documented matrix is asserted to be the published one**, so the two
 cannot drift apart silently.
 
@@ -100,11 +102,10 @@ against, and that assertion is filed under Repo-Internal References.
 
 No cross-repository contract is established by this file.
 
-No cross-repository behavior is implemented or exercised in this module. Every repository it drives is a
-temporary enclosure this same repository's own fixture created under a temporary directory, and every
-operation it performs is a local Git subprocess inside that enclosure. No remote, credential, network or
-external system is involved, and no cited range proves a repository or external-system boundary, so no
-cross-repo reference row is recorded here.
+No cross-repository contract is established here. Git movement operations in the enclosure cases
+use the fixture's temporary local repositories. The matrix case reads repository Markdown and the
+validator case also constructs model forgeries; those operations are not Git subprocesses. No
+cross-repo reference row is recorded for this module.
 
 
 
@@ -122,6 +123,8 @@ cross-repo reference row is recorded here.
 - **A lifecycle consumer row that names this module, so the artifact census still counts it.**
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:597-597 - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1369-1369 - the bytes it recorded now occur 12 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
 
 
 - **The lane registration that makes these cases part of the governed `integration` population.** Source caption: `test_review_external_git_movement_read` [27]

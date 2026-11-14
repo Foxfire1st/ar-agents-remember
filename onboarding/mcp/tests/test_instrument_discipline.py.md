@@ -169,4 +169,6 @@ allowance is empty and no external source is relied upon here.
 No cross-repository evidence is required for these file-local claims.
 
 
+
+
 - The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_instrument_discipline.py" [15]

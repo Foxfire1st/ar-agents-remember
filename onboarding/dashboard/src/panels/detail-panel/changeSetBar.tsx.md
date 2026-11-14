@@ -9,8 +9,8 @@
 The change-set bar of the DetailPanel task-document reader, extracted from `DetailPanel.tsx` by the
 260731-EFA-L8 split. `ChangeSetButton` is the per-document change-set control, `DocChangeSetBar` the
 compact bar rendered above the reader content, `LeafEntries` a leaf's own entries, and the inline entry-worktree existence check. A master gets the **series** net button; a leaf gets **committed** (always),
-**working** (only while its enclosure is live) and the **Intent review** (always — the live candidate
-while the enclosure is live, the leaf's recorded comparison once it is closed, `ICR-R12`).
+**working** (only while its enclosure is live) and the **Intent review** (always, with the task-context
+`review: {}` address). Liveness changes the Intent review label, not its selector.
 
 **Since `260921-ICR-L47` (`ICR-R24@v3`) the Intent review is one compact control that is not a
 change-set button.** It is the separate [`IntentReviewEntry`](intentReviewEntry.tsx.md), whose
@@ -26,13 +26,14 @@ brief word with the explanation in a closed disclosure ([`entryState.tsx`](entry
 
 ### Logic
 
-**`ChangeSetButton` uses store-owned retained counters while revalidating and threads the published generation.** Its
-effect calls loadChangeSet(target) and stores the counters; for a master net
-it also stores the response's `generation` as `MasterNetPins` and opens the viewer with
-`{ ...target, generation }`, so the view and each file expansion read the listed generation rather than
-re-resolving the live tip (L13). The master read passes `includeLeaves: true`, and `LeafAttribution`
-renders `<N> leaf/leaves< · C committed>< · W working>` beside the total — or nothing when the answer
-carried no breakdown (L33, R33.2).
+**The bar reads master counters in two stages and threads the published generation.**
+`MasterChangeSetButton` calls `useMasterCounters`: the first request asks for net
+counters with `includeLeaves:false`; after it receives a generation, the hook asks
+for `includeLeaves:true` pinned to that generation. Attribution has its own
+loading/ready/failed state and does not hold back the net total. The control opens
+`{ ...target, generation }` when the net supplied one. Task/leaf controls instead
+use `loadChangeSet` and retained `peekChangeSet` data. `LeafAttribution` renders the
+returned leaf counts; `MasterCounterStatus` names attribution's separate state.
 
 **States of the counter read (L25/B6, L32/D01, compacted by L47).** `ChangeSetReadState` renders one
 brief word inside the button, with `data-testid="changeset-state"`, `data-review-state` and, for a
@@ -66,16 +67,17 @@ second identical committed request) and would show its line totals as the review
 
 ### Conventions
 
-Small presentational components; the bar itself performs no fetch, each `ChangeSetButton` owns its
-counter read and `IntentReviewEntry` owns its summary read. Failures are classified through the review
+Small presentational components; `MasterChangeSetButton` delegates its two-stage counter read to
+`useMasterCounters`, task/leaf buttons own their `loadChangeSet` read, and `IntentReviewEntry` owns its summary read. Failures are classified through the review
 client's shared `ReviewFailure` vocabulary (`../../data/review`). Styles come from `./styles`
 (`changeSetBtn`, `changeSetCounts`, and the `entryState*` classes used by the disclosure). Every
 rendered state carries a `data-*` attribute so tests read state from the DOM.
 
 ### Invariants And Boundaries
 
-- **The Intent review entry is always offered for a leaf, and no read gates it.** `live` selects which
-  record it opens; the summary's answer is a label on the control, never a gate.
+- **The Intent review entry is always offered for a leaf, and no read gates it.** Its target uses
+  `review: {}` for both live and closed leaves. `live` changes the control label; the summary answer is
+  displayed on the control and never gates opening.
 - **The Intent review's numbers are never change-set line totals.**
 - **The entry reads no subject catalogue.** Choosing a subject and re-reading the comparison belong to
   the reviewer.
@@ -83,8 +85,8 @@ rendered state carries a `data-*` attribute so tests read state from the DOM.
   entry's bound worktree facts, a re-show of the task detail and the reviewer's refresh do. A live push of
   a first knowledge ingest while the same panel stays open is **not** delivered (ruling 16:27:28 records
   it as a possible later enhancement).
-- **Entry-bound worktree existence is the liveness fact** for the working button and the review's record.
-- **The browser names no candidate and no dataset.** Targets carry repo/master/leaf only.
+- **Entry-bound worktree existence is the liveness fact** for the working button and the Intent review label.
+- **The browser names no filesystem candidate and no dataset.** Targets carry repo/master/leaf task identity with the mode or generation fields required by the change-set control.
 - **Brief, never swallowed (ICR-R16).** A control shows one word; the owner's code, reason, offending
   input and next action are one click away, and nothing is invented where the owner published nothing.
 - **Boundary.** What a refusal code means belongs to `data/reviewTransport.ts`; what the counts mean
@@ -128,13 +130,15 @@ Every anchor in a row occurs inside the range that row cites.
 
 - The re-validation generation the facts carry. [13]
 
-- The change-set client the counter read belongs to. [14]
+
+
+- The change-set client the counter read belongs to. Anchor: `taskChangeset` `TaskChangeset` [14]
+
 
 
 - The compact entry's cases: one control, request economy, brief states, leaf-scoped invalidation. [15]
 
 
-- The closed leaf's recorded entry and the failed-summary case. [16]
 
 
 ### Cross-Repo References
@@ -143,7 +147,12 @@ No cross-repository implementation source governs this file.
 
 No applicable cross-repository source was found.
 
-## 260921-ICR-L12 Liveness Selects Which Record The Review Is Addressed To, Not Whether It Exists
+## Historical 260921-ICR-L12 Account: Former Liveness-Selected Review Record
+
+The following records the earlier ICR-R12 card account. Its forced closed-leaf selector was
+superseded by the task-context default documented at MIK-R195 F06. It is historical provenance,
+not the current entry contract: the current control always sends `review: {}`, while `live`
+changes its label.
 
 `260921-ICR-L12` (`ICR-R12@v1`) changes what this bar's liveness means, and that is the whole of
 its change:
@@ -173,7 +182,7 @@ and the historical entry names the record the server resolves from canonical tas
 
 ## Current Behavior
 
-`ChangeSetButton` now owns an `AbortController` for its counter read: it calls `loadChangeSet(target, controller.signal)` and aborts on cleanup (`:93-121`); an `AbortError` is not turned into a `reviewProblemFromCause` failure, so a task switch leaves no error word for that owner. A live same-key owner keeps the shared fetch and its retained result; the entry is removed and the fetch aborted only at the last leave. The loading, unrecorded, known-empty and refusal states and the withheld `+0 −0` total are unchanged by that repair; S8 added the `unmeasured` state for a master answer that names no generation, which withholds the total on the same rule. This supersedes the bar's earlier failure enumeration as the whole account: an aborted read is a fourth, silent outcome. The Intent review entry remains ungated.
+Task/leaf counter reads own an `AbortController` in `TaskChangeSetButton`, call `loadChangeSet` with its signal and abort on cleanup; an aborted read is not converted into a displayed failure. Master counter reads use the separate net and attribution effects in `useMasterCounters`, each with its own controller and binding checks. The control withholds a total for unrecorded or unmeasured ranges, opens a measured master generation when supplied, and reports attribution's state separately. The Intent review entry remains ungated.
 
 ## 260921-ICR-L17 The Entry Read Is Invalidated By The Workspace, Not Repeated On A Timer (superseded by 260921-ICR-L47)
 
@@ -190,3 +199,5 @@ when the reviewer is left back to the entry and when the reviewer's own refresh 
 2026-09-28T16:27:28+02:00, no event system). The scoped late-answer guard remains in
 `useIntentReviewSummary`, so a previous leaf's late answer is dropped. The reviewer keeps its own
 "Refresh subjects" control.
+
+- The closed-leaf entry keeps its recorded label while opening review:{}, and the failed-summary case remains openable. [16]

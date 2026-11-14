@@ -20,23 +20,19 @@ File Viewer's `DualPane` primitive**. It replaces the retired inline `TaskNotes`
 L23 widened the reader from notes-only to a discriminated task-artifact reader. The
 local `NotesReaderTarget` interface was deleted and re-exported as the shared
 `TaskArtifactReaderTarget` (`dashboard/src/data/taskArtifacts.ts`); the
-view now takes a `kind` member plus an optional `document` (requirements
-only). Listing/content hooks branch on the kind:
+view takes a discriminated `kind` target; requirements targets require `document`, while the other target variants do not carry it. Listing/content hooks branch on the kind:
 
 - `kind === "notes"` (no document): the folder/read path (`listFolder` with
   offsets for next parts / `readNote`);
 - `kind === "requirements"`: `listRequirements` /
-  `readRequirement` with the task-document reference, mapping each packet row
-  into the notes rail shape (`language: "markdown"`, `truncated: false`).
+  `readRequirement` with the task-document reference. Listing entries map into flat rail rows; fetched requirement content is mapped to Markdown with `truncated: false`.
 - `kind === "task-report"`: one recorded report by its exact recorded identity.
 - `kind === "decisions"`: the whole log on its own page (`DecisionsPane`,
   authored decisions newest-first, with product records in a separate counted end disclosure).
 - `kind === "role-report"` / supplied report content: the recorded body in the
   shared pane with no rail.
 
-The rail header, open-path label, and failure copy are kind-aware (`notes` vs
-`requirements`), the screen root carries `data-artifact-kind`, and
-`CockpitShell` keys the takeover marker on the kind. Rendering still reuses
+The rail header and open-path label distinguish notes and requirements. Failure text says note only for notes and requirement for other fetched artifacts; absent content still asks for a note. The screen root carries data-artifact-kind, and Cockpit's takeover identifies the target kind. Rendering still reuses
 `DualPane` for fetched notes, requirements and reports; the whole decision log reuses DecisionList in a dedicated DecisionsPane instead of DualPane.
 
 The whole-log page counts and numbers authored decisions only. It shows every authored entry newest-first with its recorded time, Markdown decision text and rationale already expanded; whole rows have no more/less control. The reading area uses the shared centered 100ch recipe. Product-written records are retained after the authored list in a muted native details disclosure with its own count, time, text and rationale, but no decision number. Opening the disclosure is not a new fetch.
@@ -45,9 +41,7 @@ The whole-log page counts and numbers authored decisions only. It shows every au
 
 ### Logic
 
-`NotesReaderViewer({repo, master, path, onSelectNote, onBack})` is a **controlled** component — the open
-`path` and rail `onSelectNote` are lifted to `CockpitShell` (like the File Viewer's persisted state) so a
-selection survives back/forward.
+NotesReaderViewer accepts discriminated ReaderProps. Cockpit owns the artifact target and selection callbacks; Back hides the retained takeover without clearing its selected path. This retained component state does not imply browser-history persistence.
 
 - `NotesTree` wires the shared ExplorerTree to `useNotesFolderCache`, which owns stable folder paging, fill-to-note, vanish recovery and refresh invalidation. The repo/master-keyed tree lifetime owns the cache; content reads remain in the viewer.
 - Fetches the open note with `readNote(repo, master, path)` on `(repo, master, path)` change — `null` while
@@ -61,29 +55,23 @@ selection survives back/forward.
 - **Content pane** reuses `DualPane` via `dualPaneProps(note)`: a **markdown** note takes DualPane's
   partnerless-markdown path (`code=null`, `sidecar={state:"markdown"}`) — the exact treatment the File
   Viewer gives a partnerless route overview; a **text** note becomes a synthetic `FileContent`
-  (`noteAsFileContent`) rendered through DualPane's `CodeSide` (read-only CodeMirror); a **binary** note
-  degrades to DualPane's byte-count placeholder. Loading/failed render a local `note-status` placeholder
+  (`noteAsFileContent`) rendered through DualPane's `CodeSide` (read-only CodeMirror); recognized media preserves `mediaType`, `tooLarge` and its media URL for `DualPane`; other binary content uses a byte-count placeholder. Loading/failed render a local `note-status` placeholder
   (a distinct testid from DualPane's `pane-placeholder` so a binary note's placeholder is unambiguous).
-- **Truncation banner** (260703-L18 finding 2): DualPane's "Showing the first 2 MiB" banner lives only in
-  `CodeSide`, which the markdown path never reaches — so a truncated MARKDOWN note (the dominant note type)
-  would silently drop the truncation contract. When `note.truncated && note.language === "markdown"` the
-  view renders the same banner (`notes-trunc-banner`, matching CodeSide's wording/style) ABOVE the DualPane;
-  text notes keep CodeSide's own banner.
+- **Truncation banner**: when `note.truncated && note.language === "markdown"`, NotePane renders `notes-trunc-banner` above DualPane's partnerless Markdown branch. Text notes retain CodeSide's banner. Rendered repository documents also have a banner in DualPane's RenderedDocument branch.
 
 The reader chrome also owns the shared `notes` left-sidebar state. When a rail is present, the header renders `SidebarToggle` after Back, naming it Requirements sidebar for requirement packets and Notes sidebar otherwise. The rail panel and its resize handle receive the shared visibility properties together. The rail remains mounted when hidden; the content pane stays outside it. Report and whole-decision-log layouts pass no rail and draw no sidebar toggle.
 
 ### Conventions
 
-Panda `css` local styles mirroring the `ChangeSetViewer` takeover chrome (screen · sticky back header ·
+Panda `css` local styles mirroring the `ChangeSetViewer` takeover chrome (screen · header outside scrollable content ·
 `react-resizable-panels` rail+pane). Testids: `notes-reader-viewer` (screen), `notes-reader-back`,
 `notes-reader-open` (the open path in the header), `note-rail-<n>`, `note-status`. No `notes-rail` testid exists in the carried source.
 
 ### Invariants And Boundaries
 
-Folder/read transport over the L126 `/api/notes/*` server contract (allow-listing, confinement, binary/oversize
-all stay server-side; the whole-tree list route is gone). No store mutation. Fetched note, requirement and report bodies use the File Viewer’s DualPane through NotePane. DecisionsPane is a separate branch within the same takeover chrome, reusing shared DecisionList and the already supplied decision array rather than fetching a log.
+Notes folder/read/resolve/bytes routes keep selector validation and path confinement server-side; the 2 MiB text display cap is separate from media-byte allowance. No store mutation. Fetched note, requirement and report bodies use the File Viewer’s DualPane through NotePane. DecisionsPane is a separate branch within the same takeover chrome, reusing shared DecisionList and the already supplied decision array rather than fetching a log.
 
-For the fetched-content path, the existing test accommodation remains recorded here: the only file-viewer leaf stubbed in tests is `FilePane` (the CodeMirror editor), the same jsdom accommodation the Change-Set Viewer tests make for `ChangeSetPane`. This pass does not reverify that test claim or use it as acceptance evidence for whole-log layout.
+The NotesReaderViewer test source stubs FilePane while rendering DualPane and Markdown. This describes the fixture, not fresh execution evidence.
 
 ## Role-report kind
 
@@ -94,9 +82,9 @@ Result through `readRoleReport`, so the launcher needs no second viewer (MIK-R75
 
 ## Current L5I Maintenance
 
-The controlled Notes Reader is memoized as a persistent cockpit view. Shell view switches with
-unchanged route props no longer reconstruct its reader subtree, while its own selected-note state
-and data reads remain unchanged.
+The controlled Notes Reader is memoized as a persistent cockpit view. Unchanged route props skip reconstruction of its reader subtree; its own state and data-read hooks still operate.
+
+NotesTargetReader supplies a master-scoped DocumentContext. Relative links resolve through resolveNoteReferences and select another note through onSelectNote; media uses the notes bytes route. allowHtml:false preserves raw HTML as text. Requirements and report targets keep their existing rendering branches.
 
 ## Evidence
 
@@ -104,16 +92,17 @@ and data reads remain unchanged.
 
 No meaningful cross-repo references found.
 
-A same-origin view over the local notes API; nothing crosses repositories.
+The notes client addresses the selected repository and master through same-origin endpoints.
 
 ### Repo-Internal References
 
 
 
-- The `FileContent` type the text path maps a note into. [2]
 
 
-- Cockpit owns the artifact target and open flag, preserves the target on Back, updates note paths and hosts the controlled viewer takeover. [4]
+- The FileContent shape used for non-Markdown note content includes media metadata. [2]
+- Cockpit owns the artifact target and open flag and keeps its controlled reader mounted. Its shellActions callbacks preserve the target on Back, open an artifact explicitly and update the selected note path. [4]
+
 
 
 
@@ -124,7 +113,10 @@ A same-origin view over the local notes API; nothing crosses repositories.
 
 
 
+
+
 - The component test suite covers the tree, open path, parts and depth. [7]
+
 
 
 
@@ -142,8 +134,14 @@ A same-origin view over the local notes API; nothing crosses repositories.
 
 - The whole-log pane shows authored decisions newest-first with expanded shared rows; retained product records are unnumbered in a separate counted native disclosure. [9]
 
-- NotePane maps fetched content to DualPane, adds the Markdown truncation banner and keeps local status placeholders; this is viewer integration, not proof of DualPane internals. [1]
-- The notes-target reader retains the same note and keyed tree lifetime. [10]
-- The shared notes-left state controls both the rail panel and its resize handle; the header toggle is rendered only when a rail exists. [11]
 
 
+- NotePane maps fetched content to DualPane, adds the Markdown truncation banner and keeps local status placeholders; this is viewer integration, not proof of DualPane internals. Anchor: "function noteAsFileContent("; "function NotePane(" [1]
+
+
+
+- The notes-target reader retains the same note and keyed tree lifetime. Anchor: "function NotesTargetReader(" [10]
+
+
+
+- The shared notes-left state controls both the rail panel and its resize handle; the header toggle is rendered only when a rail exists. Anchor: "function ReaderLayout(" [11]

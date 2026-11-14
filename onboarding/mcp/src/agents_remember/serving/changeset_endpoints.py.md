@@ -167,4 +167,6 @@ No meaningful cross-repo references found.
 
 - The contract whose recorded cells this module reads, and the cells themselves.  Anchor: `WorktreeContract` `load_contract` [11]
 
+
+
 - The caller resolves code and memory independently. A missing selected repository returns an empty result before endpoint admission. Among entered endpoint-owner failures, NOT_RECORDED carries code detail or empties memory; other failures propagate. leaf_changeset publishes the code detail as state/stateDetail alongside counters. [12]

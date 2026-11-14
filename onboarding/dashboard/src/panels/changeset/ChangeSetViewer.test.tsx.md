@@ -52,7 +52,10 @@ No configured live documentation source was available for this pass.
 - The case mounts the shell explicitly on Operations. [7]
 
 
+
+
 - The viewer the case asserts absent while the shell is mounted on an injected Operations view; direct viewer and DetailPanel cases elsewhere cover its positive rendering and open callback. [8]
+
 
 
 ### Cross-Repo References

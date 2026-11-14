@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+        "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
         "content": "sha256:4b0783f21cb2390cb0a2e594cd30278e213bd7f6f981b8ebe1e6489c9f5dd860",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,81 @@
     },
     {
       "anchor": {
-        "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+        "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+        "content": "sha256:c407b903f4a18ce4c5c08532151241a37ea7bc847c5fc95b98aadc28c53c831a",
+        "locator": {
+          "end": 653,
+          "kind": "line_range",
+          "start": 625
+        }
+      },
+      "id": "RLZ-41RVQT",
+      "invariant": "INV-AQH8BD",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-5-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Builds working or recorded leaf before/after answers without decoding nontext sides.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+        "content": "sha256:f120b1433c2566fbd6fd4f040fbdca3810028356deb97b10cc848ffd4bf08b9c",
+        "locator": {
+          "end": 414,
+          "kind": "line_range",
+          "start": 383
+        }
+      },
+      "id": "RLZ-CB26BK",
+      "invariant": "INV-AQH8BD",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-5-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Builds integrated master before/after answers from each recorded side with independent media metadata.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+        "content": "sha256:1124b787bb19bb0fb3f0a17aa7636420f3466e7d85a9ebbf96d7657a6915085f",
+        "locator": {
+          "kind": "symbol",
+          "name": "file_diff"
+        }
+      },
+      "id": "RLZ-DYEKX2",
+      "invariant": "INV-AQH8BD",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-5-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Builds scoped before/after content using independently classified committed and working sides, serializing absence separately.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+        "content": "sha256:c2aa550428e814f66426c9204ef66e9e634782ac7f8b71552e13e3d00d9eeabd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_selector_bytes"
+        }
+      },
+      "id": "RLZ-EXFAMX",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-4-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Resolves the server-owned selector side before acquiring its media and applying the shared response policy.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
         "content": "sha256:08c8222529bbf7e612a06a6ae0d8b88fce6f251abf74f8b623a75ffd1f87dd31",
         "locator": {
           "kind": "symbol",
@@ -39,7 +113,44 @@
     },
     {
       "anchor": {
-        "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+        "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+        "content": "sha256:ea6d03c50235b81f2bd86c7cfea0b5d6c51cdc584cf361c7a70d9a96e85d1381",
+        "locator": {
+          "end": 909,
+          "kind": "line_range",
+          "start": 896
+        }
+      },
+      "id": "RLZ-JCAX5X",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-4-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Registers the selected-side bytes route with the existing query selector, side and Range header rather than a client revision.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+        "content": "sha256:276a80d96b2bfcc9279e0cce732c42056db633e03a2c1f70b6fc67b4f6c31532",
+        "locator": {
+          "kind": "symbol",
+          "name": "_file_bytes_answer"
+        }
+      },
+      "id": "RLZ-X4SQZW",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-4-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Checks legal selector and side combinations before dispatching selector or confined-scope media acquisition.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
         "content": "sha256:bfeef34bf103e598392abb42a00b1671b0247033a6e700ec60a64826e186e239",
         "locator": {
           "kind": "symbol",
@@ -62,11 +173,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
-            "content": "sha256:fef8f2af3e315d8a0fd2d87ea235168a3acc314d639fb9c4d6f4249e54930ca5",
+            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
+            "content": "sha256:8f8ac218ba816cc3cadd2520970075caecfc062630979de9d5a05e8d9f50731c",
             "locator": {
-              "kind": "symbol",
-              "name": "FileScope"
+              "end": 119,
+              "kind": "line_range",
+              "start": 109
             },
             "path": "mcp/src/agents_remember/serving/scope.py"
           },
@@ -74,11 +186,12 @@
         },
         {
           "anchor": {
-            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
-            "content": "sha256:cf18e1b4612890662ae0cedcde62fdb7fd5948c9539a62b2526c69a1ea1f46c5",
+            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
+            "content": "sha256:c8d030f7ab11cf8eaf8cc31237b8b270746e02efab01606a44688eb3d51fb08d",
             "locator": {
-              "kind": "symbol",
-              "name": "run_scoped"
+              "end": 267,
+              "kind": "line_range",
+              "start": 229
             },
             "path": "mcp/src/agents_remember/serving/scope.py"
           },
@@ -86,11 +199,12 @@
         },
         {
           "anchor": {
-            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
+            "blob": "283a3d9b56670f4b8ad4056e3e9001c2fe935ada",
             "content": "sha256:3d9f1313f449a2b6ae1e0661fadc8f18ed03ec27e3bd2a1384f38e61e922ac2e",
             "locator": {
-              "kind": "symbol",
-              "name": "language_for"
+              "end": 79,
+              "kind": "line_range",
+              "start": 77
             },
             "path": "mcp/src/agents_remember/serving/scope.py"
           },
@@ -135,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:c0ad04ef56c199e4145dee058c921ac7700e48c5b6c2392b857c0c04641fe5b9",
             "locator": {
               "kind": "symbol",
@@ -151,11 +265,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
-            "content": "sha256:f8d63841e83c4a19b3d6d39a43ff101d86b79d47da1c8fa753c95ebc2d580751",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "content": "sha256:f120b1433c2566fbd6fd4f040fbdca3810028356deb97b10cc848ffd4bf08b9c",
             "locator": {
-              "kind": "symbol",
-              "name": "master_file_diff"
+              "end": 414,
+              "kind": "line_range",
+              "start": 383
             }
           },
           "kind": "code"
@@ -167,7 +282,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:278c6b382a241c023e00f1048f97e88529563eebdea8b10f41b25215b52c8c58",
             "locator": {
               "kind": "symbol",
@@ -183,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:2e59c2805808c6519866f4c08175844469d0e22daa527515fea84882a57df373",
             "locator": {
               "kind": "symbol",
@@ -194,7 +309,7 @@
         },
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:5b775aaacb3c2fb69a7b4dd3f205b05d51e77efd905cec73c088c6dfe65052c9",
             "locator": {
               "kind": "symbol",
@@ -205,7 +320,7 @@
         },
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:b590a72879d2e392799021146479a74c061263778255a3892990a907ae3a139e",
             "locator": {
               "kind": "symbol",
@@ -292,7 +407,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:e108a3c317e025490ff19943c9e4cf5b0ac1c619561eb8f36991dd011867056b",
             "locator": {
               "kind": "symbol",
@@ -308,7 +423,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
             "locator": {
               "kind": "symbol",
@@ -324,7 +439,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
             "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
             "locator": {
               "kind": "symbol",
@@ -353,14 +468,29 @@
       ]
     },
     "23": {
-      "note": "**The client that carries the state and withholds the total it would misprint.**\n\nAnchor: `TaskChangeset` `ChangeSetButton`",
+      "note": "**The client that carries the state and withholds the total it would misprint.** Anchor: `TaskChangeset` `ChangeSetButton`",
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
-            "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:6f163169daa468cc79b5c5d149c9372db1fdc203f64dcf592ab2dd8f60b3a2ba",
             "locator": {
-              "kind": "file"
+              "end": 48,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:ab38ac33f4e1353dc181a904b1062896f0247eda64e4bce498866dc8d2ede5bc",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 228
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -371,7 +501,9 @@
             "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
             "content": "sha256:d972a17fb5c09baa79f099400d5b3d3f563db77b321edafc37f58e3f94645bff",
             "locator": {
-              "kind": "file"
+              "end": 400,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
@@ -384,7 +516,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:ae8d7d25de15fcbc92fc7ca95d1759cd952a733ad7c61de2c6e063b395f8a3c2",
             "locator": {
               "kind": "symbol",
@@ -400,7 +532,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:b3780f421b8f45bf0fdb7463f7aa13e84e884685954f385045f4a39d7c2d3c58",
             "locator": {
               "kind": "symbol",
@@ -416,7 +548,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:55aa0b4cd09d17a2a64c5f38eb6fa2e4cf087c48b39741e7896135ad46427606",
             "locator": {
               "kind": "symbol",
@@ -432,7 +564,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:ca1db91a82d45f1573b07634ad045f8a3f970591d7f629392387daca7af711bf",
             "locator": {
               "kind": "symbol",
@@ -444,15 +576,28 @@
       ]
     },
     "28": {
-      "note": "All three change-set routes share and return one app-owned conditional-read cache.\n\nAnchor: `register_changeset_routes`",
+      "note": "The JSON task, file-diff and master change-set routes share and return the app-owned conditional-read cache. The media file-bytes route reads its selected side through its separate bytes path.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
-            "content": "sha256:e0aedd2d62348a755e33172ab6336af4d8e7ab42c9a9c7a7df1f252f97047f19",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "content": "sha256:21a004797cef746de96ced4fdfc3c28b57d57654ed8c6d9bab7668ce29d31a50",
             "locator": {
-              "kind": "symbol",
-              "name": "register_changeset_routes"
+              "end": 894,
+              "kind": "line_range",
+              "start": 850
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "content": "sha256:d68c7670ba685339c8adda42fad6f20bf92fa1d96778437a4d0c362e89ff5151",
+            "locator": {
+              "end": 951,
+              "kind": "line_range",
+              "start": 914
             }
           },
           "kind": "code"
@@ -488,6 +633,42 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The master-counter hook first reads the net without leaves and requests leaf attribution against that returned generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc6fc89713dfcb5c29c946423e2db5e39a62d462",
+            "content": "sha256:103a7ac01aec4daa201d5a18bb84f27cf678ce7920f64461217a91a64a9bb892",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "dashboard/src/data/useMasterCounters.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The delegated master/counters route is registered by CounterRoute.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7506c4bef647399da1161881536834d5434fbac6",
+            "content": "sha256:cbd054d264788ef71ead6e67d52f4f0aab9ba098aeb7d28d3d7c5c7f648bf8ba",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/serving/master_counter.py"
           },
           "kind": "code"
         }
@@ -547,7 +728,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:0e09af216c69205e57b3057e4d913dcd44dae092f1cf922bd1c69102ce0bd20e",
             "locator": {
               "end": 629,
@@ -564,7 +745,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:e108a3c317e025490ff19943c9e4cf5b0ac1c619561eb8f36991dd011867056b",
             "locator": {
               "kind": "symbol",
@@ -576,15 +757,16 @@
       ]
     },
     "8": {
-      "note": "The committed branch of the file diff, now reading both sides from the recorded range's own repository.\n\nAnchor: `leaf_file_diff`",
+      "note": "The committed branch of the file diff, now reading both sides from the recorded range's own repository. Anchor: `leaf_file_diff`",
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
-            "content": "sha256:7ea5a0c462acdae6785d07dfc32269df86c64c5edaad40f655ecfb5f2a020f63",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "content": "sha256:40e5cdd795c5b5f4bfc00eabf1c7b2f80e224cf0c28d7a7b71cf3ded356a705f",
             "locator": {
-              "kind": "symbol",
-              "name": "leaf_file_diff"
+              "end": 653,
+              "kind": "line_range",
+              "start": 620
             }
           },
           "kind": "code"
@@ -596,7 +778,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
             "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
             "locator": {
               "kind": "symbol",
