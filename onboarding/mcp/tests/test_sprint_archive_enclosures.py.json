@@ -1,0 +1,133 @@
+{
+  "path": "mcp/tests/test_sprint_archive_enclosures.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1a8aa1136abfd4957d0471ab53ec4bd71df5cfd0",
+        "content": "sha256:1475417e553de25ec052f62d083702faa6c0467fba0d61838f049ed0b445b3f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_archive_resume_after_hooks_previews_and_finishes_enclosure_retirement"
+        }
+      },
+      "facet": "An actual post-hook interruption leaves pending enclosure work; resumed preview names every pending path, reports would-clean-up and preserves task/group bytes. Real retry removes directories; a completed preview has no changes.",
+      "id": "PRF-383C3D",
+      "invariant": "INV-W3PBKB",
+      "origin": {
+        "handoffEntry": "L3-W5-05",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1a8aa1136abfd4957d0471ab53ec4bd71df5cfd0",
+        "content": "sha256:a8e1739b8565cc5f7fbe619b39ee4e127ec1ead2fa86a1064acf6aa3faa3d742",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_archive_entry_retires_enclosures_from_their_current_folder"
+        }
+      },
+      "facet": "Fresh, fully moved and partial-move archive calls find current-folder contracts; dry preview preserves bytes and real removal names archived contract and directories, with force=False in both calls.",
+      "id": "PRF-PS8MAN",
+      "invariant": "INV-W3PBKB",
+      "origin": {
+        "handoffEntry": "L3-W5-05",
+        "leaf": "261112-BUG-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The archive entry finds moving enclosures in fresh, fully moved and partial-move states. [1]\n\nAnchor: `test_archive_entry_retires_enclosures_from_their_current_folder`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a8aa1136abfd4957d0471ab53ec4bd71df5cfd0",
+            "content": "sha256:5c04d23d1f7abec5140863489cda52339fb6067379cba377661fbacdb994f41e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A resumed post-hook dry run names pending retirement, leaves bytes unchanged, and completes only after real removal. [2]\n\nAnchor: `test_archive_resume_after_hooks_previews_and_finishes_enclosure_retirement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a8aa1136abfd4957d0471ab53ec4bd71df5cfd0",
+            "content": "sha256:5c04d23d1f7abec5140863489cda52339fb6067379cba377661fbacdb994f41e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A master kept by another sprint retains its enclosure and removal is not called. [3]\n\nAnchor: `test_archive_entry_preserves_the_enclosure_of_a_master_another_sprint_commands`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a8aa1136abfd4957d0471ab53ec4bd71df5cfd0",
+            "content": "sha256:5c04d23d1f7abec5140863489cda52339fb6067379cba377661fbacdb994f41e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Direct helper retirement reports actual named directory removals. [4]\n\nAnchor: `test_the_archive_retires_the_enclosure_and_names_what_it_removed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a8aa1136abfd4957d0471ab53ec4bd71df5cfd0",
+            "content": "sha256:5c04d23d1f7abec5140863489cda52339fb6067379cba377661fbacdb994f41e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Missing contracts are reported without guessing at an enclosure. [5]\n\nAnchor: `test_a_master_without_an_enclosure_contract_is_named_not_guessed_at`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a8aa1136abfd4957d0471ab53ec4bd71df5cfd0",
+            "content": "sha256:5c04d23d1f7abec5140863489cda52339fb6067379cba377661fbacdb994f41e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Staying masters are skipped by the helper. [6]\n\nAnchor: `test_a_master_that_stays_keeps_its_enclosure`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a8aa1136abfd4957d0471ab53ec4bd71df5cfd0",
+            "content": "sha256:5c04d23d1f7abec5140863489cda52339fb6067379cba377661fbacdb994f41e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

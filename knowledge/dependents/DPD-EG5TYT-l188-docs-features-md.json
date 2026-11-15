@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "c82e91894677bcfd06042e23a6016cf1f5317c11",
-    "commit": "ed91a4c8436a72d1fe895f0ee464340889e6aff3",
+    "codeTree": "cb321e2ad3b69d960c4ca1ddf9442663278f429c",
+    "commit": "a874131c25b919356a3bd507713ead449b8491cd",
     "role": "curator",
-    "statement": "The feature page now says the explainer's browser is fetched by the product at the first explanation; its link to the guide's browser section and the rest of the page stand.",
-    "task": "261112-BUG-L1",
+    "statement": "The unchanged feature page's trailer-derived code and memory pairing, exact branch movement and bounded tool answers remain supported after the final trailer-block parser repair.",
+    "task": "261112-BUG-L3",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -33,7 +33,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "2ec6a4844bc78d46a50f54f10b97d1ea2d328aba",
+      "blob": "47a504554485c35906f725e72fcb0a6d7e785d77",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
     },
@@ -43,7 +43,7 @@
       "path": "mcp/src/agents_remember/kernel/memory_cache.py"
     },
     {
-      "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+      "blob": "2d46e4349e78760575ad3176a73a7606cd7d95f6",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
     },
@@ -58,7 +58,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

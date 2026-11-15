@@ -61,14 +61,13 @@ that no dynamic-import path exists.
 
 ### Invariants And Boundaries
 
-- **Non-vacuity is checked separately from publication disjointness.** Static AST
-  inspection of code tree `96bf7343` reaches **95** modules: the pause root,
-  **6** direct imports and **88** deeper modules, with **0 of 12** declared
-  publication modules reached. A depth-one walk would retain the root and its
-  six direct imports but no deeper module; the source's `len(deeper) >= len(direct)`
-  assertion would then compare `0 >= 6`. These are static population and assertion
-  readings, not a new execution of the test or of a mutant. The earlier card's
-  60/5/54 and depth-one 6 figures belong to its superseded measurement account.
+- **Non-vacuity is checked separately from publication disjointness.** Independent static AST
+  inspection reaches **95** modules: the pause root, **6** direct imports and **88** deeper
+  modules, with **0 of 12** declared publication modules reached. A walker that marks a
+  module expanded when discovered retains only the root and its six direct imports:
+  **7** modules and **0** deeper modules. Its non-vacuity comparison is `0 >= 6`, which
+  is false. These are static source-graph and assertion readings, not a new test or mutant
+  execution. The earlier 60/5/54 and depth-one 6 figures remain superseded historical measurements.
 - The three checks are: `{PAUSE_MODULE} | direct ⊆ reachable`; `len(deeper) >= len(direct)`; and two
   **named witnesses** that are provably not direct imports — `agents_remember.worktrees.scheduling_mode`
   and `agents_remember.kernel.primitives.gate_vocab` — so the "transitive" claim is legible rather than

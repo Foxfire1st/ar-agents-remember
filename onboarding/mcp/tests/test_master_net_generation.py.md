@@ -70,8 +70,8 @@ addresses must survive routing unchanged; this source account is not a new execu
 The shared world is `MasterFixture` with its `master_fixture(tmp_path)` builder — a
 master-shaped fixture (series contract + two leaf contracts + real code/memory repos) that
 leaf one adds `src/feature.py` into and leaf two removes. cit:([`MasterFixture`], mcp/tests/test_master_net_generation.py:123-133) cit:([`master_fixture`], mcp/tests/test_master_net_generation.py:251-255)
-`pytestmark = pytest.mark.evidence_unit` declares the evidence lane; the lane row that makes
-these cases run at all is `mcp/tests/test-evidence-lanes.toml:311-311`.
+`pytestmark = pytest.mark.evidence_unit` declares the evidence lane; the catalog selects this module at
+`mcp/tests/test-evidence-lanes.toml:313-313`. The registration states membership, not an invocation.
 
 ### Conventions
 
@@ -85,8 +85,10 @@ refused-not-empty wording.
 - No preconstructed resolutions, fake indexes or hand-built payloads anywhere.
 - R24 navigation is explicitly not claimed here; mounted-browser observation of the
   generation caption belongs to R24/R25 assembly (jsdom proves URLs + caption render).
-- The module registers no contract and no artifact and consumes no catalog-registered
-  support module, so `mcp/tests/evidence-lifecycle.toml` is untouched.
+- The module owns no contract or artifact row in `mcp/tests/evidence-lifecycle.toml`. The catalog
+  declares it as a consumer of `mcp/tests/_user_settings_guard.py` and
+  `mcp/tests/fixtures/repository_profiles/node/package-lock.json` (lines 448 and 2800
+  in code tree `cb321e2ad3b69d960c4ca1ddf9442663278f429c`). These declarations state membership, not invocation.
 
 ## Evidence
 
@@ -123,6 +125,8 @@ No applicable cross-repository source was found.
 
 
 - The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it. Anchor: `select_master_net` [5]
+
+
 
 
 

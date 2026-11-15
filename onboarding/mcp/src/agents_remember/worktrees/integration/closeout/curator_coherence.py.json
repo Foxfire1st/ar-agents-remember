@@ -73,14 +73,15 @@
       ]
     },
     "10": {
-      "note": "The closeout validator refuses until the gate passes and never runs ungated.\n\nAnchor: `test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated`",
+      "note": "The closeout validator refuses until the gate passes and never runs ungated. Anchor: `test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated`",
       "targets": [
         {
           "anchor": {
-            "blob": "b576ddb0afc095d5ccff8d0c435a52682f6e126c",
-            "content": "sha256:8f367598192bb39ba67abadadead88d57d5b136c7b455e6216545a0928a59c24",
+            "blob": "136043564f2e7d1920b480e552c989140d6e8f84",
+            "content": "sha256:814c0b7dd0462536e22e5693af4c4f6e935784ff0f1f1d976cf799a4f2ba394e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated"
             },
             "path": "mcp/tests/test_knowledge_closeout_gate.py"
           },

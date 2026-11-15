@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_integration_branch_authority.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
+        "content": "sha256:8becbaefdf3d20966467a68bb7322f57a08361f8f794e7d08c54f8976d25ce0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_code_side_that_lands_nothing_is_not_checked_again"
+        }
+      },
+      "facet": "A deliberately failing hook does not run when the actual protected code ref already equals the candidate; preparation returns the existing code head without publishing refs.",
+      "id": "PRF-V072D0",
+      "invariant": "INV-2Q8RPR",
+      "origin": {
+        "handoffEntry": "CUR-L3-W5-10-existing-INV-2Q8RPR-proof",
+        "leaf": "261112-BUG-L3"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
             "content": "sha256:ffbef0dbd610da238979f7006a17ad83434c99c12bf38c7aa600aa7bd23f0c41",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
             "content": "sha256:5531733451c3fb886f1cb15c34c058422fb4a06dba377947b0aaf566115ccb21",
             "locator": {
               "kind": "symbol",
@@ -39,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
             "content": "sha256:d1b769266ca2c06857744a419ea02ee250028be95719299bd5a1ff835a81951d",
             "locator": {
               "kind": "symbol",
@@ -55,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
             "content": "sha256:4c402db69c4d493450691f2a2c1328d95b5af2988575e5c814aad6155da8875b",
             "locator": {
               "kind": "symbol",
@@ -67,12 +86,12 @@
       ]
     },
     "5": {
-      "note": "Production ref preparation and publication proof.\n\nAnchor: `prepare_integration_ref_move`",
+      "note": "Production ref preparation and publication proof. Anchor: `prepare_integration_ref_move`",
       "targets": [
         {
           "anchor": {
-            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
-            "content": "sha256:4c7e812c2c7354177f641404d5386348bf60c07ef0ee34b6268efa6bb047d5bc",
+            "blob": "2d46e4349e78760575ad3176a73a7606cd7d95f6",
+            "content": "sha256:ce05f5fc145f185024d1aaa326734f49e026a14f2940a5bf83b6393b04abe7e9",
             "locator": {
               "kind": "file"
             },

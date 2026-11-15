@@ -34,7 +34,8 @@ models refuse the fields that would give it a second owner.
   `kind` (one of `context`, `compute`, `storage`, `time`, `fault`, `debt`), a one-sentence
   `statement`, an `anchor` that must name its file, `seen` (`{task, role}`), `state` (`open` |
   `closed`), an optional `measurement` (`{number, unit, how, commit, date}`), an optional `closed`
-  (`{task, commit, reason?}`) and `links`, whose only permitted relation is `burdens`. It refuses
+  (`{task, commit?, reason?}`) and `links`, whose only permitted relation is `burdens`.
+  `Closure` permits an absent commit only when a reason is supplied; the task remains required. `WeaknessRecord` refuses
   an anchor with no path, a `closed` block that disagrees with `state` (in either direction), a
   statement longer than 400 characters, an unknown kind and any extra field.
   It has no priority or proposal field: a weakness that belongs to no file is not recorded here.
@@ -69,7 +70,8 @@ models refuse the fields that would give it a second owner.
   every rejected or deferred alternative, `reconsider_on` indexes, the derived `superseded`), which the validator
   refuses on through `rules_decisions.py` (leaf 260928-MIK-L13).
 - A record is never deleted; it leaves use through `status: retired` (or supersession for decisions),
-  and a weakness through `state: closed` with the task and commit that removed its cause. A dependent
+  and a weakness through `state: closed` with the closing task and either its known commit or a
+  reason when no commit is supplied. A dependent
   has no lifecycle word of its own: whether its document is stale is derived, never stored. The one
   record a tree may be rid of is a dependent whose document the task deleted: the writer's
   `_remove_record` takes it out of the tree, `check_record_kept` exempts exactly that missing dependent

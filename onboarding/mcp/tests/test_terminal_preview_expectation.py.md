@@ -65,10 +65,10 @@ module-level functions with docstrings that state the role the value plays in th
 than restating its type, and every value is a plain `dict[str, object]` literal, which is what the
 validator's own signature accepts.
 
-**Historical lane-registration account and coordinates:** this module carries **no `pytestmark`**, and its
-single lane row was **appended** to the end of `unit-regression` in
-`mcp/tests/test-evidence-lanes.toml:192` — item 16's half (a), because a mid-list insertion shifts
-every row below it.
+**The current lane registration is the manifest row**: this module carries **no `pytestmark`** and appears in
+`unit-regression` at `mcp/tests/test-evidence-lanes.toml:599`. Membership selects evidence and establishes no execution.
+The earlier leaf's recorded append-at-end account describes its historical catalog, not the current row position.
+The earlier append-only registration was recorded at historical `mcp/tests/test-evidence-lanes.toml:192`; that source-epoch coordinate is not current navigation.
 
 ### Invariants And Boundaries
 

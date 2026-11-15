@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
+        "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
         "content": "sha256:0d58d24d6d82082066743ec6c50f9e0085bf3c5fc54b85239ff018d99c6e7856",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
+        "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
         "content": "sha256:db46871184a30b436a0a200d2c853cc871913ab7e8da92476876d7943b193522",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,42 @@
     },
     {
       "anchor": {
-        "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
-        "content": "sha256:94ed41d185ae40718bc5b233de0dda7372e52cfc8035d200b31c9dacb41898ce",
+        "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
+        "content": "sha256:c8fc62b275e0ffdfbd9aad8709df3bbd18f38b028e31e591f1e6335f84573c5a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerFinalMeasureTests.test_cut_answer_late_failure_reguards_at_the_short_ceiling"
+        }
+      },
+      "facet": "A late line failure on an already cut ordinary-location error/scalar fixture re-guards at the400 target, ends with cut naming a real saved file, and checks delivered/log/observer count agreement.",
+      "id": "PRF-57QWW7",
+      "invariant": "INV-SYBT3F",
+      "origin": {
+        "handoffEntry": "CUR-W8-INV-SYBT3F",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
+        "content": "sha256:6d5a155d0f147cdfa989ed1601cec9f562cc02ea63ae16a5bb2d217d016da4a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerFinalMeasureTests.test_sparse_cut_hint_stays_last_after_the_first_line_failure"
+        }
+      },
+      "facet": "The sparse overflow fixture forces the first daily-line failure and requires cut as the final key, a real matching saved whole-result file, preserved whole blob and equal delivered/retried-line/observer counts; it is an application-completion fixture, not a public MCP transport run.",
+      "id": "PRF-8EQ2GK",
+      "invariant": "INV-SYBT3F",
+      "origin": {
+        "handoffEntry": "CUR-W8-INV-SYBT3F",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
+        "content": "sha256:c56f37895bf578c91eed7dd382e5986ad3e27cdbd5c7d9fc5bed92b94706d419",
         "locator": {
           "kind": "symbol",
           "name": "ToolAnswerFinalMeasureTests.test_two_late_failures_keep_first_error_and_recount"
@@ -54,7 +88,41 @@
     },
     {
       "anchor": {
-        "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
+        "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
+        "content": "sha256:6d5a155d0f147cdfa989ed1601cec9f562cc02ea63ae16a5bb2d217d016da4a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerFinalMeasureTests.test_sparse_cut_hint_stays_last_after_the_first_line_failure"
+        }
+      },
+      "facet": "The sparse overflow fixture forces the first daily-line failure and requires cut as the final key, a real matching saved whole-result file, preserved whole blob and equal delivered/retried-line/observer counts; it is an application-completion fixture, not a public MCP transport run.",
+      "id": "PRF-D886MW",
+      "invariant": "INV-QN78E9",
+      "origin": {
+        "handoffEntry": "CUR-W8-INV-QN78E9",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
+        "content": "sha256:c56f37895bf578c91eed7dd382e5986ad3e27cdbd5c7d9fc5bed92b94706d419",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerFinalMeasureTests.test_two_late_failures_keep_first_error_and_recount"
+        }
+      },
+      "facet": "The two-failure fixture keeps the first fixed logError, requires cut last and a real detail file, and checks the observer delivered count after retry failure; it does not claim the retry persisted a successful daily line.",
+      "id": "PRF-E0KQTW",
+      "invariant": "INV-SYBT3F",
+      "origin": {
+        "handoffEntry": "CUR-W8-INV-SYBT3F",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
         "content": "sha256:8c5e32b1d38dde1de86b2dfa37e64b28d58a0d4c0002db32d3ddd5d6cdfbc70a",
         "locator": {
           "kind": "symbol",
@@ -71,8 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
-        "content": "sha256:84019f61f074f34604db9098415828d73896f446e95fa8fccedcccf733382f95",
+        "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
+        "content": "sha256:c8fc62b275e0ffdfbd9aad8709df3bbd18f38b028e31e591f1e6335f84573c5a",
         "locator": {
           "kind": "symbol",
           "name": "ToolAnswerFinalMeasureTests.test_cut_answer_late_failure_reguards_at_the_short_ceiling"
@@ -88,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
+        "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
         "content": "sha256:f667bba5d2d2df3609e521ca8bd192519213ef1ee4c1c388e9dbc51b69d93e85",
         "locator": {
           "kind": "symbol",
@@ -107,15 +175,52 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "An exact-edge answer is re-guarded after its log location is attached, and the observer's count matches what was delivered.",
+      "note": "An exact-edge answer is re-guarded after its log location is attached; sparse, repeated-failure and renewed-short-form cases keep cut last with a real saved detail and matching delivered observer counts.",
       "targets": [
         {
           "anchor": {
-            "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
+            "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
             "content": "sha256:b8431e8d3fb89add4ed94e59560442d559071a9e1087b3051da3f102657ab0b6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_exact_edge_answer_guarded_by_its_log_location"
+              "end": 147,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
+            "content": "sha256:6d5a155d0f147cdfa989ed1601cec9f562cc02ea63ae16a5bb2d217d016da4a1",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
+            "content": "sha256:c56f37895bf578c91eed7dd382e5986ad3e27cdbd5c7d9fc5bed92b94706d419",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
+            "content": "sha256:c8fc62b275e0ffdfbd9aad8709df3bbd18f38b028e31e591f1e6335f84573c5a",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 266
             }
           },
           "kind": "test"
@@ -127,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73e0061e58fcc9c3fb02e77cc98474eaa3b975c6",
+            "blob": "88a691c4a7c2e71d169e5224cb2c9625c6adb5ac",
             "content": "sha256:7dd6e79e66493902b572087b74a989de84657ab8c460ded0fb67610a545ea019",
             "locator": {
               "kind": "symbol",

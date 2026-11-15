@@ -15,15 +15,15 @@ The current source facts below replace the former operative inventory. The separ
 
 ### MIK-R109 read-only annotation assertions
 
-ReadOnlyMarkTests asserts every public roster name lies in exactly one of READ_ONLY_TOOLS or MUTATING_TOOLS and that advertised readOnlyHint matches the list. It invokes each marked-read default case plus declared refusal variants, comparing code/memory repository state and the coordination file census. Only log paths and runtime/knowledge-index are filtered from the coordination census; other runtime writes are visible. context_packet is marked false because include_freshness can fetch, and knowledge_diff is marked false because an omitted after revision can write Git objects.
+`test_tool_entry_point_read_only.ReadOnlyMarkTests` asserts every public roster name lies in exactly one of READ_ONLY_TOOLS or MUTATING_TOOLS and that advertised readOnlyHint matches the list. It invokes each marked-read default case plus declared refusal variants, comparing code/memory repository state and the coordination file census. Only log paths and runtime/knowledge-index are filtered from the coordination census; other runtime writes are visible. context_packet is marked false because include_freshness can fetch, and knowledge_diff is marked false because an omitted after revision can write Git objects.
 
 The ordinary-file, Git-metadata and non-index-runtime controls write probe files directly and assert that the comparison oracle notices them; they do not inject a writing registered read handler. The requested context-packet fetch case asserts a false mark and FETCH_HEAD creation. These are source assertions, not executions performed here or a universal no-write theorem.
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:117-168,192`.
-- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:358-912,1220-1415`.
-- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:1013-1092`.
+- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:135-303` (current population and probe tests).
+- Source comparison: `mcp/tests/tool_entry_point_sweep_support.py` (the extracted world, classifier and pins) and `mcp/tests/test_tool_entry_point_sweep_controls.py` (negative controls).
+- Source comparison: `mcp/tests/test_tool_entry_point_read_only.py:45-78` (the current read-only-mark class and list assertions).
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 

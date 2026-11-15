@@ -7,7 +7,7 @@
 ## Purpose
 
 **The truth views, the census view, the record list and the code view of the knowledge reader (MIK-R29
-rules 3 and 4).** A truth view shows one record of the selected tree with every field it records, its
+rules 3 and 4).** A truth view shows one record of the selected tree with its recorded fields and a derived closure display for a closed weakness, its
 explanation prose (the record's `.md`) when it has one, its outgoing links (its own `links`, a family's
 members and routes, what it supersedes) and its incoming links, and its timeline (`timeline.py`). Per kind:
 
@@ -18,7 +18,7 @@ members and routes, what it supersedes) and its incoming links, and its timeline
   path, and MIK-R03's stale members;
 - **decision:** `records.decision_document`, the decision in full;
 - **incident and every other facet record:** every field as recorded (an incident's cause,
-  `cause_uncertainty`, recovery and corrective actions included), with typed links both ways.
+  `cause_uncertainty`, recovery and corrective actions included), with typed links both ways; a closed weakness uses the shared closure display in both its returned document and its facet. [13]
 
 The **census view** is MIK-R20's report of each census under `knowledge/census/`; the **record list** is every
 record by kind (the dashboard's lookup); the **code view** is one code file at the selection's code tree,
@@ -29,7 +29,7 @@ opened at a locator.
 ### Logic
 
 - **The record.** `record_view` returns `None` for an ID the tree does not hold (the entry point answers
-  `not-found`). It builds the record summary with its path and whole document, the prose, the outgoing and
+  `not-found`). It builds the record summary with its path and document copy, the prose, the outgoing and
   incoming links (`link_document` over `incoming_links`), the kind's own part, and the timeline over the
   history rows about it and the entries that feed it (an invariant's own; a family's members'). Invariant membership-subject rows join that timeline as well as the dedicated membership array.
 
@@ -39,8 +39,9 @@ opened at a locator.
   `outgoingState: unavailable` rather than claiming no outgoing link.
 - **States.** `_invariant` and `_family` call `paths.states_at` once each; `_currentness_header` names the code
   tree and, when states could not be computed, the reason.
-- **Facets.** Every field but the frame (`schema`, `id`, `links`) is returned as recorded;
-  this is the backend projection, while display is owned by the reader's `TruthView`.
+- **Facets.** Fields outside the frame (`schema`, `id`, `links`) are returned as recorded, except that a closed weakness uses the shared closure display in both `record.document.closed` and `facet.closed`. [13]
+  This is the backend projection, while display is owned by the reader's `TruthView`.
+- **Weakness closure.** For a closed weakness, `record_view` copies the stored document, obtains `closure_document` once and uses that display in both returned locations. [13] An explicit commit stays as stored; a commit-less closure displays the derived code commit or a pending or unavailable `commitNote`, while the source record and index stay unchanged. [13]
 - **Census.** `census_view` reads the tree's census files (`files.census_files`) through L20's
   `read_censuses` and `census_reports`. An unknown census ID is `not-found`, checked by membership (not by
   mapping a `KeyError`, F11); a read failure is `unavailable`; census file problems are listed.
@@ -132,6 +133,8 @@ No configured live documentation source was available for this pass.
 
 - The code reader opens one selected code file, returning media type and measured size for pictures/videos or text with locator resolution for source. Malformed locator JSON or shape remains a bad request. [8]
 
+
+- Closed weakness views share one derived closure display between the returned record document and facet, leaving storage untouched. [13]
 
 ### Cross-Repo References
 

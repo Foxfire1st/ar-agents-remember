@@ -642,12 +642,35 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
-            "content": "sha256:3bf5f45572fa44d4383d26cf41210e411f18d8e6cc65793077dbe6f348f37358",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
             "locator": {
-              "end": 564,
-              "kind": "line_range",
-              "start": 222
+              "kind": "symbol",
+              "name": "WorktreeSummary"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "content": "sha256:ac995290d08b6e24b896b253eb8b59dc5e8e4144f16e68c3a5e72284da4467d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "AtomicSeriesActivationFact"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "content": "sha256:c0aad6aae43ea09f1d18794980092208e2434a7217f6ba5e63490f9566a7d895",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeCheckpointLandingResponse"
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },

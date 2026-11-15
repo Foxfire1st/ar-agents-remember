@@ -91,14 +91,15 @@ only the packet's boundary forbids it.
 ### Conventions
 
 `pytestmark = pytest.mark.evidence_unit` is the module's marker; its current
-`unit-regression` declaration is `mcp/tests/test-evidence-lanes.toml:265`.
-The complete lifecycle catalog declares seven exact artifact-consumer
-relationships: `_user_settings_guard.py` (`:390`), `anchor_fixture_models.py`
-(`:910`), `diff_scope_test_support.py` (`:1318`), the Node `package-lock.json`
-fixture (`:2718`), `knowledge_row_codec_test_support.py` (`:3574`),
-`knowledge_rows_test_support.py` (`:3635`) and `read_scope_test_support.py`
-(`:4162`). These are catalog ownership declarations, not invocation or runtime
-consumption evidence. The earlier two-artifact account is superseded.
+`unit-regression` declaration is `mcp/tests/test-evidence-lanes.toml:267`.
+The complete merged lifecycle catalog declares seven exact artifact-consumer
+relationships: `_user_settings_guard.py` (`:393`), `anchor_fixture_models.py`
+(`:918`), `diff_scope_test_support.py` (`:1333`), the Node `package-lock.json`
+fixture (`:2745`), `knowledge_row_codec_test_support.py` (`:3612`),
+`knowledge_rows_test_support.py` (`:3673`) and `read_scope_test_support.py`
+(`:4203`). These are catalog ownership declarations, not invocation or runtime
+consumption evidence. The earlier two-artifact account is superseded; its named
+diff-scope/read-scope supports remain members of this complete seven-artifact population. This module has no artifact or contract row of its own in this catalog.
 
 Every case is deterministic: no case depends on wall-clock ordering, the Git observations pin `PATH`,
 `HOME` and `GIT_CONFIG_NOSYSTEM`, and the only subprocess is that observation — the route is
@@ -207,4 +208,4 @@ Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
 
 
 
-- The lane row and the two consumer rows declaring this module's membership (diff-scope and read-scope shared support). [22]
+- The lane row and the two named diff-scope/read-scope consumer rows declare this module's membership; those supports are a subset of its seven catalog relationships. [22]

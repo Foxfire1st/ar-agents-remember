@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+        "content": "sha256:4269e176dd86ed861ecbdb7c36b0af961efc7fab9d0a129ef6af3d5960616391",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fit_the_cut_hint"
+        }
+      },
+      "id": "RLZ-395R92",
+      "invariant": "INV-QN78E9",
+      "origin": {
+        "handoffEntry": "CUR-W8-INV-QN78E9",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The final fitting step measures the hint and dropped-field bookkeeping, shedding eligible scalars and error text while keeping the hint even when mandatory content cannot fit the target.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
         "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
         "locator": {
           "kind": "symbol",
@@ -22,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
         "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
         "locator": {
           "kind": "symbol",
@@ -40,10 +58,11 @@
     },
     {
       "anchor": {
-        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
-        "content": "sha256:28f0991ce10bdda3b9e5662782fac693640e4fd9d9be5448dcdc27c6aeb9cb13",
+        "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+        "content": "sha256:8221f5824a755ace2c9c9645d92d908a79b79c503c820eecea648fed76e5810b",
         "locator": {
-          "kind": "file"
+          "kind": "symbol",
+          "name": "short_form"
         }
       },
       "id": "RLZ-ASGW6W",
@@ -52,13 +71,13 @@
         "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
         "leaf": "260928-MIK-L191"
       },
-      "rationale": "Lets the answer state the refusal in the shared tool-answer shape instead of a private error string.",
+      "rationale": "The shared short-form builder carries a note-revision refusal code and error through overflow presentation; in-place note mutation, target identity and refusal checks remain with the note writer.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
-        "content": "sha256:dba96b8c08af914511729e5126b08cd46a0f5a6b454fceb6d5edc330361a2f0e",
+        "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+        "content": "sha256:8221f5824a755ace2c9c9645d92d908a79b79c503c820eecea648fed76e5810b",
         "locator": {
           "kind": "symbol",
           "name": "short_form"
@@ -70,12 +89,12 @@
         "handoffEntry": "MIK-R108@v1 §4 overflow-400",
         "leaf": "260928-MIK-L108"
       },
-      "rationale": "short_form builds the measured 400-token short form the guard delivers for every over-bound answer.",
+      "rationale": "short_form builds and measures the overflow mapping with exact recorded location and final cut hint, shedding optional scalars and error text against the 400-token target while retaining mandatory location/hint content.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
         "content": "sha256:0c62c6e66b6c2221581f305c6b13a1ad415712f4221e4a0f70bca68bbd907758",
         "locator": {
           "kind": "symbol",
@@ -93,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
-        "content": "sha256:b8d99303481809c049f573d0bee3c0f80dbe790543257fbc06276db6d40cbc14",
+        "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+        "content": "sha256:a938ef98dd100cfe9db12284a60cd12fb9b15019e62f5d0804bcc8bffca2c4c3",
         "locator": {
           "kind": "symbol",
           "name": "_fit_location"
@@ -106,12 +125,30 @@
         "handoffEntry": "MIK-R108@v1 §4 location-omitted",
         "leaf": "260928-MIK-L108"
       },
-      "rationale": "_fit_location decides the location sentence for the measured short form, so omission is composed with the whole it locates.",
+      "rationale": "_fit_location keeps the exact log location when supplied; it does not omit a recorded location to meet a size reserve. The ending hint and no-file outcome are owned by _cut_hint and short_form.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+        "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+        "content": "sha256:3e921240a70adc1c2cdb38ea351f917f0166580ef5c09e0ea83fb3fa00a2b4a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_cut_hint"
+        }
+      },
+      "id": "RLZ-ST273F",
+      "invariant": "INV-SYBT3F",
+      "origin": {
+        "handoffEntry": "CUR-W8-INV-SYBT3F",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The ending hint names the actual recorded whole-result file, or explicitly says no file holds it and carries the logging reason.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
         "content": "sha256:8061f6fe7812b5ab10b00cd8e4e8b8bfb476711f345649512273cc4291852368",
         "locator": {
           "kind": "symbol",
@@ -129,8 +166,8 @@
     },
     {
       "anchor": {
-        "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
-        "content": "sha256:d27c374ab2475cbc6f9c16cd6eead51a38511940a00549bef8cee6d5497d260c",
+        "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+        "content": "sha256:a8dd2bf11972c07dd79e9b5ea261dc0f24b129ac2fbf8e591f49f10f120d7740",
         "locator": {
           "kind": "symbol",
           "name": "_fixed_short_part"
@@ -142,7 +179,7 @@
         "handoffEntry": "MIK-R108@v1 §4 fixed-250",
         "leaf": "260928-MIK-L108"
       },
-      "rationale": "_fixed_short_part owns the fixed overflow sentences, so the 250 fixed reserve is measured in one place for every short form.",
+      "rationale": "_fixed_short_part preserves ok, valid code, overflow, answerTokens and any build-currentness reading and carries the running-operation sentence within its 200-character string limit. Exact recorded location and final cut-hint fitting are owned separately; no 250-token location admission test remains.",
       "role": "enforcement"
     }
   ],
@@ -152,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
             "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
             "locator": {
               "kind": "symbol",
@@ -168,12 +205,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
             "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
             "locator": {
-              "end": 225,
+              "end": 226,
               "kind": "line_range",
-              "start": 195
+              "start": 196
             }
           },
           "kind": "code"
@@ -185,8 +222,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
-            "content": "sha256:d27c374ab2475cbc6f9c16cd6eead51a38511940a00549bef8cee6d5497d260c",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+            "content": "sha256:a8dd2bf11972c07dd79e9b5ea261dc0f24b129ac2fbf8e591f49f10f120d7740",
             "locator": {
               "kind": "symbol",
               "name": "_fixed_short_part"
@@ -201,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
             "content": "sha256:e29ca367e9f77af9b742ae560442ad52bde0f61efabe5d356100de61fb732e59",
             "locator": {
               "kind": "symbol",
@@ -217,8 +254,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
-            "content": "sha256:3756404cc1c750dc62cdf95e2ca410745bd547204ac8e0a4a0bd01c362ac0239",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+            "content": "sha256:0cd87e6dd8f97eba0c66bda2375d156a865d1988fe55ef54d9720aab10b638f8",
             "locator": {
               "kind": "symbol",
               "name": "FRAMEWORK_ANSWER_KEYS"
@@ -233,7 +270,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
             "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
             "locator": {
               "kind": "symbol",
@@ -245,15 +282,26 @@
       ]
     },
     "3": {
-      "note": "The measured short form fits 400 with fixed part, location, cut error and short scalars.",
+      "note": "The short form measures its fixed part, exact recorded location, cut error, scalars and final cut hint against the 400-token target; mandatory location and hint content can remain above it.",
       "targets": [
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
-            "content": "sha256:dba96b8c08af914511729e5126b08cd46a0f5a6b454fceb6d5edc330361a2f0e",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+            "content": "sha256:8221f5824a755ace2c9c9645d92d908a79b79c503c820eecea648fed76e5810b",
             "locator": {
               "kind": "symbol",
               "name": "short_form"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+            "content": "sha256:4269e176dd86ed861ecbdb7c36b0af961efc7fab9d0a129ef6af3d5960616391",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fit_the_cut_hint"
             }
           },
           "kind": "code"
@@ -265,7 +313,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
             "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
             "locator": {
               "kind": "symbol",
@@ -281,7 +329,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
             "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
             "locator": {
               "kind": "symbol",
@@ -297,7 +345,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
             "content": "sha256:073375c21901f5c3efc5913b9f4c23941b7904ce8c52cad35aba88ac01eda632",
             "locator": {
               "kind": "symbol",
@@ -308,7 +356,7 @@
         },
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
             "content": "sha256:468fd1fbdb3ea15ffcb8cbdf5a6e0fc636dde3828211d1c92416d70a2096a8db",
             "locator": {
               "kind": "symbol",
@@ -324,7 +372,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
             "content": "sha256:073375c21901f5c3efc5913b9f4c23941b7904ce8c52cad35aba88ac01eda632",
             "locator": {
               "kind": "symbol",

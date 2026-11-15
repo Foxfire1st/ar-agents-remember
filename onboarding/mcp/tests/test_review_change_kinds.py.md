@@ -27,7 +27,7 @@ kind and the review rounds' extra cases. It is the world the dashboard's `triage
   `INV-SSSSSS` (a stale-at-base realization repaired: "re-anchored (stale at base)"), `INV-XXXXXX` (linked plus a
   stale entry in the changed test: `implementation` `+unknown`) and `INV-RRRRRR` (retired at the same revision:
   `intent`). `FAM-F00002`'s guarantee changes; `FAM-F00003`'s revision is bumped for a reorder with the same guarantee.
-- **The original 12-case change-kind cohort (within 19 current source test definitions):** every occurrence's kind; the shared member; a partial page describing only its returned members;
+- **The 12 core change-kind cases (`:436-692`), within 19 current test definitions and separate from two outline and five further definitions:** every occurrence's kind; the shared member; a partial page describing only its returned members;
   an unreadable sidecar; an unreadable family record (guarantee and membership unknown, the membership reason apart
   from the change-kind reasons); unreadable trees; a changed non-text file; the moved entry, retired record and
   unresolved range in one family; an unread sidecar of a changed file beside an established fact (review R2-1 N5); the

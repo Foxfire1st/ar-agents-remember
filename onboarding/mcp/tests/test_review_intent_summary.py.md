@@ -10,7 +10,7 @@ Pins changed-intent summary counts and typed answer states over real before/afte
 
 ## Code Commentary
 
-Twelve top-level test definitions, including one parametrized definition, cover revision populations, summary/route behavior, worklist binding, code facts and verdicts. The first three definitions preserve revision population results (including empty identities and retained revisions) and require binding checks before the empty-unexplained-worklist shortcut; the remaining definitions include the previously documented five summary/route and four worklist, code-fact and verdict cases. The retained summary cases distinguish added/revised/removed statements and guarantees from
+Twelve source test definitions include the five retained summary/route tests, four worklist, code-fact and verdict tests, two revision-population tests and the empty-unexplained-worklist binding test. Two definitions are parametrized: revision-population preservation and item-verdict state coverage. The retained summary cases distinguish added/revised/removed statements and guarantees from
 realization-only and membership-only changes. A revised statement two families share counts once on
 each side. A record-only successor — the same text with a changed origin state, or only a new
 version — counts once on each side like any revision, while a successor that only changes a

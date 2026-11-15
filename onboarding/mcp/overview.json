@@ -758,12 +758,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
             "content": "sha256:896fdd7b511626d78b5cabb93db1be4c16a9e801b46276eef3d039c681d2cdbb",
             "locator": {
-              "end": 26,
+              "end": 27,
               "kind": "line_range",
-              "start": 21
+              "start": 22
             },
             "path": "mcp/pyproject.toml"
           },
@@ -1279,7 +1279,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
+            "blob": "d06589a7eab5d08e42cab27bd828a7d5226df3a8",
             "content": "sha256:3b5c7df8fc3fd18cbaf2b25613c6cc348de6fbb8fa153e6ccf3e3307af61f0b9",
             "locator": {
               "kind": "symbol",
@@ -1314,7 +1314,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
             "content": "sha256:76b6843c62e70a6b4322c33cbf24a66359a48780419dfb1946de8d25e6d2237c",
             "locator": {
               "kind": "symbol",
@@ -2140,12 +2140,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
             "content": "sha256:bfec3a3775045fe3fe7e3a92d32691cdcd15bb5f228b4411aa801ec873ff97a9",
             "locator": {
-              "end": 491,
+              "end": 500,
               "kind": "line_range",
-              "start": 460
+              "start": 469
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -2962,14 +2962,15 @@
       ]
     },
     "3": {
-      "note": "**Retained historical source account — superseded by the current route account:** The gate over a leaf's exact candidate.\n\nAnchor: `evaluate_leaf_gate` `judge`",
+      "note": "**Retained historical source account — superseded by the current route account:** The gate over a leaf's exact candidate. Anchor: `evaluate_leaf_gate` `judge`",
       "targets": [
         {
           "anchor": {
-            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
-            "content": "sha256:9c50fa8900ad1086748427f41ff4eefd597790146ac56b0ef3b324d4e2cc0f3a",
+            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "evaluate_leaf_gate"
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },
@@ -3398,10 +3399,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
-            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
+            "blob": "d06589a7eab5d08e42cab27bd828a7d5226df3a8",
+            "content": "sha256:3b5c7df8fc3fd18cbaf2b25613c6cc348de6fbb8fa153e6ccf3e3307af61f0b9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReadArFilesResponse"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -3414,7 +3416,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
             "content": "sha256:f3ab3f5f550064a33b571010a4b2b533e8d00dce981cbfbf811be0d30c03ac82",
             "locator": {
               "kind": "symbol",
@@ -3533,7 +3535,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
             "content": "sha256:3cefb35aac64c3af861a9ed705c8e1b98dabcb4009fc97a9ed9b18591136b342",
             "locator": {
               "end": 130,
@@ -3546,7 +3548,7 @@
         },
         {
           "anchor": {
-            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
             "content": "sha256:0412845a63d724ab768d7f1a812e018e0f0faa3f0f16d6206b8b89609d41dc61",
             "locator": {
               "end": 128,
@@ -4268,12 +4270,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
             "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
-              "end": 27,
+              "end": 28,
               "kind": "line_range",
-              "start": 21
+              "start": 22
             },
             "path": "mcp/pyproject.toml"
           },
@@ -4711,7 +4713,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
             "content": "sha256:bfec3a3775045fe3fe7e3a92d32691cdcd15bb5f228b4411aa801ec873ff97a9",
             "locator": {
               "kind": "symbol",
@@ -5268,12 +5270,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c15192f37b3dd7db83aa2990f4d84805b9034711",
+            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
             "content": "sha256:f6f4c7822e06f0eb404336132bfe1c65ebb76f7b70b09a5f1d9204afdf07186e",
             "locator": {
-              "end": 357,
+              "end": 365,
               "kind": "line_range",
-              "start": 324
+              "start": 332
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
           },
@@ -5985,7 +5987,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
+            "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
             "content": "sha256:f03bc90acc91c048f7f63fc627cb1375b09937a3b089d8fdad717203496eb50d",
             "locator": {
               "kind": "symbol",

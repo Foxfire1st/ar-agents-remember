@@ -761,7 +761,11 @@ Past-epoch source custody: `skills/l-01-agent-lifecycles/capsule-budgets.json`, 
 - Retained reference account (no fresh execution or acceptance inferred): Git attribution is the source of the consumer ledger. [50]
 - Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. [51]
 - Retained reference account (no fresh execution or acceptance inferred): Integration proves exact memory source ancestry independently of cache rows. [52]
-- Historical paired content carrier, superseded by MIK-R109: current read_ar_files names cards/states/overviews and returns no published_intent block. [61]
+
+
+- The read_ar_files naming entry point returns knowledge locations and measured states, with no source, card, overview or published-intent body. [61]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): The three attribute entries and their reasons. [69]
 - Retained reference account (no fresh execution or acceptance inferred): The rewrite that the `--write` command runs. [70]
 - Retained reference account (no fresh execution or acceptance inferred): The command entry: validation of both catalogs on one source graph, or the rewrite. [71]
@@ -868,7 +872,11 @@ Past-epoch source custody: `skills/l-01-agent-lifecycles/capsule-budgets.json`, 
 - Retained reference account (no fresh execution or acceptance inferred): Closed admission and one public projector. [289]
 - Retained reference account (no fresh execution or acceptance inferred): Task-addressed lifecycle controls. [291]
 - Retained reference account (no fresh execution or acceptance inferred): Retained-generation projection derives public legal controls and recovery surfaces without owning evidence. [292]
-- Current read_ar_files_tool is a names/locations-only route; the earlier published-intent mount-point account is superseded by L109. [293]
+
+
+- The read_ar_files naming entry point returns knowledge locations and measured states, with no source, card, overview or published-intent body. [293]
+
+
 
 - Retained reference account (no fresh execution or acceptance inferred): **The case that holds the carrier, now the response-contract module `models/read_files.py`, to the payload's real field spellings.** [296]
 

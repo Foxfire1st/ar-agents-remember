@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "cb321e2ad3b69d960c4ca1ddf9442663278f429c",
+    "commit": "a874131c25b919356a3bd507713ead449b8491cd",
     "role": "curator",
-    "statement": "The release checklist still names mcp/pyproject.toml and kernel/primitives/version.py as the version carriers, requires the runtime copy of tool-details.md to equal its source, and states no 3.0.0; it holds at 3.0.1.",
-    "task": "261112-RSM-L1",
+    "statement": "The unchanged release checklist and all 21 retained support identities preserve the distinction between upload, installer-facing index availability and the subsequent scratch installation.",
+    "task": "261112-BUG-L3",
     "uncommitted": true
   },
   "document": "docs/release-checklist.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     },
     {
-      "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },

@@ -225,14 +225,15 @@
       ]
     },
     "2": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Record landing probes first, then asks the gate over the landed commit.\n\nAnchor: `_line_converted` `_knowledge_gate_refusal`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Record landing probes first, then asks the gate over the landed commit. Anchor: `_line_converted` `_knowledge_gate_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
           },
@@ -353,7 +354,7 @@
         },
         {
           "anchor": {
-            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
+            "blob": "16d8b616821e1aa040d5330711c395d9b81db861",
             "content": "sha256:6b07e133e66d9ec197e2e3653376660ad025d9a1d1bfeaf57ce417de960562d5",
             "locator": {
               "end": 41,
@@ -367,14 +368,15 @@
       ]
     },
     "25": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Closeout onboarding refresh uses the context's resolved storage for route-index apply and dry-run preview through build_route_indexes.",
+      "note": "The explicit route-index builder takes code, onboarding, repository and storage authority and honors dry_run.",
       "targets": [
         {
           "anchor": {
-            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
-            "content": "sha256:9fb670f1ea1eda7af09749b635c3f899fb6b2ae060b5fd701b80c2408a637d14",
+            "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
+            "content": "sha256:60c738fbff7f8b76f037ac59d0174391ef8e585d380a03a671edb65809cf2021",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "build_route_indexes"
             },
             "path": "mcp/src/agents_remember/kernel/route_index.py"
           },
@@ -387,7 +389,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:04d86805fe7f02d3596ffcbcad248910dc1ddcfb56a5a965023c98a8413cc9e2",
             "locator": {
               "end": 332,
@@ -400,7 +402,7 @@
         },
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:6ec06a7803b29cd2a5ce32ccef80a6b0cfefd4478eb4d47b67604f7075e795a4",
             "locator": {
               "end": 47,
@@ -836,12 +838,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
-            "content": "sha256:844c0a4c09ae13603d4876a203380dad736797ba49c839b1b544bea3f4c2cfaa",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "content": "sha256:ff54030cc900be402922f368567c3a8c559d371293fe19f30e703709e05c7a7d",
             "locator": {
-              "end": 883,
-              "kind": "line_range",
-              "start": 623
+              "kind": "symbol",
+              "name": "_cleanup_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -1069,14 +1070,15 @@
       ]
     },
     "53": {
-      "note": "Historical unconverted-memory lock account. Current record landing probes the source line and recorded base, but admits a converted supplied memory output to its own leaf validator even when those prior inputs are unconverted; otherwise the central legacy-format refusal applies.",
+      "note": "Historical unconverted-memory lock account. Current record landing probes the source line and recorded base, but admits a converted supplied memory output to its own leaf/master judgment even when those prior inputs are unconverted; otherwise the central legacy-format refusal applies.",
       "targets": [
         {
           "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
           },
@@ -1428,14 +1430,16 @@
       ]
     },
     "72": {
-      "note": "Record landing probes conversion first and freezes parents only for recorded closed-out output.\n\nAnchor: `_knowledge_gate_refusal` `_landing_request`",
+      "note": "Record landing probes conversion first and freezes parents only for recorded closed-out output. Anchor: `_knowledge_gate_refusal` `_landing_request`",
       "targets": [
         {
           "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "content": "sha256:9ed1284312c2bd8aacbd7adfcf7bafd860e26e30a32e626ae1cef431ee2d8ff4",
             "locator": {
-              "kind": "file"
+              "end": 426,
+              "kind": "line_range",
+              "start": 386
             },
             "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
           },
@@ -1599,7 +1603,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
             "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
             "locator": {
               "kind": "symbol",
@@ -1730,12 +1734,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
-            "content": "sha256:deb0849fda385e1003d96293a7fbec6ab535d372876aa8db7d3de65ca2d03ad8",
+            "blob": "1fe83d48a75d16c7f66764ad45c34bc03f6becff",
+            "content": "sha256:b06956e3484d8be45bc988d911c3cc804be80123b1df938433ab7abed48d84f6",
             "locator": {
-              "end": 270,
-              "kind": "line_range",
-              "start": 116
+              "kind": "symbol",
+              "name": "_abandon_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
           },
@@ -1743,14 +1746,25 @@
         },
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
-            "content": "sha256:844c0a4c09ae13603d4876a203380dad736797ba49c839b1b544bea3f4c2cfaa",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "content": "sha256:ff54030cc900be402922f368567c3a8c559d371293fe19f30e703709e05c7a7d",
             "locator": {
-              "end": 883,
-              "kind": "line_range",
-              "start": 623
+              "kind": "symbol",
+              "name": "_cleanup_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
           },
           "kind": "code"
         },
@@ -1777,19 +1791,6 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
-            "locator": {
-              "end": 608,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
           },
           "kind": "code"
         },

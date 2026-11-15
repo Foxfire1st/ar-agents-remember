@@ -22,7 +22,7 @@ and the item still counted as blocked, and the only producer able to hand it `{"
 with no reason at all was `application/provider_runtime.py::remove_tree`'s post-reclaim
 "still present" branch.
 
-The cases are integration-lane members (`mcp/tests/test-evidence-lanes.toml:753`).
+The cases are integration-lane members (`mcp/tests/test-evidence-lanes.toml:759`).
 The complete lifecycle catalog declares this module as an exact consumer on **14**
 artifact rows. That dependency ownership and the ambient-role runner declaration
 are selection metadata, not execution evidence.
@@ -181,21 +181,9 @@ routes run at all. No production cross-repository authority is claimed by this f
 
 ## 260918-TSIP-L6 The Drift-Snapshot Preview Cases
 
-At the `260918-TSIP-L6` epoch, the earlier card recorded a growth from 361 to 480
-lines when three drift-snapshot preview cases were added. That account's line
-figures are historical. At code tree `96bf7343`, the complete module has **486**
-physical lines and **10** top-level test definitions. The current preview cases
-are `test_a_drift_snapshot_preview_is_not_read_as_an_unreclaimed_result`
-(`:388-424`),
-`test_a_real_reasonless_drift_snapshot_still_refuses_rather_than_passing_as_preview`
-(`:427-448`), and
-`test_the_cleanup_preview_of_a_task_with_a_drift_snapshot_reports_no_blocker`
-(`:451-486`). The first distinguishes a pending preview from a blocker, the
-second preserves a real reasonless refusal, and the last checks public cleanup
-preview. The current integration lane row is
-`mcp/tests/test-evidence-lanes.toml:753`. These coordinates describe the current
-source; no fresh test invocation is claimed.
+At the `260918-TSIP-L6` epoch, the earlier card recorded growth from **361 to 480 lines** when three drift-snapshot preview cases were added. Those line figures are historical. The current module has **486 physical lines** and **ten source test definitions**. Its current preview definitions are:
 
+`test_a_drift_snapshot_preview_is_not_read_as_an_unreclaimed_result` (`:388-424`) drives the drift-snapshot expectation directly with `preview=True` and requires the entry to be pending rather than blocked; `test_a_real_reasonless_drift_snapshot_still_refuses_rather_than_passing_as_preview` (`:427-448`) preserves the real reasonless refusal; and `test_the_cleanup_preview_of_a_task_with_a_drift_snapshot_reports_no_blocker` (`:451-486`) drives the tool-level cleanup preview. These are static source-definition locations, not a fresh execution result. The earlier growth and lane coordinates remain the original leaf's historical measurement.
 
 
 

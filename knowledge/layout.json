@@ -303,6 +303,15 @@
     "file:mcp/src/agents_remember/application/knowledge_gate/predicates.py": [
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
     ],
+    "file:mcp/src/agents_remember/application/knowledge_reader/marks.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_reader/truth.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_reader/weakness_closure.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
     "file:mcp/src/agents_remember/application/knowledge_worklist/generated_copies.py": [
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
     ],
@@ -339,6 +348,9 @@
     ],
     "file:mcp/src/agents_remember/application/knowledge_writer/report.py": [
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_writer/weakness_authoring.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/application/knowledge_writer/writer.py": [
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
@@ -461,7 +473,8 @@
     ],
     "file:mcp/src/agents_remember/application/tool_response.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
-      "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json"
+      "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/application/user_settings_init.py": [
       "knowledge/dependents/DPD-1DXK6Q-docs-guides-cost-aware-bootstrap-md.json",
@@ -1258,7 +1271,8 @@
     ],
     "file:mcp/src/agents_remember/models/knowledge_files/records.py": [
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json",
-      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/models/knowledge_files/shapes.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
@@ -1625,6 +1639,10 @@
     "file:mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py": [
       "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
       "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py": [
       "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"

@@ -1,0 +1,388 @@
+{
+  "path": "mcp/tests/test_dependent_version_only_change.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+        "content": "sha256:db735ba825658bedbc8a8d54dbeda4d30624e328174745eac09a5df7ce124fa1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_changed_complete_dependency_version_still_moves"
+        }
+      },
+      "facet": "Both consumers reject changed epoch, tagged epoch, further-release, prerelease, postrelease, development, local and underscore-form complete tokens that merely contain the product-version text.",
+      "id": "PRF-085CRZ",
+      "invariant": "INV-VBGXFE",
+      "origin": {
+        "handoffEntry": "L3-W5-02",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+        "content": "sha256:8c939f4f1d28a0c83a10bea5c7c60c2ce61b59ac21cc57f68e5c9748a03aaa6d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_changed_dependency_version_still_moves"
+        }
+      },
+      "facet": "Both consumers mark distinguishable dependency-version changes stale, including a new dependency string equal to the new product version and longer release numbers.",
+      "id": "PRF-0WSDWK",
+      "invariant": "INV-VBGXFE",
+      "origin": {
+        "handoffEntry": "L3-W5-02",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+        "content": "sha256:53554b714d840bcbd6be9398d7f166038336e0163d6fbeeba47ba0ca1c8af826",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unreadable_old_product_version_does_not_excuse_a_changed_file"
+        }
+      },
+      "facet": "Both consumers mark changed links stale when the old confirmation revision is absent, has no project version, or has no exact tree provenance.",
+      "id": "PRF-6E28F4",
+      "invariant": "INV-VBGXFE",
+      "origin": {
+        "handoffEntry": "L3-W5-02",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+        "content": "sha256:7e6cd109024edde039e33f6b065b80d2c62b227595959cc60bfabce98de91ae5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_whitespace_only_change_still_moves"
+        }
+      },
+      "facet": "Both consumers mark a link stale when whitespace changes outside the permitted complete version tokens.",
+      "id": "PRF-6JHYG1",
+      "invariant": "INV-VBGXFE",
+      "origin": {
+        "handoffEntry": "L3-W5-02",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+        "content": "sha256:e6c47091054e9a65d4f0917c0c51e3488dc2285cba8c9a9f527ab0f2e451e77e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_leading_v_tag_keeps_the_products_version_identity"
+        }
+      },
+      "facet": "Both consumers keep the leading v while allowing the exact old-to-new product version substitution.",
+      "id": "PRF-BDV6QK",
+      "invariant": "INV-VBGXFE",
+      "origin": {
+        "handoffEntry": "L3-W5-02",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+        "content": "sha256:b66b168a0b5dc5dacc50d2ad370e20c112553ab569b22427bca3ae1e5ae52fa4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_equal_complete_dependency_version_is_textually_indistinguishable"
+        }
+      },
+      "facet": "Both consumers return current when the dependency and product have identical complete old/new token pairs; this proves the recorded textual-comparison weakness rather than semantic ownership detection.",
+      "id": "PRF-BFV58B",
+      "invariant": "INV-VBGXFE",
+      "origin": {
+        "handoffEntry": "L3-W5-02",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+        "content": "sha256:9a4cca06f2b8b7cc6601cc5814a39869145a900a6f5164efee05342bd16b9f40",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_any_other_changed_byte_still_moves_the_link"
+        }
+      },
+      "facet": "Both consumers mark a whole-file link stale when a non-version license field changes alongside the product version.",
+      "id": "PRF-FDW9AS",
+      "invariant": "INV-VBGXFE",
+      "origin": {
+        "handoffEntry": "L3-W5-02",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+        "content": "sha256:4162537384cdfc3dde9b93bc7048c9b2761c248f4139b878a63a35575d87a874",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_bump_of_the_products_own_version_does_not_move_a_file_link"
+        }
+      },
+      "facet": "Both mounted-reader and landing derivations keep pyproject, version module, lockfile and document links current when only the exact product version substitutions change.",
+      "id": "PRF-FNG0KB",
+      "invariant": "INV-VBGXFE",
+      "origin": {
+        "handoffEntry": "L3-W5-02",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+        "content": "sha256:6031fa3ddd2b59f2011612869ad7d13c9c1757bdf2a799415934469ca6d6012c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_old_version_mention_can_stay_beside_a_replaced_one"
+        }
+      },
+      "facet": "Both consumers keep a file current when one exact product version occurrence changes and another historical occurrence stays unchanged.",
+      "id": "PRF-M3KN0B",
+      "invariant": "INV-VBGXFE",
+      "origin": {
+        "handoffEntry": "L3-W5-02",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+        "content": "sha256:8b95402847b157d76283af8e2df2eaa71f31d921105e2a19bc92e63fa608417a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unchanged_dependency_version_does_not_hide_a_product_only_change"
+        }
+      },
+      "facet": "Both consumers permit an exact product-version change beside an unchanged distinct dependency version.",
+      "id": "PRF-R1ZGY8",
+      "invariant": "INV-VBGXFE",
+      "origin": {
+        "handoffEntry": "L3-W5-02",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+        "content": "sha256:65ae025c9e6268702e38cdba764b26f17e1afd9957c14157209b0e215c29e728",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_version_identity_comes_from_the_selected_tree_not_working_files"
+        }
+      },
+      "facet": "Both consumers use product metadata at the selected committed code tree, ignoring later uncommitted version-source changes.",
+      "id": "PRF-RZD1FE",
+      "invariant": "INV-VBGXFE",
+      "origin": {
+        "handoffEntry": "L3-W5-02",
+        "leaf": "261112-BUG-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source assertion: `_state`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+            "content": "sha256:fcc02926c9d6c6b393ce91c095367400b693bc1818aa9209d510aa398cf22a89",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Source assertion: `test_a_whitespace_only_change_still_moves`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+            "content": "sha256:7e6cd109024edde039e33f6b065b80d2c62b227595959cc60bfabce98de91ae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_whitespace_only_change_still_moves"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Source assertion: `test_version_identity_comes_from_the_selected_tree_not_working_files`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+            "content": "sha256:65ae025c9e6268702e38cdba764b26f17e1afd9957c14157209b0e215c29e728",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_version_identity_comes_from_the_selected_tree_not_working_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Source assertion: `test_an_unreadable_old_product_version_does_not_excuse_a_changed_file`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+            "content": "sha256:53554b714d840bcbd6be9398d7f166038336e0163d6fbeeba47ba0ca1c8af826",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_old_product_version_does_not_excuse_a_changed_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source assertion: `test_a_bump_of_the_products_own_version_does_not_move_a_file_link`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+            "content": "sha256:4162537384cdfc3dde9b93bc7048c9b2761c248f4139b878a63a35575d87a874",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bump_of_the_products_own_version_does_not_move_a_file_link"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Source assertion: `test_an_unchanged_dependency_version_does_not_hide_a_product_only_change`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+            "content": "sha256:8b95402847b157d76283af8e2df2eaa71f31d921105e2a19bc92e63fa608417a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_dependency_version_does_not_hide_a_product_only_change"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Source assertion: `test_an_old_version_mention_can_stay_beside_a_replaced_one`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+            "content": "sha256:6031fa3ddd2b59f2011612869ad7d13c9c1757bdf2a799415934469ca6d6012c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_old_version_mention_can_stay_beside_a_replaced_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Source assertion: `test_any_other_changed_byte_still_moves_the_link`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+            "content": "sha256:9a4cca06f2b8b7cc6601cc5814a39869145a900a6f5164efee05342bd16b9f40",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_any_other_changed_byte_still_moves_the_link"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Source assertion: `test_a_changed_dependency_version_still_moves`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+            "content": "sha256:8c939f4f1d28a0c83a10bea5c7c60c2ce61b59ac21cc57f68e5c9748a03aaa6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_changed_dependency_version_still_moves"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Source assertion: `test_a_changed_complete_dependency_version_still_moves`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+            "content": "sha256:db735ba825658bedbc8a8d54dbeda4d30624e328174745eac09a5df7ce124fa1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_changed_complete_dependency_version_still_moves"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Source assertion: `test_a_leading_v_tag_keeps_the_products_version_identity`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+            "content": "sha256:e6c47091054e9a65d4f0917c0c51e3488dc2285cba8c9a9f527ab0f2e451e77e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leading_v_tag_keeps_the_products_version_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Source assertion: `test_an_equal_complete_dependency_version_is_textually_indistinguishable`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a3598d6bee16f34de93ae4dab7511259ac26fb",
+            "content": "sha256:b66b168a0b5dc5dacc50d2ad370e20c112553ab569b22427bca3ae1e5ae52fa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_equal_complete_dependency_version_is_textually_indistinguishable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

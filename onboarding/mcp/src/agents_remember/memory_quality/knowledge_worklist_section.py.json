@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Rendering only: the section itself counts nothing, and since MIK-R09 the gate turns each open item into one `knowledge-gate` repair finding.\n\nAnchor: \"The section itself counts nothing\"",
+      "note": "Rendering only: the section itself counts nothing. The gate turns each open non-advisory item into one `knowledge-gate` repair finding; open advisory items remain report-only.\n\nAnchor: \"The section itself counts nothing\"",
       "targets": [
         {
           "anchor": {
@@ -148,14 +148,15 @@
       ]
     },
     "17": {
-      "note": "The controller renders the section; since MIK-R09 its four open items count (`curatorActionableCount` 4).\n\nAnchor: `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist`",
+      "note": "The controller renders the worklist section and reports four open worklist items plus the separate stale-entry finding, for curatorActionableCount 5.",
       "targets": [
         {
           "anchor": {
-            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
-            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
+            "blob": "b66bb2d88d03bb9634cb9fea69ce829ab37c545d",
+            "content": "sha256:d93a77a1bc779631b1377ac81f702a68045e4c6a73f11e48d43d2af6ff3ff1e4",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist"
             },
             "path": "mcp/tests/test_knowledge_worklist_leaf.py"
           },

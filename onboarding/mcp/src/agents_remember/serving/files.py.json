@@ -76,29 +76,16 @@
       ]
     },
     "2": {
-      "note": "The app factory that calls `register_files_routes(app, config)` immediately before `mount_static`.\n\nAnchor: `add_middleware`",
+      "note": "The app factory registers file routes before the SPA static mount; other route registrations intervene.",
       "targets": [
         {
           "anchor": {
             "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
-            "content": "sha256:f1db24f3991040c0972bce367f03946a9c1e572104143b564792425e4c6972e9",
+            "content": "sha256:e66bdc1f418e7acffe1941c49a170c75387ffbf695c6d7044ea077e404111888",
             "locator": {
-              "end": 177,
+              "end": 289,
               "kind": "line_range",
-              "start": 177
-            },
-            "path": "mcp/src/agents_remember/serving/app.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
-            "content": "sha256:27f6d2dab206e2569bfd327f5b82ed3e30f9cbb7ba0ae424701d962facad308f",
-            "locator": {
-              "end": 222,
-              "kind": "line_range",
-              "start": 222
+              "start": 223
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -111,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+            "blob": "f2b9a88e2acbe80981658b8bc77494c31d000769",
             "content": "sha256:e7439e42dfde2e3ca132f294c995f2162845dad8496330e19b214d075be85ceb",
             "locator": {
               "kind": "symbol",
@@ -123,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+            "blob": "f2b9a88e2acbe80981658b8bc77494c31d000769",
             "content": "sha256:f264a2faeee90e3ff349790d1c9fbd939f4200473dd8024ac8c86e5d76a08814",
             "locator": {
               "end": 48,
@@ -136,7 +123,7 @@
         },
         {
           "anchor": {
-            "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+            "blob": "f2b9a88e2acbe80981658b8bc77494c31d000769",
             "content": "sha256:161f64c3b63e563d95f509fa25e0a2008491c9dc00ea1751de29abd2719928db",
             "locator": {
               "end": 47,
@@ -244,7 +231,7 @@
       ]
     },
     "9": {
-      "note": "The files reader uses table_metadata for Markdown-table metadata and mirror_onboarding_path to derive the source-to-sidecar .md path.",
+      "note": "The files reader uses table_metadata for Markdown-table metadata and mirror_onboarding_path to derive the source-to-sidecar .md path. The table metadata parser and the sidecar mapper have separate defining modules.",
       "targets": [
         {
           "anchor": {

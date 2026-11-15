@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
-        "content": "sha256:9822d02e8099f8ef819816ebe06b903025c7b5f4e98a7753a2285c7a31ecc7c2",
+        "blob": "f2b9a88e2acbe80981658b8bc77494c31d000769",
+        "content": "sha256:19ab97e454daec9235e56e59fd3cd10498772b13b88df6e13c2342f84591d1ab",
         "locator": {
           "kind": "symbol",
           "name": "route_sidecar_status"
@@ -15,17 +15,17 @@
       "origin": {
         "leaf": "260921-ICR-L30"
       },
-      "rationale": "The same symbol still carries the obligation: the nearest-first governing-index decision with the mirror fallback. Its bytes moved because the observer reports every candidate index, absent ones included, and the fallback mirror before they are read.",
+      "rationale": "The nearest covering index still decides first; without governing coverage the fallback observes and probes both mirror card halves. Existing JSON-only authored entries therefore remain readable even with no derived index.",
       "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "The `read_ar_files` application entry point that these helpers were extracted from; it imports them under their former private names.",
+      "note": "The read_ar_files naming entry point imports confine_rel and route_sidecar_status under their private aliases.",
       "targets": [
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
             "content": "sha256:13aef717a76a0b04deda44628d0f376574a6688d50f5279af8119a75234a7eda",
             "locator": {
               "kind": "symbol",
@@ -37,23 +37,12 @@
         },
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
             "content": "sha256:ccfb04dd79543eabb345c2fa4041a7b53cad7e2a7155d43c251637dddbc2df86",
             "locator": {
               "end": 133,
               "kind": "line_range",
               "start": 77
-            },
-            "path": "mcp/src/agents_remember/application/read_files.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -92,14 +81,15 @@
       ]
     },
     "3": {
-      "note": "`sidecar_status` + `INDEX_FILE_NAME` / `ROUTE_OVERVIEW_NAME` / `ENTITY_CATALOG_NAME` consumed read-only.\n\nAnchor: `sidecar_status`",
+      "note": "`sidecar_status` + `INDEX_FILE_NAME` / `ROUTE_OVERVIEW_NAME` / `ENTITY_CATALOG_NAME` consumed read-only. Anchor: `sidecar_status`",
       "targets": [
         {
           "anchor": {
-            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
-            "content": "sha256:9fb670f1ea1eda7af09749b635c3f899fb6b2ae060b5fd701b80c2408a637d14",
+            "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
+            "content": "sha256:bb8647138184081f0e1c66fc85176064e7780295e754f1666cf951c21e27cf4d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "sidecar_status"
             },
             "path": "mcp/src/agents_remember/kernel/route_index.py"
           },
@@ -112,12 +102,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+            "blob": "f2b9a88e2acbe80981658b8bc77494c31d000769",
             "content": "sha256:26920a5b2ac4d00049b771c2b9814e3fca5b7225f8eca8392644fc612e52b7b8",
             "locator": {
-              "end": 170,
+              "end": 173,
               "kind": "line_range",
-              "start": 170
+              "start": 173
             }
           },
           "kind": "code"

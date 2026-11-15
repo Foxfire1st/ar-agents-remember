@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Current-folder selection and the retirement producer are distinct from resumed completion projection. Entry-route interruption tests require both owners to agree, preserve preview bytes and call the real abandon routine with force=False."
+  },
+  "applicability": "Enclosure directory retirement and its preview in whole-sprint archive execution or a same-request resume.",
+  "conditions": [
+    "The master is moving rather than retained by another live sprint.",
+    "Its contract is readable and the existing abandon directory checks admit removal for a successful retired outcome.",
+    "The contract is read from the archived folder after a move, otherwise from the live folder."
+  ],
+  "exclusions": [
+    "Staying masters are skipped.",
+    "A missing contract yields no-enclosure rather than invented cleanup.",
+    "Unreadable contracts or rejected removal yield named unreadable/refused outcomes.",
+    "This does not promise that every filesystem removal always succeeds or that a refused enclosure alone determines the top-level hook outcome."
+  ],
+  "id": "INV-W3PBKB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/role-reports/worker/b80532cb-3a13-4e3c-8a92-077f18b4e5af/role-launch/261112-BUG-L3-W7-worker.md#requirement-evidence; W7-evidence.tar.gz and preserved W6-evidence.tar.gz (exact final checks and predecessor fail-before evidence)"
+      ],
+      "path": "W8-final-writer-input.json"
+    },
+    "handoffEntry": "L3-W5-05",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Archiving a sprint retires each commanded master's enclosure through abandon safety checks, names the directories removed, and a resumed dry run reports the retirement actions still in that same execution plan.",
+  "status": "proposed",
+  "supersedes": []
+}

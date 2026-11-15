@@ -3,7 +3,41 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
+        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+        "content": "sha256:2505e3288918d52310e2ebce75ac7047d1174261ac751084ccd2281d03768d59",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryPointOverflowGuardTests.test_the_sweep_accepts_a_direct_grant_answer_that_overflows_on_purpose"
+        }
+      },
+      "facet": "The actual registered direct-grant route intentionally overflows on a long unsupported action: the ordinary refusal ends with cut naming the saved whole, which preserves the action and has no answer-only cut field; the independent sweep recognizes refusal.",
+      "id": "PRF-5VGWN8",
+      "invariant": "INV-SYBT3F",
+      "origin": {
+        "handoffEntry": "CUR-W8-INV-SYBT3F",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+        "content": "sha256:44b6a0774d20dc2d29d32f5f010166de2a8a6a0659aa63e3081b1e5b95ca5ed3",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerGuardTests.test_short_form_is_measured_six_hundred_multi_token_char_error"
+        }
+      },
+      "facet": "The 600-character multi-token error fixture keeps its code and an error prefix, marks errorCut and measures the ordinary-location short form. It distinguishes character length from token count.",
+      "id": "PRF-A0NPWN",
+      "invariant": "INV-0VAC47",
+      "origin": {
+        "handoffEntry": "CUR-W8-INV-0VAC47",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
         "content": "sha256:9d4cd35afa708b7815a0297a614fafd90c70fda8ed9b015dac0aa846c8b8251d",
         "locator": {
           "kind": "symbol",
@@ -20,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
+        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
         "content": "sha256:045dbe0d371b0bf690380e33826bf6495281226e8692ed7ad1db26dc642e2f8b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +71,24 @@
     },
     {
       "anchor": {
-        "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
+        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+        "content": "sha256:a01fe1da402cacc5a1eefdb2520fbe36a1a8b58493ee10b42e884e7f513fe958",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerGuardTests.test_short_form_is_measured_fifty_thousand_char_error"
+        }
+      },
+      "facet": "The 50,000-character error fixture requires a retained shortened error field, errorCut and a measured ordinary-location short form rather than dropping the error.",
+      "id": "PRF-HKJ8VH",
+      "invariant": "INV-0VAC47",
+      "origin": {
+        "handoffEntry": "CUR-W8-INV-0VAC47",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
         "content": "sha256:7fc3055cec865cd15a4eebbb09ddcf09c0e039a84397c803fa0f0a862b53e514",
         "locator": {
           "kind": "symbol",
@@ -54,19 +105,19 @@
     },
     {
       "anchor": {
-        "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
-        "content": "sha256:9494980a66ce801f786df64f5d8b3d368e2130fff6669eb13a864c1927808d5e",
+        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+        "content": "sha256:cc5a344f405c871aa9e41e12ee4f32a049a2f80d7ab9438a204354d82c752887",
         "locator": {
           "kind": "symbol",
           "name": "ToolAnswerGuardTests.test_over_budget_root_path_through_the_choke"
         }
       },
-      "facet": "An over-budget root path passes the choke with the fixed sentence.",
-      "id": "PRF-NF7PTQ",
+      "facet": "The deep-root choke case preserves the exact recorded location, ends with a matching cut hint, retains the original whole blob in the detail file and names that detail in the daily line.",
+      "id": "PRF-V24DQZ",
       "invariant": "INV-SYBT3F",
       "origin": {
-        "handoffEntry": "MIK-R108@v1 §4 location-omitted",
-        "leaf": "260928-MIK-L108"
+        "handoffEntry": "CUR-W8-INV-SYBT3F",
+        "leaf": "261112-BUG-L3"
       }
     }
   ],
@@ -77,10 +128,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
-            "content": "sha256:4cac8666124a5c4e8878e0afc3991db64b4dcee6246ffb6ff0549b50cdfb4c91",
+            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+            "content": "sha256:4e4bda5143575046b81e120e335ca8fe02a1f8c41ad57112000b15fac6133d23",
             "locator": {
-              "kind": "file"
+              "end": 77,
+              "kind": "line_range",
+              "start": 64
             }
           },
           "kind": "test"
@@ -88,14 +141,28 @@
       ]
     },
     "2": {
-      "note": "The short form holds at its measured boundaries, and a location over the fixed bound is omitted rather than substituted.",
+      "note": "The cases measure the short form and require an over-bound recorded location to remain exact, with the cut hint last.",
       "targets": [
         {
           "anchor": {
-            "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
-            "content": "sha256:4cac8666124a5c4e8878e0afc3991db64b4dcee6246ffb6ff0549b50cdfb4c91",
+            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+            "content": "sha256:110a297c05907e7193a8ee8b1728d1913e289f9906cec13401d4f6c7cd254a98",
             "locator": {
-              "kind": "file"
+              "end": 163,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+            "content": "sha256:cc5a344f405c871aa9e41e12ee4f32a049a2f80d7ab9438a204354d82c752887",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 331
             }
           },
           "kind": "test"
@@ -107,10 +174,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5504a8305b372c2b663447cf409c0684d33ec294",
-            "content": "sha256:4cac8666124a5c4e8878e0afc3991db64b4dcee6246ffb6ff0549b50cdfb4c91",
+            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+            "content": "sha256:dbe902e394a10fa889c8b4a21ee4078df166ebe964de5f29fd450796289e567c",
             "locator": {
-              "kind": "file"
+              "end": 406,
+              "kind": "line_range",
+              "start": 390
             }
           },
           "kind": "test"

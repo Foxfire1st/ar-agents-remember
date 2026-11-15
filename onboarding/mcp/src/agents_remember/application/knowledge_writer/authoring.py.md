@@ -14,7 +14,9 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 
 `_write_record` authors a weakness and a dependent beside the older kinds. Neither carries a `status`: the writer adds its default status only to the kinds that store one, so a weakness keeps its own `state` and a dependent stores neither.
 
-A weakness records the place its cause occurs. The curator authors `anchor: {path, locator}`; the writer resolves it at C and stores the resolved `blob` and `content`. A weakness that names no file is refused. An anchor C cannot resolve keeps the anchor the record already stored: a weakness is closed where it was recorded, the stored values are never rewritten to make a resolution succeed, and a new or moved anchor that does not resolve is refused.
+A weakness records the place its cause occurs. `_write_record` delegates its anchor and closure checks to `author_weakness` in `weakness_authoring.py`. The curator authors `anchor: {path, locator}`; the helper resolves it at C and stores the resolved `blob` and `content`. If resolution fails and the prior record has an anchor at the same path, that complete stored anchor is kept. Without that same-path stored anchor, the unresolved place is refused. This preservation does not rewrite `seen` to make the anchor resolve.
+
+For a closed record, the helper checks a supplied commit against the code repository and requires its full commit identity. A newly authored closure without a commit names the running leaf, or the task of a non-leaf owner. An unchanged closure already stored on a closed record may remain when a later task edits other metadata. The `Closure` model separately requires a reason when the commit is absent. [62]
 
 Every write of a dependent is a confirmation. The writer checks that `document` is a tracked file at C and that no other dependent record names it, and that `stands_on` holds at least one link. Each link's recorded value is read at the task's tip: an anchor's `blob` and `content` from C, a whole file's `blob` from C, and a record link's stored revision from the candidate. `confirmed` is completed with this task's `task`, `role` and one-sentence `statement`, plus the code state the values were read from: `commit`, `codeTree` and `uncommitted`. No attribution is taken from the record being updated, so a second task never refreshes a document under the previous task's name, and a confirmation without its judgment is refused.
 
@@ -26,7 +28,7 @@ A record request with `remove: true` removes the stored record file and its Mark
 
 ## Current evidence
 
-- A weakness records its anchored place at C, and a closure keeps the anchor it was recorded at.
+- Weakness anchor preservation and closure admission are delegated to `weakness_authoring.py`; a same-path stored anchor is retained only when the current locator cannot resolve. [62]
 - Every dependent write is a confirmation of the task's tip, refused without this task's attribution and judgment.
 
 
@@ -371,7 +373,7 @@ The following complete predecessor retains useful explanations, old observations
 
 - No sidecar until the facet is authored; a blank facet is refused and writes nothing. [2]
 
-- A moved marker row satisfies its item and survives a rewrite through the writer. [5]
+- A moved marker row answers while its recorded sources hold, preserves marker and source provenance through a writer rewrite, and reopens after a further source edit. [5]
 
 - The task owner's answer about a decision, injected into the writer. [6]
 - The resolver field; `None` has no task owner. [7]

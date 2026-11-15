@@ -261,4 +261,6 @@ The reviewed response-hint boundary is internal to this repository.
 
 </details>
 
+
+
 - `load_contract` / `WorktreeContract` (sub-state fields read by `_turn_end_after`).  Anchor: `load_contract` `WorktreeContract` [4]

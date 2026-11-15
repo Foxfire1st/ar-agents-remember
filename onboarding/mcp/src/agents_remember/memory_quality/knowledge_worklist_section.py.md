@@ -86,8 +86,8 @@ response, the managed-sync response and `knowledge_integrity_check` carry.
 ### Invariants And Boundaries
 
 - **The section counts nothing itself.** It never enters `curatorActionableCount`, the attestation or the wire
-  counts. Since MIK-R09 (L09) the mandatory gate turns every item without a current satisfying row into one
-  `knowledge-gate` repair finding, which the checklist does count; the gate is live at the cutover (MIK-R37).
+  counts. Since MIK-R09 (L09) the mandatory gate turns each non-advisory item without a current satisfying row into one
+  `knowledge-gate` repair finding, which the checklist does count. Open advisory items remain report-only; the gate is live at the cutover (MIK-R37).
 - **Unchanged bytes for unconverted leaves.** The checklist renders the section only when a worklist
   exists, so today's checklist is byte-identical. The MIK-R11 block and column appear only inside that
   section, so they change converted checklists only (review R1 F4: every converted checklist gains the
@@ -113,7 +113,7 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- Rendering only: the section itself counts nothing, and since MIK-R09 the gate turns each open item into one `knowledge-gate` repair finding. [1]
+- Rendering only: the section itself counts nothing. The gate turns each open non-advisory item into one `knowledge-gate` repair finding; open advisory items remain report-only. [1]
 - The section heading. [2]
 - The compact wire summary. [3]
 - Per-kind facts, dispatched by kind; since MIK-R09 the public one-line form the gate quotes. [4]
@@ -128,7 +128,11 @@ No configured live documentation source was available for this pass.
 - The checklist and the tool show the marks. [15]
 - The checklist renders it only when a worklist exists. [16]
 
-- The controller renders the section; since MIK-R09 its four open items count (`curatorActionableCount` 4). [17]
+
+
+- The controller renders the worklist section and reports four open worklist items plus the separate stale-entry finding, for curatorActionableCount 5. [17]
+
+
 
 
 ### Cross-Repo References

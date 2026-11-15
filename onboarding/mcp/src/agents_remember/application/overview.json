@@ -550,7 +550,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
+            "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
             "content": "sha256:60c738fbff7f8b76f037ac59d0174391ef8e585d380a03a671edb65809cf2021",
             "locator": {
               "kind": "symbol",
@@ -567,7 +567,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
@@ -619,10 +619,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
-            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
+            "blob": "d06589a7eab5d08e42cab27bd828a7d5226df3a8",
+            "content": "sha256:3b5c7df8fc3fd18cbaf2b25613c6cc348de6fbb8fa153e6ccf3e3307af61f0b9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReadArFilesResponse"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -631,14 +632,15 @@
       ]
     },
     "122": {
-      "note": "Historical FileReadStatus import/onboarding-status account; references and targets remain for custody. The current application naming route uses _name_one to check source existence before naming a converted card; it carries no FileReadStatus import or _resolve_onboarding body-serving route.",
+      "note": "The naming route checks source existence and names readable converted cards, including a JSON-only card.",
       "targets": [
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:770411dbdccb58c01683a0f96ea9172b357a13e489d2d7ddec5af5982235a463",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_name_one"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -2017,7 +2019,7 @@
       ]
     },
     "23": {
-      "note": "**The labelled Git inference measured on recorded repository identities: `external_git_movement` (`review_external_git_movement.py:299`) reaches `external_git_movement_for_contract` → `_measure_contract` → `_measure_generation` → `_findings` (`:383,338,359,539`) and measures the ancestry of recorded addresses, not similarity rename pairs; the rename command `--find-renames`, its three states and the sentence that it is not proof the invariant moved live in `review_rename_inference.py:43-45`.**",
+      "note": "**The labelled Git inference measured on recorded repository identities: `external_git_movement` (`review_external_git_movement.py:299-323`) reaches `external_git_movement_for_contract` → `_measure_contract` → `_measure_generation` → `_findings` (`:383-394,338-356,359-380,539-586`) and measures the ancestry of recorded addresses, not similarity rename pairs; the rename command `--find-renames`, its three states and the sentence that it is not proof the invariant moved live in `review_rename_inference.py:43-45`.**",
       "targets": [
         {
           "anchor": {
@@ -2308,34 +2310,37 @@
       "targets": [
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "blob": "d06589a7eab5d08e42cab27bd828a7d5226df3a8",
+            "content": "sha256:3b5c7df8fc3fd18cbaf2b25613c6cc348de6fbb8fa153e6ccf3e3307af61f0b9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReadArFilesResponse"
             },
-            "path": "mcp/src/agents_remember/application/read_files.py"
+            "path": "mcp/src/agents_remember/models/read_files.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
-            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:e215cc694d9fcd979fe06eb979c9aeb774a62f4949dd46bf441d2002b1c11388",
             "locator": {
-              "kind": "file"
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
             },
-            "path": "mcp/src/agents_remember/models/read_files.py"
+            "path": "mcp/src/agents_remember/application/read_files.py"
           },
           "kind": "code"
         }
       ]
     },
     "243": {
-      "note": "`test_unconverted_memory_names_no_card` shows that an unconverted memory root names no card for an existing file.",
+      "note": "A memory tree other than converted names no governing card.",
       "targets": [
         {
           "anchor": {
-            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
             "content": "sha256:64e84fa1fa5adf49afbb1ece284423dae11fc10b35f1c5539f1145df60f8e529",
             "locator": {
               "kind": "symbol",
@@ -2347,10 +2352,11 @@
         },
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:770411dbdccb58c01683a0f96ea9172b357a13e489d2d7ddec5af5982235a463",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_name_one"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -2984,7 +2990,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
             "content": "sha256:f4a2c39596c4fd9719c0cc0fc8295b81b9e1343ade289004b20c9f67d1d640a9",
             "locator": {
               "kind": "symbol",
@@ -3246,7 +3252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
             "content": "sha256:76ff7413200b246c8762c46a4263e8ca643682274e3fdd6f032432bad3c4e827",
             "locator": {
               "kind": "symbol",
@@ -4656,14 +4662,15 @@
       ]
     },
     "338": {
-      "note": "Historical pre-L109 read_ar_files body-rendering account. The current naming route returns no source/card/overview or published-intent body.",
+      "note": "The read_ar_files naming entry point returns knowledge locations and measured states, with no source, card, overview or published-intent body.",
       "targets": [
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:13aef717a76a0b04deda44628d0f376574a6688d50f5279af8119a75234a7eda",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "read_ar_files_tool"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -5279,7 +5286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
+            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
             "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
@@ -5296,8 +5303,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
-            "content": "sha256:1f8e30f43f1c0818821330f258498c1adbcf39d6d74ff4a2ce4cc093ce10bc74",
+            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "content": "sha256:1bdaf20eba2683f61a7c70c38e03cadf404c58ac35756da2b13dc2622c14afec",
             "locator": {
               "kind": "symbol",
               "name": "judge"
@@ -5308,7 +5315,7 @@
         },
         {
           "anchor": {
-            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
+            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
             "content": "sha256:15e4109da4c18ecb3ae57aca4269ee660bb93f8af9032624151dcba152be5af5",
             "locator": {
               "kind": "symbol",
@@ -5696,7 +5703,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
+            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
             "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
@@ -6377,7 +6384,7 @@
       ]
     },
     "417": {
-      "note": "**The labelled Git inference measured on recorded repository identities: `external_git_movement` (`review_external_git_movement.py:299`) reaches `external_git_movement_for_contract` → `_measure_contract` → `_measure_generation` → `_findings` (`:383,338,359,539`) and measures the ancestry of recorded addresses, not similarity rename pairs; the rename command `--find-renames`, its three states and the sentence that it is not proof the invariant moved live in `review_rename_inference.py:43-45`.**",
+      "note": "**The labelled Git inference measured on recorded repository identities: `external_git_movement` (`review_external_git_movement.py:299-323`) reaches `external_git_movement_for_contract` → `_measure_contract` → `_measure_generation` → `_findings` (`:383-394,338-356,359-380,539-586`) and measures the ancestry of recorded addresses, not similarity rename pairs; the rename command `--find-renames`, its three states and the sentence that it is not proof the invariant moved live in `review_rename_inference.py:43-45`.**",
       "targets": [
         {
           "anchor": {
@@ -6857,10 +6864,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
-            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
+            "blob": "d06589a7eab5d08e42cab27bd828a7d5226df3a8",
+            "content": "sha256:3b5c7df8fc3fd18cbaf2b25613c6cc348de6fbb8fa153e6ccf3e3307af61f0b9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReadArFilesResponse"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -6869,14 +6877,15 @@
       ]
     },
     "447": {
-      "note": "Historical FileReadStatus import/onboarding-status account; references and targets remain for custody. The current application naming route uses _name_one to check source existence before naming a converted card; it carries no FileReadStatus import or _resolve_onboarding body-serving route.",
+      "note": "The naming route checks source existence and names readable converted cards, including a JSON-only card.",
       "targets": [
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:770411dbdccb58c01683a0f96ea9172b357a13e489d2d7ddec5af5982235a463",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_name_one"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -6889,10 +6898,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
-            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
+            "blob": "d06589a7eab5d08e42cab27bd828a7d5226df3a8",
+            "content": "sha256:3b5c7df8fc3fd18cbaf2b25613c6cc348de6fbb8fa153e6ccf3e3307af61f0b9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReadArFilesResponse"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -6905,10 +6915,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:770411dbdccb58c01683a0f96ea9172b357a13e489d2d7ddec5af5982235a463",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_name_one"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -7140,21 +7151,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
-            "content": "sha256:0ca57880f59cc9f8021c933139b5d8db9d88b2d816febfdd48165479aeb8a7b7",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:770411dbdccb58c01683a0f96ea9172b357a13e489d2d7ddec5af5982235a463",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/read_files_format.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
-            "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_name_one"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -7162,12 +7163,24 @@
         },
         {
           "anchor": {
-            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
-            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
+            "blob": "d06589a7eab5d08e42cab27bd828a7d5226df3a8",
+            "content": "sha256:3b5c7df8fc3fd18cbaf2b25613c6cc348de6fbb8fa153e6ccf3e3307af61f0b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadArFilesResponse"
+            },
+            "path": "mcp/src/agents_remember/models/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
+            "content": "sha256:0ca57880f59cc9f8021c933139b5d8db9d88b2d816febfdd48165479aeb8a7b7",
             "locator": {
               "kind": "file"
             },
-            "path": "mcp/src/agents_remember/models/read_files.py"
+            "path": "mcp/src/agents_remember/application/read_files_format.py"
           },
           "kind": "code"
         }
@@ -7527,11 +7540,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:bf895a7868d9b4e1a21a419b242360e1159533d5437b36380fbea589b819b6d5",
             "locator": {
-              "kind": "symbol",
-              "name": "_select_shaped_answer"
+              "end": 393,
+              "kind": "line_range",
+              "start": 373
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -7539,12 +7553,12 @@
         },
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:8c982bfd69612cce66b87e4dab58b41df38e0248d3e0d6849c14d399fc740be5",
             "locator": {
-              "end": 440,
+              "end": 442,
               "kind": "line_range",
-              "start": 419
+              "start": 421
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -7640,7 +7654,7 @@
         },
         {
           "anchor": {
-            "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+            "blob": "c5586be802e8e401bd72b2e4e6a0f362426687d4",
             "content": "sha256:ab81eb9faaba4a540d1e47617aff721beb938a60c7f82e32b9712608f3bb2377",
             "locator": {
               "end": 154,
@@ -7725,12 +7739,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c15192f37b3dd7db83aa2990f4d84805b9034711",
+            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
             "content": "sha256:25f1e60e009285e2e8defde6a9f74ebfcdb27135c493d5c2e7d5fea3548018b5",
             "locator": {
-              "end": 246,
+              "end": 254,
               "kind": "line_range",
-              "start": 221
+              "start": 229
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
           },
@@ -7851,7 +7865,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:60e27a120bfb8dc9f33714fb08d00eefa653f16db19cf2acb29230f633cf6a6c",
             "locator": {
               "kind": "symbol",
@@ -8219,8 +8233,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59e8473a55f4b5ad85cbc9314f3f769f469ff7aa",
-            "content": "sha256:01ff0ea841e4ec51113de1d385d112030425a71ee22df3466a384a340ee06968",
+            "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+            "content": "sha256:d41c05d82a3804981d9934e356afa6fde2ce13dae7cad4e754e1cdec73da5925",
             "locator": {
               "kind": "symbol",
               "name": "open_weakness_counts_in"
@@ -8556,6 +8570,38 @@
               "name": "_serialized_budget"
             },
             "path": "mcp/src/agents_remember/application/tool_answer_log.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "522": {
+      "note": "Complete whole-file dependent version tokens are compared using exact confirmation and selected-tree project versions; unchanged other bytes and prefix identity are preserved, without claiming semantic package ownership for identical dependency tokens. [522]\n\nAnchor: `_differs_only_by_the_product_version` `_product_version`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+            "content": "sha256:4d761fd5d03d421a5f9f9b58fadee6a07539b692b6dd9cf8a05e6c5476d86dbb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "523": {
+      "note": "A complete leaf closeout adds entry-currentness findings for changed paths using the shared master-landing predicate with a direct recorded-base comparison. [523]\n\nAnchor: `_entry_currentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "content": "sha256:c9af0cd83705a0ac8a63f4ac93d98e84a8f3ea57164fbe4d25b67849994a25e1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },
           "kind": "code"
         }

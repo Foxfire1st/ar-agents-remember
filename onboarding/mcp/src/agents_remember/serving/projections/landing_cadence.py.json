@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
             "content": "sha256:958b6efb6306eece4ea769e18708855ee41ce772810860da123311a45221dff3",
             "locator": {
-              "end": 183,
+              "end": 200,
               "kind": "line_range",
-              "start": 136
+              "start": 153
             },
             "path": "mcp/tests/test_landing_page_cadence.py"
           },
@@ -78,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
             "content": "sha256:faba8aa137e1b1f6b7773edb75d5472904d8214e8f16cf334fcc57c094f73f01",
             "locator": {
-              "end": 112,
+              "end": 129,
               "kind": "line_range",
-              "start": 60
+              "start": 77
             },
             "path": "mcp/tests/test_landing_page_cadence.py"
           },

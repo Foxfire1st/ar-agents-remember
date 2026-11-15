@@ -46,7 +46,11 @@ These current source spans identify the implementation owners and the specific a
 
 - Final output authority is the contract's exact accepted pair. [1]
 
-- Source and ref proof remain at the prepared movement boundary. [2]
+
+
+- Source and ref proof remain at the prepared movement boundary. Anchor: `prepare_integration_ref_move` [2]
+
+
 
 
 ### Cross-Repo References

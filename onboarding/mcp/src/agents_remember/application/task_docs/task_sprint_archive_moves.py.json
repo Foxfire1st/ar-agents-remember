@@ -76,7 +76,7 @@
   ],
   "references": {
     "1": {
-      "note": "Ordered folder moves with full rollback before completion, then per-folder hook cleanup with retry of the remainder.",
+      "note": "Ordered folder moves attempt rollback of the recorded prefix; complete restoration removes the record, while incomplete restoration reports unresolved folders. Per-folder hook cleanup retries its remainder.",
       "targets": [
         {
           "anchor": {

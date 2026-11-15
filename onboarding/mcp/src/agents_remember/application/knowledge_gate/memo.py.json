@@ -70,7 +70,7 @@
         "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
         "leaf": "260928-MIK-L42"
       },
-      "rationale": "Serves a kept verdict only when it is young enough and its kept rows report no change.",
+      "rationale": "Serves a kept verdict while its kept rows report no change, replaying those observations before returning the result; there is no age expiry.",
       "role": "primary-authority"
     },
     {
@@ -125,7 +125,7 @@
       ]
     },
     "15": {
-      "note": "A kept verdict is served only when young enough and unchanged.\n\nAnchor: `remembered`",
+      "note": "A kept verdict is served while its recorded observations remain unchanged, at any age.\n\nAnchor: `remembered`",
       "targets": [
         {
           "anchor": {
@@ -140,14 +140,15 @@
       ]
     },
     "17": {
-      "note": "The gate asks the memo, records its reads and offers the verdict.\n\nAnchor: `evaluate_leaf_gate`",
+      "note": "The gate asks the memo, records its reads and offers the verdict. Anchor: `evaluate_leaf_gate`",
       "targets": [
         {
           "anchor": {
-            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
-            "content": "sha256:9c50fa8900ad1086748427f41ff4eefd597790146ac56b0ef3b324d4e2cc0f3a",
+            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "evaluate_leaf_gate"
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },

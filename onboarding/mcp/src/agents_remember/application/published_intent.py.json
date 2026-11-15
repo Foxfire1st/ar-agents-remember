@@ -783,12 +783,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
             "content": "sha256:412b751f82b7654971ab39e29e641dec6b81de71885df0eed246e04b1de9138f",
             "locator": {
-              "end": 863,
+              "end": 888,
               "kind": "line_range",
-              "start": 860
+              "start": 885
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -796,12 +796,12 @@
         },
         {
           "anchor": {
-            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
             "content": "sha256:bdcc9c81080c9a591e9cdee903f20e4d5c10fba09030b9d2efcb8ef5d71292f4",
             "locator": {
-              "end": 871,
+              "end": 896,
               "kind": "line_range",
-              "start": 865
+              "start": 890
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -809,12 +809,12 @@
         },
         {
           "anchor": {
-            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
             "content": "sha256:c75b4077e3185ac9b1f7b9b2f06240718bd4204e25e5b5a3611c9f5b4ec97032",
             "locator": {
-              "end": 876,
+              "end": 901,
               "kind": "line_range",
-              "start": 873
+              "start": 898
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -822,12 +822,12 @@
         },
         {
           "anchor": {
-            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
             "content": "sha256:ee617b986dc5561eef4d7c9ed4c2369e41e6800118a3b787afa156371a2d7438",
             "locator": {
-              "end": 886,
+              "end": 911,
               "kind": "line_range",
-              "start": 878
+              "start": 903
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
@@ -840,7 +840,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
             "content": "sha256:f3ab3f5f550064a33b571010a4b2b533e8d00dce981cbfbf811be0d30c03ac82",
             "locator": {
               "kind": "symbol",

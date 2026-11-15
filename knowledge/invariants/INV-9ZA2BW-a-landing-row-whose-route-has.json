@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The paired tests prevent absent from promising a nonexistent future PR or incorrectly erasing an intended PR."
+  },
+  "applicability": "PR participant rows with an observed empty lookup and a recorded nonempty strategy other than pr.",
+  "conditions": [
+    "The row is absent with factState observed and names that no PR belongs to the route.",
+    "An empty lookup on an unrecorded or pr strategy remains planned.",
+    "A failed or unavailable lookup is None and remains unknown/missing; populated PR data retains its observed state."
+  ],
+  "exclusions": [
+    "No inference that an unknown lookup proves the route has no PR."
+  ],
+  "id": "INV-9ZA2BW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/role-reports/worker/b80532cb-3a13-4e3c-8a92-077f18b4e5af/role-launch/261112-BUG-L3-W7-worker.md#requirement-evidence; W7-evidence.tar.gz and preserved W6-evidence.tar.gz (exact final checks and predecessor fail-before evidence)"
+      ],
+      "path": "W8-final-writer-input.json"
+    },
+    "handoffEntry": "L3-W5-09",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A landing row whose route has no pull request says so in its own word, absent, and never reports planned.",
+  "status": "proposed",
+  "supersedes": []
+}

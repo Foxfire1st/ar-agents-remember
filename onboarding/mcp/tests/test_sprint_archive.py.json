@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_sprint_archive.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a7314ab8cd11328b8d8cdfb8adac64ff2dc69e45",
+        "content": "sha256:a0b99326ca09662b74e9bd8fd1f3a06526d614e31a483b8cc4f1fef02fa985b3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_archive_names_every_blocked_master_in_one_refusal"
+        }
+      },
+      "facet": "Both blocked masters occur in one aggregate refusal and the task snapshot is unchanged for dry and real requests.",
+      "id": "PRF-KXFY3Q",
+      "invariant": "INV-4MGFDR",
+      "origin": {
+        "handoffEntry": "L3-W5-14",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a7314ab8cd11328b8d8cdfb8adac64ff2dc69e45",
+        "content": "sha256:fade65a4a652c6304e56c4301cafb0eebeeba96c6968e1b3f3c30d497cb1b1b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_dry_run_lists_a_missing_row_and_a_row_that_differs_and_repairs_neither"
+        }
+      },
+      "facet": "One commanded master without a row and one differing terminal row are exactly named with repaired=False, and the full task snapshot is unchanged.",
+      "id": "PRF-N847B6",
+      "invariant": "INV-KVSY4H",
+      "origin": {
+        "handoffEntry": "L3-W5-05-row-survey",
+        "leaf": "261112-BUG-L3"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cbff573b7e6c4ae99db325c687a18a4a49df550",
-            "content": "sha256:c939baa34685ac869d4c55707924ebba6a7b7399bfc4c2e930d2f7414c6dfcbe",
+            "blob": "a7314ab8cd11328b8d8cdfb8adac64ff2dc69e45",
+            "content": "sha256:c56e9704d9002ca7517e003e4a56d9f0051a2e43a1b75071f17e792c324000a2",
             "locator": {
               "kind": "file"
             }

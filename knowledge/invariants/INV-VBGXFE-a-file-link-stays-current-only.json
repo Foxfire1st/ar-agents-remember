@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Named reader and landing regression cases distinguish exact complete product-version substitutions from other changed bytes or distinguishable dependency tokens, preventing false document debt on a release bump without claiming semantic package ownership."
+  },
+  "applicability": "Whole-file links in dependent records when state is derived by a knowledge read or a landing.",
+  "conditions": [
+    "The whole-file blobs differ, and exact confirmation and selected-tree metadata provide the old and new product version identities.",
+    "Every token is unchanged or is the exact old-to-new complete product version substitution with its existing empty, v or V prefix; all intervening and trailing bytes stay identical."
+  ],
+  "exclusions": [
+    "Anchor-content and record-revision links retain their own movement predicates.",
+    "Missing or unreadable exact version provenance, unreadable blobs and non-UTF8 blobs excuse no changed whole-file blob.",
+    "This text comparison cannot establish semantic package ownership when a dependency has the same complete old/new token pair as the product; the accompanying open weakness records that limit."
+  ],
+  "id": "INV-VBGXFE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/role-reports/worker/b80532cb-3a13-4e3c-8a92-077f18b4e5af/role-launch/261112-BUG-L3-W7-worker.md#requirement-evidence; W7-evidence.tar.gz and preserved W6-evidence.tar.gz (exact final checks and predecessor fail-before evidence)",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/scratch/curator/8c2908a8-b0f0-4fe7-8204-4a9a4b74bcb2/requirement_intake/W8/postpublication-hunks/per-hunk-evidence.json; source inspection at final tree 6bf26d62a4f509ce650bd8909feb48136c80a121. A changed whole-file blob is moved unless the exact product-version predicate approves the complete comparison with confirmation provenance. Existing matcher and metadata-reader entries do not cover this decision site.",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/scratch/curator/8c2908a8-b0f0-4fe7-8204-4a9a4b74bcb2/requirement_intake/W8/postpublication-hunks/per-hunk-evidence.json; source inspection at final tree 6bf26d62a4f509ce650bd8909feb48136c80a121. Propagates this dependent's exact confirmed product identity into whole-file movement judgment. Omitting this call argument leaves the matcher without the required old identity, so this is behaviorally necessary wiring for the existing rule."
+      ],
+      "path": "W8-final-writer-input.json"
+    },
+    "handoffEntry": "L3-W5-02",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A file link stays current only when every changed complete version token is the product's exact old-to-new version substitution, with any leading v preserved, and all other bytes stay unchanged.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -84,14 +84,15 @@
       ]
     },
     "4": {
-      "note": "The call site in the entry point.\n\nAnchor: `_read_one`",
+      "note": "The naming entry point checks memory format and dataset selection; it carries no card body, sidecar body or resolved-reference document.",
       "targets": [
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:f0b5aaa14a19ede6854fbd25460c1942f35362646778ad73ea404eed04184294",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_memory_selection"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },

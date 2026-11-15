@@ -512,7 +512,7 @@
       ]
     },
     "17": {
-      "note": "Each gate finding is one repair finding, each open item counted once.  Anchor: `_with_gate`, `_onboarding_findings_beside`",
+      "note": "Each refusing gate finding is one repair finding; each open non-advisory item is counted once. Open advisory items are report-only.  Anchor: `_with_gate`, `_onboarding_findings_beside`",
       "targets": [
         {
           "anchor": {
@@ -1310,23 +1310,12 @@
       ]
     },
     "7": {
-      "note": "The controller-level run persists, reports and renders the worklist; since MIK-R09 it captures real candidate trees, and its four open items count (`curatorActionableCount` 4, `knowledgeGate.openItemCount` 4).\n\nAnchor: `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist`",
+      "note": "The controller-level run persists, reports and renders the worklist, capturing real candidate trees: four open worklist items plus one separate stale-entry finding give curatorActionableCount 5, knowledgeGate.openItemCount 4 and findingCount 5.",
       "targets": [
         {
           "anchor": {
-            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
-            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
-            "content": "sha256:718a8c1bd9e678cb384ffcd30f84f852e9ad3ed5c590e0b62cc8e649fea417d8",
+            "blob": "b66bb2d88d03bb9634cb9fea69ce829ab37c545d",
+            "content": "sha256:d93a77a1bc779631b1377ac81f702a68045e4c6a73f11e48d43d2af6ff3ff1e4",
             "locator": {
               "kind": "symbol",
               "name": "test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist"

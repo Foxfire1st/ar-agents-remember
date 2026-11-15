@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The test catches a landing target incorrectly attributed to the repository default branch."
+  },
+  "applicability": "Landing projections for a contract with distinct work and source branches.",
+  "conditions": [
+    "The work branch supplies the remote-work probe and PR-head lookup.",
+    "The target uses an observed PR base when present, otherwise the supplied contract source branch, otherwise main.",
+    "Unobserved rows retain named contract branch labels without claiming the remote was observed."
+  ],
+  "exclusions": [
+    "These row facts are observations and do not admit publication, cleanup or abandonment."
+  ],
+  "id": "INV-Z6T0QQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/role-reports/worker/b80532cb-3a13-4e3c-8a92-077f18b4e5af/role-launch/261112-BUG-L3-W7-worker.md#requirement-evidence; W7-evidence.tar.gz and preserved W6-evidence.tar.gz (exact final checks and predecessor fail-before evidence)",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/role-reports/worker/b80532cb-3a13-4e3c-8a92-077f18b4e5af/role-launch/261112-BUG-L3-worker-b80532cb-3a13-4e3c-8a92-077f18b4e5af.md#requirement-evidence; W6-evidence.tar.gz (final selected runs and inherited fail-before records)"
+      ],
+      "path": "W8-final-writer-input.json"
+    },
+    "handoffEntry": "L3-W5-08",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A landing row names the contract's work branch for the pull-request head and its source branch for the landing target, instead of a default branch probe.",
+  "status": "proposed",
+  "supersedes": []
+}

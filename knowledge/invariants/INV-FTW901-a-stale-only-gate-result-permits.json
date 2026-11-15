@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The real public dry/apply regression case catches an invalid master chain being mistaken for permitted stale-entry debt."
+  },
+  "applicability": "External converted master recording when the ordinary gate returns a complete stale-only result.",
+  "conditions": [
+    "The gate result may proceed to independent landed_chain_refusal; it cannot bypass that proof.",
+    "A chain refusal takes precedence over stale-only debt, in dry run and apply."
+  ],
+  "exclusions": [
+    "No mixed-finding waiver or converted-leaf exception is introduced."
+  ],
+  "id": "INV-FTW901",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/role-reports/worker/b80532cb-3a13-4e3c-8a92-077f18b4e5af/role-launch/261112-BUG-L3-W7-worker.md#requirement-evidence; W7-evidence.tar.gz and preserved W6-evidence.tar.gz (exact final checks and predecessor fail-before evidence)"
+      ],
+      "path": "W8-final-writer-input.json"
+    },
+    "handoffEntry": "L3-W6-chain",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A stale-only gate result permits recording landing debt only after the independent landed-chain check passes.",
+  "status": "proposed",
+  "supersedes": []
+}

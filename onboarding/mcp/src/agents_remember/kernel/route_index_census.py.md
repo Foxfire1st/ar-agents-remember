@@ -82,4 +82,6 @@ external implementation dependency.
 
 No meaningful cross-repo references found.
 
+
+
 - The renderer consumes exactly one snapshot and separates repository membership from eligibility. [1]

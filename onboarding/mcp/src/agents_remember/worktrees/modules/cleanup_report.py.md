@@ -11,11 +11,11 @@ reporter, not a runner: it removes nothing, proves nothing, refuses nothing, and
 
 Reclamation itself belongs to `lifecycle_finalize_task`. Its
 `_run_or_verify_cleanup` calls
-`cleanup_result` cit:([`cleanup_result`], mcp/src/agents_remember/worktrees/modules/cleanup.py:645-720),
+`cleanup_result` cit:([`cleanup_result`], mcp/src/agents_remember/worktrees/modules/cleanup.py:874-877),
 which archives the terminal evidence and refuses while authority is live or ambiguous, and then hands
 the successful payload here:
 `cleanup_report(contract, result.payload)`
-cit:([`cleanup_report`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53). The
+cit:([`cleanup_report`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:29-69). The
 split exists because the two halves have different lifetimes: the run-and-catch wiring that used to
 sit beside this shaping was unreachable once reclamation moved behind finalization, while the report
 is exactly what an operator still reads afterwards.
@@ -26,30 +26,30 @@ is exactly what an operator still reads afterwards.
 
 `cleanup_report(contract, payload)` returns the report dict, and it is the whole public surface.
 Every report carries `automatic: True`, `state`, `summary`, `removed` and `notRemoved`
-cit:([`cleanup_report`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53).
+cit:([`cleanup_report`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:29-69).
 
 The `state == ALREADY_CLEAN` short-circuit is the one special case: the terminal archive already proves the enclosure was reclaimed, so the contract's own targets are not reported as "still in place" — that would state the opposite of what that proof says — but what the retry itself removed is reported, because a completed retry that found the outside scratch root and removed it removed something real. Only when this retry removed nothing are both inventories empty and the summary says "already reclaimed". If it removed a remaining outside scratch root, `removed` retains that removal and the ordinary inventory summary reports it; already-reclaimed contract targets are not reported as still present
-cit:(["ALREADY_CLEAN = \"already-clean\""], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:23-23).
+cit:(["ALREADY_CLEAN = \"already-clean\""], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:24-24).
 
 Otherwise `_inventory` derives the report's two lists for all four required target kinds — worktrees, local branches, the `reports` directory and the enclosure root — plus an `outsideScratch` key when the contract records a root
-cit:([`_inventory`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:60-78):
+cit:([`_inventory`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:76-99):
 
 - Removed entries come from the cleanup payload: `removed_worktrees` with a truthy `removed`,
-  `branches` with a truthy `deleted`, and a truthy `directories` cell for the two paths
-  cit:([`_removed_worktrees`, `_removed_branches`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:81-86; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:102-107).
+  `branches` with a truthy `deleted`, and a `directories` entry whose `removed` flag is truthy for each of the two paths
+  cit:([`_removed_worktrees`, `_removed_branches`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:102-107; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:123-128).
 - Kept entries are derived from the **contract** itself, not the payload
-  cit:([`_contract_worktrees`, `_contract_branches`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:156-160; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:163-167):
+  cit:([`_contract_worktrees`, `_contract_branches`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:203-207; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:210-214):
   the code side always, the memory side only when `memory_mode == "external"`. A target cleanup never
   observed is therefore still reported, with `_reason` supplying `cleanup-did-not-run` when the payload
   says nothing about it, and otherwise the payload's own reason or `not-removed`
-  cit:([`_reason`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:150-153).
+  cit:([`_reason`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:197-200).
 
 `_summary` renders the one operator sentence: `"Automatic cleanup removed 2 worktrees, 2 local
 branches, 1 reports directory, 1 enclosure root; nothing was left in place."` where
 `_inventory_phrase`/`_counted` build each counted clause and drop the empty ones
-cit:([`_summary`, `_inventory_phrase`, `_counted`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:170-175; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:178-185; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:188-191).
+cit:([`_summary`, `_inventory_phrase`, `_counted`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:217-222; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:225-237; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:240-243).
 `_presented`/`_absent` translate a directory's boolean into the removed or not-removed list
-cit:([`_presented`, `_absent`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:132-135; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:138-141).
+cit:([`_presented`, `_absent`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:179-182; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:185-188).
 
 ### Conventions
 
@@ -121,6 +121,8 @@ No meaningful cross-repo references found.
 
 
 - **The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words. A completed cleanup cell still archives its recorded terminal agents. [5]
+
+
 
 
 - The destructive procedure and its refusal authority, which this module deliberately does not duplicate.  Anchor: `cleanup_result` [6]

@@ -17,7 +17,7 @@ The IndexMismatchError case still returns state view and a degraded currentness 
 ## Purpose
 
 **The MIK-R03 cases: stale invariants flagged at read time, over real Git code and a converted memory
-tree.** Fourteen top-level test definitions cover each entry state, the rule-2 precedence, `unrealized`, stale proofs, family currentness, the
+tree.** Fourteen source test definitions cover each entry state, the rule-2 precedence, `unrealized`, stale proofs, family currentness, the
 per-side computation, the observation cache key, Git failures, and the two read surfaces
 (`knowledge_read` and the published-intent block). The module is in the `unit-regression` lane.
 

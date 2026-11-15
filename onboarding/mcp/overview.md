@@ -90,7 +90,7 @@ The kernel owns canonical JSON, shared Git commands and capabilities, file obser
 
 Route census freezes one Git/path-rule source population with NUL-safe tracked/untracked enumeration, ignored/generated exclusion, and symlink classification without following targets. Callers pass repository/storage authority rather than rediscovering it inside generation. Full memory quality uses a per-check Git source reader, with bounded reads and named unavailable-source reasons; readable ignored and binary citations remain verifiable. The retired citation-index exclusion register, aggregate budget, v10 manifest and source-cell publication protocol are not current producers. Retained source-index cache code owns terminal fencing and cleanup of existing artifacts. Citation fixing admits a finite nonempty `documents` list, mutually exclusive with `document` and bounded by the curator source-candidate limit; singleton behavior and the leaf writer guard remain. Converted list repair isolates missing/refused cards and retains separate authoring and mechanical repair stages.
 
-Memory attribution is inside immutable commit messages through the shared `Code-Commit` renderer; ledger format and attribution are separate kernel responsibilities. The newest-first ledger is a Git-derived consumer view, allowing later memory states for repeated code revisions without deleting older attributed history. Root `memory.md` is a disposable memory-domain cache, not a second mapping authority or publication prerequisite. Memory content identity excludes that cache while retaining actual Git head/tree observations; this exclusion does not apply to code. Baseline/carryover produce attributed substantive content when needed and report cache refresh separately. Cache failure is availability, not permission to invent a pairing.
+Memory attribution is inside immutable commit messages through the shared `Code-Commit` renderer; ledger format and attribution are separate kernel responsibilities. The message-level reader accepts attribution only from a final trailer-shaped paragraph, so a body-only mention supplies no pairing; the ancestry reader separately consumes Git's trailer-value output. The newest-first ledger is a Git-derived consumer view, allowing later memory states for repeated code revisions without deleting older attributed history. Root `memory.md` is a disposable memory-domain cache, not a second mapping authority or publication prerequisite. Memory content identity excludes that cache while retaining actual Git head/tree observations; this exclusion does not apply to code. External closeout, direct landing and baseline adoption create attributed memory-content commits. Carryover writes selected memory into the recovery worktree without committing; ordinary recovery-leaf closeout publishes that judged tree. Cache failure is availability, not permission to invent a pairing.
 
 The reviewer resolves one admitted comparison for subject inventory, rendering, source expansion, leaf judgments/proofs, and currentness. Converted comparisons record exact code and memory endpoints and pin uncommitted candidate objects before exposure. Historical reopening uses retained endpoints, never today's tips; missing history is named unavailable. The comparison and subject-list routes are path-free; source expansion admits a repository-relative listed/context path plus both bound code tree ids, not an arbitrary filesystem root. Unwired ports refuse as not served rather than returning an empty list or file. Transport status/refusal mapping and actionable bodies share one owner.
 
@@ -657,7 +657,11 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - Explicit task preparation follows deterministic bounded archive successors and returns only a validated live workspace; folder opening stays separate. [323]
 - **Retained historical source account — superseded by the current route account:** The facts and where they come from. [1]
 - **Retained historical source account — superseded by the current route account:** Their vocabulary. [2]
-- **Retained historical source account — superseded by the current route account:** The gate over a leaf's exact candidate. [3]
+
+
+- **Retained historical source account — superseded by the current route account:** The gate over a leaf's exact candidate. Anchor: `evaluate_leaf_gate` `judge` [3]
+
+
 - **Retained historical source account — superseded by the current route account:** Each kind's own predicate, registered beside the kind. [4]
 - **Retained historical source account — superseded by the current route account:** The worktree layer's probes, the unbound refusal and the closeout's own write. [5]
 - **Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file. [6]
@@ -785,7 +789,11 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** Current contract-scoped file writing [199]
 
 - **Retained historical source account — superseded by the current route account:** **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** [208]
+
+
 - **Retained historical source account — superseded by the current route account:** **The response field the block travels on, carried by the strict response model rather than re-declared.** [318]
+
+
 
 - **Retained historical source account — superseded by the current route account:** **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.** [320]
 

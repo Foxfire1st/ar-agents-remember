@@ -69,14 +69,15 @@
       ]
     },
     "5": {
-      "note": "The tool returns the latest worklist and the checklist shows it.\n\nAnchor: `test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it`",
+      "note": "The tool returns the latest worklist and the checklist shows it. Anchor: `test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it`",
       "targets": [
         {
           "anchor": {
-            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
-            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
+            "blob": "b66bb2d88d03bb9634cb9fea69ce829ab37c545d",
+            "content": "sha256:631732cc4652b28279cb4a9d3dfcfefeae8c845e53b51d7d509f2544625fbe01",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it"
             },
             "path": "mcp/tests/test_knowledge_worklist_leaf.py"
           },

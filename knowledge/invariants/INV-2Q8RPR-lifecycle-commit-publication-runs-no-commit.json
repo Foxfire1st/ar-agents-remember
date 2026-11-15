@@ -10,7 +10,7 @@
     "The repository pre-commit hook is resolved for the worktree and judged tree; absence is recorded as hook=none, not a skipped configured check.",
     "Failed, unrunnable, timed-out or tracked/index-mutating hooks refuse publication before ref movement.",
     "Successful admission records a tree-bound Commit-Check-Pass fact.",
-    "Integration trusts the parsed tree-matching landing trailer as its fact; this is not independent authentication of historical hook execution. With no matching fact, it runs the check before master refs move."
+    "Integration trusts the parsed tree-matching landing trailer as its fact; this is not independent authentication of historical hook execution. With no matching fact, it runs the check before that master ref advances; a side already at its candidate does not rerun this admission."
   ],
   "exclusions": [
     "Commit-tree does not itself invoke commit-msg, prepare-commit-msg or post-commit; the explicit repository pre-commit check precedes it.",
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L26",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-invariant/v1",
-  "statement": "Product landing publication requires the repository pre-commit check on the exact judged tree before a new commit is published or its ref moves. Ordinary/direct commit-tree routes run the explicit check without bypass. Integration requires a matching tree-bound Commit-Check-Pass fact or reruns the repository check on that candidate tree.",
+  "statement": "Product landing publication requires the repository pre-commit check on the exact judged tree before a new commit is published or its ref moves. Ordinary/direct commit-tree routes run the explicit check without bypass. For each code or external-memory master ref that advances, integration requires a matching tree-bound Commit-Check-Pass fact or reruns the repository check on that candidate tree; a side already at its candidate does not rerun this admission.",
   "status": "proposed",
   "supersedes": []
 }

@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
         "content": "sha256:2b698977c12861afe9fde1638c9651dd93f2930f03ffcd5fd37df385e01025ac",
         "locator": {
-          "end": 568,
+          "end": 571,
           "kind": "line_range",
-          "start": 568
+          "start": 571
         }
       },
       "id": "RLZ-9QPBZK",
@@ -23,8 +23,8 @@
     },
     {
       "anchor": {
-        "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-        "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+        "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
         "locator": {
           "kind": "file"
         }
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-        "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+        "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
         "locator": {
           "kind": "file"
         }
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-        "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+        "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
         "locator": {
           "kind": "file"
         }
@@ -74,12 +74,12 @@
     },
     {
       "anchor": {
-        "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
         "content": "sha256:9635c28f80fdb4ace2233d46e786ccf2715cbac64804bea54fe7ced895d346e9",
         "locator": {
-          "end": 688,
+          "end": 693,
           "kind": "line_range",
-          "start": 688
+          "start": 693
         }
       },
       "id": "RLZ-NJFH31",
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-        "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+        "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
         "locator": {
           "kind": "file"
         }
@@ -110,12 +110,12 @@
     },
     {
       "anchor": {
-        "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
+        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
         "content": "sha256:626fdf1de7dc33cb5b0dfa1a32f99b507f21ca9b19a8f13f077dcfd0bcc76ed1",
         "locator": {
-          "end": 522,
+          "end": 525,
           "kind": "line_range",
-          "start": 522
+          "start": 525
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -134,8 +134,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -149,8 +149,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -164,8 +164,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -195,8 +195,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -210,8 +210,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -225,8 +225,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -240,8 +240,20 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:51289f4d3ee68ba833587d047252fd71f072dd42eb4e0ce59a0ac2564cf08515",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -271,8 +283,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -286,8 +298,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -301,8 +313,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -316,8 +328,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -331,8 +343,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -346,8 +358,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -361,8 +373,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -376,8 +388,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -391,8 +403,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -406,8 +418,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -421,8 +433,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -436,8 +448,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -451,8 +463,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -466,8 +478,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -477,12 +489,12 @@
       ]
     },
     "864": {
-      "note": "The current lane catalog declares seven lanes and 777 distinct module paths: 641 unit-regression, 3 public-contract, 111 integration and 22 architecture-fitness; provider-conformance, stress-durability and migration are empty. These current registrations establish no invocation or passing result.\n\nAnchor: file",
+      "note": "The current lane catalog declares seven lanes and 785 distinct module paths: 645 unit-regression, 3 public-contract, 115 integration and 22 architecture-fitness; provider-conformance, stress-durability and migration are empty. These current registrations establish no invocation or passing result.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -496,8 +508,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -507,12 +519,12 @@
       ]
     },
     "867": {
-      "note": "The current catalog declares 777 distinct modules: 641 unit-regression, 3 public-contract, 111 integration and 22 architecture-fitness; the other three lanes are empty. These declarations establish no invocation or passing result.\n\nAnchor: file",
+      "note": "The current catalog declares 785 distinct modules: 645 unit-regression, 3 public-contract, 115 integration and 22 architecture-fitness; the other three lanes are empty. These declarations establish no invocation or passing result.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -526,8 +538,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -537,12 +549,12 @@
       ]
     },
     "869": {
-      "note": "The parsed source selects 777 distinct modules across the seven existing lane identities: 641 unit-regression, 3 public-contract, 111 integration and 22 architecture-fitness; provider-conformance, stress-durability and migration are empty. It retains the after-discovery, explainer and publication/landing-workflow modules together with the nine retired-provider regressions, and omits the retired provider-current-state module. The declarations select evidence; they establish no invocation or passing result.\n\nAnchor: file",
+      "note": "The parsed source selects 785 distinct modules across the seven existing lane identities: 645 unit-regression, 3 public-contract, 115 integration and 22 architecture-fitness; provider-conformance, stress-durability and migration are empty. It retains the after-discovery, explainer and publication/landing-workflow modules together with the nine retired-provider regressions, and omits the retired provider-current-state module. The declarations select evidence; they establish no invocation or passing result.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -552,12 +564,12 @@
       ]
     },
     "870": {
-      "note": "The current catalog declares 777 distinct modules: 641 unit-regression, 3 public-contract, 111 integration and 22 architecture-fitness; the other three lanes are empty. These declarations establish no invocation or passing result.\n\nAnchor: file",
+      "note": "The current catalog declares 785 distinct modules: 645 unit-regression, 3 public-contract, 115 integration and 22 architecture-fitness; the other three lanes are empty. These declarations establish no invocation or passing result.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }
@@ -571,8 +583,20 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7de647a2cabdd900aedd042dfa289176deda949",
-            "content": "sha256:4ae16bd9a0517c111b60a8d9d711e9699334760bcdd3b676d4659cb4dffcc89f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:83668ca23fa28d94dec16eb63f642180041fb88fbaeffbcd04c50680865ccb4c",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
               "kind": "file"
             }

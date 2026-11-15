@@ -263,7 +263,11 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py; mcp/src
 - The JSON/markdown store this application entry point drives. [12]
 - The payload builder that wraps this application entry point. [13]
 
+
+
 - WorktreeContract supplies task-root, contract and lifecycle coordinates used by resolution; this is not a caller-supplied execution grant. [14]
+
+
 
 
 

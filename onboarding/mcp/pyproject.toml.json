@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+        "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
         "content": "sha256:abebe6fa8e28401a2c1fc045c15849801f75107416a9bb542dd54cb47cb3b6d6",
         "locator": {
           "end": 7,
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+        "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
         "content": "sha256:80c99862448ab92d6ee65fde88d7667d360c1d35eedfa1e7fe46ebea3024294a",
         "locator": {
-          "end": 16,
+          "end": 17,
           "kind": "line_range",
-          "start": 10
+          "start": 11
         }
       },
       "id": "RLZ-VNYJ8D",
@@ -291,12 +291,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
             "content": "sha256:67390565a8665a2378ea8acf015a4c3ac444ae57f5394d6f15e32a44bf786726",
             "locator": {
-              "end": 19,
+              "end": 20,
               "kind": "line_range",
-              "start": 10
+              "start": 11
             }
           },
           "kind": "code"
@@ -304,17 +304,45 @@
       ]
     },
     "18": {
-      "note": "The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy, because `canvas/presenter_inputs.py` resolves the capability text module-relatively in an installed build; the capsule-text test fails on drift between the two copies.",
+      "note": "The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy; `test_canvas_capsule_text.py` checks the generated capability copy against its source and checks the packaging declarations.",
       "targets": [
         {
           "anchor": {
-            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
-            "content": "sha256:3564c7e0b235172a3931133926a661cdbb9e62a9abfc72ee5adf0460d9560c30",
+            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+            "content": "sha256:56d5658353a8b7c8d238f402dd65aa85f57d171c9bbc54740712e71650b8f7ab",
             "locator": {
-              "kind": "file"
+              "end": 108,
+              "kind": "line_range",
+              "start": 99
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
+            "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/tests/test_canvas_capsule_text.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
+            "content": "sha256:96633be3e4921f5dc51fa3c971bcc98be26a154294ee73278e4a63de8676a3db",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/tests/test_canvas_capsule_text.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -367,24 +395,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
             "content": "sha256:e6b563e4acbcd80bd201904b19939ce2f5ff3a1958b8d7af3c1296e2e7249a98",
             "locator": {
-              "end": 23,
+              "end": 24,
               "kind": "line_range",
-              "start": 22
+              "start": 23
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
             "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
             "locator": {
-              "end": 30,
+              "end": 31,
               "kind": "line_range",
-              "start": 29
+              "start": 30
             }
           },
           "kind": "code"
@@ -396,12 +424,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
             "content": "sha256:896fdd7b511626d78b5cabb93db1be4c16a9e801b46276eef3d039c681d2cdbb",
             "locator": {
-              "end": 26,
+              "end": 27,
               "kind": "line_range",
-              "start": 21
+              "start": 22
             }
           },
           "kind": "code"

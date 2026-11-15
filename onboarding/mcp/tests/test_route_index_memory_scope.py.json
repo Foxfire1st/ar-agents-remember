@@ -7,10 +7,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f0264cac874327e1175439d5f5a9e5b0defe19",
-            "content": "sha256:0fdfb3ca7bac22e354b62279b501e1a5c4131ea63348542b2fc8f874116d1aa9",
+            "blob": "03d7c534913959176f734ab918b5ba62e728f951",
+            "content": "sha256:44dfd00be523c2a41d3ca6703a205b8039fd2c13955d87373d3e1839ca417f1e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_leaf_profile_uses_configured_official_root_and_official_scope_still_refuses"
             }
           },
           "kind": "test"
@@ -22,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f0264cac874327e1175439d5f5a9e5b0defe19",
+            "blob": "03d7c534913959176f734ab918b5ba62e728f951",
             "content": "sha256:b9277f9bdd50e9a1ef2d4879223714b9bc1d8ca8e7eab393eab98d1deae56be3",
             "locator": {
-              "end": 126,
+              "end": 127,
               "kind": "line_range",
-              "start": 56
+              "start": 57
             }
           },
           "kind": "test"
@@ -39,12 +40,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f0264cac874327e1175439d5f5a9e5b0defe19",
+            "blob": "03d7c534913959176f734ab918b5ba62e728f951",
             "content": "sha256:29b367103b33e6a0ef49f6fc3f20ebc3a5374cf5a7fd63095e46bf72b29f7517",
             "locator": {
-              "end": 152,
+              "end": 153,
               "kind": "line_range",
-              "start": 129
+              "start": 130
             }
           },
           "kind": "test"
@@ -52,16 +53,15 @@
       ]
     },
     "4": {
-      "note": "Missing-only cache preparation preserves existing stale bytes and reports render failures. [4]",
+      "note": "Missing-only cache preparation preserves existing stale bytes, and a rendering failure names the failed cache path.",
       "targets": [
         {
           "anchor": {
-            "blob": "b2f0264cac874327e1175439d5f5a9e5b0defe19",
-            "content": "sha256:a04e38a3db33091da9350a3e313206357d52cff80cb8b7279c38c05b15eb9c91",
+            "blob": "03d7c534913959176f734ab918b5ba62e728f951",
+            "content": "sha256:cf0a07b4bd2dd70981acc1ab45eea27690166000acf1aa00df6d8d7a570ac7af",
             "locator": {
-              "end": 298,
-              "kind": "line_range",
-              "start": 251
+              "kind": "symbol",
+              "name": "test_quality_reports_a_missing_cache_that_cannot_be_rendered"
             }
           },
           "kind": "test"

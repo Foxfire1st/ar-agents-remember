@@ -54,8 +54,8 @@ The changed writer calls explicitly supply the current `leaf_worklist(load_contr
   - `knowledge_integrity_check(contractPath)` returns the latest worklist, and the checklist section shows it;
   - the memory-quality recompute persists and names its own failure; the controller-level run
     (`_execute_memory_quality`, review R1 F1) persists the file, returns `knowledgeWorklist` and renders the
-    section; since MIK-R09 (leaf 260928-MIK-L09) its four open items count, `curatorActionableCount` 4 and
-    `knowledgeGate.openItemCount` 4 (it was 0 while the worklist was information only);
+    section; its four open worklist items remain `knowledgeGate.openItemCount` 4, while the separate
+    stale-entry finding makes `knowledgeGate.findingCount` and `curatorActionableCount` 5;
   - a completed sync recomputes through the bound port; the recompute never raises and a failure never fails
     a completed sync (F2); the `continue` replay recomputes too;
   - converted bases cached by commit, version and code commit, and a cache location inside a working tree
@@ -81,7 +81,11 @@ The changed writer calls explicitly supply the current `leaf_worklist(load_contr
 ## Evidence
 
 
+
+
 - The controller source exercises a fresh shared clone, real index building, informational proof counts and distinct report modes; cache store tolerates listing/stat disappearance. [41]
+
+
 
 
 
@@ -111,24 +115,40 @@ No configured live documentation source was available for this pass.
 - The cache case patches the conversion where it now lives. [26]
 
 
-- The leaf fixture: real repositories plus the task root and enclosure. [27]
+
+
+- The leaf fixture: real repositories plus the task root and enclosure. Anchor: `converted_memory` [27]
+
+
 
 
 - The leaf's contract and task document. [28]
 - Pairing by trailer and persistence. [29]
 - The task document's maintenance scope. [30]
 
-- The writer's carry. [31]
+
+
+- The writer's carry. Anchor: `test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them` [31]
+
+
 
 - The tool and the checklist section. [32]
 - Other owners' rows and closed files are untouched. [33]
 
-- A writer-authored proof raises its invariant. [34]
+
+
+- A writer-authored proof raises its invariant. Anchor: `test_a_proof_authored_through_the_writer_raises_its_invariant_when_its_test_changes` [34]
+
+
 
 - The bound sync port. [35]
 
 
-- The controller-level run; since MIK-R09 its four open items count (4). [36]
+
+
+- The controller-level run reports four open worklist items and one separate stale-entry finding: curatorActionableCount 5, openItemCount 4 and findingCount 5. [36]
+
+
 
 
 - Never raises; never fails a completed sync. [37]

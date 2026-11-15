@@ -1349,14 +1349,15 @@
       ]
     },
     "293": {
-      "note": "Current read_ar_files_tool is a names/locations-only route; the earlier published-intent mount-point account is superseded by L109.",
+      "note": "The read_ar_files naming entry point returns knowledge locations and measured states, with no source, card, overview or published-intent body.",
       "targets": [
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:13aef717a76a0b04deda44628d0f376574a6688d50f5279af8119a75234a7eda",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "read_ar_files_tool"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -1369,7 +1370,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
             "content": "sha256:f3ab3f5f550064a33b571010a4b2b533e8d00dce981cbfbf811be0d30c03ac82",
             "locator": {
               "kind": "symbol",
@@ -1778,7 +1779,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
+            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
             "content": "sha256:b98f34753d256efb09111e7053b5f37280f7e2a8c1c75fcfa48463b43eb35366",
             "locator": {
               "end": 27,
@@ -1827,7 +1828,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+            "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
             "content": "sha256:692b566b5b49f47d0ad0b5c587e8e5564ba025cfbdbfea45ab94f833470cb0dc",
             "locator": {
               "end": 35,
@@ -1840,7 +1841,7 @@
         },
         {
           "anchor": {
-            "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+            "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
             "content": "sha256:db5cb5363443b7dfe26c318c4cb3a6baa680b65a232bc84fe762cf52d9711fd8",
             "locator": {
               "end": 490,
@@ -3312,7 +3313,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "blob": "2d46e4349e78760575ad3176a73a7606cd7d95f6",
             "content": "sha256:ef564c710b907427001e9603a40253491e4142e02a3a221ae967282adf1b550c",
             "locator": {
               "kind": "symbol",
@@ -3343,14 +3344,15 @@
       ]
     },
     "61": {
-      "note": "Historical paired content carrier, superseded by MIK-R109: current read_ar_files names cards/states/overviews and returns no published_intent block.",
+      "note": "The read_ar_files naming entry point returns knowledge locations and measured states, with no source, card, overview or published-intent body.",
       "targets": [
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:13aef717a76a0b04deda44628d0f376574a6688d50f5279af8119a75234a7eda",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "read_ar_files_tool"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -3433,7 +3435,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
             "content": "sha256:3504100873b1cf1bdee93cacf9e2a2bd3627f8fa7fdfb656115c919f8f06decd",
             "locator": {
               "kind": "symbol",

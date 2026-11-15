@@ -162,12 +162,12 @@
       ]
     },
     "4": {
-      "note": "Receipt restoration invokes the detail validator.\n\nAnchor: `_restore_launch_handover`",
+      "note": "Receipt restoration invokes the detail validator. Anchor: `_restore_launch_handover`",
       "targets": [
         {
           "anchor": {
-            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
-            "content": "sha256:c829806d1d238b76f9b34c98b359333571d0f634e4b063272d32fdaff384ca5c",
+            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
+            "content": "sha256:5eaba6f2df4c4cc50e912ade63892bd6789a8319586e6ae78da30e0fe4ccb364",
             "locator": {
               "kind": "file"
             },

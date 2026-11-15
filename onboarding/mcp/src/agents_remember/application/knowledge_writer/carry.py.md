@@ -78,10 +78,18 @@ No configured live documentation source was available for this pass.
 - The call in every writer operation. [7]
 
 
-- Blobs and covering rows are carried. [8]
 
 
-- Another owner's row and a closed file are untouched. [9]
+- Blobs and covering rows are carried. Anchor: `test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them` [8]
+
+
+
+
+
+
+- Another owner's row and a closed file are untouched. Anchor: `test_carrying_never_edits_another_owners_row_or_a_closed_history_file` [9]
+
+
 
 
 ### Cross-Repo References

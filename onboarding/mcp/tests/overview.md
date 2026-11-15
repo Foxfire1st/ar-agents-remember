@@ -147,6 +147,8 @@ Reviewer tests divide supplied-tree/observed-task-read capture and failure-sensi
 > **Retained historical source account — superseded by the current route account:**
 > Delivery tests distinguish actual code/memory objects, refs, source ancestry and ownership from derived cache bytes. Transaction-only closeout/integration and recovery retain attributed memory-content commits through `Code-Commit:`; missing, malformed, forged or changed ledger cache does not itself create commits or authorize/block delivery. Producer census intent is total attribution through one renderer, preserving hostile caller body bytes and a final separate trailer block; recovery's owed memory-content commit belongs to the same external-closeout producer rather than a new recovery producer. Historical five-producer figures remain census claims, not fresh acceptance. Backfill owns deliberate disposable history rewriting, loss reporting, trailer-only acceptance, byte-faithful objects, idempotence and multi-ref publication.
 
+Current attribution cases in `test_memory_attribution_producers.py` compare body-only and genuine final-block messages with Git for their declared shapes. `test_weakness_closure.py` exercises the registered weakness writer and both weakness/record reads across pending, attributed and unavailable closure states, explicit commits and historical closure episodes. Its direct history fixtures remain distinct from the registered authoring checks. `test_weakness_closure_closeout.py` uses the application closeout route and public read payload to assert that the judged tree becomes the committed memory tree and that attribution is returned without rewriting the reviewed weakness record. These are source-described assertions, not a fresh execution or a settlement of a live weakness.
+
 > **Retained historical source account — superseded by the current route account:**
 > Protected landing still checks current source heads, fast-forward ancestry, exact admitted outputs and clean owned checkouts. The production `integration_ref_transaction.py` exists although its former test module does not; deletion of that test does not prove absence of every protected-ref transaction/recovery path. Sync/source-lineage accounts separate settleable auto-carry, read-only preview refusal, escalation of unprovable breaks, parked dirty-candidate restoration on completion/resume/cancel and preserved unmerged-index refusal. Checkpoint landing is an explicitly requested unfinished-master publication, with plan/apply parity and stale/conflicting-ref refusal; checkpointed work stays continuing, is not upgraded into reclaimable final integration, and closeout accepts its own recorded source head while refusing foreign movement.
 
@@ -297,7 +299,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 - The Node fixture lockfile artifact currently declares `mcp/tests/test_family_route_conditions.py` and `mcp/tests/test_file_size_detector.py` as exact consumers; the retired final-catalog-plan test is absent. These are lifecycle consumer entries, not lane rows or execution evidence.
 
-Current declaration checked at `mcp/tests/evidence-lifecycle.toml:2393-2407` and `mcp/tests/evidence-lifecycle.toml:2623-2625`; the retired test is absent from the parsed Node fixture consumer list.
+Current declaration checked at `mcp/tests/evidence-lifecycle.toml:2418` and `mcp/tests/evidence-lifecycle.toml:2650-2652`; the retired test is absent from the parsed Node fixture consumer list.
 
 - The lane manifest declares `mcp/tests/test_planned_knowledge_effects.py` in `unit-regression`; selection is not execution or acceptance.
 
@@ -337,7 +339,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 - The lane manifest declares `mcp/tests/test_fresh_user_harness.py` in `unit-regression`; the retired citation-index-resilience test is absent. Membership is selection only.
 
-Current declaration checked at `mcp/tests/test-evidence-lanes.toml:4-5` and `mcp/tests/test-evidence-lanes.toml:184`; the retired test is absent from the parsed lane.
+Current declaration checked at `mcp/tests/test-evidence-lanes.toml:4-5` and `mcp/tests/test-evidence-lanes.toml:186`; the retired test is absent from the parsed lane.
 
 - The lifecycle catalog declares `scripts/e2e_harness/fresh_user_fixture.py`, `scripts/e2e_harness/fresh_user_scenario.py` and `scripts/e2e_harness/run_fresh_user.py` as permanent `shared-support` artifacts with exact-source consumer lists and their respective `node:` replacement contracts; registration alone is not acceptance.
 
@@ -396,7 +398,7 @@ The review-evidence and frame contracts are measured by `test_review_evidence_pa
 
 ## Current discovery-startup test selection
 
-The current named regression is `test_dashboard_autostart_after_discovery.py`, replacing the removed first-call-only module. Its two fresh autoStart=true processes assert the joint outside-scratch sweep and dashboard-supervision start: neither begins during preparation, server creation or the produced-list-answer snapshot before the event-loop callback; the later callback or the no-list first-call fallback starts each once through the same process latch. Dashboard and host launchers and the reconciliation seam are recorders. Both shared evidence catalogs retain incoming registrations together with this leaf's explainer tests; the complete parsed source declarations contain 17 lifecycle contracts, 116 artifacts and 777 lane memberships. These are source assertions and selection metadata, not a new server, test or live-host run.
+The current named regression is `test_dashboard_autostart_after_discovery.py`, replacing the removed first-call-only module. Its two fresh autoStart=true processes assert the joint outside-scratch sweep and dashboard-supervision start: neither begins during preparation, server creation or the produced-list-answer snapshot before the event-loop callback; the later callback or the no-list first-call fallback starts each once through the same process latch. Dashboard and host launchers and the reconciliation seam are recorders. Both shared evidence catalogs retain incoming registrations together with this leaf's explainer tests; the parsed source declarations contain 17 lifecycle contracts, 116 artifacts and 785 lane memberships. These are source assertions and selection metadata, not a new server, test or live-host run.
 
 ## Retained historical wording
 
@@ -1556,16 +1558,16 @@ Current source: The current lifecycle catalog declares test_knowledge_leaf_read.
 
 - **Retained historical source account — superseded by the current route account:** The three new lane rows beside their siblings. [Past-epoch citation wording, detached from live reference 1498. Historical recorded source: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit unavailable/not identified by this carrier. This preserves citation custody; it establishes no inferred historical event.]
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 777 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 
 - **Retained historical source account — superseded by the current route account:** **The lane row the insertion created, and the two rows it displaced.** [Past-epoch citation wording, detached from live reference 1529. Historical recorded source: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit unavailable/not identified by this carrier. This preserves citation custody; it establishes no inferred historical event.]
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 777 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 - **Retained historical source account — superseded by the current route account:** **The two consumer rows this module joined, and the counts they do not move.** [Past-epoch citation wording, detached from live reference 1530. Historical recorded source: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit unavailable/not identified by this carrier. This preserves citation custody; it establishes no inferred historical event.]
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 777 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 
 
@@ -1623,7 +1625,7 @@ Current source: The lifecycle catalog declares four permanent scripts/e2e_harnes
 
 - **Retained historical source account — superseded by the current route account:** The two `consumers` registrations the module obliged. [Past-epoch citation wording, detached from live reference 1647. Historical recorded source: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit unavailable/not identified by this carrier. This preserves citation custody; it establishes no inferred historical event.]
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 777 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 
 
@@ -1686,7 +1688,7 @@ Current source: The current lifecycle catalog declares test_landing_report.py as
 
 - The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations retain 17 lifecycle contracts, 93 artifacts and 701 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here. [Past-epoch caption detached from live reference 1808. Recorded citation-source custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); mcp/tests/test-evidence-lanes.toml blob ac006b11f74a4c64ab964edc3378b4c96f153872 (available); mcp/tests/test_dashboard_autostart_after_discovery.py blob fa392c631e8973beb464de5d5f1c437342cee5db (available); historical event commit not identified by this carrier. Source custody establishes no inferred historical event, intent or delivery.]
 
-Current source: The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations contain 17 lifecycle contracts, 116 artifacts and 777 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here.
+Current source: The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations contain 17 lifecycle contracts, 116 artifacts and 785 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here.
 
 
 
@@ -1955,7 +1957,11 @@ Current source: The replacement after-discovery test source asserts one joint sw
 - **Retained historical source account — superseded by the current route account:** Shared outline/change facts keep one definition [1712]
 - **Retained historical source account — superseded by the current route account:** Shared outline/change facts keep one definition [1713]
 - **Retained historical source account — superseded by the current route account:** The default options select the unit population and four workers. [1]
-- **Retained historical source account — superseded by the current route account:** The packet's examples: ready once current rows answer every item; a new edit reopens two. [1415]
+
+
+- **Retained historical source account — superseded by the current route account:** The packet's examples: ready once current rows answer every item; a new edit reopens two. Anchor: `test_a_leaf_is_ready_only_once_current_rows_answer_every_item_and_a_new_edit_reopens_two` [1415]
+
+
 - **Retained historical source account — superseded by the current route account:** One refusal test per public route entry, starting with the worktree closeout. [1416]
 - **Retained historical source account — superseded by the current route account:** The sync-merge cases. [1417]
 - **Retained historical source account — superseded by the current route account:** The proof admission at the route. [1430]
@@ -1989,7 +1995,11 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 - The environment fixtures check interpreter wording and candidate accounting with a real standard-library venv. Node coverage here is a populated node_modules directory with fixture.js, rather than a Node installation or runtime qualification. [1726]
 
+
+
 - **Retained historical source account — superseded by the current route account:** The retained production ref transaction checks protected heads, ancestry and exact landing output. [1728]
+
+
 - **Retained historical source account — superseded by the current route account:** The bounded timing scanner reads its named support roots and excludes waits.py. [1730]
 - **Retained historical source account — superseded by the current route account:** The catalog's closure over the governed inventory, and that every declared contract is referenced, are checked explicitly here. [1731]
 - **Retained historical source account — superseded by the current route account:** Source controls cover cut measure, threshold, deletion proof and overviews. [1716]
@@ -2017,7 +2027,11 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 
 - The current reconsideration module imports extracted configuration support and its current fixture owners. [1769]
+
+
 - The changed-row refusal supplies the real gate worklist. [1770]
+
+
 - The relabelled changed-row control preserves its revision-refusal assertion with the admitted worklist. [1771]
 
 - The skill-sync subprocess in AnswerAndTextTests uses sys.executable. [1772]
@@ -2076,37 +2090,37 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 
 
-- The lane row. Source caption: `mcp/tests/test_review_change_kinds.py` [1414]
+- **Retained historical source account — superseded by the current route account:** The lane row. Source caption: `mcp/tests/test_review_change_kinds.py`. Current declaration: The lane row. Source caption: `mcp/tests/test_review_change_kinds.py` [1414]
 
 
 
 
-- The lane manifest declares test_knowledge_closeout_gate.py in unit-regression. Membership establishes no execution. [1418]
+- **Retained historical source account — superseded by the current route account:** The original two-lane-row caption names test_knowledge_closeout_gate.py. That module is currently declared in unit-regression; the historical count does not establish a second named current declaration or execution. [1418]
 
 
 
 
-- The current lane manifest declares mcp/tests/test_review_unexplained_lane.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1422]
+- Retained historical caption: The lane row. The current lane manifest declares mcp/tests/test_review_unexplained_lane.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1422]
 
 
 
 
-- The current lane manifest declares mcp/tests/test_reconsideration_surfacing.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1424]
+- Retained historical caption: The lane row. The current lane manifest declares mcp/tests/test_reconsideration_surfacing.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1424]
 
 
 
 
-- The lane row. Source caption: `mcp/tests/test_knowledge_reader.py` [1428]
+- **Retained historical source account — superseded by the current route account:** The lane row. Source caption: `mcp/tests/test_knowledge_reader.py`. Current declaration: The lane row. Source caption: `mcp/tests/test_knowledge_reader.py` [1428]
 
 
 
 
-- The current lane manifest declares mcp/tests/test_review_git_trees.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1439]
+- Retained historical caption: The two MIK-R25 lane rows. The current lane manifest declares mcp/tests/test_review_git_trees.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1439]
 
 
 
 
-- The decision-record lane row. Source caption: `mcp/tests/test_knowledge_decisions.py` [1442]
+- **Retained historical source account — superseded by the current route account:** The decision-record lane row. Source caption: `mcp/tests/test_knowledge_decisions.py`. Current declaration: The decision-record lane row. Source caption: `mcp/tests/test_knowledge_decisions.py` [1442]
 
 
 
@@ -2121,27 +2135,27 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 
 
-- The current lane manifest declares test_planned_knowledge_effects.py in unit-regression; membership does not establish execution. [1451]
+- Retained historical caption: the planned-effects lane row. The current lane manifest declares test_planned_knowledge_effects.py in unit-regression; membership does not establish execution. [1451]
 
 
 
 
-- The lane manifest declares mcp/tests/test_knowledge_paging.py in unit-regression. Membership declares selection, not invocation. [1453]
+- **Retained historical source account — superseded by the current route account:** The paging lane row.. Current declaration: The lane manifest declares mcp/tests/test_knowledge_paging.py in unit-regression. Membership declares selection, not invocation. [1453]
 
 
 
 
-- The onboarding trace gate's lane row (`mcp/tests/test_onboarding_trace_gate.py`). [1455]
+- **Retained historical source account — superseded by the current route account:** The onboarding trace gate's lane row (`mcp/tests/test_onboarding_trace_gate.py`).. Current declaration: The onboarding trace gate's lane row (`mcp/tests/test_onboarding_trace_gate.py`). [1455]
 
 
 
 
-- The current lane manifest declares mcp/tests/test_knowledge_currentness.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1457]
+- Retained historical caption: The lane row. The current lane manifest declares mcp/tests/test_knowledge_currentness.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1457]
 
 
 
 
-- The lane manifest declares test_knowledge_worklist.py in unit-regression. Membership establishes no execution. [1459]
+- **Retained historical source account — superseded by the current route account:** The original two-lane-row caption names test_knowledge_worklist.py, currently declared in unit-regression. The historical count establishes no additional unnamed current module or execution. [1459]
 
 
 
@@ -2151,37 +2165,37 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 
 
-- The current lane manifest declares mcp/tests/test_knowledge_conversion.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1463]
+- Retained historical caption: The three lane rows. The current lane manifest declares mcp/tests/test_knowledge_conversion.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1463]
 
 
 
 
-- The lane manifest registers mcp/tests/test_knowledge_writer.py once in unit-regression. Membership does not establish execution. [1464]
+- The lane manifest registers mcp/tests/test_knowledge_writer.py once in unit-regression. The former two-row caption is a historical account, not a claim of two current registrations. Membership does not establish execution. [1464]
 
 
 
 
-- The current lane manifest declares mcp/tests/test_knowledge_census_files.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1467]
+- Retained historical caption: The two lane rows. The current lane manifest declares mcp/tests/test_knowledge_census_files.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1467]
 
 
 
 
-- The lane manifest declares test_knowledge_index.py in unit-regression. Membership establishes no execution. [1473]
+- Historical three-lane-row caption: the original note names test_knowledge_index.py, currently declared in unit-regression. The historical count establishes no two additional unnamed current declarations or execution. [1473]
 
 
 
 
-- The lane manifest declares test_knowledge_validator.py in unit-regression. Membership establishes no execution. [1476]
+- **Retained historical source account — superseded by the current route account:** The original two-lane-row caption names test_knowledge_validator.py, currently declared in unit-regression. The historical count establishes no additional unnamed current module or execution. [1476]
 
 
 
 
-- The current lane manifest declares mcp/tests/test_knowledge_history_files.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1479]
+- Retained historical caption: The lane row. The current lane manifest declares mcp/tests/test_knowledge_history_files.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1479]
 
 
 
 
-- The current lane manifest declares mcp/tests/test_knowledge_file_canonical.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1481]
+- Retained historical caption: The two lane rows. The current lane manifest declares mcp/tests/test_knowledge_file_canonical.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1481]
 
 
 
@@ -2191,42 +2205,42 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 
 
-- Its lane registration. Source caption: `mcp/tests/test_task_document_body_lookup.py` [1491]
+- **Retained historical source account — superseded by the current route account:** Its lane registration. Source caption: `mcp/tests/test_task_document_body_lookup.py`. Current declaration: Its lane registration. Source caption: `mcp/tests/test_task_document_body_lookup.py` [1491]
 
 
 
 
-- The current lane manifest declares mcp/tests/test_read_anchor_memo.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1497]
+- Retained historical caption: Its lane registration. The current lane manifest declares mcp/tests/test_read_anchor_memo.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1497]
 
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 777 distinct test modules across its lane identities. [1498]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its lane identities. [1498]
 
 
 
 
-- The unit-regression registry includes the revision-selection test module (`mcp/tests/test_knowledge_review_revision_selection.py`). [1507]
+- **Retained historical source account — superseded by the current route account:** The unit-regression registry includes the revision-selection test module (`mcp/tests/test_knowledge_review_revision_selection.py`).. Current declaration: The unit-regression registry includes the revision-selection test module (`mcp/tests/test_knowledge_review_revision_selection.py`). [1507]
 
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 777 distinct test modules across its lane identities. [1529]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its lane identities. [1529]
 
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 777 distinct test modules across its lane identities. [1530]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its lane identities. [1530]
 
 
 
 
-- The current lane manifest declares mcp/tests/test_knowledge_review_one_sided_statements.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1541]
+- Retained historical caption: **The lane row, inserted mid-list, and the row it displaced.** The current lane manifest declares mcp/tests/test_knowledge_review_one_sided_statements.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1541]
 
 
 
 
-- The lane row selects mcp/tests/test_capsule_serving.py into unit-regression. Membership is selection, not execution. [1561]
+- The lane row selects mcp/tests/test_capsule_serving.py into unit-regression. The former integration classification was incorrect; membership is selection, not execution. [1561]
 
 
 
@@ -2240,37 +2254,47 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 
 
-- The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. [1584]
+- **Retained historical source account — superseded by the current route account:** The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane.. Current declaration: The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. [1584]
 
 
 
 
-- The lane manifest currently registers mcp/tests/test_memory_attribution_producers.py in unit-regression. The current membership declaration selects evidence and does not establish execution. [1590]
+- The lane manifest currently registers mcp/tests/test_memory_attribution_producers.py in unit-regression. Historical L4 account: this census module's lane row closed the gap the L4 route section recorded. The historical closure account is retained; the current membership declaration selects evidence and does not establish execution. [1590]
 
 
 
 
-- The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1615]
+- **Retained historical source account — superseded by the current route account:** The read fixture and its registered contract.. Current declaration: The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1615]
 
 
 
 
-- The lane manifest declares mcp/tests/test_knowledge_read_scope.py in unit-regression. Selection is not execution or acceptance. [1616]
+- **Retained historical source account — superseded by the current route account:** The unit-lane row the read's selection module occupies.. Current declaration: The lane manifest declares mcp/tests/test_knowledge_read_scope.py in unit-regression. Selection is not execution or acceptance. [1616]
 
 
 
 
-- The lane manifest declares mcp/tests/test_knowledge_read_boundaries.py and mcp/tests/test_knowledge_read_paths.py in integration. Membership is selection, not execution. [1617]
+- **Retained historical source account — superseded by the current route account:** The two integration-lane rows the read's boundary and path modules occupy.. Current declaration: The lane manifest declares mcp/tests/test_knowledge_read_boundaries.py and mcp/tests/test_knowledge_read_paths.py in integration. Membership is selection, not execution. [1617]
 
 
 
 
-- The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1618]
+- **Retained historical source account — superseded by the current route account:** The read fixture and its registered contract.. Current declaration: The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1618]
 
 
 
 
-- The lane manifest declares mcp/tests/test_knowledge_read_scope.py in unit-regression. Selection is not execution or acceptance. [1619]
+- **Retained historical source account — superseded by the current route account:** The unit-lane row the read's selection module occupies.. Current declaration: The lane manifest declares mcp/tests/test_knowledge_read_scope.py in unit-regression. Selection is not execution or acceptance. [1619]
+
+
+
+
+- **Retained historical source account — superseded by the current route account:** **The fixture and the governed contract it is registered under.** [1625]
+
+
+
+
+- **Retained historical source account — superseded by the current route account:** **The fixture and the governed contract it is registered under.** [1626]
 
 
 
@@ -2280,17 +2304,22 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 
 
-- The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1639]
+- **Retained historical source account — superseded by the current route account:** The read fixture and its registered contract.. Current declaration: The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1639]
 
 
 
 
-- The lane manifest declares mcp/tests/test_knowledge_read_boundaries.py and mcp/tests/test_knowledge_read_paths.py in integration. Membership is selection, not execution. [1640]
+- **Retained historical source account — superseded by the current route account:** The two integration-lane rows the read's boundary and path modules occupy.. Current declaration: The lane manifest declares mcp/tests/test_knowledge_read_boundaries.py and mcp/tests/test_knowledge_read_paths.py in integration. Membership is selection, not execution. [1640]
 
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 777 distinct test modules across its lane identities. [1647]
+- **Retained historical source account — superseded by the current route account:** **The fixture and the governed contract it is registered under.** [1641]
+
+
+
+
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its lane identities. [1647]
 
 
 
@@ -2303,7 +2332,7 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 
 
-- The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. [1689]
+- **Retained historical source account — superseded by the current route account:** The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane.. Current declaration: The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. [1689]
 
 
 
@@ -2313,7 +2342,7 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 
 
-- The landing-report module (`mcp/tests/test_landing_report.py`) is selected in unit-regression; registration is not execution. [1722]
+- **Retained historical source account — superseded by the current route account:** The landing-report module (`mcp/tests/test_landing_report.py`) is selected in unit-regression; registration is not execution.. Current declaration: The landing-report module (`mcp/tests/test_landing_report.py`) is selected in unit-regression; registration is not execution. [1722]
 
 
 
@@ -2329,7 +2358,7 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 
 
-- The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 17 lifecycle contracts and 116 artifacts. The parsed lane catalog contains 777 selected lane members. [1808]
+- The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 17 lifecycle contracts and 116 artifacts. The parsed lane catalog contains 785 selected lane members. [1808]
 
 
 

@@ -9,11 +9,13 @@
   },
   "applicability": "Every over-bound answer for every tool and row, interim rows included.",
   "conditions": [
-    "The guard measures the final delivered mapping including every log and logError change.",
-    "A cut answer re-guards against the 400-token short-form ceiling, not the original tool bound."
+    "The final delivered mapping is measured, including late logging changes.",
+    "Once cut, the re-guard uses the short-form target rather than reverting to the original larger bound.",
+    "The exact recorded-result location and final cut hint are not removed to meet the target."
   ],
   "exclusions": [
-    "Under-bound answers, which leave whole and are never shortened."
+    "Under-bound answers do not enter this overflow transformation; their separate default projection/list shaping remains unchanged.",
+    "Retaining the recorded path and its final hint can leave the short form above 400 after other droppable content has been removed."
   ],
   "id": "INV-QN78E9",
   "origin": {
@@ -27,9 +29,9 @@
     "leaf": "260928-MIK-L108",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "An answer over its bound leaves as the measured short form within 400 tokens; the guard measures the final delivered mapping including every log and logError change, and a cut answer re-guards against the 400-token short-form ceiling rather than the original tool bound.",
+  "statement": "An answer over its bound leaves as a measured short form targeting 400 tokens; the guard measures the final delivered mapping including every log and logError change and re-guards a cut answer against the short-form target rather than its original larger bound. The exact recorded-result location and final cut hint remain even when the recorded path and its hint cannot fit that target after other droppable content is removed.",
   "status": "proposed",
   "supersedes": []
 }

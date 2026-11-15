@@ -130,7 +130,7 @@ rejected, never silently re-rooted).
 ### Repo-Internal References
 
 - The shared scope layer in `serving/scope.py` owns `FileScope`, `resolve_scope`, `run_scoped`, `language_for` and `_resolve_within`. [1]
-- The app factory calls register_files_routes before the later API registrations and mount_static. [2]
+- The app factory registers file routes before the SPA static mount; other route registrations intervene. [2]
 - The shared, side-effect-free sidecar pairing + path-confinement helpers this module reuses. [3]
 - The scope resolver + `CoordinationContext`/`MissingMemoryError` bridged here. [4]
 - The repo allow-list authority guard (`require_repo` → `RepositoryScope`). [5]
@@ -138,8 +138,7 @@ rejected, never silently re-rooted).
 
 - The leaf-enclosure contract enumerator the catalog walks. [7]
 
-- The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.
-
+> Retained earlier citation wording: - The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.
 
 
 | The JSON routes declare `RepoCatalog`, `DirectoryListing`, `FileContents`, `FileResolution` and `OnboardingResolution`; the bytes route returns media responses under the shared scoped-read declarations. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:362-412 |

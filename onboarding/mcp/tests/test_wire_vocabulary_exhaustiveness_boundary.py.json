@@ -10,12 +10,12 @@
           "name": "test_every_vocabulary_cell_degrades_rather_than_stranding_the_task"
         }
       },
-      "facet": "Every vocabulary cell degrades to a named refusal rather than stranding the task.",
-      "id": "PRF-C9H392",
+      "facet": "For each enumerated off-vocabulary case, status stays active, exposes the expected substitute and reports one unknownContractCells note naming the raw and substituted values.",
+      "id": "PRF-8BQ8V7",
       "invariant": "INV-V3N6NW",
       "origin": {
-        "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
-        "leaf": "260928-MIK-L50"
+        "handoffEntry": "CUR-V3N6NW-status-proof",
+        "leaf": "261112-BUG-L3"
       }
     }
   ],

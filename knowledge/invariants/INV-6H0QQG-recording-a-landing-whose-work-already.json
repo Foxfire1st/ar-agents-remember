@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The helper tests catch accidental mixed/truncated waivers, while the nearest-boundary transport proof catches loss of already admitted named debt at payload, log, public projection or persistence."
+  },
+  "applicability": "External non-leaf recorded landings whose supplied code is already reachable on a local admitted landing target.",
+  "conditions": [
+    "Every gate finding is shown and is knowledge-stale-at-landing; an empty or truncated set is not admitted as debt.",
+    "The independent landed-chain proof, reachability and every other admission predicate pass before stale-only debt is accepted.",
+    "The public projection retains staleEntries; apply persists nonempty record keys through the shared writer."
+  ],
+  "exclusions": [
+    "Converted-leaf pair judgment, mixed findings, missing targets, unreachable commits and invalid master history remain refusals."
+  ],
+  "id": "INV-6H0QQG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/role-reports/worker/b80532cb-3a13-4e3c-8a92-077f18b4e5af/role-launch/261112-BUG-L3-W7-worker.md#requirement-evidence; W7-evidence.tar.gz and preserved W6-evidence.tar.gz (exact final checks and predecessor fail-before evidence)",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/role-reports/worker/b80532cb-3a13-4e3c-8a92-077f18b4e5af/role-launch/261112-BUG-L3-worker-b80532cb-3a13-4e3c-8a92-077f18b4e5af.md#requirement-evidence; W6-evidence.tar.gz (final selected runs and inherited fail-before records); W7 approved proof limit: l3-curator-go-final.md and 261112-BUG-L3-W7-verdict.md; positive debt proof is real gate-produced finding transport across the real precondition boundary after supported synchronization, not positive public stale-debt admission."
+      ],
+      "path": "W8-final-writer-input.json"
+    },
+    "handoffEntry": "L3-W5-03",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Recording a landing whose work already stands on its source line does not refuse for stale entries: it names them in its answer and keeps them in the master's record as debt.",
+  "status": "proposed",
+  "supersedes": []
+}

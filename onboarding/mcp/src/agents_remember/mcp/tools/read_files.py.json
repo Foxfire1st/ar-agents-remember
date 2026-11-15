@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
             "content": "sha256:13aef717a76a0b04deda44628d0f376574a6688d50f5279af8119a75234a7eda",
             "locator": {
               "kind": "symbol",
@@ -57,12 +57,11 @@
         },
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:ccfb04dd79543eabb345c2fa4041a7b53cad7e2a7155d43c251637dddbc2df86",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:770411dbdccb58c01683a0f96ea9172b357a13e489d2d7ddec5af5982235a463",
             "locator": {
-              "end": 133,
-              "kind": "line_range",
-              "start": 77
+              "kind": "symbol",
+              "name": "_name_one"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -70,10 +69,12 @@
         },
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:ccfb04dd79543eabb345c2fa4041a7b53cad7e2a7155d43c251637dddbc2df86",
             "locator": {
-              "kind": "file"
+              "end": 133,
+              "kind": "line_range",
+              "start": 77
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -98,14 +99,15 @@
       ]
     },
     "3": {
-      "note": "The strict response model `read_ar_files` validates against.\n\nAnchor: `ReadArFilesResponse`",
+      "note": "The strict ReadArFilesResponse names governing files and overviews and observed state; it carries no published-intent body.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
-            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
+            "blob": "d06589a7eab5d08e42cab27bd828a7d5226df3a8",
+            "content": "sha256:3b5c7df8fc3fd18cbaf2b25613c6cc348de6fbb8fa153e6ccf3e3307af61f0b9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReadArFilesResponse"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },

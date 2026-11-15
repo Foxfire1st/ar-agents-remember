@@ -8,12 +8,14 @@
   },
   "applicability": "Every short form carrying an error.",
   "conditions": [
-    "The error is cut to 600 chars, then end-reduced until the measured form fits 400.",
-    "errorCut marks a cut error; the detail file holds it whole."
+    "Character count and token count are distinct.",
+    "errorCut marks cut error text and is part of the measured form.",
+    "The original error remains subject to the existing successful-detail-recording, redaction and budget contract; this change creates no new retention waiver."
   ],
   "exclusions": [
     "Answers without an error.",
-    "Codes, which are never cut."
+    "Codes are never cut.",
+    "Exact recorded location and final hint can exhaust the target before any error text remains."
   ],
   "id": "INV-0VAC47",
   "origin": {
@@ -27,9 +29,9 @@
     "leaf": "260928-MIK-L108",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Errors are cut to 600 chars then end-reduced until the measured whole fits 400 with errorCut, the full original detail preserved beside it.",
+  "statement": "Errors in short forms are cut to 600 characters and then end-reduced against the measured 400-token target with errorCut; the error field is retained. The exact recorded-result location and final cut hint take precedence when the recorded path and its hint cannot fit after other droppable content is removed. Whole-result retention remains under the existing detail-recording contract.",
   "status": "proposed",
   "supersedes": []
 }

@@ -80,7 +80,7 @@ Task-fact projection receives exact canonical JSON-path/document pairs, includin
 
 `code_object_retention.py` reads/releases historical retained-code pins; it creates no new pin or frozen canonical generation. Custody counts only explicitly named durable tips and recorded commits, not a history walk or an arbitrary feature branch. A deeper historical copy therefore remains conservatively retained. Object absence is a distinct observation. Explicit release measures custody, refuses a moved ref, deletes only the recorded expected commit, and converges when the ref is already absent. The caller owns release policy and durable unavailable-history publication.
 
-The integration_gate module owns pre-publication invariant admission for preview and apply: exact leaf-pair rejudgment or master validator/staleness/history plus chain proof. Refused admission persists neither contract nor worklist. Recorded landing judges supplied landed endpoints rather than mutable tips. Git object/ancestry unreadability is a named refusal, never absence.
+The integration_gate module owns pre-publication invariant admission for preview and apply: exact leaf-pair rejudgment or master validator/staleness/history plus chain proof. Refused admission persists neither contract nor worklist. Recorded landing judges supplied landed endpoints rather than mutable tips. For a non-leaf already reachable on its source line, only a complete stale-entry-only finding set may be retained as explicit debt after the independent chain proof passes. The answer transports its finding sentences and record keys; the shared writer persists the keys. Mixed findings, strict leaf judgment and chain failures remain refusals. Series cleanup names the recording route for an already-landed master; leaf cleanup retains integration guidance. Git object/ancestry unreadability is a named refusal, never absence.
 
 ## Invariants And Boundaries
 
@@ -154,7 +154,11 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): The closeout closes the history file and validates and gates its exact tree, restoring on refusal. [1]
 
-- Retained reference account (no fresh execution or acceptance inferred): Record landing probes first, then asks the gate over the landed commit. [2]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): Record landing probes first, then asks the gate over the landed commit. Anchor: `_line_converted` `_knowledge_gate_refusal` [2]
+
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Master and checkpoint landing wait for valid, current knowledge. [3]
 
@@ -196,7 +200,11 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. [24]
 
-- Retained reference account (no fresh execution or acceptance inferred): Closeout onboarding refresh uses the context's resolved storage for route-index apply and dry-run preview through build_route_indexes. [25]
+
+
+- The explicit route-index builder takes code, onboarding, repository and storage authority and honors dry_run. [25]
+
+
 - The exact-pair resolver, and the branch/base/ancestry proof it performs without mutation. [50]
 
 - Retained reference account (no fresh execution or acceptance inferred): The lifecycle state carries the optional worktree phase the panels render. [26]
@@ -229,7 +237,11 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): Closeout public execution boundary. [41]
 
-- Retained reference account (no fresh execution or acceptance inferred): Fail-closed cleanup result. [42]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): Fail-closed cleanup result.  Anchor: `cleanup_result` [42]
+
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Integration recovery requires exact authority-ref convergence and exact journaled memory-content proof. [43]
 
@@ -246,7 +258,11 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Historical cutover-only leaf-integration account. Current _leaf_landing_lock rejudges a converted landed/landing-line memory pair; only the neither-side-converted branch falls back to leaf_cutover_refusal. [52]
 
-- Historical unconverted-memory lock account. Current record landing probes the source line and recorded base, but admits a converted supplied memory output to its own leaf validator even when those prior inputs are unconverted; otherwise the central legacy-format refusal applies. [53]
+
+
+- Historical unconverted-memory lock account. Current record landing probes the source line and recorded base, but admits a converted supplied memory output to its own leaf/master judgment even when those prior inputs are unconverted; otherwise the central legacy-format refusal applies. [53]
+
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The onboarding gate reads all of a leaf's history files. [54]
 
@@ -278,7 +294,9 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Protected publication rereads contract/source identity and delegates exact pair ref movement. [71]
 
-- Record landing probes conversion first and freezes parents only for recorded closed-out output. [72]
+
+- Record landing probes conversion first and freezes parents only for recorded closed-out output. Anchor: `_knowledge_gate_refusal` `_landing_request` [72]
+
 
 - Carryover proves both named code and memory ancestries; missing carryover routes to a recovery-leaf plan. [73]
 
@@ -338,7 +356,11 @@ These superseded descriptions retain their historical wording; the current accou
 
 - **Retained historical source account — superseded by the current route account:** Explicit quality admission uses a configured profile; strict publication reader declares schema 3.1. [82]
 
+
+
 - The packet-owned landing and terminal routes preserve domain predicates, check order and refusal-before-write while returning recognized task-state failures as state/code/sentence answers. Dry abandon, cleanup and refused closeout agree with the blocked real call rather than promising success; recognized CloseoutQueueError retains its original code. Cleanup's archive-ready/non-rejudgment branch is now factored through _cleanup_terminal_branch, not a new cleanup permission or force override. Integration distinguishes unfinished checkpoint from completed master. Record landing's conversion next step consumes one central probe-made case: exact merge-memory arguments for a converted line, actual first-conversion argv plus shlex.join display for never-converted input, none for unknown. Unrecognized caller/I/O/internal errors remain fail-closed exceptions, and this presentation changes neither sync nor publication authority. [86]
+
+
 
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Final memory staging removes and excludes the cache. [30]
 

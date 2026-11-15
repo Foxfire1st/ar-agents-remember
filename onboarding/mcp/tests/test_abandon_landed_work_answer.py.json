@@ -1,0 +1,141 @@
+{
+  "path": "mcp/tests/test_abandon_landed_work_answer.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ba6f4c3e807c974b4236e27eddcf05163e3212b4",
+        "content": "sha256:0f22cbafbdb7167587570c55277d743081130586373b98cf58fca6e45070fa70",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_landed_fact_is_measured_by_ancestry"
+        }
+      },
+      "facet": "The helper measures a real work branch against its source line before any removal; an unmerged branch has no fact and an ancestor has the named fact.",
+      "id": "PRF-68A7X9",
+      "invariant": "INV-275CEN",
+      "origin": {
+        "handoffEntry": "L3-W5-11",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ba6f4c3e807c974b4236e27eddcf05163e3212b4",
+        "content": "sha256:7354bb8c5eb6ad9a4ec16b84836930431064349619b906b7685e139243fe3707",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_answer_names_the_line_and_the_branch"
+        }
+      },
+      "facet": "The answer helper attaches the measured branch and line and the ancestry sentence to a successful result.",
+      "id": "PRF-HABFWJ",
+      "invariant": "INV-275CEN",
+      "origin": {
+        "handoffEntry": "L3-W5-11",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ba6f4c3e807c974b4236e27eddcf05163e3212b4",
+        "content": "sha256:79c1f7136839c9e27f47e272103589a4fb5900171a1f385201674ec93e9ebe17",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_landed_fact_is_absent_when_the_work_branch_is_gone"
+        }
+      },
+      "facet": "The helper reports no landed fact when the recorded work branch is missing.",
+      "id": "PRF-P4SA5F",
+      "invariant": "INV-275CEN",
+      "origin": {
+        "handoffEntry": "L3-W5-11",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ba6f4c3e807c974b4236e27eddcf05163e3212b4",
+        "content": "sha256:9c3b0dcb331796137d3f824207f26bc065235c3c41096001f2e35764e6411225",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_abandon_that_removes_work_does_not_claim_the_work_is_landed"
+        }
+      },
+      "facet": "The actual public abandon preview of unlanded work refuses without landedWork or an already-on-line sentence; this is not a positive public abandonment case.",
+      "id": "PRF-Y1YBXT",
+      "invariant": "INV-275CEN",
+      "origin": {
+        "handoffEntry": "L3-W5-11",
+        "leaf": "261112-BUG-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helper measures a real work branch against its source line before any removal; an unmerged branch has no fact and an ancestor has the named fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba6f4c3e807c974b4236e27eddcf05163e3212b4",
+            "content": "sha256:0f22cbafbdb7167587570c55277d743081130586373b98cf58fca6e45070fa70",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_landed_fact_is_measured_by_ancestry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The helper reports no landed fact when the recorded work branch is missing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba6f4c3e807c974b4236e27eddcf05163e3212b4",
+            "content": "sha256:79c1f7136839c9e27f47e272103589a4fb5900171a1f385201674ec93e9ebe17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_landed_fact_is_absent_when_the_work_branch_is_gone"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The answer helper attaches the measured branch and line and the ancestry sentence to a successful result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba6f4c3e807c974b4236e27eddcf05163e3212b4",
+            "content": "sha256:7354bb8c5eb6ad9a4ec16b84836930431064349619b906b7685e139243fe3707",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_answer_names_the_line_and_the_branch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The actual public abandon preview of unlanded work refuses without landedWork or an already-on-line sentence; this is not a positive public abandonment case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba6f4c3e807c974b4236e27eddcf05163e3212b4",
+            "content": "sha256:9c3b0dcb331796137d3f824207f26bc065235c3c41096001f2e35764e6411225",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_abandon_that_removes_work_does_not_claim_the_work_is_landed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
