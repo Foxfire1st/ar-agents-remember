@@ -215,12 +215,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
             "content": "sha256:c6a174684edf9456e84a7dde831342ca64dbad3632bc13c6c63129fb16d46d32",
             "locator": {
-              "end": 223,
+              "end": 240,
               "kind": "line_range",
-              "start": 185
+              "start": 202
             },
             "path": "mcp/tests/test_landing_page_cadence.py"
           },

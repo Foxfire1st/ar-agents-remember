@@ -66,7 +66,7 @@ The added updated-card/no-separate-trace-item case writes an actual card change 
 
 ### Conventions
 
-- The module is in the `unit-regression` lane (`mcp/tests/test-evidence-lanes.toml:622-622`); the evidence catalog derives it
+- The module is in the `unit-regression` lane (`mcp/tests/test-evidence-lanes.toml:625`); the evidence catalog derives it
   as a consumer of `fixtures/repository_profiles/node/package-lock.json` (the Fortieth re-pin, `449b69ef`).
 - Reviewer R2-1 (low, non-blocking): the N6 case commits its rows directly, so the writer's
   `file_subject_mismatch` has no unit assertion for a symlink object or an `@absent` subject; the reviewer

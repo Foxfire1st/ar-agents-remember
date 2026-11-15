@@ -7,7 +7,7 @@
 ## Purpose
 
 **The read's real boundaries: a real Git tree, a real snapshot identity, a real publication.** Twenty
-nodes in `integration` (row `mcp/tests/test-evidence-lanes.toml:697-697`) — the properties the ordinary unit
+nodes in `integration` (row `mcp/tests/test-evidence-lanes.toml:702`) — the properties the ordinary unit
 path cannot fail from outside, because they need real committed bytes, a real database file and a real
 publication to exist at all.
 

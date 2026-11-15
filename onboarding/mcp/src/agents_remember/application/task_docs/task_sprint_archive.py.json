@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
         "content": "sha256:dc8acffd8f507dea01e88c63984330651d5e6df48d5b3bb9eb7e0df05e4cd1c1",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
         "content": "sha256:cb160fa464d1214b4f211198a81133dcfb4af27f679052ee57f35141aa4ec83b",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
-        "content": "sha256:b4c21543b11429395133a0c7374dc94c14250235393525472f07f7896809d8af",
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+        "content": "sha256:4abfa284c761c7408c961646da613ff9ba28012ccf6b62219736d1afbb1c2772",
         "locator": {
           "kind": "symbol",
           "name": "_preview_pending"
@@ -53,12 +53,12 @@
         "handoffEntry": "L82-CODE-R1-07",
         "leaf": "260928-MIK-L82"
       },
-      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "rationale": "Historical location of the retired fifteen-master archive-preview validation defect; INV-A704ST carries the current preview intent. This retained entry does not assert that the retired failure occurs in the current function.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
         "content": "sha256:f8bc3c2b0cf0094671be85ea3992dd55cf85721a67293ea3004114a3426e6e2b",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
         "content": "sha256:70e54ad7bc5205242f5a3095db497f0c4a794f13dafb5b06acfefb21aeab7bdc",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
         "content": "sha256:dc8acffd8f507dea01e88c63984330651d5e6df48d5b3bb9eb7e0df05e4cd1c1",
         "locator": {
           "kind": "symbol",
@@ -112,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
         "content": "sha256:f8bc3c2b0cf0094671be85ea3992dd55cf85721a67293ea3004114a3426e6e2b",
         "locator": {
           "kind": "symbol",
@@ -130,8 +130,8 @@
     },
     {
       "anchor": {
-        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
-        "content": "sha256:b4c21543b11429395133a0c7374dc94c14250235393525472f07f7896809d8af",
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+        "content": "sha256:4abfa284c761c7408c961646da613ff9ba28012ccf6b62219736d1afbb1c2772",
         "locator": {
           "kind": "symbol",
           "name": "_preview_pending"
@@ -148,7 +148,61 @@
     },
     {
       "anchor": {
-        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+        "content": "sha256:457044809f69377a3dffcd744388378a8fae5b1a92e7f945285b61ca27c40305",
+        "locator": {
+          "kind": "symbol",
+          "name": "_retire_enclosures"
+        }
+      },
+      "id": "RLZ-JDDXNE",
+      "invariant": "INV-W3PBKB",
+      "origin": {
+        "handoffEntry": "L3-W5-05",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The archive is the only caller that removes a sprint's master enclosures, so its retirement step carries the obligation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+        "content": "sha256:54a6fb62cda06d45ed9c22f92a7a49996dce15e9e00bc74e92063b597b79fdb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_collect_readiness"
+        }
+      },
+      "id": "RLZ-KXXZMC",
+      "invariant": "INV-4MGFDR",
+      "origin": {
+        "handoffEntry": "L3-W5-14",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "Readiness is surveyed here, so the whole survey rather than its first obstacle is reported from here.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+        "content": "sha256:c053974a2e06df541efb952c54b1f25c2ded6dd6d125eaffc0614ff06f2fafd6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_row_survey"
+        }
+      },
+      "id": "RLZ-NQARMZ",
+      "invariant": "INV-KVSY4H",
+      "origin": {
+        "handoffEntry": "L3-W5-05-row-survey",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "This read-only producer lists live commanded masters with no row and recorded/document status differences, marks repaired false and changes neither the sprint nor its masters.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
         "content": "sha256:cb160fa464d1214b4f211198a81133dcfb4af27f679052ee57f35141aa4ec83b",
         "locator": {
           "kind": "symbol",
@@ -166,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
         "content": "sha256:70e54ad7bc5205242f5a3095db497f0c4a794f13dafb5b06acfefb21aeab7bdc",
         "locator": {
           "kind": "symbol",
@@ -184,7 +238,7 @@
     },
     {
       "anchor": {
-        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
         "content": "sha256:9b9cb96b3d2c8c4f28d57f940893e8f2b61f83caa5fbf0e410805ad1497910ba",
         "locator": {
           "kind": "symbol",
@@ -199,6 +253,24 @@
       },
       "rationale": "Sprint preview names the task and the same would-retire environment line; failures retain the existing retry account.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+        "content": "sha256:89791ac570ec209ebc62fa3b329ec1e5803c8317d5dd6e16708cdd1940dd009e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_preview_archived"
+        }
+      },
+      "id": "RLZ-XSEX6S",
+      "invariant": "INV-W3PBKB",
+      "origin": {
+        "handoffEntry": "L3-W5-05",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The resumed top-level summary includes the pending directory removals already produced by the same retirement plan, so completion is claimed only when no action remains.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -207,8 +279,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
-            "content": "sha256:eef1c08b879a63fd3b58994fd29fbb7a3ef926fa84df04c21f43460a2b1f0f02",
+            "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+            "content": "sha256:df74ef094c5b3b1501de32cc49f50f9dd2ff31a6ca0ced127300419570cc5aa1",
             "locator": {
               "kind": "file"
             }
@@ -218,12 +290,72 @@
       ]
     },
     "2": {
-      "note": "Sprint preview names the task and the same would-retire environment line; failures retain the existing retry account.\n\nAnchor: `_preview_cleanup_changes`",
+      "note": "Sprint preview names the task and the same would-retire environment line; failures retain the existing retry account. Anchor: `_preview_cleanup_changes`",
       "targets": [
         {
           "anchor": {
-            "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
-            "content": "sha256:eef1c08b879a63fd3b58994fd29fbb7a3ef926fa84df04c21f43460a2b1f0f02",
+            "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+            "content": "sha256:df74ef094c5b3b1501de32cc49f50f9dd2ff31a6ca0ced127300419570cc5aa1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Readiness surveys all still-live commanded masters before one aggregate refusal. [3]\n\nAnchor: `_collect_readiness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+            "content": "sha256:df74ef094c5b3b1501de32cc49f50f9dd2ff31a6ca0ced127300419570cc5aa1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A pending preview reports missing rows and differing nonempty statuses without repair. [4]\n\nAnchor: `_row_survey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+            "content": "sha256:df74ef094c5b3b1501de32cc49f50f9dd2ff31a6ca0ced127300419570cc5aa1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Moving masters' current-folder contracts feed safe directory retirement, with per-master outcomes. [5]\n\nAnchor: `_retire_enclosures`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+            "content": "sha256:df74ef094c5b3b1501de32cc49f50f9dd2ff31a6ca0ced127300419570cc5aa1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A resumed preview includes pending enclosure removal before choosing completed state. [6]\n\nAnchor: `_preview_archived`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+            "content": "sha256:df74ef094c5b3b1501de32cc49f50f9dd2ff31a6ca0ced127300419570cc5aa1",
             "locator": {
               "kind": "file"
             }

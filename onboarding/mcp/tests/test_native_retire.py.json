@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0cdec1a69c5c1f6120c97762161e1f2d6f867195",
+        "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
         "content": "sha256:a8d366c6382e21cde7b73bbd83d6030df90eaba3755d93aff5e57315fc6c50a8",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "0cdec1a69c5c1f6120c97762161e1f2d6f867195",
+        "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
+        "content": "sha256:f3ae843777c88550400912d031159bf8bf47490c0a2d4dd9adea84a16ba001fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_message_attachment_is_not_read_as_a_launch_record"
+        }
+      },
+      "facet": "The fake-host retirement case places a readable other-schema attachment beside launch receipts, ignores the attachment and preserves successful retirement.",
+      "id": "PRF-KSY7KC",
+      "invariant": "INV-W9F1MJ",
+      "origin": {
+        "handoffEntry": "L3-W5-13",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
         "content": "sha256:e6bce367bfef3fbdb3b91e2bda746d181fa7fc79ecfa4880d20a32fc8abb804f",
         "locator": {
           "kind": "symbol",
@@ -43,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cdec1a69c5c1f6120c97762161e1f2d6f867195",
-            "content": "sha256:5be65934fa62c03faa4ddb99ede7df321bc70ef6d3959a968602fe675d23e63d",
+            "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
+            "content": "sha256:fd323b43faeed4d44f28ee525dd0ebea9d3ccde343076a190cfc3eca6a388bd9",
             "locator": {
               "end": 102,
               "kind": "line_range",
@@ -60,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cdec1a69c5c1f6120c97762161e1f2d6f867195",
+            "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
             "content": "sha256:e6bce367bfef3fbdb3b91e2bda746d181fa7fc79ecfa4880d20a32fc8abb804f",
             "locator": {
-              "end": 200,
+              "end": 232,
               "kind": "line_range",
-              "start": 178
+              "start": 210
             }
           },
           "kind": "test"
@@ -77,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cdec1a69c5c1f6120c97762161e1f2d6f867195",
+            "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
             "content": "sha256:6c6dfa08d82c93402b4cda5b5c2eb7eb85c76088dea38f25ee97f121e90b0020",
             "locator": {
-              "end": 257,
+              "end": 289,
               "kind": "line_range",
-              "start": 227
+              "start": 259
             }
           },
           "kind": "test"

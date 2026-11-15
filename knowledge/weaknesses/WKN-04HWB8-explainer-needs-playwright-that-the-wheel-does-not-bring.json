@@ -9,7 +9,7 @@
     "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
   },
   "closed": {
-    "commit": "c82e91894677bcfd06042e23a6016cf1f5317c11",
+    "commit": "53dddf6296131064115eef81d2980de01df2fbb2",
     "reason": "The product fetches Playwright and its Chromium at the first explanation and the Explanation tab says the sentence and any failure.",
     "task": "261112-BUG-L1"
   },
@@ -23,7 +23,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",

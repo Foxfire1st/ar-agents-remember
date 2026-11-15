@@ -126,7 +126,7 @@ Every call goes through the **production entry point** — a registered tool ove
 `call` returns a three-way arm (`RAISED ToolError` with the payload, `RAISED <Exception>`, or
 `RETURNED` with `structuredContent`), so "did it raise" is itself the measurement.
 
-The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:630-630`, inside
+The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:634-634`, inside
 the array opening at `:5-5`). Registry placement is a source fact, not this survey’s collection
 or execution evidence. The original L8 loader refusal and **10 passed** budget/registry result
 are historical receipts, not a new result for the present candidate.

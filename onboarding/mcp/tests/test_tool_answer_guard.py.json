@@ -1,16 +1,54 @@
 {
   "path": "mcp/tests/test_tool_answer_guard.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
+        "content": "sha256:da7d6805f6a1696078e596bc3f1c4d0784f76de5511a94cb49027d361dc826be",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerGuardTests.test_over_budget_root_path_through_the_choke"
+        }
+      },
+      "facet": "A varied long transcript-root path is actually written through application completion; the hint is the last field, points to the retained detail and both hint and delivered mapping are asserted above400 tokens. This proves the retained-path exception for this fixture, not every registered-tool transport.",
+      "id": "PRF-7NQDS1",
+      "invariant": "INV-SYBT3F",
+      "origin": {
+        "handoffEntry": "CUR-W8-INV-SYBT3F",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
+        "content": "sha256:da7d6805f6a1696078e596bc3f1c4d0784f76de5511a94cb49027d361dc826be",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerGuardTests.test_over_budget_root_path_through_the_choke"
+        }
+      },
+      "facet": "A varied long transcript-root path is actually written through application completion; the hint is the last field, points to the retained detail and both hint and delivered mapping are asserted above400 tokens. This proves the retained-path exception for this fixture, not every registered-tool transport.",
+      "id": "PRF-SCGM0D",
+      "invariant": "INV-QN78E9",
+      "origin": {
+        "handoffEntry": "CUR-W8-INV-QN78E9",
+        "leaf": "261112-BUG-L3"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Shaping and failure preservation are asserted at the choke.\n\nAnchor: `ToolAnswerGuardTests`",
+      "note": "Shaping and failure preservation are asserted at the choke; the varied-path completion case keeps the final hint and saved detail even when the hint and answer exceed 400 tokens. Anchor: `ToolAnswerGuardTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "aed0880f6d90d1882d8d98d46fb4b084b6869862",
-            "content": "sha256:8e77dde6f74dfa1855ef7cefd02ce4588f17f33a9f331519610f4f495f62481e",
+            "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
+            "content": "sha256:9ec13d9e8e138fc1e85aac033bb7231ada0771bdaafe1399ac0ca56bc9d17292",
             "locator": {
-              "kind": "file"
+              "end": 403,
+              "kind": "line_range",
+              "start": 50
             }
           },
           "kind": "test"
@@ -18,14 +56,15 @@
       ]
     },
     "2": {
-      "note": "Final delivered measurements include bookkeeping.\n\nAnchor: `ToolAnswerFinalMeasureTests`",
+      "note": "Final delivered measurements include bookkeeping. Anchor: `ToolAnswerFinalMeasureTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "aed0880f6d90d1882d8d98d46fb4b084b6869862",
-            "content": "sha256:8e77dde6f74dfa1855ef7cefd02ce4588f17f33a9f331519610f4f495f62481e",
+            "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
+            "content": "sha256:c016160bdb4872d61c54b59e04dbba17b5f735dd6a64d422c66be9d585d04f84",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ToolAnswerFinalMeasureTests"
             }
           },
           "kind": "test"
@@ -37,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aed0880f6d90d1882d8d98d46fb4b084b6869862",
+            "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
             "content": "sha256:b0d140c68a0a9e968e3524da869d1760741535a90fd3ae144d6f3f1a8386bf1a",
             "locator": {
               "kind": "symbol",
@@ -49,14 +88,16 @@
       ]
     },
     "4": {
-      "note": "The shaped start row has the explicit six-hundred-character bound. The existing central choke guard and every other tool bound remain; this is a source-declared row constraint, not a new runtime size census.",
+      "note": "The shaped start row has the explicit six-hundred-token bound. The existing central choke guard and every other tool bound remain; this is a source-declared row constraint, not a new runtime size census.",
       "targets": [
         {
           "anchor": {
-            "blob": "aed0880f6d90d1882d8d98d46fb4b084b6869862",
-            "content": "sha256:8e77dde6f74dfa1855ef7cefd02ce4588f17f33a9f331519610f4f495f62481e",
+            "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
+            "content": "sha256:3108068fc7bdd707d12593ecb496d2aab5134efe925aa78cce0ece79b4891228",
             "locator": {
-              "kind": "file"
+              "end": 55,
+              "kind": "line_range",
+              "start": 51
             }
           },
           "kind": "test"

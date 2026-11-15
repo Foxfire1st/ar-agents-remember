@@ -14,9 +14,8 @@
     "A verdict whose rows hold a conflicting or unreadable observation is not kept at all."
   ],
   "exclusions": [
-    "The memo's key (exact trees, contract bytes, parent tip, leaf memory HEAD, task document, build), its capacity and its age limit.",
-    "Inputs inside the Git trees, which the key binds.",
-    "A verdict older than the age limit, which is computed again whatever its rows say."
+    "The memo's key (exact trees, contract bytes, parent tip, leaf memory HEAD, task document, build) and its capacity.",
+    "Inputs inside the Git trees, which the key binds."
   ],
   "id": "INV-D2HZQ8",
   "origin": {
@@ -30,7 +29,7 @@
     "leaf": "260928-MIK-L42",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A kept verdict of the invariant gate is served again only while every path resolution and existence probe its evaluation recorded still gives the recorded answer and every recorded file still has the recorded bytes. A requirement packet whose locator resolves to another file is therefore a miss also when that file holds identical bytes, and the next evaluation gives the verdict a fresh evaluation gives.",
   "status": "proposed",

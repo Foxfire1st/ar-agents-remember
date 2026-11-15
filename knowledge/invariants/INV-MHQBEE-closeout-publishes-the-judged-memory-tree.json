@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The actual converted paired-closeout regression binds the judged tree, published content tree, record bytes and both subsequent public read forms; it catches backfill that would change the reviewed record or lose its publication attribution."
+  },
+  "applicability": "Successful converted paired leaf closeout of a judged memory candidate containing a closure without a stored commit, followed by public weakness and record reads.",
+  "conditions": [
+    "The ordinary closeout admission and transaction requirements are satisfied; the published memory content tree is the exact tree judged by the gate.",
+    "The closed record bytes remain unchanged across that publication.",
+    "Read attribution succeeds only when the selected closure has a unique introducing memory commit with a readable final Code-Commit trailer naming a full real code commit."
+  ],
+  "exclusions": [
+    "No closeout success is promised when a normal gate or transaction refuses.",
+    "This does not authorize a real closeout or settlement of any particular held weakness.",
+    "Pending or unavailable attribution is reported instead of inventing a commit when the reader’s origin or pair requirements are unmet."
+  ],
+  "id": "INV-MHQBEE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L3-W9-worker.md, item17 acceptance block, checks and Closure census; W9-evidence.tar.gz contains the exact red/green test results and executable commands."
+      ],
+      "path": "261112-BUG-L3-W10-D817-corrected-writer-input.json"
+    },
+    "handoffEntry": "L3-W9-unchanged-closeout-tree",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Closeout publishes the judged memory tree without backfilling a deferred closure, and the subsequent reader derives its code commit from that publication.",
+  "status": "proposed",
+  "supersedes": []
+}

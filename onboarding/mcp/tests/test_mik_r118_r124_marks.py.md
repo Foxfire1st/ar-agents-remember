@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[tests route overview](../overview.md)
+[tests route overview](overview.md)
 
 ## Purpose
 
@@ -20,8 +20,8 @@ history file is written already closed. No case in the module runs a closeout op
 ### Logic
 
 - **The record kinds.** Every weakness kind is one literal list; a weakness without a file, with an unknown
-  kind or beyond the one-sentence bound is refused with its field; a closed weakness carries its task and
-  commit and an open one carries none; a dependent is written with each link kind and refused without a
+  kind or beyond the one-sentence bound is refused with its field; these schema cases exercise a closed weakness with an explicit task and
+  commit, and an open weakness without closure metadata; the deferred own-task closure forms are covered separately in `test_weakness_closure.py`; a dependent is written with each link kind and refused without a
   link, for an untracked document, or as a second record for one document.
 - **Derived state.** A file link moves when its blob differs and stands when it is the same; a record link
   moves when the stored revision differs; the derivation writes nothing into the record; a card read names
@@ -34,7 +34,7 @@ history file is written already closed. No case in the module runs a closeout op
   the master's end refuses and then passes after the confirmation.
 - **The writer.** Both kinds are recorded with each value read from the candidate, each refusal names its
   field, a record link names the record rather than the file it lives in, a deleted document takes its
-  dependent record, and a confirming task names itself and its judgment.
+  dependent record, and a confirming task names itself and its judgment. The history-row writer case supplies the fixture code repository's actual HEAD as its explicit closing commit.
 - **Cost.** An ordinary landing reads only the dependents a change can move — a series master's end reads
   every document — measured at the two populations the packet names, and metadata scans are not counted as
   body reads.

@@ -24,7 +24,7 @@ This module originated in the L23 split and retains publication discoverability 
 
 **The authority is one declaration.** `PUBLICATION_MEMBERS`
 (`mcp/src/agents_remember/models/lifecycles/curator_coherence.py:348-358`) is a tuple of nine
-`PublicationMember` records (`:330-342`) in the request model's own field order, carrying the
+`PublicationMember` records (`:331-342`) in the request model's own field order, carrying the
 `caller_supplied` flag on the first two. The validator refuses on it, `publication_refusal`
 (`:394-418`) names what is missing from it, and `publication_input_statement` (`:427-456`) is the
 text `prepare` renders — so a member added to the declaration needs no second edit anywhere, which
@@ -40,7 +40,7 @@ detail rather than whole-message substrings: the shipped opening sentence contai
 and the required callout contains "caller-supplied", so a substring search cannot tell those from a
 reported member.
 
-The source defines eight test functions. Two are parametrized over nine omitted-member values and three action values, giving eighteen statically derived items; no fresh collection or execution is claimed:
+The eight source test definitions yield eighteen statically enumerated cases: six unparametrized definitions, nine missing-member values and three non-publish actions. Two definitions are parametrized; no fresh collection or execution is claimed.
 
 | Case | What it pins |
 | --- | --- |
@@ -68,14 +68,14 @@ The module imports the production declaration rather than a copy (`PUBLICATION_M
 set and the shape validator that refuses them cannot drift apart. `_CONTRACT_PATH` (`:52`) is a real
 enclosure-shaped path, and `_REFUSAL_PREFIX` (`:53`) is asserted before being stripped. The module
 carries **no `pytestmark`**; its current lane declaration is `unit-regression` at
-`mcp/tests/test-evidence-lanes.toml:133-133`. The former card
-recorded append-only registration at its earlier source epoch; this is not a claim that row133
-was appended at the end of the current catalog. Its direct imports include `agents_remember` models, `pydantic` and
-`pytest`; direct imports do not determine the complete governed consumer population. The frozen
-`mcp/tests/evidence-lifecycle.toml` records this module on two artifact consumer lists:
-`mcp/tests/_user_settings_guard.py` at line 234 and
-`mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2562.
-Those two rows are a complete catalog measurement, not a fresh oracle execution result.
+`mcp/tests/test-evidence-lanes.toml:134`. The former card recorded append-only
+registration at its earlier source epoch; this is not a claim that the current row
+was appended at the end of the catalog. Its direct imports include `agents_remember`
+models, `pydantic` and `pytest`; direct imports do not determine the complete governed
+consumer population. The merged `mcp/tests/evidence-lifecycle.toml` declares this module
+on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py` at line 236
+and `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2588.
+These are catalog declarations, not fresh collection or execution evidence.
 
 ### Invariants And Boundaries
 

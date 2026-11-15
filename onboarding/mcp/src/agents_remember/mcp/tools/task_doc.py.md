@@ -23,7 +23,9 @@ choke point.
 Since 260731-EFA-L2 the arguments arrive in two objects that answer two different questions:
 `TaskDocTarget(repo_id, task_name, contract_path, slug)` — which document — and
 `TaskDocEdit(fields, step, decision, subtask, section)` — what the edit is. `NO_EDIT` is the
-shared empty edit a read (`operation='get'`) passes. The `subtask`/`section` slots still carry the
+shared empty edit. Earlier `operation='get'` reads used it; current `get` and `read_steps` calls
+return the application owner's `operation-removed` refusal with canonical JSON and rendered-file
+guidance, so callers read those files with their own file tools. The `subtask`/`section` slots still carry the
 master `set_subtask`/`set_section`/`remove_subtask` edits; `dry_run` still threads the R5 preview
 flag (the application entry point renders + diffs the would-be doc and returns it **without** writing).
 
@@ -50,4 +52,6 @@ two objects, because a model-typed tool parameter would republish `task_doc` as 
 - The response model the payload validates against.
 
 - The application entry point this builder forwards to. Anchor: `task_doc_tool` [1]
+
+
 - The response model the payload validates against. Anchor: `TaskDocResponse` [3]

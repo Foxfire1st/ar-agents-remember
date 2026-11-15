@@ -181,7 +181,7 @@
         },
         {
           "anchor": {
-            "blob": "2ec6a4844bc78d46a50f54f10b97d1ea2d328aba",
+            "blob": "47a504554485c35906f725e72fcb0a6d7e785d77",
             "content": "sha256:cac1e23697a3434a11cee71fcbb951fe998c7a5be61e3dad9742c6dfb4fff134",
             "locator": {
               "kind": "symbol",
@@ -193,12 +193,12 @@
         },
         {
           "anchor": {
-            "blob": "2ec6a4844bc78d46a50f54f10b97d1ea2d328aba",
+            "blob": "47a504554485c35906f725e72fcb0a6d7e785d77",
             "content": "sha256:37da4281074d36584cef491db2dd8172b971abb050bccc5b9d2f475aeabbb2c2",
             "locator": {
-              "end": 162,
+              "end": 175,
               "kind": "line_range",
-              "start": 144
+              "start": 157
             },
             "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
           },
@@ -259,18 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
-            "content": "sha256:c0f95d663316f578a2fdcc9fda38ac17dd4209e670da772d11647555eff9b14c",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_memory_attribution_producers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "blob": "eff75cfe71497b48d454a561d5d3aca2ae1159fe",
             "content": "sha256:2d54a909f329b7644cb4e9d713567c0c0efd8d0c4fd2b369998949e685d01a51",
             "locator": {
               "kind": "symbol",
@@ -282,11 +271,22 @@
         },
         {
           "anchor": {
-            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "blob": "eff75cfe71497b48d454a561d5d3aca2ae1159fe",
             "content": "sha256:41abd9b7675b6a614e19ffa3d765ecdb9acb65c973876ff336042dc1069d18af",
             "locator": {
               "kind": "symbol",
               "name": "test_every_census_producer_reaches_the_shared_renderer"
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eff75cfe71497b48d454a561d5d3aca2ae1159fe",
+            "content": "sha256:b3b163e90641170b5ed89ce084eabbe56863b01c866821d4bdb7848fcbd98e0d",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_memory_attribution_producers.py"
           },

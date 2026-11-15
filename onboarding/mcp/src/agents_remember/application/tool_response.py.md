@@ -43,10 +43,10 @@ event had been written even when the write is counted as dropped.
 
 `complete_tool_response` finalizes through the answer choke (`models/tools/tool_answer`): the
 envelope count fields are stripped, over-bound answers leave as the measured short form, and the
-whole result is filed beside the daily log. `_write_delivered_line` re-runs the guard after every
-late line failure and keeps the short-form ceiling once the answer is cut; the observer and the log
+whole result is filed beside the daily log when detail recording succeeds. `_write_delivered_line` re-runs the guard after every
+late line failure and keeps the 400-token short-form target once the answer is cut, retaining the exact recorded-result location and final cut hint when mandatory content cannot fit; the observer and the log
 line count the delivered answer, and `_canonical_json` is the canonical form used for whole-result
-byte accounting.
+byte accounting. After attaching a late `logError` and refitting waited reply text, the writer moves an existing `cut` field to the end before re-guarding; a retained mapping keeps that order, and a rebuilt short form appends its hint last.
 
 ### Conventions
 
@@ -62,7 +62,11 @@ None.
 
 ## Evidence
 
+
+
 - Whole-result validation/logging and explicit or default tool-specific projected-answer guarding remain distinct. [4]
+
+
 
 ### Repo-Internal References
 
@@ -70,8 +74,16 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 - Exact-contract enrichment preserves explicit recovery guidance, with guarded preview stops from the call argument. [2]
 
-- The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner. [3]
+
+
+- The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner; the late writer restores an existing cut hint to the final position before re-guarding. [3]
+
+
 
 - The enrichment sets `buildCurrentness` on the validated envelope only when the call carries a stale installed-build reading. [5]
+
+
 - A `server-build-stale` refusal keeps its stripped whole result, without a tool projection or list cap. [6]
+
+
 - Whichever answer is shaped, the finalized `buildCurrentness` is copied onto it. [7]

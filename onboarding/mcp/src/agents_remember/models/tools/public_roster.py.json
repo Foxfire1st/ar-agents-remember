@@ -22,7 +22,7 @@
   ],
   "references": {
     "1": {
-      "note": "The roster's single definition, 74 ordered names, in a module that imports nothing.\n\nAnchor: `PUBLIC_TOOLS`",
+      "note": "The roster's single definition contains 44 ordered names in a module that imports nothing.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
@@ -37,7 +37,7 @@
       ]
     },
     "10": {
-      "note": "The registrar that publishes the three capsule/skill names, whose order the tuple must match.",
+      "note": "The capsule/skill registrar publishes skill resources only; it registers no public tools and adds no tool names to this tuple.",
       "targets": [
         {
           "anchor": {
@@ -54,7 +54,7 @@
       ]
     },
     "11": {
-      "note": "The registrar that publishes the five `knowledge_*` names appended to `TOOL_REGISTRARS` in the same change.",
+      "note": "The knowledge registrar registers four tools: knowledge_read, knowledge_diff, knowledge_integrity_check and knowledge_write.",
       "targets": [
         {
           "anchor": {
@@ -199,7 +199,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
               "kind": "symbol",

@@ -7,8 +7,11 @@
 ## Purpose
 
 `mcp/pyproject.toml` defines the installable MCP package metadata, PyPI README
-metadata, package version, runtime dependency boundary, optional development
-dependencies, console script, and setuptools package discovery root.
+metadata, package version, license and project links, runtime dependency boundary, optional development
+dependencies, console scripts, and setuptools package discovery root.
+
+The project declares the MIT license and Homepage, Documentation, Repository and Issues links
+through `[project.urls]`.
 
 ## Current source account
 
@@ -21,21 +24,12 @@ Package data explicitly includes cli/*.mjs in addition to package_data assets, s
 The package builds with `setuptools`, publishes as `agents-remember-mcp`, uses
 `mcp/README.md` as its package README, and supports exactly the Python 3.14 minor line
 (`>=3.14,<3.15`).
-Runtime dependencies stay intentionally narrow but now include `mcp`,
-`pydantic`, `tiktoken`, and — for the slice-04 dashboard serving layer —
-`fastapi` (built-in `fastapi.sse`), `uvicorn`, and — for the slice 6d-2 Mode B2
-terminal — `websockets`: Pydantic owns public response validation, tiktoken
-backs response token accounting, FastAPI/uvicorn serve the local dashboard, and
-`websockets` is uvicorn's WebSocket protocol implementation for the
-`/api/terminal/{session}` terminal bridge (plain `uvicorn` ships no WS impl, so a
-live WebSocket needs it). Slice 6f adds `python-multipart`, which FastAPI requires to
-parse the `multipart/form-data` upload on `POST /api/terminal/{session}/image` (its
-`UploadFile`/`File` form support fails without it). 260712-PTS-L3 adds `watchfiles`
-(`>=1.1,<2`), the inotify-backed filesystem watcher behind the dashboard's change-driven
-projection pacing (`serving/change_watcher.py`) — a decision-logged new runtime dependency
-(neither `watchfiles` nor `watchdog` existed in the tree before); the serving layer degrades
-loudly to fixed-interval ticking when it is missing, so the dep is core for the adaptive
-behaviour, not for the daemon to run at all. The webstack is a **core** dependency (not an optional
+Runtime dependencies include `mcp`, `pydantic`, `tiktoken`, `fastapi` (built-in
+`fastapi.sse`), `uvicorn`, and `websockets`: Pydantic owns public response validation,
+tiktoken backs response token accounting, and FastAPI/uvicorn serve the local dashboard. `python-multipart` is also declared as a runtime dependency. `watchfiles` (`>=1.1,<2`) is the native filesystem watcher behind the dashboard's
+change-driven projection pacing (`serving/change_watcher.py`); the serving layer degrades
+loudly to interval-driven full refreshes when it is missing, so the dependency is core for
+adaptive behaviour, not for the daemon to run at all. The webstack is a **core** dependency (not an optional
 extra) so `agents-remember dashboard` works on a plain install. Development-only
 quality tools live under the `dev` optional dependency group: Coverage.py, httpx
 (the FastAPI `TestClient` backend), pytest, pytest-cov, pytest-xdist, Pyright, Radon, and Ruff.
@@ -48,21 +42,20 @@ wrapped pytest uniformly.
 
 Two console scripts are declared: the umbrella `agents-remember`
 (`agents_remember.cli.__main__:main`, the front door for subcommands such as
-`dashboard`) and the unchanged `agents-remember-mcp`
-(`agents_remember.mcp.__main__:main`, the MCP server — kept standalone because
-harness MCP configs launch it by that exact name). setuptools discovers import
-packages from `mcp/src`. The `[tool.setuptools.package-data]` block ships the installable
-runtime scaffold — `package_data/**/*` (AGENTS.md templates, skills, provider
-assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
-— so `runtime_install` can reconcile those package-owned assets into a
-coordinator from a pip/uvx install with no source checkout. Dotfiles need their
+`dashboard`) and `agents-remember-mcp`
+(`agents_remember.mcp.__main__:main`, the MCP server). setuptools discovers import
+packages from `mcp/src`. The `[tool.setuptools.package-data]` block ships package-owned
+runtime assets — `package_data/**/*` plus `package_data/benchmarks/.gitignore` — so
+`runtime_install` can reconcile the runtime docs and provider assets into a coordinator
+from a pip/uvx install with no source checkout. Skills remain served from the package
+rather than being copied into the coordinator. Dotfiles need their
 own explicit entry; `**/*` does not match them. The separate `cli/*.mjs` declaration
 also carries the native JavaScript bridge beside its Python caller; it is not runtime scaffold
 content under `package_data`, and development sandbox tooling under `scripts` stays outside the wheel.
 
-### Classifiers Declare The Supported Floor And Platforms (260731-EFA-L2)
+### Classifiers Declare The Supported Floor And Platforms
 
-`classifiers` is not decoration here — it is the one place a consumer can read the supported
+`classifiers` is not decoration here — it is a place a consumer can read the supported
 interpreter line and the supported platforms without cloning. It lists Python 3.14 only
 (matching `requires-python = ">=3.14,<3.15"`) and the two operating-system classifiers
 `POSIX :: Linux` and `MacOS`. Windows is supported **through WSL**, which presents as Linux to the
@@ -73,16 +66,16 @@ The language line agrees with `requires-python` here. The repository-root `[tool
 target-version` stays `py313` as an explicitly reasoned **non-runtime syntax-rewrite policy**
 (one comment line states the reason), while Pyright and the workflows select 3.14. The managed
 development runtime, Dagger graph, GitHub packaging workflow, and GitHub deterministic quality
-workflow all select exact 3.14.8. Dagger alone owns acceptance; the GitHub jobs prove
-deterministic lint/package behavior under the same runtime and are not a per-minor interpreter
-matrix.
+workflow all select exact 3.14.8. Acceptance remains lifecycle-owned; Dagger executes the acceptance profiles, while the
+GitHub jobs prove deterministic lint/package behavior under the same runtime and are not
+a per-minor interpreter matrix.
 
-### The Dashboard Bundle Is Packaged But Not Committed (260731-EFA-L1)
+### The Dashboard Bundle Is Packaged But Not Committed
 
 `package_data/**/*` is **recursive** (setuptools globs package data with `recursive=True`), so
 whatever is present under `package_data` at build time ships. That deliberately includes the
 cockpit bundle at `package_data/dashboard/` and its `package_data/dashboard.fingerprint` sidecar,
-neither of which is in version control (master decision OQ6, 2026-07-31).
+neither of which is in version control.
 
 The consequences a packager must know:
 
@@ -100,7 +93,7 @@ The consequences a packager must know:
 
 The package `version` tracks the release line. Its exact current value lives in
 the source rather than being repeated here; it is the same string
-`runtime_install` and `server_info` report, and it stays aligned with
+`server_info` reports, and it stays aligned with
 `agents_remember.mcp.SERVER_VERSION` (see invariant below).
 
 ### The Parser Wheel Comment Names The Recorded Platforms
@@ -111,18 +104,17 @@ explicitly records the two absent cells (`tree-sitter` and `tree-sitter-typescri
 aarch64, which need a source build). The comment is a checked statement about the lock's records,
 not a coverage promise.
 
-### The SQLite Binding Is A Binary Wheel With A Build-Time Capability (260915-KS-L1)
+### The SQLite Binding Is A Binary Wheel With A Build-Time Capability
 
 `apsw==3.53.4.0` is the repository's binary-wheel SQLite binding for the derived knowledge index.
 Three facts justify the exact pin:
 
 1. **Why APSW at all.** The index is built and queried through APSW (index build, query and projection
-   modules, plus the tool-layer reads); the standard library's `sqlite3` module is not the binding this
-   surface is proven against, so the choice is not a preference between two bindings with the same reach.
+   modules); this surface does not use the standard library's `sqlite3` binding.
 2. **Why the pin is exact, not a range.** The index's schema relies on build-time SQLite
    features (STRICT tables, deferrable foreign keys, `RAISE(ABORT)` triggers, recursive CTEs), so the capability belongs to the specific wheel rather than to the APSW project version line. An exact
-   pin makes "this wheel has the proven features" a proven property of the locked artifact instead of an assumption
-   about whatever resolution picks next; a range would silently admit a build without it.
+   pin names the wheel version whose required features must be checked on each supported platform,
+   rather than assuming that another resolution has them.
 3. **What was actually proven, and what was not.** The leaf's spike installed the pinned release from a prebuilt
    `cp313` manylinux x86_64 wheel (no compiler, no source build, no fallback) and exercised one-row
    changeset attach/diff/apply, an aborting conflict, a consistent WAL-inclusive backup and the leaf's DDL; the
@@ -132,7 +124,7 @@ Three facts justify the exact pin:
    than narrowed silently.
 
 The pin is recorded in three places that must agree: `dependencies` here, `mcp/requirements.txt`, and the single
-added `apsw` entry in `mcp/uv.lock`. The in-file comment above the entry is the durable record of the reason, so a
+`apsw` entry in `mcp/uv.lock`. The in-file comment above the entry is the durable record of the reason, so a
 later reader does not have to reconstruct it from a report.
 
 ### Invariants And Boundaries
@@ -156,7 +148,7 @@ later reader does not have to reconstruct it from a report.
 - `package_data/dashboard/` and `package_data/dashboard.fingerprint` are **generated at release
   time and git-ignored**. Do not commit them, do not add them to this file as explicit entries, and
   do not make packaging fail when they are absent — a source build without Node is a supported
-  state whose documented remedy is `npm --prefix dashboard run build`.
+  state whose documented remedy is `npm --prefix dashboard ci && npm --prefix dashboard run build && python3 scripts/sync-dashboard.py`.
 - The wheel and the sdist must both carry the bundle. The release workflow, not this file, is where
   that is enforced.
 - The supported minor line is stated by `requires-python` and the Python classifier here; the
@@ -180,7 +172,7 @@ later reader does not have to reconstruct it from a report.
 - Public response contracts depend on Pydantic and token accounting depends on tiktoken. [3]
 
 
-- The knowledge store's SQLite binding is exact-pinned, with the session/build-option reason recorded inline above the entry. [4]
+- The derived knowledge index uses an exact-pinned SQLite binding, with its schema-feature reason recorded inline above the entry. [4]
 
 - The same exact pin in the checkout requirements manifest, which must agree with this file. [5]
 
@@ -190,7 +182,11 @@ later reader does not have to reconstruct it from a report.
 - The MCP console entry point resolves through `agents_remember.mcp.__main__`. [8]
 
 - MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. [9]
-- The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy, because `canvas/presenter_inputs.py` resolves the capability text module-relatively in an installed build; the capsule-text test fails on drift between the two copies. [18]
+
+
+- The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy; `test_canvas_capsule_text.py` checks the generated capability copy against its source and checks the packaging declarations. [18]
+
+
 
 
 
@@ -199,7 +195,7 @@ later reader does not have to reconstruct it from a report.
 - The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the What you need, Install steps, Start and stop the dashboard and the host, Tools, and More sections. [10]
 
 
-- `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. [11]
+- `runtime_install` reconciles packaged runtime docs and provider assets into a coordinator; skills remain served from the package. [11]
 - The release job builds the frontend, places the bundle, packages with the locked project venv, and then verifies both distributions carry the bundle and its fingerprint sidecar. [12]
 - The placement step whose output this recursive glob picks up at build time. [13]
 - Both generated dashboard paths are git-ignored, with the reason recorded inline. [14]
@@ -212,4 +208,4 @@ later reader does not have to reconstruct it from a report.
 - Package metadata directly bounds the interpreter line and declares its Python classifier. [17]
 
 
-- Root pytest configuration selects four workers by default. The retained historical comments record an earlier four-worker runtime and the earlier population-growth boundary. [2]
+- Root pytest configuration selects four workers by default. [2]

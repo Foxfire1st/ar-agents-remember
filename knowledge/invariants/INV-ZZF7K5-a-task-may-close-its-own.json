@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations"
+    ],
+    "justification": "The typed stored shape and writer ownership check agree across model and authoring routes. Public writer regressions distinguish a permitted current-task closure from another task’s refused new closure, preserve atomic preview/apply behavior, retain stored closure forms and keep an earlier closed block during later metadata edits."
+  },
+  "applicability": "Weakness closure authored through the task-bound knowledge writer and validated by the Closure and WeaknessRecord models.",
+  "conditions": [
+    "The closed record names its closing task; when commit is absent the typed Closure requires a reason.",
+    "A newly authored closure without a commit names the running leaf, or the task of a non-leaf owner.",
+    "An unchanged closed block already stored on a closed record may survive a later task’s unrelated metadata edit."
+  ],
+  "exclusions": [
+    "This permits the stored shape and ownership attribution; it does not judge whether the weakness’s cause is removed.",
+    "Other writer admission checks still apply. Supplying a commit invokes the separate real-code-commit requirement."
+  ],
+  "id": "INV-ZZF7K5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L3-W9-worker.md, item17 acceptance block, checks and Closure census; W9-evidence.tar.gz contains the exact red/green test results and executable commands."
+      ],
+      "path": "261112-BUG-L3-W10-D817-corrected-writer-input.json"
+    },
+    "handoffEntry": "L3-W9-own-task-closure",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A task may close its own weakness with its task and reason while leaving the code commit absent until closeout.",
+  "status": "proposed",
+  "supersedes": []
+}

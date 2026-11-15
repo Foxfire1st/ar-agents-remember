@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "No single shaping or log rule bounds the caller experience alone: the choke's strip-and-cap needs the short-form ceiling for over-bound answers, the ceiling needs log placement and byte budgets for the record, and the per-tool table needs all three to state each answer's contract; together they make every answer bounded and every admitted call recorded, while unadmitted writes are dropped and counted by the log's admission rules."
+    "justification": "Envelope/list shaping, overflow measurement and location retention, record placement/admission/redaction, authored row contracts and diagnostic consumers jointly preserve the caller answer and its retrievable whole record; no one member supplies that combined obligation. The revised overflow priority keeps exact recorded location and final hint even when mandatory content cannot fit the target. W8 restores final hint ordering after late logError changes without changing membership, routes or logging admission."
   },
-  "guarantee": "Every tool answer holds only what its caller needs next within its bound, and every admitted call leaves its whole record in the daily log under the byte budgets: the choke strips the envelope and caps lists, over-bound answers leave as measured short forms, the log files lines and details with secrets omitted, terminating calls route to the root, and the per-tool table states each answer's fields, uses, cases and bounds — writes that cannot be admitted (folder-budget conflict, oversize detail, unwritable location) are dropped and counted, never failing the call — so a later leaf rebuilding any answer inherits the same ceiling, placement and contract.",
+  "guarantee": "Every tool answer holds only what its caller needs next under its stated bound and overflow policy, and every admitted call leaves its whole record in the daily log under the byte budgets: the choke strips the envelope and caps lists, over-bound answers leave as measured short forms targeting 400 tokens while retaining the exact recorded-result location and final cut hint even when the recorded path and its hint cannot fit after other droppable content is removed, the log files lines and details with secrets omitted, terminating calls route to the root, and the per-tool table states each answer's fields, uses, cases and bounds — writes that cannot be admitted (folder-budget conflict, oversize detail, unwritable location) are dropped and counted, never failing the call — so a later leaf rebuilding any answer inherits the same bound and overflow priority, placement and contract.",
   "id": "FAM-8SX6BT",
   "members": [
     "INV-B7J1PZ",
@@ -31,7 +31,7 @@
     "leaf": "260928-MIK-L108",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/models/tools",
     "mcp/src/agents_remember/application",

@@ -16,6 +16,8 @@ Checks grant-inert enclosed leaf/master lifecycle answers in a source-bound base
 
 ## Contract
 
+The current comparison also adapts baseline landing labels through `_port_landing_labels`: `origin-feat` becomes `origin/<code_work_branch>` and `origin-main` becomes `origin/<code_source_branch>` from the answer's named contract. Empty branch values use `main`. The helper changes only the baseline response after raw pristine/grant equality; other rows and fields pass through, and a missing or unreadable contract leaves the response unchanged.
+
 The driver executes leaf and series preview, apply and integration in all three worlds. In the shared six-phase loop the current pristine and unrelated-grant responses first compare after only `_scrub`, before conversion and baseline-only seat-field normalization. This raw assertion protects grant/current equality. Existing L46 conversion scaffolding and the L113 seat-field adaptation remain separately attributed.
 
 MIK-R113 rule12, amended in place at A12, retains L111's baseline-only adaptation. The embedded before-world producer maps its own leaf_preview/leaf_apply route_index_refresh facts to refreshedCount=written, unchangedCount=unchanged and staleCount=len(staleIndexes). It has no current/grant response available to copy. ROUTE_INDEX_COUNTS_OF_THE_CURRENT, PHASES_WITH_ROUTE_INDEX_COUNTS and _without_route_index_counts are removed; no count is taken out of current answers. The four removed seat fields are still taken out only on the baseline side. Raw pristine/grant equality, all six phase comparisons and product response content remain unchanged. This source account follows the amended packet and is not fresh executed acceptance.
@@ -30,9 +32,19 @@ Uses the existing `QueueFixture` and public closeout/integration services for cu
 
 ## Evidence
 
-- The three worlds retain raw pristine/grant equality and the original comparison after conversion and baseline-only removed-seat-field adaptation; A12 takes no route-index counts out of current answers. [1]
 
-- Conversion-marker row/count/gate handling and baseline-only four-seat-field removal are separately attributed test scaffolding, not generic current-answer metadata suppression. [2]
+
+- The three worlds retain raw pristine/grant equality; baseline comparison additionally uses conversion, baseline-only removed-seat-field adaptation and contract-derived landing-label adaptation. A12 takes no route-index counts out of current answers. Anchor: `mcp/tests/test_no_grant_closeout_parity.py` [1]
+
+
+
+
+
+- Conversion-marker row/count/gate handling and baseline-only four-seat-field removal are separately attributed test scaffolding, not generic current-answer metadata suppression. Anchor: `mcp/tests/test_no_grant_closeout_parity.py` [2]
+
+
+
+
 
 
 

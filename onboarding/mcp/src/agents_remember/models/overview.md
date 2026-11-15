@@ -135,7 +135,7 @@ The catalogue and changed-intent summary results additionally declare an optiona
 
 Final-output receipt v2 binds the complete retained comparison and digest to required delivered code and memory commits/trees. Its two stored verdicts are bound or moved, with both exact candidate-tree matches required for bound. The shared helper also returns unmeasured for an incomparable channel, but that does not make unmeasured a valid v2 receipt state. Sync rebinding v2 similarly derives current/moved/unmeasured from exact captures, with memory head/tree present together. Sync-movement displays retain the source comparison and only applicable moved-channel observations. These values authorize neither clearance nor successor publication; missing observation is never a favorable match.
 
-RoleMessageCall and RoleMessageRefusal/response models carry file-only body/attachment inputs and named file/hash/limit/successor outcomes. The existing answer exception describes bounded returned reply text with complete reply-file retention, not loss of the complete native reply. These declarations are source contracts, not proof of installed host consumption.
+RoleMessageCall accepts wake text, optional full `body` text and optional attachment file paths. Message storage files the full body and attachment records separately from wake text; RoleMessageRefusal/response models carry named file/hash/limit/successor outcomes. The existing answer exception describes bounded returned reply text with complete reply-file retention, not loss of the complete native reply. These declarations are source contracts, not proof of installed host consumption.
 
 ## Invariants And Boundaries
 
@@ -464,7 +464,11 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 - **Retained historical source account — superseded by the current route account:** Capsule skill references and semantic digest exclude diagnostic output. [309]
 
+
+
 - The composed `PUBLIC_TOOLS` declares 44 names, and `SHAPED_TOOL_BOUNDS` carries the final task/landing/role delivery rows, including `direct_execution_grant` at 150 tokens. [315]
+
+
 
 - Citation responses carry optional background identity. [338]
 - **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** [2]
@@ -558,7 +562,7 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The requested-versus-granted split that makes the compiler's narrowing auditable. [104]
 - Identity is origin plus name, and a listing cannot reach a body. [105]
 - The trust statement is a constant and a declared tool set is observed, never applied. [106]
-- The three registry rows that make the new names returnable. [107]
+- The response registry maps modeled builder names to their response classes; registration and public advertisement remain separate. Anchor: `TOOL_RESPONSE_MODELS` [107]
 - The family identity, the immutable revision aggregate and its self-consistency rules. [108]
 - The retained graph subset is exact membership and authored role vocabulary. [109]
 - The two payload versions and the family payload's sealed field set. [111]
@@ -590,7 +594,7 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - **The comparison's own cursor and its two functions, deliberately not the read's decoder.** [189]
 - **The one operation this leaf added, and the unchanged code union.** [190]
 - **The node that measures the absent verdict over the serialized response, and the node that holds the two change statements apart.** [191]
-- The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation, including the opposite-state and continuation refusals (`test_knowledge_diff_scope.py:613-676`). [192]
+- The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation, including the opposite-state and continuation refusals (`test_knowledge_diff_scope.py:529-674`). [192]
 - The two operations the route write layer added, so a route refusal names a route operation. [193] [195]
 - The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree. [194] [196]
 - Historical candidate-change commands and their union were retired with the canonical database write boundary (MIK-R26); candidate.py now owns read-context identities, not that widened write operation. [199]
@@ -615,7 +619,11 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - **The entry read's typed outcome, whose validators refuse a refused read that offers any entry, non-zero totals beside a refusal, and a total smaller than the page beside it (`ICR-R09@v1`).** [237]
 - The sixth refusal code, for a subject the resolution could not name. [238]
 - **The seventh refusal code, added by this leaf: the generation a listing published no longer resolves to the two code objects it bound, so there are no bytes to serve for that entry.** [239]
-- The strict `ReadArFilesResponse` declares named-file and governing-overview locations, observation state and refusal fields; it has no `published_intent` body field. [242]
+
+
+- The strict ReadArFilesResponse names governing files and overviews and observed state; it carries no published-intent body. [242]
+
+
 - **The owning module that decides the shape this model declines to re-declare.** [243]
 - The strict envelope base the field joined. [244]
 - The registry entry for the tool whose payload carries the field; unchanged by this leaf. [245]
@@ -670,7 +678,11 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 - Whole-result validation/enrichment precedes serialization and token finalization. [296]
 
+
+
 - Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance. [297]
+
+
 
 - L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions. [298]
 
@@ -723,5 +735,7 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The ordinary roster adds explainer_control, whose strict result keeps ownership, state and optional action records; admitted results validate the action and refusals retain an unknown rejected action. [337]
 - Entry-side symbol and entry memory values retain explicit path and count meanings. [330]
 - One entry on one side, and on both sides. [57]
+
+
 
 - role_capsules/contracts.py retains source-addressed needs/gives endpoints, validates marker shape before operation audience selection and removes valid markers from instruction text. CapsuleCapsule carries those endpoints separately. TaskDocResponse carries optional bounded alignmentSweep advice; these value objects establish neither actual endpoint delivery nor packet release or persisted task state. [339]

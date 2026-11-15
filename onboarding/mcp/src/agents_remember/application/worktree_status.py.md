@@ -118,10 +118,18 @@ No Domain Documentation source is configured for this memory root.
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. [9]
 
 
+
+
 - **Retained historical source account — superseded by the current contract:** The summary maps unknown_contract_cells and the optional atomic-series activation fact onto the typed response. [10]
 
 
-- **Retained historical source account — superseded by the current contract:** The public status projection, including the terminal archive-ready branch whose next move is now enforced downstream. [11]
+
+
+
+
+- **Retained historical source account — superseded by the current contract:** The public status projection, including the terminal archive-ready branch whose next move is now enforced downstream. Anchor: `_project_terminal_contract_status` [11]
+
+
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move. [12]
 - **Retained historical source account — superseded by the current contract:** The suite that reaches the archive-ready state through this module's real `worktree_status_payload` call and pins the emitted next move against the real tool signatures. [13]
@@ -154,12 +162,16 @@ The current source seams include `worktree_status_packet`. Status locates normal
 ### Reconciled Source Evidence
 
 
+
+
 - The current module exposes `worktree_status_packet` at this ownership boundary. [15]
+
+
 
 
 ## Current Landed Composition
 
-`project_contract_status` also owns the public status projection. A proven terminal archive projects cleanup-completed or archive-ready with exact accepted cleanup arguments and no live operation rows — and a third state for the reopen's own reset (`reopen-reset`), which projects `reopened` with `start_reopened_task`/`worktree_start`. A reopened task is not a terminal generation to clean up: its archived generation stays proven in `terminalArchive` and its worktrees are simply gone until the next start. Malformed terminal-archive evidence returns its typed refusal. Other paths resolve caller authority, project readable or unreadable lifecycle evidence, and replace the plural operation list. This remains read-only.
+`project_contract_status` also owns the public status projection. A proven terminal archive projects cleanup-completed or archive-ready with exact accepted cleanup arguments and no live operation rows — and a third state for the reopen's own reset (`reopen-reset`), which projects `reopened` with `start_reopened_task`/`worktree_start`. A reopened task is not a terminal generation to clean up: its archived generation stays proven in `terminalArchive` and its worktrees are simply gone until the next start. Malformed terminal-archive evidence returns its typed refusal. Other paths resolve caller authority, project readable or unreadable lifecycle evidence, and retain the complete `lifecycleOperations` list and its count in the whole result. The delivered status answer keeps `lifecycleOperationCount` and, for the first queued or running operation, one `runningOperation` sentence naming its kind, generation and state. The complete list stays in the saved whole result rather than the compact answer. This remains read-only.
 
 ## 260831-LOCR-L32 The Terminal Next Move Is Enforced Downstream
 
@@ -203,7 +215,11 @@ be the wrong fix. `mcp/tests/test_worktree_status_terminal_next_tool.py` drives 
 `worktree_status_payload` into the archive-ready state for both cleanup verbs and pins all of it.
 
 
+
+
 - The context-facing WorktreeSummary also carries taskDocumentCopies from the producer's optional task_document_copies notice. That one-line copy drift/refresh notice is informational, not mutation, acceptance or proof that every copied byte was exhaustively hashed. Existing sync and source-lineage evidence remains a separate owner. [16]
+
+
 
 - The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move.  Anchor: "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" [12]
 

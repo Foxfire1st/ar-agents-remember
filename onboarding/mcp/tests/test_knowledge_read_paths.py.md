@@ -38,12 +38,12 @@ The current cases assert typed path-spelling refusal separately from lookup avai
 
 ### Logic
 
-**`test_a_pathspec_magic_spelling_is_refused_by_the_typed_path_and_never_answered_as_absence`** (`:183`) —
+**`test_a_pathspec_magic_spelling_is_refused_by_the_typed_path_and_never_answered_as_absence`** (`:183-258`) —
 the boundary node. It refuses a leading-`:` spelling at **both** typed boundaries (`SourceAnchorDraft`'s
 write path and `PathSeed`'s seed path) and measures the Git facts themselves with its own subprocess calls,
 so the premise is evidence rather than prose.
 
-**`test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob`** (`:261`) — the
+**`test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob`** (`:261-374`) — the
 node the review's correction rests on. It commits its own tree holding **both** `src/a1.py` and
 `src/a[1].py`, measures `git ls-tree` addressing `src/a[1].py` literally with `rc=0`, then (1) authors a
 `SourceAnchorDraft` at that path through the typed write path, (2) stores the claim and anchor through the

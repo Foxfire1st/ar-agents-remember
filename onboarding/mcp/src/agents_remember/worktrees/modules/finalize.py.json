@@ -300,12 +300,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
             "content": "sha256:25e44519d8c52fa20b1c7a9de674a0f6be77dcd794d22f6dcae868cc057786b5",
             "locator": {
-              "end": 857,
+              "end": 877,
               "kind": "line_range",
-              "start": 854
+              "start": 874
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },

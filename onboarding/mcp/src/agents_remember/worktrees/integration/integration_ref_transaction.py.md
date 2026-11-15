@@ -4,8 +4,6 @@
 | --- | --- |
 | verificationStatus | working-candidate |
 
-The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
-
 ## Governing Overview
 
 [Nearest governing route overview](overview.md)
@@ -18,7 +16,7 @@ Prepare and publish exact code/memory ref moves with expected-old compare-and-sw
 
 ### Logic
 
-`IntegratedCommits` contains code and memory-content commits only. `LandingAdmission` optionally carries the checkpoint's captured candidate; ordinary integration instead matches the recorded closeout pair. Preparation also requires matching candidate-tree pass trailers or detached-worktree hook checks on both legs before CAS.
+`IntegratedCommits` contains code and memory-content commits only. `LandingAdmission` optionally carries the checkpoint's captured candidate; ordinary integration instead matches the recorded closeout pair. Before CAS, each side whose protected reference differs from its candidate requires a matching candidate-tree pass trailer or a detached-worktree hook check; a side already at its candidate is not checked again.
 
 `require_integrated_memory_ancestry` checks the accepted code object exists and the accepted memory output descends from the exact memory source. It does not parse a ledger, inspect rows, compare headers, or require a trailer mapping for the selected code commit.
 
@@ -48,7 +46,7 @@ Before publishing ordinary integration into a dirty shared master checkout, the 
 
 ### Docs References
 
-No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+No domain-documentation source is configured for this slice. The behavior described here is established by current repository source.
 
 ### Repo-Internal References
 
@@ -56,7 +54,11 @@ These current source spans identify the implementation owners and the specific a
 
 - Two-output and route-specific candidate data. [1]
 
-- Preparation validates accepted output and source/checkout state. [2]
+
+
+- Preparation validates accepted output and source/checkout state. Anchor: `prepare_integration_ref_move` [2]
+
+
 
 - Ordered expected-old CAS retains a torn pair on a memory race. [3]
 - Owned checkout refresh excludes only memory cache state. [4]

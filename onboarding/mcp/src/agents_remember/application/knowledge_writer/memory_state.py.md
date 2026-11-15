@@ -101,7 +101,11 @@ The candidate, the owner, the base and the write.
 - The history file an owner writes: a leaf's latest attempt, or the next once the latest is closed in the writer's base, the memory worktree's HEAD. [10]
 - The higher side's revision of a record a merge left unmerged. [11]
 
-- A reopened leaf writes its next attempt, and its history is every file. [12]
+
+
+- A reopened leaf writes its next attempt, and its history is every file. Anchor: `test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file` [12]
+
+
 
 
 ### Cross-Repo References

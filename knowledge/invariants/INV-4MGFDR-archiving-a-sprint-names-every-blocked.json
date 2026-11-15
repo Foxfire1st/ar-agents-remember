@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The real archive route's two-blocked-master case asserts both names in one refusal and byte preservation for dry and real calls; without aggregation the caller clears only the first barrier each attempt."
+  },
+  "applicability": "The readiness phase of whole-sprint archive admission.",
+  "conditions": [
+    "A commanded-master slot still has a live folder.",
+    "The archive has reached retirement-readiness admission after its earlier identity, selection and terminal-row checks."
+  ],
+  "exclusions": [
+    "Masters already moved by the retained archive record.",
+    "Earlier identity, row or selection refusals are not aggregated by this readiness phase."
+  ],
+  "id": "INV-4MGFDR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/role-reports/worker/b80532cb-3a13-4e3c-8a92-077f18b4e5af/role-launch/261112-BUG-L3-W7-worker.md#requirement-evidence; W7-evidence.tar.gz and preserved W6-evidence.tar.gz (exact final checks and predecessor fail-before evidence)"
+      ],
+      "path": "W8-final-writer-input.json"
+    },
+    "handoffEntry": "L3-W5-14",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Archiving a sprint names every blocked commanded master in one refusal instead of stopping at the first.",
+  "status": "proposed",
+  "supersedes": []
+}

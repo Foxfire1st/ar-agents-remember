@@ -9,7 +9,8 @@
   "applicability": "Final, checkpoint and recorded converted master landings.",
   "conditions": [
     "Final requires all canonical non-abandoned leaves; checkpoint/recorded routes select already landed leaves.",
-    "Recorded landing uses the supplied endpoints and the recorded series code base."
+    "Recorded landing uses the supplied endpoints and the recorded series code base.",
+    "For non-leaf recording only, a complete stale-entry-only finding set may remain as named debt after reachability and the independent landed-chain proof pass; mixed findings and chain failures still refuse. This exception does not apply to converted-leaf pair judgment."
   ],
   "exclusions": [
     "Legacy sync records without produced heads retain their explicit admission.",
@@ -27,7 +28,7 @@
     "leaf": "260928-MIK-L52",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Final, checkpoint and recorded master landings run validator, staleness, the landing chain proof over landed leaves, and rule 5; merges must be sync heads, leaf history, or parent line; foreign commits are named.",
   "status": "proposed",

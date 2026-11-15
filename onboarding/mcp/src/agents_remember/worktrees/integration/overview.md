@@ -21,7 +21,7 @@ The handover seam evaluates cross-lifecycle `master-handover-approval` records a
 
 Integration also checks converted knowledge. Series and checkpoint landings call the landing knowledge gate for the selected memory commit and source base; the local leaf helper rejudges the exact closeout CODE/MEMORY commit pair against the parent memory tip when either landed/source memory is converted, without persisting a worklist. A missing parent memory tip or unreadable paired input refuses; nonconverted sides fall through to the cutover boundary, and no memory output requires no memory landing judgment. This is distinct from automatically running a complete code-quality suite, selected Dagger certification, curator coherence or independent review. The older statement that integration has no quality-related reference is too broad for this checkout.
 
-`integration_ref_transaction.py` admits exactly two outputs: code and memory-content commits. Before movement it proves target ownership, unchanged source tips, fast-forward ancestry, accepted output authority and target-checkout cleanliness. Movement performs code CAS followed by memory CAS, then refreshes owned checkouts. It is not an indivisible transaction across two Git repositories: a memory CAS race can occur after code has landed, and the refusal explicitly preserves that partial output as recovery evidence. No ledger commit or cached ledger row authorizes this transaction.
+`integration_ref_transaction.py` admits exactly two outputs: code and memory-content commits. Before movement it proves target ownership, unchanged source tips, fast-forward ancestry, accepted output authority and target-checkout cleanliness. For each code or external-memory side whose protected ref advances, preparation accepts a matching tree-bound Commit-Check-Pass fact or checks that exact candidate tree. A side already at its candidate does not rerun this admission. Movement performs code CAS followed by memory CAS, then refreshes owned checkouts. It is not an indivisible transaction across two Git repositories: a memory CAS race can occur after code has landed, and the refusal explicitly preserves that partial output as recovery evidence. No ledger commit or cached ledger row authorizes this transaction.
 
 An unfinished atomic master uses checkpoint landing. It captures its own committed refs rather than requiring completed closeout cells, rechecks its mandatory captured candidate before publication, refuses an already `Completed` master, records `checkpointed`, and retires nothing. Final series landing additionally requires the master to be `Completed` and every canonical leaf to have landed.
 
@@ -117,7 +117,11 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Public integration evaluates handover and converted knowledge before ancestry preview/apply. [17]
 
 
-- Landing admits two outputs and performs ordered CAS, retaining partial code landing on memory race. [18]
+
+
+- Landing admits two outputs and performs ordered CAS, retaining partial code landing on memory race. Anchor: `IntegratedCommits` `prepare_integration_ref_move` `merge_integrated_commits` [18]
+
+
 
 
 

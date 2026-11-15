@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "cb321e2ad3b69d960c4ca1ddf9442663278f429c",
+    "commit": "a874131c25b919356a3bd507713ead449b8491cd",
     "role": "curator",
-    "statement": "The concepts page role definitions still hold: the Manager, Investigator and task crew descriptions it carries match the new role text, and its task and sprint definition is unchanged.",
-    "task": "261112-RSM-L1",
+    "statement": "The unchanged concepts page and all 77 retained support identities preserve the previously confirmed definitions on the final candidate.",
+    "task": "261112-BUG-L3",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -76,7 +76,7 @@
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
     {
-      "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+      "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
     },
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
     },
     {
-      "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+      "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
       "kind": "file",
       "path": "dashboard/src/cockpit/Cockpit.tsx"
     },
@@ -126,7 +126,7 @@
       "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
     },
     {
-      "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
+      "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     },
@@ -146,7 +146,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "6c13d6defc09364b2088c4232b31b6f3d492a66b",
+      "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
@@ -306,7 +306,7 @@
       "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
     },
     {
-      "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+      "blob": "f1a614c3853985134f11c860f66383388eb5da04",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_service.py"
     },
@@ -371,12 +371,12 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
     {
-      "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+      "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_response.py"
     },
@@ -399,6 +399,11 @@
       "blob": "f00422a28439082d2b7c652601a8e24931781fc8",
       "kind": "file",
       "path": "mcp/src/agents_remember/certification/repository_profiles/models.py"
+    },
+    {
+      "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
     }
   ]
 }

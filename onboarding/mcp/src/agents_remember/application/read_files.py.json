@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+        "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
         "content": "sha256:7e56c6535b587a4cf7ecd40e927c3be28c4e6028f673f090d6e7ab81bbac4bc1",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,26 @@
     },
     {
       "anchor": {
-        "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-        "content": "sha256:bc948946b65eae936b5e13257352ecfda5358bc3d8c0ee1796796e9f0c2f098b",
+        "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+        "content": "sha256:662a9b2bd247da02231525a4f1e84b884b45deed59716b33884b7130e021ec6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_governing_card"
+        }
+      },
+      "id": "RLZ-3WRH8P",
+      "invariant": "INV-NRNXP8",
+      "origin": {
+        "handoffEntry": "L3-W5-12",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The reading route decides here which half governs a path, so the entry-half card is recognized here.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+        "content": "sha256:662a9b2bd247da02231525a4f1e84b884b45deed59716b33884b7130e021ec6b",
         "locator": {
           "kind": "symbol",
           "name": "_governing_card"
@@ -35,8 +53,26 @@
         "handoffEntry": "F08",
         "leaf": "260928-MIK-L73"
       },
-      "rationale": "This function is the only place that decides whether a card is missing: probing the card's own path once is what separates 'no card exists' from 'the route index has not listed it'.",
+      "rationale": "The same governing-card owner checks storage scope, uses indexed coverage, and probes the card own Markdown or JSON path when omitted by an index, distinguishing no card from stale coverage.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+        "content": "sha256:770411dbdccb58c01683a0f96ea9172b357a13e489d2d7ddec5af5982235a463",
+        "locator": {
+          "kind": "symbol",
+          "name": "_name_one"
+        }
+      },
+      "id": "RLZ-V13AMJ",
+      "invariant": "INV-NRNXP8",
+      "origin": {
+        "handoffEntry": "CUR-W8-postpublication-INV-NRNXP8-_name_one",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "When Markdown is absent and the JSON half is a file, emits its readable location, sidecar-only status and missing-Markdown explanation, then computes its record fields and returns it. Existing governing-card selection alone cannot produce this answer.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -68,80 +104,16 @@
         }
       ]
     },
-    "2": {
-      "note": "**The published-intent half this entry point attaches: the owning module's public surface, the import it arrives through, and the assembly line it is attached at.**",
+    "3": {
+      "note": "The memory-format switch: a tree counts as converted only with its layout marker, text format and readable dataset selection; other trees name no card.",
       "targets": [
         {
           "anchor": {
-            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
-            "content": "sha256:033f68c14d8a8997ddbf56030258113ab31200940fc576288a9391fab6e12b2f",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:f0b5aaa14a19ede6854fbd25460c1942f35362646778ad73ea404eed04184294",
             "locator": {
               "kind": "symbol",
-              "name": "published_intent_block"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
-            "content": "sha256:84426b6dcc3c72cd05a065cc1fd1929477a38d39c765d56d2dbb8447cef3b233",
-            "locator": {
-              "end": 461,
-              "kind": "line_range",
-              "start": 446
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:048dd0d1084c9dbcb8e77dba4137be7b072b38600f6a3fb2b52fb7adb6edc416",
-            "locator": {
-              "end": 36,
-              "kind": "line_range",
-              "start": 36
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:5005b565176015cba9f5fffb5bef63f9a9d20405e45db1972de0fdbe25babce4",
-            "locator": {
-              "end": 155,
-              "kind": "line_range",
-              "start": 155
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
-            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "**The memory-format switch: a tree counts as converted only when it carries the layout marker, a readable dataset selection and the text format; anything else is `unconverted` and names no card.**\n\nAnchor: `_read_one` `converted_card_parts`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
-            "locator": {
-              "kind": "file"
+              "name": "_memory_selection"
             }
           },
           "kind": "code"
@@ -164,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
             "content": "sha256:130c097d6557419be46eb765137e0adf91bc26c50c8db90e662a20cea5931a77",
             "locator": {
               "end": 42,
@@ -177,14 +149,15 @@
       ]
     },
     "6": {
-      "note": "The strict response contract this result validates against: `ReadArFilesResponse`, whose per-path `NamedFile` types the card location, the record counts, the action-needed records and the refusals.\n\nAnchor: `FileReadStatus`",
+      "note": "NamedFile types the card location, card status, record counts, action-needed records and per-row refusals.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
-            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
+            "blob": "d06589a7eab5d08e42cab27bd828a7d5226df3a8",
+            "content": "sha256:92a385cf5ff6bcece2e5ce18a267972d5e681b4f724b4cb09d8ef7f082bf150b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "NamedFile"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -193,14 +166,15 @@
       ]
     },
     "7": {
-      "note": "The batch's overview locations: each named path contributes its ancestor chain, every overview is listed once for the call, and deeper chains sort before their ancestors.\n\nAnchor: `_overview_scope_key`",
+      "note": "The batch's overview locations: each named path contributes its ancestor chain, every overview is listed once for the call, and deeper chains sort before their ancestors.",
       "targets": [
         {
           "anchor": {
-            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
-            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:4a39ad0343d62dc2efcbff5fbdb4d7d84e1d8b0125e69500aa3b82414018c188",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_overview_locations"
             }
           },
           "kind": "code"

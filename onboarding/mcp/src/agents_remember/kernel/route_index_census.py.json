@@ -8,7 +8,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
+            "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
+            "content": "sha256:c00e5f172ea1a13be275644e10f0071b52e4c67467059efdc26da543311812d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_survey_routes"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
             "content": "sha256:60c738fbff7f8b76f037ac59d0174391ef8e585d380a03a671edb65809cf2021",
             "locator": {
               "end": 217,
@@ -21,23 +33,12 @@
         },
         {
           "anchor": {
-            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
+            "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
             "content": "sha256:35647404308e6930bdcc34208b313a7414e220b2bc3dbe2794868555c60ce2fc",
             "locator": {
               "end": 230,
               "kind": "line_range",
               "start": 182
-            },
-            "path": "mcp/src/agents_remember/kernel/route_index.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
-            "content": "sha256:9fb670f1ea1eda7af09749b635c3f899fb6b2ae060b5fd701b80c2408a637d14",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/route_index.py"
           },

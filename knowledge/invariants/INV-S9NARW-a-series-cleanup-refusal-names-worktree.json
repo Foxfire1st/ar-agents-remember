@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A caller otherwise takes an integration route that cannot clear its already-landed master record."
+  },
+  "applicability": "Cleanup refusal for an incompletely recorded external contract.",
+  "conditions": [
+    "Series guidance names worktree_record_landing; leaf guidance keeps worktree_integrate.",
+    "The existing integration-incomplete predicate and cleanup refusal order remain."
+  ],
+  "exclusions": [
+    "No automatic recording, ref movement, cleanup permission or force override follows from the guidance."
+  ],
+  "id": "INV-S9NARW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/role-reports/worker/b80532cb-3a13-4e3c-8a92-077f18b4e5af/role-launch/261112-BUG-L3-W7-worker.md#requirement-evidence; W7-evidence.tar.gz and preserved W6-evidence.tar.gz (exact final checks and predecessor fail-before evidence)"
+      ],
+      "path": "W8-final-writer-input.json"
+    },
+    "handoffEntry": "L3-W5-04",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A series cleanup refusal names worktree_record_landing as the route that records an already-landed master, while a leaf keeps worktree_integrate.",
+  "status": "proposed",
+  "supersedes": []
+}

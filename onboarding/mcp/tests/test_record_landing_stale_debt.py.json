@@ -1,0 +1,174 @@
+{
+  "path": "mcp/tests/test_record_landing_stale_debt.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+        "content": "sha256:6594c61b13b0f1f35557837587f90f6218f31098bcc3439d475e9aac918e4a1d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_record_landing_tool_names_the_entries_it_keeps"
+        }
+      },
+      "facet": "The case carries actual earlier gate-produced findings across a patched precondition boundary after real admission, then checks payload, log, public projection and dry/apply contract persistence; complete public positive stale-debt admission is not exercised.",
+      "id": "PRF-5AH1XT",
+      "invariant": "INV-6H0QQG",
+      "origin": {
+        "handoffEntry": "L3-W5-03",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+        "content": "sha256:78f5c95102ea7ca0d788442fa709571fc5a37eee51ac51a5fa1b7c225cacfe1f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_stale_only_refusal_is_recognised_and_no_other_is"
+        }
+      },
+      "facet": "The parser recognizes a complete stale-only finding and rejects mixed or truncated finding sets.",
+      "id": "PRF-AVBBYT",
+      "invariant": "INV-6H0QQG",
+      "origin": {
+        "handoffEntry": "L3-W5-03",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+        "content": "sha256:a02c93e9cd9521dd1d51d1bc507d568521f0f4c14ac947fe2b78dcab33aba5da",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_record_landing_tool_records_a_reconciled_source"
+        }
+      },
+      "facet": "The real public dry/apply route records a reconciled source with no remaining staleEntries debt.",
+      "id": "PRF-JWPB6J",
+      "invariant": "INV-6H0QQG",
+      "origin": {
+        "handoffEntry": "L3-W5-03",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+        "content": "sha256:0bead080b56a5d553f7fbb4e98e7c9f812ec2a3937f5ed48e928406dddc30193",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stale_entry_debt_does_not_skip_the_recorded_master_chain"
+        }
+      },
+      "facet": "The unpatched real public dry/apply route refuses an invalid master chain without staleEntries or a contract write.",
+      "id": "PRF-N8JWMH",
+      "invariant": "INV-FTW901",
+      "origin": {
+        "handoffEntry": "L3-W6-chain",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+        "content": "sha256:023205d6e993bb466fc0d2e54cc02479a93bafca222b6f306bfdda1c157cb793",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_answer_and_the_record_keep_the_same_entries"
+        }
+      },
+      "facet": "The answer names the debt and the contract round-trip preserves its record keys.",
+      "id": "PRF-ZTYWVP",
+      "invariant": "INV-6H0QQG",
+      "origin": {
+        "handoffEntry": "L3-W5-03",
+        "leaf": "261112-BUG-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The parser recognizes a complete stale-only finding and rejects mixed or truncated finding sets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+            "content": "sha256:78f5c95102ea7ca0d788442fa709571fc5a37eee51ac51a5fa1b7c225cacfe1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_only_refusal_is_recognised_and_no_other_is"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The answer names the debt and the contract round-trip preserves its record keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+            "content": "sha256:023205d6e993bb466fc0d2e54cc02479a93bafca222b6f306bfdda1c157cb793",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_answer_and_the_record_keep_the_same_entries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real public dry/apply route records a reconciled source with no remaining staleEntries debt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+            "content": "sha256:a02c93e9cd9521dd1d51d1bc507d568521f0f4c14ac947fe2b78dcab33aba5da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_record_landing_tool_records_a_reconciled_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case carries actual earlier gate-produced findings across a patched precondition boundary after real admission, then checks payload, log, public projection and dry/apply contract persistence; complete public positive stale-debt admission is not exercised.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+            "content": "sha256:6594c61b13b0f1f35557837587f90f6218f31098bcc3439d475e9aac918e4a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_record_landing_tool_names_the_entries_it_keeps"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The unpatched real public dry/apply route refuses an invalid master chain without staleEntries or a contract write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+            "content": "sha256:0bead080b56a5d553f7fbb4e98e7c9f812ec2a3937f5ed48e928406dddc30193",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_entry_debt_does_not_skip_the_recorded_master_chain"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

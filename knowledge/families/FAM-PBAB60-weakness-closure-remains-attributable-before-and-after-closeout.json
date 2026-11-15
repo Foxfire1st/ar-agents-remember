@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The stored task and reason permit closure before its publication commit exists, while explicit attribution admits only a full real code commit. Exact-tree publication keeps the judged closed block intact. Unique-origin read projection and final-trailer parsing then connect that same block to its closing code identity when the history and object can establish it, or disclose pending or unavailable attribution. None of the five members alone preserves both valid admission and faithful attribution across publication."
+  },
+  "guarantee": "Weakness closure remains attributable across publication: admission and read projection preserve a real closing code identity when one can be established, without guessing a commit or rewriting the judged record.",
+  "id": "FAM-PBAB60",
+  "members": [
+    "INV-ZZF7K5",
+    "INV-030V4M",
+    "INV-ZK0X8M",
+    "INV-MHQBEE",
+    "INV-VGBBBK"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261112-BUG-L3-W10-D817-corrected-writer-input.json"
+    },
+    "handoffEntry": "weakness-closure-attribution",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/models/knowledge_files",
+    "mcp/src/agents_remember/application/knowledge_writer",
+    "mcp/src/agents_remember/application/knowledge_reader",
+    "mcp/src/agents_remember/kernel"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Weakness closure remains attributable across publication"
+}

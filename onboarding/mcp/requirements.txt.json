@@ -7,10 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
-            "content": "sha256:3564c7e0b235172a3931133926a661cdbb9e62a9abfc72ee5adf0460d9560c30",
+            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+            "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
-              "kind": "file"
+              "end": 28,
+              "kind": "line_range",
+              "start": 22
             },
             "path": "mcp/pyproject.toml"
           },

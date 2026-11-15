@@ -96,6 +96,8 @@ No cross-repo boundary is crossed by this file.
 
 
 
+
+
 - The lane row. Source caption: "mcp/tests/test_review_artifact_cleanup.py" [8]
 
 - The planned receipt classes include `explainerArtifacts`. The interrupted archive fixture leaves the external workspace, old generation counter and old lock absent. The case documents workspace removal as retirement's step before the sweep; the retry asserts `interrupted=true` `alreadyAbsent` entries of that class for the migrated `seat-generation` counter path and the old lock path. It does not assert a workspace entry in that retry receipt. Anchor: `test_interrupted_external_explainer_deletion_replays_as_already_absent` [11]

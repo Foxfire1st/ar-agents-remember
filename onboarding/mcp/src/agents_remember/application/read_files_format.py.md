@@ -6,10 +6,7 @@
 
 ## Purpose
 
-**What `read_ar_files` returns beside a card, by the memory tree's format (MIK-R24 rules 5 and 9).** A
-converted tree is read in the text format, with its sidecar and resolved references. An unconverted tree is
-returned as it is, marked `legacy-format`, with no knowledge section, so the old format is never misread as
-the new one.
+**Memory-format detection and converted-card helper functions (MIK-R24 rules 5 and 9).** `memory_format` distinguishes `text/v2` from `legacy-format`; `converted_card_parts` can return a converted card's sidecar and resolved references, and `legacy_published_intent` constructs an unconverted-format explanation. The naming route uses format selection without carrying card or reference bodies.
 
 ## Code Commentary
 
@@ -19,7 +16,7 @@ the new one.
   `legacy-format` otherwise.
 - `legacy_published_intent(root)` reports `state: "legacy-format"`, the memory root
   and why no knowledge is read; this is a format/refusal explanation, not a legacy
-  knowledge dataset. Cards are returned unchanged and marked `legacy-format`. A line
+  knowledge dataset. The helper's explanation says onboarding is returned as `legacy-format`; the current naming route instead reports `memoryState: unconverted` and names no card. A line
   descending from converted memory crosses through `worktree_sync` with `merge-memory`.
   A never-converted repository follows `first_conversion_procedure()`: run
   `agents-remember knowledge-convert MEMORY_ROOT --code CODE_REPOSITORY` in place
@@ -39,12 +36,11 @@ the new one.
 
 ### Conventions
 
-- `application/read_files.py` calls this module; `models/read_files.FileRead` admits the three optional
-  fields.
+- `application/read_files.py` imports `TEXT_FORMAT` and `memory_format` for memory selection. `NamedFile` and `ReadArFilesResponse` admit naming fields, not card/sidecar/reference bodies.
 
 ### Invariants And Boundaries
 
-- **Legacy-format card reads remain supported; ordinary operations refuse unconditionally
+- **An unconverted tree is named without a card by `read_ar_files`; ordinary operations refuse unconditionally
   (MIK-R46@v2).** The refusal is not deferred until an official line or another branch
   is converted. Read the old cards, convert through the named procedure, then repeat
   the ordinary converted operation.
@@ -77,7 +73,11 @@ The format switch and the two readings.
 
 - A converted card's sidecar and resolved references. [3]
 
-- The call site in the entry point. [4]
+
+
+- The naming entry point checks memory format and dataset selection; it carries no card body, sidecar body or resolved-reference document. [4]
+
+
 
 
 - read_ar_files names the converted records that govern a path - existence, the card's location and the records' states - and carries none of their text; an unconverted tree is answered as unconverted rather than with a knowledge section. [5]

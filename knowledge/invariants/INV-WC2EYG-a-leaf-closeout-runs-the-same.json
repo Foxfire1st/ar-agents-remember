@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations"
+    ],
+    "justification": "The leaf evaluator and shared landing predicate must agree on currentness; without the leaf call a stale entry can leave closeout and only refuse later at master landing. The named regression edits then reanchors the same entry."
+  },
+  "applicability": "A converted, paired leaf closeout with a complete recomputed worklist and recorded code base.",
+  "conditions": [
+    "The entry is recorded at a path changed between the leaf recorded code base and its candidate code tree.",
+    "Leaf comparison uses merge=False; master landing retains its merge-base comparison."
+  ],
+  "exclusions": [
+    "Incomplete worklists already refuse with their own named inputs and do not run this added currentness pass.",
+    "No new claim about history-item satisfaction, hook admission or transaction/acceptance authority."
+  ],
+  "id": "INV-WC2EYG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/role-reports/worker/b80532cb-3a13-4e3c-8a92-077f18b4e5af/role-launch/261112-BUG-L3-W7-worker.md#requirement-evidence; W7-evidence.tar.gz and preserved W6-evidence.tar.gz (exact final checks and predecessor fail-before evidence)",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/scratch/curator/8c2908a8-b0f0-4fe7-8204-4a9a4b74bcb2/requirement_intake/W8/postpublication-hunks/per-hunk-evidence.json; source inspection at final tree 6bf26d62a4f509ce650bd8909feb48136c80a121. Calls _entry_currentness only when the recomputed worklist is complete, adding its stale-entry findings to the actual leaf verdict. The existing _entry_currentness entry records the helper, not this necessary caller.",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/scratch/curator/8c2908a8-b0f0-4fe7-8204-4a9a4b74bcb2/requirement_intake/W8/postpublication-hunks/per-hunk-evidence.json; source inspection at final tree 6bf26d62a4f509ce650bd8909feb48136c80a121. Chooses merge-base comparison for master landing and the exact recorded base for merge=False leaf-tree comparison. This is the code-range selection required by the invariant's conditions. Adds the merge selector to the actual net-diff owner, with True preserving master behavior and False supporting the leaf's recorded-base comparison; the selector and body jointly implement the existing rule.",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/scratch/curator/8c2908a8-b0f0-4fe7-8204-4a9a4b74bcb2/requirement_intake/W8/postpublication-hunks/per-hunk-evidence.json; source inspection at final tree 6bf26d62a4f509ce650bd8909feb48136c80a121. The existing leaf-currentness fixture now explicitly asserts one knowledge-stale-at-landing finding after the second edit, alongside the count of five. This is proof-class evidence of the separate stale-entry result; the published PRF-NB01T4 anchors a different regression and cannot stand for this test."
+      ],
+      "path": "W8-final-writer-input.json"
+    },
+    "handoffEntry": "L3-W5-01",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A leaf closeout runs the same entry-currentness check as the master's landing and refuses on a stale entry at a path the task changed.",
+  "status": "proposed",
+  "supersedes": []
+}

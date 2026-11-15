@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "16d8b616821e1aa040d5330711c395d9b81db861",
+        "content": "sha256:6c69b6755059a46ac6180139896fe88378dbf18f9e19851c66b97799af31de7e",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_landed_integration"
+        }
+      },
+      "id": "RLZ-Z8A0XQ",
+      "invariant": "INV-6H0QQG",
+      "origin": {
+        "handoffEntry": "CUR-L3-W5-03-coverage",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "Nonempty accepted debt amends the contract for checkpoint/final outputs; the default preserves existing debt.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "`LandedIntegration` contains strategy, code commit, and optional memory-content commit.",
       "targets": [
         {
           "anchor": {
-            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
+            "blob": "16d8b616821e1aa040d5330711c395d9b81db861",
             "content": "sha256:f46a3881ddbfcf3bcca5dc6fc2e6126e4965b6d8371fe02cd53c5c4e658f3f81",
             "locator": {
               "kind": "symbol",
@@ -20,25 +39,25 @@
       ]
     },
     "2": {
-      "note": "`record_landed_integration` writes the same actual outputs for final and checkpoint landing states.\n\nAnchor: `record_landed_integration`",
+      "note": "`record_landed_integration` writes the same actual outputs for final and checkpoint landing states. Anchor: `record_landed_integration`",
       "targets": [
         {
           "anchor": {
-            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
-            "content": "sha256:e5008e969eaed1fd2ba9adec9aead3037c5aa22d02b71cddd993131f9f1d04a9",
+            "blob": "16d8b616821e1aa040d5330711c395d9b81db861",
+            "content": "sha256:6c69b6755059a46ac6180139896fe88378dbf18f9e19851c66b97799af31de7e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "record_landed_integration"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
-            "content": "sha256:7fd8930b7266dacdcc697badbaef5cfc5bd6cb7c8a107ebdb0fb8538c23ab6ba",
+            "blob": "16d8b616821e1aa040d5330711c395d9b81db861",
+            "content": "sha256:d15488b50ce08547c0c757ce2420201370ceaeb3e96bc0f245f34d25a9256081",
             "locator": {
-              "kind": "symbol",
-              "name": "record_landed_integration"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -50,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
             "content": "sha256:2477340ef80d93bba7c3ff4c836c2d2c130a55ecf141029695515e2102a5c0f8",
             "locator": {
               "kind": "symbol",
@@ -67,7 +86,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
+            "blob": "16d8b616821e1aa040d5330711c395d9b81db861",
             "content": "sha256:f46a3881ddbfcf3bcca5dc6fc2e6126e4965b6d8371fe02cd53c5c4e658f3f81",
             "locator": {
               "kind": "symbol",
@@ -135,15 +154,15 @@
       ]
     },
     "7": {
-      "note": "The pull-request route calls the same writer. (`record_landed_integration(`)\n\nAnchor: \"record_landed_integration(\"",
+      "note": "The pull-request route calls the same writer. (`record_landed_integration(`) Anchor: \"record_landed_integration(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:e48aaf9bc549d584a0580f17396c05c85eebc18d0944c0c30f91973c40dc8126",
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
             "locator": {
               "kind": "symbol",
-              "name": "updated"
+              "name": "record_landing_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
           },
@@ -156,12 +175,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
-            "content": "sha256:5b2dabcf533809bbd3c64a97e487ce0364eb6080680d2d7beb4f356a27723862",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "content": "sha256:573f3e4c7bc29659eb6f4310ed8543bb75d26ab23cdd75834e2dc5e42411657b",
             "locator": {
-              "end": 800,
-              "kind": "line_range",
-              "start": 779
+              "kind": "symbol",
+              "name": "_cleanup_integration_refusal"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -169,7 +187,7 @@
         },
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
             "content": "sha256:4c86521612be2517f89c2085c7b3a5bed24d086752973b41125c1a4071905a2f",
             "locator": {
               "end": 680,

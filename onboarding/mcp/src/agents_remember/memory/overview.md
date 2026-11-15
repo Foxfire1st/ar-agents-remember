@@ -214,7 +214,9 @@ Anchor: `_approved_packet_ref` `changed_observations`
 
 - Retained reference account (no fresh execution or acceptance inferred): The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). [50]
 
-- Retained reference account (no fresh execution or acceptance inferred): **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** [51]
+
+- The selected current nodes assert sibling-realization/family discovery, a one-item page advertising another location, and unavailable tree lookup distinct from path absence. [51]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The retained logical body encoder and logical digest operate with the one composed CURRENT_GENERATION; its structural guard checks the pin, and the store opener is read-only. No deleted generation registry supplies these current owners. [65]
 

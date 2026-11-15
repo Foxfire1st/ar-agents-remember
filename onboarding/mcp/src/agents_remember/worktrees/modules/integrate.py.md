@@ -81,7 +81,11 @@ These current source spans identify the implementation owners and the specific a
 - **Retained historical source account — superseded by the current contract:** Final and checkpoint result publication differ without performing reclamation. [6]
 
 
-- **Retained historical source account — superseded by the current contract:** The shared writer records the two accepted output commits. [7]
+
+
+- **Retained historical source account — superseded by the current contract:** The shared writer records the two accepted output commits. Anchor: `LandedIntegration` `record_landed_integration` [7]
+
+
 
 
 

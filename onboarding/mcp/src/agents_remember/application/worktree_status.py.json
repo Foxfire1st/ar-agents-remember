@@ -4,7 +4,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+        "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+        "content": "sha256:efc531c9e0d3563a93b032399e1f9ad6a87a34c4ac7f101010c8c8d4d597605c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_replace_operation_status"
+        }
+      },
+      "id": "RLZ-5EMH3G",
+      "invariant": "INV-H4PZ9X",
+      "origin": {
+        "handoffEntry": "L3-W5-06",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The full status result is assembled here with every serialized operation before compact projection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+        "content": "sha256:6151c0040f1d26cd22fe203af4ca2890912f1ae0a99402b6952e2413029e09bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_running_operation_line"
+        }
+      },
+      "id": "RLZ-CQTHXJ",
+      "invariant": "INV-H4PZ9X",
+      "origin": {
+        "handoffEntry": "L3-W5-06",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The status answer is assembled here, so the sentence that survives the size guard is written here.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
         "content": "sha256:091220bb585535ea642658ad232fd027452f9c2d7532385ae6734b4dc7c49ce1",
         "locator": {
           "kind": "symbol",
@@ -27,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
@@ -43,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
             "content": "sha256:1b97622f91e3e1329be0d662200baff45172fd9d34e044df786fdcb044cf9a3c",
             "locator": {
               "kind": "symbol",
@@ -51,40 +87,19 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
-            "content": "sha256:1c41d0c29e1e7fdcf2758a8d2ada20accf6140d0d69ff10221e8f4d42388b324",
-            "locator": {
-              "end": 276,
-              "kind": "line_range",
-              "start": 216
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
-            "content": "sha256:64d0dd420ddf1cd31688503c0aa87276f277333a216618859b016a1b2775fe54",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "**Retained historical source account — superseded by the current contract:** The public status projection, including the terminal archive-ready branch whose next move is now enforced downstream.\n\nAnchor: `_project_terminal_contract_status`",
+      "note": "**Retained historical source account — superseded by the current contract:** The public status projection, including the terminal archive-ready branch whose next move is now enforced downstream. Anchor: `_project_terminal_contract_status`",
       "targets": [
         {
           "anchor": {
-            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
-            "content": "sha256:64d0dd420ddf1cd31688503c0aa87276f277333a216618859b016a1b2775fe54",
+            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+            "content": "sha256:8034b4eefed84fe7c576395d4e9697a35bdb0a320f4f575131f781e40552b100",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_project_terminal_contract_status"
             }
           },
           "kind": "code"
@@ -96,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:e78c9a3a5f40cbe4afaccc30894f1b7e29d5e43ec2f9b1a3329a675dc7df6639",
             "locator": {
               "end": 411,
@@ -109,7 +124,7 @@
         },
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
               "end": 440,
@@ -162,33 +177,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
               "name": "worktree_status_packet"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
-            "content": "sha256:b674f86c032fc1792e0b40099ba2f615971c89f139b7d93c936af8ef42cdef83",
-            "locator": {
-              "end": 126,
-              "kind": "line_range",
-              "start": 44
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
-            "content": "sha256:64d0dd420ddf1cd31688503c0aa87276f277333a216618859b016a1b2775fe54",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "code"
@@ -200,10 +193,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
-            "content": "sha256:64d0dd420ddf1cd31688503c0aa87276f277333a216618859b016a1b2775fe54",
+            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+            "content": "sha256:1b97622f91e3e1329be0d662200baff45172fd9d34e044df786fdcb044cf9a3c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_summary_from_status_payload"
             }
           },
           "kind": "code"
@@ -271,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:da6442ddbc9ab51798a8763b482d86031483726576330312b47e718f9d890ae8",
             "locator": {
               "end": 161,
@@ -284,7 +278,7 @@
         },
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:949de5dbb02f9f8dc74e0bed9e0574b4f42a37dc8d9a3756a8f64770eb2f84f6",
             "locator": {
               "end": 149,
@@ -297,7 +291,7 @@
         },
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:1998c2ee3ff1f4d0556889ee1b9c039832ac696cf40f0bb1dcb6e811070183f3",
             "locator": {
               "end": 366,
@@ -346,7 +340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:5a174031bc1f5315b5542fc4a2056871bc874be6a8c35560fdfd71e068178c47",
             "locator": {
               "end": 307,
@@ -359,7 +353,7 @@
         },
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:68b68d00346b96e09a03ec58fe4c3608d997584b98f9485efeb913ba3f444fbb",
             "locator": {
               "end": 299,
@@ -377,7 +371,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:5a174031bc1f5315b5542fc4a2056871bc874be6a8c35560fdfd71e068178c47",
             "locator": {
               "end": 307,
@@ -390,7 +384,7 @@
         },
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:68b68d00346b96e09a03ec58fe4c3608d997584b98f9485efeb913ba3f444fbb",
             "locator": {
               "end": 299,
@@ -426,7 +420,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:3f49f08cd439ee60abb2c2af519250694a720edd770b6a9fa23dba9acee42740",
             "locator": {
               "end": 48,
@@ -457,7 +451,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
             "content": "sha256:6073541e503906b2274f1d300a2ce361db068c6b920e909c16155a21e7be33d5",
             "locator": {
               "end": 104,
@@ -470,7 +464,7 @@
         },
         {
           "anchor": {
-            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
             "content": "sha256:1ed52e5598077da9eb58bccd0643d659bd015da151631217a770a70f8a05989a",
             "locator": {
               "end": 146,
@@ -483,12 +477,12 @@
         },
         {
           "anchor": {
-            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
             "content": "sha256:32ce31e33a72720b880cbfb64836436279970d29d332971c0b5f27d36f8f17e4",
             "locator": {
-              "end": 311,
+              "end": 320,
               "kind": "line_range",
-              "start": 306
+              "start": 315
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },

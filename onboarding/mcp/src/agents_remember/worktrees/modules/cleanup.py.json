@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
         "content": "sha256:25e44519d8c52fa20b1c7a9de674a0f6be77dcd794d22f6dcae868cc057786b5",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
         "content": "sha256:475bbca5dcda63307c3fcbc1b6653e2ff65523e22b8123487a5ac760be470890",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
-        "content": "sha256:1c56b5c7fc022d6fc6525689775ec06899cbfa1e6ee459d6816d83c2f0752bc8",
+        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "content": "sha256:ed5a7fe9d8ac86b932b39a57c71f48e4316c1ef16873e2d35c6fb8748daf4118",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
         "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,25 @@
     },
     {
       "anchor": {
-        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "content": "sha256:573f3e4c7bc29659eb6f4310ed8543bb75d26ab23cdd75834e2dc5e42411657b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_cleanup_integration_refusal"
+        }
+      },
+      "id": "RLZ-A88BZ8",
+      "invariant": "INV-S9NARW",
+      "origin": {
+        "handoffEntry": "L3-W5-04",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "This refusal is the place a caller learns which route clears a completed master, so the sentence naming it lives here.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
         "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
         "locator": {
           "kind": "symbol",
@@ -92,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
         "content": "sha256:25e998f3f16f213c9d25c733eca9fd492a0e7d89763ecd2663869b70fb163d43",
         "locator": {
           "kind": "symbol",
@@ -110,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
         "content": "sha256:104810b533eb6302e6c24edb0ccac715dfc7b5e77e0332d612c3986dbc6aafde",
         "locator": {
           "kind": "symbol",
@@ -128,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
         "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
         "locator": {
           "kind": "symbol",
@@ -151,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
             "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
               "kind": "symbol",
@@ -201,20 +219,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
-            "content": "sha256:4f12e525616477b9a6cfc60916cf62ac07f299a7784ed0a6e0ee020b8819336a",
-            "locator": {
-              "kind": "symbol",
-              "name": "amend_contract"
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
-            "content": "sha256:4f12e525616477b9a6cfc60916cf62ac07f299a7784ed0a6e0ee020b8819336a",
+            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "content": "sha256:d5159f063f2f98ec01bef3fd5b281f84c45c8e1788408fdf8c714117bb10aa95",
             "locator": {
               "kind": "symbol",
               "name": "amend_contract"
@@ -310,12 +316,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
-            "content": "sha256:15ff2b77804c98eb561cb5c8b92ae8240ddb9bce099af7731e8320f260faa919",
+            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "content": "sha256:d5159f063f2f98ec01bef3fd5b281f84c45c8e1788408fdf8c714117bb10aa95",
             "locator": {
-              "end": 243,
-              "kind": "line_range",
-              "start": 190
+              "kind": "symbol",
+              "name": "amend_contract"
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -345,12 +350,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
-            "content": "sha256:f77562dce1c2e56ca319e100349ed8da9a715b6913b1eb242d871be982f32cb4",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "content": "sha256:e53fa354fbef957aa8a30ccad004dd332621b3421cc4ed9047f72f22bb6540cf",
             "locator": {
-              "end": 883,
-              "kind": "line_range",
-              "start": 685
+              "kind": "symbol",
+              "name": "_cleanup_terminal_branch"
             }
           },
           "kind": "code"
@@ -362,12 +366,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
-            "content": "sha256:42e1995b1dbf9c75210fb68edd1d6e05615f33159cb76f9985890d12d62902e8",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "content": "sha256:e53fa354fbef957aa8a30ccad004dd332621b3421cc4ed9047f72f22bb6540cf",
             "locator": {
-              "end": 851,
-              "kind": "line_range",
-              "start": 685
+              "kind": "symbol",
+              "name": "_cleanup_terminal_branch"
             }
           },
           "kind": "code"
@@ -409,16 +412,15 @@
       ]
     },
     "25": {
-      "note": "Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_integrate guidance; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures.",
+      "note": "Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_record_landing guidance for a series and worktree_integrate guidance for a leaf; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures.",
       "targets": [
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
-            "content": "sha256:844c0a4c09ae13603d4876a203380dad736797ba49c839b1b544bea3f4c2cfaa",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "content": "sha256:573f3e4c7bc29659eb6f4310ed8543bb75d26ab23cdd75834e2dc5e42411657b",
             "locator": {
-              "end": 883,
-              "kind": "line_range",
-              "start": 623
+              "kind": "symbol",
+              "name": "_cleanup_integration_refusal"
             }
           },
           "kind": "code"
@@ -498,7 +500,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
             "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
             "locator": {
               "end": 168,
@@ -532,12 +534,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "blob": "1fe83d48a75d16c7f66764ad45c34bc03f6becff",
             "content": "sha256:0cc7abbf055f6ec82fdb09ae3a167512e6cc5066d15c8fd6ab22645275e53dea",
             "locator": {
-              "end": 765,
+              "end": 816,
               "kind": "line_range",
-              "start": 593
+              "start": 644
             },
             "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
           },

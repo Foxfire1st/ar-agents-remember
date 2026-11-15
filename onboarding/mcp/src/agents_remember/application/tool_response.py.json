@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+        "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
         "content": "sha256:d04084a5bcf1b121753a483b8921a788ca7e6f756975649856ea2ed0166483de",
         "locator": {
           "end": 133,
@@ -22,12 +22,30 @@
     },
     {
       "anchor": {
-        "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+        "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+        "content": "sha256:494a71b62eb84b08dd15ec42aa35fc27c2cff306155f2ed42311634661735234",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_delivered_line"
+        }
+      },
+      "id": "RLZ-8FCEMJ",
+      "invariant": "INV-SYBT3F",
+      "origin": {
+        "handoffEntry": "CUR-W8-INV-SYBT3F",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "After a late line failure and any waited-reply refitting, the writer moves an existing cut field to the end before re-guarding; unchanged mappings keep that order and rebuilt short forms append their own hint last.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
         "content": "sha256:b27ca4ab4089993845d5de935955fe5056d01d567d12c9622b45c828bb0655a2",
         "locator": {
-          "end": 381,
+          "end": 383,
           "kind": "line_range",
-          "start": 380
+          "start": 382
         }
       },
       "id": "RLZ-H4QS36",
@@ -41,12 +59,12 @@
     },
     {
       "anchor": {
-        "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+        "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
         "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
         "locator": {
-          "end": 517,
+          "end": 519,
           "kind": "line_range",
-          "start": 394
+          "start": 396
         }
       },
       "id": "RLZ-REZN43",
@@ -60,10 +78,10 @@
     },
     {
       "anchor": {
-        "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
-        "content": "sha256:03442d043942ae3d80abf2a310f23d02fa678e01381424e5c12d8a2059e12bc3",
+        "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+        "content": "sha256:494a71b62eb84b08dd15ec42aa35fc27c2cff306155f2ed42311634661735234",
         "locator": {
-          "end": 310,
+          "end": 312,
           "kind": "line_range",
           "start": 246
         }
@@ -79,8 +97,8 @@
     },
     {
       "anchor": {
-        "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
-        "content": "sha256:03442d043942ae3d80abf2a310f23d02fa678e01381424e5c12d8a2059e12bc3",
+        "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+        "content": "sha256:494a71b62eb84b08dd15ec42aa35fc27c2cff306155f2ed42311634661735234",
         "locator": {
           "kind": "symbol",
           "name": "_write_delivered_line"
@@ -92,7 +110,7 @@
         "handoffEntry": "MIK-R108@v1 §4 overflow-400",
         "leaf": "260928-MIK-L108"
       },
-      "rationale": "_write_delivered_line re-runs the guard after every late line failure and keeps the short-form ceiling once the answer is cut.",
+      "rationale": "_write_delivered_line preserves first failure, moves an existing cut field after late attachments and reply refitting, remeasures the final mapping and re-guards against the short-form target; a rebuilt short form also appends its hint last.",
       "role": "enforcement"
     }
   ],
@@ -102,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:60e27a120bfb8dc9f33714fb08d00eefa653f16db19cf2acb29230f633cf6a6c",
             "locator": {
               "kind": "symbol",
@@ -114,15 +132,28 @@
       ]
     },
     "3": {
-      "note": "The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner.",
+      "note": "The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner; the late writer restores an existing cut hint to the final position before re-guarding.",
       "targets": [
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
             "locator": {
-              "kind": "symbol",
-              "name": "complete_tool_response"
+              "end": 519,
+              "kind": "line_range",
+              "start": 396
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "content": "sha256:494a71b62eb84b08dd15ec42aa35fc27c2cff306155f2ed42311634661735234",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 246
             }
           },
           "kind": "code"
@@ -134,23 +165,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:bf895a7868d9b4e1a21a419b242360e1159533d5437b36380fbea589b819b6d5",
             "locator": {
-              "kind": "symbol",
-              "name": "_select_shaped_answer"
+              "end": 393,
+              "kind": "line_range",
+              "start": 373
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:bcdb8318aaf387e424308817ffe27d5f44058df1066778997ca96d4e45d56a1d",
             "locator": {
-              "end": 440,
+              "end": 442,
               "kind": "line_range",
-              "start": 425
+              "start": 427
             }
           },
           "kind": "code"
@@ -162,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:31d7d911b48f84f5f7e06c94f42e1c39f9b55cf8565323fb4fac3725db07ec7e",
             "locator": {
               "end": 133,
@@ -179,12 +211,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:b27ca4ab4089993845d5de935955fe5056d01d567d12c9622b45c828bb0655a2",
             "locator": {
-              "end": 381,
+              "end": 383,
               "kind": "line_range",
-              "start": 380
+              "start": 382
             }
           },
           "kind": "code"
@@ -196,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
             "locator": {
               "kind": "symbol",

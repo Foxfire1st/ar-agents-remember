@@ -53,16 +53,19 @@ coordination root the other closeout boundary suites use. It drives production o
 `_problem`, because the classification decision is the subject rather than a public surface.
 
 The module is registered in the **integration** lane of
-`mcp/tests/test-evidence-lanes.toml:672`. It composes the real `QueueFixture` over
+`mcp/tests/test-evidence-lanes.toml:677`. It composes the real `QueueFixture` over
 temporary Git repositories and drives production graph admission and projection.
 The complete `mcp/tests/evidence-lifecycle.toml` declares four exact artifact
-consumer relationships: `_user_settings_guard.py` (`:203`),
-`curator_coherence_test_support.py` (`:1164`),
-`fixtures/repository_profiles/node/package-lock.json` (`:2531`) and
-`writer_worklist_test_support.py` (`:4782`). These declarations are dependency
+consumer relationships: `_user_settings_guard.py` (`:205`),
+`curator_coherence_test_support.py` (`:1176`),
+`fixtures/repository_profiles/node/package-lock.json` (`:2557`) and
+`writer_worklist_test_support.py` (`:4829`). These declarations are dependency
 ownership accounting, not proof of runtime consumption, execution or acceptance.
-The earlier `closeout_input_test_support.py`/two-artifact and row137/307/366
-account is superseded; its creation/import narrative is retained in repair history.
+The shared coherence support is reached transitively through `test_closeout_queue`,
+which imports `curator_coherence_test_support` and `test_worktree_support`; the latter
+also imports `curator_coherence_test_support`. The current `closeout_input_test_support.py`
+exact-consumer list does not name this module. The former two-artifact and
+row137/307/366 account remains historical.
 
 ### Invariants And Boundaries
 

@@ -45,20 +45,20 @@ name code/error and scoped recovery. Coherence takeover retains its own code/act
 task_doc for a missing parent, without changing the underlying readiness or repair predicates.
 
 CCR-R08 (260831-CCR-L08) adds the final full catalog seam: after the curator checklist is
-attached, `_attach_final_full_catalog` (444-480) projects the deterministic complete Gate-5
+attached, `_attach_final_full_catalog` (1001-1037) projects the deterministic complete Gate-5
 catalog onto the full run result through `final_catalog_readiness` (the package-owned
 `ReadinessProjectionInput`), naming every item's typed status and the still-missing
 certification authorities without ever claiming certification eligibility; `_catalog_checks`
-(483-487) narrows the executed check payload for the projection. The projection requires the
+(1040-1044) narrows the executed check payload for the projection. The projection requires the
 exact pair identity and refuses otherwise.
 
 Under CCR-R03@v1 curator-report publication is bound to the exact working-tree candidate: before
 and after the primary scan, and again immediately before the checklist write, the controller
 captures both candidate trees with `worktree_candidate_tree` (through scratch indexes outside the
 repositories) and refuses `memory-quality-candidate-changed` if the code or memory candidate moved
-while quality was running cit:([`_curator_candidate_inputs`, `_require_same_curator_candidate`], mcp/src/agents_remember/application/memory_quality/controller.py:947-966; mcp/src/agents_remember/application/memory_quality/controller.py:975-1005).
+while quality was running cit:([`_curator_candidate_inputs`, `_require_same_curator_candidate`], mcp/src/agents_remember/application/memory_quality/controller.py:1047-1066; mcp/src/agents_remember/application/memory_quality/controller.py:1075-1105).
 The checklist writer receives `code_candidate_tree` and `memory_candidate_tree` so the attestation
-can declare its exact pair/tree inputs cit:([`_execute_memory_quality`, "candidate_inputs=candidate_inputs", `_attach_curator_checklist`], mcp/src/agents_remember/application/memory_quality/controller.py:395-468; mcp/src/agents_remember/application/memory_quality/controller.py:568-722).
+can declare its exact pair/tree inputs cit:([`_execute_memory_quality`, "candidate_inputs=candidate_inputs", `_attach_curator_checklist`], mcp/src/agents_remember/application/memory_quality/controller.py:410-504; mcp/src/agents_remember/application/memory_quality/controller.py:599-751).
 
 Interactive quality execution resolves the exact scope before scanning and revalidates it after
 the scan and before publication. A full leaf run joins its checklist with the same
@@ -68,11 +68,11 @@ full catalog is a readiness projection, not final certification: this interactiv
 Gate 1–4 certificate prefix or affected-closure plan and explicitly reports those missing
 authorities. This permits preparatory memory work without claiming final acceptance.
 
-cit:([`_resolve_execution`], mcp/src/agents_remember/application/memory_quality/controller.py:372-392)
-cit:([`_execute_memory_quality`, "revalidate_memory_candidate_scope"], mcp/src/agents_remember/application/memory_quality/controller.py:388-459)
-cit:([`_attach_coherence_readiness`], mcp/src/agents_remember/application/memory_quality/controller.py:1051-1078)
-cit:([`_attach_coherence_readiness`], mcp/src/agents_remember/application/memory_quality/controller.py:1051-1078)
-cit:([`_attach_final_full_catalog`], mcp/src/agents_remember/application/memory_quality/controller.py:901-937)
+cit:([`_resolve_execution`], mcp/src/agents_remember/application/memory_quality/controller.py:359-380)
+cit:([`_execute_memory_quality`, "revalidate_memory_candidate_scope"], mcp/src/agents_remember/application/memory_quality/controller.py:410-504)
+cit:([`_attach_coherence_readiness`], mcp/src/agents_remember/application/memory_quality/controller.py:1151-1185)
+cit:([`_attach_coherence_readiness`], mcp/src/agents_remember/application/memory_quality/controller.py:1151-1185)
+cit:([`_attach_final_full_catalog`], mcp/src/agents_remember/application/memory_quality/controller.py:1001-1037)
 
 ### Invariants And Boundaries
 
@@ -196,8 +196,8 @@ worklist applies (both memory sides unconverted, which is every production leaf 
   The checklist consumes those prepared values; `prepared=` is the current handoff keyword,
   not a positional `_PreparedInputs(census, worklist)` construction.
 - **The section counts nothing itself.** Until MIK-R09 the worklist was information only. Since L09 the
-  mandatory gate turns every open item into one `knowledge-gate` repair finding that counts toward
-  `curatorActionableCount` (see the L09 section below); the section still only renders.
+  mandatory gate turns each open non-advisory item into one `knowledge-gate` repair finding that counts toward
+  `curatorActionableCount`; open advisory items remain report-only (see the L09 section below). The section still only renders.
 - **Trigger split (architect ruling 1).** This run is one of the two triggers L08 wires; the other is
   managed-sync completion. Closeout validation and landing pre-commit evaluation are L09's; since L09 this run
   also recomputes through the gate over its exact candidate, and `_knowledge_worklist` remains the plain
@@ -259,7 +259,7 @@ The report-only findings pass through the filter.
 
 
 
-## 260928-MIK-L09 The Mandatory Gate Counts Every Open Item (MIK-R09 Rules 1, 3 And 7)
+## 260928-MIK-L09 The Mandatory Gate Counts Open Non-Advisory Items (MIK-R09 Rules 1, 3 And 7)
 
 The curator publication is one of MIK-R09's leaf routes. `_execute_memory_quality` now calls
 `_knowledge_gate_and_worklist(scope, candidate_inputs)` right after the census:
@@ -274,9 +274,9 @@ The curator publication is one of MIK-R09's leaf routes. `_execute_memory_qualit
   `knowledgeWorklist` and, when the gate ran, `knowledgeGate` (`GateResult.brief()`:
   state, owner, worklist state/digest/path, and the finding, open-item, incomplete, violation and report-only
   counts).
-- **`_with_gate`** (in the checklist's leaf block, `prepared.gate` on `_PreparedInputs`) turns every gate finding
-  into one repair finding (check `knowledge-gate`) toward `curatorActionableCount` (rule 1: each open item, each
-  unreadable input and each refusing violation; none is report-only). Rule 7: the onboarding gate runs through the
+- **`_with_gate`** (in the checklist's leaf block, `prepared.gate` on `_PreparedInputs`) turns each refusing gate finding
+  into one repair finding (check `knowledge-gate`) toward `curatorActionableCount`: open non-advisory items,
+  unreadable inputs and refusing violations. Open advisory items stay in the gate's report-only list and add no repair count. Rule 7: the onboarding gate runs through the
   same registry, so an `onboarding_trace` item MIK-R30 already reports under the same item ID, with its richer
   required action, is not counted again; and when the gate's worklist is itself incomplete, MIK-R30's unreadable-side
   finding is dropped because the gate already names it (`_onboarding_findings_beside`).
@@ -291,7 +291,7 @@ The curator publication is one of MIK-R09's leaf routes. `_execute_memory_qualit
 The run evaluates the gate and briefs it.
 
 
-Each gate finding is one repair finding, each open item counted once.
+Each refusing gate finding is one repair finding; each open non-advisory item is counted once. Open advisory items are report-only.
 
 
 
@@ -378,7 +378,7 @@ notes/reports/260902-CCR-L03-worker-delivery.md).
 
 ## CCR-R08 Final Full Catalog Projection
 
-After a full leaf checklist is written, `_attach_final_full_catalog` (controller.py:444-480)
+After a full leaf checklist is written, `_attach_final_full_catalog` (controller.py:1001-1037)
 projects the deterministic complete Gate-5 catalog onto the full run result: every standard
 checker, the missing-onboarding and stale-route-index counts, the affected-closure item
 (blocked until the plan digest is supplied), the coherence-record item (blocked without a
@@ -409,19 +409,19 @@ caller unchanged.
 Two changes reach this controller.
 
 **Every public entry point names the build that measured (item 26, D-33).** The three public functions
-are now thin wrappers rather than the bodies themselves: `_run_memory_quality_request` (`:124-134`),
-`_start_memory_quality_request` (`:137-169`) and `_poll_memory_quality_request` (`:172-234`) hold what
-the public names used to hold, and `run_memory_quality_request` (`:249-255`),
-`start_memory_quality_request` (`:258-264`) and `poll_memory_quality_request` (`:267-273`) return
-`_stamped(...)` over them. `_stamped` (`:237-246`) merges `measuring_build_stamp()` into the payload, so
+are now thin wrappers rather than the bodies themselves: `_run_memory_quality_request` (`:162-172`),
+`_start_memory_quality_request` (`:175-213`) and `_poll_memory_quality_request` (`:216-289`) hold what
+the public names used to hold, and `run_memory_quality_request` (`:325-331`),
+`start_memory_quality_request` (`:334-340`) and `poll_memory_quality_request` (`:343-349`) return
+`_stamped(...)` over them. `_stamped` (`:313-322`) merges `measuring_build_stamp()` into the payload, so
 a sync run, an async admission, a poll **and the refusal envelopes around them** all carry `servingBuild`.
 That placement is the requirement rather than a detail: the controller answers more than one shape, and a
 stamp added at one return site is a stamp missing from the others. A reader can then tell a count
 produced by the candidate's own code from one produced by the build the MCP surface happens to serve.
 
 **The closeout-owned rows a check publishes itself are collected (item 17 half (b), D-24/D-29).**
-`_checklist_finding_sets` (`:641-668`) replaces the direct `split_commit_owned_findings` call at the
-checklist composition site (`:489-493`). It keeps that split's repairable/commit-owned division and
+`_checklist_finding_sets` (`:971-998`) replaces the direct `split_commit_owned_findings` call at the
+checklist composition site in `_attach_curator_checklist`. It keeps that split's repairable/commit-owned division and
 additionally collects every `closeoutOwnedFindings` row the executed checks declared in
 `payload["checks"]`, in sorted check order. Those rows — the citation check's anchor-multiplicity class,
 which no range a curator may write can discharge — therefore land in the checklist's
@@ -465,7 +465,11 @@ measured at all.
 
 
 
-- The controller-level run persists, reports and renders the worklist; since MIK-R09 it captures real candidate trees, and its four open items count (`curatorActionableCount` 4, `knowledgeGate.openItemCount` 4). [7]
+
+
+- The controller-level run persists, reports and renders the worklist, capturing real candidate trees: four open worklist items plus one separate stale-entry finding give curatorActionableCount 5, knowledgeGate.openItemCount 4 and findingCount 5. [7]
+
+
 
 
 
@@ -582,7 +586,7 @@ measured at all.
 
 
 
-- Each gate finding is one repair finding, each open item counted once.  Anchor: `_with_gate`, `_onboarding_findings_beside` [17]
+- Each refusing gate finding is one repair finding; each open non-advisory item is counted once. Open advisory items are report-only.  Anchor: `_with_gate`, `_onboarding_findings_beside` [17]
 
 
 

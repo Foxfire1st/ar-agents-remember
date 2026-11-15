@@ -37,13 +37,21 @@ Optional task_context is admitted to a call-local config, without mutating the s
 ### Repo-Internal References
 
 
+
+
 - The application entry point that does the actual resolution. [1]
+
+
 
 
 - The shared choke point every tool's payload passes through: an adapter that hands the tool's whole result, and its compact answer when one is projected, to the application's response completion, where the response is validated and the answer's token count stamped. [2]
 
 
-- The strict response model `read_ar_files` validates against. [3]
+
+
+- The strict ReadArFilesResponse names governing files and overviews and observed state; it carries no published-intent body. [3]
+
+
 
 
 ### Runtime Source References

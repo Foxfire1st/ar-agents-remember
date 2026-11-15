@@ -27,8 +27,7 @@ the worktree layer through `memory_commit_refusal`, the one route entry point ev
 - **`_history_closed`** (a request with `leaf_owner`): reads `knowledge/history/<leaf>.json` at the landed commit. A
   listed blob that cannot be read is an unreadable input, never "absent"; an absent or open file is
   `knowledge-history-not-closed` ("this commit is not a closed-out leaf's").
-- **`net_stale_entries`** (a request with `code_base`): `_net_diff` lists the paths changed from the merge base of the
-  parent line's code tip and the master's commit to that commit (`--no-renames`, `-z`), and the commit's tree; K_C is
+- **`net_stale_entries`** (a request with `code_base`): `_net_diff` lists the changed paths (`--no-renames`, `-z`) and the candidate tree. Master landing uses `merge=True`, comparing the merge base of the recorded base and landing commit with that commit. Leaf closeout uses `merge=False`, comparing the recorded code base directly with its candidate tree. K_C is
   read from the landed memory commit and C opened once; each entry at a changed path is observed through
   `GateContext.entry_state`. Anything not `current` refuses (review R1 F4): `stale` → `knowledge-stale-at-landing`;
   `unverifiable` for a locator reason or a persistently unavailable object → `knowledge-unverifiable-at-landing`, naming
@@ -43,7 +42,7 @@ the worktree layer through `memory_commit_refusal`, the one route entry point ev
 
 ### Conventions
 
-- A master's recorded landing uses the recorded series code base for net staleness. All master landing routes also authenticate each newly closed history file against a landed leaf enclosure, recorded direct publication, or admitted crossing sync. The candidate file must be closed and byte-identical to that owner's publication; one failed file yields its named reason. A base-held closed file stays frozen, and no new history means no owner-contract/journal read. Unreadable enclosures, journals and Git inputs refuse. The earlier validator-only recorded-master limit is superseded.
+- A master's recorded landing uses the recorded series code base for net staleness. All master landing routes also authenticate each newly closed history file against a landed leaf enclosure, recorded direct publication, or admitted crossing sync. The candidate file must be closed and byte-identical to that owner's publication; one failed file yields its named reason. A base-held closed file stays frozen, and no new history means no owner-contract/journal read. Unreadable enclosures, journals and Git inputs refuse.
 - The request type, `LandingGateRequest`, lives in `worktrees/services.py`; the unconverted exemption is decided by the
   worktree layer's marker probe before it asks.
 
@@ -89,8 +88,7 @@ record there, is one this landing made stale; one already stale at the base is n
 
 `DocumentStaleness.answer()` is the field the landing answer carries. It gives the count, the documents and the
 `knowledge_read` view that returns them (`view=dependent`, `staleOnly=true`, memory root of the landing's tree), and
-names any already-stale documents. An ordinary landing and a checkpoint leave the field out when the landing named no
-document at all — neither one it made stale nor one already stale at its base. A master's end keeps the field while it
+names any already-stale documents. An ordinary landing and a checkpoint leave the field out when they made no document stale. A master's end keeps the field while it
 has inherited debt to name, answering `count: 0` beside `alreadyStale` rather than omitting it; with neither newly nor
 inherited stale documents it omits the field as an ordinary landing does. A state that could not be established is
 never answered as a current document: an uncomputable read returns its state and reason in place of the count, and an
@@ -106,7 +104,11 @@ and refuse nothing: the landing happens, and its answer says how many documents 
 ## Evidence
 
 
-- Every newly closed master history file is authenticated against its owner publication. [9]
+
+
+- Every newly closed master history file is authenticated against its owner publication. Anchor: `_master_history_ownership` [9]
+
+
 
 
 
@@ -126,11 +128,19 @@ No configured live documentation source was available for this pass.
 - The finding codes. [2]
 
 
-- The refusal and the named remedy. [3]
+
+
+- The refusal and the named remedy. Anchor: `landing_refusal` `_findings` [3]
+
+
 
 
 - The closed history file in the landed commit. [4]
-- The master's net staleness, refusing anything not current. [5]
+
+
+- Entry currentness at changed paths: master landing uses the merge-base diff; leaf closeout uses the recorded code base directly. [5]
+
+
 
 - The master route test. [6]
 

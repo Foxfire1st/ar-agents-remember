@@ -21,7 +21,7 @@ commit's tree and K_C the memory checkout's exact candidate tree. The worktree l
 - **`direct_verdict`** returns `DirectGateVerdict(applies, owner, refusal)`; a missing memory repository or a series
   line with no head refuses; a `SubprocessError` anywhere is a named refusal through `git_failure`.
 - **`_source`** recognizes a no-publication replay only when the memory head's code trailer and tree equal the requested inputs, returning `applies=false`. Otherwise it selects the explicit or inferred owner. `direct_verdict` validates any retained pre-closing source identity against the closed candidate before asking `_verdict` to recompute and judge the exact series sides.
-- **`_verdict`** recomputes the selected owner's worklist and judges it against the series memory head and published code base. Supplying `leaf_id` changes owner selection, not the obligation to answer every item.
+- **`_verdict`** recomputes the selected owner's worklist and judges it against the series memory head and published code base. Supplying `leaf_id` changes owner selection; non-advisory items still require current answers, while open advisory items remain report-only.
 - **`_worklist`:** an unpublished or non-ancestor B is `incomplete` (`pairing`); the owner's task document is read
   strictly (`strict_leaf_doc`, fail closed: `LeafDocumentUnresolved` is `incomplete`, the L11 carry); the run goes
   through `leaf.worklist_over` (L08's run, MIK-R30's onboarding items, MIK-R10's settling) over `ExplicitSides`; a
@@ -35,7 +35,7 @@ commit's tree and K_C the memory checkout's exact candidate tree. The worktree l
 
 ### Invariants And Boundaries
 
-- **A direct landing of a converted leaf lands only with every item answered and the validator passing.** Realized by
+- **A direct landing of a converted leaf requires every non-advisory item answered and no refusing validator violation.** Open advisory items are reported without refusing the landing. Realized by
   `_verdict` and `judge`; proved by `test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal`
   and, through the public route entry, `test_direct_landing_preview_and_apply_refuse_through_their_route_entry`
   (including two open files, the review's M20). This is the packet's second non-conforming example: "A direct landing
@@ -79,7 +79,11 @@ No configured live documentation source was available for this pass.
 
 - The worklist over the series sides, failing closed. [12]
 
-- The route test. [13]
+
+
+- The route test. Anchor: `test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal` [13]
+
+
 
 
 ### Cross-Repo References

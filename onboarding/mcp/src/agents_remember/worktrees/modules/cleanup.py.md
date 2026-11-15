@@ -12,7 +12,7 @@ cleanup call's own line goes to the coordination root, never into the enclosure 
 
 ### Current Contract
 
-Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_integrate guidance; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures.
+Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_record_landing guidance for a series and worktree_integrate guidance for a leaf; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures.
 
 The contract-derived terminal mutation authority identifies the external-memory checkout separately. `remove_registered_worktree` discards changes to its root ledger cache through the shared cache owner before ordinary Git removal. No force flag is added for cache handling. Code files named `memory.md`, other memory paths and branch-ancestry safeguards retain their normal protection.
 
@@ -244,7 +244,11 @@ No external Domain Documentation source is configured for this memory repo.
 - `_remote_git` runs both remote-talking calls with `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, passed as `GitRunnerOptions(timeout=...)`. [11]
 
 
+
+
 - `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. [12]
+
+
 
 
 
@@ -311,22 +315,38 @@ Rule 5 terminal cases: branch retirement primitives moved whole into `terminal_b
 
 [governing overview](overview.md)
 
-> Retained earlier citation wording: - Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_integrate guidance; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures. [25]
+> Retained earlier citation wording: - Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_record_landing guidance for a series and worktree_integrate guidance for a leaf; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures. [25]
 
 ## 260928-MIK-L198 — Cleanup removes the root and sweeps the ended ones
 
 `cleanup_result` is now a thin wrapper that returns `with_outside_scratch_reconcile(_cleanup_result(args), dry_run=args.dry_run)`, so every run also sweeps the product parent and carries `outsideScratchReconcile` on the payload when the sweep removed or reported a root. `_removed_directories` adds `outside_scratch.removal_entry_for(contract, dry_run=dry_run)` to the directory inventory under the `outside_scratch` key on both the series path and the leaf path, which removes the recorded root and reports `would_remove` on a preview. `_already_completed_cleanup` now takes `dry_run` and asks `outside_scratch.terminal_blocker`; a root it could not remove returns return code 2 with state `blocked`, the summary "Cleanup is already recorded as completed but its outside scratch root could not be removed." and the failure under `blockers`, while a removed or already-absent root is carried as `outsideScratch`. After the completed contract is published and read back, `_publish_cleanup` calls `write_completion_record(contract, updated, operation="worktree_cleanup")`, the completion evidence a successor's sweep reads in place of the contract the group takes away.
 
+
+
 - `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. [17]
+
+
+
+
 
 
 - **Retained historical source account — superseded by the current contract:** Successful cleanup and exact terminal replay pass through the terminal activation-release bridge.  Anchor: `cleanup_result` [2]
 
 
+
+
+
+
 - **Retained historical source account — superseded by the current contract:** A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`.  Anchor: `cleanup_result` [22]
 
 
-- Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_integrate guidance; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures. [25]
+
+
+
+
+- Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_record_landing guidance for a series and worktree_integrate guidance for a leaf; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures. [25]
+
+
 
 
 - **Retained historical source account — superseded by the current contract:** Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers.  Anchor: `_terminal_mutation_authority` [7]

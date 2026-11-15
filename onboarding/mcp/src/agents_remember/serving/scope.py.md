@@ -113,4 +113,6 @@ missing-memory fallback are unchanged; loose `hints`/`selector` keywords are not
 
 
 
+
+
 - WorktreeContract retains the code-worktree, group and cleanup fields; its loader and named error own parsing.  Anchor: `WorktreeContract` `load_contract` `ContractError` [7]

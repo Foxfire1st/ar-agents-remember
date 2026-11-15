@@ -6,9 +6,10 @@
 
 ## Purpose
 
-**The comparison's source attribution partition (`ICR-R04@v1`) has ten current source test definitions.** The original nine-case cohort checks attribution buckets; the additional `test_registered_path_lookup_keeps_exact_path_namespace_and_claim_order` checks exact path namespaces and stored claim order. `260921-ICR-L4` added these cases to
+**The comparison's source attribution partition (`ICR-R04@v1`): ten current source test definitions cover
+exact path-namespace lookup and the partition in which each measured changed path lands in one bucket.** `260921-ICR-L4` added the original nine cases to
 [`test_knowledge_diff_scope.py`](test_knowledge_diff_scope.py.md). `260921-ICR-L57` moved them here
-verbatim when that module crossed the 1200-line rail; no case was added, dropped or changed. The module
+verbatim when that module crossed the 1200-line rail; the split itself added, dropped or changed no case. The current module additionally defines the exact path-namespace lookup test. The module
 runs the same real comparison, over the fixture-built candidate snapshots and real Git trees that
 `diff_scope_test_support` builds. It is marked `pytest.mark.evidence_unit` and registered in the
 **unit-regression** lane beside its sibling.

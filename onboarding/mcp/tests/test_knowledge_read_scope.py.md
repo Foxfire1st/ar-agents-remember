@@ -34,7 +34,7 @@ The dataset is populated by read_scope_test_support and test-only knowledge_rows
 
 The nodes group by the property each protects, and the grouping is the useful reading:
 
-**The packet's stopping rule** (`:140`–`:389`) — the six nodes that measure the `P/I1/F/J1/G/K1` graph and
+**The packet's stopping rule** (`:140`–`:389`) — the six source test definitions measure the `P/I1/F/J1/G/K1` graph and
 its two subtleties: path and exact invariant-revision seeds close over directly containing families; a path seed returns the sibling's realizations and **advertises** the unreached family;
 an exact family revision seed stops after its own members; selecting the advertised family **explicitly** is
 what reaches the further realizations; the invariant seed and the family seed enumerate the same claims and

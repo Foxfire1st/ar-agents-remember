@@ -450,12 +450,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
-            "content": "sha256:15ff2b77804c98eb561cb5c8b92ae8240ddb9bce099af7731e8320f260faa919",
+            "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
+            "content": "sha256:d5159f063f2f98ec01bef3fd5b281f84c45c8e1788408fdf8c714117bb10aa95",
             "locator": {
-              "end": 243,
-              "kind": "line_range",
-              "start": 190
+              "kind": "symbol",
+              "name": "amend_contract"
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -951,8 +950,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
-            "content": "sha256:a419a2ef4205b62694f493a82b89b312796cde352d825bea1937452355964fdc",
+            "blob": "8337b4050677130c0b74516ccd45aa01994f542a",
+            "content": "sha256:aa0ecd37addf835e503ac1efe0a04d95ac7b03f0ad2bf20e2ae319faf89b2278",
             "locator": {
               "kind": "symbol",
               "name": "test_the_closeout_preview_answers_what_the_apply_will_do"
@@ -964,14 +963,15 @@
       ]
     },
     "35": {
-      "note": "**Retained historical source account — superseded by the current contract:** An unconverted leaf's preview is refused before closeout publication.\n\nAnchor: `test_an_unconverted_leafs_preview_carries_no_gate_verdict`",
+      "note": "**Retained historical source account — superseded by the current contract:** An unconverted leaf's preview is refused before closeout publication. Anchor: `test_an_unconverted_leafs_preview_carries_no_gate_verdict`",
       "targets": [
         {
           "anchor": {
-            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
-            "content": "sha256:81dfba7f6f3c245fe35c30f25383b666c6fc0c3745a716991863dbe0cfe9149f",
+            "blob": "8337b4050677130c0b74516ccd45aa01994f542a",
+            "content": "sha256:588c1d1ace1607293b82d6c1209d6e0e998b4cf6ca9fb7927159b87a1aa0feeb",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_an_unconverted_leafs_preview_carries_no_gate_verdict"
             },
             "path": "mcp/tests/test_knowledge_reopen.py"
           },

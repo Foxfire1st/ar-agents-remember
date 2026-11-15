@@ -117,14 +117,15 @@
       ]
     },
     "12": {
-      "note": "A reopened leaf writes its next attempt, and its history is every file.\n\nAnchor: `test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file`",
+      "note": "A reopened leaf writes its next attempt, and its history is every file. Anchor: `test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file`",
       "targets": [
         {
           "anchor": {
-            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
-            "content": "sha256:81dfba7f6f3c245fe35c30f25383b666c6fc0c3745a716991863dbe0cfe9149f",
+            "blob": "8337b4050677130c0b74516ccd45aa01994f542a",
+            "content": "sha256:8f6110c95b537fefb7947932717f78acfa26df04f6e18b493990747f38d99548",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file"
             },
             "path": "mcp/tests/test_knowledge_reopen.py"
           },

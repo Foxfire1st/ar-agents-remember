@@ -9,7 +9,7 @@
 **The comparison's unit population: thirteen cases over the shared two-snapshot fixture, running
 in-process with no repository working tree, no network and no integration marker**
 (`pytestmark = pytest.mark.evidence_unit`). The module is registered in the **unit-regression** lane at
-`mcp/tests/test-evidence-lanes.toml:228`.
+`mcp/tests/test-evidence-lanes.toml:230`.
 
 **The attribution partition's original nine-case cohort lives next door; that sibling now has ten source test definitions.** `260921-ICR-L4` appended nine `ICR-R04@v1`
 cases here (22 cases, 1384 lines). `260921-ICR-L57` moved them verbatim into
@@ -23,13 +23,13 @@ removed link, unchanged sibling, divergent revisions, explicit per-side selector
 present-outside-selection distinction, the display filter, the filter's binding, the limitation
 validator, truncation, and the no-trees expansion.
 
-**Current source identity: 714 physical lines and thirteen top-level test definitions**
-at code tree `96bf7343`, measured by complete AST inspection. The earlier card's
-779-line review freeze, 741-line pre-round file, 790-line reference account and
-`M25`/`M26` citation dispute belong to earlier source epochs; those coordinates
-are not current navigation. The live function names and extents below describe
-this code tree. Earlier ledger/debt and mutation accounts remain historical
-provenance, with no new execution or verdict inferred.
+**Current source identity: 714 physical lines and thirteen top-level test definitions**,
+measured by complete static AST/source inspection. The earlier 779-line review freeze,
+741-line pre-round file and790-line reference account belong to earlier source epochs.
+The parked account records the former `M25`/`M26` pairs `scope:640`/`:678` and
+`scope:565`/`:620` as documentary debt carried to `KS-R09`/`L9` (ledger A9, finding `L8-W1`).
+Those retained historical coordinates and mutant attributions are not current navigation
+or a fresh authority, execution or verdict; current functions and assertion extents follow below.
 
 ## Code Commentary
 

@@ -82,16 +82,16 @@
       ]
     },
     "11": {
-      "note": "The limitation/omission model guard, with honest construction and both mismatch directions checked in the named current function. Historical mutant attribution: `M26`.\n\nAnchor: `test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction`",
+      "note": "The limitation/omission model guard, with honest construction and both mismatch directions checked in the named current function. Historical mutant attribution: `M26`.\n\nAnchor: `test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction`\n\nThe limitation-validator assertion is at line604 in the current source; this is source navigation, not a fresh mutation run.",
       "targets": [
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
-            "content": "sha256:611f5be20d8ac034b28c6e947862c06ace22d98d3895e0c932548f329947985b",
+            "content": "sha256:2223facc7dd0ffd6af3d191c3e678031fc966d3e3b849df20e17c9f098d60d08",
             "locator": {
-              "end": 573,
+              "end": 610,
               "kind": "line_range",
-              "start": 501
+              "start": 529
             }
           },
           "kind": "test"
@@ -99,16 +99,16 @@
       ]
     },
     "12": {
-      "note": "Complete/truncated page agreement and the model-owned contradiction refusal in the named current function. Historical mutant attribution: `M25`.\n\nAnchor: `test_a_truncated_comparison_cannot_be_presented_as_a_complete_one`",
+      "note": "Complete/truncated page agreement and the model-owned contradiction refusal in the named current function. Historical mutant attribution: `M25`.\n\nAnchor: `test_a_truncated_comparison_cannot_be_presented_as_a_complete_one`\n\nThe incomplete-comparison assertion is at line672 in the current source; this is source navigation, not a fresh mutation run.",
       "targets": [
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
-            "content": "sha256:ff5a180781daa6da3f31375bea7079f5a33eb6b21e4a2290ebd7b63e45dea1a9",
+            "content": "sha256:c839a085e5772d4abebadb13ba05a87455a6084176db9d9860fefcbd480658e3",
             "locator": {
-              "end": 637,
+              "end": 674,
               "kind": "line_range",
-              "start": 576
+              "start": 613
             }
           },
           "kind": "test"
@@ -203,10 +203,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
-            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
+            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
             "locator": {
-              "end": 4995,
+              "end": 5044,
               "kind": "line_range",
               "start": 1
             },
@@ -221,10 +221,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e022fa7623ca34af8a9f5b089c921341cb65482a",
-            "content": "sha256:4083f96513e0294f25f8a61536f45dded0910b4f4a3b995254095c5718da9fe3",
+            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
             "locator": {
-              "end": 4995,
+              "end": 5044,
               "kind": "line_range",
               "start": 1
             },

@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "c674bd7dceb3ce16fe7a6f5489f558bfb20e0180",
+    "content": "sha256:228a870087b3f0101fb8219154b6a52d7184e75d91279bcfe2416fefaf4b8ab1",
+    "locator": {
+      "kind": "symbol",
+      "name": "_differs_only_by_the_product_version"
+    },
+    "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
+  },
+  "id": "WKN-E1Z3YT",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "W8-final-writer-input.json"
+    },
+    "handoffEntry": "L3-W7-identical-version-text",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261112_bug-fixes-and-issue-tracking/03_faults-met-while-closing-the-last-master.json"
+  },
+  "state": "open",
+  "statement": "Text-only comparison cannot distinguish a dependency whose complete old and new version tokens equal the product's from an own-product version substitution."
+}

@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
+        "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
+        "content": "sha256:bef09a50f5d689619bfcb1433fbb0490a63819d5430784ba6958fb47c62b3b1e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_discover_covered_files"
+        }
+      },
+      "id": "RLZ-3G5AGR",
+      "invariant": "INV-NRNXP8",
+      "origin": {
+        "handoffEntry": "CUR-W8-postpublication-INV-NRNXP8-_discover_covered_files",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "Discovers Markdown and JSON halves together, making JSON-only cards visible to index construction. Existing sidecar-status and suffix-mapping anchors do not cover this discovery step. Deduplicates one source discovered through its two physical halves and creates its route bucket when needed. This is cooperating index behavior for the one card-half invariant, not a new invariant.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
         "content": "sha256:1b3a12f9929c2f14e349bb8b78dc13bf55f0a3568f619f3bd7fd089695b45067",
         "locator": {
           "kind": "symbol",
@@ -22,7 +40,61 @@
     },
     {
       "anchor": {
-        "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
+        "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
+        "content": "sha256:bb8647138184081f0e1c66fc85176064e7780295e754f1666cf951c21e27cf4d",
+        "locator": {
+          "kind": "symbol",
+          "name": "sidecar_status"
+        }
+      },
+      "id": "RLZ-FR4543",
+      "invariant": "INV-NRNXP8",
+      "origin": {
+        "handoffEntry": "L3-W5-12",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "Reports whether the source is present, absent or out of scope in the route index. This is authored-card coverage, not entry currentness; _record_fields computes record states and aggregate cardState separately.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
+        "content": "sha256:030090c344f9018b39ab11e3e99d7abb8ab35fc0231320762bbca56fd35fa6e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_is_file_sidecar"
+        }
+      },
+      "id": "RLZ-YH2G8P",
+      "invariant": "INV-NRNXP8",
+      "origin": {
+        "handoffEntry": "CUR-W8-postpublication-INV-NRNXP8-_is_file_sidecar",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "Recognizes authored JSON card halves while preserving metadata exclusions, allowing the route builder to index them. This executable acceptance branch is not covered by the existing suffix-mapping realization.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
+        "content": "sha256:0f90a8132e8247a5361f8632b64f02af55a40b4de06a8c9bbdfe330a76309a60",
+        "locator": {
+          "kind": "symbol",
+          "name": "_source_path_from_sidecar"
+        }
+      },
+      "id": "RLZ-ZJKSBR",
+      "invariant": "INV-NRNXP8",
+      "origin": {
+        "handoffEntry": "L3-W5-12",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The builder must map an entry half back to its source for the index to list it at all.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "42226a3c88e687bc861b886ac7680b5a82729e51",
         "content": "sha256:1b3a12f9929c2f14e349bb8b78dc13bf55f0a3568f619f3bd7fd089695b45067",
         "locator": {
           "kind": "symbol",

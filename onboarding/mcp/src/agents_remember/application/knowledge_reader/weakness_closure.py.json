@@ -1,0 +1,155 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/weakness_closure.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "818f37a7fb36756ed15389172001e0707e4c19f4",
+        "content": "sha256:6d49181c465e6255b7cce3d55bc05baa46abb215bf3d4f8900a185bc14f04b2e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_closing_memory_commit"
+        }
+      },
+      "id": "RLZ-3YXFXM",
+      "invariant": "INV-ZK0X8M",
+      "origin": {
+        "handoffEntry": "L3-W9-closing-pair",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The path-filtered history identifies the selected closure episode and refuses to invent an origin for incomplete or ambiguous ancestry.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "818f37a7fb36756ed15389172001e0707e4c19f4",
+        "content": "sha256:fe9f3df2fe2fa87df676b069240642f23f751f82702fa97cfeced1ca77cef60e",
+        "locator": {
+          "kind": "symbol",
+          "name": "closure_document"
+        }
+      },
+      "id": "RLZ-BTJZX6",
+      "invariant": "INV-MHQBEE",
+      "origin": {
+        "handoffEntry": "L3-W9-unchanged-closeout-tree",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "Attribution lives in the returned copy, so the judged and published record bytes need no backfill.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "818f37a7fb36756ed15389172001e0707e4c19f4",
+        "content": "sha256:fe9f3df2fe2fa87df676b069240642f23f751f82702fa97cfeced1ca77cef60e",
+        "locator": {
+          "kind": "symbol",
+          "name": "closure_document"
+        }
+      },
+      "id": "RLZ-PF9EKE",
+      "invariant": "INV-ZK0X8M",
+      "origin": {
+        "handoffEntry": "L3-W9-closing-pair",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The read projection preserves explicit commits and derives or explains deferred attribution without editing the authored record.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A copied closure keeps its explicit commit or displays derived attribution and a reason when unavailable. [1]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818f37a7fb36756ed15389172001e0707e4c19f4",
+            "content": "sha256:fe9f3df2fe2fa87df676b069240642f23f751f82702fa97cfeced1ca77cef60e",
+            "locator": {
+              "kind": "symbol",
+              "name": "closure_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The exact closed block is attributed through the selected memory history, with pending and ancestry checks. [2]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818f37a7fb36756ed15389172001e0707e4c19f4",
+            "content": "sha256:6d49181c465e6255b7cce3d55bc05baa46abb215bf3d4f8900a185bc14f04b2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closing_memory_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A local merge-preserving walk identifies matching closure origins. [3]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818f37a7fb36756ed15389172001e0707e4c19f4",
+            "content": "sha256:10558f4a192d24b2ef67c719786757517ff700479d8ad764f2cb9c7c712ee712",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closure_origins"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Historical filenames are read by stable record ID at an exact revision. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818f37a7fb36756ed15389172001e0707e4c19f4",
+            "content": "sha256:e826a560738a6677ec703e1c51a4f8b6e92a4a5251142bbbcfaa6fd747517acc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closure_at"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Both weakness-list and truth-view callers consume the shared returned display. [5]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+            "content": "sha256:11dfb5b83ffca0d6a81454454e2b5fb17581d75518ba70bf0b1d5dc83ba92e41",
+            "locator": {
+              "kind": "symbol",
+              "name": "weakness_list"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+            "content": "sha256:a46b62e7daf4ec88266192e5c464b83d13d505f37a7d3dbab7579dcb0ba11215",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_view"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
