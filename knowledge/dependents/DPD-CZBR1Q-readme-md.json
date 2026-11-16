@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "84bdb6b94b3897df9233e3b3209ff6382c012a2d",
-    "commit": "724ad9fb8188dfe6f6f9f9c972c160c0b6e80d90",
-    "role": "worker",
-    "statement": "The README is written new; its statements about the package, the settings file, the setup call, the host and the dashboard's address are those of the file it replaces, whose linked files did not change, and its three pictures show the task page, the intent review and the Knowledge page as the dashboard of this tree draws them.",
-    "task": "261112-BUG-L6",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "role": "curator",
+    "statement": "The page holds: the packaging change raises the build requirement, the licence field's new form and a table of project links, and the dashboard change adds a route that answers a file's bytes; no sentence of this page names either. Its own sentence that the knowledge gate has no waiver holds as it stands, because a master's recorded landing keeps a stale entry as the master's debt and the gate itself still refuses.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "README.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+      "blob": "54b818118629a276761c14d24046428232306f6e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -79,6 +79,16 @@
       "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
       "kind": "file",
       "path": "dashboard/src/panels/knowledge-reader/PathViews.tsx"
+    },
+    {
+      "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+    },
+    {
+      "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     }
   ]
 }

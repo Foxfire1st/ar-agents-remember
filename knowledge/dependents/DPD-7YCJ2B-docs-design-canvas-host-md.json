@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "c82e91894677bcfd06042e23a6016cf1f5317c11",
-    "commit": "ed91a4c8436a72d1fe895f0ee464340889e6aff3",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The design page now says the product owns the module and its Chromium, that the load fetches both at the first explanation into the product's folder, and that a user's AR_PLAYWRIGHT or an instrumented load is left alone; its other statements about the host, the load and the panel stand.",
-    "task": "261112-BUG-L1",
+    "statement": "The page holds: the serving change registers one route that answers a knowledge file's bytes beside the reader route, and the canvas surfaces, their paths and their limits are told unchanged.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/design/canvas-host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/canvas/explainer_server.py"
     },
     {
-      "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+      "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/app.py"
     },

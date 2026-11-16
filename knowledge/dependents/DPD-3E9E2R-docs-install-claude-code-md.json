@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The Claude Code install steps and settings still hold; the binding shape the change widened does not appear in them, and the page claims no sprint requirement.",
-    "task": "261112-RSM-L1",
+    "statement": "The page holds: the landing answer's key set widened, and the page's steps and settings name no answer key.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/install/claude-code.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon_config.py"
     },
     {
-      "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+      "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },

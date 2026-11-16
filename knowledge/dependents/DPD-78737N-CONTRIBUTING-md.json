@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "84bdb6b94b3897df9233e3b3209ff6382c012a2d",
-    "commit": "724ad9fb8188dfe6f6f9f9c972c160c0b6e80d90",
-    "role": "worker",
-    "statement": "Two rows changed and hold on this tree: the folder table names docs/assets/, and the table of the check's findings states the rule unreached as scripts/check-public-docs.py now has it; no other statement was read again in this task.",
-    "task": "261112-BUG-L6",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "role": "curator",
+    "statement": "The two links that moved changed nothing here, and the paragraph on the landing check ended with a sentence the landing side contradicts, so it states that a side whose commit the line already stands on publishes no commit and is not checked; the rest of the page was not read again.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+      "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -121,7 +121,7 @@
       "path": "scripts/test-under-load.sh"
     },
     {
-      "blob": "e640511ffad3eb7e67c1de5b38581748a9214a53",
+      "blob": "2116aec8d8fe95cd1f5e5dd3b63cb7d392febb48",
       "kind": "file",
       "path": "dashboard/package.json"
     },
@@ -169,6 +169,11 @@
       "blob": "eb407f537fc9b17727f49c3119b15d231f4ebfbc",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/host-session-environment.json"
+    },
+    {
+      "blob": "2d46e4349e78760575ad3176a73a7606cd7d95f6",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
     }
   ]
 }

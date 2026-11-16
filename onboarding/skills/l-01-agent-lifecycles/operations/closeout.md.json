@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
-        "content": "sha256:c2f5de0efb06134f6edc9ba655863667b983906e7024a9231cdf99fba3c464e5",
+        "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
+        "content": "sha256:f9142dc78a06d5161689df432b2853591820987c143d246b08ea71baa2b6dc20",
         "locator": {
           "kind": "file"
         }
@@ -15,12 +15,12 @@
         "handoffEntry": "MIK-R101@v1 rule 4",
         "leaf": "260928-MIK-L101"
       },
-      "rationale": "operations/closeout.md keeps the kept closeout points in meaning, rewritten to the writing guideline: authorized owner and the developer's explicit commit approval for a flat run (5-9), bound inputs and visible failures (11-19), the gates at each publication step (21-29), repair through the gate owner (31-35), and no claim before the owner's result is read back (37-39). The paragraphs are no longer byte-identical to the earlier wording.",
+      "rationale": "The operation retains authorized closeout ownership and the bounded flat-run Architect exception, binds exact paired inputs, preserves required review and curation with visible failures, judges publication candidates including changed-path entry currentness, routes refusal repair through its owner, and requires result readback before completion claims.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+        "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
         "content": "sha256:608f59fac9c8c5caa15572ad67a8487bb3940fcac553f7f901ebeff55fbd193f",
         "locator": {
           "end": 7,
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+        "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
         "content": "sha256:73b7f36fd43f9e106eb89e649e52a254cbbcc612580ea64653c3d2628f14479d",
         "locator": {
-          "end": 39,
+          "end": 40,
           "kind": "line_range",
-          "start": 39
+          "start": 40
         }
       },
       "id": "RLZ-ZHVQ2K",
@@ -63,12 +63,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
-            "content": "sha256:c2f5de0efb06134f6edc9ba655863667b983906e7024a9231cdf99fba3c464e5",
+            "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
+            "content": "sha256:f9142dc78a06d5161689df432b2853591820987c143d246b08ea71baa2b6dc20",
             "locator": {
-              "end": 43,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"

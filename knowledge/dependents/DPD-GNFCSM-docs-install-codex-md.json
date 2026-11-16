@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The Codex install steps and settings still hold; the binding shape the change widened does not appear in them.",
-    "task": "261112-RSM-L1",
+    "statement": "The changed approval and timeout entries state the host configuration, recorded timeout and sandbox measurements cited by the Worker; the install steps, registration and role-setting instructions are unchanged, and this pass ran no new harness probe.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/install/codex.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {

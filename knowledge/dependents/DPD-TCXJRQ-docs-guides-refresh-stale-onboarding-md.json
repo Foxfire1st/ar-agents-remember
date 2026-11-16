@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 1 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "role": "curator",
+    "statement": "The page holds: the answer change only fixes the order in which a cut answer carries its fields, and the page's refresh route states no field order.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/guides/refresh-stale-onboarding.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/application/memory_tools.py"
     },
     {
-      "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+      "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_response.py"
     }

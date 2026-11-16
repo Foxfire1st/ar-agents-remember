@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "c82e91894677bcfd06042e23a6016cf1f5317c11",
-    "commit": "ed91a4c8436a72d1fe895f0ee464340889e6aff3",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The guide now carries both lands: its planned-view paragraph, where a task that has not started shows its planned reference files under the top line \"planned · no changes\", landed by 261112-BUG-L2, and the browser section of 261112-BUG-L1 — the product's own fetch into <data>/agents-remember/explainer-browser at the first explanation, the one-line notice on the Explanation tab, the two shapes of a failed fetch, agents-remember explainer-browser --fetch, a user's AR_PLAYWRIGHT used as given, and the checkout's Playwright 1.65.0 with the Ubuntu 26.04 result and macOS named as not measured.",
-    "task": "261112-BUG-L1",
+    "statement": "The sole changed paragraph is covered: a changed picture or video shows before and after side by side, and an added or removed one names its missing side; a changed Markdown file defaults to a line diff and its rendered toggle draws the after content. The surrounding return/focus and unavailable-change-set sentences remain in that paragraph. No other passage changes in this base-to-tree diff; the rest of the page was not reverified.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -186,7 +186,7 @@
       "path": "dashboard/src/explainer/columnState.ts"
     },
     {
-      "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+      "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
       "kind": "file",
       "path": "dashboard/src/cockpit/Cockpit.tsx"
     },
@@ -211,7 +211,7 @@
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
     {
-      "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+      "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },
@@ -269,6 +269,16 @@
       "blob": "f0866515684aa632f534294be7451aa0a58b5589",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+    },
+    {
+      "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+      "kind": "file",
+      "path": "dashboard/src/panels/changeset/ChangeSetPane.tsx"
+    },
+    {
+      "blob": "5be275cdd2395153066434e87495d4996544b70a",
+      "kind": "file",
+      "path": "dashboard/src/grammar/Media.tsx"
     }
   ]
 }

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The roles page states that a master no sprint commands is a master in its own right, names no sprint, and refuses a supplied one; it holds at the candidate.",
-    "task": "261112-RSM-L1",
+    "statement": "The page holds: the coordination text now reads a closeout's generation from `runningOperation` while the operation is queued or running and otherwise from `lifecycleOperations`, and the roles page names no generation, no status field and no refusal.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+      "blob": "c5586be802e8e401bd72b2e4e6a0f362426687d4",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_retire.py"
     },
@@ -76,7 +76,7 @@
       "path": "mcp/src/agents_remember/cli/role_handover_file.py"
     },
     {
-      "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+      "blob": "80020ef4b054224e20381c0518b5bbab0e8894c0",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
     },
@@ -126,7 +126,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
     },
     {
-      "blob": "926e006da6810baf314464553204030191db3ad7",
+      "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
@@ -156,7 +156,7 @@
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+      "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
     },

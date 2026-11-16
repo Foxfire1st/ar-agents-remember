@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The certification-profile reference describes its schema fields and versioned selectors, not the package release number; no statement became untrue at 3.0.1.",
-    "task": "261112-RSM-L1",
+    "statement": "The page holds: the packaging change sets a build requirement, a licence field and a table of project links, and the profile's schema fields and selectors are unchanged.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/reference/repository-certification-profile.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -128,7 +128,7 @@
       "path": ".dagger/src/agents_remember_quality/profile_execution.py"
     },
     {
-      "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }

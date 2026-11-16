@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "cb321e2ad3b69d960c4ca1ddf9442663278f429c",
-    "commit": "a874131c25b919356a3bd507713ead449b8491cd",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The unchanged feature page's trailer-derived code and memory pairing, exact branch movement and bounded tool answers remain supported after the final trailer-block parser repair.",
-    "task": "261112-BUG-L3",
+    "statement": "The File Viewer bullet now says the viewer shows a picture and a video and switches a Markdown file between the rendered document and its source, and no other line changed.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -241,6 +241,21 @@
       "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+    },
+    {
+      "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+      "kind": "file",
+      "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+    },
+    {
+      "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+      "kind": "file",
+      "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+    },
+    {
+      "blob": "5be275cdd2395153066434e87495d4996544b70a",
+      "kind": "file",
+      "path": "dashboard/src/grammar/Media.tsx"
     }
   ]
 }

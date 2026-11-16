@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
-        "content": "sha256:a6f37ebae00993fee337bb78b66cbb1c7f0c50b5d9442a9fc103e05c592b0fa3",
+        "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+        "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
         "locator": {
           "kind": "file"
         }
@@ -20,12 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
-        "content": "sha256:23beaae89775b40e9aad457c8561cce841137dfff33f837339a979e0e6ab64eb",
+        "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+        "content": "sha256:bea2a1aca75ce1229788d34d37796ae960d600670a642500cf1694f67c187f5f",
         "locator": {
-          "end": 5028,
+          "end": 6159,
           "kind": "line_range",
-          "start": 4676
+          "start": 6154
         }
       },
       "id": "RLZ-DFYHWJ",
@@ -34,13 +34,13 @@
         "handoffEntry": "L84-P5-25",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "measuredCurrentRenewalL60PartDD750 is the only sub-record with current:true and its digest words (2,327) equal the final every-role digest; the decision-level currentDigestMapSha256 6d93e314 equals the current digest-map.json. measuredCurrentRenewal88048054R8 is now historical (historicalTree 9a933de3).",
+      "rationale": "The measuredCurrentRenewalBug07 header identifies the active current renewal and records its predecessor record, fingerprint and base-tree basis. The prior renewal is retained as history rather than another current claim.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
-        "content": "sha256:aa9e2252078c7f858168e56239c002afbcfc5f07929a5948ec63321fb6e9cd53",
+        "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+        "content": "sha256:0e3c7fff4b429f1a2de4beee5f70488cb097ed84fcbbf73c138efa1ff27818a2",
         "locator": {
           "end": 15,
           "kind": "line_range",
@@ -53,12 +53,12 @@
         "handoffEntry": "L84-P5-25",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "The decision-level currentDigestMapSha256 6d93e314 equals the current digest-map.json.",
+      "rationale": "The decision-level currentDigestMapSha256 equals the SHA-256 of the current digest-map.json.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+        "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
         "content": "sha256:16e33f8515db8e2fe4fb605e540d2659e1109c4593e16b00a7cdc679cc19db3d",
         "locator": {
           "end": 5101,
@@ -77,12 +77,10 @@
     },
     {
       "anchor": {
-        "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
-        "content": "sha256:a6fb08fda1acb957b6116bd37811a1fe41a01611c0631edbf786d6889a27a55c",
+        "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+        "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
         "locator": {
-          "end": 1,
-          "kind": "line_range",
-          "start": 1
+          "kind": "file"
         }
       },
       "id": "RLZ-RHRQZQ",
@@ -91,7 +89,7 @@
         "handoffEntry": "RSM-R01-A9",
         "leaf": "261112-RSM-L1"
       },
-      "rationale": "The eight capsule sizes and five source identities the shortened role texts moved; no ceiling entry moved.",
+      "rationale": "The current record carries the renewal's measurements, source identities and separately recorded limits. BUG-R07 includes admitted limit changes, so this renewal is outside the invariant's measurement-and-identity-only condition; this entry does not assert that no limit changed.",
       "role": "primary-authority"
     }
   ],
@@ -101,8 +99,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
-            "content": "sha256:a6f37ebae00993fee337bb78b66cbb1c7f0c50b5d9442a9fc103e05c592b0fa3",
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
             "locator": {
               "kind": "file"
             }
@@ -116,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
-            "content": "sha256:a6f37ebae00993fee337bb78b66cbb1c7f0c50b5d9442a9fc103e05c592b0fa3",
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
             "locator": {
               "kind": "file"
             }
@@ -131,8 +129,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
-            "content": "sha256:a6f37ebae00993fee337bb78b66cbb1c7f0c50b5d9442a9fc103e05c592b0fa3",
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
             "locator": {
               "kind": "file"
             }
@@ -142,16 +140,16 @@
       ]
     },
     "4": {
-      "note": "Role, step and digest ceilings.\n\nAnchor: `current_capsule_ceilings_words`",
+      "note": "Role, step and digest ceilings.",
       "targets": [
         {
           "anchor": {
-            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
             "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
             "locator": {
-              "end": 6371,
+              "end": 6560,
               "kind": "line_range",
-              "start": 6362
+              "start": 6551
             }
           },
           "kind": "code"
@@ -163,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
+            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
             "content": "sha256:c5db175a68c58fd0264dc35bea94d6a1bcf9ee7d37c4ad78247a36d6f565009a",
             "locator": {
               "kind": "symbol",
@@ -180,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
+            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
             "content": "sha256:f8c97087b082cc61ff1dbc6f179a6ea20db12d8ff9422c20b48bb78de0686c1e",
             "locator": {
               "end": 135,

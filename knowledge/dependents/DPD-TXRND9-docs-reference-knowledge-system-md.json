@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 66 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "role": "curator",
+    "statement": "The closure without a commit, the version-only link rule and the landing gate's judgement per route are now told on the page, and the rest of the page was not read again.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/reference/knowledge-system.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+      "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },
@@ -112,7 +112,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
     },
     {
-      "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+      "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py"
     },
@@ -245,6 +245,26 @@
       "blob": "de70b768c3bed726da2c150d484c96d50649b388",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/reference/knowledge/serving-build.md"
+    },
+    {
+      "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_writer/weakness_authoring.py"
+    },
+    {
+      "blob": "818f37a7fb36756ed15389172001e0707e4c19f4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_reader/weakness_closure.py"
+    },
+    {
+      "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
+    },
+    {
+      "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     }
   ]
 }

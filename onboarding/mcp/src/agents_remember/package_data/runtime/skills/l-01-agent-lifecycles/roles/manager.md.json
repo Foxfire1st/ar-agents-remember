@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "926e006da6810baf314464553204030191db3ad7",
-        "content": "sha256:6f6b42d2d6623436255e515ef153053e58a2b93e7cb586f7d23c8586629209e9",
+        "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+        "content": "sha256:6d36410ee6f3108a0b01f4f66864dea6dc420e7538a25f9d2f757c250ec4c491",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "926e006da6810baf314464553204030191db3ad7",
+        "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
         "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
         "locator": {
           "end": 60,
@@ -40,12 +40,12 @@
   ],
   "references": {
     "1": {
-      "note": "The Manager assigns a check or investigation that belongs to no leaf to an Investigator on its own sprint and master, never a leaf, and sends the scoped concern as its first role_message to the returned agent identifier.\n\nAnchor: `role_message`",
+      "note": "The Manager assigns a check or investigation that belongs to no leaf to an Investigator on its own master, naming its sprint when one commands it, never a leaf, and sends the scoped concern as its first role_message to the returned agent identifier.",
       "targets": [
         {
           "anchor": {
-            "blob": "926e006da6810baf314464553204030191db3ad7",
-            "content": "sha256:6f6b42d2d6623436255e515ef153053e58a2b93e7cb586f7d23c8586629209e9",
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:6d36410ee6f3108a0b01f4f66864dea6dc420e7538a25f9d2f757c250ec4c491",
             "locator": {
               "kind": "file"
             }
@@ -54,17 +54,123 @@
         }
       ]
     },
-    "2": {
-      "note": "The packaged Manager coordinates one selected master and does not own the portfolio; when another agent starts it, it reports to that agent's role with its task references.",
+    "10": {
+      "note": "Selected-master scope, bound leaf loop, evidence inspection and AR publication ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:03b041d91886a8b89401fe7ae293a732be2e2edb458133e2aed68c4c90c8d613",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:d0b821bea307e3d4f014b58185412fad3dc935d0e8d89b85ed9b6b37af4515c1",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:937a8514506196ed341caeb9e259da49107d02ff0b2ea16742cfed2853c83c8e",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:d0f284c8ad851a477d3647591ed38b9b15e7fe37fe3139dbda08baf43a2178af",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The packaged Manager is the master-scoped owner of the leaf closeout chain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:68477b3e51a3ea1d99187768d3652db779138f1a4dc87909db818bac2811106b",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:d0b821bea307e3d4f014b58185412fad3dc935d0e8d89b85ed9b6b37af4515c1",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:937a8514506196ed341caeb9e259da49107d02ff0b2ea16742cfed2853c83c8e",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The packaged Manager coordinates one selected master and does not own the portfolio; it reports through its launch parent's role and task references, with developer-needed questions routed to an Architect-instructed reporting recipient when that exception is recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
             "content": "sha256:e813a8cb5ba071e8323562245c7d58e50823b0bf8c24a68b225f1b0cbd1afac7",
             "locator": {
               "end": 10,
               "kind": "line_range",
               "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:4cdb779c4e271484fd685854e246ba5a3fb6ffd4b22ad7ab1f8349d1e00d5586",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 107
             }
           },
           "kind": "code"
@@ -76,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
             "content": "sha256:b77c58711527228737f64010e66afeec55a3a0b65ffd34524ca0a9dacc5aee49",
             "locator": {
               "end": 16,
@@ -89,14 +195,14 @@
       ]
     },
     "4": {
-      "note": "The Manager calls role_start once per stage: Worker first at build, Reviewer at the freeze, and Curator when curation begins after code review passes.\n\nAnchor: `role_start`",
+      "note": "For ordinary delivery, the Manager calls role_start once per stage: Worker first at build, Reviewer at the freeze, and Curator after code review passes; prerequisite-sync reconciliation follows its separately admitted Curator start.",
       "targets": [
         {
           "anchor": {
-            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
-            "content": "sha256:457a0873b95525c26702398458f3d36d47d9670c5619775b7c319669cfd07cff",
+            "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+            "content": "sha256:019afe8004125db2bfa940719d3c7184bced393682fe069b88120b8f68944f8e",
             "locator": {
-              "end": 38,
+              "end": 43,
               "kind": "line_range",
               "start": 36
             },
@@ -107,34 +213,75 @@
       ]
     },
     "5": {
-      "note": "The canonical source owns this doctrine.\n\nAnchor: `l-01-agent-lifecycles-role-manager`",
+      "note": "The canonical source owns this doctrine.",
       "targets": [
         {
           "anchor": {
-            "blob": "926e006da6810baf314464553204030191db3ad7",
-            "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:dd37f462f6e77175b235bee7e4d7c08af74292a0dbfb5bfa69c880467b1dca4a",
             "locator": {
-              "end": 4,
+              "end": 32,
               "kind": "line_range",
-              "start": 1
-            }
+              "start": 17
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:e7214f24927dae140638d0df31d722cc315093b9d1f2cd1e3c5f2697de2822a2",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "generated-copies.json"
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "MCP package data is copied from canonical skills and checked for drift.\n\nAnchor: `l-01-agent-lifecycles-role-manager`",
+      "note": "MCP package data is copied from canonical skills and checked for drift.",
       "targets": [
         {
           "anchor": {
-            "blob": "926e006da6810baf314464553204030191db3ad7",
-            "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:1d69addf0ade8afa288d128f743969b4a8bbef68db420dfbf29659cf3712d287",
             "locator": {
-              "end": 4,
+              "end": 141,
               "kind": "line_range",
-              "start": 1
-            }
+              "start": 119
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:29abbbe163b094aa977b1665afad29e3b305fdd3515f66ddc25341e9e5007ccb",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:e7214f24927dae140638d0df31d722cc315093b9d1f2cd1e3c5f2697de2822a2",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "generated-copies.json"
           },
           "kind": "code"
         }
@@ -145,8 +292,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "926e006da6810baf314464553204030191db3ad7",
-            "content": "sha256:6f6b42d2d6623436255e515ef153053e58a2b93e7cb586f7d23c8586629209e9",
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:6d36410ee6f3108a0b01f4f66864dea6dc420e7538a25f9d2f757c250ec4c491",
             "locator": {
               "kind": "file"
             }
@@ -160,7 +307,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
             "content": "sha256:455f8bcbbd3f9120fc0f9a9d7035d3d25db1cb294c73f84eed41346a9d1f0a72",
             "locator": {
               "end": 125,
@@ -177,7 +324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
             "content": "sha256:d0b821bea307e3d4f014b58185412fad3dc935d0e8d89b85ed9b6b37af4515c1",
             "locator": {
               "end": 52,

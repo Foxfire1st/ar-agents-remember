@@ -1,0 +1,1483 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L7",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-076A2P",
+      "items": [
+        "sha256:8d46815bee5e15870d5f629ccafdc1781e8e61bb1ddca489f37e953782d76f5a",
+        "sha256:e8e0c1077239fddd8db2022a3e492e49517aafb7fa1885bea8c7d00e642bc8fc"
+      ],
+      "reason": "Reconfirm docs/install/hermes.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page gained one entry for the browser helper that a killed or crashed process leaves behind, with no setting that reaches it, and the packaging change and the landing answer's keys leave its install steps, registration and settings true. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-09TC5A",
+      "items": [
+        "sha256:a81cef86bf0ae70fbd9cdedaf326558552a437e43d934519b6aea753a07591f9"
+      ],
+      "reason": "Reconfirm docs/reference/path-rules.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the reading change answers a card from its entry half when the Markdown half is absent, and the page's rules for which source files are eligible for a card are unchanged by that; the page holds card-eligibility rules and no reading or writing rule, so none is claimed. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 2,
+      "subject": "DPD-T3PEFV"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
+            "content": "sha256:5d6d61a1a65ca86917854a6b8387fb370367e6648501eb5b2501f9913d774b88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RECORD_FINGERPRINT"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "before": {
+            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
+            "content": "sha256:9756adc1df8cbbc34fc8bd23b89ef490a9e42d171534ae4538b5f4824fed8e1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RECORD_FINGERPRINT"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "id": "RLZ-NZH4BP"
+        },
+        {
+          "after": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "content": "sha256:a6fb08fda1acb957b6116bd37811a1fe41a01611c0631edbf786d6889a27a55c",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0TSF81",
+      "items": [
+        "sha256:09d04dcf5752bfd4215357039ec61b59764c5e88979ca9cb89277f1eb865da25"
+      ],
+      "reason": "The helper’s record fingerprint is renewed. The invariant is conditional on a change of measurements/identities without limits or decisions; this leaf has admitted limit changes and is not classified as such a change. Preserve that conditional meaning and replace the historical eight-capsule/five-source rationale with the current renewal’s separate measurements and limits.",
+      "revision": 1,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0Z8834",
+      "items": [
+        "sha256:d67e027d1b5ec2cb9cc49280309bb00f99ad70ad96408e5ab6e07a3b3d20792f"
+      ],
+      "reason": "The fixtures retain their source/compiled-stage pin-table and current-record guard roles. The route overview continues to describe the same testing support responsibility.",
+      "sources": [
+        {
+          "blob": "8436d019e640029ba082d06a115d95ee2fc756b3",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+        },
+        {
+          "blob": "4cd45b2a1b62096fe252fde5917e545da957cbe4",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py"
+        },
+        {
+          "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+            "content": "sha256:0c07decd0dffc1f6b1ed47687bcb5d7671e037b245bc61ee8fe4d6f8dd6036cc",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+          },
+          "before": "absent",
+          "id": "RLZ-YK10GS"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-1GC6WV",
+      "items": [],
+      "reason": "Adds only the instructional presentation: The public reader reference explains that an absent Markdown half leaves the entry half readable, names that half and reports cardStatus=sidecar-only; this describes visibility without claiming its records are current. The existing invariant statement, applicability, conditions, exclusions, status and implementation remain unchanged; existing runtime proof is not a fresh execution. Evidence (L7-CUR-PRESENTATION-02): Curator exact source comparison against passed freeze8 tree6dc2cbf02353b3ae40cd5d3d67500b708e8aca40; existing invariant/current implementation read.",
+      "revision": 1,
+      "subject": "INV-NRNXP8"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-1K5Z48",
+      "items": [
+        "sha256:da21ec62da39f6838e24e2641b348002ed1583e4c7d23793e437a8d16dfd0451"
+      ],
+      "reason": "The fired reconsideration anchor is renewed to the existing mapped Manager paragraph. The second consequence corrects the current developer-needed category count from four to five, matching roles/manager.md:101-105. The chosen and rejected alternatives, reconsideration trigger, governing authority, active status and other consequences remain unchanged.",
+      "revision": 11,
+      "subject": "DEC-JCDMW3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-25BW5R",
+      "items": [
+        "sha256:80e98d6239cf63274beaa36f1cb196fe22d4f65712c20ed88e0542ae5fd6777d",
+        "sha256:b7d8c141561765e15b3ac8a856f5352f388c3ed0bec40d8d2f85af3853ec9775",
+        "sha256:bda37a724788e0772dd82146b36eec6386abb6027cde0b4f4f33a188be6c3696",
+        "sha256:e4ba18214372ad0be6e13e04c326d4f3bd0512cb6a37343152ca530cf4f31ce2",
+        "sha256:fd69b20e4870de12d6a73459e31a703dd5b41f1b63b6f125aad3d7180e17fe58"
+      ],
+      "reason": "Renewed the coordination and authorized-closeout pins in D656_OPERATION_SHA256 and their six per-role entries in D656_STAGE_SHA256 for the instruction changes. The same source change raises the expected master-state detail-link count from one to two in all six Manager capsules and corrects the accompanying comment from two sections to three. Refreshed the card’s evidence anchors to the reviewed source; compilation and assertions remain with consumer tests.",
+      "sources": [
+        {
+          "blob": "8436d019e640029ba082d06a115d95ee2fc756b3",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-2HAPWN",
+      "items": [
+        "sha256:590d2f46aec026aa50c49196d13b33b836b713abac0e37c20381a43637dd19cb",
+        "sha256:af77d08b33ff9b64b2353dc779f1577d468e6dc0d74bf920bfca80cb7b18e6fd"
+      ],
+      "reason": "Reconfirm docs/workflows.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The sentence that the knowledge gate has no waiver now says beside it that a master's recorded landing whose chain proof passes and whose only findings are stale entries keeps them as the master's debt and lands; the rest of the page was not read again. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-XAARS1"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-2VDFKV",
+      "items": [
+        "sha256:f45c626e6d73c91270c213ebb85a05f938026649e5fc3075c94c2b1d09f2805a"
+      ],
+      "reason": "Reconfirm docs/getting-started.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the packaging metadata, the dashboard's media route, the two framework keys a cut answer adds (`runningOperation` and `cut`), a raised Playwright pin and a new dashboard package leave its install steps and its first-task steps true. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-2W5X51",
+      "items": [
+        "sha256:af001caedcba39602965c89e379f22793c4b2a286c20f051414bccceeb56ad21"
+      ],
+      "reason": "The changed Manager sentence points to master abandonment/debt guidance; it does not show a Manager under one master repeatedly unable to keep work moving without an Orchestrator. Keep the rejected alternative and current Manager default; refresh the mapped existing anchor without changing its condition, options or authority. The separate four-to-five correction updates the current developer-needed category consequence and does not reopen this rejected alternative.",
+      "subject": "reconsider:DEC-JCDMW3#1"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-35EPBE",
+      "items": [
+        "sha256:5463a1ac57c7368588a2748dabea10cb5c903c5a9c3b1410c1cac7a68708f522"
+      ],
+      "reason": "Reconfirm docs/reference/execution-topology.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the archive change surveys every still-live commanded master before it refuses, names all blocked masters in one refusal, and retires the moving masters' enclosures; the topology digest states execution natures, not the archive's refusals. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-W34WCW"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3EYMJF",
+      "items": [
+        "sha256:868e9cfc4b47eca93ce117bddcefe7fe18f34816a4b45a0c6bb5c1cf47001239",
+        "sha256:91f0b6cfe30164f2a1189c43d57de8a4e16105365552b120aa06287282599cb0"
+      ],
+      "reason": "Repair L7-M1-F05c for docs/dashboard.md against passed code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55 on base edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6. All changed passages are covered: the tab table and File Viewer introduction include pictures and videos; Operations keeps its change set's file/filter and notes view across tab changes, returns to the task view when that view's task disappears, and a press on the already-open Operations tab returns to the task view. The notes paragraph covers media notes, notes without raw HTML, links to notes the reader can open and no navigation of the dashboard's own tab. File Viewer Markdown opens rendered with the Rendered/Source switch and cleaned repository HTML; the change-set page defaults to a line diff and offers its separate rendered toggle. The media paragraph names the supported picture/video types, player and type/size labels, the 16 MiB bound, the File Viewer/notes readers' too-large notice without requesting bytes, the change-set/Knowledge code readers' request and route refusal, and the non-media binary labels. The document-media paragraph covers repository paths, external https media without a referrer, unsupported image addresses shown as alternative text and notes without raw HTML. The final added paragraph covers same-repository file links opening the appropriate rendered/source/media view, linked headings and anchor-only scrolling, outside links in a new browser tab, missing-file links as explanatory text, and no link moving the dashboard's own tab. Its Back/Forward arrows traverse files opened by links or the tree, restore their scroll position and disable unavailable directions. The rest of the page was not reverified. This successor confirmation corrects the M1-sealed statement and this existing row's copied reason; it leaves the original Worker producer artifact and M1 finding unchanged. It claims no new test run, code change, acceptance or landing. The corrected confirmation retains the existing support and adds the directly inspected implementation files that this corrected claim uses, through the admitted writer.",
+      "revision": 3,
+      "subject": "DPD-23C91T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4CMZM6",
+      "items": [
+        "sha256:97b83cfc92cbdf24242295addc6f9cc611081528651925660c651d9eb7d16fe2",
+        "sha256:cf1f28dc4b5da61d79dc1b75da7a3eeac6a2d756c9727037f7e05d853b8c0958",
+        "sha256:d1282992a2b83660ab5eef6e7c50b598d4c8961b3f93c5fdfabc26562b940b9b",
+        "sha256:f228dc122b2a52c690bca718aa0c2e75fff4792900384cc3230e9c6327c4517c",
+        "sha256:ffe1d52cca517d6f6a6adb47268a2de80922de09b3d011ccbed05f61172c2028"
+      ],
+      "reason": "Renewed the coordination and authorized-closeout operation-source pins in V13_PRE_SHORT_OPERATION_SHA256 and V13_OPERATION_SHA256, and the six corresponding Architect, Orchestrator and Manager stage pins in each of V13_PRE_SHORT_STAGE_SHA256 and V13_STAGE_SHA256. Reworded the card to describe the four tables, reviewed pins and listed inverses without claiming that every later edit requires a new inverse-admission rule; refreshed its source citations.",
+      "sources": [
+        {
+          "blob": "4cd45b2a1b62096fe252fde5917e545da957cbe4",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-4DH2C7",
+      "items": [
+        "sha256:fd67401f18eb0c6e21904770beb580e8d1b5946df9a18a3487482d090e5c23b4"
+      ],
+      "reason": "Reconfirm docs/design/python-pytest-bootstrap.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the lane catalogue gained entries for new tests, and the page's admission, selection and commands are the ones the catalogue already had. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 4,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-4HHZ84",
+      "items": [
+        "sha256:4aab343c8fa9845a6c79a6adbed0649ea76c83ee6f1bb684878836a5e205d6bb"
+      ],
+      "reason": "Reconfirm docs/reference/repository-certification-profile.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the packaging change sets a build requirement, a licence field and a table of project links, and the profile's schema fields and selectors are unchanged. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-FR0VZP"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6FT16Q",
+      "items": [
+        "sha256:1a0d82e8d340a808c75e4cbcb0a0c82e2fec882b3c7c44bd10979ac0300f3258",
+        "sha256:6590634ab29eb43e3f3f7099aa5cc3f24f35dc44319063340c557f11d51eb52b"
+      ],
+      "reason": "Reconfirm docs/reference/knowledge-system.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The closure without a commit, the version-only link rule and the landing gate's judgement per route are now told on the page, and the rest of the page was not read again. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 2,
+      "subject": "DPD-TXRND9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6FVJES",
+      "items": [
+        "sha256:b20f472785da3996c69abd56b742b7ca2f0d26001b5bcc50f7280326380c841e"
+      ],
+      "reason": "Reconfirm docs/roles.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the coordination text now reads a closeout's generation from `runningOperation` while the operation is queued or running and otherwise from `lifecycleOperations`, and the roles page names no generation, no status field and no refusal. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6VHZ1Y",
+      "items": [
+        "sha256:4b69141a13aebe2d3f1d0bf6877e7e08cf98c7a763add6b55c3065a14aa9616d"
+      ],
+      "reason": "The card describes all three Manager pointers and the atomic-master terminal precondition, ancestry-based landedWork, recorded-master staleEntries debt and cleanup next step.",
+      "sources": [
+        {
+          "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+          "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7R54R5",
+      "items": [
+        "sha256:fda7e542c946f89259221553a577485172a1f9afe9f69eaea2d77bdd8235ca3e"
+      ],
+      "reason": "The package carriers mirror the canonical instruction sources; their changed details remain governed by the lifecycle route. The MCP overview keeps its existing installation/runtime scope and needs no prose change.",
+      "sources": [
+        {
+          "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "da127d3b0aa028f4b439d413346941d96ad37311",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/closeout.md"
+        },
+        {
+          "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md"
+        },
+        {
+          "blob": "e05b1792b24387c69e48a38027e35c300f73b7f6",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/curator/encountered-records.md"
+        },
+        {
+          "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+        },
+        {
+          "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+            "content": "sha256:00a860b2ed9aa9ec366671d0f41949e06447e8f25af84694dfe0fb10623d5df5",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "content": "sha256:00a860b2ed9aa9ec366671d0f41949e06447e8f25af84694dfe0fb10623d5df5",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-4Q6AFR"
+        },
+        {
+          "after": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:14e280c82ace0a6d20c36b52c8e3fcdabd35558848b2ac27b4adc10aec7cd1a4",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "content": "sha256:e390df674904af0436c39359f03797165e5514e702f324136997b27a16afce8e",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-7ZK6TT"
+        },
+        {
+          "after": {
+            "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+            "content": "sha256:3c0f358c8efd8166e36c5eef6d1f5d07ec4dbd2c276cdc80f8565d3b86240c28",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "content": "sha256:3c0f358c8efd8166e36c5eef6d1f5d07ec4dbd2c276cdc80f8565d3b86240c28",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-XF8A3Q"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8GPV6W",
+      "items": [
+        "sha256:4fdec9349a604ae2942dd6f58985d3ce01193a9a2892afe8c2ff0e8c609b0691"
+      ],
+      "reason": "The changed Manager pointer retains direct Worker/Reviewer/Curator handovers and the Manager’s named occasions, gate, transaction and landing ownership; no peer courier or new role authority is introduced.",
+      "revision": 1,
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+            "content": "sha256:16d05995c074e31a892ee77b7a892e2e7f1010cf965762324f4d4a505f17eb4d",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md"
+          },
+          "before": "absent",
+          "id": "RLZ-TQAGWQ"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-93E4G5",
+      "items": [],
+      "reason": "Adds only the instructional presentation: Names worktree_record_landing as the cleanup refusal’s next step for a master whose integration is incompletely recorded, without authorizing recording or cleanup. The existing invariant statement, applicability, conditions, exclusions, status and implementation remain unchanged; existing runtime proof is not a fresh execution. Evidence (L7-CUR-PRESENTATION-05): Curator exact source comparison against passed freeze8 tree6dc2cbf02353b3ae40cd5d3d67500b708e8aca40; existing invariant/current implementation read.",
+      "revision": 1,
+      "subject": "INV-S9NARW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9D3A5A",
+      "items": [],
+      "reason": "Repaired stale live-budget numbers in the card body and evidence notes: Architect 5441→5474, Manager 4522→4562, Reviewer 4049→4112, other roles 3722→3742, and the every-role digest 2266→2327. Retained the same-change budget decision statement after checking MIK-R101@v1 rule 6 and added that external supporting document. These are card repairs against the recorded source; the test source is unchanged from the code base, and no fresh compilation, test run or acceptance is claimed.",
+      "sources": [
+        {
+          "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+          "path": "mcp/tests/test_role_capsule_budgets.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_capsule_budgets.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-9JXBNQ",
+      "items": [
+        "sha256:f20b95cca7c7c32a3fc8adc39444588bdfb089ed3f6af0b0e2e622931e2fb539"
+      ],
+      "reason": "Reconfirm mcp/README.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the packaging metadata and the dashboard's media route leave its two commands true. The tool reference it points at, `docs/reference/mcp-tools.md`, moved in this master's earlier change at six passages — the cut hint, the status paragraph, the weakness closure, the `worktree_status` row, the atomic-master abandon rule and the commit-check exception — and the page quotes none of them. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 4,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-AHG0B4",
+      "items": [
+        "sha256:6cd86084a6db1c88f6a59a365be703211410ea0dfff1371349f497e1cabbb56f"
+      ],
+      "reason": "Reconfirm docs/design/python-evidence-system.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the catalogue change adds test cases to the lanes and to the lifecycle table, and the design page's evidence classes, cadence and source versioning are unchanged by that. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AZFG0S",
+      "items": [
+        "sha256:14be9492cda38d0fbaf3de831dce3f4706b638db62ddbb2307677e2b68f4eaee"
+      ],
+      "reason": "The card now states the converted-leaf changed-path current-entry refusal beside the existing closeout ownership and publication checks.",
+      "sources": [
+        {
+          "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
+          "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/closeout.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BDA09B",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "The card names measuredCurrentRenewalBug07 as the sole current renewal and preserves the prior tool-name record as history. Current populations, limits and ceiling references are checked against the final source.",
+      "sources": [
+        {
+          "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BNVV2T",
+      "items": [
+        "sha256:56e194dc29ffca4c5b6cea02af0c7f2f8e82e23c82c3acd49468b3e74a5394a0"
+      ],
+      "reason": "Reconfirm docs/guides/refresh-stale-onboarding.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the answer change only fixes the order in which a cut answer carries its fields, and the page's refresh route states no field order. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 2,
+      "subject": "DPD-TCXJRQ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BZGZPQ",
+      "items": [
+        "sha256:2983b7cc799111f7139f43e1151333915a29c7cb91900b84670b43118c842bc3"
+      ],
+      "reason": "Reconfirm docs/tool-details.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the receipt scan now passes over a file that is no launch record, and the `retire_child` entry's arguments and refusals are unchanged. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 8,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CKRSDJ",
+      "items": [
+        "sha256:c5c2e664dddb65a77f0b42b164350c4d30619e5342b67de4516569106fdbb036"
+      ],
+      "reason": "Repair L7-M1-F05e for docs/host.md against passed code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55 on base edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6. docs/host.md is unchanged between the leaf base and the selected code tree. Its pin/download and host-status sections describe the host, rather than dashboard media-byte handling or worktree lifecycle answer projection. In the selected implementation, the compact worktree_status answer keeps lifecycleOperationCount and runningOperation, while the saved whole result still carries lifecycleOperations; runningOperation is present only for a queued or running operation. The recorded-landing answer can also carry staleEntries. These are separate from the host page's pin, download and host-status fields; no replacement of lifecycleOperations in the whole result is claimed. This confirmation is limited to that comparison and those sections, not a fresh verification of every host-page statement. This successor confirmation corrects the M1-sealed statement and this existing row's copied reason; it leaves the original Worker producer artifact and M1 finding unchanged. It claims no new test run, code change, acceptance or landing. The corrected confirmation retains the existing support and adds the directly inspected implementation files that this corrected claim uses, through the admitted writer.",
+      "revision": 3,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:6d36410ee6f3108a0b01f4f66864dea6dc420e7538a25f9d2f757c250ec4c491",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "content": "sha256:6f6b42d2d6623436255e515ef153053e58a2b93e7cb586f7d23c8586629209e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-EQZH1P"
+        },
+        {
+          "after": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:b77c58711527228737f64010e66afeec55a3a0b65ffd34524ca0a9dacc5aee49",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "content": "sha256:b77c58711527228737f64010e66afeec55a3a0b65ffd34524ca0a9dacc5aee49",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-MA5C8F"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CP1HZM",
+      "items": [
+        "sha256:ea1c69fe8f51bd0db1f33a55013d45ffda09b2dc1bac9b261dbee1f7cd1a7f06"
+      ],
+      "reason": "The canonical Manager and generated package carrier remain paired. Rebinding follows byte-equality verification of the passed successor; generator and retained-surface ownership stay unchanged.",
+      "revision": 3,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-EE7WJ9",
+      "items": [
+        "sha256:e4e7ee08a12cb6800c53c9725eb02557f12ba708dd3f173db3c2f9244c51a093"
+      ],
+      "reason": "Reconfirm SECURITY.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the new route answers the bytes of a picture or a video under the same read rules, the dashboard gained one route, and the packaging change adds the licence field and the project links; no supported-version, report or disclosure sentence depends on them. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-FB78MX",
+      "items": [
+        "sha256:e107e4a78d9e2ee2f10b00795126646c26eddc2a9c3f9fe124497a7ade527a18"
+      ],
+      "reason": "Reconfirm mcp/src/agents_remember/package_data/runtime/docs/tool-details.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The packaged copy holds the same statements as the documentation file it copies, and the receipt scan's change leaves the `retire_child` entry true. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 8,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-FGEZZN",
+      "items": [
+        "sha256:15f178fc28d9a2308560fa19cd2a70a4d19c2f35abf3391f7ff8cf9d1560133f"
+      ],
+      "reason": "Reconfirm docs/install/pi.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the landing answer's key set widened, and the page's registration and settings name no answer key. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+            "content": "sha256:19c66249dc257edb5ca10237bfc21a87822b1af96c88466b8da139c12ccefe82",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": "absent",
+          "id": "RLZ-KZEKN1"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-G25113",
+      "items": [
+        "sha256:bb0b3629a7f9d6008027f5ceb3c2bbe700ce6f7d8f1b706fd956d3f9c947cb72"
+      ],
+      "reason": "Adds only the instructional presentation: Tells the closeout owner to obtain an active operation's generation from runningOperation and to inspect the retained whole answer when needed; otherwise it names lifecycleOperations. A stopped operation has no runningOperation entry of its own; its generation is read from its retained lifecycleOperations projection. It documents consumption of the existing compact-status contract without treating status as acceptance. The existing invariant statement, applicability, conditions, exclusions, status and implementation remain unchanged; existing runtime proof is not a fresh execution. Evidence (L7-CUR-PRESENTATION-01): Curator exact source comparison against passed freeze8 tree6dc2cbf02353b3ae40cd5d3d67500b708e8aca40; existing invariant/current implementation read.",
+      "revision": 1,
+      "subject": "INV-H4PZ9X"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GHJNF0",
+      "items": [
+        "sha256:985f0098bc3ad9deafabf4ee54041ff9d037a4099d2ae1fb8448ecf8cff3b4df",
+        "sha256:b5a9f19d4a33f42476e5db5515248a825f320bd7390d1bb203af9ddc0d33a735"
+      ],
+      "reason": "Repair L7-M1-F05d for docs/guides/review-page-and-explainer.md against passed code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55 on base edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6. The sole changed paragraph is covered: a changed picture or video shows before and after side by side, and an added or removed one names its missing side; a changed Markdown file defaults to a line diff and its rendered toggle draws the after content. The surrounding return/focus and unavailable-change-set sentences remain in that paragraph. No other passage changes in this base-to-tree diff; the rest of the page was not reverified. This successor confirmation corrects the M1-sealed statement and this existing row's copied reason; it leaves the original Worker producer artifact and M1 finding unchanged. It claims no new test run, code change, acceptance or landing. The corrected confirmation retains the existing support and adds the directly inspected implementation files that this corrected claim uses, through the admitted writer.",
+      "revision": 4,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-H4113S",
+      "items": [
+        "sha256:3ea4c6c3644e10b754067c95616ce4bf7172b1df9288cdcfd72d0b625ed776eb",
+        "sha256:b2b4d3db5fa961124744cb0bd1a50a2620de96d8b5375e323133999ffe8c440d"
+      ],
+      "reason": "Reconfirm docs/install/codex.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The changed approval and timeout entries state the host configuration, recorded timeout and sandbox measurements cited by the Worker; the install steps, registration and role-setting instructions are unchanged, and this pass ran no new harness probe. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HN0PNT",
+      "items": [
+        "sha256:2b91c6680e0c39e6cec1e01309b7f8224eab0878ededfa68e01764d9e9571627"
+      ],
+      "reason": "Reconfirm ROADMAP.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the concepts page's task-document entry gained the atomic master's terminal-stage precondition and the `abandon-master-not-terminal` refusal, and the roadmap's own sentences name no status and no refusal. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 2,
+      "subject": "DPD-3P9XTZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HQ4FBR",
+      "items": [
+        "sha256:582c6c400fd301139a41dc749450866202f7d042398527a9bdbde0551dfc2b1e",
+        "sha256:afd553f99ae829845a1b185e02bb883f5d3dfb954d2deb0c4f22e4826e208618"
+      ],
+      "reason": "The card now distinguishes same-task closure without a commit, another-task closure with its real commit, and trailer-derived readback after closeout.",
+      "sources": [
+        {
+          "blob": "e05b1792b24387c69e48a38027e35c300f73b7f6",
+          "path": "skills/l-01-agent-lifecycles/reference/curator/encountered-records.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/curator/encountered-records.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HVVWPV",
+      "items": [],
+      "reason": "Refresh the shared-fixture description from the currently imported TreeReceiptFixture and its tree_fixture constructor; remove the obsolete removed-fixture comparison. Correct the matrix body and reference 29 caption to the test's rendered-text inclusion assertion; the assertion does not establish document-generation provenance. Preserve current integration membership (module pytestmark and test-evidence-lanes.toml:734) and both lifecycle consumer memberships (evidence-lifecycle.toml:639 and :2991, for _user_settings_guard.py and the Node profile fixture lockfile). Move the following retained citation-history accounts out of the current card body without treating their retired anchors as deleted subjects: > Retained earlier citation wording: - **The lane registration that makes these cases part of the governed `integration` population.** Source caption: `test_review_external_git_movement_read` | > Retained earlier citation wording: - **A lifecycle consumer row that names this module, so the artifact census still counts it.** | - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:597-597 - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1369-1369 - the bytes it recorded now occur 12 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.",
+      "sources": [
+        {
+          "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+          "path": "mcp/tests/test_review_external_git_movement_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_external_git_movement_read.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JC4CJ7",
+      "items": [
+        "sha256:0f510a8287f5681168990ae373c01b9cd5969f86ad42b299fb99a7d479e31aaf",
+        "sha256:77ce8a1164cba673bbfc50a4e61f8962739e0d777eb688e2f37aa496a89d3fc9"
+      ],
+      "reason": "Repair L7-M1-F05f for docs/reference/mcp-tools.md against the final passed code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55 on base edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6. All four changed areas between the leaf base and this final code tree are covered: read_ar_files reads a card's entry half when Markdown is absent, names that JSON file with cardStatus sidecar-only and cardState currentness, and entry-half coverage does not itself make the route index stale; master abandon measures already-landed work by ancestry and returns landedWork with state, branch and line plus the no-work-lost summary; a recorded master's landing keeps stale-only findings as staleEntries debt only after the landing-chain proof passes, while other refusals remain. The archive passage covers the dry-run row survey without row repair, one refusal naming every blocked still-live commanded master and its open work, and enclosure retirement through abandonment's existing checks only for commanded masters that move with the sprint. A master also commanded by another live sprint stays where it is and its enclosures are skipped by retirement. These changed passages agree with the named implementation; other passages were not re-reviewed in this pass. The final C1 wording replaces the earlier all-commanded-masters retirement claim with the moving-master boundary and the shared-live-sprint exception. This updates the existing row's copied confirmation rather than creating a duplicate row; the original M1 record and sealed finding remain evidence. No archive, test execution, acceptance or landing is claimed.",
+      "revision": 6,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JRDEXD",
+      "items": [],
+      "reason": "Corrected ordinary delivery timing, canonical-document recovery, interpretation authority and primary acceptance context; separated final returns from developer-question addressing, Manager gate/transaction ownership from peer repairs, and canonical instruction authority from generated propagation. Replaced insufficient caption targets with their actual owners; moved the delegation change account into history.",
+      "sources": [
+        {
+          "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JYY0YX",
+      "items": [
+        "sha256:ed2065fac88ac7bdc6906c64860830c3b39e175521fc8358f51441ff7cc7b2b9"
+      ],
+      "reason": "Reconfirm docs/design/canvas-kit.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the prospective change moves the explainer's Node and browser choice into `canvas/explainer_browser.py`, whose fetch runs at first load and answers `kind=\"browser\"`, and no statement of the kit's inventory depends on where that choice lives. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 2,
+      "subject": "DPD-QH1N0S"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-8AMSGV",
+          "revision": 4
+        },
+        {
+          "id": "INV-A6GAKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-NFV5VJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-P2WRNQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PEVJ6G",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-K2PQ5C",
+      "items": [],
+      "reason": "Adds only the existing separately required messages omitted by the guarantee: skeleton handover (Manager46,107), permission notice (Manager107,119), closeout result/refusal to the coordinating Orchestrator (Manager107,109 and coordination139); the original guarantee remains, with members, routes and statuses unchanged. The Architect admitted this bounded encountered-memory repair through Manager20261116T172428Z, superseding the prior unresolved-route instruction. All five members were read; no member statement changes.",
+      "revision": 4,
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K2QV14",
+      "items": [
+        "sha256:b7d82d4f4c87b8af20a388b2b73736d6684b7755a1ec97888a3c3f1acd94c753"
+      ],
+      "reason": "Only the selected budget record fingerprint changes. The helper still checks exact current measurements, limits, ceilings and populations; the existing card remains accurate.",
+      "sources": [
+        {
+          "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 4
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-KGJZSH",
+      "items": [
+        "sha256:5130dbd394394dce96f556f493bc34de15b2800c3f3abed9f8750884ba3d1322"
+      ],
+      "reason": "Examined all six members: direct peer handovers (INV-ZNJ14G), separate Reviewer lanes (INV-V7M37D), exact sibling addresses (INV-W58B84), Worker sync ownership (INV-7E3JNX), Curator code concerns (INV-RKGNF8) and pending Manager-notice recovery (INV-W24J6Q). The final Manager pointer names its abandonment tools without changing those responsibilities, recipients or recovery duties. The joint guarantee, membership and routes remain unchanged.",
+      "revision": 2,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KH5GNH",
+      "items": [
+        "sha256:43d9f65e73595cffe251097b546a3a78395e970d37213894af306e37bfca3849",
+        "sha256:52ee6199f52ee85b66ad2d722e8aac2686753218428667b6bdec6c898f9c1b61"
+      ],
+      "reason": "Repair L7-M1-F05a for docs/reference/worktrees-c09.md against passed code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55 on base edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6. All three changed passages are covered: the landing check runs for each side whose commit it publishes, and does not rerun for a side already at that commit; landing facts identify the task's landing line and each participant's state and factState, including absent for a known non-PR route, planned before a strategy or PR exists, and unknown/missing when gh cannot observe the PR. The new stale-debt paragraph says that a master's recorded landing, after the landing-chain proof passes with only stale-entry findings, returns their count, sentences, record identities and remedy as staleEntries and keeps them as master debt; cleanup of an incompletely recorded master names worktree_record_landing, while leaf closeout and ordinary landing still refuse stale entries. The three document-staleness refusal codes belong to the preceding unchanged paragraph, not the new debt paragraph. The rest of the page was not reverified. This successor confirmation corrects the M1-sealed statement and this existing row's copied reason; it leaves the original Worker producer artifact and M1 finding unchanged. It claims no new test run, code change, acceptance or landing. The corrected confirmation retains the existing support and adds the directly inspected implementation files that this corrected claim uses, through the admitted writer.",
+      "revision": 2,
+      "subject": "DPD-9K25G8"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-N18M6P",
+      "items": [
+        "sha256:a45aeba1c0b76bf07b47d8330865007e3978e8625c1af63806a149a482251ec1"
+      ],
+      "reason": "Reconfirm README.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the packaging change raises the build requirement, the licence field's new form and a table of project links, and the dashboard change adds a route that answers a file's bytes; no sentence of this page names either. Its own sentence that the knowledge gate has no waiver holds as it stands, because a master's recorded landing keeps a stale entry as the master's debt and the gate itself still refuses. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 5,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-PJAXTR",
+      "items": [
+        "sha256:c4703616e1c59ab78469299bbc88ae97dc98d6da0c38f6b618df93e3cf66ba31"
+      ],
+      "reason": "Reconfirm docs/design/canvas-host.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the serving change registers one route that answers a knowledge file's bytes beside the reader route, and the canvas surfaces, their paths and their limits are told unchanged. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-7YCJ2B"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-40JW44",
+          "revision": 1
+        },
+        {
+          "id": "INV-7KDG7C",
+          "revision": 1
+        },
+        {
+          "id": "INV-MQ3K06",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZA67WW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PP6YQY",
+      "items": [
+        "sha256:927d279d8906327c1d2092ebcbee13eb42fb9b6e0f1c5df1e46cec3b4aec5133"
+      ],
+      "reason": "Examined all five members: selected audience delivery (INV-WR3J18), immutable details (INV-7KDG7C), declared detail selection (INV-MQ3K06), source-relative link binding (INV-ZA67WW) and once-only shared digest delivery (INV-40JW44). The final repair changes Manager instruction bytes and their audit identities, while retaining the same detail destination and unchanged composition, binding and replay mechanisms. The joint guarantee, membership and routes remain unchanged.",
+      "revision": 3,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Q5QB3D",
+      "items": [],
+      "reason": "Only the admitted category-count correction changes: exclusions; statement and status are unchanged. Manager authorization message20261116T172324Z; source Manager101-105 and test_curator_instruction_wording.py569,575,587; no new test run.",
+      "revision": 3,
+      "subject": "INV-PEVJ6G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q71MJS",
+      "items": [
+        "sha256:9de69ca4fdde8361bdc35974bd2ddbb79cbf8071d6ae2de5890b6faf4881807f"
+      ],
+      "reason": "The card distinguishes the active runningOperation generation from lifecycleOperations and retains the whole answer and advertised recovery controls. Repairing the same F03 ambiguity in its body, it explicitly says a stopped operation has no runningOperation entry of its own and its generation remains in lifecycleOperations; no generation-retention or runtime behavior is removed.",
+      "sources": [
+        {
+          "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+          "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "da127d3b0aa028f4b439d413346941d96ad37311",
+            "content": "sha256:53fa2070848ed2566274938e51ef0a0112abcf9b1b33d73478e76ad6b5458fb7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "2967bc288b6496e92a61b1c6b594f3024cffd24c",
+            "content": "sha256:dcaabb958c850e21c4dec029c36505845c4eb803aa45bb7ea0d04bf0fa3d420c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-BZ71PH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QAFGM4",
+      "items": [
+        "sha256:67b4ed2c727f2cee50ca19bc366dc0e46e80c2080b8244d3a3dba1d76e870c89"
+      ],
+      "reason": "The digest-map change renews the Manager source span pin; reference evidence remains distinct from selected digest lines and retired units retain their records. No delivery/audit-map obligation changes.",
+      "revision": 1,
+      "subject": "INV-40JW44"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QCEWSG",
+      "items": [
+        "sha256:0e200e4145dbe35b094eff39ffc86fd66c5930235aa8acc8fd8ffe5203dc488b"
+      ],
+      "reason": "Reconfirm docs/reference/resolver-c08.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the answer-shape change adds the framework keys `runningOperation` and `cut`, and a cut answer now keeps `log` and ends with its `cut` object; the resolver's own records and their order are unchanged. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 2,
+      "subject": "DPD-EJ2Y7Z"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:6d36410ee6f3108a0b01f4f66864dea6dc420e7538a25f9d2f757c250ec4c491",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "content": "sha256:6f6b42d2d6623436255e515ef153053e58a2b93e7cb586f7d23c8586629209e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-VT0A1C"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QNMH08",
+      "items": [
+        "sha256:ab95013587a06cb519395d0e02db6adf32eab428d8b1ad6e477f0b3620e3e609"
+      ],
+      "reason": "The Manager’s helper-wait transport and unfinished-parent-notice instruction remain at the same owning paragraph. Source pin renewal changes no recorded wait/transport obligation.",
+      "revision": 2,
+      "subject": "INV-QZW2X2"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QQY834",
+      "items": [
+        "sha256:aabc9a149db58139e62eacde2c3028c24627bc3892b6e18c17ff233a56e83cc6"
+      ],
+      "reason": "Reconfirm docs/llms.txt against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The summary holds: the packaging metadata and the dashboard's media route touch no role, task or sprint definition. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 8,
+      "subject": "DPD-633P3W"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 3
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-R4K9GV",
+      "items": [
+        "sha256:3099a4d2a7a8bac2fbc7eb643f656c3f31e6bc113252753afa5ddd4300f7e9a2"
+      ],
+      "reason": "Examined both members, INV-63Z0MN and INV-NNQR91. The documentation repair changes canonical instructions and their generated package carriers; final paired bytes agree. The dashboard launch-choice contract is unaffected, and the family requires updates only to affected surfaces. No launcher, propagation ownership, membership or route change is introduced.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+            "content": "sha256:16d05995c074e31a892ee77b7a892e2e7f1010cf965762324f4d4a505f17eb4d",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md"
+          },
+          "before": "absent",
+          "id": "RLZ-F5HVF3"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-R8508W",
+      "items": [],
+      "reason": "Adds only the instructional presentation: Explains the recorded master landing’s named staleEntries and persisted debt, including the knowledge-maintenance remedy; it documents the existing debt answer without waiving mixed findings or chain checks. The existing invariant statement, applicability, conditions, exclusions, status and implementation remain unchanged; existing runtime proof is not a fresh execution. Evidence (L7-CUR-PRESENTATION-04): Curator exact source comparison against passed freeze8 tree6dc2cbf02353b3ae40cd5d3d67500b708e8aca40; existing invariant/current implementation read.",
+      "revision": 1,
+      "subject": "INV-6H0QQG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:d30767e2a85aae5d77c891d7a58dd3c806dd78e3bf5fec0f53b1148acbc831fb",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "content": "sha256:6f6b42d2d6623436255e515ef153053e58a2b93e7cb586f7d23c8586629209e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-5KGCEP"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RAYRN9",
+      "items": [
+        "sha256:decc57ced2f97424e0391c83a10c400b48fcb251709a3f0804c2f808409a08b4"
+      ],
+      "reason": "Finding L7-R3-F16 is fixed in passed freeze8: the Manager line56 pointing sentence explicitly names worktree_abandon and worktree_record_landing beside the abandonment guidance. The invariant statement and status remain unchanged. This judges the changed sentence, not the outside-scope base line52.",
+      "revision": 1,
+      "subject": "INV-GWA6VR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RDZRJ0",
+      "items": [],
+      "reason": "Corrected the Manager brief card to keep primary acceptance separate from adjacent constraints, describe the paired code/memory transaction without a ledger leg, and state only the measured absence of an external-document name in this template. The recovery account also clarifies the same F03 stopped-state ambiguity: only runningOperation is absent for that operation; its generation remains in lifecycleOperations.",
+      "sources": [
+        {
+          "blob": "e3f14fd6204940ace8a22d216c6ba13e5a8cd8f7",
+          "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "content": "sha256:a6f37ebae00993fee337bb78b66cbb1c7f0c50b5d9442a9fc103e05c592b0fa3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RN5A83",
+      "items": [
+        "sha256:654f32cb28be43ef187bbe50c4fc86cabf479a510dbe2ab0dffd5613e82cc43d"
+      ],
+      "reason": "The current budget record remains the live authority for role, detail and digest measurements and ceilings; the frozen historical registry does not regain live formula authority. At passed freeze8, role ceilings are unchanged and the approved size-record changes retain their authorization.",
+      "revision": 5,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RTYVT7",
+      "items": [
+        "sha256:6222ee11745a38eed1b9c08ca421736a5f92c32d57b06c8a629ed96c8f2019cc",
+        "sha256:deb69af1dd78813695415d1c62042c45b582ac94a1ac91ff97e01b68c25b4ae4"
+      ],
+      "reason": "Reconfirm docs/features.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The File Viewer bullet now says the viewer shows a picture and a video and switches a Markdown file between the rendered document and its source, and no other line changed. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 9,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
+            "content": "sha256:f9142dc78a06d5161689df432b2853591820987c143d246b08ea71baa2b6dc20",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "before": {
+            "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+            "content": "sha256:c2f5de0efb06134f6edc9ba655863667b983906e7024a9231cdf99fba3c464e5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+          },
+          "id": "RLZ-CQCTG9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-S8YJ14",
+      "items": [
+        "sha256:c691a90affa9d8b47550d626f6f69eab146ad84943373fa212c20e576cfc6627"
+      ],
+      "reason": "The closeout file adds the changed-path current-entry refusal while retaining its authorized owner, bound inputs, visible failures, publication-gate owners and result readback. Preserve the current meaning obligation, not the older retired byte-preservation obligation; refresh its source-line explanation.",
+      "revision": 2,
+      "subject": "INV-AKRZAN"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-VD74E4",
+      "items": [
+        "sha256:a08c7e849102a7fc88c6242a7ffbf133e77dc25d2bb13166ad0a5266762d2fff"
+      ],
+      "reason": "Reconfirm docs/architecture.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The architecture page holds: the packaging change touches the build requirement, the licence field and the project links, and the dashboard gained one read route that the page's package list does not enumerate; the page names no version. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W3FA64",
+      "items": [
+        "sha256:085391f9a40edc28908a3b6586258c024fa9d1616e9345320ffedb5907a2cc42"
+      ],
+      "reason": "The changed closeout, coordination, master-state and knowledge reference details stay in their existing owning cards. The lifecycle overview keeps its current role, operation and immutable detail boundaries.",
+      "sources": [
+        {
+          "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "da127d3b0aa028f4b439d413346941d96ad37311",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
+          "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+        },
+        {
+          "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+          "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+          "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md"
+        },
+        {
+          "blob": "e05b1792b24387c69e48a38027e35c300f73b7f6",
+          "path": "skills/l-01-agent-lifecycles/reference/curator/encountered-records.md"
+        },
+        {
+          "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+          "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:bea2a1aca75ce1229788d34d37796ae960d600670a642500cf1694f67c187f5f",
+            "locator": {
+              "end": 6159,
+              "kind": "line_range",
+              "start": 6154
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "content": "sha256:23beaae89775b40e9aad457c8561cce841137dfff33f837339a979e0e6ab64eb",
+            "locator": {
+              "end": 5028,
+              "kind": "line_range",
+              "start": 4676
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-DFYHWJ"
+        },
+        {
+          "after": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:0e3c7fff4b429f1a2de4beee5f70488cb097ed84fcbbf73c138efa1ff27818a2",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "content": "sha256:aa9e2252078c7f858168e56239c002afbcfc5f07929a5948ec63321fb6e9cd53",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-HP4QWK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WEF4YW",
+      "items": [
+        "sha256:ed39bb47069471e7358e6d134ab1610bebf80b7d5cfcc5e00418d35f2438ab2a"
+      ],
+      "reason": "The source still has exactly one current renewal and the decision-level digest-map identity follows the delivered map. Repair the obsolete renewal-name/hash rationales at their current extents; the obligation and status remain unchanged.",
+      "revision": 1,
+      "subject": "INV-12JAM7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WPS29E",
+      "items": [
+        "sha256:5e06f0d34074331639b6fe091dca4d7856f3113ac2a9e3be8d089c9016d315ad"
+      ],
+      "reason": "Reconfirm docs/README.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The index holds: the packaging metadata and the dashboard's media route appear in no line of it. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 4,
+      "subject": "DPD-06057Y"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X8DSGP",
+      "items": [
+        "sha256:ffc35aa9bedacf6bf8de950910092cf71f6e90e68f7bcff670a92c6467619a7b"
+      ],
+      "reason": "The Manager evidence pin is renewed. Current versus retired digest units and the separation of evidence from selected digest lines retain their meaning; the card cites the final file.",
+      "sources": [
+        {
+          "blob": "da127d3b0aa028f4b439d413346941d96ad37311",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/digest-map.json"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+            "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "id": "PRF-0DCHVF"
+        },
+        {
+          "after": {
+            "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+            "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
+          },
+          "before": "absent",
+          "id": "PRF-EZSG4M"
+        },
+        {
+          "after": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:17697ee779f6ec947cd466c13efb6920f3d699e91811ad41de37fac9e06be6ea",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "content": "sha256:17697ee779f6ec947cd466c13efb6920f3d699e91811ad41de37fac9e06be6ea",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-M2NFTB"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-XE2E9H",
+      "items": [],
+      "reason": "Corrects only admission.justification four-category to five-category and replaces the old cross-owner proof facet with a writer-authored successor for the same invariant/test; the old PRF-0DCHVF is explicitly removed. Statement, scope and status remain unchanged. Manager authorization20261116T172324Z; test_curator_instruction_wording.py569,575,587 was read, not freshly run. The extended row records the successor evidence entry without incrementing invariant meaning. Evidence (L7-CUR-COUNT-NFV-PROOF): Curator source read at passed freeze8 tree6dc2cbf02353b3ae40cd5d3d67500b708e8aca40: test_curator_instruction_wording.py569,575,587; no new test run; Manager20261116T172324Z count-correction authorization.",
+      "revision": 2,
+      "subject": "INV-NFV5VJ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y22X00",
+      "items": [
+        "sha256:b5aaf4f7a9e473224c7a32f4b9372aa12b15be490a3e89b0b02f934edc9ea6a2"
+      ],
+      "reason": "Manager56 now names the tools at its abandonment pointer. The role overview still assigns the same master coordination, direct peer loop and transaction ownership.",
+      "sources": [
+        {
+          "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+          "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y27W40",
+      "items": [
+        "sha256:e2f90a2489e248e6000525d9c0f262a4f2b2f4d97c762fa0c981dd22296b307f"
+      ],
+      "reason": "The card now states that a missing Markdown half leaves the entry half visible as cardStatus sidecar-only, without asserting entry currentness.",
+      "sources": [
+        {
+          "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+          "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YB3BJC",
+      "items": [
+        "sha256:a173c420160ed2c14f904c3c043dbae345a07a5601f5687a4d6260762cc3b958"
+      ],
+      "reason": "Reconfirm docs/install/README.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the packaging metadata and the dashboard's media route are named in no install step, and the browser section tells the fetch as the code makes it. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 4,
+      "subject": "DPD-XV7QBE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+            "content": "sha256:4b90784759aa880ab30a8adc36938ee57795ec74602b8250496f554ee27fa9f2",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/master-state.md"
+          },
+          "before": "absent",
+          "id": "RLZ-M2JNVX"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-YBHBMX",
+      "items": [],
+      "reason": "Adds only the instructional presentation: Explains the successful abandon answer’s ancestry observation and landedWork fields, distinguishing work already on the source line from potentially stale recorded landing cells; it grants no bypass of terminal admission. The existing invariant statement, applicability, conditions, exclusions, status and implementation remain unchanged; existing runtime proof is not a fresh execution. Evidence (L7-CUR-PRESENTATION-03): Curator exact source comparison against passed freeze8 tree6dc2cbf02353b3ae40cd5d3d67500b708e8aca40; existing invariant/current implementation read.",
+      "revision": 1,
+      "subject": "INV-275CEN"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YJR8G2",
+      "items": [
+        "sha256:2173f8f4b176191ab1a04ba50fd8390810796e946a6c3fe1d6610b87a530696a",
+        "sha256:e84a1fe580501202d5a21343ff6a1736d8f4dcb8b81da3fd5135c7936a082aec"
+      ],
+      "reason": "Reconfirm CONTRIBUTING.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The two links that moved changed nothing here, and the paragraph on the landing check ended with a sentence the landing side contradicts, so it states that a side whose commit the line already stands on publishes no commit and is not checked; the rest of the page was not read again. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 5,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YQP2V2",
+      "items": [
+        "sha256:16b843e98d833a8cb18bb5073b4c5faf0dcc9d485669579ffcda9c5850b23159"
+      ],
+      "reason": "Updated the canonical Manager card for the source change at roles/manager.md:56: its master-state pointer now includes the abandoning section and names worktree_abandon and worktree_record_landing. Restored the base card's unchanged true clause that the Curator brief carries the lineage projection and the native start re-proves it before host creation; leaf_enclosure_start.py:214 invokes worktree_start_tool, and start.py:688-692 checks existing-contract lineage before attachment. Corrected the card to distinguish one primary acceptance block from adjacent constraints, final parent-addressed returns from developer-question routing, starter-owned retirement from role-type limits, and paired code/memory publication from a diagnostic ledger; retained the verified handoff and archival duties. Corrected the inherited direct-repair ownership and forbidden-start shorthand to the source's gate/transaction ownership and blocker reporting. The earlier reason incorrectly claimed that the Investigator change account had already been moved into history. The base card's change-account sentence is preserved in this reason: \"This added delegation permission does not require an Orchestrator above one master or transfer onboarding/code ownership.\" The card itself states the present Investigator scope.",
+      "sources": [
+        {
+          "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+          "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Z2YSEA",
+      "items": [
+        "sha256:c28e47f8d9fae5c239f7e8431de9d35306b3c555f9344df4f635da2c7d6e91ed",
+        "sha256:e5b1fa23abbca108827669948c37bf1456cdaa41986b7d462cd31f39d46b666b"
+      ],
+      "reason": "Repair L7-M1-F05b for docs/concepts.md against passed code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55 on base edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6. Both changed glossary passages are covered: Knowledge gate adds a noncurrent entry at a candidate-changed path beside the existing open-worklist and refusing-validator cases; the new Landing line entry defines the line a task or master lands on as its master's line when it belongs to one, otherwise its own source line. The rest of the page was not reverified. This successor confirmation corrects the M1-sealed statement and this existing row's copied reason; it leaves the original Worker producer artifact and M1 finding unchanged. It claims no new test run, code change, acceptance or landing. The corrected confirmation retains the existing support and adds the directly inspected implementation files that this corrected claim uses, through the admitted writer.",
+      "revision": 4,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Z4AFAR",
+      "items": [
+        "sha256:cb45d5c08f7e01363334ca9c0631b508c985b588597436e8b3211ee99f39b2f3"
+      ],
+      "reason": "Reconfirm docs/install/claude-code.md against passed freeze10 code tree bb15a08a6c7aeb0f820d3144499e71b5a489dc55. The confirmation statement is preserved: The page holds: the landing answer's key set widened, and the page's steps and settings name no answer key. Its support pins were checked against this tree; the candidate binding is renewed without broadening the recorded read scope or claiming a new test run, acceptance or landing.",
+      "revision": 3,
+      "subject": "DPD-3E9E2R"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -112,7 +112,7 @@
       ]
     },
     "3": {
-      "note": "The tests measure whitespace-split words from freshly rendered capsule instructions, complete declared detail sources and the separately delivered every-role digest, and check them against the fingerprinted current record: exact recorded measurements, per-key limits and role-specific ceilings (Architect 5441, Manager 4522, Curator 4537, Reviewer 4049, Bootstrap 4000, otherwise 3722), details 2500 and digest 2266. Exact keys reject omissions and orphans; mutation controls invoke the real guards with changed inputs at and beyond the limits.",
+      "note": "The tests measure whitespace-split words from freshly rendered capsule instructions, complete declared detail sources and the separately delivered every-role digest, and check them against the fingerprinted current record: exact recorded measurements, per-key limits and role-specific ceilings (Architect 5474, Manager 4562, Curator 4537, Reviewer 4112, Bootstrap 4000, otherwise 3742), details 2500 and digest 2327. Exact keys reject omissions and orphans; mutation controls invoke the real guards with changed inputs at and beyond the limits.",
       "targets": [
         {
           "anchor": {
@@ -128,11 +128,11 @@
       ]
     },
     "4": {
-      "note": "Live capsule ceilings are 5441 words for Architect, 4522 for Manager, 4537 for Curator, 4049 for Reviewer, 4000 for Bootstrap and 3722 for other roles; declared step details have a 2500-word ceiling and the separately delivered every-role digest a 2266-word ceiling that must equal the digest map's maximum. Registry completeness, exact recorded measurements and exact/over-limit mutation controls apply independently. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "Live capsule ceilings are 5474 words for Architect, 4562 for Manager, 4537 for Curator, 4112 for Reviewer, 4000 for Bootstrap and 3742 for other roles; declared step details have a 2500-word ceiling and the separately delivered every-role digest a 2327-word ceiling that must equal the digest map's maximum. Registry completeness, exact recorded measurements and exact/over-limit mutation controls apply independently. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
+            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
             "content": "sha256:8c2becfadaf1ba12345a93ed610585038b103dbd7f59b6d85aabde9d687a7b9c",
             "locator": {
               "kind": "symbol",
@@ -161,16 +161,16 @@
       ]
     },
     "6": {
-      "note": "The current record's capsule, step-detail and digest ceilings.\n\nAnchor: `current_capsule_ceilings_words`",
+      "note": "The current record's capsule, step-detail and digest ceilings.",
       "targets": [
         {
           "anchor": {
-            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
             "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
             "locator": {
-              "end": 6371,
+              "end": 6560,
               "kind": "line_range",
-              "start": 6362
+              "start": 6551
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -191,6 +191,17 @@
             }
           },
           "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "MIK-R101@v1 rule 6 records growth, a new role and a new operation as decisions in the same change as the raised or added budget.",
+      "targets": [
+        {
+          "document": {
+            "document": "file:///home/firefox/projects/ar-coordination/tasks/agents-remember/0_archive/260928_maintained-invariant-knowledge/requirements/MIK-R101-v1-the-role-texts-state-what-goes-in-and-what-comes-out.md"
+          },
+          "kind": "external"
         }
       ]
     }

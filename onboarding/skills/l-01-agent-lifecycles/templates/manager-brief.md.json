@@ -79,16 +79,16 @@
       ]
     },
     "2": {
-      "note": "Master exit carries the full revision set and independent adjudications.\n\nAnchor: \"## The exit\"",
+      "note": "Master exit carries the exact code/memory transaction, Worker targeted-check report, complete Curator result and concrete failed or unrun checks; independent master-exit review is included when requested.",
       "targets": [
         {
           "anchor": {
             "blob": "e3f14fd6204940ace8a22d216c6ba13e5a8cd8f7",
-            "content": "sha256:1305e15ab630ef8c13130106ad2612492fce7446bd856eef28fea19da46a7214",
+            "content": "sha256:da87bf6ba2b39bf949fd7c61dd4f52ad81e9fd097f63b330806dcade1a097416",
             "locator": {
-              "end": 158,
+              "end": 163,
               "kind": "line_range",
-              "start": 158
+              "start": 159
             }
           },
           "kind": "code"

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The launcher table now names “No sprint” and the standalone masters and the right-rail refusal names only a document whose master the tree does not hold; both hold at the candidate.",
-    "task": "261112-RSM-L1",
+    "statement": "All changed passages are covered: the tab table and File Viewer introduction include pictures and videos; Operations keeps its change set's file/filter and notes view across tab changes, returns to the task view when that view's task disappears, and a press on the already-open Operations tab returns to the task view. The notes paragraph covers media notes, notes without raw HTML, links to notes the reader can open and no navigation of the dashboard's own tab. File Viewer Markdown opens rendered with the Rendered/Source switch and cleaned repository HTML; the change-set page defaults to a line diff and offers its separate rendered toggle. The media paragraph names the supported picture/video types, player and type/size labels, the 16 MiB bound, the File Viewer/notes readers' too-large notice without requesting bytes, the change-set/Knowledge code readers' request and route refusal, and the non-media binary labels. The document-media paragraph covers repository paths, external https media without a referrer, unsupported image addresses shown as alternative text and notes without raw HTML. The final added paragraph covers same-repository file links opening the appropriate rendered/source/media view, linked headings and anchor-only scrolling, outside links in a new browser tab, missing-file links as explanatory text, and no link moving the dashboard's own tab. Its Back/Forward arrows traverse files opened by links or the tree, restore their scroll position and disable unavailable directions. The rest of the page was not reverified.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/dashboard.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+      "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
       "kind": "file",
       "path": "dashboard/src/cockpit/Cockpit.tsx"
     },
@@ -263,6 +263,66 @@
       "blob": "d7b32dd73eac8bdb5be126db5ff1fa9738f1e447",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py"
+    },
+    {
+      "blob": "ed9fb578cafb5d3b2e46bc4771ceeafc0971a8a7",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/tabMemory.ts"
+    },
+    {
+      "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+      "kind": "file",
+      "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+    },
+    {
+      "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+      "kind": "file",
+      "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+    },
+    {
+      "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+      "kind": "file",
+      "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+    },
+    {
+      "blob": "4c0d598da1e1985e980bba924a02cbcfce6b8ee2",
+      "kind": "file",
+      "path": "dashboard/src/panels/changeset/ChangeSetPane.tsx"
+    },
+    {
+      "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
+      "kind": "file",
+      "path": "dashboard/src/panels/knowledge-reader/ReaderCode.tsx"
+    },
+    {
+      "blob": "5be275cdd2395153066434e87495d4996544b70a",
+      "kind": "file",
+      "path": "dashboard/src/grammar/Media.tsx"
+    },
+    {
+      "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+      "kind": "file",
+      "path": "dashboard/src/grammar/Markdown.tsx"
+    },
+    {
+      "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+      "kind": "file",
+      "path": "dashboard/src/grammar/DocumentMarkdown.tsx"
+    },
+    {
+      "blob": "c245dc3b72f47b8dc1df74dee1e0e0fa577995e0",
+      "kind": "file",
+      "path": "dashboard/src/data/media.ts"
+    },
+    {
+      "blob": "0cb4f51b0257d50eeb4b49ae6e90595d3aaec0ce",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/media.py"
+    },
+    {
+      "blob": "99140cdd87f91d4ef198e7bf792bf5a31072e2fd",
+      "kind": "file",
+      "path": "dashboard/src/grammar/documentMarkdown.ts"
     }
   ]
 }

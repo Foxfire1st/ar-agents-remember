@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The packaged copy equals docs/tool-details.md (cmp identical) and states the same null-sprint digest and caller rule.",
-    "task": "261112-RSM-L1",
+    "statement": "The packaged copy holds the same statements as the documentation file it copies, and the receipt scan's change leaves the `retire_child` entry true.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -125,7 +125,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+      "blob": "c5586be802e8e401bd72b2e4e6a0f362426687d4",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_retire.py"
     },

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
-        "content": "sha256:9756adc1df8cbbc34fc8bd23b89ef490a9e42d171534ae4538b5f4824fed8e1f",
+        "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
+        "content": "sha256:5d6d61a1a65ca86917854a6b8387fb370367e6648501eb5b2501f9913d774b88",
         "locator": {
           "kind": "symbol",
           "name": "_RECORD_FINGERPRINT"
@@ -16,7 +16,7 @@
         "handoffEntry": "RSM-R01-A9",
         "leaf": "261112-RSM-L1"
       },
-      "rationale": "The pinned record fingerprint, renewed on the new bytes.",
+      "rationale": "The helper pins the current record's canonical fingerprint. Renewing this pin binds the selected record bytes; the pin itself sets no ceiling or limit, and does not classify the renewal as measurement-only.",
       "role": "primary-authority"
     }
   ],
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
+            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
             "content": "sha256:6cebb71cd3065652505fbce30e4669edcd164d26802a41c439184820d1aff51b",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
+            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
             "content": "sha256:29180fb0c77d56afe0f14bada0fec6a704795999ef8c7e83abab320d65792184",
             "locator": {
               "kind": "symbol",
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
+            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
             "content": "sha256:c5db175a68c58fd0264dc35bea94d6a1bcf9ee7d37c4ad78247a36d6f565009a",
             "locator": {
               "kind": "symbol",
@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
+            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
             "content": "sha256:8c2becfadaf1ba12345a93ed610585038b103dbd7f59b6d85aabde9d687a7b9c",
             "locator": {
               "kind": "symbol",

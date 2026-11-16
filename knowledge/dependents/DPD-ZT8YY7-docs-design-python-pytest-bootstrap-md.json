@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The pytest policy page describes admission, selection and commands; the lane-catalog change it links was re-read and its statements hold.",
-    "task": "261112-RSM-L1",
+    "statement": "The page holds: the lane catalogue gained entries for new tests, and the page's admission, selection and commands are the ones the catalogue already had.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+      "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
