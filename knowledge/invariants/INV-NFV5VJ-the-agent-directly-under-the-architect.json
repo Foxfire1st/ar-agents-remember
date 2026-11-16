@@ -4,7 +4,7 @@
       "spans_locations",
       "guarded_by_test"
     ],
-    "justification": "The decision boundary and the four-category reporting duty are realized in the Manager, Orchestrator, Architect and router texts, and the wording tests assert the exact sentences."
+    "justification": "The decision boundary and the five-category reporting duty are realized in the Manager, Orchestrator, Architect and router texts, and the wording tests assert the exact sentences."
   },
   "applicability": "A Manager or Orchestrator started under the Architect or an Orchestrator, including one whose reporting recipient changed with a second master.",
   "conditions": [

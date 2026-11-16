@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+        "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
         "content": "sha256:2545f4afd1342b36e468538939400a02c0aeef5e5be04014fecd045af0c38c03",
         "locator": {
           "end": 17,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+        "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
         "content": "sha256:3588289e4f62a9f22d76c4fb72ba738526f8e6616745d0fef25808c7c438075a",
         "locator": {
           "end": 81,
@@ -38,6 +38,25 @@
       },
       "rationale": "The memory_quality_check row of the knowledge command reference is now the owner that c-10 names. It describes the measured findings and, for full contract-scoped runs, the Curator checklist and worklist, so no retired drift file is needed.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+        "content": "sha256:0c07decd0dffc1f6b1ed47687bcb5d7671e037b245bc61ee8fe4d6f8dd6036cc",
+        "locator": {
+          "end": 79,
+          "kind": "line_range",
+          "start": 79
+        }
+      },
+      "id": "RLZ-YK10GS",
+      "invariant": "INV-NRNXP8",
+      "origin": {
+        "handoffEntry": "L7-CUR-PRESENTATION-02",
+        "leaf": "261112-BUG-L7"
+      },
+      "rationale": "The public reader reference explains that an absent Markdown half leaves the entry half readable, names that half and reports cardStatus=sidecar-only; this describes visibility without claiming its records are current.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -46,7 +65,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
             "content": "sha256:1de07f100ce7ba83f43706ff23cbf3e52678dd1130a515b3a03e3c85aef98d76",
             "locator": {
               "end": 17,
@@ -63,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
             "content": "sha256:ee88e0e5db1e07fc813043ded75aeaef6583e93f395ff9d56ab4cca17380e7cf",
             "locator": {
               "end": 56,
@@ -76,12 +95,12 @@
       ]
     },
     "3": {
-      "note": "The knowledge and workflow tool tables keep write effects, previews and role gates.\n\nAnchor: `accept_drift`",
+      "note": "The knowledge and workflow tool tables keep write effects, previews and role gates.",
       "targets": [
         {
           "anchor": {
-            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
-            "content": "sha256:c57021d5a128fb0c8d0df6125e814ff814beb5ff9db5201cf49365653ec50754",
+            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+            "content": "sha256:3c833cc91f69908ef7a24874656b86b2ee8bb62cba8cf9b5faff6b598260cd8d",
             "locator": {
               "end": 93,
               "kind": "line_range",
@@ -97,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
             "content": "sha256:b32a08a410949625ea303e0ce48e6326a7b8604d9d279a749f2190cd8002983e",
             "locator": {
               "end": 99,
@@ -114,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
             "content": "sha256:bb266f36b658e27a3101d6972d80a5fc056074f7f35d7729e4bdf8f698552b30",
             "locator": {
               "end": 128,
@@ -131,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
             "content": "sha256:08143afdb5bf476b3873c06330e2d478e771cfef58cfaf9cc7052f60cd073192",
             "locator": {
               "end": 136,

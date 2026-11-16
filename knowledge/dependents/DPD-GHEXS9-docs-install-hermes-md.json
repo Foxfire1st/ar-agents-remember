@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The Hermes install steps, registration and settings still hold; the preparation change only makes the sprint reference conditional and does not alter the install path.",
-    "task": "261112-RSM-L1",
+    "statement": "The page gained one entry for the browser helper that a killed or crashed process leaves behind, with no setting that reaches it, and the packaging change and the landing answer's keys leave its install steps, registration and settings true.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/install/hermes.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -86,7 +86,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
     {
-      "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -96,7 +96,7 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/background_wait.ts"
     },
     {
-      "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+      "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "cb321e2ad3b69d960c4ca1ddf9442663278f429c",
-    "commit": "a874131c25b919356a3bd507713ead449b8491cd",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The unchanged concepts page and all 77 retained support identities preserve the previously confirmed definitions on the final candidate.",
-    "task": "261112-BUG-L3",
+    "statement": "Both changed glossary passages are covered: Knowledge gate adds a noncurrent entry at a candidate-changed path beside the existing open-worklist and refusing-validator cases; the new Landing line entry defines the line a task or master lands on as its master's line when it belongs to one, otherwise its own source line. The rest of the page was not reverified.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -331,7 +331,7 @@
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+      "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
@@ -346,7 +346,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
     {
-      "blob": "926e006da6810baf314464553204030191db3ad7",
+      "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
@@ -404,6 +404,11 @@
       "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+    },
+    {
+      "blob": "3cba6e5af9fb586386f0327c3231fbf20a3e2df6",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/landing.py"
     }
   ]
 }

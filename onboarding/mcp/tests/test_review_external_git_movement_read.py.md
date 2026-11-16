@@ -16,7 +16,7 @@ An uncommitted candidate is a tree, not an observed branch head: the report rema
 
 Commit-bound cases distinguish untouched, advanced and rewritten branches; source-history replacement, branch switch and unreadable channels retain distinct states. Validator forgeries use the real published value. [6] [7] [8] [14]
 
-The shared TreeReceiptFixture constructs the enclosure and its exact comparison rather than the removed ReviewSyncFixture. [2]
+The shared `TreeReceiptFixture` constructs the enclosure and its exact comparison. [2]
 
 ### Invariants And Boundaries
 
@@ -30,9 +30,8 @@ The shared TreeReceiptFixture constructs the enclosure and its exact comparison 
   model contradictions. `test_documented_support_matrix_matches_the_measured_operations` is different:
   it takes no enclosure fixture and compares `render_git_transition_support()` with repository Markdown;
   it performs no Git movement or lifecycle operation.
-- **The documented matrix and the published matrix are one table.** `render_git_transition_support()`'s
-  output must be a substring of `docs/reference/worktrees-c09.md`, so the document is generated from the
-  production table rather than transcribed beside it.
+- **The document contains the rendered support matrix verbatim.** `render_git_transition_support()`'s
+  output must be a substring of `docs/reference/worktrees-c09.md`.
 
 ### Todos
 
@@ -85,18 +84,20 @@ against, and that assertion is filed under Repo-Internal References.
 
 
 
-> Retained earlier citation wording: - **The lane registration that makes these cases part of the governed `integration` population.** Source caption: `test_review_external_git_movement_read`
 
 
 
 
 
 
-> Retained earlier citation wording: - **A lifecycle consumer row that names this module, so the artifact census still counts it.**
 
 
 
-- **The documented section the matrix case asserts against, generated from the production table.** [29]
+
+
+
+- **The repository document that must contain the rendered support matrix verbatim.** [29]
+
 
 ### Cross-Repo References
 
@@ -120,9 +121,9 @@ cross-repo reference row is recorded for this module.
 
 
 
-- **A lifecycle consumer row that names this module, so the artifact census still counts it.**
+- **The lifecycle catalog names this module in the consumer lists for `_user_settings_guard.py` and the Node profile fixture lockfile.**
 
-- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:597-597 - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1369-1369 - the bytes it recorded now occur 12 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 
 
 

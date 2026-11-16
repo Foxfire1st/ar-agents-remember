@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The evidence-system design page describes evidence classes, cadence and source versioning; the evidence-lifecycle and lane catalog entries it links were re-read and its statements hold.",
-    "task": "261112-RSM-L1",
+    "statement": "The page holds: the catalogue change adds test cases to the lanes and to the lifecycle table, and the design page's evidence classes, cadence and source versioning are unchanged by that.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+      "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
+      "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

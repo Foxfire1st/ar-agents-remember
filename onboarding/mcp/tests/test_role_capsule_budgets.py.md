@@ -18,7 +18,7 @@ The historical registry `capsule-budgets.json` keeps its own frozen checks. Its 
 
 The mutation case patches the real measurement inputs and runs the historical-registry guard `_assert_current_fixture_budgets` on fixture registries. It supplies a good control then over-budget, live/stored-size ceiling and missing-detail failures. The guard is a size/registry check, not a meaning classifier or evidence that decision provenance was validated.
 
-Live capsule ceilings come from the current record: 5441 words for Architect, 4522 for Manager, 4537 for Curator, 4049 for Reviewer, 4000 for Bootstrap and 3722 for other roles. Declared step details have a 2500-word ceiling and the separately delivered every-role digest a 2266-word ceiling that must equal the digest map's maximum. Registry completeness, exact recorded measurements and exact/over-limit mutation controls apply independently. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
+Live capsule ceilings come from the current record: 5474 words for Architect, 4562 for Manager, 4537 for Curator, 4112 for Reviewer, 4000 for Bootstrap and 3742 for other roles. Declared step details have a 2500-word ceiling and the separately delivered every-role digest a 2327-word ceiling that must equal the digest map's maximum. Registry completeness, exact recorded measurements and exact/over-limit mutation controls apply independently. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
 ## Evidence
 
@@ -26,10 +26,14 @@ Live capsule ceilings come from the current record: 5441 words for Architect, 45
 
 - The historical-registry guard rejects missing/orphan entries, a recorded size that differs from the measured one, any actual/stored/budget size over its supplied ceiling, a budget different from min(ceil(stored size_words*11/10), ceiling) unless a named approved limit applies, and actual size over budget. `capsule_ceiling` selects Architect 4631, Manager 4513, Curator 4100, Reviewer/Bootstrap 4000 and 3700 for other roles; its callers guard details at 2700 and the shared digest at 1474. [2]
 
-- The tests measure whitespace-split words from freshly rendered capsule instructions, complete declared detail sources and the separately delivered every-role digest, and check them against the fingerprinted current record: exact recorded measurements, per-key limits and role-specific ceilings (Architect 5441, Manager 4522, Curator 4537, Reviewer 4049, Bootstrap 4000, otherwise 3722), details 2500 and digest 2266. Exact keys reject omissions and orphans; mutation controls invoke the real guards with changed inputs at and beyond the limits. [3]
+- The tests measure whitespace-split words from freshly rendered capsule instructions, complete declared detail sources and the separately delivered every-role digest, and check them against the fingerprinted current record: exact recorded measurements, per-key limits and role-specific ceilings (Architect 5474, Manager 4562, Curator 4537, Reviewer 4112, Bootstrap 4000, otherwise 3742), details 2500 and digest 2327. Exact keys reject omissions and orphans; mutation controls invoke the real guards with changed inputs at and beyond the limits. [3]
 
-- Live capsule ceilings are 5441 words for Architect, 4522 for Manager, 4537 for Curator, 4049 for Reviewer, 4000 for Bootstrap and 3722 for other roles; declared step details have a 2500-word ceiling and the separately delivered every-role digest a 2266-word ceiling that must equal the digest map's maximum. Registry completeness, exact recorded measurements and exact/over-limit mutation controls apply independently. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [4]
+- Live capsule ceilings are 5474 words for Architect, 4562 for Manager, 4537 for Curator, 4112 for Reviewer, 4000 for Bootstrap and 3742 for other roles; declared step details have a 2500-word ceiling and the separately delivered every-role digest a 2327-word ceiling that must equal the digest map's maximum. Registry completeness, exact recorded measurements and exact/over-limit mutation controls apply independently. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [4]
 
 - The historical-registry capsule ceilings by role. [5]
+
 - The current record's capsule, step-detail and digest ceilings. [6]
+
 - The historical registry's frozen decision records, historical sizes and named limits stay pinned. [7]
+
+- MIK-R101@v1 rule 6 records growth, a new role and a new operation as decisions in the same change as the raised or added budget. [8]

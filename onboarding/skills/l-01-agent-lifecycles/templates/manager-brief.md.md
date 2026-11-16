@@ -12,7 +12,7 @@ The compiled master brief preserves the monotonic sealed finding list across rou
 
 ## Closeout
 
-The brief publishes no closeout door. After the handoff and a current-lineage proof, the leaf is closed out through its own procedure — `worktree_closeout_preview`, then the approval stop (explicit developer commit approval for standalone/final work, or the recorded delegated series authority), then `worktree_closeout_apply` with an explicit nonblank message per enabled leg and that authority as its intent note. That transaction owner proves admission itself (task intent, super → master → leaf lineage, the invariant/knowledge gate and the curator's coherence authority) and records recoverable per-leg journal evidence. No release by an Orchestrator is needed. An unfinished closeout is recovered as `operations/coordination.md` says: its generation is read from `worktree_status` (`lifecycleOperations`) and acted on through `worktree_operation_control` with that `expected_generation`. `closeout_queue` is only the sprint's disposable waiting-only projection (`status`, `rebuild`) and confers no authority.
+The brief publishes no closeout door. After the handoff and a current-lineage proof, the leaf is closed out through its own procedure — `worktree_closeout_preview`, then the approval stop (explicit developer commit approval for standalone/final work, or the recorded delegated series authority), then `worktree_closeout_apply` with an explicit nonblank message per enabled leg and that authority as its intent note. That transaction owner proves admission itself (task intent, super → master → leaf lineage, the invariant/knowledge gate and the curator's coherence authority) and records recoverable per-leg journal evidence. No release by an Orchestrator is needed. An unfinished closeout is recovered as `operations/coordination.md` says: its generation is read from `runningOperation` while queued or running, otherwise from `lifecycleOperations`, in the `worktree_status` answer or its named full-result file. A stopped operation has no `runningOperation` entry of its own; its generation remains in `lifecycleOperations`. Recovery uses `worktree_operation_control` with that `expected_generation`. `closeout_queue` is only the sprint's disposable waiting-only projection (`status`, `rebuild`) and confers no authority.
 
 ## Message/file transport
 
@@ -32,10 +32,8 @@ the exact approved requirement revisions the manager must dispatch and close.
 
 ### Logic
 
-Before each worker dispatch, the manager receives one stable ID, exact version, matching approved
-canonical packet, corpus ruling, and expected evidence classes for every applicable requirement.
-The manager requires one worker acceptance block and one independent reviewer adjudication per
-revision. It separately preserves the durable-evidence promotion hold point, optional requested
+Before Worker dispatch, the Manager receives the primary revision's stable ID, exact version, approved canonical packet, durable approval record and expected evidence classes, with dependency and preservation context listed separately.
+The Manager requires one Worker acceptance block and an independent adjudication for the owned primary revision. It separately preserves the durable-evidence promotion hold point, optional requested
 review, curator handoff, and repository-defined transaction boundaries.
 
 The brief also requires the manager to compile the next review-handoff attempt identity without
@@ -76,17 +74,19 @@ None.
 
 ## CCR-R12@v5 Handoff Boundary
 
-This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry the complete memory-quality result that normal curation always runs; full code quality, full-suite tests, certification, and review are explicit requests rather than automatic template gates.
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared paired code and memory transaction and carry the complete memory-quality result that normal curation always runs; full code quality, full-suite tests, certification, and review are explicit requests rather than automatic template gates.
 
 ## Evidence
 
 ### Docs References
 
-No external Domain Documentation source governs this dispatch template.
+The template names no external Domain Documentation source.
 
 ### Repo-Internal References
 
-- Master exit carries the full revision set and independent adjudications. [2]
+
+- Master exit carries the exact code/memory transaction, Worker targeted-check report, complete Curator result and concrete failed or unrun checks; independent master-exit review is included when requested. [2]
+
 
 ### Cross-Repo References
 

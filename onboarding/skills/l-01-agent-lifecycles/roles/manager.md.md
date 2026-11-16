@@ -14,7 +14,7 @@ The role text routes publication to the repository policy: when the resolved mem
 
 ## Message/file transport and return addressing
 
-Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. Ordinary report-written notices and final report-path returns use the supplied parent role/task address, including an instructed reporting-recipient change. Developer-needed questions remain addressed to the actual parent/instructed-recipient ID. These are distinct message purposes, not an ID exception to the return rule. Fixed launch-parent identity and existing role/peer/write/acceptance boundaries remain preserved.
+Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. The final report-path return uses the supplied parent role and task references. Developer-needed questions remain addressed to the actual parent/instructed-recipient ID. These are distinct message purposes, not an ID exception to the return rule. Fixed launch-parent identity and existing role/peer/write/acceptance boundaries remain preserved.
 
 ## Governing Overview
 
@@ -52,11 +52,9 @@ than a condition the worker is expected to repair.
 
 When all leaves land, the manager writes the master-handover packet, including an independent
 master-exit verdict only when review was explicitly requested, and remains reachable at `(master document, manager)`.
-Ordinary report returns use the parent role and task references so replacement does not strand them. Developer escalations retain the supplied actual-parent or explicitly instructed-recipient ID channel and its refusal semantics.
+The final report-path return uses the parent role and task references so replacement does not strand it. Developer escalations retain the supplied actual-parent or explicitly instructed-recipient ID channel and its refusal semantics.
 
-Before starting the Worker, the manager compiles the exact stable IDs applicable to the leaf, including
-inherited master requirements. It requires one complete worker envelope per ID and gives that same
-set to the reviewer for independent accepted/rejected adjudication. Missing/duplicate IDs, missing
+Before starting the Worker, the Manager names the one owned primary revision and lists dependency and preservation requirements separately as context. It requires one complete acceptance block for the primary revision and gives the Reviewer that same primary packet and its separate context for independent adjudication. Missing/duplicate IDs, missing
 evidence fields, or an overall pass with any rejection fail closed. The separate durable-evidence
 promotion hold point remains in both briefs and cannot satisfy requirement acceptance.
 
@@ -71,8 +69,7 @@ or queue work.
 Internal runs stay in a separate protocol-event log. Repair to a reviewer-rejected manifestation
 creates a successor at the next handoff. An unrelated later candidate does not reopen accepted work.
 
-The curator receives that same exact approved revision set, every canonical packet, the durable
-corpus ruling, and the reviewer's per-revision adjudication. Rejected or worker-blocked revisions
+The Curator receives the approved primary revision and packet, separate dependency and preservation context, durable approval and ruling evidence, and the candidate-bound Reviewer adjudication when review was requested. Rejected or worker-blocked revisions
 are curator blockers, not authority to write current onboarding intent.
 
 ## Conventions
@@ -81,13 +78,13 @@ are curator blockers, not authority to write current onboarding intent.
 - Independent leaves dispatch in parallel unless a named dependency or one-writer constraint applies.
 - Builder, reviewer, and curator are distinct real leaf seats with distinct artifacts.
 - Delegated decisions are attributed; human-only gates remain human-owned.
-- Completed subordinate seats may be reclaimed only after their durable report exists.
+- Each subordinate writes its durable handoff artifact before a successful handoff turn ends; leaf archival retains its reports.
 
 ## Invariants And Boundaries
 
 - Manager identity is the canonical master document plus `manager` role.
 - Manager never becomes a native sub-agent, worker, reviewer, curator, orchestrator, or architect.
-- Manager may retire only its own master's worker/reviewer/curator child seats.
+- The Manager retires only child seats it started.
 - Manager owns reviewer dispatch at two altitudes: leaf review on the leaf document and, when requested,
   master-exit review on the acceptance and delivery-proof leaf named by the master task data; both generations are stamped back to this manager.
 - Manager does not self-approve, bypass blocked checks, or invent portfolio-wide authority.
@@ -98,17 +95,17 @@ are curator blockers, not authority to write current onboarding intent.
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. The Manager does not run the other seats' checks itself: full code-quality/test/certification operations remain explicitly assigned, while a normal Curator pass supplies its standing complete memory-quality and coherence evidence for the transaction. Requested reviews retain the sealed finding list and monotonic finding set under the settings limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized paired code and memory transaction. The Manager does not run the other seats' checks itself: full code-quality/test/certification operations remain explicitly assigned, while a normal Curator pass supplies its standing complete memory-quality and coherence evidence for the transaction. Requested reviews retain the sealed finding list and monotonic finding set under the settings limit.
 
 ## Questions from children and permission notices
 
-Before handling a child's question or returning the developer's answer, the Manager reads `reference/coordination/shared/child-questions.md` for the relay and attribution rules; its own answer is never the developer's answer or approval. A child held at a permission prompt is relayed through the coordination operation's permission-notice procedure. Without a parent, the Manager puts a developer question in its own chat.
+Before handling a child's question or returning the developer's answer, the Manager reads `reference/coordination/shared/child-questions.md` for the relay and attribution rules; its own answer is never the developer's answer or approval. A child held at a permission prompt is relayed through the coordination operation's permission-notice procedure. Without a parent, the Manager puts a developer question in its own chat. When an Orchestrator coordinates the sprint, the Manager sends it the closeout apply's result or refusal through the named closeout-result procedure.
 
 ## Current composition and authoring contract
 
 Manager retains one-master coordination, role starts/replacements, report-based state, delegated gate acceptance, transaction ownership and landing order. Manager sets no step for another agent. Worker, Reviewer and Curator completion bookkeeping does not transfer acceptance or publication authority to those roles; task stage is published by its native owner, with Manager correction/organizational-completion authority as the landed account states.
 
-The individual stage starts and the direct peer handovers are stated in the role and the coordination operation. Its detail files at C are `reference/coordination/shared/child-questions.md`, `reference/coordination/shared/master-state.md`, `reference/coordination/shared/seat-recovery.md`, `reference/coordination/shared/third-rejected-round.md`, `reference/knowledge/commands.md`, `reference/message-handover.md`, `reference/refused-write.md`, `reference/sandbox-actors.md` and `reference/tasks/document-authoring.md`; the lane failure count (from `FAILED`, `SUBFAILED` and `ERROR` lines, grouped by test node, each failing node with an owner) is stated inline.
+The individual stage starts and the direct peer handovers are stated in the role and the coordination operation. The role also points to `reference/coordination/shared/master-state.md` before master-state updates and completion, including its abandoning section for `worktree_abandon` and `worktree_record_landing`. Its detail files at C are `reference/coordination/shared/child-questions.md`, `reference/coordination/shared/master-state.md`, `reference/coordination/shared/seat-recovery.md`, `reference/coordination/shared/third-rejected-round.md`, `reference/knowledge/commands.md`, `reference/message-handover.md`, `reference/refused-write.md`, `reference/sandbox-actors.md` and `reference/tasks/document-authoring.md`; the lane failure count (from `FAILED`, `SUBFAILED` and `ERROR` lines, grouped by test node, each failing node with an owner) is stated inline.
 
 ## Settle precedents without adding repair stops
 
@@ -124,19 +121,21 @@ A Worker repairing an owned finding needs no plan, account or go-ahead from Mana
 
 ## Current Investigator contract impact
 
-The Manager retains its master’s leaf diff, direct repair and transaction ownership. A check or investigation belonging to no leaf may be assigned to Investigator within the Manager’s admitted master; leaf checks remain with the actual Worker or Reviewer. A forbidden start is sent to the known parent, or named as a blocker without one. This added delegation permission does not require an Orchestrator above one master or transfer onboarding/code ownership.
+The Manager inspects its master’s leaf diffs and retains gate and transaction ownership; the leaf authors and Reviewer run finding-specific repair directly. A check or investigation belonging to no leaf may be assigned to Investigator within the Manager’s admitted master; leaf checks remain with the actual Worker or Reviewer. An inability to start a needed role is reported to the known parent or instructed recipient, or named as a blocker in its own chat when it has no parent. Investigator delegation does not require an Orchestrator above one master or transfer onboarding or code ownership.
 
 ## Stage Boundary
 
 The Manager hands a whole stage with its end state to its owner, not a chain of steps; its exactness is at sync, closeout, integration, task end and agent starts.
 
-Own work/instrument slips and invalid caller input are repaired through the same admitted tool and work continues. Stops remain permission prompts, correct-input product/AR refusals or unowned state, requirement-meaning questions, and effects outside the worktree/scratch/task. An unfinished final turn sends what is awaited, and from whom, to its parent with `role_message` on `agents-remember-task`. Worker/Reviewer repairs answer the required property and construction, not a succession of examples; extra-round requests carry that account.
+Own work/instrument slips and invalid caller input are repaired through the same admitted tool and work continues. Apart from covered correct writes, which follow the shared recovery procedure, stops remain permission prompts, correct-input product/AR refusals or unowned state, requirement-meaning questions, and effects outside the worktree/scratch/task. An unfinished final turn sends what is awaited, and from whom, to its parent with `role_message` on `agents-remember-task`. Worker/Reviewer repairs answer the required property and construction, not a succession of examples; extra-round requests carry that account.
 
 The review budget is the settings number `orchestration.loops.defaults.maxRounds`, read at each begin; the effective task limit includes approved extras. CODE and MEMORY retain separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval; the Manager asks through its assigned reporting route.
 
 ## Current Source Evidence
 
+
 - The Manager sets no step for another agent; coordination, gate and publication powers stay with their owners. [12]
+
 
 - One Manager coordinates one canonical master, reads complete changed-file evidence and both verdicts, and retains closeout, integration, acceptance and landing order without editing Curator-owned memory or substituting a finished turn for acceptance. [1]
 
@@ -150,7 +149,9 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 - Each leaf has one primary requirement revision; adjacent revisions remain constraints. The Manager inspects the complete changed-file diff and both verdicts, preserves stable requirement/finding IDs and distinguishes implementation, review, curation and publication. [6]
 
+
 - The Manager may start an Investigator under its own master, naming its sprint when one commands it, for a check belonging to no leaf, sends the scoped concern first to its returned ID, and keeps ordinary requirement interpretation and operational decisions within the intended promise. [7]
+
 
 
 

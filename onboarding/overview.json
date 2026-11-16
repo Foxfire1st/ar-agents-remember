@@ -4,7 +4,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The skill describes immediate-parent identity assertions; actual leaf target resolution requires the exact leaf/master/row and refuses the retired standalone fallback.",
+      "note": "Finalization resolves a leaf’s immediate parent master and exact row, and refuses a missing leaf/master/row binding rather than treating the leaf as standalone.",
       "targets": [
         {
           "anchor": {
@@ -253,7 +253,7 @@
       ]
     },
     "123": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The fast tier parks unstaged and untracked content and restores it on every exit.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): When staged isolation is needed and safe, the fast tier parks unstaged and untracked content and attempts restoration on exit; a failed restoration retains recovery instructions.",
       "targets": [
         {
           "anchor": {
@@ -375,7 +375,7 @@
       ]
     },
     "130": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Ruff's complexity rules and the one per-file ignore.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Ruff's complexity rules and its registration-only `PLR0913` exemption.",
       "targets": [
         {
           "anchor": {
@@ -656,7 +656,7 @@
       ]
     },
     "16": {
-      "note": "Historical pre-R53/L53 rollout account, not current ordinary admission: a changed source file’s card and its governing overview used counted change or history row. The explicit amended L53 changed-card exception remains bounded to L53; ordinary source-current rows are required by the successor doctrine.\n\nAnchor: `onboarding_trace_result` `onboarding_item_open`",
+      "note": "Historical pre-R53/L53 rollout account, not current ordinary admission: a changed source file’s card and its governing overview used counted change or history row. The explicit amended L53 changed-card exception remains bounded to L53; ordinary source-current rows are required by the successor doctrine.",
       "targets": [
         {
           "anchor": {
@@ -668,6 +668,12 @@
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
           },
           "kind": "code"
+        },
+        {
+          "document": {
+            "document": "file:///home/firefox/projects/ar-coordination/tasks/agents-remember/0_archive/260928_maintained-invariant-knowledge/requirements/MIK-R53-v1-judgment-records-and-the-onboarding-gate.md"
+          },
+          "kind": "external"
         }
       ]
     },
@@ -1034,7 +1040,7 @@
       ]
     },
     "275": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval.\n\nAnchor: `It is not the live`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval.",
       "targets": [
         {
           "anchor": {
@@ -1044,6 +1050,19 @@
               "end": 11,
               "kind": "line_range",
               "start": 3
+            },
+            "path": "AGENTS.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:c9f63ea46afd39aad20b37353a9c13d815a0adcb0dbf3ce3923007d434f3f832",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 129
             },
             "path": "AGENTS.md"
           },
@@ -1068,7 +1087,7 @@
       ]
     },
     "277": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Runtime asset sync treats root runtime folders as canonical and exposes a check form.\n\nAnchor: `sync_targets`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Skill synchronization treats root `skills/` as canonical and exposes a check form.",
       "targets": [
         {
           "anchor": {
@@ -1141,8 +1160,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41fe44d8ba865339d6423841deb11b646adfcc86",
-            "content": "sha256:92c0deb998a93e6c6811307c3defb3c9342ec798efc505d19e6fdcf87db0c026",
+            "blob": "b36e26b9f5ef1c8b92c91c68e9483bccced5116f",
+            "content": "sha256:46dd1bc9c087b42c7de4e3368799acc662628ffe0b2d132b24beec4ca10a2d71",
             "locator": {
               "kind": "file"
             },
@@ -1612,8 +1631,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
-            "content": "sha256:13e24d33d5bca5c8696ae421be1ae1eb3afc7eedc645d9aae338fa362b732552",
+            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+            "content": "sha256:0c07decd0dffc1f6b1ed47687bcb5d7671e037b245bc61ee8fe4d6f8dd6036cc",
             "locator": {
               "end": 79,
               "kind": "line_range",
@@ -1630,12 +1649,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
-            "content": "sha256:1fb555cee42b2d9f78cda94fd3df6ccfef7dab25458d2912ac85e12dd7621257",
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:7231d410a266a219ebaa565158546a12622d588abb1626067ad98305350a06dd",
             "locator": {
-              "kind": "file"
+              "end": 317,
+              "kind": "line_range",
+              "start": 292
             },
-            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+            "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:b0ebdb5c3e3d2bbc57b314c2ed6250c3e24512b67cbf1c7edeff29d0f58040d6",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 391
+            },
+            "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
           },
           "kind": "code"
         }
@@ -2147,7 +2181,7 @@
       ]
     },
     "331": {
-      "note": "Canonical source-bound onboarding and separate row domains.\n\nAnchor: `#### Onboarding judgments`",
+      "note": "Canonical source-bound onboarding and separate row domains.",
       "targets": [
         {
           "anchor": {
@@ -2157,6 +2191,32 @@
               "end": 362,
               "kind": "line_range",
               "start": 350
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:8bed46cce4fcdabb7701882fcef46d9154a2a59e069041772681c3209a9f7c00",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 250
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:b187e47db04e37ba4b49769e91def72010881d141e8f9eeb151f776a885ff04a",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 317
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -2177,6 +2237,45 @@
               "start": 22
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bce679174c74431e089a0291f70867a5aa614f7",
+            "content": "sha256:cd4ca519b184986d05ec71aeb7e73ec86b3c724c1f22c25f10b62567d9bc66e4",
+            "locator": {
+              "end": 552,
+              "kind": "line_range",
+              "start": 520
+            },
+            "path": "mcp/src/agents_remember/application/direct_execution_grants.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5586be802e8e401bd72b2e4e6a0f362426687d4",
+            "content": "sha256:764f10318e8f89e4109045893dd18751e68bfddefea722b93696e348ebcd4a53",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:14c2243e12309bd8e1e3c72aa1055f543743dd9a46ce321deaecbdc3f586fc85",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
           "kind": "code"
         }
@@ -2328,7 +2427,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "926e006da6810baf314464553204030191db3ad7",
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
             "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
             "locator": {
               "end": 58,
@@ -2383,7 +2482,7 @@
       ]
     },
     "339": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.",
       "targets": [
         {
           "anchor": {
@@ -2395,6 +2494,84 @@
               "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:3843b0eb9f2b3aca35addb4979001c9896916201cc12bb1c921429c16a814353",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
           "kind": "code"
         }
@@ -2419,7 +2596,7 @@
       ]
     },
     "340": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.",
       "targets": [
         {
           "anchor": {
@@ -2431,6 +2608,84 @@
               "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:3843b0eb9f2b3aca35addb4979001c9896916201cc12bb1c921429c16a814353",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
           "kind": "code"
         }
@@ -2481,7 +2736,7 @@
       ]
     },
     "342": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.",
       "targets": [
         {
           "anchor": {
@@ -2493,13 +2748,91 @@
               "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:3843b0eb9f2b3aca35addb4979001c9896916201cc12bb1c921429c16a814353",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
           "kind": "code"
         }
       ]
     },
     "343": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.",
       "targets": [
         {
           "anchor": {
@@ -2511,13 +2844,91 @@
               "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:3843b0eb9f2b3aca35addb4979001c9896916201cc12bb1c921429c16a814353",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
           "kind": "code"
         }
       ]
     },
     "344": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.",
       "targets": [
         {
           "anchor": {
@@ -2529,13 +2940,91 @@
               "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:3843b0eb9f2b3aca35addb4979001c9896916201cc12bb1c921429c16a814353",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
           "kind": "code"
         }
       ]
     },
     "345": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.",
       "targets": [
         {
           "anchor": {
@@ -2547,13 +3036,91 @@
               "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:3843b0eb9f2b3aca35addb4979001c9896916201cc12bb1c921429c16a814353",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
           "kind": "code"
         }
       ]
     },
     "346": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.",
       "targets": [
         {
           "anchor": {
@@ -2567,15 +3134,93 @@
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:3843b0eb9f2b3aca35addb4979001c9896916201cc12bb1c921429c16a814353",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
         }
       ]
     },
     "347": {
-      "note": "The Manager coordinates one master and starts leaf stages individually: Worker first, Reviewer at freeze and Curator after code PASS. Review and memory passes keep settings-owned limits and recorded extra-round approval; whole-stage boundaries and correct-input refusal stops remain explicit. These source declarations prove no execution, review result, curation result or acceptance.\n\nAnchor: `Worker first, Reviewer at the freeze`",
+      "note": "For ordinary delivery, the Manager coordinates one master and starts leaf stages individually: Worker first, Reviewer at freeze and Curator after code PASS. An approved prerequisite sync may require Curator-owned memory reconciliation before ordinary delivery curation. Review and memory passes keep settings-owned limits and recorded extra-round approval; whole-stage boundaries and correct-input refusal stops remain explicit. These source declarations prove no execution, review result, curation result or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
             "content": "sha256:d20df717b378f566eed4a0b8759c045e05844f53711d396f36e5d77c8d44a2bb",
             "locator": {
               "end": 68,
@@ -2585,11 +3230,37 @@
             "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:cdbec88c2933dfcb8d388f31778f22b9fb5d578329bd0cafcc5fba25d13b8e9c",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:6f17fc68facf1fdd20605843b11269ac6c0e4112a019fb80a9ccb49ce83c99e1",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
         }
       ]
     },
     "348": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.",
       "targets": [
         {
           "anchor": {
@@ -2603,11 +3274,89 @@
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:3843b0eb9f2b3aca35addb4979001c9896916201cc12bb1c921429c16a814353",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
         }
       ]
     },
     "349": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.",
       "targets": [
         {
           "anchor": {
@@ -2619,6 +3368,84 @@
               "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:3843b0eb9f2b3aca35addb4979001c9896916201cc12bb1c921429c16a814353",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
           "kind": "code"
         }
@@ -2641,7 +3468,7 @@
       ]
     },
     "350": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.",
       "targets": [
         {
           "anchor": {
@@ -2655,11 +3482,89 @@
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:3843b0eb9f2b3aca35addb4979001c9896916201cc12bb1c921429c16a814353",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
         }
       ]
     },
     "351": {
-      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.",
       "targets": [
         {
           "anchor": {
@@ -2671,6 +3576,84 @@
               "start": 36
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7138bf05823d41e85fe541b180f948f12e5c555",
+            "content": "sha256:3843b0eb9f2b3aca35addb4979001c9896916201cc12bb1c921429c16a814353",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/tasks/document-authoring.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
           "kind": "code"
         }
@@ -2831,8 +3814,21 @@
       ]
     },
     "359": {
-      "note": "Setup reports memory/baseline state and hands the user to Architect; actual foundation authorship requires its regular task, task document and enclosure under the Curator.\n\nAnchor: `Who Runs It`",
+      "note": "Setup reports memory/baseline state and hands the user to Architect; actual foundation authorship requires its regular task, task document and enclosure under the Curator.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "bfa0e900805e61cca784cc1ff46e1e15fcea75fc",
+            "content": "sha256:0bebfb5beb8187941dd367901f19db13d50d841c747dcdd7c5498bcfa469c9f0",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/bootstrap/foundation-state.md"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
@@ -2939,16 +3935,16 @@
       ]
     },
     "365": {
-      "note": "Current capsule limits live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`, which the live budget guard enforces: role ceilings Architect 5,474 words; Manager 4,562; Curator 4,537; Reviewer 4,112; Bootstrap 4,000; other roles 3,742. Its current sub-record is `measuredCurrentRenewalWaitsAndCodingGuidelines`; the current measurements cover 34 capsules and 38 declared step details, declared step details have a 2,500-word ceiling, and the every-role digest measures 2,327 words against an equal 2,327-word ceiling. A limit rises to the actual size only where the actual size exceeds it. `capsule-budgets.json` is the frozen historical registry; the guard checks its bytes by hash and still reads only its handover token budgets from it. These are stored declarations, not a new compilation or test run.",
+      "note": "Current capsule limits live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`, which the live budget guard enforces: role ceilings Architect 5,474 words; Manager 4,562; Curator 4,537; Reviewer 4,112; Bootstrap 4,000; other roles 3,742. Its current sub-record is `measuredCurrentRenewalBug07`; the current measurements cover 34 capsules and 38 declared step details, declared step details have a 2,500-word ceiling, and the every-role digest measures 2,327 words against an equal 2,327-word ceiling. The current tables record a 290-word limit and a 289-word measurement for `reference/coordination/shared/master-state.md`. The predecessor sub-record `measuredCurrentRenewalWaitsAndCodingGuidelines` records that a limit rises to the actual size only where the actual size exceeds it, a role ceiling rises only where a raised limit would pass it, and every other limit and ceiling stays unchanged. `capsule-budgets.json` is the frozen historical registry; the guard checks its bytes by hash and still reads only its handover token budgets from it. These are stored declarations, not a new compilation or test run.",
       "targets": [
         {
           "anchor": {
-            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
             "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
             "locator": {
-              "end": 6371,
+              "end": 6560,
               "kind": "line_range",
-              "start": 6362
+              "start": 6551
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -2956,12 +3952,12 @@
         },
         {
           "anchor": {
-            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
             "content": "sha256:5564dd1bee04cc41fc567342a0aaf8ff0373ab568c48725432fe2dbb59df1054",
             "locator": {
-              "end": 6361,
+              "end": 6550,
               "kind": "line_range",
-              "start": 6322
+              "start": 6511
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -2969,12 +3965,25 @@
         },
         {
           "anchor": {
-            "blob": "e496c4d0e37835d51064bfc7ed14a72f51037e92",
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:2d0e580d5820ce0a67b6cdd3da83bf80d6e4d04c9da09b662c578879c4e11d4d",
+            "locator": {
+              "end": 5104,
+              "kind": "line_range",
+              "start": 5101
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
             "content": "sha256:ae3e14fc87c83ab3e43b3323dcd28d144a54032b1733e1cca4c96821504beb0d",
             "locator": {
-              "end": 5481,
+              "end": 5480,
               "kind": "line_range",
-              "start": 5481
+              "start": 5480
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -2995,7 +4004,7 @@
         },
         {
           "anchor": {
-            "blob": "1e978ee04dff9734b4dff64133d62261ae76e6b2",
+            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
             "content": "sha256:2fb05d08cfa4eb8da599b6c3fd9bcc24e545a5f6d9ac5646fbf6a2ba594ceb0c",
             "locator": {
               "end": 129,
@@ -3005,11 +4014,50 @@
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:bea2a1aca75ce1229788d34d37796ae960d600670a642500cf1694f67c187f5f",
+            "locator": {
+              "end": 6159,
+              "kind": "line_range",
+              "start": 6154
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:a28133537e1fb4acfb96b47c09eacfe78d09de4c4365ee158f12d3f18ff57574",
+            "locator": {
+              "end": 6422,
+              "kind": "line_range",
+              "start": 6343
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:b6699f86801da6a4b062bb1fb4f505308ec374bad271c566f4f1ab8495b0123e",
+            "locator": {
+              "end": 6503,
+              "kind": "line_range",
+              "start": 6424
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
         }
       ]
     },
     "366": {
-      "note": "AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. Past-epoch composition account: A capsule contains the selected role and one operation; `core/` is compiler metadata, not shared injected instructions. Current delivery: The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest is delivered separately in the first message; its revision contributes to capsule semantic identity, without injecting the larger core doctrine into rendered instructions. Missing or unsupported selection fields refuse rather than being inferred from nearby documents.\n\nAnchor: `core/every-role.md`",
+      "note": "AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. Past-epoch composition account: A capsule contains the selected role and one operation; `core/` is compiler metadata, not shared injected instructions. Current delivery: The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest is delivered separately in the first message; its revision contributes to capsule semantic identity, without injecting the larger core doctrine into rendered instructions. Missing or unsupported selection fields refuse rather than being inferred from nearby documents.",
       "targets": [
         {
           "anchor": {
@@ -3049,11 +4097,271 @@
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:f724c5c7e64d64f12e34cdc46514fe5e413dd7757ee04cc88edb68f8b8e2ef25",
+            "locator": {
+              "end": 961,
+              "kind": "line_range",
+              "start": 928
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:14c2243e12309bd8e1e3c72aa1055f543743dd9a46ce321deaecbdc3f586fc85",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:26314183153c205234615424aaee58bbfa3120a3fd659c0fd3c256f1c4ac5c00",
+            "locator": {
+              "end": 924,
+              "kind": "line_range",
+              "start": 866
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:21054e547db35c4914f56821694f436ea35b2a6a0ba612deb4b68c010c7c69ac",
+            "locator": {
+              "end": 983,
+              "kind": "line_range",
+              "start": 973
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+            "content": "sha256:a1826b35852463e6a5970fb5659f4dc6a46eacb23d87f8fc7a25f218507b55c3",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
+            "content": "sha256:525f34fcf9b7348736b13312d8d9d1ed9244ab9db6272ce9608725e58c39d77c",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 398
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:f77a37756bb2272099237e72cd55ab96d3998ac3111cbad149b58c61bc1c38d9",
+            "locator": {
+              "end": 310,
+              "kind": "line_range",
+              "start": 288
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:b9978f817c44d4baf77ebbba05c5636e584fb804353c7f267d88ebcd64c053b0",
+            "locator": {
+              "end": 415,
+              "kind": "line_range",
+              "start": 367
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:59a0eb823728c48f997c8a649d7eff38f2a31940edb0adecb7ead040bff3e07b",
+            "locator": {
+              "end": 1083,
+              "kind": "line_range",
+              "start": 1059
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:d09d80fab9df4286196f8c503b745c91879aa18d01bed564462e5bd9fa6a7dba",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:514188c14f0107a5d51fd9b95bc8c310110afeba99b48e800466112dcf9e11b1",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 235
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:bdd78b3cec6221ea81b8c468b19ec3bd1362b1c56e821d601d2330bf41d36721",
+            "locator": {
+              "end": 543,
+              "kind": "line_range",
+              "start": 539
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+            "content": "sha256:91f5b4e4420ea1c5aa0362b424ebc783469590ce419a62543589996a7c719334",
+            "locator": {
+              "end": 839,
+              "kind": "line_range",
+              "start": 791
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+            "content": "sha256:790f9bbaf224d7945aa19ac524f2d05bdab9bc5e8a53200cc1f51c68983ad7e6",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+            "content": "sha256:8d29e140ddd3d61e07c4e50481a745a5c699cc8c6d22b54b9bead5dc726e22c6",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
+            "content": "sha256:e698c154c3652012feac0142508d79cdaefc965c80d8b78a56be14194632ad31",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dfbfa7cad2cc062959ea0052500d3edc6219618",
+            "content": "sha256:743d798212a3e695a44c6338c5fcf17cf6070e84623b2bb550175455881fcefe",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dfbfa7cad2cc062959ea0052500d3edc6219618",
+            "content": "sha256:fdfe4f9772ecf87e964b6993ad0ad38bf2b82b27455d6ca849336d84b55127b0",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "content": "sha256:ce161272614d41159cb2cd2461007466b8db6bf4c3ad9725c46b82b598305c20",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "367": {
-      "note": "A converted sidecar change counts only when its references move beyond mechanical anchor fields; `realizes`/`proves`-only changes and unreadable sidecars do not count.",
+      "note": "A converted sidecar change counts only when its references move beyond mechanical anchor fields; `realizes`/`proves`-only changes and unreadable candidate sidecars do not count.",
       "targets": [
         {
           "anchor": {
@@ -3090,8 +4398,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41fe44d8ba865339d6423841deb11b646adfcc86",
-            "content": "sha256:92c0deb998a93e6c6811307c3defb3c9342ec798efc505d19e6fdcf87db0c026",
+            "blob": "b36e26b9f5ef1c8b92c91c68e9483bccced5116f",
+            "content": "sha256:46dd1bc9c087b42c7de4e3368799acc662628ffe0b2d132b24beec4ca10a2d71",
             "locator": {
               "kind": "file"
             },
@@ -3154,8 +4462,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41fe44d8ba865339d6423841deb11b646adfcc86",
-            "content": "sha256:92c0deb998a93e6c6811307c3defb3c9342ec798efc505d19e6fdcf87db0c026",
+            "blob": "b36e26b9f5ef1c8b92c91c68e9483bccced5116f",
+            "content": "sha256:46dd1bc9c087b42c7de4e3368799acc662628ffe0b2d132b24beec4ca10a2d71",
             "locator": {
               "kind": "file"
             },
@@ -3379,7 +4687,7 @@
       ]
     },
     "69": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The three attribute entries and their reasons.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The attribute rules preserve generated JavaScript whitespace and tokenizer vocabulary bytes, and union-merge the two test-evidence catalogs.",
       "targets": [
         {
           "anchor": {
@@ -3431,15 +4739,29 @@
       ]
     },
     "73": {
-      "note": "The retained internal8,000-token threshold constant; the mounted naming pager applies the separate4,000-token delivered bound and list cap.",
+      "note": "The internal knowledge-page threshold is 8,000 tokens; the mounted knowledge_read naming pager uses a 4,000-token delivered bound and a 20-entry list cap.",
       "targets": [
         {
           "anchor": {
             "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
-            "content": "sha256:3504100873b1cf1bdee93cacf9e2a2bd3627f8fa7fdfb656115c919f8f06decd",
+            "content": "sha256:f22e58ff1fe77b4f47af62e9e2c356b9825ee1a4f8f7c76d6bcdcd69174e1f86",
             "locator": {
-              "kind": "symbol",
-              "name": "TOOL_ANSWER_LIST_MAX"
+              "end": 31,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+            "content": "sha256:6ea1a6086fc01dc18f9bfda9d7f0f859bedde538a3b906d26eb1dd273768545e",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 120
             },
             "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
           },

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 7 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "role": "curator",
+    "statement": "All three changed passages are covered: the landing check runs for each side whose commit it publishes, and does not rerun for a side already at that commit; landing facts identify the task's landing line and each participant's state and factState, including absent for a known non-PR route, planned before a strategy or PR exists, and unknown/missing when gh cannot observe the PR. The new stale-debt paragraph says that a master's recorded landing, after the landing-chain proof passes with only stale-entry findings, returns their count, sentences, record identities and remedy as staleEntries and keeps them as master debt; cleanup of an incompletely recorded master names worktree_record_landing, while leaf closeout and ordinary landing still refuse stale entries. The three document-staleness refusal codes belong to the preceding unchanged paragraph, not the new debt paragraph. The rest of the page was not reverified.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -116,8 +116,8 @@
     },
     {
       "anchor": {
-        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-        "content": "sha256:f4a4dbbbac572268bf652e1c74764051c15d05cf8b8e33bd824c1ff25847a8b2",
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -204,7 +204,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+      "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py"
     },
@@ -262,6 +262,26 @@
       "blob": "ade405eca8709f4ab2c10d9f047bb9f76e2f44f5",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/lifecycles/door.py"
+    },
+    {
+      "blob": "2d46e4349e78760575ad3176a73a7606cd7d95f6",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+    },
+    {
+      "blob": "3cba6e5af9fb586386f0327c3231fbf20a3e2df6",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/landing.py"
+    },
+    {
+      "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+    },
+    {
+      "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     }
   ]
 }

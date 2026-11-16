@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The host page still describes Paseo, its version pin, the Node it downloads and its status lines; the binding shape the change widened does not appear in its statements.",
-    "task": "261112-RSM-L1",
+    "statement": "docs/host.md is unchanged between the leaf base and the selected code tree. Its pin/download and host-status sections describe the host, rather than dashboard media-byte handling or worktree lifecycle answer projection. In the selected implementation, the compact worktree_status answer keeps lifecycleOperationCount and runningOperation, while the saved whole result still carries lifecycleOperations; runningOperation is present only for a queued or running operation. The recorded-landing answer can also carry staleEntries. These are separate from the host page's pin, download and host-status fields; no replacement of lifecycleOperations in the whole result is claimed. This confirmation is limited to that comparison and those sections, not a fresh verification of every host-page statement.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+      "blob": "54b818118629a276761c14d24046428232306f6e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
     {
-      "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+      "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
@@ -154,6 +154,16 @@
       "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.ts"
+    },
+    {
+      "blob": "0cb4f51b0257d50eeb4b49ae6e90595d3aaec0ce",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/media.py"
+    },
+    {
+      "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/worktree_status.py"
     }
   ]
 }

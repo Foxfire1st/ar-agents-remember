@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1e5daff9b06533a935f42ff9808c968c7b22d4c2",
+        "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
         "content": "sha256:0d7c24a180dc9b2dcd3a4ed271ee4a4fa6f0ce034982e071f1f3d7c2bae4d23f",
         "locator": {
           "end": 7,
@@ -19,6 +19,63 @@
       },
       "rationale": "The Manager updates owned master state while preserving product-mirrored stage ownership and avoiding a contradictory second status.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+        "content": "sha256:16d05995c074e31a892ee77b7a892e2e7f1010cf965762324f4d4a505f17eb4d",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 17
+        }
+      },
+      "id": "RLZ-F5HVF3",
+      "invariant": "INV-6H0QQG",
+      "origin": {
+        "handoffEntry": "L7-CUR-PRESENTATION-04",
+        "leaf": "261112-BUG-L7"
+      },
+      "rationale": "Explains the recorded master landing’s named staleEntries and persisted debt, including the knowledge-maintenance remedy; it documents the existing debt answer without waiving mixed findings or chain checks.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+        "content": "sha256:4b90784759aa880ab30a8adc36938ee57795ec74602b8250496f554ee27fa9f2",
+        "locator": {
+          "end": 15,
+          "kind": "line_range",
+          "start": 15
+        }
+      },
+      "id": "RLZ-M2JNVX",
+      "invariant": "INV-275CEN",
+      "origin": {
+        "handoffEntry": "L7-CUR-PRESENTATION-03",
+        "leaf": "261112-BUG-L7"
+      },
+      "rationale": "Explains the successful abandon answer’s ancestry observation and landedWork fields, distinguishing work already on the source line from potentially stale recorded landing cells; it grants no bypass of terminal admission.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+        "content": "sha256:16d05995c074e31a892ee77b7a892e2e7f1010cf965762324f4d4a505f17eb4d",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 17
+        }
+      },
+      "id": "RLZ-TQAGWQ",
+      "invariant": "INV-S9NARW",
+      "origin": {
+        "handoffEntry": "L7-CUR-PRESENTATION-05",
+        "leaf": "261112-BUG-L7"
+      },
+      "rationale": "Names worktree_record_landing as the cleanup refusal’s next step for a master whose integration is incompletely recorded, without authorizing recording or cleanup.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -27,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e5daff9b06533a935f42ff9808c968c7b22d4c2",
+            "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
             "content": "sha256:eab722bceff756ba4eab4142f9702ea0310a4d27386fa9e8bd580f73882e7c54",
             "locator": {
               "end": 7,
@@ -44,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e5daff9b06533a935f42ff9808c968c7b22d4c2",
+            "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
             "content": "sha256:40bb7f4187504fe187678aa2104e83e95709f0cc3b2589447273c39ba9573411",
             "locator": {
               "end": 11,
@@ -57,12 +114,12 @@
       ]
     },
     "3": {
-      "note": "The Manager role points to both sections before updating master state through completion.",
+      "note": "The Manager role points to the update, completion and abandonment sections before updating master state through completion.",
       "targets": [
         {
           "anchor": {
-            "blob": "926e006da6810baf314464553204030191db3ad7",
-            "content": "sha256:a23dfcc433a8febc52500efbacbd60d929c4f83767d64f4f568b71a6f419124b",
+            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "content": "sha256:d30767e2a85aae5d77c891d7a58dd3c806dd78e3bf5fec0f53b1148acbc831fb",
             "locator": {
               "end": 56,
               "kind": "line_range",
