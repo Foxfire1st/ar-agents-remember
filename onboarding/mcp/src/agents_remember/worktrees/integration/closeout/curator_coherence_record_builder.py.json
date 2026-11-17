@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_record_builder.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Record construction uses the observed candidate, quality evidence and publication inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f781e81a9ca1d2160cce4f6974ea2ef4023ae97c",
+            "content": "sha256:6c293f764aaf43912d45eaa4d1777988e16dde589c3e5212fb8a88febfa924e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_curator_coherence_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

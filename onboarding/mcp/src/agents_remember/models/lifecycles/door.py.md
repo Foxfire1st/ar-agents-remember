@@ -76,7 +76,6 @@ The source file itself is the current evidence for this file-specific contract.
 - The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. [2]
 - The three retired contract-byte digest names and the read-time strip that keeps older persisted operation records loadable while every other unknown key still fails. [3]
 
-- The R03 door dependency vocabulary owned by this record type. [4]
 
 
 ### Cross-Repo References
@@ -100,3 +99,5 @@ provenance update with an exact action-specific payload matrix.
 Generation identity now includes the `dependencies` declaration, and the door source/successor
 owners recompute it from the exact candidate tree, topology, intent, and provenance records at
 currentness time (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
+
+- The R03 door dependency vocabulary owned by this record type. [4]

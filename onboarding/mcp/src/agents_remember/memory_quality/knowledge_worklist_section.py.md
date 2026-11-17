@@ -126,7 +126,6 @@ No configured live documentation source was available for this pass.
 - The section lines, the incomplete branch, the planned block and the item table with its **Plan** column. [13]
 - The ambiguous-rename checklist line: no suggestion, every candidate named. [14]
 - The checklist and the tool show the marks. [15]
-- The checklist renders it only when a worklist exists. [16]
 
 
 
@@ -144,3 +143,5 @@ No cross-repo boundary is crossed by this file.
 - The kind-to-renderer table includes both unexplained kinds and MIK-R53 membership/record renderers. [7]
 - Onboarding facts and current-source help literal; its edit-or-row wording is not the ordinary gate's row-required predicate. [9]
 - Current source delta inspected statically: Document new renderers and exact help; distinguish renderer hints from ordinary gate currency, without proposing record rows. [18]
+
+- The checklist renders it only when a worklist exists. [16]

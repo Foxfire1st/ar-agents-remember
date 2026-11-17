@@ -64,5 +64,7 @@ outright — `ERROR: test evidence lanes have 1 finding(s): … no tests ran` �
 on *before* the row existed gives `INTERNALERROR> AssertionError … crashitem`, which is the
 symptom `T48` recorded.
 
-**This module's own lane is `architecture-fitness`** (`mcp/tests/test-evidence-lanes.toml:233`),
-recorded by `260831-LOCR-L07`.
+**This module's own lane is `architecture-fitness`** (`mcp/tests/test-evidence-lanes.toml:788`),
+recorded by `260831-LOCR-L07`. [2]
+
+- The lane manifest declares this module in architecture-fitness; declaration is not execution evidence. [2]

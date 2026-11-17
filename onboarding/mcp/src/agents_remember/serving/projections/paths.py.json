@@ -90,12 +90,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:db410a3e3c4b61c729360d2ae1219b7a4171297870328a99a74ffe21e4dcc7ba",
             "locator": {
-              "end": 302,
+              "end": 303,
               "kind": "line_range",
-              "start": 293
+              "start": 294
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

@@ -101,6 +101,23 @@
           "kind": "test"
         }
       ]
+    },
+    "5": {
+      "note": "General tools and boot identity",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a51e42c0efc8105efea450f4971eeb99b1f40a9",
+            "content": "sha256:7206052b4018ae340a8a28c6f0bd561a7dfe5ba891c3d9a440a5407405b74b28",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 448
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

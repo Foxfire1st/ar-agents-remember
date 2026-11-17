@@ -99,7 +99,6 @@ No configured live documentation source was available for this pass.
 - A family or revision the tree does not hold is refused selector_absent. [15]
 
 
-- Converted trees refuse unheld seeds; mounted tools refuse legacy memory without opening a database. [16]
 
 
 
@@ -108,3 +107,5 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the code tree is read from the caller's `repositoryRoot` or the mount's workspace, both the same code repository.
 
 No cross-repo boundary is crossed by this file.
+
+- Converted trees refuse unheld seeds; mounted tools refuse legacy memory without opening a database. [16]

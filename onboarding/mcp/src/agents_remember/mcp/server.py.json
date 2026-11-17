@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
         "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
         "content": "sha256:312d3f75f123cb354fd03fd95f8dd3fc94d3693499546a4be82abdd2bf7cf3a9",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
         "content": "sha256:0e6725422a3eeea913b4bcd5b3deadefa0ea96e4ce447473d731c92ff3196b21",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
         "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
         "content": "sha256:fdfd078bb233e7616bdacc47766168eea5c696b7cf50c0a719787b863b635663",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,25 @@
     },
     {
       "anchor": {
-        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+        "content": "sha256:e056777fc950f723afb2628217470913514b02b53ec179cfc7d146c69d7a1eb1",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP.call_tool"
+        }
+      },
+      "id": "RLZ-FSMKXF",
+      "invariant": "INV-F1J9BH",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 1",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "Every MCP tool enters this dispatch, which owns its complete definition scope.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
         "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
         "locator": {
           "kind": "symbol",
@@ -112,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
         "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
@@ -125,12 +143,12 @@
         "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "Server composition sets the lazy service supplier, then chooses ordinary registrars or the exact bound explainer registrar. AgentsRememberMCP.call_tool refuses unexposed names before dispatch and returns named identity refusal when require_launched_seat fails.",
+      "rationale": "Registers every ordinary tool family, adds four explainer tools for a valid binding, and applies exact launched-seat validation only to those four calls.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
         "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
         "locator": {
           "kind": "symbol",
@@ -148,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
         "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
@@ -166,8 +184,8 @@
     },
     {
       "anchor": {
-        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
-        "content": "sha256:2cd385be89aaeba2f415443353fa07e03bfd4f1e80b22f29e7a5112387991826",
+        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+        "content": "sha256:e056777fc950f723afb2628217470913514b02b53ec179cfc7d146c69d7a1eb1",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP.call_tool"
@@ -184,12 +202,12 @@
     },
     {
       "anchor": {
-        "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
         "content": "sha256:e55057a9ca722d256995f6908c4f087e8376cb23ba670ddfe858c7846364ce6d",
         "locator": {
-          "end": 332,
+          "end": 333,
           "kind": "line_range",
-          "start": 328
+          "start": 329
         }
       },
       "id": "RLZ-WR0C2S",
@@ -208,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
             "locator": {
               "kind": "symbol",
@@ -224,12 +242,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:fdfd078bb233e7616bdacc47766168eea5c696b7cf50c0a719787b863b635663",
             "locator": {
-              "end": 155,
+              "end": 156,
               "kind": "line_range",
-              "start": 141
+              "start": 142
             }
           },
           "kind": "code"
@@ -241,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:b500dba00d72e964c33584080b15292c3ca591ab4f4a69285f610cdcfdf8b851",
             "locator": {
               "kind": "symbol",
@@ -257,7 +275,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
             "locator": {
               "kind": "symbol",
@@ -273,12 +291,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:cc4728a41e6f4052321429b9b65a0577f08f5890549c914edd2b55e2d572a7a8",
             "locator": {
-              "end": 136,
+              "end": 137,
               "kind": "line_range",
-              "start": 117
+              "start": 118
             }
           },
           "kind": "code"
@@ -290,12 +308,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:dddcc4e6d80d9521a9a274fd9fdd0b9ac6d21651000e906e9f9702aa2482fc3c",
             "locator": {
-              "end": 332,
+              "end": 333,
               "kind": "line_range",
-              "start": 327
+              "start": 328
             }
           },
           "kind": "code"
@@ -453,7 +471,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:623450c4c9e101bc8c5b6858ee7c0c1b15b27a9579668bba5dcce472ee7d4017",
             "locator": {
               "kind": "symbol",
@@ -469,7 +487,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
             "locator": {
               "kind": "symbol",
@@ -480,84 +498,29 @@
         }
       ]
     },
-    "8": {
-      "note": "Current transport wiring retains boot-time caller identity and lazy worktree service construction. It schedules a shared post-discovery sweep/conditional-dashboard latch after producing the list answer, with first-call fallback; application initialization installs no ambient lifecycle.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
-            "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
-            "locator": {
-              "end": 91,
-              "kind": "line_range",
-              "start": 79
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
-            "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
-            "locator": {
-              "end": 358,
-              "kind": "line_range",
-              "start": 335
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
-            "content": "sha256:2ffb803c1fa60fbe5b634fe22da023a150409f46617f6c60ffe3345f553d154e",
-            "locator": {
-              "end": 52,
-              "kind": "line_range",
-              "start": 34
-            },
-            "path": "mcp/src/agents_remember/application/runtime/startup.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
-            "content": "sha256:776e89f50dd72e08a3143d5b08ea5cb7381bc51822b99a0e1a8daa4520d637de",
-            "locator": {
-              "end": 207,
-              "kind": "line_range",
-              "start": 184
-            },
-            "path": "mcp/src/agents_remember/application/runtime/startup.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "9": {
-      "note": "Initialization names the worktree supplier and selects the ordinary or bound surface. list_tools produces its answer before scheduling start_after_discovery; call_tool invokes the same latch before bound-name/exact-seat checks. The latch starts the sweep even without config and starts dashboard supervision only with config/settings; bound checks and raised-call logging retain their owners.",
+      "note": "Initialization installs the worktree supplier and every ordinary tool family, adding the four explainer tools for a bound launch. list_tools schedules start_after_discovery after its answer exists; call_tool invokes the same latch before applicable explainer-seat checks. The latch starts the sweep even without config and dashboard supervision only with config/settings.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
             "locator": {
-              "end": 91,
+              "end": 92,
               "kind": "line_range",
-              "start": 79
+              "start": 80
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
             "locator": {
-              "end": 358,
+              "end": 359,
               "kind": "line_range",
-              "start": 335
+              "start": 336
             }
           },
           "kind": "code"

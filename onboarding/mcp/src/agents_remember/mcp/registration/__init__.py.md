@@ -1,119 +1,28 @@
 # mcp/src/agents_remember/mcp/registration/__init__.py
 
-## Current operative account — MIK-R112
-
-Ordinary registration adds explainer_control through register_explainer_tools; bound explainer registration is selected separately by create_server, rather than appending ordinary registrars.
-
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
-
-- Ordinary TOOL_REGISTRARS has ten entries, ending with register_explainer_tools after knowledge. A valid bound explainer server uses its separately selected 22-tool registrar rather than this ordinary tuple.
-- Capsule/skill family is now resource-only.
-
-### Superseded inventory
-
-- Pre-repair card claim: Card declares fifteen registrars and lists six retired families. This is superseded archival wording, not a current prescription.
-
-The module docstring assigns process wiring to `create_server`: compact-content serialization, application services and the FastMCP instance. It does not install or advertise an ambient session lifecycle.
-
-
-
-- The registration module leaves compact serialization, application services and FastMCP process composition to create_server. [9]
-
-### Source and authority bounds
-
-- Source comparison: `mcp/src/agents_remember/mcp/registration/__init__.py:33 (TOOL_REGISTRARS:)`.
-
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
-
-## Historical original card — preserved, not the current operative account
-
-<details>
-<summary>Retained original source accounts and producer history</summary>
-
 ## Governing Overview
 
-[registration route overview](overview.md)
+[Registration](overview.md)
 
 ## Purpose
 
-The package door for the MCP tool surface. It declares the one registrar signature every family
-module is called with and the ordered tuple `create_server` loops over.
-
-Owns the one MCP registrar tuple assembling advertised tool families.
+Declare the shared registrar signature and ordered tuple of ordinary tool-family registrars.
 
 ## Code Commentary
 
-### Logic
+`ToolRegistrar` is a callable receiving a FastMCP server and runtime configuration. `TOOL_REGISTRARS` contains ten family registrars in advertised order: core, seat retirement, memory, worktrees, closeout, tasks, capsule/skill resources, role agents, knowledge and explainer control. The module exports both names.
 
-Two public names:
+Family modules own tool declarations. The package imports the registrars; the server factory invokes them. Registration order remains part of advertisement and must agree with the model-owned public roster. The capsule/skill registrar serves resources and extension methods rather than tools.
 
-- `ToolRegistrar = Callable[[FastMCP, McpRuntimeConfig], None]` — the shape of a family module's
-  `register_*_tools`.
-- `TOOL_REGISTRARS: tuple[ToolRegistrar, ...]` — the **fifteen** registrars in advertise order: core,
-  sessions, memory, providers, code_search, worktrees, closeout, tasks, benchmarks, lifecycle,
-  gates, orchestration, capsule-and-skill-serving, role-agent tools, knowledge.
+## Relationships
 
-`register_knowledge_tools` from `knowledge.py` remains last. The current role-agent registrar
-`register_role_agent_tools` sits immediately before it, matching the advertised role names before the
-knowledge tail. Historically the knowledge registrar was appended so no existing tool's registration order moved — registration order is part of the advertised contract, and the
-advertised tuple `PUBLIC_TOOLS` therefore gained its knowledge names at its own tail as well
-(`knowledge_read`, `knowledge_diff`, `knowledge_integrity_check`). Before PNT, its immediate predecessor was `register_capsule_and_skill_tools` from
-`capsule_serving.py`, appended in 260915-CAPS-L4; the role-agent registrar now separates them.
-
-`__all__` exports both. The module docstring states the division this package exists to enforce:
-`create_server` owns process wiring (the compact-content shim, the ambient lifecycle, the `FastMCP`
-instance) and nothing else; every `@server.tool()` definition lives in a family module here.
-
-### Invariants And Boundaries
-
-- Adding a tool means editing one family module. Adding a family means a new module plus one entry
-  in this tuple — `create_server` should never grow a special case.
-- **Registrar, advertised roster and response registry preserve the same relative tool order.**
-  The role-agent family is inserted immediately before knowledge on each surface. A family change must
-  update all three surfaces together; a registrar whose placement disagrees with the roster is a
-  live-inventory violation. Earlier append-only additions remain historical evidence.
-- `PUBLIC_TOOLS` (defined at `mcp/src/agents_remember/models/tools/public_roster.py:22-97`,
-  re-exported by `mcp/tools/base.py`)
-  is the authority on the advertised name set; `mcp/tests/test_tools.py` compares it against a live
-  server's `list_tools()` and against `server_info`'s exact list. The comparison is against a **live**
-  registration, not against a payload that reports the tuple, so adding a registrar without adding its
-  names to the tuple is a surface violation the suite catches.
-- Importing this package imports every family module, which imports every payload builder. Keep it
-  free of side effects beyond those imports. `capsule_serving.py` is the one family whose module also
-  registers MCP **resources**, but the registration still happens inside its `register_*_tools`, so
-  the package door's no-side-effects rule is unchanged.
-
-### Role Runtime and Scope
-
-register_role_agent_tools is added to TOOL_REGISTRARS in the existing registration order. Role start/message share the normal response envelope, registry and token boundary; no tool family registers itself through an alternate startup route.
+`create_server` owns compact serialization, application services and server construction. Every launch invokes the ordinary tuple; a valid explainer binding additionally registers the explainer's four tools. Their per-call seat binding is separate from ordinary registration. The live tool-list comparison checks the ordinary advertised set rather than trusting a payload that repeats it.
 
 ## Evidence
 
-### Repo-Internal References
-
-
-
-
-
-- The advertised tool-name list's one definition, re-exported unchanged by the adapter. [2]
-
-- The registrar appended last so no existing registration order moved. [3]
-- The three advertised names the appended registrar publishes, at the tail of both surfaces. [4]
-
-- The capsule registrar historically appended immediately before knowledge, before the role-agent insertion. [5]
-
-
-- The live registered-order comparison that makes a registrar-without-roster-name a surface violation. [7]
-
-
-### Runtime Source References
-
-
-- Frozen implementation of TOOL_REGISTRARS supporting the stated file behavior. [8]
-
-
-</details>
-
-- Ordinary registration adds explainer_control through register_explainer_tools; bound explainer registration is selected separately by create_server, rather than appending ordinary registrars. [10]
-
-- The `create_server` consumer iterates `TOOL_REGISTRARS`. [1]
+- `create_server` iterates the ordinary registrar tuple. [1]
+- The public tool-name list has one model-owned definition re-exported by the adapter. [2]
+- The live tool-list comparison checks the advertised registration against the roster. [7]
+- `TOOL_REGISTRARS` declares the ten family registrars in order. [8]
+- The registration module leaves compact serialization, application services and process composition to `create_server`. [9]
+- Every launch registers the ordinary families; a valid explainer launch adds its four tools. [10]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "edc7edc63f5d05b34445dfe30d8e141ec5300efc",
-    "commit": "a2f0fced8896b92d31fd3f78351d01f5302be97e",
+    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
+    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
     "role": "curator",
-    "statement": "The packaged tool-details document remains byte-identical to its canonical source and consistent with the unchanged installation contract; the experiment capability probe changes only its instruction-renewal remedy.",
-    "task": "261112-BUG-L8",
+    "statement": "The changed coherence and quality passages match prepare-time complete attestation binding, measured freshness and old-record publication remedies, while the unchanged passages were not reverified.",
+    "task": "261112-BUG-L9",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -55,7 +55,7 @@
       "revision": 2
     },
     {
-      "blob": "102d8ad36390d59fc0e1a5ecfb1cac0467b657b4",
+      "blob": "c5279f52c1fae8958059bbbe48c65a4fd296bc4a",
       "kind": "file",
       "path": "docs/tool-details.md"
     },
@@ -105,7 +105,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
     {
-      "blob": "164232e680624f745b170382de28421b099658c7",
+      "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
     },
@@ -150,7 +150,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
     },
     {
-      "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+      "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -160,12 +160,12 @@
       "path": "mcp/src/agents_remember/serving/build_info.py"
     },
     {
-      "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
+      "blob": "42003e355d7caf9887db71524da64fa975e3aa14",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
     },
     {
-      "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+      "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
     },
@@ -183,6 +183,32 @@
       "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/baseline.py"
+    },
+    {
+      "anchor": {
+        "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+        "content": "sha256:c953503aa6afe66c046070e4713c0438b86ccab1d9e76a42e4cf596ea1ad226a",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+      },
+      "heading": "Loaded build identity",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "de7dda95ae9edafdee4da3337981c51e9eda4e44",
+        "content": "sha256:e6bdbae026e8ab8e2a26f2b240e16cc5a89e86b0b3d33644da2e0793a76a73e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_current_quality_binding"
+        },
+        "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_binding.py"
+      },
+      "heading": "Measured coherence",
+      "kind": "anchor"
     }
   ]
 }

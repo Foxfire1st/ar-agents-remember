@@ -118,15 +118,16 @@
       ]
     },
     "16": {
-      "note": "The checklist renders it only when a worklist exists.\n\nAnchor: `knowledge_worklist_lines`",
+      "note": "The checklist renders it only when a worklist exists.\n\nAnchor: `CuratorChecklist.knowledge_worklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "blob": "debdb3129deb37132e8c2ec46eed5b3cb5becbfa",
             "content": "sha256:73647c6be89bab95f610a9645de985a46cc0e1a37f13bd995f97f3104ffafc12",
             "locator": {
-              "kind": "symbol",
-              "name": "knowledge_worklist"
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
             },
             "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
           },
@@ -134,10 +135,10 @@
         },
         {
           "anchor": {
-            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
-            "content": "sha256:de4f02b1e44842c8637ba9133d354932844b4647ce457db52dca1569b246d947",
+            "blob": "debdb3129deb37132e8c2ec46eed5b3cb5becbfa",
+            "content": "sha256:95234efb4ca6fb2c1f89313a84b8299971f5742227d2d62615a61c29325ad1ca",
             "locator": {
-              "end": 304,
+              "end": 309,
               "kind": "line_range",
               "start": 304
             },

@@ -10,7 +10,7 @@ Own the explicit read-only/mutating partition used to annotate every registered 
 
 ## Code Commentary
 
-The central vocabulary adds all 17 explainer reads and 5 writes, plus mutating explainer_control for ordinary surfaces. Unknown marks still raise instead of silently defaulting.
+The central vocabulary marks `render` read-only and `define_category`, `remove_category`, `grade` and `explainer_control` mutating. Unknown marks raise instead of receiving a default.
 
 Server creation applies this single partition after registration. A registered name absent from both sets raises UnknownReadOnlyMark rather than shipping an unclassified annotation. The marks describe the complete advertised capability, not whether one particular invocation happened to write.
 
@@ -42,4 +42,4 @@ Read-only checks exclude only the derived index and logs under their owner rules
 
 - The mutating set that now carries the settings initializer. [4]
 
-- The central vocabulary adds all 17 explainer reads and 5 writes, plus mutating explainer_control for ordinary surfaces. Unknown marks still raise instead of silently defaulting. [5]
+- The central vocabulary marks `render` read-only and `define_category`, `remove_category`, `grade` and `explainer_control` mutating. Unknown marks raise instead of receiving a default. [5]

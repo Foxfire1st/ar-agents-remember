@@ -1,0 +1,107 @@
+{
+  "path": "mcp/tests/test_definition_scope_boundaries.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
+        "content": "sha256:9d77ca63cc0d445c44452b53a37f669b3ccb8057a43b8972b4f75d2322b012c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_background_worker_gets_isolated_scope_without_inheriting_starting_call"
+        }
+      },
+      "facet": "A background quality worker owns a scope separate from its starting call.",
+      "id": "PRF-7XMQ70",
+      "invariant": "INV-F1J9BH",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 1",
+        "leaf": "261112-BUG-L9"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
+        "content": "sha256:2b36b22a898be682d26156e2f30cc3a3064a593fb8a5e1a2cd223ff125150615",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dashboard_cli_serves_requests_without_a_process_definition_scope"
+        }
+      },
+      "facet": "Plain, reload and daemon CLI dispatch leave the substituted serving runner outside a process lifetime scope.",
+      "id": "PRF-BCVDPH",
+      "invariant": "INV-F1J9BH",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 1",
+        "leaf": "261112-BUG-L9"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MCP dispatch shares a synchronous handler context within one call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
+            "content": "sha256:f231fd199b19a9a5a9fdaf615c96c1bbb0c0a6068223b0fbf08cf7dcc8937ee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_common_mcp_boundary_shares_sync_handler_context_and_discards_between_calls"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Finite CLI scopes clear on success and exceptions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
+            "content": "sha256:5eca81054a51c7611861db479c30f65b000f68ac0390efc0fe7a4d9709616fef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cli_boundary_clears_success_and_error_scopes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Dashboard option dispatch leaves server requests outside a process scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
+            "content": "sha256:2b36b22a898be682d26156e2f30cc3a3064a593fb8a5e1a2cd223ff125150615",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dashboard_cli_serves_requests_without_a_process_definition_scope"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A background worker owns a context separate from its starting call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
+            "content": "sha256:9d77ca63cc0d445c44452b53a37f669b3ccb8057a43b8972b4f75d2322b012c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_background_worker_gets_isolated_scope_without_inheriting_starting_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

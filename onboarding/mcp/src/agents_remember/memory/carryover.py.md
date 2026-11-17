@@ -4,9 +4,7 @@
 
 [Nearest governing overview](../../../overview.md)
 
-Working-candidate verification: source inspected at 2026-09-15T00:51 UTC against the uncommitted L9
-candidate. The commit fields identify the latest real commit touching this file; they do not
-identify or claim a future commit for these working changes.
+
 
 ## Purpose
 
@@ -16,7 +14,9 @@ Plans evidence-backed converted onboarding carryover after code lands, then impo
 
 ### Logic
 
-`CarryoverRequest` owns the exact contract and comparison inputs. `CarryoverApplyOptions` contains only approval intent and explicit review selections. `_PlanFrame` binds official code, temporary/cached record indexes and memory merge-base files for one plan; old stamp, `CarryoverRefs`, `MemoryOnlyDoc` and memory-message objects are removed.
+`CarryoverRequest` owns the exact contract and comparison inputs. `CarryoverApplyOptions` contains only approval intent and explicit review selections. `_PlanFrame` binds official code, temporary/cached record indexes and memory merge-base files for one plan.
+
+Planning opens an existing index only through `open_cached_index`, which selects the loaded build's namespace without changing cache bookkeeping. When none is available, planning builds a disposable index and removes its temporary directory on exit.
 
 Planning classifies file sidecars, route overviews, memory-only documents and entity catalogs. Changed-source automatic selection starts with every relevant source-path commit ancestral to official code, then stable per-path patch identity, then final-content equality. Pair differences, noncurrent anchors and record conflicts can require review; only explicit review keys select those candidates. Memory-only automatic selection additionally requires at least one anchor, every anchor current at official code and both target bytes unchanged since the memory merge base. An exact interrupted subset can resume when each existing member equals the fresh official-reanchored payload; a missing companion alone is not a divergent overwrite. Entity catalogs and route overviews remain whole-unit review when differing.
 
@@ -45,18 +45,15 @@ No new file-local follow-up is established by this documentation pass.
 
 ## Evidence
 
-Inherited numbered findings [2], [4], [5] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
-
-
-- Converted carryover selects paired cards against official code and imports them into the exact recovery worktree without a commit or carried history. [8]
 
 
 
-- Carryover performs worktree validation/restore without staging, committing or refreshing a ledger. [9]
 
 
 
-- Converted carryover requires equal converted formats; unconverted input retains central conversion refusal. [10]
+
+
+
 
 
 
@@ -70,20 +67,15 @@ No configured external domain-documentation evidence.
 
 ### Repo-Internal References
 
-These repository-relative targets were checked in the L9 code checkout. The cited ranges support
-the current working-candidate behavior; historical entries below retain their original scope.
 
 
-- Candidate comparison and explicit review selection. [1]
 
 
-- Apply checks the converted formats, the configured code and external-memory authority and an ordinary checkout, then writes the selected candidates into the open recovery leaf without committing; closeout commits the judged tree. [2]
-
-- Target storage is established from effective explicit settings. [3]
-- Shared committing explicitly excludes the consumer cache. [4]
 
 
-- Public legacy carryover asserts conversion guidance and no observed ref/index/content/cache mutation; the prior successful-attribution test is retired [5]
+
+
+
 
 
 
@@ -95,3 +87,11 @@ the package-local implementation above. No additional external or sibling-reposi
 source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
+
+- Candidate comparison and explicit review selection. [1]
+- Apply checks the converted formats, the configured code and external-memory authority and an ordinary checkout, then writes selected candidates into the open recovery leaf without committing; closeout commits the judged tree. [2]
+- Target storage is established from effective explicit settings. [3]
+- Public legacy carryover asserts conversion guidance and no observed ref/index/content/cache mutation. [5]
+- Converted carryover selects paired cards against official code and imports them into the exact recovery worktree without a commit or carried history. [8]
+- Carryover performs worktree validation/restore without staging, committing or refreshing a ledger. [9]
+- Converted carryover requires equal converted formats; unconverted input retains central conversion refusal. [10]

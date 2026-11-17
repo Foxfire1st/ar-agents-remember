@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4860e1ef195a9c618e0c9761cb179b6ce19df891",
-            "content": "sha256:c2c957c152618d56ad5446fdfa03edf9a9fcec610f80c51157491af9711452bc",
+            "blob": "66000ae3ca89b96b9adf69e23e49f59cb6c3b7d8",
+            "content": "sha256:aa79f62b32f828272d9bf9640b1229555f7fd04721df1769ab59f9200d01c544",
             "locator": {
               "kind": "symbol",
               "name": "test_access_changes_only_usage_and_preserves_identity_memo"

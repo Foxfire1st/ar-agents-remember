@@ -16,13 +16,13 @@
         "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "Checks caller marker, workspace marker, current generation and derived seat against the launched binding on each call.",
+      "rationale": "Checks caller and workspace markers, current generation and derived seat when an explainer-owned tool calls the launched-seat validator.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "This constant is the surface a binding may discover or call, and it is the one list discovery and dispatch both check\n\nAnchor: `EXPLAINER_SURFACE: tuple`",
+      "note": "This constant names the four explainer-owned additions; dispatch uses it to select the calls that require launched-seat validation",
       "targets": [
         {
           "anchor": {
@@ -90,7 +90,7 @@
       ]
     },
     "5": {
-      "note": "A call from another seat, another workspace or a superseded generation is refused, and no argument widens the binding\n\nAnchor: `def require_launched_seat(`",
+      "note": "A call to an explainer-owned tool from another seat, another workspace or a superseded generation is refused, and no argument widens its binding",
       "targets": [
         {
           "anchor": {

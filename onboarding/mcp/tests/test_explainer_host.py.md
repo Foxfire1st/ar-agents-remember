@@ -14,7 +14,7 @@ Tests the explainer seat’s host launch, capsule, settings-selected launch valu
 - Its state is read from the host's own turn fields, so live, closed, archived and never-ran come from `turnActive` and `lastTurn` rather than from a request.
 - Claude is granted `server_info` and exactly `render`, `define_category`, `remove_category` and `grade`; Codex receives no `toolPolicy`. These assertions do not establish confinement of either harness.
 - A host map with extra arguments and an unreadable daemon configuration still permits creating and sending to the explainer seat.
-- A seat launched on values other than the role's own is refused, and a seat without the explainer label is not this seat at all. The suite it belongs to exercises that four-tool surface - `render`, `define_category`, `remove_category` and `grade` - and the workspace it writes into, not a read-back tool; removal archives the chat and deletes the workspace.
+- A seat launched on values other than the role's own is refused, and a seat without the explainer label is not this seat at all. The suite it belongs to exercises the four explainer-owned tools - `render`, `define_category`, `remove_category` and `grade` - and the workspace it writes into, not a read-back tool; removal archives the chat and deletes the workspace.
 
 
 The cancel case sends the exact seat ID and request ID through the bridge, observes a stopped turn and closed pending permission decision, clears the recorded pending marker, and keeps the seat mode. This test uses a scripted bridge reply, so it is not proof of cancellation against a live host.

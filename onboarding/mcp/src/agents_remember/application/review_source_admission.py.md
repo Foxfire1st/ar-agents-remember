@@ -130,10 +130,11 @@ No configured domain documentation could be checked.
 - Unconverted knowledge states its unavailability without canonical initialization; tree proof entries still admit their exact unchanged path. [14]
 
 
-- Ruling Q1 at the route: an unchanged test file only a proof names is refused before the proof exists and admitted with the new sentence after. [15]
 
 ### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- An unchanged test file named only by a proof is refused before that proof exists and admitted once the proof is authored. [15]

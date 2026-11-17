@@ -11,7 +11,7 @@
 candidate commit, and a converted memory repository with a base and a candidate commit, reopened as the reviewer
 reopens a recorded comparison (`reopened_trees`), so every knowledge side is read through the derived index of its
 tree. The route and live-leaf cases reuse `test_review_git_trees.py`'s `world` fixture. Registered in the
-`unit-regression` lane (`mcp/tests/test-evidence-lanes.toml:516`).
+`unit-regression` lane (`mcp/tests/test-evidence-lanes.toml:518`).
 
 ## Code Commentary
 
@@ -125,7 +125,5 @@ No cross-repo boundary is crossed by this file.
 - One focused question per request. [12]
 - The live tree leaf, and long paths answered typed (review F2). [13]
 - A dataset review's entry has no attribution. [14]
-
-
 
 - The module's lane row. Anchor: "mcp/tests/test_review_unexplained_lane.py" Anchor: "mcp/tests/test_review_unexplained_lane.py" [15]

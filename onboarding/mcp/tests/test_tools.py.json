@@ -110,6 +110,37 @@
         }
       ]
     },
+    "16": {
+      "note": "The current action-shape validator checks the nine declared publish members and rejects publication-only inputs on read actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:4b66f4952e681126ce86951860c82aa18551606c79e43c75ea2a9ed0fb387cc5",
+            "locator": {
+              "end": 572,
+              "kind": "line_range",
+              "start": 558
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:bb049a3555b26c9f959e9e5d3289d2e9c71f4641c68da2fb93ffe66838fd75a4",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 366
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Server info payload reports safe config summary",
       "targets": [

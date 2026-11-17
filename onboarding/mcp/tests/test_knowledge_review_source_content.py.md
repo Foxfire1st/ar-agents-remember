@@ -91,13 +91,13 @@ only the packet's boundary forbids it.
 ### Conventions
 
 `pytestmark = pytest.mark.evidence_unit` is the module's marker; its current
-`unit-regression` declaration is `mcp/tests/test-evidence-lanes.toml:270`.
+`unit-regression` declaration is `mcp/tests/test-evidence-lanes.toml:272`.
 The complete merged lifecycle catalog declares seven exact artifact-consumer
-relationships: `_user_settings_guard.py` (`:396`), `anchor_fixture_models.py`
-(`:921`), `diff_scope_test_support.py` (`:1336`), the Node `package-lock.json`
-fixture (`:2751`), `knowledge_row_codec_test_support.py` (`:3618`),
-`knowledge_rows_test_support.py` (`:3679`) and `read_scope_test_support.py`
-(`:4209`). These are catalog ownership declarations, not invocation or runtime
+relationships: `_user_settings_guard.py` (`:400`), `anchor_fixture_models.py`
+(`:926`), `diff_scope_test_support.py` (`:1342`), the Node `package-lock.json`
+fixture (`:2761`), `knowledge_row_codec_test_support.py` (`:3629`),
+`knowledge_rows_test_support.py` (`:3691`) and `read_scope_test_support.py`
+(`:4221`). These are catalog ownership declarations, not invocation or runtime
 consumption evidence. The earlier two-artifact account is superseded; its named
 diff-scope/read-scope supports remain members of this complete seven-artifact population. This module has no artifact or contract row of its own in this catalog.
 

@@ -293,16 +293,15 @@
       ]
     },
     "5": {
-      "note": "Curator evidence comes from the structured currentness validator and is consumed as door candidate provenance.\n\nAnchor: mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py; mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py",
+      "note": "Curator evidence comes from the structured currentness validator and is consumed as door candidate provenance.",
       "targets": [
         {
           "anchor": {
             "blob": "6327e089b3c2ef77df1cb26ed8516bd6a23a48a3",
-            "content": "sha256:b9d36126b04a0a47d1b6eb66f9ccf3f53146c9eaa2c71f004a51a6cf554cb99e",
+            "content": "sha256:81944dcbe7c014dedc53029436030b3e88a7fcc1b2c982f0ea841ccc8575383f",
             "locator": {
-              "end": 108,
-              "kind": "line_range",
-              "start": 82
+              "kind": "symbol",
+              "name": "curator_evidence"
             },
             "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py"
           },
@@ -310,12 +309,23 @@
         },
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
-            "content": "sha256:7e096998b9aa6648eb1863bb59a9729779e15d19c63b1f8fb70db7ee4e18686f",
+            "blob": "6327e089b3c2ef77df1cb26ed8516bd6a23a48a3",
+            "content": "sha256:efab24642df26db6cb1a916f3cf16691e61be46ccbc385409d848e10f7b7dbe9",
             "locator": {
-              "end": 346,
-              "kind": "line_range",
-              "start": 229
+              "kind": "symbol",
+              "name": "curator_evidence_blockers"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+            "content": "sha256:07570f44cdca5c621a00386f4add3a1f40941941e40d47002b103931e5d17420",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_evidence"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
           },
@@ -323,12 +333,11 @@
         },
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
-            "content": "sha256:07570f44cdca5c621a00386f4add3a1f40941941e40d47002b103931e5d17420",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+            "content": "sha256:4230a400360986700e0927c0f61bb806c847021c71dc9bb02d72743114f713ca",
             "locator": {
-              "end": 504,
-              "kind": "line_range",
-              "start": 503
+              "kind": "symbol",
+              "name": "require_current_curator_coherence"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
           },
@@ -337,11 +346,22 @@
         {
           "anchor": {
             "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
-            "content": "sha256:3e43129fbf26254597b8c4c4e647998feaae10acb2e37cffe5c0a0ac12334e26",
+            "content": "sha256:12f9193883c8826b87ced3ff029aa01e5eeb5059e66407774516cd7d50c73e47",
             "locator": {
-              "end": 170,
-              "kind": "line_range",
-              "start": 110
+              "kind": "symbol",
+              "name": "capture_door_candidate_evidence"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:3906a3c4f5c2a260f371f0fb4fac06cd51ee151c4e5d6f256ecfaf6941f74cc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "door_candidate_evidence_blockers"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
           },

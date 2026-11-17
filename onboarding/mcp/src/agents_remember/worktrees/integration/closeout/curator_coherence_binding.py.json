@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_binding.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "de7dda95ae9edafdee4da3337981c51e9eda4e44",
+        "content": "sha256:e6bdbae026e8ab8e2a26f2b240e16cc5a89e86b0b3d33644da2e0793a76a73e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_current_quality_binding"
+        }
+      },
+      "id": "RLZ-08CYXW",
+      "invariant": "INV-8XJF7R",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 5",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "A missing old binding or changed measured result produces the existing stale/publish answer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "de7dda95ae9edafdee4da3337981c51e9eda4e44",
+        "content": "sha256:11d7436e0b8cde975a43f45421951c9d29de2cea875f3ea5eeb1548302050d18",
+        "locator": {
+          "kind": "symbol",
+          "name": "curator_coherence_dependencies"
+        }
+      },
+      "id": "RLZ-0X57WP",
+      "invariant": "INV-8XJF7R",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 5",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "One dependency builder retains the prior edges and declares the two measured identities.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The shared builder names quality and assessment dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de7dda95ae9edafdee4da3337981c51e9eda4e44",
+            "content": "sha256:11d7436e0b8cde975a43f45421951c9d29de2cea875f3ea5eeb1548302050d18",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_dependencies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Missing or unequal measured identities require publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de7dda95ae9edafdee4da3337981c51e9eda4e44",
+            "content": "sha256:e6bdbae026e8ab8e2a26f2b240e16cc5a89e86b0b3d33644da2e0793a76a73e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_quality_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

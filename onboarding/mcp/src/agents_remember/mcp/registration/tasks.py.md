@@ -195,7 +195,7 @@ The current compact curator_coherence description names its four actions, all ni
 > validator used by memory and closeout. It explicitly forbids historical-filename fallback.
 >
 > **The description now names every field `publish` requires (260918-TSIP-L3, `T50`).** The enforced
-> validator (`models/lifecycles/curator_coherence.py:294-328` `_action_has_one_input_shape`) needs
+> validator (`models/lifecycles/curator_coherence.py` `_action_has_one_input_shape`) needs
 > **nine** non-null fields: `semantic_requirement_revision`, `delivery_attempt`,
 > `expected_predecessor_digest`, `expected_code_candidate_tree`, `expected_memory_candidate_tree`,
 > `expected_task_topology_fingerprint`, `expected_task_intent`, `expected_attestation_sha256` and

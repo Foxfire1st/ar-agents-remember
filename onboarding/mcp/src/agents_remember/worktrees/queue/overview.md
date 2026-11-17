@@ -91,9 +91,10 @@ Historical labels such as final, landed, and resolved describe earlier curation 
 - Canonical publication precedes projection refresh; exact-current publication and first-ready admission do not give projection rows lifecycle authority. [3]
 
 - Graph resolution uses the task terminal predicate; activation and capacity classifications retain their own deciding owners. [4]
-- Curator evidence comes from the structured currentness validator and is consumed as door candidate provenance. [5]
 
 
 
 
 - Preview, exact Git-output recovery, cache handling, explicitly selected staged quality, ordinary invariant-gated memory publication and protected-ref integration have separate owners; disposable scheduling projection grants none of their publication or certification authority. [6]
+
+- Curator evidence comes from the structured currentness validator and is consumed as door candidate provenance. [5]

@@ -76,5 +76,4 @@ No meaningful cross-repo references found: the command rewrites only the files i
 
 No cross-repo boundary is crossed by this file.
 
-
 - Registration in the umbrella. Anchor: "knowledge-format" [4]

@@ -45,10 +45,11 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 - The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface. [4]
 
 
-- `agentCreation` no longer imposes the old Claude-only review-presenter fence or injects `tools: ''` / `strict-mcp-config`. The settings role uses the normal harness launch; the product confines its own bound tool server at registration and dispatch. Retained `presenter-transcript` and `presenter-cancel` remain legacy presenter operations, while `agent-cancel` targets the exact explainer seat and request. [5]
 
 
 - Optional image/text lists are validated before recipient lookup and accompany the same native send without changing steering or plain-message options. [6]
 
 
 - agent-cancel validates agentId/requestId, finds only that id, cancels it and re-reads it. agentState includes provider, lastUserMessageAt and lastStatus; absent activeTurn is null rather than false. The removed review-presenter Claude-only fence is replaced by server-surface enforcement, not a new native harness fence. The native state response includes provider and last-message/status fields, and distinguishes absent activeTurn from false by reporting null. [7]
+
+- `agentCreation` no longer imposes the old Claude-only review-presenter fence or injects `tools: ''` / `strict-mcp-config`. The settings role uses the normal harness launch; the bound server registers AR’s general tools plus four explainer-owned tools and checks the launched seat on calls to those four. Retained `presenter-transcript` and `presenter-cancel` remain legacy presenter operations, while `agent-cancel` targets the exact explainer seat and request. [5]

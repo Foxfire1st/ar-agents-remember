@@ -61,7 +61,7 @@ The synthetic tree must mirror the external-memory enclosure topology. A leaf en
 
 ### Invariants And Boundaries
 
-- **This module has its evidence-lane row.** `mcp/tests/test_task_projection.py` is listed in the `unit-regression` lane of `mcp/tests/test-evidence-lanes.toml` (current row `:593`). The fail-closed loader `load_lane_manifest` derives the expected test population from the Python test modules under `testpaths = ["mcp/tests"]` and raises `LaneManifestError` for any test file without an explicit lane; the `pytest_collection_modifyitems` hook calls it on every collection.
+- **This module has its evidence-lane row.** `mcp/tests/test_task_projection.py` is listed in the `unit-regression` lane of `mcp/tests/test-evidence-lanes.toml` (current row `:595`). The fail-closed loader `load_lane_manifest` derives the expected test population from the Python test modules under `testpaths = ["mcp/tests"]` and raises `LaneManifestError` for any test file without an explicit lane; the `pytest_collection_modifyitems` hook calls it on every collection.
 - **No case may compare the projection against itself.** The expected side comes from the fixture
   files on disk, a frozen vocabulary, or an independent parse — never from the projection's output.
 - The import-surface case walks every module in the package, so a new module is covered
@@ -166,8 +166,9 @@ No meaningful cross-repo references found.
 
 - The compiler seam these cases verify through, including its digest refusal. [10]
 
-- The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [13]
 
-- The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [21]
 
 - The read-only case keeps task-document bytes and the task-tree digest unchanged after a successful projection, a projection-branch-mismatch refusal and a projection-requirement-packet-unresolved refusal. [5]
+
+- The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [13]
+- The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [21]

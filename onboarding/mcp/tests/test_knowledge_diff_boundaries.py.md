@@ -12,7 +12,7 @@ The sizes and catalog line addresses in the following original account are histo
 
 **The comparison's integration population: fifteen cases over a real committed Git pair, a real
 curated candidate database and the real application seam**, marked `pytestmark = pytest.mark.integration`
-and registered in the **integration** lane at `mcp/tests/test-evidence-lanes.toml:696-696`. It is the largest
+and registered in the **integration** lane at `mcp/tests/test-evidence-lanes.toml`. It is the largest
 new test module of the leaf at **840 lines** and still under the 1 200-line rail.
 
 The module owns the parts of the contract a hermetic unit case cannot honestly measure: what two **real**

@@ -66,6 +66,23 @@
           "kind": "test"
         }
       ]
+    },
+    "6": {
+      "note": "One planned comparison bound across worktrees and documents",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68aa84a49458805257b83b478739a57f54fee955",
+            "content": "sha256:3cfd64533a8b815a96afe1e7714bb9eee91a55001cfa69a5e9f73e761768fcf6",
+            "locator": {
+              "end": 419,
+              "kind": "line_range",
+              "start": 355
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

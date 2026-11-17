@@ -202,7 +202,6 @@ No configured domain documentation could be checked.
 
 
 
-- All three tools refuse legacy/database selections without opening them; a partial read retains incomplete status. [56]
 
 
 - - The read adds `proofs` only for a converted memory tree's page, prepared once per page since MIK-R02. [57]
@@ -258,3 +257,5 @@ No configured domain documentation could be checked.
 No cross-repository contract is established by this file.
 
 - Cutover refusal helpers, worktree candidate capture and contract loading are imported at the operation branches that need them; existing legacy-format and root-selector refusals remain. [83]
+
+- All three tools refuse legacy/database selections without opening them; a partial read retains incomplete status. [56]

@@ -6041,8 +6041,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
-            "content": "sha256:890c9736acb344ad4e335a24a0bbf4670fa0b997c835052dcf94133cacd330d0",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:8e635700f6acec931de69f04ddafb50dc72fb6d74d6ebceadaa83e037128d5c0",
             "locator": {
               "kind": "symbol",
               "name": "CuratorCoherenceRecord"
@@ -6053,7 +6053,7 @@
         },
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
             "content": "sha256:3bfc47f63b97806c0500e09de59cfdc6cd1fdaeaa3b550a5f27fafda1623f905",
             "locator": {
               "kind": "symbol",
@@ -6065,7 +6065,7 @@
         },
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
             "content": "sha256:921f80e1754e70b892cb40d9cf7bc05294ba1f1e49315bcf0e25b4ceb324833a",
             "locator": {
               "kind": "symbol",
@@ -6077,7 +6077,7 @@
         },
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
             "content": "sha256:d88ff6cfa7d8e4c8df6b7a72e9b6c9ba1856f3e0e86a26998308eb295bc08447",
             "locator": {
               "kind": "symbol",

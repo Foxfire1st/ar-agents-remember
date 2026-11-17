@@ -19,7 +19,8 @@ Owns the one Agents Remember command parser and subcommand dispatch.
 ## Code Commentary
 
 `build_parser()` builds an `argparse` parser with a required subcommand group and registers
-each subparser through its adapter's own `add_arguments`, setting `func=<adapter>.run`:
+each subparser through its adapter's own `add_arguments`. Finite commands dispatch through
+`_run_finite_command`; `dashboard` retains its adapter directly:
 `dashboard.add_arguments`/`dashboard.run`, `memory_citations.add_arguments`/`memory_citations.run`,
 `memory_backfill.add_arguments`/`memory_backfill.run`,
 `knowledge_ingest.add_arguments`/`knowledge_ingest.run`,
@@ -37,7 +38,8 @@ each subparser through its adapter's own `add_arguments`, setting `func=<adapter
 `tool_log_stats.add_arguments`/`tool_log_stats.run`. For public commands, `main(argv=None)`
 parses and dispatches to `args.func(args)`, returning its int exit code. Before that public parser,
 the internal `leaf_enclosure_start.COMMAND` child-process route delegates to its own entry point;
-it is not an additional advertised public subcommand.
+it is not an additional advertised public subcommand. Each finite command and the internal child
+route owns one `definition_scope`; dashboard dispatch stays outside that finite scope.
 
 **The two knowledge authoring subcommands are two different admissions, and the help text says which.**
 `knowledge-ingest` is described as "the knowledge write plane's production entry point" for a
@@ -49,8 +51,7 @@ derived in both cases rather than passed.
 
 `knowledge-format` is a third knowledge subcommand of a different nature: it reads and writes
 only the text knowledge files named on its command line (the MIK-R21 canonical formatter) and
-touches no store, no leaf and no admission. Until the text knowledge layout goes live (MIK-R37) the
-installed runtime never calls it; it exists so the file shapes can be formatted and checked.
+touches no store, no leaf and no admission. It formats and checks the named file shapes.
 
 `knowledge-convert` (MIK-R24, MIK-R46) converts a memory working tree with its
 `knowledge.sqlite` into text knowledge. Card citations remain anchored at the code
@@ -70,13 +71,12 @@ reports such a tree as out of scope and exits 0.
 
 `knowledge-index` (MIK-R23) builds or reuses the derived knowledge index of one memory tree — a
 working tree's captured state, or a Git tree read through objects — in an untracked cache outside
-any Git working tree, and prints its key, state and counts as JSON. It only reads the tree; the
-installed runtime does not call it before MIK-R37.
+any Git working tree, and prints its key, state and counts as JSON. It only reads the selected memory tree.
 
 `knowledge-worklist` (MIK-R08) computes the change-to-knowledge worklist of a leaf from its series
 contract (persisted beside the contract, exactly as the curator's memory-quality run does) or of four
 explicitly named sides, and prints it as JSON. It exits 0 for a complete worklist, 1 for an incomplete one
-and 2 when none applies (both memory sides unconverted, which is every production leaf before MIK-R37).
+and 2 when none applies (both memory sides unconverted).
 
 `knowledge-routes` (MIK-R04) is the curator's read-only view of family routes: for each family record of a memory working tree it prints the routes, the route state (`unrealized_family`, `route_unassigned`, uncovered realizations, emptied routes) and the mechanical route suggestion, labelled `mechanical`. It never writes a route, and on unconverted memory it answers "no family records".
 
@@ -84,7 +84,7 @@ and 2 when none applies (both memory sides unconverted, which is every productio
 
 The memory-maintenance and migration adapters are reached only from here, so the umbrella is
 the one place a new CLI surface becomes reachable. Their flags, exit statuses and refusals
-belong to the adapters; this module contributes only the subparser registration.
+belong to the adapters; this module owns subparser registration and the finite-command definition scope.
 
 `explainer-browser` is registered in the knowledge-command section although it is a runtime
 surface: it reports, or fetches, the Playwright module and Chromium the explainer publishes with
@@ -106,7 +106,7 @@ The paseo command group joins existing knowledge-ingest, taskless bootstrap and 
   adapter owns its own flags.
 - The subcommand group is required, so invoking `agents-remember` with no subcommand is a usage
   error rather than a default action.
-- This module dispatches; it implements no operation of its own. A new subcommand is a
+- This module dispatches and owns the finite-command definition scope. A new subcommand is a
   registration line here plus an adapter module that owns its arguments and its exit code.
 
 ## Current source contract
@@ -131,26 +131,18 @@ The knowledge-command registry also exposes handoff-check, delegating its argume
 - The memory-backfill adapter: its `--contract` is the write guard that keeps a history rewrite off the official memory repository. [4]
 - The separate MCP server console entry that stays standalone. [5]
 - The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list. [6]
-- **The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.** [7]
-- **The `knowledge-format` subparser `260928-MIK-L21` adds: the text knowledge files' canonical formatter, the umbrella's sixth registered subcommand.** [8]
 
-- **The `knowledge-convert` subparser `260928-MIK-L24` adds: the conversion of a memory tree and its database into the text format.** [9]
 
-- **The `knowledge-validate` subparser `260928-MIK-L22` adds: the curator's standalone run of the knowledge validator.** [10]
-- **The `knowledge-index` subparser `260928-MIK-L23` adds: the derived knowledge index of one memory tree, built or reused and reported.** [11]
-- **The `knowledge-worklist` subparser `260928-MIK-L08` adds: the change-to-knowledge worklist of a leaf or of four named sides.** [12]
-- **The `knowledge-routes` subparser `260928-MIK-L04` adds: the read-only family route report with the mechanical suggestion.** [13]
-- **The `knowledge-census` subparser `260928-MIK-L20` adds: the migration census's inventory and report.** [14]
 - The `knowledge-copies` subparser adds: retired knowledge-database leftover copies listed with their deciding rule (`--apply` deletes MIK-R26 rule 6 names), registered the same declarative way. [15]
 
 
-- The `upgrade-user-settings` subparser this leaf adds: the explicit whole-file move from the old coordination settings file to the user configuration directory, with `--coordination-root` and `--dry-run`.
+- The `upgrade-user-settings` subparser performs the explicit whole-file move from the old coordination settings file to the user configuration directory, with `--coordination-root` and `--dry-run`.
 
 The original source already registered upgrade-user-settings and its adapter before this change added handoff-check; the earlier caption’s “this leaf” does not identify L62. Earlier caption retained as prose; its original citation used mcp/src/agents_remember/cli/__main__.py at blob `6e7bd5a18da5ea781594e67999b9b01f305937d4`. Reference 18 now carries the current clause and current source targets; it does not retain those earlier targets.
 
 Retained authoring-row wording:
 
-Finding: The current runtime-command registry still registers upgrade-user-settings with its existing adapter; this leaf adds handoff-check separately in the knowledge-command registry.
+Finding: The runtime-command registry registers upgrade-user-settings with its existing adapter; handoff-check is registered separately in the knowledge-command registry.
 
 Anchor:
 
@@ -168,7 +160,6 @@ Anchor:
 
 Source: mcp/src/agents_remember/cli/__main__.py
 
-- Frozen implementation of main supporting the stated file behavior. [17]
 
 - The current umbrella additionally registers providers-remove as an explicit operator command; it does not restore any provider setup or MCP provider tool. [19]
 
@@ -178,6 +169,14 @@ Source: mcp/src/agents_remember/cli/__main__.py
 
 - The umbrella registers the explainer's browser command beside the knowledge commands. [21]
 
-
+- **The `knowledge-bootstrap` subparser: the taskless entry, registered the same declarative way.** [7]
+- **The `knowledge-format` subparser: the text knowledge files’ canonical formatter.** [8]
+- **The `knowledge-convert` subparser: conversion of a memory tree and its database into the text format.** [9]
+- **The `knowledge-validate` subparser: the curator’s standalone run of the knowledge validator.** [10]
+- **The `knowledge-index` subparser: the derived knowledge index of one memory tree, built or reused and reported.** [11]
+- **The `knowledge-worklist` subparser: the change-to-knowledge worklist of a leaf or of four named sides.** [12]
+- **The `knowledge-routes` subparser: the read-only family route report with the mechanical suggestion.** [13]
+- **The `knowledge-census` subparser: the migration census’s inventory and report.** [14]
 - Frozen implementation of build_parser supporting the stated file behavior. [16]
-- The current runtime-command registry still registers upgrade-user-settings with its existing adapter; this leaf adds handoff-check separately in the knowledge-command registry. [18]
+- Frozen implementation of main supporting the stated file behavior. [17]
+- The runtime-command registry registers upgrade-user-settings with its existing adapter; handoff-check is registered separately in the knowledge-command registry. [18]

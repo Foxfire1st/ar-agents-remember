@@ -22,7 +22,7 @@ Every `@server.tool()` declaration and its model-visible docstring lives in
 looking for what a tool advertises, what it refuses, or which payload builder it forwards to, that
 is the [registration route overview](registration/overview.md), not this file.
 
-Starts the configured MCP application with either the ordinary registration families or the launch-bound explainer surface.
+Starts the configured MCP application with the ordinary registration families and adds the four explainer tools for a valid explainer launch.
 
 ## Code Commentary
 
@@ -37,16 +37,16 @@ Starts the configured MCP application with either the ordinary registration fami
 3. `AgentsRememberMCP("Agents Remember", instructions=launched_server_instructions())`. A readable
    launch binding supplies the canonical task-server instruction line; unbound or unreadable binding
    supplies no instruction line.
-4. Read the required explainer binding before choosing the surface. An ordinary launch invokes the ordered `TOOL_REGISTRARS`; a valid bound launch registers only the 22-tool explainer surface and saves its seat binding for per-call validation. An invalid required binding refuses instead of selecting the ordinary roster.
+4. Read the required explainer binding. Every launch invokes the ordered `TOOL_REGISTRARS`; a valid explainer launch also registers its four tools and retains its binding for those tools’ per-call validation. An invalid required binding refuses service.
 5. `apply_read_only_marks(server)` applies the single `mcp/read_only.py` inventory to every registered
    tool. An unlisted name raises `UnknownReadOnlyMark`; server creation fails rather than advertising
    an unmarked tool. This step changes annotations, not registration order or handler ownership.
 
 `run_server(config)` records this process in the running-server registry as an `"mcp"` server (`register_server`), runs `create_server(config).run()`, and calls the returned cleanup when serving ends; the cleanup removes the record and is also registered to run at normal process exit.
 
-### Closed dispatch input at the public transport boundary
+### Dispatch at the public transport boundary
 
-AgentsRememberMCP.list_tools first awaits the FastMCP answer, then schedules start_after_discovery(config) with the running loop’s call_soon and returns that already-produced answer. The shared latch starts outside-scratch reconciliation once, including on a bare no-config server, and dashboard autostart only with config/settings. call_tool reaches that same latch as the fallback for a client that never lists, before checking the bound surface and entering tool_call_context. Bound explainer calls also validate their launched seat before the registered handler. The retained delegation and raised-call logging use the shared boundary. Tool argument admission belongs to each retained registered schema. The synchronous dispatch wrapper described below keeps that validation path while moving the handler body off the event loop.
+AgentsRememberMCP.list_tools first awaits the FastMCP answer, then schedules start_after_discovery(config) with the running loop’s call_soon and returns that already-produced answer. The shared latch starts outside-scratch reconciliation once, including on a bare no-config server, and dashboard autostart only with config/settings. call_tool reaches that same latch as the fallback for a client that never lists, before entering tool_call_context. Calls to the four explainer tools validate their launched seat before the registered handler; ordinary tools keep their own argument admission. The retained delegation and raised-call logging use the shared boundary. Tool argument admission belongs to each retained registered schema. The synchronous dispatch wrapper described below keeps that validation path while moving the handler body off the event loop.
 
 ### Stale installed builds refuse publication writes at dispatch
 
@@ -65,15 +65,13 @@ context and are logged like other raised calls.
 
 `main(argv)` parses a required `--config` (an absolute path to trusted MCP settings JSON), calls
 `declare_mcp_process()` **before** `load_config`, turns a `ConfigError` into an argparse error, then
-calls `prepare_mcp_process()` between config loading and `run_server`. The early declaration remains necessary for trusted worktree-hosted MCP authority. Preparation only reasserts the declaration. Process entry and initialization start neither the sweep nor dashboard supervision; list_tools computes its answer before scheduling the shared latch on the next loop callback. The first call_tool on either surface invokes that same latch as the fallback before its surface check and dispatch. The first attempt starts the sweep even without config; with config and trusted `dashboard.autoStart` enabled, the existing total launcher also starts its daemon thread. Later calls start neither again. The sweep thread runs its heavy worktree owner in a one-shot child with stdin=DEVNULL, so it cannot consume the serving process’s MCP stdin. Launcher/sweep failures are contained and stdout remains the MCP protocol.
+calls `prepare_mcp_process()` between config loading and `run_server`. The early declaration remains necessary for trusted worktree-hosted MCP authority. Preparation only reasserts the declaration. Process entry and initialization start neither the sweep nor dashboard supervision; list_tools computes its answer before scheduling the shared latch on the next loop callback. The first call_tool on an ordinary or explainer-bound server invokes that same latch as the fallback before its explainer-tool binding check and dispatch. The first attempt starts the sweep even without config; with config and trusted `dashboard.autoStart` enabled, the existing total launcher also starts its daemon thread. Later calls start neither again. The sweep thread runs its heavy worktree owner in a one-shot child with stdin=DEVNULL, so it cannot consume the serving process’s MCP stdin. Launcher/sweep failures are contained and stdout remains the MCP protocol.
 
 ### Durable-store process-role startup is owned by the application boundary
 
 `main` calls the application-layer `declare_mcp_process` before authority loading, then the
 `prepare_mcp_process` wrapper before serving; the joint sweep/conditional-dashboard start is scheduled after the tools/list answer is produced, with first-tool-call fallback through the same latch.
-`controlplane/durable_store.py` names two concurrent writers of the six
-control-plane JSONL logs, `"mcp"` and `"dashboard"`, and the declaration is what lets shared code
-ask which one it is running in. `StoreOwnership.is_compaction_owner()` answers `role is None or
+`controlplane/durable_store.py` obtains shared-store writer roles from the kernel execution-mode owner, and the declaration identifies this process for ownership checks. `StoreOwnership.is_compaction_owner()` answers `role is None or
 compaction_owner is None or role == compaction_owner`, so a process that declares nothing counts as
 the owner of every log.
 
@@ -155,9 +153,13 @@ durable-store ownership remain application concerns.
 
 
 
+## Call-owned definitions
+
+Every tool call owns one definition scope around its complete dispatch. Synchronous handlers receive that scope through copied ContextVars; separate calls retain no definitions from each other.
+
 ## Synchronous dispatch and write ordering
 
-After the existing launch-surface and seat checks, `_dispatch_tool` runs a synchronous registered function through `asyncio.to_thread` on a per-call Tool copy. FastMCP still validates the original arguments, injects context and converts the result. The worker receives the call's ContextVars; async handlers retain their existing event-loop path.
+After the applicable explainer-tool seat checks, `_dispatch_tool` runs a synchronous registered function through `asyncio.to_thread` on a per-call Tool copy. FastMCP still validates the original arguments, injects context and converts the result. The worker receives the call's ContextVars; async handlers retain their existing event-loop path.
 
 Potentially mutating synchronous calls hold one per-server lock until their worker stops. Cancellation does not release it while the thread is alive, including repeated cancellation. Centrally declared read-only calls and explicitly nonwriting modes bypass the lock; the bypass is a dispatch policy, not host-wide purity or permission. A string-coercible false value does not satisfy the strict boolean checks.
 
@@ -186,19 +188,16 @@ Potentially mutating synchronous calls hold one per-server lock until their work
 
 - Current transport wiring retains boot-time caller identity and lazy worktree service construction. It schedules a shared post-discovery sweep/conditional-dashboard latch after producing the list answer, with first-call fallback; application initialization installs no ambient lifecycle.
 
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:281-314 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d445e83e7d28e3c34b15d8299d279d65ab9183b9; mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted [8]
 
 
 
-- Initialization names the worktree supplier and selects the ordinary or bound surface. list_tools produces its answer before scheduling start_after_discovery; call_tool invokes the same latch before bound-name/exact-seat checks. The latch starts the sweep even without config and starts dashboard supervision only with config/settings; bound checks and raised-call logging retain their owners. [9]
 
 
 - `create_server` builds the FastMCP instance and invokes the registered tool families. [1]
 
 - `create_server` installs compact content, initializes the application services, registers every tool family, adds a bound explainer surface and applies the read-only marks. [7]
 
-- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py::create_server - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 ## Retirements
 
-- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:281-314 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d445e83e7d28e3c34b15d8299d279d65ab9183b9; mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted.
+- Initialization installs the worktree supplier and every ordinary tool family, adding the four explainer tools for a bound launch. list_tools schedules start_after_discovery after its answer exists; call_tool invokes the same latch before applicable explainer-seat checks. The latch starts the sweep even without config and dashboard supervision only with config/settings. [9]

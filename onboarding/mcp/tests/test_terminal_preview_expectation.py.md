@@ -48,7 +48,7 @@ The three cases:
 The module imports exactly two names — `TerminalResult` and `terminal_result_blockers` — from the validator, with no test-support import. This direct import shape does not establish absence of evidence-catalog dependencies: the catalog declares this module as a consumer of the global user-settings guard and Node lockfile artifacts. Its five helpers construct typed terminal results or plain snapshot dictionaries for the assertions.
 
 **The current lane registration is the manifest row**: this module carries **no `pytestmark`** and appears in
-`unit-regression` at `mcp/tests/test-evidence-lanes.toml:602`. Membership selects evidence and establishes no execution.
+`unit-regression` at `mcp/tests/test-evidence-lanes.toml:604`. Membership selects evidence and establishes no execution.
 
 
 ### Invariants And Boundaries
@@ -108,7 +108,7 @@ The earlier failure text and L14 attribution remain historical. The current [] a
 > The earlier leaf’s recorded append-at-end account describes its historical catalog, not the current row position.
 > The earlier append-only registration was recorded at historical `mcp/tests/test-evidence-lanes.toml:192`; that source-epoch coordinate is not current navigation.
 
-The current unit-regression selector remains line 602; the old 599 locator is mechanically refreshed, while the original 192 registration account is preserved as history.
+The current unit-regression selector remains line 604; the old 599 locator is mechanically refreshed, while the original 192 registration account is preserved as history.
 
 ## Evidence
 
@@ -139,7 +139,6 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References (continued)
 
-- The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution. [13]
 
 
 
@@ -154,3 +153,5 @@ No meaningful cross-repo references found.
 ### Repo-Internal References (renewed)
 
 - The drift-snapshot branch uses a preview-aware expectation; its adjacent comment records the earlier missing-keyword cause and merge provenance. [2]
+
+- The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution. [13]

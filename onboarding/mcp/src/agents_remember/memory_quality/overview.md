@@ -27,6 +27,10 @@ The checklist's actionable count is exactly repairable findings plus missing onb
 
 Interactive `finalFullCatalog` remains a non-certifying readiness projection: the controller supplies no affected-closure plan digest and the catalog reports `finalizationEligible: false`. The prepared application adapter and its production affected-execution/final-certification composition were removed. Core certificate issuance and finalization still require their exact result, prefix and current-memory-input authority, but their existence is not a live Gate-5 producer or successful certification execution.
 
+`extents.definition_scope` owns reusable definition results for one operation and enters `grammars.parsing_scope` for diagnostic parse trees. Nested operations join the active scope; both owners clear their retained state at scope exit. Calls outside a scope parse independently.
+
+MCP tool dispatch and finite CLI handlers establish the operation boundary; the dashboard server handler remains outside it. A background quality worker enters its own fresh context and definition scope. Completed validation results remain independently computed.
+
 ## Construction And Ownership
 
 `check.py` owns the public package runner, available-check population and pre/post-refresh populations. `integrity/onboarding_drift_check/` owns legacy discovery, classification and bounded summaries. Git reads use the kernel Git-command owner rather than private runners; its repository-selector isolation matters because a verdict must describe the named repository. `models/drift.py` owns the shared status vocabulary. The classifier packet uses required status and optional detail fields; consumers read optional fields with `.get`.
@@ -170,7 +174,6 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 
 - Retained reference account (no fresh execution or acceptance inferred): The missing-onboarding checker catches newly added worktree files before code commit. [4]
 - Retained reference account (no fresh execution or acceptance inferred): The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. [6]
-- Retained reference account (no fresh execution or acceptance inferred): The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. [7]
 - Retained reference account (no fresh execution or acceptance inferred): Memory candidate identity excludes consumer cache availability. [8]
 - Retained reference account (no fresh execution or acceptance inferred): Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. [15]
 - Core certificate issuance consumes an exact admitted result manifest and earlier-gate prefix and refuses non-green or diagnostic promotion; the interactive complete-catalog projection remains finalization-ineligible. [17]
@@ -190,10 +193,7 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Retained reference account (no fresh execution or acceptance inferred): The runner's dispatch by format.  Anchor: `_converted_check` [43]
 - Retained reference account (no fresh execution or acceptance inferred): The commit route's optional base converter. [44]
 - Retained reference account (no fresh execution or acceptance inferred): The escaping rule on the validator's grammar. [45]
-- Retained reference account (no fresh execution or acceptance inferred): The one symbol-binding rule. [46]
-- Retained reference account (no fresh execution or acceptance inferred): The defaulted input and its section. [47]
 - Retained reference account (no fresh execution or acceptance inferred): The section and the summary. [48]
-- Retained reference account (no fresh execution or acceptance inferred): The checklist's defaulted inputs. [49]
 - Retained reference account (no fresh execution or acceptance inferred): The planned-effects block and the `planned_untouched` facts. [51]
 - Retained reference account (no fresh execution or acceptance inferred): The item table's **Plan** column. [52]
 - Retained reference account (no fresh execution or acceptance inferred): A new record is refused for an unsupported claim, legacy-unassessed or a reference-only justification. [53]
@@ -225,7 +225,6 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Retained reference account (no fresh execution or acceptance inferred): Mechanical refresh skips sidecars refused by citation authoring before refresh/write. [79]
 - One registry includes the working-tree overview rules; applicable commit calls refuse failing reports without a subset parameter. [82]
 - Purpose heading, leaf/date heading and trailing citation rules refuse at leaf publication, with standalone-conversion exemptions. Their implementation is tracked in the frozen code tree. [83]
-- Checklist actionability has three terms; operational report and attestation receive separate atomic writes and exact bindings, and the returned whole result retains the three blocking populations. [84]
 - Governing resolution requires a metadata field, tests field/body independently, and observes missing body links. [85]
 - Retained reference account (no fresh execution or acceptance inferred): The shared drift model declares the vocabulary used by drift-check wire responses. [5]
 - Decision governs is a refusing rule. [58]
@@ -250,3 +249,15 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Retained reference account (no fresh execution or acceptance inferred): The application surface projects readiness with no affected-closure plan. [16]
 - Retained reference account (no fresh execution or acceptance inferred): The caller-exclude surface on the registered tool and the CLI. [25]
 - Interactive catalog projection supplies no affected-closure plan and does not claim certification eligibility. [89]
+
+- The curator checklist renderer owns deterministic grouping, closeout-provenance separation and atomic publication. [7]
+- Retained reference account (no fresh execution or acceptance inferred): The one symbol-binding rule. [46]
+- The defaulted without-proof input, row shape and informational rendering. [47]
+- The checklist's defaulted worklist inputs. [49]
+- Checklist actionability has three terms; operational report and attestation receive separate atomic writes and exact bindings, and the returned whole result retains the three blocking populations. [84]
+
+- definition_scope owns call-local definition results, joins nested scopes, enters parsing_scope and clears retained values on exit. [99]
+- parsing_scope retains diagnostic parse trees only within the active call and clears them on exit. [100]
+- MCP dispatch enters one definition scope before tool validation and handler execution. [101]
+- Finite command handlers enter definition_scope; parser registration leaves the dashboard handler unwrapped. [102]
+- A background quality worker owns a fresh Context and definition scope for its work. [103]

@@ -161,6 +161,7 @@ No cross-repo boundary is crossed by this file.
 - test_a_moved_marker_row_binds_its_sources_and_reopens_on_change preserves row identity/markers and the unchanged candidate source binding on rewrite, updates the reason to `Re-reviewed.`, then reopens after source movement. [8]
 
 
-- The unit-lane registration. Source caption: "mcp/tests/test_onboarding_trace_gate.py" [18]
 
 - The cases assert source-current onboarding rows, moved-marker identity preservation and current worklist/blob inputs. [20]
+
+- The unit-lane registration. Source caption: "mcp/tests/test_onboarding_trace_gate.py" [18]

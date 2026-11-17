@@ -11,7 +11,7 @@ Git path spelling and lookup failure remain distinct from an absent source.
 The sizes and catalog line addresses in the following original account are historical observations, not measurements of the present source tip.
 
 **What a *path* is to this read: an address, not a pattern.** Five nodes in `integration` (row
-`mcp/tests/test-evidence-lanes.toml:698-698`) covering the one contract the review corrected most sharply — the
+`mcp/tests/test-evidence-lanes.toml`) covering the one contract the review corrected most sharply — the
 predicate that decides which spellings are addressable, and the requirement that **a refusal describe the
 actual cause**.
 
@@ -177,6 +177,7 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References (continued)
 
-- The lane row this module occupies. Source caption: `test_knowledge_read_paths` [18]
 
 - **The test-support anchor-draft boundary applies the shared path-spelling rule, so a fixture draft refuses malformed path spellings.** [16]
+
+- The lane row this module occupies. Source caption: `test_knowledge_read_paths` [18]

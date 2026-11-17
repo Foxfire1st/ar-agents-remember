@@ -104,13 +104,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
             "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
             "locator": {
               "kind": "symbol",
               "name": "_apply_carryover_for_request"
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_converted"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },
           "kind": "code"
         }

@@ -7,23 +7,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b47ceac38c2dd8fb7376dd971ccc88a64a0b0a8f",
-            "content": "sha256:8ca14387dab8dc0d6a8f78cf43f14adfa1539feed5642eefbfc92e18906af114",
+            "blob": "67419b7a2d47ea5eef13702d2cc6802f44a50113",
+            "content": "sha256:e78baca840df5cc3285afd232f763a984e65c8f24971860e70761fe462779250",
             "locator": {
               "kind": "symbol",
               "name": "render_curator_coherence"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b47ceac38c2dd8fb7376dd971ccc88a64a0b0a8f",
-            "content": "sha256:697228d71fea1b9e9a911de28c9d39612e887f46d07699c2536ace5675b4ee64",
-            "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 8
             }
           },
           "kind": "code"
@@ -31,14 +19,14 @@
       ]
     },
     "2": {
-      "note": "The canonical task-intent identity line emitted after the topology fingerprint.\n\nAnchor: `TaskIntentIdentity` check + line insert",
+      "note": "The canonical task-intent identity line emitted after the topology fingerprint.",
       "targets": [
         {
           "anchor": {
-            "blob": "b47ceac38c2dd8fb7376dd971ccc88a64a0b0a8f",
-            "content": "sha256:3e3c064666bf941416a2f222b0e057109f8b91376de5edd287358f85f4ad1992",
+            "blob": "67419b7a2d47ea5eef13702d2cc6802f44a50113",
+            "content": "sha256:910c8a2877bdbda2486c00bf86ba8f2a8fc2c061c13ea2d4bd07ad70c345b450",
             "locator": {
-              "end": 56,
+              "end": 57,
               "kind": "line_range",
               "start": 53
             }

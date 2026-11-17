@@ -103,7 +103,7 @@ Summary of the earlier card account:
 
 Summary of the earlier card account:
 
-> - The module is in the `unit-regression` lane (`mcp/tests/test-evidence-lanes.toml:625`); the evidence catalog derives it
+> - The module is in the `unit-regression` lane (`mcp/tests/test-evidence-lanes.toml`); the evidence catalog derives it
 >   as a consumer of `fixtures/repository_profiles/node/package-lock.json` (the Fortieth re-pin, `449b69ef`).
 > - Reviewer R2-1 (low, non-blocking): the N6 case commits its rows directly, so the writer's
 >   `file_subject_mismatch` has no unit assertion for a symlink object or an `@absent` subject; the reviewer
@@ -168,8 +168,9 @@ No cross-repo boundary is crossed by this file.
 
 - The changed-card regression asserts worklist/gate agreement for an authored updated row without a separately bound trace item; source assertions are not fresh execution acceptance. [16]
 
-- The unit-lane row. Source caption: "mcp/tests/test_unexplained_change_disposition.py" [13]
 
-- The catalog consumer row: the reconsideration shared-support artifact lists this module among its consumers. [14]
 
 - Authored source-bound rows settle the uncovered items; counted card edits alone do not. Hunk stability applies to the unchanged covered hunk and explicit candidate blobs bind onboarding rows. [15]
+
+- The unit-lane row. Source caption: "mcp/tests/test_unexplained_change_disposition.py" [13]
+- The catalog consumer row: the reconsideration shared-support artifact lists this module among its consumers. [14]

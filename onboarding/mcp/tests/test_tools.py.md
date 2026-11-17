@@ -156,7 +156,7 @@ other than re-advertising a status the verb no longer returns.
 contract disagreed, and neither surface could show it** (`T50`). `curator_coherence`'s `publish` was
 refused twice on a real curator with *"publish requires every identity, predecessor, and caller
 field"* although every field the registered description named had been supplied. The validator
-(`models/lifecycles/curator_coherence.py:294-328` `_action_has_one_input_shape`) requires **nine**
+(`models/lifecycles/curator_coherence.py:558-572` `_action_has_one_input_shape`) requires **nine** [16]
 non-null fields, and the description named neither `semantic_requirement_revision` nor
 `delivery_attempt` nor `caller` as required; the refusal named a class of fields and none of them,
 and a model-level validator reports `loc: ()`, so the message was the caller's only route to the
@@ -186,3 +186,5 @@ live; the module was already registered, so this leaf added no lane row and **no
 ## Current source evidence
 
 - The safe-summary case excludes harnessSkillRoot while retaining unusedProviderKeys and the other safe configuration fields. [15]
+
+- The current action-shape validator checks the nine declared publish members and rejects publication-only inputs on read actions. [16]

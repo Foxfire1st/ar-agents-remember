@@ -14,7 +14,7 @@ Read behavior and schema integrity of derived knowledge index files.
 
 Test-only rows supply separately recorded single-revision identities sharing the derived display label `r1`. Production readers retain their exact statements and empty predecessor sets, reopen exact identities/digests and reject write attempts and refuse absent-file opens. [1] [2] [13]
 
-Cases protect database immutability triggers, read-time payload seals, declared schema structure and its pin. Missing tables or triggers refuse open; unsupported versions also name conversion. Canonical insert/duplicate/lineage write rules and their old cases are removed. [6] [7] [8]
+Cases protect database immutability triggers, read-time payload seals, declared schema structure and its pin. Missing tables or triggers refuse open; unsupported versions also name conversion. [6] [7] [8]
 
 ### Invariants And Boundaries
 
@@ -39,8 +39,7 @@ code, offending record, row counts) rather than internal call order.
 
 ### Todos
 
-None recorded. Later leaves (KS-R02 … KS-R08) extend the fixture and add their own modules rather than growing this
-one.
+None recorded.
 
 ## Evidence
 
@@ -108,10 +107,11 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References (continued)
 
-- The current unit-regression lane registration makes this module part of the manifest. Earlier caption wording described the row as following the `KS-R03` insertions; this current citation establishes lane membership. Anchor: `test_knowledge_store` [19]
 
-- The fixture's registered stable contract and evidence node. Source caption: `knowledge-identity-branching-fixture` [20]
 
 ### Repo-Internal References (renewed)
 
 - The shared branching fixture used by the revision cases. Anchor: `build_branching_knowledge_fixture` [18]
+
+- The current unit-regression lane registration makes this module part of the manifest. Anchor: `test_knowledge_store` [19]
+- The fixture's registered stable contract and evidence node. Source caption: `knowledge-identity-branching-fixture` [20]

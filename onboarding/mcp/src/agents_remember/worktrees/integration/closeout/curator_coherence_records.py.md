@@ -28,6 +28,8 @@ The reader proves retained integrity, not current live quality or acceptance. St
 
 None recorded.
 
+A generation without measured-quality fields remains readable under its original encoding and retained-byte integrity checks. This historical read does not satisfy live currentness, which asks for a new publication with the measured binding.
+
 ## Evidence
 
 ### Docs References
@@ -41,10 +43,11 @@ No configured domain source could be checked.
 The cited owners carry the behavior and failure boundaries described above.
 
 - One content-addressed generation is validated through its own retained inputs. [1]
-- The exact durable attestation copy and recorded dependency binding are required. [2]
 
 ### Cross-Repo References
 
 No separate repository supplies this contract.
 
 No cross-repository reference is required.
+
+- The exact durable attestation copy and recorded dependency binding are required. [2]
