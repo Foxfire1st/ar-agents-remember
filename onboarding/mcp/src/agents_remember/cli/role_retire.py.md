@@ -8,6 +8,8 @@
 
 An active turn requires `interrupt_turn`. Retirement archives rather than deletes, ends that recipient’s waiting messages, and records the caller, time and reason without giving the child a turn. A repeated authorized retirement returns already-retired; authorization is still checked on a repeat. A current plus history duplicate is ambiguous, not a preferred current record.
 
+The scan reads mixed report folders through `read_enumerated_receipt`, passing over valid JSON attachments that are not current-line launch receipts while retaining unreadable-document refusals.
+
 ## Failure custody
 
 The native retirement archives before `_record_retirement` writes the launch record. If the host archives but that write fails, return `retire-record-failed` with the actual host/disk split and the caller/reason intent in the answer, not a claim that the receipt persisted it. An identical authorized retry records the caller and reason against the already archived host agent. A host read failure does not make a seat free. Same-call replacement is the separate launch-liveness path: it records replacement before the archival step. Neither path is leaf-close archival debt.
@@ -15,13 +17,21 @@ The native retirement archives before `_record_retirement` writes the launch rec
 ## Evidence
 
 
-- The native entry checks original-starter authority before idempotent success or archive. [1]
+
+
+- The native entry checks original-starter authority before idempotent success or archive. Anchor: `_retire_seat` [1]
+
+
 
 
 - Unknown and ambiguous native targets refuse before retirement. [2]
 
 
-- Host archive precedes receipt recording; failure is reported rather than rounded up. [3]
 
 
-**L184 — INV-ECNV2S.** The retirement route is where the refusal is raised, so the naming of the subagent belongs here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+- Host archive precedes receipt recording; failure is reported rather than rounded up. Anchor: `_archive_retiree` `_record_retirement` [3]
+
+
+
+
+A running provider subagent requires `interrupt_turn` before retirement; the refusal names the number of running provider subagents.

@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
+        "content": "sha256:c9011626896bd8e2c7c11aa26193a1eb32a58d251ff13b58424c5f90911f1461",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingTargetFactTests.test_the_pull_request_row_says_absent_where_no_pull_request_is_part_of_the_route"
+        }
+      },
+      "facet": "An observed empty lookup on direct-replay yields one absent/observed PR row naming that no PR belongs to the route.",
+      "id": "PRF-4N9NN5",
+      "invariant": "INV-9ZA2BW",
+      "origin": {
+        "handoffEntry": "L3-W5-09",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
         "content": "sha256:096e2dc021f39a35d8d37c8e57708c69969e61fd152ffff39040d3bef1961765",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
         "content": "sha256:958b6efb6306eece4ea769e18708855ee41ce772810860da123311a45221dff3",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
         "content": "sha256:faba8aa137e1b1f6b7773edb75d5472904d8214e8f16cf334fcc57c094f73f01",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,41 @@
     },
     {
       "anchor": {
-        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
+        "content": "sha256:9ae2a8cca69b204848944f33c2446df35f8be5dda524993345db0e19195eb255",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingTargetFactTests.test_the_pull_request_row_still_reads_planned_on_a_pull_request_route"
+        }
+      },
+      "facet": "An observed empty lookup on a pr strategy remains planned.",
+      "id": "PRF-G5GQHJ",
+      "invariant": "INV-9ZA2BW",
+      "origin": {
+        "handoffEntry": "L3-W5-09",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
+        "content": "sha256:2266bb77c40b346afcaafeacc3200c3de0751f497235cb813b4e1a0f42b438d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingTargetFactTests.test_the_observed_target_row_names_the_contract_source_branch"
+        }
+      },
+      "facet": "With remote observation and no PR result, the target row names the contract source branch and remains planned rather than falsely merged.",
+      "id": "PRF-T9004M",
+      "invariant": "INV-Z6T0QQ",
+      "origin": {
+        "handoffEntry": "L3-W5-08",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
         "content": "sha256:c6a174684edf9456e84a7dde831342ca64dbad3632bc13c6c63129fb16d46d32",
         "locator": {
           "kind": "symbol",
@@ -73,7 +124,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
         "content": "sha256:958b6efb6306eece4ea769e18708855ee41ce772810860da123311a45221dff3",
         "locator": {
           "kind": "symbol",
@@ -91,7 +142,7 @@
     },
     {
       "anchor": {
-        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
         "content": "sha256:096e2dc021f39a35d8d37c8e57708c69969e61fd152ffff39040d3bef1961765",
         "locator": {
           "kind": "symbol",
@@ -109,7 +160,7 @@
     },
     {
       "anchor": {
-        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
         "content": "sha256:faba8aa137e1b1f6b7773edb75d5472904d8214e8f16cf334fcc57c094f73f01",
         "locator": {
           "kind": "symbol",
@@ -127,7 +178,7 @@
     },
     {
       "anchor": {
-        "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+        "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
         "content": "sha256:c6a174684edf9456e84a7dde831342ca64dbad3632bc13c6c63129fb16d46d32",
         "locator": {
           "kind": "symbol",
@@ -150,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "blob": "7f5b4d6eb99408b78400e3c3bcc0d4968defd2c1",
             "content": "sha256:461163d23b4431df77a5b9f08da5f0432afba123bcc80f4c476bc2afb80840c6",
             "locator": {
               "kind": "symbol",
@@ -162,14 +213,16 @@
       ]
     },
     "2": {
-      "note": "Composition binds the same landing instance to the Projector's real subscriber predicate.\n\nAnchor: `_build_serving_runtime`",
+      "note": "Composition binds the same landing instance to the Projector's real subscriber predicate. Anchor: `_build_serving_runtime`",
       "targets": [
         {
           "anchor": {
-            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
-            "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
+            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
+            "content": "sha256:db7fdba14105472900f8f8fc468a6abd0d4d66907c506fa7c9b0c73295b01325",
             "locator": {
-              "kind": "file"
+              "end": 144,
+              "kind": "line_range",
+              "start": 111
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },

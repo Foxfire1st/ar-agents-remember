@@ -1,0 +1,57 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The developer's own answer named the Python port as the way to remove the Node need; it was weighed against keeping the scripts and rejected for a stated reason, with a condition under which it returns."
+  },
+  "alternatives": [
+    {
+      "option": "Keep the two Node load scripts and fetch Playwright and its Chromium with the Node the product already installs.",
+      "reason": "The product installs its Node for the host and no explainer can start without that host, so the reason for a port does not hold, and the two scripts stay as they are.",
+      "status": "chosen"
+    },
+    {
+      "option": "Port the two load scripts (699 lines) to Playwright's Python package so no Node is needed.",
+      "reason": "The product already brings its own Node, so a port would buy the user nothing while replacing 699 working lines.",
+      "reconsider_when": "A product that stops installing its own Node, or a measured cost of the two scripts a Python port would remove.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The browser module and its Chromium live in one product-owned folder under the user's data home, and every fetch, the seat launch and the review page name the same pin and the same folder."
+  ],
+  "context": "A package installation shipped the two Node load scripts but no Playwright, so the first explanation answered unavailable and the user had to install a module and a browser by hand. The developer's answer to the plan agreed to move the load to Playwright's Python package so that no Node would be needed; the architect checked that reason and found the product already installs its own Node for the host.",
+  "decider": "The architect, in BUG-R01@v3 rule 2, on the developer's answer D790 and his later line that he can overrule it.",
+  "id": "DEC-WW0VGB",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-RWH9W9"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+        "content": "sha256:23afc4198ab9c4c91be9cb0cb51f084c072bfde09d08a731d332feb33914d482",
+        "locator": {
+          "kind": "symbol",
+          "name": "ensure"
+        },
+        "path": "mcp/src/agents_remember/canvas/explainer_browser.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261112-BUG-L1-curator-handoff"
+    },
+    "handoffEntry": "dec-browser-fetch",
+    "leaf": "261112-BUG-L1",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

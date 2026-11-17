@@ -55,6 +55,23 @@
     {
       "anchor": {
         "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "content": "sha256:ea7ebcd825c3467b51e92cc36f14598960e6b026bb10e306ffc648233c47cec3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_seat_whose_declared_wait_is_still_to_be_checked_shows_as_waiting"
+        }
+      },
+      "facet": "The source-defined task projection case asserts waiting activity, since, waiting-seat identity/detail, checkDueAt and absent providerLimit for a declared wait whose check is still ahead.",
+      "id": "PRF-CNE222",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "curator-BUG-L5-INV-3WWG5K-proofs",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
         "content": "sha256:7ecf6390cfea81857ec4dfe1408b0ef03d1efb6c5e07d2c709f7e0a8a4c7ff79",
         "locator": {
           "kind": "symbol",
@@ -72,6 +89,23 @@
     {
       "anchor": {
         "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "content": "sha256:f60076a4aea489e289115eaf00902add2ec0d7a26a1ccf91ebaeef3d6f1522dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_waiting_is_counted_on_its_own"
+        }
+      },
+      "facet": "The source-defined count case keeps a waiting task in started and waiting counts, with paused and works both zero.",
+      "id": "PRF-MA4G6G",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "curator-BUG-L5-INV-3WWG5K-proofs",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
         "content": "sha256:33a79e3a123d8bedddd5e4c5c1eb95028ff21b12dcd4a4dff8e6d4fcbb8b0189",
         "locator": {
           "kind": "symbol",
@@ -84,6 +118,23 @@
       "origin": {
         "handoffEntry": "L168-C-A016-source-account-INV-WQ8YGE",
         "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "content": "sha256:eaf2cb3600ab28ac0175f39f89d85f41316ac7854956690c54e19fc21ef560ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_wait_past_its_check_no_wait_and_an_ended_seat_are_paused_and_work_wins"
+        }
+      },
+      "facet": "The source-defined projection case asserts paused for an overdue check, a wait without an armed check and an ended seat; it retains waiting for the tested 30-second grace example and lets a working contributor win with no waitingSeats.",
+      "id": "PRF-SHEDX2",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "curator-BUG-L5-INV-3WWG5K-proofs",
+        "leaf": "261112-BUG-L5"
       }
     },
     {

@@ -1,0 +1,185 @@
+{
+  "path": "dashboard/src/grammar/DocumentMarkdown.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+        "content": "sha256:ea7ea17527d33db182a97e0d3d83ed88dd10ad692ab5237f8bbab48376da6d18",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolveSrcSet"
+        }
+      },
+      "id": "RLZ-56SFZD",
+      "invariant": "INV-VENYDH",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §6",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Each parsed source-set candidate passes the media admission rule before it is returned to the browser.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+        "content": "sha256:279d9a08279233cde07228b7d45170320e3b4e8f48d66f6955cf0b947aed386e",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentLink"
+        }
+      },
+      "id": "RLZ-6JCXS2",
+      "invariant": "INV-B96PVR",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §9",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Document-context links use buttons for internal navigation and a separate target for outside links.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+        "content": "sha256:0cfbf8e0f3c07e111ec9ed6e8f6c79c7b444f7ea2a573d7e53fdb140c6741c13",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentSource"
+        }
+      },
+      "id": "RLZ-6KVAJV",
+      "invariant": "INV-VENYDH",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §6",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This component applies the same rule to the source address and source set.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+        "content": "sha256:279d9a08279233cde07228b7d45170320e3b4e8f48d66f6955cf0b947aed386e",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentLink"
+        }
+      },
+      "id": "RLZ-8EG5EE",
+      "invariant": "INV-0WMTQ4",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §8",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This link component separates outside, local, heading and missing-file behavior.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+        "content": "sha256:c8c67b80a479cd634e07699ad2ee5d07a8894b116bf74cb9ed31c174eb3430e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolvedMediaSrc"
+        }
+      },
+      "id": "RLZ-BYP1FA",
+      "invariant": "INV-VENYDH",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §6",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Video, poster and source addresses share this repository-or-HTTPS admission rule.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+        "content": "sha256:ea7ea17527d33db182a97e0d3d83ed88dd10ad692ab5237f8bbab48376da6d18",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolveSrcSet"
+        }
+      },
+      "id": "RLZ-KRF69F",
+      "invariant": "INV-62DPD6",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-001",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This integration admits every parsed candidate separately instead of splitting comma-bearing URLs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+        "content": "sha256:52ad34decefd85b3ef20043ac946fd66792f6496722a9661cd527309b473680a",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentImage"
+        }
+      },
+      "id": "RLZ-RBXZ57",
+      "invariant": "INV-VENYDH",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §6",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Image sources use repository resolution or outside HTTPS and set no-referrer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+        "content": "sha256:8989bd644d57336400a31235727cdac30c2beb2821e392856d2e1dd3b46a4d44",
+        "locator": {
+          "kind": "symbol",
+          "name": "scrollToDocumentAnchor"
+        }
+      },
+      "id": "RLZ-T4V6NQ",
+      "invariant": "INV-0WMTQ4",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §8",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This scroll operation resolves an anchor only inside the active rendered document.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+        "content": "sha256:2c41d8b83ba869bff9385ee8a77cdd4de1515768553692ac751a8be028205ad6",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentVideo"
+        }
+      },
+      "id": "RLZ-YPDC9G",
+      "invariant": "INV-VENYDH",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §6",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This component applies media admission to its source and poster and delegates nested sources.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Supplies document-aware links, anchors and media to the shared Markdown renderer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+            "content": "sha256:2b73fea576d547f4b3d333c79031df8d02541afe7f3d77dc844b64eb16e239a7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

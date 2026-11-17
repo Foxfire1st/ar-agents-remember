@@ -61,7 +61,10 @@ No relevant domain documentation was found.
 
 - taskEntry and taskSummary are re-exported from the shared wire fixtures. They supply typed native-entry and reader-content defaults before caller overrides; taskEntry derives a qualified key from an overridden reference unless the caller supplies a key. The requirement fixture composes taskEntry with taskSummary, rather than taskDoc. [4]
 
-- The requirement anchor rendering exercised through Markdown. [5]
+
+
+- The requirement anchor rendering exercised through Markdown. Anchor: `RequirementAnchor` [5]
+
 
 
 

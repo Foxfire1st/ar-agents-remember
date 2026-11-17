@@ -1,9 +1,43 @@
 {
   "path": "dashboard/e2e/sidebar-chat-stays-loaded.spec.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5987a7099724c1a36ba8ec1c2c9df15c50bdd180",
+        "content": "sha256:9b6dbd9ca78b5d71b42b5f766a254f079cc9acc2cc432f52bc927c19d5f09fb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "rule-8 walk loads the chat document exactly once"
+        }
+      },
+      "facet": "The source-defined Playwright walk redirects the host to the development fake host, follows the eight declared navigation legs and asserts a final census of one iframe-element/src mutation. This defines the test assertion; it is not evidence that the walk ran here or a count of actual network document loads.",
+      "id": "PRF-WP65MC",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "curator-BUG-L5-INV-VMREN3-proofs",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The fixture walk samples iframe/src transitions per leg and asserts only the final sampled total is one.",
+    "2": {
+      "note": "Counts changes to the iframe element or its src attribute.\n\nAnchor: startLoadCount",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5987a7099724c1a36ba8ec1c2c9df15c50bdd180",
+            "content": "sha256:69cc9c3b38aa8924feca7b676258bc36f7af27eae55e3369f8b6e0ee2efb1f63",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the eight navigation legs and the final mutation-count assertion.\n\nAnchor: rule-8 walk loads the chat document exactly once",
       "targets": [
         {
           "anchor": {

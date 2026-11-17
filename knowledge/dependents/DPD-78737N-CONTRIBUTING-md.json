@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The contributing guide still describes the evidence catalogs, the generated copies and the role worktree flow; the evidence-lane and lifecycle catalog changes it links were re-read and its statements hold.",
-    "task": "261112-RSM-L1",
+    "statement": "The two links that moved changed nothing here, and the paragraph on the landing check ended with a sentence the landing side contradicts, so it states that a side whose commit the line already stands on publishes no commit and is not checked; the rest of the page was not read again.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
+      "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -86,7 +86,7 @@
       "path": "mcp/certification-profile-v1.json"
     },
     {
-      "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+      "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
       "kind": "file",
       "path": "scripts/check-public-docs.py"
     },
@@ -121,7 +121,7 @@
       "path": "scripts/test-under-load.sh"
     },
     {
-      "blob": "e640511ffad3eb7e67c1de5b38581748a9214a53",
+      "blob": "2116aec8d8fe95cd1f5e5dd3b63cb7d392febb48",
       "kind": "file",
       "path": "dashboard/package.json"
     },
@@ -169,6 +169,11 @@
       "blob": "eb407f537fc9b17727f49c3119b15d231f4ebfbc",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/host-session-environment.json"
+    },
+    {
+      "blob": "2d46e4349e78760575ad3176a73a7606cd7d95f6",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
     }
   ]
 }

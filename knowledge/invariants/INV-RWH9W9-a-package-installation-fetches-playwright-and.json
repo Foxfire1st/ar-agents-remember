@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The fetch is owned in mcp/src/agents_remember/canvas/explainer_browser.py and enforced at the prospective load in mcp/src/agents_remember/canvas/prospective.py, and the browser suite proves the pinned fetch, the product-owned folder and the unavailable load."
+  },
+  "applicability": "Every explainer that publishes a page on an installation made from the package.",
+  "conditions": [
+    "The product has installed its own Node for the host, as every installation that can start an explainer has.",
+    "At the first render the product's browser folder lacks the Playwright module or a Chromium build.",
+    "A user who sets AR_PLAYWRIGHT is answered from that module instead."
+  ],
+  "exclusions": [
+    "A package or host installation, where nothing is fetched.",
+    "An instrumented load that names its own Node, and every later render once the folder is ready."
+  ],
+  "id": "INV-RWH9W9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_explainer_browser.py — product-owned folder and product node; test_canvas_prospective.py — the fetch and the record"
+      ],
+      "path": "261112-BUG-L1-curator-handoff"
+    },
+    "handoffEntry": "L1-B01",
+    "leaf": "261112-BUG-L1",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A package installation fetches Playwright and its Chromium at the first explanation that publishes a page, through the Node the product already installs, into a folder the product owns and the user can remove; nothing is fetched at package or host install, and later explanations fetch nothing.",
+  "status": "proposed",
+  "supersedes": []
+}

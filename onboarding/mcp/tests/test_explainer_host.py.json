@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "2acdf7cb58b58406bff295af133586c06b031795",
+        "blob": "46a66f2e995584dc5753e574eb451379fd643573",
         "content": "sha256:6ca1b39639c53c08ffa3877f362265824430318f6ef79c1cee2378483d333005",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "2acdf7cb58b58406bff295af133586c06b031795",
+        "blob": "46a66f2e995584dc5753e574eb451379fd643573",
         "content": "sha256:a1728df0ad659922a6e83babf6b38fba339cd29a309fd3d3aa0393ed8fe9d173",
         "locator": {
           "kind": "symbol",
@@ -34,6 +34,23 @@
         "handoffEntry": "L183-exact-seat-cancel-state",
         "leaf": "260928-MIK-L183"
       }
+    },
+    {
+      "anchor": {
+        "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+        "content": "sha256:54ad25438155a8811374bf50638a5b9b379b41f033598f1478465f876bc15b60",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_launch_environment_carries_the_module_the_product_fetched"
+        }
+      },
+      "facet": "A seat launched after the fetch is handed the module the fetch placed.",
+      "id": "PRF-MP5XCN",
+      "invariant": "INV-J3FBTV",
+      "origin": {
+        "handoffEntry": "L1-B06",
+        "leaf": "261112-BUG-L1"
+      }
     }
   ],
   "realizes": [],
@@ -43,11 +60,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2acdf7cb58b58406bff295af133586c06b031795",
-            "content": "sha256:806c45493bacbf420bba47f97bf25cb6003d7906be4a9a94fbf2a6ec1b2895c9",
+            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "content": "sha256:2251afb8f0c6feb9fdd949c3270385fc23773d03f28afb5e032e1e9a558b2ef7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_seat_is_created_with_the_capsule_and_no_first_prompt"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -59,11 +75,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2acdf7cb58b58406bff295af133586c06b031795",
-            "content": "sha256:34c6ec429e32ec551d121f90f3e26419be67fd563ca21b7139a2ff5f3b747de5",
+            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "content": "sha256:2251afb8f0c6feb9fdd949c3270385fc23773d03f28afb5e032e1e9a558b2ef7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_seat_state_reads_the_hosts_own_agent_view"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -75,11 +90,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2acdf7cb58b58406bff295af133586c06b031795",
-            "content": "sha256:97511d1ac7dd76e2fe1acc666ef2246a0e43c70908a2c26f0a928a0207e4896a",
+            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "content": "sha256:2251afb8f0c6feb9fdd949c3270385fc23773d03f28afb5e032e1e9a558b2ef7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_settings_role_owns_the_seats_model_effort_and_mode"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -91,10 +105,58 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2acdf7cb58b58406bff295af133586c06b031795",
-            "content": "sha256:02f3eed0077bdfdea42fb30d7a21513691046e8371f11ccb63c8c9f1563de481",
+            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "content": "sha256:2251afb8f0c6feb9fdd949c3270385fc23773d03f28afb5e032e1e9a558b2ef7",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The launch environment carries the module the product fetched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "content": "sha256:54ad25438155a8811374bf50638a5b9b379b41f033598f1478465f876bc15b60",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_launch_environment_carries_the_module_the_product_fetched"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The policy case grants Claude server_info and the four explainer tools, and omits toolPolicy for Codex.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "content": "sha256:3224a7f50c9b23d6f037bc49ec3703a792874e6a81a9966d7eef4ab201aa130f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_policy_is_a_task_agents_with_the_four_tools_granted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A host map with extra arguments and an unreadable daemon configuration still permits creating and sending to the seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "content": "sha256:5589a062a0131069d27a1db2b7237611c1b4fb83ea41289d1ab023986803ff38",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_host_map_with_extra_arguments_starts_the_seat_like_any_workspace"
             }
           },
           "kind": "test"

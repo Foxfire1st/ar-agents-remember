@@ -72,12 +72,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
             "content": "sha256:7de15b1c5b4e6c7f7fa1815f90ae5fe799317c871eefe4362bdcae36e75109e3",
             "locator": {
-              "end": 71,
+              "end": 72,
               "kind": "line_range",
-              "start": 71
+              "start": 72
             },
             "path": "mcp/pyproject.toml"
           },

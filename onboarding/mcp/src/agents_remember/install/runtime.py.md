@@ -116,7 +116,7 @@ The service copies provider defaults and the shipped docs from the source/packag
 into the configured coordinator and removes the retired coordinator `AGENTS.md` files. After the
 user-owned directory ensures, this service
 leaves the shared host/agentic settings authority to setup: the install step
-never writes the single user settings file (`~/.config/agents-remember/settings.json`, under `XDG_CONFIG_HOME` when set). The c-13 install skill's Stage 2 interview edits the shared file
+never writes the single user settings file (`~/.config/agents-remember/settings.json`, under `XDG_CONFIG_HOME` when set). The Bootstrap setup interview writes the shared file
 with the developer, and knob families the developer skips keep the built-in
 absent-knob defaults. Runtime sync removes stale coordinator `scripts/` remnants because
 the old source-side installer and skill-install script are not runtime entry points.

@@ -97,16 +97,16 @@
       ]
     },
     "15": {
-      "note": "Lane registration.  Anchor: `test_knowledge_file_canonical`",
+      "note": "Lane registration. Anchor: `test_knowledge_file_canonical` Anchor: `test_knowledge_file_canonical`",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:f5b00d251564d154c7eb7dd3bc8abd69a02828ecb60413351ebebf2ab0b4587a",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 229,
+              "end": 809,
               "kind": "line_range",
-              "start": 229
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -9,8 +9,8 @@
 **The mandatory invariant closeout gate over one leaf's exact candidate: recompute, decide, validate
 (MIK-R09@v2).** `evaluate_leaf_gate` recomputes the leaf's worklist over the Git trees the route already captured
 (C and K_C), decides every item through its kind's predicate, runs the validator (MIK-R22) against the parent line's
-memory tip, and returns a `GateResult`: every open item, every unreadable input and every refusing violation is one
-`GateFinding`. The curator publication counts the refusing findings toward `curatorActionableCount`; the closeout validator and
+memory tip, and returns a `GateResult`: every open item, every unreadable input and every refusing validator violation is one
+`GateFinding`. For a complete worklist, the gate also refuses each recorded entry that is not current at a path changed since the leaf's recorded code base. The curator publication counts the refusing findings toward `curatorActionableCount`; the closeout validator and
 every commit route refuse while any exists. An open item of an advisory kind — a weakness (MIK-R118 rule 4) — is
 a report-only finding: the gate shows it and no route refuses for it. That is the advisory split among the *decided
 worklist kinds*, not the whole report-only set: `judge` also files as reports every validator violation the validator
@@ -22,12 +22,12 @@ with no written weakness at all can still report such items. No route refuses fo
 
 ### Logic
 
-- **Findings.** `GateFinding(code, path, message, item)`; the codes are `knowledge-item-open` (`ITEM_OPEN`, one per
+- **Findings.** `GateFinding(code, path, message, item)`; the worklist and validator codes are `knowledge-item-open` (`ITEM_OPEN`, one per
   open item, naming kind, subject, item ID, the reason, the registry's `satisfying_row` as the required action and
   `item_facts`), `knowledge-worklist-incomplete` (`RUN_INCOMPLETE`, one per unreadable input) and
   `knowledge-validator` (`VALIDATOR`, one per refusing violation; `knowledge-validator-unreadable` when the trees
   cannot be read). `to_repair_finding` renders one as the checklist's repair row under check `knowledge-gate`
-  (`GATE_CHECK`), with `itemId` for an open item.
+  (`GATE_CHECK`), with `itemId` for an open item. Entry-currentness findings use the landing check's `knowledge-stale-at-landing`, `knowledge-unverifiable-at-landing` and named unreadability codes.
 - **`GateResult`** carries the owner, the recomputed worklist, where it was persisted, the findings and the
   report-only findings — the advisory open items and the validator's report-only findings. `ok` is "no finding"; `brief()` is the tool response's `knowledgeGate` (state, owner,
   worklist state/digest/path, and the finding, open-item, incomplete, violation and report-only counts); `refusal()`
@@ -58,7 +58,7 @@ with no written weakness at all can still report such items. No route refuses fo
   calls `judge` with `validation_bases=(parent tip,)` and the contract's cache.
 - **`judge(document, path, trees, owner)`**: an incomplete run is one finding per named input; a complete one goes
   through `_item_findings`, which returns the refusing item findings beside the advisory ones; the validator's
-  refusing findings are appended, and the advisory findings join the report-only list. An item's kind decides which
+  refusing findings are appended; for a complete worklist, `_entry_currentness` also appends findings from the landing check using the recorded code base directly. The advisory findings join the report-only list. An item's kind decides which
   list it lands in: the registry marks a kind advisory, and nothing else in a decided item can make it report-only.
   - `_candidate` reads K_C (`git_tree_snapshot`, `KnowledgeSide`) and opens C once for every predicate, or returns the
     finding that names what cannot be read (`K_C`, `git`, `C`).
@@ -173,22 +173,34 @@ No configured live documentation source was available for this pass.
 
 
 
-- Probe, tip, memo, then the recorded evaluation. [6]
+
+
+- Probe, tip, memo, then the recorded evaluation. Anchor: `evaluate_leaf_gate` `_applies` `_resolved_tip` [6]
 
 
 
 
-- The evaluation and the judgment. [7]
 
 
 
 
-- K_C and C read once; the invariant kinds first; a failed read is incomplete. 
+- The evaluation and the judgment. Anchor: `_evaluate` `judge` [7]
+
+
+
+
+
+
+- K_C and C read once; the invariant kinds first; a failed read is incomplete.
 
 
 - The validator at the gate, as a leaf publication. [9]
 
+
+
 - The packet's examples: ready only once current rows answer every item, and its case asserts that a new edit reopens four items. [10]
+
+
 
 - A failed Git read inside a predicate or the validator is never a verdict. [11]
 
@@ -201,14 +213,22 @@ No configured live documentation source was available for this pass.
 
 
 
-- The gate reads the leaf's memory HEAD beside the parent tip, and keys its memo on both. [15]
+
+
+- The gate reads the leaf's memory HEAD beside the parent tip, and keys its memo on both. Anchor: `evaluate_leaf_gate` [15]
+
+
 
 
 - The leaf's memory HEAD, or nothing when it cannot be read. [16]
 - The commits whose closed history files are frozen for the writer: the bases and HEAD. [17]
 - The validator inside the gate is handed the frozen commit's history files. [18]
 
-- A leaf that continues after its closeout is refused while an item is open, and the refusal names attempt 2. [19]
+
+
+- A leaf that continues after its closeout is refused while an item is open, and the refusal names attempt 2. Anchor: `test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt` [19]
+
+
 
 
 - Cold evaluation replays its collected reads before memo admission; memo-hit worklist persistence remains optional. [20]
@@ -221,6 +241,10 @@ No meaningful cross-repo references found: the gate reads the leaf's own code an
 No cross-repo boundary is crossed by this file.
 
 
-Anchor: `_candidate` `_item_findings` `_decided` [8]
+
+
+- K_C and C read once; the invariant kinds first; a failed read is incomplete. Anchor: `_candidate` `_item_findings` `_decided` [8]
+
+
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_gate/gate.py::_candidate - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -354,6 +354,18 @@
       "targets": [
         {
           "anchor": {
+            "blob": "2d46e4349e78760575ad3176a73a7606cd7d95f6",
+            "content": "sha256:24e12699bc99b02f9647b58f906a950093f8553c98e8668a8898b0f1b855b0bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_integration_ref_move"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "afd3e04e6f97eed9e8fb84f61f2e587708c814b4",
             "content": "sha256:5c3b00bb34cdd419790a7a885cbc9c4ff55a8fb476b0d3144faa167ae5d2d024",
             "locator": {
@@ -440,19 +452,6 @@
               "start": 900
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
-            "content": "sha256:1cb6adda389fe576da272f5a5eeb1d3e94bedd6d0108b24c2d8d833d174389d8",
-            "locator": {
-              "end": 237,
-              "kind": "line_range",
-              "start": 104
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
           },
           "kind": "code"
         },

@@ -4,8 +4,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-        "content": "sha256:f4a4dbbbac572268bf652e1c74764051c15d05cf8b8e33bd824c1ff25847a8b2",
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "content": "sha256:a860b6c17292ff917c3fba3bedb37f615f6ef52184d8e29ef2e3e90d13f56a73",
+        "locator": {
+          "kind": "symbol",
+          "name": "_master_recorded_refusal"
+        }
+      },
+      "id": "RLZ-0418KE",
+      "invariant": "INV-FTW901",
+      "origin": {
+        "handoffEntry": "L3-W6-chain",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The master recording precondition preserves the chain refusal before stale-entry debt can be accepted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -22,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
         "content": "sha256:455130952fa8445077398d7bf51ae2a5d132a0ba5d56b830e0569c1888f109d3",
         "locator": {
           "kind": "symbol",
@@ -40,8 +58,26 @@
     },
     {
       "anchor": {
-        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-        "content": "sha256:f4a4dbbbac572268bf652e1c74764051c15d05cf8b8e33bd824c1ff25847a8b2",
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "content": "sha256:34faeaedf44113beebc1a00bb92135a45d33b4d28f199753f19827c528670b23",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record_preconditions"
+        }
+      },
+      "id": "RLZ-753XFX",
+      "invariant": "INV-6H0QQG",
+      "origin": {
+        "handoffEntry": "CUR-L3-W5-03-coverage",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "Reachability, complete stale-only findings and non-leaf scope jointly decide accepted debt here.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
         "locator": {
           "kind": "symbol",
           "name": "record_landing_result"
@@ -58,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
         "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
         "locator": {
           "kind": "symbol",
@@ -76,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
         "content": "sha256:455130952fa8445077398d7bf51ae2a5d132a0ba5d56b830e0569c1888f109d3",
         "locator": {
           "kind": "symbol",
@@ -94,7 +130,25 @@
     },
     {
       "anchor": {
-        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "content": "sha256:14a1d6808ecfef93dc9cb354f21cc6ab32139ed298e07446b4f376c6eac08b12",
+        "locator": {
+          "kind": "symbol",
+          "name": "_stale_only_findings"
+        }
+      },
+      "id": "RLZ-KDAS0M",
+      "invariant": "INV-6H0QQG",
+      "origin": {
+        "handoffEntry": "L3-W5-03",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The recording route decides here whether a gate refusal is stale-entry-only and therefore debt rather than a refusal.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
         "content": "sha256:f613a6a61432a27bece004bb66cd25454ac696b02f272e41fe210b34cd52ca7f",
         "locator": {
           "kind": "symbol",
@@ -112,12 +166,48 @@
     },
     {
       "anchor": {
-        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_landing_result"
+        }
+      },
+      "id": "RLZ-PCZ0N8",
+      "invariant": "INV-6H0QQG",
+      "origin": {
+        "handoffEntry": "CUR-L3-W5-03-coverage",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "Both payloads carry named debt and apply passes its keys to the shared writer.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "content": "sha256:fbd40047a32f8b9c92ad60db2919eb1a9e4b3f8376d0b2ef3e57be044f3ef986",
+        "locator": {
+          "kind": "symbol",
+          "name": "_stale_answer"
+        }
+      },
+      "id": "RLZ-WAS449",
+      "invariant": "INV-6H0QQG",
+      "origin": {
+        "handoffEntry": "L3-W5-03",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The named debt reaches the caller through this answer shape, which is what a later reader checks against.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
         "content": "sha256:673ea2bc1b9ccd163ab2403332c8f4695e70f987ef2e85072d63fec96e70df75",
         "locator": {
-          "end": 402,
+          "end": 404,
           "kind": "line_range",
-          "start": 398
+          "start": 400
         }
       },
       "id": "RLZ-XJG9AA",
@@ -136,12 +226,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
-            "content": "sha256:5b2dabcf533809bbd3c64a97e487ce0364eb6080680d2d7beb4f356a27723862",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "content": "sha256:573f3e4c7bc29659eb6f4310ed8543bb75d26ab23cdd75834e2dc5e42411657b",
             "locator": {
-              "end": 800,
-              "kind": "line_range",
-              "start": 779
+              "kind": "symbol",
+              "name": "_cleanup_integration_refusal"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -149,7 +238,7 @@
         },
         {
           "anchor": {
-            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
             "content": "sha256:4c86521612be2517f89c2085c7b3a5bed24d086752973b41125c1a4071905a2f",
             "locator": {
               "end": 680,
@@ -167,7 +256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38b10e8d11a56dde41541379da91cb8b3f34ca45",
+            "blob": "3cba6e5af9fb586386f0327c3231fbf20a3e2df6",
             "content": "sha256:f4797f34bc5b1ce411745d91020c5f41fce563d61837ac7ef7cfc381d8c690aa",
             "locator": {
               "kind": "symbol",
@@ -228,21 +317,11 @@
       ]
     },
     "15": {
-      "note": "Unconverted memory: the lock decides, before a memory commit is required.\n\nAnchor: `_knowledge_gate_refusal`",
+      "note": "Recording probes the source line and recorded base first; a converted supplied memory output reaches its leaf/master judgment even when those prior inputs are unconverted. Anchor: `_knowledge_gate_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
             "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
               "kind": "symbol",
@@ -258,7 +337,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
             "content": "sha256:f613a6a61432a27bece004bb66cd25454ac696b02f272e41fe210b34cd52ca7f",
             "locator": {
               "kind": "symbol",
@@ -270,25 +349,25 @@
       ]
     },
     "5": {
-      "note": "The handler consults the landing preconditions before dry/apply publication and retains the actual code and memory facts.\n\nAnchor: `record_landing_result`",
+      "note": "The handler consults the landing preconditions before dry/apply publication and retains the actual code and memory facts. Anchor: `record_landing_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "record_landing_result"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:f4a4dbbbac572268bf652e1c74764051c15d05cf8b8e33bd824c1ff25847a8b2",
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "content": "sha256:589b9bd8cc472854433a521868f556b5920a5fb47ab9c853ed60cd55fe7d8028",
             "locator": {
-              "kind": "symbol",
-              "name": "record_landing_result"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -296,14 +375,15 @@
       ]
     },
     "6": {
-      "note": "The shared writer this route calls, and the cell it publishes. (`record_landed_integration`)\n\nAnchor: `record_landed_integration`",
+      "note": "The shared writer this route calls, and the cell it publishes. (`record_landed_integration`) Anchor: `record_landed_integration`",
       "targets": [
         {
           "anchor": {
-            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
-            "content": "sha256:e5008e969eaed1fd2ba9adec9aead3037c5aa22d02b71cddd993131f9f1d04a9",
+            "blob": "16d8b616821e1aa040d5330711c395d9b81db861",
+            "content": "sha256:6c69b6755059a46ac6180139896fe88378dbf18f9e19851c66b97799af31de7e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "record_landed_integration"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py"
           },
@@ -311,11 +391,10 @@
         },
         {
           "anchor": {
-            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
-            "content": "sha256:7fd8930b7266dacdcc697badbaef5cfc5bd6cb7c8a107ebdb0fb8538c23ab6ba",
+            "blob": "16d8b616821e1aa040d5330711c395d9b81db861",
+            "content": "sha256:d15488b50ce08547c0c757ce2420201370ceaeb3e96bc0f245f34d25a9256081",
             "locator": {
-              "kind": "symbol",
-              "name": "record_landed_integration"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py"
           },
@@ -352,25 +431,25 @@
       ]
     },
     "8": {
-      "note": "The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {\"completed\", \"checkpointed\"}`)\n\nAnchor: `record_landing_result`",
+      "note": "The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {\"completed\", \"checkpointed\"}`) Anchor: `record_landing_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "record_landing_result"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:f4a4dbbbac572268bf652e1c74764051c15d05cf8b8e33bd824c1ff25847a8b2",
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "content": "sha256:589b9bd8cc472854433a521868f556b5920a5fb47ab9c853ed60cd55fe7d8028",
             "locator": {
-              "kind": "symbol",
-              "name": "record_landing_result"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -378,25 +457,25 @@
       ]
     },
     "9": {
-      "note": "The checkpointed summary preserves its still-open state and names worktree_integrate as its completion route.\n\nAnchor: `record_landing_result`",
+      "note": "The checkpointed summary preserves its still-open state and names worktree_integrate as its completion route. Anchor: `record_landing_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "record_landing_result"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
-            "content": "sha256:f4a4dbbbac572268bf652e1c74764051c15d05cf8b8e33bd824c1ff25847a8b2",
+            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "content": "sha256:589b9bd8cc472854433a521868f556b5920a5fb47ab9c853ed60cd55fe7d8028",
             "locator": {
-              "kind": "symbol",
-              "name": "record_landing_result"
+              "kind": "file"
             }
           },
           "kind": "code"

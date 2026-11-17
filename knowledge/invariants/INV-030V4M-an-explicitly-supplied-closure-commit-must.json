@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The public writer regression rejects five kinds of object that could otherwise make a recorded closure point at something other than a real code commit, without partial writes."
+  },
+  "applicability": "An explicit commit supplied in a closed weakness block through the task-bound knowledge writer.",
+  "conditions": [
+    "The typed closure field is a Git object ID; the code repository resolver must return the identical full commit ID.",
+    "The code object must be available in the admitted code repository."
+  ],
+  "exclusions": [
+    "An absent commit follows the current-task closure and required-reason rules instead.",
+    "A stored explicit commit is displayed unchanged by the reader; this is not a promise that every read revalidates that stored attribution."
+  ],
+  "id": "INV-030V4M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L3-W9-worker.md, item17 acceptance block, checks and Closure census; W9-evidence.tar.gz contains the exact red/green test results and executable commands."
+      ],
+      "path": "261112-BUG-L3-W10-D817-corrected-writer-input.json"
+    },
+    "handoffEntry": "L3-W9-explicit-code-commit",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An explicitly supplied closure commit must be the full identity of a real commit in the code repository.",
+  "status": "proposed",
+  "supersedes": []
+}

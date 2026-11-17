@@ -67,7 +67,7 @@ No additional work is asserted by this card.
 
 ### 260707-HFX2-L13 Fetch-Fixture Compatibility
 
-The body stub looks up tasks[qualifiedKey].summary and returns a real Response. Folder/read/resolve/reports stubs remain controlled; this setup is not a notes transport contract change.
+The imported notesReaderTestSupport body stub reads the request path into docPath, looks up tasks[docPath]?.summary and returns a real Response with status 200 or 404. Folder/read/resolve/reports stubs remain controlled; this setup is not a notes transport contract change.
 
 ### Logic
 
@@ -124,7 +124,10 @@ A frontend component test; nothing crosses repositories.
 
 
 
+
+
 - Current whole-log assertions cover authored numbering/times/formatted text/rationale, muted counted product-record end disclosure, input preservation and no fetch; seeded cases are not execution. [8]
+
 
 
 
@@ -132,7 +135,10 @@ A frontend component test; nothing crosses repositories.
 
 > Retained earlier citation wording: - Retained folder/content viewer and shell takeover owners remain. [17]
 
-- `masterDoc` and `seedMaster` — the cast-free seed, which builds its entry through the shared `taskEntry` builder instead of a double cast. [19]
+
+
+- `masterDoc` and `seedMaster` — the cast-free seed, which builds its entry through the shared `taskEntry` builder instead of a double cast. Anchor: `masterDoc` [19]
+
 
 
 - The cast-free seed builds its master entry through the shared `taskEntry` builder, so the seed is typed against the task mirror with no cast. [20]

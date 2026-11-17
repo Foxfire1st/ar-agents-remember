@@ -66,7 +66,7 @@ Source measurement combines raw metadata and numstat in one fixed NUL-safe Git c
   detail sentence, the command and the two tree IDs. An observation that names paths without entries is
   listed with status and content `unknown`.
 - `inventory_command` returns the text `git -C <root> diff --no-color --no-ext-diff --src-prefix=a/
-  --dst-prefix=b/ --raw -z --no-renames <before> <after>`, with a placeholder for a side that named no
+  --dst-prefix=b/ --raw --numstat --no-abbrev -z --no-renames <before> <after>`, with a placeholder for a side that named no
   tree. The text is built from the same `_RAW_ARGS` tuple the measurement passes to Git,
   `PARSED_DIFF_OPTIONS` included.
 - `inventory_limitations` declares `limitation:source_inventory_unavailable` or
@@ -185,7 +185,7 @@ the measured zero the requirement forbids.
   `ReviewSourceInventory`'s validator, so a count can never describe a population the response does
   not carry.
 - **The advertised command is the interface the measurement used.** `inventory_command` prints
-  `git diff --raw -z --no-renames …`, and `memory/knowledge/diff_display.py`'s `TREE_DIFF_COMMAND`
+  `git diff --no-color --no-ext-diff --src-prefix=a/ --dst-prefix=b/ --raw --numstat --no-abbrev -z --no-renames <before> <after>`, and `memory/knowledge/diff_display.py`'s `TREE_DIFF_COMMAND`
   was changed to the same spelling for the same reason: the address a reader acts on must be the one
   the response preserved.
 - **The pane is the inventory plus the measured partition.** This module adds no selection,
@@ -269,7 +269,6 @@ No meaningful cross-repo references found.
 
 
 - The review body is identical under a hostile Git configuration. [39]
-- The module's own statement of the three properties it exists for — measured from the pair, delimiter-safe, three separate facts with a failed measurement as a state — and of why the pane lives beside it. [40]
 - The published surface: the one reference constant, the probe, the inventory, the pane projection and the three limit helpers. [41]
 
 - One combined raw/numstat Git question with --no-abbrev, --no-renames and -z. [42]
@@ -287,7 +286,6 @@ No meaningful cross-repo references found.
 - The sentence a measured inventory publishes about itself, including the one that separates a measured empty set from an unmeasured one. [53]
 - **Pane 2: the inventory first and unconditionally, then the measured partition it is read from, the address view the recorded-relationship traversal renders, the relationships themselves, the six remaining counts, expansion and the three bucket lists.** [54]
 - **The scope of each count and the two partition facts in the comparison route's spelling.** [55]
-- **The wire value this module builds, with the count checked against the list and the unrepresentable rule enforced at construction.**  Anchor: `ReviewSourceInventory` [58]
 
 - The adapter's composition: the observation made once and handed to both renderings, before any dataset is opened and before the selector branch, and its limits declared at the top level. [60]
 
@@ -296,3 +294,6 @@ No meaningful cross-repo references found.
 - **The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.** [63]
 
 - Retired at the fifth freeze d59c3493: dashboard/src/panels/changeset/ChangeSetViewer.tsx:253-294 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The module declares pair-bound measurement, delimiter-safe addresses, separate status/mode/renderability, and explicit failed-measurement states; its source pane combines the inventory with attribution. [40]
+- **The wire value this module builds, with the count checked against the list and the unrepresentable rule enforced at construction.** Anchor: `ReviewSourceInventory` [58]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The tool reference names the master own task when no sprint commands it, the Investigator master-alone selection, and the refusal of a sprint for such a master; it holds.",
-    "task": "261112-RSM-L1",
+    "statement": "All four changed areas between the leaf base and this final code tree are covered: read_ar_files reads a card's entry half when Markdown is absent, names that JSON file with cardStatus sidecar-only and cardState currentness, and entry-half coverage does not itself make the route index stale; master abandon measures already-landed work by ancestry and returns landedWork with state, branch and line plus the no-work-lost summary; a recorded master's landing keeps stale-only findings as staleEntries debt only after the landing-chain proof passes, while other refusals remain. The archive passage covers the dry-run row survey without row repair, one refusal naming every blocked still-live commanded master and its open work, and enclosure retirement through abandonment's existing checks only for commanded masters that move with the sprint. A master also commanded by another live sprint stays where it is and its enclosures are skipped by retirement. These changed passages agree with the named implementation; other passages were not re-reviewed in this pass.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -73,7 +73,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "6c13d6defc09364b2088c4232b31b6f3d492a66b",
+      "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -173,7 +173,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
     },
     {
-      "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+      "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive.py"
     },
@@ -193,7 +193,7 @@
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
     {
-      "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+      "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/read_files.py"
     },
@@ -281,6 +281,51 @@
       "blob": "5a6864bbe774b036d2edc5d127c595590afe8aca",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/master_review_gate.py"
+    },
+    {
+      "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/tool_response.py"
+    },
+    {
+      "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+    },
+    {
+      "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+    },
+    {
+      "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_writer/weakness_authoring.py"
+    },
+    {
+      "blob": "818f37a7fb36756ed15389172001e0707e4c19f4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_reader/weakness_closure.py"
+    },
+    {
+      "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
+    },
+    {
+      "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
+    },
+    {
+      "blob": "1fe83d48a75d16c7f66764ad45c34bc03f6becff",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+    },
+    {
+      "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     }
   ]
 }

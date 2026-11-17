@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+        "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
+        "content": "sha256:7dfb39d27ff680d03f00fb303daca4e1af0fd930170d08e779698ab67229db9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "DiffSide"
+        }
+      },
+      "id": "RLZ-82X0D0",
+      "invariant": "INV-AQH8BD",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-5-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Declares text content separately from binary/media type and byte count; the owning FileDiff permits absent sides.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
+        "content": "sha256:2cde994d94bb554f0ec167802320654584e7d4f6b76db4aedb4f03b1ecfd780f",
+        "locator": {
+          "kind": "symbol",
+          "name": "FileContents"
+        }
+      },
+      "id": "RLZ-HRVG66",
+      "invariant": "INV-26X0GJ",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-3-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Carries media type, over-limit flag and measured size for file presentation.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
         "content": "sha256:15ab3999ca957c919a14638c78cae2cc9a6d98e7a2726d812b38be1e96d2a2ed",
         "locator": {
           "kind": "symbol",
@@ -18,6 +54,42 @@
       },
       "rationale": "StreamReadyMarker declares the ready frame the route emits, including the optional last feed timestamp the panel names on a silent river.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
+        "content": "sha256:162430f4502e2bee29f49b5a3cced71b112977cb19ee1526e185175408e7c956",
+        "locator": {
+          "kind": "symbol",
+          "name": "NoteContents"
+        }
+      },
+      "id": "RLZ-RA4FKM",
+      "invariant": "INV-26X0GJ",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-3-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Carries media type, over-limit flag and measured size for notes presentation.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
+        "content": "sha256:606e6f94f5b3c5b1d03526c6524992dcf5f162a6538482949bd01443da7d3bef",
+        "locator": {
+          "kind": "symbol",
+          "name": "FileResolution"
+        }
+      },
+      "id": "RLZ-W7C6FV",
+      "invariant": "INV-0WMTQ4",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-8-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Represents repository path existence and file/directory classification used before repository document links become opening controls.",
+      "role": "support"
     }
   ],
   "references": {
@@ -26,12 +98,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
             "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
             "locator": {
-              "end": 551,
+              "end": 569,
               "kind": "line_range",
-              "start": 534
+              "start": 552
             }
           },
           "kind": "code"
@@ -43,12 +115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
             "content": "sha256:0d61b8fcf3adcface15bf07bbcd40ef376cedd1cd00f94488eed139ce7ed53f4",
             "locator": {
-              "end": 378,
+              "end": 392,
               "kind": "line_range",
-              "start": 360
+              "start": 374
             }
           },
           "kind": "code"
@@ -60,12 +132,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
             "content": "sha256:e4c37f23a2b7ec027a5e6016991bc2940a7c6feee2e9c139d58d773f58cc101d",
             "locator": {
-              "end": 393,
+              "end": 407,
               "kind": "line_range",
-              "start": 388
+              "start": 402
             }
           },
           "kind": "code"
@@ -77,12 +149,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
             "content": "sha256:787087b81498e16e4c169b78ed4abe9d74f67788712e5b2a0cb5864b22ef7615",
             "locator": {
-              "end": 421,
+              "end": 439,
               "kind": "line_range",
-              "start": 408
+              "start": 426
             }
           },
           "kind": "code"
@@ -94,12 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
             "content": "sha256:12208388281f844054724f017af6bd73164d64a3b231b28e115b75e1a90ee81f",
             "locator": {
-              "end": 523,
+              "end": 541,
               "kind": "line_range",
-              "start": 519
+              "start": 537
             }
           },
           "kind": "code"
@@ -111,12 +183,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
             "content": "sha256:da306d15dcc99a8866de546539e909fbdb772539190765a7dbb183368f4ec716",
             "locator": {
-              "end": 531,
+              "end": 549,
               "kind": "line_range",
-              "start": 526
+              "start": 544
             }
           },
           "kind": "code"
@@ -128,12 +200,53 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
             "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
             "locator": {
-              "end": 551,
+              "end": 569,
               "kind": "line_range",
-              "start": 534
+              "start": 552
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "File and note metadata, repository path resolution and independently classified diff sides are declared wire shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
+            "content": "sha256:d996d3caa2c2812d755c560e6228189714cb92f2aff4b868a59620377d59a603",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 273
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
+            "content": "sha256:162430f4502e2bee29f49b5a3cced71b112977cb19ee1526e185175408e7c956",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 410
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
+            "content": "sha256:7dfb39d27ff680d03f00fb303daca4e1af0fd930170d08e779698ab67229db9a",
+            "locator": {
+              "end": 630,
+              "kind": "line_range",
+              "start": 619
             }
           },
           "kind": "code"
@@ -145,36 +258,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
             "content": "sha256:f64c082d90fbb42c45415faf0fed88e15e456ce9c1b4d3bfccd27c9e4b686b03",
             "locator": {
-              "end": 574,
+              "end": 592,
               "kind": "line_range",
-              "start": 562
+              "start": 580
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
             "content": "sha256:dde80e31f24d9d4836c324eaa93b07012c54462ca77b232373d84670f5e882b8",
             "locator": {
-              "end": 598,
+              "end": 616,
               "kind": "line_range",
-              "start": 588
+              "start": 606
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
             "content": "sha256:bbbb25e8523b159636c4217b70b8618bc867bb38c88eb3b0cde709926030ce4c",
             "locator": {
-              "end": 559,
+              "end": 577,
               "kind": "line_range",
-              "start": 554
+              "start": 572
             }
           },
           "kind": "code"
@@ -186,12 +299,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "blob": "90285644f59b1774a034c42b8d959aaa7a814388",
             "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
             "locator": {
-              "end": 551,
+              "end": 569,
               "kind": "line_range",
-              "start": 534
+              "start": 552
             }
           },
           "kind": "code"

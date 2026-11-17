@@ -1,17 +1,73 @@
 {
   "path": "dashboard/src/panels/file-viewer/DualPane.test.tsx",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "beb7d0727ce00d6059466558d317564033bba0da",
+        "content": "sha256:107101630b837aea0d2520a2c5fa65e734216705ffccf19bfc3ab8cdbbdd9e32",
+        "locator": {
+          "end": 67,
+          "kind": "line_range",
+          "start": 56
+        }
+      },
+      "facet": "An oversized video result renders the shared too-large notice with its media type.",
+      "id": "PRF-1DSWCP",
+      "invariant": "INV-26X0GJ",
+      "origin": {
+        "handoffEntry": "curator-manual-recovery-BUG-L5-oversized-video",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "beb7d0727ce00d6059466558d317564033bba0da",
+        "content": "sha256:c3d0f5c0b894bdb2e930acb29f51dcaef0fc3f350619d7af37e9531f0d695e0e",
+        "locator": {
+          "end": 54,
+          "kind": "line_range",
+          "start": 39
+        }
+      },
+      "facet": "The common file pane draws an image from the byte route and displays its caption.",
+      "id": "PRF-CYNF18",
+      "invariant": "INV-26X0GJ",
+      "origin": {
+        "handoffEntry": "curator-manual-recovery-BUG-L5-picture-caption",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "beb7d0727ce00d6059466558d317564033bba0da",
+        "content": "sha256:dc99458b0502f7ca7f7e23bd76197b38415712e2bdd366af78c46800315831f0",
+        "locator": {
+          "kind": "symbol",
+          "name": "DualPane media and rendered documents > renders a repository document only in document mode; source mode stays source"
+        }
+      },
+      "facet": "Document mode renders prose and source mode keeps the source pane.",
+      "id": "PRF-P3X2KW",
+      "invariant": "INV-EY37Q0",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §1",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The component under test — the `empty` backdrop branch, the partnerless-overview branch, and `SidecarSide`.\n\nAnchor: `DualPane` `SidecarSide`",
+      "note": "The component under test — the `empty` backdrop branch, the partnerless-overview branch, and `SidecarSide`. Anchor: `DualPane` `SidecarSide`",
       "targets": [
         {
           "anchor": {
-            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
-            "content": "sha256:36e3128196752e9703f3acf1ea2f7c8f051c50523594dc0e8cf635f32dc51433",
+            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+            "content": "sha256:7ece716a8f1345394af6ff4869e7ad493f7c866be2519c38148f7aeab6d07cf5",
             "locator": {
-              "kind": "file"
+              "end": 217,
+              "kind": "line_range",
+              "start": 163
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
           },
@@ -19,23 +75,12 @@
         },
         {
           "anchor": {
-            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
-            "content": "sha256:28cde7507ab57730f6e85edfcd20e3e1ccddb24b052dee0a19f226c2325eb3e6",
+            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+            "content": "sha256:ec4ae8ba2b09702ed4e9df2a500834de95ec3d4aa96452c41e3a3456ba3f246b",
             "locator": {
-              "kind": "symbol",
-              "name": "DualPane"
-            },
-            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
-            "content": "sha256:0a4378dfa6f17c4f993624c6c3292c92bce80f6f47b898acb3a58459b0496712",
-            "locator": {
-              "kind": "symbol",
-              "name": "SidecarSide"
+              "end": 161,
+              "kind": "line_range",
+              "start": 140
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
           },

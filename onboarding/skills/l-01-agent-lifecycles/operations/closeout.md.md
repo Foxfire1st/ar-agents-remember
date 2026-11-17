@@ -14,6 +14,8 @@ The instruction defines the evidence and authority boundaries around an existing
 
 A Manager or Orchestrator coordinates the closeout under supplied task authority. In a flat run with neither, the owning Architect may coordinate the same transaction only with the developer's explicit commit approval for that closeout, or with authority the developer delegated for the series and recorded in the task document. Targeted-check results are carried under the closeout preview's accepted code and memory input, with failures, unrun checks and missing evidence kept visible.
 
+For converted memory, closeout refuses a non-current entry at a path in the task’s own code diff.
+
 ## Evidence
 
 No separate reference list: the file's sidecar carries the realization entries for its current anchors.
@@ -21,5 +23,6 @@ No separate reference list: the file's sidecar carries the realization entries f
 ## Canonical Source Ownership
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
+
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [1]

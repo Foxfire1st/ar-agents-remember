@@ -13,8 +13,8 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/application/worktree_tools.py:128-178`.
-- Source comparison: `mcp/src/agents_remember/application/worktree_tools.py:145-161`.
+- Source comparison: `mcp/src/agents_remember/application/worktree_tools.py:197-277`.
+- Source comparison: `mcp/src/agents_remember/application/worktree_tools.py:301-304`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -520,6 +520,8 @@ field is additive: a caller that does not read it sees the sync result it always
 
 
 - The finalizer behind `lifecycle_finalize_task`: it refuses a disabled contract, answers the contract's readiness blockers, verifies cleanup, then reconciles the task documents and returns the finalized result.  Anchor: `finalize_result` [21]
+
+
 
 
 - Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope.  Anchor: `WorktreeSummary` `WorktreeCheckpointLandingResponse` [8]

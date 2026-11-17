@@ -1,16 +1,54 @@
 {
   "path": "dashboard/src/panels/file-viewer/FileViewer.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6fd1c9209f9743d7e4fdf1b0c462b79df2d7032b",
+        "content": "sha256:c1310e20ff38f27eae79fda98f2daf3b67028482e2496d48a33c8daa10b183fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "File Viewer center tab > opens a document rendered, and Back and Forward lead through opened files"
+        }
+      },
+      "facet": "A linked repository Markdown file opens rendered by default.",
+      "id": "PRF-FSDYAC",
+      "invariant": "INV-EY37Q0",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §1",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6fd1c9209f9743d7e4fdf1b0c462b79df2d7032b",
+        "content": "sha256:c1310e20ff38f27eae79fda98f2daf3b67028482e2496d48a33c8daa10b183fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "File Viewer center tab > opens a document rendered, and Back and Forward lead through opened files"
+        }
+      },
+      "facet": "Following, Back and Forward preserve document rendering and restore positive and zero scroll positions.",
+      "id": "PRF-RYY8AB",
+      "invariant": "INV-ZBD14W",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §10",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "6": {
-      "note": "The suite mounts the shell on Operations for its keep-alive assertions.\n\nAnchor: `CockpitShell`",
+      "note": "The suite mounts the shell on Operations for its keep-alive assertions. Anchor: `CockpitShell`",
       "targets": [
         {
           "anchor": {
-            "blob": "6323f80a69d0d140b643fa63af30504f7ccaa6ed",
-            "content": "sha256:11bad086ad7ce952d2398053374917d752bbc4f1df6e13b987d5ce5bad184fd1",
+            "blob": "6fd1c9209f9743d7e4fdf1b0c462b79df2d7032b",
+            "content": "sha256:0c60319cd5232aba1c65bd422eb938082b380e5aa496b79dcada671391767841",
             "locator": {
-              "kind": "file"
+              "end": 62,
+              "kind": "line_range",
+              "start": 44
             }
           },
           "kind": "test"
@@ -38,10 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
-            "content": "sha256:ebac7e86f0373cc77040c74c9d3842c5f1cd232b4b05d87d73e7baf2afe0b5d1",
+            "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+            "content": "sha256:19ee0d8af025d32b429e569896bda8d79754035ae4339f671ec10f5d59d43bfa",
             "locator": {
-              "kind": "file"
+              "end": 674,
+              "kind": "line_range",
+              "start": 593
             },
             "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
           },

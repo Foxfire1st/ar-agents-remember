@@ -1,0 +1,77 @@
+{
+  "path": "mcp/tests/test_weakness_closure_closeout.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "df2dc6bc3f75a5c13f245b9576d2f4745292e4e5",
+        "content": "sha256:011d1e0b90dda5e8e2fda1f71de3836842ba41474b712dba107b9d77675b64ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_closeout_attributes_a_deferred_closure_without_rewriting_its_record"
+        }
+      },
+      "facet": "The actual paired closeout judges and publishes the same memory tree, leaves the deferred record byte-identical, and both public read forms return the resulting paired code commit.",
+      "id": "PRF-PXNY3A",
+      "invariant": "INV-MHQBEE",
+      "origin": {
+        "handoffEntry": "L3-W9-unchanged-closeout-tree",
+        "leaf": "261112-BUG-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture writes an open or deferred record through the real writer with its source trace. [1]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2dc6bc3f75a5c13f245b9576d2f4745292e4e5",
+            "content": "sha256:7f4df7b1217b67bc2d880fa29893e5ae90717d4b882c8b8c4b0f4c22ae662415",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The public weakness and record payloads are compared against one expected closure at the captured code tree. [2]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2dc6bc3f75a5c13f245b9576d2f4745292e4e5",
+            "content": "sha256:3c243b58493e12ca6a592c64c0a0ebcf880ff58b78227414c715067edfe91ae7",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Application closeout retains native judging, commits the judged tree, preserves reviewed record bytes and exposes the actual closing code commit. [3]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2dc6bc3f75a5c13f245b9576d2f4745292e4e5",
+            "content": "sha256:011d1e0b90dda5e8e2fda1f71de3836842ba41474b712dba107b9d77675b64ac",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

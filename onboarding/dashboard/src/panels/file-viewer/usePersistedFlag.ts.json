@@ -22,16 +22,16 @@
   ],
   "references": {
     "1": {
-      "note": "`FileViewer` persists its split/single toggle through this hook.\n\nAnchor: \"fileviewer.split\"; \"className={toggle({ on: split })} aria-pressed={split} onClick={() => setSplit(!split)}> {split ? \\\"▣ Split\\\" : \\\"▢ Single\\\"} </button>\"",
+      "note": "`FileViewer` persists its split/single toggle through this hook. Anchor: \"fileviewer.split\"; \"className={toggle({ on: split })} aria-pressed={split} onClick={() => setSplit(!split)}> {split ? \\\"▣ Split\\\" : \\\"▢ Single\\\"} </button>\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
             "content": "sha256:8b8223bef67cbeeb2deb490495c6d66f27fad4019cd17b265db0d226a6b40a87",
             "locator": {
-              "end": 213,
+              "end": 596,
               "kind": "line_range",
-              "start": 213
+              "start": 596
             },
             "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
           },
@@ -39,12 +39,25 @@
         },
         {
           "anchor": {
-            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
-            "content": "sha256:465ae7c5e5e0e5a52b791e1735fb7d467d9f60fe8abeeab7b74379e0dcd25566",
+            "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+            "content": "sha256:8038d0417e1dadb39414e388a2c9ccf78e928203408737ee7ece5033c8728c58",
             "locator": {
-              "end": 278,
+              "end": 528,
               "kind": "line_range",
-              "start": 276
+              "start": 523
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+            "content": "sha256:260b13f7d916e7f66e0dfec118c68279209f12a05d120f4d433014b831aebdd8",
+            "locator": {
+              "end": 598,
+              "kind": "line_range",
+              "start": 593
             },
             "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
           },
@@ -57,12 +70,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:455feb20e68551d26878739be9cd8966b7b5a2d7bedf78e315765fa9574ae959",
             "locator": {
-              "end": 206,
+              "end": 207,
               "kind": "line_range",
-              "start": 205
+              "start": 206
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -75,12 +88,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:fa5ef98bacf05b79a0ad66cc689f8c33445480853643065bbf8a31b4b3bae3ee",
             "locator": {
-              "end": 1022,
+              "end": 881,
               "kind": "line_range",
-              "start": 988
+              "start": 847
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

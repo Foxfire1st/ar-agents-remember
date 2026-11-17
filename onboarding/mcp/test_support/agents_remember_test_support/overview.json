@@ -327,10 +327,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
-            "content": "sha256:4958289f3e1dd0f91c7c27901a608eeaf04665588a5566fceb8e2374c8869770",
+            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+            "content": "sha256:276519340d6bbbbf2f426c48c03c834eca4031a6cd6a98290b364aac2ffc8de6",
             "locator": {
-              "end": 79,
+              "end": 73,
               "kind": "line_range",
               "start": 60
             },
@@ -340,12 +340,25 @@
         },
         {
           "anchor": {
-            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
-            "content": "sha256:7cf14af466c8dd63a6871322dca207c6861aed9732bbf169a9a85172dac6f1bc",
+            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+            "content": "sha256:c3566bb76d04bb29fb5df72925d693a3e7a0aaa01f9c4f0c1603935ac690ea1c",
             "locator": {
-              "end": 19,
+              "end": 89,
               "kind": "line_range",
-              "start": 15
+              "start": 88
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:2c974185c97c32e3a03ecb066ade1806a9f10f0ec48a1a395edc602a9457ea6f",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 16
             },
             "path": "mcp/tests/conftest.py"
           },
@@ -354,11 +367,11 @@
         {
           "anchor": {
             "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
-            "content": "sha256:f72234ce3e65ff630303d30de11de6a1110c3dc749f07bd3f6c165160128aef9",
+            "content": "sha256:04e6c1cfb80d069095215884792aee4145606659458cd0ac6627d63db7534797",
             "locator": {
-              "end": 226,
+              "end": 224,
               "kind": "line_range",
-              "start": 216
+              "start": 221
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },

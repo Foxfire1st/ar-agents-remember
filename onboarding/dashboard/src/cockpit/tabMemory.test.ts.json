@@ -1,0 +1,221 @@
+{
+  "path": "dashboard/src/cockpit/tabMemory.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a0bdde1c41797c69b3b5d029821711e9d62958c5",
+        "content": "sha256:dd6e7dd767e2747fce3ba1803076e6988dfe529a7489adf72298f9ce1f0eeb06",
+        "locator": {
+          "end": 124,
+          "kind": "line_range",
+          "start": 120
+        }
+      },
+      "facet": "Each variant dismisses an absent owner while the other task survives.",
+      "id": "PRF-14KJRH",
+      "invariant": "INV-S1VXNA",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-014",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a0bdde1c41797c69b3b5d029821711e9d62958c5",
+        "content": "sha256:ce55603ccd9e2a6835bc14bb993fd2d584b6b8b3d2c0d7863b002997af9a6393",
+        "locator": {
+          "end": 157,
+          "kind": "line_range",
+          "start": 153
+        }
+      },
+      "facet": "A task under another master cannot preserve the view.",
+      "id": "PRF-21XWCG",
+      "invariant": "INV-S1VXNA",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-014",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a0bdde1c41797c69b3b5d029821711e9d62958c5",
+        "content": "sha256:cdf06ba07db8d5a2b37c24b2a51c92759f5355493f555f29b96c3987436fb8ce",
+        "locator": {
+          "end": 151,
+          "kind": "line_range",
+          "start": 147
+        }
+      },
+      "facet": "A task in another repository cannot preserve the view.",
+      "id": "PRF-4MBKZ1",
+      "invariant": "INV-S1VXNA",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-014",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a0bdde1c41797c69b3b5d029821711e9d62958c5",
+        "content": "sha256:b26887b37505dc482da02551becaae24c679520a9a44a67b572f4e003460dc01",
+        "locator": {
+          "kind": "symbol",
+          "name": "the Operations tab memory validates every retained change-set variant > dismisses an enclosure scope that no current task or enclosure names"
+        }
+      },
+      "facet": "An unknown scope is absent after hydration.",
+      "id": "PRF-FASTXD",
+      "invariant": "INV-S1VXNA",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-014",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a0bdde1c41797c69b3b5d029821711e9d62958c5",
+        "content": "sha256:6dd7751ac196fdff387c08d5faaba3eeeeb6454a8db5a59c50f7fdffcb4a564d",
+        "locator": {
+          "end": 167,
+          "kind": "line_range",
+          "start": 164
+        }
+      },
+      "facet": "All six owner/alias scope combinations can use a separate enclosure plus its owner.",
+      "id": "PRF-J8P7QB",
+      "invariant": "INV-S1VXNA",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-014",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a0bdde1c41797c69b3b5d029821711e9d62958c5",
+        "content": "sha256:dad7972980b7641b118853f8e828fcca19e7fb3a77e36430ef7ec4af3a8e18c6",
+        "locator": {
+          "end": 118,
+          "kind": "line_range",
+          "start": 112
+        }
+      },
+      "facet": "Each of the thirteen variants preserves a valid selection.",
+      "id": "PRF-KT1DRR",
+      "invariant": "INV-S1VXNA",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-014",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a0bdde1c41797c69b3b5d029821711e9d62958c5",
+        "content": "sha256:ddcd19f4d5a495cd97ad999c128f68fb894d4d8c5377ec3792673e7b266215bf",
+        "locator": {
+          "end": 140,
+          "kind": "line_range",
+          "start": 126
+        }
+      },
+      "facet": "Each retained target variant is dismissed after its owner disappears, including a surviving enclosure.",
+      "id": "PRF-MSBCXY",
+      "invariant": "INV-VFEYRJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §11",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a0bdde1c41797c69b3b5d029821711e9d62958c5",
+        "content": "sha256:e1b688535d63df9d8b63585917c9fa9a32d26c5c9db706b8dab75b77c727e828",
+        "locator": {
+          "end": 174,
+          "kind": "line_range",
+          "start": 169
+        }
+      },
+      "facet": "An unrelated task's worktree cannot replace the six scope owners.",
+      "id": "PRF-MZWDSV",
+      "invariant": "INV-S1VXNA",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-014",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a0bdde1c41797c69b3b5d029821711e9d62958c5",
+        "content": "sha256:2a26a04aa3bdaca06ae0f8d765e912426bbbcc14bd10ff5b07d8fa077d3b29cc",
+        "locator": {
+          "end": 145,
+          "kind": "line_range",
+          "start": 142
+        }
+      },
+      "facet": "No variant is dismissed before hydration.",
+      "id": "PRF-SP3A0E",
+      "invariant": "INV-S1VXNA",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-014",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a0bdde1c41797c69b3b5d029821711e9d62958c5",
+        "content": "sha256:ddcd19f4d5a495cd97ad999c128f68fb894d4d8c5377ec3792673e7b266215bf",
+        "locator": {
+          "end": 140,
+          "kind": "line_range",
+          "start": 126
+        }
+      },
+      "facet": "Each variant dismisses an absent owner while the enclosure remains projected.",
+      "id": "PRF-TNCZYA",
+      "invariant": "INV-S1VXNA",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-014",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a0bdde1c41797c69b3b5d029821711e9d62958c5",
+        "content": "sha256:6b9b1cd401aa52558b6ef68f52f701ad88819c7054be7bd37bd870ba5740db4c",
+        "locator": {
+          "end": 162,
+          "kind": "line_range",
+          "start": 159
+        }
+      },
+      "facet": "All six owner/alias scope combinations can use an attached worktree.",
+      "id": "PRF-XJ67E9",
+      "invariant": "INV-S1VXNA",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-014",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks retained Operations targets against task hydration and exact owner identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0bdde1c41797c69b3b5d029821711e9d62958c5",
+            "content": "sha256:9eea55cbc066b0b23cadcf5936f9bd376913341fd79227468fcc7275ba099d3f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

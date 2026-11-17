@@ -29,7 +29,11 @@ Preparation calls composition; the receipt restoration path and delayed held-sea
 - The detail keeps its deterministic report sibling name and resolves beside the saved handover's canonical path, not the report's collection destination. [3]
 
 
-- Receipt restoration invokes the detail validator. [4]
+
+
+- Receipt restoration invokes the detail validator. Anchor: `_restore_launch_handover` [4]
+
+
 
 
 - The replay regression refuses a rebound canonical folder despite equal detail bytes and restores a missing valid legacy access link. [5]

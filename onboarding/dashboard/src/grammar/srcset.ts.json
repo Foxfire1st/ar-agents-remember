@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/grammar/srcset.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b4baa496616f18df34cc1b13cf4086f41ff3301a",
+        "content": "sha256:5fd946df0c771f66ccef62db73a10bcc0b2c3ccee75be57aff3fbcf8fbc07db4",
+        "locator": {
+          "kind": "symbol",
+          "name": "parseSrcSet"
+        }
+      },
+      "id": "RLZ-213ETM",
+      "invariant": "INV-62DPD6",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-001",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This parser follows URL collection, trailing-comma handling and descriptor collection before retaining a candidate.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b4baa496616f18df34cc1b13cf4086f41ff3301a",
+        "content": "sha256:99e8044deca9d8d6f3a595b2dcaafcdcd6b1c8626f97a91590d379415f2531ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "tokenizeDescriptors"
+        }
+      },
+      "id": "RLZ-4YN0E7",
+      "invariant": "INV-62DPD6",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-001",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This tokenizer distinguishes descriptor, parentheses and after-descriptor states.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b4baa496616f18df34cc1b13cf4086f41ff3301a",
+        "content": "sha256:0543d75d0b3b365b11ee688853b4e5a6ead349c36f0ced532933a3d337603efd",
+        "locator": {
+          "kind": "symbol",
+          "name": "validDescriptors"
+        }
+      },
+      "id": "RLZ-RVQQFZ",
+      "invariant": "INV-62DPD6",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-001",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This validator enforces the allowed width, density and future-height descriptor combinations.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Parses HTML source-set candidates before document media admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4baa496616f18df34cc1b13cf4086f41ff3301a",
+            "content": "sha256:68f1d05cfd7ce6deed890a7625dae0bb3f5b91086704b8f595260c220d26bc8c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

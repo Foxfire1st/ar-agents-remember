@@ -45,4 +45,5 @@ No cross-repository boundary applies.
 
 
 
-- The explicit unit lane owns the module.  Anchor: "mcp/tests/test_kernel_pure_regressions.py" [2]
+
+- The explicit unit lane owns the module. Anchor: "mcp/tests/test_kernel_pure_regressions.py" Anchor: "mcp/tests/test_kernel_pure_regressions.py" [2]

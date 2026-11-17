@@ -71,7 +71,6 @@ The arguments, the run and its registration.
 - The arguments. [1]
 - The run: convert, report, write unless checking, exit status. [2]
 
-- The umbrella registration. [3]
 
 - The conversion it drives. [4]
 
@@ -80,3 +79,6 @@ The arguments, the run and its registration.
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
 No cross-repo boundary is crossed by this file.
+
+
+- The umbrella registration. [3]

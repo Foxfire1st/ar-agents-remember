@@ -155,16 +155,16 @@
       ]
     },
     "5": {
-      "note": "The requirement anchor rendering exercised through Markdown.\n\nAnchor: `requirementAnchor`",
+      "note": "The requirement anchor rendering exercised through Markdown. Anchor: `requirementAnchor`",
       "targets": [
         {
           "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
             "content": "sha256:53c3c42e8e266135ca62efba2df1a04f8a772831910cd7c246fbadc4c9d3103e",
             "locator": {
-              "end": 172,
+              "end": 199,
               "kind": "line_range",
-              "start": 170
+              "start": 197
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },
@@ -172,10 +172,12 @@
         },
         {
           "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+            "content": "sha256:b475ffd51bd7bd9c4231a52467f655ac3803cbac68a120ecc849b23eee93dea2",
             "locator": {
-              "kind": "file"
+              "end": 178,
+              "kind": "line_range",
+              "start": 126
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },

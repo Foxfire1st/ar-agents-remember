@@ -32,7 +32,7 @@ behind.
 entry is silently ignored by the import machinery, which would otherwise find nothing here and
 report a missing module.
 
-`HARNESS_DIR` now names the scripts directory (`parent.parent` of this file). The runner imports `e2e_harness.fresh_user_scenario` and `e2e_harness.reporting` through that one qualified route. The Reviewer’s correction distinguishes this runner variable from the test’s `SCRIPTS_ROOT`.
+`HARNESS_DIR` names the scripts directory (`parent.parent` of this file). The runner imports `e2e_harness.fresh_user_scenario` and `e2e_harness.reporting` through that qualified route.
 
 ### Why it runs on the host rather than in the Dagger graph
 
@@ -49,7 +49,7 @@ Retained earlier consumer caption:
   `mcp/tests/evidence-lifecycle.toml` and real consumers in `fresh_user_scenario.py` and
   `mcp/tests/test_fresh_user_harness.py`.
 
-Current catalog clause: the runner’s artifact row names `mcp/tests/test_fresh_user_harness.py` as its consumer; both the base row and the repaired current row have that one member. The scenario imports fixture and reporting; it is not named as a runner consumer in that row.
+Current catalog clause: the runner’s artifact row names only `mcp/tests/test_fresh_user_harness.py` as its consumer.
 
 ### Invariants And Boundaries
 
@@ -92,7 +92,7 @@ Superseded card wording retained for custody (not certified as true of any sourc
 - The shared writer for the transcript file.
 - The case pinning the argument contract.
 
-- The runner uses HARNESS_DIR for the scripts root and imports scenario/reporting through e2e_harness-qualified names. Its lifecycle row declares the harness test as its one consumer; the row equals its base registration.
+- HARNESS_DIR names the scripts directory and is inserted into sys.path as a string. The runner imports scenario and reporting through e2e_harness-qualified names. The lifecycle catalog declares mcp/tests/test_fresh_user_harness.py as the runner artifact’s one consumer.
 
 ### Cross-Repo References
 
@@ -100,10 +100,11 @@ No sibling-repository contract defines these values.
 
 No meaningful cross-repo references found.
 
-- The runner uses HARNESS_DIR for the scripts root and imports scenario/reporting through e2e_harness-qualified names. Its lifecycle row declares the harness test as its one consumer; the row equals its base registration. [8]
 - The entry point that drives the acceptance and writes the transcript. [1]
 - `--reports` is required and `--work-root` is optional. [2]
 - The transcript lands under this directory name. [3]
 - [4]
 - The shared writer for the transcript file. [5]
 - The case pinning the argument contract. [7]
+
+- HARNESS_DIR names the scripts directory and is inserted into sys.path as a string. The runner imports scenario and reporting through e2e_harness-qualified names. The lifecycle catalog declares mcp/tests/test_fresh_user_harness.py as the runner artifact’s one consumer. [8]

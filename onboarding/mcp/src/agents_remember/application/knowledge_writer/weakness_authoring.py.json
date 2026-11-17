@@ -1,0 +1,145 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/weakness_authoring.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
+        "content": "sha256:f99a95a29f7edca84b57b2a85046d47bcddcfc760c96c1194d9f9136236a124c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_closure"
+        }
+      },
+      "id": "RLZ-BSRXDH",
+      "invariant": "INV-030V4M",
+      "origin": {
+        "handoffEntry": "L3-W9-explicit-code-commit",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The existing code-object resolver checks the supplied object's exact commit identity before the writer can publish the closure.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
+        "content": "sha256:f99a95a29f7edca84b57b2a85046d47bcddcfc760c96c1194d9f9136236a124c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_closure"
+        }
+      },
+      "id": "RLZ-YMH0WT",
+      "invariant": "INV-ZZF7K5",
+      "origin": {
+        "handoffEntry": "L3-W9-own-task-closure",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The writer binds a newly authored deferred closure to the running task and preserves an unchanged earlier closure during metadata edits.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The record authoring route delegates weakness checks before placing the record. [1]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "content": "sha256:aa18820dd30bdc940d08485f2cfce2bbb108a4fd9f4039e38faa7a766d4a5a1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_record"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
+            "content": "sha256:a492e0d90eac0e0e3028522e503fe8920237ea9ac76fe99b4902a00aa6141caa",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_weakness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Anchor authoring resolves at C or retains the complete stored anchor only for the same recorded path. [2]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
+            "content": "sha256:63928396cb488e1e29cec97e52093d3b51de45b0cdbd2acf122140aa40b8b1df",
+            "locator": {
+              "kind": "symbol",
+              "name": "_weakness_anchor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Closure checks admit the running task's deferred attribution and validate an explicitly supplied commit. [3]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
+            "content": "sha256:f99a95a29f7edca84b57b2a85046d47bcddcfc760c96c1194d9f9136236a124c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The closure and weakness models own the stored shape and state agreement; read-time commit attribution belongs to weakness_closure. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+            "content": "sha256:5cd2080047a44536e4d5ce6d980404ecc045113e6eecc0c272913b7d5267b2a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "Closure"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+            "content": "sha256:efbc8e3e0ffc23c65dc4b951d64c09036a3b2ce0d86e8e8c16f605d39b029901",
+            "locator": {
+              "kind": "symbol",
+              "name": "WeaknessRecord"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "818f37a7fb36756ed15389172001e0707e4c19f4",
+            "content": "sha256:fe9f3df2fe2fa87df676b069240642f23f751f82702fa97cfeced1ca77cef60e",
+            "locator": {
+              "kind": "symbol",
+              "name": "closure_document"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/weakness_closure.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

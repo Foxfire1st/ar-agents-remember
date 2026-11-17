@@ -25,7 +25,7 @@ Completion preserves rest through max(existing floor, now + max(interval,min(dur
 
 ## Code Commentary
 
-One watcher per coordination root and ports-object identity caches by current binding generation/comparison/snapshot, captures only through its comparison owner, filters planning turn-end checks and emits notices without seat wakeups.
+ProjectionInputWatcher watches planned projection-input roots and feeds accepted domain/path invalidations to ChangePacer; ChangePacer debounces and schedules change, heartbeat or full-refresh wakes.
 
 Accepted native paths reach the projection refresh, with explicit incompleteness falling back to full reconciliation. Pending own-write effects are judged after completion; completed identity/event-kind checks do not certify unknown foreign writes. Discovery/refresher/native-child death share one reported outage/retry path. Failure origins remain separate: root-refresher loss queues ALL after child drain; native-lane failure before registration preserves ordinary HEALING without adding host activity; registered native loss queues ALL after drain. The existing registration flag, stop/drain, exception reporting, stable downSince and default thirty-second retry retain their owners. If both failure buckets are populated, the root failure is reported first. Independent full healing preempts partial traffic; only successful full publication advances its clock.
 
@@ -243,7 +243,6 @@ all domains so correctness fails open to a full refresh.
 
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/change_watcher.py:852-889 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a66314c555d873dd01b4dbefbe18fb3f2ee44d4b; mcp/src/agents_remember/serving/change_watcher.py:891-951 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 87992ce842079a7a4f161bd4bfcc4aed5307178b; mcp/src/agents_remember/serving/change_watcher.py:886-923 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5e34b4fe25c386dde75b04f6b63d3c64e62afe39; mcp/src/agents_remember/serving/change_watcher.py:925-985 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted [25]
 
-- One watcher per coordination root and ports-object identity caches by current binding generation/comparison/snapshot, captures only through its comparison owner, filters planning turn-end checks and emits notices without seat wakeups. [26]
 
 - The source records why recursive worktree watching would repeat scan cost, crash on container permissions and react to WAL churn; admitted roots exclude that tree. [13]
 
@@ -254,3 +253,5 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/change_wat
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/change_watcher.py:852-889 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a66314c555d873dd01b4dbefbe18fb3f2ee44d4b; mcp/src/agents_remember/serving/change_watcher.py:891-951 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 87992ce842079a7a4f161bd4bfcc4aed5307178b; mcp/src/agents_remember/serving/change_watcher.py:886-923 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5e34b4fe25c386dde75b04f6b63d3c64e62afe39; mcp/src/agents_remember/serving/change_watcher.py:925-985 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:101-153 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- ProjectionInputWatcher watches planned projection-input roots and feeds accepted domain/path invalidations to ChangePacer; ChangePacer debounces and schedules change, heartbeat or full-refresh wakes. [26]

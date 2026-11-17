@@ -6,49 +6,48 @@
 
 ## Purpose
 
-Same-origin browser client for the L3 read-only change-set API. It exposes typed helpers over the three
-GET endpoints (`/api/changeset/task`, `/file-diff`, `/master`), returns camelCase-typed results, and
+Same-origin browser client for the L3 read-only change-set API. It exposes typed helpers over the four
+GET endpoints (`/api/changeset/task`, `/file-diff`, `/master`, `/master/counters`), returns camelCase-typed results, and
 uses the shared `qs` query builder with its own `getChangeSetJson` refusal-preserving transport.
-A failure throws `ReviewTransportError`, carrying the route's refusal details. URL-keyed conditional results belong to the dashboard store; the viewer retains its selection-local render state.
+A refused or failed transport read throws `ReviewTransportError`, carrying the route's refusal details; cancellation propagates as `AbortError`. URL-keyed conditional results belong to the dashboard store; the viewer retains its selection-local render state.
 
-`data/changeset.ts` is the same-origin client for the read-only change-set API: typed results, a thrown `ReviewTransportError` carrying the route's refusal, and bounded store-owned HTTP history. W03 added recorded-comparison support. `TaskChangeset` still optionally echoes the comparison number and its four trees, and `comparisonFileDiff` remains the per-file reader. The unused `comparisonChangeset` list helper is removed from this module; that is not removal of the server's comparison-list route.
+`data/changeset.ts` is the same-origin client for the read-only change-set API: typed results, a thrown `ReviewTransportError` carrying the route's refusal, and bounded store-owned HTTP history. `TaskChangeset` still optionally echoes the comparison number and its four trees, and `comparisonFileDiff` remains the per-file reader.
 ## Code Commentary
 
 ### Logic
 
 `masterChangeset` accepts typed options and serializes `includeLeaves` only when a caller sets it
 explicitly (`options.includeLeaves !== undefined`), so omitting it leaves the server's own default — the
-full response with per-leaf summaries — in force. **260921-ICR-L33 changed who asks for what, not this
-client:** both of the dashboard's master-net readers (`panels/changeset/ChangeSetViewer.tsx` and
-`panels/detail-panel/changeSetBar.tsx`) now use `loadChangeSet`, whose master URL sets `includeLeaves: true`, because R33.2 makes the
-per-leaf breakdown part of what a master's net must show. The `false` path is retained and still
-pinned by this module's own contract test; it is simply no longer the choice either reader makes, so
-the older phrasing here — that the option exists "when a caller needs only the coherent series net
-range" — is now a statement about the API rather than about the product.
+full response with per-leaf summaries — in force. The current master readers use separate list and counter paths: the viewer’s
+selected list uses `useChangesetLoad` from `panels/changeset/useInspectionChangeset.ts`, while the detail-panel master button uses
+`useMasterCounters`. The `false` path is retained and still pinned by this module’s own contract
+test. The shared list address defaults includeLeaves to true unless overridden; the lean master
+counter URL defaults it to false.
 
-### 260921-ICR-L13 — Generation pins and the published generation
+### Generation pins and the published generation
 
-The master client is now generation-bound. `MasterNetPins` (four optional wire params —
+The master client carries generation pins. `MasterNetPins` (four optional wire params —
 `codeBase`/`codeTip`/`memoryBase`/`memoryTip`) freezes a request to the listed generation;
 unset pins are omitted from the query so the request selects the declared integrated result.
 `MasterNetGeneration` (four commits + `digest`) is what the list response publishes, beside
 `currentness` and `scope: "integrated"`; leaf rows carry optional
-`state: "committed" | "working"`. cit:(["export interface MasterChangeset {"], dashboard/src/data/changeset.ts:76-76)
+`state: "committed" | "working"`. cit:(["export interface MasterChangeset {"], dashboard/src/data/changeset.ts:85-85)
 `masterChangeset` threads `options.pins` into the params; `masterFileDiff` takes `pins` so an
-opened entry stays bound to its generation after the branch advances. This leaf only exposes
-the pins and the per-view generation for R24's catalogue/drill-down to build on — no
-catalogue or drill-down is implemented here.
+opened entry stays bound to its generation after the branch advances.
 
-`ChangeSetAddress` is the shared list address (`repo` plus optional `scope`, `master`, `leaf`, `mode`, `generation`, `comparison`). Private `listUrl` selects comparison/leaf first, then master, then scope: comparison lists still reuse `/api/changeset/task` with the numbered `comparison` parameter and omit `mode`. Master addresses always include the leaf breakdown and carry generation pins. `peekChangeSet` reads the store’s cached list by that URL; `loadChangeSet` uses the same URL through the conditional-read owner. The viewer's initial list request and the detail-panel counters use this shared list API. The typed helpers also remain active: in a non-comparison working leaf view, `useWorkingChangesetPoll` calls `leafChangeset(repo, master, leaf, 'working')` every 2.5 seconds and independently refreshes the selected file diff. The shared address API does not replace that working-mode poll.
+`ChangeSetAddress` is the shared list address (`repo` plus optional `scope`, `master`, `leaf`, `mode`, `generation`, `comparison`, `includeLeaves`). Private `listUrl` selects comparison/leaf first, then master, then scope: comparison lists still reuse `/api/changeset/task` with the numbered `comparison` parameter and omit `mode`. Master list addresses default to including the leaf breakdown unless overridden, and carry supplied generation pins. Lean master-counter reads default to no leaf breakdown. `peekChangeSet` reads the store’s cached list by that URL; `loadChangeSet` uses the same URL through the conditional-read owner. The viewer's selected-list hook uses this shared list API. The detail panel's task/leaf buttons use peek/loadChangeSet, while its master button uses the counter hook. The typed helpers also remain active: in a non-comparison working leaf view, `useWorkingChangesetPoll` calls `leafChangeset(repo, master, leaf, 'working')` every 2.5 seconds and independently refreshes the selected file diff. The shared address API does not replace that working-mode poll.
 
 Typed data contracts and GET readers:
+
+`DiffSide` can carry optional text content or binary/media metadata, including byte size. A null
+before side names an added file; a null after side names a deleted file.
 
 - Result interfaces mirror the L3 JSON shape one-for-one: `ChangedFile` (`insertions`/`deletions` are
   `null` for binary; `status` is the git letter A/M/D/R; `hasSidecar?` on code files drives the L4
   code→sidecar split), `ChangeCounters` (`files`/`insertions`/`deletions`), `TaskChangeset`
-  (`code`/`memory` + `counters`), `FileDiff` (`before`/`after` = `{content}` or `null` for an
-  added/deleted file — feeds CodeMirror MergeView a/b), `MasterChangeset` (`leaves[]` per-leaf counters +
-  the NET series `code`/`memory` as plain `ChangedFile[]` + `counters`) (cit:(["export interface MasterChangeset {"], dashboard/src/data/changeset.ts:76-76)).
+  (`code`/`memory` + `counters`), `FileDiff` (`before`/`after` = `DiffSide` or `null` for an
+  absent side — text sides feed CodeMirror MergeView a/b), `MasterChangeset` (`leaves[]` per-leaf counters +
+  the NET series `code`/`memory` as plain `ChangedFile[]` + `counters`) (cit:(["export interface MasterChangeset {"], dashboard/src/data/changeset.ts:85-85)).
 - **`TaskChangeset` also carries the leaf view's own `state`/`stateDetail` (260921-ICR-L25), and they
   exist to keep an UNRECORDED range apart from a MEASURED EMPTY one.** `state?: "recorded" |
   "unrecorded"` and `stateDetail?: string` mirror the server's `state`/`stateDetail` on
@@ -60,7 +59,7 @@ Typed data contracts and GET readers:
   them. The consequence lives one file up: `changeSetBar.tsx` renders `unrecorded` as its own state
   and **withholds the `+0 −0` total**, because a zero of nothing is not a measurement.
 - `taskChangeset(repo, scope, base?)`, `fileDiff(repo, scope, kind, path, base?)`,
-  `masterChangeset(repo, master, options?, base?)`, and `masterFileDiff(repo, master, kind, path, base?)` (the series
+  `masterChangeset(repo, master, options?, base?)`, and `masterFileDiff(repo, master, kind, path, pins?, base?)` (the series
   net before/after via `/file-diff?master=`) each build their query string with `qs` (`URLSearchParams`)
   and delegate to this module's `getChangeSetJson`.
 - L4a leaf helpers: `leafChangeset(repo, master, leaf, mode, base?)` and
@@ -86,7 +85,7 @@ FastAPI dashboard server owns repo/scope resolution and path safety.
 
 ## Current Behavior
 
-the change-set client now carries an owner signal. `getChangeSetJson(url, signal)` passes it to the store's conditional resource (`cache.load(url, decodeChangeSetJson, url, signal)`) and rethrows an `AbortError` unchanged instead of wrapping it as a network failure; `loadChangeSet(target, signal)` exposes the same signal. A read its page abandoned therefore leaves no error on that owner. A live same-key owner keeps the shared fetch and its retained result; the pending entry is removed and the fetch aborted only when the last waiter leaves. This supersedes the sentence that the client only throws `ReviewTransportError`: an aborted read is not a transport failure.
+the change-set client now carries an owner signal. `getChangeSetJson(url, signal)` passes it to the store's conditional resource (`cache.load(url, decodeChangeSetJson, url, signal)`) and rethrows an `AbortError` unchanged instead of wrapping it as a network failure; `loadChangeSet(target, signal)` exposes the same signal. A read its page abandoned therefore leaves no error on that owner. A live same-key owner keeps the shared fetch and its retained result; the pending entry is removed and the fetch aborted only when the last waiter leaves. An aborted read is not a transport failure.
 
 ## Evidence
 
@@ -106,15 +105,18 @@ No configured Domain Documentation source exists for this file.
 - The `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`.
 
 
+
+
 - Change-set reads use qs and their own refusal-preserving getChangeSetJson, throwing ReviewTransportError rather than discarding refusal detail. [4]
+
 
 
 - The serving layer that defines the endpoints + response shapes this client mirrors.
 
-- The viewer's initial list request uses loadChangeSet, while its non-comparison working-leaf poll still calls leafChangeset and refreshes an active diff every 2.5 seconds. 
+- The viewer's initial list request uses loadChangeSet, while its non-comparison working-leaf poll still calls leafChangeset and refreshes an active diff every 2.5 seconds.
 
 
-- `DetailPanel`’s change-set button restores cached data through `peekChangeSet` and reads counters through `loadChangeSet`.
+- `DetailPanel`’s task/leaf change-set buttons restore cached data through `peekChangeSet` and read through `loadChangeSet`; master buttons use `useMasterCounters`.
 
 
 - The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping. [8]
@@ -123,7 +125,7 @@ No configured Domain Documentation source exists for this file.
 
 - List addresses share one URL builder and store-backed peek/load API; the comparison list reuses the task endpoint with a number and no mode.
 
-Retired at the fifth freeze d59c3493: dashboard/src/data/changeset.ts:176-184 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361; dashboard/src/data/changeset.ts:186-196 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted [13]
+
 
 
 ### Cross-Repo References
@@ -133,11 +135,12 @@ cross-repository implementation source that governs its behavior.
 
 No applicable cross-repository source was found.
 - A comparison answer is the task shape plus identity [9]
+
+
 - File diffs name which half of the comparison they read [10]
+
 - The comparison file diff adds kind and path [12]
 
-- Retired at the fifth freeze d59c3493: dashboard/src/data/changeset.ts:167-167 - the bytes it recorded now occur 12 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/changeset.py:735-735 - the bytes it recorded now occur 9 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/detail-panel/changeSetBar.tsx:83-103 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 04729d84383a6787afe84ed33183fdc457a20f6e; dashboard/src/panels/changeset/ChangeSetViewer.tsx:252-298 - the bytes it cited (252-298) now occur 2 times in the file, so no single home can be named. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 
 ## Retirements
-
-- Retired at the fifth freeze d59c3493: dashboard/src/data/changeset.ts:176-184 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361; dashboard/src/data/changeset.ts:186-196 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted.

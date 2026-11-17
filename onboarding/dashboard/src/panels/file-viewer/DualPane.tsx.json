@@ -1,6 +1,61 @@
 {
   "path": "dashboard/src/panels/file-viewer/DualPane.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+        "content": "sha256:162aaf1bcc165c9db0412e9fb5efff8b8d718108e9fdcad19d1c9318410faa30",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeSide"
+        }
+      },
+      "id": "RLZ-CYMQXN",
+      "invariant": "INV-EY37Q0",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §1",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This branch selects rendered Markdown only when document mode is requested and otherwise keeps the source pane.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+        "content": "sha256:162aaf1bcc165c9db0412e9fb5efff8b8d718108e9fdcad19d1c9318410faa30",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeSide"
+        }
+      },
+      "id": "RLZ-EYZEA7",
+      "invariant": "INV-FZSASV",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §7",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "The shared file and notes pane renders binary size as a placeholder.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+        "content": "sha256:82f0c3829c18556ba1b8301d22864507cc45957cb52c374801edf45ffe2b5991",
+        "locator": {
+          "kind": "symbol",
+          "name": "MediaCodeSide"
+        }
+      },
+      "id": "RLZ-HK4RHK",
+      "invariant": "INV-26X0GJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §3",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "The file and notes panes delegate media rendering to the shared component.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The read-only CodeMirror pane it hosts on the code side.\n\nAnchor: `FilePane`",
@@ -19,14 +74,16 @@
       ]
     },
     "2": {
-      "note": "The markdown renderer the sidecar pane reuses.\n\nAnchor: `Markdown`",
+      "note": "The markdown renderer the sidecar pane reuses. Anchor: `Markdown`",
       "targets": [
         {
           "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+            "content": "sha256:9884644e2a94771b8bf70153c4f12814eb1eb12030dec3bba3622603c9a4d0bc",
             "locator": {
-              "kind": "file"
+              "end": 234,
+              "kind": "line_range",
+              "start": 187
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },
@@ -52,16 +109,29 @@
       ]
     },
     "4": {
-      "note": "FileViewer passes repository and paired view state into DualPane.\n\nAnchor: \"export const FileViewer = memo(FileViewerImpl);\"",
+      "note": "FileViewer passes repository and paired view state into DualPane. Anchor: \"export const FileViewer = memo(FileViewerImpl);\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
-            "content": "sha256:e5ffbbbe1a72332446102a5a128365d7f3f16aaba93c17f7a5d7761e4de33314",
+            "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+            "content": "sha256:d7c50d381b35988326346808b78ce96c2bd839243b83b878a520ff5ed1715b06",
             "locator": {
-              "end": 306,
+              "end": 591,
               "kind": "line_range",
-              "start": 294
+              "start": 538
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+            "content": "sha256:f49af51382a54364c94470208bc7541ac9a6bb5737cf05e2dadd1da0a9bde6c1",
+            "locator": {
+              "end": 666,
+              "kind": "line_range",
+              "start": 653
             },
             "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
           },
@@ -74,11 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
-            "content": "sha256:28187cd63e1c4f01e1b28b9932d829ac691d9bb591c50b4f84900278f04ed417",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
+            "content": "sha256:5680302ab4ac5c4a8b80e2f127dd4ae5d006c1156de1ef1dc42bb95d2859e303",
             "locator": {
-              "kind": "symbol",
-              "name": "FileContent"
+              "end": 64,
+              "kind": "line_range",
+              "start": 52
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -87,14 +158,16 @@
       ]
     },
     "6": {
-      "note": "CodeSide combines repository with the read file’s scope and path for FilePane’s optional tray gutter.\n\nAnchor: `CodeSide`",
+      "note": "For source text, CodeSide combines the File Viewer repository with the read file scope and path for FilePane's optional tray gutter. Picture and video content takes the media branch instead.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
-            "content": "sha256:36e3128196752e9703f3acf1ea2f7c8f051c50523594dc0e8cf635f32dc51433",
+            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+            "content": "sha256:f378e1680148157e4d21b978ca46026a49b74bdbb41786feb6916a06c3042bd6",
             "locator": {
-              "kind": "file"
+              "end": 137,
+              "kind": "line_range",
+              "start": 107
             }
           },
           "kind": "code"

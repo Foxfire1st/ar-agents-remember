@@ -249,16 +249,16 @@
       ]
     },
     "40": {
-      "note": "The lane row.  Anchor: `test_knowledge_reader`",
+      "note": "The lane row. Anchor: `test_knowledge_reader` Anchor: `test_knowledge_reader`",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:a76d28987255bc973fec0d29a9e3b41a0704330037508157d8de6058c414cd94",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 247,
+              "end": 809,
               "kind": "line_range",
-              "start": 247
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -1,5 +1,58 @@
 {
   "path": "mcp/tests/test_public_docs_check.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+        "content": "sha256:1ee5313523f09c495824df2efb2b0cf64a67b538daf322f4d98745e40ee75247",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_page_that_only_the_front_page_links_is_named"
+        }
+      },
+      "facet": "A new page that only the front page links is still named unreached.",
+      "id": "PRF-0HMV1E",
+      "invariant": "INV-6TJFDH",
+      "origin": {
+        "handoffEntry": "BUG-R06@v4 rule 11",
+        "leaf": "261112-BUG-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+        "content": "sha256:c1dfb66168f5529b56a26cac7a50b6c84eb10021d445bf11fd0f0a3a98630508",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_picture_that_the_front_page_shows_is_reached"
+        }
+      },
+      "facet": "A new picture under docs/ that the front page shows adds no unreached finding.",
+      "id": "PRF-B6GQQY",
+      "invariant": "INV-6TJFDH",
+      "origin": {
+        "handoffEntry": "BUG-R06@v4 rule 11",
+        "leaf": "261112-BUG-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+        "content": "sha256:409261df2ca31d4d460eed79d159f63c1b570a3a3620de95aac8ecb24518ce84",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_picture_that_no_document_shows_is_named"
+        }
+      },
+      "facet": "A picture under docs/ that no document shows is named unreached.",
+      "id": "PRF-J9CND8",
+      "invariant": "INV-6TJFDH",
+      "origin": {
+        "handoffEntry": "BUG-R06@v4 rule 11",
+        "leaf": "261112-BUG-L6"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
-            "content": "sha256:d20461a56d07aae562e98aa8b45ca56440610084d5b885afbb7c3c8126707ef8",
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:db669b56337d3e2a3f86259e2a711f9d864e6147a1ed7db1bb98b00ae63e678e",
             "locator": {
               "kind": "file"
             }
@@ -17,16 +70,31 @@
         }
       ]
     },
-    "2": {
-      "note": "The script is imported by file location as `check_public_docs`.",
+    "10": {
+      "note": "The front-page cases prove that a picture the front page shows is reached, that a page only the front page links is still named, and that a picture no document shows is named.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
-            "content": "sha256:c44d8849e685fbfa9e59ae1bb068ca2078436210980d5bda80c38a4135c759b3",
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:c1dfb66168f5529b56a26cac7a50b6c84eb10021d445bf11fd0f0a3a98630508",
             "locator": {
               "kind": "symbol",
-              "name": "_load"
+              "name": "test_a_picture_that_the_front_page_shows_is_reached"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The script is imported by file location as `check_public_docs`.\n\nAnchor: `_load`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:db669b56337d3e2a3f86259e2a711f9d864e6147a1ed7db1bb98b00ae63e678e",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -34,15 +102,14 @@
       ]
     },
     "3": {
-      "note": "The clean checkout must have no finding.",
+      "note": "The clean checkout must have no finding.\n\nAnchor: `test_the_checkout_has_no_finding`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
-            "content": "sha256:17a49e50f135fecda1c13f918f7fd8c09d211921ab0542141fbec169d438ddb1",
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:db669b56337d3e2a3f86259e2a711f9d864e6147a1ed7db1bb98b00ae63e678e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_checkout_has_no_finding"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -54,8 +121,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
-            "content": "sha256:d20461a56d07aae562e98aa8b45ca56440610084d5b885afbb7c3c8126707ef8",
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:db669b56337d3e2a3f86259e2a711f9d864e6147a1ed7db1bb98b00ae63e678e",
             "locator": {
               "kind": "file"
             }
@@ -65,12 +132,12 @@
       ]
     },
     "5": {
-      "note": "Reach, step and identifier findings are proved on every page.",
+      "note": "Reach, step and identifier findings are proved on every page, including product-shown names.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
-            "content": "sha256:d20461a56d07aae562e98aa8b45ca56440610084d5b885afbb7c3c8126707ef8",
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:db669b56337d3e2a3f86259e2a711f9d864e6147a1ed7db1bb98b00ae63e678e",
             "locator": {
               "kind": "file"
             }
@@ -84,8 +151,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
-            "content": "sha256:d20461a56d07aae562e98aa8b45ca56440610084d5b885afbb7c3c8126707ef8",
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:db669b56337d3e2a3f86259e2a711f9d864e6147a1ed7db1bb98b00ae63e678e",
             "locator": {
               "kind": "file"
             }
@@ -99,8 +166,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
-            "content": "sha256:d20461a56d07aae562e98aa8b45ca56440610084d5b885afbb7c3c8126707ef8",
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:db669b56337d3e2a3f86259e2a711f9d864e6147a1ed7db1bb98b00ae63e678e",
             "locator": {
               "kind": "file"
             }
@@ -110,15 +177,14 @@
       ]
     },
     "8": {
-      "note": "The command line names file, line and target and fails on a finding.",
+      "note": "The command line names file, line and target and fails on a finding; an untracked file is not read.\n\nAnchor: `test_the_script_names_file_line_and_target_and_fails`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
-            "content": "sha256:461e4036f1c4fcbd56d269d024b0d093c6c306c764be12a7f5ce8ef96856545e",
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:db669b56337d3e2a3f86259e2a711f9d864e6147a1ed7db1bb98b00ae63e678e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_script_names_file_line_and_target_and_fails"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -126,15 +192,14 @@
       ]
     },
     "9": {
-      "note": "The script passes on this checkout.",
+      "note": "The script passes on this checkout.\n\nAnchor: `test_the_script_passes_on_this_checkout`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
-            "content": "sha256:377c5df30b4715a4cdf2a2e7b1464d97253b7b44991b6865d02a3ba1115bfe52",
+            "blob": "76b3acf9716f785383347dba3484e373a22e8ff1",
+            "content": "sha256:db669b56337d3e2a3f86259e2a711f9d864e6147a1ed7db1bb98b00ae63e678e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_script_passes_on_this_checkout"
+              "kind": "file"
             }
           },
           "kind": "test"

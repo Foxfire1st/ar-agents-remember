@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/notes-reader/notesReaderTestSupport.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Supplies shared typed answers and API fixtures for notes-reader tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25d3ff2adf2734534932e510bf6de66b5cbb6faf",
+            "content": "sha256:3e55d5eb24dc51a3cd89036dbfb6fca33ede083b5beb77281d8e84b8bdf71cca",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

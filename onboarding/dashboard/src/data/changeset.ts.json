@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
-        "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+        "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+        "content": "sha256:656d14079ffa174fafbe243a0cbe821ceb798460ccec0992595de50a3c1f8955",
         "locator": {
           "kind": "file"
         }
@@ -25,36 +25,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
             "content": "sha256:c87098c78ba81a649a35582f80b2ce8ab8fe1bfaa70cfbda110c34cad0657b48",
             "locator": {
-              "end": 63,
+              "end": 72,
               "kind": "line_range",
-              "start": 63
+              "start": 72
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
             "content": "sha256:3653ba1ba3e72665595c656794db67d919c4c907aba3c304fc3b47ff62a21943",
             "locator": {
-              "end": 69,
+              "end": 78,
               "kind": "line_range",
-              "start": 69
+              "start": 78
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
             "content": "sha256:6e718064d432e3f615529ebd114610cc6182210cdbbaf5888f87bfa3102c05a1",
             "locator": {
-              "end": 76,
+              "end": 85,
               "kind": "line_range",
-              "start": 76
+              "start": 85
             }
           },
           "kind": "code"
@@ -66,11 +66,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
-            "content": "sha256:b2f1b1e79a343b046ec3f627073fb977b0b67f72a543096eb08f73e33bc6cd75",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:5617c790d8d9dec0e1f21326d049111bcfa70c63e09a01a33e1d39d08bee6d77",
             "locator": {
-              "kind": "symbol",
-              "name": "FileDiff"
+              "end": 67,
+              "kind": "line_range",
+              "start": 49
             }
           },
           "kind": "code"
@@ -82,40 +83,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
             "content": "sha256:de2d059adaf595f3407bd8cbe2e2ce6c2fc3b40ce10177e1898f64135efd289f",
             "locator": {
               "kind": "symbol",
               "name": "comparisonFileDiff"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "List addresses share one URL builder and store-backed peek/load API; the comparison list reuses the task endpoint with a number and no mode.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
-            "content": "sha256:c44d17e6c9922e6c44c6596244d1adc200e72881ff589d449d00e72eeb15d7e5",
-            "locator": {
-              "end": 212,
-              "kind": "line_range",
-              "start": 209
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
-            "content": "sha256:1353e8dabc40db1564c9fa6400aa2fbf25f36ea57c65eb39f91948b700b21c10",
-            "locator": {
-              "end": 217,
-              "kind": "line_range",
-              "start": 214
             }
           },
           "kind": "code"
@@ -127,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
             "content": "sha256:16f4fc80e1ee01ca1cf10038008ecf98f96f1d6ebf5e3ca1897d329aeb4a8722",
             "locator": {
               "kind": "symbol",
@@ -143,10 +115,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
-            "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:ef9647cb60b62dba456f90edb66b12c4424a2a816fa17d51d19db2492bc8a79b",
             "locator": {
-              "kind": "file"
+              "end": 188,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
+            "content": "sha256:20dac835a71beb3675ff1c66b3c2e03a7b2e572bdb3bcd9c28436f069c3e82d4",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 228
             }
           },
           "kind": "code"
@@ -176,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
             "content": "sha256:1a4ba82be6b143ff3ca51af70f8f89aa90b911011c08e3373efcdc3c5c4baddd",
             "locator": {
               "kind": "symbol",

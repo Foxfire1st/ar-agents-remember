@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Viewer history, scroll restoration and body reclamation jointly prevent lost reading positions or lost navigation entries after memory reclamation."
+  },
+  "applicability": "In-session File Viewer navigation through files opened under its current repository and scope.",
+  "conditions": [
+    "The outgoing history entry saves its scroll position before navigation, including a saved zero.",
+    "A saved position takes precedence over the link's first-arrival anchor.",
+    "Body reclamation retains every navigation entry and reloads a released body when revisited."
+  ],
+  "exclusions": [
+    "Browser-reload persistence.",
+    "Keeping navigation after selecting another repository or scope."
+  ],
+  "id": "INV-ZBD14W",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-R05@v1 §10; dashboard/src/panels/file-viewer/FileViewer.test.tsx :: opens a document rendered, and Back and Forward lead through opened files; dashboard/src/panels/file-viewer/viewerHistory.test.ts :: keeps the scroll position of the entry being left; dashboard/src/panels/file-viewer/viewerHistory.test.ts :: reclaims the oldest bodies but never a count of navigable entries"
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-R05@v1 §10",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The file viewer keeps back and forward file history with each saved scroll position and disables a direction at its history boundary.",
+  "status": "proposed",
+  "supersedes": []
+}

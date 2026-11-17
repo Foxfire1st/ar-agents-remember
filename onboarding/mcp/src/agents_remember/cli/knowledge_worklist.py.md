@@ -61,7 +61,6 @@ No configured live documentation source was available for this pass.
 - Explicit sides, with named argument errors. [3]
 - The optional coordination root for requirement endpoints (MIK-R14), in the usage line, the parser and the sides. [4]
 - The run and its exit status. [5]
-- The subcommand registration. [6]
 
 ### Cross-Repo References
 
@@ -69,3 +68,6 @@ No meaningful cross-repo references found: the command reads the repositories it
 name.
 
 No cross-repo boundary is crossed by this file.
+
+
+- The subcommand registration. [6]

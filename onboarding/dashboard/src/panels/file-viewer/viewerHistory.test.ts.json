@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/file-viewer/viewerHistory.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "528b7ffd3d6bdaee983127d75452f4e60f755a48",
+        "content": "sha256:8bfa0df9dd66bbf7bcdd47ea487bf29ebaa151664b17fd0775174f2516bc3dab",
+        "locator": {
+          "kind": "symbol",
+          "name": "the viewer history's body budget > keeps the scroll position of the entry being left"
+        }
+      },
+      "facet": "Saving the outgoing current entry changes its scroll position while leaving the other entry's position unchanged.",
+      "id": "PRF-M2T0DB",
+      "invariant": "INV-ZBD14W",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §10",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "528b7ffd3d6bdaee983127d75452f4e60f755a48",
+        "content": "sha256:3a69d9e9627d8405bc15a6e54401013b7645be1c8280c619a6296d420478af7b",
+        "locator": {
+          "kind": "symbol",
+          "name": "the viewer history's body budget > reclaims the oldest bodies but never a count of navigable entries"
+        }
+      },
+      "facet": "Reclaiming content does not remove history addresses.",
+      "id": "PRF-SCP09G",
+      "invariant": "INV-ZBD14W",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §10",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks viewer navigation metadata and retained body reclamation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "528b7ffd3d6bdaee983127d75452f4e60f755a48",
+            "content": "sha256:d8deaef5b320c86754c0c32ffade57f83ec41d75e999503914400dbf19f9d602",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

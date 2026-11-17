@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The package README still describes the two commands and points at the tool reference; the reference now states the standalone-master case and the README claims no sprint requirement.",
-    "task": "261112-RSM-L1",
+    "statement": "The page holds: the packaging metadata and the dashboard's media route leave its two commands true. The tool reference it points at, `docs/reference/mcp-tools.md`, moved in this master's earlier change at six passages — the cut hint, the status paragraph, the weakness closure, the `worktree_status` row, the atomic-master abandon rule and the commit-check exception — and the page quotes none of them.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+      "blob": "54b818118629a276761c14d24046428232306f6e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "bfb7befeabe0c05b8c9529ff26cbcebfc450a591",
+      "blob": "678f1f18dba660d35c4072fa0d645922638ddfb6",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

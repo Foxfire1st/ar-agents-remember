@@ -694,14 +694,28 @@
       ]
     },
     "26": {
-      "note": "One watcher per coordination root and ports-object identity caches by current binding generation/comparison/snapshot, captures only through its comparison owner, filters planning turn-end checks and emits notices without seat wakeups.\n\nAnchor: `MoveNoticeWatch`",
+      "note": "ProjectionInputWatcher watches planned projection-input roots and feeds accepted domain/path invalidations to ChangePacer; ChangePacer debounces and schedules change, heartbeat or full-refresh wakes.",
       "targets": [
         {
           "anchor": {
             "blob": "3555e19b09110e97833a14cba59e64a655c10041",
-            "content": "sha256:9121b4c60b4e54071e290de2fd00fdea92513f2f76af904494e77636590dab0f",
+            "content": "sha256:e74f7fa8ebeb3564c7bcf5be62be1e91945dca4aecf9f1733171e21e24474623",
             "locator": {
-              "kind": "file"
+              "end": 1199,
+              "kind": "line_range",
+              "start": 919
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3555e19b09110e97833a14cba59e64a655c10041",
+            "content": "sha256:748fdbd403a958cbed67a13f8168d899005028d5832af0ea0dba71896fb80734",
+            "locator": {
+              "end": 874,
+              "kind": "line_range",
+              "start": 558
             }
           },
           "kind": "code"
@@ -876,7 +890,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "blob": "b59e5d16725573b5c09aeab494fa1bb9c3136383",
             "content": "sha256:a06e67fbffa96fd7f1399df0a3fc48ebf4fac70da33ce5046b280463fbc4a0c5",
             "locator": {
               "kind": "symbol",
@@ -893,7 +907,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "blob": "54b818118629a276761c14d24046428232306f6e",
             "content": "sha256:eb6f401953d49f14f1c50c66561b40696f88a73c9a7dbf83581a4eef68dce241",
             "locator": {
               "kind": "symbol",
@@ -905,12 +919,12 @@
         },
         {
           "anchor": {
-            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "blob": "54b818118629a276761c14d24046428232306f6e",
             "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
             "locator": {
-              "end": 690,
+              "end": 699,
               "kind": "line_range",
-              "start": 656
+              "start": 665
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

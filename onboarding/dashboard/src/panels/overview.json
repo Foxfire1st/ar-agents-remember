@@ -4,7 +4,7 @@
   "realizes": [],
   "references": {
     "10": {
-      "note": "The explorer's and the details' labels from the lane.\n\nAnchor: `explorerAttribution` `laneAttributionFacts`",
+      "note": "The explorer's and the details' labels from the lane.\n\nAnchor: `EXPLORER_LABELS`; `laneAttributionFacts`",
       "targets": [
         {
           "anchor": {
@@ -32,7 +32,7 @@
       ]
     },
     "109": {
-      "note": "Family/member semantic slots preserve guarantees, meanings, realization resolution, evidence and subject worklist; the reading page owns code blocks.\n\nAnchor: `FamilyContent`; `MemberContent`; `SelectedSlot`; `SubjectGroupSection`",
+      "note": "Family/member semantic slots preserve guarantees, meanings, realization resolution, evidence and subject worklist; the reading page owns code blocks.\n\nAnchor: `FamilyContent`; `MemberContent`; `SubjectSection`",
       "targets": [
         {
           "anchor": {
@@ -85,8 +85,8 @@
         },
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -388,7 +388,7 @@
       ]
     },
     "122": {
-      "note": "Selected semantic details retain the subject worklist/knowledge notice owner; page-level Worklist is separate.\n\nAnchor: `FamilyContent`; `MemberContent`; `SelectedSlot`; `SubjectGroupSection`",
+      "note": "Selected semantic details retain the subject worklist/knowledge notice owner; page-level Worklist is separate.\n\nAnchor: `FamilyContent`; `MemberContent`; `SubjectSection`",
       "targets": [
         {
           "anchor": {
@@ -430,8 +430,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -441,8 +441,8 @@
         },
         {
           "anchor": {
-            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
-            "content": "sha256:322a3c2819571a4ac452b1c85c4e89d60c208714432aa3387a567af45c159fd9",
+            "blob": "cf77370234ae2b7b5d0f501b3b575a4a0de353cb",
+            "content": "sha256:08b76af1d143b3587b370b51272988e29f10e66aad907178055a13a648d93de0",
             "locator": {
               "kind": "file"
             },
@@ -468,8 +468,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -479,8 +479,8 @@
         },
         {
           "anchor": {
-            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
-            "content": "sha256:322a3c2819571a4ac452b1c85c4e89d60c208714432aa3387a567af45c159fd9",
+            "blob": "cf77370234ae2b7b5d0f501b3b575a4a0de353cb",
+            "content": "sha256:08b76af1d143b3587b370b51272988e29f10e66aad907178055a13a648d93de0",
             "locator": {
               "kind": "file"
             },
@@ -502,7 +502,7 @@
       ]
     },
     "125": {
-      "note": "The worklist panel: status line, degraded knowledge sides, currentness, worklist groups and gate linkage, with changed knowledge files opened in the change-set viewer.\n\nAnchor: `LeafKnowledgeChanges`",
+      "note": "The worklist panel: status line, degraded knowledge sides, currentness, worklist groups and gate linkage, with changed knowledge files opened in the change-set viewer.\n\nAnchor: `LeafWorklistView`",
       "targets": [
         {
           "anchor": {
@@ -518,7 +518,7 @@
       ]
     },
     "126": {
-      "note": "The read notice states the loading read, the unavailable read's failure and next action, the not-converted explanation, and a fallback that the leaf's worklist is unavailable.\n\nAnchor: `LeafKnowledgeNotice`",
+      "note": "The read notice states the loading read, the unavailable read's failure and next action, the not-converted explanation, and a fallback that the leaf's worklist is unavailable.\n\nAnchor: `ReadNotice`",
       "targets": [
         {
           "anchor": {
@@ -628,12 +628,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:fdcdb9033e970815e15397034c79750afd89d5897393474c5cf7ab584ee74728",
             "locator": {
-              "end": 800,
+              "end": 658,
               "kind": "line_range",
-              "start": 776
+              "start": 634
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -657,22 +657,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:051725227fe4220602c84f0c8d3f3256077664ced2285c6ff8bbf329759e3f80",
-            "locator": {
-              "kind": "symbol",
-              "name": "useSurface"
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -685,8 +673,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -825,8 +813,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -1113,7 +1101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
             "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
             "locator": {
               "kind": "symbol",
@@ -1441,7 +1429,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
               "end": 75,
@@ -1454,12 +1442,12 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:632d8c0504d1039767c5561c2363427d4dd772f6e9f76a40df99bbd0aecd8f45",
             "locator": {
-              "end": 834,
+              "end": 692,
               "kind": "line_range",
-              "start": 834
+              "start": 692
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1467,12 +1455,12 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:1c33cac434aa55f75aea8509f3c0eb861bc9293dfcb368897af8f700018f9c66",
             "locator": {
-              "end": 719,
+              "end": 577,
               "kind": "line_range",
-              "start": 692
+              "start": 550
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1576,8 +1564,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -1810,8 +1798,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -1912,8 +1900,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -1923,8 +1911,8 @@
         },
         {
           "anchor": {
-            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
-            "content": "sha256:322a3c2819571a4ac452b1c85c4e89d60c208714432aa3387a567af45c159fd9",
+            "blob": "cf77370234ae2b7b5d0f501b3b575a4a0de353cb",
+            "content": "sha256:08b76af1d143b3587b370b51272988e29f10e66aad907178055a13a648d93de0",
             "locator": {
               "kind": "file"
             },
@@ -2011,12 +1999,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
             "content": "sha256:9d00b42ff03814a0265506ada9cd649221a6bd56f766a599092320594c47d59f",
             "locator": {
-              "end": 314,
+              "end": 260,
               "kind": "line_range",
-              "start": 286
+              "start": 232
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -2244,12 +2232,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
             "content": "sha256:01a9b8ebb4b50327aaef0d57d6c56a1519028d48a7ac4a265a20ab33b1317826",
             "locator": {
-              "end": 659,
+              "end": 663,
               "kind": "line_range",
-              "start": 636
+              "start": 640
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -2329,8 +2317,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -2356,12 +2344,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:1eff69e5c56a21b35d68e856cfc14df01eb74c55b851910912f9e64261692075",
             "locator": {
-              "end": 788,
+              "end": 646,
               "kind": "line_range",
-              "start": 776
+              "start": 634
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -2466,12 +2454,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:9e29a6f39a93a440da8f1d2d92bd0a81f51c92296063aab804777b188d187de0",
             "locator": {
-              "end": 600,
+              "end": 458,
               "kind": "line_range",
-              "start": 551
+              "start": 409
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -2506,12 +2494,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:43a1c97bd022af137cd909968fba7bff200f95c7b44ae4c9dffd2703f21f5a5c",
             "locator": {
-              "end": 882,
+              "end": 741,
               "kind": "line_range",
-              "start": 876
+              "start": 735
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -2557,8 +2545,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -2638,8 +2626,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -2688,7 +2676,7 @@
       ]
     },
     "211": {
-      "note": "Current family owners for the review page account.\n\nAnchor: `FamilyContent`; `MemberContent`; `SelectedSlot`; `SubjectGroupSection`",
+      "note": "Current family owners for the review page account.\n\nAnchor: `FamilyContent`; `MemberContent`; `SubjectSection`",
       "targets": [
         {
           "anchor": {
@@ -2726,7 +2714,7 @@
       ]
     },
     "212": {
-      "note": "Current source owners for the review page account.\n\nAnchor: `ReviewBlockCard`; `CodeContextSwitch`; `layoutForWidth`; `TreeHead`",
+      "note": "Current source owners for the review page account.\n\nAnchor: `ReviewBlockCard`; `layoutForWidth`; `TreeHead`",
       "targets": [
         {
           "anchor": {
@@ -2790,8 +2778,8 @@
         },
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -2817,8 +2805,8 @@
         },
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -2898,8 +2886,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },
@@ -2909,8 +2897,8 @@
         },
         {
           "anchor": {
-            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
-            "content": "sha256:322a3c2819571a4ac452b1c85c4e89d60c208714432aa3387a567af45c159fd9",
+            "blob": "cf77370234ae2b7b5d0f501b3b575a4a0de353cb",
+            "content": "sha256:08b76af1d143b3587b370b51272988e29f10e66aad907178055a13a648d93de0",
             "locator": {
               "kind": "file"
             },
@@ -3133,7 +3121,7 @@
       ]
     },
     "24": {
-      "note": "ReviewBlockCard renders a shared region with entry-specific rationale and tray actions.\n\nAnchor: `ReviewBlockCard`; `CodeContextSwitch`; `layoutForWidth`; `TreeHead`",
+      "note": "ReviewBlockCard renders a shared region with entry-specific rationale and tray actions.\n\nAnchor: `ReviewBlockCard`; `layoutForWidth`; `TreeHead`",
       "targets": [
         {
           "anchor": {
@@ -3305,7 +3293,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
               "kind": "symbol",
@@ -3322,12 +3310,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:0e083528be45ad099dc01a9c0c450064660ea4947830ae120697f07fd2b38969",
             "locator": {
-              "end": 723,
+              "end": 581,
               "kind": "line_range",
-              "start": 720
+              "start": 578
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -3340,12 +3328,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:0e083528be45ad099dc01a9c0c450064660ea4947830ae120697f07fd2b38969",
             "locator": {
-              "end": 723,
+              "end": 581,
               "kind": "line_range",
-              "start": 720
+              "start": 578
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -3442,7 +3430,7 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
             "locator": {
               "end": 128,
@@ -3460,11 +3448,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:57e2f656bc20222f62328519d9d1cb2e901ebceaae50dfbc50c5bceaa6af534f",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
-              "kind": "symbol",
-              "name": "CockpitShell"
+              "end": 75,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "content": "sha256:632d8c0504d1039767c5561c2363427d4dd772f6e9f76a40df99bbd0aecd8f45",
+            "locator": {
+              "end": 692,
+              "kind": "line_range",
+              "start": 692
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -3842,8 +3844,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },

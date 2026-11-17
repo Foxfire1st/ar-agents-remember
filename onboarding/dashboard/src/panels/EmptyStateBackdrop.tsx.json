@@ -75,14 +75,16 @@
       ]
     },
     "5": {
-      "note": "File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`.\n\nAnchor: `DualPane`",
+      "note": "File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`. Anchor: `DualPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
-            "content": "sha256:36e3128196752e9703f3acf1ea2f7c8f051c50523594dc0e8cf635f32dc51433",
+            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+            "content": "sha256:3033228b4bf23227ab68dfc8fd65e1d163f405b0feeddabde37d36da553edd10",
             "locator": {
-              "kind": "file"
+              "end": 194,
+              "kind": "line_range",
+              "start": 182
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
           },
@@ -91,14 +93,16 @@
       ]
     },
     "6": {
-      "note": "Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`.\n\nAnchor: `ChangeSetViewer`",
+      "note": "Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`. Anchor: `ChangeSetViewer`",
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:7663016eb3eb86b345a389a5b190f838f93816e6579f424cffe34d45094476b5",
             "locator": {
-              "kind": "file"
+              "end": 404,
+              "kind": "line_range",
+              "start": 396
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },

@@ -8,12 +8,13 @@
   },
   "applicability": "Every short form whose detail location does not fit or could not be written.",
   "conditions": [
-    "The detail file is written all the same when writable.",
-    "The fixed no-path sentence names today's tool-log line as the lookup.",
-    "When the detail file cannot be written, the answer carries the caller's logError with resultKept false."
+    "Location identity comes from actual recording, not a fabricated desired filename.",
+    "A retained exact location and cut hint are not removed for size.",
+    "Failed detail recording is represented honestly."
   ],
   "exclusions": [
-    "Locations that fit, which ride as log."
+    "No whole-result file was recorded, so the hint cannot name an existing whole-result file.",
+    "The retained recorded path and final hint may exceed the 400-token target after other droppable content is removed."
   ],
   "id": "INV-SYBT3F",
   "origin": {
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L108",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "An over-budget location is never cut, substituted or capped: the answer carries the fixed no-path logError and no log while the detail file is written all the same; when the detail file cannot be written the answer carries the caller's logError with resultKept false.",
+  "statement": "An over-budget recorded location is never cut, substituted, capped or omitted: the cut answer retains it exactly and ends with a hint naming the whole-result file. If the whole result could not be recorded, the answer retains logError with resultKept false and ends with a no-file hint that gives the logging reason. Location and hint remain when the recorded path and its hint cannot fit the 400-token target after other droppable content is removed.",
   "status": "proposed",
   "supersedes": []
 }

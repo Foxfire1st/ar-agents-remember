@@ -8,7 +8,7 @@
   },
   "applicability": "URL selection storage and reload restoration on the review page.",
   "conditions": [
-    "Use history.replaceState for block, subject-with-family, lane-file/lane-row and hunk selections; include comparison only when an older number is shown.",
+    "Use history.pushState for new block, subject-with-family, lane-file/lane-row and hunk selections, and history.replaceState for restoration; include comparison only when an older number is shown.",
     "Validate entries against the card read identity, subjects/family against the outline/catalogue, files against the lane and hunks against both code trees and exact classified mapped spans.",
     "Wait for the needed owner reads; an unreadable, malformed or outside selection opens unselected with one named line.",
     "A new explicit selection supersedes an outstanding restore, so a late answer changes neither selection nor URL and arms no landing.",
@@ -43,9 +43,9 @@
     "leaf": "260928-MIK-L89",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The review URL records the exact current selection without adding history, restores it only against the shown comparison, and abandons a pending restore when the reader chooses something newer.",
+  "statement": "The review URL records the exact current selection, restores it only against the shown comparison, and abandons a pending restore when the reader chooses something newer.",
   "status": "proposed",
   "supersedes": []
 }

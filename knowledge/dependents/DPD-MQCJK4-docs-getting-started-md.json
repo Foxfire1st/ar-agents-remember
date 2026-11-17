@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The getting-started 'Start your first task' steps still hold: the launcher's first row starts the Architect with the other selectors as they are, and no step requires a sprint for a start. The page does not describe the launcher's Sprint field, so the new \"No sprint\" choice leaves it true.",
-    "task": "261112-RSM-L1",
+    "statement": "The page holds: the packaging metadata, the dashboard's media route, the two framework keys a cut answer adds (`runningOperation` and `cut`), a raised Playwright pin and a new dashboard package leave its install steps and its first-task steps true.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+      "blob": "54b818118629a276761c14d24046428232306f6e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -51,7 +51,7 @@
       "path": "scripts/sync-dashboard.py"
     },
     {
-      "blob": "e640511ffad3eb7e67c1de5b38581748a9214a53",
+      "blob": "2116aec8d8fe95cd1f5e5dd3b63cb7d392febb48",
       "kind": "file",
       "path": "dashboard/package.json"
     },
@@ -76,7 +76,7 @@
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
     {
-      "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -121,7 +121,7 @@
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },
     {
-      "blob": "ebc8c5d98f2dcd79e95dd250d25550e76a7215e7",
+      "blob": "1e03a8d7ea7403f3a534d341c9830deb0a2aa191",
       "kind": "file",
       "path": "dashboard/package-lock.json"
     },

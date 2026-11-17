@@ -1,0 +1,369 @@
+{
+  "path": "dashboard/src/grammar/DocumentMarkdown.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:b80f3ade2b45638b8750d91f71389a5cc19392a54cb53b1dc0a0437b7d4fa524",
+        "locator": {
+          "kind": "symbol",
+          "name": "document links > opens an outside https address in a new tab"
+        }
+      },
+      "facet": "External HTTPS opens separately.",
+      "id": "PRF-102P1C",
+      "invariant": "INV-0WMTQ4",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §8",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:52daa1da9473922cb81876a385e23f196430db4f1381b52b47cb2ffdc6a41836",
+        "locator": {
+          "kind": "symbol",
+          "name": "document HTML policy > removes every permitted class from a cleaned document"
+        }
+      },
+      "facet": "Document classes cannot select dashboard CSS.",
+      "id": "PRF-4TZNX3",
+      "invariant": "INV-F48BJX",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §2",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:489ccc926b8091f3d78a2844a41e8d38b076b75b6ac2366ea20187cdedb0d987",
+        "locator": {
+          "kind": "symbol",
+          "name": "document media > draws an outside https picture without a referrer and refuses the rest"
+        }
+      },
+      "facet": "The outside HTTPS image receives a no-referrer attribute, while the HTTP image is omitted.",
+      "id": "PRF-5Z1X0W",
+      "invariant": "INV-VENYDH",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §6",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:4e53b9a2f10802dc153d3e95396cd1474970153b5fc0900de044838fc43490a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "document links > opens a code file link in the same viewer"
+        }
+      },
+      "facet": "A code link stays in the viewer.",
+      "id": "PRF-70W060",
+      "invariant": "INV-0WMTQ4",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §8",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:6ce97ee16c2d53d5fb25af4d576664a242d258676bb9177af3a8f6c8f532ebd1",
+        "locator": {
+          "kind": "symbol",
+          "name": "document media > draws a repository picture from the bytes route"
+        }
+      },
+      "facet": "Relative image addresses resolve to repository bytes.",
+      "id": "PRF-BD68S4",
+      "invariant": "INV-VENYDH",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §6",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:427522ff19b3bf71285c965369ba6a56eeaede9d046a91df89684f471836166c",
+        "locator": {
+          "end": 353,
+          "kind": "line_range",
+          "start": 350
+        }
+      },
+      "facet": "The authored forbidden-address table is omitted for each fetch-bearing attribute.",
+      "id": "PRF-GKTX6V",
+      "invariant": "INV-VENYDH",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §6",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:1b1c2ee7d496e663aeb643dfcede1b27caed1bcb6160ca374238530a5f7b75e8",
+        "locator": {
+          "end": 341,
+          "kind": "line_range",
+          "start": 336
+        }
+      },
+      "facet": "Each authored fetch-bearing attribute resolves repository media.",
+      "id": "PRF-MXJDRZ",
+      "invariant": "INV-VENYDH",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §6",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:7c161b8ee8730dac091a88ec325bf2b193be45622720363710fa3304b4c893ee",
+        "locator": {
+          "end": 315,
+          "kind": "line_range",
+          "start": 308
+        }
+      },
+      "facet": "Both img and source apply the media policy to the parsed source-set candidates.",
+      "id": "PRF-MYG4A2",
+      "invariant": "INV-62DPD6",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-001",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:16e46e7c7265c31467991705f5131c242460e0fd685852f75c8ab3a69d771486",
+        "locator": {
+          "kind": "symbol",
+          "name": "document links > scrolls to a heading in the document"
+        }
+      },
+      "facet": "Clicking the fragment-only document link completes without throwing.",
+      "id": "PRF-NNXJBH",
+      "invariant": "INV-0WMTQ4",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §8",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:c3334237c1a683a92322993874fb4b49576a35e93eb6197ab2e2e8f9c833c173",
+        "locator": {
+          "kind": "symbol",
+          "name": "document HTML policy > prefixes a raw id and gives a heading the id it is linked by"
+        }
+      },
+      "facet": "The rendered raw HTML identifier receives the sanitizer prefix, while a generated heading receives its unprefixed slug.",
+      "id": "PRF-P6XV9A",
+      "invariant": "INV-F48BJX",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §2",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:563092738b5a28d2b1343b704bb3ecf21d36bb514adb5f0f9528b5b53ad5f29e",
+        "locator": {
+          "kind": "symbol",
+          "name": "document links > states a path the repository does not hold instead of linking it"
+        }
+      },
+      "facet": "Missing files are identified without a navigable link.",
+      "id": "PRF-PGBWWR",
+      "invariant": "INV-0WMTQ4",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §8",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:10842029e54bf857025339f059afc8fda5db2e4d30633c389f3f5eea5a03ba3d",
+        "locator": {
+          "kind": "symbol",
+          "name": "document links > opens a picture link in the same viewer"
+        }
+      },
+      "facet": "A picture link stays in the viewer.",
+      "id": "PRF-QH8X29",
+      "invariant": "INV-0WMTQ4",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §8",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:1352f08f4abe77f16905a572e2f7d6d2e080106183c7a3f0e05a28b115fd6546",
+        "locator": {
+          "end": 347,
+          "kind": "line_range",
+          "start": 343
+        }
+      },
+      "facet": "Each authored fetch-bearing attribute admits external HTTPS.",
+      "id": "PRF-RTD81A",
+      "invariant": "INV-VENYDH",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §6",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:287c5b42063ba70ec5e3b8adb63fb4330206c271b70369d7e529aab88bd74050",
+        "locator": {
+          "kind": "symbol",
+          "name": "document HTML policy > keeps GitHub's elements and drops script, handlers and style"
+        }
+      },
+      "facet": "Allowed HTML survives while executable or styling attributes are removed.",
+      "id": "PRF-RWVQJ2",
+      "invariant": "INV-F48BJX",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §2",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:4e9ab95d8c785a76aabfa6c55cfe879a0bbb066de29be72affbc06e15932624a",
+        "locator": {
+          "kind": "symbol",
+          "name": "document links > scopes an anchor click to its own rendered document"
+        }
+      },
+      "facet": "A fragment-link click produces one scrollIntoView observation with text Part; the case does not distinguish the two rendered document owners.",
+      "id": "PRF-SFH6H2",
+      "invariant": "INV-0WMTQ4",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §8",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:e5a307174937c749acb8a6a3d1cba09167c340539c8a0acd1d3e59f94d3e063f",
+        "locator": {
+          "kind": "symbol",
+          "name": "document links > opens a repository file that exists, with its anchor"
+        }
+      },
+      "facet": "A local file and fragment reach the viewer opener.",
+      "id": "PRF-VS47KA",
+      "invariant": "INV-0WMTQ4",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §8",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:9730ac5b72df7250ea3c3854f89848fa51eda41bf19152599a67f628dc2c879b",
+        "locator": {
+          "kind": "symbol",
+          "name": "no rendered Markdown moves the dashboard away > keeps a relative link from moving the dashboard's own tab"
+        }
+      },
+      "facet": "An ordinary relative Markdown link does not navigate the tab.",
+      "id": "PRF-WKW0GH",
+      "invariant": "INV-B96PVR",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §9",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:b99ecb5633649c7c2e145be03fc1a7801f6a5d775f0f8a7a75b9b5a20cc6f6b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "no rendered Markdown moves the dashboard away > opens an outside address in a new tab and keeps an anchor in the page"
+        }
+      },
+      "facet": "Ordinary outside and heading links preserve the dashboard tab.",
+      "id": "PRF-X49YSW",
+      "invariant": "INV-B96PVR",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §9",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:3c522c1700dd7b5055ae905fe56eabc230abc33ee659d9f6eed63d0f5046a6b6",
+        "locator": {
+          "kind": "symbol",
+          "name": "document HTML policy > does not render raw HTML in ordinary dashboard Markdown"
+        }
+      },
+      "facet": "Ordinary Markdown keeps the existing non-HTML behavior.",
+      "id": "PRF-YAR72C",
+      "invariant": "INV-F48BJX",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §2",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+        "content": "sha256:a99ed470981773c03fa590c32add2abb69ce9aa0d369f7937ea162b9fe406d20",
+        "locator": {
+          "end": 325,
+          "kind": "line_range",
+          "start": 318
+        }
+      },
+      "facet": "Both source-set attributes are omitted when no candidate survives admission.",
+      "id": "PRF-YDRJDH",
+      "invariant": "INV-62DPD6",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-001",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks document HTML isolation, navigation and media admission through the production Markdown component.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a56b69dd10aeda5e59f1c7f96fe567e52776b96",
+            "content": "sha256:61ae12e5ee11d572ab3b0b1a84ac5233746ce394e370078e41559e1203e5205e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

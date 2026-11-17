@@ -428,7 +428,7 @@ former `_completed_integration_source_heads`, renamed because its condition is n
 
 The condition widened from `contract.integration_status == "completed"` to
 `contract.integration_status in {"completed", "checkpointed"}`
-cit:(["contract.integration_status in {\"completed\", \"checkpointed\"} and integrated"], mcp/src/agents_remember/worktrees/modules/closeout.py:179-179).
+cit:(["contract.integration_status in {\"completed\", \"checkpointed\"} and integrated"], mcp/src/agents_remember/worktrees/modules/closeout.py:173-173).
 
 **Why the old form was wrong.** A checkpoint also moves the source branch forward, and it records the
 commit it moved the branch to. Keying the expected set on `completed` alone therefore made the
@@ -438,17 +438,17 @@ move. A source that genuinely moved anywhere else still matches neither head and
 the widening admits exactly one additional head, the one the checkpoint recorded.
 
 **Why the refused party is exactly the checkpointed master.** `closeout_result`
-cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:715-749) is the single closeout entry point and dispatches on nothing; `_closeout_entry`
-cit:([`_closeout_entry`], mcp/src/agents_remember/worktrees/modules/closeout.py:855-878) reaches the
+cit:([`closeout_result`], mcp/src/agents_remember/worktrees/modules/closeout.py:966-1011) is the single closeout entry point and dispatches on nothing; `_closeout_entry`
+cit:([`_closeout_entry`], mcp/src/agents_remember/worktrees/modules/closeout.py:1086-1119) reaches the
 validator for **series** contracts too — its only `kind` branch (the leaf-only binding refusal) is
-`if contract.kind == "leaf":` at line 831 and returns early for leaves rather than excluding series.
-And a checkpointed contract is always `kind == "series"`: `integrate.py:456` refuses anything else
+`if contract.kind == "leaf":` at line 1104 and returns early for leaves rather than excluding series.
+And a checkpointed contract is always `kind == "series"`: `integrate.py:473` refuses anything else
 with "checkpoint landing is defined only for an atomic series contract". So the path that used to
 refuse is the checkpointed series' own next closeout.
 
-### The Remaining `== "completed"` Sites Are Deliberate
+### Historical Review Of The Remaining `== "completed"` Sites
 
-`_landed_source_heads` and `guidance.py::_post_integration_phase` were the only two sites that
+The original review’s site inventory below is retained as history, not current source navigation or renewed proof that these owners remain live. At that source epoch, `_landed_source_heads` and `guidance.py::_post_integration_phase` were the only two sites that
 needed widening, because they are the two that ask *"did a landing this contract performed move the
 ref?"*. Every other `integration_status == "completed"` in the tree asks *"is this contract
 complete?"*, and for that question a checkpoint must read as **not complete** — that is the whole
@@ -602,13 +602,13 @@ the payload reported a `count` with most entries unnamed. `_refreshed_onboarding
 (`:115-126`) refuses to count a blank: a `count` an operator cannot audit is not a report.
 
 **`T54`'s producer half — the closed payload declares its own address.**
-`_closed_result_payload` (`:595-627`) now emits `contractPath` alongside `status_payload`'s
+`_closed_result_payload` (`:809-839`) now emits `contractPath` alongside `status_payload`'s
 snake_case `contract_path`. Without it a closed closeout declared **no** address in the spelling
 the guidance guard reads (`application/tool_response.py::bound_next_step` reads
 `contractPath`/`enclosurePath`), so the guard had nothing to compare against and guidance derived
 from whatever enclosure the *process* happened to hold was emitted verbatim — which is how a
 closeout for one leaf shipped a `nextStep` naming another master's contract. The producer is
-driven end to end by `mcp/tests/test_transaction_only_worktree_delivery.py:275-284`; the guard's
+driven end to end by `mcp/tests/test_transaction_only_worktree_delivery.py:298-308`; the guard's
 own four cases are in `mcp/tests/test_response_address_binding.py`.
 
 ## 260928-MIK-L37 The Closeout Asks The Mandatory Gate Before It Claims Anything, And The Preview Says What The Apply Will Do
@@ -653,9 +653,17 @@ On converted memory three places of this module ask the mandatory invariant gate
 
 - **Retained historical source account — superseded by the current contract:** A recovered closeout is finalized only for a gated memory commit. [33]
 
+
+
 - **Retained historical source account — superseded by the current contract:** The preview answers what the apply will do. [34]
 
-- **Retained historical source account — superseded by the current contract:** An unconverted leaf's preview is refused before closeout publication. [35]
+
+
+
+
+- **Retained historical source account — superseded by the current contract:** An unconverted leaf's preview is refused before closeout publication. Anchor: `test_an_unconverted_leafs_preview_carries_no_gate_verdict` [35]
+
+
 
 
 
@@ -665,6 +673,10 @@ On converted memory three places of this module ask the mandatory invariant gate
 
 - Refused closeout previews include knowledge/opt-out, undecided approval as closeout-gate-blocked, and series authority as blocked with its original code/sentence. They carry coded blockers, request no commit approval, offer no would-closeout success and return nonzero. Recovery/apply also adapt recognized CloseoutQueueError results. A stored-gate refusal names STORED_GATE_WAY_OUT and no gate_list or other deciding tool; inherited nextTool/nextArgs/nextRequiredArgs are removed, while the preview retains its coded blocker and summary; an abandoned master may offer worktree_abandon; other repair advice remains prose when no single executable step exists. This changes presentation, not gate or commit authority. [38]
 
+
+
 - `ContractCells` and `amend_contract` define the contract-cell amendment API.  Anchor: `ContractCells` [19]
+
+
 
 - Registered calls keep the daily call record independently of closeout publication. [36]

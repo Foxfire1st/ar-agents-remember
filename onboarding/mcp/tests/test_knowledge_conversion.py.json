@@ -156,16 +156,16 @@
       ]
     },
     "7": {
-      "note": "Its lane row.  Anchor: \"mcp/tests/test_knowledge_conversion.py\"",
+      "note": "Its lane row. Anchor: \"mcp/tests/test_knowledge_conversion.py\" Anchor: \"mcp/tests/test_knowledge_conversion.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:c1982547bb989f163509da14ecb063cbb188711a3d8cc19491c6f2ad577f669e",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 214,
+              "end": 809,
               "kind": "line_range",
-              "start": 214
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

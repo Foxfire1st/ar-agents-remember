@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/panels/file-viewer/viewerHistory.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b7c451e5f5cf07ff14ddd19cc290cca2dc8b2594",
+        "content": "sha256:423ccd5c76288a536be3321d9f3671a546f9bdae63203b7864af72f856c43652",
+        "locator": {
+          "kind": "symbol",
+          "name": "keepScroll"
+        }
+      },
+      "id": "RLZ-GPYQ10",
+      "invariant": "INV-ZBD14W",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §10",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "The history entry retains the position of the file being left.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b7c451e5f5cf07ff14ddd19cc290cca2dc8b2594",
+        "content": "sha256:2cc109a84726bca0546f33c8323210c34244f84be0601f26ee862e1b0ba607bf",
+        "locator": {
+          "kind": "symbol",
+          "name": "releaseBodies"
+        }
+      },
+      "id": "RLZ-XHSCRZ",
+      "invariant": "INV-ZBD14W",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §10",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Body reclamation preserves navigable addresses and their saved positions.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Owns opened viewer entries, their current index and retained body reclamation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7c451e5f5cf07ff14ddd19cc290cca2dc8b2594",
+            "content": "sha256:62563ae7ac09dec68df74c50d799e045d6a1853995931f3554a6ac06f65999b6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

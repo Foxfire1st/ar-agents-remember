@@ -55,18 +55,18 @@
     {
       "anchor": {
         "blob": "b1af65d0b23ee96e53b824fab021ce9608966ec2",
-        "content": "sha256:2c1d94421e1952cef77f698cfbb67190bf46375721f4b17fe041140aa56fb06b",
+        "content": "sha256:ce0c6ae71aa8b83cc32666e435f8bd5c1fac53e6bdff0818d2ffd34cb0a16d5d",
         "locator": {
           "kind": "symbol",
-          "name": "test_permission_and_held_rows_are_one_row_each"
+          "name": "test_a_waiting_task_does_not_stall_whatever_its_clock"
         }
       },
-      "facet": "A live-cause row is one row per occurrence, distinct from the notice rows beside it.",
-      "id": "PRF-6H3YX6",
-      "invariant": "INV-R8BBQC",
+      "facet": "The source-defined stall-watch case supplies activity waiting with an old event and an old stall clock and asserts that the attention queue is empty.",
+      "id": "PRF-8FSJ05",
+      "invariant": "INV-3WWG5K",
       "origin": {
-        "handoffEntry": "curator:MIK-R200@v1 rules 1, 7 and 8 — one queue, five native kinds, an actionable row",
-        "leaf": "260928-MIK-L190"
+        "handoffEntry": "curator-BUG-L5-INV-3WWG5K-proofs",
+        "leaf": "261112-BUG-L5"
       }
     },
     {
@@ -84,6 +84,23 @@
       "origin": {
         "handoffEntry": "L190-R1-F12",
         "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1af65d0b23ee96e53b824fab021ce9608966ec2",
+        "content": "sha256:2c1d94421e1952cef77f698cfbb67190bf46375721f4b17fe041140aa56fb06b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_permission_and_held_rows_are_one_row_each"
+        }
+      },
+      "facet": "Permission and held-message subcases assert one stable row per prompt or held message and safe held reasons; this grouped case does not compare these rows with adjacent notice rows.",
+      "id": "PRF-HQQWKT",
+      "invariant": "INV-R8BBQC",
+      "origin": {
+        "handoffEntry": "BUG-L5-M1-002-narrowed-proof",
+        "leaf": "261112-BUG-L5"
       }
     },
     {

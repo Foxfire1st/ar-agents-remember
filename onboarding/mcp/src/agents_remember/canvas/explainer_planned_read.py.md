@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The reads behind the planned-mode page: one task document, one statement per declared existing subject, one file per packet, the reference folder's names and the code tip's path set.
+The reads behind the planned-mode page: one task document, one statement per declared existing subject, one file per packet, the reference folder's names and the code tip's path set, and the plan texts the explainer's folder receives.
 
 ## Code Commentary
 
@@ -14,6 +14,7 @@ The reads behind the planned-mode page: one task document, one statement per dec
 - `subject_statements` reads each existing subject's current statement at the memory tip, and leaves out a subject the tree does not hold or whose statement cannot be read, so the page shows the declaration alone rather than a statement it never read.
 - `_packet_texts` reads the file each requirement names and skips one it cannot read, which the page then reports as `unread` rather than as empty prose.
 - `_code_tip_paths` refuses `planned-comparison-unavailable` when the code tip cannot be listed, instead of resolving scope paths against nothing.
+- `planned_documents` turns the task document's packets and declared planned effects into the text a planned binding's folder receives, with one line saying so when no effect is declared.
 - Nothing here starts a model turn, captures a comparison or writes, so reading a planned page never changes the leaf.
 
 ## Evidence
@@ -23,3 +24,5 @@ The reads behind the planned-mode page: one task document, one statement per dec
 - A subject the memory tree does not hold is left out instead of stated from another version [3]
 - A packet that cannot be read is left out, and the page reports it unread [4]
 - An unreadable code tip is a named refusal, not an empty path set [5]
+
+- A planned binding's folder receives the packet texts and the declared effects, or a line saying none is declared. [6]

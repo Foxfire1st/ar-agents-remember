@@ -1,0 +1,190 @@
+{
+  "path": "mcp/tests/test_explainer_browser.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+        "content": "sha256:645ec8c1e0f09d7004dc12b108ac88ee92ef8fbfc3623eec2d015631782015ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_module_that_is_named_and_absent_refuses_before_anything_is_fetched"
+        }
+      },
+      "facet": "A named module that does not exist refuses before any fetch.",
+      "id": "PRF-CBVWTD",
+      "invariant": "INV-J3FBTV",
+      "origin": {
+        "handoffEntry": "L1-B06",
+        "leaf": "261112-BUG-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+        "content": "sha256:967e33ea995737c7e7aecec13ca6d421cb74ddc7ebad4c8916a9b0a616f43584",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_fetched_version_is_the_checkout_pin"
+        }
+      },
+      "facet": "Both resolved Playwright and test-runner versions in dashboard/package-lock.json equal PLAYWRIGHT_VERSION.",
+      "id": "PRF-MGB8TR",
+      "invariant": "INV-4FR86X",
+      "origin": {
+        "handoffEntry": "L1-B05",
+        "leaf": "261112-BUG-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+        "content": "sha256:75dd96b3de2a2c72408deef186baf5f7f2ea78fb09eb6d9a3422f0c646307d34",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_missing_browser_is_fetched_once_at_the_pin_into_the_product_folder"
+        }
+      },
+      "facet": "A missing browser is fetched once, at the pinned version, through the product's Node and npm, into the product's own folder.",
+      "id": "PRF-NPYJN7",
+      "invariant": "INV-RWH9W9",
+      "origin": {
+        "handoffEntry": "L1-B01",
+        "leaf": "261112-BUG-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+        "content": "sha256:c9432f3737f4bf53fa20fb9e9c0ae25a1b0e780913d4f972f123c61c28e181fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_browser_lives_in_the_product_folder_and_is_named_by_the_two_variables"
+        }
+      },
+      "facet": "The load is given the product folder's module and browser builds by the two names Playwright reads.",
+      "id": "PRF-RDSM0T",
+      "invariant": "INV-RWH9W9",
+      "origin": {
+        "handoffEntry": "L1-B01",
+        "leaf": "261112-BUG-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+        "content": "sha256:21f5f589490e623049c8b7882a647ac0dc160c3bc40e4c82ffc48881715f633d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_module_the_user_names_keeps_its_own_browser_folder"
+        }
+      },
+      "facet": "A named module is used with its own browser folder and nothing is fetched.",
+      "id": "PRF-V5MP27",
+      "invariant": "INV-J3FBTV",
+      "origin": {
+        "handoffEntry": "L1-B06",
+        "leaf": "261112-BUG-L1"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module and browser live in the product folder and are named to the load by the two variables.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+            "content": "sha256:c9432f3737f4bf53fa20fb9e9c0ae25a1b0e780913d4f972f123c61c28e181fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_browser_lives_in_the_product_folder_and_is_named_by_the_two_variables"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A missing browser is fetched once, at the pin, through the product Node and npm, into the product folder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+            "content": "sha256:75dd96b3de2a2c72408deef186baf5f7f2ea78fb09eb6d9a3422f0c646307d34",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_browser_is_fetched_once_at_the_pin_into_the_product_folder"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A failed fetch refuses with what is missing and the command that gets it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+            "content": "sha256:7e6d3d14086b04fc8a424123317c158cbe6ea74bd8ea0bd6588788a238b55a92",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_fetch_refuses_with_what_is_missing_and_the_command_that_gets_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A named module that is absent refuses before anything is fetched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+            "content": "sha256:645ec8c1e0f09d7004dc12b108ac88ee92ef8fbfc3623eec2d015631782015ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_module_that_is_named_and_absent_refuses_before_anything_is_fetched"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The fetched version is the checkout's pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+            "content": "sha256:967e33ea995737c7e7aecec13ca6d421cb74ddc7ebad4c8916a9b0a616f43584",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_fetched_version_is_the_checkout_pin"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The first page is announced before the fetch begins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb566d4b24cc125bc9c119e22e2805d0c081d6f0",
+            "content": "sha256:268d7bc4c2f706b950f00a0321917f9dea28d7ccfdce48c7e2f9968f43e9fb59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_first_page_is_announced_before_the_fetch_begins"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -86,7 +86,10 @@ No configured live documentation source was available for this pass.
 
 - The outline that navigates the document's chapters. [18]
 
-- The cited code pane that renders the File Viewer's code primitive. [19]
+
+
+- The Knowledge reader's text-code view renders FilePane and passes the resolved cited line range as highlightedLines. Media citations use the separate media view. [19]
+
 
 ### Cross-Repo References
 

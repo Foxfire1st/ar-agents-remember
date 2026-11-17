@@ -62,15 +62,15 @@ The measurement:
   authority JSON such as the curator-coherence record, whose bytes `_world()` still covers).
 
 Each case fails independently. Merging any two would make a failure ambiguous, which is why the
-module carries ten: the no-publication measurement; the hand-back payload; the already-stopped
+module defines eleven tests: the no-publication measurement; the hand-back payload; the already-stopped
 success a never-selected master now produces; release-idempotence; the leaf refusal; per-contract
 record isolation; the record this contract does not own; the unreadable record; the record naming
-another master; and resume. The last three are the refusal shapes the module keeps apart on purpose
+another master; a record appearing between the two reads; and resume. The leaf, foreign-record and unreadable-record refusals are kept separate on purpose
 — a leaf contract owns no selection, a record this contract does not own is someone else's
 selection, and an unreadable record is not evidence of anything — and the state a master is actually
 in decides which one a caller meets, so a single "refused" case would not pin them.
 
-The two newest cases exist because the already-stopped success keys on an **observed** `vacant`
+The unreadable-record and foreign-master-record cases exist because the already-stopped success keys on an **observed** `vacant`
 state, and two records the pause can meet also read `vacant` or must not be trusted: a record that
 cannot be parsed, and a record whose `selectedMaster` names another master. The registered public
 route refuses both, and the second is the shape that would be a reported stop if vacancy alone were
@@ -78,7 +78,7 @@ believed.
 
 ### Conventions
 
-- Lane `integration` in `mcp/tests/test-evidence-lanes.toml` (line 163), and every case is
+- Lane `integration` in `mcp/tests/test-evidence-lanes.toml` (line 723), and every case is
   `unittest`-style in one class with a temporary directory per case.
 - The module drives public entry points only. Like `test_checkpoint_landing_end_to_end.py`, it exists
   because a seam-level suite can be fully green while the composition a caller reaches is wrong.
@@ -221,10 +221,8 @@ No meaningful cross-repository reference applies to this repository-owned bounda
 
 
 
-- The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [11]
 
 
-- The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [13]
 
 
 - The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation.
@@ -232,3 +230,13 @@ No meaningful cross-repository reference applies to this repository-owned bounda
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1126-1126 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - The separate publication no case here reaches. Anchor: `worktree_checkpoint_landing` [15]
+
+
+
+
+- The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [11]
+
+
+
+
+- The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [13]

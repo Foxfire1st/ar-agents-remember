@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83b8f67cdf797c17e4e876f32473dcca9585fec0",
+            "blob": "d9b57187e3d51a2b5d3ff246dfb4e173f9d70622",
             "content": "sha256:580bbbc04b991a57506a672c326cb5ea97bd003f89476e57aa5de7d248753b7a",
             "locator": {
               "end": 32,
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83b8f67cdf797c17e4e876f32473dcca9585fec0",
+            "blob": "d9b57187e3d51a2b5d3ff246dfb4e173f9d70622",
             "content": "sha256:1c4f392cf2a3cb676a6991a2a5bf2f462cb8a349edabb77886ed3b659ae1743d",
             "locator": {
-              "end": 59,
+              "end": 90,
               "kind": "line_range",
-              "start": 35
+              "start": 66
             }
           },
           "kind": "code"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83b8f67cdf797c17e4e876f32473dcca9585fec0",
+            "blob": "d9b57187e3d51a2b5d3ff246dfb4e173f9d70622",
             "content": "sha256:c4fdcb696d1aad94eef2312067025240612bcc06df20554bab7be230be1a4d6f",
             "locator": {
-              "end": 93,
+              "end": 124,
               "kind": "line_range",
-              "start": 62
+              "start": 93
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83b8f67cdf797c17e4e876f32473dcca9585fec0",
+            "blob": "d9b57187e3d51a2b5d3ff246dfb4e173f9d70622",
             "content": "sha256:2c31afd1218eb22750ef7006554851d658241092be2501658c2b83bc4951e679",
             "locator": {
-              "end": 134,
+              "end": 165,
               "kind": "line_range",
-              "start": 124
+              "start": 155
             }
           },
           "kind": "code"
@@ -75,12 +75,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83b8f67cdf797c17e4e876f32473dcca9585fec0",
+            "blob": "d9b57187e3d51a2b5d3ff246dfb4e173f9d70622",
             "content": "sha256:069f91b89fffc67896b7382ae42c166645b6b9e4d90201972540779e7ebbf76c",
             "locator": {
-              "end": 183,
+              "end": 214,
               "kind": "line_range",
-              "start": 174
+              "start": 205
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A planned binding's folder receives the packet texts and the declared effects, or a line saying none is declared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9b57187e3d51a2b5d3ff246dfb4e173f9d70622",
+            "content": "sha256:d3277457c1bf774d5690293de9b74274311146e491f0f50c3c61fe91d2a6de4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "planned_documents"
             }
           },
           "kind": "code"

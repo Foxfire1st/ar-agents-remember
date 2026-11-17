@@ -403,7 +403,7 @@
         },
         {
           "anchor": {
-            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
             "content": "sha256:7444244c4bf0aafe48c70951dd2b4d08494b80c9612b41cb44b3b397151ca660",
             "locator": {
               "end": 131,
@@ -429,7 +429,7 @@
         },
         {
           "anchor": {
-            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
             "content": "sha256:fb204c62fce606ae6c928d09415ba9506ab2110ae7f1e06b0bfb1351365f5a62",
             "locator": {
               "end": 129,
@@ -442,7 +442,7 @@
         },
         {
           "anchor": {
-            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
             "content": "sha256:e0599bedbc353596bd239ec382536966f335442da377d98f4bbad012c85c2ba8",
             "locator": {
               "end": 132,
@@ -573,16 +573,15 @@
       ]
     },
     "4": {
-      "note": "Checks all 49 caller/target pairs against exact table.",
+      "note": "Checks every caller/target pair in the role-start matrix against the exact allowed table.",
       "targets": [
         {
           "anchor": {
             "blob": "efdd76c6e03cd7a5879e496c68a65f78cdf9e4a4",
-            "content": "sha256:2593d0ec139ad97f1bb0be0d8299b2ac4c8dc4ea687c5b761cab87b0e942a29e",
+            "content": "sha256:a65a05a8019b67b8070acda0cab30c5dff2f84b10f0cdaa8a3269b85e773ac42",
             "locator": {
-              "end": 286,
-              "kind": "line_range",
-              "start": 264
+              "kind": "symbol",
+              "name": "test_each_role_may_start_exactly_the_roles_the_rule_names"
             },
             "path": "mcp/tests/test_paseo_role_tools.py"
           },
@@ -591,16 +590,15 @@
       ]
     },
     "5": {
-      "note": "Checks own orchestrator sprint and manager sprint/master binding containment.",
+      "note": "Checks the caller’s own sprint or master containment for role starts.",
       "targets": [
         {
           "anchor": {
             "blob": "efdd76c6e03cd7a5879e496c68a65f78cdf9e4a4",
-            "content": "sha256:7573ff3b62151555a8d70fa2424e941b85763432b7b516b0afe6d5d1ce0a415f",
+            "content": "sha256:0aaf9db27ae898b6697a1fb98b89cbfb5740a347139afbd5c61282db2d04250d",
             "locator": {
-              "end": 301,
-              "kind": "line_range",
-              "start": 267
+              "kind": "symbol",
+              "name": "test_a_task_bound_caller_starts_only_under_its_own_sprint_or_master"
             },
             "path": "mcp/tests/test_paseo_role_tools.py"
           },

@@ -10,6 +10,7 @@
   "conditions": [
     "The four rows are sync movement, external Git movement, subject staleness and bound comparison.",
     "Task-context loading says reading; task-context refusal/failure says unavailable with its reason; selected-subject pending/failure stays in that subject slot and does not make branch status unavailable.",
+    "A leaf the task list reports as planning says planned with the reason that nothing is built yet, before the loading and failure branches; its four rows still carry their owner facts.",
     "Moved or stale states warn; unread/unmeasured owners remain named; current tone requires both movement owners measured current.",
     "Reason text is the first sentence of the relevant owner text; raw records remain in Technical details.",
     "The chip, comparison label and add slot reserve their space from first paint; a refresh notice has its own row."
@@ -47,7 +48,7 @@
     "leaf": "260928-MIK-L89",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The review status chip keeps its own reserved place and reports task-context movement and staleness facts with the owner reason, independently of a selected subject read.",
   "status": "proposed",

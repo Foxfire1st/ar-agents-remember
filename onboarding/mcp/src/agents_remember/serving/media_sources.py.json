@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/serving/media_sources.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "697ea66c03891491316286a7187081b5569cab18",
+        "content": "sha256:bfb196ee1b76d0fba7a87e4b8e6ea6408a6b54df46215b3d73e1e269d13f6326",
+        "locator": {
+          "kind": "symbol",
+          "name": "git_media"
+        }
+      },
+      "id": "RLZ-0R43XM",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This source requires an immutable object ID and readable path before constructing the Git object specification.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Reads served media from immutable Git revisions or blob IDs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "697ea66c03891491316286a7187081b5569cab18",
+            "content": "sha256:ce2bc968d84145bb53f402e5116c87d939a8cfa3b9fa66349ad5ed78eddce54e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

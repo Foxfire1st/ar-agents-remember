@@ -119,4 +119,5 @@ No cross-repo boundary is crossed by this file.
 
 
 
-- Lane registration.  Anchor: "mcp/tests/test_knowledge_history_files.py" [10]
+
+- Lane registration. Anchor: "mcp/tests/test_knowledge_history_files.py" Anchor: "mcp/tests/test_knowledge_history_files.py" [10]

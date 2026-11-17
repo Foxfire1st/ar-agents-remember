@@ -27,7 +27,7 @@
   ],
   "consequences": [
     "The Architect, Manager, Orchestrator, planning and coordination texts and the four manifest descriptions state the same default and the same two developer choices.",
-    "A plan delta no longer returns to the agent that started the Manager by default; only the four developer-needed categories and the final report do.",
+    "A plan delta no longer returns to the agent that started the Manager by default; only the five developer-needed categories and the final report do.",
     "The default is advice, not a start-permission change; no tool refuses an Orchestrator above a single master."
   ],
   "context": "MIK-R72@v1 made an Orchestrator the default for every delegation after the developer's direction D52. In the same run the Orchestrator sent the Architect a dozen ruling requests and notices in two hours (D57), and on 2026-10-05 the Architect coordinated directly and did not answer the developer. On 2026-10-06 the developer named the cause (D66): the Manager passed everything up instead of managing, so an Orchestrator is only needed when two or more masters run at a time.",
@@ -58,8 +58,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "926e006da6810baf314464553204030191db3ad7",
-        "content": "sha256:dbc380ba5ce2632ee2a8c3e2dab44809729016e1a1b39365f5b1aa804862913f",
+        "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+        "content": "sha256:c5e3fa89276495a87b5468b2bddaaf4031728603c22968da4b4a894ded1b43a1",
         "locator": {
           "end": 97,
           "kind": "line_range",
@@ -77,7 +77,7 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

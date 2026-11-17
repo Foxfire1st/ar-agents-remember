@@ -163,4 +163,5 @@ No cross-repo boundary is crossed by this file.
 
 
 
-- Its lane row.  Anchor: "mcp/tests/test_knowledge_crossing.py" [11]
+
+- Its lane row. Anchor: "mcp/tests/test_knowledge_crossing.py" Anchor: "mcp/tests/test_knowledge_crossing.py" [11]

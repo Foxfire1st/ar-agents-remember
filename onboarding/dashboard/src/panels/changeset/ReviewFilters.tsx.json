@@ -52,14 +52,29 @@
       ]
     },
     "4": {
-      "note": "Actual viewer imports and mounts this owner.\n\nAnchor: `ChangeSetViewer`",
+      "note": "Actual viewer imports and mounts this owner. Anchor: `ChangeSetViewer`",
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
-            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:cfe441e17c9bdeae1eace1b95b0042e59b3348f0cae609e19be9a4239b6972d1",
             "locator": {
-              "kind": "file"
+              "end": 35,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
+            "content": "sha256:2b0ad3f7e62839b3ef4bc35eb83c14e4bd328dc67d69a24196a3827908b2e035",
+            "locator": {
+              "end": 856,
+              "kind": "line_range",
+              "start": 856
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },

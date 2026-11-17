@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+        "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+        "content": "sha256:9b4b6f568bc2943fe5e91cef4df7ac33b4c060797e1c0ee1c62699e6f2989be5",
+        "locator": {
+          "kind": "symbol",
+          "name": "LANDING_KEPT_KEYS"
+        }
+      },
+      "id": "RLZ-02XYSJ",
+      "invariant": "INV-6H0QQG",
+      "origin": {
+        "handoffEntry": "L3-W5-03",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The recording tool must retain staleEntries when it projects the full producer result into its public answer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
         "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
         "locator": {
           "kind": "symbol",
@@ -21,10 +39,11 @@
     },
     {
       "anchor": {
-        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
-        "content": "sha256:adbf21460b3d31b55e7dfcab9c582f2a36d85d04acac712a8bf01c2bb68e8c1a",
+        "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+        "content": "sha256:e0f726d565cfcc5f3dfc7ca17342df9b1391c9a717213b510316e8ddb133a276",
         "locator": {
-          "kind": "file"
+          "kind": "symbol",
+          "name": "_ROLE_START_SUCCESS_KEPT"
         }
       },
       "id": "RLZ-4MH0RZ",
@@ -33,13 +52,13 @@
         "handoffEntry": "L188-B02",
         "leaf": "260928-MIK-L188"
       },
-      "rationale": "Public tool response projection must preserve the admitted role-start continuation fields.",
+      "rationale": "This success roster retains the admitted role-start seat identity, dashboard/chat address fields and producer continuation.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
-        "content": "sha256:6cb39684403b31b9ebd77618ae1f9cacb4b62daebfec13cc043b74fad204a44a",
+        "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+        "content": "sha256:9b4b6f568bc2943fe5e91cef4df7ac33b4c060797e1c0ee1c62699e6f2989be5",
         "locator": {
           "kind": "symbol",
           "name": "LANDING_KEPT_KEYS"
@@ -56,10 +75,11 @@
     },
     {
       "anchor": {
-        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
-        "content": "sha256:adbf21460b3d31b55e7dfcab9c582f2a36d85d04acac712a8bf01c2bb68e8c1a",
+        "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+        "content": "sha256:e0f726d565cfcc5f3dfc7ca17342df9b1391c9a717213b510316e8ddb133a276",
         "locator": {
-          "kind": "file"
+          "kind": "symbol",
+          "name": "_ROLE_START_SUCCESS_KEPT"
         }
       },
       "id": "RLZ-AZR741",
@@ -68,12 +88,12 @@
         "handoffEntry": "L185-attach-inv-5h5vr2",
         "leaf": "260928-MIK-L185"
       },
-      "rationale": "The role-start success shape defines the fields an answer may carry, so the complete hand-over's path field is declared here and every answer that carries it is built from this shape.",
+      "rationale": "The success roster retains handoverFilePath beside handoverArtifactPath; actual artifact creation and message composition are owned elsewhere.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+        "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
         "content": "sha256:a7c7dce2e7f1889ec03211fca275ead24d98e28898bf7631070920d51b9ea0ca",
         "locator": {
           "kind": "symbol",
@@ -91,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+        "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -109,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
-        "content": "sha256:6cb39684403b31b9ebd77618ae1f9cacb4b62daebfec13cc043b74fad204a44a",
+        "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+        "content": "sha256:9b4b6f568bc2943fe5e91cef4df7ac33b4c060797e1c0ee1c62699e6f2989be5",
         "locator": {
           "kind": "symbol",
           "name": "LANDING_KEPT_KEYS"
@@ -127,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+        "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -150,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
             "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
             "locator": {
               "kind": "symbol",
@@ -166,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
             "content": "sha256:17a7d71678f73331b855d34651afd5b6d482dcd202ef6c383205ab26fc74adc2",
             "locator": {
               "kind": "symbol",
@@ -182,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
             "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
             "locator": {
               "kind": "symbol",
@@ -198,12 +218,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
             "content": "sha256:a7c7dce2e7f1889ec03211fca275ead24d98e28898bf7631070920d51b9ea0ca",
             "locator": {
-              "end": 708,
+              "end": 710,
               "kind": "line_range",
-              "start": 669
+              "start": 671
             }
           },
           "kind": "code"
@@ -215,10 +235,22 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
-            "content": "sha256:adbf21460b3d31b55e7dfcab9c582f2a36d85d04acac712a8bf01c2bb68e8c1a",
+            "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+            "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "project_landing_answer"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+            "content": "sha256:0c8b2e15f996e6a73e78d1c7c4a5ba99c98eba712c3945fefcea55dd0203303b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal_envelope"
             }
           },
           "kind": "code"
@@ -230,12 +262,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
             "content": "sha256:f50cd1b8182c714ece66f448915c04eab8fe732a0f17f132368d375ca0775c22",
             "locator": {
-              "end": 708,
+              "end": 710,
               "kind": "line_range",
-              "start": 650
+              "start": 652
             }
           },
           "kind": "code"
@@ -247,7 +279,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
             "content": "sha256:e0f726d565cfcc5f3dfc7ca17342df9b1391c9a717213b510316e8ddb133a276",
             "locator": {
               "kind": "symbol",
@@ -263,12 +295,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
             "content": "sha256:af65f01a2a727014f508cfe632e2e46c0361cb214b5549b453579369b9f58421",
             "locator": {
-              "end": 705,
+              "end": 707,
               "kind": "line_range",
-              "start": 650
+              "start": 652
             }
           },
           "kind": "code"

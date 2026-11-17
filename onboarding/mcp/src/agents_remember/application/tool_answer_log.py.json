@@ -180,7 +180,7 @@
       ]
     },
     "4": {
-      "note": "Credential keys and credential-variable values are omitted; ordinary values stay whole.",
+      "note": "Credential-naming keys retain `<omitted>` values; credential-variable matching distinguishes embedded call-argument matches from whole-value detail matches.",
       "targets": [
         {
           "anchor": {

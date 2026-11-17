@@ -215,12 +215,12 @@
       ]
     },
     "7": {
-      "note": "**Retained historical source account — superseded by the current contract:** The shared writer records the two accepted output commits.\n\nAnchor: `LandedIntegration` `record_landed_integration`",
+      "note": "**Retained historical source account — superseded by the current contract:** The shared writer records the two accepted output commits. Anchor: `LandedIntegration` `record_landed_integration`",
       "targets": [
         {
           "anchor": {
-            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
-            "content": "sha256:e5008e969eaed1fd2ba9adec9aead3037c5aa22d02b71cddd993131f9f1d04a9",
+            "blob": "16d8b616821e1aa040d5330711c395d9b81db861",
+            "content": "sha256:d15488b50ce08547c0c757ce2420201370ceaeb3e96bc0f245f34d25a9256081",
             "locator": {
               "kind": "file"
             },

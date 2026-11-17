@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The gate is in mcp/src/agents_remember/canvas/presenter_tools.py and the sentence in mcp/src/agents_remember/canvas/explainer_browser.py, and the prospective and server suites prove that the first call fetches nothing and that the serving path answers the announce."
+  },
+  "applicability": "The first render of a leaf whose installation has no Playwright module or Chromium yet.",
+  "conditions": [
+    "The workspace has not yet been given the sentence for this missing browser.",
+    "The render is called again after the sentence has been said."
+  ],
+  "exclusions": [
+    "A render on an installation whose browser is already present, which goes straight to publication.",
+    "A second call after the announcement, which fetches."
+  ],
+  "id": "INV-PDRZGD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_explainer_server.py — the wired announce, RED with ToolError 'run' before the repair; the walk on the fourth installation: announcement at 17:10:11, no renders folder, no browser folder"
+      ],
+      "path": "261112-BUG-L1-curator-handoff"
+    },
+    "handoffEntry": "L1-B02",
+    "leaf": "261112-BUG-L1",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The first render on an installation whose browser is missing fetches nothing: it answers state \"announce\" with the missing part and one sentence, and only the next call fetches and publishes, so nothing is downloaded before the user could be told.",
+  "status": "proposed",
+  "supersedes": []
+}

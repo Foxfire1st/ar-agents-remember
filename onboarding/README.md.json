@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "baa068ea15e062f1c85019e2c5eaad84f01e0b96",
-        "content": "sha256:76c35f591615dfc28a9728e6995a0bced846144bc10152c333cd1deb622c0694",
+        "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
+        "content": "sha256:2ccff027a2df3ffdd46d901a4ceb484595aba7f71c54e7dfc62b5824410b7b39",
         "locator": {
-          "end": 220,
+          "end": 194,
           "kind": "line_range",
-          "start": 216
+          "start": 192
         }
       },
       "id": "RLZ-5R1WWT",
@@ -21,6 +21,108 @@
       "role": "unclassified"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The head is centered and holds the banner as the one top heading, the claim, three badge links, five named links and the still picture that opens the video.\n\nAnchor: \"agents-remember-banner.png\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
+            "content": "sha256:b12b7a0d62b351726c4377249d0b5bf0b95cd984581059e373f6e52de355d867",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The body states six capabilities and shows the product in three pictures, each followed by one sentence about what is seen.\n\nAnchor: \"readme-knowledge-page.png\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
+            "content": "sha256:a7dd2f1db2a5663f0d50ab1d69dc32bbd97bf4ba40e533fe36bf190216a02752",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The five install steps keep the number, order, titles and command lines of the getting-started page.\n\nAnchor: \"Install steps\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
+            "content": "sha256:337ab3ee7cffe9746a8e6c1f774530261ddd8dc8fe247d247efd2b22125f3e3c",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The section Status states the repository's package version as `3.0.1` and sends the reader to the release notes before an install.\n\nAnchor: \"3.0.1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
+            "content": "sha256:44a1982e195985af4c4df2ac4094633b4c750e61ccecf127ad6fdd69142ed1bb",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A file under docs/ that is no page is reached when the front page shows or links it by a relative path; a page stays out of this set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:d47d05290ba4989e905db591e3ca2262573795130cda8f38dcf60c165301df5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "front_page_files"
+            },
+            "path": "scripts/check-public-docs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The front page owes links to docs/README.md, getting-started.md, install/README.md and ROADMAP.md.\n\nAnchor: `entry_link_findings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45e103c89186e5754beafb60aad736d6aef70bdb",
+            "content": "sha256:046148f5bc64d3ad7efc8a02467639b30dc180d0eac56d8293cf7feb84735892",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/check-public-docs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

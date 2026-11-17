@@ -13,7 +13,7 @@ Role launch instructions are generic capsule-or-refused values; compilation and 
 
 `app.create_app` builds app-scoped collaborators and registers retained reader/action/grant routes before the static mount. Projection version 2 serves reference-keyed `tasks` (TaskEntry), `taskCounts`, unbound enclosures and retained analytics; state SSE uses task/task.removed/taskCounts rather than lifecycle rows. `/api/task-document` returns separately requested TaskSummary content, not another status authority. The retained action path acknowledges/dismisses attention and the developer grant route calls shared grant authority; gate-decision and operator-inbox routes are absent.
 
-`create_app` registers typed `canvas-authoring-replaced` 409 responses before the old canvas Generate, regenerate, publish, cancel, replace and attempt-operation POSTs can match. Those retired POSTs start no process or session and write nothing; retained frame/session/revision reads keep their owners. The review page's explicit Build/Send/Update/Retire/cancel and state/revision/planned routes instead use `register_explainer_routes` over injected host and application ports. Missing composition refuses `explainer-unavailable` rather than pretending a seat exists. Recorded and planned comparisons stay distinct; preparation is bound to the comparison owner, and a planning leaf binds its master line's tips. `RefuseCrossOriginWrites` refuses a state-changing browser request that is not from this dashboard's own page — `Sec-Fetch-Site` other than `same-origin`, or, when that header is absent, a foreign or `null` `Origin` — with a named 403 before any route, while a request carrying neither header comes from no browser page and passes; `RefuseForeignHosts` refuses every request, reads included, whose `Host` names another host or port. A frame that navigates itself keeps its sandbox flags and its writes still fail the origin guard.
+`create_app` registers typed `canvas-authoring-replaced` 409 responses before the old canvas Generate, regenerate, publish, cancel, replace and attempt-operation POSTs can match. Those retired POSTs start no process or session and write nothing; retained frame/session/revision reads keep their owners. The review page's explicit Build/Send/Update/Retire/cancel and state/revision/planned routes instead use `register_explainer_routes` over injected host and application ports. Missing composition refuses `explainer-unavailable` rather than pretending a seat exists. Recorded and planned comparisons stay distinct; preparation is bound to the comparison owner, and a planning leaf binds its master line's tips. The explainer's state answer also carries the leaf workspace's own `lastRender` failure record and `browserNotice` sentence, so the review page can say the explainer's browser message where the user asked without a new route. `RefuseCrossOriginWrites` refuses a state-changing browser request that is not from this dashboard's own page — `Sec-Fetch-Site` other than `same-origin`, or, when that header is absent, a foreign or `null` `Origin` — with a named 403 before any route, while a request carrying neither header comes from no browser page and passes; `RefuseForeignHosts` refuses every request, reads included, whose `Host` names another host or port. A frame that navigates itself keeps its sandbox flags and its writes still fail the origin guard.
 
 _app_lifespan compacts the workspace river, primes the projector and starts projection, provider-metrics, leaf-archive recovery, held native-role message delivery and river-compaction tasks, plus the moved watcher only when its application port is supplied. Optional heap/allocator tasks remain opt-in. It does not prime or poll a terminal catalogue or run a hosted-seat notifier. The archive worker drains cancellation before close; held-message sweep failures are contained. Shutdown invokes the injected review-tree owner, cancels and awaits owned background tasks; there is no removed terminal-host shutdown.
 
@@ -366,7 +366,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** [55]
 
-- **The caller resolves the two sides independently: an unselected repository returns an empty range before endpoint admission; caught `not-recorded` supplies a code detail and no memory detail, while other endpoint errors propagate.** [56]
+
+
+- **The caller that owns the degradation policy and (260921-ICR-L25) carries the code half's named absence instead of raising it: the two sides resolve independently, and only an unrecorded memory half empties.** [56]
+
 
 - **The doc-reader entry point that publishes the unrecorded state in the body.** [57]
 
@@ -374,11 +377,14 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - **The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.** [59]
 
+
+
 - **The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.** [60]
+
 
 - **The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.** [61]
 
-- **The nine cases that measure this route's half of the change, through real contracts, repos and routes.** [62]
+- The two cited cases assert a zero master net with nonzero leaf counters and a named refusal when a validated diff later fails; source inspection establishes their assertions, not a fresh execution. [62]
 
 - **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** [63]
 
@@ -474,7 +480,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [137]
 
+
+
 - The injected canonical memory-root port is carried from collaborators into the shared serving runtime, not resolved from arbitrary client roots. [138]
+
 
 - The existing state stream opts into review-memory invalidations only through supplied review identity; no-selector streams retain their ordinary event path. [139]
 

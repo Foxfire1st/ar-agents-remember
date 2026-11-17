@@ -16,7 +16,7 @@
 - **Coverage and Non-empty.** An added realization outside every route is refused under `R04.2-coverage`; a route whose only realization is removed, and a route (`mcp/tests`) holding only a proof entry, are refused under `routes.<i>: [R04.2-non-empty]`. One broad route (`mcp`) passes the rules while the suggestion offers the three local routes.
 - **Route existence.** An added absent route is refused (`R04.1-route-directory`); a carried absent route refuses off merge (`R04.1-carried-route-absent`, alongside `R22.6-carried-stale` when anchors are absent); at a sync merge it reports, and a route carried by neither parent is refused as added. A standalone conversion checks no route directory. Both code trees answer `has_directory`, the root included.
 - **Writer reporting.** `test_the_refusing_route_rules_are_reported_inside_the_writer` pins the writer-reported `ROUTE_RULES` set including nested-routes alongside route-directory, coverage, non-empty, carried-route-absent and unrealized-family and shows a Non-empty break still refuses in `validate_tree` while all its refusals fall inside `writer_reported_rule_ids()`.
-- **The root route.** Eight spellings are parametrised: `.` is accepted and `""`, `" ."`, `"./"`, `"./mcp"`, `".."`, `"/"`, `"mcp/./src"` and `"mcp/"` are refused by `FamilyRecord`. A realization in `setup.py` violates Coverage under the narrower routes; replacing the route set with `.` alone covers it and passes both rules. Root-plus-descendant route sets are nested and refuse rather than being an alternative passing control.
+- **The root route.** Eight refused spellings are parametrised; each case separately asserts that `.` is accepted, while `""`, `" ."`, `"./"`, `"./mcp"`, `".."`, `"/"`, `"mcp/./src"` and `"mcp/"` are refused by `FamilyRecord`. A realization in `setup.py` violates Coverage under the narrower routes; replacing the route set with `.` alone covers it and passes both rules. Root-plus-descendant route sets are nested and refuse rather than being an alternative passing control.
 - **Route states.** `test_an_unrealized_family_refuses_off_merge_and_non_empty_is_waived`
   asserts unrealized-family refusal on one base and reporting at sync, while preserving the
   Non-empty waiver. A realized family with no routes still violates Coverage unless an unassessed
@@ -101,4 +101,5 @@ No cross-repo boundary is crossed by this file.
 
 
 
-- The lane registration.  Anchor: "mcp/tests/test_knowledge_family_routes.py" [9]
+
+- The lane registration. Anchor: "mcp/tests/test_knowledge_family_routes.py" Anchor: "mcp/tests/test_knowledge_family_routes.py" [9]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+        "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
         "content": "sha256:f9b71afca0e6013d1fafb809f404d8a680817229fc4d8d9b1c937b4329d84550",
         "locator": {
           "kind": "symbol",
@@ -21,10 +21,11 @@
     },
     {
       "anchor": {
-        "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
-        "content": "sha256:7a3d885c054dcbba25631d7cf4d9567f09c160685d95d6d1e7f64b2f1ffcbeb0",
+        "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
+        "content": "sha256:5c627b538f581ba4e53cc14ee5bf5d80f848b20046cb841aa534e05ebdb1b3c1",
         "locator": {
-          "kind": "file"
+          "kind": "symbol",
+          "name": "_L111_ROLE_START_FIELDS"
         }
       },
       "id": "RLZ-KCWHVJ",
@@ -33,7 +34,7 @@
         "handoffEntry": "L185-attach-inv-5h5vr2",
         "leaf": "260928-MIK-L185"
       },
-      "rationale": "This support states the expected answer-row shape a comparison reads, so the complete hand-over's path field appears here as the expectation. The line itself is composed in production: artifact_line writes the whole line and handover_file_line formats the second file's path and digest fragment. Nothing in this module composes either.",
+      "rationale": "The declared role-start answer fields include handoverFilePath as the complete hand-over location expectation; this table does not compose or publish the first-message artifact line.",
       "role": "unclassified"
     }
   ],
@@ -43,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
             "content": "sha256:f9b71afca0e6013d1fafb809f404d8a680817229fc4d8d9b1c937b4329d84550",
             "locator": {
               "kind": "symbol",
@@ -59,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
             "content": "sha256:5a239dc42af40bcdbee58742203d70dac2f1db9a7243566b74f6e72fb15712ac",
             "locator": {
               "kind": "symbol",
@@ -75,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
             "content": "sha256:8ba499ffc4184b09520db9275a8540d67a7667ce62dd2fcd666b536aec275cd0",
             "locator": {
               "kind": "symbol",
@@ -91,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
             "content": "sha256:5cd33fcc73bfc937f72af914b9c247f4340b7542163a05797d6371e358d65ee0",
             "locator": {
               "kind": "symbol",
@@ -103,14 +104,15 @@
       ]
     },
     "5": {
-      "note": "Detail identity is complete parsed-mapping equality under the file's byte budget.\n\nAnchor: `assert_detail_holds_whole_result`",
+      "note": "Detail identity is complete parsed-mapping equality under the file's byte budget. Anchor: `assert_detail_holds_whole_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
-            "content": "sha256:7a3d885c054dcbba25631d7cf4d9567f09c160685d95d6d1e7f64b2f1ffcbeb0",
+            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
+            "content": "sha256:062ab2011d66a37f4f8522616ed7aab9bb766710c2727625948c0a9cb087dc9d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "assert_detail_holds_whole_result"
             }
           },
           "kind": "test"
@@ -118,14 +120,15 @@
       ]
     },
     "6": {
-      "note": "Owned tool/operation rows retain fields, uses and product bounds without an L111 interim entry.\n\nAnchor: `_apply_l111_shaped_rows`",
+      "note": "Owned tool/operation rows retain fields, uses and product bounds without an L111 interim entry. Anchor: `_apply_l111_shaped_rows`",
       "targets": [
         {
           "anchor": {
-            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
-            "content": "sha256:7a3d885c054dcbba25631d7cf4d9567f09c160685d95d6d1e7f64b2f1ffcbeb0",
+            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
+            "content": "sha256:1930e91bcffc0d3b27868af9fa080d818c42607600de3c201ebdedabe5dc7ddd",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_apply_l111_shaped_rows"
             }
           },
           "kind": "test"
@@ -137,12 +140,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
             "content": "sha256:17459c2fc015adcd234abf2995369e98ee02cebfecaa2b265d561a12c8235813",
             "locator": {
-              "end": 599,
+              "end": 603,
               "kind": "line_range",
-              "start": 581
+              "start": 585
             }
           },
           "kind": "test"

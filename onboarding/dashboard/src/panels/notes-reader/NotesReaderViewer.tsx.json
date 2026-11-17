@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
-        "content": "sha256:dec9d2e660a284ea675c025163e79ca1992ad913b062723aa5d4a2a5f28a51d0",
+        "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+        "content": "sha256:f54e8e08220ef270cbbb28d53a16bc560235fc237c33418cbc1d29c14a3c21c0",
         "locator": {
           "kind": "symbol",
           "name": "ReaderLayout"
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+        "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
         "content": "sha256:59cd5cd2fba59592665967dc457104ccf81f33854f7ccf82754d9a45cd0a187f",
         "locator": {
-          "end": 310,
+          "end": 328,
           "kind": "line_range",
-          "start": 276
+          "start": 294
         }
       },
       "id": "RLZ-87M1SJ",
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
-        "content": "sha256:1c8a885a5a575dc91c787070f78d71f7d5e4c69fb6b5bd6dc3bc960045ecb093",
+        "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+        "content": "sha256:0872d49c4b03fc481083b3f6b703383c2312951cf441e20cfe22e70639d7cd81",
         "locator": {
           "kind": "symbol",
           "name": "NotesTargetReader"
@@ -59,7 +59,61 @@
     },
     {
       "anchor": {
-        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+        "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+        "content": "sha256:2390eb3bfb4a970fb8a3f7b637fb107cc128866f17f83f2a822ef51bde2e4e85",
+        "locator": {
+          "kind": "symbol",
+          "name": "NotePane"
+        }
+      },
+      "id": "RLZ-EAJVNR",
+      "invariant": "INV-B96PVR",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §9",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "The notes pane supplies its own internal-link opener and keeps raw HTML disabled.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+        "content": "sha256:3b9eb1e9ebc4afcc70cb9e2fb554ad37b5a9ce8c2616f22933bd31b0437bc352",
+        "locator": {
+          "kind": "symbol",
+          "name": "dualPaneProps"
+        }
+      },
+      "id": "RLZ-QA3DQH",
+      "invariant": "INV-26X0GJ",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-3-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Supplies the note media bytes address to the shared pane for non-Markdown content.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+        "content": "sha256:aebe806c77cabc4f4fa50f7355a54f72741ea11fbd594e836babf9be224b0c04",
+        "locator": {
+          "kind": "symbol",
+          "name": "noteAsFileContent"
+        }
+      },
+      "id": "RLZ-T2FTRJ",
+      "invariant": "INV-26X0GJ",
+      "origin": {
+        "handoffEntry": "curator-BUG-R05-v1-section-3-integration",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Forwards recognized media type and over-limit metadata into the shared file-content presentation.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
         "content": "sha256:016ca306847ee42c005234e3ce8edab2b4d2d087da80acf92c20b936452d31c8",
         "locator": {
           "kind": "symbol",
@@ -77,8 +131,8 @@
     },
     {
       "anchor": {
-        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
-        "content": "sha256:dec9d2e660a284ea675c025163e79ca1992ad913b062723aa5d4a2a5f28a51d0",
+        "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+        "content": "sha256:f54e8e08220ef270cbbb28d53a16bc560235fc237c33418cbc1d29c14a3c21c0",
         "locator": {
           "kind": "symbol",
           "name": "ReaderLayout"
@@ -95,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+        "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
         "content": "sha256:705b2cffeb7744a6a1bfc01483dd597de62a64a2cea7abc3d20cf5703d6d4da6",
         "locator": {
           "kind": "symbol",
@@ -113,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+        "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
         "content": "sha256:59cd5cd2fba59592665967dc457104ccf81f33854f7ccf82754d9a45cd0a187f",
         "locator": {
           "kind": "symbol",
@@ -132,28 +186,28 @@
   ],
   "references": {
     "1": {
-      "note": "NotePane maps fetched content to DualPane, adds the Markdown truncation banner and keeps local status placeholders; this is viewer integration, not proof of DualPane internals.\n\nAnchor: \"function noteAsFileContent(\"; \"function NotePane(\"",
+      "note": "NotePane maps fetched content to DualPane, adds the Markdown truncation banner and keeps local status placeholders; this is viewer integration, not proof of DualPane internals. Anchor: \"function noteAsFileContent(\"; \"function NotePane(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
-            "content": "sha256:242d5d9a853a0599218d3250df9ae7dfb460933c33dbcdc61ab5723915c84360",
+            "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+            "content": "sha256:baf15050ee002e16341f441c4ebc98a7a115d473dfac689f2e2f81681f3dad25",
             "locator": {
-              "end": 153,
+              "end": 170,
               "kind": "line_range",
-              "start": 141
+              "start": 139
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
-            "content": "sha256:0eb01c6320d2fb8f4cb61415ed14b30b4faec2858761393ab23608ffd37c1425",
+            "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+            "content": "sha256:2390eb3bfb4a970fb8a3f7b637fb107cc128866f17f83f2a822ef51bde2e4e85",
             "locator": {
-              "end": 275,
+              "end": 292,
               "kind": "line_range",
-              "start": 243
+              "start": 256
             }
           },
           "kind": "code"
@@ -161,16 +215,16 @@
       ]
     },
     "10": {
-      "note": "The notes-target reader retains the same note and keyed tree lifetime.\n\nAnchor: \"function NotesTargetReader(\"",
+      "note": "The notes-target reader retains the same note and keyed tree lifetime. Anchor: \"function NotesTargetReader(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
-            "content": "sha256:e66ee7fddb28334f50e7b745bee55b5678abc7311c968c73efd3ed21686e5341",
+            "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+            "content": "sha256:8ba65325b71a458146ea1157477baeb612bb5481340991e9419704026e68a73c",
             "locator": {
-              "end": 396,
+              "end": 434,
               "kind": "line_range",
-              "start": 368
+              "start": 386
             }
           },
           "kind": "code"
@@ -178,16 +232,16 @@
       ]
     },
     "11": {
-      "note": "The shared notes-left state controls both the rail panel and its resize handle; the header toggle is rendered only when a rail exists.\n\nAnchor: \"function ReaderLayout(\"",
+      "note": "The shared notes-left state controls both the rail panel and its resize handle; the header toggle is rendered only when a rail exists. Anchor: \"function ReaderLayout(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
-            "content": "sha256:0feee1581c4b1c5ba393a48a119463de00ae7accda236131a17ddf7f31eaa592",
+            "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+            "content": "sha256:f54e8e08220ef270cbbb28d53a16bc560235fc237c33418cbc1d29c14a3c21c0",
             "locator": {
-              "end": 564,
+              "end": 600,
               "kind": "line_range",
-              "start": 512
+              "start": 548
             }
           },
           "kind": "code"
@@ -195,15 +249,16 @@
       ]
     },
     "2": {
-      "note": "The `FileContent` type the text path maps a note into.",
+      "note": "The FileContent shape used for non-Markdown note content includes media metadata.",
       "targets": [
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
-            "content": "sha256:28187cd63e1c4f01e1b28b9932d829ac691d9bb591c50b4f84900278f04ed417",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
+            "content": "sha256:5680302ab4ac5c4a8b80e2f127dd4ae5d006c1156de1ef1dc42bb95d2859e303",
             "locator": {
-              "kind": "symbol",
-              "name": "FileContent"
+              "end": 64,
+              "kind": "line_range",
+              "start": 52
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -216,7 +271,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e23e68eb2a31165781bb22894b445d6d8bc18b66",
+            "blob": "4b2ad3e134f125cea8de3cfc20e0cbc7e222e0b1",
             "content": "sha256:2d24c867ca31e1b03d8f8e8a739931b87d1d7942b4cf007041b870ea2b1b29a1",
             "locator": {
               "kind": "symbol",
@@ -229,14 +284,27 @@
       ]
     },
     "4": {
-      "note": "Cockpit owns the artifact target and open flag, preserves the target on Back, updates note paths and hosts the controlled viewer takeover.",
+      "note": "Cockpit owns the artifact target and open flag and keeps its controlled reader mounted. Its shellActions callbacks preserve the target on Back, open an artifact explicitly and update the selected note path.",
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:feed64f4bad628307a3fc82a461bee90c237900c18d76e5cc078efbb73157274",
             "locator": {
-              "end": 201,
+              "end": 202,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "content": "sha256:99a1bcdfad490dc9f09de0a7f1d3794a1f4714c67b66552e2eba4cc952554eea",
+            "locator": {
+              "end": 203,
               "kind": "line_range",
               "start": 200
             },
@@ -246,38 +314,38 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "content": "sha256:ba13004499f259af97850159df67b9aaa952720ad3bc7f15b0222afdaa3282fc",
+            "locator": {
+              "end": 733,
+              "kind": "line_range",
+              "start": 723
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45bf722d8fb318fe1c2e26c0ac6e551df69ae861",
             "content": "sha256:cf873ae389cc943b2cff6dc54f19bf33bbe15833960a1ea584a2ede782237db4",
             "locator": {
-              "end": 399,
+              "end": 105,
               "kind": "line_range",
-              "start": 380
+              "start": 86
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/cockpit/shellActions.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:0bc7e102d5d0320aa01152ab96f80761578200cdcfeab2d5b98782ba42543f7f",
             "locator": {
-              "end": 469,
+              "end": 327,
               "kind": "line_range",
-              "start": 435
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
-            "content": "sha256:cf7e52f7828124e4b64413669b4606ea34c0fa0b5ce67665bfc6fbc0a7505828",
-            "locator": {
-              "end": 874,
-              "kind": "line_range",
-              "start": 864
+              "start": 293
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -334,7 +402,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "blob": "effe8d2e820ea0250852d730c5cfb88b8cb2fd37",
             "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
             "locator": {
               "kind": "symbol",
@@ -351,10 +419,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
-            "content": "sha256:03e3c301f302e5a9f9a018a62b682cb232d944b516731c65b285b88018a36549",
+            "blob": "e9ec75cc0a5b18ff4f512bf0e49061039c154dba",
+            "content": "sha256:fc55050e775d68769aa70c5ac49c996738ff0590ce49428f10a7ad4fe02ea036",
             "locator": {
-              "kind": "file"
+              "end": 414,
+              "kind": "line_range",
+              "start": 28
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
           },
@@ -384,12 +454,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+            "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
             "content": "sha256:59cd5cd2fba59592665967dc457104ccf81f33854f7ccf82754d9a45cd0a187f",
             "locator": {
-              "end": 310,
+              "end": 328,
               "kind": "line_range",
-              "start": 276
+              "start": 294
             }
           },
           "kind": "code"

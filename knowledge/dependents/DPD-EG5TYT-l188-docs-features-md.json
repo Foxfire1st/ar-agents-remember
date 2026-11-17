@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 7 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "role": "curator",
+    "statement": "The File Viewer bullet now says the viewer shows a picture and a video and switches a Markdown file between the rendered document and its source, and no other line changed.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -33,7 +33,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "2ec6a4844bc78d46a50f54f10b97d1ea2d328aba",
+      "blob": "47a504554485c35906f725e72fcb0a6d7e785d77",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
     },
@@ -43,7 +43,7 @@
       "path": "mcp/src/agents_remember/kernel/memory_cache.py"
     },
     {
-      "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+      "blob": "2d46e4349e78760575ad3176a73a7606cd7d95f6",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
     },
@@ -58,7 +58,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -241,6 +241,21 @@
       "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+    },
+    {
+      "blob": "28cb6dd831efd6bab220c0265ac517df832899ae",
+      "kind": "file",
+      "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+    },
+    {
+      "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+      "kind": "file",
+      "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+    },
+    {
+      "blob": "5be275cdd2395153066434e87495d4996544b70a",
+      "kind": "file",
+      "path": "dashboard/src/grammar/Media.tsx"
     }
   ]
 }

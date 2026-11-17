@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Document components and page policy jointly prevent forbidden media fetches and referrer disclosure across fetch-bearing attributes that have different browser APIs."
+  },
+  "applicability": "Fetch-bearing media addresses in rendered repository documents, including images, source sets, video sources, posters and nested source elements.",
+  "conditions": [
+    "Repository-relative media addresses resolve against the current document context.",
+    "External fetched media addresses use HTTPS.",
+    "Source sets are tokenized before each parsed candidate receives the media address policy.",
+    "The page's no-referrer policy covers media elements without a per-element referrer-policy attribute."
+  ],
+  "exclusions": [
+    "Raw HTML in notes, cards or task prose, which keeps ordinary Markdown behavior.",
+    "Non-media hyperlinks, whose outside navigation policy is separate."
+  ],
+  "id": "INV-VENYDH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-R05@v1 §6; dashboard/src/grammar/DocumentMarkdown.test.tsx :: draws a repository picture from the bytes route; dashboard/src/grammar/DocumentMarkdown.test.tsx :: draws an outside https picture without a referrer and refuses the rest; dashboard/src/grammar/DocumentMarkdown.test.tsx :: resolves $name against the repository; dashboard/src/grammar/DocumentMarkdown.test.tsx :: keeps outside HTTPS in $name; dashboard/src/grammar/DocumentMarkdown.test.tsx :: refuses ${url} in $name; owner-confirmed actual-route after-capture: /home/firefox/projects/ar-coordination/worktrees/agents-remember/05_viewers-show-documents-pictures-and-v-5d73e881dc-ar/role-reports/worker/d4db8591-6c82-4d4b-88df-c44055eceb61/evidence/browser/referrer-after/referrer-browser.json"
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-R05@v1 §6",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Repository-document media fetches admit only repository media paths or external HTTPS addresses, and their browser requests omit the referrer.",
+  "status": "proposed",
+  "supersedes": []
+}

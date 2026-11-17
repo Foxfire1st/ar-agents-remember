@@ -137,5 +137,4 @@ No meaningful cross-repo references found.
 
 
 
-
 - **The governed-artifact and contract rows that make this module part of the catalog.** Source caption: `read_scope_test_support` [22]

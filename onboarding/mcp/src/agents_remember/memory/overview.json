@@ -1274,7 +1274,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
+            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
             "content": "sha256:75ceed5fdbc73b3c33dd126ed61ff898767712276d67e603b8b4ec88aec4c5fe",
             "locator": {
               "end": 291,
@@ -2226,16 +2226,16 @@
       ]
     },
     "51": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.**\n\nAnchor: \"test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family\"; \"test_a_page_budget_of_one_item_still_advertises_the_second_location\"; \"test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent\"",
+      "note": "The selected current nodes assert sibling-realization/family discovery, a one-item page advertising another location, and unavailable tree lookup distinct from path absence.",
       "targets": [
         {
           "anchor": {
             "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
-            "content": "sha256:475ccf188b7e5abf74f9696c4db8b4cdde268c9db9625744257726442daf76d0",
+            "content": "sha256:dce2c0a4d80b46473863cea89623cf02f44b3a9a7e36d842808252ef640311bc",
             "locator": {
-              "end": 169,
+              "end": 168,
               "kind": "line_range",
-              "start": 139
+              "start": 140
             },
             "path": "mcp/tests/test_knowledge_read_scope.py"
           },
@@ -2244,11 +2244,11 @@
         {
           "anchor": {
             "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
-            "content": "sha256:a2c619472ca9b368f23fa40b61a0136e2820f31179365be08f68ed63506924fb",
+            "content": "sha256:f1edce7046a155d812f1010a2dba9063ff8541c7388d09bf429517a0234c8736",
             "locator": {
-              "end": 640,
+              "end": 593,
               "kind": "line_range",
-              "start": 530
+              "start": 531
             },
             "path": "mcp/tests/test_knowledge_read_scope.py"
           },
@@ -2257,11 +2257,11 @@
         {
           "anchor": {
             "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
-            "content": "sha256:b507051bf18e150211c2b4c43a663e595ea20d53cbadb0257eae0df43ccab4f1",
+            "content": "sha256:7ef8818ed136feabb30a06d57bf8d5985f6904f995f7e6dd608245b4dfe42713",
             "locator": {
-              "end": 444,
+              "end": 468,
               "kind": "line_range",
-              "start": 370
+              "start": 377
             },
             "path": "mcp/tests/test_knowledge_read_paths.py"
           },

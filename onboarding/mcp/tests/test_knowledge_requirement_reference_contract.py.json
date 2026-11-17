@@ -166,16 +166,16 @@
       ]
     },
     "26": {
-      "note": "The lane row that gives this module its classification and keeps it collectable under a named lane.  Anchor: `test_knowledge_requirement_reference_contract`",
+      "note": "The lane row that gives this module its classification and keeps it collectable under a named lane. Anchor: `test_knowledge_requirement_reference_contract` Anchor: `test_knowledge_requirement_reference_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:5fc838a1a57ff06ca36f1af8828a79e2c501daac8ea86a7f4c3cddce2a7f34fe",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 252,
+              "end": 809,
               "kind": "line_range",
-              "start": 252
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

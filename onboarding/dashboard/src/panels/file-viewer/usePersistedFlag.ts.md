@@ -40,7 +40,10 @@ are caller-owned and global to the origin (e.g. `fileviewer.split`,
 
 ### Repo-Internal References
 
-- `FileViewer` persists its split/single toggle through this hook. [1]
+
+
+- `FileViewer` persists its split/single toggle through this hook. Anchor: "fileviewer.split"; "className={toggle({ on: split })} aria-pressed={split} onClick={() => setSplit(!split)}> {split ? \"▣ Split\" : \"▢ Single\"} </button>" [1]
+
 
 - `Cockpit` persists its left/right rail pixel widths via `usePersistedNumber`. [2]
 

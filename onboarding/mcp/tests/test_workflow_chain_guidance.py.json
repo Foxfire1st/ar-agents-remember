@@ -19,7 +19,7 @@
       ]
     },
     "10": {
-      "note": "One operation, what its own guidance supplied, and what came back.\n\nAnchor: `Hop`",
+      "note": "One operation, what its own guidance supplied, and what came back.",
       "targets": [
         {
           "anchor": {
@@ -34,7 +34,7 @@
       ]
     },
     "11": {
-      "note": "One response's own operational triple, and what calling it exactly as published produced.\n\nAnchor: `RecommendedCall`",
+      "note": "One response's own operational triple, and what calling it exactly as published produced.",
       "targets": [
         {
           "anchor": {
@@ -49,7 +49,7 @@
       ]
     },
     "12": {
-      "note": "The disposable world: real repositories, a real server, one session per call.\n\nAnchor: `WorkflowWorld`",
+      "note": "The disposable world: real repositories, a real server, one session per call.",
       "targets": [
         {
           "anchor": {
@@ -431,12 +431,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:59e0e1653d5a589fe09a0646e0ece6d41f34bb59394ec582e7af93d79916c9f6",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 628,
+              "end": 809,
               "kind": "line_range",
-              "start": 628
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -449,7 +449,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:e78c9a3a5f40cbe4afaccc30894f1b7e29d5e43ec2f9b1a3329a675dc7df6639",
             "locator": {
               "end": 411,
@@ -462,7 +462,7 @@
         },
         {
           "anchor": {
-            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:850212135859df7ef2a304d5f3f9d63aefef33ff7824ecd1c284930d65f229cc",
             "locator": {
               "end": 397,
@@ -498,7 +498,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
             "locator": {
               "kind": "symbol",
@@ -684,7 +684,7 @@
       ]
     },
     "48": {
-      "note": "The `recommendedAction` residual (`T127`): the call at `:450`, the `tool=` argument at `:452`.  Anchor: `LifecycleRecommendedAction`",
+      "note": "The `recommendedAction` residual (`T127`): `_recommended_action` in `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:429-460` constructs `LifecycleRecommendedAction` at line 450 with `tool=\"worktree_status\"` at line 452 and contract-only arguments at line 453.  Anchor: `LifecycleRecommendedAction`",
       "targets": [
         {
           "anchor": {
@@ -955,7 +955,7 @@
       ]
     },
     "7": {
-      "note": "Values for arguments a recommendation leaves to the caller — values, never a population.\n\nAnchor: `FIXTURE_ARGS`",
+      "note": "Values for arguments a recommendation leaves to the caller — values, never a population.",
       "targets": [
         {
           "anchor": {

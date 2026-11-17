@@ -4,23 +4,6 @@
     {
       "anchor": {
         "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
-        "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
-        "locator": {
-          "kind": "symbol",
-          "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
-        }
-      },
-      "facet": "The Manager and Orchestrator decision lists, the three durable files and the four developer-needed categories with the once-only final report are present at the candidate.",
-      "id": "PRF-0DCHVF",
-      "invariant": "INV-NFV5VJ",
-      "origin": {
-        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
-        "leaf": "260928-MIK-L72"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
         "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
         "locator": {
           "kind": "symbol",
@@ -135,6 +118,23 @@
       "origin": {
         "handoffEntry": "L112-current-coordinating-investigator-proof",
         "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7229064a725f1a8ac0d60bacadfa0fa0fa00a205",
+        "content": "sha256:1a49a42a50dd81c8fbc410c1fd1d37b0bc8d03e3001cfc018af884f8b03ff709",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The Manager and Orchestrator decision lists, the three durable files and the five developer-needed categories with the once-only final report are present at the candidate.",
+      "id": "PRF-EZSG4M",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L7-CUR-COUNT-NFV-PROOF",
+        "leaf": "261112-BUG-L7"
       }
     },
     {

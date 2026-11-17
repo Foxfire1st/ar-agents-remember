@@ -4,7 +4,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Three separately recorded single-revision records stay independently addressable with their exact statements.\n\nAnchor: `test_two_same_label_successors_reopen_as_separate_revisions`",
+      "note": "Three separately recorded single-revision records stay independently addressable with their exact statements.\n\nAnchor: `test_three_separately_recorded_revisions_stay_independently_addressable`",
       "targets": [
         {
           "anchor": {
@@ -91,7 +91,7 @@
       ]
     },
     "14": {
-      "note": "The current separate-record revision read: three single-revision records stay independently addressable, and the former divergent-successor population is not this fixture's executable coverage.\n\nAnchor: `test_two_same_label_successors_reopen_as_separate_revisions`",
+      "note": "The current separate-record revision read: three single-revision records stay independently addressable, and the former divergent-successor population is not this fixture's executable coverage.\n\nAnchor: `test_three_separately_recorded_revisions_stay_independently_addressable`",
       "targets": [
         {
           "anchor": {
@@ -202,16 +202,16 @@
       ]
     },
     "19": {
-      "note": "The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions).  Anchor: `test_knowledge_store`",
+      "note": "The current unit-regression lane registration makes this module part of the manifest. Earlier caption wording described the row as following the `KS-R03` insertions; this current citation establishes lane membership. Anchor: `test_knowledge_store`",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:ab4c000ebb434e9339018678bac61a62e5a6bd96d610521ef2e3883e622b137f",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 269,
+              "end": 809,
               "kind": "line_range",
-              "start": 269
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -250,12 +250,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:e431cc066a9871801abbd8c2909f65c8592b2fd601232848a3e257f99b27ddcc",
+            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
             "locator": {
-              "end": 4930,
+              "end": 5044,
               "kind": "line_range",
-              "start": 4926
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

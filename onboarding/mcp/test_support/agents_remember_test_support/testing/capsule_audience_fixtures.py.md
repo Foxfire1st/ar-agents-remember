@@ -27,6 +27,11 @@ The expected recipients and pins come from a reviewed source snapshot; tests do 
 
 - Short rules delivered in the shared digest name their owner source, clause and recipient roles. [3]
 
+
 - `D656_OPERATION_SHA256`, and the stage table beside it, carry SHA-256 pins of each operation source and each per-role compiled stage. [2]
+
+
 - A grouped detail read names several actions and keeps their owner clauses. [4]
+
+
 - The module is data only; consumer tests own compilation and assertions. [5]

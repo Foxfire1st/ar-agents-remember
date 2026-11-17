@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The parser and registered public-read regressions catch explanatory body text being mistaken for the closing pair and retain the genuine final trailer path."
+  },
+  "applicability": "Code-Commit attribution parsed from a memory commit message by the shared parser and consumed by public closed-weakness and record reads.",
+  "conditions": [
+    "Only the message’s final paragraph may form the trailer block; it follows a preceding paragraph and contains only trailer or permitted continuation lines.",
+    "A matching key in the body supplies no closing attribution. A usable final trailer is passed to the reader’s full-real-code-commit check."
+  ],
+  "exclusions": [
+    "A syntactically recognized trailer does not independently prove that the named code removed the weakness.",
+    "The reader can still report unavailable attribution for missing, foreign, non-commit or unreadable objects; no successful attribution is promised in those cases."
+  ],
+  "id": "INV-VGBBBK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L3-W10-worker.md, repair and exact-check sections; W10-evidence.tar.gz retains the isolated predecessor/final Git comparisons and public answers."
+      ],
+      "path": "261112-BUG-L3-W10-D817-corrected-writer-input.json"
+    },
+    "handoffEntry": "L3-W9-F1",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A body-only Code-Commit mention supplies no closing attribution, while a genuine final trailer remains available through both public reads.",
+  "status": "proposed",
+  "supersedes": []
+}

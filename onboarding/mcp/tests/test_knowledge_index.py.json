@@ -311,16 +311,16 @@
       ]
     },
     "8": {
-      "note": "The lane row.  Anchor: \"mcp/tests/test_knowledge_index.py\"",
+      "note": "The lane row. Anchor: \"mcp/tests/test_knowledge_index.py\" Anchor: \"mcp/tests/test_knowledge_index.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:dfc500f0819805ef61eb485f3aa5f595ede6b8819955c3a3006132dd559042d6",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 233,
+              "end": 809,
               "kind": "line_range",
-              "start": 233
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

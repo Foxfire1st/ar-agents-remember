@@ -1,0 +1,1428 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L2",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0QKZAS",
+      "items": [
+        "sha256:1ff8406ebd654361afdbcd6467934bdc8c71890b2fa4776990de89bc3ed69441",
+        "sha256:82873fbb7baafee583f16fbade4e6814ec8208ce5c8367e0d1ee4a493ae0d4ae"
+      ],
+      "reason": "The card adds the planned folder to the packaged capability text; its read-only snapshots, tool-server and publication statements were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
+          "path": "mcp/src/agents_remember/package_data/canvas/review-presenter.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/canvas/review-presenter.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:d1323c11337e6dcb983eda04d9356b9291f969c461c518e87bd0777c4bd302a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageReading"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:55de8bebe53eb169c6cd9e187be7bee22f81ef70b4183fd6ae1d73f1151dbf12",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageReading"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-9ZEATQ"
+        },
+        {
+          "after": {
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:4d6aa797d5b4df0f354109f681145557824b9251a29ca509f7719f18c8b467f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:f67515e95319c7f49f57b718d00865aab325c83a6dfd4fc21799b4efb04d439a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-J5BPW2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0Z8JDE",
+      "items": [
+        "sha256:d39537a1fe7c23ff51954be8698692b39e6a28d2f148626e8a530e384d9e4f25"
+      ],
+      "reason": "Both realizations recorded earlier versions of their symbols. `PageReading` and `ReviewSurface` were read at the candidate: the reading column still receives the shared model, its replaced body and its notes, and the page still composes the top line, tree and reading column. The statement holds, and both entries are re-anchored without a meaning change.",
+      "revision": 1,
+      "subject": "INV-7QYXJP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1HHY9Z",
+      "items": [
+        "sha256:286d1864f716d00f802406605a974044f74edc7f494d673e260f7916c1746392"
+      ],
+      "reason": "Adds the planned request sentence and its comment. It is the server half of the planned empty Send.",
+      "subject": "hunk:sha256:286d1864f716d00f802406605a974044f74edc7f494d673e260f7916c1746392"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-20P74Y",
+      "items": [
+        "sha256:978787df749ea45603acd82f19d2e1eca10731dbea0355cd3f6e016c09f20391"
+      ],
+      "reason": "Adds the truth line's style object. Presentation only.",
+      "subject": "hunk:sha256:978787df749ea45603acd82f19d2e1eca10731dbea0355cd3f6e016c09f20391"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e26fbc57f6b7b50499aa72a7120c3967b22a1b7a",
+            "content": "sha256:73e1032dfd4af170e6ccfb2d4bfcbed9b30196d588fd4346b6b8d605b355f380",
+            "locator": {
+              "kind": "symbol",
+              "name": "mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return"
+            },
+            "path": "dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx"
+          },
+          "before": {
+            "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+            "content": "sha256:73e1032dfd4af170e6ccfb2d4bfcbed9b30196d588fd4346b6b8d605b355f380",
+            "locator": {
+              "kind": "symbol",
+              "name": "mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return"
+            },
+            "path": "dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx"
+          },
+          "id": "PRF-85ZY7X"
+        },
+        {
+          "after": {
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:ad98b7647e42bb648a80b72bc86025e854f3dc6eb98e67849a1b637bc60503d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "readingReplacementOf"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ad98b7647e42bb648a80b72bc86025e854f3dc6eb98e67849a1b637bc60503d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "readingReplacementOf"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-1HAYNT"
+        },
+        {
+          "after": {
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c1fe8655a033bde1e39ba3c543609cc3247a0734e8a4c0619170ed88609f2921",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurfaceExplainer"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:6ac07adfd3995b2b7c70e7456a3eb861c52e7be1bdfa6a38da4368826b39c588",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurfaceExplainer"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-QDV2CP"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-26CKB3",
+      "items": [
+        "sha256:935fffa0369aa78f4d8739bd16ae53f2dcc1811e2fec1e0d746eaa2915ae0dc2"
+      ],
+      "reason": "Three entries recorded earlier versions of their symbols. The integration proof, `readingReplacementOf` and `useSurfaceExplainer` were read at the candidate: the switch still replaces only the reading body, each revision still shows its own binding labels, and no model starts. The statement holds, and the entries are re-anchored.",
+      "revision": 1,
+      "subject": "INV-YY035T"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2G8HW7",
+      "items": [
+        "sha256:ea502637beb97fa1868948fe87cc7bc14949ae9a716803b7e6fec4d20e190fcb"
+      ],
+      "reason": "Documents that a planned binding has no changed trees and receives the plan. A comment addition.",
+      "subject": "hunk:sha256:ea502637beb97fa1868948fe87cc7bc14949ae9a716803b7e6fec4d20e190fcb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2ZP7VY",
+      "items": [
+        "sha256:75d0882236408b601d457b2cec5b70b6abadb8384fb656bb08fedc62e86686c0"
+      ],
+      "reason": "Imports the planned-document writer and folder name. An import.",
+      "subject": "hunk:sha256:75d0882236408b601d457b2cec5b70b6abadb8384fb656bb08fedc62e86686c0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3N3XJ5",
+      "items": [
+        "sha256:a28ba729a7497373eb731829b61ba6fa438af8556e285b1e74251519caa57bb7"
+      ],
+      "reason": "The comment states the D566 text's measured count (1,090); it records the text's size and changes no invariant statement.",
+      "subject": "hunk:sha256:a28ba729a7497373eb731829b61ba6fa438af8556e285b1e74251519caa57bb7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-49H67N",
+      "items": [
+        "sha256:bea96d8d164bb11fa7fc0bc1f97800756b3c05e71360cfa5b7ee99518e565810"
+      ],
+      "reason": "The card now says Send is disabled only while a Send is in flight, an empty request names the end-to-end review or the planned request, and a planned binding's placeholder and line name the task's requirement and planned effects; its references were re-anchored at the candidate.",
+      "sources": [
+        {
+          "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
+          "path": "dashboard/src/explainer/FirstRequestForm.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/explainer/FirstRequestForm.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4HV8RR",
+      "items": [
+        "sha256:0a73f3f68860184899e2401d371decb18562f2bce52ca1b1481203b6bd6e2fc0",
+        "sha256:0e701d267a93c31f2379634838da87160e41474d29c27742d772e398ed4328f7",
+        "sha256:21fbf881b598aa235ad0c96de99971440edd3d9c56ba4223382f2dd8865b2a79",
+        "sha256:2a42b64138702d6b69b5eba9a7cb9398c4b3be85ef04521ce7c99aa69e25cc57",
+        "sha256:49db6ef321318f4ca2e31285957512da57cc4a39ab88c0b2d0cbdb5746af7f5b",
+        "sha256:724a8d54c3105d06b4f425afe4c6ac3dc85743332699b13c8efe0a5d92251be1",
+        "sha256:8c372c2850d3c80ee0401a30d82dd60ef745952712577bbe92cd2ee194decd2d",
+        "sha256:9128a565f5d16cbe8d8ad32375ef4528db9b8ffd02a42700e60a7032184b3659",
+        "sha256:c6103f6d5f3114435ecb3405070ca2ba86b2a7634b1e6e9d61fc0c8ab1d9f437",
+        "sha256:d34ca24d38d94a9f46ca067225d84bb7b4c1c5db7cdbeffcf07dd3ee7b2d932a",
+        "sha256:ff36c2cf5aaa0fa17e360a6e0ccd7c170d9bf673a5ebfc23d95c3c7e4e9e6779"
+      ],
+      "reason": "The card adds the planned heading and planned default request; the comparison-bound build, cancel and send statements were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "c4ee7a59b2bb1ab7c2e510797667f97f3db7e0db",
+          "path": "dashboard/src/panels/review/explainer/ExplanationRequest.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/explainer/ExplanationRequest.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-9ZKYWQ",
+          "revision": 4
+        },
+        {
+          "id": "INV-BMFR2T",
+          "revision": 2
+        },
+        {
+          "id": "INV-BS5PFE",
+          "revision": 2
+        },
+        {
+          "id": "INV-CK3PTB",
+          "revision": 3
+        },
+        {
+          "id": "INV-MWCCQM",
+          "revision": 3
+        },
+        {
+          "id": "INV-NSG0D4",
+          "revision": 3
+        },
+        {
+          "id": "INV-QZC5AZ",
+          "revision": 4
+        },
+        {
+          "id": "INV-T1ZHP5",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-5EPXYN",
+      "items": [
+        "sha256:a04d3ce643d87f73e1d5a78ec3eb3cb74f898c76f07e253ada784d0b0dac5fb7"
+      ],
+      "reason": "The family was reached through INV-9ZKYWQ and INV-NSG0D4. All eight members were examined at their current revision: each statement still expresses its part of the walked family tree's joint guarantee, and the routes still cover the members' realizations. The re-anchoring changes no member's meaning and adds no family claim.",
+      "revision": 3,
+      "subject": "FAM-68H10P"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R02",
+          "packet": "requirements/BUG-R02-v3-the-explainer-before-a-task-starts.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v3"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "cf77370234ae2b7b5d0f501b3b575a4a0de353cb",
+            "content": "sha256:76009f326b62cc502df11074456f6af43e6389d990eba1c9de41e8f992f35150",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskContextRead"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "before": {
+            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
+            "content": "sha256:76009f326b62cc502df11074456f6af43e6389d990eba1c9de41e8f992f35150",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskContextRead"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "id": "RLZ-6017FF"
+        },
+        {
+          "after": {
+            "blob": "4ca5c19c27020118aa8167b5a95033c9d5ddfdf5",
+            "content": "sha256:c5dfe73336def3654cd14ccef35bfd39b8705fbe0d9b34dc9c4a6c993d4aceef",
+            "locator": {
+              "kind": "symbol",
+              "name": "chipFacts"
+            },
+            "path": "dashboard/src/panels/review/top-line/statusChipModel.ts"
+          },
+          "before": {
+            "blob": "bbf1199c8d07a5c6ab39aed383e2b379b699313d",
+            "content": "sha256:a71fbd95056e27e9115f5605d4dc275b8f90e4ca20092fb20938bd36b3bb8ef5",
+            "locator": {
+              "kind": "symbol",
+              "name": "chipFacts"
+            },
+            "path": "dashboard/src/panels/review/top-line/statusChipModel.ts"
+          },
+          "id": "RLZ-8MHFGF"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6CRSH5",
+      "items": [
+        "sha256:36a4d38dab7d3de0e118ea1214cc4ef10cc26bb93c4fc51ee40cc177f89303fd"
+      ],
+      "reason": "`chipFacts` and `taskContextRead` were read at the candidate. The four rows, their owner reasons and their reserved place still hold; a planning leaf now returns the planned chip with the reason that nothing is built yet before the loading and failure branches, because its review read is refused for having no worktree. The record's condition now states that planning exception.",
+      "revision": 2,
+      "subject": "INV-ZMW639"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6E5P3Q",
+      "items": [
+        "sha256:53067aaed9619d8374091c0fd9bdc33af84b8660eb9253f95b3676631a897d68"
+      ],
+      "reason": "The card adds the planned-documents copy before the binding; its build, lock, update, grade, retire and archive statements were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
+          "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_workspace.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6N41A4",
+      "items": [
+        "sha256:19061d82f346eb4260fd1fd8c1713541d98709da78a5b1c00dfeb7f7cbad195b"
+      ],
+      "reason": "Imports the dashboard's existing Markdown renderer for packet bodies. An import.",
+      "subject": "hunk:sha256:19061d82f346eb4260fd1fd8c1713541d98709da78a5b1c00dfeb7f7cbad195b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-73ANTB",
+      "items": [
+        "sha256:32296d5e65f85f90ad2d805d7f38308a369ce0a7d7fb3cf3e19a4bc821757478"
+      ],
+      "reason": "Rewrites the read gate so an ordinary read is still awaited for other leaves but a planning leaf does not wait for it. The planned page's behavior is the change.",
+      "subject": "hunk:sha256:32296d5e65f85f90ad2d805d7f38308a369ce0a7d7fb3cf3e19a4bc821757478"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7BX3N8",
+      "items": [
+        "sha256:258228f35b0cc70ad8bfae8cfe5233cc369ec656af0f18b3593dab8ec7e2553c"
+      ],
+      "reason": "Opens the planned read for a planning leaf without waiting for the ordinary review read, which a leaf without a worktree cannot satisfy. This is the requirement's gate fix; the planned page's own statements carry its meaning.",
+      "subject": "hunk:sha256:258228f35b0cc70ad8bfae8cfe5233cc369ec656af0f18b3593dab8ec7e2553c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7DSWMK",
+      "items": [
+        "sha256:00edc4486f0fbbf0c013e1085688b2a85fd21c703352903defc4fc22f78c84bb",
+        "sha256:3879792748f50804c08825981bffd3900eb659136a3d6e1c454ceef6445fd907",
+        "sha256:504941c2691d1a9f943722571d91994a455da81fe8b5308eb677ae2e69fb25fe",
+        "sha256:e3af3cdaa8f57d3ecb37c1d8c4bae1e4d4064c937140daccc89a41766741d886",
+        "sha256:f1c13c03781b4c64e7b97a49a0317dccae047dad9151d06fc115bf062608239d",
+        "sha256:f23c01c6141bdfb406be65bd1413952a3aa9f1b8a70a373a49e7653aeee4bc73"
+      ],
+      "reason": "The card adds the planned-send and empty planned-send cases; its scope, update, grade, settle, cancel and retire cases were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "3d8a63a9c248b00f688dd75d13cfdfa68fee73b6",
+          "path": "mcp/tests/test_explainer_service.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_service.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e26fbc57f6b7b50499aa72a7120c3967b22a1b7a",
+            "content": "sha256:73e1032dfd4af170e6ccfb2d4bfcbed9b30196d588fd4346b6b8d605b355f380",
+            "locator": {
+              "kind": "symbol",
+              "name": "mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return"
+            },
+            "path": "dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx"
+          },
+          "before": {
+            "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+            "content": "sha256:73e1032dfd4af170e6ccfb2d4bfcbed9b30196d588fd4346b6b8d605b355f380",
+            "locator": {
+              "kind": "symbol",
+              "name": "mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return"
+            },
+            "path": "dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx"
+          },
+          "id": "PRF-2CTVHM"
+        },
+        {
+          "after": {
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:4d6aa797d5b4df0f354109f681145557824b9251a29ca509f7719f18c8b467f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:f67515e95319c7f49f57b718d00865aab325c83a6dfd4fc21799b4efb04d439a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-2A31AF"
+        },
+        {
+          "after": {
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRefreshReview"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRefreshReview"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-FRKWFP"
+        },
+        {
+          "after": {
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:051725227fe4220602c84f0c8d3f3256077664ced2285c6ff8bbf329759e3f80",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:051725227fe4220602c84f0c8d3f3256077664ced2285c6ff8bbf329759e3f80",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-PCQKA3"
+        },
+        {
+          "after": {
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c1fe8655a033bde1e39ba3c543609cc3247a0734e8a4c0619170ed88609f2921",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurfaceExplainer"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:6ac07adfd3995b2b7c70e7456a3eb861c52e7be1bdfa6a38da4368826b39c588",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurfaceExplainer"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-Q6WQJR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-836HB7",
+      "items": [
+        "sha256:a6d9a103142868b1212f1d0aedb5acbf4ce678b57cb3b457623efa6e74295822"
+      ],
+      "reason": "Five entries recorded earlier versions of their symbols. The integration case and the surface's `ReviewSurface`, `useRefreshReview`, `useSurface` and `useSurfaceExplainer` were read at the candidate: in-tree selections still retain the walked tree, and the planned branch adds a read gate without changing that selection behavior. The statement holds, and the entries are re-anchored.",
+      "revision": 4,
+      "subject": "INV-9ZKYWQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8MJDHC",
+      "items": [
+        "sha256:8091698e92982ad5a5429c593a41bcaa24edcf41884ab6be2c1bf31782488e58",
+        "sha256:8c2ea5590379815237edb66dd4490cacb28571ae981ac02fe632645657598316"
+      ],
+      "reason": "The card adds the rule-5 packet Markdown case; its rendering, refused payload, reference and absent-packet statements were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "6a264a7815ca477430cd2f645e7bd3d6d32c1b47",
+          "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/explainer/planned/PlannedReview.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cf77370234ae2b7b5d0f501b3b575a4a0de353cb",
+            "content": "sha256:eaf48e0a5934a787487743ebcfa38daf8c61219b4466ce3edfda7296e8f8ae74",
+            "locator": {
+              "kind": "symbol",
+              "name": "openMember"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "before": {
+            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
+            "content": "sha256:eaf48e0a5934a787487743ebcfa38daf8c61219b4466ce3edfda7296e8f8ae74",
+            "locator": {
+              "kind": "symbol",
+              "name": "openMember"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "id": "RLZ-RRPZV9"
+        },
+        {
+          "after": {
+            "blob": "cf77370234ae2b7b5d0f501b3b575a4a0de353cb",
+            "content": "sha256:e80a7763f8a4633a4bf6e085ec15071ed2a31d935684a87954170a3148760193",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageTree"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "before": {
+            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
+            "content": "sha256:74708a0d99c932635639d8320516a100e104e44ccce48d914b907bccf6369452",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageTree"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "id": "RLZ-TMVXZ7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-9D3FF1",
+      "items": [
+        "sha256:5397992c6a79de90f4f29e159a015b4dee0d0c5c429ab7d269d8d73fe43a1073"
+      ],
+      "reason": "`PageTree` and `openMember` recorded earlier versions of their symbols. Both were read at the candidate: an explicit in-tree selection still retains the read family and member context, non-current families stay kept, and the planned prop only changes the tree's status line. The statement holds, and both entries are re-anchored.",
+      "revision": 3,
+      "subject": "INV-NSG0D4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9MB2T9",
+      "items": [
+        "sha256:e92e366cb5e1b05e9e0ae23c5f8f705ed2926b0a4a30737f0effa8eca0d3447e"
+      ],
+      "reason": "Adds the optional `planned` input so the chip can report the plan instead of a failed review. The chip's four rows are unchanged.",
+      "subject": "hunk:sha256:e92e366cb5e1b05e9e0ae23c5f8f705ed2926b0a4a30737f0effa8eca0d3447e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9XDSK3",
+      "items": [
+        "sha256:943f25aae81a4d650eb35c1fce1fe2a9ce511f1306414c9cfad7a212db046927"
+      ],
+      "reason": "Closes the restructured planned branch. Punctuation only.",
+      "subject": "hunk:sha256:943f25aae81a4d650eb35c1fce1fe2a9ce511f1306414c9cfad7a212db046927"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
+            "content": "sha256:eeaf885739fc090909da529a44511b3d35d16cdbb648d02998ee811ac0ff59f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_environment"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+          },
+          "before": {
+            "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
+            "content": "sha256:cbed035c98312d6dcc19e751a874759649832a504b0fc7fa3611b76c1b506f74",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_environment"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+          },
+          "id": "RLZ-TBNSKE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-AHK9Z9",
+      "items": [
+        "sha256:2e1f85bbb38cffd8958a7910276f4e65e66fbde384721fc8b25687f8f4c81fda"
+      ],
+      "reason": "`build_environment` recorded an earlier version of the symbol. It was read at the candidate: the one environment per leaf, its guards and its frame-store publication are unchanged; the planned-documents copy runs inside the environment through `guard_explainer_path` and the atomic writer. The statement holds, and the entry is re-anchored.",
+      "revision": 2,
+      "subject": "INV-GWMA1V"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AJEVG2",
+      "items": [
+        "sha256:44aa0eb56f02df1a8433bc5e8c0175e3a3e6d66f8f9c9481239ea484eefae603"
+      ],
+      "reason": "Imports the planned leaf-document reader. An import.",
+      "subject": "hunk:sha256:44aa0eb56f02df1a8433bc5e8c0175e3a3e6d66f8f9c9481239ea484eefae603"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BA9H70",
+      "items": [
+        "sha256:32dc1d6d1e045711f55ca790db5866a6fbd86a301196c3b34c6c655c84663966",
+        "sha256:7f22ec85afe7a686ec67ae1118166a21381d5a7b050f2d546c24242e3d0af57c",
+        "sha256:dc3f389098e3c0ca5dfb0b18015aec07e1a1b4aebe904f96018f499e3c3e02c0"
+      ],
+      "reason": "The card adds the planned first-request-line case and says Send is always available; the evidence cites the new case and the re-anchored placeholder, failure and menu cases.",
+      "sources": [
+        {
+          "blob": "7d50cff26f1786af2d726df12a2433320b231469",
+          "path": "dashboard/src/explainer/model.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/explainer/model.test.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BY6GKQ",
+      "items": [
+        "sha256:875033f99dd238d50463b955f76547350db35342028a6baadf7288221d2bac19"
+      ],
+      "reason": "The anchored `settle_retire` is unchanged at the candidate; the fault - archiving the chat before counting the remaining processes, so the line can read 0 processes ended - still stands, and the record remains carried as open.",
+      "revision": 1,
+      "subject": "WKN-AJV5GY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CC1Y5W",
+      "items": [
+        "sha256:b30c1e570d79d567825a30fced734a7cb26b9480718c3838b722e716d4d33460"
+      ],
+      "reason": "Composes the planned sentence when a planned task's Send is empty. The existing build path and its refusal rules are unchanged.",
+      "subject": "hunk:sha256:b30c1e570d79d567825a30fced734a7cb26b9480718c3838b722e716d4d33460"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D682HX",
+      "items": [
+        "sha256:2188c6758198ce2742c04f56e5405e6f4caa698b011be972e2018c75cc9d288b"
+      ],
+      "reason": "Imports the planned truth line used by the centre. An import, no invariant.",
+      "subject": "hunk:sha256:2188c6758198ce2742c04f56e5405e6f4caa698b011be972e2018c75cc9d288b"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DFJW6B",
+      "items": [
+        "sha256:c721899178029d2ad9e93eed8cdf645aea4ae18d55fe0c3c255b9bee3f42f254"
+      ],
+      "reason": "The card adds the truth line and says packet bodies use the dashboard's existing Markdown renderer; its top line, notice, sorts, references and scope links were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
+          "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/explainer/planned/PlannedReview.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EZ6HC6",
+      "items": [
+        "sha256:8d92432eb260ae454637a779481e1a16b16006f8e6d8aac0d594ffae36c92dc6",
+        "sha256:9ae2321db8fe83db720903de52c6d28c1b40cf293df0b3b625288defc264eb61",
+        "sha256:eb1acccba044324ec7730a8843f22d3574e7bbbf486efcffefc197f481c99d0b",
+        "sha256:f9906ded0bd02251bd249167d26de25668917bdb9882e35f85f6554915e69a70"
+      ],
+      "reason": "The card adds the refused-read planning case and the planned view's assertions; its switch, stream and judgment cases were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "e26fbc57f6b7b50499aa72a7120c3967b22a1b7a",
+          "path": "dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F4KNSF",
+      "items": [
+        "sha256:8f05d028bb3c02a9c8ec36843a21360fa7ab6c46869baa1db8d7c1736ca81840"
+      ],
+      "reason": "Reads the run reference before the planned copy. A local binding.",
+      "subject": "hunk:sha256:8f05d028bb3c02a9c8ec36843a21360fa7ab6c46869baa1db8d7c1736ca81840"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FA3K4C",
+      "items": [
+        "sha256:6cd8f85a12027d9d939cc4f7f0defa09fc726c167a6f7a505236f030bb2089c8"
+      ],
+      "reason": "The card says an empty Send is composed as the end-to-end review or the planned request and adds PLANNED_REQUEST; its build, update, grade, cancel and retire statements were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "f1a614c3853985134f11c860f66383388eb5da04",
+          "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_service.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FW9P2K",
+      "items": [
+        "sha256:95e08bf31b65854a712ec04fe285bf127110af91e91a7beda9145120fd76c663"
+      ],
+      "reason": "Passes the planned fact to the top-line controls. Wiring.",
+      "subject": "hunk:sha256:95e08bf31b65854a712ec04fe285bf127110af91e91a7beda9145120fd76c663"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FY8TRM",
+      "items": [
+        "sha256:4e8c7efe77cd06aa8e03a6590e90be1a5b0a404125e385a4d630af80ab3e92e5"
+      ],
+      "reason": "The overview's build sentence now names the planned folder for a planned binding; the rest of the route prose was re-read and stands.",
+      "sources": [
+        {
+          "blob": "d9b57187e3d51a2b5d3ff246dfb4e173f9d70622",
+          "path": "mcp/src/agents_remember/canvas/explainer_planned_read.py"
+        },
+        {
+          "blob": "f1a614c3853985134f11c860f66383388eb5da04",
+          "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+        },
+        {
+          "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
+          "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+        },
+        {
+          "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
+          "path": "mcp/src/agents_remember/canvas/review-presenter.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G2JHK7",
+      "items": [
+        "sha256:7acd86a9dbe136bf841bb73a16e86c48725b2fdf7d310560d55f67f7d7c4c990"
+      ],
+      "reason": "Reports the planned-copy count in the existing documents step. Instrumentation.",
+      "subject": "hunk:sha256:7acd86a9dbe136bf841bb73a16e86c48725b2fdf7d310560d55f67f7d7c4c990"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GWR6W7",
+      "items": [
+        "sha256:5acab96e706efdf75d2c2cebc2ee43fcc4bcdd4a102e077cff006aa910a57014"
+      ],
+      "reason": "Defines the truth line above the top line. A single page constant, no invariant.",
+      "subject": "hunk:sha256:5acab96e706efdf75d2c2cebc2ee43fcc4bcdd4a102e077cff006aa910a57014"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HM35YC",
+      "items": [
+        "sha256:14f0cba9df1d4eef9464f95edcc7bc65b9167fb08b2f1724f107540e2acaa698",
+        "sha256:8b125c8219ac7df1abe71a4d4c3363df6aa8cfc762b90d7a7bce6c27f914902e",
+        "sha256:a28ba729a7497373eb731829b61ba6fa438af8556e285b1e74251519caa57bb7"
+      ],
+      "reason": "The capability-text test moved its pinned count to 1,090 and named the planned binding's folder; the card's statements about the packaging, budget and wording guard still hold, and its references were re-anchored at W5. No card sentence changed.",
+      "sources": [
+        {
+          "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
+          "path": "mcp/tests/test_canvas_capsule_text.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_canvas_capsule_text.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J9W8BQ",
+      "items": [
+        "sha256:36ce286b1e4ae6d7367805a113756a3499cdf76389e4418d21adfac9efacab8b"
+      ],
+      "reason": "The overview's planned-page sentence now names the truth line, the rendered packet bodies, the planned chip and the absence of a review refusal; the rest of the route prose was re-read and stands.",
+      "sources": [
+        {
+          "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+          "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+        },
+        {
+          "blob": "c4ee7a59b2bb1ab7c2e510797667f97f3db7e0db",
+          "path": "dashboard/src/panels/review/explainer/ExplanationRequest.tsx"
+        },
+        {
+          "blob": "e26fbc57f6b7b50499aa72a7120c3967b22a1b7a",
+          "path": "dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx"
+        },
+        {
+          "blob": "6a264a7815ca477430cd2f645e7bd3d6d32c1b47",
+          "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.test.tsx"
+        },
+        {
+          "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
+          "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.tsx"
+        },
+        {
+          "blob": "f40c30b5b41ad4a8706f0ab35a45a5fb2cec9253",
+          "path": "dashboard/src/panels/review/explainer/planned/plannedPage.ts"
+        },
+        {
+          "blob": "cf77370234ae2b7b5d0f501b3b575a4a0de353cb",
+          "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+        },
+        {
+          "blob": "4ca5c19c27020118aa8167b5a95033c9d5ddfdf5",
+          "path": "dashboard/src/panels/review/top-line/statusChipModel.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JB1C4E",
+      "items": [
+        "sha256:d0a81186fa5f03045a628ffa95683a696565a520098e04ffa42cc044a11247ed"
+      ],
+      "reason": "Renders the packet body with the dashboard's existing Markdown renderer (rule 5). The card and the rule-5 test carry this behavior.",
+      "subject": "hunk:sha256:d0a81186fa5f03045a628ffa95683a696565a520098e04ffa42cc044a11247ed"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:4d6aa797d5b4df0f354109f681145557824b9251a29ca509f7719f18c8b467f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:f67515e95319c7f49f57b718d00865aab325c83a6dfd4fc21799b4efb04d439a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-X2EGWR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JBDDY5",
+      "items": [
+        "sha256:1655c1685a62be123a52dba87b108f5d361793bb808987676afa6b2284c1b830"
+      ],
+      "reason": "`ReviewSurface` recorded an earlier version of the symbol. It was read at the candidate: sidebar visibility is still remembered independently by page and side, and the review chat still starts closed per target and reload. The planned gate adds no visibility behavior. The statement holds, and the entry is re-anchored.",
+      "revision": 1,
+      "subject": "INV-PHBM6X"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JQJ2VR",
+      "items": [
+        "sha256:61f01effacc74fee4aacd26b2507fc80a825f3797981370b8f3c112f0d6e1c7a"
+      ],
+      "reason": "Imports the planned truth line constant. An import.",
+      "subject": "hunk:sha256:61f01effacc74fee4aacd26b2507fc80a825f3797981370b8f3c112f0d6e1c7a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M271ZN",
+      "items": [
+        "sha256:04ffd72ef6548f7081da03b91bfc4655555118f33cce1eebe61c559c386032b6",
+        "sha256:ba6544ac9f4b1b4fc09be1a82520dcfa68b00c605128d7d86376324e16a98f14"
+      ],
+      "reason": "The card adds `planned/` to the folder list; its instruction, snapshot, refusal and publication statements were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
+          "path": "mcp/src/agents_remember/canvas/review-presenter.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/review-presenter.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NAKPHJ",
+      "items": [
+        "sha256:2fe3fbbe76f8e8a990979be157f8852a039ed2ac2e00f51aa4ab1170a6ed9199"
+      ],
+      "reason": "Adds the optional `planned` prop to the page props. A type declaration.",
+      "subject": "hunk:sha256:2fe3fbbe76f8e8a990979be157f8852a039ed2ac2e00f51aa4ab1170a6ed9199"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NXH12D",
+      "items": [
+        "sha256:1192d132a1ba441f27b8d936178a4c3cd1b1ccc39cb7f24ce96ae852bda9f4b7",
+        "sha256:8c48fb84b99b568443a8d88864ed53ccc5c03a28df597969b9282edd43082881",
+        "sha256:8cc208c9cb7543d91001c1cecda4bc9dac2e0a8ebf95d4f3678ce5e3479120b5"
+      ],
+      "reason": "The card adds the plan texts written for a planned binding; its task-document, subject, packet, reference-name and code-tip reads were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "d9b57187e3d51a2b5d3ff246dfb4e173f9d70622",
+          "path": "mcp/src/agents_remember/canvas/explainer_planned_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_planned_read.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P8VFQK",
+      "items": [
+        "sha256:4d02992459e7b1ff269d0aa61a7e30155dca618f8c687653f1b3dbf1cf5daa3c"
+      ],
+      "reason": "Passes the planned page model into the notes region so the reading column shows the planned page. Wiring, no invariant.",
+      "subject": "hunk:sha256:4d02992459e7b1ff269d0aa61a7e30155dca618f8c687653f1b3dbf1cf5daa3c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q28FSQ",
+      "items": [
+        "sha256:8b125c8219ac7df1abe71a4d4c3363df6aa8cfc762b90d7a7bce6c27f914902e"
+      ],
+      "reason": "The comment names the planned binding's folder and the assertion follows the D566 text's measured count (1,090) under the unchanged 1,100 budget; the budget and wording guard are unchanged, so no invariant statement moves.",
+      "subject": "hunk:sha256:8b125c8219ac7df1abe71a4d4c3363df6aa8cfc762b90d7a7bce6c27f914902e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RFYB59",
+      "items": [
+        "sha256:9576997e47d383a946b88caa052bef2cff071c1712f84a480cb2f8793e3c2a10"
+      ],
+      "reason": "Branches the first-request line to the planned sentence on a planned task. The line is presentation; the planned request itself is carried by the explainer's existing build path.",
+      "subject": "hunk:sha256:9576997e47d383a946b88caa052bef2cff071c1712f84a480cb2f8793e3c2a10"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RSXVM7",
+      "items": [
+        "sha256:61ac821d78da7f025d9deb1eb307965966a2bdac631eea81eb3391d70eacf572"
+      ],
+      "reason": "Extends the comment beside `firstRequestLine` so it names the planned empty Send. A comment addition, not a behavior or an invariant.",
+      "subject": "hunk:sha256:61ac821d78da7f025d9deb1eb307965966a2bdac631eea81eb3391d70eacf572"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SEGC64",
+      "items": [
+        "sha256:a41fee7fae7543013e8d77542f6d1b6dfcba127663203c9a4c7a82c094c2b60f"
+      ],
+      "reason": "The card says Send is always available and adds the planned first-request line; its existing phase, build and menu statements were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "392da2790215a14029683debf1ea5da601663cd9",
+          "path": "dashboard/src/explainer/model.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/explainer/model.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SQE812",
+      "items": [
+        "sha256:6391a8a57cf4f779fa64a884abe7fd5555a3f0f700029e1f1d71452bd6d2bcfc"
+      ],
+      "reason": "The card adds the planned read's gate and the centre's truth line; the ordinary review read, selection, refresh and page-control statements were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+          "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/ReviewSurface.tsx"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-T2CB1S",
+      "items": [
+        "sha256:6a1e9d03a1a54f08f17547adaf28b6d8aec6ee1663fe80ebc81ec70db753c57e",
+        "sha256:c3fdfecca5674d502cc227f9f6bd8566be75acadccad99ce7689a9e26b9a5bb4"
+      ],
+      "reason": "The guide's statements were re-read at the W5 candidate; the delta is the capability-text test pin (1,090 words under the 1,100 budget), which changes no statement the guide makes. The dependent is confirmed at the W5 tree and its links re-resolve.",
+      "revision": 2,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TAX9C1",
+      "items": [
+        "sha256:e964fccfe3c75154a2199c41a0a12326f3448e0383645404d6a49b8359dce1b8"
+      ],
+      "reason": "The overview was re-read at the candidate; its statements about the MCP server's routes are unchanged by this leaf, and its affected reference to the packaged presenter text was re-read and re-recorded at the candidate.",
+      "sources": [
+        {
+          "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
+          "path": "mcp/src/agents_remember/package_data/canvas/review-presenter.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TC6VN4",
+      "items": [
+        "sha256:963c1ad8753779a0c60c645c68c3fcaea512fabfb46d50acdebf9c67cb29c4e2"
+      ],
+      "reason": "Assigns the planned sentence to the module constant. A declaration, no invariant.",
+      "subject": "hunk:sha256:963c1ad8753779a0c60c645c68c3fcaea512fabfb46d50acdebf9c67cb29c4e2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TPH5YN",
+      "items": [
+        "sha256:aae0b3feb329a07cc37d712dcc3e03cc97d3548ece3903820b07504094506b4e"
+      ],
+      "reason": "The card adds the truth line constant; its payload, sorts, second lines, scope captions and planned-page recognition were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "f40c30b5b41ad4a8706f0ab35a45a5fb2cec9253",
+          "path": "dashboard/src/panels/review/explainer/planned/plannedPage.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/explainer/planned/plannedPage.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V84W4Q",
+      "items": [
+        "sha256:beed084293486b85a63936d1aa82543b7aac5987d798cc6fee105ab858191f64"
+      ],
+      "reason": "The anchored `explainReference` region moved with the planned-line edit but its content is unchanged; the fault - a live explainer makes Explain add a reference with four empty tree ids, which the seat refuses - still stands, and the record remains open.",
+      "revision": 1,
+      "subject": "WKN-B8Z195"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VVJQBH",
+      "items": [
+        "sha256:3cbd4220c6f571ede153fcf97acf527253655e23e13249322c927dc0e69bac47"
+      ],
+      "reason": "Passes the planned count into the reference reporter. Reporting, no invariant.",
+      "subject": "hunk:sha256:3cbd4220c6f571ede153fcf97acf527253655e23e13249322c927dc0e69bac47"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VXCBSB",
+      "items": [
+        "sha256:1d11914d79bcbcf970f2afb71f135e423bd51d21f39c2411b4583509d824d892"
+      ],
+      "reason": "Copies the plan's packets and declared effects into `planned/` before the binding is written. The workspace build's existing ordering is otherwise unchanged.",
+      "subject": "hunk:sha256:1d11914d79bcbcf970f2afb71f135e423bd51d21f39c2411b4583509d824d892"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W0Q47T",
+      "items": [
+        "sha256:54d872208e1ab423d4068f47b15f5112eaf41c35b07724d25a9cebc4145e0f7f"
+      ],
+      "reason": "The card says a planning leaf returns the planned chip before loading and failure; its four rows, warning precedence and local-time statements were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "4ca5c19c27020118aa8167b5a95033c9d5ddfdf5",
+          "path": "dashboard/src/panels/review/top-line/statusChipModel.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/top-line/statusChipModel.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WE4KQ0",
+      "items": [
+        "sha256:f07c343ad990e6d376e32f6a9ea2cea00a32b564547cc3bd51b4ec1d6490d51b"
+      ],
+      "reason": "Adds the optional `planned` argument that selects the planned sentence. The function's behavior for other tasks and its callers' contract are unchanged.",
+      "subject": "hunk:sha256:f07c343ad990e6d376e32f6a9ea2cea00a32b564547cc3bd51b4ec1d6490d51b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WK56WW",
+      "items": [
+        "sha256:97850908b43eaa6c3131b73dc904ed65c08c20b8035dc9f965dccb553a2c91bd"
+      ],
+      "reason": "Adds the writer that copies the plan into `planned/`, guarded by `guard_explainer_path` and the atomic writer. A local helper for the planned binding.",
+      "subject": "hunk:sha256:97850908b43eaa6c3131b73dc904ed65c08c20b8035dc9f965dccb553a2c91bd"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R02",
+          "packet": "requirements/BUG-R02-v3-the-explainer-before-a-task-starts.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v3"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
+            "content": "sha256:a1f7b913e7eb3243ed9dbfaf9f7baafe92655acbc5b8d5ce549e69506e9bf4f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FirstRequestForm"
+            },
+            "path": "dashboard/src/explainer/FirstRequestForm.tsx"
+          },
+          "before": {
+            "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
+            "content": "sha256:257e44d3504d8768846889ac9a1df0cc018caa2c1827ca2fcf662219ab90d6c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "FirstRequestForm"
+            },
+            "path": "dashboard/src/explainer/FirstRequestForm.tsx"
+          },
+          "id": "RLZ-2YQ4HK"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WTY46N",
+      "items": [
+        "sha256:dca63dd8e8e61929e36c236eb4bafe053b4d6518ccf105452ac46f213b58ab06"
+      ],
+      "reason": "The form's condition was read at the candidate: `canSend` now returns true for an empty request, and the first turn is composed as the end-to-end review or, on a planning task, the requirement and planned effects. The statement's fixed-target form, one request id and explicit Send still hold; only the old condition that a Send must carry references, text or stale work is no longer true, so the condition now admits the empty request.",
+      "revision": 2,
+      "subject": "INV-M71W78"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XFWDJA",
+      "items": [
+        "sha256:2a8612e9729787f4969e829af5eaa0b3e33461851f5146518dfca8d7665eed7a"
+      ],
+      "reason": "Adds the one-sentence planned request line. It is the client half of the planned empty Send, and no invariant governs this local form wording.",
+      "subject": "hunk:sha256:2a8612e9729787f4969e829af5eaa0b3e33461851f5146518dfca8d7665eed7a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XTVVTB",
+      "items": [
+        "sha256:56a7d971b944420f82cb236f4e796100a64614ac52b0456963c576e33f097959"
+      ],
+      "reason": "The overview was re-read at the W5 candidate; its statements about the test suites are unchanged by this leaf's delta, and its trace now names both test files.",
+      "sources": [
+        {
+          "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
+          "path": "mcp/tests/test_canvas_capsule_text.py"
+        },
+        {
+          "blob": "3d8a63a9c248b00f688dd75d13cfdfa68fee73b6",
+          "path": "mcp/tests/test_explainer_service.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y59XK6",
+      "items": [
+        "sha256:9d607a94cb2a6849e86e2342950b5a1e70a3f921f96701d1ca3a7b3f4e7fc1ea"
+      ],
+      "reason": "The overview was re-read at the candidate; its statements about the dashboard's routes and the review page are unchanged by this leaf, and its affected references were re-read and re-recorded at the candidate.",
+      "sources": [
+        {
+          "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
+          "path": "dashboard/src/explainer/FirstRequestForm.tsx"
+        },
+        {
+          "blob": "7d50cff26f1786af2d726df12a2433320b231469",
+          "path": "dashboard/src/explainer/model.test.ts"
+        },
+        {
+          "blob": "392da2790215a14029683debf1ea5da601663cd9",
+          "path": "dashboard/src/explainer/model.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YJRG9F",
+      "items": [
+        "sha256:e62608687334d0c5fc916759cf813f213c45fab9f361fa64acefad78013a4ad5"
+      ],
+      "reason": "Removes the old wait-for-review guard line that made the planned view unreachable. The replacement is the planned branch; a delete-only hunk, so no invariant.",
+      "subject": "hunk:sha256:e62608687334d0c5fc916759cf813f213c45fab9f361fa64acefad78013a4ad5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YZDG58",
+      "items": [
+        "sha256:5b8ba80838e6928f7b04d5524503d57004280f8049c510edc8ed59bbf110cca9"
+      ],
+      "reason": "The card adds the planned tree status and top-line chip wiring; its delivered line and note-area statements were read at the candidate and re-anchored.",
+      "sources": [
+        {
+          "blob": "cf77370234ae2b7b5d0f501b3b575a4a0de353cb",
+          "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/reading/pageParts.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z4KJ4B",
+      "items": [
+        "sha256:a2a2f3e71fe75a3ec5c5d847083e03323ec431b1ddaa250423dc10495b9ae9de"
+      ],
+      "reason": "Removes the adjacent old guard line replaced by the planned branch. A delete-only hunk, so no invariant.",
+      "subject": "hunk:sha256:a2a2f3e71fe75a3ec5c5d847083e03323ec431b1ddaa250423dc10495b9ae9de"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZNQJ4H",
+      "items": [
+        "sha256:8be969101fc570287b96af307eaa18eb615973c964add175b831f1fc23cadb79"
+      ],
+      "reason": "Adds the centre's planned-note style. Presentation only.",
+      "subject": "hunk:sha256:8be969101fc570287b96af307eaa18eb615973c964add175b831f1fc23cadb79"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e26fbc57f6b7b50499aa72a7120c3967b22a1b7a",
+            "content": "sha256:84adf3538c80ba032dcabbcb3ba7ac74651a5e3957a7b467cafcd18286875bc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "mounts PlannedReview when the leaf is in planning mode (/planned)"
+            },
+            "path": "dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx"
+          },
+          "before": {
+            "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+            "content": "sha256:b2f7d37fc7da43b9b6ad9f64a45c09fceb72ae394f308732bfb8a92901305e21",
+            "locator": {
+              "kind": "symbol",
+              "name": "mounts PlannedReview when the leaf is in planning mode (/planned)"
+            },
+            "path": "dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx"
+          },
+          "id": "PRF-7M7N1M"
+        },
+        {
+          "after": {
+            "blob": "6a264a7815ca477430cd2f645e7bd3d6d32c1b47",
+            "content": "sha256:2e15b8f55c507067f64f642af7289f87abb7d8700191abd792d1260c832f237f",
+            "locator": {
+              "kind": "symbol",
+              "name": "starts nothing: no fetch is made and no frame or host channel is mounted"
+            },
+            "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.test.tsx"
+          },
+          "before": {
+            "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+            "content": "sha256:2e15b8f55c507067f64f642af7289f87abb7d8700191abd792d1260c832f237f",
+            "locator": {
+              "kind": "symbol",
+              "name": "starts nothing: no fetch is made and no frame or host channel is mounted"
+            },
+            "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.test.tsx"
+          },
+          "id": "PRF-DTCYY1"
+        },
+        {
+          "after": {
+            "blob": "6a264a7815ca477430cd2f645e7bd3d6d32c1b47",
+            "content": "sha256:68369dec65ae9cb448c88af45bbf552f857efd9897f871048403534d54fea1ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "renders packet bodies safely, navigates resolved Scope tip addresses while keeping unresolved paths as text, and synchronizes planned tree and reading rows"
+            },
+            "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.test.tsx"
+          },
+          "before": {
+            "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+            "content": "sha256:68369dec65ae9cb448c88af45bbf552f857efd9897f871048403534d54fea1ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "renders packet bodies safely, navigates resolved Scope tip addresses while keeping unresolved paths as text, and synchronizes planned tree and reading rows"
+            },
+            "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.test.tsx"
+          },
+          "id": "PRF-X7SCZQ"
+        },
+        {
+          "after": {
+            "blob": "f40c30b5b41ad4a8706f0ab35a45a5fb2cec9253",
+            "content": "sha256:fe9e9c71f16840f7ea2f7051bbac67768219a78a10cf0f372819f9a40281dfd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "readPlannedPage"
+            },
+            "path": "dashboard/src/panels/review/explainer/planned/plannedPage.ts"
+          },
+          "before": {
+            "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+            "content": "sha256:fe9e9c71f16840f7ea2f7051bbac67768219a78a10cf0f372819f9a40281dfd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "readPlannedPage"
+            },
+            "path": "dashboard/src/panels/review/explainer/planned/plannedPage.ts"
+          },
+          "id": "RLZ-D88M6W"
+        },
+        {
+          "after": {
+            "blob": "a5aa285e7d36ec75942370fc62427bb63682a233",
+            "content": "sha256:3fff515b9ca3370c055fa77dc9cab2ebdb5132d597351547d9485f1a288dec68",
+            "locator": {
+              "kind": "symbol",
+              "name": "PlannedReview"
+            },
+            "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.tsx"
+          },
+          "before": {
+            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+            "content": "sha256:4156ef4af26ac3a2c0e354a409192b624030186d359236282b28009977ae62c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "PlannedReview"
+            },
+            "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.tsx"
+          },
+          "id": "RLZ-GBNED4"
+        },
+        {
+          "after": {
+            "blob": "f40c30b5b41ad4a8706f0ab35a45a5fb2cec9253",
+            "content": "sha256:d914e2dced838bd3c2e1e7a8d61dc393ba81a4ac75dd122c164f63b0e82dde92",
+            "locator": {
+              "kind": "symbol",
+              "name": "sortRows"
+            },
+            "path": "dashboard/src/panels/review/explainer/planned/plannedPage.ts"
+          },
+          "before": {
+            "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+            "content": "sha256:d914e2dced838bd3c2e1e7a8d61dc393ba81a4ac75dd122c164f63b0e82dde92",
+            "locator": {
+              "kind": "symbol",
+              "name": "sortRows"
+            },
+            "path": "dashboard/src/panels/review/explainer/planned/plannedPage.ts"
+          },
+          "id": "RLZ-P4YQQQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZR704P",
+      "items": [
+        "sha256:a38b726ecfd51486ac34444437544668db818ae3c11b68f24731ec745d5b831e"
+      ],
+      "reason": "Six entries recorded earlier versions of their symbols. The planned page, its read, its sorting and its integration case were read at the candidate: intended effects are still distinguished under the product-owned planned line, packets stay inert, the deterministic orders still agree, and no model, fetch or frame starts. The statement holds, and the entries are re-anchored.",
+      "revision": 1,
+      "subject": "INV-JFJ3Y3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZTHW9K",
+      "items": [
+        "sha256:000badf2ed8db76170b9489989209c3085b62d2fb2122a7524f3323a2163efbd"
+      ],
+      "reason": "Bounds the packet body and drops pre-wrap so the renderer's own elements carry layout. Presentation.",
+      "subject": "hunk:sha256:000badf2ed8db76170b9489989209c3085b62d2fb2122a7524f3323a2163efbd"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

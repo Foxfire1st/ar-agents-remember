@@ -1,7 +1,26 @@
 {
   "path": "mcp/src/agents_remember/models/task_doc.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+        "content": "sha256:534988e751301562441c516dc17d4837682b91d24e56d158ab9677bd92d87581",
+        "locator": {
+          "kind": "symbol",
+          "name": "rowSurvey"
+        }
+      },
+      "id": "RLZ-DFBNZN",
+      "invariant": "INV-KVSY4H",
+      "origin": {
+        "handoffEntry": "L3-W5-05-row-survey",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The declared response field carries the row survey through task_doc answer validation; enclosure retirement has its separate taskArchive field.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The registry row that maps `task_doc` to this model.\n\nAnchor: `task_reopen`",
@@ -70,12 +89,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
             "content": "sha256:5c30e0ea7d83307edc26375e86a6a52b98fee24e8dd5b11983ff02b40b31a8a1",
             "locator": {
-              "end": 273,
+              "end": 278,
               "kind": "line_range",
-              "start": 251
+              "start": 256
             }
           },
           "kind": "code"
@@ -87,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
             "content": "sha256:aaa38972ef8dd03ed155819997608978c0d0ae462167c6d9b2c4ef58d1b7d968",
             "locator": {
               "end": 151,
@@ -99,12 +118,27 @@
         },
         {
           "anchor": {
-            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
             "content": "sha256:bdef489820cb7c1b84c43ed89b4da3c50307f638d2d5bb2341705c0633378b3a",
             "locator": {
               "end": 185,
               "kind": "line_range",
               "start": 179
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Optional rowSurvey and taskArchive admit the archive producers' survey and enclosure outcomes. [13]\n\nAnchor: `TaskDocResponse`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "content": "sha256:9f194297b90b3506084075dd0ab19c5e0d585da2b540db98b51381c09352e4b3",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -199,24 +233,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
-            "content": "sha256:667882012ebd38bb51518f072cfa2239734d4aa86714747c7082f0e34bec837b",
+            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "content": "sha256:94f747b86d9b9d6a5b82c223ebcbd4c31bb795fbf3d0c63f919f661a7840fdc4",
             "locator": {
-              "end": 293,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
-            "content": "sha256:4508fec046752eaaf65e8b0ca0d94ead487d65fa07c4e6d83c2019ec5c3cf3c9",
-            "locator": {
-              "end": 287,
-              "kind": "line_range",
-              "start": 152
+              "kind": "symbol",
+              "name": "TaskDocResponse"
             }
           },
           "kind": "code"
@@ -224,16 +245,14 @@
       ]
     },
     "7": {
-      "note": "TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Removed-read refusal permits missing parsed identity only for ok=false/code=operation-removed; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional masterSync error/paths, updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused.",
+      "note": "TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Removed-read refusal permits missing parsed identity only for ok=false/code=operation-removed; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional `masterSync` carries its error, masterDocPath and renderedPath fields; updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
-            "content": "sha256:667882012ebd38bb51518f072cfa2239734d4aa86714747c7082f0e34bec837b",
+            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "content": "sha256:9f194297b90b3506084075dd0ab19c5e0d585da2b540db98b51381c09352e4b3",
             "locator": {
-              "end": 293,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"

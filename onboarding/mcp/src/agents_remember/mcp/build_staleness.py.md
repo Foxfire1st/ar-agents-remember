@@ -34,4 +34,6 @@ Every other name — reads, previews, checkout work, host operations, messages a
 - The refusal answer carries code `server-build-stale`, both digests, the remedy and the reading. [7]
 - Dispatch consults this module only for a stale installed build, after argument validation. [8]
 - A `server-build-stale` payload validates against the shared refusal model. [9]
+
+
 - The answer boundary keeps the stripped whole result for a stale-build refusal. [10]

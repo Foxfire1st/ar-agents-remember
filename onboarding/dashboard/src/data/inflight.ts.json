@@ -19,16 +19,16 @@
       ]
     },
     "2": {
-      "note": "The live repository catalog fetchRepos uses shareInflight for its request; no removed terminal catalog is a current consumer.\n\nAnchor: lines 113-116",
+      "note": "The live repository catalog fetchRepos uses shareInflight for its request; no removed terminal catalog is a current consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
             "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
             "locator": {
-              "end": 123,
+              "end": 137,
               "kind": "line_range",
-              "start": 120
+              "start": 134
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -57,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
             "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
             "locator": {
               "kind": "symbol",

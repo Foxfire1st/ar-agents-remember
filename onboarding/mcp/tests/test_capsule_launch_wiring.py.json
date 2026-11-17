@@ -87,16 +87,16 @@
       ]
     },
     "15": {
-      "note": "The lane row D9's fail-closed loader requires for every new test module.  Anchor: \"mcp/tests/test_capsule_launch_wiring.py\"",
+      "note": "The lane row D9's fail-closed loader requires for every new test module. Anchor: \"mcp/tests/test_capsule_launch_wiring.py\" Anchor: \"mcp/tests/test_capsule_launch_wiring.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 84,
+              "end": 809,
               "kind": "line_range",
-              "start": 84
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -173,38 +173,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:8fd51e671406bdc04ea2c8a36fd76d9421cb267a3b39b7c294791cf76416e7bb",
+            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
             "locator": {
-              "end": 166,
+              "end": 5044,
               "kind": "line_range",
-              "start": 65
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:0e7e698f864429471bf9fb8a7872c1db9aa391a81606be6ae62492fad8db737e",
-            "locator": {
-              "end": 1150,
-              "kind": "line_range",
-              "start": 1125
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:63a41bbdf1e5ef857bd6a176c8e21f01fd7543cf1913a36e4f7e06c76239d666",
-            "locator": {
-              "end": 2491,
-              "kind": "line_range",
-              "start": 2390
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -259,7 +233,7 @@
       ]
     },
     "3": {
-      "note": "The negative case: an un-compilable role refuses by name before any host effect.\n\nAnchor: `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect`",
+      "note": "The mode-gate case checks that unaddressable roles yield a named refusal with no delivery; it also checks an admitted bootstrap capsule. It is not a host-effect measurement.\n\nAnchor: `test_the_mode_gate_names_capsule_or_refused_for_every_seat_class`",
       "targets": [
         {
           "anchor": {
@@ -274,7 +248,7 @@
       ]
     },
     "4": {
-      "note": "The one decision point, for every seat class.\n\nAnchor: `test_the_mode_gate_names_capsule_legacy_and_refused_for_every_seat_class`",
+      "note": "The one decision point, for every seat class.\n\nAnchor: `test_the_mode_gate_names_capsule_or_refused_for_every_seat_class`",
       "targets": [
         {
           "anchor": {

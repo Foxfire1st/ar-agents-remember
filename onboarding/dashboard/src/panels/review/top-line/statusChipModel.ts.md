@@ -12,7 +12,7 @@ Compose the status chip’s label, tone and four rows from the review owners’ 
 
 ### Logic
 
-chipFacts always builds rows for Sync movement, External Git movement, Subject staleness and Bound comparison. Loading takes the reading state; a supplied failure takes unavailable with the first sentence of its detail.
+chipFacts always builds rows for Sync movement, External Git movement, Subject staleness and Bound comparison. A leaf the task list reports as planning returns the grey planned chip with the reason that nothing is built yet, before the reading and failure branches; otherwise loading takes the reading state, and a supplied failure takes unavailable with the first sentence of its detail.
 
 Measured branch movement takes warning precedence, followed by stale comparison, unavailable movement, both movements current, then not measured. Explanations remain the first sentence of an owner’s reason/statement.
 
@@ -26,4 +26,5 @@ It reads no clock and measures no Git state; callers supply now, the admitted pa
 
 - State wording, explicit measurement absence and supplied-date time formatting [1]
 - Warning/measurement precedence and owner prose [2]
-- Four rows plus loading/failure priority [3]
+
+- The four rows are built first; a planning leaf returns the planned chip before loading and failure, and otherwise loading or failure chooses the state. [3]

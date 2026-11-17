@@ -233,7 +233,6 @@ source; requirement/provenance names are not fresh runtime evidence.
 - **The retained-generation label whose closing sentence is chosen by what the retained payload actually is.** [11]
 - The outcome region evaluates shown-empty and retained-nonempty notes from supplied props and suppresses outer pending/problem lines when the workspace owns them; normal caller coherence is not arbitrary-prop validation. [12]
 
-- The surface wires the outcome region to the target-bound read and appropriate retry/source actions. [13]
 
 - Stored mounted/coherent-region cases assert phase distinctions and retained-empty/real labels; seeded capture responses and their case results are not fresh execution. [15]
 - The problem block exposes owner fields and explicit missing-field sentences as open review content, with eligibility-bound retry/source actions. [18]
@@ -254,3 +253,5 @@ No new cross-repository boundary is introduced by these presentation helpers.
 
 - Current lane file-diff failures consume the shared ReviewProblemBlock with the failed file named as subject; the removed SourceContent consumer belongs to the prior source epoch. [14]
 - Surviving mounted-surface cases stub fetch and assert unavailable/validation/authority fields and explicit network retry; the removed expansion cases remain historical evidence, not current execution. [16]
+
+- The surface wires the outcome region to the target-bound read and appropriate retry/source actions. [13]

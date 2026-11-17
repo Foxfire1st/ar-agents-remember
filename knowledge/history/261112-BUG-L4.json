@@ -1,0 +1,169 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L4",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5ab7af8f260b53e59a6067272d0399f53e11d9c1",
+            "content": "sha256:268db75accaf6b093ec3fa9cbbb470370763aa5dd2ad431252ecf623ee4977fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_sync_repository_default.py"
+          },
+          "before": {
+            "blob": "762b3954afde7808a49bd97f0e2e1a1ea12aecfe",
+            "content": "sha256:d6fe64fa741ecc2ac820cdbafd630ac23a5b61a8d489c30fbef1221c84cc47f1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_sync_repository_default.py"
+          },
+          "id": "RLZ-XHV1H0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-34BVQ4",
+      "items": [
+        "sha256:c250c1d8de054639fdadcfe21b5411c33b00791ff69f0804d68d9b5dd31e504d"
+      ],
+      "reason": "RLZ-XHV1H0 recorded an earlier version of `mcp/tests/test_sync_repository_default.py`. The statement was read against that file at the leaf's code candidate: `test_default_sync_pulls_main_keeps_the_pair_and_logs_the_sources`, `test_resume_and_cancel_read_the_journal_and_continue_reads_the_default` and `test_ref_recovery_rebuilds_the_recorded_default_branch_for_cancel` still demonstrate the pinning, the unchanged base pair, the one sync-log entry, the journal-only resume and cancel, and the moved-default refusal. The statement still holds, and the file-anchored entry is re-resolved without a meaning change.",
+      "revision": 1,
+      "subject": "INV-STH8F0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
+            "content": "sha256:16b21c9de9fdde48820d2058649ab371a83e711f9443d3c5587bbdc21f97abbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_legacy_series_memory_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "before": {
+            "blob": "a6b1a5c76b1754c4a6fa5636a490044404c89dc2",
+            "content": "sha256:9a3b9b6f278605ae183032780b1f4aec320fa6178388afd08320d7a09006bd3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_legacy_series_memory_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "id": "RLZ-M7TMYY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4C748B",
+      "items": [
+        "sha256:84f20e9270528372e3f21fcf1a2cf996ab27e7822dd0fd22132814a6abfff323"
+      ],
+      "reason": "RLZ-M7TMYY recorded the module at an earlier blob. The statement was read against `_legacy_series_memory_refusal` at the leaf's code candidate: the early check takes its source branch from `source_strategy(args.sync_source)`, so a repository-default sync judges the repository default branch, not the contract's parent line. The statement still holds, and the entry is re-anchored at the same symbol without a meaning change.",
+      "revision": 1,
+      "subject": "INV-HN9XYV"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-3XH6Q0",
+          "revision": 1
+        },
+        {
+          "id": "INV-4R4PF0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8PGMJB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8V44VE",
+          "revision": 1
+        },
+        {
+          "id": "INV-97T18K",
+          "revision": 1
+        },
+        {
+          "id": "INV-HVXZ6N",
+          "revision": 1
+        },
+        {
+          "id": "INV-HYEKF9",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZYWR60",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-6ZGQGZ",
+      "items": [
+        "sha256:cc005d270121954ed53ab8ecf6030960d2763b1fb08f12e35f79fea9232760fd"
+      ],
+      "reason": "The family was reached through INV-8V44VE's re-anchored proofs. Its record is unchanged at revision 1: all eight members were examined at their current revision 1, each statement still expresses its part of the joint guarantee, and the routes still cover the members' realizations. The re-anchoring changes no member's meaning and adds no family claim.",
+      "revision": 1,
+      "subject": "FAM-MEH3SB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1565558ccc756d7b2efd3e656ac93138d1e8f528",
+            "content": "sha256:6b2fa269f80e81b62c952eb8ac8e01e4067403669ef60b61d6d8469b0cfdb761",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_standalone_master_fingerprint_is_stable_and_differs_from_its_sprint_case"
+            },
+            "path": "mcp/tests/test_semantic_topology_standalone.py"
+          },
+          "before": {
+            "blob": "6ab8cb683e44fb6ec215891193e43c4d9b8d97cd",
+            "content": "sha256:c7c3ba5dff81915c8903e54d5e1d34ae87bbcdc08eb0f1fa9e12d616f1283e49",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_standalone_master_fingerprint_is_stable_and_differs_from_its_sprint_case"
+            },
+            "path": "mcp/tests/test_semantic_topology_standalone.py"
+          },
+          "id": "PRF-VPJNN9"
+        },
+        {
+          "after": {
+            "blob": "86d27cd4466e0a4f52fd90fc8bc9b8d5bf7032f7",
+            "content": "sha256:679d8e6e9a1a13c8bd5de8c61180d3ab243b077bcfd30f2bf5df7a76fda289fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_status_prepare_publish_and_validate_a_standalone_masters_task"
+            },
+            "path": "mcp/tests/test_standalone_master_route.py"
+          },
+          "before": {
+            "blob": "1b9a5e6ec9e881ac3ab58dacbcfa2409377cb690",
+            "content": "sha256:59cf9b6a8465552014617eda516fd1b8f56418c6957696253cdeeb880c069a15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_status_prepare_publish_and_validate_a_standalone_masters_task"
+            },
+            "path": "mcp/tests/test_standalone_master_route.py"
+          },
+          "id": "PRF-WAG1KM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WNN47M",
+      "items": [
+        "sha256:b30788a97ed59b83a66cb1e2daa16bd52d06d3cb283650aaf1082aa98c4b6a4b"
+      ],
+      "reason": "PRF-VPJNN9 and PRF-WAG1KM recorded earlier versions of their test files. Both tests were read at the leaf's code candidate: `test_a_standalone_master_fingerprint_is_stable_and_differs_from_its_sprint_case` still shows a stable standalone fingerprint that differs from the sprint case, and `test_status_prepare_publish_and_validate_a_standalone_masters_task` still prepares, publishes, reads status and validates a standalone master's task through `write_curator_evidence`. Each recorded facet still holds, and both proofs are re-anchored at their symbols without a meaning change.",
+      "revision": 1,
+      "subject": "INV-8V44VE"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

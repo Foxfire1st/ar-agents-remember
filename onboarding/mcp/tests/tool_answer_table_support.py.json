@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6b3ac4ac6a1f098676dc141a71eb25ee5e0752ab",
+        "blob": "c579102edfbc563a70feda3cd6643092b8e4813b",
         "content": "sha256:161ebaafe68df07701b05d2f139e9ca752f8ef68511b3830763d3d4c1bc9bbf2",
         "locator": {
           "kind": "symbol",
@@ -19,6 +19,24 @@
       },
       "rationale": "validate_row_case checks one case payload's measured bound, code validity and field cover, so invalid-code and guard-hit cases reject the row itself.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c579102edfbc563a70feda3cd6643092b8e4813b",
+        "content": "sha256:56913e9859c7fe8602e64cff26abdd2f57ff0314c7da316ab312cf1db810f530",
+        "locator": {
+          "kind": "symbol",
+          "name": "ROW_CASE_FRAMEWORK_KEYS"
+        }
+      },
+      "id": "RLZ-Y26JE7",
+      "invariant": "INV-180VCA",
+      "origin": {
+        "handoffEntry": "CUR-W7-table-cut-framework",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The independent table validator accepts the common cut hint as answer framework metadata while continuing to reject undeclared payload fields.",
+      "role": "support"
     }
   ],
   "references": {
@@ -27,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b3ac4ac6a1f098676dc141a71eb25ee5e0752ab",
+            "blob": "c579102edfbc563a70feda3cd6643092b8e4813b",
             "content": "sha256:be26165859dfe0965812002585f16cc0f47d2314b4f5ad0a17c66813d33473f9",
             "locator": {
               "kind": "symbol",
@@ -43,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b3ac4ac6a1f098676dc141a71eb25ee5e0752ab",
+            "blob": "c579102edfbc563a70feda3cd6643092b8e4813b",
             "content": "sha256:b7d84c09ce959c347a6bdb99764a49e307563faf689d373889aa7ccf6848be1d",
             "locator": {
               "kind": "symbol",
@@ -59,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b3ac4ac6a1f098676dc141a71eb25ee5e0752ab",
+            "blob": "c579102edfbc563a70feda3cd6643092b8e4813b",
             "content": "sha256:42177258d3478085014935889d03303ecb36215c82f8d7cf1fff986ea1718da4",
             "locator": {
               "kind": "symbol",

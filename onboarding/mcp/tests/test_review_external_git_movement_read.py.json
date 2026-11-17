@@ -87,12 +87,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 727,
+              "end": 809,
               "kind": "line_range",
-              "start": 727
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -101,12 +101,12 @@
       ]
     },
     "29": {
-      "note": "**The documented section the matrix case asserts against, generated from the production table.**",
+      "note": "**The repository document that must contain the rendered support matrix verbatim.**",
       "targets": [
         {
           "anchor": {
-            "blob": "0c6c20e9222ec9800d48e087ab0aa6a3032fc0ed",
-            "content": "sha256:1aa33777ae7a33dfc51223b8fcff85df6157f2666df3ee3e15896a582e545153",
+            "blob": "0a137c8b837455415d88d5951d4367b1b4431896",
+            "content": "sha256:3be3f359d0afb87442fa313c093fa2705be760f45a785c2e3b4882b39d5cbc7c",
             "locator": {
               "kind": "file"
             },

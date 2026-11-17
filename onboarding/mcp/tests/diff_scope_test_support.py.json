@@ -30,7 +30,7 @@
       ]
     },
     "41": {
-      "note": "`rebuild_after_tree` supplies the current fixture or assertion described above.\n\nAnchor: `_author_revised_revision`",
+      "note": "`rebuild_after_tree` supplies the current fixture or assertion described above.\n\nAnchor: `rebuild_after_tree`",
       "targets": [
         {
           "anchor": {
@@ -125,7 +125,7 @@
       ]
     },
     "61": {
-      "note": "**The added claim, whose recorded identity is the blob the candidate tree really holds.**\n\nAnchor: `_add_successor_claim`",
+      "note": "**The added claim, whose recorded identity is the blob the candidate tree really holds.**",
       "targets": [
         {
           "anchor": {
@@ -228,16 +228,29 @@
       ]
     },
     "66": {
-      "note": "**The contract this module's artifact row is registered under.**  Anchor: `knowledge-diff-cases`",
+      "note": "**The contract this module's artifact row is registered under.** Anchor: `knowledge-diff-cases` Anchor: `knowledge-diff-cases`",
       "targets": [
         {
           "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
+            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "content": "sha256:5187759dd6296819d4d34463de47bcd6c46909ea7c53d6a826bbb51edef3ba1a",
             "locator": {
-              "end": 4919,
+              "end": 1341,
               "kind": "line_range",
-              "start": 4917
+              "start": 1305
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "content": "sha256:2e75aecef7732387589ac0894f66fe040076563eefec8e87d1a4b653ba254593",
+            "locator": {
+              "end": 4974,
+              "kind": "line_range",
+              "start": 4971
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

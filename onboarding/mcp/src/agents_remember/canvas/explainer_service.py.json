@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+        "blob": "f1a614c3853985134f11c860f66383388eb5da04",
         "content": "sha256:3aea67a3b0884842414ec1529dd4db4d0595ecdde9706e3bede4ea7d4c9a22df",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+        "blob": "f1a614c3853985134f11c860f66383388eb5da04",
         "content": "sha256:250779da2f9b9c091d1862ca2fee038b5965f1b9dcf3adc4eebfbfa41f8ac5b7",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+        "blob": "f1a614c3853985134f11c860f66383388eb5da04",
         "content": "sha256:3aea67a3b0884842414ec1529dd4db4d0595ecdde9706e3bede4ea7d4c9a22df",
         "locator": {
           "kind": "symbol",
@@ -58,16 +58,15 @@
   ],
   "references": {
     "1": {
-      "note": "A Send that carries nothing, or names an unknown history mode, is refused before any build\n\nAnchor: `def build_seat(`",
+      "note": "An unknown history mode is refused before any build, and an empty Send is composed as the end-to-end review or, on a planning leaf, the planned request.",
       "targets": [
         {
           "anchor": {
-            "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
-            "content": "sha256:efb5385b70ed13b8eeedb8494791e94115a1159d1b30a177c9c1f23c23269b66",
+            "blob": "f1a614c3853985134f11c860f66383388eb5da04",
+            "content": "sha256:323b3b17b3236b3cf1aec0300351985f998f231c15cc65b63a23824a7aede4d5",
             "locator": {
-              "end": 867,
-              "kind": "line_range",
-              "start": 801
+              "kind": "symbol",
+              "name": "build_seat"
             }
           },
           "kind": "code"
@@ -79,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+            "blob": "f1a614c3853985134f11c860f66383388eb5da04",
             "content": "sha256:250779da2f9b9c091d1862ca2fee038b5965f1b9dcf3adc4eebfbfa41f8ac5b7",
             "locator": {
-              "end": 948,
+              "end": 955,
               "kind": "line_range",
-              "start": 870
+              "start": 877
             }
           },
           "kind": "code"
@@ -96,12 +95,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+            "blob": "f1a614c3853985134f11c860f66383388eb5da04",
             "content": "sha256:750b600db9065c6801206794102558aa7f10cf14fa139f28384bfc2f4b97de6c",
             "locator": {
-              "end": 346,
+              "end": 352,
               "kind": "line_range",
-              "start": 337
+              "start": 343
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A planned empty Send asks for the requirement and planned effects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1a614c3853985134f11c860f66383388eb5da04",
+            "content": "sha256:65baa0d799b749aeb692a99bab4274998077ea00f6573b19d1d3c725d319fed6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PLANNED_REQUEST"
             }
           },
           "kind": "code"

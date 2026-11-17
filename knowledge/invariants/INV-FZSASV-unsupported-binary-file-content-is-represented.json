@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Backend classification and the shared pane must preserve binary metadata rather than decoding control bytes into viewer text."
+  },
+  "applicability": "File and note content classified as unsupported binary content before viewer text presentation.",
+  "conditions": [
+    "The existing binary probe or UTF-8 decoding result identifies the content as binary.",
+    "The read result supplies its measured byte count rather than decoded binary text."
+  ],
+  "exclusions": [
+    "Supported media content rendered by MediaView.",
+    "Changing the existing text-route size limit."
+  ],
+  "id": "INV-FZSASV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-R05@v1 §7; mcp/tests/test_serving_files.py::RouteTests::test_a_nul_bearing_text_suffix_is_binary_not_control_text; mcp/tests/test_notes_folder.py::test_a_nul_bearing_note_is_binary_not_control_text; dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx :: degrades a binary note to a byte-count placeholder instead of raw bytes"
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-R05@v1 §7",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Unsupported binary file content is represented as binary file metadata with its byte count rather than decoded text.",
+  "status": "proposed",
+  "supersedes": []
+}

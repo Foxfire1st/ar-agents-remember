@@ -260,15 +260,16 @@
       ]
     },
     "40": {
-      "note": "The module's own statement of the three properties it exists for — measured from the pair, delimiter-safe, three separate facts with a failed measurement as a state — and of why the pane lives beside it.",
+      "note": "The module declares pair-bound measurement, delimiter-safe addresses, separate status/mode/renderability, and explicit failed-measurement states; its source pane combines the inventory with attribution.",
       "targets": [
         {
           "anchor": {
             "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
-            "content": "sha256:3a35142890c33e753154817847fd5d5c62b932f490645573c8777ac756b4e99f",
+            "content": "sha256:7e542c12ec1f89ec6c947b5ac26e481e31cc4a30879a3d86d1d019d79dd70a46",
             "locator": {
-              "kind": "symbol",
-              "name": "source_pane"
+              "end": 30,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -560,17 +561,18 @@
       ]
     },
     "58": {
-      "note": "**The wire value this module builds, with the count checked against the list and the unrepresentable rule enforced at construction.**  Anchor: `ReviewSourceInventory`",
+      "note": "**The wire value this module builds, with the count checked against the list and the unrepresentable rule enforced at construction.** Anchor: `ReviewSourceInventory`",
       "targets": [
         {
           "anchor": {
-            "blob": "d6843e1bf6a3ef5ef5b553a0ce18ee32f62ead1a",
-            "content": "sha256:f616027bf060a7d8767109cef98805aa1a6770ee904bf60eadfb6e03c31f72e2",
+            "blob": "5e02f9598b6bfebef7bb44697138a77410c5cda1",
+            "content": "sha256:a6ded60f6de0902dd814d1c229af2628aaa97baf14d42932e23e87cb7d90bb48",
             "locator": {
-              "end": 65,
+              "end": 227,
               "kind": "line_range",
-              "start": 65
-            }
+              "start": 166
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source.py"
           },
           "kind": "code"
         }
@@ -664,12 +666,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
             "content": "sha256:efc0292005a5152b8ad840c06eb567691b6b60bb4e1eeb25cbc719653528349c",
             "locator": {
-              "end": 360,
+              "end": 306,
               "kind": "line_range",
-              "start": 299
+              "start": 245
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -682,12 +684,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
             "content": "sha256:865c82754f467bf036bfe18c67ddd34244574fa9d71fa1ab5da362bad0b03bd0",
             "locator": {
-              "end": 324,
+              "end": 270,
               "kind": "line_range",
-              "start": 309
+              "start": 255
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -700,12 +702,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "blob": "ad07331f0d9d2333c73512e63f1a13cf82ede0ce",
             "content": "sha256:88dd072192c5403c9ddc1b3a98a1fdd4aa799f6ba13af7b94c5df1e2c289bdc7",
             "locator": {
-              "end": 725,
+              "end": 738,
               "kind": "line_range",
-              "start": 688
+              "start": 701
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },

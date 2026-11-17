@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations"
+    ],
+    "justification": "The shared projection, memory-history origin resolver and two public callers must agree across renames, new closure episodes and merges; named public-read regressions catch substitution of a later or arbitrary parent pair."
+  },
+  "applicability": "Closed-weakness projection through the public knowledge_read weakness view with closed rows included and the record view, when the stored closure has no commit.",
+  "conditions": [
+    "A unique origin is the introducing memory commit for this selected closed block, followed through the record ID’s merge-preserving history.",
+    "A derived commit requires a readable final Code-Commit trailer at that origin and an identical full real commit in the selected code repository.",
+    "An uncommitted directory closure is pending; an unreadable or ambiguous origin, incomplete ancestry, or unusable committed attribution is unavailable and explained with commitNote."
+  ],
+  "exclusions": [
+    "The projection changes only returned data; it does not backfill record or index bytes.",
+    "A stored explicit commit is retained unchanged rather than replaced by a later memory pair.",
+    "The guarantee does not promise successful attribution when the required history, trailer or code object is unavailable."
+  ],
+  "id": "INV-ZK0X8M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L3-W9-worker.md, item17 acceptance block, checks and Closure census; W9-evidence.tar.gz contains the exact red/green test results and executable commands."
+      ],
+      "path": "261112-BUG-L3-W10-D817-corrected-writer-input.json"
+    },
+    "handoffEntry": "L3-W9-closing-pair",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "For a closure without a stored commit, the reader uses the unique closing memory commit's Code-Commit trailer or explains why attribution is pending or unavailable.",
+  "status": "proposed",
+  "supersedes": []
+}

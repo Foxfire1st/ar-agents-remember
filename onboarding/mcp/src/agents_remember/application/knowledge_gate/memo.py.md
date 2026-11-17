@@ -35,14 +35,14 @@ to an enclosing recorder even when no key is returned.
 
 ### Serving and keeping
 
-- `remembered(key)` returns the kept verdict only when it is at most `MAX_AGE_SECONDS` old and
+- `remembered(key)` returns the kept verdict only when
   `_Kept.still_read_the_same()` holds. That check is `changed_observations` over the kept rows: every
   recorded path resolution and existence probe is repeated first, and recorded files are hashed again
   only when all of those still give the recorded answer. A requirement packet whose locator resolves to
   another file at the time of the check is therefore a miss even when the other file has the same bytes,
   and the bytes behind the other target are not read for the check. A manifest that appeared or vanished, a newly approved
-  version and edited settings are misses as well. Only after the age and unchanged-input checks
-  succeed does `remembered` replay the kept observations into the current recorder and return the verdict.
+  version and edited settings are misses as well. Only after the unchanged-input check
+  succeeds does `remembered` replay the kept observations into the current recorder and return the verdict.
 - `remember(key, result, reads)` keeps a verdict only when `result.memoisable` is true and the rows hold
   no failed observation (`has_failed_observation`: a conflict, or an unreadable row). A verdict behind
   which an input could not be read, or was read at two identities, is returned to the caller and computed
@@ -50,8 +50,8 @@ to an enclosing recorder even when no key is returned.
 
 ### Bounds
 
-`GATE_MEMO` is a `BoundedMemo` of `CAPACITY` 16 verdicts, least recently used first out, and
-`MAX_AGE_SECONDS` is 900.
+`GATE_MEMO` is a `BoundedMemo` of `CAPACITY` 16 verdicts, least recently used first out.
+Unchanged observations permit reuse at any age; size eviction limits retention.
 
 ### Dependency observations when constructing and reusing a key
 
@@ -60,8 +60,8 @@ contract and task-document hashes while also recording their observed identity; 
 before normal key refusal handles it. A missing task document found as `None` still uses the existing
 empty-byte digest input rather than reading an invented document path.
 
-Serving a kept verdict replays its stored read set only after the verdict is young enough and its
-observations still match. Missing, expired or changed entries return no verdict before that replay.
+Serving a kept verdict replays its stored read set only after its observations still match.
+Missing or changed entries return no verdict before that replay.
 Keeping a new verdict still requires both `result.memoisable` and a read set without a failed observation;
 replay does not turn incomplete or conflicting inputs into cacheable results.
 
@@ -71,18 +71,22 @@ replay does not turn incomplete or conflicting inputs into cacheable results.
 ### Repo-Internal References
 
 - The module docstring: what the key names, the inputs outside the trees, the bounds, what is never kept.
-- The two bounds.
+- The sixteen-verdict capacity bound.
 - The key's fields. [12]
 - A kept verdict is current when no recorded observation changed. 
 
 - The key from contract bytes, the strict task lookup and the build stamp. [14]
 
 
-- A kept verdict is served only when young enough and unchanged. [15]
+- A kept verdict is served while its recorded observations remain unchanged, at any age. Anchor: `remembered` [15]
 
 - Only a memoisable verdict without a failed observation is kept. 
 
-- The gate asks the memo, records its reads and offers the verdict. [17]
+
+
+- The gate asks the memo, records its reads and offers the verdict. Anchor: `evaluate_leaf_gate` [17]
+
+
 
 - A warm pass becomes the refusal when the packet locator is retargeted to a file with the same bytes. [18]
 - The gate's verdict follows the packet in both directions, and a repeated evaluation gives the same verdict. [19]

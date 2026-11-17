@@ -24,11 +24,11 @@ An entry surface opens a typed artifact target in Cockpit. Notes load folders la
 
 ## Construction
 
-`NotesReaderViewer.tsx` dispatches the discriminated `TaskArtifactReaderTarget`. `useNotesFolderCache.ts` owns the retained folder store, stable paging callbacks, fill/vanish recovery and LRU protection; NotesTree wires it to the shared ExplorerTree. Notes use `data/notes.ts` to request one folder at a time from `/api/notes/folder` and an opened file from `/api/notes/read`. Reference resolution belongs to the entry surface and uses one `POST /api/notes/resolve` request for the document's references. Requirements use `data/requirements.ts` and the target's task-document selector to call `/api/requirements/list` and `/api/requirements/read`.
+`NotesReaderViewer.tsx` dispatches the discriminated `TaskArtifactReaderTarget`. `useNotesFolderCache.ts` owns the retained folder store, stable paging callbacks, fill/vanish recovery and LRU protection; NotesTree wires it to the shared ExplorerTree. Notes use `data/notes.ts` to request one folder at a time from `/api/notes/folder` and an opened file from `/api/notes/read`. Entry surfaces resolve their references through the notes resolver. Opened Markdown notes also resolve relative links through NotesTargetReader's master-scoped document context. Requirements use `data/requirements.ts` and the target's task-document selector to call `/api/requirements/list` and `/api/requirements/read`.
 
 The notes rail reuses `ExplorerTree`. It opens ancestors of the selected note, fetches successive folder parts until that note is found or the folder is exhausted, and offers a synthetic row to load another part. A vanished folder clears its cached entries and preserves the server's reason. The folder cache refreshes access order and attempts least-recently-used eviction above 32 folders, protecting the open note's ancestor folders and the folder being inserted. It can exceed 32 when no eligible eviction candidate remains. Requirements use a separate flat button rail populated from their listing.
 
-Fetched notes, requirements, and reports share `DualPane`: markdown occupies its partnerless markdown pane, other text uses its read-only `FilePane`, and binary content produces a byte-count placeholder. `NotePane` supplies local failure and empty/loading placeholders and adds the truncation banner for truncated markdown.
+Fetched notes, requirements and reports share DualPane: Markdown occupies its partnerless Markdown pane, other text uses FilePane, recognized media uses MediaView and other binary content has a byte-count placeholder. `NotePane` supplies local failure and empty/loading placeholders and adds the truncation banner for truncated Markdown.
 
 A `task-report` target fetches its recorded report through `readRoleReport`, using the role, request ID, and task-document reference. A supplied `role-report` renders the content already passed to the component. The decisions target renders the supplied whole log, with authored rows newest-first and product records in a separate muted counted end disclosure.
 
@@ -38,10 +38,10 @@ The local notes API fixture recognizes `/api/task-document`, looks up the reques
 
 ## Invariants And Boundaries
 
-- The notes routes read coordination files without mutating them. Server-side selector checks and path confinement govern access; folder replies have stable ordering and at most 200 entries per part, and note content is binary-tolerant and capped for display at 2 MiB. The extracted cache owns folder reads and the screen keeps content reads via `data/notes.ts`, rather than mutating the dashboard store.
+- The notes routes read coordination files without mutating them. Server-side selector checks and path confinement govern access; folder replies have stable ordering and at most 200 entries per part, and note content tolerates binary input. Text display is capped at 2 MiB; media-byte allowance is a separate server contract. The extracted cache owns folder reads and the screen keeps content reads via `data/notes.ts`, rather than mutating the dashboard store.
 - Notes, requirements, and report content reuse `DualPane`; the decisions log has its own list rendering. The notes tree reuses `ExplorerTree`, while requirements have a flat rail. There is no second bespoke notes content reader or notes tree.
 - Requirement references resolve against registered requirement entries before notes references are considered. A reference containing a requirement address cannot fall through to a note target.
-- The reader uses Panda CSS for its local styling. Its header contains the Back button; the note rail header is sticky. The inherited intent is no CSS animation (GSAP/Motion only); the reused DualPane currently has a CSS background transition. This is an implementation/intent discrepancy, not authority here to withdraw that wider policy.
+- The reader uses Panda CSS for its local styling. Its header contains the Back button; the note rail header is sticky. The base card contains this unresolved observation: “The inherited intent is no CSS animation (GSAP/Motion only); the reused DualPane currently has a CSS background transition. This is an implementation/intent discrepancy, not authority here to withdraw that wider policy.” Its governing authority has not been established; the Manager has referred the question to the Architect outside BUG-R05@v1.
 - Kind-aware screen headings and open-path labels do not imply fully kind-aware status text: `NotePane` still says “Select a note from the tree.” when content is absent, and its failure text distinguishes notes from everything else as “requirement.”
 
 ## Retained Status Metadata
@@ -53,14 +53,23 @@ The current source-backed Notes Reader integration is recorded by the repository
 - The read-only notes routes. [1]
 - The same-origin notes client (`listFolder`/`readNote`/`resolveNoteReferences`). [2]
 
-- The reused File Viewer content pane maps both notes and requirement packets to markdown/code/placeholder rendering. [3]
 
 
-- Cockpit defines the note-opening callback. [4]
+- The shared content pane maps notes and requirement packets into rendered Markdown, source text or media through DualPane, with explicit placeholders for load failure or no selection. [3]
 
 
 
-- Cockpit defines the note-selection callback. [5]
+
+
+- The cockpit shellActions owner defines openNotes, which clears a change-set target, stores the artifact target and opens its reader. [4]
+
+
+
+
+
+
+- The cockpit shellActions owner defines selectNote, updating the current notes or requirements path while retaining the reader target. [5]
+
 
 
 
@@ -70,8 +79,11 @@ The current source-backed Notes Reader integration is recorded by the repository
 - TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target. [7]
 
 
+
+
 - The task-body fixture returns the path-addressed native entry summary or 404; the cockpit seed uses canonical native wire fixture builders. [8]
 
-- ReaderLayout exposes the shared left toggle only for a present rail and applies the same visibility state to the panel and handle. [9]
 
 
+
+- ReaderLayout exposes the shared left toggle only for a present rail and applies the same visibility state to the panel and handle. Anchor: "function ReaderLayout(" [9]

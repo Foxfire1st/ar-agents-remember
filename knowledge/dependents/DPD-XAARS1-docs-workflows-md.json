@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The workflow page start step names the Manager of the task master and its document steps are unchanged; the workspace change records a standalone master own folder where the page says the paths lie.",
-    "task": "261112-RSM-L1",
+    "statement": "The sentence that the knowledge gate has no waiver now says beside it that a master's recorded landing whose chain proof passes and whose only findings are stale entries keeps them as the master's debt and lands; the rest of the page was not read again.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,7 +66,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
     },
     {
-      "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+      "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     },
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/application/worktree_tools.py"
     },
     {
-      "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+      "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },

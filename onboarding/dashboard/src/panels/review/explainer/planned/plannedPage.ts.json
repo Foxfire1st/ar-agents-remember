@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+        "blob": "f40c30b5b41ad4a8706f0ab35a45a5fb2cec9253",
         "content": "sha256:fe9e9c71f16840f7ea2f7051bbac67768219a78a10cf0f372819f9a40281dfd6",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+        "blob": "f40c30b5b41ad4a8706f0ab35a45a5fb2cec9253",
         "content": "sha256:d914e2dced838bd3c2e1e7a8d61dc393ba81a4ac75dd122c164f63b0e82dde92",
         "locator": {
           "kind": "symbol",
@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+            "blob": "f40c30b5b41ad4a8706f0ab35a45a5fb2cec9253",
             "content": "sha256:fe9e9c71f16840f7ea2f7051bbac67768219a78a10cf0f372819f9a40281dfd6",
             "locator": {
-              "end": 321,
+              "end": 325,
               "kind": "line_range",
-              "start": 298
+              "start": 302
             }
           },
           "kind": "code"
@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+            "blob": "f40c30b5b41ad4a8706f0ab35a45a5fb2cec9253",
             "content": "sha256:d914e2dced838bd3c2e1e7a8d61dc393ba81a4ac75dd122c164f63b0e82dde92",
             "locator": {
-              "end": 335,
+              "end": 339,
               "kind": "line_range",
-              "start": 324
+              "start": 328
             }
           },
           "kind": "code"
@@ -78,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+            "blob": "f40c30b5b41ad4a8706f0ab35a45a5fb2cec9253",
             "content": "sha256:3bd98276275ef04da131e001ce7d602e4728d4db6130f9c4f749cc44500bc868",
             "locator": {
-              "end": 342,
+              "end": 346,
               "kind": "line_range",
-              "start": 338
+              "start": 342
             }
           },
           "kind": "code"
@@ -95,12 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+            "blob": "f40c30b5b41ad4a8706f0ab35a45a5fb2cec9253",
             "content": "sha256:de75c8fad6591b7ccd926fd32aa1bf61061e3e0a0219fd5c65cd1914fcf6c506",
             "locator": {
-              "end": 348,
+              "end": 352,
               "kind": "line_range",
-              "start": 345
+              "start": 349
             }
           },
           "kind": "code"
@@ -112,12 +112,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+            "blob": "f40c30b5b41ad4a8706f0ab35a45a5fb2cec9253",
             "content": "sha256:9f2685a8869862f568ae410e5a9c29c198fcbd7a2375b61e6f851a0a37c91908",
             "locator": {
-              "end": 42,
+              "end": 46,
               "kind": "line_range",
-              "start": 38
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The truth line names the planning state and what the explainer reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f40c30b5b41ad4a8706f0ab35a45a5fb2cec9253",
+            "content": "sha256:e9e8691b745554e1d46d1acb66551006f71de48f8a07c1f4a1d11c64f1e7c550",
+            "locator": {
+              "kind": "symbol",
+              "name": "PLANNED_TRUTH_LINE"
             }
           },
           "kind": "code"

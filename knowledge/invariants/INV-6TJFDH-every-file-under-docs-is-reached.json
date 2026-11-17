@@ -7,7 +7,8 @@
   },
   "applicability": "Every tracked file under docs/.",
   "conditions": [
-    "A link from docs/README.md reaches the file directly or through one index page."
+    "A page is reached by a link from docs/README.md, directly or through one index page.",
+    "A file that is no page is reached when a link from docs/README.md reaches it, or when the front page README.md shows or links it by a relative path."
   ],
   "exclusions": [
     "Files outside docs/."
@@ -24,9 +25,9 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Every file under docs/ is reached from docs/README.md, directly or through one index page.",
+  "statement": "A file under docs/ that is no page counts as reached when the front page README.md shows or links it by a relative path; a page under docs/ must be reached from docs/README.md directly or through one index page, and a file under docs/ that neither a link from docs/README.md reaches nor the front page shows is reported as unreached.",
   "status": "proposed",
   "supersedes": []
 }

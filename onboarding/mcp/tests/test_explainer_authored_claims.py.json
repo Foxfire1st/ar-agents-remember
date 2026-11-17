@@ -7,11 +7,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6144a78c5ab3270cc52a5d4a8dfbf19bdc8b4fa",
-            "content": "sha256:afc937c3c6345cc5c6f68a07f719bcdab11f40d592a95ff1eddd802f1287b570",
+            "blob": "be1e0df498a2370c8fe77b2e906a175817896d2e",
+            "content": "sha256:6e1b08d405855fee7051ba7fa4fddc9bd0cc66fcfe273f1900a42b6d676f7be6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The suite starts from an installation whose browser is present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be1e0df498a2370c8fe77b2e906a175817896d2e",
+            "content": "sha256:95bb1bd4f95ef1aaaa963f2066c878a7915115d1b31f996e5d0ea9a524b82730",
             "locator": {
               "kind": "symbol",
-              "name": "test_authored_claims_reach_browser_readiness_and_published_manifest"
+              "name": "_browser_is_here"
             }
           },
           "kind": "test"

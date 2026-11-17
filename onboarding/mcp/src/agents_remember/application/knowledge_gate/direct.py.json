@@ -51,14 +51,15 @@
       ]
     },
     "13": {
-      "note": "The route test.\n\nAnchor: `test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal`",
+      "note": "The route test. Anchor: `test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "b576ddb0afc095d5ccff8d0c435a52682f6e126c",
-            "content": "sha256:8f367598192bb39ba67abadadead88d57d5b136c7b455e6216545a0928a59c24",
+            "blob": "136043564f2e7d1920b480e552c989140d6e8f84",
+            "content": "sha256:1f80b2e34160304a278ea96d5917285f3e92140e671f18ea8a15d8e2c80bb3f3",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal"
             },
             "path": "mcp/tests/test_knowledge_closeout_gate.py"
           },

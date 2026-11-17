@@ -7,11 +7,11 @@
 ## Purpose
 
 **MIK-R09@v2's evidence: the currentness rules, the packet's examples, the per-kind dispatch, and the gate at each
-route (17 top-level test definitions and 1,334 physical source lines by static inspection, not fresh pytest collection).** The fixture is a converted leaf on real Git repositories: two invariants of
+route (18 top-level test definitions and 1,360 physical source lines by static inspection, not fresh pytest collection).** The fixture is a converted leaf on real Git repositories: two invariants of
 one family (`INV-AAAAAA` with entries on `land` and `keep` in `pkg/a.py`, `INV-BBBBBB` with `sibling` in `pkg/b.py`),
 the official `main` line in both repositories and the leaf's own `leaf` branches, so the parent line's memory tip and
 the leaf's own memory commits are different commits. Registered in the `unit-regression` lane
-(`test-evidence-lanes.toml:122`). The fixture world is module-local, by the dependency-ownership census's rule (a
+(`test-evidence-lanes.toml:216`). The fixture world is module-local, by the dependency-ownership census's rule (a
 separate support module was an unregistered evidence artifact on the worker's first integration run);
 `test_knowledge_gate_routes.py` imports it.
 
@@ -28,7 +28,7 @@ separate support module was an unregistered evidence artifact on the worker's fi
      conforming example, the non-conforming "covers one of two" (open, "does not cover RLZ-A00002"), and the first
      boundary: editing `land` again makes `RLZ-A00001` stale and reopens four items: invariant, family,
      file trace and route trace. The unchanged `reopens_two` test name is not its current count; the
-     source also asserts the file trace's "changed after" reason.
+     source also asserts the file trace's "changed after" reason. The same edit adds one `knowledge-stale-at-landing` finding, making five findings beside the four open worklist items.
   2. `test_a_sibling_whose_meaning_changed_after_the_family_row_reopens_the_family`: the second boundary, "INV-BBBBBB
      (examined at 1, now 2)" and the touched sibling item, followed by readiness after current complete invariant/family rows. It does not assert a separate partial-cover stage.
   3. `test_a_new_invariant_needs_no_row_and_admission_judges_it_new_against_the_parent_line`: no item for
@@ -54,6 +54,7 @@ separate support module was an unregistered evidence artifact on the worker's fi
   11. `test_record_landing_checks_the_landed_memory_commit_is_closed_and_valid`: not closed, closed, no commit named,
       a marker violation, and an earlier leaf commit judged new.
   12. `test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale`.
+      `test_a_task_closeout_refuses_a_stale_entry_at_a_path_the_task_changed` uses the same entry-currentness rule: a changed path refuses with `RLZ-A00001`, and re-anchoring removes that stale-entry finding.
   13. `test_an_insertion_only_hunk_is_linked_only_by_a_candidate_range`: K_C drops `RLZ-A00001` and a line is inserted
       inside `land`; the hunk (0 old lines) is unlinked and raises `unexplained_hunk` (the L10 N3 carry).
   14. `test_an_unconverted_leaf_is_refused_at_every_route_before_anything_moves`: leaf, landing and record guards return the central `legacy-format` refusal without bound gate services; `_close_gated_leaf` raises before capture, with memory objects and status unchanged. `leaf_worklist` remains `None`.
@@ -68,7 +69,7 @@ separate support module was an unregistered evidence artifact on the worker's fi
 ### Conventions
 
 - Real Git repositories under `tmp_path`, with a pinned environment (`git` helper); no network.
-- Static source population: 17 top-level test definitions and 1,334 physical lines. Earlier 17-definition/18-case/1,206-line figures are historical; no pytest collection, execution or limit enforcement was performed here.
+- Static source population: 18 top-level test definitions and 1,360 physical lines. Earlier 17-definition/18-case/1,206-line figures are historical; no pytest collection, execution or limit enforcement was performed here.
 
 ### Invariants And Boundaries
 
@@ -126,13 +127,27 @@ No meaningful cross-repo references found: the fixture builds its own repositori
 
 No cross-repo boundary is crossed by this file.
 
+
+
 - Rule 2 examples: a new edit reopens four items, including source-bound file/route traces. [3]
+
+
+
+
 - New invariants, recompute, incomplete runs and registry dispatch; added R53 predicate assertions cover source/membership/record currency. [4]
+
+
+
+
 - The closeout test answers the code commit's items with recomputed source-bound trace rows, then checks closure/restore and reaching the mutation seam, not a successful product memory commit. [11]
-- Current source delta inspected statically: Align renamed-but-unchanged test identifiers with four-item reopening and R53 source-bound predicates; replace stale population figures with actual static source counts, preserving the narrow closeout mutation-seam limit. [13]
+
+
+
+
+
 
 
 
 - The lane row. [10]
 
-
+- Retained earlier repair caption (source-epoch wording; not a new current-tree measurement): Current source delta inspected statically: Align renamed-but-unchanged test identifiers with four-item reopening and R53 source-bound predicates; replace stale population figures with actual static source counts, preserving the narrow closeout mutation-seam limit. [13]

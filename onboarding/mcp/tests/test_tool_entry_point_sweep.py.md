@@ -15,15 +15,15 @@ The current source facts below replace the former operative inventory. The separ
 
 ### MIK-R109 read-only annotation assertions
 
-ReadOnlyMarkTests asserts every public roster name lies in exactly one of READ_ONLY_TOOLS or MUTATING_TOOLS and that advertised readOnlyHint matches the list. It invokes each marked-read default case plus declared refusal variants, comparing code/memory repository state and the coordination file census. Only log paths and runtime/knowledge-index are filtered from the coordination census; other runtime writes are visible. context_packet is marked false because include_freshness can fetch, and knowledge_diff is marked false because an omitted after revision can write Git objects.
+`test_tool_entry_point_read_only.ReadOnlyMarkTests` asserts every public roster name lies in exactly one of READ_ONLY_TOOLS or MUTATING_TOOLS and that advertised readOnlyHint matches the list. It invokes each marked-read default case plus declared refusal variants, comparing code/memory repository state and the coordination file census. Only log paths and runtime/knowledge-index are filtered from the coordination census; other runtime writes are visible. context_packet is marked false because include_freshness can fetch, and knowledge_diff is marked false because an omitted after revision can write Git objects.
 
 The ordinary-file, Git-metadata and non-index-runtime controls write probe files directly and assert that the comparison oracle notices them; they do not inject a writing registered read handler. The requested context-packet fetch case asserts a false mark and FETCH_HEAD creation. These are source assertions, not executions performed here or a universal no-write theorem.
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:117-168,192`.
-- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:358-912,1220-1415`.
-- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:1013-1092`.
+- Source comparison: `mcp/tests/test_tool_entry_point_sweep.py:135-303` (current population and probe tests).
+- Source comparison: `mcp/tests/tool_entry_point_sweep_support.py` (the extracted world, classifier and pins) and `mcp/tests/test_tool_entry_point_sweep_controls.py` (negative controls).
+- Source comparison: `mcp/tests/test_tool_entry_point_read_only.py:45-78` (the current read-only-mark class and list assertions).
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -369,7 +369,6 @@ Current source: The current lane catalog selects mcp/tests/test_tool_entry_point
 - The sweep itself: one world, one run, and the equality assertions that bind every pin. Anchor: `EntryPointProbeTests` [28]
 - The ordinary world source declares UNMARKED_NOT_OK as an empty dictionary and the main sweep compares the observed bare-not-ok population with the pin by equality. This is a source assertion, not a new sweep result; the L110/T64 repair account remains historical source commentary. [30]
 - The ordinary EntryPointWorld source constructs one temporary coordination root, code and memory repositories and a real leaf enclosure through the public tools. Its close method cleans the temporary world; the retained opened-lifecycle/ended caption is historical and does not describe a current lifecycle API call. [31]
-- The current lane catalog selects mcp/tests/test_tool_entry_point_sweep.py once in unit-regression. This declaration selects evidence and establishes no invocation or passing result. [40]
 - The three 60-second phase limits and the named timeout that the classifier does not count as a product raiser. [45]
 - `EntryPointProbeTests` owns the current boundary described above. Anchor: `EntryPointProbeTests` [47]
 - The current sweep asserts exact equality between observed error-arm tools and ENVELOPE_LOSING_RAISERS in both directions, then asserts none of the current T34_REPAIRED_TOOLS population raises. That population now contains only memory_baseline_adopt; the original nine-tool caption is historical. No source assertion is an executed result. [49]
@@ -379,3 +378,8 @@ Current source: The current lane catalog selects mcp/tests/test_tool_entry_point
 - The main probe retains exact equality between observed raisers and the current pin. Anchor: `EntryPointProbeTests.test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope` [59]
 
 - Both ordinary and support worlds are exercised with RuntimeWarning messages that are nonempty or empty. The cases require the captured detail string, actual exception type and innermost traceback file:line. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [60]
+
+
+
+
+- The current lane catalog selects mcp/tests/test_tool_entry_point_sweep.py once in unit-regression. This declaration selects evidence and establishes no invocation or passing result. [40]

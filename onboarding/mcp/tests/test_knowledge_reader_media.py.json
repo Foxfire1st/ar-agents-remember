@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_knowledge_reader_media.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ba95755c609a225984b0ab166f4f5cf4d81279ac",
+        "content": "sha256:f5bf8841523f2fc195174810bf2a6f6ba2b7dede062ff9e65aad336d7bc989fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_option_shaped_knowledge_commit_is_a_400_not_a_git_argument"
+        }
+      },
+      "facet": "The knowledge reader path route answers an option-shaped commit with 400 invalid-request.",
+      "id": "PRF-594RHH",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks media classification and invalid selection refusal through the knowledge application's real selected-tree path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba95755c609a225984b0ab166f4f5cf4d81279ac",
+            "content": "sha256:89b7ecf8910bb2d7c60d93cbe3bedd73dedbe308346e5dd8ea5cbe39deb4c3ea",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

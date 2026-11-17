@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/changeset/changeSetSelection.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Builds the selected change set's diff request and media selector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae8afe679647ef92b7eed8cba3e813f864f50135",
+            "content": "sha256:1691604a2b04e77d483833340d9f25f6389001b6d75660952f45ccc8f07f788c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

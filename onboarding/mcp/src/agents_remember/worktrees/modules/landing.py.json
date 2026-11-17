@@ -1,7 +1,80 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/landing.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3cba6e5af9fb586386f0327c3231fbf20a3e2df6",
+        "content": "sha256:78d6d89a37996ca196a058bdf235ff782c3ea28a8b219def4ad4b25ee0e95716",
+        "locator": {
+          "kind": "symbol",
+          "name": "_pr_ref"
+        }
+      },
+      "id": "RLZ-2J1A8Q",
+      "invariant": "INV-9ZA2BW",
+      "origin": {
+        "handoffEntry": "L3-W5-09",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The pull-request row is the one that must distinguish a route without a pull request from a pull request not yet planned.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3cba6e5af9fb586386f0327c3231fbf20a3e2df6",
+        "content": "sha256:d649244a28ca8a5e4dcc76b2851f42e265d618d01ecf71fedfaf4e0fda649e27",
+        "locator": {
+          "kind": "symbol",
+          "name": "landing_refs"
+        }
+      },
+      "id": "RLZ-N77YZY",
+      "invariant": "INV-Z6T0QQ",
+      "origin": {
+        "handoffEntry": "CUR-L3-W5-08-coverage",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The actual remote-work probe and PR lookup are wired to code_work_branch and the target to code_source_branch here.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3cba6e5af9fb586386f0327c3231fbf20a3e2df6",
+        "content": "sha256:78d6d89a37996ca196a058bdf235ff782c3ea28a8b219def4ad4b25ee0e95716",
+        "locator": {
+          "kind": "symbol",
+          "name": "_pr_ref"
+        }
+      },
+      "id": "RLZ-SR1C9V",
+      "invariant": "INV-Z6T0QQ",
+      "origin": {
+        "handoffEntry": "L3-W5-08",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The work branch row and the pull-request lookup use the same field, so both live in this function's neighbourhood.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3cba6e5af9fb586386f0327c3231fbf20a3e2df6",
+        "content": "sha256:5e9dbaeeda84976a9d4f01f9d63dd7ca98c6c812f3c876a6e9de0661be755a4a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_main_ref"
+        }
+      },
+      "id": "RLZ-ZQ49DS",
+      "invariant": "INV-Z6T0QQ",
+      "origin": {
+        "handoffEntry": "L3-W5-08",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "The target row is built here, so the branch it names is decided here rather than by a probe.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "`status_payload` calls `landing_refs` and emits its result as the `landing` block.\n\nAnchor: `status_payload` `_status_payload_with_landing`",

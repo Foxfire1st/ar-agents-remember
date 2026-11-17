@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Several viewer routes share the media presentation and type contract, preventing one viewer from decoding pictures or videos as text while another renders them."
+  },
+  "applicability": "Direct supported picture and video content shown by File Viewer, change-set and review panes, notes panes, and the knowledge code view.",
+  "conditions": [
+    "The fixed media table recognizes the file type.",
+    "The caller supplies its selected bytes address and available measured metadata.",
+    "An oversized result presents its size notice instead of a media element."
+  ],
+  "exclusions": [
+    "Unsupported binary types.",
+    "Media embedded inside repository-document prose, whose address admission is owned by DocumentMarkdown."
+  ],
+  "id": "INV-26X0GJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-R05@v1 §3; dashboard/src/panels/file-viewer/DualPane.test.tsx :: draws a picture from its bytes route, with its type and size under it; dashboard/src/panels/file-viewer/DualPane.test.tsx :: states a video above the bytes bound instead of requesting it; mcp/tests/test_serving_media.py::TableTests::test_only_the_fixed_table_is_media",
+        "Curator source inspection of exact code tree96bf73439f79ee12d2529b31a1d94866756c0c1c; these integration and wire declarations realize the existing requirement obligation, with no test execution claimed."
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-R05@v1 §3",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "File, change-set, notes and knowledge-code presentations use the shared media component for supported pictures and videos, with the type and byte count below the media.",
+  "status": "proposed",
+  "supersedes": []
+}

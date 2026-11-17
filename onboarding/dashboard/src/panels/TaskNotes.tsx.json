@@ -101,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e23e68eb2a31165781bb22894b445d6d8bc18b66",
+            "blob": "4b2ad3e134f125cea8de3cfc20e0cbc7e222e0b1",
             "content": "sha256:2d24c867ca31e1b03d8f8e8a739931b87d1d7942b4cf007041b870ea2b1b29a1",
             "locator": {
               "kind": "symbol",
@@ -152,11 +152,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:eff54d0360b790954af018d92a06694c3a335b1849a5d2a028b89a7d2a0e225b",
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+            "content": "sha256:9884644e2a94771b8bf70153c4f12814eb1eb12030dec3bba3622603c9a4d0bc",
             "locator": {
-              "kind": "symbol",
-              "name": "Markdown"
+              "end": 234,
+              "kind": "line_range",
+              "start": 187
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },
@@ -164,23 +165,25 @@
         },
         {
           "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+            "content": "sha256:eb4f030e0e9a5d0fd0de472440dcbf63ad6907cdfb4d857467dbf74ca3e03e26",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 272
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
             "content": "sha256:64b656a9984283197cc301fc4a52b12707baca3cd7e424a7640c2301382c86d1",
             "locator": {
-              "end": 122,
+              "end": 124,
               "kind": "line_range",
-              "start": 119
-            },
-            "path": "dashboard/src/grammar/Markdown.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
-            "locator": {
-              "kind": "file"
+              "start": 121
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },
@@ -224,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "blob": "effe8d2e820ea0250852d730c5cfb88b8cb2fd37",
             "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
             "locator": {
               "kind": "symbol",

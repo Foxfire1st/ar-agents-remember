@@ -92,12 +92,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:a030c166ca646be6ba8660755a3045e04d6f7e624177ca6a9292fb454ccf9e2c",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 254,
+              "end": 809,
               "kind": "line_range",
-              "start": 254
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -106,7 +106,7 @@
       ]
     },
     "15": {
-      "note": "The empty-base case: a real empty converted Git base counts as completely inspected for absence; no canonical origin record invents its emptiness.  Anchor: lines 122-151",
+      "note": "The empty-base case: a real empty converted Git base counts as completely inspected for absence; no canonical origin record invents its emptiness.",
       "targets": [
         {
           "anchor": {

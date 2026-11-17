@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/grammar/documentMarkdown.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "99140cdd87f91d4ef198e7bf792bf5a31072e2fd",
+        "content": "sha256:a88542f6440d6b0386f283fd5c7599c3d371706fe1c91457eb56f26bcc6a3ca0",
+        "locator": {
+          "kind": "symbol",
+          "name": "documentRehypePlugins"
+        }
+      },
+      "id": "RLZ-86TFZG",
+      "invariant": "INV-F48BJX",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §2",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This pipeline parses repository HTML before sanitization and the document-specific cleanup.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "99140cdd87f91d4ef198e7bf792bf5a31072e2fd",
+        "content": "sha256:2163d43109c80d2bf0ac327dcfbf46066fcd3e683f0254425c72a3f09ad26d10",
+        "locator": {
+          "kind": "symbol",
+          "name": "rehypeStripDocumentClasses"
+        }
+      },
+      "id": "RLZ-K2DRZD",
+      "invariant": "INV-F48BJX",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §2",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This traversal removes permitted classes so document HTML cannot select dashboard styles.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Owns repository-document HTML cleaning, heading identifiers and local anchor lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99140cdd87f91d4ef198e7bf792bf5a31072e2fd",
+            "content": "sha256:dab9106ba89f28cfaa7eee436616580281a72b47fa1d9d8d726e9b14b7f83d86",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

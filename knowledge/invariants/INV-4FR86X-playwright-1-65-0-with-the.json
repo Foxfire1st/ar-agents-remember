@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The product pin and the dashboard lockfile resolve the same Playwright version; the executable equality check detects drift between those sources. The Ubuntu installation result is supported separately by the retained platform measurement."
+  },
+  "applicability": "The Playwright version the package fetches and the version a checkout's dashboard lock pins.",
+  "conditions": [
+    "Ubuntu 26.04 x86_64, where 1.60.0 with chromium-headless-shell exits 1 and 1.65.0 with chromium exits 0."
+  ],
+  "exclusions": [
+    "macOS and other systems, which this measurement does not cover."
+  ],
+  "id": "INV-4FR86X",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/afa0b934-65dc-5f1a-9152-b2b2ead3d9d6/evidence/walk/measurement-playwright-versions.log"
+      ],
+      "path": "261112-BUG-L1-curator-handoff"
+    },
+    "handoffEntry": "L1-B05",
+    "leaf": "261112-BUG-L1",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Playwright 1.65.0 with the chromium browser is the pinned pair that installs on Ubuntu 26.04 x86_64; 1.60.0 with chromium-headless-shell fails there with exit 1.",
+  "status": "proposed",
+  "supersedes": []
+}

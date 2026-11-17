@@ -293,16 +293,16 @@
       ]
     },
     "7": {
-      "note": "Its lane row.  Anchor: \"mcp/tests/test_review_change_kinds.py\"",
+      "note": "Its lane row. Anchor: \"mcp/tests/test_review_change_kinds.py\" Anchor: \"mcp/tests/test_review_change_kinds.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:84e8e28085d7272fb6fef7819b97de4ff4cd019c2c583473b34aa596236c154c",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 456,
+              "end": 809,
               "kind": "line_range",
-              "start": 456
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

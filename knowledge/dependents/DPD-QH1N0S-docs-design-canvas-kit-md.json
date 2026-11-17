@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 1 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "role": "curator",
+    "statement": "The page holds: the prospective change moves the explainer's Node and browser choice into `canvas/explainer_browser.py`, whose fetch runs at first load and answers `kind=\"browser\"`, and no statement of the kit's inventory depends on where that choice lives.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/design/canvas-kit.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/tests/test_canvas_kit.py"
     },
     {
-      "blob": "47c71360442fea62f8e6f6d24aac1759509c72a4",
+      "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/prospective.py"
     },
@@ -59,6 +59,11 @@
       "blob": "dd77a14ff24efdfd41d847945f317121fe8ab116",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/canvas/kit/open-generative-ui/0.1.0-8391a94/open-generative-ui-kit.js"
+    },
+    {
+      "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/explainer_browser.py"
     }
   ]
 }

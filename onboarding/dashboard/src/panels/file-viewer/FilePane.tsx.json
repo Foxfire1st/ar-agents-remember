@@ -73,14 +73,29 @@
       ]
     },
     "13": {
-      "note": "The Knowledge reader's code view passes the resolved cited range here.\n\nAnchor: `CodeView`",
+      "note": "The Knowledge reader's text-code view renders FilePane and passes the resolved cited line range as highlightedLines. Media citations use the separate media view.",
       "targets": [
         {
           "anchor": {
-            "blob": "3a158f3f7810149facd26a0a18eaa8ca7c98cbbf",
-            "content": "sha256:64359838b86f76f52089a57778b9d4a5af9930c78909d0722aea2259955bcecd",
+            "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
+            "content": "sha256:29ffa7b4a8507652fe5655b0898456dcd9b663afdd14bcc837d234b4017b3cf5",
             "locator": {
-              "kind": "file"
+              "end": 13,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/panels/knowledge-reader/ReaderCode.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a9db0bb6a18a6a8d0ca9de01597309915cc4d2f",
+            "content": "sha256:2988f2c274bf95a7a9f03a8f3b6c36675c3d4aa9f0b223cbe740662c7808512d",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 47
             },
             "path": "dashboard/src/panels/knowledge-reader/ReaderCode.tsx"
           },
@@ -108,10 +123,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
-            "content": "sha256:36e3128196752e9703f3acf1ea2f7c8f051c50523594dc0e8cf635f32dc51433",
+            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+            "content": "sha256:f378e1680148157e4d21b978ca46026a49b74bdbb41786feb6916a06c3042bd6",
             "locator": {
-              "kind": "file"
+              "end": 137,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0e66bac35ec6cdfb9fbb6b39badaf39bb6a33b4",
+            "content": "sha256:3beda43f3a4c03bddf3a637fa4d9e2b56feb28e1bba479a51e96252c2e238738",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 198
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
           },

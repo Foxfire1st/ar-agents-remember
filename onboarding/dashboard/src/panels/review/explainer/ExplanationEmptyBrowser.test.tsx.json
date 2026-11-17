@@ -1,0 +1,128 @@
+{
+  "path": "dashboard/src/panels/review/explainer/ExplanationEmptyBrowser.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "16fc5800bd9e5ab44665ca3e55e2548e8277d8cc",
+        "content": "sha256:b24675d3add42d9ad0e340421016d613ff00767dbb9c2f2fc3ca7d5c9c420c43",
+        "locator": {
+          "kind": "symbol",
+          "name": "the empty block says why the last explanation could not be published (rule 4) > says a failed fetch over an earlier page too, and calls that page earlier (rule 4)"
+        }
+      },
+      "facet": "With a saved page, the browser notice contains the failed-publication wording, fetch command and earlier text, and the saved frame remains drawn.",
+      "id": "PRF-B8J3EE",
+      "invariant": "INV-YMJFC9",
+      "origin": {
+        "handoffEntry": "L1-B03",
+        "leaf": "261112-BUG-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "16fc5800bd9e5ab44665ca3e55e2548e8277d8cc",
+        "content": "sha256:e81dcf6946ea42523f04e0e8daa2722334ca304ec3917f927350ae7bb5c48393",
+        "locator": {
+          "kind": "symbol",
+          "name": "the empty block says why the last explanation could not be published (rule 4) > names the missing browser and the command, in that block, with no control added"
+        }
+      },
+      "facet": "With no page, the empty block names the missing browser and the command and adds no control.",
+      "id": "PRF-WNCRAY",
+      "invariant": "INV-YMJFC9",
+      "origin": {
+        "handoffEntry": "L1-B03",
+        "leaf": "261112-BUG-L1"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "With no page, the empty block names the missing browser and the command, and adds no control.\n\nAnchor: \"names the missing browser and the command, in that block, with no control added\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fc5800bd9e5ab44665ca3e55e2548e8277d8cc",
+            "content": "sha256:e05d9b8d8b0b23c73177e39ac14ace91914a83e4fa4219e040927e8a51cb7917",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Without a page, the supplied announcement appears in the top-level browser notice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fc5800bd9e5ab44665ca3e55e2548e8277d8cc",
+            "content": "sha256:22581c7acaba6f75988f080d29cebb8a04b327d22fb70ab66a0916958f15f343",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "With a saved page, the announcement appears and the frame remains drawn.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fc5800bd9e5ab44665ca3e55e2548e8277d8cc",
+            "content": "sha256:8b44d5af5e4b66c00ba18a8459818f44cf433911838298f549406bbb3392e37b",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "With a saved page, the failure notice contains the fetch command and “earlier”, and the frame remains drawn.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fc5800bd9e5ab44665ca3e55e2548e8277d8cc",
+            "content": "sha256:b24675d3add42d9ad0e340421016d613ff00767dbb9c2f2fc3ca7d5c9c420c43",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An empty state with no last-render failure retains Explain and omits the empty-block browser failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fc5800bd9e5ab44665ca3e55e2548e8277d8cc",
+            "content": "sha256:9e783b3b2e24ebb8f470a5bd52ff01eb67b206475d393cd973665f74b27bf102",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

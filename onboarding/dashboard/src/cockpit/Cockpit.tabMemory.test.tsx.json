@@ -1,5 +1,42 @@
 {
   "path": "dashboard/src/cockpit/Cockpit.tabMemory.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5536973c9c9802348cf9987c6d470943f5439d8e",
+        "content": "sha256:8183cc21cc02ba2535cb24a15520b16076f3666ca3608225f59f183672d1e17c",
+        "locator": {
+          "kind": "symbol",
+          "name": "his path: three invariants visited, then Chats, Knowledge and Operations: the same page, with no request"
+        }
+      },
+      "facet": "An intent review returns to the same page without new requests.",
+      "id": "PRF-P068PG",
+      "invariant": "INV-VFEYRJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §11",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5536973c9c9802348cf9987c6d470943f5439d8e",
+        "content": "sha256:6cfdd9c41e4ab482d485bf1802c316669586e50983edc3fcac7e7a24c22e94dc",
+        "locator": {
+          "end": 176,
+          "kind": "line_range",
+          "start": 159
+        }
+      },
+      "facet": "Review restoration depends on the hydrated owner population.",
+      "id": "PRF-RZGG17",
+      "invariant": "INV-VFEYRJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §11",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

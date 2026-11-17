@@ -4,7 +4,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The guidance shape the worktree state machine emits, both spellings set to the contract file.",
+      "note": "The local guidance fixture emits both spellings set to the contract file, matching `contract_next_args`.",
       "targets": [
         {
           "anchor": {
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
             "locator": {
               "kind": "symbol",
@@ -57,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:d2e302d797ad2d3700c15c9090afc507fb08c55f14ec05c46005dab1877fc78e",
             "locator": {
               "kind": "symbol",
@@ -108,12 +108,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:f176b16c2afbd14618bc048ea73d4b31a20898a9e7f85cac3869f6f76c354ada",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 443,
+              "end": 809,
               "kind": "line_range",
-              "start": 443
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

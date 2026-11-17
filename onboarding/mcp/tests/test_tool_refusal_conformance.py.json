@@ -210,12 +210,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:b78fff81f43c6d30e5e8b25d49358e2b1ed7d8595b49fe2de0249401357402bf",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 616,
+              "end": 809,
               "kind": "line_range",
-              "start": 616
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -374,7 +374,7 @@
       ]
     },
     "8": {
-      "note": "`T34`'s nine answer in the envelope at the entry point, read from the sweep's single source of truth.",
+      "note": "The surviving T34 selection is memory_baseline_adopt alone. The case reads T34_REPAIRED_TOOLS from the sweep support and checks each selected advertised tool for a complete refusal envelope.",
       "targets": [
         {
           "anchor": {

@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The link component, viewer opener and confined server resolver together ensure that repository links reach the intended existing file and local heading."
+  },
+  "applicability": "Links in repository Markdown rendered by the File Viewer document context.",
+  "conditions": [
+    "A repository file link becomes opening UI only after resolution confirms an existing file.",
+    "A fragment-only link resolves inside its own rendered document container.",
+    "Outside HTTP or HTTPS hyperlinks open a separate browser tab."
+  ],
+  "exclusions": [
+    "Generic dashboard Markdown without a repository document context.",
+    "Using media fetch admission as the hyperlink protocol policy."
+  ],
+  "id": "INV-0WMTQ4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-R05@v1 §8; dashboard/src/grammar/DocumentMarkdown.test.tsx :: opens a repository file that exists, with its anchor; dashboard/src/grammar/DocumentMarkdown.test.tsx :: opens a code file link in the same viewer; dashboard/src/grammar/DocumentMarkdown.test.tsx :: opens a picture link in the same viewer; dashboard/src/grammar/DocumentMarkdown.test.tsx :: states a path the repository does not hold instead of linking it; dashboard/src/grammar/DocumentMarkdown.test.tsx :: opens an outside https address in a new tab; dashboard/src/grammar/DocumentMarkdown.test.tsx :: scopes an anchor click to its own rendered document; dashboard/src/grammar/DocumentMarkdown.test.tsx :: scrolls to a heading in the document",
+        "Curator source inspection of exact code tree96bf73439f79ee12d2529b31a1d94866756c0c1c; these integration and wire declarations realize the existing requirement obligation, with no test execution claimed."
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-R05@v1 §8",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Repository-document links open existing repository files in the viewer, resolve headings within that document, open outside addresses separately, and identify missing files as text.",
+  "status": "proposed",
+  "supersedes": []
+}

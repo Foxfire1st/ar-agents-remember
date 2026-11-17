@@ -54,14 +54,16 @@
       ]
     },
     "3": {
-      "note": "The shared renderer includes the plugins only when its caller asks for them.",
+      "note": "For ordinary dashboard Markdown, the marker and heading-id plugins are added only when their caller opts in. Repository-document rendering uses its separate document setup.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
-            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "blob": "9d58b237127bedc066235d0442a6442d06f5032c",
+            "content": "sha256:9dfba777732dd4e3d8a9506c7fe76a563f06fe54dc12d2067be5c4fd3b9df6b8",
             "locator": {
-              "kind": "file"
+              "end": 281,
+              "kind": "line_range",
+              "start": 236
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },

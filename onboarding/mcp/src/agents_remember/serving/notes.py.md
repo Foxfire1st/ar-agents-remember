@@ -7,23 +7,17 @@
 ## Purpose
 
 `notes.py` is the read-only **coordination-notes API** (agent-orchestration L9, closing
-friction F-M): three endpoints that surface the coordination `notes/` tree — design
+friction F-M): four endpoints that surface the coordination `notes/` tree — design
 records, the friction ledger, worker turn reports, adversarial verdicts — for one series
-master, `tasks/<repo>/<master>/notes/` under the coordination root. Since 260928-MIK-L126
-the server answers **one folder per request**: the whole-tree `GET /api/notes/list` walk is
-removed with no caller remaining. Before it, the files
-API served only repo roots + worktree enclosures and the task reader rendered only
-`task.json` content, so a task doc's references to notes files were inert strings. It
+master, `tasks/<repo>/<master>/notes/` under the coordination root. The server answers **one folder per request**: the whole-tree `GET /api/notes/list` walk is removed with no caller remaining.  It
 feeds the task reader's notes line (`dashboard/src/panels/TaskNotes.tsx` via
 `dashboard/src/data/notes.ts` and `dashboard/src/data/taskReports.ts`).
 
 ## Code Commentary
 
-### 260928-MIK-L126 Current Delta — The Server Answers One Folder Per Request
+### One folder per request
 
-The task reader fetched `GET /api/notes/list` every time a task opened, and the walk of the
-whole tree grew with the notes folder: 72,875 rows in 15 MB on the measured master. `MIK-R126@v1`
-(rule 2) replaces it with **one folder per request**. `list_folder` reads only the requested
+ The server answers **one folder per request**. `list_folder` reads only the requested
 folder — never its subfolders, so the work does not grow with the number of files under the
 notes root — and answers entries in a stable total order (directories first, case-folded name,
 exact name breaking ties) in parts of `_FOLDER_PAGE` (200), with `remaining` for the next part.
@@ -50,41 +44,37 @@ Confinement is preserved in the one-folder shape:
   filename resolves only at the notes root, never by a tree walk (Parent ruling L126-REFERENCE-FORMAT-RULING:
   nested-only bare names stay text, L126-CODE-05). Anything else stays plain text.
 
-This entry supersedes the L55 descriptor-walk description on this card: the walk, its sort key,
-its per-entry stat economy and its residuals describe a removed endpoint.
+The whole-tree walk endpoint is removed; folder listing reads only the requested level.
 
-### 260731-EFA-L4 Current Delta — Both Routes Now Declare What They Answer With (L126: three routes)
+### JSON declarations and media route
 
 `GET /api/notes/folder` declares `response_model=NotesFolder`, `POST /api/notes/resolve`
 declares `response_model=NotesResolutions`, and `GET /api/notes/read` declares
 `response_model=NoteContents`, all under the shared `responses=SCOPED_READ_RESPONSES` table.
-All come from `serving/response_contract.py`, which is where this module's
-one new import lives.
+All three JSON response models come from `serving/response_contract.py`.
 
-`SCOPED_READ_RESPONSES` is exactly the two statuses `_notes_json` can produce — 400
+`SCOPED_READ_RESPONSES` declares the two selector/path refusal statuses implemented by `_notes_response` — 400
 (`StatusRefusal`: `bad-request` from the single-segment `master` check, `bad-path` from
-`AuthorityError` or the `ValueError` L9R-1 case) and 404 (`UnknownRepoRefusal |
+`AuthorityError` or `ValueError`) and 404 (`UnknownRepoRefusal |
 UnknownScopeRefusal | MissingPathRefusal`: `unknown-repo` from `require_repo`, `not-found` from
-`FileNotFoundError`). The table is shared with the files and change-set routes because the
+`FileNotFoundError`). The bytes route maps media refusals separately. The table is shared with the files and change-set routes because the
 refusal idiom is shared, not because it is boilerplate.
 
-Nothing on the wire changed and nothing is validated at runtime: both handlers return a
+The JSON handlers return a
 `JSONResponse` they built themselves, and FastAPI applies `response_model` only to values it
-serializes for you. The declaration remains the contract. The former broad conformance suite was removed in IAS testing cleanup; this card does not claim that it still validates emitted bodies. Strict model validation rejects undeclared keys when explicitly invoked.
+serializes for you; the declarations alone do not validate those emitted bodies at runtime. The declaration remains the contract. The former broad conformance suite was removed in IAS testing cleanup; this card does not claim that it still validates emitted bodies. Strict model validation rejects undeclared keys when explicitly invoked.
 
-This entry supersedes any earlier description in this sidecar that conflicts with the current
-source behavior above; verification metadata stays pinned to the pre-commit source history until
-closeout.
+
 
 ### Logic
 
 L9 review follow-up (L9R-1): the shared status mapper now also catches `ValueError` from `Path.resolve()` (e.g. an embedded null byte in `path`) and answers `400 bad-path` instead of an uncaught 500 — malformed input gets the same wire answer as a confinement breach.
 
-`register_notes_routes(app, config)` registers three routes and **must** be called
+`register_notes_routes(app, config)` registers four routes and **must** be called
 before the greedy static `/` mount (it is, after `register_changeset_routes` in
 `serving/app.py`): `GET /api/notes/folder?repo&master&path&offset`,
 `POST /api/notes/resolve` (a `references` list with `repo`/`master`), and `GET
-/api/notes/read?repo&master&path`. All go through `_notes_json` — it validates the
+/api/notes/read?repo&master&path`, plus `GET /api/notes/bytes?repo&master&path`. The three JSON routes go through `_notes_json`; bytes goes directly through `_notes_response`, which validates the
 `{repo, master}` selector (unknown repo → `404 unknown-repo` via `require_repo`; a
 non-single-segment `master` → `400 bad-request` via `_is_single_segment`, the change-set
 `master`-key confinement idiom) and maps domain errors to the shared wire idiom
@@ -101,17 +91,13 @@ offset parts never depend on readdir order (L126-CODE-02).
 
 `read_note(config, repo_id, master, rel)` confines `rel` with `confine_rel` (the realpath
 idiom: `..` traversal, absolute paths, and symlink escapes all raise `AuthorityError`),
-then serves the file size-capped (`_MAX_FILE_BYTES` = 2 MiB, mirroring `serving/files.py`)
-and binary-tolerant (`UnicodeDecodeError` → `language: "binary"`, empty content — the
-reader shows a placeholder, never raw bytes). Since 260703-L18 (finding 5) the cap is
-applied through the shared `scope.decode_capped`, which cuts at a UTF-8 codepoint boundary
-(backward-scan) — a multi-byte char straddling the 2-MiB cap no longer misdecodes an oversize
-markdown note (the dominant type) into empty `binary`; it returns the first ~2 MiB with
-`truncated: true`.
+returns fixed-media metadata without reading its payload; otherwise it serves the file size-capped (`_MAX_FILE_BYTES` = 2 MiB, mirroring `serving/files.py`)
+and binary-tolerant (an initial NUL or `UnicodeDecodeError` → `language: "binary"`, empty content — the
+reader shows a placeholder, never raw bytes). The cap is applied through the shared `scope.decode_capped`, which cuts at a UTF-8 codepoint boundary (backward-scan) — a multi-byte char straddling the 2-MiB cap returns the first ~2 MiB with `truncated: true` rather than misdecoding an oversize markdown note into empty `binary`.
 
 ### Conventions
 
-GET-only, read-only, 127.0.0.1-bound, no auth/CORS — the L1 files-API posture. The repo
+The operations are read-only: folder, text and bytes reads use GET, while reference resolution uses POST and writes nothing. These handlers add no authentication or CORS; the serving CLI owns socket binding and defaults to `127.0.0.1`. The repo
 comes from `config.allowed_repo_ids` (`require_repo`); the notes root is derived, never
 wire-supplied: `coordination_root / "tasks" / repo_id / master / "notes"` with `master`
 confined to one honest path segment.
@@ -163,7 +149,10 @@ No meaningful cross-repo references found.
 
 
 
+
+
 - The browser client for these endpoints. [7]
+
 
 - The repo allow-list authority guard (`require_repo`). [3]
 - `language_for` supplies the listing and read `language` field. [5]
@@ -194,7 +183,10 @@ No meaningful cross-repo references found.
 - The part ceiling bounds every folder answer. [15]
 
 
+
+
 - The module's folder tests prove parts, order, confinement and bounds. [16]
+
 
 
 - A readable-but-unsearchable folder answers present with no children since failed entry stats are skipped; EACCES from the folder open or listing itself propagates (searchable-unreadable and neither keep baseline 500). [18]

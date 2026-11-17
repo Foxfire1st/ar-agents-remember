@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The record is written in mcp/src/agents_remember/canvas/presenter_tools.py, read in mcp/src/agents_remember/serving/explainer.py and drawn in dashboard/src/panels/review/explainer/ExplanationView.tsx, and both the server and dashboard suites prove the two shapes."
+  },
+  "applicability": "The Explanation tab of a leaf whose last render ended unavailable for a missing browser, and whose first fetch may still be pending.",
+  "conditions": [
+    "The render wrote its failure into the leaf workspace's state folder, or its announcement before the fetch.",
+    "The state read answers those records; a published page has cleared them."
+  ],
+  "exclusions": [
+    "A failure of another kind, which names itself in the render answer and is not kept for the page.",
+    "A new control: the words are drawn in the block that already exists and in the panel's own first line."
+  ],
+  "id": "INV-YMJFC9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/review/explainer/ExplanationEmptyBrowser.test.tsx — 5 tests, failing before the words were drawn in the block; pictures walk21 and walk22"
+      ],
+      "path": "261112-BUG-L1-curator-handoff"
+    },
+    "handoffEntry": "L1-B03",
+    "leaf": "261112-BUG-L1",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A fetch that fails is said on the Explanation tab in both shapes — in the \"No explanation yet\" block when no page exists, in one line above an earlier page when one does, and that line names the page below an earlier revision rather than the answer to this request.",
+  "status": "proposed",
+  "supersedes": []
+}

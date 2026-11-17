@@ -105,9 +105,13 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 ## Refreshed current evidence
 
-- Checks all 49 caller/target pairs against exact table. [4]
 
-- Checks own orchestrator sprint and manager sprint/master binding containment. [5]
+- Checks every caller/target pair in the role-start matrix against the exact allowed table. [4]
+
+
+
+- Checks the caller’s own sprint or master containment for role starts. [5]
+
 
 
 ## Supported successor's operative seams

@@ -16,8 +16,8 @@ inline reading pane is retired, and note-content rendering is covered by
 
 ### Logic
 
-Testing-library component tests in the `DetailPanel.test.tsx` idiom (render + fireEvent +
-`findBy*`, cleanup/`vi.unstubAllGlobals` after each). `stubNotesApi(entries, resolutions,
+Testing-library component tests use render + fireEvent +
+`findBy*`, with cleanup/`vi.unstubAllGlobals` after each. `stubNotesApi(entries, resolutions,
 reports)` stubs `fetch` for `/api/notes/folder` (the seeded top folder), `/api/notes/resolve`
 and the reports route — the entry surface never fetches note content
 (`/api/notes/read` belongs to the reader since L17); every other URL answers a `404
@@ -76,7 +76,10 @@ A stubbed-fetch component suite; nothing crosses repositories.
 - The folder entry type shaped by the suite's stub payload. [2]
 - The component suite's `stubNotesApi` returns the directly evidenced folder payload. [3]
 
+
+
 - The reader suite covers the content pane this entry surface opens. [4]
+
 
 
 - Equal content does not repeat resolution; changing content posts the current list, while the empty-list to one-empty-text regression retains the historical joined-key equivalence. [5]

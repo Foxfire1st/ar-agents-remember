@@ -119,8 +119,9 @@ No meaningful cross-repo references found.
 
 
 
+- The current unit-regression lane registration makes this module part of the manifest. Earlier caption wording described the row as following the `KS-R03` insertions; this current citation establishes lane membership. Anchor: `test_knowledge_store` [19]
 
-- The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions).  Anchor: `test_knowledge_store` [19]
+
 
 
 - The fixture's registered stable contract and evidence node. Source caption: `knowledge-identity-branching-fixture` [20]

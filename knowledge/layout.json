@@ -76,6 +76,12 @@
     "file:dashboard/src/cockpit/roleLaunchModel.ts": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
+    "file:dashboard/src/cockpit/tabMemory.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/data/media.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
     "file:dashboard/src/explainer/ExplainerColumnPanels.tsx": [
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
     ],
@@ -88,10 +94,24 @@
     "file:dashboard/src/explainer/model.ts": [
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
     ],
+    "file:dashboard/src/grammar/DocumentMarkdown.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/grammar/Markdown.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/grammar/Media.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
     "file:dashboard/src/grammar/ModeBar.tsx": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
     "file:dashboard/src/grammar/SidebarToggle.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/grammar/documentMarkdown.ts": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
     "file:dashboard/src/panels/AttentionQueue.tsx": [
@@ -102,6 +122,10 @@
     ],
     "file:dashboard/src/panels/EventRiver.tsx": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/changeset/ChangeSetPane.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
     ],
     "file:dashboard/src/panels/changeset/DiffPane.tsx": [
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
@@ -130,21 +154,37 @@
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
     "file:dashboard/src/panels/detail-panel/taskReader.tsx": [
-      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json"
     ],
     "file:dashboard/src/panels/eventSummary.ts": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/file-viewer/DualPane.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:dashboard/src/panels/file-viewer/FileViewer.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
     ],
     "file:dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
     "file:dashboard/src/panels/knowledge-reader/PathViews.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json"
+    ],
+    "file:dashboard/src/panels/knowledge-reader/ReaderCode.tsx": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
     "file:dashboard/src/panels/lifecycle-list/LifecycleList.tsx": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
     "file:dashboard/src/panels/lifecycle-list/rowState.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/notes-reader/NotesReaderViewer.tsx": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
     "file:dashboard/src/panels/review/ChangeBadges.tsx": [
@@ -204,6 +244,7 @@
     ],
     "file:dashboard/src/panels/review/tree/ReviewTree.tsx": [
       "knowledge/dependents/DPD-3P9XTZ-roadmap-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
     ],
     "file:dashboard/src/panels/review/tree/SortMenu.tsx": [
@@ -234,7 +275,6 @@
       "knowledge/dependents/DPD-Q4APMS-mcp-readme-md.json"
     ],
     "file:docs/tool-details.md": [
-      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
       "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
     ],
     "file:examples/mcp/server.example.json": [
@@ -292,7 +332,9 @@
       "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
     ],
     "file:mcp/src/agents_remember/application/knowledge_gate/gate.py": [
-      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json"
     ],
     "file:mcp/src/agents_remember/application/knowledge_gate/landing.py": [
       "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
@@ -300,6 +342,17 @@
     ],
     "file:mcp/src/agents_remember/application/knowledge_gate/predicates.py": [
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_reader/marks.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_reader/truth.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_reader/weakness_closure.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/application/knowledge_worklist/generated_copies.py": [
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
@@ -337,6 +390,10 @@
     ],
     "file:mcp/src/agents_remember/application/knowledge_writer/report.py": [
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_writer/weakness_authoring.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/application/knowledge_writer/writer.py": [
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
@@ -459,7 +516,8 @@
     ],
     "file:mcp/src/agents_remember/application/tool_response.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
-      "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json"
+      "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/application/user_settings_init.py": [
       "knowledge/dependents/DPD-1DXK6Q-docs-guides-cost-aware-bootstrap-md.json",
@@ -469,6 +527,9 @@
     ],
     "file:mcp/src/agents_remember/application/worktree_code_state.py": [
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/worktree_status.py": [
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
     ],
     "file:mcp/src/agents_remember/application/worktree_tool_requests.py": [
       "knowledge/dependents/DPD-9F0Q8G-docs-guides-use-external-memory-md.json",
@@ -522,6 +583,9 @@
     ],
     "file:mcp/src/agents_remember/canvas/explainer_access.py": [
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/explainer_browser.py": [
+      "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
     ],
     "file:mcp/src/agents_remember/canvas/explainer_maintenance.py": [
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
@@ -1256,7 +1320,8 @@
     ],
     "file:mcp/src/agents_remember/models/knowledge_files/records.py": [
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json",
-      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/models/knowledge_files/shapes.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
@@ -1498,6 +1563,10 @@
     "file:mcp/src/agents_remember/serving/explainer_watcher.py": [
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
     ],
+    "file:mcp/src/agents_remember/serving/media.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
     "file:mcp/src/agents_remember/serving/paseo/paseo_daemon.py": [
       "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
       "knowledge/dependents/DPD-21GMJ5-docs-install-cursor-md.json",
@@ -1624,7 +1693,13 @@
       "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
       "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
     ],
+    "file:mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
     "file:mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
       "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
     ],
     "file:mcp/src/agents_remember/worktrees/integration/integration_resolution_handoff.py": [
@@ -1660,6 +1735,12 @@
     "file:mcp/src/agents_remember/worktrees/ledger_projection.py": [
       "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json"
     ],
+    "file:mcp/src/agents_remember/worktrees/modules/abandon.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/cleanup.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
     "file:mcp/src/agents_remember/worktrees/modules/closeout.py": [
       "knowledge/dependents/DPD-9F0Q8G-docs-guides-use-external-memory-md.json",
       "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
@@ -1684,6 +1765,10 @@
       "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
       "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
       "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/landing.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
     ],
     "file:mcp/src/agents_remember/worktrees/modules/landing_commit_check.py": [
       "knowledge/dependents/DPD-6ZHCCN-docs-design-python-test-evidence-md.json",
@@ -1714,6 +1799,9 @@
     ],
     "file:mcp/src/agents_remember/worktrees/modules/record_landing.py": [
       "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json",
       "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
     ],
     "file:mcp/src/agents_remember/worktrees/modules/startup/start_contract.py": [

@@ -1,0 +1,177 @@
+{
+  "path": "mcp/tests/test_serving_media.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b6c11f6666a1a8ed52aa6568bd93cd96bb844e60",
+        "content": "sha256:68a4c3728d19f8fdaef8bf337edf1e6ffbcee337d3997468214e6ce51d465d13",
+        "locator": {
+          "kind": "symbol",
+          "name": "DiffSideTests.test_a_ref_shaped_revision_is_refused_before_git"
+        }
+      },
+      "facet": "Committed-side selection rejects ref-shaped and option-shaped revision values.",
+      "id": "PRF-6AY19T",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6c11f6666a1a8ed52aa6568bd93cd96bb844e60",
+        "content": "sha256:e5b0654da0caeae8590e05684168bd5bff979104673491967d231bc151582816",
+        "locator": {
+          "kind": "symbol",
+          "name": "DiffSideTests.test_a_media_side_is_metadata_without_loading_the_blob"
+        }
+      },
+      "facet": "Media metadata does not require loading or decoding the blob.",
+      "id": "PRF-7244JH",
+      "invariant": "INV-AQH8BD",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §5",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6c11f6666a1a8ed52aa6568bd93cd96bb844e60",
+        "content": "sha256:52d29a93fa116b5f8b428f685b07b5b5ca85a6c336663d96563e3e95ae458473",
+        "locator": {
+          "kind": "symbol",
+          "name": "RangeTests.test_a_malformed_or_out_of_bounds_range_is_refused"
+        }
+      },
+      "facet": "Malformed and unsatisfiable ranges are refused.",
+      "id": "PRF-92CDZN",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6c11f6666a1a8ed52aa6568bd93cd96bb844e60",
+        "content": "sha256:eb9e0caea58aa55386eb071f88897553c3daedddf84ae6b6550bfdb6ec44f1ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "WorkingMediaTests.test_refuses_an_unserved_suffix_and_an_oversize_file"
+        }
+      },
+      "facet": "The fixed type table and named byte bound refuse unsupported or oversized files.",
+      "id": "PRF-DH4DRH",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6c11f6666a1a8ed52aa6568bd93cd96bb844e60",
+        "content": "sha256:2a6fe91f1cb24a7d4615b354370b1f946b621f7fdcdb2cef87722945e3d3b696",
+        "locator": {
+          "kind": "symbol",
+          "name": "TableTests.test_only_the_fixed_table_is_media"
+        }
+      },
+      "facet": "The server table contains the required PNG, JPEG, GIF, WebP, SVG, MP4 and WebM types.",
+      "id": "PRF-ECH61A",
+      "invariant": "INV-26X0GJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §3",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6c11f6666a1a8ed52aa6568bd93cd96bb844e60",
+        "content": "sha256:dbb3933f2454135cd1f46c23bbe56b884ac0751cc5a58b23ca716c9b427ddd7a",
+        "locator": {
+          "kind": "symbol",
+          "name": "DiffSideTests.test_a_historical_side_is_confined_lexically_not_through_today_s_symlink"
+        }
+      },
+      "facet": "Historical media paths do not follow a current worktree alias.",
+      "id": "PRF-EDVDH4",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6c11f6666a1a8ed52aa6568bd93cd96bb844e60",
+        "content": "sha256:b11c09633c05ed56b3a7cdd1bb5d5019cb5073dea7696dda92c21e07d7741a57",
+        "locator": {
+          "kind": "symbol",
+          "name": "WorkingMediaTests.test_a_range_is_a_206_with_its_content_range"
+        }
+      },
+      "facet": "A valid range yields 206 and the exact Content-Range.",
+      "id": "PRF-Q9TF8H",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6c11f6666a1a8ed52aa6568bd93cd96bb844e60",
+        "content": "sha256:db93652a02e26d5ad7287a28bb3864f8d4f58774529ea68f4aa79c3d0c0103d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "DiffSideTests.test_a_picture_side_names_media_and_a_nul_binary_side_names_binary"
+        }
+      },
+      "facet": "Diff side metadata distinguishes pictures and other binary content.",
+      "id": "PRF-VW4H3V",
+      "invariant": "INV-AQH8BD",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §5",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6c11f6666a1a8ed52aa6568bd93cd96bb844e60",
+        "content": "sha256:c1d24c3e9ec6ecfd2c95992c46cf82f9ceeb13f88ad2b6fca45a1d7d500b02f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "WorkingMediaTests.test_reads_exactly_the_requested_bytes_and_no_cache"
+        }
+      },
+      "facet": "Working-file range reads return the requested slice and reflect a later file write rather than cached bytes.",
+      "id": "PRF-WVTJNF",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks shared media responses and their serving-route selection boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6c11f6666a1a8ed52aa6568bd93cd96bb844e60",
+            "content": "sha256:820bc25f31232c8d36f158ad9b1ed5e9f6e7ccc5b91b3e0f4eb9cb05b3206f4b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

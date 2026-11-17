@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "blob": "effe8d2e820ea0250852d730c5cfb88b8cb2fd37",
             "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e23e68eb2a31165781bb22894b445d6d8bc18b66",
+            "blob": "4b2ad3e134f125cea8de3cfc20e0cbc7e222e0b1",
             "content": "sha256:2d24c867ca31e1b03d8f8e8a739931b87d1d7942b4cf007041b870ea2b1b29a1",
             "locator": {
               "kind": "symbol",
@@ -36,16 +36,16 @@
       ]
     },
     "3": {
-      "note": "The reused File Viewer content pane maps both notes and requirement packets to markdown/code/placeholder rendering.",
+      "note": "The shared content pane maps notes and requirement packets into rendered Markdown, source text or media through DualPane, with explicit placeholders for load failure or no selection.",
       "targets": [
         {
           "anchor": {
-            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
-            "content": "sha256:d1f3a9e5586965cd322a4773002f7ede9fab3e1c9f3dd2c871aedd49bfc9223f",
+            "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+            "content": "sha256:baf15050ee002e16341f441c4ebc98a7a115d473dfac689f2e2f81681f3dad25",
             "locator": {
-              "end": 146,
+              "end": 170,
               "kind": "line_range",
-              "start": 129
+              "start": 139
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },
@@ -53,12 +53,12 @@
         },
         {
           "anchor": {
-            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
-            "content": "sha256:68a2b4d382437dadb4bbbe1d75607d067e34315faef5c4dd340524dfa4c6235d",
+            "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+            "content": "sha256:2390eb3bfb4a970fb8a3f7b637fb107cc128866f17f83f2a822ef51bde2e4e85",
             "locator": {
-              "end": 270,
+              "end": 292,
               "kind": "line_range",
-              "start": 270
+              "start": 256
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },
@@ -67,36 +67,36 @@
       ]
     },
     "4": {
-      "note": "Cockpit defines the note-opening callback.",
+      "note": "The cockpit shellActions owner defines openNotes, which clears a change-set target, stores the artifact target and opens its reader.",
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "45bf722d8fb318fe1c2e26c0ac6e551df69ae861",
             "content": "sha256:9ea3c4fbf6f5ddd79b5328731a9c926c86173f74e6316a9609d11e63e78be30e",
             "locator": {
-              "end": 387,
+              "end": 93,
               "kind": "line_range",
-              "start": 380
+              "start": 86
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/cockpit/shellActions.ts"
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "Cockpit defines the note-selection callback.",
+      "note": "The cockpit shellActions owner defines selectNote, updating the current notes or requirements path while retaining the reader target.",
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "45bf722d8fb318fe1c2e26c0ac6e551df69ae861",
             "content": "sha256:64f414cda89089973a374327ed488a3765461f4707421fd5c134a499e960c79e",
             "locator": {
-              "end": 399,
+              "end": 105,
               "kind": "line_range",
-              "start": 390
+              "start": 96
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/cockpit/shellActions.ts"
           },
           "kind": "code"
         }
@@ -107,12 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:7f19b6d0ed8709053a492349b0a9e648c1731e868dd5d70b75b925d37690fb47",
             "locator": {
-              "end": 465,
+              "end": 323,
               "kind": "line_range",
-              "start": 465
+              "start": 323
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -141,23 +141,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
-            "content": "sha256:a377081a233a4d51374df30b6e2894df93bfdb93868ec5894db13d7e2270128c",
+            "blob": "25d3ff2adf2734534932e510bf6de66b5cbb6faf",
+            "content": "sha256:dc133e44a02b8842996828212abe3c215abeae608f2a9aeb970566f1dcd32d5f",
             "locator": {
-              "kind": "symbol",
-              "name": "stubNotesApi"
+              "end": 65,
+              "kind": "line_range",
+              "start": 61
             },
-            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+            "path": "dashboard/src/panels/notes-reader/notesReaderTestSupport.tsx"
           },
-          "kind": "test"
+          "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
+            "blob": "25d3ff2adf2734534932e510bf6de66b5cbb6faf",
+            "content": "sha256:14bedf08d6b1ac8a1596f88a228024348127f46c72acd2d589ff34cc78ac74d0",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "dashboard/src/panels/notes-reader/notesReaderTestSupport.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e9ec75cc0a5b18ff4f512bf0e49061039c154dba",
             "content": "sha256:f6188f8b32ffa555cdbd34de70979b9eec4b9df43808fcd1fadf8308a6de4ca3",
             "locator": {
-              "kind": "symbol",
-              "name": "masterDoc"
+              "end": 632,
+              "kind": "line_range",
+              "start": 623
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
           },
@@ -165,11 +180,12 @@
         },
         {
           "anchor": {
-            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
+            "blob": "e9ec75cc0a5b18ff4f512bf0e49061039c154dba",
             "content": "sha256:6ae5d75afe0113c5e9bcd6ed32849d8526f988c3ead338da53a7d54babcdf05f",
             "locator": {
-              "kind": "symbol",
-              "name": "seedMaster"
+              "end": 635,
+              "kind": "line_range",
+              "start": 633
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
           },
@@ -178,16 +194,16 @@
       ]
     },
     "9": {
-      "note": "ReaderLayout exposes the shared left toggle only for a present rail and applies the same visibility state to the panel and handle.\n\nAnchor: \"function ReaderLayout(\"",
+      "note": "ReaderLayout exposes the shared left toggle only for a present rail and applies the same visibility state to the panel and handle. Anchor: \"function ReaderLayout(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
-            "content": "sha256:0feee1581c4b1c5ba393a48a119463de00ae7accda236131a17ddf7f31eaa592",
+            "blob": "78497a2c24963cdd0dd96d35d8759f27ef4fe80e",
+            "content": "sha256:f54e8e08220ef270cbbb28d53a16bc560235fc237c33418cbc1d29c14a3c21c0",
             "locator": {
-              "end": 564,
+              "end": 600,
               "kind": "line_range",
-              "start": 512
+              "start": 548
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },

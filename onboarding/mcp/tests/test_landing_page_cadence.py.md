@@ -12,6 +12,8 @@ Protect server-owned landing interest and transient per-contract probe pacing th
 
 The composed-runtime case activates two actual Projector subscriptions, permits probes while either remains and observes no additional probe after the final departure. The discovery-disconnect case revokes interest across the awaited discovery and asserts observation is not called. The clock case covers the 30/120/600/3600-second bands and semantic-answer reset. A two-population case covers rewritten/new/reopened/finished/removed contract state and schedule/observation reclamation.
 
+`LandingTargetFactTests` checks that observed and unobserved targets name the contract source branch when no PR supplies a base. It also checks that a successful empty PR lookup renders `absent` for a recorded non-PR strategy and `planned` for the PR strategy.
+
 ## Invariants And Boundaries
 
 These are in-process assertions with a real app/refresher/subscription composition and mocked remote observation/discovery seams. They do not prove native outbound calls, CPU budget, every disconnect race, rendered-page freshness or installation acceptance. Provider safety is deliberately a separate suite and is not stopped by landing disinterest.
@@ -20,4 +22,6 @@ These are in-process assertions with a real app/refresher/subscription compositi
 
 - The suite owns composition, disconnect, age/reset and bounded-population assertions. [1]
 
-- Composition binds the same landing instance to the Projector's real subscriber predicate. [2]
+
+
+- Composition binds the same landing instance to the Projector's real subscriber predicate. Anchor: `_build_serving_runtime` [2]

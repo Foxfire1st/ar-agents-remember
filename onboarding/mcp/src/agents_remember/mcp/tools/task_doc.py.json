@@ -42,12 +42,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
-            "content": "sha256:667882012ebd38bb51518f072cfa2239734d4aa86714747c7082f0e34bec837b",
+            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "content": "sha256:94f747b86d9b9d6a5b82c223ebcbd4c31bb795fbf3d0c63f919f661a7840fdc4",
             "locator": {
-              "end": 293,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "TaskDocResponse"
             },
             "path": "mcp/src/agents_remember/models/task_doc.py"
           },

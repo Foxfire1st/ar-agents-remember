@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The reader and derived index must agree on the authored JSON half so loss of Markdown does not silently hide invariant entries."
+  },
+  "applicability": "Storage-eligible onboarding cards with an existing entry half and absent Markdown half.",
+  "conditions": [
+    "The registered reader names the entry half as sidecar-only and the route index recognizes either authored half.",
+    "Record states and aggregate cardState are computed independently at the selected code tree; sidecar-only visibility does not make stale entries current."
+  ],
+  "exclusions": [
+    "Ordinary storage confinement and unreadable/invalid input refusals remain applicable."
+  ],
+  "id": "INV-NRNXP8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/role-reports/worker/b80532cb-3a13-4e3c-8a92-077f18b4e5af/role-launch/261112-BUG-L3-W7-worker.md#requirement-evidence; W7-evidence.tar.gz and preserved W6-evidence.tar.gz (exact final checks and predecessor fail-before evidence)",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/scratch/curator/8c2908a8-b0f0-4fe7-8204-4a9a4b74bcb2/requirement_intake/W8/postpublication-hunks/per-hunk-evidence.json; source inspection at final tree 6bf26d62a4f509ce650bd8909feb48136c80a121. When Markdown is absent and the JSON half is a file, emits its readable location, sidecar-only status and missing-Markdown explanation, then computes its record fields and returns it. Existing governing-card selection alone cannot produce this answer.",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/scratch/curator/8c2908a8-b0f0-4fe7-8204-4a9a4b74bcb2/requirement_intake/W8/postpublication-hunks/per-hunk-evidence.json; source inspection at final tree 6bf26d62a4f509ce650bd8909feb48136c80a121. Recognizes authored JSON card halves while preserving metadata exclusions, allowing the route builder to index them. This executable acceptance branch is not covered by the existing suffix-mapping realization.",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/03_faults-met-while-closing-the-last-mas-df157ab4c1-ar/scratch/curator/8c2908a8-b0f0-4fe7-8204-4a9a4b74bcb2/requirement_intake/W8/postpublication-hunks/per-hunk-evidence.json; source inspection at final tree 6bf26d62a4f509ce650bd8909feb48136c80a121. Discovers Markdown and JSON halves together, making JSON-only cards visible to index construction. Existing sidecar-status and suffix-mapping anchors do not cover this discovery step. Deduplicates one source discovered through its two physical halves and creates its route bucket when needed. This is cooperating index behavior for the one card-half invariant, not a new invariant."
+      ],
+      "path": "W8-final-writer-input.json"
+    },
+    "handoffEntry": "L3-W5-12",
+    "leaf": "261112-BUG-L3",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A card whose Markdown half is absent is read from its entry half and answered as sidecar-only. A route index recognizes either authored half as coverage; missing Markdown alone does not make that index stale. Record currentness is judged independently from that coverage.",
+  "status": "proposed",
+  "supersedes": []
+}

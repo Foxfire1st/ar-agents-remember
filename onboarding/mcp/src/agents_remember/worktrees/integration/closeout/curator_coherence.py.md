@@ -38,25 +38,25 @@ Under CCR-R03@v1 the observation and currentness seam binds declared dependencie
 reader takes `_QualityAttestationSource` (attestation/report paths, pair identity, and the exact
 code/memory candidate trees) and re-requires the attestation's dependency declaration against those
 trees (`memory-quality-attestation-dependencies-stale` refuses)
-cit:([`_QualityAttestationSource`, `_quality_attestation`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:109-115; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:475-532).
+cit:([`_QualityAttestationSource`, `_quality_attestation`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:115-121; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:507-564).
 `require_current_curator_coherence` runs `_require_current_dependencies`, which rebuilds the
 `curator-coherence/v1` declaration from the record's code/memory candidate trees, topology
 fingerprint, digest-bearing task intent, attestation/report digests, every judgment evidence digest,
 and predecessor — refusing `curator-coherence-task-intent-missing`,
 `evidence-dependencies-missing`, or `curator-coherence-dependencies-stale`
-cit:([`require_current_curator_coherence`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:372-468; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:286-346).
+cit:([`require_current_curator_coherence`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:292-352; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:404-500).
 
 **The mandatory invariant gate (MIK-R09 rule 3, leaf 260928-MIK-L09).** After every other check passes,
 `require_current_curator_coherence` calls `_require_knowledge_gate(contract, observation)`, which asks
 `worktrees.knowledge_gate.leaf_gate_refusal` over the very code and memory candidate trees this authority binds
 (`observation.code_candidate_tree`, `observation.memory_candidate_tree`). On converted memory the gate recomputes the
 worklist, decides every item through its kind's predicate and runs the validator (as a leaf publication, against the
-parent line's memory tip); any open item, incomplete run or violation raises `curator-coherence-knowledge-gate-refused`
-with next action `memory_quality_check`, naming every finding. A converted leaf with no bound gate refuses
+parent line's memory tip); an open non-advisory item, incomplete run or refusing violation raises `curator-coherence-knowledge-gate-refused`
+with next action `memory_quality_check`, naming every refusing finding. Open advisory items remain report-only and do not cause this refusal. A converted leaf with no bound gate refuses
 (`GATE_UNBOUND`). An unconverted leaf is refused here with the central `legacy-format` message; a failed marker probe keeps its named error rather than being classified as legacy. The curator-coherence record,
 its identity checks and pair identity are unchanged (MIK-R09 Preservation): the gate is one more refusal after them.
 Because the curator publication computed the same memo key, this read is normally served from the gate's memo.
-cit:([`_require_knowledge_gate`, "_require_knowledge_gate(contract, observation)"], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:345-369).
+cit:([`_require_knowledge_gate`, "_require_knowledge_gate(contract, observation)"], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:355-401).
 
 ### Conventions
 
@@ -109,7 +109,11 @@ The following declarations carry the changed boundary.
 
 
 
-- The closeout validator refuses until the gate passes and never runs ungated. [10]
+
+
+- The closeout validator refuses until the gate passes and never runs ungated. Anchor: `test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated` [10]
+
+
 
 - Current readiness still validates live inputs and dependencies. [11]
 
@@ -161,10 +165,7 @@ deleted rather than aliased.
 
 ## KS-R23@v1 The Paths Resolve A Durable Attestation Copy
 
-`260915-KS-L23` item 18's second measurement reached this resolver. `CuratorCoherencePaths` gained the
-`attestations` directory (`:85`) and `attestation_copy(digest)` (`:93-103`), and
-`curator_coherence_paths` resolves it at `:169` — inside the same
-`notes/reports/curator-coherence/<leaf>/` history the record itself survives in (`:163-169`).
+`260915-KS-L23` historically introduced the durable attestation copy. The current `CuratorCoherencePaths` model declares `attestations` and `attestation_copy(digest)` in `models/lifecycles/curator_coherence.py:629-642`; the focused `worktrees/integration/closeout/curator_coherence_paths.py:10-19` resolver places the directory in the same `notes/reports/curator-coherence/<leaf>/` history as the record.
 
 The copy's name is the attestation's own digest, so one digest names one file and a re-publication over
 unchanged bytes reuses an immutable copy instead of rewriting it. It exists because the record's

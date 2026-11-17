@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_cleanup_names_the_recording_route.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d72eec272456351c67f8681a2b2c289e089adfd8",
+        "content": "sha256:e436d7b9c1925d94a2fde19ad17b13be7fbb8d2041bdd122e3109bae00efe4e4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cleanup_of_an_unrecorded_master_names_the_recording_route"
+        }
+      },
+      "facet": "The refusal helper directs series cleanup to worktree_record_landing and leaf cleanup to worktree_integrate; it executes no cleanup or recording transaction.",
+      "id": "PRF-W017Y6",
+      "invariant": "INV-S9NARW",
+      "origin": {
+        "handoffEntry": "L3-W5-04",
+        "leaf": "261112-BUG-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The refusal helper directs series cleanup to worktree_record_landing and leaf cleanup to worktree_integrate; it executes no cleanup or recording transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d72eec272456351c67f8681a2b2c289e089adfd8",
+            "content": "sha256:e436d7b9c1925d94a2fde19ad17b13be7fbb8d2041bdd122e3109bae00efe4e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cleanup_of_an_unrecorded_master_names_the_recording_route"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

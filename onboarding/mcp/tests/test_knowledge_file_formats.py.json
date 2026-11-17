@@ -84,16 +84,16 @@
       ]
     },
     "6": {
-      "note": "Lane registration.  Anchor: \"mcp/tests/test_knowledge_file_formats.py\"",
+      "note": "Lane registration. Anchor: \"mcp/tests/test_knowledge_file_formats.py\" Anchor: \"mcp/tests/test_knowledge_file_formats.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:cc80fc3ab3b91d70e98443711d6381a8ad6bca7810a332d1ab36e2fca35eb724",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 230,
+              "end": 809,
               "kind": "line_range",
-              "start": 230
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

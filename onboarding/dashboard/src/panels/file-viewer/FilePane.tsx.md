@@ -69,12 +69,18 @@ No configured live documentation source was available for this pass.
 
 - The pane marks the cited lines and scrolls the first into view. [12]
 
-- The Knowledge reader's code view passes the resolved cited range here. [13]
+
+
+- The Knowledge reader's text-code view renders FilePane and passes the resolved cited line range as highlightedLines. Media citations use the separate media view. [13]
+
 
 - The optional range joins the editor's dependencies and rebuilds the view. [14]
 
 
+
+
 - The dual pane that mounts the same primitive on the code side. [15]
+
 
 
 ### Cross-Repo References

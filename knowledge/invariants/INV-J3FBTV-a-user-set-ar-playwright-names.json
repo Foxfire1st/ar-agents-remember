@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The named module is consulted in mcp/src/agents_remember/canvas/explainer_browser.py and handed to a seat in mcp/src/agents_remember/cli/paseo_explainer_host.py, and the browser suite proves both the as-given use and the refusal of an absent module."
+  },
+  "applicability": "An installation whose user sets AR_PLAYWRIGHT.",
+  "conditions": [
+    "The named file exists: the module is used as given and its browser folder is the one Playwright's own defaults name.",
+    "The named file is absent: the render refuses before anything is fetched."
+  ],
+  "exclusions": [
+    "Nothing is fetched or replaced behind a module the user names."
+  ],
+  "id": "INV-J3FBTV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_explainer_browser.py — the named module is used as given and its absence refuses"
+      ],
+      "path": "261112-BUG-L1-curator-handoff"
+    },
+    "handoffEntry": "L1-B06",
+    "leaf": "261112-BUG-L1",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A user-set AR_PLAYWRIGHT names the module to use, with the browser folder Playwright's own defaults name, and nothing is fetched or replaced behind it; an absent module refuses before any fetch.",
+  "status": "proposed",
+  "supersedes": []
+}

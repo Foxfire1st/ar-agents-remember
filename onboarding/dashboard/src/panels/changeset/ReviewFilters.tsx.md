@@ -22,4 +22,6 @@ The caller must keep page, lane and inventory bound to the same comparison. Thes
 - No context means no controls; non-all filters show shared notes. [2]
 - Lane file selection and intersection are pure held-answer helpers. [3]
 
-- Actual viewer imports and mounts this owner. [4]
+
+
+- Actual viewer imports and mounts this owner. Anchor: `ChangeSetViewer` [4]

@@ -6,25 +6,25 @@
 
 ## Purpose
 
-The MIK-R122 unit suite: five rig cases over the real Operations right rail proving one loaded chat that switches by message, hides without unloading, coalesces bursts, and stays out of reach.
+Five fixture-based unit cases over the real Operations right rail check iframe identity, generation, selection messages, hidden state, burst coalescing and focus containment.
 
 ## Code Commentary
 
-The `Rig` mounts the real `RightRail` with a stubbed fetch backend (frame descriptor plus per-role agent answers) and Projects/Master/Task/ghost refs. `readyFrame` forges the plugin ready report against the stubbed origin. Per-case scope is exact: the river-toggle case asserts the same iframe element with the load count unchanged; the message-switch case asserts `ar.open` with agent and workspace with element and generation unchanged; the ghost case asserts generation unchanged while hidden and the same element on return; the burst case asserts nothing loads in between with exactly one `ar.open` for the latest selection; the focus case discards the ready return and asserts only containment and `aria-hidden` outside the hidden chat. The focus setup starts outside Chat, so the case is credited at that unit scope, not as a native keyboard certificate.
+The `Rig` mounts the real `RightRail` with a stubbed fetch backend (frame descriptor plus per-role agent answers) and Projects/Master/Task/ghost refs. `readyFrame` forges the plugin ready report against the stubbed origin. The river-toggle case asserts the same iframe element and generation while its wrapper changes hidden state. The message-switch case checks `ar.open` with the selected agent and workspace while retaining element and generation. The ghost case checks generation while hidden and the same element on return. The burst case checks unchanged generation before readiness, no early post and exactly one `ar.open` for the latest selection after readiness. These assertions do not count document loads. The focus case checks containment and `aria-hidden` with initial focus outside the chat; it supplies no live-host keyboard measurement.
 
 ## Evidence
 
 
-- The river toggle keeps the same frame element with the load count unchanged. [1]
+- The river toggle retains the iframe element and generation while toggling its hidden wrapper. [1]
 
 
-- Selection switches post ar.open with agent and workspace and never load again. [2]
+- Selection switches post ar.open with the agent and workspace while retaining element and generation. [2]
 
 
-- The agentless selection hides the frame without unloading it and switches back. [3]
+- The agentless selection hides the same frame, retains its generation and shows it again on return. [3]
 
 
-- A not-ready burst loads nothing in between and brings only the latest selection forward. [4]
+- A not-ready burst retains generation, posts nothing early and forwards only the latest selection after readiness. [4]
 
 
 - No focus stays inside the hidden chat. [5]

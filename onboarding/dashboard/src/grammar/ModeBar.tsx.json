@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
               "end": 75,
@@ -54,12 +54,12 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:8e43ed64b0593e9d3181c691ce914ff3e16355a7ffac7db2fcd318f28e841070",
             "locator": {
-              "end": 879,
+              "end": 738,
               "kind": "line_range",
-              "start": 879
+              "start": 738
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -67,7 +67,7 @@
         },
         {
           "anchor": {
-            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
             "content": "sha256:eac72c611c469363040eb0c5a0e2f85820513286db45f3fecfd4c1153937f315",
             "locator": {
               "end": 65,

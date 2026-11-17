@@ -15,6 +15,7 @@ The seat order rather than the bytes: one environment per leaf, a generation tha
 - A build faulted before the seat leaves no workspace, no binding and no seat, while a lost create reply reconciles to the same seat.
 - A failed Retire stays pending and resumes its original receipt, pruning only grades whose references are gone.
 - The recheck after the environment write lets a comparison that moved during the build win over the packet.
+- A planned send puts the task's requirement packet texts and declared planned effects into `planned/`; an empty send on a planned leaf carries the planned request; a recorded send copies no planned documents.
 
 ## Evidence
 
@@ -24,5 +25,8 @@ The seat order rather than the bytes: one environment per leaf, a generation tha
 - The case `test_a_comparison_that_moves_during_the_build_wins_over_the_packet` protects a comparison that moved mid-build winning over the packet. [5]
 
 - The case `test_an_update_refuses_while_the_lock_is_held` protects an Update refusing instead of waiting on a held lock.
+
+- A planned send writes the requirement and declared effects into the folder. [6]
+- An empty planned send asks for the requirement and planned effects. [7]
 
 - Retired at the fifth freeze d59c3493: mcp/tests/test_explainer_service.py:328-368 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

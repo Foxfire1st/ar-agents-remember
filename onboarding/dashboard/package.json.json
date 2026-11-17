@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/package.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The manifest declares `@playwright/test` at `^1.65.0`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2116aec8d8fe95cd1f5e5dd3b63cb7d392febb48",
+            "content": "sha256:426846889c456fb14af26e9eb94a4e0f80041364d2eaafb721065074469a1934",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The manifest separates dashboard dependencies, development dependencies and executable scripts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2116aec8d8fe95cd1f5e5dd3b63cb7d392febb48",
+            "content": "sha256:b0ba61ebda051d1142e4bcb633dd3158fce97a7b86dd296c349495c737158ebd",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

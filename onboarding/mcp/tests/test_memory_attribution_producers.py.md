@@ -19,9 +19,7 @@ baseline adoption and carryover through their real application tools on disposab
 
 The module contains source-census, renderer, historical-rewriter, unconverted-carryover refusal and converted baseline-adoption tests. The three content routes are external closeout, direct landing and baseline adoption. `models/closeout/input.py` carries the shared renderer; `kernel/memory_backfill.py` is the exact-path historical rewriter, not a new-content route. The AST census follows actual calls, including directly imported aliases, assignment-alias propagation and literal getattr bindings, rejects unlisted callers and returned retired names, and is tested with copied-producer, returned-name and three indirect-caller negative controls. It is not proof that every route has executed.
 
-The renderer case deliberately uses a multi-paragraph caller body whose final paragraph resembles
-trailers. It checks preservation of that body, a separate final attribution block, and parsing of
-the appended code commit rather than the lookalike in the body. Baseline generates its own adoption subject. Carryover writes into an open recovery worktree without a standalone commit; it accepts no CarryoverCommitMessages argument.
+The renderer case deliberately uses a multi-paragraph caller body whose final paragraph resembles trailers. It checks preservation of that body, a separate final attribution block, and parsing of the appended code commit rather than the lookalike in the body. The parser cases additionally compare the declared expected result with `git interpret-trailers --parse` for three body-only placements, a later genuine final trailer, a neighboring `Commit-Check-Pass`, and the shared renderer with a newline-ending body. Their helper writes each message into an isolated repository and records the comparison; the Git helper returns stripped text. These cases establish their named shapes, not equivalence for every Git trailer grammar. Baseline generates its own adoption subject. Carryover writes into an open recovery worktree without a standalone commit; it accepts no CarryoverCommitMessages argument.
 
 `_carryover_world` builds a real source/official code comparison and a separate source-memory checkout, using unconverted fixture memory by default. `test_carryover_apply_refuses_unconverted_memory_with_the_conversion_step` supplies malformed cache bytes and requires the central `legacy-format` refusal with conversion guidance. Code/memory refs, memory HEAD, status, cached diff, staged entry inventory and file bytes are unchanged. Successful legacy carryover publication/replay is retired, not current attribution coverage. Converted carryover behavior remains the separately scoped MIK-R56 obligation.
 
@@ -77,8 +75,7 @@ No configured external domain-documentation evidence.
 
 ### Repo-Internal References
 
-These repository-relative targets were checked in the L9 code checkout. The cited ranges support
-the current working-candidate behavior; historical entries below retain their original scope.
+The earlier L9 inspection account is historical. Current references support the source assertions described here; retained historical entries keep their original scope.
 
 
 
@@ -98,6 +95,8 @@ No additional configured cross-repository evidence is claimed.
 - One-definition attribution guard and exact three-content-route AST census retain copied/returned-name negatives and add assignment-alias and literal-getattr caller negatives; the original-tree backfill witness is separate. [1]
 
 - The hostile-body case preserves the message and parses the final attribution. [2]
+
+- Source cases compare three body-only placements and genuine final-trailer, neighboring commit-check and newline-ending renderer controls with declared Git and parser results. \[9] [9]
 
 - Public unconverted carryover asserts conversion guidance and no observed ref, index, cache or content mutation; the prior successful-attribution test is retired [3]
 

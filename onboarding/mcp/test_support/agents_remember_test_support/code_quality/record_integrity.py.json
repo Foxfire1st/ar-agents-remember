@@ -54,15 +54,16 @@
       ]
     },
     "12": {
-      "note": "Scalars and nested blocks read out of frontmatter, which is all the parsing there is.",
+      "note": "The enclosure-contract frontmatter helpers; canonical leaf documents and masters are parsed separately as JSON.",
       "targets": [
         {
           "anchor": {
             "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
             "content": "sha256:a0aaabfb9f2d057871fe86e7fc0364669073178a74ad2276040dc91926718094",
             "locator": {
-              "kind": "symbol",
-              "name": "_scalar_fields"
+              "end": 248,
+              "kind": "line_range",
+              "start": 247
             }
           },
           "kind": "code"
@@ -72,8 +73,45 @@
             "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
             "content": "sha256:2b40bd1ebfab460055167a890d7e891d523f58e5201b538824e2209001ac0ca3",
             "locator": {
-              "kind": "symbol",
-              "name": "_block_fields"
+              "end": 262,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:c3cc5bd0750caead2b955551ca5c2ea2953e6c33f722cb2d60c74da701eeb5cc",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 265
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:0bd562e8551c42ed78224bf1a79b6b0b01d4f1054cdf3db971aefc33b17804b7",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 290
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:2136f680684bec84b25500d1a52e5091823a29ce7e77a6467b60e218f4d9b78b",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 324
             }
           },
           "kind": "code"
@@ -425,12 +463,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:dd1150cac0a6e9fe146a70162940a8dfa3f1318cb72094a8f1f5af2e3294b878",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:f3d959f1d2badd9a58c6e336e82f49c9d71da8e7334ba975b03392a3bdf6c042",
             "locator": {
-              "end": 778,
+              "end": 789,
               "kind": "line_range",
-              "start": 778
+              "start": 777
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

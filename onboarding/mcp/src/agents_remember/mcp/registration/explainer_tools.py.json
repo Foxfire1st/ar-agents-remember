@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6c13d6defc09364b2088c4232b31b6f3d492a66b",
+        "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
         "content": "sha256:17caf46f54bd82f3877f3554684e5d91524b563a0ed1ef19a22826a585530414",
         "locator": {
           "kind": "symbol",
@@ -26,12 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c13d6defc09364b2088c4232b31b6f3d492a66b",
+            "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
             "content": "sha256:17caf46f54bd82f3877f3554684e5d91524b563a0ed1ef19a22826a585530414",
             "locator": {
-              "end": 239,
+              "end": 252,
               "kind": "line_range",
-              "start": 208
+              "start": 221
             }
           },
           "kind": "code"
@@ -43,12 +43,63 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c13d6defc09364b2088c4232b31b6f3d492a66b",
+            "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
             "content": "sha256:505de2315ee3a77ab21a7a47668ef15276a01c5f75e07a421d3757d87b1d1780",
             "locator": {
-              "end": 205,
+              "end": 218,
               "kind": "line_range",
-              "start": 151
+              "start": 164
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The announce answer passes through whole, with no run folder to name.\n\nAnchor: `\"announce\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+            "content": "sha256:888e527860e5594e4064179b595c219f661568fce558e798b2d8dff499f987ef",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A publishing answer carries the browser its load ran with.\n\nAnchor: `\"browser\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+            "content": "sha256:4e0e710da0fddd38776bb8c5417242448a5daa8210b0353574eb1c50a4ec86a3",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The render tool's own description tells the seat to say the sentence before the next call.\n\nAnchor: `announce`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+            "content": "sha256:cda415c70994cde47959d8afe56b6bf0e5ef15f89186e0b71d5b9f5536829732",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "code"

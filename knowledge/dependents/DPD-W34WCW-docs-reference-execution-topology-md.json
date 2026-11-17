@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The execution-topology page already states that a master no sprint commands runs as an atomic master; the projection-members change keeps a null sprint in that projection, and no statement became untrue.",
-    "task": "261112-RSM-L1",
+    "statement": "The page holds: the archive change surveys every still-live commanded master before it refuses, names all blocked masters in one refusal, and retires the moving masters' enclosures; the topology digest states execution natures, not the archive's refusals.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "docs/reference/execution-topology.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
     },
     {
-      "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+      "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive.py"
     },

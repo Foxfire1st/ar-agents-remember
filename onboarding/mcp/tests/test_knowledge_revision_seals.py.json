@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a963d7f4459c6a28a0200331eed5157ee15d375c",
-            "content": "sha256:a7875a9b9d4a97340a24a005157cfba2ca7940f77a7eef1ec939e5c57b7d144d",
+            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
             "locator": {
-              "end": 3477,
+              "end": 5044,
               "kind": "line_range",
-              "start": 3462
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -135,16 +135,16 @@
       ]
     },
     "9": {
-      "note": "The unit-regression lane row this module is registered by.  Anchor: \"mcp/tests/test_knowledge_revision_seals.py\"",
+      "note": "The unit-regression lane row this module is registered by. Anchor: \"mcp/tests/test_knowledge_revision_seals.py\" Anchor: \"mcp/tests/test_knowledge_revision_seals.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:b7b1484eb0fa1e1fb3744e4db9c6a29b9026c328733a26254ee84d07cde416e7",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 267,
+              "end": 809,
               "kind": "line_range",
-              "start": 267
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

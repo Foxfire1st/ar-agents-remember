@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+        "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+        "content": "sha256:78a3d24fe6ad4db095798cdc8250395fd7d0737a5be3a9b798be5a235e13ff9f",
+        "locator": {
+          "kind": "symbol",
+          "name": "browser_module"
+        }
+      },
+      "id": "RLZ-8WGPVN",
+      "invariant": "INV-J3FBTV",
+      "origin": {
+        "handoffEntry": "L1-B06",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "It answers a user's AR_PLAYWRIGHT before any module this installation holds and hands that module to the seat's launch environment, so a seat's render uses the module the user named.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
         "content": "sha256:733986ba28b858e9075b59196dfee7fdc6bcd309a718d555767580717234fbf1",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+        "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
         "content": "sha256:c7a6dde00df7e3e295aa2c9cb7679c67d075358b17f44fee6333c2cc42969260",
         "locator": {
           "kind": "symbol",
@@ -44,8 +62,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
-            "content": "sha256:fa9c45e249cef9bb55a8f4c1eaa37c57eb7d4302034c40a3aa4659345047f0a7",
+            "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+            "content": "sha256:fad9da61840ba394c1b7554437a70de169c6e45e1a24ee6ecd09326bdf35e015",
             "locator": {
               "kind": "file"
             }
@@ -59,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+            "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
             "content": "sha256:1b2e75b4208ae2aec1fe7b2e695c7112cfd69cca4aa9709fdba45281c4f0d195",
             "locator": {
-              "end": 265,
+              "end": 271,
               "kind": "line_range",
-              "start": 222
+              "start": 228
             }
           },
           "kind": "code"
@@ -72,19 +90,32 @@
       ]
     },
     "4": {
-      "note": "A seat is created with the capsule as its instructions and the surface's tools preapproved\n\nAnchor: `def create_seat(`",
+      "note": "The create carries the capsule as instructions; Claude receives preapproval for server_info and the four explainer tools, while Codex receives no toolPolicy.",
       "targets": [
         {
           "anchor": {
-            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
-            "content": "sha256:72e305c8b05854306c1afb29ea540812f6643b4e429e0281593383f9d65bd6a0",
+            "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+            "content": "sha256:ab13c34c15bdbce4a4f4e48ed4322dd955c62484d7a4dbfb98088eeba8658aa7",
             "locator": {
-              "end": 432,
+              "end": 540,
               "kind": "line_range",
-              "start": 337
+              "start": 328
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "content": "sha256:3224a7f50c9b23d6f037bc49ec3703a792874e6a81a9966d7eef4ab201aa130f",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "mcp/tests/test_explainer_host.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -93,12 +124,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+            "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
             "content": "sha256:69b0d54a0b21f3527606b2b74e5d6ef3dea2989ff437457ae789416e23ef3a57",
             "locator": {
-              "end": 568,
+              "end": 574,
               "kind": "line_range",
-              "start": 516
+              "start": 522
             }
           },
           "kind": "code"
@@ -110,12 +141,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+            "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
             "content": "sha256:72064b7ca27f4e529838e3517499155069ca4734113076324f99efab9dc20207",
             "locator": {
-              "end": 707,
+              "end": 713,
               "kind": "line_range",
-              "start": 664
+              "start": 670
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The module the product fetched is preferred over a checkout's, so a package installation's module is handed on.\n\nAnchor: `browser_dependency`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+            "content": "sha256:022c973d77560c5931981af00d191175df3617f75062d7a4fb22f6dc24e7fd88",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 148
             }
           },
           "kind": "code"

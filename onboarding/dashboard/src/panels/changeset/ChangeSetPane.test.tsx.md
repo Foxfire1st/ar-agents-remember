@@ -8,8 +8,7 @@
 
 Vitest/jsdom test for `ChangeSetPane`'s **markdown "rendered" toggle** (slice L5). It mocks the
 CodeMirror primitives (`DiffPane` / `FilePane`) so the pane renders in jsdom without building a real
-`MergeView`/editor — this test is about the rendered-markdown mode, which uses `react-markdown`
-(jsdom-safe) instead — and pins that markdown files offer a `changeset-rendered-toggle` that swaps the
+`MergeView`/editor — the rendered-markdown cases use the shared Markdown renderer, while additional cases exercise mixed text/binary sides — and pins that markdown files offer a `changeset-rendered-toggle` that swaps the
 raw diff for a formatted `<Markdown>` view, while non-markdown files do not.
 
 ## Code Commentary
@@ -39,12 +38,20 @@ swap — not the live `<Markdown>` styling or the CodeMirror diff (both covered 
 
 ### Repo-Internal References
 
-- Mocks the CodeMirror panes so jsdom renders the markdown path only. [1]
+
+
+- The markdown rendered-view cases mock the CodeMirror DiffPane and FilePane primitives so jsdom exercises the shared Markdown path; the module also asserts mixed text and binary sides. [1]
+
 - Markdown diff fixture + per-case localStorage reset. [2]
 - Rendered toggle swaps the diff for the `<Markdown>` prose view. [3]
 - Non-markdown files do not offer the rendered toggle. [4]
 
-- Subject under test: the diff column + its rendered-markdown toggle. [5]
 
 
-- The markdown renderer the rendered view mounts. [6]
+- Subject under test: the diff column + its rendered-markdown toggle. Anchor: `ChangeSetPane` [5]
+
+
+
+
+
+- The markdown renderer the rendered view mounts. Anchor: `Markdown` [6]

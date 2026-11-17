@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The response, source adapters, route-specific confinement and client selectors jointly prevent arbitrary Git arguments or out-of-scope media reads while serving bounded selected content."
+  },
+  "applicability": "Media byte sources and responses for allowed working files, selected change-set sides and the knowledge reader's selected code source.",
+  "conditions": [
+    "Route-specific selection and confinement admit the source before its media bytes are returned.",
+    "Change-set callers supply existing selectors and side names; the server resolves the revision.",
+    "The knowledge reader retains its separate selected-memory-commit contract and derives the code blob from that selection.",
+    "The shared 16 MiB source bound and fixed served-type table apply.",
+    "No-store, nosniff and inert SVG content-security headers describe successful full or partial media responses."
+  ],
+  "exclusions": [
+    "Text-route size policy and the separate missing text-diff limit.",
+    "JSON error-response header policy."
+  ],
+  "id": "INV-P7EFQT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "producer-proof-locators.json: BUG-R05@v1 §4; mcp/tests/test_serving_files.py::RouteTests::test_bytes_keeps_the_path_confinement; mcp/tests/test_serving_files.py::RouteTests::test_bytes_refuses_a_suffix_outside_the_media_table; mcp/tests/test_serving_media.py::WorkingMediaTests::test_refuses_an_unserved_suffix_and_an_oversize_file; mcp/tests/test_serving_media.py::WorkingMediaTests::test_reads_exactly_the_requested_bytes_and_no_cache; mcp/tests/test_serving_media.py::WorkingMediaTests::test_a_range_is_a_206_with_its_content_range; mcp/tests/test_serving_media.py::RangeTests::test_a_malformed_or_out_of_bounds_range_is_refused; mcp/tests/test_serving_media.py::DiffSideTests::test_a_ref_shaped_revision_is_refused_before_git; mcp/tests/test_serving_media.py::DiffSideTests::test_a_historical_side_is_confined_lexically_not_through_today_s_symlink; mcp/tests/test_comparison_changeset.py::test_comparison_names_a_picture_side_and_serves_its_bytes; mcp/tests/test_knowledge_reader_media.py::test_an_option_shaped_knowledge_commit_is_a_400_not_a_git_argument",
+        "Curator source inspection of exact code tree96bf73439f79ee12d2529b31a1d94866756c0c1c; these integration and wire declarations realize the existing requirement obligation, with no test execution claimed."
+      ],
+      "path": "BUG-L5-curator-knowledge-v4.json"
+    },
+    "handoffEntry": "BUG-R05@v1 §4",
+    "leaf": "261112-BUG-L5",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Media reads use confined paths and fixed types, validate server-resolved change-set sides before Git access, enforce the named byte bound, answer byte ranges, and return no-store responses with an inert SVG policy.",
+  "status": "proposed",
+  "supersedes": []
+}

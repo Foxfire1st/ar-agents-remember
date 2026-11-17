@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
+    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
     "role": "curator",
-    "statement": "The README still describes installation and the package identity; its linked tool-details page now states the standalone rule, and no sentence of the README claims otherwise.",
-    "task": "261112-RSM-L1",
+    "statement": "The page holds: the packaging change raises the build requirement, the licence field's new form and a table of project links, and the dashboard change adds a route that answers a file's bytes; no sentence of this page names either. Its own sentence that the knowledge gate has no waiver holds as it stands, because a master's recorded landing keeps a stale entry as the master's debt and the gate itself still refuses.",
+    "task": "261112-BUG-L7",
     "uncommitted": true
   },
   "document": "README.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "675b2b192c83d602eba7a7ee622f6f33098c26cd",
+      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+      "blob": "54b818118629a276761c14d24046428232306f6e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -61,14 +61,34 @@
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
     {
-      "blob": "102d8ad36390d59fc0e1a5ecfb1cac0467b657b4",
-      "kind": "file",
-      "path": "docs/tool-details.md"
-    },
-    {
       "blob": "0d22e8881af6762091dbd844fb1d2b99a6a80685",
       "kind": "file",
       "path": "docs/install/cursor.md"
+    },
+    {
+      "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+      "kind": "file",
+      "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+    },
+    {
+      "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+      "kind": "file",
+      "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+    },
+    {
+      "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+      "kind": "file",
+      "path": "dashboard/src/panels/knowledge-reader/PathViews.tsx"
+    },
+    {
+      "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+    },
+    {
+      "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     }
   ]
 }

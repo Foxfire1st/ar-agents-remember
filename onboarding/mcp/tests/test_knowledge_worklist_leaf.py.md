@@ -54,8 +54,8 @@ The changed writer calls explicitly supply the current `leaf_worklist(load_contr
   - `knowledge_integrity_check(contractPath)` returns the latest worklist, and the checklist section shows it;
   - the memory-quality recompute persists and names its own failure; the controller-level run
     (`_execute_memory_quality`, review R1 F1) persists the file, returns `knowledgeWorklist` and renders the
-    section; since MIK-R09 (leaf 260928-MIK-L09) its four open items count, `curatorActionableCount` 4 and
-    `knowledgeGate.openItemCount` 4 (it was 0 while the worklist was information only);
+    section; its four open worklist items remain `knowledgeGate.openItemCount` 4, while the separate
+    stale-entry finding makes `knowledgeGate.findingCount` and `curatorActionableCount` 5;
   - a completed sync recomputes through the bound port; the recompute never raises and a failure never fails
     a completed sync (F2); the `continue` replay recomputes too;
   - converted bases cached by commit, version and code commit, and a cache location inside a working tree
@@ -81,7 +81,11 @@ The changed writer calls explicitly supply the current `leaf_worklist(load_contr
 ## Evidence
 
 
+
+
 - The controller source exercises a fresh shared clone, real index building, informational proof counts and distinct report modes; cache store tolerates listing/stat disappearance. [41]
+
+
 
 
 
@@ -111,24 +115,40 @@ No configured live documentation source was available for this pass.
 - The cache case patches the conversion where it now lives. [26]
 
 
-- The leaf fixture: real repositories plus the task root and enclosure. [27]
+
+
+- The leaf fixture: real repositories plus the task root and enclosure. Anchor: `converted_memory` [27]
+
+
 
 
 - The leaf's contract and task document. [28]
 - Pairing by trailer and persistence. [29]
 - The task document's maintenance scope. [30]
 
-- The writer's carry. [31]
+
+
+- The writer's carry. Anchor: `test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them` [31]
+
+
 
 - The tool and the checklist section. [32]
 - Other owners' rows and closed files are untouched. [33]
 
-- A writer-authored proof raises its invariant. [34]
+
+
+- A writer-authored proof raises its invariant. Anchor: `test_a_proof_authored_through_the_writer_raises_its_invariant_when_its_test_changes` [34]
+
+
 
 - The bound sync port. [35]
 
 
-- The controller-level run; since MIK-R09 its four open items count (4). [36]
+
+
+- The controller-level run reports four open worklist items and one separate stale-entry finding: curatorActionableCount 5, openItemCount 4 and findingCount 5. [36]
+
+
 
 
 - Never raises; never fails a completed sync. [37]
@@ -172,6 +192,8 @@ and in `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_
 - The census-derived consumer row. In merged A3 this reference cites all 2 artifact blocks whose exact consumers list names this module. The earlier occurrence count and first-occurrence wording described unrelated narrow text, already unrelated in the parked source, and did not establish this module's consumer membership. Those targets are replaced by this complete membership set. Former member identity is not recovered or claimed. [Past-epoch source caption, detached from live reference 40. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit not identified. No historical event or intent inferred.]
 
 Current source: The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event.
+
+
 
 
 - The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event. [40]

@@ -90,13 +90,13 @@ The kernel owns canonical JSON, shared Git commands and capabilities, file obser
 
 Route census freezes one Git/path-rule source population with NUL-safe tracked/untracked enumeration, ignored/generated exclusion, and symlink classification without following targets. Callers pass repository/storage authority rather than rediscovering it inside generation. Full memory quality uses a per-check Git source reader, with bounded reads and named unavailable-source reasons; readable ignored and binary citations remain verifiable. The retired citation-index exclusion register, aggregate budget, v10 manifest and source-cell publication protocol are not current producers. Retained source-index cache code owns terminal fencing and cleanup of existing artifacts. Citation fixing admits a finite nonempty `documents` list, mutually exclusive with `document` and bounded by the curator source-candidate limit; singleton behavior and the leaf writer guard remain. Converted list repair isolates missing/refused cards and retains separate authoring and mechanical repair stages.
 
-Memory attribution is inside immutable commit messages through the shared `Code-Commit` renderer; ledger format and attribution are separate kernel responsibilities. The newest-first ledger is a Git-derived consumer view, allowing later memory states for repeated code revisions without deleting older attributed history. Root `memory.md` is a disposable memory-domain cache, not a second mapping authority or publication prerequisite. Memory content identity excludes that cache while retaining actual Git head/tree observations; this exclusion does not apply to code. Baseline/carryover produce attributed substantive content when needed and report cache refresh separately. Cache failure is availability, not permission to invent a pairing.
+Memory attribution is inside immutable commit messages through the shared `Code-Commit` renderer; ledger format and attribution are separate kernel responsibilities. The message-level reader accepts attribution only from a final trailer-shaped paragraph, so a body-only mention supplies no pairing; the ancestry reader separately consumes Git's trailer-value output. The newest-first ledger is a Git-derived consumer view, allowing later memory states for repeated code revisions without deleting older attributed history. Root `memory.md` is a disposable memory-domain cache, not a second mapping authority or publication prerequisite. Memory content identity excludes that cache while retaining actual Git head/tree observations; this exclusion does not apply to code. External closeout, direct landing and baseline adoption create attributed memory-content commits. Carryover writes selected memory into the recovery worktree without committing; ordinary recovery-leaf closeout publishes that judged tree. Cache failure is availability, not permission to invent a pairing.
 
 The reviewer resolves one admitted comparison for subject inventory, rendering, source expansion, leaf judgments/proofs, and currentness. Converted comparisons record exact code and memory endpoints and pin uncommitted candidate objects before exposure. Historical reopening uses retained endpoints, never today's tips; missing history is named unavailable. The comparison and subject-list routes are path-free; source expansion admits a repository-relative listed/context path plus both bound code tree ids, not an arbitrary filesystem root. Unwired ports refuse as not served rather than returning an empty list or file. Transport status/refusal mapping and actionable bodies share one owner.
 
 Expression cards group exact (path, range) locations, display authored rationale or its explicit gap, and use bounded exact-side excerpts/diffs with per-side currentness. Review change navigation now opens `ChangeSetViewer` through `ReviewSurface` using a recorded comparison; removed `SourceExplorer` and `LaneFileFocus` are not current owners. `serving/changeset_comparison.py` supplies recorded code/memory inventories and file diffs. The leaf-tree response and memo retain currentness/worklist rather than a knowledge diff; the shared diff helper remains for public `knowledge_diff`. Subject listing additionally carries an index-derived complete meaning/membership outline through `review_outline.py` and shared `review_record_changes.py` facts. Partial rosters state loaded versus total. Planning marks come from the same leaf-wide comparison. One shared lane classification serves gate linkage, unexplained/unknown navigation, counts, and server-computed change-kind facts; the client does not invent hunk arithmetic. Entry ranges count only at the recorded blob. Unknown/partial input cannot mean unchanged or gate-unexplained. Triage keeps unchanged siblings and does not force unreturned pages to load.
 
-The Knowledge reader is a separate taskless, read-only path/truth/code/census interface over memory trees and derived indexes. It names measured code-tree provenance, lists a directory's immediate children without continuation paging and pages recursive subtree entries, preserves full decision alternatives and reasons, links references, and combines record, history-row, and entry histories without authoring truth. Failed sources are partial/unavailable, not empty; invalid locators and control characters are refused; binary/oversized code yields bounded notices and a directory code request has a typed absence.
+The Knowledge reader is a separate taskless, read-only path/truth/code/census interface over memory trees and derived indexes. It names measured code-tree provenance, lists a directory's immediate children without continuation paging and pages recursive subtree entries, preserves full decision alternatives and reasons, links references, and combines record, history-row, and entry histories without authoring truth. Failed sources are partial/unavailable, not empty; invalid locators and control characters are refused; nonmedia binary or oversized text code yields bounded notices and a directory code request has a typed absence. Supported picture/video suffixes are classified first as `media`, with the selected code blob, media type and measured size. `ReaderCode` draws that state through the selected-memory-commit media URL. The separate bytes reader resolves the same selection and `blob_media` enforces the 16 MiB media-byte limit with HTTP 413; the code-result classification itself does not apply that byte limit, and `ReaderCode` does not supply `MediaView`'s `tooLarge` flag.
 
 Current tree review requires the judgment pane rather than projecting supporting-record channel bags, curator-assessment displays or applicability summaries. The pane carries this leaf’s selected-subject history rows in attempt order and proof entries with authored facets and after-code currentness; these are not executed proof results or inferred semantic conclusions. Measured no judgment and unreadable history remain distinct. Task context has no selected knowledge subject and reports unavailable judgment rather than an empty successful collection.
 
@@ -646,7 +646,6 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands.
 
 
-- The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands. [103]
 - **Retained historical source account — superseded by the current route account:** Baseline adoption commits memory content and returns a cache observation. Source caption: `adopt_initial_baseline` `memory_content_commit` [158]
 - The current task registration surface mounts task_reopen through _register_task_reopen_tools and delegates the call to its payload owner. [285]
 
@@ -658,7 +657,11 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - Explicit task preparation follows deterministic bounded archive successors and returns only a validated live workspace; folder opening stays separate. [323]
 - **Retained historical source account — superseded by the current route account:** The facts and where they come from. [1]
 - **Retained historical source account — superseded by the current route account:** Their vocabulary. [2]
-- **Retained historical source account — superseded by the current route account:** The gate over a leaf's exact candidate. [3]
+
+
+- **Retained historical source account — superseded by the current route account:** The gate over a leaf's exact candidate. Anchor: `evaluate_leaf_gate` `judge` [3]
+
+
 - **Retained historical source account — superseded by the current route account:** Each kind's own predicate, registered beside the kind. [4]
 - **Retained historical source account — superseded by the current route account:** The worktree layer's probes, the unbound refusal and the closeout's own write. [5]
 - **Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file. [6]
@@ -719,7 +722,6 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 - **Retained historical source account — superseded by the current route account:** The package template copy's proof guidance. [68]
 
-- **Retained historical source account — superseded by the current route account:** The umbrella registers the conversion command. [69]
 - **Retained historical source account — superseded by the current route account:** The command converts, validates before writing, and commits nothing. [70]
 - **Retained historical source account — superseded by the current route account:** The pinned conversion-format version. [71]
 - **Retained historical source account — superseded by the current route account:** A raw three-way line merge that writes nothing. [72]
@@ -775,7 +777,10 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - The port field on the collaborators dataclass, and the rank reason it exists. [191]
 - **Retained historical source account — superseded by the current route account:** The registration that reads that port. [192]
 
+
+
 - The composition root's adapters for the review, the entry list, the source-content read, the tree view and the knowledge reader, each bound to this configuration. [193]
+
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [268]
 - **Retained historical source account — superseded by the current route account:** **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
@@ -784,7 +789,11 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** Current contract-scoped file writing [199]
 
 - **Retained historical source account — superseded by the current route account:** **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** [208]
+
+
 - **Retained historical source account — superseded by the current route account:** **The response field the block travels on, carried by the strict response model rather than re-declared.** [318]
+
+
 
 - **Retained historical source account — superseded by the current route account:** **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.** [320]
 
@@ -793,7 +802,10 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** [214]
 - **Retained historical source account — superseded by the current route account:** **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [215]
 
+
+
 - **Retained historical source account — superseded by the current route account:** The composition root's third review port, and the registration call that passes all three collaborators. Anchor: `read_review_source_content` [216]
+
 
 - **Retained historical source account — superseded by the current route account:** **The two new owners this route reaches: the application module's own statement of what it answers and does not own, and the vocabulary's own statement of why it is separate from the review payload.** [217]
 - **Retained historical source account — superseded by the current route account:** The production-composition cases that drive the new route over a real enclosure: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set. [218]
@@ -873,7 +885,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - The port field on the collaborators dataclass, and the rank reason it exists. [359]
 - The registration that reads that port. [192]
 
-- The composition root supplies the application adapters to the serving collaborators. [360]
+
+
+- The composition root supplies the application adapters to the serving collaborators. Anchor: `ServingCollaborators` [360]
+
 
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:240-242 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7. Retired means the anchor no longer stands, not that the cited subject was deleted [361]
 - **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
@@ -943,7 +958,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - The packaged Worker role text delegates candidate setup to repository tool notes and records the interpreter each run used. [286]
 
-- The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [380]
 
 - `PUBLIC_TOOLS` is one literal tuple of 44 public names, including the native role, retirement and knowledge operations and excluding `dispatch_agent`. The landing-answer helper keeps cut and added counts and bounds inline rows; the Curator's curation operation requires an independent statement-by-statement fact-check before closeout. [288]
@@ -994,7 +1008,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Additional host-checked explainer-binding source is distinct from ordinary role launch-record listing and adds none for taskless scope. [387]
 - Explainer seats are excluded from automatic warmup; showing or writing the chat owns their resume instead of host restart. [388]
 - The current literal ordinary roster has 44 names, including mounted `knowledge_write`, `user_settings_init`, `citation_note_revision` and `explainer_control`; preceding roster counts remain historical source epochs. Existing task/public-delivery and no-acceptance qualifications stand. [316]
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_explainer_host.py:345-447 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted [383]
 - The owner resolves each requirement endpoint; unresolved is reported. [270]
 - The owner resolves each requirement endpoint; unresolved is reported. [40]
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [198]
@@ -1032,12 +1045,21 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.p
 - Each running server registers a live-process record that installation and status read back. [400]
 
 - **Retained historical source account — superseded by the current route account:** The lock every memory route asks. [225]
+- **Retained historical source account — superseded by the current route account:** Development commands, budgets, diagnostic metrics and isolation. [150]
+- **Retained historical source account — superseded by the current route account:** Certifying publication and accepting consumers. [151]
+- The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: scripts/sync-runtime.py. [401]
+- The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
+
+
+- The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands. [103]
+- The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
+- **Retained historical source account — superseded by the current route account:** The umbrella registers the conversion command. [69]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [80]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [83]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [86]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [90]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [95]
-- **Retained historical source account — superseded by the current route account:** Development commands, budgets, diagnostic metrics and isolation. [150]
-- **Retained historical source account — superseded by the current route account:** Certifying publication and accepting consumers. [151]
-- The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: scripts/sync-runtime.py. [401]
-- The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
+- Settings-selected launch requests same-build bound task server, preapproved surface and capsule system prompt without initial prompt; this is source wiring, not fresh native suppression acceptance. [383]
+
+- Supported code media is returned before text-size refusal and the reader renders its media state. [403]
+- Knowledge media URLs use the selected memory commit; byte delivery applies its actual16MiB bound. [404]

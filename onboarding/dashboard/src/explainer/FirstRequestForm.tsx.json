@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
-        "content": "sha256:257e44d3504d8768846889ac9a1df0cc018caa2c1827ca2fcf662219ab90d6c0",
+        "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
+        "content": "sha256:a1f7b913e7eb3243ed9dbfaf9f7baafe92655acbc5b8d5ce549e69506e9bf4f9",
         "locator": {
           "kind": "symbol",
           "name": "FirstRequestForm"
@@ -22,11 +22,11 @@
   ],
   "references": {
     "1": {
-      "note": "Send is refused while there is nothing to send and while a Send is in flight\n\nAnchor: `disabled`",
+      "note": "Send is disabled only while a Send is in flight, and an empty request is an offered send.\n\nAnchor: `disabled`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
+            "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
             "content": "sha256:ead4f1cfcc493d316ef3fb80652678ec23f37dd319dd1f6fb15f94fb9e3a137f",
             "locator": {
               "end": 107,
@@ -39,14 +39,14 @@
       ]
     },
     "2": {
-      "note": "The empty message is named as the end-to-end review rather than an error\n\nAnchor: `textarea`",
+      "note": "The empty message is named as the end-to-end review, or on a planning task as its requirement and planned effects, rather than an error.\n\nAnchor: \"Leave it empty for the requirement and planned effects\"",
       "targets": [
         {
           "anchor": {
-            "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
-            "content": "sha256:721147957556312b114e81033dfc079e8c7601292504b8b3040d257cd59a1c9b",
+            "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
+            "content": "sha256:c1e2961eca66182d932e02d8aaeb54bdedc218176e2faecb66b9bd4eab5bed89",
             "locator": {
-              "end": 176,
+              "end": 179,
               "kind": "line_range",
               "start": 169
             }
@@ -56,11 +56,11 @@
       ]
     },
     "3": {
-      "note": "With no reference the form says one ⊕ adds the first and later ⊕ clicks add more to the same form\n\nAnchor: `clicks`",
+      "note": "With no reference the form says one ⊕ adds the first and later ⊕ clicks add more to the same form.\n\nAnchor: `clicks`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
+            "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
             "content": "sha256:0e8f2a92685701fda77a985b76ff9dc9c75c097d588614eb9d7192602a6a528f",
             "locator": {
               "end": 78,
@@ -73,16 +73,32 @@
       ]
     },
     "4": {
-      "note": "The form says what sending does: it builds the workspace for the binding, then delivers the request as the first turn\n\nAnchor: `builds`",
+      "note": "The form says what sending does: it builds the workspace for the binding, then delivers the request as the first turn.\n\nAnchor: `builds`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
-            "content": "sha256:b53030ca257296439d8fbd103962e7b957c6e57e25af61379a81c252c0250642",
+            "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
+            "content": "sha256:3bb3ad8b9e075ee366cce8da163c7cbdce78f4c383239f47aab99e7f97d2e246",
             "locator": {
-              "end": 191,
+              "end": 196,
               "kind": "line_range",
-              "start": 185
+              "start": 193
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A planned binding uses the planned placeholder and the planned first-request line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
+            "content": "sha256:be3584d6f6ad643b55032b4dd5754d5f96f03c0c8b978e35b6d74acf15683fa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "planned"
             }
           },
           "kind": "code"

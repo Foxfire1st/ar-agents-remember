@@ -56,7 +56,10 @@ No configured live documentation source was available for this pass.
 - Prose `[n]` markers become links to the reference list, in text nodes only. [1]
 - Repeated headings receive distinct stable ids for the outline and fragment links. [2]
 
-- The shared renderer includes the plugins only when its caller asks for them. [3]
+
+
+- For ordinary dashboard Markdown, the marker and heading-id plugins are added only when their caller opts in. Repository-document rendering uses its separate document setup. [3]
+
 
 
 ### Cross-Repo References

@@ -3,12 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
+        "blob": "92a6666695c3ec77242a1fd3109a44b485f1ce2b",
         "content": "sha256:9ddf2d332e7f5b6a2635f16d434bf083afeeb91f24194bdf50bac142e6a01644",
         "locator": {
-          "end": 272,
+          "end": 352,
           "kind": "line_range",
-          "start": 212
+          "start": 292
         }
       },
       "facet": "Comparison paths ignore current aliases",
@@ -21,7 +21,24 @@
     },
     {
       "anchor": {
-        "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
+        "blob": "92a6666695c3ec77242a1fd3109a44b485f1ce2b",
+        "content": "sha256:c288d55b07ce864575eb28fc9e89175c9656b069f2ddea7ef1bdce6b2dc7f923",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_comparison_names_a_picture_side_and_serves_its_bytes"
+        }
+      },
+      "facet": "Recorded comparison selectors resolve media bytes for the selected side.",
+      "id": "PRF-PFQJJT",
+      "invariant": "INV-P7EFQT",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §4",
+        "leaf": "261112-BUG-L5"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92a6666695c3ec77242a1fd3109a44b485f1ce2b",
         "content": "sha256:d6e124db718e578f4b5a50d0d80ee21f849b2779c394622d527e846ee47ee59e",
         "locator": {
           "end": 159,
@@ -45,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
+            "blob": "92a6666695c3ec77242a1fd3109a44b485f1ce2b",
             "content": "sha256:d4d29bf566314736e92a7fb146e78e218468cc74eb7e448983ee141b2d80bb0b",
             "locator": {
               "end": 16,
@@ -62,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
+            "blob": "92a6666695c3ec77242a1fd3109a44b485f1ce2b",
             "content": "sha256:d6e124db718e578f4b5a50d0d80ee21f849b2779c394622d527e846ee47ee59e",
             "locator": {
               "kind": "symbol",
@@ -78,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
+            "blob": "92a6666695c3ec77242a1fd3109a44b485f1ce2b",
             "content": "sha256:5b541793733ae3476f76c7fbb5e33ca49a4c949d2f4af079bbbeb285269fb5c1",
             "locator": {
               "end": 101,
@@ -95,11 +112,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7526b6cbfbb42906ef104c261abe6878262c042",
-            "content": "sha256:9ddf2d332e7f5b6a2635f16d434bf083afeeb91f24194bdf50bac142e6a01644",
+            "blob": "92a6666695c3ec77242a1fd3109a44b485f1ce2b",
+            "content": "sha256:b24dc270822b9cfba4a70af17b3542c1601a23afad639d5b06201ca983d04a96",
             "locator": {
-              "kind": "symbol",
-              "name": "test_comparison_paths_ignore_current_aliases_on_both_git_halves"
+              "end": 355,
+              "kind": "line_range",
+              "start": 292
             }
           },
           "kind": "test"

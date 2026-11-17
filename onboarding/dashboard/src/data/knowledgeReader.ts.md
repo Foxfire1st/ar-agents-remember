@@ -10,7 +10,7 @@
 shareable `#knowledge?…` address, and the reads of `/api/knowledge/reader/<view>`.** The reader browses one
 repository's knowledge at one memory tree (`published` by default, any memory commit, or `leaf:<scope>`) and
 needs no task. Every view is addressed by the same values its URL carries, so a view can be shared and every
-link is a navigation (rule 5). MIK-R79 rule 3/6 adds the tree row's `hasKnowledge`, `hasOverview` and
+link is a navigation (rule 5). The tree row carries optional `hasKnowledge`, `hasOverview` and
 `coverage` fields, which mark a row without presenting an unknown as false.
 
 ## Code Commentary
@@ -23,15 +23,15 @@ link is a navigation (rule 5). MIK-R79 rule 3/6 adds the tree row's `hasKnowledg
   and `SelectionOptions`. `FileRead` additionally declares optional `truncated` and numeric `fullSize`;
   `PathViewAnswer` declares optional numeric `deeperEntries`; `TimelineEvent.attempt` is optional and
   nullable. `Timeline` declares optional string `state`, `code` and `detail`, nullable optional
-  `continuation`, and optional `page` with numeric `start`, `rowsOnPage` and `total`. These are DTO
+  `continuation`, and optional `page` with numeric `start`, `rowsOnPage` and `total`. `CodeAnswer` also declares optional `mediaType` and byte `size`. These are DTO
   fields; their declarations do not establish which fields a panel renders.
 - **The tree row.** `TreeChild` carries the name, kind, `inCode`, `onboarding` and entry count. The
   MIK-R79 fields are optional because an unavailable memory enumeration has no answer:
   `hasKnowledge` and `hasOverview` are present only when the enumeration succeeded (a missing value
-  is unknown, never `false`), and `coverage` is either `{state: 'counted', files, cards}` for a
-  directory or `{state: 'unavailable', detail}` naming why the counts cannot be given.
+  is unknown, never `false`), and `coverage` declares a counted or unavailable state with optional `files`, `cards` and
+  `detail`. The type alone does not require those optional values to be populated.
 - **The address.** `parseReaderHash` reads a `#knowledge?repo&commit&view&path|id|census|locator|blob`
-  hash (anything else is `null`); the view defaults to `record` when an ID is named, else `path`, and
+  hash, including bare `#knowledge` (other hash kinds are `null`); the view defaults to `record` when an ID is named, else `path`, and
   the commit to `published`. `readerHash` writes it back.
 - **Reads.** `readerGet` returns any JSON body with a string `state` whatever its HTTP status.
   Raw fetch/abort failures propagate without conversion; a received body without a string state
@@ -48,7 +48,7 @@ link is a navigation (rule 5). MIK-R79 rule 3/6 adds the tree row's `hasKnowledg
 
 ### Invariants And Boundaries
 
-- **The URL encodes commit and path or ID** (MIK-R29 rule 5).
+- **The URL encodes repository and commit, plus supplied subject fields such as path or ID** (MIK-R29 rule 5).
 - **A failed source is shown, never an empty result:** a typed refusal is returned as an answer, and a
   transport failure throws so the panel can name it.
 - **An unknown knowledge presence is not `false`:** the optional tree fields exist so the tree can drop
@@ -72,13 +72,22 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 
+
+
 - The optional knowledge-presence and coverage fields of a tree row. [15]
+
+
+
 
 
 - The shareable address, read and written. [16]
 
 
+
+
+
 - The address a code citation opens. [18]
+
 
 - The tree that renders the optional fields without claiming an unknown. [19]
 

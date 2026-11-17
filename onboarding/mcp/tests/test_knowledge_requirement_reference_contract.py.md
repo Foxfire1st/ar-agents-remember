@@ -65,4 +65,5 @@ No cross-repository contract is established by this file.
 
 
 
-- The lane row that gives this module its classification and keeps it collectable under a named lane.  Anchor: `test_knowledge_requirement_reference_contract` [26]
+
+- The lane row that gives this module its classification and keeps it collectable under a named lane. Anchor: `test_knowledge_requirement_reference_contract` Anchor: `test_knowledge_requirement_reference_contract` [26]

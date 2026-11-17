@@ -11,14 +11,16 @@ The first request's form: the locked role capsule, the developer's references wi
 ## Code Commentary
 
 - The form composes nothing and sends nothing; the Send press belongs to the column, and the form only says what will go out.
-- Send stays disabled while there is nothing to send and while a Send is in flight, when it reads Sending…; an empty message is allowed when references carry the request.
+- Send stays disabled only while a Send is in flight, when it reads Sending…; an empty message is allowed and names the end-to-end review, or on a planning task the requirement and planned effects.
+- On a planned binding the empty request's placeholder and its line name the task's requirement and planned effects; the rest of the form is the same.
 - Each reference shows the note it was added with and the × that removes it, and a form with none says a ⊕ on a block or an invariant adds the first.
 - The capsule is marked as going with the first request only, and the target is fixed to a new explainer for the task.
 - A refused Send names its step and keeps the request in the form for another press; a stale prefill names the parts and the count of stale grades.
 
 ## Evidence
 
-- Send is refused while there is nothing to send and while a Send is in flight [1]
-- The empty message is named as the end-to-end review rather than an error [2]
-- With no reference the form says one ⊕ adds the first and later ⊕ clicks add more to the same form [3]
-- The form says what sending does: it builds the workspace for the binding, then delivers the request as the first turn [4]
+- Send is disabled only while a Send is in flight, and an empty request is an offered send. [1]
+- The empty message is named as the end-to-end review, or on a planning task as its requirement and planned effects, rather than an error. [2]
+- With no reference the form says one ⊕ adds the first and later ⊕ clicks add more to the same form. [3]
+- The form says what sending does: it builds the workspace for the binding, then delivers the request as the first turn. [4]
+- A planned binding uses the planned placeholder and the planned first-request line. [5]

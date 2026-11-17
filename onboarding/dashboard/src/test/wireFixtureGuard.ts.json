@@ -4,7 +4,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The header: seven one-token opt-outs, why three of them carry no assertion at all, what makes the sweep fail-closed, and the rule scopes.\n\nAnchor: \"as unknown as LifecycleProjection\"",
+      "note": "The header: seven one-token opt-outs, why three of them carry no assertion at all, what makes the sweep fail-closed, and the rule scopes.\n\nAnchor: \"as unknown as TaskEntry\"",
       "targets": [
         {
           "anchor": {
@@ -171,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "blob": "bcb1233329a7307bc8e1ca0bd8b89075dd045498",
             "content": "sha256:cb802f4cfac5fa4f802acc3d2f5821a61ce766c281c56aaf813ca34831835357",
             "locator": {
               "kind": "symbol",
@@ -188,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "blob": "f1c0acaa00aa7d001e47bf2ff7a059647352b28d",
             "content": "sha256:2e0a62fadcd51c893c2d319e5299680f2f937dd141a922df3b45a91a618870e0",
             "locator": {
               "kind": "symbol",
@@ -201,14 +201,16 @@
       ]
     },
     "18": {
-      "note": "Same, for the coordination-notes API client: the types it declares are `FolderEntry`, `NotesFolder` and `NoteContent`, under the same \"Same-origin client for …\" header.\n\nAnchor: `NoteEntry`",
+      "note": "The coordination-notes client declares FolderEntry, NotesFolder and NoteContent under its Same-origin client header; NoteContent now also carries media metadata and a media URL.",
       "targets": [
         {
           "anchor": {
-            "blob": "e23e68eb2a31165781bb22894b445d6d8bc18b66",
-            "content": "sha256:1c5fce9a739883de864d730bfb7adbc295e64e474fba2f6be2c7719707abb03f",
+            "blob": "4b2ad3e134f125cea8de3cfc20e0cbc7e222e0b1",
+            "content": "sha256:e67d0d59f06b7531ef3e30d0de933878b669fd411dea0a3d6a372757815a9ccb",
             "locator": {
-              "kind": "file"
+              "end": 49,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "dashboard/src/data/notes.ts"
           },

@@ -38,7 +38,7 @@ Three properties are the reason the module exists rather than living inside the 
 **Why it is a module and not a function in the adapter.** The adapter (`application/knowledge_review.py`)
 did not own this responsibility — the review payload never carried a file's text — so nothing had to
 move out of it, and the extraction is the same sibling-module shape the master line has used for the
-review's other new responsibilities. The adapter is 831 lines before and after this leaf.
+review's other new responsibilities. The original extraction account recorded the adapter at 831 lines before and after that leaf; that figure describes the earlier source epoch, not the current adapter extent.
 
 ## Code Commentary
 
@@ -198,7 +198,7 @@ that measure it against real repositories.
 
 - The refusal code this read publishes, added to the review vocabulary without changing how an unknown code maps. [29]
 
-- **The production-composition cases: both endpoints' own bytes against an independent `git show`, an unmapped addition's whole text, a deletion's whole base text, every non-text kind, a stated bounded expansion, generation binding across a branch advance, the pruned-blob and missing-object states, the unmeasured-generation confinement, a commit id refused, and the unwired process refused by name.** [30]
+- **The six linked composition cases check both endpoints' bytes against independent `git show`, an unmapped addition's whole candidate text, retained generation bytes after a branch advance, confinement of an unmeasured generation to the leaf's measured change set, refusal of a commit supplied as the tree generation, and the unwired route's HTTP 503 response. Deletion, non-text kinds, bounded expansion and missing/pruned objects are not assertions of these six linked cases.** [30]
 
 ### Cross-Repo References
 
@@ -224,7 +224,10 @@ No meaningful cross-repo references found.
 - **The entry's kind decides before its bytes do: a tree is not source, a gitlink is a recorded pointer with no bytes, a symlink mode is a link target, and everything else is a regular file.** [15]
 - A regular file's bytes as text or as the stated reason they cannot be carried as text, and a symlink's target as content when it has a lossless spelling. [16]
 
+
+
 - **The two inspected reasons for no text form: NUL in the sniff window, or UTF-8 failure in the full small object/capped prefix. Oversized uninspected suffix bytes are not validated.** [17]
+
 
 - **One path's entry in one tree, asked with a literal pathspec so a measured name is an address and not a pattern, and checked against the path that was asked about.** [18]
 - The byte-exact blob read through the kernel's own reader, so a file's content is never normalized on its way to a reader. [19]

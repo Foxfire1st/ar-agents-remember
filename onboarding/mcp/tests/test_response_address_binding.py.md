@@ -17,23 +17,16 @@ the outer `nextTool` named the caller's own operation. The closeout itself was u
 right state, the right commits, the right leaf — and only the guidance block, the thing a seat is
 told to follow, pointed into another task's enclosure.
 
-**The mechanism, traced rather than assumed.** Guidance is produced by
-`application/next_step.py::next_step_for` from the *process-global* ambient lifecycle: it reads
-`LifecycleState.enclosure` and runs the worktree state machine against that contract, while the
-response has its own address. The only thing connecting them is `bound_next_step`, and it fired
-on neither of its exits for the recorded payload: it returned the step unchecked when the
-response declared **no** contract path (a closed closeout declared none, because `status_payload`
-emits the snake_case `contract_path` while the guard reads the envelope's
-`contractPath`/`enclosurePath`), and it required the guidance's path set to be **exactly**
-`{expected}`, so a hint carrying both spellings survived when only one of them was the
-response's. Both are repaired, and `_closed_result_payload` now declares its own `contractPath`.
+**The current mechanism.** `application/next_step.py::next_step_for` loads the explicit contract path supplied by response construction and runs the worktree guidance state machine for that contract. `application/tool_response.py::_attach_contract_guidance` preserves an explicit recovery hint, derives a preview approval-stop hint from the current call's exact argument when needed, and passes the result through `bound_next_step`. The guard compares artifact addresses against the response's own address. It does not read `LifecycleState.enclosure` or resume an ambient lifecycle.
+
+The earlier T54 defect was an unchecked guidance exit for an address-less response and a path-set check that could retain mixed spellings. The cases below retain the repaired address checks, and `_closed_result_payload` declares its own `contractPath`; that historical defect does not describe current ambient guidance production.
 
 ## Code Commentary
 
 ### Logic
 
 **The guard's four cases, at the guard's own level.** `guidance` (`:52-65`) builds the shape the
-worktree state machine emits — both spellings set to the contract file, as all four producers do
+fixture emits — both spellings set to the contract file, matching `contract_next_args`
 — and `closeout_response` (`:68-71`) builds a real `WorktreeCloseoutApplyResponse`, so the guard
 is driven by the envelope it will meet.
 
@@ -55,7 +48,7 @@ is driven by the envelope it will meet.
 it has no source file — arrived as a blank string, and the payload reported a `count` that
 included entries its own sample could not name.
 `test_the_refreshed_onboarding_census_names_every_entry_it_counts` (`:126-165`) drives
-`_refreshed_onboarding_paths` (`mcp/src/agents_remember/worktrees/modules/closeout.py:127-141`)
+`_refreshed_onboarding_paths` (`mcp/src/agents_remember/worktrees/modules/closeout.py:121-133`)
 and `_bounded_paths`, and requires each entry to be named by its `source_path` **or** its
 `onboarding_file`, with a blank refused rather than counted.
 
@@ -73,17 +66,22 @@ silently returning the hole.
 Plain module-level pytest functions plus the small builders and stubs above them
 (`_Contract` supplies the closed-result fixture); no `unittest`, no `pytest` marks, so the
 module is in the default selection and its lane is **`unit-regression`**
-(`mcp/tests/test-evidence-lanes.toml:112`). The constants `OWN`, `OWN_ENCLOSURE` and `OTHER` are the only literals the cases share.
+(`mcp/tests/test-evidence-lanes.toml:448`). The constants `OWN`, `OWN_ENCLOSURE` and `OTHER` are the only literals the cases share.
 
 ### Invariants And Boundaries
 
-- **The fixture uses the shape the product emits, not a convenient one.** Both spellings are the
-  contract FILE, measured on a real `worktree_status` response and on all four producers
-  (`worktrees/modules/guidance.py:171-176` and `:443-444`, `application/lifecycle/start_result.py:121`,
-  `application/lifecycle/reopen.py:104`). An earlier form of this fixture used a directory, a
-  shape no producer emits — that is `L6`'s `F3`, corrected before the leaf froze.
+- **The fixture uses the contract-file shape the product emits.** The real
+  `worktree_status` response is checked by the fixture. Current both-spelling producers put the
+  contract file in `enclosure_path` and `contract_path`: `contract_next_args`
+  (`mcp/src/agents_remember/worktrees/modules/guidance.py:179-184`), the status facts
+  (`mcp/src/agents_remember/worktrees/modules/guidance.py:476-491`), and the start-result facts
+  (`mcp/src/agents_remember/worktrees/modules/startup/start_result.py:117-128`). The current
+  reopen argument helpers instead publish `contract_path` alone, with their respective `dry_run`
+  value (`mcp/src/agents_remember/worktrees/reopen.py:96-101`). The earlier four-producer path list
+  is superseded by these source locations; it is not evidence that every producer emits both keys.
+  An earlier fixture used a directory, recorded as `L6`'s `F3` and corrected before that leaf froze.
 - **The directory tolerance in the guard is exactly the immediate container.** `_names_the_same_place`
-  (`mcp/src/agents_remember/application/tool_response.py:31-57`) accepts the contract file or
+  (`mcp/src/agents_remember/application/tool_response.py:64-88`) accepts the contract file or
   `dirname(file)`, and an earlier, wider form that accepted any ancestor was narrowed in the same
   leaf; no case here asserts the wider rule, so re-widening it would be visible.
 - These tests assert response guidance/census/envelope contracts, not migration outcomes or a real-tree write.
@@ -102,7 +100,7 @@ No configured domain evidence applies to the file-local claims above.
 The anchors below identify current behaviour of this module; they are not execution evidence and
 they make no acceptance claim.
 
-- The guidance shape the worktree state machine emits, both spellings set to the contract file. [1]
+- The local guidance fixture emits both spellings set to the contract file, matching `contract_next_args`. [1]
 - A real closeout response model, so the guard is driven by the envelope it will meet. [2]
 - The recorded `T54` shape: a response that declares no address cannot vouch for guidance. [3]
 - The positive control: the guard is not a blanket refusal of guidance. [4]
@@ -131,7 +129,6 @@ No cross-repository implementation evidence is required for these local response
 The cases build no repository and touch no real coordination root.
 
 No repository or external-system boundary is proved by this module.
-
 
 
 

@@ -12,29 +12,32 @@ Build the dashboard FastAPI application and the long-lived runtime it owns. App 
 
 Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators.
 
-`_build_serving_runtime` resolves live-input capabilities, creates one shared background ledger, optionally creates the landing refresher, and passes those collaborators to the Projector. When landing exists it binds interest to the actual Projector subscriber predicate before returning the runtime. The runtime carries the supplied clock, build stamp, cadence, child shutdown and the **new review_memory_root** collaborator. Provider metrics storage is returned separately for the delegated lifespan owner.
+`_build_serving_runtime` resolves live-input capabilities, creates one shared background ledger, optionally creates the landing refresher, and passes those collaborators to the Projector. When landing exists it binds interest to the actual Projector subscriber predicate before returning the runtime. The runtime carries the supplied clock, build stamp, cadence, child shutdown and the review_memory_root collaborator. Provider metrics storage is returned separately for the delegated lifespan owner.
 
-The `review_memory_root=collaborators.review_memory_root` runtime argument is the delta of an earlier comparison, already present in this leaf's BASE: it is labelled by that original epoch and is not this comparison's change. This comparison's own app.py change is the usage-read wiring — one added `usage_read=collaborators.usage_read` argument on the same runtime construction, so the serving tick's limit write reads the host's usage report through the composition root's reader and not through a new import or lifetime poll. The consumer is the projection route’s `api_stream`: it composes ordinary projection events with `multiplex_review_memory`, the optional review identity tuple and that root port. Identity/root admission and watch behavior belong to that consumer and its multiplexer, not to app construction; forwarding the port does not certify every supplied query or create a second worklist read.
+`review_memory_root=collaborators.review_memory_root` supplies the runtime review-memory-root resolver. `usage_read=collaborators.usage_read` wires the runtime to the composition root's host-usage reader, so the serving tick's limit write reads the host's usage report through that reader rather than importing the bridge or adding a lifetime poll. The consumer is the projection route’s `api_stream`: it composes ordinary projection events with `multiplex_review_memory`, the optional review identity tuple and that root port. Identity/root admission and watch behavior belong to that consumer and its multiplexer, not to app construction; forwarding the port does not certify every supplied query or create a second worklist read.
 
 `create_app` supplies the runtime/metrics lifespan, installs gzip and registers projection/action, files, changeset, notes, requirements, reviewer, summary, tree and knowledge-reader routes. The changeset cache returned by its registration is passed to the summary route. The optional extra-route callback runs before static mounting; static delivery is last. Missing-port refusals, action mutation rules and stream framing are route-owner contracts, not new decisions in this function.
 
-The complete previous account is retained historically, including earlier route-registration increments. This current local composition account is not a new served-process, browser, background-loop or CODE/MEMORY acceptance measurement.
+ This current local composition account is not a new served-process, browser, background-loop or CODE/MEMORY acceptance measurement.
 
 
-**L184 — NEW-LIMIT-FROM-REPORT-ONLY.** The app is the composition root, so the collaborators' wiring is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+**L184 — NEW-LIMIT-FROM-REPORT-ONLY.** The app is the composition root, so the collaborators' wiring is realized here.
 
 ## Evidence
 
-No domain documentation source is configured. Current repository source establishes these local claims; former test/timing accounts below remain historical only.
+No domain documentation source is configured. Current repository source establishes these local claims.
 
 - One runtime composition shares its ledger/landing interest and forwards actual supplied collaborators.
-- The leaf adds review_memory_root to the runtime beside the retained child-shutdown port.
+- The runtime receives review_memory_root beside the retained child-shutdown port.
+
+
 - Lifespan/gzip, shared changeset cache, built-in and optional routes precede the static mount. [33]
+
 - The stream consumer forwards the optional review identity and runtime root port into the multiplexer.
 
-## Historical predecessor account
+## Additional current composition details
 
-The full previous text is preserved below with nested headings and inert prose citations. Superseded signatures, old read/return paths and past execution observations are not current assertions.
+
 
 ### mcp/src/agents_remember/serving/app.py
 
@@ -72,29 +75,28 @@ No Domain Documentation source is configured.
 
 ##### Repo-Internal References
 
-- The route it registers. (historical reference 19)
+- The route it registers.
 
 ##### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
-#### 260928-MIK-L29 The Knowledge Reader Route Is Registered After The Tree View Route
+#### The Knowledge Reader Route Is Registered After The Tree View Route
 
-Right after the tree view route, `create_app` calls `register_knowledge_reader_route(app,
-collaborators.knowledge_reader)` (`serving/knowledge_reader.py`, MIK-R29), still before `mount_static(app)`, so the
-greedy static mount never shadows it. A process composed without the port answers `GET /api/knowledge/reader/{view}`
-with a named 503; with it, every typed answer is a 200 and `invalid-request` a 400. The route is GET-only and the
-existing routes are unchanged (the unconverted comparison served them byte-identically, base against worktree).
+After the review tree-related registrations, `create_app` calls `register_knowledge_reader_route(app,
+collaborators.knowledge_reader)` (`serving/knowledge_reader.py`, MIK-R29) and registers the knowledge bytes route, still before `mount_static(app)`, so the
+greedy static mount never shadows either route. A process composed without the port answers `GET /api/knowledge/reader/{view}`
+with a named 503; with it, every typed answer is a 200 and `invalid-request` a 400. The route is GET-only.
 
 
-#### 260928-MIK-L25 The Tree View Route Is Registered After The Summary Route
+#### The Tree View Route Is Registered After The Summary Route
 
 Right after the summary route, `create_app` calls `register_review_trees_route(app, collaborators.review_trees)`
 (`serving/review_trees.py`, MIK-R25), still before `mount_static(app)`. A process composed without the port answers
 `GET /api/review/trees` with a named 503; with it, `trees`, `not-converted` and `refused` are each a 200.
 
 
-#### 260921-ICR-L47 The Changed-Intent Summary Route Is Registered Beside The Reviewer Family
+#### The Changed-Intent Summary Route Is Registered Beside The Reviewer Family
 
 Right after `register_review_routes(...)`, `create_app` calls
 `register_review_summary_route(app, collaborators.review_intent_summary)` — the separate module
@@ -103,7 +105,7 @@ is still registered before `mount_static(app)`. A process composed without the p
 a named 503; with it, every typed summary state is a 200 (`ICR-R24@v3`).
 
 
-#### 260921-ICR-L3 Reviewer Route Registration Carries All Three Ports
+#### Reviewer registration carries three ports
 
 `create_app` registers the reviewer route family with **three** collaborator ports:
 
@@ -117,50 +119,39 @@ register_review_routes(
 )
 ```
 
-The call was one line and is now five; the fifth argument is the new one. It is the single line in this
-module where the surface's *three* routes and one composition root are visible together, and it is the
-only change this leaf makes here: the call still joins the other route-family registrations
+The call passes `app`, `config` and three collaborator ports. The call joins the other route-family registrations
 (`register_files_routes`, `register_changeset_routes`, `register_notes_routes`,
-`register_requirements_routes`) and is still made **before** `mount_static(app)`, so the static mount's
+`register_requirements_routes`) and is made **before** `mount_static(app)`, so the static mount's
 greedy catch-all cannot shadow any reviewer route. Every argument is a collaborator port — the route
 family composes no adapter of its own — so a process that omits one refuses **that** route by name
 rather than serving an empty surface, and the third port's absence is the entry-content route's own
 named refusal, not an empty file.
 
-#### 260915-KS-L45 Reviewer Route Registration Carries Both Ports
+#### Reviewer port capabilities
 
-**The count in this section is superseded: the call now carries three ports since 260921-ICR-L3** (see
-the section above). The ordering constraint, the no-adapter rule and the one-composition-root reading it
-records are still exactly right, so the entry is retained rather than rewritten.
+The call carries three collaborator ports. The ordering constraint, the no-adapter rule and the one-composition-root reading remain unchanged.
 
-`create_app` registers the reviewer route family with **both** collaborator ports:
+`create_app` registers the reviewer route family with three collaborator ports:
 
-```python
-register_review_routes(
-    app, config, collaborators.knowledge_review, collaborators.knowledge_review_entries
-)
-```
+
 
 It joins the other route-family registrations (`register_files_routes`, `register_changeset_routes`,
 `register_notes_routes`, `register_requirements_routes`) and is called **before**
-`mount_static(app)`, so the static mount's greedy catch-all cannot shadow either reviewer route — the
-same ordering constraint every route family in this function obeys. Both arguments are collaborator
-ports: the route family composes no adapter of its own, and a process that supplies only one of them
-refuses the *other* route by name rather than serving an empty surface. This registration call is the
-one place where the fact that the surface has two routes and one composition root is visible.
+`mount_static(app)`, so the static mount's greedy catch-all cannot shadow any reviewer route — the
+same ordering constraint every route family in this function obeys. All three arguments are collaborator ports: the route family composes no adapter of its own, and an omitted port refuses its own route by name rather than serving an empty surface. This registration call is the
+one place where the fact that the surface has three routes and one composition root is visible.
 
-#### 260915-KS-L22 Reviewer Route Registration
+#### Reviewer registration ordering
 
-`create_app` first registered the reviewer route family in the L22 increment, with the comparison port
-alone. The section above supersedes it by passing the entry port beside it; the ordering reason and
-the no-adapter rule this entry recorded are unchanged. It reads: the route family
+ The ordering reason and
+the no-adapter rule remain unchanged. The route family
 (`register_files_routes`, `register_changeset_routes`, `register_notes_routes`,
 `register_requirements_routes` and this one) is registered **before** `mount_static(app)` so the
 static mount's greedy catch-all cannot shadow it, the port is the collaborator's rather than an
 adapter composed here, and a process that supplies no `knowledge_review` collaborator is refused by
 name rather than served an empty surface.
 
-#### 260831-CCR-L23 Requirements Route Registration
+#### Requirements route registration
 
 `create_app` now calls `register_requirements_routes(app, config)` right
 after `register_notes_routes`, mounting the read-only task-local
@@ -168,24 +159,27 @@ after `register_notes_routes`, mounting the read-only task-local
 handlers live in `serving/requirements.py`; composition here is one registration
 call plus the import.
 
-- Frozen implementation of create_app supporting the stated file behavior. (historical reference 12)
+- The implementation of `create_app` composes the serving route families.
 
-- The current _build_serving_runtime copies the collaborators' review_trees_shutdown callable onto the runtime; this retained shutdown boundary also has a current owner, separate from the historical constructor accounts. (historical reference 14)
+- The current `_build_serving_runtime` copies the collaborators' `review_trees_shutdown` callable onto the runtime.
 
-- The app: lifespan, compression, and the routes in their order with the static mount last. (historical reference 15)
-- The empty collaborator record. (historical reference 16)
-- The module docstring: the endpoints and the local-first posture. (historical reference 17)
-- The import and the registration after the tree view route, before the static mount.  Anchor: `register_knowledge_reader_route` (historical reference 18)
-- The import and the registration after the summary route.  Anchor: `register_review_trees_route` (historical reference 20)
-- The import and the registration after the reviewer family.  Anchor: `register_review_summary_route` (historical reference 21)
-- App creation composes the serving route and lifespan families. (historical reference 22)
-- **The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.**  Anchor: `register_review_routes` (historical reference 26)
+- The app: lifespan, compression, and the routes in their order with the static mount last.
+- The empty collaborator record.
+- The module docstring: the endpoints and the local-first posture.
+- The import and the registration after the tree view route, before the static mount.  Anchor: `register_knowledge_reader_route`
+- The import and the registration after the summary route.  Anchor: `register_review_trees_route`
+- The import and the registration after the reviewer family.  Anchor: `register_review_summary_route`
+- App creation composes the serving route and lifespan families.
+- **The reviewer route family is registered with all three collaborator ports, including the entry-content port.** Anchor: `register_review_routes`
 
-- Current construction shares one landing instance, binds actual subscriber interest before startup and supplies the shared ledger. (historical reference 29)
-- Retained route registration and optional collaborator routes precede static delivery; removed terminal/notifier collaborators are absent. (historical reference 30)
+- Current construction shares one landing instance, binds actual subscriber interest before startup and supplies the shared ledger.
+- Retained route registration and optional collaborator routes precede static delivery; removed terminal/notifier collaborators are absent.
 
-- `create_app` registers the canvas host and the presenter surface through `register_canvas_routes` after the API routes and before the static mount, then installs `RefuseCrossOriginWrites` and `RefuseForeignHosts`, so both surfaces sit behind the origin and host guards. [35]
 
-- Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators. [36]
 
-- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/app.py:86-136 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/src/agents_remember/serving/app.py:125-135 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d; mcp/src/agents_remember/serving/_app_routes.py:246-274 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 662b6266e0e4662acd043c39365bb17969ea6ff9. Retired means the anchor no longer stands, not that the cited subject was deleted.
+- `create_app` registers the canvas host and the presenter surface through `register_canvas_routes` after the API routes and before the static mount, then installs `RefuseCrossOriginWrites` and `RefuseForeignHosts`, so both surfaces sit behind the origin and host guards. \[35] [35]
+
+
+
+
+- Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators. Anchor: `refuse_replaced_canvas_authoring` [36]

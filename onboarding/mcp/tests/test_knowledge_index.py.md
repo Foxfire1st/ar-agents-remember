@@ -70,4 +70,5 @@ No cross-repo boundary is crossed by this file.
 
 
 
-- The lane row.  Anchor: "mcp/tests/test_knowledge_index.py" [8]
+
+- The lane row. Anchor: "mcp/tests/test_knowledge_index.py" Anchor: "mcp/tests/test_knowledge_index.py" [8]

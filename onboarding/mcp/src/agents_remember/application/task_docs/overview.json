@@ -76,19 +76,6 @@
         },
         {
           "anchor": {
-            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
-            "content": "sha256:667882012ebd38bb51518f072cfa2239734d4aa86714747c7082f0e34bec837b",
-            "locator": {
-              "end": 293,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/models/task_doc.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
             "content": "sha256:01c9eca1b5b80bee68f3aaaa3e5c14d8529f479bf0441e4a7449987145ced87a",
             "locator": {
@@ -97,6 +84,17 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "content": "sha256:9f194297b90b3506084075dd0ab19c5e0d585da2b540db98b51381c09352e4b3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/task_doc.py"
           },
           "kind": "code"
         }
@@ -272,12 +270,12 @@
         },
         {
           "anchor": {
-            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
             "content": "sha256:a7c7dce2e7f1889ec03211fca275ead24d98e28898bf7631070920d51b9ea0ca",
             "locator": {
-              "end": 708,
+              "end": 710,
               "kind": "line_range",
-              "start": 669
+              "start": 671
             },
             "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
           },
@@ -285,14 +283,30 @@
         },
         {
           "anchor": {
-            "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+            "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
             "content": "sha256:3838533d65cb4855c05eba6a16d5d9e19afdc7f1ac73231021306d47816b97fd",
             "locator": {
-              "end": 666,
+              "end": 668,
               "kind": "line_range",
-              "start": 650
+              "start": 652
             },
             "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Whole-sprint readiness collects all live-master refusals; pending row surveys are read-only; moving-master enclosure plans use current-folder contracts and safe abandonment, with pending retirement retained in resumed previews. [20]\n\nAnchor: `_collect_readiness` `_row_survey` `_retire_enclosures` `_preview` `_preview_archived` `_phase_two`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae131741438b1021d19d865adc34d223c8cad4f4",
+            "content": "sha256:df74ef094c5b3b1501de32cc49f50f9dd2ff31a6ca0ced127300419570cc5aa1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive.py"
           },
           "kind": "code"
         }

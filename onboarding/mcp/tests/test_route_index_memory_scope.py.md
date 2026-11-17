@@ -6,7 +6,7 @@
 
 ## Current source account — Public full-quality missing-cache preparation
 
-Current tests distinguish subset diagnostics from ordinary full runs. Explicit subsets never build route caches, even an explicit selection of every named check; ordinary full repo/leaf requests build absent caches once and retain separate run identities. Existing stale caches remain unchanged, failed missing-cache writes/read failures retain exact paths/errors, and an absent onboarding root yields zero built indexes and zero build errors without creating it. Earlier explicit refresh fencing remains separate. These are source assertions, not a fresh run.
+Current tests distinguish subset diagnostics from ordinary full runs. Explicit subsets never build route caches, even an explicit selection of every named check; ordinary full repo/leaf requests build absent caches once and retain separate run identities. Existing stale caches remain unchanged, failed missing-cache writes/read failures retain exact paths/errors, and an absent onboarding root yields zero built indexes and zero build errors without creating it. Earlier explicit refresh fencing remains separate. These are source assertions, not a fresh run. `test_an_entry_half_alone_is_listed_as_a_covered_card` checks JSON-only `README.md` and `pkg/a.py` cards appear in `coveredFiles` and answer `present` without creating Markdown halves.
 
 This source-bound correction covers the described L54 seams only. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
 
@@ -15,13 +15,17 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 
 
 - Explicit all-check subset and ordinary full requests keep distinct asynchronous run identities. [3]
-- Missing-only cache preparation preserves existing stale bytes and reports render failures. [4]
+
+
+- Missing-only cache preparation preserves existing stale bytes, and a rendering failure names the failed cache path. [4]
 
 
 
-## Inherited source-epoch account (non-operative)
 
-The following complete predecessor retains useful explanations, old observations and provenance. Its superseded claims on the updated seams are historical, not a parallel current contract; its numbered groups keep their original meanings.
+
+## Scope-fencing fixture
+
+
 
 > ## Governing Overview
 >
@@ -35,5 +39,9 @@ The following complete predecessor retains useful explanations, old observations
 >
 > - The scoped current source carries the module/document behavior described above. [1]
 
+
+
 - The scoped current source carries the module/document behavior described above. [1]
+
+
 - Public subset/full requests preserve scope authority, actual builds, stale bytes and write errors. \[2] [2]

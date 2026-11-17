@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
+            "blob": "cf77370234ae2b7b5d0f501b3b575a4a0de353cb",
             "content": "sha256:4eec5afda1d2df049434fd1e1e6f45416180d24ee65c38527af925c5a49311dc",
             "locator": {
-              "end": 275,
+              "end": 279,
               "kind": "line_range",
-              "start": 245
+              "start": 249
             },
             "path": "dashboard/src/panels/review/reading/pageParts.tsx"
           },
@@ -42,8 +42,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
-            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "blob": "da9f3022282b5fd1f6a068f3c0e958d5edb801d3",
+            "content": "sha256:c400a05a19041a428108f0bfcbe26a04e138b98b0f6bf13e22ed5fe868aa4990",
             "locator": {
               "kind": "file"
             },

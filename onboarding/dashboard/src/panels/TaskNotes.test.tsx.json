@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e23e68eb2a31165781bb22894b445d6d8bc18b66",
+            "blob": "4b2ad3e134f125cea8de3cfc20e0cbc7e222e0b1",
             "content": "sha256:ed92c2d96120e9edf1b9316ca0e8c1f7629e9bed17074a44422870c862c37b48",
             "locator": {
               "kind": "symbol",
@@ -56,10 +56,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
-            "content": "sha256:03e3c301f302e5a9f9a018a62b682cb232d944b516731c65b285b88018a36549",
+            "blob": "e9ec75cc0a5b18ff4f512bf0e49061039c154dba",
+            "content": "sha256:c927baf4da7b656146880a84e270459bbee242fecc2d7d5d8b64a4a964fc8c58",
             "locator": {
-              "kind": "file"
+              "end": 585,
+              "kind": "line_range",
+              "start": 416
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
           },

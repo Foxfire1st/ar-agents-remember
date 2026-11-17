@@ -1,0 +1,113 @@
+{
+  "path": "dashboard/src/cockpit/tabMemory.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ed9fb578cafb5d3b2e46bc4771ceeafc0971a8a7",
+        "content": "sha256:2337f23eddbc17090b7846d7903d769519c442ab73c181093e33e577a10286b0",
+        "locator": {
+          "kind": "symbol",
+          "name": "changeSetTaskGone"
+        }
+      },
+      "id": "RLZ-2VZKCK",
+      "invariant": "INV-VFEYRJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §11",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "The retained diff and review target is checked against the current hydrated task population.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ed9fb578cafb5d3b2e46bc4771ceeafc0971a8a7",
+        "content": "sha256:381e8645a862bfa38933f37a6c5719b7964554f47875a91d888495e1c086c5ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "restoreOperationsView"
+        }
+      },
+      "id": "RLZ-4WQGTF",
+      "invariant": "INV-VFEYRJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §11",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Returning to Operations validates task ownership before restoring a remembered diff, review or note.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ed9fb578cafb5d3b2e46bc4771ceeafc0971a8a7",
+        "content": "sha256:7a9d30f0f638e50b67cb66421299a5bcf7dc812ef4a4177a709de17cc71c4b16",
+        "locator": {
+          "kind": "symbol",
+          "name": "scopeTaskKnown"
+        }
+      },
+      "id": "RLZ-72RVBT",
+      "invariant": "INV-S1VXNA",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-014",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "All three scope aliases require the enclosure's exact leaf or master owner in the current task population.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ed9fb578cafb5d3b2e46bc4771ceeafc0971a8a7",
+        "content": "sha256:5fbdf96688a7690ad4308b2899d2542f0afc1c0e5b8851665cb39bd5039f5390",
+        "locator": {
+          "kind": "symbol",
+          "name": "useTabChange"
+        }
+      },
+      "id": "RLZ-KFZH8K",
+      "invariant": "INV-VFEYRJ",
+      "origin": {
+        "handoffEntry": "BUG-R05@v1 §11",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "This tab handler preserves the Operations view across another tab and clears it on a second Operations press.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ed9fb578cafb5d3b2e46bc4771ceeafc0971a8a7",
+        "content": "sha256:2337f23eddbc17090b7846d7903d769519c442ab73c181093e33e577a10286b0",
+        "locator": {
+          "kind": "symbol",
+          "name": "changeSetTaskGone"
+        }
+      },
+      "id": "RLZ-TMPECB",
+      "invariant": "INV-S1VXNA",
+      "origin": {
+        "handoffEntry": "BUG-L5-R1-014",
+        "leaf": "261112-BUG-L5"
+      },
+      "rationale": "Leaf, review, comparison and master-net variants derive absence from current tasks; a surviving leaf cannot substitute for its master.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Keeps the Operations view when the reader visits another bottom tab and validates that view when the reader returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed9fb578cafb5d3b2e46bc4771ceeafc0971a8a7",
+            "content": "sha256:8501db38ee22607df8752cd3760df2e545413470b31246ee56c99598ecfafb94",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

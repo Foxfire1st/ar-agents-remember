@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a3d5c552fe14c15e8526ef572cfdff0dd4941f16",
+        "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+        "content": "sha256:1e8010f5318267f056fd72cc71f8817f4a43975ef24e9144207983451cdcc51e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_last_render_view"
+        }
+      },
+      "id": "RLZ-0TZDMN",
+      "invariant": "INV-YMJFC9",
+      "origin": {
+        "handoffEntry": "L1-B03",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "It reads that kept failure into the state payload the review page's block and line draw, and answers nothing when the record is absent or not about a missing browser.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "10f569c1318379f138031430a2b49a34d97d815f",
         "content": "sha256:bff353ecb80092d5ca2e446b8bbdaa70e99198223c6d4c828dff4ae100216627",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "a3d5c552fe14c15e8526ef572cfdff0dd4941f16",
+        "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+        "content": "sha256:2cf134151b61ff740e25848fd4d47c0cd0e3fc1288981391218ee13e2d2a11a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_browser_notice_view"
+        }
+      },
+      "id": "RLZ-N482TK",
+      "invariant": "INV-YMJFC9",
+      "origin": {
+        "handoffEntry": "L1-B03",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "It reads the kept announcement into the same state payload, so the sentence stands on the page while the first fetch is pending.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "10f569c1318379f138031430a2b49a34d97d815f",
         "content": "sha256:a6983bc4f4e020e79459ce4f3e95c9e7ff7aab1aeb0f93994367b3f33d7cc9fd",
         "locator": {
           "kind": "symbol",
@@ -44,12 +80,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3d5c552fe14c15e8526ef572cfdff0dd4941f16",
+            "blob": "10f569c1318379f138031430a2b49a34d97d815f",
             "content": "sha256:2582b8ec6566aaf2ddbb4f2b7ae75e6f345c077fc9f4b7a69f7fd9a41262742e",
             "locator": {
-              "end": 457,
+              "end": 458,
               "kind": "line_range",
-              "start": 406
+              "start": 407
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The state payload carries both records.\n\nAnchor: `\"lastRender\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+            "content": "sha256:0abeaa88ab6e89bf82c0683753560fd78c5bb062fb74d3ac356a36eeb51b48cc",
+            "locator": {
+              "end": 851,
+              "kind": "line_range",
+              "start": 845
             }
           },
           "kind": "code"
@@ -57,15 +110,46 @@
       ]
     },
     "7": {
-      "note": "Comparison/evidence preparation rechecks operands; retained state carries its own claims and staleness; Update/Retire clear notices after service results; explicit removal and planned reads retain owner refusals; cancel preserves host uncertainty and measured revision equality.",
+      "note": "Comparison/evidence preparation rechecks operands; retained state carries its own claims and staleness; Update/Retire clear notices after service results; explicit removal and planned reads retain owner refusals; cancel preserves host uncertainty and measured revision equality.\n\nAnchor: `_state_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "a3d5c552fe14c15e8526ef572cfdff0dd4941f16",
-            "content": "sha256:b8ee67ba84bbecf41be76e8da1a12acf27316c71f9c4234e599e0cb64554bb8a",
+            "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+            "content": "sha256:4216fed0148fa2b88819af43aa122893bb38a5e1b25274e0906bb2366b387856",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The review page's own failure record is read from the leaf workspace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+            "content": "sha256:1e8010f5318267f056fd72cc71f8817f4a43975ef24e9144207983451cdcc51e",
             "locator": {
               "kind": "symbol",
-              "name": "_state_payload"
+              "name": "_last_render_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The sentence before the first fetch is read from the same workspace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+            "content": "sha256:2cf134151b61ff740e25848fd4d47c0cd0e3fc1288981391218ee13e2d2a11a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_browser_notice_view"
             }
           },
           "kind": "code"

@@ -41,14 +41,14 @@ it; `tearDown` disposes the temporary directory.
 (`git for-each-ref --format=%(refname) %(objectname)`) through the shared `git` helper, so a
 publication is a visible difference rather than a payload claim.
 
-The module's public drivers, each one call into a registered tool:
+The module's drivers: registered public tools for the status/integration/checkpoint/pause/attach steps, plus a local contract reload:
 
 
 | Driver | Public entry point |
 | --- | --- |
 | `_status` | `worktree_status_tool` |
 | `_integrate` | `worktree_integrate_tool` (`strategy="ff-only"`) |
-| `checkpoint` | `worktree_checkpoint_landing_tool` (`strategy="ff-only"`) |
+| `_checkpoint` | `worktree_checkpoint_landing_tool` (`strategy="ff-only"`) |
 | `_pause` | `worktree_pause_tool` |
 | `_attach` | `worktree_attach_tool` |
 | `_reload` | `load_contract` |
@@ -70,14 +70,17 @@ the run, in eight ordered beats:
 
 - One real temporary world per case, `TemporaryDirectory` cleanup in `tearDown`, and the module is
   marked `pytestmark = pytest.mark.integration` (code line 48).
-- Registered in the **integration** lane of `mcp/tests/test-evidence-lanes.toml` (row 157). That
+- Registered in the **integration** lane of `mcp/tests/test-evidence-lanes.toml` (row 710). That
   manifest is fail-closed — `load_lane_manifest` derives the repository's actual test modules and
   refuses a manifest that omits one — so an unregistered module is a hard load failure.
-- Registered as an exact consumer of the same two shared-support artifacts every other
-  `QueueFixture`-based boundary suite consumes:
-  `closeout_input_test_support.py` (its consumer row is `:318`) and
-  `curator_coherence_test_support.py` (its consumer row is `:398`), both
-  reached transitively through `QueueFixture`. No artifact row was added, removed or re-categorised.
+- The complete lifecycle catalog declares five exact artifact-consumer relationships:
+  `_user_settings_guard.py` (`:443`), `checkpoint_landing_test_support.py` (`:1044`),
+  `curator_coherence_test_support.py` (`:1225`), the Node `package-lock.json` fixture
+  (`:2795`) and `writer_worklist_test_support.py` (`:4848`). These declarations
+  establish dependency ownership, not runtime consumption or execution. The coherence
+  support is reached transitively through `QueueFixture`; the current
+  `closeout_input_test_support.py` exact-consumer list does not name this module. The earlier module-specific account also recorded “No artifact row was added, removed or re-categorised.” That change-scope wording is retained as history.
+  The former two-support-artifact account remains historical.
 - Support is composed, never re-implemented: `QueueFixture`/`REPO` come from `test_closeout_queue`,
   `close_out_leaf` is imported from `checkpoint_landing_test_support`, and `git` comes from
   `test_worktree_support`.
@@ -132,7 +135,7 @@ No external domain claim is required.
 
 - The ref snapshot the "publishes nothing" beat is measured with. [1]
 - The one-class, one-case fixture: one real temporary Git world per case, master-b's canonical series contract, external memory. [2]
-- The six public drivers the run is expressed in, each a registered tool call. [3]
+- The driver helpers call the registered master-level tools and separately reload the local contract. [3]
 - The ordered run and the eight beats, including step 8 — a leaf commanded after the checkpoint landing still starts on a new base. [4]
 
 - The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. [5]
@@ -207,13 +210,24 @@ No meaningful cross-repo references found.
 
 
 
+
+
+- The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support.
+
+
+
+
+
+
+
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:353-358 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361; mcp/tests/evidence-lifecycle.toml:386-391 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1034-1034 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+
+
 - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [10]
 
-
-- The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support. 
-
-
-- The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [13]
 
 
 
@@ -221,4 +235,5 @@ No meaningful cross-repo references found.
 
 
 
-- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:353-358 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361; mcp/tests/evidence-lifecycle.toml:386-391 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1034-1034 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [13]

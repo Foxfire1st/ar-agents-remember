@@ -62,8 +62,8 @@ No domain documentation source is configured for this repository (`system/source
 No configured domain documentation could be checked.
 ### Repo-Internal References
 
-- The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.
-- The two exact-scope consumer registrations this module obliged.
+- Historical caption wording described this module as appended rather than inserted mid-list; current registration is the sorted unit-regression manifest row.
+- Historical caption wording named two exact-scope consumer registrations; the current catalog has the three declarations detailed below.
 
 - **The consumer-completeness oracle: the one gate the source tree can redden, and the finding it raises.** [22]
 - The shared fixture that writes a valid synthetic catalog. [23]
@@ -94,15 +94,13 @@ No configured domain documentation could be checked.
 
 
 
-- The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.  Anchor: `test_evidence_catalog_gate_boundaries` [25]
 
 
-- The two exact-scope consumer registrations this module obliged.  Anchor: `test_evidence_catalog_gate_boundaries` [Past-epoch source caption, detached from live reference 26. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob 0b04e782b9627695554aeeebd05967506794d78d (available); mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit not identified. No historical event or intent inferred.]
+- Historical caption wording named two exact-scope consumer registrations; the current catalog has the three declarations detailed below.  Anchor: `test_evidence_catalog_gate_boundaries` [Past-epoch source caption, detached from live reference 26. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob 0b04e782b9627695554aeeebd05967506794d78d (available); mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit not identified. No historical event or intent inferred.]
 
 Current source: The current lifecycle catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer of mcp/tests/_evidence_catalog_fixture.py, mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These three current artifact registrations establish no invocation or passing result; the earlier two-registration caption remains historical.
 
 
-- The lane row this module holds in the sorted `unit-regression` list.  Anchor: "mcp/tests/test_evidence_catalog_gate_boundaries.py" [27]
 
 
 - The catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer on the evidence-catalog fixture, settings-guard and Node-lockfile artifact rows. These three declarations do not establish invocation.
@@ -110,4 +108,16 @@ Current source: The current lifecycle catalog declares test_evidence_catalog_gat
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1-4036 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f2b7c648f540efb9d64ceea22e11e651cb5cc914. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
+
+
+- The lane manifest declares mcp/tests/test_evidence_catalog_gate_boundaries.py in unit-regression. Membership is selection, not invocation. [25]
+
+
+
+
 - The lifecycle catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer of mcp/tests/_evidence_catalog_fixture.py, mcp/tests/_user_settings_guard.py and mcp/tests/fixtures/repository_profiles/node/package-lock.json. These artifact registrations establish no invocation or passing result. [26]
+
+
+
+
+- The lane row this module holds in the sorted `unit-regression` list. Anchor: "mcp/tests/test_evidence_catalog_gate_boundaries.py" Anchor: "mcp/tests/test_evidence_catalog_gate_boundaries.py" [27]

@@ -1,0 +1,310 @@
+{
+  "path": "mcp/tests/test_weakness_closure.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+        "content": "sha256:aa2756cc585613ca0737e4c019b6663a65c381359626500eb357ac04c30326c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_reopening_and_reclosing_the_same_block_selects_the_new_episode"
+        }
+      },
+      "facet": "Reopening then closing with the same closed block yields pending attribution until the new publication and then selects that new episode’s code commit.",
+      "id": "PRF-4MZ0P4",
+      "invariant": "INV-ZK0X8M",
+      "origin": {
+        "handoffEntry": "L3-W9-closing-pair",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+        "content": "sha256:4164b3574d9892cc94959e53d7368335b466851e9000ae7cdddc6b7be5060cff",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_explicit_closure_requires_a_code_commit_object_without_partial_writes"
+        }
+      },
+      "facet": "Explicit tree, blob, missing object, annotated-tag object and foreign memory commit IDs are refused atomically instead of being accepted as code commits.",
+      "id": "PRF-6166G8",
+      "invariant": "INV-030V4M",
+      "origin": {
+        "handoffEntry": "L3-W9-explicit-code-commit",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+        "content": "sha256:a3b9e6db01987039eec3b2f2472dcff8d00dacbef85f5e0a2b3deafe4e3f53a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_later_task_can_clarify_metadata_without_reauthoring_the_deferred_closure"
+        }
+      },
+      "facet": "A later task may change observation metadata while preserving the earlier closed block and its original closing-pair attribution.",
+      "id": "PRF-6T09HF",
+      "invariant": "INV-ZZF7K5",
+      "origin": {
+        "handoffEntry": "L3-W9-own-task-closure",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+        "content": "sha256:4c5cc2b21b3aa0698a0ad59e976177cd63a3711f3524aea4f17e121b7e97fd8d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_own_task_closure_plans_then_writes_without_guessing_a_commit"
+        }
+      },
+      "facet": "Public preview leaves the code and memory file bytes, HEAD and the index unchanged; apply stores this task’s reason without a commit, preserves anchor and seen, and both public reads change from pending attribution to the paired closing commit without altering the stored closed block.",
+      "id": "PRF-7T9NRH",
+      "invariant": "INV-ZZF7K5",
+      "origin": {
+        "handoffEntry": "L3-W9-own-task-closure",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+        "content": "sha256:82671447e04db4d136fb93f1ae9e45206bad23da42fd435d4a8a2e9a13b7731d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_merge_follows_the_closure_imported_from_its_second_parent"
+        }
+      },
+      "facet": "A merge importing the closed block from its second parent preserves that side’s original closing code commit rather than choosing the merge’s later context.",
+      "id": "PRF-EJRBGS",
+      "invariant": "INV-ZK0X8M",
+      "origin": {
+        "handoffEntry": "L3-W9-closing-pair",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+        "content": "sha256:46fb57f61b5eccdecd954a215ffb003479b4e504529cdb95760543aaeb2d0e90",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_another_tasks_new_closure_needs_its_commit_and_refuses_atomically"
+        }
+      },
+      "facet": "A new closure naming another task with no commit is refused through the public writer and preserves both repository snapshots.",
+      "id": "PRF-JD27D8",
+      "invariant": "INV-ZZF7K5",
+      "origin": {
+        "handoffEntry": "L3-W9-own-task-closure",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+        "content": "sha256:ef3f4bb01f99fe939e09817026d94a8cfc0c555c223b09ccead0c53fce953696",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_independent_merge_closures_are_unavailable_instead_of_choosing_a_parent"
+        }
+      },
+      "facet": "Identical closed blocks independently introduced on two parents yield the same unavailable explanation through both public reads, with no arbitrary code commit.",
+      "id": "PRF-KW9EQX",
+      "invariant": "INV-ZK0X8M",
+      "origin": {
+        "handoffEntry": "L3-W9-closing-pair",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+        "content": "sha256:077a23d952cb70b0f2ffdab4ddd3ee8d0d8c70d3b1da521dd1867b5c779c7e66",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_slug_reanchor_and_revision_changes_preserve_the_original_closing_pair"
+        }
+      },
+      "facet": "Slug, anchor, statement and revision changes retain the closure’s original pair on both the origin and later selected revisions.",
+      "id": "PRF-MAR87C",
+      "invariant": "INV-ZK0X8M",
+      "origin": {
+        "handoffEntry": "L3-W9-closing-pair",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+        "content": "sha256:a111a2d67c6b7bc2d65eb9e8d76135ade7a3ceba7d4448c86d09cfb34daa863e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_committed_closure_with_no_usable_pair_is_unavailable_not_pending"
+        }
+      },
+      "facet": "A committed closure with an absent trailer, tree attribution or foreign memory-commit attribution yields unavailable rather than pending on both public reads.",
+      "id": "PRF-P4B9NF",
+      "invariant": "INV-ZK0X8M",
+      "origin": {
+        "handoffEntry": "L3-W9-closing-pair",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+        "content": "sha256:7a75990eb554efc515a67239b039e891566e50d058446b86c2bba21baa56f301",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_reads_use_only_the_memory_commits_final_trailer_block"
+        }
+      },
+      "facet": "Both public reads ignore a body-only Code-Commit line and report unavailable; when a genuine final trailer exists they return that closing code commit and preserve the stored closed block.",
+      "id": "PRF-R8AXDV",
+      "invariant": "INV-VGBBBK",
+      "origin": {
+        "handoffEntry": "L3-W9-F1",
+        "leaf": "261112-BUG-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+        "content": "sha256:1f0720414b6a9bb69a0b4f520ed17a0e104f452da2cce8ef2b52d49b267f0b2e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stored_closure_forms_parse_and_leave_no_open_maintenance_item"
+        }
+      },
+      "facet": "Both explicit and absent-commit closures written through the public writer parse as stored and yield no open weakness maintenance item or open count.",
+      "id": "PRF-ZSR5J4",
+      "invariant": "INV-ZZF7K5",
+      "origin": {
+        "handoffEntry": "L3-W9-own-task-closure",
+        "leaf": "261112-BUG-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Registered writer/reader helpers bind the isolated world and compare both repository snapshots around reads. [1]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+            "content": "sha256:e332f6f1b18191080317b47aea7c5766d4e2dcc11a463781e89cfeb3284adf7a",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Actual committed-message and Git captures distinguish body-only mentions from a genuine final trailer in both public views. [2]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+            "content": "sha256:604b84900205d931f87d1d2ae380705b8edc592619abeb677791f31710c0d512",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Own-task preview/write and stored explicit/deferred forms preserve observations and remove the closed mark. [3]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+            "content": "sha256:e9c0209a47832e453e5d552434b318c4ad1a02081187a9bea279dcb875e2a195",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Other-task authoring requires an explicit actual code commit and rejects the five named invalid object classes without partial writes. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+            "content": "sha256:46fb57f61b5eccdecd954a215ffb003479b4e504529cdb95760543aaeb2d0e90",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 208
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+            "content": "sha256:6cde86d8e86f073f7eb1a317f3a863cd61e59af0a7893e5c205c11f5f79d7f77",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Metadata/reanchor/history, recurrent closure and merge cases preserve or distinguish the appropriate closing episode. [5]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+            "content": "sha256:b5edd8eecc01a6f4fd47c138a4cc73758d481bf6f789f86a0f08c834dc16091e",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 286
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A committed closure lacking a usable pair reports unavailable rather than pending attribution. [6]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69a9ed9be74e28c83621d2679faaf7a03bda7174",
+            "content": "sha256:a111a2d67c6b7bc2d65eb9e8d76135ade7a3ceba7d4448c86d09cfb34daa863e",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 388
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

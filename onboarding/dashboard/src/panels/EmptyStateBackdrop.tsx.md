@@ -9,7 +9,7 @@
 The shared **empty-state backdrop** (slice 07b polish): a faint, effects-gated boomerang-video
 atmosphere behind centered empty-state text, so a panel with nothing to show reads as a quiet,
 intentional canvas rather than a blank box. It lifts the engine-room G6 backdrop treatment
-(`engine-room/EnclosureProcessMap` + `engineRoomStyles` `backdrop`/`backdropVideo`) out into a reusable
+(`engine-room/EnclosureProcessMap` + `engine-room/styles.ts` re-exporting `backdrop`/`backdropVideo` from `backdrop.styles.ts`) out into a reusable
 panel primitive. Current production consumers are exactly `DetailPanel` (battle-cruiser clip),
 file-viewer `DualPane` (siege-tank clip), and change-set `ChangeSetViewer` (siege-tank clip).
 
@@ -90,10 +90,16 @@ empty states that mount it.
 - The honest-motion gate that decides whether the backdrop mounts at all. [3]
 - `DetailPanel` mounts the battle-cruiser clip inside `Panel` `fill`, passing `opacity={0.18}`. [4]
 
-- File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`. [5]
 
 
-- Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`. [6]
+- File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`. Anchor: `DualPane` [5]
+
+
+
+
+
+- Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`. Anchor: `ChangeSetViewer` [6]
+
 
 - The static direct-video backdrop: baked media motion is owned by the MP4 asset, while the component only gates and styles a direct `<video>` child. [7]
 - The render test pinning children-always-show, effects gating, the direct video child, and absence of `empty-backdrop-zoom`. [8]

@@ -18,7 +18,7 @@ contract persistence. `invalid_leaf_ref_result(error)` maps resolver failures to
 `state`, `summary`, `expected`, and `candidates` fields so callers get the expected
 `<repo>/<master-folder>/<doc-id>` form and candidate set. Its `state` is
 `error.status`, which since 260731-EFA-L4 is typed `leaf_refs.LeafRefStatus` — the same two-member
-`Literal` `models.terminal` folds into its own status unions — rather than a bare `str`.
+`Literal` declared by `worktrees/leaf_refs.py` — rather than a bare `str`.
 
 ### The second refusal: `invalid_contract_request_result` (260731-EFA-L4)
 
@@ -45,8 +45,8 @@ is quarantined, while a *caller asking for* one is refused before it can be writ
 ## Invariants And Boundaries
 
 - This module is start-specific glue; the resolver owns matching, ambiguity, and candidate policy.
-- The helper returns doc ids because worktree contracts persist doc ids, while terminal catalogs persist
-  qualified ids.
+- The helper returns the canonical doc id for worktree-contract persistence; the resolver owns
+  the qualified form it presents in refusal guidance.
 - Both refusal builders return a `WorktreeCommandResult` rather than raising. `worktree_start`'s
   handler has no `except` for either `LeafRefResolutionError` or `ContractError`, so anything that
   escapes this module reaches the MCP client as a traceback.
@@ -75,6 +75,8 @@ is quarantined, while a *caller asking for* one is refused before it can be writ
 - Caller parent is an assertion against canonical task topology; a mismatch returns corrected operation inputs before publication. [4]
 
 - Start contract builder that calls these helpers.  Anchor: `build_start_contract` [2]
+
+
 
 
 - `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on.  Anchor: `ContractError` `_task_vocabulary` `ContractCells` [3]

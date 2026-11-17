@@ -37,7 +37,7 @@ The Python suite adapter executes the pytest step constructed by the quality-pla
 
 The earlier `code_quality/completion_relay.py` account described a structural census for the relay `adapter evidence -> catalog -> notifier -> durable inbox -> owner`, with startup and recurring observation entry points. That module is absent from the frozen source tree, so this account is historical and supplies no current relay guard, HTTP exclusion check or runtime-indirection guarantee.
 
-`testing/curation_doctrine.py` owns normalized retired-wording checks and positive checks for compact curation policy. It strips Markdown emphasis and collapses wrapping before matching retired statements on the surfaces that shipped them. A separate registry checks the retired repair-loop field pairing and the corrected field names in declared documents. The module imports neither pytest nor a fixed repository root, so callers can supply staged or synthetic trees. Its retired-wording scan is a census, not a semantic check: fresh vocabulary can escape it. The compact-policy helper accepts any listed statement for each declared source; the direct canonical-source test requires every listed statement. Complete curation remains the stated intent, and those different deciding predicates must not be described as equivalent.
+`testing/curation_doctrine.py` owns normalized retired-wording checks and positive checks for compact curation policy. It strips Markdown emphasis and collapses wrapping before matching retired statements on the surfaces that shipped them. A separate registry checks the retired repair-loop field pairing and the corrected field names in declared documents. The module imports neither pytest nor a fixed repository root, so callers can supply staged or synthetic trees. Its retired-wording scan is a census, not a semantic check: fresh vocabulary can escape it. The compact-policy helper accepts a declared source only when its statement list is nonempty and every listed statement is present after normalization; otherwise it reports that source. A missing source is reported separately as missing. The direct canonical-source test reports each missing listed statement. These are all-clause checks with different report granularity.
 
 `code_quality/projection_types.py` folds the served projection's `servingBuild`, `watcherHealth`, `checkoutBinding` and `buildCurrentness` definitions into the generated dashboard contract. Its supplemental renames are `BuildCurrentnessPayload`, `ServingBuildPayload`, `WatcherHealthPayload` and `CheckoutBindingPayload`; nullable fields omitted by `exclude_none=True` become optional output properties. The declared refinement keywords include `minimum` but not `maximum`, and unsupported schema keywords refuse generation. The former terminal observer-health payload and counter account is historical; it does not describe this candidate's served tail.
 
@@ -99,7 +99,11 @@ Retained earlier citation wording, outside its current number: - Root configurat
 - Canonical POSIX-string sorting retains duplicate path entries. [2]
 - The root declares 10000 unit and 2000 integration selected cases. The current integration raise preserves marker classification and both over-budget refusal directions. [3]
 - The adapter rederives the selector and compares each executable path population exactly. [1]
+
+
 - Development dependencies and checkout import paths are distinct from installed product-package discovery. [4]
+
+
 > Retained earlier citation wording: - Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]
 - The package initializer exports no facade; the certifying plugin composes shared services and worktree-service fixtures. [6]
 - Root configuration classifies product and verification packages by operational ownership: scripts/agent_evals is now explicitly a verification root beside the Dagger quality package and test support. Full static scope covers tracked Python while behavioral metrics use product roots. [7]

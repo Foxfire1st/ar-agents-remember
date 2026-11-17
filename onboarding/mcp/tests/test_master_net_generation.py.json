@@ -125,12 +125,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5329d6566f5482380dd6d536b28a182142711dc",
-            "content": "sha256:5411749dbd3b184fb122907bb2b8bcf744cb6f96b7f6b3bb3af87b6b3157ba5b",
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
             "locator": {
-              "end": 309,
+              "end": 809,
               "kind": "line_range",
-              "start": 309
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -139,14 +139,16 @@
       ]
     },
     "5": {
-      "note": "The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it.\n\nAnchor: `select_master_net`",
+      "note": "The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it. Anchor: `select_master_net`",
       "targets": [
         {
           "anchor": {
-            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
-            "content": "sha256:1444b2e010878f824abb27a9e29ef4d5fbd94c32bd3f1fd4216395a4873a9cbc",
+            "blob": "8869c683a32f5d4101afd8336bd7230e6b07eb8f",
+            "content": "sha256:c0ad04ef56c199e4145dee058c921ac7700e48c5b6c2392b857c0c04641fe5b9",
             "locator": {
-              "kind": "file"
+              "end": 380,
+              "kind": "line_range",
+              "start": 323
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },

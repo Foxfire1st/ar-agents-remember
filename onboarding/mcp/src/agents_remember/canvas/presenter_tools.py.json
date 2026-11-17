@@ -3,8 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b4dd69ffa2141b0e24ed49d9d835e75c341c5b8d",
-        "content": "sha256:8548552e374058641d1e8f4b3cb00ef8d2f4eb50ab1cf15e29f61bf0f195e4d9",
+        "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+        "content": "sha256:6f19941fd4c7a8758cb2dffa12928ac27a8062adf1bb223523e76d79433345e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "AuthoringTools.keep_report"
+        }
+      },
+      "id": "RLZ-K43S8B",
+      "invariant": "INV-PDRZGD",
+      "origin": {
+        "handoffEntry": "L1-B02",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "a run-less announce has no folder to write into, and reading report['run'] raised through the serving wrapper",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+        "content": "sha256:a6241347c083255a1a0aa838cee6cb1e6e518b51ef0867667ec74a84e978002c",
+        "locator": {
+          "kind": "symbol",
+          "name": "AuthoringTools.render"
+        }
+      },
+      "id": "RLZ-MQQF6E",
+      "invariant": "INV-PDRZGD",
+      "origin": {
+        "handoffEntry": "L1-B02",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "The announce is the first thing render does: with a browser missing and no announcement kept in this workspace it answers without a run and writes the announcement the next call reads, so no child process runs before the sentence exists.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+        "content": "sha256:22161ee0c2165865b934959d9098763aa9708590e98910cb0b1b0d40ebb12037",
         "locator": {
           "kind": "symbol",
           "name": "AuthoringTools"
@@ -18,6 +54,24 @@
       },
       "rationale": "The shared authoring implementation now admits explicit explainer instructions/grants and drafts roots while retaining exact input digests and guarded output paths; the removed standalone server is not recreated.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+        "content": "sha256:9ec980e70c788d791dbfd7d9680ee530160c6f8f0b06262bdc6315c00d160838",
+        "locator": {
+          "kind": "symbol",
+          "name": "AuthoringTools._remember"
+        }
+      },
+      "id": "RLZ-X8KKYJ",
+      "invariant": "INV-YMJFC9",
+      "origin": {
+        "handoffEntry": "L1-B03",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "It keeps the last render's failure in the leaf workspace while it ended unavailable for a missing browser, and clears it once a page is published, so the page has the words to say and no stale ones.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -26,8 +80,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4dd69ffa2141b0e24ed49d9d835e75c341c5b8d",
-            "content": "sha256:9324a22ea57299596e459be2abf70d8dac4280dbacdd8bfbf258b5e3b3831c39",
+            "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+            "content": "sha256:5dc2aba1b85d00f9bbd2ff4df4fa86ac4a18b62f2b0a9ebcbaeb728e8bcb5e0e",
             "locator": {
               "kind": "file"
             }
@@ -41,10 +95,75 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4dd69ffa2141b0e24ed49d9d835e75c341c5b8d",
-            "content": "sha256:9324a22ea57299596e459be2abf70d8dac4280dbacdd8bfbf258b5e3b3831c39",
+            "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+            "content": "sha256:5dc2aba1b85d00f9bbd2ff4df4fa86ac4a18b62f2b0a9ebcbaeb728e8bcb5e0e",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The first render on a browserless installation fetches nothing and answers announce with the missing part and the sentence.\n\nAnchor: `\"announce\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+            "content": "sha256:2559b57a0c75703ee15bf3d1e43b6b7a76da2cce251e23eaad1995f080471faa",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The announcement is kept in the workspace state folder so the next call renders instead of announcing again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+            "content": "sha256:56315a90c3c11bdb0ea186569b96613ffbc7c0211a6faa1bb6a4a87725f3018e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_announce"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The last render that ended unavailable for a missing browser is kept for the page and cleared by a published page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+            "content": "sha256:9ec980e70c788d791dbfd7d9680ee530160c6f8f0b06262bdc6315c00d160838",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remember"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A run-less answer is filed nowhere and answered as it stands.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988e305d334ffbe7e14443a3a37847fb0e3e6cb9",
+            "content": "sha256:6f19941fd4c7a8758cb2dffa12928ac27a8062adf1bb223523e76d79433345e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "keep_report"
             }
           },
           "kind": "code"
