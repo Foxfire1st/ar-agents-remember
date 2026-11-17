@@ -1980,6 +1980,24 @@
     "file:scripts/install-python-runtime.sh": [
       "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
     ],
+    "file:scripts/instruction_renewal/budgets.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:scripts/instruction_renewal/digest.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:scripts/instruction_renewal/manifest.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:scripts/instruction_renewal/plan.py": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-Y454FF-l188-AGENTS-md.json",
+      "knowledge/dependents/DPD-ZQB4YZ-docs-reference-skills-md.json"
+    ],
+    "file:scripts/instruction_renewal/pointers.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
     "file:scripts/pnt-sandbox.py": [
       "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
     ],
@@ -1995,6 +2013,12 @@
     "file:scripts/python-runtime-contract.env": [
       "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
       "knowledge/dependents/DPD-CZBR1Q-readme-md.json"
+    ],
+    "file:scripts/renew-instructions.py": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-Y454FF-l188-AGENTS-md.json",
+      "knowledge/dependents/DPD-ZQB4YZ-docs-reference-skills-md.json"
     ],
     "file:scripts/sync-dashboard.py": [
       "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",

@@ -110,14 +110,13 @@ No meaningful cross-repo references found.
 
 No cross-repo boundary is crossed by this file.
 
+### Repo-Internal References (continued)
+
 - The registry set includes eight kinds, with MIK-R53 membership/record; decision dispatch and unclaimed hunk/legacy invariant subjects are explicit. [3]
 - Current source delta inspected statically: Repair six-kind registry and unclaimed-decision prose/caption against exact current assertions; retain set semantics, model/revision/freeze facets and historical execution limits. [12]
 
 - Writer and validator token tests distinguish new full-hash admission. [13]
 - Stored closed comparison-base legacy items parse, validate and round-trip unchanged. \ [14]
 - Item tokens are judged only in the files the re-anchor check reads: five file/base/route shapes. \ [15]
-
-
-
 
 - Lane registration. Anchor: "mcp/tests/test_knowledge_history_files.py" Anchor: "mcp/tests/test_knowledge_history_files.py" [10]

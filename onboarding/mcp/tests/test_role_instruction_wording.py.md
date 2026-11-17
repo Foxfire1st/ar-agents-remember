@@ -63,12 +63,6 @@ Named-section deletion and relocation controls cover construction-cost escalatio
 
 ## Evidence
 
-- Instruction cases assert Investigator scope/report/mutation boundaries, current coordination, positive leaf-seat obligations, the task-tool-server vocabulary and compiled return/await channels. Their assertions distinguish a stored file from an explicit handover and establish no fresh test run. [1]
-- The Investigator wording case checks scoped concern intake, report and remediation authority, and the canonical investigator role; no system-specialist role file, manifest entry or router mention remains. [2]
-
-
-
-
 - Compiled parented handovers distinguish fixed starter identity from ordinary return role/task addresses; leaf returns name the current Manager. [3]
 
 - Current instruction cases require staged individual Manager starts: Worker at build, Reviewer at freeze and Curator after code PASS. Handover tests keep actual-parent developer questions distinct from ordinary role/task returns and pin held-message ordering and permission boundaries. The tool-description census still covers role_start_set beside role_start and role_message; those source-text checks prove no live recipient or host consumption. [4]
@@ -83,8 +77,14 @@ Named-section deletion and relocation controls cover construction-cost escalatio
 
 - The Architect's flat-mode closeout gates and its kept clause stay pinned. [10]
 
-- The census pins the router, the eight launcher role files and their nine operations in delivered order. [11]
+
 
 - The protected Manager clause separates automatic stage publication and master-row mirroring at start/finalize/abandon from task_doc set_status for an explicit correction or organizational-master completion. [12]
 
 - Named-section deletion and relocation controls cover construction-cost escalation, continuation, exact freeze/check identity and design-guideline duties. Coordination assertions preserve staged Manager seat creation, empty-seat recovery and scoped manual repair; message duties are checked at their actual shared delivery step. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [13]
+
+### Repo-Internal References (renewed)
+
+- Instruction cases assert Investigator scope/report/mutation boundaries, current coordination, positive leaf-seat obligations, the task-tool-server vocabulary and compiled return/await channels. Their assertions distinguish a stored file from an explicit handover and establish no fresh test run. Anchor: `test_investigator_scope_report_and_authority_are_explicit` [1]
+- The Investigator wording case checks scoped concern intake, report and remediation authority, and the canonical investigator role; no system-specialist role file, manifest entry or router mention remains. Anchor: `test_investigator_scope_report_and_authority_are_explicit` [2]
+- The census pins the router, the eight launcher role files and their nine operations in delivered order. Anchor: `InstructionFileWordingTests.test_the_surfaces_are_the_router_seven_roles_and_their_eight_operations` [11]

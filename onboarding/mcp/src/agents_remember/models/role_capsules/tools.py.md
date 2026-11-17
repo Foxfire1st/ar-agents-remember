@@ -13,11 +13,11 @@ Requested tool identities, narrowed against the admitted permission policy. **A 
 
 ### Logic
 
-cit:([`narrow_tool_requests`], mcp/src/agents_remember/models/role_capsules/tools.py:24-58) turns the tool identities the compiled sources
-declare into cit:([`CapsuleToolRequest`], mcp/src/agents_remember/models/role_capsules/types.py:435-450) values, deduplicated and returned in
+cit:([`narrow_tool_requests`], mcp/src/agents_remember/models/role_capsules/tools.py:24-56) turns the tool identities the compiled sources
+declare into cit:([`CapsuleToolRequest`], mcp/src/agents_remember/models/role_capsules/types.py:436-448) values, deduplicated and returned in
 **stable tool-id order**, and refuses (`tool-request-not-permitted`) rather than silently
 widening when a request falls outside the snapshot an existing AR owner admitted
-(cit:([`CapsuleToolPolicy`], mcp/src/agents_remember/models/role_capsules/types.py:181-194)).
+(cit:([`CapsuleToolPolicy`], mcp/src/agents_remember/models/role_capsules/types.py:183-195)).
 
 The declared identities come from the canonical manifest's per-role `tools` array, read through
 the compiled sources and handed here as `(tool_id, authority)` pairs. Nothing in this module can
@@ -61,7 +61,7 @@ No relevant documentation found after checking live sources.
 - The compiler step that narrows requests before sealing the digest.
 
 
-- The architect seat's declared tool requests in the canonical manifest, which name `role_message` and `role_start` for child-seat messaging. [4]
+
 
 - A request inside the policy is carried but not granted; one outside it is refused; every declared id exists in the public tool roster. [5]
 
@@ -71,4 +71,8 @@ No sibling-repository contract defines this narrowing rule.
 
 No meaningful cross-repo references found.
 
+### Repo-Internal References (continued)
+
 - The compiler step that narrows requests before sealing the digest. Anchor: `compile_role_capsule` [3]
+
+- The architect seat's declared tool requests in the canonical manifest, which name `role_message` and `role_start` for child-seat messaging. [4]

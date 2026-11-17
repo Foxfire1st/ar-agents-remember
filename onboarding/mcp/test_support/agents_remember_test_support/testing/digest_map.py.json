@@ -1,0 +1,72 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/digest_map.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0d5efb591aa757fa005f5465e6492741219af373",
+        "content": "sha256:fde0661cc55e47d717f94ec0916d450d076b82f628b3a0051d2d42870b38ea58",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-2P7AAF",
+      "invariant": "INV-HN54VG",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 4",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Each source, evidence and clause passage has its own hash or selector; one authored-map validation precedes derivation and uncovered clause prose names the human decision before any publication.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Assertions cover source bindings and digest places; clause coverage calls the repository renewal helper clause_coverage_error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d5efb591aa757fa005f5465e6492741219af373",
+            "content": "sha256:d7cecfd8865e12203af9071dd2310e7e3dc7aa5ed731a15a8b9a9e34915d2f1b",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae5955d3d7033a3675bb38ceb8d2610a45ddfdfe",
+            "content": "sha256:6189d6dd15cc1483d846695f238c2a6d09d0433443803b2161ecee545a50b17d",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 290
+            },
+            "path": "scripts/instruction_renewal/digest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Evidence, retirement and audience checks remain separately expressed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d5efb591aa757fa005f5465e6492741219af373",
+            "content": "sha256:8bccf01ae6462f431573c11225fde9d2170e1a857dccf91069f32017c63dd1ab",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

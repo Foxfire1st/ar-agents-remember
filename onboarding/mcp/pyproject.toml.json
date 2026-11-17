@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
-        "content": "sha256:abebe6fa8e28401a2c1fc045c15849801f75107416a9bb542dd54cb47cb3b6d6",
+        "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+        "content": "sha256:0efbc28abe7b47ede5f4ac5efadb6fb68a8eed9a9ebc503cf0901612a27dbb5a",
         "locator": {
           "end": 7,
           "kind": "line_range",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+        "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
         "content": "sha256:80c99862448ab92d6ee65fde88d7667d360c1d35eedfa1e7fe46ebea3024294a",
         "locator": {
           "end": 17,
@@ -291,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
             "content": "sha256:67390565a8665a2378ea8acf015a4c3ac444ae57f5394d6f15e32a44bf786726",
             "locator": {
               "end": 20,
@@ -308,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
             "content": "sha256:56d5658353a8b7c8d238f402dd65aa85f57d171c9bbc54740712e71650b8f7ab",
             "locator": {
               "end": 108,
@@ -395,7 +395,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
             "content": "sha256:e6b563e4acbcd80bd201904b19939ce2f5ff3a1958b8d7af3c1296e2e7249a98",
             "locator": {
               "end": 24,
@@ -407,7 +407,7 @@
         },
         {
           "anchor": {
-            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
             "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
             "locator": {
               "end": 31,
@@ -424,7 +424,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
             "content": "sha256:896fdd7b511626d78b5cabb93db1be4c16a9e801b46276eef3d039c681d2cdbb",
             "locator": {
               "end": 27,
@@ -459,7 +459,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "969f0f5107c14b1509cdd055c0a668d69b70e72b",
+            "blob": "1ce1daf838e477fa056e928ba17e4bd873899c6f",
             "content": "sha256:6dc0cecbeac8ccc41e1a05a96799d5652d7940b5d02dc7f4ca1f476d278107e1",
             "locator": {
               "end": 43,
@@ -472,7 +472,7 @@
         },
         {
           "anchor": {
-            "blob": "969f0f5107c14b1509cdd055c0a668d69b70e72b",
+            "blob": "1ce1daf838e477fa056e928ba17e4bd873899c6f",
             "content": "sha256:580b200c0d480ad867ae427f11fe588174b8408f3b0487eb5068933f04f651b0",
             "locator": {
               "end": 111,
@@ -521,12 +521,12 @@
       ]
     },
     "9": {
-      "note": "MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback.\n\nAnchor: `_resolve_server_version`",
+      "note": "MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. Anchor: `_resolve_server_version`",
       "targets": [
         {
           "anchor": {
-            "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
-            "content": "sha256:bf03c0454865282377d56e126f2382c83864e683cc3f44eae2c8638f35f07cfd",
+            "blob": "6c35df665ffac7bf152c3badf993d303ed12c451",
+            "content": "sha256:0ffb984c789890b19f5cc9baa194ed51127569b66c40a4ca88a992c56fa9f379",
             "locator": {
               "kind": "file"
             },

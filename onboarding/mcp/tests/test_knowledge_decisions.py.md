@@ -96,14 +96,13 @@ No cross-repo boundary is crossed: every case builds its trees and task director
 
 No cross-repo boundary is crossed by this file.
 
+### Repo-Internal References (continued)
+
 - Alternative counts and the one chosen: refusal-message comparisons filter to R13.1 when other rules also refuse. [4]
 - `test_a_decision_that_governs_nothing_is_refused` expects `report.ok == False` and `R13.3-governs` with `report_only == False`. [8]
 - A decision is never an export (review F6): the forged legacy case expects both new-record and legacy-unassessed admission refusals. [11]
 - Current source delta inspected statically: Fix owning-rule filtering, governs refusal and dual legacy refusals, including renamed captions; retain derived-status and endpoint boundaries. [13]
 
 - Reordering preserves option-text identity for reconsideration links, with an independently misbound-index control; the assertions filter R14. [14]
-
-
-
 
 - The lane row. Anchor: "mcp/tests/test_knowledge_decisions.py" Anchor: "mcp/tests/test_knowledge_decisions.py" [12]

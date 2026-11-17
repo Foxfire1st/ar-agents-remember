@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fc27398cbb49aa07209ebcbeed8e891bb97bd479",
-        "content": "sha256:f8d7230a52d517521dcf3f1dd66c62ac359408213856c85b01cd1f747513a5c6",
+        "blob": "5455262601dadd5c6ef505fa831571e8a86206c9",
+        "content": "sha256:a16f87a3683bba4a7d283832b8baa7c80b92b55fe9d9f71ce512a0c851bc9702",
         "locator": {
           "kind": "symbol",
           "name": "compile_detail_references"
@@ -18,6 +18,23 @@
       },
       "rationale": "This function selects and binds declared detail bytes and their read timing into each compilation.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "5455262601dadd5c6ef505fa831571e8a86206c9",
+        "content": "sha256:f7bd17dcbc002e0e24397ed277905549925dbc8c7001a377625fb079d6a838b2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FWW5RT",
+      "invariant": "INV-Q432XE",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 3",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The reader joins authored declarations with generated routing; legal ordinary marks make stored steps stale, while renewal validates authored marks and replaces derived values.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -56,7 +73,7 @@
       ]
     },
     "3": {
-      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. Anchor: L114–L129",
       "targets": [
         {
           "anchor": {
@@ -74,16 +91,16 @@
       ]
     },
     "4": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L18–L74",
+      "note": "The parser composes manifest fields before reading detail declarations and names `mcp/.venv/bin/python scripts/renew-instructions.py` in malformed-declaration refusals. Missing declared or admitted detail sources require declaration, renewal and admitted bytes; compilation retains exact admitted bytes for selected placeholders.",
       "targets": [
         {
           "anchor": {
-            "blob": "fc27398cbb49aa07209ebcbeed8e891bb97bd479",
-            "content": "sha256:dadfe31dd58a2bed1a2df5d3772dee0ac966edb33411e858b929986ab996e634",
+            "blob": "5455262601dadd5c6ef505fa831571e8a86206c9",
+            "content": "sha256:7172fb24e29d1e34620fc95fadbbb91c2d606843efb443b6d2adb84d980543a6",
             "locator": {
-              "end": 74,
+              "end": 84,
               "kind": "line_range",
-              "start": 18
+              "start": 27
             }
           },
           "kind": "code"

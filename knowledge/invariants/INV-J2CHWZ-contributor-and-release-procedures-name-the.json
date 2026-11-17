@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The repository entry instructions, contribution guide, skill reference and release checklist must prescribe the same renewal procedure, preventing contributors from using a copy-only check that leaves instruction measurements stale."
+  },
+  "applicability": "Contributor and release procedures for instruction edits.",
+  "conditions": [
+    "Canonical authored instruction inputs and declared package copies are in scope."
+  ],
+  "exclusions": [
+    "The command does not grant release, installation, commit or publication authority."
+  ],
+  "id": "INV-J2CHWZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L8-worker-987cf869-ffe0-4cb8-af0b-d8a7a9426a7b-w5.md#evidence-map",
+        "L8-M1 sealed repair For F11.4 retain the skills-reference realization but narrow its rationale to the generated skill copy and exact renewal command actually named at docs/reference/skills.md:17–21. This document names neither --check nor tool-details; withdraw those unsupported claims without changing the invariant scope. RLZ-PN2Q7F is an added realization relative to the leaf memory base."
+      ],
+      "path": "knowledge-wave2-input-v4.json"
+    },
+    "handoffEntry": "BUG-R08@v1 rule 8",
+    "leaf": "261112-BUG-L8",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Contributor and release procedures name the instruction renewal command for instruction facts and package copies.",
+  "status": "proposed",
+  "supersedes": []
+}

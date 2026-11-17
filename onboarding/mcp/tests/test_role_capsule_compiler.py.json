@@ -77,8 +77,9 @@
             "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
             "content": "sha256:473474c07b91cebc974210786d8cc7b9818bcc0a13b81d9a7507d283c83df510",
             "locator": {
-              "kind": "symbol",
-              "name": "test_identical_input_compiles_to_identical_ordered_content_and_digest"
+              "end": 386,
+              "kind": "line_range",
+              "start": 377
             }
           },
           "kind": "test"
@@ -109,12 +110,12 @@
         },
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:91071933f1c686b8f234b0a11efb836dc1eab70ceb306a6e399c7e24b57c6653",
             "locator": {
-              "end": 94,
+              "end": 87,
               "kind": "line_range",
-              "start": 69
+              "start": 62
             },
             "path": "mcp/tests/test_role_capsule_audiences.py"
           },
@@ -351,7 +352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
             "content": "sha256:e685768c8a9255765f66be0003aca7d1eeec7069e3441ec540bc025ad19b3ff1",
             "locator": {
               "kind": "symbol",

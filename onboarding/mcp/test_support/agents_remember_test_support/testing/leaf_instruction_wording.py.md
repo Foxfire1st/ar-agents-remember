@@ -20,6 +20,8 @@ The Worker and Reviewer positive obligations name individual stage starts: at fr
 
 MESSAGE_HANDOVER_SOURCE pins reference/message-handover.md, and MESSAGE_HANDOVER_ACTIONS names for each role the action sentence at which that detail's pointer must stand. REFUSED_WRITE_ACTIONS names the Manager's task retirement and movement action for the refused-write detail, and SERVED_REFUSED_WRITE is that file's served address. The busy-retry alternatives require a pending record, independent work, one resend before turn end and a still-pending state after another full-store refusal. The consuming clause_surface path checks this detail through the actual admitted role and operation; the literal oracle does not establish that a live sender followed it.
 
+When `assert_action_pointer` finds a missing or repeated action pointer, its assertion includes `If derived facts are stale, run mcp/.venv/bin/python scripts/renew-instructions.py`. The renewal advice is conditional; the helper still requires exactly one pointer at the named action. [4]
+
 ## Evidence
 - The affirmative clause tables are the wording guards' data.
 
@@ -27,9 +29,17 @@ MESSAGE_HANDOVER_SOURCE pins reference/message-handover.md, and MESSAGE_HANDOVER
 
 - The affirmative clause tables are the wording guards' data. [1]
 
-- delivered_step uses real admission, compilation and launch composition to require one selected detail with exact source and bytes and a nonempty step that the launch record repeats, one pointer at the named action, resolved Markdown links and no unresolved detail token. Source inspection is not an executed check. Role-scoped alternatives preserve the instructed facets; Worker clauses name individual stage starts and direct peer handovers. [2]
+
 
 
 - MESSAGE_HANDOVER_SOURCE pins reference/message-handover.md and MESSAGE_HANDOVER_ACTIONS names each role's pointer action. The busy-retry alternatives require a pending record, independent work, one resend before turn end and a still-pending state after another full-store refusal. The consuming clause_surface path checks this detail through the actual admitted role and operation; the literal oracle does not establish that a live sender followed it. [3]
-- delivered_step requires exactly one pointer to the detail at the named action. [4]
+
 - The Manager's refused-write pointer stands at its task retirement and movement action. [5]
+
+
+
+- delivered_step uses real admission, compilation and launch composition to require one selected detail with exact source and bytes and a nonempty step that the launch record repeats, one pointer at the named action, resolved Markdown links and no unresolved detail token. Source inspection is not an executed check. Role-scoped alternatives preserve the instructed facets; Worker clauses name individual stage starts and direct peer handovers. [2]
+
+### Repo-Internal References (renewed)
+
+- delivered_step requires exactly one pointer to the detail at the named action; assert_action_pointer includes `If derived facts are stale, run mcp/.venv/bin/python scripts/renew-instructions.py` when that count differs. [4]

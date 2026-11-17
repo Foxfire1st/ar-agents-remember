@@ -42,6 +42,25 @@
     {
       "anchor": {
         "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+        "content": "sha256:9fd503c92d23d9c17fc64cede742d7030bb071e1fb01fe0a9b0ad0640bf72324",
+        "locator": {
+          "end": 49,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-4ZZVYK",
+      "invariant": "INV-4XD2ZF",
+      "origin": {
+        "handoffEntry": "L8-M2-F01-current-Curator-card-format",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The Curator format rules prescribe current prose and numbered evidence lines, exclude metadata stamps/card-local change history/completed citation tables, and assign the Evidence-table-to-numbered-lines/JSON-reference transformation to the fixer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
         "content": "sha256:8d6851de48e1a690795b049d9c5f5337914441984fcd6af3db9914a5bbb876e5",
         "locator": {
           "end": 45,

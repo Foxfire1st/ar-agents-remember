@@ -6,18 +6,14 @@
 
 ## Purpose
 
-The **whole leaf-and-master lifecycle, played through in order** on one real temporary Git world,
-driven through the **public** operations wherever a public route exists. Every other end-to-end module
-in `mcp/tests` proves one interaction at one boundary; this module exists because the defect class it
-covers is produced by the *sequence* — an operation that is correct on its own and leaves the world in
-a state the next operation cannot accept.
+The **whole leaf-and-master lifecycle, played through in order** on one real temporary Git world.
+The master-level steps drive registered public operations; leaf start and closeout use the
+fixture's structural equivalents. Each step leaves the state used by the following step.
 
 The regression it pins is **step 8**: a leaf commanded *after* the master's first landing still
-starts. While the deleted `worktrees/atomic_series_seal.py` read the parent series'
-`(closeout_status, integration_status, cleanup)` cells as a child-admission seal, a master that took a
-checkpoint landing (`integration_status == "checkpointed"`) could never admit another leaf — so a
-paused master was a dead master. No single-boundary case could see that, which is why the module
-plays the run instead of extending a seam-level test.
+starts. The current case asserts that the second leaf starts on a different code base commit.
+
+
 
 The run, in the module's own order: master open and unlanded with no activation selection → a leaf is
 commanded and started on the master's current line → the leaf is worked, committed and closed out →
@@ -25,7 +21,7 @@ the leaf lands through the public `worktree_integrate` → the unfinished master
 accumulated line through the public `worktree_checkpoint_landing` and stays open → the master is
 stopped through the public `worktree_pause` and publishes nothing → the master is resumed by the
 ordinary attach route → a leaf commanded after that landing still starts, on the line the master now
-has. Steps 6 and 7 are also the pause/resume pair the developer asked to see played.
+has.
 
 ## Code Commentary
 
@@ -70,17 +66,16 @@ the run, in eight ordered beats:
 
 - One real temporary world per case, `TemporaryDirectory` cleanup in `tearDown`, and the module is
   marked `pytestmark = pytest.mark.integration` (code line 48).
-- Registered in the **integration** lane of `mcp/tests/test-evidence-lanes.toml` (row 710). That
+- Registered in the **integration** lane of `mcp/tests/test-evidence-lanes.toml` (row 713). That
   manifest is fail-closed — `load_lane_manifest` derives the repository's actual test modules and
   refuses a manifest that omits one — so an unregistered module is a hard load failure.
 - The complete lifecycle catalog declares five exact artifact-consumer relationships:
-  `_user_settings_guard.py` (`:443`), `checkpoint_landing_test_support.py` (`:1044`),
-  `curator_coherence_test_support.py` (`:1225`), the Node `package-lock.json` fixture
-  (`:2795`) and `writer_worklist_test_support.py` (`:4848`). These declarations
+  `_user_settings_guard.py` (`:446`), `checkpoint_landing_test_support.py` (`:1047`),
+  `curator_coherence_test_support.py` (`:1228`), the Node `package-lock.json` fixture
+  (`:2801`) and `writer_worklist_test_support.py` (`:4854`). These declarations
   establish dependency ownership, not runtime consumption or execution. The coherence
   support is reached transitively through `QueueFixture`; the current
-  `closeout_input_test_support.py` exact-consumer list does not name this module. The earlier module-specific account also recorded “No artifact row was added, removed or re-categorised.” That change-scope wording is retained as history.
-  The former two-support-artifact account remains historical.
+  `closeout_input_test_support.py` exact-consumer list does not name this module.
 - Support is composed, never re-implemented: `QueueFixture`/`REPO` come from `test_closeout_queue`,
   `close_out_leaf` is imported from `checkpoint_landing_test_support`, and `git` comes from
   `test_worktree_support`.
@@ -119,6 +114,48 @@ the run, in eight ordered beats:
 
 None recorded. Verification metadata on this card remains closeout-owned.
 
+## Retained Full-Card Audit Context
+
+The following distinct accounts are retained from memory base `81cfe4a8`. Dates, source coordinates, counts, outcomes and ownership describe that recorded epoch. They add no fresh execution, mutation result or acceptance. Historical numeric reference labels are custody text and do not select live sidecar anchors.
+
+### Sequence rather than isolated-seam rationale
+
+> The **whole leaf-and-master lifecycle, played through in order** on one real temporary Git world,
+> driven through the **public** operations wherever a public route exists. Every other end-to-end module
+> in `mcp/tests` proves one interaction at one boundary; this module exists because the defect class it
+> covers is produced by the *sequence* — an operation that is correct on its own and leaves the world in
+> a state the next operation cannot accept.
+
+The source author’s comparison with every other suite and “only way” wording are retained as the earlier rationale, not a new complete-population survey. Present public-route coverage is the bounded account above: leaf start/closeout use fixture equivalents.
+
+### Deleted seal regression account
+
+> The regression it pins is **step 8**: a leaf commanded *after* the master's first landing still
+> starts. While the deleted `worktrees/atomic_series_seal.py` read the parent series'
+> `(closeout_status, integration_status, cleanup)` cells as a child-admission seal, a master that took a
+> checkpoint landing (`integration_status == "checkpointed"`) could never admit another leaf — so a
+> paused master was a dead master. No single-boundary case could see that, which is why the module
+> plays the run instead of extending a seam-level test.
+
+The seal and its former status-cell behavior are a historical defect account; the source’s current second-leaf assertion does not establish a new historical execution.
+
+### Requested pause/resume pair
+
+> Steps 6 and 7 are also the pause/resume pair the developer asked to see played.
+
+### Earlier catalog-change account
+
+> The earlier module-specific account also recorded “No artifact row was added, removed or re-categorised.” That change-scope wording is retained as history.
+> The former two-support-artifact account remains historical.
+
+This is the earlier change-scope account, not a claim that the current complete catalog contains only two artifact relationships.
+
+### Prior fifth-freeze anchor-retirement receipt
+
+> - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:353-358 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361; mcp/tests/evidence-lifecycle.toml:386-391 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1034-1034 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+The counts and coordinates belong to the recorded fifth freeze d59c3493; live references above/below use their repaired anchors. This receipt does not renew those old selectors.
+
 ## Evidence
 
 - The fixture split and public-start coverage limit remain; current application identity and provider-skip behavior refute the inherited provider-scaffolding necessity rationale. [16]
@@ -152,35 +189,7 @@ No external domain claim is required.
 
 - The leaf closeout recording it imports rather than duplicating. [9]
 
-
-
-
-
-> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py"
-
-
-
-
-
-
-
-> Retained earlier citation wording: - The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support.
-
-
-
-
-
 - The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget` [12]
-
-
-> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py"
-
-
-
-
-
-
-
 
 - The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget` [15]
 
@@ -192,48 +201,12 @@ by the module's own fixture; no sibling repository or external system participat
 
 No meaningful cross-repo references found.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support.
 
-
-
-
-
-
-
-
-- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:353-358 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361; mcp/tests/evidence-lifecycle.toml:386-391 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1034-1034 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
-
-
+### Repo-Internal References (continued)
 
 - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [10]
 
-
-
-
 - The lifecycle catalog names this suite among the consumers of the checkpoint-landing and curator-coherence shared-support artifacts. [11]
-
-
-
 
 - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [13]

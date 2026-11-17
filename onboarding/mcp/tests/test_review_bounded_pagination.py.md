@@ -17,7 +17,23 @@ partitioned item windows, the removed records collection refused by name on ever
 records cursors, a moved generation requiring fresh selection, transport page bounds and the entry
 read populating its button without fetching record pages.
 
-The fixture builds on shared text-tree populations through the read/diff-scope support modules, which use test-only knowledge_rows_test_support; this module does not import the row constructors directly. Production review/page composition is read back; fixture authoring names are not shipped storage admission. The deleted remainder-test population and former twelve-case coverage account are historical, not assertions supplied by this module.
+The fixture builds on shared text-tree populations through the read/diff-scope support modules, which use test-only knowledge_rows_test_support; this module does not import the row constructors directly. Production review/page composition is read back; fixture authoring names are not shipped storage admission.
+
+## Retained Full-Card Audit Context
+
+The following distinct accounts are retained from memory base `81cfe4a8`. Dates, source coordinates, counts, outcomes and ownership describe that recorded epoch. They add no fresh execution, mutation result or acceptance. Historical numeric reference labels are custody text and do not select live sidecar anchors.
+
+### Removed remainder population
+
+> The deleted remainder-test population and former twelve-case coverage account are historical, not assertions supplied by this module.
+
+Current source coverage remains the eight-function account above; the former population is retained as retirement context.
+
+### Prior fifth-freeze anchor-retirement receipt
+
+> - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:588-588 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:841-841 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1216-1216 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2265-2265 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2824-2824 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:125-661 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit eb0b0e98596d07e4e206e7936c20f86d8123e401; mcp/tests/evidence-lifecycle.toml:662-746 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2f699606998a68c42994b9cc102cd22d56cfae37; mcp/tests/evidence-lifecycle.toml:1552-2083 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8b0254263c6998b1d4814b2e97c1bd231d39350f; mcp/tests/evidence-lifecycle.toml:2793-2830 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/tests/evidence-lifecycle.toml:2391-2475 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2f699606998a68c42994b9cc102cd22d56cfae37; mcp/tests/evidence-lifecycle.toml:2845-2897 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417; mcp/tests/evidence-lifecycle.toml:2419-2456 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+All match counts, coordinates and removal commits in this receipt describe the recorded fifth freeze. They do not claim current selectors or deletion of the cited subjects.
 
 ## Evidence
 
@@ -74,26 +90,5 @@ No Domain Documentation source is configured for this slice.
 
 - The removed records collection is a named refusal on first, unsized, continued and crossed requests. The serialized guard requires the evidence field to be absent, not an empty measured channel. [22]
 - PaginationFixture holds shared test-support fixture state and builds its request/resolution; build_pagination_fixture composes that fixture. Neither is shipped public-store write admission. [29]
-
-
-
-> Retained earlier citation wording: - One unit-regression membership and seven exact-scope lifecycle artifact records name this module. These source declarations are neither a six-row census nor test execution.
-
-
-
-
-
-
-
-
-
-
-
-## Retirements
-
-- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:588-588 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:841-841 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1216-1216 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2265-2265 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2824-2824 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:125-661 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit eb0b0e98596d07e4e206e7936c20f86d8123e401; mcp/tests/evidence-lifecycle.toml:662-746 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2f699606998a68c42994b9cc102cd22d56cfae37; mcp/tests/evidence-lifecycle.toml:1552-2083 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8b0254263c6998b1d4814b2e97c1bd231d39350f; mcp/tests/evidence-lifecycle.toml:2793-2830 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/tests/evidence-lifecycle.toml:2391-2475 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2f699606998a68c42994b9cc102cd22d56cfae37; mcp/tests/evidence-lifecycle.toml:2845-2897 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417; mcp/tests/evidence-lifecycle.toml:2419-2456 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
-
-
 
 - One unit-regression membership and seven exact-scope lifecycle artifact records name this module. These source declarations are neither a six-row census nor test execution. [42]

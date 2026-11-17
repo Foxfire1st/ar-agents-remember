@@ -26,6 +26,10 @@ Retained corpus composition metadata is not proof of what a native launched agen
 
 - The launcher remains outside roles because it is not a role seat. [12]
 
-- The manifest retains ambient-launcher metadata outside the role registry; this is not the native routing-condition set. [13]
+
 
 - The source assertions exclude launcher from roles, retain ambient metadata and separately check the two native routing conditions; this is not an executed PASS. [14]
+
+### Repo-Internal References (renewed)
+
+- The manifest retains ambient-launcher metadata outside the role registry; this is not the native routing-condition set. Anchor: `is_role` [13]

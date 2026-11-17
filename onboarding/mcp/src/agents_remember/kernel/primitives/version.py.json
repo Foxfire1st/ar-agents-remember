@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
-        "content": "sha256:1a7e644a79e3469eee386e2e821678cf32a0cc7aed2ce614059390486555e8bb",
+        "blob": "6c35df665ffac7bf152c3badf993d303ed12c451",
+        "content": "sha256:5cf8c5695ef7f0adabe7518965c8252699c2b9724d211cb784f8ae187a99c7c5",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_server_version"
@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "Package metadata and source-checkout fallback are selected through the explicit resolver.\n\nAnchor: `_resolve_server_version`",
+      "note": "Package metadata and source-checkout fallback are selected through the explicit resolver. Anchor: `_resolve_server_version`",
       "targets": [
         {
           "anchor": {
-            "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
-            "content": "sha256:bf03c0454865282377d56e126f2382c83864e683cc3f44eae2c8638f35f07cfd",
+            "blob": "6c35df665ffac7bf152c3badf993d303ed12c451",
+            "content": "sha256:0ffb984c789890b19f5cc9baa194ed51127569b66c40a4ca88a992c56fa9f379",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity.\n\nAnchor: `_resolve_server_version`",
+      "note": "Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity. Anchor: `_resolve_server_version`",
       "targets": [
         {
           "anchor": {
-            "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
-            "content": "sha256:bf03c0454865282377d56e126f2382c83864e683cc3f44eae2c8638f35f07cfd",
+            "blob": "6c35df665ffac7bf152c3badf993d303ed12c451",
+            "content": "sha256:0ffb984c789890b19f5cc9baa194ed51127569b66c40a4ca88a992c56fa9f379",
             "locator": {
               "kind": "file"
             }

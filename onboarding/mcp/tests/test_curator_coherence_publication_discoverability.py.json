@@ -64,15 +64,16 @@
       ]
     },
     "12": {
-      "note": "**The `prepare` case: all nine names in order, the judgments phrase, and the two identities echoed as not derived.**",
+      "note": "**The `prepare` case: all nine names in order, the judgments phrase, and `.get` returning `None` for both caller-supplied delivery identities.**",
       "targets": [
         {
           "anchor": {
             "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:fadb953838f1434cf2023bbd2b3cb88a265fd5f63fed7e2ae36593bc641d5ca4",
             "locator": {
-              "kind": "symbol",
-              "name": "test_prepare_states_the_complete_publication_input_set"
+              "end": 223,
+              "kind": "line_range",
+              "start": 210
             }
           },
           "kind": "test"
@@ -138,10 +139,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
-              "end": 809,
+              "end": 812,
               "kind": "line_range",
               "start": 1
             },

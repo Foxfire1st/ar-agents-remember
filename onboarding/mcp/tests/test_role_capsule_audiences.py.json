@@ -1,14 +1,50 @@
 {
   "path": "mcp/tests/test_role_capsule_audiences.py",
-  "proves": [],
-  "realizes": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+        "content": "sha256:5e2191782906f5df1a3ca6b50a4e408fadb99474cea82066d733c9dcb764e4a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_real_operation_audiences_deliver_only_common_and_addressed_sections"
+        }
+      },
+      "facet": "Every declared role-operation pair is checked against a source-derived operation projection, and appending one foreign addressed passage makes that projection check fail.",
+      "id": "PRF-GZJ88G",
+      "invariant": "INV-NDGJ3M",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 6",
+        "leaf": "261112-BUG-L8"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+        "content": "sha256:9ba88543c60e3512427e9cfb3885ab3b2a58c1f3a14f3a9ab01493befe78fa81",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7GRTR2",
+      "invariant": "INV-NDGJ3M",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 6",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Independent audience, link and pointer checks protect current delivery while the kept historical constants remain unchanged.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The compiler delivers only the common and selected role stage parts.",
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:91071933f1c686b8f234b0a11efb836dc1eab70ceb306a6e399c7e24b57c6653",
             "locator": {
               "kind": "symbol",
@@ -24,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:e8ceabeeced1beb4ad2d3ed532afa9ea6c76d7c9591ce5f33809ff0ad60a188d",
             "locator": {
               "kind": "symbol",
@@ -40,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:cb0062659e90e270e4d9f9368a770e2e663b4fbcbd4667ed037653e52465721d",
             "locator": {
               "kind": "symbol",
@@ -56,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:1d26b97611f3e4318e314a75821372cc452abac71010ac0bce958a630ab68827",
             "locator": {
               "kind": "symbol",
@@ -72,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:639c5931e83b26fdf3ca2f8dbf11a609e42258325cd357d7c0b95c2b3a772a2a",
             "locator": {
               "kind": "symbol",
@@ -88,11 +124,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
-            "content": "sha256:0f6d2b76ebc346c524b50a1cc9d1fb69bd80bfaabbc68155ae0c4e4490ee9340",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+            "content": "sha256:45c207cfd2a558a209e068f847eedc62d59c3dc054107aa8104ddc4acb911306",
             "locator": {
-              "kind": "symbol",
-              "name": "test_d301_handoff_file_is_read_for_first_review_then_reused_for_repairs"
+              "end": 824,
+              "kind": "line_range",
+              "start": 787
             }
           },
           "kind": "test"
@@ -104,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:783fd85e932b9bca1b99eebd05d6ca428a174484c688ce18dc1450340c7bdefd",
             "locator": {
               "kind": "symbol",
@@ -120,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:9d2c15993f8cb4cf7bc74f4c1b3c21c280219c8709832d9fd4889d1d0a045fd9",
             "locator": {
               "kind": "symbol",
@@ -136,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:f2432aeb8ed9662fb66d535d41610862ea8cc8f3cc24166151ce558731d1e3d3",
             "locator": {
               "kind": "symbol",
@@ -152,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:ee3c00544d5c3a3f72e04e93e6e2f3fcbbbddf0101e9319fbe36b9acbf50175d",
             "locator": {
               "kind": "symbol",
@@ -168,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:a3869613bf30ae52651ea38cb3b1e4a14551aa1f1b9d41be09305c686ff5cacb",
             "locator": {
               "kind": "symbol",
@@ -184,11 +221,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
-            "content": "sha256:c98a1ab4d0f1e269e52ea3b5adb3da6970f714c5515f40636ac29b94ef5c78f6",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+            "content": "sha256:214d22dd826c42260a8acef4d985036ccd1ad3b9326f61cd61f432e4ffa441ae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_compiler_carries_declared_step_detail_bytes_as_separate_references"
+              "end": 139,
+              "kind": "line_range",
+              "start": 90
             }
           },
           "kind": "test"
@@ -196,15 +234,16 @@
       ]
     },
     "20": {
-      "note": "For every manifest-declared role/operation pair, the real-operation audience test compiles the addressed capsule, rejects leaked audience markers and compares that operation block's content hash with its `V13_STAGE_SHA256` entry; undoing the admitted short-rule edits must match `V13_PRE_SHORT_STAGE_SHA256` and then undoing the pinned path moves must match `D656_STAGE_SHA256`; its final census must cover every declared pair.",
+      "note": "For every manifest-declared role/operation pair, the real-operation audience test compiles the addressed capsule, rejects leaked audience markers and compares its operation block with an independent source-section projection. An injected foreign-role passage fails, and the final census covers every declared pair.",
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
-            "content": "sha256:913099a13bb26ed68637a9fa89084b6dbfa0251efc4a0a69f288bb5e47ccc150",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+            "content": "sha256:5e2191782906f5df1a3ca6b50a4e408fadb99474cea82066d733c9dcb764e4a1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_real_operation_audiences_preserve_pinned_common_and_only_addressed_paragraphs"
+              "end": 1058,
+              "kind": "line_range",
+              "start": 1026
             }
           },
           "kind": "test"
@@ -212,15 +251,16 @@
       ]
     },
     "21": {
-      "note": "The operation-source test compares raw source bytes against `V13_OPERATION_SHA256`, the short-rule-restored bytes against `V13_PRE_SHORT_OPERATION_SHA256` and the path-restored bytes against `D656_OPERATION_SHA256`. authorized-closeout must keep audience=all and operations/closeout.md; every other operation must use sections and begin with the common audience marker.",
+      "note": "The operation-source test keeps authorized closeout at audience=all and operations/closeout.md; every other operation uses sections and begins with the common audience marker.",
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
-            "content": "sha256:71c5525c381d40d8ca59a846aff30773ddf2115d667abd9a046f29a8ecb10c8f",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+            "content": "sha256:0da0cf976b7f6bede02f5229cd356471181722106ae9e3f67a32235522900f3a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_operation_audience_markings_preserve_pinned_bytes_and_immutable_closeout"
+              "end": 1071,
+              "kind": "line_range",
+              "start": 1061
             }
           },
           "kind": "test"
@@ -232,7 +272,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:3a7560d2d9ca3ff634cf305bc50b8e12d0b69db3c3b78bfe9c19e2f35e901c56",
             "locator": {
               "kind": "symbol",
@@ -244,7 +284,7 @@
       ]
     },
     "23": {
-      "note": "The current Reviewer-addressed review paragraph says a clean sync opens no new freeze or round, sends shared-path/test-failure repairs for one look, and returns a freeze whose finding entries are missing without counting a round. The real-operation audience test binds each addressed review block to its stored stage seal.",
+      "note": "The current Reviewer-addressed review paragraph says a clean sync opens no new freeze or round, sends shared-path/test-failure repairs for one look, and returns a freeze whose finding entries are missing without counting a round.",
       "targets": [
         {
           "anchor": {
@@ -261,23 +301,8 @@
         }
       ]
     },
-    "24": {
-      "note": "`V13_OPERATION_SHA256` records the current implementation and review source seals alongside the other operations, and the operation-source test compares actual source bytes with those recorded values. This describes stored assertions, not a new approval or repinning event.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
-            "content": "sha256:00b14b8b5fac470b220e34a0877f390dec5ff8ae843ffd6152a7b2a95d4c4ab3",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "25": {
-      "note": "The current planning text asks the developer once \"go, or review first?\", discloses planned comparison without a task workspace and explainer-workspace creation on first Explain, and records the intentReview answer. Current coordination says intent-review-open waits for Architect go and is not retried. The audience tests retain separate source and addressed-stage seal tables for those operation texts.",
+      "note": "The current planning text asks the developer once \"go, or review first?\", discloses planned comparison without a task workspace and explainer-workspace creation on first Explain, and records the intentReview answer. Current coordination says intent-review-open waits for Architect go and is not retried.",
       "targets": [
         {
           "anchor": {
@@ -291,19 +316,33 @@
             "path": "skills/l-01-agent-lifecycles/operations/planning.md"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+            "content": "sha256:8051c8648bc277b1c1a20950d8ddf0e001ee6d4259e31c7f37df692e1092f27a",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
         }
       ]
     },
     "27": {
-      "note": "Complete V13 operation and per-recipient stage digest literals pin the current audience projections, including closeout bytes, and the inverse transforms tie them back to the D656 digests. Detail checks cover all declared role/operation pairs and require every declared read action to bind to exactly one link to its emitted detail. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "Detail checks cover all declared role/operation pairs and require every declared read action to bind to exactly one link to its emitted detail. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
-            "content": "sha256:64ec88943f0a06a58a65af2b148a5ea862c48b30fe4e2282c553e4ec4e8f92fb",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+            "content": "sha256:de80f79da11a7dae6d0703640716fbf7e36f923b867cd7e2a88619a87366dc25",
             "locator": {
-              "kind": "symbol",
-              "name": "_assert_step_detail_timing"
+              "end": 596,
+              "kind": "line_range",
+              "start": 575
             }
           },
           "kind": "test"
@@ -315,7 +354,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:cf23f1a7e71ee7a0ed7e0ee30266b5760c4e65efe4b3a41b47bc4273aecc5e8b",
             "locator": {
               "kind": "symbol",
@@ -331,7 +370,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:f31c621fc3c74a5e9810361fdca56d4a9cac811c4efb3ec5d6608124c0c02aed",
             "locator": {
               "kind": "symbol",
@@ -347,7 +386,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:176d908900c927f5e3fc0ca8dc8106ba01d5ebdb25e4a41850e813ed57ab1c4e",
             "locator": {
               "kind": "symbol",
@@ -363,7 +402,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:6b52e629c07b228e9b4a538b9933d7701f1e77613cbac1e0dce84e4240f0cee6",
             "locator": {
               "kind": "symbol",
@@ -379,7 +418,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:ef4cac984994b64a31c01a4b181d84b819cea937f68f80f94e69b25037e6b08f",
             "locator": {
               "kind": "symbol",
@@ -395,7 +434,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:12e471f73f48316f0488a30f533ca7cddf857c2c9b2f69c8a2d0175b962315f2",
             "locator": {
               "kind": "symbol",
@@ -411,7 +450,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
             "content": "sha256:50127267f544d4d72ed97ba5661b4f8a8c7562fedc8933011a79987d3e7d0ecb",
             "locator": {
               "kind": "symbol",

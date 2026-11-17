@@ -6,9 +6,7 @@
 
 ## Purpose
 
-`scripts/sync-skills.py` is the repository helper that keeps the root
-canonical `skills/` tree synchronized with the sole generated skill copy shipped in
-the MCP package data and served to harnesses as resources.
+`scripts/sync-skills.py` is the declared skill-copy owner that the instruction-renewal planner loads to project canonical `skills/` into the sole generated skill copy shipped in MCP package data and served to harnesses as resources. The public renewal command coordinates that copy with regenerated instruction facts. [7]
 
 ## Code Commentary
 
@@ -23,7 +21,9 @@ It computes SHA-256 digests for every non-ignored file under the canonical tree
 and each target, then reports missing, extra, and changed files. In normal mode
 it copies the complete canonical tree to a sibling staging directory before renaming the live target aside and renaming staging into place,
 then runs check mode. Before the first target mutation normal sync computes `projected_profile_bytes`: it validates the input certification profile through its canonical owner and derives only the generated-skills row/scopes and new digest. After the target loop it writes that prepared profile. `--check` compares both copy bytes and the profile projection and exits non-zero on drift. This is prevalidation, not an atomic transaction or rollback across all targets/profile. With `--list-targets`, it
-prints the canonical source and all target paths.
+prints the canonical source and all target paths. When `--check` finds copy or profile drift, its remedy is `run: mcp/.venv/bin/python scripts/renew-instructions.py`. [2]
+
+The renewal planner loads this module through `_skill_owner` and calls its declaration, file-digest, target and certification-profile helpers in `_copy_plan`. That plan copies renewed canonical skill bytes, removes extra generated files and includes the generated-skills profile projection; this script remains the owner of those copy rules. [7]
 
 ### Conventions
 
@@ -42,38 +42,36 @@ Ignore names/suffixes come from the canonical declaration, currently covering lo
 
 ### Todos
 
-No open file-local todos.
+The source file declares no TODO or FIXME marker.
 
 ## Evidence
 
-- Targets/ignore policy come from the declaration and profile bytes are validated before target replacement, then published and checked beside copy bytes. [5]
+
 
 
 ### Docs References
 
 No external documentation is needed for this repository-local helper.
 
-No relevant external documentation found.
+`system/sources.md` configures no external domain documentation for this repository.
 
 ### Repo-Internal References
 
 - The script defines `skills/` as canonical and derives the sole MCP package-data serving target. [1]
 
-- `--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync. [2]
-
-
-- Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check. [3]
-
-
-- The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. Anchor: `scripts/sync-skills.py` [4]
-
-
 ### Cross-Repo References
 
-No sibling repository evidence is needed for this helper.
+This card uses repository-owned code and test references and invokes no sibling-repository contract.
 
-No meaningful cross-repo references found.
+### Repo-Internal References (renewed)
+
+- `--check` compares canonical and target file digests and the generated-skills profile projection, reports drift, and exits non-zero with `run: mcp/.venv/bin/python scripts/renew-instructions.py` as the remedy. [2]
+- Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check. Anchor: `sync_targets` `sync_target` `replace_tree` [3]
+- The script derives the single packaged target from generated-copies.json and checks bytes plus the generated-skills certification projection. Anchor: `skill_targets`, `check_targets` [6]
+- The instruction-renewal planner loads sync-skills.py as the declared copy owner and uses its projection, digest, target and profile helpers to plan the generated skill copy beside renewed instruction facts. [7]
 
 ## Current source evidence
 
-- The script derives the single packaged target from generated-copies.json and checks bytes plus the generated-skills certification projection. [6]
+- Root AGENTS instructions require editing canonical skills/ and running mcp/.venv/bin/python scripts/renew-instructions.py, which renews facts and propagates the generated package copy. [4]
+
+- Targets/ignore policy come from the declaration and profile bytes are validated before target replacement, then published and checked beside copy bytes. [5]

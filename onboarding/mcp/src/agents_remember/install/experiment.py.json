@@ -1,13 +1,31 @@
 {
   "path": "mcp/src/agents_remember/install/experiment.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
+        "content": "sha256:518278363329dc897d98b76d37b23085afe4265c90efe2a2eff5d1bf205b253f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XDPQ4D",
+      "invariant": "INV-DHKR4G",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 2",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The live installation failure directs stale copies to the working renewal command; the historical experiment literal remains unchanged.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Anchor: Per-run selection and unknown-id refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
             "content": "sha256:fef33e4345b05251c341beb1cb33fe681ccdc2e9e1ef7eb99c15d8b7cdf293e1",
             "locator": {
               "end": 143,
@@ -42,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
             "content": "sha256:dc678045d999a5624ced840f4cec1d1a4095fb40dd7771c65513f5b01b28f645",
             "locator": {
               "end": 154,
@@ -59,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
             "content": "sha256:db926e2a40e32261a659be470c47bcea9b40a3d61094944add71389351b9cb56",
             "locator": {
               "end": 195,
@@ -76,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
             "content": "sha256:529b3ce2b9cb43505ac990eeef6b525dbcc6f5560e292d4cd00d8f5b9f3edb83",
             "locator": {
               "end": 69,
@@ -85,16 +103,29 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:e50df3e24f617cc0af0d8d9271e33df35749e8c9dab80a6fb473fe38b61cd1de",
+            "locator": {
+              "end": 703,
+              "kind": "line_range",
+              "start": 691
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Anchor: Only the canonical corpus-anchor capability is now probed.",
+      "note": "Only the canonical corpus-anchor capability is probed; a missing anchor names `from the source checkout, run mcp/.venv/bin/python scripts/renew-instructions.py` as its remedy.",
       "targets": [
         {
           "anchor": {
-            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
-            "content": "sha256:03d773b1d912ac84c71ff59f0abf35296785fcc72dbcc1c989640f4389c4f92c",
+            "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
+            "content": "sha256:25d014e7959ca3ab67f1a52257208056ab4827917a1c7612e392f74ae5de71c5",
             "locator": {
               "end": 293,
               "kind": "line_range",
@@ -105,7 +136,7 @@
         },
         {
           "anchor": {
-            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
             "content": "sha256:5a143d8f89544935fdf561b3be13a3f357b5a08c1f46d2bccff8fe4747f3cddf",
             "locator": {
               "end": 248,
@@ -122,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
             "content": "sha256:701d26055947fd274117242ee2791ea2a3d31b3cbb1b16706f523f3f5e775912",
             "locator": {
               "end": 324,
@@ -134,7 +165,7 @@
         },
         {
           "anchor": {
-            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
             "content": "sha256:ecb250ca21215332e73955262359f3a407373d5fb9287b0f3cde4f45fcaea31f",
             "locator": {
               "end": 358,
@@ -151,12 +182,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
             "content": "sha256:739a0ac4361ec6e48e3fc8118c047a11d1ac4e439c88a285300f2e9393ca9704",
             "locator": {
-              "kind": "symbol",
-              "name": "WITHHELD_STARTUP_TARGETS"
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:e50df3e24f617cc0af0d8d9271e33df35749e8c9dab80a6fb473fe38b61cd1de",
+            "locator": {
+              "end": 703,
+              "kind": "line_range",
+              "start": 691
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
           },
           "kind": "code"
         }

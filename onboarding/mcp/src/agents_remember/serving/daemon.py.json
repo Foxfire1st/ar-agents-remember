@@ -178,12 +178,12 @@
       ]
     },
     "4": {
-      "note": "The version comparator is resolved from installed package metadata.\n\nAnchor: `_resolve_server_version`",
+      "note": "The version comparator is resolved from installed package metadata. Anchor: `_resolve_server_version`",
       "targets": [
         {
           "anchor": {
-            "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
-            "content": "sha256:bf03c0454865282377d56e126f2382c83864e683cc3f44eae2c8638f35f07cfd",
+            "blob": "6c35df665ffac7bf152c3badf993d303ed12c451",
+            "content": "sha256:0ffb984c789890b19f5cc9baa194ed51127569b66c40a4ca88a992c56fa9f379",
             "locator": {
               "kind": "file"
             },

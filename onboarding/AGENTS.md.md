@@ -14,7 +14,7 @@ The source-checkout operating contract routes repository work through the resolv
 
 The opening distinguishes this source package from the installed runtime and sends sibling-repository work to that repository's role instructions and resolved memory-layer guidance. Free chat answers questions inline. For managed-repository work it creates or resolves the sprint document, writes the developer’s request into it, calls `role_start` once for an Architect without any document reference or brief, and tells the developer where the agent and request are. The developer speaks with the started agent in the dashboard. A different role is started this way only when the developer explicitly names the role and task. A launched role follows its handover; unbound `role_message` remains refused, and a refusal admits no alternative launch route. Approved durable task documents own code changes; explicit authorization determines which workflow actions are already approved.
 
-Memory context and provider configuration are resolved before relying on onboarding, through the `context_packet` tool reference and the memory-quality tool guidance of the l-01 skill. The file names semantic, relationship and intent retrieval strategies and the resolved memory layer's settings, tools, sources and coding guidelines. Root `skills/` is the canonical authoring source and `scripts/sync-skills.py` regenerates only the package copy the tool server serves; no harness starter package carries a skill folder, and the coordination root carries none either. Runtime assets under `benchmarks/`, `providers/` and `system/` are refreshed by `scripts/sync-runtime.py`. The checkout carries no harness starter packages; harness configuration belongs to user-level harness settings.
+Memory context and provider configuration are resolved before relying on onboarding, through the `context_packet` tool reference and the memory-quality tool guidance of the l-01 skill. The file names semantic, relationship and intent retrieval strategies and the resolved memory layer's settings, tools, sources and coding guidelines. Root `skills/` is the canonical authoring source. `mcp/.venv/bin/python scripts/renew-instructions.py` renews instruction facts and copies that source into the sole generated package copy; contributors run it after every skill edit. No harness starter package carries a skill folder, and the coordination root carries none either. Runtime assets under `benchmarks/`, `providers/` and `system/` are refreshed by `scripts/sync-runtime.py`. The checkout carries no harness starter packages; harness configuration belongs to user-level harness settings.
 
 Ordinary Python development uses the isolated unit population with four workers. Integration and combined populations are explicit selections. Only lifecycle-owned Dagger execution produces certifying evidence, preserving genuine process identity, disposable state, credential isolation and exact candidate publication. New cases must protect distinct consequential behavior; collected parametrized budgets cannot silently grow. Coverage is diagnostic only. Production CRAP20 is a review trigger, not a blocker or reason to add private-branch tests. Lint, formatting, typing, structural rules, test failures and diagnostic-tool errors remain enforcing.
 
@@ -45,12 +45,12 @@ No configured external domain documentation applies.
 
 - Resolved memory and retrieval strategy. [2]
 
-
-- Canonical sources and generated-copy boundaries. [3]
-
-
-- Current testing, diagnostic and enforcing policy. [4]
-
 ### Cross-Repo References
 
 Installed runtime handoff is declared by the source above; no separate cross-repo implementation is claimed.
+
+### Repo-Internal References (continued)
+
+- Canonical sources and generated-copy boundaries. [3]
+
+- Current testing, diagnostic and enforcing policy. [4]

@@ -16,29 +16,14 @@ This route now owns the fresh-user fixture/scenario/runner, shared report helper
 
 Static source/intent inspection only. The removal inventory and Git history, not archived cards or historical references to removed sources, hold the deletion history. No guard is changed and no runtime, MEMORY grade or acceptance is inferred.
 
+## Evidence
 
-
-
-
-
-
-
+Earlier target custody: the base card recorded nine original slots naming `test_fresh_user_harness.py` blob `7e009d4b32c2f82a0a22371f55a3f93aaf5906d1` and catalog blobs `b9e272ef623574e517181e36b3dc949a3ac78e19` and `0b04e782b9627695554aeeebd05967506794d78d`. Those objects contain the file-path loader/existence assertion, harness registrations and four separately named fresh-user support-registration contexts. Those four catalog contexts describe fixture, scenario, reporting and runner artifacts, not additional harness modules. The nine-slot association is historical custody, not the current reference-slot count or a runtime result.
 
 > Retained earlier citation wording: - The retained consumer test checks module-path existence. Actual module loading and exact-path consumer declarations. Catalog declarations for the three fresh-user support modules.
 
+The retained caption is attributed earlier wording. Current catalog declarations name four fresh-user support artifacts, including the runner; they establish registration, not fresh test invocation or acceptance.
 
-
-
-
-
-
-
-
-
-## Evidence
-Retained earlier caption: - The retained consumer test checks module-path existence. Actual module loading and exact-path consumer declarations. Catalog declarations for the three fresh-user support modules.
-
-Original-target custody: the nine slots named test_fresh_user_harness.py blob 7e009d4b32c2f82a0a22371f55a3f93aaf5906d1 and catalog blobs b9e272ef623574e517181e36b3dc949a3ac78e19 and 0b04e782b9627695554aeeebd05967506794d78d. They contained the file-path loader/existence assertion, harness registrations and the four separately named support-registration contexts; the latter windows never described additional harness modules. Their old association is retained here as prose; all nine live source slots now name current extents.
 
 - The lifecycle catalog registers fresh_user_fixture.py, fresh_user_scenario.py, reporting.py and run_fresh_user.py as permanent shared-support artifacts owned by fresh-user-acceptance. Their consumer scope is exact-source. These declarations establish registration, not test invocation or acceptance.
 

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R23 rule 6: the existing read, view and comparison code runs over the index unchanged.** Parity against a legacy database fixture, the view seam and the two-snapshot comparison over index files, and the ordinary read's published-memory selection of a converted tree. Registered in the `unit-regression` lane; 6 collected cases.
+**MIK-R23 rule 6: the existing read, view and comparison code runs over the index unchanged.** Parity between a text-backed fixture index and its converted tree index, the view seam, the two-snapshot comparison over index files, and the ordinary read's published-memory selection of a converted tree. Registered in the `unit-regression` lane; the source declares six test functions.
 
 ## Code Commentary
 
@@ -17,7 +17,7 @@ The ordinary converted-tree read returns a complete index and bounded selection;
 
 ### Logic
 
-- **Parity:** `build_parity_dataset` writes a store-authored database; `convert_dataset` turns it into a converted Git tree. `select_recorded_scope` runs for path, invariant and family seeds over both; the selected items are compared keyed by legacy ID, statement, guarantee, path, locator, role and rationale (`_database_key`, `_index_key`), and must be identical.
+- **Parity:** `build_parity_dataset` uses the test-only text-backed RowStore to build a fixture index; `convert_dataset` exports that index into another converted Git tree. `select_recorded_scope` runs for path, invariant and family seeds over both indexes. The selected items must match after source identities are mapped through the converted records' `origin.legacyId`, with statement, guarantee, path, locator, role and rationale included in the keys (`_database_key`, `_index_key`).
 - **Views and comparison:** the family, source_context and invariant views return `state == "view"` over the index; a comparison between a committed tree and an edited working tree returns the new statement with no refusal.
 
 ### Conventions
@@ -27,6 +27,10 @@ The ordinary converted-tree read returns a complete index and bounded selection;
 ### Invariants And Boundaries
 
 - The comparison is non-empty and keyed by the legacy identities the converted records carry, so parity cannot pass vacuously.
+
+The earlier card at memory snapshot `81cfe4a8` recorded “6 collected cases.”
+That population observation belongs to its earlier curation epoch; the current
+source count of six test functions does not repeat the collection.
 
 ### Todos
 
@@ -75,7 +79,6 @@ No meaningful cross-repo references found: every case builds its own repository 
 
 No cross-repo boundary is crossed by this file.
 
-
-
+### Repo-Internal References (continued)
 
 - The lane row. Anchor: `test_knowledge_index_reuse` Anchor: `test_knowledge_index_reuse` [13]

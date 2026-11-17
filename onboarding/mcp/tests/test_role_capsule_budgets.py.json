@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
-        "content": "sha256:e7cd68fad4ff4ba3370ec190a8d10c6d351698ff2f7655c848db5f19b766ce6a",
+        "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+        "content": "sha256:0e900cbac56698008fa166cc670908bf9ee525f0fed430c04221a15030cda7bf",
         "locator": {
           "kind": "symbol",
           "name": "test_every_yielded_capsule_has_a_budget_and_no_other_key_does"
@@ -20,75 +20,78 @@
     },
     {
       "anchor": {
-        "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+        "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
         "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
         "locator": {
           "kind": "symbol",
           "name": "test_no_capsule_exceeds_its_recorded_budget"
         }
       },
-      "facet": "Compiles every capsule, declared detail and the digest and fails when a recorded size differs from the compiled size, a size exceeds its limit, a size or limit exceeds its ceiling, a key is missing or names no current source, or a frozen registry, its checker or the digest map changed.",
-      "id": "PRF-FWV5AA",
+      "facet": "The current guard reads the real current budget record, freshly compiles capsule/detail/digest sizes and requires no measurement, ceiling, membership, source-identity or frozen-history finding.",
+      "id": "PRF-645922",
       "invariant": "INV-Y6GVZ7",
       "origin": {
-        "handoffEntry": "L84-K2-Y6GVZ7-current-budget-proof",
-        "leaf": "260928-MIK-L84"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
-        "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_no_capsule_exceeds_its_recorded_budget"
-        }
-      },
-      "facet": "No capsule exceeds its recorded budget after the record renewal.",
-      "id": "PRF-NVWQQR",
-      "invariant": "INV-4HZG3V",
-      "origin": {
-        "handoffEntry": "RSM-R01-A9",
-        "leaf": "261112-RSM-L1"
+        "handoffEntry": "L8-CURATION-INV-Y6GVZ7",
+        "leaf": "261112-BUG-L8"
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+        "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_capsule_exceeds_its_recorded_budget"
+        }
+      },
+      "id": "RLZ-YAGMN2",
+      "invariant": "INV-Y6GVZ7",
+      "origin": {
+        "handoffEntry": "L8-M2-F03-retain-ceiling-evidence-on-Y6GVZ7",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "This test compiles the actual current matrix, measures details/digest and requires the current measurement/source/ceiling/history guard plus the separately owned handover projection checks to produce no findings; it does not execute renewal.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The budget registry test requires capsule keys to equal the manifest-derived role/operation/launcher matrix, detail keys to equal every declared detail source, and the digest entry to have exactly size_words and budget_words.",
+      "note": "The budget registry test requires capsule keys to equal the manifest-derived role/operation/launcher matrix, detail keys to equal every declared detail source, and the digest entry to contain exactly size_words.",
       "targets": [
         {
           "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
-            "content": "sha256:e7cd68fad4ff4ba3370ec190a8d10c6d351698ff2f7655c848db5f19b766ce6a",
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "content": "sha256:0e900cbac56698008fa166cc670908bf9ee525f0fed430c04221a15030cda7bf",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_yielded_capsule_has_a_budget_and_no_other_key_does"
+              "end": 349,
+              "kind": "line_range",
+              "start": 344
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
             "content": "sha256:abd53b56df301564da99a6ecb80d1f03cfb18c686c1597147951310683291cd3",
             "locator": {
-              "end": 95,
+              "end": 88,
               "kind": "line_range",
-              "start": 85
+              "start": 78
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
             "content": "sha256:7dff536f0ef1b96ea21436fba17d9885cfa6a4abf8a2c94de1d3bad34de682c9",
             "locator": {
-              "end": 193,
+              "end": 186,
               "kind": "line_range",
-              "start": 187
+              "start": 180
             }
           },
           "kind": "test"
@@ -100,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
             "content": "sha256:369e341b62746b7c7072f8849d6ff40fb1b6155350b528851c6d7c483d620140",
             "locator": {
               "kind": "symbol",
@@ -112,15 +115,41 @@
       ]
     },
     "3": {
-      "note": "The tests measure whitespace-split words from freshly rendered capsule instructions, complete declared detail sources and the separately delivered every-role digest, and check them against the fingerprinted current record: exact recorded measurements, per-key limits and role-specific ceilings (Architect 5474, Manager 4562, Curator 4537, Reviewer 4112, Bootstrap 4000, otherwise 3742), details 2500 and digest 2327. Exact keys reject omissions and orphans; mutation controls invoke the real guards with changed inputs at and beyond the limits.",
+      "note": "The tests measure whitespace-split words from freshly rendered capsule instructions, complete declared detail sources and the separately delivered every-role digest, then compare them with renewed measurements and authored role, detail and digest ceilings. Exact populations reject omissions and orphans. Historical fixture mutation controls separately exercise exact and over-limit inputs. These are source assertions, not a fresh test run.",
       "targets": [
         {
           "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
             "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
             "locator": {
-              "kind": "symbol",
-              "name": "test_no_capsule_exceeds_its_recorded_budget"
+              "end": 493,
+              "kind": "line_range",
+              "start": 469
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:8cd4193ea8d7a96e50b0e83efc204bdfa1ad03b084e670af07f4072d08f9c00a",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "content": "sha256:308f92575be4c7d751ed5f92e80002bdfa072a13de7f664308ff5cdff0c29104",
+            "locator": {
+              "end": 629,
+              "kind": "line_range",
+              "start": 509
             }
           },
           "kind": "test"
@@ -128,15 +157,29 @@
       ]
     },
     "4": {
-      "note": "Live capsule ceilings are 5474 words for Architect, 4562 for Manager, 4537 for Curator, 4112 for Reviewer, 4000 for Bootstrap and 3742 for other roles; declared step details have a 2500-word ceiling and the separately delivered every-role digest a 2327-word ceiling that must equal the digest map's maximum. Registry completeness, exact recorded measurements and exact/over-limit mutation controls apply independently. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "The current record sets capsule ceilings of 5500 words for Architect, 4600 for Manager, 4537 for Curator, 4200 for Reviewer, 4000 for Bootstrap, 3800 for Orchestrator and 3742 for other roles; declared step details have a 2500-word ceiling and the separately delivered every-role digest a 2327-word ceiling. Registry completeness, exact renewed measurements and ceiling controls apply independently. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
-            "content": "sha256:8c2becfadaf1ba12345a93ed610585038b103dbd7f59b6d85aabde9d687a7b9c",
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:a498c38914da444ccf71ffa3fc2d0a4105c57881edcfec9ecd17bd9150c839ef",
             "locator": {
-              "kind": "symbol",
-              "name": "current_budget_findings"
+              "end": 6175,
+              "kind": "line_range",
+              "start": 6165
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:566cd4138538906715ef81f2473c8f0bfa1d6d88356c04189426646e182b1c5b",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 48
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
@@ -149,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
             "content": "sha256:e94d57ebaaacf8349e480ede3a6abfa44e49dfa6a0805a3614af5b726123a8df",
             "locator": {
               "kind": "symbol",
@@ -165,12 +208,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-            "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:a498c38914da444ccf71ffa3fc2d0a4105c57881edcfec9ecd17bd9150c839ef",
             "locator": {
-              "end": 6560,
+              "end": 6175,
               "kind": "line_range",
-              "start": 6551
+              "start": 6165
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -183,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
             "content": "sha256:f76fee3743fd30c4087e3a61ac627c50216ddb3f658dcf108751b310ed0e55a6",
             "locator": {
               "kind": "symbol",

@@ -19,4 +19,7 @@ The file is itself frozen: `capsule_budget_d694.py` and `capsule_budget_d695.py`
 - Measured sizes are kept apart from approved limits. [1]
 - The history and decision fingerprints are fixed constants. [2]
 - One later decision raises a single step-detail budget. [3]
-- The current checker binds this file by its SHA-256. [4]
+
+### Repo-Internal References (renewed)
+
+- The current checker binds this file by its SHA-256. Anchor: `historicalSnapshotSha256` [4]

@@ -185,15 +185,16 @@
       ]
     },
     "10": {
-      "note": "The receipt's planned-key set carries the new frame-revision class.",
+      "note": "The receipt's planned-key set carries the frame-revision class.",
       "targets": [
         {
           "anchor": {
             "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
             "content": "sha256:acc10e08a3f05b05d8fc9f0b6ce20dea50a4aef973e6a4c30b76c193b54ecc7f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_interrupted_cache_deletion_replays_as_attributed_already_absent"
+              "end": 710,
+              "kind": "line_range",
+              "start": 664
             }
           },
           "kind": "test"
@@ -362,10 +363,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
-              "end": 809,
+              "end": 812,
               "kind": "line_range",
               "start": 1
             },

@@ -45,9 +45,10 @@ Constants are module-level and documented with the reason they exist, not just t
 
 ### Invariants And Boundaries
 
-- **`origin` travels with the tree, always.** A corpus root supplied without its publishing origin is
-  what makes two servers' same-named skills collapse into one identity — `M2` and the same-name case
-  in the test module both depend on the pair being carried together.
+- **`origin` travels with `shipped_skill_tree()` in its `SkillSourceTree`.** A corpus root supplied without its publishing origin is
+  what makes two servers' same-named skills collapse into one identity — the same-name case
+  in the test module depends on the pair being carried together. The historical `M2` probe instead
+  tested that a skill read does not widen the admitted tool-permission snapshot.
 - **The served tree is the packaged copy, not the root `skills/` tree.** A reader looking for the
   served bytes must look under `package_data/runtime/skills/`; the root tree is the canonical source
   that the sync script copies from, and editing one without syncing the other is the mistake this card
@@ -67,13 +68,13 @@ None recorded.
 
 No external documentation governs the location of this repository's generated package data. The
 generation contract is the source checkout's own: root `skills/` is canonical and
-`scripts/sync-skills.py` refreshes the package copy. No relevant documentation found after checking
+`scripts/sync-skills.py` refreshes the declared package copy; contributors use `mcp/.venv/bin/python scripts/renew-instructions.py` for complete instruction renewal. No relevant documentation found after checking
 live sources.
 
 ### Repo-Internal References
 
 - The served tree is the packaged runtime skills copy, which is what makes a served revision reproducible. [1]
-- The corpus root, its manifest and its publishing origin travel together as one admission. [2]
+
 - The publishing origin is both the URI prefix and the identity half that keeps two servers' same-named skills distinct. [3]
 - The packaging helper both managers open, which may materialize the package data for the duration of the call. [4]
 
@@ -88,3 +89,7 @@ live sources.
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies.
+
+### Repo-Internal References (continued)
+
+- The corpus root and manifest travel together as one admission; publishing origin is declared separately. [2]

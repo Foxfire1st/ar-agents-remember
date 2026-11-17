@@ -7,7 +7,7 @@
 ## Purpose
 
 **The MIK-R06@v2 cases (historical collection: 10): family route maintenance, raised as `family_route_condition`
-worklist items.** Every case reuses MIK-R08's real Git code and converted memory repositories
+worklist items.** The fixture-backed cases reuse MIK-R08's real Git code and converted memory repositories
 (`test_knowledge_worklist.World`) with four families: `FAM-R00001` (routes `svc/application` and
 `svc/worktrees`, realized in three files), `FAM-W00001` (an `unrealized_family` routed at `svc/legacy`),
 `FAM-X00001` (an exported family with no routes) and `FAM-T00001` (a retired family routed at `svc/legacy`).
@@ -24,7 +24,7 @@ route does; the satisfying row is a family row in the leaf's own history file. T
   K_C; `move_out_of_worktrees` commits the packet's conforming move (`ledger.py` and `integrate.py` into
   `svc/landing`); `route_items` picks the route items by subject; `assert_predicate_agrees` checks
   `family_route_item_open` over the stored item and K_C's history against the live `satisfiedBy`.
-- **The conforming example** (`test_a_directory_move_…`): four worklists (before any entry moves, one moved,
+- **The conforming example** (`test_a_directory_move_…`): five worklists (before any entry moves, early routes and row with old entries, one moved,
   both moved, rerouted). `route_emptied` and `realization_uncovered` appear on the first (review N1), their
   IDs never change, and a `rerouted` row satisfies both. The R2-N1 stage writes the target routes and a
   `rerouted` row while K_C still records the old files: both items stay open with `recordSatisfiesRoutes`
@@ -101,10 +101,9 @@ No cross-repo boundary is crossed: every repository is created under `tmp_path`.
 
 No cross-repo boundary is crossed by this file.
 
+### Repo-Internal References (continued)
+
 - `test_a_carried_dead_route_the_validator_refuses_is_a_mandatory_item`: current carried-route refusal, mandatory worklist item, failed changed-only answer, rerouted repair and retired exemption. [5]
 - Current source delta inspected statically: Replace carried-route PASS with refusal, qualify historical debt reporting and rename its caption; preserve reroute and retired boundaries. [14]
-
-
-
 
 - The lane registration. Anchor: "mcp/tests/test_family_route_conditions.py" Anchor: "mcp/tests/test_family_route_conditions.py" [13]

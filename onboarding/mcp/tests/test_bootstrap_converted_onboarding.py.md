@@ -8,7 +8,7 @@
 
 One case per rule of converted-onboarding bootstrap (MIK-R45@v2): a repository must declare itself before a
 contractless fixer authors cards, the root must already be converted, an old-format card blocks adoption, and
-the bootstrap skill texts state the fixer, the order and the taskless pre-baseline route. It ends with a
+the first baseline retains the onboarding bootstrap audit artifacts. It ends with a
 composed journey from init through a second refusal.
 
 ## Code Commentary
@@ -35,14 +35,7 @@ composed journey from init through a second refusal.
   to count as a stamp row, `test_correcting_the_listed_cards_unblocks_adoption` shows the rerun adopting, and
   `test_legacy_cards_cannot_refuse_an_adopted_repository` keeps the rule an adoption gate rather than a
   validator rule.
-- **Skill texts.** `test_bootstrap_skill_texts_carry_no_legacy_card_format`,
-  `test_bootstrap_skill_texts_state_the_fixer_and_the_order` and
-  `test_bootstrap_skill_texts_state_taskless_route_and_audit_trail` read the shipped skill texts. The
-  fixer-and-order case also compiles the Bootstrap capsule and requires the delivered foundation-state detail
-  (`reference/bootstrap/foundation-state.md`) to carry the state report and the start-the-Architect next step,
-  Bootstrap's no-author boundary to be reached through that detail's link to `roles/bootstrap.md` and to stand in
-  the compiled instructions (deleted clauses and wrong links fail), and the retired bootstrap-skill text to be absent
-  while the current foundation detail names the curator as the foundation's author.
+- **Scope.** The current module defines sixteen tests of bootstrap operations and their composed fixture journey. It contains no skill-text or Bootstrap capsule-compilation cases.
 - **Audit trail.** `test_first_baseline_retains_onboarding_bootstrap_audit_trail` keeps
   `onboarding/bootstrap/` working files in the commit.
 - **Route index.** `test_route_index_apply_without_contract_is_admitted_before_the_baseline` and
@@ -63,16 +56,36 @@ explicit rather than implied by a reread.
 - A refused card leaves both its Markdown and its sidecar byte-identical.
 - A legacy card blocks adoption and only the listed cards' correction unblocks it; it never un-adopts a tree.
 
+## Earlier Card Coverage and Retained Setup Rationale
+
+The memory-base card at `81cfe4a8` attributed skill-text and Bootstrap capsule-compilation checks to this module. The complete test populations at code base `a2f0fced` and frozen candidate `edc7edc6` both contain the same sixteen operations/journey definitions and none of those three named skill/capsule cases. This task changes only the source header’s instruction-renewal command. The earlier wording is retained below as custody of that corrected attribution, not as evidence that those absent tests currently run.
+
+The documentary boundary remains: Bootstrap authors no onboarding or knowledge; its operation orders memory initialization, baseline inspection/adoption and then foundation-state reporting. The foundation-state detail follows the setup-only boundary link and asks the developer to start the Architect; the Curator authors the foundation inside that regular task. The fixture’s contractless pre-baseline fixer admission does not grant the Bootstrap role permission to call it. These are governing-document facts, not compiled-capsule assertions by this module.
+
+> One case per rule of converted-onboarding bootstrap (MIK-R45@v2): a repository must declare itself before a
+> contractless fixer authors cards, the root must already be converted, an old-format card blocks adoption, and
+> the bootstrap skill texts state the fixer, the order and the taskless pre-baseline route. It ends with a
+> composed journey from init through a second refusal.
+
+> - **Skill texts.** `test_bootstrap_skill_texts_carry_no_legacy_card_format`,
+>   `test_bootstrap_skill_texts_state_the_fixer_and_the_order` and
+>   `test_bootstrap_skill_texts_state_taskless_route_and_audit_trail` read the shipped skill texts. The
+>   fixer-and-order case also compiles the Bootstrap capsule and requires the delivered foundation-state detail
+>   (`reference/bootstrap/foundation-state.md`) to carry the state report and the start-the-Architect next step,
+>   Bootstrap's no-author boundary to be reached through that detail's link to `roles/bootstrap.md` and to stand in
+>   the compiled instructions (deleted clauses and wrong links fail), and the retired bootstrap-skill text to be absent
+>   while the current foundation detail names the curator as the foundation's author.
+
+> - The source test keeps the setup fixer contract separate from setup: setup authors no onboarding and orders memory initialization before baseline adoption before the knowledge foundation's state is reported. (earlier reference label 5; custody only)
+> - The source test compiles the Bootstrap capsule and reads its declared step-8 foundation-state file, checking that the baseline comes before the step-8 state report. It checks no prebaseline leaf and the retained existing-commit exception on the install owner. (earlier reference label 8; custody only)
+> - The delivered foundation-state detail owns the state report and next step, its boundary link reaches Bootstrap's no-author rule, and the current foundation detail names the curator as the foundation's author; the retired bootstrap-skill text is asserted absent. (earlier reference label 9; custody only)
+
 ## Evidence
 
 - Contractless fixing authors converted evidence and sidecars under measured pre-baseline admission. [1]
 - Refused re-authoring preserves the exact card and sidecar bytes across both fixer stages. [2]
 - Every old-format sign stays blocked through adoption with either `accept_drift` value. [3]
 - Prose mentions of metadata names do not become legacy cards. [4]
-
-- The source test keeps the setup fixer contract separate from setup: setup authors no onboarding and orders memory initialization before baseline adoption before the knowledge foundation's state is reported. [5]
-- The source test compiles the Bootstrap capsule and reads its declared step-8 foundation-state file, checking that the baseline comes before the step-8 state report. It checks no prebaseline leaf and the retained existing-commit exception on the install owner. [8]
-- The delivered foundation-state detail owns the state report and next step, its boundary link reaches Bootstrap's no-author rule, and the current foundation detail names the curator as the foundation's author; the retired bootstrap-skill text is asserted absent. [9]
 
 - The first baseline retains the onboarding bootstrap audit artifacts. [6]
 

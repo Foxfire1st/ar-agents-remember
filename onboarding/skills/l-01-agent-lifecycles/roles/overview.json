@@ -931,7 +931,7 @@
       ]
     },
     "39": {
-      "note": "Curator authors scope, completes full MQC and coherence, and records no separate Reviewer-owned Git comparison.",
+      "note": "Curator authors scope, reads the full knowledge_diff before semantic changes and completes full MQC and candidate-bound coherence; Reviewer owns the Git base/candidate handover comparison, with no separate Curator Git comparison.",
       "targets": [
         {
           "anchor": {
@@ -941,6 +941,19 @@
               "end": 41,
               "kind": "line_range",
               "start": 41
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:f52c888b12f4f11639210f4afc53491ba2c0f2c97205bb8f5bc876e42a1b16ef",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -962,9 +975,9 @@
         {
           "anchor": {
             "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
-            "content": "sha256:d13b8227c21332b68b1c21036aac14d5b719cab910ecc9821c223e54abf3c089",
+            "content": "sha256:c844fe11cea11dd40f59502bec9b1eccfdabd450dee1a486918e0bf6c64ae139",
             "locator": {
-              "end": 105,
+              "end": 107,
               "kind": "line_range",
               "start": 105
             },
@@ -975,11 +988,11 @@
         {
           "anchor": {
             "blob": "dc3db2ea07da3101fabdcc6c9ca966d1bc163825",
-            "content": "sha256:c5a63d7c9999219a055baa987f6753c5d1b527cb1ceca402b79739a75e5f4ef7",
+            "content": "sha256:e7f572b482e62f26806629cddd2811295383ecc2cceaa97d24f313def6ab4716",
             "locator": {
               "end": 7,
               "kind": "line_range",
-              "start": 7
+              "start": 5
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator/memory-handover.md"
           },
@@ -1215,7 +1228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:feef0c72f5c316fdcc3ccab56fcfee10f85f35434fb00094bae33acb96a82275",
             "locator": {
               "end": 59,
@@ -1308,7 +1321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -1517,10 +1530,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:f618e05f91ea1d7cb0cdcd8a8eb245c92df41e6c2000f284e03e1031e232e098",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:6972732a323a1716d214c70492f757c0525de69e4b0452aa56e968ae4625ea42",
             "locator": {
-              "end": 172,
+              "end": 162,
               "kind": "line_range",
               "start": 158
             },

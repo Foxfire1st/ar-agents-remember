@@ -1,0 +1,79 @@
+{
+  "path": "scripts/instruction_renewal/budgets.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9c8ef29560a8fc288afbd9a5dffc588ce0278189",
+        "content": "sha256:e25d70c5728ef3f92cdb04889c7237446a7b687c88518463e336c859927717f7",
+        "locator": {
+          "end": 239,
+          "kind": "line_range",
+          "start": 217
+        }
+      },
+      "id": "RLZ-PDRP44",
+      "invariant": "INV-4HZG3V",
+      "origin": {
+        "handoffEntry": "L8-CURATION-INV-4HZG3V",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The planner compares measured sizes with authored ceilings and reports that raising a ceiling requires the developer decision.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9c8ef29560a8fc288afbd9a5dffc588ce0278189",
+        "content": "sha256:1faa79160740ad7dda1d2a214f1c3fab8bb0aed820e234a8f1f3eee032b9a82b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_measure"
+        }
+      },
+      "id": "RLZ-T5N3RM",
+      "invariant": "INV-Y6GVZ7",
+      "origin": {
+        "handoffEntry": "L8-M2-F03-retain-ceiling-evidence-on-Y6GVZ7",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The measurement planner computes current capsule, declared-detail, ordinary-template and digest populations/sizes and source identities; it generates facts without imposing individual item budgets or itself deciding authored ceilings.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The measurement plan records current populations, sizes and identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c8ef29560a8fc288afbd9a5dffc588ce0278189",
+            "content": "sha256:2aea924234e8a3944c7ccc267b366ec7c82e74835bcbfd72160753ca49cf1662",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current growth checks apply authored capsule, detail and digest ceilings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c8ef29560a8fc288afbd9a5dffc588ce0278189",
+            "content": "sha256:054b7490c9df40456bd5cc9a318d37396985a1c55b6def27d487e2b73c30b57b",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

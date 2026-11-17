@@ -29,14 +29,9 @@ with the reason named** rather than passing on a fixture that no longer resemble
 
 ### Logic
 
-**Thirty-seven cases, measured on this candidate rather than carried.** The file defines **37
-`def test_` methods** in five classes and no module-level case, with **0** parametrisations, and
-`pytest --collect-only -q` reports **`37 tests collected`** — so the collected count and the defined
-count are the same 37. The file was 599 lines / 27 cases when the worker delivered it, 911 lines /
-35 cases after the first repair round, and 1000 lines / 37 cases when L2 curated it; **L3's repair
-round rewrote the four live-state sites and left the case population alone, so this card is written
-against the current 1140 lines / 37 cases.**
-
+The file defines **37 `def test_` methods** in five classes, with no module-level test definition
+and no parametrization. The current source has 1140 lines. These are static source counts,
+not a new collection or execution result.
 - `LeafDocumentAgainstContractTests` (257-352), **5 cases** — the historical master's seven
   disagreements are reported with both populations stated; this master's two contracts and two
   documents agree at zero; the tolerant `L<n>` key is shown to find what the strict spelling
@@ -74,11 +69,10 @@ against the current 1140 lines / 37 cases.**
   **and writes nothing**; a clean world exits zero; the prose-figure check runs from the task root and
   writes nothing; and a figure claim that cannot be read **refuses rather than being skipped**.
 
-`_coordination_root` (80-92) is the reason the record-reading cases behave as they do: with
-`AR_COORDINATION_ROOT` unset the default resolution is `REPO_ROOT.parents[1] / "ar-coordination"`,
-which inside a worktree is a path that does not exist, so those cases **skip**. Fourteen cases read
-the record, and a seat that runs the suite without the variable gets a green that says nothing about
-the record.
+`_coordination_root` (80-92) uses `AR_COORDINATION_ROOT` when set and otherwise resolves
+`REPO_ROOT.parents[1] / "ar-coordination"`. It skips the record-dependent cases only when that
+resolved root has no `tasks/` directory. Fourteen test definitions reach this helper; an unset
+variable alone does not establish that those cases skipped or that the historical record was checked.
 
 ### Conventions
 
@@ -92,16 +86,11 @@ replaces the copied master's register with a snapshot that carries `R11`'s `→ 
 construction** — pinning the live register would make the case assert the world's defect count, so
 repairing the world would turn the suite red precisely when the check it protects is right.
 
-**`DECLARED_LEAVES` / `DECLARED_LEAF_COUNT` (56-60) and `_frozen_leaf_snapshot` (218, with
-`_write_declared_document` 165, `_prune_to_declared_leaves` 179 and `_reduce_to_declared_rows` 205)
-are L3's repair of `T51` by class.** The register snapshot above froze one construct; the *other*
-reads of the live, growing master were not frozen, so four cases were green only while this master
-had the leaf population they were written for: the subject count, the unmatched-row verdict, the
-register's `authority` count and the CLI's clean-world exit. The snapshot prunes the copied master to
-the two leaves L1 and L2 landed, writes their document statuses, and reduces the master's rows to
-them, so every count and verdict in the four cases is the case's own. **It is a repair of a fixture,
-not of a check**: the checks' real claims held while the counts failed — `result.ok` was true and only
-the hard-coded population was wrong.
+`DECLARED_LEAVES` / `DECLARED_LEAF_COUNT` (56-60) and `_frozen_leaf_snapshot`
+(218, with `_write_declared_document` 165, `_prune_to_declared_leaves` 179 and
+`_reduce_to_declared_rows` 205) define the copied world. The snapshot prunes the copied
+master to two leaves, writes their document statuses and reduces the master's rows to them,
+so the assertions compare against the fixture's declared population.
 
 The two prose labels are spelled so neither can match the tail of the other's name: `INSTRUMENT_LABEL`
 (76) carries a lookbehind because a bare `instrument_discipline\.py` matches inside
@@ -120,30 +109,122 @@ being zero for the wrong reason.
   **copied**, not reconstructed; the `T45` documents are read by Git object at a named revision; and a
   missing artifact is a named skip.
 - **The suite never writes into the tree it measures.** Every writer takes `tmp_path`, and both CLI
-  cases assert that a run from a task root leaves the tree unchanged. That rule is in the file because
-  its first draft violated it: six fixture documents written through **relative** paths landed in the
-  repository root, and the regression case asserting *"the check wrote to the tree it measured"*
-  passed the whole time, because it compared a temporary tree that was never the victim.
-- **A case does not pin live mutable state.** `test_record_integrity.py`'s own history is the proof,
-  in two rounds. The first version asserted `result.disagreements == 5` against a copy of the **live**
-  register, so repairing the register's six `→ L20` arrows made it `1 failed, 26 passed` with the
-  environment variable set — and in the default lane the case **skipped**, so the failure was
-  invisible; L2's `_frozen_register_snapshot` replaced it. **The second round is `T51`, and it is the
-  same lesson applied to the class rather than to the instance:** L2's repair froze the register and
-  left the other reads of the live master, so L3's own enclosure moved the subject count, the
-  unmatched-row verdict, the register's `authority` count and the CLI's clean-world exit. All four now
-  read `_frozen_leaf_snapshot`'s declared world. A fixture that asserts a live population is green
-  exactly while the world happens to match it.
+  cases assert that a run from a task root leaves the tree unchanged.
+- **The live-state cases use a frozen copied world.** The relevant assertions read
+  `_frozen_leaf_snapshot`'s declared population.
 
 ### Todos
 
-None. This card was written by reading the current 1140-line source and by measuring the case
-population on this candidate; no case in this file is known to be vacuous, and no case was added or
-removed by the curator. **One consequence of `T51` stays open for the leaf that next touches this
-file:** a case that reads the live master must take its population from `_frozen_leaf_snapshot`, and
-the fixture's `DECLARED_LEAVES` is a second place the master's leaf list is written, so a leaf that
-lands a contract must expect to update it. That is a deliberate, visible cost of freezing the world
-rather than a defect.
+The fixture's `DECLARED_LEAVES` is an explicit second representation of its selected leaf set.
+Its document and row builders use that selected population.
+
+## Retained Historical Context
+
+The following complete passages are retained from the earlier card at memory snapshot `81cfe4a8`. They are the recorded 260918-TSIP-L2/L3 account: its rationale, historical source coordinates, prior measurements and deliberate omissions. Prior run outcomes remain attributed to that account; this curation adds no execution result. Historical reference labels below are custody text and do not select current sidecar anchors.
+
+> **Thirty-seven cases, measured on this candidate rather than carried.** The file defines **37
+> `def test_` methods** in five classes and no module-level case, with **0** parametrisations, and
+> `pytest --collect-only -q` reports **`37 tests collected`** — so the collected count and the defined
+> count are the same 37. The file was 599 lines / 27 cases when the worker delivered it, 911 lines /
+> 35 cases after the first repair round, and 1000 lines / 37 cases when L2 curated it; **L3's repair
+> round rewrote the four live-state sites and left the case population alone, so this card is written
+> against the current 1140 lines / 37 cases.**
+>
+> - `LeafDocumentAgainstContractTests` (257-352), **5 cases** — the historical master's seven
+>   disagreements are reported with both populations stated; this master's two contracts and two
+>   documents agree at zero; the tolerant `L<n>` key is shown to find what the strict spelling
+>   under-reports; a contract with no leaf document is **counted rather than failed**; and a document
+>   reading `Completed` before its closeout has started is a finding, not a count.
+> - `MasterRowAgainstLeafDocumentTests` (360-555), **7 cases** — the historical master's rows read
+>   `Completed` over unlanded documents; this master's rows agree with their documents **at the
+>   declared leaf count** rather than at the live one; the boundary `D42` crossed is pinned from
+>   **both** sides by `test_a_row_is_never_completed_on_step_state_alone` (every step marked, document
+>   not landed → the row is `inProgress`) and
+>   `test_a_completed_document_with_an_open_step_is_not_completed` (the document reads `Completed`
+>   while one of its own steps is open → still `inProgress`); an abandoned leaf stays abandoned; and
+>   the two reported halves —
+>   `test_a_row_completed_without_its_document_is_reported` (464) and
+>   `test_a_row_completed_over_a_document_with_an_open_step_is_reported` (509) — reach the finding
+>   through the step-completeness conjunct rather than through the status, which is the half the
+>   sibling case cannot reach.
+> - `RegisterOwnerArrowTests` (563-660), **5 cases** — this master's register is reported with its
+>   arrow count stated **against the declared leaf set**, so the count the next leaf moves cannot red
+>   the case; a register whose arrows all resolve is clean; an arrow to an undeclared leaf is reported
+>   with **both** sets; only the State cell is graded, pinned as the reason the Owner cell is not; and
+>   a master with no leaf set **refuses** rather than reporting a zero.
+> - `DeclaredFigureCurrencyTests` (668-1007), **12 cases** — the two shapes are measured from the source
+>   rather than declared by the test; the historical route documents are read **by Git object** at
+>   `e116e5ee`; a correct pair of figures is not a disagreement; a stale prose figure is reported
+>   against the current source; a correction sentence is graded at the value it corrected *to*; a
+>   figure in frontmatter is not a body claim; an unknown shape and an unresolvable base commit and a
+>   source outside any Git tree each **refuse** rather than zero; the corrected prose passes; a bare
+>   line count belonging to another file is not this source's figure (the case that pins the first
+>   run's fault, where a pattern of `\d+ lines` alone matched twelve counts, eleven of them other
+>   files' sizes); and a claim scoped to one document does not grade another.
+> - `RecordIntegrityReportTests` (1015-1140), **8 cases** — every comparison states its two populations;
+>   *"said what it compared"* reads as the comparison rather than as a status; the CLI names its input
+>   when none is supplied and refuses a root carrying no `tasks/` tree; the CLI runs from a task root
+>   **and writes nothing**; a clean world exits zero; the prose-figure check runs from the task root and
+>   writes nothing; and a figure claim that cannot be read **refuses rather than being skipped**.
+
+> **`DECLARED_LEAVES` / `DECLARED_LEAF_COUNT` (56-60) and `_frozen_leaf_snapshot` (218, with
+> `_write_declared_document` 165, `_prune_to_declared_leaves` 179 and `_reduce_to_declared_rows` 205)
+> are L3's repair of `T51` by class.** The register snapshot above froze one construct; the *other*
+> reads of the live, growing master were not frozen, so four cases were green only while this master
+> had the leaf population they were written for: the subject count, the unmatched-row verdict, the
+> register's `authority` count and the CLI's clean-world exit. The snapshot prunes the copied master to
+> the two leaves L1 and L2 landed, writes their document statuses, and reduces the master's rows to
+> them, so every count and verdict in the four cases is the case's own. **It is a repair of a fixture,
+> not of a check**: the checks' real claims held while the counts failed — `result.ok` was true and only
+> the hard-coded population was wrong.
+
+> - **Both directions, every comparison.** A refusal-only case shows a function rejects something; only
+>   a paired acceptance case shows it would have passed a good artifact.
+> - **A finding case asserts the finding's own sides**, not merely that something was reported —
+>   `declared`, `measured` and `rule` are matched, so a case cannot pass by being refused, or reported,
+>   for the wrong cause.
+> - **The evidence is read from the record or the case says it skipped.** The historical task roots are
+>   **copied**, not reconstructed; the `T45` documents are read by Git object at a named revision; and a
+>   missing artifact is a named skip.
+> - **The suite never writes into the tree it measures.** Every writer takes `tmp_path`, and both CLI
+>   cases assert that a run from a task root leaves the tree unchanged. That rule is in the file because
+>   its first draft violated it: six fixture documents written through **relative** paths landed in the
+>   repository root, and the regression case asserting *"the check wrote to the tree it measured"*
+>   passed the whole time, because it compared a temporary tree that was never the victim.
+> - **A case does not pin live mutable state.** `test_record_integrity.py`'s own history is the proof,
+>   in two rounds. The first version asserted `result.disagreements == 5` against a copy of the **live**
+>   register, so repairing the register's six `→ L20` arrows made it `1 failed, 26 passed` with the
+>   environment variable set — and in the default lane the case **skipped**, so the failure was
+>   invisible; L2's `_frozen_register_snapshot` replaced it. **The second round is `T51`, and it is the
+>   same lesson applied to the class rather than to the instance:** L2's repair froze the register and
+>   left the other reads of the live master, so L3's own enclosure moved the subject count, the
+>   unmatched-row verdict, the register's `authority` count and the CLI's clean-world exit. All four now
+>   read `_frozen_leaf_snapshot`'s declared world. A fixture that asserts a live population is green
+>   exactly while the world happens to match it.
+
+> None. This card was written by reading the current 1140-line source and by measuring the case
+> population on this candidate; no case in this file is known to be vacuous, and no case was added or
+> removed by the curator. **One consequence of `T51` stays open for the leaf that next touches this
+> file:** a case that reads the live master must take its population from `_frozen_leaf_snapshot`, and
+> the fixture's `DECLARED_LEAVES` is a second place the master's leaf list is written, so a leaf that
+> lands a contract must expect to update it. That is a deliberate, visible cost of freezing the world
+> rather than a defect.
+
+Current scope of the fixture-update advice: `DECLARED_LEAVES` is the fixture-selected frozen population. Its duplicate declaration changes when that selected fixture population is intentionally changed; an unrelated new leaf contract does not itself require widening it. The quoted advice and earlier collection/count evolution are retained as the prior account, alongside the current static 37-definition reading.
+
+## Retained Full-Card Audit Context
+
+The following distinct accounts are retained from memory base `81cfe4a8`. Dates, source coordinates, counts, outcomes and ownership describe that recorded epoch. They add no fresh execution, mutation result or acceptance. Historical numeric reference labels are custody text and do not select live sidecar anchors.
+
+### Earlier record-reading environment warning
+
+> `_coordination_root` (80-92) is the reason the record-reading cases behave as they do: with
+> `AR_COORDINATION_ROOT` unset the default resolution is `REPO_ROOT.parents[1] / "ar-coordination"`,
+> which inside a worktree is a path that does not exist, so those cases **skip**. Fourteen cases read
+> the record, and a seat that runs the suite without the variable gets a green that says nothing about
+> the record.
+
+This earlier worktree/environment observation is retained as attributed context. Current source skips only when the resolved root lacks tasks/: an unset variable does not by itself prove either skipping or historical-record validation on every installation.
 
 ## Evidence
 
@@ -179,14 +260,6 @@ durable memory. Every range was derived against the current 1140-line source.
 - Every comparison states its two populations, and the CLI writes nothing. [15]
 - The module whose four comparisons these cases pin. [16]
 
-
-
-
-> Retained earlier citation wording: - The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py"
-
-
-
-
 ### Cross-Repo References
 
 No separate cross-repository protocol is established by this file. The configured cross-repository
@@ -194,7 +267,6 @@ allowance is empty and no external source is relied upon here.
 
 No cross-repository evidence is required for these file-local claims.
 
-
-
+### Repo-Internal References (continued)
 
 - The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [17]

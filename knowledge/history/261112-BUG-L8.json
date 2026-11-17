@@ -1,0 +1,3022 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L8",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0TQN9K",
+      "items": [
+        "sha256:3869f49e788573bcf5c4e975218742a8ec144e26518e0d0ae34ac9b43196cb0f"
+      ],
+      "reason": "The permission-delivery helper still compares the shipped orientation text with its source, but its mismatch assertion now names the single renewal command through Run {RENEW_COMMAND}. Refresh the card to describe that current remedy as well as its existing comparison contract. RLZ-RF9WZA is the added INV-DHKR4G realization on this helper; it records the truthful command-bearing assertion, not a new permission guard.",
+      "sources": [
+        {
+          "blob": "ac85e63eaab64486db9bb5293bcca28ab15ecba7",
+          "path": "mcp/test_support/agents_remember_test_support/testing/curator_contracts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/curator_contracts.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-12FQGK",
+      "items": [
+        "sha256:855467dbe723108174fbe91c127b816b06d8b2681c7c6c4e65269a8d899dc2d4",
+        "sha256:97b83cfc92cbdf24242295addc6f9cc611081528651925660c651d9eb7d16fe2"
+      ],
+      "reason": "Recast the v13 hashes and inverse functions as retained historical records. The current audience test no longer imports this module, so its historical tables and reversible substitutions must not be described as the live audience-test mechanism.",
+      "sources": [
+        {
+          "blob": "80d5ee992b1ce658b56a69e67ae7a4a816088ab1",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-18WJJT",
+      "items": [
+        "sha256:57ef63a4baba941949fa00986f6e1df8273ff5a9f04366de136467f2cf6137f3"
+      ],
+      "reason": "Add the first pointer_sentences.py card for syntactic extraction and normalization of local detail and relative-skill actions, excluding external and mail links. Separate sentence extraction from action admission so the parser is not described as policy authority.",
+      "sources": [
+        {
+          "blob": "c78ff878e678179362ad2f37ae026f34e99c989b",
+          "path": "mcp/test_support/agents_remember_test_support/testing/pointer_sentences.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/pointer_sentences.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1V83HM",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Correct the evidence catalog card's external-target count from three to one and narrow the canvas-support caption to the declared contract, artifact, authority, cadence, lifetime and exact consumers, removing the inferred universal builder guarantee. Move the two inspected past source-epoch accounts out of current prose and refresh retained catalog anchors; current declarations remain separate from invocation evidence. Restore the 450ade9c13/90 catalog measurement at its named epoch; retain the unbound L11213/93 report only as attributed earlier-card observation, without promoting it to current population or execution evidence.",
+      "sources": [
+        {
+          "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2EB6F6",
+      "items": [
+        "sha256:80660f944e3565467fdae7c416544a5ab3539ba132a249814c0eda68f7c978c4"
+      ],
+      "reason": "The two catalog diffs add only the three instruction-renewal suites. Their existing turn-end registrations are retained; reanchor catalog support without changing the silent-turn contract.",
+      "revision": 6,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2ES2N8",
+      "items": [
+        "sha256:15babac226b5cb7709fe47ef993c3fc4023d053433405ebaa95ab9ceb97d65e2",
+        "sha256:2fe8a701c230ad32c7e517375e99cf5f53fa197300307910b759cb549cbc5d70",
+        "sha256:7ecf092d8626da2db1be10133b1dbd713c90005b181474ac68e23327a9b8cd9c",
+        "sha256:cdde88d89058cee20c04b3542abcd9403204efd241a5dcdd9ea1141caf625dde"
+      ],
+      "reason": "Replace fixed literal corpus/detail counts with manifest-derived populations and the retained set-equality checks. Document pointer-renewal reorder and ambiguity controls through shared cases, preserving the rule that every required detail is delivered and linked once per action without treating source assertions as a run.",
+      "sources": [
+        {
+          "blob": "ab510c23b4893307b6a00fd902e70fbd96730567",
+          "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_l84_unique_detail_pointers.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ab510c23b4893307b6a00fd902e70fbd96730567",
+            "content": "sha256:b6e676c67a9e6a73748131d8ef8bcef8a9df6588c635417db3aa9bf61f31cec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_native_first_message_has_one_pointer_per_action"
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+          },
+          "before": {
+            "blob": "d5d959a74b2e006ebcda058c8a572a0951a5c257",
+            "content": "sha256:803aadd7ad15099fc6286aa3d00ac84fb718744dc510b130ac1cc1bab54edb71",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_native_first_message_has_one_pointer_per_action"
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+          },
+          "id": "PRF-4Q83T7"
+        },
+        {
+          "after": {
+            "blob": "7e10ba05dabcb409c83e4f8a0ffd72bfd7ff0af0",
+            "content": "sha256:8a350410863b2d8f8567d580b1818c3d7224bbb01e1304121bbfcd4d62450cbd",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py"
+          },
+          "before": {
+            "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+            "content": "sha256:58831bc1f1aa2df75644970b1a6563cdd30ecd1d8eb1aae051e99c044193ecbd",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py"
+          },
+          "id": "RLZ-H39C9Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2K2N7G",
+      "items": [
+        "sha256:f573e04646a67e0cc7149759c0c3b052562ff3ba232f60ae80b95ebfeb14bfa5"
+      ],
+      "reason": "The native-first-message test and wording helper still reject repeated action pointers and verify emitted link paths/fragments. Guidance now names the renewal command; preserve the one-action-pointer rule and reanchor both entries.",
+      "revision": 1,
+      "subject": "INV-Q2HENX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-38W0WD",
+      "items": [
+        "sha256:b9df7ea1e6a9c9a27eb0f83b6f1c4859f609dcf1fcd8bd020508e5c9cf5d7068"
+      ],
+      "reason": "Remove imports and local URI/sentence constants after pointer parsing moves to pointer_sentences and authored policy loading; these deleted scaffolding lines carry no separate invariant.",
+      "subject": "hunk:sha256:b9df7ea1e6a9c9a27eb0f83b6f1c4859f609dcf1fcd8bd020508e5c9cf5d7068"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:86ffd298030ed1ed89b21939e6217dcec9fce742e95fc56ab8222d99068d4014",
+            "locator": {
+              "end": 5103,
+              "kind": "line_range",
+              "start": 5100
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:16e33f8515db8e2fe4fb605e540d2659e1109c4593e16b00a7cdc679cc19db3d",
+            "locator": {
+              "end": 5101,
+              "kind": "line_range",
+              "start": 5101
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-QPK1VY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3B8EVN",
+      "items": [
+        "sha256:e5b08311e9a5e4c624a19d0f547bd8cf04d255618d1f8d5e0589abfa32f35fb1"
+      ],
+      "reason": "The waits-and-coding-guidelines renewal header remains as historical evidence for this wait-line change; its line moved by one. Preserve the wait declaration contract and reanchor the historical support header.",
+      "revision": 1,
+      "subject": "INV-K48GZ2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3G609R",
+      "items": [
+        "sha256:5aa3d50b611512aa30da9c7e18602104b2fb1f6fcc755653ab24e91da4a24722"
+      ],
+      "reason": "Correct the evidence boundary: transport and child-question details are checked through the emitted orientation capsule, while review and curation pointer checks join role and operation source text without compiling those operation pairs. Replace the blanket 'peers receive results, not questions' claim with the actual route: developer decisions go through the parent, while results and questions about another leaf seat's work go directly to that seat; retain the separate starter identity and role/task return address.",
+      "sources": [
+        {
+          "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
+          "path": "mcp/tests/test_developer_question_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_developer_question_wording.py"
+    },
+    {
+      "considered": [
+        "FAM-27AEW1"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-3M82W3",
+      "items": [],
+      "reason": "The member keeps its standalone obligation after FAM-27AEW1 is withdrawn: the family did not establish a joint guarantee needing every listed member. This repair assigns no replacement family and does not broaden the invariant's scope.",
+      "revision": 1,
+      "subject": "membership:INV-J2CHWZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3P628P",
+      "items": [
+        "sha256:ad0544c7d0317564e376358681a0105051058afc80329ba26394d78ae1698c6f"
+      ],
+      "reason": "Replace the local hard-coded exception account with pointer_policy.wording_policy supplying stable exception identities, current wording and allowed sources, and pointer_sentences owning parsing. This documents the detector's actual delegation while preserving the distinct policy reasons.",
+      "sources": [
+        {
+          "blob": "7a06f5d32b76b80864796270f0d808cb96004fb5",
+          "path": "mcp/test_support/agents_remember_test_support/testing/pointer_uniqueness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/pointer_uniqueness.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3TGKTK",
+      "items": [
+        "sha256:feeb8fab0aa0ed2dd767f70c2596d2aeb6355f02617037fcfafaeb0d0f7f595e"
+      ],
+      "reason": "Add the first manifest.py card for deriving reference steps and audiences from authored membership, pointer actions and role reasons, then validating the composed view. Explicit authored step:null remains a no-step decision; unresolved derivation calls for corrective input rather than an inferred exception.",
+      "sources": [
+        {
+          "blob": "6ab14a78c69b836a0a33c41800018cb4d7bb610c",
+          "path": "scripts/instruction_renewal/manifest.py"
+        }
+      ],
+      "subject": "onboarding:scripts/instruction_renewal/manifest.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R08",
+          "packet": "requirements/BUG-R08-v1-a-changed-instruction-text-is-renewed-by-one-command.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+            "content": "sha256:aa249effa404b77f31350e4d13b1ca76e3a5b9f84bbfa0b2791b67d9768498a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_budget_record_names_no_absent_path"
+            },
+            "path": "mcp/tests/test_instruction_consistency.py"
+          },
+          "before": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:7d8e035c25a17ef3de875b9a80ff64a2f9e82414b891dc5410b4b00e97b7b918",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_budget_record_names_no_absent_path"
+            },
+            "path": "mcp/tests/test_instruction_consistency.py"
+          },
+          "id": "PRF-FVCWH7"
+        },
+        {
+          "after": {
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+            "content": "sha256:5b4ff6a994aeb60379876664c318c51cd483d7794df8271de220cf411c221a68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exactly_one_renewal_sub_record_claims_current"
+            },
+            "path": "mcp/tests/test_instruction_consistency.py"
+          },
+          "before": "absent",
+          "id": "PRF-YZ45Y9"
+        },
+        {
+          "after": {
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:a0abc4ead569d8a67d67a8e01a8d07edd5dc33813d24be486be77735cda4a99a",
+            "locator": {
+              "end": 6163,
+              "kind": "line_range",
+              "start": 6161
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:bea2a1aca75ce1229788d34d37796ae960d600670a642500cf1694f67c187f5f",
+            "locator": {
+              "end": 6159,
+              "kind": "line_range",
+              "start": 6154
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-DFYHWJ"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:0e3c7fff4b429f1a2de4beee5f70488cb097ed84fcbbf73c138efa1ff27818a2",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-HP4QWK"
+        },
+        {
+          "after": {
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+            "content": "sha256:e9300df03b9680de956a11a79a99fd74ecb04541776a1810763b3b01535ad2ab",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 302
+            },
+            "path": "mcp/tests/test_instruction_consistency.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PXD8EC"
+        },
+        {
+          "after": {
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+            "content": "sha256:aa249effa404b77f31350e4d13b1ca76e3a5b9f84bbfa0b2791b67d9768498a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_budget_record_names_no_absent_path"
+            },
+            "path": "mcp/tests/test_instruction_consistency.py"
+          },
+          "before": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:7d8e035c25a17ef3de875b9a80ff64a2f9e82414b891dc5410b4b00e97b7b918",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_budget_record_names_no_absent_path"
+            },
+            "path": "mcp/tests/test_instruction_consistency.py"
+          },
+          "id": "RLZ-X5Y8GV"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-3TM79J",
+      "items": [
+        "sha256:ac7a00b8357aa85712988f0f92fd8730931728cfeaaef32a2c18d3901dc11dd7"
+      ],
+      "reason": "BUG-R08 rules5–7 replace current flags, hand-maintained digest-map identity and per-item renewal facts with generated current measurements and one authority-only renewal; package equality and current-path checks remain. Evidence (L8-CURATION-INV-12JAM7): mcp/tests/test_instruction_consistency.py:273-340; mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py:313-419; scripts/instruction_renewal/plan.py:65-115; mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py:423-465 c45 successor attachment: add enforcement coverage for _renewal_currentness_problems at test_instruction_consistency.py302–320. It counts the sole nonhistorical renewal and requires its exact keyset to be authority-only while forbidding historical current flags. Preserve all five prior covers and the BUG-R08 changed/effect-replace judgment against K_B; record meaning remains revision2. The writer retains the existing same-subject row ID; no separate per-hunk row, typed source fingerprint or authored revision is supplied. Evidence (L8-M2-C45-12JAM-currentness-helper): mcp/tests/test_instruction_consistency.py:302-320; Extend the recorded enforcement coverage to the currentness helper that now identifies the sole current renewal by absent valid historicalTree and requires its exact field set to be authority-only. The existing test calls this helper for the candidate and for historical current:true/current:false mutations; preserve its separate proof facets and origin. The attachment covers the two previously unexplained predicate hunks without changing INV-12JAM7 revision2.",
+      "revision": 2,
+      "subject": "INV-12JAM7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3Y9446",
+      "items": [
+        "sha256:1936490a7f580478efd5fc9afb045ff737d80d87e14e356e81cb0d94d2e825f0"
+      ],
+      "reason": "Add the first manifest-renewal test card for derived steps and audiences, explicit authored no-step decisions, unresolved-reference diagnostics and public check/renew/check fixtures. This documents preservation of authored null decisions instead of treating missing generated values as permission to invent a substitute.",
+      "sources": [
+        {
+          "blob": "402d04653a63467728826100526e1771bf2eddfe",
+          "path": "mcp/tests/test_instruction_manifest_renewal.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_instruction_manifest_renewal.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-47QZ7J",
+      "items": [
+        "sha256:855ac4e5851fcf7ba1bce4ebe87b5d5770079128445decc128b05f907e4a8975"
+      ],
+      "reason": "Explain that role-capsule detail parsing first composes authored manifest declarations with derived reference roles and step wording. This replaces an authored-only account and keeps authored reference membership and step classification separate from computed reader metadata. Correct inherited current predicates: supersession precedes refresh-trigger handling; a removed decision/facet row names its removed revision; admitted override resolves equal-authority contradiction; the governing link names the nearest MCP overview. Paired model captions are checked against their actual current owners, retaining separately attributed historical API accounts.",
+      "sources": [
+        {
+          "blob": "5455262601dadd5c6ef505fa831571e8a86206c9",
+          "path": "mcp/src/agents_remember/models/role_capsules/details.py"
+        },
+        {
+          "blob": "a98f60c616a40b8300dbbfbfb6016c98dc349f82",
+          "path": "mcp/src/agents_remember/models/role_capsules/manifest_derived.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "considered": [
+        "FAM-27AEW1"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-4JRN9K",
+      "items": [],
+      "reason": "The member keeps its standalone obligation after FAM-27AEW1 is withdrawn: the family did not establish a joint guarantee needing every listed member. This repair assigns no replacement family and does not broaden the invariant's scope.",
+      "revision": 1,
+      "subject": "membership:INV-NDGJ3M"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5462DM",
+      "items": [
+        "sha256:0cfd7c04cc58bca57e125ab391b4f72129082d0f8aaf0d8245ddc3779db86bb5"
+      ],
+      "reason": "Add the first pointer_policy.py card for projecting authored admissions, multi-link and exclusive groups, their reasons and generated wording into assertion inputs. Keep policy authorization and ambiguous-binding decisions outside this projection's responsibility.",
+      "sources": [
+        {
+          "blob": "424522943d18e0ab43fe06f01ac7cdcb1916145e",
+          "path": "mcp/test_support/agents_remember_test_support/testing/pointer_policy.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/pointer_policy.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-580RS0",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "Replace the current record's per-item-budget and whole-record-seal account with authored role/detail/digest ceilings and generated populations, sizes, source hashes and compiler-input revisions. Explain the authority-only active renewal sub-record and retained predecessor identities; measured growth within a ceiling does not require an individual budget increase.",
+      "sources": [
+        {
+          "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5CP5N0",
+      "items": [
+        "sha256:93ab9e80e81a83988c93421111f53f7ba515314cf7218a5d87e561d82a62e7f0"
+      ],
+      "reason": "Correct the root overview's capsule ceilings and measured-current record, including 34 capsule and 38 detail measurements and the separate digest ceiling. Name the complete renewal command for measured facts and canonical package copies, preserve the selected-role/one-operation stream, and qualify retained source and historical registry accounts instead of treating them as current execution or approval. Repair inherited current overclaims using the actual trace, canvas, role selection, replay, restoration, sync, operation-control and conversion owners: source-current rows, dependent-record route exceptions, accepted self-navigation, leaf review selection, explicit replay statuses, attempted restoration, retained sync-read tolerance and standalone-conversion debt remain distinct. Historical accounts keep their original scope.",
+      "sources": [
+        {
+          "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+          "path": ".githooks/_gate.sh"
+        },
+        {
+          "blob": "9c8ef29560a8fc288afbd9a5dffc588ce0278189",
+          "path": "scripts/instruction_renewal/budgets.py"
+        },
+        {
+          "blob": "ae5955d3d7033a3675bb38ceb8d2610a45ddfdfe",
+          "path": "scripts/instruction_renewal/digest.py"
+        },
+        {
+          "blob": "9ae084018f62639288929163ee07cdae75cf75a2",
+          "path": "scripts/instruction_renewal/documents.py"
+        },
+        {
+          "blob": "6ab14a78c69b836a0a33c41800018cb4d7bb610c",
+          "path": "scripts/instruction_renewal/manifest.py"
+        },
+        {
+          "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+          "path": "scripts/instruction_renewal/plan.py"
+        },
+        {
+          "blob": "18e50fd4ff3c1e98889fc82222cab2819f37b68d",
+          "path": "scripts/instruction_renewal/pointers.py"
+        },
+        {
+          "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+          "path": "scripts/renew-instructions.py"
+        },
+        {
+          "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+          "path": "scripts/sync-skills.py"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-5FM7XG",
+      "items": [
+        "sha256:bc545b49aba8f82a2bacb3e4e2178a59c970e198e26eae70e9067137a2dc47a0"
+      ],
+      "reason": "Reconfirm docs/design/python-evidence-system.md at the frozen L8 source tree after checking every retained support and the approved renewal change. The evidence-system design remains consistent with catalog ownership and cadence; its catalog now registers the three instruction-renewal regression consumers without changing that authority.",
+      "revision": 4,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6Q7Q3P",
+      "items": [
+        "sha256:131209bf588aed7952759a012d8da2f4d14fb565f4fd3cf3395093c9f44e4585"
+      ],
+      "reason": "Name one renewal command for current measurements, passage bindings, pointer wording, manifest metadata and declared package copies, retaining sync-skills/generated-copies as the copy owner. Separate authored ceilings from measured sizes, and narrow writer exclusivity to acknowledge the declared covered-correct-write recovery instead of a blanket manual-write ban.",
+      "sources": [
+        {
+          "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+          "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+        },
+        {
+          "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "d19dfd1456ae1eda38974eadad20a8041393efbf",
+          "path": "skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+        },
+        {
+          "blob": "d2947b7bf719da922245ced8a720e61ad93bf8f6",
+          "path": "skills/l-01-agent-lifecycles/pointer-actions.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7GANEA",
+      "items": [
+        "sha256:6be4786eab2ea27c9022d9580f807984308d4df58790a94632b6e0dfff342464"
+      ],
+      "reason": "Refresh support for the retained description/schema limits, recursive node inspection, documentation pointers and installed-reference checks at current test extents. No native semantic rewrite is captured; watcher-patched install fixtures and schema assertions remain definitions rather than fresh execution evidence.",
+      "sources": [
+        {
+          "blob": "557bac2b64391e6900c45677b40e091c35fdb688",
+          "path": "mcp/tests/test_tool_descriptions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_descriptions.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7K9M4Q",
+      "items": [
+        "sha256:d4b37b3fc36e8e403437279eae95db0e1d08c327b01d29ccc94bc64fc216e297"
+      ],
+      "reason": "Separate authored reference membership, step_detail classification and explicit no-step decisions from derived reader roles and step wording consumed through compose_manifest. State the 38 non-injected detail entries and six authored step:null decisions without treating empty generated audiences or registry membership as new admission gates or proof of a read/start.",
+      "sources": [
+        {
+          "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+          "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/composition-manifest.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7PKV18",
+      "items": [
+        "sha256:db6b4403713c4a7943fd79b394a55191df38e5b0667ca0552110e5f1ccd37743"
+      ],
+      "reason": "Explain that both instruction trees use composed authored/derived manifests and joined digest maps. Separate missing or conflicting generated-step diagnostics from unmapped, overlapping or uncovered authored-map decisions, whose remedy requires an authoring choice rather than blind renewal.",
+      "sources": [
+        {
+          "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+          "path": "mcp/tests/test_l84_r1_05_wording_pin.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_l84_r1_05_wording_pin.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7ZW9KG",
+      "items": [
+        "sha256:c9df2b9602504beba068222a544c925ecc6db50773765919a42dc882896db146"
+      ],
+      "reason": "Replace the frozen-current-digest account with owner-specific historical masking and authentication of retained budget files. Explain that exactly one renewal sub-record is current and contains authority only, historical renewal sub-records contain no current field, and history-shaped fields elsewhere still undergo absent-path checks.",
+      "sources": [
+        {
+          "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+          "path": "mcp/tests/test_instruction_consistency.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_instruction_consistency.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-84V7Y1",
+      "items": [
+        "sha256:da910b47dcec50496412ceea95583498574439ba076b1284e1325afd3040e728"
+      ],
+      "reason": "Add the first file card for manifest_derived.py, explaining its non-mutating authored/derived composition, preserved authored reference membership, and rejection of generated-step conflicts, missing required steps and malformed metadata. Readers now have a current account of the composition seam used before interpreting delivery details.",
+      "sources": [
+        {
+          "blob": "a98f60c616a40b8300dbbfbfb6016c98dc349f82",
+          "path": "mcp/src/agents_remember/models/role_capsules/manifest_derived.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/role_capsules/manifest_derived.py"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "0545cf2a711cbe4fe44f7130c9135af37c408e14",
+            "content": "sha256:d67b41f7f3c39e08a3de9d4771621c00ecf842d54d9ea1167146f7485dd28eb3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "id": "PRF-GNXD7B"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-84WHTR",
+      "items": [
+        "sha256:edb3156b413245d2eac3de8db8e807e3591909315273b625140d9802b5cd65a2"
+      ],
+      "reason": "Remove unsupported whole-file facet PRF-GNXD7B: the test exercises a pre-baseline card/fixer journey rather than installer instruction order or setup ownership. The setup/foundation statement and scope remain unchanged. Admission changed from guarded_by_test to prevents_costly_mistake because no surviving test facet proves the stated setup contract; no proof remains, while its primary-authority realization RLZ-942ZBQ remains in operations/bootstrap.md. This is an admission/proof correction rather than a new behavior claim.",
+      "revision": 3,
+      "subject": "INV-DE9ZZF"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-8A12RX",
+      "items": [
+        "sha256:3cb5898ba81f62bcbd8e0669ad11690a77dc283275c4e40e6321c15ea3ebf32d",
+        "sha256:95ad7b3a0d3295ccab20193d2a167bcd0c65218e212122e9f26ef518c95e4e53"
+      ],
+      "reason": "For F11.3 retain the 33 existing support links and add budgets.py, digest.py, pointers.py and manifest.py for the renewal procedure at CONTRIBUTING.md:146–158. These owners supply current measurement populations, separate unit/evidence/clause bindings, pointer binding, and derived action/audience ordering. The contributor document wording and original dependent origin remain unchanged.",
+      "revision": 6,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8EXJGE",
+      "items": [
+        "sha256:00e5584867d4cd5b0f3e5df619dd80d3ae41678d4210cec0dbe5f6a10009658c"
+      ],
+      "reason": "Replace per-key budgets and a whole-current-record fingerprint with equality to renewed measurements and checks against authored capsule, detail and digest ceilings. State the current role ceilings and keep frozen predecessor authentication separate; a source measurement or passing size predicate grants no authority to change a ceiling.",
+      "sources": [
+        {
+          "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+          "path": "mcp/tests/test_role_capsule_budgets.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_capsule_budgets.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8F0GMG",
+      "items": [
+        "sha256:bdfeaa554bae60284e5d80f14622f42ed4dd35f5a5df59d41feacd0a089bbc27"
+      ],
+      "reason": "Remove the obsolete inline ordinary-template loop or its docstring after the current guard composes derived measurement, membership and source checks; the replacement promise is recorded separately, and this deletion itself carries no surviving realization.",
+      "subject": "hunk:sha256:bdfeaa554bae60284e5d80f14622f42ed4dd35f5a5df59d41feacd0a089bbc27"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R08",
+          "packet": "requirements/BUG-R08-v1-a-changed-instruction-text-is-renewed-by-one-command.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "content": "sha256:d2a75a6fa3495076ab017d2f40163740068fbcf51b223849aafe55ce23e9b798",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ordinary_templates_have_measurements_and_no_detail_ceiling"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets_d694.py"
+          },
+          "before": "absent",
+          "id": "PRF-23ZW3F"
+        },
+        {
+          "after": {
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "content": "sha256:0e900cbac56698008fa166cc670908bf9ee525f0fed430c04221a15030cda7bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_yielded_capsule_has_a_budget_and_no_other_key_does"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "before": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:e7cd68fad4ff4ba3370ec190a8d10c6d351698ff2f7655c848db5f19b766ce6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_yielded_capsule_has_a_budget_and_no_other_key_does"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "id": "PRF-2SHTSX"
+        },
+        {
+          "after": {
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_capsule_exceeds_its_recorded_budget"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-645922"
+        },
+        {
+          "after": {
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "content": "sha256:d757898423c03a3b600f285fa3eaace18cb036ce932fdec07c8222062c12c9d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_ceiling_failures_name_size_ceiling_and_developer"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets_d694.py"
+          },
+          "before": "absent",
+          "id": "PRF-C9NX5K"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_capsule_exceeds_its_recorded_budget"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "id": "PRF-FWV5AA"
+        },
+        {
+          "after": {
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "content": "sha256:bb2fdb40a2ff1be0871c601ad921c74583904b1889bf8623905d999cd5e5c350",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_growth_within_a_ceiling_has_no_individual_budget"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets_d694.py"
+          },
+          "before": "absent",
+          "id": "PRF-QXSKEB"
+        },
+        {
+          "after": {
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:07ca95902c239f33e5e728a7c73b00de550c5c8c65fb22612b067afd50cbb674",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "before": "absent",
+          "id": "RLZ-353X7R"
+        },
+        {
+          "after": {
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        },
+        {
+          "after": {
+            "blob": "9c8ef29560a8fc288afbd9a5dffc588ce0278189",
+            "content": "sha256:1faa79160740ad7dda1d2a214f1c3fab8bb0aed820e234a8f1f3eee032b9a82b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measure"
+            },
+            "path": "scripts/instruction_renewal/budgets.py"
+          },
+          "before": "absent",
+          "id": "RLZ-T5N3RM"
+        },
+        {
+          "after": {
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_capsule_exceeds_its_recorded_budget"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "before": "absent",
+          "id": "RLZ-YAGMN2"
+        },
+        {
+          "after": {
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "content": "sha256:bb2fdb40a2ff1be0871c601ad921c74583904b1889bf8623905d999cd5e5c350",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_growth_within_a_ceiling_has_no_individual_budget"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets_d694.py"
+          },
+          "before": "absent",
+          "id": "RLZ-YWRGK4"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-8RCD6M",
+      "items": [
+        "sha256:101587e462a7c1c69160bf766ba125067c7d3f4c3518e0d649e66f5070ff13ea"
+      ],
+      "reason": "BUG-R08 rule5 removes individual budgets and current fingerprints, keeps independently recomputed measurements and shared ceilings, and preserves historical authentication without treating the renewable digest map as frozen. Evidence (L8-CURATION-INV-Y6GVZ7): mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py:22-170; mcp/tests/test_role_capsule_budgets_d694.py:176-239,301-385. M1 successor repair F03/F07: retire duplicate 3R559H but retain its four useful current source locations and three specific ceiling/growth/ordinary-template facets under this existing invariant. Remove contradictory PRF-FWV5AA, whose individual-budget and frozen-digest-map predicates are absent; correct same-test PRF-645922 remains unchanged. This attachment/removal repair leaves the surviving invariant meaning and original origin unchanged; retain all prior changed-row covers. c45 successor attachment repair: replace the wrapper-only current_budget_findings realization with a whole-file realization of this same current-budget checking unit, retaining all four targets and three specific proof facets. The source-level coverage now includes the subordinate view, membership, fresh source/measurement/ceiling and four-owner history checks already stated by this invariant; no statement, scope, original origin, authored ceiling or proof meaning changes. The prior candidate-only RLZ-0JMY62 is withdrawn by same-entry cleanup and the writer mints the full-file attachment ID; do not type that new ID or revision. Evidence (L8-M2-F03-retain-ceiling-evidence-on-Y6GVZ7): mcp/tests/test_role_capsule_budgets_d694.py::test_current_growth_within_a_ceiling_has_no_individual_budget; mcp/tests/test_role_capsule_budgets_d694.py::test_ordinary_templates_have_measurements_and_no_detail_ceiling; mcp/tests/test_role_capsule_budgets_d694.py::test_current_ceiling_failures_name_size_ceiling_and_developer",
+      "revision": 6,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-95DQYX",
+      "items": [
+        "sha256:fa81947e971b78da5b7d7af6c87c00e8a850bafea1f6f86ea1fddfe04a2ed5e9"
+      ],
+      "reason": "Rebind the collaboration-pointer captions to the current keyed-reference, method-classification and audience controls, including missing Worker and extra-audience failures. No native semantic rewrite is captured; the change renews support for the retained source assertions.",
+      "sources": [
+        {
+          "blob": "6322c06cce0cc35eda1ab66fbfa6def4cf1c8a9e",
+          "path": "mcp/tests/test_collaboration_reference_pointers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_collaboration_reference_pointers.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9675RD",
+      "items": [
+        "sha256:ba5085c9bca7c58b8434af00aa4172939013ebe6eb383f61d12e710fcadb0a63"
+      ],
+      "reason": "Add the first file card for the composed digest-map assertion support, covering source ranges and hashes, coverage, evidence associations, retirement records and audience unions. State that clause coverage shares the production coverage helper, so that facet is not an independent second algorithm.",
+      "sources": [
+        {
+          "blob": "0d5efb591aa757fa005f5465e6492741219af373",
+          "path": "mcp/test_support/agents_remember_test_support/testing/digest_map.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/digest_map.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9C9524",
+      "items": [
+        "sha256:ec01ee0434a3bff7606d05f352660b586e5fe4ee9eadee3ff0ea7e5bd8f9bbab"
+      ],
+      "reason": "Remove the renewable digest map from the frozen-owner test parameter population under BUG-R08. The touched test now authenticates exactly capsule-budgets-d694.json and capsule-budgets.json, not four files. Separately, capsule_budget_d695._assert_history retains four historical owner/hash pairs including the two helper snapshots; that four-owner check is not this test’s parameter population. The deleted digest-map parameter is not a current invariant realization.",
+      "subject": "hunk:sha256:ec01ee0434a3bff7606d05f352660b586e5fe4ee9eadee3ff0ea7e5bd8f9bbab"
+    },
+    {
+      "considered": [
+        "FAM-27AEW1"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-9P50PV",
+      "items": [],
+      "reason": "The member keeps its standalone obligation after FAM-27AEW1 is withdrawn: the family did not establish a joint guarantee needing every listed member. This repair assigns no replacement family and does not broaden the invariant's scope.",
+      "revision": 1,
+      "subject": "membership:INV-HN54VG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A48PT5",
+      "items": [
+        "sha256:dca6f5f48e788b394ced68405d2b23c24ea9b6a60dd451eb4ca6c5e1c508ae0e"
+      ],
+      "reason": "The retained affirmative-clause oracle keeps its role, operation and delivered-detail bindings. The F05 card repair also explains _memory_review_surface comparing shipped review-operation bytes with the checkout before using its Boundaries section, and the mismatch naming the shared instruction-renewal command. Identity uses the delivered memory-handover detail while other memory facets use the shipped review boundary. This updates the earlier reference-only row account to include the actual source-remedy description added in M2; it claims no fresh execution or change to the oracle contract.",
+      "sources": [
+        {
+          "blob": "ff8dc9229416c4132566abb6f7a2d203a1ae0022",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/capsule_wording.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AHR1ZW",
+      "items": [
+        "sha256:5177e91074a4d22fb676efabd3d73cdae0a418e419ba3ed501e13121d7e293ce"
+      ],
+      "reason": "Describe derivation only for classified Markdown references and compare their pointer-derived actions and roles with composed declarations. Record that ordinary references without a declared step skip that comparison and that nonempty rolesReason controls widening, instead of presenting every reference as an authored step declaration.",
+      "sources": [
+        {
+          "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
+          "path": "mcp/test_support/agents_remember_test_support/testing/manifest_step_derivation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/manifest_step_derivation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AK024Z",
+      "items": [
+        "sha256:6f6248d43db420259947efbf9b55e2438a1b2ed54d8d25faf7ae1dc4d7c4e699"
+      ],
+      "reason": "Remove the obsolete inline ordinary-template loop or its docstring after the current guard composes derived measurement, membership and source checks; the replacement promise is recorded separately, and this deletion itself carries no surviving realization.",
+      "subject": "hunk:sha256:6f6248d43db420259947efbf9b55e2438a1b2ed54d8d25faf7ae1dc4d7c4e699"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ANCYR6",
+      "items": [
+        "sha256:cabd1c7c7f0bddd01b040d343df202ee5371fe6eea6263d380eb40508e5bd580"
+      ],
+      "reason": "Narrow the wording oracle to declared messaging roles, handover templates and operation recipients: they name body/attach, keep evidence in named files, refer to the settings limit and avoid forbidden numeric wording. Bootstrap instead has a no-message own-chat branch; no folder marker is asserted. Update the matching caption and current message-step source extent while retaining role-aware direct-verdict and pointer/audience/action controls as source assertions, not an executed handover.",
+      "sources": [
+        {
+          "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
+          "path": "mcp/tests/test_role_message_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_message_wording.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-AQDYGW",
+      "items": [
+        "sha256:e8cca6caef5599ffc0f3f73181e0bcc2a019330bfd1e187d7c61bf6d871911ff"
+      ],
+      "reason": "Both catalog diffs add instruction-renewal suite registrations and retain the outside-scratch suite registrations. Preserve the enclosure scratch contract and renew its catalog support anchors.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ab510c23b4893307b6a00fd902e70fbd96730567",
+            "content": "sha256:631baa1d0eef91f0775cefab21ef17ec1dad1f2a4dc8e5a96cddef1705784630",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_required_detail_has_one_pointer_in_all_real_compiles"
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+          },
+          "before": {
+            "blob": "d5d959a74b2e006ebcda058c8a572a0951a5c257",
+            "content": "sha256:c1270d718f594693a9154c702726767ae2357adec2ec9e170f23b8256607b776",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_required_detail_has_one_pointer_in_all_36_real_compiles"
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+          },
+          "id": "PRF-9N9SH9"
+        },
+        {
+          "after": {
+            "blob": "5455262601dadd5c6ef505fa831571e8a86206c9",
+            "content": "sha256:a16f87a3683bba4a7d283832b8baa7c80b92b55fe9d9f71ce512a0c851bc9702",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_detail_references"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/details.py"
+          },
+          "before": {
+            "blob": "fc27398cbb49aa07209ebcbeed8e891bb97bd479",
+            "content": "sha256:f8d7230a52d517521dcf3f1dd66c62ac359408213856c85b01cd1f747513a5c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_detail_references"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/details.py"
+          },
+          "id": "RLZ-2F8QMG"
+        },
+        {
+          "after": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-APV7WA"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-B7KYH1",
+      "items": [
+        "sha256:6eefae645d352c7386f64a9794ca0b3ea9b5548a9819089914710393ac247511"
+      ],
+      "reason": "The required-detail test is renamed to remove a frozen compile count and still checks all declared role/operation pairs, exact detail bytes/read steps and action pointers. Reanchor the renamed proof and current compiler/manifest entries without changing meaning.",
+      "revision": 1,
+      "subject": "INV-MQ3K06"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-QF8NBD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-B8DFQY",
+      "items": [
+        "sha256:34233185e6dc738f3758593668c755d97b5bc12d8aab6434374933cc90878a70"
+      ],
+      "reason": "The manifest retains authored reference source paths while moving role/step projections into derived.references. Preserve the existing reference-layout/link-resolution obligation and reanchor its manifest realization.",
+      "revision": 1,
+      "subject": "INV-W6HBYY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B8E29R",
+      "items": [
+        "sha256:08fe8547a87d64045689435969a60ac38f30b85c0362731cc11f0f3fd044ce9d",
+        "sha256:092ae795ff0ab8113b1d5a131954533601146463fb776f64f533310e3177a4b0",
+        "sha256:676575df0602967b999a06d76f391f9c578e79d2f61faa54723887e45fa0e244",
+        "sha256:8ef2d271401f667bb196bc21106ea4bfde04a962efa4af2c1a4ff2649c3cf426",
+        "sha256:c2543a901002755d8f29e5d43590b07118eac69cbabdf85957f6dd9e65e0d752",
+        "sha256:e15cb50fcaf6ba0ff268ab568022903f34b670c1d14e6fb609b26979ca4f53c0",
+        "sha256:e9a45bea43982f6e3b4ddfaa3828ee93abff4103657d7d6979a91b30dac956b7"
+      ],
+      "reason": "Distinguish frozen d694 fingerprint/history checks from current renewable measurements and authored ceilings. Describe stale/orphan/missing measurements, source-identity and classification controls, and uncapped ordinary-template measurements, replacing removed patched-fingerprint and individual-current-budget claims.",
+      "sources": [
+        {
+          "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+          "path": "mcp/tests/test_role_capsule_budgets_d694.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_capsule_budgets_d694.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BJT98C",
+      "items": [
+        "sha256:e07a2743b5ed5724991be4424ff50041d22f74940f0948bace263b31c73d32a0"
+      ],
+      "reason": "Add the first digest-renewal test card for unchanged relocation versus changed, removed, replaced or duplicate passages, independent unit/evidence/place/clause selectors, uncovered prose and malformed authored maps. Preserve authored audiences and identify fixture definitions as assertions rather than an execution result.",
+      "sources": [
+        {
+          "blob": "8a9b4b212996417cd332a9a8b11f14640b5fe454",
+          "path": "mcp/tests/test_instruction_digest_renewal.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_instruction_digest_renewal.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BTY9WR",
+      "items": [
+        "sha256:26616b32a229a81f5cf6ff0059d604e359a3b3989f41fba1c9acbacc119097c9"
+      ],
+      "reason": "Add the first file card for the shared renewal-command and checkout-local import seam. Keep its responsibility to exposing the canonical remedy and selected-checkout tooling; it neither implements another planner nor independently enforces the whole renewal contract.",
+      "sources": [
+        {
+          "blob": "545b7f3d18bfb8f5186b4614ea23a67a72888106",
+          "path": "mcp/test_support/agents_remember_test_support/testing/instruction_renewal.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/instruction_renewal.py"
+    },
+    {
+      "considered": [
+        "FAM-27AEW1"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-BZQRB3",
+      "items": [],
+      "reason": "The member keeps its standalone obligation after FAM-27AEW1 is withdrawn: the family did not establish a joint guarantee needing every listed member. This repair assigns no replacement family and does not broaden the invariant's scope.",
+      "revision": 1,
+      "subject": "membership:INV-Q432XE"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CWK8KR",
+      "items": [
+        "sha256:460da8d29b374483daac9c546bc2d56754bae844ad846c4446b42927a8de5cb7"
+      ],
+      "reason": "Explain that frozen budget owners remain hash-authenticated while the renewable digest map has no frozen owner-hash check. Narrow the current budget path rule to exclude marked historical renewal sub-records, matching the owner's masking and existence checks.",
+      "sources": [
+        {
+          "blob": "870189f5459113cf50b9e6445dec96d05af548af",
+          "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D52M6M",
+      "items": [
+        "sha256:b4116932fd1c44a570282edd56af13ad0a2f567bc3aaa117df827a7e9d55457d"
+      ],
+      "reason": "Add the first digest.py card for unique exact-hash relocation and separate explicit selectors for changed or ambiguous unit, evidence, place and clause associations. Keep authored unit membership and audiences intact while explaining the computed current binding facts and the requirement that clauses stay within their digest place.",
+      "sources": [
+        {
+          "blob": "ae5955d3d7033a3675bb38ceb8d2610a45ddfdfe",
+          "path": "scripts/instruction_renewal/digest.py"
+        }
+      ],
+      "subject": "onboarding:scripts/instruction_renewal/digest.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R08",
+          "packet": "requirements/BUG-R08-v1-a-changed-instruction-text-is-renewed-by-one-command.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "1ce1daf838e477fa056e928ba17e4bd873899c6f",
+            "content": "sha256:e8e8bc7a055936697c4660a37f1202a70d09940aa1cd7da5df988250d19995ea",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/uv.lock"
+          },
+          "before": {
+            "blob": "969f0f5107c14b1509cdd055c0a668d69b70e72b",
+            "content": "sha256:7fcd52c59bd0e1297038b2249a008798d18e441e3b12f3dc2fdfedc2e9989c99",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/uv.lock"
+          },
+          "id": "RLZ-7M3P2R"
+        },
+        {
+          "after": {
+            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+            "content": "sha256:0efbc28abe7b47ede5f4ac5efadb6fb68a8eed9a9ebc503cf0901612a27dbb5a",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "before": {
+            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+            "content": "sha256:abebe6fa8e28401a2c1fc045c15849801f75107416a9bb542dd54cb47cb3b6d6",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "id": "RLZ-A4TZZ0"
+        },
+        {
+          "after": {
+            "blob": "6c35df665ffac7bf152c3badf993d303ed12c451",
+            "content": "sha256:5cf8c5695ef7f0adabe7518965c8252699c2b9724d211cb784f8ae187a99c7c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "before": {
+            "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
+            "content": "sha256:1a7e644a79e3469eee386e2e821678cf32a0cc7aed2ce614059390486555e8bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "id": "RLZ-YGKGJR"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-DAR0E3",
+      "items": [],
+      "reason": "Manager ruling M439 admits bounded memory repair after the Architect's3.0.2 release synchronization. Commit993e5d8a2b54cbd1432b901bc7b6a4630226bebd changes only the four release identities from3.0.1to3.0.2; code candidatea22c7df6c018aab4895457381d8a83779d5de69c holds those values. Update this record's literal current version to3.0.2 and re-anchor its existing realization IDs at that code, preserving original origin, conditions, exclusions, admission and remaining scope. BUG-R08 rule8 keeps the task's affected documentation current; this row attributes the release-value authority to M439 and that release commit, not to a new Worker implementation or a test run. Historical origin run mentions remain historical: the four files named by BQFZCR resolve but none has an assertion of the three-carrier identity or resolver selection, so no unsupported proof facet is created.",
+      "revision": 3,
+      "subject": "INV-BQFZCR"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-DSCZDJ",
+      "items": [
+        "sha256:c3db551bac5371856210bad8695c5c052b56a4844a98d42d93a35ea198fad274"
+      ],
+      "reason": "Reconfirm mcp/src/agents_remember/package_data/runtime/docs/tool-details.md at the frozen L8 source tree after checking every retained support and the approved renewal change. The packaged tool-details document remains byte-identical to its canonical source and consistent with the unchanged installation contract; the experiment capability probe changes only its instruction-renewal remedy.",
+      "revision": 9,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+            "content": "sha256:f34a6589281412fa776c471503d2f517725209ecfc557b0328cb730809f3539f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manifest_steps_name_the_pointer_derived_actions"
+            },
+            "path": "mcp/tests/test_l84_r1_05_wording_pin.py"
+          },
+          "before": {
+            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "content": "sha256:4fd1895a61e63d236f3dc7d051223afef1875a3c6a45e668549657c3edb18c47",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manifest_steps_name_the_pointer_derived_actions"
+            },
+            "path": "mcp/tests/test_l84_r1_05_wording_pin.py"
+          },
+          "id": "PRF-846ZFA"
+        },
+        {
+          "after": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-76VDXB"
+        },
+        {
+          "after": {
+            "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
+            "content": "sha256:17e7f8823465ac02fad70742298ed6f4d9b5b35973bb908a7d425bbb1c5adb03",
+            "locator": {
+              "kind": "symbol",
+              "name": "manifest_mismatches"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/manifest_step_derivation.py"
+          },
+          "before": {
+            "blob": "c1fa2c3768290b95d032449df5f094b9ada58ee8",
+            "content": "sha256:62e7448b7643774adb11250dfe52a60518074ef7016c945540668d67463cf7ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "manifest_mismatches"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/manifest_step_derivation.py"
+          },
+          "id": "RLZ-E7KT1Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-E2V96V",
+      "items": [
+        "sha256:cb21bd1b92dd77fc82e823798fe02b5066d851c1fba6c1c749f31b490d1fe28a"
+      ],
+      "reason": "The manifest stores derived steps separately, while the test composes them and manifest_mismatches still compares every declared step with pointer-derived actions. Preserve the existing rule and reanchor its three entries.",
+      "revision": 1,
+      "subject": "INV-HJ5A68"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EGMP9E",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Update current lane membership from 785 to 788 modules, including 648 unit-regression members, while retaining the other lane counts and the membership-versus-invocation distinction. Replace inspected addition/repair stories and the earlier thirteen-canvas epoch with current sixteen-canvas membership and separately preserve their history; catalog selection is not a passing run.",
+      "sources": [
+        {
+          "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EM2Q6S",
+      "items": [
+        "sha256:705ac5488e4b03465e09d8bb014a1988d6d1ddd2001e0b3befe618e424ff6291"
+      ],
+      "reason": "Remove imports and local URI/sentence constants after pointer parsing moves to pointer_sentences and authored policy loading; these deleted scaffolding lines carry no separate invariant.",
+      "subject": "hunk:sha256:705ac5488e4b03465e09d8bb014a1988d6d1ddd2001e0b3befe618e424ff6291"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EV5216",
+      "items": [
+        "sha256:27ba5ace821667a672406f0033a4b6c213084a5ec87fa94d40746ef7a3e2d0fc"
+      ],
+      "reason": "Both complete catalog diffs contain additions of three instruction-renewal suites only, with no deleted registrations. Preserve the catalog-union obligation and reanchor its two catalog realizations.",
+      "revision": 2,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F27K39",
+      "items": [
+        "sha256:31b83c1bc84abed23dd033993a10b64a3689dc46d70b812ff634c112922cf71b"
+      ],
+      "reason": "Add the first budgets.py card for current corpus populations, measurements, source identities and compiler revisions, with growth checked against authored capsule/detail/digest ceilings. Explain that measured item sizes and ordinary-template measurements are facts, not per-item limits or approval.",
+      "sources": [
+        {
+          "blob": "9c8ef29560a8fc288afbd9a5dffc588ce0278189",
+          "path": "scripts/instruction_renewal/budgets.py"
+        }
+      ],
+      "subject": "onboarding:scripts/instruction_renewal/budgets.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F3JDFF",
+      "items": [
+        "sha256:f7b7dcb60651d9783f89231c0b496f8eee3486146f49ce994896489440979a61"
+      ],
+      "reason": "Add the first pointers.py card for checking authored identities before matching current sentences by held wording, explicit binding or a single residual choice. Explain ambiguity as required input and generated wording as renewable facts, keeping admission and routing exceptions with authored policy.",
+      "sources": [
+        {
+          "blob": "18e50fd4ff3c1e98889fc82222cab2819f37b68d",
+          "path": "scripts/instruction_renewal/pointers.py"
+        }
+      ],
+      "subject": "onboarding:scripts/instruction_renewal/pointers.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 3
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-FK80Q3",
+      "items": [
+        "sha256:3099a4d2a7a8bac2fbc7eb643f656c3f31e6bc113252753afa5ddd4300f7e9a2"
+      ],
+      "reason": "Two different surface obligations remain conditional on their own subjects. BUG-R08 changes canonical/package instruction facts, not dashboard launch choices. Existing no-forced-other-surface qualification remains essential.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FSVEJV",
+      "items": [
+        "sha256:e4e241a31e4f57ff72714bb80052d9d4ccd8161cae128429da6f0537b6b371b3"
+      ],
+      "reason": "The installer capability refusal now directs the reader from the source checkout to mcp/.venv/bin/python scripts/renew-instructions.py; it no longer prescribes the pair scripts/sync-skills.py and scripts/sync-runtime.py. Refresh the card’s remedy account and canonical-corpus-anchor citation while retaining the capability explanation and the true installer-removal claim with _capsule_cutover support. This describes the inspected refusal text, not a newly executed installation.",
+      "sources": [
+        {
+          "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
+          "path": "mcp/src/agents_remember/install/experiment.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/install/experiment.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R08",
+          "packet": "requirements/BUG-R08-v1-a-changed-instruction-text-is-renewed-by-one-command.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "content": "sha256:71d5595ca0891f99cb6e0083d9c4e699f1a05e4791dcae2b40ea98c40795ee78",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d695_binds_the_actual_current_population"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets_d694.py"
+          },
+          "id": "PRF-GFQEM0"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_capsule_exceeds_its_recorded_budget"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "id": "PRF-NVWQQR"
+        },
+        {
+          "after": {
+            "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+            "content": "sha256:5575dc9c8e923b69658ce338eb5a8aaac3b3132b05f16927f97ca0ce7f653738",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan"
+            },
+            "path": "scripts/instruction_renewal/plan.py"
+          },
+          "before": "absent",
+          "id": "RLZ-2DBEKE"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
+            "content": "sha256:5d6d61a1a65ca86917854a6b8387fb370367e6648501eb5b2501f9913d774b88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RECORD_FINGERPRINT"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "id": "RLZ-NZH4BP"
+        },
+        {
+          "after": {
+            "blob": "9c8ef29560a8fc288afbd9a5dffc588ce0278189",
+            "content": "sha256:e25d70c5728ef3f92cdb04889c7237446a7b687c88518463e336c859927717f7",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "scripts/instruction_renewal/budgets.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PDRP44"
+        },
+        {
+          "after": {
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
+            "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        },
+        {
+          "after": {
+            "blob": "9ae084018f62639288929163ee07cdae75cf75a2",
+            "content": "sha256:480ed016769f3a4c08b3f49e04394b85878b0b38c4ffb0e43c8b9d1de56076bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "replace_derived"
+            },
+            "path": "scripts/instruction_renewal/documents.py"
+          },
+          "before": "absent",
+          "id": "RLZ-SQKD9X"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-G08WZK",
+      "items": [
+        "sha256:8f54801b271d04db9eb7a1d554b62daeb53be39928a08b4e4d0d9dca24c622a6"
+      ],
+      "reason": "The former pinned-fingerprint realization is removed; current authority is the authored/derived boundary, and D822 explicitly changes four authored ceilings outside routine derived renewal. Evidence (L8-CURATION-INV-4HZG3V): scripts/instruction_renewal/budgets.py:89-239; scripts/instruction_renewal/documents.py:9-55; mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py:22-77; scripts/instruction_renewal/plan.py:103-105. For sealed F07.3 remove GFQEM0: test_d695_binds_the_actual_current_population parses the current record and checks fresh capsule/detail/digest measurements through current_d695_findings, without a whole-current-record fingerprint or a renewal invocation. A narrower description of that guard is supplied as evidence, not installed as proof of this invariant's renewal/ceiling-immutability promise. Preserve the record meaning, existing origin and every prior changed-row cover; the d694 sidecar then has no proof of this invariant, without claiming corpus-wide proof absence. Under Manager ruling M429, also remove encountered PRF-NVWQQR beyond the sealed F01–F14 list. Its original entry provenance is RSM-R01-A9 / 261112-RSM-L1. BUG-R08 rule5 replaced individual capsule budgets with shared ceilings, and test_no_capsule_exceeds_its_recorded_budget at mcp/tests/test_role_capsule_budgets.py:469–493 invokes no renewal. The facet therefore cannot prove the invariant’s renewal/ceiling-preservation obligation. The test and the valid same-test INV-Y6GVZ7 facet PRF-645922 remain unchanged; the Reviewer's round is not reset.",
+      "revision": 2,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G4RKS6",
+      "items": [
+        "sha256:e88b2ccd5ae77ea2d0b8db0a135b0908a82111c6a7e4d54e3b00f3312fe46a27"
+      ],
+      "reason": "Rebind the install-test references for startup-file retirement, selected-install rollback, preserved private settings and exact catalog consumers to the candidate extents. The captured plan retains their existing explanations; the test source describes installer assertions and does not establish a new successful installation.",
+      "sources": [
+        {
+          "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
+          "path": "mcp/tests/test_capsule_experiment_install.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_capsule_experiment_install.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GDXX0E",
+      "items": [
+        "sha256:9bbb442edbac8ec4d21c10266ae939268a16265353c05f7fd264db2adf4bb98a"
+      ],
+      "reason": "Add the first documents.py card for replacing complete top-level generated JSON members while preserving surrounding authored document bytes. Keep byte production separate from publication timing, which remains the renewal planner's responsibility.",
+      "sources": [
+        {
+          "blob": "9ae084018f62639288929163ee07cdae75cf75a2",
+          "path": "scripts/instruction_renewal/documents.py"
+        }
+      ],
+      "subject": "onboarding:scripts/instruction_renewal/documents.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R08",
+          "packet": "requirements/BUG-R08-v1-a-changed-instruction-text-is-renewed-by-one-command.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "e01c0011e7abe3ff62dd2d91165f2f07908174c6",
+            "content": "sha256:dbcfaa17db59b99eeea9b3155ac5865b6463ca29ae9945ce311c48ed150354c8",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "README.md"
+          },
+          "before": {
+            "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
+            "content": "sha256:2ccff027a2df3ffdd46d901a4ceb484595aba7f71c54e7dfc62b5824410b7b39",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "README.md"
+          },
+          "id": "RLZ-5R1WWT"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-GN1PJT",
+      "items": [],
+      "reason": "Manager ruling M439 admits bounded memory repair after the Architect's3.0.2 release synchronization. Commit993e5d8a2b54cbd1432b901bc7b6a4630226bebd changes only the four release identities from3.0.1to3.0.2; code candidatea22c7df6c018aab4895457381d8a83779d5de69c holds those values. Update this record's literal current version to3.0.2 and re-anchor its existing realization IDs at that code, preserving original origin, conditions, exclusions, admission and remaining scope. BUG-R08 rule8 keeps the task's affected documentation current; this row attributes the release-value authority to M439 and that release commit, not to a new Worker implementation or a test run. Historical origin run mentions remain historical: the four files named by BQFZCR resolve but none has an assertion of the three-carrier identity or resolver selection, so no unsupported proof facet is created.",
+      "revision": 3,
+      "subject": "INV-MG3HK1"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-GQ39HV",
+      "items": [
+        "sha256:bbb582e8aee3ba39c135063703f401e61de67e9f262dd03162f5e32957e6b47b",
+        "sha256:cf7e775665c0f6a1505fd978d194c44bc11edc8388f1540a92af1f7d6e9b62e8"
+      ],
+      "reason": "Reconfirm AGENTS.md at the frozen L8 source tree after checking every retained support and the approved renewal change. The workspace instructions name the complete instruction-renewal command and canonical sources while the planner retains the existing declared skill-copy owner.",
+      "revision": 4,
+      "subject": "DPD-Y454FF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HH48SQ",
+      "items": [
+        "sha256:17a3f6ea4317fab048a0a2ff53926f66b89580c9a8e142782b17ca99b00c79a6"
+      ],
+      "reason": "Replace root-instruction guidance to run sync-skills directly with the complete renewal command after canonical skill edits. Keep sync-skills as the existing package projection owner, so the explanation names the new public workflow without inventing a second copy inventory.",
+      "sources": [
+        {
+          "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+          "path": "scripts/sync-skills.py"
+        }
+      ],
+      "subject": "onboarding:scripts/sync-skills.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HMAWD4",
+      "items": [
+        "sha256:95ddf72a0728eabc2d265b79466ee2def03eec43296f4fb8b3e629b9ac35f55a"
+      ],
+      "reason": "Replace the authored-only detail-parser account with parse_detail_declarations calling compose_manifest before selecting references whose step_detail is exactly true. Keep the separate claim that compilation retains the exact admitted bytes for selected placeholders.",
+      "sources": [
+        {
+          "blob": "5455262601dadd5c6ef505fa831571e8a86206c9",
+          "path": "mcp/src/agents_remember/models/role_capsules/details.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/role_capsules/details.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HXHKG3",
+      "items": [
+        "sha256:35f2e7a5a89af0201550e5b375cdb360490e3832b2f74999c97df98fb50871df",
+        "sha256:acd4d8b1b681a9f159dae80adb0133c1ed2a581d74823609f081ae861f14dba9"
+      ],
+      "reason": "Update the real-corpus capsule-edge account to read the joined authored/derived digest map for range hashes and exact non-heading coverage. Retain source/role/step/action and inherited-audience negative controls, but describe them as test assertions rather than a newly observed compilation or execution.",
+      "sources": [
+        {
+          "blob": "c041b6e75549d54c259211088ab20dd5419ce55e",
+          "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_capsule_manifest_edges.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JB74K9",
+      "items": [
+        "sha256:5f093723d5c1a2647547a9b42a5bcfdb800435a219aa239a61d6821a91172627"
+      ],
+      "reason": "Add the first plan.py card for computing manifest, digest, pointer and budget facts before collecting replacements, with package copies built from prospective canonical bytes through the existing copy owner. Describe ordered publication and attempted reverse restoration after OSError accurately; restoration can fail, so no atomic-filesystem guarantee is introduced.",
+      "sources": [
+        {
+          "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+          "path": "scripts/instruction_renewal/plan.py"
+        }
+      ],
+      "subject": "onboarding:scripts/instruction_renewal/plan.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:39ebec63b0b851c8710bbbf714e7764228c3ae8779e69ee4095dc25ea77b22e6",
+            "locator": {
+              "end": 1183,
+              "kind": "line_range",
+              "start": 1177
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:ffb8ea787bca682e5dbc93e01eca948f5bf9da667ed9d9e73d7d0df6e73f03de",
+            "locator": {
+              "end": 1070,
+              "kind": "line_range",
+              "start": 1060
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-0XJWN1"
+        },
+        {
+          "after": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:144fed9e4d7edfc82d6a386739dd16a00e1e5fd3625678af5a06f2f3cffb19ac",
+            "locator": {
+              "end": 896,
+              "kind": "line_range",
+              "start": 884
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:94bb07f87db8098b4a5530fae5c134513d1b2cabb5e0ad1a927ac13d1d42c914",
+            "locator": {
+              "end": 611,
+              "kind": "line_range",
+              "start": 596
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-TTD2BQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JK15VT",
+      "items": [
+        "sha256:49993909ddc108a371527935d772d78ffa59d8784fd5705f3ce7e857141c6d2a"
+      ],
+      "reason": "Serving-build and refused-write read steps moved to derived.references. Reanchor their current role/step declarations; the same-tool/input-class recovery boundary and writer authority remain unchanged.",
+      "revision": 4,
+      "subject": "INV-945YZ4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JM2XB5",
+      "items": [
+        "sha256:65c6b6450bf031c2517324e821972f21e1c1d8b502f781cc4cbf78a84eafe744",
+        "sha256:fd69b20e4870de12d6a73459e31a703dd5b41f1b63b6f125aad3d7180e17fe58"
+      ],
+      "reason": "Describe the D656 operation/stage hash tables as retained historical snapshots, and describe current audience tests as source-section comparisons with source-derived detail-link counts. This removes the false implication that the retained D656/v13 hash chain supplies the current audience comparison. Preserve the retired ORDINARY_DETAIL_LINK_COUNTS table’s base origin and replacement; the old fixed table does not regain current comparison authority.",
+      "sources": [
+        {
+          "blob": "70eba217c5aa6982ebdb9302ca2e1e9cca4a9077",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:ba5fc2d42df8d4190fc0b30461d6ea074a85e5eb8eada5acc210033391b9a59d",
+            "locator": {
+              "end": 877,
+              "kind": "line_range",
+              "start": 872
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:2eb6b97a6caa97b0476613fc8c5359c925a0d4f9c6fe12130ea4523bd99e02ab",
+            "locator": {
+              "end": 585,
+              "kind": "line_range",
+              "start": 576
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-60QKQ2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KCWXYH",
+      "items": [
+        "sha256:48c38ee354801a449e8d5a647aba6bf7deb97c1e9e9eb8e03de603b6ab602282"
+      ],
+      "reason": "Reference steps moved to derived.references; the card/history detail still names the Curator and requires reading before writing card history. Reanchor to that current declaration without changing the history-disposition rule.",
+      "revision": 1,
+      "subject": "INV-1YSMF5"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-13QTT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-4XD2ZF",
+          "revision": 3
+        },
+        {
+          "id": "INV-DE9ZZF",
+          "revision": 3
+        },
+        {
+          "id": "INV-QR6DSA",
+          "revision": 2
+        },
+        {
+          "id": "INV-TJADR1",
+          "revision": 4
+        }
+      ],
+      "id": "ROW-KND20S",
+      "items": [
+        "sha256:2f4177c8c713f770725a384e478c9bb55e4ee4283863cb67cd308c553197e580"
+      ],
+      "reason": "Repair of the M1 account in ROW-KND20S for F11.2 and F01. The knowledge-state/named-next-step guarantee now applies under TJADR1's own initialization-result conditions instead of only inside the optional-onboarding sentence; it adds no new obligation to that member. The family text's named-next-step limb is therefore stronger than its accidentally conditional revision 4 wording. Replace the retired converted-baseline-handoff justification with the current five contributions. Preserve membership and original origin; add the two narrow current Curator-rule/template directories for 4XD2ZF's four declarative source realizations, retaining the other four routes. No Bootstrap authoring authority, mandatory onboarding prerequisite or new foundation-completion rule is introduced.",
+      "revision": 4,
+      "subject": "FAM-VDDPC6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+            "content": "sha256:2f66f70f044ff6639277036794b0c581c92d2d5ddd6757bb54d90e6d022d6a4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_core_unit_sources_do_not_link_their_own_digest_place"
+            },
+            "path": "mcp/tests/test_l84_r1_05_wording_pin.py"
+          },
+          "before": {
+            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "content": "sha256:8c702fce9fcc0cea37e7295243b23263fb4f49abc5d8fdde2087ff1d99c76592",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_core_unit_sources_do_not_link_their_own_digest_place"
+            },
+            "path": "mcp/tests/test_l84_r1_05_wording_pin.py"
+          },
+          "id": "PRF-9MFJFR"
+        },
+        {
+          "after": {
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+            "content": "sha256:2f66f70f044ff6639277036794b0c581c92d2d5ddd6757bb54d90e6d022d6a4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_core_unit_sources_do_not_link_their_own_digest_place"
+            },
+            "path": "mcp/tests/test_l84_r1_05_wording_pin.py"
+          },
+          "before": {
+            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "content": "sha256:8c702fce9fcc0cea37e7295243b23263fb4f49abc5d8fdde2087ff1d99c76592",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_core_unit_sources_do_not_link_their_own_digest_place"
+            },
+            "path": "mcp/tests/test_l84_r1_05_wording_pin.py"
+          },
+          "id": "RLZ-JX6B2J"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KQ3Y96",
+      "items": [
+        "sha256:26b5f45133c0c24454924534a04288bab2df8126dc544a93473c21b02313b529"
+      ],
+      "reason": "The self-link test now loads the composed digest map and still rejects a core unit linking its own digest place; preserve meaning and reanchor both entries.",
+      "revision": 1,
+      "subject": "INV-0V8R02"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MJZXK8",
+      "items": [
+        "sha256:ba0ba3433d3a6aa857b19912a8867a967df113d31e5cd9d814a4da96fe22e6d4"
+      ],
+      "reason": "Add the first file card for capsule_audience_structure.py: it independently projects common and addressed source sections, rejects markers and foreign passages, and counts links outside fences. The explanation limits these helpers to structural comparisons rather than semantic equivalence of arbitrary prose.",
+      "sources": [
+        {
+          "blob": "aeb7c7037687f733d364c4f0bc9540862dd74b26",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_structure.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/capsule_audience_structure.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+            "content": "sha256:16d9efc53a9c7564f6b33fd297c172f12fa6c4ea9371b93c674f45f54c891fcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_targets"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "before": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_targets"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "id": "RLZ-4DDM1B"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-NDB8RA",
+      "items": [
+        "sha256:65347134c9286605ecb5cd4139ee0aa79cec99480a47ab0acb8063778383aab8"
+      ],
+      "reason": "check_targets still compares declared target payloads and owner-derived profile bytes; only its repair command changes to the one renewal command. Preserve the synchronization contract and reanchor its enforcement entry.",
+      "revision": 1,
+      "subject": "INV-5X4C74"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NDJRM3",
+      "items": [
+        "sha256:82f2ec1c8fd11ffbd3d82209d5559fbcc456ac24d26360bf66d094087755a24d"
+      ],
+      "reason": "Replace the live-procedure and Bootstrap-delivery test account with the two current local tests: synthetic knowledge-ingest command parsing, including unknown-option/subcommand refusals, and distinct document-bound versus named-absence Curator compilation identities. Retain delivered_foundation and foundation_delivery_controls as helpers consumed by the sibling correction-guidance test with FOUNDATION_AUTHORITY_CLAUSES; served-body and printed-invocation helpers do not prove that the live procedure, setup prose or Bootstrap state delivery is inspected by these local tests. These definitions start no seat and establish no executed foundation or admission verdict.",
+      "sources": [
+        {
+          "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
+          "path": "mcp/tests/test_knowledge_bootstrap_procedure.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_bootstrap_procedure.py"
+    },
+    {
+      "considered": [
+        "FAM-27AEW1"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-P8SDX9",
+      "items": [],
+      "reason": "The member keeps its standalone obligation after FAM-27AEW1 is withdrawn: the family did not establish a joint guarantee needing every listed member. This repair assigns no replacement family and does not broaden the invariant's scope.",
+      "revision": 1,
+      "subject": "membership:INV-DHKR4G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PPBJK0",
+      "items": [
+        "sha256:93f6208134427ee833303525203bc57bef55e0e00a9c9d43ce5324931e86038f"
+      ],
+      "reason": "Add the first authored pointer-policy card for stable action admissions and routing/grouping exceptions. Explain that current sentence text belongs to the derived carrier, so renewing wording cannot create another admitted action or exception.",
+      "sources": [
+        {
+          "blob": "d2947b7bf719da922245ced8a720e61ad93bf8f6",
+          "path": "skills/l-01-agent-lifecycles/pointer-actions.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/pointer-actions.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QDGF7Z",
+      "items": [
+        "sha256:011353eda8f185af1933cf291bd09713f74ab8c0ddb1e4ca96b20bfdcc30f5a6"
+      ],
+      "reason": "Add the first card for reusable pointer-renewal controls: reordering and wording changes preserve stable identities, while ambiguous or invalid bindings require explicit choices or fail. Describe isolated-fixture assertions and preserved authored policy bytes without claiming those cases ran.",
+      "sources": [
+        {
+          "blob": "d1fc72aa5dfd98df41d32fbb7a64790f09a85205",
+          "path": "mcp/test_support/agents_remember_test_support/testing/pointer_renewal_cases.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/pointer_renewal_cases.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QMVYS5",
+      "items": [
+        "sha256:2b4b64e0417b31da2b1e7eae01d2c4b9e0436dc48b6fd620912eadeb173f635f"
+      ],
+      "reason": "Refresh the retained capsule-delivery references for one real digest in native first messages and declared digest-home audiences without map injection. The captured edit changes support bindings, not the card's explanation or an observed delivery result.",
+      "sources": [
+        {
+          "blob": "33bb8815ae692c8505fb84168e27dfe1672a24cb",
+          "path": "mcp/tests/test_l84_capsule_delivery_proofs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_l84_capsule_delivery_proofs.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R23P8Q",
+      "items": [
+        "sha256:1ed177f3380d4ec85c1903ff5b0f347155c5f7bd426b32968e7ede7d82875e80"
+      ],
+      "reason": "The source lies in a hidden directory, where the product counts no card as knowledge. This leaf authored and then withdrew its native hook card under the Architect’s route(d), issue579; there was no base card to remove. The source hunk is a meaningful one-line command rename from scripts/sync-skills.py to scripts/renew-instructions.py under BUG-R08@v1 rule8, not an absence of knowledge change. INV-DHKR4G records the single-remedy obligation; CONTRIBUTING.md, AGENTS.md, docs/release-checklist.md and docs/reference/skills.md name the command. The other four confirmed dependent documents do not claim to carry that command. RLZ-TKDWW5 records a whole-file realization in the retained writer-authored hidden sidecar, whose locator is file, not a judged line anchor. That sidecar is outside the index, and this row claims no judgment or currentness check of its realization; the invariant’s indexed-sidecar realizations provide separate coverage. no_impact describes the unavailable counted card only, following the Architect’s ruling and L188/L61 precedents.",
+      "sources": [
+        {
+          "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+          "path": ".githooks/_gate.sh"
+        }
+      ],
+      "subject": "onboarding:.githooks/_gate.sh"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R54VJH",
+      "items": [
+        "sha256:fa5a02ef09eefb0278862574d3591b86e89cc6e174e349782142aa5431a72db2"
+      ],
+      "reason": "Keep the MCP route overview unchanged: the changed installer capability probe remains in its existing installation route. The packaged budget, composition and digest carriers are declared copies of canonical instruction sources; the two newly packaged pointer-actions.json and pointer-actions-derived.json likewise sit under the existing package_data/runtime/skills route and add no new MCP route or consumer-facing route obligation. The canonical renewal facts and command are explained at their meaning-owning skills/scripts routes, so these package copies require no route-level content replacement here.",
+      "sources": [
+        {
+          "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
+          "path": "mcp/src/agents_remember/install/experiment.py"
+        },
+        {
+          "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+        },
+        {
+          "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "d19dfd1456ae1eda38974eadad20a8041393efbf",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+        },
+        {
+          "blob": "d2947b7bf719da922245ced8a720e61ad93bf8f6",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/pointer-actions.json"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R9T4KG",
+      "items": [
+        "sha256:01cb5e426c215ea49508ef474b6972398871fbb00cf7a0db2d87432a09acd35f"
+      ],
+      "reason": "Replace direct skill-sync guidance with the complete renewal command for facts and declared copies, retaining sync-skills.py as the existing projection-helper owner and convergence tests as drift assertions. Refresh the body locators to RenameInterruption at line 257, BoundaryPropagationTests at 594 and BoundaryClause at 103 so the prose points to the current source; no test execution is inferred.",
+      "sources": [
+        {
+          "blob": "77182445e306259fb66766c651d58fbb49320a7d",
+          "path": "mcp/tests/test_sync_scripts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_sync_scripts.py"
+    },
+    {
+      "considered": [
+        "FAM-27AEW1"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-RFQ5GZ",
+      "items": [],
+      "reason": "The member keeps its standalone obligation after FAM-27AEW1 is withdrawn: the family did not establish a joint guarantee needing every listed member. This repair assigns no replacement family and does not broaden the invariant's scope.",
+      "revision": 1,
+      "subject": "membership:INV-EHJV8E"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RGQC57",
+      "items": [
+        "sha256:d651581d7b0cb427ad227e4fdf3a7048dbf55b17c0b57ec18e332341778cbcbd"
+      ],
+      "reason": "Add the first derived-pointer carrier card, explaining how each generated row connects an authored action identity to current source, fragment and wording facts. Keep renewable locations and sentences separate from policy admission and exceptional grouping decisions.",
+      "sources": [
+        {
+          "blob": "d19dfd1456ae1eda38974eadad20a8041393efbf",
+          "path": "skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RR0566",
+      "items": [
+        "sha256:ffc35aa9bedacf6bf8de950910092cf71f6e90e68f7bcff670a92c6467619a7b"
+      ],
+      "reason": "Replace the map's current frozen-binding account with a composed authored/derived view: stable unit identities and semantic membership retain provenance while renewal supplies current ranges, hashes, evidence, places and clauses. Explain exact-window relocation and association-specific explicit binding, preserving retirement records and the prohibition on reused removed identities.",
+      "sources": [
+        {
+          "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/digest-map.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SSV1WC",
+      "items": [
+        "sha256:e4908bd8030fa989913f8067bfcaabb8a4b6ebe26bff3bd264a8f420e8796d47"
+      ],
+      "reason": "Update the testing route to distinguish retained fixture hash/inverse records from the current audience tests' independently selected source sections and source-derived detail-link counts. This keeps the route aligned with the changed audience-test mechanism without treating historical seals as current proof.",
+      "sources": [
+        {
+          "blob": "70eba217c5aa6982ebdb9302ca2e1e9cca4a9077",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+        },
+        {
+          "blob": "aeb7c7037687f733d364c4f0bc9540862dd74b26",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_structure.py"
+        },
+        {
+          "blob": "80d5ee992b1ce658b56a69e67ae7a4a816088ab1",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py"
+        },
+        {
+          "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+        },
+        {
+          "blob": "ff8dc9229416c4132566abb6f7a2d203a1ae0022",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_wording.py"
+        },
+        {
+          "blob": "ac85e63eaab64486db9bb5293bcca28ab15ecba7",
+          "path": "mcp/test_support/agents_remember_test_support/testing/curator_contracts.py"
+        },
+        {
+          "blob": "0d5efb591aa757fa005f5465e6492741219af373",
+          "path": "mcp/test_support/agents_remember_test_support/testing/digest_map.py"
+        },
+        {
+          "blob": "870189f5459113cf50b9e6445dec96d05af548af",
+          "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+        },
+        {
+          "blob": "545b7f3d18bfb8f5186b4614ea23a67a72888106",
+          "path": "mcp/test_support/agents_remember_test_support/testing/instruction_renewal.py"
+        },
+        {
+          "blob": "7e10ba05dabcb409c83e4f8a0ffd72bfd7ff0af0",
+          "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py"
+        },
+        {
+          "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
+          "path": "mcp/test_support/agents_remember_test_support/testing/manifest_step_derivation.py"
+        },
+        {
+          "blob": "424522943d18e0ab43fe06f01ac7cdcb1916145e",
+          "path": "mcp/test_support/agents_remember_test_support/testing/pointer_policy.py"
+        },
+        {
+          "blob": "d1fc72aa5dfd98df41d32fbb7a64790f09a85205",
+          "path": "mcp/test_support/agents_remember_test_support/testing/pointer_renewal_cases.py"
+        },
+        {
+          "blob": "c78ff878e678179362ad2f37ae026f34e99c989b",
+          "path": "mcp/test_support/agents_remember_test_support/testing/pointer_sentences.py"
+        },
+        {
+          "blob": "7a06f5d32b76b80864796270f0d808cb96004fb5",
+          "path": "mcp/test_support/agents_remember_test_support/testing/pointer_uniqueness.py"
+        },
+        {
+          "blob": "f3f5b9c86eef0e07db96a67ffa66b1d571facc4c",
+          "path": "mcp/test_support/agents_remember_test_support/testing/task_document_instruction_contracts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T9XCFF",
+      "items": [
+        "sha256:b7d82d4f4c87b8af20a388b2b73736d6684b7755a1ec97888a3c3f1acd94c753"
+      ],
+      "reason": "Replace the whole-current-record fingerprint and individual-budget account with current measurements, source identities, disjoint detail/template populations and authored ceilings. Keep frozen registry/predecessor authentication separate; _assert_history no longer authenticates the renewable digest map or equates its maximum with the digest ceiling.",
+      "sources": [
+        {
+          "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TRZ55F",
+      "items": [
+        "sha256:0a16d3d0844ff28e5dd57b9c90629781f0a84ad7d0e7b3bc7b5889391807cc8f"
+      ],
+      "reason": "Rebind the retained wording-test captions to current Investigator authority boundaries, compiled return/await channels and the router/eight-role/nine-operation census. The captured plan explicitly leaves this card's semantic account unchanged; definitions of those assertions are not a fresh run.",
+      "sources": [
+        {
+          "blob": "29a710160e944b5283dd821dc0052ddeafd84d79",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording.py"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "0545cf2a711cbe4fe44f7130c9135af37c408e14",
+            "content": "sha256:d67b41f7f3c39e08a3de9d4771621c00ecf842d54d9ea1167146f7485dd28eb3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "id": "PRF-CE9T0C"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "0545cf2a711cbe4fe44f7130c9135af37c408e14",
+            "content": "sha256:d67b41f7f3c39e08a3de9d4771621c00ecf842d54d9ea1167146f7485dd28eb3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "id": "PRF-XZYTAM"
+        },
+        {
+          "after": {
+            "blob": "e05b645614eb1371097857ed81acf0ed9c8ea162",
+            "content": "sha256:4945deed4342d13b523ffc4024d0e3c8ae35dd07175814a6091c0dc5701b0820",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/repo-overview.md"
+          },
+          "before": "absent",
+          "id": "RLZ-0G0A97"
+        },
+        {
+          "after": {
+            "blob": "145f2021791548364f7b9c029e484dc2cc131ac9",
+            "content": "sha256:69612c47f3e0211e7832e32cb7ff4152714b4a5e39bfa286493861e127179099",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/file-card.md"
+          },
+          "before": "absent",
+          "id": "RLZ-0P0X49"
+        },
+        {
+          "after": {
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:9fd503c92d23d9c17fc64cede742d7030bb071e1fb01fe0a9b0ad0640bf72324",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
+          },
+          "before": "absent",
+          "id": "RLZ-4ZZVYK"
+        },
+        {
+          "after": {
+            "blob": "9a190c21493b1d563f4fb45c766db77bb70b8225",
+            "content": "sha256:6530c0ffdad825b9519531fe9684ec94286b8473ae36591d11b621fadace60f3",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/route-local-overview.md"
+          },
+          "before": "absent",
+          "id": "RLZ-A4ZDYB"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-TSJ5CB",
+      "items": [
+        "sha256:d154f4134faa9105cd95471a82bef60e89f30b9d9081776dd3970b40b288c612"
+      ],
+      "reason": "Repair of the M1 account in ROW-TSJ5CB for L8-M1-F01, under the Architect authority relayed by the Manager at 12:54 permitting Curator judgment between rescope and retirement. Preserve the original MIK-L45 origin. ROW-TSJ5CB removed unsupported PRF-CE9T0C and PRF-XZYTAM and left zero realizations and zero proofs; both proof facets remain absent. Replace retired Bootstrap/initial-card applicability with the current Curator card/overview authoring contract and replace the silent-legacy-baseline admission claim with the four named current rules/layouts. Four declarative source locations now state or instantiate the current format contract; these rules and layouts are not executable test evidence. First-baseline refusal remains INV-QR6DSA's separate obligation. Evidence (L8-M2-F01-current-Curator-card-format): skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md:43-49; skills/l-01-agent-lifecycles/templates/file-card.md:1-24; skills/l-01-agent-lifecycles/templates/repo-overview.md:1-48; skills/l-01-agent-lifecycles/templates/route-local-overview.md:1-56",
+      "revision": 3,
+      "subject": "INV-4XD2ZF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V21X89",
+      "items": [
+        "sha256:0a1722d501a16979a0a61034052037164ed4eaea2d06e311fdaa3e1bc81d8ec9"
+      ],
+      "reason": "Remove the unsupported skill-text and Bootstrap capsule-compilation account and retire references 5, 8 and 9. The current module defines sixteen bootstrap-operation and composed-journey tests, including preservation of bootstrap audit artifacts in the first baseline; it has no skill-text or delivered-state test cases, so those captions cannot remain current test evidence.",
+      "sources": [
+        {
+          "blob": "f81179c5f1133d0e64be0c545a7bbbd3b26bf6fa",
+          "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_bootstrap_converted_onboarding.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-V413Y2",
+      "items": [
+        "sha256:108cd0fb6081c03fc8766c880228583ba578603cef6d18a548150c843aca26df",
+        "sha256:40af55a26b5734c2eb8d792ba08be8303ba8937de53219223c2f48ee159adb1a"
+      ],
+      "reason": "Reconfirm docs/release-checklist.md at the frozen L8 source tree after checking every retained support and the approved renewal change. The release checklist names instruction renewal and the hook check while retaining the separate release upload, index and installation responsibilities implemented by the candidate. M439 release-sync successor: confirm the same release-checklist document and all23 existing support paths at a22c7df6; only the pyproject and kernel-version source blobs changed to3.0.2. No supporting path, original origin or release procedure is removed or invented.",
+      "revision": 4,
+      "subject": "DPD-0K35N0"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-V4Y0BX",
+      "items": [
+        "sha256:1d2beb1c2b9283b1c23a82d0ecfea7583d63b13501f9cfeff93c72e0cff8b88c"
+      ],
+      "reason": "Reconfirm docs/tool-details.md at the frozen L8 source tree after checking every retained support and the approved renewal change. The tool-details contract remains consistent with its unchanged dependent records and package-copy behavior; the changed experiment capability probe names the instruction-renewal remedy without changing the documented installation contract.",
+      "revision": 9,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e3913163be3b91297066e21703964f8104d4e507",
+            "content": "sha256:910c6fff49b66f5cbc08b8f44dd785debc028f8046727162bebb967d929972bf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "AGENTS.md"
+          },
+          "before": {
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:2365237b89f6e902e092497a9fd09f806f9fd8c17d1dc9284b7b520f613259b7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "AGENTS.md"
+          },
+          "id": "RLZ-01HFHG"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-V8EWJZ",
+      "items": [
+        "sha256:3aa76773f5390c1af643c4b35238bb6246766e84a1be1e3ff02bd5f3fafbc77d"
+      ],
+      "reason": "The root instruction still calls context_packet with repo_id and explicitly passes no retired-provider parameter. Its other edit changes a memory-quality guidance link; preserve the current-description contract.",
+      "revision": 1,
+      "subject": "INV-8YX6P5"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-40JW44",
+          "revision": 1
+        },
+        {
+          "id": "INV-7KDG7C",
+          "revision": 1
+        },
+        {
+          "id": "INV-MQ3K06",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZA67WW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-VEDQSZ",
+      "items": [
+        "sha256:927d279d8906327c1d2092ebcbee13eb42fb9b6e0f1c5df1e46cec3b4aec5133"
+      ],
+      "reason": "Stage selection, required detail admission, original-source link binding, digest delivery and request-frozen replay jointly preserve the delivery value. Renewal is an upstream current-fact producer and does not change the freeze/replay contract.",
+      "revision": 3,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+            "content": "sha256:7154835c9a7497fa7c41c9bb084bcf73ac5cf4ffba6a7bb1703f296bb22adf2d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "before": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "id": "RLZ-3N2P7D"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-W5NAXW",
+      "items": [
+        "sha256:2bdb6cec61b1389278ffd783867c05899bcdb2212bcec2741d2d16b5d6065700"
+      ],
+      "reason": "sync-skills retains canonical-to-package generation and profile publication; only its mismatch guidance names the new renewal command. Preserve the canonical-authoring contract and refresh this file anchor.",
+      "revision": 3,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WJSE2C",
+      "items": [
+        "sha256:9793dfd1d32070eda016065bbce70075d976969ce755c2fd8349f587b5bf1f3a"
+      ],
+      "reason": "Refresh the current source extent for the task-document contract checks on canonical and generated pointers, clauses, template headings and manifest entries. The captured change rebinds the existing caption; it supplies no new test-run or publication result.",
+      "sources": [
+        {
+          "blob": "f3f5b9c86eef0e07db96a67ffa66b1d571facc4c",
+          "path": "mcp/test_support/agents_remember_test_support/testing/task_document_instruction_contracts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/task_document_instruction_contracts.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "33bb8815ae692c8505fb84168e27dfe1672a24cb",
+            "content": "sha256:4247bc77064682c15de49425b810916a56eb9b2d123a798419af185b41b98538",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_digest_homes_declare_audiences_and_steps_without_injecting_the_map"
+            },
+            "path": "mcp/tests/test_l84_capsule_delivery_proofs.py"
+          },
+          "before": {
+            "blob": "c938c2204cc6ad383e6f1b5930af72ff4a7c78fa",
+            "content": "sha256:f13f83665d742bf121ddecf6bbad7fb761df9fc071cfc91822ebb09441dd813c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_digest_homes_declare_audiences_and_steps_without_injecting_the_map"
+            },
+            "path": "mcp/tests/test_l84_capsule_delivery_proofs.py"
+          },
+          "id": "PRF-P23ZJ5"
+        },
+        {
+          "after": {
+            "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+            "content": "sha256:5f43dc0273d23d445f344bdc5c04f469e2b5faf998391d1620bd28c59b7ecefe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "da127d3b0aa028f4b439d413346941d96ad37311",
+            "content": "sha256:53fa2070848ed2566274938e51ef0a0112abcf9b1b33d73478e76ad6b5458fb7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-BZ71PH"
+        },
+        {
+          "after": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-T8GFX9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-X0JMSF",
+      "items": [
+        "sha256:34690c8ae58064d1030675a07c918eff7d2d12e3cc7332a68f670808cb390397"
+      ],
+      "reason": "The composed manifest and digest-home test retain the every-role audience and non-injected audit map contract; renewed data and derived audience placement change anchors, not that delivery obligation.",
+      "revision": 1,
+      "subject": "INV-40JW44"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XAH2B4",
+      "items": [
+        "sha256:01817197a15db789905a945ecf0bb3967fdff51c09389f47b20373996fca5f2d"
+      ],
+      "reason": "Replace the old generator check account with scripts/renew-instructions.py --check executed by the current Python interpreter in AnswerAndTextTests. Keep the publication-docstring and hook-head assertions separate, and attribute the command to source rather than claiming Curator execution.",
+      "sources": [
+        {
+          "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
+          "path": "mcp/tests/test_landing_commit_check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_landing_commit_check.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XCECNQ",
+      "items": [
+        "sha256:55dc071a600e05d4501a9dff6047d5f6ae8169f474fa3f881b8a8c0b7ad42fc6"
+      ],
+      "reason": "Add the first renewal CLI card for building a complete plan before publication, read-only stale detection with --check, early carrier listing with --list-targets and explicit binding options. Keep computation/publication in the planner and describe diagnostic behavior without asserting a command was run.",
+      "sources": [
+        {
+          "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+          "path": "scripts/renew-instructions.py"
+        }
+      ],
+      "subject": "onboarding:scripts/renew-instructions.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XQ6Q4P",
+      "items": [
+        "sha256:6fca2fb92ed05ed56d6d2166e531dca2b89376c1e8bdd9d47be3a4afea2323be"
+      ],
+      "reason": "Add the first pointer-renewal test card for unadmitted or dangling pointers, reader/CLI remedies, retained-policy checks before pruning and repair/retry fixtures. Explain the asserted policy-preservation boundaries without inferring successful runs from test definitions.",
+      "sources": [
+        {
+          "blob": "2b91b3be31a147632b3e7627649bc9c71eff59a0",
+          "path": "mcp/tests/test_instruction_pointer_renewal.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_instruction_pointer_renewal.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0V8R02",
+          "revision": 1
+        },
+        {
+          "id": "INV-HJ5A68",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q2HENX",
+          "revision": 1
+        },
+        {
+          "id": "INV-W6HBYY",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-XSGT9M",
+      "items": [
+        "sha256:7b89f4b193140ec167cc25e3892d325a9fc6ef795d984ba269446d09f71749e8"
+      ],
+      "reason": "All four pointer obligations remain jointly necessary: link validity, action uniqueness, honest derived step and noncircular definition. Renewal changes metadata storage/generation, not this combined predicate.",
+      "revision": 1,
+      "subject": "FAM-8DPMB4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XWBVTA",
+      "items": [
+        "sha256:e9cdbb46e8fabe01ea2e2e5a77d9d61ba804cdfd72180854321e76d1f2eaa51f"
+      ],
+      "reason": "Renew the tests route's current populations to 17 lifecycle contracts, 116 artifacts and 788 lane members, and name the renewal subprocess run with sys.executable. Separate the ordinary world's answer-file classifier from the sweep support's delivered-payload fallback, describe after-discovery scheduling assertions as recorded source behavior, and remove retired-caption references from current prose rather than presenting historical repairs as new execution.",
+      "sources": [
+        {
+          "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "f81179c5f1133d0e64be0c545a7bbbd3b26bf6fa",
+          "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+        },
+        {
+          "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
+          "path": "mcp/tests/test_capsule_experiment_install.py"
+        },
+        {
+          "blob": "6322c06cce0cc35eda1ab66fbfa6def4cf1c8a9e",
+          "path": "mcp/tests/test_collaboration_reference_pointers.py"
+        },
+        {
+          "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
+          "path": "mcp/tests/test_developer_question_wording.py"
+        },
+        {
+          "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+          "path": "mcp/tests/test_instruction_consistency.py"
+        },
+        {
+          "blob": "8a9b4b212996417cd332a9a8b11f14640b5fe454",
+          "path": "mcp/tests/test_instruction_digest_renewal.py"
+        },
+        {
+          "blob": "402d04653a63467728826100526e1771bf2eddfe",
+          "path": "mcp/tests/test_instruction_manifest_renewal.py"
+        },
+        {
+          "blob": "2b91b3be31a147632b3e7627649bc9c71eff59a0",
+          "path": "mcp/tests/test_instruction_pointer_renewal.py"
+        },
+        {
+          "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
+          "path": "mcp/tests/test_knowledge_bootstrap_procedure.py"
+        },
+        {
+          "blob": "33bb8815ae692c8505fb84168e27dfe1672a24cb",
+          "path": "mcp/tests/test_l84_capsule_delivery_proofs.py"
+        },
+        {
+          "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+          "path": "mcp/tests/test_l84_r1_05_wording_pin.py"
+        },
+        {
+          "blob": "ab510c23b4893307b6a00fd902e70fbd96730567",
+          "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+        },
+        {
+          "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
+          "path": "mcp/tests/test_landing_commit_check.py"
+        },
+        {
+          "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+          "path": "mcp/tests/test_role_capsule_audiences.py"
+        },
+        {
+          "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+          "path": "mcp/tests/test_role_capsule_budgets.py"
+        },
+        {
+          "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+          "path": "mcp/tests/test_role_capsule_budgets_d694.py"
+        },
+        {
+          "blob": "c041b6e75549d54c259211088ab20dd5419ce55e",
+          "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+        },
+        {
+          "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+          "path": "mcp/tests/test_role_instruction_corpus.py"
+        },
+        {
+          "blob": "29a710160e944b5283dd821dc0052ddeafd84d79",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        },
+        {
+          "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
+          "path": "mcp/tests/test_role_message_wording.py"
+        },
+        {
+          "blob": "77182445e306259fb66766c651d58fbb49320a7d",
+          "path": "mcp/tests/test_sync_scripts.py"
+        },
+        {
+          "blob": "557bac2b64391e6900c45677b40e091c35fdb688",
+          "path": "mcp/tests/test_tool_descriptions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-Y5TZMG",
+      "items": [
+        "sha256:836991560433ee528c0120b90b36bc3dd1adf3d7a5217707cc05edae42de2a38",
+        "sha256:9b454d955d5ff6165998eb867cf9cd9a9f56691d3d507b9bd3e1d89efa82c2d0"
+      ],
+      "reason": "Reconfirm docs/reference/skills.md at the frozen L8 source tree after checking every retained support and the approved renewal change. The skills reference names the instruction-renewal command while its skill, role, operation and MCP inventory remains consistent with the composed authored and derived manifest.",
+      "revision": 3,
+      "subject": "DPD-ZQB4YZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y88B8P",
+      "items": [
+        "sha256:4e3a5cc44a991bd7f6f45f6f9d0e02501df4200665b531c56877194f4f2d1f49",
+        "sha256:7269187e86b1702f6ea85ee83f7782df86176cd59d59746e7e160107feaf75cc",
+        "sha256:7b7da0f95da5c72ef6cbadf3bdbc1472ab1be44f6bb88683134ab79bc7fe402d",
+        "sha256:85e0b8abad87e8777f677736e5b11d1498e02075ae9625d107d952aeca6572d1",
+        "sha256:c8256c341457144c164f22abd9271863a67404b20b63a566fc7a08b3cd069de8",
+        "sha256:cd963e4eb06a8fe15bf23c6c5b7e0284193c2ddc21773b1de21c9af15d17d0dc",
+        "sha256:d2b363d9b601c0e22c7d8546ab815f1a25b88a9c30fe7caaa56ab6e5ebd21b0e"
+      ],
+      "reason": "Replace the D656/v13 seal and inverse-transform account with independent source-section projections, source-derived detail-link counts and audience-marker/foreign-role controls. Correct the scope to a mixture of synthetic selection fixtures and real-corpus cases: the real-operation test compares every declared role/operation pair with its independent source projection, rather than every case compiling the real corpus. Retained historical seals are not the live comparison and these source assertions report no fresh execution.",
+      "sources": [
+        {
+          "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+          "path": "mcp/tests/test_role_capsule_audiences.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_capsule_audiences.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YAAJMA",
+      "items": [
+        "sha256:54bbe13577f97a6c13d3b1bd4db971f45c49aaab526f9cef26eed2048d3a1bdf"
+      ],
+      "reason": "Remove imports and local URI/sentence constants after pointer parsing moves to pointer_sentences and authored policy loading; these deleted scaffolding lines carry no separate invariant.",
+      "subject": "hunk:sha256:54bbe13577f97a6c13d3b1bd4db971f45c49aaab526f9cef26eed2048d3a1bdf"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f81179c5f1133d0e64be0c545a7bbbd3b26bf6fa",
+            "content": "sha256:f25e41a0c3dcc2be9505e705694edd3d8e338e69ab0771fb06e0b650197cabfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bootstrap_journey_from_init_to_second_fixer_refusal"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "before": {
+            "blob": "0545cf2a711cbe4fe44f7130c9135af37c408e14",
+            "content": "sha256:f25e41a0c3dcc2be9505e705694edd3d8e338e69ab0771fb06e0b650197cabfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bootstrap_journey_from_init_to_second_fixer_refusal"
+            },
+            "path": "mcp/tests/test_bootstrap_converted_onboarding.py"
+          },
+          "id": "PRF-457VY3"
+        },
+        {
+          "after": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:ff465974c2ff2904981ae7f7b0fe9990369387c39693b2aad43fa9ae5f18cb61",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_foundation_state"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PA1SGN"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-Z80FD6",
+      "items": [
+        "sha256:f6f93c15768e96257a3566ac68db26e42057729a38e3b9526ee6ca6742460bf4"
+      ],
+      "reason": "MIK-R217@v3 Part2 point4 removed c-03-repo-bootstrap; commit78fd9d3e5 deleted its skill and hand-off template, with the missing realizations recorded by ROW-31Y8TW. Under D617 and the superseding Architect ruling, revision4 removes the obsolete card-inventory/clean-fixer handoff obligation and retains the two observed knowledge-state/nextAction moments and no-foundation-from-cards-or-baseline guarantee. RLZ-PA1SGN was added at memory_tools._knowledge_foundation_state, and PRF-457VY3 remains the composed journey proof. The old exclusion about confusing onboarding/bootstrap audit retention with transient working evidence was removed because the narrowed property reports observed initialization state rather than governing audit custody; the explicit retired-procedure exclusion now bounds that obsolete handoff. The original MIK-L45 origin remains unchanged. Authority: the Architect’s superseding handoff f188e6d74670849475da633c9707cc3b20244142aaf6bea145e63aca76896c29, requirement MIK-R217@v3 Part2 point4, and L204 commit78fd9d3e5. Current scope is supported by the knowledge-state function, the journey test and reference/bootstrap/foundation-state.md; no new test execution is claimed.",
+      "revision": 4,
+      "subject": "INV-TJADR1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z8915X",
+      "items": [
+        "sha256:13e723bc024255d49812ddc5cfc9cb57b614a3b9bcc7baa5624f8c53332b441e"
+      ],
+      "reason": "The lane catalog adds three existing instruction-renewal test modules and removes no prior registration. Renew its support anchor without changing the catalog/certification obligation.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "considered": [
+        "FAM-27AEW1"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-ZCHADS",
+      "items": [],
+      "reason": "The member keeps its standalone obligation after FAM-27AEW1 is withdrawn: the family did not establish a joint guarantee needing every listed member. This repair assigns no replacement family and does not broaden the invariant's scope.",
+      "revision": 1,
+      "subject": "membership:INV-AZTTPZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZE7646",
+      "items": [
+        "sha256:c076dd00d5e4317736a5edd6e51b076f12c1eed29042786aed712af2a126c206"
+      ],
+      "reason": "Name the complete instruction-renewal command for propagation-owner byte equality while preserving the separate package projection owner. Narrow the unsupported universal claim that every positive case has a paired negative: the broken-manifest, copied-payload and dangling-anchor controls make their corresponding positive checks falsifiable, but the twenty-two test definitions assert no universal one-negative-per-positive mapping.",
+      "sources": [
+        {
+          "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+          "path": "mcp/tests/test_role_instruction_corpus.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_corpus.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZFQSTY",
+      "items": [
+        "sha256:ef0a3b0732a88e43dc37f336b8b3d94d4769f98f5cac871b792a9817990ba927"
+      ],
+      "reason": "Refresh the retained delivered_step references to the current admission, compilation and launch-composition checks, including exact detail bytes, one named-action pointer and the repeated delivery step. The captured plan changes citation bindings, not the card's semantic account, and source assertions remain distinct from a test run.",
+      "sources": [
+        {
+          "blob": "7e10ba05dabcb409c83e4f8a0ffd72bfd7ff0af0",
+          "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-ZK630V",
+      "items": [
+        "sha256:6393c7d99e48146210891feaa4981c701e657bd6cdd5b0043f5ccd59ef2337cc"
+      ],
+      "reason": "Reconfirm docs/design/python-pytest-bootstrap.md at the frozen L8 source tree after checking every retained support and the approved renewal change. The bootstrap design remains consistent with the candidate admission, selection, isolation and evidence policy; the lane catalog adds three instruction-renewal regression modules without changing that policy.",
+      "revision": 5,
+      "subject": "DPD-ZT8YY7"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

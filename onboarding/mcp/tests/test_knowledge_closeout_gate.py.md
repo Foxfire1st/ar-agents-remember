@@ -11,7 +11,7 @@ route (18 top-level test definitions and 1,360 physical source lines by static i
 one family (`INV-AAAAAA` with entries on `land` and `keep` in `pkg/a.py`, `INV-BBBBBB` with `sibling` in `pkg/b.py`),
 the official `main` line in both repositories and the leaf's own `leaf` branches, so the parent line's memory tip and
 the leaf's own memory commits are different commits. Registered in the `unit-regression` lane
-(`test-evidence-lanes.toml:216`). The fixture world is module-local, by the dependency-ownership census's rule (a
+(`test-evidence-lanes.toml:219`). The fixture world is module-local, by the dependency-ownership census's rule (a
 separate support module was an unregistered evidence artifact on the worker's first integration run);
 `test_knowledge_gate_routes.py` imports it.
 
@@ -114,10 +114,6 @@ No configured live documentation source was available for this pass.
 
 - The memo and the approval state. [9]
 
-
-
-
-
 - The memo key names the parent tip and the leaf's memory HEAD. [12]
 
 
@@ -128,6 +124,8 @@ No meaningful cross-repo references found: the fixture builds its own repositori
 No cross-repo boundary is crossed by this file.
 
 
+
+### Repo-Internal References (continued)
 
 - Rule 2 examples: a new edit reopens four items, including source-bound file/route traces. [3]
 
@@ -141,13 +139,6 @@ No cross-repo boundary is crossed by this file.
 
 - The closeout test answers the code commit's items with recomputed source-bound trace rows, then checks closure/restore and reaching the mutation seam, not a successful product memory commit. [11]
 
-
-
-
-
-
-
+- Retained earlier repair caption (source-epoch wording; not a new current-tree measurement): Current source delta inspected statically: Align renamed-but-unchanged test identifiers with four-item reopening and R53 source-bound predicates; replace stale population figures with actual static source counts, preserving the narrow closeout mutation-seam limit. [13]
 
 - The lane row. [10]
-
-- Retained earlier repair caption (source-epoch wording; not a new current-tree measurement): Current source delta inspected statically: Align renamed-but-unchanged test identifiers with four-item reopening and R53 source-bound predicates; replace stale population figures with actual static source counts, preserving the narrow closeout mutation-seam limit. [13]

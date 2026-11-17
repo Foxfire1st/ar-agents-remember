@@ -167,7 +167,7 @@
       ]
     },
     "18": {
-      "note": "The graph constants: the invariant labels and statements, the applicability, conditions and exclusions, and the three direct family guarantees.\n\nAnchor: `RETRY_LABEL`; `BATCH_LABEL`; `RESOLUTION_LABEL`; `FAMILY_LABEL`; `OVERLAPPING_FAMILY_LABEL`; `DIRECT_FAMILY_LABEL`",
+      "note": "The graph constants: the invariant labels and statements, the applicability, conditions and exclusions, and the three declared family guarantees. Anchor: `RETRY_LABEL`; `BATCH_LABEL`; `RESOLUTION_LABEL`; `FAMILY_LABEL`; `OVERLAPPING_FAMILY_LABEL`; `DIRECT_FAMILY_LABEL`",
       "targets": [
         {
           "anchor": {
@@ -343,12 +343,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4218,
+              "end": 4224,
               "kind": "line_range",
-              "start": 4170
+              "start": 4176
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -356,12 +356,12 @@
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:cb641267e11b8aec644ea6ca3e0ee68f833e7a2d4d2c480e3ee02aba12f59d59",
             "locator": {
-              "end": 4989,
+              "end": 4995,
               "kind": "line_range",
-              "start": 4986
+              "start": 4992
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

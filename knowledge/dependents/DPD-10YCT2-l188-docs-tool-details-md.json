@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "edc7edc63f5d05b34445dfe30d8e141ec5300efc",
+    "commit": "a2f0fced8896b92d31fd3f78351d01f5302be97e",
     "role": "curator",
-    "statement": "The page holds: the receipt scan now passes over a file that is no launch record, and the `retire_child` entry's arguments and refusals are unchanged.",
-    "task": "261112-BUG-L7",
+    "statement": "The tool-details contract remains consistent with its unchanged dependent records and package-copy behavior; the changed experiment capability probe names the instruction-renewal remedy without changing the documented installation contract.",
+    "task": "261112-BUG-L8",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -113,7 +113,7 @@
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
     {
-      "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+      "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/experiment.py"
     },

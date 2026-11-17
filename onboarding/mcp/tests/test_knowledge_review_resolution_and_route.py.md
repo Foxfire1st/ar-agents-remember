@@ -75,10 +75,12 @@ No configured domain documentation could be checked.
 
 ### Cross-Repo References
 
-No cross-repository behavior is implemented in this file. Every case builds its datasets under
-`tmp_path`.
+No cross-repository behavior is implemented in this file. Repository-backed cases build their
+fixtures under `tmp_path`; selector parsing also has a direct case without a repository fixture.
 
 No meaningful cross-repo references found.
+
+### Repo-Internal References (continued)
 
 - `test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path` owns the current boundary described above. [13]
 - `test_the_entry_route_refuses_a_damaged_before_half_instead_of_raising` owns the current boundary described above. [14]
@@ -104,8 +106,5 @@ No meaningful cross-repo references found.
 
 
 - The surface module's config that names no real root, and the render helper that puts the previous identity on the request. [19]
-
-
-
 
 - The module's own unit-regression lane row. [26]

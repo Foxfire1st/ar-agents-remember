@@ -1,0 +1,129 @@
+{
+  "path": "mcp/tests/test_instruction_manifest_renewal.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "402d04653a63467728826100526e1771bf2eddfe",
+        "content": "sha256:1479a896a567306dd8ce7f72fc804eb912e4e631f388916cdab6d0707bce0f27",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_new_reference_and_removed_no_step_mark_derive_from_authored_source"
+        }
+      },
+      "facet": "The planner derives worker roles and the pointed step from authored source for both missing and incomplete stored derived state; compose_manifest exposes the step and planning leaves the file unchanged.",
+      "id": "PRF-1703PX",
+      "invariant": "INV-AZTTPZ",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 9",
+        "leaf": "261112-BUG-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "402d04653a63467728826100526e1771bf2eddfe",
+        "content": "sha256:3428923f600ee7021fbc5225149d449a2436ede8307b8f780cb303a370006fdd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_digest_map_audience_follows_its_authored_reason"
+        }
+      },
+      "facet": "The digest-map reference receives no derived roles without an authored reason and receives worker and manager roles when its authored reason names them.",
+      "id": "PRF-5HH5K7",
+      "invariant": "INV-Q432XE",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 3",
+        "leaf": "261112-BUG-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "402d04653a63467728826100526e1771bf2eddfe",
+        "content": "sha256:71ba6d3d54b98e98142259976286154c42c248777b1192670f28b1ba45713597",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_command_renews_authored_reference_changes_without_typing_derived"
+        }
+      },
+      "facet": "For a new reference or removed no-step mark, the public command derives nonempty roles and step without hand-editing derived metadata; the subsequent clean --check preserves all held file bytes.",
+      "id": "PRF-BMC61Q",
+      "invariant": "INV-EHJV8E",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 1",
+        "leaf": "261112-BUG-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "402d04653a63467728826100526e1771bf2eddfe",
+        "content": "sha256:8f8516374e295fee7bb975e3456781941df030d2e04ab64151f3079460d90dbd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_command_replaces_a_stored_step_with_an_authored_no_step_mark"
+        }
+      },
+      "facet": "Before renewal, a legal ordinary no-step mark beside a stored step is reported as stale by the reader and --check with the derived field and renewal command; --check leaves held bytes unchanged.",
+      "id": "PRF-DXEPZF",
+      "invariant": "INV-DHKR4G",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 2",
+        "leaf": "261112-BUG-L8"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "402d04653a63467728826100526e1771bf2eddfe",
+        "content": "sha256:5623363ceb11055baafb5037170bc4c9a128d6e4da72f9fffe2cdde27648b080",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AF0V13",
+      "invariant": "INV-AZTTPZ",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 9",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "This consumer or regression control follows generated routing fields and preserves the independent obligation it checks.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Cases separate derivable steps, authored role reasons and no-step decisions, including stale stored derived state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "402d04653a63467728826100526e1771bf2eddfe",
+            "content": "sha256:4a96ab277d1d61128f70b8055790e52e27042972856ce436d3f6ce8e7f69fdf9",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public command cases exercise authored reference changes, no-write checking, renewal and a subsequent clean check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "402d04653a63467728826100526e1771bf2eddfe",
+            "content": "sha256:d34ff04813755713420b4b0e2d868dfa774f6ce2e711aa3662aca1d97509d8ae",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 224
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

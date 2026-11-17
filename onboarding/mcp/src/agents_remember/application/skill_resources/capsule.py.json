@@ -59,25 +59,16 @@
   ],
   "references": {
     "1": {
-      "note": "The four refusal-capable steps and the outcome that carries the binding in both shapes.\n\nAnchor: `compile_task_capsule` `CapsuleCompileOutcome`",
+      "note": "The four refusal-capable steps and the outcome that retains a binding once admission establishes it.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
-            "content": "sha256:3a9901a2e97f135d22cf248feb567981637b66d0a9ba6b12f5af46ddaf87ad90",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:52a746fc00ed66cb97e7e3436f817ed49c9e0a99dfc8ff19563f50e15c7c8fc5",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_task_capsule"
+              "end": 220,
+              "kind": "line_range",
+              "start": 212
             }
           },
           "kind": "code"
@@ -87,8 +78,19 @@
             "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:7a9a1cb753c86d86273fd2f436b02c9b4a22c96aa32b1e77df9b363fafa354f3",
             "locator": {
-              "kind": "symbol",
-              "name": "CapsuleCompileOutcome"
+              "end": 157,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:3a9901a2e97f135d22cf248feb567981637b66d0a9ba6b12f5af46ddaf87ad90",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -140,15 +142,16 @@
       ]
     },
     "12": {
-      "note": "The corpus root, its manifest and its publishing origin travel together as one admission.",
+      "note": "The corpus root and manifest travel together as one admission; publishing origin is declared separately.",
       "targets": [
         {
           "anchor": {
             "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
             "content": "sha256:b1aa6db26f9495b7eac841b60e70fbfb0730b9dbbdeb2a63197ed4bac2c762b8",
             "locator": {
-              "kind": "symbol",
-              "name": "shipped_composition_corpus"
+              "end": 63,
+              "kind": "line_range",
+              "start": 50
             },
             "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
           },
@@ -161,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
             "locator": {
               "end": 2,
@@ -276,7 +279,7 @@
       ]
     },
     "19": {
-      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. Anchor: L114–L129",
       "targets": [
         {
           "anchor": {
@@ -286,19 +289,6 @@
               "end": 129,
               "kind": "line_range",
               "start": 114
-            },
-            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
-            "content": "sha256:9547b7be9bd2f586a180d1d62b4fee64954578e37d52d3d35ec172d0d273a9c5",
-            "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 59
             },
             "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
           },
@@ -500,15 +490,16 @@
       ]
     },
     "7": {
-      "note": "D13's repair: the root read out of the contract the request names, and carried onto the enclosure so the projection uses the same one.\n\nAnchor: `AdmittedEnclosure.code_repository_root`",
+      "note": "D13's repair: an explicit request root is retained; otherwise the named contract supplies the root, carried onto the enclosure so the projection uses the same one.",
       "targets": [
         {
           "anchor": {
             "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:df6167884a180469951c209d5120c996dab5d1171e3eb7c3f928a860137fece9",
             "locator": {
-              "kind": "symbol",
-              "name": "_declared_repository_root"
+              "end": 475,
+              "kind": "line_range",
+              "start": 444
             }
           },
           "kind": "code"
@@ -518,8 +509,9 @@
             "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:f3216586d98fa1bc36cb0829601d6140603c2f527602b04d4505578c044809e3",
             "locator": {
-              "kind": "symbol",
-              "name": "AdmittedEnclosure"
+              "end": 209,
+              "kind": "line_range",
+              "start": 193
             }
           },
           "kind": "code"
@@ -529,8 +521,9 @@
             "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:2bb1b1020f6a676b875c0ed002574c7c443705a92f4b99021d8b6abe85221341",
             "locator": {
-              "kind": "symbol",
-              "name": "_projection"
+              "end": 307,
+              "kind": "line_range",
+              "start": 280
             }
           },
           "kind": "code"

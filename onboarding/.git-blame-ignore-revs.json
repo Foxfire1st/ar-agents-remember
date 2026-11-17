@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The `ruff-format` gate step this reformat commit made possible.\n\nAnchor: \"ruff format --check\"",
+      "note": "The gate runs ruff format --check over tracked Python.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
-            "content": "sha256:92ce66a9b5633d54c7d44a45b52f178c0ca86ea27409a7c69671867a72c8d7c0",
+            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+            "content": "sha256:bf6f30185384e454400c259a18e48eec2bfa1a1c25bd34f294ba24616e7a6a03",
             "locator": {
-              "end": 210,
+              "end": 214,
               "kind": "line_range",
-              "start": 210
+              "start": 208
             },
             "path": ".githooks/_gate.sh"
           },
@@ -21,11 +21,11 @@
       ]
     },
     "2": {
-      "note": "The fast hook tier also runs `ruff format --check` over the whole tracked tree.\n\nAnchor: \"ruff format --check\"",
+      "note": "The fast hook tier runs `ruff format --check` over tracked Python files.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
             "content": "sha256:92ce66a9b5633d54c7d44a45b52f178c0ca86ea27409a7c69671867a72c8d7c0",
             "locator": {
               "end": 210,

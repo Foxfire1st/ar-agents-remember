@@ -105,10 +105,9 @@ Corpus helpers and disposable fixtures declare no network/provider access. Corpu
 - Corpus-shape cases read canonical sources; retired-curation wording and the handoff-contract test
   also declare generated-copy reads. The latter checks canonical plus the sole packaged copy of both the
   Curator ingestion template and the card-format reference for the R53 answer sentences. Narrow normalized-text
-  containment is distinct from propagation-owner byte equality (`scripts/sync-skills.py --check`
+  containment is distinct from propagation-owner byte equality (`mcp/.venv/bin/python scripts/renew-instructions.py --check`
   and the projection suite).
-- Each positive case has a paired negative (a broken manifest, a copied payload, a dangling anchor), so a
-  check that resolves nothing cannot pass as green.
+- Broken-manifest, copied-payload and dangling-anchor controls make their corresponding positive checks falsifiable.
 - Corpus-shape assertions target structural properties; the explicit handoff R53 containment
   assertions also pin selected prose contract sentences, not every possible semantic contradiction.
 - The module must never weaken `SANCTIONED_SIBLING_REFERENCES` to accommodate a new cross-reference — a
@@ -135,7 +134,7 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
-- The resolver under test reports missing manifest sources rather than silently accepting them. [1]
+
 
 - The corpus this module is the behavioral check for: the canonical root `skills/l-01-agent-lifecycles/` tree, whose declared contract is `ROLE_ORDER`, `MACHINE_SECTION` and `OPERATION_KEYS`. [2]
 
@@ -148,6 +147,8 @@ No sibling-repository contract defines this corpus check.
 No meaningful cross-repo references found.
 
 
+### Repo-Internal References (continued)
+
 - This module declares narrow normalized-text R53 assertions over canonical plus the sole packaged copies of the Curator ingestion template and card-format reference; the propagation owner separately checks projection byte equality. [4]
 
 
@@ -157,6 +158,8 @@ No meaningful cross-repo references found.
 - Each copy of the Manager and Architect roles holds its publication clause once, names `system/task-publication.md` once and has no generic publishing sentence. [9]
 
 ## Current source evidence
+
+- The resolver under test reports missing manifest sources rather than silently accepting them. [1]
 
 - The handoff checks consume the canonical corpus and declared generated roots; the fragment-one control derives its surface through `fragment_one_surfaces` rather than naming a fixed skill. [6]
 

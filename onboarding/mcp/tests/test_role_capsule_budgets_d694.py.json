@@ -3,30 +3,100 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
-        "content": "sha256:71d5595ca0891f99cb6e0083d9c4e699f1a05e4791dcae2b40ea98c40795ee78",
+        "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+        "content": "sha256:d2a75a6fa3495076ab017d2f40163740068fbcf51b223849aafe55ce23e9b798",
         "locator": {
           "kind": "symbol",
-          "name": "test_d695_binds_the_actual_current_population"
+          "name": "test_ordinary_templates_have_measurements_and_no_detail_ceiling"
         }
       },
-      "facet": "The current population and record identity are bound.",
-      "id": "PRF-GFQEM0",
-      "invariant": "INV-4HZG3V",
+      "facet": "An ordinary template measured at 2501 words remains valid with refreshed source identities, without acquiring the declared-detail ceiling.",
+      "id": "PRF-23ZW3F",
+      "invariant": "INV-Y6GVZ7",
       "origin": {
-        "handoffEntry": "RSM-R01-A9",
-        "leaf": "261112-RSM-L1"
+        "handoffEntry": "L8-M2-F03-retain-ceiling-evidence-on-Y6GVZ7",
+        "leaf": "261112-BUG-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+        "content": "sha256:d757898423c03a3b600f285fa3eaace18cb036ce932fdec07c8222062c12c9d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_current_ceiling_failures_name_size_ceiling_and_developer"
+        }
+      },
+      "facet": "Each capsule role passes at its ceiling and fails above it; detail and digest overages name the actual size, applicable ceiling and developer decision.",
+      "id": "PRF-C9NX5K",
+      "invariant": "INV-Y6GVZ7",
+      "origin": {
+        "handoffEntry": "L8-M2-F03-retain-ceiling-evidence-on-Y6GVZ7",
+        "leaf": "261112-BUG-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+        "content": "sha256:bb2fdb40a2ff1be0871c601ad921c74583904b1889bf8623905d999cd5e5c350",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_current_growth_within_a_ceiling_has_no_individual_budget"
+        }
+      },
+      "facet": "With current measurements refreshed, worker capsule growth up to the applicable role ceiling produces no current-area finding and the loaded record has no current_limits.",
+      "id": "PRF-QXSKEB",
+      "invariant": "INV-Y6GVZ7",
+      "origin": {
+        "handoffEntry": "L8-M2-F03-retain-ceiling-evidence-on-Y6GVZ7",
+        "leaf": "261112-BUG-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+        "content": "sha256:0102e935b463c5271701b1428c44d1352372e29db5a3b40a126b135222720b77",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_current_measurements_reject_staleness_and_population_drift"
+        }
+      },
+      "facet": "A stale size, removed measured member or unregistered actual member produces the expected current-measurement finding containing the renewal command; the test does not establish every external diagnostic surface.",
+      "id": "PRF-ZTZ4C7",
+      "invariant": "INV-DHKR4G",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 2",
+        "leaf": "261112-BUG-L8"
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+        "content": "sha256:bb2fdb40a2ff1be0871c601ad921c74583904b1889bf8623905d999cd5e5c350",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_current_growth_within_a_ceiling_has_no_individual_budget"
+        }
+      },
+      "id": "RLZ-YWRGK4",
+      "invariant": "INV-Y6GVZ7",
+      "origin": {
+        "handoffEntry": "L8-M2-F03-retain-ceiling-evidence-on-Y6GVZ7",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "This case refreshes measured worker sizes and asserts growth through the authored role ceiling has no current-area finding and no current_limits field, providing a direct growth-within-ceiling regression control.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The current record binds the real compiled population with no finding.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
             "content": "sha256:71d5595ca0891f99cb6e0083d9c4e699f1a05e4791dcae2b40ea98c40795ee78",
             "locator": {
               "kind": "symbol",
@@ -42,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
             "content": "sha256:06fb34070cd0eb4340d2d75a3d4fc8ba1076c21e8da7037f35bb6621c6488370",
             "locator": {
               "kind": "symbol",
@@ -58,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
             "content": "sha256:f7286b3a320573753b67f45147ca5aa09b89b80228582f34c2d8c4f606f55e94",
             "locator": {
               "kind": "symbol",
@@ -70,15 +140,16 @@
       ]
     },
     "12": {
-      "note": "The current-layer predicates and fingerprints.",
+      "note": "The current-layer predicates check renewed measurements, authored ceilings, source identities and frozen predecessor history.",
       "targets": [
         {
           "anchor": {
-            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
-            "content": "sha256:8c2becfadaf1ba12345a93ed610585038b103dbd7f59b6d85aabde9d687a7b9c",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:8cd4193ea8d7a96e50b0e83efc204bdfa1ad03b084e670af07f4072d08f9c00a",
             "locator": {
-              "kind": "symbol",
-              "name": "current_budget_findings"
+              "end": 170,
+              "kind": "line_range",
+              "start": 162
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
@@ -86,32 +157,17 @@
         }
       ]
     },
-    "2": {
-      "note": "Any changed field of the current record fails as a changed binding.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
-            "content": "sha256:655214aeb093e988021a198714c7717bcdc074c8b11729a41067943264684c87",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_d695_rejects_changed_record"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "3": {
-      "note": "Each recorded key rejects unmeasured growth, over-limit size, removal and unregistered keys.",
+      "note": "Current measured keys reject stale sizes, orphan measurements and unregistered keys, with the renewal command named in the finding.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
-            "content": "sha256:4ba7dc2f66e850b12956e4eb15be2dae945f1863dd7643e82278c23821b80ec3",
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "content": "sha256:0102e935b463c5271701b1428c44d1352372e29db5a3b40a126b135222720b77",
             "locator": {
-              "kind": "symbol",
-              "name": "test_d695_rejects_each_unmeasured_growth_and_population_change"
+              "end": 195,
+              "kind": "line_range",
+              "start": 175
             }
           },
           "kind": "test"
@@ -119,15 +175,28 @@
       ]
     },
     "4": {
-      "note": "The declared-detail population equals the manifest's step details, the detail ceiling is 2500, and digest and Curator capsule overages fail.",
+      "note": "The current classification checks bind declared-detail and ordinary-template populations to the manifest. Capsule, step-detail and digest ceiling failures name the measured size, ceiling and developer decision.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
-            "content": "sha256:a9d39786c9b6b74a764b5b82991efbe2c5725cab52ca431a4b4908cb2a9c4f07",
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "content": "sha256:63c4ced757eedf0d4a4a745e533bbe8744ca66b7e9b57dbc49a9fdb208b48e6c",
             "locator": {
-              "kind": "symbol",
-              "name": "test_d695_authorized_boundaries_and_real_population"
+              "end": 323,
+              "kind": "line_range",
+              "start": 289
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "content": "sha256:d757898423c03a3b600f285fa3eaace18cb036ce932fdec07c8222062c12c9d1",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 209
             }
           },
           "kind": "test"
@@ -139,11 +208,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
-            "content": "sha256:f5d9aa3957a0b01473c5836bfd8c10afebc863d4dcc36acc7e2ece7a8a8d3c66",
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "content": "sha256:d2a75a6fa3495076ab017d2f40163740068fbcf51b223849aafe55ce23e9b798",
             "locator": {
-              "kind": "symbol",
-              "name": "test_d695_ordinary_template_above_2500_has_no_size_limit"
+              "end": 365,
+              "kind": "line_range",
+              "start": 352
             }
           },
           "kind": "test"
@@ -151,15 +221,16 @@
       ]
     },
     "6": {
-      "note": "A declared detail at 2501 words fails its 2500 ceiling.",
+      "note": "A declared-detail size above its 2500-word ceiling fails and names the size, ceiling and developer decision.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
-            "content": "sha256:e3a4186642aa9bbcf3eb13cbe8083c42787a4803c0072494648857315cac80ef",
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "content": "sha256:d757898423c03a3b600f285fa3eaace18cb036ce932fdec07c8222062c12c9d1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_d695_declared_detail_2501_still_fails"
+              "end": 239,
+              "kind": "line_range",
+              "start": 209
             }
           },
           "kind": "test"
@@ -167,47 +238,28 @@
       ]
     },
     "7": {
-      "note": "Ordinary-template source drift is still rejected.",
+      "note": "Ordinary-template source identities and compiler-input revisions are checked; same-size content edits and missing sources produce findings that name the renewal command.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
-            "content": "sha256:240505d21eb9969b7f3ef9194bc78f0120c131605000abce211a570028be911a",
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "content": "sha256:5783404bbaf67678c940bb46d8b3bb6653dbd3664cae4b8857e103b193ac9ff7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_d695_ordinary_source_drift_is_still_rejected"
+              "end": 336,
+              "kind": "line_range",
+              "start": 326
             }
           },
           "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "Whole-record authentication precedes source checks.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
-            "content": "sha256:0b4a7836205b86d0d437a97f932feee89d69781519a2c86530da8106ff0d9e02",
+            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "content": "sha256:8698006849b695d404051bb45a17ac631fc6762548a7ea190eefa0dd7741f0eb",
             "locator": {
-              "kind": "symbol",
-              "name": "test_d695_whole_path_authentication_precedes_source_checks"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "A synthetic record admitted by a patched fingerprint still authenticates the frozen owners and rejects a changed ordinary template.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
-            "content": "sha256:69f264acefbeabf0209e23ea5f152e43162d5a2aaaaa5971642c9d4406235736",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_d695_whole_path_authenticates_uncapped_ordinary_template"
+              "end": 349,
+              "kind": "line_range",
+              "start": 339
             }
           },
           "kind": "test"

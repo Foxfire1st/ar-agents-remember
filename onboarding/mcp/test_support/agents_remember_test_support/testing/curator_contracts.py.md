@@ -16,9 +16,15 @@ Clause tuples (for example the card-authoring, history disposition, writer ident
 
 Its readers are the Curator wording, delivery, healing and correction-guidance tests, the developer-question, role-message, link-integrity and wording-pin tests, the converted-onboarding bootstrap test, `mcp/tests/role_instruction_wording_support.py` and `curator_instruction_delivery.py`.
 
+`require_permission_delivery` first requires the shipped orientation operation bytes to equal the checkout's orientation operation bytes. On mismatch, the assertion says `Run mcp/.venv/bin/python scripts/renew-instructions.py` before the action-local permission link is followed. [5]
+
 ## Evidence
 
 - One action-local link is followed to its exact owner file and heading. [1]
 - Every declared role/operation pair is compiled through real admission and the capsule compiler. [2]
 - Card authoring requires per-sentence decisions and removal of past accounts. [3]
 - Healing wording is rejected when it limits repair to own faults or routes all debt away. [4]
+
+### Repo-Internal References (renewed)
+
+- require_permission_delivery requires shipped and checkout orientation-operation bytes to agree and names `Run mcp/.venv/bin/python scripts/renew-instructions.py` on mismatch before following the permission-decision link. [5]

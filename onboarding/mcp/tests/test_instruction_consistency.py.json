@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+        "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
         "content": "sha256:5b4ff6a994aeb60379876664c318c51cd483d7794df8271de220cf411c221a68",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,25 @@
     },
     {
       "anchor": {
-        "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
-        "content": "sha256:7d8e035c25a17ef3de875b9a80ff64a2f9e82414b891dc5410b4b00e97b7b918",
+        "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+        "content": "sha256:299331760cdfffbf9185e10e10e347c9f144a882fe15580095c6edea0f4c1197",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_actual_frozen_owner_change_fails_its_existing_sha_authentication"
+        }
+      },
+      "facet": "A whitespace-only edit to an authenticated historical owner is rejected even when parsed JSON and supplied Surface bytes agree; this protects historical authentication rather than proving current wording semantics.",
+      "id": "PRF-BAWAZC",
+      "invariant": "INV-NDGJ3M",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 6",
+        "leaf": "261112-BUG-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+        "content": "sha256:aa249effa404b77f31350e4d13b1ca76e3a5b9f84bbfa0b2791b67d9768498a7",
         "locator": {
           "kind": "symbol",
           "name": "test_current_budget_record_names_no_absent_path"
@@ -34,13 +51,49 @@
         "handoffEntry": "L84-P5-25",
         "leaf": "260928-MIK-L84"
       }
+    },
+    {
+      "anchor": {
+        "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+        "content": "sha256:5b4ff6a994aeb60379876664c318c51cd483d7794df8271de220cf411c221a68",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_exactly_one_renewal_sub_record_claims_current"
+        }
+      },
+      "facet": "Exactly one measured renewal is nonhistorical and authority-only; adding a current flag to a historical measured renewal is rejected.",
+      "id": "PRF-YZ45Y9",
+      "invariant": "INV-12JAM7",
+      "origin": {
+        "handoffEntry": "L8-CURATION-INV-12JAM7",
+        "leaf": "261112-BUG-L8"
+      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
-        "content": "sha256:7d8e035c25a17ef3de875b9a80ff64a2f9e82414b891dc5410b4b00e97b7b918",
+        "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+        "content": "sha256:e9300df03b9680de956a11a79a99fd74ecb04541776a1810763b3b01535ad2ab",
+        "locator": {
+          "end": 320,
+          "kind": "line_range",
+          "start": 302
+        }
+      },
+      "id": "RLZ-PXD8EC",
+      "invariant": "INV-12JAM7",
+      "origin": {
+        "handoffEntry": "L8-M2-C45-12JAM-currentness-helper",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The helper counts measuredCurrentRenewal dictionaries without a valid historicalTree and reports unless exactly one exists; it separately reports current keys on historical renewals and any nonhistorical renewal whose exact key set is not {authority}. These are the existing revision2 currentness and authority-only predicates, not a widened requirement.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+        "content": "sha256:aa249effa404b77f31350e4d13b1ca76e3a5b9f84bbfa0b2791b67d9768498a7",
         "locator": {
           "kind": "symbol",
           "name": "test_current_budget_record_names_no_absent_path"
@@ -52,12 +105,12 @@
         "handoffEntry": "L84-P5-25",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "This guard fails when the current budget record names a path absent on the tree (with the prefix limit noted as an observation).",
+      "rationale": "This test rejects absent paths named by current renewal membership and derived current-detail populations, while accepting a renewal path as historical only with a valid historical tree identity.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+        "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
         "content": "sha256:5b4ff6a994aeb60379876664c318c51cd483d7794df8271de220cf411c221a68",
         "locator": {
           "kind": "symbol",
@@ -80,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
             "content": "sha256:f641b37518a4427bc28b5300943c0af73d252b3611553b1359bd7aea8d24d9af",
             "locator": {
               "end": 26,
@@ -97,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
             "content": "sha256:e7c86b5d54a731dec9047785132726eca17bcdd445f605bc87759b47e2684e4b",
             "locator": {
               "kind": "symbol",
@@ -113,11 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
-            "content": "sha256:7d8e035c25a17ef3de875b9a80ff64a2f9e82414b891dc5410b4b00e97b7b918",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+            "content": "sha256:aa249effa404b77f31350e4d13b1ca76e3a5b9f84bbfa0b2791b67d9768498a7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_current_budget_record_names_no_absent_path"
+              "end": 299,
+              "kind": "line_range",
+              "start": 273
             }
           },
           "kind": "test"
@@ -125,15 +179,16 @@
       ]
     },
     "12": {
-      "note": "Exactly one renewal sub-record claims current.",
+      "note": "Exactly one renewal sub-record is nonhistorical and contains only its authority; historical sub-records carry no current field.",
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
-            "content": "sha256:5b4ff6a994aeb60379876664c318c51cd483d7794df8271de220cf411c221a68",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+            "content": "sha256:7b377cd7bbf54d0e501bfac38e747d4703ee204bbf1e8cd272d957045d04d41f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_exactly_one_renewal_sub_record_claims_current"
+              "end": 340,
+              "kind": "line_range",
+              "start": 302
             }
           },
           "kind": "test"
@@ -145,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
             "content": "sha256:c0ef6d32704064dd33738977a59f2d990503865fee60511dcb6e757968b3be13",
             "locator": {
               "kind": "symbol",
@@ -161,11 +216,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
-            "content": "sha256:705e7be1c2b72fa84235c25abedd730a9549801c43f4f9154fe15950d80c69a7",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+            "content": "sha256:299331760cdfffbf9185e10e10e347c9f144a882fe15580095c6edea0f4c1197",
             "locator": {
-              "kind": "symbol",
-              "name": "test_actual_frozen_owner_change_fails_its_existing_sha_authentication"
+              "end": 412,
+              "kind": "line_range",
+              "start": 381
             }
           },
           "kind": "test"
@@ -177,8 +233,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
-            "content": "sha256:6fa416a1cd78cce1f72376a7d58febb5e1e3be64239e4133d2ce33a2ea4e6a9a",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+            "content": "sha256:a30cd1a9aa66f659f7b4289fe2615cbad5da079646ab96c347d4e55dd20f43f1",
             "locator": {
               "kind": "file"
             }
@@ -192,7 +248,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
             "content": "sha256:7ebc8f32780cbff9f1bc2c49b15a4a52b435d33acc025092ea328458ad3b4e9f",
             "locator": {
               "kind": "symbol",
@@ -208,7 +264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
             "content": "sha256:95b1cba13ed3c1a37b9a1dff8edceda12465d40202455495e25093c2622ec347",
             "locator": {
               "kind": "symbol",
@@ -224,8 +280,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
-            "content": "sha256:6fa416a1cd78cce1f72376a7d58febb5e1e3be64239e4133d2ce33a2ea4e6a9a",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+            "content": "sha256:a30cd1a9aa66f659f7b4289fe2615cbad5da079646ab96c347d4e55dd20f43f1",
             "locator": {
               "kind": "file"
             }
@@ -239,7 +295,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
             "content": "sha256:4a57b57cb7b14c8b4c30e9957402c301701cc134b778d8830e0a23e7c87b6adf",
             "locator": {
               "kind": "symbol",
@@ -255,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
             "content": "sha256:4db86b00336de3159949c44c38d36a5ff1623bde33ed29caa72671c37247a81d",
             "locator": {
               "kind": "symbol",
@@ -271,8 +327,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
-            "content": "sha256:6fa416a1cd78cce1f72376a7d58febb5e1e3be64239e4133d2ce33a2ea4e6a9a",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
+            "content": "sha256:a30cd1a9aa66f659f7b4289fe2615cbad5da079646ab96c347d4e55dd20f43f1",
             "locator": {
               "kind": "file"
             }
@@ -286,7 +342,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "blob": "e11849e74e6e0054bc9cf868807009c49904a6c2",
             "content": "sha256:0bbfe40d6052a9f579f4391b844397b298efa9b26b58a7dec97b638ea12d9841",
             "locator": {
               "kind": "symbol",

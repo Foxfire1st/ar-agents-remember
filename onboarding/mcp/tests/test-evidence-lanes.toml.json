@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+        "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
         "content": "sha256:2b698977c12861afe9fde1638c9651dd93f2930f03ffcd5fd37df385e01025ac",
         "locator": {
-          "end": 571,
+          "end": 574,
           "kind": "line_range",
-          "start": 571
+          "start": 574
         }
       },
       "id": "RLZ-9QPBZK",
@@ -23,8 +23,8 @@
     },
     {
       "anchor": {
-        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-        "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+        "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+        "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
         "locator": {
           "kind": "file"
         }
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-        "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+        "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+        "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
         "locator": {
           "kind": "file"
         }
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-        "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+        "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+        "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
         "locator": {
           "kind": "file"
         }
@@ -74,12 +74,12 @@
     },
     {
       "anchor": {
-        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+        "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
         "content": "sha256:9635c28f80fdb4ace2233d46e786ccf2715cbac64804bea54fe7ced895d346e9",
         "locator": {
-          "end": 693,
+          "end": 696,
           "kind": "line_range",
-          "start": 693
+          "start": 696
         }
       },
       "id": "RLZ-NJFH31",
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-        "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+        "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+        "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
         "locator": {
           "kind": "file"
         }
@@ -110,12 +110,12 @@
     },
     {
       "anchor": {
-        "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+        "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
         "content": "sha256:626fdf1de7dc33cb5b0dfa1a32f99b507f21ca9b19a8f13f077dcfd0bcc76ed1",
         "locator": {
-          "end": 525,
+          "end": 528,
           "kind": "line_range",
-          "start": 525
+          "start": 528
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -130,12 +130,12 @@
   ],
   "references": {
     "835": {
-      "note": "Extracted capsule surface suite in unit-regression Anchor: `test_capsule_serving_surface.py`\n\nAnchor: file",
+      "note": "Extracted capsule surface suite in unit-regression Anchor: `test_capsule_serving_surface.py` Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -145,12 +145,12 @@
       ]
     },
     "836": {
-      "note": "Opt-out refusal suites in unit-regression Anchor: `test_memory_opt_out_refused_routes.py`\n\nAnchor: file",
+      "note": "Opt-out refusal suites in unit-regression Anchor: `test_memory_opt_out_refused_routes.py` Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -160,12 +160,12 @@
       ]
     },
     "837": {
-      "note": "Lane lists retain one path per module, with the worktree-environment guard registered in unit-regression.\n\nAnchor: file",
+      "note": "Lane lists retain one path per module, with the worktree-environment guard registered in unit-regression. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -191,12 +191,12 @@
       ]
     },
     "839": {
-      "note": "The current lane catalog declares test populations; no invocation or pass is implied.\n\nAnchor: file",
+      "note": "The current lane catalog declares test populations; no invocation or pass is implied. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -206,12 +206,12 @@
       ]
     },
     "840": {
-      "note": "The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution.\n\nAnchor: file",
+      "note": "The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -221,12 +221,12 @@
       ]
     },
     "841": {
-      "note": "The worktree-environment regression module belongs to unit-regression.\n\nAnchor: file",
+      "note": "The worktree-environment regression module belongs to unit-regression. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -236,11 +236,11 @@
       ]
     },
     "842": {
-      "note": "The lane catalog selects mcp/tests/test_application_guards.py once in unit-regression. This declaration records selection, not invocation or a passing result.\n\nAnchor: file",
+      "note": "The lane catalog selects mcp/tests/test_application_guards.py once in unit-regression. This declaration records selection, not invocation or a passing result. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
             "content": "sha256:51289f4d3ee68ba833587d047252fd71f072dd42eb4e0ce59a0ac2564cf08515",
             "locator": {
               "end": 47,
@@ -252,8 +252,8 @@
         },
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -279,12 +279,12 @@
       ]
     },
     "844": {
-      "note": "The current source declares lane membership, including the three MIK-R53 modules in unit-regression. Membership does not establish invocation or PASS; no lane declaration for the citation-document transaction appears in this file's lane arrays.\n\nAnchor: file",
+      "note": "The current source declares lane membership, including the three MIK-R53 modules in unit-regression. Membership does not establish invocation or PASS; no lane declaration for the citation-document transaction appears in this file's lane arrays. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -294,12 +294,12 @@
       ]
     },
     "845": {
-      "note": "The recorded-meaning test module is selected once in unit-regression; registration asserts no invocation or acceptance.\n\nAnchor: file",
+      "note": "The recorded-meaning test module is selected once in unit-regression; registration asserts no invocation or acceptance. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -309,12 +309,12 @@
       ]
     },
     "847": {
-      "note": "Native reapply remains declared in unit-regression; membership is selection only and the list remains canonically ordered.\n\nAnchor: file",
+      "note": "Native reapply remains declared in unit-regression; membership is selection only and the list remains canonically ordered. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -324,14 +324,16 @@
       ]
     },
     "848": {
-      "note": "The three R53 modules remain declared in unit-regression; they already exist in this leaf’s base and are not L59 additions. Membership proves no invocation or PASS.\n\nAnchor: file",
+      "note": "The three R53 modules remain declared in unit-regression. The earlier card recorded that they already existed in L59’s base and were not L59 additions. Membership proves no invocation or PASS. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:30f212a66e08058a95af77b80d5578d39567a3198521a13cfc42a5debab1f495",
             "locator": {
-              "kind": "file"
+              "end": 352,
+              "kind": "line_range",
+              "start": 350
             }
           },
           "kind": "test"
@@ -339,12 +341,12 @@
       ]
     },
     "849": {
-      "note": "Existing unit-regression lane declares test_task_document_order.py once; membership is selection, not execution.\n\nAnchor: file",
+      "note": "Existing unit-regression lane declares test_task_document_order.py once; membership is selection, not execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -354,12 +356,12 @@
       ]
     },
     "852": {
-      "note": "The reopened-workspace regression module is declared in unit-regression; this selects evidence and certifies no execution.\n\nAnchor: file",
+      "note": "The reopened-workspace regression module is declared in unit-regression; this selects evidence and certifies no execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -369,12 +371,12 @@
       ]
     },
     "853": {
-      "note": "The deletion-cancellation module is declared once in unit-regression; membership selects tests and proves no invocation.\n\nAnchor: file",
+      "note": "The deletion-cancellation module is declared once in unit-regression; membership selects tests and proves no invocation. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -384,12 +386,12 @@
       ]
     },
     "854": {
-      "note": "The conversion-cost module is declared in unit-regression; selection is not execution.\n\nAnchor: file",
+      "note": "The conversion-cost module is declared in unit-regression; selection is not execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -399,12 +401,12 @@
       ]
     },
     "857": {
-      "note": "Native reapply remains declared in unit-regression; membership is selection only and the list remains canonically ordered.\n\nAnchor: file",
+      "note": "Native reapply remains declared in unit-regression; membership is selection only and the list remains canonically ordered. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -414,12 +416,12 @@
       ]
     },
     "858": {
-      "note": "The current lane catalog declares test populations; no invocation or pass is implied.\n\nAnchor: file",
+      "note": "The current lane catalog declares test populations; no invocation or pass is implied. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -429,12 +431,12 @@
       ]
     },
     "859": {
-      "note": "The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution.\n\nAnchor: file",
+      "note": "The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -444,12 +446,12 @@
       ]
     },
     "860": {
-      "note": "The lane manifest registers the three review-evidence modules test_review_evidence_eof.py, test_review_evidence_packet.py and test_review_evidence_residuals.py, and test_review_frame_store.py, once each in unit-regression. Membership does not establish execution.\n\nAnchor: file",
+      "note": "The lane manifest registers the three review-evidence modules test_review_evidence_eof.py, test_review_evidence_packet.py and test_review_evidence_residuals.py, and test_review_frame_store.py, once each in unit-regression. Membership does not establish execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -459,12 +461,12 @@
       ]
     },
     "862": {
-      "note": "Developer-message tests are selected once in the existing unit-regression lane. Anchor: mcp/tests/test_developer_messages.py. Anchor: mcp/tests/test_developer_messages.py.\n\nAnchor: file",
+      "note": "Developer-message tests are selected once in the existing unit-regression lane. Anchor: mcp/tests/test_developer_messages.py. Anchor: mcp/tests/test_developer_messages.py. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -474,12 +476,12 @@
       ]
     },
     "863": {
-      "note": "The seven lane identities remain declared; this is membership, not execution.\n\nAnchor: file",
+      "note": "The seven lane identities remain declared; this is membership, not execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -489,14 +491,28 @@
       ]
     },
     "864": {
-      "note": "The current lane catalog declares seven lanes and 785 distinct module paths: 645 unit-regression, 3 public-contract, 115 integration and 22 architecture-fitness; provider-conformance, stress-durability and migration are empty. These current registrations establish no invocation or passing result.\n\nAnchor: file",
+      "note": "The current lane catalog declares seven lanes and 788 distinct module paths: 648 unit-regression, 3 public-contract, 115 integration and 22 architecture-fitness; provider-conformance, stress-durability and migration are empty. These current registrations establish no invocation or passing result. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:3adda7579b41c7bc3cdcaf26d26b979c1e174025d8731ad3fa9a1cc2b69d509d",
             "locator": {
-              "kind": "file"
+              "end": 654,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:e532ba08b3007313d0891124e9fd79aba25459ef9a8750b1be033bc5d4cae27f",
+            "locator": {
+              "end": 812,
+              "kind": "line_range",
+              "start": 656
             }
           },
           "kind": "test"
@@ -504,12 +520,12 @@
       ]
     },
     "866": {
-      "note": "The current source declares lane membership, including the three MIK-R53 modules in unit-regression. Membership does not establish invocation or PASS.\n\nAnchor: file",
+      "note": "The current source declares lane membership, including the three MIK-R53 modules in unit-regression. Membership does not establish invocation or PASS. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -519,14 +535,28 @@
       ]
     },
     "867": {
-      "note": "The current catalog declares 785 distinct modules: 645 unit-regression, 3 public-contract, 115 integration and 22 architecture-fitness; the other three lanes are empty. These declarations establish no invocation or passing result.\n\nAnchor: file",
+      "note": "The current catalog declares 788 distinct modules: 648 unit-regression, 3 public-contract, 115 integration and 22 architecture-fitness; the other three lanes are empty. These declarations establish no invocation or passing result. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:3adda7579b41c7bc3cdcaf26d26b979c1e174025d8731ad3fa9a1cc2b69d509d",
             "locator": {
-              "kind": "file"
+              "end": 654,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:e532ba08b3007313d0891124e9fd79aba25459ef9a8750b1be033bc5d4cae27f",
+            "locator": {
+              "end": 812,
+              "kind": "line_range",
+              "start": 656
             }
           },
           "kind": "test"
@@ -534,12 +564,25 @@
       ]
     },
     "868": {
-      "note": "The current catalog selects `test_landing_workflow_setting.py` and `test_publication_merge_admission.py`, the existing explainer suites, and `test_dashboard_autostart_after_discovery.py`. Membership names the selected population and supplies no invocation or passing result. Its source asserts scheduling after the discovery answer and a no-list first-call fallback through one latch.\n\nAnchor: file",
+      "note": "The lane catalog selects landing-workflow, publication-merge, explainer and after-discovery regressions; the after-discovery source asserts scheduling after the discovery answer and a no-list first-call fallback through one latch. These are declarations and source assertions, not execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "fa392c631e8973beb464de5d5f1c437342cee5db",
+            "content": "sha256:6ded61fba73f061c96db7bb110275528f71fe888eaa019ea865d4c122bdbdcdf",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 239
+            },
+            "path": "mcp/tests/test_dashboard_autostart_after_discovery.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             }
@@ -549,14 +592,28 @@
       ]
     },
     "869": {
-      "note": "The parsed source selects 785 distinct modules across the seven existing lane identities: 645 unit-regression, 3 public-contract, 115 integration and 22 architecture-fitness; provider-conformance, stress-durability and migration are empty. It retains the after-discovery, explainer and publication/landing-workflow modules together with the nine retired-provider regressions, and omits the retired provider-current-state module. The declarations select evidence; they establish no invocation or passing result.\n\nAnchor: file",
+      "note": "The parsed source selects 788 distinct modules across the seven existing lane identities: 648 unit-regression, 3 public-contract, 115 integration and 22 architecture-fitness; provider-conformance, stress-durability and migration are empty. It retains the after-discovery, explainer and publication/landing-workflow modules together with the nine retired-provider regressions, and omits the retired provider-current-state module. The declarations select evidence; they establish no invocation or passing result. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:3adda7579b41c7bc3cdcaf26d26b979c1e174025d8731ad3fa9a1cc2b69d509d",
             "locator": {
-              "kind": "file"
+              "end": 654,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:e532ba08b3007313d0891124e9fd79aba25459ef9a8750b1be033bc5d4cae27f",
+            "locator": {
+              "end": 812,
+              "kind": "line_range",
+              "start": 656
             }
           },
           "kind": "test"
@@ -564,14 +621,28 @@
       ]
     },
     "870": {
-      "note": "The current catalog declares 785 distinct modules: 645 unit-regression, 3 public-contract, 115 integration and 22 architecture-fitness; the other three lanes are empty. These declarations establish no invocation or passing result.\n\nAnchor: file",
+      "note": "The current catalog declares 788 distinct modules: 648 unit-regression, 3 public-contract, 115 integration and 22 architecture-fitness; the other three lanes are empty. These declarations establish no invocation or passing result. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:3adda7579b41c7bc3cdcaf26d26b979c1e174025d8731ad3fa9a1cc2b69d509d",
             "locator": {
-              "kind": "file"
+              "end": 654,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:e532ba08b3007313d0891124e9fd79aba25459ef9a8750b1be033bc5d4cae27f",
+            "locator": {
+              "end": 812,
+              "kind": "line_range",
+              "start": 656
             }
           },
           "kind": "test"
@@ -579,11 +650,11 @@
       ]
     },
     "871": {
-      "note": "The browser suite is selected in the unit-regression lane.\n\nAnchor: file",
+      "note": "The browser suite is selected in the unit-regression lane. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
             "content": "sha256:83668ca23fa28d94dec16eb63f642180041fb88fbaeffbcd04c50680865ccb4c",
             "locator": {
               "end": 159,
@@ -595,10 +666,70 @@
         },
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "872": {
+      "note": "The full release procedure covers the whole current test population; catalog loading rejects missing and stale module memberships.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d41a67a3304e4b26e25cf5513344b5f3df647e1e",
+            "content": "sha256:23051af56d43c4280168e38d05d3e1a20735dc285d024e098129c2ac934f428c",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "docs/design/python-evidence-system.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:ea403833ef8a14251c79518792fb5b7251931341d377816c431e2abe3fc732c7",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "873": {
+      "note": "The unit-regression lane registers the digest, manifest and pointer renewal test modules after test_instruction_consistency.py; membership establishes no invocation or result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:b89b9b9893495a115c70e51c676e44932f5f3e2d068bbaf7e68fefbd9f81ad93",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
             }
           },
           "kind": "test"

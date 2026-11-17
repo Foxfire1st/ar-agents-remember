@@ -114,8 +114,11 @@ probes call `integration_gate_block` directly with chain proof held passing; the
 
 ### Invariants And Boundaries
 
-- Every public route that commits or lands memory has a refusal test entered through its own entry point (the carried
-  L22 obligation: a refusal test at each route).
+- The closeout, recorded-leaf landing and direct-landing refusal cases enter through their respective route entry points.
+
+The earlier card at memory snapshot `81cfe4a8` called “a refusal test at each
+route” the carried L22 obligation. That records the provenance of the route-entry
+cases; the current inspected route population is the named list above.
 
 ### Todos
 
@@ -175,10 +178,6 @@ No configured live documentation source was available for this pass.
 
 - R3-1 and R3-2. [29]
 
-
-
-
-
 - A Git failure asking for a recorded blob is named by the trees and the lane. [31]
 
 - An unwritable closing receipt restores the file and admits nothing. [32]
@@ -194,9 +193,8 @@ No meaningful cross-repo references found: the fixture builds its own repositori
 No cross-repo boundary is crossed by this file.
 
 
+### Repo-Internal References (continued)
+
 - The four refusal cases retain their original branches and complete world snapshots. _record checks the exact answer code, state and error detail rather than merely accepting a generic unsuccessful return. [34]
-
-
-
 
 - The lane row. [30]

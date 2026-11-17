@@ -1,0 +1,42 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/pointer_sentences.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c78ff878e678179362ad2f37ae026f34e99c989b",
+        "content": "sha256:b44fc7a0db0f7f9283904ef6b2fb45273ca93ea352995271db29970ab56fec12",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SJJGEM",
+      "invariant": "INV-NDGJ3M",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 6",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Independent audience, link and pointer checks protect current delivery while the kept historical constants remain unchanged.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Extraction selects local pointer targets and normalizes their action text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c78ff878e678179362ad2f37ae026f34e99c989b",
+            "content": "sha256:b2905dc858e227f961bb30f9e22035a2b2ba240674ff45840303af06e575b662",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,17 +3,30 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The public benchmark facade re-exports this module's public functions and classes for compatibility.",
+      "note": "The public benchmark facade re-exports this module's public constants.",
       "targets": [
         {
           "anchor": {
             "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
-            "content": "sha256:3d62e46f544b23376c4b332d4e33e3ae50b5c66fbdcef0c9ba675d46f6fe1773",
+            "content": "sha256:1840757582478d6cb21937e0712072db6e09e3c8d195f35585ca4419e54521af",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_repo"
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
             },
             "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ac76ec64057a6893daa0f473b52ee8c8482e6475",
+            "content": "sha256:43f10f6c62f0f15da80bd8ed2e35d2a407b8871a1c3314dda6673e0334f532d2",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 1
+            }
           },
           "kind": "code"
         }
@@ -40,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
             "content": "sha256:a1158b05bc0d2bae48bf1d67aee004da27d54031e586096258000ff3cb8d046c",
             "locator": {
               "kind": "symbol",

@@ -1,6 +1,26 @@
 {
   "path": "skills/l-01-agent-lifecycles/templates/repo-overview.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e05b645614eb1371097857ed81acf0ed9c8ea162",
+        "content": "sha256:4945deed4342d13b523ffc4024d0e3c8ae35dd07175814a6091c0dc5701b0820",
+        "locator": {
+          "end": 48,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-0G0A97",
+      "invariant": "INV-4XD2ZF",
+      "origin": {
+        "handoffEntry": "L8-M2-F01-current-Curator-card-format",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The canonical repository-overview layout expressly directs Curators to the governing card rules and puts citation-table input in its final Evidence section after the repository explanations.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The root overview layout lists its sections from What This Repo Is to Evidence.",

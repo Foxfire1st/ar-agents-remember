@@ -50,15 +50,16 @@
       ]
     },
     "2": {
-      "note": "The corpus root, its manifest and its publishing origin travel together as one admission.",
+      "note": "The corpus root and manifest travel together as one admission; publishing origin is declared separately.",
       "targets": [
         {
           "anchor": {
             "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
             "content": "sha256:b1aa6db26f9495b7eac841b60e70fbfb0730b9dbbdeb2a63197ed4bac2c762b8",
             "locator": {
-              "kind": "symbol",
-              "name": "shipped_composition_corpus"
+              "end": 63,
+              "kind": "line_range",
+              "start": 50
             }
           },
           "kind": "code"
@@ -103,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:eb872cf7266eee92478bade771cd2a52d631a8387228cb01e1509650288f081b",
             "locator": {
               "end": 6,

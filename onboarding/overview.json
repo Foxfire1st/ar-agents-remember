@@ -74,18 +74,31 @@
       ]
     },
     "103": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The route rules are reported inside the writer and refused by every commit route.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Route violations marked writer_reports are reported inside the writer and refused by commit routes. The route_unassigned rule separately uses migration_debt: standalone conversion reports it; at other routes only base-carried debt reports while migration is incomplete, and new debt or debt after migration completion refuses.",
       "targets": [
         {
           "anchor": {
             "blob": "9d0fd44f3dd129ddde8d51e1df229c8c44f0e57a",
-            "content": "sha256:9c18ade5d132bce2e8f70b617cdf9b870e42b5ec6ac1db0de0359af9a9a747c3",
+            "content": "sha256:cf0002b42440759dcb8a9df5f801e6be0c89a6077eb8204a0f304dd93a517faf",
             "locator": {
-              "end": 15,
+              "end": 285,
               "kind": "line_range",
-              "start": 1
+              "start": 210
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "915f129fdf2d6dbd0e54f7ecd9793fd9cacf8a49",
+            "content": "sha256:07e59c65c5430767c76109861c5eaef995023ac8f34cc8974a1431e76830beb9",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
           "kind": "code"
         }
@@ -124,6 +137,19 @@
             "path": "mcp/src/agents_remember/application/knowledge_worklist/registry.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16989165e155eb17986848e5f06e66d2f310f31f",
+            "content": "sha256:e9c68c85d51f15af539883120fb1aa0e851df4b37046d63398a13c77df8c9b45",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 482
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -150,11 +176,24 @@
         {
           "anchor": {
             "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
-            "content": "sha256:3e13866b731f79488de6fc1864b3f95a0acb7c3fa3f27b8d96838581b16a1c34",
+            "content": "sha256:507968aeb9a25c1226c720cb5891b4973ae48788f5aa78deaa15560d1de702a7",
             "locator": {
-              "end": 263,
+              "end": 310,
               "kind": "line_range",
-              "start": 257
+              "start": 266
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:82700996ec11ff2f61e6ce0816073170b3557a401a202ae41f9b8c12403505fc",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 327
             },
             "path": "mcp/src/agents_remember/providers/grepai/seed.py"
           },
@@ -239,7 +278,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
             "content": "sha256:5da6bcb1e5bc4e198aed174974ca82030cb1458a4810fd23bf6dd5511de2d96b",
             "locator": {
               "end": 19,
@@ -257,7 +296,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
             "content": "sha256:7e9f1dc3267afa3d829234b9768060fabdd0a2e2bc3a16d07d5cec96307df0d8",
             "locator": {
               "end": 319,
@@ -275,7 +314,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
             "content": "sha256:c3990657ce48bfc68ba7d342108feb8e693c0ae75c9a8f25654718abd5ba5dd2",
             "locator": {
               "end": 234,
@@ -306,16 +345,31 @@
       ]
     },
     "126": {
-      "note": "**Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): A candidate tree is captured through a private index.\n\nAnchor: `worktree_candidate_tree`",
+      "note": "**Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): A candidate tree is captured through a private index. Anchor: `worktree_candidate_tree`",
       "targets": [
         {
           "anchor": {
             "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
-            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "content": "sha256:464218c7cff86018061e344e5d5a53fd14ad3754b647e995dd80144b4559fdcb",
             "locator": {
-              "kind": "file"
+              "end": 94,
+              "kind": "line_range",
+              "start": 58
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
           },
           "kind": "code"
         }
@@ -445,7 +499,7 @@
       ]
     },
     "137": {
-      "note": "**Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The launcher seam: AR resolves the role hierarchy, task capsule and report scope, Paseo owns the agent session, and the receipt updates no AR state.",
+      "note": "**Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The launcher seam: AR resolves the role hierarchy, task capsule and report scope, Paseo owns the agent session, and the receipt retains the execution reference and does not update task, review, curation or Git state.",
       "targets": [
         {
           "anchor": {
@@ -463,16 +517,29 @@
       ]
     },
     "138": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The reader config of a call that carries a task context comes from the leaf's admitted enclosure.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Task-scoped reader configuration derives from the exact canonical admitted leaf and its enclosure contract, or its master’s series contract when an explicit direct-execution grant admits that route.",
       "targets": [
         {
           "anchor": {
             "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
-            "content": "sha256:c77efbfb050d869b9f27ef2d986531d94886b51cb75ed7194758cf016ae87393",
+            "content": "sha256:0a854a9697a0201e89c3d1e9fd7b73fde65bc8acdc1aa31cca7cd242f3b30263",
             "locator": {
-              "end": 5,
+              "end": 107,
               "kind": "line_range",
-              "start": 1
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:c40a898423847a36c8a987b4f80fda1e6425ceafbf77aa5d9e77f2be8a6089dd",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 127
             },
             "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
           },
@@ -538,10 +605,50 @@
             "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:8a68d04e793048821ea0d878219221b984f7f099d44d098ca49782e676f796e5",
             "locator": {
-              "kind": "symbol",
-              "name": "ProviderAuthority"
+              "end": 258,
+              "kind": "line_range",
+              "start": 238
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:3b540a0d83735a37840bf0b3f94a7a430c21e9d782753b587483243203c358f6",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:ad5e2b4803c2272a7a4da99fb12bc4155e0ebfee1f29cc884d434037d4c926fc",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 289
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
           "kind": "code"
         }
@@ -725,14 +832,16 @@
       ]
     },
     "21": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section.\n\nAnchor: `## The writer's input sections`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section. Anchor: `## The writer's input sections`",
       "targets": [
         {
           "anchor": {
             "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
-            "content": "sha256:d3c1273715f3b7fcc23d52d26d9e97f95de76f183b00dd1411403b29f9e9b21b",
+            "content": "sha256:79438443c25293439c5f4f268a874b8336a4aac41b83042f896b69a94c43fbd7",
             "locator": {
-              "kind": "file"
+              "end": 182,
+              "kind": "line_range",
+              "start": 131
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -846,7 +955,7 @@
       ]
     },
     "263": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The ingestion template's planned-row paragraph, mirrored into the package copy.\n\nAnchor: `#### Planned effects`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The ingestion template's planned-row paragraph, mirrored into the package copy. Anchor: `#### Planned effects`",
       "targets": [
         {
           "anchor": {
@@ -858,6 +967,19 @@
               "start": 384
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:96952fe2b6e3e3803e98684dad12ee79cab8b00b0a24cf35db01ff7daf0ea906",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 384
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
           "kind": "code"
         }
@@ -1004,16 +1126,29 @@
       ]
     },
     "273": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The order declares `certification` between `models` and `controlplane`, and those package tables carry matching ranks 3 and 4.\n\nAnchor: `order = [`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The order declares `certification` between `models` and `controlplane`, and those package tables carry matching ranks 3 and 4. Anchor: `order = [`",
       "targets": [
         {
           "anchor": {
             "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
-            "content": "sha256:04d5f0e9ddf2afdf016e7361a131f4ae802f07bc690f5c1eb5fb900e5751d5fa",
+            "content": "sha256:e3ce71699850310490fd1a0fdc4dce3bd488482253f3a407deeba9cbede57b3c",
             "locator": {
-              "end": 32,
+              "end": 38,
               "kind": "line_range",
               "start": 32
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:89ab6999c858e74800d1313ea6d6db3973ad66a0a8bf1df31796afe5ec76b268",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 105
             },
             "path": "layers.toml"
           },
@@ -1044,7 +1179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "blob": "e3913163be3b91297066e21703964f8104d4e507",
             "content": "sha256:1b1590e56accd85c30135880973b7612b252ec792739bf0e5b8b80c6a8af632c",
             "locator": {
               "end": 11,
@@ -1057,12 +1192,12 @@
         },
         {
           "anchor": {
-            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "blob": "e3913163be3b91297066e21703964f8104d4e507",
             "content": "sha256:c9f63ea46afd39aad20b37353a9c13d815a0adcb0dbf3ce3923007d434f3f832",
             "locator": {
-              "end": 134,
+              "end": 135,
               "kind": "line_range",
-              "start": 129
+              "start": 130
             },
             "path": "AGENTS.md"
           },
@@ -1091,8 +1226,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
-            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+            "content": "sha256:7154835c9a7497fa7c41c9bb084bcf73ac5cf4ffba6a7bb1703f296bb22adf2d",
             "locator": {
               "kind": "file"
             },
@@ -1103,16 +1238,42 @@
       ]
     },
     "278": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating.\n\nAnchor: `Refuse a tag whose commit has not landed on main`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating. Anchor: `Refuse a tag whose commit has not landed on main`",
       "targets": [
         {
           "anchor": {
-            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
-            "content": "sha256:a67ead41d8812af7ec0ae3734f78643f1415cbcdde121e64fc5fc7ac4e896b04",
+            "blob": "d969ca03f76455f4e78a2d6f184bb6af34afe26d",
+            "content": "sha256:38fcf23399a457059ce530487704ab54c6b75ad4e6a64f9292cab3b5d06044f0",
             "locator": {
-              "end": 34,
+              "end": 7,
               "kind": "line_range",
-              "start": 32
+              "start": 3
+            },
+            "path": ".github/workflows/quality-checks.yml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d969ca03f76455f4e78a2d6f184bb6af34afe26d",
+            "content": "sha256:7e0d4a7ce83abb92f09361ec3077843d5df7a5f1062cddcfa014626781e3d002",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": ".github/workflows/quality-checks.yml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+            "content": "sha256:3e7fc81bee54eda3eeb3f4544fbec64fb6147eca1c21dbba8569b281d6313755",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 28
             },
             "path": ".github/workflows/publish-mcp-to-pypi.yml"
           },
@@ -1121,18 +1282,70 @@
       ]
     },
     "279": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The staged-quality boundary refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality; the transaction-only closeout no longer imports it.\n\nAnchor: `def gate_staged_code(`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The staged-quality helper refuses non-linked checkouts and unresolved conflicts, resets and stages the whole task worktree, and checks a supplied candidate tree before and after staging and after any configured hook. Its gate invokes targeted Dagger quality and checks published evidence against that supplied candidate. Ordinary transaction-only closeout does not import this helper. Anchor: `prepare_staged_code`, `gate_staged_code`",
       "targets": [
         {
           "anchor": {
             "blob": "18634fac33fb932b08876aab377c40c076e39b72",
-            "content": "sha256:6a397879cbc4d963a08e6aa3c7f44e1e98de9ea8c70ea086dc00cb14ca867937",
+            "content": "sha256:cf80def882b4a325b9ca17fd0279ae678e03cb55633b7eb1854b91e87350d896",
             "locator": {
-              "end": 139,
+              "end": 56,
               "kind": "line_range",
-              "start": 139
+              "start": 25
             },
             "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:9a80ff633c459e0b81a886c8b9c7f8af16b117b9e84e218e869dff27474802e8",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:cbaeedae02078ddc351bbbd7e352f556b947c1b64c9cea1eb31e3514252c2644",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:102667dc601b9394a657e139192f2e49e0007fd50e34c635fa71896404d81f44",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
+            "content": "sha256:7966d22bb88ffde688184c10411a22c4e29f4b914fce61537c99db17fcc3c28f",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 374
+            },
+            "path": "CONTRIBUTING.md"
           },
           "kind": "code"
         }
@@ -1160,8 +1373,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b36e26b9f5ef1c8b92c91c68e9483bccced5116f",
-            "content": "sha256:46dd1bc9c087b42c7de4e3368799acc662628ffe0b2d132b24beec4ca10a2d71",
+            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
+            "content": "sha256:5d693a03aab2136af7f21e4c62b1e1b691a62acc14ff129b6a466b0882b3df2e",
             "locator": {
               "kind": "file"
             },
@@ -1257,15 +1470,16 @@
       ]
     },
     "287": {
-      "note": "Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically.\n\nAnchor: `compile_gate_certificate`, `_require_current_predecessors`",
+      "note": "Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix and exact memory inputs. Non-retained predecessors must match the admitted candidate and current gate-local inputs; an explicitly retained initial prefix instead preserves the admitted repository and exact predecessor lineage. This core API establishes no removed-adapter binding, and ordinary closeout does not acquire a certificate automatically. Anchor: `compile_gate_certificate`, `_require_current_predecessors`, `_require_current_certificate`, `_require_retained_prefix`",
       "targets": [
         {
           "anchor": {
             "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
             "content": "sha256:712b54990ca1539b93cff58fe67e12aea3e7c81eff0079439068eae35ffcd10e",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_gate_certificate"
+              "end": 126,
+              "kind": "line_range",
+              "start": 44
             },
             "path": "mcp/src/agents_remember/certification/certificate_authority.py"
           },
@@ -1276,10 +1490,63 @@
             "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
             "content": "sha256:eea560170c532c4491b61505102e8f74d0b810250dcb0891b1e063fd2bf990d8",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_current_predecessors"
+              "end": 280,
+              "kind": "line_range",
+              "start": 258
             },
             "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:a943293f3b282f8dee3b8f630f9f4a95010409d7296a294184cd653d1f07acdb",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:c1b9e28e0d7f73e482ff4a9071a6bf42ef714a46ac16c44d3edbcc44ee30b109",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 347
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:517485ced7481a575ba35d4afbcacafa9442a4e8040dd0ddd5091dbb7aa0ef00",
+            "locator": {
+              "end": 494,
+              "kind": "line_range",
+              "start": 461
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
+            "content": "sha256:a987f35360e6c923130e35e738e51fe98cdeea1499aa0eab7ea4e391d72ba5ec",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 374
+            },
+            "path": "CONTRIBUTING.md"
           },
           "kind": "code"
         }
@@ -1375,8 +1642,61 @@
             "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
             "content": "sha256:13aef717a76a0b04deda44628d0f376574a6688d50f5279af8119a75234a7eda",
             "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_tool"
+              "end": 172,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:23017282a2fbe499dc6c541d39d01fe1936b53a4601e94586bbae3072145b164",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:cdcfc004869c645eab4f12a5af42f63b738d496c3dd008cdaf80caa8d7f7efab",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 336
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:3b2156ab21bec6a7efd7ab01ac59968f14308df1549e426636f4524406b2246d",
+            "locator": {
+              "end": 548,
+              "kind": "line_range",
+              "start": 507
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "content": "sha256:4a39ad0343d62dc2efcbff5fbdb4d7d84e1d8b0125e69500aa3b82414018c188",
+            "locator": {
+              "end": 644,
+              "kind": "line_range",
+              "start": 615
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -1609,7 +1929,7 @@
       ]
     },
     "310": {
-      "note": "Workers build each worktree's environment as the tool notes say, report missing commands and record the interpreter each run used.\n\nAnchor: `system/tools.md`",
+      "note": "Workers build each worktree's environment as `system/tools.md` says, run every candidate command there, report commands absent from the tool notes, and record the interpreter each run used. Anchor: `system/tools.md`",
       "targets": [
         {
           "anchor": {
@@ -1703,8 +2023,47 @@
       ]
     },
     "314": {
-      "note": "Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated. Retired provider IDs are disabled by the shared predicate; installation reports unused keys and continues after a failed old-watcher stop. Anchor: provider_enabled and install watcher phase\n\nAnchor: `workspace.outsideScratchRoot`",
+      "note": "Knowledge authoring is in memory; evidence and working files are outside it, with report/task and scratch custody separated. The retired `codegraphcontext-code` and `grepai-memory` providers are disabled by `provider_enabled`. Installation reports enabled provider keys as unused and continues when the old-watcher stop returns a failed or partial result. Anchor: `workspace.outsideScratchRoot`, `provider_enabled`, and install watcher phase",
       "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:f92257258b367d72bbd631cea723d0aadb374da016944c9f7a3c0144a0d9e470",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:6876558a17c3bc01d04c1964ce78d2ac92f2ddef5ea7be0610c8117c1b7570ec",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:878d348b595aabf49ea9b0d43f9fc3ec919aa1e5fdd810d3c2687369165c182b",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
@@ -1734,13 +2093,52 @@
         {
           "anchor": {
             "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
-            "content": "sha256:ba0b7f0e3d725b8ba0c42f4edad6df046c6b298cff8664b0118dd49bc96e4c6d",
+            "content": "sha256:3983aa957e65914b7427007f77627e40d98b68873ba4b6e6bd828c74d04eb683",
             "locator": {
-              "end": 830,
+              "end": 589,
+              "kind": "line_range",
+              "start": 571
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:daa4c638829cf17e51fde3460e7bacc51c646091c16540357c9f043e16c434f4",
+            "locator": {
+              "end": 834,
               "kind": "line_range",
               "start": 812
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
+            "content": "sha256:9cdcb7dadde8441f5ee5546412857739a16968d8827b094e4b624071bdabb134",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/install/provider_watchers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
+            "content": "sha256:967380606118586ca8fa1d43eeaf5d493ea2ce732de5d4c82dd7a326254278ad",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/src/agents_remember/install/provider_watchers.py"
           },
           "kind": "code"
         }
@@ -1827,7 +2225,7 @@
       ]
     },
     "318": {
-      "note": "Graph-less atomic execution declares no dependencies or serialization; graph presence selects dependency-aware scheduling.\n\nAnchor: resolve_scheduling_mode",
+      "note": "For a canonical orchestration sprint, an absent `executionGraph` selects atomic execution of its commanded masters and declares no dependencies or serialization between them; graph presence selects dependency-aware scheduling. Anchor: `resolve_scheduling_mode`",
       "targets": [
         {
           "anchor": {
@@ -1959,13 +2357,52 @@
         {
           "anchor": {
             "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:6a35006ce9e9c2a227392a01f3e95af4f8e9de177952e5a18a6abcddbae3e8a8",
+            "content": "sha256:4be77fd1432cc03a33ffbda5ad7e0b8fa929988247474082d194fb112a7444e6",
             "locator": {
-              "end": 131,
+              "end": 78,
               "kind": "line_range",
-              "start": 98
+              "start": 65
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:fbd4498c88eedc397bb24db68c2120b0d809d1c230470f630ff906e46f2ad27a",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:967f317922af7c496acdeaa41e0ecb3c048f66318df8e7eb843940d7ebc0eaa1",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70fe9d0307f25c7b326ed501f72e43a98d56bbe6",
+            "content": "sha256:117e1d6115145488ab9411f807a96af034b39fe2894a8bde95fe448ea48324d3",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/providers/status.py"
           },
           "kind": "code"
         }
@@ -1977,11 +2414,50 @@
         {
           "anchor": {
             "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:b344ad01251b5c2a7a392f415aef4c0dfec5822d46dbf58007b94725f0252e88",
+            "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:453fa60fd7e1d14c0171d456f4d8bcd58d5be2255a14c3ed6fcf169ae0f9e1ed",
             "locator": {
               "end": 181,
               "kind": "line_range",
-              "start": 143
+              "start": 168
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:62a77742ee64fab78b698abd24ce333efdd8b6f9f5fb5aef63ec057c5d4806ab",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:19eb270696db7904b422537e31cb29711f22efe2107a395be2a2d4f496a9fe4b",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 395
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2013,11 +2489,11 @@
         {
           "anchor": {
             "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
-            "content": "sha256:2be83d6c8008d85a022c0d9098a898ac8e007d341423edca4f0f7969cdc16a91",
+            "content": "sha256:c26d6a9eccc5227626941e1c35849472c0bc15924878f065ff5915a398fe4f41",
             "locator": {
-              "end": 107,
+              "end": 168,
               "kind": "line_range",
-              "start": 53
+              "start": 111
             },
             "path": "scripts/bootstrap-mcp-venv.sh"
           },
@@ -2134,11 +2610,11 @@
       ]
     },
     "33": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The source checkout separates installed-runtime work from work on this repository and keeps implementation approval separate from commit approval.\n\nAnchor: `It is not the live`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The source checkout separates installed-runtime work from work on this repository and keeps implementation approval separate from commit approval. Anchor: `It is not the live`",
       "targets": [
         {
           "anchor": {
-            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "blob": "e3913163be3b91297066e21703964f8104d4e507",
             "content": "sha256:1b1590e56accd85c30135880973b7612b252ec792739bf0e5b8b80c6a8af632c",
             "locator": {
               "end": 11,
@@ -2151,12 +2627,12 @@
         },
         {
           "anchor": {
-            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "blob": "e3913163be3b91297066e21703964f8104d4e507",
             "content": "sha256:ddb39a87110c6db54287f64a332217958985154ead93d9d494429d0ef3afa2d8",
             "locator": {
-              "end": 131,
+              "end": 132,
               "kind": "line_range",
-              "start": 131
+              "start": 132
             },
             "path": "AGENTS.md"
           },
@@ -2342,17 +2818,6 @@
         },
         {
           "anchor": {
-            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
-            "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "generated-copies.json"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
             "content": "sha256:da0b54225087c70b68ff362613557c5860bca7d5204c26c5b19d565be6316b87",
             "locator": {
@@ -2361,6 +2826,30 @@
               "start": 173
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:74c8a9a315795103fb7fa80d51d4210284b5fc732592acfb93fda870ae449ed6",
+            "locator": {
+              "end": 479,
+              "kind": "line_range",
+              "start": 461
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/unexplained.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "generated-copies.json"
           },
           "kind": "code"
         }
@@ -2486,7 +2975,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -2582,12 +3071,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "blob": "e3913163be3b91297066e21703964f8104d4e507",
             "content": "sha256:e3c8a94181a7d1874dc250f9be9690b52e73b10385f4e704aa157cf28cde7559",
             "locator": {
-              "end": 192,
+              "end": 193,
               "kind": "line_range",
-              "start": 136
+              "start": 137
             },
             "path": "AGENTS.md"
           },
@@ -2600,7 +3089,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -2722,12 +3211,12 @@
         },
         {
           "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
             "content": "sha256:2853efdc91be3b79e781e0e42d7c2967b425e1cceb513f1573df3511220693cf",
             "locator": {
-              "end": 481,
+              "end": 474,
               "kind": "line_range",
-              "start": 476
+              "start": 469
             },
             "path": "mcp/tests/test_role_capsule_budgets.py"
           },
@@ -2740,7 +3229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -2836,7 +3325,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -2932,7 +3421,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3028,7 +3517,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3124,7 +3613,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3264,7 +3753,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3360,7 +3849,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3472,7 +3961,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3568,7 +4057,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3783,7 +4272,7 @@
       ]
     },
     "358": {
-      "note": "Current PUBLIC_TOOLS has 44 names, including mounted knowledge_write and user_settings_init; converted MQC answers carry cut/added counts and bounded first rows, with complete lists in retained logs. Static source, not execution or live-advertisement acceptance.",
+      "note": "Current PUBLIC_TOOLS has 44 names, including mounted knowledge_write and user_settings_init; converted MQC answers carry cut/added counts and bounded first rows. Complete lists remain in the whole result and are available in a detail log only when that result was retained. Static source, not execution or live-advertisement acceptance.",
       "targets": [
         {
           "anchor": {
@@ -3808,6 +4297,19 @@
               "start": 202
             },
             "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "locator": {
+              "end": 519,
+              "kind": "line_range",
+              "start": 396
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
           },
           "kind": "code"
         }
@@ -3935,16 +4437,16 @@
       ]
     },
     "365": {
-      "note": "Current capsule limits live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`, which the live budget guard enforces: role ceilings Architect 5,474 words; Manager 4,562; Curator 4,537; Reviewer 4,112; Bootstrap 4,000; other roles 3,742. Its current sub-record is `measuredCurrentRenewalBug07`; the current measurements cover 34 capsules and 38 declared step details, declared step details have a 2,500-word ceiling, and the every-role digest measures 2,327 words against an equal 2,327-word ceiling. The current tables record a 290-word limit and a 289-word measurement for `reference/coordination/shared/master-state.md`. The predecessor sub-record `measuredCurrentRenewalWaitsAndCodingGuidelines` records that a limit rises to the actual size only where the actual size exceeds it, a role ceiling rises only where a raised limit would pass it, and every other limit and ceiling stays unchanged. `capsule-budgets.json` is the frozen historical registry; the guard checks its bytes by hash and still reads only its handover token budgets from it. These are stored declarations, not a new compilation or test run.",
+      "note": "Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,327 words against an equal ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run.",
       "targets": [
         {
           "anchor": {
-            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-            "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:9c5f28574f34d8206f5408394964aaf4ccfd8c658438df035a4fce7285c6ca7e",
             "locator": {
-              "end": 6560,
+              "end": 6178,
               "kind": "line_range",
-              "start": 6551
+              "start": 6153
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -3952,12 +4454,12 @@
         },
         {
           "anchor": {
-            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-            "content": "sha256:5564dd1bee04cc41fc567342a0aaf8ff0373ab568c48725432fe2dbb59df1054",
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:8d6069064c657e014f754a7196420cd9de32438fa3bf54e5d3a8381f7c463ead",
             "locator": {
-              "end": 6550,
+              "end": 6265,
               "kind": "line_range",
-              "start": 6511
+              "start": 6185
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -3965,38 +4467,12 @@
         },
         {
           "anchor": {
-            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-            "content": "sha256:2d0e580d5820ce0a67b6cdd3da83bf80d6e4d04c9da09b662c578879c4e11d4d",
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "content": "sha256:cd7ba4a58a2c3ee48bbaa009c94458c741fbbb40cec2e265c7d13ccce1111ae6",
             "locator": {
-              "end": 5104,
+              "end": 491,
               "kind": "line_range",
-              "start": 5101
-            },
-            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-            "content": "sha256:ae3e14fc87c83ab3e43b3323dcd28d144a54032b1733e1cca4c96821504beb0d",
-            "locator": {
-              "end": 5480,
-              "kind": "line_range",
-              "start": 5480
-            },
-            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
-            "content": "sha256:2853efdc91be3b79e781e0e42d7c2967b425e1cceb513f1573df3511220693cf",
-            "locator": {
-              "end": 481,
-              "kind": "line_range",
-              "start": 476
+              "start": 469
             },
             "path": "mcp/tests/test_role_capsule_budgets.py"
           },
@@ -4004,12 +4480,12 @@
         },
         {
           "anchor": {
-            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
-            "content": "sha256:2fb05d08cfa4eb8da599b6c3fd9bcc24e545a5f6d9ac5646fbf6a2ba594ceb0c",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:29003e58e34f21d06bf126021342d7f538729b4a3f2c94eaacb35a9cdbb6fac2",
             "locator": {
-              "end": 129,
+              "end": 77,
               "kind": "line_range",
-              "start": 115
+              "start": 47
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
@@ -4017,38 +4493,25 @@
         },
         {
           "anchor": {
-            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-            "content": "sha256:bea2a1aca75ce1229788d34d37796ae960d600670a642500cf1694f67c187f5f",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:25ab3b67731b8327e230d122028668e3aea1451bccb4411e194749fa5b54d117",
             "locator": {
-              "end": 6159,
+              "end": 170,
               "kind": "line_range",
-              "start": 6154
+              "start": 142
             },
-            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-            "content": "sha256:a28133537e1fb4acfb96b47c09eacfe78d09de4c4365ee158f12d3f18ff57574",
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:a21d8fbeade96f460c50dc5451345a3d1b287f7a4a3bb84239ef8d0d75a3f85b",
             "locator": {
-              "end": 6422,
+              "end": 5396,
               "kind": "line_range",
-              "start": 6343
-            },
-            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-            "content": "sha256:b6699f86801da6a4b062bb1fb4f505308ec374bad271c566f4f1ab8495b0123e",
-            "locator": {
-              "end": 6503,
-              "kind": "line_range",
-              "start": 6424
+              "start": 5396
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -4057,16 +4520,29 @@
       ]
     },
     "366": {
-      "note": "AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. Past-epoch composition account: A capsule contains the selected role and one operation; `core/` is compiler metadata, not shared injected instructions. Current delivery: The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest is delivered separately in the first message; its revision contributes to capsule semantic identity, without injecting the larger core doctrine into rendered instructions. Missing or unsupported selection fields refuse rather than being inferred from nearby documents.",
+      "note": "AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest is delivered separately in the first message; its revision contributes to capsule semantic identity, without injecting the larger core doctrine into rendered instructions. Missing or unsupported selection fields refuse rather than being inferred from nearby documents.",
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:2e51a5def39631ecf88eff89382e0d6de91a92b70f2054b7ad0aca04f5beebac",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:6972732a323a1716d214c70492f757c0525de69e4b0452aa56e968ae4625ea42",
             "locator": {
-              "end": 171,
+              "end": 162,
               "kind": "line_range",
               "start": 158
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:85f0069967d8022d66da476fb7a406248f51928c04d53541fb5d52f1e763af48",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 6
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -4382,6 +4858,19 @@
       "targets": [
         {
           "anchor": {
+            "blob": "f1b37e4512c41640d3bfdcf863bb702060adeefb",
+            "content": "sha256:5cc762b4d189331c5ded06ea6a39b7807b870900c2568f4f91a9e5adec263710",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "docs/design/python-pytest-bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
             "locator": {
@@ -4394,14 +4883,16 @@
       ]
     },
     "369": {
-      "note": "Current budget guidance agrees with the root declaration. Target: CONTRIBUTING.md.",
+      "note": "Contributor guidance routes instruction renewal through one command and keeps authored ceilings separate from measured facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "b36e26b9f5ef1c8b92c91c68e9483bccced5116f",
-            "content": "sha256:46dd1bc9c087b42c7de4e3368799acc662628ffe0b2d132b24beec4ca10a2d71",
+            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
+            "content": "sha256:4e087812340b146baf41c0f102850638633a4a07b4b0998bd38d40461aff8b54",
             "locator": {
-              "kind": "file"
+              "end": 158,
+              "kind": "line_range",
+              "start": 133
             },
             "path": "CONTRIBUTING.md"
           },
@@ -4427,14 +4918,45 @@
         },
         {
           "anchor": {
-            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
-            "content": "sha256:7e5032dfe9580d47c27d20ed8b1ca199d0694321f2af03fccd866e04ca633606",
+            "blob": "d969ca03f76455f4e78a2d6f184bb6af34afe26d",
+            "content": "sha256:7e0d4a7ce83abb92f09361ec3077843d5df7a5f1062cddcfa014626781e3d002",
             "locator": {
-              "end": 34,
+              "end": 60,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": ".github/workflows/quality-checks.yml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+            "content": "sha256:3e7fc81bee54eda3eeb3f4544fbec64fb6147eca1c21dbba8569b281d6313755",
+            "locator": {
+              "end": 38,
               "kind": "line_range",
               "start": 28
             },
             "path": ".github/workflows/publish-mcp-to-pypi.yml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "370": {
+      "note": "Instruction renewal uses the declared skills copy owner, projects the certification profile and copies canonical tool details into packaged runtime docs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+            "content": "sha256:376effec01f60a6abd552240d51bfca26b1af857f333d77f7f1370ae2f398852",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "scripts/instruction_renewal/plan.py"
           },
           "kind": "code"
         }
@@ -4462,8 +4984,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b36e26b9f5ef1c8b92c91c68e9483bccced5116f",
-            "content": "sha256:46dd1bc9c087b42c7de4e3368799acc662628ffe0b2d132b24beec4ca10a2d71",
+            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
+            "content": "sha256:5d693a03aab2136af7f21e4c62b1e1b691a62acc14ff129b6a466b0882b3df2e",
             "locator": {
               "kind": "file"
             },
@@ -5143,35 +5665,62 @@
       ]
     },
     "94": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): A moved source blocks `ff-only`, and `replay` asks for a resolution instead of creating a replay commit.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Source drift that requires replay blocks `ff-only`; `replay` requests integration resolution without creating a replay commit.",
       "targets": [
         {
           "anchor": {
             "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
-            "content": "sha256:486ac4704274ab0dc4c8466c607ce5e8f4b4e771a68afc2b4691c87fc62ea68b",
+            "content": "sha256:1de87e10c1c92b8b3716abb5bac549dcdac11dc0d46a195e17f3db7e5f94ff0a",
             "locator": {
-              "kind": "symbol",
-              "name": "_continue_integration"
+              "end": 807,
+              "kind": "line_range",
+              "start": 793
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7258b945df21cc183036dd6a3ad93549d05dde60",
+            "content": "sha256:d252db698dcdbf7b98066fa1eb82d197880d5f7452e7ce47c372bbfa085f04f3",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_resolution_handoff.py"
           },
           "kind": "code"
         }
       ]
     },
     "95": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Gate enforcement: a model-decided approval does not satisfy it, and a lifecycle without a gate of the kind is gateless.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Gate enforcement accepts human approval or a policy-valid delegated orchestration decision by a distinct lifecycle; unattributed or self-decided non-human approval fails, and without a matching gate the existing approval channel governs.",
       "targets": [
         {
           "anchor": {
             "blob": "ce5957cd60d790dc89aa33796a021dd2bf70c7f7",
-            "content": "sha256:9030948cf84080ac44a30a43bad42d453d7e908a1e45a42f5c9ff8d3645668a0",
+            "content": "sha256:77e5ca857844effa42dbb99d98cdb0e32eade5e3624267946dd4a7ef12c722e4",
             "locator": {
-              "end": 16,
+              "end": 101,
               "kind": "line_range",
-              "start": 1
+              "start": 59
             },
             "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b96e941c6e9a776260822ea07d54e1a57981bfd",
+            "content": "sha256:bb6f1ec175d49420990bfba191bcb58254bae1c6abd86bd18f76292d7bb8dfb0",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_policy.py"
           },
           "kind": "code"
         }
@@ -5196,18 +5745,44 @@
       ]
     },
     "97": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The roles of each task altitude; a reviewer sits on a leaf, master or sprint document.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Canonical role authority places Worker, Curator and every Reviewer on a hosting leaf; a Reviewer’s intake selects the candidate and seam, retaining the named master and sprint context.",
       "targets": [
         {
           "anchor": {
-            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
-            "content": "sha256:90ad4593ded7d016e0b9ec3b24847c8e1240cf40a81cdd5b187f04f2938e79d9",
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+            "content": "sha256:ad81b5d92d457e5c9612b50047488a6ad3ecfb1a52ed7213bde9a3dd7a539c4d",
             "locator": {
-              "end": 88,
+              "end": 22,
               "kind": "line_range",
-              "start": 82
+              "start": 13
             },
-            "path": "mcp/src/agents_remember/tasks/document.py"
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+            "content": "sha256:ba076d3aa54b13a95ebc27070ad5a248ec1f4db724e808c1a7af5bb4c88355ea",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ecf03c089d77b1c2a2ffbbad28a4f481ea9d94f",
+            "content": "sha256:f8804b5200f086ec60699aaa3502ca6eee171463d47000da297f962ef2018c0e",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
           },
           "kind": "code"
         }

@@ -39,15 +39,15 @@ The current cases assert typed path-spelling refusal separately from lookup avai
 ### Logic
 
 **`test_a_pathspec_magic_spelling_is_refused_by_the_typed_path_and_never_answered_as_absence`** (`:183-258`) —
-the boundary node. It refuses a leading-`:` spelling at **both** typed boundaries (`SourceAnchorDraft`'s
-write path and `PathSeed`'s seed path) and measures the Git facts themselves with its own subprocess calls,
+the boundary node. It refuses a leading-`:` spelling at the test-support `SourceAnchorDraft` boundary
+and the production `PathSeed` boundary, and measures the Git facts with its own subprocess calls,
 so the premise is evidence rather than prose.
 
 **`test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob`** (`:261-374`) — the
 node the review's correction rests on. It commits its own tree holding **both** `src/a1.py` and
-`src/a[1].py`, measures `git ls-tree` addressing `src/a[1].py` literally with `rc=0`, then (1) authors a
-`SourceAnchorDraft` at that path through the typed write path, (2) stores the claim and anchor through the
-ordinary store operation, (3) constructs `PathSeed(path="src/a[1].py")`, and (4) reads it back through
+`src/a[1].py`, measures `git ls-tree` addressing `src/a[1].py` literally with `rc=0`, then (1) constructs a
+test-support `SourceAnchorDraft` at that path, (2) stages the claim and anchor through the test-only
+RowStore operation, (3) constructs `PathSeed(path="src/a[1].py")`, and (4) reads it back through
 `read_knowledge_scope` asserting `exact_recorded_blob` with the observed blob equal to the tree's blob.
 **The mutation that inverts this result is the read path re-admitting a glob refusal**, which flips the
 outcome to `unsupported_locator` — the exact flip the reviewer measured on the pre-fix candidate.
@@ -142,6 +142,8 @@ No domain documentation source is configured for this repository (`system/source
 
 No configured domain documentation could be checked.
 
+### Repo-Internal References (continued)
+
 - **The pathspec-magic boundary node: a leading-`:` spelling refused at both typed boundaries, with the Git facts measured by the module itself.** [10]
 
 - **The glob-character node the review's correction rests on: authored, stored, seeded and resolved to its own blob.** [11]
@@ -156,7 +158,7 @@ No configured domain documentation could be checked.
 
 - **The corrected predicate this module measures: leading `:` refused; `*`, `?` and `[` admitted as literal characters.** [15]
 
-- **The write-path boundary that applies the shared rule, so a malformed anchor cannot be authored.** [16]
+
 - **The seed boundary that applies the same rule, so a refused spelling cannot be presented as a seed.** [17]
 
 
@@ -173,7 +175,8 @@ No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
 
-
-
+### Repo-Internal References (continued)
 
 - The lane row this module occupies. Source caption: `test_knowledge_read_paths` [18]
+
+- **The test-support anchor-draft boundary applies the shared path-spelling rule, so a fixture draft refuses malformed path spellings.** [16]

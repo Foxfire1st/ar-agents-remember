@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+        "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
         "content": "sha256:ca4e0f4726a7b894a9ac5a2f5c43c5aefa74beaaf5f1b6037a07097d866ba16d",
         "locator": {
-          "end": 2730,
+          "end": 2736,
           "kind": "line_range",
-          "start": 2730
+          "start": 2736
         }
       },
       "id": "RLZ-1WK7P0",
@@ -23,8 +23,8 @@
     },
     {
       "anchor": {
-        "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-        "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+        "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+        "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
         "locator": {
           "kind": "file"
         }
@@ -40,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+        "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
         "content": "sha256:34e6b24f63ad6d3203cc5f6f0f181b45f2d2481ad35a2592054fe8e19c743b2d",
         "locator": {
-          "end": 3960,
+          "end": 3966,
           "kind": "line_range",
-          "start": 3960
+          "start": 3966
         }
       },
       "id": "RLZ-A31DQW",
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-        "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+        "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+        "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
         "locator": {
           "kind": "file"
         }
@@ -76,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-        "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+        "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+        "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
         "locator": {
           "kind": "file"
         }
@@ -93,12 +93,12 @@
     },
     {
       "anchor": {
-        "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+        "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
         "content": "sha256:bbbf97cdda72978385c4e3eff412faf949a65110aee24dbf8df69bfc9040cd55",
         "locator": {
-          "end": 1196,
+          "end": 1199,
           "kind": "line_range",
-          "start": 1196
+          "start": 1199
         }
       },
       "id": "RLZ-TB9TST",
@@ -112,12 +112,12 @@
     },
     {
       "anchor": {
-        "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+        "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
         "content": "sha256:fa945b0e463a0b4f6077fac5a70b238f01a39610b6207f89e0d37009cc4357d1",
         "locator": {
-          "end": 2970,
+          "end": 2976,
           "kind": "line_range",
-          "start": 2970
+          "start": 2976
         }
       },
       "id": "RLZ-VQZWNZ",
@@ -132,12 +132,12 @@
   ],
   "references": {
     "1": {
-      "note": "The schema version and the large-fixture threshold at the top of the file.\n\nAnchor: file",
+      "note": "The schema version and the large-fixture threshold at the top of the file. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -211,12 +211,12 @@
       ]
     },
     "14": {
-      "note": "The catalog declares nine fixture artifacts under mcp/tests/fixtures/knowledge_files/, each introduced by 260928-MIK-L21 and each naming node:mcp/tests/test_knowledge_census_files.py::test_every_census_file_parses_by_schema_and_is_canonical as its replacement contract. This is the complete named nine-artifact class; catalog declarations do not establish execution.\n\nAnchor: file",
+      "note": "The catalog declares nine fixture artifacts under mcp/tests/fixtures/knowledge_files/, each introduced by 260928-MIK-L21 and each naming node:mcp/tests/test_knowledge_census_files.py::test_every_census_file_parses_by_schema_and_is_canonical as its replacement contract. This is the complete named nine-artifact class; catalog declarations do not establish execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -226,12 +226,12 @@
       ]
     },
     "2": {
-      "note": "A contract row: identity, owner file and exact evidence node.\n\nAnchor: file",
+      "note": "A contract row: identity, owner file and exact evidence node. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -241,12 +241,12 @@
       ]
     },
     "212": {
-      "note": "The schema version and large-fixture discovery threshold remain explicit. Anchor: file\n\nAnchor: file",
+      "note": "The schema version and large-fixture discovery threshold remain explicit. Anchor: file Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -256,12 +256,12 @@
       ]
     },
     "213": {
-      "note": "The four retained knowledge contracts declare their owners and exact evidence nodes. Anchor: file\n\nAnchor: file",
+      "note": "The four retained knowledge contracts declare their owners and exact evidence nodes. Anchor: file Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -303,12 +303,12 @@
       ]
     },
     "216": {
-      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation.\n\nAnchor: file",
+      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -334,24 +334,24 @@
       ]
     },
     "218": {
-      "note": "The member-source cases are registered on the read-scope artifact's exact consumer list in canonical ascending order. Anchor: `mcp/tests/test_review_family_member_sources.py`\n\nAnchor: file",
+      "note": "The member-source cases are registered on the read-scope artifact's exact consumer list in canonical ascending order. Anchor: `mcp/tests/test_review_family_member_sources.py` Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:be524972b3aa001e13812ea299fcccfda41f581b96bb5e75b06d006605316005",
             "locator": {
-              "end": 4698,
+              "end": 4704,
               "kind": "line_range",
-              "start": 4659
+              "start": 4665
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -377,48 +377,48 @@
       ]
     },
     "221": {
-      "note": "The read-scope artifact declares the relationship-line, relationship-movement and relationship-reach modules as exact consumers.\n\nAnchor: file",
+      "note": "The read-scope artifact declares the relationship-line, relationship-movement and relationship-reach modules as exact consumers. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4218,
+              "end": 4224,
               "kind": "line_range",
-              "start": 4170
+              "start": 4176
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:34945079848ef721337d930219209df3d4011ba4208457c814235ed5473886f4",
             "locator": {
-              "end": 4140,
+              "end": 4146,
               "kind": "line_range",
-              "start": 4123
+              "start": 4129
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:b7ac8dc1913fbf465ede9fa4cf5da770d8e3c58017c7216db7586d351f99e18d",
             "locator": {
-              "end": 4020,
+              "end": 4026,
               "kind": "line_range",
-              "start": 3987
+              "start": 3993
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -444,24 +444,24 @@
       ]
     },
     "223": {
-      "note": "The read-scope artifact declares test_knowledge_review_attributed_source_content.py as an exact consumer.\n\nAnchor: file",
+      "note": "The read-scope artifact declares test_knowledge_review_attributed_source_content.py as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:599dcbcdc5892b62c9ac2116064e838f52fca105a0b78839d32738b02d7eee1e",
             "locator": {
-              "end": 4121,
+              "end": 4127,
               "kind": "line_range",
-              "start": 4104
+              "start": 4110
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -471,24 +471,24 @@
       ]
     },
     "224": {
-      "note": "All nine retained Doc14 fixture artifact rows declare test_mik_r53_judgment_rows.py and test_mik_r53_report_only_rules.py as exact consumers; these catalog declarations do not establish invocation or acceptance.\n\nAnchor: file",
+      "note": "All nine retained Doc14 fixture artifact rows declare test_mik_r53_judgment_rows.py and test_mik_r53_report_only_rules.py as exact consumers; these catalog declarations do not establish invocation or acceptance. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:da591934d22f0a88bf18d21545ba33bd6697abf39c65cb0c5687b195fa52bd06",
             "locator": {
-              "end": 1904,
+              "end": 1907,
               "kind": "line_range",
-              "start": 1867
+              "start": 1870
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -498,12 +498,12 @@
       ]
     },
     "225": {
-      "note": "The lifecycle catalog declares test_knowledge_conversion_toolchain.py on the curator_coherence_test_support.py and read_scope_test_support.py consumer lists. These are declarations, not invocation or acceptance. The read_scope_test_support.py row lists test_knowledge_conversion_toolchain.py. generation_test_support.py declares test_knowledge_read_boundaries.py and test_knowledge_read_paths.py among its consumers.\n\nAnchor: file",
+      "note": "The lifecycle catalog declares test_knowledge_conversion_toolchain.py on the curator_coherence_test_support.py and read_scope_test_support.py consumer lists. These are declarations, not invocation or acceptance. The read_scope_test_support.py row lists test_knowledge_conversion_toolchain.py. generation_test_support.py declares test_knowledge_read_boundaries.py and test_knowledge_read_paths.py among its consumers. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -513,12 +513,12 @@
       ]
     },
     "226": {
-      "note": "The current lifecycle catalog declares test_knowledge_proofs.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py, mcp/tests/knowledge_writer_test_support.py, mcp/tests/writer_worklist_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `knowledge_writer_test_support.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `writer_worklist_test_support.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The current lifecycle catalog declares test_knowledge_proofs.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py, mcp/tests/knowledge_writer_test_support.py, mcp/tests/writer_worklist_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `knowledge_writer_test_support.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `writer_worklist_test_support.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -528,24 +528,24 @@
       ]
     },
     "227": {
-      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation.\n\nAnchor: file",
+      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:931c378facd0990a792d4916b6aeee8bf7ee82e9bd68e56cd2f372d17acfd71f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:b8b825c93ffd1dc95354883bb5262ef4f01d2364c7426355762256b4bfad5f48",
             "locator": {
-              "end": 3217,
+              "end": 3223,
               "kind": "line_range",
-              "start": 2417
+              "start": 2420
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -555,12 +555,12 @@
       ]
     },
     "228": {
-      "note": "The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_worklist_leaf.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_worklist_leaf.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -570,24 +570,24 @@
       ]
     },
     "229": {
-      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation.\n\nAnchor: file",
+      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:931c378facd0990a792d4916b6aeee8bf7ee82e9bd68e56cd2f372d17acfd71f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:b8b825c93ffd1dc95354883bb5262ef4f01d2364c7426355762256b4bfad5f48",
             "locator": {
-              "end": 3217,
+              "end": 3223,
               "kind": "line_range",
-              "start": 2417
+              "start": 2420
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -597,12 +597,12 @@
       ]
     },
     "230": {
-      "note": "The current lifecycle catalog declares test_knowledge_currentness.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_currentness.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The current lifecycle catalog declares test_knowledge_currentness.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_currentness.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -612,24 +612,24 @@
       ]
     },
     "231": {
-      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation.\n\nAnchor: file",
+      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:931c378facd0990a792d4916b6aeee8bf7ee82e9bd68e56cd2f372d17acfd71f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:b8b825c93ffd1dc95354883bb5262ef4f01d2364c7426355762256b4bfad5f48",
             "locator": {
-              "end": 3217,
+              "end": 3223,
               "kind": "line_range",
-              "start": 2417
+              "start": 2420
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -639,12 +639,12 @@
       ]
     },
     "232": {
-      "note": "The current lifecycle catalog declares test_knowledge_paging.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py, mcp/tests/tool_entry_point_world.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `tool_entry_point_world.py` artifact row declares `test_knowledge_paging.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The current lifecycle catalog declares test_knowledge_paging.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py, mcp/tests/tool_entry_point_world.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `tool_entry_point_world.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -654,12 +654,12 @@
       ]
     },
     "233": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -669,12 +669,12 @@
       ]
     },
     "234": {
-      "note": "The current lifecycle catalog declares test_planned_knowledge_effects.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_planned_knowledge_effects.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_planned_knowledge_effects.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The current lifecycle catalog declares test_planned_knowledge_effects.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_planned_knowledge_effects.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_planned_knowledge_effects.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -684,24 +684,24 @@
       ]
     },
     "235": {
-      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation.\n\nAnchor: file",
+      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:931c378facd0990a792d4916b6aeee8bf7ee82e9bd68e56cd2f372d17acfd71f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:b8b825c93ffd1dc95354883bb5262ef4f01d2364c7426355762256b4bfad5f48",
             "locator": {
-              "end": 3217,
+              "end": 3223,
               "kind": "line_range",
-              "start": 2417
+              "start": 2420
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -711,12 +711,12 @@
       ]
     },
     "236": {
-      "note": "The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -726,12 +726,12 @@
       ]
     },
     "237": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -741,24 +741,24 @@
       ]
     },
     "238": {
-      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation.\n\nAnchor: file",
+      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:931c378facd0990a792d4916b6aeee8bf7ee82e9bd68e56cd2f372d17acfd71f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:b8b825c93ffd1dc95354883bb5262ef4f01d2364c7426355762256b4bfad5f48",
             "locator": {
-              "end": 3217,
+              "end": 3223,
               "kind": "line_range",
-              "start": 2417
+              "start": 2420
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -768,12 +768,12 @@
       ]
     },
     "239": {
-      "note": "The current lifecycle catalog declares test_unexplained_change_disposition.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_unexplained_change_disposition.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_unexplained_change_disposition.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The current lifecycle catalog declares test_unexplained_change_disposition.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_unexplained_change_disposition.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_unexplained_change_disposition.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -783,24 +783,24 @@
       ]
     },
     "240": {
-      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation.\n\nAnchor: file",
+      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:931c378facd0990a792d4916b6aeee8bf7ee82e9bd68e56cd2f372d17acfd71f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:b8b825c93ffd1dc95354883bb5262ef4f01d2364c7426355762256b4bfad5f48",
             "locator": {
-              "end": 3217,
+              "end": 3223,
               "kind": "line_range",
-              "start": 2417
+              "start": 2420
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -810,48 +810,48 @@
       ]
     },
     "241": {
-      "note": "The current catalog declares mcp/tests/test_knowledge_route_chain.py on nine exact artifact consumer lists.\n\nAnchor: file",
+      "note": "The current catalog declares mcp/tests/test_knowledge_route_chain.py on nine exact artifact consumer lists. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:be524972b3aa001e13812ea299fcccfda41f581b96bb5e75b06d006605316005",
             "locator": {
-              "end": 4698,
+              "end": 4704,
               "kind": "line_range",
-              "start": 4659
+              "start": 4665
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:f68300fc6ce1e5b69735242e44f34d768e745bb2297c319124ca1a4c3fd47523",
             "locator": {
-              "end": 1119,
+              "end": 1122,
               "kind": "line_range",
-              "start": 1100
+              "start": 1103
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:23309c1c550297c1a290cacf33546e1651ff1a4c6864c43bb102aeec99b0a8d3",
             "locator": {
-              "end": 3933,
+              "end": 3939,
               "kind": "line_range",
-              "start": 3917
+              "start": 3923
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -861,12 +861,12 @@
       ]
     },
     "242": {
-      "note": "The current lifecycle catalog declares test_reconsideration_surfacing.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_reconsideration_surfacing.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_reconsideration_surfacing.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The current lifecycle catalog declares test_reconsideration_surfacing.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_reconsideration_surfacing.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_reconsideration_surfacing.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -876,24 +876,24 @@
       ]
     },
     "243": {
-      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation.\n\nAnchor: file",
+      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:931c378facd0990a792d4916b6aeee8bf7ee82e9bd68e56cd2f372d17acfd71f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:b8b825c93ffd1dc95354883bb5262ef4f01d2364c7426355762256b4bfad5f48",
             "locator": {
-              "end": 3217,
+              "end": 3223,
               "kind": "line_range",
-              "start": 2417
+              "start": 2420
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -903,11 +903,11 @@
       ]
     },
     "244": {
-      "note": "The catalog explicitly declares schema_version = \"ar-test-evidence-lifecycle/v3\" and large_fixture_bytes = 25000.\n\nAnchor: file",
+      "note": "The catalog explicitly declares schema_version = \"ar-test-evidence-lifecycle/v3\" and large_fixture_bytes = 25000. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:1b040cdd5c5848b8cd6ef5959a60be2ceff3aa6dbdb5840b8d55f20f5386868b",
             "locator": {
               "end": 2,
@@ -919,8 +919,8 @@
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -930,60 +930,60 @@
       ]
     },
     "245": {
-      "note": "The knowledge-diff-cases, knowledge-generation-cases, knowledge-identity-branching-fixture and knowledge-read-scope-cases contract records declare their owner files and exact evidence nodes.\n\nAnchor: file",
+      "note": "The knowledge-diff-cases, knowledge-generation-cases, knowledge-identity-branching-fixture and knowledge-read-scope-cases contract records declare their owner files and exact evidence nodes. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:2e75aecef7732387589ac0894f66fe040076563eefec8e87d1a4b653ba254593",
             "locator": {
-              "end": 4974,
+              "end": 4980,
               "kind": "line_range",
-              "start": 4971
+              "start": 4977
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:3e13fb06608cdf54f509e104a83ed24690b049fe7e27cc7107e60f958f6c3353",
             "locator": {
-              "end": 4979,
+              "end": 4985,
               "kind": "line_range",
-              "start": 4976
+              "start": 4982
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:dd29b9575318035917550d8cd687bff9d97bc8f7656afd6847e27186bf2bdcd1",
             "locator": {
-              "end": 4984,
+              "end": 4990,
               "kind": "line_range",
-              "start": 4981
+              "start": 4987
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:cb641267e11b8aec644ea6ca3e0ee68f833e7a2d4d2c480e3ee02aba12f59d59",
             "locator": {
-              "end": 4989,
+              "end": 4995,
               "kind": "line_range",
-              "start": 4986
+              "start": 4992
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -993,12 +993,12 @@
       ]
     },
     "246": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1008,36 +1008,36 @@
       ]
     },
     "247": {
-      "note": "Closeout-input support declares test_automatic_post_integration_cleanup.py and test_cleanup_repeated_archive_ready.py among its exact consumers.\n\nAnchor: file",
+      "note": "Closeout-input support declares test_automatic_post_integration_cleanup.py and test_cleanup_repeated_archive_ready.py among its exact consumers. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:cdc92c2c05a741c9a5601336d728e339471e203991d0aa89624711635eff6f8d",
             "locator": {
-              "end": 1050,
+              "end": 1053,
               "kind": "line_range",
-              "start": 1025
+              "start": 1028
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:6d1d5bd9a31444f776ee01d52572ec2ec22c18df7b3c1e475414a69b2b63965d",
             "locator": {
-              "end": 1083,
+              "end": 1086,
               "kind": "line_range",
-              "start": 1052
+              "start": 1055
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1047,12 +1047,12 @@
       ]
     },
     "248": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1062,12 +1062,12 @@
       ]
     },
     "249": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1077,12 +1077,12 @@
       ]
     },
     "250": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1092,12 +1092,12 @@
       ]
     },
     "251": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1123,12 +1123,12 @@
       ]
     },
     "253": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1138,48 +1138,48 @@
       ]
     },
     "254": {
-      "note": "Closeout-input support names the same retained code/memory transaction replacement node.\n\nAnchor: file",
+      "note": "Closeout-input support names the same retained code/memory transaction replacement node. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:f795cf30e8c5878be2eed8ac355e667ddc68fd67550093db87b6a596bb73e398",
             "locator": {
-              "end": 1023,
+              "end": 1026,
               "kind": "line_range",
-              "start": 1006
+              "start": 1009
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:cdc92c2c05a741c9a5601336d728e339471e203991d0aa89624711635eff6f8d",
             "locator": {
-              "end": 1050,
+              "end": 1053,
               "kind": "line_range",
-              "start": 1025
+              "start": 1028
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:6d1d5bd9a31444f776ee01d52572ec2ec22c18df7b3c1e475414a69b2b63965d",
             "locator": {
-              "end": 1083,
+              "end": 1086,
               "kind": "line_range",
-              "start": 1052
+              "start": 1055
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1189,12 +1189,12 @@
       ]
     },
     "255": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1204,12 +1204,12 @@
       ]
     },
     "256": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1235,36 +1235,36 @@
       ]
     },
     "260": {
-      "note": "The registered-preview comparator artifact declares its replacement contract and exact consumers test_master_retirement_readiness.py and test_worktree_start_preview.py. Declaration is not invocation.\n\nAnchor: file",
+      "note": "The registered-preview comparator artifact declares its replacement contract and exact consumers test_master_retirement_readiness.py and test_worktree_start_preview.py. Declaration is not invocation. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:706f1761b17ca49e0dd0e29003f53349687cdaa380ade9d1a68903d373ab66ab",
             "locator": {
-              "end": 4102,
+              "end": 4108,
               "kind": "line_range",
-              "start": 4022
+              "start": 4028
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:599dcbcdc5892b62c9ac2116064e838f52fca105a0b78839d32738b02d7eee1e",
             "locator": {
-              "end": 4121,
+              "end": 4127,
               "kind": "line_range",
-              "start": 4104
+              "start": 4110
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1274,12 +1274,12 @@
       ]
     },
     "261": {
-      "note": "The current lifecycle catalog declares test_worktree_own_environment.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `curator_coherence_test_support.py` artifact row declares `test_worktree_own_environment.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_worktree_own_environment.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The current lifecycle catalog declares test_worktree_own_environment.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `curator_coherence_test_support.py` artifact row declares `test_worktree_own_environment.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_worktree_own_environment.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1289,11 +1289,11 @@
       ]
     },
     "262": {
-      "note": "The permanent shared settings guard declares its owner, replacement node and exact consumers.\n\nAnchor: file",
+      "note": "The permanent shared settings guard declares its owner, replacement node and exact consumers. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:b3edb146b5220dd89e3bdafd27809c48ec513c263abd904f5b57b69072e0f635",
             "locator": {
               "end": 78,
@@ -1305,8 +1305,8 @@
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1332,72 +1332,72 @@
       ]
     },
     "264": {
-      "note": "The read_scope_test_support artifact registers test_comparison_changeset as an exact consumer of knowledge-read-scope-cases.\n\nAnchor: file",
+      "note": "The read_scope_test_support artifact registers test_comparison_changeset as an exact consumer of knowledge-read-scope-cases. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:34945079848ef721337d930219209df3d4011ba4208457c814235ed5473886f4",
             "locator": {
-              "end": 4140,
+              "end": 4146,
               "kind": "line_range",
-              "start": 4123
+              "start": 4129
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:0fcfb15c9b03571caf9adbe871eff2f03a662365530c05dbf989593168c7493a",
             "locator": {
-              "end": 4168,
+              "end": 4174,
               "kind": "line_range",
-              "start": 4142
+              "start": 4148
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4218,
+              "end": 4224,
               "kind": "line_range",
-              "start": 4170
+              "start": 4176
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:706f1761b17ca49e0dd0e29003f53349687cdaa380ade9d1a68903d373ab66ab",
             "locator": {
-              "end": 4102,
+              "end": 4108,
               "kind": "line_range",
-              "start": 4022
+              "start": 4028
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:599dcbcdc5892b62c9ac2116064e838f52fca105a0b78839d32738b02d7eee1e",
             "locator": {
-              "end": 4121,
+              "end": 4127,
               "kind": "line_range",
-              "start": 4104
+              "start": 4110
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1407,12 +1407,12 @@
       ]
     },
     "265": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1422,72 +1422,72 @@
       ]
     },
     "266": {
-      "note": "The portable L37 attempt-1 and attempt-2 history fixtures are separate permanent fixture artifacts for the same recorded-meaning regression consumer.\n\nAnchor: file",
+      "note": "The portable L37 attempt-1 and attempt-2 history fixtures are separate permanent fixture artifacts for the same recorded-meaning regression consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:73881167c0480008f076dc12c546c7d7cc17da735e87a230fc1a3069a03d8920",
             "locator": {
-              "end": 2339,
+              "end": 2342,
               "kind": "line_range",
-              "start": 2311
+              "start": 2314
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:a86a6f50bb81265e680af2fa4ba47297f2122d8c2696ff9de2b33908335e7728",
             "locator": {
-              "end": 2359,
+              "end": 2362,
               "kind": "line_range",
-              "start": 2341
+              "start": 2344
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:e6e5bae1ab68486bbf9c448797cd1fc332b4a84be1129aa1f36a80cb7c7dde54",
             "locator": {
-              "end": 2379,
+              "end": 2382,
               "kind": "line_range",
-              "start": 2361
+              "start": 2364
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:bd7d80cc4f0c99d44eeb949d8d9a81dbc414939639f458ce534cbcb355a92bfa",
             "locator": {
-              "end": 2397,
+              "end": 2400,
               "kind": "line_range",
-              "start": 2381
+              "start": 2384
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:c0f0c2d47e852dd884fc66693a34be625d2543e659f675969764cc02bcb0e816",
             "locator": {
-              "end": 2309,
+              "end": 2312,
               "kind": "line_range",
-              "start": 2281
+              "start": 2284
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1497,60 +1497,60 @@
       ]
     },
     "267": {
-      "note": "The role-agent and role-message consumer declarations belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution.\n\nAnchor: file",
+      "note": "The role-agent and role-message consumer declarations belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:bee856909089645573ffdfaeb404ed3ab26c1fb028d8993ec56c0c87481ab156",
             "locator": {
-              "end": 2021,
+              "end": 2024,
               "kind": "line_range",
-              "start": 1984
+              "start": 1987
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:39cb308bf86434f1dc36e18ac53f77c4869c4e09ee368cfdfffdb2a55b61bad8",
             "locator": {
-              "end": 2060,
+              "end": 2063,
               "kind": "line_range",
-              "start": 2023
+              "start": 2026
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:47b91b848f95245bf8f3426108439e9f66dcb23c49948263d199ecf7063657e9",
             "locator": {
-              "end": 3620,
+              "end": 3626,
               "kind": "line_range",
-              "start": 3584
+              "start": 3590
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:616f0cf34033263ffa87b05546a1b3097ca13aa886cfd7823965b7afa3cd2a68",
             "locator": {
-              "end": 3711,
+              "end": 3717,
               "kind": "line_range",
-              "start": 3622
+              "start": 3628
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1560,24 +1560,24 @@
       ]
     },
     "268": {
-      "note": "The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of checkpoint_landing_test_support.py.\n\nAnchor: file",
+      "note": "The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of checkpoint_landing_test_support.py. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:cdc92c2c05a741c9a5601336d728e339471e203991d0aa89624711635eff6f8d",
             "locator": {
-              "end": 1050,
+              "end": 1053,
               "kind": "line_range",
-              "start": 1025
+              "start": 1028
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1587,12 +1587,12 @@
       ]
     },
     "269": {
-      "note": "The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of curator_coherence_test_support.py.\n\nAnchor: file",
+      "note": "The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of curator_coherence_test_support.py. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1602,24 +1602,24 @@
       ]
     },
     "270": {
-      "note": "The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of knowledge_conversion_test_support.py.\n\nAnchor: file",
+      "note": "The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of knowledge_conversion_test_support.py. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:f1074777d3c06b5f3bd9218e1c713851df0484c1440bc40030370ab5a587c4ee",
             "locator": {
-              "end": 3503,
+              "end": 3509,
               "kind": "line_range",
-              "start": 3464
+              "start": 3470
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1629,36 +1629,36 @@
       ]
     },
     "271": {
-      "note": "review_curator_fixture_support.py and reviewer_leaf_view_support.py are permanent integration/local-composition artifacts with three and seven exact consumers respectively. Declarations establish neither invocation nor acceptance.\n\nAnchor: file",
+      "note": "review_curator_fixture_support.py and reviewer_leaf_view_support.py are permanent integration/local-composition artifacts with three and seven exact consumers respectively. Declarations establish neither invocation nor acceptance. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:44a2b8c96e4bbf157f9dc7aa453bcb3fac70b0b0b47992d290e87d3592cf1738",
             "locator": {
-              "end": 4311,
+              "end": 4317,
               "kind": "line_range",
-              "start": 4293
+              "start": 4299
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:8967eefd8bb02482612fce4f65214e6ffe7cf344c049c830c2598d78c109629b",
             "locator": {
-              "end": 4335,
+              "end": 4341,
               "kind": "line_range",
-              "start": 4313
+              "start": 4319
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1668,16 +1668,16 @@
       ]
     },
     "272": {
-      "note": "The L110 shared-support artifact tool_answer_l110_rows.py declares the task-state refusal suite test_landing_state_refusals.py as an exact consumer; declarations establish reachability, not execution. The refusal suite reaches the L110 rows through its import of test_tool_answer_table.\n\nAnchor: file",
+      "note": "The L110 shared-support artifact tool_answer_l110_rows.py declares the task-state refusal suite test_landing_state_refusals.py as an exact consumer; declarations establish reachability, not execution. The refusal suite reaches the L110 rows through its import of test_tool_answer_table. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:49e50528e2d21b128285bbb653a19263f9227ef6fb2f92acf5bc6e6c3c3f0ee2",
             "locator": {
-              "end": 4573,
+              "end": 4579,
               "kind": "line_range",
-              "start": 4537
+              "start": 4543
             }
           },
           "kind": "test"
@@ -1697,32 +1697,32 @@
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:cfdb1b148bab7c3fcaa66edf15d5349c33b20eb0d1138d201d716ada532a809f",
             "locator": {
-              "end": 4412,
+              "end": 4418,
               "kind": "line_range",
-              "start": 4387
+              "start": 4393
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:8082190ff4aa9179fe8fee8ae6f39a177396f2579df2a09e038d3faa5f55897c",
             "locator": {
-              "end": 4443,
+              "end": 4449,
               "kind": "line_range",
-              "start": 4414
+              "start": 4420
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1743,72 +1743,72 @@
       ]
     },
     "273": {
-      "note": "The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census.\n\nAnchor: file",
+      "note": "The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:d5a4171e25aa82480855ee3155bf330126d742fb4d588d2882b77be7870fecb9",
             "locator": {
-              "end": 5024,
+              "end": 5030,
               "kind": "line_range",
-              "start": 5021
+              "start": 5027
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:49e50528e2d21b128285bbb653a19263f9227ef6fb2f92acf5bc6e6c3c3f0ee2",
             "locator": {
-              "end": 4573,
+              "end": 4579,
               "kind": "line_range",
-              "start": 4537
+              "start": 4543
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:efa9896f3f791760e24e08d01abee7d70ecf297fe26819512103a3a4361bb606",
             "locator": {
-              "end": 4605,
+              "end": 4611,
               "kind": "line_range",
-              "start": 4575
+              "start": 4581
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:0cea432ec6f34ec4ff2eeba97809d2ff1a34c215d1cca264a6045d52bf2d9186",
             "locator": {
-              "end": 1303,
+              "end": 1306,
               "kind": "line_range",
-              "start": 1139
+              "start": 1142
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:47b91b848f95245bf8f3426108439e9f66dcb23c49948263d199ecf7063657e9",
             "locator": {
-              "end": 3620,
+              "end": 3626,
               "kind": "line_range",
-              "start": 3584
+              "start": 3590
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1818,12 +1818,12 @@
       ]
     },
     "274": {
-      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1833,24 +1833,24 @@
       ]
     },
     "275": {
-      "note": "The held consumers of `mcp/tests/anchor_fixture_models.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: file",
+      "note": "The held consumers of `mcp/tests/anchor_fixture_models.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:47c7424d8f0f67e128d51f038b4e9777b060b1801703972e3b7a77e7b25c5f39",
             "locator": {
-              "end": 956,
+              "end": 959,
               "kind": "line_range",
-              "start": 867
+              "start": 870
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1860,12 +1860,12 @@
       ]
     },
     "276": {
-      "note": "The catalog declares test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/curator_coherence_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account.\n\nAnchor: file",
+      "note": "The catalog declares test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/curator_coherence_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1875,60 +1875,60 @@
       ]
     },
     "277": {
-      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: file",
+      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:39cb308bf86434f1dc36e18ac53f77c4869c4e09ee368cfdfffdb2a55b61bad8",
             "locator": {
-              "end": 2060,
+              "end": 2063,
               "kind": "line_range",
-              "start": 2023
+              "start": 2026
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:1e98b24e3666f2438fae4a313008f8dd856950408a1b8f72cef5c91022553ff9",
             "locator": {
-              "end": 2099,
+              "end": 2102,
               "kind": "line_range",
-              "start": 2062
+              "start": 2065
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:992f9f63d29085a218450c8b5795f5b59687414c83aa86be086ad159a5ada361",
             "locator": {
-              "end": 2129,
+              "end": 2132,
               "kind": "line_range",
-              "start": 2101
+              "start": 2104
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:bee856909089645573ffdfaeb404ed3ab26c1fb028d8993ec56c0c87481ab156",
             "locator": {
-              "end": 2021,
+              "end": 2024,
               "kind": "line_range",
-              "start": 1984
+              "start": 1987
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1938,24 +1938,24 @@
       ]
     },
     "278": {
-      "note": "The catalog declares test_landing_state_refusals.py, test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/fixtures/l109_tool_answers/context_packet_ordinary.json. These are current membership declarations, not a new addition, invocation or acceptance account.\n\nAnchor: file",
+      "note": "The catalog declares test_landing_state_refusals.py, test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/fixtures/l109_tool_answers/context_packet_ordinary.json. These are current membership declarations, not a new addition, invocation or acceptance account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:14b140d954c60ad66f38f61229dd0998e9a92655376bf918131eee23ed757c1f",
             "locator": {
-              "end": 2159,
+              "end": 2162,
               "kind": "line_range",
-              "start": 2131
+              "start": 2134
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -1965,48 +1965,48 @@
       ]
     },
     "279": {
-      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: file",
+      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:14b140d954c60ad66f38f61229dd0998e9a92655376bf918131eee23ed757c1f",
             "locator": {
-              "end": 2159,
+              "end": 2162,
               "kind": "line_range",
-              "start": 2131
+              "start": 2134
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:372f1842a82db77d16b928c3f8ff130b864ef406cadca0a3360fed472e67cc7c",
             "locator": {
-              "end": 2189,
+              "end": 2192,
               "kind": "line_range",
-              "start": 2161
+              "start": 2164
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:992f9f63d29085a218450c8b5795f5b59687414c83aa86be086ad159a5ada361",
             "locator": {
-              "end": 2129,
+              "end": 2132,
               "kind": "line_range",
-              "start": 2101
+              "start": 2104
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2016,48 +2016,48 @@
       ]
     },
     "280": {
-      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_ordinary.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: file",
+      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_ordinary.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:372f1842a82db77d16b928c3f8ff130b864ef406cadca0a3360fed472e67cc7c",
             "locator": {
-              "end": 2189,
+              "end": 2192,
               "kind": "line_range",
-              "start": 2161
+              "start": 2164
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:3963ae8e7e721d50444e62f09f232cc00edc3678969f674ff018b2b5d82e4661",
             "locator": {
-              "end": 2219,
+              "end": 2222,
               "kind": "line_range",
-              "start": 2191
+              "start": 2194
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:14b140d954c60ad66f38f61229dd0998e9a92655376bf918131eee23ed757c1f",
             "locator": {
-              "end": 2159,
+              "end": 2162,
               "kind": "line_range",
-              "start": 2131
+              "start": 2134
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2067,48 +2067,48 @@
       ]
     },
     "281": {
-      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: file",
+      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:3963ae8e7e721d50444e62f09f232cc00edc3678969f674ff018b2b5d82e4661",
             "locator": {
-              "end": 2219,
+              "end": 2222,
               "kind": "line_range",
-              "start": 2191
+              "start": 2194
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:d5af6a7c4ef128a6596a89af811ea9fcd3a98734e2159c5184115e04887ad604",
             "locator": {
-              "end": 2249,
+              "end": 2252,
               "kind": "line_range",
-              "start": 2221
+              "start": 2224
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:372f1842a82db77d16b928c3f8ff130b864ef406cadca0a3360fed472e67cc7c",
             "locator": {
-              "end": 2189,
+              "end": 2192,
               "kind": "line_range",
-              "start": 2161
+              "start": 2164
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2118,48 +2118,48 @@
       ]
     },
     "282": {
-      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_ordinary.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: file",
+      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_ordinary.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:d5af6a7c4ef128a6596a89af811ea9fcd3a98734e2159c5184115e04887ad604",
             "locator": {
-              "end": 2249,
+              "end": 2252,
               "kind": "line_range",
-              "start": 2221
+              "start": 2224
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:ff1787d40ee7da1cafa26ca998c15dd009167ebda94802cea8975b655b12e27f",
             "locator": {
-              "end": 2279,
+              "end": 2282,
               "kind": "line_range",
-              "start": 2251
+              "start": 2254
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:3963ae8e7e721d50444e62f09f232cc00edc3678969f674ff018b2b5d82e4661",
             "locator": {
-              "end": 2219,
+              "end": 2222,
               "kind": "line_range",
-              "start": 2191
+              "start": 2194
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2169,48 +2169,48 @@
       ]
     },
     "283": {
-      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: file",
+      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:ff1787d40ee7da1cafa26ca998c15dd009167ebda94802cea8975b655b12e27f",
             "locator": {
-              "end": 2279,
+              "end": 2282,
               "kind": "line_range",
-              "start": 2251
+              "start": 2254
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:c0f0c2d47e852dd884fc66693a34be625d2543e659f675969764cc02bcb0e816",
             "locator": {
-              "end": 2309,
+              "end": 2312,
               "kind": "line_range",
-              "start": 2281
+              "start": 2284
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:d5af6a7c4ef128a6596a89af811ea9fcd3a98734e2159c5184115e04887ad604",
             "locator": {
-              "end": 2249,
+              "end": 2252,
               "kind": "line_range",
-              "start": 2221
+              "start": 2224
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2220,48 +2220,48 @@
       ]
     },
     "284": {
-      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_ordinary.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: file",
+      "note": "The held consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_ordinary.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:c0f0c2d47e852dd884fc66693a34be625d2543e659f675969764cc02bcb0e816",
             "locator": {
-              "end": 2309,
+              "end": 2312,
               "kind": "line_range",
-              "start": 2281
+              "start": 2284
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:73881167c0480008f076dc12c546c7d7cc17da735e87a230fc1a3069a03d8920",
             "locator": {
-              "end": 2339,
+              "end": 2342,
               "kind": "line_range",
-              "start": 2311
+              "start": 2314
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:ff1787d40ee7da1cafa26ca998c15dd009167ebda94802cea8975b655b12e27f",
             "locator": {
-              "end": 2279,
+              "end": 2282,
               "kind": "line_range",
-              "start": 2251
+              "start": 2254
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2271,60 +2271,60 @@
       ]
     },
     "285": {
-      "note": "The held consumers of `mcp/tests/knowledge_index_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not an execution account.\n\nAnchor: file",
+      "note": "The held consumers of `mcp/tests/knowledge_index_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not an execution account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:b956056147b643a693f76bd56c3cf99befc6db9b2731430fcde00c8e2ab1fe56",
             "locator": {
-              "end": 3582,
+              "end": 3588,
               "kind": "line_range",
-              "start": 3524
+              "start": 3530
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:fd5a49cee30a87a2a4c86ac056dcb8b611b0ea350dd13c25791a58a063cecd3e",
             "locator": {
-              "end": 3396,
+              "end": 3402,
               "kind": "line_range",
-              "start": 3379
+              "start": 3385
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:724e1a02c8c50315a12629ad2ace38a08b1fa39384331c9e10a885fc5c330034",
             "locator": {
-              "end": 3425,
+              "end": 3431,
               "kind": "line_range",
-              "start": 3398
+              "start": 3404
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:bc293c3809c4a7540c7e1567668f221b216a13f18e9711aec2cf269bfae24437",
             "locator": {
-              "end": 3443,
+              "end": 3449,
               "kind": "line_range",
-              "start": 3427
+              "start": 3433
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2334,24 +2334,24 @@
       ]
     },
     "286": {
-      "note": "The held consumers of `mcp/tests/knowledge_rows_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: file",
+      "note": "The held consumers of `mcp/tests/knowledge_rows_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:616f0cf34033263ffa87b05546a1b3097ca13aa886cfd7823965b7afa3cd2a68",
             "locator": {
-              "end": 3711,
+              "end": 3717,
               "kind": "line_range",
-              "start": 3622
+              "start": 3628
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2361,12 +2361,12 @@
       ]
     },
     "287": {
-      "note": "The catalog declares test_landing_state_refusals.py, test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/knowledge_writer_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account.\n\nAnchor: file",
+      "note": "The catalog declares test_landing_state_refusals.py, test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/knowledge_writer_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2376,36 +2376,36 @@
       ]
     },
     "288": {
-      "note": "The read_boundary_oracle_test_support.py artifact declares test_abandoned_series_closeout.py, test_closeout_refusal_aftermath.py, test_direct_landing_leaf_identity.py, test_enclosure_without_remains.py, test_knowledge_gate_routes.py and test_master_chain_public_routes.py among its exact consumers, alongside its retained metadata and other consumers. Declaration is not execution.\n\nAnchor: file",
+      "note": "The read_boundary_oracle_test_support.py artifact declares test_abandoned_series_closeout.py, test_closeout_refusal_aftermath.py, test_direct_landing_leaf_identity.py, test_enclosure_without_remains.py, test_knowledge_gate_routes.py and test_master_chain_public_routes.py among its exact consumers, alongside its retained metadata and other consumers. Declaration is not execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:599dcbcdc5892b62c9ac2116064e838f52fca105a0b78839d32738b02d7eee1e",
             "locator": {
-              "end": 4121,
+              "end": 4127,
               "kind": "line_range",
-              "start": 4104
+              "start": 4110
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:34945079848ef721337d930219209df3d4011ba4208457c814235ed5473886f4",
             "locator": {
-              "end": 4140,
+              "end": 4146,
               "kind": "line_range",
-              "start": 4123
+              "start": 4129
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2415,72 +2415,72 @@
       ]
     },
     "289": {
-      "note": "The held consumers of `mcp/tests/read_scope_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.\n\nAnchor: file",
+      "note": "The held consumers of `mcp/tests/read_scope_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4218,
+              "end": 4224,
               "kind": "line_range",
-              "start": 4170
+              "start": 4176
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:706f1761b17ca49e0dd0e29003f53349687cdaa380ade9d1a68903d373ab66ab",
             "locator": {
-              "end": 4102,
+              "end": 4108,
               "kind": "line_range",
-              "start": 4022
+              "start": 4028
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:599dcbcdc5892b62c9ac2116064e838f52fca105a0b78839d32738b02d7eee1e",
             "locator": {
-              "end": 4121,
+              "end": 4127,
               "kind": "line_range",
-              "start": 4104
+              "start": 4110
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:34945079848ef721337d930219209df3d4011ba4208457c814235ed5473886f4",
             "locator": {
-              "end": 4140,
+              "end": 4146,
               "kind": "line_range",
-              "start": 4123
+              "start": 4129
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:0fcfb15c9b03571caf9adbe871eff2f03a662365530c05dbf989593168c7493a",
             "locator": {
-              "end": 4168,
+              "end": 4174,
               "kind": "line_range",
-              "start": 4142
+              "start": 4148
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2490,12 +2490,12 @@
       ]
     },
     "290": {
-      "note": "The existing Node package-lock artifact declares test_task_document_order.py as an exact consumer; membership is not execution.\n\nAnchor: file",
+      "note": "The existing Node package-lock artifact declares test_task_document_order.py as an exact consumer; membership is not execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2505,12 +2505,12 @@
       ]
     },
     "291": {
-      "note": "The canonical _user_settings_guard.py artifact declares test_task_document_order.py as an exact consumer; membership is not execution.\n\nAnchor: file",
+      "note": "The canonical _user_settings_guard.py artifact declares test_task_document_order.py as an exact consumer; membership is not execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2520,72 +2520,72 @@
       ]
     },
     "292": {
-      "note": "The native-worklist support artifact mcp/tests/writer_worklist_test_support.py declares mcp/tests/test_closeout_live_gate.py and mcp/tests/test_workspace_wake_zero_census.py as exact consumers. The current declaration establishes dependency reachability, not execution.\n\nAnchor: file",
+      "note": "The native-worklist support artifact mcp/tests/writer_worklist_test_support.py declares mcp/tests/test_closeout_live_gate.py and mcp/tests/test_workspace_wake_zero_census.py as exact consumers. The current declaration establishes dependency reachability, not execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:d6869ba83f56f25797b51ed2af42cf866d34c21d251b40e07a420c87ba9421e6",
             "locator": {
-              "end": 4716,
+              "end": 4722,
               "kind": "line_range",
-              "start": 4700
+              "start": 4706
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:c1fe2f9e3387f02c53e53b9836b5ac085d8dc7232334343c5ca390096d230393",
             "locator": {
-              "end": 4734,
+              "end": 4740,
               "kind": "line_range",
-              "start": 4718
+              "start": 4724
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:f4b7cb38e2200fb8c82476c506ce889794dcac45464df96c61d356cf5c8fd777",
             "locator": {
-              "end": 4760,
+              "end": 4766,
               "kind": "line_range",
-              "start": 4736
+              "start": 4742
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:514e61fd8172500fa2d697e7a48603a952e953bd72079175f7e5f75dee35113f",
             "locator": {
-              "end": 4778,
+              "end": 4784,
               "kind": "line_range",
-              "start": 4762
+              "start": 4768
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:2062e9704812911795beaa4320d949821f5d607093f805b59b616b918a2c3bcc",
             "locator": {
-              "end": 4801,
+              "end": 4807,
               "kind": "line_range",
-              "start": 4780
+              "start": 4786
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2595,12 +2595,12 @@
       ]
     },
     "293": {
-      "note": "The reopened-workspace module test_paseo_reopened_workspace.py is declared as a consumer on the existing settings guard, Node lockfile and Paseo-runtime support artifacts; membership does not prove execution. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_paseo_reopened_workspace.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_paseo_reopened_workspace.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The reopened-workspace module test_paseo_reopened_workspace.py is declared as a consumer on the existing settings guard, Node lockfile and Paseo-runtime support artifacts; membership does not prove execution. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_paseo_reopened_workspace.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_paseo_reopened_workspace.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2610,12 +2610,12 @@
       ]
     },
     "294": {
-      "note": "The settings-guard and Node-lockfile artifact lists both declare test_sync_cancel_deletions.py as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_sync_cancel_deletions.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The settings-guard and Node-lockfile artifact lists both declare test_sync_cancel_deletions.py as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_sync_cancel_deletions.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2625,12 +2625,12 @@
       ]
     },
     "295": {
-      "note": "The current lifecycle catalog declares test_conversion_cost_scans.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_conversion_cost_scans.py` as an exact consumer. The `knowledge_conversion_test_support.py` artifact row declares `test_conversion_cost_scans.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The current lifecycle catalog declares test_conversion_cost_scans.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_conversion_cost_scans.py` as an exact consumer. The `knowledge_conversion_test_support.py` artifact row declares `test_conversion_cost_scans.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2640,12 +2640,12 @@
       ]
     },
     "296": {
-      "note": "The current exact consumer populations are seven for test_comparison_changeset.py, twelve for test_knowledge_overview_order.py and fifteen for test_cleanup_repeated_archive_ready.py; conversation_open_test_support.py and eve_adapter_event_test_support.py have no artifact record. Catalog membership is source reachability, not invocation or acceptance. reviewer_worklist_process_test_support.py is a declared artifact.\n\nAnchor: file",
+      "note": "The current exact consumer populations are seven for test_comparison_changeset.py, twelve for test_knowledge_overview_order.py and fifteen for test_cleanup_repeated_archive_ready.py; conversation_open_test_support.py and eve_adapter_event_test_support.py have no artifact record. Catalog membership is source reachability, not invocation or acceptance. reviewer_worklist_process_test_support.py is a declared artifact. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2655,36 +2655,36 @@
       ]
     },
     "297": {
-      "note": "review_curator_fixture_support.py and reviewer_leaf_view_support.py are permanent integration/local-composition artifacts with three and seven exact consumers respectively.\n\nAnchor: file",
+      "note": "review_curator_fixture_support.py and reviewer_leaf_view_support.py are permanent integration/local-composition artifacts with three and seven exact consumers respectively. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:28c64b69a1160d330ea5a470b8bfb35223c529018254babe3b2e0690b15d6a4d",
             "locator": {
-              "end": 4245,
+              "end": 4251,
               "kind": "line_range",
-              "start": 4220
+              "start": 4226
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:4053055d3a51915db8a877abf4efc421a6f5bc0ba1c93869d66897fc10c8f117",
             "locator": {
-              "end": 4291,
+              "end": 4297,
               "kind": "line_range",
-              "start": 4247
+              "start": 4253
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2694,12 +2694,12 @@
       ]
     },
     "298": {
-      "note": "The settings-guard artifact declares test_route_review_clean_sync_door.py as an exact consumer. This declaration establishes no invocation.\n\nAnchor: file",
+      "note": "The settings-guard artifact declares test_route_review_clean_sync_door.py as an exact consumer. This declaration establishes no invocation. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2709,12 +2709,12 @@
       ]
     },
     "299": {
-      "note": "The Node package-lock artifact declares test_route_review_clean_sync_door.py as an exact consumer. This is source reachability, not an Owner closure plan or execution evidence.\n\nAnchor: file",
+      "note": "The Node package-lock artifact declares test_route_review_clean_sync_door.py as an exact consumer. This is source reachability, not an Owner closure plan or execution evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2724,72 +2724,72 @@
       ]
     },
     "300": {
-      "note": "The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census.\n\nAnchor: file",
+      "note": "The catalog includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:d5a4171e25aa82480855ee3155bf330126d742fb4d588d2882b77be7870fecb9",
             "locator": {
-              "end": 5024,
+              "end": 5030,
               "kind": "line_range",
-              "start": 5021
+              "start": 5027
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:49e50528e2d21b128285bbb653a19263f9227ef6fb2f92acf5bc6e6c3c3f0ee2",
             "locator": {
-              "end": 4573,
+              "end": 4579,
               "kind": "line_range",
-              "start": 4537
+              "start": 4543
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:efa9896f3f791760e24e08d01abee7d70ecf297fe26819512103a3a4361bb606",
             "locator": {
-              "end": 4605,
+              "end": 4611,
               "kind": "line_range",
-              "start": 4575
+              "start": 4581
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:0cea432ec6f34ec4ff2eeba97809d2ff1a34c215d1cca264a6045d52bf2d9186",
             "locator": {
-              "end": 1303,
+              "end": 1306,
               "kind": "line_range",
-              "start": 1139
+              "start": 1142
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:47b91b848f95245bf8f3426108439e9f66dcb23c49948263d199ecf7063657e9",
             "locator": {
-              "end": 3620,
+              "end": 3626,
               "kind": "line_range",
-              "start": 3584
+              "start": 3590
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2799,36 +2799,36 @@
       ]
     },
     "301": {
-      "note": "The registered-preview comparator support artifact retains its replacement test node and declares test_worktree_start_preview.py and test_master_retirement_readiness.py as exact consumers. These are reachability declarations, not invocation evidence.\n\nAnchor: file",
+      "note": "The registered-preview comparator support artifact retains its replacement test node and declares test_worktree_start_preview.py and test_master_retirement_readiness.py as exact consumers. These are reachability declarations, not invocation evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:706f1761b17ca49e0dd0e29003f53349687cdaa380ade9d1a68903d373ab66ab",
             "locator": {
-              "end": 4102,
+              "end": 4108,
               "kind": "line_range",
-              "start": 4022
+              "start": 4028
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:599dcbcdc5892b62c9ac2116064e838f52fca105a0b78839d32738b02d7eee1e",
             "locator": {
-              "end": 4121,
+              "end": 4127,
               "kind": "line_range",
-              "start": 4104
+              "start": 4110
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2838,12 +2838,12 @@
       ]
     },
     "302": {
-      "note": "The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution.\n\nAnchor: file",
+      "note": "The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2853,48 +2853,48 @@
       ]
     },
     "304": {
-      "note": "The read_scope_test_support artifact registers test_comparison_changeset as an exact consumer of knowledge-read-scope-cases.\n\nAnchor: file",
+      "note": "The read_scope_test_support artifact registers test_comparison_changeset as an exact consumer of knowledge-read-scope-cases. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:599dcbcdc5892b62c9ac2116064e838f52fca105a0b78839d32738b02d7eee1e",
             "locator": {
-              "end": 4121,
+              "end": 4127,
               "kind": "line_range",
-              "start": 4104
+              "start": 4110
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:34945079848ef721337d930219209df3d4011ba4208457c814235ed5473886f4",
             "locator": {
-              "end": 4140,
+              "end": 4146,
               "kind": "line_range",
-              "start": 4123
+              "start": 4129
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:0fcfb15c9b03571caf9adbe871eff2f03a662365530c05dbf989593168c7493a",
             "locator": {
-              "end": 4168,
+              "end": 4174,
               "kind": "line_range",
-              "start": 4142
+              "start": 4148
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2904,12 +2904,12 @@
       ]
     },
     "305": {
-      "note": "The five test_review_evidence_ modules — bounded_collections, eof, intended, packet and residuals — are declared as exact consumers of _user_settings_guard.py and the portable Node package-lock fixture, and of no other artifact. Catalog membership is not execution. The portable Node package-lock fixture row lists the same five modules. No other artifact row in the catalog lists any of the five modules.\n\nAnchor: file",
+      "note": "The five test_review_evidence_ modules — bounded_collections, eof, intended, packet and residuals — are declared as exact consumers of _user_settings_guard.py and the portable Node package-lock fixture, and of no other artifact. Catalog membership is not execution. The portable Node package-lock fixture row lists the same five modules. No other artifact row in the catalog lists any of the five modules. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2919,38 +2919,28 @@
       ]
     },
     "306": {
-      "note": "The evidence catalogue registers the `canvas-host-and-presenter-cases` contract and its shared-support artifact `mcp/tests/canvas_host_test_support.py` with internal-canonical authority, affected cadence, permanent lifetime and its exact consumers, so the builders that make a task directory, admitted packet, published revision and comparison answer are declared once for every canvas case.\n\nAnchor: file",
+      "note": "The evidence catalogue registers the `canvas-host-and-presenter-cases` contract and its shared-support artifact `mcp/tests/canvas_host_test_support.py` with internal-canonical authority, affected cadence, permanent lifetime and its exact consumers. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:b13a09639587ad0c90b509f8b7014a1a0df9c122d7e5eec560fd81e94d763e94",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:c2422a59f40102d9829f5fd62e0103b72318c1e997e8a1766083a1a21edadef3",
             "locator": {
-              "end": 4969,
+              "end": 1008,
               "kind": "line_range",
-              "start": 4966
+              "start": 961
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:3f241503a8b42c9c1d962d72d831a38bcfef5bda03c04eab50138e7523a6a0aa",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:014c5dd4d644bf43305ca1aebaa0dfe5a0020fa45934cd85ec6f7db3beec98a3",
             "locator": {
-              "end": 1004,
+              "end": 4976,
               "kind": "line_range",
-              "start": 958
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
-            "locator": {
-              "kind": "file"
+              "start": 4972
             }
           },
           "kind": "test"
@@ -2958,12 +2948,12 @@
       ]
     },
     "307": {
-      "note": "The settings-guard artifact declares test_developer_messages.py as an exact consumer.\n\nAnchor: file",
+      "note": "The settings-guard artifact declares test_developer_messages.py as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2973,12 +2963,12 @@
       ]
     },
     "308": {
-      "note": "The portable Node package-lock artifact declares test_developer_messages.py as an exact consumer and has independent-boundary fidelity.\n\nAnchor: file",
+      "note": "The portable Node package-lock artifact declares test_developer_messages.py as an exact consumer and has independent-boundary fidelity. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -2988,60 +2978,60 @@
       ]
     },
     "309": {
-      "note": "The three Paseo support rows — launch, role tools and runtime — register the developer-message consumer test_developer_messages.py and declare in-process fidelity. The `paseo_role_tools_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The three Paseo support rows — launch, role tools and runtime — register the developer-message consumer test_developer_messages.py and declare in-process fidelity. The `paseo_role_tools_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:81350553d304ae897a91dec67a1dd0f52814b572c502b64b76487f42e68ccb8c",
             "locator": {
-              "end": 3985,
+              "end": 3991,
               "kind": "line_range",
-              "start": 3935
+              "start": 3941
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:b7ac8dc1913fbf465ede9fa4cf5da770d8e3c58017c7216db7586d351f99e18d",
             "locator": {
-              "end": 4020,
+              "end": 4026,
               "kind": "line_range",
-              "start": 3987
+              "start": 3993
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:706f1761b17ca49e0dd0e29003f53349687cdaa380ade9d1a68903d373ab66ab",
             "locator": {
-              "end": 4102,
+              "end": 4108,
               "kind": "line_range",
-              "start": 4022
+              "start": 4028
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:957dda8ae092fdeefc6823471a0aa38fa15b79c121bf53a384599ae4beac2735",
             "locator": {
-              "end": 3896,
+              "end": 3902,
               "kind": "line_range",
-              "start": 3859
+              "start": 3865
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3051,12 +3041,12 @@
       ]
     },
     "311": {
-      "note": "The current parsed catalog declares 17 contracts and 116 artifacts. These are source declarations, not execution or acceptance evidence.\n\nAnchor: file",
+      "note": "The current parsed catalog declares 17 contracts and 116 artifacts. These are source declarations, not execution or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3066,12 +3056,12 @@
       ]
     },
     "313": {
-      "note": "The current lifecycle catalog declares test_curator_instruction_wording.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py, mcp/tests/lifecycle_enclosure_test_support.py, mcp/tests/paseo_launch_test_support.py, mcp/tests/paseo_role_tools_test_support.py, mcp/tests/paseo_runtime_test_support.py, mcp/tests/role_first_message_support.py, mcp/tests/role_instruction_wording_support.py and mcp/tests/writer_worklist_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence.\n\nAnchor: file",
+      "note": "The current lifecycle catalog declares test_curator_instruction_wording.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py, mcp/tests/lifecycle_enclosure_test_support.py, mcp/tests/paseo_launch_test_support.py, mcp/tests/paseo_role_tools_test_support.py, mcp/tests/paseo_runtime_test_support.py, mcp/tests/role_first_message_support.py, mcp/tests/role_instruction_wording_support.py and mcp/tests/writer_worklist_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3081,12 +3071,12 @@
       ]
     },
     "314": {
-      "note": "The unit-regression lane names the re-point and recovery modules where its order puts them.\n\nAnchor: file",
+      "note": "The unit-regression lane names the re-point and recovery modules where its order puts them. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
               "kind": "file"
             },
@@ -3097,12 +3087,12 @@
       ]
     },
     "315": {
-      "note": "The catalog declares 17 contracts and 116 artifacts, including extracted support owners; declarations and replacement nodes are not invocation evidence.\n\nAnchor: file",
+      "note": "The catalog declares 17 contracts and 116 artifacts, including extracted support owners; declarations and replacement nodes are not invocation evidence. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3112,12 +3102,12 @@
       ]
     },
     "316": {
-      "note": "The current settings-guard and Node-lockfile artifact rows both declare test_task_document_order.py as a consumer. Contract/artifact identity and non-consumer metadata are distinct from membership; these declarations establish neither execution nor acceptance. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_task_document_order.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The current settings-guard and Node-lockfile artifact rows both declare test_task_document_order.py as a consumer. Contract/artifact identity and non-consumer metadata are distinct from membership; these declarations establish neither execution nor acceptance. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_task_document_order.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3127,12 +3117,12 @@
       ]
     },
     "317": {
-      "note": "The catalog declares test_terminal_notice_commit_recovery.py among the exact consumers of mcp/tests/curator_coherence_test_support.py, mcp/tests/read_boundary_oracle_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account. The `read_boundary_oracle_test_support.py` artifact row declares `test_terminal_notice_commit_recovery.py` as an exact consumer.\n\nAnchor: file",
+      "note": "The catalog declares test_terminal_notice_commit_recovery.py among the exact consumers of mcp/tests/curator_coherence_test_support.py, mcp/tests/read_boundary_oracle_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account. The `read_boundary_oracle_test_support.py` artifact row declares `test_terminal_notice_commit_recovery.py` as an exact consumer. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3142,12 +3132,12 @@
       ]
     },
     "318": {
-      "note": "The current catalog names test_dashboard_autostart_after_discovery.py on the canonical settings-guard consumer list, together with the publication/landing-workflow consumers test_publication_merge_admission.py and test_landing_workflow_setting.py. These memberships select evidence and establish no invocation or live-host startup result. The Node-lockfile consumer list names the same three modules. Its source assertions cover scheduling after the discovery answer is produced and the first-call fallback through one latch.\n\nAnchor: file",
+      "note": "The current catalog names test_dashboard_autostart_after_discovery.py on the canonical settings-guard consumer list, together with the publication/landing-workflow consumers test_publication_merge_admission.py and test_landing_workflow_setting.py. These memberships select evidence and establish no invocation or live-host startup result. The Node-lockfile consumer list names the same three modules. Its source assertions cover scheduling after the discovery answer is produced and the first-call fallback through one latch. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3157,12 +3147,12 @@
       ]
     },
     "319": {
-      "note": "The current catalog declares 17 contracts and 116 artifacts. The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules selected in the unit-regression lane: test_l192_projection_watch_roots.py, test_l192_provider_safety_prose.py, test_l192_provider_status_closure.py, test_l192_provider_stop_chain.py, test_l192_retired_acknowledgement_reclamation.py, test_l192_retired_start_progress.py, test_l192_root_advice_has_no_removed_parameter.py, test_l192_root_instruction_parameter.py, test_l192_safety_stop_authority_settings.py. Paseo runtime support also declares test_l192_projection_watch_roots.py. test_provider_current_state.py is absent from the catalog consumer lists. test_dashboard_autostart_after_discovery.py, test_publication_merge_admission.py and test_landing_workflow_setting.py remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result.\n\nAnchor: file",
+      "note": "The current catalog declares 17 contracts and 116 artifacts. The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules selected in the unit-regression lane: test_l192_projection_watch_roots.py, test_l192_provider_safety_prose.py, test_l192_provider_status_closure.py, test_l192_provider_stop_chain.py, test_l192_retired_acknowledgement_reclamation.py, test_l192_retired_start_progress.py, test_l192_root_advice_has_no_removed_parameter.py, test_l192_root_instruction_parameter.py, test_l192_safety_stop_authority_settings.py. Paseo runtime support also declares test_l192_projection_watch_roots.py. test_provider_current_state.py is absent from the catalog consumer lists. test_dashboard_autostart_after_discovery.py, test_publication_merge_admission.py and test_landing_workflow_setting.py remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3172,52 +3162,52 @@
       ]
     },
     "320": {
-      "note": "The catalog declares 24 retained recording-artifact rows with their declared consumer ownership. The general derivation limitation is separately owned by issue 414, not a carried F27 weakness.\n\nAnchor: file",
+      "note": "The catalog declares 24 retained recording-artifact rows with their declared consumer ownership. The general derivation limitation is separately owned by issue 414, not a carried F27 weakness. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:63f39e4cc10a91d0bd80100ec36751fc07420b6c5e350f2ac4a120e6707385e1",
             "locator": {
-              "end": 4902,
+              "end": 4908,
               "kind": "line_range",
-              "start": 4884
+              "start": 4890
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:c15dc6029c05d6a630d18c3adc7b191b80c6d9847283a8eb6e8643928d901173",
             "locator": {
-              "end": 4921,
+              "end": 4927,
               "kind": "line_range",
-              "start": 4904
+              "start": 4910
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:1c0d0af27056ed17cfea8ba77cb5c5a72e0e0dcb4167c41e9404b77b0ce92923",
             "locator": {
-              "end": 4941,
+              "end": 4947,
               "kind": "line_range",
-              "start": 4923
+              "start": 4929
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:ffe09ef236cc70e1a86c3cb5cd9d8c935b3ec5a38f9cb98c0da7727fea7c4ce1",
             "locator": {
-              "end": 4959,
+              "end": 4965,
               "kind": "line_range",
-              "start": 4943
+              "start": 4949
             }
           },
           "kind": "test"
@@ -3263,8 +3253,8 @@
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3313,12 +3303,12 @@
       ]
     },
     "321": {
-      "note": "Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml.\n\nAnchor: file",
+      "note": "Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3328,12 +3318,12 @@
       ]
     },
     "322": {
-      "note": "Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml.\n\nAnchor: file",
+      "note": "Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3343,12 +3333,12 @@
       ]
     },
     "323": {
-      "note": "Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml.\n\nAnchor: file",
+      "note": "Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3358,12 +3348,12 @@
       ]
     },
     "324": {
-      "note": "Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml.\n\nAnchor: file",
+      "note": "Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3373,14 +3363,67 @@
       ]
     },
     "325": {
-      "note": "The catalog declares the browser suite as a consumer of the settings-guard and portable Node-lockfile artifacts.\n\nAnchor: file",
+      "note": "The catalog declares the browser suite as a consumer of the settings-guard and portable Node-lockfile artifacts. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "326": {
+      "note": "The existing user-settings guard and portable Node-lockfile artifact rows each declare the digest, manifest and pointer instruction-renewal test modules as exact consumers. Membership establishes dependency reachability, not execution or acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:4201da6f4bf22133347282623f8fe47080f84c8723d1dfe420ac1f1e40839c10",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:4643d211e16915880202b7153ba994377f9c26bba61e2abb70df35239a89111a",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 327
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:d2e5edbcf15b4eda718728b353cef0c70ed6b9192f07df2339b61447c09f6adb",
+            "locator": {
+              "end": 2435,
+              "kind": "line_range",
+              "start": 2420
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:4643d211e16915880202b7153ba994377f9c26bba61e2abb70df35239a89111a",
+            "locator": {
+              "end": 2684,
+              "kind": "line_range",
+              "start": 2682
             }
           },
           "kind": "test"
@@ -3452,24 +3495,24 @@
       ]
     },
     "94": {
-      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation.\n\nAnchor: file",
+      "note": "The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:931c378facd0990a792d4916b6aeee8bf7ee82e9bd68e56cd2f372d17acfd71f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:b8b825c93ffd1dc95354883bb5262ef4f01d2364c7426355762256b4bfad5f48",
             "locator": {
-              "end": 3217,
+              "end": 3223,
               "kind": "line_range",
-              "start": 2417
+              "start": 2420
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3479,12 +3522,12 @@
       ]
     },
     "95": {
-      "note": "The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers.\n\nAnchor: file",
+      "note": "The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3494,60 +3537,60 @@
       ]
     },
     "98": {
-      "note": "Worklist process support declares a permanent local-composition artifact and its replacement test node. Anchor: file\n\nAnchor: file",
+      "note": "Worklist process support declares a permanent local-composition artifact and its replacement test node. Anchor: file Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:44a2b8c96e4bbf157f9dc7aa453bcb3fac70b0b0b47992d290e87d3592cf1738",
             "locator": {
-              "end": 4311,
+              "end": 4317,
               "kind": "line_range",
-              "start": 4293
+              "start": 4299
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:8967eefd8bb02482612fce4f65214e6ffe7cf344c049c830c2598d78c109629b",
             "locator": {
-              "end": 4335,
+              "end": 4341,
               "kind": "line_range",
-              "start": 4313
+              "start": 4319
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4218,
+              "end": 4224,
               "kind": "line_range",
-              "start": 4170
+              "start": 4176
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
             "content": "sha256:28c64b69a1160d330ea5a470b8bfb35223c529018254babe3b2e0690b15d6a4d",
             "locator": {
-              "end": 4245,
+              "end": 4251,
               "kind": "line_range",
-              "start": 4220
+              "start": 4226
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }
@@ -3557,12 +3600,12 @@
       ]
     },
     "99": {
-      "note": "The current lifecycle catalog declares test_converted_onboarding_drift.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/converted_onboarding_drift_support.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `converted_onboarding_drift_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `curator_coherence_test_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. It is not declared on knowledge_conversion_test_support.py.\n\nAnchor: file",
+      "note": "The current lifecycle catalog declares test_converted_onboarding_drift.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/converted_onboarding_drift_support.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `converted_onboarding_drift_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `curator_coherence_test_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. It is not declared on knowledge_conversion_test_support.py. Anchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
             "locator": {
               "kind": "file"
             }

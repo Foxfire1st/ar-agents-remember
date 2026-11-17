@@ -19,15 +19,31 @@
       ]
     },
     "10": {
-      "note": "One operation, what its own guidance supplied, and what came back.",
+      "note": "A recorded hop includes its selected channel, prepared arguments, first-call arm and missing arguments, plus the returned call result.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:4474208db0ec0c99173af6f3094e5ae315e6d5d37a9071e228880411d3c9a1c5",
             "locator": {
-              "kind": "file"
-            }
+              "end": 289,
+              "kind": "line_range",
+              "start": 245
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:ffdfc1db9fe47225f1dd73e35d28bd7bc6a7cf4bd56655b785341ef58b5b8e1e",
+            "locator": {
+              "end": 723,
+              "kind": "line_range",
+              "start": 684
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
           "kind": "test"
         }
@@ -96,17 +112,18 @@
       ]
     },
     "15": {
-      "note": "What the guidance supplies for a hop, and the arguments it declares as required.",
+      "note": "Selected phase guidance is augmented with fixture commit messages for closeout apply, integration and finalization; declared required arguments and the workflow fallback are supplied before calling.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:3e14af6ab317b9a857fe564b85409b03f9d988045ceb7b627a34478389f0bb99",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:074f1807227be7a653b18474f1b4793a9499e854e77051d22eaad5e0038399b3",
             "locator": {
-              "end": 227,
+              "end": 660,
               "kind": "line_range",
-              "start": 208
-            }
+              "start": 597
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
           "kind": "test"
         }
@@ -431,10 +448,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
-              "end": 809,
+              "end": 812,
               "kind": "line_range",
               "start": 1
             },

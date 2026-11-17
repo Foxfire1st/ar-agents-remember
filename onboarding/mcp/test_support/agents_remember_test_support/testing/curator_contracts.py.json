@@ -1,13 +1,31 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/testing/curator_contracts.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ac85e63eaab64486db9bb5293bcca28ab15ecba7",
+        "content": "sha256:bcdccc44f06cf7685c2a44d1c22df921d9bf57faface1d921a1e476a4681ae52",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RF9WZA",
+      "invariant": "INV-DHKR4G",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 2",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The assertion preserves its comparison and names the canonical renewal command when its packaged instruction copy is stale.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "One action-local link is followed to its exact owner file and heading.",
       "targets": [
         {
           "anchor": {
-            "blob": "ba481481fca56e132efda713ae9d7d271499a5f0",
+            "blob": "ac85e63eaab64486db9bb5293bcca28ab15ecba7",
             "content": "sha256:79b6171fdb7ddfe971919af30b6e52c2887fbd0085b3cfc8d4de991a20a312e6",
             "locator": {
               "kind": "symbol",
@@ -23,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba481481fca56e132efda713ae9d7d271499a5f0",
+            "blob": "ac85e63eaab64486db9bb5293bcca28ab15ecba7",
             "content": "sha256:c7b12c364c1aa6bf5ae91c463715913772f0347cb322f4cbc6e751aecf3a224d",
             "locator": {
               "kind": "symbol",
@@ -39,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba481481fca56e132efda713ae9d7d271499a5f0",
+            "blob": "ac85e63eaab64486db9bb5293bcca28ab15ecba7",
             "content": "sha256:70fcfece4bc5e5d25c2534df6d7ce87fa0fe009f6807799e259510ae91102dbe",
             "locator": {
               "kind": "symbol",
@@ -55,11 +73,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba481481fca56e132efda713ae9d7d271499a5f0",
+            "blob": "ac85e63eaab64486db9bb5293bcca28ab15ecba7",
             "content": "sha256:7141f4253a68c2bcc5876cbc9d918ee239227c1e06c006cd01b54b1d904dce1a",
             "locator": {
               "kind": "symbol",
               "name": "healing_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "require_permission_delivery requires shipped and checkout orientation-operation bytes to agree and names `Run mcp/.venv/bin/python scripts/renew-instructions.py` on mismatch before following the permission-decision link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac85e63eaab64486db9bb5293bcca28ab15ecba7",
+            "content": "sha256:ba3cc6fbe0b9f0aa5c6b48281438f77347a0352c0403b645c11d81590dfa0188",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 95
             }
           },
           "kind": "code"
