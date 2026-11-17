@@ -23,28 +23,27 @@ input to this authority graph.
 
 `EvidenceDependency` is one named direct input with kind, name, digest algorithm
 (`git-object` for tree/blob identities, `sha256` otherwise), and a 40-64 hex digest
-cit:([`EvidenceDependency`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:67-95).
+cit:([`EvidenceDependency`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:96-124).
 `EvidenceDependencies` is the canonical `ar-evidence-dependencies/v1` declaration for one
 `EvidenceRecordType`; it enforces unique identities and canonical sort order and fingerprints the
-declaration deterministically cit:([`EvidenceDependencies`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-118).
+declaration deterministically cit:([`EvidenceDependencies`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:127-149).
 `EVIDENCE_DEPENDENCY_POLICIES` is the frozen per-record-type allowlist of required and permitted
 direct dependency kinds for every evidence domain: memory-quality attestation, route review, curator
-coherence, quality report, closeout door, and the three lifecycle operation kinds
-cit:([`EVIDENCE_DEPENDENCY_POLICIES`, `EvidenceDependencyPolicy`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:141-211; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:122-126).
-CCR-R12@v4 (260831-CCR-L12, commit `cfd09381`) makes the `admission` dependency kind optional for
-`quality-report/v2` records: a published quality report binds the shared-Dagger-authority snapshot digest as a
-`shared-dagger-authority` edge whenever the manifest carries `runtimeAuthorityDigest`, and the record stays
-valid without one (ownerless admission, preview, fixtures). The policy registry remains the single authority for the
+coherence, review assessment, quality report, closeout door, and the three lifecycle operation kinds
+cit:([`EVIDENCE_DEPENDENCY_POLICIES`, `EvidenceDependencyPolicy`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:172-270; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:153-157).
+`quality-report/v2` makes `admission` optional. When `runtimeAuthorityDigest` is present, the published
+quality report binds an `admission` edge named `shared-dagger-authority` to that snapshot digest; the record
+remains valid without it. The policy registry remains the single authority for the
 kinds each record may bind.
 `build_evidence_dependencies` validates an owner's declared inputs against its exact policy, and
 `require_evidence_dependencies` refuses missing, extra, wrong-type, or unsupported declarations
 with typed `EvidenceDependencyError` statuses
-cit:([`build_evidence_dependencies`, `require_evidence_dependencies`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:226-235; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-273).
+cit:([`build_evidence_dependencies`, `require_evidence_dependencies`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:285-294; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:297-332).
 `validate_evidence_dependency_graph` rejects a cycle among the supplied content-addressed records
 while treating edges to records outside the supplied set as external roots — no historical file scan
-cit:([`validate_evidence_dependency_graph`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:287-322).
-`dependency` and `canonical_sha256` are the two builder helpers every domain uses to construct edges
-cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:243-252; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:354-358).
+cit:([`validate_evidence_dependency_graph`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:346-381).
+`dependency` constructs typed edges, and `canonical_sha256` computes canonical JSON digests
+cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:273-282; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:384-388).
 
 `MAX_EVIDENCE_DEPENDENCIES` is derived from the coherence model's bounded judgment and assessment populations, fixed dependencies and validator edge. It covers record builders whose own models bound their payloads, without changing dependency schema, names or meaning. Coherence judgments may cite distinct evidence files; sharing evidence is valid when that file actually supports each judgment, never a workaround for an arbitrary cap. Master-scope route review has no own finite model bound and remains subject to the shared refusal, as the explicit scope ruling states.
 
@@ -54,8 +53,8 @@ cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycl
   authority for which kinds a record may bind.
 - Digests are content-addressed (git-object tree identities or SHA-256 of declared bytes); names are
   canonical nonblank text.
-- Edge direction is acyclic by contract: semantic projections and candidate trees point into
-  evidence, never the reverse.
+- Evidence records name their upstream semantic and candidate identities; the model does not add
+  evidence back to topology or task intent.
 
 ### Invariants And Boundaries
 
@@ -70,7 +69,7 @@ cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycl
 
 ### Todos
 
-No additional file-local TODO is established by this candidate review.
+
 
 ## Evidence
 
@@ -85,15 +84,13 @@ The encoding has no external authority.
 
 ### Repo-Internal References
 
-Every consumer record type binds its own edges through this single encoding; the mutation/cycle
-matrix in the evidence-dependency test suite fixes the contract.
+The record-type policies share this encoding; dependency-bound tests verify maximum publication,
+oversize refusal and old-record loading.
 
 
 - The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input. [1]
 
 - The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. [2]
-- The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records. [3]
-- Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. [4]
 
 - Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. [5]
 
@@ -107,17 +104,17 @@ No external implementation source applies.
 
 ## KS-R15@v1 Assessment Policy And The Coherence Record's Own Edge
 
-Two entries changed, and neither widens the closed kind vocabulary. The kind `review-record` already
-existed here; what this leaf adds is the **permission** for the `curator-coherence/v1` policy to use
-it. That permission is what lets the coherence record declare a typed edge to each stored assessment,
-so a reader can resolve an assessment from the record without parsing a payload. The record's own edge
+`curator-coherence/v1` permits `review-record` edges that declare stored assessment content addresses
+as direct dependencies. The record's own edge
 to the assessment is the only direction: the assessment does not declare the record it lives in,
 because a record citing itself is the self-invalidating sequence the design exists to avoid.
 
-The new `review-assessment/v1` policy requires exactly the inputs `KS-R15@v1` §5.1 enumerates and
+The `review-assessment/v1` policy requires exactly the inputs `KS-R15@v1` §5.1 enumerates and
 nothing else: `candidate-state` is the exact knowledge snapshot identity, `code-tree` and the optional
 `memory-tree` are the source trees, `semantic-topology` is the registered-scope manifest,
 `task-intent` is the task/requirement identity pair, `evidence-bytes` is the cited bytes, and
 `validator` is the resolver/policy version pair. `review-record` is deliberately **not** required
-there, for the direction reason above. This entry therefore adds one policy and no kind, which is the
-additive kind of change a new record type is supposed to make in this module.
+there, for the direction reason above.
+
+- The closeout door binds the code tree, an optional memory tree, topology, intent and review/memory/admission/scheduling provenance. [3]
+- Lifecycle operations bind the admitted candidate, gate policy and normalized input; closeout and direct landing also bind code tree, task intent and admitted door. [4]

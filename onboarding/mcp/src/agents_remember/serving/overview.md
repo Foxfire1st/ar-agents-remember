@@ -7,7 +7,7 @@
 
 The serving package composes the local dashboard, projection/event streams and retained file, note, task, requirement, change-set, Knowledge and review readers over configured application ports. Native Paseo integration remains a separate retained subtree; the removed hosted terminal catalogue, harness adapter/control, conversation, notifier and supervisor plane is not this package's current responsibility. The package also owns the dashboard daemon's start, identity and restart, and the build-currentness reading by which a running dashboard or MCP server knows whether the Python build it loaded still matches the files at its package root.
 
-Role launch instructions are generic capsule-or-refused values; compilation and admission remain application-owned. The current ordinary source literal `PUBLIC_TOOLS` has 44 names, including `knowledge_write`, `user_settings_init` and `explainer_control`; a valid launch-bound explainer selects its separate 22-tool surface. Declaration, installation content, native receipt identity and observed host execution are separate facts; this overview creates no new CODE grade.
+Role launch instructions are generic capsule-or-refused values; compilation and admission remain application-owned. The current ordinary source literal `PUBLIC_TOOLS` has 44 names, including `knowledge_write`, `user_settings_init` and `explainer_control`; a valid launch-bound explainer adds its four tools to that ordinary roster. Declaration, installation content, native receipt identity and observed host execution are separate facts; this overview creates no new CODE grade.
 
 ## Hot Path Summary
 
@@ -270,13 +270,13 @@ The serving tick reads usage reports at a new stamped end, writes the one limit 
 
 - **The registration that must precede the static mount and that takes all three ports.**  Anchor: "def register_review_routes("
 
-- Review route registration precedes the static mount and accepts knowledge-review, entry-list and source-content ports. 
+- Review route registration precedes the static mount and accepts knowledge-review, entry-list and source-content ports.
 
 - **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.**  Anchor: "def api_review_intent_entries("
 
 - The registration that must precede the static mount.  Anchor: "def register_review_routes("
 
-- **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** 
+- **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.**
 
 - The collaborator that stops the route's child computations.
 
@@ -284,31 +284,31 @@ The serving tick reads usage reports at a new stamped end, writes the one limit 
 
 - The tree port passes the process owner to the application.
 
-- A live read reuses the record of the same trees, and pins before it writes a new record. 
+- A live read reuses the record of the same trees, and pins before it writes a new record.
 
-- The value handed to the port, and whether it asks a focused question. 
+- The value handed to the port, and whether it asks a focused question.
 
-- The one selection value and its refusals. 
+- The one selection value and its refusals.
 
-- The port runs on the route's executor with cancellation and arrival bound; a disconnect and a cancellation set the event. 
+- The port runs on the route's executor with cancellation and arrival bound; a disconnect and a cancellation set the event.
 
-- The route: its own executor, the unwired 503, the selection's 400 and the typed 200. 
+- The route: its own executor, the unwired 503, the selection's 400 and the typed 200.
 
 - Tick cancellation drains filesystem work; state commits before subscriber notification.
 
-- Shared app composition binds real landing interest before startup. 
+- Shared app composition binds real landing interest before startup.
 
-- Pending cache results are retained only when fresh post-read input observations match their captured generation. 
+- Pending cache results are retained only when fresh post-read input observations match their captured generation.
 
-- The transport still maps the literal legacy candidate_dataset_absent refusal code to404; a status mapping does not establish a currently produced dataset candidate path. 
+- The transport still maps the literal legacy candidate_dataset_absent refusal code to404; a status mapping does not establish a currently produced dataset candidate path.
 
-- The connection-owned watcher filters generated/temporary paths, separates ready from coalesced changes, emits invalidation revisions rather than tree identities and drains its worker/merge ownership on closure. 
+- The connection-owned watcher filters generated/temporary paths, separates ready from coalesced changes, emits invalidation revisions rather than tree identities and drains its worker/merge ownership on closure.
 
-- The summary reader keys retention by the numbered question and current age window. 
+- The summary reader keys retention by the numbered question and current age window.
 
-- The native recorded-answer cache returns predicate-rejected values without retaining them. 
+- The native recorded-answer cache returns predicate-rejected values without retaining them.
 
-- Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. Ordinary roster has 44 names while explainer surface selection is separate. 
+- Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. The ordinary roster has 44 names, and a valid explainer binding adds four tools to that roster.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset_comparison.py:18-29 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 23cb164fa24dcbc4a98a56fa1324e1fb42c1bf41; mcp/src/agents_remember/serving/projector.py:348-434 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a66314c555d873dd01b4dbefbe18fb3f2ee44d4b; mcp/src/agents_remember/serving/review.py:667-715 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c5a74a85af20a8fb48cc44f59de7e926d589d3fc; mcp/src/agents_remember/serving/review.py:715-715 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a8d2431926d6b130012ca81ed2e85b14721c0615; mcp/src/agents_remember/cli/dashboard.py:71-96 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/src/agents_remember/cli/dashboard.py:149-168 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0; mcp/src/agents_remember/cli/dashboard.py:75-100 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 842b487b854503d95c9c2d9dce1841198ba93c7d; mcp/src/agents_remember/cli/dashboard.py:153-172 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; mcp/src/agents_remember/cli/dashboard.py:139-142 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/cli/dashboard.py:143-146 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/serving/review.py::register_review_routes - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review.py::api_review_intent - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::_recorded - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_trees.py::ReviewTreesQuery - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_trees.py::ReviewTreesSelection - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_trees.py::_request_result - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; mcp/src/agents_remember/serving/review_trees.py::register_review_trees_route - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/app.py::_build_serving_runtime - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/changeset_cache.py::finish - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_memory_watch.py::_memory_events - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_memory_watch.py::_native_worker - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/src/agents_remember/serving/review_memory_watch.py::_admitted - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/intent_summary_cache.py::_response - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_answer_reuse.py::answer - the bytes it recorded now occur 60 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/explainer_watcher.py::unexplained_turn_notice - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/change_watcher.py::MoveNoticeWatch - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/src/agents_remember/serving/explainer.py::_comparison - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/explainer.py::explainer_composition - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/app.py::create_app - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
@@ -495,4 +495,4 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - Summary ports and cache keys include exact optional comparison identity. [143]
 
-- Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. Ordinary roster has 44 names while explainer surface selection is separate. [146]
+- Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. The ordinary roster has 44 names, and a valid explainer binding adds four tools to that roster. [146]

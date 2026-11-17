@@ -5,17 +5,18 @@
       "guarded_by_test",
       "prevents_costly_mistake"
     ],
-    "justification": "Four places realize one path — admission, load, confined server, native launch — and the mistake it prevents is authoring on a read, publishing on an unloaded revision, or writing outside the attempt folder."
+    "justification": "Environment metadata admission, the bound server and exact-byte publication have distinct owners. Their composition prevents product metadata from escaping its admitted paths and a page from becoming ready before its prospective load and readiness check."
   },
-  "applicability": "Every explainer seat started for one leaf, and the environment the leaf's first request builds.",
+  "applicability": "Page authoring in the leaf’s explainer environment, product-owned environment metadata writes, and publication through the frame store; this scope does not cover every harness effect.",
   "conditions": [
     "The environment lives under <coordination>/explainer/<repository>/<task>/<leaf>, one per leaf.",
-    "Every writer of the environment's durable facts takes the leaf's one lock and admits its target first.",
+    "Product metadata helpers admit their own targets; lifecycle operations coordinate through the leaf lock, while publication uses the frame store’s task lock and rechecks the environment binding under that lock.",
     "A publication follows one model-free load and a readiness report over the staged bytes."
   ],
   "exclusions": [
     "The retired canvas presenter POSTs, which are refused by name canvas-authoring-replaced.",
-    "The architect's explainer_control tool, which updates or retires a seat instead of authoring a page."
+    "The architect's explainer_control tool, which updates or retires a seat instead of authoring a page.",
+    "These product path checks do not mediate the harness’s own file or shell operations or the tracked contents and symlinks of ordinary detached Git checkouts. The explainer’s instruction remains to write only in its working folder and leave task code, memory, documents and accepted records to their owners."
   ],
   "id": "INV-GWMA1V",
   "origin": {
@@ -30,9 +31,9 @@
     "leaf": "260928-MIK-L104",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "An explainer authors only inside one environment per leaf, kept outside every worktree, memory repository and task folder; every path it writes is admitted by a guard that holds a link or an escape instead of following it; and it publishes only through the frame store, after one model-free load of the prospective revision and a readiness check over that revision's exact bytes.",
+  "statement": "An explainer authors its page in one environment per leaf, kept outside every worktree, memory repository and task folder. Product-owned environment metadata and publication writers admit their target paths before writing, holding a symlinked or escaping target rather than following it. Publication goes through the frame store only after one model-free load of the prospective revision and a readiness check over that revision’s exact bytes.",
   "status": "proposed",
   "supersedes": []
 }

@@ -187,15 +187,15 @@
       ]
     },
     "14": {
-      "note": "Publication inputs, refusal text, record coverage and evidence custody have deciding predicates.",
+      "note": "Publication inputs, refusal text, record coverage and evidence custody have deciding predicates.\n\nAnchor: `CuratorCoherenceRequest._action_has_one_input_shape`; `CuratorCoherenceRecord._judgments_cover_candidates_exactly`",
       "targets": [
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
-            "content": "sha256:4b66f4952e681126ce86951860c82aa18551606c79e43c75ea2a9ed0fb387cc5",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:1b0f109e9d0b9776c0155281ec86ef05d3ef91fdc74e82f1fb5e6f3552103747",
             "locator": {
               "kind": "symbol",
-              "name": "_action_has_one_input_shape"
+              "name": "publication_refusal"
             },
             "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
           },
@@ -203,12 +203,11 @@
         },
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
-            "content": "sha256:f6b89ae37afc29aee06dbe090755c389f224c0f1bd6503d7f035bfc67e4fc865",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:f28f70cfd17ca791ca4d58f5139169884a61845842f7c08db66bfbeee7ac0794",
             "locator": {
-              "end": 304,
-              "kind": "line_range",
-              "start": 198
+              "kind": "symbol",
+              "name": "CuratorCoherenceRecordedJudgment"
             },
             "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
           },
@@ -216,12 +215,25 @@
         },
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
-            "content": "sha256:097ade6e8d464732e7968df7af2e5261ab0216a62fb62b688461a0a38b22bbe9",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:9af8b5e249af164d85c05628d2a0f81dd645d1f02668e3e1039b8f98241476a2",
             "locator": {
-              "end": 529,
+              "end": 572,
               "kind": "line_range",
-              "start": 334
+              "start": 559
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:69e80138b15eb74f18f6ed0414b87c54e0bd0699a0a2aa083ca272fa6a7849dd",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 297
             },
             "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
           },
@@ -234,12 +246,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
-            "content": "sha256:0fc4f7db715df6de213021a5700532f7b61407603c51711cb511e761dccd2f4f",
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
+            "content": "sha256:23536224bcc5dc1d36955a44793da1c70344126e5a7f714f428ad67d6f3f2690",
             "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 145
+              "kind": "symbol",
+              "name": "_prepare"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
           },
@@ -404,11 +415,10 @@
         {
           "anchor": {
             "blob": "65175dd3f3506d931ce763a31658565e5ee1a265",
-            "content": "sha256:4430a0e56c52f80fd4f6a480ff1ef406b2dabab6a3d486cd4e849b072d44996f",
+            "content": "sha256:d2ce47dd1ec632491f6bb8d90fde70530a3e89e5b4622f4ce5af0f06fbdf953f",
             "locator": {
-              "end": 156,
-              "kind": "line_range",
-              "start": 121
+              "kind": "symbol",
+              "name": "examined_input_declaration"
             },
             "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_store.py"
           },
@@ -416,25 +426,24 @@
         },
         {
           "anchor": {
-            "blob": "65175dd3f3506d931ce763a31658565e5ee1a265",
-            "content": "sha256:98fa2ceda382ed37ea7c449a7591864bc69662f1f601da0ffcd508e7d10cfb0e",
+            "blob": "de7dda95ae9edafdee4da3337981c51e9eda4e44",
+            "content": "sha256:11d7436e0b8cde975a43f45421951c9d29de2cea875f3ea5eeb1548302050d18",
             "locator": {
-              "end": 313,
-              "kind": "line_range",
-              "start": 287
+              "kind": "symbol",
+              "name": "curator_coherence_dependencies"
             },
-            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_store.py"
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_binding.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
-            "content": "sha256:aa29c81b988277fc56e839d40c65d2ea0a116c55ca31a2b05be96ce3f90d0e2d",
+            "blob": "ff093c7ab79524984336594e05838618b6205491",
+            "content": "sha256:b29e94097d57d321bd2f4182a4244c260939ba9b9f26711610a0169e2f11969f",
             "locator": {
               "end": 223,
               "kind": "line_range",
-              "start": 213
+              "start": 203
             },
             "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
           },
@@ -521,6 +530,40 @@
               "name": "ExistingGitPreparationBinding"
             },
             "path": "mcp/src/agents_remember/kernel/git_preparation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The attestation optionally carries measuredReportSha256; its serializer omits the field when absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:114474082c12efcd5ad324b6483bdbd8307fc8a80e96b25ac82bde7ad5a28951",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorQualityAttestation"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The coherence record optionally carries measuredAttestationSha256 and measuredReportSha256 and omits absent measured fields when serializing historical shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:8e635700f6acec931de69f04ddafb50dc72fb6d74d6ebceadaa83e037128d5c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceRecord"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
           },
           "kind": "code"
         }

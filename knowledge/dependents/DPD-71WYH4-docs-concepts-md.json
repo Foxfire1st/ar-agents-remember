@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
+    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
     "role": "curator",
-    "statement": "Both changed glossary passages are covered: Knowledge gate adds a noncurrent entry at a candidate-changed path beside the existing open-worklist and refusing-validator cases; the new Landing line entry defines the line a task or master lands on as its master's line when it belongs to one, otherwise its own source line. The rest of the page was not reverified.",
-    "task": "261112-BUG-L7",
+    "statement": "The changed index passage correctly limits reuse to the selected memory tree and loaded build, while the unchanged passages were not reverified.",
+    "task": "261112-BUG-L9",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -116,12 +116,12 @@
       "path": "mcp/src/agents_remember/memory_quality/reference_anchors.py"
     },
     {
-      "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+      "blob": "debdb3129deb37132e8c2ec46eed5b3cb5becbfa",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
     },
     {
-      "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+      "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
     },
@@ -409,6 +409,19 @@
       "blob": "3cba6e5af9fb586386f0327c3231fbf20a3e2df6",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/landing.py"
+    },
+    {
+      "anchor": {
+        "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+        "content": "sha256:c953503aa6afe66c046070e4713c0438b86ccab1d9e76a42e4cf596ea1ad226a",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+      },
+      "heading": "Loaded build identity",
+      "kind": "anchor"
     }
   ]
 }

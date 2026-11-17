@@ -23,10 +23,10 @@ This module originated in the L23 split and retains publication discoverability 
 ### Logic
 
 **The authority is one declaration.** `PUBLICATION_MEMBERS`
-(`mcp/src/agents_remember/models/lifecycles/curator_coherence.py:348-358`) is a tuple of nine
-`PublicationMember` records (`:331-342`) in the request model's own field order, carrying the
+(`mcp/src/agents_remember/models/lifecycles/curator_coherence.py:366-376`) is a tuple of nine
+`PublicationMember` records (`:349-360`) in the request model's own field order, carrying the
 `caller_supplied` flag on the first two. The validator refuses on it, `publication_refusal`
-(`:394-418`) names what is missing from it, and `publication_input_statement` (`:427-456`) is the
+(`:412-436`) names what is missing from it, and `publication_input_statement` (`:445-474`) is the
 text `prepare` renders — so a member added to the declaration needs no second edit anywhere, which
 is what one case measures rather than asserts.
 
@@ -73,8 +73,8 @@ registration at its earlier source epoch; this is not a claim that the current r
 was appended at the end of the catalog. Its direct imports include `agents_remember`
 models, `pydantic` and `pytest`; direct imports do not determine the complete governed
 consumer population. The merged `mcp/tests/evidence-lifecycle.toml` declares this module
-on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py` at line 236
-and `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2591.
+on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py` at line 237
+and `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2598.
 These are catalog declarations, not fresh collection or execution evidence.
 
 ### Invariants And Boundaries
@@ -146,6 +146,7 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References (continued)
 
-- The lane manifest declares mcp/tests/test_curator_coherence_publication_discoverability.py in unit-regression. Membership is selection, not invocation. [16]
 
 - **The `prepare` case: all nine names in order, the judgments phrase, and `.get` returning `None` for both caller-supplied delivery identities.** [12]
+
+- The lane manifest declares mcp/tests/test_curator_coherence_publication_discoverability.py in unit-regression. Membership is selection, not invocation. [16]

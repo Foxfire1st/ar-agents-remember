@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
+        "blob": "3f1b239d7d6b3244c5deb82eb2a651620e26d6e1",
         "content": "sha256:5a6442a563e3a2f8029accaa75a67d4ec53fd717425167cf5d02fd27453ea949",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
+            "blob": "3f1b239d7d6b3244c5deb82eb2a651620e26d6e1",
             "content": "sha256:1802569038c5f13baf28df2e52e7098fb0db45931a54a1c4bee9bbbd1d40bea1",
             "locator": {
               "kind": "symbol",
@@ -37,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
+            "blob": "3f1b239d7d6b3244c5deb82eb2a651620e26d6e1",
             "content": "sha256:dc34d25ab0f5c792b247f4ec3ca1f509163e7a20baf31a05439060ebec1a37a6",
             "locator": {
               "kind": "symbol",
@@ -49,14 +49,15 @@
       ]
     },
     "11": {
-      "note": "`test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database` owns the current boundary described above.\n\nAnchor: `test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database`",
+      "note": "`test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
-            "content": "sha256:5409d0e9fb3fdec4d1d4b3c9f2698f604b07311725b47559e71c721754107617",
+            "blob": "3f1b239d7d6b3244c5deb82eb2a651620e26d6e1",
+            "content": "sha256:35cd6c3d19d38de1c42fefdcc64d139ae6134334dfae7d81d6fc76e74a1bfd45",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
             }
           },
           "kind": "test"
@@ -64,14 +65,15 @@
       ]
     },
     "12": {
-      "note": "Retired records are never live.\n\nAnchor: `test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired`",
+      "note": "Retired records are never live.",
       "targets": [
         {
           "anchor": {
-            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
-            "content": "sha256:5409d0e9fb3fdec4d1d4b3c9f2698f604b07311725b47559e71c721754107617",
+            "blob": "3f1b239d7d6b3244c5deb82eb2a651620e26d6e1",
+            "content": "sha256:5f9ef05754573b3b60836d951f5fa95e29012c6759d43150204cba2149e23200",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired"
             }
           },
           "kind": "test"
@@ -83,10 +85,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
-            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 812,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },
@@ -101,12 +103,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
+            "blob": "3f1b239d7d6b3244c5deb82eb2a651620e26d6e1",
             "content": "sha256:b9c0560212759180930079714f7dfa506672a0eee2c0aab2425374cffce32281",
             "locator": {
-              "end": 234,
-              "kind": "line_range",
-              "start": 185
+              "kind": "symbol",
+              "name": "test_knowledge_diff_serves_the_git_diff_of_the_knowledge_files"
             }
           },
           "kind": "test"
@@ -114,14 +115,15 @@
       ]
     },
     "9": {
-      "note": "`test_knowledge_diff_with_no_after_revision_compares_with_the_working_tree` owns the current boundary described above.\n\nAnchor: `test_knowledge_diff_with_no_after_revision_compares_with_the_working_tree`",
+      "note": "`test_knowledge_diff_with_no_after_revision_compares_with_the_working_tree` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
-            "content": "sha256:5409d0e9fb3fdec4d1d4b3c9f2698f604b07311725b47559e71c721754107617",
+            "blob": "3f1b239d7d6b3244c5deb82eb2a651620e26d6e1",
+            "content": "sha256:726c1b8aabb652cdc4703fe6e7d27e9752c81252e61e8169dc0e3d9bcb6efa2d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_knowledge_diff_with_no_after_revision_compares_with_the_working_tree"
             }
           },
           "kind": "test"

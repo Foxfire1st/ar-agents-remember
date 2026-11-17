@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "blob": "debdb3129deb37132e8c2ec46eed5b3cb5becbfa",
             "content": "sha256:5d341d40ac56e2a1f9868f4df55ac06a980ff74bc62cfd004a8ca7f3cc8c83a7",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "blob": "debdb3129deb37132e8c2ec46eed5b3cb5becbfa",
             "content": "sha256:0a28de839a68793db013b6144092b73f9b481b53ce7e64aef0649aca96b56909",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
             "content": "sha256:4676069cc230f2d693f3d2151b6f44515a5fb8acf09f1c4c70fd9aa076319157",
             "locator": {
               "kind": "symbol",
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "blob": "debdb3129deb37132e8c2ec46eed5b3cb5becbfa",
             "content": "sha256:4b8539cd759156b4b275249cb1d061d3b7f534626781e779deef285c568ec406",
             "locator": {
               "kind": "symbol",
@@ -62,7 +62,7 @@
         },
         {
           "anchor": {
-            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "blob": "debdb3129deb37132e8c2ec46eed5b3cb5becbfa",
             "content": "sha256:9d64cf4ef6fbf61872da9ecbad420c5066f97ee0b024b83a5f3c78d5b6d106ef",
             "locator": {
               "kind": "symbol",
@@ -91,12 +91,12 @@
         },
         {
           "anchor": {
-            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
-            "content": "sha256:734ad81fa453f91aea1bb5d29e5a9b15c50467f4159d12cbe8a22fcf429836b0",
+            "blob": "debdb3129deb37132e8c2ec46eed5b3cb5becbfa",
+            "content": "sha256:6dbcf251d408a618134a169d6f40eaaf18df630d72508e8c1f3db12c40dd5c57",
             "locator": {
-              "end": 227,
+              "end": 229,
               "kind": "line_range",
-              "start": 133
+              "start": 134
             }
           },
           "kind": "code"
@@ -108,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "blob": "debdb3129deb37132e8c2ec46eed5b3cb5becbfa",
             "content": "sha256:73647c6be89bab95f610a9645de985a46cc0e1a37f13bd995f97f3104ffafc12",
             "locator": {
               "kind": "symbol",
@@ -119,7 +119,7 @@
         },
         {
           "anchor": {
-            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "blob": "debdb3129deb37132e8c2ec46eed5b3cb5becbfa",
             "content": "sha256:89f3f0eca8b92c18875ce78fd071bb13a539700e8fcb95183a327462c7c7d83f",
             "locator": {
               "kind": "symbol",
@@ -135,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "blob": "debdb3129deb37132e8c2ec46eed5b3cb5becbfa",
             "content": "sha256:4b8539cd759156b4b275249cb1d061d3b7f534626781e779deef285c568ec406",
             "locator": {
               "kind": "symbol",
@@ -198,12 +198,12 @@
       ]
     },
     "9": {
-      "note": "The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass.\n\nAnchor: `write_curator_checklist`",
+      "note": "The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass.",
       "targets": [
         {
           "anchor": {
-            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
-            "content": "sha256:3951da961cb844d8a05185f577ec46129fb6687d31bdf33036bc929fb39c8dbd",
+            "blob": "debdb3129deb37132e8c2ec46eed5b3cb5becbfa",
+            "content": "sha256:dbd3b502034909aa3f103d5d9e1813a5551f7414c0b53cd408d174e74580486f",
             "locator": {
               "kind": "file"
             }

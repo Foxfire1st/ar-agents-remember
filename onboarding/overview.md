@@ -425,7 +425,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The lifecycle loader refuses a catalog that is not in canonical form. [141]
 
-- The carryover request names its code/source/target roots and candidate kinds. Plan and apply require both memory roots to be converted and to share a compatible layout; unconverted or incompatible memory is refused. [143]
 
 - Retained reference account (no fresh execution or acceptance inferred): The shared host entry the install composes. [144]
 
@@ -511,7 +510,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - The dashboard store retains bounded body/preparation resources by document reference and revision without taking task-state authority. [338]
 
-- Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing; ordinary leaf judgments and gated closeout own publication. [354]
 
 - Canonical skills have one generated packaged serving destination. [355]
 
@@ -563,7 +561,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - The runtime layout reference states that no part of the product starts, indexes or queries a search provider. [282]
 
-- build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
 
 - Retained reference account (no fresh execution or acceptance inferred): The hook gate's tiers. [122]
 
@@ -656,3 +653,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - For a canonical orchestration sprint, an absent `executionGraph` selects atomic execution of its commanded masters and declares no dependencies or serialization between them; graph presence selects dependency-aware scheduling. Anchor: `resolve_scheduling_mode` [318]
 - Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,327 words against an equal ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [365]
 - Instruction renewal uses the declared skills copy owner, projects the certification profile and copies canonical tool details into packaged runtime docs. [370]
+
+- build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
+- Carryover names file-sidecar, route-overview, memory-only-doc and entity-catalog candidates; its request supplies the code/source/target roots. Plan and apply require both memory roots to be converted and share the same conversion version; unconverted or mismatched memory is refused. [143]
+- Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing; ordinary leaf judgments and gated closeout own publication. [354]

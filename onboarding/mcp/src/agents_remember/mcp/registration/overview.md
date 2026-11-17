@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-Ordinary registration declares payload handlers lazily through registration.lazy; valid explainer binding selects the 22-tool surface separately, and dispatch checks the same allowlist and launched-seat identity. Core keeps both task_context readers and the removed-refresh refusal; read-only marks cover the actually selected roster after registration.
+Ordinary registration declares payload handlers lazily through registration.lazy; a valid explainer binding adds four tools to AR’s general tools, and calls to those four check the launched-seat identity. Core keeps both task_context readers and the removed-refresh refusal; read-only marks cover the actually selected roster after registration.
 
 [overview](../../../../../overview.md)
 

@@ -117,7 +117,7 @@ Every call goes through the **production entry point** — a registered tool ove
 `call` returns a three-way arm (`RAISED ToolError` with the payload, `RAISED <Exception>`, or
 `RETURNED` with `structuredContent`), so "did it raise" is itself the measurement.
 
-The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:637-637`, inside
+The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:639-639`, inside
 the array opening at `:5-5`). Registry placement is a source fact, not this survey’s collection
 or execution evidence.
 
@@ -189,7 +189,7 @@ Summary based on the account in memory base `81cfe4a8`, 24–32:
 
 Summary based on the account in memory base `81cfe4a8`, 129–132:
 
-> The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:634-634`, inside
+> The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml`, inside
 > the array opening at `:5-5`). Registry placement is a source fact, not this survey’s collection
 > or execution evidence. The original L8 loader refusal and **10 passed** budget/registry result
 > are historical receipts, not a new result for the present candidate.
@@ -338,7 +338,7 @@ Summary based on the account in memory base `81cfe4a8`, 265–273:
 Summary based on the account in memory base `81cfe4a8`, 275–280:
 
 > **Does a lane someone actually runs reach the module?** Yes: the row is `unit-regression`
-> (`mcp/tests/test-evidence-lanes.toml:203-203`), the lane the default selection collects, and on this
+> (`mcp/tests/test-evidence-lanes.toml`), the lane the default selection collects, and on this
 > candidate the registry loader plus the budget screen read **10 passed** (measured by this pass, `-n0`,
 > no `-o` override; the declared rails are `pyproject.toml:278-279`'s `4000 / 1000`, raised from `3000 / 600` by `260918-TSIP-L13` after this pass measured them). The row is load-bearing —
 > the round-1 worker ran the module before the row existed and the loader refused it — so a module
@@ -507,8 +507,9 @@ No repository or external-system boundary is proved by this module.
 
 - The operational triple's declared home, and the reason it is a channel of the response's own contract.  Anchor: `nextArgs` [36]
 
-- The lane manifest declares test_workflow_chain_guidance.py in unit-regression; membership selects evidence and establishes no invocation. [35]
 
 - A recorded hop includes its selected channel, prepared arguments, first-call arm and missing arguments, plus the returned call result. [10]
 
 - Selected phase guidance is augmented with fixture commit messages for closeout apply, integration and finalization; declared required arguments and the workflow fallback are supplied before calling. [15]
+
+- The lane manifest declares test_workflow_chain_guidance.py in unit-regression; membership selects evidence and establishes no invocation. [35]

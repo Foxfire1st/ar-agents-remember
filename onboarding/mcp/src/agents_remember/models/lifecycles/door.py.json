@@ -74,22 +74,11 @@
       ]
     },
     "4": {
-      "note": "The R03 door dependency vocabulary owned by this record type.\n\nAnchor: `_edges_are_unique_and_canonical` `EVIDENCE_DEPENDENCY_POLICIES`",
+      "note": "The R03 door dependency vocabulary owned by this record type.",
       "targets": [
         {
           "anchor": {
-            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
-            "content": "sha256:4ebc3a89d0db8236a5e514dd8b929911f4700ef533acb0a50a91edde8f779e67",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "blob": "ff093c7ab79524984336594e05838618b6205491",
             "content": "sha256:ae9ac046ad5bb24691ac1300c5039547bc2942e375ad9673f190c6fbc247b31d",
             "locator": {
               "kind": "symbol",
@@ -101,11 +90,22 @@
         },
         {
           "anchor": {
-            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "blob": "ff093c7ab79524984336594e05838618b6205491",
             "content": "sha256:91d5d38c7dfe98df935839ac5ec8ffa60aa6860e9222a315a5d9bdaaa47c3cba",
             "locator": {
               "kind": "symbol",
               "name": "EVIDENCE_DEPENDENCY_POLICIES"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff093c7ab79524984336594e05838618b6205491",
+            "content": "sha256:6f4d437024b9c8a18bb420b18bf7378f17994182fb64aa7d069b89ca5e570269",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
           },

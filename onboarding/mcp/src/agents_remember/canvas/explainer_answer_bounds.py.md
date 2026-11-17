@@ -10,7 +10,7 @@ Each explainer tool's answer bound, and where an answer that passes it goes.
 
 ## Code Commentary
 
-Every explainer tool answer is held to the explainer's own bound table, counted with the product's counter the way the general tool answers are counted, and the bound is not changed by this module. An answer over its bound is not cut: it is written whole to the workspace's `scratch/answers/` and the reply names that file, so a long answer costs a path rather than a truncated claim. The explainer surface is four tools - `render`, `define_category`, `remove_category` and `grade` - and no tool that reads the workspace back.
+Every explainer tool answer is held to the explainer's own bound table, counted with the product's counter the way the general tool answers are counted, and the bound is not changed by this module. An answer over its bound is not cut: it is written whole to the workspace's `scratch/answers/` and the reply names that file, so a long answer costs a path rather than a truncated claim. The four explainer-owned tools are `render`, `define_category`, `remove_category` and `grade` - and no tool that reads the workspace back.
 
 ## Boundaries
 

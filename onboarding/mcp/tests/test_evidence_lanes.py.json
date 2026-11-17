@@ -17,6 +17,24 @@
           "kind": "test"
         }
       ]
+    },
+    "2": {
+      "note": "The lane manifest declares this module in architecture-fitness; declaration is not execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:dd6abc407492c6d0a4a61ce6fba476a2c1ef080dce29655e1c6f3d70398c1e00",
+            "locator": {
+              "end": 788,
+              "kind": "line_range",
+              "start": 788
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

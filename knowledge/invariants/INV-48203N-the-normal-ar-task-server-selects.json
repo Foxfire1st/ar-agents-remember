@@ -4,20 +4,20 @@
       "spans_locations",
       "guarded_by_test"
     ],
-    "justification": "The launch must supply identity, the selector must fail closed and registration/dispatch must keep the narrow surface; the host-launch and bound-server regressions exercise these distinct locations."
+    "justification": "Launch identity, four-tool registration and seat validation live in distinct owners, and the launch and bound-server tests exercise their composition beside the general tools."
   },
   "applicability": "Normal AR task-server startup for a process launched as an explainer, and calls to that bound server.",
   "conditions": [
     "Launch supplies both the workspace marker and the capability binding.",
     "The binding validates repository/task/leaf workspace shape, required values and a positive integer generation before registration.",
     "Registration supplies the same explainer implementations on the already-created server instance.",
-    "Every tool call checks the launch binding against the current seat before its handler runs.",
-    "Central read-only annotations are applied after either roster registers; they describe capability and do not grant permission or prove process-wide purity."
+    "Calls to the four explainer-owned tools check the launch binding against the current seat before their handler runs.",
+    "Central read-only annotations are applied after the combined registration; they describe capability and do not grant permission or prove process-wide purity."
   ],
   "exclusions": [
     "An ordinary process with neither marker nor binding retains the ordinary roster.",
     "This statement does not claim operating-system confinement from tool discovery alone.",
-    "No ordinary roster fallback on a malformed or marker-backed missing binding."
+    "General AR tools retain their ordinary admission rather than explainer-only dispatch confinement."
   ],
   "id": "INV-48203N",
   "origin": {
@@ -31,9 +31,9 @@
     "leaf": "260928-MIK-L183",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The normal AR task server selects the explainer’s 22-tool surface only from its valid launch-owned binding, enforces that surface at dispatch, and revalidates the exact launched seat on every tool call. An invalid, lost marker-backed or replaced seat binding refuses by name instead of exposing the ordinary roster; a process with neither explainer marker nor binding retains the ordinary roster. Both surfaces receive the central read-only marks, and an unclassified tool refuses.",
+  "statement": "A valid launch-owned explainer binding adds the explainer’s four tools to AR’s general tools on the normal task server. Calls to those four tools revalidate the exact launched seat. Invalid or lost marker-backed launch bindings refuse service, and every registered tool receives its central read-only mark; an unclassified registered tool prevents server creation.",
   "status": "proposed",
   "supersedes": []
 }

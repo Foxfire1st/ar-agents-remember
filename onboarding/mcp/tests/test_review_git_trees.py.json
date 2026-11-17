@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+        "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
         "content": "sha256:c46ac594a4329e1097044b65606fb3b3559556c5ae1bbc1f76db8091a621ed6a",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+        "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
         "content": "sha256:418793da544c952ec55ebe33f19550f57bc0372c318d60c00953d6fd1feb6274",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+        "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
         "content": "sha256:8d0c3bf94324e95540acae43cf2fd358340c350ef3ecab6e551ef17bff2e4005",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+        "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
         "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+        "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
         "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
         "locator": {
           "kind": "symbol",
@@ -90,16 +90,16 @@
   "realizes": [],
   "references": {
     "38": {
-      "note": "Four-tree records/pins, first-read effects and repeated no-write state remain declared.\n\nAnchor: \"def test_a_live_review_is_four_trees_with_its_uncommitted_candidates_pinned_and_reused(\"",
+      "note": "Four-tree records/pins, first-read effects and repeated no-write state remain declared.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
-            "content": "sha256:bc2d1e361e4b159185281a1eaceaf402e14c3730b367f2b8e4a2870416264072",
+            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
+            "content": "sha256:78a9c646105005cfb9892246faf5d806ec243646f67189737566ede35b1a5d69",
             "locator": {
-              "end": 246,
+              "end": 249,
               "kind": "line_range",
-              "start": 130
+              "start": 131
             }
           },
           "kind": "test"
@@ -107,16 +107,16 @@
       ]
     },
     "39": {
-      "note": "Leaf-wide currentness/worklist and selected-subject Git budgets retain their precise fixture populations.\n\nAnchor: \"def test_the_tree_view_shows_currentness_per_side_and_the_worklist_without_a_knowledge_diff(\"",
+      "note": "Leaf-wide currentness/worklist and selected-subject Git budgets retain their precise fixture populations.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
             "content": "sha256:af115692d79aaa0dd6ae7c6837b5a5038b1eda88c399afaae03a83e82c2fb111",
             "locator": {
-              "end": 365,
+              "end": 371,
               "kind": "line_range",
-              "start": 249
+              "start": 255
             }
           },
           "kind": "test"
@@ -124,16 +124,16 @@
       ]
     },
     "40": {
-      "note": "Capture memo equality and cache-constructor failure/sharing assertions remain explicit.\n\nAnchor: \"def test_an_unmoved_worktree_skips_to_the_tree_a_rederive_would_derive(world: World) -> None:\"",
+      "note": "Capture memo equality and cache-constructor failure/sharing assertions remain explicit.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
             "content": "sha256:1913d002094341940720527bc853ed3273db46c79445d2a384eb132992afa8f1",
             "locator": {
-              "end": 500,
+              "end": 506,
               "kind": "line_range",
-              "start": 381
+              "start": 387
             }
           },
           "kind": "test"
@@ -141,16 +141,16 @@
       ]
     },
     "41": {
-      "note": "Partial, reopen/conversion, derived-index-only and legacy source-only paths retain typed side facts.\n\nAnchor: \"def test_a_partial_index_shows_its_state_on_the_affected_side(world: World) -> None:\"",
+      "note": "Partial, reopen/conversion, derived-index-only and legacy source-only paths retain typed side facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
-            "content": "sha256:f550c8e81702bb0db360a5f9e4e9aae395e6788c31e0f89408c5476b6aab9481",
+            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
+            "content": "sha256:177b58e9085fa2ac29c051aa8362a5010946954e4c228d1b6f6230aab5825d2d",
             "locator": {
-              "end": 698,
+              "end": 703,
               "kind": "line_range",
-              "start": 509
+              "start": 515
             }
           },
           "kind": "test"
@@ -158,16 +158,16 @@
       ]
     },
     "42": {
-      "note": "Archive/route and focused-entry assertions preserve pin ownership, bounds and code-side identities.\n\nAnchor: \"def test_pins_are_named_by_the_task_directory_and_archival_removes_them(world: World) -> None:\"",
+      "note": "Archive/route and focused-entry assertions preserve pin ownership, bounds and code-side identities.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
             "content": "sha256:3b8dd08bc3b43392b39314adb98dc44320507c15923351edcafed23bcfa3562c",
             "locator": {
-              "end": 846,
+              "end": 852,
               "kind": "line_range",
-              "start": 703
+              "start": 709
             }
           },
           "kind": "test"
@@ -175,16 +175,16 @@
       ]
     },
     "43": {
-      "note": "The four after-memory values and optional symbol names are compared with their exact index definitions; lane answers omit them.\n\nAnchor: \"def _memory_facts(world: World) -> None:\"",
+      "note": "The four after-memory values and optional symbol names are compared with their exact index definitions; lane answers omit them.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
-            "content": "sha256:7647c788015ccbbf8ac1ef2fba01c40dff7cb180d4d2b9b7bddd312677080433",
+            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
+            "content": "sha256:b73d806ffb4522cb632238f4354a0d3e82a4c50c2ac1e716e5d08d7ebc3cc874",
             "locator": {
-              "end": 944,
+              "end": 950,
               "kind": "line_range",
-              "start": 849
+              "start": 858
             }
           },
           "kind": "test"
@@ -192,16 +192,16 @@
       ]
     },
     "44": {
-      "note": "Absent/faulted memory reads keep entries/reasons and are not retained; successful reads can then settle.\n\nAnchor: \"def test_the_cards_read_answers_without_memory_values_when_they_cannot_be_read(\"",
+      "note": "Absent/faulted memory reads keep entries/reasons and are not retained; successful reads can then settle.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
             "content": "sha256:418793da544c952ec55ebe33f19550f57bc0372c318d60c00953d6fd1feb6274",
             "locator": {
-              "end": 995,
+              "end": 1001,
               "kind": "line_range",
-              "start": 947
+              "start": 953
             }
           },
           "kind": "test"
@@ -209,16 +209,16 @@
       ]
     },
     "45": {
-      "note": "Code absence versus unreadable and latest history attempts retain distinct owner facts.\n\nAnchor: \"def test_the_cards_read_names_an_unreadable_side_unavailable_and_a_missing_file_absent(\"",
+      "note": "Code absence versus unreadable and latest history attempts retain distinct owner facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
             "content": "sha256:e972df627731888ffd27dc3e702c6952279cff12db0935083277a343ad3f89fd",
             "locator": {
-              "end": 1064,
+              "end": 1070,
               "kind": "line_range",
-              "start": 998
+              "start": 1004
             }
           },
           "kind": "test"
@@ -226,16 +226,16 @@
       ]
     },
     "46": {
-      "note": "Excerpts/placement cache and proof-only unchanged-path admission retain their finite/read-only contracts.\n\nAnchor: \"def test_an_excerpt_longer_than_its_bound_is_a_stated_prefix() -> None:\"",
+      "note": "Excerpts/placement cache and proof-only unchanged-path admission retain their finite/read-only contracts.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
-            "content": "sha256:7453e60a85b67c92ed1a774f2a5800065065b827a48b9a9f4f11155c4eb14773",
+            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
+            "content": "sha256:0ed00bc4cfdde51bca476ddd9bb165d5d36449cf77a8b6d7c90f50ea4a6a69be",
             "locator": {
               "end": 1189,
               "kind": "line_range",
-              "start": 1067
+              "start": 1073
             }
           },
           "kind": "test"

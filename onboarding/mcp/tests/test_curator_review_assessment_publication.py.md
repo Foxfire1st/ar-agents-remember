@@ -123,10 +123,8 @@ Superseded card wording retained for custody (not certified as true of any sourc
 
 
 
-- The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. [4]
 
 
-- The record's `assessments` collection that the publish action accepts holds each assessment identity once, a rule kept separate from judgment-to-candidate coverage. [6]
 
 ### Repo-Internal References (renewed)
 
@@ -181,7 +179,7 @@ assessment, and the same `curator_coherence_subject_assessment_state` projection
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1951-1951 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" [1]
-
 - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" [2]
-
 - The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation. [3]
+- The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. [4]
+- The record's `assessments` collection that the publish action accepts holds each assessment identity once, a rule kept separate from judgment-to-candidate coverage. [6]

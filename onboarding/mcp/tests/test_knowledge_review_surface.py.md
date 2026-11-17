@@ -133,7 +133,7 @@ None recorded.
 
 ## Historical Coverage Replaced By L57
 
-The following earlier card text is retained verbatim as historical material, not current coverage.
+The following earlier card text is retained as historical material, with the three sealed obsolete numeric catalog references withdrawn, not current coverage.
 Its citation markers and table rows are inert inside this fence. Canonical curator assessment
 authoring is not claimed deleted merely because these reviewer tests/builders were removed.
 
@@ -179,7 +179,7 @@ helpers are shared surface, not private to this file.
 **The lane declaration is a precondition, not metadata.** `pytestmark = pytest.mark.evidence_unit`
 registers the whole module in the unit population, and the leaf also appended the module to the
 `unit-regression` lane in `mcp/tests/test-evidence-lanes.toml:109` and to two `consumers` lists in
-`mcp/tests/evidence-lifecycle.toml:1412` and `:1447`. An unregistered `test_*.py` module makes the lane
+`mcp/tests/evidence-lifecycle.toml` and `:1447`. An unregistered `test_*.py` module makes the lane
 manifest refuse the repository, so the registration is what lets the module be collected at all.
 
 
@@ -259,7 +259,7 @@ shares a dataset with another.
 | The lane row this module occupies. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/test-evidence-lanes.toml:111-113 |
 
 
-| The two consumer registrations this module's fixtures are recorded under. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/evidence-lifecycle.toml:1427-1441; mcp/tests/evidence-lifecycle.toml:1471-1471 |
+| The two consumer registrations this module's fixtures are recorded under. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/evidence-lifecycle.toml; mcp/tests/evidence-lifecycle.toml |
 
 ```
 

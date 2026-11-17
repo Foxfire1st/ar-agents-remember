@@ -517,7 +517,7 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 
 - The one spelling of a link target, and the gate's predicate. [65]
 
-- Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
+Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
 
 - Current single literal PUBLIC_TOOLS contains 44 ordinary public names (including knowledge_write, user_settings_init, citation_note_revision and explainer_control) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. [294]
 
@@ -551,7 +551,6 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 
 - **Retained historical source account — superseded by the current route account:** The one spelling of a link target, and the gate's predicate. [65]
 
-- **Retained historical source account — superseded by the current route account:** Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
 
 - **Retained historical source account — superseded by the current route account:** Present public roster is a single literal with 41 names and no provider diagnostics or knowledge mutations. [294]
 
@@ -700,3 +699,5 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 - The current registry maps `read_ar_files` to `ReadArFilesResponse`; registration does not carry a published-intent text body. Anchor: `TOOL_RESPONSE_MODELS` [245]
 - Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants. Anchor: Current source; preserved L88 property 316 [319]
 - RecordRow requires revision; effect and because keep their separate disposition-dependent and optional rules. [340]
+
+- **Retained historical source account — superseded by the current route account:** Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]

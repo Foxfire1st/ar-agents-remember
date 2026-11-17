@@ -33,6 +33,35 @@
           "kind": "test"
         }
       ]
+    },
+    "6": {
+      "note": "Registered detached worktrees and same-worktree Update",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24140561b934e3ab5c626a50ca1f0ba256dcd0d8",
+            "content": "sha256:4c4d1e712acc9a354b0929ce2b5453000f35c11eaf099df97fbeaea723a91072",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "24140561b934e3ab5c626a50ca1f0ba256dcd0d8",
+            "content": "sha256:5bc7a6ff1ea55ebb9a335df2249affc544725cdaecec934010310b2d4e9de83a",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

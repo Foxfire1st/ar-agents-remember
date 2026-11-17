@@ -377,8 +377,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
-            "content": "sha256:c59cb8f48298a5ce4959054cf04d268920d70b80e321d7ede13a73351ff0db62",
+            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
+            "content": "sha256:24fe29e5e21f65c993db40bab740200a65ffb0e30842e60469e18b7fd4e04bc7",
             "locator": {
               "kind": "symbol",
               "name": "test_a_live_review_is_four_trees_with_its_uncommitted_candidates_pinned_and_reused"
@@ -394,7 +394,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
             "content": "sha256:6d8bfb8d90830fb5c244b1f838a806cfda4712e16d44f0dac95ef0ff2c4a4ceb",
             "locator": {
               "kind": "symbol",

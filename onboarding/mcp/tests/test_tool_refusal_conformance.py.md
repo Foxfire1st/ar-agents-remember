@@ -176,7 +176,7 @@ The current imported selection is `memory_baseline_adopt` alone; the literal pre
 Summary based on the account in memory base `81cfe4a8`, 123–127:
 
 > Plain pytest classes, no `unittest`, no `-m` override: the module is in the default selection and
-> its lane is **`unit-regression`** (`mcp/tests/test-evidence-lanes.toml:155`). Seven cases: the
+> its lane is **`unit-regression`** (`mcp/tests/test-evidence-lanes.toml`). Seven cases: the
 > census class 4 (`FailurePathCensusTests`, `:191-282`), the controls 2
 > (`FailurePathControlTests`), and one module-level hermeticity case (`:325-349`). The world is
 > built once per class (`setup_class`, `:195-200`) and closed in `teardown_class` (`:201-203`).
@@ -300,7 +300,6 @@ No repository or external-system boundary is proved by this module.
 
 - The sweep whose benign half this module completes, and the world both share. Anchor: `EntryPointWorld` [14]
 
-- The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py" [16]
 
 - The surviving T34 selection, memory_baseline_adopt, is read from the sweep's shared pin and required to return a complete refusal envelope at the entry point. [8]
 
@@ -313,3 +312,5 @@ No repository or external-system boundary is proved by this module.
 - The selected repaired T34 population contains `memory_baseline_adopt`, re-exported by the sweep module and required to return a complete refusal envelope. Anchor: `T34_REPAIRED_TOOLS` [13]
 
 - The declared bare-raiser set has ten names. Both-direction census and invocation of declared failure inputs remain source assertions, not this Curator’s execution. [18]
+
+- The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py" [16]

@@ -128,6 +128,7 @@ No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
 
-- The lane row. Anchor: `test_knowledge_reader` Anchor: `test_knowledge_reader` [40]
 
 - Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection reads clean code at HEAD and captures dirty code for the read; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent. [38]
+
+- The lane row. Anchor: `test_knowledge_reader` Anchor: `test_knowledge_reader` [40]

@@ -75,7 +75,6 @@ No configured live documentation source was available for this pass.
 
 
 
-- Converted trees refuse unheld seeds; the former database control is replaced by explicit mounted legacy-format refusal. [5]
 
 
 
@@ -87,3 +86,5 @@ No cross-repo boundary is crossed by this file.
 
 
 - A held text record refusal names its current revision UUID; seed sources use the refusal or source_context text IDs. [6]
+
+- Converted trees refuse unheld seeds; mounted tools refuse legacy memory and database-file selections without opening them. [5]

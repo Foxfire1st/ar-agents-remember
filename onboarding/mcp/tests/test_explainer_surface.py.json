@@ -27,12 +27,46 @@
           "name": "test_every_tool_of_the_bound_server_answers_a_forged_seat_by_name"
         }
       },
-      "facet": "All 22 tools refuse a forged calling process by name.",
-      "id": "PRF-29YTXB",
+      "facet": "Each of the four explainer-owned tools refuses a forged calling process by name.",
+      "id": "PRF-1FRT3P",
       "invariant": "INV-48203N",
       "origin": {
-        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
-        "leaf": "260928-MIK-L183"
+        "handoffEntry": "L9-encountered-explainer-general-tools",
+        "leaf": "261112-BUG-L9"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+        "content": "sha256:6a6efe1727127736707b40ae40fdc8c10d1b129d2a37ef4b5aaa5e56a5e8273c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_bound_server_advertises_ars_general_tools_and_exactly_the_explainers_four"
+        }
+      },
+      "facet": "A valid bound server advertises the general public roster plus exactly the explainer’s four tools.",
+      "id": "PRF-3SYW45",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L9-encountered-explainer-general-tools",
+        "leaf": "261112-BUG-L9"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+        "content": "sha256:7eb1df877f70539471d8a088cf9ef7a218cb8adf8cc6df71b1aa827868cae9f9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_bound_server_refuses_nothing_for_being_the_explainer"
+        }
+      },
+      "facet": "A general AR call is not refused merely because the process serves an explainer.",
+      "id": "PRF-8BG3HR",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L9-encountered-explainer-general-tools",
+        "leaf": "261112-BUG-L9"
       }
     },
     {
@@ -44,12 +78,12 @@
           "name": "test_a_lost_binding_on_a_launched_explainer_seat_refuses_rather_than_taking_the_ordinary_branch"
         }
       },
-      "facet": "Exercises launch identity, exact roster, named forbidden dispatch or fail-closed missing binding.",
-      "id": "PRF-8272VF",
+      "facet": "A marker-backed launched seat with a lost binding refuses service rather than taking the ordinary branch.",
+      "id": "PRF-HBQAJH",
       "invariant": "INV-48203N",
       "origin": {
-        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
-        "leaf": "260928-MIK-L183"
+        "handoffEntry": "L9-encountered-explainer-general-tools",
+        "leaf": "261112-BUG-L9"
       }
     },
     {
@@ -90,7 +124,7 @@
   "realizes": [],
   "references": {
     "3": {
-      "note": "The case `test_a_lost_binding_on_a_launched_explainer_seat_refuses_rather_than_taking_the_ordinary_branch` protects a launched seat with no binding refusing instead of taking the ordinary branch.",
+      "note": "A launched seat with a lost binding refuses service instead of taking the ordinary branch.",
       "targets": [
         {
           "anchor": {
@@ -106,7 +140,7 @@
       ]
     },
     "4": {
-      "note": "The case `test_a_new_generation_refuses_the_old_servers_calls` protects a server launched for an old generation refusing the calls made after a resume.",
+      "note": "An old server's explainer calls refuse after a new generation.",
       "targets": [
         {
           "anchor": {
@@ -115,6 +149,54 @@
             "locator": {
               "kind": "symbol",
               "name": "test_a_new_generation_refuses_the_old_servers_calls"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A bound server advertises general tools and exactly four explainer additions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+            "content": "sha256:6a6efe1727127736707b40ae40fdc8c10d1b129d2a37ef4b5aaa5e56a5e8273c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bound_server_advertises_ars_general_tools_and_exactly_the_explainers_four"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "General tools answer an explainer under their normal admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+            "content": "sha256:7eb1df877f70539471d8a088cf9ef7a218cb8adf8cc6df71b1aa827868cae9f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bound_server_refuses_nothing_for_being_the_explainer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The four bound tools refuse a forged launched seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+            "content": "sha256:77fda51fd7b60b1548deb44018c23d80733ed90d724a8bcdcc4b4846983cb2a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_tool_of_the_bound_server_answers_a_forged_seat_by_name"
             }
           },
           "kind": "test"

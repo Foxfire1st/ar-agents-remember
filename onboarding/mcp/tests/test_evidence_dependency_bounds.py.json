@@ -3,8 +3,25 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c9b187d1789b1bcd27e27139879beeb3df25a676",
-        "content": "sha256:4406b47cbf4b3cbd32b40ca2ef048dfd49a9ca91d73de8e5fdb0d133f1dbb0c1",
+        "blob": "79fe6abdf54d85790ed9f8f5a1de6bc1455a3aab",
+        "content": "sha256:9129db02ff1fa14163fe5c62368561bcae3a8f0b9cc18a695925d23602592bdd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_maximum_coherence_publication_validates_at_capacity"
+        }
+      },
+      "facet": "The maximum legal publication contains2314 edges including two measured-quality edges and validates at the derived capacity.",
+      "id": "PRF-9V1GYW",
+      "invariant": "INV-8XJF7R",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 5",
+        "leaf": "261112-BUG-L9"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "79fe6abdf54d85790ed9f8f5a1de6bc1455a3aab",
+        "content": "sha256:9129db02ff1fa14163fe5c62368561bcae3a8f0b9cc18a695925d23602592bdd",
         "locator": {
           "kind": "symbol",
           "name": "test_maximum_coherence_publication_validates_at_capacity"
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "c9b187d1789b1bcd27e27139879beeb3df25a676",
+        "blob": "79fe6abdf54d85790ed9f8f5a1de6bc1455a3aab",
         "content": "sha256:173de7dd97bc483fae19f33c9ebad04344a302efbf658c69ecf2e67eb8295e24",
         "locator": {
           "kind": "symbol",
@@ -39,12 +56,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "An admitted maximum record publishes and validates with its distinct dependencies.\n\nAnchor: `test_maximum_coherence_publication_validates_at_capacity`",
+      "note": "An admitted maximum record publishes and validates with its distinct dependencies.",
       "targets": [
         {
           "anchor": {
-            "blob": "c9b187d1789b1bcd27e27139879beeb3df25a676",
-            "content": "sha256:cd2bd5fe14bd055965d51de153965cd718f5bee2fa1ca6056944f276c92ff562",
+            "blob": "79fe6abdf54d85790ed9f8f5a1de6bc1455a3aab",
+            "content": "sha256:8a6b28f6642406634a3980e3ee7cec68e47043651fb30585b60950dee5eb3715",
             "locator": {
               "kind": "file"
             }
@@ -58,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c9b187d1789b1bcd27e27139879beeb3df25a676",
+            "blob": "79fe6abdf54d85790ed9f8f5a1de6bc1455a3aab",
             "content": "sha256:1fcfc144f561a3d3174c8e4289e46e75e860540832977216f507b6f03e37bf00",
             "locator": {
               "kind": "symbol",
@@ -70,12 +87,12 @@
       ]
     },
     "3": {
-      "note": "The complete pre-derivation record retains compatible encoding.\n\nAnchor: `test_old_coherence_record_still_loads`",
+      "note": "The complete pre-derivation record retains compatible encoding.",
       "targets": [
         {
           "anchor": {
-            "blob": "c9b187d1789b1bcd27e27139879beeb3df25a676",
-            "content": "sha256:cd2bd5fe14bd055965d51de153965cd718f5bee2fa1ca6056944f276c92ff562",
+            "blob": "79fe6abdf54d85790ed9f8f5a1de6bc1455a3aab",
+            "content": "sha256:8a6b28f6642406634a3980e3ee7cec68e47043651fb30585b60950dee5eb3715",
             "locator": {
               "kind": "file"
             }
@@ -89,8 +106,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c9b187d1789b1bcd27e27139879beeb3df25a676",
-            "content": "sha256:cd2bd5fe14bd055965d51de153965cd718f5bee2fa1ca6056944f276c92ff562",
+            "blob": "79fe6abdf54d85790ed9f8f5a1de6bc1455a3aab",
+            "content": "sha256:8a6b28f6642406634a3980e3ee7cec68e47043651fb30585b60950dee5eb3715",
             "locator": {
               "kind": "file"
             }

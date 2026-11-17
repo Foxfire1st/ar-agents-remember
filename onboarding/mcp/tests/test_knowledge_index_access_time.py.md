@@ -6,15 +6,17 @@
 
 ## Purpose
 
-A test suite for knowledge index access time.py.md: it drives the behaviour the commentary states and asserts it.
+Checks index usage bookkeeping, dataset-witness preservation and age/size eviction.
 
 ## Code Commentary
 
 An access changes only usage and preserves the identity memo, witnessed by test_access_changes_only_usage_and_preserves_identity_memo
 
+One eviction counts tree-only files and every build namespace together.
+
 ## Boundaries
 
-The obligation above is the whole of what this file must keep true; the route account says what the surrounding surface promises.
+These tests cover usage markers and eviction; build-identity reuse has its own test module.
 
 ## Evidence
 

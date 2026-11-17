@@ -101,7 +101,6 @@ The operation model owns strict serialization and cross-field identity checks. T
 - Both certification cells participate in meaningful state; ordinary durable-write revision remains separate. [9]
 - The public projection intentionally omits private execution identifiers. [10]
 
-- The R03 dependency vocabulary is shared by these record types. [11]
 
 
 ### Cross-Repo References
@@ -188,3 +187,5 @@ The operation record separately retains private preparation state. Original comm
 - `_require_organizational_repair_evidence` owns the corresponding behavior described above. [18]
 - `_require_integration_publication` owns the corresponding behavior described above. [19]
 - `_require_canonical_cancellation_handoff` owns the corresponding behavior described above. [20]
+
+- The R03 dependency vocabulary is shared by these record types. [11]

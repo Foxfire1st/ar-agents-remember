@@ -1,13 +1,50 @@
 {
   "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+        "content": "sha256:574ff7370b00f611674304a60bd72a659b3f523ebe44b905022d72d4cd3b6b2e",
+        "locator": {
+          "kind": "symbol",
+          "name": "open_cached_index"
+        }
+      },
+      "id": "RLZ-0Q47TS",
+      "invariant": "INV-AYMK61",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 6",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "The read-only existing-index seam applies the same loaded-build filename rule without constructing or writing a cache.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+        "content": "sha256:c953503aa6afe66c046070e4713c0438b86ccab1d9e76a42e4cf596ea1ad226a",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache"
+        }
+      },
+      "id": "RLZ-8GPEZZ",
+      "invariant": "INV-AYMK61",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 6",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "The cache captures loaded source identity once, selects only its own namespace and keeps the existing single eviction.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "2": {
       "note": "The chosen location and eviction defaults.",
       "targets": [
         {
           "anchor": {
-            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
             "content": "sha256:e1edb9c0000b5af1a403e9bf1a822a4bcd8ea7846b5af47dcd8ccf84e67aa97c",
             "locator": {
               "kind": "symbol",
@@ -18,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
             "content": "sha256:c2a8d161f346fb4f777e75b89cf8cc9fb971a3296a960a95bd67a2465031abb9",
             "locator": {
               "kind": "symbol",
@@ -29,7 +66,7 @@
         },
         {
           "anchor": {
-            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
             "content": "sha256:a86e9b04cf2b0c189f9121360acdb900a16e9c3fd5f929c81931e23eb7161584",
             "locator": {
               "kind": "symbol",
@@ -40,7 +77,7 @@
         },
         {
           "anchor": {
-            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
             "content": "sha256:2ed879b0f9b7814345cc200e0a0f193f95d3a71131cd5fdad1f9ecc9abc70951",
             "locator": {
               "kind": "symbol",
@@ -52,14 +89,28 @@
       ]
     },
     "4": {
-      "note": "Lookups recompute the key and reuse or build.\n\nAnchor: `for_directory` `for_git_tree`",
+      "note": "Lookups recompute the key and reuse or build.\n\nAnchor: `KnowledgeIndexCache.for_directory`; `KnowledgeIndexCache.for_git_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
-            "content": "sha256:648f87b3358b802b3e2b5f6ce7c536e835386e45a97789256d040d6a518fbe04",
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "content": "sha256:02e94e270206fcff7c9c8d2b8fbfc3482a7a4773d9ac9f8f5e4aaba68a4629b8",
             "locator": {
-              "kind": "file"
+              "end": 137,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "content": "sha256:ba1317a1173b1dc40cdd89993f21225dd8ae9327aeecc674a1a9ed2c66c68a49",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 139
             }
           },
           "kind": "code"
@@ -67,15 +118,51 @@
       ]
     },
     "6": {
-      "note": "Reuse only for the matching key and format; build through a temporary file and a rename.",
+      "note": "Reuse selects the loaded build's matching tree key and index format; builds publish through a temporary file and rename.\n\nAnchor: `KnowledgeIndexCache._reuse`; `KnowledgeIndexCache._build`",
       "targets": [
         {
           "anchor": {
-            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
-            "content": "sha256:81dc260e4d59f7baba1a4af5dd7bdefc3b9012cce7511d36121548387e0fb955",
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "content": "sha256:43fa1633ca0c74b6f5f06bce3bb07d37d2c457e65bc0037eb2c682693ab0cc62",
             "locator": {
               "kind": "symbol",
-              "name": "CacheOutcome"
+              "name": "_open_cached_index"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "content": "sha256:7d0cb5e1b178150691f431feddd8e0914c28f6fdbba9904d4b3048cbae187d87",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "content": "sha256:d1c331001482861e1910646efc5b8e4b364f567b5521404c198c86086fa22cb6",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "content": "sha256:9b0916ca1391163288fab37233b0388d44868ca78cb30cec27ba627356f00581",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 122
             }
           },
           "kind": "code"

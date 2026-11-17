@@ -140,7 +140,7 @@ Retained account from memory base `81cfe4a8`, 98–108:
 >   executed payload for every registered model needs the fixture infrastructure the deleted sweep
 >   had, and that infrastructure is what rotted (11 rot sites; it does not collect verbatim).
 > - **No `-m` override and no marker**: lane membership is `architecture-fitness`
->   (`mcp/tests/test-evidence-lanes.toml:651`), which is what keeps these cases in the default lane.
+>   (`mcp/tests/test-evidence-lanes.toml`), which is what keeps these cases in the default lane.
 > - Importing `test_agent_notifier` for its fixtures means this module shares that module's world
 >   builder; it does not re-run or certify it.
 

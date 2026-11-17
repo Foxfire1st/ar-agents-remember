@@ -82,7 +82,6 @@ counted it as nothing at all would let a zero read as "nothing moved" (`ICR-R15@
 - The summary shape, which carries counts and identities and deliberately no verdict. [3]
 - **The four counted limitation codes, and the rule that makes a measured movement and an unmeasured binding separate facts rather than one.** [4]
 
-- The one checklist field that carries the section, and the arithmetic the section cannot reach. [5]
 
 
 
@@ -119,3 +118,5 @@ itself and still returns **no** count, so the report-only boundary (and the arit
 `write_curator_checklist` it cannot reach) is untouched by this leaf.
 
 - The controller read that supplies the summaries from the already-published authority, and passes the projection's own unmeasured count through without measuring anything itself. [6]
+
+- The one checklist field that carries the section, and the arithmetic the section cannot reach. [5]

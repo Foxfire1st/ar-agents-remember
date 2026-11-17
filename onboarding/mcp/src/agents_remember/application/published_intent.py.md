@@ -197,7 +197,6 @@ No configured domain documentation could be checked.
 
 
 
-- Unconverted roots refuse retired database selection and mounted tools open no legacy database. [44]
 
 
 
@@ -215,3 +214,5 @@ No meaningful cross-repo references found.
 ### Repo-Internal References
 
 - No read selects the database of a converted tree. [47]
+
+- Unconverted roots refuse retired database selection and mounted tools open no legacy database. [44]

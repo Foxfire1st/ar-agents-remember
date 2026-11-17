@@ -75,12 +75,12 @@
       ]
     },
     "103": {
-      "note": "The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command.\n\nAnchor: build_parser and _register_knowledge_commands.",
+      "note": "The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands.",
       "targets": [
         {
           "anchor": {
-            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
-            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
+            "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+            "content": "sha256:6aeecf20a2907123509200cddca4d89812690e6d3896f345dcd8bf1aa3e52aff",
             "locator": {
               "kind": "file"
             },
@@ -2738,8 +2738,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
-            "content": "sha256:a571e32841ccb9c698b11cd858ac8355e509809fbace1fbb6d94a671233c793e",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "content": "sha256:687956c05de8b266552f9ed0cb18a352984ee6d81949e693337a57078f5624c2",
             "locator": {
               "kind": "symbol",
               "name": "AgentsRememberMCP"
@@ -4781,8 +4781,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
-            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
+            "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+            "content": "sha256:6aeecf20a2907123509200cddca4d89812690e6d3896f345dcd8bf1aa3e52aff",
             "locator": {
               "kind": "file"
             },
@@ -4972,7 +4972,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
             "locator": {
               "kind": "symbol",
@@ -5155,12 +5155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:d032e052e8eac28082e7a8e32830a9eb5cd82040d6932e926ad92da5a055c8a8",
             "locator": {
-              "end": 136,
+              "end": 137,
               "kind": "line_range",
-              "start": 123
+              "start": 124
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -5254,8 +5254,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "102d8ad36390d59fc0e1a5ecfb1cac0467b657b4",
-            "content": "sha256:4ce642ee63e6d552a8625508b049224c79e8a7a17f7632cb3e4ab935d2259b47",
+            "blob": "c5279f52c1fae8958059bbbe48c65a4fd296bc4a",
+            "content": "sha256:addff4e900df03675b46d81c01505d680944b433ad35c8d582be7957087ca60e",
             "locator": {
               "kind": "file"
             },
@@ -5322,6 +5322,37 @@
               "start": 96
             },
             "path": "mcp/src/agents_remember/serving/media_sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "405": {
+      "note": "General families plus four additions; checks only those four",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "content": "sha256:0cbc15e510272679d65974207885303ddc8b1a76810adf338e8dbe141a63cda4",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "content": "sha256:8dd61413c66954ced6d132211298b59efc8c7075b21c811b020d1ce3acbdc875",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         }
@@ -5891,8 +5922,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
-            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
+            "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+            "content": "sha256:6aeecf20a2907123509200cddca4d89812690e6d3896f345dcd8bf1aa3e52aff",
             "locator": {
               "kind": "file"
             },
@@ -6038,8 +6069,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
-            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
+            "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+            "content": "sha256:6aeecf20a2907123509200cddca4d89812690e6d3896f345dcd8bf1aa3e52aff",
             "locator": {
               "kind": "file"
             },
@@ -6088,8 +6119,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
-            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
+            "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+            "content": "sha256:6aeecf20a2907123509200cddca4d89812690e6d3896f345dcd8bf1aa3e52aff",
             "locator": {
               "kind": "file"
             },
@@ -6136,8 +6167,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
-            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
+            "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+            "content": "sha256:6aeecf20a2907123509200cddca4d89812690e6d3896f345dcd8bf1aa3e52aff",
             "locator": {
               "kind": "file"
             },
@@ -6200,8 +6231,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
-            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
+            "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+            "content": "sha256:6aeecf20a2907123509200cddca4d89812690e6d3896f345dcd8bf1aa3e52aff",
             "locator": {
               "kind": "file"
             },
@@ -6283,8 +6314,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
-            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
+            "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+            "content": "sha256:6aeecf20a2907123509200cddca4d89812690e6d3896f345dcd8bf1aa3e52aff",
             "locator": {
               "kind": "file"
             },

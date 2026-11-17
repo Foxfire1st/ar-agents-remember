@@ -19,14 +19,16 @@
       ]
     },
     "2": {
-      "note": "The current implementation adds explainer-only environment, grade, planned-binding and report instructions while retaining valid form/kit guidance.\n\nAnchor: file",
+      "note": "The capability text names bound candidate checkouts and copied inputs, permits harness, general AR and explainer-owned tools, and preserves the role and evidence boundaries.",
       "targets": [
         {
           "anchor": {
             "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
-            "content": "sha256:22f922325e6a4377d0e9f188d3531b210b7fbfffa810889b3790cf01bd1ee03a",
+            "content": "sha256:c57badce3e112b2b785e4b39131045281ece2255f054ae45cdd1c69bc1097127",
             "locator": {
-              "kind": "file"
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

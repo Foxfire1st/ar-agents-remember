@@ -13,7 +13,7 @@ four-action public request/response API, and the frozen
 its two paths, its digest and its evidence. The memory-quality attestation and
 immutable coherence record additionally carry a typed direct-dependency declaration so evidence is
 a content-addressed consumer of exactly its declared inputs
-cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:80-106; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:223-304).
+cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:80-114; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:231-322).
 
 ## Code Commentary
 
@@ -53,7 +53,7 @@ digest), exact code and memory candidate trees (git-object digests), the rendere
 and both validator identities; `require_memory_quality_attestation_dependencies` rebuilds that
 expected set from the attestation's current source facts and refuses
 `memory-quality-attestation-dependencies-stale` on any mismatch
-cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:109-146; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:149-172).
+cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:117-154; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:157-180).
 
 Judgment and assessment bounds are shared declarations consumed by the dependency-capacity derivation and publication guard. Over-model payloads refuse with the bound and actual count before artifact writes. The dependency schema and preexisting record encoding remain compatible; capacity is not an invitation to point unrelated judgments at a shared evidence file.
 
@@ -82,6 +82,10 @@ type, never hand-written per domain.
 
 None recorded.
 
+## Measured quality and retained integrity
+
+The attestation optionally carries `measuredReportSha256`; the coherence record optionally carries that field and `measuredAttestationSha256`. Omitted fields preserve older record encoding and historical integrity reads. Live currentness requires both measured bindings. The measured report excludes the top-level knowledgeReview listing; the measured attestation retains all other quality facts except the full report hash and dependency envelope. Complete report and retained attestation bytes keep their separate integrity checks.
+
 ## Evidence
 
 ### Docs References
@@ -92,8 +96,6 @@ The lifecycle schema has no external authority.
 
 ### Repo-Internal References
 
-- The quality attestation validates exact candidate count and uniqueness. [1]
-- Immutable record validation enforces exact candidate-to-judgment coverage. [2]
 
 - The discriminated action request separates read actions from publication CAS input, and names the publication fields it is missing. [3]
 
@@ -104,11 +106,9 @@ The lifecycle schema has no external authority.
 - **The statement of the complete publication input set, read from the declaration at call time.** [7]
 
 
-- **Which publication fields a request supplied, `judgments` included, and the validator that refuses on it.** [8]
 
 
 
-- The R03 dependency vocabulary used by this record type. [9]
 
 
 
@@ -208,3 +208,8 @@ validity rule — it is the durable address of bytes the record already commits 
 refuses (`curator-coherence-attestation-stale`, `curator-coherence-content-address-collision`) rather
 than recording a path whose bytes do not match `attestationSha256` (see the publication card on the
 closeout route).
+
+- The quality attestation validates exact candidate count and uniqueness. [1]
+- Immutable record validation enforces exact candidate-to-judgment coverage. [2]
+- **Which publication fields a request supplied, `judgments` included, and the validator that refuses on it.** [8]
+- The R03 dependency vocabulary used by this record type. [9]

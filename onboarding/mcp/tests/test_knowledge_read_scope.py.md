@@ -177,8 +177,9 @@ No meaningful cross-repo references found.
 - The revision-grouping nodes. Anchor: `test_an_exact_revision_seed_selects_only_the_named_revision` `test_an_identity_seed_returns_the_retained_revision_as_its_own_group` [30]
 - The persisted-nothing and current file-isolation nodes; the old requested-namespace fixture is not current coverage. Anchor: `test_an_unregistered_path_reports_registration_absence_rather_than_an_empty_scope` `test_a_selector_naming_no_recorded_identity_is_told_that_the_selector_is_absent` `test_each_dataset_file_is_selected_from_its_own_rows` `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged` [33]
 
-- The lane row this module occupies. Anchor: `test_knowledge_read_scope` Anchor: `test_knowledge_read_scope` [34]
 
 - The invariant/main-family seed comparison pins their different claim/location totals; path and exact invariant revision seeds select the same records. [29]
 
 - The count-separation node and the overlapping family's two unique member revisions and membership rows. [31]
+
+- The lane row this module occupies. Anchor: `test_knowledge_read_scope` Anchor: `test_knowledge_read_scope` [34]

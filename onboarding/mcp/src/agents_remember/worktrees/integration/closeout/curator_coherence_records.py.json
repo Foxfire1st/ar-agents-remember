@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a30702a05dc231f91eb11d5b9a8ad2ba2162b5f5",
+        "blob": "0b24a4bfe81366930dbf6eee4273ee3ef0b88857",
+        "content": "sha256:17e77530d516e2e345e5fd3c2f4de2e5a5bc51bf9d0eba206e5a8319096588fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_curator_coherence_generation"
+        }
+      },
+      "id": "RLZ-7VWTCA",
+      "invariant": "INV-8XJF7R",
+      "origin": {
+        "handoffEntry": "L9-measured-binding-carriers",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "The generation reader delegates retained attestation verification to _attestation and retains the separate generation and projection integrity checks.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b24a4bfe81366930dbf6eee4273ee3ef0b88857",
+        "content": "sha256:17e77530d516e2e345e5fd3c2f4de2e5a5bc51bf9d0eba206e5a8319096588fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_curator_coherence_generation"
+        }
+      },
+      "id": "RLZ-CD28ZS",
+      "invariant": "INV-8XJF7R",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 5",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "Stored generations retain their complete integrity check.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b24a4bfe81366930dbf6eee4273ee3ef0b88857",
         "content": "sha256:17e77530d516e2e345e5fd3c2f4de2e5a5bc51bf9d0eba206e5a8319096588fd",
         "locator": {
           "kind": "symbol",
@@ -17,6 +53,24 @@
       },
       "rationale": "Is the integrity reader for one immutable curator generation. It requires an exact SHA-256 address, checks the record bytes against it, checks that the record names this leaf and contract, and checks that the Markdown report equals the rendered record and its digest. It then collects the retained attestation, judgment and assessment evidence through their owners, reading only the retained generation files rather than live quality files.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0b24a4bfe81366930dbf6eee4273ee3ef0b88857",
+        "content": "sha256:cdb587974c0485e09dff23650ffe3a590880dd46868298d5401f8db864343fd6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_attestation"
+        }
+      },
+      "id": "RLZ-WPRB1M",
+      "invariant": "INV-8XJF7R",
+      "origin": {
+        "handoffEntry": "L9-measured-binding-carriers",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "The retained attestation must match both measured digests when declared, in addition to its complete bytes, report digest, pair, source candidates and dependency validation.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -25,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a30702a05dc231f91eb11d5b9a8ad2ba2162b5f5",
+            "blob": "0b24a4bfe81366930dbf6eee4273ee3ef0b88857",
             "content": "sha256:17e77530d516e2e345e5fd3c2f4de2e5a5bc51bf9d0eba206e5a8319096588fd",
             "locator": {
               "kind": "symbol",
@@ -41,8 +95,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a30702a05dc231f91eb11d5b9a8ad2ba2162b5f5",
-            "content": "sha256:0436c556493cd176a38f8c9935fc19ee51c5425b20e429add8ff002ab845a774",
+            "blob": "0b24a4bfe81366930dbf6eee4273ee3ef0b88857",
+            "content": "sha256:cdb587974c0485e09dff23650ffe3a590880dd46868298d5401f8db864343fd6",
             "locator": {
               "kind": "symbol",
               "name": "_attestation"

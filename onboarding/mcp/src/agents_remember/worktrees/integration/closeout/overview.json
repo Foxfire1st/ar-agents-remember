@@ -2,12 +2,12 @@
   "path": "mcp/src/agents_remember/worktrees/integration/closeout",
   "references": {
     "1": {
-      "note": "The closeout validator's gate over the authority's exact candidate.\n\nAnchor: `_require_knowledge_gate`",
+      "note": "The closeout validator's gate over the authority's exact candidate.",
       "targets": [
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
-            "content": "sha256:87283a3273ab313176c037537787d8c001038dea14fe3030a19e6c2654ad86c1",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+            "content": "sha256:8d88c1a3de99c72a0aec6032bad07462fed9b5436060ea3b359b57566f97de5b",
             "locator": {
               "kind": "file"
             },
@@ -52,6 +52,40 @@
         }
       ]
     },
+    "12": {
+      "note": "The shared record builder constructs published and proposed coherence records from the observed candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f781e81a9ca1d2160cce4f6974ea2ef4023ae97c",
+            "content": "sha256:6c293f764aaf43912d45eaa4d1777988e16dde589c3e5212fb8a88febfa924e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_curator_coherence_record"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_record_builder.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Live quality currentness requires the measured attestation and report digests; absent or differing measured binding requests publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de7dda95ae9edafdee4da3337981c51e9eda4e44",
+            "content": "sha256:e6bdbae026e8ab8e2a26f2b240e16cc5a89e86b0b3d33644da2e0793a76a73e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_quality_binding"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Door source facts use current Git and task authority.",
       "targets": [
@@ -74,8 +108,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
-            "content": "sha256:87283a3273ab313176c037537787d8c001038dea14fe3030a19e6c2654ad86c1",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+            "content": "sha256:8d88c1a3de99c72a0aec6032bad07462fed9b5436060ea3b359b57566f97de5b",
             "locator": {
               "kind": "file"
             },
@@ -86,12 +120,12 @@
       ]
     },
     "4": {
-      "note": "Publication derives its input statement from the declared publication members, names caller-supplied delivery identities, and accepts judgments and review assessments inline or from one judgments file whose SHA-256 the publish answer carries.\n\nAnchor: `publication_input_statement`",
+      "note": "Publication derives its input statement from the declared publication members, names caller-supplied delivery identities, and accepts judgments and review assessments inline or from one judgments file whose SHA-256 the publish answer carries.",
       "targets": [
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
-            "content": "sha256:592dce1bd14a167e17e0e1db1f1737b3f1931ee45f62a2268cd8a1aa6618e93e",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:533b8b7d1221cb054d02c816c806974f5f951c45c3a73340befc38f496c4143d",
             "locator": {
               "kind": "file"
             },
@@ -119,12 +153,12 @@
         },
         {
           "anchor": {
-            "blob": "a30702a05dc231f91eb11d5b9a8ad2ba2162b5f5",
+            "blob": "0b24a4bfe81366930dbf6eee4273ee3ef0b88857",
             "content": "sha256:17e77530d516e2e345e5fd3c2f4de2e5a5bc51bf9d0eba206e5a8319096588fd",
             "locator": {
-              "end": 87,
+              "end": 88,
               "kind": "line_range",
-              "start": 29
+              "start": 30
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_records.py"
           },

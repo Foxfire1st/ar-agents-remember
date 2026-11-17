@@ -8,10 +8,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
-            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 812,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },
@@ -26,10 +26,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
-            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 812,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },
@@ -44,10 +44,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
-            "content": "sha256:8d534f6e48c6fc08851ac6fd5982c956ff2e69d6efd3e0cbb8b9a65b9b562466",
+            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
+            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
             "locator": {
-              "end": 5050,
+              "end": 5062,
               "kind": "line_range",
               "start": 1
             },
@@ -58,11 +58,11 @@
       ]
     },
     "4": {
-      "note": "The publication wiring the cases drive, including the exact-coverage obligation they leave untouched.",
+      "note": "The publication wiring the cases drive, including the exact-coverage obligation they leave untouched.\n\nAnchor: `CuratorCoherenceRecord._judgments_cover_candidates_exactly`",
       "targets": [
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
             "content": "sha256:a55a599b1c92a8e4c1ec967be5a2291299e44c18285855b7c3cc6bf5b984a9b9",
             "locator": {
               "kind": "symbol",
@@ -74,7 +74,7 @@
         },
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
             "content": "sha256:421f477ff7368bb7bb4f0fb49df1bc279818f14e55fcc06d36e177f27bdc0bd3",
             "locator": {
               "kind": "symbol",
@@ -86,13 +86,26 @@
         },
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
-            "content": "sha256:0766441c3e12b7a252bb998c70fa9331a757930b64f1865fb119090a09bb523b",
+            "blob": "f781e81a9ca1d2160cce4f6974ea2ef4023ae97c",
+            "content": "sha256:6c293f764aaf43912d45eaa4d1777988e16dde589c3e5212fb8a88febfa924e1",
             "locator": {
               "kind": "symbol",
-              "name": "_record"
+              "name": "build_curator_coherence_record"
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_record_builder.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:69e80138b15eb74f18f6ed0414b87c54e0bd0699a0a2aa083ca272fa6a7849dd",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 297
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
           },
           "kind": "code"
         }
@@ -152,39 +165,41 @@
       ]
     },
     "6": {
-      "note": "The record's `assessments` collection that the publish action accepts holds each assessment identity once, a rule kept separate from judgment-to-candidate coverage.",
+      "note": "The record's `assessments` collection that the publish action accepts holds each assessment identity once, a rule kept separate from judgment-to-candidate coverage.\n\nAnchor: `CuratorCoherenceRecord._assessments_are_uniquely_identified`; `CuratorCoherenceRecord._judgments_cover_candidates_exactly`",
       "targets": [
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
-            "content": "sha256:95feab6c19cafc9a9b852575c67f482b8d72bca9ab13d4ae4dd8ef7179d132b2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assessments_are_uniquely_identified"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
-            "content": "sha256:890c9736acb344ad4e335a24a0bbf4670fa0b997c835052dcf94133cacd330d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "CuratorCoherenceRecord"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
             "content": "sha256:d88ff6cfa7d8e4c8df6b7a72e9b6c9ba1856f3e0e86a26998308eb295bc08447",
             "locator": {
               "kind": "symbol",
               "name": "CuratorCoherenceRequest"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:d4074a2ac1c283b300c0607a91d34da832675ad68ee43ffe7272117814d6b99d",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:69e80138b15eb74f18f6ed0414b87c54e0bd0699a0a2aa083ca272fa6a7849dd",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 297
             },
             "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
           },

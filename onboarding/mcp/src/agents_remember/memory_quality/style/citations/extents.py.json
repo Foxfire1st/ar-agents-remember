@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7f9a3071a7eaf6d5c1e7e12885ee376813ce8ea5",
+        "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
         "content": "sha256:44560f69157a8e4c415357e36a9724de9d9a3b03f7c865be19a5df27910960e3",
         "locator": {
           "kind": "symbol",
@@ -18,16 +18,52 @@
       },
       "rationale": "Test-case occurrence multiplicity is preserved rather than deduplicating equal line spans into false bare-title uniqueness.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+        "content": "sha256:2c88a2e8c657049a41c91c344d81312faa596ac04fb38d3aeeb94f5a7c63d5b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "definition_scope"
+        }
+      },
+      "id": "RLZ-BXK94W",
+      "invariant": "INV-F1J9BH",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 1",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "The outer scope owns and releases the definitions table while nested operations join it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+        "content": "sha256:b3f425afc5bb667c1a95cf8843c82cfe77cfae99923d22e6947bbee4b0382a10",
+        "locator": {
+          "kind": "symbol",
+          "name": "definitions"
+        }
+      },
+      "id": "RLZ-CG0HFE",
+      "invariant": "INV-2NCG51",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 2",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "Only parsed definitions are reused; each caller still computes its own observations.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "26": {
-      "note": "`qualified_spans` owns the current boundary described above.\n\nAnchor: `qualified_spans`",
+      "note": "`qualified_spans` owns the qualified symbol boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f9a3071a7eaf6d5c1e7e12885ee376813ce8ea5",
-            "content": "sha256:8760d8d3aa4a122ca87da023bee9f91e11772c554831586aebd5d86c77fe564c",
+            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+            "content": "sha256:091607c5bb651e0733d98dbccc7285e4010bb1f1245273cc0f88b7568d98590c",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +73,12 @@
       ]
     },
     "29": {
-      "note": "Defines the class `Extent` — one range an anchor occupies in a file, and how it was found.\n\nAnchor: `Extent`",
+      "note": "`Extent` records one source range and its declaration metadata.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f9a3071a7eaf6d5c1e7e12885ee376813ce8ea5",
-            "content": "sha256:8760d8d3aa4a122ca87da023bee9f91e11772c554831586aebd5d86c77fe564c",
+            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+            "content": "sha256:091607c5bb651e0733d98dbccc7285e4010bb1f1245273cc0f88b7568d98590c",
             "locator": {
               "kind": "file"
             }
@@ -52,12 +88,12 @@
       ]
     },
     "35": {
-      "note": "Defines the function `definitions` — every name this file binds at any depth, and the extent of the construct binding it.\n\nAnchor: `definitions`",
+      "note": "`definitions` returns names and extents with detached containers.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f9a3071a7eaf6d5c1e7e12885ee376813ce8ea5",
-            "content": "sha256:8760d8d3aa4a122ca87da023bee9f91e11772c554831586aebd5d86c77fe564c",
+            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+            "content": "sha256:091607c5bb651e0733d98dbccc7285e4010bb1f1245273cc0f88b7568d98590c",
             "locator": {
               "kind": "file"
             }
@@ -67,12 +103,12 @@
       ]
     },
     "36": {
-      "note": "The one symbol-binding rule, shared by the curator writer, the conversion and the reference check.\n\nAnchor: `qualified_spans`",
+      "note": "The writer, conversion and reference checker use the same symbol-binding rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f9a3071a7eaf6d5c1e7e12885ee376813ce8ea5",
-            "content": "sha256:8760d8d3aa4a122ca87da023bee9f91e11772c554831586aebd5d86c77fe564c",
+            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+            "content": "sha256:091607c5bb651e0733d98dbccc7285e4010bb1f1245273cc0f88b7568d98590c",
             "locator": {
               "kind": "file"
             }
@@ -82,28 +118,44 @@
       ]
     },
     "51": {
-      "note": "Definition extents carry the test-case tag, and exact-name test-case spans preserve occurrence multiplicity while ordinary names retain deduplication.",
+      "note": "Exact-name test-case spans preserve occurrence multiplicity while ordinary names deduplicate.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f9a3071a7eaf6d5c1e7e12885ee376813ce8ea5",
-            "content": "sha256:e0caebcf76e08cf25cd6e1d93934c1c9c49c91cbb39f4cafeb17b8d12b485de8",
+            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+            "content": "sha256:67c0e29985a4dc3fb48a2cc4dfacb4f6047abe9c6817ff3805739d404ba192bd",
             "locator": {
-              "end": 55,
+              "end": 101,
               "kind": "line_range",
-              "start": 32
+              "start": 64
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7f9a3071a7eaf6d5c1e7e12885ee376813ce8ea5",
+            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
             "content": "sha256:44560f69157a8e4c415357e36a9724de9d9a3b03f7c865be19a5df27910960e3",
             "locator": {
-              "end": 90,
+              "end": 136,
               "kind": "line_range",
-              "start": 64
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "The outer scope owns and releases the table while nested operations join it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+            "content": "sha256:2c88a2e8c657049a41c91c344d81312faa596ac04fb38d3aeeb94f5a7c63d5b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "definition_scope"
             }
           },
           "kind": "code"

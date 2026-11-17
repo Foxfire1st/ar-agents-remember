@@ -91,8 +91,8 @@ The following complete predecessor retains useful explanations, old observations
 >
 > ### Conventions
 >
-> - The module is in the `unit-regression` lane (`test-evidence-lanes.toml:253`); the evidence catalog derives it as a
->   consumer of `fixtures/repository_profiles/node/package-lock.json` (`evidence-lifecycle.toml:1446`, the Forty-second
+> - The module is in the `unit-regression` lane (`test-evidence-lanes.toml`); the evidence catalog derives it as a
+>   consumer of `fixtures/repository_profiles/node/package-lock.json` (`evidence-lifecycle.toml`, the Forty-second
 >   deliberate re-pin).
 > - Refusal cases assert the decision file is byte-identical afterwards.
 >

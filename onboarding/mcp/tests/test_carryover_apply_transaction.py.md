@@ -10,7 +10,7 @@ Protect converted carryover transaction restoration, non-overwriting interrupted
 
 ## Code Commentary
 
-The direct-engine fixtures use real official-memory Code-Commit pairing, validator, route-index and derived-cache operations. `_state` observes non-.git bytes, modes and directory names, HEAD and the Git-resolved raw index. Direct whole-batch target-edit refusal is distinct from public planner selection. The public record fixture stages equal present members with mode 0o640; JSON-only, Markdown-only, absent, complete and optional-prose cuts retain exact-byte and no-overwrite assertions. Invalid unrelated onboarding makes partial retry validate the whole tree, restore its initial state and report existing carried members without reporting newly rolled-back companions. These are source assertion contracts, not a new run, successful certification or acceptance.
+The direct-engine fixtures use real official-memory Code-Commit pairing, validator, route-index and derived-cache operations. `_state` observes non-.git bytes, modes and directory names, HEAD and the Git-resolved raw index. Direct whole-batch target-edit refusal is distinct from public planner selection. The public record fixture stages equal present members with mode 0o640; JSON-only, Markdown-only, absent, complete and optional-prose cuts retain exact-byte and no-overwrite assertions. Invalid unrelated onboarding makes partial retry validate the whole tree, restore its initial state and report existing carried members without reporting newly rolled-back companions. These are source assertion contracts, not a new run, successful certification or acceptance. Foreign-build, tree-only and unknown-identity cache cases build disposable indexes without changing existing cache bytes or mtimes.
 
 ## Evidence
 
@@ -20,6 +20,6 @@ The direct-engine fixtures use real official-memory Code-Commit pairing, validat
 - The plan reuses exact warm cache bytes/mtime; a real scratch build followed by injected refusal cleans scratch storage and reports index-incomplete. [4]
 - Five public record cuts complete only missing canonical members, preserve staged equal bytes/modes and HEAD/index, omit optional absent prose and repeat as nothing-to-carryover. [5]
 - Differing JSON, Markdown or wrong-ID existing members remain conflicts; even explicitly included review-required apply refuses with no writes and identical observed state. [6]
-- JSON/Markdown partial record retry reaches whole-tree validation; unrelated \ refusal restores state, reports rolled-back refresh and only preexisting carried members in diagnostics. [7]
+- JSON/Markdown partial record retry reaches whole-tree validation; unrelated invalid onboarding restores state, reports rolled-back refresh and only preexisting carried members in diagnostics. [7]
 - Record dependency admission accepts same-path equal subsets or exact prose-only cuts; payload preparation includes complete needed units so equal members are checked but not rewritten. [8]
 - The transaction skips equal writes, refreshes indexes and validates the whole memory tree before success; refusal restores the saved write extent and reports surviving differences against HEAD. [9]

@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Reusing a foreign build's incomplete index can omit authored knowledge, while all build namespaces still need one bounded eviction policy."
+  },
+  "applicability": "Persistent derived knowledge-index reuse and read-only carryover lookup.",
+  "conditions": [
+    "The memory-tree key, index format and immutable loaded source digest identify a reusable index.",
+    "Unknown loaded identity uses a private namespace without reuse.",
+    "Eviction accounts for all SQLite namespaces together."
+  ],
+  "exclusions": [
+    "Reusing legacy tree-only files or another build's files.",
+    "Writing the derived index as authored knowledge.",
+    "Carryover building a persistent cache or updating reuse bookkeeping."
+  ],
+  "id": "INV-AYMK61",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "expanded-evidence-W1.md#evidence-6; cache-fd-diagnostic/IDENTITY-EVIDENCE.md and focused carryover/cache tests"
+      ],
+      "path": "ingest-history-wave-v2.json"
+    },
+    "handoffEntry": "BUG-R09@v3 rule 6",
+    "leaf": "261112-BUG-L9",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A persistent knowledge index is reused only for the immutable loaded source digest that built it; unknown identity uses an unshared private file and the existing eviction covers all builds.",
+  "status": "proposed",
+  "supersedes": []
+}

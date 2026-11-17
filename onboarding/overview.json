@@ -552,8 +552,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a52f1812409904220d810a98e25e5c99c820300",
-            "content": "sha256:dd3cbee6c156893b2b6399dd9034645f4b0bff80665fe0c0166160306114f43d",
+            "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+            "content": "sha256:6aeecf20a2907123509200cddca4d89812690e6d3896f345dcd8bf1aa3e52aff",
             "locator": {
               "kind": "file"
             },
@@ -655,11 +655,35 @@
       ]
     },
     "143": {
-      "note": "The carryover request names its code/source/target roots and candidate kinds. Plan and apply require both memory roots to be converted and to share a compatible layout; unconverted or incompatible memory is refused.",
+      "note": "Carryover names file-sidecar, route-overview, memory-only-doc and entity-catalog candidates; its request supplies the code/source/target roots. Plan and apply require both memory roots to be converted and share the same conversion version; unconverted or mismatched memory is refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:6e2272ccd94b422ec6a5544703caaab2245f0099816081ea62dcd6ad82d3117b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_matching_layout"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:42c95a084160351066eecc155bd26856ac26e41c4d89bf90896078f9ff2e72c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_converted_formats"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
             "content": "sha256:a9ea3272fd38fe4c1bf85435dc265806b7ab4b4d03b6ca15f171e44fd2842ee6",
             "locator": {
               "end": 85,
@@ -672,40 +696,14 @@
         },
         {
           "anchor": {
-            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
-            "content": "sha256:c27596101e202c7522936c11acda0030fe36562a4e79b608bfcefa46ac9f005b",
+            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
+            "content": "sha256:b2b9a34b314920656876ea32bfd4424e08de9a6b98a07dd19da813de773e3b19",
             "locator": {
-              "end": 210,
+              "end": 268,
               "kind": "line_range",
-              "start": 207
+              "start": 233
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
-            "content": "sha256:cedf8b3b35cfdfc50a69cd82486c319ac593b34beda7f787a48e29642a0ca178",
-            "locator": {
-              "end": 323,
-              "kind": "line_range",
-              "start": 315
-            },
-            "path": "mcp/src/agents_remember/memory/carryover.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
-            "content": "sha256:42c95a084160351066eecc155bd26856ac26e41c4d89bf90896078f9ff2e72c6",
-            "locator": {
-              "end": 286,
-              "kind": "line_range",
-              "start": 271
-            },
-            "path": "mcp/src/agents_remember/memory/carryover_documents.py"
           },
           "kind": "code"
         }
@@ -4188,10 +4186,23 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
-            "content": "sha256:747038ba884874ecd061048d8ad0b0e56b0a848bf7026b05a24e652f1632a675",
+            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
+            "content": "sha256:68acefba2d87996c8406ad10991412bec9b768d6e57c36a509db586c64789579",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "build_plan_for_request"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
+            "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_carryover_for_request"
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
           },
@@ -4200,9 +4211,10 @@
         {
           "anchor": {
             "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
-            "content": "sha256:19cfdc182aaa3507362169f9d2b1166cbe09295f05bb1e7ede20664e0e966194",
+            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "apply_converted"
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },
@@ -4211,9 +4223,10 @@
         {
           "anchor": {
             "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
-            "content": "sha256:63d10d85beb30c291c55e0c3c0f1d966415ac5d00cbcc08dc24d68316b2bbbc4",
+            "content": "sha256:1b77c7102d619e92795861dac4712a6cc902d38e355639c21713f63669ebb10a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
             },
             "path": "mcp/tests/test_converted_carryover.py"
           },

@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/quality_identity.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "83dbf4e69d99c19857c507bb0c88c21e3c37d491",
+        "content": "sha256:8c87433218b196447ad36743619d88aca21bd8416453045b1fc535b3dd091133",
+        "locator": {
+          "kind": "symbol",
+          "name": "measured_quality_attestation_sha256"
+        }
+      },
+      "id": "RLZ-743H22",
+      "invariant": "INV-8XJF7R",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 5",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "This digest retains measured attestation facts independently of raw report serialization.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "83dbf4e69d99c19857c507bb0c88c21e3c37d491",
+        "content": "sha256:208e6de3deb787113caf78184c0cf5b2d379dfa8d8403b580fcc84faf01a1901",
+        "locator": {
+          "kind": "symbol",
+          "name": "measured_report_sha256"
+        }
+      },
+      "id": "RLZ-8C4T81",
+      "invariant": "INV-8XJF7R",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 5",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "This function excludes precisely the complete knowledge-review report block from measured identity.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Only the assessment-list section is omitted from the measured report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83dbf4e69d99c19857c507bb0c88c21e3c37d491",
+            "content": "sha256:208e6de3deb787113caf78184c0cf5b2d379dfa8d8403b580fcc84faf01a1901",
+            "locator": {
+              "kind": "symbol",
+              "name": "measured_report_sha256"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The measured attestation retains all fields except the full report hash and dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83dbf4e69d99c19857c507bb0c88c21e3c37d491",
+            "content": "sha256:8c87433218b196447ad36743619d88aca21bd8416453045b1fc535b3dd091133",
+            "locator": {
+              "kind": "symbol",
+              "name": "measured_quality_attestation_sha256"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

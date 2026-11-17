@@ -98,10 +98,11 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References (continued)
 
-- The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution. [10]
 
-- The unit-regression lane row this module is registered by. Anchor: "mcp/tests/test_knowledge_revision_seals.py" Anchor: "mcp/tests/test_knowledge_revision_seals.py" [9]
 
 - The family revision test changes the guarantee in a copied stored row and requires decode_family_revision_row to refuse with payload digest. [4]
 
 - The invariant revision test changes the statement in a copied stored row and requires decode_revision_row to refuse with payload digest. [5]
+
+- The unit-regression lane row this module is registered by. Anchor: "mcp/tests/test_knowledge_revision_seals.py" Anchor: "mcp/tests/test_knowledge_revision_seals.py" [9]
+- The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution. [10]

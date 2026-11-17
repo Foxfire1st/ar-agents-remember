@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
+    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
     "role": "curator",
-    "statement": "The closure without a commit, the version-only link rule and the landing gate's judgement per route are now told on the page, and the rest of the page was not read again.",
-    "task": "261112-BUG-L7",
+    "statement": "The changed index passages match immutable loaded identity, private unknown-build files and common eviction, while the unchanged passages were not reverified.",
+    "task": "261112-BUG-L9",
     "uncommitted": true
   },
   "document": "docs/reference/knowledge-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -265,6 +265,32 @@
       "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+    },
+    {
+      "anchor": {
+        "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+        "content": "sha256:c953503aa6afe66c046070e4713c0438b86ccab1d9e76a42e4cf596ea1ad226a",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+      },
+      "heading": "Loaded build identity",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "de7dda95ae9edafdee4da3337981c51e9eda4e44",
+        "content": "sha256:e6bdbae026e8ab8e2a26f2b240e16cc5a89e86b0b3d33644da2e0793a76a73e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_current_quality_binding"
+        },
+        "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_binding.py"
+      },
+      "heading": "Measured coherence",
+      "kind": "anchor"
     }
   ]
 }

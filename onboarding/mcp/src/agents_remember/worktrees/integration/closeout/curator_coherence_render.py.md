@@ -16,10 +16,7 @@ Renders the deterministic human-readable Markdown projection of one structured c
 candidate trees, topology, attestation, predecessor, publisher, and every source-candidate judgment
 in attestation order. Cell escaping keeps arbitrary rationale text inside the generated table.
 
-Since 260831-CCR (commit `99dc249b`) the renderer emits a `Task intent:` line immediately after
-the task topology fingerprint when the record carries a `TaskIntentIdentity`
-(`isinstance(record.taskIntent, TaskIntentIdentity)`, line 53-56), so the human projection shows
-the exact canonical `task-intent/v1` schema and digest bound by coherence publication.
+The renderer emits a `Task intent:` line immediately after the task topology fingerprint when the record carries a `TaskIntentIdentity`, so the human projection shows the exact canonical `task-intent/v1` schema and digest bound by coherence publication.
 
 ### Conventions
 
@@ -37,6 +34,8 @@ The renderer is one-way. Consumers regenerate and byte-compare this projection; 
 
 None recorded.
 
+The validation-contract text distinguishes records carrying a measured attestation binding from older raw-attestation records. For measured records it also states that the complete retained snapshot is checked for byte integrity. Rendering that contract does not validate the live candidate.
+
 ## Evidence
 
 ### Docs References
@@ -47,8 +46,6 @@ The projection format is repository-owned.
 
 ### Repo-Internal References
 
-- Rendering is a deterministic one-way projection of the structured record. [1]
-- The canonical task-intent identity line emitted after the topology fingerprint. [2]
 
 ### Cross-Repo References
 
@@ -58,7 +55,7 @@ The file introduces no external boundary.
 
 ## MCAR-L03 Human Pair Projection
 
-Generated Markdown now renders the contract/digest, both roots, source/work branches and bases,
+Generated Markdown renders the contract/digest, both roots, source/work branches and bases,
 onboarding root, and ledger path from the structured record. Markdown remains a projection and is
 never reparsed as authority.
 
@@ -67,3 +64,6 @@ never reparsed as authority.
 Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, coherence records bind the
 canonical intent identity; the human projection now shows it so reviewers can verify that evidence
 was accepted against the exact obligation bytes. Part of the landed L25 candidate `99dc249b`.
+
+- Rendering is a deterministic one-way projection of the structured record. [1]
+- The canonical task-intent identity line emitted after the topology fingerprint. [2]

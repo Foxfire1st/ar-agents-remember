@@ -19,7 +19,7 @@ The implementations behind the four kept tools: the three grade writes through t
 - Publication is made under a request identity built from the page's own bytes and its coverage: rendering the same bytes again is the same draft and is answered `unchanged`, while a resumed run that reaches more is a successor revision that says so.
 - Publishing copies the new revision into the workspace's `revisions/<n>/` at once and the answer says which folder was refreshed, so the workspace never states less than the task holds.
 - A render with no interaction report records no passes and an incomplete coverage, so a revision says what was not checked rather than implying a coverage it does not have.
-- `page_revision` answers the highest ready revision the leaf holds from the frames' ready pointers, skipping a symlinked or unreadable one, so a cancellation can say whether a revision appeared while it ran. The explainer surface is four tools - `render`, `define_category`, `remove_category` and `grade` - and no tool that reads the workspace back: an answer names files on disk and is bounded, so a long answer or a picture is written to the workspace and cited rather than returned in full.
+- `page_revision` answers the highest ready revision the leaf holds from the frames' ready pointers, skipping a symlinked or unreadable one, so a cancellation can say whether a revision appeared while it ran. The four explainer-owned tools are `render`, `define_category`, `remove_category` and `grade` - and no tool that reads the workspace back: an answer names files on disk and is bounded, so a long answer or a picture is written to the workspace and cited rather than returned in full.
 
 ## Evidence
 

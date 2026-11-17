@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "edc7edc63f5d05b34445dfe30d8e141ec5300efc",
-    "commit": "a2f0fced8896b92d31fd3f78351d01f5302be97e",
+    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
+    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
     "role": "curator",
-    "statement": "The evidence-system design remains consistent with catalog ownership and cadence; its catalog now registers the three instruction-renewal regression consumers without changing that authority.",
-    "task": "261112-BUG-L8",
+    "statement": "The examined evidence-system clauses remain consistent with seven accepting lanes and catalog-owned metadata after four test-module registrations and twelve consumer links were added.",
+    "task": "261112-BUG-L9",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+      "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
+      "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

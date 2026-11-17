@@ -96,7 +96,6 @@ Capture and resolution.
 - A symbol must bind exactly once. [6]
 
 
-- A qualified name's last part must sit inside its parents: the writer delegates to the one shared rule. [7]
 
 
 
@@ -121,3 +120,5 @@ No cross-repo boundary is crossed by this file.
 
 
 - Current source delta inspected statically: Fix regular-file/symlink snapshot scope and early symbol refusal; retain ordinary symbol/range binding. [10]
+
+- A qualified name's last part must sit inside its parents: the writer delegates to the one shared rule. [7]

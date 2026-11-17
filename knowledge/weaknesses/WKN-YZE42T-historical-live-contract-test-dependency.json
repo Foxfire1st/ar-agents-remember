@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+    "content": "sha256:b5f44e754ed486629011cc7da129199817cd4f962b66553cc21810d472d4bb93",
+    "locator": {
+      "kind": "symbol",
+      "name": "_leaf_contract"
+    },
+    "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+  },
+  "id": "WKN-YZE42T",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "ingest-history-wave-v2.json"
+    },
+    "handoffEntry": "bug-r09-worker-record-10",
+    "leaf": "261112-BUG-L9",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261112-BUG-L9"
+  },
+  "state": "open",
+  "statement": "Two onboarding-drift tests read a live historical enclosure by absolute path and fail before exercising their behavior when that contract is absent."
+}

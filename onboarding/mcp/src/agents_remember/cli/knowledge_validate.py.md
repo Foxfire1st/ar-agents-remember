@@ -105,5 +105,4 @@ The following complete predecessor retains useful explanations, old observations
 > - Current source assertions distinguish the fixture pass with `--base` (carried legacy report) from the baseless malformed-marker JSON refusal (both marker and legacy debt refuse); no command was run for this account. [5]
 > - Current source delta inspected statically: Add the preserved help-table policy and correct the stale blanket fixture-pass caption while retaining arguments, read-only/no-skip behavior and exit codes. [6]
 
-
 - Registration in the umbrella. [4]

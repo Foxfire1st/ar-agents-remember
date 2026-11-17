@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
-        "content": "sha256:0d64f1ab5341d6a3d0e97f6ee334e82815a00911e751e19551b22a39feb10521",
+        "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+        "content": "sha256:4230a400360986700e0927c0f61bb806c847021c71dc9bb02d72743114f713ca",
         "locator": {
           "kind": "symbol",
           "name": "require_current_curator_coherence"
@@ -20,7 +20,25 @@
     },
     {
       "anchor": {
-        "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+        "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+        "content": "sha256:cceda02fc7f0d7f46985b3b6fe44d79167b6ff7e38e66bb5e30462d749b6ad94",
+        "locator": {
+          "kind": "symbol",
+          "name": "_quality_attestation"
+        }
+      },
+      "id": "RLZ-9VSZWY",
+      "invariant": "INV-8XJF7R",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 5",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "The live envelope still proves exact raw report bytes, readiness, pair and dependencies before currentness.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
         "content": "sha256:444c4991a0407cbfe4b8ad55dd8cbfea2d0f617aed4979dc53b8b0efb0d9f74b",
         "locator": {
           "kind": "symbol",
@@ -38,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+        "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
         "content": "sha256:3eba8b4985edf95ba33303032de19019afd2241ecc4694472ccb6b1f8391b648",
         "locator": {
           "kind": "symbol",
@@ -53,6 +71,24 @@
       },
       "rationale": "The task context no longer refuses a standalone master with task-document-parent-missing.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+        "content": "sha256:18f8048cfb504f95def9c63d13f62b7cf4b6019b7da935e71e419d5f9fce5815",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_current_dependencies"
+        }
+      },
+      "id": "RLZ-WB5QED",
+      "invariant": "INV-8XJF7R",
+      "origin": {
+        "handoffEntry": "L9-measured-binding-carriers",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "The currentness validator recomputes exactly the dependency builder's original and measured edges.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -61,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
             "content": "sha256:11766a27fc8fc9d2058751fa071256453d4bec1fb8f955f87f95b30a720fa205",
             "locator": {
               "kind": "symbol",
@@ -77,8 +113,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "136043564f2e7d1920b480e552c989140d6e8f84",
-            "content": "sha256:814c0b7dd0462536e22e5693af4c4f6e935784ff0f1f1d976cf799a4f2ba394e",
+            "blob": "2d850de118e737efe85c187a514ead8e1e346376",
+            "content": "sha256:04676c45192c6ca43bf9d4378b6f86b860cf2212009d54f0091e199acbab7e09",
             "locator": {
               "kind": "symbol",
               "name": "test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated"
@@ -94,8 +130,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
-            "content": "sha256:0d64f1ab5341d6a3d0e97f6ee334e82815a00911e751e19551b22a39feb10521",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+            "content": "sha256:4230a400360986700e0927c0f61bb806c847021c71dc9bb02d72743114f713ca",
             "locator": {
               "kind": "symbol",
               "name": "require_current_curator_coherence"
@@ -122,12 +158,41 @@
         }
       ]
     },
+    "13": {
+      "note": "The paths model declares the retained attestation directory and digest-derived copy path; the focused resolver places both in the leaf history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
+            "content": "sha256:7be2f4b09ff879b2a56d95fc267a2354100f1fa4b503848bc6eb084db0b116b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherencePaths"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f9803f99ec17984b37829a2d4af77fd2a521764a",
+            "content": "sha256:ccc3a8dd0d56e5f4dc20bef22f1e2972a1a423b411b32fab6cb5c51fe815ba76",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_paths"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Loading validates the sole manifest, generation bytes, generated projection, and evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
             "content": "sha256:d62e4aa67b2079df27e343f54cb4dc0de4e3f180bdf756b4d68dbe4aa060fdce",
             "locator": {
               "kind": "symbol",
@@ -143,8 +208,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
-            "content": "sha256:0d64f1ab5341d6a3d0e97f6ee334e82815a00911e751e19551b22a39feb10521",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+            "content": "sha256:4230a400360986700e0927c0f61bb806c847021c71dc9bb02d72743114f713ca",
             "locator": {
               "kind": "symbol",
               "name": "require_current_curator_coherence"
@@ -154,7 +219,7 @@
         },
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
             "content": "sha256:07570f44cdca5c621a00386f4add3a1f40941941e40d47002b103931e5d17420",
             "locator": {
               "kind": "symbol",
@@ -170,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
             "content": "sha256:0c8e9cac1d71edcb624a14500cd5bd8b4b8e36174aa0d2560915741b5a336c04",
             "locator": {
               "kind": "symbol",
@@ -181,7 +246,7 @@
         },
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
             "content": "sha256:56882c8619d93235a2b4d95ad872c9eac2ad7f145095ff9088dc134c02d2f4d7",
             "locator": {
               "kind": "symbol",
@@ -189,30 +254,19 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
-            "content": "sha256:a2887ebd37831e059b2aa25b211c1614df0b1c954c3f08df49b5173a07a0ed33",
-            "locator": {
-              "end": 118,
-              "kind": "line_range",
-              "start": 113
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "Candidate task context binds the authored graph once and returns the bound sprint generation.\n\nAnchor: `_task_context`",
+      "note": "Candidate task context resolves the selected leaf and master, passes the commanding sprint executionGraph when present, and passes no authored graph for a standalone master.",
       "targets": [
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
-            "content": "sha256:87283a3273ab313176c037537787d8c001038dea14fe3030a19e6c2654ad86c1",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+            "content": "sha256:3eba8b4985edf95ba33303032de19019afd2241ecc4694472ccb6b1f8391b648",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_task_context"
             }
           },
           "kind": "code"
@@ -237,12 +291,12 @@
       ]
     },
     "7": {
-      "note": "R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding.",
+      "note": "Currentness rederives the declared dependencies, validates the complete attestation and requires its measured quality binding. `_QualityAttestationSource` retains the attestation/report paths, pair identity and both candidate trees.",
       "targets": [
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
-            "content": "sha256:639557666dd44e79d32a672d51aa5afbe5463f44e3cc5ab8c28e9fe58e873eef",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+            "content": "sha256:18f8048cfb504f95def9c63d13f62b7cf4b6019b7da935e71e419d5f9fce5815",
             "locator": {
               "kind": "symbol",
               "name": "_require_current_dependencies"
@@ -252,11 +306,46 @@
         },
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
-            "content": "sha256:8b1856c943b169ab7e5b6330b0d99cd311abeba3eb55ec74684c3f8ce15dbdf2",
+            "blob": "de7dda95ae9edafdee4da3337981c51e9eda4e44",
+            "content": "sha256:11d7436e0b8cde975a43f45421951c9d29de2cea875f3ea5eeb1548302050d18",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_dependencies"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+            "content": "sha256:cceda02fc7f0d7f46985b3b6fe44d79167b6ff7e38e66bb5e30462d749b6ad94",
             "locator": {
               "kind": "symbol",
               "name": "_quality_attestation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de7dda95ae9edafdee4da3337981c51e9eda4e44",
+            "content": "sha256:e6bdbae026e8ab8e2a26f2b240e16cc5a89e86b0b3d33644da2e0793a76a73e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_quality_binding"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+            "content": "sha256:d83b5238fcf60b0c823da47f46131ac2c2f5dd68bab031d119d9cb98def20457",
+            "locator": {
+              "kind": "symbol",
+              "name": "_QualityAttestationSource"
             }
           },
           "kind": "code"
@@ -268,7 +357,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
             "content": "sha256:85636f49b9229c363f534ca9e31af20622e8240ac8d3e9b27262e7dfcfa8ccf4",
             "locator": {
               "kind": "symbol",
@@ -280,14 +369,15 @@
       ]
     },
     "9": {
-      "note": "The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09).\n\nAnchor: `_require_knowledge_gate`",
+      "note": "The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09).",
       "targets": [
         {
           "anchor": {
-            "blob": "cef570950ae728a43c03bd0c262b3c5b46749ec2",
-            "content": "sha256:87283a3273ab313176c037537787d8c001038dea14fe3030a19e6c2654ad86c1",
+            "blob": "ae0a3e9a5565fc71ab0dd84a02b117080cdf0650",
+            "content": "sha256:444c4991a0407cbfe4b8ad55dd8cbfea2d0f617aed4979dc53b8b0efb0d9f74b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_require_knowledge_gate"
             }
           },
           "kind": "code"

@@ -135,6 +135,23 @@
           "kind": "test"
         }
       ]
+    },
+    "5": {
+      "note": "Failed Update unbinds and retry recovers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+            "content": "sha256:b3aee871e1d370ce487ba68d34760c2b3465a7a3cec423beed967d843291709d",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 272
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"
