@@ -1,6 +1,26 @@
 {
   "path": "skills/l-01-agent-lifecycles/templates/route-local-overview.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9a190c21493b1d563f4fb45c766db77bb70b8225",
+        "content": "sha256:6530c0ffdad825b9519531fe9684ec94286b8473ae36591d11b621fadace60f3",
+        "locator": {
+          "end": 56,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-A4ZDYB",
+      "invariant": "INV-4XD2ZF",
+      "origin": {
+        "handoffEntry": "L8-M2-F01-current-Curator-card-format",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The canonical source-area layout expressly directs Curators to the governing card rules and puts citation-table input in its final Evidence section after the area explanations.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The area overview links its parent overview and explains the area in its own right.",

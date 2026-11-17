@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "edc7edc63f5d05b34445dfe30d8e141ec5300efc",
+    "commit": "a2f0fced8896b92d31fd3f78351d01f5302be97e",
     "role": "curator",
-    "statement": "The page holds: the catalogue change adds test cases to the lanes and to the lifecycle table, and the design page's evidence classes, cadence and source versioning are unchanged by that.",
-    "task": "261112-BUG-L7",
+    "statement": "The evidence-system design remains consistent with catalog ownership and cadence; its catalog now registers the three instruction-renewal regression consumers without changing that authority.",
+    "task": "261112-BUG-L8",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+      "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+      "blob": "455e16517d358ddc52e858d0dd0ee8192613a291",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
-        "content": "sha256:4fd1895a61e63d236f3dc7d051223afef1875a3c6a45e668549657c3edb18c47",
+        "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+        "content": "sha256:f34a6589281412fa776c471503d2f517725209ecfc557b0328cb730809f3539f",
         "locator": {
           "kind": "symbol",
           "name": "test_manifest_steps_name_the_pointer_derived_actions"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
-        "content": "sha256:8c702fce9fcc0cea37e7295243b23263fb4f49abc5d8fdde2087ff1d99c76592",
+        "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+        "content": "sha256:2f66f70f044ff6639277036794b0c581c92d2d5ddd6757bb54d90e6d022d6a4a",
         "locator": {
           "kind": "symbol",
           "name": "test_core_unit_sources_do_not_link_their_own_digest_place"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+        "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
         "content": "sha256:e9eab6a3b05ddd000c6f696c05b3def3a963ca7bbd1f83e1a2f33b9142162a7f",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+        "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
         "content": "sha256:5676ebbf98175b392e0f756b73862efbb94fb1e3d0ad3df60ea21ed6fa73b0a0",
         "locator": {
           "kind": "symbol",
@@ -73,8 +73,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
-        "content": "sha256:8c702fce9fcc0cea37e7295243b23263fb4f49abc5d8fdde2087ff1d99c76592",
+        "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+        "content": "sha256:2f66f70f044ff6639277036794b0c581c92d2d5ddd6757bb54d90e6d022d6a4a",
         "locator": {
           "kind": "symbol",
           "name": "test_core_unit_sources_do_not_link_their_own_digest_place"
@@ -88,6 +88,23 @@
       },
       "rationale": "This test reads every core unit's lines from digest-map.json and fails when a unit's block links its own every-role place; it fails on the A004 AU4.2 and A005 AC2.1 self-links.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+        "content": "sha256:2f1360d2e3f9e6ab15047b4cd52fbfe783455f9419942edcd4b9d248e765c177",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KWTB44",
+      "invariant": "INV-AZTTPZ",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 9",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "This consumer or regression control follows generated routing fields and preserves the independent obligation it checks.",
+      "role": "support"
     }
   ],
   "references": {
@@ -96,11 +113,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
             "content": "sha256:69649b5d9247a7b1b05645b034a2e7ded7238d8cc8cc23320d5171ffd82353d7",
             "locator": {
               "kind": "symbol",
               "name": "SENTENCE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Manifest composition rejects a missing derived step and an authored no-step mark that conflicts with retained derived steps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+            "content": "sha256:628c79ed14991277ccc3f06465b6985a7cce0941901821e305003598594e8f38",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Unmapped source lines, overlapping places and uncovered digest prose require an authored map decision rather than the renewal command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+            "content": "sha256:54ac2d90f761b39ca6fefd25047d3ad304cfbf55a396ec983bd48c88b82c8222",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 172
             }
           },
           "kind": "test"
@@ -112,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
             "content": "sha256:a31ce53e4a6c410e2237df0b5e83a79ab07447205dd1d5c6f1e93f98afb0b317",
             "locator": {
               "kind": "symbol",
@@ -128,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
             "content": "sha256:e9eab6a3b05ddd000c6f696c05b3def3a963ca7bbd1f83e1a2f33b9142162a7f",
             "locator": {
               "kind": "symbol",
@@ -144,11 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
-            "content": "sha256:8c702fce9fcc0cea37e7295243b23263fb4f49abc5d8fdde2087ff1d99c76592",
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+            "content": "sha256:2f66f70f044ff6639277036794b0c581c92d2d5ddd6757bb54d90e6d022d6a4a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_core_unit_sources_do_not_link_their_own_digest_place"
+              "end": 73,
+              "kind": "line_range",
+              "start": 60
             }
           },
           "kind": "test"
@@ -160,11 +212,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
-            "content": "sha256:4fd1895a61e63d236f3dc7d051223afef1875a3c6a45e668549657c3edb18c47",
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
+            "content": "sha256:f34a6589281412fa776c471503d2f517725209ecfc557b0328cb730809f3539f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_manifest_steps_name_the_pointer_derived_actions"
+              "end": 105,
+              "kind": "line_range",
+              "start": 76
             }
           },
           "kind": "test"
@@ -176,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
             "content": "sha256:0903749ae531ca452554d0b789c2a2ac7d6dc8a1ce850ede374aff8e612b3af2",
             "locator": {
               "kind": "symbol",
@@ -192,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
             "content": "sha256:802bde229382aaeceac99d79617c6e71bce8dd8fa733b054dadd4e89eebee9ee",
             "locator": {
               "kind": "symbol",
@@ -208,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
             "content": "sha256:dd9e708d30111f17051bb4a8c3821d61f8cfad82d2fc1e8e450b40ee568c3bba",
             "locator": {
               "kind": "symbol",
@@ -224,7 +277,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6517a7a756bece3c9ed63ab477aefdec7b70572d",
+            "blob": "e8bd9dd092f4c39ded31c0232b7be57d598fac93",
             "content": "sha256:5676ebbf98175b392e0f756b73862efbb94fb1e3d0ad3df60ea21ed6fa73b0a0",
             "locator": {
               "kind": "symbol",

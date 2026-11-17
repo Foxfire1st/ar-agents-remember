@@ -1,6 +1,26 @@
 {
   "path": "skills/l-01-agent-lifecycles/templates/file-card.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "145f2021791548364f7b9c029e484dc2cc131ac9",
+        "content": "sha256:69612c47f3e0211e7832e32cb7ff4152714b4a5e39bfa286493861e127179099",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-0P0X49",
+      "invariant": "INV-4XD2ZF",
+      "origin": {
+        "handoffEntry": "L8-M2-F01-current-Curator-card-format",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The canonical source-file layout expressly directs Curators to the governing card rules and places its Finding/Anchor/Source input table in the final Evidence section, rather than supplying verification metadata or a card-local change-history section.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The layout's sections are Governing Overview, Purpose, Code Commentary, Relationships and Evidence.",

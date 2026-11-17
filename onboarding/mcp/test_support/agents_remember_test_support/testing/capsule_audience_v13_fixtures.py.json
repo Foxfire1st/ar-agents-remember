@@ -1,16 +1,36 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "80d5ee992b1ce658b56a69e67ae7a4a816088ab1",
+        "content": "sha256:97204b221118277910323f5cb6769899dedf39aa1d5a6f1b93fb6dcf7527aa1c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JWRP2Q",
+      "invariant": "INV-NDGJ3M",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 6",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Independent audience, link and pointer checks protect current delivery while the kept historical constants remain unchanged.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Current operation bytes are pinned.",
+      "note": "Historical pre-short-rule operation and stage hashes remain recorded.",
       "targets": [
         {
           "anchor": {
-            "blob": "4cd45b2a1b62096fe252fde5917e545da957cbe4",
-            "content": "sha256:8590bc6ff2fde614d1135a483dfa5d041e2aab662464c0051008a24fb6e2af1d",
+            "blob": "80d5ee992b1ce658b56a69e67ae7a4a816088ab1",
+            "content": "sha256:18a933536ac0e04c5f1e9426803401a8009ef0b9c143a8e4ca40e81da0211196",
             "locator": {
-              "kind": "file"
+              "end": 52,
+              "kind": "line_range",
+              "start": 7
             }
           },
           "kind": "code"
@@ -22,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cd45b2a1b62096fe252fde5917e545da957cbe4",
+            "blob": "80d5ee992b1ce658b56a69e67ae7a4a816088ab1",
             "content": "sha256:a81ee146d660eac4d56a8e0d8822cbf9746e76c315c8e62b3825f43983f6edc5",
             "locator": {
               "kind": "symbol",
@@ -38,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cd45b2a1b62096fe252fde5917e545da957cbe4",
+            "blob": "80d5ee992b1ce658b56a69e67ae7a4a816088ab1",
             "content": "sha256:7b1ff962852f3a48ee8199f15783e3dd0600b2db45783899b6929d8f06bb3187",
             "locator": {
               "kind": "symbol",
@@ -54,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cd45b2a1b62096fe252fde5917e545da957cbe4",
+            "blob": "80d5ee992b1ce658b56a69e67ae7a4a816088ab1",
             "content": "sha256:e7315cc84a0ff6c6864cb65c0e331738097914670103cae4ce8fc6cdfaf623de",
             "locator": {
               "kind": "symbol",

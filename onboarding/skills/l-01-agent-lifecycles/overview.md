@@ -30,7 +30,7 @@ Handoffs carry actual code/memory candidates, report and verdict paths, unresolv
 
 ## Construction And Ownership
 
-The canonical tree is `skills/`. `scripts/sync-skills.py` targets the MCP package-data tree only: that packaged copy is what the tool server serves to a harness as MCP resources, so there is no harness starter tree and no coordination-root skill tree to keep current. The generated copy is a propagation target, not an independent doctrine owner, and the generator's declared target does not establish that this candidate was synchronized or installed.
+The canonical tree is `skills/`. `mcp/.venv/bin/python scripts/renew-instructions.py` renews current instruction facts and declared package copies; `--check` reports stale values without writing. Its copy plan uses the targets owned by `scripts/sync-skills.py` and declared in `generated-copies.json`: the MCP package-data tree only, served to a harness as MCP resources, with no harness starter tree or coordination-root skill tree to maintain. The generated copy is a propagation target, not an independent doctrine owner, and the generator's declared target does not establish that this candidate was synchronized or installed.
 
 The pure capsule compiler consumes admitted bindings, source bytes and optional verified task projection, resolves instructions and narrows requested capabilities. Its semantic digest covers composed bytes and admitted facts, not timestamps or unselected sources. Source admission and launch preparation remain separate boundaries. Native role selection has no nearest-role or fallback-operation rule. The compiler vocabulary and older ambient-launcher composition must be distinguished from the eight-role native launcher.
 
@@ -54,7 +54,9 @@ The handoff list is data. Its nine producer fields are `id`, `statement`, `kind`
 
 A target names the place that carries the obligation, not merely where the producer looked: path, explicit locator, optional governing route, authored rationale and optional role. Locators explicitly select file, symbol or one-based inclusive range. Each target's rationale explains that construct's responsibility. Entry-level realization rationale/role are explicit defaults, with target values taking precedence; an omitted role is ultimately `unclassified`. The writer does not generate rationale. Non-text values, unsupported roles, missing rationale, rationale over 20,000 characters and the placeholder route `absent` are named refusals. Current file-writer input parsing checks the list on every run, including reruns; the older database operation's exact-committed-retry exception is not the current file-writer rule. `incidental` is accepted template vocabulary and stored as `support`.
 
-The admitted leaf command is `agents-remember knowledge-ingest --contract <leaf contract> --list <list> --authorization-ref <ref> --commit --json`; the mounted `knowledge_write` runs the same writer with the same arguments, so a curator whose raise the command cannot publish sends the same hand-off through it. Knowledge is text under the leaf memory root: records under `knowledge/`, realizations/proofs in onboarding sidecars and authored history. There is no dataset to publish and no `--baseline`, `--publish` or `--publish-to` option on this CLI. `--commit` writes files; it does not commit Git or grant acceptance. Planning is the default and writes nothing. Read the report's `written`, `planned` or `refused` state, IDs, paths and problems rather than treating exit zero as publication evidence. Legacy memory is refused by this route with `legacy-format`; conversion or crossing is a separately owned operation.
+The admitted leaf command is `agents-remember knowledge-ingest --contract <leaf contract> --list <list> --authorization-ref <ref> --commit --json`; the mounted `knowledge_write` runs the same writer with the same arguments. Knowledge is text under the leaf memory root: records under `knowledge/`, realizations/proofs in onboarding sidecars and authored history. There is no dataset to publish and no `--baseline`, `--publish` or `--publish-to` option on this CLI. `--commit` writes files; it does not commit Git or grant acceptance. Planning is the default and writes nothing. Read the report's `written`, `planned` or `refused` state, IDs, paths and problems rather than treating exit zero as publication evidence. Legacy memory is refused by this route with `legacy-format`; conversion or crossing is a separately owned operation.
+
+If the CLI cannot publish a `raise` through trusted MCP authority settings, it refuses the whole batch, writes nothing and publishes no question. The Curator sends the same hand-off through mounted `knowledge_write`, supplying absolute `contractPath` and `handoffPath` plus `handoffName` and `authorizationRef`, then previews and uses `commit: true`.
 
 On development installs the serving build is the producer ruler. A leaf changing the writer or checker does not become its own production memory producer; fixture/scratch evidence does not authorize installation, disabled guards or substitution for a refused producer. If the capsule admits no writer command, required records remain explicitly unwritten rather than using another installation or an internal writer.
 
@@ -92,13 +94,13 @@ Canonical role/operation/template instructions now share the explicit wake-text 
 
 On converted memory, a family records stable invariant IDs in `members`; the Curator reads each existing member and authors its retention/coverage basis, then reads back the stored family, full member/revision account and routes. No unchanged invariant is revised merely to populate a successor. The earlier exact membership-row selector and published-roster readback belong to the legacy dataset interface, not current file-family selectors. Retain that history separately from the converted writer and role boundaries.
 
-target by name before minting. The committed-entry retry exemption describes the retained legacy per-entry path only; converted ingestion validates the whole submitted list again before writes, including retries, and malformed converted target values refuse that whole handoff without writing. The
+The committed-entry retry exemption describes the retained legacy per-entry path only; converted ingestion validates the whole submitted list again before writes, including retries, and malformed converted target values refuse that whole handoff without writing.
 
 ## Invariants And Boundaries
 
 Normal curation is complete at the leaf's contract scope, not whole-layer scope. Read existing intent before replacing it; separate preserved, extended, deliberately superseded and contradictory meaning, with its ruled authority. Tests establish selected behavior, not ownership, negative knowledge or intent coherence. Historical oddities require causal applicability and reconsideration conditions before promotion. New incidents, opportunities and hypotheses are evidence-backed `capture-candidate` material until their owner adopts them.
 
-Place changes in their actual file/route/entity home. Overviews begin with title and governing overview, then a purpose section headed `## What This Repo Is`, `## What This Area Is` or `## Purpose`, construction, invariants and boundaries, and all citation lines together at the end; they are not leaf/date diaries. WIP registers refusing purpose-first, leaf/date-section and trailing-citation rules, skipping them for standalone conversion that preserves legacy prose. Operational Notes is a last resort. On converted cards, the citation workflow resolves reference anchors. Check all affected cards in one call and repair them in one call, with a dry run first and onboarding-relative `documents`; do not run one call per card. Knowledge entries and history use the admitted writer, never handwritten sidecar/record JSON. Curator writes only admitted memory plus completed matching own-curation task-step bookkeeping; never code, raw Git, task status, contracts, transaction state or landing decisions.
+Place changes in their actual file/route/entity home. Overviews begin with title and governing overview, then a purpose section headed `## What This Repo Is`, `## What This Area Is` or `## Purpose`, construction, invariants and boundaries, and all citation lines together at the end; they are not leaf/date diaries. WIP registers refusing purpose-first, leaf/date-section and trailing-citation rules, skipping them for standalone conversion that preserves legacy prose. Operational Notes is a last resort. On converted cards, the citation workflow resolves reference anchors. Check all affected cards in one call and repair them in one call, with a dry run first and onboarding-relative `documents`; do not run one call per card. Knowledge entries and history use the admitted writer; only a covered correct-input write refusal admits its declared same-tool/input-class manual recovery. Curator writes only admitted memory plus completed matching own-curation task-step bookkeeping; never code, raw Git, task status, contracts, transaction state or landing decisions.
 
 Contract-scoped MCP calls must select the leaf memory root and verify returned `onboardingRoot`; unscoped diagnostics can describe the official tree; unscoped index apply is admitted only through the explicit pre-baseline exception, otherwise use dry-run or the leaf writer scope. Missing scope or refused capability is a blocker, not authority to use another server, writer, transport or workspace. Denied or unanswered harness permission cannot be bypassed through another command, tool, helper or later turn.
 
@@ -146,22 +148,27 @@ Reviewer receives no freeze and opens no round for a clean sync with passing foc
 
 Before escalating, Manager reads its own rulings and the Architect rulings for this master. Manager settles a same-kind occasion under the earlier ruling and names that ruling in its record. Only an uncovered question goes up through the existing route. Beyond-limit rounds, out-of-requirement scope and developer decisions keep their existing escalation owners; this is not a new scope or approval grant.
 
-`capsule-budgets-current.json` records the current per-role capsule ceilings, the step-detail limit and the digest budget. Canonical sources remain the owners; the packaged copy adds no permission.
+`capsule-budgets-current.json` keeps authored per-role capsule ceilings, the step-detail ceiling and the digest ceiling separate from its generated `derived` measurements. `mcp/.venv/bin/python scripts/renew-instructions.py` renews those measurements, passage bindings, pointer wording, manifest audiences and steps, and declared package copies. Renewal checks capsule, detail and digest sizes against their ceilings; source and template sizes are measurements, not individual-item ceilings. Canonical sources remain the owners; the packaged copy adds no permission.
+
+## Retained Evidence Context
 
 ## Evidence
 
+### Repo-Internal References
+
 - Repository foundation is regular work in the real Architect task with its actual enclosure; onboarding is optional input and no incidental code delta is required. [21]
-- The writer section names one writer route, `knowledge-ingest` or the mounted `knowledge_write` with the task's leaf enclosure contract, for leaf work and for a repository foundation inside the Architect's regular task. [22]
+
 - The foundation entry receives the repository identifier, resolved context, scope, sources and current knowledge state; onboarding is optional, no incidental code delta is required, and a missing task is reported. [26]
+
 - Bootstrap reports the foundation state and names starting the Architect as the next step; it can finish with `not-recorded` and claims no foundation. [29]
+
 - The bootstrap operation writes user settings in step 4, initializes the memory root in step 5, reads what the baseline will carry in step 6, adopts the baseline in step 7, and reports the knowledge foundation's state in step 8. [31]
+
 - The procedure these carriers delegate to, and its own statement that there is no taskless entry to it: a curator's authoring seat is opened on a task document, and reading the knowledge state before such a task exists stays with the bootstrap seat. [34]
 
 - Authored migration prose uses the shared writing profile, and proposed rewrites receive independent meaning review before the normal writer publishes. [91]
 
-
 - Normal knowledge authoring uses the mounted knowledge_write or the admitted serving-build command-line writer; only the tool and input class of a covered correct write admit open manual recovery, and the derived index is never edited. [24]
-
 
 - The mounted knowledge_write and the admitted serving-build command-line writer with the task contract are the permitted writer routes. [27]
 
@@ -176,10 +183,10 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 - The Curator report carries writer-report state, written record and entry identifiers and paths, history rows, refusal reasons and explicit family coverage. [39]
 
 - Shared role-capsule routing doctrine is canonical here, with `composition-manifest.json` as the routing metadata authority. [42]
+
 - Current supplied role/operation, Projects scope, bound tools and execution/semantic separation. [52]
+
 - This source owns the route’s Investigator selection or execution boundary. [57]
-
-
 
 - The Curator reconciles one leaf's intent and implementation, writes and checks its affected memory, and hands over the structured coherence record. [45]
 
@@ -187,14 +194,11 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 
 - The Worker implements one selected leaf's approved primary requirement under its handover. [47]
 
-- The manifest composes the selected role followed by its operation and keeps shared core blocks out of that instruction stream; the shared digest accompanies the capsule in the first message. [53]
-
 - Bound Paseo intake and capabilities, including the writer-ownership boundary. [54]
 
 - Normal full curation checks run until the raw status is ready for closeout, with coherence completed before closeout. [55]
 
 - A missing tool or unadmitted capability is reported with what remains unwritten; a correct-input refusal of a covered write follows its recovery ladder. [56]
-
 
 - The review budget is settings-owned: `orchestration.loops.defaults.maxRounds` is read when a round begins, and the `task_doc` review state carries the task's limit and approved extra rounds. [58]
 
@@ -205,8 +209,6 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 - Verification of repaired findings stays on the items raised before; settings govern ordinary rounds and Manager-recorded Architect or developer approval is required beyond them. [73]
 
 - Native start, finalize and abandon publish task stage and its parent mirror; Manager avoids a redundant status write while retaining explicit corrections and organizational-master completion. [78]
-
-- Named step-detail references declare the step at which their role reads them, as the Curator's knowledge-ingest detail shows. [80]
 
 - The Curator reads the shared writing profile before drafting statements, guarantees or history reasons and compares meanings independently before publication. [81]
 
@@ -276,14 +278,11 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 
 - The Curator report carries foundation facts, examined/unexamined scope, per-record outcomes, written/no-write state and remaining/partial work. [28]
 
-
 - The bootstrap role's prohibition: the seat authors no knowledge records, runs no knowledge writer and does not organise their production. [30]
-
 
 - The Bootstrap failure-state detail keeps not-recorded, recorded identity, unusable and refused admission distinct; these are reported rather than authored around. [32]
 
 - The bootstrap operation's completion facts carry the knowledge foundation's recorded identity, or the named state showing it is not recorded. [33]
-
 
 - The knowledge read route binds the assigned memory tree, its paired code checkout and the exact code tree, and names record files that the reader opens with its own tools. [40]
 
@@ -295,18 +294,20 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 
 - The history-row sections: items, the rationale cover, the governing row of a changed invariant, and a family's one governing row. [51]
 
-
 - The decision-lifting duty: turn each developer ruling and requirement-packet choice that still constrains code into a decision record; task-only choices remain in the task. [5]
 
 - Current router explicitly supports eight roles including Bootstrap, selected role plus operation and no injected shared core. [59]
 
 - Role compiler scope distinguishes ambient launcher core from dispatched role composition. [60]
+
 - Launcher wire vocabulary retains system-specialist as an alias of Investigator. Anchor: `LauncherRole`, `RoleSelection.canonical_role_id` [61]
+
 - Canonical skills and the single package-serving target come from generated-copies.json through the shared parser; skill_targets projects that declaration rather than a separate TARGETS tuple. This is source authority, not a sync verdict. [62]
 
 - Report-only admission does not perform or complete the normal authoring pass. [64]
 
 - CLI exposes contract/list/authorization, file-write commit, JSON and crossing arguments, with no settings option. [66]
+
 - File writer parses the handoff for every operation and target parsing invokes rationale refusal. Anchor: `write_knowledge`, `_targets` [67]
 
 - Families use records and external documents use card references; the `family` and `external_sources` entry keys are not read. [68]
@@ -329,7 +330,11 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 
 - The shared writing profile requires an independent non-author meaning comparison with conforming, violating and boundary cases before a rewrite is classified or published. [90]
 
-
 - Raw quality status is preserved; stale coherence rewrites combined status, current coherence sets readiness without rewriting it. [70]
 
+- Named step-detail references declare the step at which their role reads them, as the Curator's knowledge-ingest detail shows. [80]
+
 - The manifest declares the every-role digest separately, delivered once beside the capsule in the first message and not composed into it. [96]
+
+- The writer section names knowledge-ingest or mounted knowledge_write under the task contract; when trusted CLI authority settings cannot publish a raise, the same hand-off goes through mounted knowledge_write with the declared arguments, preview and file-write word. [22]
+- The manifest composes the selected role followed by its operation and keeps shared core blocks out of that instruction stream; the shared digest accompanies the capsule in the first message. Anchor: `composition_order` [53]

@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+        "content": "sha256:5f43dc0273d23d445f344bdc5c04f469e2b5faf998391d1620bd28c59b7ecefe",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WZZ5BF",
+      "invariant": "INV-EHJV8E",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 1",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "This carrier is byte-for-byte generated from its canonical skills source after the same renewal plan computes current facts.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

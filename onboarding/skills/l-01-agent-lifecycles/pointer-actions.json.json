@@ -1,0 +1,40 @@
+{
+  "path": "skills/l-01-agent-lifecycles/pointer-actions.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d2947b7bf719da922245ced8a720e61ad93bf8f6",
+        "content": "sha256:d771bd94479522dccdc3507587c0e829e37f9b9c211bcd04c2b20c8f1b6beea1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-F360MB",
+      "invariant": "INV-Q432XE",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 3",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The stable action identities, allowed sources, distinct-action reasons and alias memberships remain authored exceptions.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The policy stores authored action admissions and exception groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2947b7bf719da922245ced8a720e61ad93bf8f6",
+            "content": "sha256:d771bd94479522dccdc3507587c0e829e37f9b9c211bcd04c2b20c8f1b6beea1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

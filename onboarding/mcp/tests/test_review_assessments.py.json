@@ -8,10 +8,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
-              "end": 809,
+              "end": 812,
               "kind": "line_range",
               "start": 1
             },
@@ -192,6 +192,17 @@
             "path": "mcp/src/agents_remember/memory_quality/knowledge_review.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The archived KS-R15@v1 packet preserves the creating leaf’s distinct-type requirement, former external-memory scope rail and report-only checklist boundary (§3.2, §6.9 and §8.2). This document supports the historical omission rationale, not a current implementation claim. [6]",
+      "targets": [
+        {
+          "document": {
+            "document": "file:///home/firefox/projects/ar-coordination/tasks/agents-remember/0_archive/260915_knowledge-substrate/requirements/KS-R15-v1-review-assessment-persistence-and-binding.md"
+          },
+          "kind": "external"
         }
       ]
     }

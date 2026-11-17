@@ -26,7 +26,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
 
-- The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
+
 - The route-local overview summarizes how this module fits into the benchmark runner split. 
 
 ### Cross-Repo References
@@ -37,5 +37,9 @@ No configured sibling repository is required for this module.
 
 The module holds no skill-exposure constants and no coordinator instruction-file targets: nothing mirrors a skill tree into a benchmark workspace, and the coordinator startup files a benchmark workspace must not keep are named by `install.experiment.RETIRED_STARTUP_TARGETS`, which `filesystem.py` imports for `sync_runtime_assets`. The workspace `AGENTS.md` templates (`WORKSPACE_AGENTS_TEMPLATE`, `SOURCE_ONLY_AGENTS_TEMPLATE`) remain here.
 
+### Repo-Internal References (continued)
+
 - Workspace instruction templates remain declared constants [4]
 - The retired coordinator startup files are declared by the install experiment module [5]
+
+- The public benchmark facade re-exports this module's public constants. [1]

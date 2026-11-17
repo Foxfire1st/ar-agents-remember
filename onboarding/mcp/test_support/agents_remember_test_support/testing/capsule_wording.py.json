@@ -1,14 +1,32 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/testing/capsule_wording.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ff8dc9229416c4132566abb6f7a2d203a1ae0022",
+        "content": "sha256:8d3d7e59ac8402e13ba8a2b6238935d15441f7289d1ba4f44484f0ed088d640a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-NK71H2",
+      "invariant": "INV-DHKR4G",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 2",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The assertion preserves its comparison and names the canonical renewal command when its packaged instruction copy is stale.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The helper checks affirmative clauses on delivered role/stage surfaces, compiles the owning seat's instructions, obtains moved facets through delivered_step and owning sections, and checks the exact delivered Git-comparison sentence; this source inspection executes none of those checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "38252affdb2287f40598285c1f05ac4d5184df84",
-            "content": "sha256:61cc1064d292c269bc348d349d1e93afc539203cfd05dc567adf348bccda1b02",
+            "blob": "ff8dc9229416c4132566abb6f7a2d203a1ae0022",
+            "content": "sha256:8d3d7e59ac8402e13ba8a2b6238935d15441f7289d1ba4f44484f0ed088d640a",
             "locator": {
               "kind": "file"
             }
@@ -22,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38252affdb2287f40598285c1f05ac4d5184df84",
+            "blob": "ff8dc9229416c4132566abb6f7a2d203a1ae0022",
             "content": "sha256:72e15b5cd6567c0cda5a671c8953f0aab2e6c919b743a617b04da28d09ba7007",
             "locator": {
               "kind": "symbol",
@@ -34,15 +52,16 @@
       ]
     },
     "3": {
-      "note": "The identity facet reads the delivered memory-handover detail; the other memory facets read the shipped review Boundaries section.",
+      "note": "The identity facet reads the delivered memory-handover detail; the other memory facets read the shipped review Boundaries section. Before that section is used, _memory_review_surface requires shipped and checkout review-operation bytes to agree and names `Run mcp/.venv/bin/python scripts/renew-instructions.py` on mismatch.",
       "targets": [
         {
           "anchor": {
-            "blob": "38252affdb2287f40598285c1f05ac4d5184df84",
-            "content": "sha256:2d688b0e5a4054133f78dd4d9341c1480546123086eead13847613c375d3268c",
+            "blob": "ff8dc9229416c4132566abb6f7a2d203a1ae0022",
+            "content": "sha256:3366cea65b16090086abbcf20a8e7a8e7b0172dc4e28a9115319b0cd2de39b14",
             "locator": {
-              "kind": "symbol",
-              "name": "_curator_memory_surface"
+              "end": 247,
+              "kind": "line_range",
+              "start": 237
             }
           },
           "kind": "code"

@@ -6,36 +6,45 @@
 
 ## Purpose
 
-Current compiler-shape and served-procedure tests for first knowledge foundation. They do not open a taskless Curator seat or execute the printed bootstrap workflow.
+Retained compiler helpers for knowledge foundation, with tests of synthetic printed-command parsing and Curator task-binding identity. These tests open no Curator seat and execute no bootstrap workflow.
 
 ## Code Commentary
 
-The bootstrap free-agent capsule points, at its state-reporting action, to the emitted `reference/bootstrap/foundation-state.md` detail, which names the procedure, the knowledge states, the setup-only boundary and the start-the-Architect next step, and its compiled instructions carry Bootstrap's no-authoring rule. A Curator capsule compiles with a real task document and separately with named absence for an instructed pre-task foundation-author session; compilation is not seat admission. Served skill bytes are compared with canonical procedure text, printed invocations from both launchers (the `agents-remember` program and the serving-bound Python launcher, joined across shell continuations) are placeholder-filled and parsed by the real parser without running bootstrap, with the planning, commit and validation invocations all read; the Curator shape names its procedure, and ordinary served setup/onboarding instructions reach it. These are source-level assertions, not fresh first-hour/bootstrap execution.
+The parser-control test supplies a synthetic `knowledge-ingest` invocation through each supported launcher, joins shell continuations, fills placeholders and checks the parsed arguments. An unknown option and an unknown subcommand must fail with parser exit 2. The other test compiles a Curator capsule on the fixture task document and with named absence `free-agent:curator`, requiring distinct task references. Neither test starts a seat, parses the live foundation procedure or measures Bootstrap delivery.
 
-`delivered_foundation` binds source, role, delivery step, action pointer, delivered bytes and heading to the compiled manifest and the current capsule-budget view; the emitted copy equals the source except that each relative link is rewritten to the same shipped file and anchor. Its controls mutate the budget, heading, required sentence and declared pointer, and move the pointer to an unrelated action, independently. A synthetic Curator capsule proves this delivered procedure, while the procedure still requires real foundation task admission. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
+`delivered_foundation` checks the declared source, Curator role, delivery step, action pointer, delivered bytes and heading against the effective manifest and current capsule-budget view. Relative links must preserve their shipped target file and anchor. `foundation_delivery_controls` mutates the budget, heading, required sentence and declared pointer, then separately relocates the pointer. The sibling `test_curator_deduplication_keeps_distinct_authority_and_outcome_clauses` invokes both helpers with `FOUNDATION_AUTHORITY_CLAUSES`; this module does not define a delivered-procedure test. These are source assertions, not a fresh run or admission verdict.
 
 ## Evidence boundary
 This account is current source interpretation only. It creates no executed test/host/bootstrap result and supplies no new CODE or MEMORY grade.
 
 ## Source-bound reference inputs
 
-- [5]
-- [6]
-
-- The bootstrap free-agent capsule compiles with no task document, and its emitted foundation-state detail reaches the foundation procedure. [8]
-- Anchor: Served catalog procedure bytes are compared. [10]
-- Every printed invocation is placeholder-filled and run through the shipped parser for subcommand and option arity; bootstrap is not executed. [11]
-- The compiled-Curator-shape test checks the actual delivered foundation pointer and procedure text. Its docstring explicitly limits this to compiler shape and admits no taskless Curator; foundation authoring requires real task admission. These are source assertions, not a workflow run. [12]
-- Anchor: Current setup/onboarding prose reaches the same procedure. [13]
-- The Bootstrap capsule's state-reporting action points to the emitted foundation-state detail, which reaches the procedure and the start-the-Architect next step. [17]
-
-- [9]
-
-
 -
 - [14]
 
 
-- `delivered_foundation` binds source, role, delivery step, action pointer, delivered bytes and heading to the compiled manifest and the current capsule-budget view; the emitted copy equals the source except that each relative link is rewritten to the same shipped file and anchor. Its controls mutate the budget, heading, required sentence and declared pointer, and move the pointer to an unrelated action, independently. A synthetic Curator capsule proves this delivered procedure, while the procedure still requires real foundation task admission. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [15]
+
 
 - Printed invocations from both launchers keep their arguments and parser failures. [16]
+
+- Anchor: Served body retrieval for byte comparison. [5]
+
+- Anchor: Compiler-only role instruction reader, not a seat opener. [6]
+
+
+
+- Anchor: Separate document-bound and instructed-session Curator compilation identities. [9]
+
+- `delivered_foundation` checks the declared source, Curator role, delivery step, action pointer, delivered bytes and heading against the effective manifest and current capsule-budget view. Relative links must preserve their shipped target file and anchor. `foundation_delivery_controls` mutates the budget, heading, required sentence and declared pointer, then separately relocates the pointer. The sibling `test_curator_deduplication_keeps_distinct_authority_and_outcome_clauses` invokes both helpers with `FOUNDATION_AUTHORITY_CLAUSES`; this module does not define a delivered-procedure test. These are source assertions, not a fresh run or admission verdict. [15]
+
+- `served_body` looks up one served skill body and requires one readable catalog entry; neither current test calls this helper. [10]
+
+- `printed_invocations` joins continuations, recognizes both launchers and fills placeholders. Its current test parses synthetic commands; it does not enumerate the live procedure. [11]
+
+- The retained Curator test checks role and distinct task-binding identities for document-bound and named-absence compilation; it does not inspect foundation delivery. [12]
+
+- The module retains served-skill retrieval helpers; the current tests do not inspect setup/onboarding prose. [13]
+
+- `free_agent_capsule(role)` compiles a named-absence capsule; the current tests call it for Curator and do not inspect Bootstrap state-reporting delivery. [17]
+
+- `free_agent_capsule(role)` constructs a minimal temporary configuration and requires a compiled delivery; the retained test uses the Curator role. [8]

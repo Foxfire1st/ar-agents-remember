@@ -51,16 +51,16 @@
       ]
     },
     "4": {
-      "note": "The current checker binds this file by its SHA-256.\n\nAnchor: `historicalSnapshotSha256`",
+      "note": "The current checker binds this file by its SHA-256. Anchor: `historicalSnapshotSha256`",
       "targets": [
         {
           "anchor": {
-            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
-            "content": "sha256:99bfafecbc8eb95945d5f6f3196f259e264f407c1e6482017ec720c1bab56c6d",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:51e8b5d794dbae04cdedce18ec3675594750800ec8b68a6f3b13e4dbeb9aecb7",
             "locator": {
-              "end": 129,
+              "end": 159,
               "kind": "line_range",
-              "start": 120
+              "start": 145
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },

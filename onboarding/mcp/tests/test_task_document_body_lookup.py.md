@@ -30,14 +30,13 @@ its title:
 - a master-shaped document at `zz-schemaless/master-b/task.json` with its `schema` key deleted.
 
 The model gives a missing schema a default, so the schema-less decoy would validate and win the
-last-wins join. Only the schema filter in `_graph_master_docs` keeps it out (added in L42-A2 for
-review finding L42-R1-F2).
+last-wins join. Only the schema filter in `_graph_master_docs` keeps it out.
 
 **Cases** (source assertions; no tests were collected or executed for this reconciliation):
 
 - `test_every_document_kind_projects_the_same_body_as_the_corpus_wide_join` compares
   `read_task_document_body` with `_corpus_wide_body` for the master, leaf, standalone, both named
-  masters and the sprint. `_corpus_wide_body` reproduces the removed path: the full
+  masters and the sprint. `_corpus_wide_body` uses the full
   `_iter_task_document_payloads` enumeration through `_validated_task_documents` into `documents_by_ref`; no enclosure/lifecycle map is supplied. The case compares the
   serialized bodies, then checks that the sprint graph shows `Master A`, `Master B` and the
   `repo-a/missing/task.json` fallback, and that an absent path returns `None`.
@@ -65,13 +64,49 @@ review finding L42-R1-F2).
 
 - Keep the scaling case **count-based**. Replacing it with a timing threshold would make it flaky
   and would stop it from saying which file was touched.
-> Retained historical L42 evidence: the Worker mutation check caught 4 of 4 mutations; dropping the graph schema filter survived until the schema-less decoy made the byte-identity case fail with `AssertionError: sprint`. The original base comparison used an extracted tree because conftest put the worktree mcp/src first, and reported 3 failed/2 passed. These are predecessor task reports, not RF01 executions or collection counts. Keep each decoy and its mutation purpose; none of those checks was rerun in this reconciliation.
+
 - The existing card records unit-regression lane registration; that external lane file was not re-adjudicated in this bounded reconciliation. Original cases use temporary paths and monkeypatching; the RF01 ready-membership case also uses record_property. The module invokes real projection readers on disposable data, not a browser or installed HTTP application.
 
 ### Todos
 
-No implementation scope is opened here. The installed-build before/after measurement, including
-concurrent master+leaf reads and projector CPU, belongs to L50 (review finding L42-R1-F1).
+No implementation scope is opened here.
+
+## Retained Source-Epoch Context
+
+These attributed excerpts preserve earlier module history, rationale, deliberate omissions and evidence limits recorded in the memory base. Source coordinates, populations, outcomes and ownership describe their recorded epochs. They do not renew execution results or replace the current source account. This pass did not rerun the historical checks.
+
+### Schema-filter origin
+
+Summary based on the account in memory base `81cfe4a8`, 32–34:
+
+> The model gives a missing schema a default, so the schema-less decoy would validate and win the
+> last-wins join. Only the schema filter in `_graph_master_docs` keeps it out (added in L42-A2 for
+> review finding L42-R1-F2).
+
+### Retained corpus-wide oracle
+
+Summary based on the account in memory base `81cfe4a8`, 38–52:
+
+> The earlier account identified `_corpus_wide_body` as the oracle reproducing the retired corpus-wide join path; its full enumeration is retained as a comparison oracle.
+
+### L42 measured regression and comparison history
+
+Summary based on the account in memory base `81cfe4a8`, 66–69:
+
+> Retained historical L42 evidence: the Worker mutation check caught 4 of 4 mutations; dropping the graph schema filter survived until the schema-less decoy made the byte-identity case fail with `AssertionError: sprint`. The original base comparison used an extracted tree because conftest put the worktree mcp/src first, and reported 3 failed/2 passed. These are predecessor task reports, not RF01 executions or collection counts. Keep each decoy and its mutation purpose; none of those checks was rerun in this reconciliation.
+
+### Earlier measurement assignment
+
+Summary based on the account in memory base `81cfe4a8`, 73–74:
+
+> No implementation scope is opened here. The installed-build before/after measurement, including
+> concurrent master+leaf reads and projector CPU, belongs to L50 (review finding L42-R1-F1).
+
+### Prior citation-anchor retirement
+
+Summary based on the account in memory base `81cfe4a8`, 134–134:
+
+> - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py::_iter_task_json - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 ## Evidence
 
@@ -109,14 +144,6 @@ No external domain claim is required.
 
 - The bounded enumeration and the named-path probe under test.
 
-
-
-
-> Retained earlier citation wording: - The lane registration. Source caption: "mcp/tests/test_task_document_body_lookup.py"
-
-
-
-
 ### Cross-Repo References
 
 This card covers test behavior only. There is no separate cross-repository protocol or live
@@ -124,15 +151,9 @@ installation involved.
 
 No meaningful cross-repo references found.
 
-
-
-
-
+### Repo-Internal References (continued)
 
 - The bounded enumeration and the named-path probe under test. [9]
-
-- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py::_iter_task_json - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
 
 
 

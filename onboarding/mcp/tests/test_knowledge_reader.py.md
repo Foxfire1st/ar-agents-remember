@@ -15,8 +15,9 @@ list and the census, and the code reader's bounds.
 ### Logic
 
 - The suite drives the reader through its registered route against temporary repositories; the cases
-  keep `present`/`absent`/`unavailable` apart, prove the 2 MiB code bound is never read, the bounded
-  directory summary, states and route chains.
+  keep `present`/`absent`/`unavailable` apart and check the bounded directory summary, states and route
+  chains. The code-view case lowers the configured byte limit to 16 and checks that an oversized blob
+  is not read; the production default limit is 2 MiB.
 - MIK-R79 adds the `hasKnowledge` field to the explorer listing case's expected composed row, so the
   test now pins the new presence mark alongside the existing name, kind, `inCode`, `onboarding` and
   entry-count fields.
@@ -64,7 +65,7 @@ No additional work is asserted by this card.
   - selections: the published tree reads uncommitted state, writes nothing and offers a pin
     only when clean (N2, N1 `checkout-head`, the tree key in the cache key); a live leaf and its code note;
     a partial index and a missing code tree named where they apply;
-  - the route: every view served over HTTP, 503 unwired, nothing written in either repository; bad requests
+  - the route: the seven enumerated path, subtree, record, records, census, tree and code views are served over HTTP, 503 unwired, nothing written in either repository; bad requests
     400 (malformed locators F3, `../etc`, an unknown view, NUL and control characters on every path view F15),
     a directory as code `absent` (F18), a binary blob `binary`, and a blob above the bound `too-large` without
     its bytes being read (F14, F17).
@@ -123,9 +124,10 @@ No configured live documentation source was available for this pass.
 No cross-repo boundary is crossed by this file.
 
 
-- Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection names excluded uncommitted code; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent. [38]
 
 
-
+### Repo-Internal References (continued)
 
 - The lane row. Anchor: `test_knowledge_reader` Anchor: `test_knowledge_reader` [40]
+
+- Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection reads clean code at HEAD and captures dirty code for the read; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent. [38]

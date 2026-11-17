@@ -41,10 +41,10 @@ authority for current onboarding.
 
 ## Conventions
 
-Canonical skills/l-01-agent-lifecycles/roles/manager.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy, the sole generated skill target, which the tool server serves as MCP resources; no generated file defines a separate obligation.
+Canonical skills/l-01-agent-lifecycles/roles/manager.md owns the instruction. `mcp/.venv/bin/python scripts/renew-instructions.py` renews facts and regenerates this exact packaged copy through the `scripts/sync-skills.py` declared projection owner, the sole generated skill target, which the tool server serves as MCP resources; no generated file defines a separate obligation.
 
 - Change manager doctrine only in canonical `skills/`.
-- Propagate and verify with `scripts/sync-skills.py`.
+- Renew instruction facts and propagate the package copy with `mcp/.venv/bin/python scripts/renew-instructions.py`.
 - Keep package-path provenance distinct while keeping content byte-identical.
 - Do not append package-only task deltas or compatibility instructions.
 
@@ -89,10 +89,6 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 
 - The canonical source owns this doctrine. [5]
 
-
-- MCP package data is copied from canonical skills and checked for drift. [6]
-
-
 ## Current Investigator contract impact
 
 This packaged copy derives from the canonical roles/manager.md. The Manager inspects its master’s leaf diffs and retains gate and transaction ownership; the leaf authors and Reviewer run finding-specific repair directly. A check or investigation belonging to no leaf may be assigned to Investigator within the Manager’s admitted master, naming its sprint when one commands it; leaf checks remain with the actual Worker or Reviewer. An inability to start a needed role is reported to the known parent or instructed recipient, or named as a blocker in its own chat when it has no parent. Investigator delegation does not require an Orchestrator above one master or transfer onboarding or code ownership. The canonical source owns the instruction and the sync script propagates it; this packaged file adds no independent instruction.
@@ -112,10 +108,6 @@ This packaged copy derives from the canonical roles/manager.md. The Manager insp
 
 - The Manager decides paired closeout and integration within its delegated authority and, for a round beyond the settings limit, requests approval through its reporting route and records the approval. [7]
 
-
-
-
-
 - The packaged Manager coordinates one selected master and does not own the portfolio; it reports through its launch parent's role and task references, with developer-needed questions routed to an Architect-instructed reporting recipient when that exception is recorded. [2]
 
 
@@ -129,3 +121,5 @@ This packaged copy derives from the canonical roles/manager.md. The Manager insp
 - The Manager hands over a whole stage with its exactness at agent starts, sync to the master's line, closeout, integration and task completion, and repairs its own mistaken records, wrong agent addresses, misread reports and faulty-input refusals through the same tool. [8]
 
 - The generated Manager role directs handovers, repair loops, review rounds, memory passes and relays through the shared leaf coordination procedures. [9]
+
+- MCP package data is copied from canonical skills and checked for drift. [6]

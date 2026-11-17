@@ -1,9 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "guarded_by_test"
+      "prevents_costly_mistake"
     ],
-    "justification": "The setup operation and installer must agree on initialization, attributed baseline and truthful state handover; the Architect/Curator continuation owns actual foundation authoring in its real task."
+    "justification": "The setup instructions and installer must agree on initialization, baseline adoption and Architect-owned foundation work; confusing those responsibilities can cause setup to claim knowledge it never authored."
   },
   "applicability": "First-hour Bootstrap/install setup of a new memory root and its handover to the Architect-owned foundation task; already-committed memory retains the stated ordering exception.",
   "conditions": [

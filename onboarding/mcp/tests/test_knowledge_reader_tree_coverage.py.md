@@ -17,8 +17,8 @@ path or code reads fail. Five added test declarations cover memory selection, bo
 - The coverage cases build a selected memory tree and code tree and call `read_tree_listing`, asserting the
   immediate children, the `hasKnowledge`/`hasOverview` marks, the directory `coverage` counts, and
   the negative cases: an empty or sidecar-only mirror directory is not knowledge, own-card versus
-  at-or-below knowledge is kept apart, a missing or unreadable scope settings file yields
-  `coverage unavailable`, and a code enumeration failure names the code state.
+  at-or-below knowledge is kept apart; missing scope settings, unreadable mirror enumeration and
+  unavailable code pairing each give a named unavailable coverage state.
 - The real composed-tree case counts presence and coverage from the selected settings.
 - Selection cases admit full or abbreviated commits and branches, including an old commit outside the forty-entry recent list; reject NUL-containing names before Git invocation; and name an unavailable recent-commit read.
 - Path summaries bound prose to 65,536 UTF-8 bytes and report its full size and truncation. Whole-prose reads return the complete text by code path at the selected tree, with named invalid, absent and unreadable outcomes.
@@ -54,21 +54,14 @@ No configured live documentation source was available for this pass.
 
 - The listing entry point under test. [2]
 
-
-
-
-
-
-
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
 
+### Repo-Internal References (continued)
+
 - Memory commits and branches remain selectable beyond the recent list; malformed names are rejected before Git and failed commit-list reads are unavailable. [4]
 - UTF-8 summaries are byte bounded while whole-prose reads retain full text and selected-tree identity, with named invalid, absent and unavailable outcomes. [5]
 - Timeline pages retain event identity and bound continuations; instrumentation asserts one build and one hash walk. Bounded memo checks cover byte pricing, eviction, mutation isolation and unretained over-budget reads. [6]
-
-
-
 
 - The suite's lane membership in the evidence catalog. [3]

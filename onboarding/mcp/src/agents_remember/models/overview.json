@@ -4,15 +4,16 @@
   "realizes": [],
   "references": {
     "10": {
-      "note": "**The vocabulary module's own statement of the five rules its shape enforces, and the movement with its four validators.**",
+      "note": "**The recorded relationship vocabulary and the movement shape’s consistency checks.**",
       "targets": [
         {
           "anchor": {
             "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
             "content": "sha256:7cf29daa7f50cdde84fe7b9ab893f7307ed6b67352cee43aa097ae9358a2cd95",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewRelationshipMovement"
+              "end": 339,
+              "kind": "line_range",
+              "start": 226
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py"
           },
@@ -21,15 +22,16 @@
       ]
     },
     "100": {
-      "note": "The typed operation, refusal-code and result contract — re-cited against the working tree, which the graph, candidate-change, snapshot, merge, authored-judgment and detection halves have each extended since.",
+      "note": "The retained operation and refusal-code Literal vocabulary, with the typed KnowledgeRefusal value. The graph, candidate-change, snapshot, merge, judgment and detection extensions are historical contributions, not a declaration of live canonical-database write operations.",
       "targets": [
         {
           "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeRefusalCode"
+              "end": 226,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -448,15 +450,16 @@
       ]
     },
     "113": {
-      "note": "The extended served surface, including the graph names.",
+      "note": "The retained facade re-exports exact family membership and authored role vocabulary from the historical graph contribution.",
       "targets": [
         {
           "anchor": {
             "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
             "content": "sha256:fcd79cb0a4d62dcc5b96dd84a3e4456abfb8e81681b143db618add7a9902a04f",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "end": 144,
+              "kind": "line_range",
+              "start": 86
             },
             "path": "mcp/src/agents_remember/models/knowledge/__init__.py"
           },
@@ -545,14 +548,14 @@
       ]
     },
     "124": {
-      "note": "The module-level digest the validator calls and the operation re-derives.\n\nAnchor: \"def context_digest\"",
+      "note": "The module-level context_digest seals every context field except itself and is called by KnowledgeContext's validator. The earlier card also attributed operation-side re-derivation to this digest; that is retained as a historical source account, not a current-operation claim. Anchor: `context_digest`",
       "targets": [
         {
           "anchor": {
             "blob": "9b2bf18774207aaeb442ff737297b3233369a1f3",
-            "content": "sha256:fe3678e4d13fa346d0cc6bd4ff3ea91182791e00f574b8f1f52fb7f17d7dea0c",
+            "content": "sha256:beebadd71b0845fc745504f9c0daf37166d9d0aedec0e38aa72e452765a8c154",
             "locator": {
-              "end": 118,
+              "end": 128,
               "kind": "line_range",
               "start": 118
             },
@@ -614,14 +617,14 @@
       ]
     },
     "132": {
-      "note": "The module-level digest the validator calls and the operation re-derives.\n\nAnchor: \"def context_digest\"",
+      "note": "The module-level context_digest seals every context field except itself and is called by KnowledgeContext's validator. The earlier card also attributed operation-side re-derivation to this digest; that is retained as a historical source account, not a current-operation claim. Anchor: `context_digest`",
       "targets": [
         {
           "anchor": {
             "blob": "9b2bf18774207aaeb442ff737297b3233369a1f3",
-            "content": "sha256:fe3678e4d13fa346d0cc6bd4ff3ea91182791e00f574b8f1f52fb7f17d7dea0c",
+            "content": "sha256:beebadd71b0845fc745504f9c0daf37166d9d0aedec0e38aa72e452765a8c154",
             "locator": {
-              "end": 118,
+              "end": 128,
               "kind": "line_range",
               "start": 118
             },
@@ -632,15 +635,16 @@
       ]
     },
     "138": {
-      "note": "The two candidate-boundary codes and the three operations that leaf added to the served vocabulary.",
+      "note": "Historical candidate-boundary contribution: the two refusal codes and three operation members added by that leaf remain in the retained Literal vocabulary; their declaration does not establish a live write API.",
       "targets": [
         {
           "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeRefusalCode"
+              "end": 226,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -649,15 +653,16 @@
       ]
     },
     "139": {
-      "note": "The served operation union the candidate-boundary leaf joined.",
+      "note": "The retained operation Literal includes the historical candidate-boundary contribution; it does not establish current candidate write operations.",
       "targets": [
         {
           "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeOperation"
+              "end": 147,
+              "kind": "line_range",
+              "start": 26
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -736,15 +741,16 @@
       ]
     },
     "153": {
-      "note": "**The operation and refusal vocabulary this leaf extended.**",
+      "note": "**Historical contribution account:** That leaf extended the operation and refusal Literal vocabulary; the declarations do not establish a live write API.",
       "targets": [
         {
           "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeOperation"
+              "end": 147,
+              "kind": "line_range",
+              "start": 26
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -755,8 +761,9 @@
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeRefusalCode"
+              "end": 226,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -765,15 +772,16 @@
       ]
     },
     "154": {
-      "note": "The facade that re-exports the whole snapshot surface as the served vocabulary.",
+      "note": "The historical snapshot contribution no longer forms a whole exported snapshot surface; the retained facade exports KnowledgeReadSnapshot with the recorded-scope read vocabulary.",
       "targets": [
         {
           "anchor": {
             "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
             "content": "sha256:fcd79cb0a4d62dcc5b96dd84a3e4456abfb8e81681b143db618add7a9902a04f",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "end": 144,
+              "kind": "line_range",
+              "start": 86
             },
             "path": "mcp/src/agents_remember/models/knowledge/__init__.py"
           },
@@ -811,15 +819,16 @@
       ]
     },
     "164": {
-      "note": "**The operation and refusal vocabulary this leaf extended.**",
+      "note": "**Historical contribution account:** That leaf extended the operation and refusal Literal vocabulary; the declarations do not establish a live write API.",
       "targets": [
         {
           "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeOperation"
+              "end": 147,
+              "kind": "line_range",
+              "start": 26
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -830,8 +839,9 @@
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeRefusalCode"
+              "end": 226,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -920,15 +930,16 @@
       ]
     },
     "171": {
-      "note": "The one code and the two operations this leaf added to the shared vocabulary.",
+      "note": "Historical contribution account: that leaf added one refusal code and two operation members to the retained vocabulary; those Literal declarations do not establish live operations.",
       "targets": [
         {
           "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeRefusalCode"
+              "end": 226,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -939,8 +950,9 @@
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeOperation"
+              "end": 147,
+              "kind": "line_range",
+              "start": 26
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -1043,15 +1055,16 @@
       ]
     },
     "177": {
-      "note": "The one operation and six codes this leaf added to the shared vocabulary.",
+      "note": "Historical recorded-scope-read contribution: that leaf added one operation and six refusal codes to the shared Literal vocabulary.",
       "targets": [
         {
           "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeOperation"
+              "end": 147,
+              "kind": "line_range",
+              "start": 26
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -1062,8 +1075,9 @@
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeRefusalCode"
+              "end": 226,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -1147,16 +1161,16 @@
       ]
     },
     "180": {
-      "note": "**The facade's ninth source, which this leaf did add to `__all__`.**\n\nAnchor: `KNOWLEDGE_READ_POLICY_VERSION`",
+      "note": "**Historical recorded-scope-read contribution:** The earlier card called this the facade's ninth source and recorded its addition to `__all__`. The current facade retains KNOWLEDGE_READ_POLICY_VERSION with the read models and cursor helpers. Anchor: `KNOWLEDGE_READ_POLICY_VERSION`",
       "targets": [
         {
           "anchor": {
             "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
-            "content": "sha256:4601079c215c2cc989f3be069658dfd34ae8312ee8f760c7859c0a3c2c7a17e2",
+            "content": "sha256:fcd79cb0a4d62dcc5b96dd84a3e4456abfb8e81681b143db618add7a9902a04f",
             "locator": {
-              "end": 49,
+              "end": 144,
               "kind": "line_range",
-              "start": 49
+              "start": 86
             },
             "path": "mcp/src/agents_remember/models/knowledge/__init__.py"
           },
@@ -1469,15 +1483,16 @@
       ]
     },
     "190": {
-      "note": "**The one operation this leaf added, and the unchanged code union.**",
+      "note": "**Historical comparison contribution:** That leaf added one operation and reused the existing refusal-code union; the names remain Literal vocabulary.",
       "targets": [
         {
           "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeOperation"
+              "end": 147,
+              "kind": "line_range",
+              "start": 26
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -1488,8 +1503,9 @@
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeRefusalCode"
+              "end": 226,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -1529,7 +1545,7 @@
       ]
     },
     "192": {
-      "note": "The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation, including the opposite-state and continuation refusals (`test_knowledge_diff_scope.py:529-674`).",
+      "note": "The nodes hold the page and result invariants: truncated comparison and unestablished limitation, including opposite-state and continuation refusals.",
       "targets": [
         {
           "anchor": {
@@ -1560,14 +1576,14 @@
       ]
     },
     "193": {
-      "note": "The two operations the route write layer added, so a route refusal names a route operation.\n\nAnchor: `author_route`; `set_governing_route`",
+      "note": "Historical route-writer contribution: author_route and set_governing_route remain operation Literal members; this declaration does not establish a live route-write API. Anchor: `KnowledgeOperation`",
       "targets": [
         {
           "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
-            "content": "sha256:1f3bf47d62ff5740c5b2e47e19f23bc9ff3d16f842833cd0df51bfc566e2f2d1",
+            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
             "locator": {
-              "end": 86,
+              "end": 147,
               "kind": "line_range",
               "start": 26
             },
@@ -1578,7 +1594,7 @@
       ]
     },
     "194": {
-      "note": "The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree.\n\nAnchor: `invalid_payload`",
+      "note": "Historical reuse of invalid_payload is retained in KnowledgeRefusalCode. The Literal declaration does not by itself establish which current writer emits it. Anchor: `KnowledgeRefusalCode`",
       "targets": [
         {
           "anchor": {
@@ -1622,14 +1638,14 @@
       ]
     },
     "195": {
-      "note": "The two operations the route write layer added, so a route refusal names a route operation.\n\nAnchor: `author_route`; `set_governing_route`",
+      "note": "Historical route-writer contribution: author_route and set_governing_route remain operation Literal members; this declaration does not establish a live route-write API. Anchor: `KnowledgeOperation`",
       "targets": [
         {
           "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
-            "content": "sha256:1f3bf47d62ff5740c5b2e47e19f23bc9ff3d16f842833cd0df51bfc566e2f2d1",
+            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
             "locator": {
-              "end": 86,
+              "end": 147,
               "kind": "line_range",
               "start": 26
             },
@@ -1640,7 +1656,7 @@
       ]
     },
     "196": {
-      "note": "The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree.\n\nAnchor: `invalid_payload`",
+      "note": "Historical reuse of invalid_payload is retained in KnowledgeRefusalCode. The Literal declaration does not by itself establish which current writer emits it. Anchor: `KnowledgeRefusalCode`",
       "targets": [
         {
           "anchor": {
@@ -1702,14 +1718,16 @@
       ]
     },
     "2": {
-      "note": "**The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.**\n\nAnchor: `ReviewRefusal` `KnowledgeReviewResult`",
+      "note": "**The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** Anchor: `ReviewRefusal` `KnowledgeReviewResult`",
       "targets": [
         {
           "anchor": {
             "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
-            "content": "sha256:4d0b65fa6dad1cd50ffccbef6a9438db99bd5d650c265f6820bac0cf5e6bf315",
+            "content": "sha256:3f6ad78447f26df5cb81727e95df3e43f23cf60810c0ca2d9693c4b59ead4926",
             "locator": {
-              "kind": "file"
+              "end": 652,
+              "kind": "line_range",
+              "start": 637
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -1717,28 +1735,30 @@
         },
         {
           "anchor": {
-            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
-            "content": "sha256:3f6ad78447f26df5cb81727e95df3e43f23cf60810c0ca2d9693c4b59ead4926",
+            "blob": "a8aca318ce4a99648858f4f2c0ad3fad21eb0bf8",
+            "content": "sha256:d7bb856b30683703482162fa47440e480ed5957164a1923ea79f1d9fd4623268",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReviewResult"
+              "end": 45,
+              "kind": "line_range",
+              "start": 33
             },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+            "path": "mcp/src/agents_remember/models/knowledge/review_refusal.py"
           },
           "kind": "code"
         }
       ]
     },
     "20": {
-      "note": "**The three validators that make a misreading unconstructible.**",
+      "note": "The three validators enforce state/pair presence, selected IDs in heads, and heads within retained revisions.",
       "targets": [
         {
           "anchor": {
             "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
             "content": "sha256:19118967de3e7fe5d4c72c8b0d5a13be323301438a72e462b44e3aec6ef397a1",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_the_state_to_match_the_pair"
+              "end": 88,
+              "kind": "line_range",
+              "start": 75
             },
             "path": "mcp/src/agents_remember/models/knowledge/revision_selection.py"
           },
@@ -1749,8 +1769,9 @@
             "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
             "content": "sha256:4dcc35e6984bb6fac6a3dbadf494f2555c2ea81df6295b28412890c16cde32ec",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_the_pair_to_come_from_the_heads"
+              "end": 98,
+              "kind": "line_range",
+              "start": 90
             },
             "path": "mcp/src/agents_remember/models/knowledge/revision_selection.py"
           },
@@ -1761,8 +1782,9 @@
             "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
             "content": "sha256:3eb31aa98cc6aede39fe891032f70197449965b6b7c8f4dab4145fca329f8d2b",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_the_heads_to_come_from_the_retained"
+              "end": 108,
+              "kind": "line_range",
+              "start": 100
             },
             "path": "mcp/src/agents_remember/models/knowledge/revision_selection.py"
           },
@@ -1771,15 +1793,16 @@
       ]
     },
     "205": {
-      "note": "**The six operations this leaf added to the shared vocabulary, and the unchanged code union.**",
+      "note": "**Historical authored-judgment contribution:** That leaf added six write-operation members and reused the existing refusal-code union; the names remain retained Literal vocabulary.",
       "targets": [
         {
           "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeOperation"
+              "end": 147,
+              "kind": "line_range",
+              "start": 26
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -1790,8 +1813,9 @@
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeRefusalCode"
+              "end": 226,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -1875,10 +1899,11 @@
         {
           "anchor": {
             "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
-            "content": "sha256:cbdcd572a23fc6e8182083d61d637275f0c46f2d864a4038af40681f7900f8cd",
+            "content": "sha256:d51e0e88017e8cea7a10b97a92b44a9f614d98d26be70a9c27ad8cb9c1034e79",
             "locator": {
-              "kind": "symbol",
-              "name": "revision_selection"
+              "end": 516,
+              "kind": "line_range",
+              "start": 463
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -1889,21 +1914,9 @@
             "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
             "content": "sha256:7595d5578633490dde3d9ef4ee22d542536d440bd20bce0c720bea95db8535dc",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_a_compared_subject_to_record_its_selection"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
-            "content": "sha256:fd19256a10632f31e569c8809532aef6c834dae4a9e8cd842c323e1aa363a28a",
-            "locator": {
-              "end": 484,
+              "end": 516,
               "kind": "line_range",
-              "start": 484
+              "start": 505
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -1958,15 +1971,16 @@
       ]
     },
     "212": {
-      "note": "**The all-required signal field set, and the `detail`-equals-rendering rule that refuses a verdict in prose as it refuses a verdict field.**",
+      "note": "**The required signal observation fields and default vocabulary-version field; trimmed detail must equal the rendering of its recorded condition, relationship paths and limitations.** Detail is rendered basis rather than a separately authored conclusion.",
       "targets": [
         {
           "anchor": {
             "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
             "content": "sha256:6012b3a5a13fa4f2aac335ee8e202fc6e1dda4cb340856fa1b50cecd55d36591",
             "locator": {
-              "kind": "symbol",
-              "name": "DetectionSignalPayload"
+              "end": 609,
+              "kind": "line_range",
+              "start": 491
             },
             "path": "mcp/src/agents_remember/models/knowledge/detection.py"
           },
@@ -1977,8 +1991,9 @@
             "blob": "fba49281a25900d4e9dd78649d759e48d72908db",
             "content": "sha256:d1f644a37cecc50a34ea0400ef21dc339d25e4673688e95836668bf7e1f14770",
             "locator": {
-              "kind": "symbol",
-              "name": "observed_basis_detail"
+              "end": 628,
+              "kind": "line_range",
+              "start": 612
             },
             "path": "mcp/src/agents_remember/models/knowledge/detection.py"
           },
@@ -1987,15 +2002,16 @@
       ]
     },
     "216": {
-      "note": "**The two operations and the one refusal code this leaf added to the shared vocabulary.**",
+      "note": "**Historical mechanical-detection contribution:** That leaf added two operation members and one refusal code to the retained Literal vocabulary.",
       "targets": [
         {
           "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeOperation"
+              "end": 147,
+              "kind": "line_range",
+              "start": 26
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -2006,8 +2022,9 @@
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeRefusalCode"
+              "end": 226,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -2016,15 +2033,16 @@
       ]
     },
     "22": {
-      "note": "**The policy that computes the value from authored heads.**",
+      "note": "The policy selects each tree's recorded subject revision and projects its head and retained lists as empty or singleton values.",
       "targets": [
         {
           "anchor": {
             "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
             "content": "sha256:ddc186e79fa30557756920a1e33f181944dd1f534edf540aafcd1385b3ce9ffa",
             "locator": {
-              "kind": "symbol",
-              "name": "select_subject_revisions"
+              "end": 72,
+              "kind": "line_range",
+              "start": 35
             },
             "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
           },
@@ -2033,7 +2051,7 @@
       ]
     },
     "222": {
-      "note": "The two operation members the requirement record group added, and the fact that no refusal code was added with them.\n\nAnchor: `record_requirement_revision`; `read_requirement_revisions`",
+      "note": "Historical requirement-record contribution: record_requirement_revision and read_requirement_revisions were added without a new refusal code; these names remain retained Literal members. Anchor: `KnowledgeOperation`; `KnowledgeRefusalCode`",
       "targets": [
         {
           "anchor": {
@@ -2064,16 +2082,14 @@
       ]
     },
     "227": {
-      "note": "The module's own non-definition: it defines no record kind.\n\nAnchor: \"This module defines **no record kind**\"",
+      "note": "The module declares the tree-review response contract, rather than a new durable record kind.",
       "targets": [
         {
           "anchor": {
             "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
-            "content": "sha256:75e73bacd7b7fd874b9b88de5195072340d13553f1157c152e30f01569e555dc",
+            "content": "sha256:4d0b65fa6dad1cd50ffccbef6a9438db99bd5d650c265f6820bac0cf5e6bf315",
             "locator": {
-              "end": 3,
-              "kind": "line_range",
-              "start": 3
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -2133,16 +2149,16 @@
       ]
     },
     "230": {
-      "note": "The present-side-requires-text rule.\n\nAnchor: \"def _require_text_exactly_when_present\"",
+      "note": "The present-side-requires-text rule. Anchor: \"def _require_text_exactly_when_present\"",
       "targets": [
         {
           "anchor": {
             "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
-            "content": "sha256:6fbcc89e15a3e99df50a6ee0ecb3bdf3138f32c4716dd8620a208aaec4dc5636",
+            "content": "sha256:bb02184614d57ebf3f319ed5e767aaeefc50b300be5e82ba956ff8660f348d9d",
             "locator": {
-              "end": 239,
+              "end": 207,
               "kind": "line_range",
-              "start": 225
+              "start": 196
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -2151,16 +2167,16 @@
       ]
     },
     "231": {
-      "note": "The author and examined inputs a displayed assessment must carry.\n\nAnchor: \"def _require_the_basis_to_travel\"",
+      "note": "The current tree-review payload requires a judgment pane. The earlier card described an assessment display carrying its author and examined inputs; that removed display-basis account is historical.",
       "targets": [
         {
           "anchor": {
             "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
-            "content": "sha256:e24adb83265e03968f06c05e0f33a5d3792a95557bd31f4e94c9a89acd694f73",
+            "content": "sha256:0e006f842e6954082a9d752be51896858f6970f40ff39161b5d4046e191a8da0",
             "locator": {
-              "end": 536,
+              "end": 634,
               "kind": "line_range",
-              "start": 513
+              "start": 519
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -2187,16 +2203,16 @@
       ]
     },
     "233": {
-      "note": "The unassessed-is-an-absence rule for counts.\n\nAnchor: \"def _require_a_stated_state\"",
+      "note": "The current tree-review payload carries a judgment pane and no assessment-count display. The earlier card described unassessed as absence in those counts; that account is historical.",
       "targets": [
         {
           "anchor": {
             "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
-            "content": "sha256:58938ed329ed308137cec88f7c540222fa8eda14308d3b4f3a34aa34e3cbc70e",
+            "content": "sha256:0e006f842e6954082a9d752be51896858f6970f40ff39161b5d4046e191a8da0",
             "locator": {
-              "end": 622,
+              "end": 634,
               "kind": "line_range",
-              "start": 599
+              "start": 519
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -2223,15 +2239,16 @@
       ]
     },
     "235": {
-      "note": "**The two reviewable subject kinds, declared here once so the transport, the entry list and the panes cannot disagree.**",
+      "note": "The model declares invariant and family as the two reviewable subject kinds; the transport publishes the same two spellings.",
       "targets": [
         {
           "anchor": {
             "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
             "content": "sha256:5ca01335f5373b0f3df7147cd7bd29838f5e0e639cfec60e212c04538b47dedd",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewSubjectKind"
+              "end": 164,
+              "kind": "line_range",
+              "start": 164
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -2242,8 +2259,9 @@
             "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
             "content": "sha256:b58a180d96007d29c14c655d73d6cd78c2476d3d1c072095248dbe58a272c5cf",
             "locator": {
-              "kind": "symbol",
-              "name": "SELECTOR_KINDS"
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -2286,36 +2304,36 @@
       ]
     },
     "238": {
-      "note": "The sixth refusal code, for a subject the resolution could not name.\n\nAnchor: `subject_unresolved`",
+      "note": "`subject_unresolved` is a member of the shared review refusal vocabulary. The earlier card called it the sixth refusal code for a subject the resolution could not name; that ordinal is historical. Anchor: `ReviewRefusalCode`",
       "targets": [
         {
           "anchor": {
-            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
-            "content": "sha256:73acbd5cb178170d4fecac91deeb38901eb786f098e91330ea46b35a0a6a8976",
+            "blob": "a8aca318ce4a99648858f4f2c0ad3fad21eb0bf8",
+            "content": "sha256:ab44340be711b4cfc5f1209e3260bb96b3015e9e40435d757688b38ebb615490",
             "locator": {
-              "end": 156,
+              "end": 30,
               "kind": "line_range",
-              "start": 155
+              "start": 15
             },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+            "path": "mcp/src/agents_remember/models/knowledge/review_refusal.py"
           },
           "kind": "code"
         }
       ]
     },
     "239": {
-      "note": "**The seventh refusal code, added by this leaf: the generation a listing published no longer resolves to the two code objects it bound, so there are no bytes to serve for that entry.**\n\nAnchor: `source_content_unresolved`",
+      "note": "`source_content_unresolved` is a member of the shared review refusal vocabulary. The earlier card called it the seventh code added by its leaf for a listing whose bound code objects no longer resolve; the ordinal and contribution are historical accounts. Anchor: `ReviewRefusalCode`",
       "targets": [
         {
           "anchor": {
-            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
-            "content": "sha256:0d3b08b2104ab3e88f5006168756ea6dbda31143b154c1c8bb4cdcc7671ee9b0",
+            "blob": "a8aca318ce4a99648858f4f2c0ad3fad21eb0bf8",
+            "content": "sha256:ab44340be711b4cfc5f1209e3260bb96b3015e9e40435d757688b38ebb615490",
             "locator": {
-              "end": 160,
+              "end": 30,
               "kind": "line_range",
-              "start": 159
+              "start": 15
             },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+            "path": "mcp/src/agents_remember/models/knowledge/review_refusal.py"
           },
           "kind": "code"
         }
@@ -2356,15 +2374,16 @@
       ]
     },
     "243": {
-      "note": "**The owning module that decides the shape this model declines to re-declare.**",
+      "note": "The retained `published_intent_block` owner computes its bounded publication block; the current `ReadArFilesResponse` names locations and does not carry that block.",
       "targets": [
         {
           "anchor": {
             "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
             "content": "sha256:033f68c14d8a8997ddbf56030258113ab31200940fc576288a9391fab6e12b2f",
             "locator": {
-              "kind": "symbol",
-              "name": "published_intent_block"
+              "end": 290,
+              "kind": "line_range",
+              "start": 275
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -2390,29 +2409,16 @@
       ]
     },
     "245": {
-      "note": "The registry entry for the tool whose payload carries the field; unchanged by this leaf.\n\nAnchor: `read_ar_files`",
+      "note": "The current registry maps `read_ar_files` to `ReadArFilesResponse`; registration does not carry a published-intent text body. Anchor: `TOOL_RESPONSE_MODELS`",
       "targets": [
         {
           "anchor": {
             "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:3bb09ecb0aebeae29da82c2d5b6c45ccf7c13b8c1be6d94a97836db12fd0c65b",
+            "content": "sha256:2767cb2360c4d99697b1247350242f02d4aa526cd27fc1f062c0b783c284935c",
             "locator": {
-              "end": 85,
+              "end": 88,
               "kind": "line_range",
-              "start": 85
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:fc408cbae8bf177ee75cee26bf0d7eb42dbdb95f27b10c56f6e3d1b3cd307db9",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 84
+              "start": 88
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -3422,17 +3428,31 @@
       ]
     },
     "288": {
-      "note": "`worktree_checkpoint_landing` joins the `NextTool` vocabulary; its preview and refusal both emit it.",
+      "note": "The worktree model admits `worktree_checkpoint_landing` in `NextTool`; an eligible checkpoint preview names that apply call.",
       "targets": [
         {
           "anchor": {
             "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
             "content": "sha256:552b61eb9a0a2ae154ada3a2559836a5a86a23ef82ab6ffe58489ada743df63a",
             "locator": {
-              "kind": "symbol",
-              "name": "NextTool"
+              "end": 79,
+              "kind": "line_range",
+              "start": 57
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:aa63ccba3ea2b5e7409a67bc1c6ccaf0c5f79798662529f30f726c821c9d3d2b",
+            "locator": {
+              "end": 608,
+              "kind": "line_range",
+              "start": 552
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
           "kind": "code"
         }
@@ -3538,6 +3558,58 @@
     "293": {
       "note": "The recorded-meaning review models separate eligible steps, readable none and unavailable history.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
+            "content": "sha256:fec42d23f4d3f927694fe5315eda0cff859a699896a9fa9a09203a91cd7bcfc3",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "mcp/src/agents_remember/application/review_meaning_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
+            "content": "sha256:307d7ff01a583f03256ef621127ffc23d5c9329b1f9a6f880c90b2060f90eb06",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 315
+            },
+            "path": "mcp/src/agents_remember/application/review_meaning_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
+            "content": "sha256:35d72fd4c9430f82de11a387731782e629a9512d3df71276b43e2576117c51ea",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 325
+            },
+            "path": "mcp/src/agents_remember/application/review_meaning_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fccd0935574f17332e5452e6abbcf8f0c87d8cc3",
+            "content": "sha256:278f25c0a7076c4e62ddba8ceaa1c51078fe8b6912d4bc2c501156f2867e15ae",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/application/review_history.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "e7b67b89778434c96e1b9f3f299c9a7fb7ab0592",
@@ -3935,11 +4007,37 @@
         {
           "anchor": {
             "blob": "25aff6fa1ebaa98820eedd53ccd8042d698546ec",
-            "content": "sha256:66a95566ca8e866555ce3e0a5b8f8a3678e9391c33869fffd128a3df3102efe7",
+            "content": "sha256:b03cddd604d7c03d329421f9b36ae0009131fdfa1f2d5b75197571c25cbccbfc",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25aff6fa1ebaa98820eedd53ccd8042d698546ec",
+            "content": "sha256:584a23ed12b0155d803ff0f5ed6df497ca028ccb23bd075c3fc94c9e041b89c9",
             "locator": {
               "end": 345,
               "kind": "line_range",
-              "start": 282
+              "start": 333
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25aff6fa1ebaa98820eedd53ccd8042d698546ec",
+            "content": "sha256:a00adb973a16da35b1c8c30d2844cc7cc914b576895748c5d2361bfbc1af5012",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 347
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py"
           },
@@ -4128,15 +4226,29 @@
       ]
     },
     "316": {
-      "note": "The answer boundary preserves producer guidance, permits the same-call summary stop, and bounds actionable guidance to the response's own contract address.",
+      "note": "The answer boundary preserves producer guidance and permits summary-only approval stops from the same call. Guidance that names an artifact is checked against the response's own contract file or immediate containing directory.",
       "targets": [
         {
           "anchor": {
             "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
             "content": "sha256:60e27a120bfb8dc9f33714fb08d00eefa653f16db19cf2acb29230f633cf6a6c",
             "locator": {
-              "kind": "symbol",
-              "name": "_attach_contract_guidance"
+              "end": 148,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 91
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -4180,7 +4292,7 @@
       ]
     },
     "319": {
-      "note": "Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants.\n\nAnchor: Current source; preserved L88 property 316",
+      "note": "Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants. Anchor: Current source; preserved L88 property 316",
       "targets": [
         {
           "anchor": {
@@ -4197,12 +4309,10 @@
         },
         {
           "anchor": {
-            "blob": "fc27398cbb49aa07209ebcbeed8e891bb97bd479",
-            "content": "sha256:59a8273cc85783a4e9680755ebb3dcd050a94d4f7899702add96503c6c030ca0",
+            "blob": "5455262601dadd5c6ef505fa831571e8a86206c9",
+            "content": "sha256:f7bd17dcbc002e0e24397ed277905549925dbc8c7001a377625fb079d6a838b2",
             "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/role_capsules/details.py"
           },
@@ -4471,8 +4581,22 @@
             "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
             "content": "sha256:a98a0c19a485b04ecc5a2f51fdc9f384962b0b5037e03682f4602e2d699225c9",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewDeliveredComparison"
+              "end": 297,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+            "content": "sha256:3e1662116c0686f6083f18088abee713c4fd4ed07609f945aa985131f55a9769",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 308
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },
@@ -4693,6 +4817,24 @@
               "start": 183
             },
             "path": "mcp/src/agents_remember/models/task_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "340": {
+      "note": "RecordRow requires revision; effect and because keep their separate disposition-dependent and optional rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+            "content": "sha256:bc20c2a4cfccbb06cd091cfff0b2e8613813ed046d47b0b2f34be01ce29013ae",
+            "locator": {
+              "end": 535,
+              "kind": "line_range",
+              "start": 508
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
           "kind": "code"
         }
@@ -5276,8 +5418,22 @@
             "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
             "content": "sha256:6e29bea34586129e82a6ca6638d51175d495d82b7d685ab6f6200c6d1f3a516a",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreeEntrySide"
+              "end": 92,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_tree_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb2fb13f8b4b4fb3f210004073416ad9b0010911",
+            "content": "sha256:dbf8f6c1628ede616913708f95d62246461fec0b528586f800322e01381f4c95",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 122
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_tree_entries.py"
           },
@@ -5286,16 +5442,16 @@
       ]
     },
     "58": {
-      "note": "The tree view's field for the entries.\n\nAnchor: \"entries: tuple[ReviewTreeEntry, ...] = ()\"\n\nRetired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_trees.py:321-321 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.",
+      "note": "ReviewTreesResult.entries is the current tuple of review-tree entries.",
       "targets": [
         {
           "anchor": {
             "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
-            "content": "sha256:05f9bd14a6263128516566163638f0397284fe37a079ae90115491c2395166fc",
+            "content": "sha256:286f14a78b862de10ef5985fb37cc5064602e3a3741961ffece61dfda9da997e",
             "locator": {
-              "end": 330,
+              "end": 336,
               "kind": "line_range",
-              "start": 330
+              "start": 333
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },
@@ -5369,15 +5525,16 @@
       ]
     },
     "60": {
-      "note": "The lane reconciles; an unmeasured value carries no totals.",
+      "note": "The full lane reconciles bucket totals for measured and partial results; an unavailable full lane carries no totals.",
       "targets": [
         {
           "anchor": {
             "blob": "8782327a6e099b3956ac7cc1f62a33f5e9f70502",
             "content": "sha256:e3a1f01daa91af1f0f7221f49fa61a258bf0ea17fa8f2efe6be65910088fd018",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewUnexplainedLane"
+              "end": 329,
+              "kind": "line_range",
+              "start": 301
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_lane.py"
           },
@@ -5388,8 +5545,9 @@
             "blob": "8782327a6e099b3956ac7cc1f62a33f5e9f70502",
             "content": "sha256:c98c1ae8b22338a659215ab7c42007394f0c429def6a9514a128ae165db8c8ec",
             "locator": {
-              "kind": "symbol",
-              "name": "_totals_problem"
+              "end": 378,
+              "kind": "line_range",
+              "start": 362
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_lane.py"
           },
@@ -5398,16 +5556,16 @@
       ]
     },
     "61": {
-      "note": "The tree view's two new fields, and the summary's.\n\nAnchor: \"lane: ReviewUnexplainedLane\"; \"attribution: ReviewLaneSummary\"",
+      "note": "The tree view's lane and file_classification fields, and the summary's attribution field.",
       "targets": [
         {
           "anchor": {
             "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
-            "content": "sha256:96a87452ea032673c6f676ab412ba96c1cfb227158135bf1421fc977bd0a9cb7",
+            "content": "sha256:3e1662116c0686f6083f18088abee713c4fd4ed07609f945aa985131f55a9769",
             "locator": {
-              "end": 335,
+              "end": 345,
               "kind": "line_range",
-              "start": 334
+              "start": 308
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },
@@ -5416,26 +5574,13 @@
         {
           "anchor": {
             "blob": "e475e37acb0871bfbf9a2dce8acdb6f76d42e801",
-            "content": "sha256:f39d9d13319067e12a97d986d441116c44418403eb48126753172392663eb53b",
+            "content": "sha256:cffe69107170bdfcfa44782d92ea955fd145dd4c20cf07566b3fee2480bfd609",
             "locator": {
-              "end": 108,
+              "end": 127,
               "kind": "line_range",
-              "start": 107
+              "start": 93
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_intent_summary.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
-            "content": "sha256:e9e625f5c87cd7fbf9f3ebc9f1bfb407d67c29859f1e9a1fe4b36322a2c37ed4",
-            "locator": {
-              "end": 344,
-              "kind": "line_range",
-              "start": 343
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },
           "kind": "code"
         }
@@ -6056,7 +6201,7 @@
       ]
     },
     "83": {
-      "note": "The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel.\n\nAnchor: \"from agents_remember.kernel.coordination_context.models import MemoryMode\"; \"WorkflowKind = Literal[\"; \"HumanReviewStatus = Literal[\"; \"LifecycleStatus = CloseoutStatus\"; \"CleanupStatus = Literal[\"",
+      "note": "The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9), with `ReadableMemoryMode` imported from `kernel.memory_mode`. Anchor: `ReadableMemoryMode`, `WorkflowKind`, `HumanReviewStatus`, `LifecycleStatus`, `CleanupStatus`",
       "targets": [
         {
           "anchor": {
@@ -6074,11 +6219,11 @@
         {
           "anchor": {
             "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
-            "content": "sha256:f7ddf4c25d010439807b3b6c80acc3feb89a6d01628b0e7d485d926953f9147c",
+            "content": "sha256:69f346189d793262fd56c3cfed8eeb7ec83832e5f500dd6c788fb2d3a3a7cd62",
             "locator": {
-              "end": 41,
+              "end": 38,
               "kind": "line_range",
-              "start": 27
+              "start": 26
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -6306,15 +6451,16 @@
       ]
     },
     "94": {
-      "note": "The served knowledge vocabulary as an explicit re-export list — re-cited against the working tree, which the graph half extended.",
+      "note": "The retained knowledge-model facade has an explicit re-export list, including the historical graph contribution; this vocabulary declaration is not a live write API.",
       "targets": [
         {
           "anchor": {
             "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
             "content": "sha256:fcd79cb0a4d62dcc5b96dd84a3e4456abfb8e81681b143db618add7a9902a04f",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "end": 144,
+              "kind": "line_range",
+              "start": 86
             },
             "path": "mcp/src/agents_remember/models/knowledge/__init__.py"
           },
@@ -6323,15 +6469,16 @@
       ]
     },
     "95": {
-      "note": "The frozen base and the refusal to rewrite a non-canonical identifier: `normalized_uuid` strips and lowercases the text, then refuses any spelling that is not the canonical lowercase UUID form (`models/knowledge/base.py:95-109`).",
+      "note": "The frozen base and identifier boundary: UUID values render canonical text; string inputs are stripped and lowercased, then rejected if the cleaned spelling is not canonical lowercase hyphenated UUID text.",
       "targets": [
         {
           "anchor": {
             "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
             "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeModel"
+              "end": 37,
+              "kind": "line_range",
+              "start": 34
             },
             "path": "mcp/src/agents_remember/models/knowledge/base.py"
           },
@@ -6342,8 +6489,9 @@
             "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
             "content": "sha256:78d1908c2a915a8fcde7860d362fa9c9fc530cb5e347b6ada4c5c82d1feac41e",
             "locator": {
-              "kind": "symbol",
-              "name": "normalized_uuid"
+              "end": 109,
+              "kind": "line_range",
+              "start": 95
             },
             "path": "mcp/src/agents_remember/models/knowledge/base.py"
           },

@@ -34,8 +34,7 @@ requires all three absent, symlinks included. `CORPUS_FINGERPRINT`/`CORPUS_FINGE
   `test_the_registered_tool_takes_the_selection_as_this_run_s_own_input` keep the selection an input of this
   run, and `test_the_selection_is_recorded_per_run_and_never_persisted` digests every regular file under the
   coordination root before and after.
-- **Fail closed.** `test_a_selected_run_with_an_unavailable_capsule_path_refuses_and_writes_nothing` refuses
-  instead of falling back.
+- **Fail closed.** `test_a_selected_run_with_an_unavailable_capsule_path_refuses_and_writes_nothing` removes the canonical corpus anchor, requires the refusal to preserve the selected mode and name the shared `RENEW_COMMAND` (`mcp/.venv/bin/python scripts/renew-instructions.py`), and asserts that no coordination root or retired startup file was written. It refuses instead of falling back.
 - **One corpus copy.** `test_both_install_modes_remove_the_legacy_fingerprint` and
   `test_the_canonical_corpus_reaches_an_opted_in_run_once_through_the_capsule` count over the real effective
   material: the legacy fingerprint is gone from both modes and no corpus text lands in the coordination root,
@@ -77,28 +76,26 @@ returned summary alone.
 - The registered tool takes the selection as this run's own input and the record names the input that won. [3]
 
 
-- Private machine settings pre-exist both installations and retain their bytes. [8]
+
 
 - Selected-run facts are asserted from the retained logged whole result. [9]
-
-
-- The module drives the real installer end to end and reads its results back from the files it wrote: removal of the retired startup files in both modes, the capsule cutover and the per-run selection record, with the install source tree left byte-identical. [4]
-
-
-- An actual selected install reports an empty startup rollback and leaves no retired startup file. [5]
 
 - The retired startup files are planted with the legacy fingerprint and must all be absent afterwards. [10]
 - An unselected run removes planted startup files. [11]
 - Its preview reports the planted startup files without removing any. [12]
 - The module docstring must say that an unselected (`legacy`) run keeps the old startup chain's install path while the cutover still retires the `AGENTS.md` copies. [13]
+
 - The benchmark asset sync retires the same startup files. [14]
 
+- The module drives the real installer end to end and reads its results back from the files it wrote: removal of the retired startup files in both modes, the capsule cutover and the per-run selection record, with the install source tree left byte-identical. [4]
 
-
+- An actual selected install reports an empty startup rollback and leaves no retired startup file. [5]
 
 - The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_capsule_experiment_install.py` as an exact consumer. [6]
 
-
-
-
 - The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_capsule_experiment_install.py` as an exact consumer. [7]
+
+### Repo-Internal References (renewed)
+
+- Private machine settings pre-exist both installations and retain their bytes. Anchor: `user_settings_path_for_write` [8]
+- The unavailable-capsule-path regression requires the refusal message to contain the shared renewal command while preserving the selected mode and writing no coordination root or startup file. [15]

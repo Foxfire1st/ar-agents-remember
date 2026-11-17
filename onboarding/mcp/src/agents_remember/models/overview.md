@@ -1,7 +1,7 @@
 # Response Contracts, Shared Wire Values, And Text Knowledge Models
 
 ## Governing Overview
-[overview](../../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
@@ -40,7 +40,7 @@ The current ordinary public source roster has 44 names, including mounted knowle
 
 Contract guidance preserves an explicit producer `nextStep`; otherwise the application resolves the response's own contract. The two preview approval stops may use the exact same call's `contract_path` argument and remain summary-only. Actionable guidance that names a contract is withheld when the response has no address or any supplied spelling fails to identify its contract file or immediate containing directory. Guidance without an artifact address can remain. No ambient-session guidance or declared `agentNotifierBanner`/`supervisorBanner` envelope fields remain.
 
-Memory-tree reads carry their selected tree/index, completeness and bounded continuation, plus reader-owned proof, currentness, family, and route-chain blocks when applicable. Git-tree knowledge diffs carry exact revisions, bounded patches and omissions; text-tree integrity reports carry validator inputs, findings and optional leaf worklists. These observations establish neither semantic effect nor code approval.
+Memory-tree reads carry their selected tree/index, completeness and bounded continuation, plus reader-owned proof, currentness, family, and route-chain blocks when applicable. Git-tree knowledge diffs name exact revisions, counts, bounded record listings and the whole-report location; text-tree integrity reports carry validator inputs, findings and optional leaf worklists. These observations establish neither semantic effect nor code approval.
 
 `tools/explainer_control.py` owns the strict update/retire/claim response, its master-to-Architect ownership record and claim-transfer counts. Non-refused results require an admitted action; a refused result can retain the unknown action it rejected. The model validates shape and bounded lists, not the caller's actual authority or delivery success.
 
@@ -78,7 +78,7 @@ Curator coherence keeps requirement revision, delivery attempt, source candidate
 
 `ServingBuildPayload` is the shared strict boot identity for dashboard and server information: version and boot time are required, while exact content/build/interpreter/package/commit/dirty observations may be absent. A version alone is not an exact candidate identity. `build_currentness.py` declares `BuildCurrentnessPayload`, the strict comparison of a loaded Python build with the files now at its package root (installed or checkout mode; current, stale or unknown state; loaded and installed digests, first-seen time, reason and remedy), shared by serving status and the response envelope. `core.py::RunningServerPayload` pairs one live server's recorded boot identity with that reading; server information and runtime install carry the running-server list. Declaring a reading performs no restart or refusal. Master retirement and sprint execution-edge models separately describe archived proof, removed linkage, affirmed graph edges, reasons and source digests; declaring that proof does not perform retirement.
 
-**Capsule and skill construction.** `role_capsules/` separates manifest parsing, exact scope selection, bidirectional source-set admission, instruction resolution, tool narrowing and compilation. Declared role/operation vocabulary constrains manifest edits; no nearest-match selection or fallback operation is intended. Resolution collapses byte-identical duplicates and refuses equal-authority contradiction. Admitted input, semantic content and diagnostic output stay structurally separate: timestamps, unselected sources, conflict rows and refusal text do not enter the semantic digest.
+**Capsule and skill construction.** `role_capsules/` separates manifest parsing, exact scope selection, bidirectional source-set admission, instruction resolution, tool narrowing and compilation. Authored manifest references retain their source and step classification. `manifest_derived.compose_manifest` supplies role audiences and step wording from `derived.references` before detail declarations are parsed. Declared role/operation vocabulary constrains manifest edits; no nearest-match selection or fallback operation is intended. Resolution collapses byte-identical duplicates and refuses unresolved equal-authority contradiction. Admitted input, semantic content and diagnostic output stay structurally separate: timestamps, unselected sources, conflict rows and refusal text do not enter the semantic digest.
 
 Tool requests are narrowed against admitted policy and cannot grant new capability. Skill references are a distinct channel: every declared skill is carried as an origin/identity/URI/content-revision pointer to admitted root content, without applying tool-grant policy. No declared skill may silently disappear. The digest includes manifest schema, seat/role/operation, repository/work branch, task/document/requirements, composed specializations, ordered block identities/revisions, requested tool identities, skill identities/revisions, and verified task-context identity when supplied. Order contributes to identity. Empty or non-UTF-8 admitted instruction sources use typed capsule source refusals; emptiness can be discovered during actual composition after admission.
 
@@ -96,12 +96,12 @@ Onboarding trace rows allow updated/no_impact and writer-filled SourceBlob bindi
 
 Unexplained hunk identity is changed-line based; nontext subjects bind the candidate object or absence. The pure helper reads a subject-to-row map but does not establish row currency or count a card edit. Covered items keep no_invariant; uncovered items use the application gate's typed current onboarding answer, so an elsewhere source edit can reopen that answer without changing hunk identity. Unreadable sidecars or unstated coverage do not pass. Reconsideration subject/index, still_rejected/raise forms, refreshable triggers and derived decision supersession remain separate rules, not substitutes for onboarding currentness.
 
-MembershipRow names membership:<invariant> with no_family, current candidate revision and distinct considered family IDs; it cannot answer a listed invariant. RecordRow names a decision/facet at candidate revision: changed requires effect, retired requires retire, no_impact forbids effect and because is optional. Unknown-subject checks resolve the membership invariant and record subject. These candidate schemas are not authority to write new kinds through an unsupported main-line producer.
+MembershipRow names membership:<invariant> with no_family, current candidate revision and distinct considered family IDs; it cannot answer a listed invariant. RecordRow names a decision/facet and requires its revision; the writer uses the candidate revision for a present record or the removed revision for a removal: changed requires effect, retired requires retire, no_impact forbids effect and because is optional. Unknown-subject checks resolve the membership invariant and record subject. These candidate schemas are not authority to write new kinds through an unsupported main-line producer.
 
 The reconsideration satisfying function accepts `superseded=frozenset()` after its item and rows.
-A matching row closes an item only when no changed fact carries the `refresh_not_current` trigger,
-which returns the item open before the row map is consulted; without a row, a valid reconsideration
-subject also closes when its decision ID belongs to the supplied superseded set. The empty default
+A valid reconsideration subject whose decision ID belongs to the supplied superseded set closes
+without a row. Otherwise, the `refresh_not_current` trigger returns the item open before the row
+map is consulted; without that trigger, a matching row closes it. The empty default
 preserves two-argument
 behavior. Supersession is derived, never stored; subject spelling, triggers, dispositions, row kinds
 and decision status schema are unchanged. MIK-R148 rule3 is pure-function plus fresh-run agreement:
@@ -179,36 +179,11 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 `CitationFixResponse` adds optional run status and identity to the existing explicit citation count fields. The envelope distinguishes running/completed/failed background state from the repair result; it does not turn completed computation into clean memory or acceptance.
 
+Historical citation receipt retained from reference 58 in the paired sidecar at memory base `81cfe4a89f5ffb222bd09640410d268d3fbef254`, detached from current reference 58: Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_trees.py:321-321 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted. The current reference instead names `ReviewTreesResult.entries`; the old anchor failure does not retire that field.
+
+## Retained Evidence Context
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Evidence
 
 - The packet shapes bind one comparison and refuse an inconsistent collection or coverage count.
 
@@ -224,518 +199,504 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_trees.py::ReviewTreesResult - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_tree_entries.py::ReviewTreeEntry - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_knowledge.py::_leaf_wide_parts - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_evidence.py::EvidencePacket - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_frame.py::FrameManifest - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - Capsule skill references and semantic digest exclude diagnostic output.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - **Retained historical source account — superseded by the current route account:** Capsule skill references and semantic digest exclude diagnostic output.
 
-
-
-
-
-
-
-
-
 - **Retained historical source account — superseded by the current route account:** Historical L111 predecessor account, not the current roster: the composed PUBLIC_TOOLS now declares 44 names and SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery rows including direct_execution_grant at 150 tokens; the earlier 41- and 42-name captions here are historical, not current source counts.
+
+## Evidence
+
+### Repo-Internal References
 
 - **Retained historical source account — superseded by the current route account:** Capsule skill references and semantic digest exclude diagnostic output. [309]
 
-
-
 - The composed `PUBLIC_TOOLS` declares 44 names, and `SHAPED_TOOL_BOUNDS` carries the final task/landing/role delivery rows, including `direct_execution_grant` at 150 tokens. [315]
 
-
-
 - Citation responses carry optional background identity. [338]
-- **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** [2]
-- The surface version that stays `/1`, with the reasoning recorded beside the constant. [3] [252]
-- The anchor observation and its region validator. [8]
-- The member-source reference and its one locator-state rule. [9]
-- **The vocabulary module's own statement of the five rules its shape enforces, and the movement with its four validators.** [10]
-- The closed unions: the kinds, the side states, the transitions, the gap codes and the recorded pairing bases. [11]
-- **The unresolved fact as a value, and the side whose validator refuses a recorded state without a relationship identity.** [12]
-- **The labelled rename inference, whose validator ties a pairing to its state and refuses a similarity word on an unmeasured one.** [13]
-- **The pane row that now carries the association beside its address, and the pane that carries the whole collection.** [14]
-- The display owner that fills the vocabulary, and the traversal that builds the movements. [15]
-- **The presence union on the vocabulary, beside the subject-kind union it parallels.** [16]
-- **The entry value with `presence`, and the entry list with the totals and their agreement validator.** [17]
-- The catalogue owner that fills these values, and the adapter that delegates to it. [18]
-- The current revision-selection value declares the four-state union compared/unresolved/added/removed and validates the respective pair-presence combinations; the earlier five-state account is historical. [19]
-- **The three validators that make a misreading unconstructible.** [20]
-- **The pane field that carries the value, with its one-direction validator.** [21]
-- **The policy that computes the value from authored heads.** [22]
-- The shared route-directory type. [23]
-- The family record's routes use it. [24]
-- The four census schemas registered for dispatch. [25]
-- The latest status entry across every census governs. [26]
-- The range's bytes. [27]
-- The content identity. [28]
-- The onboarding-trace row and its `markers` list. [29]
-- The optional field (beside the later `currentness`, `families` and, since MIK-R05, `routeChain`) and the docstring boundary. [31]
-- The one continuation token and what it binds. [32]
-- The read response's page state and fields, re-read when MIK-R05 added `routeChain`. [33]
-- The integrity response's optional fields. [35]
-- The sync response's worklist summary.  Anchor: "class WorktreeSyncResponse(WorktreeCommandResponse):"; "MIK-R08 rule 8: a completed sync recomputes the leaf's worklist" [36]
-- The optional field and its docstring paragraph. [37]
-- The row kind's docstring with MIK-R30's meaning. [38]
-- The planned forms, the key and the gate predicate. [39]
-- The planned row and its disposition-bound ref. [40]
-- The invariant criteria's meanings, and which two the validator checks. [42]
-- The derivation that identifies an export. [43]
-- The response kinds a token pages, and the public queue cap. [44]
-- The optional `families` field on the read response, followed since MIK-R05 by `routeChain`. [45]
-- At least two alternatives, exactly one chosen. [46]
-- Superseded is derived from later decisions' `supersedes`. [47]
-- The reconsider links and MIK-R14's subject. [48]
-- The ref namespace and the durable record. [49]
-- The subjects, the row subject and the gate predicate. [51]
-- The no_invariant row. [52]
-- The optional field. [54]
-- The docstring paragraph. [55]
-- The range and change states and the excerpt bounds. [56]
-- The tree view's field for the entries. [58]
-- The lane's literals: buckets, hunk classes, range reasons, membership states, gate linkage. [59]
-- The lane reconciles; an unmeasured value carries no totals. [60]
-- The tree view's two new fields, and the summary's. [61]
-- The facts derive the primary and the marks. [62]
-- The entry's facts describe exactly its returned members. [63]
-- The reconsideration row retains its own subject and disposition grammar. [66]
-- Public MCP payload builders validate through the response model registry. [67]
-- The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. [68]
-- The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`.  Anchor: "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" [69]
-- The registry maps every modeled builder and the advertised public subset to response models. [70]
-- Contract tests prove public tool coverage and schema generation. [71] [77]
-- The record-landing envelope is declared on this route.  Anchor: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" [72]
-- The checkpoint-landing envelope is declared on this route.  Anchor: "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" [73]
-- The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. [74]
-- Lifecycle finalizer response model covers the terminal task finalization payload. [79]
-- Next-step computation consumes the resolved worktree contract and retains its landing approval stops, not ambient session state. [81]
 
-- The answer boundary preserves producer guidance, permits the same-call summary stop, and bounds actionable guidance to the response's own contract address. [316]
+- The surface version that stays `/1`, with the reasoning recorded beside the constant. [3] [252]
+
+- The anchor observation and its region validator. [8]
+
+- The member-source reference and its one locator-state rule. [9]
+
+- The closed unions: the kinds, the side states, the transitions, the gap codes and the recorded pairing bases. [11]
+
+- **The unresolved fact as a value, and the side whose validator refuses a recorded state without a relationship identity.** [12]
+
+- **The labelled rename inference, whose validator ties a pairing to its state and refuses a similarity word on an unmeasured one.** [13]
+
+- **The pane row that now carries the association beside its address, and the pane that carries the whole collection.** [14]
+
+- The display owner that fills the vocabulary, and the traversal that builds the movements. [15]
+
+- **The presence union on the vocabulary, beside the subject-kind union it parallels.** [16]
+
+- **The entry value with `presence`, and the entry list with the totals and their agreement validator.** [17]
+
+- The catalogue owner that fills these values, and the adapter that delegates to it. [18]
+
+- The current revision-selection value declares the four-state union compared/unresolved/added/removed and validates the respective pair-presence combinations; the earlier five-state account is historical. [19]
+
+- The shared route-directory type. [23]
+
+- The family record's routes use it. [24]
+
+- The four census schemas registered for dispatch. [25]
+
+- The latest status entry across every census governs. [26]
+
+- The range's bytes. [27]
+
+- The content identity. [28]
+
+- The onboarding-trace row and its `markers` list. [29]
+
+- The optional field (beside the later `currentness`, `families` and, since MIK-R05, `routeChain`) and the docstring boundary. [31]
+
+- The one continuation token and what it binds. [32]
+
+- The read response's page state and fields, re-read when MIK-R05 added `routeChain`. [33]
+
+- The integrity response's optional fields. [35]
+
+- The sync response's worklist summary.  Anchor: "class WorktreeSyncResponse(WorktreeCommandResponse):"; "MIK-R08 rule 8: a completed sync recomputes the leaf's worklist" [36]
+
+- The optional field and its docstring paragraph. [37]
+
+- The row kind's docstring with MIK-R30's meaning. [38]
+
+- The planned forms, the key and the gate predicate. [39]
+
+- The planned row and its disposition-bound ref. [40]
+
+- The invariant criteria's meanings, and which two the validator checks. [42]
+
+- The derivation that identifies an export. [43]
+
+- The response kinds a token pages, and the public queue cap. [44]
+
+- The optional `families` field on the read response, followed since MIK-R05 by `routeChain`. [45]
+
+- At least two alternatives, exactly one chosen. [46]
+
+- Superseded is derived from later decisions' `supersedes`. [47]
+
+- The reconsider links and MIK-R14's subject. [48]
+
+- The ref namespace and the durable record. [49]
+
+- The subjects, the row subject and the gate predicate. [51]
+
+- The no_invariant row. [52]
+
+- The optional field. [54]
+
+- The docstring paragraph. [55]
+
+- The range and change states and the excerpt bounds. [56]
+
+- The lane's literals: buckets, hunk classes, range reasons, membership states, gate linkage. [59]
+
+- The facts derive the primary and the marks. [62]
+
+- The entry's facts describe exactly its returned members. [63]
+
+- The reconsideration row retains its own subject and disposition grammar. [66]
+
+- Public MCP payload builders validate through the response model registry. [67]
+
+- The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. [68]
+
+- The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`.  Anchor: "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" [69]
+
+- The registry maps every modeled builder and the advertised public subset to response models. [70]
+
+- Contract tests prove public tool coverage and schema generation. [71] [77]
+
+- The record-landing envelope is declared on this route.  Anchor: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" [72]
+
+- The checkpoint-landing envelope is declared on this route.  Anchor: "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" [73]
+
+- The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. [74]
+
+- Lifecycle finalizer response model covers the terminal task finalization payload. [79]
+
+- Next-step computation consumes the resolved worktree contract and retains its landing approval stops, not ambient session state. [81]
 
 - Strict envelope fields retain contract guidance and answer/log accounting without notifier banners. [317]
 
 - Flexible envelope fields use the same current guidance/answer/log header without restoring removed declared banner fields. [318]
 
 - The wire-test module documents the 165-of-213 `context_packet` baseline. [82]
-- The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. [83]
-- The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). [84]
-- Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. [85]
-- The drift-status vocabulary `DriftStatus`, declared in `models/drift.py`, and the `DriftSummaryPacket` that imports it (`memory_quality/integrity/onboarding_drift_check/models.py`). [86]
-- Direct landing returns cache observations separately from commits. [87]
-- Public message transport names only code and memory. [88]
-- None [89]
-- Strict lifecycle operation record/projection. [90]
-- Queue candidate projection. [91]
-- The served knowledge vocabulary as an explicit re-export list — re-cited against the working tree, which the graph half extended. [94]
-- The frozen base and the refusal to rewrite a non-canonical identifier: `normalized_uuid` strips and lowercases the text, then refuses any spelling that is not the canonical lowercase UUID form (`models/knowledge/base.py:95-109`). [95]
-- The invariant identity and revision aggregate, including the display-label-versus-identity separation. [96]
-- The sealed payload, with the predecessor set inside the digest and the digest field excluded. [97]
-- The provenance envelope and its normalized-UTC requirement. [98]
-- The typed operation, refusal-code and result contract — re-cited against the working tree, which the graph, candidate-change, snapshot, merge, authored-judgment and detection halves have each extended since. [100]
-- OpenedKnowledgeStore binds a validated derived-index connection to a repository namespace and reads identities and sealed revisions. It writes no knowledge rows; the former canonical-database writers were retired. [102]
-- The capsule envelope keeps one shape for success and refusal, with the seat facts it established. [103]
-- The requested-versus-granted split that makes the compiler's narrowing auditable. [104]
-- Identity is origin plus name, and a listing cannot reach a body. [105]
-- The trust statement is a constant and a declared tool set is observed, never applied. [106]
-- The response registry maps modeled builder names to their response classes; registration and public advertisement remain separate. Anchor: `TOOL_RESPONSE_MODELS` [107]
-- The family identity, the immutable revision aggregate and its self-consistency rules. [108]
-- The retained graph subset is exact membership and authored role vocabulary. [109]
-- The two payload versions and the family payload's sealed field set. [111]
-- The shared accepted/proposed rule both revision aggregates apply at construction. [112]
-- The extended served surface, including the graph names. [113]
-- The family module reads exact sealed index revisions; canonical writers are retired. [116]
-- KnowledgeLane retains reader-context spellings; the old tuple constant is retired. [122] [130]
-- The resolved context and its two consistency validators. [123] [131]
-- The module-level digest the validator calls and the operation re-derives. [124] [132]
-- The two candidate-boundary codes and the three operations that leaf added to the served vocabulary. [138]
-- The served operation union the candidate-boundary leaf joined. [139]
-- The operation and refusal vocabulary this leaf extended. [153] [164]
-- The facade that re-exports the whole snapshot surface as the served vocabulary. [154]
-- The one code and the two operations this leaf added to the shared vocabulary. [171]
-- The read sub-route module: the closed seed union, the context, the page and the cursor. [175]
-- **The corrected count model and the truncated page that cannot claim completeness.** [176]
-- The one operation and six codes this leaf added to the shared vocabulary. [177]
-- **The shared Git-pathspec rule, with `*`, `?` and `[` admitted as literal characters.** [178]
-- Current PathSeed uses the shared path rule; the stored-anchor writer validator is retired. [179]
-- **The facade's ninth source, which this leaf did add to `__all__`.** [180]
-- The cursor decoder the read re-exports through the facade. [181]
-- The cursor encoder the read re-exports through the facade. [182]
-- The nodes that hold these models to their own invariants. [183]
-- The comparison sub-route module: the two sides, the request, the item, the page and the result. [184]
-- **The record half and the source half, with no field that could hold a verdict and `missing_side` as a reason rather than a third change statement.** [185]
-- **The binding and the digest derived from it, which is how a candidate change invalidates a continuation by construction.** [186]
-- **The counts that keep the comparison total and the display total apart, and the two closed vocabularies.** [187]
-- The expansion as a value, with the carried partition and its three path lists. [188]
-- **The comparison's own cursor and its two functions, deliberately not the read's decoder.** [189]
-- **The one operation this leaf added, and the unchanged code union.** [190]
-- **The node that measures the absent verdict over the serialized response, and the node that holds the two change statements apart.** [191]
-- The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation, including the opposite-state and continuation refusals (`test_knowledge_diff_scope.py:529-674`). [192]
-- The two operations the route write layer added, so a route refusal names a route operation. [193] [195]
-- The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree. [194] [196]
-- Historical candidate-change commands and their union were retired with the canonical database write boundary (MIK-R26); candidate.py now owns read-context identities, not that widened write operation. [199]
-- **The six operations this leaf added to the shared vocabulary, and the unchanged code union.** [205]
-- Condition/input-set vocabulary remains as Literal types. [207]
-- Retained mechanical observation vocabulary names granularity, scope and limitations. [209]
-- **The declared-input-set discriminator contract: two sides and no probe, both sides and the probe, or one side and no probe.** [210]
-- **The manifest reference and its two-state resolution, which reports an unresolvable reference with what would resolve it rather than as an empty manifest.** [211]
-- **The all-required signal field set, and the `detail`-equals-rendering rule that refuses a verdict in prose as it refuses a verdict field.** [212]
-- **The two operations and the one refusal code this leaf added to the shared vocabulary.** [216]
-- The two operation members the requirement record group added, and the fact that no refusal code was added with them. [222]
-- The module's own non-definition: it defines no record kind. [227]
-- The three pane names, declared once. [228]
-- The dispositions the existing authority accepts, published rather than owned. [229]
-- The present-side-requires-text rule. [230]
-- The author and examined inputs a displayed assessment must carry. [231]
-- The stale/submission coupling, checked at construction. [232]
-- The unassessed-is-an-absence rule for counts. [233]
-- One outcome per comparison result: a payload or one refusal. [234]
-- **The two reviewable subject kinds, declared here once so the transport, the entry list and the panes cannot disagree.** [235]
-- The reviewed subject carries its recorded identity, its own label and before/after presence. It has no path, file, display version, ranking or per-subject comparison count. [236]
-- **The entry read's typed outcome, whose validators refuse a refused read that offers any entry, non-zero totals beside a refusal, and a total smaller than the page beside it (`ICR-R09@v1`).** [237]
-- The sixth refusal code, for a subject the resolution could not name. [238]
-- **The seventh refusal code, added by this leaf: the generation a listing published no longer resolves to the two code objects it bound, so there are no bytes to serve for that entry.** [239]
 
+- The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). [84]
+
+- Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. [85]
+
+- The drift-status vocabulary `DriftStatus`, declared in `models/drift.py`, and the `DriftSummaryPacket` that imports it (`memory_quality/integrity/onboarding_drift_check/models.py`). [86]
+
+- Direct landing returns cache observations separately from commits. [87]
+
+- Public message transport names only code and memory. [88]
+
+- None [89]
+
+- Strict lifecycle operation record/projection. [90]
+
+- Queue candidate projection. [91]
+
+- The invariant identity and revision aggregate, including the display-label-versus-identity separation. [96]
+
+- The sealed payload, with the predecessor set inside the digest and the digest field excluded. [97]
+
+- The provenance envelope and its normalized-UTC requirement. [98]
+
+- OpenedKnowledgeStore binds a validated derived-index connection to a repository namespace and reads identities and sealed revisions. It writes no knowledge rows; the former canonical-database writers were retired. [102]
+
+- The capsule envelope keeps one shape for success and refusal, with the seat facts it established. [103]
+
+- The requested-versus-granted split that makes the compiler's narrowing auditable. [104]
+
+- Identity is origin plus name, and a listing cannot reach a body. [105]
+
+- The trust statement is a constant and a declared tool set is observed, never applied. [106]
+
+- The response registry maps modeled builder names to their response classes; registration and public advertisement remain separate. Anchor: `TOOL_RESPONSE_MODELS` [107]
+
+- The family identity, the immutable revision aggregate and its self-consistency rules. [108]
+
+- The retained graph subset is exact membership and authored role vocabulary. [109]
+
+- The two payload versions and the family payload's sealed field set. [111]
+
+- The shared accepted/proposed rule both revision aggregates apply at construction. [112]
+
+- The family module reads exact sealed index revisions; canonical writers are retired. [116]
+
+- KnowledgeLane retains reader-context spellings; the old tuple constant is retired. [122] [130]
+
+- The resolved context and its two consistency validators. [123] [131]
+
+- The read sub-route module: the closed seed union, the context, the page and the cursor. [175]
+
+- **The corrected count model and the truncated page that cannot claim completeness.** [176]
+
+- **The shared Git-pathspec rule, with `*`, `?` and `[` admitted as literal characters.** [178]
+
+- Current PathSeed uses the shared path rule; the stored-anchor writer validator is retired. [179]
+
+- The cursor decoder the read re-exports through the facade. [181]
+
+- The cursor encoder the read re-exports through the facade. [182]
+
+- The nodes that hold these models to their own invariants. [183]
+
+- The comparison sub-route module: the two sides, the request, the item, the page and the result. [184]
+
+- **The record half and the source half, with no field that could hold a verdict and `missing_side` as a reason rather than a third change statement.** [185]
+
+- **The binding and the digest derived from it, which is how a candidate change invalidates a continuation by construction.** [186]
+
+- **The counts that keep the comparison total and the display total apart, and the two closed vocabularies.** [187]
+
+- The expansion as a value, with the carried partition and its three path lists. [188]
+
+- **The comparison's own cursor and its two functions, deliberately not the read's decoder.** [189]
+
+- **The node that measures the absent verdict over the serialized response, and the node that holds the two change statements apart.** [191]
+
+- Historical candidate-change commands and their union were retired with the canonical database write boundary (MIK-R26); candidate.py now owns read-context identities, not that widened write operation. [199]
+
+- Condition/input-set vocabulary remains as Literal types. [207]
+
+- Retained mechanical observation vocabulary names granularity, scope and limitations. [209]
+
+- **The declared-input-set discriminator contract: two sides and no probe, both sides and the probe, or one side and no probe.** [210]
+
+- **The manifest reference and its two-state resolution, which reports an unresolvable reference with what would resolve it rather than as an empty manifest.** [211]
+
+- The three pane names, declared once. [228]
+
+- The dispositions the existing authority accepts, published rather than owned. [229]
+
+- The stale/submission coupling, checked at construction. [232]
+
+- One outcome per comparison result: a payload or one refusal. [234]
+
+- The reviewed subject carries its recorded identity, its own label and before/after presence. It has no path, file, display version, ranking or per-subject comparison count. [236]
+
+- **The entry read's typed outcome, whose validators refuse a refused read that offers any entry, non-zero totals beside a refusal, and a total smaller than the page beside it (`ICR-R09@v1`).** [237]
 
 - The strict ReadArFilesResponse names governing files and overviews and observed state; it carries no published-intent body. [242]
 
-
-- **The owning module that decides the shape this model declines to re-declare.** [243]
 - The strict envelope base the field joined. [244]
-- The registry entry for the tool whose payload carries the field; unchanged by this leaf. [245]
+
 - **The inventory's own model, with the count checked against the list and the rule that an unrepresentable path makes the inventory measured and partial.** [246]
+
 - **The pane that now requires the inventory as its first fact, and carries the measured partition beside it.** [247]
+
 - **The request whose selector may be absent, and the absence as a meaning rather than a default.** [248]
+
 - **The comparison identity that states whether it compared knowledge, with the selector and both snapshot digests all-or-nothing.** [249]
+
 - **The knowledge pane's selection state and its required reason, and the payload validator that holds it in agreement with the identity and the staleness state.** [250]
+
 - **The third staleness state, which is the task context and not a flavour of current.** [251]
+
 - The cases that measure the new states: a measured empty inventory beside an untouched comparison, and the structural rule that an inventory which could not carry a name is partial by construction. [253]
+
 - **The one granularity, the three buckets, the four link labels and the three side states.** [254]
+
 - **The partition value with its validator and its three bucket accessors, and one side's contribution beside it.** [255]
+
 - **The two new closed-vocabulary members, and the model's own second producer of the undetermined limit.** [256]
+
 - **The six counts declared once, and the pane that carries the partition.** [257]
+
 - **The nine partition cases, and the unavailable-partition honesty case beside the partial-denominator case.** [258]
+
 - The counts and their sum check. [259]
+
 - One outcome per state. [260]
+
 - The package map and the shape-only boundary. [261]
+
 - The base every file model inherits. [262]
+
 - An invariant record carries no second-owner fields. [263]
+
 - Schema dispatch refuses unknown schemas. [264]
+
 - The history file: one owner, one row per subject, a strict `closed` flag. [265]
+
 - The freeze predicate. [267]
+
 - The history schema in the dispatch table. [268]
+
 - The history row ID kind. [269]
+
 - The three current responses declare tree read, Git-tree diff and text validation. [270]
+
 - All of an owner's history files read as one. [272]
+
 - The attempt-qualified history path. [273]
+
 - Why a row cannot govern an invariant whose revision the leaf changed. [274]
+
 - Current imported source owns this scoped route boundary. [275] [277] [278]
+
 - Current imported source owns this scoped route boundary. [276]
+
 - The dashboard's tokens for the codes. [280]
+
 - Overload is its own refusal code with a true action. [281]
+
 - The closed union of refusal codes. [282]
+
 - The typed refusal with its code, detail and next action. [283]
+
 - The surface version. [284]
+
 - The overload failure carries the code reviewer_busy. [285]
 
 - The response shape. [286]
 
 - `TaskReopenResponse` lives in `task_doc.py` while keeping the `WorktreeCommandResponse` shape. [287]
-- `worktree_checkpoint_landing` joins the `NextTool` vocabulary; its preview and refusal both emit it. [288]
+
 - `PUBLIC_TOOLS` is one tuple with a single definition, re-exported unchanged. [289]
+
 - The worktree response declares the next-move triple and refuses any `nextTool` outside `PUBLIC_TOOLS`. [290]
+
 - ReviewEntryListResult gains the optional ReviewOutline field beside its entry population and counts. [291]
+
 - Rows and supplied superseded IDs close items; default context remains empty. [292]
+
 - The subject pattern, the triggers and the refreshed triggers. [64]
+
 - The one spelling of a link target, and the gate's predicate. [65]
+
 - Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
+
 - Current single literal PUBLIC_TOOLS contains 44 ordinary public names (including knowledge_write, user_settings_init, citation_note_revision and explainer_control) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. [294]
+
 - One current tool-response registry: `TOOL_RESPONSE_MODELS` holds the same 44 public names as `PUBLIC_TOOLS`, including `knowledge_write`, `user_settings_init`, `citation_note_revision` and `explainer_control`, and excludes `dispatch_agent`; the former internal-compat/public split (`INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS`) is retired and is retained as history only. This is a source-shape census, not a live advertisement or acceptance. [295]
 
 - Whole-result validation/enrichment precedes serialization and token finalization. [296]
 
-
-
 - Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance. [297]
-
-
 
 - L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions. [298]
 
 - Provider diagnostics remains a schema default despite public removal. [299]
+
 - Offline exact default verifies bytes before scoped cache mutation; approximate counter is separate. [300]
+
 - Refusal declarations live in a focused module and are re-exported. [301]
+
 - Activation record state includes vacant; selection and observed vocabularies differ. [302]
+
 - Text schema dispatch is distinct from legacy writer exports. [303]
+
 - Shared worklist predicates preserve different covered/uncovered answers. [304]
+
 - Measurement coverage and measured disagreement determine assessment binding status. [305]
+
 - Tree comparison equality includes repository identity; local side fields do not implement exclusive commit/ref validation. [306]
-- V2 receipt admits only measured bound/moved states; helper also represents unmeasured. [307]
+
 - Sync currency requires both exact matches and preserves missing memory as unmeasured. [308]
+
 - **Retained historical source account — superseded by the current route account:** The subject pattern, the triggers and the refreshed triggers. [64]
+
 - **Retained historical source account — superseded by the current route account:** The one spelling of a link target, and the gate's predicate. [65]
+
 - **Retained historical source account — superseded by the current route account:** Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
+
 - **Retained historical source account — superseded by the current route account:** Present public roster is a single literal with 41 names and no provider diagnostics or knowledge mutations. [294]
+
 - **Retained historical source account — superseded by the current route account:** Provider diagnostics remains a schema default despite public removal. [299]
+
 - **Retained historical source account — superseded by the current route account:** Offline exact default verifies bytes before scoped cache mutation; approximate counter is separate. [300]
+
 - **Retained historical source account — superseded by the current route account:** Refusal declarations live in a focused module and are re-exported. [301]
+
 - **Retained historical source account — superseded by the current route account:** Activation record state includes vacant; selection and observed vocabularies differ. [302]
+
 - **Retained historical source account — superseded by the current route account:** Text schema dispatch is distinct from legacy writer exports. [303]
+
 - **Retained historical source account — superseded by the current route account:** Measurement coverage and measured disagreement determine assessment binding status. [305]
+
 - **Retained historical source account — superseded by the current route account:** Tree comparison equality includes repository identity; local side fields do not implement exclusive commit/ref validation. [306]
-- **Retained historical source account — superseded by the current route account:** V2 receipt admits only measured bound/moved states; helper also represents unmeasured. [307]
+
 - **Retained historical source account — superseded by the current route account:** Sync currency requires both exact matches and preserves missing memory as unmeasured. [308]
-- The recorded-meaning review models separate eligible steps, readable none and unavailable history. [293]
+
 - The shared predicate has a superseded-set exception without a new row kind or a change to default two-argument behavior. [311]
+
 - History registry includes the full set of row forms. [41]
+
 - History registry retains unexplained and its neighboring row kinds. [53]
+
 - Registry includes membership and record. [266]
+
 - SourceBlob and bound onboarding row validation. [312]
+
 - Membership and decision/facet record forms. [313]
+
 - Each winning row retains its own closed-file provenance. [314]
-- Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants. [319]
+
 - The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [320]
+
 - Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states. [321]
+
 - The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [322]
+
 - Lifecycle assessment status partitions remain independently modeled; their existence does not restore the removed tree-review assessment display. [323]
+
 - Judgment rows exist exactly in rows state; proof facets/currentness are not run results. [324]
+
 - The catalogue declares optional nonnegative comparison identity. [327]
+
 - The changed-intent summary declares the recorded comparison it counted. [328]
+
 - Revision writer owner-presence validation is separate from exact selected IDs and display versions. [329]
+
 - Focused card memory availability carries the after tree and explicit index state or reason. [331]
-- The review models carry the delivered notice value beside the resolved comparison, without becoming a review of that pair. [332]
+
 - The settings initializer's answer shape. [333]
+
 - The start answer that declares the seat's continuation. [334]
+
 - The current literal ordinary public roster declares 44 names, including knowledge_write, user_settings_init, citation_note_revision and explainer_control; this source census is not live advertisement or acceptance. [335]
+
 - Launcher selections include Bootstrap, normalize the earlier system-specialist spelling to Investigator, and carry the caller harness as separate request data. [336]
+
 - The ordinary roster adds explainer_control, whose strict result keeps ownership, state and optional action records; admitted results validate the action and refusals retain an unknown rejected action. [337]
+
 - Entry-side symbol and entry memory values retain explicit path and count meanings. [330]
-- One entry on one side, and on both sides. [57]
-
-
 
 - role_capsules/contracts.py retains source-addressed needs/gives endpoints, validates marker shape before operation audience selection and removes valid markers from instruction text. CapsuleCapsule carries those endpoints separately. TaskDocResponse carries optional bounded alignmentSweep advice; these value objects establish neither actual endpoint delivery nor packet release or persisted task state. [339]
+
+- **The recorded relationship vocabulary and the movement shape’s consistency checks.** [10]
+
+- The current tree-review payload requires a judgment pane. The earlier card described an assessment display carrying its author and examined inputs; that removed display-basis account is historical. [231]
+
+- The current tree-review payload carries a judgment pane and no assessment-count display. The earlier card described unassessed as absence in those counts; that account is historical. [233]
+
+- The retained knowledge-model facade has an explicit re-export list, including the historical graph contribution; this vocabulary declaration is not a live write API. [94]
+
+- The frozen base and identifier boundary: UUID values render canonical text; string inputs are stripped and lowercased, then rejected if the cleaned spelling is not canonical lowercase hyphenated UUID text. [95]
+
+- The retained operation and refusal-code Literal vocabulary, with the typed KnowledgeRefusal value. The graph, candidate-change, snapshot, merge, judgment and detection extensions are historical contributions, not a declaration of live canonical-database write operations. [100]
+
+- The retained facade re-exports exact family membership and authored role vocabulary from the historical graph contribution. [113]
+
+- Historical candidate-boundary contribution: the two refusal codes and three operation members added by that leaf remain in the retained Literal vocabulary; their declaration does not establish a live write API. [138]
+
+- The retained operation Literal includes the historical candidate-boundary contribution; it does not establish current candidate write operations. [139]
+
+- **Historical contribution account:** That leaf extended the operation and refusal Literal vocabulary; the declarations do not establish a live write API. [153]
+
+- The historical snapshot contribution no longer forms a whole exported snapshot surface; the retained facade exports KnowledgeReadSnapshot with the recorded-scope read vocabulary. [154]
+
+- **Historical contribution account:** That leaf extended the operation and refusal Literal vocabulary; the declarations do not establish a live write API. [164]
+
+- Historical contribution account: that leaf added one refusal code and two operation members to the retained vocabulary; those Literal declarations do not establish live operations. [171]
+
+- Historical recorded-scope-read contribution: that leaf added one operation and six refusal codes to the shared Literal vocabulary. [177]
+
+- **Historical comparison contribution:** That leaf added one operation and reused the existing refusal-code union; the names remain Literal vocabulary. [190]
+
+- **Historical authored-judgment contribution:** That leaf added six write-operation members and reused the existing refusal-code union; the names remain retained Literal vocabulary. [205]
+
+- **The required signal observation fields and default vocabulary-version field; trimmed detail must equal the rendering of its recorded condition, relationship paths and limitations.** Detail is rendered basis rather than a separately authored conclusion. [212]
+
+- **Historical mechanical-detection contribution:** That leaf added two operation members and one refusal code to the retained Literal vocabulary. [216]
+
+- The nodes hold the page and result invariants: truncated comparison and unestablished limitation, including opposite-state and continuation refusals. [192]
+
+- The retained `published_intent_block` owner computes its bounded publication block; the current `ReadArFilesResponse` names locations and does not carry that block. [243]
+
+- The worktree model admits `worktree_checkpoint_landing` in `NextTool`; an eligible checkpoint preview names that apply call. [288]
+
+- The answer boundary preserves producer guidance and permits summary-only approval stops from the same call. Guidance that names an artifact is checked against the response's own contract file or immediate containing directory. [316]
+
+- The three validators enforce state/pair presence, selected IDs in heads, and heads within retained revisions. [20]
+
+- **The pane field that carries the value, with its one-direction validator.** [21]
+
+- The policy selects each tree's recorded subject revision and projects its head and retained lists as empty or singleton values. [22]
+
+- The module declares the tree-review response contract, rather than a new durable record kind. [227]
+
+- The model declares invariant and family as the two reviewable subject kinds; the transport publishes the same two spellings. [235]
+
+- The recorded-meaning review models separate eligible steps, readable none and unavailable history. [293]
+
+- **Retained historical source account — superseded by the current route account:** V2 receipt admits only measured bound/moved states; helper also represents unmeasured. [307]
+
+- The review models carry the delivered notice value beside the resolved comparison, without becoming a review of that pair. [332]
+
+- The full lane reconciles bucket totals for measured and partial results; an unavailable full lane carries no totals. [60]
+
+- The tree view's lane and file_classification fields, and the summary's attribution field. [61]
+
+- One entry on one side, and on both sides. [57]
+
+- **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** Anchor: `ReviewRefusal` `KnowledgeReviewResult` [2]
+- ReviewTreesResult.entries is the current tuple of review-tree entries. [58]
+- The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9), with `ReadableMemoryMode` imported from `kernel.memory_mode`. Anchor: `ReadableMemoryMode`, `WorkflowKind`, `HumanReviewStatus`, `LifecycleStatus`, `CleanupStatus` [83]
+- The module-level context_digest seals every context field except itself and is called by KnowledgeContext's validator. The earlier card also attributed operation-side re-derivation to this digest; that is retained as a historical source account, not a current-operation claim. Anchor: `context_digest` [124]
+- The module-level context_digest seals every context field except itself and is called by KnowledgeContext's validator. The earlier card also attributed operation-side re-derivation to this digest; that is retained as a historical source account, not a current-operation claim. Anchor: `context_digest` [132]
+- **Historical recorded-scope-read contribution:** The earlier card called this the facade's ninth source and recorded its addition to `__all__`. The current facade retains KNOWLEDGE_READ_POLICY_VERSION with the read models and cursor helpers. Anchor: `KNOWLEDGE_READ_POLICY_VERSION` [180]
+- Historical route-writer contribution: author_route and set_governing_route remain operation Literal members; this declaration does not establish a live route-write API. Anchor: `KnowledgeOperation` [193]
+- Historical reuse of invalid_payload is retained in KnowledgeRefusalCode. The Literal declaration does not by itself establish which current writer emits it. Anchor: `KnowledgeRefusalCode` [194]
+- Historical route-writer contribution: author_route and set_governing_route remain operation Literal members; this declaration does not establish a live route-write API. Anchor: `KnowledgeOperation` [195]
+- Historical reuse of invalid_payload is retained in KnowledgeRefusalCode. The Literal declaration does not by itself establish which current writer emits it. Anchor: `KnowledgeRefusalCode` [196]
+- Historical requirement-record contribution: record_requirement_revision and read_requirement_revisions were added without a new refusal code; these names remain retained Literal members. Anchor: `KnowledgeOperation`; `KnowledgeRefusalCode` [222]
+- The present-side-requires-text rule. Anchor: "def _require_text_exactly_when_present" [230]
+- `subject_unresolved` is a member of the shared review refusal vocabulary. The earlier card called it the sixth refusal code for a subject the resolution could not name; that ordinal is historical. Anchor: `ReviewRefusalCode` [238]
+- `source_content_unresolved` is a member of the shared review refusal vocabulary. The earlier card called it the seventh code added by its leaf for a listing whose bound code objects no longer resolve; the ordinal and contribution are historical accounts. Anchor: `ReviewRefusalCode` [239]
+- The current registry maps `read_ar_files` to `ReadArFilesResponse`; registration does not carry a published-intent text body. Anchor: `TOOL_RESPONSE_MODELS` [245]
+- Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants. Anchor: Current source; preserved L88 property 316 [319]
+- RecordRow requires revision; effect and because keep their separate disposition-dependent and optional rules. [340]

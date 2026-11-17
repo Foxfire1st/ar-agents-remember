@@ -1,0 +1,104 @@
+{
+  "path": "scripts/instruction_renewal/plan.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+        "content": "sha256:5575dc9c8e923b69658ce338eb5a8aaac3b3132b05f16927f97ca0ce7f653738",
+        "locator": {
+          "kind": "symbol",
+          "name": "plan"
+        }
+      },
+      "id": "RLZ-2DBEKE",
+      "invariant": "INV-4HZG3V",
+      "origin": {
+        "handoffEntry": "L8-CURATION-INV-4HZG3V",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The complete renewal plan installs new generated budget facts through replace_derived rather than rebuilding the authored ceiling decisions.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+        "content": "sha256:23af0e5a69962bbcc5bba70232a39c7495289c1ba3fd4ca9ddc4291d61cb64ab",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KJA8DD",
+      "invariant": "INV-EHJV8E",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 1",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The planner computes a complete deterministic replacement set and the entry point publishes it or reports staleness without writes.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "All fact planners run before the final replacement list is returned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+            "content": "sha256:5575dc9c8e923b69658ce338eb5a8aaac3b3132b05f16927f97ca0ce7f653738",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Package carriers reuse the copy owner and prospective canonical bytes; they also project the certification profile, copy tool details and remove extra target files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+            "content": "sha256:376effec01f60a6abd552240d51bfca26b1af857f333d77f7f1370ae2f398852",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+            "content": "sha256:bbefe14047e4ce9a02d91fa9e6ec1989c583e6a46d9ff7aa94495cde4455913f",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Publication attempts reverse restoration after a write failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+            "content": "sha256:ebda02712c9eed2dfee75ff4d9c074c53b2fac6a2dd33c989242a563c156c4a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

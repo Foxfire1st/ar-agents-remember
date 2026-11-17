@@ -1,0 +1,88 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_structure.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aeb7c7037687f733d364c4f0bc9540862dd74b26",
+        "content": "sha256:595b0f291a7ea98e468a87247f39e0e9e706dd2e0c291c83662a10956c47d2e1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KYWBKJ",
+      "invariant": "INV-NDGJ3M",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 6",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Independent audience, link and pointer checks protect current delivery while the kept historical constants remain unchanged.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Audience assertions compare delivered text with independently projected source sections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeb7c7037687f733d364c4f0bc9540862dd74b26",
+            "content": "sha256:ecf5463a69b696227077eaed683bbb429b08d6791aacd5eca3b479c2332d651f",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Detail links are counted outside fenced blocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeb7c7037687f733d364c4f0bc9540862dd74b26",
+            "content": "sha256:92d697e1e8920f11151bb787d33427a46fc6e52a79fd46f1224360d007dc0cde",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_detail_link_count"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The helper selects a foreign-role passage; the audience test appends it to the observed stage and expects comparison to fail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeb7c7037687f733d364c4f0bc9540862dd74b26",
+            "content": "sha256:0f904de04c948397da6579f52f6a39f956eb61f9564dd4baab3f3438f6958d24",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+            "content": "sha256:6e01c23a940a39dac3edb332638e28e59ee2fc1106347f1694dddced093cc989",
+            "locator": {
+              "end": 1053,
+              "kind": "line_range",
+              "start": 1044
+            },
+            "path": "mcp/tests/test_role_capsule_audiences.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

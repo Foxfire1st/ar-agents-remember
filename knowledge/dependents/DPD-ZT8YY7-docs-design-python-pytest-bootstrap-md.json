@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "edc7edc63f5d05b34445dfe30d8e141ec5300efc",
+    "commit": "a2f0fced8896b92d31fd3f78351d01f5302be97e",
     "role": "curator",
-    "statement": "The page holds: the lane catalogue gained entries for new tests, and the page's admission, selection and commands are the ones the catalogue already had.",
-    "task": "261112-BUG-L7",
+    "statement": "The bootstrap design remains consistent with the candidate admission, selection, isolation and evidence policy; the lane catalog adds three instruction-renewal regression modules without changing that policy.",
+    "task": "261112-BUG-L8",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+      "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },

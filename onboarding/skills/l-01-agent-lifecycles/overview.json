@@ -252,14 +252,16 @@
       ]
     },
     "22": {
-      "note": "The writer section names one writer route, `knowledge-ingest` or the mounted `knowledge_write` with the task's leaf enclosure contract, for leaf work and for a repository foundation inside the Architect's regular task.\n\nAnchor: `knowledge_write`",
+      "note": "The writer section names knowledge-ingest or mounted knowledge_write under the task contract; when trusted CLI authority settings cannot publish a raise, the same hand-off goes through mounted knowledge_write with the declared arguments, preview and file-write word.",
       "targets": [
         {
           "anchor": {
             "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
-            "content": "sha256:d3c1273715f3b7fcc23d52d26d9e97f95de76f183b00dd1411403b29f9e9b21b",
+            "content": "sha256:b70a59a67ade34bf9787d3febd4a11de31c6d7e6fc9e57171f29cfb383ce33a2",
             "locator": {
-              "kind": "file"
+              "end": 155,
+              "kind": "line_range",
+              "start": 148
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -795,16 +797,16 @@
       ]
     },
     "53": {
-      "note": "The manifest composes the selected role followed by its operation and keeps shared core blocks out of that instruction stream; the shared digest accompanies the capsule in the first message.\n\nAnchor: `composition_order`",
+      "note": "The manifest composes the selected role followed by its operation and keeps shared core blocks out of that instruction stream; the shared digest accompanies the capsule in the first message. Anchor: `composition_order`",
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:cd0047b59924957bd66b51f0c62cd0b83952c38f8cd2c9281f3af25e2ef8ed78",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:4a69c98bb4b6507b3df0fec5d27decf7c3f5c4c3e8b2bd77b8ba9dcf0b63174a",
             "locator": {
-              "end": 1092,
+              "end": 838,
               "kind": "line_range",
-              "start": 1082
+              "start": 829
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -990,7 +992,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:feef0c72f5c316fdcc3ccab56fcfee10f85f35434fb00094bae33acb96a82275",
             "locator": {
               "end": 59,
@@ -1320,7 +1322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:fc8662c1aa3d27c2638c948df760a542894843b33317c640ea7521d5f0afd2db",
             "locator": {
               "end": 132,
@@ -1356,12 +1358,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:61ef127e5ca96e42bae7d3c6fc8687ddfe0c71be3364329d219f5cb9841fe103",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:02f2decc2ec787749c56ef5e97b4362db3ac0a72388f2647cb03d64c2f8bc236",
             "locator": {
-              "end": 1039,
+              "end": 803,
               "kind": "line_range",
-              "start": 1030
+              "start": 798
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -1660,10 +1662,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:f618e05f91ea1d7cb0cdcd8a8eb245c92df41e6c2000f284e03e1031e232e098",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:6972732a323a1716d214c70492f757c0525de69e4b0452aa56e968ae4625ea42",
             "locator": {
-              "end": 172,
+              "end": 162,
               "kind": "line_range",
               "start": 158
             },

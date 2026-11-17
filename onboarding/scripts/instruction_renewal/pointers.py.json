@@ -1,0 +1,59 @@
+{
+  "path": "scripts/instruction_renewal/pointers.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "18e50fd4ff3c1e98889fc82222cab2819f37b68d",
+        "content": "sha256:ecf4ae05d1ea382ba6315cf66d1b07d4115abeb6325fba5bad3e33eb9d26d839",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YT4FCD",
+      "invariant": "INV-Q432XE",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 3",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Before pruning, the matcher checks every distinctActions, multiLinkSentences and exclusive ID against authored actionSources and names every dangling occurrence; pure sentence parsing loads no generated policy.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Authored policy identities are validated before current pointer matching.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18e50fd4ff3c1e98889fc82222cab2819f37b68d",
+            "content": "sha256:133371a80e65771d81e4b105c170b1c64bdb223b5470b052ce6a4c53e89e6537",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pointer matching uses wording, explicit bindings or an unambiguous residual candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18e50fd4ff3c1e98889fc82222cab2819f37b68d",
+            "content": "sha256:1946e5e3782798b03640cd7e93c2d839922685f50abfce98f8eaa90d47f4edf8",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

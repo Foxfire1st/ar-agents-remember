@@ -131,7 +131,7 @@
         },
         {
           "anchor": {
-            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
             "content": "sha256:43d488b8f085d000371db395f0f9ded1d856123893b2225ad1ea8b29d291e4d4",
             "locator": {
               "kind": "symbol",
@@ -240,15 +240,16 @@
       ]
     },
     "2": {
-      "note": "Canonical POSIX-string sorting retains duplicate path entries.",
+      "note": "The adapter sorts comparison paths as POSIX strings without discarding duplicate entries.",
       "targets": [
         {
           "anchor": {
             "blob": "9130f34e3b4dbaafefb06c91789699ff50d6cd97",
             "content": "sha256:b795483dcf9bb49865ff686f69efa2318d85e3234557d8d92113cc557c35d91f",
             "locator": {
-              "kind": "symbol",
-              "name": "_paths"
+              "end": 123,
+              "kind": "line_range",
+              "start": 120
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
           },
@@ -327,7 +328,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
             "content": "sha256:276519340d6bbbbf2f426c48c03c834eca4031a6cd6a98290b364aac2ffc8de6",
             "locator": {
               "end": 73,
@@ -340,7 +341,7 @@
         },
         {
           "anchor": {
-            "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
             "content": "sha256:c3566bb76d04bb29fb5df72925d693a3e7a0aaa01f9c4f0c1603935ac690ea1c",
             "locator": {
               "end": 89,

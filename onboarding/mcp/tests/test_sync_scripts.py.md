@@ -8,8 +8,8 @@
 
 Convergence guard for the skill projection: `skills/` is the only source, and every declared packaged
 copy is its byte image. The current generated target is the packaged runtime skills tree, served as package resources. Canonical skills and each declared target must carry the same authority boundary; an installed harness or coordination-root skill tree is not a current distribution surface.
-`scripts/sync-skills.py` is the mechanism that makes that impossible, and this module is the
-executable statement that it happened.
+`scripts/sync-skills.py` retains the projection helpers. The public renewal command refreshes
+the declared copies, and this module defines their convergence checks.
 
 ## Current source account
 
@@ -29,16 +29,16 @@ Four readings, each defended by a different case class:
 - **The drift reader itself can still fail** — `ReplaceTreeSequenceTests` hand-edits, deletes and adds
   files in a throwaway tree and requires all three failure kinds to be reported. The copy-then-swap
   sequence is characterized at the two places it can fail, including the rename interruption
-  (`RenameInterruption`, 256).
+  (`RenameInterruption`, 257).
 - **The declared inventory is the certified one** — `DeclaredProjectionInventoryTests` requires the
   script's declaration-backed `skill_targets()` to equal the paths `mcp/certification-profile-v1.json` declares as the
   `generated-skills` generated input, so a target silently dropped from the script fails.
-- **The corrected boundary clauses reach every copy** — `BoundaryPropagationTests` (593) re-asserts the
+- **The corrected boundary clauses reach every copy** — `BoundaryPropagationTests` (594) re-asserts the
   shipped completion-truth clauses against canonical **plus** every declared packaged target through
   `boundary_locations()` / `boundary_surface_texts()` / `missing_clause_locations()`, and
   `test_a_clause_missing_from_one_...` deletes the Worker acceptance clause from one copy to prove that reach case bites.
 
-`BoundaryClause` (102) is deliberately a **reach** table, not a second vocabulary: *which* clauses each
+`BoundaryClause` (103) is deliberately a **reach** table, not a second vocabulary: *which* clauses each
 surface owes is the doctrine guard's subject (`mcp/tests/test_lifecycle_turn_truth_doctrine.py`), and
 this table quotes that module's shipped wording rather than paraphrasing it, so the two guards cannot
 drift into two spellings of one boundary.
@@ -54,9 +54,9 @@ drift into two spellings of one boundary.
 
 ### Invariants And Boundaries
 
-- **A generated copy is never hand-edited.** Canonical plus `scripts/sync-skills.py` is the only route;
-  a hand-fixed copy is drift that will be re-broken by the next sync, and the convergence case exists to
-  make that impossible rather than to be worked around.
+- **A generated copy is never hand-edited.** Edit the canonical sources and run
+  `mcp/.venv/bin/python scripts/renew-instructions.py` to refresh the declared copies.
+  The convergence case reports hand-edited copies as drift.
 - **The projection table quotes the doctrine guard's own shipped wording.** A row whose surface or
   marker stops matching the canonical tree and every declared packaged target still fails; re-pointing the table is a
   data change and never a loosening of the reach.
@@ -69,7 +69,7 @@ The writing-profile marker is included in `PROJECTED_BOUNDARY_CLAUSES`, so the p
 
 ## Evidence
 
-- Declaration-backed targets, pure profile projection and the normal-sync prevalidation matrix preserve unrelated profile fields and refuse bad profiles before target mutation. [6]
+
 
 
 ### Docs References
@@ -81,18 +81,14 @@ No configured `Domain Documentation` source applies; the subject is the reposito
 
 ### Repo-Internal References
 
-
-
-- The boundary clauses are checked across canonical skills and every declaration-backed package target; synthetic missing-copy controls keep their original facets. [3]
-
-
-
 ### Cross-Repo References
 
 No external repository boundary is exercised; the declared targets are this repository's own packaged skill projection.
 
 No meaningful cross-repo references found.
 
+
+### Repo-Internal References (continued)
 
 - The writing-profile marker participates in the positive canonical/copy loop; the seeded missing-copy case selects the Worker acceptance clause, not the profile. The three completion-truth markers and retired omissions remain. [7]
 
@@ -103,4 +99,10 @@ No meaningful cross-repo references found.
 
 - The projected current acceptance and Worker boundaries retain their canonical owners and must reach every declared package copy; this is propagation evidence rather than a second meaning definition.
 
+
+
+- The boundary clauses are checked across canonical skills and every declaration-backed package target; synthetic missing-copy controls keep their original facets. [3]
+
 - The projected current acceptance and Worker boundaries retain their canonical owners and must reach every declared package copy; this is propagation evidence rather than a second meaning definition. [5]
+
+- Declaration-backed targets, pure profile projection and the normal-sync prevalidation matrix preserve unrelated profile fields and refuse bad profiles before target mutation. [6]

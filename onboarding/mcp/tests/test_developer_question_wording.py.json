@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+        "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
         "content": "sha256:c80c2d0c3294603f003933d97de010a3d7c9aaa21b3178976eeb50e0ecae099e",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+        "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
         "content": "sha256:c013013da9880adf484b5a00a7f49ca4beeb9ed8ac9681465a223ff42cba3312",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+        "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
         "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+        "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
         "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+        "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
         "content": "sha256:e1416fb1a4046625e1ee8cd3d880dec66f77322db70275346ff19ac389273bdc",
         "locator": {
           "kind": "symbol",
@@ -87,14 +87,32 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
+        "content": "sha256:35b775cddd63020ac6494e3236217fc7738ee3bf1d24340243a57863b2772392",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GPQWQP",
+      "invariant": "INV-DHKR4G",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 2",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The assertion preserves its comparison and names the canonical renewal command when its packaged instruction copy is stale.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The parentable-role test checks question recovery and answer provenance in the shared orientation home, requires each selected role to carry its own pointer to that home without copying it, and checks transport clauses through each role's delivered message step and shared held paragraph.",
       "targets": [
         {
           "anchor": {
-            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
             "content": "sha256:e1416fb1a4046625e1ee8cd3d880dec66f77322db70275346ff19ac389273bdc",
             "locator": {
               "kind": "symbol",
@@ -110,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
             "content": "sha256:c013013da9880adf484b5a00a7f49ca4beeb9ed8ac9681465a223ff42cba3312",
             "locator": {
               "kind": "symbol",
@@ -122,15 +140,16 @@
       ]
     },
     "3": {
-      "note": "Orientation keeps conditional routing and pending recovery; review and curation are checked as composed role-plus-operation pairs.",
+      "note": "Orientation keeps conditional routing and pending recovery; review and curation pointers are checked over joined role and operation source text.",
       "targets": [
         {
           "anchor": {
-            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
             "content": "sha256:c80c2d0c3294603f003933d97de010a3d7c9aaa21b3178976eeb50e0ecae099e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
+              "end": 317,
+              "kind": "line_range",
+              "start": 292
             }
           },
           "kind": "test"
@@ -142,12 +161,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
             "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
             "locator": {
-              "end": 355,
+              "end": 356,
               "kind": "line_range",
-              "start": 319
+              "start": 320
             }
           },
           "kind": "test"
@@ -159,12 +178,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
             "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
             "locator": {
-              "end": 374,
+              "end": 375,
               "kind": "line_range",
-              "start": 358
+              "start": 359
             }
           },
           "kind": "test"
@@ -176,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
             "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
             "locator": {
-              "end": 355,
+              "end": 356,
               "kind": "line_range",
-              "start": 319
+              "start": 320
             }
           },
           "kind": "test"
@@ -193,11 +212,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d508918edd5c2ec9f742e901be66b90d9fd968f7",
+            "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
             "content": "sha256:f6a27c353ac3aab16d2b6c4e75fbbe787b2be61f840ddc9680870471a134ecf4",
             "locator": {
               "kind": "symbol",
               "name": "question_step"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "answer_provenance requires the shipped orientation attribution owner to match canonical checkout bytes; a mismatch names `Run mcp/.venv/bin/python scripts/renew-instructions.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
+            "content": "sha256:ed9cbce2ee4bd763d3248aaee2369ba1962a4bc8fcdb783227dcebeb5c9c71df",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 175
             }
           },
           "kind": "test"

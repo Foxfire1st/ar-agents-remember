@@ -1,29 +1,48 @@
 {
   "path": "mcp/tests/test_collaboration_reference_pointers.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6322c06cce0cc35eda1ab66fbfa6def4cf1c8a9e",
+        "content": "sha256:d7b3d8db89598d13d70c6a983184855a9776db6640ac7afae88a641590bc1636",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9RCJN3",
+      "invariant": "INV-AZTTPZ",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 9",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "This consumer or regression control follows generated routing fields and preserves the independent obligation it checks.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Only mismatches of the two keyed references are kept, none is allowed, and the method declares a step.",
+      "note": "Only mismatches of the two keyed references are kept, none is allowed, and the collaboration method must have a nonblank composed step. Both assertions name the renewal command.",
       "targets": [
         {
           "anchor": {
-            "blob": "67041490681db86ec552ddcea89c4c89937a110b",
+            "blob": "6322c06cce0cc35eda1ab66fbfa6def4cf1c8a9e",
             "content": "sha256:86e8f734dbe87e9a3185b55e98f77615bdaef1300c59507bf45d9d17450b2722",
             "locator": {
-              "kind": "symbol",
-              "name": "COLLABORATION_KEYS"
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "67041490681db86ec552ddcea89c4c89937a110b",
-            "content": "sha256:ed183b7701b8f3ed362320a9d4968cbc91df468727948c63a72de22f3e89def6",
+            "blob": "6322c06cce0cc35eda1ab66fbfa6def4cf1c8a9e",
+            "content": "sha256:a68845eb0d63ddca806624ccb4afa7e4d22bb84ea468da5d6571eafe23a0eb59",
             "locator": {
-              "end": 32,
+              "end": 36,
               "kind": "line_range",
-              "start": 20
+              "start": 22
             }
           },
           "kind": "test"
@@ -35,11 +54,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67041490681db86ec552ddcea89c4c89937a110b",
-            "content": "sha256:94bef033127bdb982d0aa7b8caee470d091f4614d7c5fe11aa8fa811fa0e2b6d",
+            "blob": "6322c06cce0cc35eda1ab66fbfa6def4cf1c8a9e",
+            "content": "sha256:37f089e0b8f90a3342221ff9b9fdf33ff6fc172c837806daa407b58cd91e3e78",
             "locator": {
-              "kind": "symbol",
-              "name": "test_collaboration_reference_declares_actual_pointer_audiences_and_step"
+              "end": 50,
+              "kind": "line_range",
+              "start": 39
             }
           },
           "kind": "test"
@@ -47,15 +67,16 @@
       ]
     },
     "3": {
-      "note": "An extra audience and a pointer moved into the method itself both fail.",
+      "note": "Adding an unpointed role to the derived collaboration audience and moving its inbound pointer into the method itself both fail.",
       "targets": [
         {
           "anchor": {
-            "blob": "67041490681db86ec552ddcea89c4c89937a110b",
-            "content": "sha256:a0bd09d5c8754ecd40136bc9343f4ebfe14736604169ded768ff3a82734f36cb",
+            "blob": "6322c06cce0cc35eda1ab66fbfa6def4cf1c8a9e",
+            "content": "sha256:9191717bf6b1d981687450f551209d2ffb13b83724129a5c3fa4b6ae509cc2e0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_collaboration_reference_rejects_unpointed_audience_and_outbound_step"
+              "end": 77,
+              "kind": "line_range",
+              "start": 53
             }
           },
           "kind": "test"
@@ -63,15 +84,16 @@
       ]
     },
     "4": {
-      "note": "Removing the Worker from the document-authoring audience fails.",
+      "note": "Removing the Worker from the derived document-authoring audience fails.",
       "targets": [
         {
           "anchor": {
-            "blob": "67041490681db86ec552ddcea89c4c89937a110b",
-            "content": "sha256:cf2c13a05874811f78c5014e2c9266770470a5368d73ad13e251c446edd7661c",
+            "blob": "6322c06cce0cc35eda1ab66fbfa6def4cf1c8a9e",
+            "content": "sha256:7fc8ddc654f824740eb4468688147d2ba331fd415d41f9c42a83babf972959cb",
             "locator": {
-              "kind": "symbol",
-              "name": "test_collaboration_reference_rejects_missing_actual_pointer_audience"
+              "end": 89,
+              "kind": "line_range",
+              "start": 80
             }
           },
           "kind": "test"

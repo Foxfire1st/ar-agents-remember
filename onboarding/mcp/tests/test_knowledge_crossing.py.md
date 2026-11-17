@@ -150,6 +150,8 @@ No meaningful cross-repo references found: the fixtures are `tmp_path` Git repos
 No cross-repo boundary is crossed by this file.
 
 
+### Repo-Internal References (continued)
+
 - Pure plan step 5 with both converted merge-side bases; `merge_reports` findings report in sync context, distinct from real transaction validation. [1]
 
 
@@ -160,8 +162,5 @@ No cross-repo boundary is crossed by this file.
 
 
 - The real managed route rather than the pure plan: the fixture's sync crosses an unconverted leaf into a converted line, lands `synced`, and persists the worklist recomputed at its new base pair. [23]
-
-
-
 
 - Its lane row. Anchor: "mcp/tests/test_knowledge_crossing.py" Anchor: "mcp/tests/test_knowledge_crossing.py" [11]

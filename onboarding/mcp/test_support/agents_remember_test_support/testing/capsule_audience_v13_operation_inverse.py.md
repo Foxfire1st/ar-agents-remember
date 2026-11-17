@@ -6,11 +6,11 @@
 
 ## Purpose
 
-The module holds the admitted short-rule spans of the nine raw lifecycle operation sources as `(current text, earlier text)` pairs. `capsule_audience_v13_fixtures.py` is its only importer and places each operation's list in its short-rule inverse.
+The module holds the admitted short-rule spans of the nine raw lifecycle operation sources as `(current text, earlier text)` pairs. `capsule_audience_v13_fixtures.py` imports the table and places each operation's list in its short-rule inverse. The baseline card identified it as the table’s only importer; the complete current tracked-source import-name search still names that one file. This is static dependency evidence, not invocation of the retained inverse.
 
 ## Code Commentary
 
-The module is data only. Each key is `operation/<name>`; the bootstrap operation has no admitted span. The importer requires each current text to occur exactly once in the operation source before replacing it with the earlier text, so a span edited without updating this table fails the audience test.
+The module is data only. Each key is `operation/<name>`; the bootstrap operation has no admitted span. When called, the retained importer requires each recorded current span to occur exactly once before replacing it with the earlier text.
 
 ## Evidence
 

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+        "blob": "77182445e306259fb66766c651d58fbb49320a7d",
         "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+        "blob": "77182445e306259fb66766c651d58fbb49320a7d",
         "content": "sha256:8964d88607d9a4930e00748d124b947a47eb3ec038b99c815a7a6baa2e4f9c66",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+        "blob": "77182445e306259fb66766c651d58fbb49320a7d",
         "content": "sha256:40b893cb03e01c4531019ce3bd905a44ce6ab2db2d7b2d1eddb98fb896e0f812",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,24 @@
     },
     {
       "anchor": {
-        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+        "blob": "77182445e306259fb66766c651d58fbb49320a7d",
+        "content": "sha256:77cca1b36ab13e3122f52f70349914ca85053e4241687b981b48cbf5a9ba6b64",
+        "locator": {
+          "kind": "symbol",
+          "name": "CanonicalProjectionConvergenceTests.test_every_declared_projection_matches_the_canonical_tree"
+        }
+      },
+      "facet": "Every declared skill projection in the selected checkout exists and compares equal to the canonical skill tree; this checks convergence, not the timing or atomicity of publication.",
+      "id": "PRF-JR2G0V",
+      "invariant": "INV-EHJV8E",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 1",
+        "leaf": "261112-BUG-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "77182445e306259fb66766c651d58fbb49320a7d",
         "content": "sha256:d14f832e04e37b46f60b246384ae87c2ae4d04665cdb778d0be630131b6f9c80",
         "locator": {
           "kind": "symbol",
@@ -73,12 +90,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+        "blob": "77182445e306259fb66766c651d58fbb49320a7d",
         "content": "sha256:875fcf4be4ec36c73771b353e1cda604414bfc547fcbbd286670731d055377a5",
         "locator": {
-          "end": 119,
+          "end": 120,
           "kind": "line_range",
-          "start": 115
+          "start": 116
         }
       },
       "id": "RLZ-KZSY9R",
@@ -89,6 +106,23 @@
       },
       "rationale": "This comment records the retired-register guard without task-history provenance.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "77182445e306259fb66766c651d58fbb49320a7d",
+        "content": "sha256:430cd050d6abd18b6c6ba25ef044164f749252861204dee86cc719a66edae988",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RXH7GA",
+      "invariant": "INV-DHKR4G",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 2",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The existing copy or hook obligation directs stale instruction facts and copies to the single renewal command.",
+      "role": "support"
     }
   ],
   "references": {
@@ -97,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
             "locator": {
               "end": 59,
@@ -110,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:6dce61266f887ddd4885b0d9dc5f3cb2611063dc7757d28c606c3417a570f74c",
             "locator": {
               "end": 32,
@@ -159,12 +193,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "blob": "77182445e306259fb66766c651d58fbb49320a7d",
             "content": "sha256:f1849a57f486634563cfdfd5baccdd42da460e84a73375cc474cc0a904bcd284",
             "locator": {
-              "end": 204,
+              "end": 205,
               "kind": "line_range",
-              "start": 176
+              "start": 177
             }
           },
           "kind": "test"
@@ -193,11 +227,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "blob": "77182445e306259fb66766c651d58fbb49320a7d",
             "content": "sha256:392f4bbcd7b196c6b248883903b91670cea94afdb08769b75af2141e0780b3b8",
             "locator": {
-              "kind": "symbol",
-              "name": "PROJECTED_BOUNDARY_CLAUSES"
+              "end": 137,
+              "kind": "line_range",
+              "start": 123
             }
           },
           "kind": "test"
@@ -217,24 +252,24 @@
         },
         {
           "anchor": {
-            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "blob": "77182445e306259fb66766c651d58fbb49320a7d",
             "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
             "locator": {
-              "end": 619,
+              "end": 620,
               "kind": "line_range",
-              "start": 601
+              "start": 602
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "blob": "77182445e306259fb66766c651d58fbb49320a7d",
             "content": "sha256:3855579ed58f760ba8ec846d6d2803feaf8f14e1bb1b7cc661449bace67a6f9a",
             "locator": {
-              "end": 639,
+              "end": 640,
               "kind": "line_range",
-              "start": 621
+              "start": 622
             }
           },
           "kind": "test"
@@ -246,36 +281,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "blob": "77182445e306259fb66766c651d58fbb49320a7d",
             "content": "sha256:8964d88607d9a4930e00748d124b947a47eb3ec038b99c815a7a6baa2e4f9c66",
             "locator": {
-              "end": 320,
+              "end": 321,
               "kind": "line_range",
-              "start": 287
+              "start": 288
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "blob": "77182445e306259fb66766c651d58fbb49320a7d",
             "content": "sha256:40b893cb03e01c4531019ce3bd905a44ce6ab2db2d7b2d1eddb98fb896e0f812",
             "locator": {
-              "end": 354,
+              "end": 355,
               "kind": "line_range",
-              "start": 330
+              "start": 331
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "blob": "77182445e306259fb66766c651d58fbb49320a7d",
             "content": "sha256:e398991d72cf06771641a6a073f313211e5baf864bd393c7321fb2d91557b6b3",
             "locator": {
-              "end": 430,
+              "end": 431,
               "kind": "line_range",
-              "start": 371
+              "start": 372
             }
           },
           "kind": "test"
@@ -287,7 +322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "blob": "77182445e306259fb66766c651d58fbb49320a7d",
             "content": "sha256:392f4bbcd7b196c6b248883903b91670cea94afdb08769b75af2141e0780b3b8",
             "locator": {
               "kind": "symbol",

@@ -52,8 +52,8 @@ It has no task altitude: setting up the workspace grants it no task authority, a
 task document, development leaf, enclosure or gate and dispatches no work.
 
 
-**Its instructions are this role file and the Bootstrap operation.** Nothing dispatches it, so no
-brief adds to them.
+**Its compiled capsule contains this role file and the Bootstrap operation.** Nothing dispatches it, so no
+brief adds to them. The first message also carries the every-role digest and handover facts.
 
 **Its subject is the first hour, and it points rather than restates.** The ordered workflow and the
 failure-state inventory live in `operations/bootstrap.md`; the steps themselves belong to the `c-*`
@@ -67,9 +67,9 @@ installation is refused with the owning skill named.
 
 - Role sources are concise, parseable and self-contained rather than held to a fixed section order or minimum length; role-specific tests protect the duties that matter.
 - Editing it means editing the canonical `skills/l-01-agent-lifecycles/roles/bootstrap.md` and
-  running `python scripts/sync-skills.py`; the single generated package copy is never hand-edited.
+  running `mcp/.venv/bin/python scripts/renew-instructions.py`; the single generated package copy is never hand-edited.
 - Its permitted surface is a positive list, and it is deliberately narrow: the setup surfaces, the
-  read-only resolution/retrieval surfaces, native reads, and exactly one artifact — its own report.
+  read-only resolution/retrieval surfaces, native reads, and one final report. Scratch working files and report evidence use the supplied folders.
   Everything task-shaped (`worktree_*`, `task_doc`, `lifecycle_finalize_task`, `role_start`,
   `closeout_*`, `direct_landing`, `retire_child`, `task_reopen` and the others the role lists) is
   named as *not* this seat's machinery.
@@ -121,19 +121,12 @@ No relevant documentation found after checking live sources.
 - The permitted-write surface, the stop-and-report cases, and the report's shape, which the Bootstrap report template owns.
 
 - The operation block the role carries: workflow, failure inventory and authority gates. [7]
-- The manifest entry declaring the free-agent altitude, its five tools and its three operations. [8]
+
 
 - The capsule vocabulary appends bootstrap to both CAPSULE_ROLES and CAPSULE_OPERATIONS, publishing the role and its operation. [11]
 
 
 - The shipped source checks publish bootstrap as a free-agent role while excluding it from sprint/master/leaf role sets, inspect the source declarations for the same exclusion, and require a nonblank manifest altitude outside those task altitudes. These three cases do not assert a taskless launch/admission route. [12]
-
-
-- The corpus check test_every_role_source_is_concise_and_well_formed supersedes fixed section order and minimum length with concise, well-formed, self-contained role-source checks. [13]
-
-
-- The generated copies this file is one of, proved current by the generator's own check. [14]
-
 
 ### Cross-Repo References
 
@@ -142,6 +135,8 @@ No sibling-repository contract defines this role file.
 No meaningful cross-repo references found.
 
 
+### Repo-Internal References (continued)
+
 - Bootstrap writes one report at the launch handover's taskReportPath and states that exact path on the report's first line. [3]
 
 - The permitted surfaces are the five setup tools plus read-only context_packet, server_info and read_ar_files and native state reads; the report's sections and state fields come from the Bootstrap report template. [6]
@@ -149,3 +144,9 @@ No meaningful cross-repo references found.
 - Bootstrap starts no role and messages no one; it asks the developer in its own chat and routes no setup finding through a task transaction. [15]
 
 - Bootstrap is a setup/report role: it mutates only through the permitted setup surfaces, starts and messages no role, and authors neither onboarding nor knowledge. [16]
+
+- The role-source check requires parseable, concise, self-contained role sources. [13]
+
+- The generator checks this declared package copy against canonical skills. [14]
+
+- The manifest declares free-agent altitude, six requested tool IDs and three operations. Its tool requests include role_message, although the Bootstrap role forbids messaging. [8]

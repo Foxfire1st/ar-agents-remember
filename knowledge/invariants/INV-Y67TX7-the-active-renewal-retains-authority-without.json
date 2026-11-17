@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The current budget authority record and instruction-consistency checker distinguish the single active renewal from historical accounts, preventing generated current measurements from requiring a hand-maintained delta account or granting currentness to historical authority."
+  },
+  "applicability": "The active measured renewal in the current capsule-budget record.",
+  "conditions": [
+    "The active measured renewal is distinguished from historical renewals by the absence of historicalTree."
+  ],
+  "exclusions": [
+    "Retained historical renewal accounts are not regenerated or reinterpreted as current measurements."
+  ],
+  "id": "INV-Y67TX7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L8-worker-987cf869-ffe0-4cb8-af0b-d8a7a9426a7b-w5.md#evidence-map",
+        "L8-M1 sealed repair Retire the duplicate for L8-M1-F03 into INV-12JAM7 without changing that surviving record's statement or scope. INV-12JAM7 revision 2 already requires exactly one authority-only nonhistorical renewal; its currentness test and PRF-YZ45Y9 carry the same property. Remove three duplicate realizations and PRF-5YT5WZ; retain the existing 12JAM7 realizations and proof facets."
+      ],
+      "path": "knowledge-wave2-input-v4.json"
+    },
+    "handoffEntry": "BUG-R08@v1 rule 7",
+    "leaf": "261112-BUG-L8",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The active renewal retains authority without a manually maintained change account.",
+  "status": "retired",
+  "supersedes": []
+}

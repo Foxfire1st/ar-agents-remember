@@ -18,16 +18,16 @@ master row read `Completed` before any closeout had run; a register cell named a
 does not have; a route overview stated a source's pre-repair line count while every check stayed
 green.
 
-This is a helper library, not a gate: it exposes no registry entry and the quality plan does not
-invoke it. It sits beside `citations.py`, `structural_limits.py`, `scope.py` and
-`instrument_discipline.py`, and it is the route's **fifth** verification-helper module — the fourth
-was `instrument_discipline.py`, whose own card records it.
+This is a helper library with comparison APIs and a CLI. The quality plan defines no direct
+record-integrity rail. The earlier card called it the route's **fifth** verification-helper module beside
+`citations.py`, `structural_limits.py`, `scope.py` and `instrument_discipline.py`. That ordinal is
+historical card wording, not a current census of a defined helper category. The same baseline card identified `instrument_discipline.py` as the fourth helper and pointed to that module’s card for the earlier account; this preserves the prior card’s chronology without establishing a present helper census.
 
 ## Code Commentary
 
 ### Logic
 
-Four comparisons, one per function group, plus a comparison of a **figure written in prose** against
+Four comparisons, including a comparison of a **figure written in prose** against
 the source it describes. Ranges are derived against the **current 1110-line** source.
 
 - `check_leaf_document_against_contract` (441-542) — the enclosure contract is the **authority**
@@ -55,10 +55,10 @@ the source it describes. Ranges are derived against the **current 1110-line** so
   pins the graded column: the Owner cell names owners (`T46 | L6 / L7`), not leaf-set membership, so
   grading it reported all 45 arrows as disagreements on the check's own first run. A master with no
   leaf set **refuses** through `RecordIntegrityError` rather than reporting a licensed-looking zero.
-- `check_declared_figure_currency` (872-939) — the comparison the memory layer's own checks cannot
-  make, recorded as `T45`: `range_resolution` looks only at anchors *inside cited ranges* and
-  `claim_reopen` only at *cited claims*, so a line count or case count written as prose is invisible
-  to both. A `FigureClaim` (759-857) carries the revision the prose describes, and the authority side
+- `check_declared_figure_currency` (872-939) — the module docstring records `T45` as the earlier
+  memory-check limitation: `range_resolution` looked inside cited ranges and `claim_reopen` at
+  cited claims, leaving uncited prose figures outside that comparison. This is the docstring's
+  historical account, not a fresh verdict on every current product memory check. A `FigureClaim` (759-857) carries the revision the prose describes, and the authority side
   is measured **there** — by `git show <base_commit>:<path>` (through `_git_root`, 860-869) or in the
   working tree when the claim names no base. That is what stops the comparison flagging every history
   entry that correctly records a past count. Frontmatter is skipped: a metadata row states the
@@ -103,9 +103,10 @@ parsed inputs; `Comparison` and `Finding` are the outputs.
 - **Both populations are stated with every result.** A zero is admissible only beside the count it
   was drawn from; this is the same rule `instrument_discipline.py` enforces for a text probe, applied
   to a record comparison.
-- **An unrecognized status is reported, never silently compared.** `ACTIVE_STATUSES` (75),
-  `LANDED_CONTRACT_STATUSES` (76) and `STARTED_CONTRACT_STATUSES` (77-79) are closed vocabularies for
-  exactly that reason.
+- `ACTIVE_STATUSES` (75), `LANDED_CONTRACT_STATUSES` (76) and
+  `STARTED_CONTRACT_STATUSES` (77-79) select the recognized comparison cases. They do not validate
+  every status: the leaf/contract comparison reports only its two stated mismatch shapes, and
+  an unknown status can pass through `derived_master_status` unchanged.
 - **A disagreement is a disagreement about two readable sides, not an interpretation.** No function
   below grades prose except `check_declared_figure_currency`, and that one grades a number against the
   source that carries the number.
@@ -125,10 +126,19 @@ parsed inputs; `Comparison` and `Finding` are the outputs.
 - `check_declared_figure_currency` grades a figure only where the prose **names its source** through
   the claim's `label_pattern`. A restatement that names no file is a guess rather than a comparison
   and is deliberately not graded; the boundary is pinned by a case rather than left implicit.
-- The module docstring's claim (41-43) that nothing here writes to disk holds; there is no known
-  further gap carried by this file at this revision.
+- The module docstring (41-43) states read-only behavior. The unmatched-contract and
+  undeclared-prose-census limitations above remain explicit; this card claims no exhaustive
+  absence of further gaps.
+
+The earlier card at memory snapshot `81cfe4a8` also reported that “there is no
+known further gap carried by this file at this revision.” That is the earlier
+curator's reported knowledge state; the named limitations above remain, and
+this attribution makes no new exhaustive claim about current gaps.
 
 ## Evidence
+
+Earlier citation wording, retained for custody: “The lane this module’s contract suite is registered in, so the fail-closed manifest admits it. Source caption: `mcp/tests/test_record_integrity.py`.” The current lane catalog still declares that test module; this is membership evidence, not a fresh execution or acceptance result.
+
 
 ### Docs References
 
@@ -146,7 +156,7 @@ certification pass. Every range was derived against the current 1110-line source
 - The report prefix every rendered comparison carries. [1]
 - The enclosure-contract glob the tree walk resolves. [2]
 - What a "case" is, declared once so a figure check and its cases cannot disagree. [3]
-- The closed status vocabularies, so an unrecognized status is reported rather than compared. [4]
+
 - The seven named rules, so a finding says which comparison produced it. [5]
 - A comparison that could not be made, named rather than returned as a silent zero. [6]
 - One disagreement with both sides named and the line a reader can open. [7]
@@ -156,7 +166,7 @@ certification pass. Every range was derived against the current 1110-line source
 - One `subTasks[]` row of a master document. [11]
 - The leaf/contract comparison: contract cells are the authority, the document's status is the subject. [13]
 - `Completed` requires the document to be `Completed`, never merely every step marked (D42's rule). [14]
-- The master-row comparison, with `row-completed-before-landing` named on every finding. [15]
+
 - The tolerant `L<n>` suffix key that found six leaves an exact match reported clean. [16]
 - Only the State cell is graded, because the Owner cell names owners rather than leaf-set membership. [17]
 - The register's arrow comparison, refusing rather than zeroing when the master declares no leaf set. [18]
@@ -167,14 +177,6 @@ certification pass. Every range was derived against the current 1110-line source
 - The run that joins the figure comparison only when claims are supplied. [23]
 - The runner, its repeatable inputs, and the exit status that reports a finding. [24]
 - The 37 cases that pin these behaviours against the historical artifacts, in both directions. [25]
-
-
-
-
-> Retained earlier citation wording: - The lane this module's contract suite is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py"
-
-
-
 
 ### Cross-Repo References
 
@@ -187,9 +189,12 @@ path and **skips with the reason named** when they are absent.
 
 No cross-repository evidence is required for these file-local claims.
 
+### Repo-Internal References (continued)
 
-
+- The enclosure-contract frontmatter helpers; canonical leaf documents and masters are parsed separately as JSON. [12]
 
 - The lane this module's contract suite is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [26]
 
-- The enclosure-contract frontmatter helpers; canonical leaf documents and masters are parsed separately as JSON. [12]
+- The status sets select recognized comparison cases; they do not reject every unknown status. [4]
+
+- The master-row comparison selects early, late or general mismatch rules for its findings. [15]

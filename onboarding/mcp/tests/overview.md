@@ -21,6 +21,8 @@ The initializer handover cases in `test_knowledge_bootstrap.py` assert state-fir
 
 ## Hot Path Summary
 
+The instruction-renewal test family separates authored authority from generated current facts. `test_instruction_digest_renewal.py` checks relocation, explicit unit/evidence/clause bindings, held-hash-proven HEAD diagnostics, copied repository-map cases and reader-level uncovered-prose decisions. `test_instruction_manifest_renewal.py` checks pointer-derived steps/audiences, authored role reasons and no-step decisions, live-manifest reason policy, and command check/renew/check journeys on copied trees. `test_instruction_pointer_renewal.py` checks withdrawal, retained-policy refusals and working command remedies; existing wording-pin and budget consumers keep their separate shape, authored-decision and measurement checks. These are source-defined assertion responsibilities, not a new execution or acceptance record.
+
 `test_fresh_repository_knowledge_path.py` uses `fresh_repository()` to initialize and baseline-adopt a repository, then opens its cardless baseline as a leaf whose onboarding directory is absent. `test_empty_leaf_memory_scope.py` uses `open_external_contract_fixture` for live-leaf scope and mode-owned roots; `test_empty_onboarding_readers.py` initializes memory and removes the empty onboarding directory for its reader cases, with a separate file-at-path refusal case. `test_cardless_knowledge_writer.py` plans and commits the first entries without a Markdown card while references still require one; `test_cardless_sidecar_validation.py` checks the validator's entries-only exception and keeps identity, link, anchor and history checks. Together their source assertions cover empty route/drift/baseline reads and first knowledge through a real per-file card, full quality, writer, coherence and closeout preview. Their source assertions and catalog membership do not establish that a new execution or landing occurred.
 
 The grouping regressions exercise writer-authored source maps for cardless deleted, mixed live/deleted and singleton groups, plus existing-trace precedence. The mixed case supplies the persisted group-map shape; it does not establish native emission of mixed groups. These source assertions preserve the unchanged gate's exact comparison and do not prove that a real leaf's grouped rows were accepted.
@@ -45,7 +47,7 @@ Start with the operation or failure being protected and its retained module, rat
 
 Collection first establishes isolated candidate imports and configuration, reads integration/stress file membership, and skips those files before import for the exact default `not integration` expression. Registered plugins then enforce bootstrap, lane membership and database-retirement boundaries. Lane resolution is explicit and may include class/node overrides; competing markers, unsupported provider classification, stale or missing membership and unusable catalogs refuse. Budgets count selected parametrized items, without recursively invoking pytest or collecting a second population.
 
-The tool sweep derives its census from the advertised roster and uses one classifier for returned calls and controls. It attempts to validate the recorded whole result against the registered response model, checks delivered top-level keys against that result and framework keys, and distinguishes boundary-validation, unvalidatable, raised, bare-not-ok, refusal and payload outcomes. Every tool/aspect is independently judged through subTests. Present implementation differs from the inherited strict whole-result intent: `_whole_result` returns the delivered payload when `log` is absent/non-string, the detail cannot be read or parsed, or its JSON is not an object. Failure to obtain detail therefore does not itself force `unvalidatable`; the substituted payload is model-validated. Preserve the intended independent whole-result check as inherited intent, not as an implemented no-fallback guarantee.
+The tool sweep derives its census from the advertised roster and uses one classifier for returned calls and controls. It attempts to validate the recorded whole result against the registered response model, checks delivered top-level keys against that result and framework keys, and distinguishes boundary-validation, unvalidatable, raised, bare-not-ok, refusal and payload outcomes. Every tool/aspect is independently judged through subTests. The sweep uses `tool_entry_point_sweep_support.py::_whole_result`, which returns the delivered payload when `log` is absent/non-string, the detail cannot be read or parsed, or its JSON is not an object. Failure to obtain detail therefore does not itself force `unvalidatable`; the substituted payload is model-validated. Preserve the intended independent whole-result check as inherited intent, not as an implemented no-fallback guarantee.
 
 > **Retained historical source account — superseded by the current route account:**
 > The sweep has two different exception populations. `ENVELOPE_LOSING_RAISERS` currently names `worktree_checkpoint_landing`, `worktree_cleanup`, `worktree_integrate` and `worktree_record_landing`. The ambient lifecycle-state raiser pin is empty, while the independently derived lifecycle-state population still contains `lifecycle_finalize_task`. Exact equality checks distinguish a measured exception from an accidentally weakened population. The old four lifecycle-state raisers are historical; they are not the current four worktree pins. The former memory-quality bare-answer exception is historical: `UNMARKED_NOT_OK` is now empty, and `_attach_coherence_readiness` supplies the refusal code, error and next action. This source correction is not a fresh sweep result.
@@ -89,7 +91,7 @@ Surviving river and choke controls use `server_info` rather than the removed `pi
 
 ### Final test-only repair input
 
-The five-file landing repair changes fixture admission and assertion carriers, not production behavior or case membership. Both reopened-history changed-row refusals now pass the real gate worklist; the skill-sync check in `AnswerAndTextTests` uses the running interpreter; paired-retirement setup creates and verifies its empty repository lock before the refusal snapshot; and the competing question writer observes lease exclusion before waiting on the native lock, with the shared hang guard instead of a short timing window. File cards retain the unchanged refusal, rollback, frozen-history and named-remedy boundaries. This is a static account of the final CODE input, not a Curator test run or independent acceptance.
+Historical five-file landing-repair account, retained from the pre-L8 memory: The five-file landing repair changes fixture admission and assertion carriers, not production behavior or case membership. Both reopened-history changed-row refusals now pass the real gate worklist; the skill-sync check in `AnswerAndTextTests` uses the running interpreter; paired-retirement setup creates and verifies its empty repository lock before the refusal snapshot; and the competing question writer observes lease exclusion before waiting on the native lock, with the shared hang guard instead of a short timing window. File cards retain the unchanged refusal, rollback, frozen-history and named-remedy boundaries. This is a static account of the final CODE input, not a Curator test run or independent acceptance. L8 subsequently changes that subprocess to `scripts/renew-instructions.py --check`; the earlier repair itself did not make that command change.
 
 ### Pytest composition and evidence catalogs
 
@@ -248,13 +250,6 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 Source account retained from the parked claim (anchor currency not renewed here): `dashboard/src/panels/review/ReviewSurface.meaning.test.tsx:1-242`; `dashboard/src/panels/review/ReviewSurface.f04.test.tsx:1-80`; `dashboard/src/panels/review/l43.capture-provenance.json:1-104`; `dashboard/src/panels/review/l43r2.capture-provenance.json:1-1`; `dashboard/src/panels/review/l43r2.f04.capture-provenance.json:1-38`; `mcp/tests/test_review_meaning_effects.py (file)`.
 
-
-
-
-
-
-
-
 - The lifecycle catalog currently lists test_landing_report.py as an exact consumer of the existing curator-coherence support and Node lockfile artifacts; no new artifact/contract identity or execution is inferred.
 
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/evidence-lifecycle.toml:478-492`; `mcp/tests/evidence-lifecycle.toml:533-539`; `mcp/tests/evidence-lifecycle.toml:1140-1154`; `mcp/tests/evidence-lifecycle.toml:1389-1395`.
@@ -398,7 +393,7 @@ The review-evidence and frame contracts are measured by `test_review_evidence_pa
 
 ## Current discovery-startup test selection
 
-The current named regression is `test_dashboard_autostart_after_discovery.py`, replacing the removed first-call-only module. Its two fresh autoStart=true processes assert the joint outside-scratch sweep and dashboard-supervision start: neither begins during preparation, server creation or the produced-list-answer snapshot before the event-loop callback; the later callback or the no-list first-call fallback starts each once through the same process latch. Dashboard and host launchers and the reconciliation seam are recorders. Both shared evidence catalogs retain incoming registrations together with this leaf's explainer tests; the parsed source declarations contain 17 lifecycle contracts, 116 artifacts and 785 lane memberships. These are source assertions and selection metadata, not a new server, test or live-host run.
+The current named regression is `test_dashboard_autostart_after_discovery.py`, replacing the removed first-call-only module. Its two fresh autoStart=true processes assert the joint outside-scratch sweep and dashboard-supervision start: neither begins during preparation, server creation or the produced-list-answer snapshot before the event-loop callback; the later callback or the no-list first-call fallback starts each once through the same process latch. Dashboard and host launchers and the reconciliation seam are recorders. Both shared evidence catalogs retain incoming registrations together with this leaf's explainer tests; the parsed source declarations contain 17 lifecycle contracts, 116 artifacts and 788 lane memberships. These are source assertions and selection metadata, not a new server, test or live-host run.
 
 ## Retained historical wording
 
@@ -414,729 +409,11 @@ These superseded descriptions retain their historical wording; the current accou
 
 `test_mcp_dispatch_concurrency.py` exercises real transport responsiveness, cancellation ordering, conditional bypass and ContextVar/cache/log separation. `test_citation_preview_runs.py` checks synchronous/background preview equality, unchanged memory bytes, shared registry capacity and identity, detached results, scope changes, worker failures and refusal of background writes. The log test separately prevents two concurrent detail writers from spending the same remaining budget. Catalog selection and these source assertions do not establish a fresh test execution.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - **Retained historical source account — superseded by the current route account:** Selected-case budgets and default worker/selection policy have one executable configuration owner.
-
-
-
-
-
-
-
-
-
-
-
 
 - **Retained historical source account — superseded by the current route account:** Source cases retain committed leaf deltas and exclude files already present in an updated base.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 The source-file regression exercises the synchronous public quality route with Git fixture repositories. It checks uncited listing and size/count cases, then readable citation mutation and unavailable link/large-file reasons. The current root selected-case ceilings are 10000 unit and 2000 integration; the new module is declared in integration without weakening the collection guard.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - **Retained historical source account — superseded by the current route account:** **The fixture and the governed contract it is registered under.**
 
@@ -1153,7 +430,31 @@ Retained historical source captions, detached from live reference numbers1718 an
 
 Their former co-targets included pyproject.toml at blob ddd77babbaaddf51063d6e23856c0cadd142d461 in code6db7c755. The numbered pointers now bind current co-targets, including the added verification root; they do not retain the old target as an archive. The historical captions remain prose here.
 
-## Evidence
+### Historical accounts retained from this leaf's baseline
+
+Historical account retained from the leaf's baseline memory `81cfe4a89f5ffb222bd09640410d268d3fbef254`: the earlier captions described two lane rows associated with `test_knowledge_closeout_gate.py`; two MIK-R25 lane rows associated with `test_review_git_trees.py`; two lane rows associated with `test_knowledge_worklist.py`; three lane rows associated with `test_knowledge_conversion.py`; a former two-row caption for `test_knowledge_writer.py`, distinguished from one current registration; two lane rows associated with `test_knowledge_census_files.py`; three lane rows associated with `test_knowledge_index.py`; two lane rows associated with `test_knowledge_validator.py`; two lane rows associated with `test_knowledge_file_canonical.py`. These are the baseline's recorded caption counts, not additional current unnamed declarations, invocation evidence or newly verified insertion history. Current named-module membership remains as stated below.
+
+Historical account retained from the leaf's baseline memory `81cfe4a89f5ffb222bd09640410d268d3fbef254`: the caption for `test_knowledge_review_one_sided_statements.py` described “the lane row, inserted mid-list, and the row it displaced.” That placement/displacement comparison remains a historical recorded account, separate from the current module's unit-regression membership.
+
+Historical account retained from the leaf's baseline memory `81cfe4a89f5ffb222bd09640410d268d3fbef254`: the capsule-serving lane caption corrected an earlier integration classification as incorrect. Current membership remains unit-regression; the retained correction is not evidence of a current integration-lane selection or an executed test.
+
+Historical account retained from the leaf's baseline memory `81cfe4a89f5ffb222bd09640410d268d3fbef254`: the L4 account said the census module's lane row for `test_memory_attribution_producers.py` closed the gap recorded in the L4 route section. That closure account remains historical; current unit-regression membership alone does not prove the earlier closure or a test invocation.
+
+Historical account retained from the leaf's baseline memory `81cfe4a89f5ffb222bd09640410d268d3fbef254`: The production-chain pair that replaced the hand-supplied case.
+
+Anchor: `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` Recorded citation custody was mcp/tests/test_capsule_launch_wiring.py at recorded blob `5d6364a3e0174cccc37d69d4ad9edcb9a76681c2`. This preserves the retired caption and its named assertion as historical material, detached from the former live reference 1551; no current assertion identity, source-event provenance, measurement, execution or acceptance is established by retaining it.
+
+Historical account retained from the leaf's baseline memory `81cfe4a89f5ffb222bd09640410d268d3fbef254`: The packet's conforming example and the non-conforming reading measured beside it.
+
+Anchor: `test_a_moved_realization_displays_both_recorded_paths_under_one_invariant_identity` Recorded citation custody was mcp/tests/test_knowledge_review_relationship_movement.py at recorded blob `b2988f6b2880854b942ad85dea6de14ff88eb7c9`. This preserves the retired caption and its named assertion as historical material, detached from the former live reference 1737; no current assertion identity, source-event provenance, measurement, execution or acceptance is established by retaining it.
+
+Historical account retained from the leaf's baseline memory `81cfe4a89f5ffb222bd09640410d268d3fbef254`: The multi-ended line, the named-instead-of-denied withdrawal, and the member-wise family pairing.
+
+Anchor: `test_a_member_line_with_no_single_head_is_unresolved_and_never_denied` Recorded citation custody was mcp/tests/test_knowledge_review_relationship_reach.py at recorded blob `87ba047e94315cf62e8f34142ded4c8da7211351`. This preserves the retired caption and its named assertion as historical material, detached from the former live reference 1738; no current assertion identity, source-event provenance, measurement, execution or acceptance is established by retaining it.
+
+Historical account retained from the leaf's baseline memory `81cfe4a89f5ffb222bd09640410d268d3fbef254`: the five-file landing-repair account and its AnswerAndTextTests caption described the skill-sync subprocess using the running interpreter (`sys.executable`). The current source account names instruction renewal instead. This preserves the earlier repair account without claiming the old subprocess remains current.
+
+## Retained Evidence Context
 
 - **Retained historical source account — superseded by the current route account:** The MIK-R05 lane row.
 
@@ -1206,52 +507,6 @@ Their former co-targets included pyproject.toml at blob ddd77babbaaddf51063d6e23
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:857-871 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - **Retained historical source account — superseded by the current route account:** A lifted decision round-trips with its requirement endpoints reported. [Past-epoch caption detached from live reference 1443. Recorded citation-source custody: mcp/tests/test_knowledge_writer.py blob 1a6235931c50a4a8f6b146a51598cdff7f55a233 (available); historical event commit not identified by this carrier. Source custody establishes no inferred historical event, intent or delivery.]
 
 [Past-epoch caption detached from live reference 1443. Recorded citation-source custody: mcp/tests/test_knowledge_writer.py blob 1a6235931c50a4a8f6b146a51598cdff7f55a233 (available); historical event commit not identified by this carrier. Source custody establishes no inferred historical event, intent or delivery.]
@@ -1260,256 +515,13 @@ Anchor: `test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_re
 
 Current source: The lifted-decision test source first asserts a version-mismatched requirement endpoint is reported with refusal and unchanged memory, then repairs that endpoint and asserts the decision is written and an identical second ingest is unchanged. These are test assertions, not a new execution result.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - **Retained historical source account — superseded by the current route account:** The sweep judges every tool and aspect on its own subTest with the pins exact in both directions. [Past-epoch caption detached from live reference 1704. Recorded citation-source custody: mcp/tests/test_tool_entry_point_sweep.py blob 1fe4dc4416c2727815fcab3f9558e152bb422ee4 (available); historical event commit not identified by this carrier. Source custody establishes no inferred historical event, intent or delivery.]
 
 Current source: The sweep source gives each tool separate unvalidatable and boundary-validation subTests, then separate raiser, unmarked and census subTests. It compares observed error-arm tools with ENVELOPE_LOSING_RAISERS and bare-not-ok tools with UNMARKED_NOT_OK by equality, and separately asserts the error pin in both directions. These are source assertions, not execution results.
 
 - **Retained historical source account — superseded by the current route account:** A returned call is judged from the whole result and the delivered answer through one shared classifier. [Past-epoch caption detached from live reference 1705. Recorded citation-source custody: mcp/tests/tool_entry_point_world.py blob fd07730a1a1bd23acfdd526b3ac57a628c498940 (available); historical event commit not identified by this carrier. Source custody establishes no inferred historical event, intent or delivery.]
 
-Current source: For a returned call, classify routes through _returned_arm, which reads the whole result from the answer-named file; missing/unreadable/non-object files are unvalidatable. _judge_delivered validates the whole result with the tool response model and separately judges the delivered answer, including stripped-envelope and same-place key checks. This is the shared classifier implementation, not proof of a sweep run.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Current source: In `tool_entry_point_world.py`, a returned call routes through `_returned_arm`, which reads the whole result from the answer-named file; missing/unreadable/non-object files are unvalidatable. _judge_delivered validates the whole result with the tool response model and separately judges the delivered answer, including stripped-envelope and same-place key checks. This is the ordinary world's classifier implementation, not proof of a sweep run.
 
 - The literal public roster currently registers 44 names in `PUBLIC_TOOLS`, including the architect's `explainer_control` and `citation_note_revision`; the same source pins 14 adapter modules and 46 handlers. [Past-epoch caption detached from live reference 1807. Recorded citation-source custody: mcp/tests/test_tool_response_conformance.py blob f59be949fc3fa155da0ce68d6c8301c02ac3e624 (available); historical event commit not identified by this carrier. Source custody establishes no inferred historical event, intent or delivery.]
 
@@ -1519,18 +531,6 @@ Anchor: `ROSTER_SIZE`
 
 Current source: The literal PUBLIC_TOOLS tuple in models/tools/public_roster.py contains 44 names, including explainer_control and citation_note_revision. The separate conformance test source pins ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46. A literal roster and source pins are distinct from a fresh collection or execution result.
 
-
-
-
-
-
-
-
-
-
-
-
-
 - **Retained historical source account — superseded by the current route account:** The leaf-read lane row. [Past-epoch citation wording, detached from live reference 1445. Historical recorded source: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit unavailable/not identified by this carrier. This preserves citation custody; it establishes no inferred historical event.]
 
 Current source: The current unit-regression lane selects test_knowledge_leaf_read.py. The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance.
@@ -1539,35 +539,18 @@ Current source: The current unit-regression lane selects test_knowledge_leaf_rea
 
 Current source: The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - **Retained historical source account — superseded by the current route account:** The three new lane rows beside their siblings. [Past-epoch citation wording, detached from live reference 1498. Historical recorded source: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit unavailable/not identified by this carrier. This preserves citation custody; it establishes no inferred historical event.]
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 788 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 
 - **Retained historical source account — superseded by the current route account:** **The lane row the insertion created, and the two rows it displaced.** [Past-epoch citation wording, detached from live reference 1529. Historical recorded source: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit unavailable/not identified by this carrier. This preserves citation custody; it establishes no inferred historical event.]
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 788 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 - **Retained historical source account — superseded by the current route account:** **The two consumer rows this module joined, and the counts they do not move.** [Past-epoch citation wording, detached from live reference 1530. Historical recorded source: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit unavailable/not identified by this carrier. This preserves citation custody; it establishes no inferred historical event.]
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 788 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 
 
@@ -1608,28 +591,9 @@ Current source: The lifecycle catalog declares four permanent scripts/e2e_harnes
 
 Current source: The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - **Retained historical source account — superseded by the current route account:** The two `consumers` registrations the module obliged. [Past-epoch citation wording, detached from live reference 1647. Historical recorded source: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit unavailable/not identified by this carrier. This preserves citation custody; it establishes no inferred historical event.]
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
-
-
-
-
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 788 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 - **Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register. [Past-epoch caption detached from live reference 1680. Recorded citation-source custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit not identified by this carrier. Source custody establishes no inferred historical event, intent or delivery.]
 
@@ -1663,13 +627,6 @@ Current source: The lifecycle catalog declares four permanent scripts/e2e_harnes
 
 Current source: The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance.
 
-
-
-
-
-
-
-
 - The lifecycle catalogue declares test_landing_report.py as an exact consumer of the three governed artifact/replacement-contract records for _user_settings_guard.py, curator_coherence_test_support.py and the Node package-lock fixture. These bindings cite those existing artifact/replacement-contract identities; they are declarations, not runtime fixture-consumption evidence. ENVELOPE_LOSING_RAISERS is empty and the current sweep case compares it with observed error arms. STATE_DEPENDENT_RAISERS and the ambient lifecycle-state matrix/population are absent, not retained as empty live structures; lifecycle_finalize_task is an ordinary contract-addressed dry-run request in the main sweep, not evidence of membership in a separate state population. The earlier four-worktree-raiser and finalize-population captions are historical, not current claims. The former tool_entry_point_sweep_support.py:786-790 target is withdrawn because it configures worktree_record_landing, not the finalize request or raiser comparison; the retained finalize-request and comparison targets carry those claims. [Past-epoch caption detached from live reference 1723. Recorded citation-source custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); mcp/tests/tool_entry_point_sweep_support.py blob 25b3cb991b3fb7f75377478cc7516ae6e0b44ff6 (available); mcp/tests/test_tool_entry_point_sweep.py blob 0e1aa8704720217e5a24a2c269089eaee490de4d (available); historical event commit not identified by this carrier. Source custody establishes no inferred historical event, intent or delivery.]
 
 Current source: The lifecycle catalog declares test_landing_report.py among the consumers of _user_settings_guard.py, curator_coherence_test_support.py and the Node package-lock fixture; this named subset is not its whole declared artifact population. ENVELOPE_LOSING_RAISERS is empty, and the sweep compares its observed error-arm population with that pin. No executable STATE_DEPENDENT_RAISERS or ambient lifecycle-state matrix remains in the sweep/support/world; lifecycle_finalize_task has an ordinary contract-addressed dry-run request in the main benign table. These are declarations and source assertions, not a fresh run.
@@ -1688,139 +645,222 @@ Current source: The current lifecycle catalog declares test_landing_report.py as
 
 - The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations retain 17 lifecycle contracts, 93 artifacts and 701 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here. [Past-epoch caption detached from live reference 1808. Recorded citation-source custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); mcp/tests/test-evidence-lanes.toml blob ac006b11f74a4c64ab964edc3378b4c96f153872 (available); mcp/tests/test_dashboard_autostart_after_discovery.py blob fa392c631e8973beb464de5d5f1c437342cee5db (available); historical event commit not identified by this carrier. Source custody establishes no inferred historical event, intent or delivery.]
 
-Current source: The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations contain 17 lifecycle contracts, 116 artifacts and 785 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here.
+Current source: The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations contain 17 lifecycle contracts, 116 artifacts and 788 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here.
 
+## Evidence
 
-
-
-
-
-
-
-
-
-
-
-
-
+### Repo-Internal References
 
 - The lifted-decision test source first asserts a version-mismatched requirement endpoint is reported with refusal and unchanged memory, then repairs that endpoint and asserts the decision is written and an identical second ingest is unchanged. These are test assertions, not a new execution result. [1443]
+
 - The sweep source gives each tool separate unvalidatable and boundary-validation subTests, then separate raiser, unmarked and census subTests. It compares observed error-arm tools with ENVELOPE_LOSING_RAISERS and bare-not-ok tools with UNMARKED_NOT_OK by equality, and separately asserts the error pin in both directions. These are source assertions, not execution results. [1704]
-- For a returned call, classify routes through _returned_arm, which reads the whole result from the answer-named file; missing/unreadable/non-object files are unvalidatable. _judge_delivered validates the whole result with the tool response model and separately judges the delivered answer, including stripped-envelope and same-place key checks. This is the shared classifier implementation, not proof of a sweep run. [1705]
-
-
 
 - The current sweep source compares observed error-arm tools with the explicit ENVELOPE_LOSING_RAISERS pin by equality in both directions. This source assertion establishes no execution or acceptance. [1751]
 
-
 - The literal PUBLIC_TOOLS tuple in models/tools/public_roster.py contains 44 names, including explainer_control and citation_note_revision. The separate conformance test source pins ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46. A literal roster and source pins are distinct from a fresh collection or execution result. [1807]
 
-
 - Transport cases preserve per-call context and write ordering. [1810]
+
 - Preview cases preserve synchronous semantics without writes. [1811]
+
 - Concurrent detail writes share one budget. [1812]
+
 - The selected evidence-packet case asserts that a foreign repository with equal trees is never this comparison (`test_review_evidence_packet.py::test_f01_a_foreign_repository_with_equal_trees_is_never_this_comparison`); the packet, read, claim and prepared-address contracts are asserted by the module's other cases, not by this one. [1787]
+
 - The selected frame-store case asserts that a lineage past eight revisions reopens after a restart (`test_review_frame_store.py::test_f16_a_lineage_past_eight_revisions_reopens_after_a_restart`); binding, publication and reclamation are asserted by the module's other cases, not by this one. [1788]
+
 - The door regression exercises exact clean-sync provenance and byte path discrimination. [1786]
 
 - Delivered role wording keeps sync, precedent and repair-entry obligations visible. [1785]
 
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [1783]
+
 - Controlled-host cases protect archive successor identity, live-only use, bounded traversal and placement refusal; catalog declarations do not prove execution. [1775]
+
 - A controlled actual-serving-runtime case uses two real Projector subscriptions to check landing interest until the final subscriber leaves. Separate direct controlled-refresher cases check disconnect during discovery, clock/age bands and current-identity resets; they do not build the serving composition. [1766]
+
 - Controlled real-loop tests preserve periodic safety independent of launch-authority state. [1767]
+
 - The module's own statement of what it protects. [1495]
+
 - The isolated pytest process registers three plugins: pytest bootstrap, evidence lanes and database retirement. [3]
+
 - **Retained historical source account — superseded by the current route account:** Integration files are not imported in a run that excludes integration. [5]
+
 - **Retained historical source account — superseded by the current route account:** The collected cases are counted against the two budgets. [6]
+
 - **Retained historical source account — superseded by the current route account:** The collection hook loads the lane manifest and marks each item with its lane. [7]
+
 - **Retained historical source account — superseded by the current route account:** The real catalogs load through both loaders. [11]
+
 - **Retained historical source account — superseded by the current route account:** The catalog stays closed over the governed inventory and declares no contract nothing references; the production proof's own ownership row went with the removed agent adapters. [12]
+
 - **Retained historical source account — superseded by the current route account:** The union merge attribute for both catalogs. [13]
+
 - **Retained historical source account — superseded by the current route account:** Which files of this route are governed test artifacts. [15]
+
 - **Retained historical source account — superseded by the current route account:** The command removes the lane line and consumer lines of a file that no longer exists. [16]
+
 - **Retained historical source account — superseded by the current route account:** The task-scoped MCP reader cases. [18]
+
 - **Retained historical source account — superseded by the current route account:** The previous-host removal guard. [19]
+
 - **Retained historical source account — superseded by the current route account:** The bounded sandbox process cases. [20]
+
 - **Retained historical source account — superseded by the current route account:** The Paseo launch, replay and runtime cases. [21]
+
 - **Retained historical source account — superseded by the current route account:** The lane manifest is read at configuration for the integration files. [22]
+
 - **Retained historical source account — superseded by the current route account:** The lifecycle loader refuses a catalog that is not canonical or does not agree with the source tree. [24]
-- **Retained historical source account — superseded by the current route account:** General test policy forbids recursive suite execution and repeated repository scans to test the suite; coverage stays diagnostic and the canonical-form module uses four real-pytest cases in temporary synthetic repositories. The approved MIK-R87@v1 rule13 bounded timing/process-state scanner is the specific exception described in Test Policy and the scanner evidence below. [25]
+
 - **Retained historical source account — superseded by the current route account:** The lane loader refuses a test file without a lane and a lane list that is not canonical. [26]
+
 - **Retained historical source account — superseded by the current route account:** Approved MIK-R87@v1 rule13 bounds the Python timing scan to mcp/tests and mcp/test_support, excluding the shared waits.py; it reports syntactic timing violations without running the repository suite. [502]
+
 - **Retained historical source account — superseded by the current route account:** The same approved bounded scanner compares syntactic process state under mcp/src/agents_remember with the exact closed register. [503]
+
 - **Retained historical source account — superseded by the current route account:** Finalizing a master no sprint commands keeps it and names the retire route. [504]
+
 - **Retained historical source account — superseded by the current route account:** A landed abandoned row refuses by name. [505]
+
 - **Retained historical source account — superseded by the current route account:** The partial-hook-failure retry keeps the retirement and cleans up only. [506]
+
 - **Retained historical source account — superseded by the current route account:** The folder-master finalize cases. [1419]
+
 - **Retained historical source account — superseded by the current route account:** The registry compared as a set. [1423]
+
 - **Retained historical source account — superseded by the current route account:** The module's own statement of its fixture. [1425]
+
 - **Retained historical source account — superseded by the current route account:** The walk-tree case (F16, R3-1, R3-2). [1426]
+
 - **Retained historical source account — superseded by the current route account:** The route case: every view, 503 unwired, nothing written. [1427]
+
 - **Retained historical source account — superseded by the current route account:** The Q8 case. [1431]
+
 - **Retained historical source account — superseded by the current route account:** The budget and resumption case. [1433]
+
 - **Retained historical source account — superseded by the current route account:** The lacking-revision case on resume and fresh read. [1434]
+
 - **Retained historical source account — superseded by the current route account:** The entry-less page in the adapted leaf-read module. [1435]
+
 - **Retained historical source account — superseded by the current route account:** Delete-only: only no_invariant. [1437]
+
 - **Retained historical source account — superseded by the current route account:** The knowledge items, without the unexplained kinds. [1438]
+
 - **Retained historical source account — superseded by the current route account:** Archival deletes only the task's own artifacts. [1441]
+
 - **Retained historical source account — superseded by the current route account:** A decision is never an export (review F6). [1444]
+
 - **Retained historical source account — superseded by the current route account:** The conforming directory move. [1448]
+
 - **Retained historical source account — superseded by the current route account:** The writer refuses an unsupported admission claim. [1450]
+
 - **Retained historical source account — superseded by the current route account:** The migration-pass case. [1462]
+
 - **Retained historical source account — superseded by the current route account:** The conforming example's measures carry their counts. [1465]
+
 - **Retained historical source account — superseded by the current route account:** The Doc14 family example validates. [1468]
+
 - **Retained historical source account — superseded by the current route account:** A file failing its schema marks the index partial and is named. [1470]
+
 - **Retained historical source account — superseded by the current route account:** Parity of the reused selection over the index and the database. [1471]
+
 - The partial-index case preserves the remaining invariant answer and marks that answer and the cache report partial. [1472]
+
 - **Retained historical source account — superseded by the current route account:** The freeze cases. [1477]
+
 - **Retained historical source account — superseded by the current route account:** The parallel-merge case. [1478]
+
 - **Retained historical source account — superseded by the current route account:** The nine fixtures and the model each must parse as. [1480]
+
 - **Retained historical source account — superseded by the current route account:** The module's own statement of what it pins. [1482]
+
 - **Retained historical source account — superseded by the current route account:** The one-half degradation, unchanged, whose docstring now records that the code side reads `recorded` beside it. [1485]
+
 - **Retained historical source account — superseded by the current route account:** The module's own statement of the admitted population and its cases. [1487]
+
 - The task-document body lookup has corpus-independent touches on its named fixture: leaf/master read one own document, while sprint reads the addressed document and three explicitly related master documents. It is not an every-request one-document guarantee. [1489]
+
 - **Retained historical source account — superseded by the current route account:** The count-based scaling case. [1490]
+
 - Current removed-claim/new-claim case renders a retraction and an addition under the same invariant identity, with no pairing basis or counterpart path. Its former moved-realization two-sided case is retired; same identity alone does not supply a movement edge. [1500]
+
 - **Retained historical source account — superseded by the current route account:** **The reach module's own statement of the five states the ruling turns on, and the member-head case.** [1503]
+
 - A member with two unpaired revisions is a retraction with no gap and never denied; withdrawals remain visible. The prior no-single-head/unresolved caption is historical, not the current state asserted. [1504]
+
 - **Retained historical source account — superseded by the current route account:** The module's own lane declaration, which is what makes the classification its own rather than a budget convenience. [1508] [1542]
+
 - Two text-backed snapshots under one namespace expose their own retained revision identities. The current selection fixture supports a single revision per side; its old chain/fork/history account is historical and those multi-revision cases were removed. [1509]
+
 - Current test_a_single_retained_revision_pair_compares_head_to_head asserts one retained head on each side. The former first-before/last-after chain-default case is retired; its cited historical identity is preserved, not claimed as a current test. [1510]
+
 - Current heads are the sorted retained population: every retained revision is a head because text records hold no predecessor edge. The module keeps no removed multi-revision case list, and the chain-default, second-revision ambiguity, intermediate-history and after-fork shapes are absent rather than pinned as failing controls. [1511]
+
 - **Retained historical source account — superseded by the current route account:** **The pane case that closes the loop through the served payload: the selected head pair's own statements rendered present.** [1512]
+
 - Current subject-surface cases assert compared, present before/after statements and exact comparison fields. Earlier ambiguity-rewrite caption is historical and withdrawn as a current assertion claim. [1513]
+
 - **Retained historical source account — superseded by the current route account:** **The module's own statement of what it measures — endpoint-correct, generation-bound, through the operations the dashboard really calls.** [1514]
+
 - **Retained historical source account — superseded by the current route account:** **The shared master-shaped world and its builder.** [1515]
+
 - The synthetic catalog builder writes artifact category and fidelity metadata; this is fixture declaration. [1516]
+
 - The synthetic catalog builder writes artifact category and fidelity metadata; this is fixture declaration. [1522]
+
 - The four exception/unwired transport controls require ACTIONABLE fields; typed domain refusals are asserted separately in their own body shape. [1518]
+
 - **Retained historical source account — superseded by the current route account:** **The bare app with the real routes registered, which is what makes the ports the only injected part.** [1519]
+
 - **Retained historical source account — superseded by the current route account:** **The conforming example at the transport, with no `payload` key so a refusal cannot read as a success.** [1520]
+
 - **Retained historical source account — superseded by the current route account:** **The status family derived from the refusal's own code.** [1521]
+
 - **Retained historical source account — superseded by the current route account:** **The module's own statement of the requirement and of the property behind each case.** [1523]
+
 - **Retained historical source account — superseded by the current route account:** **The first case: both bound objects' own bytes, each against an independent `git show` observation.** [1524]
+
 - **Retained historical source account — superseded by the current route account:** **The content classes the fixture materializes for real, and the routes wired as the composition root wires them.** [1525]
+
 - **Retained historical source account — superseded by the current route account:** **The generation binding, the two availability cases, and the verifier's path-confinement finding.** [1526]
+
 - **Retained historical source account — superseded by the current route account:** **The refusal family and the closing identity case.** [1527]
+
 - **Retained historical source account — superseded by the current route account:** **The shared R01 fixture these cases extend rather than duplicate.** [1528]
+
 - **Retained historical source account — superseded by the current route account:** The expansion owner and route constant these cases are the regression surface for. [1531]
+
 - The shared synthetic evidence catalog builder produces fixture metadata; its declarations do not establish production composition or test execution. [1532]
+
 - **Retained historical source account — superseded by the current route account:** **The nine partition cases, appended after the module's former end.** [1535]
+
 - **Retained historical source account — superseded by the current route account:** One collected subject covering all three arrivals at the series publication. [1537]
+
 - **Retained historical source account — superseded by the current route account:** The interrupted reset resumes rather than stranding the branches the series stands on. [1538]
+
 - **Retained historical source account — superseded by the current route account:** The one collected case that now pins all three directions of the step rule. [1539]
+
 - **Retained historical source account — superseded by the current route account:** The counter-case the new admission must not weaken: a position descending from a step cannot vacate it. [1540]
+
 - **Retained historical source account — superseded by the current route account:** **The fixture that makes an addition and a removal real: two independently built snapshots under one namespace, plus the four authored revisions.** [1543]
+
 - **Retained historical source account — superseded by the current route account:** **The addition and the removal: the complete present-side statement beside the named absent side, with the comparison's own side-absence code.** [1544]
+
 - The field-row case asserts the exact acceptance_ref/lifecycle/payload_digest roster, absent-before and present-after text-knowledge acceptance_ref, and proposed-to-accepted lifecycle. It does not assert a both-sides structured-value round-trip. [1545]
+
 - **Retained historical source account — superseded by the current route account:** The one-sided-record case and the task-context case. [1546]
+
 - The historical Python comment points to the renderer suite; the three statement literals it named are not present in the current renderer test source, so no active three-literal equality is asserted here. Acceptance, lifecycle and provenance fixtures are independently authored; neither suite asserts fixture equivalence or automatic cross-half failure. [1549]
+
 - A task-attached launch's capsule is the compiler's own result for the same seat -- trusted instructions and semantic digest -- never a hand-built literal. [1550]
-- **Retained historical source account — superseded by the current route account:** The production-chain pair that replaced the hand-supplied case. [1551]
+
 - One decision point with two answers: a capsule role compiles, and every other seat refuses with a status that names the role and delivers nothing. [1552]
+
 - The free agent's admission names its absent task plane and its capsule identity moves with the seat; the replacement route refuses by name for an unmarked stage part, a role the stage lacks and a missing required file. [1553]
+
 - **Retained historical source account — superseded by the current route account:** The fixture world and the synthetic corpus every hermetic case is built from. [1555]
+
 - **Retained historical source account — superseded by the current route account:** The admission guarantees: no role acquisition by string, no caller-selected source, no write to the read tree. [1556]
 
 - The guards the repairs pinned, each driven directly by its own case, live in mcp/tests/test_capsule_serving_surface.py. [1557]
@@ -1840,89 +880,161 @@ Current source: The replacement after-discovery test source asserts one joint sw
 - The case that keeps the seeded-mutation evidence honest lives in mcp/tests/test_capsule_serving_surface.py. [1804]
 
 - **Retained historical source account — superseded by the current route account:** The live public-surface inventory contract for the advertised MCP tool tuple. [1581]
+
 - **Retained historical source account — superseded by the current route account:** The L32 module itself: archive-ready reachability for both cleanup verbs, the declarations, and the validator in both directions. [1583]
+
 - **Retained historical source account — superseded by the current route account:** The contract-scoped activation record: one record per series contract, keyed by the contract fingerprint rather than a source pair. [1585] [1690]
+
 - **Retained historical source account — superseded by the current route account:** The L37 structural half: the pause's import closure is disjoint from every publication module. [1587]
+
 - **Retained historical source account — superseded by the current route account:** The ordered lifecycle playthrough that is the regression proof for the deleted atomic-series child-admission seal: master open → leaf start → closeout → landing → checkpoint → pause → attach → a leaf commanded after the landing still starts. [1588]
+
 - **Retained historical source account — superseded by the current route account:** **260913-LCA-L8:** the L6 shape finalizes on the first call, a real permission failure blocks with its own reason and refuses identically on retry, and the two invariant owners are driven directly. [1594]
+
 - **Retained historical source account — superseded by the current route account:** The L37 stop boundary proof: the public pause, the measured world, the eight independently-failing cases and the refusals. Its never-selected case now asserts the already-vacant success rather than a refusal. [1596]
+
 - **Retained historical source account — superseded by the current route account:** **The mid-flight reporting boundary:** a completed pass beside a reconciling selection is not this call's success, and a refusal left beside one leads with the mid-flight state. [1601]
+
 - **Retained historical source account — superseded by the current route account:** The rewritten contract-scoped activation forcing suite and its shared-source-pair fixture. [1602] [1696]
+
 - **Retained historical source account — superseded by the current route account:** The registered admission refusal now addresses only the addressed contract's own state. [1603]
 
 - Public closeout commits the actual code and memory pair. Recovery attributes the owed memory commit with a missing cache. [1604]
 
 - **Retained historical source account — superseded by the current route account:** Cache damage cannot change the accepted integration pair or block ref publication. [1605] [1607]
+
 - **Retained historical source account — superseded by the current route account:** The migration acceptance proof reads only committed trailers. [1606] [1608]
+
 - **Retained historical source account — superseded by the current route account:** **The completeness node that derives the mandatory set from recorded rows rather than from the implementation's own page manifest.** [1609]
+
 - **Retained historical source account — superseded by the current route account:** The ordering node the review sealed as HIGH, and the truncated-page node. [1610]
+
 - Current path cases assert typed magic-spelling refusal and literal glob-character path authoring, storing, seeding and exact blob observation. [1611]
+
 - The missing requested-tree case reports unavailable before lookup, distinct from a genuine absent path. [1612]
+
 - **Retained historical source account — superseded by the current route account:** The lookup that could not be run at all, reported as the same fact. [1613]
+
 - **Retained historical source account — superseded by the current route account:** The continuation bindings, each with its own control, and the read-only property on a real file. [1614]
+
 - **Retained historical source account — superseded by the current route account:** **The packet's first non-conforming example, and the node `M1`/`M2` kill.** [1620]
+
 - The current case asserts present-outside-selection versus absent-from-snapshot side by side and names the outside-selection omission. [1621]
+
 - **Retained historical source account — superseded by the current route account:** **The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.** [1622]
+
 - **Retained historical source account — superseded by the current route account:** **The node that drives a real candidate write and refuses its continuation, and the substituted-snapshot refusal.** [1623]
+
 - **Retained historical source account — superseded by the current route account:** The expansion, the visible unattributed gap, and the filter that narrows the display and never the comparison. [1624]
+
 - **Retained historical source account — superseded by the current route account:** **The refusal an over-budget population raises, which is why the loops live inside their cases.** [1628]
+
 - **Retained historical source account — superseded by the current route account:** The publish refusal names the one omitted member, for each of the nine. [1629]
+
 - **Retained historical source account — superseded by the current route account:** The all-nine refusal names every member in declaration order. [1630]
+
 - **Retained historical source account — superseded by the current route account:** The positive control binds the declaration to the request model's own field order. [1631]
+
 - **Retained historical source account — superseded by the current route account:** The prepare text is asserted from the real `_prepare` path. [1632]
+
 - **Retained historical source account — superseded by the current route account:** The sibling refusal names the supplied member for each read action. [1633]
+
 - **Retained historical source account — superseded by the current route account:** The multi-field refusal names every supplied field in model order, `judgments` included. [1634]
+
 - **Retained historical source account — superseded by the current route account:** The freeze branch keeps its own named refusal. [1635]
+
 - The signal suite includes the nine-field required-input table and the two conclusion-bearing-field/detail refusal controls. [1636]
+
 - **Retained historical source account — superseded by the current route account:** The new case module and its lane marker. [1642]
+
 - **Retained historical source account — superseded by the current route account:** The forbidden-name set the whole payload schema is walked against. [1643]
+
 - Two full renders leave both datasets canonical row counts unchanged. [1644]
+
 - **Retained historical source account — superseded by the current route account:** The case that the adapter selects nothing, compared value for value. [1645]
+
 - **Retained historical source account — superseded by the current route account:** **The budget pair the populations are measured against, and the `UsageError` that makes an over-budget lane execute zero tests.** [1650]
+
 - **Retained historical source account — superseded by the current route account:** The publication-input cases in their new home, asserting the declaration is the model's own field order. [1652]
+
 - **Retained historical source account — superseded by the current route account:** **The two new classes and the fixtures they drive, including the `_selection()` narrowing helper the type-checked call sites need.** [1655]
 
 - Current test_the_carrier_uses_the_field_spellings_the_answer_returns asserts card, recordCounts, actionNeeded, overviews, codeState and memoryState in carrier text, and excludes published_intent, repository_overview, route_overviews and served_earlier. It does not derive vocabulary from a real page. [1656]
 
 - **Retained historical source account — superseded by the current route account:** **The two new unit cases, the narrowing helper the optional selector obliged, and the selector-kind transport case.** [1661]
+
 - The former history-sentence/ambiguity case is retired. Current family-context population asserts recorded-empty versus absent, before-context retention for additions/removals and authored-population preservation; no new revision-chain-history assertion is claimed. [1663]
+
 - **Retained historical source account — superseded by the current route account:** The record-only successor case (L47-R1-F3). [1665]
+
 - **Retained historical source account — superseded by the current route account:** The new reopen module's docstring. [1667]
+
 - **Retained historical source account — superseded by the current route account:** The public closeout refuses an open item and commits once it is answered. [1669]
+
 - **Retained historical source account — superseded by the current route account:** `# The next-move triple, declared here so the worktree surface's guidance is part of` [1670]
+
 - **Retained historical source account — superseded by the current route account:** refuse a `nextTool` outside the roster (`_require_registered_public_next_tool`) [1671]
+
 - **Retained historical source account — superseded by the current route account:** The isolation of the pytest process and the two registered plugins. [1735]
+
 - **Retained historical source account — superseded by the current route account:** The gate's warm pass becomes the refusal when a packet locator is retargeted. [497]
+
 - **Retained historical source account — superseded by the current route account:** The leaf-wide view captures nothing itself and is computed once per comparison. [498]
+
 - **Retained historical source account — superseded by the current route account:** The child's document, reads and body equal the computation in the calling process at two sizes. [499]
+
 - **Retained historical source account — superseded by the current route account:** The waiting bound counts computations, not the requests sharing them. [500]
+
 - **Retained historical source account — superseded by the current route account:** A kept view ignores every task document it did not read. [501]
+
 - **Retained historical source account — superseded by the current route account:** The four reopen cases. [1420]
+
 - **Retained historical source account — superseded by the current route account:** Buckets and destinations reconcile; long paths answer typed. [1421]
+
 - **Retained historical source account — superseded by the current route account:** The cards-read case and its four helpers. [1429]
+
 - Retained historical caption, superseded: - **Retained historical source account — superseded by the current route account:** Every tool surface reports a partial index as incomplete. Current evidence extent: The partial-index case preserves the remaining invariant answer and marks that answer and the cache report partial. [1756]
+
 - **Retained historical source account — superseded by the current route account:** **The new route-level case: the served `200`, the state after serialization, and the unknown leaf that is still a named `404`.** [1484]
+
 - **Retained historical source account — superseded by the current route account:** The producer both cases drive. [1486]
+
 - **Retained historical source account — superseded by the current route account:** The module's own statement of the read bound and the preserved projection. [1736]
+
 - **Retained historical source account — superseded by the current route account:** Availability loss reported, not remembered. [1496]
+
 - **Retained historical source account — superseded by the current route account:** **The movement module's own statement of what it measures, and the fixture it authors through the store's operations.** [1499]
-- **Retained historical source account — superseded by the current route account:** **The packet's conforming example and the non-conforming reading measured beside it.** [1737]
+
 - **Retained historical source account — superseded by the current route account:** The withdrawal boundary and the labelled inference with its no-fabrication control. [1501]
+
 - **Retained historical source account — superseded by the current route account:** The family, route and ungoverned cases, and the unresolved anchor that keeps its reason. [1502]
-- **Retained historical source account — superseded by the current route account:** The multi-ended line, the named-instead-of-denied withdrawal, and the member-wise family pairing. [1738]
+
 - **Retained historical source account — superseded by the current route account:** **The re-contracted mechanism case in the surface module.** [1506]
+
 - **Retained historical source account — superseded by the current route account:** **The fixture that makes retained populations real: two independently built text-tree snapshots under one namespace, with heads read from what is retained.** [1739]
+
 - **Retained historical source account — superseded by the current route account:** **The single retained pair compared head to head, with the before head recorded on a known-empty after side.** [1740]
+
 - **Retained historical source account — superseded by the current route account:** **Heads as the retained population in sorted order: never from order or presence, with no pair guessed.** [1741]
+
 - **Retained historical source account — superseded by the current route account:** **The retired chain/fork/lineage cases are gone with the authored edges; damaged-graph cases exercise reader refusal instead.** [1742]
+
 - Retained historical caption, superseded: - **Retained historical source account — superseded by the current route account:** The lane row, and the manifest extent it sits in. Current evidence extent: The synthetic catalog builder writes artifact category and fidelity metadata; this is fixture declaration. [1757]
+
 - **Retained historical source account — superseded by the current route account:** **The module's own statement of what it is — the fast transport contract, driving the real route — and of the two shapes a refusal arrives in.** [1517]
+
 - Retained historical caption, superseded: - **Retained historical source account — superseded by the current route account:** **The module's own definition of actionable, asserted as a set inclusion in every transport-level case.** Current evidence extent: The four exception/unwired transport controls require ACTIONABLE fields; typed domain refusals are asserted separately in their own body shape. [1758]
+
 - Retained historical caption, superseded: - **Retained historical source account — superseded by the current route account:** **The module whose cases are the production-composition evidence, and its lane row.** Current evidence extent: The shared synthetic evidence catalog builder produces fixture metadata; its declarations do not establish production composition or test execution. [1759]
+
 - **Retained historical source account — superseded by the current route account:** **The production port the cases read through, and the bundle they read beside it.** [1533]
+
 - **Retained historical source account — superseded by the current route account:** The fixture's external-memory shape, which the assessment channel needs. [1534]
+
 - **Retained historical source account — superseded by the current route account:** **The six precedence and receipt cases on the real enclosure route.** [1536]
+
 - Retained historical caption, superseded: field-row cases were described as serving structured values on both sides. The current case asserts one-sided acceptance_ref and lifecycle fields; it does not supply that structured-value proof. [1755]
+
 - Retained historical caption, superseded: the renderer was said to use the same values and make either suite fail when the other changed. The historical Python comment is preserved as its target; matching three statement literals does not establish fixture equivalence or automatic cross-half failure. [1765]
 
 - The guards the repairs pinned, each driven directly by its own case, live in mcp/tests/test_capsule_serving_surface.py. [1743]
@@ -1932,451 +1044,360 @@ Current source: The replacement after-discovery test source asserts one joint sw
 - The case that keeps the seeded-mutation evidence honest lives in mcp/tests/test_capsule_serving_surface.py. [1746]
 
 - Retained historical caption, superseded: - **Retained historical source account — superseded by the current route account:** **The three path facts, and the case that authors, stores, seeds and resolves a path holding glob characters.** Current evidence extent: Current path cases assert typed magic-spelling refusal and literal glob-character path authoring, storing, seeding and exact blob observation. [1760]
+
 - Retained historical caption, superseded: - **Retained historical source account — superseded by the current route account:** The lookup that ran and could not answer, refused as unavailable rather than absent. Current evidence extent: The missing requested-tree case reports unavailable before lookup, distinct from a genuine absent path. [1761]
+
 - Retained historical caption, superseded: - **Retained historical source account — superseded by the current route account:** **The present-outside-versus-absent distinction side by side, and the per-table rule-2 subsumption assertion.** Current evidence extent: The current case asserts present-outside-selection versus absent-from-snapshot side by side and names the outside-selection omission. [1762]
+
 - **Retained historical source account — superseded by the current route account:** The harness that owns the admitted candidate and the recorded fixture lives in `mcp/tests/review_curator_fixture_support.py`; this module no longer defines it. [1627]
+
 - Retained historical caption, superseded: - **Retained historical source account — superseded by the current route account:** **The signal suite's 28 cases, including the nine-parameter required-field table and the two halves of "a conclusion is unrepresentable".** Current evidence extent: The signal suite includes the nine-field required-input table and the two conclusion-bearing-field/detail refusal controls. [1763]
+
 - Retained historical caption, superseded: - **Retained historical source account — superseded by the current route account:** The row-level proof that a full render stores nothing. Current evidence extent: Two full renders leave both datasets canonical row counts unchanged. [1764]
+
 - **Retained historical source account — superseded by the current route account:** The transport case: typed result, a 400 and a 503. [1646]
+
 - **Retained historical source account — superseded by the current route account:** The scaffold the sibling imports, still exported from the kept module. [1651]
+
 - **Retained historical source account — superseded by the current route account:** **The module itself: the eight cases and the production composition they drive.** [1653]
+
 - **Retained historical source account — superseded by the current route account:** **The production owners the cases measure: the delegated resolution, the capture owner, and the recorded-range resolver.** [1654]
+
 - **Retained historical source account — superseded by the current route account:** **The no-datasets fixture shape and the selector-less request the task-context cases use.** [1658]
+
 - **Retained historical source account — superseded by the current route account:** **The four cases R02 is measured by through the real composition and the real route.** [1659]
+
 - **Retained historical source account — superseded by the current route account:** **The real-repository fixture and the six cases that measure the inventory against every change class.** [1660]
+
 - **Retained historical source account — superseded by the current route account:** New-member context preserves the independent family counterpart. [1662]
+
 - **Retained historical source account — superseded by the current route account:** Genuine ambiguity and exact requested history are distinct assertions. [1749]
+
 - **Retained historical source account — superseded by the current route account:** Registered preview preserves startup/Git state while checking call records. [1706]
+
 - The shared comparator checks call-day paths, causal directory entries, log details and completed-call river records. [1707]
 
 - The module docstring names the instruction-wording and ignored-environment duties. The four cases protect shipped instruction wording and ignored-environment accounting, with no lifecycle execution. [1708]
 
 - **Retained historical source account — superseded by the current route account:** The shared support guard refuses protected settings paths before returning a write path. [1709]
-- **Retained historical source account — superseded by the current route account:** The world child proves its reviewed source and leaves the fake-account home empty on refusal; the scanner derives its support population recursively. [1710]
-- **Retained historical source account — superseded by the current route account:** The comparison selector proof over recorded trees [1711]
-- **Retained historical source account — superseded by the current route account:** Shared outline/change facts keep one definition [1712]
-- **Retained historical source account — superseded by the current route account:** Shared outline/change facts keep one definition [1713]
-- **Retained historical source account — superseded by the current route account:** The default options select the unit population and four workers. [1]
 
+- **Retained historical source account — superseded by the current route account:** The world child proves its reviewed source and leaves the fake-account home empty on refusal; the scanner derives its support population recursively. [1710]
+
+- **Retained historical source account — superseded by the current route account:** The comparison selector proof over recorded trees [1711]
+
+- **Retained historical source account — superseded by the current route account:** Shared outline/change facts keep one definition [1712]
+
+- **Retained historical source account — superseded by the current route account:** Shared outline/change facts keep one definition [1713]
+
+- **Retained historical source account — superseded by the current route account:** The default options select the unit population and four workers. [1]
 
 - **Retained historical source account — superseded by the current route account:** The packet's examples: ready once current rows answer every item; a new edit reopens two. Anchor: `test_a_leaf_is_ready_only_once_current_rows_answer_every_item_and_a_new_edit_reopens_two` [1415]
 
-
 - **Retained historical source account — superseded by the current route account:** One refusal test per public route entry, starting with the worktree closeout. [1416]
+
 - **Retained historical source account — superseded by the current route account:** The sync-merge cases. [1417]
+
 - **Retained historical source account — superseded by the current route account:** The proof admission at the route. [1430]
+
 - **Retained historical source account — superseded by the current route account:** A repeat read writes nothing. [1440]
+
 - **Retained historical source account — superseded by the current route account:** A forged legacy ID does not make a record exported. [1449]
+
 - **Retained historical source account — superseded by the current route account:** The gate cases' fixture description. [1456]
+
 - **Retained historical source account — superseded by the current route account:** A recorded assessment is never edited; a correction appends. [1466]
+
 - **Retained historical source account — superseded by the current route account:** The baseline and the pinned report-only set. [1474]
+
 - **Retained historical source account — superseded by the current route account:** The managed sync refuses, keeps the merge staged, and syncs after the repair. [1475]
+
 - **Retained historical source account — superseded by the current route account:** Exact contract scope, full check and curator worklist publication. [1566]
+
 - **Retained historical source account — superseded by the current route account:** Interactive catalog names missing authority without eligibility. [1567]
+
 - **Retained historical source account — superseded by the current route account:** **The mounted-route class, which measures the block through the call an agent actually makes. Since MIK-R24 an unconverted memory tree is read as `legacy-format` there, so its two cases assert that, with and without a database.** [1657]
+
 - **Retained historical source account — superseded by the current route account:** The new cutover module's docstring: what it covers. [1666]
+
 - **Retained historical source account — superseded by the current route account:** Recorded-meaning regression uses compose_review over converted trees, exact owner/attempt selection, outline and continuation equality, portable L37 historical fixtures and retired/before-only UUID witnesses. [1715]
+
 - The current repository-root collected-case declarations are 10,000 unit/2,000 integration; the earlier 6,000/1,000 and 5,000/1,000 pairs are preserved as historical source epochs, not the current limit.  Anchor: `unit_case_budget` [2]
 
 - The install-contract module checks bounded answers and exact filed full results. [1701]
 
 - **Retained historical source account — superseded by the current route account:** The no-stop module. [1702]
+
 - **Retained historical source account — superseded by the current route account:** The node module. [1703]
+
 - **Retained historical source account — superseded by the current route account:** Candidate isolation, three plugin registrations and ordinary/certifying composition are explicit. [1716]
 
-
 - **Retained historical source account — superseded by the current route account:** Lane selection proves explicit source membership and refuses incomplete/stale catalogs. [1719]
+
 - **Retained historical source account — superseded by the current route account:** Artifact discovery and exact consumer comparison have bounded source owners. [1720]
 
 - Canonical rewriting refuses an ambiguous doubled contract or artifact row and removes no row. It refuses a table header its line scan cannot read. It drops gone consumers but never a row, preserving the retirement decision for the author. Both catalogs merge by union, and the loaders name the rewrite command that repairs the result. The source checks the raw curator role text in both delivered roots and one compiled canonical Curator capsule; it is not every live harness execution. [1721]
 
 - **Retained historical source account — superseded by the current route account:** Settings refusal compares account home or earliest observed home before returning a write path. [1724]
+
 - **Retained historical source account — superseded by the current route account:** The approved support scanner derives nested support and checks supported syntactic bypasses. [1725]
 
 - The environment fixtures check interpreter wording and candidate accounting with a real standard-library venv. Node coverage here is a populated node_modules directory with fixture.js, rather than a Node installation or runtime qualification. [1726]
 
-
-
 - **Retained historical source account — superseded by the current route account:** The retained production ref transaction checks protected heads, ancestry and exact landing output. [1728]
 
-
 - **Retained historical source account — superseded by the current route account:** The bounded timing scanner reads its named support roots and excludes waits.py. [1730]
+
 - **Retained historical source account — superseded by the current route account:** The catalog's closure over the governed inventory, and that every declared contract is referenced, are checked explicitly here. [1731]
+
 - **Retained historical source account — superseded by the current route account:** Source controls cover cut measure, threshold, deletion proof and overviews. [1716]
 
-
-
-
 - **Retained historical source account — superseded by the current route account:** Fixture assertions keep landing reports non-refusing while preserving existing refusals; adjacent closeout services are mocked. [1719]
+
 - **Retained historical source account — superseded by the current route account:** Source cases inventory live/dangling links at own size and bound counted multiset hash work. [1720]
-
-
-
 
 - `paseo_launch_test_support` owns the shared hand-written stateful runtime/catalog and fixture-derived dispatch expectations. Catalog ownership and source assertions are not live-host or executed acceptance proof. Launch test classes inherit that support. Status test classes, and the document-chat read/tree classes, inherit it through `StatusTestCase`. The first-start preparation class has its separate `RoleToolsTestCase` base. Document-chat source cases assert one-census tree discovery, unknown versus empty, corruption isolation, repeated receipt-path reads and byte budgets. `test_paseo_status_bridge` composes the production Node listing script with a controlled daemon client. `test_paseo_frame` asserts settings-bound provision-command disclosure. [1732]
 
 - **Retained historical source account — superseded by the current route account:** The finite STOP-delta ports assertion carriers, not production behavior: direct whole retirement results are distinguished from adapter logs; exact returned refusal/no-write controls remain; reference-owned long wording leaves compact registration; full wait-reply content replaces the obsolete fifty-character cut; the start shaped row is bounded at600; three existing completion waits use the shared named-condition helper; and fifteen catalog rows add consumers only. Both preview-driver fixes retain the two architect-qualified tip count-key parity failures assigned to L113. This is a source account of the qualified attempt14 input, not a fresh test run, full-suite green or current MEMORY acceptance. [1734]
 
 - The skill surface is the canonical tree plus its one packaged serving copy declared in `generated-copies.json`. [1805]
+
 - The sync script resolves its targets from that declaration. [1813]
-
-
-
-
-
-
 
 - The current reconsideration module imports extracted configuration support and its current fixture owners. [1769]
 
-
 - The changed-row refusal supplies the real gate worklist. [1770]
 
-
 - The relabelled changed-row control preserves its revision-refusal assertion with the admitted worklist. [1771]
-
-- The skill-sync subprocess in AnswerAndTextTests uses sys.executable. [1772]
 
 - The real paired-enclosure fixture initializes and verifies its empty repository lock before measuring refusal. [1773]
 
 - The competing writer directly observes lease exclusion and uses the shared hang guard. [1774]
 
 - The selected static task-entry case asserts authored-stage precedence over host activity (`test_task_entries.py::test_stage_has_priority_over_host_activity`); event contribution and the unknown-host and known-empty-host outcomes are asserted by the module's other cases, not by this one. Not executed here. [1776]
+
 - The native pidfd fixture asserts one exit invalidation with controlled process identity; this source is not a fresh native-host run. [1777]
+
 - The nested-dependency case compares on-demand body dependencies and bodyRevision with corpus projection for two addressed documents; not executed here. [1778]
+
 - The intent-cache concurrency case blocks its own reader while another route completes; static assertion inspection is not measured runtime evidence. [1779]
+
 - Raw tool-event assertions require task scopeKey and absence of session/lifecycle attribution; not executed here. [1780]
 
 - Reviewer landing wording is checked in each discovered root's delivered Reviewer role section and its emitted instructions, not in a separate step-8 detail. The discovered roots are the canonical tree and its packaged serving copy. [1782]
 
 - Current Reviewer source cases distinguish required judgment/semantic side states and retained assessment count consistency from the retired reviewer envelope; latency and memory-watch modules protect their separate read/observation boundaries. No execution is asserted. [1784]
+
 - Numbered comparisons preserve their own outline/counts and retained catalogue answers; route admission refuses negative input before the port and forwards positive input unchanged. [1789]
+
 - Selected display versions and converted-history writer outcomes distinguish recorded/introduction, no recorded writer and unavailable history. [1790]
+
 - Card-entry memory values come from the bound after index; lane omission and failed-memory non-retention remain explicit. [1791]
+
 - Developer-send and seat-list cases use actual in-process owners with a fake native host; separate sent-log and cross-site cases protect bounded storage and the pre-route guard. [1792]
+
 - The controlled bridge asserts native attachment options and pre-operation invalid-payload refusal; complete versus truncated listings carry into the recipient list. [1793]
+
 - The request head for 500 invariants is checked against actual two-read h11 parsing and foreground/daemon-child plus reload configuration. [1794]
+
 - No-knowledge task-context source cases assert All changes wording, no sentence break in the statement and inventory truth without browser-layout evidence. [1795]
+
 - The selected delivered-comparison case asserts that a landed leaf opens the pair it delivered and keeps its earlier record (`test_review_delivered_comparison.py::test_a_landed_leaf_opens_the_pair_it_delivered_and_keeps_its_earlier_record`); the module's history and refusal cases are asserted separately. [1796]
+
 - Cardless source-map cases inspect real writer rows while preserving the mixed-group qualification. [1797]
+
 - The earlier source epoch cited here declared42 public names, including the settings initializer; this retained caption is historical rather than the current W9 roster stated below. [1799]
+
 - Initializer regressions keep Architect regular-task/Curator guidance and preserve partial/legacy/no-write distinctions; the converted journey checks that continuation after baseline. [1800]
+
 - **Retained historical source account — superseded by the current route account:** Source cases retain committed leaf deltas and exclude files already present in an updated base. [1717]
+
 - Source-file scenarios exercise the public synchronous route and preserve citation semantics. [1809]
+
 - Candidate successor, unchanged/no-successor and unrelated-candidate controls remain source-defined assertions. The current collected-case declaration is 10,000 unit/2,000 integration under D579 following L193's unit-only D460 raise, with unchanged guard behavior; the 6,000/1,000 and 5,000/1,000 pairs and the former 1223-line file account remain historical, not current or newly executed.  Anchor: `unit_case_budget` [1714]
+
 - The declared collected-case budget is 10,000 unit and 2,000 integration.  Anchor: `unit_case_budget` [1768]
 
-
 - **Retained historical source account — superseded by the current route account:** Development commands, budgets, diagnostic metrics and isolation. [1677]
+
 - **Retained historical source account — superseded by the current route account:** Certifying publication and accepting consumers. [1678]
+
 - The older 1000/150 configuration/design discrepancy is a historical observation. The current root and testing design now agree on 10000 unit and 2000 integration selected cases; the named tests retain their independent source assertions. Target: mcp/tests/test_landing_report.py. [1814]
+
 - The older 1000/150 configuration/design discrepancy is a historical observation. The current root and testing design now agree on 10000 unit and 2000 integration selected cases; the named tests retain their independent source assertions. Target: mcp/tests/test_landing_report.py. [1815]
+
 - The older 1000/150 configuration/design discrepancy is a historical observation. The current root and testing design now agree on 10000 unit and 2000 integration selected cases; the named tests retain their independent source assertions. Target: docs/design/python-pytest-bootstrap.md. [1816]
+
 - Current targets retain the landing-report regression cases. These live targets are not an archive of the retained source account quoted above. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: mcp/tests/test_landing_report.py. [1817]
+
 - Current targets retain the landing-report regression cases. These live targets are not an archive of the retained source account quoted above. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: docs/design/python-pytest-bootstrap.md. [1818]
+
 - Current targets retain the landing-report regression cases. These live targets are not an archive of the retained source account quoted above. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml. [1819]
+
 - Current targets retain the landing-report regression cases. These live targets are not an archive of the retained source account quoted above. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml. [1820]
+
 - **Retained historical source account — superseded by the current route account:** Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence.  Anchor: rename, linked-worktree and removed-card controls Target: mcp/tests/test_landing_report.py. [1821]
+
 - **Retained historical source account — superseded by the current route account:** Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence.  Anchor: rename, linked-worktree and removed-card controls Target: mcp/tests/test_landing_report.py. [1822]
 
 - Current targets retain the landing-report regression cases. These live targets are not an archive of the retained source account quoted above. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: mcp/tests/test_landing_report.py. [1824]
+
 - Current targets retain the landing-report regression cases. These live targets are not an archive of the retained source account quoted above. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: docs/design/python-pytest-bootstrap.md. [1825]
+
 - Current targets retain the landing-report regression cases. These live targets are not an archive of the retained source account quoted above. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml. [1826]
+
 - Current targets retain the landing-report regression cases. These live targets are not an archive of the retained source account quoted above. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml. [1827]
+
 - Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and moved support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair. Target: mcp/tests/test_landing_report.py. [1828]
+
 - Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and moved support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair. Target: mcp/tests/landing_report_test_support.py. [1829]
+
 - Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and moved support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair. Target: docs/design/python-pytest-bootstrap.md. [1830]
+
 - Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and moved support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair. Target: pyproject.toml. [1831]
 
+- The conformance source declares ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46. Its structural tests compare registry and adapter populations in both directions, compare PUBLIC_TOOLS with the registered surface, reject duplicate roster entries and unadvertised registrations, and assert the roster count. These are source declarations and assertions, not a recorded test run or a measurement of the developer’s host. [1733]
 
+- The lane row. Source caption: `mcp/tests/test_review_change_kinds.py` [1414]
 
+- The lane manifest declares test_knowledge_closeout_gate.py in unit-regression. Membership establishes no execution. [1418]
 
-- **Retained historical source account — superseded by the current route account:** The lane row. Source caption: `mcp/tests/test_review_change_kinds.py`. Current declaration: The lane row. Source caption: `mcp/tests/test_review_change_kinds.py` [1414]
+- The current lane manifest declares mcp/tests/test_review_unexplained_lane.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1422]
 
+- The current lane manifest declares mcp/tests/test_reconsideration_surfacing.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1424]
 
+- The lane row. Source caption: `mcp/tests/test_knowledge_reader.py` [1428]
 
+- The current lane manifest declares mcp/tests/test_review_git_trees.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1439]
 
-- **Retained historical source account — superseded by the current route account:** The original two-lane-row caption names test_knowledge_closeout_gate.py. That module is currently declared in unit-regression; the historical count does not establish a second named current declaration or execution. [1418]
-
-
-
-
-- Retained historical caption: The lane row. The current lane manifest declares mcp/tests/test_review_unexplained_lane.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1422]
-
-
-
-
-- Retained historical caption: The lane row. The current lane manifest declares mcp/tests/test_reconsideration_surfacing.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1424]
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The lane row. Source caption: `mcp/tests/test_knowledge_reader.py`. Current declaration: The lane row. Source caption: `mcp/tests/test_knowledge_reader.py` [1428]
-
-
-
-
-- Retained historical caption: The two MIK-R25 lane rows. The current lane manifest declares mcp/tests/test_review_git_trees.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1439]
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The decision-record lane row. Source caption: `mcp/tests/test_knowledge_decisions.py`. Current declaration: The decision-record lane row. Source caption: `mcp/tests/test_knowledge_decisions.py` [1442]
-
-
-
+- The decision-record lane row. Source caption: `mcp/tests/test_knowledge_decisions.py` [1442]
 
 - The current unit-regression lane selects test_knowledge_leaf_read.py. The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1445]
 
-
-
-
 - The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1446]
 
+- The current lane manifest declares test_planned_knowledge_effects.py in unit-regression; membership does not establish execution. [1451]
 
+- The lane manifest declares mcp/tests/test_knowledge_paging.py in unit-regression. Membership declares selection, not invocation. [1453]
 
+- The onboarding trace gate's lane row (`mcp/tests/test_onboarding_trace_gate.py`). [1455]
 
-- Retained historical caption: the planned-effects lane row. The current lane manifest declares test_planned_knowledge_effects.py in unit-regression; membership does not establish execution. [1451]
+- The current lane manifest declares mcp/tests/test_knowledge_currentness.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1457]
 
-
-
-
-- **Retained historical source account — superseded by the current route account:** The paging lane row.. Current declaration: The lane manifest declares mcp/tests/test_knowledge_paging.py in unit-regression. Membership declares selection, not invocation. [1453]
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The onboarding trace gate's lane row (`mcp/tests/test_onboarding_trace_gate.py`).. Current declaration: The onboarding trace gate's lane row (`mcp/tests/test_onboarding_trace_gate.py`). [1455]
-
-
-
-
-- Retained historical caption: The lane row. The current lane manifest declares mcp/tests/test_knowledge_currentness.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1457]
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The original two-lane-row caption names test_knowledge_worklist.py, currently declared in unit-regression. The historical count establishes no additional unnamed current module or execution. [1459]
-
-
-
+- The lane manifest declares test_knowledge_worklist.py in unit-regression. Membership establishes no execution. [1459]
 
 - The lane manifest registers mcp/tests/test_knowledge_proofs.py in unit-regression. Membership selects evidence and does not establish execution. [1460]
 
+- The current lane manifest declares mcp/tests/test_knowledge_conversion.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1463]
 
+- The lane manifest registers mcp/tests/test_knowledge_writer.py once in unit-regression. Membership does not establish execution. [1464]
 
+- The current lane manifest declares mcp/tests/test_knowledge_census_files.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1467]
 
-- Retained historical caption: The three lane rows. The current lane manifest declares mcp/tests/test_knowledge_conversion.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1463]
+- The lane manifest declares test_knowledge_index.py in unit-regression. Membership establishes no execution. [1473]
 
+- The lane manifest declares test_knowledge_validator.py in unit-regression. Membership establishes no execution. [1476]
 
+- The current lane manifest declares mcp/tests/test_knowledge_history_files.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1479]
 
-
-- The lane manifest registers mcp/tests/test_knowledge_writer.py once in unit-regression. The former two-row caption is a historical account, not a claim of two current registrations. Membership does not establish execution. [1464]
-
-
-
-
-- Retained historical caption: The two lane rows. The current lane manifest declares mcp/tests/test_knowledge_census_files.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1467]
-
-
-
-
-- Historical three-lane-row caption: the original note names test_knowledge_index.py, currently declared in unit-regression. The historical count establishes no two additional unnamed current declarations or execution. [1473]
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The original two-lane-row caption names test_knowledge_validator.py, currently declared in unit-regression. The historical count establishes no additional unnamed current module or execution. [1476]
-
-
-
-
-- Retained historical caption: The lane row. The current lane manifest declares mcp/tests/test_knowledge_history_files.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1479]
-
-
-
-
-- Retained historical caption: The two lane rows. The current lane manifest declares mcp/tests/test_knowledge_file_canonical.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1481]
-
-
-
+- The current lane manifest declares mcp/tests/test_knowledge_file_canonical.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1481]
 
 - The lane manifest registers mcp/tests/test_knowledge_review_attributed_source_content.py in unit-regression. Membership selects evidence and does not establish execution. [1488]
 
+- Its lane registration. Source caption: `mcp/tests/test_task_document_body_lookup.py` [1491]
 
+- The current lane manifest declares mcp/tests/test_read_anchor_memo.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1497]
 
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 788 distinct test modules across its lane identities. [1498]
 
-- **Retained historical source account — superseded by the current route account:** Its lane registration. Source caption: `mcp/tests/test_task_document_body_lookup.py`. Current declaration: Its lane registration. Source caption: `mcp/tests/test_task_document_body_lookup.py` [1491]
+- The unit-regression registry includes the revision-selection test module (`mcp/tests/test_knowledge_review_revision_selection.py`). [1507]
 
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 788 distinct test modules across its lane identities. [1529]
 
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 788 distinct test modules across its lane identities. [1530]
 
+- The current lane manifest declares mcp/tests/test_knowledge_review_one_sided_statements.py in unit-regression. This exact named-module registration establishes neither invocation nor acceptance. [1541]
 
-- Retained historical caption: Its lane registration. The current lane manifest declares mcp/tests/test_read_anchor_memo.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1497]
+- The lane row selects mcp/tests/test_capsule_serving.py into unit-regression. Membership is selection, not execution. [1561]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1570]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1572]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1573]
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its lane identities. [1498]
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1574]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1575]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1576]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1577]
 
-- **Retained historical source account — superseded by the current route account:** The unit-regression registry includes the revision-selection test module (`mcp/tests/test_knowledge_review_revision_selection.py`).. Current declaration: The unit-regression registry includes the revision-selection test module (`mcp/tests/test_knowledge_review_revision_selection.py`). [1507]
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1578]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1579]
 
+- The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. [1584]
 
+- The lane manifest currently registers mcp/tests/test_memory_attribution_producers.py in unit-regression. The current membership declaration selects evidence and does not establish execution. [1590]
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its lane identities. [1529]
+- The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1615]
 
+- The lane manifest declares mcp/tests/test_knowledge_read_scope.py in unit-regression. Selection is not execution or acceptance. [1616]
 
+- The lane manifest declares mcp/tests/test_knowledge_read_boundaries.py and mcp/tests/test_knowledge_read_paths.py in integration. Membership is selection, not execution. [1617]
 
+- The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1618]
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its lane identities. [1530]
-
-
-
-
-- Retained historical caption: **The lane row, inserted mid-list, and the row it displaced.** The current lane manifest declares mcp/tests/test_knowledge_review_one_sided_statements.py in unit-regression. The earlier caption's count or insertion comparison remains historical; this exact named-module registration establishes neither invocation nor acceptance. [1541]
-
-
-
-
-- The lane row selects mcp/tests/test_capsule_serving.py into unit-regression. The former integration classification was incorrect; membership is selection, not execution. [1561]
-
-
-
-
-
-
-
-
-
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane.. Current declaration: The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. [1584]
-
-
-
-
-- The lane manifest currently registers mcp/tests/test_memory_attribution_producers.py in unit-regression. Historical L4 account: this census module's lane row closed the gap the L4 route section recorded. The historical closure account is retained; the current membership declaration selects evidence and does not establish execution. [1590]
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The read fixture and its registered contract.. Current declaration: The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1615]
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The unit-lane row the read's selection module occupies.. Current declaration: The lane manifest declares mcp/tests/test_knowledge_read_scope.py in unit-regression. Selection is not execution or acceptance. [1616]
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The two integration-lane rows the read's boundary and path modules occupy.. Current declaration: The lane manifest declares mcp/tests/test_knowledge_read_boundaries.py and mcp/tests/test_knowledge_read_paths.py in integration. Membership is selection, not execution. [1617]
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The read fixture and its registered contract.. Current declaration: The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1618]
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The unit-lane row the read's selection module occupies.. Current declaration: The lane manifest declares mcp/tests/test_knowledge_read_scope.py in unit-regression. Selection is not execution or acceptance. [1619]
-
-
-
+- The lane manifest declares mcp/tests/test_knowledge_read_scope.py in unit-regression. Selection is not execution or acceptance. [1619]
 
 - **Retained historical source account — superseded by the current route account:** **The fixture and the governed contract it is registered under.** [1625]
 
-
-
-
 - **Retained historical source account — superseded by the current route account:** **The fixture and the governed contract it is registered under.** [1626]
-
-
-
 
 - The evidence registry has fourteen exact-consumer rows that name `mcp/tests/test_terminal_blocker_reasons.py`. [1638]
 
+- The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1639]
 
-
-
-- **Retained historical source account — superseded by the current route account:** The read fixture and its registered contract.. Current declaration: The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1639]
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The two integration-lane rows the read's boundary and path modules occupy.. Current declaration: The lane manifest declares mcp/tests/test_knowledge_read_boundaries.py and mcp/tests/test_knowledge_read_paths.py in integration. Membership is selection, not execution. [1640]
-
-
-
+- The lane manifest declares mcp/tests/test_knowledge_read_boundaries.py and mcp/tests/test_knowledge_read_paths.py in integration. Membership is selection, not execution. [1640]
 
 - **Retained historical source account — superseded by the current route account:** **The fixture and the governed contract it is registered under.** [1641]
 
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 788 distinct test modules across its lane identities. [1647]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1680]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1681]
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 17 contract records and 116 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 785 distinct test modules across its lane identities. [1647]
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1682]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1683]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1684]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1685]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1686]
 
+- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1687]
 
-
-
-
-
-
-
-- **Retained historical source account — superseded by the current route account:** The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane.. Current declaration: The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. [1689]
-
-
-
+- The lane row that admits the L3 module: `test_memory_backfill.py` in the `unit-regression` lane. [1689]
 
 - The lane manifest registers `mcp/tests/test_memory_attribution_producers.py` in `unit-regression`. Membership selects evidence and does not establish execution. [1693]
 
+- In `tool_entry_point_world.py`, a returned call routes through `_returned_arm`, which reads the whole result from the answer-named file; missing/unreadable/non-object files are unvalidatable. _judge_delivered validates the whole result with the tool response model and separately judges the delivered answer, including stripped-envelope and same-place key checks. This is the ordinary world's classifier implementation, not proof of a sweep run. [1705]
 
-
-
-- **Retained historical source account — superseded by the current route account:** The landing-report module (`mcp/tests/test_landing_report.py`) is selected in unit-regression; registration is not execution.. Current declaration: The landing-report module (`mcp/tests/test_landing_report.py`) is selected in unit-regression; registration is not execution. [1722]
-
-
-
+- The landing-report module (`mcp/tests/test_landing_report.py`) is selected in unit-regression; registration is not execution. [1722]
 
 - The lifecycle catalog declares test_landing_report.py among the consumers of _user_settings_guard.py, curator_coherence_test_support.py and the Node package-lock fixture; this named subset is not its whole declared artifact population. These are declarations and source assertions, not a fresh run. The `curator_coherence_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_landing_report.py` as an exact consumer. ENVELOPE_LOSING_RAISERS is empty. The sweep compares its observed error-arm population with that pin. No executable STATE_DEPENDENT_RAISERS or ambient lifecycle-state matrix remains in the sweep support. None remains in the entry-point world. None remains in the sweep module. lifecycle_finalize_task has an ordinary contract-addressed dry-run request in the main benign table. [1723]
 
-
-
-
-
 - The current lifecycle catalog declares test_landing_report.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/landing_report_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `curator_coherence_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_landing_report.py` as an exact consumer. The `landing_report_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. [1753]
 
+- The instruction-renewal subprocess in AnswerAndTextTests uses sys.executable. [1772]
 
+- The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 17 lifecycle contracts and 116 artifacts. The parsed lane catalog contains 788 selected lane members. [1808]
 
+- **Retained historical source account — superseded by the current route account:** General test policy forbids recursive suite execution and repeated repository scans to test the suite; coverage stays diagnostic and the canonical-form module uses four real-pytest cases in temporary synthetic repositories. The approved MIK-R87@v1 rule13 bounded timing/process-state scanner is the specific exception described in Test Policy and the scanner evidence below. [25]
 
-- The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 17 lifecycle contracts and 116 artifacts. The parsed lane catalog contains 785 selected lane members. [1808]
-
-
-
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1570]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1572]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1573]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1574]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1575]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1576]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1577]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1578]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1579]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1680]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1681]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1682]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1683]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1684]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1685]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1686]
-- The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance. [1687]
-- The conformance source declares ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46. Its structural tests compare registry and adapter populations in both directions, compare PUBLIC_TOOLS with the registered surface, reject duplicate roster entries and unadvertised registrations, and assert the roster count. These are source declarations and assertions, not a recorded test run or a measurement of the developer’s host. [1733]
+- The renewal family separates digest bindings, manifest routing/no-step authority and pointer withdrawal/refusal controls. [1832]
+- The retained landing-check method now invokes instruction renewal with the running interpreter. [1833]

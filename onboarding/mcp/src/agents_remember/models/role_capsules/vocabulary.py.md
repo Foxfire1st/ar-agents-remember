@@ -66,9 +66,9 @@ file, **and** the generated copies must move together. The shipped check is what
   not make it a task seat, and its absent task altitude is the ruling rather than a missing field.
 - The literal types and explicit runtime tuples must keep the same names and order;
   the literal/tuple agreement test guards this deliberate duplication.
-- A role published here must be configurable: `kernel/_agentic_settings_core.py` `KNOWN_ROLES` is
-  kept in step with `CAPSULE_ROLES` by a test, so an orchestration knob addressed to a published
-  role cannot fail loud.
+- A role published here must be configurable. `kernel/_agentic_settings_core.py` `KNOWN_ROLES`
+  currently lists the same eight names as `CAPSULE_ROLES`; the free-agent authority test checks
+  Bootstrap’s recognition by settings while keeping it outside the task-altitude sets.
 
 ### Todos
 
@@ -85,10 +85,6 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
-
-- The eight-role/nine-operation census, the literal/tuple agreement guard and the launcher-is-not-a-role guard. [1]
-
-
 - The independent role census this module's runtime tuple is compared against.
 
 
@@ -99,10 +95,6 @@ No relevant documentation found after checking live sources.
 
 - The canonical authored metadata that must agree with these tuples. [5]
 
-- The settings registry kept in step with this vocabulary, so a published role is configurable. [6]
-
-
-
 - The capsule role registry ends with bootstrap; no task-binding set supplies admission. [7]
 
 ### Cross-Repo References
@@ -111,4 +103,12 @@ No sibling-repository contract defines this vocabulary.
 
 No meaningful cross-repo references found.
 
+
+
+### Repo-Internal References (continued)
+
+- The eight-role/nine-operation census, the literal/tuple agreement guard and the launcher-is-not-a-role guard. [1]
+
 - The independent role census this module's runtime tuple is compared against. [2]
+
+- The settings registry lists the same eight role names as the compiler vocabulary; the free-agent authority case separately checks Bootstrap’s settings recognition. [6]

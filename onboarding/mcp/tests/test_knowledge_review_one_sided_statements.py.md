@@ -74,8 +74,8 @@ rather than against a shape that could be anything.
 ### Conventions
 
 `pytestmark = pytest.mark.evidence_unit` is the module's whole lane declaration; its membership is the
-`unit-regression` row at `mcp/tests/test-evidence-lanes.toml:261`, and its consumption of
-`read_scope_test_support` is the consumer row at `mcp/tests/evidence-lifecycle.toml:4198` on that
+`unit-regression` row at `mcp/tests/test-evidence-lanes.toml:264`, and its consumption of
+`read_scope_test_support` is the consumer row at `mcp/tests/evidence-lifecycle.toml:4204` on that
 artifact's `consumer_scope = "exact"` list. The import block is alphabetical within its groups, and
 the case functions are full sentences naming the rendering obligation they measure. Constants are
 module-level and upper-case, and each case's docstring states the property rather than the mechanics.
@@ -146,15 +146,7 @@ it.
 
 - Read fixture and test-only row builder supply both datasets. [15]
 
-
-
-
-
 > Retained earlier citation wording: - **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.**
-
-
-
-
 
 > Retained earlier citation wording: - The `consumer_scope = "exact"` artifact whose list this module joined.
 
@@ -174,6 +166,8 @@ No cross-repository implementation evidence is required for these local test and
 
 Fixture repositories and protocol doubles do not establish a live external integration.
 
+### Repo-Internal References (continued)
+
 - Retain the authored statement constants; remove the nonexistent SHARED_ACCEPTANCE_REF target. Acceptance is asserted by its text-knowledge prefix. [3]
 - OneSidedPair remains the local frozen dataclass. Extra seeds are constructed by _extra; the former AuthoredInvariant target does not survive. [4]
 - _extra constructs ExtraInvariantSeed values, and pair supplies them to the test fixture builder. The former author_invariant target is absent. [5]
@@ -182,23 +176,6 @@ Fixture repositories and protocol doubles do not establish a live external integ
 - The projection owner defines canonical structured-value text and its wrapper markers. The retained local test asserts key-order canonicality; marker round-trip test coverage is not claimed. [13]
 
 - The current compose_review entry point takes resolution and request; the local review helper invokes it without the removed ReviewRecordInputs bag. [14]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - The `consumer_scope = "exact"` artifact whose list this module joined.
 
@@ -212,12 +189,6 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3367 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
-
 - The lane row that selects this module, and the consumer rows of the two shared-support artifacts it imports (knowledge rows and read scope). [16]
-
-
-
 
 - The current lifecycle catalog declares test_knowledge_review_one_sided_statements.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. These current declarations establish no invocation or passing result; no former narrow-window identity is inferred. [17]

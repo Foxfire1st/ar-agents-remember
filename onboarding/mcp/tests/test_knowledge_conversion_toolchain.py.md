@@ -107,11 +107,6 @@ No configured live documentation source was available for this pass.
 
 The cases.
 
-
-
-
-
-
 ### Cross-Repo References
 
 No meaningful cross-repo references found: the fixtures are `tmp_path` Git repositories built by the tests themselves.
@@ -164,18 +159,6 @@ No cross-repo boundary is crossed by this file.
 - `test_one_documents_fix_reports_its_own_stale_references_and_the_status_counts` asserts selected-document stale scope and, with a prepared producer result, delivered counts, the first 10 stale entries and exclusion of authoring/rewritten-sidecar material; it has no log-readback or custody assertion. [13]
 - Current source delta inspected statically: Repair converted quality/catalog outcome, carried/new classifications and 10-entry delivery; preserve L46 and content-only advisory cases. [17]
 
-
-
-
-
-
-
-
-
-
 - Separate implementation custody path: producer whole/result projection, finalized whole-result detail input, redaction, destination and size/budget/write controls; not a log-readback assertion in the conversion test. [18]
-
-
-
 
 - Its lane row. [6]

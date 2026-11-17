@@ -17,7 +17,7 @@ The cases by boundary:
 
 | Group | Cases | Demonstrates |
 | --- | --- | --- |
-| vocabulary | `test_the_frozen_vocabulary_is_exactly_the_eight_roles_and_nine_operations` · `test_the_role_and_operation_literals_agree_with_their_runtime_tuples` · `test_the_launcher_is_a_seat_kind_and_not_a_role` · `test_every_documented_refusal_code_is_registered_exactly_once` | the registry is exactly **eight roles / nine operations**; the ambient launcher is a routing condition, not a ninth role; the PEP 695 literals and their runtime tuples cannot drift; the refusal-code set is complete and duplicate-free |
+| vocabulary | `test_the_frozen_vocabulary_is_exactly_the_eight_roles_and_nine_operations` · `test_the_role_and_operation_literals_agree_with_their_runtime_tuples` · `test_the_launcher_is_a_seat_kind_and_not_a_role` · `test_every_documented_refusal_code_is_registered_exactly_once` | the registry is exactly **eight roles / nine operations**; the ambient launcher is a routing condition, not a ninth role; the PEP 695 literals and their runtime tuples cannot drift; the refusal-code tuple has no duplicates and contains the eight named statuses |
 | root-local admission | `test_admission_reads_every_requested_source_with_its_content_digest` · `test_admission_is_reproducible_over_one_unchanged_tree` · `test_admission_refuses_a_path_that_escapes_its_root` · `test_admission_refuses_a_missing_source_instead_of_skipping_it` · `test_admission_refuses_a_root_that_is_not_a_directory` · `test_admission_refuses_the_same_path_requested_twice` · **`test_an_unreadable_source_returns_a_refusal_rather_than_raising`** — which also drives the **emptied-source (`source-empty`) seed** | digest-carrying reads; reproducibility; traversal, missing source, bad root, double request and unreadable source all refused rather than skipped; an **emptied admitted source refuses by name** rather than raising out of the value layer |
 | manifest parsing | `test_the_shipped_manifest_parses_and_agrees_with_the_frozen_vocabulary` · `test_every_role_and_operation_the_shipped_manifest_declares_has_a_source` · `test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster` · `test_a_manifest_that_disagrees_with_the_frozen_vocabulary_is_refused` · `test_a_manifest_whose_applicability_contradicts_itself_is_refused` · `test_a_manifest_that_routes_two_identities_at_one_file_is_refused` · `test_the_manifest_parser_refuses_each_metadata_defect` | the real manifest parses and agrees with the frozen vocabulary; a declared tool id outside the published roster is an error, not an inert request; each structural defect has its own refusal |
 | **routing agreement** | **`test_every_operation_a_role_declares_resolves_to_one_corpus_block`** · **`test_a_role_capsule_composes_only_operations_the_role_declares`** · **`test_every_shipped_role_compiles_deterministically_under_every_declared_operation`** · **`test_every_shipped_role_composes_exactly_its_declared_unit_set`** · **`test_no_core_unit_can_enter_any_shipped_role_capsule`** · `test_an_admitted_core_source_is_inert_for_a_role_capsule` | the manifest's operations plane and each role's declared routing name real, distinct corpus blocks; every role/operation capsule composes exactly `role:<role>` and `operation:<operation>`, never a neighbouring operation or a shared Core block; extra admitted core sources leave the delivered text and semantic digest unchanged while omitting the every-role digest source refuses as `missing-required-instruction` |
@@ -31,17 +31,14 @@ Traversal is refused for a parametrized set including `../outside.md`, `/etc/pas
 
 ### Conventions
 
-A fixture-building case uses `tmp_path`; only the shipped-corpus and routing groups read the real
-tree. Parametrizing over all **eight** roles and all **nine** operations is what makes "every shipped role
-compiles to its declared routing" a corpus claim rather than a single-role claim. The synthetic compiler property module remains distinct; this module is not the only reader of real bytes.
+The root-local admission cases build a small `tmp_path` corpus. Shipped-manifest cases read the real manifest and source paths, and the shipped-corpus cases loop over all eight roles and each role's manifest-declared operations. The synthetic compiler property module remains distinct; this module is not the only reader of real bytes.
 
 ### Invariants And Boundaries
 
 - **The literal/tuple agreement case is load-bearing.** The frozen registry is declared twice by
   necessity — the PEP 695 literal for the type checker and the tuple for runtime selection — and
-  this case is what keeps them in step. Note the asymmetry the implementer recorded: PEP 695
-  `type` aliases do **not** answer `get_args`, so the ruff-preferred alias form silently produced
-  an *empty* runtime registry. The duplication is deliberate and test-guarded.
+  this case keeps them in step by comparing `get_args(CapsuleRole.__value__)` and
+  `get_args(CapsuleOperation.__value__)` with the runtime tuples.
 - `test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster` holds every declared
   tool id against the published roster. A declared id outside it must fail here, because the
   manifest declaring a tool is a **request**, and an unpublished request is a defect rather than a
@@ -51,8 +48,8 @@ compiles to its declared routing" a corpus claim rather than a single-role claim
   declaration, the empty tuple for a role declaring none, and the revision tracking admitted
   bytes. Do not add a policy assertion to a skill case; that would invent a behavior the
   implementation does not have.
-- `test_every_documented_refusal_code_is_registered_exactly_once` is the completeness guard for
-  `CAPSULE_STATUSES`. It covers the **compiler** tuple; the source-value codes raised outside it
+- `test_every_documented_refusal_code_is_registered_exactly_once` checks uniqueness and a named
+  minimum subset of `CAPSULE_STATUSES`. It covers the **compiler** tuple; the source-value codes raised outside it
   (`source-not-utf8`, the **`source-empty`** code and the admission codes) are deliberately not
   members; `source-not-utf8` is asserted in the compiler module and `source-empty` in this module's
   emptied-source seed.
@@ -70,6 +67,16 @@ None recorded.
 Six edge functions live in `test_role_capsule_manifest_edges.py`: role lookup, specialization shape, absent override winner, invalid source root, a manifest dropped mid-compile and the composing-root accessor. `_shipped_request` also admits role-addressed step details, and the frontmatter check removes audience metadata from expected delivered text while keeping the whole-source revision.
 
 The every-role digest source remains required while additional admitted shared core stays out of rendered instructions. Omission of that digest refuses by name. Delivered-prose comparison removes only closed typed composition metadata and retains the complete remaining prose; the revision still addresses whole source bytes. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
+
+## Earlier Memory-Base Context
+
+The following accounts are retained from memory revision `81cfe4a89f5ffb222bd09640410d268d3fbef254`. They describe their earlier source epochs, observations and rationale; they are not new executions or current acceptance results. Current source corrections above remain in force.
+
+### Implementer incident and deliberate duplication
+
+Summary based on the earlier card account, base lines 42–44:
+
+> The earlier implementer account recorded that applying get_args directly to the PEP 695 type-alias form had silently yielded an empty runtime registry. It explained why the type-checker literals and runtime tuples were deliberately duplicated and test-guarded. The current agreement case reads the aliases’ __value__ before get_args; the historical incident is not a claim that this current underlying-value access fails.
 
 ## Evidence
 ### Docs References
@@ -100,10 +107,12 @@ No sibling-repository contract is exercised by these cases.
 No meaningful cross-repo references found.
 
 
+### Repo-Internal References (continued)
+
 - compile_admitted_capsule returns a CapsuleCompilationOutcome for admission or compilation refusals, with a manifest in both shapes and exactly one of result/error. Empty admitted instruction text raises the typed source-empty error; errors from reading the shared block or compiling are caught and returned as refusal outcomes. [6]
 
-- Admission tests read the shipped lifecycle manifest and form role/operation requests and bindings. The separate manifest-edge module checks lookup, malformed selections and composing roots; the audience module compiles declared role/operation pairs and checks addressed operation content against pinned seals. [7]
+- The every-role digest source remains required while additional admitted shared core stays out of rendered instructions. Omission of that digest refuses by name. Delivered-prose comparison removes only closed typed composition metadata and retains the complete remaining prose; the revision still addresses whole source bytes. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [10]
+
+- Admission tests read the shipped lifecycle manifest and form role/operation requests and bindings. The separate manifest-edge module checks lookup, malformed selections and composing roots; the audience module compares addressed operation content with an independent source-section projection. [7]
 
 - The shipped request includes role-addressed declared details in its admitted skill sources. The no-frontmatter check independently reconstructs delivered prose after removing a closed leading frontmatter block and typed composition-metadata lines, while retaining the complete source revision; deletion, relocation, leaked metadata and wrong-revision controls must fail. Six edge concerns are defined in the distinct manifest-edge module: lookup, specialization shape/blank identity, absent override winner, invalid root, missing selected manifest and composing roots. [9]
-
-- The every-role digest source remains required while additional admitted shared core stays out of rendered instructions. Omission of that digest refuses by name. Delivered-prose comparison removes only closed typed composition metadata and retains the complete remaining prose; the revision still addresses whole source bytes. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [10]

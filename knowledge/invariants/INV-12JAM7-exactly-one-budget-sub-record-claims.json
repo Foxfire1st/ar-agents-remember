@@ -4,15 +4,18 @@
       "guarded_by_test",
       "prevents_costly_mistake"
     ],
-    "justification": "Two tests fail when more or fewer than one renewal claims current and when the current record names an absent path; a history sub-record read as current would let a budget check compare against outdated sizes."
+    "justification": "Instruction consistency asserts one authority-only nonhistorical renewal and rejects current flags on historical measured renewals; current path and canonical-copy checks prevent stale instruction facts being treated as current authority."
   },
   "applicability": "The current capsule budget record and its packaged copy.",
   "conditions": [
-    "Renewal sub-records are the decision keys that start with measuredCurrentRenewal."
+    "Measured renewal keys begin with measuredCurrentRenewal; the current renewal has no historicalTree and no current flag.",
+    "The absent-path checker covers relative Markdown and JSON paths beginning with reference/, templates/, criteria/, roles/, operations/ or core/; keys beginning with removed and historical renewal records are excluded."
   ],
   "exclusions": [
-    "Older decision sub-records without that prefix (currentRenewal, currentRenewalValidation32, currentRenewalValidation35, rawBaselineSerializationCorrection624), which carry no historicalTree.",
-    "Paths written with a skills/l-01-agent-lifecycles/ prefix, which the absent-path guard does not check."
+    "Legacy decision subrecords outside the measuredCurrentRenewal prefix retain their recorded format.",
+    "The absent-path checker does not interpret paths beginning with skills/l-01-agent-lifecycles/ as relative current existence claims.",
+    "A former decision-level digest-map hash and per-item limits are not current obligations.",
+    "The recorded historicalTree format is not proof that the referenced Git tree exists."
   ],
   "id": "INV-12JAM7",
   "origin": {
@@ -26,9 +29,9 @@
     "leaf": "260928-MIK-L84",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Exactly one budget sub-record claims current, its digest words and digest-map hash equal the final values and it names no path absent on the final tree, every measurement-history sub-record carries historicalTree, and the package copy is equal.",
+  "statement": "Exactly one measured renewal in the current capsule-budget record is nonhistorical and contains only its authority; current skill-relative paths covered by the absent-path checker exist, historical measurement renewals retain their historicalTree, and the declared package copy matches the canonical record.",
   "status": "proposed",
   "supersedes": []
 }

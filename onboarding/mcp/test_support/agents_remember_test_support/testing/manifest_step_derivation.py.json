@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c1fa2c3768290b95d032449df5f094b9ada58ee8",
+        "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
         "content": "sha256:7bafa336b2e27febe2158cd3a9e81a3dd3465c184a36f94b2a13f35277198532",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "c1fa2c3768290b95d032449df5f094b9ada58ee8",
-        "content": "sha256:62e7448b7643774adb11250dfe52a60518074ef7016c945540668d67463cf7ec",
+        "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
+        "content": "sha256:17e7f8823465ac02fad70742298ed6f4d9b5b35973bb908a7d425bbb1c5adb03",
         "locator": {
           "kind": "symbol",
           "name": "manifest_mismatches"
@@ -36,6 +36,23 @@
       },
       "rationale": "This function compares each declared step with the actions of the pointers to its file and lists every mismatch.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
+        "content": "sha256:c764997a583da7c1a40a927755800ad49e36b082fec0fb3480ac778eddce1962",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Q1065J",
+      "invariant": "INV-AZTTPZ",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 9",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "This consumer or regression control follows generated routing fields and preserves the independent obligation it checks.",
+      "role": "support"
     }
   ],
   "references": {
@@ -44,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1fa2c3768290b95d032449df5f094b9ada58ee8",
+            "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
             "content": "sha256:7bafa336b2e27febe2158cd3a9e81a3dd3465c184a36f94b2a13f35277198532",
             "locator": {
               "kind": "symbol",
@@ -56,15 +73,16 @@
       ]
     },
     "2": {
-      "note": "Step and roles are derived for every manifest reference that declares a step.",
+      "note": "Actions and roles are derived for references with a step_detail classification and a Markdown source.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1fa2c3768290b95d032449df5f094b9ada58ee8",
-            "content": "sha256:80f3438c3bfd0f4221eb355b1a9f16e71f381a27ab67eec98e8458acd4357066",
+            "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
+            "content": "sha256:bee877427e376c9a52f183aae6f5204f913b404ed9e951590c02e3f7a39ad52f",
             "locator": {
-              "kind": "symbol",
-              "name": "derive"
+              "end": 289,
+              "kind": "line_range",
+              "start": 266
             }
           },
           "kind": "code"
@@ -72,15 +90,16 @@
       ]
     },
     "3": {
-      "note": "Declared step and roles must equal the derived ones, widened only by a nonempty roles reason.",
+      "note": "Composed declarations are compared with pointer-derived steps and roles; ordinary references without a declared step skip the step comparison, and a nonempty rolesReason controls role widening. Step-set and role-list mismatch findings end with `; run mcp/.venv/bin/python scripts/renew-instructions.py`; no-action and empty-rolesReason findings retain their separate messages.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1fa2c3768290b95d032449df5f094b9ada58ee8",
-            "content": "sha256:62e7448b7643774adb11250dfe52a60518074ef7016c945540668d67463cf7ec",
+            "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
+            "content": "sha256:20325ae0cd3269dae094b7c495ce3fce30d1cfe7f6d4fbec78c543da25b12044",
             "locator": {
-              "kind": "symbol",
-              "name": "manifest_mismatches"
+              "end": 379,
+              "kind": "line_range",
+              "start": 343
             }
           },
           "kind": "code"

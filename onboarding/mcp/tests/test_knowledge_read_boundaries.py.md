@@ -6,10 +6,10 @@
 
 ## Purpose
 
-**The read's real boundaries: a real Git tree, a real snapshot identity, a real publication.** Twenty
-nodes in `integration` (row `mcp/tests/test-evidence-lanes.toml:702`) — the properties the ordinary unit
-path cannot fail from outside, because they need real committed bytes, a real database file and a real
-publication to exist at all.
+**The read's real boundaries: a real Git tree and a real snapshot identity.** Twenty source test
+definitions are registered in `integration` (row `mcp/tests/test-evidence-lanes.toml:705`). They exercise
+committed source bytes, text-backed index files, anchor observations, snapshot and continuation
+bindings, and a task-free read. They do not invoke a publication operation.
 
 The historical path split moved cases to `mcp/tests/test_knowledge_read_paths.py` rather than
 waiving the 1,200-line rail. Its recorded 941-line size describes that earlier split, not a current
@@ -83,7 +83,7 @@ selected scope — planning can read recorded knowledge with no leaf and no encl
   to the real runner, and asserts `recorded_object_unavailable` and the exact exit-status
   detail. This is a source-inspected controlled producer witness, not a new mutation
   kill or fresh execution result. The `OSError` producer has its separate case at
-  `mcp/tests/test_knowledge_read_paths.py:471-576`.
+  `mcp/tests/test_knowledge_read_paths.py:471-582`.
 - **Boundary.** This is a test module. It declares one lane, asserts behaviour and owns no production
   contract.
 
@@ -129,11 +129,6 @@ No configured domain documentation could be checked.
 
 - Controlled non-zero lookup exit asserts unavailable resolution and exit-status detail; historical withdrawn kill and natural-path nonreachability are separate. [9]
 
-
-
-
-
-
 > Retained earlier citation wording: - The read boundary module occupies the integration lane row; registration is not execution evidence.
 
 
@@ -145,7 +140,6 @@ No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
 
-
-
+### Repo-Internal References (continued)
 
 - The read boundary module occupies the integration lane row; registration is not execution evidence. [10]

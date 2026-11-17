@@ -1,0 +1,100 @@
+{
+  "path": "scripts/renew-instructions.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+        "content": "sha256:2dba5a7941999b70833076aea52240d722d05da53dab67c7cabd1910460c7b3a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-576YET",
+      "invariant": "INV-EHJV8E",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 1",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The planner computes a complete deterministic replacement set and the entry point publishes it or reports staleness without writes.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Checking reports differences without applying replacements; renewal applies the computed plan.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+            "content": "sha256:8178a0e42cd92fe6e36bf2c03e609e76204e0bd3b69e9d4f504ab1f72c7c81af",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Diagnostics distinguish changed JSON leaves from file presence and raw byte changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+            "content": "sha256:ee33faf1214e2886ee6e4fd228333364a0b5a860abcb1cddafd1425569cddd27",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The command and its manifest/pointer planners load repository test support.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+            "content": "sha256:7b68a214e4e6e1b38933642a82a4c7a78665d5cfe84b90818fe7c8172c2420ad",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ab14a78c69b836a0a33c41800018cb4d7bb610c",
+            "content": "sha256:1abae84a8083fddc03b9d140d73421a58bfc82daa076a765ad35c9ae0e3fcf3c",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "scripts/instruction_renewal/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18e50fd4ff3c1e98889fc82222cab2819f37b68d",
+            "content": "sha256:825bacd22bf1967ee2eab0475642804990b3ec6d769e6d13a1a600269df066de",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "scripts/instruction_renewal/pointers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -75,16 +75,16 @@
       ]
     },
     "13": {
-      "note": "The manifest retains ambient-launcher metadata outside the role registry; this is not the native routing-condition set.\n\nAnchor: `is_role`",
+      "note": "The manifest retains ambient-launcher metadata outside the role registry; this is not the native routing-condition set. Anchor: `is_role`",
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:7ff90fe1949d4460c9e3194ffff4cba7453c9c642f5756423b1a5c9984660dfd",
             "locator": {
-              "end": 528,
+              "end": 518,
               "kind": "line_range",
-              "start": 515
+              "start": 505
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -97,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
             "content": "sha256:e685768c8a9255765f66be0003aca7d1eeec7069e3441ec540bc025ad19b3ff1",
             "locator": {
               "kind": "symbol",

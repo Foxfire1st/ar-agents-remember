@@ -54,9 +54,15 @@ functions, one parametrised twice, make the nine cases.
 
 ### Invariants And Boundaries
 
-The cases drive the shipped owner and the real Git binary; the counting spies delegate, while the failure case also monkeypatches a runner to synthesize transient Git failures before delegating successes. The availability and isolation cases fail on the first attempt's code
-(A1, which remembered positive tree probes), and the reviewer's mutants R2–R4 are killed by this module
-alone (review R2).
+The cases drive the shipped owner and the real Git binary; the counting spies delegate, while the failure case also monkeypatches a runner to synthesize transient Git failures before delegating successes.
+
+The earlier card at memory snapshot `81cfe4a8` recorded this review evidence:
+
+> The availability and isolation cases fail on the first attempt's code
+> (A1, which remembered positive tree probes), and the reviewer's mutants R2–R4 are killed by this module
+> alone (review R2).
+
+This is retained A1/review-R2 context, not a new execution or mutation result for the current candidate.
 
 ### Todos
 
@@ -75,9 +81,11 @@ No relevant domain documentation was found.
 
 ### Cross-Repo References
 
-No cross-repository behavior.
+The tests exercise cache isolation between temporary repositories, including an alternates borrower and empty or blobless neighbours; they establish no external managed-repository protocol.
 
 No meaningful cross-repo references found.
+
+### Repo-Internal References (continued)
 
 - The real repository, the Git and parser spies, and the per-case emptied tables. [1]
 - Every outcome the memo sits behind, a fresh resolver per pass, and the unremembered reference path. [2]
@@ -87,10 +95,6 @@ No meaningful cross-repo references found.
 - Weight-bounded LRU eviction, refusal of oversized values, and the concurrent bound.  Anchor: "test_the_memo_evicts_the_least_recently_used_past_its_weight_bound"; "test_concurrent_readers_share_answers_and_the_bound_holds" [6]
 - **A pruned or revoked tree reported unavailable for every anchor, not answered from memory.**  Anchor: "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered" [7]
 - **No repository's answers served for another, and one parse per grammar.**  Anchor: "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" [8]
-
-
-> Retained earlier citation wording: - The lane registration.  Anchor: "mcp/tests/test_read_anchor_memo.py"
-
 
 
 

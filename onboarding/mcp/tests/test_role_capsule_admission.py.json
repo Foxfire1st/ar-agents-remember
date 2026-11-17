@@ -219,15 +219,16 @@
       ]
     },
     "7": {
-      "note": "Admission tests read the shipped lifecycle manifest and form role/operation requests and bindings. The separate manifest-edge module checks lookup, malformed selections and composing roots; the audience module compiles declared role/operation pairs and checks addressed operation content against pinned seals.",
+      "note": "Admission tests read the shipped lifecycle manifest and form role/operation requests and bindings. The separate manifest-edge module checks lookup, malformed selections and composing roots; the audience module compares addressed operation content with an independent source-section projection.",
       "targets": [
         {
           "anchor": {
-            "blob": "16114bb86792e4394123e4b98c42efd8d3cb2831",
-            "content": "sha256:913099a13bb26ed68637a9fa89084b6dbfa0251efc4a0a69f288bb5e47ccc150",
+            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+            "content": "sha256:5e2191782906f5df1a3ca6b50a4e408fadb99474cea82066d733c9dcb764e4a1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_real_operation_audiences_preserve_pinned_common_and_only_addressed_paragraphs"
+              "end": 1058,
+              "kind": "line_range",
+              "start": 1026
             },
             "path": "mcp/tests/test_role_capsule_audiences.py"
           },
@@ -236,50 +237,10 @@
         {
           "anchor": {
             "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
-            "content": "sha256:084895cf0afb35b867a32c4f4e9c51ac0bbd00ea7b0b22e53448f3ecfb7de72e",
+            "content": "sha256:01d7f9c3943c0faa916bbeb65ce103dcae74f604676a2f41661ab6234fbc1f34",
             "locator": {
-              "end": 130,
-              "kind": "line_range",
-              "start": 93
+              "kind": "file"
             }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
-            "content": "sha256:eee2175815e171e9391aa812b83b2f25b284344741a6ab333d09da74b8b9cb4f",
-            "locator": {
-              "end": 434,
-              "kind": "line_range",
-              "start": 389
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
-            "content": "sha256:880ffd52d0f2cf6093efe6e5f093589d3e3edfa8b37b6fa09509de74588f29ad",
-            "locator": {
-              "end": 322,
-              "kind": "line_range",
-              "start": 295
-            },
-            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
-            "content": "sha256:2903f67634deb6c52789ecc472d248c663169e0dc78005bc070f78bcd17e9967",
-            "locator": {
-              "end": 517,
-              "kind": "line_range",
-              "start": 360
-            },
-            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
           "kind": "test"
         }
@@ -331,12 +292,12 @@
         },
         {
           "anchor": {
-            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "blob": "c041b6e75549d54c259211088ab20dd5419ce55e",
             "content": "sha256:880ffd52d0f2cf6093efe6e5f093589d3e3edfa8b37b6fa09509de74588f29ad",
             "locator": {
-              "end": 322,
+              "end": 335,
               "kind": "line_range",
-              "start": 295
+              "start": 308
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -344,12 +305,12 @@
         },
         {
           "anchor": {
-            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "blob": "c041b6e75549d54c259211088ab20dd5419ce55e",
             "content": "sha256:bf01b4cfe9a9ddff0257e9be358654f654a4d12a74732e1238bf18e5694a751e",
             "locator": {
-              "end": 384,
+              "end": 397,
               "kind": "line_range",
-              "start": 360
+              "start": 373
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -357,12 +318,12 @@
         },
         {
           "anchor": {
-            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "blob": "c041b6e75549d54c259211088ab20dd5419ce55e",
             "content": "sha256:eb7345d4fc079e261dd4ccdcb3ed61ae3cfe65bc41d803f477c155d7ea148a7b",
             "locator": {
-              "end": 425,
+              "end": 438,
               "kind": "line_range",
-              "start": 387
+              "start": 400
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -370,12 +331,12 @@
         },
         {
           "anchor": {
-            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "blob": "c041b6e75549d54c259211088ab20dd5419ce55e",
             "content": "sha256:a5bd4a6fd2dcc6ff5a853f1d1b99e516dd8a5370050380bdaead27722c897a0c",
             "locator": {
-              "end": 436,
+              "end": 449,
               "kind": "line_range",
-              "start": 428
+              "start": 441
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -383,12 +344,12 @@
         },
         {
           "anchor": {
-            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "blob": "c041b6e75549d54c259211088ab20dd5419ce55e",
             "content": "sha256:d30a4ab35d65243f4831bef69681de90577243916998e9dc48e4e03bfd01ce5b",
             "locator": {
-              "end": 466,
+              "end": 479,
               "kind": "line_range",
-              "start": 439
+              "start": 452
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -396,12 +357,12 @@
         },
         {
           "anchor": {
-            "blob": "f940e8d1e675766f55200b1acef88dc447d5e8fb",
+            "blob": "c041b6e75549d54c259211088ab20dd5419ce55e",
             "content": "sha256:43e607fc7ca33f080a794c760c1014fa2cbfed04c0ecea65b79028012ac92a46",
             "locator": {
-              "end": 517,
+              "end": 530,
               "kind": "line_range",
-              "start": 469
+              "start": 482
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },

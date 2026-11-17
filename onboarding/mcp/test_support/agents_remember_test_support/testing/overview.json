@@ -83,7 +83,7 @@
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:feef0c72f5c316fdcc3ccab56fcfee10f85f35434fb00094bae33acb96a82275",
             "locator": {
               "end": 59,
@@ -294,7 +294,7 @@
         },
         {
           "anchor": {
-            "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+            "blob": "7e10ba05dabcb409c83e4f8a0ffd72bfd7ff0af0",
             "content": "sha256:559a620ddf3cecf6031fca15109270df200731fea2295943100dabd6cf7ba67e",
             "locator": {
               "kind": "symbol",
@@ -349,7 +349,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
             "content": "sha256:d8d2d36ffff46631e2af79007d82177e086ea879656904d2bcfd1dc6afcb32e1",
             "locator": {
               "end": 240,
@@ -449,6 +449,133 @@
               "name": "pytest_collection_modifyitems"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/retry_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Six instruction helpers own checkout-local renewal loading, digest traceability, policy/wording projection, pointer parsing and binding controls, and source-derived audience/link comparisons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545b7f3d18bfb8f5186b4614ea23a67a72888106",
+            "content": "sha256:e9dbe526d08ee66751f00da92e4ca9e7cd1e697efa70aaf56565c890dfa62bd3",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/instruction_renewal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5efb591aa757fa005f5465e6492741219af373",
+            "content": "sha256:6131e97ff20933e42bf60a299caa962d1784844be98826b37dd64b241cb8b0af",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/digest_map.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5efb591aa757fa005f5465e6492741219af373",
+            "content": "sha256:4fe0e898722e51c7c194044ae812535ccba01e6f3cf6716a7b598d87a246ef38",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/digest_map.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "424522943d18e0ab43fe06f01ac7cdcb1916145e",
+            "content": "sha256:5dfd33b6178343a14007b8329686184e60ed7c9c996827ee201df61f588948b2",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pointer_policy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c78ff878e678179362ad2f37ae026f34e99c989b",
+            "content": "sha256:b44fc7a0db0f7f9283904ef6b2fb45273ca93ea352995271db29970ab56fec12",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pointer_sentences.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1fc72aa5dfd98df41d32fbb7a64790f09a85205",
+            "content": "sha256:ad27604cea03d985363e5980e10e91146be2fa2f03c471234e825b85820ade56",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pointer_renewal_cases.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1fc72aa5dfd98df41d32fbb7a64790f09a85205",
+            "content": "sha256:71fd95b0b866e69a1859ae0c1465847e281c0bb8fb25f6283bb8cb4f527ecb16",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pointer_renewal_cases.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aeb7c7037687f733d364c4f0bc9540862dd74b26",
+            "content": "sha256:221a34bc26576ef22ed482bc7cf820b8b79b8c76e2c8848b1ad9339d03fd84ef",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_structure.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Manifest step derivation collects actions and reader-role associations for classified Markdown references from first-message and detail pointers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
+            "content": "sha256:bf80377e15c35922b6d4fc8fc6be344ed221e11261ab5f4ea0f9ca2b46de60ad",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 266
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/manifest_step_derivation.py"
           },
           "kind": "code"
         }

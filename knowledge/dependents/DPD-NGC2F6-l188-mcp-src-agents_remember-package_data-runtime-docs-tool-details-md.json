@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "edc7edc63f5d05b34445dfe30d8e141ec5300efc",
+    "commit": "a2f0fced8896b92d31fd3f78351d01f5302be97e",
     "role": "curator",
-    "statement": "The packaged copy holds the same statements as the documentation file it copies, and the receipt scan's change leaves the `retire_child` entry true.",
-    "task": "261112-BUG-L7",
+    "statement": "The packaged tool-details document remains byte-identical to its canonical source and consistent with the unchanged installation contract; the experiment capability probe changes only its instruction-renewal remedy.",
+    "task": "261112-BUG-L8",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -70,7 +70,7 @@
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
     {
-      "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+      "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/experiment.py"
     },

@@ -22,15 +22,10 @@ pattern. That distinction is why the suite's own history is worth keeping on the
 
 ### Logic
 
-**Twenty-seven cases, and which number this card means.** The file defines **26 `def test_` methods**
-inside five classes plus **1 module-level `def test_` function**, and pytest collects **27**. There is
-**no parametrisation** (`grep -c parametrize` = 0) and the module uses **no subtests**
-(`grep -c subtests` = 0), so the run's `27 passed` and the file's 27 test functions are the same 27 —
-the 26-versus-27 gap is entirely the one module-level function, not a parametrised case. This card
-reports **27** (the collected/passed count, which is what a run reports) and states the 26+1
-decomposition beside it, because a bare "26" would undercount the suite and a bare "27" would not
-explain itself. Both figures were measured on this candidate: `grep -c '^    def test_'` = 26,
-`grep -c '^def test_'` = 1, `pytest --collect-only -q` → `27 tests collected`.
+**Twenty-seven test definitions.** Static source inspection finds 26 `def test_` methods
+in five classes and one module-level `def test_` function, with no parametrisation or subtests
+in this file. The earlier collection and `27 passed` account is historical; no collection
+or execution result is claimed for this source reading.
 
 - `PatternProbeWitnessTests` (129-179), **4 cases** — a probe that cannot match its own positive is
   refused; a probe whose negative witness matches is refused as non-discriminating; the corrected
@@ -117,9 +112,27 @@ is recorded here rather than described as a transcription.
 
 ### Todos
 
-None. This card was written by reading the current 537-line source in the code worktree and by
-measuring the case population on this candidate; no case in this file is known to be vacuous, and no
-case was added or removed by the curator.
+None recorded. The current source has 537 physical lines and 27 test definitions.
+This static reading supplies no fresh execution or mutation result and makes no all-case
+non-vacuity judgment.
+
+## Recorded Earlier Curation Account
+
+The following complete paragraphs are retained from the earlier card at memory snapshot `81cfe4a8`. “This candidate” and “the curator” below refer to that earlier curation epoch. Its collection commands, `27 passed` account and stated non-vacuity judgement remain attributed to that record. This restoration performs no collection, execution or mutation run and makes no new all-case non-vacuity judgement. The current static 26-method-plus-one-function decomposition remains above.
+
+> **Twenty-seven cases, and which number this card means.** The file defines **26 `def test_` methods**
+> inside five classes plus **1 module-level `def test_` function**, and pytest collects **27**. There is
+> **no parametrisation** (`grep -c parametrize` = 0) and the module uses **no subtests**
+> (`grep -c subtests` = 0), so the run's `27 passed` and the file's 27 test functions are the same 27 —
+> the 26-versus-27 gap is entirely the one module-level function, not a parametrised case. This card
+> reports **27** (the collected/passed count, which is what a run reports) and states the 26+1
+> decomposition beside it, because a bare "26" would undercount the suite and a bare "27" would not
+> explain itself. Both figures were measured on this candidate: `grep -c '^    def test_'` = 26,
+> `grep -c '^def test_'` = 1, `pytest --collect-only -q` → `27 tests collected`.
+
+> None. This card was written by reading the current 537-line source in the code worktree and by
+> measuring the case population on this candidate; no case in this file is known to be vacuous, and no
+> case was added or removed by the curator.
 
 ## Evidence
 
@@ -168,7 +181,6 @@ allowance is empty and no external source is relied upon here.
 
 No cross-repository evidence is required for these file-local claims.
 
-
-
+### Repo-Internal References (continued)
 
 - The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_instrument_discipline.py" [15]

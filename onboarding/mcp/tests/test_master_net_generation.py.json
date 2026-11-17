@@ -39,15 +39,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The evidence lane the module runs in.",
+      "note": "The module declares the evidence_unit marker.",
       "targets": [
         {
           "anchor": {
             "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
             "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
             "locator": {
-              "kind": "symbol",
-              "name": "pytestmark"
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
             }
           },
           "kind": "test"
@@ -125,10 +126,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "c927eec0f3a5ee0ae06ba30d8f5cb8e1627fb489",
+            "content": "sha256:630b6f6d9604ed17e0fdfdba849348bff8f4ee3a006a5a671a1e11003734daa3",
             "locator": {
-              "end": 809,
+              "end": 812,
               "kind": "line_range",
               "start": 1
             },

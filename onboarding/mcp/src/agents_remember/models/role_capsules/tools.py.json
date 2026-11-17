@@ -109,12 +109,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:9d833a0f8de397314e26669e2017f1dc0f7101305ca546b2672f3c3d96ea23b7",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:d8cf5f1b2bcb2d01922340646ffb3de041cc272b4ab5533fd7d6713a44a7bd09",
             "locator": {
-              "end": 183,
+              "end": 175,
               "kind": "line_range",
-              "start": 174
+              "start": 164
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },

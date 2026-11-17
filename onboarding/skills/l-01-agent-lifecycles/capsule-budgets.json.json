@@ -38,8 +38,20 @@
   ],
   "references": {
     "1": {
-      "note": "All 38 capsule rows carry recorded budgets: capped eleven-tenths budgets, or the measured size for the 8 capsule rows among the 24 budgets one decision names. Anchor: `decisions_D681`",
+      "note": "All 38 capsule rows carry recorded budgets: capped eleven-tenths budgets, or the D681 table’s measured size for the 8 capsule rows among the 24 budgets that decision names.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:2efb00ead064c51f39d8c078b25d6fdd3439ca488f631c9a2c96ba7ced5d36ac",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
@@ -55,23 +67,11 @@
         {
           "anchor": {
             "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
-            "content": "sha256:023f488cbb1e6bb1b46081b318144004f7aa4c49134904adbca81fb8ef90781b",
+            "content": "sha256:1cb43270e0fea52821366800a99ae5d1d473e7fc15a5b162af06936016f51f7c",
             "locator": {
-              "end": 5363,
+              "end": 5385,
               "kind": "line_range",
               "start": 5168
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
-            "content": "sha256:6e482f5f34a788049cff65a019d47851fc48a3c79d679a6f1527aee40aa40341",
-            "locator": {
-              "end": 4,
-              "kind": "line_range",
-              "start": 4
             }
           },
           "kind": "code"
@@ -125,55 +125,16 @@
       ]
     },
     "12": {
-      "note": "The no-overrun budget test reads current limits and measurements from `capsule-budgets-current.json` and only the handover rows and provisional records from this registry; other budget tests still read this registry's D656_R8 raises and check its recorded budgets against the D681 limits.",
+      "note": "The current check reads renewed measurements and ceilings from capsule-budgets-current.json, and handover rows from this registry; separate tests preserve historical D656 and D681 decisions.",
       "targets": [
         {
           "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
-            "content": "sha256:a77f13c9b1e17ffda684e14eb60465d59dc3be53400a6ba7085f1842b7df76d1",
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "content": "sha256:ad7b79c23a40739c579cf8119c869e813f06944aad458f1ec7a3c741e1e8c001",
             "locator": {
-              "end": 81,
+              "end": 474,
               "kind": "line_range",
-              "start": 81
-            },
-            "path": "mcp/tests/test_role_capsule_budgets.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
-            "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
-            "locator": {
-              "end": 500,
-              "kind": "line_range",
-              "start": 476
-            },
-            "path": "mcp/tests/test_role_capsule_budgets.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
-            "content": "sha256:943733872aca2ebcf224852d2c9cd3baac60a1290bead83167c67c35734afd60",
-            "locator": {
-              "end": 382,
-              "kind": "line_range",
-              "start": 380
-            },
-            "path": "mcp/tests/test_role_capsule_budgets.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
-            "content": "sha256:54cc3405c83a1b8b72afbcbc36cfa21c6dcb36ec39e26e6f2bd8327bc959ae70",
-            "locator": {
-              "end": 830,
-              "kind": "line_range",
-              "start": 805
+              "start": 373
             },
             "path": "mcp/tests/test_role_capsule_budgets.py"
           },
@@ -182,19 +143,33 @@
       ]
     },
     "2": {
-      "note": "The test bounds fresh compiled sizes by the current record's limits; decision recording is registry policy and is not checked by this test.",
+      "note": "The test checks fresh compiled sizes and renewed measurements against current ceilings.",
       "targets": [
         {
           "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
-            "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
+            "content": "sha256:2853efdc91be3b79e781e0e42d7c2967b425e1cceb513f1573df3511220693cf",
             "locator": {
-              "kind": "symbol",
-              "name": "test_no_capsule_exceeds_its_recorded_budget"
+              "end": 474,
+              "kind": "line_range",
+              "start": 469
             },
             "path": "mcp/tests/test_role_capsule_budgets.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:566cd4138538906715ef81f2473c8f0bfa1d6d88356c04189426646e182b1c5b",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
         }
       ]
     },

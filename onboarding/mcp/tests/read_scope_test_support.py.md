@@ -109,19 +109,17 @@ No domain documentation source is configured for this repository (`system/source
 No configured domain documentation could be checked.
 
 
+### Repo-Internal References (continued)
+
 - **The fixture's declared topology and why this graph and not the shared branching one.** [17]
 
 
-- The graph constants: the invariant labels and statements, the applicability, conditions and exclusions, and the three direct family guarantees. [18]
+
 
 - The recorded paths, including the two the read is measured against (absent and mismatched). [19]
 - The current seed allocator supplies identities; removed predecessor/successor ordering helpers are not current fixture owners. [20]
 
 - The public builder and the value types a case reads. [21]
-
-
-
-
 
 > Retained earlier citation wording: - **The governed-artifact and contract rows that make this module part of the catalog.** Source caption: `read_scope_test_support`
 
@@ -134,7 +132,10 @@ No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
 
-
-
+### Repo-Internal References (continued)
 
 - **The governed-artifact and contract rows that make this module part of the catalog.** Source caption: `read_scope_test_support` [22]
+
+### Repo-Internal References (renewed)
+
+- The graph constants: the invariant labels and statements, the applicability, conditions and exclusions, and the three declared family guarantees. Anchor: `RETRY_LABEL`; `BATCH_LABEL`; `RESOLUTION_LABEL`; `FAMILY_LABEL`; `OVERLAPPING_FAMILY_LABEL`; `DIRECT_FAMILY_LABEL` [18]

@@ -35,7 +35,7 @@ and `PassingHookTests`/`FailingHookTests`/`UnrunnableHookTests` drive the check 
   candidate without a fact never moves the master line.
 - **Answer and texts.** `AnswerAndTextTests` keeps the answer to result, failing step and log path. Its text case
   reads the `publish_tree_commit` docstring and the head of `.githooks/pre-commit`, neither of which may state the
-  old hook-skipping behavior. The generator check invokes `scripts/sync-skills.py --check` with the current Python interpreter.
+  old hook-skipping behavior. The generator check invokes `scripts/renew-instructions.py --check` with the current Python interpreter.
   The cases also protect the no-skip policy, commit-tree census and baseline-adoption check.
 - **Round-one findings.** `RoundOneFindingTests` covers closed pipe readers, a group-escaped holder that ignores
   `TERM`, a tracked rewrite after the pass, a descendant that holds the pipe, whole streaming of hook output with
@@ -64,8 +64,6 @@ decide the outcome rather than a mocked runner.
 
 - Remaining-route fixtures protect exact-tree ordinary/direct publication refusal and pass facts — `RemainingRouteProductionTests` in mcp/tests/test_landing_commit_check.py. [7]
 
-- AnswerAndTextTests owns the skill-sync check subprocess (`scripts/sync-skills.py --check`) run with the current interpreter; this is source attribution, not execution. [8]
+- AnswerAndTextTests owns the instruction-renewal check subprocess (`scripts/renew-instructions.py --check`) run with the current interpreter; this is source attribution, not execution. [8]
 
-- The landing text case reads the publication docstring and the pre-commit hook head, and its generator check runs the skill-sync check for every generated copy with the current interpreter; this is source attribution, not a fresh run. [9]
-
-
+- The landing text case reads the publication docstring and the pre-commit hook head, and its generator check runs the instruction-renewal check with the current interpreter; this is source attribution, not a fresh run. [9]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "cb321e2ad3b69d960c4ca1ddf9442663278f429c",
-    "commit": "a874131c25b919356a3bd507713ead449b8491cd",
+    "codeTree": "a22c7df6c018aab4895457381d8a83779d5de69c",
+    "commit": "993e5d8a2b54cbd1432b901bc7b6a4630226bebd",
     "role": "curator",
-    "statement": "The unchanged release checklist and all 21 retained support identities preserve the distinction between upload, installer-facing index availability and the subsequent scratch installation.",
-    "task": "261112-BUG-L3",
+    "statement": "The release checklist names instruction renewal and the hook check while retaining the separate release upload, index and installation responsibilities implemented by the candidate. The synchronized3.0.2 release changes the pyproject and kernel-version support identities, not the checklist procedure.",
+    "task": "261112-BUG-L8",
     "uncommitted": true
   },
   "document": "docs/release-checklist.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+      "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
       "kind": "file",
       "path": ".githooks/_gate.sh"
     },
@@ -36,12 +36,12 @@
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     },
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "f09a93db862fd8a11919d23a28baa1b968ffb5e7",
+      "blob": "6c35df665ffac7bf152c3badf993d303ed12c451",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/version.py"
     },
@@ -124,6 +124,16 @@
       "blob": "ee83fb09f37a6d9ffee4382e58e0eab6d3c79d6b",
       "kind": "file",
       "path": "scripts/pnt_sandbox/README.md"
+    },
+    {
+      "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+      "kind": "file",
+      "path": "scripts/renew-instructions.py"
+    },
+    {
+      "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+      "kind": "file",
+      "path": "scripts/instruction_renewal/plan.py"
     }
   ]
 }

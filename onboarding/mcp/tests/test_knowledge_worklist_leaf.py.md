@@ -85,10 +85,6 @@ The changed writer calls explicitly supply the current `leaf_worklist(load_contr
 
 - The controller source exercises a fresh shared clone, real index building, informational proof counts and distinct report modes; cache store tolerates listing/stat disappearance. [41]
 
-
-
-
-
 - The module docstring: the fixture's repositories and task root. [17]
 - Pairing by trailer, following a sync and persisting beside the contract. [18]
 - A base without a paired memory commit is incomplete. [19]
@@ -178,12 +174,6 @@ and in `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_
 `base_cache.converted_base` instead of `leaf.converted_base`, because the conversion moved into
 `base_cache.converted_base_files` (ruling 18:49:50 (4)). The fixture and the other cases are unchanged.
 
-
-
-
-
-
-
 - The census-derived consumer row.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:2080-2080 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
@@ -192,8 +182,5 @@ and in `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_
 - The census-derived consumer row. In merged A3 this reference cites all 2 artifact blocks whose exact consumers list names this module. The earlier occurrence count and first-occurrence wording described unrelated narrow text, already unrelated in the parked source, and did not establish this module's consumer membership. Those targets are replaced by this complete membership set. Former member identity is not recovered or claimed. [Past-epoch source caption, detached from live reference 40. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit not identified. No historical event or intent inferred.]
 
 Current source: The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event.
-
-
-
 
 - The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event. [40]

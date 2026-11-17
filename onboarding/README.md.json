@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
-        "content": "sha256:2ccff027a2df3ffdd46d901a4ceb484595aba7f71c54e7dfc62b5824410b7b39",
+        "blob": "e01c0011e7abe3ff62dd2d91165f2f07908174c6",
+        "content": "sha256:dbcfaa17db59b99eeea9b3155ac5865b6463ca29ae9945ce311c48ed150354c8",
         "locator": {
           "end": 194,
           "kind": "line_range",
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
+            "blob": "e01c0011e7abe3ff62dd2d91165f2f07908174c6",
             "content": "sha256:b12b7a0d62b351726c4377249d0b5bf0b95cd984581059e373f6e52de355d867",
             "locator": {
               "end": 36,
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
+            "blob": "e01c0011e7abe3ff62dd2d91165f2f07908174c6",
             "content": "sha256:a7dd2f1db2a5663f0d50ab1d69dc32bbd97bf4ba40e533fe36bf190216a02752",
             "locator": {
               "end": 112,
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
+            "blob": "e01c0011e7abe3ff62dd2d91165f2f07908174c6",
             "content": "sha256:337ab3ee7cffe9746a8e6c1f774530261ddd8dc8fe247d247efd2b22125f3e3c",
             "locator": {
               "end": 172,
@@ -74,12 +74,12 @@
       ]
     },
     "4": {
-      "note": "The section Status states the repository's package version as `3.0.1` and sends the reader to the release notes before an install.\n\nAnchor: \"3.0.1\"",
+      "note": "The section Status states the repository's package version as `3.0.2` and sends the reader to the release notes before an install.\n\nAnchor: \"3.0.2\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9d82aeb2975b30c48f184816fd7566ac7152c43b",
-            "content": "sha256:44a1982e195985af4c4df2ac4094633b4c750e61ccecf127ad6fdd69142ed1bb",
+            "blob": "e01c0011e7abe3ff62dd2d91165f2f07908174c6",
+            "content": "sha256:8d2e79ed375fb9d3f304f48d398655c917434524150701c928bd7753f9d7d736",
             "locator": {
               "end": 207,
               "kind": "line_range",

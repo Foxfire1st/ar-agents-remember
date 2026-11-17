@@ -25,7 +25,7 @@ The root quality configuration explicitly classifies top-level Python packages a
 
 The certification-profile path uses `code_quality/profile_selection.py` for content-addressed repository-owned selection and `code_quality/profile_rails.py` for executable Python rail adapters. An incomplete ownership result preserves unresolved inputs and blocks targeted test execution instead of silently broadening to the full Python suite. Exact-candidate retry reuse checks the selection digest. Runner-input and manifest ownership use retained consumer declarations rather than a fixed consumer count.
 
-The Python rail adapter independently rederives the selector result and compares lint, type, coverage, test, and size paths with the executable scope. Both use canonical POSIX-string order, including siblings such as `conversation/` and `conversation-library/`; sorting retains duplicate entries rather than discarding them.
+The Python rail adapter independently rederives the selector result and compares lint, type, coverage, test, and size paths with the executable scope. The adapter compares paths in canonical POSIX-string order, including siblings such as `conversation/` and `conversation-library/`, and its comparison-side sorting retains duplicate entries. Selector contract outputs are canonical unique lists.
 
 The Python suite adapter executes the pytest step constructed by the quality-plan owner. That step registers `testing.pytest_phase_reporter` when the explicit phase-report output path is supplied. The earlier ambient teardown adapter and its two-replication `L5-C10`/zero-start proof protocol were removed with the old orchestration in MIK L113; they are historical evidence rules, not current rails. The focused code-quality overview owns the detailed adapter and selector contracts.
 
@@ -37,7 +37,7 @@ The Python suite adapter executes the pytest step constructed by the quality-pla
 
 The earlier `code_quality/completion_relay.py` account described a structural census for the relay `adapter evidence -> catalog -> notifier -> durable inbox -> owner`, with startup and recurring observation entry points. That module is absent from the frozen source tree, so this account is historical and supplies no current relay guard, HTTP exclusion check or runtime-indirection guarantee.
 
-`testing/curation_doctrine.py` owns normalized retired-wording checks and positive checks for compact curation policy. It strips Markdown emphasis and collapses wrapping before matching retired statements on the surfaces that shipped them. A separate registry checks the retired repair-loop field pairing and the corrected field names in declared documents. The module imports neither pytest nor a fixed repository root, so callers can supply staged or synthetic trees. Its retired-wording scan is a census, not a semantic check: fresh vocabulary can escape it. The compact-policy helper accepts a declared source only when its statement list is nonempty and every listed statement is present after normalization; otherwise it reports that source. A missing source is reported separately as missing. The direct canonical-source test reports each missing listed statement. These are all-clause checks with different report granularity.
+`testing/curation_doctrine.py` owns normalized retired-wording checks and positive checks for compact curation policy. It strips Markdown emphasis and collapses wrapping before matching retired statements on the surfaces that shipped them. A separate registry checks the retired repair-loop field pairing and the corrected field names in declared documents. The module imports no pytest. At import it reads its module-owned repository declaration to derive generated skill targets; callers independently supply staged or synthetic trees to scan. Its retired-wording scan is a census, not a semantic check: fresh vocabulary can escape it. The compact-policy helper accepts a declared source only when its statement list is nonempty and every listed statement is present after normalization; otherwise it reports that source. A missing source is reported separately as missing. The direct canonical-source test reports each missing listed statement. These are all-clause checks with different report granularity.
 
 `code_quality/projection_types.py` folds the served projection's `servingBuild`, `watcherHealth`, `checkoutBinding` and `buildCurrentness` definitions into the generated dashboard contract. Its supplemental renames are `BuildCurrentnessPayload`, `ServingBuildPayload`, `WatcherHealthPayload` and `CheckoutBindingPayload`; nullable fields omitted by `exclude_none=True` become optional output properties. The declared refinement keywords include `minimum` but not `maximum`, and unsupported schema keywords refuse generation. The former terminal observer-health payload and counter account is historical; it does not describe this candidate's served tail.
 
@@ -63,26 +63,6 @@ Case budgets belong to the root `pyproject.toml` rather than this overview or a 
 
 File-level onboarding is intended to cover every current Python source below this route with its same-route card and sidecar. The inspected memory tree still has Markdown cards but no JSON sidecars for `__init__.py`, `testing/causal_dependency.py` and `testing/candidate_snapshot.py`. `code_quality/completion_relay.py` is absent from source and is not a missing-current-source-card case. Generated route-index completeness is not established by this inventory.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Integration headroom
 
 On 2026-10-26, the integration ceiling rises from 1000 to 2000; unit remains 10000. The source-file cases protect Git listing, bounded reads and readable excluded citations. The original 16-case shape measured 18.56 s and independently 20.15 s; grouping preserved its scenarios in four cases and 14 subtests at 19.70 s. The two link-class regressions produce four cases and 16 subtests: v2 measured 27.47 s and v3 38.20 s. No case was weakened or moved to the unit lane. Both over-budget refusal directions remain enforced. These are scenario-run measurements, not whole-suite runtime or a claimed speedup.
@@ -96,7 +76,7 @@ Retained earlier citation wording, outside its current number: - Root configurat
 
 
 ## Evidence
-- Canonical POSIX-string sorting retains duplicate path entries. [2]
+
 - The root declares 10000 unit and 2000 integration selected cases. The current integration raise preserves marker classification and both over-budget refusal directions. [3]
 - The adapter rederives the selector and compares each executable path population exactly. [1]
 
@@ -126,3 +106,5 @@ Retained earlier citation wording, outside its current number: - Root configurat
 - Dagger owns the retained build and retry cache bindings. [18]
 - Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]
 - The dated raise states the headroom, measured scenario costs and preserved refusal directions. [19]
+
+- The adapter sorts comparison paths as POSIX strings without discarding duplicate entries. [2]

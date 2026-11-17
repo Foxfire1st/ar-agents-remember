@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "15eece2f9931c0edd4589e0e544c46db6b6e4317",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "edc7edc63f5d05b34445dfe30d8e141ec5300efc",
+    "commit": "a2f0fced8896b92d31fd3f78351d01f5302be97e",
     "role": "curator",
-    "statement": "The skills reference still describes the shipped lifecycle skill and its role files; the text of those role files changed in place and the inventory statement holds.",
-    "task": "261112-RSM-L1",
+    "statement": "The skills reference names the instruction-renewal command while its skill, role, operation and MCP inventory remains consistent with the composed authored and derived manifest.",
+    "task": "261112-BUG-L8",
     "uncommitted": true
   },
   "document": "docs/reference/skills.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "skills/l-01-agent-lifecycles/SKILL.md"
     },
     {
-      "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+      "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
     },
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/models/skill_resources.py"
     },
     {
-      "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+      "blob": "212f988e5638960b9061d674e63be12b27d324ab",
       "kind": "file",
       "path": "scripts/sync-skills.py"
     },
@@ -59,6 +59,16 @@
       "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+      "kind": "file",
+      "path": "scripts/renew-instructions.py"
+    },
+    {
+      "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+      "kind": "file",
+      "path": "scripts/instruction_renewal/plan.py"
     }
   ]
 }
