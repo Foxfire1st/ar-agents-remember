@@ -170,6 +170,24 @@
     {
       "anchor": {
         "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:ff465974c2ff2904981ae7f7b0fe9990369387c39693b2aad43fa9ae5f18cb61",
+        "locator": {
+          "kind": "symbol",
+          "name": "_knowledge_foundation_state"
+        }
+      },
+      "id": "RLZ-PA1SGN",
+      "invariant": "INV-TJADR1",
+      "origin": {
+        "handoffEntry": "L8-CURATION-INV-TJADR1",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The measured knowledge block retains admission-specific state and nextAction before a revision, and reports the current converted-tree knowledge state with Architect foundation guidance after adoption.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:7ef380476ad350970442b0914c3a71a14bb4114fe50df852a1834179bc78e67f",
         "locator": {
           "end": 896,
@@ -748,7 +766,7 @@
         },
         {
           "anchor": {
-            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
             "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
             "locator": {
               "kind": "symbol",

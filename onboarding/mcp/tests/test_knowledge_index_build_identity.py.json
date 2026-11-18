@@ -1,0 +1,123 @@
+{
+  "path": "mcp/tests/test_knowledge_index_build_identity.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2bb0153ad1ec85bfd16714cae0945fc706106681",
+        "content": "sha256:11461e5e778643cdb18633ccef24d50b98e881a8488920a2f3ba778b3622ecde",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unknown_build_private_files_support_real_reads_and_are_not_shared"
+        }
+      },
+      "facet": "Unknown-build files support actual reopened knowledge reads, remain private to each cache object and participate in common eviction.",
+      "id": "PRF-MYD7PC",
+      "invariant": "INV-AYMK61",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 6",
+        "leaf": "261112-BUG-L9"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2bb0153ad1ec85bfd16714cae0945fc706106681",
+        "content": "sha256:e470bbb0f01524ab510003a8bfbef157eb6ae5e4293f7273dba0e3f96336a291",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_another_build_rebuilds_a_partial_index_and_the_same_build_reuses_it"
+        }
+      },
+      "facet": "A second loaded build rebuilds a foreign incomplete index and its own matching build reuses that rebuilt index.",
+      "id": "PRF-YV7TN6",
+      "invariant": "INV-AYMK61",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 6",
+        "leaf": "261112-BUG-L9"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A foreign partial index is rebuilt and a matching build is reused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bb0153ad1ec85bfd16714cae0945fc706106681",
+            "content": "sha256:e470bbb0f01524ab510003a8bfbef157eb6ae5e4293f7273dba0e3f96336a291",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_another_build_rebuilds_a_partial_index_and_the_same_build_reuses_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A matching build reuses its file after restart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bb0153ad1ec85bfd16714cae0945fc706106681",
+            "content": "sha256:5173bd23384cdd023be1cd9ed2f05fb5923db0b406e8e1b34b952f6ee5791a2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_known_build_reuses_after_a_process_restart"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Loaded source identity survives disk changes and excludes documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bb0153ad1ec85bfd16714cae0945fc706106681",
+            "content": "sha256:7f4ae8a5174afcd8a6c31d0218945cc5b2cc8f4d12d0fdac4d4c8163eace9997",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identity_uses_loaded_source_and_package_changes_but_not_documents"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Legacy and build-qualified filenames remain isolated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bb0153ad1ec85bfd16714cae0945fc706106681",
+            "content": "sha256:859d4ffc174571c1fffc32132cb4e083b40703e7661438191e24d836a9bbe690",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_legacy_and_new_builds_never_find_each_others_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unknown builds support private reads and common eviction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bb0153ad1ec85bfd16714cae0945fc706106681",
+            "content": "sha256:11461e5e778643cdb18633ccef24d50b98e881a8488920a2f3ba778b3622ecde",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unknown_build_private_files_support_real_reads_and_are_not_shared"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

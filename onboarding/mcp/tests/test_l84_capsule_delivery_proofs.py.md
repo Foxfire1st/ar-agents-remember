@@ -22,10 +22,14 @@ Proves, on the shipped lifecycle corpus with no corpus or compiler patch, that t
 
 - One shipped role/operation pair is compiled without patches. [1]
 - An emitted detail is checked against the native launch record. [2]
-- Native first messages carry the real digest once. [3]
+
 - The knowledge detail reaches its step in every consuming role/operation and nowhere else. [4]
 - The knowledge detail's views and keywords match the registered tool. [5]
 - The advice and reporting rules reach only their role audience. [6]
 - Measurement checkpoint steps reach every Worker operation. [7]
-- Digest homes declare audiences without injecting the map. [8]
+
 - The Manager starts the Curator for prerequisite memory reconciliation without healing the conflict. [9]
+
+- Native first messages carry the real digest once. [3]
+
+- Digest homes declare audiences without injecting the map. [8]

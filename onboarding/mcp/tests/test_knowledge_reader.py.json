@@ -192,7 +192,7 @@
       ]
     },
     "38": {
-      "note": "Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection names excluded uncommitted code; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent.",
+      "note": "Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection reads clean code at HEAD and captures dirty code for the read; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent.",
       "targets": [
         {
           "anchor": {
@@ -209,9 +209,9 @@
         {
           "anchor": {
             "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
-            "content": "sha256:fba8f37d564116326c7b8ed79a0c0fba2659a0142f01e5d7b282117a4f26124d",
+            "content": "sha256:e9cebd2e471aa1d035b8e4ffb4cf3df97c3b6f770e82338d1a1c21055e0c68bb",
             "locator": {
-              "end": 1008,
+              "end": 1020,
               "kind": "line_range",
               "start": 998
             }
@@ -253,10 +253,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 809,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },

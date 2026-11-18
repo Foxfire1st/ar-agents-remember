@@ -151,15 +151,16 @@
       ]
     },
     "15": {
-      "note": "The master-row comparison, with `row-completed-before-landing` named on every finding.",
+      "note": "The master-row comparison selects early, late or general mismatch rules for its findings.",
       "targets": [
         {
           "anchor": {
             "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
-            "content": "sha256:ef79bb2eceb96012c14ee615cd6ac67b794716b6ee86c3dee52f13478b74aa86",
+            "content": "sha256:5710e0df687023f1f0e45d56a069a521bb23052f858b7818785dfd405b34bf94",
             "locator": {
-              "kind": "symbol",
-              "name": "check_master_rows_against_leaf_documents"
+              "end": 645,
+              "kind": "line_range",
+              "start": 607
             }
           },
           "kind": "code"
@@ -463,12 +464,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
             "content": "sha256:f3d959f1d2badd9a58c6e336e82f49c9d71da8e7334ba975b03392a3bdf6c042",
             "locator": {
-              "end": 789,
+              "end": 796,
               "kind": "line_range",
-              "start": 777
+              "start": 784
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -493,15 +494,16 @@
       ]
     },
     "4": {
-      "note": "The closed status vocabularies, so an unrecognized status is reported rather than compared.",
+      "note": "The status sets select recognized comparison cases; they do not reject every unknown status.",
       "targets": [
         {
           "anchor": {
             "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
-            "content": "sha256:d282eab99cb447268d303dae052a417e708b169a48bc4795fbaa8e0fb112766d",
+            "content": "sha256:031ea344f2f5ab47a7c4a5d5ad551d12c9ef86d17dff747c3473309ca97de4f0",
             "locator": {
-              "kind": "symbol",
-              "name": "ACTIVE_STATUSES"
+              "end": 79,
+              "kind": "line_range",
+              "start": 73
             }
           },
           "kind": "code"
@@ -509,10 +511,11 @@
         {
           "anchor": {
             "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
-            "content": "sha256:b5cf9419194ae2e4ed2c2f94223a936725e9447d7b5c9fb315df810133774a63",
+            "content": "sha256:e8f4a7b7e73fb25d1d726947c0239191293d67b165ebf7b0d9265af21fe4369a",
             "locator": {
-              "kind": "symbol",
-              "name": "LANDED_CONTRACT_STATUSES"
+              "end": 525,
+              "kind": "line_range",
+              "start": 493
             }
           },
           "kind": "code"
@@ -520,10 +523,11 @@
         {
           "anchor": {
             "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
-            "content": "sha256:a89ef9e5030f3b8b4933206e7b3e3fd90cbbf0a92d96a365eee14cb107822926",
+            "content": "sha256:b65e076f64af2fd78c346f4bdddb6ff86de8eb21f737fbedbac49403ce2bc52e",
             "locator": {
-              "kind": "symbol",
-              "name": "STARTED_CONTRACT_STATUSES"
+              "end": 566,
+              "kind": "line_range",
+              "start": 550
             }
           },
           "kind": "code"

@@ -1,0 +1,26 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Planning facts and declared copies, locating stale output, preserving authored decisions, resolving mapped passages, retaining growth and structural checks, preserving active authority, documenting the command and composing consumers are complementary parts of one usable renewal operation; no member alone establishes the complete operation."
+  },
+  "guarantee": "Successful execution of the documented renewal command brings generated instruction facts and declared copies into agreement with current sources and resolved authored declarations; authored authority remains separate, while size and delivery-structure checks retain their own obligations.",
+  "id": "FAM-27AEW1",
+  "members": [],
+  "origin": {
+    "handoff": {
+      "path": "knowledge-wave2-input-v4.json"
+    },
+    "handoffEntry": "L8-instruction-renewal-family",
+    "leaf": "261112-BUG-L8",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "routes": [
+    "."
+  ],
+  "schema": "ar-family/v1",
+  "status": "retired",
+  "title": "Instruction renewal preserves authored authority"
+}

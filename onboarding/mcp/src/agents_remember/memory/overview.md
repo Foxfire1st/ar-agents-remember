@@ -17,7 +17,7 @@ A selected Git tree is read through objects without checkout; working-directory 
 
 The builder parses recorded files, writes `ix_*` relationships and projects the surviving logical tables. Parsing/schema/location/duplicate-ID problems name the offending file and make the index partial; cross-document integrity belongs to the knowledge validator. A complete build is consequently not a substitute for validator acceptance. The query surface carries tree key, converted state, completeness and problems in `Answer` values for its substantive lookups. The UUID-to-text-ID helper returns a plain optional string rather than an `Answer`.
 
-The cache lives outside Git working trees, normally under `<coordination-root>/runtime/knowledge-index`. It recalculates a directory key for each lookup, rejects a cache inside a Git worktree before creating it, rebuilds files whose index format/key does not match, installs a completed temporary index by replacement, and evicts by age and size. Defaults are fourteen days and one GiB; the retained current file is excluded from eviction. `INDEX_FORMAT` is `ar-knowledge-index/v3`, with history identity `(path, id)`.
+The cache lives outside Git working trees, normally under `<coordination-root>/runtime/knowledge-index`. It recalculates a directory key for each lookup, rejects a cache inside a Git worktree before creating it, rebuilds files whose index format/key does not match, installs a completed temporary index by replacement, and evicts by age and size. Defaults are fourteen days and one GiB; the retained current file is excluded from eviction. `INDEX_FORMAT` is `ar-knowledge-index/v3`, with history identity `(path, id)`. Each filename also binds the immutable loaded-build source digest. An unknown build uses a private cache-instance namespace and reuses no persistent dataset. `open_cached_index` reopens only a known loaded build’s existing index without touching usage bookkeeping; age and size eviction still cover every SQLite namespace.
 
 Readers open existing index datasets through SQLite read-only handles. The store validates the one declared schema, reads identities/revisions, rechecks revision payload seals, and computes logical identity. Recorded-scope selection and paging remain separate operations. Application consumers supply exact selected datasets and source bindings; the index does not promote a record into an obligation or an approval.
 
@@ -246,7 +246,6 @@ Anchor: `_approved_packet_ref` `changed_observations`
 
 - Retained reference account (no fresh execution or acceptance inferred): Source-path observation cases moved with meaning preserved. [100]
 
-- Retained reference account (no fresh execution or acceptance inferred): The package map. [101] [106]
 
 - Retained reference account (no fresh execution or acceptance inferred): The captured-state key. [102]
 
@@ -270,9 +269,8 @@ Anchor: `_approved_packet_ref` `changed_observations`
 
 - Retained reference account (no fresh execution or acceptance inferred): The card authoring's entry. [114]
 
-Inherited numbered findings [116], [149] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
+Numbered findings [116] and [149] describe converted carryover planning, conversion refusals and apply-authority checks; their notes and targets were revised for this candidate. The inherited source accounts remain in the immutable base and M1 evidence; they do not establish execution by a retired owner.
 
-- Legacy carryover apply refuses converted targets and unconditionally refuses unconverted targets; planning remains a read. [116]
 
 - Retained reference account (no fresh execution or acceptance inferred): The index keeps each history file by path. [117]
 
@@ -320,7 +318,6 @@ Inherited numbered findings [116], [149] retain their exact wording and full tar
 
 - Adoption distinguishes legacy-card/validator/drift refusals and drift acceptance cannot clear the first two. [148]
 
-- Carryover refuses converted targets and checks cutover refusal rather than acquiring a lock. [149]
 
 - Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion. [150]
 
@@ -367,3 +364,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowle
 - The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [173]
 
 - Converted carryover requires matching layouts and exact recovery-leaf authority, writes paired worktree units and leaves curator rows/publication to ordinary closeout. [174]
+
+- Retained reference account (no fresh execution or acceptance inferred): The package map. [101]
+- The conversion and index packages describe their module boundaries. [106]
+- Carryover admits matching converted roots; unconverted inputs retain central conversion refusal. Planning reads candidate evidence without writing memory. [116]
+- Carryover checks the central cutover refusal for an unconverted input; converted apply requires the exact configured open recovery leaf. [149]
+
+- KnowledgeIndexCache binds its namespace to the loaded build digest and uses a private namespace when that digest is unavailable; only known-build datasets are reused. [175]
+- open_cached_index opens only the loaded build namespace and performs no usage bookkeeping; an unknown digest yields no reusable index. [176]

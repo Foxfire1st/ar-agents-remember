@@ -54,8 +54,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182c0249a52e698fae419d0bcb62f5d1aa2f9fb2",
-            "content": "sha256:b80408d33520c3d42e58b4f2eeb8e46db6c92dcfad39930b3c6e6af0b5e9945e",
+            "blob": "020ab9577b41d0cc406ad580d3f840d5d606458d",
+            "content": "sha256:af262f382ce5480f3ad4aa5912d578dc41f8bc83507153a56a80ff1511fe25f5",
             "locator": {
               "end": 19,
               "kind": "line_range",
@@ -179,7 +179,7 @@
       ]
     },
     "106": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The package map.\n\nAnchor: \"the deterministic conversion\"",
+      "note": "The conversion and index packages describe their module boundaries.",
       "targets": [
         {
           "anchor": {
@@ -196,10 +196,10 @@
         },
         {
           "anchor": {
-            "blob": "182c0249a52e698fae419d0bcb62f5d1aa2f9fb2",
-            "content": "sha256:374bb7e0d66d35ebed39fbb232d121de0519c377827d6366bcca5f911d83d100",
+            "blob": "020ab9577b41d0cc406ad580d3f840d5d606458d",
+            "content": "sha256:af262f382ce5480f3ad4aa5912d578dc41f8bc83507153a56a80ff1511fe25f5",
             "locator": {
-              "end": 20,
+              "end": 19,
               "kind": "line_range",
               "start": 1
             },
@@ -368,14 +368,52 @@
       ]
     },
     "116": {
-      "note": "Legacy carryover apply refuses converted targets and unconditionally refuses unconverted targets; planning remains a read.",
+      "note": "Carryover admits matching converted roots; unconverted inputs retain central conversion refusal. Planning reads candidate evidence without writing memory.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
-            "content": "sha256:747038ba884874ecd061048d8ad0b0e56b0a848bf7026b05a24e652f1632a675",
+            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
+            "content": "sha256:68acefba2d87996c8406ad10991412bec9b768d6e57c36a509db586c64789579",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "build_plan_for_request"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
+            "content": "sha256:ba6bf4bcf203b4ac0e92506b70b2103da4d06ae64b2647a4df59c1c1314d87a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_context"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:42c95a084160351066eecc155bd26856ac26e41c4d89bf90896078f9ff2e72c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_converted_formats"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
+            "content": "sha256:9cf2fe85ab17ca9193ad94686efb08136f0e125b711fbf074b0a517c4122d01c",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 316
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
           },
@@ -862,14 +900,27 @@
       ]
     },
     "149": {
-      "note": "Carryover refuses converted targets and checks cutover refusal rather than acquiring a lock.",
+      "note": "Carryover checks the central cutover refusal for an unconverted input; converted apply requires the exact configured open recovery leaf.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
-            "content": "sha256:747038ba884874ecd061048d8ad0b0e56b0a848bf7026b05a24e652f1632a675",
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:42c95a084160351066eecc155bd26856ac26e41c4d89bf90896078f9ff2e72c6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "require_converted_formats"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
+            "content": "sha256:047d65803de69b070b49ef1793c2c009a5250a1480b912c88941b3d97f539b4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_carryover_authority"
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
           },
@@ -1572,6 +1623,40 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "175": {
+      "note": "KnowledgeIndexCache binds its namespace to the loaded build digest and uses a private namespace when that digest is unavailable; only known-build datasets are reused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "content": "sha256:c953503aa6afe66c046070e4713c0438b86ccab1d9e76a42e4cf596ea1ad226a",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeIndexCache"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "176": {
+      "note": "open_cached_index opens only the loaded build namespace and performs no usage bookkeeping; an unknown digest yields no reusable index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "content": "sha256:574ff7370b00f611674304a60bd72a659b3f523ebe44b905022d72d4cd3b6b2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_cached_index"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
           },
           "kind": "code"
         }

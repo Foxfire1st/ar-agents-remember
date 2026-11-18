@@ -4,11 +4,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The `create_server` consumer iterates `TOOL_REGISTRARS`.",
+      "note": "`create_server` iterates the ordinary registrar tuple.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
             "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
             "locator": {
               "kind": "symbol",
@@ -21,7 +21,7 @@
       ]
     },
     "10": {
-      "note": "Ordinary registration adds explainer_control through register_explainer_tools; bound explainer registration is selected separately by create_server, rather than appending ordinary registrars.\n\nAnchor: `TOOL_REGISTRARS`",
+      "note": "Every launch registers the ordinary families; a valid explainer launch adds its four tools.",
       "targets": [
         {
           "anchor": {
@@ -36,7 +36,7 @@
       ]
     },
     "2": {
-      "note": "The advertised tool-name list's one definition, re-exported unchanged by the adapter.\n\nAnchor: `PUBLIC_TOOLS`",
+      "note": "The public tool-name list has one model-owned definition re-exported by the adapter.",
       "targets": [
         {
           "anchor": {
@@ -64,60 +64,8 @@
         }
       ]
     },
-    "3": {
-      "note": "The registrar appended last so no existing registration order moved.\n\nAnchor: `register_knowledge_tools`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
-            "locator": {
-              "end": 81,
-              "kind": "line_range",
-              "start": 68
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The five advertised names the appended registrar publishes, at the tail of both surfaces.\n\nAnchor: `knowledge_read`; `knowledge_change`; `knowledge_diff`; `knowledge_integrity_check`; `knowledge_project`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
-            "content": "sha256:0923d28ccefa8b417dc7890e6c0126600576eda2ce93384990bdd609e8cf0f73",
-            "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 67
-            },
-            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The capsule registrar historically appended immediately before knowledge, before the role-agent insertion.\n\nAnchor: `register_capsule_and_skill_tools`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5865a5625745237980b5f2727a2b258b47488104",
-            "content": "sha256:e599d213ee8a82d54eb3535c16767e98a907ef2191dd8819d3f9c007367f5466",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "7": {
-      "note": "The live registered-order comparison that makes a registrar-without-roster-name a surface violation.\n\nAnchor: `PublicSurfaceInventoryTests`",
+      "note": "The live tool-list comparison checks the advertised registration against the roster.",
       "targets": [
         {
           "anchor": {
@@ -133,7 +81,7 @@
       ]
     },
     "8": {
-      "note": "Frozen implementation of TOOL_REGISTRARS supporting the stated file behavior.\n\nAnchor: `TOOL_REGISTRARS`",
+      "note": "`TOOL_REGISTRARS` declares the ten family registrars in order.",
       "targets": [
         {
           "anchor": {
@@ -148,7 +96,7 @@
       ]
     },
     "9": {
-      "note": "The registration module leaves compact serialization, application services and FastMCP process composition to create_server.\n\nAnchor: lines 1-8",
+      "note": "The registration module leaves compact serialization, application services and process composition to `create_server`.",
       "targets": [
         {
           "anchor": {

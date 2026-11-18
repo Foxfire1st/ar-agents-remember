@@ -11,8 +11,35 @@
             "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:1729ebbdf3e2e1f72b157fe8add6a179b376f9b258a3a0568e13b0c36a8e75bc",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_frozen_vocabulary_is_exactly_the_eight_roles_and_nine_operations"
+              "end": 142,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:2621e56d55e0fb0455d1af05b2d3a65bafd1c0f7b69d33b0656132c56ad1e1ed",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:5fd6ab94aea5614649efeb8e41ec50f350635e96e8bd58f436f9a45b43addd3b",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 152
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -28,34 +55,9 @@
             "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
             "content": "sha256:c09f88cdc76bed96c2e5f65d6aada85dc64d8f52df4091725c171cd9da011974",
             "locator": {
-              "kind": "symbol",
-              "name": "SHIPPED_ROLES"
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
-            "content": "sha256:dd76f42e46accac0c85e2afbb7053c96a8f73fffd7d3b19758efc24ff0a7d341",
-            "locator": {
-              "end": 89,
+              "end": 77,
               "kind": "line_range",
-              "start": 79
-            },
-            "path": "mcp/tests/test_role_capsule_admission.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
-            "content": "sha256:9caad7c0acbb81f00dc722d5ebb1905a53306888b50387f58df3b87174e4ae37",
-            "locator": {
-              "end": 90,
-              "kind": "line_range",
-              "start": 81
+              "start": 68
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -161,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:f0dad0a8df6fd0a2092f0cfbc762f0978e1200280daa6856c932da956fc8f041",
             "locator": {
               "end": 6,
@@ -175,19 +177,45 @@
       ]
     },
     "6": {
-      "note": "The settings registry kept in step with this vocabulary, so a published role is configurable.",
+      "note": "The settings registry lists the same eight role names as the compiler vocabulary; the free-agent authority case separately checks Bootstrap’s settings recognition.",
       "targets": [
         {
           "anchor": {
             "blob": "f0866515684aa632f534294be7451aa0a58b5589",
-            "content": "sha256:0a603f7916f3b0c99d6900adf6c5dd4f7f693c4a3ed81117e2a7f194034be25c",
+            "content": "sha256:b599dd4d95a0adb65135879093ce0cf5b66aa3aa951fbf75678ed89810af434c",
             "locator": {
-              "kind": "symbol",
-              "name": "KNOWN_ROLES"
+              "end": 105,
+              "kind": "line_range",
+              "start": 90
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
+            "content": "sha256:ca87be70f1004fe8f0b93c44eca5442b2a733b7770811673bac424afbd4a167c",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "content": "sha256:c071edfea9721d39eacdb2b408dd88a2e6680fc35a5ee8090960dcdba31e2178",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 372
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
         }
       ]
     },

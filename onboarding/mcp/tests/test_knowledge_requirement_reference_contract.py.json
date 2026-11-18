@@ -117,15 +117,16 @@
       ]
     },
     "23": {
-      "note": "**The real owner's four refusals carried verbatim, with the stored reference byte-identical — the proof that the reference is never rewritten.**",
+      "note": "The real owner's four refusal cases assert the expected refusal code, a nonempty detail and the unchanged reference path.",
       "targets": [
         {
           "anchor": {
             "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
             "content": "sha256:90ef0a79d28cba45adfa3c32bf160933160454021bc92240fc51b1f974a28b53",
             "locator": {
-              "kind": "symbol",
-              "name": "test_each_owner_refusal_is_carried_verbatim"
+              "end": 170,
+              "kind": "line_range",
+              "start": 129
             }
           },
           "kind": "test"
@@ -170,10 +171,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 809,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },

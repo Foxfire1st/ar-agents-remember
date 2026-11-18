@@ -6,7 +6,7 @@
 
 ## Current naming and source qualification
 
-The IndexMismatchError case still returns state view and a degraded currentness reason, with INV-AAAAAA/RLZ-A00001 named and statement absent. The separate internal published_intent_block case retains full seeds/statement and committed-tree behavior; that is not the public MCP naming answer.
+The IndexMismatchError case still returns state view and a degraded currentness reason, with INV-AAAAAA/RLZ-A00001 named and statement absent. The separate internal published_intent_block case retains full seeds/statement and distinguishes committed-tree from captured-working-tree observation; that is not the public MCP naming answer.
 
 ## Current source contract evidence
 
@@ -41,8 +41,10 @@ per-side computation, the observation cache key, Git failures, and the two read 
   `state: view` with its payload and a degraded block.
 - **Surfaces.** `knowledge_read` with codeTreeId keeps the stale invariant/realization visible as named IDs and states, without its statement text; the invariant currentness entry list includes both realization RLZ-A00001 and proof PRF-P00001.
   without a named tree, or with only `repositoryRoot`, it is `unverifiable` with compact entries even though
-  `HEAD` holds the edit. The published-intent block names its resolved tree and the `treeScope` text; an
-  uncommitted edit leaves every state unchanged; with no resolved tree it is `unverifiable`.
+  `HEAD` holds the edit. The published-intent block first names its committed tree and `treeScope`; an
+  uncommitted edit is then observed at a different captured working tree with `codeState=working-tree`
+  and a working-tree `treeScope`. The test does not compare the dirty invariant states with the earlier states.
+  With no resolved tree it is `unverifiable`.
 
 ### Conventions
 
@@ -112,7 +114,6 @@ No meaningful cross-repo references found: every case works in its own temporary
 
 No cross-repo boundary is crossed by this file.
 
-
-
+### Repo-Internal References (continued)
 
 - The lane row. Anchor: "mcp/tests/test_knowledge_currentness.py" Anchor: "mcp/tests/test_knowledge_currentness.py" [16]

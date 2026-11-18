@@ -16,7 +16,7 @@
         "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "An explicit Update captures the current bound comparison and prepares its packet again before replacing snapshot/instructions, without starting a model turn.",
+      "rationale": "An explicit Update captures the current bound comparison and prepares its packet before moving the two worktrees and replacing their instructions, without starting a model turn.",
       "role": "enforcement"
     },
     {

@@ -37,6 +37,8 @@ No cross-repository behavior is implemented in this file. Every case runs in-pro
 
 No meaningful cross-repo references found.
 
+### Repo-Internal References (continued)
+
 - `test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown` owns the current boundary described above. [9]
 - `test_an_empty_converted_base_counts_as_completely_inspected_for_absence` owns the current boundary described above. [10]
 - `test_a_damaged_knowledge_half_cannot_support_a_negative_attribution_conclusion` owns the current boundary described above. [11]
@@ -47,8 +49,5 @@ No meaningful cross-repo references found.
 
 
 - **The precedence cases: one unreadable half leaves the readable side attributed and the rest unknown; the same pair read completely confirms absence where the lost half could not; a damaged half cannot support a negative conclusion.** [12]
-
-
-
 
 - The module's own unit-regression lane row. [14]

@@ -74,7 +74,7 @@ the case does not identify an originally missing role or compare emitted roles w
 
 **The schema guard is a bounded name check.** `walk_property_names` recursively collects JSON-schema
 property names and the test requires no intersection with the twenty declared forbidden names.
-The neighboring case checks the vocabulary's record-kind/table/status declarations. These assertions
+The neighboring case checks record-kind/schema/table declaration names and the absence of SQL create/insert strings. These assertions
 do not inspect every free-text value or prove that no imaginable field could carry a conclusion.
 
 **The stores-nothing case compares fixture row counts before and after rendering.** It reads
@@ -133,7 +133,7 @@ None recorded.
 
 ## Historical Coverage Replaced By L57
 
-The following earlier card text is retained verbatim as historical material, not current coverage.
+The following earlier card text is retained as historical material, with the three sealed obsolete numeric catalog references withdrawn, not current coverage.
 Its citation markers and table rows are inert inside this fence. Canonical curator assessment
 authoring is not claimed deleted merely because these reviewer tests/builders were removed.
 
@@ -179,7 +179,7 @@ helpers are shared surface, not private to this file.
 **The lane declaration is a precondition, not metadata.** `pytestmark = pytest.mark.evidence_unit`
 registers the whole module in the unit population, and the leaf also appended the module to the
 `unit-regression` lane in `mcp/tests/test-evidence-lanes.toml:109` and to two `consumers` lists in
-`mcp/tests/evidence-lifecycle.toml:1412` and `:1447`. An unregistered `test_*.py` module makes the lane
+`mcp/tests/evidence-lifecycle.toml` and `:1447`. An unregistered `test_*.py` module makes the lane
 manifest refuse the repository, so the registration is what lets the module be collected at all.
 
 
@@ -259,7 +259,7 @@ shares a dataset with another.
 | The lane row this module occupies. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/test-evidence-lanes.toml:111-113 |
 
 
-| The two consumer registrations this module's fixtures are recorded under. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/evidence-lifecycle.toml:1427-1441; mcp/tests/evidence-lifecycle.toml:1471-1471 |
+| The two consumer registrations this module's fixtures are recorded under. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/evidence-lifecycle.toml; mcp/tests/evidence-lifecycle.toml |
 
 ```
 
@@ -299,7 +299,7 @@ evidence; source inspection supplies no new execution or acceptance grade.
 
 - The module has fifteen current test declarations. Its old header still names removed coverage and is not a current case census; the bounded forbidden-name vocabulary remains declared. [1]
 - The knowledge case asserts the compared revision pair, statement presence, side-specific condition tuples and comparison-owned field changes, not literal statement-text equality. The source cases retain sibling/before-side and unmapped/outside-selection counts. [9]
-- The recursive schema-name scan excludes the declared forbidden names, and the neighboring vocabulary case checks no record kind/table/status of its own; this is bounded assertion coverage, not a universal free-text conclusion proof. [11]
+
 - The rendering case compares both fixture indexes row-for-row by count before and after composition; it is not a general filesystem-write audit. [12]
 - Distinct knowledge/source/judgment pane types, no authored_effects/signals, typed labelled catalogue entries, retry identity present on both sides, a direct retry comparison with a page and one absent identity excluded are asserted. The body does not compare every catalogue identity or open an unanswerable subject to assert its reason. [19]
 - A knowledge-only change retains a compared selected pair while its inventory is measured empty; malformed inventory combinations are rejected and unrepresentable names require a partial measured inventory. [20]
@@ -312,10 +312,14 @@ evidence; source inspection supplies no new execution or acceptance grade.
 
 ### Cross-Repo References
 
-No cross-repository behavior is implemented in this file. Every case builds its datasets under
-`tmp_path` and asserts one repository namespace's rendering.
+No cross-repository behavior is implemented in this file. Fixture-backed cases build their snapshots
+under `tmp_path` and assert one repository namespace's rendering.
 
 No meaningful cross-repo references found.
+
+### Repo-Internal References (renewed)
+
+- The recursive schema-name scan excludes the declared forbidden names, and the neighboring vocabulary case checks record-kind/schema/table names and SQL create/insert strings; this is bounded assertion coverage, not a universal free-text conclusion proof. Anchor: inclusive source ranges [11]
 
 ## 260921-ICR-L17 One Case Drives The Previous Identity Through Every Hop
 
@@ -335,21 +339,8 @@ rather than passing a parallel keyword beside the request".
 its account of the three requests (refresh, plain read, malformed spelling) moved with it. `render`
 stays here, and that module imports it.
 
-
-
-
-
-
-
-
-
-
-
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:395-395 - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:830-830 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1215-1215 - the bytes it recorded now occur 9 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2072-2072 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2753-2753 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2813-2813 - the bytes it recorded now occur 61 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3316-3316 - the bytes it recorded now occur 87 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:125-661 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit eb0b0e98596d07e4e206e7936c20f86d8123e401; mcp/tests/evidence-lifecycle.toml:663-747 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b17c1ce5a93fd41d985352915ce1c30feb0fecb2; mcp/tests/evidence-lifecycle.toml:1552-2083 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8b0254263c6998b1d4814b2e97c1bd231d39350f; mcp/tests/evidence-lifecycle.toml:2793-2830 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/tests/evidence-lifecycle.toml:2393-2477 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a416985be1ec9cf8ec92f64882f50ca012518ac4; mcp/tests/evidence-lifecycle.toml:2847-2899 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417; mcp/tests/evidence-lifecycle.toml:2422-2459 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
-
-
 
 - The module is selected once in the unit-regression lane and named by seven exact-scope lifecycle artifact records; registration is not execution. [21]

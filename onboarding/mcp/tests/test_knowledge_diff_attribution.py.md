@@ -104,6 +104,8 @@ repository source only.
 No configured domain documentation could be checked.
 
 
+### Repo-Internal References (continued)
+
 - The unit marker and the per-case fixture. [20]
 
 - The sibling's comparison helpers these cases reuse. [21]
@@ -130,11 +132,6 @@ No configured domain documentation could be checked.
 
 - The arithmetic cases' two input builders. [29]
 
-
-
-
-
-
 > Retained earlier citation wording: - The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.
 
 
@@ -145,16 +142,6 @@ No cross-repository behaviour is exercised here. The fixture's Git trees are tem
 
 No configured cross-repository evidence is claimed.
 
-
-
-
-
-
-
-
-
-
-
 - The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.
 
 - The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.
@@ -163,12 +150,5 @@ No configured cross-repository evidence is claimed.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:352-352 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:800-800 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1202-1202 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2029-2029 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2740-2740 - the bytes it recorded now occur 50 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2783-2783 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3299-3299 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
-
 - The module's own unit-regression lane row. [30]
-
-
-
-
 - The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution. [31]

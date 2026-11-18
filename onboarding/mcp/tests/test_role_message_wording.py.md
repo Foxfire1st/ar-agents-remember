@@ -6,10 +6,7 @@
 
 ## Purpose
 
-Holds the wording oracle for messages-as-files (MIK-R117 rule 7): every role text, handover template and
-messaging operation says that a message names its files instead of carrying them, names the `body` and
-`attach` inputs and the folder, and states no number. The oracle runs over the canonical skill tree, the
-packaged serving copy and the compiled capsule prompt and handover of every handover role.
+Holds the wording oracle for messages-as-files (MIK-R117 rule 7): messaging roles, handover templates and the declared recipients of messaging operations must name `body` and `attach`, keep evidence in named files, refer to the settings limit and avoid forbidden numeric wording. Bootstrap is checked for its no-message own-chat route. The oracle visits the canonical skill tree, the packaged serving copy and the compiled prompt and handover of every declared messaging role.
 
 ## Code Commentary
 
@@ -60,7 +57,7 @@ controls; `scan_lines()`/`scan()` report a hit as `surface/relative: detail`, so
 
 - The product surface inventory and the positive and negative controls qualify the wording oracle. [1]
 
-- Roles, operations and templates must express the file-message contract. [2]
+
 
 - The parentless compiled-text helper collects each selected role's prompt and handover. The compiled-capsule test obtains the role's declared message step, combines that detail with its prompt for the file-message markers and scans both prompt/detail and serialized handover for forbidden wording. [3]
 
@@ -69,3 +66,5 @@ controls; `scan_lines()`/`scan()` report a hit as `surface/relative: detail`, so
 - The oracle keeps Reviewer- and Curator-specific file-message marker alternatives and requires each current delivered shared-step facet. Deleting a real marker must fail, and each role's alternatives must fail on unrelated surfaces. Declared operation recipients include both Curator and Manager curation; pointer, declaration, audience and step mutations must also fail. [5]
 
 - `message_step` reads the actual role/operation-aware shared detail. Reviewer direct-verdict ownership is checked in the review operation's intake-and-verdict section, and retired duplicate verdict directions fail reinsertion controls. Six curation handoff targets must resolve to exact headings; Bootstrap keeps its no-message own-chat route, and pointer/declaration/audience/step/action mutations fail. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [6]
+
+- Messaging roles, declared operation recipients and handover templates state the file-message markers; Bootstrap states its no-message own-chat route. [2]

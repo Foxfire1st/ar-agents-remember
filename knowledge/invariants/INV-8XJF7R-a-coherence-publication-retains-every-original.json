@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The quality publisher and coherence reader must agree on measured identity so assessment visibility cannot invalidate its own authority or hide a changed finding."
+  },
+  "applicability": "Current curator-coherence publication and the shared live readiness validator.",
+  "conditions": [
+    "The complete report and attestation retain their separate integrity checks.",
+    "The measured report excludes only its top-level knowledgeReview assessment listing."
+  ],
+  "exclusions": [
+    "Treating a historically readable generation as current when its measured binding is absent.",
+    "Excluding measured findings, counts, status or other bound candidate facts."
+  ],
+  "id": "INV-8XJF7R",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "implementation-table.md#rule-5-bound-values-and-integrity; final-coherence-r3-r2.log:30passed; legacy-base-proof-r3/candidate-proof.json",
+        "Frozen W2 source, tree3149be148b3cfa3131e34f6101b07eba1ebd0080; remaining-hunk-reconciliation.json records exact checked ranges."
+      ],
+      "path": "ingest-history-wave-v2.json"
+    },
+    "handoffEntry": "BUG-R09@v3 rule 5",
+    "leaf": "261112-BUG-L9",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A coherence publication retains every original dependency and binds the measured quality result excluding only its own assessment listing, so an unchanged task stays current while changed bound inputs stale it.",
+  "status": "proposed",
+  "supersedes": []
+}

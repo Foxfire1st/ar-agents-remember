@@ -1,0 +1,76 @@
+{
+  "path": "scripts/instruction_renewal/digest.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ae5955d3d7033a3675bb38ceb8d2610a45ddfdfe",
+        "content": "sha256:3aadbfa7aefc4724c43580a5e3649a6eb6343c014fcd1e552951ed8f25142175",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SZ652J",
+      "invariant": "INV-HN54VG",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 4",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Each source, evidence and clause passage has its own hash or selector; one authored-map validation precedes derivation and uncovered clause prose names the human decision before any publication.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Binding selectors identify independent source, evidence, place and clause associations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5955d3d7033a3675bb38ceb8d2610a45ddfdfe",
+            "content": "sha256:688586a9191742de6bf2ba3224a7d9412fc7d9039bbe54bf70139bbf81fb9f20",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Planning renews current bindings while preserving authored semantic choices.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5955d3d7033a3675bb38ceb8d2610a45ddfdfe",
+            "content": "sha256:81aee8eaac83bf088e75c1bf5fd68478c19d0702c5cc522017685eb1bf9ffb5d",
+            "locator": {
+              "end": 378,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Readers can obtain the joined authored and generated map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5955d3d7033a3675bb38ceb8d2610a45ddfdfe",
+            "content": "sha256:cc8769a63b3b06d0d65b0ed7f49f52aac4581135f0356d05ac01491ea30ebd42",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 381
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

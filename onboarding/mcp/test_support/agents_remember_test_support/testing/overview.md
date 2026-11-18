@@ -24,8 +24,9 @@ The closed product-process register now includes agents_remember.kernel.primitiv
 - **Candidate-bound evidence.** `candidate_snapshot.py` gives the Git identity of a working candidate for non-certifying evidence routes. `evidence_provenance.py` records candidate and machine provenance for non-accepting Dagger evidence.
 - **Selection and reporting.** `retry_selection.py` collects the canonical population and executes only explicitly supplied retry files that were collected. `causal_dependency.py` derives exact-node source dependencies; `causal_failures.py` skips nodes identified by a causal preflight report and classifies observed failures. `cadence_runner.py` supplies non-accepting Dagger evidence for scheduled, provider-bump and migration triggers. `pytest_phase_reporter.py` records node outcomes and phase timings.
 - **Condition waits.** `waits.py` supplies synchronous and asynchronous named-condition waits under one shared hang guard. The condition supplies readiness; neither the guard nor the poll interval proves a producer had an opportunity.
-- **Instruction corpus.** `curation_doctrine.py` holds retired curation wording, corrected loop-gate field names and required instruction statements. `retired_leaf_handover_wording.py` holds verbatim retired handover sentences with their source carriers. `leaf_instruction_wording.py` holds affirmative clause tables and normalized readers for wording tests, and `delivered_step`, which reads a named detail through real admission, compilation and launch delivery. `capsule_wording.py` resolves each leaf clause on its delivered role, operation or owning detail section. `coordination_wording.py` and `curator_contracts.py` hold expected coordination and Curator clauses; `curator_instruction_delivery.py` checks the delivered Curator, Reviewer-intake and refused-write wording. `pointer_uniqueness.py` checks that each first message points to a lifecycle file once per action, `manifest_step_derivation.py` derives each manifest reference's step and audience from the actual pointers, and `task_document_instruction_contracts.py` checks the task-authoring pointers, conventions, templates and manifest entries. `instruction_consistency.py` checks that commands, tools, `task_doc` operations and paths named in skills, docs and README exist.
-- **Capsule audience and budgets.** `capsule_audience_fixtures.py`, `capsule_audience_v13_fixtures.py` and `capsule_audience_v13_operation_inverse.py` hold the reviewed pointer actions, clauses and per-stage byte pins, and the inverses that restore current capsule bytes to those pins. `capsule_budget_snapshot.py` holds the frozen capsule-budget measurements; `capsule_budget_d694.py` checks the frozen `capsule-budgets-d694.json` record, and `capsule_budget_d695.py` checks the current `capsule-budgets-current.json` record.
+- **Instruction corpus.** `curation_doctrine.py` holds retired curation wording, corrected loop-gate field names and required instruction statements. `retired_leaf_handover_wording.py` holds verbatim retired handover sentences with their source carriers. `leaf_instruction_wording.py` holds affirmative clause tables and normalized readers for wording tests, and `delivered_step`, which reads a named detail through real admission, compilation and launch delivery. `capsule_wording.py` resolves each leaf clause on its delivered role, operation or owning detail section. `coordination_wording.py` and `curator_contracts.py` hold expected coordination and Curator clauses; `curator_instruction_delivery.py` checks the delivered Curator, Reviewer-intake and refused-write wording. `pointer_uniqueness.py` checks that each first message points to a lifecycle file once per action, `manifest_step_derivation.py` collects action and reader-role associations for classified Markdown references from first-message and detail pointers, and `task_document_instruction_contracts.py` checks the task-authoring pointers, conventions, templates and manifest entries. `instruction_consistency.py` checks that commands, tools, `task_doc` operations and paths named in skills, docs and README exist.
+- **Renewed instruction facts.** `instruction_renewal.py` supplies the canonical renewal command and loads the instruction tooling belonging to this checkout. `digest_map.py` composes authored map decisions with generated bindings and checks source/digest traceability. `pointer_policy.py` joins stable admission policy with separately generated wording; `pointer_sentences.py` resolves link targets and derives sentence actions without loading admission policy. `pointer_renewal_cases.py` checks current checkout wording and supplies explicit fixture controls for identity binding, ambiguity and unchanged admissions. `capsule_audience_structure.py` independently projects operation source for the addressed role, selects foreign-role passages for test controls and counts detail-link occurrences.
+- **Capsule audience and budgets.** capsule_audience_fixtures.py holds reviewed pointer and clause tables and retained historical hashes; the v13 modules retain historical inverse records. Current audience tests compare compiled passages with role-addressed source and derive ordinary detail-link counts from source. `capsule_budget_snapshot.py` holds the frozen capsule-budget measurements; `capsule_budget_d694.py` checks the frozen `capsule-budgets-d694.json` record, and `capsule_budget_d695.py` checks the current `capsule-budgets-current.json` record.
 - **Single-regression helpers.** `agent_eval_checkout_provisioning.py` asserts that agent-eval trial provisioning declares test mode and that the scratch CLI child loads the trial's own settings. `memory_orphan_checkpoint.py` crashes a parked-candidate sync before its journal publish and requires recovery to keep every parked memory file.
 
 ## Construction And Operating Model
@@ -78,43 +79,63 @@ The generated route index lists the source files of this route and their cards.
 
 **L184.** The reset register gains one row: the retained host role records of `serving.projections.host_activity` (`_ROLE_RECORDS`) are forgotten between test modules, so one module's reconciled roles cannot certify the next one's boot. That registration is all this file changes; the provider-limit fixture files and the stamped-end inputs the new cases use stay with the cases and the helpers that build them, and no fixture is constructed or executed here.
 
-## Evidence
-
-
-
-
-
-
+## Retained Evidence Context
 
 - Retired handover wording is source/sentence data; affirmative wording uses normalized clause alternatives.
+
+## Evidence
+
+### Repo-Internal References
 
 - Retired handover wording is source/sentence data. Affirmative wording uses normalized clause alternatives. Each retired sentence is detected only on its own source, and a removed source stays absent. [24]
 
 - The ordinary bootstrap carries no certifying or external-service capability. [1]
+
 - Certifying setup admits Dagger before it resolves the candidate. [2]
+
 - Retry execution keeps only explicitly supplied files of the collected population; dependency ownership is supplied by the caller. [3]
+
 - The rewrite computes both new catalogs before it writes either. [6]
+
 - The command validates both catalogs on one cached source graph, or rewrites them with `--write`. [7]
+
 - The union merge attribute for both catalogs. [8]
+
 - A leaked change of owned module-level state fails the test after restoration. [9]
+
 - Seeded ordering uses its own random generator. [10]
 
 - The curation-doctrine registry of retired statements. The statements a compact canonical instruction source must make. [13]
 
 - The lifecycle loader starts with canonical-form findings and then validates against the source tree. [15]
+
 - The lane loader reports noncanonical lane lists and compares declared files with test modules. [16]
 
 - The registry of retired curation sentences. [17]
 
 - The shared parse refusal explains possible row interleaving and restoration of the landed file. [18]
+
 - Condition readiness is separate from the shared hang guard. [20]
+
 - Content identities reuse per-file facts without freezing current graph membership. [21]
+
 - The rewrite preserves an entirely missing consumer list when no nonempty derived replacement exists. [22]
+
 - Cached facts are checked for shape and reused under their content key, without a fresh-parse equality check. [23]
+
 - The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]
+
 - The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control. [26]
+
 - **Historical source-bound reference account, not an operative override:** The register assigns distinct reset, restored and constant treatments. [19]
+
 - The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. [27]
+
 - The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets. [28]
+
 - The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors. [14]
+
 - The collection register and explicit kernel service-holder reset are separate module-isolation paths; new explainer and watcher collections join the closed register. [29]
+
+- Six instruction helpers own checkout-local renewal loading, digest traceability, policy/wording projection, pointer parsing and binding controls, and source-derived audience/link comparisons. [30]
+- Manifest step derivation collects actions and reader-role associations for classified Markdown references from first-message and detail pointers. [31]

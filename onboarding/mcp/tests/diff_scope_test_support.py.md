@@ -12,7 +12,7 @@ Builds the two-snapshot knowledge and Git fixture used by the diff and review re
 
 `build_diff_fixture` builds the read-scope topology twice — baseline and candidate — as two text trees through the rows builder, the candidate carrying exactly one authored change of each kind the packet distinguishes: a revised statement (another revision number of the same text ID, reported as removal beside unrelated addition), a source change with no record change, a removed and an added realization, and unchanged siblings. Both trees mint the same text IDs in the same order, so unchanged rows project the same UUIDs on both sides and pair as themselves. The selected source trees and logical identities remain independently observable.
 
-Fixture rows are written by RowStore and realization constructors imported from knowledge_rows_test_support. Claim digests are re-sealed through the one production owner rather than restated in the fixture. Production read/comparison owners consume those text trees. The helper provides no canonical writer, lock or claim_no_rewrite enforcement.
+Fixture rows are written by RowStore and realization constructors imported from knowledge_rows_test_support. Claim digests are re-sealed through the test-only encoder in `knowledge_row_codec_test_support`, which hashes the row values with the production canonical-JSON digest primitive. Production read/comparison owners consume those text trees. The helper provides no canonical writer, lock or claim_no_rewrite enforcement.
 
 
 `build_diff_fixture(directory) -> DiffFixture` builds the baseline with the **shared read-scope
@@ -29,7 +29,7 @@ The baseline side reuses the read fixture's derived database, Git root, tree ID 
 | source-only | rewrites `src/batch.py` in its tree while the two claims at that path keep identical rows and anchors | `source_change_only=True` with `record_field_changed=False`: the recorded anchor did not move, the bytes at the recorded path are simply not the recorded ones any more |
 | removed relationship | omits the synchronization realization from the candidate text tree | its baseline source remains available to the comparison union; no retained candidate database anchor row is claimed |
 | added relationship | records a new claim at `src/retry_interval.py` on the revised revision | the added direction of a one-sided item |
-| unchanged siblings | both of the sibling invariant's claims, selected by both snapshots with identical rows; the rewritten code path is **one** of that sibling's two locations | the pair of statements the response must keep apart, measured on one item each way |
+| unchanged siblings | both of the sibling invariant's claims, selected by both snapshots with identical rows; the rewritten code path is the one location shared by both sibling claims | the record and source statements remain distinct: both sibling claims keep unchanged record fields while both source observations change |
 | outside the selection | carries the baseline mismatch-anchor realization as the fixture's outside-selection identity | the old fourth retry revision is absent from the single-revision text trees |
 | unattributed change | adds `src/unmapped.py`, cited by no claim | the packet's visible unattributed gap |
 
@@ -54,21 +54,19 @@ that is a mismatch.
 - `_git` runs with `GIT_CONFIG_NOSYSTEM=1` and a per-repository `HOME`, so the fixture is independent of
   the host's Git configuration.
 
-- The stored role is read back through the vocabulary's own decoder (`stored_realization_role`) so the
+- The stored role is read back through the test encoder's vocabulary-checking helper (`stored_realization_role`) so the
   re-sealed draft carries a `RealizationRole` the type admits rather than a bare string.
 
 
 ### Invariants And Boundaries
 
 - **The baseline is the shared read-scope fixture, and that is a contract rather than a convenience.**
-  It is what keeps the two leaves from disagreeing about which records the R07 stopping rule selects, and
-  it is why the diff support module declares the read-support module as a real import in the evidence
-  catalog.
+  It keeps the read and comparison fixtures on one topology. The diff support module imports the read-support builder directly; the lifecycle catalog separately declares their governed artifact ownership.
 - **`_CANDIDATE_TREE_TEXT` is the whole candidate tree as one table**, so the two trees differ in exactly
   the named ways and every other body is the baseline's own text byte for byte.
 - **The same builder supplies both text snapshots.** Stable text IDs and entry minting preserve unchanged projected identities; the candidate applies only its named deltas, rather than copying the baseline database bytes.
-- **Boundary.** This module builds fixtures. It asserts nothing about the comparison — every assertion
-  lives in the two case modules — and it writes only inside the `tmp_path` directory it is handed.
+- **Boundary.** This module builds fixtures. It asserts nothing about the comparison — comparison assertions
+  live in the consuming test modules — and it writes only inside the `tmp_path` directory it is handed.
 
 
 ## Evidence
@@ -121,7 +119,6 @@ repository's history.
 
 No configured cross-repository evidence is claimed.
 
-
-
+### Repo-Internal References (continued)
 
 - **The contract this module's artifact row is registered under.** Anchor: `knowledge-diff-cases` Anchor: `knowledge-diff-cases` [66]

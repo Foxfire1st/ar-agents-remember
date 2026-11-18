@@ -55,6 +55,14 @@ and indexes every carried source by claim id.
 
 None recorded.
 
+## Retained Historical Accounts
+
+The memory baseline `81cfe4a8` recorded the following source-epoch accounts. They preserve that earlier card's observations and citation custody; they do not measure the current corpus or establish a historical event commit.
+
+> Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3324-3324 - the bytes it recorded now occur 67 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1955-1955 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+> The shared-fixture consumer registration. In merged A3 this reference cites all 5 artifact blocks whose exact consumers list names this module. The earlier occurrence count and first-occurrence wording described unrelated narrow text, already unrelated in the parked source, and did not establish this module's consumer membership. Those targets are replaced by this complete membership set. Former member identity is not recovered or claimed. [Past-epoch source caption, detached from live reference 35. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); mcp/tests/evidence-lifecycle.toml blob 0b04e782b9627695554aeeebd05967506794d78d (available); historical event commit not identified. No historical event or intent inferred.]
+
 ## Evidence
 
 ### Docs References
@@ -86,6 +94,8 @@ No domain documentation source is configured for this repository (`system/source
 
 No configured domain documentation could be checked.
 
+### Repo-Internal References (continued)
+
 - The two texts, their attributed lines, the double definition and the past-end range the fixture writes. [22]
 - **The legacy source fields whose values must not change.** [23]
 
@@ -103,54 +113,17 @@ No configured domain documentation could be checked.
 - The projection under test. [32]
 - The resolver that fills the ranges. [33]
 
-
-
-
-> Retained earlier citation wording: - The lane registration. Source caption: `test_review_family_member_sources`
-
-
-
-
-
-
-> Retained earlier citation wording: - The shared-fixture consumer registration.
-
-
-
 ### Cross-Repo References
 
 No cross-repository behavior is exercised; the Git repository and datasets are temporary.
 
 No meaningful cross-repo references found.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 - The shared-fixture consumer registration.
-
-- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3324-3324 - the bytes it recorded now occur 67 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1955-1955 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
-
-- The shared-fixture consumer registration. In merged A3 this reference cites all 5 artifact blocks whose exact consumers list names this module. The earlier occurrence count and first-occurrence wording described unrelated narrow text, already unrelated in the parked source, and did not establish this module's consumer membership. Those targets are replaced by this complete membership set. Former member identity is not recovered or claimed. [Past-epoch source caption, detached from live reference 35. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); mcp/tests/evidence-lifecycle.toml blob 0b04e782b9627695554aeeebd05967506794d78d (available); historical event commit not identified. No historical event or intent inferred.]
 
 Current source: The current lifecycle catalog declares test_review_family_member_sources.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. This is the complete declared five-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event.
 
-
-
+### Repo-Internal References (continued)
 
 - The lane registration. Source caption: `test_review_family_member_sources` [34]
-
-
-
-
 - The current lifecycle catalog declares test_review_family_member_sources.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. This is the complete declared five-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event. [35]

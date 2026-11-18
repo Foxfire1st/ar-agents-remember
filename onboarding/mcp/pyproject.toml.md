@@ -181,7 +181,9 @@ later reader does not have to reconstruct it from a report.
 - Production complexity scoring loads Radon and refuses when its development dependency is unavailable. [7]
 - The MCP console entry point resolves through `agents_remember.mcp.__main__`. [8]
 
-- MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. [9]
+
+- MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. Anchor: `_resolve_server_version` [9]
+
 
 
 - The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy; `test_canvas_capsule_text.py` checks the generated capability copy against its source and checks the packaging declarations. [18]

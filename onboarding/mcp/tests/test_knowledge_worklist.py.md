@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**The MIK-R08@v2 worklist cases over real Git repositories (21 cases).** Every case builds two real
+**The MIK-R08@v2 worklist module has 21 test definitions.** Its repository-backed cases build two real
 repositories under `tmp_path`: **code** (a small package `pkg/review.py` with four functions, `pkg/other.py`,
 a test module, a ten-line text file and a binary file) and a **converted memory** whose base commit records
 realization and proof entries anchored at the code base, two families and their invariants. A case commits a
@@ -53,7 +53,8 @@ sides (`worklist_for_sides`) exactly as the leaf route does.
 
 - The fixture's `_not_listed`, `test_refuses_unlisted` and `test_accepts_listed` are **fixture source text**
   inside string constants, not test cases of this module.
-- Every case runs on real Git trees and real converted memory; nothing is mocked.
+- Repository-backed cases use real Git trees and converted memory. Hunk parsing and registry cases
+  call their owners directly without building those repositories.
 
 ### Todos
 
@@ -74,7 +75,7 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The two real repositories each case builds. [1]
+
 - The fixture's entries and locators. [2]
 - The fixture world and its worklist run. [3]
 - The knowledge items, without MIK-R10's unexplained kinds. [4]
@@ -96,7 +97,9 @@ No meaningful cross-repo references found: every repository is built under `tmp_
 
 No cross-repo boundary is crossed by this file.
 
+### Repo-Internal References (continued)
 
 
+- The two real repositories used by the repository-backed cases. [1]
 
 - The lane registration. Anchor: "mcp/tests/test_knowledge_worklist.py" Anchor: "mcp/tests/test_knowledge_worklist.py" [15]

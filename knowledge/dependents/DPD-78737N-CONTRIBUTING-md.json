@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
+    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
     "role": "curator",
-    "statement": "The two links that moved changed nothing here, and the paragraph on the landing check ended with a sentence the landing side contradicts, so it states that a side whose commit the line already stands on publishes no commit and is not checked; the rest of the page was not read again.",
-    "task": "261112-BUG-L7",
+    "statement": "The examined contributor clauses retain the same lane selection, budget and canonicalization policy while four registered test modules extend the existing catalog.",
+    "task": "261112-BUG-L9",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "setup-hooks.sh"
     },
     {
-      "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+      "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
       "kind": "file",
       "path": ".githooks/_gate.sh"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+      "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -111,7 +111,7 @@
       "path": "scripts/sync-runtime.py"
     },
     {
-      "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+      "blob": "212f988e5638960b9061d674e63be12b27d324ab",
       "kind": "file",
       "path": "scripts/sync-skills.py"
     },
@@ -174,6 +174,36 @@
       "blob": "2d46e4349e78760575ad3176a73a7606cd7d95f6",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+    },
+    {
+      "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+      "kind": "file",
+      "path": "scripts/renew-instructions.py"
+    },
+    {
+      "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+      "kind": "file",
+      "path": "scripts/instruction_renewal/plan.py"
+    },
+    {
+      "blob": "9c8ef29560a8fc288afbd9a5dffc588ce0278189",
+      "kind": "file",
+      "path": "scripts/instruction_renewal/budgets.py"
+    },
+    {
+      "blob": "ae5955d3d7033a3675bb38ceb8d2610a45ddfdfe",
+      "kind": "file",
+      "path": "scripts/instruction_renewal/digest.py"
+    },
+    {
+      "blob": "18e50fd4ff3c1e98889fc82222cab2819f37b68d",
+      "kind": "file",
+      "path": "scripts/instruction_renewal/pointers.py"
+    },
+    {
+      "blob": "6ab14a78c69b836a0a33c41800018cb4d7bb610c",
+      "kind": "file",
+      "path": "scripts/instruction_renewal/manifest.py"
     }
   ]
 }

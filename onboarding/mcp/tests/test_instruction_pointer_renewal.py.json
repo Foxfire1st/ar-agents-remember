@@ -1,0 +1,84 @@
+{
+  "path": "mcp/tests/test_instruction_pointer_renewal.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2b91b3be31a147632b3e7627649bc9c71eff59a0",
+        "content": "sha256:cd9657bd0fc8501334bdde348a41787d69c4ddd92172dfe08d237314d49ed08b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_withdrawal_refuses_every_retained_policy_use_before_pruning"
+        }
+      },
+      "facet": "Withdrawn action policy uses in distinctActions, multiLinkSentences and exclusive are all named before pruning under either stored derived state; the policy and derived bytes stay unchanged until the authored uses are removed.",
+      "id": "PRF-HWWY7Y",
+      "invariant": "INV-Q432XE",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 3",
+        "leaf": "261112-BUG-L8"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Tests use the checkout’s renewal_module loader and local withdrawal fixture, reject unadmitted or dangling pointers, and expose the canonical remedy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b91b3be31a147632b3e7627649bc9c71eff59a0",
+            "content": "sha256:e668dca74d73b55824caa751e3d029392fdfd68939de8b3aa47c9f19cd0812f4",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b91b3be31a147632b3e7627649bc9c71eff59a0",
+            "content": "sha256:e47912863a97c698daa476cc5b55d508b14c75910995e543a14a82a24802f58b",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b91b3be31a147632b3e7627649bc9c71eff59a0",
+            "content": "sha256:62991cdfcfa90dba18c9305d1c53924c4865a632489766bbda40aecf9d4bd38d",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retained policy is checked before pruning and repaired fixtures can renew.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b91b3be31a147632b3e7627649bc9c71eff59a0",
+            "content": "sha256:cd9657bd0fc8501334bdde348a41787d69c4ddd92172dfe08d237314d49ed08b",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

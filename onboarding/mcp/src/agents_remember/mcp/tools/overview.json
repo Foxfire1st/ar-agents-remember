@@ -467,7 +467,7 @@
         },
         {
           "anchor": {
-            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
+            "blob": "3f1b239d7d6b3244c5deb82eb2a651620e26d6e1",
             "content": "sha256:85b6a10d42ca9ab50606b80eae6b36d76b3bdc6869ed836f27dcbeeaf6ca9a2b",
             "locator": {
               "kind": "symbol",
@@ -496,11 +496,11 @@
         },
         {
           "anchor": {
-            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
-            "content": "sha256:35cd6c3d19d38de1c42fefdcc64d139ae6134334dfae7d81d6fc76e74a1bfd45",
+            "blob": "3f1b239d7d6b3244c5deb82eb2a651620e26d6e1",
+            "content": "sha256:c56f96e5b76b517748e7c36fddf6f1d863d0d60d5636bb0b2ab6b04dc3e481ef",
             "locator": {
               "kind": "symbol",
-              "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
+              "name": "test_a_converted_tree_refuses_a_seed_it_does_not_hold"
             },
             "path": "mcp/tests/test_knowledge_index_surfaces.py"
           },
@@ -508,11 +508,11 @@
         },
         {
           "anchor": {
-            "blob": "5cb1fc8d1020c4a31b5f17adbe76d7ed48bfbc59",
-            "content": "sha256:c56f96e5b76b517748e7c36fddf6f1d863d0d60d5636bb0b2ab6b04dc3e481ef",
+            "blob": "3f1b239d7d6b3244c5deb82eb2a651620e26d6e1",
+            "content": "sha256:35cd6c3d19d38de1c42fefdcc64d139ae6134334dfae7d81d6fc76e74a1bfd45",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_converted_tree_refuses_a_seed_it_does_not_hold"
+              "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
             },
             "path": "mcp/tests/test_knowledge_index_surfaces.py"
           },
@@ -1167,15 +1167,16 @@
       ]
     },
     "63": {
-      "note": "Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; the explainer-bound surface remains separate.",
+      "note": "Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; a valid explainer binding adds four tools to the ordinary registration.",
       "targets": [
         {
           "anchor": {
             "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
             "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
             "locator": {
-              "kind": "symbol",
-              "name": "PUBLIC_TOOLS"
+              "end": 74,
+              "kind": "line_range",
+              "start": 22
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -1186,10 +1187,24 @@
             "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
             "content": "sha256:ba5f80c4312577cf05ce7edf0740f0539e8ca3817e94705c6d618c18813ab107",
             "locator": {
-              "kind": "symbol",
-              "name": "TOOL_REGISTRARS"
+              "end": 45,
+              "kind": "line_range",
+              "start": 34
             },
             "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "content": "sha256:8dd61413c66954ced6d132211298b59efc8c7075b21c811b020d1ce3acbdc875",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         },

@@ -109,7 +109,9 @@ protocol.
 - The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes. [2]
 - The MCP boot seam calling `maybe_autostart_dashboard`. [3]
 
-- The version comparator is resolved from installed package metadata. [4]
+
+- The version comparator is resolved from installed package metadata. Anchor: `_resolve_server_version` [4]
+
 
 
 - The endpoint carries the installed version and Python source digest. [7]

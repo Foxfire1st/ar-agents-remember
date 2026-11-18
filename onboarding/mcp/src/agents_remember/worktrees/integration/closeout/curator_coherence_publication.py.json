@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "164232e680624f745b170382de28421b099658c7",
+        "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
         "content": "sha256:a55a599b1c92a8e4c1ec967be5a2291299e44c18285855b7c3cc6bf5b984a9b9",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "164232e680624f745b170382de28421b099658c7",
-        "content": "sha256:5bcbb09ccb83a79ce41f7a2752e5bba4939171a01b6881d87df7910ce303c215",
+        "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
+        "content": "sha256:d848ce3de9e0348aaac6eb1a16b3c1bcc28febf0d779e1d86b4497c5860119f8",
         "locator": {
           "kind": "symbol",
           "name": "_publish"
@@ -38,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "164232e680624f745b170382de28421b099658c7",
-        "content": "sha256:5bcbb09ccb83a79ce41f7a2752e5bba4939171a01b6881d87df7910ce303c215",
+        "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
+        "content": "sha256:d848ce3de9e0348aaac6eb1a16b3c1bcc28febf0d779e1d86b4497c5860119f8",
         "locator": {
           "kind": "symbol",
           "name": "_publish"
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "164232e680624f745b170382de28421b099658c7",
+        "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
         "content": "sha256:aff0bba5e97a5e0a7e898b0f799a0faab8187db8c45ac6947f7ad94f83ee95b7",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "164232e680624f745b170382de28421b099658c7",
+        "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
         "content": "sha256:7d7fe17df0eb2eba57e4a0d4e6835c0a273a3ad49e5ebdd1037d9c813d0e188e",
         "locator": {
           "kind": "symbol",
@@ -97,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
             "content": "sha256:a55a599b1c92a8e4c1ec967be5a2291299e44c18285855b7c3cc6bf5b984a9b9",
             "locator": {
               "kind": "symbol",
@@ -113,8 +113,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
-            "content": "sha256:5bcbb09ccb83a79ce41f7a2752e5bba4939171a01b6881d87df7910ce303c215",
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
+            "content": "sha256:d848ce3de9e0348aaac6eb1a16b3c1bcc28febf0d779e1d86b4497c5860119f8",
             "locator": {
               "kind": "symbol",
               "name": "_publish"
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
             "content": "sha256:907c9a72eead32c5afb8ccebe709138da4fae5e9b771d0f0e3c9387daaf50098",
             "locator": {
               "kind": "symbol",
@@ -163,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
             "content": "sha256:23536224bcc5dc1d36955a44793da1c70344126e5a7f714f428ad67d6f3f2690",
             "locator": {
               "kind": "symbol",
@@ -179,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
             "content": "sha256:6056a8e954ae75eb1c188747da2865b05c86acc1d71b16e70b5c3d533fa37f84",
             "locator": {
               "kind": "symbol",
@@ -196,8 +196,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
-            "content": "sha256:5bcbb09ccb83a79ce41f7a2752e5bba4939171a01b6881d87df7910ce303c215",
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
+            "content": "sha256:d848ce3de9e0348aaac6eb1a16b3c1bcc28febf0d779e1d86b4497c5860119f8",
             "locator": {
               "kind": "symbol",
               "name": "_publish"
@@ -212,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
             "content": "sha256:8cced7d9a25816cd211a9a19fc4dc6cc0d006be0276453187b76fd0c67b761e1",
             "locator": {
               "kind": "symbol",
@@ -228,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
             "content": "sha256:6414afc5363deb35495a27d83c83936c9edecca9178214807f13ba0e904bc69c",
             "locator": {
               "kind": "symbol",
@@ -240,16 +240,29 @@
       ]
     },
     "7": {
-      "note": "R03 record construction binds the declared dependency set.",
+      "note": "Record construction binds the declared dependency set through the shared record and dependency builders.",
       "targets": [
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
-            "content": "sha256:0766441c3e12b7a252bb998c70fa9331a757930b64f1865fb119090a09bb523b",
+            "blob": "f781e81a9ca1d2160cce4f6974ea2ef4023ae97c",
+            "content": "sha256:6c293f764aaf43912d45eaa4d1777988e16dde589c3e5212fb8a88febfa924e1",
             "locator": {
               "kind": "symbol",
-              "name": "_record"
-            }
+              "name": "build_curator_coherence_record"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_record_builder.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de7dda95ae9edafdee4da3337981c51e9eda4e44",
+            "content": "sha256:11d7436e0b8cde975a43f45421951c9d29de2cea875f3ea5eeb1548302050d18",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_dependencies"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_binding.py"
           },
           "kind": "code"
         }
@@ -260,8 +273,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
-            "content": "sha256:5bcbb09ccb83a79ce41f7a2752e5bba4939171a01b6881d87df7910ce303c215",
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
+            "content": "sha256:d848ce3de9e0348aaac6eb1a16b3c1bcc28febf0d779e1d86b4497c5860119f8",
             "locator": {
               "kind": "symbol",
               "name": "_publish"
@@ -276,7 +289,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "164232e680624f745b170382de28421b099658c7",
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
             "content": "sha256:7d7fe17df0eb2eba57e4a0d4e6835c0a273a3ad49e5ebdd1037d9c813d0e188e",
             "locator": {
               "kind": "symbol",

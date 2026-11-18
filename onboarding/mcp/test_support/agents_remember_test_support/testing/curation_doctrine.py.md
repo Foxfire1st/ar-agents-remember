@@ -90,7 +90,7 @@ The Curator positive entry requires both of its pointer sentences, each naming i
 No external or domain documentation governs this repository-local test-support module; it encodes the
 shipped instruction corpus and the ruling that retired those sentences.
 
-No relevant documentation found after checking live sources.
+`system/sources.md` configures no external domain documentation for this repository.
 
 ### Repo-Internal References
 
@@ -99,23 +99,20 @@ The module is the census the shipped-corpus guard reads. Its registry is the **r
 case, generated-copy marker reader and seeded retired-wording controls live in
 `mcp/tests/test_role_instruction_corpus.py`. The marker reader requires every declared clause.
 
-
-
-
-
-
 - The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half, requiring every declared clause. [4]
 
 - The consuming cases and the seeded re-insertion that proves the guard can fail. [5]
-- The repository sync script checks the declared package projection against canonical skills. [6]
+
 ### Cross-Repo References
 
-No meaningful cross-repo references found.
+This card uses repository-owned code and test references and invokes no sibling-repository contract.
 
-No meaningful cross-repo references found.
+This card uses repository-owned code and test references and invokes no sibling-repository contract.
 
 
 
+
+### Repo-Internal References (continued)
 
 - The retired-sentence registry carries the exact statement, its shipped sources, its probe and its reason. [1]
 
@@ -128,3 +125,7 @@ No meaningful cross-repo references found.
 - The sweep adds canonical skills to every target from the generated-copy declaration, currently the single packaged runtime tree. [3]
 
 - The generated skill census is derived from the canonical declaration through its parser rather than a duplicated tuple. [7]
+
+### Repo-Internal References (renewed)
+
+- The repository sync script checks the declared package projection against canonical skills. Anchor: skill_targets [6]

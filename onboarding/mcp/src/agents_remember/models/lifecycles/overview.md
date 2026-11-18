@@ -52,6 +52,8 @@ Transition validation preserves selected identity and prior commands, refuses cl
 
 `CuratorQualityAttestation` and `CuratorCoherenceRecord` carry `MemoryCandidatePairIdentity`, whose cells distinguish repository, contract, roots, branches, bases and onboarding root. The model documents the cache location as informational and excluded from the contract-digest projection. The public coherence response declares pair identity and typed mismatch/recovery fields (`pairField`, `expected`, `observed`, `nextArgs`); pair identity is optional in that response shape, so model declarations alone do not prove that every prepared, published, valid or refused response populates it.
 
+The attestation has optional `measuredReportSha256`; the record has optional `measuredAttestationSha256` and `measuredReportSha256`. Their serializers omit absent measured fields so historical generations keep their canonical decoding shape. The fields describe measured currentness separately from complete report and attestation integrity.
+
 Curator source candidates and judgments use the `(sourceFile, onboardingFile, classification)` identity. Record validation requires unique candidates, unique judgments and exact set equality. Requirement revision, delivery attempt, candidate trees, attestation digests, record digest and predecessor-authority digest remain separate cells.
 
 `PUBLICATION_MEMBERS` declares the nine non-null publication inputs in request order, including the semantic requirement revision, delivery attempt and expected task intent. `JUDGMENTS_MEMBER` names the separate judgment content input; review assessments are another optional content collection. The publish validator, missing-field refusal and prepare input statement consume the declaration. Non-publish actions refuse supplied publication-only fields, and `freeze_snapshot` has its own refusal. The current refusal says `missing ` followed by field names; it does not use the former prose's `missing:` spelling. Prepare's direct caller uses `publication_input_statement()`.
@@ -139,17 +141,14 @@ Read the focused model card, then its producer and consumer references. Use the 
 - The public envelope carries the wait cursor beside versioned identity and component bindings. [12]
 - Strict operation decoding explicitly represents missing legacy task intent. [13]
 
-- Publication inputs, refusal text, record coverage and evidence custody have deciding predicates. [14]
 
 
-- Prepare consumes the shared publication input statement. [15]
 
 - Preparation output-command requirements are conditional on retained command history; transitions preserve original observations. [16]
 - Measured binding status separates failure, disagreement and incomplete coverage. [17]
 
 - Finalization forwards supplied agent archive reports. [19]
 
-- The exact assessment dependency policy and record-to-assessment edge are separately constructed. [20]
 - The memory mutation snapshot preserves actual Git head and headTree while computing cache-excluded contentHeadTree, indexTree, candidateTree and status; removed prepared-memory reuse/output consumers are not current callers. [21]
 
 
@@ -158,3 +157,10 @@ Read the focused model card, then its producer and consumer references. Use the 
 - ComparisonAssessmentAvailability is a retained manifest descriptor, not a current reviewer channel: answered counts and recovery requirements are structurally checked, not independently measured or semantically endorsed. [22]
 
 - Finalization declares terminal facts, cleanup/archive and activation facts; it declares neither edge proof nor completion-seat result sets.  Anchor: `LifecycleFinalizeTaskResponse` [2]
+
+- Publication inputs, refusal text, record coverage and evidence custody have deciding predicates. [14]
+- Prepare consumes the shared publication input statement. [15]
+- The exact assessment dependency policy and record-to-assessment edge are separately constructed. [20]
+
+- The attestation optionally carries measuredReportSha256; its serializer omits the field when absent. [23]
+- The coherence record optionally carries measuredAttestationSha256 and measuredReportSha256 and omits absent measured fields when serializing historical shapes. [24]

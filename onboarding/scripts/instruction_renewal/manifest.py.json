@@ -1,0 +1,55 @@
+{
+  "path": "scripts/instruction_renewal/manifest.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6ab14a78c69b836a0a33c41800018cb4d7bb610c",
+        "content": "sha256:5d49492ad5c1d44fa0549e639a935c5c838afd3003360c505a2e430b0df04112",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-11CCC4",
+      "invariant": "INV-EHJV8E",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 1",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The planner computes a complete deterministic replacement set and the entry point publishes it or reports staleness without writes.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The planner validates authored no-step marks before derivation, generates reference routing and the shared digest audience, then validates the composed result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ab14a78c69b836a0a33c41800018cb4d7bb610c",
+            "content": "sha256:0db459bbdb19e5b23bfd4808954bd0c39908d1cf07d09c98698b4e2ede9e68a6",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a98f60c616a40b8300dbbfbfb6016c98dc349f82",
+            "content": "sha256:50dd645d68d8d08b853d5c5bb739c63201eb2677ccdc407363b4e34347c0f956",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest_derived.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

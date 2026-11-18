@@ -76,15 +76,29 @@
   ],
   "references": {
     "1": {
-      "note": "The product citation-mutation guard refuses the official memory repository.",
+      "note": "The ordinary leaf citation-mutation guard refuses the official memory repository; citation_fix has a separate pre-baseline admission.",
       "targets": [
         {
           "anchor": {
             "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
-            "content": "sha256:752848b4867967cdcbbc2e0bbbead222c7bf0b552f0d9e8fe80885e9c83e785d",
+            "content": "sha256:bc47276b36ad1e38c4275ef5087cbb9fc9326d534c045037d3371af8a1654198",
             "locator": {
-              "kind": "symbol",
-              "name": "_refuse_official_memory"
+              "end": 228,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:d522a8e1b616c33b16a521cba815ee29e5c2aa831ab1edca50b5c7ca77b1f966",
+            "locator": {
+              "end": 543,
+              "kind": "line_range",
+              "start": 507
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -131,15 +145,16 @@
       ]
     },
     "14": {
-      "note": "Every stale site the sweep found, with the pair it states and the ceiling it was written against.",
+      "note": "The fixed three-site dictionary and the figures asserted at those listed sites.",
       "targets": [
         {
           "anchor": {
             "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
-            "content": "sha256:8516d8246ab1dadcf6ff36523e1c1ba2cf8b65e93200bcd38446146a32716cc3",
+            "content": "sha256:0c3af16b867a9e610829f648d810c2d5aa44f1d1ea7cc17d7526697c017d9a42",
             "locator": {
-              "kind": "symbol",
-              "name": "NON_HISTORY_SITES"
+              "end": 581,
+              "kind": "line_range",
+              "start": 408
             }
           },
           "kind": "test"
@@ -163,15 +178,16 @@
       ]
     },
     "16": {
-      "note": "The shipped superseded-pair constant is 53; the live case compares it with the tree-derived worklist. Historical L12 measured 55, and the source header attributes 55-to-53 to L13 rather than to L59.",
+      "note": "The shipped superseded-pair constant is 53; the live case compares it with the tree-derived worklist.",
       "targets": [
         {
           "anchor": {
             "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:38457f31d232216202dda762edd2bca504e80669fae89451ac0bb01a514f42d4",
             "locator": {
-              "kind": "symbol",
-              "name": "NON_HISTORY_SUPERSEDED_SITES"
+              "end": 441,
+              "kind": "line_range",
+              "start": 441
             }
           },
           "kind": "test"
@@ -227,15 +243,16 @@
       ]
     },
     "20": {
-      "note": "The qualified-heading census: a NAMED population pinned at one entry, the merged sibling line's deliberate dated heading.",
+      "note": "The qualified-heading census pins the one-entry tuple (\"mcp/tests/overview.md:4833\",).",
       "targets": [
         {
           "anchor": {
             "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
-            "content": "sha256:a78aa356aa1b6e848a8fab628eba29e0eaf4ca558a190c8cba9f5971585dafb9",
+            "content": "sha256:19afa08bdc6b8b7ab79517bf0fb9866b1799ed3773ca4b4a70e573e94de4a48b",
             "locator": {
-              "kind": "symbol",
-              "name": "QualifiedHistoryHeadingTests"
+              "end": 779,
+              "kind": "line_range",
+              "start": 725
             }
           },
           "kind": "test"
@@ -275,15 +292,16 @@
       ]
     },
     "23": {
-      "note": "The two section-boundary bounds of the worklist rule, each with its direction, measured on planted documents.",
+      "note": "history_section_flags recognizes an exact level-two Update History title and changes its history flag only at level-two headings.",
       "targets": [
         {
           "anchor": {
             "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:58a253311ac54442743deebc123ab854f562d8be817078b39f5da2288878ccf5",
             "locator": {
-              "kind": "symbol",
-              "name": "history_section_flags"
+              "end": 220,
+              "kind": "line_range",
+              "start": 185
             }
           },
           "kind": "test"
@@ -386,10 +404,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 809,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },

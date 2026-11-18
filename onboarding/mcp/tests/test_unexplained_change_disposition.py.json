@@ -315,10 +315,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 809,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },
@@ -333,10 +333,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
+            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
             "locator": {
-              "end": 5044,
+              "end": 5062,
               "kind": "line_range",
               "start": 1
             },
@@ -347,16 +347,16 @@
       ]
     },
     "15": {
-      "note": "Current source delta inspected statically: Replace counted-edit settlement and helper owner, show explicit blobs, narrow hunk stability and fix captions; prior blocked advice is superseded.",
+      "note": "Authored source-bound rows settle the uncovered items; counted card edits alone do not. Hunk stability applies to the unchanged covered hunk and explicit candidate blobs bind onboarding rows.",
       "targets": [
         {
           "anchor": {
             "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:bcd09ac45d6a2be26f2753afbc5e7e1ad825700d63ae21ce5161a1365b0b8324",
+            "content": "sha256:9bf75d2f1926f9b0e08b291d629f6a0504378bac1abfb1f19bb7bc95562a4a77",
             "locator": {
-              "end": 111,
+              "end": 489,
               "kind": "line_range",
-              "start": 105
+              "start": 403
             }
           },
           "kind": "test"
@@ -364,95 +364,11 @@
         {
           "anchor": {
             "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:ea8af6798a349cd76104b1866c3d6b60e5a8cb0e87afbb7a8deeb022a9a61850",
+            "content": "sha256:6c850e0f980ead2cfbc98b8ca791526fa2f0fd2db636f9e31eb9df9c3d6c7c47",
             "locator": {
-              "end": 534,
+              "end": 642,
               "kind": "line_range",
-              "start": 534
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:f9ed76d1cc24c10044a4b373bd8a456d19c96582b0f9480c6a0f51adfc129658",
-            "locator": {
-              "end": 542,
-              "kind": "line_range",
-              "start": 540
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:e4296d08709f4320672df517f42eb8232301a4b69e0a7ff19a289155acea41bd",
-            "locator": {
-              "end": 552,
-              "kind": "line_range",
-              "start": 551
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:5a505c96501c3ed2c6886178e76539931f887d5180bb6d948a2e384cfe9bf8a0",
-            "locator": {
-              "end": 710,
-              "kind": "line_range",
-              "start": 708
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:028348ab592134c811016fff61abab64928e986a4df9caf0c2d83f00d75342b1",
-            "locator": {
-              "end": 529,
-              "kind": "line_range",
-              "start": 529
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:e0103164eefc0b78f15263848dfa214033ed1a2b93a5a43b768874d50e610061",
-            "locator": {
-              "end": 537,
-              "kind": "line_range",
-              "start": 535
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:df9dad9062b1d02f31a80978cc019643fd56b186dc2a200212159c1b8d8f05d0",
-            "locator": {
-              "end": 547,
-              "kind": "line_range",
-              "start": 546
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:47e6b88b212099c88411ed3f80841de5ab2bf5ecca08e87156b382e2e4cf5ce4",
-            "locator": {
-              "end": 705,
-              "kind": "line_range",
-              "start": 703
+              "start": 497
             }
           },
           "kind": "test"

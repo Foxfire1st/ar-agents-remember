@@ -23,8 +23,9 @@ checks the layout paths. Registered in the `unit-regression` lane.
   `test_doc14_verbatim_illustrative_shapes_are_refused` keeps Doc14's verbatim `supersedes: null` and
   `{code:{symbol}}` and proves they are refused, so the adaptation is deliberate.
 - Kinds: `test_every_record_kind_parses_round_trips_and_refuses_a_foreign_prefix` is parametrized
-  over all twelve kinds (foreign prefix, undeclared field, every out-of-vocabulary relation refused);
-  its `_KIND_FIELDS` fixtures supply the payload and link shapes checked by those per-kind cases.
+  over all twelve kinds and checks foreign prefixes and undeclared fields. For kinds whose fixture
+  has `links`, it also refuses every relation outside that kind's vocabulary. `_KIND_FIELDS` supplies
+  the per-kind payload and link shapes.
 - Refusals: `test_records_refuse_second_owners_and_malformed_record_fields`,
   `test_links_carry_their_relation_rules`, `test_sidecars_references_and_anchors_refuse_malformed_shapes`
   (including `incidental`, own-file `path`, route-index fields on a route sidecar). Its
@@ -60,11 +61,11 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-The cases exercise every public model of the package.
+The cases exercise the record models, sidecars, references and anchors, ID derivation and layout paths; history-file models have their separate suite.
 
 - The fixture list and the byte-for-byte round trip. [1]
 - Doc14's verbatim spellings are refused. [2]
-- Every kind round-trips and refuses a foreign prefix and foreign relations. [3]
+
 - Second-owner fields are refused on an invariant. [4]
 - Sidecar, reference and anchor refusals. [5]
 
@@ -75,7 +76,9 @@ No meaningful cross-repo references found.
 
 No cross-repo boundary is exercised.
 
+### Repo-Internal References (continued)
 
 
+- Every kind round-trips and refuses a foreign prefix; kinds whose fixture has links also refuse relations outside their vocabulary. [3]
 
 - Lane registration. Anchor: "mcp/tests/test_knowledge_file_formats.py" Anchor: "mcp/tests/test_knowledge_file_formats.py" [6]

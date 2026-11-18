@@ -35,7 +35,7 @@
 
 ### Conventions
 
-- Helpers `_validate`, `_rules`, `_family`, `_with_family`, `_new_family` and `_add_realization` edit one file of the fixture tree and validate it with `code()`.
+- Helpers `_validate`, `_rules`, `_family`, `_with_family`, `_new_family` and `_add_realization` construct or inspect fixture records and sidecars; `_validate` supplies `code()` by default.
 
 ### Invariants And Boundaries
 
@@ -88,6 +88,8 @@ No meaningful cross-repo references found: the tests read the repository's own f
 No cross-repo boundary is crossed by this file.
 
 
+### Repo-Internal References (continued)
+
 - Based root-route fixtures pin coverage/non-empty and only carried incomplete legacy-debt reporting; not a no-base pass. [5]
 
 
@@ -98,8 +100,5 @@ No cross-repo boundary is crossed by this file.
 
 
 - Nested-route refusal, one state computation per fixture family/validation and explicit routes-command difference output are source assertions. [11]
-
-
-
 
 - The lane registration. Anchor: "mcp/tests/test_knowledge_family_routes.py" Anchor: "mcp/tests/test_knowledge_family_routes.py" [9]

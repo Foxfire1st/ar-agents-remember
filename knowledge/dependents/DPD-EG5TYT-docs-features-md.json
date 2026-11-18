@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
+    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
     "role": "curator",
-    "statement": "The File Viewer bullet now says the viewer shows a picture and a video and switches a Markdown file between the rendered document and its source, and no other line changed.",
-    "task": "261112-BUG-L7",
+    "statement": "The changed cache passage correctly describes loaded-build isolation and one age/size eviction over every SQLite namespace, while the unchanged passages were not reverified.",
+    "task": "261112-BUG-L9",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -63,7 +63,7 @@
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
     {
-      "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+      "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -78,7 +78,7 @@
       "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
     },
     {
-      "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+      "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/carryover.py"
     },
@@ -183,7 +183,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
     },
     {
-      "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+      "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
     },
@@ -256,6 +256,19 @@
       "blob": "5be275cdd2395153066434e87495d4996544b70a",
       "kind": "file",
       "path": "dashboard/src/grammar/Media.tsx"
+    },
+    {
+      "anchor": {
+        "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+        "content": "sha256:c953503aa6afe66c046070e4713c0438b86ccab1d9e76a42e4cf596ea1ad226a",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+      },
+      "heading": "Loaded build identity",
+      "kind": "anchor"
     }
   ]
 }

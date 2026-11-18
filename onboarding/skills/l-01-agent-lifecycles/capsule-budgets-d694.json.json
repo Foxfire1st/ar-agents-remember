@@ -54,16 +54,16 @@
       ]
     },
     "4": {
-      "note": "The current record binds this file by hash.\n\nAnchor: `predecessorD694Sha256`",
+      "note": "The current record binds this file by hash. Anchor: `predecessorD694Sha256`",
       "targets": [
         {
           "anchor": {
-            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
-            "content": "sha256:1a17fc62e5b7ac74c11d6ae23d667397f3cb199f7af901907cac57d25f4cdb97",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:13bbc13cb6cd69142a4f48209a4a435568761f0fd75521421841a28657238873",
             "locator": {
-              "end": 135,
+              "end": 170,
               "kind": "line_range",
-              "start": 130
+              "start": 160
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },

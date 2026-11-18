@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L52",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The coherence record's dependency bound is a named constant derived in code from model bounds (7+2048+256+1=2312); oversize payloads refuse naming bound and count before any write.",
+  "statement": "The coherence record's dependency bound is a named constant derived in code from model bounds (9+2048+256+1=2314); oversize payloads refuse naming bound and count before any write.",
   "status": "proposed",
   "supersedes": []
 }

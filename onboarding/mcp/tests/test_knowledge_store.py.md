@@ -12,9 +12,9 @@ Read behavior and schema integrity of derived knowledge index files.
 
 ### Logic
 
-Test-only rows supply separately recorded single-revision identities sharing the derived display label `r1`. Production readers retain their exact statements and empty predecessor sets, reopen exact identities/digests and reject writable or absent-file opens. [1] [2] [13]
+Test-only rows supply separately recorded single-revision identities sharing the derived display label `r1`. Production readers retain their exact statements and empty predecessor sets, reopen exact identities/digests and reject write attempts and refuse absent-file opens. [1] [2] [13]
 
-Cases protect database immutability triggers, read-time payload seals, declared schema structure and its pin. Missing tables/triggers or another version refuse open and name conversion. Canonical insert/duplicate/lineage write rules and their old cases are removed. [6] [7] [8]
+Cases protect database immutability triggers, read-time payload seals, declared schema structure and its pin. Missing tables or triggers refuse open; unsupported versions also name conversion. [6] [7] [8]
 
 ### Invariants And Boundaries
 
@@ -29,18 +29,17 @@ Cases protect database immutability triggers, read-time payload seals, declared 
 | `test_reopening_the_same_path_keeps_identity_and_schema` | reopen validates the same generation instead of creating or repairing |
 | `test_stored_revision_rows_refuse_update_and_delete` | direct `UPDATE`/`DELETE` raises `immutable_revision` at the database level |
 | `test_payload_digest_seals_more_than_the_statement` | the seal covers the stored cells, so a rewritten cell fails the read-time check |
-| `test_lower_ranked_owners_do_not_import_the_memory_domain` | the layer direction holds: no owner below `memory` imports the storage package |
+| `test_lower_ranked_owners_do_not_import_the_memory_domain` | the checked `worktrees` and `memory_quality` modules contain no direct imports of the memory domain |
 
 ### Conventions
 
-The module imports the fixture through the bare module name `knowledge_fixture_test_support`, which is how
-`mcp/tests/conftest.py` puts this directory on `sys.path`. Assertions name the observable outcome (state, refusal
+The module imports the fixture through the bare module name `knowledge_fixture_test_support`.
+`mcp/tests/conftest.py` prepends the product and test-support directories to `sys.path`. Assertions name the observable outcome (state, refusal
 code, offending record, row counts) rather than internal call order.
 
 ### Todos
 
-None recorded. Later leaves (KS-R02 … KS-R08) extend the fixture and add their own modules rather than growing this
-one.
+None recorded.
 
 ## Evidence
 
@@ -86,6 +85,8 @@ No domain documentation source is configured for this repository (`system/source
 No configured domain documentation could be checked.
 
 
+### Repo-Internal References (continued)
+
 - The current separate-record revision read: three single-revision records stay independently addressable, and the former divergent-successor population is not this fixture's executable coverage. [14]
 
 
@@ -96,18 +97,6 @@ No configured domain documentation could be checked.
 
 - The layer-direction case. [17]
 
-- The shared fixture every case builds from. [18]
-
-
-
-
-
-
-
-
-
-
-
 ### Cross-Repo References
 
 No cross-repository contract is established by this file.
@@ -116,12 +105,13 @@ No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
 
+### Repo-Internal References (continued)
 
 
 
-- The current unit-regression lane registration makes this module part of the manifest. Earlier caption wording described the row as following the `KS-R03` insertions; this current citation establishes lane membership. Anchor: `test_knowledge_store` [19]
+### Repo-Internal References (renewed)
 
+- The shared branching fixture used by the revision cases. Anchor: `build_branching_knowledge_fixture` [18]
 
-
-
+- The current unit-regression lane registration makes this module part of the manifest. Anchor: `test_knowledge_store` [19]
 - The fixture's registered stable contract and evidence node. Source caption: `knowledge-identity-branching-fixture` [20]

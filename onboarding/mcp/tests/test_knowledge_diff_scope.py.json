@@ -53,7 +53,7 @@
       ]
     },
     "10": {
-      "note": "**The filter narrowing the display and never the comparison, and the filter bound into the comparison identity.**",
+      "note": "The filter narrows the display without changing comparison totals; its policy differs while comparison binding and selector digests remain equal.",
       "targets": [
         {
           "anchor": {
@@ -75,6 +75,18 @@
               "end": 527,
               "kind": "line_range",
               "start": 502
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:303142ea2d1b6c97beae90533cef47fcf4e7b76714edf0305383e2543e68183f",
+            "locator": {
+              "end": 499,
+              "kind": "line_range",
+              "start": 462
             }
           },
           "kind": "test"
@@ -203,14 +215,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
+            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
             "locator": {
-              "end": 5044,
+              "end": 5062,
               "kind": "line_range",
               "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c855e7d5734aee727fc185e5ae0d6e0feef339e7b35ad5d149e83c61d603fc54",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 234
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }
@@ -221,10 +246,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
+            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
             "locator": {
-              "end": 5044,
+              "end": 5062,
               "kind": "line_range",
               "start": 1
             },
@@ -503,14 +528,14 @@
       ]
     },
     "6": {
-      "note": "**The unchanged sibling returned on both sides rather than omitted, with one item each way across the record/source split.**\n\nAnchor: \"test_an_unchanged_sibling_is_returned_identically_on_both_sides_rather_than_omitted\"",
+      "note": "The two sibling claims are returned on both sides with unchanged record fields; both have changed source observations, with no still-source item in this fixture. Anchor: \"test_an_unchanged_sibling_is_returned_identically_on_both_sides_rather_than_omitted\"",
       "targets": [
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
-            "content": "sha256:9f7449d82e8d6e0cab83fa00585c60efc1f712b0e6208f9331ae6318b1438b77",
+            "content": "sha256:1cbf22f84eb61004a7c08a6e1147222fa86d5ffbe091cbb94e2c65745ca956fa",
             "locator": {
-              "end": 270,
+              "end": 298,
               "kind": "line_range",
               "start": 222
             }

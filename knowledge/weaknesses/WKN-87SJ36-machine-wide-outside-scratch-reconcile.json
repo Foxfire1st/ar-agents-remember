@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+    "content": "sha256:54076b0052b91938de74c7c5d71ff7da3326f7cc729477cbb8e448e012d47aff",
+    "locator": {
+      "kind": "symbol",
+      "name": "start_outside_scratch_reconcile"
+    },
+    "path": "mcp/src/agents_remember/application/runtime/startup.py"
+  },
+  "id": "WKN-87SJ36",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "ingest-history-wave-v2.json"
+    },
+    "handoffEntry": "bug-r09-worker-record-9",
+    "leaf": "261112-BUG-L9",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261112-BUG-L9"
+  },
+  "state": "open",
+  "statement": "MCP startup schedules machine-wide outside-scratch reconciliation even when the server uses a task-isolated coordination root."
+}

@@ -118,11 +118,11 @@ From the source repository root, with its registered development Python environm
 
 ```text
 python scripts/sync-projection-types.py --check
-python scripts/sync-skills.py --check
+mcp/.venv/bin/python scripts/renew-instructions.py --check
 python scripts/sync-runtime.py --check
 ```
 
-These check the retained projection, skill and runtime copies. Repair a mismatch through its canonical owner and regenerate; do not edit a generated carrier by hand or restore retired mirrors.
+These check the retained projection and runtime copies, plus current instruction facts and the declared skill and tool-details copies. Repair a mismatch through its canonical owner and regenerate; do not edit a generated carrier by hand or restore retired mirrors.
 
 ### Ruff
 

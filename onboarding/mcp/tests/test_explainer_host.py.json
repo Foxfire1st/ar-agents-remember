@@ -4,23 +4,6 @@
     {
       "anchor": {
         "blob": "46a66f2e995584dc5753e574eb451379fd643573",
-        "content": "sha256:6ca1b39639c53c08ffa3877f362265824430318f6ef79c1cee2378483d333005",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_real_explainer_launch_always_carries_both_launch_words"
-        }
-      },
-      "facet": "Exercises launch identity, exact roster, named forbidden dispatch or fail-closed missing binding.",
-      "id": "PRF-6038X7",
-      "invariant": "INV-48203N",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
-        "leaf": "260928-MIK-L183"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "46a66f2e995584dc5753e574eb451379fd643573",
         "content": "sha256:a1728df0ad659922a6e83babf6b38fba339cd29a309fd3d3aa0393ed8fe9d173",
         "locator": {
           "kind": "symbol",
@@ -50,6 +33,23 @@
       "origin": {
         "handoffEntry": "L1-B06",
         "leaf": "261112-BUG-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+        "content": "sha256:6ca1b39639c53c08ffa3877f362265824430318f6ef79c1cee2378483d333005",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_real_explainer_launch_always_carries_both_launch_words"
+        }
+      },
+      "facet": "A real explainer launch request carries the binding and workspace marker for the same workspace.",
+      "id": "PRF-TJTJFE",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L9-encountered-explainer-general-tools",
+        "leaf": "261112-BUG-L9"
       }
     }
   ],

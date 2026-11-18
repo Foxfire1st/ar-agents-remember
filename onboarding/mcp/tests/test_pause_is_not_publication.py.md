@@ -105,26 +105,12 @@ No Domain Documentation source is configured for this memory root.
 
 - The stop module whose closure is measured, and the release authority the closure is required to reach. [7]
 
-
-
-
-> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py"
-
-
-
-
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned structural guard.
 
-
-
-
-
+### Repo-Internal References (continued)
 
 - The route this guard exists to keep the stop away from. Anchor: `worktree_checkpoint_landing` [6]
-
-
-
 
 - The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py" [8]

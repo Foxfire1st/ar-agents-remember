@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-        "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
+        "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+        "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
         "locator": {
           "kind": "file"
         }
@@ -15,17 +15,17 @@
         "handoffEntry": "MIK-R101@v1 rule 6",
         "leaf": "260928-MIK-L101"
       },
-      "rationale": "This record holds the current capsule, declared-detail and digest measurements with their limits and role ceilings under the developer's D695/D696 decision. The guard binds it by fingerprint, and it in turn pins capsule-budgets.json and capsule-budgets-d694.json as frozen history.",
+      "rationale": "The current record holds measured capsule, declared-detail, ordinary-template and digest sizes under derived.current_measurements and separately authored ceilings. It retains historical registries and their identities; it carries no current per-item word budgets or fixed digest-map hash.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-        "content": "sha256:bea2a1aca75ce1229788d34d37796ae960d600670a642500cf1694f67c187f5f",
+        "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+        "content": "sha256:a0abc4ead569d8a67d67a8e01a8d07edd5dc33813d24be486be77735cda4a99a",
         "locator": {
-          "end": 6159,
+          "end": 6163,
           "kind": "line_range",
-          "start": 6154
+          "start": 6161
         }
       },
       "id": "RLZ-DFYHWJ",
@@ -34,36 +34,17 @@
         "handoffEntry": "L84-P5-25",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "The measuredCurrentRenewalBug07 header identifies the active current renewal and records its predecessor record, fingerprint and base-tree basis. The prior renewal is retained as history rather than another current claim.",
+      "rationale": "The measuredCurrentRenewalBug08 authority-only sub-record is the active renewal. measuredCurrentRenewalBug07 is retained with historicalTree at lines 6153-6160, so it is not another current claim.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-        "content": "sha256:0e3c7fff4b429f1a2de4beee5f70488cb097ed84fcbbf73c138efa1ff27818a2",
+        "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+        "content": "sha256:86ffd298030ed1ed89b21939e6217dcec9fce742e95fc56ab8222d99068d4014",
         "locator": {
-          "end": 15,
+          "end": 5103,
           "kind": "line_range",
-          "start": 15
-        }
-      },
-      "id": "RLZ-HP4QWK",
-      "invariant": "INV-12JAM7",
-      "origin": {
-        "handoffEntry": "L84-P5-25",
-        "leaf": "260928-MIK-L84"
-      },
-      "rationale": "The decision-level currentDigestMapSha256 equals the SHA-256 of the current digest-map.json.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-        "content": "sha256:16e33f8515db8e2fe4fb605e540d2659e1109c4593e16b00a7cdc679cc19db3d",
-        "locator": {
-          "end": 5101,
-          "kind": "line_range",
-          "start": 5101
+          "start": 5100
         }
       },
       "id": "RLZ-QPK1VY",
@@ -77,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-        "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
+        "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+        "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
         "locator": {
           "kind": "file"
         }
@@ -89,18 +70,31 @@
         "handoffEntry": "RSM-R01-A9",
         "leaf": "261112-RSM-L1"
       },
-      "rationale": "The current record carries the renewal's measurements, source identities and separately recorded limits. BUG-R07 includes admitted limit changes, so this renewal is outside the invariant's measurement-and-identity-only condition; this entry does not assert that no limit changed.",
+      "rationale": "The current record keeps authored role, detail and digest ceilings separate from derived current measurements, populations and source identities; its BUG-R08 authority records the admitted D821 and D822 decisions.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The decision block binds the historical registry, the predecessor layer and the digest map by SHA-256.",
+      "note": "The decision block retains authority and frozen historical registry and predecessor identities.",
       "targets": [
         {
           "anchor": {
-            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-            "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:75af2672431670155e3a4078c58f19ccd71fcff86f96995a806e2f67f6e2f7e1",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
             "locator": {
               "kind": "file"
             }
@@ -110,27 +104,43 @@
       ]
     },
     "2": {
-      "note": "Current limits for 34 capsules, the step details and the digest.",
+      "note": "Generated measurements cover current capsules, declared details and the shared digest without individual item limits.",
       "targets": [
         {
           "anchor": {
-            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-            "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:c97e67c20756fe73ca0813113cc5dda8ed9c3e3d569decda3d7c26d49ad276fe",
             "locator": {
-              "kind": "file"
-            }
+              "end": 77,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Current measurements, including the ordinary linked templates.",
+      "note": "Current generated measurements include ordinary linked templates.",
       "targets": [
         {
           "anchor": {
-            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-            "content": "sha256:18171e8a4740f1cffaf1fe21547987c0d702022e4e22d17d569737550a5618f9",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:e61eedb0d77dd7d54d8b75dc761bdf0d11909089466f629a568b13d1bdecb052",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
             "locator": {
               "kind": "file"
             }
@@ -140,16 +150,16 @@
       ]
     },
     "4": {
-      "note": "Role, step and digest ceilings.",
+      "note": "Authored role, detail and digest ceilings are separate from generated measurements.",
       "targets": [
         {
           "anchor": {
-            "blob": "e70df6ecd3f13123a7cee67dc2100ebeb024eafe",
-            "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:f8f8b8c92cf7bbc546918ecbd81a64ce055160bc40252f448e919df93cc9d4ed",
             "locator": {
-              "end": 6560,
+              "end": 6177,
               "kind": "line_range",
-              "start": 6551
+              "start": 6165
             }
           },
           "kind": "code"
@@ -157,15 +167,16 @@
       ]
     },
     "5": {
-      "note": "The detail population must equal the manifest's declared step details, and linked templates must be ordinary manifest entries.",
+      "note": "Detail and ordinary-template populations agree with their composed manifest classifications.",
       "targets": [
         {
           "anchor": {
-            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
-            "content": "sha256:c5db175a68c58fd0264dc35bea94d6a1bcf9ee7d37c4ad78247a36d6f565009a",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:645cb437ad6dbf1ba6428e27c1b5310f9e8f280e6a9dafaffbaf4cf6f6adea40",
             "locator": {
-              "kind": "symbol",
-              "name": "_current_source_findings"
+              "end": 141,
+              "kind": "line_range",
+              "start": 111
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
@@ -174,16 +185,16 @@
       ]
     },
     "6": {
-      "note": "The predecessor layer and the historical registry are bound by hash.\n\nAnchor: `predecessorD694Sha256`",
+      "note": "The retained predecessor, historical registry and their retained helpers are authenticated by hash.",
       "targets": [
         {
           "anchor": {
-            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
-            "content": "sha256:f8c97087b082cc61ff1dbc6f179a6ea20db12d8ff9422c20b48bb78de0686c1e",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:75af2672431670155e3a4078c58f19ccd71fcff86f96995a806e2f67f6e2f7e1",
             "locator": {
-              "end": 135,
+              "end": 159,
               "kind": "line_range",
-              "start": 120
+              "start": 144
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
@@ -192,19 +203,20 @@
       ]
     },
     "7": {
-      "note": "The capsule tests read their limits from this record.",
+      "note": "Budget checks read current measurements and authored ceilings.",
       "targets": [
         {
           "anchor": {
-            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
-            "content": "sha256:a77f13c9b1e17ffda684e14eb60465d59dc3be53400a6ba7085f1842b7df76d1",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:8cd4193ea8d7a96e50b0e83efc204bdfa1ad03b084e670af07f4072d08f9c00a",
             "locator": {
-              "kind": "symbol",
-              "name": "D695_CURRENT_BUDGETS_PATH"
+              "end": 170,
+              "kind": "line_range",
+              "start": 162
             },
-            "path": "mcp/tests/test_role_capsule_budgets.py"
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     }

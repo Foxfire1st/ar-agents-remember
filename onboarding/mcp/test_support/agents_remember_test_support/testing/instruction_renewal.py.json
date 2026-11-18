@@ -1,0 +1,42 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/instruction_renewal.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "545b7f3d18bfb8f5186b4614ea23a67a72888106",
+        "content": "sha256:e9dbe526d08ee66751f00da92e4ca9e7cd1e697efa70aaf56565c890dfa62bd3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-D43Y79",
+      "invariant": "INV-EHJV8E",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 1",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The planner computes a complete deterministic replacement set and the entry point publishes it or reports staleness without writes.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The support defines the renewal command and checkout tooling import seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545b7f3d18bfb8f5186b4614ea23a67a72888106",
+            "content": "sha256:5a1894994da12d784156fcadcacff75163d5c02bd077cbbe6065bbe2bc5c21ea",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R23 rules 1–5 and the Failure rule: sources, key, answers, partial state, cache and the `knowledge-index` command.** Every case builds a real memory tree in a real Git repository (`write_review_tree`) and indexes it through the public cache, so the key, the capture and the Git-object reads are the production ones. Registered in the `unit-regression` lane. Source includes the two-value index-flag parameterization, root-route, duplicate-history-row and sparse-checkout cases; this card does not claim a fresh collected-case count.
+**MIK-R23 rules 1–5 and the Failure rule: sources, key, answers, partial state, cache and the `knowledge-index` command.** The main fixture builds a real memory tree in a real Git repository (`write_review_tree`) and indexes it through the public cache, so the key, capture and Git-object reads use production code. Registered in the `unit-regression` lane. Source includes the two-value index-flag parameterization, root-route, duplicate-history-row and sparse-checkout cases; this card does not claim a fresh collected-case count.
 
 ## Code Commentary
 
@@ -16,7 +16,7 @@
 - **Answers:** path lookups, the invariant answer (code, tests, families, links, history), family members and routes with routes answering their families, a family routed at the root route `.` governing both a root-level file and a deep file (MIK-R04, added by leaf 260928-MIK-L04 for review R3-1), incoming links, and history rows by subject and by leaf (the index query moved here from MIK-R07). Two closed files may hold one row ID, and a lookup names both (rule 4).
 - **Freshness and failure:** an edited working tree is never answered from the previous content; a file failing its schema marks the index `partial` and is named; an unconverted tree indexes empty and says so.
 - **Cache:** reuse, rebuild and loss-free deletion; eviction by age and size; a cache inside a Git working tree is refused with no directory left behind; an `assume-unchanged` or `skip-worktree` flag never hides an edit; the file declares its format and key.
-- **Command and filter:** `knowledge-index` reports JSON and exits 0/1/2 by state; the index reads the files the validator reads (knowledge record, hidden directory, route cache, census, Markdown).
+- **Command and filter:** `knowledge-index` reports JSON and checks exit 0 for a complete index and exit 1 for a partial index; the index reads the files the validator reads (knowledge record, hidden directory, route cache, census, Markdown).
 - **A rewrite in the second of the index write (L37, INV-656CYW):**
   `test_a_rewrite_in_the_second_of_the_index_write_is_never_answered_from_the_old_content` rewrites a record in
   place, same size, in the second the repository's index was written (`rewrite_in_the_second_of_the_index_write`).
@@ -29,7 +29,17 @@
 
 ### Invariants And Boundaries
 
-- Each packet obligation has a case that drives real Git state, not a stub.
+- The key, capture, historical-read and freshness cases drive real Git state.
+
+The earlier card at memory snapshot `81cfe4a8` recorded the coverage judgment:
+“Each packet obligation has a case that drives real Git state, not a stub.” This
+retains that earlier judgment; the present source account names the cases it
+inspected and supplies no new packet-wide verdict.
+
+The earlier card's command account also named exit statuses `0/1/2`. The CLI owner
+(`mcp/src/agents_remember/cli/knowledge_index.py`) still returns `0` for a complete
+index, `1` for a partial index and `2` when memory is unconverted or cannot be
+read. The test module's current command case explicitly asserts only `0` and `1`.
 
 ### Todos
 
@@ -68,7 +78,6 @@ No meaningful cross-repo references found: every case builds its own repository 
 
 No cross-repo boundary is crossed by this file.
 
-
-
+### Repo-Internal References (continued)
 
 - The lane row. Anchor: "mcp/tests/test_knowledge_index.py" Anchor: "mcp/tests/test_knowledge_index.py" [8]

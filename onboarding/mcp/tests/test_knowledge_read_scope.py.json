@@ -199,15 +199,16 @@
       ]
     },
     "29": {
-      "note": "The two equivalence nodes (invariant versus family seed; path versus exact revision seed).",
+      "note": "The invariant/main-family seed comparison pins their different claim/location totals; path and exact invariant revision seeds select the same records.",
       "targets": [
         {
           "anchor": {
             "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
             "content": "sha256:b8908b7029a4904fc77b7a50dbf98842b851dd20d827b0c89e94a71ca9df2337",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_path_seed_and_the_exact_invariant_revision_seed_close_over_the_same_records"
+              "end": 389,
+              "kind": "line_range",
+              "start": 336
             }
           },
           "kind": "test"
@@ -217,8 +218,9 @@
             "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
             "content": "sha256:35410f3f1ee06a0b3a1cbb4212e941f35311ba6f9151137162c8e0e82e810cbe",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_invariant_seed_and_the_family_seed_enumerate_the_same_claims_and_locations"
+              "end": 333,
+              "kind": "line_range",
+              "start": 276
             }
           },
           "kind": "test"
@@ -255,15 +257,16 @@
       ]
     },
     "31": {
-      "note": "The count-separation and multi-family-membership nodes.",
+      "note": "The count-separation node and the overlapping family's two unique member revisions and membership rows.",
       "targets": [
         {
           "anchor": {
             "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
             "content": "sha256:1eb3ff402d6051b10befedadfaacd07e6bda1f774e96fa44c57af5710f6f0e3b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_revision_reached_through_two_families_appears_once_with_both_membership_rows"
+              "end": 525,
+              "kind": "line_range",
+              "start": 494
             }
           },
           "kind": "test"
@@ -273,8 +276,9 @@
             "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
             "content": "sha256:c533a06a046db81adef0e28a6aaa232a4debaaec7336b22ef1c8ae5eb86e9bb5",
             "locator": {
-              "kind": "symbol",
-              "name": "test_claim_identities_and_distinct_source_locations_are_counted_separately"
+              "end": 491,
+              "kind": "line_range",
+              "start": 459
             }
           },
           "kind": "test"
@@ -388,10 +392,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 809,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },

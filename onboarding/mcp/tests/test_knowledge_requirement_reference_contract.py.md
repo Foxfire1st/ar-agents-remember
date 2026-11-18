@@ -45,7 +45,7 @@ The archive-precedence case drives `resolve_requirement_endpoint`: with no activ
 - **The owner reference's exact three components, and the fourth addressing scheme refused without a denylist.** [20]
 - The admitted version spelling, over seven inputs the task plane would also refuse. [21]
 - **The reference the payload deliberately does not police: four paths the owner would refuse are still representable, so the answer cannot be the substrate's.** [22]
-- **The real owner's four refusals carried verbatim, with the stored reference byte-identical — the proof that the reference is never rewritten.** [23]
+
 - The resolved owner recorded as resolved, with no refusal fields. [24]
 - **The real resolver these cases drive, rather than a stub — a stubbed resolver cannot catch the second resolver this suite exists to exclude.** [25]
 
@@ -61,9 +61,11 @@ No configured domain documentation could be checked.
 
 No cross-repository contract is established by this file.
 
+### Repo-Internal References (continued)
+
 - Archive fallback requires the active task directory to be absent; an existing empty active directory wins and remains unresolved. [27]
 
 
-
+- The real owner's four refusal cases assert the expected refusal code, a nonempty detail and the unchanged reference path. [23]
 
 - The lane row that gives this module its classification and keeps it collectable under a named lane. Anchor: `test_knowledge_requirement_reference_contract` Anchor: `test_knowledge_requirement_reference_contract` [26]

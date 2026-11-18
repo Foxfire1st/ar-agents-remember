@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
+    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
     "role": "curator",
-    "statement": "The page holds: the lane catalogue gained entries for new tests, and the page's admission, selection and commands are the ones the catalogue already had.",
-    "task": "261112-BUG-L7",
+    "statement": "The examined bootstrap clauses remain consistent with import isolation, selection and fixture ownership while the lane catalog gains four test modules.",
+    "task": "261112-BUG-L9",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+      "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },

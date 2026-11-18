@@ -1,14 +1,32 @@
 {
   "path": "mcp/tests/test_knowledge_bootstrap_procedure.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
+        "content": "sha256:84a98e1ed2201a6ff76f9c81bcbcc773f7917e52a66b8f4f54f4862c8b261bde",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SA88Q4",
+      "invariant": "INV-AZTTPZ",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 9",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "This consumer or regression control follows generated routing fields and preserves the independent obligation it checks.",
+      "role": "support"
+    }
+  ],
   "references": {
     "10": {
-      "note": "Anchor: Served catalog procedure bytes are compared.",
+      "note": "`served_body` looks up one served skill body and requires one readable catalog entry; neither current test calls this helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
-            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
+            "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
+            "content": "sha256:84a98e1ed2201a6ff76f9c81bcbcc773f7917e52a66b8f4f54f4862c8b261bde",
             "locator": {
               "kind": "file"
             }
@@ -18,12 +36,12 @@
       ]
     },
     "11": {
-      "note": "Every printed invocation is placeholder-filled and run through the shipped parser for subcommand and option arity; bootstrap is not executed.",
+      "note": "`printed_invocations` joins continuations, recognizes both launchers and fills placeholders. Its current test parses synthetic commands; it does not enumerate the live procedure.",
       "targets": [
         {
           "anchor": {
-            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
-            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
+            "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
+            "content": "sha256:84a98e1ed2201a6ff76f9c81bcbcc773f7917e52a66b8f4f54f4862c8b261bde",
             "locator": {
               "kind": "file"
             }
@@ -33,12 +51,12 @@
       ]
     },
     "12": {
-      "note": "The compiled-Curator-shape test checks the actual delivered foundation pointer and procedure text. Its docstring explicitly limits this to compiler shape and admits no taskless Curator; foundation authoring requires real task admission. These are source assertions, not a workflow run.",
+      "note": "The retained Curator test checks role and distinct task-binding identities for document-bound and named-absence compilation; it does not inspect foundation delivery.",
       "targets": [
         {
           "anchor": {
-            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
-            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
+            "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
+            "content": "sha256:84a98e1ed2201a6ff76f9c81bcbcc773f7917e52a66b8f4f54f4862c8b261bde",
             "locator": {
               "kind": "file"
             }
@@ -48,12 +66,12 @@
       ]
     },
     "13": {
-      "note": "Anchor: Current setup/onboarding prose reaches the same procedure.",
+      "note": "The module retains served-skill retrieval helpers; the current tests do not inspect setup/onboarding prose.",
       "targets": [
         {
           "anchor": {
-            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
-            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
+            "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
+            "content": "sha256:84a98e1ed2201a6ff76f9c81bcbcc773f7917e52a66b8f4f54f4862c8b261bde",
             "locator": {
               "kind": "file"
             }
@@ -94,16 +112,30 @@
       ]
     },
     "15": {
-      "note": "`delivered_foundation` binds source, role, delivery step, action pointer, delivered bytes and heading to the compiled manifest and the current capsule-budget view; the emitted copy equals the source except that each relative link is rewritten to the same shipped file and anchor. Its controls mutate the budget, heading, required sentence and declared pointer, and move the pointer to an unrelated action, independently. A synthetic Curator capsule proves this delivered procedure, while the procedure still requires real foundation task admission. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "`delivered_foundation` checks the declared source, Curator role, delivery step, action pointer, delivered bytes and heading against the effective manifest and current capsule-budget view. Relative links must preserve their shipped target file and anchor. `foundation_delivery_controls` mutates the budget, heading, required sentence and declared pointer, then separately relocates the pointer. The sibling `test_curator_deduplication_keeps_distinct_authority_and_outcome_clauses` invokes both helpers with `FOUNDATION_AUTHORITY_CLAUSES`; this module does not define a delivered-procedure test. These are source assertions, not a fresh run or admission verdict.",
       "targets": [
         {
           "anchor": {
-            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
-            "content": "sha256:6762a2008226fd2fb9ac39550c94069e0492a0a84940179a680c87f36ebc8d8b",
+            "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
+            "content": "sha256:1b276683d3073046d7015d67d2463f6940c49c3947451e7863a3c900392be565",
             "locator": {
-              "kind": "symbol",
-              "name": "foundation_delivery_controls"
+              "end": 259,
+              "kind": "line_range",
+              "start": 136
             }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7d188f24b77caa6a17c0a0b4f9d8e9b3a2166252",
+            "content": "sha256:12dbebb5784f815d7b2b875c255c597350526aa530b77a427c54ebae70efb5e2",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/tests/test_knowledge_correction_guidance.py"
           },
           "kind": "test"
         }
@@ -114,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
             "content": "sha256:33f2dd3141c1f8bbdf8e649bb737608004dfd09c8dbd33f1f86c31f07e73a0ae",
             "locator": {
               "kind": "symbol",
@@ -126,12 +158,12 @@
       ]
     },
     "17": {
-      "note": "The Bootstrap capsule's state-reporting action points to the emitted foundation-state detail, which reaches the procedure and the start-the-Architect next step.",
+      "note": "`free_agent_capsule(role)` compiles a named-absence capsule; the current tests call it for Curator and do not inspect Bootstrap state-reporting delivery.",
       "targets": [
         {
           "anchor": {
-            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
-            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
+            "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
+            "content": "sha256:84a98e1ed2201a6ff76f9c81bcbcc773f7917e52a66b8f4f54f4862c8b261bde",
             "locator": {
               "kind": "file"
             }
@@ -145,12 +177,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
             "content": "sha256:29c5174c2e6838b8b91e37b4ba94b8e74fd7339bcbe4475b73e664b242d50892",
             "locator": {
-              "end": 380,
+              "end": 381,
               "kind": "line_range",
-              "start": 360
+              "start": 361
             }
           },
           "kind": "test"
@@ -162,12 +194,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
             "content": "sha256:5d5f8c4ec2d7d614a4b4728c30b580eaf9fb9af1a10674e47872bc20414a452c",
             "locator": {
-              "end": 419,
+              "end": 420,
               "kind": "line_range",
-              "start": 393
+              "start": 394
             }
           },
           "kind": "test"
@@ -175,12 +207,12 @@
       ]
     },
     "8": {
-      "note": "The bootstrap free-agent capsule compiles with no task document, and its emitted foundation-state detail reaches the foundation procedure.",
+      "note": "`free_agent_capsule(role)` constructs a minimal temporary configuration and requires a compiled delivery; the retained test uses the Curator role.",
       "targets": [
         {
           "anchor": {
-            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
-            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
+            "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
+            "content": "sha256:84a98e1ed2201a6ff76f9c81bcbcc773f7917e52a66b8f4f54f4862c8b261bde",
             "locator": {
               "kind": "file"
             }
@@ -194,12 +226,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "blob": "a3f92025885a7fa58502b1118106e65502669d7f",
             "content": "sha256:52de85908d4bbbcb1ce740f567c0f5c2c09c25763f8264b9423ae938d780ea37",
             "locator": {
-              "end": 446,
+              "end": 447,
               "kind": "line_range",
-              "start": 422
+              "start": 423
             }
           },
           "kind": "test"

@@ -16,7 +16,7 @@
         "handoffEntry": "L183-A-1",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "The build writes the snapshot, the instructions and the binding last, so a failed build leaves no bound environment behind.",
+      "rationale": "The build prepares the two detached worktrees, instructions, packet and copied documents before writing the binding last; a failed build leaves no binding.",
       "role": "unclassified"
     }
   ],
@@ -39,7 +39,7 @@
       ]
     },
     "2": {
-      "note": "An Update binds last, and keeps the snapshot it replaced while a turn may still be reading it\n\nAnchor: `def update_environment(`",
+      "note": "An Update moves the same two worktrees and binds last; a failed moved Update leaves no binding",
       "targets": [
         {
           "anchor": {

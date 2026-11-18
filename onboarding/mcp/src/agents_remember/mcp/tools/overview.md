@@ -26,7 +26,7 @@ Response enrichment preserves a producer-supplied recovery `nextStep` before der
 
 A citation-fix legacy refusal retains its central code and conversion message in the caller-visible projection, not solely in a full-result log; converted status counts and bounded entries stay unchanged.
 
-The facade exports `ExplainerControlCall` and `explainer_control_payload`; their master-Architect authority and report custody remain application-owned. An explainer-bound process selects its separate 22-tool surface rather than the ordinary roster.
+The facade exports `ExplainerControlCall` and `explainer_control_payload`; their master-Architect authority and report custody remain application-owned. An explainer-bound process adds its four tools to the ordinary roster.
 
 ## Construction And Ownership
 
@@ -183,9 +183,7 @@ The memory payload owner routes synchronous citation repair and background previ
 
 - This server's own index resource, kept deliberately distinct from that method. [32]
 
-- Read carries tree/index state and partial-index completeness. [34]
 
-- Legacy paths and unheld current seeds refuse truthfully. [35]
 
 - Role-agent MCP payload builders delegate start and message calls to the Paseo role tools while retaining the addressed role in the tool-event context. [37]
 > Retained earlier citation wording: - Current imported source owns this scoped route boundary. [37] - - The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name.
@@ -228,10 +226,14 @@ The memory payload owner routes synchronous citation repair and background previ
 
 - The server-info answer without a harness skill root. [62]
 
-- Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; the explainer-bound surface remains separate. [63]
 
 - - A converted tree's citation-fix result is bounded for transport. [43]
 
 - **Retained historical source account — superseded by the current route account:** Citation repair projects selected actionable lists; the retained 50-entry helper is not called by the builder.  Anchor: `citation_fix_payload`, `_citation_fix_answer`, `_bounded_lists`, `_bounded_citation_fix` [56]
 
 Anchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, `_caller` [52]
+
+- Read carries tree/index state and partial-index completeness. [34]
+- Legacy paths and unheld current seeds refuse truthfully. [35]
+
+- Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; a valid explainer binding adds four tools to the ordinary registration. [63]

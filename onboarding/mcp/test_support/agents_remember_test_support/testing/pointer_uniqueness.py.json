@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a413ab6e54d9e54d9d98eed1695f190ecb84b5d0",
+        "blob": "7a06f5d32b76b80864796270f0d808cb96004fb5",
         "content": "sha256:156a11c117f51b396e21217d5a349e639b80417c26042657ffe5d181da65b6c2",
         "locator": {
           "kind": "symbol",
@@ -18,36 +18,57 @@
       },
       "rationale": "This function keys every link by its target file and fails a repeated same action, an unlisted repeat, one action under two wordings, and a listed action from another source.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7a06f5d32b76b80864796270f0d808cb96004fb5",
+        "content": "sha256:9197d526496dbb47e4e7b545e3e1c129a7e232a7787ec4d9cd5ba3327d36c236",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YVW1GM",
+      "invariant": "INV-NDGJ3M",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 6",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Independent audience, link and pointer checks protect current delivery while the kept historical constants remain unchanged.",
+      "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "Admitted repeats are listed per target file with the reason the actions differ.",
+      "note": "Stable exception identities and generated wording yield admitted repeats and their reasons.",
       "targets": [
         {
           "anchor": {
-            "blob": "a413ab6e54d9e54d9d98eed1695f190ecb84b5d0",
-            "content": "sha256:a4e8950aa66075f0d62f620c6248fbef5f4dbecfb8ac95e9dca7691a15566e4a",
+            "blob": "424522943d18e0ab43fe06f01ac7cdcb1916145e",
+            "content": "sha256:a1a765138f486c7691cf7495eeacdbc787c5caeef9fbbca9a0aa2a09fc925539",
             "locator": {
-              "kind": "symbol",
-              "name": "DISTINCT_ACTIONS"
-            }
+              "end": 20,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pointer_policy.py"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Each listed action is admitted only from its named source files.",
+      "note": "Each admitted action wording retains its allowed source files.",
       "targets": [
         {
           "anchor": {
-            "blob": "a413ab6e54d9e54d9d98eed1695f190ecb84b5d0",
-            "content": "sha256:8e31c14fe88be28cde22c10cbf1569f9bb495591ad4026eb62e1fade7a84bdb9",
+            "blob": "424522943d18e0ab43fe06f01ac7cdcb1916145e",
+            "content": "sha256:ff4a5ad03ed9b98517db9f38bfd9a335698ea1a605e0e6b581e633b1b6442aa3",
             "locator": {
-              "kind": "symbol",
-              "name": "ACTION_SOURCES"
-            }
+              "end": 27,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pointer_policy.py"
           },
           "kind": "code"
         }
@@ -58,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a413ab6e54d9e54d9d98eed1695f190ecb84b5d0",
+            "blob": "7a06f5d32b76b80864796270f0d808cb96004fb5",
             "content": "sha256:fb982e8f630dc0c1f1f8e2f69d7ee6d6aeef1b63ecba8cca0d5f88392fcd44c5",
             "locator": {
               "kind": "symbol",
@@ -74,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a413ab6e54d9e54d9d98eed1695f190ecb84b5d0",
+            "blob": "7a06f5d32b76b80864796270f0d808cb96004fb5",
             "content": "sha256:156a11c117f51b396e21217d5a349e639b80417c26042657ffe5d181da65b6c2",
             "locator": {
               "kind": "symbol",

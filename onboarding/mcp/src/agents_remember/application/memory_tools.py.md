@@ -121,7 +121,6 @@ The unconverted `citation_fix_tool` whole result now explicitly carries `nextAct
 
 Inherited numbered findings [3], [12], [9], [13], [36], [21], [26], [27] retain their separate historical custody; no currentness is inferred from those inherited targets. The source-bound account below distinguishes surviving owners from the legacy implementation removed by this task. Removed projection, source-index and prepared-continuation captions are not retained as executable behavior.
 
-- Carryover options forward approval intent and explicit review selection without a commit subject. [37]
 
 - The carryover adapter forwards converted worktree import, derives ok from refused state and translates only the recognized legacy RuntimeError. [38]
 
@@ -273,3 +272,5 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - This controller function revalidates the scope, calls the scoped memory-quality check and composes its result. [16]
 
 - The controller attaches the curator checklist and enclosure-local worklist for the full scoped publication. [17]
+
+- Carryover options forward approval intent and explicit review selection without a commit subject. [37]

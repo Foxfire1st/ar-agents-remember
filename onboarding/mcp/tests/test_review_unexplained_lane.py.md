@@ -11,7 +11,7 @@
 candidate commit, and a converted memory repository with a base and a candidate commit, reopened as the reviewer
 reopens a recorded comparison (`reopened_trees`), so every knowledge side is read through the derived index of its
 tree. The route and live-leaf cases reuse `test_review_git_trees.py`'s `world` fixture. Registered in the
-`unit-regression` lane (`mcp/tests/test-evidence-lanes.toml:513`).
+`unit-regression` lane (`mcp/tests/test-evidence-lanes.toml:518`).
 
 ## Code Commentary
 
@@ -72,13 +72,23 @@ tree. The route and live-leaf cases reuse `test_review_git_trees.py`'s `world` f
 - Proves the candidate invariants recorded on `review_lane_classification.py.md` and `review_unexplained_lane.py.md`:
   one classification through MIK-R08's functions, the exact-blob rule, unknown rather than "gate unexplained" over a
   side not read whole, the explorer's `paths`, and typed answers to every validated request.
-- **Mutation checks (worker and reviewer):** relaxing the exact-blob rule, intersecting every side and dropping
-  proofs each fail 3 cases; a stale file counted as unexplained fails 2; the gate ignoring an unread side fails 1;
-  the old unavailable-only gate rule fails case 6; uncapped names fail case 7; an unclipped refusal fails case 10.
+
 
 ### Todos
 
 No additional work is asserted by this card.
+
+## Retained Full-Card Audit Context
+
+The following distinct accounts are retained from memory base `81cfe4a8`. Dates, source coordinates, counts, outcomes and ownership describe that recorded epoch. They add no fresh execution, mutation result or acceptance. Historical numeric reference labels are custody text and do not select live sidecar anchors.
+
+### Worker and Reviewer mutation account
+
+> - **Mutation checks (worker and reviewer):** relaxing the exact-blob rule, intersecting every side and dropping
+>   proofs each fail 3 cases; a stale file counted as unexplained fails 2; the gate ignoring an unread side fails 1;
+>   the old unavailable-only gate rule fails case 6; uncapped names fail case 7; an unclipped refusal fails case 10.
+
+All reported failures and named cases describe the earlier Worker/Reviewer mutation evidence. The current case descriptions remain above; this audit did not repeat those mutations.
 
 ## Evidence
 
@@ -98,6 +108,8 @@ No configured live documentation source was available for this pass.
 
 No cross-repo boundary is crossed by this file.
 
+### Repo-Internal References (continued)
+
 - The ten changed paths the fixture comparison holds.  Anchor: "the same throughout:" [1]
 - The memory tree over the code, and the curated re-record of `pkg/a.py`. [2]
 - The family records before and after. [3]
@@ -113,11 +125,5 @@ No cross-repo boundary is crossed by this file.
 - One focused question per request. [12]
 - The live tree leaf, and long paths answered typed (review F2). [13]
 - A dataset review's entry has no attribution. [14]
-
-
-> Retained earlier citation wording: - The module's lane row.  Anchor: "mcp/tests/test_review_unexplained_lane.py"
-
-
-
 
 - The module's lane row. Anchor: "mcp/tests/test_review_unexplained_lane.py" Anchor: "mcp/tests/test_review_unexplained_lane.py" [15]

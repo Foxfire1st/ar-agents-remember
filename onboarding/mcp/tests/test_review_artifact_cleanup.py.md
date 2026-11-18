@@ -7,11 +7,11 @@
 ## Purpose
 
 **The MIK-R25 rule 5 cases: the archive hook deletes only the archived
-task's own review artifacts, and a repeated attempt keeps its receipts.** Split out of `test_review_git_trees.py` by ruling 2026-09-30T02:32:42. The `task`
+task's own review artifacts, and a repeated attempt keeps its receipts.** The `task`
 fixture is a coordination task root with its task document and one leaf enclosure contract, a plain code and a
 plain memory repository, and nothing converted: the hook reads refs, manifests and files, never knowledge. Every
 case asserts what is deleted and, as much, what another task still holds. The file is self-contained (no shared
-support module), so the catalog is unchanged; it runs in the `unit-regression` lane
+support module); it runs in the `unit-regression` lane
 (`test-evidence-lanes.toml`).
 
 ## Code Commentary
@@ -38,7 +38,7 @@ support module), so the catalog is unchanged; it runs in the `unit-regression` l
   releases nothing and writes no `deletions/` outside.
 
 - **Receipts per attempt:** `test_a_repeated_attempt_keeps_receipts_never_leaves_the_name_empty_and_reports_absence`
-  runs the hook twice. The first attempt writes receipt 1 with an empty `alreadyAbsent`. A second attempt with nothing
+  runs the hook three times: an initial cleanup, a no-op replay, and a later cleanup with new work. The first attempt writes receipt 1 with an empty `alreadyAbsent`. A second attempt with nothing
   new returns `receipt: "unchanged"`, writes no numbered copy, leaves the canonical bytes alone, and lists the ref the
   first attempt deleted as `alreadyAbsent`. A later attempt with real work keeps the first receipt as
   `review-artifact-cleanup.attempt-1.json`, writes attempt 2 under the canonical name, and the canonical name existed
@@ -60,14 +60,40 @@ support module), so the catalog is unchanged; it runs in the `unit-regression` l
 
 No additional work is asserted by this card.
 
-The pinned planned-key set now includes `frameRevisions`, the archive class MIK-R103 rule 8 adds; the case fails on the previous set and passes on this one.
+The pinned planned-key set includes `frameRevisions`.
 
 
 The planned receipt classes include `explainerArtifacts`. The interrupted archive fixture leaves the external workspace, old generation counter and old lock absent. The case documents workspace removal as retirement's step before the sweep; the retry asserts `interrupted=true` `alreadyAbsent` entries of that class for the migrated `seat-generation` counter path and the old lock path. It does not assert a workspace entry in that retry receipt.
 
+## Retained Full-Card Audit Context
+
+The following distinct accounts are retained from memory base `81cfe4a8`. Dates, source coordinates, counts, outcomes and ownership describe that recorded epoch. They add no fresh execution, mutation result or acceptance. Historical numeric reference labels are custody text and do not select live sidecar anchors.
+
+### Split ruling
+
+Summary of the earlier card account:
+
+> Split out of `test_review_git_trees.py` by ruling 2026-09-30T02:32:42.
+
+### Self-contained change-scope account
+
+Summary of the earlier card account:
+
+> The earlier card recorded this file as self-contained (no shared support module), and therefore recorded its catalog as unchanged.
+
+“Unchanged” describes that prior change, not an inference about every later catalog revision.
+
+### Frame-revision addition and earlier fail/pass account
+
+Summary of the earlier card account:
+
+> The pinned planned-key set now includes `frameRevisions`, the archive class MIK-R103 rule 8 adds; the case fails on the previous set and passes on this one.
+
+The previous-set failure and current-set pass are the earlier card’s attributed account. This audit performed no test or mutation run; the frozen source still includes frameRevisions in its asserted planned set.
+
 ## Evidence
 
-- The receipt's planned-key set carries the new frame-revision class. [10]
+
 
 ### Docs References
 
@@ -90,14 +116,13 @@ No configured live documentation source was available for this pass.
 
 No cross-repo boundary is crossed by this file.
 
+### Repo-Internal References (continued)
+
 - A repeated attempt reports what is already absent, keeps the first receipt as attempt 1, and writes none when nothing is new. [9]
 
+- The planned receipt classes include `explainerArtifacts`. The interrupted archive fixture leaves the external workspace, old generation counter and old lock absent. The case documents workspace removal as retirement's step before the sweep; the retry asserts `interrupted=true` `alreadyAbsent` entries of that class for the migrated `seat-generation` counter path and the old lock path. It does not assert a workspace entry in that retry receipt. Anchor: `test_interrupted_external_explainer_deletion_replays_as_already_absent` [11]
 
 
-
-
-
+- The receipt's planned-key set carries the frame-revision class. [10]
 
 - The lane row. Source caption: "mcp/tests/test_review_artifact_cleanup.py" [8]
-
-- The planned receipt classes include `explainerArtifacts`. The interrupted archive fixture leaves the external workspace, old generation counter and old lock absent. The case documents workspace removal as retirement's step before the sweep; the retry asserts `interrupted=true` `alreadyAbsent` entries of that class for the migrated `seat-generation` counter path and the old lock path. It does not assert a workspace entry in that retry receipt. Anchor: `test_interrupted_external_explainer_deletion_replays_as_already_absent` [11]

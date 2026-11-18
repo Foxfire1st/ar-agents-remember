@@ -6,8 +6,7 @@
 
 ## Purpose
 
-Protects capsule delivery from production launch points to the recorded consumer boundary,
-with internal compilation rather than a restored public compiler tool. The capsule-launch world builds under pytest's `tmp_path`
+Checks launch-capsule compilation, identity and named no-delivery refusals against a real fixture coordination world. The capsule-launch world builds under pytest's `tmp_path`
 (`:122`) rather than a selected short root, and the socket-bearing support builds on a temporary directory of its own
 (`pnt_sandbox_test_support.py:231-232`); this card does not establish a production Unix-domain path limit, and the port
 claim's abstract socket name carries no filesystem path. No provider turn or live process acceptance is implied.
@@ -18,7 +17,7 @@ The current source facts below replace the former operative inventory. The separ
 
 - D13 now asserts role_capsule_compile is absent from registered tools.
 - The second arm compiles directly and asserts ok/instructions, not equality with a public MCP reply.
-- The surrounding producer-to-consumer capsule tests remain.
+- Task-attached and free-agent compiler-identity tests remain.
 
 ### Source and authority bounds
 
@@ -214,6 +213,8 @@ The vendor boundary this module records is the installed Codex app-server's thre
 the fixture it is pinned against lives in this repository.
 
 
+### Repo-Internal References (continued)
+
 - The admitted binding a delivery belongs to: repository, task document path, role and operation, each refused when empty or carrying outer whitespace, and reported under those four names. [20]
 
 
@@ -224,16 +225,6 @@ the fixture it is pinned against lives in this repository.
 
 - The current task-attached launch asserts equality with the compiler's trusted instructions and semantic digest for the same admitted seat. Workspace-sensitive capsule identity is asserted by a separate free-agent test; it is not a spawn-launch workspace-agreement assertion.  Historical former note: "The spawn side's agreement with its own capsule about the workspace." The former spawn-workspace assertion is historical; the current module has no such test case. [23]
 
-
-
-
-
-
-
-
-
-
-
 - The three governed-artifact rows registering this module as a consumer.
 
 - The three governed-artifact rows registering this module as a consumer.
@@ -242,12 +233,5 @@ the fixture it is pinned against lives in this repository.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1064-1064 - the bytes it recorded now occur 91 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1885-1885 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:402-402 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:760-760 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
-
 - The lane row D9's fail-closed loader requires for every new test module. Anchor: "mcp/tests/test_capsule_launch_wiring.py" Anchor: "mcp/tests/test_capsule_launch_wiring.py" [15]
-
-
-
-
 - The three governed-artifact rows registering this module as a consumer, beginning with the _user_settings_guard.py row. The `curator_coherence_test_support.py` row registers `test_capsule_launch_wiring.py` as a consumer. The `fixtures/repository_profiles/node/package-lock.json` row registers `test_capsule_launch_wiring.py` as a consumer. [21]

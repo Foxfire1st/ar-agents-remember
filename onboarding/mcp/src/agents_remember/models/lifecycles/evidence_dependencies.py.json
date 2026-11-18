@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
-        "content": "sha256:4ebc3a89d0db8236a5e514dd8b929911f4700ef533acb0a50a91edde8f779e67",
+        "blob": "ff093c7ab79524984336594e05838618b6205491",
+        "content": "sha256:6f4d437024b9c8a18bb420b18bf7378f17994182fb64aa7d069b89ca5e570269",
         "locator": {
           "kind": "file"
         }
@@ -18,6 +18,24 @@
       },
       "rationale": "Holds MAX_EVIDENCE_DEPENDENCIES derived from the model bounds with the stating comment.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ff093c7ab79524984336594e05838618b6205491",
+        "content": "sha256:2f7e86ce4a345257854385bcf365ffdb5763947d2e5cb2ac1e70a998d7b46854",
+        "locator": {
+          "kind": "symbol",
+          "name": "MAX_EVIDENCE_DEPENDENCIES"
+        }
+      },
+      "id": "RLZ-F8TB0P",
+      "invariant": "INV-8XJF7R",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 5",
+        "leaf": "261112-BUG-L9"
+      },
+      "rationale": "The existing product capacity includes exactly the two additional measured identities.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "blob": "ff093c7ab79524984336594e05838618b6205491",
             "content": "sha256:0c38c0ed7c6d897b122d6df1b6c57ffefa01d5623b3c300023adcbe647c9acb7",
             "locator": {
               "kind": "symbol",
@@ -37,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "blob": "ff093c7ab79524984336594e05838618b6205491",
             "content": "sha256:91d5d38c7dfe98df935839ac5ec8ffa60aa6860e9222a315a5d9bdaaa47c3cba",
             "locator": {
               "kind": "symbol",
@@ -48,7 +66,7 @@
         },
         {
           "anchor": {
-            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "blob": "ff093c7ab79524984336594e05838618b6205491",
             "content": "sha256:ed923bfca34ced297e3b8070019c32b2d8bb71829ef8886708656363e02eb369",
             "locator": {
               "end": 50,
@@ -60,12 +78,12 @@
         },
         {
           "anchor": {
-            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "blob": "ff093c7ab79524984336594e05838618b6205491",
             "content": "sha256:5ed2fc4181087a160f31eaf80c2695c71aef44c113995c55fd347e5292a74d59",
             "locator": {
-              "end": 240,
+              "end": 241,
               "kind": "line_range",
-              "start": 170
+              "start": 171
             }
           },
           "kind": "code"
@@ -77,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
             "content": "sha256:4676069cc230f2d693f3d2151b6f44515a5fb8acf09f1c4c70fd9aa076319157",
             "locator": {
               "kind": "symbol",
@@ -89,7 +107,7 @@
         },
         {
           "anchor": {
-            "blob": "9b06809a50c0177ed9f11e258232f95ce0fe5679",
+            "blob": "c45550cd0f72a0dadab2cb947e05a6f6ce830b6e",
             "content": "sha256:d7247170560d289489c2f59175a79451f8a910ea4c72fa8374b72899f4cd8743",
             "locator": {
               "kind": "symbol",
@@ -102,7 +120,7 @@
       ]
     },
     "3": {
-      "note": "The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records.",
+      "note": "The closeout door binds the code tree, an optional memory tree, topology, intent and review/memory/admission/scheduling provenance.",
       "targets": [
         {
           "anchor": {
@@ -131,7 +149,7 @@
       ]
     },
     "4": {
-      "note": "Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input.",
+      "note": "Lifecycle operations bind the admitted candidate, gate policy and normalized input; closeout and direct landing also bind code tree, task intent and admitted door.",
       "targets": [
         {
           "anchor": {
@@ -204,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "blob": "ff093c7ab79524984336594e05838618b6205491",
             "content": "sha256:2f7e86ce4a345257854385bcf365ffdb5763947d2e5cb2ac1e70a998d7b46854",
             "locator": {
               "kind": "symbol",

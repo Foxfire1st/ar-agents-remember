@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
+    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
     "role": "curator",
-    "statement": "The page holds: the catalogue change adds test cases to the lanes and to the lifecycle table, and the design page's evidence classes, cadence and source versioning are unchanged by that.",
-    "task": "261112-BUG-L7",
+    "statement": "The examined evidence-system clauses remain consistent with seven accepting lanes and catalog-owned metadata after four test-module registrations and twelve consumer links were added.",
+    "task": "261112-BUG-L9",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
+      "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
+      "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

@@ -1,13 +1,31 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "70eba217c5aa6982ebdb9302ca2e1e9cca4a9077",
+        "content": "sha256:d6b10a0f050153ef0c38cb142b05822e040a128e239eb8c69993864f1b42b232",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QKB9HT",
+      "invariant": "INV-NDGJ3M",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 6",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Independent audience, link and pointer checks protect current delivery while the kept historical constants remain unchanged.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Role pointer actions are pairs of reference path and action prefix.",
       "targets": [
         {
           "anchor": {
-            "blob": "8436d019e640029ba082d06a115d95ee2fc756b3",
+            "blob": "70eba217c5aa6982ebdb9302ca2e1e9cca4a9077",
             "content": "sha256:9bf5a63fb945c740e2f23e5e447be5cab836b62c71950b5ce99a76ce14fc424b",
             "locator": {
               "kind": "symbol",
@@ -19,14 +37,16 @@
       ]
     },
     "2": {
-      "note": "`D656_OPERATION_SHA256`, and the stage table beside it, carry SHA-256 pins of each operation source and each per-role compiled stage.",
+      "note": "D656_OPERATION_SHA256 and D656_STAGE_SHA256 retain historical operation and stage hashes.",
       "targets": [
         {
           "anchor": {
-            "blob": "8436d019e640029ba082d06a115d95ee2fc756b3",
-            "content": "sha256:af2c2d12d612f65a06599f921c9d003378bdef7be2de24c7891a22143a8ef906",
+            "blob": "70eba217c5aa6982ebdb9302ca2e1e9cca4a9077",
+            "content": "sha256:72d7ec27a9a28fe3f7a30cb7b96a085e26a83e1e4de498fae932c749753b0481",
             "locator": {
-              "kind": "file"
+              "end": 388,
+              "kind": "line_range",
+              "start": 343
             }
           },
           "kind": "code"
@@ -38,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8436d019e640029ba082d06a115d95ee2fc756b3",
+            "blob": "70eba217c5aa6982ebdb9302ca2e1e9cca4a9077",
             "content": "sha256:6213f6a1ca7c3cfc20bec23f4af05f3c3b5041f7e6502b85778cf54f767c90e7",
             "locator": {
               "kind": "symbol",
@@ -54,8 +74,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8436d019e640029ba082d06a115d95ee2fc756b3",
-            "content": "sha256:af2c2d12d612f65a06599f921c9d003378bdef7be2de24c7891a22143a8ef906",
+            "blob": "70eba217c5aa6982ebdb9302ca2e1e9cca4a9077",
+            "content": "sha256:d6b10a0f050153ef0c38cb142b05822e040a128e239eb8c69993864f1b42b232",
             "locator": {
               "kind": "file"
             }
@@ -69,8 +89,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8436d019e640029ba082d06a115d95ee2fc756b3",
-            "content": "sha256:af2c2d12d612f65a06599f921c9d003378bdef7be2de24c7891a22143a8ef906",
+            "blob": "70eba217c5aa6982ebdb9302ca2e1e9cca4a9077",
+            "content": "sha256:d6b10a0f050153ef0c38cb142b05822e040a128e239eb8c69993864f1b42b232",
             "locator": {
               "kind": "file"
             }

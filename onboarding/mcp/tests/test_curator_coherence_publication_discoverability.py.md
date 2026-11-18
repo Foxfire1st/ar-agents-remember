@@ -23,17 +23,17 @@ This module originated in the L23 split and retains publication discoverability 
 ### Logic
 
 **The authority is one declaration.** `PUBLICATION_MEMBERS`
-(`mcp/src/agents_remember/models/lifecycles/curator_coherence.py:348-358`) is a tuple of nine
-`PublicationMember` records (`:331-342`) in the request model's own field order, carrying the
+(`mcp/src/agents_remember/models/lifecycles/curator_coherence.py:366-376`) is a tuple of nine
+`PublicationMember` records (`:349-360`) in the request model's own field order, carrying the
 `caller_supplied` flag on the first two. The validator refuses on it, `publication_refusal`
-(`:394-418`) names what is missing from it, and `publication_input_statement` (`:427-456`) is the
+(`:412-436`) names what is missing from it, and `publication_input_statement` (`:445-474`) is the
 text `prepare` renders — so a member added to the declaration needs no second edit anywhere, which
 is what one case measures rather than asserts.
 
 **`_PUBLICATION_INPUT_NAMES` (`:55-65`) and `_MEMBER_VALUES` (`:67-80`) are the module's own
 mirrors** of the declaration and of a request carrying every member. `_publication_request` (`:92-95`)
 composes the full request before overrides, `_refusal_message` (`:98-101`) returns
-`errors()["msg"]` from `CuratorCoherenceRequest.model_validate`, and `_missing_detail` (`:104-108`)
+`errors()[0]["msg"]` from `CuratorCoherenceRequest.model_validate`, and `_missing_detail` (`:104-108`)
 strips the shipped opening sentence — asserted present first, so a refusal that dropped it fails here
 rather than silently matching. The docstring on the first case records why the assertion reads the
 detail rather than whole-message substrings: the shipped opening sentence contains "caller" as prose
@@ -47,7 +47,7 @@ The eight source test definitions yield eighteen statically enumerated cases: si
 | `test_publish_refusal_names_the_one_missing_publication_member` (`:150-167`, 9 items) | each member omitted **alone** is named, and the two caller-supplied ones carry the extra sentence *"… is a caller-supplied delivery identity prepare does not derive -- supply it in the request."* |
 | `test_publish_refusal_without_any_member_names_all_nine_in_declaration_order` (`:170-180`) | all nine omitted: the detail is the declaration order plus the two-member callout — the case that fails if the order drifts |
 | `test_publish_with_every_publication_member_validates` (`:183-207`) | the positive control. Asserts the declaration equals the model's own field order (`declared == _PUBLICATION_INPUT_NAMES == model_order`) with the content members named from the module's own constants, so a field added to the model that is neither declared nor named in the exclusion set fails here |
-| `test_prepare_states_the_complete_publication_input_set` (`:210-223`) | the real `_prepare` text: the judgments phrase, all nine names in order, the delivery-identity callout, and `semanticRequirementRevision`/`deliveryAttempt` echoed as `None` |
+| `test_prepare_states_the_complete_publication_input_set` (`:210-223`) | the real `_prepare` text: the judgments phrase, all nine names in order, the delivery-identity callout, and `payload.get("semanticRequirementRevision")` and `payload.get("deliveryAttempt")` equal to `None` |
 | `test_a_member_added_to_the_declaration_reaches_both_messages` (`:226-246`) | the declaration is extended and a scratch request model declares the matching field; the new member reaches **both** the refusal and the `prepare` text with neither text edited |
 | `test_non_publish_actions_name_the_publication_member_they_received` (`:249-262`, 3 items) | `status`/`prepare`/`validate` refuse a publication-only field **by name** |
 | `test_non_publish_refusal_names_every_supplied_field_in_model_order` (`:265-279`) | several supplied fields are named in **model order**, `judgments` included |
@@ -63,8 +63,8 @@ case asserts is the one a caller receives — a change to the text is measured, 
 ### Conventions
 
 The module imports the production declaration rather than a copy (`PUBLICATION_MEMBERS`,
-`PublicationMember`, `publication_input_statement`, `JUDGMENTS_MEMBER`, `JUDGMENTS_FILE_MEMBER`, `REVIEW_ASSESSMENTS_MEMBER`,
-`CuratorCoherenceRequest`), and the three content-member names are used as constants so the exclusion
+`PublicationMember`, `publication_input_statement`, `JUDGMENTS_MEMBER`, `REVIEW_ASSESSMENTS_MEMBER`,
+`CuratorCoherenceRequest`), and reads `JUDGMENTS_FILE_MEMBER` through the imported `coherence_models` module. The three content-member names are used as constants so the exclusion
 set and the shape validator that refuses them cannot drift apart. `_CONTRACT_PATH` (`:52`) is a real
 enclosure-shaped path, and `_REFUSAL_PREFIX` (`:53`) is asserted before being stripped. The module
 carries **no `pytestmark`**; its current lane declaration is `unit-regression` at
@@ -73,8 +73,8 @@ registration at its earlier source epoch; this is not a claim that the current r
 was appended at the end of the catalog. Its direct imports include `agents_remember`
 models, `pydantic` and `pytest`; direct imports do not determine the complete governed
 consumer population. The merged `mcp/tests/evidence-lifecycle.toml` declares this module
-on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py` at line 236
-and `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2588.
+on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py` at line 237
+and `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2598.
 These are catalog declarations, not fresh collection or execution evidence.
 
 ### Invariants And Boundaries
@@ -131,7 +131,7 @@ No configured domain documentation could be checked.
 - The positive control: the declaration is the model's own field order, with the content members named from the module's constants. [11]
 
 
-- **The `prepare` case: all nine names in order, the judgments phrase, and the two identities echoed as not derived.** [12]
+
 
 - **The added-member case: one declaration edit reaches the refusal and the text, with neither text touched.** [13]
 - The non-publish refusals, by name and in model order, and the freeze branch's preserved message. [14]
@@ -144,7 +144,9 @@ repository's own model and publication route over a stubbed observation.
 
 No meaningful cross-repo references found.
 
+### Repo-Internal References (continued)
 
 
+- **The `prepare` case: all nine names in order, the judgments phrase, and `.get` returning `None` for both caller-supplied delivery identities.** [12]
 
 - The lane manifest declares mcp/tests/test_curator_coherence_publication_discoverability.py in unit-regression. Membership is selection, not invocation. [16]

@@ -14,24 +14,24 @@ the filesystem**, so the manifest is inspectable, diffable, and testable on its 
 
 ### Logic
 
-The schema constant is cit:([`COMPOSITION_MANIFEST_SCHEMA`], mcp/src/agents_remember/models/role_capsules/manifest.py:37-37) (`ar-role-capsule-composition/v1`), alongside
+The schema constant is cit:([`COMPOSITION_MANIFEST_SCHEMA`], mcp/src/agents_remember/models/role_capsules/manifest.py:41-41) (`ar-role-capsule-composition/v1`), alongside
 three refusal codes specific to parsing.
 
-cit:([`parse_composition_manifest`], mcp/src/agents_remember/models/role_capsules/manifest.py:168-216) is the single entry point and drives a set of
-per-section parsers: cit:([`_parse_core`], mcp/src/agents_remember/models/role_capsules/manifest.py:252-267), cit:([`_parse_operations`], mcp/src/agents_remember/models/role_capsules/manifest.py:268-302),
-cit:([`_parse_roles`], mcp/src/agents_remember/models/role_capsules/manifest.py:303-328) with cit:([`_parse_one_role`], mcp/src/agents_remember/models/role_capsules/manifest.py:329-367), cit:([`_parse_role_order`], mcp/src/agents_remember/models/role_capsules/manifest.py:368-380),
-cit:([`_parse_launcher`], mcp/src/agents_remember/models/role_capsules/manifest.py:381-419), cit:([`_parse_specializations`], mcp/src/agents_remember/models/role_capsules/manifest.py:420-454), and cit:([`_parse_skills`], mcp/src/agents_remember/models/role_capsules/manifest.py:455-478). From the
-parsed document the value types are built: cit:([`CapsuleCoreEntry`], mcp/src/agents_remember/models/role_capsules/manifest.py:44-52),
-cit:([`CapsuleOperationEntry`], mcp/src/agents_remember/models/role_capsules/manifest.py:53-62), cit:([`CapsuleRoleEntry`], mcp/src/agents_remember/models/role_capsules/manifest.py:63-82), cit:([`CapsuleLauncherEntry`], mcp/src/agents_remember/models/role_capsules/manifest.py:83-93),
-cit:([`CapsuleSkillEntry`], mcp/src/agents_remember/models/role_capsules/manifest.py:94-110), cit:([`CapsuleSpecializationEntry`], mcp/src/agents_remember/models/role_capsules/manifest.py:111-119), and the aggregate
-cit:([`CapsuleCompositionManifest`], mcp/src/agents_remember/models/role_capsules/manifest.py:120-167) whose lookups are cit:([`skill_entry`], mcp/src/agents_remember/models/role_capsules/manifest.py:138-152), cit:([`composing_roots`], mcp/src/agents_remember/models/role_capsules/manifest.py:153-158), and the role/operation accessors beside them.
+cit:([`parse_composition_manifest`], mcp/src/agents_remember/models/role_capsules/manifest.py:174-221) is the single entry point and drives a set of
+per-section parsers: cit:([`_parse_core`], mcp/src/agents_remember/models/role_capsules/manifest.py:259-272), cit:([`_parse_operations`], mcp/src/agents_remember/models/role_capsules/manifest.py:275-308),
+cit:([`_parse_roles`], mcp/src/agents_remember/models/role_capsules/manifest.py:311-334) with cit:([`_parse_one_role`], mcp/src/agents_remember/models/role_capsules/manifest.py:337-373), cit:([`_parse_role_order`], mcp/src/agents_remember/models/role_capsules/manifest.py:376-386),
+cit:([`_parse_launcher`], mcp/src/agents_remember/models/role_capsules/manifest.py:389-425), cit:([`_parse_specializations`], mcp/src/agents_remember/models/role_capsules/manifest.py:428-460), and cit:([`_parse_skills`], mcp/src/agents_remember/models/role_capsules/manifest.py:463-484). From the
+parsed document the value types are built: cit:([`CapsuleCoreEntry`], mcp/src/agents_remember/models/role_capsules/manifest.py:48-53),
+cit:([`CapsuleOperationEntry`], mcp/src/agents_remember/models/role_capsules/manifest.py:57-64), cit:([`CapsuleRoleEntry`], mcp/src/agents_remember/models/role_capsules/manifest.py:68-84), cit:([`CapsuleLauncherEntry`], mcp/src/agents_remember/models/role_capsules/manifest.py:88-95),
+cit:([`CapsuleSkillEntry`], mcp/src/agents_remember/models/role_capsules/manifest.py:99-112), cit:([`CapsuleSpecializationEntry`], mcp/src/agents_remember/models/role_capsules/manifest.py:116-121), and the aggregate
+cit:([`CapsuleCompositionManifest`], mcp/src/agents_remember/models/role_capsules/manifest.py:125-171) whose lookups are cit:([`skill_entry`], mcp/src/agents_remember/models/role_capsules/manifest.py:144-157), cit:([`composing_roots`], mcp/src/agents_remember/models/role_capsules/manifest.py:159-171).
 
 **The declared vocabulary is authoritative over the manifest, not the other way round.** The
 parser is handed the frozen role and operation sets and refuses a manifest that disagrees, so
 a manifest edit cannot quietly mint a role or operation outside that declared vocabulary. Three structural rules are
-enforced on top of that: cit:([`_require_one_path_serves_one_identity`], mcp/src/agents_remember/models/role_capsules/manifest.py:513-553) refuses routing two identities
-at one file, cit:([`_require_operation_applicability_agrees`], mcp/src/agents_remember/models/role_capsules/manifest.py:554-601) refuses an applicability statement that
-contradicts itself, and cit:([`_require_role_skills_are_declared`], mcp/src/agents_remember/models/role_capsules/manifest.py:479-508) refuses a role whose declared skill the
+enforced on top of that: cit:([`_require_one_path_serves_one_identity`], mcp/src/agents_remember/models/role_capsules/manifest.py:521-559) refuses routing two identities
+at one file, cit:([`_require_operation_applicability_agrees`], mcp/src/agents_remember/models/role_capsules/manifest.py:562-593) refuses an applicability statement that
+contradicts itself, and cit:([`_require_role_skills_are_declared`], mcp/src/agents_remember/models/role_capsules/manifest.py:487-514) refuses a role whose declared skill the
 manifest cannot resolve.
 
 The manifest is authored metadata and contains **no instruction prose of its own** — the
@@ -54,20 +54,28 @@ while a skill reference is always emitted for a declared skill and instead must 
 admitted root file (see `_require_role_skills_are_declared`, and `_require_declared_skills_present`
 in `source_set.py`).
 
+Earlier card account retained from memory base `81cfe4a89f5ffb222bd09640410d268d3fbef254`, lines 66–67:
+
+> - The compiler vocabulary is closed at ten roles and nine operations, including Bootstrap. A manifest that
+>   disagrees fails compilation instead of extending the vocabulary. These compiler populations are not a claim that ten native task roles can be launched.
+
+The current compiler declares eight roles and nine operations; the quoted base account does not define the current vocabulary.
+
 ### Conventions
 
 Edit the canonical `skills/l-01-agent-lifecycles/composition-manifest.json` and let
-`scripts/sync-skills.py` propagate it; never hand-edit a generated copy. A new role, operation,
+`mcp/.venv/bin/python scripts/renew-instructions.py` renew facts and propagate the declared copies through the `scripts/sync-skills.py` projection owner; never hand-edit a generated copy. A new role, operation,
 or source path that the parser rejects is meant to be rejected.
 
 ### Invariants And Boundaries
 
 - This module parses bytes; it never opens a file, resolves a root, or reads a source.
-- The compiler vocabulary is closed at ten roles and nine operations, including Bootstrap. A manifest that
-  disagrees fails compilation instead of extending the vocabulary. These compiler populations are not a claim that ten native task roles can be launched.
+- The compiler vocabulary is closed at eight roles and nine operations, including Bootstrap. A manifest that
+  disagrees fails compilation instead of extending the vocabulary. Compiler vocabulary does not establish which native task roles can be launched.
 - Exactly one source per instruction. Two identities routed at one path is a defect, not a
   deduplication opportunity.
-- An entry naming a source that does not exist is an error, not a skip.
+- Filesystem source existence is checked by admission/compilation and the shipped-source test,
+  not by this byte parser. Missing required source bytes refuse rather than being skipped.
 - A declared tool identity is a **request**. Nothing in this module or its parse result grants
   a capability; the policy snapshot in `CapsuleToolPolicy` is what permits.
 - **The two declared channels are narrowed differently, and the difference is a contract, not an
@@ -84,7 +92,7 @@ None recorded.
 
 ## Current Contract
 
-CapsuleOperationEntry has audience="all" as a direct-construction default, but authored operation parsing now requires a nonblank audience field. Actual all/sections mode and marker validation belong to audiences.py during composition, not to this parser. CapsuleCompositionManifest carries parsed detail_references, default empty for direct construction; parse_composition_manifest obtains them from parse_detail_declarations. The frozen compiler vocabulary contains ten roles and nine operations, including Bootstrap; it is not the native dispatched-task-role roster. The earlier nine/eight numeric account is superseded, not a newly extended vocabulary. One-source-per-instruction, operation applicability and declared-skill checks remain unchanged. Merely listing ordinary references does not make a launch attachment.
+CapsuleOperationEntry has audience="all" as a direct-construction default, but authored operation parsing now requires a nonblank audience field. Actual all/sections mode and marker validation belong to audiences.py during composition, not to this parser. CapsuleCompositionManifest carries parsed detail_references, default empty for direct construction; parse_composition_manifest obtains them from parse_detail_declarations. The frozen compiler vocabulary contains eight roles and nine operations, including Bootstrap; it is not the native dispatched-task-role roster.  One-source-per-instruction, operation applicability and declared-skill checks remain unchanged. Merely listing ordinary references does not make a launch attachment.
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
 
@@ -95,7 +103,7 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [11]
 
-- Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [12]
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [13]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [14]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [15]
@@ -130,3 +138,9 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract is consumed by this parser.
 
 No meaningful cross-repo references found.
+
+### Repo-Internal References (continued)
+
+### Repo-Internal References (renewed)
+
+- Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. Anchor: L114–L129 [12]

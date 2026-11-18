@@ -9,7 +9,7 @@
 Stage-audience selection preserves role boundaries in compiled capsules: a compiler delivers the common part plus
 the selected role's stage parts and nothing else, a declared step's detail bytes travel as separate frozen
 references beside the handover file, and the Curator receives its ruled steps without the Manager's or another
-role's material. The real operation audiences are checked against pinned bytes, and a repairing role stops after
+role's material. The real operation audiences are checked against independently selected source sections, and a repairing role stops after
 three repairs of the same check or finding.
 
 ## Code Commentary
@@ -19,10 +19,9 @@ three repairs of the same check or finding.
 `_compile_corpus_pair()` compiles a role against the corpus and `_delivered_curation_for_d301()` composes what the
 Curator's capsule actually delivers at launch. `_assert_bound_action()` requires a read action to link to its detail
 exactly once, and `_assert_detail_owner()` / `_assert_owner_clauses()` prove a clause lives in the detail or section
-that owns it by failing on a mutant without it. The pins and named clauses come from the test-support modules
-`capsule_audience_fixtures` (`D656_OPERATION_SHA256`, `D656_STAGE_SHA256`, `R125_OPERATION_ROLES`, the role and
-operation pointer actions, `CURATOR_SERVING_STAGE_BOUNDARY`) and `capsule_audience_v13_fixtures` (the `V13_*` digest
-tables with `inverse_v13_short_rules()` and `inverse_v13_paths()`).
+that owns it by failing on a mutant without it. The named clauses and action pointers come from `capsule_audience_fixtures`.
+The independent projection helpers in `capsule_audience_structure` select addressed sections,
+find a foreign-role passage for a negative control and count source detail links.
 
 - **Audience selection.** `test_compiler_delivers_only_common_and_selected_role_stage_parts` keeps the compiler to
   the common part plus the selected stage.
@@ -49,17 +48,17 @@ tables with `inverse_v13_short_rules()` and `inverse_v13_paths()`).
   Orientation as its owner.
 - **Lanes.** `test_memory_review_instructions_select_the_independent_recorded_lane` selects the recorded memory
   review lane.
-- **Pinned audiences.** `test_real_operation_audiences_preserve_pinned_common_and_only_addressed_paragraphs` and
-  `test_operation_audience_markings_preserve_pinned_bytes_and_immutable_closeout` pin the current bytes with the
-  `V13_*` tables, require that undoing only the admitted tool-name, catalog-drop and short-rule edits and the
-  pinned reference-path moves reproduces the `D656_*` digests, and keep the immutable closeout text intact.
+- **Audience structure.** `test_real_operation_audiences_deliver_only_common_and_addressed_sections`
+  checks every declared role/operation pair against an independent source-section projection, rejects
+  leaked audience markers and rejects an injected foreign-role passage.
+  `test_operation_audience_modes_match_their_declared_source_structure` keeps authorized closeout
+  at `audience: all` and `operations/closeout.md`; other operations use sections and a common marker.
 - **Repair limit.** `test_repairing_roles_stop_after_three_repairs_of_the_same_check_or_finding` stops a role
   after three repairs of the same subject.
 
 ### Conventions
 
-A case compiles the real corpus and compares delivered bytes, so an extra paragraph that leaks into another
-role's capsule fails rather than merely being unmentioned.
+The module combines synthetic audience-selection fixtures with real-corpus cases. The real-operation test compares each declared role/operation pair with an independent source-section projection and rejects an injected foreign-role passage.
 
 ### Invariants And Boundaries
 
@@ -67,13 +66,13 @@ role's capsule fails rather than merely being unmentioned.
 - A step's detail is an immutable frozen file, not a re-read of the source at send time.
 
 
-The pinned Architect planning paragraph includes the single developer question “go, or review first?”, disclosure that the upfront review has a planned comparison with no task workspace, first-Explain environment creation, and the `intentReview` answer. The Manager paragraphs pin that `intent-review-open` waits for the Architect's go and is not retried. Their planning/coordination seals move with those exact admitted sentences.
+The current Architect planning paragraph includes the single developer question “go, or review first?”, disclosure that the upfront review has a planned comparison with no task workspace, first-Explain environment creation, and the `intentReview` answer. The current Manager coordination paragraph says that `intent-review-open` waits for the Architect's go and is not retried.
 
-Complete V13 operation and per-recipient stage digest literals pin the current audience projections, including closeout bytes, and the inverse transforms tie them back to the D656 digests. Detail checks cover all declared role/operation pairs and require every declared read action to bind to exactly one link to its emitted detail. Writer syntax and report semantics live in the serving-build and publication-report details, separate from the serving-build authority that Orientation owns. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
+Detail checks cover all declared role/operation pairs and require every declared read action to bind to exactly one link to its emitted detail. Writer syntax and report semantics live in the serving-build and publication-report details, separate from the serving-build authority that Orientation owns. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
 ## Evidence
 - The compiler delivers only the common and selected role stage parts. [1]
-- Declared step detail bytes travel as separate references. [2]
+
 - The handover writes immutable source details beside its file. [3]
 - The launch composition names frozen details by their request paths. [4]
 
@@ -93,7 +92,7 @@ Complete V13 operation and per-recipient stage digest literals pin the current a
 
 - Delivered authoring resolves the actual capsule routing. [13]
 
-- The hand-off file is read for the first review and reused for repairs. [14]
+
 
 - Leaf role texts mark only their own completed steps. [17]
 
@@ -111,18 +110,16 @@ Complete V13 operation and per-recipient stage digest literals pin the current a
 
 - Nested Curator details are read through their launch artifacts: the prose-and-history detail binds card history to the card-formats detail, the knowledge-ingest detail binds a deciding or writing command-line run to the serving-build detail, and the serving-build detail binds such a run to `server_info.servingBuild` and names Orientation as the authority owner. [16]
 
+- The hand-off file is read for the first review and reused for repairs. [14]
 
-- For every manifest-declared role/operation pair, the real-operation audience test compiles the addressed capsule, rejects leaked audience markers and compares that operation block's content hash with its `V13_STAGE_SHA256` entry; undoing the admitted short-rule edits must match `V13_PRE_SHORT_STAGE_SHA256` and then undoing the pinned path moves must match `D656_STAGE_SHA256`; its final census must cover every declared pair. [20]
+- Declared step detail bytes travel as separate references. [2]
 
+- For every manifest-declared role/operation pair, the real-operation audience test compiles the addressed capsule, rejects leaked audience markers and compares its operation block with an independent source-section projection. An injected foreign-role passage fails, and the final census covers every declared pair. [20]
 
-- The operation-source test compares raw source bytes against `V13_OPERATION_SHA256`, the short-rule-restored bytes against `V13_PRE_SHORT_OPERATION_SHA256` and the path-restored bytes against `D656_OPERATION_SHA256`. authorized-closeout must keep audience=all and operations/closeout.md; every other operation must use sections and begin with the common audience marker. [21]
+- The operation-source test keeps authorized closeout at audience=all and operations/closeout.md; every other operation uses sections and begins with the common audience marker. [21]
 
-- The current Reviewer-addressed review paragraph says a clean sync opens no new freeze or round, sends shared-path/test-failure repairs for one look, and returns a freeze whose finding entries are missing without counting a round. The real-operation audience test binds each addressed review block to its stored stage seal. [23]
+- The current Reviewer-addressed review paragraph says a clean sync opens no new freeze or round, sends shared-path/test-failure repairs for one look, and returns a freeze whose finding entries are missing without counting a round. [23]
 
+- The current planning text asks the developer once "go, or review first?", discloses planned comparison without a task workspace and explainer-workspace creation on first Explain, and records the intentReview answer. Current coordination says intent-review-open waits for Architect go and is not retried. [25]
 
-- `V13_OPERATION_SHA256` records the current implementation and review source seals alongside the other operations, and the operation-source test compares actual source bytes with those recorded values. This describes stored assertions, not a new approval or repinning event. [24]
-
-- The current planning text asks the developer once "go, or review first?", discloses planned comparison without a task workspace and explainer-workspace creation on first Explain, and records the intentReview answer. Current coordination says intent-review-open waits for Architect go and is not retried. The audience tests retain separate source and addressed-stage seal tables for those operation texts. [25]
-
-
-- Complete V13 operation and per-recipient stage digest literals pin the current audience projections, including closeout bytes, and the inverse transforms tie them back to the D656 digests. Detail checks cover all declared role/operation pairs and require every declared read action to bind to exactly one link to its emitted detail. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [27]
+- Detail checks cover all declared role/operation pairs and require every declared read action to bind to exactly one link to its emitted detail. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [27]

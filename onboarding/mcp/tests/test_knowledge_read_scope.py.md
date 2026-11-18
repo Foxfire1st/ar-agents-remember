@@ -37,9 +37,11 @@ The nodes group by the property each protects, and the grouping is the useful re
 **The packet's stopping rule** (`:140`–`:389`) — the six source test definitions measure the `P/I1/F/J1/G/K1` graph and
 its two subtleties: path and exact invariant-revision seeds close over directly containing families; a path seed returns the sibling's realizations and **advertises** the unreached family;
 an exact family revision seed stops after its own members; selecting the advertised family **explicitly** is
-what reaches the further realizations; the invariant seed and the family seed enumerate the same claims and
-locations; and a path seed and the exact invariant revision seed close over the same records. One node
-(`:494`–`:525`) measures that a revision reached through two families appears **once** with both membership rows.
+what reaches the further realizations. The exact invariant seed selects seven claims, six locations and
+seventeen items; the main-family seed selects six claims, five locations and thirteen items. Only the
+invariant selection includes the auxiliary member reached through its other directly containing family.
+A path seed and the exact invariant revision seed close over the same records. The node at
+`:494`–`:525` selects the overlapping family's two member revisions once each, with two membership rows.
 
 **Revision grouping and the absent current-revision pointer** (`:395`–`:453`) — an identity seed returns
 the retained revision as its own group, and an exact revision seed selects only its named revision.
@@ -143,6 +145,8 @@ No domain documentation source is configured for this repository (`system/source
 
 No configured domain documentation could be checked.
 
+### Repo-Internal References (continued)
+
 - **The node the requirement's non-conformance example points at: a one-item page still advertises the second location, with the corrected counts.** [25]
 - **The completeness node that compares the walk against the mandatory set derived from recorded rows rather than against the implementation's own page manifest.** [26]
 
@@ -150,21 +154,7 @@ No configured domain documentation could be checked.
 
 - The packet's stopping-rule nodes, including the explicit `G` expansion that reaches K1. [28]
 
-- The two equivalence nodes (invariant versus family seed; path versus exact revision seed). [29]
-
-
-
-
-- The count-separation and multi-family-membership nodes. [31]
-
 - The truncation, too-small-budget, execution-bound and absence nodes. [32]
-
-
-
-
-
-
-
 
 > Retained earlier citation wording: - The support artifacts and contracts the evidence-lifecycle catalog declares this module a consumer of.
 
@@ -176,26 +166,20 @@ No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
 
-
-
-
-
-
-
-
-
-
-
 - The support artifacts and contracts the evidence-lifecycle catalog declares this module a consumer of.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1-4036 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f2b7c648f540efb9d64ceea22e11e651cb5cc914. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
-
-- The lane row this module occupies. Anchor: `test_knowledge_read_scope` Anchor: `test_knowledge_read_scope` [34]
+### Repo-Internal References (continued)
 
 - **The current ordering node checks lexical stored-identity keys and declared kind order; the former authored-label-disagreement fixture is historical.** Anchor: `test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label` [27]
 - `test_an_identity_seed_returns_the_retained_revision_as_its_own_group` supplies the current fixture or assertion described above. Anchor: `test_an_identity_seed_returns_the_retained_revision_as_its_own_group` [20]
 - The revision-grouping nodes. Anchor: `test_an_exact_revision_seed_selects_only_the_named_revision` `test_an_identity_seed_returns_the_retained_revision_as_its_own_group` [30]
 - The persisted-nothing and current file-isolation nodes; the old requested-namespace fixture is not current coverage. Anchor: `test_an_unregistered_path_reports_registration_absence_rather_than_an_empty_scope` `test_a_selector_naming_no_recorded_identity_is_told_that_the_selector_is_absent` `test_each_dataset_file_is_selected_from_its_own_rows` `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged` [33]
+
+
+- The invariant/main-family seed comparison pins their different claim/location totals; path and exact invariant revision seeds select the same records. [29]
+
+- The count-separation node and the overlapping family's two unique member revisions and membership rows. [31]
+
+- The lane row this module occupies. Anchor: `test_knowledge_read_scope` Anchor: `test_knowledge_read_scope` [34]

@@ -1,0 +1,124 @@
+{
+  "path": "mcp/tests/test_definition_scope.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+        "content": "sha256:b77c472b9d1cc851eca40ec99fc9f025ef96722d1d2467b541c68817af2685a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_copied_context_workers_share_one_parse_without_sharing_returned_containers"
+        }
+      },
+      "facet": "Copied worker contexts share parsing without sharing mutable returned containers.",
+      "id": "PRF-3PSG3H",
+      "invariant": "INV-F1J9BH",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 1",
+        "leaf": "261112-BUG-L9"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+        "content": "sha256:033d9da5a20b547e6c39a41ee9ecb779edb8370a6f39631af3fa1a4001d291c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_case_diagnostics_share_one_parse_and_ordinary_trees_are_not_retained"
+        }
+      },
+      "facet": "Repeated test-case lookup and diagnostics compute independent observations from one parsed test tree without retaining ordinary trees.",
+      "id": "PRF-A02NJ2",
+      "invariant": "INV-2NCG51",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 2",
+        "leaf": "261112-BUG-L9"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+        "content": "sha256:33e9c0cf792da68bb9cbb5595e6b16f8d661de2a3125c0dac5c9c945f2979e8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_distinct_path_content_and_grammar_each_have_one_parse"
+        }
+      },
+      "facet": "Distinct path, contents and grammar inputs each parse once per call.",
+      "id": "PRF-AATTF0",
+      "invariant": "INV-F1J9BH",
+      "origin": {
+        "handoffEntry": "BUG-R09@v3 rule 1",
+        "leaf": "261112-BUG-L9"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Path, contents and grammar all distinguish parse inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+            "content": "sha256:33e9c0cf792da68bb9cbb5595e6b16f8d661de2a3125c0dac5c9c945f2979e8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_distinct_path_content_and_grammar_each_have_one_parse"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Nested scopes detach returned containers and discard results on error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+            "content": "sha256:5072efa6a545d9562800e964134c5efb5d381e874815e9906f34d181ff829540",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nested_scope_owns_containers_and_error_exit_discards_results"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Test diagnostics share their parse without retaining ordinary trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+            "content": "sha256:033d9da5a20b547e6c39a41ee9ecb779edb8370a6f39631af3fa1a4001d291c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_case_diagnostics_share_one_parse_and_ordinary_trees_are_not_retained"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Copied contexts share work but return independent containers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba5b983bf1587417be94ecdb3735c9bd8e5eae60",
+            "content": "sha256:b77c472b9d1cc851eca40ec99fc9f025ef96722d1d2467b541c68817af2685a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_copied_context_workers_share_one_parse_without_sharing_returned_containers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

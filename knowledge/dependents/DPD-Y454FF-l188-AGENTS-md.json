@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b42c8d51a964d240cdda819287aab852aa00dfe3",
-    "commit": "81180617aed517835314526b8309d37d5be8b3b7",
+    "codeTree": "edc7edc63f5d05b34445dfe30d8e141ec5300efc",
+    "commit": "a2f0fced8896b92d31fd3f78351d01f5302be97e",
     "role": "curator",
-    "statement": "AGENTS.md now points task authoring, collaboration, closeout and knowledge use at existing l-01 files instead of the removed skills, and still describes the package-served skill copy correctly.",
-    "task": "260928-MIK-L84",
+    "statement": "The workspace instructions name the complete instruction-renewal command and canonical sources while the planner retains the existing declared skill-copy owner.",
+    "task": "261112-BUG-L8",
     "uncommitted": true
   },
   "document": "AGENTS.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+      "blob": "212f988e5638960b9061d674e63be12b27d324ab",
       "kind": "file",
       "path": "scripts/sync-skills.py"
     },
@@ -36,6 +36,16 @@
         "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
       },
       "kind": "anchor"
+    },
+    {
+      "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+      "kind": "file",
+      "path": "scripts/renew-instructions.py"
+    },
+    {
+      "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+      "kind": "file",
+      "path": "scripts/instruction_renewal/plan.py"
     }
   ]
 }

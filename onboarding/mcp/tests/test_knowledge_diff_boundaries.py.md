@@ -12,7 +12,7 @@ The sizes and catalog line addresses in the following original account are histo
 
 **The comparison's integration population: fifteen cases over a real committed Git pair, a real
 curated candidate database and the real application seam**, marked `pytestmark = pytest.mark.integration`
-and registered in the **integration** lane at `mcp/tests/test-evidence-lanes.toml:696-696`. It is the largest
+and registered in the **integration** lane at `mcp/tests/test-evidence-lanes.toml`. It is the largest
 new test module of the leaf at **840 lines** and still under the 1 200-line rail.
 
 The module owns the parts of the contract a hermetic unit case cannot honestly measure: what two **real**
@@ -62,7 +62,7 @@ the serialized response's **field names and values** for nine verdict words and 
 control, so the absence it proves is an absence in the payload a client actually receives — not merely in
 the model's declared attributes.
 
-**The three local helpers are deliberate.** `_substitute`/`_substituting` rewrite one field of one
+**The local helpers are deliberate.** `_substitute`/`_substituting` rewrite one field of one
 already-built request so a case measures the *comparison's* answer to a mutated input rather than a
 different request; `selected_scopes`/`_rewording` build the two `SelectedScope`s and a reworded variant
 directly from the fixture, for the case that compares at the storage layer rather than through the seam.
@@ -139,6 +139,8 @@ repository source and package-local evidence only.
 No configured domain documentation could be checked.
 
 
+### Repo-Internal References (continued)
+
 - The integration marker, the fixture, the request builder and the public-seam driver. [33]
 
 
@@ -175,20 +177,7 @@ No configured domain documentation could be checked.
 
 - run_diff omits a probe override, and the application defaults to git_tree_difference_probe; this source-described route is not a fresh execution count. [49]
 
-
-
-
-
-
-
-
-
 > Retained earlier citation wording: - The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence.
-
-
-
-
-
 
 ### Cross-Repo References
 
@@ -197,12 +186,6 @@ under `tmp_path`. No configured remote, protected branch or sibling repository i
 
 No configured cross-repository evidence is claimed.
 
-
-
-
-
-
-
 - The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence.
 
 - The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence.
@@ -210,8 +193,5 @@ No configured cross-repository evidence is claimed.
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:353-353 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:801-801 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1203-1203 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2030-2030 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2741-2741 - the bytes it recorded now occur 92 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2784-2784 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:624-624 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1937-1937 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1981-1981 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2336-2336 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
-
-
 
 - The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence. [50]

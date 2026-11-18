@@ -12,9 +12,10 @@
 
 ### Logic
 
-- The current package map names `tree`, `build`, `projection`, `query` and `cache`; the older adapters/count account is no longer its inventory. `with_prose_companions` is public: nonexcluded onboarding Markdown and indexed record JSON companions ride as unparsed bytes for card/record comparison, never parsed JSON. The index remains derived-only and is never a write authority.
+- The package map names `tree`, `build`, `projection`, `query` and `cache`. `with_prose_companions` is public: nonexcluded onboarding Markdown and Markdown beside indexed record JSON ride as unparsed bytes for card/record comparison, never parsed JSON. The index remains derived-only and is never a write authority.
 
-- Public index surface includes prose companions without making prose an indexed model. [3]
+- The cache groups files by loaded build and memory-tree key; `open_cached_index` exposes read-only reuse of an existing matching file.
+
 - `__all__` re-exports the public names of those modules, so callers (`application/published_intent.py`, `mcp/tools/knowledge.py`, `cli/knowledge_index.py`) import from the package.
 
 ### Conventions
@@ -24,7 +25,6 @@
 ### Invariants And Boundaries
 
 - No knowledge writer writes the index, and the index is never merged: it is rebuilt from the tree.
-- Before MIK-R37 no production memory tree holds `knowledge/layout.json`, so the installed runtime's reads never reach this package.
 
 ### Todos
 
@@ -47,10 +47,8 @@ No configured live documentation source was available for this pass.
 The package statement and its exports.
 
 
-- The package map and the rule that no writer writes the index and it is never merged. [1]
 
 
-- The re-exported public surface. [2]
 
 
 ### Cross-Repo References
@@ -58,3 +56,7 @@ The package statement and its exports.
 No meaningful cross-repo references found: the index reads one memory tree, addressed explicitly by the caller, and nothing else.
 
 No cross-repo boundary is crossed by this file.
+
+- The package map and the rule that no writer writes the index and it is never merged. [1]
+- The re-exported public surface. [2]
+- Public index surface includes prose companions without making prose an indexed model. [3]

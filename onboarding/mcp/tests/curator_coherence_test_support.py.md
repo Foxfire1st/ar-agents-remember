@@ -34,7 +34,7 @@ Under CCR-R03@v1 the fixture attestation now stamps the exact code candidate tre
 (`capture_future_code_candidate`) and memory candidate tree (scratch-indexed `worktree_candidate_tree`
 over the memory worktree) and embeds the `memory-quality-attestation/v1` dependency declaration —
 so the fixture can only produce attestations whose declared inputs match the production currentness
-validator's expectations cit:([`write_curator_evidence`], mcp/tests/curator_coherence_test_support.py:105-202).
+validator's expectations cit:([`write_curator_attestation`], mcp/tests/curator_coherence_test_support.py:108-170).
 
 ### Conventions
 
@@ -71,14 +71,10 @@ No relevant external documentation is required for the fixture contract.
 The helper mirrors the production task-resolution and publication boundaries rather than
 reimplementing their authority logic.
 
-- The fixture writes a complete leaf/master/sprint lineage and returns the architect's exact sprint reference. [1]
-
-- The fixture authors structured source evidence and routes prepare/publish through the production action owner with exact CAS identities. [2]
-
-- Production resolves the exact leaf, master, and sprint and rejects missing topology. [3]
 
 
-- Production publication refuses a changed contract under the task lock before atomically replacing the authority. [4]
+
+
 - R03 attestation declaration builder used by the fixture. [5]
 
 ### Cross-Repo References
@@ -98,3 +94,8 @@ base, repository, or path checks.
 
 The fixture now captures the exact code/memory candidate trees and declares them in the
 attestation dependencies (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
+
+- The fixture writes a complete leaf/master/sprint lineage and returns the architect's exact sprint reference. [1]
+- The fixture authors structured source evidence and routes prepare/publish through the production action owner with exact CAS identities. [2]
+- Production requires the exact leaf and master, includes their commanding sprint when present, and rejects missing required topology. [3]
+- Production publication refuses a changed contract before atomically replacing the authority. [4]

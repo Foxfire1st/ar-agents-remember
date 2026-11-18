@@ -13,8 +13,8 @@ manifest routes for that seat and operation, and compiles through L2.
 
 Nothing is written. A refusal is a **value** carrying its own stable status, an operator-legible
 detail and a named remedy, rather than an exception the caller has to translate — and the binding
-resolved so far travels with the refusal, so an operator always sees which seat and which revision the
-operation was addressing.
+travels with later refusals once admission has established it. Earlier enclosure, repository or
+admitted-facts refusals can return without a binding.
 
 ## Code Commentary
 
@@ -22,7 +22,7 @@ Capsule compilation loads WorktreeContractReader and contract/error implementati
 
 ### Logic
 
-Four steps, each of which can only refuse, in `compile_task_capsule`:
+Four steps, each of which can return a refusal, in `compile_task_capsule`:
 
 1. `_enclosure` resolves the enclosure selector through the coordination-context resolver and loads
    the worktree contract. The **repository identity is read out of the resolved contract**, never
@@ -72,8 +72,8 @@ Supporting decisions:
 
 Refusals are typed values (`CapsuleCompilationError`, `TaskProjectionSourceError`) with `status`,
 `detail` and `next_action`; the operation translates each into the response envelope rather than
-raising. `CapsuleCompileOutcome` carries `binding` in **both** shapes on purpose — an operator gets the
-seat and revision on a refusal too.
+raising. `CapsuleCompileOutcome` retains the binding once admission has established it, including on a
+later refusal; failures before that point may carry no binding.
 
 ### Invariants And Boundaries
 
@@ -81,7 +81,7 @@ seat and revision on a refusal too.
   document's own altitude; `role` is an input to a check, never the source of the seat. `M1` of the
   leaf's mutation probe removes the altitude refusal and the dedicated case fails, which is what keeps
   this invariant executable rather than aspirational.
-- **No arbitrary filesystem read is exposed.** The caller names no path inside the corpus; a required
+- **No arbitrary filesystem read is exposed.** The caller may select a corpus root and manifest; instruction-file paths come from the manifest; a required
   block that is missing is a refusal rather than a silently thinner capsule.
 - **The admitted revision is the bytes the store handed over.** It is computed from the same captured
   source the projection compares against, so the comparison is between two independently obtained
@@ -92,8 +92,8 @@ seat and revision on a refusal too.
 - Nothing here writes to the task, memory or skills trees. `test_the_capsule_operation_writes_nothing_to_the_tree_it_reads`
   is the executor.
 - This module owns no compilation semantics: routing, dedup, conflict and digest rules belong to
-  `models/role_capsules/**` and `application/role_capsules/**` (layer rank 2), and task projection to
-  `application/task_projection/**` (layer rank 3).
+  `models/role_capsules/**` (package rank 2) and `application/role_capsules/**` (package rank 21),
+  and task projection to `application/task_projection/**` (package rank 21).
 - **The repository root has one derivation per compile.** A caller-supplied `code_repository_root` wins
   when present; otherwise the named contract's `code_repo_path` is the authority. Nothing re-derives a
   root beside it, and the value the projection receives is the value the admission used.
@@ -119,20 +119,20 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [18]
 
-- Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [19]
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [20]
 
 ### Docs References
 
 No external documentation governs this internal admission boundary. The domain contract it consumes
 is specified by the sibling requirement packets and the `l-01-agent-lifecycles` composition manifest,
-both cited below as repository-internal evidence. No relevant documentation found after checking live
+with the manifest cited below as repository-internal evidence. Sibling requirement packets need separate task-document citations. No relevant documentation found after checking live
 sources.
 
 ### Repo-Internal References
 
 
-- The four refusal-capable steps and the outcome that carries the binding in both shapes. [1]
+
 
 - The seat is derived from the document's altitude and the role string is validated against it, never used as authority. [2]
 - The admitted revision is the digest of the JSON bytes the task store handed over. [3]
@@ -143,7 +143,7 @@ sources.
 
 - The seat-addressed form of the same routing rule, for a caller with no task document. [6]
 
-- D13's repair: the root read out of the contract the request names, and carried onto the enclosure so the projection uses the same one. [7]
+
 
 - The wiring case asserts role_capsule_compile is absent from registered tools, then verifies the direct capsule entry point resolves its real enclosure through CapsuleCompileRequest and returns instructions. [8]
 
@@ -154,7 +154,7 @@ sources.
 
 - The advertised roster the tool policy snapshots. [11]
 
-- The corpus root, its manifest and its publishing origin travel together as one admission. [12]
+
 - The composition manifest that routes the admitted source set. [13]
 - The consumer the operation compiles through. [14]
 - The projection consumer. [15]
@@ -164,4 +164,16 @@ sources.
 No meaningful cross-repository reference applies. The MCP SDK is a pinned external dependency, not a
 sibling repository.
 
+### Repo-Internal References (continued)
+
 - Capsule compilation loads WorktreeContractReader and contract/error implementations only when enclosure resolution needs them; contract-unavailable keeps its existing refusal path. [21]
+
+- The four refusal-capable steps and the outcome that retains a binding once admission establishes it. [1]
+
+- D13's repair: an explicit request root is retained; otherwise the named contract supplies the root, carried onto the enclosure so the projection uses the same one. [7]
+
+- The corpus root and manifest travel together as one admission; publishing origin is declared separately. [12]
+
+### Repo-Internal References (renewed)
+
+- Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. Anchor: L114–L129 [19]

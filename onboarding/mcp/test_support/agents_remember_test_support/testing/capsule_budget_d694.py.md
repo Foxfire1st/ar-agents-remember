@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The module checks capsule word budgets against the frozen record `skills/l-01-agent-lifecycles/capsule-budgets-d694.json`, separate from the older registry and its snapshot. `mcp/tests/test_role_capsule_budgets.py` and `mcp/tests/test_role_capsule_budgets_d694.py` use it, and `capsule_budget_d695.py` reuses its area and source predicates.
+The module checks capsule word budgets against the frozen record `skills/l-01-agent-lifecycles/capsule-budgets-d694.json`, separate from the older registry and its snapshot. `mcp/tests/test_role_capsule_budgets.py` and `mcp/tests/test_role_capsule_budgets_d694.py` use it, and `capsule_budget_d695.py` imports only `current_capsule_ceiling` from this module and defines its own area and source predicates.
 
 ## Code Commentary
 
@@ -20,3 +20,7 @@ The module computes findings only; the tests decide what a finding means.
 - Area findings cover missing, stale, over-limit and over-ceiling entries. [2]
 - Approved sources are checked for identity, word count and compiler-input revision. [3]
 - The full check asserts populations and the frozen registry and snapshot hashes before collecting findings. [4]
+
+### Repo-Internal References (renewed)
+
+- The renewed d695 checker imports only current_capsule_ceiling from d694 and owns its own current-area and source findings. [5]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+        "blob": "870189f5459113cf50b9e6445dec96d05af548af",
         "content": "sha256:9e4f97fe530cdad584898ac3f3b5b1adc0ab91870a285bf624284c3de405aedc",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+        "blob": "870189f5459113cf50b9e6445dec96d05af548af",
+        "content": "sha256:1daf22836cae45bb9b0b55af64cdfcceb54bcca51955a76c8dffa6e4aff8944d",
+        "locator": {
+          "end": 341,
+          "kind": "line_range",
+          "start": 313
+        }
+      },
+      "id": "RLZ-ESCY24",
+      "invariant": "INV-NDGJ3M",
+      "origin": {
+        "handoffEntry": "L8-M2-C45-NDG-historical-owner-boundary",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "This checker authenticates recognized historical d694 and frozen owners against their retained budget-record hashes after same-owner byte, unique-key and schema checks. The live digest map is schema-checked without the removed decision.currentDigestMapSha256 pin, and parsed equality with the current budget record applies only to that current-budget owner. This implements the existing historical-authentication boundary of INV-NDGJ3M without freezing current derived delivery carriers; audience-projection semantics are not claimed for this helper.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "870189f5459113cf50b9e6445dec96d05af548af",
         "content": "sha256:5c0f8ecbb0cdbde47fcbbe6ed8dc1c9cec0d36502d9d70c94982fdb70c41f9a5",
         "locator": {
           "kind": "symbol",
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "2a8dca4869b123f45980be91a7bca300df737594",
+        "blob": "870189f5459113cf50b9e6445dec96d05af548af",
         "content": "sha256:9e4f97fe530cdad584898ac3f3b5b1adc0ab91870a285bf624284c3de405aedc",
         "locator": {
           "kind": "symbol",
@@ -62,8 +81,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a8dca4869b123f45980be91a7bca300df737594",
-            "content": "sha256:eb8b63348ebe195bdf414ae242662afac3f408a987511dd93d2bc0db966281bf",
+            "blob": "870189f5459113cf50b9e6445dec96d05af548af",
+            "content": "sha256:bf2835aa15276af13f3e30d37cd2b801dd7aa9b6b0d2484bbb0be6b4c28db631",
             "locator": {
               "kind": "file"
             }
@@ -77,8 +96,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a8dca4869b123f45980be91a7bca300df737594",
-            "content": "sha256:eb8b63348ebe195bdf414ae242662afac3f408a987511dd93d2bc0db966281bf",
+            "blob": "870189f5459113cf50b9e6445dec96d05af548af",
+            "content": "sha256:bf2835aa15276af13f3e30d37cd2b801dd7aa9b6b0d2484bbb0be6b4c28db631",
             "locator": {
               "kind": "file"
             }
@@ -92,8 +111,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a8dca4869b123f45980be91a7bca300df737594",
-            "content": "sha256:eb8b63348ebe195bdf414ae242662afac3f408a987511dd93d2bc0db966281bf",
+            "blob": "870189f5459113cf50b9e6445dec96d05af548af",
+            "content": "sha256:bf2835aa15276af13f3e30d37cd2b801dd7aa9b6b0d2484bbb0be6b4c28db631",
             "locator": {
               "kind": "file"
             }
@@ -107,8 +126,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a8dca4869b123f45980be91a7bca300df737594",
-            "content": "sha256:eb8b63348ebe195bdf414ae242662afac3f408a987511dd93d2bc0db966281bf",
+            "blob": "870189f5459113cf50b9e6445dec96d05af548af",
+            "content": "sha256:bf2835aa15276af13f3e30d37cd2b801dd7aa9b6b0d2484bbb0be6b4c28db631",
             "locator": {
               "kind": "file"
             }

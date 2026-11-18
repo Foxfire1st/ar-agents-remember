@@ -30,6 +30,8 @@ The prepared-memory certification application adapter was removed with its affec
 
 [Certification](certification/overview.md) and [preparation](preparation/overview.md) retain selected immutable-object and private-output machinery; their presence is not current default prepared-closeout execution. `preparation_selection.py` reopens exact selected intents/outputs, checks their owning operation and logical refs, and requires original command history where a write-enabled selected output is present. The default service factory binds neither a prepared-memory producer nor a continuation. Explicit core finalization still checks exact five-certificate/current-memory authority; private output selection supplies neither that certificate nor approval.
 
+`curator_coherence_record_builder.py` constructs the same record shape for publication and proposed-record dependency checks. `curator_coherence_binding.py` owns the shared dependency declaration and measured-quality currentness check. The live validator requires matching measured attestation and report digests in addition to exact candidate identity, retained evidence and complete-file integrity.
+
 ## Publication And Assessment Evidence
 
 The prepare response obtains its publication-input statement from the request model's declaration. It names one agent-owned judgment per candidate and all nine required publication members. `semantic_requirement_revision` and `delivery_attempt` are caller-supplied identities that prepare does not derive. The statement reads the declaration at call time, so an added member appears without a second edit to the summary. Assessments are optional publication content beside judgments and do not replace the judgment coverage obligation. Publish may receive both collections through an absolute `judgments_file` path instead of inline lists. `curator_judgments_file.py` reads one regular-file descriptor within its byte budget, parses the payload and validates each collection with the inline entry models and count bounds. Explicitly supplying either inline list alongside the file, even an empty list, refuses publication; a file-based answer carries the SHA-256 of the bytes read. This optional transport adds no tenth required publication member.
@@ -93,9 +95,6 @@ The closeout door first allows the recorded candidate tree itself. For a differe
 
 
 
-- The closeout validator's gate over the authority's exact candidate. [1]
-- Coherence observes exact candidates, validates current identities and dependencies, and shares per-record measurement projection. [3]
-- Publication derives its input statement from the declared publication members, names caller-supplied delivery identities, and accepts judgments and review assessments inline or from one judgments file whose SHA-256 the publish answer carries. [4]
 
 
 
@@ -115,3 +114,10 @@ The closeout door first allows the recorded candidate tree itself. For a differe
 - Both coherence assessment projections delegate supplied per-record measurements to the binding owner. [10]
 
 - The curator checklist supplies scope, its worklist-backed `_OnboardingGateInputs` and response to the onboarding refresh gate; that gate dispatches converted history-file traces. It accepts no separate no-impact identities. [7]
+
+- The closeout validator's gate over the authority's exact candidate. [1]
+- Coherence observes exact candidates, validates current identities and dependencies, and shares per-record measurement projection. [3]
+- Publication derives its input statement from the declared publication members, names caller-supplied delivery identities, and accepts judgments and review assessments inline or from one judgments file whose SHA-256 the publish answer carries. [4]
+
+- The shared record builder constructs published and proposed coherence records from the observed candidate. [12]
+- Live quality currentness requires the measured attestation and report digests; absent or differing measured binding requests publication. [13]

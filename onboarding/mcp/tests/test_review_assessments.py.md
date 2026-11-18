@@ -34,11 +34,11 @@ Seven test classes, each owning one property rather than one function:
 - `TestExaminedInputBinding` — the binding uses the shipped contract's two own vocabularies; the policy
   requires exactly the clause-five inputs; a relocated input with identical content is **not**
   equivalent; an input that can no longer be read is a mismatch rather than a pass; a moved input
-  marks the binding stale with its exact identity; per-item coverage is not inherited from a sibling.
+  marks the binding stale with its exact identity.
 - `TestEvidenceBytesAreRecordedAsThreeFacts` — each cited byte is recorded with path, digest and size.
 - `TestReadStates` — the three recorded states plus `none-recorded` are reported distinctly; a
   projection cannot report a disposition for an absent subject; a count that contradicts its records
-  is refused.
+  is refused; per-item coverage is not inherited from a sibling.
 - `TestKnowledgeReviewSection` — the section moves no count and adds no finding; it is written into the
   one checklist artifact; an unresolved signal is reported as its own state rather than a clearance.
 
@@ -68,15 +68,6 @@ serves the cases that need a stored projection.
 
 ### Repo-Internal References
 
-
-
-
-
-> Retained earlier citation wording: - The lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_review_assessments.py"; "unit-regression = ["
-
-
-
-
 - The record, its submission shape and the validator the shape cases drive. [2]
 
 - The equality comparison and the stale-marking the binding cases drive. [3]
@@ -87,7 +78,12 @@ serves the cases that need a stored projection.
 - The report-only section the checklist cases assert. [5]
 
 
+
 ## KS-R15@v1 Unit Protection
+
+The following complete passages are retained from the earlier card at memory snapshot `81cfe4a8`. They are the recorded 260915-KS-L15 account: its rationale, historical source coordinates, prior measurements and deliberate omissions. Prior run outcomes remain attributed to that account; this curation adds no execution result. Historical reference labels below are custody text and do not select current sidecar anchors.
+
+The 47-collected and +47 measurements below belong to the creating leaf. The current frozen source has 52 statically counted test definitions; no collection was run for this restoration. The explicit removed-helper qualification in the omission account remains.
 
 **The leaf that created this module.** `KS-R15@v1` §1–§5 and §8.2 are the clauses these 47 cases
 carry. The leaf's case-budget measurement records this module alone as `47 tests collected`, and the
@@ -99,8 +95,6 @@ function taking a signal and returning an assessment), and asserting the absence
 would be a source census rather than a behavioural check; and the leaf recorded §6.9's scope refusal as a pre-existing `_require_leaf_external_memory` rail that its patch did not touch. That is the historical omission rationale, not a current source address for the removed helper.
 
 
-
-
-
+- The archived KS-R15@v1 packet preserves the creating leaf’s distinct-type requirement, former external-memory scope rail and report-only checklist boundary (§3.2, §6.9 and §8.2). This document supports the historical omission rationale, not a current implementation claim. \[6] [6]
 
 - The lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_review_assessments.py"; "unit-regression = [" [1]

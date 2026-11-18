@@ -19,18 +19,25 @@ source inventory nor the removed route-normalization cases establish a fresh mea
 ## Invariants And Boundaries
 
 - These are real product assertions preserved from the retired experiment, not classifier fixtures.
-- They execute only through pytest inside the pinned Dagger evidence environment.
+- These are ordinary isolated pytest regressions; delivery certification uses the separate explicit Dagger route.
 - No host wrapper, sealed cohort manifest, static closure analyzer, or compatibility entrypoint is
   retained.
 - Retiring the two route-normalization cases does not retire provider-ID or gate/role guards;
   this card does not renew any separate measurement cohort or execution result.
 
+## Recorded Earlier Reference Account
+
+The earlier card at memory snapshot `81cfe4a8` identified
+`docs/design/python-test-evidence.md` as the Candidate A retirement and
+replacement-measurement account. That is the earlier reference account;
+the document's current role is described in Evidence below.
+
 ## Evidence
 
 ### Docs References
 
-The Candidate A retirement and replacement measurement are described in
-`docs/design/python-test-evidence.md`.
+`docs/design/python-test-evidence.md` defines the current certification authority and
+its distinction from ordinary isolated pytest.
 
 ### Repo-Internal References
 
@@ -43,7 +50,6 @@ The Candidate A retirement and replacement measurement are described in
 
 No cross-repository boundary applies.
 
-
-
+### Repo-Internal References (continued)
 
 - The explicit unit lane owns the module. Anchor: "mcp/tests/test_kernel_pure_regressions.py" Anchor: "mcp/tests/test_kernel_pure_regressions.py" [2]

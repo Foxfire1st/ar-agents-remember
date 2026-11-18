@@ -19,26 +19,26 @@ replaced at `reports/curator-memory-quality.md`.
 repairable findings from the one truthful closeout-only class: missing citation provenance on a
 new, still-untracked onboarding card. It obtains the tracked set from the memory worktree rather
 than treating every missing-provenance row as harmless historical debt
-cit:([`report_path_for`, `split_commit_owned_findings`, `_tracked_onboarding_paths`], mcp/src/agents_remember/memory_quality/curator_checklist.py:86-88; mcp/src/agents_remember/memory_quality/curator_checklist.py:94-96; mcp/src/agents_remember/memory_quality/curator_checklist.py:99-117; mcp/src/agents_remember/memory_quality/curator_checklist.py:216-222; mcp/src/agents_remember/memory_quality/curator_checklist.py:208-214).
+cit:([`report_path_for`, `split_commit_owned_findings`, `_tracked_onboarding_paths`], mcp/src/agents_remember/memory_quality/curator_checklist.py:95-97; mcp/src/agents_remember/memory_quality/curator_checklist.py:100-118; mcp/src/agents_remember/memory_quality/curator_checklist.py:232-238).
 
 `write_curator_checklist` sorts repair rows, missing sidecars, stale indexes, actionable drift
 candidates, closeout-owned provenance, and noteworthy report-only rows before it derives the
 zeroable curator count. It writes through `atomic_write_text`, so a reader sees the previous
 complete checklist or the next complete checklist, never a partial report
-cit:([`write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:133-213).
+cit:([`write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:134-229).
 The renderer preserves the important distinction between a zeroable pre-closeout gate and dirty
 source/real-commit evidence that must remain visible until governed closeout supplies a real
-commit cit:([`_render`, `_append_drift`], mcp/src/agents_remember/memory_quality/curator_checklist.py:237-307; mcp/src/agents_remember/memory_quality/curator_checklist.py:395-426).
+commit cit:([`_render`, `_append_drift`], mcp/src/agents_remember/memory_quality/curator_checklist.py:253-323; mcp/src/agents_remember/memory_quality/curator_checklist.py:411-442).
 
 Under CCR-R03@v1 `CuratorChecklist` now carries the exact `code_candidate_tree` and
 `memory_candidate_tree`, and the attestation embeds the `memory-quality-attestation/v1` dependency
 declaration built from the pair, both trees, and the rendered-report SHA-256 — so the checklist
 attestation content-addresses exactly the candidate trees it inspected
-cit:([`CuratorChecklist`, `write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:38-71; mcp/src/agents_remember/memory_quality/curator_checklist.py:133-213).
+cit:([`CuratorChecklist`, `write_curator_checklist`], mcp/src/agents_remember/memory_quality/curator_checklist.py:40-72; mcp/src/agents_remember/memory_quality/curator_checklist.py:134-229).
 
 ### Conventions
 
-- The report filename is stable and contains no timestamp; generation time lives inside the file.
+- The report filename is stable and contains no timestamp; the renderer embeds no clock value.
 - Every list is sorted before rendering so identical inputs produce the same work order.
 - Markdown cells collapse whitespace and escape table separators so finding text cannot corrupt
   the checklist layout.
@@ -54,7 +54,7 @@ cit:([`CuratorChecklist`, `write_curator_checklist`], mcp/src/agents_remember/me
   route indexes. Drift/source-change candidates remain explicit but cannot require a fabricated
   pre-commit verification stamp.
 - The writer owns no quality classification, onboarding mutation, route-index mutation, or
-  cleanup. It renders already-computed results and atomically publishes one file.
+  cleanup. It renders already-computed results and atomically replaces the Markdown report and JSON attestation separately.
 - The attestation binds the exact code/memory candidate trees; a changed tree produces a different
   dependency declaration and stales the attestation.
 
@@ -123,7 +123,6 @@ The application layer decides when the report exists, and worktree cleanup owns 
 > Retained earlier citation wording: - Cleanup removes the reserved reports directory before it attempts to remove the enclosure. [8]
 
 
-- The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass. [9]
 
 - R03 attestation dependency declaration source. [10]
 
@@ -142,10 +141,7 @@ the response exposes `attestationPath`.
 
 ## MCAR-L02 Deterministic Attestation Source
 
-The checklist renderer no longer embeds wall-clock time. Identical quality/candidate input now
-reproduces identical Markdown and `ar-curator-memory-quality/v1` bytes, so a harmless rerun cannot
-stale an accepted coherence generation. Changed findings or candidate tuples still change the
-digest and correctly force republishing. The completion text points to the structured coherence
+The checklist renderer embeds no wall-clock time. Identical complete checklist inputs reproduce identical Markdown and `ar-curator-memory-quality/v1` bytes. A change confined to the top-level `knowledgeReview` listing preserves measured quality identity even when the complete report and attestation bytes change. Changed measured findings or bound candidate facts change measured identity and require republishing. The completion text points to the structured coherence
 authority rather than a hand-authored report.
 
 ## MCAR-L03 Pair-Bound Attestation
@@ -190,8 +186,10 @@ routing report calls this function, so the report cannot drift from the checklis
 "gains no fourth term" is a property of one function rather than a convention each caller re-implements.
 The `knowledgeReview` section remains outside it, for the same reason as before.
 
-- The proof-coverage count is informational in the summary; after normalizing that count and artifact paths, actionable count still stays zero. [3]
 
 - Cleanup removes the reserved reports directory before it attempts to remove the enclosure.  Anchor: `_removed_directories` [8]
 
 - A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist, and since MIK-R28 it also hands the checklist the "without proof" list (`None` for an unconverted tree).  Anchor: `resolve_leaf_memory_scope` `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist` [7]
+
+- The proof-coverage count is informational in the summary; after normalizing that count and artifact paths, actionable count still stays zero. [3]
+- The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass. [9]

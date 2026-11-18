@@ -3,34 +3,34 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
-        "content": "sha256:5d6d61a1a65ca86917854a6b8387fb370367e6648501eb5b2501f9913d774b88",
+        "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+        "content": "sha256:07ca95902c239f33e5e728a7c73b00de550c5c8c65fb22612b067afd50cbb674",
         "locator": {
-          "kind": "symbol",
-          "name": "_RECORD_FINGERPRINT"
+          "kind": "file"
         }
       },
-      "id": "RLZ-NZH4BP",
-      "invariant": "INV-4HZG3V",
+      "id": "RLZ-353X7R",
+      "invariant": "INV-Y6GVZ7",
       "origin": {
-        "handoffEntry": "RSM-R01-A9",
-        "leaf": "261112-RSM-L1"
+        "handoffEntry": "L8-M2-F03-retain-ceiling-evidence-on-Y6GVZ7",
+        "leaf": "261112-BUG-L8"
       },
-      "rationale": "The helper pins the current record's canonical fingerprint. Renewing this pin binds the selected record bytes; the pin itself sets no ceiling or limit, and does not classify the renewal as measurement-only.",
-      "role": "primary-authority"
+      "rationale": "This complete current-budget checker loads the generated measurement view, verifies detail/template and compiler/source populations and identities, compares fresh capsule/detail/digest sizes with authored ceilings without per-item budgets, measures ordinary templates without a detail ceiling, and separately authenticates the retained registry, snapshot helper, predecessor record and helper. The wrapper and subordinate helpers jointly realize the existing obligation; mutable current record and digest-map bytes are not frozen history.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The linked ordinary template population is fixed.",
+      "note": "The ordinary-template population matches the composed manifest classification.",
       "targets": [
         {
           "anchor": {
-            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
-            "content": "sha256:6cebb71cd3065652505fbce30e4669edcd164d26802a41c439184820d1aff51b",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:645cb437ad6dbf1ba6428e27c1b5310f9e8f280e6a9dafaffbaf4cf6f6adea40",
             "locator": {
-              "kind": "symbol",
-              "name": "_ORDINARY_TEMPLATE_POPULATION"
+              "end": 141,
+              "kind": "line_range",
+              "start": 111
             }
           },
           "kind": "code"
@@ -38,15 +38,16 @@
       ]
     },
     "2": {
-      "note": "Populations, uncapped ordinary templates and the 2500-word detail ceiling are asserted.",
+      "note": "Detail and template populations are checked separately, and ordinary templates have measurements without a detail ceiling.",
       "targets": [
         {
           "anchor": {
-            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
-            "content": "sha256:29180fb0c77d56afe0f14bada0fec6a704795999ef8c7e83abab320d65792184",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:ba6c20486c542c0f15f8cc92b58e6464ee45c09fed375c869138c7e26434d978",
             "locator": {
-              "kind": "symbol",
-              "name": "_assert_current_populations"
+              "end": 77,
+              "kind": "line_range",
+              "start": 33
             }
           },
           "kind": "code"
@@ -54,15 +55,16 @@
       ]
     },
     "3": {
-      "note": "Detail and template classification is read from the composition manifest.",
+      "note": "Detail and template classification is read from the composed manifest.",
       "targets": [
         {
           "anchor": {
-            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
-            "content": "sha256:c5db175a68c58fd0264dc35bea94d6a1bcf9ee7d37c4ad78247a36d6f565009a",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:645cb437ad6dbf1ba6428e27c1b5310f9e8f280e6a9dafaffbaf4cf6f6adea40",
             "locator": {
-              "kind": "symbol",
-              "name": "_current_source_findings"
+              "end": 141,
+              "kind": "line_range",
+              "start": 111
             }
           },
           "kind": "code"
@@ -70,16 +72,71 @@
       ]
     },
     "4": {
-      "note": "Frozen owners and the current digest map are bound by hash before findings are collected.",
+      "note": "The retained registry, snapshot helper, predecessor record and predecessor helper are authenticated as frozen history.",
       "targets": [
         {
           "anchor": {
-            "blob": "c270926557b1ed2a641542c5f95dca0366d8a0b9",
-            "content": "sha256:8c2becfadaf1ba12345a93ed610585038b103dbd7f59b6d85aabde9d687a7b9c",
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:75af2672431670155e3a4078c58f19ccd71fcff86f96995a806e2f67f6e2f7e1",
             "locator": {
-              "kind": "symbol",
-              "name": "current_budget_findings"
+              "end": 159,
+              "kind": "line_range",
+              "start": 144
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current measurements and inventories live under record[\"derived\"]. Renewable population, measurement and source findings name the shared renewal command; exceeding an authored ceiling instead names the developer's decision to raise it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:c6d184f40dbceca5b00d8065898ff7154450dd3d8c4cc0d0140936cbf164da1d",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:566cd4138538906715ef81f2473c8f0bfa1d6d88356c04189426646e182b1c5b",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:b19817ba813a5b6add0e530b018282bdb3e00092feebcd1efda0dda2c2a0af15",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "545b7f3d18bfb8f5186b4614ea23a67a72888106",
+            "content": "sha256:aefc50639ebd58af70011f1bb5d3d13f12e860b1caaae432a1feb0665e582db7",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/instruction_renewal.py"
           },
           "kind": "code"
         }

@@ -33,7 +33,7 @@ The assertions cover named registration absence, a route chain without entries, 
 - **MIK-R05 adaptations (L05).** The L01 fixture routes `FAM-F11111` at `src` and `FAM-F22222` at `.`, so the selection test's expected sequence gains two `chain_family` rows after `advertised_family`, `counts` gain `chainFamilies: 2`, and `rowsTotal`/`rowsReturned` go from 15 to 17; the policy assertions name `family-complete-leaf/v2` (ruling Q4, 2026-09-30 03:32:18). The internal selection assertions remain; L109 separately adapts the knowledge_read projection and continuation assertions described above.
 - **An entry-less path under a route** (`test_a_path_without_entries_still_returns_its_route_chain`, MIK-R05): `src/nothing.py` is a page stating `registration: registration_absent` with the N6 wording and its two chain rows.
 - **Failure states** (`test_absent_and_partial_states_are_named`): with `FAM-F22222` re-routed to `src`, `docs/nothing.md` has no entry and no governing family, so it is refused `registration_absent` on both surfaces, naming "realization or proof claim" (ruling N6), and both refusals carry the same `routeChain` stating `no_governing_family` (MIK-R05). The block's policy is `family-complete-leaf/v2` (N5), and a complete tree's refusal names the same memory tree as the block (ruling N3).
-- **A partial index** (`test_a_partial_index_is_named_on_both_surfaces`): an ungoverned path read from a partial index states `indexState: partial` and `indexComplete: false` (ruling N3). This and the entry-less case were split out of the failure test by review R1 F1 (2026-09-30 04:12:49) so no adapted test is at radon C.
+- **A partial index** (`test_a_partial_index_is_named_on_both_surfaces`): the internal block returns its registered `SEED` page with `indexState: partial` and `enumerationComplete: false`; the public read of an ungoverned path names a partial memory index and `indexComplete: false` (ruling N3). This and the entry-less case were split out of the failure test by review R1 F1 (2026-09-30 04:12:49) so no adapted test is at radon C.
 - **Carried obligations.**
   - `test_a_repository_root_with_no_commit_is_refused_by_name`: a repository with no commit, and a plain directory, are refused `selected_input_unavailable` naming the root (carried 2026-09-29 21:17:07).
   - `test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository`: the token carries no local path, the walk resumes at page 1's tree from the workspace, and an unrelated root is refused by name.
@@ -89,6 +89,8 @@ code and memory repositories, so they are named here and not cited as rows.
 No configured live documentation source was available for this pass.
 
 
+### Repo-Internal References (continued)
+
 - The converted-tree world written through the text-file layout. [24]
 
 
@@ -131,7 +133,6 @@ No cross-repo boundary is crossed by this file.
 
 - Rich domain-unit tails expose rows and continuation without implying public overflow or pointer retrieval.
 
-
-
+### Repo-Internal References (continued)
 
 - The lane row. Anchor: `test_knowledge_leaf_read` Anchor: `test_knowledge_leaf_read` [37]

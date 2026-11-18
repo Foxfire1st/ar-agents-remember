@@ -1,11 +1,16 @@
 {
   "anchor": {
-    "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
-    "content": "sha256:62ff8ce4bdbd3f00c78efdacd84276c39aa645becc3eef914179028fe1628ab6",
+    "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
+    "content": "sha256:ff388c0f7433ddff7d7c8b8b8cd7138717eefb48767040e43a60b2e153d3fb71",
     "locator": {
       "kind": "file"
     },
     "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+  },
+  "closed": {
+    "commit": "450ade9c7faf2d71efa8412298275f2b5045a5b3",
+    "reason": "The admitted judgments_file path removes the inline-only transport limitation while retaining the same models, collection and exact-set checks.",
+    "task": "260928-MIK-L110"
   },
   "id": "WKN-91A1E8",
   "kind": "context",
@@ -17,12 +22,12 @@
     "leaf": "260928-MIK-L118",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L118"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "curator_coherence takes a request of several thousand characters only inline, which one harness could not send (ruling notes/run3/L66-PUBLISH-TRANSPORT-RULING.json)."
 }

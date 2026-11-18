@@ -1,18 +1,19 @@
 {
   "admission": {
     "criteria": [
-      "guarded_by_test"
+      "spans_locations"
     ],
-    "justification": "The root/route templates and authoring instruction must agree or the first attributed tree silently contains legacy cards."
+    "justification": "The shared body-and-citation contract is prescribed by the Curator format rules and realized by three distinct source-file, repository-overview and source-area layouts, whose explicit governing-rule pointers and Evidence tables carry the same fixer-input-to-numbered-reference boundary."
   },
-  "applicability": "Initial root, route and file onboarding produced by the bootstrap skill in converted memory.",
+  "applicability": "File cards and repository or source-area overviews authored or maintained by Curators in converted onboarding memory.",
   "conditions": [
-    "Currentness is carried by resolved reference anchors.",
-    "Authors write prose and temporary citation tables; the existing fixer allocates numbered references and authors sidecars."
+    "A numbered evidence marker has its corresponding sidecar reference; a card with no references need not have a sidecar.",
+    "Evidence tables are authoring input, and numbered evidence lines and their references are authored through the admitted citation route."
   ],
   "exclusions": [
-    "Metadata stamps, card Update History and hand-authored sidecar JSON.",
-    "Input ledgers or report templates that legitimately use tables but are not onboarding cards."
+    "Input ledgers and report templates that legitimately use tables but are not onboarding cards.",
+    "Setup-only Bootstrap behavior and first-baseline status/adoption; this authoring-format record grants no Bootstrap authoring authority and adds no baseline-admission rule.",
+    "This record does not override the admitted writer/tool ownership or scoped correct-write recovery."
   ],
   "id": "INV-4XD2ZF",
   "origin": {
@@ -26,9 +27,9 @@
     "leaf": "260928-MIK-L45",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Bootstrap onboarding cards are written in the converted shape: no metadata table, no Update History, citation tables as fixer input, currentness from reference anchors.",
+  "statement": "Curator file cards and overviews hold current prose and numbered evidence lines, without metadata stamps, card-local change history or completed citation tables; the citation fixer turns the author's evidence table into those numbered lines and their JSON sidecar references.",
   "status": "proposed",
   "supersedes": []
 }

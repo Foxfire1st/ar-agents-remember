@@ -10,17 +10,17 @@ Records the source-unit mapping between shared core doctrine and the compact eve
 
 ## Code Commentary
 
-Stable source-unit IDs retain their baseline provenance. Current unit entries carry source locations, text digests and audience, and distinguish digest lines from retained reference material. The final digest block records its path, content digest and word ceiling; this file is a mapping artifact rather than the executable capsule compiler. The digest block divides `core/every-role.md` into places, each naming its heading, lines, hash and the units it draws on; a retired unit keeps its ID with its retirement record and former binding, and removed IDs are never reused. A unit's recorded lines move with its source when earlier text is inserted, while the unit's own text digest does not change for that.
+Stable source-unit IDs retain their baseline provenance and authored semantic membership. The composed map combines these decisions with generated current source ranges, hashes, evidence associations, digest places and clauses. An unchanged mapped passage can relocate by an exact hash window; changed or ambiguous text requires an explicit binding for its own source, evidence, place or clause association. A retired unit retains its retirement record and former binding, and removed IDs are not reused. The map is a binding artifact; the renewal planner computes its current facts and the capsule compiler consumes the composed view.
 
 ## Evidence
 
 - The mapping preserves its baseline inventory and stable unit IDs. [1]
 
-- The unit definition explains ID preservation and the role vocabulary. [2]
-
 
 
 - Current units distinguish reference evidence from selected digest lines; retired units keep their record. [3]
 
+### Repo-Internal References (renewed)
 
-- The digest block binds the rendered digest path, hash and word maximum, and lists the places of the digest. [4]
+- The unit definition explains ID preservation and the role vocabulary. Anchor: `unitDefinition` [2]
+- The authored digest block records its path, semantic places and retained ceiling-authority decisions; generated current digest hash and size are stored in derived.digest. [4]

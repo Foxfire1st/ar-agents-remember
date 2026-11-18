@@ -1,0 +1,40 @@
+{
+  "path": "skills/l-01-agent-lifecycles/pointer-actions-derived.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d19dfd1456ae1eda38974eadad20a8041393efbf",
+        "content": "sha256:597da177047dda8556dd1a3c619039cf22af4154eac638099f43dc9530954561",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-36SW5J",
+      "invariant": "INV-EHJV8E",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 1",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Current pointer wording is generated under stable action identities without duplicating authored admission decisions.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Derived rows record current source and wording for authored action identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d19dfd1456ae1eda38974eadad20a8041393efbf",
+            "content": "sha256:597da177047dda8556dd1a3c619039cf22af4154eac638099f43dc9530954561",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

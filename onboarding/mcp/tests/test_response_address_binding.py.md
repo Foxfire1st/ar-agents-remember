@@ -7,19 +7,15 @@
 ## Purpose
 
 The guidance a tool response carries must be bound to **that response's own task**. This module
-retains the own-task guidance and refreshed-path naming repairs `260918-TSIP-L6` landed around one mechanism: the address guard in
+checks own-task guidance and refreshed-path naming through the address guard in
 `application/tool_response.py::bound_next_step` (`T54`), the refreshed-onboarding census in
-`worktrees/modules/closeout.py` (`T71`), and the real closed-payload own-address assertion. The legacy migration preview truth-table repair (`T64`) is retired.
+`worktrees/modules/closeout.py` (`T71`), and the real closed-payload own-address assertion.
 
-**The recorded defect (`T54`).** A `worktree_closeout_apply` response for one leaf of one master
-shipped a `nextStep` whose `nextArgs.contract_path` named a **different master's** contract, while
-the outer `nextTool` named the caller's own operation. The closeout itself was unambiguous — the
-right state, the right commits, the right leaf — and only the guidance block, the thing a seat is
-told to follow, pointed into another task's enclosure.
+
 
 **The current mechanism.** `application/next_step.py::next_step_for` loads the explicit contract path supplied by response construction and runs the worktree guidance state machine for that contract. `application/tool_response.py::_attach_contract_guidance` preserves an explicit recovery hint, derives a preview approval-stop hint from the current call's exact argument when needed, and passes the result through `bound_next_step`. The guard compares artifact addresses against the response's own address. It does not read `LifecycleState.enclosure` or resume an ambient lifecycle.
 
-The earlier T54 defect was an unchecked guidance exit for an address-less response and a path-set check that could retain mixed spellings. The cases below retain the repaired address checks, and `_closed_result_payload` declares its own `contractPath`; that historical defect does not describe current ambient guidance production.
+The cases below assert the address checks, and `_closed_result_payload` declares its own `contractPath`.
 
 ## Code Commentary
 
@@ -32,7 +28,7 @@ is driven by the envelope it will meet.
 
 - `test_guidance_naming_another_task_is_withheld_from_a_response_with_no_address` (`:74-84`) is
   the recorded `T54` shape: the response declares nothing, so nothing could be checked, and the
-  guidance is withheld rather than emitted unchecked. This is the case the old guard let through.
+  guidance is withheld rather than emitted unchecked.
 - `test_guidance_agreeing_with_the_responses_own_address_is_kept` (`:87-99`) is the positive
   control: without it the repair above would be satisfied by dropping every hint, which would cost
   a seat the operational chain the guidance exists to carry.
@@ -42,17 +38,12 @@ is driven by the envelope it will meet.
 - `test_guidance_that_names_no_artifact_is_left_alone` (`:115-123`) keeps the guard from becoming
   a blanket refusal — guidance with no path in its args cannot contradict anything.
 
-**`T71`: a list that counts entries it cannot name.** The closeout payload read
-`item["source_path"]` alone, so every regenerated **document** entry — appended by
-`worktrees/modules/onboarding.py::_refresh_regenerated_documents` with `source_path: ""` because
-it has no source file — arrived as a blank string, and the payload reported a `count` that
-included entries its own sample could not name.
 `test_the_refreshed_onboarding_census_names_every_entry_it_counts` (`:126-165`) drives
 `_refreshed_onboarding_paths` (`mcp/src/agents_remember/worktrees/modules/closeout.py:121-133`)
 and `_bounded_paths`, and requires each entry to be named by its `source_path` **or** its
 `onboarding_file`, with a blank refused rather than counted.
 
-The retired T64 migration preview builders/test are no longer operative. This module checks guidance identity, refreshed-path naming and the closed producer envelope, not migration outcomes or writes.
+This module checks guidance identity, refreshed-path naming and the closed producer envelope, not migration outcomes or writes.
 
 **The producer half of `T54`, pinned where the defect entered.**
 `test_the_closed_closeout_payload_declares_its_own_address_in_the_envelope_spelling`
@@ -66,25 +57,82 @@ silently returning the hole.
 Plain module-level pytest functions plus the small builders and stubs above them
 (`_Contract` supplies the closed-result fixture); no `unittest`, no `pytest` marks, so the
 module is in the default selection and its lane is **`unit-regression`**
-(`mcp/tests/test-evidence-lanes.toml:448`). The constants `OWN`, `OWN_ENCLOSURE` and `OTHER` are the only literals the cases share.
+(`mcp/tests/test-evidence-lanes.toml:453`). The constants `OWN`, `OWN_ENCLOSURE` and `OTHER` are the only literals the cases share.
 
 ### Invariants And Boundaries
 
-- **The fixture uses the contract-file shape the product emits.** The real
-  `worktree_status` response is checked by the fixture. Current both-spelling producers put the
+- **The fixture uses the contract-file shape the product emits.** The fixture emits the contract-file address shape. Current both-spelling producers put the
   contract file in `enclosure_path` and `contract_path`: `contract_next_args`
   (`mcp/src/agents_remember/worktrees/modules/guidance.py:179-184`), the status facts
   (`mcp/src/agents_remember/worktrees/modules/guidance.py:476-491`), and the start-result facts
   (`mcp/src/agents_remember/worktrees/modules/startup/start_result.py:117-128`). The current
   reopen argument helpers instead publish `contract_path` alone, with their respective `dry_run`
-  value (`mcp/src/agents_remember/worktrees/reopen.py:96-101`). The earlier four-producer path list
-  is superseded by these source locations; it is not evidence that every producer emits both keys.
-  An earlier fixture used a directory, recorded as `L6`'s `F3` and corrected before that leaf froze.
+  value (`mcp/src/agents_remember/worktrees/reopen.py:96-101`).
 - **The directory tolerance in the guard is exactly the immediate container.** `_names_the_same_place`
   (`mcp/src/agents_remember/application/tool_response.py:64-88`) accepts the contract file or
-  `dirname(file)`, and an earlier, wider form that accepted any ancestor was narrowed in the same
-  leaf; no case here asserts the wider rule, so re-widening it would be visible.
+  `dirname(file)`.
 - These tests assert response guidance/census/envelope contracts, not migration outcomes or a real-tree write.
+
+## Retained Historical Context
+
+The following complete passages are retained from the earlier card at memory snapshot `81cfe4a8`. They are the recorded 260918-TSIP-L6 account: its rationale, historical source coordinates, prior measurements and deliberate omissions. Prior run outcomes remain attributed to that account; this curation adds no execution result. Historical reference labels below are custody text and do not select current sidecar anchors.
+
+> The guidance a tool response carries must be bound to **that response's own task**. This module
+> retains the own-task guidance and refreshed-path naming repairs `260918-TSIP-L6` landed around one mechanism: the address guard in
+> `application/tool_response.py::bound_next_step` (`T54`), the refreshed-onboarding census in
+> `worktrees/modules/closeout.py` (`T71`), and the real closed-payload own-address assertion. The legacy migration preview truth-table repair (`T64`) is retired.
+
+> **The recorded defect (`T54`).** A `worktree_closeout_apply` response for one leaf of one master
+> shipped a `nextStep` whose `nextArgs.contract_path` named a **different master's** contract, while
+> the outer `nextTool` named the caller's own operation. The closeout itself was unambiguous — the
+> right state, the right commits, the right leaf — and only the guidance block, the thing a seat is
+> told to follow, pointed into another task's enclosure.
+
+> The earlier T54 defect was an unchecked guidance exit for an address-less response and a path-set check that could retain mixed spellings. The cases below retain the repaired address checks, and `_closed_result_payload` declares its own `contractPath`; that historical defect does not describe current ambient guidance production.
+
+> - `test_guidance_naming_another_task_is_withheld_from_a_response_with_no_address` (`:74-84`) is
+>   the recorded `T54` shape: the response declares nothing, so nothing could be checked, and the
+>   guidance is withheld rather than emitted unchecked. This is the case the old guard let through.
+> - `test_guidance_agreeing_with_the_responses_own_address_is_kept` (`:87-99`) is the positive
+>   control: without it the repair above would be satisfied by dropping every hint, which would cost
+>   a seat the operational chain the guidance exists to carry.
+> - `test_one_stale_path_spelling_is_enough_to_withhold_the_guidance` (`:102-112`) pins the second
+>   exit in both directions: a hint whose `contract_path` agrees but whose `enclosure_path` does not
+>   is withheld, and the reverse too.
+> - `test_guidance_that_names_no_artifact_is_left_alone` (`:115-123`) keeps the guard from becoming
+>   a blanket refusal — guidance with no path in its args cannot contradict anything.
+
+> **`T71`: a list that counts entries it cannot name.** The closeout payload read
+> `item["source_path"]` alone, so every regenerated **document** entry — appended by
+> `worktrees/modules/onboarding.py::_refresh_regenerated_documents` with `source_path: ""` because
+> it has no source file — arrived as a blank string, and the payload reported a `count` that
+> included entries its own sample could not name.
+> `test_the_refreshed_onboarding_census_names_every_entry_it_counts` (`:126-165`) drives
+> `_refreshed_onboarding_paths` (`mcp/src/agents_remember/worktrees/modules/closeout.py:121-133`)
+> and `_bounded_paths`, and requires each entry to be named by its `source_path` **or** its
+> `onboarding_file`, with a blank refused rather than counted.
+
+> The retired T64 migration preview builders/test are no longer operative. This module checks guidance identity, refreshed-path naming and the closed producer envelope, not migration outcomes or writes.
+
+> - **The fixture uses the contract-file shape the product emits.** The real
+>   `worktree_status` response is checked by the fixture. Current both-spelling producers put the
+>   contract file in `enclosure_path` and `contract_path`: `contract_next_args`
+>   (`mcp/src/agents_remember/worktrees/modules/guidance.py:179-184`), the status facts
+>   (`mcp/src/agents_remember/worktrees/modules/guidance.py:476-491`), and the start-result facts
+>   (`mcp/src/agents_remember/worktrees/modules/startup/start_result.py:117-128`). The current
+>   reopen argument helpers instead publish `contract_path` alone, with their respective `dry_run`
+>   value (`mcp/src/agents_remember/worktrees/reopen.py:96-101`). The earlier four-producer path list
+>   is superseded by these source locations; it is not evidence that every producer emits both keys.
+>   An earlier fixture used a directory, recorded as `L6`'s `F3` and corrected before that leaf froze.
+> - **The directory tolerance in the guard is exactly the immediate container.** `_names_the_same_place`
+>   (`mcp/src/agents_remember/application/tool_response.py:64-88`) accepts the contract file or
+>   `dirname(file)`, and an earlier, wider form that accepted any ancestor was narrowed in the same
+>   leaf; no case here asserts the wider rule, so re-widening it would be visible.
+> - These tests assert response guidance/census/envelope contracts, not migration outcomes or a real-tree write.
+
+Current evidence boundary for the quoted ancestor-narrowing account: `_names_the_same_place` accepts the exact contract file or immediate container. The six current test bodies use own and foreign contract-file addresses and contain no negative ancestor-address case. Source inspection therefore establishes the exact tolerance; the quoted earlier implication that re-widening would necessarily be caught by these tests is not current verification evidence. The legacy T64 migration-preview repair remains retired.
+
+The quoted earlier statement that this fixture checks a real `worktree_status` response is also incorrect: its builder constructs a closeout response model, and none of the six test bodies invokes `worktree_status`. The fixture demonstrates the address shape, while the separately inspected production owners establish their own response addresses.
 
 ## Evidence
 
@@ -115,14 +163,6 @@ they make no acceptance claim.
 - The entry namer `T71` repaired: source path, or the document's own path. [13]
 - The bounded count that refuses to count a blank. [14]
 
-
-
-
-> Retained earlier citation wording: - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_response_address_binding.py"
-
-
-
-
 ### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local response-contract claims.
@@ -130,7 +170,6 @@ The cases build no repository and touch no real coordination root.
 
 No repository or external-system boundary is proved by this module.
 
-
-
+### Repo-Internal References (continued)
 
 - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_response_address_binding.py" [16]

@@ -4,8 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
-        "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+        "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+        "content": "sha256:7154835c9a7497fa7c41c9bb084bcf73ac5cf4ffba6a7bb1703f296bb22adf2d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0KB5K0",
+      "invariant": "INV-DHKR4G",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 2",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The existing copy or hook obligation directs stale instruction facts and copies to the single renewal command.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+        "content": "sha256:7154835c9a7497fa7c41c9bb084bcf73ac5cf4ffba6a7bb1703f296bb22adf2d",
         "locator": {
           "kind": "file"
         }
@@ -21,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
-        "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
+        "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+        "content": "sha256:16d9efc53a9c7564f6b33fd297c172f12fa6c4ea9371b93c674f45f54c891fcc",
         "locator": {
           "kind": "symbol",
           "name": "check_targets"
@@ -39,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "blob": "212f988e5638960b9061d674e63be12b27d324ab",
         "content": "sha256:8a708c228cb1c5ae2d195b62d9f39f63c6cf457f6fee943a1a36015a3f79dd99",
         "locator": {
           "kind": "symbol",
@@ -57,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "blob": "212f988e5638960b9061d674e63be12b27d324ab",
         "content": "sha256:91cb42634a67f678e64d6d12e221e6b2386ad52818788b7a445d68782d9b9054",
         "locator": {
           "kind": "symbol",
@@ -75,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "blob": "212f988e5638960b9061d674e63be12b27d324ab",
         "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
         "locator": {
           "kind": "symbol",
@@ -93,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "blob": "212f988e5638960b9061d674e63be12b27d324ab",
         "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
         "locator": {
           "kind": "symbol",
@@ -110,7 +127,7 @@
     },
     {
       "anchor": {
-        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "blob": "212f988e5638960b9061d674e63be12b27d324ab",
         "content": "sha256:6dce61266f887ddd4885b0d9dc5f3cb2611063dc7757d28c606c3417a570f74c",
         "locator": {
           "kind": "symbol",
@@ -133,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
             "locator": {
               "kind": "symbol",
@@ -144,7 +161,7 @@
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
             "locator": {
               "kind": "symbol",
@@ -156,22 +173,23 @@
       ]
     },
     "2": {
-      "note": "`--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync.",
+      "note": "`--check` compares canonical and target file digests and the generated-skills profile projection, reports drift, and exits non-zero with `run: mcp/.venv/bin/python scripts/renew-instructions.py` as the remedy.",
       "targets": [
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
-            "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+            "content": "sha256:16d9efc53a9c7564f6b33fd297c172f12fa6c4ea9371b93c674f45f54c891fcc",
             "locator": {
-              "kind": "symbol",
-              "name": "check_targets"
+              "end": 231,
+              "kind": "line_range",
+              "start": 212
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:898338fcf0c6c168c8cdc67208a611993659524c94462aee8fbb5987b755524c",
             "locator": {
               "end": 192,
@@ -183,8 +201,8 @@
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
-            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+            "content": "sha256:7154835c9a7497fa7c41c9bb084bcf73ac5cf4ffba6a7bb1703f296bb22adf2d",
             "locator": {
               "kind": "file"
             }
@@ -194,44 +212,47 @@
       ]
     },
     "3": {
-      "note": "Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check.\n\nAnchor: `sync_targets` `sync_target` `replace_tree`",
+      "note": "Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check. Anchor: `sync_targets` `sync_target` `replace_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:8a708c228cb1c5ae2d195b62d9f39f63c6cf457f6fee943a1a36015a3f79dd99",
             "locator": {
-              "kind": "symbol",
-              "name": "sync_targets"
+              "end": 245,
+              "kind": "line_range",
+              "start": 234
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
             "locator": {
-              "kind": "symbol",
-              "name": "sync_target"
+              "end": 141,
+              "kind": "line_range",
+              "start": 138
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:f35d9bc1c4491781420f8987e479b45f3169879ccd845e11bc9cadd2fbeaf700",
             "locator": {
-              "kind": "symbol",
-              "name": "replace_tree"
+              "end": 173,
+              "kind": "line_range",
+              "start": 144
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:18f5305bfc2ccce4612104b4ebef09d6badbaf527908201fd3b08413cb78941e",
             "locator": {
               "end": 203,
@@ -243,8 +264,8 @@
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
-            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+            "content": "sha256:7154835c9a7497fa7c41c9bb084bcf73ac5cf4ffba6a7bb1703f296bb22adf2d",
             "locator": {
               "kind": "file"
             }
@@ -254,14 +275,14 @@
       ]
     },
     "4": {
-      "note": "The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. Anchor: `scripts/sync-skills.py`",
+      "note": "Root AGENTS instructions require editing canonical skills/ and running mcp/.venv/bin/python scripts/renew-instructions.py, which renews facts and propagates the generated package copy.",
       "targets": [
         {
           "anchor": {
-            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
-            "content": "sha256:c758639aea783e18ccd0ab371a31e0d47150df727c5eb30b055ed3b4934ce32b",
+            "blob": "e3913163be3b91297066e21703964f8104d4e507",
+            "content": "sha256:3f0713854f31cdc421c0f9550cf8d3446a991eab438a1c4bf21839bbead0d457",
             "locator": {
-              "end": 102,
+              "end": 103,
               "kind": "line_range",
               "start": 98
             },
@@ -271,12 +292,12 @@
         },
         {
           "anchor": {
-            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
-            "content": "sha256:e2465a35a9857ff80e7a0eb05bc7828ab328b473439b35fa029ba46d99f1a8d3",
+            "blob": "e3913163be3b91297066e21703964f8104d4e507",
+            "content": "sha256:9f5369d8614add9b34ea19cece84e51352e77df97169e4f0ef466fb03f74fa8e",
             "locator": {
-              "end": 123,
+              "end": 126,
               "kind": "line_range",
-              "start": 122
+              "start": 123
             },
             "path": "AGENTS.md"
           },
@@ -289,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:6dce61266f887ddd4885b0d9dc5f3cb2611063dc7757d28c606c3417a570f74c",
             "locator": {
               "end": 32,
@@ -301,7 +322,7 @@
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
             "locator": {
               "end": 59,
@@ -313,7 +334,7 @@
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:91cb42634a67f678e64d6d12e221e6b2386ad52818788b7a445d68782d9b9054",
             "locator": {
               "end": 209,
@@ -325,22 +346,22 @@
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
             "content": "sha256:8a708c228cb1c5ae2d195b62d9f39f63c6cf457f6fee943a1a36015a3f79dd99",
             "locator": {
-              "end": 243,
+              "end": 245,
               "kind": "line_range",
-              "start": 232
+              "start": 234
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
-            "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+            "content": "sha256:16d9efc53a9c7564f6b33fd297c172f12fa6c4ea9371b93c674f45f54c891fcc",
             "locator": {
-              "end": 229,
+              "end": 231,
               "kind": "line_range",
               "start": 212
             }
@@ -350,15 +371,59 @@
       ]
     },
     "6": {
-      "note": "The script derives the single packaged target from generated-copies.json and checks bytes plus the generated-skills certification projection.\n\nAnchor: `skill_targets`, `check_targets`",
+      "note": "The script derives the single packaged target from generated-copies.json and checks bytes plus the generated-skills certification projection. Anchor: `skill_targets`, `check_targets`",
       "targets": [
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
-            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+            "content": "sha256:7154835c9a7497fa7c41c9bb084bcf73ac5cf4ffba6a7bb1703f296bb22adf2d",
             "locator": {
               "kind": "file"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The instruction-renewal planner loads sync-skills.py as the declared copy owner and uses its projection, digest, target and profile helpers to plan the generated skill copy beside renewed instruction facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+            "content": "sha256:dc77b7d99acf3375bdc7139e444e954227eecdf9a24ce0346abdf6f509a75135",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "scripts/instruction_renewal/plan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+            "content": "sha256:376effec01f60a6abd552240d51bfca26b1af857f333d77f7f1370ae2f398852",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "scripts/instruction_renewal/plan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ff97141c90d63fdda27c4d371c8b12c55610c27",
+            "content": "sha256:5575dc9c8e923b69658ce338eb5a8aaac3b3132b05f16927f97ca0ce7f653738",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "scripts/instruction_renewal/plan.py"
           },
           "kind": "code"
         }

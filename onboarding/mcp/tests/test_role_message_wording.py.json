@@ -1,13 +1,31 @@
 {
   "path": "mcp/tests/test_role_message_wording.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
+        "content": "sha256:2a7fce6d91ede58a6f7c70692195afebdf88963885595f2d912e9f8f6665148c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3BBWHC",
+      "invariant": "INV-AZTTPZ",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 9",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "This consumer or regression control follows generated routing fields and preserves the independent obligation it checks.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The product surface inventory and positive/negative controls qualify the wording oracle.\n\nAnchor: `RoleMessageWordingTests.test_the_surface_census_matches_the_product_inventory`; `RoleMessageWordingTests.test_the_oracle_catches_directives_and_keeps_legal_lines`",
       "targets": [
         {
           "anchor": {
-            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
             "content": "sha256:bbd21ddb4eaf78a34493f5f4e865d5d8ccf1618d7b40d6371fa4506e78767f9b",
             "locator": {
               "end": 481,
@@ -20,15 +38,28 @@
       ]
     },
     "2": {
-      "note": "Roles, operations and templates must express the file-message contract.",
+      "note": "Messaging roles, declared operation recipients and handover templates state the file-message markers; Bootstrap states its no-message own-chat route.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
-            "content": "sha256:55630e3349570e2864637ac522e0312b1e66a88862d3029b0d04d44690cd2b11",
+            "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
+            "content": "sha256:6e19d7283eb7b5b0b068c0796640887aaeea75cc7befd51a9b894473ab07e92e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_role_text_states_messages_as_files"
+              "end": 437,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
+            "content": "sha256:b6bf1fafede1441b58c5a41578835a8e7a7e33a5fa9ee5876745e52c14a3d5d7",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 130
             }
           },
           "kind": "test"
@@ -40,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
             "content": "sha256:c8ad6344843fa673b5e2f94afc968ea80ffb2baacd3a8e1ac31b99245eae79b5",
             "locator": {
               "kind": "symbol",
@@ -51,7 +82,7 @@
         },
         {
           "anchor": {
-            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
             "content": "sha256:5e6e22f5c38a42c50310b7075c5668fc956a0f70998a071006d4b226b83d8129",
             "locator": {
               "end": 452,
@@ -68,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
             "content": "sha256:1afae0566fba4830913403b0dc7f661383de794dccb0450cd82ed555c58e5dae",
             "locator": {
               "kind": "symbol",
@@ -79,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
             "content": "sha256:ebc905cf1b2b6977bfa1f5c41a836d69e8503e86b3594df2e11019e89c778958",
             "locator": {
               "end": 438,
@@ -96,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
             "content": "sha256:7a1217069209962e6d363c798cd79cfca6c3567a86c7ebc0409e054819d1e01a",
             "locator": {
               "kind": "symbol",
@@ -107,7 +138,7 @@
         },
         {
           "anchor": {
-            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
             "content": "sha256:05c9ef57b253150d3553f9ebff469543fa6fec854fec7fe30df42da75553db47",
             "locator": {
               "end": 559,
@@ -124,11 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
-            "content": "sha256:75e1f4eb37ab51653c3414439d4ec7c3c346296360a8d04060aa3bf52059dd05",
+            "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
+            "content": "sha256:ad78ed6ea0b83c726945887fb53ee9f82b67a1bacd2a481a0e8878db92b01e72",
             "locator": {
-              "kind": "symbol",
-              "name": "test_message_step_requires_pointer_declaration_audience_and_action"
+              "end": 762,
+              "kind": "line_range",
+              "start": 690
             }
           },
           "kind": "test"

@@ -4,16 +4,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The two real repositories each case builds.\n\nAnchor: \"a converted **memory** whose base commit records\"",
+      "note": "The two real repositories used by the repository-backed cases.",
       "targets": [
         {
           "anchor": {
             "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
-            "content": "sha256:15d9e47a30d69b0040f819b6c29364fe076498d8765869e70ecc59b63b90e41d",
+            "content": "sha256:c28da877a4ffb51383727b7592297d2d6e28207bdb01bbd6880e9c9802340cf2",
             "locator": {
-              "end": 8,
+              "end": 206,
               "kind": "line_range",
-              "start": 1
+              "start": 175
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:2d172203e6dfbe9fff7346c1107b3d4a7da38fd3dbdcc0dcdaf98da420b0836b",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 270
             }
           },
           "kind": "test"
@@ -105,10 +117,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 809,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },

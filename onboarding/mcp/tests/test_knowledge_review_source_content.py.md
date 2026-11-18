@@ -91,20 +91,25 @@ only the packet's boundary forbids it.
 ### Conventions
 
 `pytestmark = pytest.mark.evidence_unit` is the module's marker; its current
-`unit-regression` declaration is `mcp/tests/test-evidence-lanes.toml:267`.
+`unit-regression` declaration is `mcp/tests/test-evidence-lanes.toml:272`.
 The complete merged lifecycle catalog declares seven exact artifact-consumer
-relationships: `_user_settings_guard.py` (`:393`), `anchor_fixture_models.py`
-(`:918`), `diff_scope_test_support.py` (`:1333`), the Node `package-lock.json`
-fixture (`:2745`), `knowledge_row_codec_test_support.py` (`:3612`),
-`knowledge_rows_test_support.py` (`:3673`) and `read_scope_test_support.py`
-(`:4203`). These are catalog ownership declarations, not invocation or runtime
+relationships: `_user_settings_guard.py` (`:400`), `anchor_fixture_models.py`
+(`:926`), `diff_scope_test_support.py` (`:1342`), the Node `package-lock.json`
+fixture (`:2761`), `knowledge_row_codec_test_support.py` (`:3629`),
+`knowledge_rows_test_support.py` (`:3691`) and `read_scope_test_support.py`
+(`:4221`). These are catalog ownership declarations, not invocation or runtime
 consumption evidence. The earlier two-artifact account is superseded; its named
 diff-scope/read-scope supports remain members of this complete seven-artifact population. This module has no artifact or contract row of its own in this catalog.
 
-Every case is deterministic: no case depends on wall-clock ordering, the Git observations pin `PATH`,
-`HOME` and `GIT_CONFIG_NOSYSTEM`, and the only subprocess is that observation — the route is
-driven in-process through `TestClient`, so no case starts a server, reaches the network or touches a live
-coordination tree. Each case builds its own enclosure and worktree under `tmp_path`.
+The Git observations pin `PATH`, `HOME` and `GIT_CONFIG_NOSYSTEM`; Git fixture setup also uses
+subprocesses. The routes run in-process through `TestClient`, with no live server, network request
+or live coordination tree. Each case builds its own enclosure and worktree under `tmp_path`.
+
+The earlier card at memory snapshot `81cfe4a8` characterized every case as
+deterministic and said that no case depended on wall-clock ordering. That is
+retained as the earlier suite characterization. Its separate claim that the
+independent observation was the only subprocess is withdrawn: fixture Git
+setup also uses subprocesses, as the current account above states.
 
 ### Invariants And Boundaries
 
@@ -178,6 +183,8 @@ task-artifact root under `tmp_path` for each case.
 
 No meaningful cross-repo references found.
 
+### Repo-Internal References (continued)
+
 - The subprocess helper returns bytes or None; its wrappers respectively require and decode UTF-8 text, or decode an ASCII object identity with None preserved. [3]
 - Mode-only content keeps identical bytes and object identity; a type change opens the before regular file and after symlink by their respective kinds. [13]
 
@@ -188,15 +195,6 @@ No meaningful cross-repo references found.
 - The entry callback forwards the optional comparison number to the comparison-aware owner. [23]
 - The content request still names the listed before/after tree ids. [24]
 
-
-
-
-
-
-
-
-
-
 Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py::register_review_routes - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
@@ -205,7 +203,4 @@ Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3372 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
-
-- The lane row and the two named diff-scope/read-scope consumer rows declare this module's membership; those supports are a subset of its seven catalog relationships. [22]
+- The lane row and two of the module's declared consumer rows (diff-scope and read-scope shared support). [22]

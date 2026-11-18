@@ -100,10 +100,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 809,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },
@@ -246,10 +246,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 809,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },
@@ -338,15 +338,16 @@
       ]
     },
     "5": {
-      "note": "The read-only case: the task tree is byte-identical after a success and after every refusal.",
+      "note": "The read-only case keeps task-document bytes and the task-tree digest unchanged after a successful projection, a projection-branch-mismatch refusal and a projection-requirement-packet-unresolved refusal.",
       "targets": [
         {
           "anchor": {
             "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
             "content": "sha256:21950a202f0518236df30a3b9217f3dab3c4323e8aae90e53e852e1a389a7a18",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_refused_and_a_successful_projection_leave_the_task_tree_byte_identical"
+              "end": 1096,
+              "kind": "line_range",
+              "start": 1079
             }
           },
           "kind": "test"

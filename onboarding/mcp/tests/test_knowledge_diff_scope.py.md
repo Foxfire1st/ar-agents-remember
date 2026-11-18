@@ -7,9 +7,9 @@
 ## Purpose
 
 **The comparison's unit population: thirteen cases over the shared two-snapshot fixture, running
-in-process with no repository working tree, no network and no integration marker**
+in-process over temporary fixture repositories, with no network and no integration marker**
 (`pytestmark = pytest.mark.evidence_unit`). The module is registered in the **unit-regression** lane at
-`mcp/tests/test-evidence-lanes.toml:230`.
+`mcp/tests/test-evidence-lanes.toml:234`.
 
 **The attribution partition's original nine-case cohort lives next door; that sibling now has ten source test definitions.** `260921-ICR-L4` appended nine `ICR-R04@v1`
 cases here (22 cases, 1384 lines). `260921-ICR-L57` moved them verbatim into
@@ -65,7 +65,8 @@ absence, while forcing the second present turns a genuine deletion into a missin
   (`:613-674`) checks honest complete/truncated pages and contradictory states;
   the model-owned refusal assertion is at `:672-674`.
 - `test_the_filter_is_bound_into_the_comparison_identity_so_another_filter_cannot_reuse_it`
-  (`:502-523`) keeps continuation identity bound to the filter.
+  (`:502-523`) requires different display policies for different filters while keeping the
+  comparison binding and selector digests equal; it presents no continuation cursor.
 - `test_the_expansion_of_a_comparison_that_observed_no_trees_claims_no_change_set`
   (`:677-714`) reports the missing source observation without claiming an empty change set.
 
@@ -124,7 +125,7 @@ No configured domain documentation could be checked.
 - **The source-only change: `record_field_changed=False` with `source_observation_changed=True`, on identical recorded anchors.** [4]
 
 - The statement-only change that still returns the attributed code. [5]
-- **The unchanged sibling returned on both sides rather than omitted, with one item each way across the record/source split.** [6]
+
 - **The packet's first non-conforming example, and the node `M1`/`M2` kill.** [7]
 
 - **The explicit per-side selectors addressing two different exact revisions of one identity.** [8]
@@ -133,7 +134,7 @@ No configured domain documentation could be checked.
 - The present-outside-versus-absent distinction asserted side by side, and the coverage decision's two selection- and probe-based rules -- another exact revision selected, or the record held by the other side's tables -- with no authored edge participating. [9]
 
 
-- **The filter narrowing the display and never the comparison, and the filter bound into the comparison identity.** [10]
+
 
 - The limitation/omission model guard, with honest construction and both mismatch directions checked in the named current function. Historical mutant attribution: `M26`. [11]
 - Complete/truncated page agreement and the model-owned contradiction refusal in the named current function. Historical mutant attribution: `M25`. [12]
@@ -151,12 +152,18 @@ the comparison's source resolution is driven through the fixture's own committed
 No configured cross-repository evidence is claimed.
 > Retained earlier citation wording: - **The unit-lane row this module occupies, and the governed support artifact it consumes.**
 
+### Repo-Internal References (continued)
 
 
 
-- **The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [15]
 
 
+- The filter narrows the display without changing comparison totals; its policy differs while comparison binding and selector digests remain equal. [10]
 
+### Repo-Internal References (renewed)
+
+- The two sibling claims are returned on both sides with unchanged record fields; both have changed source observations, with no still-source item in this fixture. Anchor: "test_an_unchanged_sibling_is_returned_identically_on_both_sides_rather_than_omitted" [6]
 
 - **The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [16]
+
+- **The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [15]

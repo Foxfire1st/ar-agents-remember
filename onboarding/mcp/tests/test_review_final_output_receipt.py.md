@@ -10,13 +10,35 @@ Pins final-output receipts bound to retained code and memory tree comparisons.
 
 ## Code Commentary
 
-TreeReceiptFixture creates real temporary code/memory Git repositories, captures their two-tree comparison through the existing owners and passes committed results to receipt attachment/read functions. It calls receipt owners directly; it does not perform the former end-to-end canonical dataset freeze, closeout or integration journeys.
+TreeReceiptFixture creates real temporary code/memory Git repositories, captures their two-tree comparison through the existing owners and passes committed results to receipt attachment/read functions. It calls receipt owners directly; it does not perform an end-to-end freeze, closeout or integration journey.
 
-Six current test functions assert both delivered-tree matches and result keys, moved/absent memory or code coverage, unavailable/corrupt comparison handling without blocking an already completed result, forged source binding and leaf scoping, immutable previous receipts labelled by a successor, and readable historical v1 receipts with an explicit lack of memory-tree proof. The former eleven-journey/module-node account is removed coverage. No receipt here supplies semantic acceptance.
+Six current test functions assert both delivered-tree matches and result keys, moved/absent memory or code coverage, unavailable/corrupt comparison handling without blocking an already completed result, forged source binding and leaf scoping, immutable previous receipts labelled by a successor, and readable historical v1 receipts with an explicit lack of memory-tree proof. No receipt here supplies semantic acceptance.
 
 ### Todos
 
 None recorded.
+
+## Retained Source-Epoch Context
+
+These attributed excerpts preserve earlier module history, rationale, deliberate omissions and evidence limits recorded in the memory base. Source coordinates, populations, outcomes and ownership describe their recorded epochs. They do not renew execution results or replace the current source account. This pass did not rerun the historical checks.
+
+### Earlier receipt coverage boundary
+
+Summary based on the account in memory base `81cfe4a8`, 13–13:
+
+> The receipt fixture does not perform the former end-to-end canonical dataset freeze, closeout or integration journeys.
+
+### Retired journey coverage
+
+Summary based on the account in memory base `81cfe4a8`, 15–15:
+
+> Six current test functions assert both delivered-tree matches and result keys, moved/absent memory or code coverage, unavailable/corrupt comparison handling without blocking an already completed result, forged source binding and leaf scoping, immutable previous receipts labelled by a successor, and readable historical v1 receipts with an explicit lack of memory-tree proof. The former eleven-journey/module-node account is removed coverage. No receipt here supplies semantic acceptance.
+
+### Prior citation-anchor retirement
+
+Summary based on the account in memory base `81cfe4a8`, 67–67:
+
+> - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:2279-2279 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1374-1374 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 ## Evidence
 
@@ -41,32 +63,16 @@ No domain documentation source is configured for this repository (`system/source
 
 No configured domain documentation could be checked.
 
-
-
-
-> Retained earlier citation wording: - The lane row and the exact-scope consumer row this module is registered in.
-
-
-
 ### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-
-
-
-
-
-
 - The lane row and the exact-scope consumer row this module is registered in.
 
 - The lane row and the exact-scope consumer row this module is registered in.
 
-## Retirements
-
-- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:2279-2279 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1374-1374 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
-
+### Repo-Internal References (continued)
 
 - The lane row and the exact-scope consumer rows (the _user_settings_guard.py and Node package-lock artifacts) this module is registered in. [24]

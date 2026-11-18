@@ -6,32 +6,21 @@
 
 ## Purpose
 
-The lane that pins **a cleanup preview and the cleanup it previews agreeing about the same
-collection.** `D-15` measured the failure: `lifecycle_finalize_task` with `dry_run=true` returned
-`state: cleanup-blocked` on a `driftSnapshot` blocker that carried no reason, while the real finalize
-on the same contract completed and reclaimed everything.
+The lane pins **a cleanup preview and the cleanup it previews agreeing about the same collection.**
 
-The historical cause was **one missing keyword** in the drift-snapshot branch. The current
-`terminal_result_blockers` is at
-`mcp/src/agents_remember/worktrees/modules/terminal_validation.py:260-312`; its drift-snapshot
-branch is at `:294-311` and now propagates `preview=result.preview` at line 309, as the sibling
-collections do. The retained defect account describes the earlier omission: a preview's
-`would_remove` entry was read with the real call's pending key and appeared to reclaim nothing.
-`_blocker` (currently `:715-731`) refuses a missing reason. The recorded failure therefore concerned
-previews of contracts that a real finalize completed; it is historical regression context, not a
-claim that the current branch still omits the keyword or a new execution result.
+`terminal_result_blockers` is at `mcp/src/agents_remember/worktrees/modules/terminal_validation.py:260-312`. Its drift-snapshot branch at `:294-311` passes `preview=result.preview` at line 309. `_blocker` (`:715-731`) refuses a missing reason.
 
 ## Code Commentary
 
 ### Logic
 
-The module drives the **real validator** over the three shapes the production producer emits —
+The module drives the **real validator** over four result shapes of the production producer —
 `kernel/primitives/drift_snapshot.py::_remove_snapshot_file` (`:38-...`) is what writes them — rather
 than synthesizing an outcome the producer cannot produce. `_result` (`:27-41`) builds a
 `TerminalResult` whose only non-empty collection is `drift_snapshots={"code": snapshot}`, with
 `providers={"state": "torn-down"}` so the provider half contributes no blocker; that isolation is
 what makes the assertion about the `driftSnapshot` branch specifically rather than about the
-validator as a whole. The four snapshot builders are the producer's own three result shapes:
+validator as a whole. The four snapshot builders model those result shapes:
 
 | Builder | Shape | Producer's own fields |
 | --- | --- | --- |
@@ -42,10 +31,8 @@ validator as a whole. The four snapshot builders are the producer's own three re
 
 The three cases:
 
-- **`test_a_preview_over_a_live_drift_snapshot_reports_no_blocker`** (`:83-91`) — the measured L14
-  shape. Before the fix this call raised
-  `RuntimeError: terminal result blocker driftSnapshot=code carries no reason`; the assertion is
-  `terminal_result_blockers(...) == []`.
+- **`test_a_preview_over_a_live_drift_snapshot_reports_no_blocker`** (`:83-91`) asserts
+  `terminal_result_blockers(...) == []` for a preview-shaped drift snapshot.
 - **`test_the_preview_and_the_real_call_agree_over_the_same_collection`** (`:94-104`) — the module's
   actual subject, asserted from four directions in one case: the preview answers `would_remove`, the
   real call answers `removed`, and an entry that was already gone is benign in **both** modes. That
@@ -58,17 +45,11 @@ The three cases:
 
 ### Conventions
 
-The module imports exactly two names — `TerminalResult` and `terminal_result_blockers` — from the
-validator it measures, and nothing else from the package: no fixture module, no test-support import,
-so the evidence-lifecycle catalog records no transitive consumer here. The five helpers are
-module-level functions with docstrings that state the role the value plays in the assertion rather
-than restating its type, and every value is a plain `dict[str, object]` literal, which is what the
-validator's own signature accepts.
+The module imports exactly two names — `TerminalResult` and `terminal_result_blockers` — from the validator, with no test-support import. This direct import shape does not establish absence of evidence-catalog dependencies: the catalog declares this module as a consumer of the global user-settings guard and Node lockfile artifacts. Its five helpers construct typed terminal results or plain snapshot dictionaries for the assertions.
 
 **The current lane registration is the manifest row**: this module carries **no `pytestmark`** and appears in
-`unit-regression` at `mcp/tests/test-evidence-lanes.toml:599`. Membership selects evidence and establishes no execution.
-The earlier leaf's recorded append-at-end account describes its historical catalog, not the current row position.
-The earlier append-only registration was recorded at historical `mcp/tests/test-evidence-lanes.toml:192`; that source-epoch coordinate is not current navigation.
+`unit-regression` at `mcp/tests/test-evidence-lanes.toml:604`. Membership selects evidence and establishes no execution.
+
 
 ### Invariants And Boundaries
 
@@ -77,14 +58,57 @@ The earlier append-only registration was recorded at historical `mcp/tests/test-
   block — the fix may not be achieved by weakening that rule.
 - **A preview is never read as a result.** `TerminalExpectation.preview` selects the key that proves
   reclamation; the `would_remove`/`removed` pair is the whole difference.
-- **The `driftSnapshot` branch must stay on the same footing as its siblings.** Every collection
-  built from a `TerminalResult` propagates `preview` — the comment beside the fixed branch records
-  exactly why.
+- **The `driftSnapshot` expectation receives the preview flag.** The worktree, directory and
+  drift-snapshot expectations receive `result.preview`; the branch expectation and provider helper
+  do not receive that flag. The comment beside the fixed drift-snapshot branch records why the former missing preview keyword misread `would_remove` as a real-result reclamation failure, along with the earlier fix’s merge provenance.
 - **Boundary.** This is a test module. It owns no production contract and adds no support module.
 
 ### Todos
 
 None recorded.
+
+## Retained Full-Card Audit Context
+
+These distinct accounts are retained from memory base `81cfe4a8`. Dates, source coordinates, counts, outcomes and ownership describe their recorded epochs; this pass adds no execution, mutation result or acceptance. Historical reference labels are custody text and do not select live anchors.
+
+### D-15 preview/finalize discrepancy
+
+> The lane that pins **a cleanup preview and the cleanup it previews agreeing about the same
+> collection.** `D-15` measured the failure: `lifecycle_finalize_task` with `dry_run=true` returned
+> `state: cleanup-blocked` on a `driftSnapshot` blocker that carried no reason, while the real finalize
+> on the same contract completed and reclaimed everything.
+
+The D-15 result is the earlier recorded incident, not a new finalize run. Current source still supplies the preview/cleanup agreement checks.
+
+### Missing-keyword cause and reason boundary
+
+> The historical cause was **one missing keyword** in the drift-snapshot branch. The current
+> `terminal_result_blockers` is at
+> `mcp/src/agents_remember/worktrees/modules/terminal_validation.py:260-312`; its drift-snapshot
+> branch is at `:294-311` and now propagates `preview=result.preview` at line 309, as the sibling
+> collections do. The retained defect account describes the earlier omission: a preview's
+> `would_remove` entry was read with the real call's pending key and appeared to reclaim nothing.
+> `_blocker` (currently `:715-731`) refuses a missing reason. The recorded failure therefore concerned
+> previews of contracts that a real finalize completed; it is historical regression context, not a
+> claim that the current branch still omits the keyword or a new execution result.
+
+The keyword omission and its consequence are explicitly historical; the current branch passes preview=result.preview. The old sibling-universal wording elsewhere is not current behavior: branch expectations and provider helper do not receive that flag.
+
+### Measured L14 regression shape
+
+> - **`test_a_preview_over_a_live_drift_snapshot_reports_no_blocker`** (`:83-91`) — the measured L14
+>   shape. Before the fix this call raised
+>   `RuntimeError: terminal result blocker driftSnapshot=code carries no reason`; the assertion is
+>   `terminal_result_blockers(...) == []`.
+
+The earlier failure text and L14 attribution remain historical. The current [] assertion, four-direction agreement and genuine-failure guard are unchanged; no test was rerun.
+
+### Earlier append-only lane account
+
+> The earlier leaf’s recorded append-at-end account describes its historical catalog, not the current row position.
+> The earlier append-only registration was recorded at historical `mcp/tests/test-evidence-lanes.toml:192`; that source-epoch coordinate is not current navigation.
+
+The current unit-regression selector remains line 604; the old 599 locator is mechanically refreshed, while the original 192 registration account is preserved as history.
 
 ## Evidence
 
@@ -97,8 +121,8 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- The module's own statement of D-15 and of the three shapes it drives. [1]
-- **The one entry point, with the fixed `driftSnapshot` branch and its comment.** [2]
+
+
 - The expectation type whose `preview` flag selects the reclamation key. [3]
 - The result type that bundles the outputs with whether they are a preview. [4]
 - **The producer of the shape this module drives: the real drift-snapshot remover.** [5]
@@ -106,13 +130,6 @@ No configured domain documentation could be checked.
 - The preview's own entry shape: `would_remove`, not `removed`. [7]
 - The real removal and the already-absent entries. [8]
 - The genuine failure, which must still block with its reason. [9]
-- **The measured L14 shape: a preview over a live drift snapshot reports no blocker.** [10]
-- **Preview and apply are the same judgement, asserted from four directions in one case.** [11]
-- **The other half of the contract: the fix may not swallow a real failure.** [12]
-
-
-> Retained earlier citation wording: - The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution.
-
 
 ### Cross-Repo References
 
@@ -120,7 +137,21 @@ No cross-repository behavior is implemented or measured in this file.
 
 No meaningful cross-repo references found.
 
+### Repo-Internal References (continued)
 
 
+
+
+- The preview case asserts that a live drift snapshot produces no blocker. [10]
+
+- The case checks preview, real removal and an already-absent entry over the same drift-snapshot collection. [11]
+
+- A real drift-snapshot failure remains blocking and retains its reason. [12]
+
+- The module states the preview/cleanup agreement and defines preview, removed, absent and failed snapshot inputs. [1]
+
+### Repo-Internal References (renewed)
+
+- The drift-snapshot branch uses a preview-aware expectation; its adjacent comment records the earlier missing-keyword cause and merge provenance. [2]
 
 - The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution. [13]

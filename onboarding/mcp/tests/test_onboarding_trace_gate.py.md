@@ -46,17 +46,12 @@ call the trace gate and memory-quality controller; they do not exercise a closeo
   `unexplained_hunk` (MIK-R10), and the appended source also makes the card's reference anchor stale. After
   writing the traces, the stale reference remains one actionable item;
 
-> Retained earlier card wording; superseded by the current account above:
->   candidate trees (the gate judges exact trees), and the case asserts `curatorActionableCount` 3 and
->   `knowledgeGate.openItemCount` 3, not 2: the gate counts each open item once, so the card's and the route's traces
->   are joined by the uncovered file's `unexplained_hunk` (MIK-R10), which the card's own trace answers once it is
->   written;
  `onboardingTrace.open` still names the two traces; `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list`
   pins ruling Q2 and the `(kind, subject)` order; the gate-message case independently checks that trace names remain visible when the gate’s changed paths exceed the reported census; `test_an_unconverted_leaf_is_refused_before_any_gate_runs` asserts that sides and worklist remain `None`, but the controller refuses (`state: refused`, `code: unconverted-memory`) with the central `legacy-format` message and conversion command before either gate runs; the legacy gate is not called and no `onboardingTrace` is delivered.
-- **L37 (review R3-1).** `_run_controller` patches `run_memory_quality_check` with the module-level mock
-  `_QUALITY_RUN`, and `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` now also
+- `_run_controller` patches `run_memory_quality_check` with the module-level mock
+  `_QUALITY_RUN`, and `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` also
   asserts that the run's drift context carries a callable `knowledge_base`: the converted check is given its
-  comparison base (MIK-R24 rule 7). No case was added.
+  comparison base (MIK-R24 rule 7).
 
 ### Conventions
 
@@ -65,19 +60,42 @@ call the trace gate and memory-quality controller; they do not exercise a closeo
 
 ### Invariants And Boundaries
 
-- **The current ordinary-candidate cases supersede the older counted-edit-or-row ruling.**
+- **The ordinary-candidate cases require source-current history rows.**
   MIK-R53 requires an eligible row bound to current source blobs; `updated` additionally requires
   counted Markdown/reference change, `no_impact` covers unchanged contracts, and entry-only
-  realizes/proves edits do not count. A later source edit reopens the bound answer. Earlier rulings
-  18:49:50 (persisted items, `onboarding:overview`, cache Markdown), 19:23:45 (N1–N5) and
-  19:53:54 (R2-1–R2-3) remain historical context; only the old standalone-counted-edit answer is
-  superseded. Amended L53 rule 1 separately permits this leaf's counted changed cards under the
-  old MAIN-LINE producer without updated or changed-card no_impact/backfill; that rollout exception
-  is not a conflict blocker and is not what these ordinary-candidate tests assert.
+  realizes/proves edits do not count. A later source edit reopens the bound answer.
 
 ### Todos
 
 - None recorded.
+
+## Retained Historical Context
+
+The following complete passages are retained from the earlier card at memory snapshot `81cfe4a8`. They are the recorded L37 review and L53 rollout account: its rationale, historical source coordinates, prior measurements and deliberate omissions. Prior run outcomes remain attributed to that account; this curation adds no execution result. Historical reference labels below are custody text and do not select current sidecar anchors.
+
+> > Retained earlier card wording; superseded by the current account above:
+> >   candidate trees (the gate judges exact trees), and the case asserts `curatorActionableCount` 3 and
+> >   `knowledgeGate.openItemCount` 3, not 2: the gate counts each open item once, so the card's and the route's traces
+> >   are joined by the uncovered file's `unexplained_hunk` (MIK-R10), which the card's own trace answers once it is
+> >   written;
+>  `onboardingTrace.open` still names the two traces; `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list`
+>   pins ruling Q2 and the `(kind, subject)` order; the gate-message case independently checks that trace names remain visible when the gate’s changed paths exceed the reported census; `test_an_unconverted_leaf_is_refused_before_any_gate_runs` asserts that sides and worklist remain `None`, but the controller refuses (`state: refused`, `code: unconverted-memory`) with the central `legacy-format` message and conversion command before either gate runs; the legacy gate is not called and no `onboardingTrace` is delivered.
+> - **L37 (review R3-1).** `_run_controller` patches `run_memory_quality_check` with the module-level mock
+>   `_QUALITY_RUN`, and `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` now also
+>   asserts that the run's drift context carries a callable `knowledge_base`: the converted check is given its
+>   comparison base (MIK-R24 rule 7). No case was added.
+
+> - **The current ordinary-candidate cases supersede the older counted-edit-or-row ruling.**
+>   MIK-R53 requires an eligible row bound to current source blobs; `updated` additionally requires
+>   counted Markdown/reference change, `no_impact` covers unchanged contracts, and entry-only
+>   realizes/proves edits do not count. A later source edit reopens the bound answer. Earlier rulings
+>   18:49:50 (persisted items, `onboarding:overview`, cache Markdown), 19:23:45 (N1–N5) and
+>   19:53:54 (R2-1–R2-3) remain historical context; only the old standalone-counted-edit answer is
+>   superseded. Amended L53 rule 1 separately permits this leaf's counted changed cards under the
+>   old MAIN-LINE producer without updated or changed-card no_impact/backfill; that rollout exception
+>   is not a conflict blocker and is not what these ordinary-candidate tests assert.
+
+The quoted three-actionable count is explicitly superseded by the current four-actionable/three-gate-item account above. In the quoted L53 rollout exception, “this leaf” names that earlier L53 rollout, not L8 or every ordinary current candidate. The earlier rulings remain historical context while current ordinary cases require eligible source-current history rows.
 
 ## Evidence
 
@@ -125,16 +143,6 @@ No configured live documentation source was available for this pass.
 - The items are in the persisted worklist. [16]
 - An unconverted leaf is refused before either gate runs, with the conversion step. [17]
 
-
-
-
-
-
-
-
-
-
-
 - The memory-quality run gives the converted check its comparison base. [19]
 
 
@@ -145,13 +153,15 @@ No meaningful cross-repo references found: the fixtures are temporary repositori
 
 No cross-repo boundary is crossed by this file.
 
+### Repo-Internal References (continued)
+
 - Mechanical anchor fields and realizes-only edits never count; reference/prose edits are separate counted changes. [3]
 - The conforming example pairs prose with updated and source-current no_impact rows, using the nearest route and candidate blobs. [4]
 - Unnecessary rows, five registry facts including sourceBlobs, and rejection of counted-change-only satisfaction. [7]
 - test_a_moved_marker_row_binds_its_sources_and_reopens_on_change preserves row identity/markers and the unchanged candidate source binding on rewrite, updates the reason to `Re-reviewed.`, then reopens after source movement. [8]
-- Current source delta inspected statically: Repair current-row/counting doctrine, moved-marker caption and worklist/blob inputs; keep historical rulings explicitly superseded. [20]
 
 
 
+- The cases assert source-current onboarding rows, moved-marker identity preservation and current worklist/blob inputs. [20]
 
 - The unit-lane registration. Source caption: "mcp/tests/test_onboarding_trace_gate.py" [18]

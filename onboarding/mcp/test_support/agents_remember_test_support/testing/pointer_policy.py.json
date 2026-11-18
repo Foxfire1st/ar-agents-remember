@@ -1,0 +1,42 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/pointer_policy.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "424522943d18e0ab43fe06f01ac7cdcb1916145e",
+        "content": "sha256:5dfd33b6178343a14007b8329686184e60ed7c9c996827ee201df61f588948b2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-V49PKK",
+      "invariant": "INV-NDGJ3M",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 6",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Independent audience, link and pointer checks protect current delivery while the kept historical constants remain unchanged.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The projection derives test inputs from authored policy and current wording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "424522943d18e0ab43fe06f01ac7cdcb1916145e",
+            "content": "sha256:10c8b3a00e39ec7567569e52bd97e4dc625de47c5778b6ca4a2cfe99f173bcf2",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

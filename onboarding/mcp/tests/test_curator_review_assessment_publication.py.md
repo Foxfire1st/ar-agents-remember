@@ -26,8 +26,8 @@ The load-bearing properties:
   terminal cleanup removes for a leaf contract — is gone;
 - the caller's document reference is resolved to the canonical identity the record and an assessment's
   author carry, or refused with the shape **and** the exact value this contract expects;
-- the attestation the record commits to is readable **after** the enclosure it was observed in is gone,
-  by the path the record itself carries;
+- the attestation the record commits to is readable **after** the enclosure's `reports` directory is removed,
+  by the copy path the record itself carries;
 - the shipped exact-coverage obligation `_judgments_cover_candidates_exactly` is untouched by a record
   that carries assessments.
 
@@ -38,18 +38,17 @@ The load-bearing properties:
 **Five** test classes contain **23** test definitions at code tree `96bf7343`, by complete AST inspection, without pytest collection or execution. The three-class, 18-case and 22-case accounts later in this card belong to their named earlier leaves:
 
 - `TestPublishedAssessment` — an assessment publishes to the canonical authority and reads back; the
-  stored author is whatever the publication path supplied; each cited evidence byte is recorded with
-  path, digest and size; the published copy is the cited bytes by content; a citation naming a
-  worktree file is published to the surviving tree; the recorded bytes survive removal of the
+  stored author is whatever the publication path supplied; cited evidence bytes are read back by their
+  recorded path and digest, and their size is checked against the fixture content; the recorded bytes survive removal of the
   enclosure `reports` directory; publishing an assessment does not disturb the exact-coverage
   obligation; a leaf with no assessment publishes and reports `none-recorded`.
 - `TestReadStatesOverAStoredCollection` — a measured move marks the stored assessment stale and keeps
-  it readable; `unresolved` is reported as its own state rather than as a clearance.
+  it readable; `unresolved` is reported as its own state rather than as a clearance. Missing, empty or incomplete measurements report `not-measured`; a complete matching measurement reports `current`.
 - `TestAssessmentRefusals` — the author-supplying case constructs `CuratorCoherenceRequest` and
   asserts `ValidationError` containing `authorRef`; it does not call the application publication
   boundary or assert a returned refusal code. Separate `_tool_publish` cases assert application
   refusal codes and byte-identical canonical authority. Direct evidence-byte helper cases check
-  invalid destinations, digest mismatch, published copies and post-publication absence.
+  invalid destinations, digest mismatch, published copies and post-publication absence. The case `test_a_citation_naming_a_worktree_file_is_published_to_the_surviving_tree` belongs to this class: it publishes a `code:feature.txt` citation into the surviving task tree and requires the published text to equal the fixture’s `cited bytes\n`.
 - `TestPublisherCallerAddress` (class `:784-855`, case bodies `:795-855`) — item 19's two cases. A **bare** leaf-document file name
   that names the addressed document publishes, and the stored record's `taskDocumentRef.path` and
   `publishedBy` carry the canonical `<task-dir>/<leaf>.json` rather than the caller's spelling. A bare
@@ -116,35 +115,20 @@ Superseded card wording retained for custody (not certified as true of any sourc
 
 ### Repo-Internal References
 
-
-
-
-
 > Retained earlier citation wording: - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = ["
 
-
-
-
-
-
-
 > Retained earlier citation wording: - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = ["
-
-
-
-
-
-
 
 > Retained earlier citation wording: - The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation.
 
 
 
-- The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. [4]
-- The destination and read-back the survival and blocked cases measure. [5]
 
-- The record's `assessments` collection that the publish action accepts holds each assessment identity once, a rule kept separate from judgment-to-candidate coverage. [6]
 
+
+### Repo-Internal References (renewed)
+
+- The destination/read-back helpers and the TestAssessmentRefusals worktree-citation case keep the cited bytes in the surviving task tree. [5]
 
 ## KS-R15@v1 Integration Protection
 
@@ -186,26 +170,6 @@ closeout entry point the rest of the integration suite uses.
 At that `260921-ICR-L15` source epoch, the recorded account was: the module grew 948 → 988 lines. Nothing else in it changed: the same fixture, the same published
 assessment, and the same `curator_coherence_subject_assessment_state` projection under test.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation.
 
 - The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation.
@@ -214,17 +178,8 @@ assessment, and the same `curator_coherence_subject_assessment_state` projection
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1951-1951 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
-
 - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" [1]
-
-
-
-
 - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" [2]
-
-
-
-
 - The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation. [3]
+- The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. [4]
+- The record's `assessments` collection that the publish action accepts holds each assessment identity once, a rule kept separate from judgment-to-candidate coverage. [6]

@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:f0e5f1ddda35f33ad0d76ff1c2fe6870a84e9a567b5aca9d8c3003a70d1f4843",
         "locator": {
-          "end": 240,
+          "end": 230,
           "kind": "line_range",
-          "start": 240
+          "start": 230
         }
       },
       "id": "RLZ-031YY4",
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-        "content": "sha256:ffb8ea787bca682e5dbc93e01eca948f5bf9da667ed9d9e73d7d0df6e73f03de",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+        "content": "sha256:39ebec63b0b851c8710bbbf714e7764228c3ae8779e69ee4095dc25ea77b22e6",
         "locator": {
-          "end": 1070,
+          "end": 1183,
           "kind": "line_range",
-          "start": 1060
+          "start": 1177
         }
       },
       "id": "RLZ-0XJWN1",
@@ -42,12 +42,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:2fa7b5ec23e247702fc2471a649873e5be15b3bf2f7940224fab1131e612af55",
         "locator": {
-          "end": 292,
+          "end": 282,
           "kind": "line_range",
-          "start": 292
+          "start": 282
         }
       },
       "id": "RLZ-5G6AGC",
@@ -61,12 +61,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-        "content": "sha256:2eb6b97a6caa97b0476613fc8c5359c925a0d4f9c6fe12130ea4523bd99e02ab",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+        "content": "sha256:ba5fc2d42df8d4190fc0b30461d6ea074a85e5eb8eada5acc210033391b9a59d",
         "locator": {
-          "end": 585,
+          "end": 877,
           "kind": "line_range",
-          "start": 576
+          "start": 872
         }
       },
       "id": "RLZ-60QKQ2",
@@ -80,12 +80,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 426,
+          "end": 416,
           "kind": "line_range",
-          "start": 425
+          "start": 415
         }
       },
       "id": "RLZ-66Y6Y1",
@@ -99,12 +99,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 299,
+          "end": 289,
           "kind": "line_range",
-          "start": 298
+          "start": 288
         }
       },
       "id": "RLZ-6BJQC6",
@@ -118,12 +118,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 344,
+          "end": 334,
           "kind": "line_range",
-          "start": 343
+          "start": 333
         }
       },
       "id": "RLZ-6HJ4DW",
@@ -137,12 +137,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:f63b06707e1c361d62ec6467bfe4b95d9f69925c0094e10b6ede103867b43d45",
         "locator": {
-          "end": 463,
+          "end": 453,
           "kind": "line_range",
-          "start": 447
+          "start": 437
         }
       },
       "id": "RLZ-6W76SN",
@@ -156,8 +156,8 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-        "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+        "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
         "locator": {
           "kind": "file"
         }
@@ -173,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:d4a12d5c146197e4304e0b7d638b884b09f48878c611eddf27b3afd7a3702606",
         "locator": {
           "end": 25,
@@ -192,8 +192,8 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-        "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+        "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
         "locator": {
           "kind": "file"
         }
@@ -209,12 +209,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 247,
+          "end": 237,
           "kind": "line_range",
-          "start": 246
+          "start": 236
         }
       },
       "id": "RLZ-BKB9YC",
@@ -228,7 +228,7 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:e91a9e18b058506863abb8bfafb7e45d6c8b6f8f7023b93dcdce5c0f8413ddfc",
         "locator": {
           "end": 34,
@@ -247,12 +247,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 387,
+          "end": 377,
           "kind": "line_range",
-          "start": 386
+          "start": 376
         }
       },
       "id": "RLZ-BNA84H",
@@ -266,12 +266,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 467,
+          "end": 457,
           "kind": "line_range",
-          "start": 466
+          "start": 456
         }
       },
       "id": "RLZ-CTTS3C",
@@ -285,12 +285,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:049e07153602a51202aa82c5e8a72bf741f8b30e6dac36373c2c308edc359ff2",
         "locator": {
-          "end": 196,
+          "end": 186,
           "kind": "line_range",
-          "start": 196
+          "start": 186
         }
       },
       "id": "RLZ-HGSMDT",
@@ -304,12 +304,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 495,
+          "end": 485,
           "kind": "line_range",
-          "start": 494
+          "start": 484
         }
       },
       "id": "RLZ-J3KCTG",
@@ -323,12 +323,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 203,
+          "end": 193,
           "kind": "line_range",
-          "start": 202
+          "start": 192
         }
       },
       "id": "RLZ-K2CFP2",
@@ -342,12 +342,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:ad78c06283ec1fba7b4d2a3e3a87186146d18aa6a91690eafff34f8e58a21da0",
         "locator": {
-          "end": 1089,
+          "end": 836,
           "kind": "line_range",
-          "start": 1082
+          "start": 829
         }
       },
       "id": "RLZ-NNHVHW",
@@ -361,8 +361,25 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-        "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+        "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-NWY918",
+      "invariant": "INV-Q432XE",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 3",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Authored routing topology and no-step marks remain separate from generated audiences and action wording.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+        "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
         "locator": {
           "kind": "file"
         }
@@ -378,7 +395,7 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:d6444e20cae443139bda5e4729917a083fc9c643d5e0db2eb3a0375c0d1bbb85",
         "locator": {
           "end": 160,
@@ -397,8 +414,8 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-        "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+        "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
         "locator": {
           "kind": "file"
         }
@@ -414,12 +431,12 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-        "content": "sha256:94bb07f87db8098b4a5530fae5c134513d1b2cabb5e0ad1a927ac13d1d42c914",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+        "content": "sha256:144fed9e4d7edfc82d6a386739dd16a00e1e5fd3625678af5a06f2f3cffb19ac",
         "locator": {
-          "end": 611,
+          "end": 896,
           "kind": "line_range",
-          "start": 596
+          "start": 884
         }
       },
       "id": "RLZ-TTD2BQ",
@@ -433,7 +450,7 @@
     },
     {
       "anchor": {
-        "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+        "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
         "content": "sha256:28505dbb3f7e2ed85116de1c35f58e92c921b4259d27ba9e27b961993fc25988",
         "locator": {
           "end": 54,
@@ -457,7 +474,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:82d27b986ff7e90eeecd010dc4e925c28c0cdf759215e447ac6aacfa82d63508",
             "locator": {
               "end": 5,
@@ -551,7 +568,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
             "content": "sha256:684230c5d826a8f344a73f6bf3f7ad650a399c83726c67edce126a43f987e75c",
             "locator": {
               "kind": "symbol",
@@ -563,7 +580,7 @@
         },
         {
           "anchor": {
-            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
             "content": "sha256:11d5e725544b800c18eb49ec2165f047ec61603bda9a2b143868f6fa4386622d",
             "locator": {
               "kind": "symbol",
@@ -580,12 +597,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:022d52fcb9b6bbdceda27785801bac53be7104d60b019642ec582d396225532a",
             "locator": {
-              "end": 490,
+              "end": 480,
               "kind": "line_range",
-              "start": 447
+              "start": 437
             }
           },
           "kind": "code"
@@ -610,7 +627,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:f26dbe6f0c682f33740a4cc4008ccaec3f68f15f6d78caf8daaff58ead18b52b",
             "locator": {
               "end": 5,
@@ -627,7 +644,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:fc8662c1aa3d27c2638c948df760a542894843b33317c640ea7521d5f0afd2db",
             "locator": {
               "end": 132,
@@ -640,16 +657,16 @@
       ]
     },
     "18": {
-      "note": "The role registry itself and the two role entries that show the per-seat shape.\n\nAnchor: `\"roles\": {`",
+      "note": "The role registry itself and the two role entries that show the per-seat shape. Anchor: `\"roles\": {`",
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:975b5ce8d4b0eaf1b02dd39bca38b8bb0e3f18d3ac423d4e8a69f0e7cd574066",
             "locator": {
-              "end": 507,
+              "end": 497,
               "kind": "line_range",
-              "start": 174
+              "start": 164
             }
           },
           "kind": "code"
@@ -661,24 +678,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:97055d769b1d5bc1dd8cac6aaec7c6b8ead567771f150cfc1f5e9fdcd12cfff8",
             "locator": {
-              "end": 196,
+              "end": 186,
               "kind": "line_range",
-              "start": 175
+              "start": 165
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:4f79b4948df1b8ab25da281e25d65fc198d8cc025cd49d46788e23a730c6a22b",
             "locator": {
-              "end": 462,
+              "end": 452,
               "kind": "line_range",
-              "start": 447
+              "start": 437
             }
           },
           "kind": "code"
@@ -686,16 +703,16 @@
       ]
     },
     "20": {
-      "note": "The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four).\n\nAnchor: `templates`",
+      "note": "The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). Anchor: `templates`",
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:cdfa580d1029033c5053c051080c28ee152916dcc36a9bf92ac8812a31142890",
             "locator": {
-              "end": 438,
+              "end": 428,
               "kind": "line_range",
-              "start": 433
+              "start": 423
             }
           },
           "kind": "code"
@@ -703,16 +720,16 @@
       ]
     },
     "21": {
-      "note": "The launcher entry: a routing condition with its own core block and its operations; it compiles no template.\n\nAnchor: `is_role`",
+      "note": "The launcher entry: a routing condition with its own core block and its operations; it compiles no template. Anchor: `is_role`",
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:7ff90fe1949d4460c9e3194ffff4cba7453c9c642f5756423b1a5c9984660dfd",
             "locator": {
-              "end": 528,
+              "end": 518,
               "kind": "line_range",
-              "start": 515
+              "start": 505
             }
           },
           "kind": "code"
@@ -724,8 +741,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
             "locator": {
               "kind": "file"
             }
@@ -791,7 +808,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "blob": "b6954ade937dfe9d626eb911353301ab866f4bea",
             "content": "sha256:684230c5d826a8f344a73f6bf3f7ad650a399c83726c67edce126a43f987e75c",
             "locator": {
               "kind": "symbol",
@@ -808,8 +825,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
             "locator": {
               "kind": "file"
             }
@@ -819,12 +836,12 @@
       ]
     },
     "29": {
-      "note": "All nine operation entries declare audience selection. The references registry contains 50 entries, 38 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. Anchor: `references`\n\nAnchor: `references`",
+      "note": "All nine operation entries declare audience selection. The references registry contains 50 entries, 38 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. Anchor: `references` Anchor: `references`",
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
             "locator": {
               "kind": "file"
             }
@@ -838,7 +855,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:fc8662c1aa3d27c2638c948df760a542894843b33317c640ea7521d5f0afd2db",
             "locator": {
               "end": 132,
@@ -851,12 +868,12 @@
       ]
     },
     "30": {
-      "note": "The manifest declares audience selection for all nine operations and records 50 reference entries, 38 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. Anchor: `composition_order`\n\nAnchor: `composition_order`",
+      "note": "The manifest declares audience selection for all nine operations and records 50 reference entries, 38 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. Anchor: `composition_order` Anchor: `composition_order`",
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
             "locator": {
               "kind": "file"
             }
@@ -870,12 +887,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:fbd81613cb8dbf4cb8a976f96f6bc16cdb22f230436dca7179d4ac1855a9a7f8",
             "locator": {
-              "end": 379,
+              "end": 369,
               "kind": "line_range",
-              "start": 359
+              "start": 349
             }
           },
           "kind": "code"
@@ -887,7 +904,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:e4e3a50ea35309cdf447d465ce995985a7e09328998dc5c87bda3d0c3aa77ee2",
             "locator": {
               "end": 35,
@@ -899,12 +916,12 @@
         },
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:7ff90fe1949d4460c9e3194ffff4cba7453c9c642f5756423b1a5c9984660dfd",
             "locator": {
-              "end": 528,
+              "end": 518,
               "kind": "line_range",
-              "start": 515
+              "start": 505
             }
           },
           "kind": "code"
@@ -912,12 +929,25 @@
       ]
     },
     "33": {
-      "note": "The registry contains 38 non-injected step-detail entries, including `refused-write` and `writing/visual-explainers`. Named readers and steps are declarations, not proof that a particular role read a file.",
+      "note": "The registry contains 38 non-injected step-detail entries, including `refused-write` and `writing/visual-explainers`. Authored entries keep topology, rolesReason explanations and legal no-step decisions; derived references hold current reader roles and action wording, and derived.core holds the shared digest audience. These values do not prove that a particular role read a file.",
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+            "blob": "a98f60c616a40b8300dbbfbfb6016c98dc349f82",
+            "content": "sha256:6c636832367cbba3c9a31fb7002827558aa8f6369b82de37f1c848c5d0612382",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest_derived.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
             "locator": {
               "kind": "file"
             }
@@ -931,7 +961,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:c3cce3ebf5cef2c016e106b0abe447d0b7927a90f504210a589fb3c9c263b886",
             "locator": {
               "end": 145,
@@ -957,16 +987,16 @@
       ]
     },
     "5": {
-      "note": "The role registry itself and the two role entries that show the per-seat shape.\n\nAnchor: `\"roles\": {`",
+      "note": "The role registry itself and the two role entries that show the per-seat shape. Anchor: `\"roles\": {`",
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:975b5ce8d4b0eaf1b02dd39bca38b8bb0e3f18d3ac423d4e8a69f0e7cd574066",
             "locator": {
-              "end": 507,
+              "end": 497,
               "kind": "line_range",
-              "start": 174
+              "start": 164
             }
           },
           "kind": "code"
@@ -978,24 +1008,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:97055d769b1d5bc1dd8cac6aaec7c6b8ead567771f150cfc1f5e9fdcd12cfff8",
             "locator": {
-              "end": 196,
+              "end": 186,
               "kind": "line_range",
-              "start": 175
+              "start": 165
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:4f79b4948df1b8ab25da281e25d65fc198d8cc025cd49d46788e23a730c6a22b",
             "locator": {
-              "end": 462,
+              "end": 452,
               "kind": "line_range",
-              "start": 447
+              "start": 437
             }
           },
           "kind": "code"
@@ -1007,48 +1037,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:1ee6c9887ffbd287ea4736de38eb6836ffbc5a4aa0ce7ddfee4c1143fdeb741b",
             "locator": {
-              "end": 263,
+              "end": 253,
               "kind": "line_range",
-              "start": 257
+              "start": 247
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:edd8462433ebc247cce4d26b71c37ce2778648817213f3fad060a58547b662fa",
             "locator": {
-              "end": 354,
+              "end": 344,
               "kind": "line_range",
-              "start": 351
+              "start": 341
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:10da5cc5a7f68dccbd41717ed595866f5764ff5ba3ea2b1d8306fca43ffb19d7",
             "locator": {
-              "end": 398,
+              "end": 388,
               "kind": "line_range",
-              "start": 394
+              "start": 384
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:df53c382c96ec41e75f6e1d4beff40bdfa92e6d026a68a35d418f6a4868ad681",
             "locator": {
-              "end": 438,
+              "end": 428,
               "kind": "line_range",
-              "start": 432
+              "start": 422
             }
           },
           "kind": "code"
@@ -1056,16 +1086,16 @@
       ]
     },
     "8": {
-      "note": "The launcher entry: a routing condition with its own core block and its operations; it compiles no template.\n\nAnchor: `is_role`",
+      "note": "The launcher entry: a routing condition with its own core block and its operations; it compiles no template. Anchor: `is_role`",
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
             "content": "sha256:7ff90fe1949d4460c9e3194ffff4cba7453c9c642f5756423b1a5c9984660dfd",
             "locator": {
-              "end": 528,
+              "end": 518,
               "kind": "line_range",
-              "start": 515
+              "start": 505
             }
           },
           "kind": "code"
@@ -1077,8 +1107,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
-            "content": "sha256:5e525cce840631fb2757870a23c61b6055846c7e28178f9e5906d4ac695b706e",
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
             "locator": {
               "kind": "file"
             }

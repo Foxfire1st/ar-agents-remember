@@ -92,29 +92,16 @@
       ]
     },
     "13": {
-      "note": "The one `T34` tool the sweep still repairs — `memory_baseline_adopt` — re-exported by the sweep module beside the pin it left. Anchor: `T34_REPAIRED_TOOLS`",
+      "note": "The selected repaired T34 population contains `memory_baseline_adopt`, re-exported by the sweep module and required to return a complete refusal envelope. Anchor: `T34_REPAIRED_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
-            "content": "sha256:614c2bf8ff9a6dbe99d62f089cac8d9e8b863313a1234e97b104f8e717a95bc3",
-            "locator": {
-              "end": 410,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/tests/test_tool_entry_point_sweep.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
             "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
-            "content": "sha256:a765e9d3152e20036f466b7a78a1b346674ef0982da12a06bb7cc0e11cfdbcf5",
+            "content": "sha256:17ad49c49bee633b673e5481327505991854f0f36441ebc2266603b65e789608",
             "locator": {
-              "end": 881,
+              "end": 75,
               "kind": "line_range",
-              "start": 1
+              "start": 71
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -210,10 +197,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 809,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },
@@ -224,14 +211,28 @@
       ]
     },
     "18": {
-      "note": "The declared bare-raiser set has ten names: `memory_baseline_adopt` and `task_doc` left it with their repairs. Both-direction census and invocation of actual failure cases remain source assertions, not this Curator's execution.",
+      "note": "The declared bare-raiser set has ten names. Both-direction census and invocation of declared failure inputs remain source assertions, not this Curator’s execution.",
       "targets": [
         {
           "anchor": {
             "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
-            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
+            "content": "sha256:d536441d2a9216fdf965970f585f0558729fee25f2f0d4fcba53bdaec8546e66",
             "locator": {
-              "kind": "file"
+              "end": 229,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "content": "sha256:b984fec30800fe8e9939dddcfc551d5e1b9e1d9554d8d5098876dfedb50a12fb",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 421
             }
           },
           "kind": "test"
@@ -270,15 +271,16 @@
       ]
     },
     "20": {
-      "note": "Identity, reason and navigation stripping still fail the real refusal completeness predicate.",
+      "note": "The control constructs a literal refusal-shaped dictionary and strips identity, reason and navigation separately; refusal_axes must report each stripped dictionary as incomplete.",
       "targets": [
         {
           "anchor": {
             "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
             "content": "sha256:9bc159d38fb1cd1fea807112aba341977c100be768cdb19d2dce02b489cfa87a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_stripping_each_axis_of_a_real_refusal_makes_the_predicate_fail"
+              "end": 692,
+              "kind": "line_range",
+              "start": 659
             }
           },
           "kind": "test"
@@ -332,15 +334,16 @@
       ]
     },
     "6": {
-      "note": "The **four** shapes partition the population: a typed refusal, a stateful refusal, an always-answer and a raiser — there is no fifth answer. `260918-TSIP-L10` renamed this case from `..._three_named_shapes` in the change that added the fourth, because the name states the claim and the claim changed.",
+      "note": "The four declared shapes partition the driven population: a typed refusal, a stateful refusal, an always-answer or a raiser.",
       "targets": [
         {
           "anchor": {
             "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
             "content": "sha256:b984fec30800fe8e9939dddcfc551d5e1b9e1d9554d8d5098876dfedb50a12fb",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_failure_path_answers_in_one_of_the_four_named_shapes"
+              "end": 460,
+              "kind": "line_range",
+              "start": 421
             }
           },
           "kind": "test"
@@ -374,41 +377,46 @@
       ]
     },
     "8": {
-      "note": "The surviving T34 selection is memory_baseline_adopt alone. The case reads T34_REPAIRED_TOOLS from the sweep support and checks each selected advertised tool for a complete refusal envelope.",
+      "note": "The surviving T34 selection, memory_baseline_adopt, is read from the sweep's shared pin and required to return a complete refusal envelope at the entry point.",
       "targets": [
         {
           "anchor": {
             "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
             "content": "sha256:c857c40d90be1b2386d31ed5480e7b9ed477d2651713be13f3953fa145726cd7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_t34_family_is_no_longer_a_bare_raiser"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "The executed control: each axis stripped from a real refusal, and the predicate required to reject it.\n\nAnchor: `FailurePathControlTests`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
-            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
-            "locator": {
-              "kind": "file"
+              "end": 622,
+              "kind": "line_range",
+              "start": 598
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
-            "content": "sha256:2ad28dae53bd43ba3407e1160498be0b6cb87c0eedc48b8dd9f2b08c0b199753",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:17ad49c49bee633b673e5481327505991854f0f36441ebc2266603b65e789608",
             "locator": {
-              "kind": "symbol",
-              "name": "FailurePathControlTests"
+              "end": 75,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The control constructs a literal refusal-shaped dictionary and strips identity, reason and navigation separately; refusal_axes must report each stripped dictionary as incomplete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "content": "sha256:9bc159d38fb1cd1fea807112aba341977c100be768cdb19d2dce02b489cfa87a",
+            "locator": {
+              "end": 692,
+              "kind": "line_range",
+              "start": 659
             }
           },
           "kind": "test"

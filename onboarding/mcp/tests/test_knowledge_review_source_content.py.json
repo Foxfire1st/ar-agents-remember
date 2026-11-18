@@ -486,14 +486,14 @@
       ]
     },
     "22": {
-      "note": "The lane row and the two consumer rows declaring this module's membership (diff-scope and read-scope shared support).",
+      "note": "The lane row and two of the module's declared consumer rows (diff-scope and read-scope shared support).",
       "targets": [
         {
           "anchor": {
-            "blob": "910b2c804691e4701d08cc57ac8fc2d9a350f45f",
-            "content": "sha256:58643a0257625b2014944ff8990a13416d4f5ccf1bd710c61ed35b69d5e6df08",
+            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
+            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
             "locator": {
-              "end": 5044,
+              "end": 5062,
               "kind": "line_range",
               "start": 1
             },

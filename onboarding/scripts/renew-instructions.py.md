@@ -1,0 +1,28 @@
+# scripts/renew-instructions.py
+
+## Governing Overview
+
+[Overview](../overview.md)
+
+## Purpose
+
+Provides the public command for renewing instruction facts and declared package copies from canonical authored inputs.
+
+## Code Commentary
+
+The command builds the complete plan before publishing replacements. `--check` reports changed JSON leaves, file presence or file bytes without applying the plan and returns failure when replacements remain. `--list-targets` reports carriers before constructing a renewal plan. Repeated bindings use `--bind-unit UNIT=FILE:START-END`, `UNIT@evidence:N=FILE:START-END` for one evidence association, `UNIT@clause:PLACE:N=FILE:START-END` for one clause, and `--bind-pointer ID=FILE:LINE`. They supply explicit choices where the planners require them. The command prepends both `mcp/src` and `mcp/test_support` to `sys.path`; the manifest and pointer planners import the repository test-support helpers.
+
+## Relationships
+
+The planner owns computation and publication. This command renders its notices and errors and names `mcp/.venv/bin/python scripts/renew-instructions.py` as the remedy for stale generated values.
+
+## Evidence
+
+
+
+- Checking reports differences without applying replacements; renewal applies the computed plan. [1]
+- Diagnostics distinguish changed JSON leaves from file presence and raw byte changes. [2]
+
+### Repo-Internal References (renewed)
+
+- The command and its manifest/pointer planners load repository test support. [3]

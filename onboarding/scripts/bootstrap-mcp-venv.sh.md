@@ -79,6 +79,7 @@ No external source is required for the repository-owned bootstrap sequence.
 
 ### Cross-Repo References
 
-No meaningful cross-repository implementation source governs this script.
+This card uses repository-owned code and test references and invokes no sibling-repository contract.
 
-All durable inputs are carried by this repository's runtime contract and uv lock.
+The runtime version and provenance are declared in `scripts/python-runtime-contract.env`;
+bootstrap freezes dependency resolution with `uv sync --frozen` against the MCP project.

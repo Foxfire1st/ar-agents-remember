@@ -104,7 +104,6 @@ Both sides may share the existing index-cache owner, but cache construction rema
 - A missing converted base is derived again and its ID compared. [39]
 - A pin another reader made is kept and not rolled back; a ref naming another tree is refused; a held lock is waited out. [40]
 - Four concurrent first reads of a new comparison give four equal answers. [41]
-- A live review is four trees with its uncommitted candidates pinned and reused. [42]
 - Committed candidates need no ref, and a failed pin refuses naming repository and ref. [43]
 - A converted base tree that Git holds is not written again. [44]
 
@@ -120,3 +119,5 @@ not move while the comparison was composed became cheaper, not weaker.
 - The current implementation moves shared payload types and reduces redundant Git observations without changing create-only pins, full operands or named unavailable-history behavior. [46]
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_trees.py::ReviewTrees - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::live_review_trees - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::_live_draft - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::recheck_memory_candidate - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::_recorded - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- A live review is four trees with its uncommitted candidates pinned and reused. [42]

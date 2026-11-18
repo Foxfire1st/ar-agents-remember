@@ -1,13 +1,31 @@
 {
   "path": "mcp/tests/test_landing_commit_check.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
+        "content": "sha256:0c521f56688208ff03101c2c00e51cd8ee6ff16e838f6941591351bc11e5c8a1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SET0QM",
+      "invariant": "INV-DHKR4G",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 2",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The existing copy or hook obligation directs stale instruction facts and copies to the single renewal command.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "PassingHookTests: qualified source contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "f4c791a6be08b7c3ee7fbcf5ddf1bc896c57ab50",
+            "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
             "content": "sha256:18b7566875547f8e4f1d10b63008c0ffb2753cb1f99b11d0542ce1bcc04811a2",
             "locator": {
               "kind": "symbol",
@@ -23,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4c791a6be08b7c3ee7fbcf5ddf1bc896c57ab50",
+            "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
             "content": "sha256:e2c4a6475a0b446befb724ba1b3f8083d5894cb2a2e5e0c48000d448c5251258",
             "locator": {
               "kind": "symbol",
@@ -39,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4c791a6be08b7c3ee7fbcf5ddf1bc896c57ab50",
+            "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
             "content": "sha256:2b7b497a7dc05fe91d79249e80aeb191368df006b6fcf1a291d97e8320042857",
             "locator": {
               "kind": "symbol",
@@ -55,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4c791a6be08b7c3ee7fbcf5ddf1bc896c57ab50",
+            "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
             "content": "sha256:9fd15f6def78062e499499ea66ae6c46687f5e5847d98dbbbf0b50bbe4923604",
             "locator": {
               "kind": "symbol",
@@ -71,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4c791a6be08b7c3ee7fbcf5ddf1bc896c57ab50",
+            "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
             "content": "sha256:c35436a1d5f47c2646f93cbcddd71397913c640d77d1aca621aca21ef1e039ad",
             "locator": {
               "kind": "symbol",
@@ -87,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4c791a6be08b7c3ee7fbcf5ddf1bc896c57ab50",
+            "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
             "content": "sha256:5e9f45014219d7197cb085a17daddc4cd052eb201bb4d42c4465422ba40003d3",
             "locator": {
               "kind": "symbol",
@@ -103,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4c791a6be08b7c3ee7fbcf5ddf1bc896c57ab50",
+            "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
             "content": "sha256:72251e51c448ba28f478a6c3a7a628047a3bc752b69037eafd5ad4324f5227bc",
             "locator": {
               "kind": "symbol",
@@ -115,15 +133,16 @@
       ]
     },
     "8": {
-      "note": "AnswerAndTextTests owns the skill-sync check subprocess (`scripts/sync-skills.py --check`) run with the current interpreter; this is source attribution, not execution.",
+      "note": "AnswerAndTextTests owns the instruction-renewal check subprocess (`scripts/renew-instructions.py --check`) run with the current interpreter; this is source attribution, not execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "f4c791a6be08b7c3ee7fbcf5ddf1bc896c57ab50",
-            "content": "sha256:c1d3512b5bb811f5169ecdcc43e7ec12eb4129ba34c29355ce1ddf7adf7e678d",
+            "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
+            "content": "sha256:c16099f033b335d1843b9a59fa4603c1c3c67679dd76d2602eedb268fa8d5a0b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_canonical_and_generated_skills_match"
+              "end": 568,
+              "kind": "line_range",
+              "start": 417
             }
           },
           "kind": "test"
@@ -131,15 +150,16 @@
       ]
     },
     "9": {
-      "note": "The landing text case reads the publication docstring and the pre-commit hook head, and its generator check runs the skill-sync check for every generated copy with the current interpreter; this is source attribution, not a fresh run.",
+      "note": "The landing text case reads the publication docstring and the pre-commit hook head, and its generator check runs the instruction-renewal check with the current interpreter; this is source attribution, not a fresh run.",
       "targets": [
         {
           "anchor": {
-            "blob": "f4c791a6be08b7c3ee7fbcf5ddf1bc896c57ab50",
-            "content": "sha256:00ca072d16cd97b52cf75a268212794333a786bf091b3fa0c2d9e3c5c155f0ad",
+            "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
+            "content": "sha256:c16099f033b335d1843b9a59fa4603c1c3c67679dd76d2602eedb268fa8d5a0b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_texts_state_the_new_behavior"
+              "end": 568,
+              "kind": "line_range",
+              "start": 417
             }
           },
           "kind": "test"

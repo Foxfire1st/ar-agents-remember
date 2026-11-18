@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
-    "task": "260928-MIK-L97",
+    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
+    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "role": "curator",
+    "statement": "The changed index passage correctly limits reuse to the selected memory tree and loaded build, while the unchanged passages were not reverified.",
+    "task": "261112-BUG-L9",
     "uncommitted": true
   },
   "document": "docs/FAQ.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -104,6 +104,19 @@
       "blob": "01e3bc7cff6c674cffddec983f62fd73b2c1f7c1",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/templates/leaf-task.md"
+    },
+    {
+      "anchor": {
+        "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+        "content": "sha256:c953503aa6afe66c046070e4713c0438b86ccab1d9e76a42e4cf596ea1ad226a",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+      },
+      "heading": "Loaded build identity",
+      "kind": "anchor"
     }
   ]
 }

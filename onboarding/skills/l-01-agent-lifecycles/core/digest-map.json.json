@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "da127d3b0aa028f4b439d413346941d96ad37311",
-        "content": "sha256:53fa2070848ed2566274938e51ef0a0112abcf9b1b33d73478e76ad6b5458fb7",
+        "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+        "content": "sha256:5f43dc0273d23d445f344bdc5c04f469e2b5faf998391d1620bd28c59b7ecefe",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0E8J78",
+      "invariant": "INV-HN54VG",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 4",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Authored semantic units, memberships and the 39 reference audiences retain their authority; derived owns current ranges, hashes and 95 digest-unit audiences.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+        "content": "sha256:5f43dc0273d23d445f344bdc5c04f469e2b5faf998391d1620bd28c59b7ecefe",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da127d3b0aa028f4b439d413346941d96ad37311",
+            "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
             "content": "sha256:db906b4a6477f8ae43b120c2fcd1c203b2eab0b709723d58c085f67fb24ac5e4",
             "locator": {
               "end": 12,
@@ -38,14 +55,14 @@
       ]
     },
     "2": {
-      "note": "The unit definition explains ID preservation and the role vocabulary.\n\nAnchor: `unitDefinition`",
+      "note": "The unit definition explains ID preservation and the role vocabulary. Anchor: `unitDefinition`",
       "targets": [
         {
           "anchor": {
-            "blob": "da127d3b0aa028f4b439d413346941d96ad37311",
-            "content": "sha256:0cb3cc8e0abddec638fb535802d1a8d2d4662049dd42573ce07bb653bfd74390",
+            "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+            "content": "sha256:735e7170423f80ebfc9ac8cec68897590a3a0d502dbdf63a9395b4d7fca95f1f",
             "locator": {
-              "end": 1618,
+              "end": 1608,
               "kind": "line_range",
               "start": 1608
             }
@@ -59,8 +76,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da127d3b0aa028f4b439d413346941d96ad37311",
-            "content": "sha256:53fa2070848ed2566274938e51ef0a0112abcf9b1b33d73478e76ad6b5458fb7",
+            "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+            "content": "sha256:5f43dc0273d23d445f344bdc5c04f469e2b5faf998391d1620bd28c59b7ecefe",
             "locator": {
               "kind": "file"
             }
@@ -70,16 +87,40 @@
       ]
     },
     "4": {
-      "note": "The digest block binds the rendered digest path, hash and word maximum, and lists the places of the digest.\n\nAnchor: `maximumWords`",
+      "note": "The authored digest block records its path, semantic places and retained ceiling-authority decisions; generated current digest hash and size are stored in derived.digest.",
       "targets": [
         {
           "anchor": {
-            "blob": "da127d3b0aa028f4b439d413346941d96ad37311",
-            "content": "sha256:fa5173cf6cd40d1c9a141d06fb81cefcf0c1db93189b40108cae6b54e59038eb",
+            "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+            "content": "sha256:f6c9142c58f8a3a37c3f4632de63ac1719dca4b5d5d21136649a9216014e1438",
             "locator": {
-              "end": 6192,
+              "end": 3842,
               "kind": "line_range",
-              "start": 6178
+              "start": 3836
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+            "content": "sha256:90d5b394342b2ce4d54e57bbe1944cc29d0cba0658518295f9f40d0533ec3d9a",
+            "locator": {
+              "end": 4714,
+              "kind": "line_range",
+              "start": 4699
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+            "content": "sha256:aac0a43a924c04e27786a85af09cce810b36dc973e8d80f6cae2e9cf263b6657",
+            "locator": {
+              "end": 7817,
+              "kind": "line_range",
+              "start": 7814
             }
           },
           "kind": "code"

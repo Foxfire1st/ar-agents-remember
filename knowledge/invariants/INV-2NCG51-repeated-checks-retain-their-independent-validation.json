@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Reusing completed validation instead of definitions would hide a later finding even when the parser optimization itself is correct."
+  },
+  "applicability": "Validation, census and anchor observations that share definition extraction during one call.",
+  "conditions": [
+    "Only parsed definitions and eligible test-case diagnostic trees are shared."
+  ],
+  "exclusions": [
+    "Caching a completed validator, census, worklist or quality result as a substitute for its independent pass."
+  ],
+  "id": "INV-2NCG51",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "expanded-evidence-W1.md#evidence-4; measurement/final-r4-pair-summary.json:82.164979972/292.403937211=0.280998200",
+        "Frozen W2 source, tree3149be148b3cfa3131e34f6101b07eba1ebd0080; remaining-hunk-reconciliation.json records exact checked ranges."
+      ],
+      "path": "ingest-history-wave-v2.json"
+    },
+    "handoffEntry": "BUG-R09@v3 rule 2",
+    "leaf": "261112-BUG-L9",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Repeated checks retain their independent validation and census passes while sharing source definitions inside their call.",
+  "status": "proposed",
+  "supersedes": []
+}

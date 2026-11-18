@@ -40,11 +40,11 @@ and validation material in detail, without changing generation integrity or CAS 
 Before closeout, `validate` delegates to the shared currentness validator. After completed closeout, status and validate with a retained authority instead return `closed-out`, its recorded code/memory commits and record digest, and compare nothing with the live tree: coherence is validated before closeout. Without an authority the ordinary `absent` path remains. This historical response is not current readiness or integration acceptance. Publication fingerprints contain all
 semantic input, so exact retries converge even after a crash left a generation but not the pointer.
 
-Under CCR-R03@v1 `_record` now builds the immutable record's `curator-coherence/v1` dependency
+`curator_coherence_record_builder.build_curator_coherence_record` builds the immutable record's `curator-coherence/v1` dependency
 declaration from the observed code/memory candidate trees, task-topology fingerprint,
 digest-bearing task intent, attestation and report digests, every judgment evidence digest, and the
 predecessor authority digest — so the published generation is a declared content-addressed consumer
-of exactly its inputs cit:([`_record`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:363-464).
+of exactly its inputs cit:([`build_curator_coherence_record`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_record_builder.py:32-76).
 
 ### Conventions
 
@@ -79,7 +79,6 @@ None recorded.
 
 - Preparation files the exact candidate set and reading rendering. [9]
 
-- Optional file-sourced judgments retain exact-set, evidence and CAS validation. [10]
 
 
 ### Docs References
@@ -98,16 +97,13 @@ The publication transaction is repository-owned.
 - **The statement `prepare` carries, defined on the request-model route rather than here.** [3]
 
 
-- Publication rechecks contract, predecessor, candidates, attestation, topology, and evidence before selecting authority. [4]
 
 - Immutable generation installation is directory-atomic and collision-safe. [5]
 - Attempt snapshots point at immutable generation artifacts. [6]
-- R03 record construction binds the declared dependency set. [7]
 
 The following declarations carry the changed boundary.
 
 
-- Full generation integrity is proved before canonical authority replacement. [8]
 
 
 - The prepare test checks the complete publication member list and caller-supplied identities; a second test adds a declaration member and checks that both messages follow it. [12]
@@ -116,7 +112,7 @@ The following declarations carry the changed boundary.
 
 No meaningful cross-repository reference applies.
 
-The task publication lock this route once consulted was deleted with the whole lock plane (commit `1a0919c1`); publication no longer takes a CAS mutex.
+Publication takes no task publication lock or CAS mutex.
 
 ## MCAR-L03 Pair-Bound Publication
 
@@ -196,8 +192,8 @@ Three things changed, and the third is what makes the first two safe.
   bare name for any other document is refused rather than resolved.
 
 The resolved caller is what the record and the assessments carry: `_publish` passes it to
-`_exact_review_assessments` (`:176`) and to `_record` (`:203`), whose `publishedBy` is
-`f"{caller.role}@{caller.task_document_ref.key}"` built from the **resolved** ref (`:452`) rather than
+`_exact_review_assessments` and to `build_curator_coherence_record`, whose `publishedBy` is
+`f"{caller.role}@{caller.task_document_ref.key}"` built from the **resolved** ref (`mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_record_builder.py:65`) rather than
 the caller's spelling. A successful bare-name publication therefore carries the canonical identity in
 the record and in an assessment's author alike, and `publish` still admits exactly the leaf curator or
 the owning sprint architect, or for a standalone master a caller at that master; the shipped refusal
@@ -215,8 +211,8 @@ record. `_publish_attestation_copy` (`:548-615`) reads the bound file, **re-veri
 `observation.attestation_sha256`**, and writes the content-addressed copy
 (`CuratorCoherencePaths.attestation_copy` — `<leaf>/attestations/<sha256>.json`, the location the
 resolver card names) through `_write_fsynced` + `atomic_replace`, reclaiming the temporary on any
-failure. It runs before the record is built (`:199-201`), its task-relative path rides
-`_RecordPublication.attestation_copy_path`, and it is recorded as
+failure. It runs before the record is built (`mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py:408-422`), its task-relative path rides
+`RecordPublication.attestation_copy_path`, and it is recorded as
 `CuratorCoherenceRecord.attestationCopyPath`. Three typed refusals guard it, none of which existed
 before: `curator-coherence-attestation-unreadable` (the bound file, or an existing copy, cannot be
 read), `curator-coherence-attestation-stale` (the bytes moved between observation and the copy, reported
@@ -226,3 +222,8 @@ holds different bytes).
 The record is therefore not asked to stand in for the attestation's content: the bytes a reader would
 have read are still readable, and a second publication over unchanged bytes reuses the same immutable
 copy instead of rewriting it.
+
+- Publication rechecks contract, predecessor, candidates, attestation, topology, and evidence before selecting authority. [4]
+- Record construction binds the declared dependency set through the shared record and dependency builders. [7]
+- Full generation integrity is proved before canonical authority replacement. [8]
+- Optional file-sourced judgments retain exact-set, evidence and CAS validation. [10]

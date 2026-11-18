@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The common extractor and three dispatch owners must agree on a call lifetime so a server cannot retain source definitions across unrelated requests."
+  },
+  "applicability": "Source-definition lookup inside one MCP call, finite CLI operation or background quality worker.",
+  "conditions": [
+    "The lookup input is the exact source path, source contents and selected grammar.",
+    "Nested operations join the current call, including copied synchronous worker contexts."
+  ],
+  "exclusions": [
+    "Serving command lifetimes.",
+    "Retention across separate calls.",
+    "Unscoped direct callers."
+  ],
+  "id": "INV-F1J9BH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "expanded-evidence-W2.md#l9-r1-f1; cli-ownership-and-repair-W2.md; W2 archive: focused-W2.log, repro-before-W1-r2.log and repro-after-W2.log",
+        "Frozen W2 source, tree3149be148b3cfa3131e34f6101b07eba1ebd0080; remaining-hunk-reconciliation.json records exact checked ranges."
+      ],
+      "path": "ingest-history-wave-v2.json"
+    },
+    "handoffEntry": "BUG-R09@v3 rule 1",
+    "leaf": "261112-BUG-L9",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Inside one MCP tool call, finite command-line operation or background quality worker, each distinct source path, content and grammar is parsed once, while serving commands run without a server-lifetime table.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -28,7 +28,7 @@
 - **Expansion from a family seed** (rule 3; ruling Q1):
   - `test_a_family_seed_returns_the_full_family_content`: the projected path page names a family/chain row; reading its family ID asserts projected family/header, invariant/member, realization and family/advertised identities with no routeChain. It no longer follows an expand object or compares full row content;
   - `test_a_family_seed_is_named_by_id_revision_or_projected_uuid`: `ID`, `ID@1` and the projected UUID give one manifest; `@2`, a bare `@` (ruling R2-1) and an unknown ID are `selector_absent`.
-- **Public boundary and domain-body scope.** `_walk` accepts either payload-nested tool rows or top-level published-intent rows. It checks public outcomes and externally measures fitting answers; overflow tails keep the named overflow contract, while the explicitly marked domain body supplies rows and its top-level next token. These assertions do not claim pointer retrieval. The family-walk premise separately asserts a within-bound, text-free public page and a mounted continuation; the domain-unit walk then retains the complete 75-row selection, not merely the first page. Continued framing rows are filtered in either the raw `family_header_reference` vocabulary or the projected `family`/`reference` kind-role vocabulary.
+- **Public boundary and domain-body scope.** `_walk` accepts either payload-nested tool rows or top-level published-intent rows. It checks public outcomes and externally measures fitting answers; overflow tails keep the named overflow contract, while the explicitly marked domain body supplies rows and its top-level next token. These assertions do not claim pointer retrieval. The family-walk premise separately asserts a within-bound, text-free public page and a mounted continuation; the domain-unit walk retains the complete selected walk, not merely the first page. Continued framing rows are filtered in either the raw `family_header_reference` vocabulary or the projected `family`/`reference` kind-role vocabulary.
 - **Budget and resumption** (the module-scoped `long_tree`: 24 long members in one family and 24 long-guarantee families at `.`):
   - `test_chain_entries_count_toward_the_threshold_and_resume_like_the_leaf`: page 1 continues, the walk returns every row exactly once, every page is within the threshold (`_walk`), and the 25 chain rows are the last 25;
   - `test_a_family_seed_walk_resumes_under_any_spelling_of_its_family` (review F4): a family-seed walk resumed naming `FAM-B16000`, `FAM-B16000@1` or the projected UUID walks all 24 members; naming another family is `continuation_binding_mismatch`;
@@ -49,6 +49,16 @@
 ### Todos
 
 - None recorded.
+
+## Earlier Memory-Base Context
+
+The following accounts are retained from memory revision `81cfe4a89f5ffb222bd09640410d268d3fbef254`. They describe their earlier source epochs, observations and rationale; they are not new executions or current acceptance results. Current source corrections above remain in force.
+
+### Earlier selected population
+
+Summary based on the earlier card account, base lines 31–31:
+
+> The earlier card described the complete domain-unit selection as 75 rows, rather than the first page alone. This preserves that recorded population account. The current source assertion compares the complete walk with rowsTotal and asserts that its last 25 rows are chain entries; it does not assert a literal current total of 75.
 
 ## Evidence
 
@@ -97,7 +107,6 @@ No cross-repo boundary is crossed by this file.
 
 - Route-chain walks keep public outcomes and obtain complete domain-unit rows and continuations.
 
-
-
+### Repo-Internal References (continued)
 
 - The lane row. Anchor: "mcp/tests/test_knowledge_route_chain.py" Anchor: "mcp/tests/test_knowledge_route_chain.py" [12]

@@ -1,0 +1,129 @@
+{
+  "path": "mcp/tests/test_instruction_digest_renewal.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "8a9b4b212996417cd332a9a8b11f14640b5fe454",
+        "content": "sha256:d401007502f0bc04e0a0f5751a68a63f10bdbd22483e714cbfadeb9bef6df313",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_identical_windows_are_ambiguous_until_the_worker_names_the_range"
+        }
+      },
+      "facet": "Two exact hash matches are refused until an explicit unit range selects one of them.",
+      "id": "PRF-0C1SYV",
+      "invariant": "INV-HN54VG",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 4",
+        "leaf": "261112-BUG-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8a9b4b212996417cd332a9a8b11f14640b5fe454",
+        "content": "sha256:8503780047dc50e85dd0918714da97591100c512bb0183710769cf02478ec3df",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_changed_source_and_digest_require_explicit_bindings_and_report_units"
+        }
+      },
+      "facet": "Explicit source, digest-place and clause bindings renew their changed hashes and produce three unit-named authoring notices; this positive binding case alone does not prove every unbound rejection.",
+      "id": "PRF-DKPN81",
+      "invariant": "INV-HN54VG",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 4",
+        "leaf": "261112-BUG-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8a9b4b212996417cd332a9a8b11f14640b5fe454",
+        "content": "sha256:e073706c8323db43b801359e45ddfa3cc0eab9ef6eba25bd122e26372e157a27",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unchanged_passage_relocation_updates_ranges_without_writing"
+        }
+      },
+      "facet": "Moving unchanged source and digest text updates the unit, place and clause ranges in the planned result without notices or file writes.",
+      "id": "PRF-RWYX0P",
+      "invariant": "INV-HN54VG",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 4",
+        "leaf": "261112-BUG-L8"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8a9b4b212996417cd332a9a8b11f14640b5fe454",
+        "content": "sha256:d1fc77071f40dc516cdedb1d55993bc22e4bc41cdceefc08d4cc33f95b5daa8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_reference_audience_is_authored_and_never_emitted_as_derived"
+        }
+      },
+      "facet": "A reference unit retains its authored worker audience in the joined map while renewal omits audience from that unit’s derived facts.",
+      "id": "PRF-SBE0PQ",
+      "invariant": "INV-Q432XE",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 3",
+        "leaf": "261112-BUG-L8"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8a9b4b212996417cd332a9a8b11f14640b5fe454",
+        "content": "sha256:99b489092c0dca7f6948b4faf543319a3f3c463ca9f8cc4b4828ef8035574ba8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BG51MQ",
+      "invariant": "INV-HN54VG",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 4",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "Each source, evidence and clause passage has its own hash or selector; one authored-map validation precedes derivation and uncovered clause prose names the human decision before any publication.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Relocation, changed passages, independent associations and held-hash-proven HEAD text exercise no-write and explicit-binding controls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a9b4b212996417cd332a9a8b11f14640b5fe454",
+            "content": "sha256:0564f35b0a6135ac2d64cdee2160ca6105be40cb3760e0a037d3e736e4c228e6",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Independent new units, evidence, places and clauses, repository-map controls and reader coverage require their own authored decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a9b4b212996417cd332a9a8b11f14640b5fe454",
+            "content": "sha256:55334b1489cec8c7c2b3325341053936518d583cf5f07e3d32d25986306ff28e",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

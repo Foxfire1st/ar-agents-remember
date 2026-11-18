@@ -191,16 +191,16 @@
       ]
     },
     "28": {
-      "note": "The sweep itself: one world, one run, and the equality assertions that bind every pin. Anchor: `EntryPointProbeTests`",
+      "note": "The probe asserts observed error and bare-not-ok populations equal their declarations, checks no selected repaired T34 tool raises, and requires complete refusal axes for each selected tool. Anchor: `EntryPointProbeTests`",
       "targets": [
         {
           "anchor": {
             "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
-            "content": "sha256:420b891dab5f22c9c670a7b318c3287fa210ff3f66b1125211ba44013eed9f82",
+            "content": "sha256:2325975c0bbeca3346c4a4fdf6e66e52d19194bcb894ce07023d43789c50122a",
             "locator": {
-              "end": 410,
+              "end": 303,
               "kind": "line_range",
-              "start": 152
+              "start": 167
             }
           },
           "kind": "test"
@@ -372,28 +372,18 @@
       ]
     },
     "38": {
-      "note": "The executed positive control over the choke point, and both break shapes at the entry point.\n\nAnchor: `ChokePointControlTests`",
+      "note": "The source-defined positive control over the choke point and both break shapes at the entry point.",
       "targets": [
         {
           "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
-            "content": "sha256:efd96d85d42cf0105781fcb24eb2d1a56c3f7aac1387c584fd98e0225de75c44",
+            "blob": "6931aa46b1cba8c568ab5d3520e9714417410847",
+            "content": "sha256:27dc1dc31066e8d65c0d41b28ba8a7ae41b9d7913948242934b7a18085b260be",
             "locator": {
-              "kind": "file"
+              "end": 131,
+              "kind": "line_range",
+              "start": 60
             },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
-            "content": "sha256:a9b32549b34ce0ae12848cf77529f84da1df0f80fdb282c4ada95d1b560ab794",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChokePointControlTests"
-            },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
+            "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
           "kind": "test"
         }
@@ -421,10 +411,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6bcdb894f9c0720928702caf52817074f45b86e",
-            "content": "sha256:d84c0fe72b055bcdb816290516fe8b031adab5ab519f21bfcb73f28d1396e8bc",
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
             "locator": {
-              "end": 809,
+              "end": 816,
               "kind": "line_range",
               "start": 1
             },
@@ -667,15 +657,16 @@
       ]
     },
     "48": {
-      "note": "Every tool and every aspect is judged on its own subTest on the final bytes.",
+      "note": "Completed sweep results receive per-tool subTests for unvalidatable and boundary-validation arms, followed by separate global raiser, unmarked and census subTests.",
       "targets": [
         {
           "anchor": {
             "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
             "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+              "end": 208,
+              "kind": "line_range",
+              "start": 167
             }
           },
           "kind": "test"
@@ -755,28 +746,18 @@
       ]
     },
     "51": {
-      "note": "The executed positive control over the choke point, and both break shapes at the entry point.\n\nAnchor: `ChokePointControlTests`",
+      "note": "The source-defined positive control over the choke point and both break shapes at the entry point.",
       "targets": [
         {
           "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
-            "content": "sha256:efd96d85d42cf0105781fcb24eb2d1a56c3f7aac1387c584fd98e0225de75c44",
+            "blob": "6931aa46b1cba8c568ab5d3520e9714417410847",
+            "content": "sha256:27dc1dc31066e8d65c0d41b28ba8a7ae41b9d7913948242934b7a18085b260be",
             "locator": {
-              "kind": "file"
+              "end": 131,
+              "kind": "line_range",
+              "start": 60
             },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
-            "content": "sha256:a9b32549b34ce0ae12848cf77529f84da1df0f80fdb282c4ada95d1b560ab794",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChokePointControlTests"
-            },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
+            "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
           "kind": "test"
         }

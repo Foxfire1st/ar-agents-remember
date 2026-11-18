@@ -269,11 +269,11 @@
       ]
     },
     "15": {
-      "note": "Ruling Q1 at the route: an unchanged test file only a proof names is refused before the proof exists and admitted with the new sentence after.",
+      "note": "An unchanged test file named only by a proof is refused before that proof exists and admitted once the proof is authored.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
             "content": "sha256:fcb7164803a03ddef8f525daca1ea7839ee704354a2dea175af4f7345d92ff66",
             "locator": {
               "kind": "symbol",

@@ -79,22 +79,9 @@ here. The one document these cases read is a repository file rather than an exte
 `docs/reference/worktrees-c09.md`, whose `## Raw Git Identity Boundary` section the matrix case asserts
 against, and that assertion is filed under Repo-Internal References.
 
+### Repo-Internal References (continued)
+
 - **The sibling fixture this module shares rather than rebuilds.** [26]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - **The repository document that must contain the rendered support matrix verbatim.** [29]
 
@@ -108,24 +95,8 @@ use the fixture's temporary local repositories. The matrix case reads repository
 validator case also constructs model forgeries; those operations are not Git subprocesses. No
 cross-repo reference row is recorded for this module.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 - **The lifecycle catalog names this module in the consumer lists for `_user_settings_guard.py` and the Node profile fixture lockfile.**
 
-
-
-
-
+### Repo-Internal References (continued)
 
 - **The lane registration that makes these cases part of the governed `integration` population.** Source caption: `test_review_external_git_movement_read` [27]

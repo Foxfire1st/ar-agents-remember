@@ -6,11 +6,11 @@
 
 ## Purpose
 
-This registry keeps the historical capsule and step-detail budgets with the decisions that set them, and the handover-projection token budgets. It records capsule ceilings of Architect 4,631 words, Manager 4,513, Curator 4,100, Reviewer and Bootstrap 4,000 and other roles 3,700, a 2,700-word step-detail ceiling and a shared-digest budget of 1,474 words against its recorded size of 1,000. One later decision sets only 24 named budgets to their measured sizes and another sets the Architect working-rules detail to 2,200 words; every other budget remains min(ceil(size_words * 11 / 10), the applicable ceiling). It has 38 capsule rows and 27 step-detail rows, keyed by the role and reference names of their measurement, including the removed Designer and Strategist roles and the earlier flat `reference/` file names. These are stored declarations, not a new compilation or test run. The limits and measurements for the texts delivered now are in `capsule-budgets-current.json`; `capsule-budgets-d694.json` is its predecessor layer, and both bind this registry by its SHA-256 as the historical record.
+This registry keeps the historical capsule and step-detail budgets with the decisions that set them, and the handover-projection token budgets. It records capsule ceilings of Architect 4,631 words, Manager 4,513, Curator 4,100, Reviewer and Bootstrap 4,000 and other roles 3,700, a 2,700-word step-detail ceiling and a shared-digest budget of 1,474 words against its recorded size of 1,000. One later decision sets only 24 named budgets to their measured sizes and another sets the Architect working-rules detail to 2,200 words; every other budget remains min(ceil(size_words * 11 / 10), the applicable ceiling). It has 38 capsule rows and 27 step-detail rows, keyed by the role and reference names of their measurement, including the removed Designer and Strategist roles and the earlier flat `reference/` file names. These are stored declarations, not a new compilation or test run. The current ceilings and renewed measurements for the texts delivered now are in `capsule-budgets-current.json`; `capsule-budgets-d694.json` is its predecessor layer, and both bind this registry by its SHA-256 as the historical record.
 
 ## Code Commentary
 
-Size is whitespace-split words of `render_instructions()`, task data and seals excluded. Growth, a new role and a new operation are each a decision recorded in the same change as the raised or added budget. The budget test fails when a capsule exceeds its current limit, lacks one, or the current record names a capsule the manifest no longer yields; it reads those limits from `capsule-budgets-current.json` and only the handover rows and provisional records from this file. The registry also records a `handover` budget for each role a start operation launches: the size is that role's largest legal projection and the budget is the smaller of ceil(size x 11 / 10) and 3,300 tokens.
+Size is whitespace-split words of `render_instructions()`, task data and seals excluded. Growth, a new role and a new operation are each a decision recorded in the same change as the raised or added budget. The current budget test compares fresh compiled sizes and renewed measurements with the current ceilings; it also checks this registry's retained handover rows. The registry also records a `handover` budget for each role a start operation launches: the size is that role's largest legal projection and the budget is the smaller of ceil(size x 11 / 10) and 3,300 tokens.
 
 ## Measured instruction changes
 
@@ -36,6 +36,16 @@ The registry retains the publication-pointer decision's historical measurements 
 
 The retained handover block records worker implementation at 3,038 tokens, reviewer review at 3,064 and curator curation at 3,054, each budgeted at 3,300. The sync changes none of those recorded values; reading the registry does not claim a new handover measurement.
 
+## Earlier Memory-Base Context
+
+The following accounts are retained from memory revision `81cfe4a89f5ffb222bd09640410d268d3fbef254`. They describe their earlier source epochs, observations and rationale; they are not new executions or current acceptance results. Current source corrections above remain in force.
+
+### Provisional measurements and separate historical checks
+
+Summary based on the earlier card account, base lines 13–49:
+
+> The older card distinguished the registry’s provisional measurements from current capsule limits. In the current no-overrun case, capsule-budgets-current.json supplies renewed measurements and ceilings; the historical registry supplies handover rows and the printed historical_provisional_measurements diagnostic. Separate tests retain the D656_R8 and D681 budget checks. The diagnostic is not a renewed current measurement or budget authority. The earlier card also described the guard as detecting an over-limit capsule, a missing capsule limit and a recorded capsule no longer yielded by the manifest. The current helper instead names missing or extra current measurements, stale recorded sizes and sizes beyond the applicable current ceiling. The older card distinguished registry decision-recording policy from a size check; current frozen-history hash checks read the decision keys, but do not establish developer approval or full compliance with the growth/new-role/new-operation decision policy.
+
 ## Merged measurement evidence
 
 - The registry contains 38 capsule rows and 27 step-detail rows; its ceilings are Architect 4,631, Manager 4,513, Curator 4,100, Reviewer and Bootstrap 4,000, other roles 3,700 and step files 2,700. Anchor: `capsule_ceilings_words` [3]
@@ -46,12 +56,12 @@ The retained handover block records worker implementation at 3,038 tokens, revie
 
 - Budgets are min(ceil(size_words * 11 / 10), the applicable ceiling) except the 24 budgets one decision set to their measured sizes and the one detail budget a later decision superseded; the shared digest budget is 1,474. Anchor: `budget_authority` [11]
 
-- The no-overrun budget test reads current limits and measurements from `capsule-budgets-current.json` and only the handover rows and provisional records from this registry; other budget tests still read this registry's D656_R8 raises and check its recorded budgets against the D681 limits. [12]
-
-- All 38 capsule rows carry recorded budgets: capped eleven-tenths budgets, or the measured size for the 8 capsule rows among the 24 budgets one decision names. Anchor: `decisions_D681` [1]
-
-- The test bounds fresh compiled sizes by the current record's limits; decision recording is registry policy and is not checked by this test. [2]
-
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]
 
 - The registry's capsule, step-detail and handover rows keep their recorded values; the handover rows keep the capped token formula. [10]
+
+- The current check reads renewed measurements and ceilings from capsule-budgets-current.json, and handover rows from this registry; separate tests preserve historical D656 and D681 decisions. [12]
+
+- The test checks fresh compiled sizes and renewed measurements against current ceilings. [2]
+
+- All 38 capsule rows carry recorded budgets: capped eleven-tenths budgets, or the D681 table’s measured size for the 8 capsule rows among the 24 budgets that decision names. [1]

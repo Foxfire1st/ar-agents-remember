@@ -6,9 +6,8 @@
 
 ## Purpose
 
-The **boundary proof for the stop-only pause** added by `260831-LOCR-L37`, driven over real
-temporary Git repositories through the **public** operation. Every other pause case is a unit proof
-of one seam; this module measures the world before and after the stop.
+The **boundary proof for the stop-only pause**, driven over real temporary Git repositories
+through the **public** operation. This module measures the world before and after the stop.
 
 The claim under test is a negative one — that pausing publishes nothing — so the fixture
 **measures** it rather than asserting it: the exact branch tips, both repositories' complete object
@@ -46,7 +45,7 @@ The public operations:
 
 The measurement:
 
-- `_tree_digest(root)` — every tracked byte under a root, keyed by relative path, with `.git`
+- `_tree_digest(root)` — every file byte under a root, keyed by relative path, with `.git`
   internals excluded.
 - `_git_state(repository)` — every ref (`for-each-ref`) **and** every object in the repository's
   complete object database (`cat-file --batch-all-objects --batch-check`).
@@ -78,7 +77,7 @@ believed.
 
 ### Conventions
 
-- Lane `integration` in `mcp/tests/test-evidence-lanes.toml` (line 723), and every case is
+- Lane `integration` in `mcp/tests/test-evidence-lanes.toml` (line 730), and every case is
   `unittest`-style in one class with a temporary directory per case.
 - The module drives public entry points only. Like `test_checkpoint_landing_end_to_end.py`, it exists
   because a seam-level suite can be fully green while the composition a caller reaches is wrong.
@@ -120,8 +119,7 @@ believed.
   — refuses with `atomic-series-activation-selected-contract-mismatch`, is never released, and leaves
   the master it names still `active`. The case asserts that `vacant` premise through
   `observe_atomic_series` before pausing, which is what makes it a proof rather than an outcome
-  check. (Before this change set the never-selected case asserted the
-  `atomic-series-activation-selection-missing` refusal; the pause now answers that status itself.)
+  check.
 - **The foreign-record shape decides which guard a caller meets.** An *active* foreign record is
   refused one step earlier, inside the observation's `_load_selected_contract`
   (`atomic-series-activation-master-mismatch` → observation `unreadable`), so it surfaces as
@@ -143,6 +141,31 @@ believed.
 ### Todos
 
 None recorded. Verification metadata on this card remains closeout-owned.
+
+## Retained Full-Card Audit Context
+
+The following distinct accounts are retained from memory base `81cfe4a8`. Dates, source coordinates, counts, outcomes and ownership describe that recorded epoch. They add no fresh execution, mutation result or acceptance. Historical numeric reference labels are custody text and do not select live sidecar anchors.
+
+### Creating-leaf attribution and boundary rationale
+
+> The **boundary proof for the stop-only pause** added by `260831-LOCR-L37`, driven over real
+> temporary Git repositories through the **public** operation. Every other pause case is a unit proof
+> of one seam; this module measures the world before and after the stop.
+
+The source author’s “every other pause case” comparison is retained as earlier rationale, not a new survey of every pause suite.
+
+### Never-selected refusal-to-success account
+
+> Before this change set the never-selected case asserted the
+> `atomic-series-activation-selection-missing` refusal; the pause now answers that status itself.
+
+“Before this change set” and “now” refer to that earlier card’s change epoch. The current success assertions remain in the present account above.
+
+### Prior fifth-freeze anchor-retirement receipt
+
+> - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1126-1126 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+The three matches and line 1126 belong to the reported fifth freeze; the repaired current catalog selectors do not replace that recorded receipt.
 
 ## Evidence
 
@@ -170,27 +193,7 @@ No Domain Documentation source is configured for this memory root.
 
 - The shared closeout fixture this module builds its real Git world from, and the Git helper it measures with. [10]
 
-
-
-
-
-> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py"
-
-
-
 - The shared closeout fixture this module builds its real Git world from, and the Git helper it measures with. [12]
-
-
-
-
-> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py"
-
-
-
-
-
-> Retained earlier citation wording: - The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation.
-
 
 - The separate publication no case here reaches.
 
@@ -205,38 +208,12 @@ No Domain Documentation source is configured for this memory root.
 
 No meaningful cross-repository reference applies to this repository-owned boundary proof.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation.
 
-- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1126-1126 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+### Repo-Internal References (continued)
 
 - The separate publication no case here reaches. Anchor: `worktree_checkpoint_landing` [15]
 
-
-
-
 - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [11]
-
-
-
-
 - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [13]

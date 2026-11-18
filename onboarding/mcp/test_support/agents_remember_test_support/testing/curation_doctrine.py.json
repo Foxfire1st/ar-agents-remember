@@ -163,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
             "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
             "locator": {
               "kind": "symbol",
@@ -176,12 +176,12 @@
       ]
     },
     "6": {
-      "note": "The repository sync script checks the declared package projection against canonical skills.\n\nAnchor: skill_targets",
+      "note": "The repository sync script checks the declared package projection against canonical skills. Anchor: skill_targets",
       "targets": [
         {
           "anchor": {
-            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
-            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "blob": "212f988e5638960b9061d674e63be12b27d324ab",
+            "content": "sha256:7154835c9a7497fa7c41c9bb084bcf73ac5cf4ffba6a7bb1703f296bb22adf2d",
             "locator": {
               "kind": "file"
             },

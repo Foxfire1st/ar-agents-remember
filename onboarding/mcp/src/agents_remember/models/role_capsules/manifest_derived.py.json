@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/manifest_derived.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a98f60c616a40b8300dbbfbfb6016c98dc349f82",
+        "content": "sha256:b646049e85b57346461eecb0221543b0fe7a6cc16ce92a34ec1b91898611a7c6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EBR872",
+      "invariant": "INV-Q432XE",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 3",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The reader joins authored declarations with generated routing; legal ordinary marks make stored steps stale, while renewal validates authored marks and replaces derived values.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The composed view retains authored reference membership and legal no-step decisions, reads reference roles and actions from derived values, and overlays derived core audiences; invalid marks and stale or missing steps name the renewal command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a98f60c616a40b8300dbbfbfb6016c98dc349f82",
+            "content": "sha256:50dd645d68d8d08b853d5c5bb739c63201eb2677ccdc407363b4e34347c0f956",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
