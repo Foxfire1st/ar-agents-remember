@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bc4857ecc21c177ccbe282d9fcd560a3826b571c",
-        "content": "sha256:3701fff665e313f7dc7efc2a3308eb6b9e35b58e9c79a186ab901fd1d43f752c",
+        "blob": "83a6eb8464ac8bd4bfd7289c664547428826fc76",
+        "content": "sha256:4c5bd379cc3bbe33fe92718038976a8b527bf4b8081838cc3f12d57ed0e0a8b3",
         "locator": {
           "kind": "file"
         }
@@ -15,13 +15,13 @@
         "handoffEntry": "INV-JS6GJ7",
         "leaf": "260928-MIK-L184"
       },
-      "rationale": "The package's own version is declared here and read by the pin checker.",
+      "rationale": "The only dependency in the manifest declares the required host CLI release.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "bc4857ecc21c177ccbe282d9fcd560a3826b571c",
-        "content": "sha256:f53bb68bdb399a366a95e315242b2db8de7fd81b79819c4f6d702cbfd1328f3a",
+        "blob": "83a6eb8464ac8bd4bfd7289c664547428826fc76",
+        "content": "sha256:25497a31fb56c1024372b21786d1c8c22472da03f320046e67f89bb1ed7162a7",
         "locator": {
           "end": 3,
           "kind": "line_range",
@@ -40,14 +40,16 @@
   ],
   "references": {
     "1": {
-      "note": "The exact host dependency the manifest declares.",
+      "note": "The manifest declares exactly one host dependency, `@getpaseo/cli` 0.16.2.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc4857ecc21c177ccbe282d9fcd560a3826b571c",
-            "content": "sha256:3701fff665e313f7dc7efc2a3308eb6b9e35b58e9c79a186ab901fd1d43f752c",
+            "blob": "83a6eb8464ac8bd4bfd7289c664547428826fc76",
+            "content": "sha256:4c5bd379cc3bbe33fe92718038976a8b527bf4b8081838cc3f12d57ed0e0a8b3",
             "locator": {
-              "kind": "file"
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

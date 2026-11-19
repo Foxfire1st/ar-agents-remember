@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
             "content": "sha256:6101e92db31bfdb2302b3ee4c96e3cc841ced597e99c35c077ab467a09d53ea2",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
             "content": "sha256:436e7b0290022308c4dbed94e2d3966ae22ae075e6b330d50e4ea62973d5d522",
             "locator": {
               "kind": "symbol",
@@ -30,7 +30,7 @@
         },
         {
           "anchor": {
-            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
             "content": "sha256:abef4dff8c6cbe348e99aa05aef34ac8ef93f08baf22ba8595061c003419b137",
             "locator": {
               "kind": "symbol",
@@ -47,7 +47,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
             "content": "sha256:6c63ea94de4295a218b77ed7327a34a1aeca806711ff73bfdf60b66bf0fc4a03",
             "locator": {
               "kind": "symbol",
@@ -64,7 +64,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
             "content": "sha256:f56ab9bb0a4067aa503cdcaa10862cd2931ee59a3354c7cf0e16f551f255f084",
             "locator": {
               "kind": "symbol",
@@ -76,13 +76,43 @@
         },
         {
           "anchor": {
-            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
             "content": "sha256:834a5496bfe416e5310c6dce0ead479e8b0d5d408e098ce2518462c1f7c543f8",
             "locator": {
               "kind": "symbol",
               "name": "startTrayChannel"
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The client catalog explicitly includes background agents in subscribed and cursor reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+            "content": "sha256:0564d773fca6ff8ecd7ab4227463bde2c3ab67a5aa5c3485d2efce567ca36d91",
+            "locator": {
+              "kind": "symbol",
+              "name": "includeBackground"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+            "content": "sha256:e154383f15b5087bdde0fab865c1489ef67637cf0416f2ffe0eac55c6141768a",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
           },
           "kind": "code"
         }
@@ -106,14 +136,42 @@
       ]
     },
     "3": {
-      "note": "The client bridge negotiates display replies while keeping native navigation, selected-screen admission and drawing/failure distinct.\n\nAnchor: `installBridge`",
+      "note": "The client bridge negotiates display replies while keeping native navigation, selected-screen admission and drawing/failure distinct.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
-            "content": "sha256:0b3c86ae9a33ab6fc99841284f3daf70ecae9735d3747b2a822554213861df21",
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:9d7fd5584c0640bb1ce8fbdee5ed971c7294a11fbd84e4e9f9a7b97adc21fdcf",
             "locator": {
-              "kind": "file"
+              "end": 407,
+              "kind": "line_range",
+              "start": 375
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:c478bb26e1313cddec510d8f4e898c792cb0c243fec8b6e6b7c5070e2546c363",
+            "locator": {
+              "end": 549,
+              "kind": "line_range",
+              "start": 516
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:430d7d89f02d9bf936f328572bed975e398e5e360d863f43f7826951340494c4",
+            "locator": {
+              "end": 593,
+              "kind": "line_range",
+              "start": 559
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
           },
@@ -122,14 +180,42 @@
       ]
     },
     "4": {
-      "note": "Host activity is boot-qualified, record-bounded and event-driven; concurrent events win over the whole host read and no idle event time is invented.\n\nAnchor: `HostActivityPublisher`",
+      "note": "Host activity is boot-qualified, record-bounded and event-driven. Reconciliation includes background agents, preserves concurrent events and invents no idle event time.",
       "targets": [
         {
           "anchor": {
-            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
-            "content": "sha256:a1a632794615dab7dff780d1278e0ffcd823c377afb2232d71a93767a82764b6",
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:cdb0044c2001f0f3cdbd1905a3d7dc263819d2b8b247408926a60dd6b868ecec",
             "locator": {
-              "kind": "file"
+              "end": 186,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:bc65fc2f41322b25b6eb49f373f4d0891c9f15bfbd2c6cef70704aeae2ba3887",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 291
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:4f157729aa8bef60ba2f2d303cac39a67a8cbd0bcddfd79678a41ccc81c0143c",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 452
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
           },
@@ -138,16 +224,31 @@
       ]
     },
     "5": {
-      "note": "Parent-wake handlers retain the existing gates: any admitted send asks the host for a steer, a free parent takes the line at once, and only a parent that is already in a turn is withheld unless the product knows its provider keeps that turn.",
+      "note": "Parent-wake handlers request steer on admitted sends. A parent already in a turn may take the line immediately only when the product knows its provider preserves that turn.",
       "targets": [
         {
           "anchor": {
-            "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
-            "content": "sha256:a022a1f0bfb2c78cec71b089c85e08077b7e7c2a76b42f94f39a8cfca3576a7a",
+            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "content": "sha256:5e4cc22e9361afa335dbef84d586c9fc21d81ffa3edf7ba9a7ac05ae7212b3c4",
             "locator": {
-              "kind": "file"
+              "end": 238,
+              "kind": "line_range",
+              "start": 217
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:78c929d1438efa5f432494604f629b70d9f2adc604f388a63649c1ac2891cb53",
+            "locator": {
+              "end": 1422,
+              "kind": "line_range",
+              "start": 1396
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },
           "kind": "code"
         }
@@ -158,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85d9b28858db2800b6ae5754af00d9255985080a",
+            "blob": "49bc0254b05c78be08015d6c53867af815a22478",
             "content": "sha256:63f9553a6aebbe56eb3ff37576b0426d198157245e0b5cbcba931f64545ee0d0",
             "locator": {
               "kind": "symbol",
@@ -175,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
             "content": "sha256:e5d6cc8e118f10b0d34fde8973aa85a7c25baaa598cc4acbd4ac3f21b0c62efb",
             "locator": {
               "kind": "symbol",
@@ -187,7 +288,7 @@
         },
         {
           "anchor": {
-            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
             "content": "sha256:08902861afaa618046609c51e92aad23b689d2f5214eb26d324970841437575e",
             "locator": {
               "kind": "symbol",
@@ -199,7 +300,7 @@
         },
         {
           "anchor": {
-            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
             "content": "sha256:8464eedf48c97b38b9e0bdccb1f461507055ead867f1cd2c707179aa52c1c587",
             "locator": {
               "kind": "symbol",
@@ -216,7 +317,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
             "content": "sha256:bec48ec9607ca04734850349f0868cbe3b587013436ed99a63b2c644aa8ff969",
             "locator": {
               "kind": "symbol",
@@ -233,7 +334,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
             "content": "sha256:f0e375bfa45b12a2adb3cac90576d8031c19acf238bc1e105206bb1ab2d9ca43",
             "locator": {
               "kind": "symbol",
@@ -245,7 +346,7 @@
         },
         {
           "anchor": {
-            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
             "content": "sha256:8628024d1aff76df50770b9136303e811785ba7f667f49fbdaf9fc0ff534150f",
             "locator": {
               "kind": "symbol",

@@ -203,4 +203,5 @@ Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3372 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
+
 - The lane row and two of the module's declared consumer rows (diff-scope and read-scope shared support). [22]

@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e01c0011e7abe3ff62dd2d91165f2f07908174c6",
+            "blob": "e398f22cf7540c1a362c9209ec7d6cab05ac41c2",
             "content": "sha256:b12b7a0d62b351726c4377249d0b5bf0b95cd984581059e373f6e52de355d867",
             "locator": {
               "end": 36,
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e01c0011e7abe3ff62dd2d91165f2f07908174c6",
+            "blob": "e398f22cf7540c1a362c9209ec7d6cab05ac41c2",
             "content": "sha256:a7dd2f1db2a5663f0d50ab1d69dc32bbd97bf4ba40e533fe36bf190216a02752",
             "locator": {
               "end": 112,
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e01c0011e7abe3ff62dd2d91165f2f07908174c6",
+            "blob": "e398f22cf7540c1a362c9209ec7d6cab05ac41c2",
             "content": "sha256:337ab3ee7cffe9746a8e6c1f774530261ddd8dc8fe247d247efd2b22125f3e3c",
             "locator": {
               "end": 172,
@@ -74,14 +74,14 @@
       ]
     },
     "4": {
-      "note": "The section Status states the repository's package version as `3.0.2` and sends the reader to the release notes before an install.\n\nAnchor: \"3.0.2\"",
+      "note": "The section Status states the repository's package version as `3.0.3` and sends the reader to the release notes before an install.\n\nAnchor: \"3.0.3\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e01c0011e7abe3ff62dd2d91165f2f07908174c6",
-            "content": "sha256:8d2e79ed375fb9d3f304f48d398655c917434524150701c928bd7753f9d7d736",
+            "blob": "e398f22cf7540c1a362c9209ec7d6cab05ac41c2",
+            "content": "sha256:fcc163daa572532e35852d78c412a4f0001278927dd2a3efece919491e4be2cd",
             "locator": {
-              "end": 207,
+              "end": 200,
               "kind": "line_range",
               "start": 192
             }

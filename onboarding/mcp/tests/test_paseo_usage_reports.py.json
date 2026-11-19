@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5231014b394731044266b5f6abec95e8da305e0b",
+        "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
         "content": "sha256:2f7a8d2793fce2612a0fc4a6a23db24fca077b04ac0d8df2e8574c8481fb15d1",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5231014b394731044266b5f6abec95e8da305e0b",
+        "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
         "content": "sha256:bc3ec2d9e31e6e614ea747f1b165a082f0f7cdcfb13dfe733833c6d34527a1f8",
         "locator": {
           "kind": "symbol",
@@ -34,12 +34,29 @@
         "handoffEntry": "MIK-R206 item 1",
         "leaf": "260928-MIK-L197"
       }
+    },
+    {
+      "anchor": {
+        "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+        "content": "sha256:bc3ec2d9e31e6e614ea747f1b165a082f0f7cdcfb13dfe733833c6d34527a1f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_stale_leaf_entry_is_refreshed_by_report_id_alone"
+        }
+      },
+      "facet": "The stale selected entry is refreshed through a report-only request.",
+      "id": "PRF-Z3RGHF",
+      "invariant": "INV-DY1KSB",
+      "origin": {
+        "handoffEntry": "L10-curated-usage-selector",
+        "leaf": "261112-BUG-L10"
+      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "5231014b394731044266b5f6abec95e8da305e0b",
+        "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
         "content": "sha256:2f7a8d2793fce2612a0fc4a6a23db24fca077b04ac0d8df2e8574c8481fb15d1",
         "locator": {
           "kind": "symbol",
@@ -57,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "5231014b394731044266b5f6abec95e8da305e0b",
+        "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
         "content": "sha256:ca86ad60e0debf2ba545a7265a0cea02a3d34343ef622ee6df62dbf20ef5e0ab",
         "locator": {
           "kind": "symbol",
@@ -75,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "5231014b394731044266b5f6abec95e8da305e0b",
-        "content": "sha256:04752d541d2c6be66f67163e5642635da055f663175b8c9c6d9075ebf130a13a",
+        "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+        "content": "sha256:e85791b988676d4f8e810ad43520ee21bbe0c6024dd77ab1dd942c75f92e2b9f",
         "locator": {
           "kind": "file"
         }
@@ -97,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5231014b394731044266b5f6abec95e8da305e0b",
+            "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
             "content": "sha256:ca86ad60e0debf2ba545a7265a0cea02a3d34343ef622ee6df62dbf20ef5e0ab",
             "locator": {
               "kind": "symbol",
@@ -108,7 +125,7 @@
         },
         {
           "anchor": {
-            "blob": "5231014b394731044266b5f6abec95e8da305e0b",
+            "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
             "content": "sha256:68ab8c91a52a7cedbafe6d3a4ee6ed42414ce41543e2c591949bf1e45b0a468b",
             "locator": {
               "kind": "symbol",
@@ -119,7 +136,7 @@
         },
         {
           "anchor": {
-            "blob": "5231014b394731044266b5f6abec95e8da305e0b",
+            "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
             "content": "sha256:5747b4e2c673d92e55682f1e03f3a4043c2d459628b5886d5d6999efd2b9763a",
             "locator": {
               "kind": "symbol",
@@ -130,7 +147,7 @@
         },
         {
           "anchor": {
-            "blob": "5231014b394731044266b5f6abec95e8da305e0b",
+            "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
             "content": "sha256:8e515f4b79bb990da2fc8fd673e17fbf7fccf49b3aa4249a6530b9487b572d3e",
             "locator": {
               "kind": "symbol",

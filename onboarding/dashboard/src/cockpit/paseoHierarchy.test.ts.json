@@ -1,0 +1,145 @@
+{
+  "path": "dashboard/src/cockpit/paseoHierarchy.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "545ace5a5f4351c2460831f914b3e464eaeaed36",
+        "content": "sha256:ac24d57d3d7dd813a68b8d97940c083b8d8a4fe3fd1e8f2961707e7dbb5e4ca0",
+        "locator": {
+          "kind": "symbol",
+          "name": "trusted host hierarchy and agent-specific parent actions > asks for background agents on both reads, and publishes a background role seat carried by either page"
+        }
+      },
+      "facet": "The first request and its continuation both include background agents, and the catalog retains the background seat.",
+      "id": "PRF-3KW674",
+      "invariant": "INV-MRV9R9",
+      "origin": {
+        "handoffEntry": "L10-curated-background-listing",
+        "leaf": "261112-BUG-L10"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The directory walks every SDK page, projects native activity and membership, and filters role labels.\n\nAnchor: \"includes every SDK page\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545ace5a5f4351c2460831f914b3e464eaeaed36",
+            "content": "sha256:aed4c3789c6a7b3d098d3c87fdf2a8738de93f90d6cd1c6e5ff1dece7a4bbd99",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Both agent reads request background agents, and the catalog publishes a background role agent from either page.\n\nAnchor: \"asks for background agents on both reads\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545ace5a5f4351c2460831f914b3e464eaeaed36",
+            "content": "sha256:ac24d57d3d7dd813a68b8d97940c083b8d8a4fe3fd1e8f2961707e7dbb5e4ca0",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 181
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Parent actions recheck the current visible caller and relation after a deferred lookup.\n\nAnchor: \"checks current visible caller and parent relation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545ace5a5f4351c2460831f914b3e464eaeaed36",
+            "content": "sha256:890e7bb3fc1c80fb03108cec7db2e3c10d14fd115a4bbc51691de6ac00b39974",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 204
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Snapshot replacement preserves newer and unrelated deltas and reconciles Parent pills. Explicit teardown releases subscriptions and clears all pills.\n\nAnchor: \"replaces directory snapshots on reconnect\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545ace5a5f4351c2460831f914b3e464eaeaed36",
+            "content": "sha256:e74842a28d56eb3ae8a253169b99a7fd8e55cd73489e00232c5f2cb483acc89f",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 258
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Visible selected IDs are accepted after catalog load and removed when the catalog no longer names them.\n\nAnchor: \"validates visible selections against current SDK IDs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545ace5a5f4351c2460831f914b3e464eaeaed36",
+            "content": "sha256:eff7158b8daa84e87c948353c87e9f27a2133095b96ae0d9aab47d87f410f13c",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 315
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The selection helper captures visible native agent tabs and publishes the current candidate set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24e8d0fea6b826394b656b7aa5bce3993d5eabbe",
+            "content": "sha256:1390ee983b39d8930393dd63a91da4cccff252014355da80469694ebc7f8eb60",
+            "locator": {
+              "kind": "symbol",
+              "name": "readSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Parent navigation checks the live bridge, visible source and current native relation before it can navigate or report failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:08cd33668f4ccad39a12d4db29dc861c4c587a9fd356b4f28a153d0a0c3da485",
+            "locator": {
+              "kind": "symbol",
+              "name": "openAgent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

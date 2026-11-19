@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cedf812f41fdd2a34cc6bfdddf0252a17d381755",
-        "content": "sha256:364e57f2a6dbba3ebcad59a1960921f31174980616980a1b72e4d30649e3610a",
+        "blob": "2075d3a09e4ce8c9fa9822b2e35c7a54f4015f12",
+        "content": "sha256:3291d424c937b5ef7f1a2bb811febc558f62c085235e8e16fe3d5f8cd86e3111",
         "locator": {
           "kind": "file"
         }
@@ -21,14 +21,16 @@
   ],
   "references": {
     "1": {
-      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "note": "The adapter resolves the bound stored-agent record and checks its persisted identity and any runtime identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "cedf812f41fdd2a34cc6bfdddf0252a17d381755",
-            "content": "sha256:364e57f2a6dbba3ebcad59a1960921f31174980616980a1b72e4d30649e3610a",
+            "blob": "2075d3a09e4ce8c9fa9822b2e35c7a54f4015f12",
+            "content": "sha256:0d05486231996fab94c5f2e1dc257d023621b2b53615bccde8bd33d22d5e3242",
             "locator": {
-              "kind": "file"
+              "end": 74,
+              "kind": "line_range",
+              "start": 31
             }
           },
           "kind": "code"

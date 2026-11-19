@@ -1,0 +1,3514 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L10",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:8fa5b718d16a2d4f463e5e214d0aa190ca84ddde8c7255c5bd073237f9da8967",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-20XGHX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0DAEC3",
+      "items": [
+        "sha256:ff686a54f8cbed075246f5fe51f6c727692633e12301cef07e692de3fd050f6b"
+      ],
+      "reason": "The existing negotiated failure path still reports the host’s own failure pane on the exact sought chat. The revised attribution identifies the pinned bundle that supplies the marker.",
+      "revision": 1,
+      "subject": "INV-N3NNM1"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-MGGEBY",
+          "revision": 2
+        },
+        {
+          "id": "INV-VDWN33",
+          "revision": 3
+        },
+        {
+          "id": "INV-WQ8YGE",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0KED3",
+          "revision": 2
+        },
+        {
+          "id": "INV-XZYGEB",
+          "revision": 3
+        },
+        {
+          "id": "INV-YK0D2W",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0BXKJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-0G15PB",
+      "items": [
+        "sha256:ed408ba419c754021b222e0ad5de5396568804dd848068d700bc9f507139afd2"
+      ],
+      "reason": "Explicit background inclusion preserves the scope of bound host activity while retaining boot qualification, document precedence and event ordering. The existing members still express the single task entry and shared display rules.",
+      "revision": 4,
+      "subject": "FAM-14NZRC"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:8fa5b718d16a2d4f463e5e214d0aa190ca84ddde8c7255c5bd073237f9da8967",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-8EBCSC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0GGE1A",
+      "items": [
+        "sha256:f3ebee7919c68ff57a811a2e77094b7bda2ee0fd09be02d3f42d9cdbeaaeaf1d"
+      ],
+      "reason": "The bridge still emits the negotiated on-chat signal after the route and focused store agree, followed by the distinct display outcome. W5 changes the pinned bundle attribution.",
+      "revision": 1,
+      "subject": "INV-CB2QY3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-105F8V",
+      "items": [
+        "sha256:bf50042399f5147f2580feb58f2f110e58df84d08e3bd2afdb540ae4db8e0aa3"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/copilot-acp-agent.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/copilot-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/copilot-acp-agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-10CCQB",
+      "items": [
+        "sha256:0ad1acd89e1b5997280c53edf55c547cb67e5d0bf15793c7e42dfdb30f75e758"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/omp/agent.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "5b4583298281b033613ec35284ad5b5ec805648e",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/omp/agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/omp/agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-141RM4",
+      "items": [
+        "sha256:a162a7fb70de0e7efb8031cffdc9b4d61ed714c51d4c6e01dada31ffb9454c32"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/mock-load-test-agent.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "54178e7cecfd6ac659f6d4c325be83b331d29394",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/mock-load-test-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/mock-load-test-agent.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-158QSW",
+      "items": [
+        "sha256:5c228fa1ac65d25ab79d25486d6ae04514925edc78898dbf71b58bc2ea1ca1c4"
+      ],
+      "reason": "Explains how full host reconciliation includes archived and background seats while retaining role-record admission and newer events.",
+      "sources": [
+        {
+          "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1KAFCE",
+      "items": [
+        "sha256:de44b677329e2a77cec598a3caf5afe23e92377a6960e705acdcb0f150b323f1"
+      ],
+      "reason": "Names the pinned host evidence for its stop predicate and retains the product process ownership boundary.",
+      "sources": [
+        {
+          "blob": "8f9bc2c24d7b679f25deffb740ca2965df933c37",
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_process_record.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_process_record.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-228HSQ",
+      "items": [
+        "sha256:23fb5b1281ba3076ec18bcda79742992294cff080d5abf2df531d49262a014b4"
+      ],
+      "reason": "Names the 0.16.2 event shape, pagination gate and exact cases for the refetch, turn identity and unreadable history.",
+      "sources": [
+        {
+          "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-24G750",
+      "items": [
+        "sha256:17f1f6ac7276d84ec639e5aec0d4d1952f57a46cc088d3471c999fe749a24950"
+      ],
+      "reason": "The diagnostic comment names the latest source version checked and the Invalid config match and install admission behavior are unchanged.",
+      "subject": "hunk:sha256:17f1f6ac7276d84ec639e5aec0d4d1952f57a46cc088d3471c999fe749a24950"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-282A2X",
+      "items": [
+        "sha256:7162c74dda489964164dd9daf911022c95274cf263b871d697c54ef01fdc6404"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/kiro-acp-agent.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/kiro-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/kiro-acp-agent.js"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC",
+        "FAM-8GST1A",
+        "FAM-M36XBW"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-2CPR7X",
+      "items": [],
+      "reason": "The listing filter supports three guarantees. Its single page-request obligation stands on its own across their distinct consumers.",
+      "revision": 1,
+      "subject": "membership:INV-MRV9R9"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4S93MX",
+          "revision": 1
+        },
+        {
+          "id": "INV-7D9QDG",
+          "revision": 2
+        },
+        {
+          "id": "INV-7QV5CQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-A3AK6R",
+          "revision": 1
+        },
+        {
+          "id": "INV-QS9SRX",
+          "revision": 2
+        },
+        {
+          "id": "INV-STRQX4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEZ24E",
+          "revision": 1
+        },
+        {
+          "id": "INV-X60KEC",
+          "revision": 3
+        },
+        {
+          "id": "INV-XQMXT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YJ2H50",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-2E4ZZ8",
+      "items": [
+        "sha256:84ad9248c762191772e39f42c8cecbd1c44e909ffda4cd73e78816e0bdacea56"
+      ],
+      "reason": "The wider catalog preserves native Parent and selection ownership under the current host pin. The dashboard grouping/sidebar boundary, document isolation, task-scoped explainer navigation and members’ jointly qualified guarantee retain their source authorities.",
+      "revision": 4,
+      "subject": "FAM-8GST1A"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2FWH8N",
+      "items": [
+        "sha256:c5a447fb498312bc1de9051da1da6469b494f5ab9d24a6648f2a1692ffd487a0"
+      ],
+      "reason": "The current evidence names the exact pin at both lock consumption points.",
+      "sources": [
+        {
+          "blob": "35f29aba0e4b605f09b297b0774caa5bc705842e",
+          "path": "mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
+            "content": "sha256:e63afa852e78efbc0ca06e72509de1ea319706e45cebdaa0d5f1cf2be3ac959e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:26798fe49fa61570a56da80682902293b42ca5b6ac48c535d13801526466fc6a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-AM4R8J"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2XC7XB",
+      "items": [
+        "sha256:f9ed048a9907b05efadb3796e14bf12d3d2219f43e1360527978f6b6682877f7"
+      ],
+      "reason": "The bridge still reads by agent for its initial report and refreshes a stale report through its report ID alone. W5 changes the range documented in its comment.",
+      "revision": 1,
+      "subject": "INV-BCXFH9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+            "content": "sha256:58affb9e2a3b183b63428304091929f4eacac2e8dfb7bce23a34c05dd680db7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "before": {
+            "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+            "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "id": "RLZ-Y4N5D7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-36NFYG",
+      "items": [
+        "sha256:1dce8c050ed80c1d752e2702e87f966721392b0a20644cc0479f107ac3c520b9"
+      ],
+      "reason": "Both agent-page paths explicitly retain background agents under the new SDK while the same native project, workspace and agent fields flow through one observed hierarchy snapshot.",
+      "revision": 2,
+      "subject": "INV-E4TSZB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
+            "content": "sha256:72a0f5577cbad8f50efd274462baeb04eb4e3ce689d012dd22e85d43ebc8840f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+          },
+          "before": {
+            "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+            "content": "sha256:9b65a81a30d17e2ed99b282e85d0a2f7fb038ce30e966585ada8b7fe7e69e3c5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+          },
+          "id": "RLZ-4GTTNN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-374X5C",
+      "items": [
+        "sha256:e7b860c257f9c9d0cd3598a120ff4328ca2a9497af04d1dd36afd92350c1d4f9"
+      ],
+      "reason": "Provider forwarding and activation still use the same settings paths. W5 changes only the version described in the surrounding comment.",
+      "revision": 1,
+      "subject": "INV-ZNXNZC"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-37B2NA",
+      "items": [
+        "sha256:edbcae806065e150f3de03c1cbe2be22e71daec74eda296d40b8cf6bbd8217a0"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3N75Q9",
+      "items": [
+        "sha256:8359585c212f609e49dba402e670e22dc28548fdb89fd43c62eec8e366809c56"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/trae-acp-agent.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "14e9ca8323f056c7d38be99e2bf1772444490090",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/trae-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/trae-acp-agent.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3VRJRB",
+      "items": [
+        "sha256:43d515e400d97be88b5b6fbef7a9558a5ef9cafbc2247914030e30307f923146"
+      ],
+      "reason": "The launch binding still scopes Claude tool restrictions to a bound task server. The card describes the exact admitted Investigator references.",
+      "sources": [
+        {
+          "blob": "9e10958ad95558f1846ccfe0170975c559d03227",
+          "path": "mcp/src/agents_remember/application/agent_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/agent_binding.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4AAD6G",
+      "items": [
+        "sha256:58d685799c91734c55eecccc1bc98cccc4a116e2009a8fd82ca5def20c49f968"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/cursor-acp-agent.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "98ee8b3b1856bfa58b3e74bed9a1b193cfebe989",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/cursor-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/cursor-acp-agent.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4EREP8",
+      "items": [
+        "sha256:20341e1cd01b625a32643e567b98807da3ebcc6d7c1067e584d4d66b0b3796a1"
+      ],
+      "reason": "Records the pinned bundle route and display markers and their separate readiness/control boundary, and reanchors the bridge lifetime while preserving the agent-only navigation authority.",
+      "sources": [
+        {
+          "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4NHT7M",
+      "items": [
+        "sha256:006858cc5a792265bc3aefcdd51621324c551d3da438c5b762e58bea0a1054db"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/claude/agent.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/claude/agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/claude/agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4Q9G5W",
+      "items": [
+        "sha256:374364d3cf140801bfe96da87695d3e127ea9fe5d9eea567083701b3b864dfaf"
+      ],
+      "reason": "The docstring updates the checked pin. The nested report and timestamp assertions remain unchanged.",
+      "sources": [
+        {
+          "blob": "d543708fd64be6b3b1af00582270c7c03045b4c4",
+          "path": "mcp/tests/test_provider_limits.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_provider_limits.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4T9988",
+      "items": [
+        "sha256:9b3b9b50dbe09b0346ad75f9649c50de855158423d87f802b773400ab2eefecd"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/opencode/runtime-client.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/opencode/runtime-client.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/opencode/runtime-client.js"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:8fa5b718d16a2d4f463e5e214d0aa190ca84ddde8c7255c5bd073237f9da8967",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-PG0AHJ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-50WCR8",
+      "items": [
+        "sha256:1536cc3460467fb3251376bbd1c2cd01f6a00e3a4c08ab4c3c5a2bab68ff7ffb"
+      ],
+      "reason": "The selected DOM candidates still pass through the current SDK agent map before publication and the bridge recomputes on either catalog or DOM change. The bridge diff updates source pin attribution.",
+      "revision": 1,
+      "subject": "INV-C71CTF"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-51DQGK",
+      "items": [
+        "sha256:303b41cd39ace4be7cab2fb472463a52c7b3693eee155ca78f8e8aa45bc70d42"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/pi/agent.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/pi/agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/pi/agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-51Q7T9",
+      "items": [
+        "sha256:5d7ffe7079a0716abdcbb67b6bc53e5ae13677159936bcad9aba5e12e8792c50"
+      ],
+      "reason": "The leaf renews the pinned source and clarifies the SDK type, wire payload and recorder refetch. Fixture-session binding, capture ownership and evaluation routing retain the same behavior.",
+      "sources": [
+        {
+          "blob": "2075d3a09e4ce8c9fa9822b2e35c7a54f4015f12",
+          "path": "scripts/agent_evals/adapters/paseo_session.py"
+        },
+        {
+          "blob": "3d975f27c0ce55d5ad95e49343385b48acafae0b",
+          "path": "scripts/agent_evals/adapters/recorder_plugin/index.server.ts"
+        }
+      ],
+      "subject": "onboarding:scripts/agent_evals/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+            "content": "sha256:e85791b988676d4f8e810ad43520ee21bbe0c6024dd77ab1dd942c75f92e2b9f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_paseo_usage_reports.py"
+          },
+          "before": {
+            "blob": "5231014b394731044266b5f6abec95e8da305e0b",
+            "content": "sha256:04752d541d2c6be66f67163e5642635da055f663175b8c9c6d9075ebf130a13a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_paseo_usage_reports.py"
+          },
+          "id": "RLZ-Q4595S"
+        },
+        {
+          "after": {
+            "blob": "d543708fd64be6b3b1af00582270c7c03045b4c4",
+            "content": "sha256:e0625cb988078f39e316878812aded0397d52527c2007ea908415dad06ec8822",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_limits.py"
+          },
+          "before": {
+            "blob": "da9a27873f215b73d0cb7a34e04111cf1a69e9aa",
+            "content": "sha256:b3bdcb609aaf95f589502ae570e3ab5951ff48ababfbddc5de84ed57231e4a77",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_limits.py"
+          },
+          "id": "RLZ-WPH2KF"
+        },
+        {
+          "after": {
+            "blob": "77a6a6dc37f2cd00dcbfaaf953c7b97720fdbf74",
+            "content": "sha256:a36e3845b4994024c57c92662e8b632b61dba33ac0e282387d40407480ac579f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+          },
+          "before": {
+            "blob": "53b01dee1b34652f68992851994d48322327ffae",
+            "content": "sha256:637aa18194d54886779bdc54b4b2c2d855bfc42881ed702290f316c8aba49588",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+          },
+          "id": "RLZ-XATWX1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-58X853",
+      "items": [
+        "sha256:899e69b5e59383cb65d65268f89a772cdb8e912fa38a61057e8b9f8ec72d5da0"
+      ],
+      "reason": "The host report remains the authority for account-wide exhaustion. The provider-limit and bridge test comments name the supported 0.16.2 nested answer and selector shape. Their judgment and assertions still hold.",
+      "revision": 2,
+      "subject": "INV-4T6KSE"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5GAWR3",
+      "items": [
+        "sha256:807f65e4b2c6bc26b59a84ab6f2c930efcfedd018ae1950d94dd27c5b34d7cce"
+      ],
+      "reason": "The card records the exact-owner whole-tail refetch for ended-turn evidence. The SDK event type omits timeline, while the host wire supplies an empty compatibility array.",
+      "sources": [
+        {
+          "blob": "3d975f27c0ce55d5ad95e49343385b48acafae0b",
+          "path": "scripts/agent_evals/adapters/recorder_plugin/index.server.ts"
+        }
+      ],
+      "subject": "onboarding:scripts/agent_evals/adapters/recorder_plugin/index.server.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5MV6D1",
+      "items": [
+        "sha256:40a1f46949cb9030f15e47e6025fa88f4a800e3ca0ee196698f00c2cd1922b48",
+        "sha256:cd55bd202641cf118d36260cab98867bb0fa07668c33a25aa9794d6a6bd1b59e"
+      ],
+      "reason": "Documents the exact fixture manifest discovery reads for the published version.",
+      "sources": [
+        {
+          "blob": "c04e5e6902f9d1ae2b937a5b308dc43f947ae33b",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/package.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/package.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5YFEXR",
+      "items": [
+        "sha256:549f4cc1705ddcd1278f1a05cd40768c2cdc36fe311cd1b79adf34d0664f05fa",
+        "sha256:821dc88c7307c29e9aa06c81fc8dc9e7526a6f9a6c0f805a5e6678a9a2e3f5a6",
+        "sha256:9f8823f745f8c14c4ddc8431bad9b066adc03561e93eebcf82116903c558d77b",
+        "sha256:a90350d24f8c304ba25eac8bbda269b98625949f3b7f08b44be643198af45b1e"
+      ],
+      "reason": "The fixtures name the tested input model’s 0.16.2 web build and React DOM 19.2.3 row props. The injected DOM’s evidence limits stay explicit.",
+      "sources": [
+        {
+          "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
+          "path": "dashboard/src/cockpit/paseoPluginPick.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/paseoPluginPick.test.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-60286N",
+      "items": [
+        "sha256:4f959a1c6933481bc709e71b2b08a1e587ad4e5419e3e42de3134197568bd5a3"
+      ],
+      "reason": "Explains the exact pinned host stored-agent path, persisted identity and conditional runtime agreement.",
+      "sources": [
+        {
+          "blob": "2075d3a09e4ce8c9fa9822b2e35c7a54f4015f12",
+          "path": "scripts/agent_evals/adapters/paseo_session.py"
+        }
+      ],
+      "subject": "onboarding:scripts/agent_evals/adapters/paseo_session.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-65PTXQ",
+      "items": [],
+      "reason": "docs/install/hermes.md:51-74,155-161; provision diff only updates Invalid config comment; bridge functional change is limited to background admission in agents.list for subagents. W5 preserved the ACP provider setup and its role-message handling.",
+      "revision": 4,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
+            "content": "sha256:63f825e477b21812828ec6f699d67a1522c2cce1c7f3a24fb65bbfeb126d8bbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "daemon_settings"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+          },
+          "before": {
+            "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+            "content": "sha256:fd07d9209dd0b397b73daddc5af0d752638eacdb96c298db7286ac503a42cb6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "daemon_settings"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+          },
+          "id": "RLZ-PTCH31"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7AS76V",
+      "items": [
+        "sha256:4910c976d18daf8c8a559deaab4958cee5d5f060a1911c6627aa7861a5c9b8f6"
+      ],
+      "reason": "The settled configuration still disables idle runtime cleanup. The updated note attributes reload behavior to the checked host pin.",
+      "revision": 1,
+      "subject": "INV-MAZGMS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8f9bc2c24d7b679f25deffb740ca2965df933c37",
+            "content": "sha256:1ffa06b9b739a6a2016e2e62ec131d509bdd90ba980dd58abca3b7965267770c",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_process_record.py"
+          },
+          "before": {
+            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+            "content": "sha256:4148858e54956c31ca751fb1ea4266263bf8e9434fb1a310f480ae246989d197",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_process_record.py"
+          },
+          "id": "RLZ-0PMK4H"
+        },
+        {
+          "after": {
+            "blob": "f224ffcf1d5608abef82e563ccd322a49e357d56",
+            "content": "sha256:af2e3af0ccd2b08e4c04fe361347fcaccb50c7b864488ff3b29eaa6ba61e149b",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json"
+          },
+          "before": {
+            "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+            "content": "sha256:a496e358679e573614fb505010f2f501f8b158c688a24332091576cdd943e2ca",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json"
+          },
+          "id": "RLZ-3M3903"
+        },
+        {
+          "after": {
+            "blob": "9c8efdcbd323446cafc9ccd6316ff1824e19cec8",
+            "content": "sha256:e50400741ed39b46a03ab34e7e64bba0dd8338ff83f890fdc486a685d8df262e",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/dev/FakePaseoHost.tsx"
+          },
+          "before": {
+            "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
+            "content": "sha256:bb4cc6a75b9dcdc539056a6084c3919bc210b3a8704fd8ddf34157cabd8654e1",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/dev/FakePaseoHost.tsx"
+          },
+          "id": "RLZ-4GYJ06"
+        },
+        {
+          "after": {
+            "blob": "24e8d0fea6b826394b656b7aa5bce3993d5eabbe",
+            "content": "sha256:ee3172a19a872159007e83134e61249b93612e4ead2ebfafae02cb9b5b7ecbe8",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "before": {
+            "blob": "61f51e32545075f0c3a400773e296c06920f7044",
+            "content": "sha256:ac52629fbaedd46ef0da6cb38dacde606e28cfad5c032b06dc4c2c8874f66d0c",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "id": "RLZ-4K7D1K"
+        },
+        {
+          "after": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:93d27d59c2f87e1faf5f8e543428707aef56921756993123de7cc3a7aa0be9dd",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:ba1854d4ceef78061e734a7ada78d8db3368dd80140085656f7aaa2a9a3eceb7",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-B533QM"
+        },
+        {
+          "after": {
+            "blob": "9c8efdcbd323446cafc9ccd6316ff1824e19cec8",
+            "content": "sha256:42df71903ff8179bd4331d3c1ba9f02dfa75d4b7d3a7cf12bd27a0fdd9e35070",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "dashboard/src/dev/FakePaseoHost.tsx"
+          },
+          "before": {
+            "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
+            "content": "sha256:3baf427123d4616f83a628e7d51e5edcc6f3c08811f106eb2f578c9835988e1c",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "dashboard/src/dev/FakePaseoHost.tsx"
+          },
+          "id": "RLZ-D48XR3"
+        },
+        {
+          "after": {
+            "blob": "5b0ef7f71d21cdfa42d7b69beda571f468de68a2",
+            "content": "sha256:2397d21b2402171ac3d798ec1417ec336b0c4b563b4e8cc8fc9ade0754c2ece8",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "dashboard/src/cockpit/paseoPluginBridge.test.ts"
+          },
+          "before": {
+            "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
+            "content": "sha256:a56815f0a8c202461de117e7754f6b15d7a48107d3ea6c0f8a61f7f086efcf80",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "dashboard/src/cockpit/paseoPluginBridge.test.ts"
+          },
+          "id": "RLZ-HT5WNG"
+        },
+        {
+          "after": {
+            "blob": "49bc0254b05c78be08015d6c53867af815a22478",
+            "content": "sha256:3572a6c5dbbd277289e479b29507bcbca9cd86525a97ad543d5bfafe9c952317",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+          },
+          "before": {
+            "blob": "85d9b28858db2800b6ae5754af00d9255985080a",
+            "content": "sha256:ca5bb503d79a34de2781419443f8d7b212a31854648f9cb31aeb2f972c933828",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+          },
+          "id": "RLZ-KH1XR2"
+        },
+        {
+          "after": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:d647522a32d03eef5938819c1d9204d14e34a0db71ddc5af28f0addebcdee494",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:ae437f8aa369dad5a8af8556a7e70f368eb1ee11dd0fc84df0287864af9652d1",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-YP5PVQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7D9T22",
+      "items": [
+        "sha256:49015f8f4d5080c2cca58fefdc6a1012610119d52b8c227acf64e0926450ef44"
+      ],
+      "reason": "The client comments and fixtures attribute their current route, DOM and navigation claims to Paseo 0.16.2. Installed-bundle inspection, injected fixtures and native observations retain their own evidentiary scope.",
+      "revision": 3,
+      "subject": "INV-0TCWT9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7GXFVV",
+      "items": [
+        "sha256:3218f245c8e3b732c3b149d90f8c10c2289707d2b336980ea36252af5b29f193"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/create-agent-mode.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "32243414be299b396282545971cd766232c8b138",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/create-agent-mode.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/create-agent-mode.js"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+            "content": "sha256:58affb9e2a3b183b63428304091929f4eacac2e8dfb7bce23a34c05dd680db7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "before": {
+            "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+            "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "id": "RLZ-FZQP72"
+        },
+        {
+          "after": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:8fa5b718d16a2d4f463e5e214d0aa190ca84ddde8c7255c5bd073237f9da8967",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-W98CK3"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7TNG74",
+      "items": [
+        "sha256:832a1b2d0f6b870a13d0737e856767fb00ff54d88791c798c04db989a60ff07f"
+      ],
+      "reason": "The Parent action still checks the current visible source and native parent edge after refresh. The hierarchy still registers or removes each pill with that source. Its explicit background-agent filter preserves the catalog population under Paseo 0.16.2.",
+      "revision": 1,
+      "subject": "INV-0286SX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-89EK7T",
+      "items": [
+        "sha256:616f9f0515f6a1b78fc3b7776031355ac1f252aab08b58b30637abbbc564ad93"
+      ],
+      "reason": "The vendored @getpaseo/protocol/dist/provider-manifest.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "f2e856666e5497e396216ee7aba16ef6c53f2770",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/protocol/dist/provider-manifest.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/protocol/dist/provider-manifest.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8RR36N",
+      "items": [
+        "sha256:edd03d50091b30a6b56a8c534af2b16bcb2a9a7ed38f9254e9aac1d77c6ba4d4"
+      ],
+      "reason": "The existing census account now explicitly includes background seats and its completeness observation.",
+      "sources": [
+        {
+          "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+        },
+        {
+          "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+          "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
+        },
+        {
+          "blob": "e208f8071de2a5e03b4ef2e219911997583ba06a",
+          "path": "mcp/src/agents_remember/cli/paseo_send_attachments.mjs"
+        },
+        {
+          "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
+          "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
+        },
+        {
+          "blob": "35f29aba0e4b605f09b297b0774caa5bc705842e",
+          "path": "mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
+        },
+        {
+          "blob": "83a6eb8464ac8bd4bfd7289c664547428826fc76",
+          "path": "mcp/src/agents_remember/package_data/paseo_host/package.json"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9K6N8X",
+      "items": [
+        "sha256:9252620e8f84e626e68fb1a18f86b5a6f8582f82c0477ac4399230c9c23e00fb"
+      ],
+      "reason": "The HierarchyClient request type requires the same background filter as its two executable calls. The type mirrors the runtime request constraint already described at the calls.",
+      "subject": "hunk:sha256:9252620e8f84e626e68fb1a18f86b5a6f8582f82c0477ac4399230c9c23e00fb"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A8J47C",
+      "items": [
+        "sha256:847fcb27fbd7ad4fa9baf3f1f21caef60760eac039d09f20cb9244b5ae327ddc"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/cursor-acp-agent.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/cursor-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/cursor-acp-agent.js"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-A8XW13",
+      "items": [],
+      "reason": "docs/reference/settings-json.md:232-243,349-369 and serving/paseo/paseo_settings.py:31-44; daemon_settings changes the version in commentary about agents.idleRuntimeCleanup reload and preserves the executable mapping.",
+      "revision": 9,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AV22A0",
+      "items": [
+        "sha256:542ae14a7b6aad3875a4b81a45a19c018989f384541332ec73bd8c48816d373c"
+      ],
+      "reason": "The updated comment names a checked diagnostic. Admission and the restart path use the same logic.",
+      "sources": [
+        {
+          "blob": "527bea1216f068c31565a638ad3b095eadbcc37a",
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_provision.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B2C94C",
+      "items": [
+        "sha256:8011286b15b8ff2b146350afbc325cbc56dbc99248f1426674fdbd257cb8a232"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/create-agent-mode.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/create-agent-mode.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/create-agent-mode.js"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+            "content": "sha256:58affb9e2a3b183b63428304091929f4eacac2e8dfb7bce23a34c05dd680db7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "before": {
+            "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+            "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "id": "RLZ-CEW3NM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-B4HF15",
+      "items": [
+        "sha256:47a97674c13989ec6bf526065f75f39468ac814abe580be00ec84998e0bb6a23"
+      ],
+      "reason": "The hierarchy still gates the Parent pill on the same current selected candidate and rejects unavailable source states. Catalog filtering changes no selection ownership.",
+      "revision": 1,
+      "subject": "INV-XQMXT2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BB7FTR",
+      "items": [
+        "sha256:6112544f207e6b8e79bbed49960f8979930a4e0fd32e417d9cd75a06c7aa9120",
+        "sha256:877791006527fe7ea81e292d85b4b7b7bb3395f616aaac5e0512d5417782857e"
+      ],
+      "reason": "Documents the copied distribution fixture and the checked consumer and renewer.",
+      "sources": [
+        {
+          "blob": "0c7577be5e764b26e524654ae5562cb01f529f7e",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/README.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/README.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BJM6K6",
+      "items": [
+        "sha256:9b004e18e049d2e8a09cf0e1325f3495fc525df4d2dceaed162fa39a8ad8dd29"
+      ],
+      "reason": "L10-M05. The test reconciles Parent pills when snapshots are replaced. Only the explicit stop releases subscriptions and clears all pills. The card and reference note describe each and keep the original test anchor.",
+      "sources": [
+        {
+          "blob": "545ace5a5f4351c2460831f914b3e464eaeaed36",
+          "path": "dashboard/src/cockpit/paseoHierarchy.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/paseoHierarchy.test.ts"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-BX7P8M",
+      "items": [],
+      "reason": "docs/release-checklist.md:52-91, paseo_host contract, package manifest, whole lock and plugin manifest; client/hierarchy.ts lists through the public SDK and browser sequence descriptions in the client sources remain checked separately. This is a checklist confirmation, not a release or a browser behavior retest.",
+      "revision": 5,
+      "subject": "DPD-0K35N0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BXVAPZ",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Only the label of an existing runtime stand-in changes. Registration, ownership, consumers and evidence semantics are preserved.",
+      "sources": [
+        {
+          "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-C0RXDH",
+      "items": [],
+      "reason": "docs/install/openclaw.md:48-66, the 0.16.2 package pin and pinned fixture provider-manifest.js:153-214. The built-in provider list has no OpenClaw and the task changes no role-launch provider logic.",
+      "revision": 2,
+      "subject": "DPD-6528VF"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C7VZJQ",
+      "items": [
+        "sha256:2b85c8bbe283608dde3bdd4031234545c1a969d0b03c8e1b9fbbb518f5b4ddcc"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/pi/agent.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "11a204cb59fc2c898c1aad84c33456fee824186a",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/pi/agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/pi/agent.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CBFMRA",
+      "items": [
+        "sha256:6face0c524e75d2b521b8c871aa61aca7abee746338724916f73c42c4301888b",
+        "sha256:ed28b08f5335205fb05d8ed7d44bab75e170ded928f78d04bd1fa44e97a8c1ed"
+      ],
+      "reason": "The card documents both exact vendor identifier/path matches and keeps the scanner mechanism and file-specific limits explicit.",
+      "sources": [
+        {
+          "blob": "473e07a526fd51de49b7ccb94feace4df9b01ee2",
+          "path": "mcp/tests/test_previous_host_removed.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_previous_host_removed.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R10",
+          "packet": "requirements/BUG-R10-v1-the-products-host-is-paseo-0-16-2.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "35f29aba0e4b605f09b297b0774caa5bc705842e",
+            "content": "sha256:f8996e1694fbf75c575bba1c0448857adf460f6af25890fd4014d65126b2cd68",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
+          },
+          "before": {
+            "blob": "ea14b3fc4bd1e9a1885ee565de76ee39656ec26f",
+            "content": "sha256:c08848a99b76359b3a1c1dd59dd56d9875ea8471ddfaeee6eeef57f4cbaf4f0b",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
+          },
+          "id": "RLZ-1JV04N"
+        },
+        {
+          "after": {
+            "blob": "f224ffcf1d5608abef82e563ccd322a49e357d56",
+            "content": "sha256:c061a2f2d93a5a80e2a4c5789449140d5d684a437545097a4631fa4e6a82833d",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json"
+          },
+          "before": {
+            "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+            "content": "sha256:7c27827ff9392c3c78ec33310857c7fbc49991cb7c44fb7b2e5e0b0ada5bd551",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json"
+          },
+          "id": "RLZ-2KGG45"
+        },
+        {
+          "after": {
+            "blob": "35f29aba0e4b605f09b297b0774caa5bc705842e",
+            "content": "sha256:23ca154978397fbb5888adcec45a43d0c47928478d2c09189b6e00203ef447f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
+          },
+          "before": {
+            "blob": "ea14b3fc4bd1e9a1885ee565de76ee39656ec26f",
+            "content": "sha256:5db45cddb7ae2c35223b2c7145f9c5aa471f0a114beb041320c53ccf41d537f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
+          },
+          "id": "RLZ-32A7HZ"
+        },
+        {
+          "after": {
+            "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
+            "content": "sha256:57c6957246b97dbc1ab522e6c7781e9237576da37b50f264b2ae75700f632c08",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
+          },
+          "before": {
+            "blob": "6463b43ab293f7d1e7cb525891b1e346d2e8f98c",
+            "content": "sha256:c477f0ca5f99e7fabd6908462ba20203bcdc55bc80b2a00f49586f37c5475e60",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
+          },
+          "id": "RLZ-BJF204"
+        },
+        {
+          "after": {
+            "blob": "83a6eb8464ac8bd4bfd7289c664547428826fc76",
+            "content": "sha256:4c5bd379cc3bbe33fe92718038976a8b527bf4b8081838cc3f12d57ed0e0a8b3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/package.json"
+          },
+          "before": {
+            "blob": "bc4857ecc21c177ccbe282d9fcd560a3826b571c",
+            "content": "sha256:3701fff665e313f7dc7efc2a3308eb6b9e35b58e9c79a186ab901fd1d43f752c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/package.json"
+          },
+          "id": "RLZ-RFH53Y"
+        },
+        {
+          "after": {
+            "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
+            "content": "sha256:90ead90da0e3bd10ca0b06edb4bb6281e181c954247b4d586072028872857567",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
+          },
+          "before": {
+            "blob": "6463b43ab293f7d1e7cb525891b1e346d2e8f98c",
+            "content": "sha256:ba6d0bbea457047d53b11079020b57214aaf528f5ccf90b2dc06d9817dfea31f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
+          },
+          "id": "RLZ-SW9NTN"
+        },
+        {
+          "after": {
+            "blob": "5a7ad1b1029b09c751e6d60da0e6dcda1527342d",
+            "content": "sha256:2ee21b8b0e6a8ce3be484b6a8c2f593ed13efe4a0fdc9cf020151d1de0bd7348",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/paseo-plugin.json"
+          },
+          "before": {
+            "blob": "5a7ad1b1029b09c751e6d60da0e6dcda1527342d",
+            "content": "sha256:2ee21b8b0e6a8ce3be484b6a8c2f593ed13efe4a0fdc9cf020151d1de0bd7348",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/paseo-plugin.json"
+          },
+          "id": "RLZ-WCNGVZ"
+        },
+        {
+          "after": {
+            "blob": "83a6eb8464ac8bd4bfd7289c664547428826fc76",
+            "content": "sha256:25497a31fb56c1024372b21786d1c8c22472da03f320046e67f89bb1ed7162a7",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/package.json"
+          },
+          "before": {
+            "blob": "bc4857ecc21c177ccbe282d9fcd560a3826b571c",
+            "content": "sha256:f53bb68bdb399a366a95e315242b2db8de7fd81b79819c4f6d702cbfd1328f3a",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_host/package.json"
+          },
+          "id": "RLZ-ZGMB8Z"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-CBW3PV",
+      "items": [
+        "sha256:d7676ddcfd63ec3248c46d4d8b80555d1ac96050468dcf36403c5a5b0d6583d4"
+      ],
+      "reason": "BUG-R10@v1 increases the exact pin to 0.16.2 across package declarations. The plugin minimum and independent Node pin keep their existing meanings.",
+      "revision": 4,
+      "subject": "INV-JS6GJ7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CDZEB9",
+      "items": [
+        "sha256:5babb42f2819cbe6c8c1ff952c205fe2468f2d3f7689b7aecbc23752ea1ec6c9",
+        "sha256:f91b4670524760919b21273b06968894edee3f3d9e184bea41b3f2f7ded0f301"
+      ],
+      "reason": "The two comment changes renew the SendMessageOptions and TextAttachmentSchema references for Paseo 0.16.2. The attachment shaping and its explanation in the MCP overview continue to hold.",
+      "sources": [
+        {
+          "blob": "e208f8071de2a5e03b4ef2e219911997583ba06a",
+          "path": "mcp/src/agents_remember/cli/paseo_send_attachments.mjs"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_send_attachments.mjs"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CH8N50",
+      "items": [
+        "sha256:a581b27985a22e07f3ea3aa67cb7a8d479d50ebe6f4c99aff4166a9c25d12c2f"
+      ],
+      "reason": "Names the background-agent filter on both agent list requests, along with the existing page cap, catalog ownership and Parent source gate.",
+      "sources": [
+        {
+          "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D2PNVG",
+      "items": [
+        "sha256:2de567b4c0fdb960eb83d847a2b50b49598b36706a37e27e32d5c6c5fec15910"
+      ],
+      "reason": "The current pin is recorded at the adapter’s native tab source while the selected-candidate rules remain unchanged.",
+      "sources": [
+        {
+          "blob": "24e8d0fea6b826394b656b7aa5bce3993d5eabbe",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D3MD9R",
+      "items": [
+        "sha256:e6d0dfdc8a88de99c91312a5498e0f55f2b356405c7617e232e9764ed6177557"
+      ],
+      "reason": "Names the pinned bundle and renderer that define the adapter inputs and preserves provenance, geometry and refusal boundaries.",
+      "sources": [
+        {
+          "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D406YK",
+      "items": [
+        "sha256:fc5fc336c44007926e116852685d86620675cfbe53746941a55d4f8a6679868d"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/plugins/plugin-process.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/plugins/plugin-process.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/plugins/plugin-process.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DVXB8W",
+      "items": [
+        "sha256:e036afa6f8629fea5382f4a7085ed648889f3c2965bb2237e8dcfcf59fb0bf73"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/acp-agent.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
+            "content": "sha256:e63afa852e78efbc0ca06e72509de1ea319706e45cebdaa0d5f1cf2be3ac959e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:26798fe49fa61570a56da80682902293b42ca5b6ac48c535d13801526466fc6a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-7J6Y4G"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DYRGB5",
+      "items": [
+        "sha256:32abcbff7e4a939116d6bd3869e57369caa11bf29e5f48e3faf403e49693b08f"
+      ],
+      "reason": "The settings-role selection and accepted create options are unchanged. The bridge host-activity listing now includes background agents on a distinct path.",
+      "revision": 2,
+      "subject": "INV-AFTG56"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E2VVRH",
+      "items": [
+        "sha256:c43927a0376421b7f89335c0282232f06ada06922f28227832ba151bd11abbfb"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/kiro-acp-agent.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "febcde2bed963dd66b92dc628ebda3ad86043cdf",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/kiro-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/kiro-acp-agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E4AFQ4",
+      "items": [
+        "sha256:72855bb62d0880f606669b5213a2fc566922bea10ea332c270949cd1aabad3df"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/opencode/runtime-client.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "2f6652bddb668e6c76ab18092bfcf14552ba9c76",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/opencode/runtime-client.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/opencode/runtime-client.js"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-EE2P63",
+      "items": [],
+      "reason": "docs/install/claude-code.md:110-127, application/agent_binding.py:35-64,85-101 and provider-manifest.js:153-166 in the new 0.16 fixture. The prior provider-manifest path is deleted and the new edition still names the Claude provider. The provider-side opt-in tool policy remains separate from the manifest.",
+      "revision": 4,
+      "subject": "DPD-3E9E2R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EEYFDN",
+      "items": [
+        "sha256:c7685b4a076925798745c046e9482ff7392a475e95f48db2cbc04b5a4b9ead08"
+      ],
+      "reason": "The overview records background coverage and the ended-turn contract. The pinned SDK omits the timeline field, the wire carries an empty compatibility array and both handlers refetch history.",
+      "sources": [
+        {
+          "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+        },
+        {
+          "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+        },
+        {
+          "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+        },
+        {
+          "blob": "24e8d0fea6b826394b656b7aa5bce3993d5eabbe",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+        },
+        {
+          "blob": "49bc0254b05c78be08015d6c53867af815a22478",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+        },
+        {
+          "blob": "f224ffcf1d5608abef82e563ccd322a49e357d56",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json"
+        },
+        {
+          "blob": "6975c6185be276d4ac2117cafe7a04fc8aa8f1cf",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.test.ts"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/protocol/dist/provider-manifest.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/create-agent-mode.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/provider-registry.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/claude/agent.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/copilot-acp-agent.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/cursor-acp-agent.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/generic-acp-agent.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/kimi-acp-agent.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/kiro-acp-agent.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/mock-load-test-agent.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/mock-slow-provider.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/omp/agent.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/opencode/runtime-client.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/pi/agent.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/trae-acp-agent.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/plugins/plugin-process.js"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/package.json"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/README.md"
+        },
+        {
+          "blob": "f2e856666e5497e396216ee7aba16ef6c53f2770",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/protocol/dist/provider-manifest.js"
+        },
+        {
+          "blob": "32243414be299b396282545971cd766232c8b138",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/create-agent-mode.js"
+        },
+        {
+          "blob": "45378235e31f606aced7992fba94b320cea1d4f3",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/provider-registry.js"
+        },
+        {
+          "blob": "9a8be2d7a128c8ec0502d5bbc7f1415844c4f258",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
+        },
+        {
+          "blob": "e0e64219c5016ceb34c5089450ef6c48ce8f06cf",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/claude/agent.js"
+        },
+        {
+          "blob": "b33b0956cce071df6dbbad017f2532bc112d48a9",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+        },
+        {
+          "blob": "2781db6ecb71b17c78cd4735f766a4338e224840",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/copilot-acp-agent.js"
+        },
+        {
+          "blob": "98ee8b3b1856bfa58b3e74bed9a1b193cfebe989",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/cursor-acp-agent.js"
+        },
+        {
+          "blob": "ec7c423c3dff204dd87c03e30b022537dafbcd01",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/generic-acp-agent.js"
+        },
+        {
+          "blob": "bdf8d4eeef787735372ed572e6d6f21f1b7ec7b8",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/kimi-acp-agent.js"
+        },
+        {
+          "blob": "febcde2bed963dd66b92dc628ebda3ad86043cdf",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/kiro-acp-agent.js"
+        },
+        {
+          "blob": "54178e7cecfd6ac659f6d4c325be83b331d29394",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/mock-load-test-agent.js"
+        },
+        {
+          "blob": "a701a4306e3884f826611b80c657bdad6dd0f1f8",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/mock-slow-provider.js"
+        },
+        {
+          "blob": "5b4583298281b033613ec35284ad5b5ec805648e",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/omp/agent.js"
+        },
+        {
+          "blob": "2f6652bddb668e6c76ab18092bfcf14552ba9c76",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/opencode/runtime-client.js"
+        },
+        {
+          "blob": "11a204cb59fc2c898c1aad84c33456fee824186a",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/pi/agent.js"
+        },
+        {
+          "blob": "14e9ca8323f056c7d38be99e2bf1772444490090",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/trae-acp-agent.js"
+        },
+        {
+          "blob": "d86bf954b756a329662b34794e314608f77ca0c7",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/plugins/plugin-process.js"
+        },
+        {
+          "blob": "c04e5e6902f9d1ae2b937a5b308dc43f947ae33b",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/package.json"
+        },
+        {
+          "blob": "0c7577be5e764b26e524654ae5562cb01f529f7e",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/README.md"
+        },
+        {
+          "blob": "b5df4ba931c688fd3d1aa50ed0199bcc4d6013a2",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/fixture.json"
+        },
+        {
+          "blob": "d9e8a0d7007a23e15221a2ca59b9549f28c2c807",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/renew-paseo-fixture.mjs"
+        },
+        {
+          "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+        },
+        {
+          "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+        },
+        {
+          "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+        },
+        {
+          "blob": "366c52629297ce37095d2660482c4f6750898913",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:8fa5b718d16a2d4f463e5e214d0aa190ca84ddde8c7255c5bd073237f9da8967",
+            "locator": {
+              "end": 693,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+            "locator": {
+              "end": 695,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-C3ZC91"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EFB34G",
+      "items": [
+        "sha256:e7c2cd3075a5cf00cf260433a568b7e31d9d6989db6204b541f73c2f374da0b2"
+      ],
+      "reason": "The current generation still gates awaited navigation and confirmation. The changed bridge extent documents the pinned native display inputs for that same retained-frame route.",
+      "revision": 2,
+      "subject": "INV-7D9QDG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:f6c4033a8c4dc1ac9c6f131fbf8349ceb78cc079d7b3b7d6d2a74be5967255d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "before": {
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:a1a632794615dab7dff780d1278e0ffcd823c377afb2232d71a93767a82764b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "id": "RLZ-4VTSTZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EFN85G",
+      "items": [
+        "sha256:97a50c84b53563d4ee824e62bfb09857a3b40028e6e3f1e54e773246c4708686"
+      ],
+      "reason": "The publication still derives permission occurrences from native IDs, with the same cap and incomplete-observation behavior. The listing change affects which registered host agents can be found, not how an occurrence is identified.",
+      "revision": 1,
+      "subject": "INV-XERGJ0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:f6c4033a8c4dc1ac9c6f131fbf8349ceb78cc079d7b3b7d6d2a74be5967255d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "before": {
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:a1a632794615dab7dff780d1278e0ffcd823c377afb2232d71a93767a82764b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "id": "RLZ-CE6HQ3"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EZR327",
+      "items": [
+        "sha256:10ad46f06ea86befd4dd1f22b454d64699f8a269fdaee5a989d822b181d06d60"
+      ],
+      "reason": "The publisher still derives provider-subagent facts and applies the same activity and age semantics. Its full host listing now explicitly includes background seats.",
+      "revision": 1,
+      "subject": "INV-2ANNY5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:8fa5b718d16a2d4f463e5e214d0aa190ca84ddde8c7255c5bd073237f9da8967",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-9G4ASB"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FPDZHV",
+      "items": [
+        "sha256:90a85e4cd1af30ccb9093a76b809b62c3fbbc893bbecbd8d4c905381c7e85b5c"
+      ],
+      "reason": "The plug-in still owns guarded selection and Parent navigation. The bridge comment update and broader valid native catalog restore coverage without reviving dashboard grouping.",
+      "revision": 1,
+      "subject": "INV-STRQX4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G14P9Z",
+      "items": [
+        "sha256:9bff534c0cc36d5273766e427cef564f4e0754c5bc41f8376e7229cb0bb92d10"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/trae-acp-agent.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/trae-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/trae-acp-agent.js"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:f6c4033a8c4dc1ac9c6f131fbf8349ceb78cc079d7b3b7d6d2a74be5967255d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "before": {
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:a1a632794615dab7dff780d1278e0ffcd823c377afb2232d71a93767a82764b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "id": "RLZ-FZ0D1M"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GG1GDK",
+      "items": [
+        "sha256:c88eb23e43ab752efe0bbce2c0eb3313f26039c937f5f172b32979bd66d6ca67"
+      ],
+      "reason": "The publisher explicitly includes background agents in its boot-qualified host snapshot. Task stage still comes from the native document and the observation still supplies only bound activity and event time.",
+      "revision": 3,
+      "subject": "INV-VDWN33"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GMFKJZ",
+      "items": [
+        "sha256:4d7c966ee3d5a11b37235604e9f4e19552c4ba88b6ee3d8a6298cd4e84d2bd5c"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/generic-acp-agent.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "ec7c423c3dff204dd87c03e30b022537dafbcd01",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/generic-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/generic-acp-agent.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H70E8M",
+      "items": [
+        "sha256:13d9550d4a3eb7847f8f5370dabb0fb2113f574ba061bbd431b59c4baedc2c29"
+      ],
+      "reason": "The compact fixture’s scope now names the 0.16.2 pin with unchanged test boundaries and precise reference evidence.",
+      "sources": [
+        {
+          "blob": "5b0ef7f71d21cdfa42d7b69beda571f468de68a2",
+          "path": "dashboard/src/cockpit/paseoPluginBridge.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/paseoPluginBridge.test.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:4dd9c9c7e8d2fc55ab6335dae55029e8b4872c28101cbd83137f611fb195ecfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "F06: incomplete pagination never admits a seat wake; a complete listing does"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "before": {
+            "blob": "6fd6a527f97a6ec111010f689376cf6e48953acd",
+            "content": "sha256:36e5a29048d3494742df3cf098be07ca0fc9ba9af00581bd2ad78f3ae1d98c1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "F06: incomplete pagination never admits a seat wake; a complete listing does"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "id": "PRF-6MFPDJ"
+        },
+        {
+          "after": {
+            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "content": "sha256:6c340d20221d34f93cf0686eeb0432d180d831167babf8ba0f89e8544397abdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "readHostState"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+            "content": "sha256:568a277f057a7be11e46e1b8255faa17e5ec4e9c4157c14f40b504e84b279294",
+            "locator": {
+              "kind": "symbol",
+              "name": "readHostState"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-09MB1T"
+        },
+        {
+          "after": {
+            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "content": "sha256:7c3b80456cdcedc15c9975d4b728f49be66de3cabbf73e114a3c61946c33eadd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+            "content": "sha256:a022a1f0bfb2c78cec71b089c85e08077b7e7c2a76b42f94f39a8cfca3576a7a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-55H239"
+        },
+        {
+          "after": {
+            "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+            "content": "sha256:d84fef2cbab992c590657650e8f5666964187e8b07e246f5988bdd4d0f7efef5",
+            "locator": {
+              "kind": "symbol",
+              "name": "createAcpProviderSet"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.ts"
+          },
+          "before": {
+            "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+            "content": "sha256:d84fef2cbab992c590657650e8f5666964187e8b07e246f5988bdd4d0f7efef5",
+            "locator": {
+              "kind": "symbol",
+              "name": "createAcpProviderSet"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.ts"
+          },
+          "id": "RLZ-900CN6"
+        },
+        {
+          "after": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:60560e3d68dd0fd3ab2703c2940b140dcfa16532b1809f00c706fb2467fb5c43",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "69f86481977889614444bd61074a69ea15339066",
+            "content": "sha256:862fe97fb9d0f8b136734abb515782fb76821ea93ffd398802d2e29f8cc4dfc6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "RLZ-CTTYCZ"
+        },
+        {
+          "after": {
+            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "content": "sha256:c87b7853f8f4a4e32f8e60f6d7ce941573d3cfbbaae42ebdf53e7234def4f622",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
+            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        },
+        {
+          "after": {
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:823022bcd388f9af0ab0610b43c0e69c92c54dd0e280c451f9bb2d11ee758912",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "before": {
+            "blob": "6fd6a527f97a6ec111010f689376cf6e48953acd",
+            "content": "sha256:d000522e536fee48193f5eda65bdc74438f0887b0acb47fc122f8e12d2c4bfaf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "id": "RLZ-H55V5C"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-H76ZSS",
+      "items": [
+        "sha256:1e0e99ea099ae75dbd65f27ba5749f8d5f2e6a5bb6b8d491713add7d30bea6d4"
+      ],
+      "reason": "The existing silent-wake decision holds. The adapter requests background seats on each bounded host page and the test input with no timeline field models the SDK type. The evidence catalog hunk updates the runtime-double pin label. L10-M03 records the actual terminal-page predicate and continuation guard in the paired realization. M570 corrects the ACP realization rationale for role launch and the in-memory turn-end lookup.",
+      "revision": 6,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HCA0TR",
+      "items": [
+        "sha256:8e6639d0ce44f452cbef702fef0debde1b7a0518ab1fda5c0aaef03cca4ede59"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/omp/agent.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/omp/agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/omp/agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HF7MV0",
+      "items": [
+        "sha256:07922b1ec7481d3cb2bf0debca9d14eb6b0d224e737b1271dd035992e8e3c141"
+      ],
+      "reason": "The launch-pin comment changes no application boundary, task identity or provider selection mechanism.",
+      "sources": [
+        {
+          "blob": "9e10958ad95558f1846ccfe0170975c559d03227",
+          "path": "mcp/src/agents_remember/application/agent_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HMNX87",
+      "items": [
+        "sha256:3362d2f7449124d928d754f7f60b99656810a0b198065d3b8a29aa8e1636c98a"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/acp-agent.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "9a8be2d7a128c8ec0502d5bbc7f1415844c4f258",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-JK0QHQ",
+      "items": [],
+      "reason": "docs/dashboard.md:218-228 and client/hierarchy.ts:188-196,224-252 show the same grouping/control with broader host agent input. Confirmation is for this dependency, not a browser control readiness or retry verdict.",
+      "revision": 4,
+      "subject": "DPD-23C91T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JKNGQ9",
+      "items": [
+        "sha256:39b77e230303f5dd59d88c1f0aaaca403c2164c01e97a884dc6d3b82c2be1f7c",
+        "sha256:3f5e3f772e78e4cc02b99cd569c49dda57f06a723dcad3f23c388f257d9af93c",
+        "sha256:8f1a98e41684a3289475b9b1ee69d2e546454bb245acf11594995d76f3847f6b",
+        "sha256:db5585c6cd39c1d0abfd9fa051f51a666edfa7a0d2efb2073f52caf32bf8beaa"
+      ],
+      "reason": "The Node driver supplies an SDK-shaped mock that omits the timeline field. It checks the exact owner, whole-tail refetch, recorded turn and observed window.",
+      "sources": [
+        {
+          "blob": "f4c32ad7be7898f88dbdf1293e1be9b6506ad50d",
+          "path": "mcp/tests/test_agent_eval_recorder_plugin.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_agent_eval_recorder_plugin.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K4BNFM",
+      "items": [
+        "sha256:b18ee261883c4328fc36c6274015e89bf6a3e2cdbcb49dfabf1d3303a4b60748"
+      ],
+      "reason": "L10-M01 and L10-M02. The card retains the build-day Node selection under D113 and MIK-R107@v1, the exact archive digest and the dated 2026-10-28 recheck, with immutable code and memory locations. The retained raw sources are catalogued in notes/reports/curator/97d24f38-ebc1-43f7-a5bf-9acba9c46b14/role-launch/W6-M567-node-pin-provenance.md, SHA-256 a33e1329ddb6fb3f0cb92421f1f987376d999f3fd5ddc576cd1a5f0137a3020e. Release concordance checks the package pins, lock metadata, supported platform, canonical URL and digest format. The provisioner hashes the fetched archive before extraction.",
+      "sources": [
+        {
+          "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
+          "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_host/contract.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KDB3KG",
+      "items": [
+        "sha256:83b3e1b7dda4f31eaca93428a251798da814fa25c01bdf11a7171dc94c601253"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/provider-registry.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "45378235e31f606aced7992fba94b320cea1d4f3",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/provider-registry.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/provider-registry.js"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC",
+        "FAM-N17BB4"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-KFA00R",
+      "items": [],
+      "reason": "No examined family owns offline fixture provenance. The source-copy obligation has its own renew/check and integrity case.",
+      "revision": 1,
+      "subject": "membership:INV-5JH1KE"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KJ529P",
+      "items": [
+        "sha256:aa64a36a041f81cfcfdff1b9baba2715d64d61f72a2e32c2197bcbc925ed2328"
+      ],
+      "reason": "The fake client comment names the checked pin. The existing envelope, combined-selector refusal and stale/fresh cases remain valid.",
+      "sources": [
+        {
+          "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+          "path": "mcp/tests/test_paseo_usage_reports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_usage_reports.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KT2YHD",
+      "items": [
+        "sha256:9224351db575fddcf9ca3b24677717248e8980dc84e04f0215b8cbcb6454336e",
+        "sha256:ca1ed1e978dca083964c5f3a9525b40399f3869370091530cd58c1e343300c5f"
+      ],
+      "reason": "Retired the synthetic 0.15 fixture card and documented the recorded 0.16 distribution copy at its present path.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/README.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/README.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+            "content": "sha256:0556d3d40d00fad80eba6385ee715063b96ff7a91d0900463ef554803507e1a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "listLiveAgents"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
+          },
+          "before": {
+            "blob": "0ab582dd663d455dc656664d8318e003ef81510a",
+            "content": "sha256:5d4342a80589c7b2af3ef34b8e7213feb083db3f82e601c6560380fb184afa81",
+            "locator": {
+              "kind": "symbol",
+              "name": "listLiveAgents"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
+          },
+          "id": "RLZ-ZX4HN0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KW778A",
+      "items": [
+        "sha256:41054a29e5951e2e19926e909c0e12ceeb278efdc75289bb2fd36956819679ae"
+      ],
+      "reason": "The census requests background agents explicitly on each page. An unreached ID remains unknown when the host has not reported completion.",
+      "revision": 1,
+      "subject": "INV-GD0F05"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-MJK3Q0",
+      "items": [],
+      "reason": "The native usage request selector is a request-shape obligation. The task activity guarantee relies on report judgment and does not need this transport constraint as a member.",
+      "revision": 1,
+      "subject": "membership:INV-DY1KSB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "content": "sha256:c87b7853f8f4a4e32f8e60f6d7ce941573d3cfbbaae42ebdf53e7234def4f622",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
+            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MP73QJ",
+      "items": [
+        "sha256:0dd19ab51d42ed14547c20597b318ecfa3af4ec6d88abaebe807f610a013b957"
+      ],
+      "reason": "The lifecycle catalog changes only the unrelated runtime double pin. Its private enclosure scratch contract and test registrations still hold.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MS9RYW",
+      "items": [
+        "sha256:f28a0a63d7fa0b50d40eb2fc6c2293b362568dd76af35e21d064b94ca66a86b8"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/mock-load-test-agent.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/mock-load-test-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/mock-load-test-agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MT052Y",
+      "items": [
+        "sha256:aaa683afec9321d14e7b1e7998f22f5a98db48486788f8f2f577304cee0efe8b"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/generic-acp-agent.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/generic-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/generic-acp-agent.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N6GK2B",
+      "items": [
+        "sha256:3a477f3dadbcf3565cd005872ea8ec73256799fca94c9a4eddb6ea5d4f7af08f"
+      ],
+      "reason": "L10-M03. The card records the actual terminal-page predicate and the missing or repeated cursor guard while hasMore is true. It retains the background-inclusive read, the SDK type versus wire distinction and the whole-tail refetch.",
+      "sources": [
+        {
+          "blob": "366c52629297ce37095d2660482c4f6750898913",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:dc63de2522f1ac561f541ae7c2d3be17c4948cba8d8092507906642aec6141e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "HOST_ACTIVITY_HOOKS"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "before": {
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:dc63de2522f1ac561f541ae7c2d3be17c4948cba8d8092507906642aec6141e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "HOST_ACTIVITY_HOOKS"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "id": "RLZ-3QQ1Y5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-N6SK8S",
+      "items": [],
+      "reason": "The same named hooks still register through server.addHook. The realization now describes the pinned host while retaining the historical minimum and legacy-name boundary.",
+      "revision": 1,
+      "subject": "INV-2SNZPZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NFG0D0",
+      "items": [
+        "sha256:8b1dcd12dc38089397e5a05fea9dbb56aaf189d628a27758af32d35de7a47e78"
+      ],
+      "reason": "The current development SDK pin is 0.16.2.",
+      "sources": [
+        {
+          "blob": "f224ffcf1d5608abef82e563ccd322a49e357d56",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/package.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NFRMWK",
+      "items": [
+        "sha256:40d36b07ae8f99154cd52dd40c9773cefd62123944e44c6a818d5b58f7c133ad"
+      ],
+      "reason": "The provision and runtime layer still own settings mapping, actual host state and stopped-host activation.",
+      "sources": [
+        {
+          "blob": "8f9bc2c24d7b679f25deffb740ca2965df933c37",
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_process_record.py"
+        },
+        {
+          "blob": "527bea1216f068c31565a638ad3b095eadbcc37a",
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py"
+        },
+        {
+          "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+        },
+        {
+          "blob": "77a6a6dc37f2cd00dcbfaaf953c7b97720fdbf74",
+          "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NK7G5S",
+      "items": [
+        "sha256:d3d61a846ffe85c10da59737265a3de18ac603ae810088edcb51c40866ec4748"
+      ],
+      "reason": "The source pin comment names 0.16.2. The card’s supported screen parameters, native navigation and web-only bridge wiring remain accurate. Sidecar anchors refresh mechanically.",
+      "sources": [
+        {
+          "blob": "49bc0254b05c78be08015d6c53867af815a22478",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:015c3d7c55694a28709850c24890a583e948b9552d07ed643f26ac163040b692",
+            "locator": {
+              "kind": "symbol",
+              "name": "HostActivityPublisher"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "before": {
+            "blob": "d0d5b6248ee918bdbc17b535ea6d18c060f2aae6",
+            "content": "sha256:2d6717f0724a29d94dedcfb9283e86124022f276f50527744b35f4314cfd88b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "HostActivityPublisher"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "id": "RLZ-FQ42W2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-NY6M8W",
+      "items": [
+        "sha256:d83a8de8318499eb2c0522eab9de0f460b28669abb0a519316650e718cd15938"
+      ],
+      "reason": "The boot reconciliation now explicitly requests background agents. The publication cadence, event-wins ordering and held-delivery read remain as recorded.",
+      "revision": 2,
+      "subject": "INV-X0KED3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:8fa5b718d16a2d4f463e5e214d0aa190ca84ddde8c7255c5bd073237f9da8967",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-TWYV9Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-NYW51S",
+      "items": [
+        "sha256:df82ba153e436ec5911403d454e8fd702b2f907b6f52e9c1c5a9504a6de4885a"
+      ],
+      "reason": "The control message still toggles document isolation through pageMode, and the isolated sidebar’s separate owner still preserves the native saved choice. The bridge diff updates host attribution.",
+      "revision": 1,
+      "subject": "INV-4S93MX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-PE6KQN",
+      "items": [],
+      "reason": "ROADMAP.md:15-23, docs/concepts.md:336-343, and the complete recorded-blob to W5 diff of docs/concepts.md, which changes only the knowledge-index explanation.",
+      "revision": 3,
+      "subject": "DPD-3P9XTZ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-PG1WDT",
+      "items": [],
+      "reason": "docs/guides/carryover-from-branch.md:95-108 and memory/carryover.py:111-126; the recorded-to-current source diff changes cache lookup and retains per-tree inputs and scratch build on miss.",
+      "revision": 2,
+      "subject": "DPD-6WW03D"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PX9F9B",
+      "items": [
+        "sha256:1c962b75ab432c15d8af16ea5a0fa4dec939ccbd7ed4a529747a2674f491fef0"
+      ],
+      "reason": "The no-stop reference records the running-version mismatch, required restart and lack of process or file mutation. The recorder test also clarifies the SDK type and wire payload while keeping its mock and execution unchanged.",
+      "sources": [
+        {
+          "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "f4c32ad7be7898f88dbdf1293e1be9b6506ad50d",
+          "path": "mcp/tests/test_agent_eval_recorder_plugin.py"
+        },
+        {
+          "blob": "7d815a3e62500ff53c8485f9dfe28e313d74ef93",
+          "path": "mcp/tests/test_paseo_install_no_stop.py"
+        },
+        {
+          "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+          "path": "mcp/tests/test_paseo_usage_reports.py"
+        },
+        {
+          "blob": "473e07a526fd51de49b7ccb94feace4df9b01ee2",
+          "path": "mcp/tests/test_previous_host_removed.py"
+        },
+        {
+          "blob": "d543708fd64be6b3b1af00582270c7c03045b4c4",
+          "path": "mcp/tests/test_provider_limits.py"
+        },
+        {
+          "blob": "4fb74a83d20d5b01b0496ea8f02780f65e37d81d",
+          "path": "mcp/tests/test_role_launch_acp_instruction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-Q8E3Q4",
+      "items": [],
+      "reason": "docs/install/cursor.md:49-67, the 0.16.2 package pin and pinned fixture provider-manifest.js:153-214. The built-in provider list has no Cursor and the task changes no role-launch provider logic.",
+      "revision": 2,
+      "subject": "DPD-21GMJ5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QB1XK7",
+      "items": [
+        "sha256:d0fd3435bafa045136a0323db42b28fd19b1500ccfa24c98211cf37d26c8ed09"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/mock-slow-provider.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/mock-slow-provider.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/mock-slow-provider.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QD8Z78",
+      "items": [
+        "sha256:fa6fd7efacc66b37a04e75fd80097d4d71b204e10ea6c46509e9b52ac99f0f66"
+      ],
+      "reason": "Documents the installed-source checks, current fixture renewal and separate verification branch.",
+      "sources": [
+        {
+          "blob": "d9e8a0d7007a23e15221a2ca59b9549f28c2c807",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/renew-paseo-fixture.mjs"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/renew-paseo-fixture.mjs"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "content": "sha256:c87b7853f8f4a4e32f8e60f6d7ce941573d3cfbbaae42ebdf53e7234def4f622",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
+            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QM65YM",
+      "items": [
+        "sha256:0a4edf930b4f41ea206b9477dcd657b26d98894220ad93a1d6e9451a4fce242c"
+      ],
+      "reason": "The runtime double row names the active pin in its provenance field. The patch changes no consumer list, lane, identity or retained registration.",
+      "revision": 2,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-QPQNP3",
+      "items": [],
+      "reason": "SECURITY.md:12-18,47-51,60-75; W5 paseo_settings.py:33-44 changes a version in a docstring, the package lock is re-generated for the same npm installation path, and the pre-existing MCP server change wraps tool context with definition_scope without a route or configuration change (mcp/server.py:94-128).",
+      "revision": 4,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QXK41A",
+      "items": [
+        "sha256:f5d6d490c29deaa0ac2982270d45bbdfe426a5675bbea6b619f9f589dc8d9f20"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/claude/agent.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "e0e64219c5016ceb34c5089450ef6c48ce8f06cf",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/claude/agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/claude/agent.js"
+    },
+    {
+      "disposition": "changed",
+      "effect": "retire",
+      "id": "ROW-R5SJ1B",
+      "items": [
+        "sha256:a65722dc9746baf892dfb32ad9f28ef67195368ad695d6a66704003078bf2bd5"
+      ],
+      "reason": "Both plug-in adapter headers and the bundled host contract agree on 0.16.2 in W5, resolving the specific pin-prose debt.",
+      "revision": 2,
+      "subject": "WKN-7DDHBZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R6MB3P",
+      "items": [
+        "sha256:05c2ae804b10abe8ac9790937efc73892bf13b965cdb09ef9f97ddc41c2a5890",
+        "sha256:4706478c7334d0823d393e30233b8210e19e92694dfdc47840184adaa95c23c0",
+        "sha256:8bc16dd6e6befe9a17b8d5940a80c27e75313f55f3abf82195d0b3154f862cb4",
+        "sha256:c0662c0fa41670ccc2ef840d006c8d731f3acb3be4fe18d95beb877a4c522086",
+        "sha256:e3d71c609b72494db870d3ef45757021accaf336ce74cd20593ef74973be4bea"
+      ],
+      "reason": "L10-M04. Copied installed sources and temporary host configuration supply discovery. The classifier checks class ancestry and writes the verdict the test and launch read. The fixture integrity and optional installed-file test remain explicit.",
+      "sources": [
+        {
+          "blob": "6975c6185be276d4ac2117cafe7a04fc8aa8f1cf",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.test.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
+            "content": "sha256:8fa5b718d16a2d4f463e5e214d0aa190ca84ddde8c7255c5bd073237f9da8967",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+            "content": "sha256:3cb8970ac5a85a80b4746f2b244cb88d0674ac6c94f3a72cece6f281b03536d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-1P5780"
+        },
+        {
+          "after": {
+            "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+            "content": "sha256:58affb9e2a3b183b63428304091929f4eacac2e8dfb7bce23a34c05dd680db7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "before": {
+            "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+            "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "id": "RLZ-V6FJD9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-R8KEVP",
+      "items": [
+        "sha256:47e5bcbb8d0c1472903c2deb6223002f8778f023d1d23359fd6fe05db4d826d4"
+      ],
+      "reason": "The snapshot generation and directory-local queue checks keep their existing reconciliation rules. Teardown still releases the corresponding hierarchy and DOM observation lifetime.",
+      "revision": 1,
+      "subject": "INV-XENPC7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RCDP4J",
+      "items": [
+        "sha256:fc1d07cfe3745b1d15d64ed10ff767fb3352bc4978d251e894571e54e99c27ab"
+      ],
+      "reason": "The supervisor title comment names the latest source version checked and the title value and process identity checks are unchanged.",
+      "subject": "hunk:sha256:fc1d07cfe3745b1d15d64ed10ff767fb3352bc4978d251e894571e54e99c27ab"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-RFY534",
+      "items": [],
+      "reason": "mcp/README.md:1-9 and Tools section, mcp/pyproject.toml:75-77 and recorded-blob to W5 MCP server diff showing only the tool call definition_scope wrapper.",
+      "revision": 5,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+            "content": "sha256:58affb9e2a3b183b63428304091929f4eacac2e8dfb7bce23a34c05dd680db7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "before": {
+            "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+            "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "id": "RLZ-T7JY0X"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RJMJ1Z",
+      "items": [
+        "sha256:62c3ee2d3bc6394f63c43ad6991f23ec66ae969325d8a8e0cfa841df7699354d"
+      ],
+      "reason": "Initial and cursor requests keep page size 200. The new filter preserves background role agents without changing limits or completion rules.",
+      "revision": 1,
+      "subject": "INV-PF6J5D"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RJN6T0",
+      "items": [
+        "sha256:640167e3aba9dcd76732be558107dcef2ec109b8478e63a03f6f12128c9df736"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/providers/kimi-acp-agent.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/kimi-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/providers/kimi-acp-agent.js"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R10",
+          "packet": "requirements/BUG-R10-v1-the-products-host-is-paseo-0-16-2.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:1bf475d4b7bf0c67a58143c912b916a13a42ddc2de43e21d600813a6c5277e47",
+            "locator": {
+              "kind": "symbol",
+              "name": "Paseo 0.16.2 hook shape: the turn read through refetch recognises a hand-over"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-1KVMKN"
+        },
+        {
+          "after": {
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:ff24c0b4be99c9f2cb10f2dc1b16c7c4c00495bc1db9971bffd7cce51ba255c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "a refetch that throws gives an unreadable last line, not an empty one"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-8NXZ1G"
+        },
+        {
+          "after": {
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:8132484220b8321d94c2784e11dc05be1e07ffe7401204b3d9968039e65c5441",
+            "locator": {
+              "kind": "symbol",
+              "name": "the rows read through refetch keep their turn id, so an earlier turn's hand-over does not count"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-8X7DK7"
+        },
+        {
+          "after": {
+            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "content": "sha256:01e300a63fc3e5ec4598ed5b7d689328c394e9ae85f6ce753592536fdd55fc20",
+            "locator": {
+              "kind": "symbol",
+              "name": "readTurnTimeline"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+            "content": "sha256:01e300a63fc3e5ec4598ed5b7d689328c394e9ae85f6ce753592536fdd55fc20",
+            "locator": {
+              "kind": "symbol",
+              "name": "readTurnTimeline"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-6CDZFK"
+        },
+        {
+          "after": {
+            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "content": "sha256:6fa1ad0856163ab84ae6cff86e2b2dddab559b817d4a3d797ee22805709e78aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "7b71c2d90feb0492573d4db95c5609a6662596a7",
+            "content": "sha256:6fa1ad0856163ab84ae6cff86e2b2dddab559b817d4a3d797ee22805709e78aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-HAGFJ4"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-RSNZ3P",
+      "items": [],
+      "reason": "The previous record treated an empty hook timeline as its event contract. The SDK type omits the field and the runtime wire adds an empty array for compatibility. The SDK-shaped tests exercise refetch, row turn identity and failed-read handling. Evidence (L10-curated-turn-history): Worker L10-W5-ENDED-TURN, Reviewer L10-F04 and Manager M548. W5-turn-end-sdk-and-wire-evidence.md.",
+      "revision": 2,
+      "subject": "INV-HERZ7X"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S53JZ3",
+      "items": [
+        "sha256:0ab036ce5110710afc25c57ceda8052921db9eb18f39e162d9fc90ba0c008855"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/kimi-acp-agent.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "bdf8d4eeef787735372ed572e6d6f21f1b7ec7b8",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/kimi-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/kimi-acp-agent.js"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-SB93B4",
+      "items": [],
+      "reason": "docs/design/python-evidence-system.md:79-104 attributes lifecycle metadata to the catalog. Its sole moved link is mcp/tests/evidence-lifecycle.toml:4045-4050, a source_version_or_generator string pin replacement.",
+      "revision": 6,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 3
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-SE49FD",
+      "items": [
+        "sha256:304122013fca5494492ea5cc42fac82a382a439f3fcfcea46bf74d1aac63dd34"
+      ],
+      "reason": "The bridge background list belongs to activity reconciliation. Catalog validation, launch payload projection and the per-agent tool definition keep their declared authority, condition and fallback boundaries.",
+      "revision": 3,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SHY39R",
+      "items": [
+        "sha256:07342d848a00fa49ff3dc739f67124724c7c427297585e2f5fd4471e99518b82"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/mock-slow-provider.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "a701a4306e3884f826611b80c657bdad6dd0f1f8",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/mock-slow-provider.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/mock-slow-provider.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T0GT47",
+      "items": [
+        "sha256:5ab73e269adde7a15bcc1a649ec53b5a4ffa0b878baa721c9c36ae55505b3bb7",
+        "sha256:6d30974274cb276e5e53fd166d38053a4c9900f861a570a521a6817505d5d3c1"
+      ],
+      "reason": "Documents the selected file inventory, source, pin and digest verification.",
+      "sources": [
+        {
+          "blob": "b5df4ba931c688fd3d1aa50ed0199bcc4d6013a2",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/fixture.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/fixture.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T2K3JN",
+      "items": [
+        "sha256:3808f93abf51ad7f17e84c812e18c11f3005e932a9252cca3d461177b196a8c8"
+      ],
+      "reason": "Explains that registered-hook test events omit timeline while the mock refetch, separately, can return a readable empty result.",
+      "sources": [
+        {
+          "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TDBH8V",
+      "items": [
+        "sha256:9c4453847bb5b7bd6d7e42d123ed66748677b47d50ac79ad4240eeb984f34887"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/plugins/plugin-process.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "d86bf954b756a329662b34794e314608f77ca0c7",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/plugins/plugin-process.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/plugins/plugin-process.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TDKS5W",
+      "items": [
+        "sha256:0925925fe2804169e1f3cdc449a9bc9038b11b472d6c1c6c6c047a4e59d54ebe",
+        "sha256:550b3696e1d7da31e027e6be5733c315088c2e3e701cccd1fd01ce64088a54ae"
+      ],
+      "reason": "The mismatched running fixture now uses the immediate prior pin. The test still checks restart-required, no mutation and no signal.",
+      "sources": [
+        {
+          "blob": "7d815a3e62500ff53c8485f9dfe28e313d74ef93",
+          "path": "mcp/tests/test_paseo_install_no_stop.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_install_no_stop.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TJ10VR",
+      "items": [
+        "sha256:66382f5058fff2f91ba03c049007ae59fbebcec40df3489956b414c4ec6ce2c9"
+      ],
+      "reason": "docs/install/codex.md:94-108 changes only the pinned version in that checked claim; cli/paseo_launch.py:436-442 and the exact 0.16 fixture codex-app-server-agent.js:625-632,4532-4537 pass the stdio fields alone. Its documented 300-second witness was earlier and should not be treated as a W5 measurement.",
+      "revision": 4,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TXPG8H",
+      "items": [
+        "sha256:94063c677d77db0d4ccab64b8b9ce3359a392571ae07b8b93978244fb8743b62"
+      ],
+      "reason": "Records the current host pin for the established reload behavior.",
+      "sources": [
+        {
+          "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VDV296",
+      "items": [
+        "sha256:5d8e8a5f27c80b4e24e134bd086b7f5b4df8b69f56f533c3ee649f042d2b0ebc"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/copilot-acp-agent.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "2781db6ecb71b17c78cd4735f766a4338e224840",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/copilot-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/copilot-acp-agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VR2CQV",
+      "items": [
+        "sha256:5ab7ccc1d6c17033fca5e6c9a321186146fea13d77d4fe146bbe8d6da3c86f0b"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/server/dist/server/server/agent/provider-registry.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/provider-registry.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/dist/server/server/agent/provider-registry.js"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VRJY4E",
+      "items": [
+        "sha256:ab41ae4118b853cf09b67921f2e3555f373ff789d496801408f649488e7569ae"
+      ],
+      "reason": "The inline launch note names the newly examined host; the per-launch Claude exclusion and deny-merge rule are unchanged.",
+      "subject": "hunk:sha256:ab41ae4118b853cf09b67921f2e3555f373ff789d496801408f649488e7569ae"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4BT846",
+          "revision": 1
+        },
+        {
+          "id": "INV-5VK3JP",
+          "revision": 1
+        },
+        {
+          "id": "INV-GD0F05",
+          "revision": 1
+        },
+        {
+          "id": "INV-T3JTQ2",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZB0WFP",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-W8AQ1Q",
+      "items": [
+        "sha256:0189cedad88b2c1bbc1cbc31f2fef9eff6c788844b90ad7203dd1182ec8f3a81"
+      ],
+      "reason": "The expanded host filter preserves one request-local census and the incomplete result semantics. Corruption and unreached agents still remain unknown.",
+      "revision": 1,
+      "subject": "FAM-M36XBW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WN5YEK",
+      "items": [
+        "sha256:7d0a2064cdcd19111c242f527dce86969eafee72f0c8ae9bc1d783613b7ceaf6",
+        "sha256:9046d59edfc6243516a36ef8126dbb8b7a361df54964c393e491a3f2f793e3fb"
+      ],
+      "reason": "Retired the removed synthetic package card and documented the current copied package manifest at its actual path.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/package.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/package.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WSGPXP",
+      "items": [
+        "sha256:e964224b9b2e0956fffc6dc815c5588b017e75016aef33792fbf07a38ce1ef4c"
+      ],
+      "reason": "The vendored @getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js matches the byte count and SHA-256 in fixture.json. The fixture provenance card covers this copy together with the other inputs to the ACP provider test.",
+      "sources": [
+        {
+          "blob": "b33b0956cce071df6dbbad017f2532bc112d48a9",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WTCBWK",
+      "items": [
+        "sha256:7f850a55444049e0c98374279926bfc4b8e54bf9446fa48adb5d361129ccf81f"
+      ],
+      "reason": "Names the checked host for the nested lastSuccessful shape and explains its own fetchedAt.",
+      "sources": [
+        {
+          "blob": "77a6a6dc37f2cd00dcbfaaf953c7b97720fdbf74",
+          "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/provider_limits.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X2NNW7",
+      "items": [
+        "sha256:42d48b44ab7c3205252e0e78d4897abfce1c532d9ccac815a4c0db652ff3fcff"
+      ],
+      "reason": "The comment names the pinned bundle’s React DOM renderer. The runtime row-property reader and its failure behavior are unchanged.",
+      "subject": "hunk:sha256:42d48b44ab7c3205252e0e78d4897abfce1c532d9ccac815a4c0db652ff3fcff"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XM90R1",
+      "items": [
+        "sha256:bb69d0387dd68c37c99557ab1f98bebeae2c2a6871da76bdd565ae0e4b9e0ad2"
+      ],
+      "reason": "The dashboard source changes are test fixtures and a development-fixture comment. They preserve the overview’s native host authority, frame lifetimes and dashboard composition.",
+      "sources": [
+        {
+          "blob": "545ace5a5f4351c2460831f914b3e464eaeaed36",
+          "path": "dashboard/src/cockpit/paseoHierarchy.test.ts"
+        },
+        {
+          "blob": "5b0ef7f71d21cdfa42d7b69beda571f468de68a2",
+          "path": "dashboard/src/cockpit/paseoPluginBridge.test.ts"
+        },
+        {
+          "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
+          "path": "dashboard/src/cockpit/paseoPluginPick.test.ts"
+        },
+        {
+          "blob": "9c8efdcbd323446cafc9ccd6316ff1824e19cec8",
+          "path": "dashboard/src/dev/FakePaseoHost.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-XT3QGB",
+      "items": [],
+      "reason": "docs/install/pi.md:113-122 and application/agent_binding.py:53-64 for provider exclusion semantics; W5 provider pi/agent.js:324-336 merges a named server into the user's MCP server map. No Pi run was made.",
+      "revision": 4,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y0BR80",
+      "items": [
+        "sha256:ec6b2d17bf96ab51b2bc7986ceb01f2e682c45f984879ee4cf5d828bad4c9fbf"
+      ],
+      "reason": "The retired synthetic fixture entry @getpaseo/protocol/dist/provider-manifest.js was replaced by its Paseo 0.16.2 distribution counterpart. The fixture provenance card and the replacement manifest cover its role in the ACP provider test.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/protocol/dist/provider-manifest.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/protocol/dist/provider-manifest.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y0T9VJ",
+      "items": [
+        "sha256:7f31370f5f15fd2848d25e9c8f5ad5ada5d93ef504336e431b88eec3f5bfd7eb"
+      ],
+      "reason": "The card records the pin the development fixture models, agent-only workspace lookup and the fake’s explicit compact-mode switch.",
+      "sources": [
+        {
+          "blob": "9c8efdcbd323446cafc9ccd6316ff1824e19cec8",
+          "path": "dashboard/src/dev/FakePaseoHost.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/dev/FakePaseoHost.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YEJVRV",
+      "items": [
+        "sha256:fffbed52a5f6eb6b292a8408fd885a950e93acd9339166fee41368729d8160e0"
+      ],
+      "reason": "Names the exact dependency and the lock-based staging installation the manifest participates in.",
+      "sources": [
+        {
+          "blob": "83a6eb8464ac8bd4bfd7289c664547428826fc76",
+          "path": "mcp/src/agents_remember/package_data/paseo_host/package.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_host/package.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YG1YSD",
+      "items": [
+        "sha256:0e55aaead0e6fb847797b83980e6b45d0e3a52ba681bba50435e513f6f2795fc",
+        "sha256:4b0354a67dc0fbba39a9334a0d7bde8ba0563034b381dea51b1c040fb4f54de7",
+        "sha256:5d3c3563b0313ed34c2bb9af42afe78843664b0ec356e0ccc11d80c7b84e2400"
+      ],
+      "reason": "The launch test uses the real route with a fake bridge. The card now describes that boundary and keeps its first-message byte evidence.",
+      "sources": [
+        {
+          "blob": "4fb74a83d20d5b01b0496ea8f02780f65e37d81d",
+          "path": "mcp/tests/test_role_launch_acp_instruction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_launch_acp_instruction.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-YWSND8",
+      "items": [],
+      "reason": "docs/host.md:24-48,155-173,306-335; paseo_host/contract.json:1-5; provision/settings/agent-binding/selection deltas are version text, client/hierarchy.ts:188-196 includes background agents and cli/paseo_bridge.mjs:606-615 adds the same list option. The W5 recorded migration confirms the prescribed stopped-host route and W5 unit evidence covers runtime_install on a running older host.",
+      "revision": 4,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3d975f27c0ce55d5ad95e49343385b48acafae0b",
+            "content": "sha256:bfb580362bc10048cbe740c2dbc26905d00fa985771edb63739f705d20405f1c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/adapters/recorder_plugin/index.server.ts"
+          },
+          "before": {
+            "blob": "a711dd8f2066190599935a6531bcdc60c117b77c",
+            "content": "sha256:537930a12c35213fb22ec183acd7e25d62dbb7bd066623d99b56e584131715d9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/adapters/recorder_plugin/index.server.ts"
+          },
+          "id": "RLZ-7RKRZN"
+        },
+        {
+          "after": {
+            "blob": "2075d3a09e4ce8c9fa9822b2e35c7a54f4015f12",
+            "content": "sha256:3291d424c937b5ef7f1a2bb811febc558f62c085235e8e16fe3d5f8cd86e3111",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/adapters/paseo_session.py"
+          },
+          "before": {
+            "blob": "cedf812f41fdd2a34cc6bfdddf0252a17d381755",
+            "content": "sha256:364e57f2a6dbba3ebcad59a1960921f31174980616980a1b72e4d30649e3610a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/adapters/paseo_session.py"
+          },
+          "id": "RLZ-VVYYZM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZG32CE",
+      "items": [
+        "sha256:21d6b63a8e2c697bac2bedecd4c4c6c63787532cbbb59f901600fd50dbb92f42"
+      ],
+      "reason": "The exact actor identity and native capture boundary hold. Renewed comments name the pinned source. The recorder test supplies an SDK-shaped mock that omits timeline and checks the recorded outcome after whole-tail refetch.",
+      "revision": 1,
+      "subject": "INV-QFMMYM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZNWYDP",
+      "items": [
+        "sha256:2d84254022c56298356e1500261821ebbc2079fedd63e48c81e15c704292c60e"
+      ],
+      "reason": "The comment identifies the 0.16.2 build consulted for the same unsupported DOM markers. The compiled text-pick adapter is unchanged.",
+      "subject": "hunk:sha256:2d84254022c56298356e1500261821ebbc2079fedd63e48c81e15c704292c60e"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

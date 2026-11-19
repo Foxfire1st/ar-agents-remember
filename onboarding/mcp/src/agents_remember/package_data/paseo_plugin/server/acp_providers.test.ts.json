@@ -1,0 +1,177 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6975c6185be276d4ac2117cafe7a04fc8aa8f1cf",
+        "content": "sha256:77053a016f603ebce6181e2efc00072dfd737aced2cf4f490c7b2e929fc8c0c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "the fixture is the recorded copy of the pinned distribution, not a hand-written stand-in"
+        }
+      },
+      "facet": "The offline case checks the fixture version, copied-file inventory, byte counts and SHA-256 digests.",
+      "id": "PRF-F06KDW",
+      "invariant": "INV-5JH1KE",
+      "origin": {
+        "handoffEntry": "L10-curated-fixture-copy",
+        "leaf": "261112-BUG-L10"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture is a recorded copy of the pinned distribution, and the test checks its recorded version, file list, sizes and hashes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6975c6185be276d4ac2117cafe7a04fc8aa8f1cf",
+            "content": "sha256:8feb204d2eb10a2ddcc2d22d85d39e46b99c69076fe4b52adf9d5e131df5212c",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6975c6185be276d4ac2117cafe7a04fc8aa8f1cf",
+            "content": "sha256:77053a016f603ebce6181e2efc00072dfd737aced2cf4f490c7b2e929fc8c0c4",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The installed-host case skips absent installations and installations at a different version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6975c6185be276d4ac2117cafe7a04fc8aa8f1cf",
+            "content": "sha256:a4a687fce08805ef3116ba96321c35862751f59ea54f17a64bdcdb0f5e533515",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 284
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The classifier reads the installed package files and host configuration. The test checks the resulting provider verdicts in the JSON the plugin publishes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+            "content": "sha256:6b1df5209a0d74d20c2b3682ed8df9577b098eaac1d22474ed05433836c6ce8d",
+            "locator": {
+              "end": 561,
+              "kind": "line_range",
+              "start": 536
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+            "content": "sha256:24c9192375a78a6410515bf95eec69ccee968f5feb65a660203cc95233a949fd",
+            "locator": {
+              "end": 646,
+              "kind": "line_range",
+              "start": 625
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6975c6185be276d4ac2117cafe7a04fc8aa8f1cf",
+            "content": "sha256:b06490210db58fbec5aa7bfd7da5405a9f0cd7e969abab111edaf6c6dadb6bd1",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Role launch reads the published verdict from the configured Paseo home and selects the helper-wait instruction for a provider marked ACP.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:30b166acf861f594e5f33f7db4e6984230a84908c4ade30c8310a4c1457e6591",
+            "locator": {
+              "end": 830,
+              "kind": "line_range",
+              "start": 818
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bbb12d34a5ef4aaed3993881dd4f8f537cc9c7e8",
+            "content": "sha256:9e111273a2125c450572f7e8b5763e2a455205cc2566c29a2e94a64f6abb87e2",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/observer/acp_providers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The plugin passes the classifier’s in-memory verdict to the turn-end wake decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e18511522c13b788d0e816048572920e1b61bbe",
+            "content": "sha256:66e8c20504d9f4f71329f4d7f6474388ae97e1a29b21f0d965097a655311fbd9",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:e69418213740b5846279b4c1a68541ea548ce8ef4a9787697bb63e83ba88fa12",
+            "locator": {
+              "end": 1382,
+              "kind": "line_range",
+              "start": 1377
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 1 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "role": "curator",
+    "statement": "The carryover guide's plan and apply behavior remains correct when carryover opens the knowledge index through the cache helper for the selected tree.",
+    "task": "261112-BUG-L10",
     "uncommitted": true
   },
   "document": "docs/guides/carryover-from-branch.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+      "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/carryover.py"
     },

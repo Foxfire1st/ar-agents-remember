@@ -114,4 +114,5 @@ No meaningful cross-repo references found.
 - The shared branching fixture used by the revision cases. Anchor: `build_branching_knowledge_fixture` [18]
 
 - The current unit-regression lane registration makes this module part of the manifest. Anchor: `test_knowledge_store` [19]
+
 - The fixture's registered stable contract and evidence node. Source caption: `knowledge-identity-branching-fixture` [20]

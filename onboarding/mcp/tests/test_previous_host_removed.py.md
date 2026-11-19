@@ -16,7 +16,7 @@ loads as if the block were absent, and keeps the dashboard's routes distinct fro
 
 `git()` runs Git on the repository at a given root and no other, `tracked_files()` and `content_of()` read
 each tracked file — a link's target text included — and `named_in()` reports where a file names the previous
-host outside the allow-list. `words_of()` matches the name as a word.
+host outside the allow-list. `words_of()` splits identifier tokens into words. `named_in()` detects the name in a token and checks the applicable allow-list.
 
 - **The tree.** `test_no_tracked_file_names_the_previous_host_outside_the_allow_list` scans the tracked
   tree; `test_the_allow_list_holds_unrelated_words_and_the_tests_that_must_name_the_host` keeps the
@@ -35,7 +35,7 @@ host outside the allow-list. `words_of()` matches the name as a word.
 ### Conventions
 
 `ROUTES` and `FORMER_ROUTES` are the two inventories a route case needs; `METHODS` fixes the methods a
-former path is probed with.
+former path is probed with. `ALLOWED_IDENTIFIERS` admits `importDescriptorCache` only in the copied Claude fixture file and `resolveCursorCatalogModels` only in the copied Cursor fixture file. The scanner still checks other tokens in both files.
 
 ### Invariants And Boundaries
 
@@ -53,6 +53,11 @@ Current source: The test source asserts that tracked paths/content name the prev
 
 - Eleven current launcher routes include GET /api/role-launch/warmup and GET /api/role-launch/saved-catalog while every former-path 404 check remains. [2]
 
+
 - The test source asserts that tracked paths/content name the previous host only under its counted allow-list and that a settings file carrying the former block loads as if absent. Those are declared regression assertions, not a fresh tracked-tree scan or runtime result. [1]
 
+
+
 - The fixed allowance includes exactly two incidental matches in judge-claude-usage-real.json. The declared reason distinguishes the retained encoded carrier from its decoded accounting projection; this is source-owned allowance data, not a new decode, recording or execution result. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [3]
+
+- Two exact identifier and file matches allow incidental strings in unchanged copied fixture bytes. Other tokens in those files remain subject to the same scan. [4]

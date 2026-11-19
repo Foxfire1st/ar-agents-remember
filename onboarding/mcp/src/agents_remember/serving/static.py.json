@@ -174,16 +174,16 @@
       ]
     },
     "8": {
-      "note": "Composed app former four host paths have no route and answer Not Found for GET/POST/PUT/DELETE.\n\nAnchor: `FormerRouteTests.test_no_route_of_the_dashboard_application_matches_a_former_path`",
+      "note": "Composed app former four host paths have no route and answer Not Found for GET/POST/PUT/DELETE.",
       "targets": [
         {
           "anchor": {
-            "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
+            "blob": "473e07a526fd51de49b7ccb94feace4df9b01ee2",
             "content": "sha256:ec4baf3a73e6d6211644eb8434a114d0b3f0d36750811f120e1beb85ed3219c6",
             "locator": {
-              "end": 502,
+              "end": 514,
               "kind": "line_range",
-              "start": 471
+              "start": 483
             },
             "path": "mcp/tests/test_previous_host_removed.py"
           },
@@ -191,12 +191,12 @@
         },
         {
           "anchor": {
-            "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
+            "blob": "473e07a526fd51de49b7ccb94feace4df9b01ee2",
             "content": "sha256:f629849a2625cc6b14cb891db1fef6ed28fe8e4af40eb5e6f188dc67906d8a06",
             "locator": {
-              "end": 492,
+              "end": 504,
               "kind": "line_range",
-              "start": 461
+              "start": 473
             },
             "path": "mcp/tests/test_previous_host_removed.py"
           },

@@ -3,8 +3,25 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6fd6a527f97a6ec111010f689376cf6e48953acd",
-        "content": "sha256:36e5a29048d3494742df3cf098be07ca0fc9ba9af00581bd2ad78f3ae1d98c1a",
+        "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+        "content": "sha256:1bf475d4b7bf0c67a58143c912b916a13a42ddc2de43e21d600813a6c5277e47",
+        "locator": {
+          "kind": "symbol",
+          "name": "Paseo 0.16.2 hook shape: the turn read through refetch recognises a hand-over"
+        }
+      },
+      "facet": "The handler recognizes hand-over evidence from a refetch even when the mock event omits timeline.",
+      "id": "PRF-1KVMKN",
+      "invariant": "INV-HERZ7X",
+      "origin": {
+        "handoffEntry": "L10-curated-turn-history",
+        "leaf": "261112-BUG-L10"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+        "content": "sha256:4dd9c9c7e8d2fc55ab6335dae55029e8b4872c28101cbd83137f611fb195ecfa",
         "locator": {
           "kind": "symbol",
           "name": "F06: incomplete pagination never admits a seat wake; a complete listing does"
@@ -17,13 +34,47 @@
         "handoffEntry": "MIK-R183@v5/INV-1ZKP4R",
         "leaf": "260928-MIK-L181"
       }
+    },
+    {
+      "anchor": {
+        "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+        "content": "sha256:ff24c0b4be99c9f2cb10f2dc1b16c7c4c00495bc1db9971bffd7cce51ba255c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "a refetch that throws gives an unreadable last line, not an empty one"
+        }
+      },
+      "facet": "The failed history read stays unreadable instead of becoming a readable empty turn.",
+      "id": "PRF-8NXZ1G",
+      "invariant": "INV-HERZ7X",
+      "origin": {
+        "handoffEntry": "L10-curated-turn-history",
+        "leaf": "261112-BUG-L10"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+        "content": "sha256:8132484220b8321d94c2784e11dc05be1e07ffe7401204b3d9968039e65c5441",
+        "locator": {
+          "kind": "symbol",
+          "name": "the rows read through refetch keep their turn id, so an earlier turn's hand-over does not count"
+        }
+      },
+      "facet": "The handler preserves row turn IDs so a previous turn cannot supply the current turn’s hand-over evidence.",
+      "id": "PRF-8X7DK7",
+      "invariant": "INV-HERZ7X",
+      "origin": {
+        "handoffEntry": "L10-curated-turn-history",
+        "leaf": "261112-BUG-L10"
+      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "6fd6a527f97a6ec111010f689376cf6e48953acd",
-        "content": "sha256:d000522e536fee48193f5eda65bdc74438f0887b0acb47fc122f8e12d2c4bfaf",
+        "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+        "content": "sha256:823022bcd388f9af0ab0610b43c0e69c92c54dd0e280c451f9bb2d11ee758912",
         "locator": {
           "kind": "file"
         }
@@ -40,14 +91,45 @@
   ],
   "references": {
     "1": {
-      "note": "The contributed adapter admits a seat wake only from an exhausted host listing; every incomplete walk leaves the seat alone and preserves the parent's line.",
+      "note": "The contributed adapter admits a seat wake only from an exhausted host listing. An incomplete walk leaves the seat alone and preserves the parent's line.",
       "targets": [
         {
           "anchor": {
-            "blob": "6fd6a527f97a6ec111010f689376cf6e48953acd",
-            "content": "sha256:d000522e536fee48193f5eda65bdc74438f0887b0acb47fc122f8e12d2c4bfaf",
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:4dd9c9c7e8d2fc55ab6335dae55029e8b4872c28101cbd83137f611fb195ecfa",
             "locator": {
-              "kind": "file"
+              "end": 75,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A turn event without a timeline exercises whole-tail refetch, recognition of a hand-over, turn-ID scoping and unreadable history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:268bc842893dcc6d4029d33ec2a4bd4ce4325181646cac6686219058eba0d339",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 234
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:7b806ca88936af3a176914498be785cd722c8829ee44286d3ec6615b5766e3c4",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 267
             }
           },
           "kind": "test"

@@ -178,14 +178,15 @@
       ]
     },
     "4": {
-      "note": "The version comparator is resolved from installed package metadata. Anchor: `_resolve_server_version`",
+      "note": "The version comparator uses installed package metadata with the source-checkout release fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c35df665ffac7bf152c3badf993d303ed12c451",
-            "content": "sha256:0ffb984c789890b19f5cc9baa194ed51127569b66c40a4ca88a992c56fa9f379",
+            "blob": "c02d5f6f0d5ffd938a425723eb62783233464520",
+            "content": "sha256:626c8e873ae726b8bdb181892d6a908faa071831071e12c81a7c0c8e0fe2ce5f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_resolve_server_version"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/version.py"
           },

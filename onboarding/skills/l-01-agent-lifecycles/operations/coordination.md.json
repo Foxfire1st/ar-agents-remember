@@ -382,12 +382,12 @@
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
             "content": "sha256:f633e9b58ad2567a3f1a80672465bb4923934912e7457c0d55a59b5291eebc2b",
             "locator": {
-              "end": 1220,
+              "end": 1223,
               "kind": "line_range",
-              "start": 1193
+              "start": 1196
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },

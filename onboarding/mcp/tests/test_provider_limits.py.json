@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "da9a27873f215b73d0cb7a34e04111cf1a69e9aa",
+        "blob": "d543708fd64be6b3b1af00582270c7c03045b4c4",
         "content": "sha256:eed6f588c2efeea6b2ca0d4615b10a3bc6e887e6487ca51d2cddab5cb8b06663",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "da9a27873f215b73d0cb7a34e04111cf1a69e9aa",
+        "blob": "d543708fd64be6b3b1af00582270c7c03045b4c4",
         "content": "sha256:5acd86c9fcb1ddd395b44cc40f1b8e8d6144f39d91bb914b294ce253158ed1f2",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "da9a27873f215b73d0cb7a34e04111cf1a69e9aa",
+        "blob": "d543708fd64be6b3b1af00582270c7c03045b4c4",
         "content": "sha256:61fd270fa94644977f76cf458d7be3526b0a33fa6ecabeb613d250659e644639",
         "locator": {
           "kind": "symbol",
@@ -56,8 +56,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "da9a27873f215b73d0cb7a34e04111cf1a69e9aa",
-        "content": "sha256:b3bdcb609aaf95f589502ae570e3ab5951ff48ababfbddc5de84ed57231e4a77",
+        "blob": "d543708fd64be6b3b1af00582270c7c03045b4c4",
+        "content": "sha256:e0625cb988078f39e316878812aded0397d52527c2007ea908415dad06ec8822",
         "locator": {
           "kind": "file"
         }
