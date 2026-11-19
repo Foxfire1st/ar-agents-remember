@@ -16,7 +16,7 @@ Offers explicit non-modal add on selected chat text; reads the selected row reco
 
 ### Invariants And Boundaries
 
-Runs only after a trusted bridge hello says pick is read. Pinned unsupported Paseo 0.11.1/React DOM 19.1.0 row adapter; no timeline paging, selection clearing, focus move or role write. Adapter structural loss produces a named chat-pick notice while dashboard picks continue.
+Runs only after a trusted bridge hello says pick is read. The unsupported row adapter is pinned to Paseo 0.16.2 and React DOM 19.2.3. It reads row data in place and preserves selection and focus. Adapter structural loss produces a named chat-pick notice while dashboard picks continue. Timeline paging and role writes remain outside this adapter.
 
 ## Evidence
 
@@ -25,3 +25,5 @@ Runs only after a trusted bridge hello says pick is read. Pinned unsupported Pas
 - Provides the negotiated iframe tray text-pick and native-composer geometry adapter. [3]
 
 - The composer post carries the box's own left and width from one measurement, and re-measures on a frame resize and on a container or class/style change that moves or resizes it. [4]
+
+- The pinned web bundle’s chat and row markers and React DOM 19.2.3 row storage define the unsupported adapter inputs. [5]

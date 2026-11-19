@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
-        "content": "sha256:7c27827ff9392c3c78ec33310857c7fbc49991cb7c44fb7b2e5e0b0ada5bd551",
+        "blob": "f224ffcf1d5608abef82e563ccd322a49e357d56",
+        "content": "sha256:c061a2f2d93a5a80e2a4c5789449140d5d684a437545097a4631fa4e6a82833d",
         "locator": {
           "end": 18,
           "kind": "line_range",
@@ -22,10 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
-        "content": "sha256:a496e358679e573614fb505010f2f501f8b158c688a24332091576cdd943e2ca",
+        "blob": "f224ffcf1d5608abef82e563ccd322a49e357d56",
+        "content": "sha256:af2e3af0ccd2b08e4c04fe361347fcaccb50c7b864488ff3b29eaa6ba61e149b",
         "locator": {
-          "kind": "file"
+          "end": 19,
+          "kind": "line_range",
+          "start": 17
         }
       },
       "id": "RLZ-3M3903",
@@ -34,22 +36,22 @@
         "handoffEntry": "INV-0TCWT9",
         "leaf": "260928-MIK-L184"
       },
-      "rationale": "The package's dependencies are what the build sees, so the SDK's version is fixed here.",
+      "rationale": "Declares the exact development SDK version examined by package inspection.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The plugin's development SDK `@getpaseo/plugin` is pinned to 0.15.4.",
+      "note": "The plugin's development SDK `@getpaseo/plugin` is pinned to 0.16.2.",
       "targets": [
         {
           "anchor": {
-            "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
-            "content": "sha256:7c27827ff9392c3c78ec33310857c7fbc49991cb7c44fb7b2e5e0b0ada5bd551",
+            "blob": "f224ffcf1d5608abef82e563ccd322a49e357d56",
+            "content": "sha256:af2e3af0ccd2b08e4c04fe361347fcaccb50c7b864488ff3b29eaa6ba61e149b",
             "locator": {
-              "end": 18,
+              "end": 19,
               "kind": "line_range",
-              "start": 18
+              "start": 17
             }
           },
           "kind": "code"
@@ -61,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+            "blob": "f224ffcf1d5608abef82e563ccd322a49e357d56",
             "content": "sha256:3e76fb0ec26c7120083452690d5918eddfc05f3fdcbce465e30f5aa6ff31e8bf",
             "locator": {
               "end": 16,

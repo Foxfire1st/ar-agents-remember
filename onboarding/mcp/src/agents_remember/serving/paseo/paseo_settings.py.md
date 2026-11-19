@@ -16,7 +16,9 @@ The daemon settings provision owns and which of their changes require a host res
 
 ## Evidence
 
-- The complete setting list with its start/live split. [1]
+
+- The complete setting list classifies provisioning paths as start-only or live. Paseo 0.16.2 applies the idle-runtime cleanup path on reload. [1]
+
 - The restart reasons of a running daemon. [2]
 
 - The setting comparison works on a configured document without the CLI. [3]

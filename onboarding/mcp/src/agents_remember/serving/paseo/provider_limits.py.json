@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "53b01dee1b34652f68992851994d48322327ffae",
-        "content": "sha256:637aa18194d54886779bdc54b4b2c2d855bfc42881ed702290f316c8aba49588",
+        "blob": "77a6a6dc37f2cd00dcbfaaf953c7b97720fdbf74",
+        "content": "sha256:a36e3845b4994024c57c92662e8b632b61dba33ac0e282387d40407480ac579f",
         "locator": {
           "kind": "file"
         }
@@ -19,6 +19,36 @@
       "role": "enforcement"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "An error entry can carry the newest available report. The judgment uses that report and its recorded fetch time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77a6a6dc37f2cd00dcbfaaf953c7b97720fdbf74",
+            "content": "sha256:5a9faaacc33d488290ef0908cb1184a7ffb9d43164e23fe0a268fc70946c04f6",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77a6a6dc37f2cd00dcbfaaf953c7b97720fdbf74",
+            "content": "sha256:f4f559cc42147d98994985773b22c3cda3c7b389b8c4d159743ba03367129847",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 175
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

@@ -758,7 +758,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+            "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
             "content": "sha256:896fdd7b511626d78b5cabb93db1be4c16a9e801b46276eef3d039c681d2cdbb",
             "locator": {
               "end": 27,
@@ -3194,12 +3194,12 @@
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
             "content": "sha256:44a4a3c46c23bb58709ed5a5622cc1fd4d8a18c4400f8d5214151d68a146c18d",
             "locator": {
-              "end": 251,
+              "end": 252,
               "kind": "line_range",
-              "start": 247
+              "start": 248
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -3207,12 +3207,12 @@
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
             "content": "sha256:07107728aaac2fd5b429aacacfaae0cce32c6156b7a8da8a80e5c859560b5c09",
             "locator": {
-              "end": 797,
+              "end": 800,
               "kind": "line_range",
-              "start": 778
+              "start": 781
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -3876,7 +3876,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ec4c4fce720e19a599f8c48c9500f3f0afdfb63",
+            "blob": "e208f8071de2a5e03b4ef2e219911997583ba06a",
             "content": "sha256:f90369ebb6a1e9a200bdf02875931ed2cc489aa535fad98987e28075f3ab7340",
             "locator": {
               "end": 20,
@@ -3894,7 +3894,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ec4c4fce720e19a599f8c48c9500f3f0afdfb63",
+            "blob": "e208f8071de2a5e03b4ef2e219911997583ba06a",
             "content": "sha256:4474886a3f15296f84a61ac2db08f96c7d1d1590f7ce6aa229a8fc182f5e2d7b",
             "locator": {
               "end": 58,
@@ -4190,12 +4190,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
             "content": "sha256:c968c1884cff2af1a86b7b33d364870c7af2cc16de93126ea32c6bee30f4b8f2",
             "locator": {
-              "end": 1219,
+              "end": 1222,
               "kind": "line_range",
-              "start": 1158
+              "start": 1161
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -4203,12 +4203,12 @@
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
             "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
             "locator": {
-              "end": 1248,
+              "end": 1251,
               "kind": "line_range",
-              "start": 1187
+              "start": 1190
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -4270,7 +4270,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+            "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
             "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
               "end": 28,
@@ -5353,6 +5353,23 @@
               "start": 309
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "406": {
+      "note": "The bounded live-agent census requests background agents and reports completeness only when the host explicitly ends its listing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+            "content": "sha256:0556d3d40d00fad80eba6385ee715063b96ff7a91d0900463ef554803507e1a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "listLiveAgents"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
           },
           "kind": "code"
         }

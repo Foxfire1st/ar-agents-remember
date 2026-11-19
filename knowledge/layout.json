@@ -1515,8 +1515,11 @@
       "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
       "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json"
     ],
-    "file:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/protocol/dist/provider-manifest.js": [
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/protocol/dist/provider-manifest.js": [
       "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js": [
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json"
     ],
     "file:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",

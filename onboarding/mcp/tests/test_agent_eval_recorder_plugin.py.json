@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020031c4301317d51df8640bf749685ba5d3c661",
+            "blob": "f4c32ad7be7898f88dbdf1293e1be9b6506ad50d",
             "content": "sha256:a7f4fafb5f784a3ec0a25895afc43996b08faa9c8b749b8ea0ee523dd4bd03d7",
             "locator": {
-              "end": 36,
+              "end": 37,
               "kind": "line_range",
-              "start": 30
+              "start": 31
             }
           },
           "kind": "test"
@@ -20,16 +20,28 @@
       ]
     },
     "2": {
-      "note": "The turn-ended event carries an empty timeline and the turn is read through a whole-tail refetch.\n\nAnchor: `direction`",
+      "note": "The mock turn-ended event omits the timeline field and the turn is read through a whole-tail refetch.",
       "targets": [
         {
           "anchor": {
-            "blob": "020031c4301317d51df8640bf749685ba5d3c661",
-            "content": "sha256:a60c133db924a9ff84504ddbf03d549656b3184ff1df1dd4e813b9416eb5d45e",
+            "blob": "f4c32ad7be7898f88dbdf1293e1be9b6506ad50d",
+            "content": "sha256:292f27da9b2b58309b34779982787e9247d86218c4371da22bd3c45ae54cdc89",
             "locator": {
-              "end": 63,
+              "end": 65,
               "kind": "line_range",
-              "start": 57
+              "start": 54
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f4c32ad7be7898f88dbdf1293e1be9b6506ad50d",
+            "content": "sha256:849fc1fab27cbe940398c899f82da57abf477761ce96b7c47fde7f96885488ab",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 110
             }
           },
           "kind": "test"
@@ -41,12 +53,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020031c4301317d51df8640bf749685ba5d3c661",
+            "blob": "f4c32ad7be7898f88dbdf1293e1be9b6506ad50d",
             "content": "sha256:936dff3fc0c37ec05d8e28f603c2efae5f842880bac9799d5653f5dbe3e5acfa",
             "locator": {
-              "end": 100,
+              "end": 101,
               "kind": "line_range",
-              "start": 86
+              "start": 87
             }
           },
           "kind": "test"
@@ -58,12 +70,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020031c4301317d51df8640bf749685ba5d3c661",
+            "blob": "f4c32ad7be7898f88dbdf1293e1be9b6506ad50d",
             "content": "sha256:cd248618d3b870f202f94491be680abc36e20636f7fafae77f255d5e5b45d3de",
             "locator": {
-              "end": 108,
+              "end": 109,
               "kind": "line_range",
-              "start": 102
+              "start": 103
             }
           },
           "kind": "test"
@@ -75,12 +87,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020031c4301317d51df8640bf749685ba5d3c661",
+            "blob": "f4c32ad7be7898f88dbdf1293e1be9b6506ad50d",
             "content": "sha256:6fe2d6a7314f410cf345360f3948cf0326912a7dbed93ff172859ba3a01ace6a",
             "locator": {
-              "end": 119,
+              "end": 120,
               "kind": "line_range",
-              "start": 110
+              "start": 111
             }
           },
           "kind": "test"
@@ -92,12 +104,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020031c4301317d51df8640bf749685ba5d3c661",
+            "blob": "f4c32ad7be7898f88dbdf1293e1be9b6506ad50d",
             "content": "sha256:0a3fdac546b0584bc08587c6524c0980814c19e92a9f74fba729c03966d11dcf",
             "locator": {
-              "end": 125,
+              "end": 126,
               "kind": "line_range",
-              "start": 120
+              "start": 121
             }
           },
           "kind": "test"

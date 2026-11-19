@@ -173,4 +173,5 @@ No cross-repo boundary is crossed by this file.
 - Authored source-bound rows settle the uncovered items; counted card edits alone do not. Hunk stability applies to the unchanged covered hunk and explicit candidate blobs bind onboarding rows. [15]
 
 - The unit-lane row. Source caption: "mcp/tests/test_unexplained_change_disposition.py" [13]
+
 - The catalog consumer row: the reconsideration shared-support artifact lists this module among its consumers. [14]

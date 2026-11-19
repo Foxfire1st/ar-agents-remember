@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+        "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
         "content": "sha256:e1379b558a997528d6f36e211bd24e30e440d481eebbb87ac51dec1b2cea9533",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
-        "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+        "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+        "content": "sha256:58affb9e2a3b183b63428304091929f4eacac2e8dfb7bce23a34c05dd680db7f",
         "locator": {
           "kind": "symbol",
           "name": "startHierarchy"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
-        "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+        "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+        "content": "sha256:58affb9e2a3b183b63428304091929f4eacac2e8dfb7bce23a34c05dd680db7f",
         "locator": {
           "kind": "symbol",
           "name": "startHierarchy"
@@ -57,8 +57,27 @@
     },
     {
       "anchor": {
-        "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
-        "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+        "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+        "content": "sha256:20bb3d5bfb338ce2ffea18ec87b2eb4ef841d0e696dc89a2fc40f4f22a09ecd1",
+        "locator": {
+          "end": 198,
+          "kind": "line_range",
+          "start": 188
+        }
+      },
+      "id": "RLZ-RK61PV",
+      "invariant": "INV-MRV9R9",
+      "origin": {
+        "handoffEntry": "L10-curated-background-listing",
+        "leaf": "261112-BUG-L10"
+      },
+      "rationale": "The subscribed and cursor reads supply the catalog to selection and hierarchy.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+        "content": "sha256:58affb9e2a3b183b63428304091929f4eacac2e8dfb7bce23a34c05dd680db7f",
         "locator": {
           "kind": "symbol",
           "name": "startHierarchy"
@@ -75,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
-        "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+        "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+        "content": "sha256:58affb9e2a3b183b63428304091929f4eacac2e8dfb7bce23a34c05dd680db7f",
         "locator": {
           "kind": "symbol",
           "name": "startHierarchy"
@@ -93,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
-        "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+        "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+        "content": "sha256:58affb9e2a3b183b63428304091929f4eacac2e8dfb7bce23a34c05dd680db7f",
         "locator": {
           "kind": "symbol",
           "name": "startHierarchy"
@@ -106,10 +125,126 @@
         "handoffEntry": "PNT-R13@v1 / PNT-R14@v1 native sidebar identity and activity",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Projects the live SDK project, workspace and agent fields, including provider, status, permissions and attention, into the one published hierarchy snapshot whose only current consumer is the Parent composer check; the dashboard no longer presents it.",
+      "rationale": "Projects native project, workspace and agent fields into the hierarchy. Both subscribed and continuation agent lists request background agents so the catalog can validate their selection and Parent relation.",
       "role": "propagation-persistence"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Directory continuation uses the shared page size, follows every page and refuses invalid cursors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+            "content": "sha256:e1379b558a997528d6f36e211bd24e30e440d481eebbb87ac51dec1b2cea9533",
+            "locator": {
+              "kind": "symbol",
+              "name": "allEntries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The hierarchy registers Parent controls for the live selected agent and projects native catalog facts.\n\nAnchor: \"Back to parent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+            "content": "sha256:e469a1cc5a81c575a325d1aef1b864ef2481a659133afccdf93d4995fb88cbeb",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Subscribed and continuation agent requests explicitly include archived and background agents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+            "content": "sha256:0564d773fca6ff8ecd7ab4227463bde2c3ab67a5aa5c3485d2efce567ca36d91",
+            "locator": {
+              "kind": "symbol",
+              "name": "includeBackground"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
+            "content": "sha256:e154383f15b5087bdde0fab865c1489ef67637cf0416f2ffe0eac55c6141768a",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The initial and continuation filters retain background role agents from both paths.\n\nAnchor: \"asks for background agents on both reads\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545ace5a5f4351c2460831f914b3e464eaeaed36",
+            "content": "sha256:ac24d57d3d7dd813a68b8d97940c083b8d8a4fe3fd1e8f2961707e7dbb5e4ca0",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "dashboard/src/cockpit/paseoHierarchy.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Deferred lookups respect tab and relation changes, missing targets and archived agents.\n\nAnchor: \"checks current visible caller and parent relation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545ace5a5f4351c2460831f914b3e464eaeaed36",
+            "content": "sha256:890e7bb3fc1c80fb03108cec7db2e3c10d14fd115a4bbc51691de6ac00b39974",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 204
+            },
+            "path": "dashboard/src/cockpit/paseoHierarchy.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Overlapping snapshots leave unrelated and newer updates intact and release owned resources at teardown.\n\nAnchor: \"replaces directory snapshots on reconnect\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545ace5a5f4351c2460831f914b3e464eaeaed36",
+            "content": "sha256:e74842a28d56eb3ae8a253169b99a7fd8e55cd73489e00232c5f2cb483acc89f",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 258
+            },
+            "path": "dashboard/src/cockpit/paseoHierarchy.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

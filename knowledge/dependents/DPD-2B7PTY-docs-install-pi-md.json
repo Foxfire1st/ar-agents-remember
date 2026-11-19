@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The page holds: the landing answer's key set widened, and the page's registration and settings name no answer key.",
-    "task": "261112-BUG-L7",
+    "statement": "The Pi installation page still describes the user registration and launch behavior when Pi loads a separately configured product server.",
+    "task": "261112-BUG-L10",
     "uncommitted": true
   },
   "document": "docs/install/pi.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+      "blob": "9e10958ad95558f1846ccfe0170975c559d03227",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },

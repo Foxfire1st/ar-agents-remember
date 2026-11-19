@@ -110,7 +110,9 @@ The reviewed behavior is wholly repository-local.
 - Frozen implementation of UnknownApiPathsAreNotFound supporting the stated file behavior. [5]
 - Frozen implementation of mount_static supporting the stated file behavior. [6]
 - Checks unknown API roots/descendants return 404 for GET/HEAD/POST/PUT/DELETE with and without bundle; known route wrong method stays 405. [7]
+
 - Composed app former four host paths have no route and answer Not Found for GET/POST/PUT/DELETE. [8]
+
 
 
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/app.py:260-260 - the bytes it recorded now occur 13 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted. [4]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The examined evidence-system clauses remain consistent with seven accepting lanes and catalog-owned metadata after four test-module registrations and twelve consumer links were added.",
-    "task": "261112-BUG-L9",
+    "statement": "The evidence-system page still describes the lifecycle catalog and its source-version field, which now identifies the Paseo runtime command stand-in with the current host pin.",
+    "task": "261112-BUG-L10",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
+      "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

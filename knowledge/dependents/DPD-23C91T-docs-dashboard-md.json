@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "All changed passages are covered: the tab table and File Viewer introduction include pictures and videos; Operations keeps its change set's file/filter and notes view across tab changes, returns to the task view when that view's task disappears, and a press on the already-open Operations tab returns to the task view. The notes paragraph covers media notes, notes without raw HTML, links to notes the reader can open and no navigation of the dashboard's own tab. File Viewer Markdown opens rendered with the Rendered/Source switch and cleaned repository HTML; the change-set page defaults to a line diff and offers its separate rendered toggle. The media paragraph names the supported picture/video types, player and type/size labels, the 16 MiB bound, the File Viewer/notes readers' too-large notice without requesting bytes, the change-set/Knowledge code readers' request and route refusal, and the non-media binary labels. The document-media paragraph covers repository paths, external https media without a referrer, unsupported image addresses shown as alternative text and notes without raw HTML. The final added paragraph covers same-repository file links opening the appropriate rendered/source/media view, linked headings and anchor-only scrolling, outside links in a new browser tab, missing-file links as explanatory text, and no link moving the dashboard's own tab. Its Back/Forward arrows traverse files opened by links or the tree, restore their scroll position and disable unavailable directions. The rest of the page was not reverified.",
-    "task": "261112-BUG-L7",
+    "statement": "The documented agent workspace navigation and Back to parent control still stand with the plugin requesting background agents on its first hierarchy read and later pages.",
+    "task": "261112-BUG-L10",
     "uncommitted": true
   },
   "document": "docs/dashboard.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -136,7 +136,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_warmup.py"
     },
     {
-      "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+      "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
     },

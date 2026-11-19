@@ -10,7 +10,7 @@ Records exact-owner native helper updates and turn-end events for a fixture host
 
 ## Code Commentary
 
-The recorder registers through `server.addHook` (`agent.open.before` and `agent.turn.after`). Because the turn-end hook carries an empty timeline from Paseo 0.13, it records the agent's held timeline read through `agents.ref(id).timeline.refetch` in the hook's place, each item with its row's turn id.
+The recorder registers through `server.addHook` (`agent.open.before` and `agent.turn.after`). The pinned Paseo 0.16.2 SDK does not provide turn history on the event. The server includes an empty wire timeline for compatibility. The recorder reads the agent's whole held timeline through `agents.ref(id).timeline.refetch` with `direction: "tail"` and `limit: 0`. It records each returned item with its row's turn id when present.
 
 ### Invariants And Boundaries
 
@@ -18,4 +18,7 @@ Readiness and recording-window markers distinguish subscription snapshots from a
 
 ## Evidence
 
-- The source defines this file's responsibility and the boundaries described here. [1]
+- The recorder registers the native hooks and refetches the exact owner's timeline for its recorded turn-ended event. [1]
+
+- In the 0.16.2 distribution, `plugins/runtime.js` applies `wireEvent` at 375 and adds the empty compatibility timeline at 1152–1155. `plugins/plugin-process.js:535` passes the input to the hook. [2]
+- The 0.16.2 SDK declares the turn-end event at `dist/server/lifecycle.d.ts:107–117` without timeline history. [3]

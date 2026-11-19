@@ -4,7 +4,7 @@
 
 - The binding validates minted UUIDs and each role class's task references, and emits seven binding variables.
 - A role that names a master accepts two reference shapes: the sprint with that master when a sprint commands it, and the master alone when it stands on its own. An investigator may name none, a sprint, a standalone master, or a sprint and master; a sprint-bound role such as the orchestrator keeps its one shape.
-- This file owns the per-launch host exclusion record and provider-option construction. Claude alone receives the exact `mcp__agents-remember` disallowed-tools rule, merged with existing host deny rules; Codex, Hermes/ACP, Pi and unknown providers receive no verified exclusion. No user or folder configuration is rewritten.
+- This file owns the per-launch host exclusion record and provider-option construction. On Paseo 0.16.2, a launch carrying the task server supplies the exact `mcp__agents-remember` disallowed-tools rule for Claude alone, merged with existing host deny rules; Codex, Hermes/ACP, Pi and unknown providers receive no verified exclusion. No user or folder configuration is rewritten.
 - Unknown harnesses have no verified exclusion; no user/folder configuration rewrite is authorized.
 
 ### Source and authority bounds
@@ -37,15 +37,19 @@ AgentBinding.environment emits all seven binding variables and clears hosted-sea
 - Checks interpreter, -P module invocation, source, selected settings and single canonical server definition. [3]
 - Starts generated stdio server and checks serving build package root and binding from selected source. [4]
 
-- Frozen implementation of read_agent_binding supporting the stated file behavior. [2]
+
+- `read_agent_binding` checks the minted IDs, role, absolute report path and role-specific reference pattern. [2]
+
 - Checks emitted binding and explicitly empty absent references and seat identities before round-trip. [5]
-- The current source implements this file’s stated Investigator boundary. [6]
+
+- Investigator permits a taskless selection, a sprint, a standalone master or both sprint and master. [6]
+
 
 
 
 ## Investigator scope and request identity
 
-The earlier system-specialist spelling is normalized to Investigator on reads while the recorded role value and addresses remain intact. Investigator accepts exactly Projects, sprint or sprint/master reference patterns; minted actor/request UUIDs, absolute report path and readable canonical topology remain mandatory. A role name or folder never supplies missing references.
+The earlier system-specialist spelling is normalized to Investigator on reads while the recorded role value and addresses remain intact. Investigator accepts Projects, sprint, standalone master or sprint/master reference patterns; minted actor/request UUIDs, absolute report path and readable canonical topology remain mandatory. A role name or folder never supplies missing references.
 
 
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The page gained one entry for the browser helper that a killed or crashed process leaves behind, with no setting that reaches it, and the packaging change and the landing answer's keys leave its install steps, registration and settings true.",
-    "task": "261112-BUG-L7",
+    "statement": "The Hermes installation page still describes a configured ACP provider and held in-turn messages since the provision comment and role-list bridge changes do not alter either route.",
+    "task": "261112-BUG-L10",
     "uncommitted": true
   },
   "document": "docs/install/hermes.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
     },
     {
-      "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+      "blob": "527bea1216f068c31565a638ad3b095eadbcc37a",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py"
     },
@@ -66,7 +66,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+      "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -86,7 +86,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },

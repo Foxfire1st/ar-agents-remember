@@ -105,4 +105,5 @@ No meaningful cross-repo references found.
 - The invariant revision test changes the statement in a copied stored row and requires decode_revision_row to refuse with payload digest. [5]
 
 - The unit-regression lane row this module is registered by. Anchor: "mcp/tests/test_knowledge_revision_seals.py" Anchor: "mcp/tests/test_knowledge_revision_seals.py" [9]
+
 - The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution. [10]

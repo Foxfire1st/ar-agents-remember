@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
+        "blob": "473e07a526fd51de49b7ccb94feace4df9b01ee2",
         "content": "sha256:ec4baf3a73e6d6211644eb8434a114d0b3f0d36750811f120e1beb85ed3219c6",
         "locator": {
           "kind": "symbol",
@@ -26,10 +26,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
-            "content": "sha256:f4ed6532987773402bc28942a0fe38f705bf56b21000b293cf06c8d55a976262",
+            "blob": "473e07a526fd51de49b7ccb94feace4df9b01ee2",
+            "content": "sha256:7f39605fb09390ae48269907bb8d9577ec7848eb9be099d3fca1dc19c717d657",
             "locator": {
-              "end": 610,
+              "end": 622,
               "kind": "line_range",
               "start": 1
             }
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
+            "blob": "473e07a526fd51de49b7ccb94feace4df9b01ee2",
             "content": "sha256:8aad748ebbf9a30d7d0081c87a3b25d65ece21cfb7eb749e27a801611934ce1b",
             "locator": {
               "kind": "symbol",
@@ -59,24 +59,53 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
+            "blob": "473e07a526fd51de49b7ccb94feace4df9b01ee2",
             "content": "sha256:d841ae7f1a30a39d1a1f380f290283ae72714822e0a3cf31db65a642e7a0ceca",
             "locator": {
-              "end": 90,
+              "end": 102,
               "kind": "line_range",
-              "start": 82
+              "start": 94
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
+            "blob": "473e07a526fd51de49b7ccb94feace4df9b01ee2",
             "content": "sha256:ffeea60df3860199864abe1f570549b8d558f98cca06cd3d6f34f2e4c31b4d12",
             "locator": {
-              "end": 238,
+              "end": 250,
               "kind": "line_range",
-              "start": 201
+              "start": 213
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Two exact identifier and file matches allow incidental strings in unchanged copied fixture bytes. Other tokens in those files remain subject to the same scan.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "473e07a526fd51de49b7ccb94feace4df9b01ee2",
+            "content": "sha256:b30e89661fa9e0950e1933b712dc02a411aaef64c0739cffc44300ba77571c24",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "473e07a526fd51de49b7ccb94feace4df9b01ee2",
+            "content": "sha256:81519785df5bbe29b9cb3d5158954212b7e3049b6337d4a88678bc411e70dc01",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 113
             }
           },
           "kind": "test"

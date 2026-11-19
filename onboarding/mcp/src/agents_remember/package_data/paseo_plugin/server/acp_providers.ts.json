@@ -16,7 +16,7 @@
         "handoffEntry": "L203-INV-1ZKP4R-r5",
         "leaf": "260928-MIK-L203"
       },
-      "rationale": "This set reads the installed host's provider classes, resolves each verdict, keeps drop-outs across restarts and writes the one file both the launch and the turn-end decision read, so the obligation's provider facts survive a restart without a copied list.",
+      "rationale": "This set reads the installed host's provider classes, resolves each verdict, keeps drop-outs across restarts, writes the verdict file for role launch and supplies the turn-end decision through its in-memory `isAcp` lookup.",
       "role": "propagation-persistence"
     },
     {

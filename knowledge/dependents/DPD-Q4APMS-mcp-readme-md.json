@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The page holds: the packaging metadata and the dashboard's media route leave its two commands true. The tool reference it points at, `docs/reference/mcp-tools.md`, moved in this master's earlier change at six passages — the cut hint, the status paragraph, the weakness closure, the `worktree_status` row, the atomic-master abandon rule and the commit-check exception — and the page quotes none of them.",
-    "task": "261112-BUG-L7",
+    "statement": "The package README still names the installed commands and tool server roles after request dispatch gains a definition scope.",
+    "task": "261112-BUG-L10",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -46,7 +46,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
     {
-      "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+      "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
