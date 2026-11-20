@@ -4,12 +4,49 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+        "content": "sha256:f9474feffca88962942c78c13460932cf2371715489cb2c795aa60bcd2384517",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_motion"
+        }
+      },
+      "id": "RLZ-350297",
+      "invariant": "INV-R9CTWA",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 6 — video is a figure",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The readiness check refuses autoplay, loop and media without controls.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+        "content": "sha256:42e4578497f5c027745989243c82586b26d26cd43bf9b655c407319e557eb29d",
+        "locator": {
+          "end": 108,
+          "kind": "line_range",
+          "start": 73
+        }
+      },
+      "id": "RLZ-6BBWM8",
+      "invariant": "INV-R9CTWA",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 6 — video is a figure — additional realizations",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The parser extracts actual media attributes for the readiness rule.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
         "content": "sha256:6be5fa9a44e505f3a4a7b84019f39891d809eb80a44170e259ceb88f7b493d10",
         "locator": {
-          "end": 63,
+          "end": 65,
           "kind": "line_range",
-          "start": 59
+          "start": 61
         }
       },
       "id": "RLZ-8QW9AX",
@@ -23,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
         "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
         "locator": {
           "kind": "symbol",
@@ -41,7 +78,7 @@
     },
     {
       "anchor": {
-        "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
         "content": "sha256:da065cab7c0c24f92ff8a8d46b10ab79880a77ab4599e18b50b7d10f52d49953",
         "locator": {
           "kind": "symbol",
@@ -59,7 +96,7 @@
     },
     {
       "anchor": {
-        "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
         "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
         "locator": {
           "kind": "symbol",
@@ -74,6 +111,25 @@
       },
       "rationale": "The static check follows the page's own references and refuses what the revision does not carry.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+        "content": "sha256:f9474feffca88962942c78c13460932cf2371715489cb2c795aa60bcd2384517",
+        "locator": {
+          "end": 495,
+          "kind": "line_range",
+          "start": 468
+        }
+      },
+      "id": "RLZ-PMH973",
+      "invariant": "INV-R9CTWA",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 6 — video is a figure — additional realizations",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "Readiness refuses autoplay, loop and missing controls based on the parsed attributes.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -82,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
             "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
             "locator": {
               "kind": "symbol",
@@ -98,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
             "content": "sha256:87c4b7a2ab9bddcbc487dbf31f0164a3d3ce560ad4b64336ff201e79f358c39c",
             "locator": {
               "kind": "symbol",
@@ -110,14 +166,33 @@
       ]
     },
     "3": {
-      "note": "The current implementation adds part-map and claim-basis checks to static readiness and returns that derived map for retained publication.\n\nAnchor: `_check_parts`, `claim_basis_problem`, `check_page`",
+      "note": "Readiness derives the part map from the page and verifies its claims and bases.",
       "targets": [
         {
           "anchor": {
-            "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
-            "content": "sha256:9c21082900e6e75f72e196d9f817747377189faf792020070fe5afab438a9c7f",
+            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+            "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
             "locator": {
-              "kind": "file"
+              "end": 528,
+              "kind": "line_range",
+              "start": 498
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The media check uses parsed autoplay, loop and controls attributes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+            "content": "sha256:f9474feffca88962942c78c13460932cf2371715489cb2c795aa60bcd2384517",
+            "locator": {
+              "end": 495,
+              "kind": "line_range",
+              "start": 468
             }
           },
           "kind": "code"

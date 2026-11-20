@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "ce6ff51ceff24cba0157410140585c0ba80a0203",
+    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
     "role": "curator",
-    "statement": "The roadmap still links to the same knowledge, drift, task-gate and benchmark definitions after Concepts updates its permission-mode section.",
-    "task": "261112-BUG-L11",
+    "statement": "The roadmap's knowledge, drift, worklist and benchmark links still reach their definitions after Concepts adds staged explanation and video.",
+    "task": "261112-BUG-L13",
     "uncommitted": true
   },
   "document": "ROADMAP.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
     },
     {
-      "blob": "840859626416a9f287399068108c298610ec1ec0",
+      "blob": "b477c24f5467a62878fbff415391912ac303f2b0",
       "kind": "file",
       "path": "docs/concepts.md"
     },

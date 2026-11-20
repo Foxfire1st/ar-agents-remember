@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "7b04c967bf1b21442083337aae1f6d1f1f9f8eea",
+    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
     "role": "curator",
-    "statement": "The canvas host design agrees with the explainer start, which checks applied provider, model, effort and features and records the host-reported mode separately.",
-    "task": "261112-BUG-L11",
+    "statement": "The host design names prepared inputs, six stage files and video readiness. The workspace writer lists selected report paths and digests and names the root in the empty notice. The serving route link tracks the exact A7 source.",
+    "task": "261112-BUG-L13",
     "uncommitted": true
   },
   "document": "docs/design/canvas-host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/canvas/evidence.py"
     },
     {
-      "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+      "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/readiness.py"
     },
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/serving/write_guard.py"
     },
     {
-      "blob": "aa089823366e841ed9abf5135593690101d757ac",
+      "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_instructions.py"
     },
@@ -96,7 +96,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
     },
     {
-      "blob": "7807e8add8a202e433046e4195e5431ac17a9d3f",
+      "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
       "kind": "file",
       "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
     },
@@ -106,7 +106,7 @@
       "path": "dashboard/src/panels/review/canvas/canvasModel.ts"
     },
     {
-      "blob": "2efc0689986925be972c37f8fff310afce761c25",
+      "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge/review_frame.py"
     },
@@ -116,12 +116,12 @@
       "path": "mcp/src/agents_remember/models/knowledge/review_evidence.py"
     },
     {
-      "blob": "ce5f9ae6d24b8c755e4b85b0d44b520623128a40",
+      "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/explainer_routes.py"
     },
     {
-      "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
+      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },
@@ -129,6 +129,11 @@
       "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
       "kind": "file",
       "path": "dashboard/src/panels/review/explainer/RevisionFrame.tsx"
+    },
+    {
+      "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
     }
   ]
 }

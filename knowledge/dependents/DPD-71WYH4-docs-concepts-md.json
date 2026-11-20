@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
-    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
+    "codeTree": "7b04c967bf1b21442083337aae1f6d1f1f9f8eea",
+    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
     "role": "curator",
-    "statement": "Concepts accurately describes permission selection before launch, canonical task JSON with rendered Markdown, and the binding of a route verdict to the tree under review.",
-    "task": "261112-BUG-L12",
+    "statement": "Concepts describes the staged capability, the workspace writer’s selected report paths and digests, and WebM or MP4 publication. Its service link tracks the exact A7 source.",
+    "task": "261112-BUG-L13",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -196,7 +196,7 @@
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
     {
-      "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+      "blob": "62215ea0a5252c997ca76c7b1680713485391419",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/role_reports.py"
     },
@@ -301,17 +301,17 @@
       "path": "mcp/src/agents_remember/canvas/kit.py"
     },
     {
-      "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+      "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
     },
     {
-      "blob": "f1a614c3853985134f11c860f66383388eb5da04",
+      "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_service.py"
     },
     {
-      "blob": "2efc0689986925be972c37f8fff310afce761c25",
+      "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge/review_frame.py"
     },
@@ -422,6 +422,16 @@
       },
       "heading": "Loaded build identity",
       "kind": "anchor"
+    },
+    {
+      "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+    },
+    {
+      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     }
   ]
 }

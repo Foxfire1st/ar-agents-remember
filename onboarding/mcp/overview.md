@@ -1053,7 +1053,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.p
 - The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: scripts/sync-runtime.py. [401]
 
 
-- Settings-selected launch requests same-build bound task server, preapproved surface and capsule system prompt without initial prompt; this is source wiring, not fresh native suppression acceptance. [383]
 
 - Supported code media is returned before text-size refusal and the reader renders its media state. [403]
 - Knowledge media URLs use the selected memory commit; byte delivery applies its actual16MiB bound. [404]
@@ -1080,3 +1079,5 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.p
 - A step-up row contributes its mode on its effective harness. An explicit launcher mode wins, and if no named mode applies the host default requires known modes and an advertised value. Otherwise no mode is sent. [408]
 
 - Known offerings govern rejection of unsupported non-mode selections. Start-call feature authority is checked independently, and an unlisted mode passes to the host. [409]
+
+- The explainer uses the settings-selected launch and a bound task server. Creating the seat and sending its request are separate operations. [383]

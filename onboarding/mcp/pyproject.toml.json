@@ -304,7 +304,7 @@
       ]
     },
     "18": {
-      "note": "The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy; `test_canvas_capsule_text.py` checks the generated capability copy against its source and checks the packaging declarations.",
+      "note": "Package data declares the general package-data tree and the canvas Markdown and JavaScript resources. Tests pin the general and Markdown patterns and check the generated capability copy against the source.",
       "targets": [
         {
           "anchor": {
@@ -320,12 +320,12 @@
         },
         {
           "anchor": {
-            "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
+            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
             "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
             "locator": {
-              "end": 154,
+              "end": 166,
               "kind": "line_range",
-              "start": 137
+              "start": 149
             },
             "path": "mcp/tests/test_canvas_capsule_text.py"
           },
@@ -333,12 +333,12 @@
         },
         {
           "anchor": {
-            "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
+            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
             "content": "sha256:96633be3e4921f5dc51fa3c971bcc98be26a154294ee73278e4a63de8676a3db",
             "locator": {
-              "end": 246,
+              "end": 258,
               "kind": "line_range",
-              "start": 238
+              "start": 250
             },
             "path": "mcp/tests/test_canvas_capsule_text.py"
           },

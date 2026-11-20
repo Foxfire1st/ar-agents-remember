@@ -14,11 +14,14 @@ The static readiness check: an admitted self-contained page is ready, a page tha
 - An evidence reference the admitted packet does not carry disqualifies the page.
 
 
-Readiness also derives a part map: claims require resolving bases and unique part ownership; `data-evidence-claim` carries actual claim IDs while `data-evidence` retains its separate basis-reference check. A page without explicit parts is one implicit `page` part containing its real claims, with whole-page staleness rather than invented part IDs.
+The part-map cases refuse missing or unresolvable bases, distinguish claim IDs from basis references, and observe one implicit part containing the real claims when the page declares no parts.
+
+The media cases admit a controlled video, refuse actual autoplay or loop attributes or absent controls, and verify that filenames and other attribute values do not decide the result.
 
 ## Evidence
 
 - The case `test_a_page_that_requests_the_network_is_not_ready` protects this behaviour. [1]
 - The case `test_an_evidence_reference_must_be_one_the_admitted_packet_carries` protects this behaviour. [2]
 
-- Readiness also derives a part map: claims require resolving bases and unique part ownership; `data-evidence-claim` carries actual claim IDs while `data-evidence` retains its separate basis-reference check. A page without explicit parts is one implicit `page` part containing its real claims, with whole-page staleness rather than invented part IDs. [3]
+- The tests check resolvable claim bases and the independent claim and basis attributes. [3]
+- The video cases check actual controls, autoplay and loop attributes, including ordinary filenames. [4]

@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The shipped copy states the same limit on what treatment may steer",
+      "note": "The shipped example presents a complete text explanation and uses a figure where it supports the essay.",
       "targets": [
         {
           "anchor": {
-            "blob": "8d74270e0b2dbebeace25d1b300669ff7aca6d74",
-            "content": "sha256:bc7c2c447b42b25e612bad51e135752fea675ebfaab17c9e2a6fce99d986b29f",
+            "blob": "8c8a2e946dfeb8c463793106ccc3339d1d17af9f",
+            "content": "sha256:c182d73fc9c2b11f5603390ed12158b8b1ed9ed7a3abd626a5ca45f929bba9e2",
             "locator": {
-              "end": 5,
+              "end": 40,
               "kind": "line_range",
-              "start": 5
+              "start": 23
             }
           },
           "kind": "code"

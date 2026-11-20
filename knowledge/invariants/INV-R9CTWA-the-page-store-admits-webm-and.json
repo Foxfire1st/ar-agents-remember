@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The asset store and the static readiness checker govern different parts of admitting a usable video."
+  },
+  "applicability": "Video asset admission and static checks on a prospective revision.",
+  "conditions": [
+    "WebM and MP4 share the existing task-total byte accounting.",
+    "Static readiness uses the element attributes on audio and video tags."
+  ],
+  "exclusions": [
+    "Browser playback and the still form have separate evidence."
+  ],
+  "id": "INV-R9CTWA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "139 focused tests passed; recorded page revision 2 carries word-count.webm with controls, no autoplay and no loop"
+      ],
+      "path": "A6-writer-input.json"
+    },
+    "handoffEntry": "BUG-R13@v1 rule 6 — video is a figure",
+    "leaf": "261112-BUG-L13",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The page store admits WebM and MP4 videos, and readiness refuses autoplay, loop and audio or video without controls.",
+  "status": "proposed",
+  "supersedes": []
+}

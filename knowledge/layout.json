@@ -603,6 +603,8 @@
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
     ],
     "file:mcp/src/agents_remember/canvas/explainer_workspace.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json",
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
     ],
     "file:mcp/src/agents_remember/canvas/kit.py": [
@@ -635,7 +637,9 @@
       "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
     ],
     "file:mcp/src/agents_remember/canvas/review-presenter.md": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
       "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json",
+      "knowledge/dependents/DPD-EG5TYT-docs-features-md.json",
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
     ],
     "file:mcp/src/agents_remember/canvas/sessions.py": [
@@ -1573,7 +1577,8 @@
       "knowledge/dependents/DPD-8PE0G9-security-md.json"
     ],
     "file:mcp/src/agents_remember/serving/explainer_routes.py": [
-      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
     ],
     "file:mcp/src/agents_remember/serving/explainer_watcher.py": [
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"

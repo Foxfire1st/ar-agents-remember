@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The moved Update regression checks refreshed packet bytes and preservation of the prior stage file together."
+  },
+  "applicability": "Update of an existing explainer workspace whose comparison moved.",
+  "conditions": [
+    "The workspace has an admitted new comparison."
+  ],
+  "exclusions": [
+    "An unchanged Update returns current.",
+    "The explainer revises outdated stage files in a later turn."
+  ],
+  "id": "INV-W55VKB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_explainer.py::test_a_moved_update_refreshes_the_inputs_and_keeps_the_stage_files"
+      ],
+      "path": "A6-writer-input.json"
+    },
+    "handoffEntry": "Moved explainer Update refreshes the reading inputs and preserves its stage files",
+    "leaf": "261112-BUG-L13",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A moved Update refreshes the explainer's reading inputs before binding the new comparison and preserves its existing stage files.",
+  "status": "proposed",
+  "supersedes": []
+}

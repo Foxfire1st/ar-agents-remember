@@ -773,6 +773,37 @@
         }
       ]
     },
+    "147": {
+      "note": "The HTTP Build handler forwards the history that selects planned composition for a blank request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "content": "sha256:e4d997ab0b0bec4730706a3c282ac7e68b2edc63aeceac66ed02965fcc8b6eb1",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/serving/explainer_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:18f3f222dbbe9a7ecbe9dff12e8524755168d8a4163864f5d37caefd926c6605",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 823
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "21": {
       "note": "The shared naming primitive appends the same physical lock suffix.",
       "targets": [

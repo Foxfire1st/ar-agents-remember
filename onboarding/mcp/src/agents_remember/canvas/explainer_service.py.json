@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f1a614c3853985134f11c860f66383388eb5da04",
+        "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
         "content": "sha256:3aea67a3b0884842414ec1529dd4db4d0595ecdde9706e3bede4ea7d4c9a22df",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,24 @@
     },
     {
       "anchor": {
-        "blob": "f1a614c3853985134f11c860f66383388eb5da04",
+        "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+        "content": "sha256:59439bd126be5fcb0c994b8de29e8a235c9ce765a275517349ef54746b56aa4a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EVQVNE",
+      "invariant": "INV-453GX6",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 7 — texts and budget",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "Blank composed content takes the planned request when the caller supplies planned history and the end-to-end request otherwise.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
         "content": "sha256:250779da2f9b9c091d1862ca2fee038b5965f1b9dcf3adc4eebfbfa41f8ac5b7",
         "locator": {
           "kind": "symbol",
@@ -39,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "f1a614c3853985134f11c860f66383388eb5da04",
+        "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
         "content": "sha256:3aea67a3b0884842414ec1529dd4db4d0595ecdde9706e3bede4ea7d4c9a22df",
         "locator": {
           "kind": "symbol",
@@ -58,11 +75,11 @@
   ],
   "references": {
     "1": {
-      "note": "An unknown history mode is refused before any build, and an empty Send is composed as the end-to-end review or, on a planning leaf, the planned request.",
+      "note": "Build refuses unknown history modes, records a request and returns the existing seat on replay.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1a614c3853985134f11c860f66383388eb5da04",
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
             "content": "sha256:323b3b17b3236b3cf1aec0300351985f998f231c15cc65b63a23824a7aede4d5",
             "locator": {
               "kind": "symbol",
@@ -74,16 +91,16 @@
       ]
     },
     "2": {
-      "note": "The seat and the ledger row are prepared under the leaf lock, and a repeated request answers the existing seat\n\nAnchor: `def _prepare_seat_under_lock(`",
+      "note": "The seat and ledger row are prepared under the lock. Repeated requests reuse the recorded seat.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1a614c3853985134f11c860f66383388eb5da04",
-            "content": "sha256:250779da2f9b9c091d1862ca2fee038b5965f1b9dcf3adc4eebfbfa41f8ac5b7",
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:87043dab1fedcc261337f312f096b8d4160d1f9ec22ce501b782bfce41889ebc",
             "locator": {
-              "end": 955,
+              "end": 960,
               "kind": "line_range",
-              "start": 877
+              "start": 898
             }
           },
           "kind": "code"
@@ -91,16 +108,16 @@
       ]
     },
     "3": {
-      "note": "A retired or archived master is refused by name, so no environment is rebuilt\n\nAnchor: `def _checked_facts(`",
+      "note": "A retired or archived master is refused before rebuilding the environment.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1a614c3853985134f11c860f66383388eb5da04",
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
             "content": "sha256:750b600db9065c6801206794102558aa7f10cf14fa139f28384bfc2f4b97de6c",
             "locator": {
-              "end": 352,
+              "end": 357,
               "kind": "line_range",
-              "start": 343
+              "start": 348
             }
           },
           "kind": "code"
@@ -108,15 +125,167 @@
       ]
     },
     "4": {
-      "note": "A planned empty Send asks for the requirement and planned effects.",
+      "note": "With blank composed content and explicit planned history, the service delivers a request to explain the requirement and planned effects, then write the essay, make visuals and assemble the page.",
       "targets": [
         {
           "anchor": {
-            "blob": "f1a614c3853985134f11c860f66383388eb5da04",
-            "content": "sha256:65baa0d799b749aeb692a99bab4274998077ea00f6573b19d1d3c725d319fed6",
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:ef6806ebf9a0fb855fbbbebea81358187711e56e287a2a216e02f292b6552db2",
             "locator": {
-              "kind": "symbol",
-              "name": "PLANNED_REQUEST"
+              "end": 104,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:18f3f222dbbe9a7ecbe9dff12e8524755168d8a4163864f5d37caefd926c6605",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 823
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:719b61f50ba0833984880d16e1ad742399becfa5748682bed89b2c8cf4f94cbc",
+            "locator": {
+              "end": 865,
+              "kind": "line_range",
+              "start": 859
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "With blank composed content and recorded or omitted history, the service uses the end-to-end essay-first request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:9f16c9e845eb09f2f1b7a949ae09f5da9c01556cae84bfbe39bf71b76d9e2ebe",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:18f3f222dbbe9a7ecbe9dff12e8524755168d8a4163864f5d37caefd926c6605",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 823
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Update refuses an in-turn seat or an absent environment and acquires its lock immediately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08be2a48139f6518ce255710b8a3361359891354",
+            "content": "sha256:688f51581e7b6f4cc87c0312968d4cf1bbfa42d2d327ec95ba0146892b272ea8",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_maintenance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The dashboard submits selected history. The HTTP handler forwards that validated value, and the builder chooses the planned first turn for blank composed text with planned history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "346cd25bf8a0d1a81e469e397609156fbc51826c",
+            "content": "sha256:605afa8968090b3428a7975ba8dd3513ea93e4e7d250f74bda7955bd3eaa0282",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 311
+            },
+            "path": "dashboard/src/panels/review/explainer/ExplanationRequest.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "content": "sha256:6454816986269d0c04eebe083e9a2ebb78d741102690320e150f6e0a57651328",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/src/agents_remember/serving/explainer_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "content": "sha256:e4d997ab0b0bec4730706a3c282ac7e68b2edc63aeceac66ed02965fcc8b6eb1",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/serving/explainer_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:bd802e795dcd672d8d82fbcb18dc849e891c2cabaf7231119e1aa98437407486",
+            "locator": {
+              "end": 804,
+              "kind": "line_range",
+              "start": 789
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:18f3f222dbbe9a7ecbe9dff12e8524755168d8a4163864f5d37caefd926c6605",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 823
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:50ad4ffac21441f7999d8390e6795a99c5c350550e3d320cae863f55552fcd7e",
+            "locator": {
+              "end": 864,
+              "kind": "line_range",
+              "start": 859
             }
           },
           "kind": "code"

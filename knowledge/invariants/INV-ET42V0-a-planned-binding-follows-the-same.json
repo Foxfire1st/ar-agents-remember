@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The capability defines planned authoring and the workspace independently prepares the plan inputs."
+  },
+  "applicability": "The explanation of an admitted planned binding.",
+  "conditions": [
+    "The explainer reads the requirement and declared effects against the bound code and memory.",
+    "The page distinguishes current behavior from intended behavior."
+  ],
+  "exclusions": [
+    "A planned binding has no recorded change set and is not comparison zero."
+  ],
+  "id": "INV-ET42V0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "planned sandbox run SBX-M1-L1: stages name planned, never #0; page revision 1"
+      ],
+      "path": "A6-writer-input.json"
+    },
+    "handoffEntry": "BUG-R13@v1 rule 4 — planned variant",
+    "leaf": "261112-BUG-L13",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A planned binding follows the same stages, with the requirement and declared effects instead of a change set and intended behaviour marked as intended.",
+  "status": "proposed",
+  "supersedes": []
+}

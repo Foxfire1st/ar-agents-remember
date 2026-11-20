@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+        "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
         "content": "sha256:bbdfe56f962bb8997951a7cccc5eb260d8f4833504b2c27572a12551f977dfc9",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+        "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
         "content": "sha256:0be7b23414bbc5ace622b7737cab16017611936055e83d64aaa6c5c30efd57e8",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+        "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
         "content": "sha256:20f3137d0d352e7a5783b3c3257b8ca17d6a6c87402f2b74b8bed4c72be137e5",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+        "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
         "content": "sha256:d1ee7778749bc2c0666df2a4481a511fe5812338d85b3d99e4419e6ac7100ac6",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+        "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
         "content": "sha256:af8d8fc0d46a26f60f83a8b54c9bb14f4735427f9fa31820d6c65b6d0fa77aa9",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+        "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
         "content": "sha256:f8ac360afdad1b55994afc835b34006fa8d23af25e0a16c3fb813d5bce002c5f",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+        "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
         "content": "sha256:ff50a0f24d0677837fe4226f9154bd662bbf04b4e18406cab75d825357bd405f",
         "locator": {
           "kind": "symbol",
@@ -124,14 +124,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The case `test_a_failed_load_refuses_publication_and_keeps_the_last_ready_revision` protects this behaviour.",
+      "note": "A failed prospective load keeps the previous ready revision.",
       "targets": [
         {
           "anchor": {
-            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
-            "content": "sha256:886d23c3c095cb8361be83e8e5993a1d584dff7d7afc666ee79879048b6c3361",
+            "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
+            "content": "sha256:20f3137d0d352e7a5783b3c3257b8ca17d6a6c87402f2b74b8bed4c72be137e5",
             "locator": {
-              "kind": "file"
+              "end": 146,
+              "kind": "line_range",
+              "start": 113
             }
           },
           "kind": "test"
@@ -139,14 +141,16 @@
       ]
     },
     "2": {
-      "note": "The case `test_the_static_check_never_stands_in_for_a_load` protects this behaviour.",
+      "note": "Static readiness does not stand in for a prospective load.",
       "targets": [
         {
           "anchor": {
-            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
-            "content": "sha256:886d23c3c095cb8361be83e8e5993a1d584dff7d7afc666ee79879048b6c3361",
+            "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
+            "content": "sha256:d1ee7778749bc2c0666df2a4481a511fe5812338d85b3d99e4419e6ac7100ac6",
             "locator": {
-              "kind": "file"
+              "end": 208,
+              "kind": "line_range",
+              "start": 193
             }
           },
           "kind": "test"
@@ -154,14 +158,16 @@
       ]
     },
     "3": {
-      "note": "The rendered reference-inventory case keeps `claimIds` separate from `evidenceReferences`: real packet claim IDs pass in `claimIds`, a claim ID used as a basis reference fails, and a basis reference used as a claim ID fails. It also pins the default loader's separate DOM selectors for the two marks; no browser run is claimed by reading these assertions.\n\nAnchor: `test_rendered_reference_inventory_is_checked_against_the_actual_packet`",
+      "note": "The prospective checks distinguish actual claim IDs from basis references.",
       "targets": [
         {
           "anchor": {
-            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
-            "content": "sha256:886d23c3c095cb8361be83e8e5993a1d584dff7d7afc666ee79879048b6c3361",
+            "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
+            "content": "sha256:af8d8fc0d46a26f60f83a8b54c9bb14f4735427f9fa31820d6c65b6d0fa77aa9",
             "locator": {
-              "kind": "file"
+              "end": 433,
+              "kind": "line_range",
+              "start": 384
             }
           },
           "kind": "test"
@@ -169,27 +175,28 @@
       ]
     },
     "4": {
-      "note": "A load that names its own Node fetches no browser and runs on the product Node otherwise.",
+      "note": "An instrumented load names its Node. The default load uses the product's Node and browser.",
       "targets": [
         {
           "anchor": {
-            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
-            "content": "sha256:0be7b23414bbc5ace622b7737cab16017611936055e83d64aaa6c5c30efd57e8",
+            "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
+            "content": "sha256:90fbfd247db326288766c0f3f2c992c694bfec75269406c4fc288f54e01b7939",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_load_runs_on_the_product_node_with_the_products_browser_folder"
+              "end": 697,
+              "kind": "line_range",
+              "start": 649
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
-            "content": "sha256:269ba315ce0fb01e860807def4784696faa59effe756407e2a0c0a207bf54f64",
+            "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
+            "content": "sha256:d7b25ebcc8efb11be97adda955fecc4c9f4556d405645a03e465804a41424e5d",
             "locator": {
-              "end": 705,
+              "end": 711,
               "kind": "line_range",
-              "start": 641
+              "start": 701
             }
           },
           "kind": "test"
@@ -201,7 +208,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+            "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
             "content": "sha256:f8ac360afdad1b55994afc835b34006fa8d23af25e0a16c3fb813d5bce002c5f",
             "locator": {
               "kind": "symbol",
@@ -217,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+            "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
             "content": "sha256:86e210ba9d099ab73961e5e069f4c18092c14e8ea75bfe28ae46c44bc60b461f",
             "locator": {
               "kind": "symbol",
@@ -233,11 +240,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83e87162a4af9cc8fc6ac3271beedc8b30e6e8e2",
+            "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
             "content": "sha256:ff50a0f24d0677837fe4226f9154bd662bbf04b4e18406cab75d825357bd405f",
             "locator": {
               "kind": "symbol",
               "name": "test_a_first_render_with_a_missing_browser_announces_and_fetches_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The runner source maps WebM to video/webm and MP4 to video/mp4.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
+            "content": "sha256:7bdacf20c80762f8b204d875c21aa95f42e0273745f4f637c13dd668243b88fc",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 323
             }
           },
           "kind": "test"

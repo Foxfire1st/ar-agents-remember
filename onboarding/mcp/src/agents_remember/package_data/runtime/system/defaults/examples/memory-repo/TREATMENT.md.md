@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Route overview](../overview.md)
+[Route overview](../../../../../../../../overview.md)
 
 ## Purpose
 
@@ -16,6 +16,8 @@ The copy the runtime carries, byte-identical to the tree's own example. It steer
 
 The obligation above is the whole of what this file must keep true; the route account says what the surrounding surface promises.
 
+The shipped example presents a complete text explanation and uses a figure where it supports the essay.
+
 ## Evidence
 
-- The shipped copy states the same limit on what treatment may steer [1]
+- The shipped example presents a complete text explanation and uses a figure where it supports the essay. [1]

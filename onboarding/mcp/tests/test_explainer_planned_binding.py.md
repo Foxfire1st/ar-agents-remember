@@ -15,6 +15,8 @@ The planned binding's one exact record — the master line and the four measured
 - A planned comparison binds the master line — an atomic master's integration branch, not its fork source — and the read, the Update and the moved watcher all follow that line; an organizational master binds its sprint integration line.
 - A count that cannot be read is reported unavailable, never as a silent zero.
 
+- The mounted Build regression posts a blank planned request and checks HTTP success, message delivery and the full planned words recorded by the host.
+
 ## Evidence
 
 - The case `test_a_master_line_change_between_comparison_and_prepare_refuses_the_build_before_effects` protects a moved master line refusing the build before any effect. [1]
@@ -25,4 +27,6 @@ The planned binding's one exact record — the master line and the four measured
 
 - Retired at the fifth freeze d59c3493: mcp/tests/test_explainer_planned_binding.py::test_the_written_planned_environment_binds_one_exact_record_across_packet_grants_and_snapshot - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- One planned comparison bound across worktrees and documents [6]
+
+- The mounted Build regression submits planned history with an empty message and no picks, then checks HTTP 200, the delivery flag and the exact message recorded by the host. [7]
+- The planned environment test binds the packet, grants, stored binding and both worktrees to one measured comparison. [6]
