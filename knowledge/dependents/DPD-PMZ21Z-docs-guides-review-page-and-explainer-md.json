@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
+    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
     "role": "curator",
-    "statement": "The sole changed paragraph is covered: a changed picture or video shows before and after side by side, and an added or removed one names its missing side; a changed Markdown file defaults to a line diff and its rendered toggle draws the after content. The surrounding return/focus and unavailable-change-set sentences remain in that paragraph. No other passage changes in this base-to-tree diff; the rest of the page was not reverified.",
-    "task": "261112-BUG-L7",
+    "statement": "The review guide agrees with the explainer start's shared resolver, applied choice checks and separate host mode observation.",
+    "task": "261112-BUG-L11",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -136,7 +136,7 @@
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },
     {
-      "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+      "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
     },
@@ -256,7 +256,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },

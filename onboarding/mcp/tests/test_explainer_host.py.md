@@ -14,7 +14,7 @@ Tests the explainer seat’s host launch, capsule, settings-selected launch valu
 - Its state is read from the host's own turn fields, so live, closed, archived and never-ran come from `turnActive` and `lastTurn` rather than from a request.
 - Claude is granted `server_info` and exactly `render`, `define_category`, `remove_category` and `grade`; Codex receives no `toolPolicy`. These assertions do not establish confinement of either harness.
 - A host map with extra arguments and an unreadable daemon configuration still permits creating and sending to the explainer seat.
-- A seat launched on values other than the role's own is refused, and a seat without the explainer label is not this seat at all. The suite it belongs to exercises the four explainer-owned tools - `render`, `define_category`, `remove_category` and `grade` - and the workspace it writes into, not a read-back tool; removal archives the chat and deletes the workspace.
+- The cases refuse a host-reported model mismatch and a seat without the explainer label. A different or absent host-reported permission mode is recorded alongside the launch request's mode. The suite it belongs to exercises the four explainer-owned tools - `render`, `define_category`, `remove_category` and `grade` - and the workspace it writes into, not a read-back tool; removal archives the chat and deletes the workspace.
 
 
 The cancel case sends the exact seat ID and request ID through the bridge, observes a stopped turn and closed pending permission decision, clears the recorded pending marker, and keeps the seat mode. This test uses a scripted bridge reply, so it is not proof of cancellation against a live host.
@@ -32,10 +32,21 @@ The cancel case sends the exact seat ID and request ID through the bridge, obser
 - The launch environment carries the module the product fetched. [7]
 
 
-- The case `test_the_seat_is_created_with_the_capsule_and_no_first_prompt` protects the capsule being the seat's instructions with no first prompt. [1]
-- The case `test_the_seat_state_reads_the_hosts_own_agent_view` protects seat state being read from the host's own turn fields. [4]
-- The case `test_the_settings_role_owns_the_seats_model_effort_and_mode` protects the role's model, effort and permission mode reaching the create and holding. [5]
-- The cancel case sends the exact seat ID and request ID through the bridge, observes a stopped turn and closed pending permission decision, clears the recorded pending marker, and keeps the seat mode. This test uses a scripted bridge reply, so it is not proof of cancellation against a live host. [6]
+
+- The case checks that the capsule is the seat's instructions and no first prompt is sent. [1]
+
+
+- Seat state comes from the host's own turn fields. [4]
+
+
+- The settings-selected model, effort and mode reach the create payload, and provenance keeps the reported mode. [5]
+
+
+- The cancellation fixture checks the exact seat and request, a stopped turn, no open decision and the retained mode. [6]
+
 
 - The policy case grants Claude server_info and the four explainer tools, and omits toolPolicy for Codex. [8]
 - A host map with extra arguments and an unreadable daemon configuration still permits creating and sending to the seat. [9]
+
+- The explainer records a differing observed mode separately from the request. [10]
+- The explainer records the absence of an observed mode while retaining the requested mode. [11]

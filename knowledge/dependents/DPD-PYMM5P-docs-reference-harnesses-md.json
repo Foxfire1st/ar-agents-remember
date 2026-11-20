@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
+    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
     "role": "curator",
-    "statement": "The harness page's statements about the launcher's catalog and override selectors, the \"Step up\" button, and the held-start mark still hold at the final tree; the page does not say a start needs a sprint, and the launcher's new no-sprint choice leaves its field descriptions accurate.",
-    "task": "261112-RSM-L1",
+    "statement": "The Harnesses reference distinguishes the launcher mode selector from the agent tool's signature and explains the harness scope of settings and step-up modes.",
+    "task": "261112-BUG-L11",
     "uncommitted": true
   },
   "document": "docs/reference/harnesses.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,12 +51,12 @@
       "path": "mcp/src/agents_remember/cli/role_launch_defaults.py"
     },
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+      "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_step_up.py"
     },
@@ -96,7 +96,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
     },
     {
-      "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+      "blob": "dce9e43dc96950f6e1bc1112f272f26e44c7bab4",
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     }

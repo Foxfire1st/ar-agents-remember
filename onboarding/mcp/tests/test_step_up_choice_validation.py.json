@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_step_up_choice_validation.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
+        "content": "sha256:ec19fd730e0992a6019c37953b18479ee6dc25e2fb8070d1e8f8ecf974a6b158",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_launcher_mode_stands_first_and_reaches_the_create_as_named"
+        }
+      },
+      "facet": "In an ordinary dashboard dispatch, the explicit unlisted mode reaches the native create request and the observed receipt with start call provenance.",
+      "id": "PRF-BZYPZC",
+      "invariant": "INV-7DMXZ3",
+      "origin": {
+        "handoffEntry": "curate-w7-dashboard-mode-wire",
+        "leaf": "261112-BUG-L11"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
+            "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
             "content": "sha256:51dbb31df36dcee7a4f08ca266497400c1fcf62a16e8b663fa11ab254cd36964",
             "locator": {
               "kind": "symbol",
@@ -19,15 +38,16 @@
       ]
     },
     "2": {
-      "note": "Source assertion: test_cross_model_omitted_mode_uses_host_default_without_changing_base. The declaration is not an execution receipt.",
+      "note": "A cross-model step-up with no mode takes the advertised host default and the base keeps its configured mode.",
       "targets": [
         {
           "anchor": {
-            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
-            "content": "sha256:8e1cbf50b78103e452181875e3898119f4603b2fe5c917edba5407a5f1d730db",
+            "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
+            "content": "sha256:f7641d56f47f7eb46ff84945ae4ea38f0d865a1b4d5c078bd47aa6edd3a06d41",
             "locator": {
-              "kind": "symbol",
-              "name": "test_cross_model_omitted_mode_uses_host_default_without_changing_base"
+              "end": 98,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "test"
@@ -39,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
+            "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
             "content": "sha256:30d932de5d76d24ad53adc5c359cba6ebc98fe8daa117c4fc1f1fe2a4e33bafb",
             "locator": {
               "kind": "symbol",
@@ -51,14 +71,16 @@
       ]
     },
     "4": {
-      "note": "A per-level refusal preserves the settings file and the exact feature key.\n\nAnchor: `test_per_level_step_up_refusal_preserves_settings_file_and_exact_feature_key`",
+      "note": "A per-level refusal preserves the settings file and names the exact feature key.",
       "targets": [
         {
           "anchor": {
-            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
-            "content": "sha256:60bad0c4829aab1054465368658f236a9624cc4a2b561085eeb61385886f475f",
+            "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
+            "content": "sha256:7fffbddd53cd66f2e400557682fc11e4e1efb6a38aa0cf0690ab2897e5e2b4d8",
             "locator": {
-              "kind": "file"
+              "end": 252,
+              "kind": "line_range",
+              "start": 211
             }
           },
           "kind": "test"
@@ -70,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
+            "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
             "content": "sha256:00f592047d184be5c7fbe6b30f21a5ae58c7753177621484bd673fca7dd31303",
             "locator": {
               "kind": "symbol",
@@ -86,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
+            "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
             "content": "sha256:376fb20fdf2e2001cd4f8b6d9da8befda9644a5a6a730d0597a2f22d7009e335",
             "locator": {
               "kind": "symbol",
@@ -98,14 +120,50 @@
       ]
     },
     "7": {
-      "note": "A same-scope native tier step-up is not hidden by an inherited alias.\n\nAnchor: `test_same_scope_native_tier_step_up_is_not_hidden_by_inherited_alias`",
+      "note": "A same-scope native tier step-up stays visible through an inherited alias.",
       "targets": [
         {
           "anchor": {
-            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
-            "content": "sha256:60bad0c4829aab1054465368658f236a9624cc4a2b561085eeb61385886f475f",
+            "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
+            "content": "sha256:9e5d64dfc15787ad7710a7978eaa7011df5ee6b469dbb72c887c2eecdd641052",
             "locator": {
-              "kind": "file"
+              "end": 353,
+              "kind": "line_range",
+              "start": 319
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "An effort-only step-up on the same harness uses the advertised host default for its omitted mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
+            "content": "sha256:94217650752db026e5f2589840ff24b26546ace711ae0c7b3076bf122b140520",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The launcher mode wins, reaches the create call as named and is recorded as observed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
+            "content": "sha256:c4601d76bef1b5163207893f87956c8aef586aa3e112673400487a1c6f409e21",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 134
             }
           },
           "kind": "test"

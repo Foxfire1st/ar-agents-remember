@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
-        "content": "sha256:be9d9c913c16b5803f00f5b9414094fb4a66f6cfd5e41abce610cec136c3218f",
+        "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
+        "content": "sha256:417e93f9a44d33e68a70e868db67198dcf8fdb8a1fe0ad772c9a082447a1b052",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +15,7 @@
         "handoffEntry": "L71-CURRENT242-W-17",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The mounted R71 assertions retain explicit speed submission and feature preservation through model/effort changes, and read resolved mode/instruction provenance through chips and hover.",
+      "rationale": "Mounted launcher assertions check explicit speed and feature preservation through model and effort edits, default mode provenance in the selector and the retained instruction chip.",
       "role": "support"
     }
   ],
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
+            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
             "content": "sha256:17be3c090d1fb2451483e4bd738d2fa3addc4e634f3de2eb70fd28a866d9cdad",
             "locator": {
-              "end": 173,
+              "end": 179,
               "kind": "line_range",
-              "start": 147
+              "start": 153
             }
           },
           "kind": "test"
@@ -38,16 +38,28 @@
       ]
     },
     "2": {
-      "note": "Configured tier, incompatible-model refusal and foreign-agent default disclosure remain asserted.",
+      "note": "The mounted model fixture keeps Start disabled while the role model is unoffered and enables it after an offered model is selected. The other case checks configured speed, an incompatible model, and a foreign-agent default.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
-            "content": "sha256:a2ae369fd05974f67c97e4bfc0d5230fe7c250c894a763f6dcee7862b08c6bc6",
+            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
+            "content": "sha256:5b5ae72bf31c63571e135f7a85d4e7eeb90a4f106d92e745db3a1b61f7f10768",
             "locator": {
-              "end": 85,
+              "end": 129,
               "kind": "line_range",
-              "start": 71
+              "start": 105
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
+            "content": "sha256:0ecedd2eed7a6eda1bba94f2efb70870895bbf41bd902f147573fbb609513e16",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 131
             }
           },
           "kind": "test"
@@ -59,12 +71,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
+            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
             "content": "sha256:413ad7073a78fdb2cbd6e5963df05d9a04fd9a2f18f23eb0e4845a62daf20153",
             "locator": {
-              "end": 203,
+              "end": 209,
               "kind": "line_range",
-              "start": 178
+              "start": 184
             }
           },
           "kind": "test"
@@ -72,16 +84,33 @@
       ]
     },
     "4": {
-      "note": "Mounted R71 assertions read mode/instruction chips and their source hovers while retaining explicit-only feature submission and feature preservation.",
+      "note": "The mounted speed-only case checks the mode selector default and source, Instructions and settings-owned features.\n\nAnchor: \"submits only an explicit speed feature and offers the mode beside it\"",
       "targets": [
         {
           "anchor": {
-            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
-            "content": "sha256:a896582639d1f296d7cc640534e25b566cc36e2f60b6bad67ffcc0c508d0302d",
+            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
+            "content": "sha256:5a82e94e11ce68d2d711e24117f3e428c06702cd6c76d49bef42a10c9719b49d",
             "locator": {
-              "end": 255,
+              "end": 416,
               "kind": "line_range",
-              "start": 212
+              "start": 313
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Mounted dispatch carries the explicit mode before and after a model override.\n\nAnchor: \"carries the chosen mode in its override and keeps it across a model change\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
+            "content": "sha256:232b9d770912766addc39ec652afd000e8687220178258fbd79c4b0fd7f51c4f",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 420
             }
           },
           "kind": "test"

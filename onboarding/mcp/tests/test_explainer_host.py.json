@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+        "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+        "content": "sha256:79eed616551e01614386dbb8a4a520173c0ab497f4b90b1c5e4fde40c80be8ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_explainer_records_an_absent_host_mode_as_absent"
+        }
+      },
+      "facet": "No reported mode yields a null mode observation while choices.mode retains the requested mode.",
+      "id": "PRF-0ZA9GW",
+      "invariant": "INV-Z71VXZ",
+      "origin": {
+        "handoffEntry": "R11-explainer-records-observed-mode",
+        "leaf": "261112-BUG-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
         "content": "sha256:a1728df0ad659922a6e83babf6b38fba339cd29a309fd3d3aa0393ed8fe9d173",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+        "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
         "content": "sha256:54ad25438155a8811374bf50638a5b9b379b41f033598f1478465f876bc15b60",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,24 @@
     },
     {
       "anchor": {
-        "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+        "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+        "content": "sha256:fc46c2a1810f4dcca0f8e000760e7ddd8a3c98eb48a69a3876d424e237e4a069",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_explainer_records_a_differing_host_mode_apart_from_the_request"
+        }
+      },
+      "facet": "A differing host mode and its host report source appear in observedChoices.mode while choices.mode retains the requested value.",
+      "id": "PRF-QX7F5B",
+      "invariant": "INV-Z71VXZ",
+      "origin": {
+        "handoffEntry": "R11-explainer-records-observed-mode",
+        "leaf": "261112-BUG-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
         "content": "sha256:6ca1b39639c53c08ffa3877f362265824430318f6ef79c1cee2378483d333005",
         "locator": {
           "kind": "symbol",
@@ -56,14 +90,50 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The case `test_the_seat_is_created_with_the_capsule_and_no_first_prompt` protects the capsule being the seat's instructions with no first prompt.",
+      "note": "The case checks that the capsule is the seat's instructions and no first prompt is sent.",
       "targets": [
         {
           "anchor": {
-            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
-            "content": "sha256:2251afb8f0c6feb9fdd949c3270385fc23773d03f28afb5e032e1e9a558b2ef7",
+            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "content": "sha256:806c45493bacbf420bba47f97bf25cb6003d7906be4a9a94fbf2a6ec1b2895c9",
             "locator": {
-              "kind": "file"
+              "end": 238,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The explainer records a differing observed mode separately from the request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "content": "sha256:f8946e6b5d4c1f9500e0e367e3127eb1b79af72d81d49acb669eb914b6de309b",
+            "locator": {
+              "end": 535,
+              "kind": "line_range",
+              "start": 490
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The explainer records the absence of an observed mode while retaining the requested mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "content": "sha256:79eed616551e01614386dbb8a4a520173c0ab497f4b90b1c5e4fde40c80be8ea",
+            "locator": {
+              "end": 578,
+              "kind": "line_range",
+              "start": 536
             }
           },
           "kind": "test"
@@ -71,14 +141,16 @@
       ]
     },
     "4": {
-      "note": "The case `test_the_seat_state_reads_the_hosts_own_agent_view` protects seat state being read from the host's own turn fields.",
+      "note": "Seat state comes from the host's own turn fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
-            "content": "sha256:2251afb8f0c6feb9fdd949c3270385fc23773d03f28afb5e032e1e9a558b2ef7",
+            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "content": "sha256:49f9670479181d7233316d5fe891df1d6ae5eb20a3f9ee03fb1e838d6bc7fabf",
             "locator": {
-              "kind": "file"
+              "end": 421,
+              "kind": "line_range",
+              "start": 346
             }
           },
           "kind": "test"
@@ -86,14 +158,16 @@
       ]
     },
     "5": {
-      "note": "The case `test_the_settings_role_owns_the_seats_model_effort_and_mode` protects the role's model, effort and permission mode reaching the create and holding.",
+      "note": "The settings-selected model, effort and mode reach the create payload, and provenance keeps the reported mode.",
       "targets": [
         {
           "anchor": {
-            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
-            "content": "sha256:2251afb8f0c6feb9fdd949c3270385fc23773d03f28afb5e032e1e9a558b2ef7",
+            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "content": "sha256:3a0c86d2bcf485900c7b00d80913123a80335e48a10af80758165d2dde7e0063",
             "locator": {
-              "kind": "file"
+              "end": 488,
+              "kind": "line_range",
+              "start": 423
             }
           },
           "kind": "test"
@@ -101,14 +175,16 @@
       ]
     },
     "6": {
-      "note": "The cancel case sends the exact seat ID and request ID through the bridge, observes a stopped turn and closed pending permission decision, clears the recorded pending marker, and keeps the seat mode. This test uses a scripted bridge reply, so it is not proof of cancellation against a live host.\n\nAnchor: `test_a_cancel_targets_the_exact_seat_and_request_and_closes_the_pending_decision`",
+      "note": "The cancellation fixture checks the exact seat and request, a stopped turn, no open decision and the retained mode.",
       "targets": [
         {
           "anchor": {
-            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
-            "content": "sha256:2251afb8f0c6feb9fdd949c3270385fc23773d03f28afb5e032e1e9a558b2ef7",
+            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "content": "sha256:a1728df0ad659922a6e83babf6b38fba339cd29a309fd3d3aa0393ed8fe9d173",
             "locator": {
-              "kind": "file"
+              "end": 1128,
+              "kind": "line_range",
+              "start": 1050
             }
           },
           "kind": "test"
@@ -120,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
             "content": "sha256:54ad25438155a8811374bf50638a5b9b379b41f033598f1478465f876bc15b60",
             "locator": {
               "kind": "symbol",
@@ -136,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
             "content": "sha256:3224a7f50c9b23d6f037bc49ec3703a792874e6a81a9966d7eef4ab201aa130f",
             "locator": {
               "kind": "symbol",
@@ -152,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
             "content": "sha256:5589a062a0131069d27a1db2b7237611c1b4fb83ea41289d1ab023986803ff38",
             "locator": {
               "kind": "symbol",

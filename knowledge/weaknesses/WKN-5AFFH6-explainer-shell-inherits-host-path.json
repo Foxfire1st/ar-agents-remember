@@ -1,6 +1,6 @@
 {
   "anchor": {
-    "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+    "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
     "content": "sha256:c7a6dde00df7e3e295aa2c9cb7679c67d075358b17f44fee6333c2cc42969260",
     "locator": {
       "kind": "symbol",
@@ -25,7 +25,7 @@
     "leaf": "261112-BUG-L1",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",

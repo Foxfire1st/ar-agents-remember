@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b0b96e24b29925170a2a5fe03d961ed0fd115f2",
+            "blob": "2d53e1170ea541f8cd1cd39e66697d6d77484a8f",
             "content": "sha256:997a2d6491cb7e4362ef0665049e9066cc6ed66aeeb460a80c98f3580e3e1b96",
             "locator": {
               "kind": "symbol",
@@ -23,11 +23,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b0b96e24b29925170a2a5fe03d961ed0fd115f2",
+            "blob": "2d53e1170ea541f8cd1cd39e66697d6d77484a8f",
             "content": "sha256:f0cb5e0d7495fc15dd9b4df9925ff16991a2fc8a8b12d3de1e7cf8bcc2721df3",
             "locator": {
               "kind": "symbol",
               "name": "displayedModelLabel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The empty mode-selection option derives its value and provenance from the selected harness and resolved role defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d53e1170ea541f8cd1cd39e66697d6d77484a8f",
+            "content": "sha256:5111818d06b646c027b9649f6e1b61d7c7b1be781a93c7644e95eed5e1dffe85",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveModeChoice"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d53e1170ea541f8cd1cd39e66697d6d77484a8f",
+            "content": "sha256:112f081439ef45ce7734ac26173b0018a150bcd0f3ad0f1626d09910215d87cd",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 117
             }
           },
           "kind": "code"

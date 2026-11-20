@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
+    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
     "role": "curator",
-    "statement": "The page holds: the packaging metadata, the dashboard's media route, the two framework keys a cut answer adds (`runningOperation` and `cut`), a raised Playwright pin and a new dashboard package leave its install steps and its first-task steps true.",
-    "task": "261112-BUG-L7",
+    "statement": "Getting Started still guides the reader from Bootstrap setup to the first Chats launcher row for a fresh Architect start with default choices.",
+    "task": "261112-BUG-L11",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/cli/discovery.py"
     },
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -116,7 +116,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
     },
     {
-      "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+      "blob": "dce9e43dc96950f6e1bc1112f272f26e44c7bab4",
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },

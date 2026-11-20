@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
+    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
     "role": "curator",
-    "statement": "The capsule page's statements about the held mark on the launcher and message filing under the master or sprint still hold; it does not describe the launcher's Sprint field, and the new no-sprint choice leaves its claims accurate.",
-    "task": "261112-RSM-L1",
+    "statement": "The role-capsule guide's held-start passage still agrees with the launcher label for a bound role whose start is held.",
+    "task": "261112-BUG-L11",
     "uncommitted": true
   },
   "document": "docs/reference/role-capsules.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+      "blob": "dce9e43dc96950f6e1bc1112f272f26e44c7bab4",
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },

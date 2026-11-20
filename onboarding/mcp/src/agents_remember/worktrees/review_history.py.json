@@ -202,14 +202,14 @@
       ]
     },
     "5": {
-      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
             "locator": {
-              "end": 84,
+              "end": 87,
               "kind": "line_range",
               "start": 23
             },

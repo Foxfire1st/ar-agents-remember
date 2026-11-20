@@ -5,7 +5,7 @@
     ],
     "justification": "Selection correctness alone cannot preserve replay identity; the member obligations jointly bind admitted instruction/choice selection to its immutable durable delivery."
   },
-  "guarantee": "A failed-review threshold or explicit reason selects the user-configured alternative, with explicit same-start overrides retaining their fieldwise precedence and selected choices validated against the host. Its durable applied transition preserves exact retry identity and existing sealed review limits without resetting the code or memory lane.",
+  "guarantee": "A failed-review threshold or explicit reason selects the user-configured alternative with fieldwise precedence for the same-start agent, model and effort overrides. The launch validates the non-mode choices governed by known offerings before replacing the earlier role. The step-up mode uses the applicable row for the selected harness and yields to an explicit dashboard mode. If no mode applies, a known mode listing can supply the advertised host default. Otherwise the create request omits modeId. The durable transition preserves exact retry identity and the existing review limits for both lanes.",
   "id": "FAM-B7GVSN",
   "members": [
     "INV-N7G6M8",
@@ -19,7 +19,7 @@
     "leaf": "260928-MIK-L88",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/cli",
     "mcp/src/agents_remember/kernel"

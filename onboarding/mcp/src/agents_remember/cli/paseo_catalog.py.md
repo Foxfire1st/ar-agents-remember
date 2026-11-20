@@ -10,18 +10,16 @@ Owns launcher catalog discovery, host role-profile reads, source-precedence sele
 
 ## Code Commentary
 
-The settings role defaults carry origins/sources, host role and useHostDefaultMode through resolve_agent_selection; this is normal catalog-qualified launch resolution rather than a second explainer-specific model catalog.
+The explainer's settings role supplies launch choices, the host profile, settings sources and field origins to the shared role-launch resolver.
 
-Each operation asks Paseo afresh. A view asks for the full catalog; a start asks metadata and then the selected model’s features. A ContextVar shares these answers only within the current operation. The durable store is scoped by install prefix, home, listen and version and supplies only unanswered parts from their last successful answer. `resolve_agent_selection` resolves each choice by source precedence — explicit start call, host role profile, our settings, host default — while keeping lower choices bound to their authored provider/model: an incompatible lower value is omitted with its source and reason rather than reinterpreted. `read_host_role` reads the running host's profiles through a read-only bridge call; the first exact role-name match wins and an unreadable catalog falls back to role settings with the reason recorded. Mode is never a start-call argument. Ordinary resolution uses host profile, then applicable settings, then the explicit least offered working mode. A selected cross-provider/model step-up with no authored mode instead requests the host defaultModeId; concrete defaults must be offered when the mode list is known. If neither fresh nor saved mode data answers, the configured mode passes through unchecked; a known list still refuses an unoffered value. Features resolve per offered host metadata: `service_tier` and `fast_mode` are speed choices a start call may state, while permission-bearing and unknown-bearing values are refused and belong in user settings or the host profile. `serviceTier` stays independent of effort, is revalidated for model overrides, matches offered IDs before labels without case, and is never replaced with a different offered choice. There is no local fast-to-priority alias. `launcher_options` publishes resolved values with per-choice sources, and empty feature maps stay out of old request digests.
+Each operation asks Paseo afresh. A view asks for the full catalog; a start asks metadata and then the selected model’s features. A ContextVar shares these answers only within the current operation. The durable store is scoped by install prefix, home, listen and version and supplies only unanswered parts from their last successful answer. `resolve_agent_selection` resolves each choice by source precedence — explicit start call, host role profile, our settings, host default — while keeping lower choices bound to their authored provider/model: an incompatible lower value is omitted with its source and reason rather than reinterpreted. `read_host_role` reads the running host's profiles through a read-only bridge call; the first exact role-name match wins and an unreadable catalog falls back to role settings with the reason recorded. The resolver applies a launcher-chosen mode first, then the applicable host profile's mode and the settings row's mode on its own harness. With no applicable named mode, it uses the host-advertised default when the selected harness's modes are known and the host advertises one. Without an applicable choice the start omits mode. A matching listed name or label resolves to its ID. An unmatched named mode passes through for the host to handle. With unknown offers, the named choice or its absence is preserved. Features resolve per offered host metadata: `service_tier` and `fast_mode` are speed choices a start call may state, while permission-bearing and unknown-bearing values are refused and belong in user settings or the host profile. `serviceTier` stays independent of effort, is revalidated for model overrides, matches offered IDs before labels without case, and is never replaced with a different offered choice. There is no local fast-to-priority alias. `launcher_options` publishes resolved values with per-choice sources. The request-digest owner removes empty override feature maps before hashing.
 
 
-**L184 — NEW-R192-EXTRA-ARGS.** This is where the launch record is assembled from the plan, so a plan the start did not build leaves the field out of the record. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+The resolver adds `extraArgs` to the launch options only when the selected harness has a nonempty plan.
 
 ## Current Contract — Scoped Launch And Settings Changes
 
-launcher_options exposes each role’s configured stepUp alternative. resolve_agent_selection validates the selected provider/model/effort, mode and offered features where a fresh or saved answer exists before creation; unanswered parts pass their configured values through unchecked, then labels selected user-authored alternative values with the step-up source while leaving host defaults and explicit start-call provenance distinct.
-
-Ordinary no-mode launches keep the existing least offered working mode policy. When mode data is known, a cross-provider/model step-up without its own mode passes useHostDefaultMode and takes that host’s defaultModeId instead; any non-null result must match that known offering. If neither a fresh nor a saved mode answer exists, the configured mode passes through unchecked. This is not an unconditional least-mode guarantee and does not transfer another harness’s mode/features or authorize permission-bearing start arguments.
+launcher_options exposes each role’s configured stepUp alternative. The resolver validates provider, model, effort and selected features against each known catalog part. It resolves mode by the shared host-owned rule. It labels selected authored alternative values with the step-up source and keeps host-default and launcher provenance distinct.
 
 Runtime identity, explicit provider refresh, host-profile discovery, per-choice provider/model binding and omitted lower-choice disclosure remain with this owner. The host’s IDs and labels govern spelling normalization; disk persistence belongs to paseo_catalog_store.
 
@@ -30,22 +28,32 @@ Runtime identity, explicit provider refresh, host-profile discovery, per-choice 
 - Options include the configured alternative. [6]
 
 
-- Host catalog validation and step-up provenance share the existing resolver. [7]
+
+- Catalog validation and step-up provenance share the role-start resolver. [7]
 
 
-- The host-default-mode path remains conditional; concrete modes are checked when mode data is known, while unknown mode data passes the configured value through. [8]
 
-- Test source contrasts ordinary auto with step-up host default. [9]
+
+- Known mode offers can supply the host's advertised default. An unmatched named mode passes through for the host to handle. [8]
+
+
+
+- A cross-model alternative with no mode uses the host default while the base keeps its configured mode. [9]
+
 
 
 - Frozen implementation of launcher_catalog supporting the stated file behavior. [1]
 
 
-- Frozen implementation of resolve_agent_selection supporting the stated file behavior. [2]
+
+- The shared resolver binds each launch choice to its source and the selected harness. [2]
 
 
 
-- Frozen implementation of _selection_refusal supporting the stated file behavior. [3]
+
+
+- Provider, model and effort offers govern selection refusals. [3]
+
 
 
 
@@ -53,7 +61,13 @@ Runtime identity, explicit provider refresh, host-profile discovery, per-choice 
 
 
 
-- Checks rejected choices create no receipt, workspace, agent or enclosure. [5]
+
+- Catalog validation rejects disallowed selections. A refused model stops before workspace resolution. [5]
 
 
-- The settings role defaults carry origins/sources, host role and useHostDefaultMode through resolve_agent_selection; this is normal catalog-qualified launch resolution rather than a second explainer-specific model catalog. [10]
+
+
+- The explainer's settings role supplies the choices, host profile, settings sources and field origins to the common resolver. [10]
+
+- The mode follows launcher, applicable host profile and matching settings-row precedence. The create request includes a mode only when resolution supplies one. [11]
+- The digest excludes an empty feature override map. [12]

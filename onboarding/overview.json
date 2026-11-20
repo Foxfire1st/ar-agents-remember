@@ -4450,11 +4450,11 @@
       ]
     },
     "365": {
-      "note": "Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,327 words against an equal ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run.",
+      "note": "Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,324 words against a 2,327-word ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run.",
       "targets": [
         {
           "anchor": {
-            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "blob": "89e0130ed7df6e351e9eb1020d26b8014f6f8986",
             "content": "sha256:9c5f28574f34d8206f5408394964aaf4ccfd8c658438df035a4fce7285c6ca7e",
             "locator": {
               "end": 6178,
@@ -4467,8 +4467,8 @@
         },
         {
           "anchor": {
-            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
-            "content": "sha256:8d6069064c657e014f754a7196420cd9de32438fa3bf54e5d3a8381f7c463ead",
+            "blob": "89e0130ed7df6e351e9eb1020d26b8014f6f8986",
+            "content": "sha256:30392cd827d346d929b8bbd0b3c0d810fcb27a9bbf8dd7be2e08491ac8084800",
             "locator": {
               "end": 6265,
               "kind": "line_range",
@@ -4519,7 +4519,7 @@
         },
         {
           "anchor": {
-            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "blob": "89e0130ed7df6e351e9eb1020d26b8014f6f8986",
             "content": "sha256:a21d8fbeade96f460c50dc5451345a3d1b287f7a4a3bb84239ef8d0d75a3f85b",
             "locator": {
               "end": 5396,
@@ -4784,7 +4784,7 @@
         },
         {
           "anchor": {
-            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
             "content": "sha256:8d29e140ddd3d61e07c4e50481a745a5c699cc8c6d22b54b9bead5dc726e22c6",
             "locator": {
               "end": 65,
@@ -4836,12 +4836,12 @@
         },
         {
           "anchor": {
-            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
             "content": "sha256:ce161272614d41159cb2cd2461007466b8db6bf4c3ad9725c46b82b598305c20",
             "locator": {
-              "end": 68,
+              "end": 69,
               "kind": "line_range",
-              "start": 51
+              "start": 52
             },
             "path": "mcp/src/agents_remember/models/role_launcher.py"
           },
@@ -5481,12 +5481,12 @@
       ]
     },
     "86": {
-      "note": "The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder.\n\nAnchor: `Handle a developer-declared takeover`",
+      "note": "The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder.  Anchor: `Handle a developer-declared takeover`",
       "targets": [
         {
           "anchor": {
-            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
-            "content": "sha256:81d7ff8fc8c18376dcadb68e747b9ee15ff4e928242e7fc0a8c710a84c89cb19",
+            "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
+            "content": "sha256:00c5c6738dbba46727a916f6bc65c8efe98daf91f546b98d681279418a965740",
             "locator": {
               "end": 55,
               "kind": "line_range",
@@ -5762,7 +5762,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+            "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
             "content": "sha256:ad81b5d92d457e5c9612b50047488a6ad3ecfb1a52ed7213bde9a3dd7a539c4d",
             "locator": {
               "end": 22,

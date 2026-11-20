@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:da9bb84ab152d8536f1b564e85fc8e34c877b27ff313d5c52d3f751764b17d81",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:21f0800be2a7997db8296707a004b040b28dba444cb781207687a04bf3ee2259",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
         "locator": {
           "kind": "symbol",
@@ -94,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-        "content": "sha256:67430d25426b08cbcf32fd77c3ad62a3f43489b11864e45a57c31c5008847c4d",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_mode"
@@ -107,12 +107,12 @@
         "handoffEntry": "L202-M1-mode-offers",
         "leaf": "260928-MIK-L202"
       },
-      "rationale": "Uses known offers to resolve defaults or refuse a named value, while unanswered offers leave configured mode unchecked.",
+      "rationale": "A matching named mode can be canonicalized to its offered identifier. An unlisted named mode reaches Paseo as named, and only a known listing can supply its advertised default.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:620526a163bd5b191428039bdfb97ab0ce593c22b9ec51e2f05bb1ea55895ec4",
         "locator": {
           "kind": "symbol",
@@ -130,8 +130,8 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-        "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "content": "sha256:69f637c761167dc15d8b99a868e04068f45d10e52e2fecd4eacc1bf24bb2fc86",
         "locator": {
           "kind": "symbol",
           "name": "resolve_agent_selection"
@@ -143,13 +143,13 @@
         "handoffEntry": "L202-A6b-shared-fresh-catalog",
         "leaf": "260928-MIK-L202"
       },
-      "rationale": "Validates known offers before creation and leaves choices unchecked only for unanswered parts.",
+      "rationale": "Resolves provider, model and effort against their known latest fresh or saved catalog parts before creation. Permission mode follows the host-owned acceptance rule.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-        "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "content": "sha256:c41effe9759b118d49fa0cc900ee67bce26c52bb7b80b59a64557563ae360a27",
         "locator": {
           "kind": "file"
         }
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:54b6ef2a933944520c73acab6fbbcf27cb55859f30f861d728f627d6fcde5299",
         "locator": {
           "kind": "symbol",
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:d6760aa54784fc632ef9b14625915a343b8caf98e0d524bcbdeb1e2e57c253c9",
         "locator": {
           "kind": "symbol",
@@ -201,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:40c6195a6d5fe3993fdd56133bde208da01b7adffd23af71e23dfa57f5342ca5",
         "locator": {
           "kind": "symbol",
@@ -219,8 +219,8 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-        "content": "sha256:9d4087a3a9ee3ee4277be5feb9389d15a256d9d55f0d417c5cbe3f39ffebfe46",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "content": "sha256:ce43da070683e060637f2c7bb5280bedae7908e8eb563e6bce8e16d92696e922",
         "locator": {
           "kind": "symbol",
           "name": "settings_role_launch"
@@ -232,13 +232,13 @@
         "handoffEntry": "L183-settings-seat-launch-and-lazy-resume",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "The settings role defaults carry origins/sources, host role and useHostDefaultMode through resolve_agent_selection; this is normal catalog-qualified launch resolution rather than a second explainer-specific model catalog.",
+      "rationale": "The settings role defaults carry origins and host-profile data through the shared resolver. The explainer therefore uses the ordinary launch mode rule and has no separate resolver.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-        "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "content": "sha256:69f637c761167dc15d8b99a868e04068f45d10e52e2fecd4eacc1bf24bb2fc86",
         "locator": {
           "kind": "symbol",
           "name": "resolve_agent_selection"
@@ -255,7 +255,7 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:66a8b3fc57f621f7f7d97009ee3df3c3d0e7e05bc491e30032c9f07b48e5d835",
         "locator": {
           "kind": "symbol",
@@ -273,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:9c2ca81f6a5216bcf902204da2632f872bba64b511ad27977b39bb6c3f004ab3",
         "locator": {
           "kind": "symbol",
@@ -291,8 +291,8 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-        "content": "sha256:9d4087a3a9ee3ee4277be5feb9389d15a256d9d55f0d417c5cbe3f39ffebfe46",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "content": "sha256:ce43da070683e060637f2c7bb5280bedae7908e8eb563e6bce8e16d92696e922",
         "locator": {
           "kind": "symbol",
           "name": "settings_role_launch"
@@ -309,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:40c6195a6d5fe3993fdd56133bde208da01b7adffd23af71e23dfa57f5342ca5",
         "locator": {
           "kind": "symbol",
@@ -327,7 +327,7 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:8a9b221e6e947655d7e8c9a202ee41d6a9b1a1c2b902f7b82c40a496208bfe76",
         "locator": {
           "kind": "symbol",
@@ -350,7 +350,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
             "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
             "locator": {
               "kind": "symbol",
@@ -362,40 +362,93 @@
       ]
     },
     "10": {
-      "note": "The settings role defaults carry origins/sources, host role and useHostDefaultMode through resolve_agent_selection; this is normal catalog-qualified launch resolution rather than a second explainer-specific model catalog.\n\nAnchor: `settings_role_launch`",
+      "note": "The explainer's settings role supplies the choices, host profile, settings sources and field origins to the common resolver.",
       "targets": [
         {
           "anchor": {
-            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:ce43da070683e060637f2c7bb5280bedae7908e8eb563e6bce8e16d92696e922",
             "locator": {
-              "kind": "file"
+              "end": 837,
+              "kind": "line_range",
+              "start": 810
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Frozen implementation of resolve_agent_selection supporting the stated file behavior.\n\nAnchor: `resolve_agent_selection`",
+    "11": {
+      "note": "The mode follows launcher, applicable host profile and matching settings-row precedence. The create request includes a mode only when resolution supplies one.",
       "targets": [
         {
           "anchor": {
-            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-            "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:03486b1da4a44c77a9cb965476fa8f9db5d3f0fbafdd3127ca21d3ee475ec203",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_agent_selection"
+              "end": 365,
+              "kind": "line_range",
+              "start": 348
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:5f67a7a9003eb64471e805484105c55d118baff4839f8c2c587757c886b68262",
             "locator": {
-              "kind": "file"
+              "end": 434,
+              "kind": "line_range",
+              "start": 427
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+            "content": "sha256:b0aedec5125e7a9ab2a347fbf26618023f1a8302ba3b7c6b309cbd0a0747ac5e",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 449
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The digest excludes an empty feature override map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
+            "content": "sha256:6e1e9914f4cc0d0fbe3a0f34fc74430708e260aa16b1b528ff2fca05686bbe4f",
+            "locator": {
+              "end": 628,
+              "kind": "line_range",
+              "start": 606
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared resolver binds each launch choice to its source and the selected harness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:69f637c761167dc15d8b99a868e04068f45d10e52e2fecd4eacc1bf24bb2fc86",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 238
             }
           },
           "kind": "code"
@@ -403,14 +456,16 @@
       ]
     },
     "3": {
-      "note": "Frozen implementation of _selection_refusal supporting the stated file behavior.\n\nAnchor: `_selection_refusal`",
+      "note": "Provider, model and effort offers govern selection refusals.",
       "targets": [
         {
           "anchor": {
-            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:4d49785357172ac07242a523135076e79f19c3b0df5243054109e7bca22db8e2",
             "locator": {
-              "kind": "file"
+              "end": 722,
+              "kind": "line_range",
+              "start": 675
             }
           },
           "kind": "code"
@@ -436,16 +491,16 @@
       ]
     },
     "5": {
-      "note": "Checks rejected choices create no receipt, workspace, agent or enclosure.",
+      "note": "Catalog validation rejects disallowed selections. A refused model stops before workspace resolution.",
       "targets": [
         {
           "anchor": {
             "blob": "00532bdbe263591821e2365606c47747da6ed99a",
-            "content": "sha256:76deccd2f509435da730cdd3a5519c9a381776b2e2ca596aebb34dc673bf64a8",
+            "content": "sha256:b9895886bde75c0eda26d00974e48f0f41f404818c1da3fde921471c5125d980",
             "locator": {
-              "end": 336,
+              "end": 374,
               "kind": "line_range",
-              "start": 293
+              "start": 303
             },
             "path": "mcp/tests/test_paseo_catalog.py"
           },
@@ -458,7 +513,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
             "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
             "locator": {
               "kind": "symbol",
@@ -470,41 +525,46 @@
       ]
     },
     "7": {
-      "note": "Host catalog validation and step-up provenance share the existing resolver.\n\nAnchor: `resolve_agent_selection`",
+      "note": "Catalog validation and step-up provenance share the role-start resolver.",
       "targets": [
         {
           "anchor": {
-            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-            "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:f2bc8e53d75dafa5b479dc412432bd659774c4da230f34a39c36fa3746170a8f",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_agent_selection"
+              "end": 442,
+              "kind": "line_range",
+              "start": 335
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:af56bd1828bf5bab8bb58518a671be4a4ed128dc74c06fb075bfae604adfbd20",
             "locator": {
-              "kind": "file"
-            }
+              "end": 168,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
           },
           "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "The host-default-mode path remains conditional; concrete modes are checked when mode data is known, while unknown mode data passes the configured value through.",
+      "note": "Known mode offers can supply the host's advertised default. An unmatched named mode passes through for the host to handle.",
       "targets": [
         {
           "anchor": {
-            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-            "content": "sha256:67430d25426b08cbcf32fd77c3ad62a3f43489b11864e45a57c31c5008847c4d",
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_mode"
+              "end": 554,
+              "kind": "line_range",
+              "start": 532
             }
           },
           "kind": "code"
@@ -512,15 +572,16 @@
       ]
     },
     "9": {
-      "note": "Test source contrasts ordinary auto with step-up host default.",
+      "note": "A cross-model alternative with no mode uses the host default while the base keeps its configured mode.",
       "targets": [
         {
           "anchor": {
-            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
-            "content": "sha256:8e1cbf50b78103e452181875e3898119f4603b2fe5c917edba5407a5f1d730db",
+            "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
+            "content": "sha256:f7641d56f47f7eb46ff84945ae4ea38f0d865a1b4d5c078bd47aa6edd3a06d41",
             "locator": {
-              "kind": "symbol",
-              "name": "test_cross_model_omitted_mode_uses_host_default_without_changing_base"
+              "end": 98,
+              "kind": "line_range",
+              "start": 66
             },
             "path": "mcp/tests/test_step_up_choice_validation.py"
           },

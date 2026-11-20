@@ -4659,7 +4659,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
             "content": "sha256:e15e9e9fbb08a43542e1401acb3e6ba1f5bbf051f7b4f2cba4128ebcd48548bc",
             "locator": {
               "kind": "symbol",
@@ -4671,7 +4671,7 @@
         },
         {
           "anchor": {
-            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
             "content": "sha256:805168af60c28797b6db053b1d928ab341e428856a8558395fa614997b343b83",
             "locator": {
               "kind": "symbol",
@@ -4837,6 +4837,50 @@
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "341": {
+      "note": "The dashboard launcher carries modeId and role-start tool inputs omit mode. Permission-bearing start-call features still refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
+            "content": "sha256:9ec474cab516dfa6fb8db235bd3e83ab8ffc3a559f55f559b2c4ea8637d0929c",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
+            "content": "sha256:b111fb9dbad84f24b136385801bcf69e8c0bf46bb5ccb89e579f441bb7ee6ef6",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "content": "sha256:1eb8e1957f5909664f454c837caf8a859864958313ace8829f8d27b49f421736",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 253
+            },
+            "path": "mcp/tests/test_paseo_catalog_r71.py"
+          },
+          "kind": "test"
         }
       ]
     },

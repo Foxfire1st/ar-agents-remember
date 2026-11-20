@@ -4,16 +4,19 @@
       "spans_locations",
       "family_guarantee"
     ],
-    "justification": "All start routes exclude caller permission authority; the shared catalog validates ordinary least-mode or explicitly selected cross-scope host-default mode against known offers, while an unanswered mode part leaves a configured choice unchecked."
+    "justification": "The mode rule spans dashboard overrides, provider-bound settings and host profiles, catalog default discovery, the create payload and receipt observation. Each location preserves its input or observation without replacing Paseo as the decision-maker."
   },
-  "applicability": "Every role start route that resolves a working mode.",
+  "applicability": "New role-agent starts through the dashboard and the MCP role-start tools.",
   "conditions": [
-    "Existing user/profile precedence remains provider-bound.",
-    "With known mode offers, only an omitted cross-scope step-up mode takes the offered host default; ordinary fallback remains least working.",
-    "Unavailable mode answers use the saved successful part; without either answer a configured mode stays unchecked. A known unoffered named mode refuses before creation."
+    "A host-profile mode applies to the provider named by that profile. A configured settings mode applies to its own settings harness.",
+    "The mode listing uses its fresh answer or last successful saved answer. An unanswered mode listing with no saved answer does not supply a default.",
+    "A known listing can canonicalize a matching mode to its identifier. A named mode absent from the listing, or supplied while the listing is unknown, reaches the host as named.",
+    "A role launch receipt records the host observation separately from a named launcher, profile or settings choice. For a host-default choice it also reports the observed mode as the value. The saved replay request retains the create payload."
   ],
   "exclusions": [
-    "Caller-supplied mode arguments or permission-bearing feature arguments, which no start route accepts."
+    "A dashboard modeId is a distinct field. Permission-bearing and unknown-bearing start-call feature values remain subject to the user-settings authority check.",
+    "Mode observation records what Paseo reports. It does not certify that Paseo always applies a named mode.",
+    "MCP role_start and role_start_set accept no permission-mode argument. A receipt-bound replay preserves the recorded choices instead of making a new selection."
   ],
   "id": "INV-7DMXZ3",
   "origin": {
@@ -27,9 +30,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "No start route accepts a caller mode or permission-bearing feature argument. With known mode offers, ordinary starts without an applicable authored mode use the least offered working mode, and an explicitly selected cross-provider/model step-up with omitted mode uses the offered host default. A known unoffered mode is refused; when neither a fresh nor saved mode answer exists, a configured mode passes to Paseo unchecked.",
+  "statement": "For a new role-agent start, an explicit dashboard permission mode precedes the applicable host profile and matching settings row. When none supplies a mode, the create request uses an advertised host default only for a known mode listing. Create omits modeId when no mode applies. Paseo decides which mode it can apply.",
   "status": "proposed",
   "supersedes": []
 }

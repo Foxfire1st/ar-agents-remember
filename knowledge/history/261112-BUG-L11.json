@@ -1,0 +1,2190 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L11",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0158GB",
+      "items": [
+        "sha256:ab9da72c8c9a7fbc7847af0ea7560630d36c7c8431474e7030894afe9f4ac1b6"
+      ],
+      "reason": "The applied-check docstring explains why mode admission belongs to the host. The actual missing-report and applied-choice predicates carry the durable rule in the separately attached execution hunks.",
+      "subject": "hunk:sha256:ab9da72c8c9a7fbc7847af0ea7560630d36c7c8431474e7030894afe9f4ac1b6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-061252",
+      "items": [
+        "sha256:ffc35aa9bedacf6bf8de950910092cf71f6e90e68f7bcff670a92c6467619a7b"
+      ],
+      "reason": "The renewed hash and size values keep the same canonical source and membership structure, so the card's description remains current.",
+      "sources": [
+        {
+          "blob": "40de36b14c4a66514b1c7de087292af8271fc546",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/digest-map.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
+            "content": "sha256:8b9547be89380e5997e7e1ca5aa5584a251f46ec46d26238f450f7520d10c3ce",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "before": {
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+            "content": "sha256:d93f0f515c2ea493d145d063ee7e6b98a7a555cf1b6298f28ef5ffbcb4fc684a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "id": "RLZ-BNWWSD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0BGCJW",
+      "items": [
+        "sha256:d32384f592739d6543316703788378b351bcba9b727f026c7b0634e3e621cf37"
+      ],
+      "reason": "The feature-only startup edit keeps the current role-start route and does not restore the retired agent or gate plane. The source and shipped copy retain the Curator and Architect document boundaries.",
+      "revision": 3,
+      "subject": "INV-CQCPAD"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0V8R02",
+          "revision": 1
+        },
+        {
+          "id": "INV-HJ5A68",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q2HENX",
+          "revision": 1
+        },
+        {
+          "id": "INV-W6HBYY",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-0VNGES",
+      "items": [
+        "sha256:7b89f4b193140ec167cc25e3892d325a9fc6ef795d984ba269446d09f71749e8"
+      ],
+      "reason": "The renewed AU4.2 source hash and change without links leave delivered link resolution, pointer action scope and manifest declaration alignment intact.",
+      "revision": 1,
+      "subject": "FAM-8DPMB4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-14JTYE",
+      "items": [
+        "sha256:21c7f611db49bb710d33f6acea3b54708d79f540d83d5bda6c31db84559f461c"
+      ],
+      "reason": "Describe fresh-create explainer checks and normalized observation, effective step-up harness and resolver precedence, and known non-mode offering refusals with independent start-call feature authority.",
+      "sources": [
+        {
+          "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+          "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+        },
+        {
+          "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+          "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+        },
+        {
+          "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+          "path": "mcp/src/agents_remember/cli/role_step_up.py"
+        },
+        {
+          "blob": "89e0130ed7df6e351e9eb1020d26b8014f6f8986",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/authority.md"
+        },
+        {
+          "blob": "40de36b14c4a66514b1c7de087292af8271fc546",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/every-role.md"
+        },
+        {
+          "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/launcher.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
+            "content": "sha256:dcbbec9afe56359cd9997d5518db949c4fc6d83fa892b10fe632db92507d8f06",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "before": {
+            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "content": "sha256:b07a8b7fec70760763225f4587cc207b9018ded1e2389703e8c49293eee91e3a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "id": "RLZ-7HQW7Z"
+        },
+        {
+          "after": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:69f637c761167dc15d8b99a868e04068f45d10e52e2fecd4eacc1bf24bb2fc86",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-SR53ZZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-18TYWG",
+      "items": [
+        "sha256:c090500169623b4d856971acdc79800c9dd05f5e8127ccc6c9e3d431a54119e8"
+      ],
+      "reason": "The provider, model, effort and speed contract still validates known catalog data and reaches the create request. The W7 mode override is a separate field with Paseo-owned acceptance.",
+      "revision": 2,
+      "subject": "INV-AFTG56"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-18Z3HH",
+      "items": [
+        "sha256:096d80903016dc6a26bc8ba9ad03f92cbc47c399799b35130ea257bdc63e8e1b",
+        "sha256:1a94f3591a63e6fdf3ba496d1cd5ea346a98f571af4d9887dd04b800b4377cde",
+        "sha256:2914545c430ea05b735aeeed45c2d68cd23c462db732e0b133dbcc1399466172",
+        "sha256:6ec5ac50f9cd0d41f89b1bcfb5f6337726b3bc999aa5c0a709779605d6a674b1",
+        "sha256:828275b0fd077d63e5a4e12e308835569a53f75510695b732ce1236e65a0721f"
+      ],
+      "reason": "Add the differing and absent host-mode assertions and keep the remaining applied checks distinct.",
+      "sources": [
+        {
+          "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+          "path": "mcp/tests/test_explainer_host.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_host.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1PNRPX",
+      "items": [
+        "sha256:8387193fab6afea7fda0c4c8b162d094357bd9bd71a7099a83a3e88a923c65c0"
+      ],
+      "reason": "Includes mode in the existing selection-equivalence comparison used by roleChatControls.ts:181 when settling busy state for the same selection. This is the local identity bookkeeping needed for a new field. The preservation and dispatch guarantees are supported by the override helper and normal caller paths.",
+      "subject": "hunk:sha256:8387193fab6afea7fda0c4c8b162d094357bd9bd71a7099a83a3e88a923c65c0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1SHRBJ",
+      "items": [
+        "sha256:21fbc206f24f7d3847edb6b618951558374cbbd1c0a3e46e03982d07ec4037d3"
+      ],
+      "reason": "Describe the settings and override mode sources and the remaining post-start feature check.",
+      "sources": [
+        {
+          "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
+          "path": "skills/l-01-agent-lifecycles/core/authority.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R11",
+          "packet": "requirements/BUG-R11-v1-a-role-agent-starts-in-its-permission-mode.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:f809131a7402b6feb4b1c9f6aa02b2de335a2bf656c57a07f9d34400aeedaf2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_step_up"
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "before": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:ac093d6b5a4eea28a4db8eedd16a5c4d354a599e08f75d762f56fd86071f2683",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_step_up"
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "id": "RLZ-6P74BN"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-34VRGG",
+      "items": [
+        "sha256:6e90c80d5f0410966c11828cd6cd7a3e2356ebb0a197c61d1f19f12035954cf5"
+      ],
+      "reason": "BUG-R11 keeps the step-up triggers and same-start agent, model and effort precedence. The selected step-up row supplies mode on its effective harness, including a harness inherited from role defaults. The final resolver gives an explicit dashboard mode precedence over the applicable alternate mode. When neither applies, known modes and an advertised host default are both required for a mode field. The predecessor’s mode is never inherited.",
+      "revision": 2,
+      "subject": "INV-N7G6M8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-39XKXT",
+      "items": [
+        "sha256:fae6d452fb2dc6005ad60f6fa003c48ee26baae61e1c8cd307edb03024fb3b74"
+      ],
+      "reason": "Ordinary feature rendering and cleanup continue. The ready ordinary defaults component renders the optional Instructions chip, mode has a separate selector, and the step-up Base preview keeps its mode chip.",
+      "sources": [
+        {
+          "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
+          "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4ASJFG",
+      "items": [
+        "sha256:164209c0771b40e5c083d908ed6e84c2c5764f43a18496b1a2aa86cb11ca421a",
+        "sha256:196cc1fdf41ecbef78da748aa984388860c264cc86a93f746aa84523419bc779",
+        "sha256:1bb6638daa2aa812d93224eddf8e286a564a2bc4a6977e92687c780c33211339",
+        "sha256:3fbe51b5eb3918fd13a622263d846f035f6b39249c6d7ca0b96d3e97d73f07ea",
+        "sha256:5f7848ad0a6f69f22f77e8064a3f20512044ee5dfcb294f99c0221d401022bed",
+        "sha256:6de0f22dc44805681302cf43ea90dfa8960b4295c12f3ac803dc9328317161ec",
+        "sha256:734b2c7fbbed4bd7f57cbfba952f3d986a5e529c1acae7c5bd6573fff0127e3e",
+        "sha256:75e3ed2d146179fe470525ae0535d562805cb109f12ee85087cf3b9f2cee8012",
+        "sha256:88e5571907c52c28a956315c8bc0eb15b2dd56647b391b47953698845ac4f720",
+        "sha256:a601a37b8b98296b443ac13e7028d0b72340e7e706182f01f23c87260beb3d40",
+        "sha256:c0d4e9071022fe60379fdcb0c13df665c2c1ed51acf969cf00b074a26f0af0e9",
+        "sha256:cda987f232c0086e8fbbf0be6ea5107cc83ad39f4a187ce7c81cc772fd3e9744"
+      ],
+      "reason": "Describe mode label, source and agent change assertions and the shared selector and Instructions styling.",
+      "sources": [
+        {
+          "blob": "cdf3c726ec46027f62252734c25669d5bf58edd2",
+          "path": "dashboard/src/cockpit/RoleLauncher.row.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleLauncher.row.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4J6C32",
+      "items": [
+        "sha256:53ca8d673ca983baeabbe6c5bc294b5d8650d50d45418f5e1774a1fe1e6ec0a5"
+      ],
+      "reason": "Distinguish fresh create checks, adoption and conditional resume checks. Document the normalized initial host mode and flat resume fill separately from requested mode provenance.",
+      "sources": [
+        {
+          "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+          "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_explainer_host.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4NRG8T",
+      "items": [
+        "sha256:34e3044d2cac323e690385e054a26f8b9e9a822b268cd69cca7fa51e47586a4d"
+      ],
+      "reason": "Removes the old local chip lookup and replaces it with a comment identifying the composition. The remaining comment carries no executable choice behavior. The new resolver and selector carry the current rule.",
+      "subject": "hunk:sha256:34e3044d2cac323e690385e054a26f8b9e9a822b268cd69cca7fa51e47586a4d"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R11",
+          "packet": "requirements/BUG-R11-v1-a-role-agent-starts-in-its-permission-mode.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
+            "content": "sha256:df97cad78c77873d7101e258358c846543f712d98291b781d67f10916d6090db",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/core/launcher.md"
+          },
+          "before": {
+            "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+            "content": "sha256:08d7ac8bc44d256776de89e0dbcc1c097e9f8448707cf063a24db68d1a8bcb2d",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/core/launcher.md"
+          },
+          "id": "RLZ-EDMVAT"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-4Z7E1V",
+      "items": [
+        "sha256:8bdda0ed347328a7dcef918cc60fd8d56c3f9b34c3dad0652af46c43d7fb53f4"
+      ],
+      "reason": "BUG-R11 v1 introduces dashboard mode selection but keeps the unbound tool signature, no-document Architect, eligible selections and no-parent boundary. Limit the mode restriction to the MCP tool.",
+      "revision": 2,
+      "subject": "INV-85VB61"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R11",
+          "packet": "requirements/BUG-R11-v1-a-role-agent-starts-in-its-permission-mode.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "dce9e43dc96950f6e1bc1112f272f26e44c7bab4",
+            "content": "sha256:2a3f8dafa958e0c35195fcdd23084e38dd88769b7888451af258b78fefadf2a0",
+            "locator": {
+              "end": 740,
+              "kind": "line_range",
+              "start": 727
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-DJZJ2C"
+        },
+        {
+          "after": {
+            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
+            "content": "sha256:417e93f9a44d33e68a70e868db67198dcf8fdb8a1fe0ad772c9a082447a1b052",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "before": {
+            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
+            "content": "sha256:be9d9c913c16b5803f00f5b9414094fb4a66f6cfd5e41abce610cec136c3218f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "id": "RLZ-DKX1HV"
+        },
+        {
+          "after": {
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:45e6b45f00be2920dd47f3e59b44b5b155fa5d044b34d2ac3b8c2b9f79161961",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleAgentOverrideFor"
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "before": {
+            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+            "content": "sha256:7ed744ab627d402113afe4684874a13c629adb422c4573b9371debc2d12020a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleAgentOverrideFor"
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "id": "RLZ-EPB617"
+        },
+        {
+          "after": {
+            "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
+            "content": "sha256:d53d8119487a1ae9079c5088f9fed06a8f67b17323ea9c4379433a75f52fbcb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLaunchDefaults"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "before": {
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "content": "sha256:e35d363ea0c0769d4eefb5b11118d0e50e1cf0f355fdc7ae55d488c60f6b2854",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLaunchDefaults"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "id": "RLZ-G82K8R"
+        },
+        {
+          "after": {
+            "blob": "dce9e43dc96950f6e1bc1112f272f26e44c7bab4",
+            "content": "sha256:056aff43f0dd1b87c3bd2c620a91805ce770d5db950fd43df17e80796f37897e",
+            "locator": {
+              "end": 676,
+              "kind": "line_range",
+              "start": 565
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+            "content": "sha256:3ce7369a5577704e0156be3fde1ae43e6b2aa2c9eafabc52ca7ec8f99b6e715b",
+            "locator": {
+              "end": 693,
+              "kind": "line_range",
+              "start": 587
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-N85X2R"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-5R92JA",
+      "items": [
+        "sha256:e6399272c019f4694f0d9828f32f46b48e085c788f4cc24736de5d3e75f808a5"
+      ],
+      "reason": "The W7 launcher now retains an explicit mode through model and effort changes alongside the prior feature map and reinitializes selection on a different agent. The mode selector carries ordinary default provenance and the preview branch still labels base choices as non-applied after step-up. Evidence (curate-w7-dashboard-mode-controls): W7 code tree and Reviewer W7-round6-verdict.md launcher continuity.",
+      "revision": 4,
+      "subject": "INV-63Z0MN"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5WZTAE",
+      "items": [
+        "sha256:18082fcda88e2d7d57aca5c06843a2882c82187360fa2abf264b653e9c69d000",
+        "sha256:3d5aaf405c65b5374b110effc27c02671f65352a13c2818f09417902927adbab"
+      ],
+      "reason": "The Harnesses reference distinguishes the launcher mode selector from the agent tool's signature and explains the harness scope of settings and step-up modes.",
+      "revision": 3,
+      "subject": "DPD-PYMM5P"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R11",
+          "packet": "requirements/BUG-R11-v1-a-role-agent-starts-in-its-permission-mode.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:69f637c761167dc15d8b99a868e04068f45d10e52e2fecd4eacc1bf24bb2fc86",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-HFP40K"
+        },
+        {
+          "after": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:ce43da070683e060637f2c7bb5280bedae7908e8eb563e6bce8e16d92696e922",
+            "locator": {
+              "kind": "symbol",
+              "name": "settings_role_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:9d4087a3a9ee3ee4277be5feb9389d15a256d9d55f0d417c5cbe3f39ffebfe46",
+            "locator": {
+              "kind": "symbol",
+              "name": "settings_role_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-YA1GYN"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-5XMC93",
+      "items": [
+        "sha256:0223efa77bcca2266c741f2e5308d1fd0536da048918727775eab14f616092b7"
+      ],
+      "reason": "The configured-host fresh/saved mechanism still supplies each capability part. W7 limits known-offer pre-creation refusals to their governed choice classes and leaves permission mode acceptance to Paseo.",
+      "revision": 3,
+      "subject": "INV-RQ2ZB8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6PB40F",
+      "items": [
+        "sha256:b279f9d29af423928124ef3afb2c03b77cfee66c590d202c75dab5e052de9e74"
+      ],
+      "reason": "The testing overview still routes fixtures and suites by ownership. The different mode assertions are explained in their own file cards.",
+      "sources": [
+        {
+          "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+          "path": "mcp/tests/test_explainer_host.py"
+        },
+        {
+          "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+          "path": "mcp/tests/test_paseo_catalog_r71.py"
+        },
+        {
+          "blob": "f68177dccb304f2cb49059be585530ae39334aab",
+          "path": "mcp/tests/test_paseo_no_harness_name.py"
+        },
+        {
+          "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
+          "path": "mcp/tests/test_step_up_choice_validation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "89e0130ed7df6e351e9eb1020d26b8014f6f8986",
+            "content": "sha256:2025dbb3ef47fc63c0489d7b429190d9dff5443a1bb9359a694d88df9057fdf4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-6SFWB3",
+      "items": [
+        "sha256:aaafb9200c2d2cab1faa0cecf9bebb98bad35c8a2d411852b5e14ee9ee8a36eb"
+      ],
+      "reason": "The changed capsule-budget lines record current measurements and source identities. The authored ceilings and the developer authority for changing them retain their values.",
+      "revision": 2,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-75GM32",
+      "items": [
+        "sha256:2f7c109ca42d8c8268d230dd1ddc1ee40ef81ebc87c3ff7b0e293aa4fce8f7af"
+      ],
+      "reason": "Deletes the ordinary mode chip and its “At start” and “none stated” branches. The surviving ordinary mode contract is realized by ModeOverrideSelect, and RoleLaunchDefaults retains instruction and Base previews. A deletion has no candidate lines for an invariant entry.",
+      "subject": "hunk:sha256:2f7c109ca42d8c8268d230dd1ddc1ee40ef81ebc87c3ff7b0e293aa4fce8f7af"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "40de36b14c4a66514b1c7de087292af8271fc546",
+            "content": "sha256:8656e8bb659bc2a1b5b1c89317a333e539062350feeb018d6b56663d43839b3b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+            "content": "sha256:5f43dc0273d23d445f344bdc5c04f469e2b5faf998391d1620bd28c59b7ecefe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-0E8J78"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-75V643",
+      "items": [
+        "sha256:b8596110545a274ac40f0dc85f89d05c45b8a7ed6e58c22f9bd086575fa5d7a7"
+      ],
+      "reason": "The edited AU4.2 and digest places renew the explicit passage hashes at the existing locators. Unchanged text still relies on exact-window relocation.",
+      "revision": 1,
+      "subject": "INV-HN54VG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7JPQHR",
+      "items": [
+        "sha256:06b229de0d06b261e724a0cc9dd723f0582d8ef9fa531c6c1c9c7f3e3a08fd32"
+      ],
+      "reason": "Applies the shared override wrapper to the Agent selector. The cap, shrink and wide-viewport minimum are unchanged. The wrapper swap carries no mode or permission rule.",
+      "subject": "hunk:sha256:06b229de0d06b261e724a0cc9dd723f0582d8ef9fa531c6c1c9c7f3e3a08fd32"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "89e0130ed7df6e351e9eb1020d26b8014f6f8986",
+            "content": "sha256:2025dbb3ef47fc63c0489d7b429190d9dff5443a1bb9359a694d88df9057fdf4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        },
+        {
+          "after": {
+            "blob": "40de36b14c4a66514b1c7de087292af8271fc546",
+            "content": "sha256:8656e8bb659bc2a1b5b1c89317a333e539062350feeb018d6b56663d43839b3b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+            "content": "sha256:5f43dc0273d23d445f344bdc5c04f469e2b5faf998391d1620bd28c59b7ecefe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-WZZ5BF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7X6HRE",
+      "items": [
+        "sha256:8f874e037fdb4fa58140bd6483be6eb41e4a828d909d1173c21740311e2bb1cb"
+      ],
+      "reason": "The changed packaged budgets and digest map remain generated from their declared canonical source by the same instruction renewal operation.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R11",
+          "packet": "requirements/BUG-R11-v1-a-role-agent-starts-in-its-permission-mode.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "eb679f7ebe908f402c7206a7e41321494d12c943",
+            "content": "sha256:74a98a79c3ba3bd5c642df9f4b8cd95d9a42a614dc6fb9d8def291c0e4289f68",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/cockpit/role-launcher/StepUpControl.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-PMVAVY"
+        },
+        {
+          "after": {
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:e94ce744138d811be42f0b09155b403c8b40d85032929844d944b28d2867fae2",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-YA5DE4"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-8J7TGP",
+      "items": [],
+      "reason": "The launcher still limits the strip to controls and compact, receipt-derived status. It now shows the host mode where a receipt includes an observation and retains the unreported label for other receipts. Evidence (curate-w7-step-up-observed-mode): W7 step-up code and Worker W5-clean-checks.log focused dashboard suite with W7 byte continuity.",
+      "revision": 4,
+      "subject": "INV-6SGHBB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8S9NB4",
+      "items": [
+        "sha256:c9d6e33c3ba8ac182190456352f2beb361e109f8966ac8dbdce0f5b480adc205"
+      ],
+      "reason": "Explain selector composition, model and effort retention, agent change reset and receipt-derived step-up status. Historical notes about the retired layout and displaced citation ranges move out of the current card. The earlier 1440px layout measurement and retired citation windows are history, as the new selector changes the composition used by the measurement.",
+      "sources": [
+        {
+          "blob": "dce9e43dc96950f6e1bc1112f272f26e44c7bab4",
+          "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "89e0130ed7df6e351e9eb1020d26b8014f6f8986",
+            "content": "sha256:2025dbb3ef47fc63c0489d7b429190d9dff5443a1bb9359a694d88df9057fdf4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-93635J",
+      "items": [
+        "sha256:b3acb512fedd33b9a75e2d6d57e2b82cb9e37ead3af29814a6f63db6d8dcfe09"
+      ],
+      "reason": "The W7 renewal diff changes generated sizes and source hashes. The checked authored ceilings, membership authority and frozen historical registries all retain their prior content.",
+      "revision": 6,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9A6K18",
+      "items": [
+        "sha256:687e21fd25c7a3384507f2833b2e123bd9ea9954280f32d3beb11e511df37a06"
+      ],
+      "reason": "Route the launcher and shared startup changes through the authored instruction and renewed package copies.",
+      "sources": [
+        {
+          "blob": "89e0130ed7df6e351e9eb1020d26b8014f6f8986",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
+          "path": "skills/l-01-agent-lifecycles/core/authority.md"
+        },
+        {
+          "blob": "40de36b14c4a66514b1c7de087292af8271fc546",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+          "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+        },
+        {
+          "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
+          "path": "skills/l-01-agent-lifecycles/core/launcher.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9S53GC",
+      "items": [
+        "sha256:2477b57092b85269d1615c3376f7e723c4d093e896190d3b691cac5d21fde7e4",
+        "sha256:59c5c6d1fa787ca51c7210f9b0970ef1330494fa29fa861a638b470417f20bd0",
+        "sha256:5b7dec606b493b2f942a02bb48bdca86908080f666cd5c93bf4558573040974f",
+        "sha256:855987d5f7c7cb00ae7370d33b96abd120ae948c597fa81eafa1acafeb6b6ca9",
+        "sha256:9dd4ddd90d41d6aa748ed4d600a5c051751b1aec12815d21550742b045b66991"
+      ],
+      "reason": "Remove the catalog least-mode admission from the card and preserve the distinct presenter and grant owner paths.",
+      "sources": [
+        {
+          "blob": "f68177dccb304f2cb49059be585530ae39334aab",
+          "path": "mcp/tests/test_paseo_no_harness_name.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_no_harness_name.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-A09181",
+      "items": [
+        "sha256:a913e02eff07371600deddec73dd8ea41123cd1fd87cb4f503baaee8b68e322d"
+      ],
+      "reason": "The roadmap still links to the same knowledge, drift, task-gate and benchmark definitions after Concepts updates its permission-mode section.",
+      "revision": 4,
+      "subject": "DPD-3P9XTZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A8AW2B",
+      "items": [
+        "sha256:a55d9b5e0532f04c215d60d3c4c8c75917bd061428fe5883416d9ac7f9587acc"
+      ],
+      "reason": "Changing the resume docstring from applied to sent corrects its claim about the existing request. This line does not modify request construction, field validation or provenance.",
+      "subject": "hunk:sha256:a55d9b5e0532f04c215d60d3c4c8c75917bd061428fe5883416d9ac7f9587acc"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-B5NXB0",
+      "items": [
+        "sha256:a52f827ff3f5e22a9131c9f6d79855079a38793702259e33879a7b66248be1e7"
+      ],
+      "reason": "BUG-R11 replaces only the mode-specific known-offer refusal and product default. Paseo decides mode acceptance. Known non-mode offering failures still refuse creation, and the caller feature-authority check still refuses permission-bearing and unclassified feature keys even when feature offerings are unanswered. Catalog freshness, launch binding, requested and observed values, replay and task-server behavior retain their joint obligations.",
+      "revision": 4,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "40de36b14c4a66514b1c7de087292af8271fc546",
+            "content": "sha256:8656e8bb659bc2a1b5b1c89317a333e539062350feeb018d6b56663d43839b3b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "f385ad79c33b9ade504bd12c05890fe46b42d30e",
+            "content": "sha256:5f43dc0273d23d445f344bdc5c04f469e2b5faf998391d1620bd28c59b7ecefe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-BZ71PH"
+        },
+        {
+          "after": {
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "content": "sha256:5258a0a3b9d50a4e7b5fba3bdafde59bd139b5959876b4b3c6b2d81e3d50e7a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "before": {
+            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+            "content": "sha256:8c27af7759b59ab754b18b3d0f7bda1666656788eeaa70fa8a31618e738249ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "id": "RLZ-HR7SPS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BGA7QY",
+      "items": [
+        "sha256:2e6469cbb4d998f8ddcf2b0afd2bc28e27d1d5c48d32de4a28e38f9d3a9252fa"
+      ],
+      "reason": "Renewed source text and hash bindings leave the every-role digest body separately injected once under the unchanged composition declaration. Its audit map remains a named reference.",
+      "revision": 1,
+      "subject": "INV-40JW44"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BH2VR3",
+      "items": [
+        "sha256:5635ea8508e018bf7860e17bc9dc6ae6fa9df2530907ed3594a3211c00c16617",
+        "sha256:82367c5605f4c06550dff0ccb154c794660af3f9b88ecde2638876b806d022d3"
+      ],
+      "reason": "Add the card for the mode selector, the empty first option and retention of a previously selected value after offer refresh.",
+      "sources": [
+        {
+          "blob": "25bf36570c564790806ae653e4f1cbfa0d958e5d",
+          "path": "dashboard/src/cockpit/role-launcher/ModeOverrideSelect.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/role-launcher/ModeOverrideSelect.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CBZRSM",
+      "items": [
+        "sha256:2bdc4923b570c11ee0b3218261e56df85e1f4ff33ff8a01062d0155d3e22a2dd"
+      ],
+      "reason": "Document the optional opaque modeId in the typed dashboard override.",
+      "sources": [
+        {
+          "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
+          "path": "mcp/src/agents_remember/models/role_launcher.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/role_launcher.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DS86H2",
+      "items": [
+        "sha256:c8969241dbfa2bff211ee6e7e95c3c511acfc1b99753cdba6a37f8dcc5daaff6"
+      ],
+      "reason": "Extracts an existing inline catalog row shape into the named RoleModeChoice type. The unchanged identifier, label and optional description gain a shared TypeScript name. Mode offers and the advertised default are carried by the catalog interface next to it.",
+      "subject": "hunk:sha256:c8969241dbfa2bff211ee6e7e95c3c511acfc1b99753cdba6a37f8dcc5daaff6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E5FB37",
+      "items": [
+        "sha256:09b09e1fe4c176fe9ecadebbb5b34ace50f4298170f4213a8921b8e393c93bff"
+      ],
+      "reason": "Keep the known-unoffered catalog fixture specific to its model. Document the separate speed-only and explicit mode requests and mode preservation across a model change.",
+      "sources": [
+        {
+          "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
+          "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-EMH9EH",
+      "items": [
+        "sha256:5374fafefc1ed50e05bc070aabf8f89afa83807b1438339ece590a8b1f633d0e",
+        "sha256:9b19b3ce101b15ef19d0b87700ca6a2b4a5f809b5054364daedd8edf22fdbe50"
+      ],
+      "reason": "The Claude installation guide describes the observed auto default when no higher mode source applies and the option to choose a mode in the launcher.",
+      "revision": 5,
+      "subject": "DPD-3E9E2R"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:bd9a9067ec1d32c61534d59434c55857679350537c770e043ca9d800f3135548",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+          },
+          "before": "absent",
+          "id": "RLZ-71TYHK"
+        },
+        {
+          "after": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:647b65da0428af1b3a8b760afe2feaa6f64c90c7081739d17465b5e34a7125a4",
+            "locator": {
+              "end": 532,
+              "kind": "line_range",
+              "start": 508
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+          },
+          "before": "absent",
+          "id": "RLZ-HR9YV3"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-ET0APZ",
+      "items": [],
+      "reason": "W7 separates fresh-create applied checks from the normalized mode observation stored for create or adoption. The differing and absent observation cases guard the initial receipt, and resume can fill an absent flat mode key without changing that receipt observation.",
+      "revision": 1,
+      "subject": "INV-Z71VXZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:c41effe9759b118d49fa0cc900ee67bce26c52bb7b80b59a64557563ae360a27",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-J15B66"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FS2TZ8",
+      "items": [
+        "sha256:4d1e82b27d610f7f54d66a927531074d6318c08e4640ec127d6d8d0a01d1f46e"
+      ],
+      "reason": "W7 edits mode selection around the existing catalog assembly. Per-harness extra-argument eligibility, explicit removal, confined exclusions, source disclosure and host retention still use the same assembly.",
+      "revision": 1,
+      "subject": "INV-9DMNQS"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-FSRTSQ",
+      "items": [
+        "sha256:03b621b099501aa0345590ca40370f4d35c81a03635ef5cb6a24fc21c7cb4585",
+        "sha256:460a044264ccfa395f02046a9970cebb57edabafb2504e02299566e36e935a1d"
+      ],
+      "reason": "The review guide agrees with the explainer start's shared resolver, applied choice checks and separate host mode observation.",
+      "revision": 5,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7SARPM",
+          "revision": 1
+        },
+        {
+          "id": "INV-7XBR6C",
+          "revision": 2
+        },
+        {
+          "id": "INV-85VB61",
+          "revision": 2
+        },
+        {
+          "id": "INV-8PK7FQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CQCPAD",
+          "revision": 3
+        },
+        {
+          "id": "INV-MM4B51",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-FVE76Q",
+      "items": [
+        "sha256:5fbca3d384a7c89e567bc48952f20a8bf4a0e8551dae043a6e3f2c4d221e64e4"
+      ],
+      "reason": "The dashboard’s mode override follows the current host-owned start path. Parentless selection and reports of retained settings or leftover files do not recover the removed agent or gate plane.",
+      "revision": 4,
+      "subject": "FAM-CR0HHJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FVJ6JW",
+      "items": [
+        "sha256:0c3b86774915dd5d3fddd1929944196c13df691b3f36520f9c17e7850a50aecd"
+      ],
+      "reason": "Describe how the step-up row supplies defaults on its effective harness and the final resolver gives explicit dashboard mode priority. With no applicable named mode, only known modes and an advertised default supply the create field.",
+      "sources": [
+        {
+          "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+          "path": "mcp/src/agents_remember/cli/role_step_up.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_step_up.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GGG9TT",
+      "items": [
+        "sha256:fe598a2a14a635d00e942f461b1462fa1bab865fa7d5ff8b2d0416bcc03e13d4"
+      ],
+      "reason": "The host guide still describes the exact-name profile lookup and the applicable profile's mode on the selected profile harness.",
+      "revision": 5,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GRTJKY",
+      "items": [
+        "sha256:f5cf6f77d4d3d51266dbf5028b65fedc985679bccbdb9e6b1ab080344787d517"
+      ],
+      "reason": "Getting Started still guides the reader from Bootstrap setup to the first Chats launcher row for a fresh Architect start with default choices.",
+      "revision": 4,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "considered": [
+        "FAM-N17BB4"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-HNN4QS",
+      "items": [
+        "sha256:0524462ca8368bfd1b8696411d09fb1c003928e7ed98b70843769d758493ccc5"
+      ],
+      "reason": "The differing-mode and absent-mode cases guard the explainer's initial receipt and applied check. The launch-catalog family's guarantee governs the ordinary role launcher and has no dependency on this explainer observation.",
+      "revision": 1,
+      "subject": "membership:INV-Z71VXZ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "retire",
+      "id": "ROW-HP177X",
+      "items": [
+        "sha256:2ecaf9abedcf68e8810fcb126d9cdb9c4144595d1040e3026f9a49da0b7f5711"
+      ],
+      "reason": "BUG-R11 aligns the stored start rule with the resolver's host-owned default and forwards unlisted named modes to the host for its decision.",
+      "revision": 2,
+      "subject": "WKN-31EKY0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HRD7NT",
+      "items": [
+        "sha256:22ede94d2d2d81144232dfe36d5f501ccd763721ce11cf007d4178f59ded3fe7"
+      ],
+      "reason": "Anchor the configured button dispatch and the step-up status. The chip shows the observed host mode, while the hover names the requested choice's source. An absent observation uses the unreported label.",
+      "sources": [
+        {
+          "blob": "eb679f7ebe908f402c7206a7e41321494d12c943",
+          "path": "dashboard/src/cockpit/role-launcher/StepUpControl.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/role-launcher/StepUpControl.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 4
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 5
+        }
+      ],
+      "id": "ROW-HRSAGP",
+      "items": [
+        "sha256:c8b425f5f869451cbb842e3de90cdab10519284406597a32c61639ce25e9c76b"
+      ],
+      "reason": "The developer question chain, named waits, exact answer quoting and own-chat recovery retain their joint authority. Only the shared carrier’s independent starter instruction changes.",
+      "revision": 2,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JBW55R",
+      "items": [
+        "sha256:4b3f7ce56e26531f6cbb1448cc7076ad1e18be68ff4b126ecd220b9418712c5d"
+      ],
+      "reason": "Imports the extracted selector and wrapper classes. Their use and behavior live at the mount point and in the extracted modules. The imports establish neither choice meaning nor styling behavior.",
+      "subject": "hunk:sha256:4b3f7ce56e26531f6cbb1448cc7076ad1e18be68ff4b126ecd220b9418712c5d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JHYR41",
+      "items": [
+        "sha256:f3d854b4a574460229aec215914b8db71474566c28be9557bf26dcefbf8e2160"
+      ],
+      "reason": "Explain the typed mode carrier, mode comparison and relationship to existing catalog validation.",
+      "sources": [
+        {
+          "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+          "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleLaunchModel.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M49NN9",
+      "items": [
+        "sha256:72104ec86304f9dcae5473c0dc35f0716ba814a06f55e71a9fc9d136ca409df0"
+      ],
+      "reason": "Replace the product-owned least-working-mode account with the mode precedence, host default and acceptance rules.",
+      "sources": [
+        {
+          "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+          "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_catalog.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MXQ62X",
+      "items": [
+        "sha256:90b211911ae616636e246d6858e5a6c8f4e75e71b305e8cccf3177efca60d5ea"
+      ],
+      "reason": "Route the mode selector and explain host-owned mode acceptance, non-mode checks and start-call feature authority. Anchor both the step-up dispatch and the status that distinguishes observed mode from requested provenance.",
+      "sources": [
+        {
+          "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
+          "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+        },
+        {
+          "blob": "c825ac3246d46b30a26b482e6d3fc64f3de1301c",
+          "path": "dashboard/src/cockpit/RoleChats.stepUp.integration.test.tsx"
+        },
+        {
+          "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
+          "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+        },
+        {
+          "blob": "cdf3c726ec46027f62252734c25669d5bf58edd2",
+          "path": "dashboard/src/cockpit/RoleLauncher.row.test.tsx"
+        },
+        {
+          "blob": "25bf36570c564790806ae653e4f1cbfa0d958e5d",
+          "path": "dashboard/src/cockpit/role-launcher/ModeOverrideSelect.tsx"
+        },
+        {
+          "blob": "dce9e43dc96950f6e1bc1112f272f26e44c7bab4",
+          "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+        },
+        {
+          "blob": "eb679f7ebe908f402c7206a7e41321494d12c943",
+          "path": "dashboard/src/cockpit/role-launcher/StepUpControl.tsx"
+        },
+        {
+          "blob": "2d53e1170ea541f8cd1cd39e66697d6d77484a8f",
+          "path": "dashboard/src/cockpit/role-launcher/roleLauncherDisplay.ts"
+        },
+        {
+          "blob": "69a36394176730f9d376d1eb74e1575c4e7f68b4",
+          "path": "dashboard/src/cockpit/role-launcher/roleLauncherFields.ts"
+        },
+        {
+          "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+          "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-40JW44",
+          "revision": 1
+        },
+        {
+          "id": "INV-7KDG7C",
+          "revision": 1
+        },
+        {
+          "id": "INV-MQ3K06",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZA67WW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-MXYBW9",
+      "items": [
+        "sha256:927d279d8906327c1d2092ebcbee13eb42fb9b6e0f1c5df1e46cec3b4aec5133"
+      ],
+      "reason": "The digest content and hash move together. Stage audience selection, separate digest identity and per-request frozen detail delivery still share the same compiler and manifest.",
+      "revision": 3,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NCS34E",
+      "items": [
+        "sha256:2324f8fc40b651fd36217ee4ca0e4ab05e8f2a6e06786a9b2e0ea7cd048c623a",
+        "sha256:54696fe024042b1aca15d1b1a0a44594542070ddcf167bc065e5f40565d37a19",
+        "sha256:b0a0fc29f59939e1ea8d9aa44d80983d051834e864c4f91189d7d7e6b1e37974"
+      ],
+      "reason": "Describe the observed and unreported receipt cases independently from the non-applied base-preview fixture.",
+      "sources": [
+        {
+          "blob": "c825ac3246d46b30a26b482e6d3fc64f3de1301c",
+          "path": "dashboard/src/cockpit/RoleChats.stepUp.integration.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.stepUp.integration.test.tsx"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-NQPX9V",
+      "items": [
+        "sha256:2f66821db974f79e951a3cfdbd4ae54ff8231a95435d102adbc6235dc3ec520e"
+      ],
+      "reason": "The cost-aware Bootstrap guide still describes catalog validation and per-start overrides for the harness, model and effort.",
+      "revision": 2,
+      "subject": "DPD-1DXK6Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-P68E9K",
+      "items": [
+        "sha256:d1e13d2cf1823bfa7a39e2187d1bcaaa29afe66f3f368c1e6de0d887bc0e796f",
+        "sha256:fc6d7d9445bc12ebabf52ec534a0aaf2b14808a957731d84b7fe5832f2e7bb59"
+      ],
+      "reason": "The Hermes installation guide states the mode precedence and the observed default, conditional on known modes and a host-advertised default.",
+      "revision": 5,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PAE24D",
+      "items": [
+        "sha256:c6423782352c19029016ceba535c55f7b5854965d8446c02ac17fd1bf8f4d034"
+      ],
+      "reason": "The resume docstring describes the reopen call as intent and the saved timeline as the host's. The runtime sends the same payload fields and still fills missing stored values from the host reply. The prose correction adds no resume execution rule.",
+      "subject": "hunk:sha256:c6423782352c19029016ceba535c55f7b5854965d8446c02ac17fd1bf8f4d034"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
+            "content": "sha256:8b9547be89380e5997e7e1ca5aa5584a251f46ec46d26238f450f7520d10c3ce",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "before": {
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+            "content": "sha256:d93f0f515c2ea493d145d063ee7e6b98a7a555cf1b6298f28ef5ffbcb4fc684a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "id": "RLZ-EK96T9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QD4A5Y",
+      "items": [
+        "sha256:7bc02578c5088c5461ca4377f7f6f2fe4bf587069d177d7615065635fb536612"
+      ],
+      "reason": "The change to the starter’s instruction at core/authority.md:43 leaves role identity, helper permissions and own-seat boundary acts at lines 30–37 unchanged.",
+      "revision": 1,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R3KEP2",
+      "items": [
+        "sha256:8b9b6aa4084b2e2cc2c997f0289e6c6f57bad5d28b4549dc41b6a1926cd713c9",
+        "sha256:b7c7470d74fea167cc0d418ef3b4b5c14aa15ee7f04e645ae3bee531e99ae8b5",
+        "sha256:be96cc297394bd0f05cafdf8178d62d552c0c64185f9a8da76ea405ebc298489"
+      ],
+      "reason": "Explain how the selected harness and applicable mode sources determine the initial option label.",
+      "sources": [
+        {
+          "blob": "2d53e1170ea541f8cd1cd39e66697d6d77484a8f",
+          "path": "dashboard/src/cockpit/role-launcher/roleLauncherDisplay.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/role-launcher/roleLauncherDisplay.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RBD0SG",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "The new measurements leave the declared budgets and authenticated historical evidence unchanged, so the card's policy and structure still hold.",
+      "sources": [
+        {
+          "blob": "89e0130ed7df6e351e9eb1020d26b8014f6f8986",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RGB02A",
+      "items": [
+        "sha256:6fc2447bb811ebbd6e6f049fa9dbe15180d2f0d0a298c48b437a3fae5e052e70"
+      ],
+      "reason": "Record that a start carries no mode argument and that checking and setting features remain post-start duties.",
+      "sources": [
+        {
+          "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+          "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/every-role.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RQB35W",
+      "items": [
+        "sha256:25590577f184a67b419b771ac4391abe3f0897192aca644ee94df64495c6c1b8",
+        "sha256:a1dd8cd08709a83a36f93c79a3fe9d522d2e1186c1af14d5d67cdc3d8aad3545"
+      ],
+      "reason": "The Roles guide states the order of applicable mode sources through the omitted-field case and distinguishes launcher and agent tool starts.",
+      "revision": 4,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-S1CYRR",
+      "items": [
+        "sha256:847313db395ad29987c465d844554dae8355fbcb15e351f8bdbe1a9dcc649f97"
+      ],
+      "reason": "The role-capsule guide's held-start passage still agrees with the launcher label for a bound role whose start is held.",
+      "revision": 3,
+      "subject": "DPD-QFGFS0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
+            "content": "sha256:ad9f119a7958565ab77be711cc7dfb008c591a88f70e894fe52c0f071430fc3b",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "before": {
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+            "content": "sha256:8d5cece31a056c6dfee460571a08b10320d084ffcd3d9689f2665073898b505e",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "id": "RLZ-C0SB4V"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-S27DVX",
+      "items": [
+        "sha256:a2e0b65c9a52b0eba6ca54d856a719032a0f41eb6c8891484cd3dff44dae3723"
+      ],
+      "reason": "The edited core/authority.md:43 still defines AU4.2 at source. The digest map carries its renewed hash, and the edit adds no link into its own digest projection.",
+      "revision": 1,
+      "subject": "INV-0V8R02"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SZVWB7",
+      "items": [
+        "sha256:2715f2d9df4e21dc2cde9690765bfbca109544752dfae0b73dd8775c8c662b20",
+        "sha256:f95a58b6891b78a9db12580d6600c01c7d9166214de0a220310c5de9a9427639"
+      ],
+      "reason": "The dashboard guide distinguishes an explicit mode choice from the first option, which shows the source that would apply if the choice were empty.",
+      "revision": 5,
+      "subject": "DPD-23C91T"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-43CXH6",
+          "revision": 2
+        },
+        {
+          "id": "INV-5MP23G",
+          "revision": 3
+        },
+        {
+          "id": "INV-6SGHBB",
+          "revision": 4
+        },
+        {
+          "id": "INV-8J056T",
+          "revision": 1
+        },
+        {
+          "id": "INV-C7AT8R",
+          "revision": 2
+        },
+        {
+          "id": "INV-DH5NRM",
+          "revision": 1
+        },
+        {
+          "id": "INV-EFDE52",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA2JW5",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ7E3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-T18R81",
+      "items": [],
+      "reason": "The host observation is compact receipt-derived identification within the existing controls and does not let reply prose, report paths or duplicate execution details enter the strip.",
+      "revision": 7,
+      "subject": "FAM-RT2XDA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T4A109",
+      "items": [
+        "sha256:c33947b76225f50583cb65e462e4f039e5d0a872b2807acd2c1f0d26760a3a8d"
+      ],
+      "reason": "Deletes three copies of identical agent, model and effort wrapper styles. The shared RoleLauncherOverrideField in roleLauncherFields supplies the same sizing for those controls. No deleted line remains as a target.",
+      "subject": "hunk:sha256:c33947b76225f50583cb65e462e4f039e5d0a872b2807acd2c1f0d26760a3a8d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TBVHHG",
+      "items": [
+        "sha256:c9c41d47a950681639a21276aa55ba16eeae582a1e3c0b54d36c91c03600e760"
+      ],
+      "reason": "Describe where a launcher mode enters the role start and the applicable source order.",
+      "sources": [
+        {
+          "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
+          "path": "skills/l-01-agent-lifecycles/core/launcher.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/launcher.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TEWYK6",
+      "items": [
+        "sha256:2200702374cc8d59a9aefcd10ce1f01491c460f2af05acf2640a3556665ad73a",
+        "sha256:38d67e2c22f0eeb7fc502fa5774b266c738128a8d7cb5d4d03fa237a7b559f36",
+        "sha256:5e1c9b2668cbc3f8dfe888bc72d31e30a4bb75bb63967d94034a2dbba2fc7fae",
+        "sha256:66b9cca737e15f5d4399818e65cdf84b06d7cf89d98f9d188f3cf97c231d551b",
+        "sha256:8b4e0cf01310bce05ea187836b287c03d514080f7a3e47b41bf449fa21e494d0",
+        "sha256:99ebf59384021c83ee6458aa4a9c8c827a731b159b2dbab0759a41ffbc942b70",
+        "sha256:a9f7ad643d0dc8779295a1c8585cbbe59ff448cef6e663153bf4850e16b51111",
+        "sha256:aa13b05a8eddbcbf81138c48180ff3b053eda2eadada343f56770ffdbb7d665e",
+        "sha256:d33e04c01c4d04464db262341c93d1c1227be9e55102edeb0146f7353e2f1096",
+        "sha256:de79699808d3486573a640183828161b0561a67692009b3aa8f19868d2c68269",
+        "sha256:e4e5ceaf69ee6aea8aa011f3844152a4727e2e7b717fd5200622eea8237b836c",
+        "sha256:ed54a698226529ecec6bef5374dae1d54fd50096d0d4e12116998374952a6ff9",
+        "sha256:f5a5ed3935f38242e05d52ef7ef47d67c4519c2ea85a839450c2911adc33305f",
+        "sha256:f75d6f71a03867ccb726a6df2abb61846199020448f74dcb472e8c91247ea305",
+        "sha256:f97aa3aba37e657710bb16f1c305bf7636966c18426045924bb4aaaf750d8ee2",
+        "sha256:ffac034f57d67766ec6d2a0fd947208d363ef9a289e550a2527b3e5eb2dac51e"
+      ],
+      "reason": "Document distinct catalog cases for authority and request schemas, mode precedence, opaque mode forwarding and known versus unknown modes. The start-call authority proof now names only the assertions in its own case.",
+      "sources": [
+        {
+          "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+          "path": "mcp/tests/test_paseo_catalog_r71.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_catalog_r71.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TG1MS6",
+      "items": [
+        "sha256:0e6364bb79a703db506f1a45923bdae278a6e4983066114d02277a9787865d8a",
+        "sha256:dc639dec5c78b54e1c1cb46873f9304e114d41c622a3ec5010752b5c12eed608"
+      ],
+      "reason": "The canvas host design agrees with the explainer start, which checks applied provider, model, effort and features and records the host-reported mode separately.",
+      "revision": 4,
+      "subject": "DPD-7YCJ2B"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R11",
+          "packet": "requirements/BUG-R11-v1-a-role-agent-starts-in-its-permission-mode.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "content": "sha256:d1f5605d0517fd3c2d7751cefa26d414fbd21336918b840efa211b697dad1330",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r71_the_launcher_mode_stands_first_and_keeps_its_source"
+            },
+            "path": "mcp/tests/test_paseo_catalog_r71.py"
+          },
+          "before": "absent",
+          "id": "PRF-2DCXGQ"
+        },
+        {
+          "after": {
+            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "content": "sha256:1eb8e1957f5909664f454c837caf8a859864958313ace8829f8d27b49f421736",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r71_start_calls_cannot_supply_permission_authority"
+            },
+            "path": "mcp/tests/test_paseo_catalog_r71.py"
+          },
+          "before": "absent",
+          "id": "PRF-33SRR9"
+        },
+        {
+          "after": {
+            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "content": "sha256:873a7bf58d694a3c9941cbecf7253339c187632629a1cbdeadfd7242608fa5ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "R71RoleChoicesTests.test_r71_unknown_modes_pass_through_and_known_empty_remains_distinct"
+            },
+            "path": "mcp/tests/test_paseo_catalog_r71.py"
+          },
+          "before": {
+            "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
+            "content": "sha256:5f10b13d4c512cf3902d174a086c2333373aa81fd214599f1861744e9cf8aa24",
+            "locator": {
+              "kind": "symbol",
+              "name": "R71RoleChoicesTests.test_r71_unknown_modes_pass_through_and_known_empty_remains_distinct"
+            },
+            "path": "mcp/tests/test_paseo_catalog_r71.py"
+          },
+          "id": "PRF-5WCHTN"
+        },
+        {
+          "after": {
+            "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
+            "content": "sha256:ec19fd730e0992a6019c37953b18479ee6dc25e2fb8070d1e8f8ecf974a6b158",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launcher_mode_stands_first_and_reaches_the_create_as_named"
+            },
+            "path": "mcp/tests/test_step_up_choice_validation.py"
+          },
+          "before": "absent",
+          "id": "PRF-BZYPZC"
+        },
+        {
+          "after": {
+            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "content": "sha256:7dafe2311e256f01675766363c7d7760074b6f5380437ac75bbb92575ce857ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r71_unoffered_feature_and_value_refuse_and_an_unoffered_mode_passes_through"
+            },
+            "path": "mcp/tests/test_paseo_catalog_r71.py"
+          },
+          "before": "absent",
+          "id": "PRF-HZJSBS"
+        },
+        {
+          "after": {
+            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "content": "sha256:f39c9383cdfeb80a2c16e7e0ca364b72fe1aadca7ebbbef268d5a83a3c248456",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r71_unnamed_mode_takes_the_host_default_and_names_none_it_cannot_know"
+            },
+            "path": "mcp/tests/test_paseo_catalog_r71.py"
+          },
+          "before": "absent",
+          "id": "PRF-VFD7RJ"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
+            "content": "sha256:df11bc6e72d2fb9148f2b5b67d64890791b2351105cb91df2541c0a50d8b7054",
+            "locator": {
+              "kind": "symbol",
+              "name": "R71RoleChoicesTests.test_r71_start_calls_cannot_supply_permission_authority"
+            },
+            "path": "mcp/tests/test_paseo_catalog_r71.py"
+          },
+          "id": "PRF-VRGDMH"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
+            "content": "sha256:66093ab77b681632aaee9c94aac0997f401e5eb3b195b1fb66a616133b5c2cac",
+            "locator": {
+              "kind": "symbol",
+              "name": "R71RoleChoicesTests.test_r71_unoffered_mode_feature_and_value_refuse_then_corrected_selection_succeeds"
+            },
+            "path": "mcp/tests/test_paseo_catalog_r71.py"
+          },
+          "id": "PRF-ZN0XP4"
+        },
+        {
+          "after": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_mode"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:67430d25426b08cbcf32fd77c3ad62a3f43489b11864e45a57c31c5008847c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_mode"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-AQA2BV"
+        },
+        {
+          "after": {
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:754108c69455013bb0d1c7f4e59abe6ed15ac6dde66c888b54cd985b91b206e5",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-K1JG59"
+        },
+        {
+          "after": {
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:d9a6d4e5b8397e605c45dd4ceccbdc2c7f95805e9fc3d56031130fe03cfcc5cb",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-Q3NMZ5"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-TJ65VE",
+      "items": [
+        "sha256:8da5aca25561fbec4a3c3ceaea22bd3067ee23291e985fa2709e61cc0384ef32"
+      ],
+      "reason": "BUG-R11 v1 adopts dashboard mode precedence and Paseo-owned default and acceptance. The resolver forwards an unlisted named mode. The old refusal proof for unoffered mode is removed. The authority case now proves the three rejected feature keys, the absence of an MCP mode field, and the dashboard modeId shape. Separate cases prove named mode forwarding, default selection and launcher precedence with its start-call provenance. Evidence (curate-w7-f6-catalog-start-authority-proof): W7 mcp/tests/test_paseo_catalog_r71.py::test_r71_start_calls_cannot_supply_permission_authority, lines 253–267, exact candidate bytes.",
+      "revision": 4,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TPTX55",
+      "items": [
+        "sha256:f796a2d4724d2c0771374e0e7bdfa62e5133e7f6f28bd599c256eedd7e5bb555"
+      ],
+      "reason": "Adds the resolveModeChoice import for the launcher composition. The import carries no default selection rule. The call at 727–728 and the implementation in roleLauncherDisplay carry that rule.",
+      "subject": "hunk:sha256:f796a2d4724d2c0771374e0e7bdfa62e5133e7f6f28bd599c256eedd7e5bb555"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V6GM9X",
+      "items": [
+        "sha256:d8a83d891c518dfe5afdad523561ca83490f7ec5949762e11f69632bbe27267b"
+      ],
+      "reason": "Adds a documentation comment to the override helper. The actual construction and omission rule is in the helper body at 587–608. The comment does not independently implement a rule.",
+      "subject": "hunk:sha256:d8a83d891c518dfe5afdad523561ca83490f7ec5949762e11f69632bbe27267b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:ce43da070683e060637f2c7bb5280bedae7908e8eb563e6bce8e16d92696e922",
+            "locator": {
+              "kind": "symbol",
+              "name": "settings_role_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:9d4087a3a9ee3ee4277be5feb9389d15a256d9d55f0d417c5cbe3f39ffebfe46",
+            "locator": {
+              "kind": "symbol",
+              "name": "settings_role_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-SJXXVV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VBQQ6P",
+      "items": [
+        "sha256:5eeadca342e7489476dad7788e68f11bec290f7f4b4d2f45d9023e1eb4ab7449"
+      ],
+      "reason": "The settings-driven explainer still uses the normal role resolver before creating a seat without a turn. The common host default now removes the need for a special setting, and its inspected host report carries mode independently. Warmup exclusion and chat discovery retain their behavior.",
+      "revision": 1,
+      "subject": "INV-EV2BJZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VE7F0C",
+      "items": [
+        "sha256:a60089892ce5d441590f9a7858b8c148b4f7acc4ef667c193b16b8980a9469ec",
+        "sha256:ba2a008123bf9822df4570cef932dbdcdb5162016e4856ccc1b3ab1941cc4456"
+      ],
+      "reason": "Anchor the shared grid wrapper definition and both override variants to support their common shrink behavior and different cap and minimum widths.",
+      "sources": [
+        {
+          "blob": "69a36394176730f9d376d1eb74e1575c4e7f68b4",
+          "path": "dashboard/src/cockpit/role-launcher/roleLauncherFields.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/role-launcher/roleLauncherFields.ts"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-VVR095",
+      "items": [
+        "sha256:1fd1ec6f0f50dd9c6ad19e6111ff9ca78985506b37486e2008b8b494debbe9f6"
+      ],
+      "reason": "The explainer now records mode independently of its request; it continues to supply the explainer tool server without a rule that excludes a user-installed server, so the observed fault remains open.",
+      "revision": 3,
+      "subject": "WKN-THTYAX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WCQK59",
+      "items": [
+        "sha256:58734340348600a51531e5555c0d1abea169a1b90a16ef20d059a1cfb54aa737",
+        "sha256:d8f3ed003ee2c257de721c8bb062c5a987ce640de7ba1ba5ba6eb43384757492"
+      ],
+      "reason": "The settings reference describes when a row supplies the mode and assigns acceptance of a named mode to the host.",
+      "revision": 10,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XSX2XR",
+      "items": [
+        "sha256:3b41aa932f84286fa5b21bc0b59b9a194bf65dc48ee040f2a01ba38ec5226e21"
+      ],
+      "reason": "Explain the dashboard modeId carrier and the role-tool and host authority boundaries.",
+      "sources": [
+        {
+          "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
+          "path": "mcp/src/agents_remember/models/role_launcher.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "examined": [
+        {
+          "id": "INV-N7G6M8",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0685D",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-Y7DFGV",
+      "items": [
+        "sha256:c80b343a37f3f7182a47130ddc5ee90c048b6588592aa12465e25f94ac7a9f40"
+      ],
+      "reason": "BUG-R11 preserves the step-up trigger, non-mode checks, durable transition and review limits. The selected alternate supplies mode on its effective harness, and the final resolver gives an explicit dashboard mode precedence. With neither choice, the host default applies only for known modes and an advertised default, or create omits modeId. The selection obligation and durable-transition obligation still hold jointly.",
+      "revision": 2,
+      "subject": "FAM-B7GVSN"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YKMNPV",
+      "items": [
+        "sha256:dd5a2debea95461ede2dc9f85854c79a2ced821e31aead36dd07c87bb6beafb3"
+      ],
+      "reason": "The explainer launch environment does not choose a PATH and W7's mode work does not establish a resolution of the recorded inherited-PATH observation. The anchor follows the W7 file.",
+      "revision": 2,
+      "subject": "WKN-5AFFH6"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YS6R33",
+      "items": [
+        "sha256:448934ceb6a89311ef195630c5fcd8ced3f2b86caa9d2aa8e3d47820a2d8171f",
+        "sha256:479b5f12fbe88200dd52d6d5ad326cbc89d0b3d1afd82d1969a628be89754ca0"
+      ],
+      "reason": "The Concepts permission-mode section describes selection at creation and uses the host's observed mode as receipt evidence.",
+      "revision": 6,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YV8DK9",
+      "items": [
+        "sha256:a9c239c1b5764406a5b66ba3a4d2f6bccb8aed17d9d5036cbf0148deec9b3387"
+      ],
+      "reason": "Deletes the local base selector wrapper after extracting it to roleLauncherFields. Current wrapper sizing is explained by that file and the launcher grid retains its wrap rule. The deleted lines cannot realize a current obligation.",
+      "subject": "hunk:sha256:a9c239c1b5764406a5b66ba3a4d2f6bccb8aed17d9d5036cbf0148deec9b3387"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Z5TQEN",
+      "items": [],
+      "reason": "The W7 catalog reports no Pi mode list or default, so a Pi settings row with no named mode resolves to an omitted create mode field.",
+      "revision": 5,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "content": "sha256:5258a0a3b9d50a4e7b5fba3bdafde59bd139b5959876b4b3c6b2d81e3d50e7a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "before": {
+            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+            "content": "sha256:8c27af7759b59ab754b18b3d0f7bda1666656788eeaa70fa8a31618e738249ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "id": "RLZ-RXRS9D"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z9XX2J",
+      "items": [
+        "sha256:35c3b8d0c7b13b9d65a3e9e3001bf29e3d9eab6d1b06c7b331b0806dad9fa2e5"
+      ],
+      "reason": "The startup wording still identifies role_start where its input boundary matters, and task_doc remains named directly at core/every-role.md:83. W7 introduces no unnamed tool pointer.",
+      "revision": 1,
+      "subject": "INV-GWA6VR"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZDBVE4",
+      "items": [
+        "sha256:0f8b1744354510dc8f17fc7e0a1764987f37dc901a5dc9038c0c818a2be40e30",
+        "sha256:888860427d07920279897305435a621a2966bf899168d6d5dfa9c8dc6581b65c"
+      ],
+      "reason": "The Codex installation guide describes the observed auto-review default and the start call source for an explicit launcher mode.",
+      "revision": 5,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
+            "content": "sha256:8b9547be89380e5997e7e1ca5aa5584a251f46ec46d26238f450f7520d10c3ce",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "before": {
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+            "content": "sha256:d93f0f515c2ea493d145d063ee7e6b98a7a555cf1b6298f28ef5ffbcb4fc684a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "id": "RLZ-VCT9ZR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZEXSDP",
+      "items": [
+        "sha256:c5acad74ff96b060021972528589a1f4f77a3cea12fe1805aa09703e7932feb6"
+      ],
+      "reason": "The W7 change to post-start features does not touch the parent developer-question path, required approval provenance or exact retired-sentence census. Re-anchor their shared source.",
+      "revision": 5,
+      "subject": "INV-HGSFJ8"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-ZWNXWA",
+      "items": [
+        "sha256:3099a4d2a7a8bac2fbc7eb643f656c3f31e6bc113252753afa5ddd4300f7e9a2"
+      ],
+      "reason": "W7 carries the additional choice into one dashboard launcher and updates canonical and packaged role instructions together. The original propagation agreement still applies to both surfaces.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZXHQR8",
+      "items": [
+        "sha256:2f5b9012408327e69995f1f119191d40a609a9ecf2149b06e7b6bf5637e75710",
+        "sha256:45b3415b1c4c265db3e00a78a3b250ebcced61652645e3313a8b6cdb69916c26",
+        "sha256:8072eb34885010bf794bd0dbfcaa1aa2c7e55b9fd98512f5c17c81af93ac88f8",
+        "sha256:c78267702574318eb2dfd2ec2dca5c543aa2feb72274f84d26d3eab562bd6a0d"
+      ],
+      "reason": "Describe both omitted-mode step-up cases and the wire-level launcher mode fixture.",
+      "sources": [
+        {
+          "blob": "db0d5e2cd86525ccd3c45ad8690fee6dfa330d90",
+          "path": "mcp/tests/test_step_up_choice_validation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_step_up_choice_validation.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
-    "task": "260928-MIK-L97",
+    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
+    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "role": "curator",
+    "statement": "The cost-aware Bootstrap guide still describes catalog validation and per-start overrides for the harness, model and effort.",
+    "task": "261112-BUG-L11",
     "uncommitted": true
   },
   "document": "docs/guides/cost-aware-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/memory/baseline.py"
     },
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },

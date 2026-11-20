@@ -6,11 +6,11 @@
 
 ## Purpose
 
-The suite checks catalog-supported launcher selection, explicit options states, speed-feature submission with settings-owned permission display, and feature preservation across model/effort changes.
+The suite checks catalog-supported launcher selection, explicit options states, explicit speed-feature and mode dispatch with settings-owned permission-feature display, and feature preservation across model/effort changes.
 
 ## Code Commentary
 
-Known unsupported defaults disable Start until an offered override is selected; model-list failure remains visible without inventing a model. A launch lock rereads by itself without an ordinary status line — the case asserts no status or alert before and after the reread — while other refusals stay errors until an explicit successful action clears them (MIK-R75 rule 3). The host-offered speed value remains on the role agent across supported model overrides; a known unsupported tier/model disables Start, and another agent displays provider default. The R71 cases keep an explicit speed override when choosing model or effort and submit only that feature, with no caller mode or permission-feature control. Their presentation assertions now read the host-labelled mode chip and its source hover, the optional Instructions chip and replacement/source hover, and the absence of the former running defaults sentence. The dispatch assertions remain the payload-preservation boundary. Fresh-view tests replace same-origin answers rather than merging them. Pending-view tests display only the timestamped saved disk catalog and origin, hide an older fresh answer and its defaults, and keep Start disabled until fresh options settle.
+The unoffered-model fixture keeps Start disabled until an offered model is selected. The model-list failure fixture leaves the agent selectable without inventing a model. A launch lock rereads by itself without an ordinary status line — the case asserts no status or alert before and after the reread — while other refusals stay errors until an explicit successful action clears them (MIK-R75 rule 3). The host-offered speed value remains on the role agent across supported model overrides; a known unsupported tier/model disables Start, and another agent displays provider default. The speed-only case submits the explicit speed feature, leaves the mode selector at its first option and shows permission-bearing features as settings-owned chips. The test checks the first mode option and hover for the host label and settings source, and checks the optional Instructions chip and its source and replacement status. The explicit-mode case submits the chosen mode and keeps it through a model change. The dispatch assertions remain the payload-preservation boundary. Fresh-view tests replace same-origin answers rather than merging them. Pending-view tests display only the timestamped saved disk catalog and origin, hide an older fresh answer and its defaults, and keep Start disabled until fresh options settle.
 
 ## Invariants And Boundaries
 
@@ -21,7 +21,10 @@ Fixture validation does not prove native creation, paid-turn speed or permanent 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
 
-- Configured tier, incompatible-model refusal and foreign-agent default disclosure remain asserted. [2]
+
+- The mounted model fixture keeps Start disabled while the role model is unoffered and enables it after an offered model is selected. The other case checks configured speed, an incompatible model, and a foreign-agent default. [2]
+
+
 
 
 
@@ -31,7 +34,8 @@ The current source and test assertions below establish the documented ownership;
 
 
 
-- Mounted R71 assertions read mode/instruction chips and their source hovers while retaining explicit-only feature submission and feature preservation. [4]
+- The mounted speed-only case checks the mode selector default and source, Instructions and settings-owned features. [4]
+- Mounted dispatch carries the explicit mode before and after a model override. [5]
 
 
 

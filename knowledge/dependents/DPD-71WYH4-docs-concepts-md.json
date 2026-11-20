@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
+    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
     "role": "curator",
-    "statement": "The changed index passage correctly limits reuse to the selected memory tree and loaded build, while the unchanged passages were not reverified.",
-    "task": "261112-BUG-L9",
+    "statement": "The Concepts permission-mode section describes selection at creation and uses the host's observed mode as receipt evidence.",
+    "task": "261112-BUG-L11",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/application/context_packet.py"
     },
     {
-      "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+      "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/role_launcher.py"
     },
@@ -221,7 +221,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_runtime.py"
     },
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -246,7 +246,7 @@
       "path": "mcp/src/agents_remember/cli/role_handover_file.py"
     },
     {
-      "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+      "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_step_up.py"
     },
@@ -321,12 +321,12 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
     {
-      "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+      "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/every-role.md"
     },
     {
-      "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+      "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },

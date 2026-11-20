@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
+    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
     "role": "curator",
-    "statement": "The page holds: the coordination text now reads a closeout's generation from `runningOperation` while the operation is queued or running and otherwise from `lifecycleOperations`, and the roles page names no generation, no status field and no refusal.",
-    "task": "261112-BUG-L7",
+    "statement": "The Roles guide states the order of applicable mode sources through the omitted-field case and distinguishes launcher and agent tool starts.",
+    "task": "261112-BUG-L11",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+      "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/role_launcher.py"
     },
@@ -146,12 +146,12 @@
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
     {
-      "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+      "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/launcher.md"
     },
     {
-      "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+      "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
