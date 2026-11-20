@@ -348,7 +348,9 @@ Current source: The ordinary EntryPointWorld source constructs one temporary coo
 - The discriminator: which model refused decides the arm — the tool's own response model or the caller's arguments model. [52]
 
 
+
 - The invalid-argument control proving the caller's side lands in its own arm and is never reported as the tool's break. [53]
+
 
 
 
@@ -357,7 +359,9 @@ Current source: The ordinary EntryPointWorld source constructs one temporary coo
 
 
 
+
 - The swept population is derived and equals the live server's advertisement. [37]
+
 
 - The census controls: write, rewrite and delete in both repositories and outside every zone. [39]
 

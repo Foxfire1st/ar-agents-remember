@@ -194,10 +194,35 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
-            "content": "sha256:56b5e27f222e481d77c5760b238104d27c95262040c09905bc27cd95c3f5b0a3",
+            "blob": "43557a7153b2c4c2e541126f53df702a88b73cb9",
+            "content": "sha256:559a51d453e9eeef62c3f1e4cf5bf326a241e0c9769bf4e54574fd36c7dd902c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte"
+            },
+            "path": "mcp/tests/test_historical_committed_leaf_review.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "43557a7153b2c4c2e541126f53df702a88b73cb9",
+            "content": "sha256:04e8055bea0e55512a30f7180869204f0ac58e8cc22163086695a58ab010404a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_fresh_process_reconstructs_the_same_recorded_comparison"
+            },
+            "path": "mcp/tests/test_historical_committed_leaf_review.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "43557a7153b2c4c2e541126f53df702a88b73cb9",
+            "content": "sha256:13019ce5e337dbce16ab2984912d5c3aee6d8eebb485398f648afec896e33698",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_later_task_does_not_contaminate_the_recorded_comparison"
             },
             "path": "mcp/tests/test_historical_committed_leaf_review.py"
           },

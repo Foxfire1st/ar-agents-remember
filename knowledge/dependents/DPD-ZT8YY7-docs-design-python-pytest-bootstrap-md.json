@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "016b6d870edb62e88a1d1afd88df877d1a4b18fc",
+    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
     "role": "curator",
-    "statement": "The examined bootstrap clauses remain consistent with import isolation, selection and fixture ownership while the lane catalog gains four test modules.",
-    "task": "261112-BUG-L9",
+    "statement": "The guide's ordinary pytest commands, candidate import isolation and ownership of ordinary test fixtures remain accurate with the test-only loop factory in pytest setup.",
+    "task": "261112-BUG-L16",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+      "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
     },
