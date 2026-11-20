@@ -45,7 +45,6 @@ No Domain Documentation source is configured for this slice.
 - `test_every_two_sided_movement_names_the_recorded_row_it_was_paired_on` supplies the current fixture or assertion described above. [14]
 
 
-- `test_a_row_at_a_matching_address_with_no_recorded_relation_is_only_an_addition` supplies the current fixture or assertion described above. [15]
 
 
 - The fixture that withdraws a member identity's realization with no continuation the union can read, and the candidate-only paths the cases author. [16]
@@ -55,3 +54,5 @@ No Domain Documentation source is configured for this slice.
 
 
 - **The two-unpaired-revisions line stated as a retraction with its reason, and never a denial.** [18]
+
+- `test_a_row_at_a_matching_address_with_no_recorded_relation_is_only_an_addition` supplies the current fixture or assertion described above. [15]

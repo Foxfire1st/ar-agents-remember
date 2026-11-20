@@ -36,6 +36,8 @@
 
 - When a record has both a disallowed relation and another model-level error, Pydantic stops at the first failing validator, so the second error appears only after the first is repaired (review R1 round 2 note).
 
+The parser recognizes the product-owned `knowledge/history/converted-reviews.json` before dispatching owner history files. It validates the converted review catalog's shape separately because the catalog has no owner file of its own.
+
 ## Evidence
 
 ### Docs References
@@ -54,7 +56,6 @@ The problem categories, the parser and its entry points.
 
 - The problem categories and the rule each maps to. [1]
 - The parsed result, including unparsed record IDs that still resolve. [2]
-- Location dispatch, canonical check, relation attribution and sidecar placement. [3]
 - The tree entry point and the lenient base reader. [4]
 
 - A disallowed relation is refused under the relations rule with its field. [5]
@@ -68,3 +69,5 @@ The problem categories, the parser and its entry points.
 No meaningful cross-repo references found: the validator reads one memory tree and one paired code tree, both addressed explicitly by the caller.
 
 No cross-repo boundary is crossed by this file.
+
+- Location dispatch, canonical check, relation attribution and sidecar placement. [3]

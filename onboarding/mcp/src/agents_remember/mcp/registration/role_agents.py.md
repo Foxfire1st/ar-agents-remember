@@ -42,7 +42,6 @@ The role_message description distinguishes host acceptance from AR acceptance: a
 ## Evidence
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [4]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [5]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [6]
 
@@ -103,3 +102,5 @@ Source: mcp/src/agents_remember/mcp/registration/role_agents.py
 - The existing typed start/message/set registrars remain the public surface. Current compact descriptions advertise start ok/id/handover and message wait/held/cancellation outcomes plus the longer reference. Mode/feature policy, attachments/hashes, capacity, successor and receipt authority stay with the input/application/reference owners, not a claim that every detail is still inline in the short docstrings. Held answer overrides remain distinct from ordinary compact delivery. [3]
 - The registration that mounts the role tools and the settings initializer. [8]
 - Role calls build their existing strict call models, then resolve the existing payload before offloading it. Registration imports no role payload implementation. [9]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [4]

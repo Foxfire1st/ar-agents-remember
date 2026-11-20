@@ -57,7 +57,6 @@ The package surface.
 
 - The package's public surface: the owner, the report, the request and the one operation. [1]
 
-- The one operation it exports. [2]
 
 - The module map names the reconsideration rows and the task-document question (MIK-R14). [3]
 - Requirement-owner observations include writer refusal of new or changed unresolved links with a coordination root; the writer requires converted memory and has no database-ingest fallback. [4]
@@ -68,3 +67,5 @@ No cross-repo boundary is crossed: the writer reads the paired code worktree and
 worktree of one repository.
 
 No cross-repo boundary is crossed by this file.
+
+- The one operation it exports. [2]

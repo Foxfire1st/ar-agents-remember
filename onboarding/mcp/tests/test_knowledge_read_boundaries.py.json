@@ -21,16 +21,16 @@
       ]
     },
     "10": {
-      "note": "The read boundary module occupies the integration lane row; registration is not execution evidence.",
+      "note": "The integration lane selects mcp/tests/test_knowledge_read_boundaries.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_knowledge_read_boundaries.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
+            "content": "sha256:880007e41d5dfbf20a7f1934769d322cff9249e28958935577fcc45b1c15aba0",
             "locator": {
-              "end": 816,
+              "end": 721,
               "kind": "line_range",
-              "start": 1
+              "start": 721
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -8,9 +8,9 @@
 
 The Knowledge reader's tree (MIK-R79 rules 3, 4 and 5), built on the dashboard's shared
 `ExplorerTree` rather than a private one. It shows the path hierarchy by default (or every path with
-"Show every path"), plus the two count rows and the Records branch: families, decisions and the
-other record kinds, one line each, so a reader can find a record without knowing its identifier.
-Invariants stay out of the tree and are reached through their files and families.
+"Show every path"), plus the two count rows and the Records branch. Families, decisions and other
+records open by title. When supplied, revision state and the writer's role and model occupy a
+wrapping second line beneath the title. Invariants are reached through files and families.
 
 ## Code Commentary
 
@@ -21,7 +21,10 @@ Invariants stay out of the tree and are reached through their files and families
   the census count independently and shows `reading…` until each answers.
 - `useKnowledgeLoader` resolves rows per directory: root rows; the Records kinds (excluding
   invariants) and their records from the shared `loadRecords` answer; and `pathRows` for a path
-  directory, which asks one `tree` read for that directory.
+  directory, which asks one `tree` read for that directory. `recordRows` uses
+  `recordStandingText` for Records branch rows. `KnowledgeTree` passes that text to
+  `ExplorerTree`, whose row detail wraps below the title. The family detail's member rows
+  belong to `TruthView` and use `RecordLink`.
 - `RowSuffix` shows a directory's `hasOverview` mark, a file's `onboarding` card mark, the entry
   count, and the directory's coverage (`cards/files`, or `coverage unavailable`). The optional
   `hasKnowledge`/`hasOverview` fields mean "unknown" when absent, so a row is never dropped or
@@ -35,7 +38,8 @@ Invariants stay out of the tree and are reached through their files and families
 ### Conventions
 
 - Row identity is `path:<path>`, `kind:<kind>` or `record:<id>`; the address is what a row opens.
-- The tree is the shared `ExplorerTree`; this module owns only loading, suffixes and the filter.
+- The shared `ExplorerTree` owns row layout and navigation mechanics. This module adapts the
+  Knowledge loader, filter, suffix and record detail to that component.
 - `currentPath` keeps the open path visible even when a cited code file has no card.
 
 ### Invariants And Boundaries
@@ -65,13 +69,15 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The root rows, the Records branch and the two count rows. [7]
-- The record kinds come from the shared acquisition, invariants excluded. [8]
-- The loader routes a directory to root, records or one tree read. [9]
-- A row's marks, entry count and truthful coverage suffix. [10]
-- The filter keeps the open path and knowledge rows visible. [11]
-- The shared tree that owns loading and traversal. [12]
+- The shared acquisition supplies the Records kinds and rows. A record row keeps its own address and optional standing detail. [8]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- The root rows, the Records branch and the two count rows. [7]
+- The loader routes a directory to root, records or one tree read. [9]
+- A row's marks, entry count and truthful coverage suffix. [10]
+- The filter keeps the open path and knowledge rows visible. [11]
+- The shared tree that owns loading and traversal. [12]
+- The tree adapter hands record standing to the shared detail slot alongside the existing suffix. [13]

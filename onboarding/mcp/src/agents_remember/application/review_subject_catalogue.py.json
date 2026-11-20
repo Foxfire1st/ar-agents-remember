@@ -48,15 +48,16 @@
       ]
     },
     "3": {
-      "note": "The one entry point: both stores opened under the record-beside-the-bytes namespace, each read and closed, then merged.\n\nAnchor: `read_subject_catalogue` `review_namespace` `open_existing_knowledge_store`",
+      "note": "The one entry point: both stores opened under the record-beside-the-bytes namespace, each read and closed, then merged.",
       "targets": [
         {
           "anchor": {
             "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:c12f2d6be24cf899b572b83562f39ddbadfda75b97c536d420b20daa0a109c61",
             "locator": {
-              "kind": "symbol",
-              "name": "review_namespace"
+              "end": 389,
+              "kind": "line_range",
+              "start": 387
             },
             "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
           },
@@ -64,11 +65,12 @@
         },
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:6fe2cc957dc11a8690591a9d84bf1ef8b232f5a9772df1f9241a4bc43ae0da28",
             "locator": {
-              "kind": "symbol",
-              "name": "open_existing_knowledge_store"
+              "end": 206,
+              "kind": "line_range",
+              "start": 199
             },
             "path": "mcp/src/agents_remember/memory/knowledge/store.py"
           },
@@ -76,7 +78,7 @@
         },
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
             "locator": {
               "end": 139,
@@ -84,6 +86,31 @@
               "start": 123
             },
             "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:6168faa2e12cf542a3b4aa0969b0743ab76dd7b712aa65cd9aa3ccb0d3ea00bd",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
+            "content": "sha256:dd0e66aa8d2ad0ecaee759b5ba9c58a4e821867675f6d33bd1cb96c5dad0b3e8",
+            "locator": {
+              "end": 399,
+              "kind": "line_range",
+              "start": 351
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
           },
           "kind": "code"
         },
@@ -110,36 +137,12 @@
         },
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
-            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
+            "content": "sha256:848be0d0d6874871096e89d30bd6d058792fc8f108f4db8cb2391740e8a8968c",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
-            "content": "sha256:6168faa2e12cf542a3b4aa0969b0743ab76dd7b712aa65cd9aa3ccb0d3ea00bd",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_subject_catalogue"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
-            "content": "sha256:dd0e66aa8d2ad0ecaee759b5ba9c58a4e821867675f6d33bd1cb96c5dad0b3e8",
-            "locator": {
-              "end": 399,
-              "kind": "line_range",
-              "start": 351
-            },
-            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
           },
           "kind": "code"
         }
@@ -161,7 +164,7 @@
         },
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
             "locator": {
               "kind": "symbol",
@@ -173,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:3cb70a429652780066956ae4318d55c822d42865aa70e7aa796bf0aba0adb22b",
             "locator": {
               "kind": "symbol",

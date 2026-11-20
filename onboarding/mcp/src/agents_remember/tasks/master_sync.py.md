@@ -77,7 +77,6 @@ No relevant external documentation found; behavior is defined by repo task-docum
 
 
 
-- The finalizer and reopen resolve an unnamed leaf through the same helper. [3]
 
 - Deterministic leaf-to-row mapping with manual scope preservation. [4]
 - Document status is mirrored directly; unresolved-parent demotion remains a separate progress check. [5]
@@ -107,3 +106,5 @@ The current source seams include `MasterSyncError`, `MasterSyncPlan`, `plan_mast
 
 
 - Master documents mirror status to one commanded sprint through the typed/legacy canonical census. [10]
+
+- The finalizer and reopen resolve an unnamed leaf through the same helper. [3]

@@ -112,7 +112,6 @@ where.
 
 - **The route that admits the page size in its own vocabulary before the request model sees it.** [15]
 
-- The client that renders these pages without ever constructing a cursor. [16]
 
 
 ### Cross-Repo References
@@ -140,3 +139,5 @@ family-context projection — so nothing in this module's own behaviour moved wi
 wording corrected and its range regenerated to the construct's own extent (`:171-176`), and only then
 was the verification stamp advanced. The hash basis stays the leaf's base commit because the construct
 lives in the working tree; no commit contains what a hash would otherwise claim to have verified.
+
+- The client that renders these pages without ever constructing a cursor. [16]

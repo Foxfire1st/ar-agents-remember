@@ -16,11 +16,17 @@ Leaf and accepted scope-token walks use sentinel-bearing record fields and check
 
 Declaration checks join relative paths with the answered memory root, prefer an ID-field declaration over an earlier mention, include untracked dirtiness and refuse checkout movement instead of mixing epochs. The currentness of an anchor does not, by itself, prove the truth of a record’s claim.
 
+Record name rows include separate source currentness and revision standing. The unconverted fixture’s standing reads proposed and its compact writer reads unknown/unknown. Full statements stay in the named record files.
+
 ## Evidence
 
 - The four comment placements bind resolver-None arguments while the runtime calls remain unchanged; this is source evidence, not a new test execution. [5]
 
-- An invariant fixture receives names and openable declarations without its statement. [1]
 - Accepted scope-token pages preserve participant names without sentinel record prose. [2]
 - A relative location opens against the named memory root at the entry declaration line. [3]
 - A walk resumed after a checkout move refuses its old binding. [4]
+
+- The member row preserves currentness and adds record standing and compact writer. [6]
+- Scope naming places standing on record rows while preserving existing entry roles. [7]
+
+- An invariant fixture receives names and openable declarations without its statement. [1]

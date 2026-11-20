@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_diff_decisions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Counts describe the compared result's named change groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce59742749c6a342c5fcdc8aee949e205d8fb127",
+            "content": "sha256:48c826ec375874b31ec5e86bf88b9aa449fc02f9e5bad5cc194964c818d2cf97",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The decision summary is projected from the compared records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce59742749c6a342c5fcdc8aee949e205d8fb127",
+            "content": "sha256:6ab42dcb00cbc1617dc535a73b42b6003a5e8908333d212709bdeb2603dc6b4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "decision_records"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

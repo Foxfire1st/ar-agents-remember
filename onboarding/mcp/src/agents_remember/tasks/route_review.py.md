@@ -37,7 +37,7 @@ None.
 
 ## Current Contract
 
-ReviewRound records positive round number, finite code/memory kind, whether findings remained when that round was recorded, and optional verdict reference. ReviewState gains a default-empty recordedRounds list; its existing baseline/remaining and approval consistency checks remain. MemoryReviewState is an Annotated ReviewState with an after-validator refusing any recorded row whose kind is not memory. Complete ordered history is checked by review_count_unavailable at counting time, not guaranteed by this list declaration; legacy records are not backfilled or reinterpreted. Each lane shares the same settings-limit/extra-round protocol without sharing a counter or baseline.
+ReviewRound records positive round number, finite code/memory kind, whether findings remained when that round was recorded, and optional verdict reference. A memory round can also record `memoryTree`, `recordedBy`, `handedOverBy` and `verdict`. The writer fields validate as `WriterStamp` objects. Older rounds keep their serialized shape by omitting absent fields. An explicit `block` remains blocked even with no outstanding findings. Only a legacy round without a verdict can infer a pass from having no remaining findings. A verdict reference qualifies only as nonempty printable text within the reference bound after trimming. ReviewState gains a default-empty recordedRounds list; its existing baseline/remaining and approval consistency checks remain. MemoryReviewState is an Annotated ReviewState with an after-validator refusing any recorded row whose kind is not memory. Complete ordered history is checked by review_count_unavailable at counting time, not guaranteed by this list declaration; legacy records are not backfilled or reinterpreted. Each lane shares the same settings-limit/extra-round protocol without sharing a counter or baseline.
 
 
 The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
@@ -50,15 +50,18 @@ RouteReviewRecord adds optional baseCommit with the same object-ID shape as cand
 
 ## Evidence
 
+- The persisted model validates stamps and omits absent fields in older rounds. [9]
+- Explicit verdict controls a memory pass, with remaining findings as the fallback for unstamped verdicts. [10]
+- The parser returns a bounded printable nonempty verdict reference after trimming. [11]
+
+
 - The route record carries the optional base stamp and keeps all-or-nothing digest coherence. [3]
 - Leaf record construction stamps the contract code base before computing the record digest. [8]
 
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [4]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [5]
 - Record-only memory identity comes from memory authority, never the sibling code root. [6]
-- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [7]
 
 ### Docs References
 
@@ -70,7 +73,6 @@ No configured external source applies.
 
 - Route and child-intent model shapes. [1]
 
-- Fixed-list finding, round-cap permission fields, and review-state validation. [2]
 
 
 ## Historical L41 Source File Binding
@@ -79,3 +81,8 @@ At the historical L41 preparation, the source bytes were SHA-256
 `b117340a17d8b38e60373e7878a609a48b615b1d5a7e75f330b4241a147afeb2`
 (`8050` bytes, `209` lines). The source is an uncommitted preparation candidate, so
 verification metadata remains blank until a genuine commit-owned refresh.
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [4]
+
+- Fixed-list finding, round-cap permission fields, and review-state validation. [2]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [7]

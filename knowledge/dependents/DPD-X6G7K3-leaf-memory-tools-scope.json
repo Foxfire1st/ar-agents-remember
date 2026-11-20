@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "All four changed areas between the leaf base and this final code tree are covered: read_ar_files reads a card's entry half when Markdown is absent, names that JSON file with cardStatus sidecar-only and cardState currentness, and entry-half coverage does not itself make the route index stale; master abandon measures already-landed work by ancestry and returns landedWork with state, branch and line plus the no-work-lost summary; a recorded master's landing keeps stale-only findings as staleEntries debt only after the landing-chain proof passes, while other refusals remain. The archive passage covers the dry-run row survey without row repair, one refusal naming every blocked still-live commanded master and its open work, and enclosure retirement through abandonment's existing checks only for commanded masters that move with the sprint. A master also commanded by another live sprint stays where it is and its enclosures are skipped by retirement. These changed passages agree with the named implementation; other passages were not re-reviewed in this pass.",
-    "task": "261112-BUG-L7",
+    "statement": "The writers-view and knowledge-write passages describe bounded writer aggregates and their full report, the typed-state refusal and the caller-derived writer stamp.",
+    "task": "261112-KNO-L3",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -78,7 +78,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
     {
-      "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+      "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
     },
@@ -163,7 +163,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
     },
     {
-      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -183,7 +183,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_field_homes.py"
     },
     {
-      "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+      "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/review_history.py"
     },
@@ -248,7 +248,7 @@
       "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py"
     },
     {
-      "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+      "blob": "9ba18ba55892e8f0b93f5fc884c00071c23e31e0",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
     },
@@ -293,7 +293,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
     },
     {
-      "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+      "blob": "d6a81b841bf29a345dc9d7857710af32751ee689",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },
@@ -313,7 +313,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
     },
     {
-      "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+      "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
     },

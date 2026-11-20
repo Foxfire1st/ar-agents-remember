@@ -14,7 +14,7 @@ read_review_intent_summary delegates its ordinary candidate resolver to summariz
 
 The shared pair preflight precedes read-only before/after snapshot reads. KnowledgeStorageError or APSW failure between preflight and reads becomes unavailable with no counts. _counts supplies invariant/guarantee plus-minus and separate realization-only, membership-only and unresolved totals; nonzero unresolved chooses partial.
 
-Normal projected text records supply one revision per identity; revision_heads deterministically sorts the supplied population rather than discovering graph heads. After-only heads count plus, before-only minus and a successor counts once on each side, including status/acceptance/version-only successors. Compared invariant fields are statement, applicability, conditions, exclusions, origin state and acceptance; family fields are guarantee, origin state and acceptance. Provenance/display version is not compared content.
+Normal projected text records supply one revision per identity; revision_heads deterministically sorts the supplied population rather than discovering graph heads. After-only heads count plus and before-only heads count minus. A successor counts once on each side unless equal authored content and changed relationships make it a relationship-only change. The compared invariant fields are statement, applicability, conditions and exclusions. The compared family field is the joint guarantee. Derived revision state, provenance and display version are outside that content comparison.
 
 An unchanged head, or a successor with equal compared content but different relationships, contributes only its relationship change. Realization equality uses path, locator, source identity, role and rationale; family membership uses canonical invariant identity, so a revised shared member is not counted twice. Retained no-single-head guards increment unresolved only when the two ambiguous head sets differ; identical ambiguous sets tally nothing.
 
@@ -26,8 +26,9 @@ Unavailable is not measured zero. Independently read attribution and stored-open
 
 ## Evidence
 
+- Content comparison uses authored invariant fields or the joint family guarantee. [18]
+- The tally separates counted successors, relationship-only changes and different ambiguous heads. [20]
+
 - Ordinary and caller-selected resolution share one memoized summary and label the counted comparison. [16]
 - Shared preflight/read failures retain typed unavailable and nonzero unresolved becomes partial. [17]
-- Compared content fields separate authored wording/status from provenance/display version. [18]
 - Snapshot reads retain canonical membership and realization comparison identities. [19]
-- One tally distinguishes counted successor, relationship-only and unequal ambiguous heads. [20]

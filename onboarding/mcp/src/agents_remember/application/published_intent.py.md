@@ -184,7 +184,6 @@ No configured domain documentation could be checked.
 
 - The scope-selection rule the read reports when a seed selects nothing, and the recorded-but-real selection it serves instead of refusing. [35]
 - The typed seeds and budget this route constructs, and the policy version the recorded block carries. [36]
-- The refusal and item shapes this route renders without re-spelling. [37]
 - The storage failure class the input-fact set is built around. [38]
 - **The resolver rule this card's memory-root paragraph states: the contract's memory worktree when one is in scope, the canonical external memory root otherwise.** [39]
 
@@ -216,3 +215,5 @@ No meaningful cross-repo references found.
 - No read selects the database of a converted tree. [47]
 
 - Unconverted roots refuse retired database selection and mounted tools open no legacy database. [44]
+
+- The refusal and item shapes this route renders without re-spelling. [37]

@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/application/record_standing_answers.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f0f2bb8ac268b4084a576647745a5e6165b31a6b",
+        "content": "sha256:c56a6b03cbcf031bac657139c183333b1da9e9449eb11de5d1e6b6f5c7fa6387",
+        "locator": {
+          "kind": "symbol",
+          "name": "RowStandings"
+        }
+      },
+      "id": "RLZ-4QX608",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-W1-08",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Puts recordState and a compact role/model writer on every record row of the tree views, read once per page.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f0f2bb8ac268b4084a576647745a5e6165b31a6b",
+        "content": "sha256:a4ed88caba344fa4be01945be24856012f20d8717eb29471a15c4a813a60a9ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "standing_fields"
+        }
+      },
+      "id": "RLZ-7EVBWJ",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-W1-08",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The record view's state and whole writer, taken from the index standing.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The full record representation carries the separate revision state and writer fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0f2bb8ac268b4084a576647745a5e6165b31a6b",
+            "content": "sha256:a4ed88caba344fa4be01945be24856012f20d8717eb29471a15c4a813a60a9ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "standing_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The record answer repeats both in compact top-level fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0f2bb8ac268b4084a576647745a5e6165b31a6b",
+            "content": "sha256:2bf45dbcdf44a21461b0013febf8ef23a048011973d8c96395387c75c97a110d",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_answer_standing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Row projection reuses the index results for records it has already seen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0f2bb8ac268b4084a576647745a5e6165b31a6b",
+            "content": "sha256:c56a6b03cbcf031bac657139c183333b1da9e9449eb11de5d1e6b6f5c7fa6387",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowStandings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "docs/reference/mcp-tools.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "73762fd57ea1208ba1c2a8fe6999f52290f62b4d",
+        "content": "sha256:9257b4f61552fa1b6e107ea93d4a3e1ea3d496ce3c2c2c123734e9e4b52668e1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QGFMNE",
+      "invariant": "INV-5GEDEX",
+      "origin": {
+        "handoffEntry": "L3-W1-09",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The knowledge_read row describes writer aggregates and the complete report.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

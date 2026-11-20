@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/review_round_stamp.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The task-document route supplies recorder and registered-handover stamps at the same recording time for a memory review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a20e21fc70c95225948862846efbd6b2def7dfa6",
+            "content": "sha256:ffb7e88df3928462de7de614eac1eb5160610eab86b5a2d348e8938f1bd888ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_round_stamp"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

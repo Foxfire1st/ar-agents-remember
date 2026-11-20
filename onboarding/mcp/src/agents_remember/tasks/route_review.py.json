@@ -3,12 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+        "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+        "content": "sha256:affe9419807da5b077d2a1fbea03ecfea3bf201f39e810277b25dc765703592d",
+        "locator": {
+          "kind": "symbol",
+          "name": "passed_memory_round"
+        }
+      },
+      "id": "RLZ-5B0FVH",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-W1-05",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The one test of a passed memory round (verdict pass or pass-with-notes), shared by closeout and the state conversion.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
         "content": "sha256:2b63dc4bd23b7c214c53dd58bcdbe6a86ec7684474d276169ceb513a2f5a163b",
         "locator": {
-          "end": 215,
+          "end": 275,
           "kind": "line_range",
-          "start": 211
+          "start": 271
         }
       },
       "id": "RLZ-NS6VWT",
@@ -22,7 +40,25 @@
     },
     {
       "anchor": {
-        "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+        "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+        "content": "sha256:d57260991281326d1ba6518e6716a624ed952926f0fd13b717fdb658c15d02ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "usable_verdict_ref"
+        }
+      },
+      "id": "RLZ-TW71T3",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-W1-05",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The one reading of a round's verdict reference, shared by closeout and the state conversion: trimmed, printable, within the reference length, else none.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
         "content": "sha256:b963a9650ea973956f73bae4d1fd5f8d06d994fd6abf2772092395c89aaf232b",
         "locator": {
           "kind": "symbol",
@@ -45,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
             "content": "sha256:50e93ee6d6a95ce3372308f2f3ce9df40517b33a420ab5f076da862e136d3697",
             "locator": {
               "kind": "symbol",
@@ -56,7 +92,7 @@
         },
         {
           "anchor": {
-            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
             "content": "sha256:7f9fc5da30d8d786e759086820d40acf7ca95b7ec2e193c95bf7a104763fec9a",
             "locator": {
               "kind": "symbol",
@@ -67,7 +103,7 @@
         },
         {
           "anchor": {
-            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
             "content": "sha256:1645a2a76bcb3106fb9b53e5eabd8bf7ca382da58edf1228a78d8d991730e892",
             "locator": {
               "kind": "symbol",
@@ -78,13 +114,45 @@
         }
       ]
     },
-    "2": {
-      "note": "Fixed-list finding, round-cap permission fields, and review-state validation.\n\nAnchor: `ReviewFinding` `ReviewState`",
+    "10": {
+      "note": "Explicit verdict controls a memory pass, with remaining findings as the fallback for unstamped verdicts.",
       "targets": [
         {
           "anchor": {
-            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
-            "content": "sha256:dec1e870f6476ae35e3eb90c61301c71553bf75141daf92defe26a0422a24f71",
+            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+            "content": "sha256:affe9419807da5b077d2a1fbea03ecfea3bf201f39e810277b25dc765703592d",
+            "locator": {
+              "kind": "symbol",
+              "name": "passed_memory_round"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The parser returns a bounded printable nonempty verdict reference after trimming.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+            "content": "sha256:d57260991281326d1ba6518e6716a624ed952926f0fd13b717fdb658c15d02ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "usable_verdict_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Fixed-list finding, round-cap permission fields, and review-state validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+            "content": "sha256:ddfe548280baa89c5f26a4558d8a1a6cff7b163cc470d72f796eb4cc7ab33d51",
             "locator": {
               "kind": "file"
             }
@@ -98,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
             "content": "sha256:bd0e6fe4943fbe368d04f63206bc9f889341d54fa1f9b32a6c60a0ad89548662",
             "locator": {
               "kind": "symbol",
@@ -110,16 +178,16 @@
       ]
     },
     "4": {
-      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "note": "Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round.",
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
-            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+            "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
             "locator": {
-              "end": 240,
+              "end": 298,
               "kind": "line_range",
-              "start": 175
+              "start": 225
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },
@@ -150,12 +218,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 296,
+              "end": 297,
               "kind": "line_range",
-              "start": 251
+              "start": 252
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
           },
@@ -164,16 +232,16 @@
       ]
     },
     "7": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L114–L205",
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
-            "content": "sha256:00acf35ffc9e071896f529c88e8ed018e60b92c83aea837e5879b86b1644f262",
+            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+            "content": "sha256:a35cc7994ac91f29d4e7d84585877a28a16f4101e103be5618b6724bac60432b",
             "locator": {
-              "end": 205,
+              "end": 265,
               "kind": "line_range",
-              "start": 114
+              "start": 118
             }
           },
           "kind": "code"
@@ -192,6 +260,22 @@
               "name": "build_route_review"
             },
             "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The persisted model validates stamps and omits absent fields in older rounds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+            "content": "sha256:f9627f286b9dfa9a36436255389dc0c904f24312ce62f9d13a28b75939b1672d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRound"
+            }
           },
           "kind": "code"
         }

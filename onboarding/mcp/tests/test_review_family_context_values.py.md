@@ -110,7 +110,6 @@ share is accepted.
 - **The correction itself, pinned with the same carried rows: a completed continued page is accepted, and those rows on a first page are refused, so the relaxation is not a hole.** [7]
 - **A member source's locator state, locator, ranges and resolution are one fact, and a source without its stored role or rationale is refused.** [8]
 - The validators that case exercises. [9]
-- The one internally consistent context every roster-and-count case departs from by exactly one clause. [10]
 - **The validator these cases exercise, which requires a recorded side's revision to be one the family owner records and — this reopen's correction — holds only a single-page walk (`complete and state == "first_page"`) to the revision-wide member count.** [11]
 - The validator refusing a claimed remainder with no way to reach it and counts that do not describe the entries. [12]
 - The validator refusing a truncated roster presented as a complete one. [13]
@@ -121,3 +120,5 @@ share is accepted.
 No cross-repository behavior is exercised by these cases. They construct values in memory and assert the
 refusals those values' own validators raise; no store, enclosure, network or external system is involved,
 so no cross-repo reference row is recorded.
+
+- The one internally consistent context every roster-and-count case departs from by exactly one clause. [10]

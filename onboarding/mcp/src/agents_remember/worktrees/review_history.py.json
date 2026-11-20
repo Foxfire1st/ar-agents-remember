@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+        "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+        "content": "sha256:ab29e81a744eb39d8b74ed5c56ed3fbb679c5670f33b784fdb86d86318bceaea",
+        "locator": {
+          "end": 267,
+          "kind": "line_range",
+          "start": 201
+        }
+      },
+      "id": "RLZ-36GKY0",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-AV04NY",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The recorded round receives the exact tree, verdict and stamps; a record-only correction renews the recorder and keeps the first handover.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
         "content": "sha256:e4818a9a1e3df6db6852879d0f9c00605c02d08776cd26e58b6b15b9d74d38dc",
         "locator": {
           "kind": "symbol",
@@ -21,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
-        "content": "sha256:06a20a5e72778b378f2c659586c0aa1b729eaa24b8378d932046977157956d98",
+        "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+        "content": "sha256:5c6086b6caa5a9fbfec813999db230cc6a76bcec6600f34089e080c948909a8f",
         "locator": {
           "kind": "symbol",
           "name": "record_task_review"
@@ -39,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
-        "content": "sha256:06a20a5e72778b378f2c659586c0aa1b729eaa24b8378d932046977157956d98",
+        "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+        "content": "sha256:5c6086b6caa5a9fbfec813999db230cc6a76bcec6600f34089e080c948909a8f",
         "locator": {
           "kind": "symbol",
           "name": "record_task_review"
@@ -57,7 +76,25 @@
     },
     {
       "anchor": {
-        "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+        "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+        "content": "sha256:5c6086b6caa5a9fbfec813999db230cc6a76bcec6600f34089e080c948909a8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_task_review"
+        }
+      },
+      "id": "RLZ-FD4AK7",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-W1-05",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Stores the review stamps at first recording. A record-only correction can renew the recorder and retains the first-recorded handover stamp and its time.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
         "content": "sha256:52ecdf4c314df46148e3cb14ee2ce21e1331c3570c485b2f7ad916e1d18a53e6",
         "locator": {
           "kind": "symbol",
@@ -75,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+        "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
         "content": "sha256:e4818a9a1e3df6db6852879d0f9c00605c02d08776cd26e58b6b15b9d74d38dc",
         "locator": {
           "kind": "symbol",
@@ -94,14 +131,16 @@
   ],
   "references": {
     "1": {
-      "note": "Error/status boundary, cap-aware begin semantics, and pending admission.\n\nAnchor: `ReviewHistoryError` `begin_task_review` `require_pending_review`",
+      "note": "Review admission uses a typed error boundary, the settings-owned round cap and an explicit pending round.",
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
-            "content": "sha256:42dd33d21c574d9e80eec3ddcee8b4a0814786c26ea0359ce5660dd395c29f1d",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+            "content": "sha256:dd6c155aa19f15b6d3931f05826e0e0c086b8a62dbda73d56ef946dfa86e212e",
             "locator": {
-              "kind": "file"
+              "end": 104,
+              "kind": "line_range",
+              "start": 19
             }
           },
           "kind": "code"
@@ -113,12 +152,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
             "content": "sha256:f4fd041b97f55864cf92f61601b91c9da38f0468372ff815a2caae9601ef4caf",
             "locator": {
-              "end": 317,
+              "end": 375,
               "kind": "line_range",
-              "start": 295
+              "start": 353
             }
           },
           "kind": "code"
@@ -130,27 +169,95 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
             "content": "sha256:af0f1a85332e6d5774d78ba7a7ab35661c2ce53f58508d5fa825dfa3285c26cb",
             "locator": {
-              "end": 456,
+              "end": 514,
               "kind": "line_range",
-              "start": 400
+              "start": 458
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Publication field validation, architect/developer approval parsing, and sealed baseline creation.\n\nAnchor: `_validate_publication_fields` `_parse_developer_exception` `_record_baseline`",
+    "12": {
+      "note": "The review transition puts the memory tree and memory verdict beside the two product-captured stamps.",
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
-            "content": "sha256:42dd33d21c574d9e80eec3ddcee8b4a0814786c26ea0359ce5660dd395c29f1d",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+            "content": "sha256:5c6086b6caa5a9fbfec813999db230cc6a76bcec6600f34089e080c948909a8f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "record_task_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Record-only corrections update permitted facts on the same row and preserve the original tree and handover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+            "content": "sha256:68face2e5ab1db5e683292b664c62a74b7571ec508f03a31c8ec5eb7b8beb424",
+            "locator": {
+              "kind": "symbol",
+              "name": "_with_recorded_round"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The task-document layer derives the recorder and registered handover stamps at the same recording time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a20e21fc70c95225948862846efbd6b2def7dfa6",
+            "content": "sha256:ffb7e88df3928462de7de614eac1eb5160610eab86b5a2d348e8938f1bd888ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_round_stamp"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/review_round_stamp.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The handover stamp uses current leaf receipts and explains unresolved or ambiguous attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b691d1115b767c19cc50c0d69d9832eca27511",
+            "content": "sha256:c863b159b7e1164baa03f98ce2c47d5e85ea01379b5cf16eb0eada1c9cc8206f",
+            "locator": {
+              "kind": "symbol",
+              "name": "registered_handover_stamp"
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_handover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The review owner validates reported fields, parses the governing approval and records the sealed baseline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+            "content": "sha256:ea5d7c9601f849ba63b2366d3fa34c19771c5b35d68fb3611e866ea3e5e12db2",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 353
             }
           },
           "kind": "code"
@@ -162,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
             "content": "sha256:f261a86d1b2f7c9565792a52a5285c3db3f159a4f2c6b97d16d89f4724e79f84",
             "locator": {
               "kind": "symbol",
@@ -173,7 +280,7 @@
         },
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
             "content": "sha256:06a9767bbd8a773b59bc1d4b7283ace91072017fc81c2ecd62925de482eadfe1",
             "locator": {
               "kind": "symbol",
@@ -185,16 +292,16 @@
       ]
     },
     "4": {
-      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "note": "Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round.",
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
-            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+            "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
             "locator": {
-              "end": 240,
+              "end": 298,
               "kind": "line_range",
-              "start": 175
+              "start": 225
             }
           },
           "kind": "code"
@@ -224,12 +331,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 296,
+              "end": 297,
               "kind": "line_range",
-              "start": 251
+              "start": 252
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
           },
@@ -242,12 +349,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
             "content": "sha256:e4818a9a1e3df6db6852879d0f9c00605c02d08776cd26e58b6b15b9d74d38dc",
             "locator": {
-              "end": 100,
+              "end": 102,
               "kind": "line_range",
-              "start": 25
+              "start": 27
             }
           },
           "kind": "code"
@@ -255,16 +362,16 @@
       ]
     },
     "8": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L103–L240",
+      "note": "The review owner binds the recorded round to the admitted result. A record-only correction preserves first handover attribution.",
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
-            "content": "sha256:a9f3fd58b33078f01e00d7831afae17b6112dc0adf32e625b58785795cd14bbe",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+            "content": "sha256:f9a961f370f26e6d0ee1530c6d63ace388b3089ed60fa7546994137f65937b66",
             "locator": {
-              "end": 240,
+              "end": 267,
               "kind": "line_range",
-              "start": 103
+              "start": 105
             }
           },
           "kind": "code"
@@ -276,12 +383,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
             "content": "sha256:63503809fbe2153a3f7d578c99d3128fbd9ddcdb6de5a4034a919b5a4a5cb603",
             "locator": {
-              "end": 265,
+              "end": 323,
               "kind": "line_range",
-              "start": 243
+              "start": 301
             }
           },
           "kind": "code"

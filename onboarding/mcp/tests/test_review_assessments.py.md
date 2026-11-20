@@ -97,4 +97,4 @@ would be a source census rather than a behavioural check; and the leaf recorded 
 
 - The archived KS-R15@v1 packet preserves the creating leaf’s distinct-type requirement, former external-memory scope rail and report-only checklist boundary (§3.2, §6.9 and §8.2). This document supports the historical omission rationale, not a current implementation claim. \[6] [6]
 
-- The lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_review_assessments.py"; "unit-regression = [" [1]
+- The unit-regression lane selects mcp/tests/test_review_assessments.py. [1]

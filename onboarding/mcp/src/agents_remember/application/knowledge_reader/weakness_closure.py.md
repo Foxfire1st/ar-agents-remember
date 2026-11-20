@@ -28,9 +28,9 @@ A historical selection with no revision or a different closure, unreadable histo
 
 ## Invariants And Boundaries
 
-`marks.weakness_list` uses this display for closed rows, and `truth.record_view` uses the same returned closure in both `record.document.closed` and `facet.closed`. [5]
+`marks.weakness_list` uses this display for closed rows, and `truth.record_view` uses the same returned closure in both `record.document.closed` and `facet.closed`.
 
-The derived fields belong to the read response; this module does not write a closing commit or a closure state into the record or index. [1] [5]
+The derived fields belong to the read response; this module does not write a closing commit or a closure state into the record or index. [1]
 
 ## Evidence
 
@@ -38,4 +38,5 @@ The derived fields belong to the read response; this module does not write a clo
 - The exact closed block is attributed through the selected memory history, with pending and ancestry checks. [2]
 - A local merge-preserving walk identifies matching closure origins. [3]
 - Historical filenames are read by stable record ID at an exact revision. [4]
+
 - Both weakness-list and truth-view callers consume the shared returned display. [5]

@@ -48,12 +48,12 @@
       ]
     },
     "7": {
-      "note": "The shared explorer that owns loading, traversal and selection.\n\nAnchor: `ExplorerTree`",
+      "note": "The shared explorer that owns loading, traversal and selection.",
       "targets": [
         {
           "anchor": {
-            "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
-            "content": "sha256:22f74377d6feb31b6c266659ec71e398753609598b9443b23877d5749629d70d",
+            "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+            "content": "sha256:17049530092e84e15076697b7929ea969041b5912948f28c9e3d3ba9ba964a74",
             "locator": {
               "kind": "file"
             },

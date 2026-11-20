@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
-        "content": "sha256:554e52dcd3fa3ab6650860a0807a2b88198dc837156840a4c4a8657b868a5d78",
+        "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+        "content": "sha256:b38e9c9509935c5f3d41b6b4bb7adfe36563d75a0425115680cdb6144cce1ea0",
+        "locator": {
+          "end": 216,
+          "kind": "line_range",
+          "start": 186
+        }
+      },
+      "id": "RLZ-11D0G0",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-TRMMZA",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The shared row component wraps the supplied record standing below its first line.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+        "content": "sha256:aa21c49e3b85782d10329373bfdd39b74eafea9b9daf9777be3c5537bf913dab",
         "locator": {
           "kind": "symbol",
           "name": "ExplorerTree"
@@ -21,8 +40,26 @@
     },
     {
       "anchor": {
-        "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
-        "content": "sha256:554e52dcd3fa3ab6650860a0807a2b88198dc837156840a4c4a8657b868a5d78",
+        "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+        "content": "sha256:aa21c49e3b85782d10329373bfdd39b74eafea9b9daf9777be3c5537bf913dab",
+        "locator": {
+          "kind": "symbol",
+          "name": "ExplorerTree"
+        }
+      },
+      "id": "RLZ-AMNARE",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-W1-08",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The shared tree's optional second line of a row, which wraps instead of being cut like the suffix.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+        "content": "sha256:aa21c49e3b85782d10329373bfdd39b74eafea9b9daf9777be3c5537bf913dab",
         "locator": {
           "kind": "symbol",
           "name": "ExplorerTree"
@@ -39,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
-        "content": "sha256:554e52dcd3fa3ab6650860a0807a2b88198dc837156840a4c4a8657b868a5d78",
+        "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+        "content": "sha256:aa21c49e3b85782d10329373bfdd39b74eafea9b9daf9777be3c5537bf913dab",
         "locator": {
           "kind": "symbol",
           "name": "ExplorerTree"
@@ -58,14 +95,16 @@
   ],
   "references": {
     "1": {
-      "note": "The shared tree composes the headless library with one caller-supplied loader and open behavior.\n\nAnchor: `useExplorerTree`",
+      "note": "The shared tree composes the headless library with one caller-supplied loader and open behavior.\n\nAnchor: useExplorerTree",
       "targets": [
         {
           "anchor": {
-            "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
-            "content": "sha256:22f74377d6feb31b6c266659ec71e398753609598b9443b23877d5749629d70d",
+            "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+            "content": "sha256:896b1e7236665b5076681add40e5aa0d4ca1c8cf5454301d4dfa01e4759da6a8",
             "locator": {
-              "kind": "file"
+              "end": 124,
+              "kind": "line_range",
+              "start": 60
             }
           },
           "kind": "code"
@@ -73,14 +112,28 @@
       ]
     },
     "2": {
-      "note": "A failed load is shown as an alert with the loader's error text instead of an empty result; no directory name is guaranteed and a successful reload clears it.",
+      "note": "A failed child read displays the loader's error text in an alert. A successful read clears the error for that parent.\n\nAnchor: useExplorerTree, ExplorerTree",
       "targets": [
         {
           "anchor": {
-            "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
-            "content": "sha256:22f74377d6feb31b6c266659ec71e398753609598b9443b23877d5749629d70d",
+            "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+            "content": "sha256:5910ec53cb9c606cc2928ab632da782390cc03ad3f61de205d17b51c6639d6b4",
             "locator": {
-              "kind": "file"
+              "end": 104,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+            "content": "sha256:53b359d09565bd8f774cbb187f160e275ad9bda7db02e02d5e689c625a6d4f6d",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 141
             }
           },
           "kind": "code"
@@ -88,14 +141,16 @@
       ]
     },
     "3": {
-      "note": "A new address can re-read one loaded parent, once, when the filter had hidden the row.\n\nAnchor: `useRevealItem`",
+      "note": "A new address can re-read one loaded parent, once, when the filter had hidden the row.\n\nAnchor: useRevealItem",
       "targets": [
         {
           "anchor": {
-            "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
-            "content": "sha256:22f74377d6feb31b6c266659ec71e398753609598b9443b23877d5749629d70d",
+            "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+            "content": "sha256:da3afb3284628c3812e09bf07ab1fc12c4868a8db982bb9b009381f6d9257784",
             "locator": {
-              "kind": "file"
+              "end": 239,
+              "kind": "line_range",
+              "start": 220
             }
           },
           "kind": "code"
@@ -119,16 +174,51 @@
       ]
     },
     "5": {
-      "note": "The Knowledge reader consumes the same tree for paths and the Records branch.\n\nAnchor: `KnowledgeTree`",
+      "note": "The Knowledge reader consumes the same tree for paths and the Records branch.\n\nAnchor: KnowledgeTree",
       "targets": [
         {
           "anchor": {
-            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
-            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "content": "sha256:698bf432d174828a4f738aa1ba96d4d31d3d8f1beaeaf47c91ad0ad930494d61",
             "locator": {
-              "kind": "file"
+              "end": 227,
+              "kind": "line_range",
+              "start": 173
             },
             "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Caller-owned details wrap within the row while the optional suffix stays on the first line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+            "content": "sha256:b35387e13cb12ff58a51cf84a0724c4804e7c6788e5d9576a14d23d7f6dc95c0",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A detail is an optional second line in the same row and leaves the first-line content in place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+            "content": "sha256:5d711999ee49203da67f581e8c388b562cfa212f6649dc9f1ed8be6fa475a7cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowContent"
+            }
           },
           "kind": "code"
         }

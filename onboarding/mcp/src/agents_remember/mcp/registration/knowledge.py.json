@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-        "content": "sha256:78e83592b213ecb099716542f26a923e3696e51b893d6798fb40bac36a3fbec3",
+        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+        "content": "sha256:135bbf4d1475d2acdc24a2c7f9a396b8b5594ad91f211606b0bdf464bc5fac5e",
         "locator": {
           "kind": "symbol",
           "name": "_register_knowledge_read"
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
         "content": "sha256:f58d64f0f2b089ba2ea8fdeaad07ea16024320aba7ec5ef63f5c7db369457bbf",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,24 @@
     },
     {
       "anchor": {
-        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+        "content": "sha256:e92626429978d5815d2e1f838e9f6e5ba241d5fc2beaf4908290b0f3786c113c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ADCJCR",
+      "invariant": "INV-5GEDEX",
+      "origin": {
+        "handoffEntry": "L3-W1-09",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The registered knowledge_read description scopes record fields and names the writer report.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
         "content": "sha256:996856950511320ea19a5c78de08ab93cba16a5c5e9b8c0ad5787ddfdd412f28",
         "locator": {
           "kind": "symbol",
@@ -58,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
         "content": "sha256:af5bc3d53ac74fde60450bcb05450ed18d8201c7533d803475ec675d4e314053",
         "locator": {
           "kind": "symbol",
@@ -76,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
         "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
         "locator": {
           "kind": "symbol",
@@ -94,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
         "content": "sha256:f3078a4e98981f5d6e048c7f7fb374f92a598b01f561b1203460b72c8507ccf7",
         "locator": {
           "end": 34,
@@ -113,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
         "content": "sha256:462eafa5b1361a6c9e781fea4ba3dfd5cb3f6a441b4d85111a77abbcfe0ee0e0",
         "locator": {
           "kind": "symbol",
@@ -136,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:c81044bcca1bebd8e9882cf2186e6a9e265245c2c3a5d233d233422ff01f1e94",
             "locator": {
               "end": 85,
@@ -171,7 +188,7 @@
         },
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:68c92743fa0578a21f3a218d54838b2a109c91279fc3153c3b97fc99cb509649",
             "locator": {
               "end": 76,
@@ -184,12 +201,12 @@
       ]
     },
     "11": {
-      "note": "The four registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments plus the configured coordination root, the write and diff registrars that take the configuration beside the server, and the integrity registrar that takes the server alone.\n\nAnchor: `_register_knowledge_read` `_register_knowledge_diff` `_register_knowledge_integrity_check`",
+      "note": "The four registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments plus the configured coordination root, the write and diff registrars that take the configuration beside the server, and the integrity registrar that takes the server alone.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "content": "sha256:e92626429978d5815d2e1f838e9f6e5ba241d5fc2beaf4908290b0f3786c113c",
             "locator": {
               "kind": "file"
             }
@@ -199,14 +216,16 @@
       ]
     },
     "12": {
-      "note": "The published read contract: the named views with their filters, rows that name ID, kind, state and location and never text, and the optional `sourcePath` seed the signature carries into `ReadToolRequest.source_path`.\n\nAnchor: `knowledge_read`",
+      "note": "The registered reader names the record views and their filters. Its writers view returns bounded aggregates and a full report path.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "content": "sha256:135bbf4d1475d2acdc24a2c7f9a396b8b5594ad91f211606b0bdf464bc5fac5e",
             "locator": {
-              "kind": "file"
+              "end": 139,
+              "kind": "line_range",
+              "start": 84
             }
           },
           "kind": "code"
@@ -214,25 +233,26 @@
       ]
     },
     "13": {
-      "note": "The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders.\n\nAnchor: `register_knowledge_tools`",
+      "note": "The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
-              "kind": "file"
+              "end": 81,
+              "kind": "line_range",
+              "start": 68
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "content": "sha256:e92626429978d5815d2e1f838e9f6e5ba241d5fc2beaf4908290b0f3786c113c",
             "locator": {
-              "kind": "symbol",
-              "name": "register_knowledge_tools"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -240,37 +260,30 @@
       ]
     },
     "14": {
-      "note": "The comparison registrar and handler return the knowledge files' Git diff, grouped by record and source path, without inferring a semantic effect label.\n\nAnchor: `_register_knowledge_diff` `knowledge_diff`",
+      "note": "The comparison registrar forwards the selected trees and scope to the comparison handler. The mounted response names counts, bounded decision records and the full report.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:462eafa5b1361a6c9e781fea4ba3dfd5cb3f6a441b4d85111a77abbcfe0ee0e0",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_knowledge_diff"
+              "end": 214,
+              "kind": "line_range",
+              "start": 185
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:8c0674e47cd64339db13b3e2620199f7cfefa2f7bbf1ff913a001294b2964268",
+            "blob": "1ce0bfc646a94b8e533c52d7c93d1acae2c8ab4d",
+            "content": "sha256:8e7c9a32a5512b0e950e88d0ac614b3d937d29bf3f3cc3b73101b5107a856cba",
             "locator": {
-              "kind": "symbol",
-              "name": "knowledge_diff"
-            }
+              "end": 1179,
+              "kind": "line_range",
+              "start": 1124
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
           "kind": "code"
         }
@@ -281,7 +294,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:996856950511320ea19a5c78de08ab93cba16a5c5e9b8c0ad5787ddfdd412f28",
             "locator": {
               "kind": "symbol",
@@ -292,7 +305,7 @@
         },
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:79fa732d612509a624a09e79e3e8da5aed6af660c6713eed0f3d8c2f9ab12542",
             "locator": {
               "kind": "symbol",
@@ -308,7 +321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:a1f16b45885148fac14d82548380f25a2c15b678876d308ab40e6f5f41c27ca6",
             "locator": {
               "end": 41,
@@ -486,14 +499,16 @@
       ]
     },
     "20": {
-      "note": "The strict response classes preserve the read view's payload, the diff's file changes and the validator's report/worklist as distinct responsibilities; the current integrity response has no compatible field.\n\nAnchor: `KnowledgeReadResponse` `KnowledgeDiffResponse` `KnowledgeIntegrityCheckResponse`",
+      "note": "The strict response classes preserve the read view's payload, the diff's file changes and the validator's report/worklist as distinct responsibilities; the current integrity response has no compatible field.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
-            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
+            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "content": "sha256:e5464ff0a8d01c017910a5500c6559110c4eaf511038b4ddd254f271b0df809f",
             "locator": {
-              "kind": "file"
+              "end": 144,
+              "kind": "line_range",
+              "start": 79
             },
             "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
           },
@@ -501,23 +516,12 @@
         },
         {
           "anchor": {
-            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
-            "content": "sha256:c6e2600e9ba932eb405f3c40a9306f46b26f47e8bfd80c6ee7d37c8a1120282d",
-            "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
-            },
-            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
             "content": "sha256:56378eecacf2289549c32aa3be01be39ff48699acd6d564caa98ce7f3a1f9f15",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeDiffResponse"
+              "end": 177,
+              "kind": "line_range",
+              "start": 147
             },
             "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
           },
@@ -525,11 +529,23 @@
         },
         {
           "anchor": {
-            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
             "content": "sha256:ff68ce0fc9bc2b83bb37171633d836ca0617299821e55922d8e477a2db9c0f3f",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeIntegrityCheckResponse"
+              "end": 212,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
           },
@@ -538,12 +554,12 @@
       ]
     },
     "22": {
-      "note": "Knowledge read/write/diff/integrity handlers resolve the existing request classes and payload builders through the lazy tools adapter at call time. No second writer or schema is introduced.\n\nAnchor: `_register_knowledge_write`",
+      "note": "Knowledge read/write/diff/integrity handlers resolve the existing request classes and payload builders through the lazy tools adapter at call time. No second writer or schema is introduced.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "content": "sha256:e92626429978d5815d2e1f838e9f6e5ba241d5fc2beaf4908290b0f3786c113c",
             "locator": {
               "kind": "file"
             }
@@ -557,18 +573,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
-              "kind": "symbol",
-              "name": "register_knowledge_tools"
+              "end": 81,
+              "kind": "line_range",
+              "start": 68
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:5c366de560a4c27865c213800f58e9f76617a44c965ccd2d618af79be758865f",
             "locator": {
               "end": 25,
@@ -580,8 +597,8 @@
         },
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "content": "sha256:e92626429978d5815d2e1f838e9f6e5ba241d5fc2beaf4908290b0f3786c113c",
             "locator": {
               "kind": "file"
             }

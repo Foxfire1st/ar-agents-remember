@@ -53,14 +53,16 @@
       ]
     },
     "4": {
-      "note": "The tool's consumer of these fields.\n\nAnchor: `knowledge_integrity_check_payload`",
+      "note": "The tool's consumer of these fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
-            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
+            "blob": "1ce0bfc646a94b8e533c52d7c93d1acae2c8ab4d",
+            "content": "sha256:0db9e2433f3b9b4f873c4de9cb281a6131d173726c3c66ed79e4dedf58072b44",
             "locator": {
-              "kind": "file"
+              "end": 1433,
+              "kind": "line_range",
+              "start": 1420
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },

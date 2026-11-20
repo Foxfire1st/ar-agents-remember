@@ -3,7 +3,64 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+        "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+        "content": "sha256:015d9fc6d265fb169497b9a9b6c88a12ee7ff983afaccb55c23ffc08ca32130d",
+        "locator": {
+          "end": 136,
+          "kind": "line_range",
+          "start": 125
+        }
+      },
+      "id": "RLZ-5MNCZ8",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-X8FRT8",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The parsed tree holds the converted review-facts companion apart from each owner's history files.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+        "content": "sha256:0c85032f6e5fb5960257f41194e0b5218bae87a11c616c86ae0066b535120ddf",
+        "locator": {
+          "end": 259,
+          "kind": "line_range",
+          "start": 210
+        }
+      },
+      "id": "RLZ-6S51VT",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-X8FRT8",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The build derives standing from current tree history and the named repository's exact-content proof.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+        "content": "sha256:6ad4e84ee4352887dfdd1f7e4690d37aeaab507409affa2b194083b4563a0493",
+        "locator": {
+          "end": 306,
+          "kind": "line_range",
+          "start": 283
+        }
+      },
+      "id": "RLZ-B5KJTF",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-X8FRT8",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The parser binds converted review evidence separately from owner's attempt files.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
         "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
         "locator": {
           "kind": "symbol",
@@ -18,20 +75,132 @@
       },
       "rationale": "The index persists the complete existing row document together with its history metadata.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+        "content": "sha256:841fc7b9db87eddbf1ddecc3fc8801843cea346af15e5547e5212637249dd4dc",
+        "locator": {
+          "end": 370,
+          "kind": "line_range",
+          "start": 363
+        }
+      },
+      "id": "RLZ-PPVR3C",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-X8FRT8",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The index uses one prederived standing for each record projected from the selected tree.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+        "content": "sha256:114d969ca246dc031ddcc8528cf4a5dbce6c984c3482c7931cf51a45bee89228",
+        "locator": {
+          "end": 441,
+          "kind": "line_range",
+          "start": 435
+        }
+      },
+      "id": "RLZ-REZYZY",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-X8FRT8",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The index observes a legacy state word as absent lifecycle status.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+        "content": "sha256:ddccc8ca9ef071acccd2f6f50c440a2a55a4b000eea61d757a8cec0a456a9233",
+        "locator": {
+          "end": 415,
+          "kind": "line_range",
+          "start": 396
+        }
+      },
+      "id": "RLZ-W5C2QJ",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-X8FRT8",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The selected tree's derived state and writer occupy index columns apart from lifecycle status.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+        "content": "sha256:054156c7fcab58178bfa37a1be06ed956045c3001b3382329a56c5352505c3d0",
+        "locator": {
+          "end": 561,
+          "kind": "line_range",
+          "start": 546
+        }
+      },
+      "id": "RLZ-YRBSG3",
+      "invariant": "INV-5GEDEX",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-5GEDEX",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The index stores one named revision with its attributed writer and review flag for the aggregate.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "The builder's contract: one snapshot in, problems named, nothing derived.\n\nAnchor: \"A file that fails its schema is reported, never guessed at.\"",
+      "note": "The builder names parse problems and derives revision standing from the selected memory tree's history and exact review evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
-            "content": "sha256:d1e9aa64c956aa0f1796f8f6a96ac62bfb06d8f889cb22b0ef22b021fb551653",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:deb983ecac418f63fe6b8829927dce136ace79da6938d18b7ef330597749cc43",
             "locator": {
-              "end": 88,
+              "end": 207,
               "kind": "line_range",
-              "start": 8
+              "start": 191
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:493f5a3dfa3900176826e2310cfb8477d79db8f578f9c789bf7acb3514bf7bf1",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:e89f23fe0f9b3ea68cf3e2d65e01734df4de9730a551bfa92b68c92cb0ef9485",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 243
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:2acce0feda3db4b23b73905c19a82c9eb83d67345a11758b50fd3f96af2aac35",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 250
             }
           },
           "kind": "code"
@@ -43,11 +212,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
-            "content": "sha256:f8a19eaf294390813cc3d6e4fe5126d9223d2343e400541ea37dd367763884d0",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:a70b514cd3dd3d00857abfd954506cc943c0a75586242c82b9e650ad2a581465",
             "locator": {
-              "kind": "symbol",
-              "name": "ParsedTree"
+              "end": 140,
+              "kind": "line_range",
+              "start": 122
             }
           },
           "kind": "code"
@@ -59,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
             "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
             "locator": {
               "kind": "symbol",
@@ -70,13 +240,47 @@
         }
       ]
     },
-    "2": {
-      "note": "The parsed tree and its completeness.\n\nAnchor: `ParsedTree`",
+    "12": {
+      "note": "The index builds record standing and the named-revision rows together in its write transaction.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
-            "content": "sha256:1b22516606ea65bb761f776cdebad477c86dc5d066d891472a45a2bce23137eb",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:4a725b8f3dad68db27ed0752044b11c0de8799910800ecf3ede36cffc976dd8f",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A converted review catalog is parsed as review evidence separately from owner attempts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:6ad4e84ee4352887dfdd1f7e4690d37aeaab507409affa2b194083b4563a0493",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The parsed tree and its completeness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:31eda7ac82d19f0b9c105e27e75681f8c431439f82d6cb00c2094440445e3eee",
             "locator": {
               "kind": "file"
             }
@@ -90,7 +294,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
             "content": "sha256:50338a20987465f4fb984f54f86c618c7b89ac2c504d5c6db6b9cf32c6a1ea44",
             "locator": {
               "kind": "symbol",
@@ -106,11 +310,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
-            "content": "sha256:ba4b3cb06011e3c1a22e9748aed9c8d66e2d0be2019d1f5c948dd566e78cc50e",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:493f5a3dfa3900176826e2310cfb8477d79db8f578f9c789bf7acb3514bf7bf1",
             "locator": {
-              "kind": "symbol",
-              "name": "build_index"
+              "end": 240,
+              "kind": "line_range",
+              "start": 210
             }
           },
           "kind": "code"
@@ -122,77 +327,84 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
-            "content": "sha256:7bcf09c0ef7bd024665c5239842344ffd4efab1d13397fa859b93c8e50776693",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:73ee777ce6c9101b8ea6b2cb4d5029efa75950902bf5732945bc5af8ed9dc0ea",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_rows"
+              "end": 393,
+              "kind": "line_range",
+              "start": 363
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
-            "content": "sha256:8039957364408c96e2f0cb139c6a0ebfc2903dbf62c183504a45d3e4ec24f099",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:db6c57a501fa94b7f512b1d0b991ab3538fd014e4c96662fc37c44724912e516",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_record"
+              "end": 432,
+              "kind": "line_range",
+              "start": 396
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
             "content": "sha256:83786254cb1c6ba01dbdbdb8080fccf86b7db73359a32c8b6b36b668252b92d8",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_link"
+              "end": 460,
+              "kind": "line_range",
+              "start": 442
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
             "content": "sha256:c24f1b920e33f706375685894361121aa7b8dbabe06c9ec36d0d76421128becd",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_references"
+              "end": 475,
+              "kind": "line_range",
+              "start": 463
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
             "content": "sha256:c19bb9830ed09e05975a186139949c60dc16e2dfec09f2fd8dc964aae4c335fb",
             "locator": {
-              "kind": "symbol",
-              "name": "_reference_endpoint"
+              "end": 491,
+              "kind": "line_range",
+              "start": 478
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
             "content": "sha256:c5c9db12cb8f6a83d479bbffeb65e74639debb54f72394a99891d906010921a6",
             "locator": {
-              "kind": "symbol",
-              "name": "_link"
+              "end": 517,
+              "kind": "line_range",
+              "start": 506
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
             "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_history"
+              "end": 543,
+              "kind": "line_range",
+              "start": 520
             }
           },
           "kind": "code"
@@ -204,7 +416,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
             "content": "sha256:553db5bd42c2f97e64f517be601274d4040befce7a4f33f88bc2887a9334535e",
             "locator": {
               "kind": "symbol",

@@ -167,12 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
             "content": "sha256:de85e8dd1d0b56d0f3b8094363451dc77f81530f3fe0488d43004c27899786f5",
             "locator": {
-              "end": 539,
+              "end": 510,
               "kind": "line_range",
-              "start": 494
+              "start": 465
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

@@ -1,0 +1,74 @@
+{
+  "path": "mcp/tests/test_direct_landing_review_fact.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a13cf293e6d845e47ffa0589d83aa52a10aa84af",
+        "content": "sha256:8fb91da1a6d9206218d7c9a2985bad7ebe8d892cd08d973ac688d25476e3a6db",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_gate_refuses_a_fact_written_into_a_frozen_history"
+        }
+      },
+      "facet": "A direct landing rejects a review fact added to previously closed source history.",
+      "id": "PRF-56DHMM",
+      "invariant": "INV-PD5ZD5",
+      "origin": {
+        "handoffEntry": "L3-W1-06",
+        "leaf": "261112-KNO-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The matching pass is present in the committed closed history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a13cf293e6d845e47ffa0589d83aa52a10aa84af",
+            "content": "sha256:5a322fb5e8ebb9c9bdd067c796de3fe36b4cd015808566a67bb759b1e37e5a2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_direct_landing_writes_the_review_fact_into_the_closed_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A pass for another tree does not attach a review fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a13cf293e6d845e47ffa0589d83aa52a10aa84af",
+            "content": "sha256:d98782e8aec63a56632992a5a5ab5c51ff4f9b6e3bfd570d47de839d8b57a08b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pass_of_another_memory_tree_gives_no_fact_and_says_so"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The gate refuses an added fact in an already closed history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a13cf293e6d845e47ffa0589d83aa52a10aa84af",
+            "content": "sha256:8fb91da1a6d9206218d7c9a2985bad7ebe8d892cd08d973ac688d25476e3a6db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gate_refuses_a_fact_written_into_a_frozen_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

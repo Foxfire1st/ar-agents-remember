@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/review_note.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only a readable closed history without a review fact supports the no-pass sentence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fef49ae4f3c1bf291de3554c41049c496946862",
+            "content": "sha256:aa8c936b5ee5d85a5378dc1d610ad3b4cc65aeff23be682c8cb1e73c0a8f0431",
+            "locator": {
+              "kind": "symbol",
+              "name": "committed_review_note"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

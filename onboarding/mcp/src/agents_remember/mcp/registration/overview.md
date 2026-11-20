@@ -190,6 +190,8 @@ The memory family extends the existing `citation_fix` declaration with flat `mod
 
 
 
+The mounted `knowledge_read` registration describes the `writers` view as per-writer aggregates with revision counts and a complete report path. Record rows still carry IDs, kinds, states and locations.
+
 ## Evidence
 
 - \[7] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
@@ -228,12 +230,13 @@ The memory family extends the existing `citation_fix` declaration with flat `mod
 [13] mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutMessageInput; mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutInvalidField
 [14] mcp/src/agents_remember/mcp/registration/worktrees.py — lines 32-37
 [17] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
-[22] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check
 [26] mcp/src/agents_remember/mcp/registration/__init__.py — symbol TOOL_REGISTRARS
 [29] mcp/src/agents_remember/models/tools/public_roster.py — code file
 [31] mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 69-116; mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 126-183
 [32] mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 133-214; mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 235-294
 - \[10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__ The root PLR0913 exception supports the flat MCP registration signatures; it is not itself the PUBLIC_TOOLS or __all__ declaration. [11]
-- \[22] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check [23]
+- \ mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check [23]
 
 - The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat. [41]
+
+- The mounted knowledge tool registrar delegates read, diff, integrity and writing to their distinct registrations. [22]

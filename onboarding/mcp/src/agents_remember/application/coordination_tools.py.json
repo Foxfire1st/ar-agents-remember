@@ -56,11 +56,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+            "blob": "c6384aff2bd1b7fc17ef90559c01de9dd981edd1",
             "content": "sha256:6b60d43c9ef5c7c9675d1b65bbc5b3b96af08cd1f6b69c9126f03b1a2022d010",
             "locator": {
-              "kind": "symbol",
-              "name": "AuthorityError"
+              "end": 104,
+              "kind": "line_range",
+              "start": 98
             },
             "path": "mcp/src/agents_remember/errors.py"
           },
@@ -68,7 +69,7 @@
         },
         {
           "anchor": {
-            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+            "blob": "c6384aff2bd1b7fc17ef90559c01de9dd981edd1",
             "content": "sha256:fb800266240f36af9f14de537ed4d581198f01f8f68c8fb12005119ee5900e72",
             "locator": {
               "end": 116,
@@ -81,8 +82,8 @@
         },
         {
           "anchor": {
-            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
-            "content": "sha256:be727b36063ef5c6ae8e727184befe925508ffd4cdb421132c5398415578b630",
+            "blob": "c6384aff2bd1b7fc17ef90559c01de9dd981edd1",
+            "content": "sha256:a4de9ee8c6b591b0091a78d72003ef4b9e35b302d3fc058d6dd28726c683844a",
             "locator": {
               "kind": "file"
             },

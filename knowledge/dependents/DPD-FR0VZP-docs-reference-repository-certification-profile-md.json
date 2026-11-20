@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The page holds: the packaging change sets a build requirement, a licence field and a table of project links, and the profile's schema fields and selectors are unchanged.",
-    "task": "261112-BUG-L7",
+    "statement": "The profile reference still describes certification-specific checks and the separation from ordinary closeout, since the error addition is specific to state conversion.",
+    "task": "261112-KNO-L3",
     "uncommitted": true
   },
   "document": "docs/reference/repository-certification-profile.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -81,7 +81,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
     },
     {
-      "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+      "blob": "c6384aff2bd1b7fc17ef90559c01de9dd981edd1",
       "kind": "file",
       "path": "mcp/src/agents_remember/errors.py"
     },
@@ -128,7 +128,7 @@
       "path": ".dagger/src/agents_remember_quality/profile_execution.py"
     },
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }

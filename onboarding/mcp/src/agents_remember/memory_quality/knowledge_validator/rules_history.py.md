@@ -159,7 +159,6 @@ No configured live documentation source was available for this pass.
 - Every disagreeing row that no later attempt of its owner answers again, and whether the merge moved it. [4]
 
 
-- The refusing check rejects all mismatches at a leaf publication and only unmoved mismatches at a non-publication merge. [5]
 
 
 
@@ -198,9 +197,9 @@ No cross-repo boundary is crossed by this file.
 - Moved-row findings are bounded `merge_reports` at non-publication sync merges; the finding's message explains the deferral and names the next refusing publication or landing. [6]
 - The history-row registrations: `R09-history-rows` carries `writer_reports=True` while `R09-history-rows-merged` carries `merge_reports=True`, not plain report-only. [7]
 
-- Leaf publication refuses every merged-row mismatch, while the `merge_reports` finding defers only at a non-publication sync merge and names the next refusing publication or landing. [19]
 
 - Current source delta inspected statically: Extend subject resolution and bounded merge reporting; keep R52 leaf refusal, frozen-attempt scope, independent retention and gate-owned currentness. [20]
 
-
+- Leaf publication refuses every merged-row mismatch, while the `merge_reports` finding defers only at a non-publication sync merge and names the next refusing publication or landing. [19]
 - Item tokens are judged only in the files the re-anchor check reads; a closed file outside that population is not item-judged here. [21]
+- The refusing check rejects all mismatches at a leaf publication and only unmoved mismatches at a non-publication merge. [5]

@@ -59,7 +59,6 @@ repo is disallowed or a path escapes the coordination root.
 
 
 
-- `AuthorityError` is the authority-violation error type the guards raise. [4]
 
 
 ## Series-Contract Notes
@@ -67,3 +66,5 @@ repo is disallowed or a path escapes the coordination root.
 The context application entry point still resolves nested active task roots and a specific leaf enclosure —
 `parent_task` and `leaf_id` now travel inside the `TaskRef` through the same trusted config-bound
 resolver path, preserving task-name ergonomics.
+
+- `AuthorityError` is the authority-violation error type the guards raise. [4]

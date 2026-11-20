@@ -31,7 +31,6 @@ This account is bound to the candidate source, not a claim of a running serving 
 ## Evidence
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [8]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [9]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [11]
@@ -78,3 +77,5 @@ requested-versus-observed semantics remain unchanged.
 - The start call, which carries the caller's own harness name. [12]
 - The environment preparation block, which now declares the first-run report. [13]
 - The start answer, which declares the seat's continuation. [14]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [8]

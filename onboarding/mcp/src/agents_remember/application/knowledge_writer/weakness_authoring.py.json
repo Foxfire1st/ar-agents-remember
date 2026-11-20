@@ -40,15 +40,16 @@
   ],
   "references": {
     "1": {
-      "note": "The record authoring route delegates weakness checks before placing the record. [1]",
+      "note": "Record authoring delegates weakness anchoring and closure checks before placing the record.",
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:aa18820dd30bdc940d08485f2cfce2bbb108a4fd9f4039e38faa7a766d4a5a1a",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:92fc2c96174e7d68f805566a59bb0d0f9eb971d8c02bb092e10532b5078f014a",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_record"
+              "end": 449,
+              "kind": "line_range",
+              "start": 410
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
           },
@@ -59,8 +60,9 @@
             "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
             "content": "sha256:a492e0d90eac0e0e3028522e503fe8920237ea9ac76fe99b4902a00aa6141caa",
             "locator": {
-              "kind": "symbol",
-              "name": "author_weakness"
+              "end": 25,
+              "kind": "line_range",
+              "start": 16
             }
           },
           "kind": "code"
@@ -104,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+            "blob": "d6a81b841bf29a345dc9d7857710af32751ee689",
             "content": "sha256:5cd2080047a44536e4d5ce6d980404ecc045113e6eecc0c272913b7d5267b2a3",
             "locator": {
               "kind": "symbol",
@@ -116,7 +118,7 @@
         },
         {
           "anchor": {
-            "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+            "blob": "d6a81b841bf29a345dc9d7857710af32751ee689",
             "content": "sha256:efbc8e3e0ffc23c65dc4b951d64c09036a3b2ce0d86e8e8c16f605d39b029901",
             "locator": {
               "kind": "symbol",

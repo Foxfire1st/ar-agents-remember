@@ -22,7 +22,6 @@ This account is bound to the candidate source, not a claim of a running serving 
 ## Evidence
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [6]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [7]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [8]
 
@@ -54,3 +53,5 @@ Investigator is canonical in new selection output. The parsed selection retains 
 - The dispatch request, which carries the caller's harness name. [10]
 
 - The earlier system-specialist spelling names Investigator; Bootstrap and callerHarness remain launcher model data rather than caller permission. [11]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [6]

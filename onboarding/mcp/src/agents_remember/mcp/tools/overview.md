@@ -123,6 +123,8 @@ The memory payload owner routes synchronous citation repair and background previ
 
 
 
+The `knowledge_read` adapter routes `writers` through the same selected memory view and delegates aggregation to the application. Its answer includes the writer rows and complete report path. The record view keeps derived revision state and compact writer attribution beside the existing result state.
+
 ## Evidence
 
 - **Retained historical source account — superseded by the current route account:** Single-role adapters scope target-role observation; set starts have no single target role; the caller owner requires actual binding and runtime. 
@@ -137,7 +139,6 @@ The memory payload owner routes synchronous citation repair and background previ
 
 - The leaf response the paged tree read routes to, for a path or (since MIK-R05) a family seed, a path's refusal carrying its route chain. [3]
 
-- The seam that pages a converted tree's read, and the per-page extras. [4]
 
 - Converted-tree refusals state the threshold. [5]
 
@@ -208,7 +209,6 @@ The memory payload owner routes synchronous citation repair and background previ
 
 - **Retained historical source account — superseded by the current route account:** Adoption is explicit, confined and preview-identity approved [50]
 
-- **Retained historical source account — superseded by the current route account:** Knowledge selection and paging replace database-facing requests. [53]
 
 - **Retained historical source account — superseded by the current route account:** Fresh and resumed walks retain explicit tree binding and incomplete-index facts [54]
 
@@ -237,3 +237,6 @@ Anchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, 
 - Legacy paths and unheld current seeds refuse truthfully. [35]
 
 - Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; a valid explainer binding adds four tools to the ordinary registration. [63]
+
+- The seam that pages a converted tree's read, and the per-page extras. [4]
+- **Retained historical source account — superseded by the current route account:** Knowledge selection and paging replace database-facing requests. [53]

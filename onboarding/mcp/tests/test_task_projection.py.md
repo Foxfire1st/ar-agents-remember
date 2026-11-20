@@ -170,5 +170,5 @@ No meaningful cross-repo references found.
 
 - The read-only case keeps task-document bytes and the task-tree digest unchanged after a successful projection, a projection-branch-mismatch refusal and a projection-requirement-packet-unresolved refusal. [5]
 
-- The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [13]
-- The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [21]
+- The unit-regression lane selects mcp/tests/test_task_projection.py. Execution evidence is recorded separately. [13]
+- The unit-regression lane selects mcp/tests/test_task_projection.py. Execution evidence is recorded separately. [21]

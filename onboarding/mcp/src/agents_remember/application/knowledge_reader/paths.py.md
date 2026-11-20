@@ -14,10 +14,10 @@
   with the knowledge-presence marks and the directory coverage the shared function supplies. A path with
   onboarding but no code (a card whose file is gone) is listed with `inCode: false`.
 - **The path view** (`path_view`) of a file or directory: its onboarding Markdown with the sidecar's numbered
-  references resolved; its realization and proof entries grouped by invariant, each with its MIK-R03 state;
+  references resolved; its realization and proof entries grouped by invariant with code currentness;
   the families of those invariants and those routed over the path, each with its other locations; every
   record linking to the path or to those invariants, a decision shown whole; and for a test file, its proofs
-  with their facets (`testFile`).
+  with their facets (`testFile`). Included record summaries receive the revision's derived state and writer from the selected memory index.
 - **The without-proof list** (`without_proof`) is MIK-R28 rule 5's list, filtered to the invariants realized
   at or under a path when one is given.
 
@@ -44,7 +44,7 @@
   MIK-R03's `staleMembers` and every member entry not at (file) or under (directory) the path.
 - **Records.** `_links_to` collects `links_to_path` (anchor and route targets) plus each invariant's
   `linked_from`; `_linked_records` summarises each linking record once and attaches a decision in full.
-- **States.** `states_at` is the reader's one currentness call: MIK-R03's `invariant_currentness` at the
+- **Code currentness.** `states_at` is the reader's one currentness call: MIK-R03's `invariant_currentness` at the
   selection's code tree, or the reason it failed. `_currentness_block` reports the counts, or the failure
   with `unverifiableReason`, never an empty state.
 - **Kind and references.** `_path_kind` asks the code tree first, then a sidecar, then file prose, then the
@@ -53,8 +53,7 @@
 
 ### Conventions
 
-- Nothing is re-derived: states come from L03's function, route chains from L05's, decisions from L13's
-  helpers, coverage from the tree-coverage owner, and the without-proof list from L28's index lookup.
+- Code currentness comes from L03's function, revision state and writer from the selected memory index, route chains from L05's function, decisions from L13's helpers, coverage from the tree-coverage owner, and the without-proof list from L28's index lookup.
 - The prose path of a file is `onboarding/<path>.md`; a directory's is `onboarding/<path>/overview.md`.
 
 ### Invariants And Boundaries
@@ -78,6 +77,9 @@ No additional work is asserted by this card.
 
 ## Evidence
 
+- The path view bounds its directory selection before adding indexed standing to record summaries. [15]
+- One query looks up the state and writer for summaries of records held by the selected index. [22]
+
 ### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
@@ -94,17 +96,13 @@ No configured live documentation source was available for this pass.
 
 
 
-- The explorer level delegates to the one tree-coverage owner. [13]
 
 - The one pathname inventory, presence marks and coverage owner. [14]
 
-- The path view, bounded for a directory. [15]
 
 
-- The one currentness call, and its failure named. [16]
 
 
-- The without-proof list, filtered by path. [17]
 
 
 - The file, directory, test-file, explorer and without-proof cases. [18]
@@ -113,3 +111,7 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- The explorer level delegates to the one tree-coverage owner. [13]
+- The one currentness call, and its failure named. [16]
+- The without-proof list, filtered by path. [17]

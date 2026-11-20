@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The changed index passage correctly limits reuse to the selected memory tree and loaded build, while the unchanged passages were not reverified.",
-    "task": "261112-BUG-L9",
+    "statement": "The added Record state and Writer stamp sections describe tree-derived revision standing, the separate lifecycle words and the binding and launch-receipt provenance of the writer stamp.",
+    "task": "261112-KNO-L3",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -106,7 +106,7 @@
       "path": "mcp/src/agents_remember/models/knowledge_files/shapes.py"
     },
     {
-      "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+      "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
@@ -206,7 +206,7 @@
       "path": "mcp/src/agents_remember/tasks/task_paths.py"
     },
     {
-      "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+      "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/route_review.py"
     },
@@ -361,7 +361,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
     },
     {
-      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "blob": "95048276785aaaeb29b0ee4f04f3dfb35cd246f0",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },

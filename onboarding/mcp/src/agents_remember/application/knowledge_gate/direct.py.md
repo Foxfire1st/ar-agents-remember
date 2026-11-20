@@ -17,10 +17,10 @@ commit's tree and K_C the memory checkout's exact candidate tree. The worktree l
 
 ### Logic
 
-- **The named leaf.** Optional `leaf_id` selects the direct publication's owner explicitly. A valid name with no file creates a closed rowless history; another leaf's open file or an invalid name refuses. Without a supplied name, the owner is inferred from exactly one open leaf history file, and none/several refuses while naming `leaf_id` as the remedy. Owner selection is separate from closing and exact-tree admission.
+- **The named leaf.** Optional `leaf_id` selects the direct publication's owner explicitly. A valid name with no file selects a rowless source for the closing write. Another leaf's open file or an invalid name refuses. Without a supplied name, the owner is inferred from exactly one open leaf history file, and none/several refuses while naming `leaf_id` as the remedy. Owner selection is separate from closing and exact-tree admission.
 - **`direct_verdict`** returns `DirectGateVerdict(applies, owner, refusal)`; a missing memory repository or a series
   line with no head refuses; a `SubprocessError` anywhere is a named refusal through `git_failure`.
-- **`_source`** recognizes a no-publication replay only when the memory head's code trailer and tree equal the requested inputs, returning `applies=false`. Otherwise it selects the explicit or inferred owner. `direct_verdict` validates any retained pre-closing source identity against the closed candidate before asking `_verdict` to recompute and judge the exact series sides.
+- **`_source`** recognizes a no-publication replay only when the memory head's code trailer and tree equal the requested inputs, returning `applies=false`. Otherwise it selects the explicit or inferred owner. `direct_verdict` checks the retained source identity before asking `_verdict` to recompute and judge the exact series sides. The closing write may set `closed` and store the qualifying review fact on an open or newly created history file. A closed source keeps its bytes.
 - **`_verdict`** recomputes the selected owner's worklist and judges it against the series memory head and published code base. Supplying `leaf_id` changes owner selection; non-advisory items still require current answers, while open advisory items remain report-only.
 - **`_worklist`:** an unpublished or non-ancestor B is `incomplete` (`pairing`); the owner's task document is read
   strictly (`strict_leaf_doc`, fail closed: `LeafDocumentUnresolved` is `incomplete`, the L11 carry); the run goes
@@ -46,6 +46,9 @@ commit's tree and K_C the memory checkout's exact candidate tree. The worktree l
 - None.
 
 ## Evidence
+
+- The selected history source must match before the gate checks the closed candidate. [15]
+- The closing checks the unchanged history fields and admits a review fact only for an open source. [16]
 
 - A supplied valid owner selects rowless closed history while other open owners refuse. [14]
 

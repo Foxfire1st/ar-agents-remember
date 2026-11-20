@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "An invariant fixture receives names and openable declarations without its statement.\n\nAnchor: `KnowledgeNameProjectionTests.test_invariant_rows_name_but_do_not_carry`",
+      "note": "An invariant fixture receives names and openable declarations without its statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "8612b6046a3c84c1c3e3d9f87439e5e6e0de7ee3",
-            "content": "sha256:d91f10c1419154c803f5213bda13c9babc8507c14e5d05cb441774871f76ff2a",
+            "blob": "0d84f5d791af56f197cbc074f2799773c3b7416a",
+            "content": "sha256:30043200f0bb7c0fe2f7844819cf14f6a75e89627a07fc4dcf93ce29e353d90e",
             "locator": {
-              "end": 100,
+              "end": 106,
               "kind": "line_range",
               "start": 68
             }
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8612b6046a3c84c1c3e3d9f87439e5e6e0de7ee3",
+            "blob": "0d84f5d791af56f197cbc074f2799773c3b7416a",
             "content": "sha256:426ed436d8a687780ef847b203d66dba225bd73311122085a18999ea1d0c2eff",
             "locator": {
-              "end": 664,
+              "end": 674,
               "kind": "line_range",
-              "start": 618
+              "start": 628
             }
           },
           "kind": "test"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8612b6046a3c84c1c3e3d9f87439e5e6e0de7ee3",
+            "blob": "0d84f5d791af56f197cbc074f2799773c3b7416a",
             "content": "sha256:059176a320d7a3f21bfbf80b90bb531d016ed56e1725f62b82db66a8e6a53fc0",
             "locator": {
-              "end": 710,
+              "end": 720,
               "kind": "line_range",
-              "start": 686
+              "start": 696
             }
           },
           "kind": "test"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8612b6046a3c84c1c3e3d9f87439e5e6e0de7ee3",
+            "blob": "0d84f5d791af56f197cbc074f2799773c3b7416a",
             "content": "sha256:003253a6d9f374c6c7e65e8a49c84ca6ab1b0899b2f40d4e7689d2a815820a87",
             "locator": {
-              "end": 824,
+              "end": 834,
               "kind": "line_range",
-              "start": 775
+              "start": 785
             }
           },
           "kind": "test"
@@ -75,12 +75,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8612b6046a3c84c1c3e3d9f87439e5e6e0de7ee3",
+            "blob": "0d84f5d791af56f197cbc074f2799773c3b7416a",
             "content": "sha256:939bb501180b7039bfa3a77ec3d66d1b3fa91b2f4004c173fb51c20fdf4b5e15",
             "locator": {
-              "end": 380,
+              "end": 390,
               "kind": "line_range",
-              "start": 332
+              "start": 342
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The member row preserves currentness and adds record standing and compact writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d84f5d791af56f197cbc074f2799773c3b7416a",
+            "content": "sha256:ea3f8bed5f7307fa41b7e7aeae018fd0de298e69746056788dcd12f0b733c62f",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Scope naming places standing on record rows while preserving existing entry roles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d84f5d791af56f197cbc074f2799773c3b7416a",
+            "content": "sha256:0b6cd10f74036711e007a2b964d4bdd69008d50c6f8a05549a5d50d9dfcea969",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 118
             }
           },
           "kind": "test"

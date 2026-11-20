@@ -71,12 +71,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 296,
+              "end": 297,
               "kind": "line_range",
-              "start": 251
+              "start": 252
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
           },
@@ -185,12 +185,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
+            "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
-              "end": 1186,
+              "end": 347,
               "kind": "line_range",
-              "start": 1
+              "start": 334
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -198,12 +198,10 @@
         },
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
+            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
+            "content": "sha256:b93e061169ce574cbd24dcb580c2b828d14634b846839a7e6af46203f2d05f97",
             "locator": {
-              "end": 376,
-              "kind": "line_range",
-              "start": 363
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -216,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
             "content": "sha256:4c41eeb73d547a361a9886505f37ee554236b88d5903a84294f59c8d37179fba",
             "locator": {
               "kind": "symbol",
@@ -260,16 +258,16 @@
       ]
     },
     "8": {
-      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "note": "Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round.",
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
-            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+            "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
             "locator": {
-              "end": 240,
+              "end": 298,
               "kind": "line_range",
-              "start": 175
+              "start": 225
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },

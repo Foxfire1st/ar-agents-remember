@@ -180,7 +180,6 @@ The current seam, derived-index reader and typed cursor models establish the bou
 - The completeness scope and the payload that refuses rows-remaining-without-a-continuation. [9]
 
 
-- The current renderer dispatch assembles the typed payload through the read-only StoreViewReader and its opener. [10]
 
 
 - The request the seam admits, the result it returns, and the refusal vocabulary both of them use. [11]
@@ -191,7 +190,6 @@ The current seam, derived-index reader and typed cursor models establish the bou
 
 
 
-- The former projection writer and MCP seam call were retired. The current public knowledge tool reads a converted tree through read_tree_page, rather than calling read_knowledge_view. [15]
 
 
 
@@ -212,3 +210,6 @@ No meaningful cross-repo references found.
 
 
 - The four admitted ordering inputs the admission gate screens the request against, and the three renderers the dispatch table imports one per view name. [18]
+
+- The former projection writer and MCP seam call were retired. The current public knowledge tool reads a converted tree through read_tree_page, rather than calling read_knowledge_view. [15]
+- The current renderer dispatch assembles the typed payload through the read-only StoreViewReader and its opener. [10]

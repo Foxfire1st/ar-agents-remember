@@ -13,6 +13,8 @@ The governing route is [worktrees](../overview.md). Original route/status/covera
 
 ## Hot Path Summary
 
+Direct landing can append a no-pass sentence to its success result. It takes that fact from the latest closed owner history in the verified memory commit, after the publication decision.
+
 Configured admission binds a contract to the configured coordination root, canonical task artifact and contract path, code repository, separate external-memory repository, and candidate ownership. Candidate Git-identity checks may be delegated through `require_candidate_identity=False`; this does not disable the remaining configured repository, task, group or separation checks. The removed disabled-memory mode has a narrowly explicit allowance for observational/retirement routes; normal integration refuses it rather than landing code without memory.
 
 Normal integration validates completed, approved closeout and the recorded code/memory-content pair. A leaf must have the expected branches checked out, exact recorded HEADs and substantive cleanliness; memory cleanliness excludes root `memory.md`. A series proves its named branch tips instead. Integration checks live source ancestry and transitive lineage. A source outside the candidate ancestry routes to a refusal or the explicit replay-resolution handoff; the operator guidance calls for `worktree_sync`, resolution of retained code/memory conflicts, targeted test utility execution after code resolutions, and a new closeout before retrying.
@@ -94,13 +96,15 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
 
 ## Evidence
+
+- The direct-landing success response carries an optional review note after publication proof. [29]
+
 - Retained reference account (no fresh execution or acceptance inferred): Exact integration selection and original-publication readback precede suffix execution. [1]
 - Retained reference account (no fresh execution or acceptance inferred): Completed organizational proof binds original selected references through the operation owner. [2]
 > Retained earlier citation wording: - Retained reference account (no fresh execution or acceptance inferred): Locator-manifest-journal authority and all publication I/O/state transitions. [3]
 - Retained reference account (no fresh execution or acceptance inferred): Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. [4]
 - Retained reference account (no fresh execution or acceptance inferred): Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. [5]
 
-- Retained reference account (no fresh execution or acceptance inferred): Direct landing recovery. [6]
 
 - Retained reference account (no fresh execution or acceptance inferred): Public operation projection derives legal controls and recovery surfaces from retained journal evidence. [7]
 - Retained reference account (no fresh execution or acceptance inferred): The landing output carrier has only code and memory-content commits. [8]
@@ -140,7 +144,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 > Retained earlier citation wording: - Landing and finalization have separate reclamation/task-publication owners; application integration has configurable seat effects. [26]
 
 - Sync explicitly permits conflict resolution between calls without a lock held across the call. [27]
-- Reopen projection uses changed-output ancestry; exact source-head admission also accepts recorded checkpoint landings. [28]
 
 - The internal leaf-enclosure adapter starts this build in a child process, passes the backend-held repository roots, and accepts only a successful JSON reply. [14]
 
@@ -157,3 +160,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 
 - Locator-manifest-journal authority and all publication I/O/state transitions. [3]
+
+- Reopen projection uses changed-output ancestry; exact source-head admission also accepts recorded checkpoint landings. [28]
+- Retained reference account (no fresh execution or acceptance inferred): Direct landing recovery. [6]

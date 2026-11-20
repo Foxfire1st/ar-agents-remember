@@ -1,19 +1,36 @@
 {
   "path": "mcp/tests/test_knowledge_review_one_sided_statements.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+        "content": "sha256:b5fa4cde1eaeb32fe77d435c0fd268e3684018d570e17c452c0ed81980f94c74",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_one_sided_record_is_reported_by_its_coverage_and_not_by_a_roster_of_field_rows"
+        }
+      },
+      "id": "RLZ-4F22HA",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-W1-08",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The test asserts an empty field roster on a one-sided record. Its docstrings describe the eight-field comparison.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "**The module's own scope statement: six cases over the real adapter and two real datasets, and the load-bearing properties each one owns.**",
       "targets": [
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:76c297d3d7846c5bd62f0bbe291684ba67b01d528b7c4058776b21250270d7b7",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+            "content": "sha256:3ef1bc5d02f1accd3b3922b6ad2627ebb85ba20357f737160b8a2a89415e58dd",
             "locator": {
-              "end": 28,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -25,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
             "content": "sha256:056271f4deb8b666d2f45b67c4eafddeeffb39380e30e41e997ff4244a1f8a04",
             "locator": {
               "kind": "symbol",
@@ -41,11 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:11e22fd36edb688cef31a499ce8eb266af6546cef1ac286b96abef04d93b709a",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+            "content": "sha256:b5fa4cde1eaeb32fe77d435c0fd268e3684018d570e17c452c0ed81980f94c74",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_one_sided_record_is_reported_by_its_coverage_and_not_by_a_roster_of_field_rows"
+              "end": 287,
+              "kind": "line_range",
+              "start": 271
             }
           },
           "kind": "test"
@@ -53,25 +71,26 @@
       ]
     },
     "12": {
-      "note": "**The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.**\n\nAnchor: `test_a_review_that_compared_no_subject_serves_no_operand_at_all`",
+      "note": "**The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.**",
       "targets": [
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:b00e739d2ac732826f0ba07d0f2f07455d2c30fa19295b26a3bfab7ae667d856",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+            "content": "sha256:1ccc31b28da82fcd785debc8607142112c6d175dea58e3991eabaf9e70ed141f",
             "locator": {
-              "kind": "file"
+              "end": 327,
+              "kind": "line_range",
+              "start": 290
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:1ccc31b28da82fcd785debc8607142112c6d175dea58e3991eabaf9e70ed141f",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+            "content": "sha256:3ef1bc5d02f1accd3b3922b6ad2627ebb85ba20357f737160b8a2a89415e58dd",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_review_that_compared_no_subject_serves_no_operand_at_all"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -83,7 +102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
+            "blob": "56666dc93a6726525e67f850eb7fbe4fdf2988f0",
             "content": "sha256:ca5e40a13ef3f5dc67e0e73be19c58df5f8e36bc3948c61d5c51d15e632dcaae",
             "locator": {
               "end": 87,
@@ -96,7 +115,7 @@
         },
         {
           "anchor": {
-            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
+            "blob": "56666dc93a6726525e67f850eb7fbe4fdf2988f0",
             "content": "sha256:e7d9c01374ec55e37ec25b09e76f30bc5ab3d0246db555e5007035ed7e94ab1b",
             "locator": {
               "end": 65,
@@ -109,7 +128,7 @@
         },
         {
           "anchor": {
-            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
+            "blob": "56666dc93a6726525e67f850eb7fbe4fdf2988f0",
             "content": "sha256:66a8bd6cc2d648216ace0c0e498a81f2cf2338ce60e271adfca99e2f7460e724",
             "locator": {
               "end": 66,
@@ -122,12 +141,12 @@
         },
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
             "content": "sha256:056271f4deb8b666d2f45b67c4eafddeeffb39380e30e41e997ff4244a1f8a04",
             "locator": {
-              "end": 276,
+              "end": 268,
               "kind": "line_range",
-              "start": 262
+              "start": 254
             }
           },
           "kind": "test"
@@ -152,12 +171,12 @@
         },
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
             "content": "sha256:c6d5a67fdce71b90de5a53aecc875edf27e0a2b7666cdabad12da4346553bf61",
             "locator": {
-              "end": 184,
+              "end": 186,
               "kind": "line_range",
-              "start": 161
+              "start": 163
             }
           },
           "kind": "test"
@@ -165,79 +184,32 @@
       ]
     },
     "15": {
-      "note": "Read fixture and test-only row builder supply both datasets.\n\nAnchor: `build_read_scope_fixture` `RowStore` `open_knowledge_store`",
+      "note": "The pair is built from independent fixtures. The after fixture names the leaf whose closed history proves the shared revision.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/read_scope_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
-            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/knowledge_rows_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+            "content": "sha256:08cf6ebc0b1ca57fb63dc643d7e74439e71064da59d804bfd4852d6d5a6fdea3",
             "locator": {
               "kind": "symbol",
-              "name": "build_read_scope_fixture"
-            },
-            "path": "mcp/tests/read_scope_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
-            "content": "sha256:d9c7bd2f6f17f175008858f09a85cd9f5d2f7eb7b157523ccacd8976c11547c5",
-            "locator": {
-              "kind": "symbol",
-              "name": "RowStore"
-            },
-            "path": "mcp/tests/knowledge_rows_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
-            "content": "sha256:adc63e919d39094931f1834d856b4a23941c7e75ca6195c1ba4cd119091edd8a",
-            "locator": {
-              "kind": "symbol",
-              "name": "open_knowledge_store"
-            },
-            "path": "mcp/tests/knowledge_rows_test_support.py"
+              "name": "pair"
+            }
           },
           "kind": "test"
         }
       ]
     },
     "16": {
-      "note": "The lane row that selects this module, and the consumer rows of the two shared-support artifacts it imports (knowledge rows and read scope).",
+      "note": "The lifecycle catalog lists `test_knowledge_review_one_sided_statements.py` among the exact consumers of `knowledge_rows_test_support.py`, `read_scope_test_support.py`. The lane catalog selects this same module.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:5c44c64b5658f3a03a2abe5c88d0b21b75508df51e17fe03352ee7e8f7247a89",
             "locator": {
-              "end": 5062,
+              "end": 3830,
               "kind": "line_range",
-              "start": 1
+              "start": 3737
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -245,12 +217,25 @@
         },
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:f91efbdb1205da8ca9fedccd2de9d609fdb0f1e96c0e0868e17980da602f005a",
+            "locator": {
+              "end": 4340,
+              "kind": "line_range",
+              "start": 4291
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
             "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
             "locator": {
-              "end": 266,
+              "end": 271,
               "kind": "line_range",
-              "start": 266
+              "start": 271
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -259,16 +244,81 @@
       ]
     },
     "17": {
-      "note": "The current lifecycle catalog declares test_knowledge_review_one_sided_statements.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. These current declarations establish no invocation or passing result; no former narrow-window identity is inferred.",
+      "note": "The lifecycle catalog lists `test_knowledge_review_one_sided_statements.py` as an exact consumer of `_user_settings_guard.py`, `anchor_fixture_models.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_review_fact_test_support.py`, `knowledge_rows_test_support.py`, `read_scope_test_support.py`.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:e2a8e4c31fb4ca6af5072c937e5a80c93c070373bc33e66e37f9bc594c785241",
             "locator": {
-              "end": 5062,
+              "end": 886,
               "kind": "line_range",
-              "start": 1
+              "start": 65
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:d624b4e46fc9e6924d901d658a4c8250a47841ebaed91fe7442d2d311d7c52b5",
+            "locator": {
+              "end": 980,
+              "kind": "line_range",
+              "start": 887
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:f949d4a324dbc44d81a8d069eb004a8da1c07c67afe1e35b58cc0af412851b62",
+            "locator": {
+              "end": 3272,
+              "kind": "line_range",
+              "start": 2451
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:67ec7973d3552deddaf52c20d2b210b53b8e9366258ee80b60c209c5fa4b7f81",
+            "locator": {
+              "end": 3698,
+              "kind": "line_range",
+              "start": 3643
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:5c44c64b5658f3a03a2abe5c88d0b21b75508df51e17fe03352ee7e8f7247a89",
+            "locator": {
+              "end": 3830,
+              "kind": "line_range",
+              "start": 3737
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:f91efbdb1205da8ca9fedccd2de9d609fdb0f1e96c0e0868e17980da602f005a",
+            "locator": {
+              "end": 4340,
+              "kind": "line_range",
+              "start": 4291
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -277,43 +327,20 @@
       ]
     },
     "18": {
-      "note": "The renderer displays before/after statements and its component tests use synthetic statement values; they neither import the Python statement constants nor assert acceptance_ref field rows.\n\nAnchor: `KnowledgeStatements`",
+      "note": "The renderer exercises synthetic before and after statement values in its own component fixture.",
       "targets": [
         {
           "anchor": {
             "blob": "260d7c2a75a75150a56ab0c840a253df4f94ff68",
-            "content": "sha256:c8597a4c296ca932f2036e0b9a41e221b92089146d7b2f220075c9de6e3ed3bc",
+            "content": "sha256:a602fdb8b09e1801bbd2a1dc408f9e30d2c7639afd8b830425c28b68864d64b6",
             "locator": {
-              "end": 44,
+              "end": 39,
               "kind": "line_range",
-              "start": 1
+              "start": 11
             },
             "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
-            "content": "sha256:f7ee053e85c0e265023f7d0d267a21981d0df64f2a3f58e175ad3fad515ffa87",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/KnowledgeStatements.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
-            "content": "sha256:a667fc3ff593802fe44012abfe3ffac077cc366db14fe4ddade1cf72080370b8",
-            "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeStatements"
-            },
-            "path": "dashboard/src/panels/review/KnowledgeStatements.tsx"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -362,7 +389,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
             "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
             "locator": {
               "kind": "symbol",
@@ -374,16 +401,14 @@
       ]
     },
     "20": {
-      "note": "An invariant text record stores one numeric revision and one statement, distinct from the former retained-revision model.\n\nAnchor: invariant record fields",
+      "note": "An invariant text record stores one numeric revision and one statement, distinct from the former retained-revision model.",
       "targets": [
         {
           "anchor": {
-            "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
-            "content": "sha256:e1294300e672bdb270cada4f27d2b8a310508ebb019d00774e8579be7f80cd1d",
+            "blob": "d6a81b841bf29a345dc9d7857710af32751ee689",
+            "content": "sha256:a96b864da4a6f62a1e4ee4dd00e773d860de5dda3cad27051ebad487db7b4dab",
             "locator": {
-              "end": 137,
-              "kind": "line_range",
-              "start": 124
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
           },
@@ -392,16 +417,14 @@
       ]
     },
     "3": {
-      "note": "Retain the authored statement constants; remove the nonexistent SHARED_ACCEPTANCE_REF target. Acceptance is asserted by its text-knowledge prefix.\n\nAnchor: inclusive source ranges",
+      "note": "The shared and one-sided statement constants supply the backend fixture values.",
       "targets": [
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:2876ec40462e3de6470a7e854ad32b7f3b8d24908c9032a958cb0fd0e3a611d4",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+            "content": "sha256:3ef1bc5d02f1accd3b3922b6ad2627ebb85ba20357f737160b8a2a89415e58dd",
             "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 68
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -409,28 +432,26 @@
       ]
     },
     "4": {
-      "note": "OneSidedPair remains the local frozen dataclass. Extra seeds are constructed by _extra; the former AuthoredInvariant target does not survive.\n\nAnchor: inclusive source ranges",
+      "note": "OneSidedPair remains the local frozen dataclass. Extra seeds are constructed by _extra; the former AuthoredInvariant target does not survive.",
       "targets": [
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
             "content": "sha256:6ce4bcbc2f0dff118e6a557595020f024fdfa8723e0c89fd1fcbf2b48613c321",
             "locator": {
-              "end": 92,
+              "end": 94,
               "kind": "line_range",
-              "start": 80
+              "start": 82
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:a5d9b108152d2d163e0f01b10f83cc437e68fe639a1b43bfafed4335af092ad8",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+            "content": "sha256:3ef1bc5d02f1accd3b3922b6ad2627ebb85ba20357f737160b8a2a89415e58dd",
             "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 95
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -438,28 +459,14 @@
       ]
     },
     "5": {
-      "note": "_extra constructs ExtraInvariantSeed values, and pair supplies them to the test fixture builder. The former author_invariant target is absent.\n\nAnchor: inclusive source ranges",
+      "note": "_extra constructs ExtraInvariantSeed values, and pair supplies them to the test fixture builder. The former author_invariant target is absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:a5d9b108152d2d163e0f01b10f83cc437e68fe639a1b43bfafed4335af092ad8",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+            "content": "sha256:3ef1bc5d02f1accd3b3922b6ad2627ebb85ba20357f737160b8a2a89415e58dd",
             "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 95
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:e1ef6447bacc2005e2fbe74aaca336ca4bff125093ca770b3e1e2504d65ca83b",
-            "locator": {
-              "end": 158,
-              "kind": "line_range",
-              "start": 115
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -467,25 +474,16 @@
       ]
     },
     "6": {
-      "note": "**The fixture: two independently built snapshots under one namespace, and the four authored revisions that make an addition, a removal and a real transition.**\n\nAnchor: `pair`",
+      "note": "Two independently built snapshots exercise one addition, one removal and the same retained revision whose lifecycle becomes reviewed.",
       "targets": [
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:b00e739d2ac732826f0ba07d0f2f07455d2c30fa19295b26a3bfab7ae667d856",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+            "content": "sha256:165f32ce22bc8abe6753de84c97e627376e18ecf9482c4f0c397bb634858e52b",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:e1ef6447bacc2005e2fbe74aaca336ca4bff125093ca770b3e1e2504d65ca83b",
-            "locator": {
-              "kind": "symbol",
-              "name": "pair"
+              "end": 160,
+              "kind": "line_range",
+              "start": 118
             }
           },
           "kind": "test"
@@ -493,25 +491,26 @@
       ]
     },
     "7": {
-      "note": "The one composition call, with the hand-assembled resolution and the loud failure on a refusal.\n\nAnchor: `review`",
+      "note": "The one composition call, with the hand-assembled resolution and the loud failure on a refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:b00e739d2ac732826f0ba07d0f2f07455d2c30fa19295b26a3bfab7ae667d856",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+            "content": "sha256:c6d5a67fdce71b90de5a53aecc875edf27e0a2b7666cdabad12da4346553bf61",
             "locator": {
-              "kind": "file"
+              "end": 186,
+              "kind": "line_range",
+              "start": 163
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:c6d5a67fdce71b90de5a53aecc875edf27e0a2b7666cdabad12da4346553bf61",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+            "content": "sha256:3ef1bc5d02f1accd3b3922b6ad2627ebb85ba20357f737160b8a2a89415e58dd",
             "locator": {
-              "kind": "symbol",
-              "name": "review"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -523,7 +522,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
             "content": "sha256:2c88cb7e4ccc6e6f31b85f6737cf90ce462e537c5625002e27cbb567f7f15df2",
             "locator": {
               "kind": "symbol",
@@ -534,7 +533,7 @@
         },
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
             "content": "sha256:a66dedf43017f357632ebd53db6a7da972e44024adeed1da988bc30787095c62",
             "locator": {
               "kind": "symbol",
@@ -546,15 +545,15 @@
       ]
     },
     "9": {
-      "note": "The exact roster is acceptance_ref, lifecycle and payload_digest; accepted provenance uses a text-knowledge acceptance prefix.",
+      "note": "The exact lifecycle field row carries proposed and reviewed on the same authored revision.",
       "targets": [
         {
           "anchor": {
-            "blob": "512bf1dcd15d3e70a90a9c7373fd4e554842a30d",
-            "content": "sha256:175621daedeb7d823db4cbacc5ba5ddc72e5dda27328ca966756a83af8253f04",
+            "blob": "08778197c16f5cd66490b89bdd80273a08cc42df",
+            "content": "sha256:b379dc977ba084fe30abe290782cebf50eb95c2c5106f55da33cca0fa7f7e426",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not"
+              "name": "test_a_field_row_keeps_each_sides_value_for_a_state_that_changed"
             }
           },
           "kind": "test"

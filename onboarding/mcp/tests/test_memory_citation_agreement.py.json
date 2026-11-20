@@ -400,16 +400,16 @@
       ]
     },
     "29": {
-      "note": "The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution.",
+      "note": "The unit-regression lane selects mcp/tests/test_memory_citation_agreement.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_memory_citation_agreement.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
+            "content": "sha256:f077da38793d14168158a19a2d41f7fbcff188affdbc98de0e9dccf33bef430a",
             "locator": {
-              "end": 816,
+              "end": 339,
               "kind": "line_range",
-              "start": 1
+              "start": 339
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

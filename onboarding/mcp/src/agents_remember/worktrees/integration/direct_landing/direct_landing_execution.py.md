@@ -16,6 +16,8 @@ Executes and recovers the memory-content output of an accepted direct-landing ge
 
 ### Logic
 
+The successful direct-landing result reads the latest history for the admitted leaf in the published memory commit. It adds the no-pass sentence when that history was closed without a review fact. The owner comes from the operation’s leaf ID or its canonical task reference. Commit and tree proof still come from the publication transaction.
+
 `execute_direct_landing` checks mechanical convergence, reconciles durable Git evidence, builds the
 operation-bound Git arguments, and calls `_direct_memory_commit`. After the real memory output is
 known, it refreshes the consumer cache best effort and finishes the journal with `codeCommit`,
@@ -59,6 +61,10 @@ Create execution receives the accepted provisional code output and converges its
 
 ## Evidence
 
+- The successful result adds the committed-history note to the summary when present. [7]
+- The result reader selects the leaf owner from the operation or its canonical document reference. [8]
+
+
 ### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
@@ -73,10 +79,8 @@ These repository-relative targets were checked in the L9 code checkout. The cite
 the current working-candidate behavior; historical entries below retain their original scope.
 
 
-- Execution publishes or reuses real memory output and refreshes the cache afterward. [1]
 
 
-- Prepared attempts preserve repository and exact pre-commit tree evidence. [2]
 
 - Shared mutation intent and proof retain actual object checks. [3]
 
@@ -94,5 +98,6 @@ source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
 
-
+- Execution publishes or reuses real memory output and refreshes the cache afterward. [1]
 - Memory execution converges the same accepted create generation without a second code publication. [6]
+- Prepared attempts preserve repository and exact pre-commit tree evidence. [2]

@@ -73,7 +73,7 @@ Selected-task Investigator receipts are per request rather than singleton select
 
 
 
-- The current source implements this file’s stated Investigator boundary. [14]
+- The current source implements this file’s stated Investigator boundary.
 
 
 
@@ -82,12 +82,10 @@ Selected-task Investigator receipts are per request rather than singleton select
 
 
 
-- Frozen implementation of _execute_prepared_launch supporting the stated file behavior. Anchor: `_execute_prepared_launch` [1]
 
 
 
 
-- Frozen implementation of _public_execution supporting the stated file behavior. Anchor: `_public_execution` [4]
 
 
 - The launch observer checks complete receipt, stable UUID and stored call before runtime launch. [5]
@@ -112,7 +110,6 @@ Custody: the preceding sentence is detached from live reference 13; original tar
 
 
 
-- `_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. [15]
 
 
 
@@ -137,3 +134,9 @@ Custody: the preceding sentence is detached from live reference 13; original tar
 - The Worker handover test requires a first freeze notice to the Manager to start the Reviewer, followed by direct complete freeze handover to that Reviewer; the Manager does not relay it or receive routine report notices. It also checks parentless Worker and turn-end-versus-acceptance wording, with mutation cases for every required route clause. [12]
 
 - The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property. [13]
+
+- Frozen implementation of _execute_prepared_launch supporting the stated file behavior. Anchor: `_execute_prepared_launch` [1]
+- `_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. [15]
+- Frozen implementation of _public_execution supporting the stated file behavior. Anchor: `_public_execution` [4]
+
+- The current source implements this file’s stated Investigator boundary. [14]

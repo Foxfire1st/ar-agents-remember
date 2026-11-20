@@ -24,7 +24,6 @@ This account is bound to the candidate source, not a claim of a running serving 
 ## Evidence
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [4]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [5]
 - RoleLaunchFeatures retains settings-owned permissions and non-applied Base previews; feature labels match host IDs or labels without a built-in speed alias. [6]
 
@@ -39,3 +38,5 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 
 - The ordinary ready defaults composition draws the host mode and optional instruction chips; basePreview labels them as non-applied Base previews. [3]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [4]

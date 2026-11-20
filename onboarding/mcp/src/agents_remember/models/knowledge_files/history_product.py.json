@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/history_product.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "45f6d2721de57e546373a03fdb8a4a45e4cc39a9",
+        "content": "sha256:f7b8bced100b280e5ed1448150c613f467b3ca3a358f9fb790f8f3f9163aa5af",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_meaning"
+        }
+      },
+      "id": "RLZ-6B0SMD",
+      "invariant": "INV-BNDKC8",
+      "origin": {
+        "handoffEntry": "L3-W1-02",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Selects exactly the fields whose changes raise the revision.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "45f6d2721de57e546373a03fdb8a4a45e4cc39a9",
+        "content": "sha256:21dcba2317db3f5ef6032e13f0b67d9c5aa6b4eea83ce9aa9d8924b914ed57d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_content_digest"
+        }
+      },
+      "id": "RLZ-HDZGZK",
+      "invariant": "INV-BNDKC8",
+      "origin": {
+        "handoffEntry": "L3-W1-02",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Hashes the fields that distinguish a revision's meaning so its written row can prove exactly which content the writer stored.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The semantic projection excludes derived attribution fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45f6d2721de57e546373a03fdb8a4a45e4cc39a9",
+            "content": "sha256:f7b8bced100b280e5ed1448150c613f467b3ca3a358f9fb790f8f3f9163aa5af",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_meaning"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A written revision couples record identity, revision, writer and meaning evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45f6d2721de57e546373a03fdb8a4a45e4cc39a9",
+            "content": "sha256:ede2cd60ea72cd633acd1193438fd06a37140abfd058cedddd1f78dc2afb6c32",
+            "locator": {
+              "kind": "symbol",
+              "name": "WrittenRevision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A review fact binds the accepted review round, verdict, tree and attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45f6d2721de57e546373a03fdb8a4a45e4cc39a9",
+            "content": "sha256:80bf96ea0a460e56bd173e261b9cdf83e58a394cad34f86a1ef145b3f4f7f28e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -333,7 +333,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): A converted memory tree is selected as a tree, and the database file inside it is not read. [25]
 
-- The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed. [30]
 
 - Retained reference account (no fresh execution or acceptance inferred): The order declares `certification` between `models` and `controlplane`. [31]
 
@@ -349,7 +348,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): Git attribution is the source of the consumer ledger. [50]
 
-- Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. [51]
 
 - Retained reference account (no fresh execution or acceptance inferred): Integration proves exact memory source ancestry independently of cache rows. [52]
 
@@ -363,7 +361,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - The internal knowledge-page threshold is 8,000 tokens; the mounted knowledge_read naming pager uses a 4,000-token delivered bound and a 20-entry list cap. [73]
 
-- Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses. [75]
 
 - Retained reference account (no fresh execution or acceptance inferred): The two declared case budgets. [76]
 
@@ -458,7 +455,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The memory-repo tools example provides the `Code Quality` section. Anchor: `Code Quality` [284]
 
-- Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree). [288]
 
 - Retained reference account (no fresh execution or acceptance inferred): Closed admission and one public projector. [289]
 
@@ -492,7 +488,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - For every card the quality check cuts, the Curator names the source evidence that makes the removed text untrue; text is not removed merely to clear a quality finding. Task-scoped readers derive roots only from a canonical admitted leaf; repository and enclosure bindings must agree. Anchor: Reader scope admission [315]
 
-- Canonical source-bound onboarding and separate row domains. [331]
 
 - Canonical independent non-author statement/diff/omission duty. [329]
 
@@ -651,9 +646,17 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Workers build each worktree's environment as `system/tools.md` says, run every candidate command there, report commands absent from the tool notes, and record the interpreter each run used. Anchor: `system/tools.md` [310]
 - Knowledge authoring is in memory; evidence and working files are outside it, with report/task and scratch custody separated. The retired `codegraphcontext-code` and `grepai-memory` providers are disabled by `provider_enabled`. Installation reports enabled provider keys as unused and continues when the old-watcher stop returns a failed or partial result. Anchor: `workspace.outsideScratchRoot`, `provider_enabled`, and install watcher phase [314]
 - For a canonical orchestration sprint, an absent `executionGraph` selects atomic execution of its commanded masters and declares no dependencies or serialization between them; graph presence selects dependency-aware scheduling. Anchor: `resolve_scheduling_mode` [318]
-- Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,327 words against an equal ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [365]
 - Instruction renewal uses the declared skills copy owner, projects the certification profile and copies canonical tool details into packaged runtime docs. [370]
 
-- build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
 - Carryover names file-sidecar, route-overview, memory-only-doc and entity-catalog candidates; its request supplies the code/source/target roots. Plan and apply require both memory roots to be converted and share the same conversion version; unconverted or mismatched memory is refused. [143]
 - Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing; ordinary leaf judgments and gated closeout own publication. [354]
+
+- build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
+
+- Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree). [288]
+- Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. [51]
+- Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses. [75]
+- The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed. [30]
+
+- Canonical source-bound onboarding and separate row domains. [331]
+- Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,327 words against an equal ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run. [365]

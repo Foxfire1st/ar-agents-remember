@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The full report identifies the revisions behind the aggregate counters."
+  },
+  "applicability": "The writer table built from one selected converted memory tree.",
+  "conditions": [
+    "Rows aggregate revisions by role, harness and model and the report names every credited revision.",
+    "The current revision uses the same standing evidence as the record view."
+  ],
+  "exclusions": [
+    "Unknown attribution gets its own group."
+  ],
+  "id": "INV-5GEDEX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_writer_table.py (4 cases, including test_the_answer_stays_within_its_bound_at_two_sizes)"
+      ],
+      "path": "revision-standing-authoring.json"
+    },
+    "handoffEntry": "L3-W1-09",
+    "leaf": "261112-KNO-L3",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The writers view groups revisions by role, harness and model, then counts reviewed, changed and retired revisions. Its index derives the current revision's review credit from the same content decision as the record view. The tool answer names a report with the revisions behind each count.",
+  "status": "proposed",
+  "supersedes": []
+}

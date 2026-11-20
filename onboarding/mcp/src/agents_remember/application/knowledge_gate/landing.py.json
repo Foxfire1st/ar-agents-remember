@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+        "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
         "content": "sha256:72a9400087ea1a5ec11be870f0bb8d7a99b83c04b8b259009f51602bf7364a78",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+        "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
         "content": "sha256:f469fd1a4d2de7b0de084ccd3515375140bb98f2af0df91f64bff2de1e4395c0",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+        "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
         "content": "sha256:207e28b19ba6a7c8dff5d94f9345c3d04b0a0f0c0065d977e404c201c28e0eab",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+        "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
         "content": "sha256:c52168f9397a3171394f23653cadd2b30f2a8c6130a705824429b524e01221c8",
         "locator": {
           "kind": "symbol",
@@ -81,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
             "content": "sha256:4c04fb8d7e1bc24d098de7700ba8d68c5ef94329753541cb4257faea70e16dab",
             "locator": {
               "end": 26,
@@ -93,12 +93,29 @@
         }
       ]
     },
+    "10": {
+      "note": "The landing selects dependents by changed source paths or linked record identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8d75011d6376ece2105fbae1bea05055ab8ec91",
+            "content": "sha256:1232426d9f6e7c26f18aa497dbbdad851e04ce53efdadfe5057ab07b375f6342",
+            "locator": {
+              "kind": "symbol",
+              "name": "dependent_touches"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/change_reach.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The finding codes.",
       "targets": [
         {
           "anchor": {
-            "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
             "content": "sha256:4a8ccfc327da3f26532a17d25e0b54cdb67c9cd9e1d53b3ceee7349947ee71bb",
             "locator": {
               "kind": "symbol",
@@ -109,7 +126,7 @@
         },
         {
           "anchor": {
-            "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
             "content": "sha256:b57dd55d5452a4434a459b99df1901148bddd984158351062bb8382575365fae",
             "locator": {
               "kind": "symbol",
@@ -120,7 +137,7 @@
         },
         {
           "anchor": {
-            "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
             "content": "sha256:5eea53802cfe69e4e3dbbbe16a6e4c038514502ac2c327e3cc0a7f7c7263d101",
             "locator": {
               "kind": "symbol",
@@ -136,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
             "content": "sha256:25128bd78709617d17498b002d2d25af5fe45da51d94ecb9c420debc6aa07fd3",
             "locator": {
               "kind": "symbol",
@@ -147,7 +164,7 @@
         },
         {
           "anchor": {
-            "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
             "content": "sha256:6082768edc92293f96257f90e2d05f8ae876c3db9c13c0a7ca5dc3970c4cb3c8",
             "locator": {
               "kind": "symbol",
@@ -163,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
             "content": "sha256:29cd148c67eeaf2dd8cf9b53bc1663bd9e9847a1b04c9c9ea748fa77988b5e36",
             "locator": {
               "kind": "symbol",
@@ -179,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
             "content": "sha256:72a9400087ea1a5ec11be870f0bb8d7a99b83c04b8b259009f51602bf7364a78",
             "locator": {
               "kind": "symbol",
@@ -190,7 +207,7 @@
         },
         {
           "anchor": {
-            "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
             "content": "sha256:c52168f9397a3171394f23653cadd2b30f2a8c6130a705824429b524e01221c8",
             "locator": {
               "kind": "symbol",
@@ -201,7 +218,7 @@
         },
         {
           "anchor": {
-            "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
             "content": "sha256:5f04c0f4dd7e44b14a55700e762b42556cf5a9a79b9afdf99e4ddcbc16c6f32a",
             "locator": {
               "kind": "symbol",
@@ -234,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
             "content": "sha256:830a33d744bd55ed792b7c2c6bb2902b136fa6e39161776bc4ac1bcd44bbb546",
             "locator": {
               "kind": "symbol",
@@ -263,12 +280,12 @@
       ]
     },
     "9": {
-      "note": "Every newly closed master history file is authenticated against its owner publication. Anchor: `_master_history_ownership`",
+      "note": "Master landing authenticates newly closed owner history and excludes the converted review-facts companion.",
       "targets": [
         {
           "anchor": {
-            "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
-            "content": "sha256:2f51e40a66336e759050f935b44b06cdfea2b7c0403063630d84f84f3411907e",
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
+            "content": "sha256:0f3cbdeaac33c3e743af4835580e9856204a7913ca103d3edf9fc1f037dfcbae",
             "locator": {
               "kind": "symbol",
               "name": "_master_history_ownership"

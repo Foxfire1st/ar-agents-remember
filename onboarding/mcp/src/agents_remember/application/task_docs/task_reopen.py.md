@@ -32,7 +32,6 @@ against a `WorktreeCommandResponse` subclass in the tool-response registry.
 - The confined application entry delegates reopen without ambient lifecycle access. [1]
 
 
-- The worktree owner dispatches series separately and performs admitted leaf reset, leaving worktree recreation to start. [2]
 
 
 
@@ -40,3 +39,5 @@ against a `WorktreeCommandResponse` subclass in the tool-response registry.
 
 
 - The application entry confines the contract and delegates; this is source evidence, not a test execution. [4]
+
+- The worktree owner dispatches series separately and performs admitted leaf reset, leaving worktree recreation to start. [2]

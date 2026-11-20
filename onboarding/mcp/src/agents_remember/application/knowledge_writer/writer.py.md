@@ -27,6 +27,7 @@ its conversion when `HEAD` is unconverted and the candidate is converted, and du
   binds it (`application/knowledge_write_route.leaf_decisions`). `WriteRequest.memory_base` supplies the
   leaf's paired K_B for the onboarding-card comparison; a persisted worklist flag cannot override
   a known paired base. Without it, a persisted subject's counted flag is used, then own HEAD as fallback.
+- **Caller provenance.** `WriteRequest.stamp` carries the writer identity resolved by the route from the launch binding and receipt. `write_knowledge` passes it into virtual `Authoring`. If no stamp is available, authoring stamps written revisions as unknown with a reason. The hand-off supplies the record's meaning. Validation and explicit file publication remain separate from that stamp.
 - **Requirement endpoints.** The optional coordination root resolves endpoints for records touched by the run and compares the stored links with their prior identities. With no root, endpoints are observations only. With the root supplied, newly introduced or changed unresolved links refuse before any knowledge file is published; unchanged inherited unresolved links are still reported, not newly refused. Requirement observations do not become validator-layer task access.
 - **Reconsideration rows.** `WriteRequest.worklist` (optional) is the leaf's persisted worklist:
   `_reconsideration_items` keeps its `reconsideration_candidate` items by subject and hands them to `Authoring` as
@@ -114,6 +115,10 @@ No configured live documentation source was available for this pass.
 
 The operation and its stages.
 
+- The request carries a resolved caller stamp in addition to the hand-off and contract inputs. [38]
+- The writer passes the resolved stamp to virtual authoring before validation and file publication. [39]
+- The authoring operation assigns an unknown stamp with a reason when no caller was resolved. [40]
+
 - Existing trace subjects retain source-set priority, including exclusion of malformed trace metadata from group selection. [26]
 - Uncovered unexplained items contribute a sorted union of matching member paths; supplied blob values are not adopted. [27]
 
@@ -121,14 +126,11 @@ The operation and its stages.
 - The refusal text for an unconverted memory tree. [1]
 
 
-- Read, author, check history, render, validate, then finish or refuse. [3]
-
-- A leaf requires the persisted worklist before capture; question publication has its separate task-owner port [4]
 
 
 
 
-- After validation, committing runs publish raised questions before knowledge files. [28]
+
 
 - Committing question append returns published keys and refusals [6]
 
@@ -145,7 +147,6 @@ The operation and its stages.
 
 
 
-- New or changed unresolved requirement links refuse when the coordination root is supplied; absent-root observations do not [15]
 
 
 
@@ -153,7 +154,6 @@ The operation and its stages.
 
 
 
-- Endpoints are resolved with stored prior-link identity before the pre-publication refusal check [16]
 
 
 
@@ -174,7 +174,6 @@ No cross-repo boundary is crossed by this file.
 
 
 
-- Current request inputs include paired memory-base binding and leaf-required worklist admission [2]
 
 
 
@@ -183,15 +182,22 @@ No cross-repo boundary is crossed by this file.
 - Well-formed worklist items, trace links and onboarding source/count projections feed authoring with the paired memory base. [35]
 
 
-- Paired-base/source projection and registry-driven writer reports retain validation, carry and conversion; later refusal preserves actual question effects and distinguishes verified from incomplete file restoration. [36]
 
 ## Current writer publication and refusal contract
 
 The current converted writer checks persisted leaf worklist shape and authored item applicability, admits only resolvable newly changed task links when the root is supplied, and refuses a physically stored derived superseded decision. All knowledge-file publication remains after whole-tree validation. Task question publication is a separate durable effect, reported honestly on later refusal; file rollback is verified rather than presumed. These are source observations of the candidate, not self-use of its repaired writer or an executed fault-injection grade.
 
 
-- Worklist and changed-link admission precede validation and file publication. [37]
 
 - File publication reports actual restoration and already-published question recovery. [24]
 
 - A stored derived superseded field refuses before canonical rendering. [25]
+
+- Current request inputs include paired memory-base binding and leaf-required worklist admission [2]
+- Paired-base/source projection and registry-driven writer reports retain validation, carry and conversion; later refusal preserves actual question effects and distinguishes verified from incomplete file restoration. [36]
+- A leaf requires the persisted worklist before capture; question publication has its separate task-owner port [4]
+- New or changed unresolved requirement links refuse when the coordination root is supplied; absent-root observations do not [15]
+- Endpoints are resolved with stored prior-link identity before the pre-publication refusal check [16]
+- After validation, committing runs publish raised questions before knowledge files. [28]
+- Read, author, check history, render, validate, then finish or refuse. [3]
+- Worklist and changed-link admission precede validation and file publication. [37]

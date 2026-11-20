@@ -106,4 +106,4 @@ No cross-repo boundary is crossed by this file.
 - `test_a_carried_dead_route_the_validator_refuses_is_a_mandatory_item`: current carried-route refusal, mandatory worklist item, failed changed-only answer, rerouted repair and retired exemption. [5]
 - Current source delta inspected statically: Replace carried-route PASS with refusal, qualify historical debt reporting and rename its caption; preserve reroute and retired boundaries. [14]
 
-- The lane registration. Anchor: "mcp/tests/test_family_route_conditions.py" Anchor: "mcp/tests/test_family_route_conditions.py" [13]
+- The unit-regression lane selects mcp/tests/test_family_route_conditions.py. [13]

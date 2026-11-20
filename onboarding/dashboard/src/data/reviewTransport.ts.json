@@ -265,14 +265,16 @@
       ]
     },
     "43": {
-      "note": "The review client's two public reads — the review and the entry catalogue — both go through the shared review transport, which this module re-exports.\n\nAnchor: `intentReview`",
+      "note": "The review client re-exports the shared public transport defined by reviewTransport.ts.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
-            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "content": "sha256:d63717bf1e8905b700c5395e71ed48b9693cf35b5bd857ac65a858e6c2e0660a",
             "locator": {
-              "kind": "file"
+              "end": 33,
+              "kind": "line_range",
+              "start": 18
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -359,6 +361,22 @@
             "path": "dashboard/src/data/reviewTransport.test.ts"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "48": {
+      "note": "This module defines getReviewJson. It delegates response handling to the lower-level decodeReviewJson, which the review client does not re-export.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:0498eb7c351f1049d1c491e3671daf34df02a570cbb2ae14c7a9a7516fbf6426",
+            "locator": {
+              "kind": "symbol",
+              "name": "getReviewJson"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

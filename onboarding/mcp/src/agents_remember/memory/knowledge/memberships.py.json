@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "blob": "382764f1d33cd50a7b8c7ff1757afd64f2b3306d",
             "content": "sha256:b33ec55a76c3d3307e1192a3abc021318bd3792bdb5ad0ad85a8a2b11b15240f",
             "locator": {
               "kind": "symbol",
@@ -46,7 +46,7 @@
         },
         {
           "anchor": {
-            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "blob": "382764f1d33cd50a7b8c7ff1757afd64f2b3306d",
             "content": "sha256:d998b44957e9916e459c94891ae7bee687849d435aeda6934eda2a31448e6946",
             "locator": {
               "kind": "symbol",
@@ -132,12 +132,12 @@
       ]
     },
     "19": {
-      "note": "- The declared `family_member` table, its unique tuple, its index and its no-repoint trigger.\n\nAnchor: `TABLE_DDL`",
+      "note": "The declared `family_member` table, its unique tuple, its index and its no-repoint trigger.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
-            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
+            "content": "sha256:c0e6d3fd7dbb17579c1fba9abe330f520d20fe00ae392b9e42307a7f862725d7",
             "locator": {
               "kind": "file"
             },

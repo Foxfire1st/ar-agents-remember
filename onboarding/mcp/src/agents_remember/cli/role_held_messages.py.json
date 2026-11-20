@@ -381,12 +381,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
+            "blob": "3e380d46baf00b445d92c0d0581b30b4fce11bd2",
             "content": "sha256:6a0633a405546e45da352e8eb35965d47a2fa74f630c2a3fe17c1eb85bbfacd6",
             "locator": {
-              "end": 172,
+              "end": 179,
               "kind": "line_range",
-              "start": 147
+              "start": 154
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },

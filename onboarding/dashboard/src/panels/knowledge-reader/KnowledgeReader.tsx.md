@@ -82,7 +82,6 @@ No configured live documentation source was available for this pass.
 
 - One selection-local records acquisition is created here and shared with the tree and toolbar. [13]
 
-- The tree receives the shared records loader. [17]
 
 - The outline that navigates the document's chapters. [18]
 
@@ -103,3 +102,5 @@ No cross-repo boundary is crossed by this file.
 - The tree and its handle receive the shared hidden-panel properties without unmounting KnowledgeTree. [21]
 - The tree and outline toggles stand in the document column outside their panels. [22]
 - Responsive rules hide the tree toggle at 40rem and below and the aside toggle at 70rem and below. [23]
+
+- The tree receives the shared records loader. [17]

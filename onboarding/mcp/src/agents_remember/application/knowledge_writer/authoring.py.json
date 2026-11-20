@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-        "content": "sha256:cf0fd35b0a38af51fe5cc67f4faafae8dad22d0724349568943658a56416ba98",
+        "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+        "content": "sha256:639571c7d130b8e8cffc1610468b6fa8259ae8b0220faa3f15cb38cb53b808b5",
         "locator": {
           "kind": "symbol",
           "name": "Authoring"
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+        "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
         "content": "sha256:a4c41d3c98ce6a56172c053956a57f3597e2120040c6efbda688f3669e299cf0",
         "locator": {
           "kind": "symbol",
@@ -95,12 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
             "content": "sha256:fee521803ddef20678e3aeaac0e262945fb2c78b482eacbeca598716fae9403f",
             "locator": {
-              "end": 363,
+              "end": 336,
               "kind": "line_range",
-              "start": 363
+              "start": 336
             }
           },
           "kind": "code"
@@ -112,11 +112,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:07c0a6f52da4aec57d535f03e3d11f53164cb8942f4fa90a4a3cffd6e9ed6d40",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:779d6e5a546129a629d0f47d22228e4416346aed281921fe16d0cedf928419e9",
             "locator": {
-              "kind": "symbol",
-              "name": "_attaches_to_retired"
+              "end": 373,
+              "kind": "line_range",
+              "start": 361
             }
           },
           "kind": "code"
@@ -162,12 +163,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
             "content": "sha256:edd926493d0834ce5adb30157679d0e72aec3cc0fcaf72709e5456f61c5ef908",
             "locator": {
-              "end": 180,
+              "end": 171,
               "kind": "line_range",
-              "start": 175
+              "start": 166
             }
           },
           "kind": "code"
@@ -209,12 +210,12 @@
       ]
     },
     "30": {
-      "note": "The operation: entries, records, rows, then unstored foreign evidence refuses.\n\nAnchor: `run`",
+      "note": "The operation: entries, records, rows, then unstored foreign evidence refuses.",
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:0315c6d793385e097b43efc56277a1a1ff02f80058e2823d0962db0f5f252a0f",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:a05ed9ebc8a2a8784db68ff0d2ee26d4835abd77f69172377b6d250823fbdf16",
             "locator": {
               "kind": "file"
             }
@@ -224,12 +225,12 @@
       ]
     },
     "31": {
-      "note": "ID assignment and rerun reuse.\n\nAnchor: `_assign_ids`",
+      "note": "ID assignment and rerun reuse.",
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:0315c6d793385e097b43efc56277a1a1ff02f80058e2823d0962db0f5f252a0f",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:a05ed9ebc8a2a8784db68ff0d2ee26d4835abd77f69172377b6d250823fbdf16",
             "locator": {
               "kind": "file"
             }
@@ -239,12 +240,12 @@
       ]
     },
     "32": {
-      "note": "Origin: own records gain evidence, another owner's origin is kept exactly.\n\nAnchor: `_origin`",
+      "note": "Origin: own records gain evidence, another owner's origin is kept exactly.",
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:0315c6d793385e097b43efc56277a1a1ff02f80058e2823d0962db0f5f252a0f",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:a05ed9ebc8a2a8784db68ff0d2ee26d4835abd77f69172377b6d250823fbdf16",
             "locator": {
               "kind": "file"
             }
@@ -254,12 +255,12 @@
       ]
     },
     "33": {
-      "note": "Revision once per leaf against the base.",
+      "note": "Placement delegates revision calculation and records the writer before storing the record.",
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:82eb6e68a7d23678c22c1c9d04f73b0dea3b1a423372980d365572d6fee6c236",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:4c9045ebc7d42e17413e1dcf9a5d9e26e091ca0ed55bfbff70f68973fc5cc011",
             "locator": {
               "kind": "symbol",
               "name": "_place_record"
@@ -270,14 +271,15 @@
       ]
     },
     "34": {
-      "note": "Records of any kind, with defaults and resolved links.\n\nAnchor: `_write_record`",
+      "note": "Record fields are merged and links are resolved before placement. The decision default is its lifecycle word active.",
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:0315c6d793385e097b43efc56277a1a1ff02f80058e2823d0962db0f5f252a0f",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:92fc2c96174e7d68f805566a59bb0d0f9eb971d8c02bb092e10532b5078f014a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_write_record"
             }
           },
           "kind": "code"
@@ -289,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
             "content": "sha256:f716245a6fd1349f069b43c806505951201ce697ba6e608804ed0c0685e12ab3",
             "locator": {
               "kind": "symbol",
@@ -305,7 +307,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
             "content": "sha256:53926f4e827946ff962bfa59a403c211b9e15765120e3732b82d57cbcd9fa2ee",
             "locator": {
               "kind": "symbol",
@@ -321,11 +323,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
             "content": "sha256:76ff7413200b246c8762c46a4263e8ca643682274e3fdd6f032432bad3c4e827",
             "locator": {
-              "kind": "symbol",
-              "name": "_cited_test"
+              "end": 882,
+              "kind": "line_range",
+              "start": 856
             }
           },
           "kind": "code"
@@ -345,8 +348,8 @@
         },
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:0315c6d793385e097b43efc56277a1a1ff02f80058e2823d0962db0f5f252a0f",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:a05ed9ebc8a2a8784db68ff0d2ee26d4835abd77f69172377b6d250823fbdf16",
             "locator": {
               "kind": "file"
             }
@@ -408,16 +411,17 @@
       ]
     },
     "44": {
-      "note": "The record's revision after this operation: an unmerged record at the higher side's plus one.",
+      "note": "An unmerged record resolves above the higher side. Other records compare meaning with the applicable base.",
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:070caafa05f32c7929b17938986cf96b2317d410d469068981009f39ad5306a0",
+            "blob": "ba38a0f158a19be4a09d480da2325cef2d55e8b5",
+            "content": "sha256:abe8687a97a00bf57def8b407162c410d07826ed3106c3907abdd0e50bf33740",
             "locator": {
               "kind": "symbol",
-              "name": "_revision"
-            }
+              "name": "revision_step"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/revision_stamps.py"
           },
           "kind": "code"
         }
@@ -490,12 +494,12 @@
       ]
     },
     "52": {
-      "note": "Row mechanics record the invariant's or family's own revision.",
+      "note": "The history row takes the revision from the resolved invariant or family.",
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:0315c6d793385e097b43efc56277a1a1ff02f80058e2823d0962db0f5f252a0f",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:a05ed9ebc8a2a8784db68ff0d2ee26d4835abd77f69172377b6d250823fbdf16",
             "locator": {
               "kind": "file"
             }
@@ -509,36 +513,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
             "content": "sha256:6e722756638b56a34885e3fbe24d3c68b4e4973174047c137b111a5570fc342d",
             "locator": {
-              "end": 189,
+              "end": 180,
               "kind": "line_range",
-              "start": 185
+              "start": 176
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
             "content": "sha256:3040085f9900e3c91b05a835afae7056e3350310bf601251aed804a8c1bda8ac",
             "locator": {
-              "end": 193,
+              "end": 184,
               "kind": "line_range",
-              "start": 190
+              "start": 181
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "blob": "9c3466e23535ea3c160f5b953bcf7ca761eecfbc",
             "content": "sha256:fcdab3d118135e6affc8fc2928e02152ac9ffd84f16c1cb2d278bf368ee2ddd2",
             "locator": {
-              "end": 411,
+              "end": 393,
               "kind": "line_range",
-              "start": 408
+              "start": 390
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -546,12 +550,12 @@
         },
         {
           "anchor": {
-            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "blob": "9c3466e23535ea3c160f5b953bcf7ca761eecfbc",
             "content": "sha256:ac826aad197bd8c30e21c747b9b91cb941662eb2851a3012aac8ec7bfb7fd737",
             "locator": {
-              "end": 412,
+              "end": 394,
               "kind": "line_range",
-              "start": 412
+              "start": 394
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -559,12 +563,12 @@
         },
         {
           "anchor": {
-            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "blob": "9c3466e23535ea3c160f5b953bcf7ca761eecfbc",
             "content": "sha256:f304cfb8993dc26152957766d985a128c5fe71eb367b3039d6de996ba6aa7e9d",
             "locator": {
-              "end": 509,
+              "end": 491,
               "kind": "line_range",
-              "start": 506
+              "start": 488
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -572,12 +576,12 @@
         },
         {
           "anchor": {
-            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "blob": "9c3466e23535ea3c160f5b953bcf7ca761eecfbc",
             "content": "sha256:301101d6e241cc5442f4cf8613a7bbea68c8a54a96db6e5e2ee83ae1bf89523d",
             "locator": {
-              "end": 267,
+              "end": 249,
               "kind": "line_range",
-              "start": 261
+              "start": 243
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -585,12 +589,12 @@
         },
         {
           "anchor": {
-            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "blob": "9c3466e23535ea3c160f5b953bcf7ca761eecfbc",
             "content": "sha256:1fe9a871942bf023371cd910843be102113e8bc75638f1a980ec68e6cd969518",
             "locator": {
-              "end": 270,
+              "end": 252,
               "kind": "line_range",
-              "start": 268
+              "start": 250
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -603,12 +607,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
             "content": "sha256:f4a2c39596c4fd9719c0cc0fc8295b81b9e1343ade289004b20c9f67d1d640a9",
             "locator": {
-              "end": 305,
+              "end": 300,
               "kind": "line_range",
-              "start": 298
+              "start": 293
             }
           },
           "kind": "code"
@@ -620,7 +624,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
             "content": "sha256:a4c41d3c98ce6a56172c053956a57f3597e2120040c6efbda688f3669e299cf0",
             "locator": {
               "kind": "symbol",
@@ -632,14 +636,16 @@
       ]
     },
     "58": {
-      "note": "A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case.\n\nAnchor: `_proof_locator`",
+      "note": "A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case.",
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:0315c6d793385e097b43efc56277a1a1ff02f80058e2823d0962db0f5f252a0f",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:4a59e5225f3cc20391580fa37fa464aef1ce43d048f7ea9a2fb93ad676e2df3f",
             "locator": {
-              "kind": "file"
+              "end": 854,
+              "kind": "line_range",
+              "start": 836
             }
           },
           "kind": "code"
@@ -647,12 +653,12 @@
       ]
     },
     "59": {
-      "note": "The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written.\n\nAnchor: `Authoring`",
+      "note": "The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written.",
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:0315c6d793385e097b43efc56277a1a1ff02f80058e2823d0962db0f5f252a0f",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:a05ed9ebc8a2a8784db68ff0d2ee26d4835abd77f69172377b6d250823fbdf16",
             "locator": {
               "kind": "file"
             }
@@ -666,7 +672,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
             "content": "sha256:298b0c2b84e265e2f9e1e1fbe602c5578ef7453d6e8109d3bbb60f4ddb604d3e",
             "locator": {
               "kind": "symbol",
@@ -682,12 +688,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:38ca3be541cb75c6f2d59bee3553cd37ccf9b3155570310fbc6c3c2b284d6760",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:a05ed9ebc8a2a8784db68ff0d2ee26d4835abd77f69172377b6d250823fbdf16",
             "locator": {
-              "end": 214,
-              "kind": "line_range",
-              "start": 198
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -699,12 +703,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
             "content": "sha256:3ab56441d4990b3ed0d2eb0b64bce808b3ce2edc95615c6c8a0bc8e697e1d9e0",
             "locator": {
-              "end": 450,
+              "end": 424,
               "kind": "line_range",
-              "start": 436
+              "start": 410
             }
           },
           "kind": "code"
@@ -712,15 +716,16 @@
       ]
     },
     "62": {
-      "note": "Weakness authoring delegates its anchored-place and closure checks to the extracted helper; the model requires a reason when no commit is supplied. [62]",
+      "note": "The writer delegates the anchored place and closure checks to the weakness helper. A current closure without a commit records its reason and owning task.",
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:aa18820dd30bdc940d08485f2cfce2bbb108a4fd9f4039e38faa7a766d4a5a1a",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:92fc2c96174e7d68f805566a59bb0d0f9eb971d8c02bb092e10532b5078f014a",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_record"
+              "end": 449,
+              "kind": "line_range",
+              "start": 410
             }
           },
           "kind": "code"
@@ -730,8 +735,9 @@
             "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
             "content": "sha256:a492e0d90eac0e0e3028522e503fe8920237ea9ac76fe99b4902a00aa6141caa",
             "locator": {
-              "kind": "symbol",
-              "name": "author_weakness"
+              "end": 25,
+              "kind": "line_range",
+              "start": 16
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/weakness_authoring.py"
           },
@@ -742,8 +748,9 @@
             "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
             "content": "sha256:63928396cb488e1e29cec97e52093d3b51de45b0cdbd2acf122140aa40b8b1df",
             "locator": {
-              "kind": "symbol",
-              "name": "_weakness_anchor"
+              "end": 66,
+              "kind": "line_range",
+              "start": 28
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/weakness_authoring.py"
           },
@@ -754,8 +761,9 @@
             "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
             "content": "sha256:f99a95a29f7edca84b57b2a85046d47bcddcfc760c96c1194d9f9136236a124c",
             "locator": {
-              "kind": "symbol",
-              "name": "_closure"
+              "end": 96,
+              "kind": "line_range",
+              "start": 69
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/weakness_authoring.py"
           },
@@ -763,13 +771,48 @@
         },
         {
           "anchor": {
-            "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+            "blob": "d6a81b841bf29a345dc9d7857710af32751ee689",
             "content": "sha256:5cd2080047a44536e4d5ce6d980404ecc045113e6eecc0c272913b7d5267b2a3",
             "locator": {
-              "kind": "symbol",
-              "name": "Closure"
+              "end": 353,
+              "kind": "line_range",
+              "start": 339
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "63": {
+      "note": "A raised or new revision carries the resolved writer and its exact meaning digest in the open attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba38a0f158a19be4a09d480da2325cef2d55e8b5",
+            "content": "sha256:b7767f56a3cb7bf3b787faa74ef4326eee7d449f55332b255f64f19326490b8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_written_revision"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/revision_stamps.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "64": {
+      "note": "Base-number placements retain the base stamp and unchanged same-writer placements retain the prior stamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba38a0f158a19be4a09d480da2325cef2d55e8b5",
+            "content": "sha256:2b7269590c0c665475587d9b1e97d41be495901ef8f10829ed72880b548fed46",
+            "locator": {
+              "kind": "symbol",
+              "name": "_set_writer"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/revision_stamps.py"
           },
           "kind": "code"
         }
@@ -780,12 +823,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
             "content": "sha256:d50e77207a0cdeab22c56b029ac732cf46ed57f4e1fa7a9cc30a8063abef356f",
             "locator": {
-              "end": 174,
+              "end": 165,
               "kind": "line_range",
-              "start": 174
+              "start": 165
             }
           },
           "kind": "code"

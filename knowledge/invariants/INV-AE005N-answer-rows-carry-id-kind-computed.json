@@ -7,11 +7,13 @@
   },
   "applicability": "The mounted knowledge_read supported named-row projections on the selected converted knowledge epoch.",
   "conditions": [
-    "Canonical configured or per-call admitted reader roots and the selected immutable source/memory epoch remain authoritative."
+    "Canonical configured or per-call admitted reader roots and the selected immutable source/memory epoch remain authoritative.",
+    "A named row may carry derived recordState and compact role/model attribution, separate from source currentness. The dashboard record detail and summaries carry an object with role, harness and model."
   ],
   "exclusions": [
     "Source inspection and producer fixture evidence do not establish fresh runtime execution, current CODE acceptance, metadata-only acceptance, or a semantic verdict.",
-    "Private/dashboard/CLI full-result composition is not replaced by mounted naming."
+    "Private/dashboard/CLI full-result composition is not replaced by mounted naming.",
+    "The writers view returns writer aggregates and their report."
   ],
   "id": "INV-AE005N",
   "origin": {
@@ -25,9 +27,9 @@
     "leaf": "260928-MIK-L109",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Answer rows carry ID, kind, computed state and location with no record text: member rows name the member record with the family beside it, declarations win over mentions, header references name families, and failed walks fall back to unverifiable.",
+  "statement": "Named record rows carry ID, kind, computed source currentness and location without stored record text. Member rows name the invariant with its family, declarations outrank mentions, header references name families, and an unverified walk reports unverifiable.",
   "status": "proposed",
   "supersedes": []
 }

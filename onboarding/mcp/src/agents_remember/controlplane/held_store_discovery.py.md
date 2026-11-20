@@ -11,6 +11,8 @@ a population without a bound and never presents a partial walk as a whole one.
 
 ## Code Commentary
 
+`taskless_session_directory` returns the requested role’s `sessions` directory under the receipt holder. Taskless receipt writers and writer-stamp lookup share that address. Bounded discovery stays with the existing receipt scans.
+
 `EXECUTIONS_DIRECTORY` is defined here once and imported by the CLI receipt owner; receipt discovery uses the same directory name without importing CLI.
 
 Each scan is one open `DirectoryWalk` over an `os.scandir` handle, advanced by an explicit budget and able to
@@ -30,3 +32,7 @@ truncated-and-complete.
 Current source interpretation at the reviewed freeze; bounded enumeration, shedding and resumption are pinned by
 `mcp/tests/test_attention_discovery.py` and `test_held_store_authority.py`. No live-page witness and no CPU or
 resource measurement: MIK-R200 evidence item 6 is unrun and carried to L36, item 7 unrun.
+
+## Evidence
+
+- The taskless receipt address is derived from the shared holder and role. [1]

@@ -284,16 +284,16 @@
       ]
     },
     "26": {
-      "note": "The module's own unit-regression lane row.",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_review_resolution_and_route.py.\n\nAnchor: `mcp/tests/test_knowledge_review_resolution_and_route.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
+            "content": "sha256:c6ed336e675c9b0ea21bce0af57d9629a65289c35d2c34e0da466207c712cde5",
             "locator": {
-              "end": 816,
+              "end": 275,
               "kind": "line_range",
-              "start": 1
+              "start": 275
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

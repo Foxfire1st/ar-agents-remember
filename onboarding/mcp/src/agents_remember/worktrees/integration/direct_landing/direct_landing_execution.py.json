@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+        "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
         "content": "sha256:b9305c3bc5b156027ba6da8574ac256628432061178f4065072357ef4ddf5e4f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+        "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
         "content": "sha256:e197e7904a2347e0d103e2ebfe29bb601570a8c76ff9f3f0d7aeb20433236535",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+        "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
         "content": "sha256:8a5524012b9b572fde9e8ed4d61b5176cecb347c8610ac4826666de7da0ead42",
         "locator": {
           "kind": "symbol",
@@ -62,31 +62,20 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:bd8451039a34cb7ca620810fe40f034694ff2e8ac3eef1cf374ad2ec292443fa",
             "locator": {
-              "kind": "symbol",
-              "name": "execute_direct_landing"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:70bf0ee2bd1ec49f073707599b09390037f6bec1bd460d4fb3020c09beefda3e",
-            "locator": {
-              "end": 75,
+              "end": 84,
               "kind": "line_range",
-              "start": 42
+              "start": 51
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:41d08a6dbcb3eb262f4bd5a757022983784d0b77e9cc89108038789754647e50",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+            "content": "sha256:c7a648e0cc49aa01a8b8861aa83965e9b16354ecdb6e2340b175caeaa7e5fdaf",
             "locator": {
               "kind": "file"
             }
@@ -96,46 +85,48 @@
       ]
     },
     "2": {
-      "note": "Prepared attempts preserve repository and exact pre-commit tree evidence.\n\nAnchor: `_require_accepted_memory_prestate` `_require_prepared_direct_attempt`",
+      "note": "Prepared attempts preserve repository and exact pre-commit tree evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:cd45b2305222e7a01b8cf90918e4bfc0aa663889712936c7d5608c97b083a8f4",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_accepted_memory_prestate"
+              "end": 439,
+              "kind": "line_range",
+              "start": 423
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:ca950dc7f3c5055a50c38ff9505d804052841476cb989ec5be27b9d2a8a755e5",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_prepared_direct_attempt"
+              "end": 471,
+              "kind": "line_range",
+              "start": 442
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:7f06d053086fcdd8b0384f1aaf6b06bed18c8e89141b2b8750c7c2139386189e",
             "locator": {
-              "end": 255,
+              "end": 257,
               "kind": "line_range",
-              "start": 239
+              "start": 241
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:41d08a6dbcb3eb262f4bd5a757022983784d0b77e9cc89108038789754647e50",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+            "content": "sha256:c7a648e0cc49aa01a8b8861aa83965e9b16354ecdb6e2340b175caeaa7e5fdaf",
             "locator": {
               "kind": "file"
             }
@@ -210,12 +201,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:ab336136d1a2dfe8751145a58984c8589d195939ce3998202c7bc6fe362a7c45",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+            "content": "sha256:c7a648e0cc49aa01a8b8861aa83965e9b16354ecdb6e2340b175caeaa7e5fdaf",
             "locator": {
-              "end": 520,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The successful result adds the committed-history note to the summary when present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+            "content": "sha256:20e5807354ef02250712841ec0af798cdcaa447778a73d792a4db04fceb954cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_landing_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The result reader selects the leaf owner from the operation or its canonical document reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+            "content": "sha256:9bd63e9799bcc04f581c85a279f4d150f703e8b18b82f940f85ded943d0724f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_note"
             }
           },
           "kind": "code"

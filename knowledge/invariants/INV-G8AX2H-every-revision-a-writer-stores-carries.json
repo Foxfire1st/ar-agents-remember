@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A new leaf revision persists the resolved writer and rejects input-supplied identity."
+  },
+  "applicability": "Knowledge writes through the shared writer for a leaf, wave or crossing.",
+  "conditions": [
+    "The product resolves the caller and the values available from the launch receipt."
+  ],
+  "exclusions": [
+    "Placement at the base revision preserves the base stamp or its absence.",
+    "Legacy conversion and product-generated merge stamps have their own provenance rules."
+  ],
+  "id": "INV-G8AX2H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_writer_revision_stamps.py::test_a_leaf_write_stamps_its_new_record_from_binding_and_receipt_not_from_input; mcp/tests/test_knowledge_writer_stamp_shape.py::test_receipt_values_prefer_the_hosts_observation_and_explain_what_is_missing"
+      ],
+      "path": "revision-standing-authoring.json"
+    },
+    "handoffEntry": "L3-W1-01",
+    "leaf": "261112-KNO-L3",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A new or advanced knowledge revision carries the writer's stamp with role, harness, model, effort, seat, task, owner and time. The product resolves it from the caller's launch binding and receipt. An unresolved value reads unknown with its reason.",
+  "status": "proposed",
+  "supersedes": []
+}

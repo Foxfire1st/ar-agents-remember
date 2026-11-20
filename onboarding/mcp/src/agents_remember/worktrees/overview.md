@@ -94,7 +94,7 @@ The mandatory invariant gate enforces exact structured knowledge-maintenance jud
 > **Retained historical source account — superseded by the current route account:**
 > When all relevant sides are unconverted, the current public routes refuse legacy operational input unconditionally, including never-converted repositories. The shared `legacy-format` detail names crossing sync with `merge-memory` from a converted source or first conversion. Converted-location probes word the recovery message rather than decide permission. A failed Git probe keeps its named error; a definite non-repository or absent repository path is a distinct local no-repository case, not permission on an actual legacy line. A converting candidate proceeds to the converted gate. Fresh managed sync performs its exact-side preflight before selecting reconciling; no memory side, skip and already-current shapes do not invent a memory movement, and existing continue/cancel recovery retains its owner. Legacy card reads remain available with no knowledge section, but card writers require converted memory; citation_migrate and memory-citations --migrate are unregistered. DEC-FCNRNT and DEC-VMMJDN retain superseded historical choices, not current permissions.
 
-History closing changes the latest attempt-qualified owner file, or the plain file when no attempt exists; missing history is created closed with no rows. Existing rows are not rewritten. Malformed history is left for the validator to refuse. Restoration compares exact written bytes and preserves later edits. Only the memory commit recorded by a completed leaf closeout freezes earlier closed history; a hand-closed file does not acquire that authority. LeafPublication and LandingGateRequest carry the recorded frozen commits to validation.
+History closing changes the latest attempt-qualified owner file, or the plain file when no attempt exists. It creates a missing file closed with no rows, preserves existing judgment rows, and keeps already-closed files byte-identical. It stores the qualifying memory review fact in the same write that sets the flag. Eligibility uses the last recorded memory round, its passing result and usable verdict reference, and equality between its reviewed tree and the pre-write checkout. Malformed history is left for the validator to refuse. Restoration compares exact written bytes and preserves later edits. Only the memory commit recorded by a completed leaf closeout freezes earlier closed history; a hand-closed file does not acquire that authority. LeafPublication and LandingGateRequest carry the recorded frozen commits to validation.
 
 Direct landing keeps history-closing receipts per generation until landing or cancellation decides them. Receipts retain exact closed-blob identity, refuse unreadability and restore only without overwriting later edits. An exact in-flight retry reaches retained generation authority before creating a new closing. Cancellation checks receipts before movement. Prepared certified closeout remains a named converted-memory refusal: its candidate is curator-attested and the current path cannot add the required closed history flag. Unconverted prepared paths are independently subject to the cutover lock.
 
@@ -133,7 +133,7 @@ Retain the inherited review-artifact deletion policy's accepted TOCTOU window an
 
 | Route | Source | Current boundary |
 | --- | --- | --- |
-| Direct landing | [`direct_landing.py`](direct_landing.py.md) | Apply selects the exact history source, closes its owner, then judges and validates the retained closed tree; refusal restores the closing. The proven bound leaf takes precedence over optional supplied leaf_id; only absence of both permits legacy sole-open inference. Exact in-flight retry reuses the retained record without preparation/admission or another gate/review claim. A newly admitted generation keeps its closing until decided. |
+| Direct landing | [`direct_landing.py`](direct_landing.py.md) | Apply selects the exact history source, reads a qualifying review fact before memory writes, and closes the owner history with that fact when available. It judges and validates the retained closed tree and restores the owned closing on refusal. The proven bound leaf takes precedence over optional supplied leaf_id; only absence of both permits legacy sole-open inference. Exact in-flight retry reuses the retained record without preparation/admission or another gate/review claim. A newly admitted generation keeps its closing until decided. |
 
 These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
 
@@ -203,6 +203,9 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 
 ## Evidence
 
+- History closing writes the eligible review fact in the same update and preserves already-closed bytes. [107]
+- Direct landing reads the selected owner's review against the checkout before the cache-ignore or history writes. [108]
+
 - Ancestry, disjoint byte paths and equal reviewed after-images define the clean-sync exception. [104]
 - The door keeps the original record-digest provenance while checking its other inputs. [105]
 
@@ -258,16 +261,10 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 - Retained reference account (no fresh execution or acceptance inferred): The conditional finalizer helper acts only on archived or would-archive results; a series archive skip invokes no cleanup. [56]
 - Retained reference account (no fresh execution or acceptance inferred): Finalize resolves a leaf naming none through the shared helper. [57]
 - Retained reference account (no fresh execution or acceptance inferred): Reopen resolves a leaf naming none through the same helper. [58]
-- Retained reference account (no fresh execution or acceptance inferred): Reopen's placement guard on the leaf and the master. [59]
-- Retained reference account (no fresh execution or acceptance inferred): The layer's probes, the unbound refusal and the closeout's own write. [60]
-- Retained reference account (no fresh execution or acceptance inferred): The closeout validator's and the landings' gate. [61]
-- Retained reference account (no fresh execution or acceptance inferred): The direct landing's closing, kept and settled per generation. [62]
 - Retained reference account (no fresh execution or acceptance inferred): The port, the landing request and the direct verdict. [63]
-- Direct apply selects the history source, closes it, then judges the retained closed tree with restore on refusal; exact retry reuses the retained generation. [64]
 
 - The unconditional legacy-input refusal and its recovery wording. [65]
 - Task recovery guidance never invokes removed get: an established safe leaf can offer task_doc.replace with the exact slug, contract and fields, while an unknown leaf or parent path offers file repair without a guessed mutation. Launch copies contain the own leaf plus declared local requirements, name missing sources without failing launch solely for absence, and refresh/reclaim on canonical publication under the existing rollback and copy budgets. Status copy drift is informational; missing notice is not universal byte equality. Packet-owned refusal presentation preserves the central conversion sentence and single probe-made case, with exact sync args or quoted separate first-conversion argv and no step for unknown. These accounts change neither canonical-file authority, checkpoint/pause distinction, cleanup/reclamation eligibility, paired source lineage nor sync behavior. [99]
-- Retained reference account (no fresh execution or acceptance inferred): The worktree layer's helper that names the leaf's line. [66]
 - Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission. [67]
 - Retained reference account (no fresh execution or acceptance inferred): The closeout closes a reopened leaf's latest attempt. [68]
 
@@ -318,3 +315,12 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 - Native stage preparation preserves absent documents, promotes only admitted input stages and prepares matching master-row synchronization. [102]
 - Abandon publication restores task and contract sources on publication failure; this does not recreate prior reclaimed resources. [103]
 - The neutral process holder supports an explicitly named lazy supplier: first lookup retains its bundle and reset clears bundle and supplier. Start/creation checks every leaf stage, planning attach checks before re-entry, and task-stage publication refuses planning/abandoned-to-inProgress while intent review is open; existing later-stage attach remains separate. [106]
+
+- Retained reference account (no fresh execution or acceptance inferred): The closeout validator's and the landings' gate. [61]
+- Retained reference account (no fresh execution or acceptance inferred): The direct landing's closing, kept and settled per generation. [62]
+- Retained reference account (no fresh execution or acceptance inferred): The worktree layer's helper that names the leaf's line. [66]
+
+- Retained reference account (no fresh execution or acceptance inferred): Reopen's placement guard on the leaf and the master. [59]
+
+- Retained reference account (no fresh execution or acceptance inferred): The layer's probes, the unbound refusal and the closeout's own write. [60]
+- Direct apply selects the history source, closes it, then judges the retained closed tree with restore on refusal; exact retry reuses the retained generation. [64]

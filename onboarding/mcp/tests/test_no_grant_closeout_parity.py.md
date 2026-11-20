@@ -20,7 +20,7 @@ The current comparison also adapts baseline landing labels through `_port_landin
 
 The driver executes leaf and series preview, apply and integration in all three worlds. In the shared six-phase loop the current pristine and unrelated-grant responses first compare after only `_scrub`, before conversion and baseline-only seat-field normalization. This raw assertion protects grant/current equality. Existing L46 conversion scaffolding and the L113 seat-field adaptation remain separately attributed.
 
-MIK-R113 rule12, amended in place at A12, retains L111's baseline-only adaptation. The embedded before-world producer maps its own leaf_preview/leaf_apply route_index_refresh facts to refreshedCount=written, unchangedCount=unchanged and staleCount=len(staleIndexes). It has no current/grant response available to copy. ROUTE_INDEX_COUNTS_OF_THE_CURRENT, PHASES_WITH_ROUTE_INDEX_COUNTS and _without_route_index_counts are removed; no count is taken out of current answers. The four removed seat fields are still taken out only on the baseline side. Raw pristine/grant equality, all six phase comparisons and product response content remain unchanged. This source account follows the amended packet and is not fresh executed acceptance.
+MIK-R113 rule12, amended in place at A12, retains L111's baseline-only adaptation. The embedded before-world producer maps its own leaf_preview/leaf_apply route_index_refresh facts to refreshedCount=written, unchangedCount=unchanged and staleCount=len(staleIndexes). It has no current/grant response available to copy. ROUTE_INDEX_COUNTS_OF_THE_CURRENT, PHASES_WITH_ROUTE_INDEX_COUNTS and _without_route_index_counts are removed; no count is taken out of current answers. The four removed seat fields are still taken out only on the baseline side. Raw pristine/grant equality and all six phase comparisons stay in force. This source account follows the amended packet and is not fresh executed acceptance.
 
 The existing conversion helper identifies the earliest `knowledge/layout.json` marker commit, removes at most one matching ledger row, and adjusts only its attached counts/gate data. That is prior test scaffolding, not a new rule12 deletion or the first raw assertion.
 
@@ -30,22 +30,28 @@ The original INV-F029P2 identity and L94 provenance are retained; its former unq
 
 Uses the existing `QueueFixture` and public closeout/integration services for current worlds; `_BASELINE_DRIVER` runs through its source-bound baseline subprocess. The new marker query uses the already-imported `subprocess`, row-summary adjustment uses the existing `re` import, and assertions use `unittest`. There is no new external package or lifecycle API dependency.
 
+After raw current-world equality, the comparison with the before world removes the exact no-memory-review sentence from the two current leaf apply summaries. The test requires one occurrence in each leaf apply and none in the other phases. Other current summary text and the route-index counts still take part in the comparison.
+
 ## Evidence
 
 
 
-- The three worlds retain raw pristine/grant equality; baseline comparison additionally uses conversion, baseline-only removed-seat-field adaptation and contract-derived landing-label adaptation. A12 takes no route-index counts out of current answers. Anchor: `mcp/tests/test_no_grant_closeout_parity.py` [1]
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+- The parity test first compares the raw current worlds, then enforces exactly one no-pass sentence in each leaf apply comparison. [4]
+- The current worlds compare before adaptations. The baseline comparison applies its named conversion, seat and landing-label transforms and verifies the no-pass sentence only for current leaf apply summaries. The current route-index counts stay in both comparisons. [1]
 
 - Conversion-marker row/count/gate handling and baseline-only four-seat-field removal are separately attributed test scaffolding, not generic current-answer metadata suppression. Anchor: `mcp/tests/test_no_grant_closeout_parity.py` [2]
-
-
-
-
-
-
-
 - The baseline-only subprocess maps its own written/unchanged/staleIndexes facts onto L110 count keys; no current/grant response is copied and the original comparisons remain. [3]

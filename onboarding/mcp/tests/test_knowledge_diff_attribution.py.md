@@ -93,7 +93,6 @@ No Domain Documentation source is configured for this slice.
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [18]
 
 
-- RowStore writes text-tree fixture rows without the retired production admission plane. [19]
 
 
 ### Docs References
@@ -150,5 +149,9 @@ No configured cross-repository evidence is claimed.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:352-352 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:800-800 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1202-1202 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2029-2029 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2740-2740 - the bytes it recorded now occur 50 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2783-2783 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3299-3299 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- The module's own unit-regression lane row. [30]
-- The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution. [31]
+
+- The unit-regression lane selects mcp/tests/test_knowledge_diff_attribution.py. [30]
+
+- The lifecycle catalog lists `test_knowledge_diff_attribution.py` as an exact consumer of `_user_settings_guard.py`, `anchor_fixture_models.py`, `diff_scope_test_support.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_review_fact_test_support.py`, `knowledge_row_codec_test_support.py`, `knowledge_rows_test_support.py`, `read_scope_test_support.py`. [31]
+
+- RowStore writes text-tree fixture rows without the retired production admission plane. [19]

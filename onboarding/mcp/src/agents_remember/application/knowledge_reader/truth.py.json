@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+        "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
         "content": "sha256:7d772ce480804bffbdef867d50e638035071fb829c03f65972fb97eea3cace5f",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
-        "content": "sha256:592bc20983d8b4fc65e8e912a325cb95cd6f50d1ce77103c87f254e1026abbc0",
+        "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+        "content": "sha256:6664f46c59516eceb6fdd8acb4b538d5ae59ff2627d66dca0462d5ea1ddc8f41",
         "locator": {
           "kind": "file"
         }
@@ -38,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
-        "content": "sha256:592bc20983d8b4fc65e8e912a325cb95cd6f50d1ce77103c87f254e1026abbc0",
+        "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+        "content": "sha256:6664f46c59516eceb6fdd8acb4b538d5ae59ff2627d66dca0462d5ea1ddc8f41",
         "locator": {
           "kind": "file"
         }
@@ -55,8 +55,8 @@
     },
     {
       "anchor": {
-        "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
-        "content": "sha256:a46b62e7daf4ec88266192e5c464b83d13d505f37a7d3dbab7579dcb0ba11215",
+        "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+        "content": "sha256:42d1689332e335ab8aa631adcdce364e4421b43753d4e2ab80435f6d5f402692",
         "locator": {
           "kind": "symbol",
           "name": "record_view"
@@ -74,14 +74,14 @@
   ],
   "references": {
     "1": {
-      "note": "The module's own statement of the truth views per kind and the census view.\n\nAnchor: \"A **truth view** shows one record of the selected tree\"",
+      "note": "The module's own statement of the truth views per kind and the census view.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
-            "content": "sha256:d3a007e474f1c21391fb40676137d90e75c33ec6cf12201be934372340357e1a",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "content": "sha256:e2a6a77c66305a07e7a38f680d8c49d331f747dd1cadd659f90a3e09e3827764",
             "locator": {
-              "end": 21,
+              "end": 23,
               "kind": "line_range",
               "start": 1
             }
@@ -95,24 +95,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
             "content": "sha256:c4e0bf5dcfc88bdfdabb897b6e4b5eb51d54f7b56230d82260fbb82c8928170a",
             "locator": {
-              "end": 124,
+              "end": 132,
               "kind": "line_range",
-              "start": 118
+              "start": 126
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
             "content": "sha256:30cf673ca5f41eba17783aabf908a00bc623a22fa06a130f85d483589444e535",
             "locator": {
-              "end": 239,
+              "end": 251,
               "kind": "line_range",
-              "start": 221
+              "start": 233
             }
           },
           "kind": "code"
@@ -124,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
             "content": "sha256:7dff5d6bcb0303496c6202a9ba83108ae3675ab0bab252adf9318ec09b818d0f",
             "locator": {
               "kind": "symbol",
@@ -153,15 +153,16 @@
       ]
     },
     "13": {
-      "note": "Closed weakness views share one derived closure display between the returned record document and facet, leaving storage untouched. [13]",
+      "note": "Closed weakness views share one derived closure display between the returned record document and facet, leaving storage untouched.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
-            "content": "sha256:a46b62e7daf4ec88266192e5c464b83d13d505f37a7d3dbab7579dcb0ba11215",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "content": "sha256:42d1689332e335ab8aa631adcdce364e4421b43753d4e2ab80435f6d5f402692",
             "locator": {
-              "kind": "symbol",
-              "name": "record_view"
+              "end": 123,
+              "kind": "line_range",
+              "start": 78
             }
           },
           "kind": "code"
@@ -171,8 +172,9 @@
             "blob": "818f37a7fb36756ed15389172001e0707e4c19f4",
             "content": "sha256:fe9f3df2fe2fa87df676b069240642f23f751f82702fa97cfeced1ca77cef60e",
             "locator": {
-              "kind": "symbol",
-              "name": "closure_document"
+              "end": 61,
+              "kind": "line_range",
+              "start": 32
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/weakness_closure.py"
           },
@@ -180,17 +182,48 @@
         }
       ]
     },
-    "2": {
-      "note": "One record's truth view carries its links, kind part and timeline, now forwarding a continuation and lazy history callback. Anchor: `record_view`",
+    "14": {
+      "note": "The facet projection removes legacy stored state words and keeps kind-specific lifecycle values.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
-            "content": "sha256:a46b62e7daf4ec88266192e5c464b83d13d505f37a7d3dbab7579dcb0ba11215",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "content": "sha256:2cc82942aecc90dbb9ea3206ec7a0904aaa30e1849b027c2d00c5a213f35d062",
             "locator": {
-              "end": 115,
-              "kind": "line_range",
-              "start": 71
+              "kind": "symbol",
+              "name": "_kind_part"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Family member summaries receive indexed revision state and writer alongside code currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "content": "sha256:c9cafc54ce9fbd137fe6270deb50cdf6a9327b457c655eb6b8a3506747d09070",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The record frame carries indexed state and writer, links and kind detail beside a lazily paged timeline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "content": "sha256:42d1689332e335ab8aa631adcdce364e4421b43753d4e2ab80435f6d5f402692",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_view"
             }
           },
           "kind": "code"
@@ -202,22 +235,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
-            "content": "sha256:41976ea94dceb0c370b4a9fde5402ce7992ebda5459adc2e37507b773ce6a47a",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "content": "sha256:2cc82942aecc90dbb9ea3206ec7a0904aaa30e1849b027c2d00c5a213f35d062",
             "locator": {
-              "kind": "symbol",
-              "name": "_kind_part"
+              "end": 154,
+              "kind": "line_range",
+              "start": 135
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
             "content": "sha256:99218c29b802e572b76feb88b0f0332414ad971c00c7e5925d6bb0c36389b91e",
             "locator": {
-              "kind": "symbol",
-              "name": "_member_entries"
+              "end": 165,
+              "kind": "line_range",
+              "start": 157
             }
           },
           "kind": "code"
@@ -229,12 +264,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
             "content": "sha256:2d4c5a6c898ca8dc1000e91f2ee37bda2cab3bd0449dea67a26ef28ea85c2170",
             "locator": {
-              "end": 209,
+              "end": 221,
               "kind": "line_range",
-              "start": 160
+              "start": 172
             }
           },
           "kind": "code"
@@ -242,28 +277,28 @@
       ]
     },
     "5": {
-      "note": "Invariant and family parts expose their own currentness, entries and locations; the invariant's dedicated membership array queries history independently of the timeline cache.\n\nAnchor: Invariant and family projections",
+      "note": "Invariant and family parts expose their own currentness, entries and locations; the invariant's dedicated membership array queries history independently of the timeline cache.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
             "content": "sha256:30cf673ca5f41eba17783aabf908a00bc623a22fa06a130f85d483589444e535",
             "locator": {
-              "end": 239,
+              "end": 251,
               "kind": "line_range",
-              "start": 221
+              "start": 233
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
-            "content": "sha256:e29a1a30254b344b0e519a2e866a09c5010464650614c6739650c993f4018b87",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "content": "sha256:c9cafc54ce9fbd137fe6270deb50cdf6a9327b457c655eb6b8a3506747d09070",
             "locator": {
-              "end": 284,
+              "end": 296,
               "kind": "line_range",
-              "start": 257
+              "start": 269
             }
           },
           "kind": "code"
@@ -271,12 +306,12 @@
       ]
     },
     "6": {
-      "note": "Every record by kind.",
+      "note": "The record list returns summaries by kind with indexed state and writer.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
-            "content": "sha256:801279ae58903d828cbacfe6c38e7637d3588710a6eff99287786d8af1978fc7",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "content": "sha256:07e423352ca4e98a4a274694b810657b8757c49784cf30a0dade084f56fe55af",
             "locator": {
               "kind": "symbol",
               "name": "record_list"
@@ -291,7 +326,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
             "content": "sha256:846355c025bc06ceb4c81f1aea4f10a3f8ad9c45fdc75615f3249e0a3873f73d",
             "locator": {
               "kind": "symbol",
@@ -307,24 +342,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
             "content": "sha256:405f1037571b9acb3d29a3fee9b1525760c274bb4e40dbbdc96bb1af8520d7fa",
             "locator": {
-              "end": 396,
+              "end": 409,
               "kind": "line_range",
-              "start": 332
+              "start": 345
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
             "content": "sha256:c0a17512cfb7cd2868a43a58d45f84d9be9b43d4b884e0d5454a35b8f83bdf76",
             "locator": {
-              "end": 396,
+              "end": 409,
               "kind": "line_range",
-              "start": 387
+              "start": 400
             }
           },
           "kind": "code"

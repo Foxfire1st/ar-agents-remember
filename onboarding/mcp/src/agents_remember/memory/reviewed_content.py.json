@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/memory/reviewed_content.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6cd5fcc58f7a1e9175f3e79a0548bd814ba74ea8",
+        "content": "sha256:721001edfa9772e86fd5b1eedca869d8cfc156e66aed7fddca2f4b2759fe900b",
+        "locator": {
+          "kind": "symbol",
+          "name": "reviewed_content"
+        }
+      },
+      "id": "RLZ-75FCS1",
+      "invariant": "INV-Z0FRT0",
+      "origin": {
+        "handoffEntry": "KNO-R03@v1",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Matches immutable review-tree content by stable record identity independently of the slug.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "6cd5fcc58f7a1e9175f3e79a0548bd814ba74ea8",
+        "content": "sha256:721001edfa9772e86fd5b1eedca869d8cfc156e66aed7fddca2f4b2759fe900b",
+        "locator": {
+          "kind": "symbol",
+          "name": "reviewed_content"
+        }
+      },
+      "id": "RLZ-8SXTRG",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-W1-04",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Reads immutable tree entries by stable record ID and checks the parsed record's revision and meaning even when the review used an earlier filename.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The matcher resolves an exact record revision and content digest independently of its filename.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cd5fcc58f7a1e9175f3e79a0548bd814ba74ea8",
+            "content": "sha256:721001edfa9772e86fd5b1eedca869d8cfc156e66aed7fddca2f4b2759fe900b",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewed_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

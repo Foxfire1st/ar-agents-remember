@@ -37,12 +37,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:055e5244e7a6b77d1d6ae84e34173f5f40f9f65e694d2b24e09ef2b424570b6c",
             "locator": {
-              "end": 459,
+              "end": 461,
               "kind": "line_range",
-              "start": 421
+              "start": 423
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -63,7 +63,7 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:d55ef03d9421165196bd4bf02c64554ea14fa011dad895ac5600779f6986b837",
             "locator": {
               "kind": "symbol",
@@ -75,12 +75,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:2e7f5bf21892efa0ebd4753ce1959dabfcd00e1450017d0af9e9bb0b705c7a08",
             "locator": {
-              "end": 236,
+              "end": 238,
               "kind": "line_range",
-              "start": 175
+              "start": 177
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -93,12 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:055e5244e7a6b77d1d6ae84e34173f5f40f9f65e694d2b24e09ef2b424570b6c",
             "locator": {
-              "end": 459,
+              "end": 461,
               "kind": "line_range",
-              "start": 421
+              "start": 423
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -119,7 +119,7 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:d55ef03d9421165196bd4bf02c64554ea14fa011dad895ac5600779f6986b837",
             "locator": {
               "kind": "symbol",
@@ -131,12 +131,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:2e7f5bf21892efa0ebd4753ce1959dabfcd00e1450017d0af9e9bb0b705c7a08",
             "locator": {
-              "end": 236,
+              "end": 238,
               "kind": "line_range",
-              "start": 175
+              "start": 177
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -605,7 +605,7 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:8a5524012b9b572fde9e8ed4d61b5176cecb347c8610ac4826666de7da0ead42",
             "locator": {
               "kind": "symbol",
@@ -617,12 +617,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:f7c4e76501577a46388c5789fa1d7718ce4cab2bae5ea433c1e64620fa8d0493",
             "locator": {
-              "end": 408,
+              "end": 410,
               "kind": "line_range",
-              "start": 308
+              "start": 310
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -727,7 +727,7 @@
       ]
     },
     "28": {
-      "note": "Reopen projection uses changed-output ancestry; exact source-head admission also accepts recorded checkpoint landings.\n\nAnchor: reopen/source-head owners",
+      "note": "Reopen projection uses changed-output ancestry; exact source-head admission also accepts recorded checkpoint landings.",
       "targets": [
         {
           "anchor": {
@@ -744,38 +744,12 @@
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a78ffd6d3d92c4fb25cbde809372d8d24a0e9affe0645d5d0d9aeb89104c7d50",
-            "locator": {
-              "end": 175,
-              "kind": "line_range",
-              "start": 161
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:8d8aeb3179e79211e4b33c0577c4ca2a7c9df4101a8b4f86fedd2c4705247991",
-            "locator": {
-              "end": 538,
-              "kind": "line_range",
-              "start": 512
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
             "content": "sha256:b76b93f6961032fb93182dd3c1ec417b23019e93036c62e6655a11749dc37693",
             "locator": {
-              "end": 195,
+              "end": 174,
               "kind": "line_range",
-              "start": 181
+              "start": 160
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -783,14 +757,29 @@
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:6b93e770aa6968109bf312e085cab1f1a946a5f067b11738360b20363ffca256",
+            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
+            "content": "sha256:b277b86f9c8a7e5f12d4d0a6fdb59842ad42989d2ed091022d03dd7af61c8bd8",
             "locator": {
-              "end": 554,
-              "kind": "line_range",
-              "start": 528
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The direct-landing success response carries an optional review note after publication proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+            "content": "sha256:20e5807354ef02250712841ec0af798cdcaa447778a73d792a4db04fceb954cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
           "kind": "code"
         }
@@ -961,15 +950,16 @@
       ]
     },
     "6": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Direct landing recovery.\n\nAnchor: `execute_direct_landing` `execute_or_require_direct_landing_recovery`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Direct landing recovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:bd8451039a34cb7ca620810fe40f034694ff2e8ac3eef1cf374ad2ec292443fa",
             "locator": {
-              "kind": "symbol",
-              "name": "execute_direct_landing"
+              "end": 84,
+              "kind": "line_range",
+              "start": 51
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -977,11 +967,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:e197e7904a2347e0d103e2ebfe29bb601570a8c76ff9f3f0d7aeb20433236535",
             "locator": {
-              "kind": "symbol",
-              "name": "execute_or_require_direct_landing_recovery"
+              "end": 165,
+              "kind": "line_range",
+              "start": 87
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -989,12 +980,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:6f1d0146c6e81fbfe0204718e9978f20cca9e088f09859ab47411b2c7c262956",
             "locator": {
-              "end": 115,
+              "end": 117,
               "kind": "line_range",
-              "start": 73
+              "start": 75
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -1002,12 +993,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
             "content": "sha256:86d465cff87a2cd40b98e9ba99ff5175add6d32a307a542eee82fcc7a1beed1c",
             "locator": {
-              "end": 175,
+              "end": 177,
               "kind": "line_range",
-              "start": 118
+              "start": 120
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -1015,8 +1006,8 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:41d08a6dbcb3eb262f4bd5a757022983784d0b77e9cc89108038789754647e50",
+            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+            "content": "sha256:c7a648e0cc49aa01a8b8861aa83965e9b16354ecdb6e2340b175caeaa7e5fdaf",
             "locator": {
               "kind": "file"
             },

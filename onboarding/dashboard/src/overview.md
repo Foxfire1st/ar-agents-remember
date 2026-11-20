@@ -404,7 +404,6 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - **The shared liveness predicate gates Working and labels the Intent Review `(recorded)` for a closed leaf; it selects no different review record and does not gate Intent Review availability.** [23]
 
-- The shared catalogue hook takes repository/task context and calls the existing subject catalogue client. [24]
 
 - **The entry that is offered for every leaf; since `260921-ICR-L47` the subject catalogue is read by the reviewer on entry (not by the task entry), and never gates it.** [25]
 
@@ -549,7 +548,6 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Launcher provenance and its saved, unknown and known-empty catalog cases are stated and cited in the child cards this route points at; the deleted component carries no current claim here. [96]
 
-Anchor: `ReviewSourceInventory` `intentReview` [28]
 
 - The four-entry product bar and retained product layers remain distinct from injected views; review URL state can override ordinary opening view. [44]
 
@@ -569,3 +567,6 @@ Anchor: `ReviewSourceInventory` `intentReview` [28]
 - Current watch owners for the review page account. [84]
 - Current composition owners for the review page account. [87]
 - Current details owners for the review page account. [89]
+
+- The shared catalogue hook takes repository/task context and calls the existing subject catalogue client. [24]
+- The review client mirrors the source inventory and omits the subject selector when absent. [28]

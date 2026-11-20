@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The page holds: the coordination text now reads a closeout's generation from `runningOperation` while the operation is queued or running and otherwise from `lifecycleOperations`, and the roles page names no generation, no status field and no refusal.",
-    "task": "261112-BUG-L7",
+    "statement": "The documented division between Reviewer verdicts, Curator memory updates and Manager closeout still holds after role guidance leaves revision state to the product and recorded memory rounds gain review facts.",
+    "task": "261112-KNO-L3",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -116,7 +116,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
     },
     {
-      "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+      "blob": "bc300235dafe08d8a72fbae41def1143a55e10e7",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/curator.md"
     },
@@ -161,7 +161,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
     },
     {
-      "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+      "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/route_review.py"
     },

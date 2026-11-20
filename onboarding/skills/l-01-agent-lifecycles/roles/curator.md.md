@@ -125,6 +125,8 @@ Reviewer records the separate memory lane, leaving code state intact. Method rel
 
 Each detail file is read before the action its pointer names: intent reconciliation before reconciling, card sentence decisions before editing a card, knowledge-ingest preparation before preparing or ingesting, family obligations before deciding family coverage, and card formats and citations before preparing citation input.
 
+The Curator leaves revision standing and writer attribution to the product. The writer accepts retirement and a decision's own status vocabulary where appropriate. The reviewed memory tree and closeout supply the eligible review fact.
+
 ## Evidence
 
 ## Current account — the authoring routes
@@ -169,7 +171,7 @@ The Curator's closing paragraph admits `workspace.outsideScratchRoot` for what m
 
 - The admitted knowledge writer writes memory files in the leaf memory worktree; --commit (commit: true) authorizes those file writes, never a Git commit or acceptance. [7]
 
-- Restated guarantees carry an authored effect; the writer fills the revision. [8]
+- Restated guarantees carry an authored effect; the writer fills the revision.
 
 - The memory-review pass limit is the settings limit and a pass beyond it needs Architect or developer instruction recorded by the Manager; the role keeps its stage and authority boundaries. [9]
 
@@ -186,3 +188,5 @@ The Curator's closing paragraph admits `workspace.outsideScratchRoot` for what m
 - The worklist detail points to the writer's row, reconsideration and link-repair rules; the governing-sources detail records a rejected simplification or workaround with the chosen design, rejected option and reason, apart from unfinished work. [16]
 
 - Normal knowledge authoring uses mounted knowledge_write or the admitted serving-build knowledge-ingest route. Only a covered correct-input refusal admits the same-tool/input-class recovery procedure, with owner notice, declared provenance and working checks. [26]
+
+- A changed family guarantee carries a Curator-authored effect. The writer fills the revision. [8]

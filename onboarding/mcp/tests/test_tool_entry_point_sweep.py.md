@@ -446,4 +446,4 @@ Current source: The current lane catalog selects mcp/tests/test_tool_entry_point
 
 - Completed sweep results receive per-tool subTests for unvalidatable and boundary-validation arms, followed by separate global raiser, unmarked and census subTests. [48]
 
-- The current lane catalog selects mcp/tests/test_tool_entry_point_sweep.py once in unit-regression. This declaration selects evidence and establishes no invocation or passing result. [40]
+- The unit-regression lane selects mcp/tests/test_tool_entry_point_sweep.py. Execution evidence is recorded separately. [40]

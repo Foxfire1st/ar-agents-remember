@@ -9,10 +9,11 @@
   "conditions": [
     "A row shows its name cut with an ellipsis and one reason; a family may also carry kept. Family/member accessible names retain the title and change facts; location names retain path, range, role and reason.",
     "Invariant titles are identifier + 120-char summary; hyphenated titles render hyphens as spaces.",
-    "The tooltip holds the whole title; the accessible name is title + change badge + the eligible recorded-effect sequence."
+    "The family and invariant row buttons use the whole title for their tooltip. A family row's accessible name contains its title, change badge, kept marker when present and supplied standing. An invariant row can also name eligible recorded effects.",
+    "Supplied candidate state adds a standing tag in the trailing cell. Its tooltip and the row's accessible name include the writer's role and model when available. Baseline-only rows and retired records have no candidate state tag."
   ],
   "exclusions": [
-    "Complete guarantee/statement texts, authored rationales and recorded reasons belong in the reading column; a tree row carries only its one sort-dependent reason.",
+    "Complete guarantee or statement text, authored rationales and recorded reasons belong in the reading column. The row keeps one sort-dependent reason.",
     "Wrapped or multi-line rows."
   ],
   "id": "INV-PKFP2R",
@@ -27,7 +28,7 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "Each family and invariant row stays one text line, with an ellipsis and a whole-title tooltip.",
   "status": "proposed",

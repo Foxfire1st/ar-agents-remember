@@ -57,7 +57,7 @@ silently returning the hole.
 Plain module-level pytest functions plus the small builders and stubs above them
 (`_Contract` supplies the closed-result fixture); no `unittest`, no `pytest` marks, so the
 module is in the default selection and its lane is **`unit-regression`**
-(`mcp/tests/test-evidence-lanes.toml:453`). The constants `OWN`, `OWN_ENCLOSURE` and `OTHER` are the only literals the cases share.
+(`mcp/tests/test-evidence-lanes.toml:464`). The constants `OWN`, `OWN_ENCLOSURE` and `OTHER` are the only literals the cases share.
 
 ### Invariants And Boundaries
 
@@ -67,7 +67,7 @@ module is in the default selection and its lane is **`unit-regression`**
   (`mcp/src/agents_remember/worktrees/modules/guidance.py:476-491`), and the start-result facts
   (`mcp/src/agents_remember/worktrees/modules/startup/start_result.py:117-128`). The current
   reopen argument helpers instead publish `contract_path` alone, with their respective `dry_run`
-  value (`mcp/src/agents_remember/worktrees/reopen.py:96-101`).
+  value (`mcp/src/agents_remember/worktrees/reopen.py:97-102`).
 - **The directory tolerance in the guard is exactly the immediate container.** `_names_the_same_place`
   (`mcp/src/agents_remember/application/tool_response.py:64-88`) accepts the contract file or
   `dirname(file)`.
@@ -172,4 +172,4 @@ No repository or external-system boundary is proved by this module.
 
 ### Repo-Internal References (continued)
 
-- The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_response_address_binding.py" [16]
+- The unit-regression lane selects mcp/tests/test_response_address_binding.py. [16]

@@ -163,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "136d4c18901e0406361b0361c272d806dc80da93",
+            "blob": "ecb62624a9ca3dfa86d3f7af249444fac8e2c8dd",
             "content": "sha256:0e49b4be19d35dc91f3c53b2777953d9cbe81b16fc4a50805dfb5a63a297bfe1",
             "locator": {
               "kind": "symbol",
@@ -180,12 +180,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "blob": "9583cdcb4e627f7edb2b978ba060b06fc7a3c63c",
             "content": "sha256:c5717a8cc4c259cd4843ea995f5c26a3949b37995eda8137115985c6e624bb2a",
             "locator": {
-              "end": 591,
+              "end": 593,
               "kind": "line_range",
-              "start": 582
+              "start": 584
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },

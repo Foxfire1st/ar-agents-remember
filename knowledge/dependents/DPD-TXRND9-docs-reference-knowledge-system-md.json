@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The changed index passages match immutable loaded identity, private unknown-build files and common eviction, while the unchanged passages were not reverified.",
-    "task": "261112-BUG-L9",
+    "statement": "The changed storage table and State, writer and review section describe the stored writer and review facts, tree-derived standing and preserved first handover stamp for a same-tree correction.",
+    "task": "261112-KNO-L3",
     "uncommitted": true
   },
   "document": "docs/reference/knowledge-system.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+      "blob": "d6a81b841bf29a345dc9d7857710af32751ee689",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },
     {
-      "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+      "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
@@ -107,12 +107,12 @@
       "path": "mcp/src/agents_remember/kernel/generated_copies.py"
     },
     {
-      "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+      "blob": "9583cdcb4e627f7edb2b978ba060b06fc7a3c63c",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
     },
     {
-      "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+      "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py"
     },
@@ -128,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+        "blob": "1ce0bfc646a94b8e533c52d7c93d1acae2c8ab4d",
         "content": "sha256:cd6baad3af0eca70673d6da336f2d0a97e064578948a9ecef96d7be5dda01776",
         "locator": {
           "kind": "symbol",
@@ -187,7 +187,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+      "blob": "e729c6fe38268a4aa8d5dda40ef8a35ebcceda4f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
     },
@@ -227,7 +227,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_write_command.py"
     },
     {
-      "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+      "blob": "a416f07cd2b10ac1e83cf28c6fdeb362a5938c4f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
     },
@@ -237,7 +237,7 @@
       "path": "dashboard/src/panels/review/MeaningEffects.tsx"
     },
     {
-      "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+      "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
     },

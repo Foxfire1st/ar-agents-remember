@@ -486,16 +486,14 @@
       ]
     },
     "22": {
-      "note": "The lane row and two of the module's declared consumer rows (diff-scope and read-scope shared support).",
+      "note": "Eight exact-scope artifact entries declare this test as a consumer, including knowledge_review_fact_test_support.py.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:43ad539b9e277b9b7f0311a06362609fdc50e443e9917819d2813f5943c63aa5",
             "locator": {
-              "end": 5062,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

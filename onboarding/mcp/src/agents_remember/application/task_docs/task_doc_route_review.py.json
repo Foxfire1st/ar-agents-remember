@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+        "blob": "97c992a319dabd974411f6174e279b7426d100cf",
         "content": "sha256:83a554087c833ae3e138f92564eb9e53a7d5a47fa1838be2020f32f3edced74a",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+        "blob": "97c992a319dabd974411f6174e279b7426d100cf",
         "content": "sha256:6aba0097d56ada16731dab87617af5e7cf99708fdb95ec181d35e838eec7933d",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,26 @@
     },
     {
       "anchor": {
-        "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+        "blob": "97c992a319dabd974411f6174e279b7426d100cf",
+        "content": "sha256:050905921f8cd8574de5c441e494dd02f608d128a649d91551a854ae6b4fb759",
+        "locator": {
+          "end": 325,
+          "kind": "line_range",
+          "start": 299
+        }
+      },
+      "id": "RLZ-RC2V5V",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-AV04NY",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The bound review route forwards recorder and handover stamps to the shared recording transition.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "97c992a319dabd974411f6174e279b7426d100cf",
         "content": "sha256:053c06b33c063ad5db944d7b08e92717c8092fa45cc43a7fbcbafdd6b4bf20ea",
         "locator": {
           "kind": "symbol",
@@ -59,46 +78,48 @@
   ],
   "references": {
     "1": {
-      "note": "Call-level knobs and the branch-addressed policy gate.\n\nAnchor: `TaskDocCall` `_enforce_branch_addressed_policy`",
+      "note": "Call-level knobs and the branch-addressed policy gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
-            "content": "sha256:5b0b1da1b7bddbef985732db4362271d8eef6d8cd459c67301688f0e548ac47b",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
+            "content": "sha256:c426fca6f0e5c9143e75da33d1aaf3aa705141920cd34167cd3d605e1f16a096",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocCall"
+              "end": 68,
+              "kind": "line_range",
+              "start": 60
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
             "content": "sha256:19aad386da9c48607155adfeb5de918b8135089ba67641f65b2f3c37e5a59f4d",
             "locator": {
-              "kind": "symbol",
-              "name": "_enforce_branch_addressed_policy"
+              "end": 112,
+              "kind": "line_range",
+              "start": 75
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
             "content": "sha256:ec5cbf5520d96b9d79914936c7895b3acfaca595518db455a2c23b2ae7404438",
             "locator": {
-              "end": 53,
+              "end": 54,
               "kind": "line_range",
-              "start": 44
+              "start": 45
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
-            "content": "sha256:6c1cf0824b0ba3b76ab9168bfe39e9796d88e3e0c86b0411cd86930e2091839c",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
+            "content": "sha256:5a54bacc4d44e5a87bed10f57d63ff64ae74fcb19a9c48fd8a2873b90594fde6",
             "locator": {
               "kind": "file"
             }
@@ -108,16 +129,16 @@
       ]
     },
     "10": {
-      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "note": "Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round.",
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
-            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+            "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
             "locator": {
-              "end": 240,
+              "end": 298,
               "kind": "line_range",
-              "start": 175
+              "start": 225
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },
@@ -148,12 +169,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 296,
+              "end": 297,
               "kind": "line_range",
-              "start": 251
+              "start": 252
             }
           },
           "kind": "code"
@@ -165,12 +186,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
             "content": "sha256:7b13234f8b9b05929657a69a1f5438b3b935f2f9ce8a1f42048ddeac5711e5d5",
             "locator": {
-              "end": 169,
+              "end": 170,
               "kind": "line_range",
-              "start": 155
+              "start": 156
             }
           },
           "kind": "code"
@@ -182,12 +203,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 296,
+              "end": 297,
               "kind": "line_range",
-              "start": 251
+              "start": 252
             }
           },
           "kind": "code"
@@ -199,12 +220,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
             "content": "sha256:6ec8f6f2932d1d526240344cc4a3780cad32e644b7a047115abb62c8304a4e0b",
             "locator": {
-              "end": 378,
+              "end": 385,
               "kind": "line_range",
-              "start": 320
+              "start": 327
             }
           },
           "kind": "code"
@@ -216,12 +237,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
             "content": "sha256:fd496c2c78f8fbceeb940b6e0f4ea57864326819f6c295a34484e1a6cb5daf6f",
             "locator": {
-              "end": 497,
+              "end": 504,
               "kind": "line_range",
-              "start": 461
+              "start": 468
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Generic review recording forwards captured stamps to the bound review state transition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
+            "content": "sha256:b964e6c1ffd990bad0197b5559b8c7f9f32dcbcb90c602bdf0d4477f208c49e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_task_review_bound"
             }
           },
           "kind": "code"
@@ -229,14 +266,16 @@
       ]
     },
     "2": {
-      "note": "The binding form that records a review over the resolved candidate document and re-validates.\n\nAnchor: `_record_route_review_bound`",
+      "note": "The binding form that records a review over the resolved candidate document and re-validates.",
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
-            "content": "sha256:6c1cf0824b0ba3b76ab9168bfe39e9796d88e3e0c86b0411cd86930e2091839c",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
+            "content": "sha256:91f126c9e6e25c7e11b987494769fe6716e41e16c9b116a519d224f3704f995b",
             "locator": {
-              "kind": "file"
+              "end": 207,
+              "kind": "line_range",
+              "start": 155
             }
           },
           "kind": "code"
@@ -248,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
             "content": "sha256:2c13594de1ce9714a2b21408eb4f1d0d3d9d08c1abc8382b0b0234296596edb3",
             "locator": {
               "kind": "symbol",
@@ -264,7 +303,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
             "content": "sha256:fb124fced687eb7abeb40d511d845fc4d1b44e290bf302c1be359e2cfd9eb2a9",
             "locator": {
               "kind": "symbol",
@@ -276,14 +315,16 @@
       ]
     },
     "5": {
-      "note": "The route-review authority rule (create/replace cannot author or change evidence).\n\nAnchor: `_enforce_route_review_authority`",
+      "note": "The route-review authority rule (create/replace cannot author or change evidence).",
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
-            "content": "sha256:6c1cf0824b0ba3b76ab9168bfe39e9796d88e3e0c86b0411cd86930e2091839c",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
+            "content": "sha256:48dfee1d461e823fbfdf24959e8586573b2ebeda396a91a30cd0b0fa8dc7124e",
             "locator": {
-              "kind": "file"
+              "end": 488,
+              "kind": "line_range",
+              "start": 468
             }
           },
           "kind": "code"
@@ -328,12 +369,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
+            "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
-              "end": 1186,
+              "end": 347,
               "kind": "line_range",
-              "start": 1
+              "start": 334
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -346,10 +387,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
-            "content": "sha256:8e3f1377893a1f8769dc4fc6fafa162b050297444eb241739c8e36a0155c1fb9",
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
+            "content": "sha256:6d84690967cfa800b14ecb128a92994bbea487aab9c627aa76a7442e17cbeb15",
             "locator": {
-              "end": 343,
+              "end": 350,
               "kind": "line_range",
               "start": 1
             }

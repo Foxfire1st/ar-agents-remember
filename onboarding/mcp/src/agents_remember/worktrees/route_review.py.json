@@ -179,14 +179,16 @@
       ]
     },
     "5": {
-      "note": "The route-review record's content-addressed fields and self-digest validator.\n\nAnchor: `RouteReviewRecord`",
+      "note": "The route-review record's content-addressed fields and self-digest validator.",
       "targets": [
         {
           "anchor": {
-            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
-            "content": "sha256:dec1e870f6476ae35e3eb90c61301c71553bf75141daf92defe26a0422a24f71",
+            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+            "content": "sha256:bd0e6fe4943fbe368d04f63206bc9f889341d54fa1f9b32a6c60a0ad89548662",
             "locator": {
-              "kind": "file"
+              "end": 330,
+              "kind": "line_range",
+              "start": 268
             },
             "path": "mcp/src/agents_remember/tasks/route_review.py"
           },

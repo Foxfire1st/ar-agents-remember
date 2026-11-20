@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+        "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
         "content": "sha256:837836abaaa5bbb4942b81371bb429ecef11732c2689316d907bbe505e38d1bc",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
-        "content": "sha256:de3e2c6a6b311cb95d8ce38026888b60ae7abbe7e7577bfdca44dcc796de00bd",
+        "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
+        "content": "sha256:2e79ae718ba7761e65cc45277c079dea408db1ea08ee9547293a65949244d134",
         "locator": {
           "kind": "symbol",
           "name": "SubjectRow"
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+        "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
         "content": "sha256:6d1da198c0589bbb8ae5f8f10625910a4ac5fefda3de1496cb232c86c7b648d5",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+        "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
         "content": "sha256:5eadbc861e67d6f41beadc3766671016ea09612be1c67555076f5ba6297b7a24",
         "locator": {
           "kind": "symbol",
@@ -76,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
-        "content": "sha256:de3e2c6a6b311cb95d8ce38026888b60ae7abbe7e7577bfdca44dcc796de00bd",
+        "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
+        "content": "sha256:2e79ae718ba7761e65cc45277c079dea408db1ea08ee9547293a65949244d134",
         "locator": {
           "kind": "symbol",
           "name": "SubjectRow"
@@ -94,7 +94,24 @@
     },
     {
       "anchor": {
-        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
+        "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
+        "content": "sha256:0e28344d67113866ee1846871ed27c87fa0cbae1dcb1d4748c5f60766ba83c5c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EQKMAD",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-W1-08",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Family and invariant buttons keep the row title as their tooltip. With candidate standing, the state tag carries a tooltip with state and available writer, and the row accessible name includes the same standing text.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
         "content": "sha256:62d5d7c87ac941e72f0ac6d0df9c59cc177ca7be873dd962b11080066d1fb4aa",
         "locator": {
           "kind": "symbol",
@@ -112,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
-        "content": "sha256:de3e2c6a6b311cb95d8ce38026888b60ae7abbe7e7577bfdca44dcc796de00bd",
+        "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
+        "content": "sha256:2e79ae718ba7761e65cc45277c079dea408db1ea08ee9547293a65949244d134",
         "locator": {
           "kind": "symbol",
           "name": "SubjectRow"
@@ -131,16 +148,15 @@
   ],
   "references": {
     "1": {
-      "note": "Render accessible one-line family, invariant, changed-location and group rows.\n\nAnchor: \"export function FamilyRow({\"",
+      "note": "The family row keeps one trailing cell for the reason, optional kept label and state tag. Its accessible name includes supplied standing.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
-            "content": "sha256:f68743484863d361cb21f777e875d36b6dc75487ee8d645b812d8d84f47fc806",
+            "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
+            "content": "sha256:d47943844664412ca4f9f218132b6c10e51318e16b7463467b4f3c717b97c235",
             "locator": {
-              "end": 121,
-              "kind": "line_range",
-              "start": 82
+              "kind": "symbol",
+              "name": "FamilyRow"
             }
           },
           "kind": "code"
@@ -148,16 +164,15 @@
       ]
     },
     "2": {
-      "note": "Render accessible one-line family, invariant, changed-location and group rows.\n\nAnchor: \"export function SubjectRow({\"",
+      "note": "The subject button keeps the whole-title tooltip and appends supplied standing to its accessible name.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
-            "content": "sha256:0222bbb5b313b55e3b939ff612d9d52cc40d3e6cc2ff0de4f1dbb698d1892a94",
+            "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
+            "content": "sha256:2e79ae718ba7761e65cc45277c079dea408db1ea08ee9547293a65949244d134",
             "locator": {
-              "end": 371,
-              "kind": "line_range",
-              "start": 139
+              "kind": "symbol",
+              "name": "SubjectRow"
             }
           },
           "kind": "code"
@@ -165,16 +180,15 @@
       ]
     },
     "3": {
-      "note": "Render accessible one-line family, invariant, changed-location and group rows.\n\nAnchor: \"export function LocationRow({\"",
+      "note": "A counted group opens the matching reading-column group via the supplied callback.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
-            "content": "sha256:1defb4732d6381a5f321a0ac54398fba817f315a99c6db27aa2a6e34a7d76fdc",
+            "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
+            "content": "sha256:1527ca4d86a46067e9d23d23b4c33c2f0c6aa98cd842f1c0e47a8236f82d07e1",
             "locator": {
-              "end": 371,
-              "kind": "line_range",
-              "start": 260
+              "kind": "symbol",
+              "name": "GroupRows"
             }
           },
           "kind": "code"
@@ -182,14 +196,33 @@
       ]
     },
     "4": {
-      "note": "LocationRow now inserts the model's Ungraded (n) heading before the first ungraded row and renders JudgmentChip before its location label. A chip names the active grade or graded state, carries stale/category/grade attributes and the full inference/reason hover text; stale chips use dashed amber styling. The location tooltip appends those reasons while the existing accessible location/role/reason label and selection callbacks remain intact.\n\nAnchor: `JudgmentChip`, `UngradedHeading`, `locationTooltip`, `LocationRow`",
+      "note": "A graded location puts its chip before the reason in the trailing cell. The row tooltip carries supplied hover text.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d516892761835da84aaf9297f4b76e3054a413f",
-            "content": "sha256:37c7af345a0de4a3b6b8b51a50644b9fb2d8cdc0e96d6fd3da88daee791c6f4c",
+            "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
+            "content": "sha256:1b8d253ef530b06f34d5cb65391f52801b6f80d04360b72b81da1a0cd74ad335",
             "locator": {
-              "kind": "file"
+              "end": 359,
+              "kind": "line_range",
+              "start": 243
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The optional tag shows candidate revision state and names its writer in the title when supplied. The subject tail keeps one cell.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
+            "content": "sha256:b76ac3db73d7eaa6d36868c9a36daaf393fafad35c17eae63fa92742600734ed",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 48
             }
           },
           "kind": "code"

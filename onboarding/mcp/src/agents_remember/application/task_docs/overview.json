@@ -19,12 +19,10 @@
         },
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
+            "content": "sha256:b93e061169ce574cbd24dcb580c2b828d14634b846839a7e6af46203f2d05f97",
             "locator": {
-              "end": 1186,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -35,19 +33,6 @@
     "15": {
       "note": "task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a validly addressed parent-sync failure is an answered refusal. Invalid caller master references are refused by the shared master_json_path_from_ref resolver with TaskDocError during candidate validation after retirement-proof comparison, before publication; a changed or Order-refreshed parent must also pass the in-place document guard. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
-            "locator": {
-              "end": 1186,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "ca1e93a9ad54fc0eca4cb8612ed3661b1ee21487",
@@ -84,6 +69,17 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
+            "content": "sha256:b93e061169ce574cbd24dcb580c2b828d14634b846839a7e6af46203f2d05f97",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
           "kind": "code"
         },
@@ -226,12 +222,10 @@
         },
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
+            "content": "sha256:b93e061169ce574cbd24dcb580c2b828d14634b846839a7e6af46203f2d05f97",
             "locator": {
-              "end": 1186,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -257,12 +251,12 @@
         },
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
             "content": "sha256:190f75581818fdfe52e3d44c0c4174725dc23c441333a60cd230274e0abcc3b9",
             "locator": {
-              "end": 460,
+              "end": 431,
               "kind": "line_range",
-              "start": 379
+              "start": 350
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -307,6 +301,40 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The dispatcher derives stamps for memory review from the bound task and repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a20e21fc70c95225948862846efbd6b2def7dfa6",
+            "content": "sha256:ffb7e88df3928462de7de614eac1eb5160610eab86b5a2d348e8938f1bd888ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_round_stamp"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/review_round_stamp.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The generic route records round evidence separately from code route-review evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
+            "content": "sha256:b964e6c1ffd990bad0197b5559b8c7f9f32dcbcb90c602bdf0d4477f208c49e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_task_review_bound"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
           },
           "kind": "code"
         }

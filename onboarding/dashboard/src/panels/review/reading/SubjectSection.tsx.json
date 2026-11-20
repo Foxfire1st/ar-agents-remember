@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
-        "content": "sha256:2a68f0ca75719f4cfeccbaff2c175a8d590fac98b541a6fd102768da37dfe4bc",
+        "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
+        "content": "sha256:60da29b390f3a7da00c1fc98eb9ff2a77a694ef14980644b29abe11de372dfeb",
         "locator": {
           "kind": "symbol",
           "name": "FamilyHeadingLine"
@@ -21,8 +21,27 @@
     },
     {
       "anchor": {
-        "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
-        "content": "sha256:29bafed2a807b0d929df491c10ad4683d34cafd63fe92ae4c47267ee886d722b",
+        "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
+        "content": "sha256:2470cc3c4188ad7b126498503a5c7fa6b59802ddfe6ffed10679a7cc286efec7",
+        "locator": {
+          "end": 383,
+          "kind": "line_range",
+          "start": 354
+        }
+      },
+      "id": "RLZ-Q75EGG",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-TRMMZA",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Candidate member standing is passed to the reading-column row alongside its location counts.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
+        "content": "sha256:858458909b5b876bd2e7e78275ed3eac8d821d9a70994b373024ca2a6eb3e8f4",
         "locator": {
           "kind": "symbol",
           "name": "SubjectSection"
@@ -36,6 +55,44 @@
       },
       "rationale": "The first drawn invariant section is its own quiet host for the comparison-bound named invariant offer; repeated-location pointers do not add another section offer.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
+        "content": "sha256:4c0848d45e03650b879807b0f7555dbc60df6550cb09be31946f01f01ae34b02",
+        "locator": {
+          "end": 332,
+          "kind": "line_range",
+          "start": 327
+        }
+      },
+      "id": "RLZ-XV70YX",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-TRMMZA",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The member display uses the candidate standing and separates it from following location counts.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
+        "content": "sha256:136ad2fec0e35945748d44f835e78a67a37c613a152e6a74fd6cba891b18f6a5",
+        "locator": {
+          "end": 183,
+          "kind": "line_range",
+          "start": 172
+        }
+      },
+      "id": "RLZ-ZJ3GTX",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-TRMMZA",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The selected subject details use the shared candidate state and writer label.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -44,12 +101,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
+            "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
             "content": "sha256:5416288ae13bfd375f99b8904da3e1731546036401bbce684d34a343c475b35e",
             "locator": {
-              "end": 79,
+              "end": 80,
               "kind": "line_range",
-              "start": 67
+              "start": 68
             }
           },
           "kind": "code"
@@ -61,12 +118,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
+            "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
             "content": "sha256:80b292a827e61b1605a9548a40fe5767a7f8a04e5f6e08b030d0b0bc2d48a32f",
             "locator": {
-              "end": 143,
+              "end": 144,
               "kind": "line_range",
-              "start": 98
+              "start": 99
             }
           },
           "kind": "code"
@@ -78,12 +135,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
+            "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
             "content": "sha256:cb4e5f5eb02a4d5fb4f60f9ca58b3e94cfe01799e88c786727335a1216c2e2ca",
             "locator": {
-              "end": 152,
+              "end": 153,
               "kind": "line_range",
-              "start": 144
+              "start": 145
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The member row puts available standing next to its location counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
+            "content": "sha256:1fd7152cf8db3068088437841845bb37d09b939d94eaa5f53863c2ce7b89f363",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 327
             }
           },
           "kind": "code"

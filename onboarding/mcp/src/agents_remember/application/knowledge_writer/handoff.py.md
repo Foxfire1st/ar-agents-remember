@@ -16,8 +16,9 @@ checks the document's own shape and collects every problem, so one refusal names
 ### Logic
 
 - **Entries** keep producer-owned fields unchanged. Curator keys beside them decide what the entry
-  becomes: `scope` and `admission` (optionally `status`) author a new invariant from the verbatim
-  `statement`; `invariant_id` updates a stored invariant; `supersedes` takes `INV-…` IDs or entry IDs;
+  becomes: `scope` and `admission` author a new invariant from the verbatim `statement`.
+  The invariant's `status` may be supplied to retire it. `invariant_id` updates a stored invariant;
+  `supersedes` takes `INV-…` IDs or entry IDs;
   `proofs: [{test, facet}]` records curator-confirmed proofs; every `target` becomes a realization entry.
   `replace_evidence` is an optional boolean curator input, defaulting to false; malformed types
   add a named problem, and only the literal boolean true enables the request flag. Reading the flag
@@ -30,8 +31,8 @@ checks the document's own shape and collects every problem, so one refusal names
   task-local") and refuses `proofs` on it (architect ruling F2): nothing of an entry is ever dropped
   silently.
 - **Records** are `{key, kind, entry?, id?, slug?, fields, remove?}`; `kind` is one of the twelve record kinds of
-  `RECORD_PREFIXES`; the writer owns `id`, `schema`, `origin` and `revision` (`WRITER_OWNED_FIELDS`) and
-  refuses them in `fields`; a new record needs a `slug`. `remove` is an optional boolean: it says the stored
+  `RECORD_PREFIXES`; the writer owns `id`, `schema`, `origin`, `revision` and `writer` (`WRITER_OWNED_FIELDS`)
+  and refuses them in `fields`. A new record needs a `slug`. `remove` is an optional boolean: it says the stored
   record leaves the tree, and the reader carries it to `RecordRequest.remove` without deciding whether that
   kind may go. Only a dependent record whose document the task deleted is removed here; a weakness is closed
   and every older kind is retired (MIK-R124 rule 5).
@@ -64,6 +65,8 @@ checks the document's own shape and collects every problem, so one refusal names
   a section reader such as `_entry` can still return a request after recording problems.
 
 ### Invariants And Boundaries
+
+- Entry `status` and record `fields.status` each refuse `proposed`, `accepted`, `reviewed` and `consolidated`. The product derives revision state from the chosen memory tree. Each record kind keeps its own lifecycle vocabulary.
 
 - The producer/curator split of the hand-off list is preserved: nothing here rewrites a producer field.
 - **A malformed cover path is refused as a named problem, never an uncaught error** (L06 review F1). Candidate
@@ -155,7 +158,7 @@ rationale") are named problems. A cover is an entry ID, `{id, path?, locator?, r
 
 ## The Effect Input Gate (MIK-R48)
 
-`family_effect_refusal` is the input gate for the effect vocabulary: a changed
+`family_effect.py` owns `family_effect_refusal`, which the family history-row author invokes. A changed
 family row without a valid authored effect is refused, an effect on a rerouted,
 assigned, no_impact or retired row is refused naming the row, the field and the
 disposition, and the gate never derives a label from wording, reason,
@@ -176,9 +179,13 @@ The reader adds three distinct inputs without resolving their authority. Case ev
 
 read_handoff_shapes uses the same entry, record and history decoders as full writer intake, but reads entries through read_producer_entry and skips attached-ruling enforcement. It therefore checks producer shapes without inventing Curator scope/admission decisions. read_handoff still takes the full path: _entry requires the applicable scope and new-invariant admission, and _read_document enforces ruling attachment. Both paths retain distinct-handle and shared field checks.
 
-- Shared producer shape decoding is separated from full Curator intake, without weakening full-writer scope/admission checks. [31]
+- Shared producer shape decoding is separated from full Curator intake, without weakening full-writer scope/admission checks.
 
 ## Evidence
+
+- Entry status refuses typed revision state through the shared input guard. [32]
+- Record fields refuse supplied identity, revision, writer metadata and typed revision state before authoring. [33]
+- The four state words receive a refusal that identifies the product's ownership of derived state. [34]
 
 ### Docs References
 
@@ -299,12 +306,16 @@ Anchor:
 Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py
 
 - The four refusals and the relocation, end to end. [7]
+- Read the three sections, collecting every problem. [12]
+- The entry reader validates replace_evidence as a boolean before constructing the request, and only literal true sets its flag.
+
 - An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`. [10]
 - The two test forms and the bare test module, read in order and once each. [11]
-- Read the three sections, collecting every problem. [12]
 - An entry: new invariant needs scope, admission and a statement. [17]
 - A record: kind, fields, and the writer-owned fields refused. [18]
 - History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional. [19]
 - The row keys and the request field a planned row's `ref` travels in. [20]
-- The entry reader validates replace_evidence as a boolean before constructing the request, and only literal true sets its flag. [27]
 - A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link. [30]
+
+- The entry reader validates replace_evidence as a boolean before constructing the request, and only literal true sets its flag. [27]
+- Shared producer shape decoding is separated from full Curator intake, without weakening full-writer scope/admission checks. [31]

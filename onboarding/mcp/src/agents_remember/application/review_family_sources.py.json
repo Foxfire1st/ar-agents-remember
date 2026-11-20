@@ -73,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e671178c83020db94dbc2339e22ecd6dffa2f37a",
+            "blob": "6a1961446fdee3783925cfabf4658644b9b87dc5",
             "content": "sha256:3530f22d3813fd43ee3bd9f757d4126737d49a69e4ec9bf6828e8d91919f2243",
             "locator": {
-              "end": 504,
+              "end": 503,
               "kind": "line_range",
-              "start": 504
+              "start": 503
             },
             "path": "mcp/src/agents_remember/application/review_family_rosters.py"
           },

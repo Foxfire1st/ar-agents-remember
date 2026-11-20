@@ -134,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
               "kind": "symbol",
@@ -151,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:560387f2a58cd5720aac11b4af3f53b1112325cda9f1ab06f47c592d3a6e2b9f",
             "locator": {
               "end": 97,
@@ -165,39 +165,14 @@
       ]
     },
     "22": {
-      "note": "[17] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools",
+      "note": "The mounted knowledge tool registrar delegates read, diff, integrity and writing to their distinct registrations.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:78e83592b213ecb099716542f26a923e3696e51b893d6798fb40bac36a3fbec3",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "content": "sha256:e92626429978d5815d2e1f838e9f6e5ba241d5fc2beaf4908290b0f3786c113c",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_knowledge_read"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:462eafa5b1361a6c9e781fea4ba3dfd5cb3f6a441b4d85111a77abbcfe0ee0e0",
-            "locator": {
-              "kind": "symbol",
-              "name": "_register_knowledge_diff"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:996856950511320ea19a5c78de08ab93cba16a5c5e9b8c0ad5787ddfdd412f28",
-            "locator": {
-              "kind": "symbol",
-              "name": "_register_knowledge_integrity_check"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
           },
@@ -317,7 +292,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:c19a478af6a295a298495f09d8ff35aa57dc4b5a2fc22dcbfbc2678f286a47cb",
             "locator": {
               "end": 99,
@@ -561,7 +536,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:417c74110107ef6158b5d5127b0095e65ff5f2e048cd33d14729d560f3784a66",
             "locator": {
               "end": 98,
@@ -643,7 +618,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:5bf4fec216570f74150d1131db48e49fd565f12d55d5ef00851951eb96279e9c",
             "locator": {
               "end": 91,
@@ -661,7 +636,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:996856950511320ea19a5c78de08ab93cba16a5c5e9b8c0ad5787ddfdd412f28",
             "locator": {
               "kind": "symbol",
@@ -678,7 +653,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
             "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
               "kind": "symbol",

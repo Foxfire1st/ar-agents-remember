@@ -15,7 +15,7 @@ The explicit shared facade for the retained index-reader vocabulary. It re-expor
 
 ### Logic
 
-The imports retain authorship and origin states, schema identity, canonical invariant/family payload mappings and digest functions, family/member/invariant values, repository identity, KnowledgeOperation/KnowledgeRefusal/KnowledgeRefusalCode, selective-read seed/context/page/cursor values and source locators.
+The imports retain authorship, schema identity, canonical invariant/family payload mappings and digest functions, family/member/invariant values, repository identity, KnowledgeOperation/KnowledgeRefusal/KnowledgeRefusalCode, selective-read seed/context/page/cursor values and source locators.
 
 __all__ is an explicit sorted export list. A consumer may name these shared reader values from the facade; underlying contracts and validators remain owned by their defining modules. Private shared acceptance validation remains in base.py rather than exported here.
 
@@ -44,20 +44,18 @@ No configured domain documentation could be checked.
 The rows below cite the submodules this facade re-exports and the two consumers of the vocabulary.
 
 
-- The explicit current facade imports and exports retained reader values. [1]
-
-
-- The current export list contains no retired mutation outcome helpers; the acceptance helper remains at its own base owner. [3]
-
-
-- The served surface is the retained index-reader vocabulary. [4]
-
-
-- Retired mutation outcome helpers are absent from the current facade; internal acceptance validation stays in base.py. [6]
 
 
 
-- The production store consumes these retained values through read-only operations. [7]
+- The facade exports the retained read and provenance vocabulary. [3]
+
+
+
+
+
+
+
+
 
 
 
@@ -70,3 +68,8 @@ The rows below cite the submodules this facade re-exports and the two consumers 
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- The production store consumes these retained values through read-only operations. [7]
+
+- The explicit current facade imports and exports retained reader values. [1]
+- The served surface is the retained index-reader vocabulary. [4]

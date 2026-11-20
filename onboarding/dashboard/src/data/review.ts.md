@@ -12,7 +12,8 @@ The public read-only reviewer client: same-origin task/subject and catalogue GET
 
 The current ReviewPayload requires judgment, imported from reviewJudgment.ts. Recorded attempt rows and independently described proof anchors are separate arrays. ReviewKnowledgePane keeps statements, revisions, unresolved facts and optional per-side origin; retired signal, authored assessment, applicability/context and evidence-channel interfaces are not the current payload contract. Their previous explanation below is historical, not an equivalent alias for judgment.
 
-Semantic statement states are present/absent/unresolved. Optional text in these interfaces is an annotation, not an executable text/state constraint; server models and actual consumer guards own admission. Family context and meaning effects keep their optional-wire distinctions: omission is not known no-family or measured none. Outline rows carry their own meaning labels, independently of the selected context.
+Semantic statement states are present/absent/unresolved. Optional text in these interfaces is an annotation, not an executable text/state constraint; server models and actual consumer guards own admission. Family context and meaning effects keep their optional-wire distinctions: omission is not known no-family or measured none. Outline rows carry their own meaning labels, independently of the selected context. Family and
+invariant rows also carry optional nullable candidate-side `record_state` and writer role/model.
 
 ReviewMovement declares common supplied movement fields; optional sync/external values retain the server's actual owner object at runtime rather than reconstructing its identities here. TypeScript structural declarations do not assert complete owner-value validation or that every field is rendered. ReviewStaleness distinguishes current/stale/not_compared/not-measured currentness; ReviewSubmission has no approving state. No field here creates semantic acceptance.
 
@@ -480,12 +481,9 @@ No configured domain documentation; source owners support this current account.
 - **The catalogue consumer: since `260921-ICR-L47` the reviewer (not the task entry) reads this client's subject catalogue when it opens, keyed on the comparison's identity; the task entry reads the changed-intent summary instead, and a refused or empty catalogue still leaves the task-context review available.** [27]
 
 - The outline mirror matches the server model's five changes [28]
-- The tree carries families with members and invariants with summaries [29]
-
-- The mirrored recorded-meaning vocabulary separates steps, none and unavailable per addressed record. [32]
 
 
-- The read-only public client delegates transport, re-exports the family and judgment wire owners, requires judgment in ReviewPayload, keeps optional family/meaning/movement boundaries and performs no store mutation or complete runtime schema validation. [33]
+
 
 - ReviewPayload requires the imported judgment pane. Its rows and independently current/stale/unverifiable proofs are distinct arrays; optional origin and movement structures carry supplied provenance/measurement rather than resurrecting retired envelope assessments. [34]
 
@@ -493,14 +491,18 @@ No configured domain documentation; source owners support this current account.
 
 No separate cross-repository implementation claim.
 
-- The task/subject comparison request uses the common typed-result decoder. [26]
-- The catalogue request takes task context and an optional recorded comparison number, with no source path. [19]
-- **The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.** [18]
-- The catalogue answer optionally carries the outline [30]
-- Catalogue reads need no new endpoint [31]
 - Family values and types, including current change-fact and source-locator vocabulary, are re-exported from their actual mirror rather than implemented here. [2]
 
 
 Anchor: `getJson` `FilesApiError` `qs` [24]
 
 - Retired at the fifth freeze d59c3493: dashboard/src/data/files.ts::FilesApiError - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- **The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.** [18]
+- The catalogue request takes task context and an optional recorded comparison number, with no source path. [19]
+- The task/subject comparison request uses the common typed-result decoder. [26]
+- The catalogue answer optionally carries the outline [30]
+- Catalogue reads need no new endpoint [31]
+- The mirrored recorded-meaning vocabulary separates steps, none and unavailable per addressed record. [32]
+- The review client delegates transport, re-exports the family and judgment wire shapes and types a required judgment with optional comparison details. [33]
+- The family and invariant outline interfaces carry their own meaning and the candidate tree’s optional record state and writer. [29]

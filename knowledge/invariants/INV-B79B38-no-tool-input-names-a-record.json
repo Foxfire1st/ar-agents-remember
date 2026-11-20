@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Typed standing is refused both at entry level and inside record fields."
+  },
+  "applicability": "Lifecycle words supplied in a knowledge writer entry or record fields.",
+  "conditions": [
+    "The product derives standing for the stored revision."
+  ],
+  "exclusions": [
+    "A retirement request and a record kind's own lifecycle statuses keep their distinct meanings.",
+    "Reading existing records with legacy words is a separate compatibility path."
+  ],
+  "id": "INV-B79B38",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_writer_typed_state.py::test_a_typed_state_is_refused_in_an_entry_and_in_a_records_fields"
+      ],
+      "path": "revision-standing-authoring.json"
+    },
+    "handoffEntry": "L3-W1-03",
+    "leaf": "261112-KNO-L3",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "No tool input names a record's state: knowledge_write refuses `status` proposed, accepted, reviewed or consolidated in an entry and in a record's fields, with a refusal saying the product sets the state; `retired` and a decision's own words stay admitted, and the writer puts no default state into a record.",
+  "status": "proposed",
+  "supersedes": []
+}
