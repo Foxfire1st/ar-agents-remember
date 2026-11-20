@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The sentence that the knowledge gate has no waiver now says beside it that a master's recorded landing whose chain proof passes and whose only findings are stale entries keeps them as the master's debt and lands; the rest of the page was not read again.",
-    "task": "261112-BUG-L7",
+    "statement": "The affected workflow passages still describe task_doc ownership and direct landing's gate, with W10 storing memory-round stamps and attaching a qualifying fact before the exact tree is judged.",
+    "task": "261112-KNO-L3",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/application/direct_execution_grants.py"
     },
     {
-      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "blob": "95048276785aaaeb29b0ee4f04f3dfb35cd246f0",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },

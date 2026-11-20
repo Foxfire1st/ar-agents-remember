@@ -64,8 +64,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
-        "content": "sha256:1b22516606ea65bb761f776cdebad477c86dc5d066d891472a45a2bce23137eb",
+        "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+        "content": "sha256:31eda7ac82d19f0b9c105e27e75681f8c431439f82d6cb00c2094440445e3eee",
         "locator": {
           "kind": "file"
         },
@@ -76,8 +76,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "c5d6b3b9d5470c70186e01f9d8361a8d07250f2e",
-        "content": "sha256:708663d5b1b7d23856a8590d86b91601a3e86b642660deebe50bc72050c360ce",
+        "blob": "465db48b9ea2d0e270a7a0ea6c6d3b9e076b1de1",
+        "content": "sha256:f4f860816a824c1db200512883e43491eaf6681966dbf629c95c902825372052",
         "locator": {
           "kind": "file"
         },
@@ -123,7 +123,7 @@
     "leaf": "260928-MIK-L59",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

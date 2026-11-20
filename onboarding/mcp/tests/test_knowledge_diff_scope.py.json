@@ -211,16 +211,16 @@
       ]
     },
     "15": {
-      "note": "**The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\" Anchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\"",
+      "note": "The catalog identifies the comparison's removed-realization union case as the evidence node of its stable contract. The lane catalog selects this same module.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:7f6d692855db82b233818df9894991ec4d0bf0f3c35d0f4d125c287d674da49d",
             "locator": {
-              "end": 5062,
+              "end": 5100,
               "kind": "line_range",
-              "start": 1
+              "start": 5096
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -228,12 +228,12 @@
         },
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
             "content": "sha256:c855e7d5734aee727fc185e5ae0d6e0feef339e7b35ad5d149e83c61d603fc54",
             "locator": {
-              "end": 234,
+              "end": 237,
               "kind": "line_range",
-              "start": 234
+              "start": 237
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -242,16 +242,16 @@
       ]
     },
     "16": {
-      "note": "**The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\" Anchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\"",
+      "note": "The catalog identifies the comparison's removed-realization union case as the evidence node of its stable contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:7f6d692855db82b233818df9894991ec4d0bf0f3c35d0f4d125c287d674da49d",
             "locator": {
-              "end": 5062,
+              "end": 5100,
               "kind": "line_range",
-              "start": 1
+              "start": 5096
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

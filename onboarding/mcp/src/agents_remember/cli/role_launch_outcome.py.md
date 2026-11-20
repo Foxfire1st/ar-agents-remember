@@ -23,8 +23,9 @@ Unanswered outcomes remain unknown with HTTP 202 and the exact saved-call identi
 
 
 
-- The caller saves and reconciles task metadata around the host outcome. Anchor: `_execute_prepared_launch` [3]
 
 
 
 - Test source checks rejected empty seat and successful same-ID retry. [4]
+
+- The caller saves and reconciles task metadata around the host outcome. Anchor: `_execute_prepared_launch` [3]

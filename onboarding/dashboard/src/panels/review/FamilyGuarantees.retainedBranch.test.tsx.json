@@ -1,13 +1,32 @@
 {
   "path": "dashboard/src/panels/review/FamilyGuarantees.retainedBranch.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "299b00449145125cef160638c9929f4035532e81",
+        "content": "sha256:b16bb64f5f5fdebcae67684bf178e0ff90d452c67e377af6a0697d45b1acc622",
+        "locator": {
+          "kind": "symbol",
+          "name": "names each side of one revision whose state differs between the two trees"
+        }
+      },
+      "facet": "One displayed guarantee names the separately recorded state of both comparison sides.",
+      "id": "PRF-JFK912",
+      "invariant": "INV-1QE8YM",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-family-guarantee-standing",
+        "leaf": "261112-KNO-L3"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "2": {
-      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each([false, true])('keeps distinct family revisions with equal wording distinct (tree=%s)', (tree) => {\"",
+      "note": "Synthetic distinct revisions with identical wording keep one statement and show both revision labels.",
       "targets": [
         {
           "anchor": {
-            "blob": "56baefd452e639894e635624c2a27340962ceb87",
+            "blob": "299b00449145125cef160638c9929f4035532e81",
             "content": "sha256:c4bb6ede88faee45c9e3c6db04836f3a62ee84e102738675f56d14c864b68c29",
             "locator": {
               "end": 80,
@@ -20,14 +39,14 @@
       ]
     },
     "3": {
-      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('retains the current raw same-revision control as unchanged revision, not identical-text', () => {\"",
+      "note": "The captured same-revision branch and the fit DiffPane control retain their own assertions.",
       "targets": [
         {
           "anchor": {
-            "blob": "56baefd452e639894e635624c2a27340962ceb87",
-            "content": "sha256:f41f21eb2afd3b25cad5d1fa583b4c95f0d078a745ac111e4134af0e2684cd61",
+            "blob": "299b00449145125cef160638c9929f4035532e81",
+            "content": "sha256:ed8228707bf1701cb92504085fd26d594fcfb403f833c720593ccf523ce22138",
             "locator": {
-              "end": 95,
+              "end": 105,
               "kind": "line_range",
               "start": 81
             }
@@ -37,16 +56,16 @@
       ]
     },
     "4": {
-      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws a changed guarantee in a fit diff pane', async () => {\"",
+      "note": "The same revision retains each snapshot state. Different states display in candidate-first order and equal states share a label.",
       "targets": [
         {
           "anchor": {
-            "blob": "56baefd452e639894e635624c2a27340962ceb87",
-            "content": "sha256:5414210b3b5f23142cd48fdb0417ceaa68496b50d7ac7c5c1478f211935ca91b",
+            "blob": "299b00449145125cef160638c9929f4035532e81",
+            "content": "sha256:29ece099bac4c67c5cdd3738d2175e59f9c9b84e23ef891bcf4b48c714967edd",
             "locator": {
-              "end": 105,
+              "end": 129,
               "kind": "line_range",
-              "start": 96
+              "start": 107
             }
           },
           "kind": "test"

@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
-        "content": "sha256:61781573d82387aa678b49c8428e4eafe2accf3e8be16cb31a328966414115fb",
+        "blob": "0532f2d15817a5a7004e87ef3115ab4741d6c53c",
+        "content": "sha256:a5c0ff5a17472532aef75738835ca1929a977e0cb64d271cd293566e4a27ef17",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-A1BXM4",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-W1-08",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The intent review's outline rows carry the candidate side's state and writer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0532f2d15817a5a7004e87ef3115ab4741d6c53c",
+        "content": "sha256:737b8c820142ed58b000c2de63d20111ac02bb23ca55ac156a4b740f38c10454",
         "locator": {
           "kind": "symbol",
           "name": "_outline"
@@ -21,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+        "blob": "0532f2d15817a5a7004e87ef3115ab4741d6c53c",
         "content": "sha256:2885f9ab4ca65d7dd09253160009d79b09b58c288a67f930e34e217f63b1ad28",
         "locator": {
           "kind": "symbol",
@@ -39,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+        "blob": "0532f2d15817a5a7004e87ef3115ab4741d6c53c",
         "content": "sha256:9d31d7549c067265eee22fdd7a459a4b53f785f2d20553e128e6683805b73925",
         "locator": {
           "kind": "symbol",
@@ -62,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+            "blob": "0532f2d15817a5a7004e87ef3115ab4741d6c53c",
             "content": "sha256:2885f9ab4ca65d7dd09253160009d79b09b58c288a67f930e34e217f63b1ad28",
             "locator": {
               "kind": "symbol",
@@ -74,12 +91,12 @@
       ]
     },
     "2": {
-      "note": "Both sides' records are registered once for shared meaning facts",
+      "note": "Both sides are registered once for the shared record comparison.",
       "targets": [
         {
           "anchor": {
-            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
-            "content": "sha256:61781573d82387aa678b49c8428e4eafe2accf3e8be16cb31a328966414115fb",
+            "blob": "0532f2d15817a5a7004e87ef3115ab4741d6c53c",
+            "content": "sha256:737b8c820142ed58b000c2de63d20111ac02bb23ca55ac156a4b740f38c10454",
             "locator": {
               "kind": "symbol",
               "name": "_outline"
@@ -94,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+            "blob": "0532f2d15817a5a7004e87ef3115ab4741d6c53c",
             "content": "sha256:8dbeaf070b96b042318ed1affd9e0c34fc76e38e35f75eea13acc6ea44a2a931",
             "locator": {
               "kind": "symbol",
@@ -110,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+            "blob": "0532f2d15817a5a7004e87ef3115ab4741d6c53c",
             "content": "sha256:6758ee1138ef4e1f95e7e8c6b7d9df9569ab2227f682c1f74196e6769bd4bebe",
             "locator": {
               "kind": "symbol",
@@ -122,14 +139,32 @@
       ]
     },
     "5": {
-      "note": "The same recorded-meaning projection reads the reviewed owner’s after-index history once for the outline population.",
+      "note": "The reviewed owner's recorded meaning is read for the outline population from the candidate index.",
       "targets": [
         {
           "anchor": {
-            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
-            "content": "sha256:6c7b74c9fa29f5435bd8328cf45993b8dbe9ff0a23aa9f0cde57a44f78f69e6c",
+            "blob": "0532f2d15817a5a7004e87ef3115ab4741d6c53c",
+            "content": "sha256:0f2effca0cc1c8d0285e0c985fa7bd665ea9841355bc6f39edec9dc47da79df6",
             "locator": {
-              "kind": "file"
+              "end": 76,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The outline reads revision standing from the candidate index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0532f2d15817a5a7004e87ef3115ab4741d6c53c",
+            "content": "sha256:737b8c820142ed58b000c2de63d20111ac02bb23ca55ac156a4b740f38c10454",
+            "locator": {
+              "kind": "symbol",
+              "name": "_outline"
             }
           },
           "kind": "code"

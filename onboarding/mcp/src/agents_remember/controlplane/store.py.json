@@ -165,11 +165,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
             "content": "sha256:a28310bac12091c1f5e8870ff34f8bcc442f82b6f21c1ef16ff82ee02341ddd1",
             "locator": {
-              "kind": "symbol",
-              "name": "_claim_closeout_gate"
+              "end": 614,
+              "kind": "line_range",
+              "start": 561
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -177,8 +178,8 @@
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
+            "content": "sha256:b277b86f9c8a7e5f12d4d0a6fdb59842ad42989d2ed091022d03dd7af61c8bd8",
             "locator": {
               "kind": "file"
             },

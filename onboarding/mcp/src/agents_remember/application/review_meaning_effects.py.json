@@ -142,12 +142,12 @@
         },
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
             "content": "sha256:1dc1ee781774b33c39205f0cc309a6cf1e702204c1c17be18a63236c2179b7f4",
             "locator": {
-              "end": 316,
+              "end": 326,
               "kind": "line_range",
-              "start": 315
+              "start": 325
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
           },
@@ -155,12 +155,12 @@
         },
         {
           "anchor": {
-            "blob": "8956b095d29551a323f720e81379174ab9ea902a",
+            "blob": "8784cc42f27276b0825dec79a23d984f4e0afd80",
             "content": "sha256:a6fcf22f2f60f6d0f9cf2b21b8be819e0ca04fc0352f7a6c946b0dd91853597f",
             "locator": {
-              "end": 196,
+              "end": 209,
               "kind": "line_range",
-              "start": 187
+              "start": 200
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/documents.py"
           },

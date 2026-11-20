@@ -42,7 +42,7 @@ the worktree layer through `memory_commit_refusal`, the one route entry point ev
 
 ### Conventions
 
-- A master's recorded landing uses the recorded series code base for net staleness. All master landing routes also authenticate each newly closed history file against a landed leaf enclosure, recorded direct publication, or admitted crossing sync. The candidate file must be closed and byte-identical to that owner's publication; one failed file yields its named reason. A base-held closed file stays frozen, and no new history means no owner-contract/journal read. Unreadable enclosures, journals and Git inputs refuse.
+- A master's recorded landing uses the recorded series code base for net staleness. All master landing routes authenticate each newly closed owner history file against a landed leaf enclosure, recorded direct publication, or admitted crossing sync. The converted review-facts companion is outside that check because no owner closes it. The candidate file must be closed and byte-identical to that owner's publication; one failed file yields its named reason. A base-held closed file stays frozen, and no new history means no owner-contract/journal read. Unreadable enclosures, journals and Git inputs refuse.
 - The request type, `LandingGateRequest`, lives in `worktrees/services.py`; the unconverted exemption is decided by the
   worktree layer's marker probe before it asks.
 
@@ -73,7 +73,7 @@ differs from the candidate's. Nothing about staleness is stored. The memory tree
 confirmation they were taken at; the landing reads them against the code and derives the state each time.
 
 Only the dependents a change can move are read: those with a link at a path the code range changed or at a record
-whose file differs between the memory base and the tip. The changed paths are listed without rename detection, so a
+whose file differs between the memory base and the tip. The shared `dependent_touches` check applies this rule. The changed paths are listed without rename detection, so a
 rename names both the path that left and the path that arrived, and an anchor link counts at its file. The master's
 end (`full`) reads every dependent of the tip instead, so debt a net-zero or intermediate change would hide is still
 named. Git output is read as bytes and decoded with surrogate escapes, so a path whose bytes are not UTF-8 is
@@ -103,10 +103,12 @@ and refuse nothing: the landing happens, and its answer says how many documents 
 
 ## Evidence
 
+- Master landing authenticates newly closed owner history and excludes the converted review-facts companion. [9]
+- The landing selects dependents by changed source paths or linked record identities. [10]
 
 
 
-- Every newly closed master history file is authenticated against its owner publication. Anchor: `_master_history_ownership` [9]
+
 
 
 

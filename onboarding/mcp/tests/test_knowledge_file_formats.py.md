@@ -81,4 +81,4 @@ No cross-repo boundary is exercised.
 
 - Every kind round-trips and refuses a foreign prefix; kinds whose fixture has links also refuse relations outside their vocabulary. [3]
 
-- Lane registration. Anchor: "mcp/tests/test_knowledge_file_formats.py" Anchor: "mcp/tests/test_knowledge_file_formats.py" [6]
+- The unit-regression lane selects mcp/tests/test_knowledge_file_formats.py. [6]

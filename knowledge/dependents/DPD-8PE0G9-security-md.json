@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The page holds: the new route answers the bytes of a picture or a video under the same read rules, the dashboard gained one route, and the packaging change adds the licence field and the project links; no supported-version, report or disclosure sentence depends on them.",
-    "task": "261112-BUG-L7",
+    "statement": "The reporting instruction to obtain the running package version from server_info still holds after the server adds a definition scope around tool dispatch.",
+    "task": "261112-KNO-L3",
     "uncommitted": true
   },
   "document": "SECURITY.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+      "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -76,7 +76,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
     },
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },

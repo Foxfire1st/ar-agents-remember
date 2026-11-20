@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The changed cache passage correctly describes loaded-build isolation and one age/size eviction over every SQLite namespace, while the unchanged passages were not reverified.",
-    "task": "261112-BUG-L9",
+    "statement": "Paired closeout still checks the candidate, commits code first, checks and commits the prepared memory tree, and refreshes its attribution cache after the memory commit.",
+    "task": "261112-KNO-L3",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -53,7 +53,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
     },
     {
-      "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+      "blob": "3e0ad4a62fe65adb86fac18115c7da4416065bbe",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
@@ -88,7 +88,7 @@
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/cli.py"
     },
     {
-      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -178,7 +178,7 @@
       "path": "mcp/src/agents_remember/memory/baseline.py"
     },
     {
-      "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+      "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
     },
@@ -238,7 +238,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
     },
     {
-      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "blob": "95048276785aaaeb29b0ee4f04f3dfb35cd246f0",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },

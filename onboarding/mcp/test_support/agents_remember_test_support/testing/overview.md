@@ -61,6 +61,8 @@ The closed register also gives the existing closeout digest-file stats, lifecycl
 
 Those retained lifecycle caches belong to the independent worktree landing chain. The removed ambient-session singleton and lifecycle-log cache are no longer registered, and their ambient heartbeat reset helper is gone. The register's collection-reset pass still visits only already-imported owners; removing retired owners adds neither a scanner exemption nor a production reset. Separately, the pytest fixture explicitly imports and resets the kernel service holder; the old blanket imported-only account does not describe this object reset.
 
+Fixture Git commands use a repository-local home and disable system configuration. The shared crossing fixture builds selected revisions, records closed review facts and checks state and writer credit after retention and conversion. Both helpers operate on test-owned repositories.
+
 ## Local Invariants And Boundaries
 
 - Ordinary pytest setup has no certifying or external-service authority. Dagger admission is mandatory at the certifying composition boundary; neither admission nor running the bootstrap alone establishes acceptance.
@@ -139,3 +141,6 @@ The generated route index lists the source files of this route and their cards.
 
 - Six instruction helpers own checkout-local renewal loading, digest traceability, policy/wording projection, pointer parsing and binding controls, and source-derived audience/link comparisons. [30]
 - Manifest step derivation collects actions and reader-role associations for classified Markdown references from first-message and detail pointers. [31]
+
+- Fixture Git uses a private HOME and captures command failure output. [32]
+- Crossing fixture controls compare attributed state and writer before and after selecting or converting bytes. [33]

@@ -128,16 +128,16 @@
       ]
     },
     "6": {
-      "note": "Its catalog row.",
+      "note": "The lifecycle catalog governs knowledge_conversion_test_support.py as a shared-support artifact.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:f1074777d3c06b5f3bd9218e1c713851df0484c1440bc40030370ab5a587c4ee",
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:9d92f97d87a69788ed161b6261231175fa4cbf57857c9a6e1868b605a363d664",
             "locator": {
-              "end": 3519,
+              "end": 3560,
               "kind": "line_range",
-              "start": 3480
+              "start": 3518
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

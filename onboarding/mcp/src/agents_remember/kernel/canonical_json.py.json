@@ -88,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
+            "blob": "3d052ff5b8e4e6e5d88882fdee32d3d5184272a8",
             "content": "sha256:cf84d0f055b923f67d3f0c588b2aafff265032b51ca3642945d65da50bd9729d",
             "locator": {
               "kind": "symbol",
@@ -105,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "blob": "382764f1d33cd50a7b8c7ff1757afd64f2b3306d",
             "content": "sha256:0d0003a9634dab7b1114263aa4687f10c3699db9aa9fada2c2cb95c738278508",
             "locator": {
               "kind": "symbol",
@@ -129,12 +129,12 @@
       ]
     },
     "6": {
-      "note": "The schema fingerprint computed through this encoder.\n\nAnchor: `schema_fingerprint`",
+      "note": "The schema fingerprint computed through this encoder.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
-            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
+            "content": "sha256:c0e6d3fd7dbb17579c1fba9abe330f520d20fe00ae392b9e42307a7f862725d7",
             "locator": {
               "kind": "file"
             },

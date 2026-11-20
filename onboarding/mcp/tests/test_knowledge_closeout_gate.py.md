@@ -129,5 +129,6 @@ No cross-repo boundary is crossed by this file.
 - Rule 2 examples: a new edit reopens four items, including source-bound file/route traces. [3]
 - New invariants, recompute, incomplete runs and registry dispatch; added R53 predicate assertions cover source/membership/record currency. [4]
 - The closeout validator and the closeout memory commit. [6]
-- The lane row. [10]
 - The closeout test answers the code commit's items with recomputed source-bound trace rows, then checks closure/restore and reaching the mutation seam, not a successful product memory commit. [11]
+
+- The unit-regression lane selects mcp/tests/test_knowledge_closeout_gate.py. [10]

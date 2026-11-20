@@ -238,6 +238,40 @@
         }
       ]
     },
+    "107": {
+      "note": "History closing writes the eligible review fact in the same update and preserves already-closed bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
+            "content": "sha256:0e914c4a4201a736995ead4f69844f263ebd65ab903cd81574d71f63a6a2364b",
+            "locator": {
+              "kind": "symbol",
+              "name": "close_owner_history"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "108": {
+      "note": "Direct landing reads the selected owner's review against the checkout before the cache-ignore or history writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95048276785aaaeb29b0ee4f04f3dfb35cd246f0",
+            "content": "sha256:8045298f49887c7e244dbaaa8bcd04511be720e17e788efedaba917ba7c2a6e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_close_gated_leaf"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "11": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf.\n\nAnchor: `require_parent_series`",
       "targets": [
@@ -1293,12 +1327,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
             "content": "sha256:d7ae3e856d2a369ac754b7915fb9f7fc4d32d178f18549a7718980357f8fe3fd",
             "locator": {
-              "end": 575,
+              "end": 576,
               "kind": "line_range",
-              "start": 565
+              "start": 566
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -1311,25 +1345,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
-            "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
+            "content": "sha256:386cb1530c8942a8f910ba28b8d34f60d4fd575715873cd83fc6a4d9aa02b3c8",
             "locator": {
-              "end": 527,
-              "kind": "line_range",
-              "start": 485
-            },
-            "path": "mcp/src/agents_remember/worktrees/reopen.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
-            "content": "sha256:a734863be97b21bfc368a8228dac7cbb585ee17082113bb5fe4fade3cf404239",
-            "locator": {
-              "end": 541,
-              "kind": "line_range",
-              "start": 501
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -1367,12 +1386,12 @@
       ]
     },
     "60": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The layer's probes, the unbound refusal and the closeout's own write.\n\nAnchor: `converted_memory` `GATE_UNBOUND` `close_owner_history`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The layer's probes, the unbound refusal and the closeout's own write.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
-            "content": "sha256:b1e557792c411356882132a3a924065201ef785ec9d460d05479740ad13966b2",
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
+            "content": "sha256:095ee647aa13dd5209ca7df8431b6326a07657babfd8004ddf31fc99f5fb2478",
             "locator": {
               "kind": "file"
             },
@@ -1383,14 +1402,29 @@
       ]
     },
     "61": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The closeout validator's and the landings' gate.\n\nAnchor: `leaf_gate_refusal` `landing_gate_refusal`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The closeout validator's and the landings' gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
-            "content": "sha256:b1e557792c411356882132a3a924065201ef785ec9d460d05479740ad13966b2",
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
+            "content": "sha256:432ff046e10433c7569e56f86456caa342921364f14b881c5fa017a21fd151a0",
             "locator": {
-              "kind": "file"
+              "end": 241,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
+            "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 316
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -1399,14 +1433,29 @@
       ]
     },
     "62": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The direct landing's closing, kept and settled per generation.\n\nAnchor: `keep_direct_closing` `settle_direct_closing`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The direct landing's closing, kept and settled per generation.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
-            "content": "sha256:b1e557792c411356882132a3a924065201ef785ec9d460d05479740ad13966b2",
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
+            "content": "sha256:8c2e8be1562f43ab27cbff1b50a7cb3e9f56c271210a04ec80a5c15280837a72",
             "locator": {
-              "kind": "file"
+              "end": 604,
+              "kind": "line_range",
+              "start": 557
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
+            "content": "sha256:3f096993a949203bf87250d0259c65b473c2499c874f4f9aa284b5e067c0f2c1",
+            "locator": {
+              "end": 640,
+              "kind": "line_range",
+              "start": 613
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -1435,8 +1484,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
-            "content": "sha256:46ea685defa6d5a6c2ae12d11cd38463eb2b01a2fef1c6a4899f85adfe84c08c",
+            "blob": "95048276785aaaeb29b0ee4f04f3dfb35cd246f0",
+            "content": "sha256:5ec9232ddecebefb0dddbcf2c869fa311b1a692c7612a24d93c509ce27af7ed0",
             "locator": {
               "kind": "file"
             },
@@ -1463,14 +1512,16 @@
       ]
     },
     "66": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The worktree layer's helper that names the leaf's line.\n\nAnchor: `leaf_cutover_refusal`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The worktree layer's helper that names the leaf's line.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
-            "content": "sha256:b1e557792c411356882132a3a924065201ef785ec9d460d05479740ad13966b2",
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
+            "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
             "locator": {
-              "kind": "file"
+              "end": 171,
+              "kind": "line_range",
+              "start": 161
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -1499,7 +1550,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
             "content": "sha256:6b4c04dfd9b35b403d74935df75e70d266ec4abe29546e36f92139e9313e049e",
             "locator": {
               "kind": "symbol",
@@ -1533,7 +1584,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
             "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
             "locator": {
               "kind": "symbol",
@@ -1788,7 +1839,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "blob": "95048276785aaaeb29b0ee4f04f3dfb35cd246f0",
             "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
             "locator": {
               "end": 1706,
@@ -1990,7 +2041,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
             "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
             "locator": {
               "end": 150,
@@ -2003,7 +2054,7 @@
         },
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
             "content": "sha256:5e782eb6fa8dd27c2740d48b24b4c8388b91d8c0d4003ad36d2ac368284bb241",
             "locator": {
               "end": 431,
@@ -2021,7 +2072,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
             "content": "sha256:f2d0082983bc5298969f6b108a8ae5cf58eae73c9187b57329125dd0ce938d22",
             "locator": {
               "end": 247,
@@ -2034,7 +2085,7 @@
         },
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
             "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
             "locator": {
               "end": 355,

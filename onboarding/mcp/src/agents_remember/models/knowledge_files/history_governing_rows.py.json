@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/history_governing_rows.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ba6d28e447adc0966a746e9256bf8e8c52e5e778",
+        "content": "sha256:b7d0abbc5322890cdaa80df71867fc09f1a5489e40e7849d05b04e400639a59d",
+        "locator": {
+          "kind": "symbol",
+          "name": "changed_family_row_violation"
+        }
+      },
+      "id": "RLZ-91XJW2",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "States the rule for a family: while the candidate states another guarantee than the parent line, only a changed row or the retired row may govern; a no_impact, assigned or rerouted row returns the refusal sentence.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ba6d28e447adc0966a746e9256bf8e8c52e5e778",
+        "content": "sha256:0605654e547d0567d151bee7864229f71cb41e2db59ee691cf3e6a0817bb6e66",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps_change_visible"
+        }
+      },
+      "id": "RLZ-BJ0WQA",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Is the one predicate the two rules and the validator share: changed, deleted for an invariant, retired for a family.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ba6d28e447adc0966a746e9256bf8e8c52e5e778",
+        "content": "sha256:0c00bc00465468942c4d3d5fb6f049f03da96331446a4b0a78af418090933b77",
+        "locator": {
+          "kind": "symbol",
+          "name": "changed_record_row_violation"
+        }
+      },
+      "id": "RLZ-VKXJ29",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "States the rule for an invariant: while its revision on the parent line and in the candidate differ, only a changed row or the deleted row that retires it may govern; any other disposition returns the refusal sentence. The paired writer now invokes this same governing-row predicate through worklist_checks._hidden_change for every matching persisted item, rather than leaving this comparison exclusively to the later gate/validator.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ba6d28e447adc0966a746e9256bf8e8c52e5e778",
+        "content": "sha256:0c00bc00465468942c4d3d5fb6f049f03da96331446a4b0a78af418090933b77",
+        "locator": {
+          "kind": "symbol",
+          "name": "changed_record_row_violation"
+        }
+      },
+      "id": "RLZ-Y4K99A",
+      "invariant": "INV-WM6BTP",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 8",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This shared rule identifies the governing-row failure before subsequent entry-cover details.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Changed and retirement judgments keep authored changes visible.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba6d28e447adc0966a746e9256bf8e8c52e5e778",
+            "content": "sha256:0605654e547d0567d151bee7864229f71cb41e2db59ee691cf3e6a0817bb6e66",
+            "locator": {
+              "kind": "symbol",
+              "name": "keeps_change_visible"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A conflicting later invariant row cannot replace the governing change judgment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba6d28e447adc0966a746e9256bf8e8c52e5e778",
+            "content": "sha256:0c00bc00465468942c4d3d5fb6f049f03da96331446a4b0a78af418090933b77",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_record_row_violation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A changed family guarantee requires a governing judgment that records the change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba6d28e447adc0966a746e9256bf8e8c52e5e778",
+            "content": "sha256:b7d0abbc5322890cdaa80df71867fc09f1a5489e40e7849d05b04e400639a59d",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_family_row_violation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

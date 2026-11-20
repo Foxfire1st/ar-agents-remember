@@ -65,7 +65,6 @@ the current working-candidate behavior; historical entries below retain their or
 - The shared snapshot keeps actual object identity and optional content-only comparison. [2]
 
 
-- The coordinator captures the accepted candidate from actual Git facts. [3]
 
 
 - The strict model carries code/memory identity and its `_accepted_direct_plan_is_exact` validator requires the direct-landing route plus a nonblank approval note. [4]
@@ -84,3 +83,5 @@ No additional configured cross-repository evidence is claimed.
 
 
 - The typed direct input adds exact leafTaskDocumentRef, codeCommitMessage and optional codeBefore. [7]
+
+- The coordinator captures the accepted candidate from actual Git facts. [3]

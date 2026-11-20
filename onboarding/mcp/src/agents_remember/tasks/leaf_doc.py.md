@@ -117,7 +117,6 @@ too; correctly placed documents pass unchanged (review R2's read-only sweep of t
 - Start and reattachment share one validating task-fact publisher for enclosure registration plus stage; dry-run performs no publication. [16]
 - The canonical wrapper invokes the task-domain enclosure-registration planner; start's lifecycle-restamp planner call is a read-only blocker preflight. [17]
 
-- The atomic reopen plan refuses a leaf the store would write to another file, then clears the doc's stamp before the next start restamps it. [1]
 - The placement guard: the store's write target for the document must be the path it was read from, or the caller's refusal is raised. [2]
 - Its four call sites: the leaf and every master in finalize, the leaf and the master in reopen. [3]
 
@@ -217,3 +216,5 @@ untouched, and there is no `# noqa`, per-file ignore or widened limit anywhere i
 
 
 - Start's read-only terminal-blocker preflight calls `plan_leaf_doc_lifecycle_restamp`; the unused restamp publisher also calls that planner internally. [7]
+
+- The atomic reopen plan refuses a leaf the store would write to another file, then clears the doc's stamp before the next start restamps it. [1]

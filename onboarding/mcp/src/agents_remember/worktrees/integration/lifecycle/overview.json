@@ -79,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "blob": "95048276785aaaeb29b0ee4f04f3dfb35cd246f0",
             "content": "sha256:454f09c97996f36eba226f3606a87364288fa0758d8130cd5bc5a7d1bcfe25ef",
             "locator": {
               "end": 1350,
@@ -92,12 +92,12 @@
         },
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
             "content": "sha256:fe94fc0f9ee9750398bae54828f9478f789aebe190df4eae0c48f2dce43708d2",
             "locator": {
-              "end": 631,
+              "end": 646,
               "kind": "line_range",
-              "start": 542
+              "start": 557
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -105,12 +105,12 @@
         },
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "blob": "c21f559be2aedf95288fabd55879f7744c406dd1",
             "content": "sha256:30fc4080e2bf89e4ab19c0c947e909b9e8bb39f4805c91253539a1f9d64a364b",
             "locator": {
-              "end": 720,
+              "end": 735,
               "kind": "line_range",
-              "start": 710
+              "start": 725
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },

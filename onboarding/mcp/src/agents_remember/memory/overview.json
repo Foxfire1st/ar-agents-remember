@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
             "content": "sha256:2b2a8e6ba33037590165eb786328c443ad7445808de1c575c162fdf710339c68",
             "locator": {
               "kind": "symbol",
@@ -54,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020ab9577b41d0cc406ad580d3f840d5d606458d",
+            "blob": "77645306ed2222f9c6634abdb7e1307e3f7cdb70",
             "content": "sha256:af262f382ce5480f3ad4aa5912d578dc41f8bc83507153a56a80ff1511fe25f5",
             "locator": {
               "end": 19,
@@ -68,15 +68,16 @@
       ]
     },
     "102": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The captured-state key.\n\nAnchor: `directory_snapshot` `_capture`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The captured-state key.",
       "targets": [
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:b0aab9fa4ff35fa98d257c8cc68305cc45903451e4a5a348bf6dc04678e8fd2d",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
+            "content": "sha256:1b66919613846cde7bca234e3c827d5891196962b5bc89f8cb221bc28a1a10d1",
             "locator": {
-              "kind": "symbol",
-              "name": "directory_snapshot"
+              "end": 141,
+              "kind": "line_range",
+              "start": 121
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -84,24 +85,12 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
             "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
             "locator": {
-              "kind": "symbol",
-              "name": "_capture"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:8c5b4f99dff71a4cfad8a924effda4001dc2033863d3e38ae5adb4183d690360",
-            "locator": {
-              "end": 115,
+              "end": 170,
               "kind": "line_range",
-              "start": 97
+              "start": 166
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -109,12 +98,12 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
             "content": "sha256:71cd9f164d50483d6fe89fd2d2bcb077de7835b06afef57f10204d90550a8384",
             "locator": {
-              "end": 164,
+              "end": 169,
               "kind": "line_range",
-              "start": 140
+              "start": 145
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -122,8 +111,8 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:a03bad9d2d1411340c45ef861aa66367dd3fc0e6da7b13584792eb0f5a34f457",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
+            "content": "sha256:c5e5779aae8c3e4e390c0970024d6c63b75540fd6d8a7b3540e2ca47476591b5",
             "locator": {
               "kind": "file"
             },
@@ -134,12 +123,12 @@
       ]
     },
     "103": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The build, which names every failing file.\n\nAnchor: `build_index` `parse_tree`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The build, which names every failing file.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
-            "content": "sha256:1b22516606ea65bb761f776cdebad477c86dc5d066d891472a45a2bce23137eb",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:31eda7ac82d19f0b9c105e27e75681f8c431439f82d6cb00c2094440445e3eee",
             "locator": {
               "kind": "file"
             },
@@ -154,11 +143,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
-            "content": "sha256:60b596c1047d7ff68521b6b57311873e051773ca2446c64b0c6a55dcf53087d3",
+            "blob": "0173b9640be76eb2c66aa28a324220a932bbfbb3",
+            "content": "sha256:74ebbd07a44da27e941fe2caaa8cb98d0bc7d2210eb02535cc071c0e27834f45",
             "locator": {
-              "kind": "symbol",
-              "name": "project"
+              "end": 129,
+              "kind": "line_range",
+              "start": 102
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py"
           },
@@ -166,11 +156,12 @@
         },
         {
           "anchor": {
-            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "blob": "0173b9640be76eb2c66aa28a324220a932bbfbb3",
             "content": "sha256:2eca14ed57d462786d45aa6d740ed2dc55f4eefba93328fdd2b573d599de92ec",
             "locator": {
-              "kind": "symbol",
-              "name": "RETIRED_STATUS"
+              "end": 85,
+              "kind": "line_range",
+              "start": 85
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py"
           },
@@ -196,7 +187,7 @@
         },
         {
           "anchor": {
-            "blob": "020ab9577b41d0cc406ad580d3f840d5d606458d",
+            "blob": "77645306ed2222f9c6634abdb7e1307e3f7cdb70",
             "content": "sha256:af262f382ce5480f3ad4aa5912d578dc41f8bc83507153a56a80ff1511fe25f5",
             "locator": {
               "end": 19,
@@ -319,12 +310,12 @@
       ]
     },
     "112": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Rule 8's steps.\n\nAnchor: `cross`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Rule 8's steps.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
-            "content": "sha256:bd790652bb6b7faa32731fc6c57555aa064bce0f77dd95380f7896c80643b87d",
+            "blob": "6f894869cd7c0a166ac03b2433b506c7256d200d",
+            "content": "sha256:62c01159498b55a3ae8f5e6cf04bbc468ec26904d1de285eea2b83a701085b80",
             "locator": {
               "kind": "file"
             },
@@ -335,14 +326,29 @@
       ]
     },
     "113": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The two proof lookups.\n\nAnchor: `proofs_of` `invariants_without_proof`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The two proof lookups.",
       "targets": [
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
-            "content": "sha256:c31c1c5d3eac9b8386f76b007c96642f04f5440aa47d89ab4328bc1b8b9f3512",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
+            "content": "sha256:180f6b20120e23836587447f5aca479a3d6eaad25b8250f9e364bdcb2086892e",
             "locator": {
-              "kind": "file"
+              "end": 351,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
+            "content": "sha256:3221a86238001c33500bbad81bf286b5bab780327c041996360bcfce6afdbc36",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 353
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
           },
@@ -426,11 +432,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
-            "content": "sha256:f8a19eaf294390813cc3d6e4fe5126d9223d2343e400541ea37dd367763884d0",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:a70b514cd3dd3d00857abfd954506cc943c0a75586242c82b9e650ad2a581465",
             "locator": {
-              "kind": "symbol",
-              "name": "ParsedTree"
+              "end": 140,
+              "kind": "line_range",
+              "start": 122
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
           },
@@ -460,11 +467,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
             "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
             "locator": {
-              "kind": "symbol",
-              "name": "_capture"
+              "end": 170,
+              "kind": "line_range",
+              "start": 166
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -472,12 +480,12 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
             "content": "sha256:71cd9f164d50483d6fe89fd2d2bcb077de7835b06afef57f10204d90550a8384",
             "locator": {
-              "end": 164,
+              "end": 169,
               "kind": "line_range",
-              "start": 140
+              "start": 145
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -485,8 +493,8 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:a03bad9d2d1411340c45ef861aa66367dd3fc0e6da7b13584792eb0f5a34f457",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
+            "content": "sha256:c5e5779aae8c3e4e390c0970024d6c63b75540fd6d8a7b3540e2ca47476591b5",
             "locator": {
               "kind": "file"
             },
@@ -929,15 +937,16 @@
       ]
     },
     "150": {
-      "note": "Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion.\n\nAnchor: `directory_snapshot` `_capture` `_clear_index_flags`",
+      "note": "Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion.",
       "targets": [
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:b0aab9fa4ff35fa98d257c8cc68305cc45903451e4a5a348bf6dc04678e8fd2d",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
+            "content": "sha256:1b66919613846cde7bca234e3c827d5891196962b5bc89f8cb221bc28a1a10d1",
             "locator": {
-              "kind": "symbol",
-              "name": "directory_snapshot"
+              "end": 141,
+              "kind": "line_range",
+              "start": 121
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -945,11 +954,12 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
             "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
             "locator": {
-              "kind": "symbol",
-              "name": "_capture"
+              "end": 170,
+              "kind": "line_range",
+              "start": 166
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -957,24 +967,12 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
             "content": "sha256:b495a008cd21af0c07cb2bb10571bf0922a36d31a29464149c08b2a50f05d576",
             "locator": {
-              "kind": "symbol",
-              "name": "_clear_index_flags"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:8c5b4f99dff71a4cfad8a924effda4001dc2033863d3e38ae5adb4183d690360",
-            "locator": {
-              "end": 115,
+              "end": 246,
               "kind": "line_range",
-              "start": 97
+              "start": 208
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -982,12 +980,12 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
             "content": "sha256:71cd9f164d50483d6fe89fd2d2bcb077de7835b06afef57f10204d90550a8384",
             "locator": {
-              "end": 164,
+              "end": 169,
               "kind": "line_range",
-              "start": 140
+              "start": 145
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -995,12 +993,12 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
             "content": "sha256:ed198f3652d3690f812e5c3f4b5c56f2afb954702b4246607bcc1f067389932f",
             "locator": {
-              "end": 205,
+              "end": 210,
               "kind": "line_range",
-              "start": 167
+              "start": 172
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -1008,8 +1006,8 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:a03bad9d2d1411340c45ef861aa66367dd3fc0e6da7b13584792eb0f5a34f457",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
+            "content": "sha256:c5e5779aae8c3e4e390c0970024d6c63b75540fd6d8a7b3540e2ca47476591b5",
             "locator": {
               "kind": "file"
             },
@@ -1020,15 +1018,16 @@
       ]
     },
     "151": {
-      "note": "Parser completeness is distinct from validator integrity and history files are retained by path.\n\nAnchor: Build charter, `ParsedTree`, `_parse_knowledge_file`",
+      "note": "Parser completeness is distinct from validator integrity and history files are retained by path.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
-            "content": "sha256:f8a19eaf294390813cc3d6e4fe5126d9223d2343e400541ea37dd367763884d0",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:a70b514cd3dd3d00857abfd954506cc943c0a75586242c82b9e650ad2a581465",
             "locator": {
-              "kind": "symbol",
-              "name": "ParsedTree"
+              "end": 140,
+              "kind": "line_range",
+              "start": 122
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
           },
@@ -1036,7 +1035,7 @@
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
             "content": "sha256:a1eb9c5a1437d966c6e34ca359b106e674ec24809253dfff719653964bbabf01",
             "locator": {
               "end": 15,
@@ -1054,7 +1053,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
             "content": "sha256:a85e6eaa7c8b474a58179a87ebe3f4d365c18c9173121d58ddf112b156392c15",
             "locator": {
               "kind": "symbol",
@@ -1066,7 +1065,7 @@
         },
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
             "content": "sha256:3221a86238001c33500bbad81bf286b5bab780327c041996360bcfce6afdbc36",
             "locator": {
               "kind": "symbol",
@@ -1079,16 +1078,14 @@
       ]
     },
     "154": {
-      "note": "Projection uses deterministic identities, store-owned seals and retains retired/unprojectable facts in direct index tables.\n\nAnchor: Projection ownership rules",
+      "note": "Projection uses deterministic identities, store-owned seals and retains retired/unprojectable facts in direct index tables.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
-            "content": "sha256:d226cb22e493cf2444da027d4976fc8347f1d13eadcd11cfda37f1f81fc4136c",
+            "blob": "0173b9640be76eb2c66aa28a324220a932bbfbb3",
+            "content": "sha256:cdd88a6ee08a6a32f9a581d0166382d18cf18bc72683c97a52d71a6e82b4c1fc",
             "locator": {
-              "end": 38,
-              "kind": "line_range",
-              "start": 11
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py"
           },
@@ -1097,15 +1094,16 @@
       ]
     },
     "155": {
-      "note": "One composed v9 schema and fingerprint pin replace generation selection; current index layout is v3.\n\nAnchor: Effective schema constants, `generation_of_database`, `INDEX_FORMAT`",
+      "note": "The current logical store is schema v10, with an explicitly pinned fingerprint. The rebuildable index uses layout v7.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
-            "content": "sha256:71a55907b220b9b15545b2c009508e8849b44c6d288b76c097e6e70075a6d17d",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
+            "content": "sha256:0387151a03a084a4c64c798a3dd3b0b4dfb8a9140be5adf60efaab3fb20e9c97",
             "locator": {
-              "kind": "symbol",
-              "name": "generation_of_database"
+              "end": 436,
+              "kind": "line_range",
+              "start": 423
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },
@@ -1113,11 +1111,12 @@
         },
         {
           "anchor": {
-            "blob": "bf115f8935703beea2dfd4c3c075be4d6f0472d9",
-            "content": "sha256:5c6e8a09e11cbf4efa9a50fa99c65e54e027de8c855d4daa7c6dd314d2f466c3",
+            "blob": "6c3ffb0ae39ca35e06558d2767174f322dbb2092",
+            "content": "sha256:d2c4645db8bc91ffe388c9c253984baada6df1be30bd9046de9592f62e68e9e6",
             "locator": {
-              "kind": "symbol",
-              "name": "INDEX_FORMAT"
+              "end": 29,
+              "kind": "line_range",
+              "start": 22
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/schema.py"
           },
@@ -1142,7 +1141,7 @@
         },
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
             "locator": {
               "kind": "symbol",
@@ -1154,7 +1153,7 @@
         },
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:3cb70a429652780066956ae4318d55c822d42865aa70e7aa796bf0aba0adb22b",
             "locator": {
               "kind": "symbol",
@@ -1171,7 +1170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "blob": "327733a5cfe581986e6b210041a4a7ca4f5278a4",
             "content": "sha256:6660bfeaa8127fea648109a3d2171d91c5408ff5912044ff0b1164285cb4c14d",
             "locator": {
               "kind": "symbol",
@@ -1183,7 +1182,7 @@
         },
         {
           "anchor": {
-            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "blob": "327733a5cfe581986e6b210041a4a7ca4f5278a4",
             "content": "sha256:4dceabfd8944036288aeca1846240829d46008e3812b6bc33a09c3affb73c3a7",
             "locator": {
               "end": 23,
@@ -1459,12 +1458,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "d0f199b7035b746101a845d19b25b17fcbaa1878",
             "content": "sha256:c77b2e30ff8713de34339f4acfa6ffd2a3426edd3f10eb9b47e3a1a6f8ef211a",
             "locator": {
-              "end": 100,
+              "end": 101,
               "kind": "line_range",
-              "start": 82
+              "start": 83
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
           },
@@ -1548,12 +1547,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "blob": "6f894869cd7c0a166ac03b2433b506c7256d200d",
             "content": "sha256:47a2ab86090172919d01338f4406d11de0028e861b3d8682e1e820f72bcda83b",
             "locator": {
-              "end": 167,
+              "end": 175,
               "kind": "line_range",
-              "start": 113
+              "start": 121
             },
             "path": "mcp/src/agents_remember/memory/conversion/crossing_sync.py"
           },
@@ -1662,6 +1661,56 @@
         }
       ]
     },
+    "177": {
+      "note": "Index build derives current standing and writer evidence from one selected tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "content": "sha256:493f5a3dfa3900176826e2310cfb8477d79db8f578f9c789bf7acb3514bf7bf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_index"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "178": {
+      "note": "The declared cache schema stores both current standing and per-revision writer evidence.\n\nAnchor: `INDEX_FORMAT`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c3ffb0ae39ca35e06558d2767174f322dbb2092",
+            "content": "sha256:a8cc96f8844bdfcd2a1af850d14be25c49b34889b2c68530a515ca4b3229ffcd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "179": {
+      "note": "Revision-standing conversion plans stored state-word removal and companion review facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d119beb6ded123f180d095877829f76b649e76ee",
+            "content": "sha256:99591e0040591b8d9b796a6de45b37b1c5a7771a47ddd218e93b473ef2b40e87",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_state_conversion"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/state_conversion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "18": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): The bound-checked line-range observation.",
       "targets": [
@@ -1674,6 +1723,23 @@
               "name": "_observed_line_range"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "180": {
+      "note": "Crossing merges authored fields and applies selected-side or product writer evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
+            "content": "sha256:5a09b579a139bfaf6ff63ff8c318951fc7236de395a708b00c5b0471afcf6d0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_with_writers"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/crossing_writer.py"
           },
           "kind": "code"
         }
@@ -2011,7 +2077,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "blob": "327733a5cfe581986e6b210041a4a7ca4f5278a4",
             "content": "sha256:c4b61ef2a26bb608e577de2c376640ac2dbff9bf2f808672da15ebc38e138cd5",
             "locator": {
               "kind": "symbol",
@@ -2023,7 +2089,7 @@
         },
         {
           "anchor": {
-            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "blob": "327733a5cfe581986e6b210041a4a7ca4f5278a4",
             "content": "sha256:d3edaa6d56a3bd7f62f9c97523d29327a164626c0a772c0cd65060a3e3f69aeb",
             "locator": {
               "kind": "symbol",
@@ -2035,7 +2101,7 @@
         },
         {
           "anchor": {
-            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "blob": "327733a5cfe581986e6b210041a4a7ca4f5278a4",
             "content": "sha256:62f81c31b301acb35f676e85e50dda78fad20c7d38a59930e06f9eff195ed13b",
             "locator": {
               "kind": "symbol",
@@ -2047,7 +2113,7 @@
         },
         {
           "anchor": {
-            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "blob": "327733a5cfe581986e6b210041a4a7ca4f5278a4",
             "content": "sha256:49320c96f34fcf4fd784760e71b332a19c1e71966e0836e73910a3be33b5a406",
             "locator": {
               "kind": "symbol",
@@ -2064,7 +2130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "blob": "327733a5cfe581986e6b210041a4a7ca4f5278a4",
             "content": "sha256:f31ccdbfb14be21f46c2a811839a03123f17670644d767a6031e845451b81a69",
             "locator": {
               "kind": "symbol",
@@ -2081,7 +2147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "blob": "327733a5cfe581986e6b210041a4a7ca4f5278a4",
             "content": "sha256:6660bfeaa8127fea648109a3d2171d91c5408ff5912044ff0b1164285cb4c14d",
             "locator": {
               "kind": "symbol",
@@ -2094,14 +2160,16 @@
       ]
     },
     "44": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The count model that refuses its own arithmetic contradiction at construction.\n\nAnchor: `KnowledgeReadCounts`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The count model that refuses its own arithmetic contradiction at construction.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
-            "content": "sha256:fbd98175de6f3059b83374833481f33639bdf4840ffee08959b2e96e4c46239f",
+            "blob": "467b6e3bb025fa7895853353aab838036e694400",
+            "content": "sha256:e193f76546583550a1fea8a2d9c963bbb2f1dab9dc44311e7b2875e7b0ecdece",
             "locator": {
-              "kind": "file"
+              "end": 420,
+              "kind": "line_range",
+              "start": 369
             },
             "path": "mcp/src/agents_remember/models/knowledge/read.py"
           },
@@ -2138,7 +2206,7 @@
         },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
             "locator": {
               "kind": "symbol",
@@ -2279,14 +2347,29 @@
       ]
     },
     "5": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Entries at or under a directory, and of the files directly in it.\n\nAnchor: `entries_under` `entries_in_directory`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Entries at or under a directory, and of the files directly in it.",
       "targets": [
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
-            "content": "sha256:c31c1c5d3eac9b8386f76b007c96642f04f5440aa47d89ab4328bc1b8b9f3512",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
+            "content": "sha256:5dc8ec52cf7693ff4fa4fbd834fc135364d2e31d6e7ed3fd73e0dd275cb41cc4",
             "locator": {
-              "kind": "file"
+              "end": 375,
+              "kind": "line_range",
+              "start": 367
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
+            "content": "sha256:76ce7fcc317f33415c60183e1edc66109d76e84b007dfbb21ddbcedc51c8c069",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 377
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
           },
@@ -2359,7 +2442,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
             "content": "sha256:ff22ce74d89455c338683a9ecf27c766db0138afb981d78e1c606023bb4142d6",
             "locator": {
               "kind": "symbol",
@@ -2371,7 +2454,7 @@
         },
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
             "content": "sha256:9a02dd06cf30365264fcb0945d256140ec0dd3f493802e14137551f87a5376fd",
             "locator": {
               "kind": "symbol",
@@ -2383,7 +2466,7 @@
         },
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
             "content": "sha256:b83fdf3507fb1e00e319968ae8d043309d5e1f97dfa77ecff7ef9266225f9917",
             "locator": {
               "kind": "symbol",
@@ -2424,7 +2507,7 @@
         },
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
             "content": "sha256:0f0c918f3bf10a7250d7ac346475f3b54df375e1306b83aaca248426e5ff211e",
             "locator": {
               "kind": "symbol",
@@ -2436,7 +2519,7 @@
         },
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
             "content": "sha256:dd58c370a4145368bfdd0c3c15e5607fb74e82f364c3dc91634ac6db43f582b5",
             "locator": {
               "kind": "symbol",
@@ -2448,7 +2531,7 @@
         },
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
             "locator": {
               "kind": "symbol",
@@ -2494,7 +2577,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
             "content": "sha256:d1baf68323ea7e84c98308667a6543746d29ee2008cc29f63f681307017fb8f6",
             "locator": {
               "kind": "symbol",
@@ -2507,29 +2590,14 @@
       ]
     },
     "8": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The store's own seal on each projected revision row.\n\nAnchor: `revision_payload_digest`; `family_revision_payload_digest`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The store's own seal on each projected revision row.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
-            "content": "sha256:9207ee35ed686000859c17fd72cae6d63f57ed8131936e501f3d8128f714a684",
+            "blob": "0173b9640be76eb2c66aa28a324220a932bbfbb3",
+            "content": "sha256:cdd88a6ee08a6a32f9a581d0166382d18cf18bc72683c97a52d71a6e82b4c1fc",
             "locator": {
-              "end": 202,
-              "kind": "line_range",
-              "start": 157
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
-            "content": "sha256:b7a2ba30137ccc2973d28044f53d04a1bcd1ea904ea1b5efa9d10924aa1e3ee0",
-            "locator": {
-              "end": 263,
-              "kind": "line_range",
-              "start": 205
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py"
           },
@@ -2542,7 +2610,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
             "content": "sha256:0b5929a879acb62ec3f73f0a0a5b84bc212860a29742cbb28d4d639d26ab2237",
             "locator": {
               "kind": "symbol",
@@ -2576,7 +2644,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
             "locator": {
               "kind": "symbol",
@@ -2593,7 +2661,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:3cb70a429652780066956ae4318d55c822d42865aa70e7aa796bf0aba0adb22b",
             "locator": {
               "kind": "symbol",
@@ -2606,12 +2674,12 @@
       ]
     },
     "9": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The format bump that rebuilds v1 caches.\n\nAnchor: `INDEX_FORMAT`",
+      "note": "The schema's v2 record explains the inaugural cache rebuild after the payload-seal change. A cached index whose format differs from the current format is rebuilt.",
       "targets": [
         {
           "anchor": {
-            "blob": "bf115f8935703beea2dfd4c3c075be4d6f0472d9",
-            "content": "sha256:225b1df15aad79eab4e226c496599c6d2a83746f1d8d4d02f2d3a1771313c432",
+            "blob": "6c3ffb0ae39ca35e06558d2767174f322dbb2092",
+            "content": "sha256:a8cc96f8844bdfcd2a1af850d14be25c49b34889b2c68530a515ca4b3229ffcd",
             "locator": {
               "kind": "file"
             },
@@ -2626,7 +2694,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "blob": "382764f1d33cd50a7b8c7ff1757afd64f2b3306d",
             "content": "sha256:abfa49ab7602769fdc690718bd35282aca96ad9e06622b051b32b36c113cf773",
             "locator": {
               "kind": "symbol",
@@ -2638,7 +2706,7 @@
         },
         {
           "anchor": {
-            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "blob": "382764f1d33cd50a7b8c7ff1757afd64f2b3306d",
             "content": "sha256:7f81e36b9eb8f8f974ef744be0957979c973181bb1e8222d93c1a698f823a763",
             "locator": {
               "kind": "symbol",

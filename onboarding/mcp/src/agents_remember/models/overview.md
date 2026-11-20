@@ -205,6 +205,8 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 
 - **Retained historical source account — superseded by the current route account:** Historical L111 predecessor account, not the current roster: the composed PUBLIC_TOOLS now declares 44 names and SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery rows including direct_execution_grant at 150 tokens; the earlier 41- and 42-name captions here are historical, not current source counts.
 
+The stored record's writer stamp is product metadata. Owner history carries revision writes and the passing review fact, while crossing history can preserve exact side evidence. The selected tree derives revision standing from those facts, separately from each kind's lifecycle word and the authored payload seal.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -241,7 +243,6 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 
 - The shared route-directory type. [23]
 
-- The family record's routes use it. [24]
 
 - The four census schemas registered for dispatch. [25]
 
@@ -253,11 +254,9 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 
 - The onboarding-trace row and its `markers` list. [29]
 
-- The optional field (beside the later `currentness`, `families` and, since MIK-R05, `routeChain`) and the docstring boundary. [31]
 
 - The one continuation token and what it binds. [32]
 
-- The read response's page state and fields, re-read when MIK-R05 added `routeChain`. [33]
 
 - The integrity response's optional fields. [35]
 
@@ -277,7 +276,6 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 
 - The response kinds a token pages, and the public queue cap. [44]
 
-- The optional `families` field on the read response, followed since MIK-R05 by `routeChain`. [45]
 
 - At least two alternatives, exactly one chosen. [46]
 
@@ -303,7 +301,6 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 
 - The entry's facts describe exactly its returned members. [63]
 
-- The reconsideration row retains its own subject and disposition grammar. [66]
 
 - Public MCP payload builders validate through the response model registry. [67]
 
@@ -347,9 +344,7 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 
 - Queue candidate projection. [91]
 
-- The invariant identity and revision aggregate, including the display-label-versus-identity separation. [96]
 
-- The sealed payload, with the predecessor set inside the digest and the digest field excluded. [97]
 
 - The provenance envelope and its normalized-UTC requirement. [98]
 
@@ -365,13 +360,13 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 
 - The response registry maps modeled builder names to their response classes; registration and public advertisement remain separate. Anchor: `TOOL_RESPONSE_MODELS` [107]
 
-- The family identity, the immutable revision aggregate and its self-consistency rules. [108]
 
 - The retained graph subset is exact membership and authored role vocabulary. [109]
 
-- The two payload versions and the family payload's sealed field set. [111]
 
-- The shared accepted/proposed rule both revision aggregates apply at construction. [112]
+
+- The selected tree's revision state is derived outside authored revision payload seals. [112]
+
 
 - The family module reads exact sealed index revisions; canonical writers are retired. [116]
 
@@ -465,25 +460,20 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 
 - The base every file model inherits. [262]
 
-- An invariant record carries no second-owner fields. [263]
 
 - Schema dispatch refuses unknown schemas. [264]
 
-- The history file: one owner, one row per subject, a strict `closed` flag. [265]
 
 - The freeze predicate. [267]
 
-- The history schema in the dispatch table. [268]
 
 - The history row ID kind. [269]
 
-- The three current responses declare tree read, Git-tree diff and text validation. [270]
 
 - All of an owner's history files read as one. [272]
 
 - The attempt-qualified history path. [273]
 
-- Why a row cannot govern an invariant whose revision the leaf changed. [274]
 
 - Current imported source owns this scoped route boundary. [275] [277] [278]
 
@@ -537,7 +527,6 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - Activation record state includes vacant; selection and observed vocabularies differ. [302]
 
-- Text schema dispatch is distinct from legacy writer exports. [303]
 
 - Shared worklist predicates preserve different covered/uncovered answers. [304]
 
@@ -562,7 +551,6 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - **Retained historical source account — superseded by the current route account:** Activation record state includes vacant; selection and observed vocabularies differ. [302]
 
-- **Retained historical source account — superseded by the current route account:** Text schema dispatch is distinct from legacy writer exports. [303]
 
 - **Retained historical source account — superseded by the current route account:** Measurement coverage and measured disagreement determine assessment binding status. [305]
 
@@ -622,13 +610,11 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - The current tree-review payload carries a judgment pane and no assessment-count display. The earlier card described unassessed as absence in those counts; that account is historical. [233]
 
-- The retained knowledge-model facade has an explicit re-export list, including the historical graph contribution; this vocabulary declaration is not a live write API. [94]
 
 - The frozen base and identifier boundary: UUID values render canonical text; string inputs are stripped and lowercased, then rejected if the cleaned spelling is not canonical lowercase hyphenated UUID text. [95]
 
 - The retained operation and refusal-code Literal vocabulary, with the typed KnowledgeRefusal value. The graph, candidate-change, snapshot, merge, judgment and detection extensions are historical contributions, not a declaration of live canonical-database write operations. [100]
 
-- The retained facade re-exports exact family membership and authored role vocabulary from the historical graph contribution. [113]
 
 - Historical candidate-boundary contribution: the two refusal codes and three operation members added by that leaf remain in the retained Literal vocabulary; their declaration does not establish a live write API. [138]
 
@@ -636,7 +622,6 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - **Historical contribution account:** That leaf extended the operation and refusal Literal vocabulary; the declarations do not establish a live write API. [153]
 
-- The historical snapshot contribution no longer forms a whole exported snapshot surface; the retained facade exports KnowledgeReadSnapshot with the recorded-scope read vocabulary. [154]
 
 - **Historical contribution account:** That leaf extended the operation and refusal Literal vocabulary; the declarations do not establish a live write API. [164]
 
@@ -687,7 +672,6 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 - The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9), with `ReadableMemoryMode` imported from `kernel.memory_mode`. Anchor: `ReadableMemoryMode`, `WorkflowKind`, `HumanReviewStatus`, `LifecycleStatus`, `CleanupStatus` [83]
 - The module-level context_digest seals every context field except itself and is called by KnowledgeContext's validator. The earlier card also attributed operation-side re-derivation to this digest; that is retained as a historical source account, not a current-operation claim. Anchor: `context_digest` [124]
 - The module-level context_digest seals every context field except itself and is called by KnowledgeContext's validator. The earlier card also attributed operation-side re-derivation to this digest; that is retained as a historical source account, not a current-operation claim. Anchor: `context_digest` [132]
-- **Historical recorded-scope-read contribution:** The earlier card called this the facade's ninth source and recorded its addition to `__all__`. The current facade retains KNOWLEDGE_READ_POLICY_VERSION with the read models and cursor helpers. Anchor: `KNOWLEDGE_READ_POLICY_VERSION` [180]
 - Historical route-writer contribution: author_route and set_governing_route remain operation Literal members; this declaration does not establish a live route-write API. Anchor: `KnowledgeOperation` [193]
 - Historical reuse of invalid_payload is retained in KnowledgeRefusalCode. The Literal declaration does not by itself establish which current writer emits it. Anchor: `KnowledgeRefusalCode` [194]
 - Historical route-writer contribution: author_route and set_governing_route remain operation Literal members; this declaration does not establish a live route-write API. Anchor: `KnowledgeOperation` [195]
@@ -701,3 +685,25 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 - RecordRow requires revision; effect and because keep their separate disposition-dependent and optional rules. [340]
 
 - **Retained historical source account — superseded by the current route account:** Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
+
+- Why a row cannot govern an invariant whose revision the leaf changed. [274]
+
+- The three current responses declare tree read, Git-tree diff and text validation. [270]
+- The optional field (beside the later `currentness`, `families` and, since MIK-R05, `routeChain`) and the docstring boundary. [31]
+- The two payload versions and the family payload's sealed field set. [111]
+- The sealed payload, with the predecessor set inside the digest and the digest field excluded. [97]
+- The retained facade re-exports exact family membership and authored role vocabulary from the historical graph contribution. [113]
+- The historical snapshot contribution no longer forms a whole exported snapshot surface; the retained facade exports KnowledgeReadSnapshot with the recorded-scope read vocabulary. [154]
+- **Historical recorded-scope-read contribution:** The earlier card called this the facade's ninth source and recorded its addition to `__all__`. The current facade retains KNOWLEDGE_READ_POLICY_VERSION with the read models and cursor helpers. Anchor: `KNOWLEDGE_READ_POLICY_VERSION` [180]
+- The retained knowledge-model facade has an explicit re-export list, including the historical graph contribution; this vocabulary declaration is not a live write API. [94]
+- The family record's routes use it. [24]
+- An invariant record carries no second-owner fields. [263]
+
+- The read response's page state and fields, re-read when MIK-R05 added `routeChain`. [33]
+- The optional `families` field on the read response, followed since MIK-R05 by `routeChain`. [45]
+- The invariant identity and revision aggregate, including the display-label-versus-identity separation. [96]
+- The family identity, the immutable revision aggregate and its self-consistency rules. [108]
+- The history schema in the dispatch table. [268]
+- **Retained historical source account — superseded by the current route account:** Text schema dispatch is distinct from legacy writer exports. [303]
+- The history file: one owner, one row per subject, a strict `closed` flag. [265]
+- The reconsideration row retains its own subject and disposition grammar. [66]

@@ -135,16 +135,16 @@
       ]
     },
     "16": {
-      "note": "The lane manifest declares mcp/tests/test_curator_coherence_publication_discoverability.py in unit-regression. Membership is selection, not invocation.",
+      "note": "The unit-regression lane selects mcp/tests/test_curator_coherence_publication_discoverability.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_curator_coherence_publication_discoverability.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
+            "content": "sha256:0060146bbb3b5c2baa12506a71304262d78a482eab41c6ba94c0e2a6d3c2b0b5",
             "locator": {
-              "end": 816,
+              "end": 136,
               "kind": "line_range",
-              "start": 1
+              "start": 136
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

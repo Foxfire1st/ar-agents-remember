@@ -101,12 +101,12 @@
       ]
     },
     "7": {
-      "note": "The call in every writer operation.\n\nAnchor: `write_knowledge`",
+      "note": "The call in every writer operation.",
       "targets": [
         {
           "anchor": {
-            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
-            "content": "sha256:169cd09ef917795325317f364b432751267cf3d46f674364b6e170a89b401570",
+            "blob": "a416f07cd2b10ac1e83cf28c6fdeb362a5938c4f",
+            "content": "sha256:2ab37c36d4e6f06d8f0c9f698b481559d1d7e02d225a274d0708984febda56ac",
             "locator": {
               "kind": "file"
             },

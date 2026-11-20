@@ -313,4 +313,4 @@ No repository or external-system boundary is proved by this module.
 
 - The declared bare-raiser set has ten names. Both-direction census and invocation of declared failure inputs remain source assertions, not this Curator’s execution. [18]
 
-- The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py" [16]
+- The unit-regression lane selects mcp/tests/test_tool_refusal_conformance.py. [16]

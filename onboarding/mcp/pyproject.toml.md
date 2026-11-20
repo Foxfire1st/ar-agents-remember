@@ -182,7 +182,6 @@ later reader does not have to reconstruct it from a report.
 - The MCP console entry point resolves through `agents_remember.mcp.__main__`. [8]
 
 
-- MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. Anchor: `_resolve_server_version` [9]
 
 
 
@@ -211,3 +210,5 @@ later reader does not have to reconstruct it from a report.
 
 
 - Root pytest configuration selects four workers by default. [2]
+
+- MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. Anchor: `_resolve_server_version` [9]

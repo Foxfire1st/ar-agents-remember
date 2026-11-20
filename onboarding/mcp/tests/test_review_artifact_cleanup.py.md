@@ -125,4 +125,4 @@ No cross-repo boundary is crossed by this file.
 
 - The receipt's planned-key set carries the frame-revision class. [10]
 
-- The lane row. Source caption: "mcp/tests/test_review_artifact_cleanup.py" [8]
+- The unit-regression lane selects mcp/tests/test_review_artifact_cleanup.py. [8]

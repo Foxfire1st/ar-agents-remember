@@ -164,4 +164,4 @@ No cross-repo boundary is crossed by this file.
 
 - The cases assert source-current onboarding rows, moved-marker identity preservation and current worklist/blob inputs. [20]
 
-- The unit-lane registration. Source caption: "mcp/tests/test_onboarding_trace_gate.py" [18]
+- The unit-regression lane selects mcp/tests/test_onboarding_trace_gate.py. [18]

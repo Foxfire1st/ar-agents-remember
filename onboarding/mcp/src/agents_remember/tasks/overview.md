@@ -5,7 +5,9 @@
 
 ## Purpose
 
-Code reviewState and the post-landing memoryReviewState are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated.
+Code `reviewState` and the candidate’s pre-closeout `memoryReviewState` are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated.
+
+A memory round can retain the reviewed memory tree, verdict, recorder and original handover stamps. Older rounds omit fields they never stored. Closeout evaluates the last recorded memory round against its selected source before recording the review fact.
 
 `tasks/` owns the persisted `ar-task-document/v1` work-content model and its Markdown rendering. JSON holds plans, progress, decisions, references, review evidence, and optional lifecycle/enclosure bindings. Markdown is a generated view; it is not parsed back into task authority. Light and master documents write to `task.json`/`task.md`; a `subTask` uses its slug. This lets planning and running work share a task-document source while runtime lifecycle, enclosure, Git, and queue owners retain their separate responsibilities.
 
@@ -108,6 +110,8 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 
 
 
+
+
 - Retained reference account (no fresh execution or acceptance inferred): The `task_doc` application entry point authors documents through this package.
 
 
@@ -115,12 +119,10 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 
 - Task intent-review models, rendering, order and normative allowlists share the canonical answer; open review is visible but absent from ready_ids, and the strict agreed revision rides go.
 
-- Retained reference account (no fresh execution or acceptance inferred): The `task_doc` application entry point authors documents through this package. Anchor: `task_doc_tool` [5]
 
 - The master Order table labels a task whose intent review is open in its state cell. [58]
 
 - The persisted route-review record declares the optional base stamp. [56]
-- The exhaustive field taxonomy classifies the stamp as evidence. [57]
 - Retained reference account (no fresh execution or acceptance inferred): Canonical task intent is hashed from the validated normative projection. [1]
 - Retained reference account (no fresh execution or acceptance inferred): Exact task text remains mandatory alongside supplemental packet references. [2]
 - Retained reference account (no fresh execution or acceptance inferred): Task-document publication rejects a route review missing intent identity. [3]
@@ -184,4 +186,12 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Title joins use qualified leaf keys and a separate direct JSON reader [53]
 - A kept view ignores every task document it did not read. [29]
 - A document that begins to claim the leaf is not hidden by a kept view. [30]
-- Code reviewState and the post-landing memoryReviewState are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated. [55]
+
+- The persisted round distinguishes code and memory evidence and carries optional reviewed-tree and writer facts. [59]
+
+- Closeout checks the last recorded memory round. That round must itself pass, name a usable verdict reference and name the exact closeout memory tree. A later block leaves an earlier pass ineligible. [60]
+
+- Retained reference account (no fresh execution or acceptance inferred): The `task_doc` application entry point authors documents through this package. Anchor: `task_doc_tool` [5]
+
+- The exhaustive field taxonomy classifies the stamp as evidence. [57]
+- Code `reviewState` and the candidate’s pre-closeout `memoryReviewState` are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated. [55]

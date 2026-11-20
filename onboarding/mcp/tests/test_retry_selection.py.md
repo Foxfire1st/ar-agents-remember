@@ -58,4 +58,4 @@ Temporary paths and mocks remain local to the test process.
 
 ### Repo-Internal References (continued)
 
-- The suite has explicit unit-regression membership. Source caption: "mcp/tests/test_retry_selection.py" [3]
+- The unit-regression lane selects mcp/tests/test_retry_selection.py. [3]

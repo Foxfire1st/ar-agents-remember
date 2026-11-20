@@ -102,4 +102,4 @@ No cross-repo boundary is crossed by this file.
 
 - The two real repositories used by the repository-backed cases. [1]
 
-- The lane registration. Anchor: "mcp/tests/test_knowledge_worklist.py" Anchor: "mcp/tests/test_knowledge_worklist.py" [15]
+- The unit-regression lane selects mcp/tests/test_knowledge_worklist.py. [15]

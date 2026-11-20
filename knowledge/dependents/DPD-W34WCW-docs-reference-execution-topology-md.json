@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The page holds: the archive change surveys every still-live commanded master before it refuses, names all blocked masters in one refusal, and retires the moving masters' enclosures; the topology digest states execution natures, not the archive's refusals.",
-    "task": "261112-BUG-L7",
+    "statement": "The documented author_execution_graph operation still validates the sprint batch and its judgment references before writing, with dry run retaining its preview behavior.",
+    "task": "261112-KNO-L3",
     "uncommitted": true
   },
   "document": "docs/reference/execution-topology.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_execution_graph_mutations.py"
     },
     {
-      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },

@@ -1,0 +1,55 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Writer binding, exact closeout fact recording, revision selection and reader projection together keep the credited review tied to the content that remains readable after conversion or a crossing."
+  },
+  "guarantee": "The selected memory tree preserves who wrote the retained revision and awards review credit only when that tree contains compatible review evidence for its retained meaning.",
+  "id": "FAM-7NBVYB",
+  "members": [
+    "INV-G8AX2H",
+    "INV-BNDKC8",
+    "INV-B79B38",
+    "INV-X8FRT8",
+    "INV-AV04NY",
+    "INV-PD5ZD5",
+    "INV-69M737",
+    "INV-TRMMZA",
+    "INV-5GEDEX",
+    "INV-KPK1WT",
+    "INV-0R04WY",
+    "INV-Z0FRT0",
+    "INV-1QE8YM"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "revision-standing-authoring.json"
+    },
+    "handoffEntry": "revision-standing-and-provenance",
+    "leaf": "261112-KNO-L3",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/data",
+    "dashboard/src/grammar",
+    "dashboard/src/panels/knowledge-reader",
+    "dashboard/src/panels/review",
+    "docs/guides",
+    "docs/reference",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/mcp/registration",
+    "mcp/src/agents_remember/mcp/tools",
+    "mcp/src/agents_remember/memory",
+    "mcp/src/agents_remember/models/knowledge",
+    "mcp/src/agents_remember/models/knowledge_files",
+    "mcp/src/agents_remember/tasks",
+    "mcp/src/agents_remember/worktrees",
+    "mcp/tests"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Review credit follows the retained revision"
+}

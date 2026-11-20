@@ -69,7 +69,6 @@ curator role: a changed row with the curator's effect while the writer fills the
 family's own revision. The copy holds no contract of its own; the canonical surface
 with its card and the governing history rows carries it.
 
-- The mirror carries the same effect contract as the canonical role. [1]
 
 ## Code Commentary
 
@@ -161,3 +160,5 @@ Read authoring at Curation workflow 1: Reconcile, and card formats/citations at 
 - Curation keeps reconciliation and memory writing with the Curator and the Git transaction with the Manager; the Curator runs no Git write, closeout preview or landing decision. [12]
 
 - The leaf pass starts only on a leaf task document, never taskless; registered tasks belong to a master, and no standalone leaf, fake task, worktree or enclosure is fabricated for the leaf or foundation route. [13]
+
+- The mirror carries the same effect contract as the canonical role. [1]

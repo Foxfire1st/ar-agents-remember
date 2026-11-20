@@ -8,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
+            "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
-              "end": 1186,
+              "end": 347,
               "kind": "line_range",
-              "start": 1
+              "start": 334
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

@@ -88,7 +88,7 @@ both refuse it by name. `KnowledgeDiffCursor` carries `cursor_format =
 the position.
 
 **The closed vocabularies.** `DiffItemKind` (five members), `DiffCoverage` (five), `DiffRecordTransition`
-(six), `DiffOmissionReason` (**four** — `attribution_not_determined` added for the undetermined
+(four), `DiffOmissionReason` (**four** — `attribution_not_determined` added for the undetermined
 bucket) and `DiffLimitation` (**five** — `unknown_attribution_changed_paths` beside
 `unattributed_changed_paths`, two limits and not one: the first says no valid registered attribution
 was established for a measured change, the second says that conclusion could not be reached at all)
@@ -96,7 +96,7 @@ are literals rather than free text, and
 `DiffOmissionReason` is closed on purpose: `assessment_beyond_this_increment` was declared and then
 **removed** in fix round 1 (`L8-F6`'s subject) because nothing in the package constructed it and no
 limitation advertised it — a reason with no producer would be dead vocabulary the validator could not
-check in either direction. `KNOWLEDGE_DIFF_FIELD_NAMES` is the nine compared record fields in declared
+check in either direction. `KNOWLEDGE_DIFF_FIELD_NAMES` is the eight compared record fields in declared
 order; `selection_reasons` is deliberately absent, because which route of a selection reached a record
 is a fact about a traversal and not about the record.
 
@@ -152,9 +152,7 @@ No configured domain documentation could be checked.
 
 - The comparison policy version and the display budget that bounds what a page *shows* and never what the comparison *selected*. [1]
 
-- The closed vocabularies: item kinds, coverage, the four record transitions, the omission reasons and the five limitations. [2]
 
-- **The nine compared record fields in declared order, with `selection_reasons` deliberately absent.** [3]
 - **One side of a comparison: the exact snapshot and the per-side selector that is the one extension to R07's contract.** [4]
 - The display-only budget and the registered-role filter that refuses a repeated role. [5]
 - The request: one selector, two sides, an optional filter, a budget and a position. [6]
@@ -186,3 +184,6 @@ No cross-repository behavior is implemented in this file. Every statement runs a
 caller supplied; no second repository, ledger or coordination path is read.
 
 No meaningful cross-repo references found.
+
+- The closed vocabularies: item kinds, coverage, the four record transitions, the omission reasons and the five limitations. [2]
+- The eight compared fields include the revision's derived lifecycle. Selection reasons describe traversal. [3]

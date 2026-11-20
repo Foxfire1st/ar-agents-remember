@@ -158,6 +158,8 @@ Summary based on the earlier card account, base lines 115–115:
 
 ## Retained Evidence Context
 
+The Curator authors knowledge and supporting judgments while the product owns writer attribution and revision standing. The Reviewer checks the memory candidate, and closeout records the eligible pass for the tree it closes.
+
 ## Evidence
 
 ### Repo-Internal References

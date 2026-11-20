@@ -110,7 +110,6 @@ protocol.
 - The MCP boot seam calling `maybe_autostart_dashboard`. [3]
 
 
-- The version comparator is resolved from installed package metadata. Anchor: `_resolve_server_version` [4]
 
 
 
@@ -144,3 +143,5 @@ it — an **adopted** daemon keeps the cadences it was started with.
 - The daemon ensure the dashboard calls. [5]
 
 - The spawn path the host is not part of. [6]
+
+- The version comparator is resolved from installed package metadata. Anchor: `_resolve_server_version` [4]

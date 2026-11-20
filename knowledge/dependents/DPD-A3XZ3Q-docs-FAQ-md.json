@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The changed index passage correctly limits reuse to the selected memory tree and loaded build, while the unchanged passages were not reverified.",
-    "task": "261112-BUG-L9",
+    "statement": "The affected FAQ passages still describe task_doc as the task-document tool and closeout as the paired commit path, while W10 adds round stamps and a closeout summary sentence when no memory review fact can be recorded.",
+    "task": "261112-KNO-L3",
     "uncommitted": true
   },
   "document": "docs/FAQ.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,7 +66,7 @@
       "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
     },
     {
-      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -96,7 +96,7 @@
       "path": "mcp/src/agents_remember/kernel/coordination_context/setting_values.py"
     },
     {
-      "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+      "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
     },

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "blob": "83cfe34627d9dcaa9894b14c2817c34ce71be7ea",
             "content": "sha256:299743c615d259ed7b09b8321534c39b46b9e6c20e1c02daf7c53cd6d207f3a2",
             "locator": {
               "kind": "symbol",
@@ -31,7 +31,7 @@
         },
         {
           "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "blob": "83cfe34627d9dcaa9894b14c2817c34ce71be7ea",
             "content": "sha256:a7235eb689ee50a623ba937d771de0a219a2e344f41f3225e1a341b1b86bd8c1",
             "locator": {
               "end": 416,
@@ -156,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
             "locator": {
               "kind": "symbol",
@@ -168,7 +168,7 @@
         },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
             "locator": {
               "kind": "symbol",
@@ -180,7 +180,7 @@
         },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:3eb2f7176a3550df9b7a7a2ca0105cfb6a5c57f24a99169106b4587720a1715a",
             "locator": {
               "kind": "symbol",
@@ -192,7 +192,7 @@
         },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:86e0636be3244bdbadf287486e0f5c74204862d312948070ba2364a55edbf612",
             "locator": {
               "kind": "symbol",

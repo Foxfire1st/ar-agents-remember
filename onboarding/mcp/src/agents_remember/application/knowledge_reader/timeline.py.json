@@ -153,12 +153,12 @@
         },
         {
           "anchor": {
-            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
             "content": "sha256:1d293687a1f596d93d27e56a5da315f3e813088c04fc92d5e56929ebdeb5bdc7",
             "locator": {
-              "end": 619,
+              "end": 628,
               "kind": "line_range",
-              "start": 604
+              "start": 613
             },
             "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
           },

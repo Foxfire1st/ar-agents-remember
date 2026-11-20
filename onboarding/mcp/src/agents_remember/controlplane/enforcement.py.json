@@ -50,15 +50,16 @@
       ]
     },
     "3": {
-      "note": "The mutating tool that enforces this policy: `_refuse_unsatisfied_closeout_gate` (deny-only, writes nothing) and `_claim_closeout_gate`, which spends the approval through `GateStore.claim_approval`. It no longer appends an `applied` snapshot itself.\n\nAnchor: `_refuse_unsatisfied_closeout_gate` `_claim_closeout_gate`",
+      "note": "The mutating tool that enforces this policy: `_refuse_unsatisfied_closeout_gate` (deny-only, writes nothing) and `_claim_closeout_gate`, which spends the approval through `GateStore.claim_approval`. It no longer appends an `applied` snapshot itself.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
             "content": "sha256:cac6d7e8019eddb54904ef1e72757b19130d797910982b2981291bbcfa1d4ebc",
             "locator": {
-              "kind": "symbol",
-              "name": "_refuse_unsatisfied_closeout_gate"
+              "end": 558,
+              "kind": "line_range",
+              "start": 533
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -66,11 +67,12 @@
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
             "content": "sha256:a28310bac12091c1f5e8870ff34f8bcc442f82b6f21c1ef16ff82ee02341ddd1",
             "locator": {
-              "kind": "symbol",
-              "name": "_claim_closeout_gate"
+              "end": 614,
+              "kind": "line_range",
+              "start": 561
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -78,12 +80,12 @@
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
             "content": "sha256:0c44ff68863f622c632c6350ac0c94f91f5a7ee931690bc955210efe485fb972",
             "locator": {
-              "end": 588,
+              "end": 537,
               "kind": "line_range",
-              "start": 565
+              "start": 514
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -91,8 +93,8 @@
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
+            "content": "sha256:b277b86f9c8a7e5f12d4d0a6fdb59842ad42989d2ed091022d03dd7af61c8bd8",
             "locator": {
               "kind": "file"
             },

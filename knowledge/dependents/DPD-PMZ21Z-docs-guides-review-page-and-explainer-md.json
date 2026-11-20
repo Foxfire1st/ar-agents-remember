@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The sole changed paragraph is covered: a changed picture or video shows before and after side by side, and an added or removed one names its missing side; a changed Markdown file defaults to a line diff and its rendered toggle draws the after content. The surrounding return/focus and unavailable-change-set sentences remain in that paragraph. No other passage changes in this base-to-tree diff; the rest of the page was not reverified.",
-    "task": "261112-BUG-L7",
+    "statement": "The guide's selected family and invariant rows still show the documented change kinds and Curator history steps, with state and writer now displayed separately from both.",
+    "task": "261112-KNO-L3",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,7 +66,7 @@
       "path": "dashboard/src/panels/review/ChangeBadges.tsx"
     },
     {
-      "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+      "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
       "kind": "file",
       "path": "dashboard/src/panels/review/changeTriage.ts"
     },
@@ -161,7 +161,7 @@
       "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
     },
     {
-      "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
+      "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
       "kind": "file",
       "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
     },
@@ -206,12 +206,12 @@
       "path": "mcp/src/agents_remember/application/master_architect_record.py"
     },
     {
-      "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+      "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
     {
-      "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+      "blob": "d6a81b841bf29a345dc9d7857710af32751ee689",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },

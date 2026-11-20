@@ -192,4 +192,5 @@ The following account describes the earlier fixtures and assertion scope. Its pr
 ## Evidence
 
 - This retained body selects the same recorded family revision on both sides with equal guarantee text: it is unchanged_revision, not a distinct-revision identical_text witness. [15]
+
 - Distinct-revision equal wording is an explicitly synthetic component control, not this captured body or producer acceptance. [16]

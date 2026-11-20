@@ -133,9 +133,7 @@ No Domain Documentation source is configured for this slice.
 
 - `test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection` supplies the current fixture or assertion described above. [21]
 - `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged` supplies the current fixture or assertion described above. [22]
-- The shared read-scope builder uses test-only text/row construction, not the retired canonical writer. [23]
 
-- RowStore writes text-tree fixture rows without the retired production admission plane. [24]
 
 
 ### Docs References
@@ -182,4 +180,7 @@ No meaningful cross-repo references found.
 
 - The count-separation node and the overlapping family's two unique member revisions and membership rows. [31]
 
-- The lane row this module occupies. Anchor: `test_knowledge_read_scope` Anchor: `test_knowledge_read_scope` [34]
+- The unit-regression lane selects mcp/tests/test_knowledge_read_scope.py. [34]
+
+- The shared read-scope builder uses test-only text/row construction, not the retired canonical writer. [23]
+- RowStore writes text-tree fixture rows without the retired production admission plane. [24]

@@ -1,0 +1,24 @@
+{
+  "path": "docs/guides/use-external-memory.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2e85ee5e9b3edd5632d29e1fdc3e9f106a119c71",
+        "content": "sha256:dc52d580060fb3b4e2eb19ec6bb78330b76e147cc21a83fb612e67e52d0f9436",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-86M8QZ",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-W1-05",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Step 4 explains that the qualifying review fact is written in the history closing before derived files refresh, with restoration on refresh failure.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

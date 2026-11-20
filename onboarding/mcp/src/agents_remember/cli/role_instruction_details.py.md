@@ -31,7 +31,6 @@ Preparation calls composition; the receipt restoration path and delayed held-sea
 
 
 
-- Receipt restoration invokes the detail validator. Anchor: `_restore_launch_handover` [4]
 
 
 
@@ -40,3 +39,5 @@ Preparation calls composition; the receipt restoration path and delayed held-sea
 
 - Detail content is link-bound against the shipped corpus and re-digested before it is frozen. [6]
 - The baseline is bound along its instruction origins, and incomplete origins or unbound relative links refuse. [7]
+
+- Receipt restoration invokes the detail validator. Anchor: `_restore_launch_handover` [4]

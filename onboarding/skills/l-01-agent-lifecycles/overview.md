@@ -152,6 +152,8 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 
 ## Retained Evidence Context
 
+Knowledge curation authors the obligation and its scoped judgment. The product supplies the revision's writer stamp and state. A closeout records an eligible memory review in history only for the candidate it closes.
+
 ## Evidence
 
 ### Repo-Internal References

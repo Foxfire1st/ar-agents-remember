@@ -64,37 +64,16 @@
       ]
     },
     "3": {
-      "note": "Ordinary converted-leaf closeout checks its mandatory gate before approval or code publication and validates its exact memory output and recovered output before memory publication.\n\nAnchor: `closeout_result` `_refuse_ungated_memory` `require_gated_recovery`",
+      "note": "Ordinary converted-leaf closeout checks its mandatory gate before approval or code publication and validates its exact memory output and recovered output before memory publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
             "content": "sha256:edee97bbd27e310531ad25d8367e1ce1b68d4f32c367d57c4290d56452db3d99",
             "locator": {
-              "kind": "symbol",
-              "name": "closeout_result"
+              "end": 967,
+              "kind": "line_range",
+              "start": 922
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -102,11 +81,12 @@
         },
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "blob": "3e0ad4a62fe65adb86fac18115c7da4416065bbe",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
-              "kind": "symbol",
-              "name": "_refuse_ungated_memory"
+              "end": 220,
+              "kind": "line_range",
+              "start": 182
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -114,11 +94,34 @@
         },
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "blob": "3e0ad4a62fe65adb86fac18115c7da4416065bbe",
             "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
-              "kind": "symbol",
-              "name": "require_gated_recovery"
+              "end": 499,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
+            "content": "sha256:b277b86f9c8a7e5f12d4d0a6fdb59842ad42989d2ed091022d03dd7af61c8bd8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0ad4a62fe65adb86fac18115c7da4416065bbe",
+            "content": "sha256:c1a362ea32cc6491ccc848bd2f4e93d060a26235c2da93951aaf66f7cdb36a72",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },

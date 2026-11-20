@@ -32,14 +32,29 @@
       ]
     },
     "109": {
-      "note": "Family/member semantic slots preserve guarantees, meanings, realization resolution, evidence and subject worklist; the reading page owns code blocks.\n\nAnchor: `FamilyContent`; `MemberContent`; `SubjectSection`",
+      "note": "Family/member semantic slots preserve guarantees, meanings, realization resolution, evidence and subject worklist; the reading page owns code blocks.\n\nAnchor: FamilyContent, MemberContent, SelectedSlot, SubjectSection",
       "targets": [
         {
           "anchor": {
             "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
-            "content": "sha256:26128e8f78d8e54037c2be706d4b233113047f5091f0e4a12eb5d54544cf4de2",
+            "content": "sha256:e6ac73e890b2efcc985471d47fcf14cb6975ec6b93851f3a5c8a8776fb5cc4c5",
             "locator": {
-              "kind": "file"
+              "end": 586,
+              "kind": "line_range",
+              "start": 510
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:f1e8c080f4ef2623c32e066de816f2e7710da3bb4e37a40910a2389d8147aaca",
+            "locator": {
+              "end": 701,
+              "kind": "line_range",
+              "start": 670
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -48,9 +63,11 @@
         {
           "anchor": {
             "blob": "c954ca8abccc60fe09f526a635ba090b3535e564",
-            "content": "sha256:798250604add5c7ab15e7fc7f6bafea7b9852ba22847205f49750e1d9a75a913",
+            "content": "sha256:b719c9c0e64ab46f011ec9ba8fdcb7f563195cbfa5deeda6939d68345fd168dc",
             "locator": {
-              "kind": "file"
+              "end": 569,
+              "kind": "line_range",
+              "start": 530
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -58,10 +75,12 @@
         },
         {
           "anchor": {
-            "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
-            "content": "sha256:88df129c5fdbbeec63ba5963a4e83a46b0a8bb1775fcc2db9479c708282c349a",
+            "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
+            "content": "sha256:858458909b5b876bd2e7e78275ed3eac8d821d9a70994b373024ca2a6eb3e8f4",
             "locator": {
-              "kind": "file"
+              "end": 260,
+              "kind": "line_range",
+              "start": 190
             },
             "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
           },
@@ -343,26 +362,16 @@
       ]
     },
     "120": {
-      "note": "A history row's line: its effect, and its because targets as links.\n\nAnchor: `HistoryLine`",
+      "note": "History rows show the recorded effect and because targets. Memory targets use links and requirement targets carry an external task-document label.\n\nAnchor: HistoryLine",
       "targets": [
         {
           "anchor": {
-            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
-            "content": "sha256:0299fdde7192815aa80ae6022b3c0a8e1d41987124e92d5bf4d20a74c9f66839",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
             "content": "sha256:8f0364a1d9e46c87d82a0783b085ea47734e60ed52d76929dc4a3e0c4860c292",
             "locator": {
-              "kind": "symbol",
-              "name": "HistoryLine"
+              "end": 495,
+              "kind": "line_range",
+              "start": 464
             },
             "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
           },
@@ -375,7 +384,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
             "content": "sha256:c26126084494697f388bf8f331bad688049ed66e0c86ea9423ed7aa3dfcb1933",
             "locator": {
               "kind": "symbol",
@@ -388,14 +397,29 @@
       ]
     },
     "122": {
-      "note": "Selected semantic details retain the subject worklist/knowledge notice owner; page-level Worklist is separate.\n\nAnchor: `FamilyContent`; `MemberContent`; `SubjectSection`",
+      "note": "Selected semantic details retain the subject worklist/knowledge notice owner; page-level Worklist is separate.\n\nAnchor: FamilyContent, MemberContent, SelectedSlot, SubjectSection",
       "targets": [
         {
           "anchor": {
             "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
-            "content": "sha256:26128e8f78d8e54037c2be706d4b233113047f5091f0e4a12eb5d54544cf4de2",
+            "content": "sha256:e6ac73e890b2efcc985471d47fcf14cb6975ec6b93851f3a5c8a8776fb5cc4c5",
             "locator": {
-              "kind": "file"
+              "end": 586,
+              "kind": "line_range",
+              "start": 510
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:f1e8c080f4ef2623c32e066de816f2e7710da3bb4e37a40910a2389d8147aaca",
+            "locator": {
+              "end": 701,
+              "kind": "line_range",
+              "start": 670
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -404,9 +428,11 @@
         {
           "anchor": {
             "blob": "c954ca8abccc60fe09f526a635ba090b3535e564",
-            "content": "sha256:798250604add5c7ab15e7fc7f6bafea7b9852ba22847205f49750e1d9a75a913",
+            "content": "sha256:b719c9c0e64ab46f011ec9ba8fdcb7f563195cbfa5deeda6939d68345fd168dc",
             "locator": {
-              "kind": "file"
+              "end": 569,
+              "kind": "line_range",
+              "start": 530
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -414,10 +440,12 @@
         },
         {
           "anchor": {
-            "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
-            "content": "sha256:88df129c5fdbbeec63ba5963a4e83a46b0a8bb1775fcc2db9479c708282c349a",
+            "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
+            "content": "sha256:858458909b5b876bd2e7e78275ed3eac8d821d9a70994b373024ca2a6eb3e8f4",
             "locator": {
-              "kind": "file"
+              "end": 260,
+              "kind": "line_range",
+              "start": 190
             },
             "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
           },
@@ -1728,7 +1756,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+            "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
             "content": "sha256:b5f1738f8359738959e02f09313ea92396b9c0c9e3e234851423d161e0577938",
             "locator": {
               "end": 145,
@@ -2676,14 +2704,29 @@
       ]
     },
     "211": {
-      "note": "Current family owners for the review page account.\n\nAnchor: `FamilyContent`; `MemberContent`; `SubjectSection`",
+      "note": "Current family owners for the review page account.\n\nAnchor: FamilyContent, MemberContent, SelectedSlot, SubjectSection",
       "targets": [
         {
           "anchor": {
             "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
-            "content": "sha256:26128e8f78d8e54037c2be706d4b233113047f5091f0e4a12eb5d54544cf4de2",
+            "content": "sha256:e6ac73e890b2efcc985471d47fcf14cb6975ec6b93851f3a5c8a8776fb5cc4c5",
             "locator": {
-              "kind": "file"
+              "end": 586,
+              "kind": "line_range",
+              "start": 510
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:f1e8c080f4ef2623c32e066de816f2e7710da3bb4e37a40910a2389d8147aaca",
+            "locator": {
+              "end": 701,
+              "kind": "line_range",
+              "start": 670
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -2692,9 +2735,11 @@
         {
           "anchor": {
             "blob": "c954ca8abccc60fe09f526a635ba090b3535e564",
-            "content": "sha256:798250604add5c7ab15e7fc7f6bafea7b9852ba22847205f49750e1d9a75a913",
+            "content": "sha256:b719c9c0e64ab46f011ec9ba8fdcb7f563195cbfa5deeda6939d68345fd168dc",
             "locator": {
-              "kind": "file"
+              "end": 569,
+              "kind": "line_range",
+              "start": 530
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -2702,10 +2747,12 @@
         },
         {
           "anchor": {
-            "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
-            "content": "sha256:88df129c5fdbbeec63ba5963a4e83a46b0a8bb1775fcc2db9479c708282c349a",
+            "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
+            "content": "sha256:858458909b5b876bd2e7e78275ed3eac8d821d9a70994b373024ca2a6eb3e8f4",
             "locator": {
-              "kind": "file"
+              "end": 260,
+              "kind": "line_range",
+              "start": 190
             },
             "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
           },
@@ -3117,6 +3164,137 @@
             "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "227": {
+      "note": "The Records branch gives each record row optional state and writer text through the shared formatter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "content": "sha256:da6bb29a84213cac54a04e62bc66e070ca3e1c8808100e3aadca24363d4c06c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "recordRows"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "228": {
+      "note": "The record heading displays supplied revision state and compact writer alongside record status and optional currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "content": "sha256:f673690b626565279523bd132f23983fcbf90fc2fad3c1a1ca308afcc6dccb0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TruthHeader"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "229": {
+      "note": "Record links can display the supplied revision state and writer beside their link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5203dff574d5e8031868eeb4bec33dc0fd64fa4",
+            "content": "sha256:261f966dfd76d07d2d8382230b97e7684bd4494c9c325198aa6c8e9967c34826",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordLink"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/readerParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "230": {
+      "note": "The sidebar formats supplied state and writer through the shared formatter.\n\nAnchor: `recordStandingText`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99703c1a403d4d5cfb4523913a9fadf1d8353520",
+            "content": "sha256:f1e51762ea116b3e15ce3a58d51a5583d908f60e158d986de8aa6c4ab4c756ab",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/RecordStanding.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "231": {
+      "note": "KnowledgeTree passes the optional standing text to ExplorerTree as row detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "content": "sha256:698bf432d174828a4f738aa1ba96d4d31d3d8f1beaeaf47c91ad0ad930494d61",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeTree"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "232": {
+      "note": "ExplorerTree renders the detail as a wrapping second line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+            "content": "sha256:5d711999ee49203da67f581e8c388b562cfa212f6649dc9f1ed8be6fa475a7cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowContent"
+            },
+            "path": "dashboard/src/grammar/ExplorerTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+            "content": "sha256:55fd7bc8ada0f92d48ea379638cd3f573bd16a8f13236b2cbf6684f07a2abf63",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "dashboard/src/grammar/ExplorerTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "233": {
+      "note": "The family detail lists its members through RecordLink.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "content": "sha256:25009c369954228fecdd0671caaa94413eb0d750467a796e1fd33461034a3209",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyPart"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -3787,8 +3965,34 @@
       ]
     },
     "62": {
-      "note": "The catalogue client and subject shape serve reviewer subject navigation; task-entry summary and clickability are separate.\n\nAnchor: `intentReviewEntries` `ReviewEntry`",
+      "note": "The catalogue client and subject shape serve reviewer subject navigation; task-entry summary and clickability are separate.\n\nAnchor: intentReviewEntries, ReviewEntry",
       "targets": [
+        {
+          "anchor": {
+            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "content": "sha256:eb765dff111d1504f248a87db20d7d4cb4486c5354bf5228ca05b65681d3c169",
+            "locator": {
+              "end": 613,
+              "kind": "line_range",
+              "start": 588
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "content": "sha256:abdd1cbe8d6a47bada1d3fd40ae2164bf3c5db68c8165db955bda24317416d81",
+            "locator": {
+              "end": 681,
+              "kind": "line_range",
+              "start": 667
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
@@ -3799,41 +4003,6 @@
               "start": 10
             },
             "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
-            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
-            "content": "sha256:e470c7af378ec882122a77bf080a3c8d115848d26b0bbe570bf422af45d7c4bb",
-            "locator": {
-              "kind": "symbol",
-              "name": "intentReviewEntries"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
-            "content": "sha256:cfc7befc6219e0e7c595423f21071ccb794f0c8622a50e6090535c95f0a6dcc7",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewEntry"
-            },
-            "path": "dashboard/src/data/review.ts"
           },
           "kind": "code"
         }

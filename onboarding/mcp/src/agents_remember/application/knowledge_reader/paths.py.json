@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af90f6f941d94f61cbe62afeef683543347d7244",
-            "content": "sha256:4d30be0f728ae5484c385ae048bb8ac4e89b18907af159fb746a3e7a89223133",
+            "blob": "3537f86d5d00c71d3bcc4b70af109ffc3b0c80b1",
+            "content": "sha256:ac0cb13e1a1ebb3450c5672ff985a080c089004de239758c36154ec3a0cb2449",
             "locator": {
               "kind": "file"
             }
@@ -34,14 +34,15 @@
       ]
     },
     "15": {
-      "note": "The path view, bounded for a directory.",
+      "note": "The path view bounds its directory selection before adding indexed standing to record summaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "af90f6f941d94f61cbe62afeef683543347d7244",
-            "content": "sha256:4d30be0f728ae5484c385ae048bb8ac4e89b18907af159fb746a3e7a89223133",
+            "blob": "3537f86d5d00c71d3bcc4b70af109ffc3b0c80b1",
+            "content": "sha256:38aa74408ff028dd409bf6bd73ef0aed65639d9c73e97fbd9da968bf7dd4bd04",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "path_view"
             }
           },
           "kind": "code"
@@ -53,8 +54,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af90f6f941d94f61cbe62afeef683543347d7244",
-            "content": "sha256:4d30be0f728ae5484c385ae048bb8ac4e89b18907af159fb746a3e7a89223133",
+            "blob": "3537f86d5d00c71d3bcc4b70af109ffc3b0c80b1",
+            "content": "sha256:ac0cb13e1a1ebb3450c5672ff985a080c089004de239758c36154ec3a0cb2449",
             "locator": {
               "kind": "file"
             }
@@ -68,8 +69,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af90f6f941d94f61cbe62afeef683543347d7244",
-            "content": "sha256:4d30be0f728ae5484c385ae048bb8ac4e89b18907af159fb746a3e7a89223133",
+            "blob": "3537f86d5d00c71d3bcc4b70af109ffc3b0c80b1",
+            "content": "sha256:ac0cb13e1a1ebb3450c5672ff985a080c089004de239758c36154ec3a0cb2449",
             "locator": {
               "kind": "file"
             }
@@ -99,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af90f6f941d94f61cbe62afeef683543347d7244",
+            "blob": "3537f86d5d00c71d3bcc4b70af109ffc3b0c80b1",
             "content": "sha256:508158b02186098c8205c3d60111f154e867cfbe90511698cab10591f538c09f",
             "locator": {
               "kind": "symbol",
@@ -115,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af90f6f941d94f61cbe62afeef683543347d7244",
+            "blob": "3537f86d5d00c71d3bcc4b70af109ffc3b0c80b1",
             "content": "sha256:d421475263957c9812437a6f80cc83f8e5d9b6fab510857be31e35e83e2450ac",
             "locator": {
               "kind": "symbol",
@@ -131,12 +132,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af90f6f941d94f61cbe62afeef683543347d7244",
+            "blob": "3537f86d5d00c71d3bcc4b70af109ffc3b0c80b1",
             "content": "sha256:ce5b6dfb907e660372612ef1500215043c11f7531604d1d16c0186bc9f61a5ac",
             "locator": {
               "kind": "symbol",
               "name": "_directory_summary"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "One query looks up the state and writer for summaries of records held by the selected index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0f2bb8ac268b4084a576647745a5e6165b31a6b",
+            "content": "sha256:f11051c5eb035fd072aca680cbdb929398e6ea6abd72cab6d861bf5e82c89e4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "stamp_summaries"
+            },
+            "path": "mcp/src/agents_remember/application/record_standing_answers.py"
           },
           "kind": "code"
         }

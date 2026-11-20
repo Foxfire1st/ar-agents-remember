@@ -81,4 +81,4 @@ No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
 
-- The lane row. Anchor: `test_knowledge_index_reuse` Anchor: `test_knowledge_index_reuse` [13]
+- The unit-regression lane selects mcp/tests/test_knowledge_index_reuse.py. [13]

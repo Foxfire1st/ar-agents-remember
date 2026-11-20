@@ -48,7 +48,7 @@ The three cases:
 The module imports exactly two names — `TerminalResult` and `terminal_result_blockers` — from the validator, with no test-support import. This direct import shape does not establish absence of evidence-catalog dependencies: the catalog declares this module as a consumer of the global user-settings guard and Node lockfile artifacts. Its five helpers construct typed terminal results or plain snapshot dictionaries for the assertions.
 
 **The current lane registration is the manifest row**: this module carries **no `pytestmark`** and appears in
-`unit-regression` at `mcp/tests/test-evidence-lanes.toml:604`. Membership selects evidence and establishes no execution.
+`unit-regression` at `mcp/tests/test-evidence-lanes.toml:615`. Membership selects evidence and establishes no execution.
 
 
 ### Invariants And Boundaries
@@ -154,4 +154,4 @@ No meaningful cross-repo references found.
 
 - The drift-snapshot branch uses a preview-aware expectation; its adjacent comment records the earlier missing-keyword cause and merge provenance. [2]
 
-- The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution. [13]
+- The unit-regression lane selects mcp/tests/test_terminal_preview_expectation.py. Execution evidence is recorded separately. [13]

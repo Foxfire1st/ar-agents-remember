@@ -63,7 +63,6 @@ No Domain Documentation source is configured for this slice.
 
 
 
-- Test-only RowStore mutates a text tree and rebuilds the derived index; it is not a shipped validating write-admission plane. [26]
 
 
 
@@ -91,4 +90,6 @@ No Domain Documentation source is configured for this slice.
 - The removed records collection is a named refusal on first, unsized, continued and crossed requests. The serialized guard requires the evidence field to be absent, not an empty measured channel. [22]
 - PaginationFixture holds shared test-support fixture state and builds its request/resolution; build_pagination_fixture composes that fixture. Neither is shipped public-store write admission. [29]
 
-- One unit-regression membership and seven exact-scope lifecycle artifact records name this module. These source declarations are neither a six-row census nor test execution. [42]
+- The lifecycle catalog lists `test_review_bounded_pagination.py` as an exact consumer of `_user_settings_guard.py`, `anchor_fixture_models.py`, `diff_scope_test_support.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_review_fact_test_support.py`, `knowledge_row_codec_test_support.py`, `knowledge_rows_test_support.py`, `read_scope_test_support.py`. [42]
+
+- Test-only RowStore mutates a text tree and rebuilds the derived index; it is not a shipped validating write-admission plane. [26]

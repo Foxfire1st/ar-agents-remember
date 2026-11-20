@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Conversion preserves record meaning and old closed history bytes."
+  },
+  "applicability": "The one-time conversion from typed standing to writer and review evidence for old records.",
+  "conditions": [
+    "The conversion examines readable owner documents and usable legacy review evidence before writing."
+  ],
+  "exclusions": [
+    "Existing closed history bytes remain frozen."
+  ],
+  "id": "INV-69M737",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_state_conversion_proof.py::test_conversion_attributes_the_retained_meaning, mcp/tests/test_knowledge_state_conversion_proof.py::test_identical_legacy_edits_stay_reviewed, paired census, and W10 expanded evidence."
+      ],
+      "path": "revision-standing-authoring.json"
+    },
+    "handoffEntry": "L3-W1-07",
+    "leaf": "261112-KNO-L3",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The state conversion removes typed proposed and accepted, attributes old revisions where the stored evidence identifies them, and records only substantiated review facts. An unreadable JSON task file stops the run with its location. A readable document whose owner or review cannot be used is reported with a reason while other owners convert. Before applying memory changes, the CLI flushes the full report to standard output when no report path is given. With --report it writes the named report before the memory files and retains it if rollback leaves any memory change. The conversion preserves statements, conditions, links, and closed history files. Running it again changes nothing. When genuine legacy changed rows compete at one revision, the conversion asks their archived pass trees for the retained meaning before stamping a writer. A sole exact owner can be named. Exact reviews of identical retained meaning from multiple old writers give one reviewed credit under the unknown writer.",
+  "status": "proposed",
+  "supersedes": []
+}

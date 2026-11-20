@@ -102,7 +102,6 @@ TaskDocResponse adds optional alignmentSweep. Its strict nested model declares t
 ## Evidence
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [8]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [9]
 - Record-only memory identity comes from memory authority, never the sibling code root. [10]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [11]
@@ -181,7 +180,6 @@ Anchor:
 
 Source: mcp/src/agents_remember/models/task_doc.py
 
-- The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. [4]
 
 
 - The response model declares optional retirement record, state, readiness, preview and archive-result fields for retire_master. [6]
@@ -190,3 +188,7 @@ Source: mcp/src/agents_remember/models/task_doc.py
 
 
 - TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Removed-read refusal permits missing parsed identity only for ok=false/code=operation-removed; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional `masterSync` carries its error, masterDocPath and renderedPath fields; updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused. [7]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [8]
+
+- The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. [4]

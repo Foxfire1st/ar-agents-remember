@@ -1,6 +1,6 @@
 {
   "anchor": {
-    "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+    "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
     "content": "sha256:e4818a9a1e3df6db6852879d0f9c00605c02d08776cd26e58b6b15b9d74d38dc",
     "locator": {
       "kind": "symbol",
@@ -18,7 +18,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",

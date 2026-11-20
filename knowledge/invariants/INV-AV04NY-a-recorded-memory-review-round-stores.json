@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The closeout fact uses the handover seat stored by the review round rather than later registration."
+  },
+  "applicability": "Recording a leaf memory review and consuming its result in that leaf's closeout.",
+  "conditions": [
+    "The first recording resolves the registered handover seat at the recorder's time.",
+    "Only a passed last memory round with a usable verdict reference for the exact memory tree supplies the closeout fact."
+  ],
+  "exclusions": [
+    "A record-only correction preserves the original handover stamp.",
+    "Code review and an unmatched earlier pass supply no memory review fact."
+  ],
+  "id": "INV-AV04NY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_closeout_review_fact.py (41 collected tests, including one per hand-over class: one Curator, replaced before and after the recording, retired, rejected, two active, a Consolidator, messages of any number and order); mcp/tests/test_memory_review_lane.py (record-only corrections after a replacement, retirement or second registration; PASS to BLOCK and back; a changed memory refused) mcp/tests/test_handover_registered_stamp.py (19 collected tests: the receipt naming the leaf by repository and path, one seat in two files, receipt values no stamp can hold) and test_memory_review_lane.py::test_a_record_only_correction_keeps_the_hand_over_stamped_when_the_round_was_recorded (5 cases) and ::test_a_round_turned_to_block_and_back_keeps_its_hand_over_and_other_memory_needs_a_round."
+      ],
+      "path": "revision-standing-authoring.json"
+    },
+    "handoffEntry": "L3-W1-05",
+    "leaf": "261112-KNO-L3",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A recorded memory review round stores the memory tree the Reviewer names, its verdict, the stamp of the agent recording it, and the stamp of the agent that handed the memory change over: the one Curator or Consolidator registered as active on the leaf when the round is recorded (the one seat whose current launch receipt names the leaf by repository and path, read as a task document reference, neither stopped nor rejected; receipts of one seat count once), at the recording's time; with none or several registered, or a receipt value no stamp can hold, unknown with the reason, and the round is recorded all the same. No message decides it, and a record-only correction of the same round (its verdict or verdict reference) renews the recorder and keeps that stamp; a changed memory needs a new round, stamped anew. Closeout writes the fact of the last recorded memory round only when that round passed (a recorded block never does), names a usable verdict reference (trimmed, printable, within the reference length) and its tree equals the memory checkout's tree at closeout; it is written in the same write that closes the latest attempt's history file, before the derived files are renewed.  A fresh successful closeout that closes open history without an eligible fact emits the no-pass sentence when the history bytes change. Already-closed history emits no fresh sentence. A recovery answer can derive the sentence from the published memory commit when the latest owner history is readable, closed and has no review fact.",
+  "status": "proposed",
+  "supersedes": []
+}

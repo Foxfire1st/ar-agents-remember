@@ -75,7 +75,6 @@ No configured live documentation source was available for this pass.
 - Only the owner's open row with the old `after` is updated. [6]
 
 
-- The call in every writer operation. [7]
 
 
 
@@ -98,3 +97,5 @@ No meaningful cross-repo references found: the carry edits the in-memory state o
 one code snapshot.
 
 No cross-repo boundary is crossed by this file.
+
+- The call in every writer operation. [7]

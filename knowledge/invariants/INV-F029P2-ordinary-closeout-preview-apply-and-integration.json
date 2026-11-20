@@ -10,12 +10,13 @@
     "For every named phase, compare raw current pristine/unrelated-grant answers after only the explicit volatility/root scrub before any take-out.",
     "The baseline-only subprocess maps its own leaf_preview/leaf_apply written, unchanged and staleIndexes facts to refreshedCount, unchangedCount and staleCount; it has no current/grant result available to copy.",
     "The existing conversion-marker row/count/gate scaffolding is separately attributed, and only the four named removed seat fields are taken from the baseline side. Current route-index count keys are not removed; the original post-normalization equality assertions remain.",
-    "After raw current pristine/unrelated-grant equality, the current comparison driver adapts the baseline response alone: origin-feat labels use origin/ followed by contract.code_work_branch and origin-main labels use origin/ followed by contract.code_source_branch; an empty branch value uses main. It reads the contract the baseline answer names, leaves a response without a readable contract unchanged, and passes other rows and fields through."
+    "After raw current pristine/unrelated-grant equality, the current comparison driver adapts the baseline response alone: origin-feat labels use origin/ followed by contract.code_work_branch and origin-main labels use origin/ followed by contract.code_source_branch; an empty branch value uses main. It reads the contract the baseline answer names, leaves a response without a readable contract unchanged, and passes other rows and fields through.",
+    "After current equality is established, the baseline comparison removes exactly one no-review note from each current leaf_apply summary and none from any other phase."
   ],
   "exclusions": [
     "Raw timestamps, root paths and other scrubbed values are not claimed byte-identical.",
     "A direct granted leaf is outside this preservation comparison.",
-    "Unqualified raw baseline byte equality: the named conversion, baseline-only four-seat-field removal, contract-derived landing-label adaptation and baseline producer count-shape mapping qualify the comparison; generic metadata suppression and alteration of product answers are excluded."
+    "The named comparison adaptations apply only to the exact fields and summaries above. They preserve current route-index counts and leave the operation responses intact."
   ],
   "id": "INV-F029P2",
   "origin": {
@@ -29,9 +30,9 @@
     "leaf": "260928-MIK-L94",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "Ordinary enclosed leaf/master preview, apply and integration answers are grant-inert: current pristine and unrelated-grant responses compare equal after the explicit volatility/root scrub before any adaptation; the pre-change baseline compares equal to both after the named conversion, baseline-only removed-seat-field and contract-derived landing-label adaptations, with its own leaf route-index facts mapped to the current count shape by the baseline producer. No route-index counts are suppressed in current answers.",
+  "statement": "Ordinary enclosed leaf/master preview, apply and integration answers are grant-inert: current pristine and unrelated-grant responses compare equal after the explicit volatility/root scrub before any adaptation; the pre-change baseline compares equal to both after the named conversion, baseline-only removed-seat-field and contract-derived landing-label adaptations and the exact current leaf_apply review-note adaptation, with its own leaf route-index facts mapped to the current count shape by the baseline producer. No route-index counts are suppressed in current answers.",
   "status": "proposed",
   "supersedes": []
 }

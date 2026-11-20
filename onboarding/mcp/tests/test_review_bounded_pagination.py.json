@@ -96,12 +96,12 @@
       ]
     },
     "26": {
-      "note": "Test-only RowStore mutates a text tree and rebuilds the derived index; it is not a shipped validating write-admission plane.\n\nAnchor: `RowStore`",
+      "note": "Test-only RowStore mutates a text tree and rebuilds the derived index; it is not a shipped validating write-admission plane.",
       "targets": [
         {
           "anchor": {
-            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
-            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
+            "blob": "63570d7606856b5028b51268077f62b8b3d27781",
+            "content": "sha256:a9a84c441f17b2b5a04d286f7aa9739d56b5e38f1cee90c5bef9ed86359d81fe",
             "locator": {
               "kind": "file"
             },
@@ -407,16 +407,107 @@
       ]
     },
     "42": {
-      "note": "One unit-regression membership and seven exact-scope lifecycle artifact records name this module. These source declarations are neither a six-row census nor test execution.",
+      "note": "The lifecycle catalog lists `test_review_bounded_pagination.py` as an exact consumer of `_user_settings_guard.py`, `anchor_fixture_models.py`, `diff_scope_test_support.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_review_fact_test_support.py`, `knowledge_row_codec_test_support.py`, `knowledge_rows_test_support.py`, `read_scope_test_support.py`.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:e2a8e4c31fb4ca6af5072c937e5a80c93c070373bc33e66e37f9bc594c785241",
             "locator": {
-              "end": 5062,
+              "end": 886,
               "kind": "line_range",
-              "start": 1
+              "start": 65
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:d624b4e46fc9e6924d901d658a4c8250a47841ebaed91fe7442d2d311d7c52b5",
+            "locator": {
+              "end": 980,
+              "kind": "line_range",
+              "start": 887
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:880ceed72bf38b6c86651c63583c5a736e415f22a6d216a3ea47895e1e9ae8b2",
+            "locator": {
+              "end": 1367,
+              "kind": "line_range",
+              "start": 1330
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:f949d4a324dbc44d81a8d069eb004a8da1c07c67afe1e35b58cc0af412851b62",
+            "locator": {
+              "end": 3272,
+              "kind": "line_range",
+              "start": 2451
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:67ec7973d3552deddaf52c20d2b210b53b8e9366258ee80b60c209c5fa4b7f81",
+            "locator": {
+              "end": 3698,
+              "kind": "line_range",
+              "start": 3643
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:f305c30dec61d95487dd0f32112478a9ad86885bbb7f6d4b07db0aff15dd7485",
+            "locator": {
+              "end": 3736,
+              "kind": "line_range",
+              "start": 3699
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:5c44c64b5658f3a03a2abe5c88d0b21b75508df51e17fe03352ee7e8f7247a89",
+            "locator": {
+              "end": 3830,
+              "kind": "line_range",
+              "start": 3737
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:f91efbdb1205da8ca9fedccd2de9d609fdb0f1e96c0e0868e17980da602f005a",
+            "locator": {
+              "end": 4340,
+              "kind": "line_range",
+              "start": 4291
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

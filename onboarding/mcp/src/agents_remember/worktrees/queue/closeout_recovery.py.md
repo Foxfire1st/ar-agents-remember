@@ -16,6 +16,8 @@ Recovery proves accepted code trees, exact code and memory refs, and journaled m
 
 ### Logic
 
+`MemoryCloseoutOutcome` can carry a review note. Resuming an interrupted external pair derives it from the latest owner history in the already-proven memory commit. A closed history without a review fact yields the same no-pass sentence used in the ordinary closeout result.
+
 `MemoryCloseoutOutcome` carries the real memory output plus onboarding/entity/route refresh data. Its `ledger_repair` field is informational cache status only. `prove_closeout_recovery_commits` requires the recorded code commit to equal the actual leaf HEAD or exact series work ref; non-external modes refuse an unexpected external-memory output.
 
 `_prove_memory_output` requires a nonempty accepted memory output, reads the exact named series ref or clean leaf HEAD, and proves that the accepted memory base is its ancestor. Leaf cleanliness excludes only root `memory.md`; source content changes still refuse. Cache refresh occurs after the proof and cannot replace it.
@@ -40,6 +42,10 @@ None recorded.
 
 ## Evidence
 
+- After joining the proven outputs, recovery reconstructs the note from the committed owner history. [6]
+- A closed owner history without a review fact yields the no-pass sentence. [7]
+
+
 ### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
@@ -50,13 +56,10 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-- `MemoryCloseoutOutcome` contains the memory commit and informational refresh results. [1]
 - `prove_closeout_recovery_commits` proves exact output refs without consulting a cache table. [2]
 - `_prove_memory_output` checks memory source ancestry and substantive cleanliness before best-effort cache refresh. [3]
 
-- `accepted_code_commit` commits or reuses the exact accepted code tree and records its proof. [4]
 
-- `resume_external_commits` re-proves existing memory output and republishes only the code/memory pair. [5]
 
 The current recovery primitives below establish exact two-output proof and cache-independent resumption.
 
@@ -90,3 +93,8 @@ The current seams are `MemoryCloseoutOutcome`, `prove_closeout_recovery_commits`
 The removed `integration/closeout/ledger_recovery.py` classified ledger byte/tree contradictions and recovered a third ledger mutation. That behavior is intentionally gone. Its durable principles remain here: recovery advances only proved outputs, recorded commit identity is immutable, and queue state cannot substitute for journal evidence. There is no current source owner for reconstructing a ledger commit, so its old one-to-one sidecar is retired.
 
 The old sidecar's 2026-08-25 creation provenance was: “Created during PDLS whole-system reconciliation after source and requirement review. Verification remains closeout-owned.” This records the retired owner's history; it does not claim current ledger authority.
+
+- `accepted_code_commit` commits or reuses the exact accepted code tree and records its proof. [4]
+
+- `MemoryCloseoutOutcome` contains the memory commit and informational refresh results. [1]
+- `resume_external_commits` re-proves existing memory output and republishes only the code/memory pair. [5]

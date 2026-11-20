@@ -62,7 +62,6 @@ usesRequestReceipts separates per-request execution cardinality from isTasklessR
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [6]
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [7]
 
 - Reason admission, threshold and differing-harness/model inheritance boundary. [8]
 
@@ -72,3 +71,5 @@ usesRequestReceipts separates per-request execution cardinality from isTasklessR
 - The same start-only reason enters saved retry payload and POST body. [10]
 
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [11]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [7]

@@ -321,12 +321,12 @@
       ]
     },
     "17": {
-      "note": "The tree receives the shared records loader.\n\nAnchor: `KnowledgeTree`",
+      "note": "The tree receives the shared records loader.",
       "targets": [
         {
           "anchor": {
-            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
-            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "content": "sha256:dcc316e5573cb6e252fc3cc09adfb2e033a0b132e31660922c09d6992c552942",
             "locator": {
               "kind": "file"
             },

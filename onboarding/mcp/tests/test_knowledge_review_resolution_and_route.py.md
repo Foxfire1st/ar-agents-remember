@@ -107,4 +107,4 @@ No meaningful cross-repo references found.
 
 - The surface module's config that names no real root, and the render helper that puts the previous identity on the request. [19]
 
-- The module's own unit-regression lane row. [26]
+- The unit-regression lane selects mcp/tests/test_knowledge_review_resolution_and_route.py. [26]

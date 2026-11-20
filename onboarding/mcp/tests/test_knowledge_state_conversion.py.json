@@ -1,0 +1,74 @@
+{
+  "path": "mcp/tests/test_knowledge_state_conversion.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4972165064a9b44dce0806074b4f8b8e332ff99f",
+        "content": "sha256:507aad14ed7db19f55d8014d5c2f939ab6b338f520e018455e07276294c9ba4c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_meaning_changes_and_frozen_history_stays_byte_identical"
+        }
+      },
+      "facet": "Conversion preserves record meaning and old closed history bytes.",
+      "id": "PRF-F9F2M5",
+      "invariant": "INV-69M737",
+      "origin": {
+        "handoffEntry": "L3-W1-07",
+        "leaf": "261112-KNO-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The conversion preserves meaning and frozen history bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4972165064a9b44dce0806074b4f8b8e332ff99f",
+            "content": "sha256:507aad14ed7db19f55d8014d5c2f939ab6b338f520e018455e07276294c9ba4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_meaning_changes_and_frozen_history_stays_byte_identical"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Repeating the conversion leaves its output unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4972165064a9b44dce0806074b4f8b8e332ff99f",
+            "content": "sha256:7c9f851d282aa91f5793755989e914c9b3e5212e02a2326f2d8940566473a57d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_second_run_changes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A report write failure leaves the fixture memory unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4972165064a9b44dce0806074b4f8b8e332ff99f",
+            "content": "sha256:1628578c4abda7bef2a9d2ede2ab251abc31049fc0e0aa9a56a931c6d4609174",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unwritable_report_leaves_the_memory_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

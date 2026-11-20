@@ -18,7 +18,7 @@ Otherwise the gate is unchanged. **Applicability (rule 6).** `converted_memory(r
 
 `landing_document_answer(contract, code_commit=…, memory_commit=…, master_end=False)` is the stale-document field the landing routes' answers carry (MIK-R124 rule 4): the count of documents the landing made stale — stale at its tip and current or without a record at its base — and the read that lists them, absent where there are none. It answers `None` on an unconverted line, and a state it cannot compute is answered `uncomputable` with its detail and refuses nothing here. `master_end=True` is the master's own line: every document is examined, and one already stale at the base is named as well (`answer(name_already_stale=master_end)`), so a series landing catches the debt a net-zero change would hide. The exclusive prepared-closeout refusal/lock and its unclosable-history constant were removed; the ordinary gate, cutover, closing and receipt owners survive.
 
-`close_owner_history(memory_root, owner)` sets `closed: true` in the owner's latest history file and returns a `HistoryClosing` whose `restore()` returns whether it restored owned bytes, preserving a concurrent edit instead of overwriting it. A direct landing's closing outlives the call in per-generation receipts (`keep_direct_closing` / `forget_direct_closing` / `settle_direct_closing`); a restore happens only while the file's bytes still equal the closed bytes, so a later edit is never overwritten. A probe Git cannot answer is never unconverted memory.
+`close_owner_history` closes the owner's latest history file, creating one for an owner without history. The same update can add the review fact already qualified by the closeout caller. An already closed file remains byte-identical. It returns a `HistoryClosing` whose `restore()` returns whether it restored owned bytes, preserving a concurrent edit instead of overwriting it. A direct landing's closing outlives the call in per-generation receipts (`keep_direct_closing` / `forget_direct_closing` / `settle_direct_closing`); a restore happens only while the file's bytes still equal the closed bytes, so a later edit is never overwritten. A probe Git cannot answer is never unconverted memory.
 
 ## Evidence
 
@@ -31,3 +31,5 @@ Otherwise the gate is unchanged. **Applicability (rule 6).** `converted_memory(r
 - Disabled contract refused before the direct verdict [22]
 
 - Conversion probe reads one marker, nothing else [23]
+
+- The owner history closing adds an eligible review fact only in the same write that closes the file. [24]

@@ -439,16 +439,29 @@
       ]
     },
     "40": {
-      "note": "The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event.",
+      "note": "The lifecycle catalog lists `test_knowledge_worklist_leaf.py` as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:e2a8e4c31fb4ca6af5072c937e5a80c93c070373bc33e66e37f9bc594c785241",
             "locator": {
-              "end": 5062,
+              "end": 886,
               "kind": "line_range",
-              "start": 1
+              "start": 65
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:f949d4a324dbc44d81a8d069eb004a8da1c07c67afe1e35b58cc0af412851b62",
+            "locator": {
+              "end": 3272,
+              "kind": "line_range",
+              "start": 2451
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

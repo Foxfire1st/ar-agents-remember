@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The retained-branch tests use the same revision in two trees and assert one copy of the wording with both side-labelled states."
+  },
+  "applicability": "The admitted intent-review comparison of recorded family guarantees.",
+  "conditions": [
+    "Each available operand comes from its own selected memory tree."
+  ],
+  "exclusions": [
+    "A side without a recorded guarantee supplies no guarantee state."
+  ],
+  "id": "INV-1QE8YM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/review/FamilyGuarantees.retainedBranch.test.tsx::\"names each side of one revision whose state differs between the two trees\""
+      ],
+      "path": "wave5-knowledge-staging.json"
+    },
+    "handoffEntry": "L3-CURATOR-family-guarantee-standing",
+    "leaf": "261112-KNO-L3",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each recorded family guarantee in a comparison carries its own tree-derived revision state. When the guarantee wording is displayed once, the view still names the state of each available side.",
+  "status": "proposed",
+  "supersedes": []
+}

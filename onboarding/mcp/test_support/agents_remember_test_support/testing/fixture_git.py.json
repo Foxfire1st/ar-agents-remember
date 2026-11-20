@@ -1,0 +1,23 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/fixture_git.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The command wrapper supplies a fixture home and disables system Git configuration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac6fd33c3066f18fa02d845d5c36c951fe8e3122",
+            "content": "sha256:73c6fa25e7f8336ff5f38f30cf8bfe85f5b626db084cf0ea1923c63fb0ff4df0",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture_git"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

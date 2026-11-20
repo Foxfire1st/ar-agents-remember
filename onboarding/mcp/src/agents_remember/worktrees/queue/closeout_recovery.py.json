@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
+        "content": "sha256:fa3bd984572f5f562ac0626d51f707e678062f4adea29a00820fd9583b360d12",
+        "locator": {
+          "end": 107,
+          "kind": "line_range",
+          "start": 98
+        }
+      },
+      "id": "RLZ-00FFQF",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-AV04NY",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "A recovered memory closeout carries the retained no-pass sentence as outcome data.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
         "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
         "locator": {
           "kind": "symbol",
@@ -21,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
         "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
         "locator": {
           "kind": "symbol",
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
         "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
         "locator": {
           "kind": "symbol",
@@ -57,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
         "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
         "locator": {
           "kind": "symbol",
@@ -75,7 +94,26 @@
     },
     {
       "anchor": {
-        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
+        "content": "sha256:618cf2396b0386ea34dac04232f1ed270d6f420f242ae6c9258f7534aee4a034",
+        "locator": {
+          "end": 250,
+          "kind": "line_range",
+          "start": 228
+        }
+      },
+      "id": "RLZ-GCDQ83",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-AV04NY",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Recovery reads the committed history to reproduce the absent-review sentence.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
         "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
         "locator": {
           "kind": "symbol",
@@ -98,11 +136,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
-            "content": "sha256:8a32424d760853fa1b67080bf0345a3697e17d8e36a2f566b7c316947f6c30d8",
+            "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
+            "content": "sha256:9cebb7b3f1d0de3adec862d18cf0d59fcb46b605f7a1f0ecd2824ccb73ce9f1b",
             "locator": {
-              "kind": "symbol",
-              "name": "MemoryCloseoutOutcome"
+              "end": 107,
+              "kind": "line_range",
+              "start": 97
             }
           },
           "kind": "code"
@@ -114,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+            "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
             "content": "sha256:9aad08be1ba59d94bac34779f4a1dcf871999eb945971a94b30b49b7bbce6c26",
             "locator": {
               "kind": "symbol",
@@ -130,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+            "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
             "content": "sha256:4ec7e5239cb2836f0be017bc1d72d991a80014f4b1494dee12da1c692c9a904b",
             "locator": {
               "kind": "symbol",
@@ -142,14 +181,16 @@
       ]
     },
     "4": {
-      "note": "`accepted_code_commit` commits or reuses the exact accepted code tree and records its proof.\n\nAnchor: `accepted_code_commit`",
+      "note": "`accepted_code_commit` commits or reuses the exact accepted code tree and records its proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
-            "content": "sha256:bcba18d10ee8657c7388d046f618a17d2e60dde2fa141df01607d61149bd8bcc",
+            "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
+            "content": "sha256:585c25b079eb8658b5aca68274c8e1cc1c12304fd3ad9ba7f0cfa55eecd1103a",
             "locator": {
-              "kind": "file"
+              "end": 227,
+              "kind": "line_range",
+              "start": 155
             }
           },
           "kind": "code"
@@ -161,12 +202,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
-            "content": "sha256:9a29e5ed527c5587233cfc90ef255470ccc36cafca5122584a3ffd0709152adf",
+            "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
+            "content": "sha256:07e6d6b0ba959f056b83ebeb7d413baad4f52c1e3c7327a713547b4a2f284e70",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 230
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "After joining the proven outputs, recovery reconstructs the note from the committed owner history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f31a2fc8742a076680b33b6a5f26dae1e3df613b",
+            "content": "sha256:07e6d6b0ba959f056b83ebeb7d413baad4f52c1e3c7327a713547b4a2f284e70",
             "locator": {
               "kind": "symbol",
               "name": "resume_external_commits"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A closed owner history without a review fact yields the no-pass sentence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fef49ae4f3c1bf291de3554c41049c496946862",
+            "content": "sha256:aa8c936b5ee5d85a5378dc1d610ad3b4cc65aeff23be682c8cb1e73c0a8f0431",
+            "locator": {
+              "kind": "symbol",
+              "name": "committed_review_note"
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_note.py"
           },
           "kind": "code"
         }

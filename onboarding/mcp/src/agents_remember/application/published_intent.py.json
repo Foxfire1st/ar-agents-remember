@@ -651,7 +651,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "blob": "467b6e3bb025fa7895853353aab838036e694400",
             "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
             "locator": {
               "kind": "symbol",
@@ -663,7 +663,7 @@
         },
         {
           "anchor": {
-            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "blob": "467b6e3bb025fa7895853353aab838036e694400",
             "content": "sha256:f3cb1bd7f572fa66e1810151147f0becc5e5e03ef25b799505dc9b2170d5352a",
             "locator": {
               "kind": "symbol",
@@ -675,7 +675,7 @@
         },
         {
           "anchor": {
-            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "blob": "467b6e3bb025fa7895853353aab838036e694400",
             "content": "sha256:f8e3ec9f481b6c3fe4e8502991e33c32b9e42fc88b0aedfa64356bdab872e7ad",
             "locator": {
               "kind": "symbol",
@@ -687,7 +687,7 @@
         },
         {
           "anchor": {
-            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "blob": "467b6e3bb025fa7895853353aab838036e694400",
             "content": "sha256:9b2ce949d089c615aee2c784b6707dee74a54f8fe1fdc73112a59cae790ffb13",
             "locator": {
               "kind": "symbol",
@@ -707,8 +707,9 @@
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
             "content": "sha256:c7a3c663a631295cd6520f0f7af9a8b2412d8b133a2d066dffc537a0bfb37cab",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeRefusal"
+              "end": 239,
+              "kind": "line_range",
+              "start": 229
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },
@@ -716,11 +717,12 @@
         },
         {
           "anchor": {
-            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
-            "content": "sha256:229d6951f9312db22ea5864e71458b0204ad596ddbe42d4e9aec450b33f8598f",
+            "blob": "467b6e3bb025fa7895853353aab838036e694400",
+            "content": "sha256:e7289ad2d6b0a77b0d1ca5f2d852f19764c7270fd8c57d8509698972f7ba431d",
             "locator": {
-              "kind": "symbol",
-              "name": "ReadItem"
+              "end": 366,
+              "kind": "line_range",
+              "start": 329
             },
             "path": "mcp/src/agents_remember/models/knowledge/read.py"
           },

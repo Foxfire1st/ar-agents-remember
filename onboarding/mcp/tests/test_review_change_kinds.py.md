@@ -143,4 +143,4 @@ The index-only outline case includes `comparison` in the exact serialized field 
 
 - The index-only outline preserves exact catalogue fields including comparison. [13]
 
-- Its lane row. Anchor: "mcp/tests/test_review_change_kinds.py" Anchor: "mcp/tests/test_review_change_kinds.py" [7]
+- The unit-regression lane selects mcp/tests/test_review_change_kinds.py. [7]

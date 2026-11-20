@@ -1,0 +1,91 @@
+{
+  "path": "mcp/tests/test_knowledge_writer_revision_stamps.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "25ce1cdc1adcd91e7ca3266726e555ab5e97cbfd",
+        "content": "sha256:ffed095dba294c18e700eae7f7f7f3c57732aac956bac0b02dcd0cde8720be68",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_leaf_write_stamps_its_new_record_from_binding_and_receipt_not_from_input"
+        }
+      },
+      "facet": "A new leaf revision persists the resolved writer and rejects input-supplied identity.",
+      "id": "PRF-AKAZS0",
+      "invariant": "INV-G8AX2H",
+      "origin": {
+        "handoffEntry": "L3-W1-01",
+        "leaf": "261112-KNO-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "25ce1cdc1adcd91e7ca3266726e555ab5e97cbfd",
+        "content": "sha256:d1977bcfc97ca880e7b11494e201b33c16315cd6c56d9cca62e2c0628a2d7952",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_revision_keeps_one_stamp_per_number_renewed_by_its_last_writer"
+        }
+      },
+      "facet": "A second write of the same owned revision renews the record and history stamp together.",
+      "id": "PRF-FGSPHY",
+      "invariant": "INV-BNDKC8",
+      "origin": {
+        "handoffEntry": "L3-W1-02",
+        "leaf": "261112-KNO-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The stored stamp uses the bound caller and its receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ce1cdc1adcd91e7ca3266726e555ab5e97cbfd",
+            "content": "sha256:ffed095dba294c18e700eae7f7f7f3c57732aac956bac0b02dcd0cde8720be68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_write_stamps_its_new_record_from_binding_and_receipt_not_from_input"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A repeated write of one owned revision renews its attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ce1cdc1adcd91e7ca3266726e555ab5e97cbfd",
+            "content": "sha256:d1977bcfc97ca880e7b11494e201b33c16315cd6c56d9cca62e2c0628a2d7952",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_revision_keeps_one_stamp_per_number_renewed_by_its_last_writer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A reopened attempt leaves the earlier attempt's stamp intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ce1cdc1adcd91e7ca3266726e555ab5e97cbfd",
+            "content": "sha256:f270c3a764297d961546f1463c2c446770c8f48cd1133c8aa957cd162fdf087c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reopened_amendment_keeps_the_earlier_attempts_stamp"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

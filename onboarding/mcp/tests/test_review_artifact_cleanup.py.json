@@ -359,16 +359,16 @@
       ]
     },
     "8": {
-      "note": "The lane row. Source caption: \"mcp/tests/test_review_artifact_cleanup.py\"",
+      "note": "The unit-regression lane selects mcp/tests/test_review_artifact_cleanup.py.\n\nAnchor: `mcp/tests/test_review_artifact_cleanup.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
+            "content": "sha256:526a643244ab1dbb0d8f374c24e9047cc62d337dcb37d130f76a0ab5725ee5b5",
             "locator": {
-              "end": 816,
+              "end": 470,
               "kind": "line_range",
-              "start": 1
+              "start": 470
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

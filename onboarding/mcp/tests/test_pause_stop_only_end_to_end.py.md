@@ -215,5 +215,5 @@ No meaningful cross-repository reference applies to this repository-owned bounda
 
 - The separate publication no case here reaches. Anchor: `worktree_checkpoint_landing` [15]
 
-- The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [11]
-- The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [13]
+- The integration lane selects mcp/tests/test_pause_stop_only_end_to_end.py. [11]
+- The integration lane selects mcp/tests/test_pause_stop_only_end_to_end.py. [13]

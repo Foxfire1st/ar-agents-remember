@@ -63,9 +63,7 @@ Source declarations and test assertions are distinguished from execution and acc
 
 - The enabled plan and message checks cover code and memory only. [1]
 - Both content messages are required without a ledger leg. [2]
-- Real ancestry covers base, checkpoint head, and unrelated movement. [3]
 
-- Replay uses Git facts and the retired recovery API remains absent. [4]
 
 
 ### Cross-Repo References
@@ -74,3 +72,7 @@ The code/memory or fixture-repository boundaries above are established by packag
 No additional configured external or sibling-repository evidence is claimed.
 
 No additional configured cross-repository evidence.
+
+- Replay uses Git facts and the retired recovery API remains absent. [4]
+
+- Real ancestry covers base, checkpoint head, and unrelated movement. [3]

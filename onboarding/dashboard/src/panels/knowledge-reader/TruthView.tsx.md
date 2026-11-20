@@ -6,7 +6,9 @@
 
 ## Purpose
 
-Renders one record with meaning first, kind-ordered remaining fields, its relevant relationships, a bounded owner-provided timeline and labelled file/admission/origin at the end. Record framing is separate from raw JSON; decision status is the supplied derived status when available.
+Renders one record with meaning first, kind-ordered remaining fields, its relevant relationships, a bounded owner-provided timeline and labelled file/admission/origin at the end. Record framing is separate from raw JSON. The heading keeps source currentness, record-kind
+status and the selected revision's derived state distinct. A decision uses its supplied derived
+status when available. A supplied writer appears as role and model.
 
 ## Code Commentary
 
@@ -103,10 +105,11 @@ No cross-repo boundary is crossed by this file.
 No Domain Documentation entries are configured; current repository bodies and caller boundaries supply the evidence below. The prior source-only accounts are preserved above, not promoted to a fresh execution result.
 
 - The record page keeps lead/fields/relationships/timeline/origin order while wiring timeline paging by the initial answer. [14]
-- Kind/id/state/derived-or-stored status/revision are supplied by the current header. [15]
 - Per-kind lead/order and framing exclusion govern labelled meaning values. [16]
 - An incoming history-row link names and navigates its subject record. [17]
 - The bounded timeline renders owner-ordered events and source problems, with attempt/path facts and paging controls. [18]
 - File path, admission and origin close the page as labelled values. [19]
 - Timeline loads reject non-view/absent/refused responses and changed selection keys, with restart replacing and continuation appending events. [20]
 - History effects, historical omissions, requirement labels and record links remain distinct delivered facts. [21]
+
+- The heading renders kind, identity and revision alongside available source currentness, record status, revision state and writer. [15]

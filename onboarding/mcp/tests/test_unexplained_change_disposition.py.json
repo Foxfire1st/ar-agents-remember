@@ -311,16 +311,16 @@
       ]
     },
     "13": {
-      "note": "The unit-lane row. Source caption: \"mcp/tests/test_unexplained_change_disposition.py\"",
+      "note": "The unit-regression lane selects mcp/tests/test_unexplained_change_disposition.py.\n\nAnchor: `mcp/tests/test_unexplained_change_disposition.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
+            "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
             "locator": {
-              "end": 816,
+              "end": 641,
               "kind": "line_range",
-              "start": 1
+              "start": 641
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -329,16 +329,16 @@
       ]
     },
     "14": {
-      "note": "The catalog consumer row: the reconsideration shared-support artifact lists this module among its consumers.",
+      "note": "The lifecycle catalog lists `test_unexplained_change_disposition.py` among the exact consumers of `reconsideration_test_support.py`.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "content": "sha256:83a7ef3da405598ccb546894b26334584c030ec16b10545f05a804457522a82b",
             "locator": {
-              "end": 5062,
+              "end": 4368,
               "kind": "line_range",
-              "start": 1
+              "start": 4341
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

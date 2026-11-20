@@ -38,7 +38,7 @@ Direct landing is one of MIK-R09's leaf-publication routes, but its preview bran
   the memory-content commit would record (`_memory_content_tree`: a private index under the worktree group's
   `reports/`, `MEMORY_CONTENT_EXCLUDES`), and asks `direct_gate_verdict` through the port; any refusal raises
   `direct-landing-knowledge-gate-refused`. Verify-existing preview uses the proven canonical `bound_leaf_id` before optional caller `leaf_id`; only when both selectors are absent does legacy selection infer the sole open history owner. A supplied valid identity is not a sole-open inference. Named invalid/foreign owners refuse within the source-selection rules. Apply uses the distinct select → close → judge sequence below.
-- **Apply selection, closing, then judgment.** `_close_gated_leaf` first selects the exact history source through `_select_gated_history`/`direct_gate_source`, then closes that owner's history and captures the retained closed memory snapshot. `direct_gate_verdict` judges that exact closed tree with the selected source; `memory_commit_refusal(..., leaf_publication=True)` validates the same tree against `HEAD`. Any refusal or exception after closing restores the history and cache-ignore bytes. A replay that commits nothing returns no closing and remains bound to its already-paired head tree. Preview judgment and apply's select → close → judge sequence are distinct.
+- **Apply selection, closing, then judgment.** `_close_gated_leaf` first selects the exact history source through `_select_gated_history`/`direct_gate_source`. It reads the selected owner's qualifying review fact against the pre-write memory checkout before applying the cache-ignore rule. It then closes the owner's history with that fact when available and captures the retained closed memory snapshot. A selected already-closed history retains its bytes. `direct_gate_verdict` judges that exact closed tree with the selected source; `memory_commit_refusal(..., leaf_publication=True)` validates the same tree against `HEAD`. On refusal or exception the preparer restores the owned history and cache-ignore bytes while they still match its writes. A replay that commits nothing returns no closing and remains bound to its already-paired head tree. Preview judgment and apply's select → close → judge sequence are distinct.
 - **The closing lives until the generation is decided (review R1 F3; R2-2, R2-5; R3-1).** `_start_or_observe_direct_landing`
   first settles the kept closings (`_settle_kept_closing`; an unreadable receipt refuses as
   `direct-landing-closing-receipt-unreadable`), then checks `_in_flight_retry`: an exact retry of the series'
@@ -99,6 +99,9 @@ No new file-local follow-up is established by this documentation pass.
 
 ## Evidence
 
+- Direct apply captures review eligibility before memory writes, closes the selected owner history and judges the resulting tree. [15]
+- Review proof is read before direct landing mutates the checkout and passed to the deferred closing. [16]
+
 ### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
@@ -112,13 +115,11 @@ No configured external domain-documentation evidence.
 References 3, 5 and 6 below are re-authored for the current retained-record retry and select → close → judge implementation. Reference 7 and the create-mode reference retain the landed L94 account. Other original L9 references and test descriptions retain their original historical evidence scope; they are not fresh execution or current gate-order certification.
 
 
-- Current direct request, canonical-leaf grant admission, verify-existing code proof and pure pair preview; the retired settings gate is not current. [7]
 
 - Memory admission captures the prepared content snapshot and typed candidate (since MIK-R09 in `_operation_candidate`, after the gate's closing). [8]
 
 
 
-- Generation creation and action-required public projection. [9]
 
 
 
@@ -145,9 +146,7 @@ source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
 
-
 - Direct landing separates verify-existing from pre-code judged create mode and same-generation paired recovery. [13]
-
-
-
 - Exact direct replay retains its generation; only a changed request may replace retired completed evidence. [14]
+- Current direct request, canonical-leaf grant admission, verify-existing code proof and pure pair preview; the retired settings gate is not current. [7]
+- Generation creation and action-required public projection. [9]

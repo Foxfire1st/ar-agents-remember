@@ -12,7 +12,7 @@
     "The cache evicts least-recently-used unprotected folders toward a 32-folder bound. The insertion folder and every cached folder in the open-note ancestor chain are protected; when no unprotected victim remains, eviction stops and the cache may stand above 32."
   ],
   "exclusions": [
-    "The reader owns no tree of its own; the shared component is unchanged.",
+    "Notes uses the shared tree with no record-detail renderer.",
     "Eviction never drops the open note or its ancestor chain."
   ],
   "id": "INV-Q021G3",
@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L126",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "The notes reader left column is the shared ExplorerTree fed one folder at a time, loading the open note beyond the first part and emptying vanished folders with the server reason. The folder cache holds at most 32 folders except that the insertion folder and open-note ancestor chain are protected from LRU eviction; it may stand above 32 when every possible victim is protected.",
   "status": "proposed",

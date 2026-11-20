@@ -9,7 +9,7 @@
 **The comparison's unit population: thirteen cases over the shared two-snapshot fixture, running
 in-process over temporary fixture repositories, with no network and no integration marker**
 (`pytestmark = pytest.mark.evidence_unit`). The module is registered in the **unit-regression** lane at
-`mcp/tests/test-evidence-lanes.toml:234`.
+`mcp/tests/test-evidence-lanes.toml:237`.
 
 **The attribution partition's original nine-case cohort lives next door; that sibling now has ten source test definitions.** `260921-ICR-L4` appended nine `ICR-R04@v1`
 cases here (22 cases, 1384 lines). `260921-ICR-L57` moved them verbatim into
@@ -164,6 +164,5 @@ No configured cross-repository evidence is claimed.
 
 - The two sibling claims are returned on both sides with unchanged record fields; both have changed source observations, with no still-source item in this fixture. Anchor: "test_an_unchanged_sibling_is_returned_identically_on_both_sides_rather_than_omitted" [6]
 
-- **The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [16]
-
-- **The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [15]
+- The catalog identifies the comparison's removed-realization union case as the evidence node of its stable contract. The lane catalog selects this same module. [15]
+- The catalog identifies the comparison's removed-realization union case as the evidence node of its stable contract. [16]

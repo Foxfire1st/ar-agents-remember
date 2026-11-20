@@ -143,14 +143,16 @@
       ]
     },
     "22": {
-      "note": "- The graph readers that reuse the one-row helper.\n\nAnchor: `get_family_revision`",
+      "note": "The family-revision reader uses the shared one-row helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
-            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
+            "blob": "8f688da87601ae8fd110f9441bd99a6c32d40a49",
+            "content": "sha256:97d8602f50f114fa81b06d74094ff753191ee59b262ed8b72aa1e0b677110615",
             "locator": {
-              "kind": "file"
+              "end": 61,
+              "kind": "line_range",
+              "start": 48
             },
             "path": "mcp/src/agents_remember/memory/knowledge/families.py"
           },
@@ -163,13 +165,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:947779ca6c56d2d2b3f19731a4d47c06e558fe68abe6d4f9e91cdeb7abde9d4a",
             "locator": {
               "kind": "symbol",
               "name": "close"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Schema generation 10 declares the composed DDL and stored version used by the connection. [24]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
+            "content": "sha256:329c77d2024538d058242b15364131fe13c5f4c73a5ce39e9ab48d367f1a1c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCHEMA_NAME"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },
           "kind": "code"
         }

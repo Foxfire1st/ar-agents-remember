@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
+            "blob": "66de1ee906597baab3d43f7bd00ad076296ee3ca",
             "content": "sha256:a330f64ec342f0c036e462a941297875faba03c80664030a3daf6ca5cffa1d6e",
             "locator": {
               "end": 6,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
+            "blob": "66de1ee906597baab3d43f7bd00ad076296ee3ca",
             "content": "sha256:c897286f1f7d52613f14c07065ef24e729928f81689672330d079a572a86ada6",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
+            "blob": "66de1ee906597baab3d43f7bd00ad076296ee3ca",
             "content": "sha256:bdaa895a889a229e14bbf8c92b8ac051a7a4e74873fb7da0e42d0419584f0eab",
             "locator": {
               "kind": "symbol",
@@ -51,11 +51,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
-            "content": "sha256:99f5823455a8859e6d9fbd3aa3336297d0c9ba5c4e054c11b8d432c5b9868acd",
+            "blob": "66de1ee906597baab3d43f7bd00ad076296ee3ca",
+            "content": "sha256:b60bbef61252df3d1a97a8ea42a6aea5278bc714b5487224a8be85e19ef4553f",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyRevisionDraft"
+              "end": 97,
+              "kind": "line_range",
+              "start": 53
             }
           },
           "kind": "code"
@@ -63,32 +64,29 @@
       ]
     },
     "4": {
-      "note": "The sealed revision and its stored read shape.\n\nAnchor: `FamilyRevision` `StoredFamilyRevision`",
+      "note": "The sealed revision and its stored read shape.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
-            "content": "sha256:d02c1ee41a6e2c65a1fbc9b6a7ac864504eb48c48d805a63429cfb48f92d9470",
+            "blob": "66de1ee906597baab3d43f7bd00ad076296ee3ca",
+            "content": "sha256:f7dc8a9853d9b7f7760131731ccb7a767af8a95db9c8ad498153b9d7c9fc90f1",
             "locator": {
-              "kind": "file"
+              "end": 104,
+              "kind": "line_range",
+              "start": 100
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The shared accepted/proposed rule this aggregate applies at construction.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:13cc663044dee904e0ef554d6776f2c58837847c4cc915a9688f715dd1172a37",
+            "blob": "66de1ee906597baab3d43f7bd00ad076296ee3ca",
+            "content": "sha256:b2c614b201a1856dd15e5c62a3cd89d08c0d7ddd8e308ddba27b3666e923539f",
             "locator": {
-              "kind": "symbol",
-              "name": "require_consistent_acceptance"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+              "end": 110,
+              "kind": "line_range",
+              "start": 107
+            }
           },
           "kind": "code"
         }
@@ -99,11 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
-            "content": "sha256:f987f04351f9a963408d04353decdced875c8d570d21bdeb16852ae8f8f75efc",
+            "blob": "3d052ff5b8e4e6e5d88882fdee32d3d5184272a8",
+            "content": "sha256:83698392de83e24c362f68227e415012725c444bec9a0ab58371e0f9437eaac4",
             "locator": {
-              "kind": "symbol",
-              "name": "canonical_family_revision_payload"
+              "end": 79,
+              "kind": "line_range",
+              "start": 62
             },
             "path": "mcp/src/agents_remember/models/knowledge/digest.py"
           },
@@ -111,11 +110,12 @@
         },
         {
           "anchor": {
-            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
+            "blob": "3d052ff5b8e4e6e5d88882fdee32d3d5184272a8",
             "content": "sha256:50dd05ab638940b7a334858cebee588c309c288d58b283907bc2aafeb7e760eb",
             "locator": {
-              "kind": "symbol",
-              "name": "family_revision_payload_digest"
+              "end": 85,
+              "kind": "line_range",
+              "start": 82
             },
             "path": "mcp/src/agents_remember/models/knowledge/digest.py"
           },
@@ -128,11 +128,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
-            "content": "sha256:bd50e8d8c0e3c813bcc4211881a122e30b03650166e0c9697b1a7497bbbd4741",
+            "blob": "382764f1d33cd50a7b8c7ff1757afd64f2b3306d",
+            "content": "sha256:7be9dc1611d825f59b97bf9d4d1a685966a11ce589a60192139a652c76517977",
             "locator": {
-              "kind": "symbol",
-              "name": "decode_family_revision_row"
+              "end": 186,
+              "kind": "line_range",
+              "start": 162
             },
             "path": "mcp/src/agents_remember/memory/knowledge/records.py"
           },
@@ -141,14 +142,42 @@
       ]
     },
     "8": {
-      "note": "The production reader retrieves family identities and exact sealed revisions from the derived index; it writes nothing.\n\nAnchor: `get_family` `get_family_revision` `list_family_revision_ids`",
+      "note": "The production reader retrieves family identities and exact sealed revisions from the derived index; it writes nothing.",
       "targets": [
         {
           "anchor": {
-            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
-            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
+            "blob": "8f688da87601ae8fd110f9441bd99a6c32d40a49",
+            "content": "sha256:c51a165b94e9dd6de79384fdbe979368a7dc0a52f33cd560713ccc13b1c1a432",
             "locator": {
-              "kind": "file"
+              "end": 45,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f688da87601ae8fd110f9441bd99a6c32d40a49",
+            "content": "sha256:97d8602f50f114fa81b06d74094ff753191ee59b262ed8b72aa1e0b677110615",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f688da87601ae8fd110f9441bd99a6c32d40a49",
+            "content": "sha256:8efde8a6ffa20dfab43f421de39f55bccfb3cd8f9f7b726e5a5c635dee4daf87",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 64
             },
             "path": "mcp/src/agents_remember/memory/knowledge/families.py"
           },
@@ -157,16 +186,16 @@
       ]
     },
     "9": {
-      "note": "The declared `family` and `family_revision` tables these values map onto.\n\nAnchor: `family`; `family_revision`",
+      "note": "The declared `family` and `family_revision` tables these values map onto.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
             "content": "sha256:a2c109f5b538bccec7bed1c2a1630ec11650ba7e3662eb56a6ae5da4b43890eb",
             "locator": {
-              "end": 199,
+              "end": 196,
               "kind": "line_range",
-              "start": 189
+              "start": 186
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },
@@ -174,12 +203,12 @@
         },
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
-            "content": "sha256:3e977c51c5929aa0a81269ce041aa7f1fdb6c0188dcc01bf5ea2067dd425fcbb",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
+            "content": "sha256:fc13add8e5fa07c87584d4343f0e1fa888cf8a5baa577ce807a08ea93cd04f81",
             "locator": {
-              "end": 217,
+              "end": 213,
               "kind": "line_range",
-              "start": 200
+              "start": 197
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },

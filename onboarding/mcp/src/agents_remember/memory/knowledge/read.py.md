@@ -177,6 +177,8 @@ full above** — including the closed reviewer question — because a successor 
 `select_recorded_scope` has to know that the override is a parameterisation of the one policy and not a
 second rule.
 
+The invariant and family revision item builders place the selected index row's derived `state` in their `lifecycle` field. That observation travels beside the revision's authored content and payload seal.
+
 ## Evidence
 
 ### Docs References
@@ -209,7 +211,6 @@ No configured domain documentation could be checked.
 - **The node that kills mutation `R30` — the per-side exact-revision address the override exists for.** [16]
 
 
-- The fixture the policy is measured on, and the one cell decoder a read page and the logical digest share. [17]
 
 
 ### Cross-Repo References
@@ -218,3 +219,5 @@ No cross-repository behavior is implemented in this file. Every statement runs a
 caller opened; no second repository, ledger or coordination path is read.
 
 No meaningful cross-repo references found.
+
+- The fixture the policy is measured on, and the one cell decoder a read page and the logical digest share. [17]

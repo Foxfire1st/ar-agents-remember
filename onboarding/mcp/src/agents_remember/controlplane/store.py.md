@@ -177,7 +177,6 @@ into an inode with no remaining links.
 
 
 
-- `_claim_closeout_gate` consumes approval under the gate-store lock; its closeout call site precedes journaled mutation intent and Git. Approval consumption does not itself prove mutation or retain a generation. [7]
 
 
 As of cycle 5 GateStore.find(gate_id) resolves one gate id across the workspace log and every lifecycle log — the seam-decide path: the deciding seat holds only the packet-carried gate id; lifecycle ids stay server-side. Cycle 6 adds `all_current()`, the cross-lifecycle enforcement fold: it merges every gate log (workspace + all lifecycles) last-wins per gate id, so identity-addressed consumers (the integrate-side master-handover guard, which matches by the gate's `enclosure`) can see a seam gate raised on a different lifecycle than the one the consuming contract anchors.
@@ -214,3 +213,5 @@ does not replace exclusion or the checkout guard.
 
 
 - Durable exclusion guards the checkout target before invoking shared kernel locking and preserves typed unsafe-filesystem refusal. [9]
+
+- `_claim_closeout_gate` consumes approval under the gate-store lock; its closeout call site precedes journaled mutation intent and Git. Approval consumption does not itself prove mutation or retain a generation. [7]

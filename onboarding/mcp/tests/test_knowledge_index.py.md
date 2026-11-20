@@ -80,4 +80,4 @@ No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
 
-- The lane row. Anchor: "mcp/tests/test_knowledge_index.py" Anchor: "mcp/tests/test_knowledge_index.py" [8]
+- The unit-regression lane selects mcp/tests/test_knowledge_index.py. [8]

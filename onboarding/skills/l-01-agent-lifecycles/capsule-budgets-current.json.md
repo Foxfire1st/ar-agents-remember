@@ -18,15 +18,13 @@ The retained `measuredCurrentRenewalWaitsAndCodingGuidelines` sub-record carries
 `measuredCurrentRenewalAlwaysOnToolNames` as `supersededUncommittedRecord`. Its recorded
 basis says that sub-record was current only in the uncommitted candidate, never on a
 committed tree, and therefore has no `historicalTree`. This is retained renewal custody,
-not the active renewal or a new source measurement. [1]
+not the active renewal or a new source measurement.
 
 ## Evidence
 
-- The decision block retains authority and frozen historical registry and predecessor identities. [1]
 
 - Generated measurements cover current capsules, declared details and the shared digest without individual item limits. [2]
 
-- Current generated measurements include ordinary linked templates. [3]
 
 - Authored role, detail and digest ceilings are separate from generated measurements. [4]
 
@@ -35,3 +33,6 @@ not the active renewal or a new source measurement. [1]
 - The retained predecessor, historical registry and their retained helpers are authenticated by hash. [6]
 
 - Budget checks read current measurements and authored ceilings. [7]
+
+- The decision block retains authority and frozen historical registry and predecessor identities. [1]
+- Current generated measurements include ordinary linked templates. [3]

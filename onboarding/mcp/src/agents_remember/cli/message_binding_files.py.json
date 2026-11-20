@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/cli/message_binding_files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The receipt projection uses compact sorted JSON and a final newline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f729fbbd59705404e5a3c090a79a03f7b025d31f",
+            "content": "sha256:623b6b243780484f25ef49949f81f6e3e640685a8f779e08bf53aa8828f26cbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "message_binding_projection_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The helper distinguishes absence from an exact regular file and refuses other content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f729fbbd59705404e5a3c090a79a03f7b025d31f",
+            "content": "sha256:b16ce626da9909057bf54a677f18dcd638e747f332b5deec720d4d2716cbe096",
+            "locator": {
+              "kind": "symbol",
+              "name": "message_binding_projection_matches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

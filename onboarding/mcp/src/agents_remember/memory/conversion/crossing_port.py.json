@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ecf97d719a2ae7eb21bbef87608f77daabb9841a",
-        "content": "sha256:afe3a4f71dacf61278c5951dcccd26adb05431c4fbb4f02e6fe8ed9549c246b5",
+        "blob": "488e2cae3d25f2a60f88059dd38570143d8c6d14",
+        "content": "sha256:b685716c066fff27f91529be61ef0ddb02fa0b6738f331546bebaa5cf2d6056b",
         "locator": {
           "kind": "symbol",
           "name": "GitKnowledgeCrossing"
@@ -19,19 +19,38 @@
       },
       "rationale": "The conversion port loads worktree-owned plan/result/error types only when a crossing plan is requested; it preserves conversion and failed-step behavior.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "488e2cae3d25f2a60f88059dd38570143d8c6d14",
+        "content": "sha256:df15e7be960ee061f531cb3e62e22fc8739790bc84bbb5305b23bafafa389abe",
+        "locator": {
+          "kind": "symbol",
+          "name": "merged_at"
+        }
+      },
+      "id": "RLZ-SGFWB2",
+      "invariant": "INV-KPK1WT",
+      "origin": {
+        "handoffEntry": "L3-W1-10",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The later committer time of the two merged lines, so the sync's proof reproduces the merge.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "The adapter.\n\nAnchor: `plan`",
+      "note": "The adapter.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecf97d719a2ae7eb21bbef87608f77daabb9841a",
-            "content": "sha256:afe3a4f71dacf61278c5951dcccd26adb05431c4fbb4f02e6fe8ed9549c246b5",
+            "blob": "488e2cae3d25f2a60f88059dd38570143d8c6d14",
+            "content": "sha256:b685716c066fff27f91529be61ef0ddb02fa0b6738f331546bebaa5cf2d6056b",
             "locator": {
-              "kind": "symbol",
-              "name": "GitKnowledgeCrossing"
+              "end": 65,
+              "kind": "line_range",
+              "start": 29
             }
           },
           "kind": "code"
@@ -108,14 +127,30 @@
       ]
     },
     "4": {
-      "note": "The conversion port loads worktree-owned plan/result/error types only when a crossing plan is requested; it preserves conversion and failed-step behavior.\n\nAnchor: `GitKnowledgeCrossing`",
+      "note": "The conversion port loads worktree-owned plan/result/error types only when a crossing plan is requested; it preserves conversion and failed-step behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecf97d719a2ae7eb21bbef87608f77daabb9841a",
-            "content": "sha256:ae3bbab5deeab7231a580d9e99a17f6f564f77f59badf1aa84120fccd4751219",
+            "blob": "488e2cae3d25f2a60f88059dd38570143d8c6d14",
+            "content": "sha256:53d5fe4db5b477bd084e45585854db3ed3be27b920e7f94e866c891945197249",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The plan binds product stamp time to the two input commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "488e2cae3d25f2a60f88059dd38570143d8c6d14",
+            "content": "sha256:df15e7be960ee061f531cb3e62e22fc8739790bc84bbb5305b23bafafa389abe",
+            "locator": {
+              "kind": "symbol",
+              "name": "merged_at"
             }
           },
           "kind": "code"

@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_knowledge_state_conversion_proof.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a4236cf3056b77ba042be90ba4a86fe72ab200b0",
+        "content": "sha256:a477bd099c5cf56029148f3ac0904a9881bd5e457b4bcef4bd8b70f4d73b2726",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_identical_legacy_edits_stay_reviewed"
+        }
+      },
+      "facet": "Two exact old proofs of identical retained meaning produce reviewed standing once under unknown.",
+      "id": "PRF-8YQA2J",
+      "invariant": "INV-0R04WY",
+      "origin": {
+        "handoffEntry": "KNO-L3-F20",
+        "leaf": "261112-KNO-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a4236cf3056b77ba042be90ba4a86fe72ab200b0",
+        "content": "sha256:25776098d987322f878a2ec5cdc0391cee7c6121b049137e7a99bfcad2cabc7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_conversion_attributes_the_retained_meaning"
+        }
+      },
+      "facet": "Conversion uses the retained record's exact meaning rather than a competing claim for its revision number.",
+      "id": "PRF-Q1CWHH",
+      "invariant": "INV-Z0FRT0",
+      "origin": {
+        "handoffEntry": "KNO-R03@v1",
+        "leaf": "261112-KNO-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A unique exact review tree proof identifies the retained legacy owner's meaning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4236cf3056b77ba042be90ba4a86fe72ab200b0",
+            "content": "sha256:25776098d987322f878a2ec5cdc0391cee7c6121b049137e7a99bfcad2cabc7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_conversion_attributes_the_retained_meaning"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Matching independent old claims keep the meaning reviewed once under unknown attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4236cf3056b77ba042be90ba4a86fe72ab200b0",
+            "content": "sha256:a477bd099c5cf56029148f3ac0904a9881bd5e457b4bcef4bd8b70f4d73b2726",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identical_legacy_edits_stay_reviewed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/state_conversion.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d119beb6ded123f180d095877829f76b649e76ee",
+        "content": "sha256:99591e0040591b8d9b796a6de45b37b1c5a7771a47ddd218e93b473ef2b40e87",
+        "locator": {
+          "kind": "symbol",
+          "name": "plan_state_conversion"
+        }
+      },
+      "id": "RLZ-9V7G71",
+      "invariant": "INV-69M737",
+      "origin": {
+        "handoffEntry": "L3-W1-07",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Plans every file change and the counts before anything is written.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d119beb6ded123f180d095877829f76b649e76ee",
+        "content": "sha256:a091b492d15e14a25af7abba2c46c5ffd5b6b78233a1de10677846a446f8fc74",
+        "locator": {
+          "kind": "symbol",
+          "name": "_conversion_stamp"
+        }
+      },
+      "id": "RLZ-D8RBAP",
+      "invariant": "INV-0R04WY",
+      "origin": {
+        "handoffEntry": "KNO-L3-F20",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Materializes the uniquely proven legacy owner and preserves honest unknown attribution otherwise.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Conversion plans the complete content update without changing record meaning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d119beb6ded123f180d095877829f76b649e76ee",
+            "content": "sha256:99591e0040591b8d9b796a6de45b37b1c5a7771a47ddd218e93b473ef2b40e87",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_state_conversion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Usable historical review facts are selected before the conversion updates the memory tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d119beb6ded123f180d095877829f76b649e76ee",
+            "content": "sha256:d2984506e8903ce2e5e308b3f1457d6ceaf08fe4755b5863792eee01a6bf980d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_review_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -7,8 +7,8 @@
 ## Purpose
 
 Shared pieces of the knowledge reader (MIK-R29, extended by MIK-R79 rules 8 and 9): navigation links,
-state badges, sections, entry rows, a decision in full, and the onboarding prose whose `[n]` markers
-link to their resolved references. Every document link is a navigation that changes the reader's
+state badges, sections, entry rows, a decision in full, and the onboarding prose whose numbered markers
+open the entries supplied in its reference list. Every document link is a navigation that changes the reader's
 address (and so the URL); a `[n]` marker, a fragment and an external link each take their own local or
 separate branch. Rules written in the prose work: a link to another card or overview
 opens that page, a `[n]` marker opens the cited code beside the text, and an external link opens
@@ -19,7 +19,8 @@ separately.
 ### Logic
 
 - `RecordLink`, `PathLink`, `CodeLink` and `TargetLink` render buttons that call the reader's
-  navigation context; a missing record renders as "(not in this tree)".
+  navigation context. A record link shows the supplied revision state and compact writer beside
+  its button when present. A missing record renders as "(not in this tree)".
 - `ProseWithReferences` renders the text through the shared `Markdown` with `referenceMarkers` and
   `headingIds`. A `#reference-<n>` marker the reference list holds becomes a button that opens the
   reference (one code/test target opens the citation pane directly); a marker with no reference is
@@ -37,8 +38,8 @@ separately.
 
 ### Invariants And Boundaries
 
-- **A `[n]` marker in the prose links only when a reference exists**: the marker is rendered as a
-  button only for a resolved reference, otherwise as plain text — a dead link is never drawn.
+- A numbered marker becomes a button when its number appears in the delivered reference list. A
+  marker with no matching entry stays plain text.
 - **Unsupported prose links stay in place, external links open separately**, and the dashboard is
   never unloaded by a link (no full-page navigation).
 - **A missing record is named in place**; nothing is rendered as an empty record.
@@ -59,13 +60,15 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The prose renderer, its marker buttons and its link mapping. [12]
-- A `[n]` marker becomes a reference button only when the reference resolves. [13]
-- The authored-link to memory-path mapping. [14]
-- An unsupported link stays readable as text. [15]
-- The one navigation context every link uses. [16]
-- The decision card with its alternatives. [17]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- The prose renderer, its marker buttons and its link mapping. [12]
+- A numbered marker becomes a button when its number appears in the delivered reference list. A marker with no matching entry stays plain text. [13]
+- The authored-link to memory-path mapping. [14]
+- An unsupported link stays readable as text. [15]
+- The one navigation context every link uses. [16]
+- The decision card with its alternatives. [17]
+- An available record renders a navigation button and can carry its own state and writer note. A missing record renders inert text. [18]

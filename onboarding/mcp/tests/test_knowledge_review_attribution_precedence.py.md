@@ -50,4 +50,4 @@ No meaningful cross-repo references found.
 
 - **The precedence cases: one unreadable half leaves the readable side attributed and the rest unknown; the same pair read completely confirms absence where the lost half could not; a damaged half cannot support a negative conclusion.** [12]
 
-- The module's own unit-regression lane row. [14]
+- The unit-regression lane selects mcp/tests/test_knowledge_review_attribution_precedence.py. [14]

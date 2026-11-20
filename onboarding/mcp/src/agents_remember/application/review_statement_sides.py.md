@@ -31,7 +31,8 @@ knowledge pane calls it separately against its baseline and candidate database b
 `field_changes` preserves the comparison's own changed-field roster and page order. `field_text`
 returns None for a missing record/value, renders mappings through `structured_value_text`, joins tuple
 values and otherwise uses their string rendering. An empty tuple renders an empty string, not None.
-The comparison owns which transitions and one-sided rows exist; this module does not widen that roster.
+The comparison supplies the eight-field roster, including provenance. For a one-sided record it
+supplies coverage and an empty changed-field roster.
 
 Structured-value rendering uses sorted compact JSON, default=str, explicit lead/tail markers and a
 visible truncation marker within the declared prose limit. Sorting ordinary JSON-like map keys avoids
@@ -183,20 +184,15 @@ repository sources below, not a source registry or a copied code comment as inde
 
 ### Repo-Internal References
 
-- Statement/condition/field projections consume supplied comparison items; the separately added side_origin helper does open the selected snapshot index. [1]
 - The declared prose limit the projection is bounded by. [10]
 - The item this module projects: its two payloads and the `changed_fields` roster the rows come from. [11]
-- ReadItem supplies the selected statement or family joint guarantee and essential conditions. [12]
 - The current knowledge pane assembles selected side content/conditions, raw before/after origins and comparison field changes through these helpers. [13]
 - The current stored structured-value test asserts key-order equality only; its former fixture-driven two-sided round-trip is explicitly dead, not current proof. [14]
-- The stored one-sided composition case asserts no field roster and retains the supplied side conditions; it is not a fresh execution. [15]
-- The stored field-row case distinguishes absent acceptance from recorded values and checks the actual field roster; it is not a fresh execution. [16]
 - The renderer that consumes these values and owns how they are drawn. [17]
 - The public export list includes side_origin beside the retained projection helpers. [2]
 - **The structured-value projection: the lead/tail markers, the truncation marker, and the canonical bounded rendering that keeps a present value out of the absence slot.** [3]
 - Statement operands distinguish absent/unresolved/present; a family revision uses joint_guarantee while other selected records use statement. [4]
 - The conditions a side recorded, empty exactly when that side recorded none. [5]
-- **The field roster taken from the comparison's own `changed_fields`, one row per field, with the docstring's own reason a one-sided record reports none.** [6]
 - **`None` reserved for the two real absences, the `Mapping` branch that projects instead, and the tuple join that makes a recorded empty a present-but-empty value.** [7]
 - Current ReviewSideState has present/absent/unresolved, and its model requires text exactly when present; binary is no longer a declared fourth state. [8]
 - **The contract that makes `None` mean absence, and therefore the reason a structured value is projected rather than nulled.** [9]
@@ -205,3 +201,11 @@ repository sources below, not a source registry or a copied code comment as inde
 ### Cross-Repo References
 
 No new cross-repository boundary is introduced by these helpers.
+
+- The field-row case compares the same authored revision with proposed and reviewed lifecycle values and observes no separate seal change. [16]
+
+- ReadItem supplies the selected statement or family joint guarantee and essential conditions. [12]
+
+- Statement/condition/field projections consume supplied comparison items; the separately added side_origin helper does open the selected snapshot index. [1]
+- **The field roster taken from the comparison's own `changed_fields`, one row per field, with the docstring's own reason a one-sided record reports none.** [6]
+- The stored one-sided composition case asserts no field roster and retains the supplied side conditions; it is not a fresh execution. [15]

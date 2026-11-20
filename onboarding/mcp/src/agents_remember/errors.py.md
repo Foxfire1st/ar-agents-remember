@@ -36,7 +36,7 @@ The family's defining invariant is that **a projection is either complete or ref
 
 In the current source, `AtomicReplaceError` follows `TaskProjectionSourceError` and precedes `MemoryModeUnsupportedError`. It is the typed failure of `kernel.atomic_write.atomic_replace`, which does two things that fail independently — the rename that makes new bytes reachable and the directory flush that makes the *name* durable. Both legs used to surface as one indistinguishable `OSError`, so a caller could not tell "the destination never changed" from "the destination already changed but the rename is not durable". It carries `leg` (`"replace"` or `"directory-fsync"`), `destination`, `destination_state` and the cause, and `response_fields()` projects the bounded `leg`/`destination`/`destinationState` triple. **The reachable states are exactly two:** the two raise sites in `atomic_replace` publish `"previous-bytes"` (failed rename, nothing published) and `"source-absent"` (successful rename, failed flush). The class docstring additionally lists a `"new-bytes"` state for "the rename completed and its name is not yet durable"; no raise site produces it today, so it is a declared-but-unreachable label and must not be presented as an observed state. The claim the class makes is a *measured* one — the test re-reads the destination after a failed flush and asserts it holds the new bytes — and it deliberately subclasses **both** `AgentsRememberError` and `OSError`, so every existing `except OSError` around a publish keeps observing the failure it always did rather than silently no longer matching it.
 
-The retained comparison-artifact owners use two status-carrying members of AgentsRememberError. CodeObjectRetentionError reports a failed release of a historical pin: a moved ref is code-object-ref-moved and a failed expected-value deletion is code-object-ref-unwritable. Current retention code creates no pin. [18] [20]
+The retained comparison-artifact owners use two status-carrying members of AgentsRememberError. CodeObjectRetentionError reports a failed release of a historical pin: a moved ref is code-object-ref-moved and a failed expected-value deletion is code-object-ref-unwritable. Current retention code creates no pin. [20]
 
 ComparisonReclamationError reports unreadable or mismatched retained snapshot bytes before recording a deletion or removing any file. Both exceptions preserve the domain status without creating a response or granting authority. [19] [21]
 
@@ -71,6 +71,8 @@ Raise the narrow typed family rather than a generic exception when a domain cont
 
 No additional source change is performed by this documentation pass.
 
+`StateConversionError` reports an inadmissible input or a conversion failure that left the memory unchanged. Publication failures with unresolved restoration use a different error so the caller knows which paths need attention.
+
 ## Evidence
 
 ### Docs References
@@ -90,7 +92,6 @@ The error families preserve distinct authority, recovery and transport meanings.
 
 
 
-- **The tokenizer vocabulary and the grammar an install cannot supply: the counter's missing vendored vocabulary and a citation check's missing grammar, each raised rather than downloaded or approximated.** Current anchors: `TokenizerVocabularyError`, `GrammarUnavailableError`. The earlier `ConversationCompositionError`, `HarnessAdapterDisconnectedError` and `NativeHistoryLimitExceeded` names are historical, not classes in this source. [5]
 
 
 - Control-plane translation preserves the durable-store error family. [6]
@@ -111,7 +112,6 @@ The error families preserve distinct authority, recovery and transport meanings.
 
 
 
-- **The retention owner's typed failure, whose status distinguishes a ref the record never held, a ref that has moved and a ref that could not be deleted.**  Anchor: `CodeObjectRetentionError` [18]
 
 
 - **The deletion owner's typed failure, raised before anything is recorded or removed.** [19]
@@ -143,3 +143,7 @@ No cross-repository evidence is required for these file-local claims.
 - Source-read unavailability carries a reason for the reference observer. [25]
 
 - The consumer that turns this family into a value with an explanation instead of an escaping exception. Anchor: `compile_admitted_capsule` `CapsuleCompilationOutcome` [10]
+
+- **The tokenizer vocabulary and the grammar an install cannot supply: the counter's missing vendored vocabulary and a citation check's missing grammar, each raised rather than downloaded or approximated.** Current anchors: `TokenizerVocabularyError`, `GrammarUnavailableError`. The earlier `ConversationCompositionError`, `HarnessAdapterDisconnectedError` and `NativeHistoryLimitExceeded` names are historical, not classes in this source. [5]
+
+- **The retention owner's typed failure, whose status distinguishes a ref the record never held, a ref that has moved and a ref that could not be deleted.**  Anchor: `CodeObjectRetentionError` [18]

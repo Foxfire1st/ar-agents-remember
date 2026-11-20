@@ -297,7 +297,6 @@ statement rather than cited as a file.
 - UnresolvedLimitation reports a withheld value without guessing its classification; OrderedPosition carries ordering input, provenance and the registered tiebreak, while require_distinct_row_subjects refuses one recorded subject at two positions. [17]
 
 
-- The reader port the module reads through and the store-side reader that answers it, including the per-kind row cache. [18]
 
 
 - The seam that calls the renderers, screens the ordering input before any read, and accounts withheld rows as unresolved references. [19]
@@ -314,3 +313,5 @@ No meaningful cross-repo references found.
 ### Repo-Internal References
 
 - The registered facet kind the authored claim is carried in, with the two canonical outcome prefixes and the three payload fields `authored_decision` reads. [20]
+
+- The reader port the module reads through and the store-side reader that answers it, including the per-kind row cache. [18]

@@ -475,12 +475,10 @@
         },
         {
           "anchor": {
-            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
-            "content": "sha256:28ac64159e5f618267709d5958725af63628fc80ddc7de7c94b66c8409e591b4",
+            "blob": "87d0ad2422674166b3a18c96c02ce719b4e4fed5",
+            "content": "sha256:a05ed9ebc8a2a8784db68ff0d2ee26d4835abd77f69172377b6d250823fbdf16",
             "locator": {
-              "end": 204,
-              "kind": "line_range",
-              "start": 195
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
           },

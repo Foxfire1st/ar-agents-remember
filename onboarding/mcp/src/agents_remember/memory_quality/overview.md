@@ -163,6 +163,8 @@ Full synchronous quality uses the per-check Git source reader: listed but unread
 
 
 
+Converted validation parses the product's `converted-reviews.json` catalog separately from an owner's history file. It checks the catalog's document shape without treating it as an owner file for the closed-file rules.
+
 ## Evidence
 Past-epoch account (retained wording): - Retained reference account (no fresh execution or acceptance inferred): The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option.
 
@@ -208,7 +210,6 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Retained reference account (no fresh execution or acceptance inferred): The refusing guard, registered on import. [64]
 - Retained reference account (no fresh execution or acceptance inferred): A reconsideration item's facts. [65]
 - Retained reference account (no fresh execution or acceptance inferred): The files the re-anchor check reads. [66]
-- Retained reference account (no fresh execution or acceptance inferred): The refusing and the merge-reported rule. [67]
 - Retained reference account (no fresh execution or acceptance inferred): The registering import. [68]
 - Retained reference account (no fresh execution or acceptance inferred): The leaf-publication route of the adapter. [69]
 - Retained reference account (no fresh execution or acceptance inferred): The section's lead: the gate counts each open item. [70]
@@ -259,5 +260,8 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - definition_scope owns call-local definition results, joins nested scopes, enters parsing_scope and clears retained values on exit. [99]
 - parsing_scope retains diagnostic parse trees only within the active call and clears them on exit. [100]
 - MCP dispatch enters one definition scope before tool validation and handler execution. [101]
-- Finite command handlers enter definition_scope; parser registration leaves the dashboard handler unwrapped. [102]
 - A background quality worker owns a fresh Context and definition scope for its work. [103]
+
+- Retained reference account (no fresh execution or acceptance inferred): The refusing and the merge-reported rule. [67]
+
+- Finite command handlers enter definition_scope; parser registration leaves the dashboard handler unwrapped. [102]

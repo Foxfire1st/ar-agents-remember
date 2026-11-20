@@ -17,7 +17,7 @@ A selected Git tree is read through objects without checkout; working-directory 
 
 The builder parses recorded files, writes `ix_*` relationships and projects the surviving logical tables. Parsing/schema/location/duplicate-ID problems name the offending file and make the index partial; cross-document integrity belongs to the knowledge validator. A complete build is consequently not a substitute for validator acceptance. The query surface carries tree key, converted state, completeness and problems in `Answer` values for its substantive lookups. The UUID-to-text-ID helper returns a plain optional string rather than an `Answer`.
 
-The cache lives outside Git working trees, normally under `<coordination-root>/runtime/knowledge-index`. It recalculates a directory key for each lookup, rejects a cache inside a Git worktree before creating it, rebuilds files whose index format/key does not match, installs a completed temporary index by replacement, and evicts by age and size. Defaults are fourteen days and one GiB; the retained current file is excluded from eviction. `INDEX_FORMAT` is `ar-knowledge-index/v3`, with history identity `(path, id)`. Each filename also binds the immutable loaded-build source digest. An unknown build uses a private cache-instance namespace and reuses no persistent dataset. `open_cached_index` reopens only a known loaded build’s existing index without touching usage bookkeeping; age and size eviction still cover every SQLite namespace.
+The cache lives outside Git working trees, normally under `<coordination-root>/runtime/knowledge-index`. It recalculates a directory key for each lookup, rejects a cache inside a Git worktree before creating it, rebuilds files whose index format/key does not match, installs a completed temporary index by replacement, and evicts by age and size. Defaults are fourteen days and one GiB; the retained current file is excluded from eviction. `INDEX_FORMAT` is `ar-knowledge-index/v7`, with history identity `(path, id)`. Each filename also binds the immutable loaded-build source digest. An unknown build uses a private cache-instance namespace and reuses no persistent dataset. `open_cached_index` reopens only a known loaded build’s existing index without touching usage bookkeeping; age and size eviction still cover every SQLite namespace.
 
 Readers open existing index datasets through SQLite read-only handles. The store validates the one declared schema, reads identities/revisions, rechecks revision payload seals, and computes logical identity. Recorded-scope selection and paging remain separate operations. Application consumers supply exact selected datasets and source bindings; the index does not promote a record into an obligation or an approval.
 
@@ -39,13 +39,13 @@ An existing legacy root first answers `legacy-format` with conversion guidance; 
 
 `knowledge_index/tree.py` owns captured identity and matching bytes. Directory capture copies the real index with its timestamp, clears assume-unchanged and skip-worktree flags in the scratch copy for present paths, and preserves an absent skip-worktree path so sparse checkout does not become deletion. Its bytes then come from the committed blob. An ordinarily absent path is captured as deleted. Indexed bytes are checked against captured blob IDs; three unstable captures lead to refusal. These source predicates establish construction, not an execution verdict for any current worktree.
 
-`build.py` retains both each history file by path and the merged history of an owner, including reopened-leaf attempts. History rows in the index retain their file path. `history_row(id)` returns all matching rows, since separate closed files may reuse an ID; the caller disambiguates by path.
+`build.py` retains each history file by path and the merged history of an owner, including reopened-leaf attempts. At build time it derives standing and writer from the selected memory tree's records, history and converted review facts. When a recorded reviewed tree is available, retained record content can be verified through the bound memory repository. The index stores current standing in `ix_record` and named revision evidence in `ix_revision`, so indexed reader queries need no history-file scan. History rows in the index retain their file path. `history_row(id)` returns all matching rows, since separate closed files may reuse an ID; the caller disambiguates by path.
 
 `query.py` answers exact-path entries, invariant/family knowledge, incoming relationships, history by owner/subject/ID, proof entries, live invariants without proof, directory/subtree entries, direct-directory entries, live entry paths, path-target links and record enumeration. Directory prefixes respect boundaries: `dash` does not include `dashboard`. Live entry paths are returned once per entry, so repeated source paths can occur; this is an entry population, not distinct-file enumeration. Family governance checks the path, its ancestors and root route `.`. The root family route therefore covers root-level and deep paths. The list of live invariants without proof is information, not a gate: admission can use criteria other than a proving test.
 
-`projection.py` maps text identities to deterministic UUID5 identities in a fixed namespace and derives revision identity from `<ID>@<revision>`. One text record contributes one revision in the selected tree. Projected provenance carries origin and record file, with a fixed epoch placeholder that must not be interpreted as recording time. Revision seals use the store's own invariant/family payload digest over the projected cells. Retired invariant/family records are omitted from the logical live representation, along with affected membership/realization rows; their records, entries, links and history remain visible in `ix_*`. Missing referenced invariants similarly leave their relationship visible in the index while preventing projection into referentially constrained logical tables. Proofs, routes, links, history and facet records use direct index tables rather than invented logical tables.
+`projection.py` maps text identities to deterministic UUID5 identities in a fixed namespace and derives revision identity from `<ID>@<revision>`. One text record contributes one revision in the selected logical projection. The revision's projected state comes from the same derived standing as direct index lookup. Projected provenance carries origin and record file, with a fixed epoch placeholder that must not be interpreted as recording time. Revision seals use the store's own invariant/family payload digest over the projected cells. Retired invariant/family records are omitted from the logical live representation, along with affected membership/realization rows; their records, entries, links and history remain visible in `ix_*`. Missing referenced invariants similarly leave their relationship visible in the index while preventing projection into referentially constrained logical tables. Proofs, routes, links, history and facet records use direct index tables rather than invented logical tables.
 
-`knowledge/schema.py` owns one composed schema, its manifest, exact DDL, indexes, immutability triggers, required features and fingerprint pin. The surviving eight logical tables are repository, invariant, invariant revision, family, family revision, family member, source anchor and realization claim. The effective declaration remains `ar-knowledge-sqlite/v9`, `user_version = 9`; this is one current declaration, not a selectable generation registry. Other versions refuse with conversion guidance, rather than migration, repair or guessed interpretation. The index creates the logical tables it fills. Database triggers express immutability even for writes outside the usual operation. The pin checker rejects changed composition and explicitly directs callers not to repin the constant merely to accept a changed schema.
+`knowledge/schema.py` owns one composed schema, its manifest, exact DDL, indexes, immutability triggers, required features and fingerprint pin. The surviving eight logical tables are repository, invariant, invariant revision, family, family revision, family member, source anchor and realization claim. The effective declaration is `ar-knowledge-sqlite/v10`, with `user_version = 10` and a new fingerprint pin. The logical revision row carries derived state. A v9 index refuses to open and the index cache rebuilds it. The index creates the logical tables it fills. Database triggers express immutability even for writes outside the usual operation. The pin checker rejects changed composition and explicitly directs callers not to repin the constant merely to accept a changed schema.
 
 `connection.py` opens read-only handles with a one-second busy timeout. Its schema inspection checks the declared version, required tables, column order and required trigger names; these checks should not be inflated into a claim that opening recomputes every aspect of installed DDL. `store.py`, `families.py`, `memberships.py`, `records.py` and `view_source.py` provide the retained read vocabulary. Store identity enumeration returns every invariant or family identity in the bound namespace, ordered by its identity column, without a policy filter or computed count. Families are peer subjects, not inferred from invariants. The view reader reads membership from its dedicated table; it supplies recorded facts while application views own selection and classification. SQL ordering in row queries should not be confused with ownership of presentation policy.
 
@@ -75,7 +75,9 @@ The manifest read records the digest of exactly its read bytes, absence or named
 
 ### Conversion, structural crossing and census
 
-`conversion/convert.py` builds a conversion from memory files, the legacy database, code objects and pinned conversion version `1`, with the paired code commit additionally supplying the declared fallback for cards missing an anchor commit. This fallback is a specific conversion rule, not authority to add other approximations. A tree already holding `knowledge/layout.json` is a no-op. Unsupported conversion versions refuse; whole converted-tree validation occurs before results are returned for writing. A refused conversion writes nothing.
+`conversion/convert.py` builds a conversion from memory files, the legacy database, code objects and pinned conversion version `1`, with the paired code commit additionally supplying the declared fallback for cards missing an anchor commit. This fallback is a specific conversion rule, not authority to add other approximations. The layout conversion is a no-op for a tree already holding `knowledge/layout.json`. Unsupported conversion versions refuse; whole converted-tree validation occurs before results are returned for writing. A refused conversion writes nothing.
+
+The separate revision-standing conversion operates on an existing text tree. It removes old stored state words, adds writer evidence where needed and writes usable archived review facts into `knowledge/history/converted-reviews.json`. Closed attempt histories and authored meaning, conditions and links stay intact. The conversion accepts only attributable evidence. When competing legacy rows name one revision number, exact retained-content proof can establish reviewed standing without attributing an unresolved writer. A second conversion of the same inputs preserves the produced bytes.
 
 `cards.py` converts legacy presentation into text cards and numbered references. Conversion and native card-reference authoring pass captured symlink modes through RowContext: symlink blobs are link-entry bytes, not referent contents or missing files; file/range anchors may bind those bytes, but named symbol anchors refuse before extraction. Citation coverage/deduplication and unmatched-note preservation stay separate. CodeObjects distinguishes blob absence from Git failure and may answer prefetched content locally; this is not an unconditional fresh availability probe.
 
@@ -83,7 +85,7 @@ The manifest read records the digest of exactly its read bytes, absence or named
 
 `base.py` converts an unconverted comparison base at its own paired code commit when the code store holds that commit and otherwise at the caller-supplied code commit, at the candidate's pinned version, keeping mechanical conversion separate from semantic change. Crossing moves leaf no-impact markers into source-bound history: each file row binds its paired-commit blob or absent sentinel; an overview binds every tracked source below its route. That full provenance set is not automatically a later changed-path-only answer, so currency may require a new row. An unreadable paired tree raises a markers-step CrossingError, not invented absence. Structural converted merges preserve version disagreement and authored conflicts; commit validation remains the managed consumer's responsibility.
 
-`crossing.py` merges Markdown by lines, sidecar references by number, realizes/proves by entry ID, and records/other JSON by fields. Mechanical anchor fields are blob, content and line numbers. Authored-versus-mechanical decisions preserve the authored side whole; both-mechanical changes choose incoming; deletion defeats a merely mechanical modification. Differing authored edits remain curator conflicts. Reference alignment moves prose markers together with their reference mapping rather than requiring manual curator renumbering. Conflict markers are explicit validator-refused JSON, not silent acceptance of one side; record conflict resolution belongs to the writer and increments beyond the higher revision. Crossing does not re-resolve anchors: later reads report staleness.
+`crossing.py` merges Markdown by lines, sidecar references by number, realizes/proves by entry ID, and records/other JSON by fields. Mechanical anchor fields are blob, content and line numbers. Authored-versus-mechanical decisions preserve the authored side whole; both-mechanical changes choose incoming; deletion defeats a merely mechanical modification. Differing authored edits remain curator conflicts. Reference alignment moves prose markers together with their reference mapping rather than requiring manual curator renumbering. Conflict markers are explicit validator-refused JSON, not silent acceptance of one side; record conflict resolution belongs to the writer and increments beyond the higher revision. Later reads report anchor staleness after crossing. The writer-aware merge excludes writer stamps and legacy state words from structural conflicts. Exact selected content retains its side's eligible writer and review proof. When the result combines actual meaning changes from both sides, the product stamps that revision and records it in the applicable writable history. Competing contents at one revision number retain their content-specific evidence.
 
 `card_authoring.py` is a distinct converted-card reference authoring route using the code working tree. Citation rows become evidence lines and resolved sidecar references; an existing trailing reference number reauthors that number, placeholders remain prose, and missing sidecars can be constructed. Removing unreferenced entries is limited to the explicitly named card. Invalid sidecars, conflicting reuse of a cited number, and adjacent merged tables involving citations produce named card refusals. Every card is prepared before the write phase, but passing cards are written even when others were refused. Markdown and sidecar are consecutive `write_text` calls; this is not a demonstrated atomic pair or batch transaction. Cards without citation tables are untouched except the named-card pruning case.
 
@@ -154,17 +156,16 @@ Anchor: `_approved_packet_ref` `changed_observations`
 
 ## Evidence
 
+Anchor: Build charter, `ParsedTree`, `_parse_knowledge_file`
+
 - Retained reference account (no fresh execution or acceptance inferred): A missing object against a Git failure. [2]
 
-- Retained reference account (no fresh execution or acceptance inferred): Entries at or under a directory, and of the files directly in it. [5]
 
 - Retained reference account (no fresh execution or acceptance inferred): Live entry paths, links to a path, and every record of a kind. [6]
 
 - Retained reference account (no fresh execution or acceptance inferred): The shared link query `_incoming` delegates to. [7]
 
-- Retained reference account (no fresh execution or acceptance inferred): The store's own seal on each projected revision row. [8]
 
-- Retained reference account (no fresh execution or acceptance inferred): The format bump that rebuilds v1 caches. [9]
 
 - Retained reference account (no fresh execution or acceptance inferred): Every record ID of one kind, sorted; since MIK-R29 the reader's `records_of_kind` is built on it. [10]
 
@@ -200,7 +201,6 @@ Anchor: `_approved_packet_ref` `changed_observations`
 
 - Retained reference account (no fresh execution or acceptance inferred): **The corrected page counts: the declared total on every page, the walk's cumulative figure, and the slice size in `len(page.items)`.** [43]
 
-- Retained reference account (no fresh execution or acceptance inferred): The count model that refuses its own arithmetic contradiction at construction. [44]
 
 - Retained reference account (no fresh execution or acceptance inferred): **The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).** [45]
 
@@ -247,11 +247,8 @@ Anchor: `_approved_packet_ref` `changed_observations`
 - Retained reference account (no fresh execution or acceptance inferred): Source-path observation cases moved with meaning preserved. [100]
 
 
-- Retained reference account (no fresh execution or acceptance inferred): The captured-state key. [102]
 
-- Retained reference account (no fresh execution or acceptance inferred): The build, which names every failing file. [103]
 
-- Retained reference account (no fresh execution or acceptance inferred): Retired records are left out of the projection. [104]
 
 - Retained reference account (no fresh execution or acceptance inferred): The pure conversion, its version pin and its validation. [107]
 
@@ -263,20 +260,16 @@ Anchor: `_approved_packet_ref` `changed_observations`
 
 - Retained reference account (no fresh execution or acceptance inferred): Rule 8's item rules and conflict markers. [111]
 
-- Retained reference account (no fresh execution or acceptance inferred): Rule 8's steps. [112]
 
-- Retained reference account (no fresh execution or acceptance inferred): The two proof lookups. [113]
 
 - Retained reference account (no fresh execution or acceptance inferred): The card authoring's entry. [114]
 
 Numbered findings [116] and [149] describe converted carryover planning, conversion refusals and apply-authority checks; their notes and targets were revised for this candidate. The inherited source accounts remain in the immutable base and M1 evidence; they do not establish execution by a retired owner.
 
 
-- Retained reference account (no fresh execution or acceptance inferred): The index keeps each history file by path. [117]
 
 - Retained reference account (no fresh execution or acceptance inferred): Two tables with no blank line between them are refused when either holds citations. [118]
 
-- Retained reference account (no fresh execution or acceptance inferred): The capture copies the index with its time. [119]
 
 - Retained reference account (no fresh execution or acceptance inferred): The reconsideration step resolves the endpoint and asks for the approval. [129]
 
@@ -319,15 +312,11 @@ Numbered findings [116] and [149] describe converted carryover planning, convers
 - Adoption distinguishes legacy-card/validator/drift refusals and drift acceptance cannot clear the first two. [148]
 
 
-- Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion. [150]
 
-Anchor: Build charter, `ParsedTree`, `_parse_knowledge_file` [151]
 
 - History lookup returns every matching path-bearing row and proof absence is informational. [152]
 
-- Projection uses deterministic identities, store-owned seals and retains retired/unprojectable facts in direct index tables. [154]
 
-- One composed v9 schema and fingerprint pin replace generation selection; current index layout is v3. [155]
 
 - Read handles and identity enumeration retain their separate boundaries. [156]
 
@@ -372,3 +361,26 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowle
 
 - KnowledgeIndexCache binds its namespace to the loaded build digest and uses a private namespace when that digest is unavailable; only known-build datasets are reused. [175]
 - open_cached_index opens only the loaded build namespace and performs no usage bookkeeping; an unknown digest yields no reusable index. [176]
+
+- Index build derives current standing and writer evidence from one selected tree. [177]
+- The declared cache schema stores both current standing and per-revision writer evidence. [178]
+- Revision-standing conversion plans stored state-word removal and companion review facts. [179]
+- Crossing merges authored fields and applies selected-side or product writer evidence. [180]
+
+- Retained reference account (no fresh execution or acceptance inferred): The two proof lookups. [113]
+- Retained reference account (no fresh execution or acceptance inferred): The count model that refuses its own arithmetic contradiction at construction. [44]
+- Retained reference account (no fresh execution or acceptance inferred): Entries at or under a directory, and of the files directly in it. [5]
+
+- Projection uses deterministic identities, store-owned seals and retains retired/unprojectable facts in direct index tables. [154]
+- Retained reference account (no fresh execution or acceptance inferred): The store's own seal on each projected revision row. [8]
+- Retained reference account (no fresh execution or acceptance inferred): The index keeps each history file by path. [117]
+- Retained reference account (no fresh execution or acceptance inferred): The build, which names every failing file. [103]
+- Retained reference account (no fresh execution or acceptance inferred): The captured-state key. [102]
+- Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion. [150]
+- Retained reference account (no fresh execution or acceptance inferred): The capture copies the index with its time. [119]
+
+- The current logical store is schema v10, with an explicitly pinned fingerprint. The rebuildable index uses layout v7. [155]
+- The schema's v2 record explains the inaugural cache rebuild after the payload-seal change. A cached index whose format differs from the current format is rebuilt. [9]
+- Retained reference account (no fresh execution or acceptance inferred): Retired records are left out of the projection. [104]
+- Retained reference account (no fresh execution or acceptance inferred): Rule 8's steps. [112]
+- Parser completeness is distinct from validator integrity and history files are retained by path. [151]

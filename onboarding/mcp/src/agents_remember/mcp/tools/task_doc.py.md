@@ -51,7 +51,8 @@ two objects, because a model-typed tool parameter would republish `task_doc` as 
 
 - The response model the payload validates against.
 
-- The application entry point this builder forwards to. Anchor: `task_doc_tool` [1]
 
 
 - The response model the payload validates against. Anchor: `TaskDocResponse` [3]
+
+- The application entry point this builder forwards to. Anchor: `task_doc_tool` [1]

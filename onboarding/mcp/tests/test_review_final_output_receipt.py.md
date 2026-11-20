@@ -75,4 +75,4 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References (continued)
 
-- The lane row and the exact-scope consumer rows (the _user_settings_guard.py and Node package-lock artifacts) this module is registered in. [24]
+- The lifecycle catalog lists `test_review_final_output_receipt.py` as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`. [24]
