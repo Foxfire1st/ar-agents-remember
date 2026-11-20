@@ -31,7 +31,7 @@ The closed product-process register now includes agents_remember.kernel.primitiv
 
 ## Construction And Operating Model
 
-Ordinary local pytest uses the reusable bootstrap. Its random-order option defaults to no seed, so collection is shuffled only when a seed is supplied. Session isolation supplies a temporary cache location; autouse fixtures restore registered mutable mappings after each test and reset registered process state before and after each module. Certifying entry uses `prepare_certifying_pytest_bootstrap`, which obtains Dagger admission before its own candidate setup.
+Ordinary local pytest uses the reusable bootstrap. Pytest configuration installs the shared test loop factory for Runner and the public asyncio loop constructor. Cleanup restores both aliases. The factory caps idle selector waits at 50 milliseconds so a denied wake-up send cannot leave a queued callback waiting for a socket event. Test-authored dashboard and historical-review children use the same factory. Its random-order option defaults to no seed, so collection is shuffled only when a seed is supplied. Session isolation supplies a temporary cache location; autouse fixtures restore registered mutable mappings after each test and reset registered process state before and after each module. Certifying entry uses `prepare_certifying_pytest_bootstrap`, which obtains Dagger admission before its own candidate setup.
 
 Dependency analysis reconstructs the current file population, module ownership and relationships on each build. Per-file facts can be reused from a disposable store using a key that includes the analysis implementation, Python version, module identity, package identity and source bytes. The lane and lifecycle validators compare declarations with that source-derived population and ownership graph.
 
@@ -135,7 +135,11 @@ The generated route index lists the source files of this route and their cards.
 
 - The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors. [14]
 
-- The collection register and explicit kernel service-holder reset are separate module-isolation paths; new explainer and watcher collections join the closed register. [29]
+
+- The collection register and explicit kernel service-holder reset are separate module-isolation paths. The collection register includes the explainer and watcher collections. [29]
+
 
 - Six instruction helpers own checkout-local renewal loading, digest traceability, policy/wording projection, pointer parsing and binding controls, and source-derived audience/link comparisons. [30]
 - Manifest step derivation collects actions and reader-role associations for classified Markdown references from first-message and detail pointers. [31]
+
+- The shared factory bounds selector idle waits, and pytest restores its two factory aliases at cleanup. [32]

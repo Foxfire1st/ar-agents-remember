@@ -49,6 +49,8 @@ Collection first establishes isolated candidate imports and configuration, reads
 
 The tool sweep derives its census from the advertised roster and uses one classifier for returned calls and controls. It attempts to validate the recorded whole result against the registered response model, checks delivered top-level keys against that result and framework keys, and distinguishes boundary-validation, unvalidatable, raised, bare-not-ok, refusal and payload outcomes. Each tool gets separate unvalidatable and boundary-validation subTests; raiser, bare-not-ok and census checks have separate population subTests. The sweep uses `tool_entry_point_sweep_support.py::_whole_result`, which returns the delivered payload when `log` is absent/non-string, the detail cannot be read or parsed, or its JSON is not an object. Failure to obtain detail therefore does not itself force `unvalidatable`; the substituted payload is model-validated. Preserve the intended independent whole-result check as inherited intent, not as an implemented no-fallback guarantee.
 
+The ordinary entry-point world's socket-denial control calls `server_info` with the socket wake-up send refused and requires the ordinary classifier to return a payload. Test-owned loops use the shared bounded selector from the Python testing support route so queued callbacks can run despite the denied wake-up.
+
 > The sweep compares observed error-arm and bare-not-ok populations with separately declared pins. `ENVELOPE_LOSING_RAISERS` and `UNMARKED_NOT_OK` are empty. No executable ambient lifecycle-state matrix or `STATE_DEPENDENT_RAISERS` pin remains in the two entry-point worlds or sweep module; `lifecycle_finalize_task` has an ordinary contract-addressed dry-run request. Exact equality checks distinguish a measured exception from an accidentally weakened population. `_attach_coherence_readiness` supplies code, error and nextAction when it reports coherence-required. This source correction is not a fresh sweep result.
 
 For memory work, preparation may discover exact-pair quality findings, commit-owned findings, missing onboarding, stale indexes and source drift before expensive certification. That worklist is not Gate 5. Interactive catalog projection does not acquire affected-closure or code-prefix authority. Final publication remains with the existing prepared-output and lifecycle owners; the finalization helper validates a selected prefix of the original certificates and takes the envelope's memory tree from the current Gate 5 inputs (`certification/certificate_authority.py:158-186`), while an allowed retained prefix can include all five certificates whose recorded inputs differ from the current ones (`certification/certificate_authority.py:285-308,347-361`) — so the helper's validation does not establish equality with the current Gate 5 inputs, and no mounted publication equality follows from it.
@@ -1269,7 +1271,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The attributed-source-content module exports the _pair test scaffold. [1651]
 - The publication-input cases in their new home, asserting the declaration is the model's own field order. [1652]
 - The source-endpoint cases exercise captured, recorded and unrecorded endpoint resolution, source inventory and task-context selection through production composition. [1653]
-- **The production owners the cases measure: the delegated resolution, the capture owner, and the recorded-range resolver.** [1654]
+- Review resolution delegates closed and recorded comparisons, uses the shared live candidate capture, and reads recorded committed ranges through their endpoint resolver. [1654]
 - `_selection()` resolves published intent, asserts a `PublishedIntentSelection`, and returns it to the invalid-seed case. [1655]
 - The memory initializer reports an unconverted memory tree as legacy-format. [1657]
 - **The no-datasets fixture shape and the selector-less request the task-context cases use.** [1658]
@@ -1351,7 +1353,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - No-knowledge task-context source cases assert All changes wording, absence of `. ` in the statement and inventory truth without browser-layout evidence. [1795]
 - Each guard has a direct case in `mcp/tests/test_capsule_serving_surface.py`. [1801]
 
+
 - The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 17 lifecycle contracts and 116 artifacts. The parsed lane catalog contains 792 selected lane members. [1808]
+
 
 - The current root and testing design agree on 10000 unit and 2000 integration selected cases; the named tests retain their independent source assertions. Target: mcp/tests/test_landing_report.py. [1814]
 - The current root and testing design agree on 10000 unit and 2000 integration selected cases; the named tests retain their independent source assertions. Target: mcp/tests/test_landing_report.py. [1815]

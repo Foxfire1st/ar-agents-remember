@@ -568,12 +568,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa392c631e8973beb464de5d5f1c437342cee5db",
+            "blob": "22df2bae34011fefb15c937c98ca65522e69d257",
             "content": "sha256:6ded61fba73f061c96db7bb110275528f71fe888eaa019ea865d4c122bdbdcdf",
             "locator": {
-              "end": 280,
+              "end": 281,
               "kind": "line_range",
-              "start": 239
+              "start": 240
             },
             "path": "mcp/tests/test_dashboard_autostart_after_discovery.py"
           },

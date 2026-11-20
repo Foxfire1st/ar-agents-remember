@@ -3,14 +3,15 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "The reader fixture's own composition alone still leaves a wait that can hang, and a bounded wait alone still hangs when the request never reaches a dispatcher; only together do they promise that these protocol waits end at a limit and that the sweep's limit is a named failure rather than a raiser."
+    "justification": "Factory dispatch lets the reader exchange start, named phase limits make unanswered operations visible, and the test-owned selector lets the runner service queued completions when the socket wake-up is denied."
   },
-  "guarantee": "The reader protocol test composes its own server through the product factory instead of inheriting another test's process state. The protocol waits of the reader exercise and of the tool sweep — the reader's exchange and its Git status observations, and the sweep's session initialization, tool response and session cleanup — each end at a limit, and the sweep's limit is a named failure that is not classified as a product raiser. The fixtures' shared Git helpers — `git`/`init_repo` in `mcp/tests/test_worktree_support.py` and the sweep's `_git` — carry no timeout of their own and are outside this guarantee. Where the event-loop runner can shut down, no earlier test and no unanswered tool leaves these waits blocking the run; LIM-81M7T1 records where it cannot.",
+  "guarantee": "The reader protocol test composes its own server through the product factory. The reader exchange and Git status observations and the sweep's session initialization, tool response and session cleanup have explicit limits. The sweep reports its own deadline as a named failure outside the product-raiser classification. Test-owned loops from the shared fixture factory also return from selector waits to service queued callbacks when a socket wake-up is denied, including while the runner joins its executor. The test-owned loops retain normal shutdown and require executor jobs to be able to finish. The fixtures' shared Git helpers git and init_repo in test_worktree_support.py and the sweep's _git remain outside the protocol timeout guarantee.",
   "id": "FAM-TG3WK0",
   "members": [
     "INV-X0BRG0",
     "INV-2S0FEY",
-    "INV-W4XGR4"
+    "INV-W4XGR4",
+    "INV-0ZEX0D"
   ],
   "origin": {
     "handoff": {
@@ -20,10 +21,11 @@
     "leaf": "260928-MIK-L70",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/tests",
-    "mcp/src/agents_remember/mcp/registration"
+    "mcp/src/agents_remember/mcp/registration",
+    "mcp/test_support/agents_remember_test_support/testing"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

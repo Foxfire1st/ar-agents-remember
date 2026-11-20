@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The factory, pytest setup and explicit subprocess integrations share the selector cap, and an injected EPERM control prevents reintroducing a fixture hang that ordinary successful socket sends conceal."
+  },
+  "applicability": "Test-owned asyncio selector loops created by the shared factory for pytest and the test-authored dashboard and historical-review subprocesses.",
+  "conditions": [
+    "The event loop has queued a callback before the wake-up send is attempted.",
+    "The selector can return from its configured wait and the loop thread can run."
+  ],
+  "exclusions": [
+    "Product-owned loop construction and production server runtime.",
+    "Callbacks blocked by unrelated I/O, cancellation, or an executor job that does not finish."
+  ],
+  "id": "INV-0ZEX0D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "BUG-R16 control and sandbox population in the round-1 freeze evidence"
+      ],
+      "path": "BUG-L16-W2-curator-ingest.json"
+    },
+    "handoffEntry": "BUG-R16@v1 §§1–3",
+    "leaf": "261112-BUG-L16",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The test-owned asyncio loops cap each idle selector wait at 50 milliseconds so they can process queued work and run normal executor shutdown when a socket wake-up is refused.",
+  "status": "proposed",
+  "supersedes": []
+}

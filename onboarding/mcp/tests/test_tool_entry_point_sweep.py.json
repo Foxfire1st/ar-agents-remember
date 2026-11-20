@@ -331,8 +331,20 @@
       ]
     },
     "37": {
-      "note": "The swept population is derived and equals the live server's advertisement.\n\nAnchor: `EntryPointCoverageTests`",
+      "note": "The swept population is derived and equals the live server's advertisement.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
+            "content": "sha256:e6541f83ab393d4ca2381200670325da4fd3de1a6b1b2a32abe9548fecfa8896",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointCoverageTests"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
@@ -343,29 +355,6 @@
               "start": 463
             },
             "path": "mcp/tests/tool_entry_point_world.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
-            "content": "sha256:efd96d85d42cf0105781fcb24eb2d1a56c3f7aac1387c584fd98e0225de75c44",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
-            "content": "sha256:e6541f83ab393d4ca2381200670325da4fd3de1a6b1b2a32abe9548fecfa8896",
-            "locator": {
-              "kind": "symbol",
-              "name": "EntryPointCoverageTests"
-            },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
           },
           "kind": "test"
         }
@@ -394,7 +383,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
+            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
             "content": "sha256:22a11f367e54291ae27b8b07bc21b8ba0b55f48071782901bdea64f09a00b608",
             "locator": {
               "kind": "symbol",
@@ -485,12 +474,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
+            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
             "content": "sha256:ee04bc3ed03d22f92aab8bae130192202a5096d75a2b10833b5b548f800d66aa",
             "locator": {
-              "end": 152,
+              "end": 167,
               "kind": "line_range",
-              "start": 116
+              "start": 131
             },
             "path": "mcp/tests/test_tool_entry_point_controls.py"
           },
@@ -538,12 +527,12 @@
         },
         {
           "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
+            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
             "content": "sha256:8251f4ccdd9d264c78e9cbc7664ca539d93c8d25c9a0963db21a92afb911961c",
             "locator": {
-              "end": 99,
+              "end": 101,
               "kind": "line_range",
-              "start": 89
+              "start": 91
             },
             "path": "mcp/tests/test_tool_entry_point_controls.py"
           },
@@ -613,12 +602,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
+            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
             "content": "sha256:eda1dac8bec47b36bfbbf76e34161d88a49431a722047a5a45471476e11ae0d3",
             "locator": {
-              "end": 87,
+              "end": 89,
               "kind": "line_range",
-              "start": 66
+              "start": 68
             },
             "path": "mcp/tests/test_tool_entry_point_controls.py"
           },
@@ -781,22 +770,11 @@
       ]
     },
     "53": {
-      "note": "The invalid-argument control proving the caller's side lands in its own arm and is never reported as the tool's break.\n\nAnchor: `test_an_invalid_argument_lands_in_its_own_arm_and_names_the_callers_side`",
+      "note": "The invalid-argument control proving the caller's side lands in its own arm and is never reported as the tool's break.",
       "targets": [
         {
           "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
-            "content": "sha256:efd96d85d42cf0105781fcb24eb2d1a56c3f7aac1387c584fd98e0225de75c44",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
+            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
             "content": "sha256:7423704e2a966a6f00d7f069795ba563a99016ae9bb313cd9f26369f16f1d982",
             "locator": {
               "kind": "symbol",
@@ -813,7 +791,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
+            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
             "content": "sha256:57d50058c8bff473ec350ef9c891850aef546413edd49555abb0990427629416",
             "locator": {
               "kind": "symbol",
