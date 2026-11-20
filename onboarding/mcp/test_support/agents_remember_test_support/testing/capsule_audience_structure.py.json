@@ -70,12 +70,12 @@
         },
         {
           "anchor": {
-            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
             "content": "sha256:6e01c23a940a39dac3edb332638e28e59ee2fc1106347f1694dddced093cc989",
             "locator": {
-              "end": 1053,
+              "end": 1054,
               "kind": "line_range",
-              "start": 1044
+              "start": 1045
             },
             "path": "mcp/tests/test_role_capsule_audiences.py"
           },

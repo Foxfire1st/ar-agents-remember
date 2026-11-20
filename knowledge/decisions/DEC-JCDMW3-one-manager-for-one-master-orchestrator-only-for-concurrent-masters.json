@@ -58,8 +58,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
-        "content": "sha256:c5e3fa89276495a87b5468b2bddaaf4031728603c22968da4b4a894ded1b43a1",
+        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+        "content": "sha256:aeaf5dae1859afafc83038c960cf9423cf636e9a1b084639770d20319f2824a6",
         "locator": {
           "end": 97,
           "kind": "line_range",
@@ -77,7 +77,7 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

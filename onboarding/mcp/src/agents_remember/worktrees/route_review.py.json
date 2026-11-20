@@ -3,7 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+        "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+        "content": "sha256:a11f53195360d144843350f7167e02b86bfeecb424c1539d6c9b9e3dc7230f82",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_current_route_review"
+        }
+      },
+      "id": "RLZ-1RN7PG",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The current route verdict alone determines whether the door gives its existing blocked result.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+        "content": "sha256:6bc0c94a3d25473585236c6696f759e1fa9ef91670786f00277a93e30211a953",
+        "locator": {
+          "end": 459,
+          "kind": "line_range",
+          "start": 426
+        }
+      },
+      "id": "RLZ-2JBTNF",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The builder validates the supplied verdict reference and stamps the BLOCK on the prior reviewed tree.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
         "content": "sha256:512501ba84472e1e0959748d4f3ec953e95de1a59795606374f39bc423ecec8c",
         "locator": {
           "kind": "symbol",
@@ -21,7 +58,25 @@
     },
     {
       "anchor": {
-        "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+        "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+        "content": "sha256:d868b584c7ded5abfbba448fe3b1a7c94f48d8f66b7fa92128eef26ae9e6673f",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_route_addition_block"
+        }
+      },
+      "id": "RLZ-4Q6063",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "A fresh BLOCK requires its own nonblank verdict reference and binds that evidence to the reviewed tree while retaining prior route units.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
         "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
         "locator": {
           "kind": "symbol",
@@ -39,7 +94,25 @@
     },
     {
       "anchor": {
-        "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+        "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+        "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_route_review"
+        }
+      },
+      "id": "RLZ-98895E",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The Reviewer publishes a fresh scoped repair verdict stamped with the new candidate, intent and exact evidence dependencies.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
         "content": "sha256:7a65b3a43ec9a86839f97e43234988f11363361deea0709be2ff20d9a481fe43",
         "locator": {
           "kind": "symbol",
@@ -62,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
             "locator": {
               "kind": "symbol",
@@ -73,7 +146,7 @@
         },
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:b61da9d6eda573fbd5100bb19f4708ea5534f3c5a374f540ce3cc7cf6f9b0d67",
             "locator": {
               "kind": "symbol",
@@ -84,7 +157,7 @@
         },
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:26d60589ac252eb92e2edc8cf906f276e6416f1d43d82828aedc6b56cb107eb3",
             "locator": {
               "kind": "symbol",
@@ -96,11 +169,11 @@
       ]
     },
     "2": {
-      "note": "Series altitude is excluded before leaf resolution; changed leaves require a passing record for the current candidate tree.",
+      "note": "The leaf reader skips non-leaf contracts and unchanged leaves. For a changed leaf it validates a passing review’s task intent and evidence, then returns the stamped tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:a11f53195360d144843350f7167e02b86bfeecb424c1539d6c9b9e3dc7230f82",
             "locator": {
               "kind": "symbol",
@@ -116,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:b71d1bb12180b822420f827acd2350e1bd839ad85a5622c6fec4536d0af43d88",
             "locator": {
               "kind": "symbol",
@@ -127,7 +200,7 @@
         },
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:1028f4d426807d513b9afabcfb1bb176bb6873d278d279c2a0237aee915e7cce",
             "locator": {
               "kind": "symbol",
@@ -138,7 +211,7 @@
         },
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:26d60589ac252eb92e2edc8cf906f276e6416f1d43d82828aedc6b56cb107eb3",
             "locator": {
               "kind": "symbol",
@@ -154,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:4778720b359f5a687cb5cde88a581f4504fb43fea9379b03d92723aa20e864b6",
             "locator": {
               "end": 253,
@@ -166,7 +239,7 @@
         },
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:0aa1777f692d1221d9ff36fe608a862949d251aabdc2c03151ced2180003e929",
             "locator": {
               "end": 275,
@@ -183,8 +256,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
-            "content": "sha256:dec1e870f6476ae35e3eb90c61301c71553bf75141daf92defe26a0422a24f71",
+            "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+            "content": "sha256:739797bbe01cdc1ed505f627a4b3f8143ebdc152e4e1792c58c360ab40c11a8d",
             "locator": {
               "kind": "file"
             },
@@ -195,12 +268,12 @@
       ]
     },
     "6": {
-      "note": "Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review alone carries the mutating task_doc address and required review value. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict.",
+      "note": "Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review carries the dedicated routed-review address and required review value. A sanctioned generic addition can publish a route BLOCK for an existing route verdict. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict.",
       "targets": [
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
-            "content": "sha256:28f91e1f645dd0e8946a9e15c5b3dcd0fd513bc4342a259de6fcc55edc1a594f",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+            "content": "sha256:c6747a3db34199e3c4d3a4ad8a1ebed83ff454b5c8c99e630359e0f8ec7a4143",
             "locator": {
               "kind": "file"
             }
@@ -214,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:7a65b3a43ec9a86839f97e43234988f11363361deea0709be2ff20d9a481fe43",
             "locator": {
               "kind": "symbol",
@@ -230,7 +303,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:512501ba84472e1e0959748d4f3ec953e95de1a59795606374f39bc423ecec8c",
             "locator": {
               "kind": "symbol",

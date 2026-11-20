@@ -223,12 +223,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d5654ea64a46c3921348635b457a2a2854e3b27",
+            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
             "content": "sha256:5e2191782906f5df1a3ca6b50a4e408fadb99474cea82066d733c9dcb764e4a1",
             "locator": {
-              "end": 1058,
+              "end": 1059,
               "kind": "line_range",
-              "start": 1026
+              "start": 1027
             },
             "path": "mcp/tests/test_role_capsule_audiences.py"
           },

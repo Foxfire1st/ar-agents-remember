@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The notice makes a change in the developer’s selected delivery setup visible even when the existing progress decision already authorizes it."
+  },
+  "applicability": "A coder switch under the existing review-progress decision.",
+  "conditions": [
+    "The existing role owns the decision and gives the notice when the switch actually happens."
+  ],
+  "exclusions": [
+    "A model switch grants no review allowance."
+  ],
+  "id": "INV-55QF39",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "skills/l-01-agent-lifecycles/reference/coordination/shared/third-rejected-round.md"
+      ],
+      "path": "W7-knowledge-handoff.json"
+    },
+    "handoffEntry": "BUG-R12@v1 §5",
+    "leaf": "261112-BUG-L12",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The developer is told when the coder is switched, naming the model left and the model taken.",
+  "status": "proposed",
+  "supersedes": []
+}

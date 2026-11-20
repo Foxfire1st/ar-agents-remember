@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The Reviewer role sets the finding standard and the review operation uses it at the sealed-list boundary."
+  },
+  "applicability": "Ordinary independent review and the decision to add a guard.",
+  "conditions": [
+    "A finding identifies how an honest participant reaches the starting state."
+  ],
+  "exclusions": [
+    "An explicit requirement or developer request can admit adversarial review."
+  ],
+  "id": "INV-KJACVA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/25ccbad9-32c7-4ade-819a-351d146060b6/role-launch/261112-BUG-L12-worker-25ccbad9-32c7-4ade-819a-351d146060b6.md"
+      ],
+      "path": "W7-knowledge-handoff.json"
+    },
+    "handoffEntry": "BUG-R12@v1 §6",
+    "leaf": "261112-BUG-L12",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Reviews stay proportional: a review assumes honest agents, a finding names the product operation or honest step that reaches its starting state, states built by hand to defeat a check get no guard, and a harder, adversarial review runs only where a requirement or the developer asks.",
+  "status": "proposed",
+  "supersedes": []
+}

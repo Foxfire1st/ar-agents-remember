@@ -187,12 +187,12 @@
         },
         {
           "anchor": {
-            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
             "content": "sha256:da29e572316bf1ad53a864d6c7ab899e91629c97f6d1ddfa0be41d5d04d4701c",
             "locator": {
-              "end": 189,
+              "end": 190,
               "kind": "line_range",
-              "start": 147
+              "start": 148
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },

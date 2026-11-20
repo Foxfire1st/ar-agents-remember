@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
+    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
     "role": "curator",
-    "statement": "The Hermes installation guide states the mode precedence and the observed default, conditional on known modes and a host-advertised default.",
-    "task": "261112-BUG-L11",
+    "statement": "The Hermes guide still accurately describes launcher, profile and settings precedence and the conditional host default.",
+    "task": "261112-BUG-L12",
     "uncommitted": true
   },
   "document": "docs/install/hermes.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -81,7 +81,7 @@
       "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
     },
     {
-      "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+      "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },

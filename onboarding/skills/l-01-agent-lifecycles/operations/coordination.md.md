@@ -36,6 +36,8 @@ The common instructions retain explicit canonical bindings, allowed role starts,
 
 The Manager-only section delivers the first Reviewer intake and holds report reading, next-seat tracking and the sender-retry occasion; Architect/Orchestrator/Manager sections cover leaf stages, closeout recovery and task-edit projections; all-role sections cover message addressing, waiting calls, files, reassessment and permission notices. Audience markers do not transfer Manager work or create a new authority.
 
+The Worker reports listed final-check results and their code tree to both the Manager and the Reviewer. The Manager uses the report with both verdicts at the gate, with targeted results beside the original run after repair.
+
 ## Evidence
 
 The file's sidecar retains the realization entries for its current anchors.

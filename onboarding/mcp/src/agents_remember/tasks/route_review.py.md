@@ -37,7 +37,11 @@ None.
 
 ## Current Contract
 
-ReviewRound records positive round number, finite code/memory kind, whether findings remained when that round was recorded, and optional verdict reference. ReviewState gains a default-empty recordedRounds list; its existing baseline/remaining and approval consistency checks remain. MemoryReviewState is an Annotated ReviewState with an after-validator refusing any recorded row whose kind is not memory. Complete ordered history is checked by review_count_unavailable at counting time, not guaranteed by this list declaration; legacy records are not backfilled or reinterpreted. Each lane shares the same settings-limit/extra-round protocol without sharing a counter or baseline.
+ReviewRound records positive round number, finite code/memory kind, whether findings remained when that round was recorded, and optional verdict reference. ReviewState has a default-empty recordedRounds list. A sanctioned addition records its amended
+round in addedFindingRounds without appending a counted row. The finding description lives in
+baselineFindings. Each AddedFindingRef in addedFindings stores the finding ID and its route. A
+blocking RouteReviewRecord can name the added findings in addedFindingIds while preserving prior
+route units. For ordinary counted rounds, its existing baseline/remaining and approval consistency checks remain. MemoryReviewState is an Annotated ReviewState with an after-validator refusing any recorded row whose kind is not memory. Complete ordered history is checked by review_count_unavailable at counting time, not guaranteed by this list declaration; legacy records are not backfilled or reinterpreted. Each lane shares the same settings-limit/extra-round protocol without sharing a counter or baseline.
 
 
 The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.

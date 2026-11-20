@@ -86,7 +86,7 @@ absent obligation.
 - The refusal an absent or unreadable packet raises, naming both admissible remedies. [5]
 - The kernel's non-symlink artifact guard this module reuses for a consumer-supplied path. [6]
 
-- The canonical packet shape the heading table follows, including its template section headings. [7]
+- The packet template supplies the canonical heading spellings. Expected Evidence carries review-round evidence. Final Checks is preserved as a referenced section outside the injected heading roles. [7]
 
 - The case that proves an owned obligation is carried verbatim and a missing section is a gap. [8]
 

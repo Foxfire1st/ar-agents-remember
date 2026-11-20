@@ -6727,8 +6727,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29a710160e944b5283dd821dc0052ddeafd84d79",
-            "content": "sha256:8347a6c60d751912a5fb9926753902972a36bd473e3516b1bec6097b92c1ba86",
+            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "content": "sha256:3b34393f0b357d071f668e74480e8e725c621bfc56c982345066a9634b462213",
             "locator": {
               "kind": "symbol",
               "name": "test_a_clean_sync_keeps_the_review_and_a_repair_stays_visible"
@@ -6744,8 +6744,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
-            "content": "sha256:b9bcbc14799cc2fdcf8fa539cec3e8c94d96306286c3ae677e65fb715385bcac",
+            "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
+            "content": "sha256:7c29a822c5d0ee621f9d83e51ea7940054e2f55d67a8ec6f7a2da959e1cf671e",
             "locator": {
               "kind": "file"
             },

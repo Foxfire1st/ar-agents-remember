@@ -41,7 +41,7 @@ each other. Before the gate the manager inspects the complete changed-file diff 
 Immediately before starting the Curator it calls `worktree_status` for the canonical leaf, requiring the
 complete task-derived `sourceLineage` projection to be current; the curator brief carries it and the native start re-proves
 it before host creation. It consumes the Worker's targeted-check
-report and Curator's complete onboarding/check handoff before the authorized closeout transaction. The normal Curator authoring pass includes full memory quality; optional full code-quality/test operations remain distinct and the transaction does not rerun the other seats' checks.
+report, the listed final-check report and any targeted successor results, and the Curator's complete onboarding/check handoff before the authorized closeout transaction. The normal Curator authoring pass includes full memory quality; optional full code-quality/test operations remain distinct and the transaction does not rerun the other seats' checks.
 
 The canonical Manager coordinates its own master through its role tools and exact task references. Worker, Reviewer and Curator start individually at their stages; an Investigator has its separately admitted concern scope. A dashboard-started Manager needs no fabricated parent or Architect ID. Tool capability is not a grant to infer caller kind, adopt ambient authority or bypass a refusal.
 
@@ -95,7 +95,7 @@ are curator blockers, not authority to write current onboarding intent.
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized paired code and memory transaction. The Manager does not run the other seats' checks itself: full code-quality/test/certification operations remain explicitly assigned, while a normal Curator pass supplies its standing complete memory-quality and coherence evidence for the transaction. Requested reviews retain the sealed finding list and monotonic finding set under the settings limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized paired code and memory transaction. The Manager does not run the other seats' checks itself: full code-quality/test/certification operations remain explicitly assigned, while a normal Curator pass supplies its standing complete memory-quality and coherence evidence for the transaction. Requested reviews retain the sealed finding list and narrowing of ordinary successor findings, with additions through the three sanctioned routes under the settings limit.
 
 ## Questions from children and permission notices
 
@@ -137,7 +137,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 - The Manager sets no step for another agent; coordination, gate and publication powers stay with their owners. [12]
 
 
-- One Manager coordinates one canonical master, reads complete changed-file evidence and both verdicts, and retains closeout, integration, acceptance and landing order without editing Curator-owned memory or substituting a finished turn for acceptance. [1]
+- One Manager coordinates one canonical master, reads the complete changed-file diff, both verdicts and the Worker’s report of any listed final checks, and retains closeout, integration, acceptance and landing order while preserving the Curator’s memory ownership and the requirement for AR acceptance evidence. [1]
 
 - The Manager starts Worker alone at build, Reviewer at Worker freeze and Curator after code PASS using individual role_start calls under its canonical master. It keeps the returned IDs, report and handover paths with each assignment and reconciles an uncertain start with its original request ID. [2]
 
@@ -147,7 +147,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 - Manager sends developer-needed matters to the recorded parent or instructed reporting recipient, retains ordinary operational rulings, records undelivered matters and continues independent work; the final report-path return uses the parent role with task references. [5]
 
-- Each leaf has one primary requirement revision; adjacent revisions remain constraints. The Manager inspects the complete changed-file diff and both verdicts, preserves stable requirement/finding IDs and distinguishes implementation, review, curation and publication. [6]
+- Each leaf has one primary requirement revision and adjacent revisions remain constraints. The Manager inspects the complete changed-file diff, both verdicts and the Worker's report of any required final checks. It preserves stable requirement and finding identifiers and distinguishes implementation, review, curation and publication. [6]
 
 
 - The Manager may start an Investigator under its own master, naming its sprint when one commands it, for a check belonging to no leaf, sends the scoped concern first to its returned ID, and keeps ordinary requirement interpretation and operational decisions within the intended promise. [7]

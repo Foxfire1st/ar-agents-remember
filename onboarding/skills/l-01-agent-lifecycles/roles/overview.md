@@ -104,9 +104,9 @@ Developer decisions go upward to the actual parent, with the question, held depe
 
 The review budget is settings-owned (`orchestration.loops.defaults.maxRounds`), read at each begin; the task’s effective limit, including approved extras, is exposed by `task_doc.reviewState.limit`. CODE and MEMORY have separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval, which the Manager requests through its assigned reporting route and records.
 
-Worker ends with requirement-satisfying bytes, focused checks and report with Reviewer; Reviewer records whole-requirement coverage and verdict; Curator writes, checks and publishes knowledge through the installed build and obtains clean full quality/coherence evidence before handing MEMORY directly to the independent Reviewer. Each stage repairs its own input/instrument slips through the same admitted tool and continues; permission prompts, other correct-input refusals or unowned state, requirement-meaning questions and out-of-scope effects remain stops; covered correct writes follow only their scoped recovery.
+The Worker passes the handover checks on a clean copy of the frozen candidate and hands the freeze report to the Reviewer. After code PASS, it runs the requirement’s listed final checks once on the passed tree and reports the results to the Reviewer and Manager. The Reviewer records whole-requirement coverage and its verdict. The Curator writes, checks and publishes knowledge through the installed build and obtains clean full quality/coherence evidence before handing MEMORY directly to the independent Reviewer. Each stage repairs its own input/instrument slips through the same admitted tool and continues; permission prompts, other correct-input refusals or unowned state, requirement-meaning questions and out-of-scope effects remain stops; covered correct writes follow only their scoped recovery.
 
-The same Reviewer can repair a Worker-record-only finding on its last recorded round without `begin_review` only if the candidate is byte-identical under the authority-resolved identity. A changed or unproven candidate requires a new begin; remaining sealed finding IDs can only shrink. A showing case is proof of the required property, not the entire finding; an unsuccessful repair or extra-round request must account for that property and its construction.
+When all candidate findings are closed and only a finding on the Worker’s record remains, the Worker repairs that record. The same Reviewer checks the repair on the last recorded round without `begin_review` or a new round, while the authority-resolved identity shows that the candidate is byte-for-byte unchanged. A changed or unproven candidate requires a new begin; ordinary successor results only shrink the outstanding IDs. A sanctioned addition seals a new ID and reopens that point without using a review round. A showing case is proof of the required property, not the entire finding; an unsuccessful repair or extra-round request must account for that property and its construction.
 
 ### Role-stage selection and step-local authoring
 
@@ -178,7 +178,7 @@ Summary based on the earlier card account, base lines 115–115:
 
 - Worker and reviewer roles define the two independent halves of per-ID acceptance. [13]
 
-- The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters. Target: skills/l-01-agent-lifecycles/criteria/plan-review.md. [68]
+- The graph-less atomic default describes sprint shape. Commanded-master order is a stable tie-break, and independent masters can proceed concurrently. [68]
 
 - The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters. Target: docs/reference/execution-topology.md. [69]
 

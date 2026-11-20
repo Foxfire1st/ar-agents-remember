@@ -88,17 +88,17 @@ One reviewer role serves leaf, master, plan and super seams under an explicit as
 
 ## CCR-R12@v5 Transaction Boundary
 
-Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed monotonic finding set and settings budget. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
+Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed baseline and narrowing of ordinary successor findings, with additions through the three sanctioned routes and settings budget. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
 
 ## Current composition and authoring contract
 
-Reviewer requires explicit independent assignment, exact seam/mode, approved revisions and ruling, immutable candidate and attempts, bound catalogs and check contract. The brief names no catalogs and the Reviewer chooses none: it binds them from the review type's row in the binding table and names them in the verdict's Catalog Binding section. It also asks the Worker for passing coding-guidelines handover results bound to the candidate tree and withholds code PASS without them. Inputs, complete standing-criterion reporting, sealed findings, route coverage, verdict, producer list, route reports and immutable journal remain inline. Complete-diff review is not filtered by invariant attribution.
+Reviewer requires explicit independent assignment, exact seam/mode, approved revisions and ruling, immutable candidate and attempts, bound catalogs and check contract. The brief names no catalogs and the Reviewer chooses none: it binds them from the review type's row in the binding table and names them in the verdict's Catalog Binding section. It also asks the Worker for passing coding-guidelines handover results bound to the candidate tree and withholds code PASS without them. The requirement's listed final checks run after code PASS. Inputs, complete standing-criterion reporting, sealed findings, route coverage, verdict, producer list, route reports and immutable journal remain inline. Complete-diff review is not filtered by invariant attribution.
 
 The numbered steps hold knowledge before/after/family/sibling inspection and producer preservation, expectedKnowledgeEffects adjudication and the `cutCards`/`addedFiles` memory checks inline; the master-exit completeness duty is inline as well. Procedures sit behind "Before you …, read" pointers: `operations/review.md` (intake and leaf verdict handover, boundaries, code-round recording, round-limit verification, record-only recheck), `reference/review-baseline.md` (route partitioning, baseline evidence checks, the three lenses, sealing and focused-test selection), `reference/knowledge/use.md#reviewer-inspect-every-changed-file`, `reference/knowledge/commands.md`, `reference/message-handover.md`, `reference/sandbox-actors.md` and `operations/orientation.md` for developer questions.
 
 The same Reviewer records code rounds and the separate memory lane; neither recording is Manager gate acceptance. Memory IDs/reports/count stay separate, with the same ordinary limit and recorded approval for extras. Only a recorded passed last round plus a matching review step permits its own set_step done; cold reads, blocked verdicts and progress do not. No matching step means report and set nothing. Record-only unchanged-candidate checks retain the last round, and scoped fix verification cannot silently reset the sealed baseline.
 
-When the candidate changes instruction texts, the Reviewer reviews them against `system/skill-writing-guidelines.md` when present, as it reviews code against `system/coding-guidelines.md` (code-seam criterion CS-7 checks every added or altered line). For a finding about every member of a set, it scripts a scan of the whole candidate and reruns that scan during verification.
+When the candidate changes instruction texts, the Reviewer reviews them against `system/skill-writing-guidelines.md` when present, as it reviews code against `system/coding-guidelines.md` (code-seam criterion CS-7 checks every added or altered line). Ordinary review assumes honest agents. A finding names the operation or honest step that reaches its starting state. Adversarial review requires a request from the requirement or the developer. For a finding about every member of a set, it scripts a scan of the whole candidate and reruns that scan during verification.
 
 No role starts, code/onboarding writes or Git publication are granted. Non-leaf seam recipients and owner recording, immutable attempt history, exact caller identity, permission stops and scratch/report custody remain.
 
@@ -106,7 +106,7 @@ No role starts, code/onboarding writes or Git publication are granted. Non-leaf 
 
 ### Docs References
 
-No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
+No relevant documentation was configured in the resolved source registry; task artifacts and the candidate under review are the direct evidence.
 
 ### Repo-Internal References
 
@@ -146,9 +146,9 @@ The Reviewer's closing paragraph sends temporary files, experiments and working 
 
 - The Reviewer records ordinary CODE rounds and separately sealed MEMORY rounds under the actual task review-state limit; Manager gate acceptance and recorded architect/developer approval beyond the limit remain separate. [6]
 
-- The Reviewer stage ends at a recorded verdict covering the whole requirement, findings and coverage. Own-step completion waits for a passed recorded last round; record-only repair reuses the last round only with every candidate finding closed and candidate bytes unchanged; a finding states the required property its case proves. [7]
+- The Reviewer stage ends at a recorded verdict covering the whole requirement, findings and coverage. Own-step completion waits for a passed recorded last round. Record-only repair reuses the last round only after every candidate finding closes and candidate bytes stay unchanged. A finding states the required property the candidate breaks and identifies the operation or honest step that reaches its starting state. The case supplies the proof. [7]
 
-- Organizational leaf route review sends code findings to Worker and memory findings to Curator; code PASS first notifies Manager so it can start Curator, and readiness for closeout names both passed lanes. [9]
+- Organizational leaf route review sends code findings to Worker and memory findings to Curator; code PASS first notifies Manager so it can start Curator, and the ready-for-closeout notice names the passed freeze, both passed verdicts and any required final-check evidence. After repair it pairs the original report with the successor's targeted results. [9]
 
 - Reviewer intake uses exact rendered/JSON paths and actual scoped read schemas, reads only the assigned seam and writes only contained task-local report artifacts. [10]
 
@@ -160,7 +160,7 @@ The Reviewer's closing paragraph sends temporary files, experiments and working 
 
 - Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged. [14]
 
-- The Reviewer emits every bound standing criterion, sealed findings, complete route coverage, a seam-shaped verdict with its Catalog Binding section filled, a producer-data handoff list and durable per-route reports. [15]
+- A baseline report includes every bound standing criterion. Fix verification reports the criteria used by the sealed findings. Review artifacts include the sealed findings, complete route coverage, the seam-shaped verdict with its Catalog Binding section, a producer-data handoff list and durable reports for material routes. [15]
 
 - The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance. [17]
 

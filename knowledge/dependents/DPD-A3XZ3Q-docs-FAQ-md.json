@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
+    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
     "role": "curator",
-    "statement": "The changed index passage correctly limits reuse to the selected memory tree and loaded build, while the unchanged passages were not reverified.",
-    "task": "261112-BUG-L9",
+    "statement": "The FAQ still describes path-based card reads, the index scoped to the loaded build and memory tree, and task creation through task_doc.",
+    "task": "261112-BUG-L12",
     "uncommitted": true
   },
   "document": "docs/FAQ.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,7 +66,7 @@
       "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
     },
     {
-      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -86,7 +86,7 @@
       "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
     },
     {
-      "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+      "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },

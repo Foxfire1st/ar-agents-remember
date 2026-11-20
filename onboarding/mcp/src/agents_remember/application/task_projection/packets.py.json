@@ -252,14 +252,14 @@
       ]
     },
     "7": {
-      "note": "The canonical packet shape the heading table follows, including its template section headings.",
+      "note": "The packet template supplies the canonical heading spellings. Expected Evidence carries review-round evidence. Final Checks is preserved as a referenced section outside the injected heading roles.",
       "targets": [
         {
           "anchor": {
-            "blob": "0703cbf578f34255c7ca8de57b5cb4ce4419e222",
-            "content": "sha256:2bbe0f08460ed5c8f915f013866b7f0d8e71102861e17f01ec0889764a048c66",
+            "blob": "30a26103be98f89ca9fa2f7bc460e4c83ab7af86",
+            "content": "sha256:b0ad34d668cd369a6c97fc3c5bc50a511e814fd6832602bea17058d7ab2a02e4",
             "locator": {
-              "end": 64,
+              "end": 67,
               "kind": "line_range",
               "start": 19
             },

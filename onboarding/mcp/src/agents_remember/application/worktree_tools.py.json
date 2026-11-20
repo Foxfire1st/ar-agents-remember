@@ -683,18 +683,6 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
-            "content": "sha256:7b1238dd5c9dcd47627fdee7e844489f083bbdcd991f0981c753d26b7a806888",
-            "locator": {
-              "kind": "symbol",
-              "name": "route_review_refusal_projection"
-            },
-            "path": "mcp/src/agents_remember/worktrees/route_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "b55831de01a31229148df21d4199d8411b00f926",
             "content": "sha256:79952cf8f4c7175d8e82c7233e9af45298f3883b14df027d71471f873d5c9469",
             "locator": {
@@ -706,12 +694,11 @@
         },
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
-            "content": "sha256:4341e46efbdfae6a0ca5076bf8c944921cd5c547f25c3a131015ad56962a41fa",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+            "content": "sha256:7b1238dd5c9dcd47627fdee7e844489f083bbdcd991f0981c753d26b7a806888",
             "locator": {
-              "end": 625,
-              "kind": "line_range",
-              "start": 625
+              "kind": "symbol",
+              "name": "route_review_refusal_projection"
             },
             "path": "mcp/src/agents_remember/worktrees/route_review.py"
           },
@@ -719,12 +706,24 @@
         },
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
-            "content": "sha256:f0d9f734be5aa03935c499b71411355cefac2a2bf57989e1246d35a7352c7e9a",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+            "content": "sha256:1028f4d426807d513b9afabcfb1bb176bb6873d278d279c2a0237aee915e7cce",
             "locator": {
-              "end": 554,
+              "kind": "symbol",
+              "name": "_require_current_dependencies"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+            "content": "sha256:4341e46efbdfae6a0ca5076bf8c944921cd5c547f25c3a131015ad56962a41fa",
+            "locator": {
+              "end": 659,
               "kind": "line_range",
-              "start": 554
+              "start": 659
             },
             "path": "mcp/src/agents_remember/worktrees/route_review.py"
           },
@@ -742,8 +741,8 @@
         },
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
-            "content": "sha256:28f91e1f645dd0e8946a9e15c5b3dcd0fd513bc4342a259de6fcc55edc1a594f",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+            "content": "sha256:c6747a3db34199e3c4d3a4ad8a1ebed83ff454b5c8c99e630359e0f8ec7a4143",
             "locator": {
               "kind": "file"
             },

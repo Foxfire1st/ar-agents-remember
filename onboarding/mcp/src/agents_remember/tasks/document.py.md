@@ -232,6 +232,8 @@ The governing workflow opens an independent memory review after CODE PASS on the
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict.
 
+The document API re-exports the review-addition request and amended-round types from the review model.
+
 ## Evidence
 
 

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
-        "content": "sha256:1f3cb72d010a174c059358504b072d04527fb38ae8dc7675f9ab2c59e2e020ad",
+        "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+        "content": "sha256:7d47ecf18036fdba20740dcb8d5811898abc1dd0cf142f3275b4eea1a9fc92ee",
         "locator": {
           "kind": "file"
         }
@@ -17,6 +17,63 @@
       },
       "rationale": "The loop doctrine names the settings-derived review limit, the task_doc review-state limit and sealed monotonic fix-verification; approval beyond that limit follows operations/review.md without changing parent routing for developer questions.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+        "content": "sha256:17abd02a916bedd3303aa971ffac1cc6c92b83dfa22ae53e6e19b74ad35227cd",
+        "locator": {
+          "end": 42,
+          "kind": "line_range",
+          "start": 38
+        }
+      },
+      "id": "RLZ-GBQPQ7",
+      "invariant": "INV-KVQ91Z",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §1",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The shared review loop places the final checks after the pass and outside the round limit.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+        "content": "sha256:093791a5977dafe0bfd9a723389fff016d79cac2c7efa0d142092c0e8ae85fdf",
+        "locator": {
+          "end": 75,
+          "kind": "line_range",
+          "start": 65
+        }
+      },
+      "id": "RLZ-R64ZZW",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The shared loop names the three sanctioned routes, scopes reopening to the added point, assigns the Worker successor and states the existing counted repair-round authority.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+        "content": "sha256:17abd02a916bedd3303aa971ffac1cc6c92b83dfa22ae53e6e19b74ad35227cd",
+        "locator": {
+          "end": 42,
+          "kind": "line_range",
+          "start": 38
+        }
+      },
+      "id": "RLZ-VWCV0Q",
+      "invariant": "INV-8SBKWP",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §3",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The shared review loop places the final checks after the pass, outside the limit, and names the failed multi-step rule.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -25,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
             "content": "sha256:6a1171e595132de6eb6acd0e83d0d10d7e01fd4b617774966ac61eb0db238ec6",
             "locator": {
               "end": 10,
@@ -42,10 +99,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
-            "content": "sha256:4e5a050aa6929853f98e86c57369eea680911a8051cd2e296baeddd8a4e47a5d",
+            "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+            "content": "sha256:ce71a11ce19d3b57696af34d56d1cd2009b1b20dad7312d2d2a35e1f9e8c9405",
             "locator": {
-              "end": 58,
+              "end": 64,
               "kind": "line_range",
               "start": 12
             }
@@ -59,12 +116,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
             "content": "sha256:122088f8fa46ecb6165bdb247233fc8320e1ea4b82d4a62bce757d65ef7a5cc2",
             "locator": {
-              "end": 105,
+              "end": 112,
               "kind": "line_range",
-              "start": 82
+              "start": 89
             }
           },
           "kind": "code"
@@ -76,8 +133,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
-            "content": "sha256:f13377b10b757bd0845d1153c225072128c210699145d5b26d2d3f03d47e46a5",
+            "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+            "content": "sha256:efa28025d3b0f6e2b0f25d9d531a9ceaee52afebcafe19de5bee5b84c9094f06",
             "locator": {
               "end": 36,
               "kind": "line_range",
@@ -93,10 +150,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
-            "content": "sha256:3fca0b448116f9a70613b35dc72c4a15cbd53dd40b8249071898bfcd39d69fd0",
+            "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+            "content": "sha256:ed7031472e1197786ece20bb4299942146af74924677d6ecdfeb30866ac9e04c",
             "locator": {
-              "end": 50,
+              "end": 56,
               "kind": "line_range",
               "start": 18
             }
@@ -110,10 +167,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
-            "content": "sha256:1f3cb72d010a174c059358504b072d04527fb38ae8dc7675f9ab2c59e2e020ad",
+            "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+            "content": "sha256:7d47ecf18036fdba20740dcb8d5811898abc1dd0cf142f3275b4eea1a9fc92ee",
             "locator": {
-              "end": 105,
+              "end": 112,
               "kind": "line_range",
               "start": 1
             }

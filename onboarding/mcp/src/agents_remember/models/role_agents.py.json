@@ -365,12 +365,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
             "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
             "locator": {
-              "end": 240,
+              "end": 251,
               "kind": "line_range",
-              "start": 175
+              "start": 186
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },

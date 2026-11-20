@@ -421,10 +421,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
-            "content": "sha256:90e216c8cb79625314d2f7efee1239ec0d54a8df0ad1aaad3dfd9b32f1efc00a",
+            "blob": "cc7256c264f26cfec9ea56dae7ad2ffb6f0136bb",
+            "content": "sha256:a30bd0f4f975ce0eea8693f292d5b3478480d91614e324dd58653c76827763f3",
             "locator": {
-              "end": 60,
+              "end": 62,
               "kind": "line_range",
               "start": 37
             },
@@ -435,16 +435,16 @@
       ]
     },
     "8": {
-      "note": "Semantic requirement versions and exact-candidate formal attempts keep separate immutable lineage; internal reruns mint no attempt. Reviewer records bind the exact attempt and candidate. Accepted attempts stay closed, and observations outside the sealed findings list go through the parent to the developer without adding or reopening findings or resetting review.\n\nAnchor: `non-attempt-correction`",
+      "note": "Semantic requirement versions and exact-candidate formal attempts keep separate immutable lineage. Internal reruns create no formal attempt. Reviewer records bind the exact attempt and candidate, and accepted attempts remain closed. The three sanctioned routes govern additions to the sealed findings list. Other out-of-list observations go through the parent to the developer.\n\nAnchor: `non-attempt-correction`",
       "targets": [
         {
           "anchor": {
-            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
-            "content": "sha256:d730622d2161651da9257c069616180fb5ff149a97082231a7737eebf0757e73",
+            "blob": "cc7256c264f26cfec9ea56dae7ad2ffb6f0136bb",
+            "content": "sha256:90f7cab8d7f6f9015204a03b867fc886f5cfd4834945c40731f99e1269a157d3",
             "locator": {
-              "end": 103,
+              "end": 105,
               "kind": "line_range",
-              "start": 62
+              "start": 64
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },
@@ -457,12 +457,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "blob": "cc7256c264f26cfec9ea56dae7ad2ffb6f0136bb",
             "content": "sha256:168a3a4ae452a875bf0429d49082f922c2a859356ba3eebaade01e74a57d97a0",
             "locator": {
-              "end": 111,
+              "end": 113,
               "kind": "line_range",
-              "start": 107
+              "start": 109
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },

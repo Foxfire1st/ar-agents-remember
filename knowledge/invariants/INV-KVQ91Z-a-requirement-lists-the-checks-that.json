@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The packet template declares the checks, requirement design explains their authority, and the Worker operation executes them."
+  },
+  "applicability": "Requirement packets for independent code review.",
+  "conditions": [
+    "The approved section names each final check."
+  ],
+  "exclusions": [
+    "The landing hook and separately authorized certification."
+  ],
+  "id": "INV-KVQ91Z",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/25ccbad9-32c7-4ade-819a-351d146060b6/role-launch/261112-BUG-L12-worker-25ccbad9-32c7-4ade-819a-351d146060b6.md"
+      ],
+      "path": "W7-knowledge-handoff.json"
+    },
+    "handoffEntry": "BUG-R12@v1 §1",
+    "leaf": "261112-BUG-L12",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A requirement lists the checks that run once on the tree the code review passed in its own Final checks section, and only what that section lists is a final check.",
+  "status": "proposed",
+  "supersedes": []
+}

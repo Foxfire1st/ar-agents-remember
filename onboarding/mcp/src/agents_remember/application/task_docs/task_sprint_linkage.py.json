@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
             "content": "sha256:f0c965110373c06c1ab75ce04c6788a02eb667d521394916c104f7bcf4989001",
             "locator": {
               "kind": "symbol",
@@ -202,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
             "content": "sha256:f0c965110373c06c1ab75ce04c6788a02eb667d521394916c104f7bcf4989001",
             "locator": {
               "kind": "symbol",
@@ -219,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
             "content": "sha256:51db4fb96a750b7ef0a6b4b5f44417371715dc65e06acd36e453a30c40981765",
             "locator": {
               "kind": "symbol",
@@ -251,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
             "content": "sha256:660d9b2fdc52c99c60da36695056ca5b89069b0cc3154b926ec36483f860c2a7",
             "locator": {
               "kind": "symbol",
@@ -268,25 +268,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
-            "locator": {
-              "end": 1186,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
             "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
-              "end": 376,
-              "kind": "line_range",
-              "start": 363
+              "kind": "symbol",
+              "name": "task_doc_tool"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

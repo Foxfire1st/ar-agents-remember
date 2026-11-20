@@ -21,12 +21,12 @@ verdict, handed to the Worker and, on a pass, the Curator, and validated by the 
 
 `## Bind acceptance to one requirement revision` fixes the six-part envelope
 (`satisfied` / `blocked` / `approved-change`) and forbids general prose as an envelope, and
-`## Independently judge the exact manifestation` states that the reviewer adjudicates each manifestation itself.
+`## Independently judge the exact manifestation` states that the reviewer adjudicates each manifestation itself. A code round uses the evidence that round carries. The requirement's listed final checks judge the tree after the code pass.
 `## Keep requirement revisions and attempts distinct` keeps `ID@version` distinct from a leaf-local attempt ID, defines when an attempt is
 minted, and gives the two malformed-row outcomes. `## Keep the master summary rebuildable` and
 `## Record how retained evidence will be maintained` close the block; the last also binds Worker, Reviewer and Curator to pack each round's bulk evidence into one archive with a manifest in the report folder.
 
-The gate owner takes closeout trees by filename from the highest-numbered memory `PASS` and landing-check verdict, never from a message. After the findings list is sealed, a finding may be added only through the two routes the review operation's Boundaries define: a valid code finding from the Curator, or a valid finding from an advisory review the Architect commissioned. Other observations outside the list and changed promises go through the parent to the developer without adding or reopening findings or resetting review.
+The gate owner takes closeout trees by filename from the highest-numbered memory `PASS` and landing-check verdict, never from a message. After the findings list is sealed, a finding may be added only through three routes: a valid Curator code finding, a valid Architect-commissioned advisory finding or a final check that fails on the passed tree. Other observations outside the list and changed promises go through the parent to the developer without adding or reopening findings or resetting review.
 
 ### Conventions
 
