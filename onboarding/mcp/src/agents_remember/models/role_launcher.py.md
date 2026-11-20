@@ -10,20 +10,20 @@ Defines canonical role selections and HTTP launcher call models.
 
 ## Code Commentary
 
-RoleSelection carries exact sprint/master/leaf references; request aliases keep the current role/Paseo vocabulary. RoleAgentOverride separates agent/model/effort/feature values with an optional agent id; service tier is inherited native configuration and its capability projections rather than a Boolean fast transport alias. `featureValues` carries strict booleans or option ids, and the override states no mode. RoleDispatchRequest distinguishes start/revive under the saved request UUID and carries optional replacesAgentId plus replacesInterruptTurn. Replacement remains an explicit request; the model does not authorize retirement or free an occupied seat. The default-false `chatStarted` field records a parentless start from a chat without a role under R113 rule6; dashboard/role-agent starts do not use it. This wire marker is not authority to start, attach a parent or bypass replacement admission.
+RoleSelection carries exact sprint/master/leaf references; request aliases keep the current role/Paseo vocabulary. `RoleAgentOverride` carries optional `agentId`, `modelId`, `effortId`, `modeId` and `featureValues`. `featureValues` carries strict booleans or option IDs. Service tier retains its own native capability and configuration. The host decides whether to apply a mode. RoleDispatchRequest distinguishes start/revive under the saved request UUID and carries optional replacesAgentId plus replacesInterruptTurn. Replacement remains an explicit request; the model does not authorize retirement or free an occupied seat. The default-false `chatStarted` field records a parentless start from a chat without a role under R113 rule6; dashboard/role-agent starts do not use it. This wire marker is not authority to start, attach a parent or bypass replacement admission.
 
 ## Current Contract
 
-RoleDispatchRequest declares optional step_up aliased stepUp, constrained to string length 1..1000 when present. This wire model does not enforce the one-sentence/nonblank-after-trimming policy or select a model; later launch admission owns those checks. Start/revive and replacement fields remain distinct. No start mode or permission authority is introduced.
+RoleDispatchRequest declares optional step_up aliased stepUp, constrained to string length 1..1000 when present. This wire model does not enforce the one-sentence/nonblank-after-trimming policy or select a model; later launch admission owns those checks. Start/revive and replacement fields remain distinct.
 
-
-This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
 
 ## Evidence
 
 
 - Worker/Curator typed review census, record-only exclusion and unknown history. [6]
-- Reason admission, threshold and differing-harness/model inheritance boundary. [7]
+
+- Step-up reason admission and threshold govern choice of an alternative. An alternative takes mode from its own row at either scope. [7]
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [8]
 
 - Parentless chat-start marker is default false wire data, not launch or replacement authority. [5]
@@ -31,7 +31,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 
 
-- Frozen implementation of RoleAgentOverride supporting the stated file behavior. [2]
+
+- The launcher override carries an optional modeId alongside its other launch choices. [2]
+
 - Frozen implementation of RoleDispatchRequest supporting the stated file behavior. [3]
 
 ## Investigator scope and request identity

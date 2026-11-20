@@ -105,14 +105,14 @@
       ]
     },
     "5": {
-      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
             "locator": {
-              "end": 84,
+              "end": 87,
               "kind": "line_range",
               "start": 23
             },
@@ -127,10 +127,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
-            "content": "sha256:264ce58590be97e6f6bf241fea1ab0b23c36c4f6346745a8e117f0bcc53f0d3a",
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:7fd82a87cd1a73540efe6632a25f2c2b0a298ae7b96f86946f91e27d5e24875f",
             "locator": {
-              "kind": "file"
+              "end": 386,
+              "kind": "line_range",
+              "start": 341
             },
             "path": "dashboard/src/cockpit/roleLaunchModel.ts"
           },

@@ -20,6 +20,8 @@ After a new leaf’s task document exists and before any start, the Architect as
 
 Architect delegates one master to one Manager, or concurrent masters to an Orchestrator on the sprint with one Manager per master. Direct Architect coordination and an Orchestrator above a single master are developer choices. A refused coordination start does not authorize direct coordination. Hosted coordination normally uses individual `role_start` and `role_message` on the bound task server; the unchanged `role_start_set` API is not the normal leaf-start policy, preserves returned IDs and artifacts, and reconciles an uncertain or partial start with the same request ID before creating anything else.
 
+An individual role start takes its permission mode from launch-time resolution. After a start with overrides, the shared instructions give the starter responsibility for checking and setting features.
+
 Normal delivery starts Worker at build, Reviewer at the Worker freeze, and Curator after code PASS, using one individual `role_start` per stage. Worker first tells Manager to start Reviewer, then sends the freeze directly once that seat exists. Reviewer first tells Manager of code PASS, then sends the passed freeze and producer list to Curator. A separately assigned packet cold read remains possible before a candidate exists. Curator and Reviewer exchange the memory candidate and memory verdict directly. The Manager reads reports, decides delegated gates, and owns task acceptance, closeout, integration and landing order; it does not relay ordinary freeze, finding, verdict or memory contents.
 
 Native start, finalize and abandon already publish task stage and its mirrored parent row. The Manager must not repeat those transitions with a separate status call; `task_doc set_status` remains for an explicit correction or organizational-master completion. This narrows redundant coordination work without granting a new task-state, review or paired-Git power to another role. Canonical Manager instructions own this account; the single packaged serving copy is generated propagation, not separate authority.
@@ -338,3 +340,5 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 
 - The writer section names knowledge-ingest or mounted knowledge_write under the task contract; when trusted CLI authority settings cannot publish a raise, the same hand-off goes through mounted knowledge_write with the declared arguments, preview and file-write word. [22]
 - The manifest composes the selected role followed by its operation and keeps shared core blocks out of that instruction stream; the shared digest accompanies the capsule in the first message. Anchor: `composition_order` [53]
+
+- Launch-time resolution chooses permission mode. Shared instructions assign the post-start feature check to the starter. [97]

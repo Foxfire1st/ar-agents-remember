@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
+    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
     "role": "curator",
-    "statement": "The Pi installation page still describes the user registration and launch behavior when Pi loads a separately configured product server.",
-    "task": "261112-BUG-L10",
+    "statement": "The W7 catalog reports no Pi mode list or default, so a Pi settings row with no named mode resolves to an omitted create mode field.",
+    "task": "261112-BUG-L11",
     "uncommitted": true
   },
   "document": "docs/install/pi.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/src/agents_remember/kernel/harnesses.py"
     },
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },

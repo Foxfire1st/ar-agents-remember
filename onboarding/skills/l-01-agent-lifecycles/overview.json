@@ -961,12 +961,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
             "content": "sha256:ce161272614d41159cb2cd2461007466b8db6bf4c3ad9725c46b82b598305c20",
             "locator": {
-              "end": 68,
+              "end": 69,
               "kind": "line_range",
-              "start": 51
+              "start": 52
             },
             "path": "mcp/src/agents_remember/models/role_launcher.py"
           },
@@ -974,7 +974,7 @@
         },
         {
           "anchor": {
-            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
             "content": "sha256:68344a48d2b5e430444f8027b6a24bf1a79f329df337e2b50733de7cf9f2ab41",
             "locator": {
               "end": 37,
@@ -1709,6 +1709,50 @@
               "start": 155
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "97": {
+      "note": "Launch-time resolution chooses permission mode. Shared instructions assign the post-start feature check to the starter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "content": "sha256:cc45232388e7d26649e738124f29735cd8f9c81f74d6620d8c9bcca72a68b970",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
+            "content": "sha256:df5427f0a9444824f743bd9452df5246cd5fb01a6775b25722d855cd1fb96c77",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "533dac70569d12664fb0adc25c727ddf706d0221",
+            "content": "sha256:f6cad09e64771c0562f477176bbac5e6e3164496fcb291278e0e64b4a8f49f9a",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "docs/roles.md"
           },
           "kind": "code"
         }

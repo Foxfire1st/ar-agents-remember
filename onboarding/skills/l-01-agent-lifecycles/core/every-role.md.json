@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
         "content": "sha256:bd5f642568a16b212d99a96f46cbd4296dad6f896fba09e43331b96679fd902a",
         "locator": {
           "end": 63,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
         "content": "sha256:fed9eb1908a57057bffc44fe5f38dd028d624e4a06c56d03e4c2c3df78a8193f",
         "locator": {
           "end": 63,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
         "content": "sha256:c3f3e2b4092731aaf56133904887433a289f0b29c993cc0e5425dfeee1eec41c",
         "locator": {
           "end": 133,
@@ -60,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
         "content": "sha256:9eb4bebc4833c06bbdc6d1ea71621a417743e89b603c80e800dc6b53256ca201",
         "locator": {
           "end": 63,
@@ -79,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
         "content": "sha256:0423c63d873969296820c17d7e9628363f5f7928d402a36fb0e86317d7995afa",
         "locator": {
           "end": 77,
@@ -98,8 +98,8 @@
     },
     {
       "anchor": {
-        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
-        "content": "sha256:8c27af7759b59ab754b18b3d0f7bda1666656788eeaa70fa8a31618e738249ac",
+        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+        "content": "sha256:5258a0a3b9d50a4e7b5fba3bdafde59bd139b5959876b4b3c6b2d81e3d50e7a7",
         "locator": {
           "kind": "file"
         }
@@ -115,7 +115,7 @@
     },
     {
       "anchor": {
-        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
         "content": "sha256:94911875e5e2a8f43621fff80235373d45d9755de8ae61b4c1bace6fa903828b",
         "locator": {
           "end": 129,
@@ -134,8 +134,8 @@
     },
     {
       "anchor": {
-        "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
-        "content": "sha256:8c27af7759b59ab754b18b3d0f7bda1666656788eeaa70fa8a31618e738249ac",
+        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+        "content": "sha256:5258a0a3b9d50a4e7b5fba3bdafde59bd139b5959876b4b3c6b2d81e3d50e7a7",
         "locator": {
           "kind": "file"
         }
@@ -156,8 +156,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
-            "content": "sha256:8c27af7759b59ab754b18b3d0f7bda1666656788eeaa70fa8a31618e738249ac",
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "content": "sha256:5258a0a3b9d50a4e7b5fba3bdafde59bd139b5959876b4b3c6b2d81e3d50e7a7",
             "locator": {
               "end": 151,
               "kind": "line_range",
@@ -191,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
             "content": "sha256:6ce7f2282bb2c70bbbb00af7bdf717ed6b5543e28e987a826f373de710e9c19f",
             "locator": {
               "end": 17,
@@ -208,12 +208,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
             "content": "sha256:51d510abac5e2045394115cfbafa29fd2cfdca30ed869635078434d082cf7698",
             "locator": {
               "end": 117,
               "kind": "line_range",
               "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`role_start` names no mode, and the overridden-start instruction concerns the seat's features.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "content": "sha256:cc45232388e7d26649e738124f29735cd8f9c81f74d6620d8c9bcca72a68b970",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 25
             }
           },
           "kind": "code"

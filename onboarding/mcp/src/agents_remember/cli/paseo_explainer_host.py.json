@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+        "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+        "content": "sha256:bd9a9067ec1d32c61534d59434c55857679350537c770e043ca9d800f3135548",
+        "locator": {
+          "end": 276,
+          "kind": "line_range",
+          "start": 236
+        }
+      },
+      "id": "RLZ-71TYHK",
+      "invariant": "INV-Z71VXZ",
+      "origin": {
+        "handoffEntry": "curate-w7-explainer-applied-check",
+        "leaf": "261112-BUG-L11"
+      },
+      "rationale": "The applied check limits the missing-report case to requested model, effort and features, checks the reported provider where applicable, and checks the applied model, effort and features. Mode is outside those refusal predicates.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
         "content": "sha256:78a3d24fe6ad4db095798cdc8250395fd7d0737a5be3a9b798be5a235e13ff9f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+        "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
         "content": "sha256:733986ba28b858e9075b59196dfee7fdc6bcd309a718d555767580717234fbf1",
         "locator": {
           "kind": "symbol",
@@ -39,7 +58,26 @@
     },
     {
       "anchor": {
-        "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+        "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+        "content": "sha256:647b65da0428af1b3a8b760afe2feaa6f64c90c7081739d17465b5e34a7125a4",
+        "locator": {
+          "end": 532,
+          "kind": "line_range",
+          "start": 508
+        }
+      },
+      "id": "RLZ-HR9YV3",
+      "invariant": "INV-Z71VXZ",
+      "origin": {
+        "handoffEntry": "R11-explainer-records-observed-mode",
+        "leaf": "261112-BUG-L11"
+      },
+      "rationale": "Initial launch provenance stores the normalized mode of the returned host agent beside the requested choice. Create and adoption keep a differing or absent observation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
         "content": "sha256:c7a6dde00df7e3e295aa2c9cb7679c67d075358b17f44fee6333c2cc42969260",
         "locator": {
           "kind": "symbol",
@@ -58,14 +96,16 @@
   ],
   "references": {
     "1": {
-      "note": "Launch identity values must be nonempty; the browser module is supplied only when available\n\nAnchor: `_launch_env`",
+      "note": "Launch identity values must be nonempty. The browser module is supplied only when available.",
       "targets": [
         {
           "anchor": {
-            "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
-            "content": "sha256:fad9da61840ba394c1b7554437a70de169c6e45e1a24ee6ecd09326bdf35e015",
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:986bd3ac0deb206f9c93f5031f4610705c02d677273cf2f8fdf98b9e0a304313",
             "locator": {
-              "kind": "file"
+              "end": 159,
+              "kind": "line_range",
+              "start": 103
             }
           },
           "kind": "code"
@@ -73,16 +113,52 @@
       ]
     },
     "2": {
-      "note": "A seat the host launched on other values than the settings chose is refused\n\nAnchor: `def _require_applied(`",
+      "note": "Fresh create compares reported provider and verifies requested model, effort and features. Adoption reads state without that check. Resume verifies requested model and effort only when the reply includes an agent record.",
       "targets": [
         {
           "anchor": {
-            "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
-            "content": "sha256:1b2e75b4208ae2aec1fe7b2e695c7112cfd69cca4aa9709fdba45281c4f0d195",
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:5c8c243063cb2dc15c5655d6a185aca67db52b81183407f90b1984ff9ce0bb12",
             "locator": {
-              "end": 271,
+              "end": 276,
               "kind": "line_range",
               "start": 228
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:c04ea0130ede16d1a080b4a1adc4281926e123363fb71b42fde4b53c2db27c28",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 291
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:7fd6fcc3f35c8c7624b210b36258e3b2f1abfd9722ef4f07d682ce4926491fe1",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 461
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:2c88830f18899f4ae91c162d53e3f059bace96169d39d403fbff0ecdfd076402",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 603
             }
           },
           "kind": "code"
@@ -90,23 +166,23 @@
       ]
     },
     "4": {
-      "note": "The create carries the capsule as instructions; Claude receives preapproval for server_info and the four explainer tools, while Codex receives no toolPolicy.",
+      "note": "Create carries the capsule as instructions. Claude receives preapproval for server_info and the four explainer tools, while Codex receives no toolPolicy.",
       "targets": [
         {
           "anchor": {
-            "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
-            "content": "sha256:ab13c34c15bdbce4a4f4e48ed4322dd955c62484d7a4dbfb98088eeba8658aa7",
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:28b4ad1a0898a441f1618f28f8b510535e8f75df3a48ab3b200a2cfd62d2bcd9",
             "locator": {
-              "end": 540,
+              "end": 417,
               "kind": "line_range",
-              "start": 328
+              "start": 400
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "46a66f2e995584dc5753e574eb451379fd643573",
+            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
             "content": "sha256:3224a7f50c9b23d6f037bc49ec3703a792874e6a81a9966d7eef4ab201aa130f",
             "locator": {
               "end": 277,
@@ -124,12 +200,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
             "content": "sha256:69b0d54a0b21f3527606b2b74e5d6ef3dea2989ff437457ae789416e23ef3a57",
             "locator": {
-              "end": 574,
+              "end": 586,
               "kind": "line_range",
-              "start": 522
+              "start": 534
             }
           },
           "kind": "code"
@@ -141,12 +217,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
             "content": "sha256:72064b7ca27f4e529838e3517499155069ca4734113076324f99efab9dc20207",
             "locator": {
-              "end": 713,
+              "end": 729,
               "kind": "line_range",
-              "start": 670
+              "start": 686
             }
           },
           "kind": "code"
@@ -158,12 +234,82 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
             "content": "sha256:022c973d77560c5931981af00d191175df3617f75062d7a4fb22f6dc24e7fd88",
             "locator": {
               "end": 158,
               "kind": "line_range",
               "start": 148
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Create and adoption store the normalized host mode separately from the requested choice. A differing or absent report remains observable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:302cd79c82905900f3d5925ff76910de4abad71c85332a6926da2859ccfe0e1f",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 178
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:7fd6fcc3f35c8c7624b210b36258e3b2f1abfd9722ef4f07d682ce4926491fe1",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 461
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:79e195a96f3e9e2eaf5b37174386757137637c8785fa01fba3da498de0e982ae",
+            "locator": {
+              "end": 521,
+              "kind": "line_range",
+              "start": 508
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Resume can fill an absent top-level mode key from the agent report while leaving the initial observedChoices.mode intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:86c6bc031ed36c136188e1fdb65188a33132971230f9055802956a7ce9727a7c",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 318
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:2c88830f18899f4ae91c162d53e3f059bace96169d39d403fbff0ecdfd076402",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 603
             }
           },
           "kind": "code"

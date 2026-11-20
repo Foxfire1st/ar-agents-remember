@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
+    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
     "role": "curator",
-    "statement": "The page holds: the serving change registers one route that answers a knowledge file's bytes beside the reader route, and the canvas surfaces, their paths and their limits are told unchanged.",
-    "task": "261112-BUG-L7",
+    "statement": "The canvas host design agrees with the explainer start, which checks applied provider, model, effort and features and records the host-reported mode separately.",
+    "task": "261112-BUG-L11",
     "uncommitted": true
   },
   "document": "docs/design/canvas-host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/cli/role_instructions.py"
     },
     {
-      "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+      "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
     },

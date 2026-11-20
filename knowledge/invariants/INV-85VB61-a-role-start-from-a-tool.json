@@ -12,7 +12,8 @@
     "Unbound role_message remains refused and the started agent has no fabricated parent."
   ],
   "exclusions": [
-    "No caller-chosen permission mode, pasted launch brief or alternative session primitive."
+    "The unbound MCP role_start tool accepts no caller-chosen permission mode or pasted launch brief and uses the existing host launch function.",
+    "The dashboard can carry its own explicit mode through the same host launch function."
   ],
   "id": "INV-85VB61",
   "origin": {
@@ -26,7 +27,7 @@
     "leaf": "260928-MIK-L113",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A `role_start` from a tool server without a binding is carried out by the dashboard's own start function under the same checks, for the selections of one table of what may be started without a parent; an Architect is started without a document, and `role_message` from such a server stays refused.",
   "status": "accepted",

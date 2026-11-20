@@ -3,8 +3,42 @@
   "proves": [
     {
       "anchor": {
-        "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
-        "content": "sha256:5f10b13d4c512cf3902d174a086c2333373aa81fd214599f1861744e9cf8aa24",
+        "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+        "content": "sha256:d1f5605d0517fd3c2d7751cefa26d414fbd21336918b840efa211b697dad1330",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r71_the_launcher_mode_stands_first_and_keeps_its_source"
+        }
+      },
+      "facet": "An explicit launcher mode wins over an applicable profile and settings mode and retains the start call source.",
+      "id": "PRF-2DCXGQ",
+      "invariant": "INV-7DMXZ3",
+      "origin": {
+        "handoffEntry": "curate-w7-dashboard-mode-wire",
+        "leaf": "261112-BUG-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+        "content": "sha256:1eb8e1957f5909664f454c837caf8a859864958313ace8829f8d27b49f421736",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r71_start_calls_cannot_supply_permission_authority"
+        }
+      },
+      "facet": "The resolver refuses start-call feature keys plan_mode, auto_accept and unknown. RoleStartCall and SeatLaunchOverride have no mode field. The dashboard override rejects mode as a key and accepts modeId.",
+      "id": "PRF-33SRR9",
+      "invariant": "INV-7DMXZ3",
+      "origin": {
+        "handoffEntry": "curate-w7-f6-catalog-start-authority-proof",
+        "leaf": "261112-BUG-L11"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+        "content": "sha256:873a7bf58d694a3c9941cbecf7253339c187632629a1cbdeadfd7242608fa5ef",
         "locator": {
           "kind": "symbol",
           "name": "R71RoleChoicesTests.test_r71_unknown_modes_pass_through_and_known_empty_remains_distinct"
@@ -20,50 +54,64 @@
     },
     {
       "anchor": {
-        "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
-        "content": "sha256:df11bc6e72d2fb9148f2b5b67d64890791b2351105cb91df2541c0a50d8b7054",
+        "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+        "content": "sha256:7dafe2311e256f01675766363c7d7760074b6f5380437ac75bbb92575ce857ea",
         "locator": {
           "kind": "symbol",
-          "name": "R71RoleChoicesTests.test_r71_start_calls_cannot_supply_permission_authority"
+          "name": "test_r71_unoffered_feature_and_value_refuse_and_an_unoffered_mode_passes_through"
         }
       },
-      "facet": "Start-call mode arguments and permission-bearing feature arguments are refused independently of offer availability.",
-      "id": "PRF-VRGDMH",
+      "facet": "Known invalid features refuse while the resolver returns the unlisted settings mode unchanged with its settings source.",
+      "id": "PRF-HZJSBS",
       "invariant": "INV-7DMXZ3",
       "origin": {
-        "handoffEntry": "L202-M1-mode-offers",
-        "leaf": "260928-MIK-L202"
+        "handoffEntry": "curate-w7-dashboard-mode-wire",
+        "leaf": "261112-BUG-L11"
       }
     },
     {
       "anchor": {
-        "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
-        "content": "sha256:66093ab77b681632aaee9c94aac0997f401e5eb3b195b1fb66a616133b5c2cac",
+        "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+        "content": "sha256:f39c9383cdfeb80a2c16e7e0ca364b72fe1aadca7ebbbef268d5a83a3c248456",
         "locator": {
           "kind": "symbol",
-          "name": "R71RoleChoicesTests.test_r71_unoffered_mode_feature_and_value_refuse_then_corrected_selection_succeeds"
+          "name": "test_r71_unnamed_mode_takes_the_host_default_and_names_none_it_cannot_know"
         }
       },
-      "facet": "Known unoffered modes and invalid feature choices refuse; corrected permitted values succeed.",
-      "id": "PRF-ZN0XP4",
+      "facet": "An omitted mode uses an advertised default only when the resolver knows it.",
+      "id": "PRF-VFD7RJ",
       "invariant": "INV-7DMXZ3",
       "origin": {
-        "handoffEntry": "L202-M1-mode-offers",
-        "leaf": "260928-MIK-L202"
+        "handoffEntry": "curate-w7-dashboard-mode-wire",
+        "leaf": "261112-BUG-L11"
       }
     }
   ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Host fields win while every contributing source stays recorded, and a start call supplies no permission authority.",
+      "note": "Host fields win over lower sources and retain provenance. An explicit launcher mode takes precedence. The role-tool shape omits mode and start-call permission features refuse.",
       "targets": [
         {
           "anchor": {
-            "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
-            "content": "sha256:fc78f21c2ef6f41a232fa43ef6b72eb0180a94fa2cf1e5cf51704be46e8b4c52",
+            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "content": "sha256:9a9c567ab6d50d1044c8fa1b577986ed92db33e243b283b631655f3363f8d30c",
             "locator": {
-              "kind": "file"
+              "end": 202,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "content": "sha256:1eb8e1957f5909664f454c837caf8a859864958313ace8829f8d27b49f421736",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 253
             }
           },
           "kind": "test"
@@ -71,14 +119,50 @@
       ]
     },
     "2": {
-      "note": "Refusals name the exact settings and host profile sources they came from.",
+      "note": "Refused model choices name the exact settings and host profile sources.",
       "targets": [
         {
           "anchor": {
-            "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
-            "content": "sha256:fc78f21c2ef6f41a232fa43ef6b72eb0180a94fa2cf1e5cf51704be46e8b4c52",
+            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "content": "sha256:cc35fee0f20bd8ed73d55310a52d12745512241c14e0c3277a97b4f1a26856e9",
             "locator": {
-              "kind": "file"
+              "end": 649,
+              "kind": "line_range",
+              "start": 617
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mode cases distinguish unknown offers from known offers without a default and check canonical IDs and unmatched names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "content": "sha256:873a7bf58d694a3c9941cbecf7253339c187632629a1cbdeadfd7242608fa5ef",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 558
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Unoffered features refuse, while an unoffered or long opaque mode ID passes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "content": "sha256:b2b33ebc8037b392171cceb7217ac198c377dde7ef625f88d45622169ece2a8d",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 222
             }
           },
           "kind": "test"

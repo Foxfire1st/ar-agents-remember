@@ -4,15 +4,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "The tests find the launch seam and related modules by code relationships.",
       "targets": [
         {
           "anchor": {
-            "blob": "a44a2d5ad3c564eaec588ee96f188dbd41276d94",
-            "content": "sha256:a323e2927453e328a579caf375b242ee97469d0a2ae8c47f034ee2f8e67f61b2",
+            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
+            "content": "sha256:c6434a36356bd273c8217b3d5b9d1dc77c368c54d2ac3536372ccdcdd5e7a015",
             "locator": {
-              "kind": "symbol",
-              "name": "NoHarnessNameTests"
+              "end": 169,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
+            "content": "sha256:6c7689f08d3aca8bef529d8516ded5819f1adb8b62bf949c253a853c69adc7b3",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 236
             }
           },
           "kind": "test"
@@ -20,15 +33,28 @@
       ]
     },
     "2": {
-      "note": "RULE21 admits exact provider-name sets and rejects unrelated real-file mutants.",
+      "note": "The role-launch grant admission names only paseo_launch.py. The scan rejects unrelated provider names and silence on admitted paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "a44a2d5ad3c564eaec588ee96f188dbd41276d94",
-            "content": "sha256:2d6e3414611fe3a6ff762e24bc40bd048c871db156b2fc18af435ab53622301c",
+            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
+            "content": "sha256:46afafc14a4195b04698e05e858f78ca2b961846d8f31177fe3eff03dfcf78fe",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_launch_code_names_no_harness"
+              "end": 46,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
+            "content": "sha256:c8d63b2f9bc0f365c7e45e1aa6bdd55f4620039ff1c882b46483fc7cc63c2fbc",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 178
             }
           },
           "kind": "test"
@@ -36,16 +62,16 @@
       ]
     },
     "3": {
-      "note": "- The presenter admission now names only `cli/paseo_bridge.mjs`, with exactly `Claude` and `claude` to describe the removed qualified-provider tool fence. The Python native presenter launch and its owner admission are removed; the original RULE21 owner sets stay separate. Positive witnesses and real-file mutants still reject an unrelated provider word and silence in the retained owner.\n\nAnchor: file",
+      "note": "The presenter admission names only cli/paseo_bridge.mjs with Claude and claude.",
       "targets": [
         {
           "anchor": {
-            "blob": "a44a2d5ad3c564eaec588ee96f188dbd41276d94",
+            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
             "content": "sha256:49c1e655ee924641da7dcb36490eeff3c88b2d74b36feced400a25e2eea54d4a",
             "locator": {
-              "end": 64,
+              "end": 59,
               "kind": "line_range",
-              "start": 54
+              "start": 49
             }
           },
           "kind": "test"
@@ -57,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a44a2d5ad3c564eaec588ee96f188dbd41276d94",
+            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
             "content": "sha256:68ae0f617cfebe2e3e50cb19d92669a5fe80b01e029275620cb2306f138956b2",
             "locator": {
               "kind": "symbol",
@@ -73,15 +99,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a44a2d5ad3c564eaec588ee96f188dbd41276d94",
+            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
             "content": "sha256:4adddca69ae29de7be315a612c58c751853ec21c5f62bb05d0e7d885be4fa6f6",
             "locator": {
-              "end": 239,
+              "end": 234,
               "kind": "line_range",
-              "start": 236
+              "start": 231
             }
           },
           "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The assignmentReadGrant receipt records identity-only launch preapproval.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+            "content": "sha256:63bcc138251a7a42a7ea58193dc9f1559b6a680b96b7365076d91d0f4b52a727",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+            "content": "sha256:19c510776e1879acc85d6e6b921122652dbdf71a89d86b2b3456a00339503a95",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 565
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
         }
       ]
     }

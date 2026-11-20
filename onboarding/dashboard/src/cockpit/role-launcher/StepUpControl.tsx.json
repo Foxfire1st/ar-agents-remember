@@ -1,6 +1,26 @@
 {
   "path": "dashboard/src/cockpit/role-launcher/StepUpControl.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "eb679f7ebe908f402c7206a7e41321494d12c943",
+        "content": "sha256:74a98a79c3ba3bd5c642df9f4b8cd95d9a42a614dc6fb9d8def291c0e4289f68",
+        "locator": {
+          "end": 38,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-PMVAVY",
+      "invariant": "INV-6SGHBB",
+      "origin": {
+        "handoffEntry": "curate-w7-step-up-observed-mode",
+        "leaf": "261112-BUG-L11"
+      },
+      "rationale": "The status reads the observed mode from the receipt and uses its unreported label when the receipt supplies none.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
@@ -21,14 +41,14 @@
       ]
     },
     "2": {
-      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "note": "The backend checks the explicit reason and the configured failed-review threshold. A step-up reads mode from its own settings row. Other launch fields follow the same-harness and model inheritance rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
             "locator": {
-              "end": 84,
+              "end": 87,
               "kind": "line_range",
               "start": 23
             },
@@ -39,12 +59,12 @@
       ]
     },
     "3": {
-      "note": "Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot.",
+      "note": "The launcher model restores the saved taskless request ID, pending flag and override with a trimmed reason. Investigator retains its original storage slot.",
       "targets": [
         {
           "anchor": {
-            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
-            "content": "sha256:264ce58590be97e6f6bf241fea1ab0b23c36c4f6346745a8e117f0bcc53f0d3a",
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:ed096b2b398d49533c76cf87064ea4d4ce85adea063aadade3bbbfadf4d7e83b",
             "locator": {
               "kind": "file"
             },
@@ -73,17 +93,43 @@
       ]
     },
     "5": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L1–L24",
+      "note": "The configured Step up button sends canonical document scope and a trimmed nonblank reason. The status shows the host’s observed mode when present and uses the requested choice’s provenance in hover. Without an observation it labels the mode unreported.",
       "targets": [
         {
           "anchor": {
-            "blob": "49001f5ff9548e3c0b4a3ba3b69a05fb6fc8646f",
-            "content": "sha256:535316a94eebd817ef3d0c5f01db1c9fd275d85b44caa7168cb9aa5647a3c946",
+            "blob": "eb679f7ebe908f402c7206a7e41321494d12c943",
+            "content": "sha256:310e206f9793276211d7de0cf81cbaaf8604324351aaed6f83d133c88af1b55c",
             "locator": {
-              "end": 24,
+              "end": 38,
               "kind": "line_range",
-              "start": 1
+              "start": 5
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:e94ce744138d811be42f0b09155b403c8b40d85032929844d944b28d2867fae2",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa67492c22dfb0af1fca1cc4c454ffcac086b375",
+            "content": "sha256:d6c2707ff3aa64881b04913c64c8567224457b1e3b5caa630dcb2c8e1512e554",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_choices.py"
           },
           "kind": "code"
         }

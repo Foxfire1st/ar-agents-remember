@@ -10,7 +10,7 @@ Legacy gateDelegation migration warnings are deduplicated per authority-file-pat
 
 `runtime_config.py` supplies the trusted runtime configuration record and parser. Its Paseo authority property reads the shared host settings on each use; a folder does not establish runtime readiness or model availability. `checkout_coordination.py` selects the loaded checkout's write boundary before runtime configuration reads. Gate policy defaults to human decisions, and memory-cap planning remains an explicit opt-in.
 
-Repository configuration carries an optional certification-profile reference. This parser validates its path spelling; profile loading and execution belong to downstream certification owners. Native role launch and replay likewise belong downstream: the CLI launch owner carries task/workspace identity and the stored launch call, while its catalog owner validates model, effort and service-tier selections.
+Repository configuration carries an optional certification-profile reference. This parser validates its path spelling; profile loading and execution belong to downstream certification owners. The CLI launch owner carries task and workspace identity and the stored launch call for native role launch and replay. Its catalog owner validates model, effort and service-tier selections against known offers. The host owns permission-mode acceptance.
 
 ## Construction
 
@@ -202,7 +202,7 @@ None.
 
 - Configured-contract authority checks repository identities, memory mode and canonical task/enclosure paths at its mutation boundary.
 
-- Native launch construction and replay belong to the CLI launch owner; catalog selection refuses unsupported model, effort and feature selections.
+- Native launch construction and replay belong to the CLI launch owner. Catalog selection refuses unsupported model, effort and feature values when the corresponding fresh or saved offering is known.
 
 - The kernel validates the optional certification-profile path; requested certification loads that profile, freezes exact admission and executes the selected quality plan through its own owner, independently of ordinary closeout.
 
@@ -217,7 +217,7 @@ None.
 - The default listen address a fresh block carries.
 
 
-- Native launch construction and replay belong to the CLI launch owner. Catalog selection refuses unsupported model, effort and feature values when the corresponding fresh or saved offering is known; unanswered parts pass configured values through unchecked.
+- Native launch construction and replay belong to the CLI launch owner. Catalog selection refuses unsupported model, effort and feature values when the corresponding fresh or saved offering is known. An unanswered catalog part leaves the corresponding configured choice unchecked. The host decides which permission mode it applies.
 
 ## Evidence
 
@@ -288,9 +288,7 @@ None.
 
 - Configured-contract authority checks repository identities, memory mode and canonical task/enclosure paths at its mutation boundary. [16]
 
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.py:375-452 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2404948ab43cb20d60b4df63ec99148fa493ec7a; mcp/src/agents_remember/cli/paseo_launch.py:380-457 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2404948ab43cb20d60b4df63ec99148fa493ec7a; mcp/src/agents_remember/cli/paseo_launch.py:371-448 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2404948ab43cb20d60b4df63ec99148fa493ec7a. Retired means the anchor no longer stands, not that the cited subject was deleted [17]
-
-[17] mcp/src/agents_remember/cli/paseo_launch.py — lines 371-448; mcp/src/agents_remember/cli/paseo_launch.py — lines 547-597; mcp/src/agents_remember/cli/paseo_catalog.py — lines 156-346; mcp/src/agents_remember/cli/paseo_catalog.py — lines 460-516; mcp/src/agents_remember/cli/paseo_catalog.py — lines 566-604
+- Native launch construction and replay belong to the CLI launch owner. Catalog selection refuses unsupported model, effort and feature values when the corresponding fresh or saved offering is known. An unanswered catalog part leaves the corresponding configured choice unchecked. The host decides which permission mode it applies. [17]
 
 [18] mcp/src/agents_remember/kernel/primitives/runtime_config.py — lines 417-441; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py — lines 192-235; mcp/src/agents_remember/worktrees/modules/quality/gate.py — lines 248-364
 

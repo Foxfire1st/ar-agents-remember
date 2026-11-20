@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
+    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
     "role": "curator",
-    "statement": "The reference still describes the product settings and their restart handling because the daemon settings only update the pinned-version reload comment.",
-    "task": "261112-BUG-L10",
+    "statement": "The settings reference describes when a row supplies the mode and assigns acceptance of a named mode to the host.",
+    "task": "261112-BUG-L11",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
         "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
         "locator": {
           "kind": "symbol",
@@ -177,6 +177,30 @@
       "blob": "f1c7b82e4146f0ca94137b49d845adef38178ff5",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py"
+    },
+    {
+      "anchor": {
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "content": "sha256:69f637c761167dc15d8b99a868e04068f45d10e52e2fecd4eacc1bf24bb2fc86",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_agent_selection"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_mode"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+      },
+      "kind": "anchor"
     }
   ]
 }
