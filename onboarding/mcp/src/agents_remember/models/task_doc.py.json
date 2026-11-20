@@ -71,12 +71,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 296,
+              "end": 311,
               "kind": "line_range",
-              "start": 251
+              "start": 266
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
           },
@@ -167,12 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
             "content": "sha256:6eaa928fb670973674af4da511285c97ed6b1acbe4acb66d758ab21805e3bb29",
             "locator": {
-              "end": 826,
+              "end": 828,
               "kind": "line_range",
-              "start": 649
+              "start": 651
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -185,12 +185,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "content": "sha256:66fa6da7f95ae38c7d6c2aef3061dfdd31dc4694b46b7ff6b65621edd1f402fd",
             "locator": {
-              "end": 1186,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "_publish_task_doc_candidate"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -198,7 +197,7 @@
         },
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
             "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
               "end": 376,
@@ -216,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
             "content": "sha256:4c41eeb73d547a361a9886505f37ee554236b88d5903a84294f59c8d37179fba",
             "locator": {
               "kind": "symbol",
@@ -264,12 +263,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
             "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
             "locator": {
-              "end": 240,
+              "end": 251,
               "kind": "line_range",
-              "start": 175
+              "start": 186
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },

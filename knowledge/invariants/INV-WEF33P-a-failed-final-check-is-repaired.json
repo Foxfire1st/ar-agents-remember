@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The history records the addition outside the count, the task-document handlers bind it to the route, and route closeout needs evidence for the changed repair tree."
+  },
+  "applicability": "Listed final-check repairs and sanctioned finding additions to a recorded review.",
+  "conditions": [
+    "The lifecycle admits Curator code findings, Architect-commissioned advisory findings and failed listed final checks.",
+    "When publishing a route BLOCK, provide a nonblank verdict reference for the addition.",
+    "The repair review counts under the existing settings and extra-round rules."
+  ],
+  "exclusions": [
+    "The original full run is never repeated to verify the targeted repair.",
+    "A generic addition without an existing route verdict does not publish a route BLOCK."
+  ],
+  "id": "INV-WEF33P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W7 repair report; mcp/tests/test_route_review_clean_sync_door.py and mcp/tests/test_task_doc_review_public.py",
+        "W7 passed tree and full persisted L12 worklist",
+        "Sealed BUG-L12-M02 and exact W8 review operation at line 90."
+      ],
+      "path": "W7-knowledge-handoff.json"
+    },
+    "handoffEntry": "BUG-R12@v1 §4",
+    "leaf": "261112-BUG-L12",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A failed final check is repaired, reviewed once more and checked by targeted tests, and the product records a finding added after the list is sealed with its route and its own identifier, reopening that point only and spending no review round. A fresh route BLOCK cites the addition's own verdict file. Finding descriptions live in the sealed list.",
+  "status": "proposed",
+  "supersedes": []
+}

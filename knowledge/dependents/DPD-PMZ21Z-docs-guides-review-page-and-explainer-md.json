@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
+    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
     "role": "curator",
-    "statement": "The review guide agrees with the explainer start's shared resolver, applied choice checks and separate host mode observation.",
-    "task": "261112-BUG-L11",
+    "statement": "The explainer guide still agrees with the explicit intent go before leaf start and the precedence of the host profile and applicable settings for explainer mode.",
+    "task": "261112-BUG-L12",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -126,7 +126,7 @@
       "path": "mcp/src/agents_remember/mcp/tools/explainer_control.py"
     },
     {
-      "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+      "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/document.py"
     },

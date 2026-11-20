@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
+    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
     "role": "curator",
-    "statement": "The changed cache passage correctly describes loaded-build isolation and one age/size eviction over every SQLite namespace, while the unchanged passages were not reverified.",
-    "task": "261112-BUG-L9",
+    "statement": "Features accurately describes the build-and-tree-scoped index and task_doc ownership of task JSON and its rendered copy.",
+    "task": "261112-BUG-L12",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -88,17 +88,17 @@
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/cli.py"
     },
     {
-      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
     {
-      "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+      "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
     {
-      "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+      "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
     },

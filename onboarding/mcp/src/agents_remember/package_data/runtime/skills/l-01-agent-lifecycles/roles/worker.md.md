@@ -3,7 +3,7 @@
 ## Current supported-pair account — R100/R116 composition
 
 
-Manager starts Worker at build, Reviewer at freeze and Curator after code PASS; Worker cannot start its checker or accept/publish its own implementation. Its stage requires a final candidate meeting the requirement, the memory coding guidelines’ handover checks passing on a clean copy of its final bytes, and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
+Manager starts Worker at build, Reviewer at freeze and Curator after code PASS; Worker cannot start its checker or accept/publish its own implementation. The Worker passes the handover checks on a clean copy of the frozen candidate and hands the freeze report to the Reviewer. After code PASS, it runs the requirement’s listed final checks once on the passed tree and reports the results to the Reviewer and Manager. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
 
 
 ## Message/file transport
@@ -29,7 +29,7 @@ The Manager prepares this seat alongside its Reviewer and Curator. Preparing hel
 ## Current Contract
 
 
-The Worker’s stage ends when the candidate meets the requirement, the handover checks named by the memory coding guidelines pass on a clean copy of its final bytes, and the report is with Reviewer. Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. It stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question, or an effect outside its own worktree, scratch folder and task. An unfinished final turn names what it awaits and from whom; the existing role-specific stops and write boundaries remain.
+The Worker’s stage ends when the candidate meets the requirement, the memory coding guidelines’ handover checks pass on a clean copy of the frozen candidate, and any listed final checks have run once on the code-passed tree with the results reported to the Reviewer and Manager. Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. It stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question, or an effect outside its own worktree, scratch folder and task. An unfinished final turn names what it awaits and from whom; the existing role-specific stops and write boundaries remain.
 
 When all candidate findings are closed and only the Worker’s report/evidence/hash/anchor remains to repair, the same Reviewer records the repaired record on its last round without `begin_review` or a count increase. This requires the candidate to remain byte-for-byte unchanged; a changed or unproven candidate requires `begin_review`, and remaining finding IDs can only shrink.
 
@@ -39,7 +39,7 @@ Read the selected requirement and leaf task only: open the exact rendered_path a
 
 Before editing a source file, read its attributed records with `knowledge_read` on `agents-remember-task` (`view="source_context"`); build the worktree's environment and run candidate commands as `system/tools.md` says. For code changes, read `system/coding-guidelines.md` under `workspace.memoryRoot` in full, where it exists, before the first source edit, follow it for every line of source code, tests and product messages, and tell a code helper to do the same. Repair failures in the Worker’s own work or instrument and continue; keep a failed or unrun check visible only when it cannot be made to pass on the Worker’s own ground, explicitly saying so. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them.
 
-Keep one truthful canonical report with changed files, exact requirement/candidate evidence, checks and limitations. The Worker freezes its candidate and hands it directly to the leaf's Reviewer; after code PASS it sends its hand-off list to the Curator. The Manager receives no routine report notice; a dashboard-started Worker has no parent and uses its own final chat reply. Applicable producer Curator handoff data stays verbatim.
+Keep one truthful canonical report with changed files, exact requirement/candidate evidence, checks and limitations. The Worker freezes its candidate and hands it directly to the leaf's Reviewer; after code PASS it sends its hand-off list to the Curator. The Worker reports the listed post-PASS final checks to the Reviewer and Manager. A dashboard-started Worker has no parent and uses its own final chat reply. Applicable producer Curator handoff data stays verbatim.
 
 ## Conventions
 
@@ -124,7 +124,7 @@ acceptance, leaf integration does not rerun it, and full acceptance belongs to m
 
 - The generated role carries its canonical repair-loop instructions without independent authority.
 
-- The Worker's stage ends when the candidate meets the requirement, the handover checks named in system/coding-guidelines.md pass on a clean copy of the final bytes, and the report is with the Reviewer. [5]
+- The Worker's stage ends when the candidate meets the requirement, the handover checks pass on a clean copy of the frozen candidate, the listed final checks have run once on the tree that passed review, and the reports are with the Reviewer and Manager. [5]
 
 - After three failed repairs of the same check or finding the Worker stops and tells the Manager; with every candidate finding closed, a remaining record-only finding is repaired on the record and checked by the same Reviewer without a new round; a finding still open after a repair needs the property written for every case and the construction shown or changed. [6]
 

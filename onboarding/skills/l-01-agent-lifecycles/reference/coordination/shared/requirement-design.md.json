@@ -1,13 +1,33 @@
 {
   "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/requirement-design.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ad828935ce76597f7bf95506b0cef8a620f03e72",
+        "content": "sha256:a9fa39f6e6c888bd4f22969271eb6aaf7785c61fd171ef1fa2372a984c305608",
+        "locator": {
+          "end": 47,
+          "kind": "line_range",
+          "start": 45
+        }
+      },
+      "id": "RLZ-6AGW4G",
+      "invariant": "INV-KVQ91Z",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §1",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The design guidance tells the author which runs belong in the section and that its presence is the developer's request.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Requirement changes are tested against callers and phases, prior directions and the existing structure before being fixed.\n\nAnchor: `Problem`",
       "targets": [
         {
           "anchor": {
-            "blob": "1b1a087bab919243504c8a098f1f5d2e716f342c",
+            "blob": "ad828935ce76597f7bf95506b0cef8a620f03e72",
             "content": "sha256:e3831800df9cd64be4c84929fb867c37243226b99bcc6724498dfb0192ab7b06",
             "locator": {
               "end": 27,
@@ -24,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b1a087bab919243504c8a098f1f5d2e716f342c",
+            "blob": "ad828935ce76597f7bf95506b0cef8a620f03e72",
             "content": "sha256:038fdebb9cae92ef19f3c23f9916ab140b134e057fbc9eafa36caa868f45ea64",
             "locator": {
               "end": 35,
@@ -41,10 +61,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b1a087bab919243504c8a098f1f5d2e716f342c",
-            "content": "sha256:589d14d1ea03295bb6d5d5467c53fde664894c09f9e722ee509167caa4c6d18d",
+            "blob": "ad828935ce76597f7bf95506b0cef8a620f03e72",
+            "content": "sha256:9fe00e83601b308faae08fd8eb7780b50794f8dcbf0a0364a11984adc8fd7b1e",
             "locator": {
-              "end": 47,
+              "end": 51,
               "kind": "line_range",
               "start": 37
             }
@@ -58,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b1a087bab919243504c8a098f1f5d2e716f342c",
+            "blob": "ad828935ce76597f7bf95506b0cef8a620f03e72",
             "content": "sha256:8221d2715f852cf43c874a05e3f0530b6045a72e1b8539765eae9b716d6a8fe7",
             "locator": {
-              "end": 51,
+              "end": 55,
               "kind": "line_range",
-              "start": 49
+              "start": 53
             }
           },
           "kind": "code"
@@ -75,12 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b1a087bab919243504c8a098f1f5d2e716f342c",
+            "blob": "ad828935ce76597f7bf95506b0cef8a620f03e72",
             "content": "sha256:60cf97c34993999667d09dab9169e6fe5a8686557de6455ee4a3f2e6e784af38",
             "locator": {
-              "end": 59,
+              "end": 63,
               "kind": "line_range",
-              "start": 53
+              "start": 57
             }
           },
           "kind": "code"

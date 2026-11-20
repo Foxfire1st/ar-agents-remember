@@ -9,7 +9,7 @@
   "applicability": "Every independent leaf code review and its separate memory check.",
   "conditions": [
     "Code uses reviewState; newly begun memory reviews use reviewKind=memory and memoryReviewState after rollout.",
-    "Each lane preserves its sealed baseline and shrinking IDs, current settings limit and approved extra rounds.",
+    "Ordinary successor results narrow the outstanding set. The sanctioned addition procedure records the newly identified point separately from the counted repair round.",
     "Record-only unchanged-candidate checks add no try."
   ],
   "exclusions": [
@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-invariant/v1",
-  "statement": "The Reviewer owns ordinary code rounds and newly begun post-landing memory rounds in separate task-document lanes, with independent sealed findings, reports and counts under the same settings limit and recorded approvals. Memory recording never resets passed code.",
+  "statement": "The Reviewer records ordinary code rounds and separate memory review in independent task-document lanes, each with its own sealed findings, reports and count under the same settings limit and recorded approvals. Memory recording preserves passed code.",
   "status": "proposed",
   "supersedes": []
 }

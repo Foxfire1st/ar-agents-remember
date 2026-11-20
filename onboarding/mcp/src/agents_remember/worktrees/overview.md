@@ -195,7 +195,11 @@ L61 retained source qualification: completed direct ownership uses the shared do
 
 ## Clean sync preserves a bounded review
 
-The closeout door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. This exception belongs to the door; require_current_route_review keeps its own exact-current-tree contract.
+The closeout door checks the verdict before comparing candidate trees. A sanctioned addition
+publishes a BLOCK for the reviewed tree and retains the prior route units. A generic repair result
+can close the finding while the route verdict remains BLOCK.
+
+For a passing verdict, the door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. The door owns the tree comparison and its clean-sync exception. The leaf review reader checks the verdict, task intent and evidence bytes.
 
 A NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still uses text transport, whose universal-newline handling can collapse CR and LF pathnames. run_git_bytes selects raw output through the same _git_run environment, identity guard, working directory, timeout and session options. _tree_change_after_images splits b"\0", keeps pathname keys as bytes, and decodes only the ASCII mode/blob fields. It raises on failed or malformed raw diff output; it does not normalize, rename-pair or infer path equivalence.
 

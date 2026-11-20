@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
             "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
             "locator": {
-              "end": 240,
+              "end": 251,
               "kind": "line_range",
-              "start": 175
+              "start": 186
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },
@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 296,
+              "end": 311,
               "kind": "line_range",
-              "start": 251
+              "start": 266
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
           },

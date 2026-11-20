@@ -5,7 +5,11 @@
 
 ## Purpose
 
-Code reviewState and the post-landing memoryReviewState are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated.
+Code reviewState and the memoryReviewState are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated.
+
+A sanctioned addition stores its description in `baselineFindings` and its ID and route in
+`addedFindings`. The amendment records the reopened verdict separately from counted rounds.
+The route BLOCK uses `addedFindingIds` to name the open additions. These fields are review evidence.
 
 `tasks/` owns the persisted `ar-task-document/v1` work-content model and its Markdown rendering. JSON holds plans, progress, decisions, references, review evidence, and optional lifecycle/enclosure bindings. Markdown is a generated view; it is not parsed back into task authority. Light and master documents write to `task.json`/`task.md`; a `subTask` uses its slug. This lets planning and running work share a task-document source while runtime lifecycle, enclosure, Git, and queue owners retain their separate responsibilities.
 
@@ -184,4 +188,4 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Title joins use qualified leaf keys and a separate direct JSON reader [53]
 - A kept view ignores every task document it did not read. [29]
 - A document that begins to claim the leaf is not hidden by a kept view. [30]
-- Code reviewState and the post-landing memoryReviewState are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated. [55]
+- Code reviewState and memoryReviewState are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated. [55]

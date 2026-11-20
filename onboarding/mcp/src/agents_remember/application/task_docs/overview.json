@@ -19,12 +19,10 @@
         },
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "content": "sha256:8ecf8d42ace1b7b2403bfe710d8c6cb3ab03a7c3e146586c11c6e386098e3bea",
             "locator": {
-              "end": 1186,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -35,19 +33,6 @@
     "15": {
       "note": "task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a validly addressed parent-sync failure is an answered refusal. Invalid caller master references are refused by the shared master_json_path_from_ref resolver with TaskDocError during candidate validation after retirement-proof comparison, before publication; a changed or Order-refreshed parent must also pass the in-place document guard. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
-            "locator": {
-              "end": 1186,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "ca1e93a9ad54fc0eca4cb8612ed3661b1ee21487",
@@ -84,6 +69,17 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "content": "sha256:8ecf8d42ace1b7b2403bfe710d8c6cb3ab03a7c3e146586c11c6e386098e3bea",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
           "kind": "code"
         },
@@ -226,12 +222,10 @@
         },
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "content": "sha256:8ecf8d42ace1b7b2403bfe710d8c6cb3ab03a7c3e146586c11c6e386098e3bea",
             "locator": {
-              "end": 1186,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -257,7 +251,7 @@
         },
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
             "content": "sha256:190f75581818fdfe52e3d44c0c4174725dc23c441333a60cd230274e0abcc3b9",
             "locator": {
               "end": 460,

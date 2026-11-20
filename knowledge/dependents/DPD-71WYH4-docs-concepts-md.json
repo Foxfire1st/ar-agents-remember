@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
+    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
     "role": "curator",
-    "statement": "The Concepts permission-mode section describes selection at creation and uses the host's observed mode as receipt evidence.",
-    "task": "261112-BUG-L11",
+    "statement": "Concepts accurately describes permission selection before launch, canonical task JSON with rendered Markdown, and the binding of a route verdict to the tree under review.",
+    "task": "261112-BUG-L12",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/tasks/store.py"
     },
     {
-      "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+      "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
@@ -206,7 +206,7 @@
       "path": "mcp/src/agents_remember/tasks/task_paths.py"
     },
     {
-      "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+      "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/route_review.py"
     },
@@ -326,17 +326,17 @@
       "path": "skills/l-01-agent-lifecycles/core/every-role.md"
     },
     {
-      "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
+      "blob": "775f056813e59e9f1426a560af777dc2be162c85",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
+      "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
     {
-      "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+      "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/review.md"
     },
@@ -346,7 +346,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
     {
-      "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+      "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },

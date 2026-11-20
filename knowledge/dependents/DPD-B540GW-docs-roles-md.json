@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "98f7d6c529f1456cbfd00f3fde7e1fa51a118d8c",
+    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
     "role": "curator",
-    "statement": "The Roles guide states the order of applicable mode sources through the omitted-field case and distinguishes launcher and agent tool starts.",
-    "task": "261112-BUG-L11",
+    "statement": "The Roles guide puts listed final checks on the passed tree alongside curation and gives the same Reviewer the sealed repair finding before targeted successor checks.",
+    "task": "261112-BUG-L12",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -126,7 +126,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
     },
     {
-      "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+      "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
@@ -136,12 +136,12 @@
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
     {
-      "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+      "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
     },
     {
-      "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+      "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -151,22 +151,22 @@
       "path": "skills/l-01-agent-lifecycles/core/launcher.md"
     },
     {
-      "blob": "16d24abcfd77339468da266f5d7ba57aa59250a9",
+      "blob": "775f056813e59e9f1426a560af777dc2be162c85",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+      "blob": "c4ee8765597f72bc3004b0249af68fed374bd5d2",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
     },
     {
-      "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+      "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/route_review.py"
     },
     {
-      "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+      "blob": "8df1753c138980d015641171fd9ced522dfc5664",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },

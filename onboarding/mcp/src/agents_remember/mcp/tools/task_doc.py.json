@@ -8,12 +8,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
-              "end": 1186,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "task_doc_tool"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

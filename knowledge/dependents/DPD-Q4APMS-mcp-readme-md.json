@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
+    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
     "role": "curator",
-    "statement": "The package README still names the installed commands and tool server roles after request dispatch gains a definition scope.",
-    "task": "261112-BUG-L10",
+    "statement": "The package README correctly names the task_doc and closeout tool groups and points to the MCP guide for their existing review operations.",
+    "task": "261112-BUG-L12",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "678f1f18dba660d35c4072fa0d645922638ddfb6",
+      "blob": "51812d7601d89508db5312ce0d811f16c0490e33",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

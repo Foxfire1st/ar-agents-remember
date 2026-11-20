@@ -44,7 +44,7 @@ control removes; the Reviewer also needs `REVIEWER_RECORD_POINTER` in its own ro
 - A limit is stated as a property of the settings, never as a number in a text.
 - A facet outside the extracted section does not satisfy the check.
 
-Worker stage completion requires the handover checks named in workspace.memoryRoot/system/coding-guidelines.md on a clean copy of final bytes. A dedicated control rejects replacement by or reinsertion of the retired fixed focused-tests/lint/type sentence. Curator stage facets directly preserve covered-write recovery, manual provenance and stop boundaries. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
+Worker stage completion requires the handover checks named in workspace.memoryRoot/system/coding-guidelines.md on a clean copy of the frozen candidate, with the listed post-pass check results reported to the Reviewer and Manager. A dedicated control rejects replacement by or reinsertion of the retired fixed focused-tests/lint/type sentence. Curator stage facets directly preserve covered-write recovery, manual provenance and stop boundaries. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
 ## Evidence
 - Positive detector controls and the intentional label and allowance exemptions. [1]
@@ -55,4 +55,4 @@ Worker stage completion requires the handover checks named in workspace.memoryRo
 
 - Stage-end checks bind each role’s required facets to its current owning section in source and compiled text; the Reviewer's record-recheck facets are owned by `operations/review.md`. Curator facets include clean quality, installed-writer versus manual provenance and covered-write recovery. Deletion/relocation controls require a real mutation, while round-number and rule-nine guards remain. [4]
 
-- Worker stage completion requires the handover checks named in workspace.memoryRoot/system/coding-guidelines.md on a clean copy of final bytes. A dedicated control rejects replacement by or reinsertion of the retired fixed focused-tests/lint/type sentence. Curator stage facets directly preserve covered-write recovery, manual provenance and stop boundaries. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [5]
+- Worker stage completion requires the handover checks named in workspace.memoryRoot/system/coding-guidelines.md on a clean copy of the frozen candidate and reports to the Reviewer and Manager. A dedicated control rejects replacement by or reinsertion of the retired fixed focused-tests/lint/type sentence. Curator stage facets directly preserve covered-write recovery, manual provenance and stop boundaries. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [5]

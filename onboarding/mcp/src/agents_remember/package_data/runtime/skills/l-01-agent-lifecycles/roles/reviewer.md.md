@@ -6,7 +6,7 @@
 
 ## Current operative account — MIK-R113
 
-Operator settings (`harness`, `model`, `effort`, `serviceTier`) are not the Reviewer's to set. Message files carry complete payloads, while wake text names the request and files. The Reviewer runs full suites and drift reporting only on an explicit developer request; the complete `memory_quality_check` stays the Curator's ordinary curation pass.
+Operator settings (`harness`, `model`, `effort`, `serviceTier`) are not the Reviewer's to set. Message files carry complete payloads, while wake text names the request and files. Full suites and drift reporting on `agents-remember-task` require an explicit developer request or a listing under the requirement’s final checks. The complete `memory_quality_check` remains part of the Curator’s ordinary curation pass.
 
 
 ## Current supported-pair account — R100/R116 composition
@@ -135,14 +135,14 @@ Agent-authored temporary files, experiments and working copies live only in the 
 - A master handover packet that reads as complete while silently omitting unfinished leaf work, a substep or an accepted gap fill has a blocking finding. [12]
 
 
-- Baseline review checks the Worker's targeted checks and regressions against the past for the requested scope; full suites and drift reporting run only on an explicit developer request. [13]
+- Baseline review checks the Worker's targeted checks and past regressions for the requested scope. Full suites and drift reporting require an explicit developer request or a listing under the requirement's final checks. [13]
 
 
 - The onboarding staleness criterion checks every present-tense card or overview sentence against the as-landed code, keeps historical accounts in history rows, and does not accept a true paragraph added beside a contradictory claim. [14]
 
 - Super-exit review inspects changed paths and sidecars and route overviews among the integrated portfolio evidence. [15]
 
-- Full suites and drift reporting run only on an explicit developer request, while the normal curation authoring pass always runs the complete memory_quality_check, which a subset cannot replace. [16]
+- Full suites and drift reporting require an explicit developer request or a listing under the requirement's final checks. Normal curation always runs the complete `memory_quality_check`, which a subset cannot replace. [16]
 
 - At master-exit a baseline BLOCK goes to the owning Manager as decomposable fix leaves. [17]
 

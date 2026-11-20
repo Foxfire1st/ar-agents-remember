@@ -210,8 +210,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
-            "content": "sha256:3c470419ee3a2821d24d0030d593942d83aacd5609323c0cc3fc4ea5e266a664",
+            "blob": "982936f5713415c91c62e5c17771f8e35b788c7d",
+            "content": "sha256:637ec367010abf392ebc50bf9d6ca66a3ea3d2ce935e8c4efe4a3c87222b06d7",
             "locator": {
               "kind": "symbol",
               "name": "OWED_STATEMENTS"

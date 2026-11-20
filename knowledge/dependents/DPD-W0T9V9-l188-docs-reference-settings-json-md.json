@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
+    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
     "role": "curator",
-    "statement": "The settings reference describes when a row supplies the mode and assigns acceptance of a named mode to the host.",
-    "task": "261112-BUG-L11",
+    "statement": "The settings reference distinguishes the configured review-round budget and its approved extensions from post-pass final checks outside that budget.",
+    "task": "261112-BUG-L12",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {

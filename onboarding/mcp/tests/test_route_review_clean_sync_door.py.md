@@ -14,6 +14,8 @@ Guard the closeout door's exact clean-sync review boundary.
 
 This module drives the closeout door's own review-provenance check using real temporary Git repositories, canonical leaf documents and recorded route reviews. It checks the plane stamp, disjoint-sync acceptance with the original digest, overlap refusal, added-path and mode refusal, unrelated-base refusal and missing-stamp refusal. Its CR/LF cases distinguish replacement, false overlap and same-map key collision. These cases guard exact byte path identity, not the complete closeout transaction, integration acceptance or every kernel-runner behavior. Source assertions and retained producer execution evidence are separate; the Curator did not rerun tests.
 
+The route-addition cases exercise persisted PASS, BLOCK and changed-tree repair evidence. They check omission of the new verdict reference, preservation of route units and the fresh routed PASS needed to clear the closeout door.
+
 ## Evidence
 
 - The plane stamps the actual leaf review base. [1]

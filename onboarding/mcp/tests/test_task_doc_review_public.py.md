@@ -61,6 +61,8 @@ The combined public API and master integration exercise remains parent-owned.
 
 The `tools` fault-injection alias now names `task_doc_route_review`, where the candidate resolver is consumed. The unchanged real-mutation/unavailable-identity test therefore targets the actual review admission seam. Its round/findings-preservation assertions, public task_doc caller and source-only evidence class remain unchanged.
 
+The Curator and advisory addition case checks the union of outstanding IDs, the stored descriptions and the two route tags. The separate final-check case checks that tag, the unchanged round count for the addition and the counted repair round. The limit case checks the existing approval boundary. These cases invoke the production `task_doc_tool` entry point directly.
+
 ## Evidence
 
 ### Docs References
@@ -107,4 +109,4 @@ verification metadata remains blank until governed closeout stamps a genuine cod
 
 
 
-- Only the tools alias changes from task_doc_tools to task_doc_route_review. The unchanged test_failed_identity_reads_refuse_around_a_real_mutation monkeypatches tools.resolve_candidate_identity, which is now the actual owner consulted by review candidate admission. Its tracked mutation/unproven binding refusals and persisted round/findings checks are unchanged. [8]
+- The public review test patches the resolver used by candidate admission, changes tracked bytes, and verifies that ordinary same-round recording refuses an unproven candidate and preserves the recorded round and findings. [8]

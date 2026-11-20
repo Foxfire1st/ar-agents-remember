@@ -3,12 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:cada9e7d8f2ddc20bc85318bcfc1026e8c04e2221f9b24bf9447d4230d4e4614",
+        "locator": {
+          "end": 56,
+          "kind": "line_range",
+          "start": 56
+        }
+      },
+      "id": "RLZ-06Q86T",
+      "invariant": "INV-5BPF6M",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §2",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The review operation states what a round reports and when the listed checks run instead.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
         "content": "sha256:f8e91b1d9a28194f42e8b1acedf204973fc0d7c152c7c86bd80d7007df3ec827",
         "locator": {
-          "end": 116,
+          "end": 118,
           "kind": "line_range",
-          "start": 116
+          "start": 118
         }
       },
       "id": "RLZ-0R6J6V",
@@ -22,7 +41,45 @@
     },
     {
       "anchor": {
-        "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:034f69214d19c325840b8cf1193f76a7d8f44a6ccbd39ac5092c2f4d7c4def6b",
+        "locator": {
+          "end": 141,
+          "kind": "line_range",
+          "start": 131
+        }
+      },
+      "id": "RLZ-2TS1BF",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "This section names the three sanctioned routes, scopes reopening to the added point, assigns the successor repair and identifies the approval boundary.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:a2a8d5ba879cde012dffca3ce756c235c2b57658db6afbdfc81ed82f561ddf57",
+        "locator": {
+          "end": 123,
+          "kind": "line_range",
+          "start": 121
+        }
+      },
+      "id": "RLZ-4KB0MB",
+      "invariant": "INV-8SBKWP",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §3",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The ready-for-closeout notice is the Reviewer's act and names the acceptable evidence after a failure and the no-checks branch.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
         "content": "sha256:45d120a106e80247dd87b12e2244a5e0e636cae5369f2b68ab2ef91b3d30075e",
         "locator": {
           "end": 8,
@@ -41,7 +98,7 @@
     },
     {
       "anchor": {
-        "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
         "content": "sha256:6cdc52f8a3d877c0c44e23f94eb53d1b173ad177c8c9a3a424ba6e374f2c216e",
         "locator": {
           "end": 38,
@@ -60,12 +117,12 @@
     },
     {
       "anchor": {
-        "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
         "content": "sha256:6913ea0e53f0eb04fe025c9cfe4c2376b7fa77a5ad52ccdfbe64ef3a5603ca38",
         "locator": {
-          "end": 71,
+          "end": 73,
           "kind": "line_range",
-          "start": 66
+          "start": 68
         }
       },
       "id": "RLZ-B884C1",
@@ -79,12 +136,12 @@
     },
     {
       "anchor": {
-        "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-        "content": "sha256:9fa6f298f1991f3e866ac0cd3f6c861bb11c9e45b513484c1eb89f165eefe87b",
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:06fbd4fb6bc50d09868215fcc21930d88110eb2d2635e815a9b2f22982b47c2c",
         "locator": {
-          "end": 59,
+          "end": 61,
           "kind": "line_range",
-          "start": 59
+          "start": 61
         }
       },
       "id": "RLZ-B94KKE",
@@ -98,12 +155,31 @@
     },
     {
       "anchor": {
-        "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-        "content": "sha256:9fa6f298f1991f3e866ac0cd3f6c861bb11c9e45b513484c1eb89f165eefe87b",
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:5c35496fae6f3888d303621708017385f7ea56cb5cd1936944d7abad24ed0c43",
         "locator": {
-          "end": 59,
+          "end": 122,
           "kind": "line_range",
-          "start": 59
+          "start": 122
+        }
+      },
+      "id": "RLZ-CA7Z9P",
+      "invariant": "INV-8SBKWP",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §3",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The ready-for-closeout notice takes the original run and the repaired tree’s targeted results together.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:06fbd4fb6bc50d09868215fcc21930d88110eb2d2635e815a9b2f22982b47c2c",
+        "locator": {
+          "end": 61,
+          "kind": "line_range",
+          "start": 61
         }
       },
       "id": "RLZ-FQ21R4",
@@ -117,10 +193,29 @@
     },
     {
       "anchor": {
-        "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-        "content": "sha256:cf7230e7309ba83d5e2db7882380de84beb1475be94f18b2fa2d88b1cc9189c0",
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:18ff460ac0025989fa8d4c4aa7dd7c0cfceb7157f0651bf65d1b943be87baa0c",
         "locator": {
-          "end": 118,
+          "end": 139,
+          "kind": "line_range",
+          "start": 139
+        }
+      },
+      "id": "RLZ-H5BG3V",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The repair review counts and remains subject to existing beyond-limit authority.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:beed60d3fa667dc0be2373acdfa033172a4c3d37f20e5d689734fa511662c833",
+        "locator": {
+          "end": 120,
           "kind": "line_range",
           "start": 86
         }
@@ -136,12 +231,31 @@
     },
     {
       "anchor": {
-        "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-        "content": "sha256:d0a76f09943a152508be904cb8cb0d0ba116d240b624280a0b2802723ed38792",
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:d8ff27971edda2d4599a0dc3dc0ec61f5afc63c9c21cae9c6a2d8ad152aed318",
         "locator": {
-          "end": 132,
+          "end": 129,
           "kind": "line_range",
-          "start": 125
+          "start": 129
+        }
+      },
+      "id": "RLZ-N6SDG2",
+      "invariant": "INV-KJACVA",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §6",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The review boundary excludes states built by hand to defeat a check from findings and guards.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:a6a7b96934b06a3cb2dcf34004152409f9a6842a11f572d1d94c36d4b3efb82e",
+        "locator": {
+          "end": 141,
+          "kind": "line_range",
+          "start": 126
         }
       },
       "id": "RLZ-R5RASM",
@@ -155,12 +269,50 @@
     },
     {
       "anchor": {
-        "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:9857bf4edd2a1ff789b52bdb73f11d5a1f300accd9b2af8a0416075a71b03f81",
+        "locator": {
+          "end": 57,
+          "kind": "line_range",
+          "start": 56
+        }
+      },
+      "id": "RLZ-S6NXKG",
+      "invariant": "INV-5BPF6M",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §2",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The review output excludes final checks from the evidence of a round.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:3944c29057c5baeb2f1e04381e74c07ebc4798ba9f5d9bc6bcd1b0219b52a02b",
+        "locator": {
+          "end": 90,
+          "kind": "line_range",
+          "start": 90
+        }
+      },
+      "id": "RLZ-TVE0C2",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W8 M02 no-round recording",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The recording procedure names addedFindings, record_review and record_route_review and states that an addition spends no round.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
         "content": "sha256:0af4b6a2a90a4908da58ff5014766dd5cfaec4eb66f2c6f34fbae1456c3fa2c9",
         "locator": {
-          "end": 102,
+          "end": 104,
           "kind": "line_range",
-          "start": 102
+          "start": 104
         }
       },
       "id": "RLZ-V5SQ32",
@@ -174,12 +326,12 @@
     },
     {
       "anchor": {
-        "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-        "content": "sha256:42a068030f45d966198bb6a3cc14cd4bd594e6b33b3f9d7f1d820f1cd16bf148",
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:58790c13a47da2c22495dad31a3335d1ac4d44e648fb17e2735e539efa411c65",
         "locator": {
           "end": 83,
           "kind": "line_range",
-          "start": 73
+          "start": 75
         }
       },
       "id": "RLZ-VV75SF",
@@ -193,10 +345,10 @@
     },
     {
       "anchor": {
-        "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-        "content": "sha256:9ef05dc10ac25a4a4c30ca83b197f4aaa9d67340693434dc7972533900c1edf1",
+        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "content": "sha256:b757be98da81c9493eb27b6b22404bf2eda8f02da7d71cbdd9d74fcb364a70c8",
         "locator": {
-          "end": 102,
+          "end": 104,
           "kind": "line_range",
           "start": 86
         }
@@ -217,12 +369,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
             "content": "sha256:6913ea0e53f0eb04fe025c9cfe4c2376b7fa77a5ad52ccdfbe64ef3a5603ca38",
             "locator": {
-              "end": 71,
+              "end": 73,
               "kind": "line_range",
-              "start": 66
+              "start": 68
             }
           },
           "kind": "code"
@@ -234,7 +386,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
             "content": "sha256:20e89a40d302bcf0f55b93eec944dfac9d80bd0185d2ab3673254acffc5365ee",
             "locator": {
               "end": 54,
@@ -246,12 +398,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
             "content": "sha256:48b8445332fed459a4e21ba40ee8348dc0597f51af95642ce0308eff17ce44d8",
             "locator": {
-              "end": 102,
+              "end": 104,
               "kind": "line_range",
-              "start": 98
+              "start": 100
             }
           },
           "kind": "code"
@@ -263,7 +415,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:8e56d5e3f247f76c29190f75c6950030a66324e29bf99877902367f2f0d842cb",
             "locator": {
               "end": 119,
@@ -276,7 +428,7 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
             "content": "sha256:3cff65b86d44b6d4ded161b897410a3c1cc29874e0035b79e14aa8bade04ba99",
             "locator": {
               "end": 88,
@@ -288,12 +440,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
             "content": "sha256:a8cf97939d549365f28f41a2e5bd76aad85ca7fd9c57591a52560fb7e2da374c",
             "locator": {
-              "end": 118,
+              "end": 120,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             }
           },
           "kind": "code"
@@ -318,12 +470,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:9ef05dc10ac25a4a4c30ca83b197f4aaa9d67340693434dc7972533900c1edf1",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:2e03d96cb6f8fc4a4758fee279dd6bdac4ba9e71fb2687d03bffb5067685aebc",
             "locator": {
-              "end": 102,
+              "end": 120,
               "kind": "line_range",
-              "start": 86
+              "start": 79
             }
           },
           "kind": "code"
@@ -335,8 +487,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:a580b2fb62f8f2464c9597d0b9f6490722c937a2716065c876c9d085bfb9f5a2",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:429141d967eed89e581d5d428f6f0276b5202bccc5cb46fe9e34c29f37732112",
             "locator": {
               "kind": "file"
             }
@@ -350,8 +502,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:a580b2fb62f8f2464c9597d0b9f6490722c937a2716065c876c9d085bfb9f5a2",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:429141d967eed89e581d5d428f6f0276b5202bccc5cb46fe9e34c29f37732112",
             "locator": {
               "kind": "file"
             }
@@ -365,8 +517,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6d6c044c515d8a9d4c5f6655e86b094789d473a302ab286442f4117960acd9dc",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:be3120cbf1622a5e2fabadf7b4078187b12cbb4dcfc2be775e3386464ccfeb12",
             "locator": {
               "end": 81,
               "kind": "line_range",
@@ -382,12 +534,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:9fa6f298f1991f3e866ac0cd3f6c861bb11c9e45b513484c1eb89f165eefe87b",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:06fbd4fb6bc50d09868215fcc21930d88110eb2d2635e815a9b2f22982b47c2c",
             "locator": {
-              "end": 59,
+              "end": 61,
               "kind": "line_range",
-              "start": 59
+              "start": 61
             }
           },
           "kind": "code"
