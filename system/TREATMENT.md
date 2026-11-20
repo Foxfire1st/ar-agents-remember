@@ -1,32 +1,26 @@
 # Explainer treatment
 
-AR's own treatment for this repository's explanation pages. It steers how a page looks, reads,
-moves and responds, and nothing else. It cannot change what the explainer may read, write or
-start, the rules of evidence, or the page's isolation; where it seems to disagree with them, they
-hold. Techniques and their numbers are in `TECHNIQUES.md`; the dashboard around the page is in
+This repository's treatment guides the presentation of the completed essay and any figures that
+support it. The explainer capability governs the authoring stages, evidence and isolation.
+Techniques and their numbers are in `TECHNIQUES.md`. The dashboard around the page is in
 `DESIGN.md`.
 
 ## Intent
 
-The page explains what this task set out to do and how it got there. A reader who did not follow
-the work comes away knowing the objective, what actually happened on the way, and how the system
-behaves now, faster than from the diff, the records or the reports. The reader plays it: figures
-move through what happened and how it works, and the reader stops, steps and replays them.
+The essay explains the objective, what the evidence establishes, and how the system behaves on
+the binding. Read the copied task and requirement packets, the task's reference notes, and the
+selected reports listed in `inputs/reports.md`. Record the path and SHA-256 of each report used
+in the reading stage. Choose the changes and the parts that matter, explain each part on its own,
+and join those explanations into a complete essay with evidence. For a planned binding, explain
+the current code and memory and identify the requirement's effects as intended.
 
-The substrate informs; it is not the content. The requirement gives the objective. The task's
-reports in `notes/reference/<leaf>/`, where they exist, give what happened: the problems as they
-showed, what was found, what was tried and dropped, and the measurements before and after. The
-code and the memory records ground each claim. The invariants and their facets, such as a known
-weakness, a condition or an earlier change, help piece the story together with the task and its
-reports: which guarantee was at stake, which weakness the work met, closed or left open. Use them
-that way, inside the story. A page that restates the records, one invariant after another,
-explains nothing, because the reader could read the records.
+Use the code and memory records to ground each claim. An invariant, known weakness or condition
+belongs beside the account it helps explain. Keep the explanation in the markup so a reader can
+follow it with motion or script off.
 
-Each figure is built from this task's own material: its real call path, its recorded
-measurements, its actual hunks. An illustration that would fit any change explains none.
-
-The still page is the same explanation with motion or script off. It is the reduced form, never
-the plan.
+Finish the essay before planning or making visuals. Choose a figure where it helps the reader
+follow a part of the essay. Build it from the bound material, such as a real call path, recorded
+measurements, or the relevant code. Then assemble the page from the essay and those assets.
 
 ## Who reads, and in what order
 
@@ -34,19 +28,14 @@ The reader is the developer who asked, a reviewer coming to it cold, or a later 
 documentation, with the code a click away and none of its context. Tell it in this order, so a
 reader who stops early still holds a true picture:
 
-1. **The answer.** A title saying what the task achieved. A lede of at most three sentences: the
-   objective, the outcome, and for whom. Beside it, one moving figure of the outcome, such as the
-   measured before and after.
-2. **What happened.** The story of the work, in order: the problem as it showed, what was found,
-   what changed and what was measured. It is a sequence the reader plays (a step-through or a
-   scrubbed timeline), each step a short sentence beside its figure. Numbers come from the
-   reports, with the report named.
-3. **How it works now.** The mechanism in motion, before and after on the same input, driven by
-   the reader.
-4. **What it means for the guarantees.** Which guarantees changed and how they still hold, and any
-   known weakness the work closed or left open, shown in the figures above: a node lights, a path
-   stays closed. One sentence each, with its record as a mark. Never a section that walks the
-   invariants one by one.
+1. **The answer.** A title stating the recorded outcome or intended change and a short lede
+   explaining the objective and who it affects. Add an outcome figure if it helps.
+2. **What happened.** Explain the problem, what was found, what changed and what was measured.
+   Attribute measurements to their reports. A timeline can support the sequence where it helps.
+3. **How it works now.** Explain the mechanism and the before and after in prose. A chosen figure
+   may help the reader trace a path or compare the same input in both states.
+4. **What it means for the guarantees.** Explain which guarantees changed, how they hold, and
+   which weaknesses the work closed or left open. Place the record mark beside the claim it grounds.
 5. **Where to look first.** Ordered entry points into the code, one reason each, each opening its
    excerpt in place. Say that the order is yours.
 6. **Risks and open questions,** marked as your reading.
@@ -55,15 +44,12 @@ reader who stops early still holds a true picture:
 A focused explanation keeps this order inside its part. Skip a step with nothing to say; never pad
 one.
 
-## How the page explains through interaction
+## Supporting figures and controls
 
-- **Play.** Figures move. A request travels the changed path, a measured time shrinks from before
-  to after, a block moves to its new owner. A figure plays once when it comes into view, then
-  replays, pauses, steps and scrubs on the reader's hand.
-- **Drive.** "How it works" has at least one figure the reader drives: step, scrub, toggle a
-  condition, switch before and after on one input, or select a node to trace its path.
-- **Link.** A claim, its code lines and its figure nodes are one thing in three places: hover or
-  focus on one lights the others, a click pins, Escape clears.
+- **Choose one job.** Where a figure helps, show a sequence, comparison, or path from this
+  binding. A mechanism may use a step, scrub, condition toggle, or before-and-after switch.
+- **Link.** Link a claim to its cited lines and to its figure nodes where a figure exists. Hover
+  or focus highlights the linked elements, a click pins them, and Escape clears the pin.
 - **Descend.** A ladder of abstraction: the whole change, a part, its hunk. Detail opens in place
   below what the reader chose; the way back stays visible.
 - **Ask.** Every control answers a reader's question: what happens when…, where is this in the
@@ -73,16 +59,11 @@ one.
 
 ## Character and voice
 
-Lively and legible: a short motion piece about one task's work, closer to an explorable
-explanation or an explainer video than to a report or a slide deck. It answers the reader's hand
-at once and invites the next question. The dashboard is a dark instrument panel; the page is its
-live instrument.
-
-Prose is the caption, not the content. At most two short paragraphs a part; the figures carry the
-explanation, and a reader who skips the prose still follows from the motion. Plain sentences,
-present tense, active voice. Name the owner of each judgment. Say "the record shows" only when
-the basis shows it, "the report measured" for a number from a report, and "I read this as" for
-your own inference. No superlatives, urgency, rhetorical questions, exclamation marks or emoji.
+Use clear, direct prose and let paragraph length follow the reasoning. A figure supports its
+part of the essay. Plain sentences, present tense, active voice. Name the owner of each judgment.
+Say "the record shows" only when the basis shows it, "the report measured" for a number from a
+report, and "I read this as" for your own inference. No superlatives, urgency, rhetorical
+questions, exclamation marks or emoji.
 
 ## Colour
 
@@ -124,23 +105,18 @@ figure labels and step counts. No web fonts.
 
 ## Motion and response
 
-The page moves, and motion carries the explanation: an order, a propagation, a sequence in time, a
-measured change, a block moving to its new place. The developer's motion vocabulary in
-`kit/ar-video/23fd71bf/` (its easing, signals and camera) is the house style; Motion Canvas,
-in the same kit, is the tool for timed scenes. A figure plays once when it comes into view and
-then waits for the reader, who can replay, pause, step and scrub it. A control shows its effect
-at once.
+A supporting figure may use motion to show an order, a propagation, a sequence in time, or
+a measured change. The developer's motion vocabulary in `kit/ar-video/23fd71bf/` is the house
+style. Motion Canvas in the same kit supports timed scenes. A scripted moving figure plays
+once in view, then waits for the reader to replay, pause, step or scrub from the keyboard. It
+ends on its final state.
 
-Motion never:
+A WebM or MP4 video plays on reader action, with controls and without autoplay or looping. In
+reduced motion, show a still frame and list its steps.
 
-- decorates, or loops without end;
-- moves the layout, text or scroll position under the reader: a figure's box is reserved before
-  it draws, and detail opens below the control that opened it;
-- plays in two figures at once;
-- carries anything the still form lacks: the still form holds each figure's final state and its
-  steps as a list.
-
-Every moving figure pauses, steps and scrubs from the keyboard and ends on its final state.
+Reserve a figure's box before it draws, and open detail below its control. Keep the layout,
+text and scroll position stable. Run one figure at a time. The still form supplies the labeled
+state and steps.
 
 ## Honest figures
 
@@ -159,19 +135,19 @@ Every moving figure pauses, steps and scrubs from the keyboard and ends on its f
   statement. A record is a mark beside the claim it grounds.
 - No claim list. The claim map is for the product; on the page each claim is a sentence in the
   part it explains, beside its code or figure, with its mark.
-- No text walls and no cards of prose. One item per row; the diff is marked, not retold in prose.
+- Use paragraphs for the explanation and mark the relevant diff lines beside the claims they ground.
 - No glow, neon, gradient fills, glass, stock "AI" imagery or meaningless icons.
 - No name or logo of the tool that wrote the page; the page speaks for the repository.
 - No WebGL or shaders by default; HTML, CSS, SVG and Canvas2D suffice.
 
 ## Still, reduced, narrow
 
-**Still form.** The markup, before any script runs, holds the whole explanation: each figure's
-steps as an ordered list, both sides of every switch, every rung open; a canvas figure has a
-markup twin. Script turns it into the driven figure and never adds content the still form lacks.
+**Still form.** The markup holds the full essay before any script runs. Include ordered steps
+and labeled states for figures where they apply. A canvas figure has a markup equivalent.
+Script may add interaction to the same material.
 
-**Reduced motion.** No transitions, no autoplay; every control still works and every highlight
-still links. Figures open on their final state with their steps listed.
+**Reduced motion.** Show scripted figures in their final labeled state with steps listed.
+Show a still frame and listed steps for video. Keep visible controls and evidence links operable.
 
 **Narrow.** 600–700px is a normal width. Below 560px: one column, before above after, a sticky
 figure becomes a figure above each step, labels shortened, tables as key/value rows, code wrapped.

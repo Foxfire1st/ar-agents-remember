@@ -205,6 +205,8 @@ A NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still u
 
 The process service binding lives in the neutral kernel holder and is re-exported unchanged by `services.py`. Startup can name a supplier; the first dependent lookup constructs and retains its bundle, and reset clears both the bundle and supplier. Open intent review refuses a new leaf start before enclosure creation and a planning attach before re-entry; task-stage publication also refuses planning/abandoned-to-`inProgress` while review is open. Existing later-stage attach behavior remains.
 
+The explainer reads canonical reports from the selected leaf's execution receipts after local access folders are reclaimed. The canonical reader includes text reports and regular JSON measurements explicitly cited within their own collections. It excludes generated launch handovers.
+
 ## Evidence
 
 - Ancestry, disjoint byte paths and equal reviewed after-images define the clean-sync exception. [104]

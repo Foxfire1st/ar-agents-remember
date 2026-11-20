@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
-        "content": "sha256:a1f7b913e7eb3243ed9dbfaf9f7baafe92655acbc5b8d5ce549e69506e9bf4f9",
+        "blob": "6c95ed1ae68a5a166477b1ca1a93c5a9a421b87d",
+        "content": "sha256:adf60b6c8d88bdbc876f3cb5739ed33dc5a207f12313d3c55b79fe598f99725b",
         "locator": {
           "kind": "symbol",
           "name": "FirstRequestForm"
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
+            "blob": "6c95ed1ae68a5a166477b1ca1a93c5a9a421b87d",
             "content": "sha256:ead4f1cfcc493d316ef3fb80652678ec23f37dd319dd1f6fb15f94fb9e3a137f",
             "locator": {
               "end": 107,
@@ -39,16 +39,16 @@
       ]
     },
     "2": {
-      "note": "The empty message is named as the end-to-end review, or on a planning task as its requirement and planned effects, rather than an error.\n\nAnchor: \"Leave it empty for the requirement and planned effects\"",
+      "note": "The recorded and planned placeholders identify what an empty request asks for.",
       "targets": [
         {
           "anchor": {
-            "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
-            "content": "sha256:c1e2961eca66182d932e02d8aaeb54bdedc218176e2faecb66b9bd4eab5bed89",
+            "blob": "6c95ed1ae68a5a166477b1ca1a93c5a9a421b87d",
+            "content": "sha256:3cc64089e5b33bdacb6b2b20988591a3223c2b9a5449c7208112a62cc671da17",
             "locator": {
-              "end": 179,
+              "end": 181,
               "kind": "line_range",
-              "start": 169
+              "start": 170
             }
           },
           "kind": "code"
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
+            "blob": "6c95ed1ae68a5a166477b1ca1a93c5a9a421b87d",
             "content": "sha256:0e8f2a92685701fda77a985b76ff9dc9c75c097d588614eb9d7192602a6a528f",
             "locator": {
               "end": 78,
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
+            "blob": "6c95ed1ae68a5a166477b1ca1a93c5a9a421b87d",
             "content": "sha256:3bb3ad8b9e075ee366cce8da163c7cbdce78f4c383239f47aab99e7f97d2e246",
             "locator": {
               "end": 196,
@@ -90,15 +90,16 @@
       ]
     },
     "5": {
-      "note": "A planned binding uses the planned placeholder and the planned first-request line.",
+      "note": "The form shows its binding-specific placeholder and the shared first-request line.",
       "targets": [
         {
           "anchor": {
-            "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
-            "content": "sha256:be3584d6f6ad643b55032b4dd5754d5f96f03c0c8b978e35b6d74acf15683fa4",
+            "blob": "6c95ed1ae68a5a166477b1ca1a93c5a9a421b87d",
+            "content": "sha256:cf36c7d8a3b15dd510eee53ee260a3257fe0c299a62a090f8ab3b1a9a40c8311",
             "locator": {
-              "kind": "symbol",
-              "name": "planned"
+              "end": 191,
+              "kind": "line_range",
+              "start": 174
             }
           },
           "kind": "code"

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0fe4dfd34d1828b10b63a9730269b25ba75fb61d",
+        "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
         "content": "sha256:56663263ffee6ee80e93552041e1329abc7a1d76d9dac01b3f2ebe388775cc4e",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "0fe4dfd34d1828b10b63a9730269b25ba75fb61d",
+        "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
         "content": "sha256:11e06b16a8ea894624fbdba33ad9464257c257fbc2a165572e4148a8817795d3",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,24 @@
     },
     {
       "anchor": {
-        "blob": "0fe4dfd34d1828b10b63a9730269b25ba75fb61d",
+        "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
+        "content": "sha256:8314e3d232a72e390bfd321be251f501cf8dc7bfdfa7f41048342d6d5e8a1e48",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_video_is_a_figure_a_reader_drives"
+        }
+      },
+      "facet": "The static check admits a controlled video and refuses autoplay, loop or absent controls based on attributes.",
+      "id": "PRF-9YCQ6Y",
+      "invariant": "INV-R9CTWA",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 6 — video is a figure",
+        "leaf": "261112-BUG-L13"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
         "content": "sha256:56663263ffee6ee80e93552041e1329abc7a1d76d9dac01b3f2ebe388775cc4e",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "0fe4dfd34d1828b10b63a9730269b25ba75fb61d",
+        "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
         "content": "sha256:542703a7d18734f8db475223745e4f320545f662d285c20f414b655a1c21923f",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "0fe4dfd34d1828b10b63a9730269b25ba75fb61d",
+        "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
         "content": "sha256:cbb9633f39c5be4c0dca5dd0127854244cf4d811c7e3aecdb9119fa4fabbf7f0",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "0fe4dfd34d1828b10b63a9730269b25ba75fb61d",
+        "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
         "content": "sha256:3f8e3bd9b29c8dbee58740036bb4eac3ea822c6a0c4365b3eaa6cedd0d22b721",
         "locator": {
           "kind": "symbol",
@@ -105,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "0fe4dfd34d1828b10b63a9730269b25ba75fb61d",
+        "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
         "content": "sha256:cabdfc041ac87acde58eb2aeb2fd854f4cad7ef9a67fd2fe372ac02af1c5afe5",
         "locator": {
           "kind": "symbol",
@@ -128,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fe4dfd34d1828b10b63a9730269b25ba75fb61d",
+            "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
             "content": "sha256:11e06b16a8ea894624fbdba33ad9464257c257fbc2a165572e4148a8817795d3",
             "locator": {
               "kind": "symbol",
@@ -144,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fe4dfd34d1828b10b63a9730269b25ba75fb61d",
+            "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
             "content": "sha256:3f8e3bd9b29c8dbee58740036bb4eac3ea822c6a0c4365b3eaa6cedd0d22b721",
             "locator": {
               "kind": "symbol",
@@ -156,14 +173,33 @@
       ]
     },
     "3": {
-      "note": "Readiness also derives a part map: claims require resolving bases and unique part ownership; `data-evidence-claim` carries actual claim IDs while `data-evidence` retains its separate basis-reference check. A page without explicit parts is one implicit `page` part containing its real claims, with whole-page staleness rather than invented part IDs.\n\nAnchor: `test_readiness_requires_resolving_claim_bases_and_unique_part_ownership`, `test_claim_ids_and_the_legacy_reference_check_stay_separate`, `test_a_page_without_parts_is_ready_as_one_implicit_part_with_real_claim_ids`",
+      "note": "The tests check resolvable claim bases and the independent claim and basis attributes.",
       "targets": [
         {
           "anchor": {
-            "blob": "0fe4dfd34d1828b10b63a9730269b25ba75fb61d",
-            "content": "sha256:b85bdd479e4911c29bce6098f532c6804ab2f1215cfbc85f1a07fadc665b9482",
+            "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
+            "content": "sha256:54967a7893092693daa912cff7dc41756da873a4b861f05487432f2bb4c4981d",
             "locator": {
-              "kind": "file"
+              "end": 330,
+              "kind": "line_range",
+              "start": 235
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The video cases check actual controls, autoplay and loop attributes, including ordinary filenames.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
+            "content": "sha256:8314e3d232a72e390bfd321be251f501cf8dc7bfdfa7f41048342d6d5e8a1e48",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 120
             }
           },
           "kind": "test"

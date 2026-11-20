@@ -6,8 +6,8 @@ start, the rules of evidence, or the page's isolation.
 
 Every technique a page uses, with its numbers and still form. Colours are the treatment's roles.
 Each row names its kit part (`kit/<name>/<version>/`) or plain DOM, SVG, CSS or Canvas2D. The rows
-that move and the rows the reader drives come first. "The answer" and "What happened" use the first
-two rows, and "How it works" uses at least one row the reader drives.
+that move and the rows the reader drives come first. Choose a technique where it helps an essay
+part. A part can be presented in prose.
 
 ## Shared numbers
 
@@ -18,10 +18,11 @@ two rows, and "How it works" uses at least one row the reader drives.
 - **Easing:** entering `outCubic`, `cubic-bezier(0.33, 1, 0.68, 1)`; between two states
   `inOutCubic`, `cubic-bezier(0.65, 0, 0.35, 1)`; `linear` only for a dot along a path. Names as in
   `ease` of `kit/ar-video/23fd71bf/`.
-- **Start:** a figure plays once when 60% of it is in view, then waits for the reader's act.
-  Play stops on the last step; nothing loops.
+- **Start:** a scripted figure plays once when 60% of it is in view, then waits for the reader's
+  act. Play stops on the last step. A video starts on reader action and has controls. Use a still
+  frame and listed steps for video in reduced motion. Nothing loops.
 - **Limits:** at most 12 steps, nodes or edges per figure; one row of controls per figure.
-- **Step controls:** Back, Play/Pause, Next, a scrubber and a count ("3 / 7"); ←, →, Space, Home
+- **Scripted step controls:** Back, Play/Pause, Next, a scrubber and a count ("3 / 7"); ←, →, Space, Home
   and End while the figure has focus.
 - **Switches:** a segmented control with words, not icons; ← and → move the choice.
 - **Selection:** hover or focus previews, click or Enter pins, Escape clears; one pin at a time.

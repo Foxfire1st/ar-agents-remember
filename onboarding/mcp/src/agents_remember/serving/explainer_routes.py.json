@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ce5f9ae6d24b8c755e4b85b0d44b520623128a40",
+        "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
         "content": "sha256:6e4dcb9d28baa2852fe9c99beac45d86ce8b6e92e73b3c51476ef66a528aa526",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "The cancel HTTP boundary requires the exact nonempty requestId and returns the seat service cancellation state for the selected leaf; malformed input is a named400 refusal and an unwired service refuses before host action.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+        "content": "sha256:a944503f0a793990c545d10b39d41a29fb496ca1874a34698600c5395d9a3590",
+        "locator": {
+          "kind": "symbol",
+          "name": "handle_build"
+        }
+      },
+      "id": "RLZ-V4PXB9",
+      "invariant": "INV-453GX6",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rules 4 and 7 — planned first request",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The production Build route carries the validated planned history to the existing composer.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -26,12 +44,80 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce5f9ae6d24b8c755e4b85b0d44b520623128a40",
+            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
             "content": "sha256:222eac6bbc4de4e08674df28005dd484ea1339a829368090e1edba7fb771649a",
             "locator": {
               "kind": "symbol",
               "name": "handle_state"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Build handler forwards the validated history to the builder. When the composed message is blank and history is planned, the builder sends the requirement-and-planned-effects request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "content": "sha256:6454816986269d0c04eebe083e9a2ebb78d741102690320e150f6e0a57651328",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "content": "sha256:e4d997ab0b0bec4730706a3c282ac7e68b2edc63aeceac66ed02965fcc8b6eb1",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:ef6806ebf9a0fb855fbbbebea81358187711e56e287a2a216e02f292b6552db2",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:18f3f222dbbe9a7ecbe9dff12e8524755168d8a4163864f5d37caefd926c6605",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 823
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:50ad4ffac21441f7999d8390e6795a99c5c350550e3d320cae863f55552fcd7e",
+            "locator": {
+              "end": 864,
+              "kind": "line_range",
+              "start": 859
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_service.py"
           },
           "kind": "code"
         }

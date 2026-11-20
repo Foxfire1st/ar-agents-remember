@@ -1,0 +1,1406 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L13",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-02GE3T",
+      "items": [
+        "sha256:bde0e8d4774b94ce3c9a99e7904b4eb7018a8ed32fed9ad1e90aa9ce24d41e89"
+      ],
+      "reason": "The prior tag-word scanners are removed as parsed element attributes now decide readiness.",
+      "subject": "hunk:sha256:bde0e8d4774b94ce3c9a99e7904b4eb7018a8ed32fed9ad1e90aa9ce24d41e89"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0ZK95K",
+      "items": [
+        "sha256:beed084293486b85a63936d1aa82543b7aac5987d798cc6fee105ab858191f64"
+      ],
+      "reason": "The live Explain reference builder and its recipient are unchanged by the empty-request wording change.",
+      "revision": 1,
+      "subject": "WKN-B8Z195"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-11BDBT",
+      "items": [
+        "sha256:99bc2c63b03a8d71b9a836248e83209cca58f1be82f72584cfe7aed81dd9b48a",
+        "sha256:f6292c38746cc9761b53ef8ffd950b5c88d61c48069f6315d69bb5a808c0c0dd"
+      ],
+      "reason": "The runner-source test checks the two media types independently of full render.",
+      "sources": [
+        {
+          "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
+          "path": "mcp/tests/test_canvas_prospective.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_canvas_prospective.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1H6WZ9",
+      "items": [
+        "sha256:b128bf7f321c8f95f3d1e5cb2522ca0e99530d6fb5901f488058ed552a215cd3"
+      ],
+      "reason": "The asset model admits WebM and MP4 paths by suffix. The frame store supplies the MIME field.",
+      "sources": [
+        {
+          "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
+          "path": "mcp/src/agents_remember/models/knowledge/review_frame.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/review_frame.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1W149R",
+      "items": [
+        "sha256:6e4556972f38ce4e210ca57e1bb8d7ccd86ec02710aed0dcfe1943ca44829949"
+      ],
+      "reason": "The export makes the stage directory constant available to the workspace owner. It introduces no separate folder guarantee.",
+      "subject": "hunk:sha256:6e4556972f38ce4e210ca57e1bb8d7ccd86ec02710aed0dcfe1943ca44829949"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1XPCMG",
+      "items": [
+        "sha256:419591e585b0c0b355a71d262795e74b9553afb568516086efcacdd964210c39",
+        "sha256:9f47e4c94fe5350fcc1b8f22f0affa222feae2e56337283d384e7fa21ae7d0a7"
+      ],
+      "reason": "The example design process retains the full essay and limits its guidance to presentation.",
+      "sources": [
+        {
+          "blob": "e6fd48dd2f87ea00a05732e61a0e9fb4c8415ec3",
+          "path": "system/defaults/examples/memory-repo/design-guidelines.md"
+        }
+      ],
+      "subject": "onboarding:system/defaults/examples/memory-repo/design-guidelines.md"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R13",
+          "packet": "requirements/BUG-R13-v1-the-explainer-writes-its-explanation-before-it-draws.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "6c95ed1ae68a5a166477b1ca1a93c5a9a421b87d",
+            "content": "sha256:adf60b6c8d88bdbc876f3cb5739ed33dc5a207f12313d3c55b79fe598f99725b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FirstRequestForm"
+            },
+            "path": "dashboard/src/explainer/FirstRequestForm.tsx"
+          },
+          "before": {
+            "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
+            "content": "sha256:a1f7b913e7eb3243ed9dbfaf9f7baafe92655acbc5b8d5ce549e69506e9bf4f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FirstRequestForm"
+            },
+            "path": "dashboard/src/explainer/FirstRequestForm.tsx"
+          },
+          "id": "RLZ-2YQ4HK"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-2HW1B9",
+      "items": [
+        "sha256:fe55827a9bf087df46d50bfef1b4bb96381e40ac68abb4911b0bb20fde847e81"
+      ],
+      "reason": "The explicit Send obligation and empty-request behavior hold. The wording now names what the recorded placeholder offers as an end-to-end explanation.",
+      "revision": 3,
+      "subject": "INV-M71W78"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2RZ7CQ",
+      "items": [
+        "sha256:53067aaed9619d8374091c0fd9bdc33af84b8660eb9253f95b3676631a897d68"
+      ],
+      "reason": "Build and moved Update prepare the canonical task, packet and report inventory before binding. Update preserves stage files.",
+      "sources": [
+        {
+          "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+          "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_workspace.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3HQ3DT",
+      "items": [
+        "sha256:733890ef203b8bc67dcac596892f213b62984b5fb22d0db3c287a8b74eb39dd9"
+      ],
+      "reason": "The import reuses the existing leaf document address and reader.",
+      "subject": "hunk:sha256:733890ef203b8bc67dcac596892f213b62984b5fb22d0db3c287a8b74eb39dd9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3N7ZBP",
+      "items": [
+        "sha256:b401d53a657b7f81f8de5d671671034572d85c4f59545cae15957f96cd5088aa"
+      ],
+      "reason": "The error import names the existing authority refusal handled by confined report lookup.",
+      "subject": "hunk:sha256:b401d53a657b7f81f8de5d671671034572d85c4f59545cae15957f96cd5088aa"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3RA119",
+      "items": [
+        "sha256:5dc10ca12c0416238945bd6b7f2d2a2222eb9a0764d487b16b44c96f34a89d8b"
+      ],
+      "reason": "The empty explanation displays the current end-to-end request and keeps grades optional.",
+      "sources": [
+        {
+          "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+          "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/explainer/ExplanationView.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4BEVJP",
+      "items": [],
+      "reason": "The Python reader accepts both full string inventories while the browser bounds observation time.",
+      "sources": [
+        {
+          "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+          "path": "mcp/src/agents_remember/canvas/prospective.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/prospective.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4ECF4X",
+      "items": [
+        "sha256:0da379a9de59af49efec520fb69549b337f96bb378763439ca19b1ad1b1186d5",
+        "sha256:1e3ed3eb7beaa4c9bc714ca9198402e13e43d9f791c46c9aee043dae5006d8ae",
+        "sha256:1fc913438761792c045fbba5e717fee77f88890a3ec26b16aec5d52b57f85fb5",
+        "sha256:53b8149b1796e8ff850257a481cff354d68021ac9f923f5c92b5f486b8213d7b",
+        "sha256:8e4b3fc5f21eb21c15d1ef7c2ca8270efb000daddef1ba53c2fa15687157dfc6",
+        "sha256:912a1c3eddeecbcb2a31adddcaad97d76b650232118243805239a218c986d8d3",
+        "sha256:c29b092a5cdef1518ed50a5182b7db2e1b2dcb4e6e4560bf4bc2927224b2d232",
+        "sha256:d05dd88cc05b47e3c944d952b28ec9d5eb5c91fb0b1fd067f5eb8e4f066e79f5",
+        "sha256:f25363c5eeac4e33b4398e1ffd7d7d6daa38043fe220d82fab434c2c4cd9f1b9"
+      ],
+      "reason": "The example presents a self-contained essay with optional supporting figures.",
+      "sources": [
+        {
+          "blob": "8c8a2e946dfeb8c463793106ccc3339d1d17af9f",
+          "path": "system/defaults/examples/memory-repo/TREATMENT.md"
+        }
+      ],
+      "subject": "onboarding:system/defaults/examples/memory-repo/TREATMENT.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-52X462",
+      "items": [
+        "sha256:5d1f7bb196ee38550a069d000e8470cdba39829cbeb9d971f1878291d78ccccf"
+      ],
+      "reason": "The new case proves video publication and readback. It does not realize a runtime obligation.",
+      "subject": "hunk:sha256:5d1f7bb196ee38550a069d000e8470cdba39829cbeb9d971f1878291d78ccccf"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-54J54X",
+      "items": [
+        "sha256:3f8ae49a50ebd44bd26483ff84ce0ac66e3051400b5bf54f423dd3051e04968c"
+      ],
+      "reason": "The repository overview describes system responsibilities. Staged explanation and its page outputs are documented in the existing canvas route overview.",
+      "sources": [
+        {
+          "blob": "93688e4f1d6ffe3b73a531ed9faca32ffed0daea",
+          "path": "system/defaults/examples/memory-repo/TECHNIQUES.md"
+        },
+        {
+          "blob": "8c8a2e946dfeb8c463793106ccc3339d1d17af9f",
+          "path": "system/defaults/examples/memory-repo/TREATMENT.md"
+        },
+        {
+          "blob": "e6fd48dd2f87ea00a05732e61a0e9fb4c8415ec3",
+          "path": "system/defaults/examples/memory-repo/design-guidelines.md"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "considered": [
+        "FAM-GPNRVQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-58G1SR",
+      "items": [],
+      "reason": "The media asset and static markup contract does not change which evidence a frame binds to or how its evidence remains available.",
+      "revision": 1,
+      "subject": "membership:INV-R9CTWA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6JSYPK",
+      "items": [
+        "sha256:6cd8f85a12027d9d939cc4f7f0defa09fc726c167a6f7a505236f030bb2089c8"
+      ],
+      "reason": "The optional history annotation matches the existing handling of omitted history. Validated planned history selects the planned default only for blank composed content.",
+      "sources": [
+        {
+          "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+          "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_service.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7A99R4",
+      "items": [
+        "sha256:4a355cedb89e5d2d9c53fa8ac918510221df9a94924603f1d414709be3241ef6"
+      ],
+      "reason": "The leaf workspace creates private stage and reading-input directories under its existing confinement checks.",
+      "sources": [
+        {
+          "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+          "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_paths.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-86DDF8",
+      "items": [
+        "sha256:af961955fcf0d9b30c7a0568ae79769e4301d8e2ed5448636b87d2409f256b53"
+      ],
+      "reason": "The host design names prepared inputs, six stage files and video readiness. The workspace writer lists selected report paths and digests and names the root in the empty notice. The serving route link tracks the exact A7 source.",
+      "revision": 5,
+      "subject": "DPD-7YCJ2B"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8DVA5P",
+      "items": [
+        "sha256:91db8044bd81ccb9fd4561b50af1bb2f13ba0cd640000d56a59b29cc59e44b61"
+      ],
+      "reason": "The comment follows the changed wording. The form still allows an empty request.",
+      "subject": "hunk:sha256:91db8044bd81ccb9fd4561b50af1bb2f13ba0cd640000d56a59b29cc59e44b61"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+            "content": "sha256:1f73e4b8b876fd17aeaea5ee1d51a0dd37966bb39079cba48c47c3d0cedc06ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_valid_inventory"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "before": {
+            "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+            "content": "sha256:1f73e4b8b876fd17aeaea5ee1d51a0dd37966bb39079cba48c47c3d0cedc06ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_valid_inventory"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "id": "RLZ-2X0677"
+        },
+        {
+          "after": {
+            "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+            "content": "sha256:90282a7f64911198aee6ce9675174723c5a11b6eab1a19085b35b360d3428b6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_result"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "before": {
+            "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+            "content": "sha256:90282a7f64911198aee6ce9675174723c5a11b6eab1a19085b35b360d3428b6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_result"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "id": "RLZ-2Z5SWP"
+        },
+        {
+          "after": {
+            "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+            "content": "sha256:0fc710c93f5f9507b15a3a212bd84f320be74141d10a63a89101cffe0cef03e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_rendered_citations"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "before": {
+            "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+            "content": "sha256:0fc710c93f5f9507b15a3a212bd84f320be74141d10a63a89101cffe0cef03e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_rendered_citations"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "id": "RLZ-HSQDEF"
+        },
+        {
+          "after": {
+            "blob": "8d8045494c3ebf5053d563548de4f4fe855b8fad",
+            "content": "sha256:4856cafdbe73ebb1342c888b1e7bb6d731f83adfb70ae9e43aaa5c384581c65a",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "before": {
+            "blob": "67f8b73c7c956edb2e18c92195e786684ec8777b",
+            "content": "sha256:4856cafdbe73ebb1342c888b1e7bb6d731f83adfb70ae9e43aaa5c384581c65a",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "id": "RLZ-TV9FAW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-942G62",
+      "items": [],
+      "reason": "The browser bounds the observation window. The JavaScript observation keeps the two inventories separate, and the Python reader preserves both full string lists and checks their contents against the bound packet. The invariant and its coverage remain in force.",
+      "revision": 2,
+      "subject": "INV-40VGBY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+            "content": "sha256:e6bca36003363243213754deb571b492e61c00d762481c984f860ecc931d8900",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_launch_record_names_the_baseline_the_addition_or_the_replacement"
+            },
+            "path": "mcp/tests/test_canvas_capsule_text.py"
+          },
+          "before": {
+            "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
+            "content": "sha256:76a5cd13ef1c708fbd533cedc85e95bb3be6b5f21dae1920c05823ffd33d00ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_launch_record_names_the_baseline_the_addition_or_the_replacement"
+            },
+            "path": "mcp/tests/test_canvas_capsule_text.py"
+          },
+          "id": "PRF-07M14V"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-980GEP",
+      "items": [
+        "sha256:bafbb08b57cb1617067386347cb06c4bf231a3a59ee52f76920e77f09e45ed59"
+      ],
+      "reason": "The launch-record proof checks the same baseline, addition and replacement metadata with the configured explainer limit now at 1,500.",
+      "revision": 1,
+      "subject": "INV-SE4ECQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9FXHMH",
+      "items": [
+        "sha256:b33a61929d0d0dff6d4a4eb642185af3165698aaeba59a67bed7dce800e55d42"
+      ],
+      "reason": "The canonical reader admits regular JSON measurements cited inside the same execution collection.",
+      "sources": [
+        {
+          "blob": "62215ea0a5252c997ca76c7b1680713485391419",
+          "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/role_reports.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AV6H2Z",
+      "items": [
+        "sha256:b2bf4ae631411779a3b192f4e1539ae7b55b05faa57b86587db79480bbb42eab"
+      ],
+      "reason": "The model route's persistent frame identity and publication contract stay the same. The suffix table and its own card now include the two video media types.",
+      "sources": [
+        {
+          "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
+          "path": "mcp/src/agents_remember/models/knowledge/review_frame.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BS10YZ",
+      "items": [
+        "sha256:b66584e7a079d7f4c5ce61bc68bb73e14ea6f2ed721659ba2619813f268fb635"
+      ],
+      "reason": "The HTTP Build handler forwards the validated history with its composed request.",
+      "sources": [
+        {
+          "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+          "path": "mcp/src/agents_remember/serving/explainer_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/explainer_routes.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D91PQP",
+      "items": [
+        "sha256:9fb97f8df622242aacbd94dd70350a9746c8af95b373dc9a8238c81e2d998000"
+      ],
+      "reason": "The guide describes the workspace layout and staged explanation. Build forwards the planned history so a blank planned request asks for the requirement and planned effects, as the guide describes.",
+      "revision": 7,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DMRTVB",
+      "items": [
+        "sha256:acae3410aa28c5d0e87fa31bfeb7c6cf753826d115ac1d0e7b729478c72458cf"
+      ],
+      "reason": "The explanatory comment follows the current empty request wording. It changes no request behavior.",
+      "subject": "hunk:sha256:acae3410aa28c5d0e87fa31bfeb7c6cf753826d115ac1d0e7b729478c72458cf"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DZKXN4",
+      "items": [
+        "sha256:bea96d8d164bb11fa7fc0bc1f97800756b3c05e71360cfa5b7ee99518e565810"
+      ],
+      "reason": "The first-request form offers end-to-end explanation and uses the binding-specific placeholder without changing Send admission.",
+      "sources": [
+        {
+          "blob": "6c95ed1ae68a5a166477b1ca1a93c5a9a421b87d",
+          "path": "dashboard/src/explainer/FirstRequestForm.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/explainer/FirstRequestForm.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E35DRE",
+      "items": [
+        "sha256:b291ea38f21914b246e257ad0a8e229bfa3e719221ff785d51e34d68a77c7f3d"
+      ],
+      "reason": "Static readiness reads actual media attributes for autoplay, loop and controls.",
+      "sources": [
+        {
+          "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+          "path": "mcp/src/agents_remember/canvas/readiness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/readiness.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EAEAWN",
+      "items": [
+        "sha256:bd90af313bd761241095f1ee456492855399ce62d7eb59798a36b8da3f35b0b7"
+      ],
+      "reason": "The net deletion removes replaced scaffolding. The current implementation is represented by its replacement and source card.",
+      "subject": "hunk:sha256:bd90af313bd761241095f1ee456492855399ce62d7eb59798a36b8da3f35b0b7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ECN7AX",
+      "items": [
+        "sha256:04ffd72ef6548f7081da03b91bfc4655555118f33cce1eebe61c559c386032b6",
+        "sha256:5a0cb2dee598ab0a5551c905a41bb204eacf86fb2c214152b46613ed833f0ba1",
+        "sha256:64f345860bee6313e06eb10b05dcea66d8cd3d9e3a1d79534c16bcddf7171570",
+        "sha256:80f2bdd99465df1e65751b12d0c81735a1cc0cf60fdc522e59ba46e2096d53ba",
+        "sha256:867aefd7c7efaf907e359dd6420dd9f09764898e0122523e78da602f5bf78b19",
+        "sha256:951ae4245df706bceec575f6dfa10cc27cd63908201a20052f9aaad59140b3e5",
+        "sha256:b1a8adf0af3b0dd294a1238687acbf561e5ee3e176642609de27d00c0fd50b38",
+        "sha256:d1282a404e266ff4df07ab008741348113c526daaab7d53b7f311fcd8f006db8"
+      ],
+      "reason": "The canonical capability describes the recorded and planned stages, report provenance and an essay-complete page assembled last.",
+      "sources": [
+        {
+          "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+          "path": "mcp/src/agents_remember/canvas/review-presenter.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/review-presenter.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EHKXP4",
+      "items": [
+        "sha256:76a6173d283ab45298b1e45630a44bf43896c89a982eba1eaa1cff4dacab7180"
+      ],
+      "reason": "The module describes the parsed media rules enforced by the readiness check.",
+      "subject": "hunk:sha256:76a6173d283ab45298b1e45630a44bf43896c89a982eba1eaa1cff4dacab7180"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F3V9FG",
+      "items": [
+        "sha256:5182de2368a3de1096b6a3c4d45d2f50679e3f59a916756d503b61c744d55962",
+        "sha256:f0261d74ba998929d139f4966e14fb56af67f7c91c20e1ac8de6150b079fbb57"
+      ],
+      "reason": "The mounted planned Build fixture checks HTTP success, messageSent and the exact requirement-and-planned-effects request sent to the recording host.",
+      "sources": [
+        {
+          "blob": "bca560e908a765b37cf2eed5bc0f4acdab715219",
+          "path": "mcp/tests/test_explainer_planned_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_planned_binding.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F4EX79",
+      "items": [
+        "sha256:db74ef6d07a4e0fc511ae7a4fc6263a601d8383c77591b52437b32310218c2a5"
+      ],
+      "reason": "The imports reuse the handover suffix and existing relative-link parser.",
+      "subject": "hunk:sha256:db74ef6d07a4e0fc511ae7a4fc6263a601d8383c77591b52437b32310218c2a5"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-F53GX0",
+      "items": [
+        "sha256:afb2f0120978f6d96bb4e9a0e633e89570a52847c3546243260ae986c10ed82c"
+      ],
+      "reason": "Concepts describes the staged capability, the workspace writer’s selected report paths and digests, and WebM or MP4 publication. Its service link tracks the exact A7 source.",
+      "revision": 8,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FHME2Q",
+      "items": [
+        "sha256:830058427e4b2966ff114ca21c89337aaaab851109fea096f0862aac1af1fbac"
+      ],
+      "reason": "The imports reuse path confinement and code-span parsing for cited measurements.",
+      "subject": "hunk:sha256:830058427e4b2966ff114ca21c89337aaaab851109fea096f0862aac1af1fbac"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FQFF7S",
+      "items": [
+        "sha256:7794eb5198c97c3101bf2c98d25cf76b90264ee3aaf3b58cf3f5adb4dedb9f6a"
+      ],
+      "reason": "The import reuses the canonical report owner to select eligible reports.",
+      "subject": "hunk:sha256:7794eb5198c97c3101bf2c98d25cf76b90264ee3aaf3b58cf3f5adb4dedb9f6a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FW6RP9",
+      "items": [],
+      "reason": "The guide accords with the bound reading inputs, render evidence and the planned request the dashboard’s Build reaches on A7.",
+      "sources": [
+        {
+          "blob": "09de6f439c292b68a048cc54bd4c7e3465a4089b",
+          "path": "docs/guides/review-page-and-explainer.md"
+        }
+      ],
+      "subject": "onboarding:docs/guides/review-page-and-explainer.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FYN61J",
+      "items": [
+        "sha256:00540e037e5f329b3baba3e5ae86c92d7275d0737e63a1c0763ca79162539c35"
+      ],
+      "reason": "The overview names the retained page and No explanation yet branches that can show last-render failure.",
+      "sources": [
+        {
+          "blob": "346cd25bf8a0d1a81e469e397609156fbc51826c",
+          "path": "dashboard/src/panels/review/explainer/ExplanationRequest.tsx"
+        },
+        {
+          "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+          "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GFCYQP",
+      "items": [
+        "sha256:a58d5a636976021031a3c3e86eb8c32b1e9d73c014594898ce02808574b87320"
+      ],
+      "reason": "The test route accounts for the new mounted planned Build regression separately from the existing direct service test.",
+      "sources": [
+        {
+          "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+          "path": "mcp/tests/test_canvas_capsule_text.py"
+        },
+        {
+          "blob": "94d9adcaff8989a85e72dd919a7ebc6c50e4be63",
+          "path": "mcp/tests/test_canvas_explainer.py"
+        },
+        {
+          "blob": "a6c84726e4b30cbf06667c3d7ca4ae4097c5bf44",
+          "path": "mcp/tests/test_canvas_prospective.py"
+        },
+        {
+          "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
+          "path": "mcp/tests/test_canvas_readiness.py"
+        },
+        {
+          "blob": "bca560e908a765b37cf2eed5bc0f4acdab715219",
+          "path": "mcp/tests/test_explainer_planned_binding.py"
+        },
+        {
+          "blob": "e01c6542760480cb28305ee0b8a17613d0feb579",
+          "path": "mcp/tests/test_explainer_service.py"
+        },
+        {
+          "blob": "a499a6d2c9fc7bc2af9b5df97c7b9cbb5cf0fcb3",
+          "path": "mcp/tests/test_review_frame_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GRDKFX",
+      "items": [
+        "sha256:8bda8c101fa124247463c3f36dbcac76f711aab140f423f30d31bf81076ffdac"
+      ],
+      "reason": "The import names the shared inputs directory from its existing owner.",
+      "subject": "hunk:sha256:8bda8c101fa124247463c3f36dbcac76f711aab140f423f30d31bf81076ffdac"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GWZJ13",
+      "items": [
+        "sha256:449feb90cc5871d2d35c68eddacb57f9f414595e277f5bf21088762979d23a1f",
+        "sha256:84558632ad703a8d3c0d026aa3963c8fc0e838aa55cb58d60ff68e187dac81ed",
+        "sha256:87343a50f81d0628fadd03ac36ada5cdd57b4a595132477dd89c91e2eb130c83"
+      ],
+      "reason": "The example design process retains the full essay and limits its guidance to presentation.",
+      "sources": [
+        {
+          "blob": "e6fd48dd2f87ea00a05732e61a0e9fb4c8415ec3",
+          "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/design-guidelines.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/design-guidelines.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H57C6T",
+      "items": [
+        "sha256:087c5cb3f38b2d548326303848ce63ab3d2546d19f15855a65676b787df0d7df",
+        "sha256:0fb49b3c49ffa392544fb88a4c9b0debbe8e1a2c94df8c00e3bddb5aed0498c5",
+        "sha256:3946a68e082d5b68c457fe275de95faaf739ee69c678b137026730ff3534ed64",
+        "sha256:640828436f98da489b1922f30350026137ec97e51875a7fe4218bf2353baf358",
+        "sha256:8d2afd5b63853f50560b64d84b0d44856dccc1e2b97b4c94efe4ca31b24d98f9",
+        "sha256:93933e13bdb824753f00a54cb3ba64da628e3a46157f7ea58956ba13c6d4d947",
+        "sha256:95c8c48751abd21c2b872727e2b8e493e50e94ce8e22c8634eb7dee05627ccb3",
+        "sha256:f1c13c03781b4c64e7b97a49a0317dccae047dad9151d06fc115bf062608239d"
+      ],
+      "reason": "The empty-planned-request test passes planned history directly and checks the requested inputs and the essay-first wording.",
+      "sources": [
+        {
+          "blob": "e01c6542760480cb28305ee0b8a17613d0feb579",
+          "path": "mcp/tests/test_explainer_service.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_service.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HPQ6W3",
+      "items": [
+        "sha256:875c4e44392684f3608a22e2992920ff008854cd2b963dda9522603d94d82030",
+        "sha256:8c372c2850d3c80ee0401a30d82dd60ef745952712577bbe92cd2ee194decd2d"
+      ],
+      "reason": "The comparison-owned form presents the revised recorded placeholder and shared planned request line.",
+      "sources": [
+        {
+          "blob": "346cd25bf8a0d1a81e469e397609156fbc51826c",
+          "path": "dashboard/src/panels/review/explainer/ExplanationRequest.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/explainer/ExplanationRequest.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HZZY4X",
+      "items": [
+        "sha256:e1873f5420fa822f99c8bcb3dc3d9c4d0d8f61b696e3335f299e595700872230"
+      ],
+      "reason": "The __all__ edit lists INPUTS_DIRECTORY as a public export. Directory creation remains in ensure_leaf_workspace.",
+      "subject": "hunk:sha256:e1873f5420fa822f99c8bcb3dc3d9c4d0d8f61b696e3335f299e595700872230"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J8YK49",
+      "items": [
+        "sha256:875033f99dd238d50463b955f76547350db35342028a6baadf7288221d2bac19"
+      ],
+      "reason": "The Retire code still archives before accounting for processes surviving that archival.",
+      "revision": 1,
+      "subject": "WKN-AJV5GY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JSAHVQ",
+      "items": [
+        "sha256:d97dbbb0fac724432beb5f03fe604375a611c2dbf0e1c0800f6efac63bcb9047"
+      ],
+      "reason": "The module's documentation lists the newly created directories. The workspace builder creates them.",
+      "subject": "hunk:sha256:d97dbbb0fac724432beb5f03fe604375a611c2dbf0e1c0800f6efac63bcb9047"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JXTJ2N",
+      "items": [
+        "sha256:416dd23a582667583623d2cbc7d5c43dc6ceb20037ff5ae07217aa85b5450fbd"
+      ],
+      "reason": "The import names the product execution-receipt directory for the report inventory reader.",
+      "subject": "hunk:sha256:416dd23a582667583623d2cbc7d5c43dc6ceb20037ff5ae07217aa85b5450fbd"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KBKX3C",
+      "items": [
+        "sha256:1aeb97deddb0e0417e3c01b6c8d5c2e4a9b84cf7f07ae63d23e6d5975e23d93d",
+        "sha256:1ff8406ebd654361afdbcd6467934bdc8c71890b2fa4776990de89bc3ed69441",
+        "sha256:7177471357273758700c42f7d5147f698720dd0ceebda9c4e3cee386647dc5f1",
+        "sha256:726eb06a48559e3c6f9a7b668cc78225bb879ee41aa37f57b44564f86a2a3928",
+        "sha256:74bacf98aced54e16905df2276ea40daea0c907ad05d0dfa3ab7f24b719b8cce",
+        "sha256:e053136348aa6f37a4dc1a108a3e377c77002838b9a97bb392adf7a22dec4462",
+        "sha256:e075ed7fc48180c84d47a641cec2cf9806460d424d3c0e56b6dcff1748462146",
+        "sha256:f571ca5add1ffd6918dece5222fc96ba48f37695d9797366b344382ada22480d"
+      ],
+      "reason": "The byte-identical shipped capsule carries the staged workflow and the separate page destination.",
+      "sources": [
+        {
+          "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+          "path": "mcp/src/agents_remember/package_data/canvas/review-presenter.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/canvas/review-presenter.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KGDTJW",
+      "items": [
+        "sha256:ca2ea9a78d75d4b2d6086d862f25a0273fa87751280effdd153c86dbe4f57061"
+      ],
+      "reason": "The publishing route includes WebM and MP4 in the ordinary store admission and readback contract.",
+      "sources": [
+        {
+          "blob": "d150d3d4a3d2225914a9438a89c5b3faa980f15c",
+          "path": "mcp/src/agents_remember/application/review_frame_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NMH8ZK",
+      "items": [
+        "sha256:4bf9938d2b8c48ac732fa6fd2ef18057fc382c73c1cae983d042811bac9e0c76"
+      ],
+      "reason": "The canvas overview records staged authoring, bound reading inputs and media admission. It distinguishes the browser observation window from the full inventories and describes verification of shipped kit assets during collection, followed by revision-scoped serving. A7 changes only the type of optional history in this route and retains the earlier canvas facts.",
+      "sources": [
+        {
+          "blob": "8d8045494c3ebf5053d563548de4f4fe855b8fad",
+          "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+        },
+        {
+          "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+          "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
+        },
+        {
+          "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+          "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+        },
+        {
+          "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+          "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+        },
+        {
+          "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+          "path": "mcp/src/agents_remember/canvas/readiness.py"
+        },
+        {
+          "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+          "path": "mcp/src/agents_remember/canvas/review-presenter.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NMZ4M3",
+      "items": [
+        "sha256:24108d074a90dfd2f8a61b039a92eb3841c1850fa57a8a45348ca8e2b0604380"
+      ],
+      "reason": "The route evidence refers to the settings-selected bound tool surface and separates the request from seat creation.",
+      "sources": [
+        {
+          "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
+          "path": "mcp/src/agents_remember/cli/role_instructions.py"
+        },
+        {
+          "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+          "path": "mcp/src/agents_remember/package_data/canvas/review-presenter.md"
+        },
+        {
+          "blob": "93688e4f1d6ffe3b73a531ed9faca32ffed0daea",
+          "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/TECHNIQUES.md"
+        },
+        {
+          "blob": "8c8a2e946dfeb8c463793106ccc3339d1d17af9f",
+          "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/TREATMENT.md"
+        },
+        {
+          "blob": "e6fd48dd2f87ea00a05732e61a0e9fb4c8415ec3",
+          "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/design-guidelines.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NS6E8R",
+      "items": [
+        "sha256:c504be1c1d0c14308881cf0dd98114629991dc2bb4968fb3536936b1c22a3535"
+      ],
+      "reason": "The canonical report route names selected leaf files after local access folders are removed.",
+      "sources": [
+        {
+          "blob": "62215ea0a5252c997ca76c7b1680713485391419",
+          "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-03QFAC",
+          "revision": 1
+        },
+        {
+          "id": "INV-16DDNJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-18QNN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-5VVSTD",
+          "revision": 2
+        },
+        {
+          "id": "INV-6VNAR5",
+          "revision": 1
+        },
+        {
+          "id": "INV-8FY445",
+          "revision": 1
+        },
+        {
+          "id": "INV-D3JV0V",
+          "revision": 1
+        },
+        {
+          "id": "INV-FXEPWM",
+          "revision": 1
+        },
+        {
+          "id": "INV-GAVZC0",
+          "revision": 1
+        },
+        {
+          "id": "INV-GGF749",
+          "revision": 1
+        },
+        {
+          "id": "INV-K2YX74",
+          "revision": 1
+        },
+        {
+          "id": "INV-R298WE",
+          "revision": 2
+        },
+        {
+          "id": "INV-S75HA1",
+          "revision": 1
+        },
+        {
+          "id": "INV-T4EVM5",
+          "revision": 1
+        },
+        {
+          "id": "INV-TE5W2D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VASQQX",
+          "revision": 1
+        },
+        {
+          "id": "INV-YFTJNQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZAW3HJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZPHKZB",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-P5S6JZ",
+      "items": [
+        "sha256:0adba0ee6488b1e5cd09711d9e20fd534970dae08655f7965549b6b96bb6e2fb"
+      ],
+      "reason": "Deleting the obsolete lineage-limit proof leaves the task-total and retained-revision evidence in place. All 19 member records still support the same comparison-bound evidence and durable-frame guarantee, with membership and route coverage unchanged.",
+      "revision": 3,
+      "subject": "FAM-GPNRVQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P6VPW1",
+      "items": [
+        "sha256:aed3ee43f45f044dcb0864e3f81e0efbced25f1137ebab0fa0d9c0cfee148773"
+      ],
+      "reason": "The capability registry enforces the 1,500-word budget and installed package wording.",
+      "sources": [
+        {
+          "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
+          "path": "mcp/src/agents_remember/cli/role_instructions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_instructions.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P9DP74",
+      "items": [
+        "sha256:133ff2a83591178b6f9f9fff2b155db36d9e028d77f481ece0e9e02e667c6ca8",
+        "sha256:1530e787eb1aeddd40114fe0d1d1d7c90815364fc229b3c940eeeab98bfa0157",
+        "sha256:2eebd2bb2f4d8a4303acf3baa0cc68d30699f109fbb1ecb76ec8132fd2703929",
+        "sha256:3ed791104be31b3a51793410ea4e460b7e5bbb859bd71a490c2d7c53c0c3c2ca",
+        "sha256:518169b7177d75421aed6c23ff8c4407cc743cf77450f57f70aa25ee927ddb83",
+        "sha256:6a0695fe49a5c82ea8ad5117930433824495944a618f06626d5a9e294ba246e0",
+        "sha256:7815e865fe06c4fc6a3040371c30fb8937a23b71117d2e8bdd55603c1fee04fb",
+        "sha256:b3dda9df22c8e2a914e6dabda24e009d3bd1f714061962eb9d4d518863822cb4",
+        "sha256:d6e8c980bb04768b310734f0c00a9b899061b2aaed80a0b049728581ea23633b",
+        "sha256:e90f9da8f106da393249bab86e15d6dc85dc82333a3da4321c103c2df6a5da53"
+      ],
+      "reason": "The example presents a self-contained essay with optional supporting figures.",
+      "sources": [
+        {
+          "blob": "8c8a2e946dfeb8c463793106ccc3339d1d17af9f",
+          "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/TREATMENT.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/TREATMENT.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PRHNH2",
+      "items": [
+        "sha256:b0a8c3c4e5e0e09fbb1736e57ef96acc98eab4721b2e3d12a7a83b36557b8336"
+      ],
+      "reason": "The import supplies the HTML parser used for the media attribute check.",
+      "subject": "hunk:sha256:b0a8c3c4e5e0e09fbb1736e57ef96acc98eab4721b2e3d12a7a83b36557b8336"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QAT74P",
+      "items": [
+        "sha256:5d441bb3f93717ea724fa2aa7c0cc69e2d079df5af8af1c5755f8fe9d02b2c7c"
+      ],
+      "reason": "The import names the shared stages directory from its existing owner.",
+      "subject": "hunk:sha256:5d441bb3f93717ea724fa2aa7c0cc69e2d079df5af8af1c5755f8fe9d02b2c7c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QDPC97",
+      "items": [
+        "sha256:ad190dada9357a2441fc164107068d43faed8b9af3fac69c1ae869cd8679b6b5"
+      ],
+      "reason": "The publication account names the binding callback condition and cites the actual part-map and capacity checks.",
+      "sources": [
+        {
+          "blob": "d150d3d4a3d2225914a9438a89c5b3faa980f15c",
+          "path": "mcp/src/agents_remember/application/review_frame_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_frame_store.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
+            "content": "sha256:833aea476c58efa6f782c1cbaab61ac140f3ea8add30e387ebe162dc77856033",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPABILITY_RESOURCES"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instructions.py"
+          },
+          "before": {
+            "blob": "aa089823366e841ed9abf5135593690101d757ac",
+            "content": "sha256:f1b25e150fd8d271056f218992e63e4291425b2083fd6a46a0cc93a6e6982802",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPABILITY_RESOURCES"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instructions.py"
+          },
+          "id": "RLZ-BF2DJ6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-QEYG7W",
+      "items": [
+        "sha256:41d03982e589416e7b2d2953b0731f71df5b524d56572e05a0b71fd0abe0c5d0"
+      ],
+      "reason": "The capability registry raises the explainer word budget. The settings resolver and seat ownership stay the same.",
+      "revision": 1,
+      "subject": "INV-EV2BJZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QJ3J2W",
+      "items": [
+        "sha256:038d207ea1bffaeea2ef2fac15c983b49bcdbf4a32db9059fb377cdb6c8beed6"
+      ],
+      "reason": "The empty panel names the current explanation. The action, comparison binding and optional grade behavior are unchanged.",
+      "subject": "hunk:sha256:038d207ea1bffaeea2ef2fac15c983b49bcdbf4a32db9059fb377cdb6c8beed6"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+            "content": "sha256:1caa89eb557c20206d0a09870a35a34344138041369686eb157c545f42179cc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f10_a_lineage_keeps_more_than_eight_revisions_and_counts_their_bytes"
+            },
+            "path": "mcp/tests/test_review_frame_store.py"
+          },
+          "id": "PRF-BRRP5X"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-QPTYVN",
+      "items": [],
+      "reason": "The removed proof facet described a lineage-byte ceiling that no longer exists. PRF-XHRBD3 still proves retained revision readback and byte accounting. PRF-9AY8HZ still proves task-total accounting.",
+      "revision": 2,
+      "subject": "INV-5VVSTD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R0JWR3",
+      "items": [
+        "sha256:5955d218eb508ef35a7ab15312763a2df111e377e5f946240ae2af53dd278c6a"
+      ],
+      "reason": "The workspace description documents the existing draft and new authoring inputs. The preparation routes implement the contract.",
+      "subject": "hunk:sha256:5955d218eb508ef35a7ab15312763a2df111e377e5f946240ae2af53dd278c6a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RP4K44",
+      "items": [
+        "sha256:bb4e9c4c44ce729a239b413a493a5cb6fe7d338b23fb20b458a4500e2a4eab0e"
+      ],
+      "reason": "The dashboard presents the essay-first summary, while server composition remains the authority for the message.",
+      "subject": "hunk:sha256:bb4e9c4c44ce729a239b413a493a5cb6fe7d338b23fb20b458a4500e2a4eab0e"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-STA600",
+      "items": [],
+      "reason": "Completed Retire removes workspace residue, keeps its external receipt and returns no retired marker.",
+      "sources": [
+        {
+          "blob": "2ae0638d1795363f3720d48ac449c9f2df179c09",
+          "path": "mcp/src/agents_remember/canvas/explainer_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_state.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T3M6PN",
+      "items": [
+        "sha256:c3112e1eaca1c5b39835e252ac712cb9fcc6dd45922fd111b898341290d49ab9"
+      ],
+      "reason": "The dashboard-level request ownership remains the same. The updated request cards carry the exact empty request changes.",
+      "sources": [
+        {
+          "blob": "6c95ed1ae68a5a166477b1ca1a93c5a9a421b87d",
+          "path": "dashboard/src/explainer/FirstRequestForm.tsx"
+        },
+        {
+          "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+          "path": "dashboard/src/explainer/model.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TBQSBF",
+      "items": [],
+      "reason": "The roadmap's knowledge, drift, worklist and benchmark links still reach their definitions after Concepts adds staged explanation and video.",
+      "revision": 5,
+      "subject": "DPD-3P9XTZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TRS9Z7",
+      "items": [
+        "sha256:5d78e954ef2f278a5b91ac9a988faf96fe2245f9cd32d43c35cb4ccc93c80e2e"
+      ],
+      "reason": "The type import describes the receipt payload accepted by the reader.",
+      "subject": "hunk:sha256:5d78e954ef2f278a5b91ac9a988faf96fe2245f9cd32d43c35cb4ccc93c80e2e"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TV3HXB",
+      "items": [
+        "sha256:0cec6e0bd84307ed1b1e7af549715d083a7cc16aff09bbdd6c4546048d65bc4a",
+        "sha256:51b6f25d08b39a9ccf33f5845bf90cf5e8181276c358df205589aae23c9f6616",
+        "sha256:5cbd90d225b2c9b4972eb330ba2a53ce50eb3876811bd9b9ec955e78d06f4db2",
+        "sha256:5ec07c0db32467ff9a53c0d0748451cb386972860855eea302951c89cbe548cf",
+        "sha256:85392cf162f3bce0cbd1c03273e4c03b3220ec1efbfca3ac0b29f72e097e8319",
+        "sha256:92da84dffdb9256837ae7a2a1ae89967b54f4fa1216dacdb1b6ecc45016e531b",
+        "sha256:b5a8968810a94586095bfa966ce34a600edc57358ebcad47d5673ff7949b0773",
+        "sha256:bb37c448128390a08f3dd30fb38e371a6b0df4cd9267232427d38deb1c9227c7",
+        "sha256:faaf7788df1d4f73d22b890168efb1ac3f8eccaab5fbc40b9e046c683789157d"
+      ],
+      "reason": "The Build and moved Update tests check the selected leaf, the exact new packet and manifest, and retained stage content.",
+      "sources": [
+        {
+          "blob": "94d9adcaff8989a85e72dd919a7ebc6c50e4be63",
+          "path": "mcp/tests/test_canvas_explainer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_canvas_explainer.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-V01XGK",
+      "items": [
+        "sha256:da238488a1ba8dd19f4af51a7f22f04383d0fc4e75a4f5bdd06acf7a0b9b0c7a"
+      ],
+      "reason": "Features describes the staged workflow, the evidence-bearing essay before optional visuals and final page publication, as prescribed in the staged capability.",
+      "revision": 12,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V94CMM",
+      "items": [
+        "sha256:c156dbbe2dc133bf78c1158892230fcf87c61ccaf184347b9d010c05c752131d",
+        "sha256:cc6f342561005de23f2d8b0214c9df6272a38bf91e1d4180262bb9daa57266b0"
+      ],
+      "reason": "The example offers techniques when a figure helps an essay part.",
+      "sources": [
+        {
+          "blob": "93688e4f1d6ffe3b73a531ed9faca32ffed0daea",
+          "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/TECHNIQUES.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/TECHNIQUES.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VCZXBF",
+      "items": [
+        "sha256:b88a0a158075c9136706753168205fe6de0f716a7a9eea17eb5fa291340fc1ac"
+      ],
+      "reason": "The retention tests cover original bytes for revisions 1, 5 and 9 and a separate subprocess opening revision 10.",
+      "sources": [
+        {
+          "blob": "a499a6d2c9fc7bc2af9b5df97c7b9cbb5cf0fcb3",
+          "path": "mcp/tests/test_review_frame_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_frame_store.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W9QGTS",
+      "items": [
+        "sha256:7e89e2ba89b6952256647985a9c8bbdbec8884b57801d84d22ef66cdafdada63",
+        "sha256:f2fbd78159617860793214699469a6c07d826798da955a150057c0a5dd8df468"
+      ],
+      "reason": "The media tests exercise actual attributes and ensure filenames cannot substitute for controls or playback flags.",
+      "sources": [
+        {
+          "blob": "3548fb680dfee43d95996a36e50f16972b081ba0",
+          "path": "mcp/tests/test_canvas_readiness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_canvas_readiness.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WGWZAE",
+      "items": [],
+      "reason": "The kit design still separates the static readiness check for a kit page or a plain page from the separate Chromium load.",
+      "revision": 3,
+      "subject": "DPD-QH1N0S"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WRY8A8",
+      "items": [],
+      "reason": "The summary test checks the constants selected by the explicit planned flag.",
+      "sources": [
+        {
+          "blob": "7d50cff26f1786af2d726df12a2433320b231469",
+          "path": "dashboard/src/explainer/model.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/explainer/model.test.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XAWTV4",
+      "items": [
+        "sha256:a41fee7fae7543013e8d77542f6d1b6dfcba127663203c9a4c7a82c094c2b60f"
+      ],
+      "reason": "The shared summary owns the empty labels and counts, while the forms own the requirement and effects wording.",
+      "sources": [
+        {
+          "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+          "path": "dashboard/src/explainer/model.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/explainer/model.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XQJWBG",
+      "items": [
+        "sha256:024b18232aac079623c25a94f6d73885261ac8fbffd6bf5735f5fa426057da7c",
+        "sha256:06cfa8aa83268caf481ab9f40b17adc91bc40bf8fbcebbb2119aadcdf12e60ae",
+        "sha256:14f0cba9df1d4eef9464f95edcc7bc65b9167fb08b2f1724f107540e2acaa698",
+        "sha256:4a1a83e615053f8627d29f3c5e8497d3c65e2a6c9fb8ff51ac94c753f98f01a3",
+        "sha256:75d35dc27a4c358ba31393be12c92780c3809745580b52db26cc88ad2087b1c1",
+        "sha256:797962b9fdf647e03edecd7b6ee56ad540d231f86517f4b82cda30b9cabb2be6",
+        "sha256:e9ae82782a26c7053c8004d9f078fb6c2e86a51e205d53becbd46a6c4cfdffea",
+        "sha256:fb0c8d459bf8bfa78c1abfc40eff5307ad6cee37fda03f8030576a219f1908f8"
+      ],
+      "reason": "The packaged-text tests pin the six filenames, budget, wording and canonical mirror.",
+      "sources": [
+        {
+          "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+          "path": "mcp/tests/test_canvas_capsule_text.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_canvas_capsule_text.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y7D9Y1",
+      "items": [
+        "sha256:0d3761df1d92ad54a0247ea3b47e35f3e46823c11b99dacb60d833866d2bb7bf"
+      ],
+      "reason": "The example offers techniques when a figure helps an essay part.",
+      "sources": [
+        {
+          "blob": "93688e4f1d6ffe3b73a531ed9faca32ffed0daea",
+          "path": "system/defaults/examples/memory-repo/TECHNIQUES.md"
+        }
+      ],
+      "subject": "onboarding:system/defaults/examples/memory-repo/TECHNIQUES.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YCY9M4",
+      "items": [
+        "sha256:da736c544e5658edd1ef9c806c9fce332e93f1da89b60ceab95f625250034d57"
+      ],
+      "reason": "The serving route overview names how the HTTP Build handler carries validated history to the builder.",
+      "sources": [
+        {
+          "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+          "path": "mcp/src/agents_remember/serving/explainer_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d150d3d4a3d2225914a9438a89c5b3faa980f15c",
+            "content": "sha256:23e60ae9743bdae836280d06984bf5dc0a56f1f6a2084366c1e1f5a96040faaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_locked"
+            },
+            "path": "mcp/src/agents_remember/application/review_frame_store.py"
+          },
+          "before": {
+            "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+            "content": "sha256:23e60ae9743bdae836280d06984bf5dc0a56f1f6a2084366c1e1f5a96040faaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_locked"
+            },
+            "path": "mcp/src/agents_remember/application/review_frame_store.py"
+          },
+          "id": "RLZ-X7YYP5"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YQAH98",
+      "items": [],
+      "reason": "The publication realization now states when the supplied binding is reread. The rejection and preservation guarantee stays the same.",
+      "revision": 1,
+      "subject": "INV-K2YX74"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

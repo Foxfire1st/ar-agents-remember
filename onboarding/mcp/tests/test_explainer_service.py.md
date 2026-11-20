@@ -15,7 +15,7 @@ The seat order rather than the bytes: one environment per leaf, a generation tha
 - A build faulted before the seat leaves no workspace, no binding and no seat, while a lost create reply reconciles to the same seat.
 - A failed Retire stays pending and resumes its original receipt, pruning only grades whose references are gone.
 - The recheck after the environment write lets a comparison that moved during the build win over the packet.
-- A planned send puts the task's requirement packet texts and declared planned effects into `planned/`; an empty send on a planned leaf carries the planned request; a recorded send copies no planned documents.
+- Direct Build tests check that a planned binding receives its requirement and declared effects in `planned/` and a recorded binding omits that folder. The empty-request cases call the service directly and check essay-first wording, with explicit planned history for the planned request.
 
 ## Evidence
 
@@ -27,6 +27,10 @@ The seat order rather than the bytes: one environment per leaf, a generation tha
 - The case `test_an_update_refuses_while_the_lock_is_held` protects an Update refusing instead of waiting on a held lock.
 
 - A planned send writes the requirement and declared effects into the folder. [6]
-- An empty planned send asks for the requirement and planned effects. [7]
 
 - Retired at the fifth freeze d59c3493: mcp/tests/test_explainer_service.py:328-368 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+- An empty or omitted recorded Send uses the exact end-to-end essay-first request. [8]
+
+- The direct service test passes planned history and an empty message, and verifies that the delivered text asks for the requirement and planned effects, with the essay before visuals and the page last. [7]

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The capability and the example treatment both govern the relation between the essay and a supporting figure."
+  },
+  "applicability": "The essay and the supporting figures in a recorded or planned explanation.",
+  "conditions": [
+    "The explainer completes the essay with evidence before planning or making visuals.",
+    "The published page carries the complete explanation in readable text."
+  ],
+  "exclusions": [
+    "Figure behavior and visual treatment still apply when a figure is used."
+  ],
+  "id": "INV-X073BM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_capsule_text.py asserts the sentence; sandbox pages read in full without motion"
+      ],
+      "path": "A6-writer-input.json"
+    },
+    "handoffEntry": "BUG-R13@v1 rule 3 — text carries the content",
+    "leaf": "261112-BUG-L13",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The essay carries the content; a visual is made only where it helps a part of the essay, and the page reads in full without animations.",
+  "status": "proposed",
+  "supersedes": []
+}

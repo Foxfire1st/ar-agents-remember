@@ -17,7 +17,7 @@
         "handoffEntry": "L183-curator-test-facet-02",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "Browser answers preserve separate bounded claim-id/reference inventories and reject unresolved claim bases or part-map faults before reporting a usable exact-byte load.",
+      "rationale": "The inventory validator accepts a list when every element is a string. It accepts any list size and any string length.",
       "role": "enforcement"
     },
     {
@@ -35,7 +35,7 @@
         "handoffEntry": "L183-curator-test-facet-02",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "Browser answers preserve separate bounded claim-id/reference inventories and reject unresolved claim bases or part-map faults before reporting a usable exact-byte load.",
+      "rationale": "The result reader checks both inventories for lists of strings and preserves every basis reference and claim ID in separate tuples.",
       "role": "enforcement"
     },
     {
@@ -71,7 +71,7 @@
         "handoffEntry": "L183-curator-test-facet-02",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "Browser answers preserve separate bounded claim-id/reference inventories and reject unresolved claim bases or part-map faults before reporting a usable exact-byte load.",
+      "rationale": "The validator checks every rendered basis reference and claim ID against the bound packet. Unknown references, missing claims, invalid claim bases or static part-map faults fail the load.",
       "role": "enforcement"
     },
     {
@@ -95,14 +95,16 @@
   ],
   "references": {
     "3": {
-      "note": "The current implementation separates claim IDs from basis references and validates rendered citations/parts before accepting the browser result.\n\nAnchor: `_valid_inventory`",
+      "note": "The Python reader accepts separate basis-reference and claim-ID string inventories and validates them and the static part map against the bound packet.",
       "targets": [
         {
           "anchor": {
             "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
-            "content": "sha256:5d710865f0c0e8a78c0fdaf9802b50ca26dcdfb8615d16aee49b36f60a9271eb",
+            "content": "sha256:9d02a3cbfe4859632e3738ff3e13709cf906abcd99ad9978da8c1610cd477660",
             "locator": {
-              "kind": "file"
+              "end": 521,
+              "kind": "line_range",
+              "start": 464
             }
           },
           "kind": "code"

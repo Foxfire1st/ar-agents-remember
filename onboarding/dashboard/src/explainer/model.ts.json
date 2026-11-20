@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "392da2790215a14029683debf1ea5da601663cd9",
+        "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
         "content": "sha256:9449d1e3cfb4239ccd59d4f5f4c49d52c69ce506966d317f86386dcebb70e75a",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "392da2790215a14029683debf1ea5da601663cd9",
+        "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
         "content": "sha256:8f95989bc65f408648f072a4f66cbc81db33f312e0b242e0a25c01f65a8aea13",
         "locator": {
           "kind": "symbol",
@@ -40,15 +40,16 @@
   ],
   "references": {
     "1": {
-      "note": "A live, closed, missing or building seat selects the explainer, and no seat selects the placeholder",
+      "note": "Building, live and closed phases select the explainer. First request, retired and placeholder select the placeholder.",
       "targets": [
         {
           "anchor": {
-            "blob": "392da2790215a14029683debf1ea5da601663cd9",
-            "content": "sha256:b92b0a7d7140882a140a94a8abff064b5b846afea9efa12bbf95bd47ad50fff5",
+            "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+            "content": "sha256:79ab5fe01ded09947d2dc25239cbab7ffc6921c4e9a1c4a4798f0ddd0d58f3df",
             "locator": {
-              "kind": "symbol",
-              "name": "columnSelection"
+              "end": 52,
+              "kind": "line_range",
+              "start": 31
             }
           },
           "kind": "code"
@@ -60,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "392da2790215a14029683debf1ea5da601663cd9",
+            "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
             "content": "sha256:7b412bfbb4a275615c6968f0f407809b483fd60859fab49111be548bc58ca782",
             "locator": {
               "kind": "symbol",
@@ -72,15 +73,16 @@
       ]
     },
     "3": {
-      "note": "Send is always available, and an empty request names the end-to-end review or, on a planning task, the requirement and planned effects.",
+      "note": "The summary chooses the planned or end-to-end line for empty requests and otherwise counts references and nonempty notes and labels the message as “your text”.",
       "targets": [
         {
           "anchor": {
-            "blob": "392da2790215a14029683debf1ea5da601663cd9",
-            "content": "sha256:526d7332432f4e32e459910f04bdf4a607a428ee01f079712bfe41bfd3792450",
+            "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+            "content": "sha256:33ec2715e58a23c92cab0e7f433473d6c8dc33c98a6090214f22937eb17a180f",
             "locator": {
-              "kind": "symbol",
-              "name": "canSend"
+              "end": 171,
+              "kind": "line_range",
+              "start": 143
             }
           },
           "kind": "code"
@@ -88,15 +90,16 @@
       ]
     },
     "4": {
-      "note": "A build's steps average into its whole percentage",
+      "note": "An explicit percentage takes precedence over the average of step shares.",
       "targets": [
         {
           "anchor": {
-            "blob": "392da2790215a14029683debf1ea5da601663cd9",
-            "content": "sha256:a3bf11c014b3d64479e08d7757c45937a29c9cffa68f5cdaaf041c5137d1d329",
+            "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+            "content": "sha256:299543fd146404c64abc12c15615a9f1ed8081c7623f2833104ac6424a6ad200",
             "locator": {
-              "kind": "symbol",
-              "name": "buildPercent"
+              "end": 227,
+              "kind": "line_range",
+              "start": 204
             }
           },
           "kind": "code"
@@ -108,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "392da2790215a14029683debf1ea5da601663cd9",
+            "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
             "content": "sha256:171e31cb59045b876b6ee125003240ed484128f3f1c3f1c17aa539808516a573",
             "locator": {
               "kind": "symbol",
@@ -120,15 +123,16 @@
       ]
     },
     "6": {
-      "note": "The menu holds the explainer first and excludes another task's, another repository's and another master's seats",
+      "note": "An identified explainer leads the menu and other seats are filtered by task scope.",
       "targets": [
         {
           "anchor": {
-            "blob": "392da2790215a14029683debf1ea5da601663cd9",
-            "content": "sha256:9449d1e3cfb4239ccd59d4f5f4c49d52c69ce506966d317f86386dcebb70e75a",
+            "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+            "content": "sha256:7b9b9dbbe6c59db5b4241375d9abf109440c5e7d3f264e0708cc1364dfe836f8",
             "locator": {
-              "kind": "symbol",
-              "name": "agentMenu"
+              "end": 406,
+              "kind": "line_range",
+              "start": 344
             }
           },
           "kind": "code"
@@ -136,16 +140,31 @@
       ]
     },
     "7": {
-      "note": "A planned task's empty request line names its requirement and planned effects.",
+      "note": "The planned form placeholders name the requirement and planned effects.",
       "targets": [
         {
           "anchor": {
-            "blob": "392da2790215a14029683debf1ea5da601663cd9",
-            "content": "sha256:bd58703fb4df853a613b4b7468fe6c1f968d85c3d83c9ba2b26c443a094c274d",
+            "blob": "6c95ed1ae68a5a166477b1ca1a93c5a9a421b87d",
+            "content": "sha256:8468b3cd76fa2fea02322d5777018345f400188767effd643caac384db6cd0df",
             "locator": {
-              "kind": "symbol",
-              "name": "PLANNED_LINE"
-            }
+              "end": 177,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "dashboard/src/explainer/FirstRequestForm.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "346cd25bf8a0d1a81e469e397609156fbc51826c",
+            "content": "sha256:d8dd5caf689bdbe2db487486d75979dd7ee8fb83ec7ccc687c1a6e9b42ebb1d1",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 243
+            },
+            "path": "dashboard/src/panels/review/explainer/ExplanationRequest.tsx"
           },
           "kind": "code"
         }

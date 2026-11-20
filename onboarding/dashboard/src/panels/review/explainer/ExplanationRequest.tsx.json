@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4ee7a59b2bb1ab7c2e510797667f97f3db7e0db",
+            "blob": "346cd25bf8a0d1a81e469e397609156fbc51826c",
             "content": "sha256:11dba97e50b5ab88a2c9c0bf53452558a9c60fafd0999b8415dc3803df963c81",
             "locator": {
               "kind": "symbol",
@@ -19,16 +19,15 @@
       ]
     },
     "2": {
-      "note": "Cancelling reaches the build this form started, rather than leaving it running unwatched.",
+      "note": "Cancel targets the displayed build attempt.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4ee7a59b2bb1ab7c2e510797667f97f3db7e0db",
-            "content": "sha256:216ffda50c7e2373a4271606a1910a429231e86726fd6c290a859824e70ba610",
+            "blob": "346cd25bf8a0d1a81e469e397609156fbc51826c",
+            "content": "sha256:d828d2dfe670ea224b0364ebf2000db07756e803739c2195f8cf4d097e50a38c",
             "locator": {
-              "end": 48,
-              "kind": "line_range",
-              "start": 48
+              "kind": "symbol",
+              "name": "useRequestStop"
             }
           },
           "kind": "code"
@@ -36,16 +35,16 @@
       ]
     },
     "3": {
-      "note": "A planned binding's form asks the explainer to read the plan, and its empty line names the planned request.\n\nAnchor: \"Ask the explainer to read this plan\"",
+      "note": "The planned and recorded forms offer distinct empty placeholders and use the shared first-request line.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4ee7a59b2bb1ab7c2e510797667f97f3db7e0db",
-            "content": "sha256:a42d14c33c82c6f0f5f916f74fe3b543625a8b9e004b44fcf6146fc367188498",
+            "blob": "346cd25bf8a0d1a81e469e397609156fbc51826c",
+            "content": "sha256:b7d7dd415a58256cb2a77317fe248c25b5c6a55d3dcb89529e6b9c4761e0cc37",
             "locator": {
-              "end": 600,
+              "end": 266,
               "kind": "line_range",
-              "start": 571
+              "start": 245
             }
           },
           "kind": "code"

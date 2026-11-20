@@ -53,6 +53,76 @@
         }
       ]
     },
+    "12": {
+      "note": "The header shows a pending browser notice or a last-render failure for a retained revision. The “No explanation yet” block shows a last-render failure when present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "content": "sha256:f39114ac4be034bd671bdf4342e4f2c324c26637d79cb68ab3522db630b65a38",
+            "locator": {
+              "end": 337,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "content": "sha256:fd2a692d07550b297900f292530729174f42275d939623a20d9c786ebbcaf8e3",
+            "locator": {
+              "end": 418,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "content": "sha256:13c30cff6d9d43e942c38507d0c18d2b0826bec4f0f409b91dd1e49b03f0e4f3",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 437
+            },
+            "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "content": "sha256:edc22a66882627108091c26b61a29dad347887f85fcc7f139047fa54de783f84",
+            "locator": {
+              "end": 463,
+              "kind": "line_range",
+              "start": 451
+            },
+            "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "content": "sha256:4155eee035fd9fbce906b08a5be20429001b9c3ed8d1bc5dd4a9524f0c6ff316",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 489
+            },
+            "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "One tree scroller with retained navigation and pinned lane\n\nAnchor: \"export function ReviewTree(props: ReviewTreeProps)\"",
       "targets": [

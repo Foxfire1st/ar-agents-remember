@@ -6904,68 +6904,16 @@
       ]
     },
     "1788": {
-      "note": "The selected frame-store case publishes ten revisions of one lineage, reopens revision 10 through a second store instance, reads revisions 10 and 1 and checks retained usage counters (`test_review_frame_store.py::test_f16_a_lineage_past_eight_revisions_reopens_after_a_restart`); binding, publication and reclamation are asserted by the module's other cases, not by this one.\n\nAnchor: test_f16_a_lineage_past_eight_revisions_reopens_after_a_restart",
+      "note": "The frame-store restart case opens the latest revision through a fresh store after ten publications and checks retained revision usage.",
       "targets": [
         {
           "anchor": {
-            "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
+            "blob": "a499a6d2c9fc7bc2af9b5df97c7b9cbb5cf0fcb3",
             "content": "sha256:d502c97b924eb126cf9536c85278c2402b2cb43afad66e4249ed6795852c1a9d",
             "locator": {
-              "end": 689,
+              "end": 708,
               "kind": "line_range",
-              "start": 667
-            },
-            "path": "mcp/tests/test_review_frame_store.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
-            "content": "sha256:e0883f86598e88480e09a5277cd32979af49542bf5d621e1ee230e8a39a1d92a",
-            "locator": {
-              "end": 287,
-              "kind": "line_range",
-              "start": 230
-            },
-            "path": "mcp/tests/test_review_frame_store.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
-            "content": "sha256:93d14c94b988481cdb6cc7c4f34f336198736de08911b0726769e0105be572a6",
-            "locator": {
-              "end": 444,
-              "kind": "line_range",
-              "start": 423
-            },
-            "path": "mcp/tests/test_review_frame_store.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
-            "content": "sha256:dc848eca248fc6045eadbf0465917908645ddaca1c58dfc108f50f2a5ba15e50",
-            "locator": {
-              "end": 496,
-              "kind": "line_range",
-              "start": 481
-            },
-            "path": "mcp/tests/test_review_frame_store.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "457873413fde21a1ce567ce52ed9e168f58144f9",
-            "content": "sha256:d3528fa79a8d1251df11c1cb95567f003eec66c3d815bafecb6ef2619e1ff9f2",
-            "locator": {
-              "end": 636,
-              "kind": "line_range",
-              "start": 613
+              "start": 686
             },
             "path": "mcp/tests/test_review_frame_store.py"
           },
@@ -8988,6 +8936,37 @@
               "kind": "file"
             },
             "path": "mcp/tests/test_curator_coherence_measured_quality.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1841": {
+      "note": "The mounted planned Build regression checks the words delivered to the seat. The direct service test separately checks the wording when passed planned history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bca560e908a765b37cf2eed5bc0f4acdab715219",
+            "content": "sha256:82c3869e75e60807966170ec1abdb0ec09fb5bfcaab257cd88763b6ef22224cf",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "mcp/tests/test_explainer_planned_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e01c6542760480cb28305ee0b8a17613d0feb579",
+            "content": "sha256:c54c37b19e4a85343217b5f3fe6b98a9f6bec5185a9f127ff6be96e26ac525a7",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 508
+            },
+            "path": "mcp/tests/test_explainer_service.py"
           },
           "kind": "test"
         }

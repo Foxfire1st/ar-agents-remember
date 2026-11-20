@@ -583,6 +583,8 @@ Current source: The current lifecycle catalog declares test_landing_report.py as
 
 Current source: The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations contain 17 lifecycle contracts, 116 artifacts and 792 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here.
 
+The explainer tests check bound reading inputs, moved Update with preserved stage files, and exact essay-first defaults. The capability cases pin the shipped stage wording and 1,500-word budget. Separate video cases check the runner's media map, the static attributes and the store's publication and readback.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -1349,7 +1351,6 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The changed-row refusal passes `world.gate().worklist` into `WriteRequest`. [1770]
 - The selected static task-entry case asserts authored-stage precedence over host activity and an unknown-host outcome (`test_task_entries.py::test_stage_has_priority_over_host_activity`); event contribution and the known-empty-host outcome are asserted by the module’s other case. Not executed here. [1776]
 - The selected evidence-packet case asserts that a foreign repository with equal trees is never this comparison (`test_review_evidence_packet.py::test_f01_a_foreign_repository_with_equal_trees_is_never_this_comparison`); the packet, read, claim and prepared-address contracts are asserted by the module's other cases, not by this one. [1787]
-- The selected frame-store case publishes ten revisions of one lineage, reopens revision 10 through a second store instance, reads revisions 10 and 1 and checks retained usage counters (`test_review_frame_store.py::test_f16_a_lineage_past_eight_revisions_reopens_after_a_restart`); binding, publication and reclamation are asserted by the module's other cases, not by this one. [1788]
 - No-knowledge task-context source cases assert All changes wording, absence of `. ` in the statement and inventory truth without browser-layout evidence. [1795]
 - Each guard has a direct case in `mcp/tests/test_capsule_serving_surface.py`. [1801]
 
@@ -1385,3 +1386,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - test_curator_coherence_measured_quality.py declares focused checks for unchanged quality after publication, measured-binding invalidation and historical record readability; this is source-described coverage, not a new test execution. [1840]
 - Task-context endpoint cases retain a measured source inventory when knowledge is wholly unavailable or one knowledge half is damaged; both named-subject requests refuse with 404 candidate_dataset_absent. [1659]
 - The catalog-census test checks equality between governed and cataloged artifact paths and equality between declared and referenced contract IDs. [1731]
+
+- The frame-store restart case opens the latest revision through a fresh store after ten publications and checks retained revision usage. [1788]
+
+- The mounted planned Build regression checks the words delivered to the seat. The direct service test separately checks the wording when passed planned history. [1841]

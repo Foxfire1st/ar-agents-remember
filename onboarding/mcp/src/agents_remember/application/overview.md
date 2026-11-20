@@ -343,6 +343,8 @@ The `memory_quality` application package shares its bounded run registry between
 
 
 
+The frame store accepts WebM and MP4 through the usual asset admission and publication path. It records their media types in the verified manifest.
+
 ## Evidence
 
 - The one state function.

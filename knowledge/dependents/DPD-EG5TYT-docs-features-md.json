@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
-    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
+    "codeTree": "ce6ff51ceff24cba0157410140585c0ba80a0203",
+    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
     "role": "curator",
-    "statement": "Features accurately describes the build-and-tree-scoped index and task_doc ownership of task JSON and its rendered copy.",
-    "task": "261112-BUG-L12",
+    "statement": "Features describes the staged workflow, the evidence-bearing essay before optional visuals and final page publication, as prescribed in the staged capability.",
+    "task": "261112-BUG-L13",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -269,6 +269,11 @@
       },
       "heading": "Loaded build identity",
       "kind": "anchor"
+    },
+    {
+      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     }
   ]
 }

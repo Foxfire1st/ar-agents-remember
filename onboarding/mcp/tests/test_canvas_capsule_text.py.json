@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
-        "content": "sha256:76a5cd13ef1c708fbd533cedc85e95bb3be6b5f21dae1920c05823ffd33d00ec",
+        "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+        "content": "sha256:e6bca36003363243213754deb571b492e61c00d762481c984f860ecc931d8900",
         "locator": {
           "kind": "symbol",
           "name": "test_the_launch_record_names_the_baseline_the_addition_or_the_replacement"
@@ -20,7 +20,41 @@
     },
     {
       "anchor": {
-        "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
+        "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+        "content": "sha256:09fabb1b5cba6dfbb12c72f433831fc8e372a42962caa59dd8d648c008f46112",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_capability_text_is_read_from_the_package_data_copy"
+        }
+      },
+      "facet": "The installed capability names the six intermediate artifact files.",
+      "id": "PRF-6H7SYA",
+      "invariant": "INV-0B3Q36",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 1 — stages",
+        "leaf": "261112-BUG-L13"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+        "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_installed_copy_is_the_generated_copy_of_the_canonical_source"
+        }
+      },
+      "facet": "The shipped text matches the canonical source byte for byte.",
+      "id": "PRF-8AH4FD",
+      "invariant": "INV-453GX6",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 7 — texts and budget",
+        "leaf": "261112-BUG-L13"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
         "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
         "locator": {
           "kind": "symbol",
@@ -34,6 +68,23 @@
         "handoffEntry": "L104-r3-capability-text",
         "leaf": "260928-MIK-L104"
       }
+    },
+    {
+      "anchor": {
+        "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+        "content": "sha256:892d46d727b02d8644b85de13b94e8139155455ca916eb3118263744ccc8d728",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_budget_and_the_wording_are_enforced_at_the_read"
+        }
+      },
+      "facet": "The installed reader refuses text above the registered budget.",
+      "id": "PRF-FR5C37",
+      "invariant": "INV-453GX6",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 7 — texts and budget",
+        "leaf": "261112-BUG-L13"
+      }
     }
   ],
   "realizes": [],
@@ -43,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
+            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
             "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
             "locator": {
               "kind": "symbol",
@@ -55,15 +106,16 @@
       ]
     },
     "2": {
-      "note": "The case `test_the_launch_record_names_the_baseline_the_addition_or_the_replacement` protects this behaviour.",
+      "note": "The launch record distinguishes the baseline, addition and replacement and records the 1,500-word cap.",
       "targets": [
         {
           "anchor": {
-            "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
-            "content": "sha256:76a5cd13ef1c708fbd533cedc85e95bb3be6b5f21dae1920c05823ffd33d00ec",
+            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+            "content": "sha256:e6bca36003363243213754deb571b492e61c00d762481c984f860ecc931d8900",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_launch_record_names_the_baseline_the_addition_or_the_replacement"
+              "end": 214,
+              "kind": "line_range",
+              "start": 169
             }
           },
           "kind": "test"
@@ -71,14 +123,50 @@
       ]
     },
     "3": {
-      "note": "The wording guard binds the side conversation to the environment, and the installed resource must carry both the `Message file:` cue and `messageId` custody field. These are source assertions over the packaged capability text; they establish no new host turn or message delivery.\n\nAnchor: `test_the_packaging_declaration_ships_the_installed_copy`",
+      "note": "The architect handover instruction requires the Message file cue.",
       "targets": [
         {
           "anchor": {
-            "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
-            "content": "sha256:95fd58a5ffbba005282c132d08bd002cde239f89855f75cf6f8f35a7cbeeb603",
+            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+            "content": "sha256:99b610d5fedf364bb89704b36807d067d1f41c4c815d44fb422e51c09a5f41cb",
             "locator": {
-              "kind": "file"
+              "end": 264,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The installed text contains the stage names and prescribed explanation wording and counts exactly 1,500 words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+            "content": "sha256:09fabb1b5cba6dfbb12c72f433831fc8e372a42962caa59dd8d648c008f46112",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The read refuses 1,501 words and checks missing and invalid wording cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+            "content": "sha256:892d46d727b02d8644b85de13b94e8139155455ca916eb3118263744ccc8d728",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 115
             }
           },
           "kind": "test"

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The capability loader, empty-request composition and public guide carry the same authoring contract at their own entries."
+  },
+  "applicability": "The explainer's packaged capability, default first request and public workflow description.",
+  "conditions": [
+    "The loader enforces the registered 1,500-word ceiling.",
+    "Recorded and planned defaults request the essay before visuals and the page last."
+  ],
+  "exclusions": [
+    "User-supplied message text keeps its own input path.",
+    "Other capability resources retain their own registered settings."
+  ],
+  "id": "INV-453GX6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_capsule_text.py: loaded.words == 1500; cmp canonical/packaged IDENTICAL. The direct render test and A6 text probe check the render description.",
+        "mcp/tests/test_explainer_planned_binding.py::test_a_blank_planned_build_sends_the_planned_first_request"
+      ],
+      "path": "A6-writer-input.json"
+    },
+    "handoffEntry": "BUG-R13@v1 rule 7 — texts and budget",
+    "leaf": "261112-BUG-L13",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The capability text and its packaged copy hold the stages within a 1,500-word budget, and the first turn and the documents say what holds after the change.",
+  "status": "proposed",
+  "supersedes": []
+}
