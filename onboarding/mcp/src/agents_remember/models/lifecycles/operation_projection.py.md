@@ -9,9 +9,7 @@
 Revision-bound public lifecycle-operation projection contracts (CCR-R18): the versioned state
 matrix and the atomic public envelope `LifecycleOperationProjection` that one exact
 operation kind, public generation, monotonic journal revision, and candidate/plan binding project.
-Coherent result/approval/liveness/recommendation/control observations bind that envelope or are
-omitted; an incoherent composition refuses with a bounded typed finding instead of splicing
-individually-valid facts.
+Coherent result, approval, recommendation and legal-control observations bind that envelope or are omitted. An incoherent composition returns a bounded typed finding instead of splicing individually valid facts.
 
 ## Code Commentary
 
@@ -50,11 +48,13 @@ None.
 
 ### CCR private preparation boundary
 
-The projection state matrix admits `recovering-private-preparation` under queued, running and input-required states. This keeps retained private work visible without claiming that approval was spent or that logical Git refs were published.
+The phase matrix can represent the retained `recovering-private-preparation` state for queued, running and input-required envelopes. The vocabulary is for readable observations, including records left by earlier builds.
 
 - The current `_RUNNING_PHASES` boundary implements the preparation contract above. [1]
 - The current `_INPUT_REQUIRED_PHASES` boundary implements the preparation contract above. [2]
-- The current `STATE_MATRIX` boundary implements the preparation contract above. [3]
+
+- The public matrix maps status, result and action cells. [3]
+
 
 ## Evidence
 
@@ -67,9 +67,13 @@ No configured external source governs this strict projection vocabulary.
 ### Repo-Internal References
 
 - Running, direct, and input-required phase sets use the canonical code/memory-only publication vocabulary. [4]
+
 - The atomic public envelope and its per-kind state matrix. [5]
+
 - CCR-R15 meaningful-state cursor on the envelope. [6]
-- Envelope coherence refusals keep observations internally valid. [7]
+
+- Projection component bindings, coherent state and recommendation use the same generation identity. [7]
+
 - The durable record whose meaningful revision the envelope projects. [8]
 - The wait vocabulary that consumes the cursor. [9]
 
@@ -77,7 +81,9 @@ No configured external source governs this strict projection vocabulary.
 
 No cross-repository projection contract is defined here.
 
+
 - The envelope is a same-repository task-lifecycle wire contract. [10]
+
 
 ## 260831-CCR-L15 Meaningful Revision On The Envelope
 
@@ -86,6 +92,8 @@ None): adapters populate it from the exact durable record's meaningful revision 
 envelopes, so a status-change waiter compares the cursor it waited on against the cursor of the
 envelope it receives; unreadable journal refusals carry no record and omit the field.
 
-## CCR-L42 current candidate
+## Controls for the current route
 
-The public projection control matrix now exposes `resume` where successor continuation is legal, including input-required, failed, and cancelled closeout rows, replacing `revise` while preserving integrate and direct-landing choices.
+Historical closeout and integration projections retain recorded evidence for audit. The runtime projector removes execution advice and legal controls. Typed replacement guidance belongs to the addressed control refusal. Available direct controls come from the current direct generation.
+
+- The runtime producer dispatches historical kinds to audit projection. Control of a retired kind refuses with the matching synchronous replacement. [11]

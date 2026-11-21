@@ -180,4 +180,5 @@ No meaningful cross-repo references found.
 
 - **The test-support anchor-draft boundary applies the shared path-spelling rule, so a fixture draft refuses malformed path spellings.** [16]
 
+
 - The lane row this module occupies. Source caption: `test_knowledge_read_paths` [18]

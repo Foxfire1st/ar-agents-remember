@@ -13,8 +13,8 @@
 | --- | --- |
 | Priority | high |
 | Role | lifecycle cancellation mutation owner |
-| Risk | worker authority escape or claimed-door corruption during recovery |
-| Suggested action | create onboarding |
+| Risk | cancellation with unproven Git output or unreadable closing evidence |
+| Suggested action | current durable card linked below |
 | Suggested wave | onboarding-wave-004 |
 
 ## Governing Context
@@ -27,15 +27,14 @@
 
 ## Why This File Matters
 
-[HIGH] It performs the cancellation transaction that makes a failed operation recoverable without
-losing exact journal, worker, Git, or closeout-door authority.
+The admitted direct cancellation keeps generation identity and checks current Git and closing receipt evidence before mutation. The generated bootstrap metadata dates the original routing of this card. Read the durable cancellation card for its current operating account.
 
 ## What The Worker Must Explain
 
-- worker-exit proof before release
-- exact claimed-door successor publication
-- terminal idempotence and completed refusal
-- organizational repair and dry-run boundaries
+- exact direct generation and no-output Git proof
+- readable kept closing receipt and restoration after published cancellation
+- terminal repeat handling and completed refusal
+- read-only dry-run result
 
 ## Inputs For Worker
 
@@ -50,7 +49,7 @@ losing exact journal, worker, Git, or closeout-door authority.
 - `mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py`
 - `mcp/src/agents_remember/worktrees/integration/overview.md`
 - `mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py.md`
-- directly imported journal, worker, and closeout-door owners needed to prove ordering
+- The lifecycle journal store and exact Git proof helper, plus the direct closing receipt helpers in `worktrees/knowledge_gate.py`
 
 ## Files The Worker Must Not Read Without Escalation
 
@@ -74,7 +73,7 @@ losing exact journal, worker, Git, or closeout-door authority.
 | Section | Expected? | Evidence Source |
 | --- | --- | --- |
 | Docs References | no | transaction is repository-internal |
-| Repo-Internal References | yes | cancellation owner plus journal, worker, and closeout-door consumers |
+| Repo-Internal References | yes | cancellation publication, exact Git proof, journal state and closing-receipt readability and settlement |
 | Cross-Repo References | no | no adjacent-repository boundary is owned |
 
 ## Known Traps

@@ -93,12 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
             "content": "sha256:f9c6fe6cc18a0be6c7b1c1d6d07d9c34fb92caec9d7ecef8bdaadf7257355af3",
             "locator": {
-              "end": 532,
+              "end": 541,
               "kind": "line_range",
-              "start": 490
+              "start": 499
             },
             "path": "mcp/src/agents_remember/application/worktree_status.py"
           },

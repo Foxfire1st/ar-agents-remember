@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
+        "blob": "f514fcff680eec8da520dcb68b88fb5be662691d",
         "content": "sha256:8becbaefdf3d20966467a68bb7322f57a08361f8f794e7d08c54f8976d25ce0f",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
+            "blob": "f514fcff680eec8da520dcb68b88fb5be662691d",
             "content": "sha256:ffbef0dbd610da238979f7006a17ad83434c99c12bf38c7aa600aa7bd23f0c41",
             "locator": {
               "kind": "symbol",
@@ -42,11 +42,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
-            "content": "sha256:5531733451c3fb886f1cb15c34c058422fb4a06dba377947b0aaf566115ccb21",
+            "blob": "f514fcff680eec8da520dcb68b88fb5be662691d",
+            "content": "sha256:13480c2ac3a8cc1c4e0097f7d6c0011817e872792fe702248c73421fc8ae4fa8",
             "locator": {
-              "kind": "symbol",
-              "name": "test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -58,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
+            "blob": "f514fcff680eec8da520dcb68b88fb5be662691d",
             "content": "sha256:d1b769266ca2c06857744a419ea02ee250028be95719299bd5a1ff835a81951d",
             "locator": {
               "kind": "symbol",
@@ -74,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
+            "blob": "f514fcff680eec8da520dcb68b88fb5be662691d",
             "content": "sha256:4c402db69c4d493450691f2a2c1328d95b5af2988575e5c814aad6155da8875b",
             "locator": {
               "kind": "symbol",

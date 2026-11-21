@@ -538,6 +538,7 @@
     ],
     "file:mcp/src/agents_remember/application/worktree_tools.py": [
       "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-EG5TYT-docs-features-md.json",
       "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
     ],
     "file:mcp/src/agents_remember/benchmarks/runner.py": [
@@ -1745,9 +1746,6 @@
     ],
     "file:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
-    ],
-    "file:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py": [
-      "knowledge/dependents/DPD-EG5TYT-docs-features-md.json"
     ],
     "file:mcp/src/agents_remember/worktrees/integration/master_review_gate.py": [
       "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"

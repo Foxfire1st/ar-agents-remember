@@ -68,16 +68,28 @@
       ]
     },
     "18": {
-      "note": "Fixture construction imports test-only row constructors; it does not call the retired canonical writer.",
+      "note": "The stale-mapping case builds its candidate with test-only realization seeds and the text-tree fixture builder.",
       "targets": [
         {
           "anchor": {
             "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
-            "content": "sha256:1f57b3b2169dcb15e382e3d1b9ac263d1f1441cc76261e608c9a2aa4ce5ff6a3",
+            "content": "sha256:843e97f810726664cd856b71282548be47ca78ba15776e6d6404ac1675ed37f6",
             "locator": {
-              "end": 45,
+              "end": 54,
               "kind": "line_range",
-              "start": 40
+              "start": 39
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+            "content": "sha256:3ef840e6c4ba9c6a6ec96069ccb68b42dfc88234b3111d5ee0d8516581795ac2",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 361
             }
           },
           "kind": "test"
@@ -254,15 +266,16 @@
       ]
     },
     "27": {
-      "note": "The incompleteness cases: one uninspected snapshot turns every unmapped change undetermined; a legitimately empty side counts as completely inspected.",
+      "note": "An uninspected snapshot leaves the unmapped path undetermined. The paired known-empty and inspected sides instead give complete attribution coverage and confirm the unmapped path is unregistered.",
       "targets": [
         {
           "anchor": {
             "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
-            "content": "sha256:3161876d1ea5ad23792583879c9b87d1fa0a89b4a0750932834a78e8a663043b",
+            "content": "sha256:5540210c704f6e7e9222e4257871e3c36fe63965ecb408c8599b1ccf40f3a162",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_legitimately_empty_side_counts_as_completely_inspected_for_absence"
+              "end": 512,
+              "kind": "line_range",
+              "start": 450
             }
           },
           "kind": "test"
@@ -270,10 +283,11 @@
         {
           "anchor": {
             "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
-            "content": "sha256:5540210c704f6e7e9222e4257871e3c36fe63965ecb408c8599b1ccf40f3a162",
+            "content": "sha256:3161876d1ea5ad23792583879c9b87d1fa0a89b4a0750932834a78e8a663043b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution"
+              "end": 550,
+              "kind": "line_range",
+              "start": 515
             }
           },
           "kind": "test"
@@ -349,12 +363,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
             "locator": {
-              "end": 816,
+              "end": 232,
               "kind": "line_range",
-              "start": 1
+              "start": 232
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -363,16 +377,107 @@
       ]
     },
     "31": {
-      "note": "The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.",
+      "note": "The unit-regression lane registers this module. Seven lifecycle artifact rows declare it as a consumer, including the diff-scope, row-codec, row, and read-scope support artifacts.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
-            "content": "sha256:c87b7853f8f4a4e32f8e60f6d7ce941573d3cfbbaae42ebdf53e7234def4f622",
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
             "locator": {
-              "end": 5062,
+              "end": 232,
               "kind": "line_range",
-              "start": 1
+              "start": 232
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 357
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
+            "locator": {
+              "end": 898,
+              "kind": "line_range",
+              "start": 898
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
+            "locator": {
+              "end": 1324,
+              "kind": "line_range",
+              "start": 1324
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
+            "locator": {
+              "end": 2749,
+              "kind": "line_range",
+              "start": 2749
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
+            "locator": {
+              "end": 3633,
+              "kind": "line_range",
+              "start": 3633
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
+            "locator": {
+              "end": 3678,
+              "kind": "line_range",
+              "start": 3678
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
+            "locator": {
+              "end": 4203,
+              "kind": "line_range",
+              "start": 4203
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

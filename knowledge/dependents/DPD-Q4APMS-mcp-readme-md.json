@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
-    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
+    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
+    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
     "role": "curator",
-    "statement": "The package README correctly names the task_doc and closeout tool groups and points to the MCP guide for their existing review operations.",
-    "task": "261112-BUG-L12",
+    "statement": "The package tool groups and MCP reference pointer still apply. The new status and closeout wording leaves the named inventory intact.",
+    "task": "261112-BUG-L15",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "51812d7601d89508db5312ce0d811f16c0490e33",
+      "blob": "66ea693a8c853e7db7339de87bdb1e9e8b96968f",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

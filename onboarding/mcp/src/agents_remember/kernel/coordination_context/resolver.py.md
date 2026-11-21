@@ -87,7 +87,9 @@ widens that exception.
 - The fallback context reads the contract and records the bytes consumed. [14]
 
 
+
 - The onboarding gate's settings resolution records the absent memory settings and the contract it read, and no file it did not open. [15]
+
 
 - Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py::_root_errors - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 

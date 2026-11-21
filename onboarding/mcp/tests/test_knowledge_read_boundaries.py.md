@@ -7,7 +7,7 @@
 ## Purpose
 
 **The read's real boundaries: a real Git tree and a real snapshot identity.** Twenty source test
-definitions are registered in `integration` (row `mcp/tests/test-evidence-lanes.toml:709`). They exercise
+definitions are registered in `integration` (row `mcp/tests/test-evidence-lanes.toml:711`). They exercise
 committed source bytes, text-backed index files, anchor observations, snapshot and continuation
 bindings, and a task-free read. They do not invoke a publication operation.
 
@@ -141,5 +141,6 @@ No cross-repository behavior is implemented in this file.
 No meaningful cross-repo references found.
 
 ### Repo-Internal References (continued)
+
 
 - The read boundary module occupies the integration lane row; registration is not execution evidence. [10]

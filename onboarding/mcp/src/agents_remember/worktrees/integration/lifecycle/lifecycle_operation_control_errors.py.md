@@ -12,7 +12,7 @@ Typed lifecycle-control refusals with executable public next actions.
 
 ### Logic
 
-The public `resume` correction supplies fresh code and memory message fields only. Ledger commit messages are absent from the executable next call, while bounded expected/observed facts still identify genuine lifecycle contradictions.
+`response_fields` projects bounded expected and observed facts and any explicit replacement tool. Absent or matching historical closeout and integration generations are refused by the control owner with the matching synchronous tool. A record for a different generation returns `lifecycle-generation-changed`. The generic formatter retains code and memory message placeholders for a resume-shaped response.
 
 The public surface is `LifecycleControlError`. This file bounds public refusal evidence and next actions. Missing, unreadable, mismatched, or ambiguous artifacts remain typed decisions with expected/observed facts; they are never downgraded to absence and private operation keys never cross the public boundary.
 
@@ -42,7 +42,7 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-- `LifecycleControlError` bounds refusal details and emits executable two-message closeout corrections. [1]
+- `LifecycleControlError` bounds refusal details and projects the action or explicit replacement tool supplied by the caller. [1]
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
@@ -54,6 +54,6 @@ No meaningful cross-repository boundary is owned by this file.
 
 No additional cross-repository evidence applies.
 
-## CCR-L42 current candidate
+## Historical CCR-L42 successor syntax
 
-Lifecycle control errors now use `resume` for fresh closeout-successor inputs, including the code-commit message arguments, replacing the retired `revise` action name.
+Before ordinary closeout journal execution was retired, lifecycle control errors used `resume` for fresh closeout-successor inputs, including the code-commit message arguments, replacing the retired `revise` action name.

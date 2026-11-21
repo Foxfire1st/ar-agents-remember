@@ -253,11 +253,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
-            "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
+            "content": "sha256:0a35eedfdf93940b1382b8b784fd34c2318a07d0f4376c1b581dda2701b79418",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_torn_down_provider_runtime_finalizes_on_the_first_call"
+              "name": "test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason"
             },
             "path": "mcp/tests/test_terminal_blocker_reasons.py"
           },
@@ -265,11 +265,12 @@
         },
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
-            "content": "sha256:0a35eedfdf93940b1382b8b784fd34c2318a07d0f4376c1b581dda2701b79418",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
+            "content": "sha256:ee2047a9342ca94fd6ced51b91d20b36379b10d8e5c424d146344bf7e8e02647",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason"
+              "end": 197,
+              "kind": "line_range",
+              "start": 140
             },
             "path": "mcp/tests/test_terminal_blocker_reasons.py"
           },
@@ -449,10 +450,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
-            "content": "sha256:aa5fda34dde0755a15aa9f1d706e5c0bfe973689ff8774eeb5c501a2726680d6",
+            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "content": "sha256:3a3c84122eeb05f2fd5368efcd2d815fc4d4586c1408a26b6b2477fd20be9c6d",
             "locator": {
-              "kind": "file"
+              "end": 100,
+              "kind": "line_range",
+              "start": 34
             },
             "path": "mcp/src/agents_remember/worktrees/modules/args.py"
           },

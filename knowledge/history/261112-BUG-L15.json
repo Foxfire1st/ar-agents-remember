@@ -1,0 +1,4229 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L15",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-04ESK6",
+      "items": [
+        "sha256:0fbf9302ae24f9b6d91f5a57b264d87242ad90432f1e03ab85b82269641bff29"
+      ],
+      "reason": "The detached worker launcher and worker-state imports leave the journal controller.",
+      "subject": "hunk:sha256:0fbf9302ae24f9b6d91f5a57b264d87242ad90432f1e03ab85b82269641bff29"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-07TDGA",
+      "items": [
+        "sha256:6be4786eab2ea27c9022d9580f807984308d4df58790a94632b6e0dfff342464"
+      ],
+      "reason": "Public descriptions name the synchronous verbs and explain replacement guidance for historic journal controls.",
+      "sources": [
+        {
+          "blob": "8bbd4abc9ebf1f52f81c2b1ec8c3a863fb5134a2",
+          "path": "mcp/tests/test_tool_descriptions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_descriptions.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 5
+        },
+        {
+          "id": "INV-3BGCAT",
+          "revision": 2
+        },
+        {
+          "id": "INV-3FA4VG",
+          "revision": 1
+        },
+        {
+          "id": "INV-5JEN5D",
+          "revision": 1
+        },
+        {
+          "id": "INV-6DFQ9P",
+          "revision": 3
+        },
+        {
+          "id": "INV-78GNBA",
+          "revision": 2
+        },
+        {
+          "id": "INV-9CSYZS",
+          "revision": 1
+        },
+        {
+          "id": "INV-HAQRFD",
+          "revision": 1
+        },
+        {
+          "id": "INV-KSJZS0",
+          "revision": 1
+        },
+        {
+          "id": "INV-M0J963",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-08MDG1",
+      "items": [
+        "sha256:c8269efe450443aab9db687b248fa2735bf88d5266e4d8aa5de2216c87a4611c"
+      ],
+      "reason": "The exact admitted direct pair, recovery executor and closing receipt remain bound. F09 preserves the original cancellation assertions and observes the live proof boundary.",
+      "revision": 3,
+      "subject": "FAM-NQQP2T"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0AGKTM",
+      "items": [
+        "sha256:8ba263ee353b3528f07a6a6ba12795a39378b9ca64d60630fc92c6abd7260d0c"
+      ],
+      "reason": "The controller no longer receives normalized ordinary closeout input or a journal gate-policy snapshot.",
+      "subject": "hunk:sha256:8ba263ee353b3528f07a6a6ba12795a39378b9ca64d60630fc92c6abd7260d0c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0AQ7PP",
+      "items": [
+        "sha256:7c8c104d4620e48b2571e128cfa30a2059cc478f3583e9a8b909b0f671fd1849"
+      ],
+      "reason": "The current overview separates the registered action vocabulary from the controls a direct generation can offer. Eligible nonterminal direct generations offer recover and can add cancel before retained output authority. Completed retirement and the eligible cancelled generation’s fresh direct call are separate offers. Older ordinary records remain inspectable. Sources are lifecycle_operation_control_projection.py:46–102,122–133,162–184,236–258 and lifecycle_operation_projection.py:208–231.",
+      "sources": [
+        {
+          "blob": "142a7b179a91b5749301cc549bb5906fec73d9f0",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py"
+        },
+        {
+          "blob": "cb17f2e2ea65d9441f48aee556bc3cba254d8aa4",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py"
+        },
+        {
+          "blob": "5c0fa22cc352e90bf9767a6ee2aa1d85c224166c",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py"
+        },
+        {
+          "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+        },
+        {
+          "blob": "65597f52711773d7755f813da12995da8fc98197",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+        },
+        {
+          "blob": "4d113daa7ebc489a1ace707109b331f59a65d19b",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py"
+        },
+        {
+          "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+        },
+        {
+          "blob": "3c1c869f493f68755e20a825d5e84db44ed38a54",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+        },
+        {
+          "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/__init__.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/child_processes.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/launch.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/state.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/termination.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0GP042",
+      "items": [
+        "sha256:eaa627716faae087b2f2ac9aa20177c56ca503dec7896b0bf8aaff7f95ec8506"
+      ],
+      "reason": "The projection no longer imports state fingerprints for retired successor controls.",
+      "subject": "hunk:sha256:eaa627716faae087b2f2ac9aa20177c56ca503dec7896b0bf8aaff7f95ec8506"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC",
+        "FAM-7AEA19",
+        "FAM-8SX6BT",
+        "FAM-A43781",
+        "FAM-GJYFFP",
+        "FAM-NQQP2T"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-0R44D1",
+      "items": [],
+      "reason": "The proposed statement protects its own public boundary. The six reached families retain their existing direct-pair, answer-shaping, retirement, host and instruction ownership guarantees.",
+      "revision": 1,
+      "subject": "membership:INV-NH7YXA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0XNVBS",
+      "items": [
+        "sha256:8d2fab115de46c483b16cdd4be20b197af65753d6c5745e888dab10a1c96c092"
+      ],
+      "reason": "The overview gives the next fresh integration dry run for source-moved-during-preflight and a managed sync plus new closeout for a non-fast-forward source under ff-only. Exact direct replay retains its accepted generation except a pre-mutation self-cancelled refusal. Source modules/integrate.py:258–286,310–367, docs/workflows.md:164–173 and direct_landing.py:1662–1706.",
+      "sources": [
+        {
+          "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+          "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+        },
+        {
+          "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+          "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-157PW4",
+      "items": [
+        "sha256:63c44ae1bbe77f32c52a1dc3511736f883a27c90a2b0a9702b2ebf95fdf44a7f"
+      ],
+      "reason": "The current card places required curation evidence and any required coherence validation before apply. Apply checks task intent, lineage and knowledge and records the per-leg result. The paired citation now names the existing closeout procedure.",
+      "sources": [
+        {
+          "blob": "2c7dc6d83d1492b30d3948afc4f131805f1a373f",
+          "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-15RYF2",
+      "items": [
+        "sha256:739c53bed645d2dbcb3361f2c89b8aa239726e244230e79df8e3cec99ebe3e26"
+      ],
+      "reason": "The read projection offers executable controls only for live direct generations and exposes historical closeout and integration for inspection.",
+      "sources": [
+        {
+          "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-17BSD9",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "The authoritative generated row records 1,465 words and the renewed exact source hash for the Manager brief. Authored policy and ceilings are preserved.",
+      "sources": [
+        {
+          "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-1KHFG8",
+      "items": [
+        "sha256:ee6788a14b594e9b474d9736c6271eca51b36adcfc2d5097a05a6899cdc24280"
+      ],
+      "reason": "The mounted worktree_operation_control description advertises a direct generation only and directs retired closeout or integration to its synchronous replacement. Public boundary tests verify the historical record refusal.",
+      "revision": 2,
+      "subject": "WKN-59A97E"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1PZPV7",
+      "items": [
+        "sha256:4354597efdb929ffe78bf2459ff7e00d49c4c869b271f8e683c8e76ecc29263b"
+      ],
+      "reason": "The mutation owner refuses retired closeout and integration generations before recovery writes and keeps the replacing synchronous tool in guidance.",
+      "sources": [
+        {
+          "blob": "65597f52711773d7755f813da12995da8fc98197",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2180HJ",
+      "items": [
+        "sha256:f982616652f7662d69288565a139bb4860b875f63b89f8f37360838ae3bb3c50"
+      ],
+      "reason": "The controller no longer handles the removed fresh ordinary door-publication error.",
+      "subject": "hunk:sha256:f982616652f7662d69288565a139bb4860b875f63b89f8f37360838ae3bb3c50"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2445HZ",
+      "items": [
+        "sha256:07d12c76ab5c969aa5f06dcdb582783f9c095f90fbcf264e0949d33fd45e354c"
+      ],
+      "reason": "The projection no longer uses initial ordinary closeout-door recovery to offer legacy controls.",
+      "subject": "hunk:sha256:07d12c76ab5c969aa5f06dcdb582783f9c095f90fbcf264e0949d33fd45e354c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-299CM6",
+      "items": [
+        "sha256:cc04256a21cf06bf33296a84fce941e544a2d86f716f914881f696c010942f7a"
+      ],
+      "reason": "The access contract description identifies MCP as the writer of one exact lifecycle operation record.",
+      "subject": "hunk:sha256:cc04256a21cf06bf33296a84fce941e544a2d86f716f914881f696c010942f7a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2A6A3F",
+      "items": [
+        "sha256:599b25e8148e2b88c8c72783ef9dbd4e66192a36b127084b7a215a64aca576c5"
+      ],
+      "reason": "The controller stops importing closeout journal admission and obsolete door generation update operations.",
+      "subject": "hunk:sha256:599b25e8148e2b88c8c72783ef9dbd4e66192a36b127084b7a215a64aca576c5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2TWGE2",
+      "items": [
+        "sha256:c10b66a5e6bf380666ac12a4610838b2b6a56689c196f1d3aa834987a49bb610"
+      ],
+      "reason": "The old controller's resume message and gate-policy parameters leave with ordinary journal execution.",
+      "subject": "hunk:sha256:c10b66a5e6bf380666ac12a4610838b2b6a56689c196f1d3aa834987a49bb610"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-35RXMY",
+      "items": [
+        "sha256:dc5c0e6b59215c61076af1c57e6685a13f5679a233186183b0e3f7a50f6441f4"
+      ],
+      "reason": "The removed helper assembled a fresh ordinary closeout successor and separate apply action.",
+      "subject": "hunk:sha256:dc5c0e6b59215c61076af1c57e6685a13f5679a233186183b0e3f7a50f6441f4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-35XM63",
+      "items": [
+        "sha256:3c8ad8a3484964dcd306a9d4ca3600d1e6aeddb5d3f02b56921cdafe57272336"
+      ],
+      "reason": "The controller stops importing the requeue helper for retired ordinary journal mutations.",
+      "subject": "hunk:sha256:3c8ad8a3484964dcd306a9d4ca3600d1e6aeddb5d3f02b56921cdafe57272336"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3BP7EJ",
+      "items": [
+        "sha256:2139e62d3e310ef297c38319ac4e15f2aee80287bf70c0dd71f2dae8ef10a652"
+      ],
+      "reason": "The regression preserves the readable historical fields and uses the surviving admission path.",
+      "sources": [
+        {
+          "blob": "c87e6b11938cd75231e62bf9503d8f44f81320cf",
+          "path": "mcp/tests/test_retired_door_publication_fields.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_retired_door_publication_fields.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3F5MHV",
+      "items": [
+        "sha256:9774260490a9b90a9dfa52c664560e1a436cd7c266d17c739ca0b2c7ae8a4130"
+      ],
+      "reason": "The journal controller no longer publishes ordinary closeout-door intent.",
+      "subject": "hunk:sha256:9774260490a9b90a9dfa52c664560e1a436cd7c266d17c739ca0b2c7ae8a4130"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3W63QX",
+      "items": [
+        "sha256:b868763df7652709b5d076e000f8c4a78e7b55529332098e5e135bb5f946811e"
+      ],
+      "reason": "Retires the card for the detached worker package export after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/__init__.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/worker/__init__.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-449Y6Q",
+      "items": [
+        "sha256:cfe240e78390098a7930d2ef305edeeb8d183f0e08a79e01061739f0473532ae"
+      ],
+      "reason": "The test overview binds the new public, retired-history and catalog tests to the current synchronous routes and surviving evidence ownership.",
+      "sources": [
+        {
+          "blob": "cfda37628ff237411040a297821cd403f081cc5a",
+          "path": "mcp/tests/closeout_input_test_support.py"
+        },
+        {
+          "blob": "d8a614375316b5233411201916453bc5935890f4",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "aa72c4ca690ade23457a79457c8763b055f326cf",
+          "path": "mcp/tests/fixtures/lifecycle/old-writer-closeout-record.json"
+        },
+        {
+          "blob": "eca25743c9b12c3fe715eccf80cfa4ebdac5b498",
+          "path": "mcp/tests/fixtures/lifecycle/old-writer-integrate-record.json"
+        },
+        {
+          "blob": "19c095b4634f19eeefb55736335ad24e8960a985",
+          "path": "mcp/tests/integration_branch_authority_test_support.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/tests/lifecycle_control_test_support.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/tests/selected_lifecycle_test_support.py"
+        },
+        {
+          "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "a12ae3bcbcca940f73ae7261c3b1b44faa65efdd",
+          "path": "mcp/tests/test_atomic_master_review_public.py"
+        },
+        {
+          "blob": "aeaa62aa1862b85d188edb28925a8d39123c27ad",
+          "path": "mcp/tests/test_automatic_post_integration_cleanup.py"
+        },
+        {
+          "blob": "47cbed620d542b52197b71eb2714a95d449539ad",
+          "path": "mcp/tests/test_cross_master_concurrency.py"
+        },
+        {
+          "blob": "f514fcff680eec8da520dcb68b88fb5be662691d",
+          "path": "mcp/tests/test_integration_branch_authority.py"
+        },
+        {
+          "blob": "d057d05b21e36984449b7905f09ef154bcb0aa05",
+          "path": "mcp/tests/test_knowledge_gate_routes.py"
+        },
+        {
+          "blob": "2c3c5c984a48f522e597ffd33ebe434a360ace9e",
+          "path": "mcp/tests/test_lifecycle_operation_journal_retired.py"
+        },
+        {
+          "blob": "149e59682a2f8870e318b054d641fb6c36c868b9",
+          "path": "mcp/tests/test_lifecycle_operation_model_helpers.py"
+        },
+        {
+          "blob": "ccae36bb19ba6345e971e63a1b0abee749a88377",
+          "path": "mcp/tests/test_lifecycle_operation_public_boundary.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/tests/test_lifecycle_operations.py"
+        },
+        {
+          "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+          "path": "mcp/tests/test_master_retirement_readiness.py"
+        },
+        {
+          "blob": "cc8cd6ba9ed6c676cd078c14e1f8a31273573be4",
+          "path": "mcp/tests/test_quality_gate_public_contract.py"
+        },
+        {
+          "blob": "c87e6b11938cd75231e62bf9503d8f44f81320cf",
+          "path": "mcp/tests/test_retired_door_publication_fields.py"
+        },
+        {
+          "blob": "7812f2e2d95f23975bc258d592a576faefb1d69e",
+          "path": "mcp/tests/test_started_modules_exist.py"
+        },
+        {
+          "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
+          "path": "mcp/tests/test_terminal_blocker_reasons.py"
+        },
+        {
+          "blob": "8bbd4abc9ebf1f52f81c2b1ec8c3a863fb5134a2",
+          "path": "mcp/tests/test_tool_descriptions.py"
+        },
+        {
+          "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
+          "path": "mcp/tests/test_tool_response_conformance.py"
+        },
+        {
+          "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
+          "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/tests/test_worker_child_processes.py"
+        },
+        {
+          "blob": "absent",
+          "path": "mcp/tests/test_worktree_status_running_operation.py"
+        },
+        {
+          "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
+          "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC",
+        "FAM-7AEA19",
+        "FAM-8SX6BT",
+        "FAM-A43781",
+        "FAM-GJYFFP",
+        "FAM-NQQP2T"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-45GRJY",
+      "items": [],
+      "reason": "The proposed statement protects its own public boundary. The six reached families retain their existing direct-pair, answer-shaping, retirement, host and instruction ownership guarantees.",
+      "revision": 1,
+      "subject": "membership:INV-760TKM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4D5KPB",
+      "items": [
+        "sha256:7f9c8479f1fbc03c3a0c1227f20f77be824965ca4738931d3f69fcd980f11864"
+      ],
+      "reason": "The projection context stops carrying an integration-journal observation.",
+      "subject": "hunk:sha256:7f9c8479f1fbc03c3a0c1227f20f77be824965ca4738931d3f69fcd980f11864"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4DZEDE",
+      "items": [
+        "sha256:af2ac31d281c60e49d4704c9cef6342b9ba17a832b8ee37a125d43611da90d5f"
+      ],
+      "reason": "The closeout control no longer needs to import a gate-policy ruler snapshot.",
+      "subject": "hunk:sha256:af2ac31d281c60e49d4704c9cef6342b9ba17a832b8ee37a125d43611da90d5f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4EZT6F",
+      "items": [
+        "sha256:d77afe87d53ec6b880c2e0a80646122dbb06ec370f6620ddf91d937670170942"
+      ],
+      "reason": "Retires the card for worker PID and exit reconciliation after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/termination.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/worker/termination.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4GHVBD",
+      "items": [
+        "sha256:b82968395897bb311b7ee8f53bdac54410a0bd353099bed19740d6ff164d18e8"
+      ],
+      "reason": "Live decision reads stop deriving obsolete detached worker liveness and retain the exact available Git evidence.",
+      "sources": [
+        {
+          "blob": "4d113daa7ebc489a1ace707109b331f59a65d19b",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_live_decision.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4S8WYT",
+      "items": [
+        "sha256:2816db67937af9fc59e5084f81a6c4655856c4898fb28115d0be7419c87be2c3"
+      ],
+      "reason": "The test describes the still-active Git proof and publication stubs for direct cancellation.",
+      "subject": "hunk:sha256:2816db67937af9fc59e5084f81a6c4655856c4898fb28115d0be7419c87be2c3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2c7dc6d83d1492b30d3948afc4f131805f1a373f",
+            "content": "sha256:8938f7dc698a85538e3e29ff6bb407898d7dc6dc980869c4299097afb7cd446f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "before": {
+            "blob": "e3f14fd6204940ace8a22d216c6ba13e5a8cd8f7",
+            "content": "sha256:5488060f32244e500220deb21c609e5b3308e05211e99c3ce9c954b2ae1560a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "id": "RLZ-WR7C61"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4V2FJM",
+      "items": [
+        "sha256:79913bff819ac7cbd6d13f4f818f7b506663c1aaa370b4d7b5518974fb80cecf"
+      ],
+      "reason": "W8 places coherence evidence before apply. The Manager brief keeps the existing settings limit, sealed findings and recorded authority for an additional round.",
+      "revision": 5,
+      "subject": "INV-HGSFJ8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4YDQJT",
+      "items": [
+        "sha256:928f94e1a7e7d21b18d0144a09b7a7e87ec2f3a686e240c6d72581c1b631c8d1"
+      ],
+      "reason": "The observation shape drops an integration-journal runtime field. Historical projection still reads saved integration.",
+      "subject": "hunk:sha256:928f94e1a7e7d21b18d0144a09b7a7e87ec2f3a686e240c6d72581c1b631c8d1"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-27SPEH",
+          "revision": 1
+        },
+        {
+          "id": "INV-76C676",
+          "revision": 2
+        },
+        {
+          "id": "INV-777108",
+          "revision": 2
+        },
+        {
+          "id": "INV-AY7A8V",
+          "revision": 2
+        },
+        {
+          "id": "INV-CZVMX3",
+          "revision": 1
+        },
+        {
+          "id": "INV-DEDX8T",
+          "revision": 2
+        },
+        {
+          "id": "INV-G869AQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-PKFP2R",
+          "revision": 3
+        },
+        {
+          "id": "INV-QAR0F3",
+          "revision": 2
+        },
+        {
+          "id": "INV-S34RA5",
+          "revision": 2
+        },
+        {
+          "id": "INV-S44D2D",
+          "revision": 1
+        },
+        {
+          "id": "INV-W09GQM",
+          "revision": 4
+        },
+        {
+          "id": "INV-WR2WAJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-Z2XTN1",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZEB6H9",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-4YJBB8",
+      "items": [
+        "sha256:b4bce2546f612a56dd712c507b8776279ff59ab0090d585c0137f8405d8ed397"
+      ],
+      "reason": "Read all fifteen member statements and scope against the exact W9 source pair. The repaired catalogue proof verifies index-only selection, authored catalogue entries and field order, totals, and the guarded callbacks. The existing joint navigation guarantee and its separate members’ order, badges, entry identity, traversal, filtering, fallback and recorded effects remain supported by their original source routes. This changes the scope of test evidence for INV-S44D2D and preserves its obligation and membership.",
+      "revision": 3,
+      "subject": "FAM-A3YKR5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-54SFE8",
+      "items": [
+        "sha256:47e32d57d545cac3833e66ac59ddaba5201130d97cbe08c43150c31d649197a5"
+      ],
+      "reason": "Retires the card for the retired closeout generation claim handshake after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-55JE77",
+      "items": [
+        "sha256:c2bf361c7b6bc03d0f895b7b753dc738143ac8a590aff35130f15058c859513b"
+      ],
+      "reason": "Removing the obsolete dispatch branches removes the lint suppression for many returns.",
+      "subject": "hunk:sha256:c2bf361c7b6bc03d0f895b7b753dc738143ac8a590aff35130f15058c859513b"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-561YRW",
+      "items": [
+        "sha256:5a0a01d875bd0391856d93193837da066a44112c6a86f4c18a2091ba86ab6734"
+      ],
+      "reason": "The wire fixture keeps saved operation identities and drops the worker observation.",
+      "sources": [
+        {
+          "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
+          "path": "dashboard/src/fixtures/snapshot.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/fixtures/snapshot.json"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-56FNNP",
+      "items": [
+        "sha256:c165262bd3a563c1692862f5fa88360cc3a24f6875b8684062f47f777e7695a2"
+      ],
+      "reason": "The worktree reference describes approval-bound synchronous closeout, focused checks after a clean sync, generation-bound historical refusal and direct-landing recovery.",
+      "revision": 4,
+      "subject": "DPD-9K25G8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-58PRC4",
+      "items": [
+        "sha256:10f4ecbc0d7118a537aeb76d81d908848506108f082a2b11c8e116fd0cdbff25"
+      ],
+      "reason": "Observation keeps saved journal rows, stops projecting a worker, and offers callable controls only from the direct generation.",
+      "sources": [
+        {
+          "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
+            "content": "sha256:98f98f0da3a72976597a9f4700dcbbe3dcfcb9f23d333be71cc0392d7ba4072a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/projection.schema.json"
+          },
+          "before": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:226243af578a1991bdde83d7cd74b6f6a014c39efb20e48e7a0cbd474ca578c2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/projection.schema.json"
+          },
+          "id": "RLZ-67JYPK"
+        },
+        {
+          "after": {
+            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
+            "content": "sha256:0233d431ad058f5d4c44d166f0e8f10e6345f133e4848d9568d2d28a1ff24f09",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "before": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:dac3149d3496821ecf20600a66b60e17e2a979fef504f5ac4c4b968fb8f01a44",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "id": "RLZ-78S7A2"
+        },
+        {
+          "after": {
+            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
+            "content": "sha256:b6efa8989f3d851efd32bdb4bbce145673470eab83558a0c0087c1e943ea1935",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "before": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:33cb6a476b32ec7471bad8db51894ffd8ca7e03ae17d4cbff4c8540088600dca",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "id": "RLZ-QGQ03S"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5DK56Q",
+      "items": [
+        "sha256:bdc118d291043ef9eee4e516d2a13ba158879614148045d3404011d2d461cbd0"
+      ],
+      "reason": "The schema, types and contract sample remove the worker observation only. The limited-status word, tone and exact reset displays and owners are unchanged.",
+      "revision": 3,
+      "subject": "INV-XZYGEB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:dc44cac147a4b2c72aca6fc606426f712c933c5ff1ba8017be4f5cb0d82b0449",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "content": "sha256:c87b7853f8f4a4e32f8e60f6d7ce941573d3cfbbaae42ebdf53e7234def4f622",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:1629e291661bcc6750b4f89e567cd811a9d4969d78dd014de0a83a18862c9273",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-5FYDD7",
+      "items": [
+        "sha256:0895921a9609e97133a1412722a86aa0f82f412f20c2b7321749de033742fa1c"
+      ],
+      "reason": "D877, D879 and D881 retire obsolete lifecycle fixture use. Comparing the two catalogs shows removal of 50 consumer edges, including 29 for modules that survive. The W7 catalogs retain exact current ownership and lane declarations, including the two compatibility recordings. The L177/L180 pre-change union remains historical evidence.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5H843S",
+      "items": [
+        "sha256:be07d28f9e44e33fa48b25fc1a7b47c7b73b2fae6070008791e2beb63a4a358d"
+      ],
+      "reason": "Registered synchronous responses preserve readable and structured parity without worker observation.",
+      "sources": [
+        {
+          "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
+          "path": "mcp/tests/test_tool_response_conformance.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_response_conformance.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5JK47Q",
+      "items": [
+        "sha256:d26fb8c5690a765012a5974f252141053a695ba7d36ae063ea5d1aac8be1d219"
+      ],
+      "reason": "A successor no longer compares the retired worker PID, lease and process fingerprint. Live direct ownership is generation-bound.",
+      "subject": "hunk:sha256:d26fb8c5690a765012a5974f252141053a695ba7d36ae063ea5d1aac8be1d219"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5Z19DS",
+      "items": [],
+      "reason": "The resolver guide still describes the framework answer keys and saved-log hint. The W7 answer formatter is executable-identical.",
+      "revision": 3,
+      "subject": "DPD-EJ2Y7Z"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-65KSKC",
+      "items": [
+        "sha256:1f5d72fb93b3ad9acc2193e79a056cde4d215b85cafe4f8690f73211da3498bc"
+      ],
+      "reason": "A missing ordinary record now gives the same synchronous tool guidance as a retained historical record. The historical-reading invariant covers this public boundary.",
+      "subject": "hunk:sha256:1f5d72fb93b3ad9acc2193e79a056cde4d215b85cafe4f8690f73211da3498bc"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8bbd4abc9ebf1f52f81c2b1ec8c3a863fb5134a2",
+            "content": "sha256:4d2ae1536c7119baa9e136caceb1423f0a7da35dbc53a40c0bb5cdee4f3cde95",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tool_descriptions.py"
+          },
+          "before": {
+            "blob": "557bac2b64391e6900c45677b40e091c35fdb688",
+            "content": "sha256:37c9cabffa82e74cbaa2135761368a4a1a6fc1c81f21e260482dcaa5f079f810",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tool_descriptions.py"
+          },
+          "id": "RLZ-BWNMPG"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6EEQM8",
+      "items": [
+        "sha256:a0537c6305f147ef76fd11bdb58460400154d28f0d9021c370fe020124dc48ad"
+      ],
+      "reason": "The shared renewal command and stale-derived-value description checks remain. The added test asserts the separate mounted closeout description.",
+      "revision": 1,
+      "subject": "INV-DHKR4G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:8302a031037ec0811de6b2d01ec3d144c2d51a1eda3e1eb266938d85312aacbf",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:8302a031037ec0811de6b2d01ec3d144c2d51a1eda3e1eb266938d85312aacbf",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-E6ZJX2"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6R4TJ0",
+      "items": [],
+      "reason": "The preserved source table documents the response-arm contract. The mounted fixture uses a distinct top-level support classifier. The ordinary controls own the independent whole-result and nested-key witnesses. Source test_tool_entry_point_sweep.py:11–26,84–93 and tool_entry_point_world.py:259–319.",
+      "revision": 1,
+      "subject": "INV-T8FDTX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:d45c9ccf891b5c558a018c170e9b8c45048a3796c04c36ea33d9929f19e22e71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "ae2fe13d4977bb319451dd619f03b611141bcd2a",
+            "content": "sha256:5c7d9e138912cb80dc9ba7d6ef7961e28b2a9cf70ecbec264ec97cebb46c8c54",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6VEWBV",
+      "items": [
+        "sha256:947995b6e2b418999e20913368b818e8fa685ff0f3e8e84ffe2981d349e8bd9c"
+      ],
+      "reason": "The W8 current Manager brief measurement is 1,465 words with the exact renewed source hash. The authored role, detail and digest ceilings and frozen historical registry stand.",
+      "revision": 6,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:d45c9ccf891b5c558a018c170e9b8c45048a3796c04c36ea33d9929f19e22e71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "ae2fe13d4977bb319451dd619f03b611141bcd2a",
+            "content": "sha256:5c7d9e138912cb80dc9ba7d6ef7961e28b2a9cf70ecbec264ec97cebb46c8c54",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6XMS1N",
+      "items": [
+        "sha256:07f63bfc259f04bcacbb3ac0f1be05a7576dabaaf9a118df51b6abf7d4daceb9"
+      ],
+      "reason": "W8 regenerates the current Manager brief hash and word count in both budget copies. Generator ownership and authored ceilings stand.",
+      "revision": 2,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-79X88V",
+      "items": [
+        "sha256:a54ee3cb7c2cce5a47fe5bc921474797ca6502a86920f9e59a9289a20456f984"
+      ],
+      "reason": "The typed successor actions can name synchronous worktree_closeout_apply and worktree_integrate calls.",
+      "sources": [
+        {
+          "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+          "path": "mcp/src/agents_remember/models/worktree.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/worktree.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7CGE7H",
+      "items": [
+        "sha256:11821c25c7347c80c88fef07faac182b5322eb2fe33318a2a791f20860fd3cc3",
+        "sha256:772012686d816b334416839ebaaca538202835500a305256eed01b2020b1332d",
+        "sha256:9851d042190e169ac498391ce1e96b579200b3bc16a936843eaa2642013746a2",
+        "sha256:d1d6c185f2d0a55d80d0bca2f653a9286c7dc1b786bb7236e4066f49dcfb8b89"
+      ],
+      "reason": "The shared support module owns real temporary Git fixtures, pre-commit hooks, checkout and branch races, and both Git trailer-reader checks. Its _apply helper calls the production closeout application handler directly for the main and cache test modules. Source transaction_only_worktree_delivery_test_support.py:1–7,122–146,212–250,286–292,361–394,522.",
+      "sources": [
+        {
+          "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
+          "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/transaction_only_worktree_delivery_test_support.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7DAQS4",
+      "items": [
+        "sha256:32b4f5767dc19177b238f027b89fef4ed95dbb369363f15548f9380a2a6c8341"
+      ],
+      "reason": "The support provides exact branch evidence to tests of synchronous integration.",
+      "sources": [
+        {
+          "blob": "19c095b4634f19eeefb55736335ad24e8960a985",
+          "path": "mcp/tests/integration_branch_authority_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/integration_branch_authority_test_support.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7RNNAT",
+      "items": [
+        "sha256:342d7968e61007e5a48be905b82b8c15b712ae8bc2fa68de0fb0928e23f55218"
+      ],
+      "reason": "The current card explains the store's exact immutable generation and input, record and meaningful revision checks and protected mutation evidence. It limits private preparation to the surviving separation and retention checks and withdraws worker authority and command writes from operating guidance. `lifecycle_operation_store.py:241–315,318–344` and `models/lifecycles/operation.py:435–461`.",
+      "sources": [
+        {
+          "blob": "3c1c869f493f68755e20a825d5e84db44ed38a54",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7ZJH3E",
+      "items": [
+        "sha256:bee80652debae350d32df76935db5d4280a6cafdf0d8ff4a4e2ded46bb4cfefd"
+      ],
+      "reason": "The removed helper turned pending ordinary closeout door evidence into executable journal controls.",
+      "subject": "hunk:sha256:bee80652debae350d32df76935db5d4280a6cafdf0d8ff4a4e2ded46bb4cfefd"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-83ZVNQ",
+      "items": [],
+      "reason": "The setup and launch guidance still applies. The W7 answer-formatting comment leaves executable result behavior identical.",
+      "revision": 5,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-87Z4KH",
+      "items": [
+        "sha256:0e0333b6338212fbfbd3c611b09601fdb7d6024b2b188f42bbf9cdf45e6f0401"
+      ],
+      "reason": "Registered status, control and direct landing verify the live and historical route boundary, including compact direct-running status.",
+      "sources": [
+        {
+          "blob": "ccae36bb19ba6345e971e63a1b0abee749a88377",
+          "path": "mcp/tests/test_lifecycle_operation_public_boundary.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_lifecycle_operation_public_boundary.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8BN2GM",
+      "items": [],
+      "reason": "The current card places the checklist-required Curator validation before the Manager calls apply. Synchronous apply checks the applicable knowledge gate and reports reached state and actual commits. The application can add the final-output receipt and external Git observations. Source closeout.py:809–839,966–1007,1024–1083 and worktree_tools.py:896–917.",
+      "sources": [
+        {
+          "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+          "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/closeout.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8PE8X9",
+      "items": [
+        "sha256:3d9d5a1ca2e5dfc97a8f06a786780eb5bc8c758e46386d121e9d1321ad380d0c"
+      ],
+      "reason": "Legal controls no longer need a legacy integration observation.",
+      "subject": "hunk:sha256:3d9d5a1ca2e5dfc97a8f06a786780eb5bc8c758e46386d121e9d1321ad380d0c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+            "content": "sha256:57c32a416ee982d4ef32c218a5e4c36fb9c2d34f89193a06760cf10637896ff8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_generation_bound"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "before": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:57c32a416ee982d4ef32c218a5e4c36fb9c2d34f89193a06760cf10637896ff8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_generation_bound"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "id": "RLZ-8MJABX"
+        },
+        {
+          "after": {
+            "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+            "content": "sha256:8e3857ebd73c433555a6555f03bc8c152a499c07f43781d61c9a0344bfc9e916",
+            "locator": {
+              "kind": "symbol",
+              "name": "_without_legacy_generation_reuse"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "before": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:28ce14e95d693ca6f1455cb97298e719c61cc59da89b3d2901893c9199e5e19f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_without_legacy_generation_reuse"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "id": "RLZ-H09C2P"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8RKVMJ",
+      "items": [
+        "sha256:3d93e7baef0d1dd5b64c30fd1580a541a128d6c04fe52fa1db0e69cf2a5b2eea"
+      ],
+      "reason": "The compatible direct intent and canonical generation binding still select recover or retry. Ambiguity still requires the stored developer-decision route.",
+      "revision": 1,
+      "subject": "INV-ZVQ6Z5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8V1ME9",
+      "items": [
+        "sha256:48122e79937a0a7fb4e66bcddf0080e2320c7719452bf5a6ede1a4a8bb53d334"
+      ],
+      "reason": "The deleted branch could advertise cancel from detached worker exit evidence. Current direct cancellation relies on generation and Git evidence.",
+      "subject": "hunk:sha256:48122e79937a0a7fb4e66bcddf0080e2320c7719452bf5a6ede1a4a8bb53d334"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8WJBSN",
+      "items": [
+        "sha256:68ff74cd6cda9b58d88d8a0d6b91bbd9004b5ec0757597009bb6d8791b73a0ca"
+      ],
+      "reason": "The removed helper reopened selected ordinary closeout preparations and launched a successor worker. The synchronous closeout entry owns current delivery.",
+      "subject": "hunk:sha256:68ff74cd6cda9b58d88d8a0d6b91bbd9004b5ec0757597009bb6d8791b73a0ca"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8YRGM9",
+      "items": [
+        "sha256:67d7fdbd89f0ff7f98b9c40ccad732f4d9f05e2da9e0344b3a7e2b240290b39e"
+      ],
+      "reason": "Current direct cancellation uses the exact Git check and preserves proof that a wrong route never invokes it.",
+      "sources": [
+        {
+          "blob": "d057d05b21e36984449b7905f09ef154bcb0aa05",
+          "path": "mcp/tests/test_knowledge_gate_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_gate_routes.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-99X40V",
+      "items": [
+        "sha256:bbb02eacbba082a18066276a6e63fcfb4ea5dd8cf7d4371b137ecdcb8260e379"
+      ],
+      "reason": "The retired closeout successor no longer refreshes the queue projection from journal control.",
+      "subject": "hunk:sha256:bbb02eacbba082a18066276a6e63fcfb4ea5dd8cf7d4371b137ecdcb8260e379"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9B8JM4",
+      "items": [
+        "sha256:2c6a1c9d449168963638a90f0aac7fca858254d556c8faf43d749d3413efe4f2"
+      ],
+      "reason": "Retires the card for fresh ordinary journal generations after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9DTNY2",
+      "items": [
+        "sha256:49ec25f4068d78000e61ab5777bac11f50c826d71f2239badc46e654bb3f169a"
+      ],
+      "reason": "Exact terminal generation persistence no longer depends on detached worker termination.",
+      "subject": "hunk:sha256:49ec25f4068d78000e61ab5777bac11f50c826d71f2239badc46e654bb3f169a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9GMV3G",
+      "items": [
+        "sha256:688c8aaa38b75e989d7ac5b462e834d7ea07efd307298b87af2da5db25a70f2a"
+      ],
+      "reason": "Evidence used for synchronous apply is re-proven after relevant edits. The changed wording drops the retired ordinary journal generation assumption.",
+      "subject": "hunk:sha256:688c8aaa38b75e989d7ac5b462e834d7ea07efd307298b87af2da5db25a70f2a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9PKEV6",
+      "items": [
+        "sha256:f524ddaaeec3d344d446aea093c98db124d5fe75007e704445f8b674c69d7bfc"
+      ],
+      "reason": "The route test moves synchronous integration through the same integrated cleanup outcomes.",
+      "sources": [
+        {
+          "blob": "aeaa62aa1862b85d188edb28925a8d39123c27ad",
+          "path": "mcp/tests/test_automatic_post_integration_cleanup.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_automatic_post_integration_cleanup.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9PS9RV",
+      "items": [
+        "sha256:01fce16a4a22b42eab0363d460f0b3d3eeee3e1f93b61d60ddebb817c2b2fe3f",
+        "sha256:37a998b748ecc0325a60687734e89b38493c0011b52395975f9dc8a68cf430d0",
+        "sha256:741e5714fb1eb3ff4585360249299d6a65554952ebb5a3ea80bf0ae7f079eed5",
+        "sha256:e7d507bc06752ff13ea150dd4704ca24f2c963f1b76e87d7bab187798ed04a64"
+      ],
+      "reason": "The main source checks exact code and memory-content commits, attribution, hooks and app-handler interruption with direct lower-level recovery. The support module owns the shared Git fixtures and the cache sibling owns the two cache-recovery cases. Source test_transaction_only_worktree_delivery.py:254–483, transaction_only_worktree_delivery_test_support.py:212–250,286–292,361–394 and test_transaction_only_worktree_delivery_cache.py:20–67.",
+      "sources": [
+        {
+          "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
+          "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_transaction_only_worktree_delivery.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A0SKQZ",
+      "items": [
+        "sha256:c73fac35fa8ac1e47db12e92a88bbaa7539e34a0253e3faee3c53ee4ad800e91"
+      ],
+      "reason": "Raw and corrected ordinary closeout message models are no longer consumed by direct journal control.",
+      "subject": "hunk:sha256:c73fac35fa8ac1e47db12e92a88bbaa7539e34a0253e3faee3c53ee4ad800e91"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
+            "content": "sha256:c4ab6de117d061a69f7c7e1f8a612523e3a9f1f90e3d022159169a69b5fd131a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nothing_is_deleted_when_the_cache_receipt_cannot_be_written"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "before": "absent",
+          "id": "PRF-QRVKGG"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
+            "content": "sha256:c4ab6de117d061a69f7c7e1f8a612523e3a9f1f90e3d022159169a69b5fd131a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nothing_is_deleted_when_the_cache_receipt_cannot_be_written"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "id": "PRF-RNY950"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-A15A28",
+      "items": [],
+      "reason": "The same-source successor replaces the broad facet of PRF-RNY950 with the asserted cache, result, receipt path and retry behavior for the ordinary-sweep fixture. The application handles explainer retirement before ordinary receipt admission. The invariant meaning, status, origin and unrelated proofs retain their current bounds. Evidence (L15-M04-ordinary-sweep-PRF-RNY950): Manager message 7dd9ad6a-96a2-4c87-9fcb-82c3460cb775 applies M182 and M187 to PRF-RNY950. Exact W9 source mcp/tests/test_review_artifact_cleanup.py:774–787 witnesses the ordinary-sweep fixture. Its original proof, anchor and MIK-L82 origin remain in the W9 R2 candidate and repair evidence.",
+      "revision": 1,
+      "subject": "INV-YQPQ1M"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-A3FPQX",
+      "items": [],
+      "reason": "The host guide's provider and profile behavior still applies. The status producer reports task and enclosure state, with live journal progress limited to direct landings.",
+      "revision": 6,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-MGGEBY",
+          "revision": 2
+        },
+        {
+          "id": "INV-VDWN33",
+          "revision": 3
+        },
+        {
+          "id": "INV-WQ8YGE",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0KED3",
+          "revision": 2
+        },
+        {
+          "id": "INV-XZYGEB",
+          "revision": 3
+        },
+        {
+          "id": "INV-YK0D2W",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0BXKJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-A4ND0X",
+      "items": [
+        "sha256:ed408ba419c754021b222e0ad5de5396568804dd848068d700bc9f507139afd2"
+      ],
+      "reason": "The canonical task table, host-driven activity, identity and timing producers keep their guarantees. The dashboard schema removes the independent operation worker observation only.",
+      "revision": 4,
+      "subject": "FAM-14NZRC"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A5SMX0",
+      "items": [
+        "sha256:d4d0ff1c1d768f36b0f4ff3be7e400263e2a290301368319b0765fc87902d12f"
+      ],
+      "reason": "The card ties cancellation to reconciled no-output Git and ref facts, and selected preparation ref proof only when a preparation record exists. It identifies the legacy workerExitProven boolean as compatibility data, and places retired-kind refusal before the registered control reaches cancellation. `lifecycle_operation_control_evidence.py:34–83,126–150` and `lifecycle_operation_controls.py:236–245`.",
+      "sources": [
+        {
+          "blob": "5c0fa22cc352e90bf9767a6ee2aa1d85c224166c",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:1629e291661bcc6750b4f89e567cd811a9d4969d78dd014de0a83a18862c9273",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AE3VYB",
+      "items": [
+        "sha256:15838ef208d3b1ab2404ebd3cf8167e7ccda3b5350d1369f3d370d82cc08bc7a"
+      ],
+      "reason": "Validated lane declarations select 792 unique existing files. Removed test files have no registration and the product launch fitness test is selected under architecture-fitness.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AF721A",
+      "items": [
+        "sha256:d024bd73ad6b6d06bb5b040cbc40999fc8b048fea571221b4c0fe4deeb697ee6"
+      ],
+      "reason": "A frozen old integration row proves the current reader can inspect historical journal evidence.",
+      "sources": [
+        {
+          "blob": "eca25743c9b12c3fe715eccf80cfa4ebdac5b498",
+          "path": "mcp/tests/fixtures/lifecycle/old-writer-integrate-record.json"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/fixtures/lifecycle/old-writer-integrate-record.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:1629e291661bcc6750b4f89e567cd811a9d4969d78dd014de0a83a18862c9273",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:dc44cac147a4b2c72aca6fc606426f712c933c5ff1ba8017be4f5cb0d82b0449",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "content": "sha256:c87b7853f8f4a4e32f8e60f6d7ce941573d3cfbbaae42ebdf53e7234def4f622",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AMPBY0",
+      "items": [
+        "sha256:2ac2d9209b04e8a24adce8130905d315dfb7900bb41def80b07b57663d67a74e"
+      ],
+      "reason": "Both current catalogs preserve the silent-end, helper-wait and shared settings evidence registrations. The catalog delta changes lifecycle routes, while the stated host notification and wait behavior stands.",
+      "revision": 6,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AMWHPK",
+      "items": [
+        "sha256:be554a49b4505699f64e7e1873ed14786022b255d9c1ad4d2ff7373577999075"
+      ],
+      "reason": "The refusal assertion now observes whether the still-active Git cancellability proof runs.",
+      "subject": "hunk:sha256:be554a49b4505699f64e7e1873ed14786022b255d9c1ad4d2ff7373577999075"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AW1Z80",
+      "items": [
+        "sha256:5c14d6de49fdb9ac6eed71aa834296187cc717bbc1f6a4afd27a8bbb71d1e14c"
+      ],
+      "reason": "The contract checks the remaining application modules after retirement of detached worker entrypoints.",
+      "sources": [
+        {
+          "blob": "7812f2e2d95f23975bc258d592a576faefb1d69e",
+          "path": "mcp/tests/test_started_modules_exist.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_started_modules_exist.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BCRZ74",
+      "items": [
+        "sha256:a7027de241480391d4a16c0feaad30d4c328b59ed5705e1d2bb62acef7798fe8"
+      ],
+      "reason": "The removed helper offered ordinary completed-generation controls. Completed direct disposition continues through exact ownership.",
+      "subject": "hunk:sha256:a7027de241480391d4a16c0feaad30d4c328b59ed5705e1d2bb62acef7798fe8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BNYPF0",
+      "items": [
+        "sha256:75c0adb01bd8faf109dfa138213556bdaa188593f289950e34084c42d950a424"
+      ],
+      "reason": "The regression checks read-only old rows and proves synchronous closeout and integration leave journal bytes unchanged.",
+      "sources": [
+        {
+          "blob": "2c3c5c984a48f522e597ffd33ebe434a360ace9e",
+          "path": "mcp/tests/test_lifecycle_operation_journal_retired.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_lifecycle_operation_journal_retired.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BRVNW2",
+      "items": [],
+      "reason": "Features describes synchronous closeout and integration and the direct-landing route. The retired coordinator link is replaced by the synchronous tool owners.",
+      "revision": 13,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BW19WT",
+      "items": [],
+      "reason": "The external-memory guide still describes the paired worktree routes. The direct-landing input and exact recovery binding remain.",
+      "revision": 2,
+      "subject": "DPD-9F0Q8G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BZZEWW",
+      "items": [
+        "sha256:f3372e365349d99cc32f501a7f4a3390109947241a7dbc4fbe82e70309e0dfe1"
+      ],
+      "reason": "Compact running state and callable journal controls use direct generations only. Old closeout and integration rows remain inspectable.",
+      "sources": [
+        {
+          "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
+          "path": "mcp/src/agents_remember/application/worktree_status.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/worktree_status.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-C51M90",
+      "items": [],
+      "reason": "The operation-journal concept still describes direct-landing generations and synchronous closeout and integration. Storage and status retain historical audit evidence.",
+      "revision": 9,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C5HJ53",
+      "items": [
+        "sha256:d350c12319b648324614acf3e062fbbf91a81f559ae800bf97960fb7f3760fa1"
+      ],
+      "reason": "The CLI argument owner carries the resolved request for synchronous delivery instead of worker execution arguments.",
+      "sources": [
+        {
+          "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+          "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/args.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1B87DB",
+          "revision": 1
+        },
+        {
+          "id": "INV-1DFJ7N",
+          "revision": 1
+        },
+        {
+          "id": "INV-3YSSTZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-4GQZ9S",
+          "revision": 1
+        },
+        {
+          "id": "INV-5ZMMN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-6AM3V9",
+          "revision": 1
+        },
+        {
+          "id": "INV-6Q7947",
+          "revision": 1
+        },
+        {
+          "id": "INV-6S505X",
+          "revision": 2
+        },
+        {
+          "id": "INV-8AJVN0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8MKBTB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8NHCRK",
+          "revision": 2
+        },
+        {
+          "id": "INV-9YJV7Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-AK4QYH",
+          "revision": 1
+        },
+        {
+          "id": "INV-C4PDDP",
+          "revision": 2
+        },
+        {
+          "id": "INV-CC0VTQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CD2A7H",
+          "revision": 2
+        },
+        {
+          "id": "INV-DJ27N9",
+          "revision": 1
+        },
+        {
+          "id": "INV-E20AY2",
+          "revision": 1
+        },
+        {
+          "id": "INV-FQWZBE",
+          "revision": 1
+        },
+        {
+          "id": "INV-GCEAJJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-GYCF1R",
+          "revision": 1
+        },
+        {
+          "id": "INV-HKTN7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-JQFXCQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-K79KP8",
+          "revision": 1
+        },
+        {
+          "id": "INV-M0ZQNJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MVYAQ0",
+          "revision": 1
+        },
+        {
+          "id": "INV-PRMSPM",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q157G2",
+          "revision": 1
+        },
+        {
+          "id": "INV-T1ZJXG",
+          "revision": 1
+        },
+        {
+          "id": "INV-T7VC8G",
+          "revision": 1
+        },
+        {
+          "id": "INV-WQ6Z6P",
+          "revision": 1
+        },
+        {
+          "id": "INV-X1AH5G",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y0S1BZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-YQY9PX",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZJTNZY",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-C9MV1V",
+      "items": [
+        "sha256:7b72bb05dca207e87344596852b0bcaa3e349e456fe29c2033fbc27af372b17a"
+      ],
+      "reason": "Retirement still classifies the same open work and historical facts. M857 changes only the recommended tool per kind. Preserve the family's retired state and routes.",
+      "revision": 1,
+      "subject": "FAM-A43781"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CBY3E5",
+      "items": [
+        "sha256:53972ee854f5b437a724d9f72b8041d361c40fc694eb1ef0fd4bbe2b1d99e938"
+      ],
+      "reason": "Retires the card for the obsolete ordinary running generation expectation after W7 deletes its source. Current direct-running and historic projection proofs move to the public boundary regression.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/tests/test_worktree_status_running_operation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_worktree_status_running_operation.py"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC",
+        "FAM-7AEA19",
+        "FAM-8SX6BT",
+        "FAM-A43781",
+        "FAM-GJYFFP",
+        "FAM-NQQP2T"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-CBYXZG",
+      "items": [],
+      "reason": "The proposed statement protects its own public boundary. The six reached families retain their existing direct-pair, answer-shaping, retirement, host and instruction ownership guarantees.",
+      "revision": 1,
+      "subject": "membership:INV-JKACW8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CDPQ5Q",
+      "items": [
+        "sha256:9e18c06ad141dc59e5f7df92e1eb3d0428c03576a27569e2cdb4820b0a9fe1ed"
+      ],
+      "reason": "Retires the card for the detached worker child process tests after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/tests/test_worker_child_processes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_worker_child_processes.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CMXTAH",
+      "items": [
+        "sha256:8f0e7a72facd37b8ffd8fbc5d5cb3b9601d25c8a4bb3166b208e686b4ae46d9a"
+      ],
+      "reason": "The controller removes imports for ordinary integration-journal convergence and decisions.",
+      "subject": "hunk:sha256:8f0e7a72facd37b8ffd8fbc5d5cb3b9601d25c8a4bb3166b208e686b4ae46d9a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D4Y5G9",
+      "items": [
+        "sha256:440acb3d871e26e42232a3e6e639d3b99d28449974658c2c040094b42cdacf22"
+      ],
+      "reason": "The helper no longer interprets ordinary integration ref conflicts for the retired control surface.",
+      "subject": "hunk:sha256:440acb3d871e26e42232a3e6e639d3b99d28449974658c2c040094b42cdacf22"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D71B1T",
+      "items": [],
+      "reason": "The Roles guide remains aligned with Manager closeout ownership, final checks and the Reviewer repair route. Coordination now supplies the synchronous retry procedure.",
+      "revision": 6,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D7726V",
+      "items": [
+        "sha256:926bdbc205d916f171f04d42cc6b3567aa40accebb99a19db10663210e94f84a"
+      ],
+      "reason": "The obsolete path that completed cancelled integration repair from journal control leaves.",
+      "subject": "hunk:sha256:926bdbc205d916f171f04d42cc6b3567aa40accebb99a19db10663210e94f84a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DAACSF",
+      "items": [
+        "sha256:5564032befefc1be78ee67a2e6ae7368ab10f05713294faad9664f8929a304cf"
+      ],
+      "reason": "The transaction overview records synchronous integration and the exact surviving certification and terminal evidence boundaries.",
+      "sources": [
+        {
+          "blob": "712aed3c9a71e9b1a6404e12c1224c5c2b751852",
+          "path": "mcp/src/agents_remember/worktrees/integration/certification.py"
+        },
+        {
+          "blob": "2cc4102fc9005b89c8d955d038b446040ff7e520",
+          "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DGHR2J",
+      "items": [
+        "sha256:e077216eb4b50588b1ae4a973378a7d42d060d8b78784a21139bd4ba9f5c9c01"
+      ],
+      "reason": "Consumers see bounded durable journal history without a worker observation. Only direct generations can advertise controls.",
+      "sources": [
+        {
+          "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DTGY2Z",
+      "items": [
+        "sha256:4ed8f1c198adf4af7523ddf85ed21d024411f5176d77aaf5a501a8d4e7eabdbd"
+      ],
+      "reason": "The removed branch offered active controls from ordinary pending closeout-door publication.",
+      "subject": "hunk:sha256:4ed8f1c198adf4af7523ddf85ed21d024411f5176d77aaf5a501a8d4e7eabdbd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E7E60Y",
+      "items": [
+        "sha256:09308afc284f83e7ad72ff55ce4248311605c56cfc9661600a6099b2052a3e6c"
+      ],
+      "reason": "The removed multi-kind cancelled helper observed ordinary closeout and integration state. The direct successor retains its own owner.",
+      "subject": "hunk:sha256:09308afc284f83e7ad72ff55ce4248311605c56cfc9661600a6099b2052a3e6c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EFYDWJ",
+      "items": [
+        "sha256:0185c9e60dc2011704d879624a170cecf54d56f4ac11dd7950e5ee6fdcafb916"
+      ],
+      "reason": "The test checks branch-authority refusal and exact replacement integration through the surviving synchronous owner.",
+      "sources": [
+        {
+          "blob": "f514fcff680eec8da520dcb68b88fb5be662691d",
+          "path": "mcp/tests/test_integration_branch_authority.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_integration_branch_authority.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ENBWJ1",
+      "items": [
+        "sha256:662584bc41d38a42127cbd79d8eb656fec365d915c8c996746d6693315927b48"
+      ],
+      "reason": "The schema drops the worker observation from the operation projection while keeping exact identity.",
+      "sources": [
+        {
+          "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
+          "path": "dashboard/src/types/projection.schema.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/types/projection.schema.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EQHE69",
+      "items": [
+        "sha256:9b5b29fe4103a0bb3370f9fbf25ac96407dcc30f0b70eaddd7ab03af6bbf76a7"
+      ],
+      "reason": "The surviving selection reads exact saved intent and outputs after retirement of the private producer.",
+      "sources": [
+        {
+          "blob": "98c00867427cb19068a59abf2f733f9a48ea0e35",
+          "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EW15CJ",
+      "items": [
+        "sha256:4f2fe0c9b9be20935b78ec43c174fb8961628fdba198524f44be4a484f03ff30"
+      ],
+      "reason": "Task retirement continues to verify exact terminal enclosure facts after the obsolete operation worker boundary leaves.",
+      "sources": [
+        {
+          "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+          "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/task_retirement.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F4K3HK",
+      "items": [
+        "sha256:12d6d812890cdc975f1dd7a9c9d49844cf77764d938eada87d8c32090a024617"
+      ],
+      "reason": "Terminal archive no longer performs a worker projection or checks for extinct process authority.",
+      "subject": "hunk:sha256:12d6d812890cdc975f1dd7a9c9d49844cf77764d938eada87d8c32090a024617"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-F5P5QB",
+      "items": [
+        "sha256:e6d3b5ebe8d3bc009c95920d054696c351ccc74ada4042dcdb869482c58eb1c5"
+      ],
+      "reason": "The W7 generated projection check passes for schema and TypeScript at the new anchor. The original L127 observation remains open because its historical cause is unresolved.",
+      "revision": 4,
+      "subject": "WKN-KEBWW1"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-FA9H9V",
+      "items": [
+        "sha256:a08c54c301ec49a84016ee2e54b2e3d1b6b2e4a56c76b937831389f7139faf27"
+      ],
+      "reason": "The mounted worktree_closeout_apply description says the call completes inside one call and the registered description test checks for the absence of the obsolete polling advice.",
+      "revision": 2,
+      "subject": "WKN-2GTSAE"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FDHG2N",
+      "items": [
+        "sha256:e4b7c3c397bdeb2e8832ebdbc6bf7c1bd67b2a6da030a5dad937afc90e6d43ea"
+      ],
+      "reason": "Retires the card for child process discovery and ownership for the retired worker after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/child_processes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/worker/child_processes.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FKHHT9",
+      "items": [
+        "sha256:882c796f593d1af540b013819b030551f089e2be1555a2c7edf7f499a4cd3a10"
+      ],
+      "reason": "Worker PID and exit refusal helpers leave. Exact surviving operation and archive blockers remain.",
+      "subject": "hunk:sha256:882c796f593d1af540b013819b030551f089e2be1555a2c7edf7f499a4cd3a10"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 2831,
+              "kind": "line_range",
+              "start": 2831
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "content": "sha256:ca4e0f4726a7b894a9ac5a2f5c43c5aefa74beaaf5f1b6037a07097d866ba16d",
+            "locator": {
+              "end": 2746,
+              "kind": "line_range",
+              "start": 2746
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-1WK7P0"
+        },
+        {
+          "after": {
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
+            "locator": {
+              "end": 589,
+              "kind": "line_range",
+              "start": 589
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:2b698977c12861afe9fde1638c9651dd93f2930f03ffcd5fd37df385e01025ac",
+            "locator": {
+              "end": 576,
+              "kind": "line_range",
+              "start": 576
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-9QPBZK"
+        },
+        {
+          "after": {
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 714,
+              "kind": "line_range",
+              "start": 714
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:9635c28f80fdb4ace2233d46e786ccf2715cbac64804bea54fe7ced895d346e9",
+            "locator": {
+              "end": 700,
+              "kind": "line_range",
+              "start": 700
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-NJFH31"
+        },
+        {
+          "after": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1222,
+              "kind": "line_range",
+              "start": 1222
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "content": "sha256:bbbf97cdda72978385c4e3eff412faf949a65110aee24dbf8df69bfc9040cd55",
+            "locator": {
+              "end": 1205,
+              "kind": "line_range",
+              "start": 1205
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-TB9TST"
+        },
+        {
+          "after": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 3108,
+              "kind": "line_range",
+              "start": 3108
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "content": "sha256:fa945b0e463a0b4f6077fac5a70b238f01a39610b6207f89e0d37009cc4357d1",
+            "locator": {
+              "end": 2986,
+              "kind": "line_range",
+              "start": 2986
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-VQZWNZ"
+        },
+        {
+          "after": {
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 543,
+              "kind": "line_range",
+              "start": 543
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:626fdf1de7dc33cb5b0dfa1a32f99b507f21ca9b19a8f13f077dcfd0bcc76ed1",
+            "locator": {
+              "end": 530,
+              "kind": "line_range",
+              "start": 530
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-ZTDYFT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FNZWFC",
+      "items": [],
+      "reason": "Restore each archive, role-report and task-document-order registration to the exact current catalog line for the original test and its original artifact or lane. The prior line pointers identified different tests. The catalog declarations record registration.",
+      "revision": 1,
+      "subject": "INV-0H8WBQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FXPBNG",
+      "items": [
+        "sha256:51766f3c23f57ac8e7fa6cedeb74032fe055d6591df31c150cb167e0b4c3e982"
+      ],
+      "reason": "The retired journal controller no longer completes a pending ordinary door.",
+      "subject": "hunk:sha256:51766f3c23f57ac8e7fa6cedeb74032fe055d6591df31c150cb167e0b4c3e982"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FYYMMK",
+      "items": [
+        "sha256:300e41f9702b7664c7ef70d7114db5a93ad7a91f508842ac55a3d4d4c81e9cf7"
+      ],
+      "reason": "Model helper coverage preserves old row readability and removes assertions about live worker transitions.",
+      "sources": [
+        {
+          "blob": "149e59682a2f8870e318b054d641fb6c36c868b9",
+          "path": "mcp/tests/test_lifecycle_operation_model_helpers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_lifecycle_operation_model_helpers.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G4QS8E",
+      "items": [
+        "sha256:5fcc2f931bf815d1023884ad592eaf6332dd6a285b1a8bacd8537ef8c53f2224"
+      ],
+      "reason": "The packaged instructions remain byte-equal to their canonical sources. The W8 Manager brief corrects the prerequisite and apply boundary. Its derived measurement changes in the packaged budget copy.",
+      "sources": [
+        {
+          "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "2c7dc6d83d1492b30d3948afc4f131805f1a373f",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G98K6X",
+      "items": [
+        "sha256:431decbbc7832f6c7c0fd51cb5ab2649f13180bf06e25bcb7b74e27971165514"
+      ],
+      "reason": "The blocker cases keep exact surviving terminal archive reasons after worker liveness reasons leave.",
+      "sources": [
+        {
+          "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
+          "path": "mcp/tests/test_terminal_blocker_reasons.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_terminal_blocker_reasons.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
+            "content": "sha256:c4ab6de117d061a69f7c7e1f8a612523e3a9f1f90e3d022159169a69b5fd131a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nothing_is_deleted_when_the_cache_receipt_cannot_be_written"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "before": "absent",
+          "id": "PRF-JKWY6X"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
+            "content": "sha256:c4ab6de117d061a69f7c7e1f8a612523e3a9f1f90e3d022159169a69b5fd131a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nothing_is_deleted_when_the_cache_receipt_cannot_be_written"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "id": "PRF-ZKS170"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-GCTCFF",
+      "items": [],
+      "reason": "The same-source successor replaces the broad facet of PRF-ZKS170 with the asserted cache, result, receipt path and retry behavior for the ordinary-sweep fixture. The application handles explainer retirement before ordinary receipt admission. The invariant meaning, status, origin and unrelated proofs retain their current bounds. Evidence (L15-M04-ordinary-sweep-PRF-ZKS170): Manager message 7dd9ad6a-96a2-4c87-9fcb-82c3460cb775 applies M182 and M187 to PRF-ZKS170. Exact W9 source mcp/tests/test_review_artifact_cleanup.py:774–787 witnesses the ordinary-sweep fixture. Its original proof, anchor and MIK-L82 origin remain in the W9 R2 candidate and repair evidence.",
+      "revision": 1,
+      "subject": "INV-25AJSA"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "efb7ffccf8d319a3a78f792358f5e057927c95bd",
+            "content": "sha256:7720b213152f6e6c666d4a0257f80b956520198ecf8900eede5e861fe41bccd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_outline_reads_only_indexes_and_preserves_catalogue_fields"
+            },
+            "path": "mcp/tests/test_review_change_kinds.py"
+          },
+          "before": "absent",
+          "id": "PRF-W1PWCB"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "efb7ffccf8d319a3a78f792358f5e057927c95bd",
+            "content": "sha256:7720b213152f6e6c666d4a0257f80b956520198ecf8900eede5e861fe41bccd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_outline_reads_only_indexes_and_preserves_catalogue_fields"
+            },
+            "path": "mcp/tests/test_review_change_kinds.py"
+          },
+          "id": "PRF-XG9875"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-GDMBGJ",
+      "items": [],
+      "reason": "The admitted successor covers the catalogue entries, ordered model-dump fields, totals and fail-if-called source, roster and detail callbacks. The test does not compare serialized catalogue bytes. Evidence (L15-M04-successor-PRF-XG9875): Manager 72a791c1-d754-43ab-808e-fa3aaf919622 admits this exact successor under M182 and M187. Source mcp/tests/test_review_change_kinds.py::test_the_outline_reads_only_indexes_and_preserves_catalogue_fields covers the narrowed facet. Original proof PRF-XG9875 is preserved in the W8 memory freeze and Curator repair evidence.",
+      "revision": 1,
+      "subject": "INV-S44D2D"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GNFEJR",
+      "items": [
+        "sha256:4ff1511a916f7482a6cc08fb42451ded39269b5e15e17ff30d56e23229476579"
+      ],
+      "reason": "The reader removes retired top-level worker-authority keys and each old preparation leg's commands before validating the remaining typed record. The card's current meaningful-state enumeration includes cancellation evidence and omits worker termination. `operation.py:435–461,552–576`.",
+      "sources": [
+        {
+          "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
+          "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/lifecycles/operation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GSD459",
+      "items": [
+        "sha256:ddb9fbb22315bf02998aeaa2e00820b1e51692194daa6bf9b531cdbe6f90aea2"
+      ],
+      "reason": "The controller no longer constructs an ordinary closeout-door request.",
+      "subject": "hunk:sha256:ddb9fbb22315bf02998aeaa2e00820b1e51692194daa6bf9b531cdbe6f90aea2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GZ5D33",
+      "items": [
+        "sha256:7ced2075efbb4e26243abe1d25bd67e13dbcd055375a1b78b666d685d4985f7c"
+      ],
+      "reason": "The model overview distinguishes legacy stored evidence and direct writes. Public liveness fields and worker termination types leave.",
+      "sources": [
+        {
+          "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
+          "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+        },
+        {
+          "blob": "038a743d781b2cba2f0a95dc584a0494a5b66507",
+          "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py"
+        },
+        {
+          "blob": "4d5810286c6ba0f42132a86a999f88868681ebfd",
+          "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+        },
+        {
+          "blob": "65d0ba36b7822187bf33b2286762071119320cda",
+          "path": "mcp/src/agents_remember/models/lifecycles/termination.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/lifecycles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+            "content": "sha256:e60c61c498338df3205d76894dd5b09a3e1005cc97e593f5cd557a2b1947fd5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_survey_operations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "before": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:bd2bd231808093322d036319a79b2890f799ed316aa587cce9ddd77491fb8dc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_survey_operations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "id": "RLZ-G30FNC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-H2GWCV",
+      "items": [
+        "sha256:304516e87e31673ba30dacaa9658f81921123bf3fca47a6788a0dca564c16fee"
+      ],
+      "reason": "The status and phase classification of retirement blockers and historical rows is unchanged. M857 adjusts the recovery guidance in task_retirement.py:404–421.",
+      "revision": 1,
+      "subject": "INV-GYCF1R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H2MW1C",
+      "items": [
+        "sha256:4c0e503d9565e86a1edce68f8b2a6983d7b5afa06b7cf5e160d681ec42a74fe7"
+      ],
+      "reason": "The direct-only helper retains recover and cancel guidance. The removed branches offered ordinary journal execution.",
+      "subject": "hunk:sha256:4c0e503d9565e86a1edce68f8b2a6983d7b5afa06b7cf5e160d681ec42a74fe7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HCYXPV",
+      "items": [
+        "sha256:ccd0e997bf4ae17e1e16bcf6e87a4e63d6f56da1829a5f874690b627473e38a3"
+      ],
+      "reason": "The projection no longer imports a closeout-contract digest for retired preparation controls.",
+      "subject": "hunk:sha256:ccd0e997bf4ae17e1e16bcf6e87a4e63d6f56da1829a5f874690b627473e38a3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HSDA99",
+      "items": [
+        "sha256:446aa458de88b31e505cd0791be86f69fdf90c768c30155ceb05b410e281959a"
+      ],
+      "reason": "The docstring explains that the direct executor does its work in the caller. The direct executor invariant carries the execution contract.",
+      "subject": "hunk:sha256:446aa458de88b31e505cd0791be86f69fdf90c768c30155ceb05b410e281959a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HX6JZM",
+      "items": [
+        "sha256:3fb8834b45e8f01e0f253cef00945a17f0b476e1e0e02a99779c0e1c657171d6"
+      ],
+      "reason": "The context docstring reflects its surviving caller-authority fields.",
+      "subject": "hunk:sha256:3fb8834b45e8f01e0f253cef00945a17f0b476e1e0e02a99779c0e1c657171d6"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HYEX6P",
+      "items": [
+        "sha256:0c70beebbe6e11c6866883c0b0bc3206291a35a2e1871074baf9c9ad4a722e9f",
+        "sha256:df3ce48e65ffb87440d2d64e4944d246e218f4558325931579d1b37c39fb8c6d"
+      ],
+      "reason": "The current workflow guide explains ordinary synchronous closeout and integration. An absent or matching historical generation returns lifecycle-operation-retired with worktree_closeout_apply or worktree_integrate as the replacement. A mismatching expected generation returns lifecycle-generation-changed. The direct-landing recovery, cancellation and retirement guidance remains. Evidence is the exact successor paragraph in docs/workflows.md, lifecycle_operation_controls.py:180–214,236–245,656–691 and docs/reference/worktrees-c09.md:205–217.",
+      "revision": 5,
+      "subject": "DPD-XAARS1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J2C119",
+      "items": [
+        "sha256:48225412fcda18f9824edb7e70a42866acaeaa045566f367892c650e0acdf170"
+      ],
+      "reason": "The application owner separates synchronous closeout and integration from records reported by worktree status.",
+      "sources": [
+        {
+          "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
+          "path": "mcp/src/agents_remember/application/worktree_status.py"
+        },
+        {
+          "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+          "path": "mcp/src/agents_remember/application/worktree_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J4WGB8",
+      "items": [
+        "sha256:f567c958366de739c0c4958226ccff7a16eca9b72bffcd79e3a669d1dccccf2c"
+      ],
+      "reason": "The dashboard contract test keeps schema validation and stops asserting the retired worker observation.",
+      "sources": [
+        {
+          "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
+          "path": "dashboard/src/test/contract.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/test/contract.test.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J5VRK1",
+      "items": [
+        "sha256:41dbdb45f06580e626915df8d92bab5f010cd24b5d686e7c98c4877c2c25eb71"
+      ],
+      "reason": "Retire keeps the exact completed owner and idle claim checks. The worker-exit guard leaves.",
+      "sources": [
+        {
+          "blob": "cb17f2e2ea65d9441f48aee556bc3cba254d8aa4",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JHZKW9",
+      "items": [
+        "sha256:9ef191b477eefaefb190d7831aa5e1dfd82bbd9516936d5a777efabccb876681"
+      ],
+      "reason": "The bounded public schema drops worker liveness and preserves saved operation identity, outcome and guidance.",
+      "sources": [
+        {
+          "blob": "038a743d781b2cba2f0a95dc584a0494a5b66507",
+          "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/lifecycles/operation_projection.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JJS49Y",
+      "items": [
+        "sha256:8bcd52c52057715fba8279f527e5a91467d0b3f4cc93ca8aa917ec8f5959dd77"
+      ],
+      "reason": "Retires the card for the retired ordinary journal execution tests after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/tests/test_lifecycle_operations.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_lifecycle_operations.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KQ94CB",
+      "items": [
+        "sha256:6ea3499e680b4e2542baf422464feeed7e2f7bd6c0a5a832c44fadd3b35c4d25"
+      ],
+      "reason": "The registered stdio calls preview closeout for an atomic child and an organizational leaf and separately dry-run ff-only integration for the atomic child. The fixture prepares code and memory and calls the production closeout application and integration handlers directly. The test checks the child code commit on the protected master code branch and verifies that both the child and master task documents still omit route review. Evidence is test_atomic_master_review_public.py:88–106,109–145,163–193,195–221,223–238 and the leaf contract mapping at test_closeout_queue.py:436–439.",
+      "sources": [
+        {
+          "blob": "a12ae3bcbcca940f73ae7261c3b1b44faa65efdd",
+          "path": "mcp/tests/test_atomic_master_review_public.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_atomic_master_review_public.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KR1XXV",
+      "items": [
+        "sha256:96f76699a2f6da990da50fbaf40453f23b87e2da9156547e5965dec04f1cb446"
+      ],
+      "reason": "Retires the card for the private operation-runner failure boundary after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KRE0Y4",
+      "items": [
+        "sha256:02473759f015daf6d4e9034bef19292c70f07af52de18aa1ec2d3039e274495f"
+      ],
+      "reason": "Retires the card for the removed worker and retired control test helpers after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/tests/lifecycle_control_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/lifecycle_control_test_support.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KYE34H",
+      "items": [
+        "sha256:ca3bcd9ff2ea4a59ef6a127d6eb6345fda111e901cf3afb4087b34d7e64a7a75"
+      ],
+      "reason": "Record update stops invoking the deleted detached-worker transition check.",
+      "subject": "hunk:sha256:ca3bcd9ff2ea4a59ef6a127d6eb6345fda111e901cf3afb4087b34d7e64a7a75"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "79c4deea44a5ca22159bfaf6b5bd4e52cf439247",
+            "content": "sha256:117ea9d0893b666ff035d82286533d87783308386322dbe979822a6997c5e5e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_saved_status_result_keeps_every_operation_projection"
+            },
+            "path": "mcp/tests/test_worktree_status_running_operation.py"
+          },
+          "id": "PRF-250ESY"
+        },
+        {
+          "after": {
+            "blob": "2c3c5c984a48f522e597ffd33ebe434a360ace9e",
+            "content": "sha256:7831dcd747895f44e38523a57b9d25b47247e390bceb231d2300db54f58f70b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_status_keeps_retired_history_and_direct_landing_controls"
+            },
+            "path": "mcp/tests/test_lifecycle_operation_journal_retired.py"
+          },
+          "before": "absent",
+          "id": "PRF-J60S4R"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "79c4deea44a5ca22159bfaf6b5bd4e52cf439247",
+            "content": "sha256:9f3eb9c058a03c4cccc4276608fa9d6871792f4b215cf9d36890bb8cf89bcff0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_status_answer_with_one_running_closeout_is_not_cut"
+            },
+            "path": "mcp/tests/test_worktree_status_running_operation.py"
+          },
+          "id": "PRF-PQZBHM"
+        },
+        {
+          "after": {
+            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
+            "content": "sha256:c0f9b848be97b41a72c57609ec73c4ee1d6919e2a29bbdf8292b5e01b203beec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_replace_operation_status"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "before": {
+            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+            "content": "sha256:efc531c9e0d3563a93b032399e1f9ad6a87a34c4ac7f101010c8c8d4d597605c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_replace_operation_status"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "id": "RLZ-5EMH3G"
+        },
+        {
+          "after": {
+            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
+            "content": "sha256:903e193013f7c074e0546b63e1f047e2d2a80abc49592d73889e4181ffd9682a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_running_operation_line"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "before": {
+            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+            "content": "sha256:6151c0040f1d26cd22fe203af4ca2890912f1ae0a99402b6952e2413029e09bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_running_operation_line"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "id": "RLZ-CQTHXJ"
+        },
+        {
+          "after": {
+            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+            "content": "sha256:67cfb4b6770e4a1a10722650d6dce0b6441b30d9a7fa7d5e6c63921db142662e",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "c4ee8765597f72bc3004b0249af68fed374bd5d2",
+            "content": "sha256:19c66249dc257edb5ca10237bfc21a87822b1af96c88466b8da139c12ccefe82",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-KZEKN1"
+        },
+        {
+          "after": {
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "content": "sha256:bc50c2158da4c91d75b9d7016c966e32171ed811c248044fe84414cdd1ebdce6",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleOperationCount"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "before": {
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "content": "sha256:bc50c2158da4c91d75b9d7016c966e32171ed811c248044fe84414cdd1ebdce6",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleOperationCount"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "id": "RLZ-R1EJ8P"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-MCGPN3",
+      "items": [
+        "sha256:8373971863ec437a10b7b4c4e6a8c4a8582ab70db214d19614534f2da1085261"
+      ],
+      "reason": "BUG-R15, D877, D881 and F08 retire the ordinary closeout/integration running-status contract. worktree_status.py:450–497 preserves the saved projection list and count, and only a queued or running direct landing supplies a compact sentence. The two retired proof nodes refer to deleted ordinary closeout behavior. Coordination.md:137 carries direct-landing status and control. Evidence (curator-w7-status-proof): mcp/tests/test_lifecycle_operation_journal_retired.py::test_registered_status_keeps_retired_history_and_direct_landing_controls",
+      "revision": 2,
+      "subject": "INV-H4PZ9X"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MDB14X",
+      "items": [
+        "sha256:2ccf69c25a67011f9c23b81d95f6bc493b1c7af2c8d267d86be37c65ecdd0d4f"
+      ],
+      "reason": "The controller no longer reads an ordinary live door to resume a retired generation.",
+      "subject": "hunk:sha256:2ccf69c25a67011f9c23b81d95f6bc493b1c7af2c8d267d86be37c65ecdd0d4f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MHWW9N",
+      "items": [
+        "sha256:b56dbbb2ef32a337d8cb52238e23151860ea227171df84520a00ac7f21aa38bd"
+      ],
+      "reason": "The private nonterminal helper drops the unused integration observation parameter.",
+      "subject": "hunk:sha256:b56dbbb2ef32a337d8cb52238e23151860ea227171df84520a00ac7f21aa38bd"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MRS60E",
+      "items": [
+        "sha256:20fa543e6821ae0e2358484cbc6977e9c239482fb2b1e0ee6bd56885bf2cd1d4"
+      ],
+      "reason": "The lifecycle overview keeps the existing prepare, publish and validate procedure. The canonical Manager brief now points to it before apply. The canonical budget row carries the regenerated measurements.",
+      "sources": [
+        {
+          "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+          "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+        },
+        {
+          "blob": "2c7dc6d83d1492b30d3948afc4f131805f1a373f",
+          "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MZEPG2",
+      "items": [
+        "sha256:bdc41af9e032899476363d8f339f26d8d0baf3c4d372cb43700f97c115b7ddd7"
+      ],
+      "reason": "The projection no longer imports worker exit authority or ordinary closeout recovery identity.",
+      "subject": "hunk:sha256:bdc41af9e032899476363d8f339f26d8d0baf3c4d372cb43700f97c115b7ddd7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N0NS9K",
+      "items": [
+        "sha256:b430d8d372093db8071611b840303ca353fd4e9e2f762fa204223a208fe00168"
+      ],
+      "reason": "The public dispatch owns synchronous closeout and integration and gives legacy control requests their replacement entry.",
+      "sources": [
+        {
+          "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+          "path": "mcp/src/agents_remember/application/worktree_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/worktree_tools.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N7P7FX",
+      "items": [
+        "sha256:9de69ca4fdde8361bdc35974bd2ddbb79cbf8071d6ae2de5890b6faf4881807f"
+      ],
+      "reason": "The role instructions reserve executable journal controls for direct landing and send ordinary closeout and integration to synchronous tools.",
+      "sources": [
+        {
+          "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+          "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:0619c308bf7e3693bf4e089706e2a4e4e9afbb4bc5265d6af206f1913cb75c7f",
+            "locator": {
+              "end": 4045,
+              "kind": "line_range",
+              "start": 4045
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "content": "sha256:34e6b24f63ad6d3203cc5f6f0f181b45f2d2481ad35a2592054fe8e19c743b2d",
+            "locator": {
+              "end": 3978,
+              "kind": "line_range",
+              "start": 3978
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-A31DQW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-N8QYTX",
+      "items": [],
+      "reason": "Restore the pointer to the FakePaseo fixture source-version sentence. The held catalog labels the stand-in for the pinned 0.16.2 runtime. The sealed L123 history retains the earlier 0.11.1 evidence.",
+      "revision": 3,
+      "subject": "INV-0TCWT9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NGQ7DY",
+      "items": [
+        "sha256:82686e960bd3327df3f6484db7981466c9136b66c2d08fd5bd37cd5c937235cc"
+      ],
+      "reason": "Ordinary door authorization and task context leave the retired journal-controller path.",
+      "subject": "hunk:sha256:82686e960bd3327df3f6484db7981466c9136b66c2d08fd5bd37cd5c937235cc"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-NHHBHP",
+      "items": [],
+      "reason": "The contributor guide still describes existing lane selection and canonicalization. Retiring obsolete tests and adding journal compatibility and launch fitness tests changed membership.",
+      "revision": 8,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NWJPV6",
+      "items": [
+        "sha256:e5467dbfad6e8e4ef9fd9efb1c6c9c88f05b85d0eb257b205c15353e54c4490a"
+      ],
+      "reason": "The public description limits controls to direct landings and names replacement guidance. The direct-only control invariant carries the boundary.",
+      "subject": "hunk:sha256:e5467dbfad6e8e4ef9fd9efb1c6c9c88f05b85d0eb257b205c15353e54c4490a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P1AY0G",
+      "items": [
+        "sha256:74a283c41d833a108d6bdf4fcd97cfaa2d46b5bfcbf73f563dd00246319df094"
+      ],
+      "reason": "A frozen old closeout row proves the current reader can inspect historical journal evidence.",
+      "sources": [
+        {
+          "blob": "aa72c4ca690ade23457a79457c8763b055f326cf",
+          "path": "mcp/tests/fixtures/lifecycle/old-writer-closeout-record.json"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/fixtures/lifecycle/old-writer-closeout-record.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "content": "sha256:064de2066a21fad3b47a2b87feb92c7bdde181b76e59e1172c17e449b1c73655",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeCommandResponse"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "before": {
+            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "content": "sha256:064de2066a21fad3b47a2b87feb92c7bdde181b76e59e1172c17e449b1c73655",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeCommandResponse"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "id": "RLZ-AVSFRK"
+        },
+        {
+          "after": {
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:1629e291661bcc6750b4f89e567cd811a9d4969d78dd014de0a83a18862c9273",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:dc44cac147a4b2c72aca6fc606426f712c933c5ff1ba8017be4f5cb0d82b0449",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "content": "sha256:c87b7853f8f4a4e32f8e60f6d7ce941573d3cfbbaae42ebdf53e7234def4f622",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-P6F29H",
+      "items": [
+        "sha256:d7d6c94d11d0d46878b52745b4a910e02ed3cb0e86912079c1dc85bfa801733a"
+      ],
+      "reason": "WorktreeCommandResponse still has the same scratch representation. The evidence and lane catalogs retain the scratch ownership checks.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P8CTV7",
+      "items": [
+        "sha256:4fa24fc2ca1d5426418ebb5d5176c986937013574ebf38cd573201e6529f20e7"
+      ],
+      "reason": "The fixture invokes synchronous integration and verifies the surviving terminal retirement conditions.",
+      "sources": [
+        {
+          "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+          "path": "mcp/tests/test_master_retirement_readiness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_master_retirement_readiness.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PGN0JC",
+      "items": [
+        "sha256:31f5e91ccb40713711344c428fc820e48235ec5a508aedf902fbd4c8a3df5495"
+      ],
+      "reason": "Corrected ordinary closeout call arguments are no longer authored by the journal controller.",
+      "subject": "hunk:sha256:31f5e91ccb40713711344c428fc820e48235ec5a508aedf902fbd4c8a3df5495"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PHZHD6",
+      "items": [
+        "sha256:86026a88b4d6c72970d998b64c0d99d03631e92dc084758f607b11fc87878b58"
+      ],
+      "reason": "The store stops importing retired worker termination and private preparation transition validators.",
+      "subject": "hunk:sha256:86026a88b4d6c72970d998b64c0d99d03631e92dc084758f607b11fc87878b58"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
+            "content": "sha256:c44988864277ae0124127d68eeec178c54585cb7d3274674e62342deb2d273b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixed_short_part"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": {
+            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+            "content": "sha256:a8dd2bf11972c07dd79e9b5ea261dc0f24b129ac2fbf8e591f49f10f120d7740",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixed_short_part"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "id": "RLZ-ZQJY2P"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PP097P",
+      "items": [
+        "sha256:c8003ef52938fee7d13934a7cfd589963d45c5476e8866c5fcbc0cf69da98451"
+      ],
+      "reason": "The executable AST of _fixed_short_part is identical. Its comment identifies direct landing as the live source while the compact answer size and exact result path remain the same.",
+      "revision": 3,
+      "subject": "INV-CQSY2Z"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+            "content": "sha256:28a7d6e1bea131baf727f056e96a8d5c973504040bc7f4838a53ecc879b84825",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_operation_report_where_an_older_layout_kept_it_is_a_fact"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "before": {
+            "blob": "f43d00cdb4b04314b57b9b486c035fed3d6772ab",
+            "content": "sha256:28a7d6e1bea131baf727f056e96a8d5c973504040bc7f4838a53ecc879b84825",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_operation_report_where_an_older_layout_kept_it_is_a_fact"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "id": "PRF-BFJAA4"
+        },
+        {
+          "after": {
+            "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+            "content": "sha256:927b26e73d1403f7cf56b511412203c885c2cced526c7a73a23d32c93aacef01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_operation_record_that_is_unfinished_or_unreadable_is_open_work"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "before": {
+            "blob": "f43d00cdb4b04314b57b9b486c035fed3d6772ab",
+            "content": "sha256:927b26e73d1403f7cf56b511412203c885c2cced526c7a73a23d32c93aacef01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_operation_record_that_is_unfinished_or_unreadable_is_open_work"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "id": "PRF-E3D3S9"
+        },
+        {
+          "after": {
+            "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+            "content": "sha256:e60c61c498338df3205d76894dd5b09a3e1005cc97e593f5cd557a2b1947fd5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_survey_operations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "before": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:bd2bd231808093322d036319a79b2890f799ed316aa587cce9ddd77491fb8dc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_survey_operations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "id": "RLZ-2TSG5Z"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PR5QRA",
+      "items": [
+        "sha256:fc0e7c8f91c4a7e998c13a9a3ff7588964f0a4cf3f35c710c507c445e7c55d6e"
+      ],
+      "reason": "The survey still refuses unfinished and unreadable live-enclosure operations and reports older-layout rows as facts. M857 aligns the next tool with the operation kind at task_retirement.py:362–447.",
+      "revision": 1,
+      "subject": "INV-8MKBTB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PYBW24",
+      "items": [
+        "sha256:f32858333e91df311cb75fcf8b93fdd7865a59cac9cbc2c022e7d6922cf963ab"
+      ],
+      "reason": "The surviving support constructs exact inputs for live closeout without a detached worker.",
+      "sources": [
+        {
+          "blob": "cfda37628ff237411040a297821cd403f081cc5a",
+          "path": "mcp/tests/closeout_input_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/closeout_input_test_support.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q6W2R3",
+      "items": [
+        "sha256:9ec42fbb864a5e1b690a5784b84cc498d9bc30ff0966fa1780a2e4901ab4de77"
+      ],
+      "reason": "The modules overview covers resolved synchronous arguments and route ownership.",
+      "sources": [
+        {
+          "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+          "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QA2YSP",
+      "items": [
+        "sha256:fd2a2c3b25f2d7a4479fd6531f8bc01ac7e2cbccb62c6164c2e8304b3f71c19a"
+      ],
+      "reason": "The imports reflect the typed always-refusing historical handler and removal of obsolete path handling.",
+      "subject": "hunk:sha256:fd2a2c3b25f2d7a4479fd6531f8bc01ac7e2cbccb62c6164c2e8304b3f71c19a"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC",
+        "FAM-7AEA19",
+        "FAM-8SX6BT",
+        "FAM-A43781",
+        "FAM-GJYFFP",
+        "FAM-NQQP2T"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-QANMTR",
+      "items": [],
+      "reason": "The proposed statement protects its own public boundary. The six reached families retain their existing direct-pair, answer-shaping, retirement, host and instruction ownership guarantees.",
+      "revision": 1,
+      "subject": "membership:INV-JD0H96"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC",
+        "FAM-7AEA19",
+        "FAM-8SX6BT",
+        "FAM-A43781",
+        "FAM-GJYFFP",
+        "FAM-NQQP2T"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-QRR904",
+      "items": [],
+      "reason": "The proposed statement protects its own public boundary. The six reached families retain their existing direct-pair, answer-shaping, retirement, host and instruction ownership guarantees.",
+      "revision": 1,
+      "subject": "membership:INV-5QFWCA"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QTY52H",
+      "items": [],
+      "reason": "The guide still describes lane membership and artifact ownership. The catalog now includes two permanent historical journal fixtures.",
+      "revision": 7,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0VAC47",
+          "revision": 2
+        },
+        {
+          "id": "INV-180VCA",
+          "revision": 2
+        },
+        {
+          "id": "INV-ANKVYJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-B7J1PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CQSY2Z",
+          "revision": 3
+        },
+        {
+          "id": "INV-E8S0YF",
+          "revision": 1
+        },
+        {
+          "id": "INV-GWG9HD",
+          "revision": 1
+        },
+        {
+          "id": "INV-JRV850",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJFNBQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MDE1ZN",
+          "revision": 1
+        },
+        {
+          "id": "INV-QN78E9",
+          "revision": 2
+        },
+        {
+          "id": "INV-SYBT3F",
+          "revision": 2
+        },
+        {
+          "id": "INV-XJ7GV5",
+          "revision": 2
+        },
+        {
+          "id": "INV-Y3TD13",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-QVH5PT",
+      "items": [
+        "sha256:d18d242df8f98c25c480eabaf979d3f51ebba977a669b17fa33e1eedb343e141"
+      ],
+      "reason": "The fixed short answer preserves its scalars, exact recorded-result location and final hint. A comment now names its direct-landing status producer.",
+      "revision": 2,
+      "subject": "FAM-8SX6BT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QVT8EH",
+      "items": [
+        "sha256:5886311fbab858c1324c38280601f022774832becf257ede292df46060cbb82f"
+      ],
+      "reason": "The removed helper interpreted retained ordinary closeout and integration evidence to offer executable controls. Historical records now offer none.",
+      "subject": "hunk:sha256:5886311fbab858c1324c38280601f022774832becf257ede292df46060cbb82f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
+            "content": "sha256:b6efa8989f3d851efd32bdb4bbce145673470eab83558a0c0087c1e943ea1935",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "before": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:33cb6a476b32ec7471bad8db51894ffd8ca7e03ae17d4cbff4c8540088600dca",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "id": "RLZ-P2X7X4"
+        },
+        {
+          "after": {
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
+            "content": "sha256:98f98f0da3a72976597a9f4700dcbbe3dcfcb9f23d333be71cc0392d7ba4072a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/projection.schema.json"
+          },
+          "before": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:226243af578a1991bdde83d7cd74b6f6a014c39efb20e48e7a0cbd474ca578c2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/projection.schema.json"
+          },
+          "id": "RLZ-T8YPHW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-REC8XQ",
+      "items": [
+        "sha256:a785fd0995dd9d2961699ee7106ae63c494a7812f1244f8091345660d84a085b"
+      ],
+      "reason": "The dashboard status schema and types remove the worker observation. Attention kinds and their legacy tolerance remain unchanged.",
+      "revision": 1,
+      "subject": "INV-EQGQ9G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RJGX1G",
+      "items": [
+        "sha256:fb95b45d40ba8b1af05de6e0f2d3680fa1075b83345b3c5854af718eaa1a1a2d"
+      ],
+      "reason": "Decorated resume input is no longer transported through the historical journal control.",
+      "subject": "hunk:sha256:fb95b45d40ba8b1af05de6e0f2d3680fa1075b83345b3c5854af718eaa1a1a2d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RXBRT4",
+      "items": [
+        "sha256:cc6db0a55a0f40e895fc8965da20446280312ae8a8c4c1304331740b57120074"
+      ],
+      "reason": "Retires the card for the detached ordinary closeout and integration launcher after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+            "content": "sha256:8b942d37948d9ea6ee056b247a1ed2487ebaa8d4801c9a75ab91b8b76ff5fd5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_survey_leaf_side"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "before": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:8b942d37948d9ea6ee056b247a1ed2487ebaa8d4801c9a75ab91b8b76ff5fd5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_survey_leaf_side"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "id": "RLZ-0ZJ1J2"
+        },
+        {
+          "after": {
+            "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+            "content": "sha256:8c1e9770cbb0bd51d7bb9f1e75c123ae56fc5ba570bee5e5f3f9694d6d58b040",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_master_retirement_ready"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "before": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:8c1e9770cbb0bd51d7bb9f1e75c123ae56fc5ba570bee5e5f3f9694d6d58b040",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_master_retirement_ready"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "id": "RLZ-485GZQ"
+        },
+        {
+          "after": {
+            "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+            "content": "sha256:e60c61c498338df3205d76894dd5b09a3e1005cc97e593f5cd557a2b1947fd5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_survey_operations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "before": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:bd2bd231808093322d036319a79b2890f799ed316aa587cce9ddd77491fb8dc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_survey_operations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "id": "RLZ-HMZNTG"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-S0EHQE",
+      "items": [
+        "sha256:4fafce2f24e421928fbab740c8f17a9b06df38fb480b4202aad5290e85760bc9"
+      ],
+      "reason": "The survey preserves structural open-work rules and older-layout audit facts. It chooses a current remediation for the observed kind.",
+      "revision": 1,
+      "subject": "INV-YQY9PX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S38618",
+      "items": [
+        "sha256:4f5c0694e1629953643d49ffe9a71975ded5bfc40500ceaf59e4c2fdfca561b3"
+      ],
+      "reason": "The retired supersede constructor offered an ordinary closeout journal successor. Direct supersede keeps its refusal.",
+      "subject": "hunk:sha256:4f5c0694e1629953643d49ffe9a71975ded5bfc40500ceaf59e4c2fdfca561b3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SA1XKW",
+      "items": [
+        "sha256:73da417fc1f3a24fcfb790aa8b43eb33c724f016a32385cc658896d183b43037"
+      ],
+      "reason": "The historical journal controller no longer assembles closeout gate-policy snapshots.",
+      "subject": "hunk:sha256:73da417fc1f3a24fcfb790aa8b43eb33c724f016a32385cc658896d183b43037"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SB7Q3X",
+      "items": [
+        "sha256:b01fd0e32c6f61a7896ef4243937163df09c58e2a3c3b2959750451d0390e818"
+      ],
+      "reason": "The direct executor stays synchronous and retains its exact-generation recovery record.",
+      "sources": [
+        {
+          "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+          "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/direct_landing.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SBG76A",
+      "items": [
+        "sha256:da2f4c8e64ff012b35959db6fd84d8aceefbe70626e4e7b993269ec05ef1520c"
+      ],
+      "reason": "Worker PID and lease no longer guard a retry of the retired ordinary launcher. Direct recovery has its own retained evidence checks.",
+      "subject": "hunk:sha256:da2f4c8e64ff012b35959db6fd84d8aceefbe70626e4e7b993269ec05ef1520c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SCZA3Z",
+      "items": [
+        "sha256:59f5d9ad144a046c98b71268712308c23ed219b85cbf9e1779951e26d278ca47"
+      ],
+      "reason": "The contract test checks routing and outcome of synchronous closeout without a worker-start response.",
+      "sources": [
+        {
+          "blob": "cc8cd6ba9ed6c676cd078c14e1f8a31273573be4",
+          "path": "mcp/tests/test_quality_gate_public_contract.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_quality_gate_public_contract.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SYKY65",
+      "items": [
+        "sha256:a823da19b8b21a64b58d391894d090a072f7b5b4b2c7968b736bfd3bc3d46cb1"
+      ],
+      "reason": "The card shows receipt validation before the no-output Git proof, cancellation publication, and gated receipt restoration for the accepted direct generation. The named unreadable-receipt test checks the typed refusal and that prove_cancellable_git was never called. `control/cancellation.py:66–92,125–154` and `mcp/tests/test_knowledge_gate_routes.py:627–650`.",
+      "sources": [
+        {
+          "blob": "142a7b179a91b5749301cc549bb5906fec73d9f0",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8PJF2P",
+          "revision": 1
+        },
+        {
+          "id": "INV-HM7Z8C",
+          "revision": 1
+        },
+        {
+          "id": "INV-NQKEQS",
+          "revision": 1
+        },
+        {
+          "id": "INV-X16RQH",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y6DF2N",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ6Z5",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-SYXYS0",
+      "items": [
+        "sha256:bd8e6f13a6c3f0a3b15c58a34000903429c815e4450a1a9e3339ce3d4597f024"
+      ],
+      "reason": "Direct recovery continues the admitted generation and distinguishes an exact recoverable cut from ambiguity. The old non-direct branch had no admitted direct recovery authority.",
+      "revision": 1,
+      "subject": "FAM-GJYFFP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SZ0NJR",
+      "items": [
+        "sha256:90572914ecb21c8892e54d6873d6eb4e49f9cc7885fac4f75450f404424a91c3"
+      ],
+      "reason": "The synchronous closeout entry replaces the retired ordinary journal resume path.",
+      "subject": "hunk:sha256:90572914ecb21c8892e54d6873d6eb4e49f9cc7885fac4f75450f404424a91c3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SZPDDK",
+      "items": [
+        "sha256:ee215f196c098eccacfdb58e8661f80ac14e003534285cf4d2b43c40d2338356"
+      ],
+      "reason": "The projection no longer imports integration-journal observation or classification.",
+      "subject": "hunk:sha256:ee215f196c098eccacfdb58e8661f80ac14e003534285cf4d2b43c40d2338356"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T0KXJT",
+      "items": [
+        "sha256:88ca88c784469519bf3cf35bb86f9b2ef9a2ad9798c2ca7a6e5e8d30d39fe9af"
+      ],
+      "reason": "The model overview removes worker projections and records synchronous replacement verbs and current direct generation identity.",
+      "sources": [
+        {
+          "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+        },
+        {
+          "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+          "path": "mcp/src/agents_remember/models/worktree.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TA6FRV",
+      "items": [
+        "sha256:d5ec7d6938349483d4aa1984faaee149c1c91fe3bebc5bea540f9c7af241a873"
+      ],
+      "reason": "Legacy private preparation evidence is readable after the old write rail leaves.",
+      "sources": [
+        {
+          "blob": "4d5810286c6ba0f42132a86a999f88868681ebfd",
+          "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TPGX8M",
+      "items": [
+        "sha256:78caf13897210e8e350b80555b4bda9cf2c0b777e8c2d2ac70ba6503d99bcdd7"
+      ],
+      "reason": "The registration wording and result vocabulary describe the synchronous closeout apply and identify current journal controls as direct.",
+      "sources": [
+        {
+          "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+          "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/closeout.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TQAJJ3",
+      "items": [
+        "sha256:e6e8b2f925502ac3d1f8fb125f7e0eb732ef4faaa10df9c0a127c6c30e0d6ff7"
+      ],
+      "reason": "The generation overview retires the ordinary journal creator and preserves exact direct generation recovery.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py"
+        },
+        {
+          "blob": "31a8c184418a5a8ec267bca5f455255b82d89b80",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/generation/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+            "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": {
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "id": "RLZ-4F8E1Q"
+        },
+        {
+          "after": {
+            "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+            "content": "sha256:cadf3b92b7d49152696d69d21238fd85898b5caa826eceae3786c70bcc965510",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completed_direct_controls"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "before": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:cadf3b92b7d49152696d69d21238fd85898b5caa826eceae3786c70bcc965510",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completed_direct_controls"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "id": "RLZ-5HMHRZ"
+        },
+        {
+          "after": {
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:b2b6b2e781f10312b5f6edcd6a19967962274b3669dbc56a9f72cc117c0ee3e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "before": {
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "id": "RLZ-BECF82"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TRXB79",
+      "items": [
+        "sha256:e27f67414c139fe8f3f3d6d4ac269184428abd06ab8c14d2da40d7c6ab4e6c81"
+      ],
+      "reason": "The exact direct-generation admission, completed-owner check, inline recovery and same-call closing receipt settlement still hold in direct_landing.py and lifecycle_operation_controls.py:320–354.",
+      "revision": 1,
+      "subject": "INV-3N9432"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TY3Q25",
+      "items": [
+        "sha256:b041a303b93a8c08fd8e8a847c2377b61737d146ac3e8b5551ae227cad079f20"
+      ],
+      "reason": "The validator for detached worker-termination state is deleted. The store retains exact generation checks and durable evidence.",
+      "subject": "hunk:sha256:b041a303b93a8c08fd8e8a847c2377b61737d146ac3e8b5551ae227cad079f20"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VG0VFB",
+      "items": [
+        "sha256:048696dbd74079e5653ea6a0044b53c1701e150a256f8de42f39611d2c98e574"
+      ],
+      "reason": "Retires the card for the removed selected operation test fixture after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/tests/selected_lifecycle_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/selected_lifecycle_test_support.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VH70C5",
+      "items": [
+        "sha256:16b67cb1c199365ed0ca7efabac8c08f4bf381ed6bfad5d96d861138ce011d74"
+      ],
+      "reason": "Terminal archive reconciliation still reads exact current evidence without a retired worker PID, termination or lease check.",
+      "sources": [
+        {
+          "blob": "2cc4102fc9005b89c8d955d038b446040ff7e520",
+          "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VMT3R7",
+      "items": [
+        "sha256:2b26a7067e675afd5defb36af5cc4d6c149b6c7cadead41cc23c11d74d1d3a9f"
+      ],
+      "reason": "The response owner no longer projects a staged closeout apply worker outcome.",
+      "sources": [
+        {
+          "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/tool_answer.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-VSBBRP",
+      "items": [
+        "sha256:6177636ae092564308c17c9e0ffc187b225bd1ff66f927d2d87b44db67115779"
+      ],
+      "reason": "The reference retains route-review authority and describes synchronous closeout and integration, retired journal refusals and direct-only live status.",
+      "revision": 8,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W3W3MY",
+      "items": [
+        "sha256:ff0073270bfa48521119256157655fbbd5ba91662e2cec063e53d720a4c7dbd4"
+      ],
+      "reason": "The projection call no longer receives a legacy integration observation.",
+      "subject": "hunk:sha256:ff0073270bfa48521119256157655fbbd5ba91662e2cec063e53d720a4c7dbd4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W60ZZ4",
+      "items": [
+        "sha256:2f630cba9da94bf1ce6de3b529645cd692a3ed732d0c46e40cf7c203945e4250"
+      ],
+      "reason": "The archive tool no longer imports a detached worker liveness projection.",
+      "subject": "hunk:sha256:2f630cba9da94bf1ce6de3b529645cd692a3ed732d0c46e40cf7c203945e4250"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W6PYZ3",
+      "items": [
+        "sha256:0e1e556de2fe3c637a6535ad81f2f32c7c5db817a086feb1f05d583e4d71d036"
+      ],
+      "reason": "The mock message explains that the unchanged Git proof is what must remain untouched.",
+      "subject": "hunk:sha256:0e1e556de2fe3c637a6535ad81f2f32c7c5db817a086feb1f05d583e4d71d036"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W7BBN0",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The catalog drops retired tests and names the current consumers for retained support and legacy journal fixtures.",
+      "sources": [
+        {
+          "blob": "d8a614375316b5233411201916453bc5935890f4",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W8N8D1",
+      "items": [
+        "sha256:5337ea097ea5d8e701fba444540ff1917e581d151c5dbecdae7030fcac36e9b8"
+      ],
+      "reason": "The overview keeps selected private intent, output, operation, protected logical refs and certification evidence distinct from ordinary synchronous closeout. Journal decoding removes the former per-leg command fields. Sources are preparation_selection.py:26–82,109–164 and models/lifecycles/operation.py:435–461.",
+      "sources": [
+        {
+          "blob": "98c00867427cb19068a59abf2f733f9a48ea0e35",
+          "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/closeout/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W8NTGV",
+      "items": [
+        "sha256:d10a9c0cc90af962f904cdd4708000e5c83e2a52f7cd0f5e14ef82f0f107e4c6"
+      ],
+      "reason": "The route test drops the mock for the retired worker terminator.",
+      "subject": "hunk:sha256:d10a9c0cc90af962f904cdd4708000e5c83e2a52f7cd0f5e14ef82f0f107e4c6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WKT2QH",
+      "items": [
+        "sha256:268d41c5cfc572e535c30b97a92742b9e07adbccc711d518338454b116203efc"
+      ],
+      "reason": "The dashboard wire schema, fixture and contract test remove the worker observation while retaining operation identity.",
+      "sources": [
+        {
+          "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
+          "path": "dashboard/src/fixtures/snapshot.json"
+        },
+        {
+          "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
+          "path": "dashboard/src/test/contract.test.ts"
+        },
+        {
+          "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
+          "path": "dashboard/src/types/projection.schema.json"
+        },
+        {
+          "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
+          "path": "dashboard/src/types/projection.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2c7dc6d83d1492b30d3948afc4f131805f1a373f",
+            "content": "sha256:8938f7dc698a85538e3e29ff6bb407898d7dc6dc980869c4299097afb7cd446f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "before": {
+            "blob": "e3f14fd6204940ace8a22d216c6ba13e5a8cd8f7",
+            "content": "sha256:5488060f32244e500220deb21c609e5b3308e05211e99c3ce9c954b2ae1560a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "id": "RLZ-VP8NQM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WQ3AAQ",
+      "items": [
+        "sha256:01f2bc92117e34dac8d1d3658ba2aa7c8c2aa2d646a48da7e474f812f3f0928f"
+      ],
+      "reason": "The Manager brief links to the existing governing closeout procedure for curation validation. The template still defers to its source role and operation authority.",
+      "revision": 3,
+      "subject": "INV-WHEFVS"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WXHSEP",
+      "items": [
+        "sha256:6cd2247bd40649d96c4073a8fa23866d670c3c455e9d4317680404c75abe2fc8"
+      ],
+      "reason": "The controller no longer reloads and classifies ordinary integration for a journal mutation.",
+      "subject": "hunk:sha256:6cd2247bd40649d96c4073a8fa23866d670c3c455e9d4317680404c75abe2fc8"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-X45K7R",
+      "items": [],
+      "reason": "The bootstrap guide's pytest lanes and candidate isolation account still applies after the selected tests changed in their existing lanes.",
+      "revision": 8,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XCRGH6",
+      "items": [
+        "sha256:76c589367d2807d142e318a3f6f0115624ac74d1df96293b1c911a4ac2be54be"
+      ],
+      "reason": "The journal control stops deriving closeout commit messages. The synchronous closeout request owns them.",
+      "subject": "hunk:sha256:76c589367d2807d142e318a3f6f0115624ac74d1df96293b1c911a4ac2be54be"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XG55GJ",
+      "items": [
+        "sha256:2b8aaa3d8bc6d4fd80069539086671c0e0290a29f161d24aa4a68130a6a99ac8"
+      ],
+      "reason": "Retires the card for detached worker lease and liveness decisions after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/worker/state.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:d45c9ccf891b5c558a018c170e9b8c45048a3796c04c36ea33d9929f19e22e71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "ae2fe13d4977bb319451dd619f03b611141bcd2a",
+            "content": "sha256:5c7d9e138912cb80dc9ba7d6ef7961e28b2a9cf70ecbec264ec97cebb46c8c54",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XJJMQ4",
+      "items": [
+        "sha256:73d6714dd1148693617bde272bf0aff980063137578698fc6a6ce7d78f9bf944"
+      ],
+      "reason": "Both budget copies remain byte-equal. The W8 regeneration updates only the source hash and word count for the Manager brief in each carrier. The same canonical renewal entry owns both copies.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XP6PJ7",
+      "items": [
+        "sha256:4d5311c62195f6d58983c0d2fbb88641bcc987cb1ac977b77c155f44b1c521cf"
+      ],
+      "reason": "The current module defines generation-bound LifecycleCancellationEvidence, with a non-empty expected map equal to observed and a proof timestamp. Its workerExitProven field is retained for compatibility and the cancellation evidence builder supplies it without observing a process. `termination.py:10–27` and `lifecycle_operation_control_evidence.py:73–81`.",
+      "sources": [
+        {
+          "blob": "65d0ba36b7822187bf33b2286762071119320cda",
+          "path": "mcp/src/agents_remember/models/lifecycles/termination.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/lifecycles/termination.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XR6Z36",
+      "items": [
+        "sha256:0d3836fc95008c5f3f98f6fddf5ec8fadf7263c3860c907a91547ee98e8262a5"
+      ],
+      "reason": "The docstring identifies the store as owner instead of naming the removed runner.",
+      "subject": "hunk:sha256:0d3836fc95008c5f3f98f6fddf5ec8fadf7263c3860c907a91547ee98e8262a5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XV2GGK",
+      "items": [
+        "sha256:10f216f04a14ffb312435712525a949e30d867e70f1bc83c24110f215987353e"
+      ],
+      "reason": "The retained certification helper compares the running integration owner's contract, key, exact generation, authority, cancellation state, repository, HEAD and candidate tree. The synchronous ordinary integration entry dispatches directly to integrate_result. `integration/certification.py:112–155` and `application/worktree_tools.py:405–418`.",
+      "sources": [
+        {
+          "blob": "712aed3c9a71e9b1a6404e12c1224c5c2b751852",
+          "path": "mcp/src/agents_remember/worktrees/integration/certification.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/certification.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XWSSTW",
+      "items": [
+        "sha256:5c54169cef179c58339e67a3c0325eccd1072e90389116d1fcdb92c27f9fe46d"
+      ],
+      "reason": "The registration overview points practitioners to synchronous closeout apply and labels historical journal control refusals.",
+      "sources": [
+        {
+          "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+          "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "PRF-8TH88D"
+        },
+        {
+          "after": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": "absent",
+          "id": "PRF-D58CPV"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-Y9N3CB",
+      "items": [],
+      "reason": "The admitted successor covers the mounted fixture classification and model check of a readable dictionary result or the delivered payload fallback. The ordinary tool-entry-point controls independently witness validation against the logged whole result. Evidence (L15-M04-successor-PRF-8TH88D): Manager 72a791c1-d754-43ab-808e-fa3aaf919622 admits this exact successor under M182 and M187. Source mcp/tests/test_tool_entry_point_sweep.py::test_every_public_tool_answers_in_the_products_own_vocabulary covers the narrowed facet. Original proof PRF-8TH88D is preserved in the W8 memory freeze and Curator repair evidence.",
+      "revision": 1,
+      "subject": "INV-22N6MM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YE009Z",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Registration drops removed worker and operation tests and admits the current journal boundaries under their exact lanes.",
+      "sources": [
+        {
+          "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
+            "content": "sha256:8bb4e4a4d1d0eef572c497f5034f008bbc2ef2e53d33ae30db561cc7d8fb863e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_capsule_audiences.py"
+          },
+          "before": {
+            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
+            "content": "sha256:8bb4e4a4d1d0eef572c497f5034f008bbc2ef2e53d33ae30db561cc7d8fb863e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_capsule_audiences.py"
+          },
+          "id": "RLZ-7GRTR2"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YJ6XFH",
+      "items": [],
+      "reason": "The capsule assertions check role and operation audiences, action links, emitted detail links and rejection of a foreign role section. The proof does not name a separate historical constant or change the audience obligation. Source test_role_capsule_audiences.py:576–622,625–710,1027–1059.",
+      "revision": 1,
+      "subject": "INV-NDGJ3M"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 4
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 5
+        }
+      ],
+      "id": "ROW-YTQZZ7",
+      "items": [
+        "sha256:c8b425f5f869451cbb842e3de90cdab10519284406597a32c61639ce25e9c76b"
+      ],
+      "reason": "The same members govern delivery and review. W8 corrects the ownership and timing of coherence validation and preserves the reported review-round limit and sealed findings.",
+      "revision": 2,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:b2b6b2e781f10312b5f6edcd6a19967962274b3669dbc56a9f72cc117c0ee3e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "before": {
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "id": "RLZ-324NWH"
+        },
+        {
+          "after": {
+            "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+            "content": "sha256:ff1fdf2b23e012096961aa03d65bd7bc33bf3fbe5b6da15e403574ad63ee89c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingRequest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "before": {
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:ff1fdf2b23e012096961aa03d65bd7bc33bf3fbe5b6da15e403574ad63ee89c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingRequest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "id": "RLZ-QQ206R"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YWTFBR",
+      "items": [
+        "sha256:5209d24c4aa09ac28cd5b4f4618328f0ded9cfd038bdea24f4656759bef06bc9"
+      ],
+      "reason": "The admitted direct input, named leaf and exact retained same-generation recovery still apply. The synchronous retired kinds have a separate refusal. See direct_landing.py and lifecycle_operation_controls.py:320–354.",
+      "revision": 3,
+      "subject": "INV-6DFQ9P"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z2TV99",
+      "items": [
+        "sha256:163f683aaa42292f59265b4510d296725c81428a653663e6089ff898be1dc463"
+      ],
+      "reason": "Retires the card for the detached worker launcher after W7 deletes its source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/worker/launch.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZBMQ22",
+      "items": [
+        "sha256:7aa6018f53017f10d248d7fb4c442e472dccf313347a7b02c3217802e48a78d6"
+      ],
+      "reason": "The application lifecycle overview withdraws detached terminal failure ownership and keeps synchronous route ownership.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/lifecycle/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZEE82H",
+      "items": [
+        "sha256:22fea6289d57bb6dd5dffe7b2fad10afc56cdca78f8e2b5964b1bd699d6f3747"
+      ],
+      "reason": "The current helper preserves the direct generation and accepted input, increments the attempt, archives reconciled-unchanged evidence and starts running/direct-preflight with those legs reset. The card and proof describe the surviving callers. `generation/resume.py:8–36`, `worktrees/direct_landing.py:824` and `lifecycle_operation_recovery.py:54`.",
+      "sources": [
+        {
+          "blob": "31a8c184418a5a8ec267bca5f455255b82d89b80",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZGZTJF",
+      "items": [
+        "sha256:63a4bd82f52ba21861757389562bb02ef587f75e2a89d351ff6889b4851285e9"
+      ],
+      "reason": "The frontend projection type drops the public worker observation.",
+      "sources": [
+        {
+          "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
+          "path": "dashboard/src/types/projection.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/types/projection.ts"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZKA6HV",
+      "items": [],
+      "reason": "The package tool groups and MCP reference pointer still apply. The new status and closeout wording leaves the named inventory intact.",
+      "revision": 7,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZXJA89",
+      "items": [
+        "sha256:616d9bbe7c481ed58ff71c65ab370928afa7711a021538c88a25a46874813d0d"
+      ],
+      "reason": "The concurrent test uses the synchronous integration entry and still verifies exact branch isolation.",
+      "sources": [
+        {
+          "blob": "47cbed620d542b52197b71eb2714a95d449539ad",
+          "path": "mcp/tests/test_cross_master_concurrency.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_cross_master_concurrency.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

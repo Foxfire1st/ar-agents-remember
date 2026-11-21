@@ -92,7 +92,9 @@ replay does not turn incomplete or conflicting inputs into cacheable results.
 - The gate's verdict follows the packet in both directions, and a repeated evaluation gives the same verdict. [19]
 - A verdict behind an unreadable contract read keeps its answer and occupies no memo slot. [20]
 
+
 - Every file read is in the read set and a conflicting read is never kept. [21]
+
 
 - The same trees against another parent tip are another key and another evaluation. [22]
 

@@ -12,7 +12,7 @@ The compiled master brief preserves the monotonic sealed finding list across rou
 
 ## Closeout
 
-The brief publishes no closeout door. After the handoff and a current-lineage proof, the leaf is closed out through its own procedure — `worktree_closeout_preview`, then the approval stop (explicit developer commit approval for standalone/final work, or the recorded delegated series authority), then `worktree_closeout_apply` with an explicit nonblank message per enabled leg and that authority as its intent note. That transaction owner proves admission itself (task intent, super → master → leaf lineage, the invariant/knowledge gate and the curator's coherence authority) and records recoverable per-leg journal evidence. No release by an Orchestrator is needed. An unfinished closeout is recovered as `operations/coordination.md` says: its generation is read from `runningOperation` while queued or running, otherwise from `lifecycleOperations`, in the `worktree_status` answer or its named full-result file. A stopped operation has no `runningOperation` entry of its own; its generation remains in `lifecycleOperations`. Recovery uses `worktree_operation_control` with that `expected_generation`. `closeout_queue` is only the sprint's disposable waiting-only projection (`status`, `rebuild`) and confers no authority.
+The brief publishes no closeout door. After the handoff and a current-lineage proof, the leaf is closed out through its own procedure — `worktree_closeout_preview`, then the approval stop (explicit developer commit approval for standalone/final work, or the recorded delegated series authority), then `worktree_closeout_apply` with an explicit nonblank message per enabled leg and that authority as its intent note. Before apply, the Manager confirms the required curation evidence, including the Curator’s coherence validation when the checklist requires it. Apply checks task intent, super → master → leaf lineage and the knowledge gate, then records transaction evidence per leg. No release by an Orchestrator is needed. Before retrying, read the apply result and any per-leg transaction evidence. Correct the blocker and rerun the same tool with the recorded approval and explicit messages for enabled legs. Re-prove affected evidence after a task edit. `closeout_queue` is only the sprint's disposable waiting-only projection (`status`, `rebuild`) and confers no authority.
 
 ## Message/file transport
 
@@ -107,8 +107,14 @@ The verified byte-equal package copy is derived output, not an independent role/
 
 - The Manager brief binds the leaf journal, next handoff attempt, carried findings and frozen candidate evidence, deferring candidate binding, immutable records and invalid-record handling to acceptance; the master attempt summary stays rebuildable and non-gating. [3]
 
+
+
 - The Manager brief preserves sealed review IDs and settings-bound recorded extra-round approval, keeps closeout and integration with the authorized transaction owner, and requires reporting concrete failed/not-run checks. [4]
+
+
 
 - Template values defer to canonical role/operation/core owners; requested review preserves exact sealed IDs and recorded extra-round authority. The Reviewer records CODE, the Manager owns the transaction and the normal Curator pass supplies complete memory-quality evidence. [5]
 
-- Master input values require individual leaf role_start stages, one owned primary revision, sealed requested review and separate attempt lineage; the closeout apply proves admission including the Curator's coherence record, and the published pair names the Worker's targeted checks and the complete Curator result. [6]
+
+
+- The Manager confirms required curation and coherence validation before synchronous apply. Apply checks task intent, lineage and the knowledge gate and records evidence per leg. The publication handoff carries the Worker’s focused checks and the complete Curator result. [6]

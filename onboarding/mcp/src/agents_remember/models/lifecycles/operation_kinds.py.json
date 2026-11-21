@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The current `LifecycleOperationPhase` boundary implements the preparation contract above.",
+      "note": "The shared `LifecycleOperationPhase` vocabulary preserves the distinct private-preparation phase for retained evidence.",
       "targets": [
         {
           "anchor": {

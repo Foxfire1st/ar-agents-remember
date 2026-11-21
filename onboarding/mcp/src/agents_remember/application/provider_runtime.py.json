@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:7a0f04ef049f20ca4ad3b0521fb3759e492f6eb1a71061d927835a47c101e421",
             "locator": {
               "kind": "symbol",
@@ -83,7 +83,7 @@
         },
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:cf0fca4dddba6037a11a2aace70fc52c6799556318aa5d803988f4061d6b7cd9",
             "locator": {
               "kind": "symbol",
@@ -95,12 +95,12 @@
         },
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:18b7b166310b208aea22c19d18ac0567a2442ec92f1607a76d2845b9e1c2e9ce",
             "locator": {
-              "end": 335,
+              "end": 338,
               "kind": "line_range",
-              "start": 312
+              "start": 315
             },
             "path": "mcp/tests/test_terminal_blocker_reasons.py"
           },

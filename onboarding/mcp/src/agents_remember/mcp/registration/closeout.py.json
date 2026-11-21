@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+        "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+        "content": "sha256:cb3bdcb61a8447af47df8946f7acf893aa6c75c59d0df442d93933e89afb4541",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_closeout_command_tools"
+        }
+      },
+      "id": "RLZ-29E1QF",
+      "invariant": "INV-760TKM",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 5",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "The advertised closeout apply description says the operation completes inside one call.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
         "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
         "locator": {
           "kind": "symbol",
@@ -27,12 +45,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
-            "content": "sha256:595bf15a1be758eaa5ba44719cd837715b81d6f11175d532db981e88751305f6",
+            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+            "content": "sha256:c9eff9ac5f86186a97c8b453036339079b2f136d210933f2700fdb1b24ceaecb",
             "locator": {
-              "end": 255,
+              "end": 258,
               "kind": "line_range",
-              "start": 1
+              "start": 28
             }
           },
           "kind": "code"
@@ -40,16 +58,42 @@
       ]
     },
     "10": {
-      "note": "The current module exposes `register_closeout_tools` at this ownership boundary.",
+      "note": "The registrar composes four command groups and mounts task-addressed control with retired-journal guidance. Enclosure adoption belongs to the separate worktree registrar.",
       "targets": [
         {
           "anchor": {
-            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
             "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
             "locator": {
-              "kind": "symbol",
-              "name": "register_closeout_tools"
+              "end": 33,
+              "kind": "line_range",
+              "start": 28
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+            "content": "sha256:07c12ca269b5ce462aa8ca61d7c3f3abcaf4006f96042daf97996f983166f41d",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 198
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:7b99bec6c47b0fa96f7f8ec914c62e653d098d34f6549e5d5f9dcd9cc1cfe870",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
           },
           "kind": "code"
         }
@@ -60,12 +104,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
-            "content": "sha256:595bf15a1be758eaa5ba44719cd837715b81d6f11175d532db981e88751305f6",
+            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+            "content": "sha256:c9eff9ac5f86186a97c8b453036339079b2f136d210933f2700fdb1b24ceaecb",
             "locator": {
-              "end": 255,
+              "end": 258,
               "kind": "line_range",
-              "start": 1
+              "start": 28
             }
           },
           "kind": "code"
@@ -77,12 +121,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
-            "content": "sha256:595bf15a1be758eaa5ba44719cd837715b81d6f11175d532db981e88751305f6",
+            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+            "content": "sha256:c9eff9ac5f86186a97c8b453036339079b2f136d210933f2700fdb1b24ceaecb",
             "locator": {
-              "end": 255,
+              "end": 258,
               "kind": "line_range",
-              "start": 1
+              "start": 28
             }
           },
           "kind": "code"
@@ -94,12 +138,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
-            "content": "sha256:b2a6842501108d9df9889de9f9176da4dbb03faa7705ab4040a1fb8b769d8fd7",
+            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+            "content": "sha256:cb3bdcb61a8447af47df8946f7acf893aa6c75c59d0df442d93933e89afb4541",
             "locator": {
-              "end": 133,
+              "end": 138,
               "kind": "line_range",
-              "start": 92
+              "start": 90
             }
           },
           "kind": "code"
@@ -212,7 +256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
             "content": "sha256:e645def706db273be4a8fc86f2a25d1d732fa06a6f772cf519fb5aa1789f0bf3",
             "locator": {
               "end": 184,

@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`LifecycleControlError` bounds refusal details and emits executable two-message closeout corrections.",
+      "note": "`LifecycleControlError` bounds refusal details and projects the action or explicit replacement tool supplied by the caller.",
       "targets": [
         {
           "anchor": {

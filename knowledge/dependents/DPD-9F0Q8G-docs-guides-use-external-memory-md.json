@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 1 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
+    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
+    "role": "curator",
+    "statement": "The external-memory guide still describes the paired worktree routes. The direct-landing input and exact recovery binding remain.",
+    "task": "261112-BUG-L15",
     "uncommitted": true
   },
   "document": "docs/guides/use-external-memory.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },

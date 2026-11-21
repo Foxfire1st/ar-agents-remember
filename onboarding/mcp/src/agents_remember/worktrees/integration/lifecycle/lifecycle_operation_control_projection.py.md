@@ -6,17 +6,17 @@
 
 ## Purpose
 
-Derives public legal controls from durable lifecycle, door, repair, and integration evidence.
+Derives advertised journal controls for an admitted direct-landing generation from its exact record and contract evidence.
 
 ## Code Commentary
 
 ### Logic
 
-Legal recovery controls consult initial-door and direct-landing evidence without a ledger-recovery classifier. Resume arguments contain code/memory messages, integration arguments contain no ledger subject, and a direct successor requests only its memory-content message. Cache absence or stale bytes therefore create no projected decision gate.
+Legal direct-landing controls derive recoverability from the admitted record and actual code, memory and ref evidence. A changed direct request may replace eligible retired terminal evidence. The direct successor's message belongs to its memory-content commit.
 
-It builds a context from the canonical record and contract, classifies recovery needs, and returns exact resume/retry/cancel/cleanup controls and arguments without mutation.
+It builds a context from the canonical record and contract and derives actions without mutation. A nonterminal direct record may offer recover and, when output is unchanged, cancel. An eligible cancelled record offers a new direct-landing call. An eligible completed record can offer retire. A retained direct `termination-required` cell offers exact cancellation only.
 
-The legacy reuse filter withholds recover/retry for closeout/direct-landing generations missing compatible taskIntent only when no admitted direct input leaf binding supplies the replacement. _without_legacy_generation_reuse preserves doorless direct controls when _direct_generation_bound finds DirectLandingOperationInput.leafTaskDocumentRef. Missing both bindings retains the barrier; genuine ref/input/history contradictions and developer decisions are not bypassed. Cancellation controls remain separate. Any readable direct record carrying a door publication returns no controls before other branches. Completed direct disposition uses the same completed_direct_owner predicate as admission: only authorized, unintegrated, worker-exited ownership with an idle integration claim may retire; exact retired ownership re-offers retire idempotently. Direct supersede is never offered and its refusal names a new direct_landing request. The existing cancelled-generation successor is a separate boundary.
+The legacy direct reuse filter checks compatible `taskIntent` or an accepted direct leaf binding. A door-bearing direct record remains visible for audit and offers no controls. Completed direct disposition uses the same exact owner and idle integration-claim predicates as admission. The completed owner may retire, and a new request goes through direct landing.
 
 ### Conventions
 
@@ -28,7 +28,7 @@ the public function or model instead of re-deriving its lower-level state machin
 - Controls are projections of current durable evidence; unavailable actions stay absent and no control may imply a transition the journal cannot validate.
 - Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
   fallback or compatibility shadow.
-- Missing-intent closeouts and legacy direct generations without admitted leaf input withhold recover/retry. Current canonical-leaf-bound doorless direct generations keep their real controls; earlier door-bearing direct records offer none.
+- Closeout and integration history offer no controls. The handler's direct compatibility filter allows recovery with canonical intent or accepted direct leaf input. The public status projector separately requires canonical intent before showing legal controls.
 
 ### Todos
 
@@ -50,15 +50,21 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-- `_recovery_evidence_controls` uses initial-door and direct-landing evidence without a ledger-recovery classifier. [1]
-- `_resume_control` requests fresh messages for enabled code and memory legs. [2]
-- `_integration_control` constructs integration arguments with no ledger commit subject. [3]
+
+- The direct-landing control projector derives applicable actions from the exact generation and its evidence. [1]
+
+
+- The direct-landing control projector derives applicable actions from the exact generation and its evidence. [2]
+
+
 - `_direct_successor_control` constructs a direct successor from code identity and the memory-content message. [4]
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
 
-- Missing compatible taskIntent withholds legacy reuse only when admitted direct leaf input is also absent; direct canonical-leaf binding preserves controls. [5]
+
+- A compatible task-intent record or accepted direct leaf binding permits generation reuse at control time. The status projection separately requires exact task intent. [5]
+
 
 
 ### Cross-Repo References
@@ -70,19 +76,22 @@ No additional cross-repository evidence applies.
 
 ## CCR-R02@v2 Missing-Intent Control Barrier
 
-Per the ordinary CCR intent boundary, legacy absence alone cannot authorize reuse. The MIK-R94 direct exception binds leafTaskDocumentRef on accepted input; only generations missing both compatible intent and that direct binding lose recover/retry. Exit-proven cancellation and genuinely ambiguous-generation decisions remain.
+The direct reuse filter removes recovery offers when both compatible task intent and the accepted direct leaf binding are absent. The status projector applies its own exact-intent check. An eligible legacy `termination-required` generation offers exact cancellation. The stored state is a compatibility fact.
 
 ## CCR-R18@v1 Exact Same-Generation Cancellation Cell
 
-260831-CCR-L18 added an explicit `termination-required` branch in `legal_operation_controls`: a record whose status is `termination-required` projects exactly one `cancel` control (“Complete exact same-generation cancellation.”) instead of falling into the generic worker-exit-unproven retry path. The state matrix reserves that cell for `cancel` only, and the exit-proven cancelled state keeps its same-generation cancel behavior unchanged.
+A direct generation in `termination-required` offers one action, cancel the exact generation. The projection still requires a doorless direct record, current authority and recoverable evidence.
 
 ## CCR-L42 current candidate
 
-Public controls now use `resume` for a closeout successor: recovery-required closeouts offer resume, failed or input-required closeouts expose resume before cancel when eligible, and cancelled closeouts expose resume. Non-closeout recovery and direct-landing successor semantics remain independent; no revise alias is introduced.
 
 
 - Direct-landing recoverability is classified from the persisted generation's typed accepted input, exact code commit/tree, memory repository/ref and accepted or intended live memory evidence. [6]
 
 
+
+
 - Exact completed direct owners are offered retire subject to disposition eligibility; direct supersede is unavailable. [7]
+
+
 - Earlier door-bearing direct records remain readable but offer no controls. [8]

@@ -14,7 +14,9 @@ The retained `role_message` exception describes the normative cut/file policy fo
 
 
 
+
 - The fixed short part carries `ok`, a checked `code` and any build-currentness reading. [11]
+
 
 
 - The installation answer projection includes the running-server inventory and dashboard part. [12]

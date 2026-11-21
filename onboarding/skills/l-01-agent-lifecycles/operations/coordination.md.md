@@ -28,7 +28,7 @@ The instruction is how coordinating roles start and message AR roles on Paseo: t
 
 When a start is refused as `intent-review-open`, the Manager waits for the Architect's `go` and does not retry the start.
 
-Recovery reads the generation from `runningOperation` while queued or running, otherwise from `lifecycleOperations`. A stopped operation has no `runningOperation` entry of its own; its generation remains in `lifecycleOperations`. The answer or its named full-result file supplies the generation for `expected_generation` in `worktree_operation_control`. Recovery follows the advertised controls and the enclosure-root operation journal.
+Read the synchronous `worktree_closeout_apply` result and inspect per-leg transaction evidence if the call is interrupted. After correcting the blocker, repeat the apply with recorded approval and explicit messages for enabled legs. If a task edit affects closeout evidence, re-prove it before retrying. For a direct landing, read the current generation and advertised action from `worktree_status` and pass that generation to `worktree_operation_control`.
 
 ## Current composition and authoring contract
 
@@ -49,7 +49,9 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 - Normal leaf stages start individually: Worker at build, Reviewer at freeze and Curator after code PASS; required notices reach Manager before direct peer handovers. Messaging resolves one live seat or refuses ambiguity. A message to a recipient already in a turn may be held until that turn ends, and a recipient at a permission prompt is never sent a message, because that would answer the permission. The product's active sweep or ended-turn drain delivers admissible held work without sender resubmission. CODE and MEMORY keep separate recorded counts under the settings limit and recorded extra-round authority. Manager retains gate and transaction ownership and relays no peer contents. [1]
 
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [2]
+
 
 
 - Current common coordination text retains exact role/task bindings, individual stage starts, direct peer handovers and receipt/permission boundaries. Its Manager audience receives start notices, routine-state/report duties and the first-intake instruction; audience markers do not create another owner. [3]

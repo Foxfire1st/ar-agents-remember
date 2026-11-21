@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
+    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
     "role": "curator",
-    "statement": "The page holds: the answer-shape change adds the framework keys `runningOperation` and `cut`, and a cut answer now keeps `log` and ends with its `cut` object; the resolver's own records and their order are unchanged.",
-    "task": "261112-BUG-L7",
+    "statement": "The resolver guide still describes the framework answer keys and saved-log hint. The W7 answer formatter is executable-identical.",
+    "task": "261112-BUG-L15",
     "uncommitted": true
   },
   "document": "docs/reference/resolver-c08.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -68,7 +68,7 @@
       "path": "mcp/src/agents_remember/kernel/git_facts.py"
     },
     {
-      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+      "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

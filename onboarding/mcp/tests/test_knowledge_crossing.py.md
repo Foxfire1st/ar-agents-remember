@@ -117,7 +117,10 @@ The cases and the plan check.
 
 - Both sides added one reference each: alignment numbers each, no conflict. [16]
 - Fresh numbers follow own order, then base order. [17]
-- A true conflict stays one item at the incoming number. [18]
+
+- The fixture edits reference 1 differently on both sides and produces one sidecar conflict for references.1, naming the differing authored fields. [18]
+
+
 - Both-added evidence lines are kept in order. [19]
 - The pure crossing plan report counts aligned cards, renumbered references, kept evidence lines, and marker-incomplete skips. [20]
 - The same three trees merge to identical bytes. [21]
@@ -135,7 +138,8 @@ The cases and the plan check.
 
 - The all-unconverted preliminary sync refuses without movement or journal; the successful crossing persists the complete worklist at its new base pair [9]
 
-- Overlapping edits reach the curator; a failed step changes nothing. [10]
+
+- The injected conversion failure leaves the leaf HEAD unchanged and creates no MERGE_HEAD. The retry records overlapping edits in its payload, report and conflict markers for Curator resolution. [10]
 
 
 - A record both sides changed is resolved at one more than the higher side, on a converted and an unconverted own side. [12]
@@ -152,15 +156,24 @@ No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
 
-- Pure plan step 5 with both converted merge-side bases; `merge_reports` findings report in sync context, distinct from real transaction validation. [1]
+
+- The pure plan checks step 5 over both converted merge-side bases. Validation returns refusing findings, leaving sync-merge report-only findings outside that list. [1]
 
 
-- Long markers in one valid row with paired source blobs supplied to marker transport. [5]
 
 
-- Base conversion uses the base's own code commit and removes base-converted refusal, while the non-merge commit still refuses carried-stale. [7]
+- The fixture supplies a blob for the card path. The accumulated markers form one valid row and the long marker splits without losing content. [5]
 
 
-- The real managed route rather than the pure plan: the fixture's sync crosses an unconverted leaf into a converted line, lands `synced`, and persists the worklist recomputed at its new base pair. [23]
+
+
+- The base converter uses the base's own code commit. Converting that base clears the base-converted refusal and leaves the carried-stale refusal in the non-merge commit. [7]
+
+
+
+
+- The managed sync crosses the unconverted leaf into the converted line, returns `synced`, and persists a complete worklist bound to the new code and memory bases. [23]
+
+
 
 - Its lane row. Anchor: "mcp/tests/test_knowledge_crossing.py" Anchor: "mcp/tests/test_knowledge_crossing.py" [11]

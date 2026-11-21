@@ -89,7 +89,9 @@ The following source-backed definitions and producer seams retain the broader re
 
 
 
-- WorktreeStatusResponse carries the status operation literal, the complete lifecycle operation list and its count, and the sync projection. The complete list remains in whole-result serialization; the compact status answer instead keeps the count and any running-operation sentence. [134]
+
+- Worktree status saves all operation projections and their count. Its compact answer reports a live line only for a queued or running direct landing. [134]
+
 
 
 - **Retained historical source account — superseded by the current contract:** FlexibleResponseModel is the extra-allowing base class for provider-native diagnostic payloads. [135]
@@ -184,7 +186,9 @@ The following source-backed definitions and producer seams retain the broader re
 - **Retained historical source account — superseded by the current contract:** WorktreeCommandResponse declares the next-move triple: nextAction, nextTool and nextArgs.  Anchor: `WorktreeCommandResponse` [147]
 
 
+
 - WorktreeCommandResponse declares the next-move triple, while WorktreeSyncResponse and WorktreeOperationControlResponse narrow nextTool. [163]
+
 
 
 - WorktreeSummary is the strict context summary, distinct from flexible command envelopes. Its optional taskDocumentCopies string carries a notice only when the copy checker emits one. Absence means no notice, not exhaustive byte equality or acceptance of every copy. Existing state and source-lineage fields retain their own domain meanings. [164]

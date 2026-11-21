@@ -47,7 +47,7 @@ a case names the record it is about rather than a position in the stream.
 | Node | What it owns |
 | --- | --- |
 | `test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union` | The packet's **first non-conforming example**: the removed claim stays in the union with its before-side anchor at `exact_recorded_blob` and its path still in `attributed_changed_paths`. It is also the node mutation rows `M1` and `M2` kill — `M1` on `assert 'unchanged' == 'removed'` |
-| `test_a_revised_statement_arrives_as_a_successor_alongside_the_revision_it_replaced` | The revised statement reads as a removal beside an unrelated addition — never a succession — with each side present outside the other's selection, because the candidate selected another exact revision of the same identity |
+| `test_a_revised_statement_arrives_as_a_successor_alongside_the_revision_it_replaced` | The two exact revisions of the same identity appear as separate removal and addition items. Each revision is present outside the other side’s selection. |
 
 **The corrected coverage-rule reason, which is the leaf's most-corrected contract.** Two ways of
 establishing that the other snapshot holds a record — the other side *selected* another exact
@@ -114,31 +114,41 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- The unit marker, the fixture, the seed and the public-seam driver every case uses. [1]
+
+- The unit marker, per-test fixture builder, identity seed and application comparison driver. [1]
+
 
 - The two readers that let a case name a record rather than a position. [2]
 
 
-- **The revised statement as removal beside unrelated addition, and the divergent revision groups an identity seed retains per side.** [3]
+
+- The comparison shows the two exact revisions of one identity as separate removal and addition items. The identity seed retains one selected revision in each side's group. [3]
 
 
-- **The source-only change: `record_field_changed=False` with `source_observation_changed=True`, on identical recorded anchors.** [4]
 
-- The statement-only change that still returns the attributed code. [5]
-
-- **The packet's first non-conforming example, and the node `M1`/`M2` kill.** [7]
-
-- **The explicit per-side selectors addressing two different exact revisions of one identity.** [8]
+- Both claims at the rewritten path retain their recorded source identities. The comparison reports a source-observation change and no record-field change for each. [4]
 
 
-- The present-outside-versus-absent distinction asserted side by side, and the coverage decision's two selection- and probe-based rules -- another exact revision selected, or the record held by the other side's tables -- with no authored edge participating. [9]
+
+- The new revision remains an added record with a candidate-side exact-recorded-blob attribution. The case asserts no source-observation change. [5]
 
 
+- The removed realization retains its baseline anchor at exact_recorded_blob in the comparison union, and its path remains attributed. [7]
+
+
+
+- The explicit before and after selectors name different revisions of the same invariant. The union reports the old revision on the before side and the new revision on the after side. [8]
+
+
+
+- The test distinguishes an unselected revision from a removed realization. The coverage implementation checks for another selected revision of the same identity before probing whether the other side stores the item. [9]
 
 
 - The limitation/omission model guard, with honest construction and both mismatch directions checked in the named current function. Historical mutant attribution: `M26`. [11]
 - Complete/truncated page agreement and the model-owned contradiction refusal in the named current function. Historical mutant attribution: `M25`. [12]
-- The no-trees expansion that claims no change set. [13]
+
+- The comparison still returns a page without named code trees. The source expansion carries neither a measured unattributed path nor an unattributed-path limitation. [13]
+
 
 - The fixture these cases run on. [14]
 
@@ -165,7 +175,12 @@ No configured cross-repository evidence is claimed.
 - The two sibling claims are returned on both sides with unchanged record fields; both have changed source observations, with no still-source item in this fixture. Anchor: "test_an_unchanged_sibling_is_returned_identically_on_both_sides_rather_than_omitted" [6]
 
 
-- **The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [16]
+
+
+- The lifecycle catalog binds the diff-scope support artifact to the exact baseline-union proof node. [16]
+
+
+
 
 
 

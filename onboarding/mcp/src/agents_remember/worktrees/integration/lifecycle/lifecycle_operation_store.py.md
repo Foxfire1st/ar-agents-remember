@@ -17,10 +17,9 @@ Bounded journal-record reuse compares the observed stat identity with an entry a
 
 Recovery-cell monotonicity now protects only `codeCommit` and `memoryContentCommit`. The store has no immutable direct-ledger intent transition; immutable task/operation identity, exact mutation evidence, private preparation, publication proof, and record revisions remain the durable validation boundary.
 
-It validates immutable identity, worker authority, mutation, door, quality, publication, recovery, repair, migration, and finalization transitions under exclusive access.
+The store validates immutable identity and retained mutation, disposition, preparation, door, quality, publication, recovery, repair, migration and finalization evidence under exclusive access. Its record model decodes old worker-authority and preparation-command fields by dropping them.
 
-Since 260831-CCR (commit `99dc249b`) the store makes canonical task intent part of the durable
-generation contract and preserves legacy bytes on retirement:
+The stored generation identity includes canonical task intent. The former ordinary journal publication was retired, while the generic store retains these identity and archive rules:
 
 - `_validate_identity_and_evidence_transition` includes `taskIntent` in the compared identity
   field set, so an intent change is a distinct successor, not a silent replay.
@@ -30,7 +29,7 @@ generation contract and preserves legacy bytes on retirement:
   `{stem}.legacy-missing-intent-generation-{generation}.json` (atomic, idempotent, contradiction-
   checked, rolled back on write failure) and then publishes the validated intent-bound successor —
   so a legacy record stays readable but is replaced by one canonical generation.
-- `_write` requires canonical `taskIntent` only for closeout records, translating `TaskIntentError` into a loud `RuntimeError`. Direct landing is series-contract/branch-addressed and has no leaf task document or closeout door to bind; its retained missing-intent sentinel is not refused by this closeout-only guard.
+- `_write` requires canonical `taskIntent` only for closeout records, translating `TaskIntentError` into a loud `RuntimeError`. Direct landing uses a series-contract/branch address, and its accepted input can name its canonical leaf independently. The generic write guard is limited to the closeout record shape.
 
 ### Conventions
 
@@ -44,7 +43,7 @@ the public function or model instead of re-deriving its lower-level state machin
   fallback or compatibility shadow.
 - Legacy missing-intent bytes are archived verbatim before any intent-bound successor is written;
   the archive is the only retained copy of the old generation.
-- No new or republished closeout lifecycle record may carry the missing-intent sentinel. The write-side leaf-intent requirement does not apply to series-contract/branch-addressed direct landing.
+- The generic write boundary checks canonical task intent when writing the historical closeout record shape. Ordinary closeout and integration execute through their synchronous tools.
 
 ### Todos
 
@@ -52,7 +51,7 @@ None recorded.
 
 ### CCR private preparation boundary
 
-Private preparation is selected after generation creation, never injected into a new record. Starting a private command requires the same fully identified active running worker, no cancellation and a validated preparation transition. A preparation update cannot simultaneously publish mutation/history/recovery tuples, consume approval, enter the irreversible boundary or finalize the contract. Retained preparation blocks retirement/supersession or terminal replacement without an explicit proved disposition; completed status requires finalization proof, and cancellation requires unchanged logical-ref evidence.
+The store validates changes to retained private preparation as selected intent and output references. Old command data is parsed at the record boundary and discarded. A preparation update cannot simultaneously publish mutation/history/recovery tuples, consume approval, enter the irreversible boundary or finalize the contract. Retained preparation blocks retirement/supersession or terminal replacement without an explicit proved disposition; completed status requires finalization proof, and cancellation requires unchanged logical-ref evidence.
 
 
 ## Evidence
@@ -72,7 +71,9 @@ The source file is the direct evidence for this unit; its governing overview rec
 
 - Legacy missing-intent generation archive + successor write. (`_retire_missing_intent_generation`) [5]
 
-- The write-side canonical leaf task-intent requirement applies to closeout records; direct-landing series-contract/branch addresses are explicitly exempt. (`_write`) [6]
+
+- The generic store validates task intent when it is asked to write a historical closeout shape. Ordinary closeout does not write that journal. [6]
+
 
 
 ### Cross-Repo References
@@ -84,7 +85,7 @@ No additional cross-repository evidence applies.
 
 ## CCR-R02@v2 Legacy Retirement In The Store
 
-Historical `requirements/CCR-R02-v2-normative-task-intent-identity.md` cutover account (missing-intent retirement/archive handling still covers closeout and direct landing, while the current write-side canonical leaf-intent guard applies only to closeout): a legacy container with
+Historical cutover under `requirements/CCR-R02-v2-normative-task-intent-identity.md`: a legacy container with
 `missing-intent` remains readable only so its owner can report the exact stale/unavailable state
 and republish. The store's `_retire_missing_intent_generation` preserves the exact legacy bytes and
 publishes one canonical intent-bound successor generation; the enclosed archive is then owned,
@@ -106,14 +107,24 @@ supersede writers bump `meaningfulRevision` alongside the generation/record-revi
 advance, so a successor is always visible to an old-generation waiter.
 
 
+
 - A terminal successor archives its exact predecessor before publishing the next generation. (`replace_terminal`) [10]
+
 
 - The shared meaningful-change comparison. (`meaningful_state_changed`) [11]
 
-- The current `_validate_private_preparation_transition` boundary implements the preparation contract above. [1]
+
+- The compatible private preparation transition preserves exact accepted evidence without publishing approval or mutation. [1]
+
 - `_validate_recovery_commits_transition` prevents proven code/memory recovery commits from disappearing or changing. [2]
+
 - `_validate_identity_and_evidence_transition` preserves generation identity and monotonic mutation/publication state. [3]
+
+
 - Task intent joins the compared generation identity. (`_validate_identity_and_evidence_transition`) [4]
+
+
 - Exactly-once cursor validation on the meaningful subset. (`_validate_identity_and_evidence_transition`) [7]
+
 - Both revisions assigned at the canonical writer boundary. (`_advance_record_revision`) [8]
 - The canonical journal writer increments recordRevision on every write and meaningfulRevision only for meaningful state changes. (`_advance_record_revision`) [9]

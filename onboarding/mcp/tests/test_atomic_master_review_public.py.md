@@ -6,10 +6,7 @@
 
 ## Purpose
 
-Pins the removal of the closeout route-review gate at both altitudes through the registered public
-tools. It proves that closeout consults no route-review record -- an atomic child is not deferred
-into one and an organizational leaf is not refused for the lack of one -- and that the real atomic
-leaf-to-master landing still completes while both task documents remain review-free.
+The registered stdio calls preview closeout for an atomic child and an organizational leaf and separately dry-run ff-only integration for the atomic child. The fixture prepares code and memory and calls the production closeout application and integration handlers directly. The test checks the child code commit on the protected master code branch and verifies that both the child and master task documents still omit route review.
 
 ## Code Commentary
 
@@ -20,19 +17,14 @@ raw `CallToolResult`; `_call` runs it synchronously. `_assert_wire_payload` requ
 text block and `structuredContent` to agree, so a route that renders one shape and returns another
 cannot pass.
 
-`_remove_leaf_review` clears the leaf's `routeReview` record, which is how the test creates
-review-free documents. `_prepare_atomic_leaf_landing` activates the atomic master, commits the child
-candidate, declares the waiting door, starts the real closeout operation and journal, finalizes the
-contract record, and returns the reloaded contract plus the exact candidate commit.
-`_integrate_exact_leaf` starts the production integration operation and then runs
-`integrate_result` with the running operation key and generation, asserting an `integrated` state and
-that the master's protected source branch now holds the candidate commit.
+`_remove_leaf_review` clears the leaf's `routeReview` record. `_prepare_atomic_leaf_landing`
+publishes the activation, commits the fixture code and memory, declares the fixture and calls the production
+`worktree_closeout_apply_tool` application handler, and reloads the completed contract.
+`_integrate_exact_leaf` calls `integrate_result` directly and checks the integrated result
+and candidate code commit on the protected master source branch.
 
 The single test, `test_closeout_never_gates_on_a_route_review_record_at_either_altitude`, first
-previews closeout for an atomic child with its review removed and asserts the payload carries no
-`route_review` field and that neither the task document nor the contract changed; it then performs
-the real leaf-to-master landing and re-asserts both documents stay review-free. It repeats the
-review-free preview for an organizational leaf. The removal it pins is deliberate: quality is
+previews closeout for an atomic child with its review removed. It checks that the response omits `route_review` and that the child task document, contract bytes and code HEAD are unchanged. After direct closeout and a check of both task documents, the registered integration dry run reports `would-integrate` while the protected code branch still differs from the child commit. The direct integration then moves that branch to the child commit and both documents still omit route review. The organizational leaf also gets a successful review-free preview. The removal it pins is deliberate: quality is
 checked focused within the leaves and the adversarial review that precedes integration is a process
 step owned by the reviewer role, not a code gate at closeout.
 
@@ -44,15 +36,12 @@ boundary; they do not authorize a verdict or substitute for the combined master 
 
 ### Invariants And Boundaries
 
-- Closeout consults no route-review record at either altitude: an atomic child is not deferred into
-  one and an organizational leaf is not refused for the lack of one.
+- Both registered closeout previews succeed without a leaf route-review record and omit route-review output.
 - The route-review *record* survives as task shape through `task_doc.record_route_review`; only the
   closeout gate is gone. Pinning the removal here keeps the gate from returning unnoticed.
-- A review-free closeout preview mutates neither the task document nor the contract and moves no
-  ref.
-- The real atomic leaf-to-master landing still integrates: the lifecycle operation is started and
-  `integrate_result` moves the master's protected source branch while both task documents remain
-  review-free.
+- The atomic child’s preview leaves its task document, contract bytes and code HEAD unchanged.
+- The real atomic leaf-to-master integration moves the protected master source branch while
+  both task documents remain review-free.
 - The test owns no mutation outside its isolated fixtures.
 
 ### Todos
@@ -71,9 +60,20 @@ No external documentation source was configured for this test module.
 
 - Registered stdio client and the readable/structured wire-payload agreement assertion. [1]
 - Review-free fixture setup: the leaf review record is cleared. [2]
-- The real closeout journal for the atomic child is written and finalized for the landing proof. [3]
-- Production leaf landing runs under the started integration operation and moves the protected branch. [4]
-- The route-review gate is absent at both altitudes while the exact landing still completes. [5]
+
+
+- The atomic fixture invokes the production closeout application handler and checks the resulting completed contract and candidate commit. [3]
+
+
+
+
+- The direct atomic integration operation moves the protected master source branch to the candidate code commit. [4]
+
+
+
+- The registered stdio calls preview closeout for an atomic child and an organizational leaf and separately dry-run ff-only integration for the atomic child. The fixture prepares code and memory and calls the production closeout application and integration handlers directly. The test checks the child code commit on the protected master code branch and verifies that both the child and master task documents still omit route review. [5]
+
+
 
 ### Cross-Repo References
 

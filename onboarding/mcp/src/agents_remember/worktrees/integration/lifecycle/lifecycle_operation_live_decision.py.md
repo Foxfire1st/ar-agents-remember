@@ -12,7 +12,7 @@ Bounded live-evidence refusals shared by lifecycle controls.
 
 ### Logic
 
-Live refusal dispatch retains initial-door, direct-landing, and immutable-Git evidence checks. It no longer invokes a ledger-recovery classifier, so malformed or missing computed cache bytes cannot become a developer-decision refusal.
+The live direct control path reports genuine direct-input or immutable Git contradictions. The shared classifier retains an initial-door branch for stored closeout evidence shapes. The registered control refuses an ordinary journal before it can reach this helper. Computed cache bytes are outside the decision.
 
 The public surface is `raise_live_evidence_decision`, `immutable_recovery_refusal`. This file bounds public refusal evidence and next actions. Missing, unreadable, mismatched, or ambiguous artifacts remain typed decisions with expected/observed facts; they are never downgraded to absence and private operation keys never cross the public boundary.
 
@@ -42,12 +42,16 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
+
 - `raise_live_evidence_decision` dispatches genuine publication and Git contradictions without inspecting ledger bytes. [1]
+
 - `immutable_recovery_refusal` turns immutable-evidence contradictions into bounded recovery refusals. [2]
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
+
 - The module defines `raise_live_evidence_decision`; `immutable_recovery_refusal` as its public seam. [3]
+
 
 ### Cross-Repo References
 

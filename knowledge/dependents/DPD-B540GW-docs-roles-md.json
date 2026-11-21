@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "98f7d6c529f1456cbfd00f3fde7e1fa51a118d8c",
-    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
+    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
+    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
     "role": "curator",
-    "statement": "The Roles guide puts listed final checks on the passed tree alongside curation and gives the same Reviewer the sealed repair finding before targeted successor checks.",
-    "task": "261112-BUG-L12",
+    "statement": "The Roles guide remains aligned with Manager closeout ownership, final checks and the Reviewer repair route. Coordination now supplies the synchronous retry procedure.",
+    "task": "261112-BUG-L15",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -156,7 +156,7 @@
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "c4ee8765597f72bc3004b0249af68fed374bd5d2",
+      "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
     },

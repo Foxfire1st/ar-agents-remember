@@ -38,8 +38,7 @@ These are source assertions, not a Curator test run, freeze-currentness certific
 One declared failure input per public tool, driven through its production entry point. The sibling
 `test_tool_entry_point_sweep.py` sweeps the same surface with a *benign* argument set and can
 therefore only see half of it; this module drives the other half — the one where a seat actually
-needs the envelope — and asks, for each advertised tool, whether the answer is a **typed
-refusal**, a recorded always-answer, or a recorded bare raiser.
+needs the envelope — and classifies each driven outcome as a typed refusal, a stateful refusal, a recorded always-answer or a recorded bare raiser.
 
 The module asserts a delivery-shape contract through the MCP adapter. The census must partition the advertised roster into typed refusals, stateful refusals, legitimate always-answers and pinned bare raisers.
 
@@ -74,7 +73,7 @@ a refusal at all should fail as *answered*, not as *refused without a reason*.
 
 ### Conventions
 
-Plain pytest classes, with no `unittest` or module marker override. The module is registered in `unit-regression`. `FailurePathCensusTests.setup_class` builds one world and census; `teardown_class` closes it. The oracle and negative-control classes do not share that census fixture.
+The test classes and standalone cases use pytest. The module is registered in `unit-regression`. `FailurePathCensusTests.setup_class` builds one world and census; `teardown_class` closes it. The oracle and negative-control classes do not share that census fixture.
 
 ### Invariants And Boundaries
 
@@ -268,7 +267,7 @@ they make no acceptance claim.
 
 - Each refusal axis asserted by name, so a regression says which one it broke. [7]
 
-- The hermeticity statement the module is held to: every fixture root inside the disposable world, no provider configured. [10]
+- The fixture check asserts settings path prefixes for code and memory, its coordination-root identity and an empty provider configuration. [10]
 
 - The measured population and the production invocation per tool, kept in a support module so a probe can drive the same census. [11]
 
@@ -279,7 +278,7 @@ they make no acceptance claim.
 - The one `T34` tool the sweep still repairs — `memory_baseline_adopt` — re-exported by the sweep module beside the pin it left.
 
 
-- The sweep whose benign half this module completes, and the world both share.
+- The ordinary entry-point world provides the registered session runner for this refusal census.
 
 
 - The advertised roster the population is derived from and asserted equal to. [15]
@@ -298,7 +297,9 @@ No repository or external-system boundary is proved by this module.
 
 - Removed-tool guidance remains invalid even though the obsolete switch-refusal fixture is deleted. [19]
 
-- The sweep whose benign half this module completes, and the world both share. Anchor: `EntryPointWorld` [14]
+
+- The refusal census uses the ordinary sibling EntryPointWorld. The main entry-point sweep imports the extracted support world and separately checks exception evidence in both classes. [14]
+
 
 
 - The surviving T34 selection, memory_baseline_adopt, is read from the sweep's shared pin and required to return a complete refusal envelope at the entry point. [8]
@@ -311,6 +312,7 @@ No repository or external-system boundary is proved by this module.
 
 - The selected repaired T34 population contains `memory_baseline_adopt`, re-exported by the sweep module and required to return a complete refusal envelope. Anchor: `T34_REPAIRED_TOOLS` [13]
 
-- The declared bare-raiser set has ten names. Both-direction census and invocation of declared failure inputs remain source assertions, not this Curator’s execution. [18]
+- The test source declares ten bare-raiser names and requires exact equality with the observed non-returned set. [18]
+
 
 - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py" [16]

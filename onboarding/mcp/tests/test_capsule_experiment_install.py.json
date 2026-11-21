@@ -20,15 +20,28 @@
       ]
     },
     "10": {
-      "note": "The retired startup files are planted with the legacy fingerprint and must all be absent afterwards.",
+      "note": "The fixtures plant the retired startup files with the legacy fingerprint. Both real install modes leave all three paths absent and remove the fingerprint.",
       "targets": [
         {
           "anchor": {
             "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
-            "content": "sha256:7f427fb820468e928c6cbbddb5660d3bce7e4b76a0a644dd791ec3d7b3269497",
+            "content": "sha256:689fb5402a092a089cc8a8a4048a83e555718dca07a1d146acaff5bb2b40a135",
             "locator": {
-              "kind": "symbol",
-              "name": "plant_retired_startup_files"
+              "end": 102,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
+            "content": "sha256:2b6068c44b9fdd2166d64da6d833f394c782e1f521292e4f8d24bca4fd6706aa",
+            "locator": {
+              "end": 470,
+              "kind": "line_range",
+              "start": 448
             }
           },
           "kind": "test"
@@ -131,15 +144,16 @@
       ]
     },
     "2": {
-      "note": "A selected install leaves no coordination-root skill tree or received startup targets; the corpus remains package-served.",
+      "note": "The selected install fixture leaves no coordination-root skills directory and none of the withheld startup targets.",
       "targets": [
         {
           "anchor": {
             "blob": "6d49ce1a786eec79441207d6242341d258a744b3",
             "content": "sha256:0e3f3bf103063d34a9ae0c7e32f941c0d73818f32b9ff94ed1be062f297fbe10",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_installed_root_carries_the_canonical_corpus_only_as_authored_source"
+              "end": 630,
+              "kind": "line_range",
+              "start": 609
             }
           },
           "kind": "test"
@@ -199,12 +213,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
-            "content": "sha256:c87b7853f8f4a4e32f8e60f6d7ce941573d3cfbbaae42ebdf53e7234def4f622",
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
             "locator": {
-              "end": 5062,
+              "end": 166,
               "kind": "line_range",
-              "start": 1
+              "start": 166
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "locator": {
+              "end": 2558,
+              "kind": "line_range",
+              "start": 2558
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -217,12 +244,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
-            "content": "sha256:c87b7853f8f4a4e32f8e60f6d7ce941573d3cfbbaae42ebdf53e7234def4f622",
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
             "locator": {
-              "end": 5062,
+              "end": 166,
               "kind": "line_range",
-              "start": 1
+              "start": 166
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "locator": {
+              "end": 2558,
+              "kind": "line_range",
+              "start": 2558
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

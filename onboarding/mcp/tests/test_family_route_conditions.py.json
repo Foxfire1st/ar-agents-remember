@@ -49,15 +49,16 @@
       ]
     },
     "11": {
-      "note": "Q1: a route dead at B is not charged.",
+      "note": "An unreached family is not charged for a route already dead at the base. When the same route is removed inside the leaf's range, the worklist raises route_path_absent.",
       "targets": [
         {
           "anchor": {
             "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
             "content": "sha256:7b5a352710eb26cdf8c056b2903812cdac694b8056ba6df690a0ec0502ef9acf",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_unreached_familys_route_already_dead_at_b_is_not_charged_to_the_leaf"
+              "end": 491,
+              "kind": "line_range",
+              "start": 479
             }
           },
           "kind": "test"
@@ -85,12 +86,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:701dfc16e90a57bb20b47a098c9f3f67419c2cde1a56b17ed586636dbbe4c6e5",
             "locator": {
-              "end": 816,
+              "end": 181,
               "kind": "line_range",
-              "start": 1
+              "start": 181
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -6,13 +6,13 @@
 
 ## Purpose
 
-Durable worker lease and termination evidence.
+Typed no-output cancellation evidence.
 
 ## Code Commentary
 
 ### Logic
 
-The public surface is `WorkerTerminationEvidence`, `LifecycleCancellationEvidence`. This module is strict evidence vocabulary, not an I/O or scheduling owner. Its models keep generation, publication, enclosure, termination, legacy, and direct-landing facts explicit so partial or contradictory state fails validation instead of being inferred from queue rows or task prose.
+`LifecycleCancellationEvidence` binds the operation kind and generation, proof timestamp, nonempty expected facts and exact observed equality. The shape retains `workerExitProven` for compatibility. The direct no-output proof sets that marker after checking the protected Git state.
 
 ### Conventions
 
@@ -38,7 +38,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file itself is the current evidence for this file-specific contract.
 
-- The module defines `WorkerTerminationEvidence`; `LifecycleCancellationEvidence` as its public seam. [1]
+
+- Cancellation evidence requires exact expected and observed facts. Direct no-output proof supplies the retained exit marker without a worker observation. [1]
+
 
 ### Cross-Repo References
 

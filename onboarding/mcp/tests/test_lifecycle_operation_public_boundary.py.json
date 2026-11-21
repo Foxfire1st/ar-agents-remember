@@ -1,0 +1,53 @@
+{
+  "path": "mcp/tests/test_lifecycle_operation_public_boundary.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The direct payload adapter call under tool-call context reports both synchronous replacement names and keeps the retained journal bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccae36bb19ba6345e971e63a1b0abee749a88377",
+            "content": "sha256:ae59cc46fe28a3c470252d4dfa82913c33e79ea7690958e07d23e8c2d373b5dd",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ccae36bb19ba6345e971e63a1b0abee749a88377",
+            "content": "sha256:598e8991f200867ac4d303d9bf9fbda5eba516deac62a8be74c0f63eec5a76af",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The adapter gives absent retired records a replacement without a generation, refuses a missing direct-landing record and reports the requested and actual identities for a stale generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccae36bb19ba6345e971e63a1b0abee749a88377",
+            "content": "sha256:c8b1fd397f02727e2349cb0fa3cc8d52e695444193c3b543d01c4351f4746434",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 175
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

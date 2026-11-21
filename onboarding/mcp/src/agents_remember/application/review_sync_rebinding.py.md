@@ -143,7 +143,9 @@ measurement of a generation**, because a forged record is internally consistent.
 
 - The publication route whose declared location the resolved knowledge side is read at. [31]
 
+
 - **The production call site: the sync tool's result, after its Git work and contract write.** [32]
+
 
 
 - **The reopen owner's fifth channel, which makes the per-generation reader a production consumer.** [33]

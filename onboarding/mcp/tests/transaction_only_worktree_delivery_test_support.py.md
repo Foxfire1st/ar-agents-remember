@@ -10,7 +10,7 @@ The fixtures, hooks, seam racers and attribution assertions of the transaction-o
 
 ## Code Commentary
 
-The module builds temp Git fixtures bound to MCP authority without a profile, adds only the canonical enclosure binding to leave review evidence absent, and patches the historical acceptance entry points so an accidental call fails loudly. It installs real failing and real recording passing pre-commit hooks in both repositories, and `_closeout_through_failing_then_passing_hooks` requires the landing to refuse on the first and land on the second. The racers move a branch with a foreign commit at one named seam (`before-tip-check` or `after-commit-written`), or switch, detach or move a checkout at a named moment of the closeout. `_code_and_memory_state` collects every fact a refused publication must give back, and `_memory_preparations` collects the history file and the ignore rule. `_assert_landed_subject` requires a landed one-line message's subject to carry the pass fact, and `_assert_memory_attribution` requires exactly one code-commit trailer read back out of the committed object with no cached ledger beside it. `_ClosedCacheLeaf`, `_seed_converted_memory_layout` and `_seed_leaf_trace_row` build the cache and converted-memory fixtures.
+The module builds temp Git fixtures bound to MCP authority without a profile, adds only the canonical enclosure binding to leave review evidence absent, and patches the historical acceptance entry points so an accidental call fails loudly. It installs real failing and real recording passing pre-commit hooks in both repositories, and `_closeout_through_failing_then_passing_hooks` requires the landing to refuse on the first and land on the second. The racers move a branch with a foreign commit at one named seam (`before-tip-check` or `after-commit-written`), or switch, detach or move a checkout at a named moment of the closeout. `_code_and_memory_state` collects HEAD, index and porcelain status for both worktrees. `_memory_preparations` collects the history and ignore bytes, when present, and the memory index. `_assert_landed_subject` requires a landed one-line message's subject to carry the pass fact, and `_assert_memory_attribution` requires exactly one code-commit trailer read back out of the committed object with no cached ledger beside it. `_ClosedCacheLeaf`, `_seed_converted_memory_layout` and `_seed_leaf_trace_row` build the cache and converted-memory fixtures.
 
 ## Invariants And Boundaries
 
@@ -20,8 +20,15 @@ The attribution is bound by the hash, not recorded beside it: the trailer is rea
 
 ### Repo-Internal References
 
+
 - Real failing and passing hooks are installed in both repositories, and a landing refuses on the first and lands on the second. [1]
 
-- A refused publication gives back refs, index and files, and the memory attribution is read from the committed object. [2]
+
+
+
+- The support owner snapshots both HEADs, index entries and status output. It separately reads history and ignore bytes and the memory index. The attribution assertion reads the committed message and checks both Git trailer readers. [2]
+
+
+
 
 - Branch races are applied at named seams of the shared publication, and checkout disturbances at named moments. [3]

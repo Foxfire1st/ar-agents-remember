@@ -20,7 +20,7 @@ openFindings and totalFindings before bounding the findings slice. A genuine old
 no review state; the recovery proof does not weaken the current producer's count obligation.
 
 
-The lifecycle phase vocabulary now includes `recovering-private-preparation`. This exposes the existing private-preparation recovery phase without granting publication or lifecycle authority to the dashboard. Evidence: the generated `LifecycleOperationProjection.phase` definition.
+The generated `LifecycleOperationProjection.phase` enum keeps `recovering-private-preparation` for reading a retained lifecycle record. Current direct-landing recovery uses its own phase and legal controls. The dashboard displays the phase and reads any legal controls from the server.
 
 L23 adds the closed `LifecycleOperationProjection` schema and the optional `EnclosureNode.lifecycleOperation` reference. Operation kind, status, and phase are closed vocabularies; process/resume identities remain absent from the public schema. Since 260831-CCR (commit `99dc249b`) the schema adds the optional `LifecycleOperationProjection.taskIntent` reference to the `TaskIntentIdentity` definition and the new `TaskIntentIdentity` `$defs` entry carrying the closed `task-intent/v1` schema and the 64-hex digest pattern.
 
@@ -116,7 +116,9 @@ No configured external domain source applies.
 - The `$defs` block contains all reusable projection schema definitions. [2]
 - `ActionAvailability` declares reducer-decided action safety for the cockpit. [3]
 
+
 - The optional task-intent reference on the lifecycle operation projection. [6]
+
 - The served closeout-queue node: no `maxItems` on `members`, `maxItems: 256` still on `sourceProblems`. [7]
 
 ### Cross-Repo References
@@ -153,8 +155,12 @@ list of opaque command payloads (bounded to 32 entries; required by the generate
 and unreadable outcomes. The schema remains projection-only; it does not transfer lifecycle
 authority to the dashboard or to the disposable closeout projection.
 
+
 - The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants. [8]
+
+
 - The generated TypeScript mirror requires the legalControls array on its operation observation. [9]
+
 
 ## 260821-CLIVE Disposable Queue And Discard Audit Contract
 

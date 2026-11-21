@@ -5,12 +5,14 @@
     ],
     "justification": "The registered status-route cases separate compact operation summary from complete saved projection custody, preventing loss of the evidence needed to diagnose a running lifecycle action."
   },
-  "applicability": "The registered worktree_status answer and its separately retained whole result.",
+  "applicability": "The registered worktree_status answer and its saved result for an addressed enclosure.",
   "conditions": [
-    "A queued or running operation supplies the one kept kind/generation/state sentence; the count includes the complete projection list."
+    "Only a queued or running direct-landing projection supplies runningOperation.",
+    "lifecycleOperationCount includes all projections, including retired closeout and integration records saved for audit."
   ],
   "exclusions": [
-    "Finished operations are counted but are not reported as running."
+    "The whole lifecycleOperations list belongs to the saved result.",
+    "Finished direct landings and retired historical records do not report live work."
   ],
   "id": "INV-H4PZ9X",
   "origin": {
@@ -24,9 +26,9 @@
     "leaf": "261112-BUG-L3",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "While a lifecycle operation is queued or running, worktree_status carries one kept sentence naming its kind, generation and state, and the whole projection list stays out of the answer.",
+  "statement": "When a direct landing is queued or running, worktree_status keeps one sentence naming its kind, generation and state, and the saved result retains all operation projections.",
   "status": "proposed",
   "supersedes": []
 }

@@ -72,6 +72,23 @@
     {
       "anchor": {
         "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
+        "content": "sha256:c4ab6de117d061a69f7c7e1f8a612523e3a9f1f90e3d022159169a69b5fd131a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_nothing_is_deleted_when_the_cache_receipt_cannot_be_written"
+        }
+      },
+      "facet": "The ordinary-sweep fixture shows that an unwritable receipt leaves its cache present, returns an empty arCaches list and identifies the receipt path. After writes become possible the next run deletes that cache.",
+      "id": "PRF-JKWY6X",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L15-M04-ordinary-sweep-PRF-ZKS170",
+        "leaf": "261112-BUG-L15"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
         "content": "sha256:c310e9cc7c52800f460cd720544cf20302ea572b1fb7208001d1025e0076cc16",
         "locator": {
           "kind": "symbol",
@@ -95,12 +112,12 @@
           "name": "test_nothing_is_deleted_when_the_cache_receipt_cannot_be_written"
         }
       },
-      "facet": "Nothing is deleted when the cache receipt cannot be written.",
-      "id": "PRF-RNY950",
+      "facet": "The historical defect-control fixture shows that an unwritable receipt leaves its cache present, returns an empty arCaches list and identifies the receipt path. After writes become possible the next run deletes that cache.",
+      "id": "PRF-QRVKGG",
       "invariant": "INV-YQPQ1M",
       "origin": {
-        "handoffEntry": "L82-CODE-R1-02",
-        "leaf": "260928-MIK-L82"
+        "handoffEntry": "L15-M04-ordinary-sweep-PRF-RNY950",
+        "leaf": "261112-BUG-L15"
       }
     },
     {
@@ -134,23 +151,6 @@
       "invariant": "INV-YQPQ1M",
       "origin": {
         "handoffEntry": "L82-CODE-R1-02",
-        "leaf": "260928-MIK-L82"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
-        "content": "sha256:c4ab6de117d061a69f7c7e1f8a612523e3a9f1f90e3d022159169a69b5fd131a",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_nothing_is_deleted_when_the_cache_receipt_cannot_be_written"
-        }
-      },
-      "facet": "Nothing is deleted when the cache receipt cannot be written.",
-      "id": "PRF-ZKS170",
-      "invariant": "INV-25AJSA",
-      "origin": {
-        "handoffEntry": "L82-MEM-M1-S-02",
         "leaf": "260928-MIK-L82"
       }
     }
@@ -202,7 +202,7 @@
       ]
     },
     "11": {
-      "note": "The planned receipt classes include `explainerArtifacts`. The interrupted archive fixture leaves the external workspace, old generation counter and old lock absent. The case documents workspace removal as retirement's step before the sweep; the retry asserts `interrupted=true` `alreadyAbsent` entries of that class for the migrated `seat-generation` counter path and the old lock path. It does not assert a workspace entry in that retry receipt. Anchor: `test_interrupted_external_explainer_deletion_replays_as_already_absent`",
+      "note": "The interrupted archive fixture removes the workspace, old generation counter and old lock. After retry the migrated seat-generation counter path and old lock path have interrupted alreadyAbsent explainerArtifacts entries. The test does not require a workspace receipt entry.",
       "targets": [
         {
           "anchor": {
@@ -289,7 +289,7 @@
       ]
     },
     "5": {
-      "note": "Never raises; a refused generation is held.",
+      "note": "The cleanup reports a missing repository and a refused release. The refused pin and snapshot remain. The finalizer reports an injected hook exception.",
       "targets": [
         {
           "anchor": {
@@ -363,12 +363,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:526a643244ab1dbb0d8f374c24e9047cc62d337dcb37d130f76a0ab5725ee5b5",
             "locator": {
-              "end": 816,
+              "end": 461,
               "kind": "line_range",
-              "start": 1
+              "start": 461
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

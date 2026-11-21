@@ -27,12 +27,12 @@
           "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
         }
       },
-      "facet": "Every returned call's whole result validates under its registered model.",
-      "id": "PRF-8TH88D",
+      "facet": "The mounted sweep fixture classifies returned arms and validates the reported dictionary result where readable, with validation of the delivered payload when the result is absent, unreadable or not a dictionary.",
+      "id": "PRF-D58CPV",
       "invariant": "INV-22N6MM",
       "origin": {
-        "handoffEntry": "MIK-R130@v1 rules 1+3",
-        "leaf": "260928-MIK-L130"
+        "handoffEntry": "L15-M04-successor-PRF-8TH88D",
+        "leaf": "261112-BUG-L15"
       }
     },
     {
@@ -107,7 +107,7 @@
         "handoffEntry": "MIK-R130 W03 sweep arms table",
         "leaf": "260928-MIK-L130"
       },
-      "rationale": "The published arms table states whole-result validation, refusal identity/code/next, and unvalidatable-at-any-depth.",
+      "rationale": "The source arms table documents whole-result validation, refusal identity and the unsupported-key policy. The ordinary tool-entry-point controls check nested delivered keys.",
       "role": "support"
     },
     {
@@ -208,46 +208,59 @@
       ]
     },
     "29": {
-      "note": "A refusal's own marks, read from the payload rather than from the arm.",
+      "note": "The support classifier derives refusal marks from nonempty strings in the delivered payload.",
       "targets": [
         {
           "anchor": {
-            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
-            "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:45f51aced2c7283a60cf8b5c5697df4cc9a00bbee3393481209618d19a26bf67",
             "locator": {
-              "kind": "symbol",
-              "name": "refusal_marks"
+              "end": 173,
+              "kind": "line_range",
+              "start": 160
             },
-            "path": "mcp/tests/tool_entry_point_world.py"
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
           "kind": "test"
         }
       ]
     },
     "30": {
-      "note": "The ordinary world source declares UNMARKED_NOT_OK as an empty dictionary and the main sweep compares the observed bare-not-ok population with the pin by equality. This is a source assertion, not a new sweep result; the L110/T64 repair account remains historical source commentary.",
+      "note": "The support world declares an empty unmarked-refusal map. The main test compares it with both the classified and directly counted populations.",
       "targets": [
         {
           "anchor": {
-            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
-            "content": "sha256:f55f2cb63aa2086f6a03f7397289728ff4ed6119f0809d0d7f2c829f929a9785",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:7fb8ae1059b9ac3e7c42d3afdf0d06ef83bc911039d0953530d7c82ecd73a85a",
             "locator": {
-              "end": 912,
+              "end": 111,
               "kind": "line_range",
-              "start": 1
+              "start": 104
             },
-            "path": "mcp/tests/tool_entry_point_world.py"
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
             "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
-            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "content": "sha256:757af9f7f9dad111565dc7ed4ba8c77710aac823dd968fd209df1285df43a118",
             "locator": {
-              "end": 208,
+              "end": 202,
               "kind": "line_range",
-              "start": 167
+              "start": 196
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:0341c72c938395679d1389189961a19e5811376f565c36aa8534ac33a9eb7d70",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 283
             }
           },
           "kind": "test"
@@ -273,57 +286,60 @@
       ]
     },
     "32": {
-      "note": "The refused model's identity, which separates a response-model break from the caller's invalid arguments.",
+      "note": "The support classifier extracts the model name from validation detail and compares it with the registered response model.",
       "targets": [
         {
           "anchor": {
-            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
-            "content": "sha256:995a2e5792acde634a2f8609a360561be5b5fb9942e5d80573a5a6fcb7e7c852",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:16b4329e12c469029cb8e311e40f5322414bdd609caf29357403eaf5e8bb91c9",
             "locator": {
-              "kind": "symbol",
-              "name": "REFUSED_MODEL"
+              "end": 135,
+              "kind": "line_range",
+              "start": 131
             },
-            "path": "mcp/tests/tool_entry_point_world.py"
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:f5ab20eb78fe980df8ce04556764cd4ffc1b830432ac75476c47207d5b13f5c9",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
           "kind": "test"
         }
       ]
     },
     "35": {
-      "note": "The two scaffold files the sweep's own world may gain, and nothing else.",
+      "note": "The main probe requires exactly the two declared scaffold additions in the memory census and untracked status.",
       "targets": [
         {
           "anchor": {
-            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
-            "content": "sha256:f18c14781ddeecc0fca17b58d2b4d8d3f97930328f9c497895ac89df4713fc79",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:e82398eff1871ba43158e52b3097b1c69e36f61323f88e2a02aad2956b747866",
             "locator": {
-              "kind": "symbol",
-              "name": "KNOWN_MEMORY_SCAFFOLD_ADDITIONS"
+              "end": 92,
+              "kind": "line_range",
+              "start": 89
             },
-            "path": "mcp/tests/tool_entry_point_world.py"
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
             "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
-            "content": "sha256:b132a2a2d4d753b575dfd386512b6e9a21bc2e7750c918e2461d1138e1a51eaa",
+            "content": "sha256:376792dcb6b7adecf9ff5d2a42f16d2bc880ccd83823ca82133dd61884c9fbc5",
             "locator": {
-              "end": 361,
+              "end": 378,
               "kind": "line_range",
-              "start": 349
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
-            "content": "sha256:8f14734706c32adc59706968b0a18f752e8465450d9bf46d360cda834511b7ae",
-            "locator": {
-              "end": 377,
-              "kind": "line_range",
-              "start": 363
+              "start": 347
             }
           },
           "kind": "test"
@@ -331,30 +347,17 @@
       ]
     },
     "37": {
-      "note": "The swept population is derived and equals the live server's advertisement.",
+      "note": "The main coverage case compares this sweep’s invocation table and live server advertisement with the public roster.",
       "targets": [
         {
           "anchor": {
-            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
-            "content": "sha256:e6541f83ab393d4ca2381200670325da4fd3de1a6b1b2a32abe9548fecfa8896",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:57d50058c8bff473ec350ef9c891850aef546413edd49555abb0990427629416",
             "locator": {
-              "kind": "symbol",
-              "name": "EntryPointCoverageTests"
-            },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
-            "content": "sha256:8588ea46dee3b21b36167a64c4c0d71d9e0a2cb728851ec289261177ff118a3c",
-            "locator": {
-              "end": 478,
+              "end": 149,
               "kind": "line_range",
-              "start": 463
-            },
-            "path": "mcp/tests/tool_entry_point_world.py"
+              "start": 135
+            }
           },
           "kind": "test"
         }
@@ -379,17 +382,31 @@
       ]
     },
     "39": {
-      "note": "The census controls: write, rewrite and delete in both repositories and outside every zone.",
+      "note": "The extracted controls check one memory-file add, code-file rewrite and delete, and three changes outside the coordination write zones.",
       "targets": [
         {
           "anchor": {
-            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
-            "content": "sha256:22a11f367e54291ae27b8b07bc21b8ba0b55f48071782901bdea64f09a00b608",
+            "blob": "6931aa46b1cba8c568ab5d3520e9714417410847",
+            "content": "sha256:5b960d6b8627d929296ffeda64be97237ccc852c0d694cbdf89218c00a55f505",
             "locator": {
-              "kind": "symbol",
-              "name": "EntryPointCensusControlTests"
+              "end": 188,
+              "kind": "line_range",
+              "start": 163
             },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
+            "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6931aa46b1cba8c568ab5d3520e9714417410847",
+            "content": "sha256:fe81f6a4ec9a6c942709ad574566a5d1ace16fbaef98b2638c7407160fec0460",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
           "kind": "test"
         }
@@ -400,12 +417,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:171ddebacbf664d00fdcf83eaa546bb02da4596111fc8eb2e16c6cc0785397b1",
             "locator": {
-              "end": 816,
+              "end": 624,
               "kind": "line_range",
-              "start": 1
+              "start": 624
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -470,39 +487,29 @@
       ]
     },
     "43": {
-      "note": "The choke point a bypassing handler skips, and the validation this module's control executes.\n\nAnchor: `_tool_payload`",
+      "note": "The extracted bypass control returns a raw dictionary past the adapter choke point and checks that the support classifier sees an unvalidatable result.",
       "targets": [
         {
           "anchor": {
-            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
-            "content": "sha256:ee04bc3ed03d22f92aab8bae130192202a5096d75a2b10833b5b548f800d66aa",
+            "blob": "6931aa46b1cba8c568ab5d3520e9714417410847",
+            "content": "sha256:cede13215966552239010b64649c4fca8e07a0bad43fbc142c8b03c878447fcf",
             "locator": {
-              "end": 167,
+              "end": 131,
               "kind": "line_range",
-              "start": 131
+              "start": 110
             },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
+            "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
             "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
-            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
             "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
             "locator": {
-              "kind": "symbol",
-              "name": "_tool_payload"
+              "end": 31,
+              "kind": "line_range",
+              "start": 22
             },
             "path": "mcp/src/agents_remember/mcp/tools/base.py"
           },
@@ -511,118 +518,93 @@
       ]
     },
     "44": {
-      "note": "The validation the positive control drives directly.",
+      "note": "The extracted control calls the response validator with an undeclared key and checks the support classifier’s unvalidatable arm.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "6931aa46b1cba8c568ab5d3520e9714417410847",
+            "content": "sha256:8251f4ccdd9d264c78e9cbc7664ca539d93c8d25c9a0963db21a92afb911961c",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "a82c6e7b9b4fa460c90f61260685b7e5d3ec4fa7",
             "content": "sha256:8614b4bd9643c8f33dfb3dbf05d3a66fce56cb3539fc9d636fe3b2d6d4e19164",
             "locator": {
-              "kind": "symbol",
-              "name": "finalize_tool_response"
+              "end": 31,
+              "kind": "line_range",
+              "start": 15
             },
             "path": "mcp/src/agents_remember/models/tools/tool_response.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
-            "content": "sha256:8251f4ccdd9d264c78e9cbc7664ca539d93c8d25c9a0963db21a92afb911961c",
-            "locator": {
-              "end": 101,
-              "kind": "line_range",
-              "start": 91
-            },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
-          },
-          "kind": "test"
         }
       ]
     },
     "45": {
-      "note": "The three 60-second phase limits and the named timeout that the classifier does not count as a product raiser.",
+      "note": "The support call uses 60-second limits for session initialization, tool response and session cleanup. A named timeout leaves call without entering the product outcome classifier.",
       "targets": [
         {
           "anchor": {
-            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
-            "content": "sha256:c4bac9584ff57d79b197e1ae2162e83f182902c091e0956914a3b6bebd602048",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:d21b9c16579e150220ef490d74b6e70b5c3279caed4014709e6112af560cc1e0",
             "locator": {
-              "end": 507,
+              "end": 53,
               "kind": "line_range",
-              "start": 488
+              "start": 46
             },
-            "path": "mcp/tests/tool_entry_point_world.py"
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
-            "content": "sha256:e33e96dd94141fc597c4a422e03f4f6a1de7c73b57f87d47305f37ccf25e19f1",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:9e176dc5a4e88c08a56c8417563f0ed588a59f9d983c21c5876e57016e2d194c",
             "locator": {
-              "end": 528,
+              "end": 478,
               "kind": "line_range",
-              "start": 509
+              "start": 422
             },
-            "path": "mcp/tests/tool_entry_point_world.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
-            "content": "sha256:6d38fc22f52ea994529c7cb3ae3a3c9dca4e2f05db81f3fd359840039f11b8bc",
-            "locator": {
-              "end": 48,
-              "kind": "line_range",
-              "start": 43
-            },
-            "path": "mcp/tests/tool_entry_point_world.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
-            "content": "sha256:cdee253b37027f823794d963e164401d59d8a3df94597f8731eca5d854c71375",
-            "locator": {
-              "end": 49,
-              "kind": "line_range",
-              "start": 48
-            },
-            "path": "mcp/tests/tool_entry_point_world.py"
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
           "kind": "test"
         }
       ]
     },
     "46": {
-      "note": "The control that holds an answer back and requires the named failure, the closed handler and a working next call.",
+      "note": "The extracted control patches a server handler to withhold its answer and requires a named three-second timeout, handler closure and a successful next call.",
       "targets": [
         {
           "anchor": {
-            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
-            "content": "sha256:eda1dac8bec47b36bfbbf76e34161d88a49431a722047a5a45471476e11ae0d3",
+            "blob": "6931aa46b1cba8c568ab5d3520e9714417410847",
+            "content": "sha256:980b3965f4affc76806e857b5c0e7e4883030776a39693a1c6741c53c2902086",
             "locator": {
-              "end": 89,
+              "end": 58,
               "kind": "line_range",
-              "start": 68
+              "start": 34
             },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
+            "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
-            "content": "sha256:013fea916dec48472c2c0310925822170f04fab585b568a0384ad1cdc4dc413d",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:9e176dc5a4e88c08a56c8417563f0ed588a59f9d983c21c5876e57016e2d194c",
             "locator": {
-              "end": 515,
+              "end": 478,
               "kind": "line_range",
-              "start": 488
+              "start": 422
             },
-            "path": "mcp/tests/tool_entry_point_world.py"
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
           "kind": "test"
         }
@@ -753,7 +735,7 @@
       ]
     },
     "52": {
-      "note": "The discriminator: which model refused decides the arm — the tool's own response model or the caller's arguments model.",
+      "note": "The ordinary sibling classifier also compares the validation error model name with the tool’s registered response model.",
       "targets": [
         {
           "anchor": {
@@ -770,24 +752,25 @@
       ]
     },
     "53": {
-      "note": "The invalid-argument control proving the caller's side lands in its own arm and is never reported as the tool's break.",
+      "note": "The extracted invalid-argument control calls citation_fix without repo_id and requires the citation_fixArguments arm.",
       "targets": [
         {
           "anchor": {
-            "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
-            "content": "sha256:7423704e2a966a6f00d7f069795ba563a99016ae9bb313cd9f26369f16f1d982",
+            "blob": "6931aa46b1cba8c568ab5d3520e9714417410847",
+            "content": "sha256:53a3fc5688b2bedb6331a6a4f789e6eb9ffeaa8b14ba366bb7cbd9d03414ca04",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_invalid_argument_lands_in_its_own_arm_and_names_the_callers_side"
+              "end": 153,
+              "kind": "line_range",
+              "start": 133
             },
-            "path": "mcp/tests/test_tool_entry_point_controls.py"
+            "path": "mcp/tests/test_tool_entry_point_sweep_controls.py"
           },
           "kind": "test"
         }
       ]
     },
     "54": {
-      "note": "The population-equality control asserting the swept population equals the live advertisement.",
+      "note": "The ordinary sibling coverage case checks its own invocation table and live advertisement against PUBLIC_TOOLS.",
       "targets": [
         {
           "anchor": {
@@ -835,29 +818,16 @@
       ]
     },
     "56": {
-      "note": "The benign census includes grant input and canonical direct-landing leaf identity.",
+      "note": "The benign support table names the canonical leaf reference for direct landing and the isolated grant input.",
       "targets": [
         {
           "anchor": {
             "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
-            "content": "sha256:0ffcbdb934f0cd8b5a0d688f2a810ed051f7f42b95ddee2a78d31f7d7a1a62cf",
+            "content": "sha256:fa52c047c0c71d6253d0a055c220806b72ae00326b490bfb4daa4198809183fb",
             "locator": {
-              "end": 653,
+              "end": 761,
               "kind": "line_range",
-              "start": 638
-            },
-            "path": "mcp/tests/tool_entry_point_sweep_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
-            "content": "sha256:6a0ff73aa2143f39a0c75485ffecef4e3d13b41e55e54b9fd5cc4de9fef3b8d9",
-            "locator": {
-              "end": 759,
-              "kind": "line_range",
-              "start": 747
+              "start": 749
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },

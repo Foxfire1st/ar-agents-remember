@@ -12,7 +12,7 @@ Typed validation for the public lifecycle-control request envelope.
 
 ### Logic
 
-The public surface is `LifecycleControlRequestError`, `validate_lifecycle_control_request`. Task-addressed retry, recover, cancel, revise, integrate, retire, and supersede decisions are derived from immutable journal state plus exact live Git/process evidence. Retry preserves accepted input; revise composes proven-safe cancellation with a write-ahead successor; ambiguity routes to same-generation recovery.
+`validate_lifecycle_control_request` checks the supplied generation, developer intent and action-specific fields before authority reads. The registered control vocabulary is `retry`, `recover`, `resume`, `cancel`, `retire` and `supersede`. Request validation checks shape. The lifecycle control handler separately decides which actions an admitted direct generation can use.
 
 ### Conventions
 
@@ -38,18 +38,14 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-- The module defines `LifecycleControlRequestError`; `validate_lifecycle_control_request` as its public seam. [1]
+- `LifecycleControlRequestError` and `validate_lifecycle_control_request` own authority-free request validation. [1]
 
 ### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
-## 260821-CLIVE Exact Public Control Shapes
+## Public Control Shapes
 
-Authority-free request fields are validated before durable reads. Supersede requires grade and
-admission together, while every other action forbids them. Commit messages remain revise-only.
-This exact action matrix prevents partial control requests from reaching journal or task mutation.
+The request requires a positive expected generation and a nonblank intent note. Only `resume` may carry commit-message fields. `supersede` requires both grade and admission, and every other action forbids them. An accepted envelope still needs the handler's generation and evidence checks.
 
-## CCR-L42 current candidate
-
-Commit-message fields are accepted only for the `resume` successor request, replacing `revise`; every other lifecycle-control action refuses present commit-message fields.
+The 260821-CLIVE request used the earlier action name `revise` for commit-message fields. CCR-L42 replaced that request action name with `resume`.

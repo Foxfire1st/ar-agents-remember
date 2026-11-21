@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Checks lossless public closeout readiness and immutable quality evidence. The retained cases preserve finalization authority through projection, keep diagnostic results non-certifying even when their rails match, reject stale certificates and invalid profiles, and refuse changed decoder bytes under the same identifier.
+Checks lossless public closeout readiness and immutable quality evidence. The retained cases preserve finalization authority through projection, keep a diagnostic with matching rails under its distinct plan digest while the separately certified readiness stays green, project stale certificates and an invalid profile as non-green, and refuse changed decoder bytes under the same identifier.
 
 ## Code Commentary
 
@@ -23,10 +23,7 @@ Inspect the cited setup and collaborators before treating a focused result as en
 
 ### Invariants And Boundaries
 
-Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
-cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
-an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
-work. This source inspection does not claim a newly executed test or acceptance result.
+The current source assertions concern readiness and decoder identity. The repository test-evidence policy treats coverage and CRAP as reporting signals. A production CRAP score of 20 prompts review.
 
 ### Todos
 
@@ -47,9 +44,13 @@ Each current definition below can be inspected in the exact source file. Histori
 to removed methods are superseded by this current inventory.
 
 - Closeout readiness is lossless on every surface [1]
-- Diagnostic readiness stays non certifying with matching rails [2]
+- A diagnostic observation has rails equal to the certified gate’s rails and a distinct plan digest. The complete input’s certified readiness remains true. [2]
 - Stale certificates and invalid profile remain non green [3]
-- Recovery refuses same id decoder byte drift [4]
+
+- The same-ID decoder case changes the accepted decoder bytes, keeps the publication generation, and requires rendering to raise a dependency mismatch. [4]
+
+
+- The repository test-evidence policy reports coverage and CRAP outside its enforcing rails. Its production-function review threshold is 20. [5]
 
 ### Cross-Repo References
 

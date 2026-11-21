@@ -21,10 +21,9 @@ through the production input boundary. Unknown fixture keywords are rejected; th
 message default or ledger parameter. The arguments retain the repository-owned certification
 profile default where that fixture needs one.
 
-`start_closeout_operation` maps enabled messages into canonical admission. Legacy journal-plane
-fixtures may obtain a deliberately synthetic waiting generation and bypass only its first-ready
-scheduling assertion; a fixture with real scheduling evidence keeps that fence. The synthetic
-current generation no longer carries ledger memory/provenance/dependency fields.
+`ensure_fixture_waiting_door` preserves the caller's fixture contract and returns it
+with a true fixture-ready flag. `_fixture_waiting_door` builds a disposable task
+and an associated evidence fixture.
 
 `MutationEvidenceRecorder` checks monotonic intent/proven transitions and stable before/expected
 trees. The builders construct intent, reconciled-unchanged, and commit-proven typed evidence for the
@@ -34,9 +33,8 @@ without a ledger output.
 
 ### Conventions
 
-The support is a test composition boundary, not production admission authority. Its narrowly
-scoped scheduling patch must stay visible in callers' evidence claims. Queue fixtures and operation
-input/evidence fixtures retain separate responsibilities.
+The support composes typed test fixtures. Queue fixtures and operation input and
+evidence fixtures retain separate responsibilities.
 
 ### Invariants And Boundaries
 
@@ -65,8 +63,12 @@ These repository-relative targets and exact ranges were checked against the L9 w
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
 - The recorder verifies typed progress transitions. [1]
-- Canonical setup passes only enabled code/memory messages. [2]
-- Finalization publishes code/memory recovery cells. [3]
+
+
+- The typed helpers normalize explicit fixture inputs, and `_enabled_message` returns a message only for an enabled leg. [2]
+
+
+- The finalization fixture writes the code and memory-content recovery cells and the finalized contract digest to its test store. [3]
 - Input and WorktreeArgs builders share production normalization. [4]
 - Evidence builders retain the explicit durable states. [5]
 

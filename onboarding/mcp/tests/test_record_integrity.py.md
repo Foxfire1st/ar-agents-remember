@@ -13,13 +13,14 @@ the artifact as it stood when the drift was live, and PASS on the artifact that 
 asserted only in the refusal direction cannot be shown to be non-vacuous, which is the fault the
 sibling `instrument_discipline.py` exists to catch.
 
-Three artifacts are read from the record rather than reconstructed, and each is named in its case:
-`260712_task-reader-body-priority-rc5` (seven leaves, every contract `completed/completed`, every
-document still `planning`/`inProgress`, and a master whose rows read `Completed` over them);
-`260918_tool-surface-and-process-integrity` (this master, whose contracts and documents agree); and
-the memory repository's own revision `e116e5ee`, which carries `T45`'s two route documents as they
-stood while they stated `instrument_discipline.py` at 361 lines and `test_instrument_discipline.py`
-at 350 lines / 16 cases.
+The record-backed controls include these named inputs:
+`260712_task-reader-body-priority-rc5` (seven contract/document disagreements and five
+early-completed master rows among seven examined rows), `260918_tool-surface-and-process-integrity`
+(the source of the copied and normalized agreement fixtures), and memory revision `e116e5ee`.
+That revision preserves `T45`’s two route cards, including the correction to 432 module lines and
+the earlier account of 350 suite lines and 16 cases. The test compares its frozen prose with source
+measurements and asserts one stale suite line count. Other controls copy the older memory-hygiene
+and closeout-certification task roots.
 
 The control worlds are built by **copying** those task roots into a temporary directory, so the real
 coordination tree is only ever read. When the tree is not reachable the cases that need it **skip
@@ -38,7 +39,7 @@ not a new collection or execution result.
   under-reports; a contract with no leaf document is **counted rather than failed**; and a document
   reading `Completed` before its closeout has started is a finding, not a count.
 - `MasterRowAgainstLeafDocumentTests` (360-555), **7 cases** — the historical master's rows read
-  `Completed` over unlanded documents; this master's rows agree with their documents **at the
+  `Completed` over unlanded documents; the normalized copy of this master’s rows agrees with its documents **at the
   declared leaf count** rather than at the live one; the boundary `D42` crossed is pinned from
   **both** sides by `test_a_row_is_never_completed_on_step_state_alone` (every step marked, document
   not landed → the row is `inProgress`) and
@@ -46,9 +47,8 @@ not a new collection or execution result.
   while one of its own steps is open → still `inProgress`); an abandoned leaf stays abandoned; and
   the two reported halves —
   `test_a_row_completed_without_its_document_is_reported` (464) and
-  `test_a_row_completed_over_a_document_with_an_open_step_is_reported` (509) — reach the finding
-  through the step-completeness conjunct rather than through the status, which is the half the
-  sibling case cannot reach.
+  `test_a_row_completed_over_a_document_with_an_open_step_is_reported` (509) — assert two distinct findings. The planning document yields `RULE_MASTER_EARLY`. The
+  document marked `Completed` with an open step yields `RULE_MASTER_ROW`.
 - `RegisterOwnerArrowTests` (563-660), **5 cases** — this master's register is reported with its
   arrow count stated **against the declared leaf set**, so the count the next leaf moves cannot red
   the case; a register whose arrows all resolve is clean; an arrow to an undeclared leaf is reported
@@ -58,16 +58,16 @@ not a new collection or execution result.
   rather than declared by the test; the historical route documents are read **by Git object** at
   `e116e5ee`; a correct pair of figures is not a disagreement; a stale prose figure is reported
   against the current source; a correction sentence is graded at the value it corrected *to*; a
-  figure in frontmatter is not a body claim; an unknown shape and an unresolvable base commit and a
-  source outside any Git tree each **refuse** rather than zero; the corrected prose passes; a bare
+  figure in frontmatter is not a body claim. The cases refuse an unknown shape, an unresolvable base
+  commit, and a source outside a Git worktree when a base is supplied. Corrected prose passes. A bare
   line count belonging to another file is not this source's figure (the case that pins the first
   run's fault, where a pattern of `\d+ lines` alone matched twelve counts, eleven of them other
   files' sizes); and a claim scoped to one document does not grade another.
-- `RecordIntegrityReportTests` (1015-1140), **8 cases** — every comparison states its two populations;
-  *"said what it compared"* reads as the comparison rather than as a status; the CLI names its input
-  when none is supplied and refuses a root carrying no `tasks/` tree; the CLI runs from a task root
-  **and writes nothing**; a clean world exits zero; the prose-figure check runs from the task root and
-  writes nothing; and a figure claim that cannot be read **refuses rather than being skipped**.
+- `RecordIntegrityReportTests` (1015-1140), **8 cases** — the two default comparisons report their detail and subject counts, and the
+  rendered output includes the comparison, populations and disagreement labels; the CLI names its input
+  when none is supplied and refuses a root carrying no `tasks/` tree; both CLI cases run from a task root and assert unchanged recursive
+  path inventories, including the prose-figure case; the selected clean comparison exits zero; and
+  a malformed figure claim raises a named input error.
 
 `_coordination_root` (80-92) uses `AR_COORDINATION_ROOT` when set and otherwise resolves
 `REPO_ROOT.parents[1] / "ar-coordination"`. It skips the record-dependent cases only when that
@@ -76,14 +76,13 @@ variable alone does not establish that those cases skipped or that the historica
 
 ### Conventions
 
-The three world-builders are shared and each says why it is a copy: `_task_root` (95-99) skips when
+The shared helpers locate or copy their fixture inputs. `_task_root` (95-99) skips when
 the artifact is absent, `_control_world` (102-109) copies whole task roots into a disposable
 coordination tree, and `_memory_repository` (112-117) skips when the memory repository is absent.
 `_frozen_document` (120-141) writes out the bytes a **named revision** committed, because the working
 tree moves under a test and then the test lies about what it measured; it indexes the two route cards
 so two documents sharing a basename really are scanned as two. `_frozen_register_snapshot` (144-162)
-replaces the copied master's register with a snapshot that carries `R11`'s `→ L20` arrows **by
-construction** — pinning the live register would make the case assert the world's defect count, so
+replaces the copied master's register with a snapshot that constructs five `R11`-style `→ L20` arrows — pinning the live register would make the case assert the world's defect count, so
 repairing the world would turn the suite red precisely when the check it protects is right.
 
 `DECLARED_LEAVES` / `DECLARED_LEAF_COUNT` (56-60) and `_frozen_leaf_snapshot`
@@ -92,26 +91,25 @@ repairing the world would turn the suite red precisely when the check it protect
 master to two leaves, writes their document statuses and reduces the master's rows to them,
 so the assertions compare against the fixture's declared population.
 
-The two prose labels are spelled so neither can match the tail of the other's name: `INSTRUMENT_LABEL`
+The two prose labels distinguish the suite name from the module name: `INSTRUMENT_LABEL`
 (76) carries a lookbehind because a bare `instrument_discipline\.py` matches inside
 `test_instrument_discipline.py`, which would credit the suite's own figure to the module the suite
-tests. Assertions state subject and authority counts alongside the finding, so a case cannot pass by
-being zero for the wrong reason.
+tests. The historical contract comparison and generated-register cases assert their reported
+subject and authority counts.
 
 ### Invariants And Boundaries
 
 - **Both directions, every comparison.** A refusal-only case shows a function rejects something; only
   a paired acceptance case shows it would have passed a good artifact.
-- **A finding case asserts the finding's own sides**, not merely that something was reported —
-  `declared`, `measured` and `rule` are matched, so a case cannot pass by being refused, or reported,
-  for the wrong cause.
+- The D42 report controls check the declared value, the measured outcome and the matching rule.
+  The undeclared-register control checks the two arrow values. The generated-register control
+  checks the declared arrow and rule alongside both populations.
 - **The evidence is read from the record or the case says it skipped.** The historical task roots are
   **copied**, not reconstructed; the `T45` documents are read by Git object at a named revision; and a
   missing artifact is a named skip.
-- **The suite never writes into the tree it measures.** Every writer takes `tmp_path`, and both CLI
-  cases assert that a run from a task root leaves the tree unchanged.
-- **The live-state cases use a frozen copied world.** The relevant assertions read
-  `_frozen_leaf_snapshot`'s declared population.
+- The fixtures write their disposable copies. Both CLI cases snapshot relative paths before and
+  after the run and require identical listings.
+- The current-master controls use `_frozen_leaf_snapshot`'s declared population in the copied world.
 
 ### Todos
 
@@ -243,29 +241,33 @@ The historical evidence lives under task roots in the coordination tree and in t
 repository's revision `e116e5ee`, and is cited by the source that reads it rather than linked as
 durable memory. Every range was derived against the current 1140-line source.
 
-- The historical case for the leaf/contract comparison and for D42's class. [1]
-- This master, whose contracts and documents agree, read through a frozen register snapshot. [2]
+
+- The historical-master cases expect seven contract/document disagreements and five early-completed rows out of seven compared rows. [1]
+
+
+- The named master supplies a copied two-leaf agreement fixture and the separate frozen register comparison. [2]
+
 - The two leaves the frozen snapshot declares, and their count. [3]
 - The revision that committed T45's stale figures, and the two route documents it carried. [4]
-- The two labels spelled so neither can match the tail of the other's name. [5]
+- The module regex uses a negative lookbehind, which prevents it matching the suite name’s suffix. [5]
 - The coordination root the session was told about, or a named skip rather than a silent pass. [6]
 - Task roots are copied into a disposable coordination tree, so the real tree is only read. [7]
 - The bytes a named revision committed, written out so the case reads history rather than the tree. [8]
 - The register snapshot that carries R11's arrows by construction, so the case cannot assert the world's defect count. [9]
-- The frozen leaf world every live-state case now reads: declared documents, pruned leaves, reduced rows. [10]
-- The historical master fails as required and this master passes, with both populations stated. [11]
+- The copied current-master fixture sets the declared documents’ statuses and steps, prunes the leaf population and reduces the task rows. [10]
+- The historical-master control expects seven contract/document disagreements. The normalized current-master control expects agreement across two compared contracts and two documents. [11]
 - The rule D42 crossed, pinned from both sides of the step-completeness conjunct. [12]
 - Only the State cell is graded, and a master with no leaf set refuses. [13]
-- A prose figure is compared with its source at the revision the prose describes. [14]
-- Every comparison states its two populations, and the CLI writes nothing. [15]
+
+- The historical control reads prose from memory revision e116e5ee, measures source figures, and expects one stale historical suite line count. [14]
+
+- The report tests check comparison detail and population output from the two default comparisons. Both task-root CLI cases assert identical recursive relative path inventories before and after the call. [15]
 - The module whose four comparisons these cases pin. [16]
 
 ### Cross-Repo References
 
-No separate cross-repository protocol is established by this file. The configured cross-repository
-allowance is empty and no external source is relied upon here.
-
-No cross-repository evidence is required for these file-local claims.
+The record-backed cases read same-project coordination task roots and a named historical
+revision in the project’s memory repository.
 
 ### Repo-Internal References (continued)
 

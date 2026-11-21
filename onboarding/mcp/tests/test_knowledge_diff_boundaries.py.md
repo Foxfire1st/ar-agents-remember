@@ -55,12 +55,11 @@ and default production observation support the integration classification.
 | paging and the display budget | `:287`, `:755` | A small budget pages the comparison without shrinking its totals, and a page of a selection is what the comparison **displays**, not what it **selected** — R07's byte-budget page is not reused as the comparison's scope |
 | refusal without substitution | `:333`, `:355`, `:455`, `:485` | A missing side refuses and substitutes no other snapshot; a real write to the candidate moves its logical digest and refuses the continuation with `continuation_binding_mismatch` and `detail` ending *"it binds another snapshot pair"*; a continuation presented against another selector refuses and returns **no page**; and a side naming another snapshot of its own file is refused by the per-side digest verification **before any page** |
 | the response's honesty | `:528`, `:557`, `:590` | Nine verdict words searched over the whole **serialized** response with a positive control; the two change statements as separate fields where neither implies the other; and the record comparison reporting exactly the payload field that changed |
-| the expansion's honesty | `:799`, `:821`, `:880` | No mounted UI and no approval the comparison cannot make; an unavailable observation reported as unavailable and **never** as a change set; and a probe that measured the trees being what makes a gap visible |
+| the expansion's honesty | `:799`, `:821`, `:880` | No mounted UI and no approval the comparison cannot make; an unavailable observation reported as unavailable and **never** as a change set; and an injected available observation making its unattributed path visible |
 
 **The verdict-word case is the packet's *Forbidden Overreach* measured rather than asserted.** It searches
 the serialized response's **field names and values** for nine verdict words and includes a positive
-control, so the absence it proves is an absence in the payload a client actually receives — not merely in
-the model's declared attributes.
+control, so the assertion checks the serialized application result, including values.
 
 **The local helpers are deliberate.** `_substitute`/`_substituting` rewrite one field of one
 already-built request so a case measures the *comparison's* answer to a mutated input rather than a
@@ -109,7 +108,8 @@ mutation applications, 126 scored node runs, 41 assertion kills, 1 exception dea
 
 ## Evidence
 
-- A new invariant and its one revision move the snapshot; refusal leaves every other row counter unchanged. [51]
+
+- A test-only mutation adds one invariant and one revision and changes the candidate digest. After the continuation is refused, the candidate counters account for those two additions and show no change in the other counted tables. [51]
 
 
 ### Docs References
@@ -123,8 +123,8 @@ No Domain Documentation source is configured for this slice.
 - `test_a_page_of_a_selection_is_what_the_comparison_displays_not_what_it_selected` supplies the current fixture or assertion described above. [28]
 - `test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set` supplies the current fixture or assertion described above. [29]
 - `test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible` supplies the current fixture or assertion described above. [30]
-- Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [31]
 
+- The continuation case opens its candidate fixture with the test-only row store and creates one invariant with one revision. [31]
 
 
 - The test-only RowStore changes its text tree, rebuilds the index and reopens the read connection; candidate construction is independent, not a closed-database copy. [32]
@@ -141,7 +141,8 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References (continued)
 
-- The integration marker, the fixture, the request builder and the public-seam driver. [33]
+
+- The integration marker, per-test fixture, typed request builder and application comparison driver. [33]
 
 
 - The two readers that let a case name a record rather than a position. [34]
@@ -161,8 +162,14 @@ No configured domain documentation could be checked.
 
 
 - **A continuation against another selector refusing and returning no page.** [41]
-- **A side naming another snapshot of its own file refused before any page — the node the review's `R22` form kills.** [42]
-- **The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.** [43]
+> Earlier R22 note: a side naming another snapshot of its own file refused before any page.
+
+- When a side names another logical snapshot of its own file, the comparison refuses with snapshot_unavailable and returns neither a page nor an expansion. [42]
+
+
+
+- The verdict test searches the serialized response for all nine listed words and checks for a known source-observation field and a changed source observation. [43]
+
 
 - The two change statements kept apart, and the record comparison reporting exactly the field that changed. [44]
 
@@ -173,7 +180,9 @@ No configured domain documentation could be checked.
 
 - The two non-claims: no mounted UI and no approval, and an unavailable observation never reported as a change set — now with the partition asserted too (no total at all, empty third list, the undetermined limit declared and no counted omission). [47]
 
-- **The probe that measured the trees being what makes a gap visible.** [48]
+
+- The injected available probe supplies one changed path. The application exposes that path as the exact unattributed gap and declares the corresponding limitation. [48]
+
 
 - run_diff omits a probe override, and the application defaults to git_tree_difference_probe; this source-described route is not a fresh execution count. [49]
 
@@ -195,4 +204,6 @@ No configured cross-repository evidence is claimed.
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:353-353 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:801-801 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1203-1203 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2030-2030 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2741-2741 - the bytes it recorded now occur 92 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2784-2784 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:624-624 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1937-1937 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1981-1981 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2336-2336 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
-- The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence. [50]
+
+
+- The lane catalog registers this module in integration. Seven lifecycle artifact rows declare it as a consumer. [50]

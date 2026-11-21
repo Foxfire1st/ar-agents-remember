@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
+    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
     "role": "curator",
-    "statement": "The host guide still describes the exact-name profile lookup and the applicable profile's mode on the selected profile harness.",
-    "task": "261112-BUG-L11",
+    "statement": "The host guide's provider and profile behavior still applies. The status producer reports task and enclosure state, with live journal progress limited to direct landings.",
+    "task": "261112-BUG-L15",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -161,7 +161,7 @@
       "path": "mcp/src/agents_remember/serving/media.py"
     },
     {
-      "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+      "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/worktree_status.py"
     }

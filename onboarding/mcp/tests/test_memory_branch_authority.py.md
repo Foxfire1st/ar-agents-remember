@@ -87,4 +87,5 @@ No meaningful cross-repo references found.
 - Group 3 — the exclusion, pinned on the commit tree. [6]
 - The staging helper the third group's failure mode lives in. [13]
 
+
 - The lane row that keeps the fail-closed evidence registry loading clean. [15]

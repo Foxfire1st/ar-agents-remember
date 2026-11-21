@@ -61,7 +61,9 @@ No configured domain documentation could be checked.
 - One accepted record projected, with resolved identities carried exactly on the channel that moved. [32]
 - The record model and its self-consistency validator the projected movement reads. [33]
 
-- The production sync tool whose payload the read-side block is attached to. [34]
+
+- After sync, worktree_sync attaches the review_rebinding result. A later live review selects the comparison, reads its saved rebinding and projects the movement value. [34]
+
 
 ### Cross-Repo References
 

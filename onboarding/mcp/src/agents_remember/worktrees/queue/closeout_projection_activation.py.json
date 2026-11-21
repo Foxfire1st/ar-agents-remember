@@ -54,12 +54,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35e1afaa9c71a35e4c33c4ff4b785acc13328801",
+            "blob": "47cbed620d542b52197b71eb2714a95d449539ad",
             "content": "sha256:49a2e68dc85ea93b2aa44316fc1fce77276366330bbc42c71c4c52672fa492b6",
             "locator": {
-              "end": 170,
+              "end": 158,
               "kind": "line_range",
-              "start": 139
+              "start": 127
             },
             "path": "mcp/tests/test_cross_master_concurrency.py"
           },

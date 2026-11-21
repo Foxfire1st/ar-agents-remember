@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "7b04c967bf1b21442083337aae1f6d1f1f9f8eea",
-    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
+    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
+    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
     "role": "curator",
-    "statement": "Concepts describes the staged capability, the workspace writer’s selected report paths and digests, and WebM or MP4 publication. Its service link tracks the exact A7 source.",
-    "task": "261112-BUG-L13",
+    "statement": "The operation-journal concept still describes direct-landing generations and synchronous closeout and integration. Storage and status retain historical audit evidence.",
+    "task": "261112-BUG-L15",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     },
     {
-      "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+      "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
     },
@@ -356,12 +356,12 @@
       "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
     },
     {
-      "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
+      "blob": "3c1c869f493f68755e20a825d5e84db44ed38a54",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
     },
     {
-      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
@@ -371,7 +371,7 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+      "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

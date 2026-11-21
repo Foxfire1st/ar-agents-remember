@@ -4,15 +4,40 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The historical case for the leaf/contract comparison and for D42's class.",
+      "note": "The historical-master cases expect seven contract/document disagreements and five early-completed rows out of seven compared rows.",
       "targets": [
         {
           "anchor": {
             "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
-            "content": "sha256:577e25b5dc23b00cde6af63c3df5a25f111f4c87ba320268f1905196a4226890",
+            "content": "sha256:551c1b74c4d5e0d593468ff72af21696605b84bd729000a80005c2388247affb",
             "locator": {
-              "kind": "symbol",
-              "name": "HISTORICAL_MASTER"
+              "end": 51,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:5d7b279edbefa94554f42722c337d36e0b7d0cd0c0da1d56a0ce4ec116020db2",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 258
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:55e123b2fb38fc7c524be2dfa88eceab4fdde5777c8ebe29a4789c53bd0f3537",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 361
             }
           },
           "kind": "test"
@@ -20,7 +45,7 @@
       ]
     },
     "10": {
-      "note": "The frozen leaf world every live-state case now reads: declared documents, pruned leaves, reduced rows.",
+      "note": "The copied current-master fixture sets the declared documents’ statuses and steps, prunes the leaf population and reduces the task rows.",
       "targets": [
         {
           "anchor": {
@@ -69,7 +94,7 @@
       ]
     },
     "11": {
-      "note": "The historical master fails as required and this master passes, with both populations stated.",
+      "note": "The historical-master control expects seven contract/document disagreements. The normalized current-master control expects agreement across two compared contracts and two documents.",
       "targets": [
         {
           "anchor": {
@@ -117,15 +142,28 @@
       ]
     },
     "14": {
-      "note": "A prose figure is compared with its source at the revision the prose describes.",
+      "note": "The historical control reads prose from memory revision e116e5ee, measures source figures, and expects one stale historical suite line count.",
       "targets": [
         {
           "anchor": {
             "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
-            "content": "sha256:f8f28a79597b89d0df59a5c4c7ed45a5ca44e96bd50cd7d4e7ead04fd30c1b9c",
+            "content": "sha256:2086e60cc4b54b6aafe61b3f14827fb26424fc486bb041d81839fb528d8b02bc",
             "locator": {
-              "kind": "symbol",
-              "name": "DeclaredFigureCurrencyTests"
+              "end": 141,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:94631141dbfe03ccea0023dda6fa7da74e499aa04a2bf999183654cc931a5329",
+            "locator": {
+              "end": 757,
+              "kind": "line_range",
+              "start": 668
             }
           },
           "kind": "test"
@@ -133,7 +171,7 @@
       ]
     },
     "15": {
-      "note": "Every comparison states its two populations, and the CLI writes nothing.",
+      "note": "The report tests check comparison detail and population output from the two default comparisons. Both task-root CLI cases assert identical recursive relative path inventories before and after the call.",
       "targets": [
         {
           "anchor": {
@@ -206,12 +244,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
             "content": "sha256:f3d959f1d2badd9a58c6e336e82f49c9d71da8e7334ba975b03392a3bdf6c042",
             "locator": {
-              "end": 796,
+              "end": 795,
               "kind": "line_range",
-              "start": 784
+              "start": 783
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -220,15 +258,52 @@
       ]
     },
     "2": {
-      "note": "This master, whose contracts and documents agree, read through a frozen register snapshot.",
+      "note": "The named master supplies a copied two-leaf agreement fixture and the separate frozen register comparison.",
       "targets": [
         {
           "anchor": {
             "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
-            "content": "sha256:59ae893833c261f331342c76fc8dff01567509efcdf7c039e459d8a2274b9c8c",
+            "content": "sha256:73cf8f6a31ee31ada05963200b7cc38baa44ebf2428e6fbcb18026d82c5e16eb",
             "locator": {
-              "kind": "symbol",
-              "name": "CURRENT_MASTER"
+              "end": 60,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:8891383741d4f699c2204f350cc9c78bade29bfe8e08ea680aa48c21566f1303",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:e52ab41d3754ed2958b74b368526813f68341352b1c842088de79630cb34c8b6",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 276
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:1f72cf697df7ac6e2c7e822d17a487e851fea3050b83af5494cb85cabb754088",
+            "locator": {
+              "end": 584,
+              "kind": "line_range",
+              "start": 563
             }
           },
           "kind": "test"
@@ -301,7 +376,7 @@
       ]
     },
     "5": {
-      "note": "The two labels spelled so neither can match the tail of the other's name.",
+      "note": "The module regex uses a negative lookbehind, which prevents it matching the suite name’s suffix.",
       "targets": [
         {
           "anchor": {

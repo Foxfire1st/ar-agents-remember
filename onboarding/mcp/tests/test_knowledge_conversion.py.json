@@ -160,12 +160,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:c1982547bb989f163509da14ecb063cbb188711a3d8cc19491c6f2ad577f669e",
             "locator": {
-              "end": 816,
+              "end": 221,
               "kind": "line_range",
-              "start": 1
+              "start": 221
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -174,16 +174,28 @@
       ]
     },
     "8": {
-      "note": "Current source delta inspected statically: Replace final converted-validation PASS with based carried-stale refusal; retain determinism, version, no-op and golden-input boundaries.",
+      "note": "The CLI source assertions cover refusal of an unsupported version, identical bytes in twin conversions, an already-converted rerun, and exit 1 with one carried-stale violation when validating against the committed conversion. A separate test checks the version 1 fixture digest.",
       "targets": [
         {
           "anchor": {
             "blob": "44773410bfe6609e2891b444d598d96768be39ad",
-            "content": "sha256:0367aa8251759c1cd2b0e7238442873a3620ac4e51e92af9860e214b2d0cdfc9",
+            "content": "sha256:e8c53db1ec9fe2713369f76a0163c3c5a070cb0f1b80ed5b00d01587e3fe2bb9",
             "locator": {
               "end": 322,
               "kind": "line_range",
-              "start": 319
+              "start": 286
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "content": "sha256:53c796d1e4300269b3843c83acecbed1370b29bfd5bcab1cf6a15ddd798c4017",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 399
             }
           },
           "kind": "test"

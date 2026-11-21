@@ -6,16 +6,11 @@
 
 ## Purpose
 
-Provides the small closeout adapter that makes preview, apply, and recovery consume one pair
-validator and one current curator-coherence authority.
+Defines retained helpers for resolving a contract-addressed memory pair, reading current Curator coherence facts, and formatting a pair identity.
 
 ## Code Commentary
 
-`accepted_closeout_memory_pair` obtains the current coherence record, its exact pair, no-impact
-judgments, record digest, and delivery attempt as one value. `resolve_closeout_memory_pair`
-re-proves the contract-addressed pair for initial apply acknowledgement and post-commit recovery
-without requiring stale pre-commit candidate-tree evidence. `memory_candidate_pair_payload`
-renders the same typed identity into public closeout results.
+`accepted_closeout_memory_pair` can return the current coherence record’s exact pair, no-impact judgments, record digest and delivery attempt. `resolve_closeout_memory_pair` resolves its external-memory leaf pair from the exact contract. `memory_candidate_pair_payload` formats that type for a caller. These helpers have no production callers on the synchronous preview or apply path.
 
 Internal-memory and series closeout return no pair because MCAR-R03 applies only to
 worktree-backed external-memory leaves. There is no repo-id re-resolution or alternate filename
@@ -23,9 +18,8 @@ reader.
 
 ## Invariants And Boundaries
 
-- Preview and normal closeout consume the pair from the validated coherence authority.
-- Apply admission and recovery invoke the same canonical resolver against the exact contract.
-- Recovery does not depend on a pre-commit report that must become stale after commits.
+- The ordinary synchronous owner revalidates its exact candidate and knowledge gate. Required structured coherence is validated through the separate curation procedure before apply.
+- The retained leaf-pair resolver passes the contract path and configured repository to the canonical pair resolver.
 - This adapter does not invent curator judgments or mutate either repository.
 
 ## Evidence
@@ -33,8 +27,8 @@ reader.
 ### Repo-Internal References
 
 - Accepted coherence and exact pair facts are returned together. [1]
-- Apply/recovery re-prove the exact contract pair. [2]
-- Public closeout projection uses one pair payload writer. [3]
+- The retained external-memory helper resolves the paired roots from the exact contract. [2]
+- The retained projection helper formats a resolved pair identity when called. [3]
 
 ### Cross-Repo References
 

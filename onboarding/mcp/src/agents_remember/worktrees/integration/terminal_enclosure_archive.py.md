@@ -16,7 +16,7 @@ convergent retry.
 
 ### Logic
 
-It proves terminal operations, resolved workers/mutations/publications, exact cleanup arguments, canonical manifest entries, receipt readback, and convergent retry after interrupted archive/unlink.
+It uses the evidence reader's terminal-operation and resolved mutation/publication checks, proves the exact cleanup arguments and canonical entries, reads back the receipt, and retries an interrupted archive or unlink.
 
 The canonical lifecycle root also owns the preserved legacy missing-intent generation archives:
 `_LEGACY_MISSING_INTENT_RECORD` (in `terminal_enclosure_evidence.py`) matches
@@ -91,4 +91,4 @@ canonical intent-bound successor replaced them. Part of the landed L25 candidate
 
 ## CCR-R18@v1 Observed-Exit Archive Guards
 
-260831-CCR-L18 made `_require_archivable_operation` (in `terminal_enclosure_evidence.py`) consume the projection-owned worker-exit observation: it calls `project_worker_exit(record)` (from `worker/state.py`) once and passes that observed snapshot to `_require_absent_worker_authority` / `_require_resolved_worker_termination`, so the archive proof checks the same coherent worker observation the public projection shows instead of re-deriving worker authority twice from raw record cells. Archive admissibility semantics (absent worker binding and resolved termination before destructive cleanup) are unchanged.
+The superseded 260831-CCR-L18 archive check made `_require_archivable_operation` consume a worker-exit observation: it calls `project_worker_exit(record)` (from `worker/state.py`) once and passes that observed snapshot to `_require_absent_worker_authority` / `_require_resolved_worker_termination`, so the archive proof checks the same coherent worker observation the public projection shows instead of re-deriving worker authority twice from raw record cells. That worker-based eligibility account is historical. The current evidence owner checks terminal disposition and resolved mutation and publication.

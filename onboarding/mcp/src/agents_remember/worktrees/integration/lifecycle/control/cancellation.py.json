@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "note": "Cancellation checks the kept receipt before proving no Git output and publishing the cancelled generation.",
       "targets": [
         {
           "anchor": {
-            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
-            "content": "sha256:a03af421a3bc3495d5bbe1d8e6f1bb7b2583505c9140098c55648ef6b4b02686",
+            "blob": "142a7b179a91b5749301cc549bb5906fec73d9f0",
+            "content": "sha256:4ecbcdb118d2c4fe6ed98b1b42929fad6adef30fab564179c75a86b125f2072b",
             "locator": {
-              "kind": "symbol",
-              "name": "cancel_operation"
+              "end": 92,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "code"
@@ -19,15 +20,16 @@
       ]
     },
     "2": {
-      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "note": "Cancellation checks the kept receipt before proving no Git output and publishing the cancelled generation.",
       "targets": [
         {
           "anchor": {
-            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
-            "content": "sha256:a03af421a3bc3495d5bbe1d8e6f1bb7b2583505c9140098c55648ef6b4b02686",
+            "blob": "142a7b179a91b5749301cc549bb5906fec73d9f0",
+            "content": "sha256:4ecbcdb118d2c4fe6ed98b1b42929fad6adef30fab564179c75a86b125f2072b",
             "locator": {
-              "kind": "symbol",
-              "name": "cancel_operation"
+              "end": 92,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "code"
@@ -39,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "blob": "142a7b179a91b5749301cc549bb5906fec73d9f0",
             "content": "sha256:c34b5ce53e415f359075c88545deefa2d5a872d873a81867c1c8d37640857249",
             "locator": {
               "kind": "symbol",
@@ -50,7 +52,7 @@
         },
         {
           "anchor": {
-            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "blob": "142a7b179a91b5749301cc549bb5906fec73d9f0",
             "content": "sha256:d4b115a4363dc6c1eb7ee57c506a6f40ed0d3f8abbddc9e57271451090fd4d91",
             "locator": {
               "kind": "symbol",
@@ -61,7 +63,7 @@
         },
         {
           "anchor": {
-            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "blob": "142a7b179a91b5749301cc549bb5906fec73d9f0",
             "content": "sha256:cb8233b1d69ab7ec06a3b1ec1b1f5dba4b6925e743f50f5e169bca6840994791",
             "locator": {
               "kind": "symbol",
@@ -77,11 +79,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
-            "content": "sha256:78d32d2de28e9249d4babe27ec7835bb7cba3c5c38de97fa7e923ef1c89b7ab5",
+            "blob": "142a7b179a91b5749301cc549bb5906fec73d9f0",
+            "content": "sha256:450a2aec02e1b8fd943cda26cc9d86a0126239b3792bfb7f0c01db3285801a3a",
             "locator": {
-              "kind": "symbol",
-              "name": "_terminal_cancel_projection"
+              "end": 115,
+              "kind": "line_range",
+              "start": 95
             }
           },
           "kind": "code"
@@ -93,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "blob": "d057d05b21e36984449b7905f09ef154bcb0aa05",
             "content": "sha256:11f05df553efb98ed979d1ef3b3ba92fe9681d40304940c4147b292dc092c555",
             "locator": {
               "kind": "symbol",
@@ -106,15 +109,16 @@
       ]
     },
     "6": {
-      "note": "No meaningful cross-repository reference applies.",
+      "note": "Cancellation checks the kept receipt before proving no Git output and publishing the cancelled generation.",
       "targets": [
         {
           "anchor": {
-            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
-            "content": "sha256:a03af421a3bc3495d5bbe1d8e6f1bb7b2583505c9140098c55648ef6b4b02686",
+            "blob": "142a7b179a91b5749301cc549bb5906fec73d9f0",
+            "content": "sha256:4ecbcdb118d2c4fe6ed98b1b42929fad6adef30fab564179c75a86b125f2072b",
             "locator": {
-              "kind": "symbol",
-              "name": "cancel_operation"
+              "end": 92,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "code"

@@ -12,9 +12,9 @@ Physical code execution views for selected preparation, bound to the canonical l
 
 ### Logic
 
-Observation requires an already selected original code output, reloads typed stored objects, rechecks raw commit and physical Git facts, and binds the caller-supplied logical pair to the physical read root. Only `observe_selected_prepared_code_view` remains; fresh preparation and running-handoff observation APIs were removed. It creates no output or historical memory attribution.
+`observe_selected_prepared_code_view` reopens the exact journal-selected code intent and output, rechecks raw commit and physical Git facts, and binds the caller's logical pair to the physical read root. The observation creates no prepared output or memory attribution.
 
-`observe_selected_prepared_code_view` can reprove a journal-selected output after the running worker has returned. It validates the selected record and uses the same kernel observers instead of claiming a live worker lease. Existing code is checked with a strict `ExistingGitPreparationBinding`; created code uses the named private capability and a callback that reopens the original record and policy. Both paths remain code-domain checks, even if a file happens to be called memory.md.
+Existing code is checked with `ExistingGitPreparationBinding`. Created code uses the admitted private capability and an authorization callback that reopens the selected record and checks the bound policy. The evidence is the selected record and Git proof, independent of a worker lease or worker event. Both paths verify the code domain.
 
 ### Conventions
 

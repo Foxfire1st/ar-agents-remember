@@ -45,7 +45,7 @@
       ]
     },
     "2": {
-      "note": "The suite covers narrow selection, zero-body collection, and all configured-path refusal shapes.",
+      "note": "The suite checks narrow selection, a mocked successful zero-body collection report and three refusal inputs: an empty configured list, a parent-directory path and an uncollected module.",
       "targets": [
         {
           "anchor": {
@@ -87,12 +87,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:ffe7fe2d34ee681b5de1f90380260e2deca5bd2666cfac315ec010ce02294d9d",
             "locator": {
-              "end": 816,
+              "end": 457,
               "kind": "line_range",
-              "start": 1
+              "start": 457
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

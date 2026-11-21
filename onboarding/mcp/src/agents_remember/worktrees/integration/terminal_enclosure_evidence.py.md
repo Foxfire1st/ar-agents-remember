@@ -27,10 +27,9 @@ MiB, and an archive with no evidence refuses.
 `_canonical_evidence_entry` reads the file as one regular non-symlink file, and for an operation record parses it as a
 `LifecycleOperationRecord`, requires the record to match the canonical file name it is stored under
 (`_require_record_matches_canonical_path`), and requires it to be archivable (`_require_archivable_operation`): terminal
-status, no retryable cleanup disposition for the current generation, no worker authority or unresolved worker
-termination (read from the projection-owned worker-exit observation), no private preparation retained, no ambiguous
-mutation intent, and no unresolved integration claim or door publication. A record whose content does not match its
-name is refused.
+status, no retryable cleanup disposition for the current generation, resolved private preparation
+and mutation intent, and resolved integration claims, organizational publication and door publication.
+A record whose content does not match its name is refused.
 
 `terminal_operation_evidence(group)` reads every recognized current, historical and legacy-intent operation record under
 `<group>/.lifecycle` with the same schema, reader and checks, for the operation `worktree_abandon`, and under the same
@@ -45,14 +44,16 @@ bounds. A missing directory has no retained records. A record that cannot establ
 ### Invariants And Boundaries
 
 - A retained operation record is accepted only when its content matches the canonical file name it is stored under.
-- Evidence that could still hold recovery authority (non-terminal, active worker, retained preparation, ambiguous
-  mutation, an active sync journal) is never archived and never read as terminal.
+- Nonterminal operations, retained preparation and ambiguous mutation are refused. A pre-move
+  sync journal must also be terminal before it can be removed from working state.
 
 ## Evidence
 
 - The canonical root is walked, unowned files refused, a terminal sync journal accounted for, and the bounds enforced. [1]
 - An operation record must match its canonical file name and be archivable before it becomes an entry. [2]
 - A pre-move sync journal is archived only as removed working state, and only when terminal. [3]
-- The archivability proof combines the terminal, retry, worker, mutation and publication checks. [4]
+
+- Terminal evidence checks the stored outcome and terminal disposition. [4]
+
 - Retained operation records are read without adoption and refused by name when they cannot establish terminal authority. [5]
 - A record stored under a name that does not match its content is refused. [6]

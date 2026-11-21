@@ -371,14 +371,16 @@
       ]
     },
     "32": {
-      "note": "**The production call site: the sync tool's result, after its Git work and contract write.**\n\nAnchor: `worktree_sync_tool`",
+      "note": "**The production call site: the sync tool's result, after its Git work and contract write.**",
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
             "locator": {
-              "kind": "file"
+              "end": 370,
+              "kind": "line_range",
+              "start": 348
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

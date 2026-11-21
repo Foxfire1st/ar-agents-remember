@@ -4,11 +4,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Application entry point validates coordination-contained paths, delegates to the worktree finalizer, and then performs configured completion cleanup.",
+      "note": "The application confines the task address and delegates finalization to the configured owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
             "locator": {
               "kind": "symbol",
@@ -20,23 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:a2e06d4e0f56f44fcbc6df5216e5af4ce622a968e1b8e934b6a9a97777c8c880",
             "locator": {
-              "end": 905,
+              "end": 881,
               "kind": "line_range",
-              "start": 856
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
-            "locator": {
-              "kind": "file"
+              "start": 832
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
