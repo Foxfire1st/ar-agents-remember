@@ -12,11 +12,11 @@ Raw application readiness facts remain direct. Registered-adapter state uses its
 
 These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
 
-Retirement readiness and the named remedies for its refusals. Readiness refuses open work of the master's leaves and an unfinished or unreadable operation of the master's own enclosure. The operation-record and real paired-enclosure controls carry out the named action and repeat retirement; the locator-lookup refusal checks the manual worktree-removal command without executing it.
+Retirement readiness refuses open work of the master’s leaves and unfinished or unreadable operation evidence for the master’s enclosure. When the locator is addressable, the cases check the advertised remedy: worktree_closeout_apply for closeout, worktree_integrate for integration, worktree_operation_control for direct landing, and worktree_sync for an unfinished sync. Without a live locator, the operation-record cases execute a manual remedy and retry retirement. The paired-enclosure case executes the named abandon call and repeats retirement preview.
 
 ## Code Commentary
 
-`_refusal` reads a refusal, `_carry_out` performs the named action and `_facts` reads the reported facts. The cases cover a leaf worktree directory that exists, a leaf branch with unlanded commits, the master's own branch and worktree as facts, an older-layout operation report as a fact, an unreadable contract, a live operation locator, and a real paired enclosure whose named tool is carried out before the retirement is repeated.
+`_refusal` reads the refusal, `_carry_out` performs a manual remedy and `_facts` reads the reported facts. A leaf directory or unlanded branch counts as open work, while the master’s own branch and worktree and an older-layout report remain facts. The locator-lookup refusal checks the manual worktree-removal command. The live-locator parameterized test checks the refusal wording without carrying out any named tool.
 
 Only the paired refused-retirement case separates its deliberate `/logs/mcp/ar-tools-` trace from the
 byte-tree comparison. It requires exactly one added four-cell **file** entry; same-name directory and
@@ -43,13 +43,22 @@ cases decide whether the directory or unlanded branch actually exists.
 
 
 
-- Owned unfinished or unreadable operations refuse; the operation-record and real paired-enclosure controls execute their remedies and repeat retirement. [1]
+
+
+- Live-locator refusals name the remedy for the operation kind. Separate no-locator operation-record and paired-enclosure cases execute their indicated remedy before retrying retirement. [1]
+
+
+
 
 
 - A leaf worktree directory that exists and a leaf branch with unlanded commits are open work. [2]
 
 
+
+
 - The master's own branch and worktree never refuse and are listed with their state; an older-layout operation report stays a fact. [3]
+
+
 
 
 - Raw application readiness facts remain direct. Registered-adapter state uses its retained log, while the advertised retry action is addressed through nextArgs.contract_path. Existing command and branch assertions remain. [6]

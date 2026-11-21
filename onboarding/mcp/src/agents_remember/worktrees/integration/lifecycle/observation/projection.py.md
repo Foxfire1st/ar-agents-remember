@@ -14,12 +14,7 @@ acquiring mutation, queue, or lifecycle-evidence authority.
 
 ### Logic
 
-`observe_operation`, `latest_operation_projection`, and `current_operation_projections` locate and
-read the stable enclosure-root journals, project every actionable sibling, and surface typed read
-or location decisions. `unreadable_contract_operation_projections` retains exact-path journal
-visibility when the task contract is unreadable while deliberately exposing no unsafe controls.
-The final read pass reconciles observable worker exit and proven closeout mutations into a derived
-projection; it does not rewrite the journal.
+`observe_operation`, `latest_operation_projection` and `current_operation_projections` locate and read enclosure journals. They retain exact saved evidence for historical closeout and integration. Unreadable contract or location authority gets a typed decision. Observation can compare stored Git mutation evidence for both closeout and direct-landing records. It computes a read-only observation without rewriting either record. Historical closeout remains an audit projection.
 
 ### Conventions
 
@@ -68,6 +63,10 @@ envelope never splice facts from different journal revisions.
 The application wait controller named here was deleted with the door/operation plane (commit `41b0812e`); this projection now has no public wait caller.
 
 - Single/latest/all readers project retained journals and keep task status from hiding siblings. [1]
+
 - Location contradictions and unreadable contracts become bounded developer-decision projections with no controls. [2]
-- Worker exit and closeout mutation recovery are reconciled into read-only derived records. [3]
+
+
+- The read-side projection tests the observed mutation state before exposing it to the caller. [3]
+
 - The read-only wait snapshot projection entry point. [4]

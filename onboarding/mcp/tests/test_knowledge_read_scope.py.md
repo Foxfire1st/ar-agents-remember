@@ -17,9 +17,7 @@ and tree identity to anchor resolution; this is not a Git-free fixture. The earl
 twenty-one `unit-regression` nodes and lane row `mcp/tests/test-evidence-lanes.toml:75`; those figures
 are retained as historical observations rather than a current population or address.
 
-**It is at 1 163 of the repository's 1 200-line hard limit: 37 lines of headroom. L8 must split it before
-adding cases**, which is exactly what fix round 2 did for the integration side rather than waiving the
-limit.
+The module has 1,118 source lines on the inspected W8 tree, as on the code base. The repository file-size guard remains armed at its 1,200-line limit. The earlier 1,163-line measurement and the split it prompted describe their own revision.
 
 ## Code Commentary
 
@@ -115,9 +113,7 @@ single-revision fixture or claim current label-major coverage.
 
 The sizes and catalog line addresses in the following original account are historical observations, not measurements of the present source tip.
 
-None recorded. Two carried items belong to the owning seat: the **`_manifest_digest` composition** is a
-reachable covered gap this module does not close (L9 ledger **A4**), and the module's remaining headroom is
-37 lines before the 1 200-line limit.
+The L9 ledger’s A4 item concerns `_manifest_digest` composition. The current module’s cases describe the scope read and do not close that carried item.
 
 ## Evidence
 
@@ -181,5 +177,6 @@ No meaningful cross-repo references found.
 - The invariant/main-family seed comparison pins their different claim/location totals; path and exact invariant revision seeds select the same records. [29]
 
 - The count-separation node and the overlapping family's two unique member revisions and membership rows. [31]
+
 
 - The lane row this module occupies. Anchor: `test_knowledge_read_scope` Anchor: `test_knowledge_read_scope` [34]

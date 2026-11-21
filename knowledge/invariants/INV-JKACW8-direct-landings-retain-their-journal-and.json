@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents direct recovery from opening a fresh generation or losing the accepted input and receipt."
+  },
+  "applicability": "The direct-landing lifecycle of an admitted leaf.",
+  "conditions": [
+    "The exact accepted generation and candidate identity remain bound to the record.",
+    "Current evidence must admit the requested generation-bound control."
+  ],
+  "exclusions": [
+    "Synchronous closeout and integration have their own transactional calls."
+  ],
+  "id": "INV-JKACW8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W7 Worker freeze report, Primary acceptance block and exact combined receipts."
+      ],
+      "path": "w7-authoring-draft.json"
+    },
+    "handoffEntry": "BUG-R15@v1 item 2",
+    "leaf": "261112-BUG-L15",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Direct landings retain their journal and their generation-bound action contract.",
+  "status": "proposed",
+  "supersedes": []
+}

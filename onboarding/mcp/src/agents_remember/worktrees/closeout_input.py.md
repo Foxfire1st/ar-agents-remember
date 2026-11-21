@@ -20,7 +20,7 @@ The normalized Git plan has exactly two possible legs, code and memory. Ledger r
 
 `resolve_closeout_plan` derives leg state from route, the already-validated contract model, memory mode, and the captured code candidate rather than from blank sentinels or memory dirtiness. Direct landing has verified-existing code, so code is not applicable; the external memory-content leg is enabled. Worktree leaf code is enabled only when the stable candidate tree differs from HEAD, and external-memory leaves enable memory content. Series and non-external legs receive typed reasons. Unsupported contract kinds are rejected at the model boundary; this owner does not duplicate that impossible-state guard.
 
-`normalize_closeout_input` strips enabled messages once, reports omitted/empty/whitespace or stale/forged values as `CloseoutInputError`, and includes `invalidFields`, `resolvedPlan`, and `correctedCall`. The candidate snapshot is rechecked so a tree or HEAD change during normalization refuses. `require_effective_closeout_plan` validates durable retries against the accepted plan rather than re-deriving it after partial mutation.
+`normalize_closeout_input` checks the route, contract kind and memory mode against the resolved plan, then strips the enabled messages. It returns a typed refusal with `invalidFields`, `resolvedPlan` and `correctedCall` for missing or blank enabled messages. `require_effective_closeout_plan` checks the accepted plan's contract identity without deriving it again from Git.
 
 `capture_closeout_candidate` delegates ordinary-leaf observation to the strict future-code
 identity owner. That owner records the observed HEAD and configured base around the canonical
@@ -29,17 +29,15 @@ through its existing committed-tree route.
 
 #### Invariants And Boundaries
 
-- Preview, fingerprint, journal, worker, recovery, and commit code consume the same effective input.
-- Validation happens before integration-authority observation, lifecycle journal creation, worker launch, landing lock, mutation intent, or Git.
-- Enabledness is contract/candidate truth, not current memory worktree dirtiness.
-- A failed request has no queue, authority, journal, or Git effect.
-- This module does not select or invalidate closeout-queue candidates.
-- Candidate acceptance and lifecycle-operation identity are distinct: this adapter supplies exact
-  Git facts, while the lifecycle journal continues to guard unproven HEAD movement.
+- Ordinary preview and apply pass the same normalized input shape to the synchronous closeout owner.
+- The application captures the candidate and validates enabled messages before giving the effective input to that owner.
+- Enabledness comes from the admitted contract and candidate. An invalid input returns corrected-call arguments before the closeout transaction.
+- Candidate capture reads exact Git facts. It grants no closeout or scheduling authority.
+- Direct landing separately checks its retained generation and original input when asked to recover.
 
 ### Todos
 
-Revision and public recovery controls are deferred to L2.
+None recorded.
 
 ## Evidence
 
@@ -60,7 +58,7 @@ The following current source boundaries establish the ledger-retirement behavior
 - Leaf candidate capture consumes the strict plane-derived future-code identity, while series capture remains branch-addressed. (`capture_closeout_candidate`) [4]
 - Enabled/not-applicable legs derive from validated route, contract, and candidate facts. (`resolve_closeout_plan`) [5]
 - Typed refusal and corrected-call data are emitted together. (`CloseoutInputError`; `normalize_closeout_input`) [6]
-- Retried durable input is checked against its accepted plan. (`require_effective_closeout_plan`) [7]
+- When the synchronous owner has no accepted recovery commit tuple, it checks the accepted plan's route and contract identity without deriving it again from Git. [7]
 
 ### Cross-Repo References
 

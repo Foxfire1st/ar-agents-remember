@@ -12,7 +12,7 @@ Same-generation journal recovery and direct-landing execution ownership.
 
 ### Logic
 
-Direct recovery enters through `recover_direct_landing_under_authority`; same-generation requeue is supplied by `generation.resume.requeued_same_generation`. Task-addressed retry, recover, cancel, revise, integrate, retire, and supersede decisions are derived from immutable journal state plus exact live Git/process evidence. Retry preserves accepted input; revise composes proven-safe cancellation with a write-ahead successor; ambiguity routes to same-generation recovery.
+`recover_direct_landing_under_authority` checks the accepted direct record under caller-owned landing authority, then uses `generation.resume.requeued_same_generation` to continue that exact generation. It executes the direct attempt, reads back the current outcome, and settles the retained closing receipt. The public control handler answers retained ordinary closeout and integration records with their synchronous replacement tools before reconciliation.
 
 `recover_direct_landing_under_authority` delegates the pre-attempt recoverability guard, typed
 post-failure translation, and strict-current-record selection to named helpers. Only the
@@ -20,7 +20,7 @@ integration boundary's typed `DirectLandingError` enters public recovery transla
 unexpected `RuntimeError` is an invariant defect and propagates instead of being mislabeled as a
 recoverable operation outcome. This centralizes the public error vocabulary without hiding defects.
 
-After the real direct recovery executor completes its attempt, the same call settles the kept closing receipt: completed/cancelled generations release it; an unreadable receipt refuses by named status, path and action. This executor contract does not establish that the public lifecycle control admits recover for an intent-less interrupted direct generation; the public-control limitation and its repair remain separately owned.
+After the real direct recovery executor completes its attempt, the same call settles the kept closing receipt according to the outcome. Completed and cancelled generations release it, and an unreadable receipt refuses by named status, path and action. Public control admission separately checks usable task intent or the accepted direct leaf binding.
 
 ### Conventions
 
@@ -53,7 +53,7 @@ No configured Domain Documentation source applies to this repository-internal li
 The source file is the direct evidence for this file-specific ownership boundary.
 
 
-- The module defines `recover_direct_landing_under_authority`, `direct_recovery_refusal` and `reconcile_control_mutations` as its public seam. The recovery caller must already own landing authority. [1]
+- `recover_direct_landing_under_authority` checks and resumes an exact direct generation under caller-owned landing authority. [1]
 
 
 - One translator reclassifies typed direct failures against current evidence while invariant runtime errors remain loud. [2]

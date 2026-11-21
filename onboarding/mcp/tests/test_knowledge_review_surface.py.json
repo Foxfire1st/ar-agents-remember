@@ -297,16 +297,107 @@
       ]
     },
     "21": {
-      "note": "The module is selected once in the unit-regression lane and named by seven exact-scope lifecycle artifact records; registration is not execution.",
+      "note": "The unit-regression lane selects this module once. Seven exact-scope lifecycle artifact records name it as a consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
-            "content": "sha256:c87b7853f8f4a4e32f8e60f6d7ce941573d3cfbbaae42ebdf53e7234def4f622",
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:2dd99c9e52f63e5221c224ae0d283ef40913b8a2439b10aa38e0a14b9fa0fb48",
             "locator": {
-              "end": 5062,
+              "end": 275,
               "kind": "line_range",
-              "start": 1
+              "start": 275
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:2dd99c9e52f63e5221c224ae0d283ef40913b8a2439b10aa38e0a14b9fa0fb48",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 403
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:2dd99c9e52f63e5221c224ae0d283ef40913b8a2439b10aa38e0a14b9fa0fb48",
+            "locator": {
+              "end": 929,
+              "kind": "line_range",
+              "start": 929
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:2dd99c9e52f63e5221c224ae0d283ef40913b8a2439b10aa38e0a14b9fa0fb48",
+            "locator": {
+              "end": 1337,
+              "kind": "line_range",
+              "start": 1337
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:2dd99c9e52f63e5221c224ae0d283ef40913b8a2439b10aa38e0a14b9fa0fb48",
+            "locator": {
+              "end": 2795,
+              "kind": "line_range",
+              "start": 2795
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:2dd99c9e52f63e5221c224ae0d283ef40913b8a2439b10aa38e0a14b9fa0fb48",
+            "locator": {
+              "end": 3646,
+              "kind": "line_range",
+              "start": 3646
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:2dd99c9e52f63e5221c224ae0d283ef40913b8a2439b10aa38e0a14b9fa0fb48",
+            "locator": {
+              "end": 3709,
+              "kind": "line_range",
+              "start": 3709
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:2dd99c9e52f63e5221c224ae0d283ef40913b8a2439b10aa38e0a14b9fa0fb48",
+            "locator": {
+              "end": 4220,
+              "kind": "line_range",
+              "start": 4220
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

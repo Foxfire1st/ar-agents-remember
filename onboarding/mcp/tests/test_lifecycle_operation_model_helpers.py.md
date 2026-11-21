@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Lifecycle mutation-proof and worker-binding model invariants.
+Lifecycle mutation and recovery proof, and retained preparation-state model assertions.
 
 ## Code Commentary
 
@@ -17,14 +17,11 @@ proves that a recorded output cannot contradict exact commit evidence, including
 when the recorded code SHA changes. Removing the fake `ledgerCommit` attribute aligns this
 existing case with the production model; it removes no test scenario.
 
-Mutation history and the irreversible boundary require exact commit proof; recovery commits cannot contradict that proof. Worker PID, lease, fingerprint and termination evidence must form one complete authority rather than independently populated optional facts.
+Mutation history accepts a reconciled-unchanged leg. The irreversible boundary follows exact commit proof, and recovery commits must agree with that proof.
 
 ### Conventions
 
-This card describes the current retained mutation/worker and preparation-state model assertions.
-Only the real-Git rebound-prepared-output identity/date case retires with its unreachable writer.
-The successor-prefix and immediate-predecessor retention-model guards remain, alongside exact
-mutation/recovery/worker proof. Source inspection is memory preparation, not a run or acceptance.
+The current preparation tests validate the successor’s selected code intent and output, allow a later memory-content leg, and require the immediate predecessor. The former worker-binding test and the real-Git rebound-prepared-output case are historical coverage.
 
 ### Invariants And Boundaries
 
@@ -49,7 +46,7 @@ The retained source anchors below support the fixture roles and assertion bounda
 - Removed the fake ledgerCommit fixture field while preserving exact recovery-proof assertions. [1]
 - Mutation history and irreversible boundary require exact proof. [2]
 - Recovery commits cannot contradict commit proof. [3]
-- Worker binding and termination evidence are one authority. [4]
+
 
 - Prepared retention still binds successor intent/output and predecessor fingerprint, allows a later memory-content leg and refuses a non-immediate predecessor. [5]
 

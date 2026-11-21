@@ -9,8 +9,8 @@
 Stage-audience selection preserves role boundaries in compiled capsules: a compiler delivers the common part plus
 the selected role's stage parts and nothing else, a declared step's detail bytes travel as separate frozen
 references beside the handover file, and the Curator receives its ruled steps without the Manager's or another
-role's material. The real operation audiences are checked against independently selected source sections, and a repairing role stops after
-three repairs of the same check or finding.
+role's material. The real operation audiences are checked against independently selected source sections.
+A source assertion checks the Worker and Curator instructions for when to stop repairing.
 
 ## Code Commentary
 
@@ -53,8 +53,9 @@ find a foreign-role passage for a negative control and count source detail links
   leaked audience markers and rejects an injected foreign-role passage.
   `test_operation_audience_modes_match_their_declared_source_structure` keeps authorized closeout
   at `audience: all` and `operations/closeout.md`; other operations use sections and a common marker.
-- **Repair limit.** `test_repairing_roles_stop_after_three_repairs_of_the_same_check_or_finding` stops a role
-  after three repairs of the same subject.
+- **Repair limit.** `test_repairing_roles_stop_after_three_repairs_of_the_same_check_or_finding` checks that the
+  Worker and Curator instructions require them to stop when the same check or finding still fails after three of
+  their own repairs, record the problem and tell the Manager.
 
 ### Conventions
 
@@ -100,7 +101,7 @@ Detail checks cover all declared role/operation pairs and require every declared
 
 - Memory-review instructions select the independent recorded lane. [19]
 
-- A repairing role stops after three repairs of the same check or finding. [22]
+- The test checks the Worker and Curator instruction text for a stop when the same check or finding still fails after three of their own repairs, and for telling the Manager. [22]
 
 - For every declared role/operation pair the delivered detail records equal the role's and operation's pointer actions; each read action binds to exactly one link to the detail's emitted file, each emitted detail round-trips its revision, size and read-only mode, and intake-wording, missing-target, duplicated-paragraph and empty-step mutations must fail; the census covers every declared pair and every declared detail. [9]
 
@@ -122,4 +123,5 @@ Detail checks cover all declared role/operation pairs and require every declared
 
 - The current planning text asks the developer once "go, or review first?", discloses planned comparison without a task workspace and explainer-workspace creation on first Explain, and records the intentReview answer. Current coordination says intent-review-open waits for Architect go and is not retried. [25]
 
-- Detail checks cover all declared role/operation pairs and require every declared read action to bind to exactly one link to its emitted detail. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [27]
+
+- The detail census covers every declared role and operation pair. Each declared read action is asserted to bind once to the exact emitted detail link. [27]

@@ -18,7 +18,7 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Current source contract evidence
 
-- Current source pins are 44 public tools, 14 adapter modules and 46 handlers; removed task-read coverage asserts both operations answer `operation-removed` with the rendered file names and no steps, and validates the `TaskDocResponse` logged beside the refusal rather than the delivered answer.
+- Current source pins are 44 public tools, 14 adapter modules and 46 handlers. Both removed task reads assert the refusal code, file names and absence of steps. The test validates the logged whole result and checks the stripped delivered envelope for `read_steps`.
 
 ## Governing Overview
 
@@ -26,11 +26,7 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Purpose
 
-Dev-time conformance for MCP tool response contracts, **at the firing state**. Production
-validates every tool payload against its registered response model inside
-`mcp/tools/base.py:_tool_payload`, and that validation runs *after* the producer has already
-performed its writes — so a producer key the model forbids costs the caller the payload that
-would have told it the work was done. This module moves that guarantee into the suite.
+The conformance tests check registered MCP response contracts against selected emitting branches and the adapter structure. The adapters pass the computed result to `mcp/tools/base.py:_tool_payload`, which invokes application validation before shaping the caller’s response.
 
 ## Current source account
 
@@ -40,23 +36,23 @@ The deliberate population pins are 44 public tools, 14 adapter modules and 46 ha
 
 ### Current Contract
 
-Removed task-read coverage asserts that `get` and `read_steps` return `operation-removed` and file names, with no steps or delivered framework envelope. It validates the logged `TaskDocResponse`. These declarations and assertions are not a fresh live advertisement.
+The removed-read case asserts `get` and `read_steps` return `operation-removed`, name the JSON and rendered document and carry no steps. After that loop it validates the `read_steps` whole result as `TaskDocResponse` and checks that its delivered answer omits the four envelope fields.
 
 ### Logic
 
 Two layers answer different questions. `ToolResponseSurfaceTests` checks registration and adapter equality, requires every registered response model to be advertised, pins fixture models to registry objects, derives strict/flexible models and checks every adapter handler’s return through the choke point. `ToolResponseFiringStateTests` calls selected producers in scratch coordination worlds and asserts the payload and conditional keys for each case. These are source-defined checks, not execution results from this inspection.
 
-The helpers are read-only instruments over source text: `adapter_tool_ids` (`:88-110`) parses the
-adapter's own id literals, `choke_point_handlers` (`:113-148`) counts module-level handlers against
-`_tool_payload(...)` call sites by AST, `advertised_description` (`:151-166`) reads the description
-off the **registered** `FastMCP` surface, and `literal_keyword_values` (`:228-245`) derives the
-`next_tool=` literals the lifecycle package actually passes. `_RegistrationStub` (`:169-173`) is a
+The helpers are read-only instruments over source text: `adapter_tool_ids` (`:91-113`) parses the
+adapter's own id literals, `choke_point_handlers` (`:116-151`) counts module-level handlers against
+`_tool_payload(...)` call sites by AST, `advertised_description` (`:154-169`) reads the description
+off the **registered** `FastMCP` surface, and `literal_keyword_values` (`:231-248`) derives the
+`next_tool=` literals the lifecycle package actually passes. `_RegistrationStub` (`:172-176`) is a
 two-method registrar double, not a fake of the product.
 
 ### Conventions
 
 `unittest.TestCase` throughout, with no module pytest marker; its evidence-lane registration is **architecture-fitness**.
-`ScratchWorldTests` (`:275-288`) builds each case’s temporary coordination root through this module’s own `scratch_coordination_root`; its teardown removes the roots that case registered.
+`ScratchWorldTests` (`:278-291`) builds each case’s temporary coordination root through this module’s own `scratch_coordination_root`; its teardown removes the roots that case registered.
 
 **A fixture must reach the emitting branch.** The firing-state cases assert the conditional key they exercise so a fixture in an early-return branch cannot silently supply that witness.
 
@@ -174,7 +170,7 @@ No configured domain evidence applies to the file-local claims above.
 The anchors below identify current behaviour of this module; they are not execution evidence and
 they make no acceptance claim.
 
-- Registration and adapter id sets are derived from source and asserted equal both ways. [1]
+- The structural sweep compares the imported response registry, AST-derived adapter IDs, advertised roster and actual registered FastMCP listing. Registry and adapter differences must be empty in both directions. [1]
 
 - The fixtures' models are the registry's own objects.
 
@@ -182,14 +178,14 @@ they make no acceptance claim.
 
 - Every tool adapter module routes through the `_tool_payload` choke point, per handler on the return.
 
-- `lifecycle_finalize_task` validates with the series release produced, and asserts it reached the emitting branch.
+- A constructed series contract reaches the finalization result builder. The success result carries both activation keys with an already-vacant release.
 
-- The same response validates on the `activation-release-blocked` arm, where only the release key is present. [7]
-- The declaring set for the two atomic-series keys is exactly `lifecycle_finalize_task`. [8]
+- The release double raises OSError. The case checks activation-release-blocked, a release-failed payload, OSError type and the same blocked release state in the validated model. [7]
+- Among strict response models, the declaring sets for both atomic-series keys are equal and contain only lifecycle_finalize_task. [8]
 
 - The registered description and the refusal name the same `kind` vocabulary.
 
-- Every `next_tool=` literal the lifecycle package passes is declared on the response model.
+- The test scans literal lifecycle next_tool values and takes worktree_closeout_apply and worktree_integrate from the historical closeout and integration refusal producer. A separate response-boundary probe inserts each collected value in a constructed closeout-candidate-state-moved refusal, runs the public response adapter, and verifies the model retains nextTool.
 
 - The choke point whose guarantee this module moves into the suite. [17]
 
@@ -216,11 +212,18 @@ Current source: The literal PUBLIC_TOOLS source tuple contains 44 names. The con
 - The fixtures' models are the registry's own objects. Anchor: `test_the_models_these_fixtures_validate_are_the_registered_ones` [3]
 - Every registered model is strict or declared flexible, and the split is derived twice — from the declared base class and from each model's own `extra` config — so the two derivations must agree by name. Anchor: `test_every_registered_model_is_strict_or_declared_flexible` [4]
 - Every tool adapter module routes through the `_tool_payload` choke point, per handler on the return. Anchor: `test_every_tool_adapter_module_routes_through_the_choke_point` [5]
-- `lifecycle_finalize_task` validates with the series release produced, and asserts it reached the emitting branch. Anchor: `test_lifecycle_finalize_validates_with_the_series_release_produced` [6]
+- A constructed series contract reaches the result builder and activates the emitting arm. The case requires both payload keys, validates finalized state and checks an already-vacant release. [6]
 - The registered description and the refusal name the same `kind` vocabulary. Anchor: `test_task_doc_description_and_refusal_name_the_same_kind_vocabulary` [10]
-- Every `next_tool=` literal the lifecycle package passes is declared on the response model. Anchor: `test_every_next_tool_its_own_refusals_advertise_is_declared` [11]
-- The literal PUBLIC_TOOLS source tuple contains 44 names. The conformance test source pins ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46 and derives strict/flexible model sets from base classes and extra configuration. These are literal declarations and test assertions, not a fresh module/handler collection or execution result. [22]
+
+- The test scans literal lifecycle next_tool values and takes worktree_closeout_apply and worktree_integrate from the historical closeout and integration refusal producer. A separate response-boundary probe inserts each collected value in a constructed closeout-candidate-state-moved refusal, runs the public response adapter, and verifies the model retains nextTool. [11]
+
+
+
+- The roster tuple contains 44 names. The conformance declarations set ROSTER_SIZE to 44, TOOL_MODULE_COUNT to 14 and TOOL_HANDLER_COUNT to 46. Structural assertions check the exact populations and derive strict and flexible sets from both base classes and extra configuration. [22]
+
+
 
 - Registered TaskDocResponse validation distinguishes available rows carrying requirements (including an empty list) from unavailable rows without them. Empty sibling populations are valid; unknown or missing states, incompatible requirements and extra fields fail. The description oracle requires the literal Kind: subTask or master. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [23]
+
 
 - The lane manifest registers mcp/tests/test_tool_response_conformance.py in architecture-fitness. Membership selects evidence and does not establish execution. [20]

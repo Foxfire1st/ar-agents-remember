@@ -21,7 +21,7 @@ The caller verifies evidence first, invokes this read immediately before publica
 ### Invariants And Boundaries
 
 - Cancellation, selection, intent, generation and authority changes are not heartbeat differences.
-- The helper performs no mutation and does not itself publish a certificate or acquire worker authority.
+- The helper reads the current record. The certification caller owns the single publication CAS.
 - Revision/heartbeat write legality remains the journal owner’s responsibility; this comparison does not infer semantic currentness from a revision number alone.
 
 ### Todos

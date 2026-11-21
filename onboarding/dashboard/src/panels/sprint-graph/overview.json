@@ -201,12 +201,12 @@
         },
         {
           "anchor": {
-            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
             "content": "sha256:177fca6a059e1ee8b373f832a2725a9b97761ec3b03fa9bf5f72b9a8929f8619",
             "locator": {
-              "end": 611,
+              "end": 598,
               "kind": "line_range",
-              "start": 577
+              "start": 564
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -214,12 +214,12 @@
         },
         {
           "anchor": {
-            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
             "content": "sha256:30130bf59300f0b9bd54a089663da88bb8ef3c1a3f323e9b87903068f1c39041",
             "locator": {
-              "end": 583,
+              "end": 570,
               "kind": "line_range",
-              "start": 549
+              "start": 536
             },
             "path": "dashboard/src/types/projection.ts"
           },

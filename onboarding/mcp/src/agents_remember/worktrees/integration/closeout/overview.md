@@ -28,7 +28,7 @@ Door dependency identity binds the task, code and memory candidates and their re
 
 The prepared-memory certification application adapter was removed with its affected-execution and continuation composition. The surviving memory-quality controller measures admitted candidates and publishes readiness; the cutover owner supplies unconverted refusal/conversion guidance. Ordinary closeout separately gates the exact converted candidate and output before publication. These owners do not claim to mint the removed prepared-memory certification result. The standing dependency intent remains that pre-closeout preparation must have its own candidate authority; retirement of the old adapter is not proof of a replacement producer.
 
-[Certification](certification/overview.md) and [preparation](preparation/overview.md) retain selected immutable-object and private-output machinery; their presence is not current default prepared-closeout execution. `preparation_selection.py` reopens exact selected intents/outputs, checks their owning operation and logical refs, and requires original command history where a write-enabled selected output is present. The default service factory binds neither a prepared-memory producer nor a continuation. Explicit core finalization still checks exact five-certificate/current-memory authority; private output selection supplies neither that certificate nor approval.
+[Certification](certification/overview.md) and [preparation](preparation/overview.md) retain selected immutable objects and private-output evidence. `preparation_selection.py` reopens the exact selected intents and outputs, checks their operation and certification owner, and proves the protected logical refs. Historical leg command fields are discarded on journal decode. The default service factory binds neither a prepared-memory producer nor a continuation. Explicit core finalization still checks exact five-certificate/current-memory authority. Private output selection supplies neither that certificate nor approval.
 
 `curator_coherence_record_builder.py` constructs the same record shape for publication and proposed-record dependency checks. `curator_coherence_binding.py` owns the shared dependency declaration and measured-quality currentness check. The live validator requires matching measured attestation and report digests in addition to exact candidate identity, retained evidence and complete-file integrity.
 
@@ -103,7 +103,9 @@ The closeout door first allows the recorded candidate tree itself. For a differe
 
 - Assessment evidence has a task-root destination and mandatory retained-byte read-back; immutable generation reads verify structured and projected content. [5]
 
-- Preparation selection requires original certificates and retains command starts, outcomes and selected outputs. [6]
+
+- Selected preparation checks the exact intent, output, owner and protected logical refs. Journal decode drops historical per-leg command fields. [6]
+
 
 
 

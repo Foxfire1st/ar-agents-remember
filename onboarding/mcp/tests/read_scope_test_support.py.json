@@ -108,16 +108,16 @@
       ]
     },
     "15": {
-      "note": "Fixture construction imports test-only row constructors; it does not call the retired canonical writer.",
+      "note": "The read fixture opens the test row store, builds the graph there and returns its projected record identities.",
       "targets": [
         {
           "anchor": {
             "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:6944c5ca42f8f65fe37a818c5878a505920138f6df200c9affbc53899dce1c63",
+            "content": "sha256:89d688b3cf8e2b7ba300f635ab78126a578845d055f3ad1fcb1b4ca227565082",
             "locator": {
-              "end": 61,
+              "end": 382,
               "kind": "line_range",
-              "start": 47
+              "start": 344
             }
           },
           "kind": "test"
@@ -343,12 +343,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4236,
+              "end": 4233,
               "kind": "line_range",
-              "start": 4188
+              "start": 4185
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -356,12 +356,12 @@
         },
         {
           "anchor": {
-            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
             "content": "sha256:cb641267e11b8aec644ea6ca3e0ee68f833e7a2d4d2c480e3ee02aba12f59d59",
             "locator": {
-              "end": 5007,
+              "end": 4969,
               "kind": "line_range",
-              "start": 5004
+              "start": 4966
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

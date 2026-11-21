@@ -180,14 +180,14 @@
       ]
     },
     "6": {
-      "note": "Preparation selection requires original certificates and retains command starts, outcomes and selected outputs.",
+      "note": "Selected preparation checks the exact intent, output, owner and protected logical refs. Journal decode drops historical per-leg command fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "b0dc75488f84e9b970fce1a584c4600297291e84",
-            "content": "sha256:7ba7c5fca3aecea0293eacd8b8632ff8bf507c93d9a67cf7f4f1e3a9cf5a2947",
+            "blob": "98c00867427cb19068a59abf2f733f9a48ea0e35",
+            "content": "sha256:cb9bfbb0986df6bab4421f851d6883eb4e30cd0ef607ea7b7ab5158dce666b3f",
             "locator": {
-              "end": 46,
+              "end": 44,
               "kind": "line_range",
               "start": 26
             },
@@ -197,12 +197,12 @@
         },
         {
           "anchor": {
-            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
-            "content": "sha256:725b21ea24776facdac2d7f73a7f65e66a5aedf3188b86acb0affbbf4d63ee08",
+            "blob": "4d5810286c6ba0f42132a86a999f88868681ebfd",
+            "content": "sha256:68ebdcd5f77a54b69a720955289e6b44a83588c0b48ca98312230ca6e2590938",
             "locator": {
-              "end": 109,
+              "end": 50,
               "kind": "line_range",
-              "start": 22
+              "start": 18
             },
             "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
           },
@@ -210,14 +210,40 @@
         },
         {
           "anchor": {
-            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
-            "content": "sha256:1a5b27d51034b41d654dd6b6ea4ae8df1337a6938ea43bc6186fa0d8efddcd95",
+            "blob": "4d5810286c6ba0f42132a86a999f88868681ebfd",
+            "content": "sha256:edbd54679a5da0ade58dc9c4d42e0bf83f4c0926dc4dd168a92461a8558ca333",
             "locator": {
-              "end": 289,
+              "end": 105,
               "kind": "line_range",
-              "start": 270
+              "start": 91
             },
             "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "98c00867427cb19068a59abf2f733f9a48ea0e35",
+            "content": "sha256:725e9512460f7d087ce35e8bd51dd1063b548259b269ab6a5d32716c760093b7",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
+            "content": "sha256:69a42331a45130450f86da16a3dec907996364a139f9a2475d02835c6353c83c",
+            "locator": {
+              "end": 461,
+              "kind": "line_range",
+              "start": 435
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
           },
           "kind": "code"
         }

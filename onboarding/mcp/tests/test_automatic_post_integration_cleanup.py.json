@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3aa082730ec3868fcbc062a63abd1b1e3987980",
+            "blob": "aeaa62aa1862b85d188edb28925a8d39123c27ad",
             "content": "sha256:dd8c6de904bc709f1c4d75be216102cc95ad5b63ffbe0b646b86237b99c0bef8",
             "locator": {
               "end": 28,
@@ -21,16 +21,16 @@
       ]
     },
     "10": {
-      "note": "The dependency-classification entry that names this module as a consumer of the certification profile. Source caption: `AMBIENT_ROLE_RUNNER_PATH`",
+      "note": "The dependency classifier lists this module among the consumers of the certification profile.",
       "targets": [
         {
           "anchor": {
             "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
-            "content": "sha256:7563e9fddebd3b6233c4bff75d8bbaf9be3e65bf0f01dd625cbb0983ed38b2a3",
+            "content": "sha256:90621bc78fcd8a839e131d3db1f8e181cf2decb1bca587c9593cbcc97d614548",
             "locator": {
               "end": 76,
               "kind": "line_range",
-              "start": 76
+              "start": 67
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -149,22 +149,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
             "locator": {
               "kind": "symbol",
               "name": "lifecycle_finalize_task_tool"
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

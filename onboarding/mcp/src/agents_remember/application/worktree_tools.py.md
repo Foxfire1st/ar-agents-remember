@@ -7,6 +7,8 @@ The current source facts below replace the former operative inventory. The separ
 - Current start calls parameterless write_lifecycle_settings().
 - Worktree start/attach no longer adopt or switch an ambient lifecycle, and an already-bound session supplies no start refusal. lifecycleId remains stable contract/event-scope identity; native task-stage publication has its own owner.
 
+Ordinary closeout apply and integration enter their worktree owners synchronously and return the reached result. Worktree status reads retained operation rows. Only a direct-landing generation supports executable journal controls.
+
 ### Superseded inventory
 
 - Pre-repair card claim: Card says generated start settings use authority.apply(config)’s live provider map. This is superseded archival wording, not a current prescription.
@@ -52,22 +54,13 @@ a lifecycle whose owner is gone is terminalized by the reducer from the contract
 
 ## CCR-R12@v5 Current Transaction Boundary
 
-The public worktree adapters preview, admit, observe, and control task-addressed closeout and
-integration operations. Their normal transaction path preserves explicit developer approval,
-candidate/source identity, lease ownership, and ref safety, then delegates mutation to the
-detached worker and worktree owners. The path does not automatically run strict code quality,
-memory quality, selected certification, curator coherence, or independent review; full suites are
-only an explicit developer request. Repository certification-profile fields that remain in generic
-request plumbing are not a normal closeout/integration execution gate.
+The public preview, closeout apply and integration adapters admit a configured contract and delegate to the synchronous worktree owners. They retain explicit approval, exact candidate and source identity, and publication authority. Ordinary closeout judges the converted-memory invariant gate in its worktree owner. Full quality, certification, independent review and checklist-required coherence validation each have a separate owner.
 
 ## Code Commentary
 
 ### Logic
 
-Closeout and resume normalize only code and memory messages. Integration and checkpoint
-landing accept the contract, strategy, and preview choice; they do not ask for a ledger subject.
-PR landing records the actual code and optional memory-content commits. Cache contents do not
-select the candidate or supply publication authority at this adapter.
+Closeout normalizes only code and memory messages. Direct journal recovery uses its accepted input. Integration and checkpoint landing accept the contract, strategy and preview choice. PR landing records the actual code and optional memory-content commits. Cache contents do not select the candidate or provide publication authority.
 
 ### Parameter Objects (260731-EFA-L2)
 
@@ -351,17 +344,25 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 `CertificationContractError`); no broad fallback or task-document mutation occurs in this adapter.
 
 
-- Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects. [1]
+
+- Closeout apply and integration call their synchronous transaction owners. The separate direct-landing recovery route retains the accepted generation. [1]
+
 
 - Public status observes the stable journal through the canonical locator and preserves it in the result. [2]
 
-- Public sync forwards typed memory choice, continue/cancel control and the repository-default source after configured-contract admission. \|  \| Anchor: `worktree_sync_tool` `_configured_control_refusal` [3]
+
+- Public sync forwards typed memory choice, continue/cancel control and the repository-default source after configured-contract admission. [3]
+
+
 
 
 - The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. [4]
 
 
+
+
 - The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. [5]
+
 
 - Stable sync projection is read from the enclosure-root journal. [6]
 
@@ -371,7 +372,9 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 > Retained earlier citation wording: - Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. [8]
 
 
+
 - Route-review refusals are projected once with exact contract guidance at start/admission and closeout. [9]
+
 
 - **The closeout preview and closeout apply return paths now carry this leaf's final-output projection (ICR-R21@v1): the preview is decorated with the selected comparison generation and `prepared_is_reviewed_candidate`, the apply with the recorded receipt, and integration with the refs it landed — all attached after the Git transaction, so none of them can gate it.** [10]
 - Worktree service behavior is owned by the worktree manager and modules. [11]
@@ -380,7 +383,9 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 > Retained earlier citation wording: - Lifecycle finalization behavior is delegated to the worktree finalizer module. [13]
 
 
+
 - The on-disk provider authority reload consumed before provider setup (containment R1). [14]
+
 
 - None [20]
 
@@ -390,7 +395,9 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 - Worktree service behavior is owned by the worktree modules, which this manager module re-exports. [22]
 
 
-- **The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync; what it measured is a carrying sync's own resolved pair, published additively on the result.** \|  \| Anchor: `worktree_sync_tool` `rebinding_result_block` `resolved_pair_completed` [23]
+
+- **The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync; what it measured is a carrying sync's own resolved pair, published additively on the result.** [23]
+
 
 
 ## Series-Contract Notes
@@ -411,11 +418,13 @@ into closeout/integration/finalization remain unchanged by that ownership move.
 
 ## 260815-DAG-L3 Generic Integration Boundary
 
-`worktree_integrate_tool` remains a task-addressed operation launcher, not a scheduler. The
-orchestrator may rank a disposable projection member, but the lifecycle plane binds the exact claimed
-door/source journal before launch. This generic boundary cannot select or substitute a candidate,
-and the detached worker revalidates the exact durable operation immediately before moving source
-history.
+> **Historical source account:**
+>
+> `worktree_integrate_tool` remains a task-addressed operation launcher, not a scheduler. The
+> orchestrator may rank a disposable projection member, but the lifecycle plane binds the exact claimed
+> door/source journal before launch. This generic boundary cannot select or substitute a candidate,
+> and the detached worker revalidates the exact durable operation immediately before moving source
+> history.
 
 ## 260815-DAG-L4 Authority Boundary
 
@@ -423,7 +432,7 @@ L4 routes this file's existing application, configuration, task, model, registra
 
 ## 260821-CLIVE-L1 Admission Boundary
 
-Public closeout messages remain raw optionals only until the shared normalizer resolves the stable candidate and enabled/not-applicable plan. Preview and apply both return typed refusals; apply hands `start_or_observe_closeout_operation` only validated admission, while preview carries the same `effectiveInput`. Validation occurs before integration-authority observation, journal creation, worker launch, or Git. Projection selection remains independent and has no message-input authority.
+Preview and apply resolve the enabled/not-applicable plan against a captured candidate and normalize the supplied code and memory messages. Invalid input returns a typed refusal before calling the worktree transaction. The validated input reaches the same synchronous closeout owner for preview and apply. Projection selection has no message-input authority.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -432,10 +441,14 @@ The current source seams include `TaskIdentity`, `TaskBases`, `StartExecution`. 
 ### Reconciled Source Evidence
 
 
+
 - The facade's start entry point consumes the extracted task-start request types at this boundary. [24]
 
 
+
+
 - The start entry point: it refuses a direct leaf start, reloads the on-disk provider authority before setup, and answers the worktree manager's start result with the provider veto and the start eligibility. [25]
+
 
 
 ## 260821-CLIVE Final Public Worktree Boundary
@@ -444,16 +457,16 @@ The current source seams include `TaskIdentity`, `TaskBases`, `StartExecution`. 
 terminal locator→external archive/receipt plus surviving contract truth. Terminal status reports
 archive-ready versus cleanup-completed and returns the original typed cleanup/abandon arguments as
 the executable retry; a different retry input refuses. Cleanup and abandon use this same admission
-instead of scanning a deleted enclosure. Closeout requests carry the shared grade/admission models,
-but the task-addressed worker never makes the scheduling decision or claims a door: its enclosing
-operation revalidates the journal, contract, and protected-ref authority.
+instead of scanning a deleted enclosure. Ordinary closeout uses the admitted contract and normalized commit-leg input and returns the transaction result. Only the direct-landing route can continue a journal generation.
 
 ## MCAR-L03 Closeout Application Boundary
 
-Initial closeout apply now re-proves the external leaf pair before lifecycle admission and includes
-that identity in its acknowledgement. Preview converts pair/coherence failure through the typed
-domain projector, including the named field and exact repair route. The detached worker still
-revalidates independently before mutation.
+> **Historical source account:**
+>
+> Initial closeout apply now re-proves the external leaf pair before lifecycle admission and includes
+> that identity in its acknowledgement. Preview converts pair/coherence failure through the typed
+> domain projector, including the named field and exact repair route. The detached worker still
+> revalidates independently before mutation.
 
 ## 260915-KS-L23 Start Eligibility And The Response's Own Address
 

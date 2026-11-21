@@ -6,17 +6,11 @@
 
 ## Purpose
 
-This module defines the strict input, durable-record, and public-projection vocabularies for asynchronous closeout and integration. It separates private operation identity and recovery evidence from the task-addressed status exposed to agents.
+This module defines typed operation inputs and the strict durable record. Direct landing retains an executable journal generation. Older closeout and integration records remain readable for audit. The task-addressed public projection is a separate model.
 
-## CCR-R12@v5 Current Transaction Boundary
+## Current Transaction Boundary
 
-Normal closeout/integration records carry the typed operation input, explicit approval and gate
-policy snapshot, candidate/source identity, progress, mutation evidence, and terminal result needed
-for a recoverable Git transaction. The retained `certification`, `integrationCertification`, and
-`qualityCertification` model vocabulary remains available for explicit or historical callers, but
-the normal worker does not select, execute, or require those fields for closeout or integration.
-Their presence in this strict schema must not be read as a normal closeout quality or certification
-gate.
+Ordinary closeout and integration return their result inside their respective calls. The journal model retains typed closeout and integration inputs, publication evidence and certification fields for decoding earlier records. A retained field does not register or execute a lifecycle route.
 
 ## Code Commentary
 
@@ -27,7 +21,7 @@ Recovery, integration authority/conflicts, and organizational repair records bin
 or ledger recovery field. Expected mutation legs derive solely from enabled code/memory input;
 integration publication compares those actual outputs with accepted authority.
 
-The closeout and integration inputs capture every accepted decision needed for retry. Closeout input retains explicit corrective red-catalog dispositions alongside normalized input and gate policy. `LifecycleOperationRecord` persists the immutable operation fingerprint, candidate tree, gate snapshot, worker progress, boundary, terminal result, and failure evidence. `LifecycleOperationProjection` exposes task state without leaking the operation key or worker PID.
+The stored closeout and integration inputs retain their typed decisions, including corrective dispositions, normalized closeout input and gate policy. LifecycleOperationRecord retains the fingerprint, candidate tree, gate snapshot, boundary, outcome and failure evidence. Its validator drops former worker ownership fields and old leg commands before strict decode. The public projection carries no declared worker-observation component.
 
 The record has separate `certification` and `integrationCertification` cells for closeout and integration selections. Each selected state belongs to the exact operation kind, key, and generation. `qualityCertification` is the completed organizational integration proof: it requires a frozen-run reference and the original, complete G1–4 terminal prefix. Its references must equal the journal-selected references, its completion fingerprint/comparison base/memory cap must match that selection, and its code commit must equal `integrationAuthority.codeCandidateCommit`.
 
@@ -37,26 +31,11 @@ full-Dagger code-prefix proof with result-hash revalidation and original selecte
 the former queue-completion evidence model; integration claim/publication evidence now lives in the
 journal-owned operation fields rather than a queue-removal lifecycle cell.
 
-Under CCR-R03@v1 the durable record carries a typed direct-dependency declaration:
-`lifecycle_operation_dependencies` maps the operation kind to the correct record type
-(`lifecycle-closeout-operation/v3` / `lifecycle-direct-landing-operation/v3` /
-`lifecycle-integration-operation/v3`) and declares the admitted candidate state, normalized
-operation input, gate-policy rail plan, and validator; the **closeout** operation additionally binds the exact
-code tree, digest-bearing task intent, and admitted closeout-door generation, refusing
-`lifecycle-operation-candidate-dependencies-missing` or
-`lifecycle-operation-door-dependency-missing` when absent
-cit:([`lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:438-493).
-Since the closeout-door cut (commit `fad9808e`) a **direct landing** binds neither a leaf task intent
-nor a door: `LifecycleOperationRecord` requires the task-intent state for `closeout` only, because a
-direct landing is a series-contract, branch-addressed delivery with no leaf task document to bind and
-no closeout door to state one for it.
-`require_lifecycle_operation_dependencies` refuses `lifecycle-operation-dependencies-stale` when the
-record's declared edges differ from its admitted immutable inputs
-cit:([`require_lifecycle_operation_dependencies`], mcp/src/agents_remember/models/lifecycles/operation.py:496-511).
+The retained dependency builder describes the stored operation candidate, normalized input, gate plan and validator. When applied to a closeout or direct-landing record bearing door authority, it requires the candidate tree, digest-bearing task intent and that door generation. The current direct-landing builder admits its own canonical leaf reference and exact pair without a closeout door. The dependency verifier checks supplied dependencies against its recomputed declaration.
 
 ### Conventions
 
-All models forbid extra fields. The input union is discriminated by `kind`; public status uses `StrictResponseModel` and camel-case wire names. Operation dependency edges reuse the shared evidence-dependency encoding and are recomputed before persistence and every launch/currentness gate.
+The record forbids unexpected fields after the compatibility decoders run. The input union is discriminated by `kind`. Public status uses the separate strict projection model and camel-case wire names.
 
 ### Invariants And Boundaries
 
@@ -65,9 +44,7 @@ All models forbid extra fields. The input union is discriminated by `kind`; publ
 - Only the public projection crosses the MCP/dashboard boundary.
 - A completed integration result cannot replace its selected frozen run, terminal references, completion identity, or admitted code commit.
 - Selecting or advancing either certification cell changes the meaningful-state projection; heartbeat-only writes still do not.
-- The declared dependencies are the admitted door (closeout only), certifying plan, and acceptance candidate; a
-  record never binds a universal candidate tuple, and dependencies are omitted only when the
-  record-type policy proves the record never reads them. A direct-landing record declares no door edge.
+- The retained door-evidence dependency builder applies its declared policy when called. Current ordinary transactions do not publish a new journal generation. The current direct-landing input binds its canonical leaf reference and accepted candidate separately.
 
 ### Todos
 
@@ -75,10 +52,12 @@ None.
 
 ### CCR private preparation boundary
 
-Preparation is meaningful operation state and belongs only to the exact closeout operation key/generation with certification authority. Cancellation evidence must bind every selected preparation intent digest as well as prove this generation’s worker exit. Retained private work is separate from approval consumption and published mutation evidence.
+Private preparation belongs to the exact stored closeout operation key and generation with its original certification. The cancellation validator matches generation and kind, requires the compatibility `workerExitProven` marker and binds every retained preparation intent digest. Same-generation direct cancellation proves no Git output and populates that marker without any process exit observation.
+
 
 - The current `_require_altitude_authority` boundary implements the preparation contract above. [1]
-- The current `_require_cancellation_evidence` boundary implements the preparation contract above. [2]
+
+- The record validator binds cancellation evidence to the cancelled generation and its retained preparation intent digests. Direct proof supplies the historical marker from the no-output check. [2]
 
 ## Evidence
 
@@ -98,8 +77,12 @@ The operation model owns strict serialization and cross-field identity checks. T
 - Completed integration requires an exact original full code prefix and a matching result digest. [6]
 - Attestation, passing result, comparison base and memory policy are checked together. [7]
 - Completed proof must match the selected operation generation, references and integration code authority. [8]
+
 - Both certification cells participate in meaningful state; ordinary durable-write revision remains separate. [9]
-- The public projection intentionally omits private execution identifiers. [10]
+
+
+- The reader drops retired worker fields and preparation commands. The projections of retained closeout and integration rows preserve audit evidence without offering journal controls. [10]
+
 
 
 
@@ -111,14 +94,16 @@ No separate cross-repository source is required for these model-local claims.
 
 ### 260821-CLIVE Journal-Owned Source And Door Evidence
 
-`IntegrationPublicationIntent` still models the exact claimed door plus source operation kind,
-generation, fingerprint, key, and source-journal digest; queue candidate identity is absent.
-Operation generations retain bounded door history and per-scope projection effects. Supersede
-declarations have their own immutable fingerprint. Direct landing no longer carries a proven door
-publication at all — that field was removed from its record builder by the closeout-door cut
-(commit `fad9808e`), and `integrate.py` no longer constructs an `IntegrationPublicationIntent`. The
-operation journal is the durable owner of running, commit, certification,
-integration, cancellation, retirement, and supersession evidence even when a projection is emptied.
+> **Historical source account:**
+>
+> `IntegrationPublicationIntent` still models the exact claimed door plus source operation kind,
+> generation, fingerprint, key, and source-journal digest; queue candidate identity is absent.
+> Operation generations retain bounded door history and per-scope projection effects. Supersede
+> declarations have their own immutable fingerprint. Direct landing no longer carries a proven door
+> publication at all — that field was removed from its record builder by the closeout-door cut
+> (commit `fad9808e`), and `integrate.py` no longer constructs an `IntegrationPublicationIntent`. The
+> operation journal is the durable owner of running, commit, certification,
+> integration, cancellation, retirement, and supersession evidence even when a projection is emptied.
 
 
 ## L23 Final Candidate Disposition
@@ -133,11 +118,11 @@ L4 routes this file's existing application, configuration, task, model, registra
 
 ## 260821-CLIVE-L1 Durable Operation Model
 
-Closeout durable input contains only typed `effectiveInput`; schema reading is strict `3.0` with no compatibility reader, fallback, or runtime bypass. Closeout progress carries per-leg mutation evidence and an optional exact finalized-contract publication hash. Model validators keep enabled legs, evidence repositories, derived recovery commits, and generation retention consistent, so recovery cells cannot contradict authoritative proof.
+Schema `3.0` remains strict after compatibility decoding. The reader strips the enumerated retired worker fields and old leg commands. Stored closeout records retain typed effective input, per-leg mutation evidence and optional exact finalized-contract publication proof.
 
 ## 260821-CLIVE-L2 Current Contract
 
-The current source seams include `LifecycleOperationRecoveryCommits`, `OrganizationalTaskPublicationIntent`, `IntegrationPublicationIntent`. The lifecycle record now owns operation generation, legal controls, root-journal publication, door/successor state, worker termination, direct landing, and bounded legacy proof. Queue projection is absent from the authoritative lifecycle union.
+The strict record retains generation, revisions and accepted input, typed code and memory mutation facts, outcome history and bounded legacy evidence. Active legal controls are derived separately by the direct-landing control projector. The scheduling projection does not supply record authority.
 
 ### Reconciled Source Evidence
 
@@ -147,18 +132,22 @@ The current source seams include `LifecycleOperationRecoveryCommits`, `Organizat
 
 ## PDLS Reconciliation
 
-Lifecycle record validation was decomposed into single-purpose commit-leg, irreversible-boundary, recovery, legacy-migration, mutation-history, and worker-authority validators while preserving one strict model boundary.
-
-This change preserves the file's existing authority boundary. No threshold exception, silent
-fallback, or compatibility reader was added.
+> **Historical source account:**
+>
+> Lifecycle record validation was decomposed into single-purpose commit-leg, irreversible-boundary, recovery, legacy-migration, mutation-history, and worker-authority validators while preserving one strict model boundary.
+>
+> This change preserves the file's existing authority boundary. No threshold exception, silent
+> fallback, or compatibility reader was added.
 
 ## 260831-CCR-R03 Declared Operation Dependencies
 
-The lifecycle record now carries `dependencies`; every claim, closeout door-intent, and
-queued-integrate writer recomputes the exact declaration from the admitted candidate, door, plan,
-and input before persistence, and launch/currentness gates re-require it (worker handover:
-notes/reports/260902-CCR-L03-worker-delivery.md). A direct-landing writer recomputes the same
-declaration from its candidate, plan, and input, without a door edge.
+> **Historical source account:**
+>
+> The lifecycle record now carries `dependencies`; every claim, closeout door-intent, and
+> queued-integrate writer recomputes the exact declaration from the admitted candidate, door, plan,
+> and input before persistence, and launch/currentness gates re-require it (worker handover:
+> notes/reports/260902-CCR-L03-worker-delivery.md). A direct-landing writer recomputes the same
+> declaration from its candidate, plan, and input, without a door edge.
 
 
 ## 260831-CCR-L15 Meaningful-State Revision
@@ -168,18 +157,11 @@ The durable record now carries a second monotonic revision: `meaningfulRevision`
 accepted store mutation whose meaningful projection subset changed, while
 `recordRevision` still advances on every durable write (heartbeats, unchanged
 current commands, log growth, and append-only histories advance only
-`recordRevision`). `_MEANINGFUL_STATE_FIELDS` names exactly the durable
-journal fields that move the cursor (generation, generationDisposition, status,
-phase, attempt, approval claim, irreversible boundary, cancellation evidence,
-worker termination, mutation evidence, recovery commits, finalization,
-publication/direct-landing/legacy cells, both selected certification states, result, and typed failure); the digest
-and comparison helpers `meaningful_state_payload` and
-`meaningful_state_changed` give the store, adapters, and waiters one shared
-rule, so a waiter compares this field and never `recordRevision`.
+`recordRevision`). The meaningful subset is the model's declared tuple. It includes cancellation evidence, mutation and recovery, both selected certification states, applicable publication and legacy cells, result and failure. The store and read-only observer use this subset and the resulting cursor.
 
 ## L34 Current Implementation
 
-The operation record separately retains private preparation state. Original command/output evidence remains distinct from published mutation, approval and certification selection; it cannot be rewritten into a new command or combined with a fabricated publication claim.
+Retained preparation state binds the exact selected intent and optional output for each leg. The journal decoder drops the former command list. The store distinguishes selected private work from approval and published mutation evidence.
 
 - `LifecycleOperationRecoveryCommits` owns the corresponding behavior described above. [15]
 - `OrganizationalTaskPublicationIntent` owns the corresponding behavior described above. [16]

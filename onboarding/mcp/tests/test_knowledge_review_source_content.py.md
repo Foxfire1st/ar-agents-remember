@@ -94,10 +94,10 @@ only the packet's boundary forbids it.
 `unit-regression` declaration is `mcp/tests/test-evidence-lanes.toml:272`.
 The complete merged lifecycle catalog declares seven exact artifact-consumer
 relationships: `_user_settings_guard.py` (`:400`), `anchor_fixture_models.py`
-(`:926`), `diff_scope_test_support.py` (`:1342`), the Node `package-lock.json`
-fixture (`:2761`), `knowledge_row_codec_test_support.py` (`:3629`),
-`knowledge_rows_test_support.py` (`:3691`) and `read_scope_test_support.py`
-(`:4221`). These are catalog ownership declarations, not invocation or runtime
+(`:926`), `diff_scope_test_support.py` (`:1335`), the Node `package-lock.json`
+fixture (`:2792`), `knowledge_row_codec_test_support.py` (`:3644`),
+`knowledge_rows_test_support.py` (`:3706`) and `read_scope_test_support.py`
+(`:4218`). These are catalog ownership declarations, not invocation or runtime
 consumption evidence. The earlier two-artifact account is superseded; its named
 diff-scope/read-scope supports remain members of this complete seven-artifact population. This module has no artifact or contract row of its own in this catalog.
 
@@ -204,4 +204,6 @@ Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3372 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
-- The lane row and two of the module's declared consumer rows (diff-scope and read-scope shared support). [22]
+
+
+- The unit-regression lane and all seven exact artifact-consumer entries declare this module’s evidence selection and support ownership. [22]

@@ -6,18 +6,18 @@
 
 ## Purpose
 
-Owns the sprint-scoped status/rebuild facade and the exact first-ready waiting-generation admission
-check for the disposable closeout projection.
+Owns sprint-scoped status and rebuild for the disposable closeout projection. A retained helper
+checks the exact first-ready waiting generation when explicitly invoked.
 
 ## Code Commentary
 
 ### Logic
 
 `closeout_queue_tool` structurally authorizes the sprint caller and serves effective status or an
-idempotent rebuild. `require_first_ready_generation` is called only while its caller holds the
-short task/door publication mutex; it rechecks the exact current projection and admits only the
-named first-ready waiting generation. All candidate construction, source census, member readiness,
-and publication effects delegate to the projection modules.
+idempotent rebuild. The retained `require_first_ready_generation` compares the named waiting
+generation with the first ready member of the exact current projection. Ordinary synchronous
+closeout calls its transaction owner directly. Candidate construction, source census, member
+readiness and publication effects delegate to the projection modules.
 
 ### Conventions
 
@@ -30,9 +30,9 @@ selection is never one of them.
 ### Invariants And Boundaries
 
 - Only status and rebuild are public queue actions.
-- Only the deterministic first-ready waiting generation passes the claim-admission fence.
+- The retained first-ready helper succeeds only for the deterministic first-ready waiting generation.
 - Task edits and door controls remain canonical even when rebuild fails.
-- In-flight records, commits, certification, integration, and lifecycle controls are journal-owned.
+- Closeout and integration output belongs to their synchronous transaction owners. Direct-landing controls belong to its generation.
 - There is no persistent blocker, release, abort, declared-candidate, or queue-owned grade action.
 - Activation is read-only input to projection; this facade cannot select, pause, activate, or vacate
   a master.
@@ -51,7 +51,9 @@ No configured Domain Documentation source applies; queue doctrine is repository-
 ### Repo-Internal References
 
 - The facade serves status and idempotent rebuild. [1]
-- Claim admission requires the exact first-ready waiting generation. [2]
+
+- The retained helper checks the exact first-ready waiting generation of a current projection. [2]
+
 
 ### Cross-Repo References
 
@@ -63,15 +65,13 @@ Task-derived integration refs are mechanically non-ordinary: repository defaults
 
 ## Status/Rebuild Facade
 
-The command processor offers sprint-scoped `status` and idempotent `rebuild`, plus
-`require_first_ready_generation` for the short claim admission fence. That fence runs while the
-caller holds the task/door CAS and requires the exact first ready waiting generation. There is no
-declare, grade, claim, certify, block, release, abort, or integration-completion mutation. Task
-authoring is never gated by this facade.
+The command processor offers sprint-scoped `status` and idempotent `rebuild`. The retained internal
+first-ready comparison reads the projection. It offers neither scheduling mutation nor transaction
+approval. Task authoring remains with its canonical owner.
 
 ## Activation Projection Boundary
 
-The facade remains status/rebuild plus first-ready admission. For graph-less atomic work,
+The facade serves status and rebuild. For graph-less atomic work,
 projection helpers derive active/reconciling/paused/vacant waiting reasons from the exact selector
 snapshot. Contract presence is not a lane owner, selector corruption makes only the affected
 projection invalid-empty, and no queue action mutates activation or operation lifecycle.

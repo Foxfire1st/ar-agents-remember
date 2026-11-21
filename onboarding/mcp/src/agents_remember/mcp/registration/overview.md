@@ -208,7 +208,9 @@ The memory family extends the existing `citation_fix` declaration with flat `mod
 - The role-agent registrar mounts role_start, role_start_set and role_message; the callables preserve their declared argument shapes and delegate to their application payload owners. [24]
 - The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep. [33]
 
+
 - The current composed ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. [38]
+
 
 - register_role_agent_tools owns the mounted role-agent declarations and dispatches them to their existing application payload owners. [40]
 

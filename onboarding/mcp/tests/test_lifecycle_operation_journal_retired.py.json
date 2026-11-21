@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_lifecycle_operation_journal_retired.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2c3c5c984a48f522e597ffd33ebe434a360ace9e",
+        "content": "sha256:7831dcd747895f44e38523a57b9d25b47247e390bceb231d2300db54f58f70b9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_registered_status_keeps_retired_history_and_direct_landing_controls"
+        }
+      },
+      "facet": "Counts all three saved projections and filters audit-only retired rows out of live work while keeping direct recovery available under the test's admitted input.",
+      "id": "PRF-J60S4R",
+      "invariant": "INV-H4PZ9X",
+      "origin": {
+        "handoffEntry": "curator-w7-status-proof",
+        "leaf": "261112-BUG-L15"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The complete old closeout record exercises the current store and typed replacement guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c3c5c984a48f522e597ffd33ebe434a360ace9e",
+            "content": "sha256:6c85226fa9283ef36a9623c2a9ce579274cda10ebc93e6e1f7e281c66f06e030",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_retained_old_build_record_loads_with_its_command_leg"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The saved status includes both historical rows while direct recovery remains available and no running line is emitted for the old closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c3c5c984a48f522e597ffd33ebe434a360ace9e",
+            "content": "sha256:7831dcd747895f44e38523a57b9d25b47247e390bceb231d2300db54f58f70b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_status_keeps_retired_history_and_direct_landing_controls"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

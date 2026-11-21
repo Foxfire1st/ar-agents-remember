@@ -144,7 +144,9 @@ absent from the file rather than present as `null`.
 - The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. [10]
 
 
+
 - The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. [11]
+
 
 
 
@@ -209,7 +211,9 @@ while writer constants mark records.
 
 - Ledger analytics remain a consumer sample after the retired Git-operation phase is removed. Anchor: `observer`; "ledgers" [1]
 
-- Removed the retired ledger-commit operation sample while preserving downstream ledger analytics and real publication phases. Anchor: `lifecycle`; "commit-approval-pending" [2]
+
+- The sample retains operation kind, state and revision fields alongside the served dashboard structure. [2]
+
 
 
 - `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. Anchor: `None` [3]

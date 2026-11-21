@@ -202,7 +202,9 @@ No configured live documentation source was available for this pass.
 
 
 
+
 - A failed Git read inside a predicate or the validator is never a verdict. [11]
+
 
 
 - The file a row answering the leaf's items goes to: the latest attempt not closed in a base or in the leaf's memory HEAD. [12]

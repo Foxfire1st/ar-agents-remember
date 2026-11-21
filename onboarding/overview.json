@@ -641,12 +641,12 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
             "locator": {
-              "end": 277,
+              "end": 276,
               "kind": "line_range",
-              "start": 197
+              "start": 196
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -1600,14 +1600,29 @@
       ]
     },
     "291": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Task-addressed lifecycle controls.\n\nAnchor: `control_operation`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Task-addressed lifecycle controls.",
       "targets": [
         {
           "anchor": {
-            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
-            "content": "sha256:3f90c50c3cf755de33cd7969389cbafe4078f75f930504c6cdc2b24542b3dd9a",
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:ba6d9b36f76649d9f2c1dfd998576371323954e8e20327f7cfa8216509d06eea",
             "locator": {
-              "kind": "file"
+              "end": 88,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:7aa277ded5582d5af283a4f6d9a10ad5aaabb6fc5dca672ef7b775249aecef2b",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 116
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
@@ -1620,7 +1635,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
             "content": "sha256:2a93ceb2cd2bba8b07d2ce242e2567ae6207922b3170f8e0fbd6884bf970f530",
             "locator": {
               "kind": "symbol",
@@ -3707,7 +3722,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4ee8765597f72bc3004b0249af68fed374bd5d2",
+            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
             "content": "sha256:50378ea34b53a8c0475ba1b689c0ca605c2f57780e85c4b560e19a2d4c0127bb",
             "locator": {
               "end": 68,
@@ -4454,7 +4469,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae2fe13d4977bb319451dd619f03b611141bcd2a",
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:1556b38430b0b91643d0aca13936052e01cf50233bcb7f447833531577dd9011",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:c50f9e867d6d8ecfd6d01aba46170a274d11249ebb6817911173b74efc6ebea7",
+            "locator": {
+              "end": 5111,
+              "kind": "line_range",
+              "start": 5100
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:a21d8fbeade96f460c50dc5451345a3d1b287f7a4a3bb84239ef8d0d75a3f85b",
+            "locator": {
+              "end": 5396,
+              "kind": "line_range",
+              "start": 5396
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
             "content": "sha256:9c5f28574f34d8206f5408394964aaf4ccfd8c658438df035a4fce7285c6ca7e",
             "locator": {
               "end": 6178,
@@ -4467,12 +4521,12 @@
         },
         {
           "anchor": {
-            "blob": "ae2fe13d4977bb319451dd619f03b611141bcd2a",
-            "content": "sha256:28d3127454b49c2a0105336295a7115c2a7051c1d39a4aeb3ae02dc25dc1e54b",
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:ba80962f583954fd6940b04297b85ef1121fcbce8c715f40ffb5457bbb0e0750",
             "locator": {
               "end": 6265,
               "kind": "line_range",
-              "start": 6185
+              "start": 6186
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -4514,19 +4568,6 @@
               "start": 142
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ae2fe13d4977bb319451dd619f03b611141bcd2a",
-            "content": "sha256:a21d8fbeade96f460c50dc5451345a3d1b287f7a4a3bb84239ef8d0d75a3f85b",
-            "locator": {
-              "end": 5396,
-              "kind": "line_range",
-              "start": 5396
-            },
-            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
           "kind": "code"
         }
@@ -4771,7 +4812,7 @@
         },
         {
           "anchor": {
-            "blob": "c4ee8765597f72bc3004b0249af68fed374bd5d2",
+            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
             "content": "sha256:790f9bbaf224d7945aa19ac524f2d05bdab9bc5e8a53200cc1f51c68983ad7e6",
             "locator": {
               "end": 161,
@@ -5278,7 +5319,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+            "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
             "content": "sha256:f22e58ff1fe77b4f47af62e9e2c356b9825ee1a4f8f7c76d6bcdcd69174e1f86",
             "locator": {
               "end": 31,
@@ -5291,7 +5332,7 @@
         },
         {
           "anchor": {
-            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+            "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
             "content": "sha256:6ea1a6086fc01dc18f9bfda9d7f0f859bedde538a3b906d26eb1dd273768545e",
             "locator": {
               "end": 123,
@@ -5775,7 +5816,7 @@
         },
         {
           "anchor": {
-            "blob": "c4ee8765597f72bc3004b0249af68fed374bd5d2",
+            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
             "content": "sha256:ba076d3aa54b13a95ebc27070ad5a248ec1f4db724e808c1a7af5bb4c88355ea",
             "locator": {
               "end": 81,

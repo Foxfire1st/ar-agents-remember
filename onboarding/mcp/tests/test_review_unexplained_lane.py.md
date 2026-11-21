@@ -7,17 +7,16 @@
 ## Purpose
 
 **MIK-R32's backend evidence: file buckets, hunk classes, destinations, the per-file response and the entry count
-(11 named test definitions).** Each comparison is four real Git trees: a code repository with a base and a
-candidate commit, and a converted memory repository with a base and a candidate commit, reopened as the reviewer
-reopens a recorded comparison (`reopened_trees`), so every knowledge side is read through the derived index of its
-tree. The route and live-leaf cases reuse `test_review_git_trees.py`'s `world` fixture. Registered in the
-`unit-regression` lane (`mcp/tests/test-evidence-lanes.toml:518`).
+(11 named test definitions).** The core comparison reopens base and candidate trees from two temporary Git repositories with `reopened_trees`.
+The failure cases can supply a tree ID Git cannot read. The focused route test binds a stub port, while the live-leaf
+route and dataset cases use the `world` fixture imported from `test_review_git_trees.py`. Registered in the
+`unit-regression` lane (`mcp/tests/test-evidence-lanes.toml:520`).
 
 ## Code Commentary
 
 ### Logic
 
-- **The fixture (ten changed paths, one code change throughout).** `pkg/a.py` (a replace inside `land` and a new
+- **The core fixture (ten changed paths).** `pkg/a.py` (a replace inside `land` and a new
   function appended; symbol entries for `land` and `keep`), `pkg/lines.txt` (two adjacent replaces and a delete; one
   `line_range` over lines 2-3), `pkg/whole.py` (a `file` entry), `pkg/stale.py` (an entry recorded at a blob neither
   side holds), `pkg/unbound.py` (a symbol the file does not define), `tests/test_a.py` (one proof entry with a facet),
@@ -31,7 +30,8 @@ tree. The route and live-leaf cases reuse `test_review_git_trees.py`'s `world` f
      delete-only run) and `pkg/mode.py` (the mode-only change the gate holds unexplained); the `Unknown attribution`
      destination lists the stale and the unresolved file with their reasons, then `a.py`, `inside.py` and
      `lines.txt`; `_every_path_bucket` checks `paths` (ruling Q1: the stale file unknown, the proof-linked test
-     attributed); the summary agrees; the binary with a `file` entry is gate-`linked` and listed nowhere.
+     attributed). The summary agrees. The binary with a `file` entry is gate-`linked` and appears in `paths` as
+     attributed. Both destinations omit it.
   2. `test_the_entry_count_reads_file_buckets_only`: with `CodeTrees.hunks` patched to fail, the summary still
      counts and the lane read fails (rule 9's request economy).
   3. `test_hunks_are_classified_on_their_changed_lines_at_each_sides_recorded_blob`: pre-curation, `land`'s edit
@@ -45,15 +45,16 @@ tree. The route and live-leaf cases reuse `test_review_git_trees.py`'s `world` f
   5. `test_an_unreadable_side_is_never_unexplained_and_the_readable_side_still_links`: a memory base tree Git
      cannot produce: no file is unexplained, the readable side still links, changed lines on the unread side are
      `knowledge_unavailable`, and the mode change's gate linkage is `unknown`.
-  6. `test_a_partial_index_makes_only_its_unparsed_files_unknown`: an unparsable after sidecar makes only
-     `pkg/new.py` unknown; an unparsable before family record makes membership `membership_unknown`; and (review R1
-     F3) the mode change's gate linkage is `unknown`, listed under `Unknown attribution`, never "gate unexplained".
+  6. `test_a_partial_index_makes_only_its_unparsed_files_unknown`: an unparsable after sidecar makes `pkg/new.py`
+     unknown and the case verifies that `pkg/a.py` stays attributed. An unparsable before family record makes
+     the tested link's membership `membership_unknown`. The mode-only control checks an `unknown` gate link
+     under `Unknown attribution` and its absence from the unexplained destination.
   7. `test_a_reason_names_a_bounded_number_of_entries` (review R1 F4): 300 stale entries at one path; the reason
      says "300 entries" and "and 290 more", names ten IDs per side, the hunk still carries all 300, and the lane
      answers `measured`.
   8. `test_an_unmeasured_change_set_has_no_count`: a non-UTF-8 name makes both reads `partial` naming it; a code
-     tree Git cannot produce is `unavailable` with no destinations and a typed refusal; an index failing mid-read
-     is `unavailable`.
+     tree Git cannot produce gives an `unavailable` summary, no `unexplained_changes` destination and a typed
+     per-file refusal. The case also verifies that an index I/O error makes the summary unavailable.
   9. `test_the_route_asks_one_focused_question_at_a_time`: `lane=files` and `file=` reach the port; `lane=all`,
      `lane` with `file`, and `invariants` with `file` are 400.
   10. `test_a_live_tree_leaf_serves_the_lane_and_its_entry_count`: on the live tree leaf, the summary carries a
@@ -71,7 +72,7 @@ tree. The route and live-leaf cases reuse `test_review_git_trees.py`'s `world` f
 
 - Proves the candidate invariants recorded on `review_lane_classification.py.md` and `review_unexplained_lane.py.md`:
   one classification through MIK-R08's functions, the exact-blob rule, unknown rather than "gate unexplained" over a
-  side not read whole, the explorer's `paths`, and typed answers to every validated request.
+  side not read whole, the explorer's `paths`, and typed refusals for the tested long paths.
 
 
 ### Todos
@@ -125,5 +126,6 @@ No cross-repo boundary is crossed by this file.
 - One focused question per request. [12]
 - The live tree leaf, and long paths answered typed (review F2). [13]
 - A dataset review's entry has no attribution. [14]
+
 
 - The module's lane row. Anchor: "mcp/tests/test_review_unexplained_lane.py" Anchor: "mcp/tests/test_review_unexplained_lane.py" [15]

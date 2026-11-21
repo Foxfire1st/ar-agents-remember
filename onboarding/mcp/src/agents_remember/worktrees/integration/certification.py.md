@@ -12,7 +12,7 @@ Owns original full-gate certification selection and completion publication throu
 
 ### Logic
 
-`IntegrationCertificationRequest` carries the exact contract, quality target/plan, live operation owner and optional completion attestation. `_current` requires the same running uncancelled integrate operation, key/generation/worker identity and integration authority; it verifies target repository identity, the admitted code commit, actual HEAD and staged tree. Initial preparation freezes the full run and selects its original reference before executor invocation.
+`IntegrationCertificationRequest` carries the exact contract, quality target/plan, live operation owner and optional completion attestation. `_current` requires the same running uncancelled integrate record, exact contract, key and generation, and current integration authority. It verifies target repository identity, admitted code commit, actual HEAD and staged tree. This retained certification CAS helper is separate from synchronous public integration. Initial preparation freezes the full run and selects its original reference before executor invocation.
 
 `_load` compares the immutable selection with current request identity, reopens the original frozen run, verifies full mode/repository/candidate tree and all current or historical physical terminal evidence, and checks publication attestations and the certificate chain. It derives the reuse plan from those exact originals. Protected generations include both current and original interrupted publications. The executor receives original certificates and their retained result/publication bytes.
 
@@ -48,7 +48,9 @@ No configured domain documentation applies.
 - `IntegrationCertificationOwner` owns the described selection or observation boundary. [1]
 - `IntegrationCertificationRequest` owns the described selection or observation boundary. [2]
 - `LoadedIntegrationCertification` owns the described selection or observation boundary. [3]
-- `_current` owns the described selection or observation boundary. [4]
+
+- The certification reader checks the supplied integration record against the contract and authority. [4]
+
 - `authorize_integration_start` owns the described selection or observation boundary. [5]
 - `_identity` owns the described selection or observation boundary. [6]
 - `prepare_integration_certification` owns the described selection or observation boundary. [7]

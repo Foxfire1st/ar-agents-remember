@@ -1,0 +1,76 @@
+{
+  "path": "mcp/tests/test_started_modules_exist.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7812f2e2d95f23975bc258d592a576faefb1d69e",
+        "content": "sha256:f44ec393d88c0d54caaf375372f04e7d1be6aede62742c8db62b7a8a7f08b3e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_console_scripts_name_an_existing_module_and_function"
+        }
+      },
+      "id": "RLZ-RXVS0G",
+      "invariant": "INV-JD0H96",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 4",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Uses the shipped console declarations to check function definitions and re-exports.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "7812f2e2d95f23975bc258d592a576faefb1d69e",
+        "content": "sha256:53e3a4b4222df0f43814a1c0964487c88ad4e22e9d59d05eded99229700609c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_started_module_exists"
+        }
+      },
+      "id": "RLZ-YBN7J5",
+      "invariant": "INV-JD0H96",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 4",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Checks product Python launches and names unresolved targets unless the declaration explains them.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The package scan reports missing module files and undeclared unresolved forms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7812f2e2d95f23975bc258d592a576faefb1d69e",
+            "content": "sha256:53e3a4b4222df0f43814a1c0964487c88ad4e22e9d59d05eded99229700609c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_started_module_exists"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The console check resolves each declaration to a module file and a function definition, following re-exports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7812f2e2d95f23975bc258d592a576faefb1d69e",
+            "content": "sha256:f44ec393d88c0d54caaf375372f04e7d1be6aede62742c8db62b7a8a7f08b3e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_console_scripts_name_an_existing_module_and_function"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

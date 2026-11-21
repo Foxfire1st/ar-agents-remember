@@ -238,6 +238,24 @@
         }
       ]
     },
+    "107": {
+      "note": "The retained repository-lock account checks local marker blobs and working-tree marker files and distinguishes absent paths from non-repositories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:7ab017492371811a9ba7b82b1b0d72b17404fabe25de51094b909e82f718eb5d",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "11": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf.\n\nAnchor: `require_parent_series`",
       "targets": [
@@ -1435,10 +1453,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
-            "content": "sha256:46ea685defa6d5a6c2ae12d11cd38463eb2b01a2fef1c6a4899f85adfe84c08c",
+            "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+            "content": "sha256:1497d42d9ed2d20672123fcff9ec5265d75cc3a3eaf0e624ea5f9f80365c1c9f",
             "locator": {
-              "kind": "file"
+              "end": 1661,
+              "kind": "line_range",
+              "start": 1556
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+            "content": "sha256:fbf85396517a789ce65a627335ae283acc1ef7de50f6a1d2a443a87f45b73213",
+            "locator": {
+              "end": 1247,
+              "kind": "line_range",
+              "start": 1222
             },
             "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
           },
@@ -1669,7 +1702,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
             "content": "sha256:8c1e9770cbb0bd51d7bb9f1e75c123ae56fc5ba570bee5e5f3f9694d6d58b040",
             "locator": {
               "kind": "symbol",
@@ -1740,16 +1773,16 @@
       ]
     },
     "80": {
-      "note": "Cancellation proves ownership first and restores every parked side before terminal retirement.",
+      "note": "Direct recovery continues the admitted generation and settles its receipt. Direct cancellation checks the receipt and proves current Git output before settling cancellation.",
       "targets": [
         {
           "anchor": {
-            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
-            "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:b2b6b2e781f10312b5f6edcd6a19967962274b3669dbc56a9f72cc117c0ee3e9",
             "locator": {
-              "end": 390,
+              "end": 354,
               "kind": "line_range",
-              "start": 344
+              "start": 320
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
@@ -1757,38 +1790,38 @@
         },
         {
           "anchor": {
-            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
-            "content": "sha256:340169bbfd65c940c2789ec169cfec2b3f1f34a02615475f4d89e1c2b9420d0c",
+            "blob": "142a7b179a91b5749301cc549bb5906fec73d9f0",
+            "content": "sha256:a98a5bddceae800581342d669f10140a54db3e6a230045ee686aeb130873eeec",
             "locator": {
-              "end": 217,
+              "end": 149,
               "kind": "line_range",
-              "start": 168
+              "start": 66
             },
-            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "5891a6a7401ef37c894e00b76e81c0d767668d36",
-            "content": "sha256:266112f38d4fc0f657ca1e53046b5369394d04150813d8df6b2cb20f4bee0524",
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:3f096993a949203bf87250d0259c65b473c2499c874f4f9aa284b5e067c0f2c1",
             "locator": {
-              "end": 118,
+              "end": 625,
               "kind": "line_range",
-              "start": 64
+              "start": 598
             },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_validation.py"
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
           "kind": "code"
         }
       ]
     },
     "81": {
-      "note": "An exact direct replay retains its generation, except that an unpublished self-cancelled refusal starts a fresh generation; a changed request can replace retired terminal evidence.",
+      "note": "Exact direct replay retains its generation. An unpublished self-cancelled refusal starts a fresh generation on replay, and a changed request can replace retired terminal evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
             "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
             "locator": {
               "end": 1706,
@@ -1796,19 +1829,6 @@
               "start": 1662
             },
             "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
-            "content": "sha256:7ab017492371811a9ba7b82b1b0d72b17404fabe25de51094b909e82f718eb5d",
-            "locator": {
-              "end": 168,
-              "kind": "line_range",
-              "start": 98
-            },
-            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
           "kind": "code"
         }
@@ -2097,14 +2117,14 @@
       ]
     },
     "94": {
-      "note": "**Retained historical source account — superseded by the current route account:** Retirement refuses unfinished/unreadable current authority and selects remedies by locator availability\n\nAnchor: _survey_operations",
+      "note": "**Retained historical source account — superseded by the current route account:** Retirement refuses unfinished/unreadable current authority and selects remedies by locator availability",
       "targets": [
         {
           "anchor": {
-            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
-            "content": "sha256:99c4b020ac0714e5abd0ec68ade6c104c4b2b9391ee6a4f263cadd8618aecd0a",
+            "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+            "content": "sha256:e60c61c498338df3205d76894dd5b09a3e1005cc97e593f5cd557a2b1947fd5e",
             "locator": {
-              "end": 438,
+              "end": 447,
               "kind": "line_range",
               "start": 362
             },

@@ -493,6 +493,19 @@
       "targets": [
         {
           "anchor": {
+            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+            "content": "sha256:848004501fcc8e4c48595b4ae0d1bb4295f97fe48ae738d7a2dcc221aaebfbbe",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
             "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
             "locator": {
@@ -514,19 +527,6 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
-            "content": "sha256:595bf15a1be758eaa5ba44719cd837715b81d6f11175d532db981e88751305f6",
-            "locator": {
-              "end": 255,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },
           "kind": "code"
         },

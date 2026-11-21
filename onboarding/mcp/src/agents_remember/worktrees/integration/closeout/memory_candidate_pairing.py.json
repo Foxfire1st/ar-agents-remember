@@ -19,7 +19,7 @@
       ]
     },
     "2": {
-      "note": "Apply/recovery re-prove the exact contract pair.",
+      "note": "The retained external-memory helper resolves the paired roots from the exact contract.",
       "targets": [
         {
           "anchor": {
@@ -35,7 +35,7 @@
       ]
     },
     "3": {
-      "note": "Public closeout projection uses one pair payload writer.",
+      "note": "The retained projection helper formats a resolved pair identity when called.",
       "targets": [
         {
           "anchor": {

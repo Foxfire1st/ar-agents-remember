@@ -96,4 +96,5 @@ The route fixture's summary callback accepts the optional comparison-number argu
 
 - The four test definitions check matching stored-worklist unexplained-kind counts and auxiliary-file fallbacks, damaged-side code-fact refusal, counted-change witness attribution, and parametrized answered/open/undecided verdicts. The parameter table supplies two cases rather than two additional declarations. [24]
 
+
 - The lane registration. Source caption: `test_review_intent_summary` [23]

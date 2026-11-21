@@ -1,12 +1,16 @@
 {
   "anchor": {
-    "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
-    "content": "sha256:f758370554765050a6b45db6ccf10e088ddbc29d95e2186f32780660fca5649d",
+    "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+    "content": "sha256:cb3bdcb61a8447af47df8946f7acf893aa6c75c59d0df442d93933e89afb4541",
     "locator": {
       "kind": "symbol",
       "name": "_register_closeout_command_tools"
     },
     "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+  },
+  "closed": {
+    "reason": "The mounted worktree_closeout_apply description says the call completes inside one call and the registered description test checks for the absence of the obsolete polling advice.",
+    "task": "261112-BUG-L15"
   },
   "id": "WKN-2GTSAE",
   "kind": "fault",
@@ -18,12 +22,12 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L97"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "The served description of worktree_closeout_apply says that the call returns promptly and that worktree_status is polled for progress, while the call runs the whole closeout before it answers and leaves no record in the operation journal."
 }

@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b55831de01a31229148df21d4199d8411b00f926",
+        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
         "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "b55831de01a31229148df21d4199d8411b00f926",
+        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_closeout_apply_tool"
+        }
+      },
+      "id": "RLZ-44T4ES",
+      "invariant": "INV-760TKM",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 5",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Returns the synchronous closeout call's result.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
         "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
         "locator": {
           "kind": "symbol",
@@ -40,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "b55831de01a31229148df21d4199d8411b00f926",
+        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
         "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
         "locator": {
           "kind": "symbol",
@@ -55,41 +73,64 @@
       },
       "rationale": "Forwards the requested sync source to the worktree manager as sync_source.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_integrate_tool"
+        }
+      },
+      "id": "RLZ-ZXXWXZ",
+      "invariant": "INV-760TKM",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 5",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Returns the synchronous integration call's result.",
+      "role": "unclassified"
     }
   ],
   "references": {
     "1": {
-      "note": "Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects.\n\nAnchor: `worktree_integrate_tool` `worktree_checkpoint_landing_tool`",
+      "note": "Closeout apply and integration call their synchronous transaction owners. The separate direct-landing recovery route retains the accepted generation.",
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "content": "sha256:525d25bb7e3f749df869f227721045b0a47e64b5567aff7d8994c61a85f5271a",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_integrate_tool"
+              "end": 454,
+              "kind": "line_range",
+              "start": 387
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:0d4e525b9f0d0ea995c2107c65791ebdbdef60caea4202924a769f7353ff6465",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "content": "sha256:a47d43870ee9c0030ac6f8a92e3afe708c090b03de8e94d4aa328d7ef7e2ae30",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_checkpoint_landing_tool"
+              "end": 941,
+              "kind": "line_range",
+              "start": 862
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:ae46f1071224d019b35287bac258967b277a0f5f16fd797d8ebcca4e20747d3c",
             "locator": {
-              "kind": "file"
-            }
+              "end": 350,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
           "kind": "code"
         }
@@ -100,48 +141,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:b419d7e08f9f0add5be0ae490f9339aacb7053f6473099b8228503cf0534983a",
             "locator": {
-              "end": 937,
+              "end": 913,
               "kind": "line_range",
-              "start": 937
+              "start": 913
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:f93c813b1a66458b9632dad282744dc7f0741c545c1917c7de93be1a542f2088",
             "locator": {
-              "end": 940,
+              "end": 916,
               "kind": "line_range",
-              "start": 940
+              "start": 916
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:645963c4485cea41bd7caed2105f8bcc10c15cb649e8b03297ef4fe90038eb52",
             "locator": {
-              "end": 449,
+              "end": 448,
               "kind": "line_range",
-              "start": 449
+              "start": 448
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:e35595c929d11d6a728aa94457216f7e1b53f8d6aee0567c502d06119f575955",
             "locator": {
-              "end": 513,
+              "end": 512,
               "kind": "line_range",
-              "start": 513
+              "start": 512
             }
           },
           "kind": "code"
@@ -202,11 +243,11 @@
       ]
     },
     "14": {
-      "note": "The on-disk provider authority reload consumed before provider setup (containment R1).\n\nAnchor: `worktree_start_tool` `reload_provider_authority` `provider_setup_config`",
+      "note": "The on-disk provider authority reload consumed before provider setup (containment R1).",
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
             "locator": {
               "kind": "symbol",
@@ -229,21 +270,11 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:d45aa1785cf5eb85f9b0e36a3f3205802d150161a09b9c2c6aa487f0d7d8a716",
             "locator": {
               "kind": "symbol",
               "name": "provider_setup_config"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "code"
@@ -266,7 +297,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",
@@ -282,7 +313,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",
@@ -340,11 +371,11 @@
       ]
     },
     "23": {
-      "note": "**The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync; what it measured is a carrying sync's own resolved pair, published additively on the result.** \\|  \\| Anchor: `worktree_sync_tool` `rebinding_result_block` `resolved_pair_completed`",
+      "note": "**The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync; what it measured is a carrying sync's own resolved pair, published additively on the result.**",
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
             "locator": {
               "kind": "symbol",
@@ -379,16 +410,6 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
             "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
             "locator": {
@@ -405,7 +426,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
             "locator": {
               "kind": "symbol",
@@ -413,28 +434,20 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "25": {
-      "note": "The start entry point: it refuses a direct leaf start, reloads the on-disk provider authority before setup, and answers the worktree manager's start result with the provider veto and the start eligibility.\n\nAnchor: `worktree_start_tool`",
+      "note": "The start entry point: it refuses a direct leaf start, reloads the on-disk provider authority before setup, and answers the worktree manager's start result with the provider veto and the start eligibility.",
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
             "locator": {
-              "kind": "file"
+              "end": 276,
+              "kind": "line_range",
+              "start": 196
             }
           },
           "kind": "code"
@@ -442,11 +455,11 @@
       ]
     },
     "3": {
-      "note": "Public sync forwards typed memory choice, continue/cancel control and the repository-default source after configured-contract admission. \\|  \\| Anchor: `worktree_sync_tool` `_configured_control_refusal`",
+      "note": "Public sync forwards typed memory choice, continue/cancel control and the repository-default source after configured-contract admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
             "locator": {
               "kind": "symbol",
@@ -457,21 +470,11 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:7844e3efd353d419c1b45ad41233b53a7a4fba7737ef17ca6320981f05f41787",
             "locator": {
               "kind": "symbol",
               "name": "_configured_control_refusal"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "code"
@@ -483,7 +486,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:0d4e525b9f0d0ea995c2107c65791ebdbdef60caea4202924a769f7353ff6465",
             "locator": {
               "kind": "symbol",
@@ -491,50 +494,19 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own.\n\nAnchor: `worktree_pause_tool` `_gate_policy_snapshot`",
+      "note": "The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own.",
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:46b51cbb5c6f0c8b9573f5ee38ce6baf5899bdb8e95618951660aa3acdf46cef",
             "locator": {
               "kind": "symbol",
               "name": "worktree_pause_tool"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:b05086aeb8d2c5c4ecbae68c73eb201ea9752fe2024d179121a394a049afe0b4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_gate_policy_snapshot"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "code"
@@ -642,7 +614,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
             "locator": {
               "kind": "symbol",
@@ -654,7 +626,7 @@
         },
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:ac995290d08b6e24b896b253eb8b59dc5e8e4144f16e68c3a5e72284da4467d0",
             "locator": {
               "kind": "symbol",
@@ -666,7 +638,7 @@
         },
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:c0aad6aae43ea09f1d18794980092208e2434a7217f6ba5e63490f9566a7d895",
             "locator": {
               "kind": "symbol",
@@ -679,11 +651,11 @@
       ]
     },
     "9": {
-      "note": "Route-review refusals are projected once with exact contract guidance at start/admission and closeout.\n\nAnchor: `_worktree_closeout` `route_review_refusal_projection`",
+      "note": "Route-review refusals are projected once with exact contract guidance at start/admission and closeout.",
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:79952cf8f4c7175d8e82c7233e9af45298f3883b14df027d71471f873d5c9469",
             "locator": {
               "kind": "symbol",
@@ -718,6 +690,18 @@
         },
         {
           "anchor": {
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "content": "sha256:7c363f6f2056fc146abc3b38319070a28fda83d171b946853099294f72a788f1",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 257
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:4341e46efbdfae6a0ca5076bf8c944921cd5c547f25c3a131015ad56962a41fa",
             "locator": {
@@ -726,16 +710,6 @@
               "start": 659
             },
             "path": "mcp/src/agents_remember/worktrees/route_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "code"
         },

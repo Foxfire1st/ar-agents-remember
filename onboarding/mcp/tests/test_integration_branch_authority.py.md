@@ -48,7 +48,9 @@ No domain-documentation source is configured for this slice. The behavior descri
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
 - Protected branch aliases and nested/foreign workbench identities refuse. [1]
+
 - A competing memory CAS is preserved after code has landed. [2]
+
 - Cache absence/corruption cannot affect the accepted pair or create another memory commit. [3]
 - Real accepted-object and source-ancestry failures remain enforced. [4]
 

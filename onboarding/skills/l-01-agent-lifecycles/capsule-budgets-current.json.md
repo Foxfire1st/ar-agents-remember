@@ -23,13 +23,21 @@ not the active renewal or a new source measurement. [1]
 ## Evidence
 
 
+
+
 - The decision block retains authority and frozen historical registry and predecessor identities. [1]
+
+
 
 
 - Generated measurements cover current capsules, declared details and the shared digest without individual item limits. [2]
 
 
-- Current generated measurements include ordinary linked templates. [3]
+
+
+- Generated ordinary-template measurements record the Manager brief at 1,465 words and its exact source SHA-256. [3]
+
+
 
 
 - Authored role, detail and digest ceilings are separate from generated measurements. [4]

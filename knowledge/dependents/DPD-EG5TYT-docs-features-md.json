@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ce6ff51ceff24cba0157410140585c0ba80a0203",
-    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
+    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
+    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
     "role": "curator",
-    "statement": "Features describes the staged workflow, the evidence-bearing essay before optional visuals and final page publication, as prescribed in the staged capability.",
-    "task": "261112-BUG-L13",
+    "statement": "Features describes synchronous closeout and integration and the direct-landing route. The retired coordinator link is replaced by the synchronous tool owners.",
+    "task": "261112-BUG-L15",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -58,7 +58,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+      "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -233,12 +233,31 @@
       "path": "mcp/src/agents_remember/benchmarks/runner.py"
     },
     {
-      "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
-      "kind": "file",
-      "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+      "anchor": {
+        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_closeout_apply_tool"
+        },
+        "path": "mcp/src/agents_remember/application/worktree_tools.py"
+      },
+      "kind": "anchor"
     },
     {
-      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "anchor": {
+        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_integrate_tool"
+        },
+        "path": "mcp/src/agents_remember/application/worktree_tools.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },

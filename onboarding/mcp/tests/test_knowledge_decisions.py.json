@@ -4,37 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The packet's D12 and D18 as decision documents, and the assumption they reopen on.",
+      "note": "The packet's D12 and D18 examples are decision fixtures. D18 links its two reconsideration alternatives to the assumption fixture.",
       "targets": [
         {
           "anchor": {
             "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
-            "content": "sha256:00ebfcee027b5a13425349e563e4eb4eed44909fde34452e8580107907372ffe",
+            "content": "sha256:f7ab5fae6985c12aabc4ab7f9f54cf300726aa134ad06af26df22ab8073bc4e7",
             "locator": {
-              "kind": "symbol",
-              "name": "_d12"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
-            "content": "sha256:bd22a9da07be576c32343674a7d6a00c9357bd032c8d906b47e7a250c6da4c77",
-            "locator": {
-              "kind": "symbol",
-              "name": "_d18"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
-            "content": "sha256:065d856d8795d7dff4b4e4fbc1e5f4d9784f5e86625b5711508846cf69aa52ca",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assumption"
+              "end": 139,
+              "kind": "line_range",
+              "start": 52
             }
           },
           "kind": "test"
@@ -42,15 +21,16 @@
       ]
     },
     "10": {
-      "note": "Requirement endpoints resolve through the owner and never refuse.",
+      "note": "The endpoint owner distinguishes resolved packets, missing packets, version mismatches and confinement failures. The decision validator still accepts the fixture with its packet present or missing.",
       "targets": [
         {
           "anchor": {
             "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
             "content": "sha256:e6da3ab34e59a129b755374a77b7dd28270b5ae8ed3ce4ca0a73c1fd5ef0adaa",
             "locator": {
-              "kind": "symbol",
-              "name": "test_requirement_endpoints_resolve_through_the_owner_and_never_refuse"
+              "end": 331,
+              "kind": "line_range",
+              "start": 300
             }
           },
           "kind": "test"
@@ -115,12 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:fde5414644db933687ef3dc92a72c705e41bb48100b4411cf4d910e62dc8d752",
             "locator": {
-              "end": 816,
+              "end": 231,
               "kind": "line_range",
-              "start": 1
+              "start": 231
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -129,16 +109,16 @@
       ]
     },
     "13": {
-      "note": "Current source delta inspected statically: Fix owning-rule filtering, governs refusal and dual legacy refusals, including renamed captions; retain derived-status and endpoint boundaries.",
+      "note": "The current source filters alternative-count messages to R13.1, checks the R13.3-governs refusal, and expects both admission refusals for forged legacy status. Separate cases cover derived status and endpoint resolution.",
       "targets": [
         {
           "anchor": {
             "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
-            "content": "sha256:9c61f85f9ab276439bafa26a82105c0b47b5a60cc5f7e8c43fffa1063c34b2ac",
+            "content": "sha256:47340bd630a03d15cfdee4da1b16f912bdfec6367720b4bcb8ecf6882eed06d0",
             "locator": {
-              "end": 214,
+              "end": 217,
               "kind": "line_range",
-              "start": 212
+              "start": 198
             }
           },
           "kind": "test"
@@ -146,11 +126,11 @@
         {
           "anchor": {
             "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
-            "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
+            "content": "sha256:f052743299790d045b303bd14e9415afbeb8080d2949e0c2961a5e37e2eeed08",
             "locator": {
-              "end": 268,
+              "end": 286,
               "kind": "line_range",
-              "start": 267
+              "start": 262
             }
           },
           "kind": "test"
@@ -158,11 +138,11 @@
         {
           "anchor": {
             "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
-            "content": "sha256:d62471411c9245f02c7f0c2660f58611c37a41c7f72e4b9a53e0ff8939a1e84b",
+            "content": "sha256:4a80a02ca165534231fb3d2d9ce7c2bdbfcb4ad86968b07030fd2604117add57",
             "locator": {
               "end": 348,
               "kind": "line_range",
-              "start": 344
+              "start": 300
             }
           },
           "kind": "test"
@@ -214,15 +194,28 @@
       ]
     },
     "3": {
-      "note": "Both examples pass every rule.",
+      "note": "The two decision fixtures validate together, with report.ok true and no R13 findings returned by the filtered helper.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
+            "content": "sha256:6f56868e022313762f18bdf05f40b101c4f64f13aa729bd6a56cfaac56db334d",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
             "content": "sha256:4ca001d21db856acaeb71d219ae6306b8f3379f4e9bf647a28366984dd60f935",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_packets_d12_and_d18_decisions_pass_every_rule"
+              "end": 195,
+              "kind": "line_range",
+              "start": 190
             }
           },
           "kind": "test"

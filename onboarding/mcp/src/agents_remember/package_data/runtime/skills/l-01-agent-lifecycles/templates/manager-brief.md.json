@@ -1,0 +1,26 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2c7dc6d83d1492b30d3948afc4f131805f1a373f",
+        "content": "sha256:453d9a870d9851efbe6b14951f7fcafa2bd3c35ccb39788e91263ae44cf9b3a6",
+        "locator": {
+          "end": 94,
+          "kind": "line_range",
+          "start": 92
+        }
+      },
+      "id": "RLZ-7DMQ2V",
+      "invariant": "INV-760TKM",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 5",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Directs the Manager to verify required curation and coherence evidence before applying the synchronous, per-leg closeout transaction.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

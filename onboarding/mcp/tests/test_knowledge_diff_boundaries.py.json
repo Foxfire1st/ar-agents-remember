@@ -84,7 +84,7 @@
       ]
     },
     "31": {
-      "note": "Fixture construction imports test-only row constructors; it does not call the retired canonical writer.",
+      "note": "The continuation case opens its candidate fixture with the test-only row store and creates one invariant with one revision.",
       "targets": [
         {
           "anchor": {
@@ -94,6 +94,18 @@
               "end": 57,
               "kind": "line_range",
               "start": 54
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:82bf4848ac0f5e9b71c45c8bd8b8808fa7894dd75475fff25bf98cc588fe8f8d",
+            "locator": {
+              "end": 452,
+              "kind": "line_range",
+              "start": 403
             }
           },
           "kind": "test"
@@ -142,15 +154,16 @@
       ]
     },
     "33": {
-      "note": "The integration marker, the fixture, the request builder and the public-seam driver.",
+      "note": "The integration marker, per-test fixture, typed request builder and application comparison driver.",
       "targets": [
         {
           "anchor": {
             "blob": "61c763ff8430456602202b02310012b4437a4c44",
-            "content": "sha256:16892ee5fae12d79fecfa63d1c7f7f64edd17e02070536602dec5cce18a887bc",
+            "content": "sha256:cef7f773ba983abbab18d3fedff66bb85806f063456038e8bd00c0562718af00",
             "locator": {
-              "kind": "symbol",
-              "name": "fixture"
+              "end": 59,
+              "kind": "line_range",
+              "start": 59
             }
           },
           "kind": "test"
@@ -158,10 +171,11 @@
         {
           "anchor": {
             "blob": "61c763ff8430456602202b02310012b4437a4c44",
-            "content": "sha256:cef7f773ba983abbab18d3fedff66bb85806f063456038e8bd00c0562718af00",
+            "content": "sha256:16892ee5fae12d79fecfa63d1c7f7f64edd17e02070536602dec5cce18a887bc",
             "locator": {
-              "kind": "symbol",
-              "name": "pytestmark"
+              "end": 81,
+              "kind": "line_range",
+              "start": 77
             }
           },
           "kind": "test"
@@ -171,8 +185,9 @@
             "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:a5268bd4e5613303e5ef42cfb3c26197c6a6fa3d7e9bc04ba6957fca175353d3",
             "locator": {
-              "kind": "symbol",
-              "name": "request_for"
+              "end": 114,
+              "kind": "line_range",
+              "start": 84
             }
           },
           "kind": "test"
@@ -182,8 +197,9 @@
             "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:b569451c58315cb20b202168fbc2591c38372fb5f27ce9dcd5d8f69f8a03deb3",
             "locator": {
-              "kind": "symbol",
-              "name": "run_diff"
+              "end": 130,
+              "kind": "line_range",
+              "start": 117
             }
           },
           "kind": "test"
@@ -363,15 +379,16 @@
       ]
     },
     "42": {
-      "note": "**A side naming another snapshot of its own file refused before any page — the node the review's `R22` form kills.**",
+      "note": "When a side names another logical snapshot of its own file, the comparison refuses with snapshot_unavailable and returns neither a page nor an expansion.",
       "targets": [
         {
           "anchor": {
             "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:80338ad0480138b0d1a17abc2caacbda0eae5eeaed3cb4afd038e26a71f4b211",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page"
+              "end": 522,
+              "kind": "line_range",
+              "start": 485
             }
           },
           "kind": "test"
@@ -379,15 +396,28 @@
       ]
     },
     "43": {
-      "note": "**The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.**",
+      "note": "The verdict test searches the serialized response for all nine listed words and checks for a known source-observation field and a changed source observation.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:4a78a27f212a9d4c937aa44a0e5be6c168bbf0106be982720fab1477edad6dda",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:dea61409c71ffb5e30c9d47e45d7e22123d04a719dd03b452386a90d5ce82b20",
             "locator": {
-              "kind": "symbol",
-              "name": "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict"
+              "end": 554,
+              "kind": "line_range",
+              "start": 528
             }
           },
           "kind": "test"
@@ -514,15 +544,16 @@
       ]
     },
     "48": {
-      "note": "**The probe that measured the trees being what makes a gap visible.**",
+      "note": "The injected available probe supplies one changed path. The application exposes that path as the exact unattributed gap and declares the corresponding limitation.",
       "targets": [
         {
           "anchor": {
             "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:155ecab90583890cccafa8fe89d7814a351addca813226746f4cff6a258b5e31",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible"
+              "end": 903,
+              "kind": "line_range",
+              "start": 880
             }
           },
           "kind": "test"
@@ -571,16 +602,107 @@
       ]
     },
     "50": {
-      "note": "The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence.",
+      "note": "The lane catalog registers this module in integration. Seven lifecycle artifact rows declare it as a consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
-            "content": "sha256:c87b7853f8f4a4e32f8e60f6d7ce941573d3cfbbaae42ebdf53e7234def4f622",
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
             "locator": {
-              "end": 5062,
+              "end": 710,
               "kind": "line_range",
-              "start": 1
+              "start": 710
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 358
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 899,
+              "kind": "line_range",
+              "start": 899
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 1325,
+              "kind": "line_range",
+              "start": 1325
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 2750,
+              "kind": "line_range",
+              "start": 2750
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 3634,
+              "kind": "line_range",
+              "start": 3634
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 3679,
+              "kind": "line_range",
+              "start": 3679
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 4204,
+              "kind": "line_range",
+              "start": 4204
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -589,15 +711,16 @@
       ]
     },
     "51": {
-      "note": "A new invariant and its one revision move the snapshot; refusal leaves every other row counter unchanged.",
+      "note": "A test-only mutation adds one invariant and one revision and changes the candidate digest. After the continuation is refused, the candidate counters account for those two additions and show no change in the other counted tables.",
       "targets": [
         {
           "anchor": {
             "blob": "61c763ff8430456602202b02310012b4437a4c44",
-            "content": "sha256:82bf4848ac0f5e9b71c45c8bd8b8808fa7894dd75475fff25bf98cc588fe8f8d",
+            "content": "sha256:811a2500b0bd20cd6100e3aed8c502dce57eed3ed7613539f73686a47e92b077",
             "locator": {
-              "kind": "symbol",
-              "name": "add_unrelated_revision"
+              "end": 400,
+              "kind": "line_range",
+              "start": 355
             }
           },
           "kind": "test"
@@ -605,10 +728,11 @@
         {
           "anchor": {
             "blob": "61c763ff8430456602202b02310012b4437a4c44",
-            "content": "sha256:811a2500b0bd20cd6100e3aed8c502dce57eed3ed7613539f73686a47e92b077",
+            "content": "sha256:82bf4848ac0f5e9b71c45c8bd8b8808fa7894dd75475fff25bf98cc588fe8f8d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation"
+              "end": 452,
+              "kind": "line_range",
+              "start": 403
             }
           },
           "kind": "test"

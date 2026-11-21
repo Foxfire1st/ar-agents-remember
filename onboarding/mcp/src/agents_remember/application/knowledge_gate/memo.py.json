@@ -208,14 +208,16 @@
       ]
     },
     "21": {
-      "note": "Every file read is in the read set and a conflicting read is never kept.\n\nAnchor: `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept`",
+      "note": "Every file read is in the read set and a conflicting read is never kept.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
-            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "blob": "d057d05b21e36984449b7905f09ef154bcb0aa05",
+            "content": "sha256:5bae2b601a32ad52c309042834bab9db010b8ecb0c5f31b4a592b44e74cfe2c6",
             "locator": {
-              "kind": "file"
+              "end": 1024,
+              "kind": "line_range",
+              "start": 991
             },
             "path": "mcp/tests/test_knowledge_gate_routes.py"
           },
@@ -228,7 +230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "blob": "d057d05b21e36984449b7905f09ef154bcb0aa05",
             "content": "sha256:208b8ef141a1c32d17061d4ba27d38bd67d44d2ba97e3898f030725c419679f5",
             "locator": {
               "kind": "symbol",

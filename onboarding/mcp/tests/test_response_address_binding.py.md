@@ -40,24 +40,23 @@ is driven by the envelope it will meet.
 
 `test_the_refreshed_onboarding_census_names_every_entry_it_counts` (`:126-165`) drives
 `_refreshed_onboarding_paths` (`mcp/src/agents_remember/worktrees/modules/closeout.py:121-133`)
-and `_bounded_paths`, and requires each entry to be named by its `source_path` **or** its
-`onboarding_file`, with a blank refused rather than counted.
+and `_bounded_paths`. The fixture checks that source paths and regenerated-document paths name the
+entries, and that the count omits blanks in the old-expression control.
 
 This module checks guidance identity, refreshed-path naming and the closed producer envelope, not migration outcomes or writes.
 
 **The producer half of `T54`, pinned where the defect entered.**
 `test_the_closed_closeout_payload_declares_its_own_address_in_the_envelope_spelling`
-(`:199-231`) drives `_closed_result_payload` with a closed record and requires the emitted
-`contractPath` to be the response's own address in the envelope's spelling — so the guard has
-something to compare against, and a re-narrowing of the payload key fails here rather than
-silently returning the hole.
+(`:199-231`) drives `_closed_result_payload` with a contract stub, a memory outcome, and the status and ledger
+collaborators stubbed. It validates the emitted camelCase `contractPath` on the response model,
+keeps guidance to the same contract, and withholds guidance to another contract.
 
 ### Conventions
 
 Plain module-level pytest functions plus the small builders and stubs above them
 (`_Contract` supplies the closed-result fixture); no `unittest`, no `pytest` marks, so the
 module is in the default selection and its lane is **`unit-regression`**
-(`mcp/tests/test-evidence-lanes.toml:453`). The constants `OWN`, `OWN_ENCLOSURE` and `OTHER` are the only literals the cases share.
+(`mcp/tests/test-evidence-lanes.toml:455`). The address fixtures share `OWN`, `OWN_ENCLOSURE` and `OTHER`.
 
 ### Invariants And Boundaries
 
@@ -161,7 +160,7 @@ they make no acceptance claim.
 
 - The place comparison: the same file, or the directory that immediately contains it. [12]
 - The entry namer `T71` repaired: source path, or the document's own path. [13]
-- The bounded count that refuses to count a blank. [14]
+- The bounded count filters blank paths before counting and sampling. [14]
 
 ### Cross-Repo References
 
@@ -171,5 +170,6 @@ The cases build no repository and touch no real coordination root.
 No repository or external-system boundary is proved by this module.
 
 ### Repo-Internal References (continued)
+
 
 - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_response_address_binding.py" [16]

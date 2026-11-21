@@ -12,9 +12,9 @@ Live Git evidence used to authorize lifecycle cancellation and recovery.
 
 ### Logic
 
-Closeout cancellation reconciles only actual code and memory mutation evidence, then derives the matching recovery cells. There is no cancellation-specific ledger intent to preserve; exact protected-ref, worker-exit, and private-preparation proofs remain required.
+The live direct-landing cancellation path reconciles code and memory mutation evidence and derives matching recovery cells. Ambiguous or proven output requires recovery. `workerExitProven=True` is a retained cancellation-evidence field. `prove_cancellable_git` populates it without observing a process.
 
-The public surface is `prove_cancellable_git`, `unchanged_integration_refs`. Task-addressed retry, recover, cancel, resume, integrate, retire, and supersede decisions are derived from immutable journal state plus exact live Git/process evidence. Retry preserves accepted input; successor publication remains separately bound to exact cancellation and current candidate evidence. Output-free cancellation proves branch identity, HEAD/tree, and reflog identity unchanged while preserving a staged or repaired working-tree candidate as distinct successor input.
+`prove_cancellable_git` checks protected branch identity, HEAD/tree and reflog identity against the accepted prestate. It can preserve a staged or repaired candidate as distinct observed input. On apply, changed reconciliation uses the store's conditional update. The module retains `unchanged_integration_refs` to compare refs for the stored integration evidence shape. The registered journal control refuses ordinary closeout and integration records before entering cancellation.
 
 ### Conventions
 
@@ -22,7 +22,7 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 
 #### Invariants And Boundaries
 
-- The canonical root journal, located through the address-only locator and immutable enclosure manifest, owns normal lifecycle state.
+- The canonical root journal, located through the locator and immutable enclosure manifest, retains direct generations and historical ordinary records.
 - Accepted input and proven commits are immutable; retry and recovery stay on the same generation until evidence admits a successor.
 - A failed pre-commit gate may leave the old candidate staged, and a repair may change the live
   candidate. Neither is generation-owned Git output. Cancellation records both accepted and
@@ -37,9 +37,9 @@ None recorded beyond the explicit terminal-archive boundary recorded by the gove
 
 ### CCR private preparation boundary
 
-Cancellation of retained private preparation first reopens the contract and verifies the preparation’s unchanged logical refs. Those per-intent facts are returned even when no Git mutation evidence exists, and are combined with mutation reconciliation when it does. Absence of published Git mutation is not enough to discard private preparation.
+The shared evidence helper checks unchanged logical refs when a supplied record retains private preparation. Those per-intent facts are returned even without mutation evidence and are combined with Git facts when present. This is a retained validation boundary for record contents. Ordinary closeout enters its synchronous tool.
 
-- The current `_cancellable_closeout_facts` boundary implements the preparation contract above. [1]
+- `_cancellable_closeout_facts` checks unchanged logical refs when the supplied record carries retained private preparation. [1]
 
 ## Evidence
 
@@ -58,7 +58,9 @@ The following current source boundaries establish the ledger-retirement behavior
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-- The module defines `prove_cancellable_git`; `unchanged_integration_refs` as its public seam. [4]
+
+- `prove_cancellable_git` derives exact no-output evidence. `unchanged_integration_refs` remains the ref-comparison helper for stored integration evidence. [4]
+
 
 ### Cross-Repo References
 
@@ -66,6 +68,6 @@ No meaningful cross-repository boundary is owned by this file.
 
 No additional cross-repository evidence applies.
 
-## CCR-L42 current candidate
+## Historical CCR-L42 legacy-output refusal
 
-The legacy-output recovery refusal now states that proven migrated output cannot be cancelled or resumed; the exact recovery path remains required before any successor action.
+The retained evidence helper's legacy-output refusal states that proven migrated output cannot be cancelled or resumed; the exact recovery path remains required before any successor action.

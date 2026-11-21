@@ -10,7 +10,7 @@ The self-contained world seeds user settings through the protected-settings guar
 
 ### MIK-R109 read-only annotation assertions
 
-`test_tool_entry_point_read_only.ReadOnlyMarkTests` asserts every public roster name lies in exactly one of READ_ONLY_TOOLS or MUTATING_TOOLS and that advertised readOnlyHint matches the list. It invokes each marked-read default case plus declared refusal variants, comparing code/memory repository state and the coordination file census. Only log paths and runtime/knowledge-index are filtered from the coordination census; other runtime writes are visible. context_packet is marked false because include_freshness can fetch, and knowledge_diff is marked false because an omitted after revision can write Git objects.
+`test_tool_entry_point_read_only.ReadOnlyMarkTests` asserts every public roster name lies in exactly one of READ_ONLY_TOOLS or MUTATING_TOOLS and that advertised readOnlyHint matches the list. It invokes each marked-read default case plus declared refusal variants, comparing code/memory repository state and the coordination file census. The coordination-file comparison filters its logs prefix, nested log paths and the runtime/knowledge-index prefix. Other runtime files stay in the comparison. context_packet is marked false because include_freshness can fetch, and knowledge_diff is marked false because an omitted after revision can write Git objects.
 
 The ordinary-file, Git-metadata and non-index-runtime controls write probe files directly and assert that the comparison oracle notices them; they do not inject a writing registered read handler. The requested context-packet fetch case asserts a false mark and FETCH_HEAD creation. These are source assertions, not executions performed here or a universal no-write theorem.
 
@@ -36,12 +36,11 @@ Every registered public tool, driven through the production entry point, in one 
 This module is the durable form of `260918-TSIP-L5`'s happy-path trace: a real in-memory MCP
 client session against a server built by `create_server`, so each answer is the answer a
 consumer's call actually receives. The assertion is about vocabulary, not about counts — a tool
-must answer in a validated payload, a typed refusal carrying a machine-readable identity, or one
-of two **pinned** defect families, and a pin is the only place an exception is tolerated.
+is classified as a payload, refusal, unmarked refusal or one of the error arms. The main probe keeps exact error and unmarked populations and forbids unvalidatable and boundary-validation results. A separate invalid-input control covers argument validation.
 
 ## Current source account
 
-The benign invocation census adds role_start and role_message. Because the scratch server was started by no role launch, both exercise caller-has-no-binding refusal before any read/start/send. These rows expand the advertised population without weakening pinned envelope/error assertions or proving bound-agent success.
+The benign invocation table includes role_start, role_message, role_start_set and retire_child in a server fixture with no launched role binding. The sweep classifies their delivered outcomes. Bound-role success requires a separate fixture.
 
 ## Code Commentary
 
@@ -49,7 +48,7 @@ The benign invocation census adds role_start and role_message. Because the scrat
 
 ENVELOPE_LOSING_RAISERS is empty on the current source; exact bidirectional equality still pins the declared population. The formerly carried four L111 raisers are historical, not today's backlog. The current sweep uses one benign invocation per public tool; `prepare` performs no arrangement and its two state fields are fixed to `none`. No sweep execution, broader acceptance or relaxed pin is implied by this current declaration.
 
-EntryPointProbeTests drives the registered entry points through the shared world and declared input pins. Every tool and aspect is judged on its own subTest, so one tool’s failure does not keep later aspects unrun. Pins are compared with observed populations in both directions. The classifier, census controls and phase-budget machinery are extracted owners. A probe records the tool’s route outcome; its existence proves neither every environment nor every unsupported consumer. Test definitions are not execution results.
+EntryPointProbeTests drives the registered entry points through the shared world and declared input pins. After the sweep completes, each tool gets its own unvalidatable and boundary-validation subtests. The raiser, unmarked and census checks have separate global subtests. Pins are compared with observed populations in both directions. The classifier, census controls and phase-budget machinery are extracted owners. A probe records the tool’s route outcome; its existence proves neither every environment nor every unsupported consumer. Test definitions are not execution results.
 
 The sweep imports its world, classifier and population pins from `tool_entry_point_sweep_support.py`. Negative controls live in `test_tool_entry_point_sweep_controls.py`; read-only oracles live in `test_tool_entry_point_read_only.py`.
 
@@ -58,12 +57,13 @@ The sweep imports its world, classifier and population pins from `tool_entry_poi
 **One world, built once, for every advertised tool.** `EntryPointWorld` builds a temporary coordination root, code and memory repositories, an authored master/leaf pair and a real leaf enclosure. Its benign argument table must equal `PUBLIC_TOOLS` in both directions; the server advertisement must equal the same set.
 
 **The arms are the product's vocabulary, named.** `classify` (`tool_entry_point_sweep_support.py:244-254`) is the one classifier
-the sweep and its controls share, so a control proves the sweep rather than a second
-implementation of it. Seven arms: `payload`, `refusal`, `bare-not-ok`, `unvalidatable`,
+shared by this sweep and its extracted controls. Seven arms: `payload`, `refusal`, `bare-not-ok`, `unvalidatable`,
 `boundary-validation`, `argument-validation`, `error`. A raise is split by **which model
 refused**: `REFUSED_MODEL` extracts `1 validation error for <Model>` and `_raised_arm` compares that name with the tool's own registered model, so a `T7`-class break — a
 tool's own response model refusing the payload its producer built — is diagnosed apart from the
 caller's invalid arguments, which are the generated `<tool>Arguments` input model. The probe asserts `boundary-validation` and `unvalidatable` empty by name. The invalid-input control separately requires `argument-validation`; the benign sweep does not assert that arm empty.
+
+The mounted support classifier validates a readable dictionary from the response log under the registered model. It uses the delivered dictionary when the log is absent, unreadable or yields a non-dictionary, and checks extra keys at the top level. PRF-D58CPV covers that fixture behavior. The ordinary sibling has its own readable-whole-result requirement and checks the delivered response recursively. PRF-KZVVQJ covers its missing and unreadable log controls.
 
 **Every sweep call is bounded, and the sweep's own deadline is not a product raiser.**
 `EntryPointWorld._call` runs under three 60-second phase limits — session initialization, the tool
@@ -93,9 +93,7 @@ real invalid argument (`citation_fix` without its required `repo_id`) to its own
 
 `unittest.TestCase` throughout; no `pytest` marks and no `-m` override, so the cases are in the
 default selection and their lane is **`unit-regression`**.
-The roster/model/advertisement populations are derived at run time —
-the roster, the response-model registry and the live advertisement are all read, never written as
-literals.
+The coverage case reads the literal public roster, the response-model registry and the live advertisement. It requires exact roster equality with both the invocation table and the advertisement, and requires a response model for every public tool.
 
 ### Invariants And Boundaries
 
@@ -104,7 +102,7 @@ literals.
   `KNOWN_MEMORY_SCAFFOLD_ADDITIONS` — the two scaffold files the product's own
   `memory_init` repair writes — and every tracked status line must be identical. Across the
   coordination root: nothing removed, nothing added or rewritten outside
-  `COORDINATION_WRITE_ZONES` (`tool_entry_point_sweep_support.py:146-157`), which are measured rather than guessed.
+  `COORDINATION_WRITE_ZONES` (`tool_entry_point_sweep_support.py:146-157`), which the case applies to its before and after census.
   `.git` is excluded deliberately: opening a linked worktree rewrites its administrative files,
   which is Git doing its job.
 - **The census controls exercise the boundary where it is blind.** `EntryPointCensusControlTests`
@@ -332,60 +330,78 @@ Current source: The current support source declares ENVELOPE_LOSING_RAISERS as a
 - The sweep itself: one world, one run, and the equality assertions that bind every pin.
 
 
-- A refusal's own marks, read from the payload rather than from the arm. [29]
+
+- The support classifier derives refusal marks from nonempty strings in the delivered payload. [29]
+
 
 Anchor: `UNMARKED_NOT_OK`
 
-Current source: The ordinary world source declares UNMARKED_NOT_OK as an empty dictionary and the main sweep compares the observed bare-not-ok population with the pin by equality. This is a source assertion, not a new sweep result; the L110/T64 repair account remains historical source commentary.
+Current source: The support world used by the main sweep declares UNMARKED_NOT_OK as an empty dictionary. The main probe compares that pin with the observed bare-not-ok population by equality. This is a source assertion, not a new sweep result; the L110/T64 repair account remains historical source commentary.
 
 Anchor: `EntryPointWorld`
 
 Current source: The ordinary EntryPointWorld source constructs one temporary coordination root, code and memory repositories and a real leaf enclosure through the public tools. Its close method cleans the temporary world; the retained opened-lifecycle/ended caption is historical and does not describe a current lifecycle API call.
 
 
-- The refused model's identity, which separates a response-model break from the caller's invalid arguments. [32]
 
-- The discriminator: which model refused decides the arm — the tool's own response model or the caller's arguments model. [52]
-
+- The support classifier extracts the model name from validation detail and compares it with the registered response model. [32]
 
 
-- The invalid-argument control proving the caller's side lands in its own arm and is never reported as the tool's break. [53]
+- The ordinary sibling classifier also compares the validation error model name with the tool’s registered response model. [52]
 
 
 
 
-
-- The two scaffold files the sweep's own world may gain, and nothing else. [35]
-
+- The extracted invalid-argument control calls citation_fix without repo_id and requires the citation_fixArguments arm. [53]
 
 
 
-- The swept population is derived and equals the live server's advertisement. [37]
 
 
-- The census controls: write, rewrite and delete in both repositories and outside every zone. [39]
+
+
+- The main probe requires exactly the two declared scaffold additions in the memory census and untracked status. [35]
+
+
+
+
+
+
+- The main coverage case compares this sweep’s invocation table and live server advertisement with the public roster. [37]
+
+
+
+
+- The extracted controls check one memory-file add, code-file rewrite and delete, and three changes outside the coordination write zones. [39]
+
 
 - The advertised roster the swept population is derived from and asserted equal to. [41]
 
 
-- The population-equality control asserting the swept population equals the live advertisement. [54]
+- The ordinary sibling coverage case checks its own invocation table and live advertisement against PUBLIC_TOOLS. [54]
 
 
 - The registry whose models classify a payload that does not validate. [42]
 
 
 
-- The choke point a bypassing handler skips, and the validation this module's control executes. [43]
+
+- The extracted bypass control returns a raw dictionary past the adapter choke point and checks that the support classifier sees an unvalidatable result. [43]
 
 
 
-- The validation the positive control drives directly. [44]
+
+
+- The extracted control calls the response validator with an undeclared key and checks the support classifier’s unvalidatable arm. [44]
+
 
 
 - The three 60-second phase limits and the named timeout that the classifier does not count as a product raiser.
 
 
-- The control that holds an answer back and requires the named failure, the closed handler and a working next call. [46]
+
+- The extracted control patches a server handler to withhold its answer and requires a named three-second timeout, handler closure and a successful next call. [46]
+
 
 Anchor: `test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope`
 
@@ -407,7 +423,9 @@ No repository or external-system boundary is proved by this module.
 - The self-contained world obtains its protected-settings write path and uses a workspace-sibling code repository. [55]
 
 
-- The benign census includes grant input and canonical direct-landing leaf identity. [56]
+
+- The benign support table names the canonical leaf reference for direct landing and the isolated grant input. [56]
+
 
 
 
@@ -429,9 +447,13 @@ Current source: The current lane catalog selects mcp/tests/test_tool_entry_point
 
 - The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog. [26]
 
-- The ordinary world source declares UNMARKED_NOT_OK as an empty dictionary and the main sweep compares the observed bare-not-ok population with the pin by equality. This is a source assertion, not a new sweep result; the L110/T64 repair account remains historical source commentary. [30]
+
+- The support world declares an empty unmarked-refusal map. The main test compares it with both the classified and directly counted populations. [30]
+
 - The ordinary EntryPointWorld source constructs one temporary coordination root, code and memory repositories and a real leaf enclosure through the public tools. Its close method cleans the temporary world; the retained opened-lifecycle/ended caption is historical and does not describe a current lifecycle API call. [31]
-- The three 60-second phase limits and the named timeout that the classifier does not count as a product raiser. [45]
+
+- The support call uses 60-second limits for session initialization, tool response and session cleanup. A named timeout leaves call without entering the product outcome classifier. [45]
+
 - `EntryPointProbeTests` owns the current boundary described above. Anchor: `EntryPointProbeTests` [47]
 - The current sweep asserts exact equality between observed error-arm tools and ENVELOPE_LOSING_RAISERS in both directions, then asserts none of the current T34_REPAIRED_TOOLS population raises. That population now contains only memory_baseline_adopt; the original nine-tool caption is historical. No source assertion is an executed result. [49]
 - The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog. [50]
@@ -449,5 +471,6 @@ Current source: The current lane catalog selects mcp/tests/test_tool_entry_point
 - The probe asserts observed error and bare-not-ok populations equal their declarations, checks no selected repaired T34 tool raises, and requires complete refusal axes for each selected tool. Anchor: `EntryPointProbeTests` [28]
 
 - Completed sweep results receive per-tool subTests for unvalidatable and boundary-validation arms, followed by separate global raiser, unmarked and census subTests. [48]
+
 
 - The current lane catalog selects mcp/tests/test_tool_entry_point_sweep.py once in unit-regression. This declaration selects evidence and establishes no invocation or passing result. [40]

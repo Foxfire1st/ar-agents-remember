@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "98f7d6c529f1456cbfd00f3fde7e1fa51a118d8c",
-    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
+    "codeTree": "d97c375e34ebb494000914a016c9248e847d7c95",
+    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
     "role": "curator",
-    "statement": "Workflows still describes canonical task JSON and the exact-tree knowledge gate at closeout, including the narrow stale-entry treatment for a recorded master landing.",
-    "task": "261112-BUG-L12",
+    "statement": "The workflow guide explains synchronous closeout and integration, names the replacement for an absent or matching retired generation, and identifies the distinct mismatch refusal while preserving direct-landing journal guidance.",
+    "task": "261112-BUG-L15",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -91,12 +91,12 @@
       "path": "mcp/src/agents_remember/application/direct_execution_grants.py"
     },
     {
-      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
     {
-      "blob": "b55831de01a31229148df21d4199d8411b00f926",
+      "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/worktree_tools.py"
     },
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/integration_resolution_handoff.py"
     },
     {
-      "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+      "blob": "65597f52711773d7755f813da12995da8fc98197",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
     },

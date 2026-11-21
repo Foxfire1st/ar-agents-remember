@@ -3,15 +3,28 @@
   "realizes": [],
   "references": {
     "2": {
-      "note": "Direct retire uses the shared owner predicate while existing integration and worker guards stay in force; direct supersede is refused.",
+      "note": "Completed disposition checks exact ownership and an idle integration claim.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc69b9d1a4ee21d7057406891463fd33f0d5c094",
-            "content": "sha256:c95e1da155e233c245ccaa6fad5ffa50219d8495af87fa7e3c822db279d70fe5",
+            "blob": "cb17f2e2ea65d9441f48aee556bc3cba254d8aa4",
+            "content": "sha256:ab8992edd2855de54c535cfda7da6833ad4de4b599c2b8e2b0794853fbefef0c",
             "locator": {
-              "kind": "symbol",
-              "name": "require_completed_disposition"
+              "end": 86,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb17f2e2ea65d9441f48aee556bc3cba254d8aa4",
+            "content": "sha256:83fb0148e589dfba951ac03cd3e1f5d944f085ca231bd8657e6515179c844357",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 108
             }
           },
           "kind": "code"

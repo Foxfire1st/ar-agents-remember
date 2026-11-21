@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Repair evidence is persisted at the exact failed-operation seam.",
+      "note": "The legacy evidence writer binds repair evidence at the exact failed-operation seam.",
       "targets": [
         {
           "anchor": {

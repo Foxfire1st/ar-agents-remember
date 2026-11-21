@@ -170,9 +170,12 @@ The memory mutation boundary and the cache renderer have separate owners.
 The external-memory worktree is another repository governed by the same closeout contract.
 
 No additional cross-repository evidence applies.
-## 260821-CLIVE-L2 Current Contract
+## Current Memory-Content Publication
 
-The current entry point is `external_closeout_commits`. Closed admission, immutable generation input, root-journal mutation evidence, and same-generation recovery still govern memory content. Ledger-specific intent, mapping reconciliation, and commits have been removed from this owner rather than retained as a parallel route.
+`external_closeout_commits` receives the accepted typed input and proved code output from the
+synchronous closeout coordinator. It gates the actual memory result before publishing it and
+re-proves a recovered existing output. The former CLIVE ordinary journal generations remain
+historical evidence. Ledger refresh reports its disposable cache result separately.
 
 
 - The owner of the history file the closeout closes. [31]

@@ -45,16 +45,28 @@
       ]
     },
     "42": {
-      "note": "Fixture construction imports test-only row constructors; it does not call the retired canonical writer.",
+      "note": "The diff fixture builds the baseline and candidate with the shared read fixture and uses the resulting test row store to find the candidate claim.",
       "targets": [
         {
           "anchor": {
             "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
-            "content": "sha256:ffd70241f0da5719bfdbd12b641225b089c453a456b76ec45b0eccd73b6bdb7f",
+            "content": "sha256:dcaf4960e3ebb8de43df862bdb34a1241dc2594a33f5d03b81580bcf3e497f72",
             "locator": {
-              "end": 70,
+              "end": 289,
               "kind": "line_range",
-              "start": 61
+              "start": 247
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:955d3f491d0e02b4612934b51b9c9eeecf703e792a0969f4662501c945aaeed0",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 307
             }
           },
           "kind": "test"
@@ -78,15 +90,16 @@
       ]
     },
     "56": {
-      "note": "**The candidate's two new source paths, its revised statement and its authored words, and the whole candidate tree rebuilt by one call.**",
+      "note": "Two paths belong only to the candidate. The rebuild helper passes the revised retry text and the caller’s selected changes to the shared fixture builder.",
       "targets": [
         {
           "anchor": {
             "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
-            "content": "sha256:4a0655790dff977be97d84615ec165500b44a99840460dd423000ba91ddd54b1",
+            "content": "sha256:5f6d5caebc2c094083af4cd6322ae5ce7552b17aabb419134476113646d3b261",
             "locator": {
-              "kind": "symbol",
-              "name": "SUCCESSOR_PATH"
+              "end": 138,
+              "kind": "line_range",
+              "start": 84
             }
           },
           "kind": "test"
@@ -94,15 +107,16 @@
       ]
     },
     "57": {
-      "note": "The three small value types: one candidate-only realization's identities, one side of the comparison, and the fixture with every identity a case asserts against.",
+      "note": "AddedRealization stores the added claim and anchor identities. DiffSide holds one snapshot and its Git facts. DiffFixture supplies both sides and the comparison identities.",
       "targets": [
         {
           "anchor": {
             "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
-            "content": "sha256:afb7197eebc31ce6df3f6f2bc2a07c6860a39df5e220a8025a902f064f8a2790",
+            "content": "sha256:51238c9964f6e332150fc66a3971e1568ad2c4d5af648b7ad3a7cf220a74d081",
             "locator": {
-              "kind": "symbol",
-              "name": "AddedRealization"
+              "end": 244,
+              "kind": "line_range",
+              "start": 187
             }
           },
           "kind": "test"
@@ -140,15 +154,40 @@
       ]
     },
     "62": {
-      "note": "**The candidate tree, the object-store borrow that lets one repository name both trees, and the hermetic Git environment.**",
+      "note": "The fixture writes the candidate Git tree, points each repository at the other’s object store, and runs Git with an explicit environment.",
       "targets": [
         {
           "anchor": {
             "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
-            "content": "sha256:03651363a5a071e8fffeda2df047e03f295a8c16b150f8018e5c9bab384042a3",
+            "content": "sha256:a1774926d2f06e33800cea331b634384b17bfc62f18d1d04d31ac0822b6005d3",
             "locator": {
-              "kind": "symbol",
-              "name": "_borrow_objects"
+              "end": 329,
+              "kind": "line_range",
+              "start": 320
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:9bfca1f7e3e8722c9906515fc124fa390afd5e9c7ebb18d24ebe7e25c6996931",
+            "locator": {
+              "end": 421,
+              "kind": "line_range",
+              "start": 392
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:3424050ba33cd009a66d4f16129e7d176e42a8643683295111e58624b02ffa3b",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 441
             }
           },
           "kind": "test"
@@ -232,12 +271,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
             "content": "sha256:5187759dd6296819d4d34463de47bcd6c46909ea7c53d6a826bbb51edef3ba1a",
             "locator": {
-              "end": 1350,
+              "end": 1343,
               "kind": "line_range",
-              "start": 1314
+              "start": 1307
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -245,12 +284,12 @@
         },
         {
           "anchor": {
-            "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
             "content": "sha256:2e75aecef7732387589ac0894f66fe040076563eefec8e87d1a4b653ba254593",
             "locator": {
-              "end": 4992,
+              "end": 4954,
               "kind": "line_range",
-              "start": 4989
+              "start": 4951
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

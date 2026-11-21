@@ -129,22 +129,11 @@
       ]
     },
     "11": {
-      "note": "A failed Git read inside a predicate or the validator is never a verdict.\n\nAnchor: `test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict`",
+      "note": "A failed Git read inside a predicate or the validator is never a verdict.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
-            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_knowledge_gate_routes.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "blob": "d057d05b21e36984449b7905f09ef154bcb0aa05",
             "content": "sha256:0e425bdd1f448a42d7ae12f7f58516db125ab0941ec2f5b2ee4c6d0d6223bae1",
             "locator": {
               "kind": "symbol",

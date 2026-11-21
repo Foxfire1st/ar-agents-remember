@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
-    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
+    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
+    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
     "role": "curator",
-    "statement": "The MCP reference correctly describes the non-counting addition, the verdict reference required to publish a route BLOCK, the single description owner and the fresh routed review of a changed repair tree.",
-    "task": "261112-BUG-L12",
+    "statement": "The reference retains route-review authority and describes synchronous closeout and integration, retired journal refusals and direct-only live status.",
+    "task": "261112-BUG-L15",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -53,7 +53,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
     },
     {
-      "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+      "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
     },
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+      "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

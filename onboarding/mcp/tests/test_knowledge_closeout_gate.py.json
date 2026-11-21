@@ -96,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
             "locator": {
-              "end": 816,
+              "end": 220,
               "kind": "line_range",
-              "start": 1
+              "start": 220
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -148,18 +148,32 @@
       ]
     },
     "12": {
-      "note": "The memo key names the parent tip and the leaf's memory HEAD.",
+      "note": "The memo key carries the parent memory tip and the leaf memory HEAD. The test supplies those two commits and checks reuse of the remembered verdict.",
       "targets": [
         {
           "anchor": {
             "blob": "2d850de118e737efe85c187a514ead8e1e346376",
             "content": "sha256:0985e16b950a5ffb1c0b52cfbac3475cf7c08d4f0363df87450d290bd4931308",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_gate_memo_reuses_a_verdict_only_for_the_identical_inputs"
+              "end": 1260,
+              "kind": "line_range",
+              "start": 1208
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "content": "sha256:c5a9d47dc523af4fae2607acdf66554200cd2e8bd1f4c866c038d40df8626399",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -332,15 +346,28 @@
       ]
     },
     "7": {
-      "note": "Direct, record, master and checkpoint landing.",
+      "note": "The direct landing case checks history closure and restoration after refusal. The record landing case checks open and closed attributed memory, a missing commit, and the admission and marker refusals. The shared integration gate case supplies worktree_integrate and checks stale-entry refusal and the maintenance re-anchor.",
       "targets": [
         {
           "anchor": {
             "blob": "2d850de118e737efe85c187a514ead8e1e346376",
             "content": "sha256:1f80b2e34160304a278ea96d5917285f3e92140e671f18ea8a15d8e2c80bb3f3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal"
+              "end": 1044,
+              "kind": "line_range",
+              "start": 1013
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2d850de118e737efe85c187a514ead8e1e346376",
+            "content": "sha256:39aa5095a5c4bcd071f7745e00b9d4674666f7e51fc344df1db35fc3838e926f",
+            "locator": {
+              "end": 1078,
+              "kind": "line_range",
+              "start": 1047
             }
           },
           "kind": "test"
@@ -350,8 +377,9 @@
             "blob": "2d850de118e737efe85c187a514ead8e1e346376",
             "content": "sha256:03a81aabcbdb2a662795b0ea7d5567ac9be13a4bb4ab1fe8f0399c4af86d39e0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale"
+              "end": 1119,
+              "kind": "line_range",
+              "start": 1081
             }
           },
           "kind": "test"
@@ -359,15 +387,29 @@
       ]
     },
     "8": {
-      "note": "Insertion-only hunks link only by candidate ranges; ordinary unconverted leaf/landing/record and direct-closeout guards refuse before movement.",
+      "note": "Insertion-only hunks can link through candidate ranges. The test removes that candidate entry and expects an unlinked hunk and an unexplained-hunk item. The unconverted fixture exercises legacy-format refusals at the leaf, landing, record and direct-closeout guards. The direct case also compares the memory objects and checkout status before and after refusal.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "6d7207b62870c112ca4f25941c37846c0152a38a",
+            "content": "sha256:8912f9f67746b904bd5a452b7503ed165cd7c2e8ac09e8ead7b4c1a83286919b",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/linkage.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "2d850de118e737efe85c187a514ead8e1e346376",
             "content": "sha256:7fa5b29eda280e79edd29520a8d31ea4dd75359eb169b3a1c7ffcdf8451d38d6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_insertion_only_hunk_is_linked_only_by_a_candidate_range"
+              "end": 1159,
+              "kind": "line_range",
+              "start": 1147
             }
           },
           "kind": "test"
@@ -377,8 +419,9 @@
             "blob": "2d850de118e737efe85c187a514ead8e1e346376",
             "content": "sha256:0aeb9dd1fe260f6e5c560f992b09c657beeb74bbddfcdc7c4f851190d1f8299c",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_unconverted_leaf_is_refused_at_every_route_before_anything_moves"
+              "end": 1200,
+              "kind": "line_range",
+              "start": 1162
             }
           },
           "kind": "test"

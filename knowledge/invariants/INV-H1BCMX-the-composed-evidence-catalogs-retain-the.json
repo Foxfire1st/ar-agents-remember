@@ -5,14 +5,13 @@
     ],
     "justification": "The claim is about two files' contents and is settled by the catalog itself: the union was verified by the Worker's native composition check and independently by the CODE7 merge-delta pass, and recorded in A11-catalog-native-union-verification.json. No single test asserts the union, so no test guard is claimed here."
   },
-  "applicability": "The two composed evidence catalogs of the merged L180 line: mcp/tests/evidence-lifecycle.toml and mcp/tests/test-evidence-lanes.toml.",
+  "applicability": "The evidence lifecycle and test lane catalogs.",
   "conditions": [
-    "The claim covers the union of the L177 and L180 registrations at the frozen candidate.",
-    "A later edit that drops the registration of a module that still exists violates it; removing a module removes its registrations."
+    "A surviving test module remains registered as a consumer while it uses the named artifact. Its consumer registration leaves when that use is retired.",
+    "The archived L177 and L180 candidate records retain the exact union that applied at their freeze."
   ],
   "exclusions": [
-    "Whether a registered module actually runs: registration is catalog membership, not execution.",
-    "The code freeze or any test outcome; this states catalog composition only."
+    "Catalog registration establishes selection and ownership. Execution evidence is recorded elsewhere."
   ],
   "id": "INV-H1BCMX",
   "origin": {
@@ -26,9 +25,9 @@
     "leaf": "260928-MIK-L177",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The composed evidence catalogs retain every registration from both L177 and landed L180 whose test module still exists, with exact consumer and lane unions and no duplicate identity; a test module is removed only together with all of its registrations.",
+  "statement": "The evidence catalogs retain the exact current artifact consumers and lane registrations without duplicate identity, and remove every registration of a deleted test module.",
   "status": "proposed",
   "supersedes": []
 }

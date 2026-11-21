@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "An operator following the earlier coordination passage waits for a running ordinary closeout or tries to resume an old journal generation through worktree_operation_control. Ordinary closeout creates no live generation and a retained generation returns a replacement refusal, so those calls cannot finish the task and delay correction of the original blocker and an approved retry of worktree_closeout_apply. The synchronous result and named replacement tell the operator where to recover, and direct-landing status remains available for its own generation."
+  },
+  "applicability": "Registered closeout and integration transactions and the associated published operator guidance.",
+  "conditions": [
+    "The caller acts under the required current contract authority.",
+    "A retry after correction calls the same synchronous route."
+  ],
+  "exclusions": [
+    "The direct-landing journal retains separate generation-bound controls.",
+    "A historical record only supplies inspection evidence."
+  ],
+  "id": "INV-760TKM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W8 Worker freeze report and F10 before/after proof, including the exact focused coherence and closeout tests."
+      ],
+      "path": "w7-authoring-draft.json"
+    },
+    "handoffEntry": "BUG-R15@v1 item 5",
+    "leaf": "261112-BUG-L15",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Closeout and integration return their result in one call, and guidance for their retained journals names the matching synchronous tool.",
+  "status": "proposed",
+  "supersedes": []
+}

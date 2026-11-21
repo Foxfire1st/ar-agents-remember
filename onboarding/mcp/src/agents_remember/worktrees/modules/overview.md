@@ -84,6 +84,8 @@ The integration_gate module owns pre-publication invariant admission for preview
 
 ## Invariants And Boundaries
 
+The worktree argument contract carries accepted inputs to synchronous closeout and integration. Direct landing owns its own exact-generation journal controls.
+
 Removed disabled-memory semantics are not a current code-only delivery option. Closeout, integration, checkpoint, record landing, sync, pause and finalization have explicit opt-out refusals; start distinguishes removed requests and existing-contract observation. A local non-external shortcut in an observational helper does not override those route admissions. Abandon remains the discard route and can reclaim carried memory branches/worktrees regardless of the old contract mode; that exception grants no conversion or normal delivery authority.
 
 Closeout approval is a mutation-attempt claim, not a promise to remain reusable until success. Fresh claiming follows reversible admission and precedes code publication. Durable recovery can resume a recorded claim and proven commits; it must not replay completed irreversible work. A crash or failure after claim does not imply a fresh reusable approval. The inherited rejection of late success-only consumption and timer-reopened claims remains design intent. Integration's local handover consumer is a cross-lifecycle enclosure guard; these inspected functions do not claim that gate. The historical unresolved spend policy needs an enclosure-addressable key and must account for legitimate re-integration. No whole-call-path non-consumption conclusion follows from this local observation.

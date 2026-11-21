@@ -34,7 +34,7 @@
         "handoffEntry": "BUG-R08@v1 rule 6",
         "leaf": "261112-BUG-L8"
       },
-      "rationale": "Independent audience, link and pointer checks protect current delivery while the kept historical constants remain unchanged.",
+      "rationale": "The compiler assertions check declared role and operation audiences, action links, emitted details and rejection of a foreign role section.",
       "role": "support"
     }
   ],
@@ -268,7 +268,7 @@
       ]
     },
     "22": {
-      "note": "A repairing role stops after three repairs of the same check or finding.",
+      "note": "The test checks the Worker and Curator instruction text for a stop when the same check or finding still fails after three of their own repairs, and for telling the Manager.",
       "targets": [
         {
           "anchor": {
@@ -319,7 +319,7 @@
         },
         {
           "anchor": {
-            "blob": "c4ee8765597f72bc3004b0249af68fed374bd5d2",
+            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
             "content": "sha256:8051c8648bc277b1c1a20950d8ddf0e001ee6d4259e31c7f37df692e1092f27a",
             "locator": {
               "end": 77,
@@ -333,16 +333,28 @@
       ]
     },
     "27": {
-      "note": "Detail checks cover all declared role/operation pairs and require every declared read action to bind to exactly one link to its emitted detail. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "The detail census covers every declared role and operation pair. Each declared read action is asserted to bind once to the exact emitted detail link.",
       "targets": [
         {
           "anchor": {
             "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
-            "content": "sha256:de80f79da11a7dae6d0703640716fbf7e36f923b867cd7e2a88619a87366dc25",
+            "content": "sha256:2102fa0b4caf4a80dd6921007cf6a2e8b017f78e3a06ce82a99c020def2722e9",
             "locator": {
-              "end": 597,
+              "end": 611,
               "kind": "line_range",
               "start": 576
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9ea66e82c58ed663a1930f10a8c6c247116bae42",
+            "content": "sha256:50127267f544d4d72ed97ba5661b4f8a8c7562fedc8933011a79987d3e7d0ecb",
+            "locator": {
+              "end": 710,
+              "kind": "line_range",
+              "start": 625
             }
           },
           "kind": "test"

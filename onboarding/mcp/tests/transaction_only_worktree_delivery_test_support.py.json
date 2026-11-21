@@ -7,10 +7,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
-            "content": "sha256:62c9a5cddc51b8275352e3613f48cd5d39202ebfbce82bc8bbbf9a2069de955d",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
+            "content": "sha256:41ac32c9bfc35fa6fbe6048a05d92e7462cd36f3986f6aed83b624b1cfeb1565",
             "locator": {
-              "kind": "file"
+              "end": 190,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
+            "content": "sha256:ef2127886c2b61e04e49250814ca4f7d2979890a9de0889347895753cd3d08a2",
+            "locator": {
+              "end": 509,
+              "kind": "line_range",
+              "start": 475
             }
           },
           "kind": "test"
@@ -18,14 +32,40 @@
       ]
     },
     "2": {
-      "note": "A refused publication gives back refs, index and files, and the memory attribution is read from the committed object.",
+      "note": "The support owner snapshots both HEADs, index entries and status output. It separately reads history and ignore bytes and the memory index. The attribution assertion reads the committed message and checks both Git trailer readers.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
-            "content": "sha256:62c9a5cddc51b8275352e3613f48cd5d39202ebfbce82bc8bbbf9a2069de955d",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
+            "content": "sha256:11cc36f546bbbf06dab6be4a93ea5a9e8714b1d222960e1089aba73824efb105",
             "locator": {
-              "kind": "file"
+              "end": 251,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
+            "content": "sha256:f76d2bca208674cd83e7d15a5f1e6434dae136e314f80a8ca8a22fb43141756c",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 337
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
+            "content": "sha256:e84e89ae92649abb2d20d3a78ffe0f7058b23435f3a210e11017a51fa9fefaba",
+            "locator": {
+              "end": 416,
+              "kind": "line_range",
+              "start": 406
             }
           },
           "kind": "test"
@@ -37,10 +77,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
-            "content": "sha256:62c9a5cddc51b8275352e3613f48cd5d39202ebfbce82bc8bbbf9a2069de955d",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
+            "content": "sha256:362bf6ab40b42019b21b41bf91a78d4baf699e2c0bd748dfdc74801feeadb15f",
             "locator": {
-              "kind": "file"
+              "end": 336,
+              "kind": "line_range",
+              "start": 295
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
+            "content": "sha256:6faac11f9df53c1ab17a4f59d0cf18c80a978439cc0492932e030c76814758d6",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 434
             }
           },
           "kind": "test"

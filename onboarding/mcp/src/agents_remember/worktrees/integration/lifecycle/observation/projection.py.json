@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
+            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
             "content": "sha256:85a92bec4137ee2388e266bb097af9919c48fbd734b8197e063768a9b94f784d",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
+            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
             "content": "sha256:d907c9484a2ead65f2153d7b0e7a9f61bcae09803ca16cbcb03b5ed56898beb6",
             "locator": {
               "kind": "symbol",
@@ -29,7 +29,7 @@
         },
         {
           "anchor": {
-            "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
+            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
             "content": "sha256:60c6dddd52bd951e86ede2813c8903e9b5b0b9d42274d9dfb7c19567ea70c155",
             "locator": {
               "kind": "symbol",
@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
+            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
             "content": "sha256:f351558ee64a1b33dd8e699b1bf80bf0a377bddaa9bd659cc175526f59acd8e6",
             "locator": {
               "kind": "symbol",
@@ -53,53 +53,32 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
-            "content": "sha256:bb3755458836e4ba83bff04180dce736de1ec62bfab66d20cf9a6b8a475b8130",
-            "locator": {
-              "kind": "symbol",
-              "name": "unreadable_contract_operation_projections"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Worker exit and closeout mutation recovery are reconciled into read-only derived records.",
+      "note": "The read-side projection tests the observed mutation state before exposing it to the caller.",
       "targets": [
         {
           "anchor": {
-            "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
-            "content": "sha256:c6c43d1e74e8286ba5d3432cfc15d1b15e85318036c419dc4f67c4d8dc733935",
+            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
+            "content": "sha256:a84aa1b8ce9ff506b78c5869fe6ef4d06b594039d5f9c463ed3e97647a09f1ec",
             "locator": {
-              "kind": "symbol",
-              "name": "_project_observed_record"
+              "end": 266,
+              "kind": "line_range",
+              "start": 223
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
-            "content": "sha256:b79e41494cfd1c35377ae9b1d5e7f7fa0e3f4e978a22843443c2ead350b57ffa",
-            "locator": {
-              "kind": "symbol",
-              "name": "_project_worker_observed_record"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
+            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
             "content": "sha256:c8a686abfed071d9773d3dba0fdbcdd2149fd24384e6c1c95ffbd81c4440f386",
             "locator": {
-              "end": 277,
+              "end": 265,
               "kind": "line_range",
-              "start": 268
+              "start": 256
             }
           },
           "kind": "code"
@@ -111,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
+            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
             "content": "sha256:c4bb6e46bfde1c7204df5506a82ca67ffe77a04b9c25f656ea212e0dac78fc9c",
             "locator": {
               "kind": "symbol",

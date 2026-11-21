@@ -8,11 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
-            "content": "sha256:16909810c747239109ba8d1c32692dd59bbd28bca8f289821c345d0080ddb9c6",
+            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "content": "sha256:3a3c84122eeb05f2fd5368efcd2d815fc4d4586c1408a26b6b2477fd20be9c6d",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeArgs"
+              "end": 100,
+              "kind": "line_range",
+              "start": 34
             }
           },
           "kind": "code"
@@ -24,11 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
-            "content": "sha256:16909810c747239109ba8d1c32692dd59bbd28bca8f289821c345d0080ddb9c6",
+            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "content": "sha256:3a3c84122eeb05f2fd5368efcd2d815fc4d4586c1408a26b6b2477fd20be9c6d",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeArgs"
+              "end": 100,
+              "kind": "line_range",
+              "start": 34
             }
           },
           "kind": "code"
@@ -36,12 +38,24 @@
       ]
     },
     "12": {
-      "note": "Advance the plane-owned operation when this call runs under its detached worker. Source caption: `report_operation_progress`",
+      "note": "Direct-landing arguments carry the optional journal callback. Ordinary operation arguments describe the synchronous tool call.",
       "targets": [
         {
           "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
-            "content": "sha256:047cfa468e99dbf1415f6caacbf8a5b09301bf9edfb371314797b0a8e7b232dd",
+            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "content": "sha256:09e7e97cdc9a53ffd53f0941e62111c19473c3dc044d1e966ea5f10bd1d861fa",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "content": "sha256:623afd4c13857008299292e94aa8fc75ba2b86af3305b21a524dfcfac439d463",
             "locator": {
               "end": 121,
               "kind": "line_range",
@@ -53,15 +67,28 @@
       ]
     },
     "13": {
-      "note": "`report_operation_progress` publishes progress through the exact worker-owned callback.",
+      "note": "Direct-landing arguments carry the optional journal callback. Ordinary operation arguments describe the synchronous tool call.",
       "targets": [
         {
           "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
-            "content": "sha256:047cfa468e99dbf1415f6caacbf8a5b09301bf9edfb371314797b0a8e7b232dd",
+            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "content": "sha256:09e7e97cdc9a53ffd53f0941e62111c19473c3dc044d1e966ea5f10bd1d861fa",
             "locator": {
-              "kind": "symbol",
-              "name": "report_operation_progress"
+              "end": 100,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "content": "sha256:623afd4c13857008299292e94aa8fc75ba2b86af3305b21a524dfcfac439d463",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 118
             }
           },
           "kind": "code"
@@ -73,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:2b9aaf2cbc302df9659dd78655d80e3d18ea666700ab8dad26b007b8bc118b93",
             "locator": {
               "kind": "symbol",
@@ -85,7 +112,7 @@
         },
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:5e9062f0836ba065be875d6c3d8cfcf6f6212150edf3daacd4322b2654482cd7",
             "locator": {
               "kind": "symbol",
@@ -119,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
             "content": "sha256:b8ee544a7c3d76078b145b34a925959caa10038cef5165fd834158251b2591d0",
             "locator": {
               "kind": "symbol",
@@ -137,16 +164,6 @@
               "name": "build_parser"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cli.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
-            "content": "sha256:aa5fda34dde0755a15aa9f1d706e5c0bfe973689ff8774eeb5c501a2726680d6",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "code"
         },

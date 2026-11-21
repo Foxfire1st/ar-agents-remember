@@ -76,7 +76,7 @@ TaskEntry uses planned/started/aborted/completed stages and optional works/waiti
 
 Generated task/projection shapes retain organizational super-to-leaf lineage, sprint seats and master references, optional execution-graph views, and independently mounted closeout scheduling visibility for graph-less sequential sprints. Closeout scheduling is disposable exact-current projection state: classifications, ordering, priorities, source conditions/problems and repair actions remain producer-owned. Audited discard-before-start identity, reason, timestamp and proof are distinct from completion; discarded work never increments completion. JSON Schema owns numeric/string/fingerprint/collection refinements, while TypeScript documents refinements it cannot structurally enforce.
 
-The lifecycle-operation envelope includes schema/state-matrix versions, incoherent status and optional meaningful revision/task intent. Meaningful revision is a server observation cursor; task intent is a canonical digest. The recovery phase `recovering-private-preparation` is projected through the existing enclosure lifecycle-operation diagnostics and adds no frontend recovery command. Ledger display remains distinct from transaction authority; removal of ledger-mutation vocabulary does not mean removal of displayed ledger evidence. The inherited publication boundary permits real code and memory outputs, not invented ledger transaction outputs. Python 3.14's local `$defs` enum representation does not itself change the vocabulary's meaning.
+The lifecycle-operation envelope includes schema/state-matrix versions, incoherent status and optional meaningful revision/task intent. Meaningful revision is a server observation cursor; task intent is a canonical digest. The existing enclosure diagnostics can display the retained `recovering-private-preparation` phase from an older record. The generated wire field carries a stored phase. Current executable recovery controls belong to direct landing. Ledger display remains distinct from transaction authority; removal of ledger-mutation vocabulary does not mean removal of displayed ledger evidence. The inherited publication boundary permits real code and memory outputs, not invented ledger transaction outputs. Python 3.14's local `$defs` enum representation does not itself change the vocabulary's meaning.
 
 ### Change sets and Intent Review
 
@@ -466,9 +466,13 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - The vocabulary tuples and their derived types are generated from the producer schema; `Metrics` carries only the ignored-host-agent count, and the per-stage and per-activity buckets are the `TaskCounts` fields the projection and each task entry carry. [12]
 
+
 - The generated lifecycle mirror carries the cursor beside coherent identity and version fields.  Anchor: "export interface LifecycleOperationProjection {" [16]
 
+
+
 - The fixture supplies a meaningful revision for the sample operation. [17]
+
 
 - Unknown chat ownership does not hide the frame; only confirmed absence does. [62]
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
+    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
     "role": "curator",
-    "statement": "The evidence-system page still describes the lifecycle catalog and its source-version field, which now identifies the Paseo runtime command stand-in with the current host pin.",
-    "task": "261112-BUG-L10",
+    "statement": "The guide still describes lane membership and artifact ownership. The catalog now includes two permanent historical journal fixtures.",
+    "task": "261112-BUG-L15",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+      "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "bc12d1ed87e599a3dfd1f0b749add020c6e066b7",
+      "blob": "d8a614375316b5233411201916453bc5935890f4",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

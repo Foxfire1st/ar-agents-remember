@@ -9,9 +9,9 @@
 **The MIK-R13@v2 cases (historical collection: 9): decision records with rejected alternatives.** The content rules run in the
 knowledge validator over a small converted tree built in the file (`_tree`: the layout marker, one assumption
 record `ASM-100K0R` and the given decisions); the derived reads are checked on the models; requirement endpoints are
-resolved by the requirement owner against a real task directory under `tmp_path`. The writer's round trip is in
-`test_knowledge_writer.py`. The file uses no shared support module or catalog fixture, so it needed no catalog
-change; it runs in the `unit-regression` lane (`test-evidence-lanes.toml`).
+resolved by the requirement owner against a real task directory under `tmp_path`. The writer round trip is in
+`test_knowledge_writer.py`. This module defines its decision fixtures and is registered in the
+`unit-regression` lane (`test-evidence-lanes.toml`).
 
 ## Code Commentary
 
@@ -23,7 +23,7 @@ change; it runs in the `unit-regression` lane (`test-evidence-lanes.toml`).
   assumption for alternatives 1 and 2). `_variant` deep-copies and overrides fields; `_found` lists the `R13` findings
   as `(ID prefix, field, rule, report_only)`.
 - **Cases:**
-  - both packet examples pass every rule;
+  - both packet examples validate together with no R13 findings;
   - one alternative, none chosen, and two chosen are each refused by `R13.1-alternatives`; the message
     map filters `report.refusals` to `R13.1`, isolating that owning rule when other refusals coexist;
   - a rejected and a deferred alternative without `reconsider_when` are refused by `R13.1-reconsider-when`; a blank
@@ -80,14 +80,22 @@ No configured live documentation source was available for this pass.
 
 The fixtures and each case.
 
-- The packet's D12 and D18 as decision documents, and the assumption they reopen on. [1]
+
+- The packet's D12 and D18 examples are decision fixtures. D18 links its two reconsideration alternatives to the assumption fixture. [1]
+
+
 - A converted tree with the given decisions, validated. [2]
-- Both examples pass every rule. [3]
+
+- The two decision fixtures validate together, with report.ok true and no R13 findings returned by the filtered helper. [3]
+
+
 - A rejected or deferred alternative without `reconsider_when`. [5]
 - Stored superseded: membership of the status and alternatives.1.status R13.2-superseded-derived refusals, plus any R22.1-shape refusal; no exact finding-set comparison. [6]
 - `reconsider_on` must name an existing rejected or deferred alternative. [7]
 - Superseded is derived; reconsider links carry their subject. [9]
-- Requirement endpoints resolve through the owner and never refuse. [10]
+
+- The endpoint owner distinguishes resolved packets, missing packets, version mismatches and confinement failures. The decision validator still accepts the fixture with its packet present or missing. [10]
+
 
 
 ### Cross-Repo References
@@ -101,8 +109,11 @@ No cross-repo boundary is crossed by this file.
 - Alternative counts and the one chosen: refusal-message comparisons filter to R13.1 when other rules also refuse. [4]
 - `test_a_decision_that_governs_nothing_is_refused` expects `report.ok == False` and `R13.3-governs` with `report_only == False`. [8]
 - A decision is never an export (review F6): the forged legacy case expects both new-record and legacy-unassessed admission refusals. [11]
-- Current source delta inspected statically: Fix owning-rule filtering, governs refusal and dual legacy refusals, including renamed captions; retain derived-status and endpoint boundaries. [13]
+
+- The current source filters alternative-count messages to R13.1, checks the R13.3-governs refusal, and expects both admission refusals for forged legacy status. Separate cases cover derived status and endpoint resolution. [13]
+
 
 - Reordering preserves option-text identity for reconsideration links, with an independently misbound-index control; the assertions filter R14. [14]
+
 
 - The lane row. Anchor: "mcp/tests/test_knowledge_decisions.py" Anchor: "mcp/tests/test_knowledge_decisions.py" [12]

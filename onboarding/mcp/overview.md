@@ -56,6 +56,8 @@ For leaf maintenance, the worklist compares exact B/K_B/C/K_C, task declarations
 
 ## Construction And Ownership
 
+Generated runtime instructions carry the canonical Manager and coordination rules. Those rules send ordinary closeout and integration to their synchronous calls. Only direct landing continues an executable journal generation.
+
 Task workspace preparation is owned by `cli/paseo_workspaces.mjs`, dispatched by `cli/paseo_bridge.mjs` with shared validation from `cli/paseo_bridge_primitives.mjs`. A live task retains its original master/task key. Archived, archiving or hidden completed replays select deterministic successor keys; traversal is finite and returns only a refreshed live workspace with the master's project and task directory/title. Archived workspaces and their actors are not moved or mutated. Folder-only opening is separate, and host retention remains host-owned.
 
 The tray attachment adapter is `cli/paseo_send_attachments.mjs`. `sendExtras` returns only nonempty validated image and text-attachment lists: null, absent and empty lists add no option fields, while a non-list or malformed entry raises the named `invalid_bridge_payload` failure instead of returning a partial extras object. Images require nonempty data text and an `image/` MIME prefix; this adapter does not decode or validate the base64 bytes. Text attachments require `type: "text"`, `mimeType: "text/plain"`, string text, and an omitted, null or string title. The module imports the bridge failure helper and does not itself import Paseo’s client package, read an agent or send a message. The bridge owns when these extras enter the host send options.
