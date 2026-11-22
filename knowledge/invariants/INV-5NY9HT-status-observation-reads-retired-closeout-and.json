@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The shared observer test distinguishes the unchanged retired kinds and verifies that only direct landing calls live Git reconciliation."
+  },
+  "applicability": "Read-side worker lifecycle observation of exactly addressed persistent journal records.",
+  "conditions": [
+    "Historical closeout and integrate journal kinds are retained for audit.",
+    "Live mutation and recovery reconciliation applies to direct-landing records."
+  ],
+  "exclusions": [
+    "Ordinary closeout and integration run through their synchronous operation owners.",
+    "The read-side projection grants no mutation authority."
+  ],
+  "id": "INV-5NY9HT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/17_the-whole-test-lanes-pass-on-the-issu-20a404b481-ar/role-reports/worker/54168612-802f-4e9e-8581-5ae4bcd30ec0/role-launch/BUG-L17-W2-code-quality.md"
+      ],
+      "path": "W4-curator-ingest.json"
+    },
+    "handoffEntry": "48c1c392-751b-4803-b74c-ff1d307b1e6d ruling 3",
+    "leaf": "261112-BUG-L17",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Status observation reads retired closeout and integrate journals as audit history and performs live mutation reconciliation only for direct landing.",
+  "status": "proposed",
+  "supersedes": []
+}

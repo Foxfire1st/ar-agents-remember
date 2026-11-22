@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "56973919b5cead4a39077faa4cd0cd4364324a00",
+        "content": "sha256:2866eda4f74b92f8c2231d8bc7111088a0e83172c6f1abc8871d0585af99a71a",
+        "locator": {
+          "kind": "symbol",
+          "name": "fit_declared_short_fields"
+        }
+      },
+      "id": "RLZ-FWPNRK",
+      "invariant": "INV-WJ9ZD7",
+      "origin": {
+        "handoffEntry": "48c1c392-751b-4803-b74c-ff1d307b1e6d ruling 1",
+        "leaf": "261112-BUG-L17"
+      },
+      "rationale": "Fits whole values or names each fitting omission before considering the next field.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The declaration selects and type-checks the supported paths for each tool outcome.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56973919b5cead4a39077faa4cd0cd4364324a00",
+            "content": "sha256:d33514480beff012a8d5849f5d93a0d3acecd608a720f6d430a8a359011bae19",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_short_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fitter measures whole values and reserves each fitting omission notice before the next field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56973919b5cead4a39077faa4cd0cd4364324a00",
+            "content": "sha256:2866eda4f74b92f8c2231d8bc7111088a0e83172c6f1abc8871d0585af99a71a",
+            "locator": {
+              "kind": "symbol",
+              "name": "fit_declared_short_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The delivered mapping places fitting declared outcome and action fields before the result locator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56973919b5cead4a39077faa4cd0cd4364324a00",
+            "content": "sha256:52ff23bb709dd7574923695f5b8a2ccb9e6823e3019bb0867e160d3c20ed3af7",
+            "locator": {
+              "kind": "symbol",
+              "name": "leading_declared_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The application supplies the validated result, tool name and exact result location to the overflow model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:13015208ecb71dd27ab5ae3b1ec7a31036113e83917f2a830dbfe9a4a9add148",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_answer_guard"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,1688 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L17",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "content": "sha256:6e229ec25845c182a91164a420d5e2af3cedaef325edf411338c336ac35bf363",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerGuardTests.test_short_form_is_measured_six_hundred_multi_token_char_error"
+            },
+            "path": "mcp/tests/test_tool_answer_table_guards.py"
+          },
+          "before": {
+            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+            "content": "sha256:44b6a0774d20dc2d29d32f5f010166de2a8a6a0659aa63e3081b1e5b95ca5ed3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerGuardTests.test_short_form_is_measured_six_hundred_multi_token_char_error"
+            },
+            "path": "mcp/tests/test_tool_answer_table_guards.py"
+          },
+          "id": "PRF-A0NPWN"
+        },
+        {
+          "after": {
+            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "content": "sha256:60f182440ed47401a9b84e23a1f57890cbef62a03c10afd55235025e8d76c0f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerGuardTests.test_short_form_is_measured_fifty_thousand_char_error"
+            },
+            "path": "mcp/tests/test_tool_answer_table_guards.py"
+          },
+          "before": {
+            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+            "content": "sha256:a01fe1da402cacc5a1eefdb2520fbe36a1a8b58493ee10b42e884e7f513fe958",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerGuardTests.test_short_form_is_measured_fifty_thousand_char_error"
+            },
+            "path": "mcp/tests/test_tool_answer_table_guards.py"
+          },
+          "id": "PRF-HKJ8VH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-00Z1M2",
+      "items": [
+        "sha256:db92b12176cccb44021769c245d2166581d559aebfb466341b59709f72ea39a8"
+      ],
+      "reason": "The large-error guards now pass the typed result-location input. Their proof still measures truncation and the final bounded delivered answer.",
+      "revision": 2,
+      "subject": "INV-0VAC47"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-081MH7",
+      "items": [],
+      "reason": "The conversion card points to the live completion and detail-record ranges backing the wire and persistence responsibilities.",
+      "sources": [
+        {
+          "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
+          "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_conversion_toolchain.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0QQB9V",
+      "items": [
+        "sha256:e2b44316a31bc72177e876294efd65df296cc15ccbfedcac967d998e8ad0d2e1"
+      ],
+      "reason": "The existing account still governs leaf_enclosure_start.py. The affected setup or lower-level behavior is owned by its changed file cards, and this carrier needs no wording change.",
+      "sources": [
+        {
+          "blob": "ef07cbf9743d369be2ddfe76bd02738aecb7efb9",
+          "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:a72b27663d30b56f783db77ec5e46261852a7659f8445aa7dbd520f8a6599aaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_delivered_line"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "before": {
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "content": "sha256:494a71b62eb84b08dd15ec42aa35fc27c2cff306155f2ed42311634661735234",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_delivered_line"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "id": "RLZ-8FCEMJ"
+        },
+        {
+          "after": {
+            "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
+            "content": "sha256:93930cac4f2437a1743fa165bc3d66c877d5612d802dd619bfe49e825cb19c2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_set_short_location"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": {
+            "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
+            "content": "sha256:a938ef98dd100cfe9db12284a60cd12fb9b15019e62f5d0804bcc8bffca2c4c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fit_location"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "id": "RLZ-SQVNSG"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1J5YKK",
+      "items": [
+        "sha256:ad490c6b7a22022397f163600e919bca20bbd8873bd7799df6f031de018e9389"
+      ],
+      "reason": "The measured answer writer retains the recorded result's location and final hint. The grouped location helper is the current owner of the same fact.",
+      "revision": 2,
+      "subject": "INV-SYBT3F"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-1JMB2S",
+      "items": [],
+      "reason": "The tool inventory and reference pointer remain accurate. The cited document anchor now names the reference whose short-answer passage was corrected.",
+      "revision": 8,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1Z6R53",
+      "items": [
+        "sha256:b804879b4d41b859390eb23438bd8d79e61c22d64d5a2dffabb9fed22c20da1f"
+      ],
+      "reason": "The card describes how the held-message test computes the retained excerpt using the actual message-file locator, checks the cut notice and reads the whole filed body.",
+      "sources": [
+        {
+          "blob": "f89002d456881fd81028f5a80d223f48be52aaed",
+          "path": "mcp/tests/test_developer_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_developer_messages.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-28GTAS",
+      "items": [
+        "sha256:986b25ac78c6a62046a6b3483468cafaf8c0f81cc26de7642b81cbd25178752b"
+      ],
+      "reason": "The tests overview reanchors the developer-send and seat-list account to the fake native host and separate bounded sent-log and cross-site cases. The individual cards describe the other covered fixtures and assertions.",
+      "sources": [
+        {
+          "blob": "fd31649de774f5e9402709806dc805c1abf5b852",
+          "path": "mcp/tests/test_agent_eval_adapters.py"
+        },
+        {
+          "blob": "35352419da51c44e4d187288a8964b3dd30bd896",
+          "path": "mcp/tests/test_candidate_identity.py"
+        },
+        {
+          "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
+          "path": "mcp/tests/test_checkout_coordination_isolation.py"
+        },
+        {
+          "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+          "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+        },
+        {
+          "blob": "f89002d456881fd81028f5a80d223f48be52aaed",
+          "path": "mcp/tests/test_developer_messages.py"
+        },
+        {
+          "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
+          "path": "mcp/tests/test_knowledge_cutover.py"
+        },
+        {
+          "blob": "d2e59a0847855774e969cc0261ce9ae8c429160c",
+          "path": "mcp/tests/test_landing_state_refusals.py"
+        },
+        {
+          "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+          "path": "mcp/tests/test_leaf_enclosure_start.py"
+        },
+        {
+          "blob": "c073a83e98bdc9010f9167304c691f34b85b7318",
+          "path": "mcp/tests/test_lifecycle_operation_journal_retired.py"
+        },
+        {
+          "blob": "3490a8db506cff4ab96840bfd1005d3a7bf96023",
+          "path": "mcp/tests/test_mik_r118_r124_marks.py"
+        },
+        {
+          "blob": "5873b5420cd701088fff448610c3225fb48b26d4",
+          "path": "mcp/tests/test_outside_scratch_root.py"
+        },
+        {
+          "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
+          "path": "mcp/tests/test_record_integrity.py"
+        },
+        {
+          "blob": "3bfb96e6ed6a81ddf7fe14c3f5c6233f50d7b095",
+          "path": "mcp/tests/test_tool_answer_guard.py"
+        },
+        {
+          "blob": "2524f2197f53a8474d423633edf762391ff9053a",
+          "path": "mcp/tests/test_tool_answer_rows_citation.py"
+        },
+        {
+          "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
+          "path": "mcp/tests/test_tool_answer_rows_packaging.py"
+        },
+        {
+          "blob": "3022187a38dc58a3123140b6c6d330e4912d81d3",
+          "path": "mcp/tests/test_tool_answer_rows_quality.py"
+        },
+        {
+          "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+          "path": "mcp/tests/test_tool_answer_table_guards.py"
+        },
+        {
+          "blob": "8ab28224499bd1c19c65de5a70fb6ee963c3a282",
+          "path": "mcp/tests/test_tool_answer_table_measure.py"
+        },
+        {
+          "blob": "9d220b8c19cfbe280eb316a5cfa27bb1e830e03e",
+          "path": "mcp/tests/test_tool_answer_table_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3H4KT2",
+      "items": [
+        "sha256:49c2abee39883985d8140ac86bc2eeae41f64bf388cde5df9f156251e661175e",
+        "sha256:98bd72c490dd8e4b19eecf65f4e6e877a253ec7bb39d7b4fc36ac5843f9e7032",
+        "sha256:dc049c07130bf2ca054ef90a46eca4f317ef93c166df6443d4f59dfff613a95e"
+      ],
+      "reason": "The existing account still governs test_mik_r118_r124_marks.py. The affected setup or lower-level behavior is owned by its changed file cards, and this carrier needs no wording change.",
+      "sources": [
+        {
+          "blob": "3490a8db506cff4ab96840bfd1005d3a7bf96023",
+          "path": "mcp/tests/test_mik_r118_r124_marks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mik_r118_r124_marks.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3M3R4A",
+      "items": [
+        "sha256:bd1ab94b0b95d81f82b1e9f23b892e198d4a42368a8915682b666434a97224fb"
+      ],
+      "reason": "The models overview names the typed overflow selector and describes fitting whole values or fitting omission names and sizes. It places fitting outcomes and actions before the available exact locator and keeps the final hint last.",
+      "sources": [
+        {
+          "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+        },
+        {
+          "blob": "56973919b5cead4a39077faa4cd0cd4364324a00",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "790ac3f803478ff3e76f642052011bd93a276d21",
+            "content": "sha256:597fd87051305e76dde1f726038f1e52cbad7c853dd5b4d64aa1ccfbe34c4b76",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "66ea693a8c853e7db7339de87bdb1e9e8b96968f",
+            "content": "sha256:64d8b6ba5261eefca4e0d4f8deaeef2cab6bcb11cbd101a243dbfb2a556c54b3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-RZ1XP1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4PYFED",
+      "items": [
+        "sha256:18c94b8266c53e271c33ca3321dafef5c326c0485f08a405133e9f7ab84a7eaa"
+      ],
+      "reason": "The reference’s synchronous closeout and integration guidance remains in the unchanged part of the document. The revised Tool answers passage changes only overflow guidance.",
+      "revision": 1,
+      "subject": "INV-760TKM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4WTQE0",
+      "items": [
+        "sha256:4a173456d8773abcb480d50c40263a722d56dad84b2e86f3f007c16a04137d0e"
+      ],
+      "reason": "The lifecycle overview identifies the saved status, phase and outcome of historical closeout and integration. Direct landing owns live Git reconciliation, and historical control refusals still apply.",
+      "sources": [
+        {
+          "blob": "af2a050ea88bd4e30d99d8ed3042e36b8dff37ca",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-54VVE4",
+      "items": [
+        "sha256:0c97bf5a9b2a1a7b7139611da53e6825d9b3bca9363bdfb6a257216deee0bc35",
+        "sha256:3c240ea39244f1d57c67726489daaf1ffe79fe77fa52ff15764f5b090f2ad353",
+        "sha256:a2641e9938607ae2b7d308a30abd49c5500f111796670b2005a81a95932a8301",
+        "sha256:d3a3706bd42704d5049c114fc8e5b069d5ba3a01620fb8ce00c183a90c7bbddd"
+      ],
+      "reason": "The card records the owned Git-free directory under /var/tmp and the assertion that it returns None. The test also asserts None for two absent paths and a None argument.",
+      "sources": [
+        {
+          "blob": "35352419da51c44e4d187288a8964b3dd30bd896",
+          "path": "mcp/tests/test_candidate_identity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_candidate_identity.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-56RQJB",
+      "items": [
+        "sha256:854d8ef5b4b829f226cae6021951a8740d5226cdcc854be8169f726b8351df1d"
+      ],
+      "reason": "The completion card records the declared overflow field inputs. Its current completion and persistence anchors also support the corrected MCP tools and root overview citations.",
+      "sources": [
+        {
+          "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+          "path": "mcp/src/agents_remember/application/tool_response.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/tool_response.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5873b5420cd701088fff448610c3225fb48b26d4",
+            "content": "sha256:7225b5d474e34c5f6714532ee99c17842cffbc412621206e3a79308745c830a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_managed_parent_is_private_and_ours"
+            },
+            "path": "mcp/tests/test_outside_scratch_root.py"
+          },
+          "before": {
+            "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+            "content": "sha256:891fd9e64642fe2a19535f1e9a8ec0980cc14a4389ecbb4f25a1b35c9455f949",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_managed_parent_is_private_and_ours"
+            },
+            "path": "mcp/tests/test_outside_scratch_root.py"
+          },
+          "id": "PRF-476B05"
+        },
+        {
+          "after": {
+            "blob": "5873b5420cd701088fff448610c3225fb48b26d4",
+            "content": "sha256:f953055aa7b85bd5197b3e01faf63bf69ceaf0cec7875e1ddf18b8902719c92d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_outside_scratch_root.py"
+          },
+          "before": {
+            "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+            "content": "sha256:755a6234815d4cd24d1e78ae0df1f9fc45873d7dd46b8aa7cd030c621a4847ef",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_outside_scratch_root.py"
+          },
+          "id": "RLZ-PAHW12"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5P68K7",
+      "items": [
+        "sha256:0c40f3ed32f4521895bd03ead7bca458da9439c0d645a79dd51379df3214686f"
+      ],
+      "reason": "The parent privacy case uses an explicit 0755 fixture mode, preserving its wrong-mode and wrong-owner controls under either umask.",
+      "revision": 1,
+      "subject": "INV-TMKNRV"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5XH9SK",
+      "items": [],
+      "reason": "The cutover card reanchors the gate explanation to the actual isolated negative-probe and retained fail-closed cases.",
+      "sources": [
+        {
+          "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+          "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/cutover_lock.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6095S8",
+      "items": [
+        "sha256:d47079274afa44c972c40e9cc31fd2afe7739fe8b5c7ffa4df2b44a58662a6bb",
+        "sha256:fb00e2015a04ea3a73df80bfa679e70fdfb95d067c7e5a02c45b1b53fb783fb7"
+      ],
+      "reason": "The helper card explains exclusions relative to the selected task root and canonical task schema and leaf-ID matching. Current source anchors replace fixed line and case totals.",
+      "sources": [
+        {
+          "blob": "27ef5773a2dfaf104a95a4c3640adfad1fbece52",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-61BS9B",
+      "items": [
+        "sha256:304f51c237629b443edbaf7c1ac40e916e47160895246381168df4e0848ade3f",
+        "sha256:827f991c2a8f3c93f8e2501e537b8f315d72d87a3b21b110f92e3a26c2b6cfe9",
+        "sha256:8482249a707cb72729a3f1e0c70527d150528f15ab81a95e3ad7c0850b6ed4bf"
+      ],
+      "reason": "The card bounds its proof to the tested row-gate shapes and removed tools. The shaped row with a stated production derivation can omit static case payloads.",
+      "sources": [
+        {
+          "blob": "9d220b8c19cfbe280eb316a5cfa27bb1e830e03e",
+          "path": "mcp/tests/test_tool_answer_table_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_answer_table_rows.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-71WVMV",
+      "items": [
+        "sha256:17cf5fe1601b8eac6ce7de3186e823caeadc385f6aea386cf2fceb3a0f0b0f9f",
+        "sha256:b21f7d99f30a8c8be5bc014ac3c11879517579f7b3fc0f0e8d77f95ba702510c"
+      ],
+      "reason": "The new helper card describes tool and outcome selection from the validated whole result, declared type checks and ordered fitting. Each fitting whole value or omission receives space before the next declaration, and result retrieval depends on recording.",
+      "sources": [
+        {
+          "blob": "56973919b5cead4a39077faa4cd0cd4364324a00",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7S1VTS",
+      "items": [
+        "sha256:258c0c3273deeb81b818ca95845f0afb8bdc554ce5756d0bceedb119f73a80ff"
+      ],
+      "reason": "The overview ties helper imports, source figures, pinned historical Git inputs and conditional record availability to current test evidence after the discovery repair.",
+      "sources": [
+        {
+          "blob": "27ef5773a2dfaf104a95a4c3640adfad1fbece52",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-87NJG8",
+      "items": [
+        "sha256:576de91a13fa9b4754edfe29aee8d217e629dff29cdbfc4455934f1fa8d9eb4c"
+      ],
+      "reason": "The grouped result-location import wires an internal transport input. The typed locator and measured delivery obligations are covered by their owning implementations.",
+      "subject": "hunk:sha256:576de91a13fa9b4754edfe29aee8d217e629dff29cdbfc4455934f1fa8d9eb4c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8C4JQJ",
+      "items": [
+        "sha256:2b26a7067e675afd5defb36af5cc4d6c149b6c7cadead41cc23c11d74d1d3a9f"
+      ],
+      "reason": "The answer-model card distinguishes the ordinary recursive list projection from fitting declared whole-list selection. It explains exact recorded location, ordered fitting, the final hint and the no-file result.",
+      "sources": [
+        {
+          "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/tool_answer.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8KGNYA",
+      "items": [],
+      "reason": "The task-document card distinguishes external task tolerance from the child-local check and names the current post-root-validation source.",
+      "sources": [
+        {
+          "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
+          "path": "mcp/src/agents_remember/tasks/document.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/document.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9AZMXZ",
+      "items": [
+        "sha256:0683d617b8f0ade214c9d3a04e42d7fb73d8c56524a5ec1291e060261c22ae78",
+        "sha256:30fb61da216a13622a94407466375eb08149f1c6e95a698bccb26b59e96544f0",
+        "sha256:3af3692023c23a7f06093a0ec8e993866a239b9fb343f11505b07850a7e1c9fe",
+        "sha256:79186afb7f70cfb20828cd63eb40aaa601f05c81cccd432918e335b55f1f6d76",
+        "sha256:af04a5ea20a0fbe207617dceec7807e49de6e44997db7e1ad13cafb64f87b761",
+        "sha256:bfe75882338155eecda405868227c2cc8428b054f08f6ff04709136731652c89",
+        "sha256:c349033f35199b577f963d24474faa923d410e66caa9d7a926bc06588b822708",
+        "sha256:ccd540cbf6148e3a97da186528619af7b0052258787e789578a128cfd0b69d6b",
+        "sha256:d25f5f44e00bfd5afa9c7a788b83eaeb31766c1caaa5f0d389077e33054d6aea",
+        "sha256:e9534af9f09603295259594a65f8782f44be39c6a6e05dcd3acd3d8f52288ccf"
+      ],
+      "reason": "The card replaces the superseded fixture account and retired source-custody paragraph with the shared /tmp and XDG fixture used by initialization, carryover, integrity and coherence cases. The prior account remains inspectable at source blob 6d672d3445e36d61529eab5788ef10633dbf6d77 in code base 59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0. The exact 160-byte coherence root, emitted-answer bounds and density checks remain.",
+      "sources": [
+        {
+          "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
+          "path": "mcp/tests/test_tool_answer_rows_packaging.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_answer_rows_packaging.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-9P0F80",
+      "items": [
+        "sha256:c02b1c463a6010c5bebc365941e18ceee27c36988b66ca390a4f07a2112977a6"
+      ],
+      "reason": "Reconfirmed that the setup guide's first-run refusal detail is available in the saved full result when the reply exceeds its budget.",
+      "revision": 6,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-9VW895",
+      "items": [
+        "sha256:f78c317b95cdb71055b2a72732239d62d9044d37b085bbf189c505371fe5bddb"
+      ],
+      "reason": "The revised Tool answers reference binds each declared row to its actual wire Boolean and explains the eligible integrity refusal. The refreshed links identify the producing refusal and its typed declaration.",
+      "revision": 9,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-9X7A1A",
+      "items": [
+        "sha256:aad0c59507418ec361f91465367f70665aa707819a5f3fb79a61392e34fe8895"
+      ],
+      "reason": "Reconfirmed the resolver's account of the shaped context packet and its recorded result blocks, which receive none of the declared tool-specific fields.",
+      "revision": 4,
+      "subject": "DPD-EJ2Y7Z"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A6BNC7",
+      "items": [
+        "sha256:17d3576f3b44a9509ebf313c0fed51eaeea1226108151c926a4394bece6658fb",
+        "sha256:47cdd9fa5ce3d0f05719f9ee3ef81e8885be25dcba8656c57e4e75d9c1f31d81",
+        "sha256:7e025498cab51b5549650ca88d0bbfef8b839d13ea689cc0d77a92e7753c4f0f",
+        "sha256:b46a4b2a7a1c276431ba51d2478d6011af3dc0dbfd2867a6231809c016ab73eb",
+        "sha256:ce86a06433a41e7aec05a7ed9e17572cfa35d48363e2a378318a32b103e27125"
+      ],
+      "reason": "The citation test card names the shared real temporary root and local XDG settings for emitted-result measurement. It retains the clean, stale, unreadable and two-document checks.",
+      "sources": [
+        {
+          "blob": "2524f2197f53a8474d423633edf762391ff9053a",
+          "path": "mcp/tests/test_tool_answer_rows_citation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_answer_rows_citation.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A6YZQN",
+      "items": [
+        "sha256:6df97bb0adfcbea2a37a2526ccb56f7a93e9aa17c9db49956b04e8e1cc9d2de1"
+      ],
+      "reason": "The card records the explicit 0755 fixture mode that preserves the public-parent refusal under restrictive umask. It retains the valid 0700 and owner cases.",
+      "sources": [
+        {
+          "blob": "5873b5420cd701088fff448610c3225fb48b26d4",
+          "path": "mcp/tests/test_outside_scratch_root.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_outside_scratch_root.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AD2NE9",
+      "items": [
+        "sha256:73825c6420f911cf22205944a26b13edbb4218e76b21d32146a608d9ee05d98f",
+        "sha256:82ad9b81832043bf188c258c82659bdeb79cc93c37a29f46349d4e88988ad419",
+        "sha256:97c94ef5c2c1cc3a7ac42e0841877187af6578a1d758b3a640f8fd649e9f01ee",
+        "sha256:cc2901412c3cf9528012a9d2a1240fbc61e3efdff163e9765732842f4d5be05b"
+      ],
+      "reason": "The record-integrity card explains the owned Git discovery ceiling and the fixture with an outer worktrees ancestor and inner decoys. Both identifiers are checked through direct, aggregate and CLI paths.",
+      "sources": [
+        {
+          "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
+          "path": "mcp/tests/test_record_integrity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_record_integrity.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ADS1WZ",
+      "items": [
+        "sha256:b8327dbde3b5f62f893750cb45470f761db68fe4e0d981390b7525c136684eb6"
+      ],
+      "reason": "TemporaryDirectory is imported for the owned nonrepository fixture. The definite-nonrepository test is its proof.",
+      "subject": "hunk:sha256:b8327dbde3b5f62f893750cb45470f761db68fe4e0d981390b7525c136684eb6"
+    },
+    {
+      "considered": [
+        "FAM-3FTGSA",
+        "FAM-TG3WK0"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-AF4N99",
+      "items": [],
+      "reason": "The revised filesystem test premises keep several regression paths deterministic. Existing runtime-state and combined-run families govern different mechanisms.",
+      "revision": 1,
+      "subject": "membership:INV-G6KRTM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fd31649de774f5e9402709806dc805c1abf5b852",
+            "content": "sha256:16dd98763251893d17c7ddc8d968757952e0cbdbb873a8561683c6172eeba301",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_agent_eval_adapters.py"
+          },
+          "before": {
+            "blob": "70142b8e0cf0d9760491f30298a95537c265702c",
+            "content": "sha256:eee96ae3691247bb9175e605fd4ccc5fa800adfc0d50c1692d21141932766ab9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_agent_eval_adapters.py"
+          },
+          "id": "RLZ-GW3G26"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CNB85X",
+      "items": [
+        "sha256:b8f7970ecd0d926b787cc89629d90fa223246a71883820cb4b2dab66984e4615"
+      ],
+      "reason": "The native identity case controls flattened filename width using a short owned root and preserves its unique, fresh and exact project checks.",
+      "revision": 1,
+      "subject": "INV-QFMMYM"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "id": "RLZ-5SQ5SP"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-CWPPMD",
+      "items": [
+        "sha256:ed400e6dba74968db352df7c564a6744d02e54fc65ab3524fadd8e940411f7eb"
+      ],
+      "reason": "Remove the obsolete attached realization for the already-retired ambient Git premise. Preserve its historical record and the distinct current definite-nonrepository proof.",
+      "revision": 1,
+      "subject": "INV-0RQS65"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DDWMDD",
+      "items": [],
+      "reason": "The launch-review card names the current child-local tolerance check and preserves the accepted launch-review preconditions.",
+      "sources": [
+        {
+          "blob": "f960a935d832cbf64b99d7e8ef97475006c2ded2",
+          "path": "mcp/src/agents_remember/tasks/launch_review_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/launch_review_read.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DGC4GC",
+      "items": [
+        "sha256:15b48de2ffb9c350a89ce6b8399fc644fbd58e718c6f69f368c01aa0c4458e11",
+        "sha256:2e7e2ed1008409fc3d15c153264f4a238ecce46a60b869eb071ff921dacdd10a",
+        "sha256:459082ac60d57ec4fa7755e05448b98dd852a8cc99c7df7f0578c3e906206df6",
+        "sha256:51bab9dfadb19781ed2a01c89816150abe2e02dae42c84c9ca25384810354689",
+        "sha256:5989fac6b2f5902fb3dbfca0414df514db7b8d77675e8e8f7409751866d29003",
+        "sha256:5d68807ad2900253940156431ef9dccde94f3b026aac46a4d7dffb81f1969c6d",
+        "sha256:909b44a3dd1ef1ca56c63891c82953e9174129584287f3037d22d905e84737e8",
+        "sha256:a50d4cb1945806b150e5d3df4889aa2979e438361d9f526dd0173758470a9791",
+        "sha256:b047377e88de8425a26603c6fefd004ec69137c6fd8b731787c430f15311399f",
+        "sha256:d9dc0ffc08c216c996632355f6f005893b344d1f1fe3128c13ea610b96a38ace",
+        "sha256:de2c3fac190a6cd7136ea68d653b8f38f11efd44d2c3179411d32f5416950993",
+        "sha256:fcf5920190bce7672adc67231531351dee9529d04ce26e97e6e73ae2d9b80e73"
+      ],
+      "reason": "The exact-edge test account records that the bare answer equals the tool bound and the actual detail locator takes it over. The test checks the delivered ceiling and matching saved-line and observer counts.",
+      "sources": [
+        {
+          "blob": "3bfb96e6ed6a81ddf7fe14c3f5c6233f50d7b095",
+          "path": "mcp/tests/test_tool_answer_guard.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_answer_guard.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DR83V7",
+      "items": [
+        "sha256:10f4ecbc0d7118a537aeb76d81d908848506108f082a2b11c8e116fd0cdbff25",
+        "sha256:7f3c7cb441bb1f1131dd84a784462ac84065885198d21fec402fbb3532272f44"
+      ],
+      "reason": "The projection card removes live Git checking from the historical closeout account. Historical closeout and integration preserve stored identity, status and phase with no controls or recommendation. Direct landing reconciles mutation evidence.",
+      "sources": [
+        {
+          "blob": "af2a050ea88bd4e30d99d8ed3042e36b8dff37ca",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "content": "sha256:1d0cf850f6ec871bc220463883fc4135837833f8000904eaedf43c43c9964ff8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerGuardTests.test_short_form_fixed_part_and_location_fit_with_longest_code"
+            },
+            "path": "mcp/tests/test_tool_answer_table_guards.py"
+          },
+          "before": {
+            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+            "content": "sha256:7fc3055cec865cd15a4eebbb09ddcf09c0e039a84397c803fa0f0a862b53e514",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerGuardTests.test_short_form_fixed_part_and_location_fit_with_longest_code"
+            },
+            "path": "mcp/tests/test_tool_answer_table_guards.py"
+          },
+          "id": "PRF-JKEZYQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DVZR9J",
+      "items": [
+        "sha256:656182dee4e90bd4ca9f17daa1b19afbc26081c5254e80734eeda5709ac2d3c1"
+      ],
+      "reason": "The fixture passes the exact result location through the typed boundary and checks the same fixed envelope and longest valid code.",
+      "revision": 3,
+      "subject": "INV-CQSY2Z"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DXWTV4",
+      "items": [],
+      "reason": "The lifecycle adapter still delegates completed responses. The corrected reference names the current completion implementation and caller.",
+      "sources": [
+        {
+          "blob": "cbc2a027fa8329302b9ba1a1af26589d7940d865",
+          "path": "mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "content": "sha256:9d4cd35afa708b7815a0297a614fafd90c70fda8ed9b015dac0aa846c8b8251d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerGuardTests.test_nested_lists_are_cut_through_retained_items"
+            },
+            "path": "mcp/tests/test_tool_answer_table_guards.py"
+          },
+          "before": {
+            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+            "content": "sha256:9d4cd35afa708b7815a0297a614fafd90c70fda8ed9b015dac0aa846c8b8251d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerGuardTests.test_nested_lists_are_cut_through_retained_items"
+            },
+            "path": "mcp/tests/test_tool_answer_table_guards.py"
+          },
+          "id": "PRF-FEA7C4"
+        },
+        {
+          "after": {
+            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "content": "sha256:045dbe0d371b0bf690380e33826bf6495281226e8692ed7ad1db26dc642e2f8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerGuardTests.test_envelope_stripped_from_every_answer"
+            },
+            "path": "mcp/tests/test_tool_answer_table_guards.py"
+          },
+          "before": {
+            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+            "content": "sha256:045dbe0d371b0bf690380e33826bf6495281226e8692ed7ad1db26dc642e2f8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerGuardTests.test_envelope_stripped_from_every_answer"
+            },
+            "path": "mcp/tests/test_tool_answer_table_guards.py"
+          },
+          "id": "PRF-H1T045"
+        },
+        {
+          "after": {
+            "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
+            "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "truncate_lists"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": {
+            "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
+            "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "truncate_lists"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "id": "RLZ-4TBAXX"
+        },
+        {
+          "after": {
+            "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
+            "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "strip_envelope"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": {
+            "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
+            "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "strip_envelope"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "id": "RLZ-8AR50R"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-DZTXZN",
+      "items": [],
+      "reason": "The recursive cap applies to ordinary projection. The fitter can keep a declared, typed bases list from the validated whole result when the complete list fits. The existing proofs cover the projection and envelope. The declared selector and fitter carry the whole-list exception.",
+      "revision": 2,
+      "subject": "INV-B7J1PZ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1V9ARB",
+          "revision": 1
+        },
+        {
+          "id": "INV-701KQ9",
+          "revision": 1
+        },
+        {
+          "id": "INV-REPB8B",
+          "revision": 1
+        },
+        {
+          "id": "INV-VH0QZ1",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-E01TCX",
+      "items": [
+        "sha256:4bc273425b828cc63236f40424bc782afc508a68b44da70c3ffe969d29521a50"
+      ],
+      "reason": "Short answer details still name the complete scoped corpus. The shared guard change does not alter admission, query breadth or the action-asking status notice.",
+      "revision": 2,
+      "subject": "FAM-ZVFPWJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E508W1",
+      "items": [
+        "sha256:40a44fe8a84808b8a5f272911869dabd95e513b54f40ea9f2023c21dea2ee9fb"
+      ],
+      "reason": "The cutover card records a fixture-owned Git-free directory under /var/tmp as the definite unlock case. Unanswered and suspicious observations still follow the fail-closed path.",
+      "sources": [
+        {
+          "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
+          "path": "mcp/tests/test_knowledge_cutover.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_cutover.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-E5RJXP",
+      "items": [
+        "sha256:8d634120a016553df700c14667a2abe0995e9c1c6a2f7450f3c698fad4c1dcb6"
+      ],
+      "reason": "Reconfirmed that the refresh guide directs readers from the bounded context-packet action line to the saved drift counts.",
+      "revision": 3,
+      "subject": "DPD-TCXJRQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E9GEYM",
+      "items": [
+        "sha256:0c7e9f6a4280bf312d1935f8b28c112f75d21f69e998b7accf8dd0de10f602e0",
+        "sha256:5ac7f2df9bd83f5f8fae393a8bf75cc757555c68e4a2fe9d4abeb05888ac4da9",
+        "sha256:75c0adb01bd8faf109dfa138213556bdaa188593f289950e34084c42d950a424",
+        "sha256:d60cc066b5b2474cf25c3e9858e9247d2e749b43cd55a5e4e83d751f3dfd142e"
+      ],
+      "reason": "The journal test card records that retired closeout and integration keep their saved fields when the historical contract path is missing and expose no controls or recommendation. The direct-landing case records one Git reconciliation call.",
+      "sources": [
+        {
+          "blob": "c073a83e98bdc9010f9167304c691f34b85b7318",
+          "path": "mcp/tests/test_lifecycle_operation_journal_retired.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_lifecycle_operation_journal_retired.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f89002d456881fd81028f5a80d223f48be52aaed",
+            "content": "sha256:244428e11ae1062222f4b1da11b21944326576caa01f317051408572397806eb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "before": {
+            "blob": "8dc3c5d35fe849586f5682f8c3e48cf2490019fb",
+            "content": "sha256:c2fb0973ab9929e5b7ad5bb20881fc7fd29a7754ae94ee8b03fa108af82da019",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "id": "RLZ-DT8Y58"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ECRHW8",
+      "items": [
+        "sha256:187a61deeda65c371adf8eff3cb9a7bcf14112c9dd601f37ea496d1a7084d256"
+      ],
+      "reason": "The developer-message cases preserve their transport controls. The held-body excerpt now accounts for the actual locator.",
+      "revision": 2,
+      "subject": "INV-4DQMNE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 401
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "before": {
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "locator": {
+              "end": 519,
+              "kind": "line_range",
+              "start": 396
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "id": "RLZ-REZN43"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-G5JJWH",
+      "items": [
+        "sha256:3e7c67bf419c33fd1479e20b62cc7bb29b367e75bc9417f508edcede62d33e0b"
+      ],
+      "reason": "The completion choke still preserves the stale document notice and its single complete-result route. Declared fields are handled before the late log accounting.",
+      "revision": 1,
+      "subject": "INV-1V9ARB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GG4QGK",
+      "items": [
+        "sha256:a0ae8889b30713ec777f9bbcdf548af70fda77dee7c6fa8994ba8c7bff88c07b"
+      ],
+      "reason": "The mismatch collector uses a mapping to supply labels to the child formatter. The private child refusal owns the bounded result obligation.",
+      "subject": "hunk:sha256:a0ae8889b30713ec777f9bbcdf548af70fda77dee7c6fa8994ba8c7bff88c07b"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GZ9Q6K",
+      "items": [
+        "sha256:98efdf941d40d318e87280b618295f999027fae2472dd7b0f21e1c914c18df72"
+      ],
+      "reason": "Reconfirmed the concepts page against the bounded short answer and full-result log, and retained its distinction between new synchronous operations and saved historical evidence.",
+      "revision": 10,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H3WBPG",
+      "items": [
+        "sha256:a19a942c62d77103c6316cb8377048fa6df4f66962bafda8ad2fa253a1529965",
+        "sha256:e46f0c0fe9e561e0ca5b1f8268cb8a0e8332d756142922981554a693001ea832"
+      ],
+      "reason": "The isolation card records a fixture-owned layout outside host coordination ancestry. The retired package-shaped case still checks discovery of the fixture's ancestor default.",
+      "sources": [
+        {
+          "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
+          "path": "mcp/tests/test_checkout_coordination_isolation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_checkout_coordination_isolation.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HEXGB6",
+      "items": [],
+      "reason": "The drift card names each current parity, baseline and guide test independently after the fixture-owned leaf-route replacement.",
+      "sources": [
+        {
+          "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+          "path": "mcp/tests/test_converted_onboarding_drift.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_converted_onboarding_drift.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HT3Q25",
+      "items": [
+        "sha256:2d668602d97b5c9780243fd82c31d4814198cf655faeb6040101bdde185315e6",
+        "sha256:45f95c5970430165c39acf158cde18b4152872ed97a116e0b7009a70af3e1d5c",
+        "sha256:70c0fa3e055e24584b099d28d8996f0ac1d752ed933f8b249222ca02ec3104bd",
+        "sha256:c3e7d75db14eda17b8af37ffb6128a600a79b848ff21c35e6e2f6ba24ebef81a",
+        "sha256:da981c2b0e8cec576e6ccaa839b3cd8f8320c1475836f9032886e7350f529ce0"
+      ],
+      "reason": "The card records the typed no-start refusal, including separate long loaded-root identity-only and long loaded/requested-root cases. Each long case asserts the 800-character message, all three differing root labels and no backend start. The separate real-child case preserves raw review evidence and retains launch-only review tolerance.",
+      "sources": [
+        {
+          "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+          "path": "mcp/tests/test_leaf_enclosure_start.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_leaf_enclosure_start.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K1W6BZ",
+      "items": [
+        "sha256:558cb162dd6f2484c8d99a62bad8ea3aa9cc49c200051b0a4de78c0e7c00d2a0"
+      ],
+      "reason": "The reserved scalar membership check takes a container so the caller can exclude declared field roots.",
+      "subject": "hunk:sha256:558cb162dd6f2484c8d99a62bad8ea3aa9cc49c200051b0a4de78c0e7c00d2a0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K9WVGX",
+      "items": [
+        "sha256:3aa1bc2f63f9e3c2f5517ae39edab9fd3a5236102b573ee29b11ac9e4fd227a4"
+      ],
+      "reason": "The testing overview locates ownership of width-controlled real tool-answer roots and temporary XDG settings in the shared fixture helper. The calling tests own their measurements and assertions.",
+      "sources": [
+        {
+          "blob": "b65810c081b954dd3a798998188d053274ab4360",
+          "path": "mcp/test_support/agents_remember_test_support/testing/tool_answer_fixtures.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f89002d456881fd81028f5a80d223f48be52aaed",
+            "content": "sha256:ceb6d3ad02bc1677125619a73aed2ea38d0eb92b4823a1b236d694ee09257816",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_busy_target_is_held_as_text_that_names_the_message_file"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "before": {
+            "blob": "8dc3c5d35fe849586f5682f8c3e48cf2490019fb",
+            "content": "sha256:74ecf932bb5c5aac0455bd0dd57588c208cb9a87be7f12ac02375acbf1cdad56",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_busy_target_is_held_as_text_that_names_the_message_file"
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "id": "PRF-QJC8D8"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KGR77Y",
+      "items": [
+        "sha256:4acd87f0ad7ab565de265a602c00165b78fd2ff4fbd3c09ff948c99748d71e75"
+      ],
+      "reason": "The held reply case verifies its exact bounded excerpt, conditional cut notice and full body in the filed message.",
+      "revision": 1,
+      "subject": "INV-G1K3QN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MB9S0B",
+      "items": [
+        "sha256:14540a9bd5aa95d525c627efe5f5740de93b944fe7fa5608e0acc9b6ecbd1eba"
+      ],
+      "reason": "The existing account still governs tool_response.py. The affected setup or lower-level behavior is owned by its changed file cards, and this carrier needs no wording change.",
+      "sources": [
+        {
+          "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+          "path": "mcp/src/agents_remember/application/tool_response.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MXZ2X4",
+      "items": [
+        "sha256:4ba63c5ad860c7ee54b0f9038f9746c74fee7ad0f3e640f5e4205a17ebdeeb59"
+      ],
+      "reason": "The start card places the typed root-mismatch refusal before launch-only tolerance or backend start. The 800-character message preserves the no-start sentence and every differing root label, with settings-path detail last. Successful start still rereads the addressed contract.",
+      "sources": [
+        {
+          "blob": "ef07cbf9743d369be2ddfe76bd02738aecb7efb9",
+          "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/leaf_enclosure_start.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-N7VDRJ",
+      "items": [
+        "sha256:b9682817a7f5b0afa6c97449a8a523401d948eb12e80fe115020be27e1b48c6c"
+      ],
+      "reason": "Reconfirmed the features page's existing response bounds and detail-file retrieval against the bounded shared answer model.",
+      "revision": 14,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NWRQGD",
+      "items": [
+        "sha256:3ae2698a7aa3a1be85775ae324794354018cba0ef002457277d4a1d7ffd3700d"
+      ],
+      "reason": "The adapter card explains the short project root used when native-session discovery flattens paths into one filename. It retains the fresh, stale and ambiguous record cases.",
+      "sources": [
+        {
+          "blob": "fd31649de774f5e9402709806dc805c1abf5b852",
+          "path": "mcp/tests/test_agent_eval_adapters.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_agent_eval_adapters.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "weaken",
+      "examined": [
+        {
+          "id": "INV-0VAC47",
+          "revision": 2
+        },
+        {
+          "id": "INV-180VCA",
+          "revision": 2
+        },
+        {
+          "id": "INV-ANKVYJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-B7J1PZ",
+          "revision": 2
+        },
+        {
+          "id": "INV-CQSY2Z",
+          "revision": 3
+        },
+        {
+          "id": "INV-E8S0YF",
+          "revision": 1
+        },
+        {
+          "id": "INV-GWG9HD",
+          "revision": 1
+        },
+        {
+          "id": "INV-JRV850",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJFNBQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MDE1ZN",
+          "revision": 1
+        },
+        {
+          "id": "INV-QN78E9",
+          "revision": 2
+        },
+        {
+          "id": "INV-SYBT3F",
+          "revision": 2
+        },
+        {
+          "id": "INV-WJ9ZD7",
+          "revision": 1
+        },
+        {
+          "id": "INV-XJ7GV5",
+          "revision": 2
+        },
+        {
+          "id": "INV-Y3TD13",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-P4W00A",
+      "items": [
+        "sha256:08643945a7eebc37218f876133f46015d25458416b72c7e6a6227dd1cdae5567"
+      ],
+      "reason": "The members jointly provide measured short delivery and conditional whole-result logging. The ordinary list cap permits a fitting declared whole list from the validated result. Fitting outcomes and actions precede the available locator. All members and routes are retained.",
+      "revision": 3,
+      "subject": "FAM-8SX6BT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P77SVK",
+      "items": [
+        "sha256:415e903cf7814aeeb59043981572d3e18b8953f2d157229d6d0229cd6fb19e37",
+        "sha256:77a8a42da65fd7a3c713842d748e8b2220c299464d9848fad9944ad65dd5a23b",
+        "sha256:aedb8badff725bd842f67a76cce7a8f7c62f4d80547327c9a40bb033a8c6a5ac",
+        "sha256:dd1f41982a81ec75beb602f2a505507a0e324204acfcf224891341b80ba8d2e4"
+      ],
+      "reason": "The table-measure card records remeasurement after attaching the actual log location through the typed locator. The sparse, repeated-failure and renewed-short-form cases continue to check the final cut hint and matching delivered observer counts.",
+      "sources": [
+        {
+          "blob": "8ab28224499bd1c19c65de5a70fb6ee963c3a282",
+          "path": "mcp/tests/test_tool_answer_table_measure.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_answer_table_measure.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P8ZZ8B",
+      "items": [
+        "sha256:dd79ceb8e65dab7dd14b389d094605954b6feabf566948a576650028aae640da"
+      ],
+      "reason": "The imports connect the short-form builder to the declared-field fitter and shared bound. The guard and fitter are the contract owners.",
+      "subject": "hunk:sha256:dd79ceb8e65dab7dd14b389d094605954b6feabf566948a576650028aae640da"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:a72b27663d30b56f783db77ec5e46261852a7659f8445aa7dbd520f8a6599aaf",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "before": {
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "content": "sha256:494a71b62eb84b08dd15ec42aa35fc27c2cff306155f2ed42311634661735234",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "id": "RLZ-Y18D7W"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QDQ2N9",
+      "items": [
+        "sha256:39726edfb3abbd9f038170c3cb993cface93c314a0b9bedc4f1f6bbbcbaf9369"
+      ],
+      "reason": "Late delivery failure still remeasures the answer and preserves final observer accounting. The helper now keeps the grouped result location.",
+      "revision": 1,
+      "subject": "INV-MDE1ZN"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QXAB3C",
+      "items": [
+        "sha256:006f500f7dec137da0a107f5479b301322e87a07bc6b821243a5966260a0ccc1",
+        "sha256:0a0d2aa859b91e964591d3bbace63898d8d362bcf70f6b53e2d1a2dbb7da127a",
+        "sha256:398504178156244f9e9c329cb204c53540c87dc339cc1d7b72a0c0160dacfa77",
+        "sha256:98e76aa8be0149813cba767dd1de8b21634b2bb7a416cb2824b75849be0eb001",
+        "sha256:9dd5337fcbb2959a030e5815f70a5235020f19460d52f9f08a8f734c175cfd0c",
+        "sha256:bc66f7d54a9d7fe3532fb7de5a534649c5135f2ebef842f1959849fa12cbbdce",
+        "sha256:d75f5b299414d43a976146a0e8242be688fe89b73577dc506283614c79594c68",
+        "sha256:e4ec368f0c6772310c19058ee4ecf99a97e5314b5df260ce82c215a5228bd574"
+      ],
+      "reason": "The leaf-route card replaces live L44 remapping with a fixture-owned contract, paired bases and scoped summary parity. It removes stale C10-description wording. The surviving baseline refusal at mcp/tests/test_converted_onboarding_baseline.py:36–56 still returns blocked-invalid with R198.1-reference-anchor under accept_drift.",
+      "sources": [
+        {
+          "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+          "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+    },
+    {
+      "considered": [
+        "FAM-26BYAY"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-RK4N1B",
+      "items": [],
+      "reason": "Audit pass-through and its direct-landing comparison are read-side operation classification. The recovery family concerns executable recovery authority.",
+      "revision": 1,
+      "subject": "membership:INV-5NY9HT"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC",
+        "FAM-RT2XDA"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-SKHZKD",
+      "items": [],
+      "reason": "The typed private refusal and fixed child message apply before launch. The examined families govern established task entry or UI readiness, rather than the private no-start reply.",
+      "revision": 1,
+      "subject": "membership:INV-6T1GV1"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0WDKPN",
+          "revision": 1
+        },
+        {
+          "id": "INV-G1K3QN",
+          "revision": 1
+        },
+        {
+          "id": "INV-P7QEA9",
+          "revision": 1
+        },
+        {
+          "id": "INV-T6DV0Q",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-TAJAT4",
+      "items": [
+        "sha256:dd2e6e5163c8d02e8b05900be710d7705efb73d96daa90e50b97d3123938eafc"
+      ],
+      "reason": "The held-message proof measures the exact retained excerpt for the actual locator. It continues to establish file-first composition, retention of complete text and independent per-target settlement.",
+      "revision": 1,
+      "subject": "FAM-DB8S4B"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TSRYG2",
+      "items": [
+        "sha256:1b655dfc80500da68ec6b03f829ed5d739409b0706d044dde7bc5df2158ceb07",
+        "sha256:24c52fa64ce84ca41698b65d741681348b9d0165b24a0ffc2a778958bbaf92dd",
+        "sha256:81df40aff57e6a75bcc859dcdc3bb79d17a9eb50f99dbc1b3589028b8cd776eb",
+        "sha256:8f3c48a4d946d9d6220223c40f22511f57bbd5d336812008a186294f295918de",
+        "sha256:f7a88eca5077c47ebb0adf593ba65466599bc2c1f99c5c8d5517130e62eb5a8d"
+      ],
+      "reason": "The memory-quality card locates the real fixed-width root and owned XDG state used in sync, start and poll measurements. The checks retain their emitted proof and blocking counts and the whole result retains the complete checks.",
+      "sources": [
+        {
+          "blob": "3022187a38dc58a3123140b6c6d330e4912d81d3",
+          "path": "mcp/tests/test_tool_answer_rows_quality.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_answer_rows_quality.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TWSR7E",
+      "items": [
+        "sha256:11ba568e785bc958562e3fb2ed63fb9cfe78c606d7902b70d9b07431fdfdd19a"
+      ],
+      "reason": "The unchanged 400-token target moves to the shared field-fitting module. The existing measured-bound obligation remains.",
+      "subject": "hunk:sha256:11ba568e785bc958562e3fb2ed63fb9cfe78c606d7902b70d9b07431fdfdd19a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V0AGF1",
+      "items": [
+        "sha256:c4977554fd2243333ab9fa9039265c1f68fe1c88517389b3c8a65b24db724e75"
+      ],
+      "reason": "The import connects completion to the declared-field selector. The implementation and proof carry the obligation, not the import.",
+      "subject": "hunk:sha256:c4977554fd2243333ab9fa9039265c1f68fe1c88517389b3c8a65b24db724e75"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
+            "content": "sha256:4f7d0c57354eb7681ffb2fb6523e11b6ef017d45ed0c3a02a654aadd7e55f7e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "before": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "id": "PRF-NKEYBD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VP0MCR",
+      "items": [
+        "sha256:eefa22f7b85402cefca9bd3c0b3e19a0992b921a4a54ec36053b51048dfb7fcf"
+      ],
+      "reason": "The definite-nonrepository proof owns its temporary location. The guard's acceptance and suspicious-probe refusals are unchanged.",
+      "revision": 3,
+      "subject": "INV-JT28KJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
+            "content": "sha256:852062ae280e8d15d269ecbe54d76cc87a521383905c2e83595463a4b627966d",
+            "locator": {
+              "kind": "symbol",
+              "name": "short_form"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": {
+            "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
+            "content": "sha256:8221f5824a755ace2c9c9645d92d908a79b79c503c820eecea648fed76e5810b",
+            "locator": {
+              "kind": "symbol",
+              "name": "short_form"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "id": "RLZ-DS4GQG"
+        },
+        {
+          "after": {
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:a72b27663d30b56f783db77ec5e46261852a7659f8445aa7dbd520f8a6599aaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_delivered_line"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "before": {
+            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "content": "sha256:494a71b62eb84b08dd15ec42aa35fc27c2cff306155f2ed42311634661735234",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_delivered_line"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "id": "RLZ-Y2WN79"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VYCC3F",
+      "items": [
+        "sha256:a4987c1e641ab9c5520839107c2cab4da00114e3d65eec4b626a4776aa7156a2"
+      ],
+      "reason": "The short form and late answer-line path retain the existing measured bound, exact locator exception and final hint while adding declared whole fields.",
+      "revision": 2,
+      "subject": "INV-QN78E9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VZ6MA7",
+      "items": [
+        "sha256:2bdbc3990ba961f397b882446d2cd5af4125f84633b23010fbc1b15a14d4a78f"
+      ],
+      "reason": "The missing repository identity enters the same mismatch mapping as its repoId label. This is the formatter input representation for the same refusal.",
+      "subject": "hunk:sha256:2bdbc3990ba961f397b882446d2cd5af4125f84633b23010fbc1b15a14d4a78f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WX1YZX",
+      "items": [
+        "sha256:0042a12a701cd25aa78a8bd2d1232c54af6a11982380a12728af4ec1f23d97f4",
+        "sha256:079cf6257df1fe16e4c49598f8a6807f417b0d42cecf602d82fc87f7b2d92acc",
+        "sha256:1b8810ccc053d9b3a4bf49b9b95846bb12a2b7d7b661f54ae74c044b16ff312d",
+        "sha256:2a65eb8161ea2831d9c6d90a0078fdbdb0722f4c90d192c8782f7392acd27f9c",
+        "sha256:3d3a1e50aa1f10fac67cfa4f96cb7784cd690465867e0e86a352d596859eabd6",
+        "sha256:460f8d5733aa65bf480bfde7ec58e5219824b42cc196fa838d261b82d892160d",
+        "sha256:613639c21fa77883747355f49ff1facd94345b3e96e3b285b3ed23c905b77a2f",
+        "sha256:8226d0392efac2eebd05d2c4a788a544977bb1a6ea7ef6b1cd19b90348671955",
+        "sha256:8cf833b965ecc42a8169f3e2485bdab905b2dff42d25a9c7fe616451c4e5774c",
+        "sha256:a2b5af671fa9dbfbfd91b37de038972e29d50179a1bc5156469ec8dd4ccd2d36",
+        "sha256:e338cd54fc86e390282e63ecd347777020bb479500a990f080010251df9079e1",
+        "sha256:e649838243c02f726b1599efde7d9834f000372468fa9d8b3732cd19bb49c5c7",
+        "sha256:fb46042eac4d6b689fb2524de974a0c17c6d00e990bad4bb6df9f49b0c3a2758"
+      ],
+      "reason": "The guard card distinguishes completion and text-compactor order checks from the integrity fitter. The amended extent covers retention of the higher-priority omission and exclusion of the later bases field.",
+      "sources": [
+        {
+          "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+          "path": "mcp/tests/test_tool_answer_table_guards.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_answer_table_guards.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X03E1W",
+      "items": [
+        "sha256:f8e48cecdf57591e4118f3b973665c396b09ed3eeee1b93e9eea23a028114473"
+      ],
+      "reason": "The Container import supports the existing reserved-key membership check.",
+      "subject": "hunk:sha256:f8e48cecdf57591e4118f3b973665c396b09ed3eeee1b93e9eea23a028114473"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XHS05E",
+      "items": [
+        "sha256:71b2a76ee005f5f01fb2ab3735684c8841c59980d69eb96d2e4951c1bcd2a459"
+      ],
+      "reason": "The formatter realizes the same child refusal cap and per-label obligation recorded at the run boundary. Its path-detail allocation is explained on the file card.",
+      "subject": "hunk:sha256:71b2a76ee005f5f01fb2ab3735684c8841c59980d69eb96d2e4951c1bcd2a459"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XP30C0",
+      "items": [
+        "sha256:8b447abc29107ca631c274d77e1ad6cd5287d53d62a1709f67c21dedecbcc02b",
+        "sha256:9ae2015a2f70486fa5c65b81e7e6205f3d39f9773b19584c6570ad06cde5862f",
+        "sha256:a66141d2f236041417170ebaa23fa8db255ccb85abc8227f35e02b5571373203"
+      ],
+      "reason": "The landing-refusal card records the owned deep root and byte-measured real paths used in the delivered and saved-detail assertions. All three wait predicates read the contract's completed state. One also calls worktree_status and discards its reply.",
+      "sources": [
+        {
+          "blob": "d2e59a0847855774e969cc0261ce9ae8c429160c",
+          "path": "mcp/tests/test_landing_state_refusals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_landing_state_refusals.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
+            "content": "sha256:852062ae280e8d15d269ecbe54d76cc87a521383905c2e83595463a4b627966d",
+            "locator": {
+              "kind": "symbol",
+              "name": "short_form"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": {
+            "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
+            "content": "sha256:8221f5824a755ace2c9c9645d92d908a79b79c503c820eecea648fed76e5810b",
+            "locator": {
+              "kind": "symbol",
+              "name": "short_form"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "id": "RLZ-ASGW6W"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Y9GZN8",
+      "items": [
+        "sha256:66cf8034858ffd907ed6159c11f95ce52d4d80315f6023f8a830a8cc91fb0bc0"
+      ],
+      "reason": "The shared short form still carries the citation-note refusal code and bounded error. Mutation authority stays with the citation writer.",
+      "revision": 1,
+      "subject": "INV-Q7KYQH"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YH50WB",
+      "items": [
+        "sha256:c09291989efb13ee47e7801b92dcc6c97d9baaeee3946bf0f12eec6925aa2cc7",
+        "sha256:df1cfda277cdff44102a446def275072a94d157893cac9974d99fa1d9292f6f7"
+      ],
+      "reason": "The new fixture card documents the owned /tmp root, encoded-width calculation, local XDG overrides, and restoration and cleanup at context exit. Citation, packaging and memory-quality cases use the real paths.",
+      "sources": [
+        {
+          "blob": "b65810c081b954dd3a798998188d053274ab4360",
+          "path": "mcp/test_support/agents_remember_test_support/testing/tool_answer_fixtures.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/tool_answer_fixtures.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

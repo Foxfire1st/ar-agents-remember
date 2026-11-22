@@ -73,9 +73,13 @@ which deliberately supersedes the earlier cutover-window exception. No live exte
 - Leaf route names its own memory line. [9]
 - Public routes refuse with or without converted memory elsewhere. [10]
 
-- A converting candidate is gated, not legacy-locked. [11]
 
-- Plain directory and unanswered repository probes have distinct outcomes. [12]
+- A converting candidate is gated while the legacy lock stays untouched. [11]
+
+
+
+- The owned nonrepository fixture is unlocked while unanswered or suspicious repository probes refuse. [12]
+
 
 ### Cross-Repo References
 

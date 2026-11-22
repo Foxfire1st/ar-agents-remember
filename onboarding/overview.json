@@ -4300,14 +4300,14 @@
       ]
     },
     "358": {
-      "note": "Current PUBLIC_TOOLS has 44 names, including mounted knowledge_write and user_settings_init; converted MQC answers carry cut/added counts and bounded first rows. Complete lists remain in the whole result and are available in a detail log only when that result was retained. Static source, not execution or live-advertisement acceptance.",
+      "note": "The source roster contains 44 tools, including knowledge_write and user_settings_init. Converted memory-quality status includes bounded first rows and cut and added counts. Complete lists stay in the whole result and its detail log when recording succeeds.",
       "targets": [
         {
           "anchor": {
             "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
-            "content": "sha256:80377872702b56644d88e0950f44352601e8b003c926376d446829b06503f07b",
+            "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
             "locator": {
-              "end": 71,
+              "end": 74,
               "kind": "line_range",
               "start": 22
             },
@@ -4330,12 +4330,12 @@
         },
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
             "locator": {
-              "end": 519,
+              "end": 527,
               "kind": "line_range",
-              "start": 396
+              "start": 401
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -5319,12 +5319,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
+            "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
             "content": "sha256:f22e58ff1fe77b4f47af62e9e2c356b9825ee1a4f8f7c76d6bcdcd69174e1f86",
             "locator": {
-              "end": 31,
+              "end": 38,
               "kind": "line_range",
-              "start": 25
+              "start": 32
             },
             "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
           },
@@ -5332,12 +5332,12 @@
         },
         {
           "anchor": {
-            "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
+            "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
             "content": "sha256:6ea1a6086fc01dc18f9bfda9d7f0f859bedde538a3b906d26eb1dd273768545e",
             "locator": {
-              "end": 123,
+              "end": 125,
               "kind": "line_range",
-              "start": 120
+              "start": 122
             },
             "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
           },

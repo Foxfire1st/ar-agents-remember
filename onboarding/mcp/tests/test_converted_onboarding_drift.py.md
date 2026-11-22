@@ -8,7 +8,7 @@
 
 One case per rule of converted onboarding drift: a converted tree takes the converted branch
 instead of legacy discovery, the result names every measured field, empty, unreadable and unbuildable trees
-report truthfully, and every consumer of the measurement returns the same answer. The baseline cases cover
+report truthfully, and the unscoped drift check, context packet and baseline status report matching counts. The baseline cases cover
 blocking, adoption and the refusal paths either side of the commit.
 
 ## Code Commentary
@@ -27,9 +27,9 @@ blocking, adoption and the refusal paths either side of the commit.
   error and an unbuildable base one refusal.
 - **Carried anchors.** `test_carried_anchor_is_refused_as_carried_stale_never_as_new` requires a carried
   deleted anchor to refuse as `R22.6-carried-stale`, never as a new anchor.
-- **One measurement.** `test_three_consumers_return_one_answer` and
-  `test_report_and_snapshot_come_from_the_same_result` keep the drift check, context drift and both baseline
-  tools on one summary, and the Markdown report and observer snapshot on one measurement.
+- **One measurement.** `test_three_consumers_return_one_answer` compares three counts across the
+  unscoped drift check, context packet and baseline status. A separate test checks that the Markdown
+  report and observer snapshot reflect the same measurement.
   `test_complete_drift_fingerprint_changes_beyond_equal_counts_and_sample` proves the fingerprint is taken
   over the full findings, not the limited sample.
 - **Baseline states.** `test_baseline_states_for_converted_trees` reports `ready`, `blocked-drift` and
@@ -46,8 +46,7 @@ blocking, adoption and the refusal paths either side of the commit.
 
 Adoption-path fixtures use `card=True` current anchors. This preserves the validated-tree, dry-run and CLI assertions while letting them reach their intended transaction behavior under the anchor validator.
 
-The measurement is taken once and read by every consumer in a case, so two consumers disagreeing is the
-failure the case looks for.
+The parity case compares count, actionable count and violation count across the three unscoped consumers. The scoped leaf case checks carried-stale classifications separately.
 
 ### Invariants And Boundaries
 
@@ -66,12 +65,16 @@ failure the case looks for.
 
 
 
-- The carried deleted-path test refuses R22.6-carried-stale rather than new-anchor-path; the moved helper constructs anchors, the separate descriptions case checks current-row doctrine, and the split context/summary case asserts three matching violations. [4]
+
+- The carried deleted-path case refuses carried-stale rather than new-anchor-path. The shared helper builds anchors. The split context and summary case asserts three matching violations, while the separate description case checks wording. [4]
 
 
 
 
-- The consumers return the same summary; the carried deleted-path test and split context/summary fixture retain matching carried-stale observations and three violations. The moved descriptions assertion is separate current-row doctrine, not additional carried-stale proof. [5]
+
+
+- The unscoped drift check, context packet and baseline status agree on count, actionable count and violation count. In a separate scoped case, the leaf check and summary agree on three `R22.6-carried-stale` violations. The carried-deletion test independently checks the leaf-base classification, and the static description case checks current guidance. [5]
+
 
 
 - Report and snapshot come from the same measured result. [6]
@@ -90,10 +93,16 @@ failure the case looks for.
 
 
 
-- Surviving descriptions (the `include_drift` description in core registration and docs/tool-details.md) state measurement/currentness/advisory wording. The l-01-agent-lifecycles copies carry the drift commands, curation, stale-orientation and current-row doctrine (an `onboarding_trace` row answers; a counted change of the card alone never answers); the surviving l-01-agent-lifecycles copy must state that drift acceptance lifts only the stale-anchor gate and still refuses validator violations as R198.1-reference-anchor and blocked-invalid. [11]
-- Static description assertions inspect surviving descriptions and the l-01-agent-lifecycles copies, retain current-row doctrine, and reject restoration of the removed drift tool registration. [14]
 
-- The context-packet leaf route binds the leaf base. [12]
+- The static description case checks measurement, currentness and duty. The workflow guide narrows accept-drift to the stale-anchor gate, and the baseline test checks the blocked-invalid rule. [11]
+
+
+- Static assertions inspect the surviving scope guidance and reject restoration of the retired drift registration. [14]
+
+
+
+- The context-packet leaf route binds the fixture leaf base rather than HEAD. [12]
+
 
 
 
@@ -112,4 +121,5 @@ failure the case looks for.
 
 
 
-- Carried deleted-path refusal and context/summary parity remain asserted at their current owners; current-row doctrine is a separate static text check, not executed acceptance. [15]
+
+- Carried-deletion refusal and matching context and summary measurements remain separate assertions. [15]

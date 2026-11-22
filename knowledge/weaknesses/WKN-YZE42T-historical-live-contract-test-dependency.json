@@ -1,12 +1,16 @@
 {
   "anchor": {
-    "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
-    "content": "sha256:b5f44e754ed486629011cc7da129199817cd4f962b66553cc21810d472d4bb93",
+    "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+    "content": "sha256:053d694869db7f8cb46e859db5543f09414416d1db70ac63755a355f0a487ea2",
     "locator": {
       "kind": "symbol",
       "name": "_leaf_contract"
     },
     "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+  },
+  "closed": {
+    "reason": "The two scoped anchor cases construct their own canonical enclosure and fixture base commits, and passed in both approved settings.",
+    "task": "261112-BUG-L17"
   },
   "id": "WKN-YZE42T",
   "kind": "fault",
@@ -18,12 +22,12 @@
     "leaf": "261112-BUG-L9",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "261112-BUG-L9"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "Two onboarding-drift tests read a live historical enclosure by absolute path and fail before exercising their behavior when that contract is absent."
 }

@@ -954,7 +954,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - Card-entry memory values come from the bound after index; lane omission and failed-memory non-retention remain explicit. [1791]
 
-- Developer-send and seat-list cases use actual in-process owners with a fake native host; separate sent-log and cross-site cases protect bounded storage and the pre-route guard. [1792]
+
+- Developer-send and seat-list cases use in-process owners with a fake native host. Separate sent-log and cross-site cases cover bounded storage and the pre-route guard. [1792]
+
 
 - The controlled bridge asserts native attachment options and pre-operation invalid-payload refusal; complete versus truncated listings carry into the recipient list. [1793]
 

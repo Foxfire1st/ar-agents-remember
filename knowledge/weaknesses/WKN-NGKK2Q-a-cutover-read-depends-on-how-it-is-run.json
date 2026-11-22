@@ -1,12 +1,16 @@
 {
   "anchor": {
-    "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
-    "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+    "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
+    "content": "sha256:4f7d0c57354eb7681ffb2fb6523e11b6ef017d45ed0c3a02a654aadd7e55f7e7",
     "locator": {
       "kind": "symbol",
       "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
     },
     "path": "mcp/tests/test_knowledge_cutover.py"
+  },
+  "closed": {
+    "reason": "The definite-nonrepository probe now owns a Git-free temporary scope and reached the existing assertion in the two approved settings.",
+    "task": "261112-BUG-L17"
   },
   "id": "WKN-NGKK2Q",
   "kind": "time",
@@ -25,12 +29,12 @@
     "leaf": "260928-MIK-L195",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L195"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory failed when it was the only test run on both the base copy and the candidate copy yet passed inside the parallel whole-lane run, so its verdict differs with how it is run while the cause remains unmeasured."
 }

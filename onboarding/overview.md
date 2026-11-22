@@ -642,7 +642,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Context freshness is opt-in, and this packet disables provider discovery. [322]
 
-- Current PUBLIC_TOOLS has 44 names, including mounted knowledge_write and user_settings_init; converted MQC answers carry cut/added counts and bounded first rows. Complete lists remain in the whole result and are available in a detail log only when that result was retained. Static source, not execution or live-advertisement acceptance. [358]
+
+- The source roster contains 44 tools, including knowledge_write and user_settings_init. Converted memory-quality status includes bounded first rows and cut and added counts. Complete lists stay in the whole result and its detail log when recording succeeds. [358]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section. Anchor: `## The writer's input sections` [21]
 - Retained reference account (no fresh execution or acceptance inferred): The source checkout separates installed-runtime work from work on this repository and keeps implementation approval separate from commit approval. Anchor: `It is not the live` [33]

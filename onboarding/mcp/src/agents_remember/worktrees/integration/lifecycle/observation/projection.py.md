@@ -14,7 +14,7 @@ acquiring mutation, queue, or lifecycle-evidence authority.
 
 ### Logic
 
-`observe_operation`, `latest_operation_projection` and `current_operation_projections` locate and read enclosure journals. They retain exact saved evidence for historical closeout and integration. Unreadable contract or location authority gets a typed decision. Observation can compare stored Git mutation evidence for both closeout and direct-landing records. It computes a read-only observation without rewriting either record. Historical closeout remains an audit projection.
+`observe_operation`, `latest_operation_projection` and `current_operation_projections` locate and read enclosure journals. They retain exact saved evidence for historical closeout and integration. Unreadable contract or location authority gets a typed decision. Direct landing alone uses live Git evidence to reconcile recorded mutations and recovery commits. Observation returns retained closeout and integration records with their saved identity, status and phase. Their audit projection has no legal controls or recommendation.
 
 ### Conventions
 
@@ -67,6 +67,6 @@ The application wait controller named here was deleted with the door/operation p
 - Location contradictions and unreadable contracts become bounded developer-decision projections with no controls. [2]
 
 
-- The read-side projection tests the observed mutation state before exposing it to the caller. [3]
+- Only direct-landing observation compares live mutation evidence. Historical records keep their saved fields. [3]
 
 - The read-only wait snapshot projection entry point. [4]

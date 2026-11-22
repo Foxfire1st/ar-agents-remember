@@ -44,7 +44,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 
 
-- The response boundary is `complete_tool_response`. [3]
+
+- The tool response boundary is complete_tool_response. [3]
+
 
 
 - The response model is registered in the public tool registry. [4]

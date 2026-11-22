@@ -3,12 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "382c018cfe6df5236fc6be5c1b7e3491fc676dc4",
+        "blob": "3022187a38dc58a3123140b6c6d330e4912d81d3",
         "content": "sha256:4b31f829a9e66f99017480733838b5c33a01705b4151d94b4e20a9beb8c8fe34",
         "locator": {
-          "end": 613,
+          "end": 610,
           "kind": "line_range",
-          "start": 517
+          "start": 514
         }
       },
       "facet": "Missing-only, stale-only, census-only and mixed cases assert projected entries and repair order; the missing-only case also asserts blockingCount=1.",
@@ -18,17 +18,34 @@
         "handoffEntry": "L110-C-status",
         "leaf": "260928-MIK-L110"
       }
+    },
+    {
+      "anchor": {
+        "blob": "3022187a38dc58a3123140b6c6d330e4912d81d3",
+        "content": "sha256:ff6705cb52ec35d48b634a90dcd7c40177f19d4a1fb4d6c4bea9e04e32ef4138",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sync_failure_derives_the_largest_case"
+        }
+      },
+      "facet": "The bounded quality row is measured with an owned temporary root and the real emitted answer.",
+      "id": "PRF-V4FXQQ",
+      "invariant": "INV-G6KRTM",
+      "origin": {
+        "handoffEntry": "BUG-R17@v1 rule 4",
+        "leaf": "261112-BUG-L17"
+      }
     }
   ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Source cases assert sync/start/poll row shapes and bounded blocking samples; converted missing-anchor sidecars seed the largest sync expectation.\n\nAnchor: `QualityProductionTests` `_write_missing_anchor_sidecars` `_write_converted_layout`",
+      "note": "Source cases assert sync, start and poll row shapes and bounded blocking samples. Converted missing-anchor sidecars seed the largest sync expectation.",
       "targets": [
         {
           "anchor": {
-            "blob": "382c018cfe6df5236fc6be5c1b7e3491fc676dc4",
-            "content": "sha256:f9c82ad39288cfde25fe9cd099b2c12a33c853f9c00aa782ed24a7ab2388fe04",
+            "blob": "3022187a38dc58a3123140b6c6d330e4912d81d3",
+            "content": "sha256:db2999372e55b2dafb4d75e1f4caf9f4601d1774f17e0ba8311116d8a70bb2c1",
             "locator": {
               "kind": "file"
             }
@@ -38,16 +55,33 @@
       ]
     },
     "2": {
-      "note": "Mounted sync and completed poll retain computed proof counts and the actual blocking count in bounded answers while full checks remain in the retained log.",
+      "note": "Mounted sync and completed poll retain computed proof counts and the actual blocking count in bounded answers. The retained full result carries the full checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "382c018cfe6df5236fc6be5c1b7e3491fc676dc4",
-            "content": "sha256:68e6c8137b3985a11ca978ad720c26f0dc47754f4392eb7cfca545c1bb1ad016",
+            "blob": "3022187a38dc58a3123140b6c6d330e4912d81d3",
+            "content": "sha256:9cee48391381bca3d9242526a2baa71c588c62d49242faf9a1f18dce221f0ca7",
             "locator": {
               "end": 249,
               "kind": "line_range",
               "start": 198
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real memory-quality checks use the shared fixed-width temporary root and owned XDG paths when deriving their answer cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3022187a38dc58a3123140b6c6d330e4912d81d3",
+            "content": "sha256:c54d7d3673b0fbe4b30565cae0537896ffaf1435588cb62844c54c5436b7457b",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 199
             }
           },
           "kind": "test"

@@ -95,11 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
             "locator": {
-              "kind": "symbol",
-              "name": "complete_tool_response"
+              "end": 527,
+              "kind": "line_range",
+              "start": 401
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -679,16 +680,16 @@
       ]
     },
     "47": {
-      "note": "Whole-result validation precedes supplied/default answer selection, logging and final guards.",
+      "note": "Whole-result validation precedes supplied or default answer selection, logging and final guards.",
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
             "locator": {
-              "end": 519,
+              "end": 527,
               "kind": "line_range",
-              "start": 396
+              "start": 401
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -696,12 +697,12 @@
         },
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:494a71b62eb84b08dd15ec42aa35fc27c2cff306155f2ed42311634661735234",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:a72b27663d30b56f783db77ec5e46261852a7659f8445aa7dbd520f8a6599aaf",
             "locator": {
-              "end": 312,
+              "end": 317,
               "kind": "line_range",
-              "start": 246
+              "start": 247
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -714,7 +715,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
             "locator": {
               "kind": "symbol",

@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_mcp_stdio_transport.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a7d265030c66bd9f274a452635e3fec5c3bc7d9d",
+        "content": "sha256:358fca457024b7a7f351f2e42d7f9011e507def3963d06ffb7fe628416bf8464",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_memory_carryover_plan_returns_over_stdio"
+        }
+      },
+      "facet": "The registered stdio carryover planning call returns ok, state would-carryover and counts containing exactly one auto-carry item.",
+      "id": "PRF-178PSW",
+      "invariant": "INV-WJ9ZD7",
+      "origin": {
+        "handoffEntry": "48c1c392-751b-4803-b74c-ff1d307b1e6d ruling 1",
+        "leaf": "261112-BUG-L17"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

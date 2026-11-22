@@ -51,7 +51,7 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Purpose
 
-The answer-shaping choke for every tool answer (MIK-R108 rules 1, 2, 4, 6): it strips the four envelope fields, caps lists recursively through retained items and builds the measured short form for over-bound answers, targeting 400 tokens while retaining the exact recorded-result location and ending cut hint. The per-tool contract table that states each answer's fields, uses, cases and bounds is authored in the test module `mcp/tests/test_tool_answer_table.py` (see that module's card); this module owns shaping, bounds and interim leaves.
+The answer-shaping choke for every tool answer (MIK-R108 rules 1, 2, 4, 6): it strips the four envelope fields and caps lists recursively through retained items in the ordinary projection. For over-bound answers it builds a measured short form targeting 400 tokens, with the exact recorded-result location when available and the ending cut hint. A fitting declared list selected from the validated whole result keeps every item. The per-tool contract table that states each answer's fields, uses, cases and bounds is authored in the test module `mcp/tests/test_tool_answer_table.py` (see that module's card); this module owns shaping, bounds and interim leaves.
 
 ## Code Commentary
 
@@ -63,8 +63,8 @@ SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_e
 
 - Bounds and table: `TOOL_ANSWER_MAX_TOKENS = 1500`, exceptions to at most 4000, list cap 20, short-form target 400, with the exact recorded location and final cut hint retained when mandatory content cannot fit, error cut 600 chars, code max 120 chars. `TOOL_ANSWER_EXCEPTIONS` holds per-tool bounds; interim rows (bound 4000, no fields) name the leaves in `INTERIM_LEAVES` (L100, L110, L111, L112, L183). `bound_for` resolves a tool's own bound; `interim_leaf_for` names the owning leaf.
 - `strip_envelope` removes exactly the envelope fields (`tokens`, `tokenizer`, `tokenCountExact`, `operation`) on all paths through the choke.
-- `truncate_lists` applies the twenty-entry cap recursively through retained list items as well as mappings, preserving order, count and location.
-- `short_form` builds the fixed part, retains an exact recorded location, fits error text and short scalars, then measures the form with its final `cut` hint and `droppedFields`. Scalars and error text make room for the hint; the location and hint remain when mandatory content cannot fit the 400-token target. With no recorded whole-result file, the hint says so and gives the logging reason.
+- `truncate_lists` applies the ordinary projection's twenty-entry cap recursively through retained list items and mappings, preserving order, count and location.
+- `short_form` builds the fixed part, reserves the exact recorded location and measures whole declared fields or their fitting omission notices before error text and short scalars. Fitting declared outcomes and actions appear ahead of the available locator in the delivered mapping. Each fitting whole value or omission notice reserves its space before the fitter tries the next field. The final measure includes `droppedFields` and the last-field `cut` hint. Scalars and error text make room for the hint; the location and hint remain when mandatory content cannot fit the 400-token target. With no recorded whole-result file, the hint says so and gives the logging reason.
 - `is_valid_tool_code` admits ASCII identifiers of at most 120 chars; a malformed code is a producer defect surfaced as `invalid-code`, never passed on.
 - The rule-6 contract table is authored in the test module `mcp/tests/test_tool_answer_table.py`: `ToolAnswerRow` holds a row's fields, uses, cases, bound and interim leaf, and `validate_row_case` fails missing rows, extra fields, unused fields, over-bound cases and bounds over twice the largest case (see that module's card).
 
@@ -80,7 +80,7 @@ SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_e
 - The twenty-entry cap recurses through retained list items and mappings. [2]
 
 
-- The short form measures its fixed part, exact recorded location, cut error, scalars and final cut hint against the 400-token target; mandatory location and hint content can remain above it. [3]
+- The short form reserves the exact locator and final hint. It fits declared whole values or omission notices before error text and scalars, then delivers fitting outcomes and actions before the locator. The required location and hint remain when they exceed the bound. [3]
 
 
 

@@ -1192,7 +1192,8 @@
       "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/mcp/tools/knowledge.py": [
-      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/memory/baseline.py": [
       "knowledge/dependents/DPD-10YCT2-docs-tool-details-md.json",
@@ -1411,6 +1412,9 @@
       "knowledge/dependents/DPD-EG5TYT-docs-features-md.json",
       "knowledge/dependents/DPD-EJ2Y7Z-docs-reference-resolver-c08-md.json",
       "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/models/tools/tool_answer_short_fields.py": [
       "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/observer/acp_providers.py": [

@@ -16,7 +16,11 @@ The compatibility cases exercise retired worker fields and nested preparation co
 
 The evidence lifecycle catalog owns the permanent fixture contracts. The registered control cases in `test_lifecycle_operation_public_boundary.py` verify the public result type and exact next-call arguments.
 
+The shared observation witness supplies retired closeout and integration records whose historical contract path is missing. Their saved identity, status and phase remain visible, and they supply zero controls or recommendation. Only the direct-landing record calls Git mutation reconciliation.
+
 ## Evidence
 
 - The complete old closeout record exercises the current store and typed replacement guidance. [1]
 - The saved status includes both historical rows while direct recovery remains available and no running line is emitted for the old closeout. [2]
+
+- The shared observation witness supplies retired closeout and integration records whose historical contract path is missing. Their saved identity, status and phase remain visible, and they supply zero controls or recommendation. Only the direct-landing record calls Git mutation reconciliation. [3]

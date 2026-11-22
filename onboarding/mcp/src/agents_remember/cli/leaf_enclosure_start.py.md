@@ -10,26 +10,26 @@ Creates a missing leaf enclosure through a short-lived process of the same AR bu
 
 ## Code Commentary
 
-The dashboard cannot directly write tool-server-owned worktree stores. start_leaf_enclosure_in_child launches this build with the selected config and canonical task context; the child calls the existing worktree start route and returns bounded written/refused facts. Parent verifies reported roots/identity before using them and refuses noncompletion or disagreement.
+The dashboard cannot directly write tool-server-owned worktree stores. start_leaf_enclosure_in_child launches this build with the selected config and canonical task context; the child calls the existing worktree start route and returns bounded written/refused facts. The parent passes the expected roots and checks the child’s typed reply and exit. After success the caller rereads the addressed enclosure contract through status.
 
 ## Current Contract — Scoped Launch And Settings Changes
 
 The child enters tolerate_unreadable_review only around worktree_start_tool, after identity/config/root checks and together with stdout redirection. Context variables do not cross exec, so the launch-only diagnostic read must be re-established in this process.
 
-This is not a public worktree-reader relaxation or permission to erase broken review evidence. The fallback isolates invalid review lanes; other task identity remains strict and raw evidence survives serialization. Existing native recovery-field passthrough, bounded reply and parent root readback remain unchanged.
+This is not a public worktree-reader relaxation or permission to erase broken review evidence. The fallback isolates invalid review lanes; other task identity remains strict and raw evidence survives serialization. A root mismatch ends the child with a typed `leaf_enclosure_roots_differ` refusal before it enters the launch-only scope or starts a backend. The child’s 800-character JSON message keeps the no-start sentence and every differing root label. Path detail uses the remaining space, with the settings path last.
 
 ## Evidence
 
-- Root validation precedes the child-local diagnostic scope. [4]
+- Root validation and refusal precede the child-local diagnostic scope. [4]
 - Only review-lane validation failures can be isolated. [5]
 - Incidental publication retains raw broken evidence. [6]
 
 - Frozen implementation of start_leaf_enclosure_in_child supporting the stated file behavior. [1]
 
 
-- Frozen implementation of run supporting the stated file behavior. [2]
+- The private child budgets the typed no-start message for every differing label. [2]
 
-- Frozen implementation of _differing_roots supporting the stated file behavior. [3]
+- The child records a separate loaded and requested pair for each differing root. [3]
 
 ## MIK-R95 Native Recovery Passthrough
 

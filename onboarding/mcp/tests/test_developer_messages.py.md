@@ -55,6 +55,8 @@ answer, so a correct answer over a wrong file fails.
 - A refusal is named: an argument, reference, provenance or bound refusal happens before anything is filed, while an archived-recipient refusal is filed and kept as its `.undelivered.md` message file.
 - A held send is not lost: it is filed, and its eventual undelivered outcome is logged against its own message.
 
+The held-message test accounts for the actual file locator when asserting the exact retained excerpt. It requires the cut notice when text was cut and verifies the full body in the filed message.
+
 ## Evidence
 
 - Developer send composition, exact references, file-first recovery, held outcomes and bounded recipient and log routes. [1]
@@ -67,3 +69,5 @@ answer, so a correct answer over a wrong file fails.
 - The same contract over the bounded sent log. [8]
 
 - Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes — mcp/tests/test_developer_messages.py:1-13. [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
+
+- The held-message test accounts for the actual file locator when asserting the exact retained excerpt. It requires the cut notice when text was cut and verifies the full body in the filed message. [19]

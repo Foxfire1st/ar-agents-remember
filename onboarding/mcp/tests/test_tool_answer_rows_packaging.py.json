@@ -3,28 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A constructed forty-path population survives compaction with and without a supplied report path; the retained real carryover case derives plan only.",
+      "note": "A constructed forty-path population survives compaction with and without a supplied report path. The real carryover row derives its result from a plan.",
       "targets": [
         {
           "anchor": {
-            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
             "content": "sha256:ee3656b577ac3b41f1bfc9af88c88d654b4a5568766fa73131696d0ac9dd58bb",
             "locator": {
-              "end": 354,
+              "end": 316,
               "kind": "line_range",
-              "start": 338
+              "start": 300
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
-            "content": "sha256:59cd6b62d402c8d0a88da76d79f66c0977bdf91669cf82335d1fac075af29560",
+            "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
+            "content": "sha256:4f957a8eff636cfb62bdff3aa406edeef61e1118ffecfac3f9db21e7cc72fcec",
             "locator": {
-              "end": 354,
+              "end": 316,
               "kind": "line_range",
-              "start": 318
+              "start": 280
             }
           },
           "kind": "test"
@@ -36,7 +36,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
             "content": "sha256:162da5204e2b02dabbc9644da169776902466e0ccf2f775570cf33794fdb6fbf",
             "locator": {
               "kind": "symbol",
@@ -48,15 +48,16 @@
       ]
     },
     "3": {
-      "note": "Actual validator results derive integrity answer cases. Anchor: `IntegrityProductionTests`",
+      "note": "Actual validator results derive the reported and refused integrity answer cases.",
       "targets": [
         {
           "anchor": {
-            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
-            "content": "sha256:ab470390f4f89273305115fbbd2088afa5d33706c9f24973f1a8c065481e237a",
+            "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
+            "content": "sha256:9b2b057c28178dcd12876750465d3e1f5d1a492a1e2ace8c76bab9d413e4b42a",
             "locator": {
-              "kind": "symbol",
-              "name": "IntegrityProductionTests"
+              "end": 360,
+              "kind": "line_range",
+              "start": 319
             }
           },
           "kind": "test"
@@ -64,50 +65,68 @@
       ]
     },
     "4": {
-      "note": "Real coherence responses use a uniquely owned fixture whose actual encoded root has a 160-byte minimum; XDG and finally cleanup remain, with unchanged emitted responses, 850 bound and density floor.",
+      "note": "The coherence case requests a real 160-byte root from the shared helper and tests emitted responses against its 850-token bound and density floor.",
       "targets": [
         {
           "anchor": {
-            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
-            "content": "sha256:11ed838af0dfc9e8ba01b06a7861dea7cbaf84fb95f5cfa7270070284daf4ee6",
+            "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
+            "content": "sha256:b88f6cf3d8d559ff277f36eccd57dfa60a90296c15171510d58793a53218f69b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_coherence_paths_derive_the_row_cases"
+              "end": 436,
+              "kind": "line_range",
+              "start": 363
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b65810c081b954dd3a798998188d053274ab4360",
+            "content": "sha256:9a92d98284235ba227f8bc6d3897f48105dd50f94120080884e3e092449b8c9a",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/tool_answer_fixtures.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "Fixture width is authored and the owned root is cleaned at context exit.",
+      "note": "The shared helper controls fixture width and removes the temporary root on exit.",
       "targets": [
         {
           "anchor": {
-            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
-            "content": "sha256:85d3929540360c8bf7aba91b8a47a8a658e909a4fb87d313701e52279211e515",
+            "blob": "b65810c081b954dd3a798998188d053274ab4360",
+            "content": "sha256:111a991f2173d397b654a14261509dd78bd32d8a80bda720f2a9e09762f40aeb",
             "locator": {
-              "kind": "symbol",
-              "name": "_fixed_width_case_root"
-            }
+              "end": 25,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/tool_answer_fixtures.py"
           },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Embedded XDG roots share that fixture and restore through patch.dict.",
+      "note": "The shared helper directs XDG configuration, data and cache into the fixture and restores the environment on exit.",
       "targets": [
         {
           "anchor": {
-            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
-            "content": "sha256:bb3972e97bdaafef025ac35956cc99aa9ae002488e9f022563945af413a3648c",
+            "blob": "b65810c081b954dd3a798998188d053274ab4360",
+            "content": "sha256:8d9d08fb8cb2f9a9f1635f5abb9c68026e8ee9567b74df6192a0fa9413c17206",
             "locator": {
-              "kind": "symbol",
-              "name": "_case_xdg"
-            }
+              "end": 37,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/tool_answer_fixtures.py"
           },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     },
@@ -116,12 +135,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
             "content": "sha256:ac72a16b665675f225524aa477bbb79a5a41543e4ad14a9a01f32906e1bbdc4a",
             "locator": {
-              "end": 68,
+              "end": 64,
               "kind": "line_range",
-              "start": 68
+              "start": 64
             }
           },
           "kind": "test"
@@ -129,7 +148,7 @@
       ]
     },
     "8": {
-      "note": "The actual fixture builder composes its review world and owned topology; packaging's coherence case exercises real service actions over forty constructed candidates without changing guard assertions.",
+      "note": "The fixture builder composes a review world and its owned topology. The coherence case exercises real actions over forty constructed candidates and measures the emitted answers.",
       "targets": [
         {
           "anchor": {
@@ -146,12 +165,12 @@
         },
         {
           "anchor": {
-            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
-            "content": "sha256:66daf1f61e34ef86d10e6ca6db6c74a01c467106714deb3ddd75e27434a88fc3",
+            "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
+            "content": "sha256:94bc31cb7c66828818b280f25e9d9f8d8f1df8df43efe891a276b0b2481423ba",
             "locator": {
-              "end": 483,
+              "end": 436,
               "kind": "line_range",
-              "start": 403
+              "start": 365
             }
           },
           "kind": "test"
@@ -159,16 +178,65 @@
       ]
     },
     "9": {
-      "note": "`_fixed_width_case_root` uses the literal /tmp parent for its unique constant-width fixture roots. The separate coherence fixture continues to use tempfile.gettempdir(). Raw emitted responses, existing bounds and density floors remain the assertion inputs; paths are not rewritten to fit. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "Initialization, carryover, integrity and coherence use the shared helper’s uniquely owned /tmp roots. The emitted responses stay subject to the existing row bounds and density floors.",
       "targets": [
         {
           "anchor": {
-            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
-            "content": "sha256:515d8fb88513db21608d2d3156b355793c73bcb9b57c8f85ec05e347b7a08d17",
+            "blob": "b65810c081b954dd3a798998188d053274ab4360",
+            "content": "sha256:9a92d98284235ba227f8bc6d3897f48105dd50f94120080884e3e092449b8c9a",
             "locator": {
-              "end": 96,
+              "end": 37,
               "kind": "line_range",
-              "start": 90
+              "start": 15
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/tool_answer_fixtures.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
+            "content": "sha256:ef8e66298f1447304aebfe1c1a880847b237c7694659caad17d5c996049bdcc1",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
+            "content": "sha256:994828e6b5cba0519d2d0dacf4adf985a75cc482e233ef9c4b87ca257f5dcfba",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 280
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
+            "content": "sha256:9b2b057c28178dcd12876750465d3e1f5d1a492a1e2ace8c76bab9d413e4b42a",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 319
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ab849ae2fa1f537ec1e3e20e595d75708fa1a262",
+            "content": "sha256:94bc31cb7c66828818b280f25e9d9f8d8f1df8df43efe891a276b0b2481423ba",
+            "locator": {
+              "end": 436,
+              "kind": "line_range",
+              "start": 365
             }
           },
           "kind": "test"
