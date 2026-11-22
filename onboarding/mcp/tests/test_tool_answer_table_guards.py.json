@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
         "content": "sha256:2505e3288918d52310e2ebce75ac7047d1174261ac751084ccd2281d03768d59",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
-        "content": "sha256:44b6a0774d20dc2d29d32f5f010166de2a8a6a0659aa63e3081b1e5b95ca5ed3",
+        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "content": "sha256:6e229ec25845c182a91164a420d5e2af3cedaef325edf411338c336ac35bf363",
         "locator": {
           "kind": "symbol",
           "name": "ToolAnswerGuardTests.test_short_form_is_measured_six_hundred_multi_token_char_error"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
         "content": "sha256:9d4cd35afa708b7815a0297a614fafd90c70fda8ed9b015dac0aa846c8b8251d",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
         "content": "sha256:045dbe0d371b0bf690380e33826bf6495281226e8692ed7ad1db26dc642e2f8b",
         "locator": {
           "kind": "symbol",
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
-        "content": "sha256:a01fe1da402cacc5a1eefdb2520fbe36a1a8b58493ee10b42e884e7f513fe958",
+        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "content": "sha256:60f182440ed47401a9b84e23a1f57890cbef62a03c10afd55235025e8d76c0f7",
         "locator": {
           "kind": "symbol",
           "name": "ToolAnswerGuardTests.test_short_form_is_measured_fifty_thousand_char_error"
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
-        "content": "sha256:7fc3055cec865cd15a4eebbb09ddcf09c0e039a84397c803fa0f0a862b53e514",
+        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "content": "sha256:1d0cf850f6ec871bc220463883fc4135837833f8000904eaedf43c43c9964ff8",
         "locator": {
           "kind": "symbol",
           "name": "ToolAnswerGuardTests.test_short_form_fixed_part_and_location_fit_with_longest_code"
@@ -105,7 +105,24 @@
     },
     {
       "anchor": {
-        "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "content": "sha256:43b7bfbc194dec81b846cc41f366f13b9d271e834e95e6f67cfa6d85dfde1ce4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_declared_outcome_and_action_precede_the_locator"
+        }
+      },
+      "facet": "Completion and text compaction preserve fitting carryover outcomes and next actions before the locator.",
+      "id": "PRF-M9AZ43",
+      "invariant": "INV-WJ9ZD7",
+      "origin": {
+        "handoffEntry": "48c1c392-751b-4803-b74c-ff1d307b1e6d ruling 1",
+        "leaf": "261112-BUG-L17"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
         "content": "sha256:cc5a344f405c871aa9e41e12ee4f32a049a2f80d7ab9438a204354d82c752887",
         "locator": {
           "kind": "symbol",
@@ -119,21 +136,38 @@
         "handoffEntry": "CUR-W8-INV-SYBT3F",
         "leaf": "261112-BUG-L3"
       }
+    },
+    {
+      "anchor": {
+        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "content": "sha256:189c5304d23232bc61adafda41caca2eb80be286a1c38c9a2bab3741e0320e25",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_higher_priority_omission_keeps_its_space"
+        }
+      },
+      "facet": "A higher-priority named omission remains when a later bases value competes for the same budget.",
+      "id": "PRF-YCG8QC",
+      "invariant": "INV-WJ9ZD7",
+      "origin": {
+        "handoffEntry": "48c1c392-751b-4803-b74c-ff1d307b1e6d ruling 1",
+        "leaf": "261112-BUG-L17"
+      }
     }
   ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "An answer under its bound passes unchanged and one over it gets the short form with its code and error.",
+      "note": "The small fixture measures below its bound. The over-bound fixture uses the measured short form. The refusal case preserves its code and error.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
-            "content": "sha256:4e4bda5143575046b81e120e335ca8fe02a1f8c41ad57112000b15fac6133d23",
+            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "content": "sha256:893a4703b6b8e49bb45cfc1d2ef35f88622c6b80f7edc5773c604be7197f2eef",
             "locator": {
-              "end": 77,
+              "end": 170,
               "kind": "line_range",
-              "start": 64
+              "start": 128
             }
           },
           "kind": "test"
@@ -145,24 +179,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
-            "content": "sha256:110a297c05907e7193a8ee8b1728d1913e289f9906cec13401d4f6c7cd254a98",
+            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "content": "sha256:684365e317018704897be7d6c60c2006fb5dd5ce68c4ba854e8bfcc6d772ec93",
             "locator": {
-              "end": 163,
+              "end": 258,
               "kind": "line_range",
-              "start": 145
+              "start": 240
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
             "content": "sha256:cc5a344f405c871aa9e41e12ee4f32a049a2f80d7ab9438a204354d82c752887",
             "locator": {
-              "end": 366,
+              "end": 491,
               "kind": "line_range",
-              "start": 331
+              "start": 456
             }
           },
           "kind": "test"
@@ -174,12 +208,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec897cf1a177ace3bd9cf9fbec3dbe5bf934ec75",
+            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
             "content": "sha256:dbe902e394a10fa889c8b4a21ee4078df166ebe964de5f29fd450796289e567c",
             "locator": {
-              "end": 406,
+              "end": 531,
               "kind": "line_range",
-              "start": 390
+              "start": 515
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Production completion and the text compactor preserve the carryover outcome and action order. The integrity fitter keeps the higher-priority `validation.candidate` omission and leaves out the later `bases` value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "content": "sha256:43b7bfbc194dec81b846cc41f366f13b9d271e834e95e6f67cfa6d85dfde1ce4",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "content": "sha256:189c5304d23232bc61adafda41caca2eb80be286a1c38c9a2bab3741e0320e25",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 79
             }
           },
           "kind": "test"

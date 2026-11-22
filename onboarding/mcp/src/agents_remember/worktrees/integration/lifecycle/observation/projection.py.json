@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "af2a050ea88bd4e30d99d8ed3042e36b8dff37ca",
+        "content": "sha256:a916c1235ea97dd41de9d8bc05e2effba6dc4630879aa3cfef926c3791f75a5b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_project_observed_record"
+        }
+      },
+      "id": "RLZ-JP2R0A",
+      "invariant": "INV-5NY9HT",
+      "origin": {
+        "handoffEntry": "48c1c392-751b-4803-b74c-ff1d307b1e6d ruling 3",
+        "leaf": "261112-BUG-L17"
+      },
+      "rationale": "Keeps retired journal paths out of live mutation evidence while preserving direct-landing reconciliation.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "Single/latest/all readers project retained journals and keep task status from hiding siblings.",
       "targets": [
         {
           "anchor": {
-            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
+            "blob": "af2a050ea88bd4e30d99d8ed3042e36b8dff37ca",
             "content": "sha256:85a92bec4137ee2388e266bb097af9919c48fbd734b8197e063768a9b94f784d",
             "locator": {
               "kind": "symbol",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
+            "blob": "af2a050ea88bd4e30d99d8ed3042e36b8dff37ca",
             "content": "sha256:d907c9484a2ead65f2153d7b0e7a9f61bcae09803ca16cbcb03b5ed56898beb6",
             "locator": {
               "kind": "symbol",
@@ -29,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
+            "blob": "af2a050ea88bd4e30d99d8ed3042e36b8dff37ca",
             "content": "sha256:60c6dddd52bd951e86ede2813c8903e9b5b0b9d42274d9dfb7c19567ea70c155",
             "locator": {
               "kind": "symbol",
@@ -45,7 +64,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
+            "blob": "af2a050ea88bd4e30d99d8ed3042e36b8dff37ca",
             "content": "sha256:f351558ee64a1b33dd8e699b1bf80bf0a377bddaa9bd659cc175526f59acd8e6",
             "locator": {
               "kind": "symbol",
@@ -57,14 +76,14 @@
       ]
     },
     "3": {
-      "note": "The read-side projection tests the observed mutation state before exposing it to the caller.",
+      "note": "Only direct-landing observation compares live mutation evidence. Historical records keep their saved fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
-            "content": "sha256:a84aa1b8ce9ff506b78c5869fe6ef4d06b594039d5f9c463ed3e97647a09f1ec",
+            "blob": "af2a050ea88bd4e30d99d8ed3042e36b8dff37ca",
+            "content": "sha256:a916c1235ea97dd41de9d8bc05e2effba6dc4630879aa3cfef926c3791f75a5b",
             "locator": {
-              "end": 266,
+              "end": 245,
               "kind": "line_range",
               "start": 223
             }
@@ -73,12 +92,12 @@
         },
         {
           "anchor": {
-            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
+            "blob": "af2a050ea88bd4e30d99d8ed3042e36b8dff37ca",
             "content": "sha256:c8a686abfed071d9773d3dba0fdbcdd2149fd24384e6c1c95ffbd81c4440f386",
             "locator": {
-              "end": 265,
+              "end": 266,
               "kind": "line_range",
-              "start": 256
+              "start": 257
             }
           },
           "kind": "code"
@@ -90,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8961ded5e471c4eb5f998c2a0ae3308b9a507496",
+            "blob": "af2a050ea88bd4e30d99d8ed3042e36b8dff37ca",
             "content": "sha256:c4bb6e46bfde1c7204df5506a82ca67ffe77a04b9c25f656ea212e0dac78fc9c",
             "locator": {
               "kind": "symbol",

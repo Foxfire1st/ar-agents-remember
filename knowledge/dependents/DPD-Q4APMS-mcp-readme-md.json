@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
-    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
+    "codeTree": "c375805a33bdec85009bc25985d34e5748398a86",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "The package tool groups and MCP reference pointer still apply. The new status and closeout wording leaves the named inventory intact.",
-    "task": "261112-BUG-L15",
+    "statement": "The MCP package guide still names the registered tool groups and directs readers to the reference, whose revised Tool answers text preserves those sections and tool names.",
+    "task": "261112-BUG-L17",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "66ea693a8c853e7db7339de87bdb1e9e8b96968f",
+      "blob": "790ac3f803478ff3e76f642052011bd93a276d21",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

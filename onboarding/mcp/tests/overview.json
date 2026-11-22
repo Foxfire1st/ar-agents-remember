@@ -5107,7 +5107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
             "content": "sha256:aa57ce46172e4630300c11ac75cbeba5c3178af04566d77fb3c9b2b06257cd93",
             "locator": {
               "end": 1,
@@ -8128,14 +8128,16 @@
       ]
     },
     "1792": {
-      "note": "Developer-send and seat-list cases use actual in-process owners with a fake native host; separate sent-log and cross-site cases protect bounded storage and the pre-route guard.\n\nAnchor: `DeveloperSendTests` `SeatListTests` `SentLogBoundTests` `TrayRouteGuardTests`",
+      "note": "Developer-send and seat-list cases use in-process owners with a fake native host. Separate sent-log and cross-site cases cover bounded storage and the pre-route guard.",
       "targets": [
         {
           "anchor": {
-            "blob": "8dc3c5d35fe849586f5682f8c3e48cf2490019fb",
-            "content": "sha256:c2fb0973ab9929e5b7ad5bb20881fc7fd29a7754ae94ee8b03fa108af82da019",
+            "blob": "f89002d456881fd81028f5a80d223f48be52aaed",
+            "content": "sha256:a9a9da5678b4104f394f58207e52100648b56ebc6721ecba87723d442667177b",
             "locator": {
-              "kind": "file"
+              "end": 1086,
+              "kind": "line_range",
+              "start": 192
             },
             "path": "mcp/tests/test_developer_messages.py"
           },
@@ -8143,23 +8145,12 @@
         },
         {
           "anchor": {
-            "blob": "8dc3c5d35fe849586f5682f8c3e48cf2490019fb",
-            "content": "sha256:24bc118ffb4575aeca6a78bd2ec3619c45e2171cfa4225d634c62c4f39c850d2",
-            "locator": {
-              "kind": "symbol",
-              "name": "DeveloperSendTests"
-            },
-            "path": "mcp/tests/test_developer_messages.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8dc3c5d35fe849586f5682f8c3e48cf2490019fb",
+            "blob": "f89002d456881fd81028f5a80d223f48be52aaed",
             "content": "sha256:5b9f923960155fa98ecb5b88e73150218d9572b68c409f172bc20bf55b2139c0",
             "locator": {
-              "kind": "symbol",
-              "name": "SeatListTests"
+              "end": 1180,
+              "kind": "line_range",
+              "start": 1089
             },
             "path": "mcp/tests/test_developer_messages.py"
           },
@@ -8167,11 +8158,12 @@
         },
         {
           "anchor": {
-            "blob": "8dc3c5d35fe849586f5682f8c3e48cf2490019fb",
+            "blob": "f89002d456881fd81028f5a80d223f48be52aaed",
             "content": "sha256:9bc4256160e15bb4d66f467fc9ee66aa7d98bac1d6a91bece6d96477a98d47a9",
             "locator": {
-              "kind": "symbol",
-              "name": "SentLogBoundTests"
+              "end": 1206,
+              "kind": "line_range",
+              "start": 1183
             },
             "path": "mcp/tests/test_developer_messages.py"
           },
@@ -8179,11 +8171,23 @@
         },
         {
           "anchor": {
-            "blob": "8dc3c5d35fe849586f5682f8c3e48cf2490019fb",
+            "blob": "f89002d456881fd81028f5a80d223f48be52aaed",
             "content": "sha256:55ba41598ce0aa37168a50219ca52c40372d88112e6495b332d0e80c6f5c6cd3",
             "locator": {
-              "kind": "symbol",
-              "name": "TrayRouteGuardTests"
+              "end": 1238,
+              "kind": "line_range",
+              "start": 1209
+            },
+            "path": "mcp/tests/test_developer_messages.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f89002d456881fd81028f5a80d223f48be52aaed",
+            "content": "sha256:244428e11ae1062222f4b1da11b21944326576caa01f317051408572397806eb",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_developer_messages.py"
           },

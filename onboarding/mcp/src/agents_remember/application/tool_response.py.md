@@ -43,7 +43,7 @@ event had been written even when the write is counted as dropped.
 
 `complete_tool_response` finalizes through the answer choke (`models/tools/tool_answer`): the
 envelope count fields are stripped, over-bound answers leave as the measured short form, and the
-whole result is filed beside the daily log when detail recording succeeds. `_write_delivered_line` re-runs the guard after every
+whole result is filed beside the daily log when detail recording succeeds. The guard uses the tool name and outcome to select approved typed fields from the validated whole result when cutting an over-bound answer. `_write_delivered_line` re-runs the guard after every
 late line failure and keeps the 400-token short-form target once the answer is cut, retaining the exact recorded-result location and final cut hint when mandatory content cannot fit; the observer and the log
 line count the delivered answer, and `_canonical_json` is the canonical form used for whole-result
 byte accounting. After attaching a late `logError` and refitting waited reply text, the writer moves an existing `cut` field to the end before re-guarding; a retained mapping keeps that order, and a rebuilt short form appends its hint last.
@@ -64,7 +64,7 @@ None.
 
 
 
-- Whole-result validation/logging and explicit or default tool-specific projected-answer guarding remain distinct. [4]
+- The answer guard measures the delivered answer and uses the validated whole result to supply declared overflow fields. [4]
 
 
 
@@ -76,7 +76,9 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 
 
-- The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner; the late writer restores an existing cut hint to the final position before re-guarding. [3]
+
+- Completion validates the whole result, selects the answer, retains available caller diff reports, measures delivery and emits one event. The guard uses the tool name and validated whole result to select declared fields. The late writer restores an existing cut hint to the last position before re-guarding. [3]
+
 
 
 
@@ -86,4 +88,5 @@ This module defines the top-level symbols cited below; each row points at the ex
 - A `server-build-stale` refusal keeps its stripped whole result, without a tool projection or list cap. [6]
 
 
-- Whichever answer is shaped, the finalized `buildCurrentness` is copied onto it. [7]
+
+- Whichever answer is shaped, the finalized buildCurrentness is copied onto it. [7]

@@ -1,6 +1,24 @@
 {
   "path": "mcp/tests/test_record_integrity.py",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
+        "content": "sha256:ce1d1f25d95b38b1a29378771a52256955fa4b64dcd732b498de8fa0ff87644a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_owned_worktree_fixture_matches_both_leaf_id_forms"
+        }
+      },
+      "facet": "The comparison fixture exercises owned ancestor, keyed IDs and decoys through direct and aggregate reporting.",
+      "id": "PRF-6PMG83",
+      "invariant": "INV-G6KRTM",
+      "origin": {
+        "handoffEntry": "BUG-R17@v1 rule 4",
+        "leaf": "261112-BUG-L17"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -8,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:551c1b74c4d5e0d593468ff72af21696605b84bd729000a80005c2388247affb",
             "locator": {
               "end": 51,
@@ -20,7 +38,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:5d7b279edbefa94554f42722c337d36e0b7d0cd0c0da1d56a0ce4ec116020db2",
             "locator": {
               "end": 274,
@@ -32,7 +50,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:55e123b2fb38fc7c524be2dfa88eceab4fdde5777c8ebe29a4789c53bd0f3537",
             "locator": {
               "end": 373,
@@ -49,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:a9110bfaa2eb9756ab9fb5c17b328cf52342b6e87957215d9bea9133e8c2b921",
             "locator": {
               "kind": "symbol",
@@ -60,7 +78,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:56a6afe457185989367550c2d4bf81ef35e28fe27ec7b35025e7e92a348baa21",
             "locator": {
               "kind": "symbol",
@@ -71,7 +89,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:f5fff46b4b33a5f8f0e82b78e174594be639b96db0a92dea2c5cfad09fd07548",
             "locator": {
               "kind": "symbol",
@@ -82,7 +100,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:55abf1ef0552ae7008bbb9e530ddd2952d740d9349deaad2695b5f5c152e9c21",
             "locator": {
               "kind": "symbol",
@@ -98,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:641cfc92557b492045d846241eed2825436d45c4c6e6c17b629aa035a575ce73",
             "locator": {
               "kind": "symbol",
@@ -114,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:34c4882b31c0b4e3fac1b04b2d794781c1dd43c247a300c865b7e600fc6050ea",
             "locator": {
               "kind": "symbol",
@@ -130,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:d2bc5fd0868bbec90f0906f0227e317e71aadd946faddf3552dcc8a5822aa49b",
             "locator": {
               "kind": "symbol",
@@ -146,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:2086e60cc4b54b6aafe61b3f14827fb26424fc486bb041d81839fb528d8b02bc",
             "locator": {
               "end": 141,
@@ -158,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:94631141dbfe03ccea0023dda6fa7da74e499aa04a2bf999183654cc931a5329",
             "locator": {
               "end": 757,
@@ -171,15 +189,16 @@
       ]
     },
     "15": {
-      "note": "The report tests check comparison detail and population output from the two default comparisons. Both task-root CLI cases assert identical recursive relative path inventories before and after the call.",
+      "note": "The record-integrity report cases cover direct comparison, aggregate results, and CLI, with an owned task-root placement and nested decoys.",
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
-            "content": "sha256:412c655412ac028af85c9c757852b34234de2178838a33ba007bf12b8b078a3e",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
+            "content": "sha256:7a12e377bc36e0f62bb6d93d46c95c95345287cd72de37225027f91a83fab5e9",
             "locator": {
-              "kind": "symbol",
-              "name": "RecordIntegrityReportTests"
+              "end": 1188,
+              "kind": "line_range",
+              "start": 1019
             }
           },
           "kind": "test"
@@ -191,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "blob": "27ef5773a2dfaf104a95a4c3640adfad1fbece52",
             "content": "sha256:1463b8360e77379f811e8bb3f039fedb2033d7a23503372f85e393d0abe6d63a",
             "locator": {
               "kind": "symbol",
@@ -203,7 +222,7 @@
         },
         {
           "anchor": {
-            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "blob": "27ef5773a2dfaf104a95a4c3640adfad1fbece52",
             "content": "sha256:ef79bb2eceb96012c14ee615cd6ac67b794716b6ee86c3dee52f13478b74aa86",
             "locator": {
               "kind": "symbol",
@@ -215,7 +234,7 @@
         },
         {
           "anchor": {
-            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "blob": "27ef5773a2dfaf104a95a4c3640adfad1fbece52",
             "content": "sha256:a52a38623b894d9650526cd19233443389e0caaa79748de0a30588b75c024ead",
             "locator": {
               "kind": "symbol",
@@ -227,7 +246,7 @@
         },
         {
           "anchor": {
-            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "blob": "27ef5773a2dfaf104a95a4c3640adfad1fbece52",
             "content": "sha256:2e25431d4a0cd8791d8b182f61b09d70ca16bd0486aba94567125429479a560e",
             "locator": {
               "kind": "symbol",
@@ -257,12 +276,29 @@
         }
       ]
     },
+    "18": {
+      "note": "The negative Git case sets a discovery ceiling inside the owned temporary scope. The canonical-document case constructs an outer worktrees ancestor and nested decoys, exercises both leaf identifier forms, and checks the direct comparison, aggregate run and command-line report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
+            "content": "sha256:6313eb1f7a323c80d9322d97f38266ac806d72cb196b00983f4bd98bb732f334",
+            "locator": {
+              "end": 1062,
+              "kind": "line_range",
+              "start": 994
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The named master supplies a copied two-leaf agreement fixture and the separate frozen register comparison.",
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:73cf8f6a31ee31ada05963200b7cc38baa44ebf2428e6fbcb18026d82c5e16eb",
             "locator": {
               "end": 60,
@@ -274,7 +310,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:8891383741d4f699c2204f350cc9c78bade29bfe8e08ea680aa48c21566f1303",
             "locator": {
               "end": 162,
@@ -286,7 +322,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:e52ab41d3754ed2958b74b368526813f68341352b1c842088de79630cb34c8b6",
             "locator": {
               "end": 292,
@@ -298,7 +334,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:1f72cf697df7ac6e2c7e822d17a487e851fea3050b83af5494cb85cabb754088",
             "locator": {
               "end": 584,
@@ -315,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:344bae6142005a7bc7c13e5081ee59ce202aff714fe2e014c450d2d184bc33ed",
             "locator": {
               "kind": "symbol",
@@ -326,7 +362,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:b3b50cd69d4a897782bb1d5c6239234f1f8ac82a39a94d35d3fae792bcba4597",
             "locator": {
               "kind": "symbol",
@@ -342,7 +378,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:b0021337b7a562917f6bdac618ce9b21e414c765b70e917bc6c313de5c1cff0d",
             "locator": {
               "kind": "symbol",
@@ -353,7 +389,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:a520059c15c3f0d4b6b19016eead35cdfc5e7aaf1381c128e3c51529e0077efb",
             "locator": {
               "kind": "symbol",
@@ -364,7 +400,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:cd54310e7077c5fa9bfc84eb38c7486180f181cc540b841ed8a85cb1e96ab208",
             "locator": {
               "kind": "symbol",
@@ -380,7 +416,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:4375623d8ea0ceda92d3e77df64c71c32db23e6ab9909b14d97b325605acbbf1",
             "locator": {
               "kind": "symbol",
@@ -391,7 +427,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:e5fc41076d638dd4477ea6842d620c2b8e0d2c432fb11e9d3b4a4a76447a2fbb",
             "locator": {
               "kind": "symbol",
@@ -407,7 +443,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:e791ca4872ab777c57415a330c147b52e96d352bb9ae6d22d610cbb26b75136f",
             "locator": {
               "kind": "symbol",
@@ -423,7 +459,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:9ce26ecb0294c9ec5028387f31859e007e3c2f494a8a8094f53e641bacfd38c9",
             "locator": {
               "kind": "symbol",
@@ -434,7 +470,7 @@
         },
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:105e887036b7c70b1a78270521f657a0d74a0c742d6a45ffe9f08232f98a268b",
             "locator": {
               "kind": "symbol",
@@ -450,7 +486,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:2086e60cc4b54b6aafe61b3f14827fb26424fc486bb041d81839fb528d8b02bc",
             "locator": {
               "kind": "symbol",
@@ -466,7 +502,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
             "content": "sha256:8891383741d4f699c2204f350cc9c78bade29bfe8e08ea680aa48c21566f1303",
             "locator": {
               "kind": "symbol",

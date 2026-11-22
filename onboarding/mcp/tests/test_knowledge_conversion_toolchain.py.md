@@ -163,7 +163,9 @@ No cross-repo boundary is crossed by this file.
 - Static source checks cover the converted quality refusal and catalog drift item, the carried-versus-new anchor distinction, and the ten-entry delivery limit. Separate cases cover the content-only stale-reference advisory and the L46 conversion instructions. [17]
 
 
-- Separate implementation custody path: producer whole/result projection, finalized whole-result detail input, redaction, destination and size/budget/write controls; not a log-readback assertion in the conversion test. [18]
+
+- The test and implementation references cover producer results and their projections, detail inputs, log destination, redaction and write budgets. [18]
+
 
 
 - Its lane row. [6]

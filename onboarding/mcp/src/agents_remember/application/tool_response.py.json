@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+        "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
         "content": "sha256:d04084a5bcf1b121753a483b8921a788ca7e6f756975649856ea2ed0166483de",
         "locator": {
-          "end": 133,
+          "end": 135,
           "kind": "line_range",
-          "start": 131
+          "start": 133
         }
       },
       "id": "RLZ-7Q36YX",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-        "content": "sha256:494a71b62eb84b08dd15ec42aa35fc27c2cff306155f2ed42311634661735234",
+        "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+        "content": "sha256:a72b27663d30b56f783db77ec5e46261852a7659f8445aa7dbd520f8a6599aaf",
         "locator": {
           "kind": "symbol",
           "name": "_write_delivered_line"
@@ -40,12 +40,30 @@
     },
     {
       "anchor": {
-        "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+        "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+        "content": "sha256:13015208ecb71dd27ab5ae3b1ec7a31036113e83917f2a830dbfe9a4a9add148",
+        "locator": {
+          "kind": "symbol",
+          "name": "_apply_answer_guard"
+        }
+      },
+      "id": "RLZ-AMBJ5V",
+      "invariant": "INV-WJ9ZD7",
+      "origin": {
+        "handoffEntry": "48c1c392-751b-4803-b74c-ff1d307b1e6d ruling 1",
+        "leaf": "261112-BUG-L17"
+      },
+      "rationale": "Supplies the tool identity and validated whole result when measured delivery exceeds the row bound.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
         "content": "sha256:b27ca4ab4089993845d5de935955fe5056d01d567d12c9622b45c828bb0655a2",
         "locator": {
-          "end": 383,
+          "end": 388,
           "kind": "line_range",
-          "start": 382
+          "start": 387
         }
       },
       "id": "RLZ-H4QS36",
@@ -59,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-        "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+        "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+        "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
         "locator": {
-          "end": 519,
+          "end": 527,
           "kind": "line_range",
-          "start": 396
+          "start": 401
         }
       },
       "id": "RLZ-REZN43",
@@ -78,12 +96,12 @@
     },
     {
       "anchor": {
-        "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-        "content": "sha256:494a71b62eb84b08dd15ec42aa35fc27c2cff306155f2ed42311634661735234",
+        "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+        "content": "sha256:a72b27663d30b56f783db77ec5e46261852a7659f8445aa7dbd520f8a6599aaf",
         "locator": {
-          "end": 312,
+          "end": 317,
           "kind": "line_range",
-          "start": 246
+          "start": 247
         }
       },
       "id": "RLZ-Y18D7W",
@@ -97,8 +115,8 @@
     },
     {
       "anchor": {
-        "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-        "content": "sha256:494a71b62eb84b08dd15ec42aa35fc27c2cff306155f2ed42311634661735234",
+        "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+        "content": "sha256:a72b27663d30b56f783db77ec5e46261852a7659f8445aa7dbd520f8a6599aaf",
         "locator": {
           "kind": "symbol",
           "name": "_write_delivered_line"
@@ -120,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:60e27a120bfb8dc9f33714fb08d00eefa653f16db19cf2acb29230f633cf6a6c",
             "locator": {
               "kind": "symbol",
@@ -132,28 +150,40 @@
       ]
     },
     "3": {
-      "note": "The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner; the late writer restores an existing cut hint to the final position before re-guarding.",
+      "note": "Completion validates the whole result, selects the answer, retains available caller diff reports, measures delivery and emits one event. The guard uses the tool name and validated whole result to select declared fields. The late writer restores an existing cut hint to the last position before re-guarding.",
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
             "locator": {
-              "end": 519,
+              "end": 527,
               "kind": "line_range",
-              "start": 396
+              "start": 401
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:494a71b62eb84b08dd15ec42aa35fc27c2cff306155f2ed42311634661735234",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:a72b27663d30b56f783db77ec5e46261852a7659f8445aa7dbd520f8a6599aaf",
             "locator": {
-              "end": 312,
+              "end": 317,
               "kind": "line_range",
-              "start": 246
+              "start": 247
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:13015208ecb71dd27ab5ae3b1ec7a31036113e83917f2a830dbfe9a4a9add148",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 204
             }
           },
           "kind": "code"
@@ -161,28 +191,15 @@
       ]
     },
     "4": {
-      "note": "Whole-result validation/logging and explicit or default tool-specific projected-answer guarding remain distinct.",
+      "note": "The answer guard measures the delivered answer and uses the validated whole result to supply declared overflow fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:bf895a7868d9b4e1a21a419b242360e1159533d5437b36380fbea589b819b6d5",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:13015208ecb71dd27ab5ae3b1ec7a31036113e83917f2a830dbfe9a4a9add148",
             "locator": {
-              "end": 393,
-              "kind": "line_range",
-              "start": 373
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:bcdb8318aaf387e424308817ffe27d5f44058df1066778997ca96d4e45d56a1d",
-            "locator": {
-              "end": 442,
-              "kind": "line_range",
-              "start": 427
+              "kind": "symbol",
+              "name": "_apply_answer_guard"
             }
           },
           "kind": "code"
@@ -194,12 +211,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:31d7d911b48f84f5f7e06c94f42e1c39f9b55cf8565323fb4fac3725db07ec7e",
             "locator": {
-              "end": 133,
+              "end": 135,
               "kind": "line_range",
-              "start": 130
+              "start": 132
             }
           },
           "kind": "code"
@@ -211,12 +228,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:b27ca4ab4089993845d5de935955fe5056d01d567d12c9622b45c828bb0655a2",
             "locator": {
-              "end": 383,
+              "end": 388,
               "kind": "line_range",
-              "start": 382
+              "start": 387
             }
           },
           "kind": "code"
@@ -224,15 +241,16 @@
       ]
     },
     "7": {
-      "note": "Whichever answer is shaped, the finalized `buildCurrentness` is copied onto it.",
+      "note": "Whichever answer is shaped, the finalized buildCurrentness is copied onto it.",
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
             "locator": {
-              "kind": "symbol",
-              "name": "complete_tool_response"
+              "end": 527,
+              "kind": "line_range",
+              "start": 401
             }
           },
           "kind": "code"

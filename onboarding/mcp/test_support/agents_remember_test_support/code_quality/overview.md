@@ -172,6 +172,8 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 
 - Interactive catalog names missing authority without eligibility. [11]
 
-- Helper test imports, source figures, historical Git pin and conditional record availability. [25]
+
+- The test support cases cover helper imports, source figures, pinned historical Git inputs and conditional record availability. [25]
+
 
 - Certifying publication and accepting consumers. [2]

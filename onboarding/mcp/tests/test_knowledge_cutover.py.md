@@ -55,6 +55,8 @@ The following is the original proof inventory, before MIK-R26 removed the frozen
 
 - None recorded.
 
+The nonrepository case owns a Git-free temporary scope under /var/tmp. Its other cases still exercise probe refusal and an ambiguous or suspicious Git report.
+
 ## Evidence
 
 
@@ -75,7 +77,9 @@ No configured live documentation source was available for this pass.
 
 - Converted memory elsewhere words the already-required legacy refusal; unreadable probes retain their named error [14]
 
-- Only a definite non-repository is unlocked. [15]
+
+- Only a definite nonrepository is unlocked. The case owns that condition outside Git. [15]
+
 - A bare repository Git cannot open refuses by name. [16]
 
 
@@ -95,3 +99,5 @@ No meaningful cross-repo references found: the suite builds scratch repositories
 No cross-repo boundary is crossed by this file.
 
 - `test_every_route_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere` asserts the unconditional `legacy-format` refusal and conversion step, including after the only converted branch is removed. [11]
+
+- The nonrepository case owns a Git-free temporary scope under /var/tmp. Its other cases still exercise probe refusal and an ambiguous or suspicious Git report. [21]

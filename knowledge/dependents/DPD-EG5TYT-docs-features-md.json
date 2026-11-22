@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
-    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
+    "codeTree": "f02e677bea3b795aa6d72a53917f585e9bbebe28",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "Features describes synchronous closeout and integration and the direct-landing route. The retired coordinator link is replaced by the synchronous tool owners.",
-    "task": "261112-BUG-L15",
+    "statement": "The features page still gives the applicable response bounds and explains where to find the complete result when the tool returns a log locator.",
+    "task": "261112-BUG-L17",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -58,7 +58,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "6bb6e418fb0adafe5d9c5d46e71a1b4c2e3ab7bb",
+      "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

@@ -62,15 +62,16 @@
       ]
     },
     "3": {
-      "note": "The response boundary is `complete_tool_response`.",
+      "note": "The tool response boundary is complete_tool_response.",
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
             "locator": {
-              "kind": "symbol",
-              "name": "complete_tool_response"
+              "end": 527,
+              "kind": "line_range",
+              "start": 401
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -78,12 +79,12 @@
         },
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:8f58a59dd927e2dbbb576bf82611e6bced2dab7e3b4b9dfda59266f466da7f96",
             "locator": {
-              "end": 135,
+              "end": 137,
               "kind": "line_range",
-              "start": 135
+              "start": 137
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },

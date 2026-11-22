@@ -40,7 +40,7 @@ Public recover runs the admitted doorless direct generation on its retained reco
 
 Accepted generation identity and durable input remain immutable during ordinary store transitions. A claimed approval cannot become unclaimed. Recovery of a direct landing uses the accepted generation and exact mutation evidence.
 
-Historical closeout and integration journal controls refuse before mutation. For an exact match or when no journal record exists, the refusal points to the synchronous tool and the current contract path. A mismatched generation receives the identity refusal. The audit projection retains observed state and saved outcome evidence.
+Historical closeout and integration journal controls refuse before mutation. For an exact match or when no journal record exists, the refusal points to the synchronous tool and the current contract path. A mismatched generation receives the identity refusal. The audit projection retains the saved status, phase and outcome for historical operations. Direct landing alone reconciles stored mutation evidence against live Git.
 
 Direct cancellation requires exact no-output evidence. It can preserve a difference between accepted and observed candidates while the protected ref, HEAD/tree and reflog identity remain unchanged. Ambiguous or proven commit output requires recovery.
 

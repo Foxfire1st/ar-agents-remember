@@ -224,6 +224,8 @@ The following distinct accounts are retained from memory base `81cfe4a8`. Dates,
 
 This earlier worktree/environment observation is retained as attributed context. Current source skips only when the resolved root lacks tasks/: an unset variable does not by itself prove either skipping or historical-record validation on every installation.
 
+The negative Git case sets a discovery ceiling inside the owned temporary scope. The canonical-document case constructs an outer worktrees ancestor and nested decoys, exercises both leaf identifier forms, and checks the direct comparison, aggregate run and command-line report.
+
 ## Evidence
 
 ### Docs References
@@ -261,7 +263,9 @@ durable memory. Every range was derived against the current 1140-line source.
 
 - The historical control reads prose from memory revision e116e5ee, measures source figures, and expects one stale historical suite line count. [14]
 
-- The report tests check comparison detail and population output from the two default comparisons. Both task-root CLI cases assert identical recursive relative path inventories before and after the call. [15]
+
+- The record-integrity report cases cover direct comparison, aggregate results, and CLI, with an owned task-root placement and nested decoys. [15]
+
 - The module whose four comparisons these cases pin. [16]
 
 ### Cross-Repo References
@@ -272,3 +276,5 @@ revision in the project’s memory repository.
 ### Repo-Internal References (continued)
 
 - The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [17]
+
+- The negative Git case sets a discovery ceiling inside the owned temporary scope. The canonical-document case constructs an outer worktrees ancestor and nested decoys, exercises both leaf identifier forms, and checks the direct comparison, aggregate run and command-line report. [18]

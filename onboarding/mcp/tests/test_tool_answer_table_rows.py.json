@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "dcefea26893c2599c9e8c6df1bfef245fa031d1a",
+        "blob": "9d220b8c19cfbe280eb316a5cfa27bb1e830e03e",
         "content": "sha256:3a3aca3dd8f1fea4366a262248516bb6437de0c5fe8d9ca18a199654317922f8",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "dcefea26893c2599c9e8c6df1bfef245fa031d1a",
+        "blob": "9d220b8c19cfbe280eb316a5cfa27bb1e830e03e",
         "content": "sha256:383e8f5213fcd363b7ced7c8ada20285f571ee20aeff684afed62503a8e8c0d6",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "dcefea26893c2599c9e8c6df1bfef245fa031d1a",
+        "blob": "9d220b8c19cfbe280eb316a5cfa27bb1e830e03e",
         "content": "sha256:c6c7f82f1bc6310015d1e037cfd16c9ff993afed83103e66da45f6d07cf5e2f7",
         "locator": {
           "kind": "symbol",
@@ -56,12 +56,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Each rule-6 failure mode fails its gate, and a production-proven row is the one shape allowed without case payloads.",
+      "note": "The row-gate cases reject the tested invalid shapes. A shaped row that names its production derivation can omit static case payloads.",
       "targets": [
         {
           "anchor": {
-            "blob": "dcefea26893c2599c9e8c6df1bfef245fa031d1a",
-            "content": "sha256:10c4b13d88805f29827dbd8cbfdb28dfa4fa713a1406d250c23531457ec559b1",
+            "blob": "9d220b8c19cfbe280eb316a5cfa27bb1e830e03e",
+            "content": "sha256:811e9a864e4fef7e393a6629ade2df9e2f03979a802f9ffefeb526f766aeef73",
             "locator": {
               "kind": "file"
             }
@@ -71,12 +71,12 @@
       ]
     },
     "2": {
-      "note": "Every authored row's owner matches the roster, and a removed tool has no row and no owner.",
+      "note": "Each authored row owner matches the roster. The removed tools checked here have neither a row nor an owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "dcefea26893c2599c9e8c6df1bfef245fa031d1a",
-            "content": "sha256:10c4b13d88805f29827dbd8cbfdb28dfa4fa713a1406d250c23531457ec559b1",
+            "blob": "9d220b8c19cfbe280eb316a5cfa27bb1e830e03e",
+            "content": "sha256:811e9a864e4fef7e393a6629ade2df9e2f03979a802f9ffefeb526f766aeef73",
             "locator": {
               "kind": "file"
             }

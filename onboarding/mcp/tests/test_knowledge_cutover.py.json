@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+        "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
         "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+        "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
         "content": "sha256:8cb5b5604875ead81e39e6654863893d7554ab6a3fc5ebfa4821b18bf68a1b7a",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
-        "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+        "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
+        "content": "sha256:4f7d0c57354eb7681ffb2fb6523e11b6ef017d45ed0c3a02a654aadd7e55f7e7",
         "locator": {
           "kind": "symbol",
           "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+        "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
         "content": "sha256:88d6191f23445b6998e138f83454d2651ca9f6d6f696a46675fd5ff4fa286291",
         "locator": {
           "kind": "symbol",
@@ -73,25 +73,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
-        "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
-        }
-      },
-      "id": "RLZ-5SQ5SP",
-      "invariant": "INV-0RQS65",
-      "origin": {
-        "handoffEntry": "L26-CX-N02",
-        "leaf": "260928-MIK-L26"
-      },
-      "rationale": "The test's premise fails under the real ancestor marker in both states.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+        "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
         "content": "sha256:d2c324cfe8da1e7acd1a3399410b9a42df71458f93e702e616f056ba63f9cfb6",
         "locator": {
           "kind": "symbol",
@@ -114,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
             "content": "sha256:88d6191f23445b6998e138f83454d2651ca9f6d6f696a46675fd5ff4fa286291",
             "locator": {
               "kind": "symbol",
@@ -130,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
             "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
             "locator": {
               "kind": "symbol",
@@ -146,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
             "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
             "locator": {
               "kind": "symbol",
@@ -162,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
             "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
             "locator": {
               "kind": "symbol",
@@ -174,15 +156,16 @@
       ]
     },
     "15": {
-      "note": "Only a definite non-repository is unlocked.",
+      "note": "Only a definite nonrepository is unlocked. The case owns that condition outside Git.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
-            "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
+            "content": "sha256:4f7d0c57354eb7681ffb2fb6523e11b6ef017d45ed0c3a02a654aadd7e55f7e7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+              "end": 306,
+              "kind": "line_range",
+              "start": 281
             }
           },
           "kind": "test"
@@ -194,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
             "content": "sha256:2bc2b425f0f364554aef6962bd40ccd62d750fab9c4f61ca5b294ab8a4369bea",
             "locator": {
               "kind": "symbol",
@@ -210,7 +193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
             "content": "sha256:8cb5b5604875ead81e39e6654863893d7554ab6a3fc5ebfa4821b18bf68a1b7a",
             "locator": {
               "kind": "symbol",
@@ -226,7 +209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
             "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
             "locator": {
               "kind": "symbol",
@@ -259,11 +242,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
             "content": "sha256:44fc3d4b551bc1610ec66f0b9dd8ca390d33832ead0f8e6fd17cd58dc0490c37",
             "locator": {
               "kind": "symbol",
               "name": "_unconverted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The nonrepository case owns a Git-free temporary scope under /var/tmp. Its other cases still exercise probe refusal and an ambiguous or suspicious Git report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
+            "content": "sha256:4f7d0c57354eb7681ffb2fb6523e11b6ef017d45ed0c3a02a654aadd7e55f7e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
             }
           },
           "kind": "test"

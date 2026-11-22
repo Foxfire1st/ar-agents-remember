@@ -35,8 +35,12 @@ Outside-scratch allocations in this pytest process use a redirected parent: the 
 - The compiled handover text and role routing are not checked beyond the `outsideScratchRoot` field; `test_role_launch_routes.py` and `test_leaf_handover.py` own them.
 - The archive, receipt and sync-journal placement rules are driven as builders here, not measured; `test_terminal_enclosure_archive_sync_journal.py` owns them.
 
+The parent-mode refusal case sets mode 0755 explicitly after creating its fixture. The test therefore checks the public-mode refusal even under a restrictive umask, alongside the valid 0700 and wrong-owner paths.
+
 ## Evidence
 
 - The parent-refusal cases retain an interrupted staging directory and its marker under a wrong-mode or foreign-owned parent, preserve the cursor under a refused parent, and then recover the same staging directory under a valid parent (`test_a_partial_root_is_not_deleted_through_a_refused_parent`, `test_a_refused_parent_leaves_the_reconcile_cursor_untouched`). A linked partial entry is reported as `symlink` while its target survives (`test_a_symlinked_partial_entry_is_reported_and_never_followed`).
 - A sweep over one proof-ended generation removes it while the archive-ready and the still-active generations remain, each reported under its own reason instead of being deleted.
 - The teardown case leaves a parallel worker's root and a foreign root standing while removing the root it owns, and repeats as a no-op.
+
+- The parent-mode refusal case sets mode 0755 explicitly after creating its fixture. The test therefore checks the public-mode refusal even under a restrictive umask, alongside the valid 0700 and wrong-owner paths. [1]

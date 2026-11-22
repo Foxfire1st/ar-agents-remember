@@ -25,6 +25,8 @@ Location-separated content targets, distinct path counts and the full delivered 
 
 The closeout gate preview source case requires closeout-gate-blocked with a coded blocker and no commit approval; nextStep contains no nextTool and its summary contains STORED_GATE_WAY_OUT. This is static assertion coverage, not a Curator execution or transaction acceptance.
 
+The deepest-root start case owns a short temporary parent and measures its resolved path in filesystem bytes when padding the actual root. Its delivered-answer and exact saved-detail assertions use the real paths.
+
 ## Evidence
 
 - The cleanup fixture requires matching blocked dry and real answers. [1]
@@ -32,9 +34,15 @@ The closeout gate preview source case requires closeout-gate-blocked with a code
 - Changing a retained value must also fail that identity check. [3]
 
 
-- Three existing waits now use wait_until on the same contract closeout_status == completed condition. The first condition polls worktree_status before reading completion; the other two read the contract directly. The shared guard is unchanged, and all existing assertions retain their values; no sleep duration or new allowlist supplies readiness. [4]
+
+- All three waits use the contract's completed closeout status. One also calls `worktree_status` before reading the contract. [4]
 
 
 
 
-- Ordinary refusal tests require no error and read summary while preserving exact codes, next steps and state guards. The closeout gate preview source case requires closeout-gate-blocked with a coded blocker and no commit approval; nextStep contains no nextTool and its summary contains STORED_GATE_WAY_OUT. This is static assertion coverage, not a Curator execution or transaction acceptance. [5]
+
+
+- The refusal cases retain exact codes, summaries, and state. Blocked closeout preview carries its coded blocker without commit approval. [5]
+
+
+- The deepest-root start case owns a short temporary parent and measures its resolved path in filesystem bytes when padding the actual root. Its delivered-answer and exact saved-detail assertions use the real paths. [6]

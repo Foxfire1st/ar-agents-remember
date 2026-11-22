@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+        "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
         "content": "sha256:3b04b8d5bc326d44d888f1eaa0038867c9acf9533bb47e35c1728aa71d687851",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
             "content": "sha256:7b9e477794f9711a01e233e8b69512a8f667059c3378bfef8bb4bc9548485d54",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
             "content": "sha256:8a169bdbcf1c97f4712f9841b1cbf866e2885f7a510d35e4cfcde5e9d1051875",
             "locator": {
               "kind": "symbol",
@@ -54,15 +54,32 @@
       ]
     },
     "11": {
-      "note": "An installed coordination root is recognised by its system, memory-repos and tasks directories without a skills directory; a package-source shape is not.",
+      "note": "Installed discovery accepts the system, memory-repos and tasks directory shape without skills. The retired package-shaped case uses its own ancestor scope.",
       "targets": [
         {
           "anchor": {
-            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
-            "content": "sha256:1c1674626892b6bd4f246d964ec79ca384345ee9fd5ffe1e93380c848c2eeada",
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
+            "content": "sha256:43a34831fa1481204d0a35a3185cf6836c59378f4999e75d3c04a444f96db129",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The retired package-shape case constructs its candidate layout outside the host coordination ancestry. It still requires settings discovery to choose the fixture’s ancestor default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
+            "content": "sha256:15cbf2dbda3a301b46b180559b84a35593c8efb5d0fed54aee1328b017352ffc",
             "locator": {
               "kind": "symbol",
-              "name": "InstalledCoordinationRootTests"
+              "name": "test_retired_package_source_shape_uses_the_ancestor_default"
             }
           },
           "kind": "test"
@@ -74,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
             "content": "sha256:6d5124ad5a132dd3c220119f342a8293faa694d34b68fc85a16a74739a4788ac",
             "locator": {
               "kind": "symbol",
@@ -90,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
             "content": "sha256:cb920ae6fabc2644992bf98a85cd7f3b994e5d486f88658e23729bfaf74e2e41",
             "locator": {
               "kind": "symbol",
@@ -101,7 +118,7 @@
         },
         {
           "anchor": {
-            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
             "content": "sha256:b6f6931f8991ed5a73447e855f3d91b9f3a87647f25f9dffbb6f41026fb1c0e2",
             "locator": {
               "end": 256,
@@ -118,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
             "content": "sha256:3a4b5bc7679732eaff8402b49707f5859ae4b6672d8011c2ac27bff89cdc8a79",
             "locator": {
               "kind": "symbol",
@@ -134,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
             "content": "sha256:8ccf7c7fb123d08b1c40c18af4eb3ee7c6a447a32ce88a103d88b403610574db",
             "locator": {
               "kind": "symbol",
@@ -150,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
             "content": "sha256:bd2c2defc42e203994affdb99327c1cb9c9fd45db089cd520c221642fe410262",
             "locator": {
               "kind": "symbol",
@@ -166,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
             "content": "sha256:7620870ce2d414f236eb0c98bf52b22af7dc896de9af500f842346c204ab1a07",
             "locator": {
               "kind": "symbol",
@@ -182,7 +199,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
             "content": "sha256:948f7e8675cce5e0c58602622f77dd3c5d7165bdfbccd911f37f9a20fd1a6f85",
             "locator": {
               "kind": "symbol",
@@ -198,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36d9cc40865eef8a86efc3a4b92ea9c153268b8f",
+            "blob": "228a303215eaed7130bc1289092dcc2890beeca4",
             "content": "sha256:ab75b0554224e32ede42b9d668c9f415a48e5e89b856e5e5256b37c63e371fae",
             "locator": {
               "kind": "symbol",

@@ -250,15 +250,16 @@
       ]
     },
     "18": {
-      "note": "Separate implementation custody path: producer whole/result projection, finalized whole-result detail input, redaction, destination and size/budget/write controls; not a log-readback assertion in the conversion test.",
+      "note": "The test and implementation references cover producer results and their projections, detail inputs, log destination, redaction and write budgets.",
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
             "locator": {
-              "kind": "symbol",
-              "name": "complete_tool_response"
+              "end": 527,
+              "kind": "line_range",
+              "start": 401
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -292,12 +293,12 @@
         },
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:00f84b602709b475ee1d0a3428da2d636e7979e3476cf8f3dd2f8a21fbcd181b",
             "locator": {
-              "end": 182,
+              "end": 184,
               "kind": "line_range",
-              "start": 162
+              "start": 164
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },

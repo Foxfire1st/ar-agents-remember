@@ -18,9 +18,13 @@ The cases check resolver return values, not an installed host or the complete ta
 - Representation cases distinguish a link from an equal-content regular file, changed link target and changed executable bit. Missing-target links retain their own stable/distinct representation; unreadable regular content is the read-failure case.
 - No universal binary/filter, concurrent-mutation or complete filesystem-identity proof is claimed by these assertions.
 
+The owned `/var/tmp` directory outside Git returns `None`. The test also asserts `None` for an absent child path, an absent root path and a `None` argument.
+
 ## Evidence
 
 - Stable clean input and representative tracked, staged and untracked mutations. [1]
 - Failed component reads, a real broken-configuration witness and an unborn HEAD yield unproven results. [2]
 
 - The ruled representation cases distinguish link/regular kind, changed target and changed executable bit; missing-target links are stable but distinct by target. [3]
+
+- The owned `/var/tmp` directory outside Git returns `None`. The test also asserts `None` for an absent child path, an absent root path and a `None` argument. [4]

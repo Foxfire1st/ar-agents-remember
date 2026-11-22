@@ -3,59 +3,81 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Converted citation tests assert clean, stale, unreadable-sidecar and two-document projections, plus bounded delivery and pathological overflow control.",
+      "note": "Converted citation tests assert clean, stale, unreadable-sidecar and two-document projections, plus bounded delivery and a pathological overflow control.",
       "targets": [
         {
           "anchor": {
-            "blob": "f4f955a70b5b452618b0de27c97462a4c4c88f86",
-            "content": "sha256:ae6b7b78cf8b2e6182d8634dcefc0c942181ffe0b150aac5a535c45dd75e01c5",
+            "blob": "2524f2197f53a8474d423633edf762391ff9053a",
+            "content": "sha256:b4be3ad18855e763e928e154c05986fa4e69b98875816fb202a2e9f9abe478ed",
             "locator": {
-              "kind": "symbol",
-              "name": "CitationProductionTests"
+              "end": 311,
+              "kind": "line_range",
+              "start": 197
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "f4f955a70b5b452618b0de27c97462a4c4c88f86",
+            "blob": "2524f2197f53a8474d423633edf762391ff9053a",
             "content": "sha256:c13a2f07734cdcca464f86b8cd7dd555ae59b9eb9c1e6508e5303c9de2ed91cf",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_anchor_sidecar"
+              "end": 127,
+              "kind": "line_range",
+              "start": 87
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "f4f955a70b5b452618b0de27c97462a4c4c88f86",
+            "blob": "2524f2197f53a8474d423633edf762391ff9053a",
             "content": "sha256:f88629b38a93ffeac2e8ddce6eb88c654277fa48c07a34a30c9557e2064e610f",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_converted_layout"
+              "end": 138,
+              "kind": "line_range",
+              "start": 130
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "f4f955a70b5b452618b0de27c97462a4c4c88f86",
+            "blob": "2524f2197f53a8474d423633edf762391ff9053a",
             "content": "sha256:67681919a04bf6e71cfc6f0c42d2628d1b4b4aaf23d9a0a6145076d8b500d41d",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_stale_world"
+              "end": 171,
+              "kind": "line_range",
+              "start": 162
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "f4f955a70b5b452618b0de27c97462a4c4c88f86",
-            "content": "sha256:f8a38af66ac13777b1b999039de3467c6f76a074b473833a1f086cf162ce9f82",
+            "blob": "2524f2197f53a8474d423633edf762391ff9053a",
+            "content": "sha256:635dfd6e531417768a53bbc659c63bd75777957a90af7374d0e483c23f26c47f",
             "locator": {
-              "kind": "symbol",
-              "name": "_run_documents_scope"
+              "end": 194,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The converted-citation row cases share a short real fixture root and local XDG paths through fixed_width_row_case_root. They measure emitted results on those paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2524f2197f53a8474d423633edf762391ff9053a",
+            "content": "sha256:1006235188208eecdd7335dd780a0ad67dec64882cb3291b302e5c54686ee1a2",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 177
             }
           },
           "kind": "test"

@@ -689,12 +689,12 @@
         },
         {
           "anchor": {
-            "blob": "2c3c5c984a48f522e597ffd33ebe434a360ace9e",
+            "blob": "c073a83e98bdc9010f9167304c691f34b85b7318",
             "content": "sha256:f557ea855be59a2270a419646bbe3c381c33e3d202774dba10e945d284372131",
             "locator": {
-              "end": 533,
+              "end": 565,
               "kind": "line_range",
-              "start": 457
+              "start": 489
             },
             "path": "mcp/tests/test_lifecycle_operation_journal_retired.py"
           },

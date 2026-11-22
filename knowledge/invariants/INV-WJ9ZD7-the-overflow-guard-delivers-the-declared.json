@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The application supplies typed tool-scoped values to the model fitter, and the completion and fitting tests distinguish whole result values, delivered field order and priority of omission notices."
+  },
+  "applicability": "Short-form delivery by the shared answer guard for a declared tool and wire Boolean outcome.",
+  "conditions": [
+    "The guard reads declared fields from the validated whole result.",
+    "A declared value is eligible when present with its expected type.",
+    "The guard reserves the location or no-file outcome and the final hint before fitting declared values."
+  ],
+  "exclusions": [
+    "Uncut answers and separately owned tool-specific answer shaping.",
+    "The exact recorded locator and final hint may exceed the target when their required envelope alone cannot fit."
+  ],
+  "id": "INV-WJ9ZD7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/17_the-whole-test-lanes-pass-on-the-issu-20a404b481-ar/role-reports/worker/54168612-802f-4e9e-8581-5ae4bcd30ec0/role-launch/BUG-L17-W2-code-quality.md"
+      ],
+      "path": "W4-curator-ingest.json"
+    },
+    "handoffEntry": "48c1c392-751b-4803-b74c-ff1d307b1e6d ruling 1",
+    "leaf": "261112-BUG-L17",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The shared overflow guard puts fitting declared outcomes and next actions before the exact recorded locator when available. It keeps any reported log error. Without a recorded locator it sets resultKept to false and ends with a no-file hint. For each eligible field it reserves a fitting whole value or named omission before considering the next field.",
+  "status": "proposed",
+  "supersedes": []
+}
