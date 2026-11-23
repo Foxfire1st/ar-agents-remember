@@ -4391,14 +4391,16 @@
       ]
     },
     "9": {
-      "note": "The union merge attribute for this file.\n\nAnchor: file",
+      "note": "The union merge attribute for this file.",
       "targets": [
         {
           "anchor": {
-            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
-            "content": "sha256:4cbb77b0e957d5709d6ff27b831c8c2cfdbf61c17faf73baa716a55a984e0fde",
+            "blob": "8ba953f47dd956107e1ca39d86f158fe2c082b6f",
+            "content": "sha256:ae6d6bacbe9b291434988cfc3b81dc3aca18dac8449510b9a63cb51b31294437",
             "locator": {
-              "kind": "file"
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
             },
             "path": ".gitattributes"
           },

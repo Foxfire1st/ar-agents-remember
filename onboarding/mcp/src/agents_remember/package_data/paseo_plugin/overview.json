@@ -255,15 +255,28 @@
       ]
     },
     "6": {
-      "note": "Supported client contributions remain separate from explicitly pinned DOM adapters.",
+      "note": "The entry registers the complete typed palette and delegates web behavior to the client helpers.",
       "targets": [
         {
           "anchor": {
-            "blob": "49bc0254b05c78be08015d6c53867af815a22478",
-            "content": "sha256:63f9553a6aebbe56eb3ff37576b0426d198157245e0b5cbcba931f64545ee0d0",
+            "blob": "48c2c186fd05ba62fd0c2436e182fb873620af96",
+            "content": "sha256:d1bade69c77dc74f54fdbcb166f811b3455a00ae2aedf416243757c9adbd95fb",
             "locator": {
               "kind": "symbol",
               "name": "contribute"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48c2c186fd05ba62fd0c2436e182fb873620af96",
+            "content": "sha256:384a5379f30602168dc94668ba9b0592f6cf217dcf606cf2f7f9caa1eff3673a",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 60
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
           },

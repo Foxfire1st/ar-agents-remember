@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c02d5f6f0d5ffd938a425723eb62783233464520",
-            "content": "sha256:626c8e873ae726b8bdb181892d6a908faa071831071e12c81a7c0c8e0fe2ce5f",
+            "blob": "32fd4d0c91d8a841770a9763fb83890cd69b9cf6",
+            "content": "sha256:c7aeb2da007bbdd61a228365be64bc8858c266b74e280c827e81eb4b48c12e22",
             "locator": {
               "kind": "symbol",
               "name": "_resolve_server_version"
@@ -42,8 +42,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c02d5f6f0d5ffd938a425723eb62783233464520",
-            "content": "sha256:626c8e873ae726b8bdb181892d6a908faa071831071e12c81a7c0c8e0fe2ce5f",
+            "blob": "32fd4d0c91d8a841770a9763fb83890cd69b9cf6",
+            "content": "sha256:c7aeb2da007bbdd61a228365be64bc8858c266b74e280c827e81eb4b48c12e22",
             "locator": {
               "kind": "symbol",
               "name": "_resolve_server_version"

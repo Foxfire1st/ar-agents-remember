@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+        "blob": "8ba953f47dd956107e1ca39d86f158fe2c082b6f",
         "content": "sha256:74c8b7467bcffdf3efb4df26b5d3c675a470a6ab87ab7623ddf3393444e0b114",
         "locator": {
-          "end": 21,
+          "end": 26,
           "kind": "line_range",
-          "start": 20
+          "start": 25
         }
       },
       "id": "RLZ-6C1960",
@@ -19,6 +19,25 @@
       },
       "rationale": "Declares merge=union for the lane manifest and for the lifecycle catalog, which makes Git keep both sides' added lines instead of reporting a conflict.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8ba953f47dd956107e1ca39d86f158fe2c082b6f",
+        "content": "sha256:02f2f005ff651d7c2e73805eee53a0d27b0579536c39f9e08fc56d1090d5ee22",
+        "locator": {
+          "end": 8,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-ZYVCY7",
+      "invariant": "INV-S1VHC9",
+      "origin": {
+        "handoffEntry": "BUG-R10@v2 09:01:45Z fixture whitespace",
+        "leaf": "261112-BUG-L10"
+      },
+      "rationale": "This directory-scoped -whitespace rule changes Git's whitespace check for the vendored fixture subtree.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -27,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "blob": "8ba953f47dd956107e1ca39d86f158fe2c082b6f",
             "content": "sha256:9d578a5da5e5a0523faa951d6ee5ee1e301c8ca9fd187a6e715e98200095fd29",
             "locator": {
               "end": 3,
@@ -39,17 +58,52 @@
         }
       ]
     },
+    "10": {
+      "note": "The fixture test checks the recorded sizes and SHA-256 hashes of the copied distribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6975c6185be276d4ac2117cafe7a04fc8aa8f1cf",
+            "content": "sha256:3a459ac65fabfa1d9f14c1875ddd1538a49d71204b1d23e90fdf41753c41e2b5",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Sync validation checks the staged resolution with Git's whitespace check before committing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:ab768648a3a6df558f6f4a46a03289cc1049f80439af8084638757777b5a5758",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_staged_resolution"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The binary mark for the vendored tiktoken vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "blob": "8ba953f47dd956107e1ca39d86f158fe2c082b6f",
             "content": "sha256:b95ec568b7336a0865167e81ea51eb4e460bcbff848daf6cdd8cc4337b392590",
             "locator": {
-              "end": 13,
+              "end": 18,
               "kind": "line_range",
-              "start": 5
+              "start": 10
             }
           },
           "kind": "code"
@@ -61,12 +115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "blob": "8ba953f47dd956107e1ca39d86f158fe2c082b6f",
             "content": "sha256:34df96ed5a8a5386d6d09ea07dc5c3776e4a71e3428e8298efe846d699887986",
             "locator": {
-              "end": 21,
+              "end": 26,
               "kind": "line_range",
-              "start": 15
+              "start": 20
             }
           },
           "kind": "code"
@@ -136,6 +190,23 @@
               "name": "unreadable_catalog"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Git exempts the vendored Paseo fixture subtree from whitespace checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ba953f47dd956107e1ca39d86f158fe2c082b6f",
+            "content": "sha256:02f2f005ff651d7c2e73805eee53a0d27b0579536c39f9e08fc56d1090d5ee22",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 5
+            }
           },
           "kind": "code"
         }

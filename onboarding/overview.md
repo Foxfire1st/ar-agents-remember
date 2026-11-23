@@ -160,7 +160,7 @@ Current Python package metadata accepts `>=3.14,<3.15`; managed development/CI p
 
 Retain the hook account with its scope: fast pre-commit checks staged generated assets, lint, format, typing, test catalogs and dashboard checks; targeted pre-push repeats deterministic checks; neither runs tests; the full tier refuses host full-suite execution and names the pinned Dagger graph. Staged isolation parks/restores unstaged and untracked content except during in-progress Git operations, refuses a moved stash and gives recovery instructions. The shared repository stash can contain an interrupted gate's entry. The quality wrapper reports relevant untracked inputs separately and runs the staged candidate in a separate clone; missing diagnostic input or calculation failure fails its rail, while production metric threshold findings remain nonblocking reports.
 
-The two test catalogs remain canonical classification/lifecycle data, union-merged by Git attributes. Their repair command orders/deduplicates known lists, derives consumers when source supports them and removes obsolete paths except the named all-consumers-missing case; it does not invent rows or assign lanes. Invalid forms and interleaved union rows refuse with named repair, and base-revision parsing uses the same reader. No catalog row count or byte digest is pinned. Generated shipped dashboard JavaScript alone has its named whitespace exemption; vendored tokenizer bytes are marked binary to prevent line-ending changes.
+The two test catalogs remain canonical classification/lifecycle data, union-merged by Git attributes. Their repair command orders/deduplicates known lists, derives consumers when source supports them and removes obsolete paths except the named all-consumers-missing case; it does not invent rows or assign lanes. Invalid forms and interleaved union rows refuse with named repair, and base-revision parsing uses the same reader. No catalog row count or byte digest is pinned. Git exempts generated dashboard JavaScript from trailing-whitespace checks and skips whitespace checks for the byte-preserved Paseo server fixtures. The vendored tokenizer vocabulary is marked binary to prevent line-ending changes.
 
 ## Historical And Verification Limits
 
@@ -357,7 +357,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - The read_ar_files naming entry point returns knowledge locations and measured states, with no source, card, overview or published-intent body. [61]
 
-- Retained reference account (no fresh execution or acceptance inferred): The attribute rules preserve generated JavaScript whitespace and tokenizer vocabulary bytes, and union-merge the two test-evidence catalogs. [69]
+- Git exempts generated dashboard chunks from trailing-whitespace checks and vendored Paseo server fixtures from whitespace checks. The tokenizer vocabulary is marked as non-text, and Git union-merges the two test catalogs. [69]
 
 - Retained reference account (no fresh execution or acceptance inferred): The rewrite that the `--write` command runs. [70]
 
