@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "f02e677bea3b795aa6d72a53917f585e9bbebe28",
-    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
     "statement": "The resolver reference still describes the shaped context packet and the blocks in its complete recorded result.",
-    "task": "261112-BUG-L17",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/reference/resolver-c08.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -68,7 +68,7 @@
       "path": "mcp/src/agents_remember/kernel/git_facts.py"
     },
     {
-      "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
+      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

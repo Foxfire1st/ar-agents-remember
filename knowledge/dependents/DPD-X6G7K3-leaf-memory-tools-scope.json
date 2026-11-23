@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
-    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
-    "statement": "The role-tool reference’s same-request reconciliation and single-seat boundary still hold after option-side receipt observation moved outside the write lock.",
-    "task": "261112-BUG-L19",
+    "statement": "The MCP reference describes the typed role contracts, same-request reconciliation and single-seat boundary, task-document review and synchronous closeout, and six overflow declarations by wire Boolean, including the integrity refusal with ok true, bounded landing debt and its next step, whole-field fitting, named omissions and exact result locators.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -93,7 +93,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "3f91234661460904091f50cb41164456aa515f04",
+      "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
+      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -329,8 +329,8 @@
     },
     {
       "anchor": {
-        "blob": "56973919b5cead4a39077faa4cd0cd4364324a00",
-        "content": "sha256:d33514480beff012a8d5849f5d93a0d3acecd608a720f6d430a8a359011bae19",
+        "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+        "content": "sha256:9bfc3dc0a03ede235ffacd9b7022d894b039b115264c8b05e0e28a88faf14559",
         "locator": {
           "kind": "symbol",
           "name": "declared_short_fields"

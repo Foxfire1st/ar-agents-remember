@@ -21,7 +21,7 @@ only enough oldest terminal rows to admit one request. If the registry is still 
 `MAX_QUALITY_RUNS`, every retained row is live and the function returns the typed
 `capacity-reached` admission without creating a record or thread.
 
-Each admitted daemon worker starts in a fresh empty Context and owns a definition scope separate from its starter. It settles its retained row to `completed` or `failed`; launch failure rolls
+Each admitted daemon worker starts in a fresh context. It opens its own request memo and definition scopes for the computation. It settles its retained row to `completed` or `failed`; launch failure rolls
 the row back. `poll_quality_run` requires both configured repository and run id, returns a detached
 snapshot whose retained result is deep-copied, and maps wrong-repository lookup to the same absence as an unknown id.
 
@@ -95,4 +95,5 @@ Citation previews use this same capacity-eight registry. The operation and froze
 - The typed controller owns public capacity and nondisclosure translations. [5]
 
 - Admission reuses equivalent live work before terminal pruning and hard live-cap refusal. [2]
-- Results are detached at retention and polling. [7]
+
+- The worker stores a deep copy on completion. Polling returns a separate deep copy of the retained result. [7]

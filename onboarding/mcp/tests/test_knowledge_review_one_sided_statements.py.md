@@ -191,7 +191,10 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 
 
 
+
 - The current lifecycle catalog declares test_knowledge_review_one_sided_statements.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. These current declarations establish no invocation or passing result; no former narrow-window identity is inferred. [17]
+
+
 
 
 

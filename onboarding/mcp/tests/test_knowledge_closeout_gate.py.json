@@ -96,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
             "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
             "locator": {
               "end": 220,
@@ -164,12 +164,12 @@
         },
         {
           "anchor": {
-            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
             "content": "sha256:c5a9d47dc523af4fae2607acdf66554200cd2e8bd1f4c866c038d40df8626399",
             "locator": {
-              "end": 142,
+              "end": 146,
               "kind": "line_range",
-              "start": 115
+              "start": 119
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
           },

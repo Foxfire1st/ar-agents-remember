@@ -452,6 +452,9 @@
     "file:mcp/src/agents_remember/application/review_artifact_cleanup.py": [
       "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json"
     ],
+    "file:mcp/src/agents_remember/application/review_evidence_read.py": [
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json"
+    ],
     "file:mcp/src/agents_remember/application/review_external_git_movement.py": [
       "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
     ],
@@ -609,6 +612,9 @@
     "file:mcp/src/agents_remember/canvas/explainer_service.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/explainer_target.py": [
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json"
     ],
     "file:mcp/src/agents_remember/canvas/explainer_workspace.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
@@ -1986,6 +1992,12 @@
     ],
     "file:mcp/tests/evidence-lifecycle.toml": [
       "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/tests/mcp_memory_bounded_fixture.py": [
+      "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
+    ],
+    "file:mcp/tests/mcp_memory_bounded_stdio_support.py": [
+      "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
     ],
     "file:mcp/tests/test-evidence-lanes.toml": [
       "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",

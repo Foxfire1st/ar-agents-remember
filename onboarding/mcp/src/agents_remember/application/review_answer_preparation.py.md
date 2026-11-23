@@ -14,7 +14,7 @@ One place decides, per read, whether an answer is a function of a record or of a
 
 `recorded_answer_sources` accepts a valid leaf address and reads the leaf's record. Its dependencies are contract bytes, comparison and generation directory listings, worklist bytes or absent path, and existing code and memory object stores. It neither authorizes arbitrary paths nor substitutes a live `HEAD`.
 
-Before reuse, `_recorded_sides` deduplicates all four repository/tree pairs across retained records. `_trees_still_readable` traverses their closures — through `_closure_still_readable`, `_prove_closure`, `_rewitnessed_closure` and the closure-proof store — with missing-object reporting, then `_object_bodies_readable` consumes exact batch bodies, checking identity, length and the newline framing of the whole batch. A stable object census cannot mask a removed or unreadable descendant.
+Before reuse, the answer owner identifies the distinct repository and tree pairs in the recorded operands. A native call keeps consumed closure proofs in its request owner. A valid proof stands while the observed layout, references and object storage still agree. A changed witness can require a body read or a new traversal. A fresh Git check rejects missing descendants and verifies the batch framing. An object count alone cannot establish that the closure is readable.
 
 A live leaf's whole reviews and its subject catalogue are kept too, on `LiveWitness`: the comparison's number and four trees, the inputs its witness observed, and a `current` predicate that proves the working views still capture to those trees. The witness is never loaded from disk; `_live` keeps a live answer only when it names the same comparison and the witness still holds once the answer was made, re-observing every read it made before any reuse, and with no witness proven the answer is computed fresh. A page of a collection, or a refresh against a binding, is computed each time.
 
@@ -30,7 +30,7 @@ A live leaf's whole reviews and its subject catalogue are kept too, on `LiveWitn
 
 ## Invariants And Boundaries
 
-Working-view answers are computed fresh. Recorded question keys and dependency validation govern reuse, not acceptance or file writes. A failed read cannot become permanent merely because its record inputs stayed unchanged; an unavailable legacy state is a distinct fact from such a failure. A live answer is kept only on a proven witness, and the witness is proof of the working views, never a stored claim about them.
+A live tree view, a paged intent read or a binding refresh computes on demand. A whole live review or subject catalogue can reuse a result under its proven comparison witness. Recorded question keys and dependency validation govern reuse, not acceptance or file writes. A failed read cannot become permanent merely because its record inputs stayed unchanged; an unavailable legacy state is a distinct fact from such a failure. A live answer is kept only on a proven witness, and the witness is proof of the working views, never a stored claim about them.
 
 ## Evidence
 

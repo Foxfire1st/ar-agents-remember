@@ -27,6 +27,8 @@ The process-shared moved watcher compares on review-page opening and relevant le
 
 ## Construction And Ownership
 
+Native requests own variable packed-reference and Git census observations during each call. Dashboard reads retain their separate bounded process caches. Shared Git generation history keeps a fixed-size alternate-path witness and uses the full incoming census for revision changes.
+
 Configured McpRuntimeConfig and admitted roots feed the dashboard; untrusted request values do not install arbitrary host roots. Compilation, task authority, canonical knowledge comparison, native role launch and independent acceptance remain with their actual owners. Serving capsule_delivery is an immutable copied value, not a harness-specific carrier/protocol planner.
 
 ## Running Processes And Build Currentness
@@ -235,7 +237,7 @@ This is not a dashboard-wide stop switch. Projection/watch/healing and other own
 
 ## Native Read Reuse And Content Boundaries
 
-`register_changeset_routes` creates one bounded ChangesetCache, shared with the intent-summary route through its typed inputs/read port. Native Git remains the selector/diff owner. Reuse observes repository/configuration/reference/object and, when needed, working-tree generations plus dependencies discovered before consumption. Pending results enter retention only after matching fresh post-read observations; incomplete/changing dependencies and failed native reads do not become reusable successes. Object-absence proofs also invalidate on additions. This is not TTL-based permission to serve stale inputs or a new comparison generation. Successful change-set/summary responses derive weak ETags from their returned bytes and honor If-None-Match; an unwired summary keeps its named 503.
+`register_changeset_routes` creates one bounded ChangesetCache, shared with the intent-summary route through its typed inputs/read port. Native Git remains the selector/diff owner. Observed ref-keyed and working-input change sets re-observe their recorded generations before retention and reuse. A route can retain a typed refusal on a matching unknown working-status stamp when its policy admits it. The immutable-ID and explicit master-range rules are described in the change-set cache card. Object-absence proofs invalidate on additions. Successful change-set/summary responses derive weak ETags from their returned bytes and honor If-None-Match; an unwired summary keeps its named 503.
 
 Full task bodies have a separate app-scoped LRU of at most 1,024 entries/16 MiB, distinct from the background task-payload parse cache and native change-set/summary reuse. Captured filesystem inputs revalidate before body reuse; serialized TaskSummary bytes define its content revision. Unreadable/changing generations are served uncached and cannot justify a 304. State GET/SSE retain their separate projection-instance dump memo and served tail (`servingBuild`, `buildCurrentness`, `servingProcessId`). None of these caches changes task stage, host activity, recorded operands, permission or acceptance.
 

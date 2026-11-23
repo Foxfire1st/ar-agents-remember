@@ -13,6 +13,8 @@ merge, and sealed existing/private-output observations. The removed preparation-
 
 ## Code Commentary
 
+For binary batch blob reads, Git writes its output directly into a private spool. The frame reader checks each requested object ID, type, size and delimiter, then requires input exhaustion. The spool closes before the caller receives the blob map.
+
 The object memo exists only for one request and keys the repository, effective work directory/environment, exact argv and output mode. It keeps successes only. Exact-object existence/verification and explicitly replace-proof supported peels may collapse; failures, refs, index mutation and replacement-sensitive or malformed/suffixed names run natively again.
 
 
@@ -91,24 +93,30 @@ The extraction of _git_run shares the former run_git setup; it does not make the
 
 ## Current Behavior
 
-The shared runner accepts a cancellation event through `_GIT_CANCELLATION` and `cancellable_git_commands` (lines 517–529). `_run_git` uses `_wait_process` when a cancellation event is present or a new session is requested (lines 356–412). The wait polls at intervals of at most 0.05 seconds when cancellation is enabled; `_kill_process_group` is the runner's one process-group kill owner for a timeout or abandoned read (lines 415–468). Without an event, the ordinary timeout behavior remains. [57] 
+`cancellable_git_commands` binds an event for the block. The runner calls `_wait_process` when it owns a new session or has a cancellation signal. With a signal, the wait polls at most every 0.05 seconds while honoring the timeout. `_kill_process_group` ends the Git group on cancellation or timeout after a new session starts. Without a signal, the wait uses the caller’s timeout directly.
 
 
 ## Evidence
 
 - The byte runner bypasses text decoding and universal-newline conversion. [54]
 
-- Both public transports share environment scrubbing, identity validation and execution options. [55]
+
+- The text, raw-byte and direct-output runners share the environment, identity and execution-option setup. [55]
+
+
 
 
 - The existing general runner remains text-mode through the shared setup. [34]
 
 
 
+
 - The eight repository selectors that are removed from the environment. [31]
 - The scrubbed environment every runner starts from. [32]
 
+
 - The options object: work directory, input, timeout and identity. [33]
+
 
 
 - The one argv: work directory, long paths and the exact safe directory. [35]
@@ -121,23 +129,32 @@ The shared runner accepts a cancellation event through `_GIT_CANCELLATION` and `
 - The runner with a disposable index and object directory. [40]
 - The index copy keeps the source file's times, read from one open file. [41]
 
+
 - The shared-read block: one dictionary per block, reset on exit. [42]
 
 
-- The batched reader answers held blobs from the block and reads only the others. [43]
+
+
+- The shared block returns held blobs by repository and reads only its remaining IDs. A caller's explicit object inputs bypass the shared memo. [43]
+
 
 - Held blobs are looked up by repository path and blob ID. [44]
 
-- One cat-file batch; a header that is not the requested blob raises. [45]
+
+- One private spool receives the Git batch. The decoder refuses unexpected objects, malformed frames and trailing bytes. [45]
+
 
 - The three-way merge prints its result and returns the conflict count. [46]
 - The existing-output proof runs before and after the raw commit read. [47]
-- A repeated blob read inside the block starts no Git process and never crosses repositories. [51]
+
+- A repeated blob read reuses the answer inside its block. A second repository without the object refuses. [51]
+
 - The parsed diffs of the reviewer and the worklist carry the options. [52]
 
 - The runner keeps memo ownership and imports exact-object eligibility from its direct sibling. [53]
 - The CAS helper builds expected-old update-ref arguments with an optional reflog reason; it does not execute them. [56]
-- The cancellation context supplies one event to the shared runner. [57]
 - The shared wait bounds cancellation polling and owns timeout and abandoned-read termination. 
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/kernel/git_command.py::_wait_process - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The cancellation context binds the signal, the runner chooses the wait path, and the group owner handles timeout or cancellation for a new session. [57]

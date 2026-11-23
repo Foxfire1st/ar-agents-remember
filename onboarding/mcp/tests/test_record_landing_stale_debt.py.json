@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
-        "content": "sha256:6594c61b13b0f1f35557837587f90f6218f31098bcc3439d475e9aac918e4a1d",
+        "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
+        "content": "sha256:75b1dc54367cd13ab96afbc375f7046af3c25da4289dc819b599683387f31371",
         "locator": {
           "kind": "symbol",
           "name": "test_the_record_landing_tool_names_the_entries_it_keeps"
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+        "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
+        "content": "sha256:c9387725afcb0cbe471a9760e892ebc264a7e64b1dd6f5bd26a9c312a96a4ae9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_record_landing_answer_shapes_fit_the_controlled_locator"
+        }
+      },
+      "facet": "Both successful states keep the exact recorded locator when cut. Controlled locator lengths exercise the complete result, retained keys, fitting named omission, count only and omitted next action.",
+      "id": "PRF-9ARM5S",
+      "invariant": "INV-6H0QQG",
+      "origin": {
+        "handoffEntry": "W6-landing-debt-delivery",
+        "leaf": "261112-BUG-L18"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
         "content": "sha256:78f5c95102ea7ca0d788442fa709571fc5a37eee51ac51a5fa1b7c225cacfe1f",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+        "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
         "content": "sha256:a02c93e9cd9521dd1d51d1bc507d568521f0f4c14ac947fe2b78dcab33aba5da",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+        "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
         "content": "sha256:0bead080b56a5d553f7fbb4e98e7c9f812ec2a3937f5ed48e928406dddc30193",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+        "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
         "content": "sha256:023205d6e993bb466fc0d2e54cc02479a93bafca222b6f306bfdda1c157cb793",
         "locator": {
           "kind": "symbol",
@@ -94,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+            "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
             "content": "sha256:78f5c95102ea7ca0d788442fa709571fc5a37eee51ac51a5fa1b7c225cacfe1f",
             "locator": {
               "kind": "symbol",
@@ -110,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+            "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
             "content": "sha256:023205d6e993bb466fc0d2e54cc02479a93bafca222b6f306bfdda1c157cb793",
             "locator": {
               "kind": "symbol",
@@ -126,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+            "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
             "content": "sha256:a02c93e9cd9521dd1d51d1bc507d568521f0f4c14ac947fe2b78dcab33aba5da",
             "locator": {
               "kind": "symbol",
@@ -138,15 +155,16 @@
       ]
     },
     "4": {
-      "note": "The case carries actual earlier gate-produced findings across a patched precondition boundary after real admission, then checks payload, log, public projection and dry/apply contract persistence; complete public positive stale-debt admission is not exercised.",
+      "note": "The transport case carries earlier gate-produced findings across a controlled precondition boundary after real admission. It checks the complete saved result, delivered values when present and dry/apply contract persistence.",
       "targets": [
         {
           "anchor": {
-            "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
-            "content": "sha256:6594c61b13b0f1f35557837587f90f6218f31098bcc3439d475e9aac918e4a1d",
+            "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
+            "content": "sha256:72e651b01e96e8548f6a1e3ec1dd3344bacb7ab716e6099f73f4df2a9a98c437",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_record_landing_tool_names_the_entries_it_keeps"
+              "end": 200,
+              "kind": "line_range",
+              "start": 127
             }
           },
           "kind": "test"
@@ -158,11 +176,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+            "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
             "content": "sha256:0bead080b56a5d553f7fbb4e98e7c9f812ec2a3937f5ed48e928406dddc30193",
             "locator": {
               "kind": "symbol",
               "name": "test_stale_entry_debt_does_not_skip_the_recorded_master_chain"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The two-state matrix constructs five measured answer shapes using the real shaper and controlled logging boundary, including the long-locator case with count and exact locators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
+            "content": "sha256:c9387725afcb0cbe471a9760e892ebc264a7e64b1dd6f5bd26a9c312a96a4ae9",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 203
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
+            "content": "sha256:5d18a7e7a2b998ff35117afae4288ae0b6728b26e9d93c80240b482025d070b2",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 277
             }
           },
           "kind": "test"

@@ -72,22 +72,11 @@
       ]
     },
     "11": {
-      "note": "Determinism, the version refusal and the no-op.\n\nAnchor: `test_conversion_is_deterministic_version_pinned_and_a_no_op_once_converted`",
+      "note": "The fixture checks deterministic conversion, refusal of an unsupported format version, and a no-op on converted input.",
       "targets": [
         {
           "anchor": {
-            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
-            "content": "sha256:67ae57d39d98cfdb606ab31b093d3422b2bd603cebdafb59586484fbd293bd4e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_knowledge_conversion.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "blob": "6225987c6e00d97ca42132b37ecbb0446f5ba773",
             "content": "sha256:dc4e2058816533155d8660ffc660f0572a015fdfd41735e651c19f8ac80323e3",
             "locator": {
               "kind": "symbol",
@@ -96,26 +85,26 @@
             "path": "mcp/tests/test_knowledge_conversion.py"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "Version 1's pinned bytes.\n\nAnchor: `test_conversion_format_version_1_reproduces_its_pinned_bytes` `VERSION_1_FIXTURE_DIGEST`",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
-            "content": "sha256:67ae57d39d98cfdb606ab31b093d3422b2bd603cebdafb59586484fbd293bd4e",
+            "blob": "6225987c6e00d97ca42132b37ecbb0446f5ba773",
+            "content": "sha256:8fc18b50787b45136474305128e5ce5ff434e7a90fdd5280decd5cd81b028065",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_conversion.py"
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "12": {
+      "note": "The version 1 regression compares the converted fixture bytes with their pinned digest.",
+      "targets": [
         {
           "anchor": {
-            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "blob": "6225987c6e00d97ca42132b37ecbb0446f5ba773",
             "content": "sha256:b957cd854d742c4db187144943705413883d638a12f415e233b5f4e4938d4017",
             "locator": {
               "kind": "symbol",
@@ -127,11 +116,22 @@
         },
         {
           "anchor": {
-            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "blob": "6225987c6e00d97ca42132b37ecbb0446f5ba773",
             "content": "sha256:8a2cb76e5e8cc9bf5d02a7e33eacb02348a191a0355877ec40a4064aadf2d7d2",
             "locator": {
               "kind": "symbol",
               "name": "VERSION_1_FIXTURE_DIGEST"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6225987c6e00d97ca42132b37ecbb0446f5ba773",
+            "content": "sha256:8fc18b50787b45136474305128e5ce5ff434e7a90fdd5280decd5cd81b028065",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_conversion.py"
           },
@@ -144,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "blob": "6225987c6e00d97ca42132b37ecbb0446f5ba773",
             "content": "sha256:2a5dc5965c9d6725574fe207ce21fa8be0902e7c35fb98845d511eaa20ab8c01",
             "locator": {
               "kind": "symbol",

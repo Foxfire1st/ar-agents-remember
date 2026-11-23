@@ -34,6 +34,8 @@ Historical L109 composition declared 41 names after removal of `resolve_context`
 
 Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
+Native MCP dispatch gives each call a lazy request memo. Joined blocking work keeps that memo until the worker exits, including cancelled role starts. Scope exit clears the shared owners before the server asks glibc to trim free pages. Detached quality computation opens its own scope. Shared reviewer and dashboard stores retain separate ownership and limits.
+
 > **Retained historical source account — superseded by the current route account:**
 > For transport, start with `mcp/server.py`, `mcp/registration/`, the literal roster in `models/tools/public_roster.py`, response registration, and `mcp/public_surface.py`. The pre-L113 server closed the former `dispatch_agent` schema and rejected undeclared inputs before its handler; that tool is absent from the current literal roster. The surface validator compares independently declared inventory, response contracts, registration, and dispatch schema; inspecting its source does not establish that a live server passed it. Response completion validates the full result and may deliver the tool's own bounded status projection; the detail log retains the whole result, while the guard and observer use the delivered answer count. Quality projection belongs to `application/memory_quality/answer.py`; execution and readiness remain controller-owned. Application response ownership and measuring-build identity distinguish the serving build from a candidate checkout.
 
@@ -45,7 +47,7 @@ The retained published_intent block declares the 8,000 `tiktoken:o200k_base` thr
 
 For authoring, repository foundation is regular work in the real Architect task, through its contract-scoped `knowledge-ingest` or mounted `knowledge_write`; ordinary leaf and crossing admissions retain their own contract rules. Ordinary ingest requires a nonblank authorization reference. Planning reads, resolves, validates and reports without writing; `--commit` writes files, not Git history. The writer validates the resulting tree and owner history before publication, while registry-declared writer deferrals name their later refusing commit/landing route. The leaf route supplies its paired memory base for counted-card comparison, falling back to the operation base only when unresolved. New onboarding, membership/no-family and decision/facet record judgments are distinct row domains with writer-owned source/revision fields; they do not license an unsupported producer. Authored realization rationale is required rather than manufactured. Mechanical carry supplies no semantic disposition. Crossing resolves existing conflicting records at one revision above the higher side rather than authoring new records.
 
-For leaf maintenance, the worklist compares exact B/K_B/C/K_C, task declarations and maintenance scope. It classifies entries and record changes, reaches families once, reconciles planned effects, checks routes, classifies unexplained changes and surfaces one-hop reconsideration. New or newly unlisted live invariants raise membership work; changed surviving base decisions/facets compare both JSON and retained unparsed Markdown. Only the leaf's own open raise with an otherwise status-only reconsideration mark is exempt. The final sorted/digested list includes the membership and touched-record kinds and subject-based planning marks on the kinds passed through planning. Unreadable input is named incomplete scope. Persisted worklists are projections; the mandatory gate recomputes its inputs.
+For leaf maintenance, the worklist compares exact B/K_B/C/K_C, task declarations and maintenance scope. It classifies entries and record changes, reaches families once, reconciles planned effects, checks routes, classifies unexplained changes and surfaces one-hop reconsideration. New or newly unlisted live invariants raise membership work; changed surviving base decisions/facets compare both JSON and retained unparsed Markdown. Only the leaf's own open raise with an otherwise status-only reconsideration mark is exempt. The final sorted/digested list includes the membership and touched-record kinds and subject-based planning marks on the kinds passed through planning. Unreadable input is named incomplete scope. Persisted worklists are projections. The mandatory gate uses a compatible observed verdict or recomputes it from the exact inputs.
 
 > **Retained historical source account — superseded by the current route account:**
 > For publication, ordinary closeout captures and revalidates an exact candidate, checks approval, and calls the converted-memory knowledge gate before publishing either side. It subsequently refreshes memory metadata/entities/routes, closes the owner's history, and validates/gates the exact memory output before its commit. Recovered memory outputs are judged too. Integration/checkpoint preview and apply call the landing knowledge boundary; series landing validates against the parent memory tip and checks currentness over the net changed code paths. Leaf landing applies its cutover boundary rather than inventing a second leaf worklist verdict. These present calls qualify the inherited statement that normal transaction routes have no quality prerequisites: the mandatory converted-knowledge gate is distinct from automatically running the complete code-quality/certification sequence.
@@ -168,7 +170,7 @@ New invariant/family/decision admission needs a supported criterion and justific
 
 Reconsideration is explicit, one-hop, and triggered only by linked grounds; unresolved endpoints/tasks without manifests do not invent a trigger. Superseded decisions are skipped visibly. The curator can reaffirm rejection or raise a developer question, never reverse the decision. A reaffirmation refreshes only fired, still-matching links to the judged mapped state; a new change needs a new explicit answer, and an identical retry is a no-op. A raise appends its task question before knowledge-file publication and refuses without the task-question owner. Reordering linked alternatives is guarded, subject to the historical rewording limit below.
 
-The mandatory converted-memory gate recomputes exact inputs, checks kind-specific satisfying rows and validator refusals, and treats incomplete reads/Git failures as named repair findings. There is no waiver/report-only gate mode. Memo reuse requires identical tree/contract/parent/task/build inputs and unchanged recorded reads; conflicts, unreadable observations, and incomplete/Git-failed runs are not reusable acceptance. Closeout asks before approval consumption/publication and again over its exact refreshed/closed memory output. It rejects physical tree or admitted branch movement, stages the judged tree, and restores its own preparations only while bytes still match. A partial publication/proof failure remains recoverable evidence, not an invented rollback success. Once converted memory exists in the repository, unconverted writes/publications use the cutover refusal and named crossing route.
+The mandatory converted-memory gate checks kind-specific satisfying rows and validator refusals against exact inputs. A compatible retained verdict serves unchanged observations. A miss computes those judgments, with incomplete reads and Git failures reported as named repair findings. There is no waiver/report-only gate mode. Memo reuse requires identical tree/contract/parent/task/build inputs and unchanged recorded reads; conflicts, unreadable observations, and incomplete/Git-failed runs are not reusable acceptance. Closeout asks before approval consumption/publication and again over its exact refreshed/closed memory output. It rejects physical tree or admitted branch movement, stages the judged tree, and restores its own preparations only while bytes still match. A partial publication/proof failure remains recoverable evidence, not an invented rollback success. Once converted memory exists in the repository, unconverted writes/publications use the cutover refusal and named crossing route.
 
 Paired acceptance binds configured repositories, physical worktree roots, branches, bases, onboarding root, and contract digest. Ledger location is informational. Candidate capture uses an isolated add-all index and stable observed HEAD without staging the user's index. Changed pair/candidate inputs invalidate stale acceptance; operation reconciliation cannot call a moved HEAD its output without exact identity or journaled mutation proof. Series/direct-existing routes retain committed-tree semantics. Closeout/integration preserve approval, source lineage, Git/ref/tree compare-and-swap, exact recovery, and publication ownership; queue projections do not grant these powers.
 
@@ -651,7 +653,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** Baseline adoption commits memory content and returns a cache observation. Source caption: `adopt_initial_baseline` `memory_content_commit` [158]
 - The current task registration surface mounts task_reopen through _register_task_reopen_tools and delegates the call to its payload owner. [285]
 
-- Synchronous dispatch keeps validation and orders writes through worker completion. [389]
+
+- Synchronous dispatch preserves the framework validation path and waits for the worker before releasing its write lock. [389]
+
 - Citation preview adds modes to the existing declaration. [390]
 - Raw Git output prevents newline normalization from collapsing pathname identities. [340]
 - A changed candidate tree needs the bounded clean-sync proof at the door. [341]
@@ -739,7 +743,6 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** The command's inputs, scope answer and exit statuses. [91]
 - Named reporting and refusing routes. [312]
 - **Retained historical source account — superseded by the current route account:** The shared exclusion predicate. [92]
-- **Retained historical source account — superseded by the current route account:** The batch blob reader. [93]
 - **Retained historical source account — superseded by the current route account:** The format package's own map and its shape-only boundary. [94]
 - **Retained historical source account — superseded by the current route account:** The command's exit statuses. [96]
 - **Retained historical source account — superseded by the current route account:** The realization admission owner. [100]
@@ -1068,7 +1071,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Each running server registers a live-process record that installation and status read back. [400]
 
 - **Retained historical source account — superseded by the current route account:** The lock every memory route asks. [225]
+
 - **Retained historical source account — superseded by the current route account:** Development commands, budgets, diagnostic metrics and isolation. [150]
+
 - **Retained historical source account — superseded by the current route account:** Certifying publication and accepting consumers. [151]
 - The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: scripts/sync-runtime.py. [401]
 
@@ -1084,7 +1089,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [90]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [95]
 - The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands. [103]
-- **Retained historical source account — superseded by the current route account:** Dispatch advertisement is closed and undeclared inputs refuse before handler  Anchor: `AgentsRememberMCP` [290]
 - The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
 - The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
 

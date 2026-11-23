@@ -203,6 +203,47 @@
           "kind": "test"
         }
       ]
+    },
+    "5": {
+      "note": "Whole bound reads at two sizes, complete packet populations and complete relationship listings are checked at their executable cases. [5]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "729236700fed93e9385209ac659d009144b8d5a4",
+            "content": "sha256:2470d48ab16789cecbbebe2ad928ec0e4c51839726379e95f8f1e2a1143c1ce7",
+            "locator": {
+              "end": 506,
+              "kind": "line_range",
+              "start": 422
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "729236700fed93e9385209ac659d009144b8d5a4",
+            "content": "sha256:10f066b8e3a59c17f1cec3bb75c21ca334a30ccf6fb484e3676a101e52032168",
+            "locator": {
+              "end": 543,
+              "kind": "line_range",
+              "start": 507
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "729236700fed93e9385209ac659d009144b8d5a4",
+            "content": "sha256:d9baebb4b6ecb0732bc629d834a17a8f3d37f2379e64fd200d4464522e7401a5",
+            "locator": {
+              "end": 583,
+              "kind": "line_range",
+              "start": 544
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

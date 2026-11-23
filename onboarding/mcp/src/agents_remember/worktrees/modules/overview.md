@@ -43,6 +43,8 @@ L61 publication qualification: before protected ref movement, integration requir
 
 ## Construction And Ownership
 
+A private kept index can serve successive captures. The native request owns its in-memory witness and revalidates it under the capture lock. A later request can run the settled private-index capture again.
+
 checkout_holding_branch selects the actual non-bare, non-detached owner of the named branch so a series code mutation has a concrete intent/proof checkout. It reads repository facts; it is not a grant, code publisher or quality gate.
 
 `start.py` coordinates start/status/attach and provider requests. `startup/start_contract.py` owns durable structural bootstrap; `master_series_admission.py` owns persisted edge comparison and bounded refusal projection; `leaf_ref_start.py`, `start_memory.py`, `start_provider_preflight.py`, `start_plan.py`, `start_result.py` and `series_attach.py` isolate resolution, planning, admission and response construction. Provider setup/teardown execution belongs to `application/provider_runtime.py`, reached through service ports, rather than the deleted local provider modules. Synchronous provider preflight remains, but the shared predicate never enables CGC or GrepAI; ordinary start and retry return the non-enabled plan before the retained background-launch branch. Legacy progress/status readers, the live-setup retirement guard and teardown remain; their presence does not restore provider provisioning, and dry-run must not launch setup.

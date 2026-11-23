@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "263b25bd9bc67bb4b2298b07b6eba1aa016ae4b3",
+            "blob": "6304a991e5187181bfa80c1a5cf6e586c6069b99",
             "content": "sha256:2b0b8c99d53f4dd8d589fcb9b4733318eb93a7d0f4c047a796c443a09c412c1c",
             "locator": {
               "kind": "symbol",
@@ -41,11 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
-            "content": "sha256:e056777fc950f723afb2628217470913514b02b53ec179cfc7d146c69d7a1eb1",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:8d3ef09438ee2c52caadee125063bfefca466ce0885983ac124914895a396457",
             "locator": {
-              "kind": "symbol",
-              "name": "call_tool"
+              "end": 150,
+              "kind": "line_range",
+              "start": 104
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -70,18 +71,62 @@
       ]
     },
     "103": {
-      "note": "A background quality worker owns a fresh Context and definition scope for its work.",
+      "note": "The background quality worker starts in a fresh context and opens its own request memo and definition scopes for the computation.",
       "targets": [
         {
           "anchor": {
-            "blob": "42003e355d7caf9887db71524da64fa975e3aa14",
-            "content": "sha256:cc901fe442c42a1f8ca158504a32bb6d214cc4e668e59dfe87e92561589ae38b",
+            "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
+            "content": "sha256:4795e117dbdddc921f627850b5f8426151de8c7361afecd4ee510811591b0d9d",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "104": {
+      "note": "TypeScript anchor parsing reuses exact inputs and unresolved answers within one native request. Unscoped callers use the separate process memo. [104]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6304a991e5187181bfa80c1a5cf6e586c6069b99",
+            "content": "sha256:5ee91f1754b7fd30c2cddccb4422ceb09dc7f9dae84fe99e647ba2c2e97fa5d2",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 208
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6304a991e5187181bfa80c1a5cf6e586c6069b99",
+            "content": "sha256:830b0627214487b8f211874cfdb1802646d82908c88f1669a78f3c5ce1a66644",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f97ddaaf8497ca3bef1fe8d9b42bcb4da9d45405",
+            "content": "sha256:c51cafd138c5e14dd5b555c733cadbd32dcc0ef7738958f95d66f292a85f1478",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/tests/test_definition_scope_boundaries.py"
+          },
+          "kind": "test"
         }
       ]
     },

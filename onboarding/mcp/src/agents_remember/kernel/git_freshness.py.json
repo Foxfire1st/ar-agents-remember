@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:4b6abd07dd0bca1048d191f3231041c240ff088073c53fb101afa00643f5e146",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:fbfa8472a098bcd75d67a5d7bf39fb9f4f9dd902aa130d654f77efe08ec86503",
             "locator": {
               "kind": "symbol",
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:4e9712efdc5e47916c2dbb622ba70183d1df366b5fb155e7aaba5c37c0972fe0",
             "locator": {
               "kind": "symbol",
@@ -58,11 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
-              "kind": "symbol",
-              "name": "run_git"
+              "end": 225,
+              "kind": "line_range",
+              "start": 170
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -70,12 +71,12 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:5736f26e501829b927f3ec0a34e374e5efc5a275e4525a777ce9ab8182fc831a",
             "locator": {
-              "end": 236,
+              "end": 238,
               "kind": "line_range",
-              "start": 172
+              "start": 174
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -83,8 +84,8 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:44921560a9d5681dc45ee5e1808f8595ae4f497d2458666814c83965fd8b1418",
             "locator": {
               "kind": "file"
             },
@@ -165,6 +166,73 @@
               "name": "_freshness_packet"
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Freshness probes choose their per-command timeout and package it for the shared runner. [8]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:6b700b6d640532159f80c4d7e857af95377c99168c6b43785fab4db3ca3e224d",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:5b48d403e31ae7439e549002866d4ceb8acd033bda8895257a8b82430610b111",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:ab3aef93756e08fac643c082eb8acf1bd33a15e5165cc75487c9fbb9ee115756",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:c0b9923c231fbb605cd3f02a678d6ca824d5e2aac4db726658f8d46598b40d2b",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:4daf56febf07a64ca56d96b3ea172145d202c2355e728296c9017386799569b0",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 120
+            }
           },
           "kind": "code"
         }

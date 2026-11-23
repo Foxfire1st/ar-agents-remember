@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "The changed coherence and quality passages match prepare-time complete attestation binding, measured freshness and old-record publication remedies, while the unchanged passages were not reverified.",
-    "task": "261112-BUG-L9",
+    "statement": "The shipped tool details retain their scoped quality, worklist and reply contracts while W2 separates detached computation ownership from the retained run registry.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -150,7 +150,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
     },
     {
-      "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+      "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -160,7 +160,7 @@
       "path": "mcp/src/agents_remember/serving/build_info.py"
     },
     {
-      "blob": "42003e355d7caf9887db71524da64fa975e3aa14",
+      "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
     },
@@ -170,7 +170,7 @@
       "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
     },
     {
-      "blob": "52dca54186245fab9357985e28308e82732fad2a",
+      "blob": "08cb842723272236e27ee050892ceb8f45133f7a",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_worklist/route_context.py"
     },

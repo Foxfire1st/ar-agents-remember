@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A memory assertion can pass after it silently loses work, so workload completeness and process binding must precede the sample verdict."
+  },
+  "applicability": "The fixed generated-fixture native stdio regression over three cycles of 28 calls on one bound server process.",
+  "conditions": [
+    "Confirm real returned continuations, successful typed read and task outcomes, full quality receipts, and three distinct applied writes before evaluating samples.",
+    "Use the executable test's growth, post-reply RSS plus swap, and peak VmHWM limits."
+  ],
+  "exclusions": [
+    "The measured envelope applies to this executable selection and its controlled fixture.",
+    "Final ordinary, post-sync per-seat and whole-lane qualifications have their own evidence."
+  ],
+  "id": "INV-FZY2XS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "bug-r18-item-4-generated-pair-result.md, exact numeric base red and the candidate green, and bug-r18-item-4-original-fixture-result.md."
+      ],
+      "path": "BUG-L18 W2 affected knowledge and initial history"
+    },
+    "handoffEntry": "BUG-R18@v1 item 4 — stress regression",
+    "leaf": "261112-BUG-L18",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The native stdio stress case verifies the growth and memory limits after three cycles on one process, including full quality checks and applied writes.",
+  "status": "proposed",
+  "supersedes": []
+}

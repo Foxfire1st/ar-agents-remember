@@ -142,7 +142,9 @@ Current source: The current lifecycle catalog declares this module as an exact c
 
 
 
+
 - The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence. The `curator_coherence_test_support.py` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. The `writer_worklist_test_support.py` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. [9]
+
 
 
 

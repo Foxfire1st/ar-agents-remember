@@ -1,17 +1,37 @@
 {
   "path": "mcp/src/agents_remember/kernel/git_reference_files.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0db194c56647961c78e76ba5922ab36f97e93fdc",
+        "content": "sha256:51e2cdcb12d721777119094f12f79ff7790ae03be73d0fe2e4b8165ba79c3ea1",
+        "locator": {
+          "kind": "symbol",
+          "name": "packed_references"
+        }
+      },
+      "id": "RLZ-EKS5Z6",
+      "invariant": "INV-141H2J",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — native repository observations",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The parser selects the native request memo before checking its file witness.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Packed-reference parsing and explicit malformed-record failure.",
       "targets": [
         {
           "anchor": {
-            "blob": "c62fc6e508ce17f84d3ae281de6500e380ba0552",
-            "content": "sha256:0213478ca070f9dcd739a86880e0a806ed47d8597b712c01f28fe64a7d0f24b4",
+            "blob": "0db194c56647961c78e76ba5922ab36f97e93fdc",
+            "content": "sha256:51e2cdcb12d721777119094f12f79ff7790ae03be73d0fe2e4b8165ba79c3ea1",
             "locator": {
-              "kind": "symbol",
-              "name": "packed_references"
+              "end": 64,
+              "kind": "line_range",
+              "start": 39
             }
           },
           "kind": "code"

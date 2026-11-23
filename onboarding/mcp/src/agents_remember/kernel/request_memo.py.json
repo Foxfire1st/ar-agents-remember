@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/kernel/request_memo.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9c5b733b58bfb20cbe67b26797f4adff45a16eb8",
+        "content": "sha256:fb9bcad761874713043e9c6cf1f924cbfdceea5d9ab703c182c1a8cf71f4fe51",
+        "locator": {
+          "kind": "symbol",
+          "name": "request_memo_scope"
+        }
+      },
+      "id": "RLZ-N7C30V",
+      "invariant": "INV-HPHVCN",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — request ownership",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The scope clears its owners on exit so callers cannot reuse request-owned values.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Scope exit clears the common owner map and restores the token.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c5b733b58bfb20cbe67b26797f4adff45a16eb8",
+            "content": "sha256:fb9bcad761874713043e9c6cf1f924cbfdceea5d9ab703c182c1a8cf71f4fe51",
+            "locator": {
+              "kind": "symbol",
+              "name": "request_memo_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Thread-safe lazy lookup shares an owner under one scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c5b733b58bfb20cbe67b26797f4adff45a16eb8",
+            "content": "sha256:ba6be066e766c3634a76ed1678b213d13453d4c495c63f49814764e4fc274b6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "request_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

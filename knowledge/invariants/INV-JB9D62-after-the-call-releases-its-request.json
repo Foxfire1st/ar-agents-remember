@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Trimming after scope exit lets the allocator reclaim pages the request released, and using the finalizer preserves the timing for refusal and error."
+  },
+  "applicability": "The native dispatch finalizer on glibc after its request scope closes.",
+  "conditions": [
+    "Invoke malloc_trim when the hook is available. Release depends on there being eligible free pages and the hook succeeding."
+  ],
+  "exclusions": [
+    "A specific resident-size reduction is outside this contract.",
+    "The dashboard has separately controlled periodic diagnostics and trimming."
+  ],
+  "id": "INV-JB9D62",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "bug-r18-item-2-ordinary-results.md, allocator timing and diagnostics, and test_trim_follows_success_refusal_and_error_after_call_scope_exits."
+      ],
+      "path": "BUG-L18 W2 affected knowledge and initial history"
+    },
+    "handoffEntry": "BUG-R18@v1 item 3 — allocator high mark",
+    "leaf": "261112-BUG-L18",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "After the call releases its request scope, the tool server returns free glibc allocator pages when malloc_trim is available.",
+  "status": "proposed",
+  "supersedes": []
+}

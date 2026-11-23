@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
-    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
+    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "The guide still describes lane membership and artifact ownership. The catalog now includes two permanent historical journal fixtures.",
-    "task": "261112-BUG-L15",
+    "statement": "The evidence-system description continues to apply to the existing stress-durability lane with the native stdio case and its four permanent shared supports.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+      "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "d8a614375316b5233411201916453bc5935890f4",
+      "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

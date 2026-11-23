@@ -165,26 +165,16 @@
       ]
     },
     "4": {
-      "note": "The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default; both probes here override that default through `GitRunnerOptions(timeout=...)`.\n\nAnchor: `GIT_REPOSITORY_SELECTOR_ENV` `GIT_LOCAL_TIMEOUT_SECONDS` `git_environment` `run_git`",
+      "note": "The remote-branch probe passes its timeout to the shared Git runner. The pull-request probe passes the same timeout and scrubbed environment to its own gh process.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:9be6edd7629b87ba159b0a5805c8d9965ced076237c86d4585d132efd11a3ae5",
             "locator": {
-              "kind": "symbol",
-              "name": "GIT_REPOSITORY_SELECTOR_ENV"
+              "end": 70,
+              "kind": "line_range",
+              "start": 61
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -192,11 +182,12 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:4b6abd07dd0bca1048d191f3231041c240ff088073c53fb101afa00643f5e146",
             "locator": {
-              "kind": "symbol",
-              "name": "GIT_LOCAL_TIMEOUT_SECONDS"
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -204,11 +195,12 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
             "locator": {
-              "kind": "symbol",
-              "name": "git_environment"
+              "end": 167,
+              "kind": "line_range",
+              "start": 154
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -216,11 +208,35 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
-              "kind": "symbol",
-              "name": "run_git"
+              "end": 225,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cba6e5af9fb586386f0327c3231fbf20a3e2df6",
+            "content": "sha256:ea5f962396f6b129d65236f92d955b1de5ed292ea4bffa9517233859d6cce971",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:44921560a9d5681dc45ee5e1808f8595ae4f497d2458666814c83965fd8b1418",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },

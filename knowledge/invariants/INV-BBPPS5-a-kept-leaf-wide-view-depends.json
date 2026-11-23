@@ -17,7 +17,7 @@
   "exclusions": [
     "A second document that starts to claim the leaf: the lookup is then ambiguous, the view has no key, and it is computed and not kept.",
     "Edits of the code or memory worktree, which give other trees and another key.",
-    "The memo's capacity and age limit, and the rule that a view behind a failed read is never kept, which INV-5M9WY3 states."
+    "Entry and retained-byte limits belong to INV-QEKWKH. A view behind a failed read is ineligible for retention, as INV-5M9WY3 states."
   ],
   "id": "INV-BBPPS5",
   "origin": {
@@ -31,7 +31,7 @@
     "leaf": "260928-MIK-L42",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "A kept leaf-wide view depends only on what its computation read: it is served again only while every row the computation recorded still holds, a recorded input that moved forces a recomputation, and a task document the computation did not open is not an input. When a recorded input moves while the view is computed, the view is computed once more; when an input moves again in that computation, the answer is the refusal inputs_changing and nothing is kept.",
   "status": "proposed",

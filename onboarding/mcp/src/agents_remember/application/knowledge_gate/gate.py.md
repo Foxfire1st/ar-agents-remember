@@ -7,9 +7,7 @@
 ## Purpose
 
 **The mandatory invariant closeout gate over one leaf's exact candidate: recompute, decide, validate
-(MIK-R09@v2).** `evaluate_leaf_gate` recomputes the leaf's worklist over the Git trees the route already captured
-(C and K_C), decides every item through its kind's predicate, runs the validator (MIK-R22) against the parent line's
-memory tip, and returns a `GateResult`: every open item, every unreadable input and every refusing validator violation is one
+(MIK-R09@v2).** `evaluate_leaf_gate` reuses a compatible verdict whose recorded inputs still match. On a miss it computes the leaf worklist over the captured Git trees, decides each item through its kind's predicate and runs the validator (MIK-R22) against the parent line's memory tip. The resulting `GateResult` carries one finding for every open item, unreadable input or refusing validator violation. Each is a
 `GateFinding`. For a complete worklist, the gate also refuses each recorded entry that is not current at a path changed since the leaf's recorded code base. The curator publication counts the refusing findings toward `curatorActionableCount`; the closeout validator and
 every commit route refuse while any exists. An open item of an advisory kind — a weakness (MIK-R118 rule 4) — is
 a report-only finding: the gate shows it and no route refuses for it. That is the advisory split among the *decided
@@ -19,6 +17,8 @@ with no written weakness at all can still report such items. No route refuses fo
 (rule 5).
 
 ## Code Commentary
+
+The gate observes the candidate memory tree before looking for a reusable parsed side. The snapshot location and tree identify a candidate. Exact file bytes must still match, and a hit gives the caller an isolated copy. The separate candidate parse store charges retained keys and parsed data before retaining them.
 
 ### Logic
 
@@ -92,7 +92,7 @@ with no written weakness at all can still report such items. No route refuses fo
 
 - The admission base is the parent line's memory tip (the L27 carry, ruling 2026-09-29T22:11:24): every record first
   created in the leaf, in however many commits, is judged new by `R27.2-new-record`.
-- Ordinary quality/closeout runs persist the recomputed worklist beside the contract; landing refusal callers explicitly disable that persistence, including memo hits, so judgment changes no worklist file.
+- Ordinary quality and closeout runs persist the resulting worklist beside the contract, including on a memo hit. Landing refusal callers disable that persistence for both paths.
 
 ### Invariants And Boundaries
 
@@ -102,8 +102,7 @@ with no written weakness at all can still report such items. No route refuses fo
   `judge` (open items, incomplete inputs and violations are all findings) and at the routes by the refusals that
   consume `GateResult.refusal()`; proved by the gate and route tests (below) and the real converted scratch
   (`gate-1-refused`: 5 findings; `gate-2-answered`: pass; `gate-3-edited-again`: 2; `gate-4-restored`: pass).
-- **The gate always recomputes from the exact trees; a kept verdict is reused only for identical inputs, and an
-  incomplete run or a Git failure is never kept.** Candidate invariant; realized by `recompute_for_gate`,
+- **The gate reuses a compatible verdict while its observed inputs still match. On a miss, it recomputes from the exact trees. An incomplete run or a Git failure leaves no retained verdict.** Candidate invariant. The cold path uses `recompute_for_gate`,
   `GateResult.memoisable` and [`memo`](memo.py.md); proved by the memo, approval-state and Git-failure tests.
 - **An unreadable input makes the run incomplete with a named reason; it is never read as unchanged, answered or
   absent.** Candidate invariant; realized by `recompute_for_gate`, `_applies`, `_resolved_tip`, `_candidate`,
@@ -162,7 +161,9 @@ No configured live documentation source was available for this pass.
 
 
 
-- The module docstring: the rule, that the gate always recomputes and never reads a persisted worklist or trusts its digest, and the gate's applicability. [1]
+
+- The leaf gate reuses a compatible observed verdict or computes the worklist and validator result from the exact inputs. The persisted worklist is output. [1]
+
 
 - The finding codes and the repair row. [2]
 

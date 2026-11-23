@@ -131,7 +131,9 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 
 
-- Strict schema-3 operation state has its own authority lock and immutable accepted envelope. [20]
+
+- The canonical lifecycle journal validates schema 3.0 and the operation kind for its path. Its authority lock serializes record transitions, which preserve the generation identity and durable input. [20]
+
 
 
 

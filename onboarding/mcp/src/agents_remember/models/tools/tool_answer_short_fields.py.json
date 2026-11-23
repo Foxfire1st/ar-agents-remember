@@ -3,8 +3,46 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "56973919b5cead4a39077faa4cd0cd4364324a00",
-        "content": "sha256:2866eda4f74b92f8c2231d8bc7111088a0e83172c6f1abc8871d0585af99a71a",
+        "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+        "content": "sha256:d236e545e25288d12e7febc294f7f736a52bdcec42ef12352169a0503c24a4ae",
+        "locator": {
+          "end": 52,
+          "kind": "line_range",
+          "start": 35
+        }
+      },
+      "id": "RLZ-00A3WC",
+      "invariant": "INV-WJ9ZD7",
+      "origin": {
+        "handoffEntry": "W6-landing-declared-fields",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "Builds a candidate nested value with its retained siblings and looks up presence at the declared child.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+        "content": "sha256:92904d9deb67cf500bbd5851bdc4445fbaed7cf3aa62f6c2418f843723d6b4dc",
+        "locator": {
+          "end": 103,
+          "kind": "line_range",
+          "start": 55
+        }
+      },
+      "id": "RLZ-9M5PF9",
+      "invariant": "INV-WJ9ZD7",
+      "origin": {
+        "handoffEntry": "W6-landing-declared-fields",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "Selects only eligible successful landing outcomes, reads the declared paths, validates their types and caps the compact list before independent fitting.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+        "content": "sha256:4599fcb71c9bb55a2f64033b2aae78c97c2081b3f7fcb367c3af47607419792b",
         "locator": {
           "kind": "symbol",
           "name": "fit_declared_short_fields"
@@ -18,19 +56,51 @@
       },
       "rationale": "Fits whole values or names each fitting omission before considering the next field.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+        "content": "sha256:49922269576cc6d970aec69526e0cb1e0789995ebcd33536c68c9f5de1b94aac",
+        "locator": {
+          "end": 23,
+          "kind": "line_range",
+          "start": 16
+        }
+      },
+      "id": "RLZ-QQJ83G",
+      "invariant": "INV-WJ9ZD7",
+      "origin": {
+        "handoffEntry": "W6-landing-declared-fields",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "Declares the successful landing outcome, action, debt count and key list in their fitting order and places retained outcomes and actions first.",
+      "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "The declaration selects and type-checks the supported paths for each tool outcome.",
+      "note": "The declaration selects and type-checks the supported paths. Landing outcomes admit one next-step object, an independent count and capped record keys.",
       "targets": [
         {
           "anchor": {
-            "blob": "56973919b5cead4a39077faa4cd0cd4364324a00",
-            "content": "sha256:d33514480beff012a8d5849f5d93a0d3acecd608a720f6d430a8a359011bae19",
+            "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+            "content": "sha256:a382d64d79178ed10b55b1a4fe843e7ca0544f528d774936aab57d9a2889bd6f",
             "locator": {
-              "kind": "symbol",
-              "name": "declared_short_fields"
+              "end": 23,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+            "content": "sha256:92904d9deb67cf500bbd5851bdc4445fbaed7cf3aa62f6c2418f843723d6b4dc",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 55
             }
           },
           "kind": "code"
@@ -38,15 +108,28 @@
       ]
     },
     "2": {
-      "note": "The fitter measures whole values and reserves each fitting omission notice before the next field.",
+      "note": "The fitter preserves sibling fields, fits each whole value and reserves any fitting omission notice with the rejected field size.",
       "targets": [
         {
           "anchor": {
-            "blob": "56973919b5cead4a39077faa4cd0cd4364324a00",
-            "content": "sha256:2866eda4f74b92f8c2231d8bc7111088a0e83172c6f1abc8871d0585af99a71a",
+            "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+            "content": "sha256:3da4a8b4048b61568fe6180fab9261ab61968a651dd84bbca26ed9a8db7f055e",
             "locator": {
-              "kind": "symbol",
-              "name": "fit_declared_short_fields"
+              "end": 44,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+            "content": "sha256:4599fcb71c9bb55a2f64033b2aae78c97c2081b3f7fcb367c3af47607419792b",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 117
             }
           },
           "kind": "code"
@@ -58,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56973919b5cead4a39077faa4cd0cd4364324a00",
+            "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
             "content": "sha256:52ff23bb709dd7574923695f5b8a2ccb9e6823e3019bb0867e160d3c20ed3af7",
             "locator": {
               "kind": "symbol",

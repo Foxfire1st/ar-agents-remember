@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "kept_candidate_tree answers a tree from the kept index when nothing moved.",
+      "note": "Under the capture lock, kept_candidate_tree returns the witnessed tree when the private index still exists and its captured observations still agree. A witness miss takes the native kept-index capture path.",
       "targets": [
         {
           "anchor": {
-            "blob": "6535d737aa32cf82b57102e99a4a1c1ddc96f975",
-            "content": "sha256:b2499e06d3ecb131e6cbccff990dcd82e05067be3f272059779285c2acbc1fad",
+            "blob": "cf983d28c316e8d696d598c2e66b9f9933a2e914",
+            "content": "sha256:fb8cfa03f8bc50960c6f1f0be1e8fa8b58260b8c1bd32ddfb4e8107109a7f404",
             "locator": {
-              "kind": "symbol",
-              "name": "kept_candidate_tree"
+              "end": 106,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "code"

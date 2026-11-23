@@ -40,6 +40,8 @@ The current ordinary public source roster has 44 names, including mounted knowle
 
 Over-bound answers keep the exact available result locator and the final cut hint. The shared short-form fitter keeps declared whole values or fitting names and sizes for omissions. Fitting outcome and next-action fields precede the locator in the delivered answer. The [declared-field helper](tools/tool_answer_short_fields.py.md) owns the tool/outcome declarations and their type checks.
 
+Recorded landing uses a 700-token answer bound and the 400-token cut. Its short declaration offers the next-step sentence and tool, stale count and capped record keys. The exact saved-result locator takes priority. The guard keeps the next step and record keys when they fit and names omitted keys when their omission notice fits.
+
 Contract guidance preserves an explicit producer `nextStep`; otherwise the application resolves the response's own contract. The two preview approval stops may use the exact same call's `contract_path` argument and remain summary-only. Actionable guidance that names a contract is withheld when the response has no address or any supplied spelling fails to identify its contract file or immediate containing directory. Guidance without an artifact address can remain. No ambient-session guidance or declared `agentNotifierBanner`/`supervisorBanner` envelope fields remain.
 
 Memory-tree reads carry their selected tree/index, completeness and bounded continuation, plus reader-owned proof, currentness, family, and route-chain blocks when applicable. Git-tree knowledge diffs name exact revisions, counts, bounded record listings and the whole-report location; text-tree integrity reports carry validator inputs, findings and optional leaf worklists. These observations establish neither semantic effect nor code approval.
@@ -705,3 +707,5 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 - **Retained historical source account — superseded by the current route account:** Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
 
 - The dashboard launcher carries modeId and role-start tool inputs omit mode. Permission-bearing start-call features still refuse. [341]
+
+- Both successful landing states share the short-form bound. The next step, stale-entry count and capped keys each stay only if they fit with the exact locator reserved. A fitted count stays when the keys or their omission notice are dropped. Where the count does not fit, the cut omits staleEntries and the named detail retains the whole debt. [342]

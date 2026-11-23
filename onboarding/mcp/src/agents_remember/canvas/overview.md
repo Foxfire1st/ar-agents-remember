@@ -28,6 +28,8 @@ The proof record is a generated artifact: it binds the served policy, the enforc
 
 ## Exact Evidence
 
+The grade-refresh reader uses a private spool for a complete Git blob. It keeps exact bytes or an unavailable result within the selected comparison reader. The spool closes within the read.
+
 The frame may ask to open something; the host decides what that is. `resolve_evidence_reference` answers only with a reference the revision's own admitted packet carries — a claim's basis, a claim, a collection item or a supplemental receipt — requires the packet and the binding to name the same comparison, and answers an unavailable or unsupported destination with its own limitation rather than substituting today's record. Two claims carrying one unnamed reference are refused as ambiguous instead of answered with a guessed basis.
 
 ## Presenter Authoring And Publication

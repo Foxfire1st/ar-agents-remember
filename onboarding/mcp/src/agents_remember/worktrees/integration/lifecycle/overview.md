@@ -16,6 +16,8 @@ This area owns operation journal addressability, storage, public projection and 
 
 Read `lifecycle_operation_location.py` for the locator-to-enclosure chain and `lifecycle_operation_store.py` for durable records and revisions. The unmounted helper in `observation/status_wait.py` observes meaningful changes for an exact retained generation. The operation and control projectors derive a generation-coherent public view.
 
+The lifecycle journal store validates file identity before reusing parsed records. Native tool calls share the parse cache within their request. Dashboard reads use a separate count-bounded process owner.
+
 Recovery commit evidence contains code and memory-content outputs. Cache refresh is a separate observation. Direct cancellation and recovery check the observed Git state against the retained evidence.
 
 ## Construction And Ownership

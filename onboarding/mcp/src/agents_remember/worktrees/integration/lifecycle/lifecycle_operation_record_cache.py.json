@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_record_cache.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Cache reads compare the saved journal observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "386d55399e7014305d244c238a4168be81704750",
+            "content": "sha256:56262407be7a30b4fab5fdc43593fddd5478ad5e50c823f1ab570c30c1b90e13",
+            "locator": {
+              "kind": "symbol",
+              "name": "_OperationRecordCache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Owner selection uses the current request scope when present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "386d55399e7014305d244c238a4168be81704750",
+            "content": "sha256:2630719f9233f802915e2f01d2f95f41d92d1b3c65ea89c33b0a24ae5e909cc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "operation_record_cache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

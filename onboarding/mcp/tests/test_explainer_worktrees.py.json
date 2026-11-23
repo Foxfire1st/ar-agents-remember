@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_explainer_worktrees.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "93b9ba5c393fe3efac16c9954997ff25a7c8068a",
+        "content": "sha256:a0fe8365cfbf746ff0c14fae5cf29c781cc45f9506056ce51e849ca18468eee8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_comparison_blob_spools_exact_bytes_and_memoizes_success_and_absence"
+        }
+      },
+      "facet": "Grade reads preserve exact bytes and memoize success and measured absence.",
+      "id": "PRF-4SYWN8",
+      "invariant": "INV-03CT75",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — Explainer blob capture",
+        "leaf": "261112-BUG-L18"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1db299c5c8132079cb7289bdabf93412c0221aef",
+            "blob": "93b9ba5c393fe3efac16c9954997ff25a7c8068a",
             "content": "sha256:f447313082fe9387cbaa644fc2284839965acc9f012200336c637d58ce48c679",
             "locator": {
               "kind": "symbol",

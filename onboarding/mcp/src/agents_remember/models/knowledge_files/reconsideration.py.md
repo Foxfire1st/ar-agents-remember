@@ -135,7 +135,9 @@ No cross-repo boundary is crossed by this file.
 
 
 
-- The closeout gate recomputes its worklist and reads no earlier persisted document. [15]
+
+- The standalone cold recomputation computes the worklist without reading an earlier persisted document. [15]
+
 
 - Direct landing computes its worklist over exact sides before judging. [16]
 

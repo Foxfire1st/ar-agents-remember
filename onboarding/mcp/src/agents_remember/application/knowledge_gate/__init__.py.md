@@ -20,7 +20,7 @@ re-exports the public surface.
 - The package map, in the docstring:
   - [`predicates`](predicates.py.md): each registered kind's own satisfying rule over a stored item, and the
     currentness of invariant and family rows (rule 2);
-  - [`gate`](gate.py.md): one leaf's recompute over the exact candidate, the findings and the refusal;
+  - [`gate`](gate.py.md): one leaf's exact-candidate evaluation, with a compatible memo hit or cold recomputation, and the findings and refusal;
   - [`memo`](memo.py.md): the bounded memo of verdicts, keyed by the exact trees, contract, parent tip, task document
     and build;
   - [`direct`](direct.py.md): the gate at direct landing, the branch-addressed leaf closeout;

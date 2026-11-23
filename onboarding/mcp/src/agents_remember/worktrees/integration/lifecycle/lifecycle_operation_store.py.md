@@ -10,7 +10,7 @@ Provides strict atomic enclosure-local storage and transition validation for lon
 
 ## Code Commentary
 
-Bounded journal-record reuse compares the observed stat identity with an entry accessed under the in-process cache lock and returns a deep copy of the same journal truth; read() itself does not acquire the journal publication lock. It adds no lifecycle decision, transaction state, foreign-content repair or permission to retain a moved input.
+`read` compares modification time, size and change time before reusing a parsed record. It returns a deep copy on a hit. Native calls use the request's memo and dashboard reads use the process owner. A failed stat proceeds through the uncached read path. Journal publication and transition calls own their separate write lock.
 
 
 ### Logic

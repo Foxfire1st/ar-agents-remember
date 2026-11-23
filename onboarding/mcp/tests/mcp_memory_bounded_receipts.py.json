@@ -1,0 +1,68 @@
+{
+  "path": "mcp/tests/mcp_memory_bounded_receipts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each completed pair must match its expected call identity and read outcome.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd06da88d5ad9adf9118d8b596913833424647d9",
+            "content": "sha256:3280553d881865f2e8397c1c277ef20ac88389bfbc0f0be3b41a322729ed8b3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reply_pairs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each of the three cycles requires a complete leaf quality receipt, a successful preview and a successful write. Quality memory trees and written paths must be distinct across cycles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd06da88d5ad9adf9118d8b596913833424647d9",
+            "content": "sha256:0c79b914b7b41c2421ca4fb91b2498ab05eeeaa6ca92d08d5fbf098d8d52d07d",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fd06da88d5ad9adf9118d8b596913833424647d9",
+            "content": "sha256:d07804f973ea1660c116e454dcbf28e3b2fdd97468985a266d50c1510bc708fd",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 149
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only a completed workload produces the measured result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd06da88d5ad9adf9118d8b596913833424647d9",
+            "content": "sha256:88477a1db753c47ade1774922ece4e40521fa136d8c91b77e1c7f9e9c6dbc805",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_completed_workload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

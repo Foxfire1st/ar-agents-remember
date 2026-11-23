@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
-    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
-    "statement": "The cost-aware Bootstrap guide correctly limits catalog validation to known offerings and describes harness, model and effort overrides for one start.",
-    "task": "261112-BUG-L19",
+    "statement": "The Bootstrap guide limits validation to known host offerings and describes per-start harness, model and effort overrides, which the request worker forwards to the same launch owner and drains on cancellation.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/guides/cost-aware-bootstrap.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "3f91234661460904091f50cb41164456aa515f04",
+      "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },

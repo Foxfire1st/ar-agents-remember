@@ -44,7 +44,7 @@ Ordinary onboarding judgment is the latest current source-bound updated/no_impac
 
 L61 ordinary-candidate qualification: a counted changed card still requires its current source-bound onboarding_trace row under the admitted native gate. The L53 exception just named is retained as historical leaf-local rollout accounting; it does not waive L61 rows or permit future backfill.
 
-On converted leaves, the knowledge gate recomputes the worklist and validator against exact code/memory sides. Open items, incomplete inputs and refusing validator violations are repair findings without a waiver. Persisted worklists or their digests do not replace recomputation. The validator's parent-memory comparison makes every record introduced by the leaf subject to new-record admission. Both legacy sides lacking the layout marker yield no converted gate; this local applicability rule does not establish the absence of separate cutover admission elsewhere.
+On converted leaves, the knowledge gate reuses a compatible verdict while its recorded inputs still match. On a miss, it computes the worklist and validator result against the exact code and memory sides. Open items, incomplete inputs and refusing validator violations are repair findings without a waiver. The durable worklist records the current gate result as output. The validator's parent-memory comparison makes every record introduced by the leaf subject to new-record admission. Both legacy sides lacking the layout marker yield no converted gate; this local applicability rule does not establish the absence of separate cutover admission elsewhere.
 
 Authorized closeout publishes the enabled code and memory-content legs with explicit nonblank messages and an `intent_note` naming explicit developer commit approval or accepted delegated series authority. Preview and apply judge the converted knowledge gate; the memory commit contains the exact judged tree, with concurrent changes refused or left uncommitted. Coherence is validated at admission when required. The current closeout carrier separates transaction publication from code-quality, full-suite, certification and review production: those operations are not silently invoked by apply, and absence of those records is not itself a transaction quality gate. Their independent evidence obligations remain with their owners.
 
@@ -363,7 +363,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The command entry: validation of both catalogs on one source graph, or the rewrite. [71]
 
-- The internal knowledge-page threshold is 8,000 tokens; the mounted knowledge_read naming pager uses a 4,000-token delivered bound and a 20-entry list cap. [73]
+
+- The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read naming pager uses a 4,000-token delivered bound and a 20-entry list cap. [73]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses. [75]
 
@@ -476,7 +478,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): Worktree bootstrap consumes the calling root's lock and source, with explicit replacement and successful-backup removal. [309]
 
-- The invariant gate recomputes and treats open/incomplete/refusing inputs as repair findings; the local legacy applicability rule does not own cutover refusal. [317]
+
+- The invariant gate reuses a compatible observed verdict or recomputes from exact sides. Open items, incomplete inputs and refusing validator violations are repair findings. The local legacy applicability rule leaves cutover refusal to its own owner. [317]
+
 
 - Whole-sprint archive is an additional explicit authority with terminal/readiness predicates, recorded moves and cleanup retry. [319]
 
@@ -504,7 +508,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): A review comparison on converted memory is four Git trees pinned by refs. [102]
 
-- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The Git runner gives the child no standard input unless text is passed. [131]
 
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Root manifest/journal location authority. [290]
 
@@ -557,7 +560,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational and reference map. [35]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): Development commands, budgets, diagnostic metrics and isolation. [44]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Certifying publication and accepting consumers. [45]
 

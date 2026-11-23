@@ -238,4 +238,5 @@ the fixture it is pinned against lives in this repository.
 
 
 
+
 - The three governed-artifact rows registering this module as a consumer, beginning with the _user_settings_guard.py row. The `curator_coherence_test_support.py` row registers `test_capsule_launch_wiring.py` as a consumer. The `fixtures/repository_profiles/node/package-lock.json` row registers `test_capsule_launch_wiring.py` as a consumer. [21]

@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/mcp_memory_bounded_corpus.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sample code and guides provide the replay's source paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1b58995adbdd8cdbeec8c26e6b356b13176778a",
+            "content": "sha256:579797dad5aa5d2621c6e9f0dfa5db9a223efc84a865039c0deda390ee6a90a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_code"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The memory generator builds the converted corpus against the committed fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1b58995adbdd8cdbeec8c26e6b356b13176778a",
+            "content": "sha256:26897ba1a1c300e109fa8cbbf27c7ada3d6b7943d8a13d901e9d5f4bbfed9510",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

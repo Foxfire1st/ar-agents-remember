@@ -10,11 +10,9 @@ A test suite for review incremental memos.py.md: it drives the behaviour the com
 
 ## Code Commentary
 
+The oversized grep case returns the full answer, then recomputes it for the next read. The persistence case compares restored grep entries with the live byte and entry policy.
+
 A symbol answer is kept by blob, path and name across reads
-
-## Boundaries
-
-The obligation above is the whole of what this file must keep true; the route account says what the surrounding surface promises.
 
 ## Evidence
 

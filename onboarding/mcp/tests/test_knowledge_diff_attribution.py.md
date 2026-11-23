@@ -159,4 +159,5 @@ No configured cross-repository evidence is claimed.
 
 
 
+
 - The unit-regression lane registers this module. Seven lifecycle artifact rows declare it as a consumer, including the diff-scope, row-codec, row, and read-scope support artifacts. [31]

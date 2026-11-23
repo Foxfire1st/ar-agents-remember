@@ -20,6 +20,8 @@ Cases pin exact envelope stripping, recursive list caps, code validation, fixed 
 
 The exact-edge completion case measures its bare mapping at the tool’s token bound. It then requires the real locator to take the mapping over that bound and checks the delivered ceiling, the saved line and the observer count.
 
+The dropped-field regression measures the latest count after shedding a scalar. The case retains the exact locator and primary count, with two dropped fields and a measured short answer within the cut ceiling.
+
 ## Evidence
 
 No Domain Documentation sources are configured; the evidence below is repository implementation or test assertions, not a new execution attestation.
@@ -30,7 +32,9 @@ No Domain Documentation sources are configured; the evidence below is repository
 
 
 
-- Shaping and failure preservation are asserted at the completion choke. The authored long-path case keeps the final cut hint and saved detail even when the exact locator pushes the answer above 400 tokens. [1]
+
+- Shaping and failure preservation are asserted at the completion choke. The long-path case keeps the final cut hint and saved detail even when the exact locator pushes the answer above 400 tokens. [1]
+
 
 
 
@@ -54,3 +58,5 @@ No Domain Documentation sources are configured; the evidence below is repository
 - The shaped start row has the explicit six-hundred-token bound. The existing central choke guard and every other tool bound remain; this is a source-declared row constraint, not a new runtime size census. [4]
 
 - The exact-edge test measures both sides of the bound and checks the real delivery accounting. [5]
+
+- The scalar-shedding proof checks the updated dropped-field count, the exact locator and the measured cut ceiling. [6]

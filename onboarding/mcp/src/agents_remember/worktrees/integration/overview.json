@@ -436,16 +436,16 @@
       ]
     },
     "20": {
-      "note": "Strict schema-3 operation state has its own authority lock and immutable accepted envelope.",
+      "note": "The canonical lifecycle journal validates schema 3.0 and the operation kind for its path. Its authority lock serializes record transitions, which preserve the generation identity and durable input.",
       "targets": [
         {
           "anchor": {
-            "blob": "3c1c869f493f68755e20a825d5e84db44ed38a54",
-            "content": "sha256:869d3b8db348a7c650df48fa04c7c2ff185b7a87df7a44a113b66bac2c17f2d3",
+            "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
+            "content": "sha256:eba1c9fe237ae6fb48a429d9a82046da4027d367bc40a14f07518bbdbefa9913",
             "locator": {
-              "end": 472,
+              "end": 467,
               "kind": "line_range",
-              "start": 463
+              "start": 464
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
           },
@@ -453,12 +453,12 @@
         },
         {
           "anchor": {
-            "blob": "3c1c869f493f68755e20a825d5e84db44ed38a54",
-            "content": "sha256:89c5c537ae911f46a9a0f6cac22fd9a6d3efb02119eab3687a048446b9f3a53c",
+            "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
+            "content": "sha256:91044d7ea499e93209d052e20cb3feafb97a27df7e70573fbd51b3883dd79277",
             "locator": {
-              "end": 588,
+              "end": 540,
               "kind": "line_range",
-              "start": 513
+              "start": 470
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
           },
@@ -466,12 +466,12 @@
         },
         {
           "anchor": {
-            "blob": "3c1c869f493f68755e20a825d5e84db44ed38a54",
+            "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
             "content": "sha256:87461444e0b32193671801785ff6d62e12d172795e7f4e59c2a240703a3d876e",
             "locator": {
-              "end": 911,
+              "end": 863,
               "kind": "line_range",
-              "start": 890
+              "start": 842
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
           },
@@ -492,12 +492,25 @@
         },
         {
           "anchor": {
-            "blob": "3c1c869f493f68755e20a825d5e84db44ed38a54",
-            "content": "sha256:8534584206ec4ebd8eca4d6a78ff42a06bff9fea1076d0ff6a62622d89c01dff",
+            "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
+            "content": "sha256:b047ad2b8a631c3be1585ddcbc6cd765c772a2fc8efb2cca3b7757e45ccc1cce",
             "locator": {
-              "end": 563,
+              "end": 515,
               "kind": "line_range",
-              "start": 437
+              "start": 438
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
+            "content": "sha256:889ddc43e49e1e491f69a4c1e08b0112c28dd1043326b48d485b14bcfe63571e",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 242
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
           },
@@ -640,7 +653,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
             "locator": {
               "kind": "symbol",

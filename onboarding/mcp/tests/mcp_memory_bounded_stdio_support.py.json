@@ -1,0 +1,56 @@
+{
+  "path": "mcp/tests/mcp_memory_bounded_stdio_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Server binding verifies the selected build and fixture scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d085155b1d33d66eb9d606c2f0ceedf9bc24818",
+            "content": "sha256:d2a777b628e6d4c1d6da4630655bcffaf92351619beffd6b546daf64278121f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bind_server"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The read plan requires real prior cursors at the continuation positions.\n\nAnchor: `_ReadPlan.arguments`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d085155b1d33d66eb9d606c2f0ceedf9bc24818",
+            "content": "sha256:8e722939d3a3f0c5b43facb040ac8ed128527fd1a0c683b57c5ce639022a4292",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 316
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "One session runs the complete fixed selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d085155b1d33d66eb9d606c2f0ceedf9bc24818",
+            "content": "sha256:0db0090abe8ad1939fb3ec6d81139f02acdf6ae51cd0ab5e1810a44c02d36aed",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_selection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

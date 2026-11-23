@@ -11,7 +11,6 @@
     "INV-S75HA1",
     "INV-GAVZC0",
     "INV-GGF749",
-    "INV-YFTJNQ",
     "INV-FXEPWM",
     "INV-D3JV0V",
     "INV-16DDNJ",
@@ -36,7 +35,7 @@
     "leaf": "260928-MIK-L102",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/models/knowledge",
