@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
-    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The settings reference distinguishes the configured review-round budget and its approved extensions from post-pass final checks outside that budget.",
-    "task": "261112-BUG-L12",
+    "statement": "The Settings reference’s catalog validation and provider-options projection still govern per-role settings choices and extra harness arguments.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,8 +46,8 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
-        "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+        "content": "sha256:6f65805395b74e84622fcaddc827333a9e3af273cc57041dd8a2f53e423617dd",
         "locator": {
           "kind": "symbol",
           "name": "launcher_catalog"
@@ -164,7 +164,7 @@
       "path": "mcp/src/agents_remember/worktrees/role_handover_locator.py"
     },
     {
-      "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -180,7 +180,7 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:69f637c761167dc15d8b99a868e04068f45d10e52e2fecd4eacc1bf24bb2fc86",
         "locator": {
           "kind": "symbol",
@@ -192,7 +192,7 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
         "locator": {
           "kind": "symbol",

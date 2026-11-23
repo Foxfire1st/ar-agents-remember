@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The Claude installation guide describes the observed auto default when no higher mode source applies and the option to choose a mode in the launcher.",
-    "task": "261112-BUG-L11",
+    "statement": "The Claude guide’s host-advertised auto default applies when no applicable named mode applies, and an explicit launcher mode still reaches the individual start.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/install/claude-code.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },

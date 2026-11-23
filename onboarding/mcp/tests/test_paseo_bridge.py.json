@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+        "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
         "content": "sha256:a8ff78834aa8e40d8eb2794197eb0363833aa2df216d9522bbdea822c3b5e288",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+        "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
         "content": "sha256:1f1d6191085574539ce04a70548d1721f28bfc549afbc90af4e635140e0c16a1",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+        "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
         "content": "sha256:33870b954aab173b125241809fd916b0f653e3897b25cc46e3c3fde5de239196",
         "locator": {
           "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
             "content": "sha256:db1284932c90323074f0a2e947a9de55200992c599bb908c813feeee87de20eb",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
         },
         {
           "anchor": {
-            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
             "content": "sha256:bec7e9da7fc53aeeb9d18c3738cf7eab21ab083f7f6fea61446d558297a5a81b",
             "locator": {
               "kind": "symbol",
@@ -87,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
             "content": "sha256:1f1d6191085574539ce04a70548d1721f28bfc549afbc90af4e635140e0c16a1",
             "locator": {
               "kind": "symbol",
@@ -99,27 +99,40 @@
       ]
     },
     "3": {
-      "note": "Catalog shape, script failures and provider-option naming against the real script and fake client.",
+      "note": "The real-script fixture checks catalogue metadata and named failures. The payload cases check the provider option names consumed by the host.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
-            "content": "sha256:ffb63994c1564c8f0bb930e9c1e4f062fd4ea691c4a4ff1ba6a50f185b96a774",
+            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+            "content": "sha256:d23b973a60b898c7a8f794ea94676449749a9c89ac794b5fbf763d960a03178e",
             "locator": {
-              "kind": "symbol",
-              "name": "BridgeScriptTests"
+              "end": 612,
+              "kind": "line_range",
+              "start": 481
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
-            "content": "sha256:69d51389533d0b96b03b2e2fcc01a7569a27c5bd464e09a847d5b53bfe48e882",
+            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+            "content": "sha256:a8ff78834aa8e40d8eb2794197eb0363833aa2df216d9522bbdea822c3b5e288",
             "locator": {
-              "end": 827,
+              "end": 713,
               "kind": "line_range",
-              "start": 432
+              "start": 614
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+            "content": "sha256:f46181faad3a63ae01e8d9c1c55365e2e694fbefc38626b0c6d74946960d05a6",
+            "locator": {
+              "end": 820,
+              "kind": "line_range",
+              "start": 765
             }
           },
           "kind": "test"

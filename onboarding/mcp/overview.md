@@ -230,7 +230,7 @@ Role launch now has narrow extracted owners: role_launch_defaults projects per-u
 
 Only completed failing code review rounds count for Worker; only completed failing memory review rounds count for Curator. Record-only checks of the unchanged candidate do not add a try; no legacy mixed-code row is reinterpreted as a Curator round. The optional user alternative defaults to afterTries=3 for these roles, not to extra review authority.
 
-A configured alternative is not a product-supplied model. Selecting a step-up supplies the alternative row's launch defaults. The row's effective harness is its named harness or the role's harness when the row omits one. The row supplies its own mode on that harness, with no inheritance of the base mode even when the harness and model stay the same. Once a step-up is selected, final resolution gives an explicit launcher mode priority over the applicable alternative mode, whether selection came from a request, the review threshold or a retained prior step-up. If neither applies, it uses the host-advertised default only when the selected harness's modes are known and the host advertises a default. Otherwise the start sends no mode field. A different provider or model also clears omitted features and notes from the base role. Validate alternatives before retiring the current holder. Step-up replacement retains existing starter/launcher authority and never interrupts a turn or permission prompt on that guarded receipt path, renewing liveness before every saved archive attempt there; a held-seat opening can replay a saved step-up archive call without that predecessor renewal.
+A configured alternative is not a product-supplied model. Selecting a step-up supplies the alternative row's launch defaults. The row's effective harness is its named harness or the role's harness when the row omits one. The row supplies its own mode on that harness, with no inheritance of the base mode even when the harness and model stay the same. Once a step-up is selected, final resolution gives an explicit launcher mode priority over the applicable alternative mode, whether selection came from a request, the review threshold or a retained prior step-up. If neither applies, it uses the host-advertised default only when the selected harness's modes are known and the host advertises a default. Otherwise the start sends no mode field. A different provider or model also clears omitted features and notes from the base role. Validate alternatives before retiring the current holder. Step-up replacement retains existing starter and launcher authority. The saved-call executor rechecks a named step-up predecessor before archive and requires it to be idle and prompt-free if found and unarchived. Held-seat opening runs its saved call through a separate path.
 
 Canonical task decisions retain selected step-up provenance across later starts and receipt loss. This is a task-writer publication of launch metadata, not execution-receipt authority over review findings, rounds, limits or acceptance. Host-observed destination stays distinct from requested choices; unconfirmed receipt-loss predecessors are unknown, not today’s base defaults.
 
@@ -253,7 +253,7 @@ Route-review construction now stamps the leaf code base. The closeout door can p
 
 ## Current Behavior
 
-Launcher discovery asks the configured host afresh for each view and Start. A context local to one operation shares that operation's answer; it is not a process-wide answer cache. Successful catalog parts are saved on disk, scoped to the host installation, runtime home, listen address and version. A failed or partial answer reuses only the matching saved parts and marks their provenance. Without a saved answer, a configured choice may pass an unanswered catalog check subject to the other selection and authority rules. Applicable known offerings reject unsupported agent, model, effort, feature and speed choices before creation. A permission-bearing or unknown start-call feature key refuses independently of whether the host answered feature offers. The host decides whether to apply a named permission mode. The resolver canonicalizes a listed match and forwards an unlisted name. The launcher, role start, settings and tool-server readers use the same resolver and host ID-before-label matching without case.
+A fresh launcher metadata request lists the host’s choices. The pane reads features for the shown provider and model separately and reuses each answer until Refresh. Refresh renews provider discovery before reading metadata and the shown model’s features. An options request answers a held launch lock before accessing the host. Start validation shares metadata and memoizes selected-pair answers within its operation. The direct options route reads the supplied pair, and the pane holds its answer across requests. Successful catalog parts are saved on disk, scoped to the host installation, runtime home, listen address and version. A failed or partial answer reuses only the matching saved parts and marks their provenance. Without a saved answer, a configured choice may pass an unanswered catalog check subject to the other selection and authority rules. Applicable known offerings reject unsupported agent, model, effort, feature and speed choices before creation. A permission-bearing or unknown start-call feature key refuses independently of whether the host answered feature offers. The host decides whether to apply a named permission mode. The resolver canonicalizes a listed match and forwards an unlisted name. The launcher, role start, settings and tool-server readers use the same resolver and host ID-before-label matching without case.
 
 change-set reads now run on the route family's own bounded admission: `changeset_scheduler.py` starts eight workers and admits eight more pending jobs; a request past the cap answers 503 with `Retry-After: 1`, a disconnect answers 499 after setting the read's cancellation event, a queued abandoned job is withdrawn before it runs, and a running job releases its slot only when its worker ends. The runner's single `_wait_process` kills the Git child and its process group on the timeout or the event. Freshness is Git's own: a commit pair is keyed by ids with no observation on a hit, a working view runs `git status --porcelain=v2 -z` (and has no cache where a plain read costs no more), and the object store is Git's `count-objects -v` census; the `.git/objects` and worktree directory walks are gone. The id-keyed no-observation choice names its accepted gap: object loss and attribute changes are not observed per hit until eviction or restart. The cache's per-read maps are capacity-bounded and an abandoned read admits nothing.
 
@@ -864,10 +864,14 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** Integration/checkpoint preview and apply encounter knowledge boundary; leaf and series predicates differ [298]
 
 - **Retained historical source account — superseded by the current route account:** Investigator refuses leaf selection and validates canonical topology [301]
-- **Retained historical source account — superseded by the current route account:** Leaf sibling handover supplies canonical role/task arguments [302]
+
+- **Retained historical source account — superseded by the current route account:** Leaf sibling handover supplies canonical role/task arguments. [302]
 
 
-- **Retained historical source account — superseded by the current route account:** Replay retains agent identity and typed created/refused/no-answer outcomes; held launch calls omit the first host prompt [303]
+
+
+- **Retained historical source account — superseded by the current route account:** Replay retains agent identity and typed created/refused/no-answer outcomes. Held launch calls omit the first host prompt. [303]
+
 - **Retained historical source account — superseded by the current route account:** Git includes a fourth bulk-remote timeout and fixed parsed-diff options [307]
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
 - **Retained historical source account — superseded by the current route account:** Current declared collected-case budgets supersede historical totals [309]
@@ -921,7 +925,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - A copied Git index keeps the index file's modification time. [226]
 - The cache's ignore rule alone. [369]
 
-- Current imported source owns this scoped route boundary. [370]
+
+- The Paseo runtime reads its configured host block. Launch builds a seat-bound stdio server definition, and admitted leaf reads derive their roots from the canonical task and enclosure. [370]
+
 
 - The ledger loader reads through the recorder. [232]
 - The limits of the worklist processes. [234]
@@ -984,10 +990,16 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 - User alternatives select by manual, prior or threshold facts. Mode comes from the alternative row, and other scope-bound choices are cleared across scopes. [330]
 
 - Worker code and Curator memory failures count independently; incomplete history stays unknown. [331]
-- Replacement rechecks idle and pending permission at every saved archival call. [332]
+
+- The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free. [332]
+
 - Step-up launch metadata is reconciled through the canonical task writer. [333]
 - Frozen detail identities and bytes are checked rather than recomputed. [334]
-- Only settled empty stepped-up creation failures retain saved-call retry. [335]
+
+
+- An eligible settled empty step-up retains its ordinary retryable call. If the recorded native Antigravity agent is absent, Retry settles the refusal and drops the call. [335]
+
+
 - The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [337]
 - Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states. [338]
 - The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [339]
@@ -1020,7 +1032,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - The Paseo runtime CLI requires an explicit config for provision, status and stop, loads that config's host settings, and returns a single JSON report with defined refusal and failure exits. [228]
 
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [203]
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.py:396-430 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 26057e5040a55f0a6f900433839b5113ee89b48f. Retired means the anchor no longer stands, not that the cited subject was deleted [229]
+
+- The repeatable saved launch call contains the agent identity, workspace, first-message state, parent identity and configured task tool-server binding. [229]
+
 - The knowledge-write CLI adapter validates the explicit authorization and hand-off input, then submits the leaf write to the shared application route and prints that route's report. [231]
 - The launch compiler routes task-attached requests through _compile_admitted_task, resolves the canonical task document, and compiles the admitted task capsule. [274]
 - Task-scoped MCP reader configuration derives a call-local repository entry only from the admitted canonical task and enclosure contract; a reader without task_context retains the configured Projects roots. [230]
@@ -1035,7 +1049,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.p
 
 - **Retained historical source account — superseded by the current route account:** Raw quality status and combined coherence readiness remain distinct; a coherence refusal retains its code and next action [299]
 
-- Each operation asks fresh. Its local context shares the answer and saved-only reads do not discover or write. [391]
+
+
+- The direct options route requests its exact pair. The pane reuses that answer, and Start validation uses a separate operation-local memo. Saved-only display reads skip discovery. [391]
+
+
 
 - Durable parts preserve successful answers and distinguish saved from unknown after failures. [392]
 - Host names match IDs before labels, without case. [393]

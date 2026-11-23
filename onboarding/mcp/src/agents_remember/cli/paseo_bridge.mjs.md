@@ -29,7 +29,7 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 
 ## Fresh catalog and creation choices
 
-`readCatalog` supports full, metadata and selected-feature questions. Only explicit refresh rescans providers; ordinary questions still read their current offerings. `creationFeatureValues` checks configured feature values when an answer is available, matching IDs before labels without case through `namedOption`. A failed, timed-out or malformed feature listing passes configured values through unchecked; a known-empty offering refuses them.
+`readCatalog` defaults to metadata, which lists enabled provider and model choices without feature queries. Selected mode reads features for one specified provider and model. Explicit Refresh renews the provider snapshot before querying its current offerings. During saved native Antigravity Retry, the bridge looks up the exact recorded agent. It can deliver the saved first message to that agent. A missing agent produces a typed refusal before creation. `creationFeatureValues` checks configured feature values when an answer is available, matching IDs before labels without case through `namedOption`. A failed, timed-out or malformed feature listing passes configured values through unchecked; a known-empty offering refuses them.
 
 ## Evidence
 
@@ -42,7 +42,9 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 - `agents-live` requests background agents, retains unarchived IDs and reports a complete census only after the host explicitly ends the listing. [2]
 
 
-- A still-loading provider retains discovered modes/default mode/fetched time; missing modes and unanswered models remain unknown rather than successful empty lists. Catalog discovery keeps enabled provider identities at the deadline instead of treating still-loading models as a whole-catalog timeout. [3]
+
+- A provider still loading at the discovery deadline keeps its identity and any known modes and fetch time. An unanswered model or mode listing remains unknown. [3]
+
 
 - The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface. [4]
 

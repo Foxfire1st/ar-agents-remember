@@ -160,7 +160,7 @@ Logical-clock evidence is not wall-clock performance acceptance.
 
 Parent wake uses the paseo plugin’s in-memory turn tracker. `turn_events.ts` creates one tracker per registration and forwards `agent.turn.after` with host turn identity and outcome; `turn_ended.ts` only treats completed eligible turns as silent. Its reach is wider than the parent line: a completed leaf-seat turn — Worker, Reviewer or Curator — judged silent is sent a message of its own after one 60-second wait checked against host state at the send, at most twice in a row, and every silent end from the third on sends the seat nothing and gives its parent the line marked with the count ; a turn of the seat beginning inside the wait cancels it without counting. A failed send keeps its line only inside the same tracker, so retry and overlapping-flush cases deliver each line once; a fresh tracker holds nothing, and the pinned source contains no row → marker → attempt recovery, no durable per-seat pending row and no reviewer/curator projector wiring. The wake path neither closes task documents, supplies a review verdict nor validates curator coherence/readiness. Current turn-end handling recognizes declared helper and background waits.
 
-Native launch and host tests retain exact launch/replay/provenance, runtime/settings/bridge/catalog admission, independent model/effort/tier validation, previous-host removal, bounded sandbox process ownership, one request authority and idempotence; the current unknown-outcome/replay and withdrawal assertions belong to role launch in `test_paseo_launch_outcomes.py` and `test_paseo_launch_repeat.py` and to held messaging in `test_held_queue.py`, not to this route. Conversation projection declares only handshake, list, read and resolve-resume-target and preserves ordered read windows with truthful ordinal pagination; it carries no one-use-attachment or submission-retention state. Independent SDK-client/SEP protocol, Python/TypeScript, real Node and capsule-harness accounts each retain their stated fixture/process boundary; none extends itself to paid turns or final memory certification.
+Native launch fixtures check metadata without feature fan-out and one selected-model lookup per selected request. Status tests check that a held launch lock suppresses host reads and a parked receipt observation permits Start. Native Antigravity launch and Retry cases distinguish a missing agent, a reconciled exact agent, and a replayed ACP payload. Native launch and host tests retain exact launch/replay/provenance, runtime/settings/bridge/catalog admission, independent model/effort/tier validation, previous-host removal, bounded sandbox process ownership, one request authority and idempotence; the current unknown-outcome/replay and withdrawal assertions belong to role launch in `test_paseo_launch_outcomes.py` and `test_paseo_launch_repeat.py` and to held messaging in `test_held_queue.py`, not to this route. Conversation projection declares only handshake, list, read and resolve-resume-target and preserves ordered read windows with truthful ordinal pagination; it carries no one-use-attachment or submission-retention state. Independent SDK-client/SEP protocol, Python/TypeScript, real Node and capsule-harness accounts each retain their stated fixture/process boundary; none extends itself to paid turns or final memory certification.
 
 Landing regression suites distinguish exact-pair refusal, authentic history ownership, record retention, merge-chain admission, explicit direct owner and honest post-publication aftermath. Coherence closed-out is an integration case; dependency bounds/old-record compatibility are model/publication witnesses. Read-boundary and synthetic cutover fixtures that hold another gate passing prove only their declared surface, never that gate's acceptance.
 
@@ -1094,7 +1094,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The task-scoped MCP reader cases. [18]
 - The previous-host removal guard. [19]
 - The bounded sandbox process cases. [20]
-- The Paseo launch, replay and runtime cases. [21]
+
+- Launch cases cover refusals, unanswered catalogues, ACP task-server binding and the merge of feature values. [21]
+
 - At configuration, conftest reads integration and stress-durability file membership from the lane manifest. [22]
 - The lifecycle loader refuses a catalog that is not canonical or does not agree with the source tree. [24]
 
@@ -1569,7 +1571,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The retained production ref transaction checks protected heads, ancestry and exact landing output. [1728]
 - The bounded timing scanner reads its named support roots and excludes waits.py. [1730]
 
-- `paseo_launch_test_support` owns the shared hand-written stateful runtime/catalog and fixture-derived dispatch expectations. Catalog ownership and source assertions are not live-host or executed acceptance proof. LaunchRefusalTests and DeepLaunchFolderTests inherit that support through PaseoLaunchTestCase. Status test classes, and the document-chat read/tree classes, inherit it through `StatusTestCase`. The first-start preparation class has its separate `RoleToolsTestCase` base. Document-chat source cases assert one-census tree discovery, unknown versus empty, corruption isolation, repeated receipt-path reads and byte budgets. `test_paseo_status_bridge` composes the production Node listing script with a controlled daemon client. `test_paseo_frame` asserts settings-bound provision-command disclosure. [1732]
+
+- Launch, status and document-chat tests share the stateful launch fixture through their own test classes. [1732]
+
 
 
 - Pytest setup isolates the test process and declares three default plugins. Certifying configuration loads a separate bootstrap plugin. [1735]

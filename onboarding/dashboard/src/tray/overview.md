@@ -48,7 +48,9 @@ The tray neither navigates the host chat nor creates a role. Native origin/windo
 
 - A hosted idle object control follows its own hover/focus host; the named taken control and repeated click remain explicit. [5]
 
-- The Chats pane publishes the chat its own frame reports showing, and nothing else: a frame that has not reported a chat yet names none, and while a placeholder stands in for the frame it publishes nothing. [6]
+
+- The Chats pane publishes the agent its active unbound frame reports showing. It publishes no agent when the frame has no acknowledged chat or a report replaces it. [6]
+
 
 
 - A review pick stays minimized with the column closed; explicit expansion opens it, while one pending target default ends on user choice, empty automatic collection or leaving review. [7]

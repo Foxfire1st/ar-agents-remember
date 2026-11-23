@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The role-capsule guide's held-start passage still agrees with the launcher label for a bound role whose start is held.",
-    "task": "261112-BUG-L11",
+    "statement": "A held start still preserves its opening handover, and the launcher marks the selected bound role as held.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/reference/role-capsules.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "dce9e43dc96950f6e1bc1112f272f26e44c7bab4",
+      "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
     },
     {
-      "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+      "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },

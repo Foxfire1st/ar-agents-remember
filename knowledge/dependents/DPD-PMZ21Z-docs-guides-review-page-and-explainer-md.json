@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "7b04c967bf1b21442083337aae1f6d1f1f9f8eea",
-    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The guide describes the workspace layout and staged explanation. Build forwards the planned history so a blank planned request asks for the requirement and planned effects, as the guide describes.",
-    "task": "261112-BUG-L13",
+    "statement": "The review-page guide correctly describes the launcher listing the offered models for a harness and the explainer resolving its own settings through the shared host-profile rule.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -251,12 +251,12 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
     {
-      "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+      "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
     {
-      "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },

@@ -144,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
             "content": "sha256:33870b954aab173b125241809fd916b0f653e3897b25cc46e3c3fde5de239196",
             "locator": {
               "kind": "symbol",
@@ -161,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
             "content": "sha256:1f1d6191085574539ce04a70548d1721f28bfc549afbc90af4e635140e0c16a1",
             "locator": {
               "kind": "symbol",
@@ -178,12 +178,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ef4db73d3fa63c6d5cc6f9b5943f0dd062884c3",
+            "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
             "content": "sha256:3b8af58ec78e297588eec4751d1b8fec24f819da57cbf06628ff2d25a642eefd",
             "locator": {
-              "end": 689,
+              "end": 682,
               "kind": "line_range",
-              "start": 582
+              "start": 575
             },
             "path": "mcp/tests/test_paseo_bridge.py"
           },

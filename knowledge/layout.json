@@ -40,6 +40,7 @@
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
     ],
     "file:dashboard/src/cockpit/RoleChatsView.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
       "knowledge/dependents/DPD-99CBY7-rolechatsview-frame-target.json"
     ],
     "file:dashboard/src/cockpit/document-chat/model.ts": [
@@ -68,6 +69,12 @@
       "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json"
     ],
     "file:dashboard/src/cockpit/role-launcher/roleLauncherReadiness.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/cockpit/roleChatModelOptions.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/cockpit/roleChatOptionsLoader.ts": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
     "file:dashboard/src/cockpit/roleChatResult.ts": [
@@ -818,6 +825,7 @@
       "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
       "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
       "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
       "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json"
     ],
     "file:mcp/src/agents_remember/cli/role_launch_request_rules.py": [
@@ -832,6 +840,7 @@
     ],
     "file:mcp/src/agents_remember/cli/role_launch_routes.py": [
       "knowledge/dependents/DPD-21GMJ5-docs-install-cursor-md.json",
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
       "knowledge/dependents/DPD-6528VF-docs-install-openclaw-md.json",
       "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
       "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
@@ -1526,6 +1535,9 @@
     ],
     "file:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/protocol/dist/provider-manifest.js": [
       "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js": [
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
     ],
     "file:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js": [
       "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json"

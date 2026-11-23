@@ -26,13 +26,8 @@ The reasoned step-up case mounts `RoleLauncher`, asserts `{role, stepUp}` at `on
 
 
 
-- Mounted assertions protect controls-only rendering, accessible names, selected-label and source hovers, informational chips, and shared recipe identity. The overfull checks inspect the DOM and source. [1]
 
-
-
-
-
-- The fixtures supply offered modes and host defaults, role-setting choice provenance, and instruction metadata. [2]
+- Mounted row tests cover the shared control structure, fixture-projected choices and action readiness. [1]
 
 
 
@@ -40,4 +35,14 @@ The reasoned step-up case mounts `RoleLauncher`, asserts `{role, stepUp}` at `on
 
 
 
-- The mounted suite checks compact-row accessibility, provenance hovers, settings-owned chips, shared styling and overfull controls. Its step-up case sends role and reason only and checks the model label in both receipt status components. [3]
+- Fixtures supply offered modes, choice provenance and instruction metadata. Model-specific replies reuse the requested model’s fixture data. [2]
+
+
+
+
+
+
+
+
+
+- Source and mounted assertions cover the compact control row and the configured Step up reason and actions. [3]

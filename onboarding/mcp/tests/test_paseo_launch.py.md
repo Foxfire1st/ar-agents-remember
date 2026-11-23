@@ -26,6 +26,7 @@ real start leaves in the task document.
   checks the refusal arrives with no launch call (no workspace opened, no agent created or archived) and no receipt
   file. Selection validation and an attempted leaf-enclosure start are checked separately from those
   launch calls; an unanswered catalog alone is not treated as a launch refusal.
+- **Antigravity starts.** Native default and override requests answer HTTP 409 with ACP guidance before starting an enclosure or calling the host to launch. The ACP test checks its standard-I/O task server carries the created agent ID and the original request ID.
 - **Unanswered catalog.** `test_an_unanswered_catalog_passes_configured_choices_to_the_host`
   requests `metadata` and then `selected` data for `gpt-a`, opens the workspace and creates one agent
   with the configured `codex`/`gpt-a`/`low` choices. It records one enclosure start and a running receipt.
@@ -45,7 +46,7 @@ coordination root and read the receipt from the path the route reports.
 
 ### Invariants And Boundaries
 
-- A refused launch leaves no launch call (no workspace opened, no agent created or archived) and no receipt behind.
+- The preparation refusal cases leave no launch call or receipt.
 - The bridge is fake here; nothing starts a daemon, and the capsule body comes from the case's stub.
 
 ## Bounded locator at any report depth
@@ -56,6 +57,9 @@ The fixture now gives the process a short temporary home of its own, as a real a
 
 ## Evidence
 
-- The scoped current source carries the module/document behavior described above. [1]
 
-- The launch fixture now imports `FakeRuntime`, `CATALOG` and `SERVER_ID` from `paseo_launch_test_support`; `CATALOG` remains exported for suites built on this fixture. `PaseoLaunchTestCase.setUp` wires the shared fake into catalog/launch/status bridge calls. This is fixture-owner relocation, not a change to launch identity, retry or holder-replacement semantics. [2]
+- Dispatch fixtures cover refusal boundaries, ACP task-server binding, feature-value merging and recovery notes at both report depths. [1]
+
+
+
+- The launch fixture reuses the shared fake runtime and connects it to catalogue, launch and status calls. [2]

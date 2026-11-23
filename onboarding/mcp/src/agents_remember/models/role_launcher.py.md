@@ -14,6 +14,8 @@ RoleSelection carries exact sprint/master/leaf references; request aliases keep 
 
 ## Current Contract
 
+RoleLauncherOptionsRequest carries optional agentId and modelId for a selected-model read. The options route uses both fields to return the pair’s options, or returns scoped catalogue and receipt data without a complete pair. A metadata request can ask to refresh provider discovery.
+
 RoleDispatchRequest declares optional step_up aliased stepUp, constrained to string length 1..1000 when present. This wire model does not enforce the one-sentence/nonblank-after-trimming policy or select a model; later launch admission owns those checks. Start/revive and replacement fields remain distinct.
 
 
@@ -24,7 +26,9 @@ RoleDispatchRequest declares optional step_up aliased stepUp, constrained to str
 
 - Step-up reason admission and threshold govern choice of an alternative. An alternative takes mode from its own row at either scope. [7]
 
-- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [8]
+
+- The wire models carry optional provider and model IDs for selected options, explicit dispatch overrides and replacement markers, and a saved request UUID for Result. [8]
+
 
 - Parentless chat-start marker is default false wire data, not launch or replacement authority. [5]
 

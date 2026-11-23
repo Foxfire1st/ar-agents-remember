@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
-    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The Hermes guide still accurately describes launcher, profile and settings precedence and the conditional host default.",
-    "task": "261112-BUG-L12",
+    "statement": "The Hermes guide correctly orders an explicit launcher mode, the applicable host profile, the applicable settings row and the host’s advertised default when known.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/install/hermes.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
     },
     {
-      "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+      "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -51,12 +51,12 @@
       "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
     },
     {
-      "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -66,7 +66,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
+      "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -106,7 +106,7 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
     {
-      "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+      "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     }

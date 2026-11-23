@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
-        "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+        "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -21,10 +21,10 @@
     },
     {
       "anchor": {
-        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
-        "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+        "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
         "locator": {
-          "end": 133,
+          "end": 134,
           "kind": "line_range",
           "start": 48
         }
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
-        "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+        "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -53,13 +53,13 @@
         "handoffEntry": "MIK-R75@v1 current rule 3",
         "leaf": "260928-MIK-L75"
       },
-      "rationale": "Owns the failure sources the one line combines — a refused start, an unreachable host, an unresolved launch, the launch lock, a failed options read and a failed report read — and clears the line when the condition ends or the next explicit action succeeds.",
+      "rationale": "Routes scoped failures to the shared line and leaves the launch-in-progress options answer to the quiet reread path.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
-        "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+        "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -76,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
-        "content": "sha256:75963cacf0433c265325b78bc40b9a20945fdbed2896e5536b9636c1e4567617",
+        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+        "content": "sha256:fc6961f35b443d8619ed2157c4b87a4c0298835845d63b39110c10f3105fdf74",
         "locator": {
           "kind": "file"
         }
@@ -93,10 +93,10 @@
     },
     {
       "anchor": {
-        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
-        "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+        "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
         "locator": {
-          "end": 133,
+          "end": 134,
           "kind": "line_range",
           "start": 48
         }
@@ -112,10 +112,10 @@
     },
     {
       "anchor": {
-        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
-        "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+        "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+        "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
         "locator": {
-          "end": 133,
+          "end": 134,
           "kind": "line_range",
           "start": 48
         }
@@ -132,14 +132,14 @@
   ],
   "references": {
     "1": {
-      "note": "The pane composes canonical scopes, controls, options and the persistent view.",
+      "note": "The pane binds task scope, options metadata and actions to the launcher and preserves its frame and report owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
-            "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
             "locator": {
-              "end": 133,
+              "end": 134,
               "kind": "line_range",
               "start": 48
             }
@@ -205,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cea0b30a94130d7518eee42d7e4f5d529fd39685",
+            "blob": "0c8ec2f3d1d7878495b7ee358fd82f4e46d76ff0",
             "content": "sha256:ec3548cc25f160af7a079d546f4f98eb9375f6504fa37f616544994b9251721f",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,2737 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L19",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-08ST2H",
+      "items": [
+        "sha256:11e49a47915c0b99cc8df8b0e13ab419909e0bc44e226dc049d6c34a87ec5567",
+        "sha256:161e073cee306ca586d1f163876e0d1bbf35996b16bac7ca3afcfbef739f1d69"
+      ],
+      "reason": "The card follows the current native options, receipt or launch boundary and records the capability and evidence owned at this source path.",
+      "sources": [
+        {
+          "blob": "55c8e4d51ae225a1d8a68007ca9be6ba05b9edb5",
+          "path": "mcp/src/agents_remember/cli/role_launch_options_receipts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_options_receipts.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-09GQ1X",
+      "items": [
+        "sha256:707a0efb23c06219d7d2963b57ff680c806c9762c095d68db7a629ff37825624"
+      ],
+      "reason": "The card’s source assertions describe the scoped fixture and the launch, catalogue or receipt behavior the candidate exercise covers.",
+      "sources": [
+        {
+          "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+          "path": "mcp/tests/paseo_launch_test_support.py"
+        },
+        {
+          "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+          "path": "mcp/tests/test_paseo_bridge.py"
+        },
+        {
+          "blob": "5e13a344083a5dd1f2816313d6b739b929e550a8",
+          "path": "mcp/tests/test_paseo_bridge_agents.py"
+        },
+        {
+          "blob": "7a04953b3540a31a6ad6e4b20810d8a614e0a83c",
+          "path": "mcp/tests/test_paseo_bridge_catalog_freshness.py"
+        },
+        {
+          "blob": "debdfc475e0f77d4708f4db7631496c4015fcdfb",
+          "path": "mcp/tests/test_paseo_catalog.py"
+        },
+        {
+          "blob": "d421b2ae9950536279c0e3787ecb0adf8df257e4",
+          "path": "mcp/tests/test_paseo_launch.py"
+        },
+        {
+          "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
+          "path": "mcp/tests/test_paseo_launch_outcomes.py"
+        },
+        {
+          "blob": "1d8396a770f021c11debb8be26d2ffc255a34530",
+          "path": "mcp/tests/test_paseo_role_tools_start.py"
+        },
+        {
+          "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+          "path": "mcp/tests/test_paseo_status.py"
+        },
+        {
+          "blob": "4fa5551225cf58e8fc99fca70256fe2393c539e9",
+          "path": "mcp/tests/test_role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+            "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-5P93PT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0D1XA6",
+      "items": [
+        "sha256:29cdc01697f22f1484df7465b7be4e7b90ed462165105d2a1391c31df9fd8774"
+      ],
+      "reason": "The launcher still carries bound selections, receipt status and exact Result identity while metadata and shown-model reads are separated.",
+      "revision": 3,
+      "subject": "INV-5MP23G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0FDFNT",
+      "items": [
+        "sha256:52477d4fbb9c1c668dc1d864d5c38724e05f57cbb1aa37d321e707fc5dacc064"
+      ],
+      "reason": "Pending metadata without a matching saved response blocks Start. A settled response with an empty agent list and unknown discovery can dispatch a configured choice when the ordinary selection and execution checks pass. The overview retains the verified saved-inventory and control behavior.",
+      "sources": [
+        {
+          "blob": "8f905e1e1f13cb2f90aaa1175cb76d6ac3223ca7",
+          "path": "dashboard/src/cockpit/RoleChats.dispatch.test.tsx"
+        },
+        {
+          "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+          "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+        },
+        {
+          "blob": "6f3fbcdb14b2216f3905824f419fe91a48684e90",
+          "path": "dashboard/src/cockpit/RoleChats.modelOptions.test.tsx"
+        },
+        {
+          "blob": "b1a73e2b93bb47101f79caae02930d779c6f82d7",
+          "path": "dashboard/src/cockpit/RoleChats.stepUp.integration.test.tsx"
+        },
+        {
+          "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+          "path": "dashboard/src/cockpit/RoleChats.tsx"
+        },
+        {
+          "blob": "08999c138062f7bbbcd93036eb85a3a8b3a61ad6",
+          "path": "dashboard/src/cockpit/RoleLauncher.row.test.tsx"
+        },
+        {
+          "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
+          "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+        },
+        {
+          "blob": "23f7484a66b7e15d051fa8ce702cc7a3175f7db4",
+          "path": "dashboard/src/cockpit/role-launcher/roleLauncherDisplay.ts"
+        },
+        {
+          "blob": "b853ca31c46a651232bfcb3f8644f64bae85988e",
+          "path": "dashboard/src/cockpit/roleChatModelOptions.test-utils.ts"
+        },
+        {
+          "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+          "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
+        },
+        {
+          "blob": "0c8ec2f3d1d7878495b7ee358fd82f4e46d76ff0",
+          "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0SN7PB",
+      "items": [
+        "sha256:2fc5962169e5c3024422867495bdff0b3a6306bbd100a634ab2e0771036904c8"
+      ],
+      "reason": "Only the saved step-up executor renews named predecessor liveness. The cited Revive proof includes the repeated refusal.",
+      "sources": [
+        {
+          "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
+          "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_liveness.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0Y9Z3K",
+      "items": [],
+      "reason": "Held-seat opening invokes the helper without artifact references and checks frozen details on that branch.",
+      "sources": [
+        {
+          "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+          "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_instruction_details.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:70a382c2b54b0125df1d500da21f204ba24890de8b652dcacc210f71514eddcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+            "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-2MSXRD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-10SYZR",
+      "items": [
+        "sha256:d38f2d1e64524a0c4a7a1b4a16a464e92669ff20778adbab5ac30861884d093d"
+      ],
+      "reason": "The closing mark still prevents an unentered creation and governs returned-agent archive settlement before receipt publication.",
+      "revision": 1,
+      "subject": "INV-AJKQV2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:d115f8d21320f900e3dedd25aa478a30fc186864fbce03a07355ef3bffcf6f8d",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 196
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PBVSKD"
+        },
+        {
+          "after": {
+            "blob": "821f21c80bdb705adf01849d194ac6ef9bfb6375",
+            "content": "sha256:d530f9a4f664bdda5c068b4e4f5089ea8f688bcd641a5d9e070daffaecbd62ba",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-XFZP5T"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-1H0HFW",
+      "items": [],
+      "reason": "The metadata projection retains the inventory and the view separates shown-pair loading and feature payload from an eligible Start. Cite both operative bodies.",
+      "revision": 1,
+      "subject": "INV-1DBF74"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-1HZ53X",
+      "items": [],
+      "reason": "The review-page guide correctly describes the launcher listing the offered models for a harness and the explainer resolving its own settings through the shared host-profile rule. Checked docs/guides/review-page-and-explainer.md:877–895; role_launch_routes.py:219–234; paseo_catalog.py:804–831.",
+      "revision": 8,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1PQX95",
+      "items": [
+        "sha256:c63dc287e1684792baa1b6b9015bcd4656e8276748476411b277cd9928005920"
+      ],
+      "reason": "Carries metadata generation state in the loader. The Refresh obligation is already recorded at the generation admission and query boundaries.",
+      "subject": "hunk:sha256:c63dc287e1684792baa1b6b9015bcd4656e8276748476411b277cd9928005920"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-22C3HE",
+      "items": [],
+      "reason": "The Claude guide’s host-advertised auto default applies when no applicable named mode applies, and an explicit launcher mode still reaches the individual start. Checked docs/install/claude-code.md:90–102; paseo_catalog.py:345–362,529–551; paseo_launch.py:452–453; provider-manifest.js:153–165.",
+      "revision": 6,
+      "subject": "DPD-3E9E2R"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:ce585a05e817ac7c850a0e1ad34c3830a2b543bfa8caf5e879a42662ee773fa3",
+            "locator": {
+              "end": 419,
+              "kind": "line_range",
+              "start": 406
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": "absent",
+          "id": "RLZ-2WG6NC"
+        },
+        {
+          "after": {
+            "blob": "0c8ec2f3d1d7878495b7ee358fd82f4e46d76ff0",
+            "content": "sha256:865b759fc4a3e4faadde0de2c4f01d2d7232f320db7196063d0909458445046f",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 257
+            },
+            "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-RDS19H"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-2CZ575",
+      "items": [],
+      "reason": "The matching metadata generation acknowledges Refresh before the next shown-pair read. Both citations now include the renewal and publication bodies.",
+      "revision": 1,
+      "subject": "INV-TRCBNZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-38QFMV",
+      "items": [
+        "sha256:821f55f30f41a9fc14faa7db338aa4c5d1a1b00b59224d79c50b774cb58eb0f6",
+        "sha256:b17e8ab299b53593e96f134718efc155870ba0404864001b6031abbaf863716b",
+        "sha256:d2aeea600818301dafa643114f4042bc4a14af54b6580c9d7b587fdadbe4ebb5"
+      ],
+      "reason": "The card’s source assertions describe the scoped fixture and the launch, catalogue or receipt behavior the candidate exercise covers.",
+      "sources": [
+        {
+          "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
+          "path": "mcp/tests/test_paseo_launch_outcomes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch_outcomes.py"
+    },
+    {
+      "considered": [
+        "FAM-GDXSJG",
+        "FAM-RT2XDA"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-3G50BY",
+      "items": [],
+      "reason": "This obligation can be checked at its own launcher, receipt or provider boundary. The examined family guarantees cover different joint effects.",
+      "revision": 1,
+      "subject": "membership:INV-TRCBNZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3K33Q9",
+      "items": [
+        "sha256:7b14802aef6556c8ebb24f9ee0875a922adbc99893e7cf7767dd047fd46be5b1",
+        "sha256:e0d4b57a465aaea11b1bede9ed32b06f5fe841a7ea7a790ef5a91350032c52c9"
+      ],
+      "reason": "The card follows the scoped metadata and shown-model options paths, with the existing saved selection, receipt controls and frame boundaries.",
+      "sources": [
+        {
+          "blob": "6f3fbcdb14b2216f3905824f419fe91a48684e90",
+          "path": "dashboard/src/cockpit/RoleChats.modelOptions.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.modelOptions.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3NV12Z",
+      "items": [
+        "sha256:41202f115270bc2936310bd41addca1234e7bd913bf7cfa321d9e6c614b00fc9",
+        "sha256:54696fe024042b1aca15d1b1a0a44594542070ddcf167bc065e5f40565d37a19",
+        "sha256:9660bf6ed8f297118e67f1b06bedd8fd745650d9cbb42a1f90335f5e365d86fa",
+        "sha256:df8ed1a4398caad4a113ba3272d0bf9f0030524b85bc3e2a6578d5ffc3279869"
+      ],
+      "reason": "The card follows the scoped metadata and shown-model options paths, with the existing saved selection, receipt controls and frame boundaries.",
+      "sources": [
+        {
+          "blob": "b1a73e2b93bb47101f79caae02930d779c6f82d7",
+          "path": "dashboard/src/cockpit/RoleChats.stepUp.integration.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.stepUp.integration.test.tsx"
+    },
+    {
+      "considered": [
+        "FAM-N17BB4",
+        "FAM-RT2XDA"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-3RPE04",
+      "items": [],
+      "reason": "This obligation can be checked at its own launcher, receipt or provider boundary. The examined family guarantees cover different joint effects.",
+      "revision": 1,
+      "subject": "membership:INV-1DBF74"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+            "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-A0WKTC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-48B3SC",
+      "items": [
+        "sha256:441ef6377b3699ff1edff5e0604054fc6eee62ee67b5c475130782153f21e831"
+      ],
+      "reason": "The selected Investigator request UUID and primary document role remain distinct through Result, Retry, Revive and remount.",
+      "revision": 1,
+      "subject": "INV-A0240E"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "821f21c80bdb705adf01849d194ac6ef9bfb6375",
+            "content": "sha256:0a80052f075204608df57519339cdcdeff8329384f417850198e6d4ba2a66158",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+          },
+          "before": {
+            "blob": "d02f366f758059bd1e42d8a48f3df07e7e90d36f",
+            "content": "sha256:7575f3d6faca9e2a28f9e77b1045070315d50f0c1acc8a826c67ecb9f86c7cd8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+          },
+          "id": "RLZ-5Y0T30"
+        },
+        {
+          "after": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:fc6961f35b443d8619ed2157c4b87a4c0298835845d63b39110c10f3105fdf74",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+            "content": "sha256:75963cacf0433c265325b78bc40b9a20945fdbed2896e5536b9636c1e4567617",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-N8BY9K"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4GF4PN",
+      "items": [
+        "sha256:d003ef65b62b24ca4d42c5b56d343a0cf9d7dba672ee7d36ac3983f6c86fbce9"
+      ],
+      "reason": "The frame owns the actual shown chat. A launcher target does not publish shown identity without a frame observation.",
+      "revision": 1,
+      "subject": "INV-AE8ZGP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4HEWAT",
+      "items": [
+        "sha256:67763c095bbda0339581de769dc9cbeb2c76e7c0f33421e3f3e985a7a683f0fd"
+      ],
+      "reason": "The row passes through the existing pending indicator. Selected-model admission stays with the pane’s request owner.",
+      "subject": "hunk:sha256:67763c095bbda0339581de769dc9cbeb2c76e7c0f33421e3f3e985a7a683f0fd"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-4HY18T",
+      "items": [],
+      "reason": "A held start still preserves its opening handover, and the launcher marks the selected bound role as held. Checked docs/reference/role-capsules.md:31–43; RoleLauncher.tsx:106–116; role_launch_routes.py:692–700,940–949.",
+      "revision": 4,
+      "subject": "DPD-QFGFS0"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4BT846",
+          "revision": 1
+        },
+        {
+          "id": "INV-5VK3JP",
+          "revision": 1
+        },
+        {
+          "id": "INV-GD0F05",
+          "revision": 1
+        },
+        {
+          "id": "INV-T3JTQ2",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZB0WFP",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-4Q5TAT",
+      "items": [
+        "sha256:0189cedad88b2c1bbc1cbc31f2fef9eff6c788844b90ad7203dd1182ec8f3a81"
+      ],
+      "reason": "Receipt corruption still refuses its addressed read. A receipt that disappears during inspection is absent, and the bounded tree census remains unchanged.",
+      "revision": 1,
+      "subject": "FAM-M36XBW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5K6A9Q",
+      "items": [
+        "sha256:0f1b1633fe4b955ab26aa6b684bb9585afadcc7ccb938f263c2e95696f5abed8",
+        "sha256:79830cd7bab0aa6225ae89afda06ca2be4979f25086fe28da30786cedfc02576",
+        "sha256:8200a41facba22a9ad0c4fd48264cc920948095334dc7aa952461cc3a16f89ac",
+        "sha256:e15d714125281a9e2a1dc1377f6cb2a4382fbf84816faac3e1596aefb1adfba0",
+        "sha256:e93aa5f4675ed6c9e4dc73ddaba80fec875c8013328446cad582fb7fbf34b40c"
+      ],
+      "reason": "The card follows the current native options, receipt or launch boundary and records the capability and evidence owned at this source path.",
+      "sources": [
+        {
+          "blob": "cc48a16958cc6f53b7eb022faa7e4a91e960dda3",
+          "path": "mcp/src/agents_remember/cli/role_launch_outcome.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_outcome.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+            "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-6WEANN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5ZEFPR",
+      "items": [
+        "sha256:9666481bf23053305c97f14a2657fa6d945f20089d22211b50d54a80c679151e"
+      ],
+      "reason": "The panel continues to carry the exact request identity for the selection, separately from admission of a new Investigator turn.",
+      "revision": 2,
+      "subject": "INV-BS7TH8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:9e2112c3ecf7b247ed629b2336636724bddf609dddbd2c51988847e0fd8f827d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-0ZG5YM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-64H2J8",
+      "items": [
+        "sha256:9c39cee92dcadb42961358297244681f8af11434fcbda85d0219537743c819a0"
+      ],
+      "reason": "Native Antigravity admission happens before the existing scoped enclosure preparation. The parent and exact request bindings continue to govern admitted starts.",
+      "revision": 3,
+      "subject": "INV-5ATS9T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6NC29M",
+      "items": [
+        "sha256:24c8ded9fe1a9c8b403b1e63f614bb7477a2c6468145f82430319f4c31b30349",
+        "sha256:465bd296f017249527be770d523a3eed5c934045c263f5a099e87136ebacf27c",
+        "sha256:8d3812175581c41b413534af0f892f34e715996881ce2bea599e54ed33ee6242",
+        "sha256:948107c69a353f34f10d398a835a4eaadb1dcda3f64f4f82bd6877fbcf7c2ad0",
+        "sha256:ec1ccd44ba48cbf36ff8c43355a7683b49f4188d1d07fba0c8f60b1048bf845a"
+      ],
+      "reason": "Separate fixture classes cover report links, binding reuse, result fields, project dispatch and taskless identity.",
+      "sources": [
+        {
+          "blob": "4fa5551225cf58e8fc99fca70256fe2393c539e9",
+          "path": "mcp/tests/test_role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_launch_routes.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-79RXE2",
+      "items": [
+        "sha256:3b41aa932f84286fa5b21bc0b59b9a194bf65dc48ee040f2a01ba38ec5226e21"
+      ],
+      "reason": "The card follows the current native options, receipt or launch boundary and records the capability and evidence owned at this source path.",
+      "sources": [
+        {
+          "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+          "path": "mcp/src/agents_remember/models/role_launcher.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7H7FDG",
+      "items": [
+        "sha256:09b09e1fe4c176fe9ecadebbb5b34ace50f4298170f4213a8921b8e393c93bff"
+      ],
+      "reason": "The mounted cases show an eligible Start during matching saved metadata and pending shown-model options, with no separate catalog-status notice.",
+      "sources": [
+        {
+          "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+          "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7P90N7",
+      "items": [
+        "sha256:3fac9001a599dd242833bd2d3b626c36e713000ed1d272afb5353fcfad4ea7c3"
+      ],
+      "reason": "The wrapper declares and forwards the optional pending input. It does not choose the model or start a request.",
+      "subject": "hunk:sha256:3fac9001a599dd242833bd2d3b626c36e713000ed1d272afb5353fcfad4ea7c3"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0EASG7",
+          "revision": 2
+        },
+        {
+          "id": "INV-68QN0P",
+          "revision": 1
+        },
+        {
+          "id": "INV-A0240E",
+          "revision": 1
+        },
+        {
+          "id": "INV-BS7TH8",
+          "revision": 2
+        },
+        {
+          "id": "INV-VZJRTM",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-84DDFC",
+      "items": [
+        "sha256:e57e4f6de1c1179ecce2b3ab4b704b041a330bbafeae2490e9c5d906e6276798"
+      ],
+      "reason": "Canonical Investigator selection and exact saved request operations remain intact. Option-side liveness changes neither the slot owner nor document coordination.",
+      "revision": 2,
+      "subject": "FAM-3NG1K9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8PQYX1",
+      "items": [],
+      "reason": "The Settings reference’s catalog validation and provider-options projection still govern per-role settings choices and extra harness arguments. Checked docs/reference/settings-json.md:535–558,735–749; paseo_catalog.py:104–113,325–362,442–446; paseo_launch.py:463–481,486–510.",
+      "revision": 12,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9CBSZY",
+      "items": [
+        "sha256:27184aa13bf0c6f579c898c0c950c4d7fe4d4c31ca2efa1a1735cea55ea7b28e",
+        "sha256:88f9665284cf0051ca66e1786d954d72c1925cb12368efc34f5ef04572b7dd99",
+        "sha256:ba6abde7a18b110966d5c975912f4a9cd52082204fc5d2f64b58b3ebba8a6ac1",
+        "sha256:c69c9df559d0ec0d311082a9e7de32009989a8a79016307ec34472aac7e16470",
+        "sha256:c8f98c3a08c7192ccb1696beb61856371fd8078bbd0d6db5ebc98384ae4f9d4f"
+      ],
+      "reason": "The card’s source assertions describe the scoped fixture and the launch, catalogue or receipt behavior the candidate exercise covers.",
+      "sources": [
+        {
+          "blob": "debdfc475e0f77d4708f4db7631496c4015fcdfb",
+          "path": "mcp/tests/test_paseo_catalog.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_catalog.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9DQT2H",
+      "items": [],
+      "reason": "Held opening validates its frozen details before sending, with a distinct restoration branch for recorded artifacts.",
+      "sources": [
+        {
+          "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+          "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_held_messages.py"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-9EHP30",
+      "items": [
+        "sha256:8f01541489c143444c4594ff0677a6560627141555a10fd8c76091e2b07e7dee"
+      ],
+      "reason": "The options query split still uses the applicable Paseo mode listing for a default and passes selected named modes to Paseo. The W6 source at paseo_catalog.py:529–551 preserves host acceptance, and no ruling in this leaf changes mode ownership.",
+      "subject": "reconsider:DEC-6BZSX5#1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9MMFED",
+      "items": [
+        "sha256:54a6d7f550734b84df2c81ec38fe4d009d0c69f6c8b2e86fd117e5d0fc2a560f",
+        "sha256:5e80702f95346d687d398e908d1669c9d8d920e4595dd60eab9e952a684a8012",
+        "sha256:e17c28b069cf56d25d6997e636ac61bb5dc714534ba1cc8d05e3f6781c58f19b"
+      ],
+      "reason": "The card’s source assertions describe the scoped fixture and the launch, catalogue or receipt behavior the candidate exercise covers.",
+      "sources": [
+        {
+          "blob": "1d8396a770f021c11debb8be26d2ffc255a34530",
+          "path": "mcp/tests/test_paseo_role_tools_start.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_role_tools_start.py"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-9YA6C0",
+      "items": [],
+      "reason": "The base already keeps saved choices selectable without a separate catalogue status line. The shown-model control now marks its own pending options.",
+      "revision": 5,
+      "subject": "INV-6SGHBB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:70a382c2b54b0125df1d500da21f204ba24890de8b652dcacc210f71514eddcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+            "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-PMMCQ0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-A4SSZD",
+      "items": [
+        "sha256:67161a25c1a267c409f0558aafdcea4646eb962c0c8f15d67e2ac0b8a146f768"
+      ],
+      "reason": "An admitted launch still observes the leaf closing boundary before creation and applies existing archive-only settlement after entry.",
+      "revision": 1,
+      "subject": "INV-VPXD65"
+    },
+    {
+      "considered": [
+        "FAM-N17BB4",
+        "FAM-QDEPNF",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-A6FE1K",
+      "items": [],
+      "reason": "This obligation can be checked at its own launcher, receipt or provider boundary. The examined family guarantees cover different joint effects.",
+      "revision": 1,
+      "subject": "membership:INV-47MBEJ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-AP4PY1",
+      "items": [],
+      "reason": "The Pi guide’s default-path omission still applies when no named mode is supplied and the host advertises no Pi default. Checked docs/install/pi.md:66–76; paseo_catalog.py:529–551; paseo_launch.py:452–453; pinned provider-manifest.js:199–205.",
+      "revision": 6,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BN07WK",
+      "items": [],
+      "reason": "The cost-aware Bootstrap guide correctly limits catalog validation to known offerings and describes harness, model and effort overrides for one start. Checked docs/guides/cost-aware-bootstrap.md:64–73; paseo_catalog.py:277–343,672–714.",
+      "revision": 3,
+      "subject": "DPD-1DXK6Q"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BN9XVB",
+      "items": [
+        "sha256:3ede8811e65780793e873881abf17a7738934cb188062401e5376d152cc9a932",
+        "sha256:4626bfff229c760949509acd8d0111185aace5800502e4d9398a15138e8e507d",
+        "sha256:6d01e6f272f183c34b00930ceb4e32cbcd5b8983a76e29c51f340224d0247467",
+        "sha256:a338ad9b8f2b1e167c9faf1b144b67ff0ab738ee21494963fa6eff27b9130574",
+        "sha256:aeb04417d17b0972355d11b8ca0068c9e1d91d4c9270224436f6a071e5da188a",
+        "sha256:c4bf3c6daeb6c9e83f7f216ab527f98df0dcdaf0f8f45d73c4bd12eafe85f7dd",
+        "sha256:c78617b40ab45ad8340836bc1756ccac0c6b08c85ea315459a19ebeff37c28d9",
+        "sha256:faff876a19f56e9bbf41a46e67ded1fcc978912773281886f572977550edd4a3"
+      ],
+      "reason": "W7 uses the suite’s shared hang guard for the existing parked receipt reads and their future results. The assertions and command traces still establish Start admission, replacement receipt preservation, and legacy lookup behavior.",
+      "sources": [
+        {
+          "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+          "path": "mcp/tests/test_paseo_status.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_status.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:9c3b965c0d2c92736f231310bd1555795d3ef5aac786a2d132db22af28eb7bbe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+            "content": "sha256:99a41d0f497b0385ad9139971f8cc4bd1a53c8f845d7ba8fdda07c1222040542",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-2GJ47Y"
+        },
+        {
+          "after": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:47d0306c62a4c60f2586311d531522b0d47ce65c249b07248df790d28bd7b097",
+            "locator": {
+              "end": 446,
+              "kind": "line_range",
+              "start": 442
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:c41effe9759b118d49fa0cc900ee67bce26c52bb7b80b59a64557563ae360a27",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-J15B66"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BYDA7E",
+      "items": [
+        "sha256:f6a746bb0bc6ff8e5d5a88e289ad80af8db0c6fb44ad791de46b8fff82d50f4d"
+      ],
+      "reason": "Configured extra-argument layering and the taken or not-applied provenance stay under the same provider options.",
+      "revision": 1,
+      "subject": "INV-9DMNQS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:fb5bd881df99ae7cd65d83c29ea1e7f5732604c0263ee4541e03877d8d14e579",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "content": "sha256:ca9880cbd12bd1e65dcde9fd1499cf5dc673bbdccf4b20bdd76b17c5b5f521db",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-T0T191"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BZVFJF",
+      "items": [
+        "sha256:e5fe834cbc79de0e45d941da70f08fc05128013bf5b870bceeaaaa9926d11ff6"
+      ],
+      "reason": "The prepared handover still publishes the two immutable artifacts before host creation. Native admission adds no artifact exception.",
+      "revision": 2,
+      "subject": "INV-X9GE8J"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+            "content": "sha256:744d6f4b808837ca9245a1d338505d6e224b8c56a5ddec31a7020c7cfdc41360",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-JCRA6D"
+        },
+        {
+          "after": {
+            "blob": "0554881d5c79e63acbf12acfb1e13cb65cdbe98d",
+            "content": "sha256:df8f5d9f3276db7a49efae4175a2b12d7906f7b4de951445cf36bef763e11d0a",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog_features.py"
+          },
+          "before": "absent",
+          "id": "RLZ-N64TMY"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-C3HHB3",
+      "items": [],
+      "reason": "The pane cache and the direct backend query jointly establish the shown-pair read. The operative ranges now cover the pane's request reuse and the bridge's exact target and durable result merge.",
+      "revision": 1,
+      "subject": "INV-J2SF5K"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-C8ARSX",
+      "items": [],
+      "reason": "The OpenClaw guide’s implicit Bootstrap refusal still applies when the configured host has no OpenClaw provider, and naming an offered agent bypasses caller-harness inference. Checked docs/install/openclaw.md:48–69; role_launch_routes.py:263–270; role_launch_request_rules.py:60–109; pinned provider-manifest.js:153–214.",
+      "revision": 3,
+      "subject": "DPD-6528VF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CDQX76",
+      "items": [],
+      "reason": "The view evidence covers the shown-pair requests, saved inventory, new Start feature omission and native frame and report ownership.",
+      "sources": [
+        {
+          "blob": "821f21c80bdb705adf01849d194ac6ef9bfb6375",
+          "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChatsView.tsx"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-CEHJP1",
+      "items": [
+        "sha256:7bd3e7a1e8ea0d83ca89b000618a998717ad4d3c9c57d62d9754fc4c594b238e"
+      ],
+      "reason": "The prepared launch checks the closing mark before host creation and applies archive settlement when a creation already entered. W6 paseo_launch.py:652–674 does not make leaf closing wait on host creation, and no leaf ruling accepts that alternative.",
+      "subject": "reconsider:DEC-89X3FM#1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "content": "sha256:1bb2be631b4da7dc5068aa1bd5697d8c99efe7852099136426e7478119fdd39d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:be8af700c1038b87da7566a3242db151c36aa3c09d5d89e1400a12c938b18bda",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-QQR1B1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CVEGA3",
+      "items": [
+        "sha256:0e79cd0dafafb2921f254d14472a53c0ae3be4c4567d8f42902032ffc1282dc1"
+      ],
+      "reason": "The options query split leaves named-mode precedence and host-owned mode application intact.",
+      "revision": 4,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
+            "content": "sha256:44c6f11693d2a7bcc050a26d71d31734069e163040d14edfe0e226d1891005e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "before": {
+            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+            "content": "sha256:5ab0bd5e33bf52916e4d66a348431ab2e3ff375a3df7763bffc469e4f706493f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "id": "RLZ-KN9SG0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CWVE84",
+      "items": [
+        "sha256:5b9d2a86345d5540fd52d680cf7e15f59c9fe2c13f93408821634b3cab892c37"
+      ],
+      "reason": "Moving option-side liveness calls outside the dispatch lock leaves retirement enumeration, interruption authority and step-up protection intact.",
+      "revision": 2,
+      "subject": "INV-ECNV2S"
+    },
+    {
+      "considered": [
+        "FAM-3NG1K9",
+        "FAM-M36XBW",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-D6KS5W",
+      "items": [],
+      "reason": "This obligation can be checked at its own launcher, receipt or provider boundary. The examined family guarantees cover different joint effects.",
+      "revision": 1,
+      "subject": "membership:INV-GPC5PN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DA25NQ",
+      "items": [
+        "sha256:23265321715796a306ca8d27122ddcc95ff83667feabf1b1c04882d925c34962"
+      ],
+      "reason": "The renderer presents the resolver’s selected model feature controls. It does not derive feature choices independently.",
+      "subject": "hunk:sha256:23265321715796a306ca8d27122ddcc95ff83667feabf1b1c04882d925c34962"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:66cbd3e374e81718d46e14824061905ab7d785aa33422b3fa584e6d96899973b",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent_create_input"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+            "content": "sha256:5af30fa7f2b0102d719cfa66cc1c67342d88fc9e8f3798687c44a876c421edd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent_create_input"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-GVT6GP"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DGBZCS",
+      "items": [
+        "sha256:c11784a151a34a0bfb4e3da261e4011dcc0dffbbb93fd9d119a516ab5b1eadfd"
+      ],
+      "reason": "The existing-only marker is read by the bridge and does not become a field in the Paseo host create request.",
+      "revision": 1,
+      "subject": "INV-ZKV9B3"
+    },
+    {
+      "disposition": "changed",
+      "effect": "retire",
+      "id": "ROW-DHHJ6A",
+      "items": [
+        "sha256:cf43bb13ca2ba5be0e9e73054dd27aaf77fbbefc8b29ae720ac15af55bbc174a"
+      ],
+      "reason": "The verified L199 repair removes report-folder depth from the note’s 600-character budget. The note still has its original limit.",
+      "revision": 3,
+      "subject": "WKN-J8RS6F"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DHJAQ8",
+      "items": [
+        "sha256:a463ff7bd2c76eb51c1d5c376d8aea764fd6498052ce8f72917ec7ad9117fab9"
+      ],
+      "reason": "Removes the former feature-list helper after the renderer starts receiving the resolved shown model.",
+      "subject": "hunk:sha256:a463ff7bd2c76eb51c1d5c376d8aea764fd6498052ce8f72917ec7ad9117fab9"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-DY4EC1",
+      "items": [
+        "sha256:7bf0658bb42ee3e06fc61ef9dca260ee06eefe9ac81141be7aeed3482af340e7"
+      ],
+      "reason": "Known host offerings and permission policy still govern admitted creation. Fresh native Antigravity is refused before preparation, while the same resolved fields reach admitted ACP creation.",
+      "revision": 4,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-DYTY3V",
+      "items": [
+        "sha256:b4dfa7ecf96d730f9a2f2aa0cb139e4e33f371034d0dc889e118b27ffb8f54e9"
+      ],
+      "reason": "Launcher model and effort edits still preserve selection state, and this task does not change packaged role, operation or onboarding instructions.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FEC0Q1",
+      "items": [
+        "sha256:4bfd8d22663bfdf0e5fff738767b6d95731bc688a826ae8f5f326570099bf433",
+        "sha256:faed0a1079a2d7642b64f7ae3739bbf9efe9b1db0179e5bbed77c42e91faae80"
+      ],
+      "reason": "The card’s source assertions describe the scoped fixture and the launch, catalogue or receipt behavior the candidate exercise covers.",
+      "sources": [
+        {
+          "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+          "path": "mcp/tests/paseo_launch_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/paseo_launch_test_support.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:eb3ac1bde13c70a0e8c7a42ddf9381509ac2da164c2011c906072a29fec939f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "before": {
+            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
+            "content": "sha256:417e93f9a44d33e68a70e868db67198dcf8fdb8a1fe0ad772c9a082447a1b052",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "id": "RLZ-DKX1HV"
+        },
+        {
+          "after": {
+            "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
+            "content": "sha256:5665e8a72f5a8120d27b8eda966ccf02cff3c749df2d0947db9b07d3264cc16e",
+            "locator": {
+              "end": 687,
+              "kind": "line_range",
+              "start": 565
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "dce9e43dc96950f6e1bc1112f272f26e44c7bab4",
+            "content": "sha256:056aff43f0dd1b87c3bd2c620a91805ce770d5db950fd43df17e80796f37897e",
+            "locator": {
+              "end": 676,
+              "kind": "line_range",
+              "start": 565
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-N85X2R"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FHMWH5",
+      "items": [
+        "sha256:ca491f1ee7e9e572ab7d608b82b082b8d338bf6bc80991dea151f93870aa2bbf"
+      ],
+      "reason": "An explicit model or effort change retains the saved override state. Fresh Start may omit nonfresh feature values at the later dispatch boundary.",
+      "revision": 4,
+      "subject": "INV-63Z0MN"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FMA0GR",
+      "items": [
+        "sha256:c9d6e33c3ba8ac182190456352f2beb361e109f8966ac8dbdce0f5b480adc205"
+      ],
+      "reason": "The card follows the scoped metadata and shown-model options paths, with the existing saved selection, receipt controls and frame boundaries.",
+      "sources": [
+        {
+          "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
+          "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FSKE19",
+      "items": [
+        "sha256:10286a3d7a075943c4f6742c37c2909c01e796a9a437d00efac62227ce66e7f3"
+      ],
+      "reason": "The cited selection fixtures prove unoffered-choice refusals and that an invalid model never calls the workspace resolver.",
+      "sources": [
+        {
+          "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_preparation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G7RVHV",
+      "items": [
+        "sha256:e4d2d5a78971204a9a294b3bea04cfe8797fc080df7cb3d8f357403f4fcab3d5"
+      ],
+      "reason": "Removes the feature type import that became unused with the helper removal.",
+      "subject": "hunk:sha256:e4d2d5a78971204a9a294b3bea04cfe8797fc080df7cb3d8f357403f4fcab3d5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GRE9MJ",
+      "items": [
+        "sha256:44716eee569c30fabec37749681c57f61223a5ba25108445ca1ee2ce22a2d521"
+      ],
+      "reason": "The overview cites the complete saved launch payload, limits predecessor checks to the saved step-up executor and distinguishes the direct model read from Start's operation memo.",
+      "sources": [
+        {
+          "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+        },
+        {
+          "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+          "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+        },
+        {
+          "blob": "0554881d5c79e63acbf12acfb1e13cb65cdbe98d",
+          "path": "mcp/src/agents_remember/cli/paseo_catalog_features.py"
+        },
+        {
+          "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+          "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+        },
+        {
+          "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
+          "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+        },
+        {
+          "blob": "55c8e4d51ae225a1d8a68007ca9be6ba05b9edb5",
+          "path": "mcp/src/agents_remember/cli/role_launch_options_receipts.py"
+        },
+        {
+          "blob": "cc48a16958cc6f53b7eb022faa7e4a91e960dda3",
+          "path": "mcp/src/agents_remember/cli/role_launch_outcome.py"
+        },
+        {
+          "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        },
+        {
+          "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+          "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+        },
+        {
+          "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GW31A6",
+      "items": [],
+      "reason": "The runtime-layout reference’s distinct leaf and other role scratch and report folders still agree with preparation for an admitted launch. Checked docs/reference/runtime-layout.md:149–160; role_launch_preparation.py:529–557.",
+      "revision": 3,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GZ24C2",
+      "items": [],
+      "reason": "The Roles guide’s dashboard role and task selection, available role_start overrides and permission-mode order still agree with the admitted-start route. Checked docs/roles.md:75–110; role_launcher.py:39–77,86–104; role_launch_preparation.py:233–253; role_launch_routes.py:243–270.",
+      "revision": 7,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HG45K8",
+      "items": [
+        "sha256:329a3d5e4fbd8544ae9bb1d886ef5ff36dcb3a4d1a9cfc66d3ce9a94cf3cf5e3",
+        "sha256:4caa6174eda950f926f0497c6bc9126a9088dfe750e8e84a4aeff81871c15525"
+      ],
+      "reason": "The card follows the scoped metadata and shown-model options paths, with the existing saved selection, receipt controls and frame boundaries.",
+      "sources": [
+        {
+          "blob": "b853ca31c46a651232bfcb3f8644f64bae85988e",
+          "path": "dashboard/src/cockpit/roleChatModelOptions.test-utils.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleChatModelOptions.test-utils.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HVJ4VX",
+      "items": [
+        "sha256:9e8629633870610e25a080bf951088fd3ca2952fc59f898657af3649d8fd8622"
+      ],
+      "reason": "Every current replay explanation carries the missing-native-agent case. Artifact-free validation and saved predecessor checks name their actual callers and gate.",
+      "sources": [
+        {
+          "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+          "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_receipts.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+            "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-YGH2ER"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-J8B6SC",
+      "items": [
+        "sha256:ca7d146dc8a485f87f6a4c0fab1a7c51eaa787ed473aa860c0eade40813bc1be"
+      ],
+      "reason": "The same execution Result selects its scoped receipt, rereads execution state and opens the existing report reader.",
+      "revision": 1,
+      "subject": "INV-EFDE52"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-JEP2S3",
+      "items": [
+        "sha256:750457f4e41b9436254050ec235fa428b359cafb579e658bcd75bcfe0d598b27"
+      ],
+      "reason": "The dashboard guide now correctly describes shown-pair option reads and reuse, ordered Refresh, and saved model choices with new Start omitting feature overrides until fresh options are ready while Retry replays the saved request. Checked docs/dashboard.md:180,185–189,193–203; BUG-L19-CUR-F01-W6.",
+      "revision": 6,
+      "subject": "DPD-23C91T"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+            "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-A0VKEA"
+        },
+        {
+          "after": {
+            "blob": "0c8ec2f3d1d7878495b7ee358fd82f4e46d76ff0",
+            "content": "sha256:65f1c5c225336a4296f5cb71d4d17a2e41298546d445b93d1171ba21348637fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "runOptionsLoad"
+            },
+            "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+          },
+          "before": {
+            "blob": "cea0b30a94130d7518eee42d7e4f5d529fd39685",
+            "content": "sha256:c2bcb2b508651ded09386fb4cd171d5bb2ae69f15669e1838a2a85c2b319654a",
+            "locator": {
+              "kind": "symbol",
+              "name": "runOptionsLoad"
+            },
+            "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+          },
+          "id": "RLZ-N8EDE3"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JF9E1S",
+      "items": [
+        "sha256:74da5d03b89ca868d673bff2ff7c6e495d5e69b976fbe5adb7404c0b90177edf"
+      ],
+      "reason": "The launch-in-progress response uses the quiet reread path. The sole actionable error line and exact recovery conditions remain.",
+      "revision": 3,
+      "subject": "INV-C7AT8R"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-C9SY1X",
+          "revision": 1
+        },
+        {
+          "id": "INV-EMEW6K",
+          "revision": 1
+        },
+        {
+          "id": "INV-GKNF5W",
+          "revision": 1
+        },
+        {
+          "id": "INV-HFREW1",
+          "revision": 1
+        },
+        {
+          "id": "INV-P8F6BT",
+          "revision": 1
+        },
+        {
+          "id": "INV-XJJ3NX",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZKEF8F",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZKV9B3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JKCRZB",
+      "items": [
+        "sha256:46442828846eda2a2a3806d3f662f91f5dc5d0c8ed254eb3f02089b1dd59e033"
+      ],
+      "reason": "The bridge-only replay marker does not enter the host payload. Tool-server mapping and ambient policy still apply on the supported launch.",
+      "revision": 1,
+      "subject": "FAM-QDEPNF"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-K488T2",
+      "items": [],
+      "reason": "The role-launcher definition still agrees with the role and task choices and the optional host harness, model and effort selections. Checked docs/concepts.md:548–552; role_launcher.py:39–55,75–91; paseo_catalog.py:196–232.",
+      "revision": 11,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K56BVP",
+      "items": [
+        "sha256:2bdc4923b570c11ee0b3218261e56df85e1f4ff33ff8a01062d0155d3e22a2dd"
+      ],
+      "reason": "The card follows the current native options, receipt or launch boundary and records the capability and evidence owned at this source path.",
+      "sources": [
+        {
+          "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+          "path": "mcp/src/agents_remember/models/role_launcher.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/role_launcher.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+            "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-XXYE2Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KPXXW2",
+      "items": [
+        "sha256:c39ed59d0e7c319acd48a10e7d214482985304dc4a159ccc4c42315a8b7a1fd1"
+      ],
+      "reason": "The pane retains its existing frame and steering owner when launcher metadata or selected-model options change.",
+      "revision": 3,
+      "subject": "INV-D0QATN"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "examined": [
+        {
+          "id": "INV-43CXH6",
+          "revision": 2
+        },
+        {
+          "id": "INV-5MP23G",
+          "revision": 3
+        },
+        {
+          "id": "INV-6SGHBB",
+          "revision": 5
+        },
+        {
+          "id": "INV-8J056T",
+          "revision": 1
+        },
+        {
+          "id": "INV-C7AT8R",
+          "revision": 3
+        },
+        {
+          "id": "INV-DH5NRM",
+          "revision": 1
+        },
+        {
+          "id": "INV-EFDE52",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA2JW5",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ7E3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-M0BJC2",
+      "items": [
+        "sha256:a294aaa84d66f9014f5349838da220a9bfb2fd5f524ec1cee260ac0913f6faba"
+      ],
+      "reason": "Preserve the control strip and exact action identities. Correct the earlier catalogue-status account and record the shown model’s pending state.",
+      "revision": 8,
+      "subject": "FAM-RT2XDA"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-M9GAW6",
+      "items": [],
+      "reason": "The role-tool reference’s same-request reconciliation and single-seat boundary still hold after option-side receipt observation moved outside the write lock. Checked docs/reference/mcp-tools.md:526,564–568; role_launch_liveness.py:73–108,133–147.",
+      "revision": 10,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MSDFYE",
+      "items": [
+        "sha256:f4390bb36a17f6d98572a2462206ea0155e7e47d672c5601cc8ba57da577b194"
+      ],
+      "reason": "Uses the grouped options flags for the same sticky-error decision.",
+      "subject": "hunk:sha256:f4390bb36a17f6d98572a2462206ea0155e7e47d672c5601cc8ba57da577b194"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MSY4JW",
+      "items": [
+        "sha256:6eb18ad5e9bcc6aefa005f943bf8f255b7961141d0f585ad40518796851f2bca",
+        "sha256:95f7f3859e22dda447c752be78ed2db60b744b7d437023a02d8877b34a262c9a",
+        "sha256:eeaf23d3dce5a107ebdf62c0db15d318a287613d8b54116c30e83344c0a7e4de"
+      ],
+      "reason": "The card’s source assertions describe the scoped fixture and the launch, catalogue or receipt behavior the candidate exercise covers.",
+      "sources": [
+        {
+          "blob": "1b5dc37f8300deed062c7db2fae8a81ff1c10bfc",
+          "path": "mcp/tests/test_paseo_bridge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_bridge.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N51WWX",
+      "items": [
+        "sha256:045f7fa2b3fa5dc5a1a9607ea5fdc3a9a88da2387eb8d04b5d8d6445e80dcbc2"
+      ],
+      "reason": "Current evidence locates the saved call, the bounded recovery note, the server-exclusion envelope and the native existing-only projection.",
+      "sources": [
+        {
+          "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+          "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_launch.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e91f84dbf515304a6514531795df75b6c8953b25",
+            "content": "sha256:f8a25b7d9654be043a277deeec68c505e819b79869244af69727331d700d5984",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 275
+            },
+            "path": "docs/host.md"
+          },
+          "before": "absent",
+          "id": "RLZ-4HET4N"
+        },
+        {
+          "after": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:66cbd3e374e81718d46e14824061905ab7d785aa33422b3fa584e6d96899973b",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 559
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": "absent",
+          "id": "RLZ-BRK9VA"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-N7T61Z",
+      "items": [],
+      "reason": "The saved native call marks the exact recorded agent existing-only, and the host guide states the native, ACP and witness boundaries. Cite the full action and guide passage.",
+      "revision": 1,
+      "subject": "INV-47MBEJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N8W05Y",
+      "items": [
+        "sha256:0f23412d185e0b01a94206fe6a6ead97f10c00beafa177ee091f2969d4efb61f",
+        "sha256:1aa2733e86bd74a86307e5f5d520645b202680516ef331833ab5bc648b3bcec1",
+        "sha256:25bcd1c62c71a6dc98305f7b1c8e37088f5089b6dfbe79cdb6f4b96d6d3cbb65",
+        "sha256:4b39ea6cdd9bcc1d2f193a640e2bfd9dd529d44e4d4689d0611f48277de024bb",
+        "sha256:55527a256abfa7752937091998181bd6093e80cf1e01848bec0b87c012762ff7",
+        "sha256:58839b3240be6dacfa9b53ad833cd3be4f94da2353744331bf58d2d2c9be207d",
+        "sha256:89f6b28dda0211a3795e262520a38a1a029d9a0fc301640175bc1846b5c4ae1d",
+        "sha256:b2203aafe54f2112e632de4d5fb8aaf9f1270b882d8fc62e909b65159923b610",
+        "sha256:b9ab2a0855297410d2b97c168cb11057e00472d1bdcb7aaa97527dc0f698c095",
+        "sha256:bf174a140936fe939167fc585b68e22db07abb41689c61042d4e7a55a96166da",
+        "sha256:dad6f6ead13ac82c6f2f46662c01fe24b7892c782cf1f16e3254b4adcb3f7b7d",
+        "sha256:f9714a15fe8381581c618e60a67b27f1597d653e077465cdd14da573242850c9"
+      ],
+      "reason": "The card’s source assertions describe the scoped fixture and the launch, catalogue or receipt behavior the candidate exercise covers.",
+      "sources": [
+        {
+          "blob": "7a04953b3540a31a6ad6e4b20810d8a614e0a83c",
+          "path": "mcp/tests/test_paseo_bridge_catalog_freshness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_bridge_catalog_freshness.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NYQPEW",
+      "items": [
+        "sha256:cdddf01ec809a0773a63d339622c813791fda0e3fe6c917549359f8f0b1113dd"
+      ],
+      "reason": "Stores the metadata answer’s generation for the selected-options reader. The loader controls acceptance of the metadata response.",
+      "subject": "hunk:sha256:cdddf01ec809a0773a63d339622c813791fda0e3fe6c917549359f8f0b1113dd"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-P3RY7Z",
+      "items": [],
+      "reason": "For an admitted role start whose provider takes a tool server, the architecture account of a separate bound agents-remember-task process agrees with the launch definition. Checked docs/architecture.md:40–52; paseo_launch.py:419–445.",
+      "revision": 5,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P4WGC2",
+      "items": [
+        "sha256:90bf07fbf9047e2774ea5a4b0ac9d6cf4bc7c050a087c9ddb84a8a62d6f0949b"
+      ],
+      "reason": "Groups refresh inputs passed to the metadata success path. Generation admission remains in the loader.",
+      "subject": "hunk:sha256:90bf07fbf9047e2774ea5a4b0ac9d6cf4bc7c050a087c9ddb84a8a62d6f0949b"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P71NKY",
+      "items": [
+        "sha256:2c3f65252672a83e138f3ef862edbeb58c31c53f7fea23936f6442d7f8183b6c",
+        "sha256:3fbe51b5eb3918fd13a622263d846f035f6b39249c6d7ca0b96d3e97d73f07ea",
+        "sha256:66762956dcd2c36b5d66e90f14d962394ab8fc59d2c92217f2c96749f5175f4d",
+        "sha256:86ee379710096281ce20a2e81310abcf9a64e5cf96480877990ea53cf769f860",
+        "sha256:94eb568ee41768bf0b36709d14b6dcbd77e3f4e85142d6cf38c80f2487a1ea8e",
+        "sha256:f38a2ba5d18b4dbd4f8eb126a4ca7d7d204f262e840cfe72151ec9d1436db545",
+        "sha256:fa1787f65cf698fe66b7112ada517a6a2b8b8c876f35ff887649cad6280871ec"
+      ],
+      "reason": "The card follows the scoped metadata and shown-model options paths, with the existing saved selection, receipt controls and frame boundaries.",
+      "sources": [
+        {
+          "blob": "08999c138062f7bbbcd93036eb85a3a8b3a61ad6",
+          "path": "dashboard/src/cockpit/RoleLauncher.row.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleLauncher.row.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:d115f8d21320f900e3dedd25aa478a30fc186864fbce03a07355ef3bffcf6f8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_options"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_options"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-4FRACE"
+        },
+        {
+          "after": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:6f65805395b74e84622fcaddc827333a9e3af273cc57041dd8a2f53e423617dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_catalog"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_catalog"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-6YVTSR"
+        },
+        {
+          "after": {
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:9e2112c3ecf7b247ed629b2336636724bddf609dddbd2c51988847e0fd8f827d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-8N10TZ"
+        },
+        {
+          "after": {
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:9e2112c3ecf7b247ed629b2336636724bddf609dddbd2c51988847e0fd8f827d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-DFH2HW"
+        },
+        {
+          "after": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:3dcd0adf88a37933435ec7101f47bf93b0d6d67cc6a822717b855e43fdb382bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_catalog_question"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:620526a163bd5b191428039bdfb97ab0ce593c22b9ec51e2f05bb1ea55895ec4",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_catalog_question"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-DVGZB0"
+        },
+        {
+          "after": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:57dcf45cd1f6fb27b6976b8c071f05fd4a87012c55322fc19387a8d4a0e3d323",
+            "locator": {
+              "kind": "symbol",
+              "name": "_question_catalog"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:9c2ca81f6a5216bcf902204da2632f872bba64b511ad27977b39bb6c3f004ab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_question_catalog"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-X66C8E"
+        },
+        {
+          "after": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:85a06aa7fb378f0553c306fad40c22b575e0c8110a75772e45c80e6276b32478",
+            "locator": {
+              "kind": "symbol",
+              "name": "paseo_catalog_scope"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:8a9b221e6e947655d7e8c9a202ee41d6a9b1a1c2b902f7b82c40a496208bfe76",
+            "locator": {
+              "kind": "symbol",
+              "name": "paseo_catalog_scope"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-ZFQTQP"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-PZNVND",
+      "items": [
+        "sha256:33d226e253910fb8188ec56767d53e604ab917752144f99329fb0dc31cb0e17e"
+      ],
+      "reason": "Replace full-view feature discovery with catalogue metadata and a separate one-pair query. Keep saved parts, choice validation and recorded replay.",
+      "revision": 4,
+      "subject": "INV-RQ2ZB8"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 1
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-Q3V0N4",
+      "items": [
+        "sha256:99ed69d11c80bd194b92276ee4ce29f9b735d997f3fcfa79d80cd62ac2d2edfa"
+      ],
+      "reason": "The existing closing mark still refuses an unentered creation and governs archival debt after entry. Native missing-agent replay is separate.",
+      "revision": 2,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "content": "sha256:48dec4b52aa6ce063688a026cd8bf0f7762d538ec9054bd4a77a73c1e3b4690a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviveTests.test_an_agent_the_host_cannot_resume_is_failed_and_stays_unrevivable"
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "before": "absent",
+          "id": "PRF-BTW1KJ"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+            "content": "sha256:48dec4b52aa6ce063688a026cd8bf0f7762d538ec9054bd4a77a73c1e3b4690a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviveTests.test_an_agent_the_host_cannot_resume_is_failed_and_stays_unrevivable"
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "id": "PRF-WXNWTK"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-QDFEAX",
+      "items": [],
+      "reason": "Replace the earlier proof facet with the exact persisted-field and second-Revive assertions the same case makes. The invariant statement and its other proof remain. Evidence (BUG-L19-MR1-F04 Revive proof scope): mcp/tests/test_paseo_status.py::ReviveTests.test_an_agent_the_host_cannot_resume_is_failed_and_stays_unrevivable; BUG-L19-MR1-F04 narrows the test's evidence to its persisted field and host-call assertions.",
+      "revision": 2,
+      "subject": "INV-F6CAGC"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+            "content": "sha256:9c201e6d275bd7a762302d83ff789295912745d9fcd0fce71ca7d40e19dc5a6d",
+            "locator": {
+              "end": 785,
+              "kind": "line_range",
+              "start": 753
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
+            "content": "sha256:2980ed72f696b5c2250df1bff2f2769ad6eaf90ff1f71e62571e5b8f13539d1b",
+            "locator": {
+              "end": 784,
+              "kind": "line_range",
+              "start": 755
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-VYFJX1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QN5QE9",
+      "items": [
+        "sha256:4e387aff23a3b4338f1e5b7bda2255f0dc1758c36f78f1c9eb0fc4cfaa5f02db"
+      ],
+      "reason": "The receipt read still refuses malformed records and treats a missing path as absent, including when it disappears during the read.",
+      "revision": 1,
+      "subject": "INV-4BT846"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QT1FG8",
+      "items": [
+        "sha256:51ebd68aeb9d1447e0de35ca66c922da41e321f4de2cced428406015d374113a"
+      ],
+      "reason": "The card follows the scoped metadata and shown-model options paths, with the existing saved selection, receipt controls and frame boundaries.",
+      "sources": [
+        {
+          "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+          "path": "dashboard/src/cockpit/RoleChats.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0554881d5c79e63acbf12acfb1e13cb65cdbe98d",
+            "content": "sha256:cc5ab173ae74ce175fdc2c5f170d8b2fdd934cef72bb8e67e8ca912a8c1fee7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_model_options"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog_features.py"
+          },
+          "before": {
+            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_options"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-1A9CAN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-R3W8TS",
+      "items": [
+        "sha256:fe59b4e16deb8670341d9afef60b27455a40651cb6ab27aa897d0f1c69649900"
+      ],
+      "reason": "The feature classifier moved to the selected-options route. Speed keys, permission-bearing keys and unknown-bearing keys retain their acceptance rules.",
+      "revision": 1,
+      "subject": "INV-002A1G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
+            "content": "sha256:a1ce1f9b474495a426323655e44aa00b2680df195905f8838d3b9adc57d99d23",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "before": {
+            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+            "content": "sha256:d50fdc1880e9960c3005b929057f234787a220d435edcf1b55b56d25735dce49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "id": "RLZ-FETYV2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RB3E0Y",
+      "items": [
+        "sha256:f9be6ff2850ff63e0970af12df9486df9f545a56df1de944053f249a4cec5cf5"
+      ],
+      "reason": "Splitting host observation from receipt updates preserves unresolved, held, completed and closing-mark outcomes.",
+      "revision": 3,
+      "subject": "INV-4E130M"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RDG1P6",
+      "items": [],
+      "reason": "The Harnesses reference correctly distinguishes the dashboard’s per-start mode override from role_start and scopes a settings-row mode to that row’s harness. Checked docs/reference/harnesses.md:137–156,179–185; paseo_catalog.py:345–362,513–551; ModeOverrideSelect.tsx:45–82.",
+      "revision": 4,
+      "subject": "DPD-PYMM5P"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RRRW7M",
+      "items": [
+        "sha256:90912963947b6e351ad8865f179bb89d0fde071a3033c1f1b51e5191b26329d0"
+      ],
+      "reason": "RoleChatsView still publishes shown-chat identity only from the active unbound frame’s reported agent when no report is open, independently of the requested frame target. Checked RoleChatsView.tsx:209,240–256,266–270.",
+      "revision": 4,
+      "subject": "DPD-99CBY7"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7GVWYD",
+          "revision": 4
+        },
+        {
+          "id": "INV-AE8ZGP",
+          "revision": 1
+        },
+        {
+          "id": "INV-G71Q09",
+          "revision": 1
+        },
+        {
+          "id": "INV-JD110F",
+          "revision": 1
+        },
+        {
+          "id": "INV-K9B8G8",
+          "revision": 1
+        },
+        {
+          "id": "INV-ME6CA1",
+          "revision": 4
+        },
+        {
+          "id": "INV-PH90HV",
+          "revision": 3
+        },
+        {
+          "id": "INV-TA1XAA",
+          "revision": 1
+        },
+        {
+          "id": "INV-YNWH01",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZPRPXZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-S25XMR",
+      "items": [
+        "sha256:41dfb59c885afe9e3b764f04127b85e6ce4fd1fcdb86db0d347d923cd53e82ac"
+      ],
+      "reason": "Actual frame observation remains the source of shown-chat identity. Operations attention, task labels and navigation retain their owners.",
+      "revision": 7,
+      "subject": "FAM-57TZPE"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S3A3JX",
+      "items": [
+        "sha256:918ccc4f8176249d2001c08cbaf07082c82ea173e0fad181165ab791dc520f9a",
+        "sha256:ee535ad60b9f6f9b09825aa51f0a0c6759babc9526569c878a071b6e2e2548ba"
+      ],
+      "reason": "Independent fixture ranges cover workspace open, creation, first message, exact get and archive with a separate source range for each operation.",
+      "sources": [
+        {
+          "blob": "5e13a344083a5dd1f2816313d6b739b929e550a8",
+          "path": "mcp/tests/test_paseo_bridge_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_bridge_agents.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+            "content": "sha256:51835c1bcce287e19445ad0e808b041a635424192a39ae742ba61cb0da153751",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
+            "content": "sha256:5eaba6f2df4c4cc50e912ade63892bd6789a8319586e6ae78da30e0fe4ccb364",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-SA35BD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-SKWVPW",
+      "items": [
+        "sha256:88f55527dacc9d4e7fc63e75e1c2110d03ddf9119567722805c2a8e6852aef7d"
+      ],
+      "reason": "The receipt and migration read changes preserve validation of the saved text and handover artifact before replay.",
+      "revision": 2,
+      "subject": "INV-87JRHY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T6M5SH",
+      "items": [
+        "sha256:746c6888a74e6827501c56a8eada26f51558e309f508a5601c322ec0722ad82f"
+      ],
+      "reason": "The pane cache and new Start evidence now cite the shown-pair decision and dispatcher that removes nonfresh overrides.",
+      "sources": [
+        {
+          "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+          "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleChatModelOptions.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:628dfca1128773e22c2b092fad35ad24aa219a2fff93af60b6442948df59aef2",
+            "locator": {
+              "end": 703,
+              "kind": "line_range",
+              "start": 649
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
+            "content": "sha256:e63afa852e78efbc0ca06e72509de1ea319706e45cebdaa0d5f1cf2be3ac959e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-AM4R8J"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-TB6A16",
+      "items": [
+        "sha256:bcab4964a2c898f35709bcd0f19f79dc6fb66d479c04adf84ee61c52eb8367a3"
+      ],
+      "reason": "The host usage report remains the sole source of limits. Catalogue query changes do not introduce a second limit reader.",
+      "revision": 1,
+      "subject": "INV-BCXFH9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TGPJ27",
+      "items": [],
+      "reason": "The Cursor guide’s implicit Bootstrap refusal still applies when the configured host has no Cursor provider, and naming an offered agent bypasses caller-harness inference. Checked docs/install/cursor.md:49–69; role_launch_routes.py:263–270; role_launch_request_rules.py:60–109; pinned provider-manifest.js:153–214.",
+      "revision": 3,
+      "subject": "DPD-21GMJ5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
+            "content": "sha256:54f9a7d000b83998d1f2e33ea1606e4bff75d51215d75d43e07808dd7a85ab51",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "before": {
+            "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
+            "content": "sha256:dcbbec9afe56359cd9997d5518db949c4fc6d83fa892b10fe632db92507d8f06",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "id": "RLZ-7HQW7Z"
+        },
+        {
+          "after": {
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:11b325738516c0049bdb6735d8bb9588aaf172c939f4e19596a859c82246cf59",
+            "locator": {
+              "end": 439,
+              "kind": "line_range",
+              "start": 391
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
+            "content": "sha256:e63afa852e78efbc0ca06e72509de1ea319706e45cebdaa0d5f1cf2be3ac959e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-7J6Y4G"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-TV0XWH",
+      "items": [
+        "sha256:f8166ee062fcbb70dce468ad8a18099a4f8ef8ae4db64ff049373b4d62d10519"
+      ],
+      "reason": "The options request can name one pair. The same host catalogue and resolved provider choices govern admitted creation.",
+      "revision": 2,
+      "subject": "INV-AFTG56"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TVZ2N2",
+      "items": [],
+      "reason": "The setup guide’s unmatched caller-harness refusal and hosted Architect entry continue to agree with Bootstrap and dashboard selection behavior. Checked docs/getting-started.md:178–183,251–255; role_launch_request_rules.py:60–109; RoleLauncher.tsx:551–615.",
+      "revision": 7,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V49A1R",
+      "items": [
+        "sha256:c71fca6aaf4a28ec1cecd67507ff53ceb58e1da50e9afd1148c54f42ce4039c1"
+      ],
+      "reason": "Updates the comment for the pending catalogue metadata read without changing its behavior.",
+      "subject": "hunk:sha256:c71fca6aaf4a28ec1cecd67507ff53ceb58e1da50e9afd1148c54f42ce4039c1"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-W7M5VP",
+      "items": [
+        "sha256:cd458ecf933fd8dd0cfc1761f9e4a75e03e836a38913b74fa1a218bbb7bc2cf7"
+      ],
+      "reason": "The Codex guide correctly states the 300-second role-seat default, omission of a per-server timeout on both Paseo transports, and Codex’s rejection of a timeout-only server table. Checked docs/install/codex.md:95–108; codex-app-server-agent.js:625–648,4532–4537; D890 parser and measurement evidence.",
+      "revision": 6,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "content": "sha256:28a4d014b642b2a3edf3539c52a9189dd2a1b8e1b1f7aa308f643e2b6390bedd",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefreshTests.test_start_can_replace_the_receipt_while_options_reads_its_agent"
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "before": "absent",
+          "id": "PRF-4A2YAT"
+        },
+        {
+          "after": {
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "content": "sha256:c3a66e4689cfebaf00db5d8992bc622e70c428b23569f9a095b1895b8ade3a9c",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": "absent",
+          "id": "RLZ-0GEZAR"
+        },
+        {
+          "after": {
+            "blob": "55c8e4d51ae225a1d8a68007ca9be6ba05b9edb5",
+            "content": "sha256:89b0ab9c1f7b38298e0e4c40a562cc1bdc96beeda5d66b6ce11aa2a2a7578027",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_options_receipts.py"
+          },
+          "before": "absent",
+          "id": "RLZ-8N6KP6"
+        },
+        {
+          "after": {
+            "blob": "55c8e4d51ae225a1d8a68007ca9be6ba05b9edb5",
+            "content": "sha256:4cde56e6135a414212ce0817a0324275199cf661f98a8536b3a6777e5cb3a06e",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_options_receipts.py"
+          },
+          "before": "absent",
+          "id": "RLZ-9YYMHQ"
+        },
+        {
+          "after": {
+            "blob": "55c8e4d51ae225a1d8a68007ca9be6ba05b9edb5",
+            "content": "sha256:b7ea6daec9cc9a131982b1e388a403e656f1763294761c48d52dabbdc51eacd7",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_options_receipts.py"
+          },
+          "before": "absent",
+          "id": "RLZ-FCVBXB"
+        },
+        {
+          "after": {
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+            "content": "sha256:006e73a3acce28baf5c3a8a45ee8f9a0032b050a2737e0205f3aa2e5a465bf55",
+            "locator": {
+              "end": 578,
+              "kind": "line_range",
+              "start": 553
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Q55GKB"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-XH5B19",
+      "items": [],
+      "reason": "The pre-host lock guard, unlocked discovery, matching receipt check and collision preflight now cite their operative bodies.",
+      "revision": 1,
+      "subject": "INV-GPC5PN"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XHA3C4",
+      "items": [
+        "sha256:ce06d3d16a39883fea56fd5449a6db55caf6055824161a7f1e4524d29a3af4ec"
+      ],
+      "reason": "An Orchestrator parent lookup determines whether an Architect address can be recorded and leaves the Manager launch eligible when no address exists.",
+      "sources": [
+        {
+          "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_routes.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-XN6C5A",
+      "items": [],
+      "reason": "The Hermes guide correctly orders an explicit launcher mode, the applicable host profile, the applicable settings row and the host’s advertised default when known. Checked docs/install/hermes.md:104–119; paseo_catalog.py:345–362,529–551; paseo_bridge.mjs:485–492,920–926; role_launch_preparation.py:233–247.",
+      "revision": 7,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XP7ZWQ",
+      "items": [],
+      "reason": "The Revive proof checks persisted state and a repeated refusal after the host read, with no resumed call.",
+      "sources": [
+        {
+          "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
+          "path": "mcp/src/agents_remember/cli/paseo_status.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_status.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XSZ0QG",
+      "items": [
+        "sha256:32de9a2fc4c10482a45d8c47272168bd0416a6808fa5ddfc6f3ccdd935af8673",
+        "sha256:5ff4d9563bdc335f389f68b8e7b1d7c66f9847e5cffef1c71d79ab6f72d47621",
+        "sha256:7120bc4543c422534aff9f7dd95edfb8807e07ed6d7e26a8aa318753bd358ce5",
+        "sha256:786f23ee83258e6a551ecfe56ff89651bda2a88216c1f1f5763eb90b5bea1734",
+        "sha256:c1d354eb72f459f734cb499547bffc1900ce65f76c0ca9b6b413a737211825d5",
+        "sha256:f54cd66011715831d81258ebe2b45adbc3c0cf3c93579e801e7ebe47db6ccc28"
+      ],
+      "reason": "Direct options read the requested pair, the pane owns reuse, and Start uses its own memo before the shared durable merge.",
+      "sources": [
+        {
+          "blob": "0554881d5c79e63acbf12acfb1e13cb65cdbe98d",
+          "path": "mcp/src/agents_remember/cli/paseo_catalog_features.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_catalog_features.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XZHC1G",
+      "items": [
+        "sha256:04b01474968371bf99219204e1c8b30e3922647c0727d4ba4d0740043a65213e",
+        "sha256:15a5ab7a883e3e3f81f5f1d8c2e3650e6fb9803f5b11fb1fd6497b06b647f362",
+        "sha256:49d15fdfc2c7693e5468c3d0f4b6927497489d48c928da6533cf90c105d171d4",
+        "sha256:4d2ee1fd105ced8efdae0357bb9d8988783f0296665f8f7eee3924282ee3424b",
+        "sha256:89200695014cbc7aad276be10992976cc35accec60c5c0b44fa2c7fb0ddd9609",
+        "sha256:8b9b6aa4084b2e2cc2c997f0289e6c6f57bad5d28b4549dc41b6a1926cd713c9",
+        "sha256:93e804f99920fb82216bac42496611bcc1e6735961a4a42b60906cc11fb052d6",
+        "sha256:b9ea5effd9f28e315592c22cda6e15a13071e02d1d53d4713f1c409dd67f6361",
+        "sha256:d434b6a7d5ee56dbbd86297dd67f0ef2cf2070bb6850e7661af1df7b5994c5aa",
+        "sha256:fb133b990a0547be669a94cb3c055718d5e8d561f4ffae9b7053e5037e451b47"
+      ],
+      "reason": "The card follows the scoped metadata and shown-model options paths, with the existing saved selection, receipt controls and frame boundaries.",
+      "sources": [
+        {
+          "blob": "23f7484a66b7e15d051fa8ce702cc7a3175f7db4",
+          "path": "dashboard/src/cockpit/role-launcher/roleLauncherDisplay.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/role-launcher/roleLauncherDisplay.ts"
+    },
+    {
+      "considered": [
+        "FAM-GDXSJG",
+        "FAM-N17BB4",
+        "FAM-RT2XDA"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-YDYPTK",
+      "items": [],
+      "reason": "This obligation can be checked at its own launcher, receipt or provider boundary. The examined family guarantees cover different joint effects.",
+      "revision": 1,
+      "subject": "membership:INV-J2SF5K"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YE2JT8",
+      "items": [
+        "sha256:6a3197052d711312f14c9c2e7124f7eb275851a1f2839b09eee68daa331ce69d",
+        "sha256:c7ec6cf6378d6f6821c294164ac2903e29a82e9a8845fc4f91f5d1e424063ba5",
+        "sha256:dd6cec9120f3e02b5cb1dd4f9d63be6bff3249344f50d7bbf4e77b8a82fc5bb2",
+        "sha256:f0cf5a70d46e6a2f158f884ad12f6c452abf2418feca2c54fdbbf4ee2b898630"
+      ],
+      "reason": "The card’s source assertions describe the scoped fixture and the launch, catalogue or receipt behavior the candidate exercise covers.",
+      "sources": [
+        {
+          "blob": "d421b2ae9950536279c0e3787ecb0adf8df257e4",
+          "path": "mcp/tests/test_paseo_launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZGHYPZ",
+      "items": [
+        "sha256:8b90c189992074a1c2da68686347e9c272c23652a8c78eee0a8667a314f8fbc4"
+      ],
+      "reason": "The card follows the scoped metadata and shown-model options paths, with the existing saved selection, receipt controls and frame boundaries.",
+      "sources": [
+        {
+          "blob": "0c8ec2f3d1d7878495b7ee358fd82f4e46d76ff0",
+          "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleChatOptionsLoader.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZMY6AR",
+      "items": [
+        "sha256:3ed0c3cd9da36e85a42ff53840acd016508c7f343ffbbd4d7c6e0ef1c4be42cf",
+        "sha256:6abaf29859ed3bf1b72f5c4bb8811f172e119be3719db831a256a7c8e74f59dc",
+        "sha256:70c4da6af7fb5642c2ea219d55ce5c1e6f18854429ada640a6468599ac165938",
+        "sha256:ae0762fe21051d630b5b854e890d00b5bde6823d44f2083cd2141763ec0fcf59",
+        "sha256:b34e3623071d853cc07df5a3447628783719c3565fd4733e55b48c3e81a80df7"
+      ],
+      "reason": "The card follows the scoped metadata and shown-model options paths, with the existing saved selection, receipt controls and frame boundaries.",
+      "sources": [
+        {
+          "blob": "8f905e1e1f13cb2f90aaa1175cb76d6ac3223ca7",
+          "path": "dashboard/src/cockpit/RoleChats.dispatch.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.dispatch.test.tsx"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZQZE49",
+      "items": [
+        "sha256:a22d7a7add0d3bfca71681965796d80d2b9fd1e5e1c46a1b05aa0c241067ba1a"
+      ],
+      "reason": "The host guide correctly directs Antigravity role starts to ACP, grounds fresh native refusal and exact-agent Retry in their implementing paths, and distinguishes pinned ACP forwarding from the installed Default-mode witness. Checked docs/host.md:273–297; role_launch_preparation.py:233–247; paseo_launch.py:559–579; paseo_bridge.mjs:719–736; D896.",
+      "revision": 7,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZX2FKR",
+      "items": [
+        "sha256:72104ec86304f9dcae5473c0dc35f0716ba814a06f55e71a9fc9d136ca409df0"
+      ],
+      "reason": "The metadata and direct pair reads and the operation-local Start memo cite their distinct entry points.",
+      "sources": [
+        {
+          "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+          "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_catalog.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

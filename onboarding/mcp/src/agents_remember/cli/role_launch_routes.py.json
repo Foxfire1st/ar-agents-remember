@@ -4,7 +4,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+        "content": "sha256:c3a66e4689cfebaf00db5d8992bc622e70c428b23569f9a095b1895b8ade3a9c",
+        "locator": {
+          "end": 234,
+          "kind": "line_range",
+          "start": 224
+        }
+      },
+      "id": "RLZ-0GEZAR",
+      "invariant": "INV-GPC5PN",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 3",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Returns launch-in-progress before reading the host.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
         "content": "sha256:c66af9c85cd326f4a585ffaf27da472e2b8490f9b8ccc51ed0f0e125ca59bfbd",
         "locator": {
           "kind": "symbol",
@@ -22,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
         "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
         "locator": {
           "kind": "symbol",
@@ -40,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
         "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
         "locator": {
           "kind": "symbol",
@@ -58,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
         "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
         "locator": {
           "kind": "symbol",
@@ -76,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
         "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
         "locator": {
           "kind": "symbol",
@@ -94,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
         "content": "sha256:fc2a1a7ef4a0889005c2cab69753b8915b5b64a9d172c1e25bc308028591a225",
         "locator": {
           "kind": "symbol",
@@ -112,8 +131,8 @@
     },
     {
       "anchor": {
-        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
-        "content": "sha256:be8af700c1038b87da7566a3242db151c36aa3c09d5d89e1400a12c938b18bda",
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+        "content": "sha256:1bb2be631b4da7dc5068aa1bd5697d8c99efe7852099136426e7478119fdd39d",
         "locator": {
           "kind": "file"
         }
@@ -129,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
         "content": "sha256:add318f5f52459454ace603b7301aeecf2076960e72cbde7ce198c17d4c4fc7a",
         "locator": {
           "kind": "symbol",
@@ -147,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
         "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
         "locator": {
           "kind": "symbol",
@@ -165,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
         "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
         "locator": {
           "kind": "symbol",
@@ -183,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
         "content": "sha256:8c83d02a661f8baef0a21913522f22a75806dcdec82e8958500fa64d354f04a3",
         "locator": {
           "kind": "symbol",
@@ -201,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
         "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
         "locator": {
           "kind": "symbol",
@@ -220,14 +239,16 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of register_role_launch_routes supporting the stated file behavior.",
+      "note": "The route registrar mounts the saved catalogue, frame, options, dispatch, result and progress endpoints alongside the document-chat and report readers.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
-            "content": "sha256:be8af700c1038b87da7566a3242db151c36aa3c09d5d89e1400a12c938b18bda",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "content": "sha256:fc2a1a7ef4a0889005c2cab69753b8915b5b64a9d172c1e25bc308028591a225",
             "locator": {
-              "kind": "file"
+              "end": 183,
+              "kind": "line_range",
+              "start": 165
             }
           },
           "kind": "code"
@@ -257,12 +278,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
             "content": "sha256:065f2da2237b8d035a7eed918e1b3abbdc0f46b150f0d3b8b0b5d357cf8b6b37",
             "locator": {
-              "end": 818,
+              "end": 1016,
               "kind": "line_range",
-              "start": 788
+              "start": 986
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -271,30 +292,86 @@
       ]
     },
     "14": {
-      "note": "The registration also mounts `POST /api/role-launch/document-chats/tree` through `register_document_chat_tree_route`, beside the selected-document read and report route. The tree owner supplies bounded receipt-derived pre-click discovery and one live-ID census; dispatch, retry, revive, progress reclamation and launch authority retain their existing owners.",
+      "note": "The route registrar mounts the document-chat tree beside the selected read and report routes. The tree handler uses one live-agent census for its receipt-derived answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
-            "content": "sha256:be8af700c1038b87da7566a3242db151c36aa3c09d5d89e1400a12c938b18bda",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "content": "sha256:fc2a1a7ef4a0889005c2cab69753b8915b5b64a9d172c1e25bc308028591a225",
             "locator": {
-              "kind": "file"
+              "end": 183,
+              "kind": "line_range",
+              "start": 165
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b160c3eb913163895e071cef3c99a8a2b98c2976",
+            "content": "sha256:3a15e3ad66b770b4935bcad8de0ab098826f690f2ebe96651994f0f073d76bb9",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/src/agents_remember/cli/role_document_chat_tree.py"
           },
           "kind": "code"
         }
       ]
     },
     "15": {
-      "note": "Launch preparation/receipt records retain their rich internal identity and task-copy metadata. Missing requirement sources are reported as missingCopies in handover/index/receipt and a warning; they do not fail a start solely for that absence. Later canonical task publication refreshes copies when sources become available. Ordinary delivered role_start success is the compact id/handover projection, not every internal receipt field.",
+      "note": "The starting receipt carries task-copy metadata. Missing requirement copies produce a warning and later canonical task publication refreshes them. The start answers with the projected identity and handover addresses.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
-            "content": "sha256:be8af700c1038b87da7566a3242db151c36aa3c09d5d89e1400a12c938b18bda",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "content": "sha256:85b857c1481959d8c606e1bd3c79c89672b5d985e21cf6069f8d24e49826ad0a",
             "locator": {
-              "kind": "file"
+              "end": 663,
+              "kind": "line_range",
+              "start": 626
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+            "content": "sha256:8c1e0a60ea38f9776239de9e18393460648b8e07432b0c5ec3cdacd0e72df8ed",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:bdc42b04fafb5eca8730bfbab6c5244294c0ad7c9fbb67c2bb456c6ac3509294",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:0f5011df886791525b6942e8759921904975e1baa68c9b043a4849883f464c6b",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_answer.py"
           },
           "kind": "code"
         }
@@ -305,7 +382,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
             "locator": {
               "kind": "symbol",
@@ -321,7 +398,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:de581ef4da625e4f6867fa2525c309ad0371fccedcf1af7e5e44c6a4af768d65",
             "locator": {
               "kind": "symbol",
@@ -337,7 +414,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
             "locator": {
               "kind": "symbol",
@@ -370,7 +447,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
             "locator": {
               "kind": "symbol",
@@ -386,7 +463,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:add318f5f52459454ace603b7301aeecf2076960e72cbde7ce198c17d4c4fc7a",
             "locator": {
               "kind": "symbol",
@@ -427,14 +504,28 @@
       ]
     },
     "22": {
-      "note": "At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat.",
+      "note": "The Manager records an Architect address when available. An Orchestrator starter’s parent receipt determines whether the address can be recorded. The launch proceeds when the lookup or write fails.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
-            "content": "sha256:be8af700c1038b87da7566a3242db151c36aa3c09d5d89e1400a12c938b18bda",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "content": "sha256:11ac93940ae09c3e6dab5aed316edecff9d35b24ff25430011a774596438a24b",
             "locator": {
-              "kind": "file"
+              "end": 515,
+              "kind": "line_range",
+              "start": 471
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "content": "sha256:9da86ec6f57f01b56123c567c641a9054f0a635ec916a587d14d2b9a197e014d",
+            "locator": {
+              "end": 734,
+              "kind": "line_range",
+              "start": 732
             }
           },
           "kind": "code"
@@ -446,7 +537,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
             "locator": {
               "kind": "symbol",
@@ -462,7 +553,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
             "locator": {
               "kind": "symbol",
@@ -474,16 +565,18 @@
       ]
     },
     "5": {
-      "note": "The launch observer checks complete receipt, stable UUID and stored call before runtime launch.",
+      "note": "Before workspace-open and agent-create, the observer sees the starting receipt, its saved agent ID and the stored artifact.",
       "targets": [
         {
           "anchor": {
-            "blob": "7630b4f03f2e79c3a03b3552892457f28bd0cb98",
-            "content": "sha256:a8990b0207d7102eb08de50307f0d286147cb3c2c55ebe5eefc3250d01c1fe3e",
+            "blob": "d09cdc288861533fd56cd32869aedacf27642698",
+            "content": "sha256:daf294b5e755e885a5964eb3c99b9e92a7ba33dc30c8e0eab3246c9f6e46a755",
             "locator": {
-              "kind": "file"
+              "end": 200,
+              "kind": "line_range",
+              "start": 146
             },
-            "path": "mcp/tests/test_paseo_launch.py"
+            "path": "mcp/tests/test_paseo_launch_roles.py"
           },
           "kind": "test"
         }
@@ -494,7 +587,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1dc94b219bf66b192bfdc8b7692d6887a97c99c",
+            "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
               "kind": "symbol",
@@ -527,7 +620,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1dc94b219bf66b192bfdc8b7692d6887a97c99c",
+            "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
             "content": "sha256:efb058c8ca5c6a9df9153a195baff04ee4188e2855945750b226565550720f3b",
             "locator": {
               "kind": "symbol",

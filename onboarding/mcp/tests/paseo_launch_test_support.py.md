@@ -18,18 +18,17 @@ case runs the real dispatch route against an in-memory runtime that records ever
 
 `FakeRuntime` holds agents and workspaces across calls and answers the catalog, workspace, create, archive, live
 listing, state and resume commands. `fail()` stages a failure before or after an effect, and
-`_agent_has_message()` is how the fake refuses to hand a message the recipient's timeline already carries
-(MIK-R171 rule 3). `state()` sets the status and what goes with it.
+`_agent_has_message()` reports whether the recipient's timeline contains the message ID. `state()` sets the status and what goes with it.
 
 `RequestId` supplies the request id a fixture's projections read, and `GivenToAgentExpectations` derives what a
 launch must give its agent from that request: `receipt()`, `artifact()`, `handover_object()`,
 `planned_handover()`, `first_message()`, `tool_server()`, `recovery_note()` and `given_to_agent()`, with
-`watch_launch()` recording, at every runtime call, the receipt on disk and whether its artifact is there.
+`watch_launch()` recording, at each launch command, the receipt on disk and whether its artifact exists.
 `assert_applied_is_recorded()` checks the receipt says what the agent was given.
 
 - **Creation payloads.** `_agent_create()` records a service tier only when `featureValues` actually carries
   `service_tier`, copies any supplied `featureValues` map separately and keeps `modeId` when it is supplied, so a
-  permission-feature-only payload needs no service tier.
+  permission-feature-only payload needs no service tier. An existing-only request for an absent agent returns a typed failure before the fake creates an agent.
 - **Host authority.** `prepare_host()` writes the host authority of the installation a fixture represents into
   its config file, and `LAUNCH_COMMANDS` names the commands a launch may use.
 
@@ -45,8 +44,13 @@ test cannot pass on a value production would never send.
 
 ## Evidence
 
-- The scoped current source carries the module/document behavior described above. [1]
 
-- The module additionally owns `FakeRuntime`, its catalog/server constants and recorded launch-call set. This in-memory bridge stand-in holds agents/workspaces across calls, preserves before/after-effect failure scenarios and supplies state/archive/resume plus `agents-live` answers; `unlisted` makes the census incomplete. `GivenToAgentExpectations` derives the data a dispatch gives an agent, but its first-message line comes from the production `artifact_line`, so only the data is independent and the formatting is shared. Launch/status/document-chat suites share the fake, not a live harness or production host. [2]
+- The shared fixture records bridge calls and derives the handover artifacts, recovery note and task-server definition from each launch request. [1]
 
-- FakeRuntime._agent_create now records a serviceTier only when featureValues actually contains service_tier, separately copies any supplied featureValues map and retains modeId when supplied. This supports permission-feature-only payloads without a service-tier KeyError and exposes submitted choices to the controlled observations. Default-model and idempotent agent-state behavior remain. [3]
+
+
+- The stateful fake records calls, can fail before or after an effect, and supports incomplete live listings. Fixture message formatting uses the production artifact helper. [2]
+
+
+
+- Creation records supplied feature values and mode. It records a service tier only when the supplied feature map contains one. [3]

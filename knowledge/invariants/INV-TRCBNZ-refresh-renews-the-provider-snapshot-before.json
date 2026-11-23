@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The dashboard generation checks and the host snapshot refresh together prevent a stale feature answer from controlling a refreshed selection."
+  },
+  "applicability": "An explicit Refresh of the role launcher.",
+  "conditions": [
+    "Refresh drops old answers and selected-model discovery waits for the matching new metadata generation."
+  ],
+  "exclusions": [
+    "A post-Start metadata reread does not clear the held answers."
+  ],
+  "id": "INV-TRCBNZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Dashboard refresh cases and W5 pinned Refresh ordering over the 350-model fixture. CUR-F01 guide-to-source comparison and current mounted tests."
+      ],
+      "path": "W6-curator-ingest.json"
+    },
+    "handoffEntry": "BUG-R19@v1 item 2",
+    "leaf": "261112-BUG-L19",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Refresh renews the provider snapshot before listing models and requesting the shown model's options.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The dashboard guide distinguishes an explicit mode choice from the first option, which shows the source that would apply if the choice were empty.",
-    "task": "261112-BUG-L11",
+    "statement": "The dashboard guide now correctly describes shown-pair option reads and reuse, ordered Refresh, and saved model choices with new Start omitting feature overrides until fresh options are ready while Retry replays the saved request.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/dashboard.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "dashboard/src/cockpit/Cockpit.tsx"
     },
     {
-      "blob": "dce9e43dc96950f6e1bc1112f272f26e44c7bab4",
+      "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },
@@ -180,7 +180,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_status.py"
     },
     {
-      "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -323,6 +323,90 @@
       "blob": "99140cdd87f91d4ef198e7bf792bf5a31072e2fd",
       "kind": "file",
       "path": "dashboard/src/grammar/documentMarkdown.ts"
+    },
+    {
+      "anchor": {
+        "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+        "content": "sha256:9507f194f1fcd5aef67148991aa444ab80f8cd3917b081a28f8e384489751e57",
+        "locator": {
+          "end": 83,
+          "kind": "line_range",
+          "start": 49
+        },
+        "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
+      },
+      "heading": "Where the choices come from",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+        "content": "sha256:fc78b8d841c742efc8baa06ae3e7dbba1cbd3084366712e84c893c5ba8e5e13b",
+        "locator": {
+          "end": 145,
+          "kind": "line_range",
+          "start": 118
+        },
+        "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
+      },
+      "heading": "Where the choices come from",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "0c8ec2f3d1d7878495b7ee358fd82f4e46d76ff0",
+        "content": "sha256:3d2ceed76bf0157a11cc4e686595491e62638d11a5d1c74d998ac134fdc50f33",
+        "locator": {
+          "end": 272,
+          "kind": "line_range",
+          "start": 243
+        },
+        "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+      },
+      "heading": "The buttons",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "821f21c80bdb705adf01849d194ac6ef9bfb6375",
+        "content": "sha256:10cf548b8fc3ed3354da2acd4d37e02c289a08ec9acffdc92ba16ec00ed15782",
+        "locator": {
+          "end": 151,
+          "kind": "line_range",
+          "start": 134
+        },
+        "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+      },
+      "heading": "Where the choices come from",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "821f21c80bdb705adf01849d194ac6ef9bfb6375",
+        "content": "sha256:aecac30076872ec8d16980cc261880695b2cb5c518b72ad98efb1ef673075f21",
+        "locator": {
+          "end": 223,
+          "kind": "line_range",
+          "start": 181
+        },
+        "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+      },
+      "heading": "The buttons",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+        "content": "sha256:5fe191cf7114f08dbe30c2f5ed30949cf9bfa98a663431f88b23d042f350baba",
+        "locator": {
+          "end": 234,
+          "kind": "line_range",
+          "start": 219
+        },
+        "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+      },
+      "heading": "Where the choices come from",
+      "kind": "anchor"
     }
   ]
 }

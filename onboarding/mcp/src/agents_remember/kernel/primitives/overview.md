@@ -288,7 +288,9 @@ None.
 
 - Configured-contract authority checks repository identities, memory mode and canonical task/enclosure paths at its mutation boundary. [16]
 
+
 - Native launch construction and replay belong to the CLI launch owner. Catalog selection refuses unsupported model, effort and feature values when the corresponding fresh or saved offering is known. An unanswered catalog part leaves the corresponding configured choice unchecked. The host decides which permission mode it applies. [17]
+
 
 [18] mcp/src/agents_remember/kernel/primitives/runtime_config.py — lines 417-441; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py — lines 192-235; mcp/src/agents_remember/worktrees/modules/quality/gate.py — lines 248-364
 

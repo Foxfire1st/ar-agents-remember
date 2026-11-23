@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "841d52ef5c315e34b668b69e69ba64186ca21855",
+        "blob": "1d8396a770f021c11debb8be26d2ffc255a34530",
         "content": "sha256:d045ef94c9920b1023b49ebe798e6c79360adb88d0138bba21b99d8b88eb3fd7",
         "locator": {
           "kind": "symbol",
@@ -22,14 +22,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A chat without a role starts through the dashboard's table, and a selection outside it is named.",
+      "note": "A parentless chat uses the dashboard role table. The fixture names a selection outside the admitted table.",
       "targets": [
         {
           "anchor": {
-            "blob": "841d52ef5c315e34b668b69e69ba64186ca21855",
-            "content": "sha256:b36b23b371b59d98d26d9ef05437656e6d7ca752e237a5d1aee1f10e36f8b738",
+            "blob": "1d8396a770f021c11debb8be26d2ffc255a34530",
+            "content": "sha256:37784f461644b2a9b771e7cdf3b51e36a506105a0b5e97a3a500b62369bc5d81",
             "locator": {
-              "kind": "file"
+              "end": 214,
+              "kind": "line_range",
+              "start": 74
             }
           },
           "kind": "test"
@@ -37,14 +39,28 @@
       ]
     },
     "2": {
-      "note": "A start runs the launcher's path with the caller as parent and one request id serves the starter and the launcher.",
+      "note": "Dispatch names the caller as parent. An exact request ID is repeatable by its starter and the launcher.",
       "targets": [
         {
           "anchor": {
-            "blob": "841d52ef5c315e34b668b69e69ba64186ca21855",
-            "content": "sha256:b36b23b371b59d98d26d9ef05437656e6d7ca752e237a5d1aee1f10e36f8b738",
+            "blob": "1d8396a770f021c11debb8be26d2ffc255a34530",
+            "content": "sha256:40f343cdfce17fa60e43dfec42fa4f148ec756bcb1f73f1670f408ec396e47a6",
             "locator": {
-              "kind": "file"
+              "end": 425,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1d8396a770f021c11debb8be26d2ffc255a34530",
+            "content": "sha256:0b4e6978c0b215955e8b4bbf956a6fbc029dc9d485f7f81a7f4daa02a25b50e6",
+            "locator": {
+              "end": 669,
+              "kind": "line_range",
+              "start": 601
             }
           },
           "kind": "test"
@@ -52,14 +68,28 @@
       ]
     },
     "3": {
-      "note": "Starts are serialized, and a start that waited out its time says to call again.",
+      "note": "Concurrent Starts serialize. A Start that exceeds the wait names the retry action.",
       "targets": [
         {
           "anchor": {
-            "blob": "841d52ef5c315e34b668b69e69ba64186ca21855",
-            "content": "sha256:b36b23b371b59d98d26d9ef05437656e6d7ca752e237a5d1aee1f10e36f8b738",
+            "blob": "1d8396a770f021c11debb8be26d2ffc255a34530",
+            "content": "sha256:515d79f812a63b5a96aee250d737b66136d8d676024112cc373b84bad46eb3c0",
             "locator": {
-              "kind": "file"
+              "end": 726,
+              "kind": "line_range",
+              "start": 671
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1d8396a770f021c11debb8be26d2ffc255a34530",
+            "content": "sha256:7c0bc5647ab6d3e629a63fe54375afe823640d8e45effcb8ce4446420fd7813c",
+            "locator": {
+              "end": 756,
+              "kind": "line_range",
+              "start": 728
             }
           },
           "kind": "test"

@@ -251,12 +251,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:bcde3c2b70eb5770d771e190a2c6ceff14c3d95bc61be7e647bc6e4a9a0a4fa1",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
             "locator": {
-              "end": 455,
+              "end": 483,
               "kind": "line_range",
-              "start": 445
+              "start": 419
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -264,12 +264,12 @@
         },
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:d1466174ef0ba97ad10770ce7b54088d844decb46a6408571f30fb52973df33c",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:70a382c2b54b0125df1d500da21f204ba24890de8b652dcacc210f71514eddcd",
             "locator": {
-              "end": 657,
+              "end": 682,
               "kind": "line_range",
-              "start": 610
+              "start": 626
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -277,12 +277,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:9cf4969d72e6b64d7baa6fd0fa8a90b07965987e21e11e707f22bfdd4532121d",
             "locator": {
-              "end": 365,
+              "end": 362,
               "kind": "line_range",
-              "start": 349
+              "start": 346
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -290,12 +290,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
             "locator": {
-              "end": 554,
+              "end": 551,
               "kind": "line_range",
-              "start": 532
+              "start": 529
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -303,12 +303,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:88f7cc7c5c0980e5901b6360a5674bb0e1f091c49587c406e9afca984eed093d",
             "locator": {
-              "end": 717,
+              "end": 714,
               "kind": "line_range",
-              "start": 675
+              "start": 672
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -316,12 +316,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:98995d13e12caa2233c05fbc2a282a604e44aaab99876d4258742e2854b16dc4",
             "locator": {
-              "end": 863,
+              "end": 857,
               "kind": "line_range",
-              "start": 844
+              "start": 838
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
