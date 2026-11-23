@@ -10,6 +10,8 @@
 
 ## Code Commentary
 
+The reviewer child's enabled memo shares document parses keyed by the exact bytes' SHA-256 and retains up to 65,536 entries under a 256 MiB retained charge. Each tree still validates the document's placement. An oversized parse can serve the current reader without entering the memo.
+
 ### Logic
 
 - `parse_tree(snapshot)` walks indexed JSON files in sorted order into a `ParsedTree` (records, entries, file and route sidecars, histories, the layout marker, problems). Markdown prose companions are skipped before decoding and parsing; their bytes are retained by the snapshot for worklist comparison, not interpreted as JSON. A JSON file that fails to decode or parse is appended to `problems` with its path and the first 2,000 characters of the reason; `ParsedTree.state` is `partial` when any problem exists.
@@ -77,8 +79,8 @@ No cross-repo boundary is crossed by this file.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/knowledge_index/build.py::parse_tree - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/build.py::_parse_onboarding_file - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/build.py::_parse_knowledge_file - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- The index builds record standing and the named-revision rows together in its write transaction. [12]
-- A converted review catalog is parsed as review evidence separately from owner attempts. [13]
+- The index builds record standing and the named-revision rows together in its write transaction. [14]
+- A converted review catalog is parsed as review evidence separately from owner attempts. [15]
 
 - The builder names parse problems and derives revision standing from the selected memory tree's history and exact review evidence. [1]
 - The parsed tree keeps each history file by path and each owner's merged history. [10]

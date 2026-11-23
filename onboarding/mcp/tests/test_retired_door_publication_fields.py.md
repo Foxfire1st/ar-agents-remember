@@ -56,12 +56,15 @@ No configured external domain-documentation evidence.
 
 ### Repo-Internal References
 
-These repository-relative targets and exact ranges were checked against the L9 working source.
-Source declarations and test assertions are distinguished from execution and acceptance evidence.
+The current evidence below describes static source declarations and test assertions. The dated L9 observation records its own inspection epoch.
 
-- The current generation and explicit retired digest names define the test input. [1]
+
+- The fixture builds a typed door generation and injects the three named retired digest fields into its serialized publication. [1]
+
 - The model read drops only the named retired fields and still rejects unknown fields. [2]
-- Store and terminal-archive reads exercise the persisted legacy record. [3]
+
+- The store reads the injected legacy publication as proven. The terminal-archive result succeeds and names the stored operation record among its canonical entries. [3]
+
 
 ### Cross-Repo References
 

@@ -21,6 +21,10 @@ task_doc authoring no longer exposes successful get/read_steps projections or st
 
 `task_doc_tool` resolves the task address, dispatches special operations or prepares an ordinary candidate, validates that candidate, and publishes or previews it. Publication rechecks accepted source bytes, derives affected projection scopes, writes task truth, invalidates those scopes, and rebuilds projections independently. `task_unstarted_evidence.py` checks actual code/memory-content and integrated commit cells; an existing enclosure is independent started evidence, and task, locator, lifecycle-operation, seat, and report facts also participate.
 
+`record_review` and `record_route_review` share the fixed-list transition for sanctioned additions.
+When the document carries route evidence, either operation can publish a BLOCK with a supplied
+verdict reference. A changed repair tree needs a fresh routed verdict for closeout to use.
+
 ## Construction
 
 ### Dispatch And Candidate Validation
@@ -159,8 +163,8 @@ A newly created subTask with no supplied `intentReview` receives `pending`. The 
 
 - Whole-sprint readiness collects all live-master refusals; pending row surveys are read-only; moving-master enclosure plans use current-folder contracts and safe abandonment, with pending retirement retained in resumed previews. \[20] [20]
 
-- The dispatcher derives stamps for memory review from the bound task and repository. [21]
-- The generic route records round evidence separately from code route-review evidence. [22]
+- The dispatcher derives stamps for memory review from the bound task and repository. [23]
+- The generic route records round evidence separately from code route-review evidence. [24]
 
 - Source preparation and central publication use the repository lock, exclude nested publication and validate accepted bytes; the unbound-subTask guard reads its actual master and matching row number rather than only path existence. Anchor: `run_task_doc_call` `publish_task_doc_transaction_and_refresh` `validate_task_doc_transaction` `task_doc_tool` [13]
 - task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a validly addressed parent-sync failure is an answered refusal. Invalid caller master references are refused by the shared master_json_path_from_ref resolver with TaskDocError during candidate validation after retirement-proof comparison, before publication; a changed or Order-refreshed parent must also pass the in-place document guard. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session. [15]

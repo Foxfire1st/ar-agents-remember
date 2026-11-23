@@ -52,4 +52,4 @@ No cross-repository boundary applies.
 
 ### Repo-Internal References (continued)
 
-- The unit-regression lane selects mcp/tests/test_kernel_pure_regressions.py. [2]
+- The `unit-regression` lane selects `mcp/tests/test_kernel_pure_regressions.py`. [2]

@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3a27a5ac7863ea62a93595be3a7f9023e111bb1a",
-        "content": "sha256:3dfde8b95de259bc4d75a84fcb878d20ca20208fb70078bb943bddc87f4e84c2",
+        "blob": "066e5b1e038b22ebc8fd8d88ab25a710957f88b0",
+        "content": "sha256:47b0e08013221b726e0ff8faec4955eac70e57be4f5f5cd60a423661ee47535b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_census"
+        }
+      },
+      "id": "RLZ-H0GJ08",
+      "invariant": "INV-141H2J",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — native repository observations",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The census selects its native request memo before exact pack and alternate observation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "066e5b1e038b22ebc8fd8d88ab25a710957f88b0",
+        "content": "sha256:377b8061e6d276047099ff2173f98e2702f5b1ebf3b04eef22bf3d04ece5c7e6",
         "locator": {
           "kind": "file"
         }
@@ -15,20 +33,22 @@
         "handoffEntry": "L168-W-R168-02",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "Git-native freshness: a working status digest, Git's own count-objects census and presence probes; the object and worktree walks are gone.",
+      "rationale": "Git supplies the working status digest and object census. The native request can reuse a census only while the repository witness agrees. The dashboard keeps its separate observation owner.",
       "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "Filesystem generations include directory names, symlinks, ctime and unskipped descendants.\n\nAnchor: `tree_identity`",
+      "note": "A small named-input generation includes file and directory identities for the admitted subtree.",
       "targets": [
         {
           "anchor": {
-            "blob": "3a27a5ac7863ea62a93595be3a7f9023e111bb1a",
-            "content": "sha256:3dfde8b95de259bc4d75a84fcb878d20ca20208fb70078bb943bddc87f4e84c2",
+            "blob": "066e5b1e038b22ebc8fd8d88ab25a710957f88b0",
+            "content": "sha256:1c143b1295b477f2138d685d2f4b41a864df4136dcb99ef628239eafcdcc3f6c",
             "locator": {
-              "kind": "file"
+              "end": 103,
+              "kind": "line_range",
+              "start": 36
             }
           },
           "kind": "code"
@@ -36,14 +56,16 @@
       ]
     },
     "2": {
-      "note": "Object observations distinguish stable existing objects from revoked content and absence proofs.\n\nAnchor: `ObjectGeneration`",
+      "note": "A named-object observation checks its loose file or the identities of the applicable pack files and indexes.",
       "targets": [
         {
           "anchor": {
-            "blob": "3a27a5ac7863ea62a93595be3a7f9023e111bb1a",
-            "content": "sha256:3dfde8b95de259bc4d75a84fcb878d20ca20208fb70078bb943bddc87f4e84c2",
+            "blob": "066e5b1e038b22ebc8fd8d88ab25a710957f88b0",
+            "content": "sha256:4cf14b15eda2255311581a5697c70276e8558bd5329469465ee7761c458e2de4",
             "locator": {
-              "kind": "file"
+              "end": 458,
+              "kind": "line_range",
+              "start": 396
             }
           },
           "kind": "code"
@@ -55,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a27a5ac7863ea62a93595be3a7f9023e111bb1a",
+            "blob": "066e5b1e038b22ebc8fd8d88ab25a710957f88b0",
             "content": "sha256:50be544035eacabee6339b5f7941fcf8fbed355cd2a4112a368f35f4c4b4cfcd",
             "locator": {
               "kind": "symbol",
@@ -67,14 +89,16 @@
       ]
     },
     "4": {
-      "note": "The working view's generation is Git's own `status --porcelain=v2` answer with each changed path's identity folded in; no part of the module walks the worktree.\n\nAnchor: `working_manifest`",
+      "note": "The working generation uses Git's porcelain-v2 status and folds in each changed path's file identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "3a27a5ac7863ea62a93595be3a7f9023e111bb1a",
-            "content": "sha256:3dfde8b95de259bc4d75a84fcb878d20ca20208fb70078bb943bddc87f4e84c2",
+            "blob": "066e5b1e038b22ebc8fd8d88ab25a710957f88b0",
+            "content": "sha256:e850d4d29ef7d8d4a4f3c345bf671bbc10fc5f4296a5b811902eafe7e8cbe0b1",
             "locator": {
-              "kind": "file"
+              "end": 160,
+              "kind": "line_range",
+              "start": 118
             }
           },
           "kind": "code"

@@ -36,7 +36,7 @@ original masterLiteral or actual parent key. It is neither a second task entry n
 browser-authored membership edge. `TaskSummary` is reader content, not a second status authority.
 
 
-The lifecycle phase vocabulary includes `recovering-private-preparation`. This exposes the existing private-preparation recovery phase without granting publication or lifecycle authority to the dashboard.
+The generated phase union includes the retained `recovering-private-preparation` value. The dashboard can display older journal evidence and uses the server’s legal-control field for current direct-landing actions.
 
 ### Logic
 
@@ -121,7 +121,9 @@ No configured external domain-documentation source applies.
 
 ### Repo-Internal References
 
+
 - The lifecycle phase union mirrors the code/memory-only vocabulary. Anchor: `refinements` [1]
+
 
 - Execution nodes retain kind/leafIds/ref; display nodes add cycle?: boolean and retain graph-rendering fields. Shared DTO declarations are not order derivation. [4]
 
@@ -218,7 +220,9 @@ The generated `LifecycleOperationProjection` interface carries the optional
 dashboard mirror of the durable wait cursor that the lifecycle status-change wait tool
 returns on snapshots.
 
+
 - The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. Anchor: `string` [12]
+
 - The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. Anchor: `string`; "sourceProblems: CloseoutProjectionProblemNode[]" [13]
 
 

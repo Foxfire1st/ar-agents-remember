@@ -40,6 +40,8 @@ Ordinary closeout and direct landing still publish code plus memory content unde
 
 ## Evidence
 
-- Selected exact intent/output and explicit predecessor-history readers survive without new command selection or journal CAS. [1]
+
+- Selected preparation checks the retained leg intent and output against the owning operation and certification. [1]
+
 
 - Ordinary code/memory publication and informational cache refresh survive outside the removed prepared finalizer. [4]

@@ -40,8 +40,33 @@
       ]
     },
     "10": {
-      "note": "**The resolvability probe: the repository is asked, per commit, and the first object it does not hold is named.**\n\nAnchor: `_unresolvable` `run_git`",
+      "note": "**The resolvability probe: the repository is asked, per commit, and the first object it does not hold is named.**",
       "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:d16e27445f0be607407521a36c50610a99dccb150aef5a0a45a434152a23b028",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
@@ -54,33 +79,10 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:44921560a9d5681dc45ee5e1808f8595ae4f497d2458666814c83965fd8b1418",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
-            "content": "sha256:d16e27445f0be607407521a36c50610a99dccb150aef5a0a45a434152a23b028",
-            "locator": {
-              "kind": "symbol",
-              "name": "_unresolvable"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
-            "locator": {
-              "kind": "symbol",
-              "name": "run_git"
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },

@@ -86,6 +86,63 @@
           "kind": "code"
         }
       ]
+    },
+    "7": {
+      "note": "Completed Retire removes the leaf workspace and writes its finished receipt outside it. `seat_marks` returns `None` for the retired marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08be2a48139f6518ce255710b8a3361359891354",
+            "content": "sha256:774906ec57b35e9a3ea51cf42d9f4d6b8c8244e1e5eaee3c16c45e420675729e",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 311
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_maintenance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+            "content": "sha256:35b2dd4b5f1ee1b046f2efb618403a430d3585a2e3ba169ed2dc8651192e023b",
+            "locator": {
+              "end": 401,
+              "kind": "line_range",
+              "start": 394
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+            "content": "sha256:a9b57917e1d385694fb1b4d9261534e7eb7766bda4c0e6a2701b1fea65ecb293",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 552
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+            "content": "sha256:a44d2dd1280492945c0545d16d2bdf34039be4bc990008e6b0767cefc7c37a96",
+            "locator": {
+              "end": 949,
+              "kind": "line_range",
+              "start": 921
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

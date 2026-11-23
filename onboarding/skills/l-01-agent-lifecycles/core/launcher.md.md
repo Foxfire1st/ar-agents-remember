@@ -6,7 +6,7 @@ Describe the developer-facing chat without a role. It answers research inline an
 
 ## Code Commentary
 
-The current source has no spawn-role or plane identity selector. The launcher has no seat binding or worktree; its free-chat routing name does not imply an ambient session lifecycle. It resolves the sprint and writes the developer’s request into its canonical document before one `role_start` call. An Architect start carries neither a brief nor a document reference; the developer is told where the request lives and speaks with the agent in the dashboard. Launch settings supply the choices. `role_message` from this unbound chat is refused, and a refused start never falls back to another tool.
+The current source has no spawn-role or plane identity selector. The launcher has no seat binding or worktree; its free-chat routing name does not imply an ambient session lifecycle. It resolves the sprint and writes the developer’s request into its canonical document before one `role_start` call. An Architect start carries neither a brief nor a document reference; the developer is told where the request lives and speaks with the agent in the dashboard. Role settings supply the harness, model and effort. A dashboard start uses the mode chosen in its launcher first. The role_start tool carries no mode argument. In the absence of a dashboard choice, the next sources are the applicable host profile, the matching role settings row and the advertised host default, in that order. The last choice requires a known mode catalog and an advertised default. The create request omits the mode field when no choice applies. `role_message` from this unbound chat is refused, and a refused start never falls back to another tool.
 
 For a first sprint only, the launcher creates the sprint document, a master and its first leaf before it starts the Architect, and writes into them only the developer's request and scope: no requirement packets and no approved order.
 
@@ -18,7 +18,9 @@ Retained corpus composition metadata is not proof of what a native launched agen
 
 - Unbound free chat has no role binding or worktree; research stays inline and does not become a role. [8]
 
+
 - Managed work is written into the sprint before one parentless Architect start without a brief or document reference. [9]
+
 
 - Only an explicitly developer-named role and task takes the bounded takeover route. [10]
 
@@ -33,3 +35,5 @@ Retained corpus composition metadata is not proof of what a native launched agen
 ### Repo-Internal References (renewed)
 
 - The manifest retains ambient-launcher metadata outside the role registry; this is not the native routing-condition set. Anchor: `is_role` [13]
+
+- Launch settings and host data supply an applicable permission mode at creation. [15]

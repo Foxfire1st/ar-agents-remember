@@ -12,7 +12,7 @@ selection, so a request from the task column reaches the frame without the pane 
 
 ## Code Commentary
 
-The launcher is its row of controls: no execution, reply or report-path prose is rendered under them, and one failure line (a refused or unresolved start, an unreachable host, a failed options/catalog/report action, the launch lock) is the only text there. Canonical scope and request identity gate async options/results. Per-request active execution and saved retry selection survive in scoped tab storage; receipts drive frame targets and backend status/report fields, and a named chat outranks the execution's agent
+The launcher is its row of controls: no execution, reply or report-path prose is rendered under them, and one failure line (a refused or unresolved start, an unreachable host, a failed options, catalogue or report action) is the only text there. Canonical scope and request identity gate async options/results. Per-request active execution and saved retry selection survive in scoped tab storage; receipts drive frame targets and backend status/report fields, and a named chat outranks the execution's agent
 when the frame target is resolved. Result re-reads the execution, refreshes capabilities, steers the frame and opens the recorded report in the shared reader; the pane is hidden under the report takeover so the frame survives. Retry reuses the saved request; Revive uses the selected backend capability. Fast/provider-default disclosure keeps tier separate from effort.
 
 ## Invariants And Boundaries
@@ -26,7 +26,9 @@ to the plugin, not this pane.
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
 
-- The pane composes canonical scopes, controls, options and the persistent view. [1]
+
+- The pane binds task scope, options metadata and actions to the launcher and preserves its frame and report owner. [1]
+
 
 
 - Selected Result/report reads retain UUID and live-target guards. [2]

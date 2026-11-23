@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "These two routes serve full blobs and can avoid a second complete allocation while preserving their consumer contracts."
+  },
+  "applicability": "Native whole-object Git transport for changed-history evidence and Explainer grade refresh.",
+  "conditions": [
+    "Consume the owned spool within the read lifetime and retain the route's exact bytes and typed failure behavior.",
+    "History evidence validates its own blob header and body length. Grade refresh reads a successful Git blob body."
+  ],
+  "exclusions": [
+    "Bounded evidence windows keep their separate line- and byte-limit transport contract.",
+    "The contract concerns duplicate transport allocation. The selected body can still be retained by its caller."
+  ],
+  "id": "INV-03CT75",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "bug-r18-W2-expanded-evidence.md, L18-F03 and the admitted grade-refresh census repair."
+      ],
+      "path": "BUG-L18 W2 affected knowledge and initial history"
+    },
+    "handoffEntry": "BUG-R18@v1 item 5 — Explainer blob capture",
+    "leaf": "261112-BUG-L18",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The native Explainer changed-history and grade-refresh readers deliver exact blob bytes from private spools without retaining a duplicate transport body.",
+  "status": "proposed",
+  "supersedes": []
+}

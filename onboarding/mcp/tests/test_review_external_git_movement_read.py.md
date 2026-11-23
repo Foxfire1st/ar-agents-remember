@@ -12,9 +12,9 @@ Raw Git movement is measured from retained commit evidence, with absent work-hea
 
 ### Logic
 
-An uncommitted candidate is a tree, not an observed branch head: the report remains not-measured, has no transition and fabricates no generation UUID. The live production read carries that measurement; historical comparisons carry no live movement. [5]
+The uncommitted candidate carries no observed work-branch commit. The live report stays `not-measured` with a reason and no transition, and a historical comparison receives no live movement. [5]
 
-Commit-bound cases distinguish untouched, advanced and rewritten branches; source-history replacement, branch switch and unreadable channels retain distinct states. Validator forgeries use the real published value. [6] [7] [8] [14]
+Commit-bound cases distinguish untouched, advanced and rewritten branches. Source-history replacement retains the recorded source and omits retired generation keys. Branch switches and unreadable channels remain distinct. Validator forgeries start from the published stale report. [6] [7] [8] [14]
 
 The shared `TreeReceiptFixture` constructs the enclosure and its exact comparison. [2]
 
@@ -57,33 +57,34 @@ None recorded.
 - Leaving the declared branch is a switch. [7]
 
 
-- Commit-bound ancestry states remain distinct. [8]
+
+- The commit-bound cases distinguish untouched, appended and rewritten work branches. The unread-channel case separates a measured memory rewrite from unavailable memory and declared-source channels. [8]
+
 
 
 - Model rejects state contradictions. [14]
 
 
-- Current managed-sync sibling cases. [25]
+- The managed-sync sibling test records a memory-only move and checks its effect on the live review’s staleness. [25]
 
-Every claim on this card is checkable in the module's own cases, in the fixtures it borrows from its
-siblings, and in the manifests that govern its population. The three details a reader should carry:
-**the enclosure movement cases drive real Git and read the shipped boundary; the matrix case checks rendered support text against Markdown**; **the states that look similar each
-have their own case**; and **the documented matrix is asserted to be the published one**, so the two
-cannot drift apart silently.
+The enclosure cases use real Git and read the production boundary. Separate assertions distinguish unchanged, appended and rewritten work branches, branch switches and unavailable channels. The matrix test checks that repository Markdown contains the rendered support text.
 
 ### Docs References
 
 No configured domain documentation could be checked for this module. The resolved memory layer's
 `system/sources.md` carries no `Domain Documentation` category, so no documentation row is recorded
 here. The one document these cases read is a repository file rather than an external source:
-`docs/reference/worktrees-c09.md`, whose `## Raw Git Identity Boundary` section the matrix case asserts
-against, and that assertion is filed under Repo-Internal References.
+`docs/reference/worktrees-c09.md`. The matrix is under Raw Git Identity Boundary. The test searches the full document.
 
 ### Repo-Internal References (continued)
 
 - **The sibling fixture this module shares rather than rebuilds.** [26]
 
-- **The repository document that must contain the rendered support matrix verbatim.** [29]
+
+
+- The documentation test requires the rendered support matrix as a substring of the complete Markdown file. [29]
+
+
 
 
 ### Cross-Repo References
@@ -99,4 +100,4 @@ cross-repo reference row is recorded for this module.
 
 ### Repo-Internal References (continued)
 
-- The integration lane selects mcp/tests/test_review_external_git_movement_read.py. [27]
+- The `integration` lane selects `mcp/tests/test_review_external_git_movement_read.py`. [27]

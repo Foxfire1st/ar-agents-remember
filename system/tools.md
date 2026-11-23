@@ -48,9 +48,11 @@ Playwright/browser acceptance and Dagger certification remain available for an e
 quality operation.
 
 Use focused behavioral checks during implementation and report their exact scope. Full code quality,
-full tests, full memory quality, and whole-candidate review run only after an explicit developer
-request. Closeout and integration publish the real code/memory outputs, with the computed ledger outside Git, and do not launch or
-require those operations. When a requested certification run is required, use the current shared
+full tests, and whole-candidate review require an explicit developer request. A requirement's
+`## Final checks` section is the request for its listed runs. The Worker runs them once, after code
+review passes, on the exact passed tree. Normal curation runs the complete `memory_quality_check`.
+Closeout and integration publish the approved code and memory outputs with the computed ledger
+outside Git. When a requested certification run is required, use the current shared
 Dagger configuration and exact source/bundle/base contract; do not allocate another engine or
 substitute a host result for its certificate.
 
@@ -106,9 +108,10 @@ workflow. The tag-only publish workflow requires the tagged commit to be reachab
 
 Closeout and integration use their existing transaction owners and exact source/destination/ref
 authority. Their transaction-owned commit legs also suppress automatic quality and test hooks; the
-ordinary explicit Git hook policy outside closeout/integration remains unchanged. They do not require
-certification, full suites, memory-quality checks, curator certification, or independent review. A
-developer-requested quality run remains lifecycle-owned; focused host results do not mint certificates.
+ordinary explicit Git hook policy outside closeout/integration remains unchanged. The closeout owner
+uses the review, curation and final-check evidence required by the lifecycle. Closeout carries that
+evidence forward without rerunning the checks. Developer-requested certification remains
+lifecycle-owned. Focused host results supply diagnostic evidence.
 
 ---
 
@@ -307,9 +310,12 @@ become production CRAP inputs.
 - Run quality tools from the source repository root, not from the coordinator root.
 - Use focused pytest, targeted Vitest, Ruff, formatting, Pyright, Radon, dashboard codegen,
   lint and typecheck for implementation feedback. Preserve Dagger ownership of certification.
-- Run full suites, full memory quality, and whole-candidate review only after an explicit developer
-  request. Necessary repairs use the existing lifecycle operation and exact evidence rather than
-  starting unrelated acceptance loops.
+- Keep review rounds to focused tests and the fast hook tier. Run the requirement's listed final
+  checks once on the tree the Reviewer passed. If a listed check fails, use the existing lifecycle
+  repair. After the Reviewer passes the successor, rerun the failed tests or failed step and the
+  focused tests of the repair on that successor. Report those results with the original final-check
+  report.
+- Run harder, adversarial review only where the requirement or the developer asks for it.
 - Before refactoring complex Python, capture a baseline with Ruff, Pyright, Radon, and the relevant tests. After the change, compare against that baseline.
 - Do not fix unrelated Ruff or Radon findings during a narrow task unless the developer approves the cleanup scope.
 - Before applying `ruff check --fix` or `ruff format`, run the corresponding `--diff` command first and inspect the proposed changes.

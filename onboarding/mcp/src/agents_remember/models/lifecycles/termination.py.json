@@ -3,27 +3,30 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module defines `WorkerTerminationEvidence`; `LifecycleCancellationEvidence` as its public seam.",
+      "note": "Cancellation evidence requires exact expected and observed facts. Direct no-output proof supplies the retained exit marker without a worker observation.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb137c4967767e279ef9d2d6a3ee5ddc243bf34d",
-            "content": "sha256:ec93636b8cbae6205f345220b535029912dd8021cd229bb0721debfcaabd8ba7",
+            "blob": "65d0ba36b7822187bf33b2286762071119320cda",
+            "content": "sha256:6f40a4fcb79f7498761abc0fbc386a763cee10eacd22802d0290375a52bf2dfe",
             "locator": {
-              "kind": "symbol",
-              "name": "WorkerTerminationEvidence"
+              "end": 27,
+              "kind": "line_range",
+              "start": 10
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "fb137c4967767e279ef9d2d6a3ee5ddc243bf34d",
-            "content": "sha256:6f40a4fcb79f7498761abc0fbc386a763cee10eacd22802d0290375a52bf2dfe",
+            "blob": "5c0fa22cc352e90bf9767a6ee2aa1d85c224166c",
+            "content": "sha256:bd37d20f00b63beb8a3cb02b89161b7e57f42790724aa02df07bdeff02707a14",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleCancellationEvidence"
-            }
+              "end": 84,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py"
           },
           "kind": "code"
         }

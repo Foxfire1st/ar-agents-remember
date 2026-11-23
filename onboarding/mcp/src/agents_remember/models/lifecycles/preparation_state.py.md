@@ -6,18 +6,15 @@
 
 ## Purpose
 
-Append-only preparation commands and selected private output state.
+Typed selected private preparation intents and outputs.
 
 ## Code Commentary
 
 ### Logic
 
-Selected preparations form an ordered prefix of at most two legs: code, then memory
-content. A later leg still requires the prior selected output, and command evidence remains
-append-only. Code retention does not manufacture memory output; a successor prepares memory
-through its own owner. There is no selected ledger leg.
+Selected preparations form an ordered prefix of at most two legs, code followed by memory content. Every leg retains its exact accepted intent. The last selected leg can have no prepared output. A later leg requires the preceding selected output.
 
-The state selects exact intents and outputs in code and memory-content order. Command records retain original worker identity, bounded argv, start and succeeded/failed/unknown terminal observations. Later commands require successful predecessors; command starts and outputs cannot be rewritten into a retry. Current ownership is required for starts while an original terminal can remain retainable after cancellation. Private evidence cannot be combined with published mutation or approval claims. `SelectedPreparation._require_output_command` requires the retained original commit-command observation for a created output. `_validate_command_observation` separates terminal readback from command start: it retains the same command prefix and accepts only the original worker's terminal under the existing current/exited-owner rules.
+The preparation binds the leg order, operation owner and certification. The journal reader accepts old command-bearing records and removes their commands during validation.
 
 ### Conventions
 
@@ -39,13 +36,13 @@ No configured domain documentation applies.
 
 ### Repo-Internal References
 
-- Selection is an ordered prefix of at most two preparations: code followed by memory content. [1]
-- `PreparationCommandTerminal` owns the corresponding behavior described above. [2]
-- `PreparationCommand` owns the corresponding behavior described above. [3]
+- Selection is an ordered prefix of code and memory content. Each prior leg requires an output and the last selected leg may omit one. [1]
+
+
 - `OperationPreparationState` owns the corresponding behavior described above. [4]
 - `validate_preparation_owner` owns the corresponding behavior described above. [5]
-- `validate_preparation_transition` owns the corresponding behavior described above. [6]
-- `_validate_leg_transition` owns the corresponding behavior described above. [7]
+
+
 
 ### Cross-Repo References
 

@@ -21,14 +21,14 @@
       ]
     },
     "2": {
-      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
             "locator": {
-              "end": 84,
+              "end": 87,
               "kind": "line_range",
               "start": 23
             },
@@ -57,16 +57,16 @@
       ]
     },
     "4": {
-      "note": "Child start opts into tolerance after root identity validation; context does not cross exec.\n\nAnchor: L207–L216",
+      "note": "Child start enters the review-tolerance scope after root validation. Context variables do not cross exec.",
       "targets": [
         {
           "anchor": {
-            "blob": "f89c07d5c76650bfb7a058e9cdd8e721a48e1e5a",
-            "content": "sha256:cb09339423a25dd1049b0da0ed04667f7160a9c1b9ec8d5dd02513c4c94dbca9",
+            "blob": "ef07cbf9743d369be2ddfe76bd02738aecb7efb9",
+            "content": "sha256:2a61f4d4086fb6d31da1fb4bd4defb2ce5f029010c277dc0984df8b005b5d848",
             "locator": {
-              "end": 216,
+              "end": 212,
               "kind": "line_range",
-              "start": 207
+              "start": 199
             },
             "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py"
           },

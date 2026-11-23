@@ -138,10 +138,12 @@ No cross-repo boundary is crossed by this file.
 - One converted card is fixed by its document alone; unconverted fixing refuses with the conversion step. [9]
 
 
-- The fixer checks every card first and refuses by name. [11]
+
+- A last-card resolution failure leaves both Markdown files unchanged before publication. The unscoped fixer names both invalid cards, while the single unrelated sidecar fix reports no unreadable sidecar. [11]
 
 
-- A leftover evidence line is refused, and only the named card loses references. [12]
+
+- A leftover citation marker causes a refusal and leaves the card bytes intact. After the marker is removed, the tree-wide authoring pass retains reference 2, and the named pass removes it while retaining reference numbers 1 and 3. [12]
 
 
 - Two tables with no blank line between them are refused by name. [14]
@@ -157,8 +159,13 @@ No cross-repo boundary is crossed by this file.
 
 
 - `test_one_documents_fix_reports_its_own_stale_references_and_the_status_counts` asserts selected-document stale scope and, with a prepared producer result, delivered counts, the first 10 stale entries and exclusion of authoring/rewritten-sidecar material; it has no log-readback or custody assertion. [13]
-- Current source delta inspected statically: Repair converted quality/catalog outcome, carried/new classifications and 10-entry delivery; preserve L46 and content-only advisory cases. [17]
 
-- Separate implementation custody path: producer whole/result projection, finalized whole-result detail input, redaction, destination and size/budget/write controls; not a log-readback assertion in the conversion test. [18]
+- Static source checks cover the converted quality refusal and catalog drift item, the carried-versus-new anchor distinction, and the ten-entry delivery limit. Separate cases cover the content-only stale-reference advisory and the L46 conversion instructions. [17]
+
+
+
+- The test and implementation references cover producer results and their projections, detail inputs, log destination, redaction and write budgets. [18]
+
+
 
 - The unit-regression lane selects mcp/tests/test_knowledge_conversion_toolchain.py. [6]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "f02e677bea3b795aa6d72a53917f585e9bbebe28",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "The page holds: the answer change only fixes the order in which a cut answer carries its fields, and the page's refresh route states no field order.",
-    "task": "261112-BUG-L7",
+    "statement": "The refresh guide still directs the reader from the context-packet action line to the complete drift counts in the recorded result.",
+    "task": "261112-BUG-L17",
     "uncommitted": true
   },
   "document": "docs/guides/refresh-stale-onboarding.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/application/memory_tools.py"
     },
     {
-      "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+      "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_response.py"
     }

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "blob": "9af77edef766f5bdf85a45e19d65bf7080afe69c",
             "content": "sha256:0d01b52ed95b66772d0aee9efa4706e9f1ef4cf3c5bd2208f2b78b5da10f6945",
             "locator": {
               "kind": "symbol",
@@ -19,15 +19,16 @@
       ]
     },
     "2": {
-      "note": "One base converted and memoized as a validator tree.",
+      "note": "`converted_base` returns a validator tree and reuses it under the exact conversion key in the selected owner’s cache.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
-            "content": "sha256:4b838a5d7d35a79b579d7086fe4049b3077ade8b5741cf6d3e27a6e9ee350cc7",
+            "blob": "9af77edef766f5bdf85a45e19d65bf7080afe69c",
+            "content": "sha256:7fe8903bb06cfd0225b29a95378f0477653e4059e4f17c25fa30cdae02704a52",
             "locator": {
-              "kind": "symbol",
-              "name": "converted_base"
+              "end": 94,
+              "kind": "line_range",
+              "start": 67
             }
           },
           "kind": "code"
@@ -39,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "blob": "9af77edef766f5bdf85a45e19d65bf7080afe69c",
             "content": "sha256:0483befc4fc0fd18bc86d735867227e824c9ada17111467ddcbcd86ad1507ff4",
             "locator": {
               "kind": "symbol",
@@ -55,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "blob": "9af77edef766f5bdf85a45e19d65bf7080afe69c",
             "content": "sha256:75c14335a1bed58790d86d4fc94943b7fcef5ab82f17aee9b11ad79804fd55f2",
             "locator": {
               "kind": "symbol",
@@ -71,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "blob": "9af77edef766f5bdf85a45e19d65bf7080afe69c",
             "content": "sha256:3faedd1b6cc0a694f6ddad75f8a8de7e8a16d3a83166e8f66c11fa6a632c721a",
             "locator": {
               "kind": "symbol",
@@ -82,7 +83,7 @@
         },
         {
           "anchor": {
-            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "blob": "9af77edef766f5bdf85a45e19d65bf7080afe69c",
             "content": "sha256:2975f8cbb973d91624e2b598e88cc7658907c6d142df5a31551495eb68689e61",
             "locator": {
               "kind": "symbol",

@@ -6,17 +6,19 @@
 
 ## Purpose
 
-Asks only the finally selected model for its features during a start.
+Reads features for the shown provider and model in the panel and for the resolved pair during Start.
 
 ## Code Commentary
 
 ### Logic
 
-`selected_model_features` reuses full or already fresh feature data; otherwise it asks the bridge in selected mode for the final provider/model. The current operation deduplicates the target in feature_answers. The answer and a named bridge failure both pass through the shared durable per-part merger; this owner creates no second persistent offer cache.
+`launcher_model_options` asks the bridge directly for the supplied provider and model and returns the pair’s public controls and provenance. The pane owns reuse across requests. During Start validation, `selected_model_features` uses fresh exact-pair data when available and memoizes an on-demand answer in the operation’s `LauncherCatalog.feature_answers`. Both readers merge answers and named bridge failures into the same runtime-scoped durable part store.
 
 ## Repo-Internal References
 
-- The source implements the behavior and boundaries described above. [1]
+
+- The options route projects one pair. Start deduplicates selected feature reads within its operation. Both use the runtime-scoped durable result merger. [1]
+
 
 ## Docs References
 

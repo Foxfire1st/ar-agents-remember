@@ -78,4 +78,4 @@ Test descriptions above report assertions present in source, not test execution 
 - The shared native button exposes supplied sidebar identity and expanded state with a side-aware icon. [15]
 - Local assertion source covers activation, accessible state and remembered or unremembered visibility. [16]
 
-- The shared tree places a supplied wrapping detail line below the row’s name and suffix. [17]
+- The shared tree places a supplied wrapping detail line below the row’s name and suffix. [18]

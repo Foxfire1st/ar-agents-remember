@@ -10,7 +10,9 @@ The target comparison's own answers, read from the bytes its bound trees hold an
 
 ## Code Commentary
 
-- Every method answers `None` for "this could not be read" — a blob the tree does not hold, a side that does not resolve, a record file that does not parse — which is what makes an unreadable basis stale instead of silently current.
+For a complete blob, the reader directs Git into a private temporary file. It memoizes the bytes after a successful exit and the unavailable result after a nonzero exit. The temporary file closes on both return and exception.
+
+- An unreadable or malformed basis returns an unavailable result where the method's return type allows it. A readable history listing without the named file yields an empty row set.
 - `content_identity` hashes a range or a whole blob at one tree, and refuses a range that falls outside the blob rather than hashing what happens to be there.
 - `mapped_lines` maps a recorded range into the target's tree through the zero-context hunks of the two blobs, and answers `None` when the range cannot be mapped or the blobs cannot be read.
 - `memory_revision` reads a record's revision from the file the basis names at that side's tree, and answers `None` when the file is absent, does not parse, or holds another record.

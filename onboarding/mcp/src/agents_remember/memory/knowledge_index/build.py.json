@@ -60,7 +60,44 @@
     },
     {
       "anchor": {
-        "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+        "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
+        "content": "sha256:d1cb68ad06097b43c9ff6933105fcfffa44ecc18b6fad2005c614e42170596da",
+        "locator": {
+          "end": 141,
+          "kind": "line_range",
+          "start": 139
+        }
+      },
+      "id": "RLZ-E7NV4T",
+      "invariant": "INV-CZXXR2",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-CZXXR2",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "This declaration limits the reviewer’s shared document parses to 256 MiB and 65,536 entries.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
+        "content": "sha256:63e360f91194186c22a59b6fc853edc9bb143671a2f1ab78939faf12c5a80e58",
+        "locator": {
+          "kind": "symbol",
+          "name": "kept_document_parses"
+        }
+      },
+      "id": "RLZ-N78GMY",
+      "invariant": "INV-CZXXR2",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — reviewer child parses",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The child scope keeps a budgeted document memo across worklists.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
         "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
         "locator": {
           "kind": "symbol",
@@ -151,6 +188,24 @@
       },
       "rationale": "The index stores one named revision with its attributed writer and review flag for the aggregate.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
+        "content": "sha256:d69b010fe15c199e2ff460e09858de2d0e976e6db6d20592cd97662361aeeb46",
+        "locator": {
+          "kind": "symbol",
+          "name": "_reader"
+        }
+      },
+      "id": "RLZ-ZAA224",
+      "invariant": "INV-CZXXR2",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — reviewer child parses",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The reader keys the result by the exact document bytes and admits the parsed model through the weighted memo.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -159,48 +214,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:deb983ecac418f63fe6b8829927dce136ace79da6938d18b7ef330597749cc43",
             "locator": {
-              "end": 207,
+              "end": 209,
               "kind": "line_range",
-              "start": 191
+              "start": 193
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:493f5a3dfa3900176826e2310cfb8477d79db8f578f9c789bf7acb3514bf7bf1",
             "locator": {
-              "end": 240,
+              "end": 242,
               "kind": "line_range",
-              "start": 210
+              "start": 212
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:e89f23fe0f9b3ea68cf3e2d65e01734df4de9730a551bfa92b68c92cb0ef9485",
             "locator": {
-              "end": 247,
+              "end": 249,
               "kind": "line_range",
-              "start": 243
+              "start": 245
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:2acce0feda3db4b23b73905c19a82c9eb83d67345a11758b50fd3f96af2aac35",
             "locator": {
-              "end": 259,
+              "end": 261,
               "kind": "line_range",
-              "start": 250
+              "start": 252
             }
           },
           "kind": "code"
@@ -212,7 +267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:a70b514cd3dd3d00857abfd954506cc943c0a75586242c82b9e650ad2a581465",
             "locator": {
               "end": 140,
@@ -229,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
             "locator": {
               "kind": "symbol",
@@ -240,34 +295,34 @@
         }
       ]
     },
-    "12": {
+    "14": {
       "note": "The index builds record standing and the named-revision rows together in its write transaction.",
       "targets": [
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:4a725b8f3dad68db27ed0752044b11c0de8799910800ecf3ede36cffc976dd8f",
             "locator": {
-              "end": 258,
+              "end": 260,
               "kind": "line_range",
-              "start": 210
+              "start": 212
             }
           },
           "kind": "code"
         }
       ]
     },
-    "13": {
+    "15": {
       "note": "A converted review catalog is parsed as review evidence separately from owner attempts.",
       "targets": [
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:6ad4e84ee4352887dfdd1f7e4690d37aeaab507409affa2b194083b4563a0493",
             "locator": {
-              "end": 306,
+              "end": 308,
               "kind": "line_range",
-              "start": 283
+              "start": 285
             }
           },
           "kind": "code"
@@ -275,14 +330,16 @@
       ]
     },
     "2": {
-      "note": "The parsed tree and its completeness.",
+      "note": "`ParsedTree` holds the parsed documents and recorded problems. Problems make its state partial.",
       "targets": [
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
-            "content": "sha256:31eda7ac82d19f0b9c105e27e75681f8c431439f82d6cb00c2094440445e3eee",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
+            "content": "sha256:e322da00e8a6060dc3eb00f1ff372898e1533555d06cab8e4aac759728b40d54",
             "locator": {
-              "kind": "file"
+              "end": 140,
+              "kind": "line_range",
+              "start": 121
             }
           },
           "kind": "code"
@@ -294,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:50338a20987465f4fb984f54f86c618c7b89ac2c504d5c6db6b9cf32c6a1ea44",
             "locator": {
               "kind": "symbol",
@@ -310,12 +367,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:493f5a3dfa3900176826e2310cfb8477d79db8f578f9c789bf7acb3514bf7bf1",
             "locator": {
-              "end": 240,
+              "end": 242,
               "kind": "line_range",
-              "start": 210
+              "start": 212
             }
           },
           "kind": "code"
@@ -327,84 +384,84 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:73ee777ce6c9101b8ea6b2cb4d5029efa75950902bf5732945bc5af8ed9dc0ea",
             "locator": {
-              "end": 393,
+              "end": 395,
               "kind": "line_range",
-              "start": 363
+              "start": 365
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:db6c57a501fa94b7f512b1d0b991ab3538fd014e4c96662fc37c44724912e516",
             "locator": {
-              "end": 432,
+              "end": 434,
               "kind": "line_range",
-              "start": 396
+              "start": 398
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:83786254cb1c6ba01dbdbdb8080fccf86b7db73359a32c8b6b36b668252b92d8",
             "locator": {
-              "end": 460,
+              "end": 462,
               "kind": "line_range",
-              "start": 442
+              "start": 444
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:c24f1b920e33f706375685894361121aa7b8dbabe06c9ec36d0d76421128becd",
             "locator": {
-              "end": 475,
+              "end": 477,
               "kind": "line_range",
-              "start": 463
+              "start": 465
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:c19bb9830ed09e05975a186139949c60dc16e2dfec09f2fd8dc964aae4c335fb",
             "locator": {
-              "end": 491,
+              "end": 493,
               "kind": "line_range",
-              "start": 478
+              "start": 480
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:c5c9db12cb8f6a83d479bbffeb65e74639debb54f72394a99891d906010921a6",
             "locator": {
-              "end": 517,
+              "end": 519,
               "kind": "line_range",
-              "start": 506
+              "start": 508
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
             "locator": {
-              "end": 543,
+              "end": 545,
               "kind": "line_range",
-              "start": 520
+              "start": 522
             }
           },
           "kind": "code"
@@ -416,7 +473,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ef68aa54ef80e956e7c6db513faa87c67eef354",
+            "blob": "efc1e1392f70f3b2dca542bb7e28718d560f526c",
             "content": "sha256:553db5bd42c2f97e64f517be601274d4040befce7a4f33f88bc2887a9334535e",
             "locator": {
               "kind": "symbol",

@@ -89,4 +89,4 @@ No cross-repo boundary is exercised.
 
 ### Repo-Internal References (continued)
 
-- The unit-regression lane selects mcp/tests/test_knowledge_file_canonical.py. [15]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_file_canonical.py`. [15]

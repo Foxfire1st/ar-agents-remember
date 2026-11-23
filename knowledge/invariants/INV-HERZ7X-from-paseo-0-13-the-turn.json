@@ -3,14 +3,16 @@
     "criteria": [
       "prevents_costly_mistake"
     ],
-    "justification": "Reading the empty hook timeline would leave every hand-over unrecognised, so a seat's finished work would never wake its parent."
+    "justification": "Treating absent event history as an empty turn would lose hand-over evidence and could send a silent-turn wake for work that already handed over."
   },
-  "applicability": "The plugin's reading of an ended turn on Paseo 0.13 and later.",
+  "applicability": "Parent-wake handling for agent.turn.after on the product’s pinned Paseo 0.16.2 host.",
   "conditions": [
-    "The turn-ended hook supplies an empty timeline."
+    "The 0.16.2 SDK event exposes agent identity, available turn identity and outcome. The server wire payload adds an empty timeline for compatibility.",
+    "The adapter requests the whole held timeline with direction tail and limit 0, restores each supplied row turn ID and passes null on a failed read."
   ],
   "exclusions": [
-    "Hosts before 0.13, whose hook carried the timeline."
+    "A failed refetch supplies no hand-over evidence and does not establish a turn without text.",
+    "The host-free assertions establish the contributed handler’s behavior without asserting a live plugin load or host delivery."
   ],
   "id": "INV-HERZ7X",
   "origin": {
@@ -24,9 +26,9 @@
     "leaf": "260928-MIK-L60",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "From Paseo 0.13 the turn-ended hook carries an empty timeline, so the plugin reads the ended turn through context.paseo.agents.ref(id).timeline.refetch and still recognises a hand-over.",
+  "statement": "The Paseo plugin reads the ended turn through context.paseo.agents.ref(id).timeline.refetch. The pinned SDK event exposes no turn history, and a refetched hand-over still counts for its own turn.",
   "status": "proposed",
   "supersedes": []
 }

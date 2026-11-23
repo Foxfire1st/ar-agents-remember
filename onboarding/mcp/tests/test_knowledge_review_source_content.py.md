@@ -90,21 +90,7 @@ only the packet's boundary forbids it.
 
 ### Conventions
 
-`pytestmark = pytest.mark.evidence_unit` is the module's marker; its current
-`unit-regression` declaration is `mcp/tests/test-evidence-lanes.toml:277`.
-The lifecycle catalog lists this test as a consumer in eight exact-scope artifact entries.
-
-- `mcp/tests/_user_settings_guard.py` (`mcp/tests/evidence-lifecycle.toml:406`)
-- `mcp/tests/anchor_fixture_models.py` (`mcp/tests/evidence-lifecycle.toml:940`)
-- `mcp/tests/diff_scope_test_support.py` (`mcp/tests/evidence-lifecycle.toml:1358`)
-- `mcp/tests/fixtures/repository_profiles/node/package-lock.json` (`mcp/tests/evidence-lifecycle.toml:2792`)
-- `mcp/tests/knowledge_review_fact_test_support.py` (`mcp/tests/evidence-lifecycle.toml:3679`)
-- `mcp/tests/knowledge_row_codec_test_support.py` (`mcp/tests/evidence-lifecycle.toml:3727`)
-- `mcp/tests/knowledge_rows_test_support.py` (`mcp/tests/evidence-lifecycle.toml:3790`)
-- `mcp/tests/read_scope_test_support.py` (`mcp/tests/evidence-lifecycle.toml:4324`)
-
-These entries declare catalog ownership. They supply no evidence of test invocation or
-runtime consumption. The module has no artifact or contract row of its own in the catalog.
+`pytestmark = pytest.mark.evidence_unit` is the module's marker. The module has no artifact or contract row of its own in this catalog.
 
 The Git observations pin `PATH`, `HOME` and `GIT_CONFIG_NOSYSTEM`; Git fixture setup also uses
 subprocesses. The routes run in-process through `TestClient`, with no live server, network request
@@ -209,4 +195,4 @@ Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3372 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
-- Eight exact-scope artifact entries declare this test as a consumer, including knowledge_review_fact_test_support.py. [22]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_source_content.py` (`mcp/tests/test-evidence-lanes.toml:277`). The lifecycle catalog lists the module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. [22]

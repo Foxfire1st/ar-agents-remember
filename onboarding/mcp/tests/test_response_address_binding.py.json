@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
             "locator": {
               "kind": "symbol",
@@ -57,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:d2e302d797ad2d3700c15c9090afc507fb08c55f14ec05c46005dab1877fc78e",
             "locator": {
               "kind": "symbol",
@@ -87,11 +87,11 @@
       ]
     },
     "14": {
-      "note": "The bounded count that refuses to count a blank.",
+      "note": "The bounded count filters blank paths before counting and sampling.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
             "content": "sha256:a12761f440ea6989b36077918fb290fec58dd8c2c9bd0559adf8483473434aaf",
             "locator": {
               "kind": "symbol",

@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
             "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
             "locator": {
               "kind": "symbol",
@@ -53,15 +53,16 @@
       ]
     },
     "15": {
-      "note": "Kit files are served under the manifest's contract path only when the revision carries them and their bytes equal the manifest.",
+      "note": "Collecting shipped kit assets verifies each selected file against the shipped manifest and adds it under its contract path.",
       "targets": [
         {
           "anchor": {
             "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
-            "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
+            "content": "sha256:3b4c043beafe51e705b153208ff72e8da1f0b073a1fa33d55b531341c54bda11",
             "locator": {
-              "kind": "symbol",
-              "name": "kit_assets"
+              "end": 189,
+              "kind": "line_range",
+              "start": 145
             },
             "path": "mcp/src/agents_remember/canvas/kit.py"
           },
@@ -104,58 +105,16 @@
       ]
     },
     "20": {
-      "note": "The current implementation introduces bound grades, per-part staleness and explicit regeneration; the existing isolated-page, evidence and kit guarantees remain.\n\nAnchor: `parse_frame_message`, `parse_host_message`, `Presenter`, `EXPLAINER_SURFACE`, `build_seat`, `update_seat`, `retire_seat`, `_check_parts`, `part_staleness`, `GradeStore`",
+      "note": "Grades, part staleness and regeneration operate on the bound evidence and immutable revision.",
       "targets": [
         {
           "anchor": {
-            "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
-            "content": "sha256:11a1ad2afc084c83d39327fc30e83c4ffbb59f8ef0a4d80495e8b2ebd226d479",
+            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+            "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/canvas/protocol.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "560327480bc431b5c381b1341fecbfe988acdd33",
-            "content": "sha256:15342eb648138b47fd5c27cd077a86757e78bb48613c0cfbaa1ae4bd3452e3d7",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/canvas/presenter.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "74eef9c0dcde10b14d3df3f3c44214cb67d05201",
-            "content": "sha256:8344136c353ad91c81acedf77ba3919dd890803bb1c112b6da8eab273541542a",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/canvas/explainer_binding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1a614c3853985134f11c860f66383388eb5da04",
-            "content": "sha256:bdfb3d591410cb3c04dedc69bd743a879b9822e2e8f75d69f5d288514708d319",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/canvas/explainer_service.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
-            "content": "sha256:9c21082900e6e75f72e196d9f817747377189faf792020070fe5afab438a9c7f",
-            "locator": {
-              "kind": "file"
+              "end": 528,
+              "kind": "line_range",
+              "start": 498
             },
             "path": "mcp/src/agents_remember/canvas/readiness.py"
           },
@@ -163,12 +122,14 @@
         },
         {
           "anchor": {
-            "blob": "e8d70a583afb47057679f7c836cf3ba3ba14b582",
-            "content": "sha256:ccecc61c21b17e18782ef96265843941657ee0236c264b25ccb825a546e22ac9",
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:323b3b17b3236b3cf1aec0300351985f998f231c15cc65b63a23824a7aede4d5",
             "locator": {
-              "kind": "file"
+              "end": 879,
+              "kind": "line_range",
+              "start": 812
             },
-            "path": "mcp/src/agents_remember/canvas/explainer_staleness.py"
+            "path": "mcp/src/agents_remember/canvas/explainer_service.py"
           },
           "kind": "code"
         },
@@ -185,12 +146,30 @@
         },
         {
           "anchor": {
-            "blob": "67f8b73c7c956edb2e18c92195e786684ec8777b",
-            "content": "sha256:738f3495b5a4a1bd1e7bd24f1b9c607c7d31015c8e26577970f4af2e6c0dabcb",
+            "blob": "e8d70a583afb47057679f7c836cf3ba3ba14b582",
+            "content": "sha256:ccecc61c21b17e18782ef96265843941657ee0236c264b25ccb825a546e22ac9",
             "locator": {
               "kind": "file"
             },
-            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+            "path": "mcp/src/agents_remember/canvas/explainer_staleness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Asset serving opens the live session’s revision and uses that revision’s recorded media type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+            "content": "sha256:311851321ea5a19aa76562590d79c14985746c1441930bfe7c2578fa2ff149de",
+            "locator": {
+              "end": 540,
+              "kind": "line_range",
+              "start": 506
+            },
+            "path": "mcp/src/agents_remember/serving/canvas.py"
           },
           "kind": "code"
         }

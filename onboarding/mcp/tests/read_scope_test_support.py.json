@@ -112,7 +112,7 @@
       ]
     },
     "15": {
-      "note": "Fixture construction imports test-only row constructors; it does not call the retired canonical writer.",
+      "note": "The read fixture opens the test row store, builds its graph with test-only row constructors and returns projected record identities.",
       "targets": [
         {
           "anchor": {
@@ -120,6 +120,18 @@
             "content": "sha256:a1bdfdfd0d9b6cc8cddc939c7e361a27f6c1091c22442fd93486d4fe3b56144f",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:89d688b3cf8e2b7ba300f635ab78126a578845d055f3ad1fcb1b4ca227565082",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 345
             }
           },
           "kind": "test"
@@ -352,12 +364,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4339,
+              "end": 4414,
               "kind": "line_range",
-              "start": 4291
+              "start": 4366
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -365,12 +377,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
             "content": "sha256:cb641267e11b8aec644ea6ca3e0ee68f833e7a2d4d2c480e3ee02aba12f59d59",
             "locator": {
-              "end": 5114,
+              "end": 5161,
               "kind": "line_range",
-              "start": 5111
+              "start": 5158
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -378,7 +390,7 @@
         }
       ]
     },
-    "23": {
+    "25": {
       "note": "The optional reviewer leaf creates an exact review fact for the fixture’s extra record.",
       "targets": [
         {
@@ -394,7 +406,7 @@
         }
       ]
     },
-    "24": {
+    "26": {
       "note": "The fixture captures its Git tree through the isolated shared helper.",
       "targets": [
         {

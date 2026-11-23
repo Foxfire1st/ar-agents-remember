@@ -127,10 +127,14 @@ No relevant external documentation found.
 
 
 
+
 - `WorktreeArgs` types the abandon input. [6]
 
 
+
+
 - `WorktreeArgs` types the abandon input. [15]
+
 
 - The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. [7]
 - Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. [8]

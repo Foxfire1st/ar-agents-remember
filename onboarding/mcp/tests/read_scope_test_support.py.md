@@ -94,6 +94,8 @@ No Domain Documentation source is configured for this slice.
 
 
 
+- The read fixture uses test-only row constructors to build its graph in the test row store and returns the projected record identities. [15]
+
 
 
 
@@ -133,8 +135,8 @@ No meaningful cross-repo references found.
 ### Repo-Internal References (renewed)
 
 
-- The optional reviewer leaf creates an exact review fact for the fixture’s extra record. [23]
-- The fixture captures its Git tree through the isolated shared helper. [24]
+- The optional reviewer leaf creates an exact review fact for the fixture’s extra record. [25]
+- The fixture captures its Git tree through the isolated shared helper. [26]
 
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [15]
 - `_create_revision` supplies the current fixture or assertion described above. [13]

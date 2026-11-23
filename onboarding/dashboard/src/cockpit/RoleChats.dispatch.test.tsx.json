@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The test file asserts the cases and limitations described above.",
+      "note": "Mounted fixtures exercise Start, Result and metadata rereads. The metadata request count excludes selected-model option requests.",
       "targets": [
         {
           "anchor": {
-            "blob": "429787cc6860f9f89412de71ac1d22828f5c0772",
-            "content": "sha256:500e3571354fa5c1e809700938f3ea90b5b168c260f48afe11987c1e4c44cf44",
+            "blob": "8f905e1e1f13cb2f90aaa1175cb76d6ac3223ca7",
+            "content": "sha256:5df18e63bc67e015100d1d79bdf63640c0f41f1cce76287d1512cd129476708b",
             "locator": {
               "kind": "file"
             }

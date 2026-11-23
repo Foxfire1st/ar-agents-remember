@@ -130,16 +130,16 @@
       ]
     },
     "34": {
-      "note": "The production sync tool whose payload the read-side block is attached to.",
+      "note": "After sync, worktree_sync attaches the review_rebinding result. A later live review selects the comparison, reads its saved rebinding and projects the movement value.",
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:350d0d6985d73d679254b267097841715e6a0c2f6c0b8280e9721b5c1d70eb2b",
             "locator": {
-              "end": 371,
+              "end": 370,
               "kind": "line_range",
-              "start": 367
+              "start": 366
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -148,13 +148,26 @@
         {
           "anchor": {
             "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
-            "content": "sha256:c2d699400575ad6ab78c30a6441b8243181d27c8922437c6704286cde095c593",
+            "content": "sha256:84902733d9a837e315a051bfb5a9c4288401531c2b00eb2c6280caf60788f30d",
             "locator": {
-              "end": 242,
+              "end": 257,
               "kind": "line_range",
               "start": 225
             },
             "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:ec1cd8330129543ac4d2b57bcf6243975dd6711c8ea99fca31fc3c8a8a75d035",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
           },
           "kind": "code"
         }

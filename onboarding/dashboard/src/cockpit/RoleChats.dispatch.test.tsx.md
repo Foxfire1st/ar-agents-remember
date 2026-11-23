@@ -19,4 +19,5 @@ Component assertions are not real-host qualification or a claim that the whole d
 ## Evidence
 
 
-- The test file asserts the cases and limitations described above. [1]
+
+- Mounted fixtures exercise Start, Result and metadata rereads. The metadata request count excludes selected-model option requests. [1]

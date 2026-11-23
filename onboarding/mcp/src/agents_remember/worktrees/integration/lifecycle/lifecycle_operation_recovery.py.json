@@ -22,7 +22,7 @@
   ],
   "references": {
     "1": {
-      "note": "The module defines `recover_direct_landing`; `direct_recovery_refusal`; `reconcile_control_mutations` as its public seam.",
+      "note": "`recover_direct_landing_under_authority` checks and resumes an exact direct generation under caller-owned landing authority.",
       "targets": [
         {
           "anchor": {

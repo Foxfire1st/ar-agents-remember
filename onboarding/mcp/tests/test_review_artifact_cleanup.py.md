@@ -9,28 +9,28 @@
 **The MIK-R25 rule 5 cases: the archive hook deletes only the archived
 task's own review artifacts, and a repeated attempt keeps its receipts.** The `task`
 fixture is a coordination task root with its task document and one leaf enclosure contract, a plain code and a
-plain memory repository, and nothing converted: the hook reads refs, manifests and files, never knowledge. Every
-case asserts what is deleted and, as much, what another task still holds. The file is self-contained (no shared
-support module); it runs in the `unit-regression` lane
-(`test-evidence-lanes.toml`).
+plain memory repository and no converted-memory fixture. The hook inspects refs, manifests and file content, including SQLite datasets. The core cleanup and ownership cases assert what another task still holds. Cache-only cases assert the addressed task’s preview, deletion, remainder and receipt replay. The file is self-contained (no shared
+support module).
 
 ## Code Commentary
 
 ### Logic
 
-- **The main case, through the finalizer's `_with_review_artifact_cleanup` with the port bound:** a dry run lists
-  and deletes nothing; then the task's review ref under its directory name (both repositories), its own legacy
-  retained-code pin, a generation snapshot and a renamed knowledge copy (`pub2.sqlite`, found by content) are
-  deleted and recorded in `notes/reports/review-artifact-cleanup.json`; a review ref under the `task.json` id
-  namespace, the colliding `260101-trvx-l1` and `260101-trv-extra-l01` pins, another task's review ref and a
-  non-knowledge SQLite file survive.
+- The dry run lists the review refs and dataset copies and checks that the first snapshot still
+  exists. The apply runs through the finalizer’s `_with_review_artifact_cleanup` with the cleanup
+  port bound. The task's review ref under its directory name (both repositories), its own legacy
+  retained-code pin, the knowledge dataset at `knowledge/after/snapshot.sqlite` and a renamed copy (`pub2.sqlite`, found by content) are
+  deleted. A review ref under the `task.json` ID, the two colliding pins, another task’s review ref,
+  and a non-knowledge SQLite file survive. The test reads the persisted receipt back and checks
+  its `reviewRefs` and empty failure list.
 - **Identity (rulings 23:15:34 F1, 00:08:39, 02:12:06, 02:32:42):** colliding task ids never select each other's
   pins (parametrized over `260906-IAS`/`260906-ias-memory-recovery-l01` and `260928-MIK`/`260928-mik-extra-l01`); a
   comparison record naming another task never widens the archive; a `task.json` naming another task touches none
   of its refs; a planted leaf contract never reaches another task's review refs (V10; the legacy `other-1-l1` pin
   follows the trust line).
-- **Never raises, and holds (F2, F3):** a missing repository and an owner that refuses a release are failures;
-  the refused generation's pin and snapshot survive and are reported.
+- **Missing repository and refused release (F2, F3).** The cleanup report lists both failures. The
+  refused generation retains its pin and snapshot. The finalizer also reports an injected hook
+  exception after archival.
 - **Provable ownership (ruling 01:00:07):** a planted foreign manifest releases nothing — four parametrized cases:
   a foreign leaf, a foreign pin, a foreign repository, and a snapshot path escaping its directory.
 - **Physical confinement (ruling 01:37:42):** the content scan never follows a symlink out of the task; a
@@ -44,7 +44,7 @@ support module); it runs in the `unit-regression` lane
   `review-artifact-cleanup.attempt-1.json`, writes attempt 2 under the canonical name, and the canonical name existed
   at the moment of the atomic replace.
 
-- **Cache class through receipts:** the `arCaches` cases prove an interrupted cache deletion replays as attributed absence, a cache-only dry run shows its remainder and preview, old classes and caches share one receipt recovery, and nothing is deleted when the cache receipt cannot be written.
+- **Cache class through receipts:** the `arCaches` cases prove an interrupted cache deletion replays as attributed absence, a cache-only dry run shows its remainder and preview, review refs, dataset copies and caches share one receipt recovery, and the fixture cache remains when the initial receipt cannot be written.
 
 ### Conventions
 
@@ -53,8 +53,9 @@ support module); it runs in the `unit-regression` lane
 
 ### Invariants And Boundaries
 
-- These cases prove the candidate invariant recorded on `application/review_artifact_cleanup.py`: archival
-  deletes only targets derived from the archived task's own identity, confined to its physical folder.
+- The fixtures check task-scoped ref selection and filesystem confinement. Refs belong to the
+  supplied disposable code and memory repositories. The ordinary dataset scan stays inside the
+  task root, and the explainer case uses its own confined environment root.
 
 ### Todos
 
@@ -107,22 +108,22 @@ No configured live documentation source was available for this pass.
 - The main archive case. [2]
 - Colliding task ids. [3]
 - A record, a task document, or a planted leaf contract never reaches another task's refs. [4]
-- Never raises; a refused generation is held. [5]
+- The cleanup reports a missing repository and a refused release. The refused pin and snapshot remain. The finalizer reports an injected hook exception. [5]
 - A planted foreign manifest releases nothing. [6]
 - Symlinks: the scan, the notes root, the generation directory. [7]
 
 
 ### Cross-Repo References
 
-No cross-repo boundary is crossed by this file.
+The cases use two disposable repositories and a temporary coordination root.
 
 ### Repo-Internal References (continued)
 
 - A repeated attempt reports what is already absent, keeps the first receipt as attempt 1, and writes none when nothing is new. [9]
 
-- The planned receipt classes include `explainerArtifacts`. The interrupted archive fixture leaves the external workspace, old generation counter and old lock absent. The case documents workspace removal as retirement's step before the sweep; the retry asserts `interrupted=true` `alreadyAbsent` entries of that class for the migrated `seat-generation` counter path and the old lock path. It does not assert a workspace entry in that retry receipt. Anchor: `test_interrupted_external_explainer_deletion_replays_as_already_absent` [11]
+- The interrupted archive fixture removes the workspace, old generation counter and old lock. After retry the migrated seat-generation counter path and old lock path have interrupted alreadyAbsent explainerArtifacts entries. The test does not require a workspace receipt entry. [11]
 
 
 - The receipt's planned-key set carries the frame-revision class. [10]
 
-- The unit-regression lane selects mcp/tests/test_review_artifact_cleanup.py. [8]
+- The `unit-regression` lane selects `mcp/tests/test_review_artifact_cleanup.py`. [8]

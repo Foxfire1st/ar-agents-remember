@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "00532bdbe263591821e2365606c47747da6ed99a",
+        "blob": "debdfc475e0f77d4708f4db7631496c4015fcdfb",
         "content": "sha256:b9895886bde75c0eda26d00974e48f0f41f404818c1da3fde921471c5125d980",
         "locator": {
           "kind": "symbol",
@@ -22,14 +22,40 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "Route cases cover fresh metadata, selected-model reads, saved and unknown offerings, and launch validation.",
       "targets": [
         {
           "anchor": {
-            "blob": "00532bdbe263591821e2365606c47747da6ed99a",
-            "content": "sha256:817cdeefa8b95db11a58fd768757678dc592e15af853085683cc8b70eb7e87c9",
+            "blob": "debdfc475e0f77d4708f4db7631496c4015fcdfb",
+            "content": "sha256:b0786a28ec1e6cf189d65a9cb4b9ba2e314b70a45f8e402d3df639c057ce2b87",
             "locator": {
-              "kind": "file"
+              "end": 344,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "debdfc475e0f77d4708f4db7631496c4015fcdfb",
+            "content": "sha256:b47a33a7ddeaf4d562c9b5efa12c09d081ecb2e4f76dfd1f2bf3db34c9634103",
+            "locator": {
+              "end": 419,
+              "kind": "line_range",
+              "start": 347
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "debdfc475e0f77d4708f4db7631496c4015fcdfb",
+            "content": "sha256:04c748e99162ada3e5d6c6ebb6d39518d1256edd295620932f84c9d158446ff0",
+            "locator": {
+              "end": 496,
+              "kind": "line_range",
+              "start": 422
             }
           },
           "kind": "test"

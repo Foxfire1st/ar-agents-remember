@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
-    "task": "260928-MIK-L97",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
+    "role": "curator",
+    "statement": "The Bootstrap guide limits validation to known host offerings and describes per-start harness, model and effort overrides, which the request worker forwards to the same launch owner and drains on cancellation.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/guides/cost-aware-bootstrap.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "3f91234661460904091f50cb41164456aa515f04",
+      "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/memory/baseline.py"
     },
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },

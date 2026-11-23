@@ -9,8 +9,7 @@
 **The MIK-R30@v1 gate cases, amended by MIK-R53, on converted-format fixtures (15 unparameterized top-level test definitions, measured statically; not a new collection or execution).** The `leaf` fixture is a real code
 repository and a real converted memory repository (`main` is the official line, its commit carries the
 `Code-Commit` trailer naming the leaf's base) plus a leaf series contract. The executable cases
-call the trace gate and memory-quality controller; they do not exercise a closeout trace validator. The file runs in the unit lane
-(`test-evidence-lanes.toml`).
+call the trace gate and memory-quality controller; they do not exercise a closeout trace validator.
 
 ## Code Commentary
 
@@ -164,4 +163,4 @@ No cross-repo boundary is crossed by this file.
 
 - The cases assert source-current onboarding rows, moved-marker identity preservation and current worklist/blob inputs. [20]
 
-- The unit-regression lane selects mcp/tests/test_onboarding_trace_gate.py. [18]
+- The `unit-regression` lane selects `mcp/tests/test_onboarding_trace_gate.py`. [18]

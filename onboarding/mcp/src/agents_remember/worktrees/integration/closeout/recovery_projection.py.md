@@ -34,9 +34,9 @@ Finalization proof is deliberately narrow: the contract hash must be present wit
 
 L2 owns public recovery and revision behavior; L1 only establishes the evidence boundary.
 
-### CCR private preparation boundary
+### Retained CCR closeout record classification
 
-`closeout_recovery_phase` returns `recovering-private-preparation` for a retained preparation with no claimed approval, irreversible boundary, mutation-recovery requirement, legacy migration or finalized contract proof. Claimed recovery uses `recovering-after-claim`, or `contract-finalization` while waiting. Preparation retains the current generation without manufacturing a consumed approval.
+`closeout_recovery_phase` returns `recovering-private-preparation` for a retained preparation with no claimed approval, irreversible boundary, mutation-recovery requirement, legacy migration or finalized contract proof. Claimed recovery uses `recovering-after-claim`, or `contract-finalization` while waiting. This classifier keeps the stored private-work and consumed-approval cases distinct for retained closeout evidence. Public controls for the retired ordinary kind return the synchronous replacement.
 
 - The current `closeout_generation_retained` boundary implements the preparation contract above. [1]
 - The current `closeout_recovery_phase` boundary implements the preparation contract above. [2]
@@ -66,9 +66,9 @@ No meaningful cross-repository reference applies.
 
 No additional cross-repository evidence applies.
 
-## 260821-CLIVE-L2 Current Contract
+## Recovery Record Evidence
 
-The current source seams include `derive_closeout_recovery_commits`, `require_closeout_recovery_projection`, `closeout_generation_retained`. Recovery projection is derived from exact journaled mutation/finalization evidence and live repository state. Ambiguity retains the same generation and yields an executable control; it is not inferred from queue phase or a broad completion flag.
+The current source seams include `derive_closeout_recovery_commits`, `require_closeout_recovery_projection`, `closeout_generation_retained`. Recovery projection is derived from exact journaled mutation/finalization evidence and live repository state. Bound direct-landing recovery may act on an admitted generation and its exact Git proof. Records of the retired closeout kind remain readable as historical evidence. Queue phase and a completion flag carry no recovery proof.
 
 ### Reconciled Source Evidence
 

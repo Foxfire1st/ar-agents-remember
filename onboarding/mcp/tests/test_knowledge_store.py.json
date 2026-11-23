@@ -212,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
+            "blob": "fb3c2272e5d24ca02331ff792609423b79c238aa",
             "content": "sha256:ab4c000ebb434e9339018678bac61a62e5a6bd96d610521ef2e3883e622b137f",
             "locator": {
               "end": 285,
@@ -257,12 +257,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:e431cc066a9871801abbd8c2909f65c8592b2fd601232848a3e257f99b27ddcc",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:e0f5339047af053e5cde5eb28cacba43cad9bec73f23b3611e781d3c3b5086b0",
             "locator": {
-              "end": 5110,
+              "end": 3597,
               "kind": "line_range",
-              "start": 5106
+              "start": 3580
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:dd29b9575318035917550d8cd687bff9d97bc8f7656afd6847e27186bf2bdcd1",
+            "locator": {
+              "end": 5156,
+              "kind": "line_range",
+              "start": 5153
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -270,7 +283,7 @@
         }
       ]
     },
-    "21": {
+    "23": {
       "note": "The schema pin observes the new generation and verifies table drift refusal.\n\nAnchor: `CURRENT_GENERATION.schema_name`",
       "targets": [
         {
@@ -287,7 +300,7 @@
         }
       ]
     },
-    "22": {
+    "24": {
       "note": "The declared derived table set includes ix_revision.",
       "targets": [
         {

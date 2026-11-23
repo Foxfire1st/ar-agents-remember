@@ -397,7 +397,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+            "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
             "content": "sha256:09ca8abb3bb0cc2c8c8e735571a03c7afdeb83412e1f8011cf77456df0c68ea5",
             "locator": {
               "kind": "symbol",
@@ -749,12 +749,12 @@
         },
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:8dd61413c66954ced6d132211298b59efc8c7075b21c811b020d1ce3acbdc875",
             "locator": {
-              "end": 324,
+              "end": 319,
               "kind": "line_range",
-              "start": 309
+              "start": 304
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -768,6 +768,37 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "147": {
+      "note": "The HTTP Build handler forwards the history that selects planned composition for a blank request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "content": "sha256:e4d997ab0b0bec4730706a3c282ac7e68b2edc63aeceac66ed02965fcc8b6eb1",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/serving/explainer_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:18f3f222dbbe9a7ecbe9dff12e8524755168d8a4163864f5d37caefd926c6605",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 823
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_service.py"
           },
           "kind": "code"
         }

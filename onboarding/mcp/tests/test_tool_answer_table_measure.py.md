@@ -22,7 +22,9 @@ The measured quantity is the final delivered mapping, after the location and the
 
 
 
-- An exact-edge answer is re-guarded after its log location is attached; sparse, repeated-failure and renewed-short-form cases keep cut last with a real saved detail and matching delivered observer counts. [1]
+
+- The guard measures again after attaching the log location at the exact edge. The sparse, repeated-failure and renewed-short-form cases keep the hint last and match the observer to delivered counts. [1]
+
 
 
 

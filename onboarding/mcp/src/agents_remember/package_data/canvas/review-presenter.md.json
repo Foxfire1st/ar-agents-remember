@@ -3,43 +3,17 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Bound candidate checkouts and normal tools",
+      "note": "The installed capability prescribes six private authoring files, followed by the page as the seventh artifact.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
-            "content": "sha256:cea501149935dbcb840cb3e4f9c3392f9db410c581d1a034c99902458cd5cfe5",
+            "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+            "content": "sha256:d833ffc03a155f6506f7af8e0b198adca842a044314493134ce0b71af1ef80f1",
             "locator": {
-              "end": 26,
+              "end": 62,
               "kind": "line_range",
-              "start": 7
+              "start": 27
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "14cd7fb7f3e821a8d6e564d6786cb5b94b498d71",
-            "content": "sha256:02ac2574d063cb897b4baba8ebe681b01c83333f2642bd434a373da051f41e12",
-            "locator": {
-              "end": 93,
-              "kind": "line_range",
-              "start": 68
-            },
-            "path": "mcp/src/agents_remember/canvas/explainer_worktrees.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
-            "content": "sha256:a6e140351db8cc599c9d5d8d4eeb3f83cffb51f927205d393c5e1ec4e273e538",
-            "locator": {
-              "end": 331,
-              "kind": "line_range",
-              "start": 312
-            },
-            "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
           },
           "kind": "code"
         }

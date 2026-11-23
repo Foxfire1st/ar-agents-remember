@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Default listing omits a host category that can contain a legitimate role seat."
+  },
+  "applicability": "Role listings read by the Paseo plugin and the native dashboard bridge.",
+  "conditions": [
+    "The request carries includeBackground on every initial and continuation page.",
+    "Each consumer retains its own filters and completion rules."
+  ],
+  "exclusions": [
+    "This requirement grants no permission to start a background agent."
+  ],
+  "id": "INV-MRV9R9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Worker L10-W5-BACKGROUND and Reviewer L10-F02. dashboard/src/cockpit/paseoHierarchy.test.ts:181–202."
+      ],
+      "path": "L10 curated W6 rules and history"
+    },
+    "handoffEntry": "L10-curated-background-listing",
+    "leaf": "261112-BUG-L10",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every Paseo listing that supplies the AR role catalog, live census or activity reconciliation explicitly requests background agents.",
+  "status": "proposed",
+  "supersedes": []
+}

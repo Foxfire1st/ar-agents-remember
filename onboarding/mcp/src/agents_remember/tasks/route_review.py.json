@@ -21,12 +21,106 @@
     },
     {
       "anchor": {
-        "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+        "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+        "content": "sha256:080e69ff1381cceee99670e9fc370d2be85efd8813d5931dac7b9ff0135f09b4",
+        "locator": {
+          "end": 271,
+          "kind": "line_range",
+          "start": 270
+        }
+      },
+      "id": "RLZ-6ARYXC",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "Route evidence stores only the IDs that warrant the BLOCK.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+        "content": "sha256:635b08677857bac7c8d060d8326816e8fc676af53d916b897bad17d7d95f1b2a",
+        "locator": {
+          "kind": "symbol",
+          "name": "AddedFindingRound"
+        }
+      },
+      "id": "RLZ-6MSJK9",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The persisted model names the round whose verdict an addition reopened and the identifiers it added.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+        "content": "sha256:5b0ad757cd2064edc7ea8e61a66ee813433f90fafb68cbebae7b27e292e1f45d",
+        "locator": {
+          "end": 116,
+          "kind": "line_range",
+          "start": 93
+        }
+      },
+      "id": "RLZ-CM2B8F",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The sanctioned route vocabulary and stored reference keep the source of an added identifier.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+        "content": "sha256:e7319fc6acd6c76a319bc5b23cf0466a4e847d3eac7c826cbd98711db68c74e6",
+        "locator": {
+          "end": 160,
+          "kind": "line_range",
+          "start": 147
+        }
+      },
+      "id": "RLZ-H1PJNJ",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The model records the reopened round separately from counted review history.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+        "content": "sha256:3de7f0c25e24788eee0c7b10822a2aeeb661a71b71ed5faa96f13d1da00bc253",
+        "locator": {
+          "end": 174,
+          "kind": "line_range",
+          "start": 168
+        }
+      },
+      "id": "RLZ-HKAG09",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "ReviewState separates the sealed descriptions, ID-and-route references and amended-round evidence.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
         "content": "sha256:2b63dc4bd23b7c214c53dd58bcdbe6a86ec7684474d276169ceb513a2f5a163b",
         "locator": {
-          "end": 275,
+          "end": 260,
           "kind": "line_range",
-          "start": 271
+          "start": 256
         }
       },
       "id": "RLZ-NS6VWT",
@@ -36,6 +130,44 @@
         "leaf": "260928-MIK-L170"
       },
       "rationale": "The persisted review declares an optional object-ID-shaped baseCommit; an absent stamp remains legacy evidence and supplies no changed-tree exception.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+        "content": "sha256:23326c30eb32aea2eb970f1bc69a47bca2e048b6f8da5f16f8e38b095bde7e3a",
+        "locator": {
+          "end": 287,
+          "kind": "line_range",
+          "start": 287
+        }
+      },
+      "id": "RLZ-PFP38F",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "A BLOCK can be justified by a sanctioned added identifier while preserving prior units.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+        "content": "sha256:06b91dc95cbad6a3db70f68509e5219f953fa9114a17a10b66c272f35b09ed69",
+        "locator": {
+          "end": 318,
+          "kind": "line_range",
+          "start": 315
+        }
+      },
+      "id": "RLZ-TGBY82",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The persisted digest includes added finding IDs when present and preserves older signed shape when the record has no addition.",
       "role": "support"
     },
     {
@@ -58,7 +190,25 @@
     },
     {
       "anchor": {
-        "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+        "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+        "content": "sha256:9992ba28714fd6ce1cec3f5893c128507a59843d3ef92712d2fac0b14e7ce5f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "AddedFindingRef"
+        }
+      },
+      "id": "RLZ-VH78M4",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The persisted route reference relates an existing finding ID to its route and leaves its text in the sealed list.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
         "content": "sha256:b963a9650ea973956f73bae4d1fd5f8d06d994fd6abf2772092395c89aaf232b",
         "locator": {
           "kind": "symbol",
@@ -81,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
             "content": "sha256:50e93ee6d6a95ce3372308f2f3ce9df40517b33a420ab5f076da862e136d3697",
             "locator": {
               "kind": "symbol",
@@ -92,7 +242,7 @@
         },
         {
           "anchor": {
-            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
             "content": "sha256:7f9fc5da30d8d786e759086820d40acf7ca95b7ec2e193c95bf7a104763fec9a",
             "locator": {
               "kind": "symbol",
@@ -103,7 +253,7 @@
         },
         {
           "anchor": {
-            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
             "content": "sha256:1645a2a76bcb3106fb9b53e5eabd8bf7ca382da58edf1228a78d8d991730e892",
             "locator": {
               "kind": "symbol",
@@ -114,12 +264,28 @@
         }
       ]
     },
-    "10": {
+    "12": {
+      "note": "The persisted model validates stamps and omits absent fields in older rounds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
+            "content": "sha256:f9627f286b9dfa9a36436255389dc0c904f24312ce62f9d13a28b75939b1672d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRound"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
       "note": "Explicit verdict controls a memory pass, with remaining findings as the fallback for unstamped verdicts.",
       "targets": [
         {
           "anchor": {
-            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
             "content": "sha256:affe9419807da5b077d2a1fbea03ecfea3bf201f39e810277b25dc765703592d",
             "locator": {
               "kind": "symbol",
@@ -130,12 +296,12 @@
         }
       ]
     },
-    "11": {
+    "14": {
       "note": "The parser returns a bounded printable nonempty verdict reference after trimming.",
       "targets": [
         {
           "anchor": {
-            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
             "content": "sha256:d57260991281326d1ba6518e6716a624ed952926f0fd13b717fdb658c15d02ef",
             "locator": {
               "kind": "symbol",
@@ -151,8 +317,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
-            "content": "sha256:ddfe548280baa89c5f26a4558d8a1a6cff7b163cc470d72f796eb4cc7ab33d51",
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
+            "content": "sha256:1cb866c8bd2c5c40613ba0761617d9d9b4b9ed4c3c0c585694228655b83c6f17",
             "locator": {
               "kind": "file"
             }
@@ -166,8 +332,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
-            "content": "sha256:bd0e6fe4943fbe368d04f63206bc9f889341d54fa1f9b32a6c60a0ad89548662",
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
+            "content": "sha256:6ed63343af3afbd56bb16cd2f0f222463397202e9ab9d04f2f4d1e428a3fbf4b",
             "locator": {
               "kind": "symbol",
               "name": "RouteReviewRecord"
@@ -182,12 +348,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+            "blob": "268fb78a4dd9640215b95691eb653e535db39358",
             "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
             "locator": {
-              "end": 298,
+              "end": 309,
               "kind": "line_range",
-              "start": 225
+              "start": 236
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },
@@ -196,14 +362,14 @@
       ]
     },
     "5": {
-      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
             "locator": {
-              "end": 84,
+              "end": 87,
               "kind": "line_range",
               "start": 23
             },
@@ -218,12 +384,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 297,
+              "end": 312,
               "kind": "line_range",
-              "start": 252
+              "start": 267
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
           },
@@ -236,12 +402,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
-            "content": "sha256:a35cc7994ac91f29d4e7d84585877a28a16f4101e103be5618b6724bac60432b",
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
+            "content": "sha256:3d604efaab6a75d6970dccefc8c8cf10d144b80675fb8a945a35168ed1add23e",
             "locator": {
-              "end": 265,
+              "end": 312,
               "kind": "line_range",
-              "start": 118
+              "start": 142
             }
           },
           "kind": "code"
@@ -253,29 +419,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
             "locator": {
               "kind": "symbol",
               "name": "build_route_review"
             },
             "path": "mcp/src/agents_remember/worktrees/route_review.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The persisted model validates stamps and omits absent fields in older rounds.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
-            "content": "sha256:f9627f286b9dfa9a36436255389dc0c904f24312ce62f9d13a28b75939b1672d",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRound"
-            }
           },
           "kind": "code"
         }

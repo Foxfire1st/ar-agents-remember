@@ -164,29 +164,16 @@
       ]
     },
     "8": {
-      "note": "The production body read uses separate sprint graph-master and addressed ordinary owner/listed-child Order joins; newly read Order inputs are raw-schema-filtered before tolerant parsing.",
+      "note": "The body reader supplies the graph-master lookup and the addressed Order join separately. The Order reader checks the raw schema on the owning master and each newly read listed child before tolerant parsing.",
       "targets": [
         {
           "anchor": {
             "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
-            "content": "sha256:4815eebdb684b29edb9b94d72b89244c3cbf387d070afc5782ba1f1fe6b49ad4",
+            "content": "sha256:efdf8b27e651e85833bb5fe057c74476f33202ea7b8107cdd37f90870df95721",
             "locator": {
-              "end": 171,
+              "end": 214,
               "kind": "line_range",
-              "start": 128
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
-            "content": "sha256:754f347fb7467347aca3d7b6ccdb8f097724a1e58ce211fafc700a2a60490854",
-            "locator": {
-              "end": 194,
-              "kind": "line_range",
-              "start": 174
+              "start": 135
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -195,11 +182,11 @@
         {
           "anchor": {
             "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
-            "content": "sha256:c001db207453a412253909b005914a7740033977baafa0a4ff9d71a6f63eafc8",
+            "content": "sha256:390c20d8eb1169ccdb88d5cbd8d3df0183783f9f2683e40f51c0bd452f73ee1e",
             "locator": {
-              "end": 158,
+              "end": 179,
               "kind": "line_range",
-              "start": 124
+              "start": 137
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_order.py"
           },

@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/README.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture is copied from the installed distribution and is read by the ACP provider test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c7577be5e764b26e524654ae5562cb01f529f7e",
+            "content": "sha256:365345d13ca786d5a250cf0db6cb39b5db64c757c91ad650d3f35de911622edb",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The file map identifies inputs used by ACP discovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c7577be5e764b26e524654ae5562cb01f529f7e",
+            "content": "sha256:e016ecf7dc1a66fc6c34e699cb697a4880e3affef769b095883a83f24ea5994e",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

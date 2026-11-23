@@ -37,7 +37,7 @@ None.
 
 ## Current Contract
 
-ReviewRound records positive round number, finite code/memory kind, whether findings remained when that round was recorded, and optional verdict reference. A memory round can also record `memoryTree`, `recordedBy`, `handedOverBy` and `verdict`. The writer fields validate as `WriterStamp` objects. Older rounds keep their serialized shape by omitting absent fields. An explicit `block` remains blocked even with no outstanding findings. Only a legacy round without a verdict can infer a pass from having no remaining findings. A verdict reference qualifies only as nonempty printable text within the reference bound after trimming. ReviewState gains a default-empty recordedRounds list; its existing baseline/remaining and approval consistency checks remain. MemoryReviewState is an Annotated ReviewState with an after-validator refusing any recorded row whose kind is not memory. Complete ordered history is checked by review_count_unavailable at counting time, not guaranteed by this list declaration; legacy records are not backfilled or reinterpreted. Each lane shares the same settings-limit/extra-round protocol without sharing a counter or baseline.
+ReviewRound records positive round number, finite code/memory kind, whether findings remained when that round was recorded, and optional verdict reference. A memory round can also record `memoryTree`, `recordedBy`, `handedOverBy` and `verdict`. The writer fields validate as `WriterStamp` objects. Older rounds keep their serialized shape by omitting absent fields. An explicit `block` remains blocked even with no outstanding findings. Only a legacy round without a verdict can infer a pass from having no remaining findings. A verdict reference qualifies only as nonempty printable text within the reference bound after trimming. `ReviewState` keeps a default-empty `recordedRounds` list and its baseline, remaining-finding and approval consistency checks. A sanctioned addition records its amended round in `addedFindingRounds` without appending a counted row. The finding description lives in `baselineFindings`, and each `AddedFindingRef` in `addedFindings` stores the finding ID and its route. A blocking `RouteReviewRecord` can name the added findings in `addedFindingIds` while preserving prior route units. MemoryReviewState is an Annotated ReviewState with an after-validator refusing any recorded row whose kind is not memory. Complete ordered history is checked by review_count_unavailable at counting time, not guaranteed by this list declaration; legacy records are not backfilled or reinterpreted. Each lane shares the same settings-limit/extra-round protocol without sharing a counter or baseline.
 
 
 The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
@@ -50,9 +50,9 @@ RouteReviewRecord adds optional baseCommit with the same object-ID shape as cand
 
 ## Evidence
 
-- The persisted model validates stamps and omits absent fields in older rounds. [9]
-- Explicit verdict controls a memory pass, with remaining findings as the fallback for unstamped verdicts. [10]
-- The parser returns a bounded printable nonempty verdict reference after trimming. [11]
+- The persisted model validates stamps and omits absent fields in older rounds. [12]
+- Explicit verdict controls a memory pass, with remaining findings as the fallback for unstamped verdicts. [13]
+- The parser returns a bounded printable nonempty verdict reference after trimming. [14]
 
 
 - The route record carries the optional base stamp and keeps all-or-nothing digest coherence. [3]

@@ -2,8 +2,8 @@
 
 AR's design process, in its memory layer's `system/design-guidelines.md`. It says how design work
 is done and checked, and where the design files are. It holds no colours, sizes, fonts or
-component looks. It steers the look only: it cannot change what an agent may read, write or
-start, the rules of evidence, or a page's isolation.
+component looks. It governs visual treatment, layout and interaction. The explainer capability
+governs the essay, the explanation's content, the authoring stages, evidence and isolation.
 
 The coder reads it before the first UI edit, the explainer before it builds a page, and the
 Reviewer before it judges either.
@@ -16,7 +16,7 @@ They sit beside this file in `system/`:
   the element-to-token mapping, measures, density, states, control patterns, widths, and what the
   dashboard owes the explanation frame. The engine-room pod stage keeps
   `dashboard/public/_proto/DESIGN.md`.
-- **`TREATMENT.md`:** how the review explainer's pages look, read, move and respond.
+- **`TREATMENT.md`:** presentation of the explainer's essay and supporting figures.
 - **`TECHNIQUES.md`:** the explainer's technique table, with numbers, still forms and status.
 
 The product ships examples of all four for guidance. Nothing falls back to them.
@@ -35,8 +35,8 @@ Your own taste comes last. An approved reference wins over taste, a newer idea a
 way". Where two sources disagree, follow the higher one and name the difference in your report.
 Where the look is open and no reference exists, draw the states first and get them approved.
 
-For an explanation page, the comparison is the material: its hunks, records, trees and call chain
-are what the figures draw.
+Ground any chosen figure in the bound material. For a recorded comparison, use its hunks, records,
+trees and call chain. For a planned binding, use the bound code and the stated intended effects.
 
 ### Before The First Edit
 
@@ -59,19 +59,16 @@ are what the figures draw.
 - Take every colour, size and spacing from the tokens; no raw values outside the token files.
   A valid token can still be wrong (a muted grey where the reference draws the added colour); the
   mapping table catches that, not a linter.
-- Copy the content's shape: lines per item, what is cut with an ellipsis, what opens in place,
-  which help text is present, how wide prose runs next to code.
+- Follow the reference for type, width, and the behavior of expansions and excerpts. Keep the
+  complete explanation readable in the page.
 - For comparison shots keep the reference's data, fonts, viewport and state, animations off.
 
 ### Explanation Pages
 
-The explainer reads `TREATMENT.md` and `TECHNIQUES.md` before it builds. It plans the page around
-the task's objective and what actually happened: the requirement in its packet and the reports in
-`notes/reference/<leaf>/`, with the code and records as grounding. Then it plans the figures: the
-outcome and the story in motion, and in "How it works" at least one figure the reader drives, from
-the table's default rows and this task's material. Claims, code lines and figure nodes are linked,
-and the still form is in the markup. When it needed a technique the table lacks, or a number did not hold, it proposes a row in
-its report.
+Use `TREATMENT.md` and `TECHNIQUES.md` to present the completed essay. Choose a figure only
+where it helps an essay part. Link claims to their code and link figure nodes where they exist.
+Keep the full explanation in the markup and provide a still form for each moving figure.
+Propose a missing technique or a corrected number in the report.
 
 ### Check In The Browser: Look, Then Operate
 
@@ -94,13 +91,13 @@ whether a control explains anything.
    motion ends on a final state.
 2. **By keyboard alone.** Tab reaches it with a visible focus ring; its keys work (←, →, Space,
    Home, End, Escape); focus is never lost or trapped.
-3. **With reduced motion** (`prefers-reduced-motion: reduce` emulated): every control still works,
-   nothing animates, every figure shows its still form.
+3. **With reduced motion** (`prefers-reduced-motion: reduce` emulated): each figure shows its
+   still form, and the controls available in that form work.
 4. **Narrow,** at 560 and 390px: nothing scrolls sideways, controls stay usable.
 5. **Before script runs:** the markup holds the same content.
 
-For an explanation page, ask after operating it: do I now understand the change better than from
-the diff? A figure that shows only what one sentence would is a finding.
+For an explanation page, read the full explanation with motion off. Check that each figure
+helps the reader follow the part of the essay it supports.
 
 The explainer operates its page with what its tools give. Where they give only a load and a
 picture, it reads the picture and names in its report the controls, widths and forms it could not
@@ -135,12 +132,11 @@ are not proof.
 - **Operation.** It operates every control by pointer and keyboard, with reduced motion and at
   narrow width. A control that fails, traps focus, shifts content under the reader or lacks a
   still form is a finding.
-- **Explains through interaction.** On an explanation page, "How it works" has a figure the
-  reader drives, built from this comparison and not a generic illustration; each control answers
-  a question and agrees with the code it cites; claims, lines and figures link both ways; there
-  is no claim list; a figure drawn from code says so, a model is marked as reading. A page that
-  reads as a static report, or that restates the records instead of explaining what happened and
-  how the objective was reached, is a finding.
+- **Explanation pages.** The essay carries the explanation and its evidence. A supporting figure
+  serves its essay part and uses the bound evidence. Check that each control answers a question,
+  links agree with the cited material, code-derived figures are identified, models are marked as
+  the explainer's reading, and still forms work. Check that the essay explains what happened or is
+  intended and how it relates to the objective.
 - **Readouts** trace to the reference, not the implementation. **Reuse:** no second control for
   one job. **Tokens:** no raw values. **Baselines:** none changed without approval.
 

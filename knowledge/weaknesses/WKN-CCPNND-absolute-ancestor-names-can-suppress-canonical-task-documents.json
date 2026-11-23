@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+    "content": "sha256:b444bfc0e17bbb24e51f12e2b69917923f556ac8e743bfabd843544268e5861f",
+    "locator": {
+      "kind": "symbol",
+      "name": "_outside_archive_and_enclosures"
+    },
+    "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
+  },
+  "id": "WKN-CCPNND",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "W4-curator-ingest.json"
+    },
+    "handoffEntry": "task-document-ancestor-filter",
+    "leaf": "261112-BUG-L17",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261112-BUG-L17"
+  },
+  "state": "open",
+  "statement": "The absolute ancestor exclusion can suppress all canonical task documents when their coordination root itself lies under a directory with an excluded archive or enclosure name."
+}

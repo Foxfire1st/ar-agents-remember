@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The pane presents model choices separately from feature replies so a model stays startable under its defaults when the host does not answer its options lookup."
+  },
+  "applicability": "A new dashboard role Start from available model inventory with pending or nonfresh selected-model options.",
+  "conditions": [
+    "The selected pair remains in the current or matching saved inventory.",
+    "The Start payload retains the selection and omits explicit feature values until the pair has a fresh feature answer."
+  ],
+  "exclusions": [
+    "An exact saved Retry retains its earlier values. Existing selection and receipt eligibility checks still apply."
+  ],
+  "id": "INV-1DBF74",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Mounted unavailable-options and effort provenance tests and the W5 pinned route outage. CUR-F01 guide-to-source comparison and current mounted tests."
+      ],
+      "path": "W6-curator-ingest.json"
+    },
+    "handoffEntry": "BUG-R19@v1 item 5",
+    "leaf": "261112-BUG-L19",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Model and receipt metadata remain usable with unavailable options, and a new Start can omit explicit feature values.",
+  "status": "proposed",
+  "supersedes": []
+}

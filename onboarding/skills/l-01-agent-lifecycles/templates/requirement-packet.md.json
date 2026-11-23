@@ -1,13 +1,33 @@
 {
   "path": "skills/l-01-agent-lifecycles/templates/requirement-packet.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "30a26103be98f89ca9fa2f7bc460e4c83ab7af86",
+        "content": "sha256:84a2c57a15b4552baedcdd1738366a4102cee0a7d45e3040310bccc7990044ba",
+        "locator": {
+          "end": 67,
+          "kind": "line_range",
+          "start": 65
+        }
+      },
+      "id": "RLZ-WQ6NP4",
+      "invariant": "INV-KVQ91Z",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §1",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The packet template is the only place a requirement author writes the section, so the section's definition and its effect live here.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Authors read the prose-field rules before authoring and the planning operation before seeking approval.",
       "targets": [
         {
           "anchor": {
-            "blob": "0703cbf578f34255c7ca8de57b5cb4ce4419e222",
+            "blob": "30a26103be98f89ca9fa2f7bc460e4c83ab7af86",
             "content": "sha256:0991f52aeb84c541edc0814bdd85de3532607c4d08da254014610163a24b5e8a",
             "locator": {
               "end": 7,
@@ -24,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0703cbf578f34255c7ca8de57b5cb4ce4419e222",
+            "blob": "30a26103be98f89ca9fa2f7bc460e4c83ab7af86",
             "content": "sha256:93d01fdae0a2d421c3e8481c189f8d42279878f67f35d166aa6bd211121c6110",
             "locator": {
               "end": 17,
@@ -41,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0703cbf578f34255c7ca8de57b5cb4ce4419e222",
+            "blob": "30a26103be98f89ca9fa2f7bc460e4c83ab7af86",
             "content": "sha256:fe308e282e58063976feba777a0fc12e1741c7a586c6f9159c7274551006ff85",
             "locator": {
               "end": 21,
@@ -58,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0703cbf578f34255c7ca8de57b5cb4ce4419e222",
+            "blob": "30a26103be98f89ca9fa2f7bc460e4c83ab7af86",
             "content": "sha256:8d6435be6d8d64589c056773d61923d91db5938bebddd2da67640c77a92a8573",
             "locator": {
               "end": 59,

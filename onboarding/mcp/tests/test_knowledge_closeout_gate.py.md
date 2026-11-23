@@ -10,8 +10,7 @@
 route (18 top-level test definitions and 1,361 physical source lines by static inspection, not fresh pytest collection).** The fixture is a converted leaf on real Git repositories: two invariants of
 one family (`INV-AAAAAA` with entries on `land` and `keep` in `pkg/a.py`, `INV-BBBBBB` with `sibling` in `pkg/b.py`),
 the official `main` line in both repositories and the leaf's own `leaf` branches, so the parent line's memory tip and
-the leaf's own memory commits are different commits. Registered in the `unit-regression` lane
-(`test-evidence-lanes.toml:220`). The fixture world is module-local, by the dependency-ownership census's rule (a
+the leaf's own memory commits are different commits. The fixture world is module-local, by the dependency-ownership census's rule (a
 separate support module was an unregistered evidence artifact on the worker's first integration run);
 `test_knowledge_gate_routes.py` imports it.
 
@@ -53,7 +52,8 @@ separate support module was an unregistered evidence artifact on the worker's fi
   10. `test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal`.
   11. `test_record_landing_checks_the_landed_memory_commit_is_closed_and_valid`: not closed, closed, no commit named,
       a marker violation, and an earlier leaf commit judged new.
-  12. `test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale`.
+  12. `test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale`. The case
+      calls the shared integration gate with `worktree_integrate` and checks the exact stale-entry refusal.
       `test_a_task_closeout_refuses_a_stale_entry_at_a_path_the_task_changed` uses the same entry-currentness rule: a changed path refuses with `RLZ-A00001`, and re-anchoring removes that stale-entry finding.
   13. `test_an_insertion_only_hunk_is_linked_only_by_a_candidate_range`: K_C drops `RLZ-A00001` and a line is inserted
       inside `land`; the hunk (0 old lines) is unlinked and raises `unexplained_hunk` (the L10 N3 carry).
@@ -104,16 +104,19 @@ No configured live documentation source was available for this pass.
 
 
 
-- Direct, record, master and checkpoint landing. [7]
+
+- The direct landing case checks history closure and restoration after refusal. The record landing case checks open and closed attributed memory, a missing commit, and the admission and marker refusals. The shared integration gate case supplies worktree_integrate and checks stale-entry refusal and the maintenance re-anchor. [7]
 
 
-- Insertion-only hunks link only by candidate ranges; ordinary unconverted leaf/landing/record and direct-closeout guards refuse before movement. [8]
 
+- Insertion-only hunks can link through candidate ranges. The test removes that candidate entry and expects an unlinked hunk and an unexplained-hunk item. The unconverted fixture exercises legacy-format refusals at the leaf, landing, record and direct-closeout guards. The direct case also compares the memory objects and checkout status before and after refusal. [8]
 
 
 - The memo and the approval state. [9]
 
-- The memo key names the parent tip and the leaf's memory HEAD. [12]
+
+- The memo key carries the parent memory tip and the leaf memory HEAD. The test supplies those two commits and checks reuse of the remembered verdict. [12]
+
 
 
 ### Cross-Repo References
@@ -129,6 +132,5 @@ No cross-repo boundary is crossed by this file.
 - Rule 2 examples: a new edit reopens four items, including source-bound file/route traces. [3]
 - New invariants, recompute, incomplete runs and registry dispatch; added R53 predicate assertions cover source/membership/record currency. [4]
 - The closeout validator and the closeout memory commit. [6]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_closeout_gate.py` (`mcp/tests/test-evidence-lanes.toml:223`). [10]
 - The closeout test answers the code commit's items with recomputed source-bound trace rows, then checks closure/restore and reaching the mutation seam, not a successful product memory commit. [11]
-
-- The unit-regression lane selects mcp/tests/test_knowledge_closeout_gate.py. [10]

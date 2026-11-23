@@ -46,12 +46,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
             "content": "sha256:43f269df00d9ef052f3ab56bbb71a262b6af7e19aa21ca26c3b9eb94729a97a1",
             "locator": {
-              "end": 830,
-              "kind": "line_range",
-              "start": 799
+              "kind": "symbol",
+              "name": "_build_doc"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

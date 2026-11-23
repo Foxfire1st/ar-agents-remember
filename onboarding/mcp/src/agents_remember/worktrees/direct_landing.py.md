@@ -99,8 +99,8 @@ No new file-local follow-up is established by this documentation pass.
 
 ## Evidence
 
-- Direct apply captures review eligibility before memory writes, closes the selected owner history and judges the resulting tree. [15]
-- Review proof is read before direct landing mutates the checkout and passed to the deferred closing. [16]
+- Direct apply captures review eligibility before memory writes, closes the selected owner history and judges the resulting tree. [17]
+- Review proof is read before direct landing mutates the checkout and passed to the deferred closing. [18]
 
 ### Docs References
 
@@ -116,7 +116,9 @@ References 3, 5 and 6 below are re-authored for the current retained-record retr
 
 
 
+
 - Memory admission captures the prepared content snapshot and typed candidate (since MIK-R09 in `_operation_candidate`, after the gate's closing). [8]
+
 
 
 

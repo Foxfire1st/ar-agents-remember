@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
+            "blob": "fb3c2272e5d24ca02331ff792609423b79c238aa",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 729,
+              "end": 730,
               "kind": "line_range",
-              "start": 729
+              "start": 730
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -38,16 +38,16 @@
       ]
     },
     "11": {
-      "note": "The lifecycle catalog lists `test_lifecycle_playthrough_end_to_end.py` among the exact consumers of `checkpoint_landing_test_support.py`, `curator_coherence_test_support.py`.",
+      "note": "The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:2f3b8b92b3c0f7ebc7f8f27ac48d4eeea690794b09866d6c8909aa2573940f58",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 1074,
+              "end": 463,
               "kind": "line_range",
-              "start": 1048
+              "start": 463
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -55,12 +55,51 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:0f24c4166f46965968befb971063c64e003f82ba2c84b9cac9a0f615d01f98fe",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 1329,
+              "end": 1069,
               "kind": "line_range",
-              "start": 1162
+              "start": 1069
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "locator": {
+              "end": 1246,
+              "kind": "line_range",
+              "start": 1246
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "locator": {
+              "end": 2883,
+              "kind": "line_range",
+              "start": 2883
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "locator": {
+              "end": 5015,
+              "kind": "line_range",
+              "start": 5015
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -91,12 +130,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
+            "blob": "fb3c2272e5d24ca02331ff792609423b79c238aa",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 729,
+              "end": 730,
               "kind": "line_range",
-              "start": 729
+              "start": 730
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -138,7 +177,7 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
             "locator": {
               "kind": "symbol",
@@ -357,12 +396,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:980429e4753b3c8bd7ecfdfe4ffadb167777df946b14c5ecfd9baab41af036ab",
             "locator": {
-              "end": 301,
+              "end": 300,
               "kind": "line_range",
-              "start": 291
+              "start": 290
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -370,12 +409,12 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:58f4385dd8a54f1066b3f4c7c57e4760a04bccd63b0e08f67e823fca5a6697cc",
             "locator": {
-              "end": 426,
+              "end": 425,
               "kind": "line_range",
-              "start": 372
+              "start": 371
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -383,12 +422,12 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:f524fb0a4af91d49a9f2a190ba0fbc7cbcf3c6240692cc4ebcf270a8453e274e",
             "locator": {
-              "end": 517,
+              "end": 516,
               "kind": "line_range",
-              "start": 488
+              "start": 487
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -396,12 +435,12 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:5caa2fd4b80b799d259e220611950e40350c6c539473cca268e8ff9aa6bebc89",
             "locator": {
-              "end": 458,
+              "end": 457,
               "kind": "line_range",
-              "start": 458
+              "start": 457
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

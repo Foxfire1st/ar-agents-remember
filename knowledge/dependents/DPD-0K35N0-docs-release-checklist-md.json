@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a22c7df6c018aab4895457381d8a83779d5de69c",
-    "commit": "993e5d8a2b54cbd1432b901bc7b6a4630226bebd",
+    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
+    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The release checklist names instruction renewal and the hook check while retaining the separate release upload, index and installation responsibilities implemented by the candidate. The synchronized3.0.2 release changes the pyproject and kernel-version support identities, not the checklist procedure.",
-    "task": "261112-BUG-L8",
+    "statement": "The host release checklist still names the synchronized host and SDK pins, the whole-lock renewal and the separate browser-contract checks for the pinned build.",
+    "task": "261112-BUG-L10",
     "uncommitted": true
   },
   "document": "docs/release-checklist.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,12 +36,12 @@
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     },
     {
-      "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "6c35df665ffac7bf152c3badf993d303ed12c451",
+      "blob": "c02d5f6f0d5ffd938a425723eb62783233464520",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/version.py"
     },
@@ -51,27 +51,27 @@
       "path": "scripts/check-host-contract.py"
     },
     {
-      "blob": "6463b43ab293f7d1e7cb525891b1e346d2e8f98c",
+      "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
     },
     {
-      "blob": "bc4857ecc21c177ccbe282d9fcd560a3826b571c",
+      "blob": "83a6eb8464ac8bd4bfd7289c664547428826fc76",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_host/package.json"
     },
     {
-      "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+      "blob": "f224ffcf1d5608abef82e563ccd322a49e357d56",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json"
     },
     {
-      "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+      "blob": "a177f6756918a653e0e66dfba2167a2c620413fb",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
     },
     {
-      "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+      "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
     },
@@ -91,12 +91,12 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/page.ts"
     },
     {
-      "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+      "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
     },
     {
-      "blob": "61f51e32545075f0c3a400773e296c06920f7044",
+      "blob": "24e8d0fea6b826394b656b7aa5bce3993d5eabbe",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
     },
@@ -111,7 +111,7 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/start.ts"
     },
     {
-      "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+      "blob": "527bea1216f068c31565a638ad3b095eadbcc37a",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py"
     },

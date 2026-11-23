@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+        "blob": "2cc4102fc9005b89c8d955d038b446040ff7e520",
         "content": "sha256:159b6cd49e24246db8e8c0f03357b879647ce85dee5324c27af8bd7e84465114",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "blob": "2cc4102fc9005b89c8d955d038b446040ff7e520",
             "content": "sha256:73b6c0c46e8dd8ffe603625162c9210b1e6323a65f7070dbf104b1c316697c56",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "blob": "2cc4102fc9005b89c8d955d038b446040ff7e520",
             "content": "sha256:159b6cd49e24246db8e8c0f03357b879647ce85dee5324c27af8bd7e84465114",
             "locator": {
               "kind": "symbol",
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "blob": "2cc4102fc9005b89c8d955d038b446040ff7e520",
             "content": "sha256:3ac2c0a81353931739c8162d50c5efee18a81d5ca2b540c47894c5e36c3049b0",
             "locator": {
               "kind": "symbol",
@@ -70,15 +70,16 @@
       ]
     },
     "4": {
-      "note": "The archivability proof combines the terminal, retry, worker, mutation and publication checks.",
+      "note": "Terminal evidence checks the stored outcome and terminal disposition.",
       "targets": [
         {
           "anchor": {
-            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
-            "content": "sha256:73af55703b4185ddf41e4d23225538a143fa26ec2918f3d77cf386200e4c1220",
+            "blob": "2cc4102fc9005b89c8d955d038b446040ff7e520",
+            "content": "sha256:7ddbc9be9c99dc55e6fe583433955b0b8dced0c2847593c4f63873758d292a36",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_archivable_operation"
+              "end": 208,
+              "kind": "line_range",
+              "start": 198
             }
           },
           "kind": "code"
@@ -90,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "blob": "2cc4102fc9005b89c8d955d038b446040ff7e520",
             "content": "sha256:8f280956a4c54e3e7bf29c4c4f73ae4b4095a8c3b4f15db4eec11cad838ee3d7",
             "locator": {
               "kind": "symbol",

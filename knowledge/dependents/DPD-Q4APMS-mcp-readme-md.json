@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
-    "statement": "The package README's Knowledge tool list still matches the registered tool names because writers is a view within knowledge_read, and the server's definition scope changes no registrations.",
-    "task": "261112-KNO-L3",
+    "statement": "The MCP package README still names the tool groups for the 44-tool ordinary roster and bound explainer extras and points to the updated Tool answers reference.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
     {
-      "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+      "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "73762fd57ea1208ba1c2a8fe6999f52290f62b4d",
+      "blob": "e0f70f991c3b38c1dbc9f586c0c6b70303b451cd",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

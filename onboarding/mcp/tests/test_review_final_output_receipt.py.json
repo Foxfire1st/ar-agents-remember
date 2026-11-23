@@ -4,15 +4,28 @@
   "realizes": [],
   "references": {
     "19": {
-      "note": "`TreeReceiptFixture` supplies the current fixture or assertion described above.",
+      "note": "The fixture initializes separate temporary code and memory Git repositories, binds a leaf contract and supplies the comparison and commit-pair helpers.",
       "targets": [
         {
           "anchor": {
             "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
-            "content": "sha256:3ad7e4b59069321bbb7137bd8380813a68e60273f8605b040319ac41066be6fd",
+            "content": "sha256:d67382ff3a6360e89c3e3702b9cbfe96f05e90e8ee7e5fda48a58c2b4a434be7",
             "locator": {
-              "kind": "symbol",
-              "name": "TreeReceiptFixture"
+              "end": 97,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:fcc81cadf6a8e8df8110424e5ee53afa003c40ffe79f5b2bf168b68c388a1bfb",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 101
             }
           },
           "kind": "test"
@@ -20,7 +33,7 @@
       ]
     },
     "20": {
-      "note": "`test_receipts_bind_both_delivered_trees_and_keep_both_result_keys` supplies the current fixture or assertion described above.",
+      "note": "The case attaches closeout and integration receipts to supplied completion results and reads them back. Both receipt blocks bind to the reviewed pair.",
       "targets": [
         {
           "anchor": {
@@ -94,16 +107,29 @@
       ]
     },
     "24": {
-      "note": "The lifecycle catalog lists `test_review_final_output_receipt.py` as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`.",
+      "note": "The unit-regression lane selects `mcp/tests/test_review_final_output_receipt.py`. The lifecycle catalog lists `mcp/tests/test_review_final_output_receipt.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:e2a8e4c31fb4ca6af5072c937e5a80c93c070373bc33e66e37f9bc594c785241",
+            "blob": "fb3c2272e5d24ca02331ff792609423b79c238aa",
+            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
             "locator": {
-              "end": 886,
+              "end": 497,
               "kind": "line_range",
-              "start": 65
+              "start": 497
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
+            "locator": {
+              "end": 665,
+              "kind": "line_range",
+              "start": 665
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -111,12 +137,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:f949d4a324dbc44d81a8d069eb004a8da1c07c67afe1e35b58cc0af412851b62",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
             "locator": {
-              "end": 3272,
+              "end": 3085,
               "kind": "line_range",
-              "start": 2451
+              "start": 3085
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

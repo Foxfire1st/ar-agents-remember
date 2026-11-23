@@ -26,9 +26,9 @@
   blanket no-base exemption. Retired families raise nothing.
 - **Suggestion.** Five parametrised collapse cases (siblings collapse into a parent of only family code; no collapse when the parent holds other code; a directory under another is covered; collapsing repeats; never the root) and the root-route case.
 - **Actual carried debt in the pins (MIK-R53 superseding the L27 report-only premise).**
-  Positive coverage/non-empty/root-route fixtures now supply explicit bases so live legacy debt is
-  genuinely carried, not newly introduced by a no-base run. That incomplete migration reports
-  `LEGACY_COUNT`; standalone conversion also reports the debt it authors. New debt at other routes
+  The root-coverage and inherited route-unassigned cases supply explicit bases. The standalone
+  root Non-empty control supplies no base and asserts only `LEGACY_COUNT`. The conversion
+  fixture also reports the legacy count. New debt at other routes
   refuses, and migration-complete carried debt refuses. The historical L06/L27 landing-order re-pin
   requirement explains the old pins, not permanent report-only permission for every fixture.
 - **Command.** `test_the_routes_command_offers_the_suggestion_and_writes_nothing` runs `knowledge-routes` in text and JSON mode, checks `unknown family: <ID>`, and asserts the memory bytes are unchanged.
@@ -69,7 +69,9 @@ The cases and their helpers.
 - The Doc14 family example validates, and a proof is not a location. [1]
 
 
-- Coverage and Non-empty violations name the family, the route and the path. [2]
+
+- The coverage refusal names the family and the uncovered realization path. The non-empty refusal names the family and the empty route. [2]
+
 
 
 - One broad route passes; the suggestion offers local routes. [3]
@@ -90,15 +92,19 @@ No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
 
-- Based root-route fixtures pin coverage/non-empty and only carried incomplete legacy-debt reporting; not a no-base pass. [5]
+
+- The based root-route case covers a root-level realization. A separate root-only fixture checks non-empty, and a based fixture reports inherited route-unassigned debt for an unassessed export. [5]
 
 
 - Current unrealized-family off-merge refusal/sync reporting, actual carried route-unassigned debt and the retired exemption. [6]
 
 
-- Current source delta inspected statically: Repair route/debt/writer reporting and based controls; retain root routes, waivers and retired exemption. [10]
+
+- The route tests distinguish ordinary refusal from merge reporting. They also check writer-reported rule membership, root-route coverage, carried route-unassigned debt and the retired-family exemption. [10]
 
 
-- Nested-route refusal, one state computation per fixture family/validation and explicit routes-command difference output are source assertions. [11]
+- The nested-route cases include a root route plus its descendant. Separate cases count one route-state computation for the fixture family and assert the routes-command differences. [11]
+
+
 
 - The unit-regression lane selects mcp/tests/test_knowledge_family_routes.py. [9]

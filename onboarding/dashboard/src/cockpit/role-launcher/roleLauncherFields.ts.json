@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/roleLauncherFields.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared field uses a grid wrapper. The two override variants have the same shrink factor, with different caps and wide-viewport minimum widths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69a36394176730f9d376d1eb74e1575c4e7f68b4",
+            "content": "sha256:833e296b6f4897f48e10ac55dcbb3565c6ecdf7716775914314b67acd22d183f",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The row wraps its child controls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
+            "content": "sha256:1b82c274556b2944144ea73674c31503477db1b7786ae43f615e1ee735c9f4c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleLauncherGrid"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

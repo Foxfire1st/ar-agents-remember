@@ -19,7 +19,7 @@
       ]
     },
     "2": {
-      "note": "Claim admission requires the exact first-ready waiting generation.",
+      "note": "The retained helper checks the exact first-ready waiting generation of a current projection.",
       "targets": [
         {
           "anchor": {

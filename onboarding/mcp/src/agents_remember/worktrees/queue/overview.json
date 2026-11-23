@@ -116,8 +116,21 @@
       ]
     },
     "3": {
-      "note": "Canonical publication precedes projection refresh; exact-current publication and first-ready admission do not give projection rows lifecycle authority.",
+      "note": "Canonical task and door publication precedes projection refresh. The retained first-ready helper can check projection readiness. The synchronous closeout owner separately admits and executes its transaction.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
@@ -147,26 +160,13 @@
         {
           "anchor": {
             "blob": "b814692a49df324c2495b8abf40a050f54a211f5",
-            "content": "sha256:73986e8b7566352a49296c5493a85577e6e0ad1a30237b723bb1038d84e2d24c",
+            "content": "sha256:e0ae72499313b59100e494c69b7b7dc007c75dfc188eb4aa6515ba66ae752779",
             "locator": {
               "end": 113,
               "kind": "line_range",
-              "start": 33
+              "start": 86
             },
             "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
-            "content": "sha256:d38a4c8dcfb39ba470cd1a06757edff9f2c1a403d8015d9afbbca40fd82f8817",
-            "locator": {
-              "end": 478,
-              "kind": "line_range",
-              "start": 372
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
           },
           "kind": "code"
         },
@@ -493,7 +493,7 @@
         }
       ]
     },
-    "7": {
+    "8": {
       "note": "Recovery derives the no-pass sentence only after finding the exact recorded memory output.",
       "targets": [
         {

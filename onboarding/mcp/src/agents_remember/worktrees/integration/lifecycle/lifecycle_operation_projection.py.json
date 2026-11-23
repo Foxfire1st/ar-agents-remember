@@ -1,17 +1,49 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+        "content": "sha256:b746baef64c849c8873d2ccba5246b3f25d22f3a60a05aaabe73407a84e8bcaf",
+        "locator": {
+          "kind": "symbol",
+          "name": "_retired_journal_components"
+        }
+      },
+      "id": "RLZ-TNGWTY",
+      "invariant": "INV-5QFWCA",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 3",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Projects stored evidence while suppressing live execution advice.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
-      "note": "`_operation_specific_projected_result` projects initial-door and direct-landing evidence without ledger decisions.",
+      "note": "The live direct route projects its saved result and current action. Retained closeout and integration rows expose historical result and evidence for inspection.",
       "targets": [
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
-            "content": "sha256:02733c3c2502bbc568aff0a43397e7827a47df13570b0142dd1fcb92fbb8431f",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+            "content": "sha256:c79666a2bddf67e22c8ad7dcb2e770b00a6011ac78babc0e274ea311b5d513ed",
             "locator": {
-              "kind": "symbol",
-              "name": "_operation_specific_projected_result"
+              "end": 495,
+              "kind": "line_range",
+              "start": 478
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+            "content": "sha256:b746baef64c849c8873d2ccba5246b3f25d22f3a60a05aaabe73407a84e8bcaf",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 267
             }
           },
           "kind": "code"
@@ -19,11 +51,11 @@
       ]
     },
     "2": {
-      "note": "`_recommended_control` orders legal recommended controls without creating new authority.",
+      "note": "`_recommended_control` selects an already projected legal action.",
       "targets": [
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
             "content": "sha256:54f8bd8273c4887568eeb5b2e5a73023e75fa3dbb038414be0625282535618c6",
             "locator": {
               "kind": "symbol",
@@ -35,11 +67,11 @@
       ]
     },
     "3": {
-      "note": "Missing-intent blocking, the public unavailable override, and cancellability. (`legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable`)",
+      "note": "The unavailable override explains missing intent. The cancellable flag requires available intent, a present contract and an exact cancel control.",
       "targets": [
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
             "content": "sha256:52f0f3dc45ab8ac3dc6c1bc3e0ffba614c902488c73667136343ad6a394b2e8c",
             "locator": {
               "kind": "symbol",
@@ -50,7 +82,7 @@
         },
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
             "content": "sha256:9bf29f6c8512e4dc5fb2900a0978a7dc56fa04261c6abca9ee712eeea93fc79e",
             "locator": {
               "kind": "symbol",
@@ -62,26 +94,29 @@
       ]
     },
     "4": {
-      "note": "Exit-proven cancellation-pending state keeps its cancel surface. (`_exit_proven_cancellation_pending`; `_general_projected_result`)",
+      "note": "An eligible direct termination-required row may offer exact cancel, derived from the direct control predicate.",
       "targets": [
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
-            "content": "sha256:3ac29a17bd9a84056fc1e3337bf20cb3916215ee2cb068339bc2855e701dd578",
+            "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+            "content": "sha256:9484d946d88e820406e4ebfd0d88e165685e1ec599af602227e22b3cc64d4da7",
             "locator": {
-              "kind": "symbol",
-              "name": "_exit_proven_cancellation_pending"
-            }
+              "end": 82,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
-            "content": "sha256:ae51309ad9c3f3dcbeca6081a1118d8af80ce2580ea9535d0d6013f4eb0e773a",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+            "content": "sha256:9bfa2df54c72aee29083f198df1e3ee792c3f9d36878c4518b547e11e185b8e2",
             "locator": {
-              "kind": "symbol",
-              "name": "_general_projected_result"
+              "end": 369,
+              "kind": "line_range",
+              "start": 343
             }
           },
           "kind": "code"
@@ -93,11 +128,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
-            "content": "sha256:256e3d0b6cfca5d9a199c7c249a0165c5056f2d227559f337b180fb5a668fd9c",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+            "content": "sha256:286df4ebbafd9423ca3259589e1e9cc43772e6187843559ef208a746d42ef2b7",
             "locator": {
-              "kind": "symbol",
-              "name": "_coherent_operation_projection"
+              "end": 205,
+              "kind": "line_range",
+              "start": 153
             }
           },
           "kind": "code"
@@ -109,11 +145,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
-            "content": "sha256:256e3d0b6cfca5d9a199c7c249a0165c5056f2d227559f337b180fb5a668fd9c",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+            "content": "sha256:286df4ebbafd9423ca3259589e1e9cc43772e6187843559ef208a746d42ef2b7",
             "locator": {
-              "kind": "symbol",
-              "name": "_coherent_operation_projection"
+              "end": 205,
+              "kind": "line_range",
+              "start": 153
             }
           },
           "kind": "code"
@@ -125,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
             "content": "sha256:7a3ba2db068f2c38f27736f0ca4b9fd99ec0ee6814b7e670607ed30074098a08",
             "locator": {
               "kind": "symbol",
@@ -141,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "blob": "038a743d781b2cba2f0a95dc584a0494a5b66507",
             "content": "sha256:2aed8e845977ac6a47914414c9739b0be89baa75b5954dc95bea73319b27310a",
             "locator": {
               "kind": "symbol",

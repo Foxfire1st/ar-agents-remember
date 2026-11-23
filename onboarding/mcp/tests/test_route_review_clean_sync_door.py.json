@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
         "content": "sha256:12f5cb198586b1ccf7db68092c56954d25711573af569417f3679b1b286c000b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
         "content": "sha256:0dda862326a06c426d531d778db40a6a97333bc3ca87fe5dc706941cca2e96e8",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,24 @@
     },
     {
       "anchor": {
-        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
+        "content": "sha256:5684e430e51aa71302f152e070d38ee80c839ed15f3d537322c96fe60938e381",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_generic_route_addition_requires_its_own_verdict_ref"
+        }
+      },
+      "facet": "Rejects an omitted verdict reference before replacing an existing routed PASS.",
+      "id": "PRF-8XNDQB",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
         "content": "sha256:e6ac40f06ca6ec16403c0b43d415c9d010325158ab33b8e6f83f71715adf2b1e",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
         "content": "sha256:46478b90f3a88ee4d5195cf8696d38ae9ba29f024993064dc6a8d31308aa056f",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
         "content": "sha256:25c741d94161c95733c596fe7ddbea9fb6eca3133d2f6d698278cf9014d1d835",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
         "content": "sha256:ebec4bb99d86ac76564df8872520ec73c33dec6ac4cf27887af4c6bdcda3b730",
         "locator": {
           "kind": "symbol",
@@ -105,7 +122,24 @@
     },
     {
       "anchor": {
-        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
+        "content": "sha256:30d4ffef7f847e1a180602950aa27fde5158bd5d082b75fb3c71ce81cc9ffbad",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repaired_tree_requires_a_fresh_routed_verdict"
+        }
+      },
+      "facet": "Shows closeout remains blocked until a routed PASS binds the changed repair tree.",
+      "id": "PRF-RH3R0N",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
         "content": "sha256:d96fab3f9272b3161dff87786c87df0607327a71ee844030b079330638531ec0",
         "locator": {
           "kind": "symbol",
@@ -122,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
         "content": "sha256:f6491325e2c5b2ff56ad613fefdfc556cb8173c7ecd1984f31db5ef06cc1404d",
         "locator": {
           "kind": "symbol",
@@ -139,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
         "content": "sha256:4a92f35f15d732bbc1a61a852329aa446043f50e794fc55ae0c0c911caffb768",
         "locator": {
           "kind": "symbol",
@@ -155,14 +189,69 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
+        "content": "sha256:30d4ffef7f847e1a180602950aa27fde5158bd5d082b75fb3c71ce81cc9ffbad",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repaired_tree_requires_a_fresh_routed_verdict"
+        }
+      },
+      "id": "RLZ-55VY7X",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "A repair changes candidate bytes and counts under the existing limit. The actual closeout gate accepts fresh routed evidence and keeps blocking after generic closure alone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
+        "content": "sha256:5684e430e51aa71302f152e070d38ee80c839ed15f3d537322c96fe60938e381",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_generic_route_addition_requires_its_own_verdict_ref"
+        }
+      },
+      "id": "RLZ-BPTM5P",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The generic path refuses omitted route evidence on a persisted PASS and preserves that earlier decision and closeout evidence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
+        "content": "sha256:019a49562c3a5c2729c57100bf706012553b8789e5e50d8dff0543360881fcb8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sanctioned_addition_records_block_with_prior_route_units"
+        }
+      },
+      "id": "RLZ-WM8VQK",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The parametrized final-check cases call both production bound handlers directly, preserve prior route units and verify that actual closeout returns route-review-blocked.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The plane stamps the actual leaf review base.",
       "targets": [
         {
           "anchor": {
-            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
             "content": "sha256:0dda862326a06c426d531d778db40a6a97333bc3ca87fe5dc706941cca2e96e8",
             "locator": {
               "kind": "symbol",
@@ -178,7 +267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
             "content": "sha256:ebec4bb99d86ac76564df8872520ec73c33dec6ac4cf27887af4c6bdcda3b730",
             "locator": {
               "kind": "symbol",
@@ -194,7 +283,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
             "content": "sha256:4a92f35f15d732bbc1a61a852329aa446043f50e794fc55ae0c0c911caffb768",
             "locator": {
               "kind": "symbol",
@@ -210,7 +299,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
             "content": "sha256:46478b90f3a88ee4d5195cf8696d38ae9ba29f024993064dc6a8d31308aa056f",
             "locator": {
               "kind": "symbol",
@@ -226,7 +315,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
             "content": "sha256:12f5cb198586b1ccf7db68092c56954d25711573af569417f3679b1b286c000b",
             "locator": {
               "kind": "symbol",
@@ -242,7 +331,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
             "content": "sha256:e6ac40f06ca6ec16403c0b43d415c9d010325158ab33b8e6f83f71715adf2b1e",
             "locator": {
               "kind": "symbol",
@@ -258,7 +347,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
             "content": "sha256:f6491325e2c5b2ff56ad613fefdfc556cb8173c7ecd1984f31db5ef06cc1404d",
             "locator": {
               "kind": "symbol",
@@ -274,7 +363,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
             "content": "sha256:25c741d94161c95733c596fe7ddbea9fb6eca3133d2f6d698278cf9014d1d835",
             "locator": {
               "kind": "symbol",
@@ -290,7 +379,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "blob": "7474c426a25165930d2c13ccc5b0dea849a1c94c",
             "content": "sha256:d96fab3f9272b3161dff87786c87df0607327a71ee844030b079330638531ec0",
             "locator": {
               "kind": "symbol",

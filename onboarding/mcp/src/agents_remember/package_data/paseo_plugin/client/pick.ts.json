@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+        "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
         "content": "sha256:09f0736df247bbca52be9847da4ea3cc0d99a894ec46c5f1bea832f9b6fde873",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+        "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
         "content": "sha256:f56ab9bb0a4067aa503cdcaa10862cd2931ee59a3354c7cf0e16f551f255f084",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+        "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
         "content": "sha256:afff91f623e840c99aef924d797af612f1a751c8be7cbe64cc54f3c7422828e1",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+        "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
         "content": "sha256:fa43086634ca2ea322f9c1b004b56a78666d91ab4d5176a499407345cbd45242",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+        "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
         "content": "sha256:8628024d1aff76df50770b9136303e811785ba7f667f49fbdaf9fc0ff534150f",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+        "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
         "content": "sha256:b5791cd36c73641197c59957fd947b441fc31b98d4f62af72f1e2f547342d141",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+        "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
         "content": "sha256:f0e375bfa45b12a2adb3cac90576d8031c19acf238bc1e105206bb1ab2d9ca43",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+        "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
         "content": "sha256:6c63ea94de4295a218b77ed7327a34a1aeca806711ff73bfdf60b66bf0fc4a03",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+        "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
         "content": "sha256:834a5496bfe416e5310c6dce0ead479e8b0d5d408e098ce2518462c1f7c543f8",
         "locator": {
           "kind": "symbol",
@@ -170,12 +170,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
             "content": "sha256:d95e9ee2d0ee557fd520e85dcad8ae8e991216c62d742834a69f84ce33d7c5dd",
             "locator": {
-              "end": 79,
+              "end": 80,
               "kind": "line_range",
-              "start": 67
+              "start": 68
             }
           },
           "kind": "code"
@@ -187,12 +187,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
             "content": "sha256:b0b799cfb0a47580c4a2a044745300fb458dbf6abbde69dce413aa194196e6af",
             "locator": {
-              "end": 174,
+              "end": 175,
               "kind": "line_range",
-              "start": 162
+              "start": 163
             }
           },
           "kind": "code"
@@ -204,12 +204,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
             "content": "sha256:2df5b15f4f4a109e861478a3c2330d34707f0861cd02ea2c670320f7853f76b4",
             "locator": {
-              "end": 235,
+              "end": 236,
               "kind": "line_range",
-              "start": 223
+              "start": 224
             }
           },
           "kind": "code"
@@ -221,12 +221,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
             "content": "sha256:2f9e99a7710b5a005624e191bc94c33716458df50ce6d692a47fcdfb077d3e16",
             "locator": {
-              "end": 403,
+              "end": 404,
               "kind": "line_range",
-              "start": 374
+              "start": 375
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The pinned web bundle’s chat and row markers and React DOM 19.2.3 row storage define the unsupported adapter inputs.\n\nAnchor: \"Pinned, unsupported Paseo 0.16.2 DOM adapter\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
+            "content": "sha256:cebd2f3a4c3c7925207b8851fd360461ac34a0bd25317b5f94bf22fae11447f7",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 30
             }
           },
           "kind": "code"

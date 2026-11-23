@@ -476,7 +476,7 @@
         }
       ]
     },
-    "118": {
+    "121": {
       "note": "The Knowledge reader record and summaries carry optional revision state and writer fields.",
       "targets": [
         {
@@ -494,7 +494,7 @@
         }
       ]
     },
-    "119": {
+    "122": {
       "note": "Intent Review outline rows carry the candidate revision state and compact writer shape.",
       "targets": [
         {
@@ -512,7 +512,7 @@
         }
       ]
     },
-    "120": {
+    "123": {
       "note": "Same-revision family comparisons retain both snapshot operands.",
       "targets": [
         {
@@ -697,7 +697,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
             "content": "sha256:2676eab498252894c4dd259864476e85018ca8cc75e55f1504a3856583ff3abd",
             "locator": {
               "kind": "symbol",
@@ -730,7 +730,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
             "content": "sha256:1b22f1cce75f1642901ce4793b6c0b4c0ae87371505e3f2ad2e3e20c7362a7e5",
             "locator": {
               "end": 43,
@@ -756,7 +756,7 @@
         },
         {
           "anchor": {
-            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
             "content": "sha256:278e8f8d38ff16a96bd0f517049952be7cf84b529f633413369ad76d2d713420",
             "locator": {
               "end": 8,
@@ -795,7 +795,7 @@
         },
         {
           "anchor": {
-            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
             "content": "sha256:1b22f1cce75f1642901ce4793b6c0b4c0ae87371505e3f2ad2e3e20c7362a7e5",
             "locator": {
               "end": 43,
@@ -821,7 +821,7 @@
         },
         {
           "anchor": {
-            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
             "content": "sha256:278e8f8d38ff16a96bd0f517049952be7cf84b529f633413369ad76d2d713420",
             "locator": {
               "end": 8,

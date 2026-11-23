@@ -68,8 +68,11 @@ No configured external domain-documentation source applies.
 - Registered as the `direct_landing` tool response model. [3]
 
 
+- Produced by the admitted direct-landing coordinator. [4]
 
 
+
+- Memory-content execution and same-generation recovery are journaled below the coordinator. [5]
 
 - None [6]
 

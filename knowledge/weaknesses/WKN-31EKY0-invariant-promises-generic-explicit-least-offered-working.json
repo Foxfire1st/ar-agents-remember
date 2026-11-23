@@ -1,11 +1,15 @@
 {
   "anchor": {
-    "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
-    "content": "sha256:054eddc68eefaf3cec2aaa2fa7154a47ba4cef2774a257089297e5713f93da9a",
+    "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+    "content": "sha256:c41effe9759b118d49fa0cc900ee67bce26c52bb7b80b59a64557563ae360a27",
     "locator": {
       "kind": "file"
     },
     "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+  },
+  "closed": {
+    "reason": "BUG-R11 aligns the stored start rule with the resolver's host-owned default and forwards unlisted named modes to the host for its decision.",
+    "task": "261112-BUG-L11"
   },
   "id": "WKN-31EKY0",
   "kind": "debt",
@@ -17,12 +21,12 @@
     "leaf": "260928-MIK-L118",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L118"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "The invariant promises a generic explicit least-offered working mode and refusal of unknown offerings. MIK-R71@v1 rule21 instead names Claude `default`, Codex `auto`, no mode for Pi, and no stated mode when the named mode is absent or the kind is unlisted; the retained resolver follows that narrower provider-specific policy."
 }

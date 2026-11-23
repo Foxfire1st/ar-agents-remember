@@ -377,18 +377,43 @@
       ]
     },
     "6": {
-      "note": "Common restoration also validates instruction details and takeover references.",
+      "note": "Held-seat opening checks frozen details before composing its message. If artifact references are present, the helper also restores or verifies their files.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e380d46baf00b445d92c0d0581b30b4fce11bd2",
-            "content": "sha256:6a0633a405546e45da352e8eb35965d47a2fa74f630c2a3fe17c1eb85bbfacd6",
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:098c33dab7a0ef8167a0807a3f3733f13c5b32d876513b784f185fb564027f7e",
             "locator": {
-              "end": 179,
+              "end": 506,
               "kind": "line_range",
-              "start": 154
+              "start": 482
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+            "content": "sha256:f5c487e735e506bf84e89636232d3d09d9c4fa9b21c675b058a268d843496cac",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 146
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
+            "content": "sha256:5899a836da03f44954f42aa5e1bc31e74ac9bf9193564be0a79953d6892b2659",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
           },
           "kind": "code"
         }

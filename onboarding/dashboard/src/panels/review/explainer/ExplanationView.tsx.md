@@ -18,6 +18,8 @@ The Explanation reading body for the bound comparison: browser announcements and
 - The surrounding review switch, tree and chat stay outside this reading body, and it never rebinds silently: Update names the comparison on screen, and regeneration either sends once to a live seat or opens the prefilled first-request form.
 - Judgment chips and `Ungraded (n)` headings are mounted into the reading cards' DOM outside React, and cleanup removes exactly what was created.
 
+The empty panel offers an end-to-end explanation. It also describes the optional grades that can order the review tree.
+
 ## Evidence
 
 - An unreadable answer names its reason and offers Retry instead of an empty page [3]
@@ -33,8 +35,9 @@ The Explanation reading body for the bound comparison: browser announcements and
 
 
 
-- The empty state offers one button and states that nothing runs until asked [2]
 
 - The body chooses the initial reading sentence, unreadable card, body without a revision, or retained-revision body. [1]
 - The single saved page renders one revision frame with FrameMeta, followed by the retirement notice. [4]
 - A last-render failure is omitted from the top-level line without a shown revision; absent a failure, the pending browser announcement can appear with or without a page. [9]
+
+- The empty view describes the end-to-end explanation and optional grades and exposes an explicit Ask action. [2]

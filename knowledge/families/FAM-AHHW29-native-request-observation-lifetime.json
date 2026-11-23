@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Worker drain, scoped Git observation reuse, owner cleanup and trim together govern safe completion across concurrent calls."
+  },
+  "guarantee": "Each native invocation keeps its Git observations available to joined work until the worker drains, clears those observations before the allocator trim attempt, and gives another invocation its own observations.",
+  "id": "FAM-AHHW29",
+  "members": [
+    "INV-HPHVCN",
+    "INV-JB9D62",
+    "INV-V4WR2R",
+    "INV-141H2J"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "W3 Curator worklist, dependent confirmations and bounded memory repair"
+    },
+    "handoffEntry": "native-request-observation-lifetime",
+    "leaf": "261112-BUG-L18",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/mcp",
+    "mcp/src/agents_remember/kernel",
+    "mcp/src/agents_remember/serving",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/memory_quality/style/citations",
+    "mcp/src/agents_remember/worktrees/integration/lifecycle"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Native request observation lifetime"
+}

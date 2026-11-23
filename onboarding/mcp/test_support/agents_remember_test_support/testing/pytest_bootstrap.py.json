@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+        "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
+        "content": "sha256:0de235338cb6d6e8480c77b395ce13f6b50373cb937da6e18e84a9b4030bb9e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "pytest_configure"
+        }
+      },
+      "id": "RLZ-N2DD0R",
+      "invariant": "INV-0ZEX0D",
+      "origin": {
+        "handoffEntry": "BUG-R16@v1 §§1–3",
+        "leaf": "261112-BUG-L16"
+      },
+      "rationale": "The pytest lifecycle installs the same factory for Runner and direct loop users and restores both aliases at teardown.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
         "content": "sha256:ac95057457dcb222f5dfdfa2229cedbea82c0456fb3cda4410340e909b15c3f6",
         "locator": {
           "kind": "symbol",
@@ -27,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+            "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
             "content": "sha256:d6a03e501e3158ecad679d3399a15e478f6445ccb3bb7c7b7d51285cc4ad7516",
             "locator": {
               "kind": "symbol",
@@ -38,7 +56,7 @@
         },
         {
           "anchor": {
-            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+            "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
             "content": "sha256:4373829e34c7085b32f70678c4dc4ab31cf2f9624fcddefdf4ee64e369df496c",
             "locator": {
               "kind": "symbol",
@@ -49,7 +67,7 @@
         },
         {
           "anchor": {
-            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+            "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
             "content": "sha256:1433d3e95c559105b6a2550e9ed61e1b43df56b37160ac36a78db80cab716333",
             "locator": {
               "kind": "symbol",
@@ -61,11 +79,11 @@
       ]
     },
     "2": {
-      "note": "Already-loaded process state is reset before and after each module.",
+      "note": "The module fixture resets already-loaded registered owners before and after each test module.",
       "targets": [
         {
           "anchor": {
-            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+            "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
             "content": "sha256:ac95057457dcb222f5dfdfa2229cedbea82c0456fb3cda4410340e909b15c3f6",
             "locator": {
               "kind": "symbol",
@@ -81,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+            "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
             "content": "sha256:4373829e34c7085b32f70678c4dc4ab31cf2f9624fcddefdf4ee64e369df496c",
             "locator": {
               "kind": "symbol",
@@ -93,14 +111,31 @@
       ]
     },
     "4": {
-      "note": "The module-boundary fixture resets the worktree service holder as well as the closed mutable-state register, before the module and in its `finally` cleanup. The holder is one object rather than a module-level collection the syntactic scanner discovers; an earlier module's server supplier cannot serve the next module's worktree operation.\n\nAnchor: `reset_process_state_at_module_boundaries`",
+      "note": "The module-boundary fixture resets the worktree service holder as well as the closed mutable-state register, before the module and in its `finally` cleanup. The holder is one object rather than a module-level collection the syntactic scanner discovers; an earlier module's server supplier cannot serve the next module's worktree operation.",
       "targets": [
         {
           "anchor": {
-            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
-            "content": "sha256:8c3af6fff1c4b93d4f691cdcd4b598866af27bf07bbcd8701e833a27940cdd99",
+            "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
+            "content": "sha256:ac95057457dcb222f5dfdfa2229cedbea82c0456fb3cda4410340e909b15c3f6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "reset_process_state_at_module_boundaries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Both asyncio aliases use the shared test loop factory until pytest cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
+            "content": "sha256:0de235338cb6d6e8480c77b395ce13f6b50373cb937da6e18e84a9b4030bb9e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_configure"
             }
           },
           "kind": "code"

@@ -1,0 +1,99 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_options_receipts.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "55c8e4d51ae225a1d8a68007ca9be6ba05b9edb5",
+        "content": "sha256:89b0ab9c1f7b38298e0e4c40a562cc1bdc96beeda5d66b6ce11aa2a2a7578027",
+        "locator": {
+          "end": 103,
+          "kind": "line_range",
+          "start": 81
+        }
+      },
+      "id": "RLZ-8N6KP6",
+      "invariant": "INV-GPC5PN",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 3",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Discovers legacy migration candidates before locking and revalidates exact candidates inside the write lock.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "55c8e4d51ae225a1d8a68007ca9be6ba05b9edb5",
+        "content": "sha256:4cde56e6135a414212ce0817a0324275199cf661f98a8536b3a6777e5cb3a06e",
+        "locator": {
+          "end": 56,
+          "kind": "line_range",
+          "start": 32
+        }
+      },
+      "id": "RLZ-9YYMHQ",
+      "invariant": "INV-GPC5PN",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 3",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Takes ordinary receipt snapshots and reads the taskless listing outside the launch lock.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "55c8e4d51ae225a1d8a68007ca9be6ba05b9edb5",
+        "content": "sha256:b7ea6daec9cc9a131982b1e388a403e656f1763294761c48d52dabbdc51eacd7",
+        "locator": {
+          "end": 121,
+          "kind": "line_range",
+          "start": 106
+        }
+      },
+      "id": "RLZ-FCVBXB",
+      "invariant": "INV-GPC5PN",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 3",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Reads the host outside the lock and compares the receipt under the lock before applying.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Options lists saved taskless records. Result resolves the exact saved request and validates its address.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55c8e4d51ae225a1d8a68007ca9be6ba05b9edb5",
+            "content": "sha256:3a8d6f7884371445e0dadc8465df7a9dad8f9a16159838d4104eb0eb3f0c01e7",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The liveness observation is applied only after the locked receipt comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55c8e4d51ae225a1d8a68007ca9be6ba05b9edb5",
+            "content": "sha256:b7ea6daec9cc9a131982b1e388a403e656f1763294761c48d52dabbdc51eacd7",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

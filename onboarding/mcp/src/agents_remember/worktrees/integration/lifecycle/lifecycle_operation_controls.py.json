@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
-        "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+        "blob": "65597f52711773d7755f813da12995da8fc98197",
+        "content": "sha256:b2b6b2e781f10312b5f6edcd6a19967962274b3669dbc56a9f72cc117c0ee3e9",
         "locator": {
           "kind": "symbol",
           "name": "_resume"
@@ -16,13 +16,31 @@
         "handoffEntry": "L143-curator-recovery-revision",
         "leaf": "260928-MIK-L143"
       },
-      "rationale": "Dispatches the direct record to its existing recovery executor without ordinary closeout door checks and settles its retained receipt on completion.",
+      "rationale": "Executes the admitted direct generation against its retained record and settles the receipt in the same call.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
-        "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+        "blob": "65597f52711773d7755f813da12995da8fc98197",
+        "content": "sha256:e375c5fd7d0dad2a1b6cc9d3a039b05fe051296f991b8bd73488e2eaba757126",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observe_control_under_lease"
+        }
+      },
+      "id": "RLZ-7PC6NJ",
+      "invariant": "INV-NH7YXA",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 1",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Examines exact generation identity and returns replacement guidance before reconciling any retired journal.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "65597f52711773d7755f813da12995da8fc98197",
+        "content": "sha256:b2b6b2e781f10312b5f6edcd6a19967962274b3669dbc56a9f72cc117c0ee3e9",
         "locator": {
           "kind": "symbol",
           "name": "_resume"
@@ -34,52 +52,40 @@
         "handoffEntry": "MIK-R143@v1",
         "leaf": "260928-MIK-L143"
       },
-      "rationale": "I admitted recover for doorless direct records here and settle the kept receipt in the same call.",
+      "rationale": "Direct recovery continues the admitted generation inline and settles the kept closing receipt when it completes.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "65597f52711773d7755f813da12995da8fc98197",
+        "content": "sha256:a64cbb4380cc31ff3bf1c84f73aee6a436336df3e6b36ea57e1e7c7a6125dd42",
+        "locator": {
+          "kind": "symbol",
+          "name": "_retired_generation_refusal"
+        }
+      },
+      "id": "RLZ-PBTQ4X",
+      "invariant": "INV-5QFWCA",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 3",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Binds the typed refusal and replacement arguments to the requested kind and current contract.",
+      "role": "unclassified"
     }
   ],
   "references": {
     "1": {
-      "note": "Direct recovery continues its retained generation and settles its closing receipt in the same call; the closeout path keeps its publication checks.\n\nAnchor: `_resume`",
+      "note": "The direct recovery handler continues its admitted generation inline and settles a completed closing receipt.",
       "targets": [
         {
           "anchor": {
-            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
-            "content": "sha256:3f90c50c3cf755de33cd7969389cbafe4078f75f930504c6cdc2b24542b3dd9a",
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:ae46f1071224d019b35287bac258967b277a0f5f16fd797d8ebcca4e20747d3c",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "`_resume_arguments` retains the admitted code/memory messages in the successor correction.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
-            "content": "sha256:e1d4225c6b92512836fd7295854262168512eb379ea59ef399509fc9bd5520ab",
-            "locator": {
-              "kind": "symbol",
-              "name": "_resume_arguments"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "`_closeout_resume_admission` combines current candidate evidence with code/memory input for resume.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
-            "content": "sha256:48491fc955a32e5c770972ce73838a0bb4afe434bd83bfe75f9374fcec75c0fa",
-            "locator": {
-              "kind": "symbol",
-              "name": "_closeout_resume_admission"
+              "end": 350,
+              "kind": "line_range",
+              "start": 320
             }
           },
           "kind": "code"
@@ -87,14 +93,28 @@
       ]
     },
     "4": {
-      "note": "The module defines `LifecycleControlCommand`; `control_operation` as its public seam.\n\nAnchor: `LifecycleControlCommand` `control_operation`",
+      "note": "The module defines `LifecycleControlCommand`; `control_operation` as its public seam.",
       "targets": [
         {
           "anchor": {
-            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
-            "content": "sha256:3f90c50c3cf755de33cd7969389cbafe4078f75f930504c6cdc2b24542b3dd9a",
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:ba6d9b36f76649d9f2c1dfd998576371323954e8e20327f7cfa8216509d06eea",
             "locator": {
-              "kind": "file"
+              "end": 88,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:7aa277ded5582d5af283a4f6d9a10ad5aaabb6fc5dca672ef7b775249aecef2b",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 116
             }
           },
           "kind": "code"
@@ -102,16 +122,16 @@
       ]
     },
     "5": {
-      "note": "A mechanically recoverable interrupted direct-create generation is requeued through its advertised public recovery owner and completed under that same accepted input.",
+      "note": "The direct recovery handler continues its admitted generation inline and settles a completed closing receipt.",
       "targets": [
         {
           "anchor": {
-            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
-            "content": "sha256:5aca7a7995eb342e0b044d89163a387024219ea561f578a12f4d2a94e8aad773",
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:ae46f1071224d019b35287bac258967b277a0f5f16fd797d8ebcca4e20747d3c",
             "locator": {
-              "end": 1029,
+              "end": 350,
               "kind": "line_range",
-              "start": 1
+              "start": 320
             }
           },
           "kind": "code"

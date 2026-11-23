@@ -12,9 +12,9 @@ Owns durable current-line launch receipts, immutable saved-call replay, report b
 
 Receipt-directory addressing is defined by `controlplane/held_store_discovery.py`; this module imports `receipt_holder` and uses it to address role receipts and message bindings.
 
-Receipt creation is exclusive and complete before native launch. `_execute_prepared_launch` republishes receipt-bound role facts before the native launch/replay call; this best-effort publication and host execution are separate boundaries, not one atomic transaction; unknown outcomes retain replayRequest with original UUID/prompt/options. Resolved ordinary receipts drop replayRequest. A rejected step-up with a settled predecessor and no lost successor instead retains its saved call for same-request retry; other rejections remain closed. A created held seat instead keeps its saved call and opening handover, reports `held`, and restores the artifact from `heldOpeningPrompt` on retry without inventing a first message. Public projection names an eligible leaf holder for the launcher; closing-mark refusals still override retry/revive/start affordances without erasing archival debt. Taskless canonical storage/migration remains bounded to exact receipt identities; old schema at current address refuses, previous host receipts are not execution authority. Public execution whitelists lifecycle fields and requested/observed tier disclosure, never task acceptance.
+Receipt creation is exclusive and complete before native launch. `_execute_prepared_launch` republishes receipt-bound role facts before the native launch/replay call; this best-effort publication and host execution are separate boundaries, not one atomic transaction; unknown outcomes retain replayRequest with original UUID/prompt/options. Resolved ordinary receipts drop replayRequest. An eligible rejected step-up with a settled predecessor and no lost successor retains its saved call for same-request retry. A saved native Antigravity Retry whose agent is absent settles as rejected and drops its saved call, including on a step-up. A created held seat instead keeps its saved call and opening handover, reports `held`, and restores the artifact from `heldOpeningPrompt` on retry without inventing a first message. Public projection names an eligible leaf holder for the launcher; closing-mark refusals still override retry/revive/start affordances without erasing archival debt. Taskless canonical storage/migration remains bounded to exact receipt identities; old schema at current address refuses, previous host receipts are not execution authority. Public execution whitelists lifecycle fields and requested/observed tier disclosure, never task acceptance.
 
-`_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. A retry that carries `handoverArtifact` or a `handoverFile` key enters `role_handover_restore.py` before it sends; a missing or mistyped companion reference is not treated as a legacy receipt. Only a receipt with neither recorded artifact enters the detail-validation-only path.
+`_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. Ordinary Retry invokes restoration when the receipt carries a `handoverArtifact` dictionary or a `handoverFile` key. Restoration checks a missing or malformed companion reference. Held-seat opening calls the helper even when neither reference is recorded, so it checks saved instruction details directly in that case.
 
 `read_enumerated_receipt` is the reader for enumerating mixed report folders: valid JSON that is not a receipt of this line returns `None`; unreadable JSON retains the ordinary receipt refusal. The direct `_read_receipt` path keeps its strict schema check.
 
@@ -33,11 +33,11 @@ saved-call replay semantics are otherwise unchanged.
 
 ## Current Contract — Scoped Launch And Settings Changes
 
-_execute_prepared_launch honors closing barriers, reconciles the task step-up decision before execution, restores/verifies saved artifacts, collects predecessor reports and renews step-up predecessor liveness before the native call. After publishing a nonclosing host outcome it reconciles observed choices into the same task decision; a failed acknowledgment keeps receipt facts for same-request recovery, not a second launch.
+_execute_prepared_launch honors closing barriers, reconciles the task step-up decision before execution, restores or verifies saved artifacts and collects predecessor reports. For a step-up receipt whose saved call names an `archiveAgentId`, the executor rechecks the predecessor before the native call. After publishing a nonclosing host outcome it reconciles observed choices into the same task decision; a failed acknowledgment keeps receipt facts for same-request recovery, not a second launch.
 
-_restore_launch_handover rebinds report access and hands the saved targets to `restore_launch_files`, which rebuilds a lost request locator, validates every frozen detail and restores or verifies the primary, takeover and complete-hand-over files before the first message is sent. Missing detail bytes require original snapshots, never current-corpus regeneration, and a receipt that records no artifact pair keeps the detail validation alone. A detail-free legacy composition remains permitted.
+_restore_launch_handover rebinds report access and hands the saved targets to `restore_launch_files`, which rebuilds a lost request locator, validates every frozen detail and restores or verifies the primary, takeover and complete-hand-over files before the first message is sent. Missing detail bytes require the original snapshots. Held-seat opening without either recorded artifact reference validates the saved details directly. A detail-free legacy composition remains permitted.
 
-Outcome publication and observed choice bookkeeping delegate to role_launch_outcome and role_launch_choices; this file keeps their imported and forwarding names. Rejected settled empty step-up receipts retain replayRequest, while ordinary resolved launches drop it and held seats retain their opening call.
+Outcome publication and observed choice bookkeeping delegate to role_launch_outcome and role_launch_choices; this file keeps their imported and forwarding names. An eligible rejected empty step-up retains `replayRequest` when the predecessor settled and the outcome reports no lost agent. If saved native Antigravity Retry finds its recorded agent absent, the HTTP 409 refusal settles the request and drops `replayRequest`. Other resolved ordinary launches drop it, and held seats retain their opening call.
 
 _request_digest includes stepUp only when explicitly present, keeping absence-compatible digests. _public_execution exposes stepUp and permits rejected-stepUp retry only with a saved call; retryPayload includes the original requested reason and overrides. This projection is not a new review verdict or unconditional permission to start.
 
@@ -47,7 +47,9 @@ Existing schema/read refusals, exclusive receipt creation, canonical taskless id
 
 
 - Frozen implementation of _create_receipt supporting the stated file behavior. [2]
-- Frozen implementation of _read_receipt supporting the stated file behavior. [3]
+
+- The receipt reader distinguishes absence, unreadable bytes, invalid JSON and wrong or non-object receipt schemas. [3]
+
 
 
 - Interrupts between receipt and call and checks retry retains one agent identity. [6]
@@ -73,7 +75,7 @@ Selected-task Investigator receipts are per request rather than singleton select
 
 
 
-- The current source implements this file’s stated Investigator boundary.
+An Investigator receipt address requires its exact request UUID.
 
 
 
@@ -85,10 +87,13 @@ Selected-task Investigator receipts are per request rather than singleton select
 
 
 
+- The public execution whitelist includes request identity, status, observed choices and eligible Result, Retry or Revive information drawn from the same receipt. [4]
 
 
 
-- The launch observer checks complete receipt, stable UUID and stored call before runtime launch. [5]
+
+- Before workspace-open and agent-create, the observer sees the starting receipt, its saved agent ID and the stored artifact. [5]
+
 
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
 
@@ -110,14 +115,19 @@ Custody: the preceding sentence is detached from live reference 13; original tar
 
 
 
+A receipt moved by Start between inspection and reading is treated as absent.
 
 
 
 - Decision, artifacts, predecessor liveness and outcome reconciliation preserve saved identity. [16]
 
-- Replay validation binds primary/detail/takeover artifacts. [17]
 
-- Optional reason enters request identity without altering absent requests. [18]
+- Ordinary Retry enters restoration for a recorded artifact reference. The restore path checks its targets and validates frozen detail references before writing. [17]
+
+
+
+- Request identity includes a supplied step-up value and normalizes an override with an empty feature map. [18]
+
 
 - Conditional retry payload preserves original selection/reason. [19]
 

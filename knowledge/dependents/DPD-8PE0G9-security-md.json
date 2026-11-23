@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "The reporting instruction to obtain the running package version from server_info still holds after the server adds a definition scope around tool dispatch.",
-    "task": "261112-KNO-L3",
+    "statement": "W2 retains the caller, seat and dispatch checks that support the reached security scope while adding cleanup after those checks and joined work.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "SECURITY.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+      "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -81,7 +81,7 @@
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+      "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
@@ -111,7 +111,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
     },
     {
-      "blob": "ea14b3fc4bd1e9a1885ee565de76ee39656ec26f",
+      "blob": "35f29aba0e4b605f09b297b0774caa5bc705842e",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
     }

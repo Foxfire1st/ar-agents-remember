@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+        "content": "sha256:59f44cf3e5f6d6dc4e96000071a5e7eef0731ecaa57ccdcba7f944e070941063",
+        "locator": {
+          "kind": "symbol",
+          "name": "RefreshTests.test_reads_leave_the_launch_lock_free_during_host_calls"
+        }
+      },
+      "facet": "Both catalogue and agent-state reads run without the launch lock.",
+      "id": "PRF-1P8WFT",
+      "invariant": "INV-GPC5PN",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 3",
+        "leaf": "261112-BUG-L19"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
         "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
         "content": "sha256:c5934a51fedfeab0a012fa793a1de9770fd08325837549d47589227e57912c9e",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,24 @@
     },
     {
       "anchor": {
-        "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+        "content": "sha256:28a4d014b642b2a3edf3539c52a9189dd2a1b8e1b1f7aa308f643e2b6390bedd",
+        "locator": {
+          "kind": "symbol",
+          "name": "RefreshTests.test_start_can_replace_the_receipt_while_options_reads_its_agent"
+        }
+      },
+      "facet": "A replacement receipt survives the return of a parked observation.",
+      "id": "PRF-4A2YAT",
+      "invariant": "INV-GPC5PN",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 3",
+        "leaf": "261112-BUG-L19"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
         "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
         "locator": {
           "kind": "symbol",
@@ -54,7 +88,24 @@
     },
     {
       "anchor": {
-        "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+        "content": "sha256:48dec4b52aa6ce063688a026cd8bf0f7762d538ec9054bd4a77a73c1e3b4690a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviveTests.test_an_agent_the_host_cannot_resume_is_failed_and_stays_unrevivable"
+        }
+      },
+      "facet": "The failed Revive reason and saved refusal fields survive Refresh. A second Revive refuses after the one agent-state read without sending another resume.",
+      "id": "PRF-BTW1KJ",
+      "invariant": "INV-F6CAGC",
+      "origin": {
+        "handoffEntry": "BUG-L19-MR1-F04 Revive proof scope",
+        "leaf": "261112-BUG-L19"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
         "content": "sha256:065f2da2237b8d035a7eed918e1b3abbdc0f46b150f0d3b8b0b5d357cf8b6b37",
         "locator": {
           "kind": "symbol",
@@ -71,24 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
-        "content": "sha256:48dec4b52aa6ce063688a026cd8bf0f7762d538ec9054bd4a77a73c1e3b4690a",
-        "locator": {
-          "kind": "symbol",
-          "name": "ReviveTests.test_an_agent_the_host_cannot_resume_is_failed_and_stays_unrevivable"
-        }
-      },
-      "facet": "Answered refusal persists as failed across refreshes without rewrite and blocks another Revive.",
-      "id": "PRF-WXNWTK",
-      "invariant": "INV-F6CAGC",
-      "origin": {
-        "handoffEntry": "PNT-R07@v1 §6 / A11",
-        "leaf": "260928-MIK-L90"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+        "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
         "content": "sha256:e4afb6d90874acffbb83852849e459d90170be3a4c5b4a7002c6f206915cc46e",
         "locator": {
           "kind": "symbol",
@@ -107,14 +141,43 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "Tests cover status, Revive, saved catalogue answers, lock-free host reads and launch-in-progress responses with zero host calls.",
       "targets": [
         {
           "anchor": {
-            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
-            "content": "sha256:80261b79f87c315c2d675d91e6daa35e61c11b8d68944357eb0daa23e4c0fdf6",
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "content": "sha256:c66e25bbd09e61a9a7433741ec00c42ada63134166600abf7cb22c1c28abd4a3",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The open-execution cases assert catalog before agent-state. The failed-Revive case checks the combined refused and replacing Start trace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "content": "sha256:1802aff8506b72d79b9a94b9b0de1ba7d5152a74b50e725354d03f2cdb0b9c14",
+            "locator": {
+              "end": 901,
+              "kind": "line_range",
+              "start": 822
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "content": "sha256:a2c22532a595a144709b079df507df6e33c837fac836c1459aa54d9917e24b21",
+            "locator": {
+              "end": 1067,
+              "kind": "line_range",
+              "start": 1038
             }
           },
           "kind": "test"

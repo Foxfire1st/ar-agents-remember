@@ -3,26 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The current generation and explicit retired digest names define the test input.",
+      "note": "The fixture builds a typed door generation and injects the three named retired digest fields into its serialized publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "1eefd43b9fc5b826728f761be7a946ddd5d57f84",
-            "content": "sha256:90c151f0e6ac760249ef0c5f606cd3c8f59efc14ddad8abbb35b1c323ca06a3f",
+            "blob": "c87e6b11938cd75231e62bf9503d8f44f81320cf",
+            "content": "sha256:7733a555a1297852106ced30906c742d861f55f254b26f7cc4af05c6eade0505",
             "locator": {
-              "kind": "symbol",
-              "name": "RETIRED_DIGEST_FIELDS"
+              "end": 108,
+              "kind": "line_range",
+              "start": 55
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "1eefd43b9fc5b826728f761be7a946ddd5d57f84",
+            "blob": "c87e6b11938cd75231e62bf9503d8f44f81320cf",
             "content": "sha256:a50361e4b8631cafac958b9518a404ff1d6383fceb9c96dbb0335d1492606493",
             "locator": {
-              "kind": "symbol",
-              "name": "test_door_publication_drops_retired_digests_but_refuses_other_unknown_keys"
+              "end": 134,
+              "kind": "line_range",
+              "start": 123
             }
           },
           "kind": "test"
@@ -34,7 +36,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1eefd43b9fc5b826728f761be7a946ddd5d57f84",
+            "blob": "c87e6b11938cd75231e62bf9503d8f44f81320cf",
             "content": "sha256:a50361e4b8631cafac958b9518a404ff1d6383fceb9c96dbb0335d1492606493",
             "locator": {
               "kind": "symbol",
@@ -46,15 +48,16 @@
       ]
     },
     "3": {
-      "note": "Store and terminal-archive reads exercise the persisted legacy record.",
+      "note": "The store reads the injected legacy publication as proven. The terminal-archive result succeeds and names the stored operation record among its canonical entries.",
       "targets": [
         {
           "anchor": {
-            "blob": "1eefd43b9fc5b826728f761be7a946ddd5d57f84",
-            "content": "sha256:1ebcb405633df9c8b8b924e0a70dee2af77a46a2b04a865dc74f4678341cebd4",
+            "blob": "c87e6b11938cd75231e62bf9503d8f44f81320cf",
+            "content": "sha256:c5fe3c6430898c7fc741fab25b42248cc3af09bc77508d14e0a9c573225268ab",
             "locator": {
-              "kind": "symbol",
-              "name": "test_operation_store_and_cleanup_terminal_archive_read_a_legacy_record"
+              "end": 204,
+              "kind": "line_range",
+              "start": 137
             }
           },
           "kind": "test"

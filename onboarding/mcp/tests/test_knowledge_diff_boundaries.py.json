@@ -84,7 +84,7 @@
       ]
     },
     "31": {
-      "note": "Fixture construction imports test-only row constructors; it does not call the retired canonical writer.",
+      "note": "The continuation case opens its candidate fixture with the test-only row store and creates one invariant with one revision.",
       "targets": [
         {
           "anchor": {
@@ -94,6 +94,18 @@
               "end": 57,
               "kind": "line_range",
               "start": 54
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "31f8d765a2b7c2e7a01d5db4312a67116ce378ab",
+            "content": "sha256:82bf4848ac0f5e9b71c45c8bd8b8808fa7894dd75475fff25bf98cc588fe8f8d",
+            "locator": {
+              "end": 452,
+              "kind": "line_range",
+              "start": 403
             }
           },
           "kind": "test"
@@ -145,15 +157,16 @@
       ]
     },
     "33": {
-      "note": "The integration marker, the fixture, the request builder and the public-seam driver.",
+      "note": "The integration marker, per-test fixture, typed request builder and application comparison driver.",
       "targets": [
         {
           "anchor": {
             "blob": "31f8d765a2b7c2e7a01d5db4312a67116ce378ab",
-            "content": "sha256:16892ee5fae12d79fecfa63d1c7f7f64edd17e02070536602dec5cce18a887bc",
+            "content": "sha256:cef7f773ba983abbab18d3fedff66bb85806f063456038e8bd00c0562718af00",
             "locator": {
-              "kind": "symbol",
-              "name": "fixture"
+              "end": 59,
+              "kind": "line_range",
+              "start": 59
             }
           },
           "kind": "test"
@@ -161,10 +174,11 @@
         {
           "anchor": {
             "blob": "31f8d765a2b7c2e7a01d5db4312a67116ce378ab",
-            "content": "sha256:cef7f773ba983abbab18d3fedff66bb85806f063456038e8bd00c0562718af00",
+            "content": "sha256:16892ee5fae12d79fecfa63d1c7f7f64edd17e02070536602dec5cce18a887bc",
             "locator": {
-              "kind": "symbol",
-              "name": "pytestmark"
+              "end": 81,
+              "kind": "line_range",
+              "start": 77
             }
           },
           "kind": "test"
@@ -174,8 +188,9 @@
             "blob": "31f8d765a2b7c2e7a01d5db4312a67116ce378ab",
             "content": "sha256:a5268bd4e5613303e5ef42cfb3c26197c6a6fa3d7e9bc04ba6957fca175353d3",
             "locator": {
-              "kind": "symbol",
-              "name": "request_for"
+              "end": 114,
+              "kind": "line_range",
+              "start": 84
             }
           },
           "kind": "test"
@@ -185,8 +200,9 @@
             "blob": "31f8d765a2b7c2e7a01d5db4312a67116ce378ab",
             "content": "sha256:b569451c58315cb20b202168fbc2591c38372fb5f27ce9dcd5d8f69f8a03deb3",
             "locator": {
-              "kind": "symbol",
-              "name": "run_diff"
+              "end": 130,
+              "kind": "line_range",
+              "start": 117
             }
           },
           "kind": "test"
@@ -367,15 +383,16 @@
       ]
     },
     "42": {
-      "note": "**A side naming another snapshot of its own file refused before any page — the node the review's `R22` form kills.**",
+      "note": "When a side names another logical snapshot of its own file, the comparison refuses with snapshot_unavailable and returns neither a page nor an expansion.",
       "targets": [
         {
           "anchor": {
             "blob": "31f8d765a2b7c2e7a01d5db4312a67116ce378ab",
             "content": "sha256:80338ad0480138b0d1a17abc2caacbda0eae5eeaed3cb4afd038e26a71f4b211",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page"
+              "end": 522,
+              "kind": "line_range",
+              "start": 485
             }
           },
           "kind": "test"
@@ -383,15 +400,28 @@
       ]
     },
     "43": {
-      "note": "**The forbidden-overreach case: nine verdict words searched over the serialized response, with a positive control.**",
+      "note": "The verdict test searches the serialized response for all nine listed words and checks for a known source-observation field and a changed source observation.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "31f8d765a2b7c2e7a01d5db4312a67116ce378ab",
+            "content": "sha256:4a78a27f212a9d4c937aa44a0e5be6c168bbf0106be982720fab1477edad6dda",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "31f8d765a2b7c2e7a01d5db4312a67116ce378ab",
             "content": "sha256:dea61409c71ffb5e30c9d47e45d7e22123d04a719dd03b452386a90d5ce82b20",
             "locator": {
-              "kind": "symbol",
-              "name": "test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict"
+              "end": 554,
+              "kind": "line_range",
+              "start": 528
             }
           },
           "kind": "test"
@@ -518,15 +548,16 @@
       ]
     },
     "48": {
-      "note": "**The probe that measured the trees being what makes a gap visible.**",
+      "note": "The injected available probe supplies one changed path. The application exposes that path as the exact unattributed gap and declares the corresponding limitation.",
       "targets": [
         {
           "anchor": {
             "blob": "31f8d765a2b7c2e7a01d5db4312a67116ce378ab",
             "content": "sha256:155ecab90583890cccafa8fe89d7814a351addca813226746f4cff6a258b5e31",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible"
+              "end": 902,
+              "kind": "line_range",
+              "start": 879
             }
           },
           "kind": "test"
@@ -575,16 +606,29 @@
       ]
     },
     "50": {
-      "note": "The lifecycle catalog lists `test_knowledge_diff_boundaries.py` as an exact consumer of `_user_settings_guard.py`, `anchor_fixture_models.py`, `diff_scope_test_support.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_review_fact_test_support.py`, `knowledge_row_codec_test_support.py`, `knowledge_rows_test_support.py`, `read_scope_test_support.py`.",
+      "note": "The integration lane selects `mcp/tests/test_knowledge_diff_boundaries.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_diff_boundaries.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:e2a8e4c31fb4ca6af5072c937e5a80c93c070373bc33e66e37f9bc594c785241",
+            "blob": "fb3c2272e5d24ca02331ff792609423b79c238aa",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
             "locator": {
-              "end": 886,
+              "end": 722,
               "kind": "line_range",
-              "start": 65
+              "start": 722
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 362
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -592,12 +636,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:d624b4e46fc9e6924d901d658a4c8250a47841ebaed91fe7442d2d311d7c52b5",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
             "locator": {
-              "end": 980,
+              "end": 913,
               "kind": "line_range",
-              "start": 887
+              "start": 913
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -605,12 +649,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:880ceed72bf38b6c86651c63583c5a736e415f22a6d216a3ea47895e1e9ae8b2",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
             "locator": {
-              "end": 1367,
+              "end": 1344,
               "kind": "line_range",
-              "start": 1330
+              "start": 1344
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -618,12 +662,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:f949d4a324dbc44d81a8d069eb004a8da1c07c67afe1e35b58cc0af412851b62",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
             "locator": {
-              "end": 3272,
+              "end": 2782,
               "kind": "line_range",
-              "start": 2451
+              "start": 2782
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -631,12 +675,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:67ec7973d3552deddaf52c20d2b210b53b8e9366258ee80b60c209c5fa4b7f81",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
             "locator": {
-              "end": 3698,
+              "end": 3683,
               "kind": "line_range",
-              "start": 3643
+              "start": 3683
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -644,23 +688,10 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:f305c30dec61d95487dd0f32112478a9ad86885bbb7f6d4b07db0aff15dd7485",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
             "locator": {
-              "end": 3736,
-              "kind": "line_range",
-              "start": 3699
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:5c44c64b5658f3a03a2abe5c88d0b21b75508df51e17fe03352ee7e8f7247a89",
-            "locator": {
-              "end": 3830,
+              "end": 3737,
               "kind": "line_range",
               "start": 3737
             },
@@ -670,12 +701,25 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:f91efbdb1205da8ca9fedccd2de9d609fdb0f1e96c0e0868e17980da602f005a",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
             "locator": {
-              "end": 4340,
+              "end": 3782,
               "kind": "line_range",
-              "start": 4291
+              "start": 3782
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 4385,
+              "kind": "line_range",
+              "start": 4385
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -684,15 +728,16 @@
       ]
     },
     "51": {
-      "note": "A new invariant and its one revision move the snapshot; refusal leaves every other row counter unchanged.",
+      "note": "A test-only mutation adds one invariant and one revision and changes the candidate digest. After the continuation is refused, the candidate counters account for those two additions and show no change in the other counted tables.",
       "targets": [
         {
           "anchor": {
             "blob": "31f8d765a2b7c2e7a01d5db4312a67116ce378ab",
-            "content": "sha256:82bf4848ac0f5e9b71c45c8bd8b8808fa7894dd75475fff25bf98cc588fe8f8d",
+            "content": "sha256:811a2500b0bd20cd6100e3aed8c502dce57eed3ed7613539f73686a47e92b077",
             "locator": {
-              "kind": "symbol",
-              "name": "add_unrelated_revision"
+              "end": 400,
+              "kind": "line_range",
+              "start": 355
             }
           },
           "kind": "test"
@@ -700,17 +745,18 @@
         {
           "anchor": {
             "blob": "31f8d765a2b7c2e7a01d5db4312a67116ce378ab",
-            "content": "sha256:811a2500b0bd20cd6100e3aed8c502dce57eed3ed7613539f73686a47e92b077",
+            "content": "sha256:82bf4848ac0f5e9b71c45c8bd8b8808fa7894dd75475fff25bf98cc588fe8f8d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation"
+              "end": 452,
+              "kind": "line_range",
+              "start": 403
             }
           },
           "kind": "test"
         }
       ]
     },
-    "52": {
+    "53": {
       "note": "The actual comparison matrix changes one payload field at a time.",
       "targets": [
         {

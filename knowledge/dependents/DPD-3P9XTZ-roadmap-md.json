@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "ce6ff51ceff24cba0157410140585c0ba80a0203",
+    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
     "role": "curator",
-    "statement": "The roadmap's links still reach the knowledge record, gate and worklist concepts after the concepts page adds record state and writer stamps and specifies loaded-build cache identity.",
-    "task": "261112-KNO-L3",
+    "statement": "The roadmap's knowledge, drift, worklist and benchmark links still reach their definitions after Concepts adds staged explanation and video.",
+    "task": "261112-BUG-L13",
     "uncommitted": true
   },
   "document": "ROADMAP.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
     },
     {
-      "blob": "6df2621e57f0419bb5800ff8da22ad2939139b3e",
+      "blob": "b477c24f5467a62878fbff415391912ac303f2b0",
       "kind": "file",
       "path": "docs/concepts.md"
     },

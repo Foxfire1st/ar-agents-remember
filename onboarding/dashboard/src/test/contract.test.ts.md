@@ -85,10 +85,14 @@ makes the behaviour load-bearing HERE.
 
 - AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 10 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site. Verification-age histogram and gate/ask sites are absent; drift counts are present. [7]
 
+
 - `ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks. [8]
 
 
+
+
 - Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. [9]
+
 
 - The vocabulary registry binds the build currentness mode and state paths to their value sets. [23]
 
@@ -129,6 +133,6 @@ Execution-graph kind/frontierState paths live under projection.tasks[].summary.e
 
 ## Envelope Contract Vocabulary
 
-In the fixture-coverage guard, `INDEX_SIGNATURE_SITES` registers `projection.enclosures[].lifecycleOperation.recommendedAction.arguments` as an index-signature site, and the closed-vocabulary registry includes `schemaVersion` / `stateMatrixVersion` (single-member v1 literals), the `incoherent` status member, `identity.operationKind`, `worker.state` (live/termination-requested/termination-required/exited), and `approval.state` (claimed/unclaimed). The exhaustive path registry still requires the representative fixture sample to reach every registered path with only legal values.
+The fixture guard registers opaque operation results, legal-control items and recommended-action arguments at both enclosure and task-worktree paths. The closed-vocabulary registry checks the mirrored operation schema and state-matrix versions, status, operation kind and approval state. Each registered vocabulary must have a sampled value and every sample must be declared.
 
 - The closed-vocabulary registry includes all four task-list disagreement kind values; its existing sample guard is not live record reconciliation. [22]

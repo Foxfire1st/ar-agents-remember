@@ -43,7 +43,7 @@ Transient pre-contract start progress is admitted observability, not a record of
 
 Granted direct leaves reuse admitted master series checkouts without their own enclosure. Direct create judges the exact pair before one code publication and completes memory under the same generation; verify-existing remains separate. Shared-checkout guards name a competing active direct leaf, with no OS/shell confinement claim.
 
-Route reviews, closeout doors and ordinary closeout lifecycle candidates share canonical task intent and content-digested direct evidence dependencies; contract publication rejects a door without current intent. Direct landing instead binds the granted canonical leaf on its admitted request, not a claimed closeout door or canonical task-intent identity. Missing taskIntent alone does not reject that bound direct generation; missing both supported bindings retains the legacy reuse barrier. Completed doorless ownership is derived from the stored kind, fingerprint-derived key, generation, status and disposition. Subject to unchanged caller, worker-exit, integrated-state and idle-claim restrictions, the owner may retire, never supersede. Earlier door-bearing direct records remain readable but offer no controls. Exact request replay retains its generation; only a changed request may replace retired terminal evidence, and a converted successor still needs its own open leaf history. Public recover continues the accepted interrupted generation and settles the retained closing on completion. Omitted stored generation uses model default 1. Ordinary closeout rules remain separate. Task publication classifies semantic versus observational edits before deriving affected queue scopes.
+Route reviews and closeout doors bind current canonical task intent and the content-digested evidence required by their owners. Ordinary closeout executes through the synchronous worktree route. Direct landing instead binds the granted canonical leaf on its admitted request, not a claimed closeout door or canonical task-intent identity. The direct control handler accepts a bound leaf as its reuse authority. Public status advertises exact legal controls only when the task-intent identity is available. Completed doorless ownership is derived from the stored kind, fingerprint-derived key, generation, status and disposition. The caller can retire an exact unintegrated owner with an idle integration claim. Supersede has no direct-landing control. Earlier door-bearing direct records remain readable but offer no controls. Exact request replay normally retains its generation. An unpublished self-cancelled refusal permits the same request to start a fresh generation. Only a changed request may replace retired terminal evidence, and a converted successor needs its own open leaf history. Public recover continues the accepted interrupted generation and settles the retained closing on completion. Omitted stored generation uses model default 1. Ordinary closeout rules remain separate. Task publication classifies semantic versus observational edits before deriving affected queue scopes.
 
 `worktree_contract.py` is the contract read/write owner. Its read is walk-free and uses `observed_exists` and `observed_text`, allowing recording consumers to retain the exact bytes consumed, absence or unreadability. Missing documents and invalid structural contract identity refuse with the actual read path. Vocabulary tolerance is deliberately narrower than a claim that every damaged contract refuses: unknown vocabulary cells can degrade to declared defaults with quarantine observations; writers enforce persisted vocabulary. Unsupported schema majors refuse, absent versions retain the documented original-schema meaning, and additive minors remain readable. Legacy leaf-id normalization belongs to writes and explicit migration rather than task-tree traversal during reads.
 
@@ -87,14 +87,14 @@ The landing chain includes ordinary and merge commits. Final uses every canonica
 
 ## Invariants And Boundaries
 
-Task authoring and publication permission belong to tasks/application task-document owners, upstream of disposable scheduling and activation. Activation and queue state must not veto authoring; canonical source publication retains owner-specific source identity and rollback checks, without a claim that the deleted task-publication lock survives. Public MCP transport/schema translation belongs to registration/tools. Closeout claims, approvals, commits, certificates, integration and recovery evidence remain with lifecycle and closeout-door owners. A fresh ordinary series integration records leaf-closeout-door authority as not-applicable; this does not make it direct execution. An explicitly selected unenclosed leaf uses policy-gated direct landing, while ordinary enclosed-leaf integration requires its exact claimed closeout source.
+Task authoring and publication permission belong to tasks/application task-document owners, upstream of disposable scheduling and activation. Activation and queue state must not veto authoring; canonical source publication retains owner-specific source identity and rollback checks, without a claim that the deleted task-publication lock survives. Public MCP transport/schema translation belongs to registration/tools. Ordinary closeout keeps approval and paired commit evidence with its transaction owner. Ordinary integration revalidates both source branches and requires fast-forward ancestry. A source tip that changes during admission returns `source-moved-during-preflight` and asks for a fresh integration preview. An ancestry failure returns `blocked-non-ff` and directs the caller to sync, settle any conflict and close out again before retrying integration. A policy-gated direct landing serves an explicitly selected unenclosed leaf and keeps its own generation.
 
 The mandatory invariant gate enforces exact structured knowledge-maintenance judgments; it is not report-only and does not substitute for Curator semantic judgment. Converted applicability comes from knowledge/layout.json in the relevant candidate/base/official/landed trees. The validator refuses missing paired code or missing validator capability. Landing combines exact-tree validation and the gate port's leaf-history/master-staleness judgment, including unverifiable changed-current entries. Leaf integration's local `_leaf_landing_lock` rejudges the actual closeout CODE/MEMORY commit pair when the landed memory commit or parent memory tip is converted. `_closeout_pair_refusal` uses that parent tip as base and calls `leaf_pair_refusal(..., persist_worklist=False)`; missing parent authority and unreadable sides/bases refuse by name. With no memory output there is no memory landing judgment; nonconverted sides fall through to the cutover lock. This local pair gate does not automatically run full code quality, certification, Curator semantic judgment or independent review.
 
 > **Retained historical source account — superseded by the current route account:**
 > When all relevant sides are unconverted, the current public routes refuse legacy operational input unconditionally, including never-converted repositories. The shared `legacy-format` detail names crossing sync with `merge-memory` from a converted source or first conversion. Converted-location probes word the recovery message rather than decide permission. A failed Git probe keeps its named error; a definite non-repository or absent repository path is a distinct local no-repository case, not permission on an actual legacy line. A converting candidate proceeds to the converted gate. Fresh managed sync performs its exact-side preflight before selecting reconciling; no memory side, skip and already-current shapes do not invent a memory movement, and existing continue/cancel recovery retains its owner. Legacy card reads remain available with no knowledge section, but card writers require converted memory; citation_migrate and memory-citations --migrate are unregistered. DEC-FCNRNT and DEC-VMMJDN retain superseded historical choices, not current permissions.
 
-History closing changes the latest attempt-qualified owner file, or the plain file when no attempt exists. It creates a missing file closed with no rows, preserves existing judgment rows, and keeps already-closed files byte-identical. It stores the qualifying memory review fact in the same write that sets the flag. Eligibility uses the last recorded memory round, its passing result and usable verdict reference, and equality between its reviewed tree and the pre-write checkout. Malformed history is left for the validator to refuse. Restoration compares exact written bytes and preserves later edits. Only the memory commit recorded by a completed leaf closeout freezes earlier closed history; a hand-closed file does not acquire that authority. LeafPublication and LandingGateRequest carry the recorded frozen commits to validation.
+History closing changes the latest attempt-qualified owner file, or the plain file when no attempt exists. It creates a missing file closed with no rows, preserves existing judgment rows, and keeps already-closed files byte-identical. When a memory review fact qualifies, closing stores it in the same write that sets the flag. The memory review lane must have no open findings, and its last recorded round must pass, carry a usable verdict reference, and name the exact pre-write checkout tree. An open finding withholds the review fact while closing proceeds through its ordinary checks. The earlier passing row stays recorded. Malformed history is left for the validator to refuse. Restoration compares exact written bytes and preserves later edits. Only the memory commit recorded by a completed leaf closeout freezes earlier closed history; a hand-closed file does not acquire that authority. LeafPublication and LandingGateRequest carry the recorded frozen commits to validation.
 
 Direct landing keeps history-closing receipts per generation until landing or cancellation decides them. Receipts retain exact closed-blob identity, refuse unreadability and restore only without overwriting later edits. An exact in-flight retry reaches retained generation authority before creating a new closing. Cancellation checks receipts before movement. Prepared certified closeout remains a named converted-memory refusal: its candidate is curator-attested and the current path cannot add the required closed history flag. Unconverted prepared paths are independently subject to the cutover lock.
 
@@ -195,16 +195,22 @@ L61 retained source qualification: completed direct ownership uses the shared do
 
 ## Clean sync preserves a bounded review
 
-The closeout door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. This exception belongs to the door; require_current_route_review keeps its own exact-current-tree contract.
+The closeout door checks the verdict before comparing candidate trees. A sanctioned addition
+publishes a BLOCK for the reviewed tree and retains the prior route units. A generic repair result
+can close the finding while the route verdict remains BLOCK.
+
+For a passing verdict, the door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. The door owns the tree comparison and its clean-sync exception. The leaf review reader checks the verdict, task intent and evidence bytes.
 
 A NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still uses text transport, whose universal-newline handling can collapse CR and LF pathnames. run_git_bytes selects raw output through the same _git_run environment, identity guard, working directory, timeout and session options. _tree_change_after_images splits b"\0", keeps pathname keys as bytes, and decodes only the ASCII mode/blob fields. It raises on failed or malformed raw diff output; it does not normalize, rename-pair or infer path equivalence.
 
 The process service binding lives in the neutral kernel holder and is re-exported unchanged by `services.py`. Startup can name a supplier; the first dependent lookup constructs and retains its bundle, and reset clears both the bundle and supplier. Open intent review refuses a new leaf start before enclosure creation and a planning attach before re-entry; task-stage publication also refuses planning/abandoned-to-`inProgress` while review is open. Existing later-stage attach behavior remains.
 
+The explainer reads canonical reports from the selected leaf's execution receipts after local access folders are reclaimed. The canonical reader includes text reports and regular JSON measurements explicitly cited within their own collections. It excludes generated launch handovers.
+
 ## Evidence
 
-- History closing writes the eligible review fact in the same update and preserves already-closed bytes. [107]
-- Direct landing reads the selected owner's review against the checkout before the cache-ignore or history writes. [108]
+- History closing writes the eligible review fact in the same update and preserves already-closed bytes. [109]
+- Direct landing reads the selected owner's review against the checkout before the cache-ignore or history writes. [110]
 
 - Ancestry, disjoint byte paths and equal reviewed after-images define the clean-sync exception. [104]
 - The door keeps the original record-digest provenance while checking its other inputs. [105]
@@ -263,6 +269,7 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 - Retained reference account (no fresh execution or acceptance inferred): Reopen resolves a leaf naming none through the same helper. [58]
 - Retained reference account (no fresh execution or acceptance inferred): The port, the landing request and the direct verdict. [63]
 
+
 - The unconditional legacy-input refusal and its recovery wording. [65]
 - Task recovery guidance never invokes removed get: an established safe leaf can offer task_doc.replace with the exact slug, contract and fields, while an unknown leaf or parent path offers file repair without a guessed mutation. Launch copies contain the own leaf plus declared local requirements, name missing sources without failing launch solely for absence, and refresh/reclaim on canonical publication under the existing rollback and copy budgets. Status copy drift is informational; missing notice is not universal byte equality. Packet-owned refusal presentation preserves the central conversion sentence and single probe-made case, with exact sync args or quoted separate first-conversion argv and no step for unknown. These accounts change neither canonical-file authority, checkpoint/pause distinction, cleanup/reclamation eligibility, paired source lineage nor sync behavior. [99]
 - Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission. [67]
@@ -280,8 +287,10 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 - Retained reference account (no fresh execution or acceptance inferred): Retirement readiness refuses actual open leaf work and unfinished or unreadable current operation authority, and returns evidence and retained facts. [78]
 
 - **Retained historical source account — superseded by the current route account:** Attribution alone supplies source rows; invalid code objects are separately excluded [79]
-- **Retained historical source account — superseded by the current route account:** Converted validation requires paired code and bound validator; leaf publication uses its publication model [80]
-- **Retained historical source account — superseded by the current route account:** Repository lock probes local marker blobs/working-tree files, with explicit absent/non-repository handling [81]
+
+
+- The retained repository-lock account checks local marker blobs and working-tree marker files and distinguishes absent paths from non-repositories. [107]
+
 - **Retained historical source account — superseded by the current route account:** Sync lock skips absent, already-current and skip sides; moving candidates alone park [82]
 - **Retained historical source account — superseded by the current route account:** Report selection does not include aligned-card count alone [83]
 - **Retained historical source account — superseded by the current route account:** Memory merge validates exact staged tree before commit and proves pinned parents [84]
@@ -294,13 +303,21 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 - **Retained historical source account — superseded by the current route account:** Prepared converted closeout still refuses history closing; landing combines validation and gate [91]
 - **Retained historical source account — superseded by the current route account:** Pause checks removed memory mode, exact series identity and observed vacancy [92]
 - **Retained historical source account — superseded by the current route account:** Series reopen preserves landing on reconstruction and tolerates missing/unreadable task document as a report fact [93]
+
 - **Retained historical source account — superseded by the current route account:** Retirement refuses unfinished/unreadable current authority and selects remedies by locator availability [94]
+
 - **Retained historical source account — superseded by the current route account:** Terminal archival is explicit, skipped on preview/non-leaf and best effort after admission [95]
 
-- Public direct recover completes the accepted generation and settles the retained receipt. [80]
-- An exact direct replay retains its generation, except that an unpublished self-cancelled refusal starts a fresh generation; a changed request can replace retired terminal evidence. [81]
 
-- Cancellation proves ownership first and restores every parked side before terminal retirement. [80]
+
+- Direct recovery continues the admitted generation and settles its receipt. Direct cancellation checks the receipt and proves current Git output before settling cancellation. [80]
+
+
+
+- Exact direct replay retains its generation. An unpublished self-cancelled refusal starts a fresh generation on replay, and a changed request can replace retired terminal evidence. [81]
+
+
+
 
 
 - Shared native reapply expectation uses the carried-head rule and effective worktree context, never an alternate or plain-file fallback. [96]

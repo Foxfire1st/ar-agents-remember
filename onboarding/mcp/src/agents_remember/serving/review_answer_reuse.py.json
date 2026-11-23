@@ -16,7 +16,7 @@
         "handoffEntry": "L177-INV-RECORDED-ANSWER-REUSE",
         "leaf": "260928-MIK-L177"
       },
-      "rationale": "The bounded store that serves an answer only while every observed input still carries its stamp, and never after its size or age bound.",
+      "rationale": "The bounded store validates the current observed inputs and serves only matching retained answers. Entry-count, answer-size and disk-size limits bound retention.",
       "role": "enforcement"
     }
   ],

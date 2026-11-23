@@ -13,7 +13,7 @@ call-level knobs (`TaskDocCall`), the policy gate for branch-addressed direct ex
 `record_route_review` (`_RouteReviewBinding`, `_record_route_review_bound`,
 `_require_route_review_binding`), and the route-review authority rule
 (`_enforce_route_review_authority`). The facade re-exports the names its callers import (same
-pattern as `task_reopen.py`). Since 260831-CCR (commit `99dc249b`) the recorders pass the exact
+pattern as `task_reopen.py`). Since 260831-CCR (commit `99dc249b`) ordinary leaf publication passes the exact
 resolved leaf document (a `ResolvedTaskDocument` built from `document_ref(contract,
 selected_path)`) into `build_route_review`, so the stamped review binds the canonical
 `task-intent/v1` digest to the exact candidate document.
@@ -27,9 +27,9 @@ selected_path)`) into `build_route_review`, so the stamped review binds the cano
 
 ### Logic
 
-`TaskDocCall(dry_run, branch_addressed)` are call-level knobs, not a task edit. Ordinary record_route_review uses the exact leaf enclosure. Branch-addressed review opts in for the exact canonical task_name/slug subTask, requires its current readable external grant, and uses the exact task-root series contract. Missing/unreadable authority names that leaf and the grant givers, never a settings switch. Review evidence still binds the selected document intent and the exact contract mode; create/replace cannot author it. A grant does not waive atomic-child review policy.
+`TaskDocCall(dry_run, branch_addressed)` are call-level knobs, not a task edit. Ordinary enclosed leaf publication uses the exact leaf enclosure. Branch-addressed review opts in for the exact canonical task_name/slug subTask, requires its current readable external grant, and uses the exact task-root series contract. Missing/unreadable authority names that leaf and the grant givers, never a settings switch. Review evidence still binds the selected document intent and the exact contract mode; create/replace cannot author it. A grant does not waive atomic-child review policy.
 
-`_RouteReviewBinding` captures the contract, task root, exact selected path and branch-addressed opt-in. `_record_route_review_bound` requires a review object and refuses memory kind: memory publication uses record_review with reviewKind=memory. For a master it requires the canonical series/task.json binding and calls `build_master_route_review`; for a leaf it enforces exact leaf or sanctioned branch-addressed binding, rejects atomic-child route review, and calls `build_route_review` with the exact `ResolvedTaskDocument`. Both branches pass the plane-stamped route candidate and independently resolved candidate identity into the shared fixed-list transition, then revalidate the whole document. The legacy positional `_record_route_review` preserves the call shape and delegates to the same binding form.
+`_RouteReviewBinding` captures the contract, task root, exact selected path and branch-addressed opt-in. `_record_route_review_bound` requires a review object and refuses memory kind: memory publication uses record_review with reviewKind=memory. Ordinary atomic-master publication requires the canonical `task.json` on its series contract and uses `build_master_route_review`. Ordinary leaf publication requires the exact enclosure or admitted branch address, rejects atomic-child route review, and passes the exact `ResolvedTaskDocument` to `build_route_review`. Each ordinary builder supplies the stamped tree and independently resolved candidate identity to the shared fixed-list transition, which revalidates the document. The legacy positional `_record_route_review` preserves the call shape and delegates to the same binding form.
 
 `_require_route_review_binding` is the L16-R9 error-dialect owner: a missing binding names the
 recovery ("re-stamp the series contract (series-contract.md) or use branch_addressed=true for
@@ -37,7 +37,13 @@ direct execution"), branch-addressed mode requires the task-root series contract
 inside the task root, and the non-branch path requires the leaf worktree contract and resolves the
 exact terminal leaf document (`resolve_terminal_leaf_doc`, asserted-path equality).
 `_enforce_route_review_authority` forbids `create` from authoring route-review evidence and
-`replace` from changing it — both must route through `record_route_review`.
+`replace` from changing it. Dedicated review operations own those fields.
+
+A sanctioned addition to an existing routed leaf or master verdict takes the amendment path before ordinary publication. Both recorders use the fixed-list transition and require a nonblank `verdictRef` for the new BLOCK. The amendment retains the prior reviewed tree, intent, scope and route units. For dependency-stamped records it hashes the supplied verdict file and rebuilds the dependencies and record digest.
+A generic addition on a document without route evidence can omit this reference. A changed
+repair candidate needs a fresh routed verdict to establish
+the route evidence that closeout uses. A generic repair result can close the fixed-list finding
+while the route verdict remains BLOCK.
 
 ### Conventions
 
@@ -53,8 +59,7 @@ dialect.
 - Live canonical-leaf grant and per-call branch opt-in are both enforced; an open direct sibling refuses.
 - Route-review evidence can only be stamped through this machinery; `create`/`replace` cannot
   author or change it.
-- A recorded review always binds the current canonical task intent of the exact selected leaf
-  document; a legacy or missing-intent document cannot be stamped as current.
+- Ordinary leaf publication stamps the current intent of the exact selected leaf. Ordinary atomic-master publication stamps aggregate intent and ordered child scope. A sanctioned amendment retains the prior binding.
 - This module validates and stamps; it does not perform review or mutate source.
 
 ### Todos
@@ -74,7 +79,7 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 ## Evidence
 
-- Generic review recording forwards captured stamps to the bound review state transition. [17]
+- Generic review recording forwards captured stamps to the bound review state transition. [18]
 
 
 
@@ -100,7 +105,7 @@ No configured Domain Documentation source applies.
 
 
 
-- The stamping owner it delegates to; now takes the resolved candidate document. [6]
+- The ordinary leaf builder stamps the intent of the exact resolved leaf document. [6]
 
 - The typed candidate ref derived from the selected path. [7]
 
@@ -114,7 +119,7 @@ No meaningful cross-repository reference applies.
 ## CCR-R02@v2 Task-Intent-Bound Reviews
 
 Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, a route review is evidence bound
-to normative task intent: the recorders now pass the exact `ResolvedTaskDocument` so
+to normative task intent. Ordinary leaf publication passes the exact `ResolvedTaskDocument` so
 `build_route_review` stamps the current `task-intent/v1` digest, and a review whose intent is
 missing/stale refuses. The application seam itself performs no review and owns no intent
 semantics. Part of the landed L25 candidate `99dc249b`.
@@ -125,7 +130,7 @@ semantics. Part of the landed L25 candidate `99dc249b`.
 
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [10]
 
-- The facade that dispatches into this module. Anchor: `task_doc_tool` [8]
+- The task_doc facade dispatches ordinary and routed review recording through its candidate-preparation function. [8]
 
 - The binding form that records a review over the resolved candidate document and re-validates. [2]
 - The route-review authority rule (create/replace cannot author or change evidence). [5]

@@ -14,7 +14,7 @@ Focused pure regression proof for the dependency-owned retry-selection pytest ho
 
 The first positive case supplies two collected items and one explicit affected module, then proves
 the hook retains only that item and reports the other through `pytest_deselected`. The second
-records a passing Pytest collection report for a zero-body shared-definition module and proves
+passes a mock of a successful Pytest collection report for a zero-body shared-definition module and checks
 that this exact observed module is valid without executing an unrelated body. The refusal case
 proves empty configuration, parent-directory escape, and a genuinely uncollected module all fail
 loudly.
@@ -22,14 +22,13 @@ loudly.
 ### Conventions
 
 - Tests invoke the hook directly with typed mocks; they do not create a second pytest route.
-- The file is explicitly classified as `unit-regression` in the lane manifest.
 
 ### Invariants And Boundaries
 
 - A green test proves exact partition/refusal logic, not Dagger retry persistence or acceptance.
-- The zero-body case must supply Pytest's passing collection report; touching a file alone is not
+- The zero-body case supplies a passing collection-report fixture; touching a file alone is not
   evidence that Pytest collected it.
-- The real retry matrix remains the forcing proof for wrapper integration and coverage reuse.
+- Wrapper integration and coverage reuse require a separate witness.
 
 ### Todos
 
@@ -48,7 +47,7 @@ No relevant external documentation was configured.
 The implementation and explicit lane declaration are the load-bearing same-repository owners.
 
 - The hook narrows executable items after canonical collection and distinguishes passing zero-body collection from an absent path. [1]
-- The suite covers narrow selection, zero-body collection, and all configured-path refusal shapes. [2]
+- The suite checks narrow selection, a mocked successful zero-body collection report and three refusal inputs: an empty configured list, a parent-directory path and an uncollected module. [2]
 
 ### Cross-Repo References
 
@@ -58,4 +57,4 @@ Temporary paths and mocks remain local to the test process.
 
 ### Repo-Internal References (continued)
 
-- The unit-regression lane selects mcp/tests/test_retry_selection.py. [3]
+- The `unit-regression` lane selects `mcp/tests/test_retry_selection.py`. [3]

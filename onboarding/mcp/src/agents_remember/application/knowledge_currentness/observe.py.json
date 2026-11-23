@@ -125,14 +125,16 @@
       ]
     },
     "14": {
-      "note": "The reused resolver: the worklist's tree reader and its `resolve`.\n\nAnchor: `CodeTrees` `has_blob`",
+      "note": "Currentness reuses the worklist’s `CodeTrees` reader and `resolve` method. The reader distinguishes a missing blob from a Git read failure.",
       "targets": [
         {
           "anchor": {
-            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
-            "content": "sha256:128341c2daa465fc7a6d31d357de1118c7ada3c2b1b632fc20571de3e11343cf",
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
+            "content": "sha256:e1ef3f03df40f48e9a34cacfe7da3e0a1111ec90ccbc777dd812d8790c048d77",
             "locator": {
-              "kind": "file"
+              "end": 468,
+              "kind": "line_range",
+              "start": 462
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
           },
@@ -140,11 +142,10 @@
         },
         {
           "anchor": {
-            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
-            "content": "sha256:e1ef3f03df40f48e9a34cacfe7da3e0a1111ec90ccbc777dd812d8790c048d77",
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
+            "content": "sha256:c5b27222966b7935990985d026fae619a76fe89b102ce34a8877bf34e6329250",
             "locator": {
-              "kind": "symbol",
-              "name": "has_blob"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
           },

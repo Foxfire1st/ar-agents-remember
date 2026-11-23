@@ -15,7 +15,7 @@ The lane pins **a cleanup preview and the cleanup it previews agreeing about the
 ### Logic
 
 The module drives the **real validator** over four result shapes of the production producer —
-`kernel/primitives/drift_snapshot.py::_remove_snapshot_file` (`:38-...`) is what writes them — rather
+`kernel/primitives/drift_snapshot.py::_remove_snapshot_file` (`:38-55`) returns those fields — rather
 than synthesizing an outcome the producer cannot produce. `_result` (`:27-41`) builds a
 `TerminalResult` whose only non-empty collection is `drift_snapshots={"code": snapshot}`, with
 `providers={"state": "torn-down"}` so the provider half contributes no blocker; that isolation is
@@ -47,8 +47,7 @@ The three cases:
 
 The module imports exactly two names — `TerminalResult` and `terminal_result_blockers` — from the validator, with no test-support import. This direct import shape does not establish absence of evidence-catalog dependencies: the catalog declares this module as a consumer of the global user-settings guard and Node lockfile artifacts. Its five helpers construct typed terminal results or plain snapshot dictionaries for the assertions.
 
-**The current lane registration is the manifest row**: this module carries **no `pytestmark`** and appears in
-`unit-regression` at `mcp/tests/test-evidence-lanes.toml:615`. Membership selects evidence and establishes no execution.
+This module carries **no `pytestmark`**.
 
 
 ### Invariants And Boundaries
@@ -56,8 +55,8 @@ The module imports exactly two names — `TerminalResult` and `terminal_result_b
 - **A blockage always names itself and its reason.** `_blocker` raises rather than emit a
   reason-less entry, and this module asserts the reason's exact text on the one path that must still
   block — the fix may not be achieved by weakening that rule.
-- **A preview is never read as a result.** `TerminalExpectation.preview` selects the key that proves
-  reclamation; the `would_remove`/`removed` pair is the whole difference.
+- **Preview entries report pending removal.** The drift-snapshot expectation uses `removed` as its done key.
+  The validator uses `would_remove` as the pending key in preview mode and `would_delete` otherwise.
 - **The `driftSnapshot` expectation receives the preview flag.** The worktree, directory and
   drift-snapshot expectations receive `result.preview`; the branch expectation and provider helper
   do not receive that flag. The comment beside the fixed drift-snapshot branch records why the former missing preview keyword misread `would_remove` as a real-result reclamation failure, along with the earlier fix’s merge provenance.
@@ -108,7 +107,7 @@ The earlier failure text and L14 attribution remain historical. The current [] a
 > The earlier leaf’s recorded append-at-end account describes its historical catalog, not the current row position.
 > The earlier append-only registration was recorded at historical `mcp/tests/test-evidence-lanes.toml:192`; that source-epoch coordinate is not current navigation.
 
-The current unit-regression selector remains line 604; the old 599 locator is mechanically refreshed, while the original 192 registration account is preserved as history.
+The old 599 locator and the original 192 registration account describe earlier source epochs.
 
 ## Evidence
 
@@ -123,11 +122,13 @@ No configured domain documentation could be checked.
 
 
 
-- The expectation type whose `preview` flag selects the reclamation key. [3]
+
+- The expectation carries the done key and preview flag. The blocker scan uses the flag to select the pending key. [3]
+
 - The result type that bundles the outputs with whether they are a preview. [4]
-- **The producer of the shape this module drives: the real drift-snapshot remover.** [5]
+- The production remover returns the fields modeled by the four snapshot fixtures. [5]
 - One terminal result whose only non-empty collection is the drift snapshot. [6]
-- The preview's own entry shape: `would_remove`, not `removed`. [7]
+- The preview fixture has removed set to false and would_remove set to true. [7]
 - The real removal and the already-absent entries. [8]
 - The genuine failure, which must still block with its reason. [9]
 
@@ -142,16 +143,16 @@ No meaningful cross-repo references found.
 
 
 
-- The preview case asserts that a live drift snapshot produces no blocker. [10]
+- The test passes the preview-shaped snapshot fixture with preview mode enabled and asserts no blockers. [10]
 
 - The case checks preview, real removal and an already-absent entry over the same drift-snapshot collection. [11]
 
 - A real drift-snapshot failure remains blocking and retains its reason. [12]
 
-- The module states the preview/cleanup agreement and defines preview, removed, absent and failed snapshot inputs. [1]
+- The result fixture isolates the drift snapshot and defines the preview, removed, already-absent and failed inputs. [1]
 
 ### Repo-Internal References (renewed)
 
 - The drift-snapshot branch uses a preview-aware expectation; its adjacent comment records the earlier missing-keyword cause and merge provenance. [2]
 
-- The unit-regression lane selects mcp/tests/test_terminal_preview_expectation.py. Execution evidence is recorded separately. [13]
+- The `unit-regression` lane selects `mcp/tests/test_terminal_preview_expectation.py` (`mcp/tests/test-evidence-lanes.toml:617`). [13]

@@ -17,6 +17,8 @@ The durable frame's shapes: one presentation lineage, its immutable revisions an
 `FramePart` assigns known claim ids to uniquely named parts. `_parts_are_true` refuses unknown or multiply mapped claims and, when there is a mapping, requires every revision claim to appear. `_supplemental_is_true` requires the manifest receipts to match the packet ids, canonical sources, digests and read states exactly.
 `FrameDraft` keeps an authoring attempt and its lease apart from the ready revision; `FrameReclamation` records intent before bytes are removed and the outcome after; `FrameOpening`, `FrameStaleness` and `FrameRegeneration` state usable/unavailable, `current`/`stale` with the moved sides, and the starting artifact an explicit regeneration receives. `FrameStalePart` carries each affected part and its changed-basis reasons; a nonempty stale-parts list requires the revision state to be `stale`.
 
+FrameAsset admits relative WebM and MP4 paths by suffix and holds the media type as a length-bounded string. The frame store supplies the MIME value when constructing the asset entry.
+
 ## Evidence
 
 - A revision binds the comparison's every side and the conversion tree, and its artifact digest covers asset bytes only. [1]
@@ -24,10 +26,15 @@ The durable frame's shapes: one presentation lineage, its immutable revisions an
 - A draft is a leased attempt, separate from the ready pointer. [3]
 - A reclamation record is written as intent before removal and as outcome after it. [4]
 
-- `_suffix` maps a kit licence's extensionless `LICENSE` basename to `.txt`, so a pinned licence is served under the plain-text type its manifest entry declares. [5]
 
 - Recorded and planned bindings retain distinct owners and addresses. Limits omit revision-count and lineage-byte eviction thresholds; part maps keep each revision’s own claims and supplemental receipts match the packet exactly. Stale-part reasons are present only on stale revisions. 
 
 - Recorded and planned bindings retain distinct owners and addresses. Limits omit revision-count and lineage-byte eviction thresholds; part maps keep each revision’s own claims and supplemental receipts match the packet exactly. Stale-part reasons are present only on stale revisions. [6]
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_frame.py::FrameManifest - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_frame.py::FrameStalePart - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_frame.py::_parts_are_true - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_frame.py::FramePart - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_frame.py::FrameLimits - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+
+- The suffix helper maps the kit's extensionless LICENSE to .txt. [5]
+
+- The asset model admits WebM and MP4 paths by suffix. The store assigns the media type when constructing an asset entry. [7]

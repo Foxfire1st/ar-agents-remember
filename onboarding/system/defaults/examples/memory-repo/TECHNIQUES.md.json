@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The technique table steers look, motion and interaction only, and cannot change what the explainer may read, write or start",
+      "note": "The example techniques give the visual and interactive options for essay parts that benefit from a figure.",
       "targets": [
         {
           "anchor": {
-            "blob": "64648c4958c7fa81d419d1d9cc3d76c90bbc857b",
-            "content": "sha256:efdb78108b36766bd464f6132ad647433d5b70da6a7e3fc7bac04046369eeb7e",
+            "blob": "93688e4f1d6ffe3b73a531ed9faca32ffed0daea",
+            "content": "sha256:2d1ba9a0e5cc44fc323b5ffb8174612bc92a56c6c03f41cbcd8217e9ee84ae50",
             "locator": {
-              "end": 5,
+              "end": 15,
               "kind": "line_range",
-              "start": 5
+              "start": 1
             }
           },
           "kind": "code"

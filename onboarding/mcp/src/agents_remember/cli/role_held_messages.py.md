@@ -28,7 +28,7 @@ Before a resend, a message attempted under a host id goes alone and under that i
 
 ## Current Contract — Scoped Launch And Settings Changes
 
-_open_held_seat now invokes the receipt owner’s _restore_launch_handover with the saved launch call before adding waiting messages to the frozen opening prompt. The common path validates frozen detail identity/revision as well as restoring/verifying the primary handover and any takeover material.
+_open_held_seat now invokes the receipt owner’s _restore_launch_handover with the saved launch call before adding waiting messages to the frozen opening prompt. For an artifact-backed receipt, restoration validates frozen details and verifies the primary handover and takeover material. With neither artifact reference, the helper validates the frozen details directly.
 
 A ValueError releases the claim and returns cannot-open with the specific recovery detail; no host opening occurs and waiting messages remain. Existing successful opening stages terminal metadata before removal, and existing FIFO, batching, store limits, permission guards and bounded sweep contracts remain unchanged.
 
@@ -54,7 +54,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_
 - Validation precedes prompt construction and host launch; failures retain waiting work. [5]
 
 
-- Common restoration also validates instruction details and takeover references. [6]
+
+- Held-seat opening checks frozen details before composing its message. If artifact references are present, the helper also restores or verifies their files. [6]
+
 
 
 - Test source checks cannot-open, zero second host calls and retained/reclaimable work. [7]

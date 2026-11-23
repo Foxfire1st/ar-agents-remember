@@ -47,7 +47,6 @@ sides (`worklist_for_sides`) exactly as the leaf route does.
 ### Conventions
 
 - Assertions check exact sets and exact classes, not "non-empty".
-- The module is registered in the `unit-regression` lane of `test-evidence-lanes.toml`.
 
 ### Invariants And Boundaries
 
@@ -102,4 +101,4 @@ No cross-repo boundary is crossed by this file.
 
 - The two real repositories used by the repository-backed cases. [1]
 
-- The unit-regression lane selects mcp/tests/test_knowledge_worklist.py. [15]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_worklist.py`. [15]

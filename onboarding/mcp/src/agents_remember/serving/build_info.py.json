@@ -52,11 +52,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
-              "kind": "symbol",
-              "name": "run_git"
+              "end": 225,
+              "kind": "line_range",
+              "start": 170
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -64,12 +65,12 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:5736f26e501829b927f3ec0a34e374e5efc5a275e4525a777ce9ab8182fc831a",
             "locator": {
-              "end": 236,
+              "end": 238,
               "kind": "line_range",
-              "start": 172
+              "start": 174
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -77,8 +78,8 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:44921560a9d5681dc45ee5e1808f8595ae4f497d2458666814c83965fd8b1418",
             "locator": {
               "kind": "file"
             },
@@ -119,14 +120,16 @@
       ]
     },
     "3": {
-      "note": "`SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback (kernel-owned since L9). Anchor: `_resolve_server_version`",
+      "note": "`SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback.\n\nAnchor: \"SERVER_VERSION\"",
       "targets": [
         {
           "anchor": {
             "blob": "c02d5f6f0d5ffd938a425723eb62783233464520",
-            "content": "sha256:4899b1cbe0bb73929c2a46294d5a754f7b6953a3229853cc9787619fc8be08a9",
+            "content": "sha256:ec2992e23b75f506c703b93043b3885b4d3ecd01e9de1c99ca4623ee017bd629",
             "locator": {
-              "kind": "file"
+              "end": 23,
+              "kind": "line_range",
+              "start": 14
             },
             "path": "mcp/src/agents_remember/kernel/primitives/version.py"
           },
@@ -233,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:9be6edd7629b87ba159b0a5805c8d9965ced076237c86d4585d132efd11a3ae5",
             "locator": {
               "kind": "symbol",
@@ -245,12 +248,12 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:a861bb54d9a3235afff353218e4c62d66f21d7055fd17bb9950f1e59f7537b4f",
             "locator": {
-              "end": 67,
+              "end": 69,
               "kind": "line_range",
-              "start": 58
+              "start": 60
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -258,12 +261,12 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:a39cce29374f23fdd8e37ac828f3e731b6a622fe8a690067591eaee9add399b6",
             "locator": {
-              "end": 72,
+              "end": 74,
               "kind": "line_range",
-              "start": 63
+              "start": 65
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -276,11 +279,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
             "locator": {
-              "kind": "symbol",
-              "name": "git_environment"
+              "end": 167,
+              "kind": "line_range",
+              "start": 154
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -288,23 +292,23 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:3a65f1712894f28e00fe1248124b625f52415d557bf203b7adfc9d043476ca63",
             "locator": {
-              "end": 162,
+              "end": 164,
               "kind": "line_range",
-              "start": 156
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:44921560a9d5681dc45ee5e1808f8595ae4f497d2458666814c83965fd8b1418",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },

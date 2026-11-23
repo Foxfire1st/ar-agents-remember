@@ -49,7 +49,7 @@
       ]
     },
     "25": {
-      "note": "Current managed-sync sibling cases.",
+      "note": "The managed-sync sibling test records a memory-only move and checks its effect on the live review’s staleness.",
       "targets": [
         {
           "anchor": {
@@ -101,14 +101,28 @@
       ]
     },
     "29": {
-      "note": "**The repository document that must contain the rendered support matrix verbatim.**",
+      "note": "The documentation test requires the rendered support matrix as a substring of the complete Markdown file.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a137c8b837455415d88d5951d4367b1b4431896",
-            "content": "sha256:3be3f359d0afb87442fa313c093fa2705be760f45a785c2e3b4882b39d5cbc7c",
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:eb5c3c47204855f2eed8f9c830d4aa10925ea314e53c71980141d2ad6085ffc9",
             "locator": {
-              "kind": "file"
+              "end": 106,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f18b21d0d255bce3024a2cd8726367c521764fab",
+            "content": "sha256:61c7a9f0c7e1e67b3fefd6d83cd224645444f3aa53d8f5edf2a1c00d72324729",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 251
             },
             "path": "docs/reference/worktrees-c09.md"
           },
@@ -165,15 +179,28 @@
       ]
     },
     "8": {
-      "note": "Commit-bound ancestry states remain distinct.",
+      "note": "The commit-bound cases distinguish untouched, appended and rewritten work branches. The unread-channel case separates a measured memory rewrite from unavailable memory and declared-source channels.",
       "targets": [
         {
           "anchor": {
             "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
             "content": "sha256:b72e121ba42d3ca5a67aa14e1e2dc4a4aa1a1db888873b30106a4a39ce51d152",
             "locator": {
-              "kind": "symbol",
-              "name": "test_work_branch_ancestry_tells_an_untouched_branch_from_an_advance_and_a_rewrite"
+              "end": 157,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:408b0e97520036efeccd833c94dc00c97feeba863b84f77b6e8b6aa628c49e61",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 184
             }
           },
           "kind": "test"

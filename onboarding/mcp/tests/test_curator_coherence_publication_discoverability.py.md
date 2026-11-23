@@ -53,8 +53,8 @@ The eight source test definitions yield eighteen statically enumerated cases: si
 | `test_non_publish_refusal_names_every_supplied_field_in_model_order` (`:265-279`) | several supplied fields are named in **model order**, `judgments` included |
 | `test_freeze_snapshot_keeps_its_own_named_refusal` (`:282-289`) | the freeze branch keeps the message it already had — the fix may not flatten a named refusal into the generic one |
 
-**`_prepared_payload` (`:111-147`) is the only stubbed boundary, and it is stubbed at the observation
-rather than at the text.** `mock.patch.multiple` replaces `observe_curator_coherence_source`,
+**`_prepared_payload` (`:111-147`) exercises the production response with fixture inputs.**
+`mock.patch.multiple` replaces `observe_curator_coherence_source`,
 `current_curator_coherence_predecessor` and `curator_coherence_paths` in
 `curator_coherence_publication`, then calls the shipped `curator_coherence_action(contract,
 CuratorCoherenceRequest(action="prepare", …))`. `_prepare` owns the shipped text, so the summary the
@@ -67,14 +67,11 @@ The module imports the production declaration rather than a copy (`PUBLICATION_M
 `CuratorCoherenceRequest`), and reads `JUDGMENTS_FILE_MEMBER` through the imported `coherence_models` module. The three content-member names are used as constants so the exclusion
 set and the shape validator that refuses them cannot drift apart. `_CONTRACT_PATH` (`:52`) is a real
 enclosure-shaped path, and `_REFUSAL_PREFIX` (`:53`) is asserted before being stripped. The module
-carries **no `pytestmark`**; its current lane declaration is `unit-regression` at
-`mcp/tests/test-evidence-lanes.toml:136`. The former card recorded append-only
-registration at its earlier source epoch; this is not a claim that the current row
-was appended at the end of the catalog. Its direct imports include `agents_remember`
+carries **no `pytestmark`**. The former card recorded append-only registration at its earlier source epoch. Its direct imports include `agents_remember`
 models, `pydantic` and `pytest`; direct imports do not determine the complete governed
 consumer population. The merged `mcp/tests/evidence-lifecycle.toml` declares this module
-on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py` at line 237
-and `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2598.
+on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py` at line 239
+and `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2659.
 These are catalog declarations, not fresh collection or execution evidence.
 
 ### Invariants And Boundaries
@@ -124,7 +121,9 @@ No configured domain documentation could be checked.
 
 - The module's own mirrors of the declaration, of a full request, and the three helpers that turn a request into the refusal's detail. [8]
 
-- **The one stubbed boundary: the real `prepare` over a stubbed observation, so the asserted summary is the one a caller receives.** [9]
+
+- The production prepare action constructs the response over stubbed source observation, predecessor, and canonical paths. It writes the candidate set in the scratch fixture. [9]
+
 
 - One member omitted alone, and all nine omitted, in declaration order. [10]
 
@@ -139,8 +138,8 @@ No configured domain documentation could be checked.
 
 ### Cross-Repo References
 
-No cross-repository behavior is implemented or measured in this file. Every case drives this
-repository's own model and publication route over a stubbed observation.
+The cases exercise this repository's request model directly. The prepare case also drives
+its publication action with the stubbed inputs described above.
 
 No meaningful cross-repo references found.
 
@@ -149,4 +148,4 @@ No meaningful cross-repo references found.
 
 - **The `prepare` case: all nine names in order, the judgments phrase, and `.get` returning `None` for both caller-supplied delivery identities.** [12]
 
-- The unit-regression lane selects mcp/tests/test_curator_coherence_publication_discoverability.py. Execution evidence is recorded separately. [16]
+- The `unit-regression` lane selects `mcp/tests/test_curator_coherence_publication_discoverability.py` (`mcp/tests/test-evidence-lanes.toml:136`). [16]

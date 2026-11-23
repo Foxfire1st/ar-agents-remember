@@ -30,14 +30,14 @@
       ]
     },
     "2": {
-      "note": "The retained lifecycle scenario preserves the parent through start/attach/abandon.",
+      "note": "The scenario verifies the start and reattach binding, the abandoned leaf states, removal of the leaf code worktree and branch, and preservation of the parent series contract and branch.",
       "targets": [
         {
           "anchor": {
             "blob": "6794415cc0b78d9be5edd11c10451f475acd1b2a",
-            "content": "sha256:8d5e59f9305196e7f0bf075bf857953a1575fc07ad1481051162638c1e25f9fa",
+            "content": "sha256:6411a385f1530e0033058e9983a663276b67c82576fe57ec679a61fd2e55dc4e",
             "locator": {
-              "end": 379,
+              "end": 385,
               "kind": "line_range",
               "start": 181
             }
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "blob": "cfda37628ff237411040a297821cd403f081cc5a",
             "content": "sha256:7205b78a3c664f64bf493142c9045ce62c0e053938706061921befc9362f8989",
             "locator": {
               "kind": "symbol",
@@ -63,7 +63,7 @@
         },
         {
           "anchor": {
-            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "blob": "cfda37628ff237411040a297821cd403f081cc5a",
             "content": "sha256:ee8013dcde65b92a192ab77a34d5bfe7eb6d69c1ac739075385d925921caa8f6",
             "locator": {
               "kind": "symbol",

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "09c03bd445b55ab18d6b0eda658b02049fb82cca",
+        "blob": "2668de0dbd12e6a7d845380c650d2cbce313f008",
         "content": "sha256:1a988956f53e9321cccde6cadcb79169938dcc16faa49ed97858afeb0fc493ec",
         "locator": {
           "kind": "symbol",
@@ -17,17 +17,51 @@
         "handoffEntry": "L81-R1-F20",
         "leaf": "260928-MIK-L81"
       }
+    },
+    {
+      "anchor": {
+        "blob": "2668de0dbd12e6a7d845380c650d2cbce313f008",
+        "content": "sha256:088b151454d843d3600261704dd0d9f34db43b62c2ca46f5f6f15d6e05cf3638",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_git_blob_spool_is_private_and_closed"
+        }
+      },
+      "facet": "The blob batch uses a private spool and closes it.",
+      "id": "PRF-642E34",
+      "invariant": "INV-HEDEKR",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — Git blob reads",
+        "leaf": "261112-BUG-L18"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2668de0dbd12e6a7d845380c650d2cbce313f008",
+        "content": "sha256:3f5822bbb956e53ed7308659d71ed571806882cc771eeb1fc6b1c478f16a13cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_git_blob_reader_refuses_invalid_frames"
+        }
+      },
+      "facet": "Malformed frames are refused.",
+      "id": "PRF-A9K7MA",
+      "invariant": "INV-HEDEKR",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — Git blob reads",
+        "leaf": "261112-BUG-L18"
+      }
     }
   ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "One request makes the same Git lookup of the same object once (MIK-R81 rule 7).",
+      "note": "Within an active request memo, an eligible repeated successful Git object lookup reuses its answer for the same repository and object.",
       "targets": [
         {
           "anchor": {
-            "blob": "09c03bd445b55ab18d6b0eda658b02049fb82cca",
-            "content": "sha256:6a912d13099910a66bcb4294d03b6a50ee5f0930dd10bb6df28f9da9fe2259a3",
+            "blob": "2668de0dbd12e6a7d845380c650d2cbce313f008",
+            "content": "sha256:13bca1031553ddb6355d7a06fae2f3d8efc782c06a59b83f3282dd65cdab3a8f",
             "locator": {
               "kind": "file"
             }
@@ -41,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09c03bd445b55ab18d6b0eda658b02049fb82cca",
+            "blob": "2668de0dbd12e6a7d845380c650d2cbce313f008",
             "content": "sha256:75444170b559528ae174923b9b1caf8f8f59481562b376136cb275f29cea7aba",
             "locator": {
               "kind": "symbol",

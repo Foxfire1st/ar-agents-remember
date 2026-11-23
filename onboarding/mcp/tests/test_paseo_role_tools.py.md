@@ -47,8 +47,12 @@ the CLI helpers directly, and use `paseo_role_tools_test_support` for the bridge
 - May-start rules, another starter's receipt, a reused request id and the registered tool surface are asserted here. [1]
 
 
-- The second start reaches the held dispatch lock before pending is asserted. [2]
-- The role, task and report registration exists before agent-create begins, under the existing dispatch lock. [6]
+
+- The serialization test observes the second Start reaching the held dispatch lock before it checks that the call remains pending. [2]
+
+
+- The create observer sees the role, task and report registration under the dispatch lock before the host creates the agent. [6]
+
 
 
 

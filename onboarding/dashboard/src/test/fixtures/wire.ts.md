@@ -127,11 +127,15 @@ does not.
 - `reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check. [17]
 - `asServedProjection` — the sanctioned narrowing this module's `SERVED` constant is read through. [18]
 
+
 - The fixture bases draw their enclosure sample from the same oracle. [20]
 
 
 
+
+
 - The wire oracle carries the hand-maintained sampled analytics payload. [21]
+
 
 The former task-document builder sampled analytics in the predecessor. Current native entries and summaries are separate; no analytics task-document catalogue or lifecycle-derived metrics builder is restored.
 - BASE_ATTENTION copies the sampled attention item identity, kind, severity, lane and title, including required itemClass and dismissible; the sample remains manually maintained. [24]

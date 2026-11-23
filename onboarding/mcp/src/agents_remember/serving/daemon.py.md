@@ -110,6 +110,7 @@ protocol.
 - The MCP boot seam calling `maybe_autostart_dashboard`. [3]
 
 
+- The version comparator uses installed package metadata with the source-checkout release fallback. [4]
 
 
 

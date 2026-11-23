@@ -276,15 +276,16 @@
       ]
     },
     "6": {
-      "note": "The shipped declared-tools baseline and the silent before-file that evidences no run.",
+      "note": "The shipped baseline includes an exit status and findings. The before-file has neither an exit status nor a producer transcript, and the test refuses it as evidence.",
       "targets": [
         {
           "anchor": {
             "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
-            "content": "sha256:8f118883d6fc4563f99afd9607c2d31504c62d3101af16bd9e788411e7440266",
+            "content": "sha256:a49ef8520b6eb6ab2e005bb3345a4dc7b71ff80aee231bcee74b07a73cf20924",
             "locator": {
-              "kind": "symbol",
-              "name": "DECLARED_TOOLS_RESULT"
+              "end": 109,
+              "kind": "line_range",
+              "start": 94
             }
           },
           "kind": "test"
@@ -292,10 +293,11 @@
         {
           "anchor": {
             "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
-            "content": "sha256:b88c20ae4a145b783bf0d8e88bcde17948d3927245bc4db4da3ed0e20f96e6a3",
+            "content": "sha256:0b222228a024c5407339e4a5dd3fa8b1717c155e0efc90e81e5958c3696c1aed",
             "locator": {
-              "kind": "symbol",
-              "name": "DECLARED_TOOLS_SILENT"
+              "end": 268,
+              "kind": "line_range",
+              "start": 253
             }
           },
           "kind": "test"

@@ -19,8 +19,8 @@
         },
         {
           "anchor": {
-            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
-            "content": "sha256:b93e061169ce574cbd24dcb580c2b828d14634b846839a7e6af46203f2d05f97",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "content": "sha256:8ecf8d42ace1b7b2403bfe710d8c6cb3ab03a7c3e146586c11c6e386098e3bea",
             "locator": {
               "kind": "file"
             },
@@ -74,8 +74,8 @@
         },
         {
           "anchor": {
-            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
-            "content": "sha256:b93e061169ce574cbd24dcb580c2b828d14634b846839a7e6af46203f2d05f97",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "content": "sha256:8ecf8d42ace1b7b2403bfe710d8c6cb3ab03a7c3e146586c11c6e386098e3bea",
             "locator": {
               "kind": "file"
             },
@@ -222,8 +222,8 @@
         },
         {
           "anchor": {
-            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
-            "content": "sha256:b93e061169ce574cbd24dcb580c2b828d14634b846839a7e6af46203f2d05f97",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "content": "sha256:8ecf8d42ace1b7b2403bfe710d8c6cb3ab03a7c3e146586c11c6e386098e3bea",
             "locator": {
               "kind": "file"
             },
@@ -251,12 +251,12 @@
         },
         {
           "anchor": {
-            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
             "content": "sha256:190f75581818fdfe52e3d44c0c4174725dc23c441333a60cd230274e0abcc3b9",
             "locator": {
-              "end": 431,
+              "end": 460,
               "kind": "line_range",
-              "start": 350
+              "start": 379
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -306,7 +306,7 @@
         }
       ]
     },
-    "21": {
+    "23": {
       "note": "The dispatcher derives stamps for memory review from the bound task and repository.",
       "targets": [
         {
@@ -323,7 +323,7 @@
         }
       ]
     },
-    "22": {
+    "24": {
       "note": "The generic route records round evidence separately from code route-review evidence.",
       "targets": [
         {

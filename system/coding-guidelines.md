@@ -434,6 +434,9 @@ hold, and it is removed when they stop holding.
    the implementation, say *that* explicitly rather than leaving it implicit. A refusal with no
    advertised way forward is indistinguishable from a wall.
 
+**A state built by hand to defeat a check earns no guard.** Examples include forged or copied
+stamps, files rewound while their history stays, edited histories, and clones the product never makes.
+
 **A guard with no cited failure has no intent behind it.** That is the tell, and it is why such
 guards cannot explain themselves: the illegibility is a provenance problem, not a writing
 problem. A design that was thought through end to end can be wrong and still shows a line of
@@ -456,9 +459,23 @@ and its ledger. The exemplar that clears the bar is
 
 ## Before a handover
 
-Before each freeze, run the focused tests for the changed behavior and the fast commit-hook checks on a clean copy of the candidate's final bytes. Use a shared clone at the base with the candidate tree read in, under umask 022. Follow [the registered tools and commands](tools.md#transaction-boundary): generated-copy checks, Ruff, Ruff format and Pyright; when the candidate changes the dashboard, also its code generation, lint and type check. Use the command sections in that file for the exact invocation and environment.
+Before each freeze, run the focused tests for the changed behavior and the fast commit-hook checks on a clean copy of the bytes being frozen. Use a shared clone at the base with the candidate tree read in, under umask 022. Follow [the registered tools and commands](tools.md#transaction-boundary): generated-copy checks, Ruff, Ruff format and Pyright; when the candidate changes the dashboard, also its code generation, lint and type check. Use the command sections in that file for the exact invocation and environment.
 
-Repair failures before freezing, then check the final bytes. The freeze report names each check, its result and the clean copy's Git tree, bound to the handed-over candidate. These fast deterministic checks and focused tests are handover work; full code-quality and full-test operations still require an explicit developer request. They do not supply certification or replace independent review.
+Repair failures before freezing and check the resulting bytes. The freeze report names each check,
+its result and the clean copy's Git tree, bound to the handed-over candidate. Review rounds use
+these focused tests and fast checks. Full code-quality and full-test operations require a developer
+request. A requirement's `## Final checks` section is the request for the runs it lists. The Worker
+runs them once on the exact tree the Reviewer passed.
+
+The Reviewer seals a failed final check as a finding. The Worker repairs it in a successor freeze,
+with the usual focused tests and fast checks. After the same Reviewer passes the repair, the Worker
+runs the failed tests and the focused tests of the repair on the successor tree. For a failed
+multi-step run, rerun the failed step and the focused tests of the repair. Keep the targeted results
+with the original report, which remains the evidence for the full run.
+
+A review assumes honest agents. A finding identifies the product operation or honest step by an
+agent or the developer that reaches its starting state. Harder, adversarial review requires a
+request from the requirement or the developer.
 
 ## Tool building
 

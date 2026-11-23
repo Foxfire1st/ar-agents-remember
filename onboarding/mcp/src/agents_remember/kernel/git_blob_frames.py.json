@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/kernel/git_blob_frames.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b81241b1ecdcba97b81a57938e795ed5daf041a1",
+        "content": "sha256:508ddf88a1c0836c6ea2785910b72753f81675cd57e122cb25371f394b4facec",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_blob_frames"
+        }
+      },
+      "id": "RLZ-XXV3R4",
+      "invariant": "INV-HEDEKR",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — Git blob reads",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The parser checks object identity and body framing before returning a blob.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The decoder validates requested frames and rejects trailing bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b81241b1ecdcba97b81a57938e795ed5daf041a1",
+            "content": "sha256:508ddf88a1c0836c6ea2785910b72753f81675cd57e122cb25371f394b4facec",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_blob_frames"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The body reader can report short input before allocating it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b81241b1ecdcba97b81a57938e795ed5daf041a1",
+            "content": "sha256:1d4afd900feec093f418b13a03c21c4bc1607e100f420c140a787127404779de",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_blob_body"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

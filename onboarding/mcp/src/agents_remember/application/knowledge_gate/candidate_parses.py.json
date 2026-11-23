@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/candidate_parses.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate parse insertion uses the retained graph budget.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "565ebc2f19472e0cd7a300fb76627b9439204942",
+            "content": "sha256:5ef5c82abf4ee88dc7a206f9d5afd34376c33e97caceee2197c5b79f5c5d4ede",
+            "locator": {
+              "kind": "symbol",
+              "name": "remember_candidate_parse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

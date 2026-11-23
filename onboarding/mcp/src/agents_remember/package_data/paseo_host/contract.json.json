@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6463b43ab293f7d1e7cb525891b1e346d2e8f98c",
-        "content": "sha256:c477f0ca5f99e7fabd6908462ba20203bcdc55bc80b2a00f49586f37c5475e60",
+        "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
+        "content": "sha256:57c6957246b97dbc1ab522e6c7781e9237576da37b50f264b2ae75700f632c08",
         "locator": {
           "end": 3,
           "kind": "line_range",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "6463b43ab293f7d1e7cb525891b1e346d2e8f98c",
-        "content": "sha256:ba6d0bbea457047d53b11079020b57214aaf528f5ccf90b2dc06d9817dfea31f",
+        "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
+        "content": "sha256:90ead90da0e3bd10ca0b06edb4bb6281e181c954247b4d586072028872857567",
         "locator": {
           "kind": "file"
         }
@@ -40,14 +40,16 @@
   ],
   "references": {
     "1": {
-      "note": "The contract file consumed by the host pin.",
+      "note": "The contract selects `@getpaseo/cli` 0.16.2 and Node 26.11.1 for linux-x64.",
       "targets": [
         {
           "anchor": {
-            "blob": "6463b43ab293f7d1e7cb525891b1e346d2e8f98c",
-            "content": "sha256:ba6d0bbea457047d53b11079020b57214aaf528f5ccf90b2dc06d9817dfea31f",
+            "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
+            "content": "sha256:90ead90da0e3bd10ca0b06edb4bb6281e181c954247b4d586072028872857567",
             "locator": {
-              "kind": "file"
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -55,7 +57,7 @@
       ]
     },
     "2": {
-      "note": "Official v26.11.1 distribution checksums identify the selected linux-x64 archive digest. Re-fetched 2026-10-28T06:12Z: the file still publishes node-v26.11.1-linux-x64.tar.xz as 3883bfc73f9a680ca4eab04b196068aaaab1373ffa77d8fc1a4408222495b651, which is the digest this contract retains.",
+      "note": "Official Node v26.11.1 distribution checksums identify the linux-x64 archive digest. The 2026-10-28 06:12 UTC recheck records 3883bfc73f9a680ca4eab04b196068aaaab1373ffa77d8fc1a4408222495b651 for node-v26.11.1-linux-x64.tar.xz, which matches the pinned digest.",
       "targets": [
         {
           "document": {
@@ -66,13 +68,49 @@
       ]
     },
     "3": {
-      "note": "MIK-R107 v1 rule 1 asks the contract to name the newest 26.x.y that nodejs.org lists on the day of the build, with each archive's address and SHA-256 from the official SHASUMS256.txt. On 2026-10-08, the build day, the newest was v26.11.1, and v26.11.1 is what this contract names — the pin is what satisfying the rule left behind. Re-fetched 2026-10-28T06:12Z the newest is v26.12.1, so the rule was satisfied on its build day and the contract does not claim to satisfy it today.",
+      "note": "The dated release-index recheck recorded 26.11.1 as the 2026-10-08 build-day selection and 26.12.1 as the latest 26.x release at the 2026-10-28 06:12 UTC recheck.",
       "targets": [
         {
           "document": {
             "document": "https://nodejs.org/dist/index.json"
           },
           "kind": "external"
+        }
+      ]
+    },
+    "4": {
+      "note": "Release concordance checks the package and lock pins, the sole supported platform, the canonical archive URL and the configured digest format.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfaf9b5f20272244ad140fef74d4a5a3aaa3d62f",
+            "content": "sha256:e34818869584f959161e8cba229fe5bb0984a613c6adcea03c1f6dad00e48efb",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "scripts/check-host-contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Node provisioner computes SHA-256 from the downloaded archive and rejects a mismatch before opening it for extraction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c04ba51e28132e2c051c120ed038b9f096cb595",
+            "content": "sha256:205a49ffb20e01d09568c93ef412b0338b9d6af14b11ed98c163d6c636efe0a4",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py"
+          },
+          "kind": "code"
         }
       ]
     }

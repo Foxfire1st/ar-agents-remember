@@ -3167,7 +3167,7 @@
         }
       ]
     },
-    "227": {
+    "234": {
       "note": "The Records branch gives each record row optional state and writer text through the shared formatter.",
       "targets": [
         {
@@ -3184,7 +3184,7 @@
         }
       ]
     },
-    "228": {
+    "235": {
       "note": "The record heading displays supplied revision state and compact writer alongside record status and optional currentness.",
       "targets": [
         {
@@ -3201,7 +3201,7 @@
         }
       ]
     },
-    "229": {
+    "236": {
       "note": "Record links can display the supplied revision state and writer beside their link.",
       "targets": [
         {
@@ -3218,7 +3218,7 @@
         }
       ]
     },
-    "230": {
+    "237": {
       "note": "The sidebar formats supplied state and writer through the shared formatter.\n\nAnchor: `recordStandingText`",
       "targets": [
         {
@@ -3234,7 +3234,7 @@
         }
       ]
     },
-    "231": {
+    "238": {
       "note": "KnowledgeTree passes the optional standing text to ExplorerTree as row detail.",
       "targets": [
         {
@@ -3251,7 +3251,7 @@
         }
       ]
     },
-    "232": {
+    "239": {
       "note": "ExplorerTree renders the detail as a wrapping second line.",
       "targets": [
         {
@@ -3276,23 +3276,6 @@
               "start": 186
             },
             "path": "dashboard/src/grammar/ExplorerTree.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "233": {
-      "note": "The family detail lists its members through RecordLink.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
-            "content": "sha256:25009c369954228fecdd0671caaa94413eb0d750467a796e1fd33461034a3209",
-            "locator": {
-              "kind": "symbol",
-              "name": "FamilyPart"
-            },
-            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
           },
           "kind": "code"
         }
@@ -3342,6 +3325,23 @@
               "kind": "file"
             },
             "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "240": {
+      "note": "The family detail lists its members through RecordLink.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "content": "sha256:25009c369954228fecdd0671caaa94413eb0d750467a796e1fd33461034a3209",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyPart"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
           },
           "kind": "code"
         }
@@ -3804,12 +3804,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
-            "content": "sha256:3ddc7ae1afef1eb6f21798e7acd08bee784418f7b945a9919e371660d0891edd",
+            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
+            "content": "sha256:1d879072ff5faf6f25c5aae9a0e0491e510a598b9e6e0487812f29c2a196f766",
             "locator": {
-              "end": 1954,
+              "end": 8,
               "kind": "line_range",
-              "start": 1801
+              "start": 1
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },

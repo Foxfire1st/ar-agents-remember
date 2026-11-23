@@ -41,6 +41,12 @@ No configured domain documentation was available.
 
 
 
+- Package metadata and source-checkout fallback are selected through the explicit resolver. [1]
+
+
+
+
+- Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity. [2]
 
 
 

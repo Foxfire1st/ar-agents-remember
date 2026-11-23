@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
-        "content": "sha256:4148858e54956c31ca751fb1ea4266263bf8e9434fb1a310f480ae246989d197",
+        "blob": "8f9bc2c24d7b679f25deffb740ca2965df933c37",
+        "content": "sha256:1ffa06b9b739a6a2016e2e62ec131d509bdd90ba980dd58abca3b7965267770c",
         "locator": {
           "end": 7,
           "kind": "line_range",
@@ -17,12 +17,12 @@
         "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
         "leaf": "260928-MIK-L123"
       },
-      "rationale": "The stop-semantics note pins the release whose stopDaemonInstance behavior it describes, now bootId-first with age fallback.",
+      "rationale": "Names the host release examined for the stop process predicate.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+        "blob": "8f9bc2c24d7b679f25deffb740ca2965df933c37",
         "content": "sha256:6482cf2320845c9faec45f6ebf5dc9d5d8e34cb6df521f5cdcaa1f484f9098d9",
         "locator": {
           "end": 43,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+        "blob": "8f9bc2c24d7b679f25deffb740ca2965df933c37",
         "content": "sha256:dcfdf587dff67a56e5a8529786a589deb29aa6b5d1f0b342e17122417b9ea283",
         "locator": {
           "end": 96,
@@ -65,7 +65,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+            "blob": "8f9bc2c24d7b679f25deffb740ca2965df933c37",
             "content": "sha256:89ca2b671107da33d70a1214d576e719008cf92e3e9b9da985b899a554edfbda",
             "locator": {
               "kind": "symbol",
@@ -81,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+            "blob": "8f9bc2c24d7b679f25deffb740ca2965df933c37",
             "content": "sha256:42a45851cdcf3a33159f8893529cf007484a7c01887e414fdd9e57b463b4859e",
             "locator": {
               "kind": "symbol",
@@ -93,16 +93,28 @@
       ]
     },
     "3": {
-      "note": "The module describes the boot-id-first stop predicate Paseo 0.11.1 to 0.15.4 uses, without treating liveness as proof of home ownership.",
+      "note": "The 0.16.2 host's stop predicate checks boot identity first. The product separately verifies the recorded process's identity and home.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
-            "content": "sha256:715b1638b4fbfebcafc96a09a757c1a7fe1a17e4128990f351b1ab3a992faa97",
+            "blob": "8f9bc2c24d7b679f25deffb740ca2965df933c37",
+            "content": "sha256:67f2295be89bf66a5f887f2e4cd024efd6019b1017606a91a6150d32b991d67f",
             "locator": {
-              "end": 15,
+              "end": 14,
               "kind": "line_range",
-              "start": 1
+              "start": 3
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f9bc2c24d7b679f25deffb740ca2965df933c37",
+            "content": "sha256:89ca2b671107da33d70a1214d576e719008cf92e3e9b9da985b899a554edfbda",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 100
             }
           },
           "kind": "code"
@@ -114,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad010fdcaa7f108411838221580b9106cc99bcda",
+            "blob": "8f9bc2c24d7b679f25deffb740ca2965df933c37",
             "content": "sha256:6482cf2320845c9faec45f6ebf5dc9d5d8e34cb6df521f5cdcaa1f484f9098d9",
             "locator": {
               "kind": "symbol",

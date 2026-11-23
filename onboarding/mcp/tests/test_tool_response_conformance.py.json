@@ -4,11 +4,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Registration and adapter id sets are derived from source and asserted equal both ways.",
+      "note": "The structural sweep compares the imported response registry, AST-derived adapter IDs, advertised roster and actual registered FastMCP listing. Registry and adapter differences must be empty in both directions.",
       "targets": [
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:71008f419ddeb28d82ad7d9e3deee3ba0467de59dedc94cbe79b486c1b8abd55",
             "locator": {
               "kind": "symbol",
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:05b6a852e64fbc9a7a19f12568a125278cd10109e2ac16258ac1741822d8b70b",
             "locator": {
-              "end": 764,
+              "end": 767,
               "kind": "line_range",
-              "start": 727
+              "start": 730
             }
           },
           "kind": "test"
@@ -37,16 +37,16 @@
       ]
     },
     "11": {
-      "note": "Every `next_tool=` literal the lifecycle package passes is declared on the response model. Anchor: `test_every_next_tool_its_own_refusals_advertise_is_declared`",
+      "note": "The test scans literal lifecycle next_tool values and takes worktree_closeout_apply and worktree_integrate from the historical closeout and integration refusal producer. A separate response-boundary probe inserts each collected value in a constructed closeout-candidate-state-moved refusal, runs the public response adapter, and verifies the model retains nextTool.",
       "targets": [
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
-            "content": "sha256:8e838319984d9e09e3ffafd67f72cb9ca0f01175313ab96dcb1b6801866e8d53",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
+            "content": "sha256:b8ef215949435e7ef9a71141357d7d93ddb893b92bc06cbfdc42fc7673e59965",
             "locator": {
-              "end": 863,
+              "end": 869,
               "kind": "line_range",
-              "start": 811
+              "start": 814
             }
           },
           "kind": "test"
@@ -156,20 +156,8 @@
       ]
     },
     "22": {
-      "note": "The literal PUBLIC_TOOLS source tuple contains 44 names. The conformance test source pins ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46 and derives strict/flexible model sets from base classes and extra configuration. These are literal declarations and test assertions, not a fresh module/handler collection or execution result.",
+      "note": "The roster tuple contains 44 names. The conformance declarations set ROSTER_SIZE to 44, TOOL_MODULE_COUNT to 14 and TOOL_HANDLER_COUNT to 46. Structural assertions check the exact populations and derive strict and flexible sets from both base classes and extra configuration.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
-            "content": "sha256:37eedb5c6b0753d3e048deff47a81b83bb8b8e6637365198320db10b75eb014b",
-            "locator": {
-              "end": 863,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        },
         {
           "anchor": {
             "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
@@ -182,6 +170,42 @@
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
+            "content": "sha256:882f1e2eb91405fdb4217a748809d78245def5eee8ac6a472783c1b261829717",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
+            "content": "sha256:487b4ff12580de2e1790a90b4808bf2ea141232d5381e8b29c1007ac75980e98",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 302
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
+            "content": "sha256:d1ba4fac46cd7e41fda6c2d2032a1a037e44615b57ca77afcc332c1685b33125",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 389
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -190,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:21a5d37969d25d10a814d2750edf3e015c0a8f48a16ceb371fef5a45d4cc0eba",
             "locator": {
               "end": 44,
@@ -202,36 +226,36 @@
         },
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:ace563336c39c2c6e3b12e62a88ab669707f4f058d6d10ece69e57dbcff51f06",
             "locator": {
-              "end": 76,
+              "end": 79,
               "kind": "line_range",
-              "start": 72
+              "start": 75
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:05b6a852e64fbc9a7a19f12568a125278cd10109e2ac16258ac1741822d8b70b",
             "locator": {
-              "end": 764,
+              "end": 767,
               "kind": "line_range",
-              "start": 727
+              "start": 730
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:c473acddf2ad160dfdf7eff65743bc683687e2c2d1fb587382dcd9b8e4af5f5d",
             "locator": {
-              "end": 807,
+              "end": 810,
               "kind": "line_range",
-              "start": 766
+              "start": 769
             }
           },
           "kind": "test"
@@ -243,12 +267,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:519557ce332e015241fa92a779793184d1a51525f660d47fd8997a9ca9968fab",
             "locator": {
-              "end": 288,
+              "end": 291,
               "kind": "line_range",
-              "start": 247
+              "start": 250
             }
           },
           "kind": "test"
@@ -260,12 +284,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:dd131eb690b30ddcc7c1555da13e60450cef7deaea0bd876e5b7b7542de61f4f",
             "locator": {
-              "end": 384,
+              "end": 387,
               "kind": "line_range",
-              "start": 370
+              "start": 373
             }
           },
           "kind": "test"
@@ -277,12 +301,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:9b30d3dd20a4ab4c46eea6db42003379cc0785081968928d10c2b22e87466109",
             "locator": {
-              "end": 429,
+              "end": 432,
               "kind": "line_range",
-              "start": 386
+              "start": 389
             }
           },
           "kind": "test"
@@ -294,12 +318,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:360db21bdbf1c242bc44a8eba5ec778921a7a72cb1d2d8d6d9e8d7fcb8ee74a9",
             "locator": {
-              "end": 498,
+              "end": 501,
               "kind": "line_range",
-              "start": 431
+              "start": 434
             }
           },
           "kind": "test"
@@ -307,16 +331,16 @@
       ]
     },
     "6": {
-      "note": "`lifecycle_finalize_task` validates with the series release produced, and asserts it reached the emitting branch. Anchor: `test_lifecycle_finalize_validates_with_the_series_release_produced`",
+      "note": "A constructed series contract reaches the result builder and activates the emitting arm. The case requires both payload keys, validates finalized state and checks an already-vacant release.",
       "targets": [
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:dd1f3b8dd7e919a0e30cd9cf6b9e4d99f6fa11f765ce9dad80c391ce7c2e6be1",
             "locator": {
-              "end": 584,
+              "end": 587,
               "kind": "line_range",
-              "start": 553
+              "start": 556
             }
           },
           "kind": "test"
@@ -324,11 +348,11 @@
       ]
     },
     "7": {
-      "note": "The same response validates on the `activation-release-blocked` arm, where only the release key is present.",
+      "note": "The release double raises OSError. The case checks activation-release-blocked, a release-failed payload, OSError type and the same blocked release state in the validated model.",
       "targets": [
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:77fb2fc4c029d7c3830a75adbc316db7b6a7afea31777b10b10f8cf8e970d63a",
             "locator": {
               "kind": "symbol",
@@ -340,11 +364,11 @@
       ]
     },
     "8": {
-      "note": "The declaring set for the two atomic-series keys is exactly `lifecycle_finalize_task`.",
+      "note": "Among strict response models, the declaring sets for both atomic-series keys are equal and contain only lifecycle_finalize_task.",
       "targets": [
         {
           "anchor": {
-            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "blob": "95341012bbfcdccd970141ae8bf0f10259d71670",
             "content": "sha256:afd6f7681d39f08c133ae77cc7fcf455726b80680450f9479c2cd045526b9717",
             "locator": {
               "kind": "symbol",

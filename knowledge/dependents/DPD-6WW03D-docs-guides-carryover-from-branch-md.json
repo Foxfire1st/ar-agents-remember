@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
+    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
     "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
     "role": "curator",
-    "statement": "The guide still describes a worktree-only carryover that plans against matching code and validates the resulting memory, with index reuse affecting only the internal lookup.",
-    "task": "261112-KNO-L3",
+    "statement": "The carryover guide's plan and apply behavior remains correct when carryover opens the knowledge index through the cache helper for the selected tree.",
+    "task": "261112-BUG-L10",
     "uncommitted": true
   },
   "document": "docs/guides/carryover-from-branch.md",

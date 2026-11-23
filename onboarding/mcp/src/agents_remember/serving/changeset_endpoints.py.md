@@ -146,7 +146,9 @@ errors if raised after admission begins. An unselected repository returns before
 - The two recorded cells per side, with the closeout cell preferred over the integration cell and the base side having no fallback. [8]
 - The leaf name a refusal carries, with the task id as the fallback for a contract that records no leaf. [9]
 
+
 - **The resolvability probe: the repository is asked, per commit, and the first object it does not hold is named.** [10]
+
 
 
 > Retained earlier citation wording: - The contract whose recorded cells this module reads, and the cells themselves. [11]

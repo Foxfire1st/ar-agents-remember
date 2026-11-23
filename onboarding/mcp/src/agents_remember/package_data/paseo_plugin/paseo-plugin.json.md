@@ -10,7 +10,7 @@ The native manifest names the integration and its Paseo requirement.
 
 ## Code Commentary
 
-ar-plugin identifies the canonical client/server contribution and requires Paseo >=0.15.0, the first release with the `server.addHook` hook names the server entry registers; the build's pinned host 0.15.4 meets it.
+The native manifest identifies the canonical client and server contributions and requires Paseo >=0.15.0. The bundled host pin is 0.16.2.
 
 
 ## Invariants And Boundaries

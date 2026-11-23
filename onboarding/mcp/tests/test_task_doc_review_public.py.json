@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
+        "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+        "content": "sha256:0b03de31cf43ea1cf640f3158faf6ba2bd807341f82e8eb828576e432e2b0dcc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_sanctioned_route_adds_a_finding_and_keeps_the_others_open"
+        }
+      },
+      "facet": "Persists Curator and advisory route tags and sealed descriptions on round 2, preserves the union of outstanding IDs and refuses a successor PASS while one remains open.",
+      "id": "PRF-6GJA4E",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
         "content": "sha256:c49575f1730f7919a50d0984595d0396775d6ca69a5c56328e0969c54d97f35b",
         "locator": {
           "kind": "symbol",
@@ -17,16 +34,69 @@
         "handoffEntry": "L116-W3-settings-limit-answers",
         "leaf": "260928-MIK-L116"
       }
+    },
+    {
+      "anchor": {
+        "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+        "content": "sha256:6d9a5ca0cfbfddcf0249cba23e70897bb3d60c026295532de3be0cc16041839d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_addition_after_the_limit_round_needs_the_existing_approval"
+        }
+      },
+      "facet": "Applies the existing approval boundary to the repair round after an addition.",
+      "id": "PRF-Y0JYMQ",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+        "content": "sha256:401df67d2aef5b20d05d6157a194deffb1dfb22a91f69cd60db9b5dd0e684fdb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sanctioned_addition_spends_no_round_and_reopens_only_its_point"
+        }
+      },
+      "facet": "Reads back the added finding ID and final-check route tag, verifies that the addition reopens only that finding without spending a round, and checks that the successor repair is counted as round 3.",
+      "id": "PRF-YNWY0D",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+        "content": "sha256:0b03de31cf43ea1cf640f3158faf6ba2bd807341f82e8eb828576e432e2b0dcc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_sanctioned_route_adds_a_finding_and_keeps_the_others_open"
+        }
+      },
+      "id": "RLZ-51EV6Z",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The Curator and advisory case verifies both persisted tags, their sealed descriptions and the union of outstanding IDs.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Isolated public target, creation helper, and operation caller.",
       "targets": [
         {
           "anchor": {
-            "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
+            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
             "content": "sha256:e56585c767773429b0ffa2ba91fbaa39f5a0883d9f0eb4b7944b745ca98beeda",
             "locator": {
               "kind": "symbol",
@@ -37,7 +107,7 @@
         },
         {
           "anchor": {
-            "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
+            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
             "content": "sha256:00419ea054129f76d8ba8dd489f4780566ffced6cd81eed892085f73bebf4685",
             "locator": {
               "kind": "symbol",
@@ -48,7 +118,7 @@
         },
         {
           "anchor": {
-            "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
+            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
             "content": "sha256:651e659356b8f8924020e5693b932196883c09f61694d4f0a43e0c0821987753",
             "locator": {
               "kind": "symbol",
@@ -64,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
+            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
             "content": "sha256:3654fea8aca304c5ce8c2165352701935bb27115804e9d27b5cbbb78aed7b315",
             "locator": {
               "kind": "symbol",
@@ -80,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
+            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
             "content": "sha256:f31064f916dbdb3aa8348b2e6d65dc722502239b0b12d9a0d642b647006caf13",
             "locator": {
               "kind": "symbol",
@@ -96,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
+            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
             "content": "sha256:6b1394fcd62e707c7c397c6b8a4e439ab26b64307149a072bcfe645d596e8dd9",
             "locator": {
               "kind": "symbol",
@@ -112,8 +182,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
-            "content": "sha256:a9b433263f9e6d58c2ea8d939ed770bfab08e99e8de9ac302a66129f2a45d2d7",
+            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+            "content": "sha256:c798fc7f205432383da00a68252edfc59cfdc26913ed88b2374d5595a8fee95f",
             "locator": {
               "kind": "file"
             }
@@ -127,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
+            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
             "content": "sha256:00419ea054129f76d8ba8dd489f4780566ffced6cd81eed892085f73bebf4685",
             "locator": {
               "kind": "symbol",
@@ -143,8 +213,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
-            "content": "sha256:a9b433263f9e6d58c2ea8d939ed770bfab08e99e8de9ac302a66129f2a45d2d7",
+            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+            "content": "sha256:c798fc7f205432383da00a68252edfc59cfdc26913ed88b2374d5595a8fee95f",
             "locator": {
               "kind": "file"
             }
@@ -154,16 +224,15 @@
       ]
     },
     "8": {
-      "note": "Only the tools alias changes from task_doc_tools to task_doc_route_review. The unchanged test_failed_identity_reads_refuse_around_a_real_mutation monkeypatches tools.resolve_candidate_identity, which is now the actual owner consulted by review candidate admission. Its tracked mutation/unproven binding refusals and persisted round/findings checks are unchanged.\n\nAnchor: Current test/support source",
+      "note": "The public review test patches the resolver used by candidate admission, changes tracked bytes, and verifies that ordinary same-round recording refuses an unproven candidate and preserves the recorded round and findings.",
       "targets": [
         {
           "anchor": {
-            "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
-            "content": "sha256:a9b433263f9e6d58c2ea8d939ed770bfab08e99e8de9ac302a66129f2a45d2d7",
+            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+            "content": "sha256:f901f94f28f7ce35f2b1c0eb27fae855bcea3a39484721e4bf78e44ca4a27096",
             "locator": {
-              "end": 727,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "test_failed_identity_reads_refuse_around_a_real_mutation"
             }
           },
           "kind": "test"

@@ -66,16 +66,8 @@ the run, in eight ordered beats:
 
 - One real temporary world per case, `TemporaryDirectory` cleanup in `tearDown`, and the module is
   marked `pytestmark = pytest.mark.integration` (code line 48).
-- Registered in the **integration** lane of `mcp/tests/test-evidence-lanes.toml` (row 717). That
-  manifest is fail-closed — `load_lane_manifest` derives the repository's actual test modules and
-  refuses a manifest that omits one — so an unregistered module is a hard load failure.
-- The complete lifecycle catalog declares five exact artifact-consumer relationships:
-  `_user_settings_guard.py` (`:450`), `checkpoint_landing_test_support.py` (`:1052`),
-  `curator_coherence_test_support.py` (`:1234`), the Node `package-lock.json` fixture
-  (`:2811`) and `writer_worklist_test_support.py` (`:4866`). These declarations
-  establish dependency ownership, not runtime consumption or execution. The coherence
-  support is reached transitively through `QueueFixture`; the current
-  `closeout_input_test_support.py` exact-consumer list does not name this module.
+- `load_lane_manifest` derives the repository's actual test modules and refuses a manifest that omits one.
+- The catalog declarations establish dependency ownership. The coherence support is reached transitively through `QueueFixture`. The `closeout_input_test_support.py` exact-consumer list omits this module.
 - Support is composed, never re-implemented: `QueueFixture`/`REPO` come from `test_closeout_queue`,
   `close_out_leaf` is imported from `checkpoint_landing_test_support`, and `git` comes from
   `test_worktree_support`.
@@ -201,12 +193,10 @@ by the module's own fixture; no sibling repository or external system participat
 
 No meaningful cross-repo references found.
 
-- The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support.
 
 ### Repo-Internal References (continued)
 
 
-- The integration lane selects mcp/tests/test_lifecycle_playthrough_end_to_end.py. [10]
-- The integration lane selects mcp/tests/test_lifecycle_playthrough_end_to_end.py. [13]
+- The `integration` lane selects `mcp/tests/test_lifecycle_playthrough_end_to_end.py` (`mcp/tests/test-evidence-lanes.toml:730`). [10] [13]
 
-- The lifecycle catalog lists `test_lifecycle_playthrough_end_to_end.py` among the exact consumers of `checkpoint_landing_test_support.py`, `curator_coherence_test_support.py`. [11]
+- The lifecycle catalog lists the module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. [11]

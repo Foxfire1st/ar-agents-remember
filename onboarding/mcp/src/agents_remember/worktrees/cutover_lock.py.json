@@ -96,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
             "content": "sha256:88d6191f23445b6998e138f83454d2651ca9f6d6f696a46675fd5ff4fa286291",
             "locator": {
               "kind": "symbol",
@@ -109,14 +109,16 @@
       ]
     },
     "11": {
-      "note": "A converting candidate is gated, not legacy-locked.\n\nAnchor: `test_the_converting_candidate_is_gated_never_locked`",
+      "note": "A converting candidate is gated while the legacy lock stays untouched.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
-            "content": "sha256:b9b28e1ba2c9584b6d8aee4f9f0d34db43fd363629dd722f344f9041471e447a",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
+            "content": "sha256:8cb5b5604875ead81e39e6654863893d7554ab6a3fc5ebfa4821b18bf68a1b7a",
             "locator": {
-              "kind": "file"
+              "end": 380,
+              "kind": "line_range",
+              "start": 323
             },
             "path": "mcp/tests/test_knowledge_cutover.py"
           },
@@ -125,15 +127,16 @@
       ]
     },
     "12": {
-      "note": "Plain directory and unanswered repository probes have distinct outcomes.",
+      "note": "The owned nonrepository fixture is unlocked while unanswered or suspicious repository probes refuse.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
-            "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
+            "content": "sha256:4f7d0c57354eb7681ffb2fb6523e11b6ef017d45ed0c3a02a654aadd7e55f7e7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+              "end": 306,
+              "kind": "line_range",
+              "start": 281
             },
             "path": "mcp/tests/test_knowledge_cutover.py"
           },

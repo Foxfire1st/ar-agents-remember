@@ -4,15 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Public abandon preview is non-mutating and does not invent a removal failure.\n\nAnchor: \"would-abandon\"",
+      "note": "Public abandon preview returns would-abandon with no blockers and leaves the fixture’s code worktree in place.",
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
-            "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
+            "content": "sha256:ee2047a9342ca94fd6ced51b91d20b36379b10d8e5c424d146344bf7e8e02647",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_torn_down_provider_runtime_finalizes_on_the_first_call"
+              "end": 197,
+              "kind": "line_range",
+              "start": 140
             }
           },
           "kind": "test"
@@ -24,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:15e31756ce997512a9f95951f44bc3b36d17e3c916896483f3e0b88d07ad2ea3",
             "locator": {
               "kind": "symbol",
@@ -40,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:75ee39bd9dd102c67c6bfe1ba3198c50f96169d33cfaa95f8e7bbd3232ad0d4f",
             "locator": {
               "kind": "symbol",
@@ -52,11 +53,11 @@
       ]
     },
     "12": {
-      "note": "The sole provider-runtime producer answers with a reason whenever it reclaimed nothing.",
+      "note": "The direct removal test checks the absent-path reason and the removed result for an existing path.",
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:7a0f04ef049f20ca4ad3b0521fb3759e492f6eb1a71061d927835a47c101e421",
             "locator": {
               "kind": "symbol",
@@ -72,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:cf0fca4dddba6037a11a2aace70fc52c6799556318aa5d803988f4061d6b7cd9",
             "locator": {
               "kind": "symbol",
@@ -84,21 +85,11 @@
       ]
     },
     "14": {
-      "note": "The landed fixture and the public calls the whole-tool cases drive.\n\nAnchor: `_landed_leaf` `_landed_leaf_config` `_landed_leaf_document` `_finalize`",
+      "note": "The landed fixture and the public calls the whole-tool cases drive.",
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
-            "content": "sha256:a597f33e530c15659f6dfd7f7d422799d8992abcacef8b04e558e5fde41dfbcf",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:cec06ef5195e135c49156b0fbfd28187e9ed521eae2c5daeba113afe90597f04",
             "locator": {
               "kind": "symbol",
@@ -109,7 +100,7 @@
         },
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:fb48a76e166387c83128805390f4c481147ddd7e2db41f5c251fe79cd586bb7e",
             "locator": {
               "kind": "symbol",
@@ -120,7 +111,7 @@
         },
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:0c3adb92d5029d3e4efd16eb83d6d65f62199b2181b18d11ff4147ed835a958c",
             "locator": {
               "kind": "symbol",
@@ -131,7 +122,7 @@
         },
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:60b9272666f23543440529305b45126190228f0ec8313d2d11b78a2c63383279",
             "locator": {
               "kind": "symbol",
@@ -143,21 +134,11 @@
       ]
     },
     "15": {
-      "note": "The service rebinding and the citation-guard double the whole-tool cases run against.\n\nAnchor: `bound_worktree_services` `_NoManagedCitationCache`",
+      "note": "The service rebinding and the citation-guard double the whole-tool cases run against.",
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
-            "content": "sha256:a597f33e530c15659f6dfd7f7d422799d8992abcacef8b04e558e5fde41dfbcf",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:067156edcd1985325594228bc9a81d9123ac54efc9027b795637d097e84c49af",
             "locator": {
               "kind": "symbol",
@@ -168,7 +149,7 @@
         },
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:1e2ca2291c3e156561001938afa139bbd2c34a8b278152778f54ed4c0ddd226d",
             "locator": {
               "kind": "symbol",
@@ -260,15 +241,16 @@
       ]
     },
     "2": {
-      "note": "The L6 shape finalizes on the first call: the terminal archive is proven, the provider runtime is already gone, and an empty `notRemoved` inventory is reported.",
+      "note": "The injected already-absent teardown response allows one finalize call to complete. The case checks four empty notRemoved lists, absence of the code worktree and enclosure root, and completion of the contract and task document.",
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
-            "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
+            "content": "sha256:ee2047a9342ca94fd6ced51b91d20b36379b10d8e5c424d146344bf7e8e02647",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_torn_down_provider_runtime_finalizes_on_the_first_call"
+              "end": 197,
+              "kind": "line_range",
+              "start": 140
             }
           },
           "kind": "test"
@@ -331,22 +313,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
             "locator": {
               "kind": "symbol",
               "name": "lifecycle_finalize_task_tool"
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -359,7 +330,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
             "content": "sha256:3c374ff71c4e416366cd5e820d288f99342604fb18524e60c2bff7f3a92d7e65",
             "locator": {
               "kind": "symbol",
@@ -371,7 +342,7 @@
         },
         {
           "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "blob": "19c095b4634f19eeefb55736335ad24e8960a985",
             "content": "sha256:1b0e14efb0ce8099a1d12cfa226a6526329fbe743227ca4cdb7db15b99a2e56f",
             "locator": {
               "kind": "symbol",
@@ -383,22 +354,11 @@
         },
         {
           "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "blob": "19c095b4634f19eeefb55736335ad24e8960a985",
             "content": "sha256:72074ef59564f7876078c9cccdd5397989718b3d2f0741923ae1683aa2e6c5cd",
             "locator": {
               "kind": "symbol",
               "name": "_closed_external_leaf_worktrees"
-            },
-            "path": "mcp/tests/integration_branch_authority_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
-            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/tests/integration_branch_authority_test_support.py"
           },
@@ -429,7 +389,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
             "content": "sha256:3c374ff71c4e416366cd5e820d288f99342604fb18524e60c2bff7f3a92d7e65",
             "locator": {
               "kind": "symbol",
@@ -441,7 +401,7 @@
         },
         {
           "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "blob": "19c095b4634f19eeefb55736335ad24e8960a985",
             "content": "sha256:1b0e14efb0ce8099a1d12cfa226a6526329fbe743227ca4cdb7db15b99a2e56f",
             "locator": {
               "kind": "symbol",
@@ -453,22 +413,11 @@
         },
         {
           "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "blob": "19c095b4634f19eeefb55736335ad24e8960a985",
             "content": "sha256:72074ef59564f7876078c9cccdd5397989718b3d2f0741923ae1683aa2e6c5cd",
             "locator": {
               "kind": "symbol",
               "name": "_closed_external_leaf_worktrees"
-            },
-            "path": "mcp/tests/integration_branch_authority_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
-            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
-            "locator": {
-              "kind": "file"
             },
             "path": "mcp/tests/integration_branch_authority_test_support.py"
           },
@@ -495,22 +444,11 @@
       ]
     },
     "27": {
-      "note": "The landing world each whole-tool case builds is a real temporary repository pair.\n\nAnchor: `_authority_fixture` `_closed_external_leaf_worktrees`",
+      "note": "The landing world each whole-tool case builds is a real temporary repository pair.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
-            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/integration_branch_authority_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "blob": "19c095b4634f19eeefb55736335ad24e8960a985",
             "content": "sha256:1b0e14efb0ce8099a1d12cfa226a6526329fbe743227ca4cdb7db15b99a2e56f",
             "locator": {
               "kind": "symbol",
@@ -522,7 +460,7 @@
         },
         {
           "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "blob": "19c095b4634f19eeefb55736335ad24e8960a985",
             "content": "sha256:72074ef59564f7876078c9cccdd5397989718b3d2f0741923ae1683aa2e6c5cd",
             "locator": {
               "kind": "symbol",
@@ -535,7 +473,7 @@
       ]
     },
     "28": {
-      "note": "The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping.",
+      "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.",
       "targets": [
         {
           "anchor": {
@@ -549,15 +487,171 @@
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 799,
+              "kind": "line_range",
+              "start": 799
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 959,
+              "kind": "line_range",
+              "start": 959
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 1082,
+              "kind": "line_range",
+              "start": 1082
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 1284,
+              "kind": "line_range",
+              "start": 1284
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 3194,
+              "kind": "line_range",
+              "start": 3194
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 3305,
+              "kind": "line_range",
+              "start": 3305
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 3455,
+              "kind": "line_range",
+              "start": 3455
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 3612,
+              "kind": "line_range",
+              "start": 3612
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 3743,
+              "kind": "line_range",
+              "start": 3743
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 4375,
+              "kind": "line_range",
+              "start": 4375
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 4818,
+              "kind": "line_range",
+              "start": 4818
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 4926,
+              "kind": "line_range",
+              "start": 4926
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
         }
       ]
     },
     "3": {
-      "note": "The genuine counterpart: a provider runtime that cannot be removed blocks with its own reason, closes nothing, and refuses identically on retry.",
+      "note": "The permission-failure fixture preserves the task document state, pending cleanup, code worktree and provider-runtime path. Its retry repeats the blocked state and exact blocker list.",
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:0a35eedfdf93940b1382b8b784fd34c2318a07d0f4376c1b581dda2701b79418",
             "locator": {
               "kind": "symbol",
@@ -573,7 +667,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:a07b6d6b107867555601d4c5b9d9daa97bdc2e9ab048273ccea0878e7aff1989",
             "locator": {
               "kind": "symbol",
@@ -589,7 +683,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:15e31756ce997512a9f95951f44bc3b36d17e3c916896483f3e0b88d07ad2ea3",
             "locator": {
               "kind": "symbol",
@@ -601,15 +695,16 @@
       ]
     },
     "6": {
-      "note": "Public abandon preview is non-mutating and does not invent a removal failure.\n\nAnchor: \"would-abandon\"",
+      "note": "Public abandon preview returns would-abandon with no blockers and leaves the fixture’s code worktree in place.",
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
-            "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
+            "content": "sha256:ee2047a9342ca94fd6ced51b91d20b36379b10d8e5c424d146344bf7e8e02647",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_torn_down_provider_runtime_finalizes_on_the_first_call"
+              "end": 197,
+              "kind": "line_range",
+              "start": 140
             }
           },
           "kind": "test"
@@ -617,15 +712,16 @@
       ]
     },
     "7": {
-      "note": "The L6 shape finalizes on the first call: the terminal archive is proven, the provider runtime is already gone, and an empty `notRemoved` inventory is reported.",
+      "note": "The injected already-absent teardown response allows one finalize call to complete. The case checks four empty notRemoved lists, absence of the code worktree and enclosure root, and completion of the contract and task document.",
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
-            "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
+            "content": "sha256:ee2047a9342ca94fd6ced51b91d20b36379b10d8e5c424d146344bf7e8e02647",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_torn_down_provider_runtime_finalizes_on_the_first_call"
+              "end": 197,
+              "kind": "line_range",
+              "start": 140
             }
           },
           "kind": "test"
@@ -633,11 +729,11 @@
       ]
     },
     "8": {
-      "note": "The genuine counterpart: a provider runtime that cannot be removed blocks with its own reason, closes nothing, and refuses identically on retry.",
+      "note": "The permission-failure fixture preserves the task document state, pending cleanup, code worktree and provider-runtime path. Its retry repeats the blocked state and exact blocker list.",
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:0a35eedfdf93940b1382b8b784fd34c2318a07d0f4376c1b581dda2701b79418",
             "locator": {
               "kind": "symbol",
@@ -653,7 +749,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
             "content": "sha256:a07b6d6b107867555601d4c5b9d9daa97bdc2e9ab048273ccea0878e7aff1989",
             "locator": {
               "kind": "symbol",

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-One leaf's four durable explainer facts — the binding, the generation counter, the retired marker and the retire receipt — with the seat identity derived from them and the process tree a Retire must end.
+This module manages one leaf’s binding, generation and process identity. A completed Retire removes the leaf workspace and leaves its receipt outside it. The seat_marks helper returns None for the retired marker.
 
 ## Code Commentary
 
@@ -27,3 +27,5 @@ One leaf's four durable explainer facts — the binding, the generation counter,
 - A process is the seat's only when its pid and start time match, and whatever survives is returned rather than assumed dead [6]
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/canvas/explainer_state.py:104-110 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Completed Retire removes the leaf workspace and writes its finished receipt outside it. The seat_marks helper returns None for the retired marker. [7]

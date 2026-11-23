@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "09f172518a4338976f126de7cf1efe1f93739777",
+        "blob": "09de6f439c292b68a048cc54bd4c7e3465a4089b",
         "content": "sha256:239d8736693b0d677a23a006f7ec1fbcd590ca8b81c2195abc450e7b13ea9a4b",
         "locator": {
-          "end": 531,
+          "end": 546,
           "kind": "line_range",
-          "start": 523
+          "start": 538
         }
       },
       "id": "RLZ-A0P8QT",
@@ -19,8 +19,99 @@
       },
       "rationale": "The guide shows --fetch and says the no-flag command reports what is present, what is missing and where.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "09de6f439c292b68a048cc54bd4c7e3465a4089b",
+        "content": "sha256:8e40f263daff58e1a2e6b8006f305fbf21fc4ff704470c033eeb256dfa66d390",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QQVKY7",
+      "invariant": "INV-453GX6",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 7 — texts and budget",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The guide describes staged work, report paths and digests, draft assets and the evidence packet used by the render check.",
+      "role": "unclassified"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The guide gives the per-report provenance, private stage files, and separate draft asset and admitted evidence inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09de6f439c292b68a048cc54bd4c7e3465a4089b",
+            "content": "sha256:5196a247d7c5cfab5f90b1d1064b603b1c9fde243944009f15d543ddede58463",
+            "locator": {
+              "end": 480,
+              "kind": "line_range",
+              "start": 466
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The guide describes the planned first-request wording and staged plan. The Build handler carries the dashboard’s history to the existing planned request composer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09de6f439c292b68a048cc54bd4c7e3465a4089b",
+            "content": "sha256:5c3c7a814270eacc1083651817fd73c29058d1d2b19a29c8542d1a48e09d0865",
+            "locator": {
+              "end": 840,
+              "kind": "line_range",
+              "start": 833
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "content": "sha256:e4d997ab0b0bec4730706a3c282ac7e68b2edc63aeceac66ed02965fcc8b6eb1",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/serving/explainer_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:ef6806ebf9a0fb855fbbbebea81358187711e56e287a2a216e02f292b6552db2",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+            "content": "sha256:18f3f222dbbe9a7ecbe9dff12e8524755168d8a4163864f5d37caefd926c6605",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 823
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

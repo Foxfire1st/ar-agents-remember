@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "99346162891d46e0697036bb7b478df89496bb19",
+        "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
         "content": "sha256:008d1de8ee70e6764dc3fa288398174d95886173264d99e50ce02315094b1d5c",
         "locator": {
           "kind": "symbol",
@@ -17,19 +17,50 @@
         "handoffEntry": "L95-M1-KNOW-02-proof-8j056t",
         "leaf": "260928-MIK-L95"
       }
+    },
+    {
+      "anchor": {
+        "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+        "content": "sha256:6a851f9c0e6795cc2f006b88ef3f20dabac2a91510a7618ec694ed89bc8aa69b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_refusal_keeps_every_label_for_long_loaded_and_requested_roots"
+        }
+      },
+      "facet": "All three mismatched root labels and the no-start outcome survive the private cap, and the backend is uncalled.",
+      "id": "PRF-NDQ2QV",
+      "invariant": "INV-6T1GV1",
+      "origin": {
+        "handoffEntry": "48c1c392-751b-4803-b74c-ff1d307b1e6d ruling 2",
+        "leaf": "261112-BUG-L17"
+      }
     }
   ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "The typed private refusal keeps the no-start outcome and every differing label for long loaded and requested roots, with zero backend starts.",
       "targets": [
         {
           "anchor": {
-            "blob": "99346162891d46e0697036bb7b478df89496bb19",
-            "content": "sha256:ea073f6440e20fce74e0df411c2a8079aebbb844eab450bdc83b75bd85df3af3",
+            "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+            "content": "sha256:0f53a460554f384b6997cb16bc1901bff34b4b821f95de8a8cdd7133b695b506",
             "locator": {
-              "kind": "file"
+              "end": 251,
+              "kind": "line_range",
+              "start": 203
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+            "content": "sha256:6a851f9c0e6795cc2f006b88ef3f20dabac2a91510a7618ec694ed89bc8aa69b",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 253
             }
           },
           "kind": "test"
@@ -37,16 +68,33 @@
       ]
     },
     "2": {
-      "note": "Adds a test importing the shared launch_world. A real child Python process runs the private command with mocked configuration/start seam. Inside start, canonical leaf resolution tolerates unreadable review only under launch context and task writing preserves the raw reviewState. The context is false outside the command, ordinary reader validation still refuses and parent assertions reread preserved raw state.\n\nAnchor: Current test/support source",
+      "note": "The real child exercises launch-only unreadable review tolerance and preserves the raw review payload. The ordinary reader still refuses outside that context.",
       "targets": [
         {
           "anchor": {
-            "blob": "99346162891d46e0697036bb7b478df89496bb19",
-            "content": "sha256:ea073f6440e20fce74e0df411c2a8079aebbb844eab450bdc83b75bd85df3af3",
+            "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+            "content": "sha256:661b93fa10c84e758add2ad0d1e96eb3ffd63daf142c6ff280613179888e0266",
             "locator": {
-              "end": 566,
+              "end": 594,
               "kind": "line_range",
-              "start": 1
+              "start": 527
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The root-mismatch cases exercise long loaded and requested roots, including an identity-only mismatch. They require the private typed no-start outcome, all differing labels within 800 characters and zero backend starts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+            "content": "sha256:5f633e6b464feda55cb9b97faaf46820741b365f6c30e7bc30ea722614cc4ded",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 203
             }
           },
           "kind": "test"

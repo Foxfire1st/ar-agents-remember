@@ -4,7 +4,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+        "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+        "content": "sha256:ef7d2276f3f905a1c8650d419d5b264397d6a2a627f33cb2551eea74166444e8",
+        "locator": {
+          "end": 76,
+          "kind": "line_range",
+          "start": 73
+        }
+      },
+      "id": "RLZ-NSSDXY",
+      "invariant": "INV-QEKWKH",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-QEKWKH",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "This declaration limits the Git symbol-span memo to thirty-two MiB and 65,536 entries.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
         "content": "sha256:dd7dc91c834766ce625cc583dc54a864cfd8e57afe1dd1849d56d24097eb6446",
         "locator": {
           "kind": "symbol",
@@ -22,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+        "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
         "content": "sha256:70f0fc941d3161e665785cd0bf2d98d7c2acb972799d2901182a9ed5f0f324e8",
         "locator": {
           "kind": "symbol",
@@ -41,12 +60,12 @@
   ],
   "references": {
     "1": {
-      "note": "The read-only class retains raw blobs and instance-local blob-keyed split lines; no persistent worklist is stored.\n\nAnchor: `CodeObjects`",
+      "note": "`CodeObjects` reads code objects and keeps raw blob bytes and blob-keyed split lines in its instance.",
       "targets": [
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
-            "content": "sha256:7179f3331c2bfdd46621401448d88c1a32b4fe365162826280c6b5558bf0f7cf",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+            "content": "sha256:b74b4a6570854efcbd461bc95e536f22b7cf1e4358c5945b4414ac103f2920df",
             "locator": {
               "kind": "file"
             }
@@ -60,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
             "content": "sha256:da0b54225087c70b68ff362613557c5860bca7d5204c26c5b19d565be6316b87",
             "locator": {
               "end": 182,
@@ -73,25 +92,26 @@
       ]
     },
     "2": {
-      "note": "A commit by exact name.\n\nAnchor: `commit`",
+      "note": "`CodeObjects.commit` resolves a supplied name to a full commit ID when Git verifies that it names a commit.",
       "targets": [
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
-            "content": "sha256:7179f3331c2bfdd46621401448d88c1a32b4fe365162826280c6b5558bf0f7cf",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+            "content": "sha256:02c474b75b6e42c4f52083441dae6f6218246dd838d51dc6d10241594784e5ec",
             "locator": {
-              "kind": "file"
+              "end": 119,
+              "kind": "line_range",
+              "start": 106
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
-            "content": "sha256:02c474b75b6e42c4f52083441dae6f6218246dd838d51dc6d10241594784e5ec",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+            "content": "sha256:b74b4a6570854efcbd461bc95e536f22b7cf1e4358c5945b4414ac103f2920df",
             "locator": {
-              "kind": "symbol",
-              "name": "commit"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -99,25 +119,26 @@
       ]
     },
     "3": {
-      "note": "Every commit with a prefix, so ambiguity is seen.\n\nAnchor: `commits_with_prefix`",
+      "note": "`CodeObjects.commits_with_prefix` returns the commits among Git’s disambiguated object IDs, so the caller can detect an ambiguous prefix.",
       "targets": [
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
-            "content": "sha256:7179f3331c2bfdd46621401448d88c1a32b4fe365162826280c6b5558bf0f7cf",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+            "content": "sha256:cf677fe3ee94908c5ef8f3ebe2cf220a323494e3d2e1c53c96aecbe87e0e0c16",
             "locator": {
-              "kind": "file"
+              "end": 154,
+              "kind": "line_range",
+              "start": 121
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
-            "content": "sha256:cf677fe3ee94908c5ef8f3ebe2cf220a323494e3d2e1c53c96aecbe87e0e0c16",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+            "content": "sha256:b74b4a6570854efcbd461bc95e536f22b7cf1e4358c5945b4414ac103f2920df",
             "locator": {
-              "kind": "symbol",
-              "name": "commits_with_prefix"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -129,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
             "content": "sha256:456988b59ee57b545888a5d5731ce707ca867cc13013072dfa328ac68917bb9a",
             "locator": {
               "end": 165,
@@ -142,25 +163,28 @@
       ]
     },
     "5": {
-      "note": "Git's not-found exit, and a Git failure named rather than read as absent (R3-2).",
+      "note": "`CodeObjects.has_blob` treats Git’s existence-probe exit 1 as absence and raises `CodeObjectError` for other reported failures. A timeout propagates to the caller.",
       "targets": [
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
             "content": "sha256:a955743b9fa00eb0e6ea52f2d310950bf517c2471adc80030d5478c815e6a1e0",
             "locator": {
-              "kind": "symbol",
-              "name": "_GIT_NOT_FOUND"
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
-            "content": "sha256:7179f3331c2bfdd46621401448d88c1a32b4fe365162826280c6b5558bf0f7cf",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+            "content": "sha256:542974dfebba194c6d17618baa57fd25640b5c633220e5a03c884c8c4c9f21e7",
             "locator": {
-              "kind": "file"
+              "end": 261,
+              "kind": "line_range",
+              "start": 229
             }
           },
           "kind": "code"
@@ -168,36 +192,38 @@
       ]
     },
     "6": {
-      "note": "Batched blob reads.\n\nAnchor: `prefetch` `CodeObjectError`",
+      "note": "`CodeObjects.prefetch` reads uncached blobs in batches and turns a failed blob read into `CodeObjectError`.",
       "targets": [
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
-            "content": "sha256:7179f3331c2bfdd46621401448d88c1a32b4fe365162826280c6b5558bf0f7cf",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
             "content": "sha256:8086904047170a3aabae0fb3104cbf1f536f808476b0d88b4fc7077976755046",
             "locator": {
-              "kind": "symbol",
-              "name": "prefetch"
+              "end": 214,
+              "kind": "line_range",
+              "start": 200
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
             "content": "sha256:2c5341f0df119c28c9640ec80328e921a435dcb9384d33b6ac03147f3013837c",
             "locator": {
-              "kind": "symbol",
-              "name": "CodeObjectError"
+              "end": 80,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+            "content": "sha256:b74b4a6570854efcbd461bc95e536f22b7cf1e4358c5945b4414ac103f2920df",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -209,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
             "content": "sha256:bc108c15b98e7c62712a7c9800b30e409435384d49a6664bfc08fba87fd528c5",
             "locator": {
               "end": 438,

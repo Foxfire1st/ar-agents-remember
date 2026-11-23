@@ -10,7 +10,7 @@ Registers role launcher options/dispatch/result/frame APIs and serializes prepar
 
 ## Code Commentary
 
-At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat.
+After the Manager owns its starting receipt, the route records an Architect address when it can identify one. For an Orchestrator starter, recording that address requires an Architect receipt for the starter’s recorded parent. Launch proceeds if the lookup finds no address or the write fails.
 
 ### Current Contract
 
@@ -45,7 +45,7 @@ Missing-copy warnings are composed with step-up warnings rather than dropping ei
 
 ## Current catalog questions
 
-The options and dispatch endpoints share a `launcher_catalog_question` context for the current operation. Options ask the full catalog; a new dispatch asks metadata and its selected-model features. `GET /api/role-launch/saved-catalog` reads the durable snapshot without querying Paseo or deciding a start.
+The options and dispatch endpoints share a `launcher_catalog_question` context for the current operation. Options checks the dispatch lock before host access. A request without a provider and model pair returns catalogue metadata and receipt data. A paired request reads features for that pair. A new dispatch reads metadata and checks features for its resolved pair. `GET /api/role-launch/saved-catalog` reads the durable snapshot without querying Paseo or deciding a start.
 
 ## Evidence
 
@@ -86,7 +86,9 @@ Investigator dispatch uses the existing selection admission lock; options expose
 
 ## Refreshed current evidence
 
-- The launch observer checks complete receipt, stable UUID and stored call before runtime launch. [5]
+
+- Before workspace-open and agent-create, the observer sees the starting receipt, its saved agent ID and the stored artifact. [5]
+
 
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
 
@@ -94,7 +96,9 @@ Investigator dispatch uses the existing selection admission lock; options expose
 
 ## Current contract evidence
 
-- Frozen implementation of register_role_launch_routes supporting the stated file behavior. [1]
+
+- The route registrar mounts the saved catalogue, frame, options, dispatch, result and progress endpoints alongside the document-chat and report readers. [1]
+
 
 - Frozen implementation of _start_execution supporting the stated file behavior. [2]
 
@@ -107,10 +111,14 @@ Investigator dispatch uses the existing selection admission lock; options expose
 
 - Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.
 
-- The registration also mounts `POST /api/role-launch/document-chats/tree` through `register_document_chat_tree_route`, beside the selected-document read and report route. The tree owner supplies bounded receipt-derived pre-click discovery and one live-ID census; dispatch, retry, revive, progress reclamation and launch authority retain their existing owners. [14]
+
+- The route registrar mounts the document-chat tree beside the selected read and report routes. The tree handler uses one live-agent census for its receipt-derived answer. [14]
 
 
-- Launch preparation/receipt records retain their rich internal identity and task-copy metadata. Missing requirement sources are reported as missingCopies in handover/index/receipt and a warning; they do not fail a start solely for that absence. Later canonical task publication refreshes copies when sources become available. Ordinary delivered role_start success is the compact id/handover projection, not every internal receipt field. [15]
+
+
+- The starting receipt carries task-copy metadata. Missing requirement copies produce a warning and later canonical task publication refreshes them. The start answers with the projected identity and handover addresses. [15]
+
 
 
 ## Admission and first-run preparation under the dispatch lock
@@ -122,6 +130,10 @@ The dispatch endpoint takes the lock first and decides inside it: `role_launch_a
 - Cold preparation runs under the dispatch lock, and a later refusal keeps the preparation it made. [21]
 
 
-- At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat. [22]
+
+
+- The Manager records an Architect address when available. An Orchestrator starter’s parent receipt determines whether the address can be recorded. The launch proceeds when the lookup or write fails. [22]
+
+
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/role_launch_routes.py:1-640 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b40efb87cc614ff1751c296da2c47e6f85b195f4; mcp/src/agents_remember/cli/role_launch_routes.py:1-906 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.

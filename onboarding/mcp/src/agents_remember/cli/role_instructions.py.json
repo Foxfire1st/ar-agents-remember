@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aa089823366e841ed9abf5135593690101d757ac",
+        "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
         "content": "sha256:d77a224065797d0c7b8d98a22453f851334ecd92fa986881d234fafa9f7cbd7c",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "aa089823366e841ed9abf5135593690101d757ac",
+        "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
         "content": "sha256:927d8fca61d0b5a7909172b8c4a112153f6feb1f99db54156854b8b522970097",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "aa089823366e841ed9abf5135593690101d757ac",
-        "content": "sha256:f1b25e150fd8d271056f218992e63e4291425b2083fd6a46a0cc93a6e6982802",
+        "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
+        "content": "sha256:833aea476c58efa6f782c1cbaab61ac140f3ea8add30e387ebe162dc77856033",
         "locator": {
           "kind": "symbol",
           "name": "CAPABILITY_RESOURCES"
@@ -58,7 +58,24 @@
     },
     {
       "anchor": {
-        "blob": "aa089823366e841ed9abf5135593690101d757ac",
+        "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
+        "content": "sha256:75fb43c84de543c3b8c4ec00d4f4c94a5f09003e42f996148c6655560f90fe41",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GFM0P7",
+      "invariant": "INV-453GX6",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 7 — texts and budget",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The capability registry sets the 1,500-word budget and refuses a longer text.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
         "content": "sha256:ef6233c30c7bbbb0cb0364d315ac24e3f50e33e55a05ea06615f3a3db596f359",
         "locator": {
           "kind": "symbol",
@@ -76,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "aa089823366e841ed9abf5135593690101d757ac",
+        "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
         "content": "sha256:d1798e85dd6aaccc156de67602bac96d25f21f9de216d918c31de1ef944678a9",
         "locator": {
           "kind": "symbol",
@@ -99,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa089823366e841ed9abf5135593690101d757ac",
+            "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
             "content": "sha256:ef6233c30c7bbbb0cb0364d315ac24e3f50e33e55a05ea06615f3a3db596f359",
             "locator": {
               "kind": "symbol",
@@ -115,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa089823366e841ed9abf5135593690101d757ac",
+            "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
             "content": "sha256:d1798e85dd6aaccc156de67602bac96d25f21f9de216d918c31de1ef944678a9",
             "locator": {
               "kind": "symbol",
@@ -131,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa089823366e841ed9abf5135593690101d757ac",
+            "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
             "content": "sha256:875e07a41c6e03de0d86129862fee5457b27dfb30c0a2c56918150d9f6d2de18",
             "locator": {
               "kind": "symbol",
@@ -143,14 +160,15 @@
       ]
     },
     "4": {
-      "note": "The capability layer reads a non-seat capability's instructions from the installed resource under `CAPABILITY_RESOURCES` and `ar-capability-resource/v1`: `load_capability_resource` enforces the shipped word budget and wording at the read, `compose_capability_capsule` composes a baseline, an addition or a replacement, and `write_generated_capability_copy` with `capability_copy_drift` keep the installed copy a generated projection of the canonical source so a hand-edited copy is refused. [4]\n\nAnchor: `load_capability_resource`",
+      "note": "The capability loader checks the configured word budget and required text.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa089823366e841ed9abf5135593690101d757ac",
-            "content": "sha256:7516297e393610c1102c04eca8bc16b3bff874eed67821255a94bea9c39d8e04",
+            "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
+            "content": "sha256:927d8fca61d0b5a7909172b8c4a112153f6feb1f99db54156854b8b522970097",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "load_capability_resource"
             }
           },
           "kind": "code"
@@ -158,14 +176,15 @@
       ]
     },
     "5": {
-      "note": "The required review-presenter capsule phrase changes from attempt to environment, matching the durable per-leaf explainer ownership rather than a transient presenter attempt.\n\nAnchor: `CAPABILITY_RESOURCES`",
+      "note": "The packaged review-presenter resource has a 1,500-word limit and requires the explainer environment wording.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa089823366e841ed9abf5135593690101d757ac",
-            "content": "sha256:7516297e393610c1102c04eca8bc16b3bff874eed67821255a94bea9c39d8e04",
+            "blob": "f78fdf9efea56adace76a6369b52c986f4cc56c9",
+            "content": "sha256:833aea476c58efa6f782c1cbaab61ac140f3ea8add30e387ebe162dc77856033",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "CAPABILITY_RESOURCES"
             }
           },
           "kind": "code"

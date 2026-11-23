@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ffdefe504eb9d265dee808b79151772ba7871606",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
-    "statement": "The changed architecture paragraph now describes one MCP call, finite CLI command or background quality worker, and explicitly leaves dashboard serving without a definition scope. The loaded-build index account remains current. Only these changed passages and their named lifetime owners were checked.",
-    "task": "261112-BUG-L9",
+    "statement": "The architecture describes a separate task-bound tool server for an admitted provider that takes one, four durable write cases and private temporary spools for Git batch framing, review evidence and Explainer blob reads.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,21 +17,21 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+      "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
     {
-      "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/kernel/memory_init.py"
     },
     {
-      "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+      "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/git_command.py"
     },
@@ -174,8 +174,8 @@
     },
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
-        "content": "sha256:e056777fc950f723afb2628217470913514b02b53ec179cfc7d146c69d7a1eb1",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+        "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
         "locator": {
           "kind": "symbol",
           "name": "call_tool"
@@ -187,8 +187,8 @@
     },
     {
       "anchor": {
-        "blob": "42003e355d7caf9887db71524da64fa975e3aa14",
-        "content": "sha256:5cd5edf7604e85854b572094cecb14d6d7140f3f28957329243b0f1bd0bf0e33",
+        "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
+        "content": "sha256:800e9795e3c2782a3450b9c03a1e7d1a5850845f293febf0cb73112eaf470050",
         "locator": {
           "kind": "symbol",
           "name": "_complete_quality_run"
@@ -196,6 +196,71 @@
         "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
       },
       "heading": "Background worker lifetime",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+        "content": "sha256:032539c90a6959c16332f1c0c884b82ec12b42f658148bfe1897d693a8903fd2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_batch_blobs"
+        },
+        "path": "mcp/src/agents_remember/kernel/git_command.py"
+      },
+      "heading": "Private Git batch spool",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "81cd1e501ae98d5876fd20aee9f68b74b092cd88",
+        "content": "sha256:d532881211dfb9b992596f1858bf9ed6bd59b3154ee4b9ba0e8e42a0bc6faca8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_blob_via_spool"
+        },
+        "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+      },
+      "heading": "Private review evidence spool",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "73055592d2c4494f43711b168bcf158af218ed35",
+        "content": "sha256:68a71d0d063bbf3928f0411825fed8bf0e88083d42d14d17337f096720803d9f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ExplainerTargetReads._blob"
+        },
+        "path": "mcp/src/agents_remember/canvas/explainer_target.py"
+      },
+      "heading": "Private explainer blob spool",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+        "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP.call_tool"
+        },
+        "path": "mcp/src/agents_remember/mcp/server.py"
+      },
+      "heading": "Native invocation request lifetime",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+        "content": "sha256:8d3ef09438ee2c52caadee125063bfefca466ce0885983ac124914895a396457",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP._execute_tool_call"
+        },
+        "path": "mcp/src/agents_remember/mcp/server.py"
+      },
+      "heading": "Dispatch definition scope",
       "kind": "anchor"
     }
   ]

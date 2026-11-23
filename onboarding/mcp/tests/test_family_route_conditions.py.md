@@ -12,8 +12,7 @@ worklist items.** The fixture-backed cases reuse MIK-R08's real Git code and con
 `svc/worktrees`, realized in three files), `FAM-W00001` (an `unrealized_family` routed at `svc/legacy`),
 `FAM-X00001` (an exported family with no routes) and `FAM-T00001` (a retired family routed at `svc/legacy`).
 A case commits a code candidate C and a memory candidate K_C and computes the worklist exactly as the leaf
-route does; the satisfying row is a family row in the leaf's own history file. The file runs in the
-`unit-regression` lane (`test-evidence-lanes.toml`).
+route does; the satisfying row is a family row in the leaf's own history file.
 
 ## Code Commentary
 
@@ -91,7 +90,9 @@ No configured live documentation source was available for this pass.
 - The boundary example. [8]
 - An ambiguous rename target. [9]
 - The registered kind and its row lookup. [10]
-- Q1: a route dead at B is not charged. [11]
+
+- An unreached family is not charged for a route already dead at the base. When the same route is removed inside the leaf's range, the worklist raises route_path_absent. [11]
+
 - Q5: the suggestion follows renames. [12]
 
 
@@ -106,4 +107,4 @@ No cross-repo boundary is crossed by this file.
 - `test_a_carried_dead_route_the_validator_refuses_is_a_mandatory_item`: current carried-route refusal, mandatory worklist item, failed changed-only answer, rerouted repair and retired exemption. [5]
 - Current source delta inspected statically: Replace carried-route PASS with refusal, qualify historical debt reporting and rename its caption; preserve reroute and retired boundaries. [14]
 
-- The unit-regression lane selects mcp/tests/test_family_route_conditions.py. [13]
+- The `unit-regression` lane selects `mcp/tests/test_family_route_conditions.py`. [13]

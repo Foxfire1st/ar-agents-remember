@@ -12,7 +12,7 @@ Read-only reopening of exactly selected preparation intents and outputs, logical
 
 ### Logic
 
-`selected_preparation_intents` reopens exact selected intent/output objects, checks operation ownership and matching output, and requires three retained command records for a write-enabled selected output. New-intent certificate checking, command selection and successor code rebinding are absent; no four-certificate successor-prefix check is performed by this remaining reader.
+`selected_preparation_intents` reopens the exact selected intent and optional output, checks the operation owner and leg, and verifies the output's link to the intent. The retained output model validates identity, candidate tree and creation policy. New-intent certificate checking, command selection and successor code rebinding are absent; no four-certificate successor-prefix check is performed by this remaining reader.
 
 This owner reopens selected originals and independently proves logical roots/refs. `require_preparation_logical_refs` compares canonical existing roots, repository identity, symbolic HEAD, HEAD commit and the exact logical branch tip with the retained intent. `_require_intent_owner` checks operation kind/key/generation, contract path, frozen run, candidate authorities and the exact code or memory logical root. `retain_prepared_code_for_successor` and its raw-output, prefix and rebound-wrapper helpers were removed, not moved to a new publisher here. The surviving readers start no preparation command, publish no object and perform no journal CAS.
 
@@ -38,7 +38,9 @@ No configured domain documentation applies.
 
 ### Repo-Internal References
 
-- `selected_preparation_intents` owns the corresponding behavior described above. [1]
+
+- Selected preparation checks the retained leg intent and output against the owning operation and certification. [1]
+
 - `selected_prepared_code_history_commits` validates selected code and explicit predecessor history. [2]
 
 - `_require_intent_owner` owns the corresponding behavior described above. [4]

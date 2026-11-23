@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-        "content": "sha256:8391f7e20f53dc2e4087a2f40c76d748a99f961b044f4c5eeb3992955771f144",
+        "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+        "content": "sha256:a15284d3b41ba46ff3d797912d1a4db64372b1de83f90bfe8421650c02a9c40d",
         "locator": {
           "kind": "file"
         }
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
             "content": "sha256:61e5581f71a234466784c2854f3180ca251705dc41e6369cf1b2fab8b662df2d",
             "locator": {
-              "end": 123,
+              "end": 125,
               "kind": "line_range",
-              "start": 123
+              "start": 125
             }
           },
           "kind": "code"
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
             "content": "sha256:26c5524067439977845bf33105a7ed49edf803137809ee57ead9185bb7d52e9d",
             "locator": {
               "end": 8,
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -89,16 +89,16 @@
       ]
     },
     "5": {
-      "note": "The Worker's stage ends when the candidate meets the requirement, the handover checks named in system/coding-guidelines.md pass on a clean copy of the final bytes, and the report is with the Reviewer.",
+      "note": "The Worker's stage ends when the candidate meets the requirement, the handover checks pass on a clean copy of the frozen candidate, the listed final checks have run once on the tree that passed review, and the reports are with the Reviewer and Manager.",
       "targets": [
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:78ed27080efd4c1cdb04a4588a7ab8a2eea07f9fa4c7ca0b9b803c1e95418145",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:7039b2f8a5d2ed2a741683a9f319e159a80cc25968d685feda07ed7bd8dedb79",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 157
+              "start": 159
             }
           },
           "kind": "code"
@@ -110,12 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
             "content": "sha256:5b4a09092e1a5906f5aa32e7aeffd074838cac0d3a3e4dce63d36ca8198354e7",
             "locator": {
-              "end": 147,
+              "end": 149,
               "kind": "line_range",
-              "start": 141
+              "start": 143
             }
           },
           "kind": "code"
@@ -127,10 +127,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:8391f7e20f53dc2e4087a2f40c76d748a99f961b044f4c5eeb3992955771f144",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:a15284d3b41ba46ff3d797912d1a4db64372b1de83f90bfe8421650c02a9c40d",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
               "start": 1
             }
@@ -144,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
             "content": "sha256:340c5a14780d00bd7a013a752aafaf7e863776424abd7fd05e988eb6a511a867",
             "locator": {
               "end": 19,
@@ -161,12 +161,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
             "content": "sha256:6c0b9657fb87e4488c963aabfe161d042015d740c0e06fa60b781b243e8aec38",
             "locator": {
-              "end": 135,
+              "end": 137,
               "kind": "line_range",
-              "start": 135
+              "start": 137
             }
           },
           "kind": "code"

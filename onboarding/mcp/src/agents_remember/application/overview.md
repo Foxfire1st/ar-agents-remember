@@ -13,6 +13,8 @@ The current account is the converted-text and native role route after MIK-R74 an
 
 ## Hot Path Summary
 
+Worktree closeout apply and integration execute synchronously through their worktree owners. Worktree status preserves saved closeout and integration rows and reports compact running state only for direct landing.
+
 A live leaf memory worktree may precede its onboarding cards. Scope still requires the memory directory and Git marker and resolves its own onboarding child without an existence-based substitution. Quality delegates an absent collection to the route-index owner; missing caches, stale caches and actual build failures remain distinct.
 
 Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics.
@@ -50,6 +52,8 @@ A current review binds code B/C and memory K_B/K_C as four trees. Source invento
 Ordinary operations guarded for converted knowledge refuse legacy memory using central conversion guidance. The current `read_ar_files` naming route instead reports `memoryState=unconverted` and names no card or knowledge body. Startup/context exposes format and first-conversion facts without fabricating them from unreadable probes.
 
 ## Construction And Ownership
+
+The leaf knowledge gate charges retained Python graphs in its shared verdict and candidate parse memos. An oversized value stays available to the current evaluation and stays outside shared retention. Exact candidate files, code-tree reads and gate witnesses still determine whether reuse is valid. Detached quality calculations open their own request memo before computing a result.
 
 Review read composition shares successful immutable Git/tree/blob observations and capture proof only within the request. Worktree reuse still checks HEAD and exact physical/index inputs; unavailable sides keep their prior error/absence policy. Answers remain self-contained and current-entry serialization remains baseline-compatible. Worklist evaluation runs even when identical serialized bytes need no publication. The native serving change-set and intent-summary caches are separate app-scoped owners: intent-summary resolution reports the selected inputs before counting so those owners can revalidate consumed dependencies across requests. This does not extend the request-local review memo or turn a cached summary into semantic acceptance.
 
@@ -344,6 +348,8 @@ The `memory_quality` application package shares its bounded run registry between
 
 
 
+
+The frame store accepts WebM and MP4 through the usual asset admission and publication path. It records their media types in the verified manifest.
 
 ## Evidence
 
@@ -905,7 +911,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The one classification: where it differs from the gate, stated once. [356]
 - The exact-blob rule and the hunk classes. [357]
 - The gate's non-text linkage, unknown over a side not read whole (F3). [358]
-- The shared hunk and non-text definitions. [360]
+
+- The worklist and reviewer share `change_hunks` for text hunks and file-level changes. The worklist uses `non_text_linked` for file-level linkage. [360]
+
 - The gate over a leaf's exact candidate: probe, tip, memo, recorded evaluation. [363]
 - Rule 2's invariant and family rows. [365]
 - The memo's key and reuse. [366]
@@ -1130,11 +1138,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 - evaluate_answer computes the named records' currentness and may raise CURRENTNESS_FAILURES; failure_document separately constructs the failure block with unverifiableReason. [284]
 - Complete whole-file dependent version tokens are compared using exact confirmation and selected-tree project versions; unchanged other bytes and prefix identity are preserved, without claiming semantic package ownership for identical dependency tokens. \[522] [522]
-- A complete leaf closeout adds entry-currentness findings for changed paths using the shared master-landing predicate with a direct recorded-base comparison. \[523] [523]
+- For a complete paired leaf worklist, the closeout gate checks changed paths with the master landing entry-currentness predicate. It compares the recorded code base directly with the candidate tree. [523]
 
-- The write route resolves the caller outside the handoff and supplies the owner-specific stamp. [524]
-- The answer carries record standing independently of code currentness. [525]
-- The bounded writers view retains the report path and selection's counts. [526]
+- The write route resolves the caller outside the handoff and supplies the owner-specific stamp. [527]
+- The answer carries record standing independently of code currentness. [528]
+- The bounded writers view retains the report path and selection's counts. [529]
 
 - The operation: read, author, check history, render, validate, then write or refuse. [265]
 - Writer validates before finish and appends raised questions before knowledge files. [462]

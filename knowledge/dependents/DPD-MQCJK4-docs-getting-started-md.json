@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
-    "statement": "The page holds: the packaging metadata, the dashboard's media route, the two framework keys a cut answer adds (`runningOperation` and `cut`), a raised Playwright pin and a new dashboard package leave its install steps and its first-task steps true.",
-    "task": "261112-BUG-L7",
+    "statement": "The setup guide’s unmatched caller-harness refusal and hosted Architect entry continue to agree with Bootstrap and dashboard selection behavior.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -76,7 +76,7 @@
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
     {
-      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/cli/discovery.py"
     },
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -116,7 +116,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
     },
     {
-      "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+      "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },

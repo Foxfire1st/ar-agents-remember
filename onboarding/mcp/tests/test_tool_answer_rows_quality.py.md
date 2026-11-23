@@ -14,9 +14,13 @@ The added mounted FastMCP witness uses real `tool_call_context` for sync, start 
 
 The largest sync case seeds converted missing-path anchor sidecars with matching Markdown markers and asserts the exact 54-finding error sentence, at least 25 blockers and ten projected entries. Other cases retain clean parentless coherence takeover, live asynchronous admission and completed-polling assertions; these source expectations are not new execution results. Every not-ok answer must retain code, one error sentence and next action. Blocking projection covers missing-only, stale-only, census-only and mixed populations in repair order. Registry settling is fixture control rather than substitute whole-memory certification.
 
+The real memory-quality checks use the shared fixed-width temporary root and owned XDG paths when deriving their answer cases.
+
 ## Evidence
 
-- Mounted sync and completed poll retain computed proof counts and the actual blocking count in bounded answers while full checks remain in the retained log. [2]
+
+- Mounted sync and completed poll retain computed proof counts and the actual blocking count in bounded answers. The retained full result carries the full checks. [2]
+
 
 
 No Domain Documentation sources are configured; the evidence below is repository implementation or test assertions, not a new execution attestation.
@@ -25,4 +29,8 @@ No Domain Documentation sources are configured; the evidence below is repository
 ### Current Source-Inspection References
 
 
-- Source cases assert sync/start/poll row shapes and bounded blocking samples; converted missing-anchor sidecars seed the largest sync expectation. [1]
+
+- Source cases assert sync, start and poll row shapes and bounded blocking samples. Converted missing-anchor sidecars seed the largest sync expectation. [1]
+
+
+- The real memory-quality checks use the shared fixed-width temporary root and owned XDG paths when deriving their answer cases. [3]

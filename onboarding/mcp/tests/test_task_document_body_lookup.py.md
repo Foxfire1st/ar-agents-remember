@@ -20,17 +20,15 @@ machine, without a timing threshold.
 **Fixture.** `_corpus(root, unrelated=N)` builds one temporary `tasks/` tree. It holds a series
 master and its leaf, a standalone document, two real masters in different repository folders
 (`repo-a/master-a` and `other-folder/master-b`), and a sprint whose `executionGraph` names both of
-them plus a missing `missing/task.json`. It also holds four **decoys** that the corpus-wide join never
-admitted. Each decoy sorts after the real master it imitates, so a join that admitted it would show
-its title:
+them plus a missing `missing/task.json`. Its four **decoys** exercise different admission rules:
 
 - a historical copy under `series/notes/master-a/`;
 - an archived master under `0_archive`;
 - a master reached only through the symlinked repository folder `zz-linked-folder`;
 - a master-shaped document at `zz-schemaless/master-b/task.json` with its `schema` key deleted.
 
-The model gives a missing schema a default, so the schema-less decoy would validate and win the
-last-wins join. Only the schema filter in `_graph_master_docs` keeps it out.
+The model defaults a missing schema. The schema-less decoy has the same named path as Master B and sorts
+after it. The graph join checks the raw schema before passing named candidates to the shared model projector.
 
 **Cases** (source assertions; no tests were collected or executed for this reconciliation):
 
@@ -140,7 +138,9 @@ No external domain claim is required.
 - The enumeration equals the earlier recursive glob, including its exclusions and symlink behavior. [7]
 
 
-- The production body read uses separate sprint graph-master and addressed ordinary owner/listed-child Order joins; newly read Order inputs are raw-schema-filtered before tolerant parsing. [8]
+
+- The body reader supplies the graph-master lookup and the addressed Order join separately. The Order reader checks the raw schema on the owning master and each newly read listed child before tolerant parsing. [8]
+
 
 - The bounded enumeration and the named-path probe under test.
 
@@ -155,4 +155,4 @@ No meaningful cross-repo references found.
 
 - The bounded enumeration and the named-path probe under test. [9]
 
-- The unit-regression lane selects mcp/tests/test_task_document_body_lookup.py. [10]
+- The `unit-regression` lane selects `mcp/tests/test_task_document_body_lookup.py`. [10]

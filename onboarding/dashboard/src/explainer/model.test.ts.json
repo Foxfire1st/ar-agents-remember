@@ -73,14 +73,14 @@
       ]
     },
     "5": {
-      "note": "An empty request on a planning task names the requirement and planned effects; the same input elsewhere names the end-to-end review.\n\nAnchor: `sends an empty request on a planned task as its requirement and planned effects`",
+      "note": "The test passes the planned flag directly and checks the resulting summary constant.",
       "targets": [
         {
           "anchor": {
             "blob": "7d50cff26f1786af2d726df12a2433320b231469",
-            "content": "sha256:723f9976c75c8771576186a80e48036de113396d11c4ec47121b6d031acc18fb",
+            "content": "sha256:64aaf17ea27baaea50f0badb58ba818fd267d8c7ed58aea651053e804b75ec9a",
             "locator": {
-              "end": 163,
+              "end": 162,
               "kind": "line_range",
               "start": 157
             }

@@ -8,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1b37e4512c41640d3bfdcf863bb702060adeefb",
-            "content": "sha256:7a6ce2acaef43c714cd4cf042d5a40ca0c4f26254778df5705b8e6558cc0ee4e",
+            "blob": "3c6e0239bfeaad43239f0725759b605a205ed12e",
+            "content": "sha256:90329b2fbca51ed4d927deda8f373c4a35b82e1b2df24b952d8d7ac92c8f07fa",
             "locator": {
               "kind": "file"
             },
@@ -432,7 +432,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "blob": "27ef5773a2dfaf104a95a4c3640adfad1fbece52",
             "content": "sha256:0f0153648bbafbbff14c27cda8737ab12ce52b8b290769c3684c3da6bbffb5cf",
             "locator": {
               "end": 181,
@@ -445,12 +445,12 @@
         },
         {
           "anchor": {
-            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "blob": "27ef5773a2dfaf104a95a4c3640adfad1fbece52",
             "content": "sha256:1463b8360e77379f811e8bb3f039fedb2033d7a23503372f85e393d0abe6d63a",
             "locator": {
-              "end": 542,
+              "end": 543,
               "kind": "line_range",
-              "start": 441
+              "start": 442
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
           },
@@ -458,12 +458,12 @@
         },
         {
           "anchor": {
-            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "blob": "27ef5773a2dfaf104a95a4c3640adfad1fbece52",
             "content": "sha256:b65e076f64af2fd78c346f4bdddb6ff86de8eb21f737fbedbac49403ce2bc52e",
             "locator": {
-              "end": 566,
+              "end": 567,
               "kind": "line_range",
-              "start": 550
+              "start": 551
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
           },
@@ -471,12 +471,12 @@
         },
         {
           "anchor": {
-            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "blob": "27ef5773a2dfaf104a95a4c3640adfad1fbece52",
             "content": "sha256:2e25431d4a0cd8791d8b182f61b09d70ca16bd0486aba94567125429479a560e",
             "locator": {
-              "end": 939,
+              "end": 940,
               "kind": "line_range",
-              "start": 872
+              "start": 873
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
           },
@@ -484,12 +484,12 @@
         },
         {
           "anchor": {
-            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "blob": "27ef5773a2dfaf104a95a4c3640adfad1fbece52",
             "content": "sha256:ab81dfec9f556109d20004b277fb188ad0d1a33d2b5fa0024163bab2a7d9ff08",
             "locator": {
-              "end": 1033,
+              "end": 1034,
               "kind": "line_range",
-              "start": 958
+              "start": 959
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
           },
@@ -542,21 +542,8 @@
       ]
     },
     "25": {
-      "note": "Helper test imports, source figures, historical Git pin and conditional record availability.",
+      "note": "The test support cases cover helper imports, source figures, pinned historical Git inputs and conditional record availability.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
-            "content": "sha256:86c785b4eea752a55fe41885c850466e584eb39379b7658b9916e74fd8c6cc47",
-            "locator": {
-              "end": 1140,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/tests/test_record_integrity.py"
-          },
-          "kind": "test"
-        },
         {
           "anchor": {
             "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
@@ -567,6 +554,17 @@
               "start": 12
             },
             "path": "mcp/tests/test_instrument_discipline.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b4942d7571e3c7d037cb95290951fa852ecd2505",
+            "content": "sha256:b05a6e786e6f30682bd5dad9ab7ba17e79dbe212f3c1f16df6ae4dbdf0eb1e4c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_record_integrity.py"
           },
           "kind": "test"
         }

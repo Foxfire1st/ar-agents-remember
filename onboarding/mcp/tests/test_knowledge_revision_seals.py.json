@@ -21,16 +21,16 @@
       ]
     },
     "10": {
-      "note": "The identity-branching fixture's replacement contract is knowledge-identity-branching-fixture. The artifact lists test_knowledge_revision_seals.py among its exact consumers.",
+      "note": "The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:e431cc066a9871801abbd8c2909f65c8592b2fd601232848a3e257f99b27ddcc",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:e0f5339047af053e5cde5eb28cacba43cad9bec73f23b3611e781d3c3b5086b0",
             "locator": {
-              "end": 5110,
+              "end": 3597,
               "kind": "line_range",
-              "start": 5106
+              "start": 3580
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -38,12 +38,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:33aa791694f287ede5b708232d6f9d92970ffbce0f819f2c73344d7cfbb4fc9a",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:dd29b9575318035917550d8cd687bff9d97bc8f7656afd6847e27186bf2bdcd1",
             "locator": {
-              "end": 3579,
+              "end": 5156,
               "kind": "line_range",
-              "start": 3561
+              "start": 5153
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -51,7 +51,7 @@
         }
       ]
     },
-    "11": {
+    "12": {
       "note": "The same revision keeps its seal when derived standing differs.",
       "targets": [
         {
@@ -170,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
+            "blob": "fb3c2272e5d24ca02331ff792609423b79c238aa",
             "content": "sha256:b7b1484eb0fa1e1fb3744e4db9c6a29b9026c328733a26254ee84d07cde416e7",
             "locator": {
               "end": 281,

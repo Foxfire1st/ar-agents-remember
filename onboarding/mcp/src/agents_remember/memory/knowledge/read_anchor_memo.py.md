@@ -15,6 +15,8 @@ anchors (260921-ICR-L56, ICR-R24@v3). It owns the storage, the bound and the one
 
 ## Code Commentary
 
+The generic bounded memo can charge the reachable Python graph of a key and value together. Oversized values stay outside retention. The existing Git observation tables separately keep their count, estimated line weight or definition-unit policies.
+
 ### Logic
 
 - **`is_complete_object_id(value)`** is the single admission test for a memo key: a full 40- or 64-digit
@@ -92,7 +94,9 @@ No configured domain documentation could be checked.
 
 - The consumer that decides what is put, keyed by root plus ids, and only after Git or the parser answered. [7]
 
-- **The cases that pin the bound and concurrency.** [8]
+
+- The named tests check weight-bounded eviction and agreement under concurrent access. [8]
+
 
 ### Cross-Repo References
 

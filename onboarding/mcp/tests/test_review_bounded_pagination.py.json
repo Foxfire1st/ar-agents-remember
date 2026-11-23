@@ -20,7 +20,7 @@
       ]
     },
     "22": {
-      "note": "The removed records collection is a named refusal on first, unsized, continued and crossed requests. The serialized guard requires the evidence field to be absent, not an empty measured channel.\n\nAnchor: inclusive source ranges",
+      "note": "The first, unsized, continued and crossed requests for the removed records collection return the named refusal. The crossed request’s model dump omits evidence.",
       "targets": [
         {
           "anchor": {
@@ -79,16 +79,28 @@
       ]
     },
     "25": {
-      "note": "Fixture construction imports the shared diff/read-scope test support and rebuilds its candidate text population; this is not production write admission.",
+      "note": "The fixture imports diff and read-scope test helpers. It rebuilds the candidate text population with the successor claim and added realization paths.",
       "targets": [
         {
           "anchor": {
             "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
-            "content": "sha256:28068d801b156c919335a111b205722a47afc7570ee49c50770d8c92267bb4ed",
+            "content": "sha256:3a6b30eb4e7a01582d73caaf9bfb0d68908704ebf09b49f1890bd8a77613981f",
             "locator": {
-              "end": 79,
+              "end": 84,
               "kind": "line_range",
-              "start": 74
+              "start": 71
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:714dd7c325339163c8fd599f3e5ed4fc7c62576e64e5344917e1af788ef36b3a",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 177
             }
           },
           "kind": "test"
@@ -172,73 +184,16 @@
       ]
     },
     "30": {
-      "note": "The composition, the real route and the query builder every page is read through.\n\nAnchor: `route_client` `compose_page` `route_query` `paged_payload`",
+      "note": "The HTTP walk builds queries for the registered route, whose port invokes production composition. The direct walk invokes composition through compose_page.",
       "targets": [
         {
           "anchor": {
             "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
-            "content": "sha256:7dbed4734079a92f2edf239277daa7de2887a1168455ddd9c4d8a1777ea04c6e",
+            "content": "sha256:112ec260c3670bfc3019984d3574d2889c0d4262e3b7665a2f4f5c9e497361eb",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
-            "content": "sha256:9753689097ee78fa9154406860c4ba76a6de7471718d3ae03369af1fc848045d",
-            "locator": {
-              "kind": "symbol",
-              "name": "route_client"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
-            "content": "sha256:1d678b1af567cf6d1cafb907d384b714e014d39dfcb6e79e1f7260e3fb7ea5c0",
-            "locator": {
-              "kind": "symbol",
-              "name": "compose_page"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
-            "content": "sha256:6cb99e3febf0cb7e7bdc034510547aff4a9dff216f8f98731a4f25662bb03184",
-            "locator": {
-              "kind": "symbol",
-              "name": "route_query"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
-            "content": "sha256:fd03bcbabb65e3a94ebd6758a956c7b500e294b94037e160206c780a9183eaae",
-            "locator": {
-              "kind": "symbol",
-              "name": "paged_payload"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "31": {
-      "note": "The walk helper and the two independent answer readers the cases compare the published counts with.\n\nAnchor: `walk_comparison` `_comparison_answer` `_returned_item_ids`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
-            "content": "sha256:7dbed4734079a92f2edf239277daa7de2887a1168455ddd9c4d8a1777ea04c6e",
-            "locator": {
-              "kind": "file"
+              "end": 283,
+              "kind": "line_range",
+              "start": 232
             }
           },
           "kind": "test"
@@ -248,8 +203,26 @@
             "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
             "content": "sha256:15af2f837e4063514d3979ddb83b576f34f11e9c79bec996b80871c88aa14163",
             "locator": {
-              "kind": "symbol",
-              "name": "walk_comparison"
+              "end": 333,
+              "kind": "line_range",
+              "start": 286
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The cursor walk checks each published cumulative count against a separate call to the comparison owner for the same request. It also reads the page item IDs from that owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:15af2f837e4063514d3979ddb83b576f34f11e9c79bec996b80871c88aa14163",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 286
             }
           },
           "kind": "test"
@@ -257,21 +230,11 @@
         {
           "anchor": {
             "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
-            "content": "sha256:0c54f6fd3282b81280cd81ba719bbbe553afa9ff6ffcf98177589d1e59f68a6f",
+            "content": "sha256:5330612e112fda9fca1ad62151a7b52a1cdf5790a91571765bbb45247a255d41",
             "locator": {
-              "kind": "symbol",
-              "name": "_comparison_answer"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
-            "content": "sha256:c0502b8d2812e32b8a63a5caa4c4de8140b91ba9fed8002fc18602c264bc2d7f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_returned_item_ids"
+              "end": 388,
+              "kind": "line_range",
+              "start": 336
             }
           },
           "kind": "test"
@@ -327,7 +290,7 @@
       ]
     },
     "36": {
-      "note": "**The packet's failure example: a cursor whose generation moved is refused with the new-generation action, and the response is the first page of the comparison that is there now.**",
+      "note": "A stale cursor returns a reset with the new-generation action and differing identities. The reset has no continued-from cursor and hands back a cursor that continues the moved comparison.",
       "targets": [
         {
           "anchor": {
@@ -359,14 +322,16 @@
       ]
     },
     "39": {
-      "note": "The entry case asserts unpaged subject review reads at both fixture sizes and independently verifies that driving the entry catalogue calls no comparison or view owner.\n\nAnchor: `test_the_entry_read_populates_the_button_without_fetching_record_pages`",
+      "note": "At both fixture sizes the unpaged subject read has no page. The larger entry catalogue then returns its subject count without calling the patched comparison or view functions.",
       "targets": [
         {
           "anchor": {
             "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
-            "content": "sha256:7dbed4734079a92f2edf239277daa7de2887a1168455ddd9c4d8a1777ea04c6e",
+            "content": "sha256:b9f1d8275e326f4d61abe0e2728c3672596c11627c32848be92db340e5067638",
             "locator": {
-              "kind": "file"
+              "end": 781,
+              "kind": "line_range",
+              "start": 743
             }
           },
           "kind": "test"
@@ -407,16 +372,29 @@
       ]
     },
     "42": {
-      "note": "The lifecycle catalog lists `test_review_bounded_pagination.py` as an exact consumer of `_user_settings_guard.py`, `anchor_fixture_models.py`, `diff_scope_test_support.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_review_fact_test_support.py`, `knowledge_row_codec_test_support.py`, `knowledge_rows_test_support.py`, `read_scope_test_support.py`.",
+      "note": "The unit-regression lane selects `mcp/tests/test_review_bounded_pagination.py`. The lifecycle catalog lists `mcp/tests/test_review_bounded_pagination.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:e2a8e4c31fb4ca6af5072c937e5a80c93c070373bc33e66e37f9bc594c785241",
+            "blob": "fb3c2272e5d24ca02331ff792609423b79c238aa",
+            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
             "locator": {
-              "end": 886,
+              "end": 477,
               "kind": "line_range",
-              "start": 65
+              "start": 477
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
+            "locator": {
+              "end": 643,
+              "kind": "line_range",
+              "start": 643
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -424,12 +402,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:d624b4e46fc9e6924d901d658a4c8250a47841ebaed91fe7442d2d311d7c52b5",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
             "locator": {
-              "end": 980,
+              "end": 957,
               "kind": "line_range",
-              "start": 887
+              "start": 957
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -437,12 +415,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:880ceed72bf38b6c86651c63583c5a736e415f22a6d216a3ea47895e1e9ae8b2",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
             "locator": {
-              "end": 1367,
+              "end": 1357,
               "kind": "line_range",
-              "start": 1330
+              "start": 1357
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -450,12 +428,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:f949d4a324dbc44d81a8d069eb004a8da1c07c67afe1e35b58cc0af412851b62",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
             "locator": {
-              "end": 3272,
+              "end": 3063,
               "kind": "line_range",
-              "start": 2451
+              "start": 3063
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -463,12 +441,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:67ec7973d3552deddaf52c20d2b210b53b8e9366258ee80b60c209c5fa4b7f81",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
             "locator": {
-              "end": 3698,
+              "end": 3708,
               "kind": "line_range",
-              "start": 3643
+              "start": 3708
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -476,12 +454,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:f305c30dec61d95487dd0f32112478a9ad86885bbb7f6d4b07db0aff15dd7485",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
             "locator": {
-              "end": 3736,
+              "end": 3750,
               "kind": "line_range",
-              "start": 3699
+              "start": 3750
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -489,12 +467,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:5c44c64b5658f3a03a2abe5c88d0b21b75508df51e17fe03352ee7e8f7247a89",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
             "locator": {
-              "end": 3830,
+              "end": 3826,
               "kind": "line_range",
-              "start": 3737
+              "start": 3826
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -502,12 +480,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:f91efbdb1205da8ca9fedccd2de9d609fdb0f1e96c0e0868e17980da602f005a",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
             "locator": {
-              "end": 4340,
+              "end": 4406,
               "kind": "line_range",
-              "start": 4291
+              "start": 4406
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

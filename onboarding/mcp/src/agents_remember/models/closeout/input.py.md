@@ -31,14 +31,14 @@ The model does not decide enabledness. Route- and contract-aware code in `worktr
 - An enabled leg always has explicit stripped nonblank intent; a not-applicable leg never carries a sentinel empty message.
 - The attribution's **rendering** has exactly one definition, and it is not here: `memory_content_message` delegates to `kernel.memory_attribution.render_memory_content_message`, which is the one writer of the trailer for all five producers. This model contributes the body (the closeout's own memory message verbatim) and the code commit; it never replaces the body and never invents an attribution for a commit that has no code counterpart to name.
 - The attribution's **key** is declared once, in `kernel/memory_attribution.py`, and this module does not name it at all — it imports the renderer, not the constant. This module must never re-declare the key and must never spell the trailer as a literal: a second spelling would let a producer emit a trailer the reader does not parse, and that failure looks like "no attribution exists" rather than like a bug. The direction is fixed by `layers.toml` — `kernel` is ranked below `models`, so a kernel module importing a model would import upward.
-- The trailer has to be inside the commit object when the object is created, because the message is hashed into it. Both callers render the message at the commit seam for that reason; `prove_git_commit` journals the resulting sha on the next statement, so anything added later could only be a rewrite of an already-proved object (`git notes` is not bound by the hash).
+- The attributed message is rendered before each actual memory commit because Git hashes the message into its commit object. The ordinary closeout and direct producers each prove the resulting commit against the expected tree. Direct landing records that proof on its retained generation.
 - There is no generated subject, default commit message, or compatibility input alongside this model.
 - `CloseoutInvalidField`, `CloseoutCorrectedCall`, and `ResolvedCloseoutPlan` make refusal actionable without acquiring integration authority or touching Git.
 - Queue selection has no dependency on this type; it remains a scheduling projection outside L1.
 
 ### Todos
 
-None recorded. Public retry/recover/revise controls belong to L2, not this model.
+None recorded. The ordinary tool passes effective input to its synchronous closeout owner. Public direct-landing recovery uses its own generation-bound request and evidence checks.
 
 ## Evidence
 

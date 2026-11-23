@@ -10,7 +10,7 @@ Refreshes receipt facts from one native agent read and reconciles new starts wit
 
 ## Code Commentary
 
-_refresh_execution returns unresolved/rejected launches without an agent read. _apply_reading writes only changed lifecycle fields and never on unreachable reads; response-only unreachable detail preserves last known status. Revive republishes the saved receipt’s role identity through `resume_role_agent` before resuming only the same closed agent, persists answered refusal, and drops that refusal only after seeing the session open. New Start applies open-execution policy to current native facts. For a leaf seat, a finished turn or closed session does not free its unarchived holder. An ordinary new request must explicitly name that holder for replacement; only the recorded starter or the dashboard launcher may authorize it, and interrupting an ordinary active replacement requires the explicit flag. A catalog-validated step-up can infer the current base holder, but still applies that caller authority and always requires idle/no pending permission; its replacement never interrupts an active turn. An unreadable holder fails closed rather than appearing free. The replacement records retirement before archiving the prior receipt and preserves predecessor report custody.
+The receipt liveness read skips unresolved or rejected launches. The options coordinator can read the agent outside the dispatch lock, then pass the observation to the liveness projection only when the saved receipt still matches. _apply_reading writes only changed lifecycle fields and never on unreachable reads; response-only unreachable detail preserves last known status. Revive republishes the saved receipt’s role identity through `resume_role_agent` before resuming only the same closed agent, persists answered refusal, and drops that refusal only after seeing the session open. New Start applies open-execution policy to current native facts. For a leaf seat, a finished turn or closed session does not free its unarchived holder. An ordinary new request must explicitly name that holder for replacement; only the recorded starter or the dashboard launcher may authorize it, and interrupting an ordinary active replacement requires the explicit flag. A catalog-validated step-up can infer the current base holder, but still applies that caller authority and always requires idle/no pending permission; its replacement never interrupts an active turn. An unreadable holder fails closed rather than appearing free. The replacement records retirement before archiving the prior receipt and preserves predecessor report custody.
 
 A held receipt keeps the product status `held` through an ordinary host idle reading. Only an archived or vanished holder frees that seat; an unreachable host leaves its saved held state intact. Ordinary revive and closing-mark behavior stays separate.
 
@@ -19,28 +19,36 @@ A held receipt keeps the product status `held` through an ordinary host idle rea
 
 ## Current Contract — Scoped Launch And Settings Changes
 
-Same-request reconciliation checks request digest first, reconciles its task step-up decision, then re-executes starting/unknown or a rejected stepped-up receipt that still has replayRequest. Other resolved receipts continue through refresh; this adds a narrow rejected-successor retry, not a general retry for every refusal.
+Same-request reconciliation checks request digest first, reconciles its task step-up decision, then re-executes starting/unknown or a rejected stepped-up receipt that still has replayRequest. Other resolved receipts continue through refresh. A missing recorded native Antigravity agent settles the refusal and drops the replay call, which closes this Retry path.
 
 Ordinary leaf replacement still requires a named holder and starter/launcher authority, with explicit permission to interrupt a normal active replacement. For a validated step-up, runtime wiring can infer that holder but _require_step_up_idle always refuses pending permission or active/running turns even when interruption was requested.
 
-require_step_up_archive_idle re-reads archiveAgentId immediately before every saved step-up call, including retries and history recovery. Unreachable facts refuse; an extant unarchived predecessor must again be idle and prompt-free. A prior reservation or settled archive flag is not a liveness lease.
+The saved-call executor renews predecessor liveness for a step-up receipt whose saved launch names an `archiveAgentId`, including Retry and recovery through that executor. An unreachable host refuses the call. A found, unarchived predecessor must be idle and prompt-free.
 
 No finished turn accepts AR work or frees a live leaf holder. Held-state persistence, response-only unreachable refresh, revive refusal custody, predecessor reports and ordinary closing-mark behavior remain unchanged.
 
 ## Evidence
 
-- Frozen implementation of _refresh_execution supporting the stated file behavior. [1]
 
-- Frozen implementation of _apply_reading supporting the stated file behavior. [2]
+- Execution refresh reads the recorded agent and applies its observation. A receipt without a confirmed host agent is projected without a host read. [1]
 
 
-- Frozen implementation of _revive_agent supporting the stated file behavior. [3]
+
+- The current reading updates changed lifecycle fields. An unreachable reading preserves the receipt and labels the response as last known. [2]
+
+
+
+
+- Revive republishes the recorded role binding and resumes only the same eligible closed host agent. A recorded refusal remains until that session is observed open. [3]
+
 
 
 - Checks bytes, inode and mtime unchanged on failed/unreadable state and response-only unreachable reason. [6]
 
 
-- Answered refusal persists as failed across refreshes without rewrite and blocks another Revive. [7]
+
+- Refresh preserves the failed Revive status and reason. A second Revive refuses after agent-state without a resume call. [7]
+
 
 
 - Observing the same session open clears prior resume refusal. [8]
@@ -89,7 +97,9 @@ Custody: the preceding sentence is detached from live reference 12; original tar
 
 
 
-- Every saved archival call renews host liveness. [16]
+
+- The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free. [16]
+
 
 
 - Test source checks turn/prompt/unreachable recovery and no archive/create. [17]

@@ -322,10 +322,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
-            "content": "sha256:aa5fda34dde0755a15aa9f1d706e5c0bfe973689ff8774eeb5c501a2726680d6",
+            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "content": "sha256:3a3c84122eeb05f2fd5368efcd2d815fc4d4586c1408a26b6b2477fd20be9c6d",
             "locator": {
-              "kind": "file"
+              "end": 100,
+              "kind": "line_range",
+              "start": 34
             },
             "path": "mcp/src/agents_remember/worktrees/modules/args.py"
           },
@@ -481,11 +483,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
-            "content": "sha256:16909810c747239109ba8d1c32692dd59bbd28bca8f289821c345d0080ddb9c6",
+            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "content": "sha256:3a3c84122eeb05f2fd5368efcd2d815fc4d4586c1408a26b6b2477fd20be9c6d",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeArgs"
+              "end": 100,
+              "kind": "line_range",
+              "start": 34
             },
             "path": "mcp/src/agents_remember/worktrees/modules/args.py"
           },
@@ -498,12 +501,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
             "content": "sha256:7403fc53f7d92a57cb8563f17fa2ce8a42b91877c7139744ada91dedc03874f5",
             "locator": {
-              "end": 250,
+              "end": 253,
               "kind": "line_range",
-              "start": 250
+              "start": 253
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },
@@ -533,7 +536,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:e092fb2568484314845a9e60f9dea7437e90fa9fe0e646662ff06051f4a2749b",
             "locator": {
               "end": 37,

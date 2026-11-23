@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "blob": "cfda37628ff237411040a297821cd403f081cc5a",
             "content": "sha256:eb0261c0b0a2c19450389708c4193e54f3165f835aeea1cdc75f8f4aee8d8347",
             "locator": {
               "kind": "symbol",
@@ -19,15 +19,16 @@
       ]
     },
     "2": {
-      "note": "Canonical setup passes only enabled code/memory messages.",
+      "note": "The typed helpers normalize explicit fixture inputs, and `_enabled_message` returns a message only for an enabled leg.",
       "targets": [
         {
           "anchor": {
-            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
-            "content": "sha256:9aa06f36685c033349f60b9aa1b179dc6f424142b1df22e09736d44290be3493",
+            "blob": "cfda37628ff237411040a297821cd403f081cc5a",
+            "content": "sha256:6469a895be324562ae797803da72232c6960478cf39ac7847d55ddd1c35c3836",
             "locator": {
-              "kind": "symbol",
-              "name": "start_closeout_operation"
+              "end": 380,
+              "kind": "line_range",
+              "start": 328
             }
           },
           "kind": "test"
@@ -35,11 +36,11 @@
       ]
     },
     "3": {
-      "note": "Finalization publishes code/memory recovery cells.",
+      "note": "The finalization fixture writes the code and memory-content recovery cells and the finalized contract digest to its test store.",
       "targets": [
         {
           "anchor": {
-            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "blob": "cfda37628ff237411040a297821cd403f081cc5a",
             "content": "sha256:7b8fad8ba5dd079080f5bbb0e3f8e4fabe9896d2c7d312665e0d66c321746e81",
             "locator": {
               "kind": "symbol",
@@ -55,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "blob": "cfda37628ff237411040a297821cd403f081cc5a",
             "content": "sha256:ee8013dcde65b92a192ab77a34d5bfe7eb6d69c1ac739075385d925921caa8f6",
             "locator": {
               "kind": "symbol",
@@ -66,7 +67,7 @@
         },
         {
           "anchor": {
-            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "blob": "cfda37628ff237411040a297821cd403f081cc5a",
             "content": "sha256:7205b78a3c664f64bf493142c9045ce62c0e053938706061921befc9362f8989",
             "locator": {
               "kind": "symbol",
@@ -82,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "blob": "cfda37628ff237411040a297821cd403f081cc5a",
             "content": "sha256:7f54cd7448b21086dd129068daddfaaeadfbdc5018c7441d6365130aa7bf0004",
             "locator": {
               "kind": "symbol",
@@ -93,7 +94,7 @@
         },
         {
           "anchor": {
-            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "blob": "cfda37628ff237411040a297821cd403f081cc5a",
             "content": "sha256:c630c2d0dbd036fc49b7fcf4abbbfb376d570a2e8d31153762becf06b63d9927",
             "locator": {
               "kind": "symbol",
@@ -104,7 +105,7 @@
         },
         {
           "anchor": {
-            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "blob": "cfda37628ff237411040a297821cd403f081cc5a",
             "content": "sha256:f56c0e17b4a6528e64b797e59208ee22401d827085ef77951658d939ff944e2f",
             "locator": {
               "kind": "symbol",

@@ -66,7 +66,7 @@ rather than against a shape that could be anything.
 
 `pytestmark = pytest.mark.evidence_unit` is the module's whole lane declaration; its membership is the
 `unit-regression` row at `mcp/tests/test-evidence-lanes.toml:271`, and its consumption of
-`read_scope_test_support` is the consumer row at `mcp/tests/evidence-lifecycle.toml:4319` on that
+`read_scope_test_support` is the consumer row at `mcp/tests/evidence-lifecycle.toml:4394` on that
 artifact's `consumer_scope = "exact"` list. The import block is alphabetical within its groups, and
 the case functions are full sentences naming the rendering obligation they measure. Constants are
 module-level and upper-case, and each case's docstring states the property rather than the mechanics.

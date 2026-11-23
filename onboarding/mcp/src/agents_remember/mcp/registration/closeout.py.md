@@ -203,7 +203,9 @@ No additional file-local TODO is established by this candidate review.
 
 The closeout preview and apply descriptions explicitly state that converted-memory invariant judgment uses the exact candidate trees and returns knowledge-gate-refused with its findings. This is a registration-description change; the declaration introduces no additional transaction, quality suite or authority.
 
+
 - Closeout docstrings name exact-tree invariant judgment and knowledge-gate-refused findings. [13]
+
 
 ## Evidence
 
@@ -270,11 +272,11 @@ Worktree closeout and direct landing expose optional message fields syntacticall
 
 ## 260821-CLIVE-L2 Current Contract
 
-The current source seams include `register_closeout_tools`. The public schema/composition layer exposes task-addressed controls plus explicit legacy and enclosure-adoption routes without private operation ids. Registration and payload building do not own journal state or compatibility decisions.
+`register_closeout_tools` composes direct landing, closeout, integration and reclamation. Its task-addressed operation control explains the synchronous replacement for retired journal kinds. The separate worktree registrar exposes explicit enclosure adoption. Payload owners decide eligibility.
 
 ### Reconciled Source Evidence
 
-- The current module exposes `register_closeout_tools` at this ownership boundary. [10]
+- The registrar composes four command groups and mounts task-addressed control with retired-journal guidance. Enclosure adoption belongs to the separate worktree registrar. [10]
 
 ## 260821-CLIVE Final Closeout Tool Descriptions
 
@@ -307,6 +309,11 @@ Anchor:
 
 Source: mcp/src/agents_remember/mcp/registration/closeout.py
 
+
 - Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. [1]
+
+
 - This registrar delegates transaction eligibility and execution to their established payload owners. Compact descriptions name reached states, next calls and retained logs; converted-memory closeout descriptions name exact-tree invariant judgment and knowledge-gate-refused findings. Descriptions alone grant no transaction authority or execution proof. [11]
+
+
 - Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call. [12]

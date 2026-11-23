@@ -1,0 +1,134 @@
+{
+  "path": "mcp/tests/test_mcp_memory_bounded_stdio.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "65a22267d1c85b114460c09b8c5ba15c53fc7fa8",
+        "content": "sha256:4ed24e1d7d6d437782fe1de5542d88ee3dd7d3bb8f0778183afab8f3911833c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_native_stdio_memory_stays_bounded"
+        }
+      },
+      "facet": "The one-process case verifies completed workload cycles, persisted writes and the approved Linux memory limits.",
+      "id": "PRF-7WQ852",
+      "invariant": "INV-FZY2XS",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 4 — stress regression",
+        "leaf": "261112-BUG-L18"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "65a22267d1c85b114460c09b8c5ba15c53fc7fa8",
+        "content": "sha256:4ed24e1d7d6d437782fe1de5542d88ee3dd7d3bb8f0778183afab8f3911833c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_native_stdio_memory_stays_bounded"
+        }
+      },
+      "id": "RLZ-A1WSDN",
+      "invariant": "INV-FZY2XS",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 4 — stress regression",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The test checks all workload outcomes and asserts the admitted process-memory limits on its completed cycles.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The test verifies the persisted records from the three applied writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65a22267d1c85b114460c09b8c5ba15c53fc7fa8",
+            "content": "sha256:4eb3b9b7002ca9489657ea09649cb7f80b1054225213c54dd170eaf076444e9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_applied_writes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The executable case checks workload completion and memory bounds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65a22267d1c85b114460c09b8c5ba15c53fc7fa8",
+            "content": "sha256:4ed24e1d7d6d437782fe1de5542d88ee3dd7d3bb8f0778183afab8f3911833c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_stdio_memory_stays_bounded"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Release certification selects the stress case. The warm-index child and measured server start without child coverage. [3]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c6e0239bfeaad43239f0725759b605a205ed12e",
+            "content": "sha256:035c865db24085e7b3202277aae6222696b2f905900bd57376904384602dacd8",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "docs/design/python-pytest-bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
+            "locator": {
+              "end": 815,
+              "kind": "line_range",
+              "start": 812
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3bbe4b8a03979ebc79e7adf376c3a3142e9d974f",
+            "content": "sha256:dd8bf626f1696fd400e31a3849e4a80a760853ab2a7ed6fe32251e6c5e14f45d",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "mcp/tests/mcp_memory_bounded_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3d085155b1d33d66eb9d606c2f0ceedf9bc24818",
+            "content": "sha256:b339770887b57e6cd195a3caaead1d9462ce3c14570df67813856e00cfd640c0",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "mcp/tests/mcp_memory_bounded_stdio_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

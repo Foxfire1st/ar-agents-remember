@@ -14,7 +14,8 @@
   "exclusions": [
     "Caller candidate strings are not independent authority evidence.",
     "A different or unproven candidate requires begin_review.",
-    "Native representation tests are bounded construction evidence, not an exhaustive proof of every concurrent mutation or Git configuration."
+    "Native representation tests are bounded construction evidence, not an exhaustive proof of every concurrent mutation or Git configuration.",
+    "A sanctioned addition records a new sealed finding through its separate transition."
   ],
   "id": "INV-EA9XDB",
   "origin": {
@@ -28,9 +29,9 @@
     "leaf": "260928-MIK-L116",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A same-round record-only result is admitted only on the authority-resolved byte-identical candidate the round was recorded on; replayed claims, absent bindings, unresolvable identities, and clean-record reseals refuse before write.",
+  "statement": "An ordinary same-round record-only result is admitted only on the authority-resolved byte-identical candidate the round was recorded on; replayed claims, absent bindings, unresolvable identities, and clean-record reseals refuse before write.",
   "status": "proposed",
   "supersedes": []
 }

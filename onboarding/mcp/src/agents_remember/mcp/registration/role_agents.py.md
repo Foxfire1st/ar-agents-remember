@@ -28,7 +28,7 @@ The existing typed start/message/set registrars remain the public surface. Curre
 
 ## Current Contract
 
-The existing role_start registrar accepts optional step_up and passes it unchanged into RoleStartCall before delegating blocking work through asyncio.to_thread. The registrar adds no mode parameter, permission override, counted-try policy, retirement or launch authority; its compact description remains only the short public summary. role_start_set and role_message keep their existing registration/ownership and do not gain this new argument.
+The existing role_start registrar accepts optional step_up and passes it unchanged into RoleStartCall before delegating blocking work through the shared request-thread runner. The registrar adds no mode parameter, permission override, counted-try policy, retirement or launch authority; its compact description remains only the short public summary. role_start_set and role_message keep their existing registration/ownership and do not gain this new argument. The shared request-thread runner drains blocking work for both registered role-start handlers before propagating cancellation. Role messages keep their direct thread offload.
 
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
@@ -42,8 +42,13 @@ The role_message description distinguishes host acceptance from AR acceptance: a
 ## Evidence
 
 
+
+- Workers read failed tries from typed code rounds and Curators from typed memory rounds. A record-only correction revises the existing round without counting as another try. Incomplete typed history leaves the count unknown. [4]
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [5]
-- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [6]
+
+- The caller harness name comes from MCP initialization. Role start forwards step_up into RoleStartCall and delegates launch through the shared request thread. [6]
+
 
 
 ## Investigator scope and request identity
@@ -52,7 +57,6 @@ The role_message description distinguishes host acceptance from AR acceptance: a
 > The mounted description names the shared Investigator slot refusal for new turns. The adapter delegates admission to the same role-message owner and preserves named refusal/detail/remedy values; tool description is not a runtime permission grant.
 
 
-- **Retained historical source account — superseded by the current contract:** The current source implements this file’s stated Investigator boundary. [2]
 
 
 ## Refreshed current evidence
@@ -98,9 +102,14 @@ Anchor:
 
 Source: mcp/src/agents_remember/mcp/registration/role_agents.py
 
-- The registrar declares typed start/set/message inputs and delegates to their payload owners. The current role_message description distinguishes host acceptance from AR acceptance and says held is queued and must never be resent. [1]
-- The existing typed start/message/set registrars remain the public surface. Current compact descriptions advertise start ok/id/handover and message wait/held/cancellation outcomes plus the longer reference. Mode/feature policy, attachments/hashes, capacity, successor and receipt authority stay with the input/application/reference owners, not a claim that every detail is still inline in the short docstrings. Held answer overrides remain distinct from ordinary compact delivery. [3]
-- The registration that mounts the role tools and the settings initializer. [8]
-- Role calls build their existing strict call models, then resolve the existing payload before offloading it. Registration imports no role payload implementation. [9]
 
-- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [4]
+- The registrar declares typed start/set/message inputs and delegates to their payload owners. The current role_message description distinguishes host acceptance from AR acceptance and says held is queued and must never be resent. [1]
+
+
+- The typed role start, role start set and role message declarations expose the public inputs and compact descriptions. The payload owners retain launch, message and receipt policy. [3]
+
+
+- The registration that mounts the role tools and the settings initializer. [8]
+
+
+- The role registrars build typed calls and delegate to their payload owners. Both start handlers use the shared request-thread helper, which drains blocking work before propagating cancellation. [9]

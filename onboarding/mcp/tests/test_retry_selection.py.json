@@ -45,7 +45,7 @@
       ]
     },
     "2": {
-      "note": "The suite covers narrow selection, zero-body collection, and all configured-path refusal shapes.",
+      "note": "The suite checks narrow selection, a mocked successful zero-body collection report and three refusal inputs: an empty configured list, a parent-directory path and an uncollected module.",
       "targets": [
         {
           "anchor": {

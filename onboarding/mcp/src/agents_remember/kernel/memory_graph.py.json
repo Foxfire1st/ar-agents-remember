@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/kernel/memory_graph.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f7a3ffcc2ffdcf26cbb1082f09dacf5fb7222001",
+        "content": "sha256:3da608602d6a8344528190f6684765bfebc908b38ef9516dfee94e0e0f5ff6c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "retained_graph_bytes"
+        }
+      },
+      "id": "RLZ-ZZTYD0",
+      "invariant": "INV-QEKWKH",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — shared memo bounds",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The walker accounts for reachable shared values once and stops when its byte ceiling is exceeded.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Graph charging counts object identities and stops past the ceiling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7a3ffcc2ffdcf26cbb1082f09dacf5fb7222001",
+            "content": "sha256:3da608602d6a8344528190f6684765bfebc908b38ef9516dfee94e0e0f5ff6c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained_graph_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

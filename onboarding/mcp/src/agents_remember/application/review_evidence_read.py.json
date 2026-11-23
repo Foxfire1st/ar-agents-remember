@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "21897b270c5bc01d83034606213689b999539778",
+        "blob": "81cd1e501ae98d5876fd20aee9f68b74b092cd88",
+        "content": "sha256:2c45f7674d8f4d31651825ced072f891ef9f2919a4a63e29e959076b1b876ffe",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_spooled_blob"
+        }
+      },
+      "id": "RLZ-4R50ZR",
+      "invariant": "INV-03CT75",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-03CT75",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "Reads the object header and body from the completed private spool and preserves the evidence reader’s typed failure details.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "81cd1e501ae98d5876fd20aee9f68b74b092cd88",
         "content": "sha256:0f5db40a4b64e22dc751e17023febdf7de071e3d73c8ea9039157e5fd6652ace",
         "locator": {
           "kind": "symbol",
@@ -21,21 +39,21 @@
     },
     {
       "anchor": {
-        "blob": "21897b270c5bc01d83034606213689b999539778",
-        "content": "sha256:7bbd2722672874ace9a38c37df2e0585cb69daa540ed9bf41227095ee6413382",
+        "blob": "81cd1e501ae98d5876fd20aee9f68b74b092cd88",
+        "content": "sha256:d532881211dfb9b992596f1858bf9ed6bd59b3154ee4b9ba0e8e42a0bc6faca8",
         "locator": {
           "kind": "symbol",
-          "name": "read_bound_source"
+          "name": "_read_blob_via_spool"
         }
       },
-      "id": "RLZ-T34YVV",
-      "invariant": "INV-YFTJNQ",
+      "id": "RLZ-94ABS1",
+      "invariant": "INV-03CT75",
       "origin": {
-        "handoffEntry": "L102-F04",
-        "leaf": "260928-MIK-L102"
+        "handoffEntry": "BUG-R18@v1 item 5 — Explainer blob capture",
+        "leaf": "261112-BUG-L18"
       },
-      "rationale": "Ordinary, resumed and symlink reads are streamed with measured consumption; an offset beyond MAX_SCAN_BYTES now refuses before any blob read (independent actualRead=0). Resumed prefix work is deducted from the finite scan budget. Packet path/collection caps, relationship path/byte/depth/page caps, bounded ls-tree streaming and a per-walk indexed lookup remain enforced; two-size and boundary tests pass. This credits bounded legitimate investigation, not unlimited-store-reader behavior owned by F10.",
-      "role": "enforcement"
+      "rationale": "The changed-history reader gives Git a private output file and validates the returned frame.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -44,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21897b270c5bc01d83034606213689b999539778",
+            "blob": "81cd1e501ae98d5876fd20aee9f68b74b092cd88",
             "content": "sha256:0f5db40a4b64e22dc751e17023febdf7de071e3d73c8ea9039157e5fd6652ace",
             "locator": {
               "kind": "symbol",
@@ -60,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21897b270c5bc01d83034606213689b999539778",
+            "blob": "81cd1e501ae98d5876fd20aee9f68b74b092cd88",
             "content": "sha256:97b5cd2d05348afa3406e7ca84820a9e1ec50fd283410f1cb464fe54511f86a4",
             "locator": {
               "kind": "symbol",
@@ -72,14 +90,16 @@
       ]
     },
     "5": {
-      "note": "A scan that could not reach the requested line says so instead of certifying an empty range.\n\nAnchor: `_scan_cut`",
+      "note": "A requested start line beyond the last line returns measured range absence with the object's actual line count and examined byte count.",
       "targets": [
         {
           "anchor": {
-            "blob": "21897b270c5bc01d83034606213689b999539778",
-            "content": "sha256:de4df895f7e1a424780e48e6de9b9cf52773214be07ef5b492c2869d9ec44d0e",
+            "blob": "81cd1e501ae98d5876fd20aee9f68b74b092cd88",
+            "content": "sha256:bbe0f388592139176febbe3112b060aad4d369a3f7816a0156de225fcca58b43",
             "locator": {
-              "kind": "file"
+              "end": 257,
+              "kind": "line_range",
+              "start": 238
             }
           },
           "kind": "code"

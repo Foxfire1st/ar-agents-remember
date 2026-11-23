@@ -304,7 +304,7 @@
       ]
     },
     "18": {
-      "note": "The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy; `test_canvas_capsule_text.py` checks the generated capability copy against its source and checks the packaging declarations.",
+      "note": "Package data declares the general package-data tree and the canvas Markdown and JavaScript resources. Tests pin the general and Markdown patterns and check the generated capability copy against the source.",
       "targets": [
         {
           "anchor": {
@@ -320,12 +320,12 @@
         },
         {
           "anchor": {
-            "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
+            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
             "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
             "locator": {
-              "end": 154,
+              "end": 166,
               "kind": "line_range",
-              "start": 137
+              "start": 149
             },
             "path": "mcp/tests/test_canvas_capsule_text.py"
           },
@@ -333,12 +333,12 @@
         },
         {
           "anchor": {
-            "blob": "086bab1f039084fd096b4602621f237bb2a5dcc5",
+            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
             "content": "sha256:96633be3e4921f5dc51fa3c971bcc98be26a154294ee73278e4a63de8676a3db",
             "locator": {
-              "end": 246,
+              "end": 258,
               "kind": "line_range",
-              "start": 238
+              "start": 250
             },
             "path": "mcp/tests/test_canvas_capsule_text.py"
           },
@@ -521,14 +521,16 @@
       ]
     },
     "9": {
-      "note": "MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. Anchor: `_resolve_server_version`",
+      "note": "MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback.\n\nAnchor: \"SERVER_VERSION\"",
       "targets": [
         {
           "anchor": {
             "blob": "c02d5f6f0d5ffd938a425723eb62783233464520",
-            "content": "sha256:4899b1cbe0bb73929c2a46294d5a754f7b6953a3229853cc9787619fc8be08a9",
+            "content": "sha256:ec2992e23b75f506c703b93043b3885b4d3ecd01e9de1c99ca4623ee017bd629",
             "locator": {
-              "kind": "file"
+              "end": 23,
+              "kind": "line_range",
+              "start": 14
             },
             "path": "mcp/src/agents_remember/kernel/primitives/version.py"
           },

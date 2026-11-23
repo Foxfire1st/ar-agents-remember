@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2efc0689986925be972c37f8fff310afce761c25",
+        "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
         "content": "sha256:991ce1c199c4db8bc4b52bb6ef3fb09eaf87296ba61b7c92f48c394ca75a2ad6",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "2efc0689986925be972c37f8fff310afce761c25",
+        "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
         "content": "sha256:379e086d1c6ed6bfb0071fcce8307641ad4b285b806f9b0cada4c39a1a0acaa8",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,26 @@
     },
     {
       "anchor": {
-        "blob": "2efc0689986925be972c37f8fff310afce761c25",
+        "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
+        "content": "sha256:20ef7bb3034a2c04c659a60ca00df9674d8260ea817200513954504fe76e5a4a",
+        "locator": {
+          "end": 125,
+          "kind": "line_range",
+          "start": 108
+        }
+      },
+      "id": "RLZ-D2A897",
+      "invariant": "INV-R9CTWA",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 6 — video is a figure — additional realizations",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The shared asset suffix table includes WebM and MP4.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
         "content": "sha256:802a8d3e2e20740c033353dd6a031c2839eb6b76f8057bf05e734d5068c5e9e7",
         "locator": {
           "kind": "symbol",
@@ -58,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "2efc0689986925be972c37f8fff310afce761c25",
+        "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
         "content": "sha256:6e9c44b15b8de7927e1337a4796f45d636ce0a4c7b5f86a317b4fb39c9b613d4",
         "locator": {
           "kind": "symbol",
@@ -76,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "2efc0689986925be972c37f8fff310afce761c25",
+        "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
         "content": "sha256:2275d92dc7fe4711e780212a14d043d3ec435efe0020051feafcda9916402c09",
         "locator": {
           "kind": "symbol",
@@ -94,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "2efc0689986925be972c37f8fff310afce761c25",
+        "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
         "content": "sha256:e8120264d1e5087c5ace4a7c7f769249f2fe26b5d66a99329fd42e9180fc6406",
         "locator": {
           "kind": "symbol",
@@ -112,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "2efc0689986925be972c37f8fff310afce761c25",
+        "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
         "content": "sha256:128d9740706c5fb6783d645edecc3d1be1342e8edec5363c34b9ef77b1d04f82",
         "locator": {
           "end": 80,
@@ -136,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2efc0689986925be972c37f8fff310afce761c25",
+            "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
             "content": "sha256:802a8d3e2e20740c033353dd6a031c2839eb6b76f8057bf05e734d5068c5e9e7",
             "locator": {
               "kind": "symbol",
@@ -152,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2efc0689986925be972c37f8fff310afce761c25",
+            "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
             "content": "sha256:379e086d1c6ed6bfb0071fcce8307641ad4b285b806f9b0cada4c39a1a0acaa8",
             "locator": {
               "kind": "symbol",
@@ -168,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2efc0689986925be972c37f8fff310afce761c25",
+            "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
             "content": "sha256:971b9e89db7535d4f4ab1b65170369b566948973157de0a7f43f3d7340ded1f9",
             "locator": {
               "kind": "symbol",
@@ -180,14 +199,16 @@
       ]
     },
     "5": {
-      "note": "`_suffix` maps a kit licence's extensionless `LICENSE` basename to `.txt`, so a pinned licence is served under the plain-text type its manifest entry declares. [5]\n\nAnchor: `_suffix`",
+      "note": "The suffix helper maps the kit's extensionless LICENSE to .txt.",
       "targets": [
         {
           "anchor": {
-            "blob": "2efc0689986925be972c37f8fff310afce761c25",
-            "content": "sha256:e02debe3d93d3097e27e3031bf118d014e2425500ad6133f817212f3e5989fcf",
+            "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
+            "content": "sha256:124e32721e23c72fddee613f1482826f5b848dc3c2254a38be9fd3d2c0c74a8b",
             "locator": {
-              "kind": "file"
+              "end": 174,
+              "kind": "line_range",
+              "start": 165
             }
           },
           "kind": "code"
@@ -199,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2efc0689986925be972c37f8fff310afce761c25",
+            "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
             "content": "sha256:802a8d3e2e20740c033353dd6a031c2839eb6b76f8057bf05e734d5068c5e9e7",
             "locator": {
               "kind": "symbol",
@@ -210,7 +231,7 @@
         },
         {
           "anchor": {
-            "blob": "2efc0689986925be972c37f8fff310afce761c25",
+            "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
             "content": "sha256:991ce1c199c4db8bc4b52bb6ef3fb09eaf87296ba61b7c92f48c394ca75a2ad6",
             "locator": {
               "kind": "symbol",
@@ -221,7 +242,7 @@
         },
         {
           "anchor": {
-            "blob": "2efc0689986925be972c37f8fff310afce761c25",
+            "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
             "content": "sha256:27df61d9b8c975690570665d3a496717c8ab946b940fb2ce323c48f676a7ece0",
             "locator": {
               "kind": "symbol",
@@ -232,12 +253,54 @@
         },
         {
           "anchor": {
-            "blob": "2efc0689986925be972c37f8fff310afce761c25",
+            "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
             "content": "sha256:c4f767ec18ad80bc47f7448f7c2d138e80f5dcbf03106609f152908fbadfb0f8",
             "locator": {
               "kind": "symbol",
               "name": "FrameStaleness"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The asset model admits WebM and MP4 paths by suffix. The store assigns the media type when constructing an asset entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
+            "content": "sha256:a3ebba623900e0814beac8abb6d837114b2aaa5780fa7d1fe50732da83be8bbb",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
+            "content": "sha256:6f9fa5cb6822a5a8cb5ef2e60118e499df83b556d361c6db31a87b0d16fe6ff6",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d150d3d4a3d2225914a9438a89c5b3faa980f15c",
+            "content": "sha256:1ac0f7abe8191209069d6bd81ebf1f08390ba93e3c2c6bbd51b3c744f56e6905",
+            "locator": {
+              "end": 970,
+              "kind": "line_range",
+              "start": 961
+            },
+            "path": "mcp/src/agents_remember/application/review_frame_store.py"
           },
           "kind": "code"
         }

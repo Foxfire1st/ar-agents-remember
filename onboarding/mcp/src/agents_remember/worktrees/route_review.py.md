@@ -6,9 +6,7 @@
 
 ## Purpose
 
-Own the control-plane binding between independent route-review evidence and the exact current leaf
-candidate tree. Curator admission and closeout consume this proof so a review cannot silently apply
-to a later code change. Under CCR-R03@v1 the binding is content-addressed: every evidence file is
+Stamp ordinary leaf route-review evidence and validate its task intent and evidence files. The module also builds a sanctioned BLOCK amendment from the existing route record. The closeout door compares a passing record’s stamped tree with its candidate. Under CCR-R03@v1 the binding is content-addressed: every evidence file is
 hashed, the record carries a typed dependency declaration, and a self-digest proves the record
 bytes.
 
@@ -16,7 +14,7 @@ bytes.
 
 ### Current Contract
 
-Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review alone carries the mutating task_doc address and required review value. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict.
+Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review carries the dedicated routed-review address and required review value. A sanctioned generic addition can publish a route BLOCK for an existing route verdict. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict.
 
 ### Logic
 
@@ -26,9 +24,9 @@ Since 260815-DAG-L16 it takes a `branch_addressed` flag: a leaf contract stamps 
 candidate tree as before, while `branch_addressed=true` (policy-gated direct execution) accepts a
 series contract and stamps the branch HEAD tree instead (L16-R6) — same evidence semantics, no
 worktree.
-`require_current_route_review` first excludes series/master altitude because route-review records
-are leaf-owned, then skips unchanged leaves. A changed leaf resolves its canonical task document,
-requires a passing record for the exact current tree, and rechecks its evidence files.
+`build_route_addition_block` retains the prior tree, intent, scope and route units. It builds a new BLOCK record with the added finding IDs and the supplied nonblank verdict reference. For dependency-stamped records it checks the evidence, hashes the supplied verdict file and rebuilds the dependencies and record digest.
+
+`require_current_route_review` resolves the changed leaf’s exact task document. The leaf reader skips non-leaf contracts and unchanged leaves. For a changed leaf it validates a passing review’s task intent and evidence, then returns the stamped tree. The closeout door owns the candidate-tree comparison and bounded clean-sync exception.
 
 Under R03 `build_route_review` now stamps per-evidence-file SHA-256 digests
 (`_stamp_evidence_digests`), builds the `route-review/v1` dependency declaration (code tree,
@@ -65,10 +63,7 @@ evidence-dependency encoding.
 ### Invariants And Boundaries
 
 - Agents never author `candidateTree`, `reviewedAt`, evidence digests, or the record digest.
-- Route review belongs only to leaf altitude and is required for code-changing leaves; series
-  closeout must not attempt candidate-tree or terminal-leaf resolution. The sole exception is the
-  policy-gated `branch_addressed=true` direct-execution binding, which accepts a series contract
-  explicitly (L16-R6); no silent cross-mode exists.
+- The ordinary leaf reader applies at leaf altitude. The atomic review scope layer defers atomic children to the accumulated review at master integration. Policy-gated `branch_addressed=true` stamps a canonical leaf’s branch HEAD under its series contract (L16-R6).
 - Blocking, missing, stale, outside-task, and missing-file evidence all fail closed.
 - Evidence references are task-relative and may not escape the task root.
 - This module validates evidence; it does not perform review or mutate source.
@@ -83,7 +78,7 @@ None recorded.
 
 ## Exact clean-sync comparison
 
-The closeout door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. This exception belongs to the door; require_current_route_review keeps its own exact-current-tree contract.
+The closeout door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. The closeout door owns the candidate-tree comparison and its clean-sync exception.
 
 A NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still uses text transport, whose universal-newline handling can collapse CR and LF pathnames. run_git_bytes selects raw output through the same _git_run environment, identity guard, working directory, timeout and session options. _tree_change_after_images splits b"\0", keeps pathname keys as bytes, and decodes only the ASCII mode/blob fields. It raises on failed or malformed raw diff output; it does not normalize, rename-pair or infer path equivalence.
 
@@ -102,7 +97,7 @@ No configured Domain Documentation source applies.
 ### Repo-Internal References
 
 
-- Series altitude is excluded before leaf resolution; changed leaves require a passing record for the current candidate tree. [2]
+- The leaf reader skips non-leaf contracts and unchanged leaves. For a changed leaf it validates a passing review’s task intent and evidence, then returns the stamped tree. [2]
 
 
 - CCR-R25 maps observed route-review refusals into bounded structured recovery guidance. [4]
@@ -116,9 +111,7 @@ No cross-repository implementation source governs route review.
 
 ## R39 Route-Review Altitude
 
-Current-route-review returns not-required-master-altitude before probing candidate or leaf
-task-document state for non-leaf contracts. Candidate-bound independent review remains a leaf
-closeout requirement; series/master closeout does not impersonate a terminal leaf.
+The ordinary leaf reader returns `not-required-master-altitude` before probing candidate or leaf task-document state for non-leaf contracts. The scope layer handles accumulated atomic-master review at integration.
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
@@ -132,6 +125,6 @@ record; the closeout door fingerprints review provenance as `recordDigest` inste
 recomputed evidence tuple (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
 
 
-- Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review alone carries the mutating task_doc address and required review value. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict. [6]
+- Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review carries the dedicated `task_doc` address and required review value. A sanctioned generic addition can publish a route BLOCK for an existing route verdict. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict. [6]
 
 - The route-review record's content-addressed fields and self-digest validator. [5]

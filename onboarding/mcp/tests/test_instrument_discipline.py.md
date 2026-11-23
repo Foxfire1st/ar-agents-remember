@@ -156,7 +156,10 @@ re-derived against the current 537-line source.
 - The checklist row carrying that message, in a table with no blank lines between rows, and the two rows below it. [3]
 - The live `n/a`-link row, the pattern that returned 0 on it, and the pattern the curator ran instead. [4]
 - The `E13` transcript whose crashed `awk` invocations sit above the pass line — a reconstruction in the verdict's own terms, because the raw file was overwritten in place — and the repaired producer's clean transcript. [5]
-- The shipped declared-tools baseline and the silent before-file that evidences no run. [6]
+
+- The shipped baseline includes an exit status and findings. The before-file has neither an exit status nor a producer transcript, and the test refuses it as evidence. [6]
+
+
 - A zero from a text probe is admissible only when the probe was shown to see the other answer — and only for the pattern it proved. [7]
 - A count taken from a capture that ran past its unit is a count of something else, and a capped window says so. [8]
 - A pass line printed after a crashed command does not describe the command that produced it. [9]
@@ -183,4 +186,4 @@ No cross-repository evidence is required for these file-local claims.
 
 ### Repo-Internal References (continued)
 
-- The architecture-fitness lane selects mcp/tests/test_instrument_discipline.py. [15]
+- The `architecture-fitness` lane selects `mcp/tests/test_instrument_discipline.py`. [15]

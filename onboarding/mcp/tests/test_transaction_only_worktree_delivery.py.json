@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
+        "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
         "content": "sha256:8c460f457988c3213f2663be09bdbe6ce5d0c95a23c530208df48f2145252b4b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
+        "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
         "content": "sha256:778cd5126befa5baac53c5508cfa665be50c25a15c493990fdf5d4b52c478774",
         "locator": {
           "kind": "symbol",
@@ -39,16 +39,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Named acceptance-tool prohibition and real failing-hook probes — `_forbid_acceptance_tools`, `_install_failing_pre_commit_hooks` in mcp/tests/test_transaction_only_worktree_delivery.py.\n\nAnchor: current definitions",
+      "note": "The support module’s `_forbid_acceptance_tools` installs fail-if-called acceptance probes, and `_install_failing_pre_commit_hooks` exercises real Git hook refusals.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
             "content": "sha256:cdabd59e393e9c5bc4e20cd4fa27a15a29e426e21637f16619fb0f0c00717d0c",
             "locator": {
-              "end": 144,
+              "end": 143,
               "kind": "line_range",
-              "start": 123
+              "start": 122
             },
             "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
@@ -56,12 +56,12 @@
         },
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
             "content": "sha256:66e0c06d73a6299adc8ab6ee6e4bc7d43df255bec2bf84c8a2c9d1ec3e51fb9c",
             "locator": {
-              "end": 171,
+              "end": 170,
               "kind": "line_range",
-              "start": 147
+              "start": 146
             },
             "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
@@ -70,11 +70,11 @@
       ]
     },
     "10": {
-      "note": "A refused converted-memory publication gives back every preparation it made.",
+      "note": "The refused converted-memory fixture restores open history, ignore-file presence and the index. The case compares status paths with its stated allowance, checks reachable commits and verifies the successful retry closes history.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
+            "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
             "content": "sha256:778cd5126befa5baac53c5508cfa665be50c25a15c493990fdf5d4b52c478774",
             "locator": {
               "kind": "symbol",
@@ -86,16 +86,16 @@
       ]
     },
     "2": {
-      "note": "One code/memory commit, cache absence from the committed tree, and both trailer readers — `_assert_memory_attribution`, `test_public_closeout_commits_code_and_memory_without_acceptance_tools`, `_converted_closeout_fixture`, `_seed_leaf_trace_row`, `_apply` in mcp/tests/test_transaction_only_worktree_delivery.py.\n\nAnchor: current definitions",
+      "note": "The main module’s public closeout case checks both content commits and cache exclusion. The support module supplies `_assert_memory_attribution`, `_converted_closeout_fixture`, `_seed_leaf_trace_row` and `_apply`. Its attribution assertion compares both trailer readers.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
             "content": "sha256:754e8bfaad960affb809d23f41f2f2ebe38acb701fc37712e54a2435a04623fe",
             "locator": {
-              "end": 251,
+              "end": 250,
               "kind": "line_range",
-              "start": 213
+              "start": 212
             },
             "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
@@ -103,24 +103,24 @@
         },
         {
           "anchor": {
-            "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
+            "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
             "content": "sha256:255889220e817f02df1b55c8dec6d9c6abec8161f2302bf20e5b6428c0ee8cff",
             "locator": {
-              "end": 357,
+              "end": 356,
               "kind": "line_range",
-              "start": 255
+              "start": 254
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
             "content": "sha256:55859b50a952b7bbb6d76a5decfaf8fb1dcbbef36f83b1a222dd8b387abf7a10",
             "locator": {
-              "end": 405,
+              "end": 403,
               "kind": "line_range",
-              "start": 396
+              "start": 394
             },
             "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
@@ -128,12 +128,12 @@
         },
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
             "content": "sha256:85f514165cfc8ed2f152eb96f0b2fe45b27233077ca3cd36884f8fb689d18da4",
             "locator": {
-              "end": 393,
+              "end": 391,
               "kind": "line_range",
-              "start": 363
+              "start": 361
             },
             "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
@@ -141,12 +141,12 @@
         },
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
-            "content": "sha256:b6ec886dc96b9c7fa88876fdf84d44d6a06b9f19a320de9051f8ab9b0d3da4ab",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
+            "content": "sha256:27fe0e6925fc5610b2b84f54772f0d961fc9dac3b845645f3f35711aa539f463",
             "locator": {
-              "end": 294,
+              "end": 292,
               "kind": "line_range",
-              "start": 287
+              "start": 286
             },
             "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
@@ -155,40 +155,28 @@
       ]
     },
     "3": {
-      "note": "An interrupted public closeout resumes only its exact accepted code identity.\n\nAnchor: current definitions",
+      "note": "The public apply is interrupted after the code commit. The recovery manager refuses a different code identity and completes the memory commit against the recorded one. The test verifies both commit counts and memory attribution.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
-            "content": "sha256:ee94b034ba3db12dcb9f9891abb9c7d1841c7dacddb85c40b1aef7b5fb2d6ad2",
+            "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
+            "content": "sha256:9ee9169b230cfa5f8ebe232063b3257e346ff058ef4ca49856fd5ab2533c6066",
             "locator": {
-              "end": 490,
+              "end": 483,
               "kind": "line_range",
-              "start": 360
+              "start": 359
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
-            "content": "sha256:255889220e817f02df1b55c8dec6d9c6abec8161f2302bf20e5b6428c0ee8cff",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
+            "content": "sha256:754e8bfaad960affb809d23f41f2f2ebe38acb701fc37712e54a2435a04623fe",
             "locator": {
-              "end": 357,
+              "end": 250,
               "kind": "line_range",
-              "start": 255
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
-            "content": "sha256:85f514165cfc8ed2f152eb96f0b2fe45b27233077ca3cd36884f8fb689d18da4",
-            "locator": {
-              "end": 393,
-              "kind": "line_range",
-              "start": 363
+              "start": 212
             },
             "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
@@ -196,12 +184,12 @@
         },
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
-            "content": "sha256:b6ec886dc96b9c7fa88876fdf84d44d6a06b9f19a320de9051f8ab9b0d3da4ab",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
+            "content": "sha256:85f514165cfc8ed2f152eb96f0b2fe45b27233077ca3cd36884f8fb689d18da4",
             "locator": {
-              "end": 294,
+              "end": 391,
               "kind": "line_range",
-              "start": 287
+              "start": 361
             },
             "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
@@ -214,24 +202,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
+            "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
             "content": "sha256:c9c700d69ba5b6e564b758af8e7f19760e23295359d65140876b568fd3f1f807",
             "locator": {
-              "end": 536,
+              "end": 529,
               "kind": "line_range",
-              "start": 493
+              "start": 486
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
+            "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
             "content": "sha256:3c7212346c6d01ef181cdd225659881cd5bac326804f5a935692d2e8fe6d71f9",
             "locator": {
-              "end": 592,
+              "end": 585,
               "kind": "line_range",
-              "start": 539
+              "start": 532
             }
           },
           "kind": "test"
@@ -243,12 +231,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
+            "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
             "content": "sha256:8f3b85d477f3dcb3bfb0b1e50ae4f9fd386d5920e9ba49497eff1034ff428c1a",
             "locator": {
-              "end": 629,
+              "end": 622,
               "kind": "line_range",
-              "start": 596
+              "start": 589
             }
           },
           "kind": "test"
@@ -256,7 +244,7 @@
       ]
     },
     "6": {
-      "note": "Cache materialization preserves both repositories' refs/commit objects and real content — `test_cache_refresh_preserves_current_bytes_and_materializes_a_missing_cache`, `test_cache_refresh_repairs_malformed_forged_and_reordered_data_from_git`, `_ClosedCacheLeaf` in mcp/tests/test_transaction_only_worktree_delivery.py.\n\nAnchor: current definitions",
+      "note": "The cache module’s two refresh cases preserve refs, commit-object sets and worktree content. The support module owns `_ClosedCacheLeaf` and its repository pair.",
       "targets": [
         {
           "anchor": {
@@ -286,12 +274,12 @@
         },
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
             "content": "sha256:ae11c684c920d9a2911e01c2ca5458d5f6c3f11ae80d3288103cf2b930588203",
             "locator": {
-              "end": 599,
+              "end": 591,
               "kind": "line_range",
-              "start": 530
+              "start": 522
             },
             "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
@@ -300,7 +288,7 @@
       ]
     },
     "7": {
-      "note": "Cache witnesses compare HEADs, refs and all commit-object identities, then check content bytes, untracked cache and clean repository status — `test_cache_refresh_preserves_current_bytes_and_materializes_a_missing_cache`, `test_cache_refresh_repairs_malformed_forged_and_reordered_data_from_git`, `_ClosedCacheLeaf` in mcp/tests/test_transaction_only_worktree_delivery.py.\n\nAnchor: current definitions",
+      "note": "The cache tests use the support module’s `_ClosedCacheLeaf` to compare HEADs, refs, commit-object identities, content bytes, an untracked cache and clean repository status.",
       "targets": [
         {
           "anchor": {
@@ -330,12 +318,12 @@
         },
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
             "content": "sha256:ae11c684c920d9a2911e01c2ca5458d5f6c3f11ae80d3288103cf2b930588203",
             "locator": {
-              "end": 599,
+              "end": 591,
               "kind": "line_range",
-              "start": 530
+              "start": 522
             },
             "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
@@ -344,16 +332,16 @@
       ]
     },
     "8": {
-      "note": "The open trace fixture binds its actual contract code snapshot and source path/blob — `_seed_leaf_trace_row` in mcp/tests/test_transaction_only_worktree_delivery.py.\n\nAnchor: current definitions",
+      "note": "The support module owns `_seed_leaf_trace_row`, which binds the fixture contract’s code snapshot and exact source path and blob.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "blob": "8a7a358f8a7cfa947b4da126b1faa767e8f7b0dc",
             "content": "sha256:85f514165cfc8ed2f152eb96f0b2fe45b27233077ca3cd36884f8fb689d18da4",
             "locator": {
-              "end": 393,
+              "end": 391,
               "kind": "line_range",
-              "start": 363
+              "start": 361
             },
             "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
           },
@@ -362,11 +350,11 @@
       ]
     },
     "9": {
-      "note": "Closeout commits code and memory as one transaction without any acceptance tool.",
+      "note": "The public closeout fixture checks a code commit and a memory commit with no selected profile or review rows. Historical acceptance probes fail if called. The fixture provides the converted leaf’s trace row. The failing attempt leaves both heads unchanged, and both hooks log the successful attempt.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
+            "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
             "content": "sha256:255889220e817f02df1b55c8dec6d9c6abec8161f2302bf20e5b6428c0ee8cff",
             "locator": {
               "kind": "symbol",

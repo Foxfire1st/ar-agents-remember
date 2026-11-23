@@ -6,12 +6,9 @@
 
 ## Purpose
 
-**MIK-R33's primary falsifier on the server: the change-kind facts over a test-authored four-tree comparison.** The
-fixture (`build_world`) is a live leaf over a code repository and a converted memory repository, each with a committed
-base and the leaf's candidate, resolved and composed exactly as the reviewer does, with one member authored per badge
-kind.
+**MIK-R33's change-kind facts over a test-authored four-tree comparison.** The fixture (`build_world`) creates a live leaf over code and converted memory repositories, with a committed base and a candidate for each. The cases call the production resolver and composition in process.
 
-`test_review_change_kinds.py` proves the MIK-R33 change-kind facts over a live leaf on four real Git trees, one member per badge kind. The outline cases assert index-only reads, catalogue preservation, authored membership order, summary cuts, and the unknown/unavailable states. Five further test declarations cover leaf-wide code-fact agreement, reuse of loaded entries without loading full invariants, unavailable code facts, public-gate worklist states and answering witnesses, and held-input validation (six parameterized variants).
+`test_review_change_kinds.py` checks the MIK-R33 change-kind facts over a live leaf on four real Git trees. The fixture includes members that share a change kind. The outline cases assert index-only reads, catalogue preservation, authored membership order, summary cuts, and the unknown/unavailable states. Five further test declarations cover leaf-wide code-fact agreement, reuse of loaded entries without loading full invariants, unavailable code facts, public-gate worklist states and answering witnesses, and held-input validation (six parameterized variants).
 ## Code Commentary
 
 ### Logic
@@ -37,7 +34,6 @@ kind.
   side's range unresolved, or changes it, which is a re-anchor), so the FAM-F00003 case pins it through its own reason
   ("pkg/data.bin changed as a non-text file … RLZ-N00001 is not a file entry") beside the after side's
   unresolved-range reason.
-- Registered in the `unit-regression` lane (`test-evidence-lanes.toml`).
 
 ### Conventions
 
@@ -119,19 +115,25 @@ No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
 
-- The fixture's members, one per badge kind, and the three families.  Anchor: "one member per badge kind"; "its members are reordered" [1]
+- The fixture inventory describes the members’ change kinds and three families. [1]
 - The world: a live leaf over four Git trees. [2]
 - Every occurrence's kind from the recorded comparison, and the shared member. [3]
 - Returned members only, and the failure states that are unknown, never unchanged. [4]
-- Definition 8, the moved entry, the unresolved range and the unread sidecar beside an established fact. [5]
+
+- The family cases check binary file-entry coverage, a stale-at-base re-anchor, a retired record, unresolved ranges and an unread sidecar alongside established implementation. [5]
+
 - The total, the derived facts and the dataset review. [6]
 
 
 
 
-- The outline reads indexes only and keeps catalogue bytes [8]
 
-- Families, membership and summaries match the detail's facts  Anchor: `outline` [9]
+- The index-only outline uses refusing source, roster and detail callbacks. It checks catalogue entry equality, the ordered fields of the dump without outline, and its totals. [8]
+
+
+
+- The outline checks expected change kinds, authored member order, membership markers, word-cut summary and text UUID selectors. [9]
+
 
 - Corrupt invariant records produce unknown outline facts; a corrupt family names cannot read FAM-F00001; dataset and missing-index cases are unavailable. [10]
 - The final classified leaf facts agree with walked-family implementation, proof and unresolved-range facts. Unreadable code facts are unavailable rather than an empty successful result. [11]
@@ -143,4 +145,4 @@ The index-only outline case includes `comparison` in the exact serialized field 
 
 - The index-only outline preserves exact catalogue fields including comparison. [13]
 
-- The unit-regression lane selects mcp/tests/test_review_change_kinds.py. [7]
+- The `unit-regression` lane selects `mcp/tests/test_review_change_kinds.py`. [7]

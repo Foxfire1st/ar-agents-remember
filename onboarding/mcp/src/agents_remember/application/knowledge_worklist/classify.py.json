@@ -38,12 +38,12 @@
         },
         {
           "anchor": {
-            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
             "content": "sha256:28d89957e702523fc6796949e41604dc2d43d1e321d8cb493b976212fb72a1e0",
             "locator": {
-              "end": 501,
+              "end": 504,
               "kind": "line_range",
-              "start": 499
+              "start": 502
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
           },
@@ -222,12 +222,12 @@
         },
         {
           "anchor": {
-            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
             "content": "sha256:28d89957e702523fc6796949e41604dc2d43d1e321d8cb493b976212fb72a1e0",
             "locator": {
-              "end": 501,
+              "end": 504,
               "kind": "line_range",
-              "start": 499
+              "start": 502
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
           },
@@ -301,12 +301,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
             "content": "sha256:e1ef3f03df40f48e9a34cacfe7da3e0a1111ec90ccbc777dd812d8790c048d77",
             "locator": {
-              "end": 465,
+              "end": 468,
               "kind": "line_range",
-              "start": 459
+              "start": 462
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
           },

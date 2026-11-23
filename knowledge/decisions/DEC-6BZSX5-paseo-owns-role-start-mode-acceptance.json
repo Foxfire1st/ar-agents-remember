@@ -1,0 +1,93 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The decision determines which layer supplies an omitted mode and which layer can reject a named mode for a role start."
+  },
+  "alternatives": [
+    {
+      "option": "Use the applicable launch selection and the host's advertised default, and delegate mode acceptance to Paseo.",
+      "reason": "Paseo already owns the mode system for each harness, and a settings row's mode belongs to the harness it names.",
+      "status": "chosen"
+    },
+    {
+      "option": "Derive a least permissive mode in the product and reject values absent from the product's copy of the offers.",
+      "reason": "This would duplicate Paseo's mode system and make the product choose modes on behalf of a different harness.",
+      "reconsider_when": "The launch contract can no longer obtain a harness default or leave mode acceptance to Paseo, and the developer revisits mode ownership.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The launcher can send a permission mode for one start. Profile and settings modes apply on their own harness.",
+    "A known mode listing supplies the host-advertised default only when no higher applicable source names a mode. Create omits mode when no choice applies.",
+    "Receipts distinguish the requested mode and the host observation."
+  ],
+  "context": "A role start needs to pass the selected harness a suitable mode. The product previously derived a least permissive choice and rejected an unlisted name using its copy of the offered modes.",
+  "decider": "Developer D853 and D854",
+  "id": "DEC-6BZSX5",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-7DMXZ3"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_mode"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "content": "sha256:7debe382afd0f2a52d8f2597807f4fa54e4bc388a380071af9b8e64a4190d843",
+        "locator": {
+          "end": 452,
+          "kind": "line_range",
+          "start": 445
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "BUG-R11",
+        "packet": "requirements/BUG-R11-v1-a-role-agent-starts-in-its-permission-mode.md",
+        "task": {
+          "path": "261112_bug-fixes-and-issue-tracking",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": "INV-7DMXZ3"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/DEVELOPER-DIRECTION.md D853 and D854; requirements/BUG-R11-v1-a-role-agent-starts-in-its-permission-mode.md; notes/MANAGER-RULINGS.md M609."
+      ],
+      "path": "w7-handoff-v3.json"
+    },
+    "handoffEntry": "D853-mode-ownership",
+    "leaf": "261112-BUG-L11",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

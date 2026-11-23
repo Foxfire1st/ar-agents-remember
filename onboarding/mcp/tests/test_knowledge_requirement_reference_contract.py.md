@@ -68,4 +68,4 @@ No cross-repository contract is established by this file.
 
 - The real owner's four refusal cases assert the expected refusal code, a nonempty detail and the unchanged reference path. [23]
 
-- The unit-regression lane selects mcp/tests/test_knowledge_requirement_reference_contract.py. [26]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_requirement_reference_contract.py`. [26]

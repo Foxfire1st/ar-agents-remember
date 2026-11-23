@@ -10,9 +10,9 @@ Pins final-output receipts bound to retained code and memory tree comparisons.
 
 ## Code Commentary
 
-TreeReceiptFixture creates real temporary code/memory Git repositories, captures their two-tree comparison through the existing owners and passes committed results to receipt attachment/read functions. It calls receipt owners directly; it does not perform an end-to-end freeze, closeout or integration journey.
+The `tree_fixture` function creates temporary code and memory Git repositories and the leaf contract. `TreeReceiptFixture` provides comparison capture and commit-pair helpers. The tests call receipt attachment and read functions directly with supplied transaction results.
 
-Six current test functions assert both delivered-tree matches and result keys, moved/absent memory or code coverage, unavailable/corrupt comparison handling without blocking an already completed result, forged source binding and leaf scoping, immutable previous receipts labelled by a successor, and readable historical v1 receipts with an explicit lack of memory-tree proof. No receipt here supplies semantic acceptance.
+Six current test functions assert matching delivered code and memory trees in both closeout and integration receipt blocks, moved code or memory trees and absence of delivered memory coverage, unavailable/corrupt comparison handling without blocking an already completed result, forged source binding and leaf scoping, immutable previous receipts labelled by a successor, and readable historical v1 receipts with an explicit lack of memory-tree proof. No receipt here supplies semantic acceptance.
 
 ### Todos
 
@@ -48,8 +48,10 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
-- `TreeReceiptFixture` supplies the current fixture or assertion described above. [19]
-- `test_receipts_bind_both_delivered_trees_and_keep_both_result_keys` supplies the current fixture or assertion described above. [20]
+
+- The fixture initializes separate temporary code and memory Git repositories, binds a leaf contract and supplies the comparison and commit-pair helpers. [19]
+
+- The case attaches closeout and integration receipts to supplied completion results and reads them back. Both receipt blocks bind to the reviewed pair. [20]
 
 - `test_memory_movement_and_absent_memory_never_claim_delivered_coverage` supplies the current fixture or assertion described above. [21]
 
@@ -67,12 +69,12 @@ No configured domain documentation could be checked.
 
 No meaningful cross-repo references found.
 
-- The lane row and the exact-scope consumer row this module is registered in.
-
-- The lane row and the exact-scope consumer row this module is registered in.
-
 
 
 ### Repo-Internal References (continued)
 
-- The lifecycle catalog lists `test_review_final_output_receipt.py` as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`. [24]
+
+
+
+
+- The `unit-regression` lane selects `mcp/tests/test_review_final_output_receipt.py`. The lifecycle catalog lists the module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. [24]

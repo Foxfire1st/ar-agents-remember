@@ -7,7 +7,7 @@
 ## Purpose
 
 The code-seam criteria and the shared review rules for all five criteria catalogs. The shared
-rules cover baseline coverage, the two routes for a finding after sealing, baseline exploration
+rules cover baseline coverage, the three sanctioned routes for a finding after sealing, baseline exploration
 lenses and the promotion ratchet. The standing code-seam criteria verify production wiring end to
 end (CS-1), hunt fail-open shapes (CS-2), require validate-then-mutate (CS-3) and check scaling,
 bounded resources, reclamation and quiescence for every loop, store, log or queue a change touches

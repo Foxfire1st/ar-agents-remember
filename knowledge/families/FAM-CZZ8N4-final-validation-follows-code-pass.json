@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The evidence flow holds only when packet authors, Workers, Reviewers and closeout agree which tree was checked and how a repaired tree inherits the original run."
+  },
+  "guarantee": "Review evidence and final-check evidence remain bound to the trees they checked. After a failed final check, the original report and targeted successor results jointly support readiness once the repair passes review.",
+  "id": "FAM-CZZ8N4",
+  "members": [
+    "INV-KVQ91Z",
+    "INV-5BPF6M",
+    "INV-8SBKWP",
+    "INV-WEF33P"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "W7-knowledge-handoff.json"
+    },
+    "handoffEntry": "review-final-validation",
+    "leaf": "261112-BUG-L12",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "routes": [
+    "skills/l-01-agent-lifecycles",
+    "mcp/src/agents_remember/application/task_docs",
+    "mcp/src/agents_remember/tasks",
+    "mcp/src/agents_remember/worktrees",
+    "mcp/tests"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Final validation follows the code pass"
+}

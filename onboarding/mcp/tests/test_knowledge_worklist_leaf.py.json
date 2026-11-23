@@ -175,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
             "content": "sha256:abafcdb467fd570de9c45647ea00c8748d46a43a39359b135720ca1eff1ffcfd",
             "locator": {
               "kind": "symbol",
@@ -439,16 +439,16 @@
       ]
     },
     "40": {
-      "note": "The lifecycle catalog lists `test_knowledge_worklist_leaf.py` as an exact consumer of `_user_settings_guard.py`, `fixtures/repository_profiles/node/package-lock.json`.",
+      "note": "The lifecycle catalog lists `mcp/tests/test_knowledge_worklist_leaf.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:e2a8e4c31fb4ca6af5072c937e5a80c93c070373bc33e66e37f9bc594c785241",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:dfd4223af6cc1abfd7ff62be6523ce9ffbdf6cd366929876a167e5e5e9c111de",
             "locator": {
-              "end": 886,
+              "end": 419,
               "kind": "line_range",
-              "start": 65
+              "start": 419
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -456,12 +456,12 @@
         },
         {
           "anchor": {
-            "blob": "77e54f5c1c74faadd9d758ca0bf16735472341f0",
-            "content": "sha256:f949d4a324dbc44d81a8d069eb004a8da1c07c67afe1e35b58cc0af412851b62",
+            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "content": "sha256:dfd4223af6cc1abfd7ff62be6523ce9ffbdf6cd366929876a167e5e5e9c111de",
             "locator": {
-              "end": 3272,
+              "end": 2839,
               "kind": "line_range",
-              "start": 2451
+              "start": 2839
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

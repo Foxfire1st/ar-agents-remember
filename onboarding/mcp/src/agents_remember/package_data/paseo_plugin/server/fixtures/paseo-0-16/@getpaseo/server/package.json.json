@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/package.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture server manifest declares version 0.16.2.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c04e5e6902f9d1ae2b937a5b308dc43f947ae33b",
+            "content": "sha256:48fa32ee6fa0d4ab89fd5813e219e558936c1af1c4d2f41fbc8a9118b2c7c413",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The discovery case asserts the fixture version on the published verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6975c6185be276d4ac2117cafe7a04fc8aa8f1cf",
+            "content": "sha256:77fbcf3cb61b6a7325e0cbf3f330ac85167e016acdc844fd665561fe9131ee33",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

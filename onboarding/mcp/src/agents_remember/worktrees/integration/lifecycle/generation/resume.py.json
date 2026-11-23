@@ -3,49 +3,90 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The current `requeued_same_generation` boundary implements the preparation contract above.\n\nAnchor: \"def requeued_same_generation\"",
+      "note": "The retained direct generation advances one attempt at running/direct-preflight. Only reconciled-unchanged legs reset and proven output is kept.",
       "targets": [
         {
           "anchor": {
-            "blob": "03ee9d0ee0a5e88ec312bc65b08a788b3b70324b",
-            "content": "sha256:91439a63b37721bc9542fa47250aab8856372225c42ab2c5f1095029b7712647",
+            "blob": "31a8c184418a5a8ec267bca5f455255b82d89b80",
+            "content": "sha256:4937c77c5044b7a2249693f921b74457ccaa4f806ce52abeba1e9124f8468916",
             "locator": {
-              "end": 58,
+              "end": 36,
               "kind": "line_range",
-              "start": 14
+              "start": 8
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:ae46f1071224d019b35287bac258967b277a0f5f16fd797d8ebcca4e20747d3c",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Resume requires exited worker proof and archives it.",
+      "note": "The retained direct generation advances one attempt at running/direct-preflight. Only reconciled-unchanged legs reset and proven output is kept.",
       "targets": [
         {
           "anchor": {
-            "blob": "03ee9d0ee0a5e88ec312bc65b08a788b3b70324b",
-            "content": "sha256:91439a63b37721bc9542fa47250aab8856372225c42ab2c5f1095029b7712647",
+            "blob": "31a8c184418a5a8ec267bca5f455255b82d89b80",
+            "content": "sha256:4937c77c5044b7a2249693f921b74457ccaa4f806ce52abeba1e9124f8468916",
             "locator": {
-              "kind": "symbol",
-              "name": "requeued_same_generation"
+              "end": 36,
+              "kind": "line_range",
+              "start": 8
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:ae46f1071224d019b35287bac258967b277a0f5f16fd797d8ebcca4e20747d3c",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Only unchanged mutation evidence is reset; attempt and transient execution state advance within the same record.",
+      "note": "The retained direct generation advances one attempt at running/direct-preflight. Only reconciled-unchanged legs reset and proven output is kept.",
       "targets": [
         {
           "anchor": {
-            "blob": "03ee9d0ee0a5e88ec312bc65b08a788b3b70324b",
-            "content": "sha256:91439a63b37721bc9542fa47250aab8856372225c42ab2c5f1095029b7712647",
+            "blob": "31a8c184418a5a8ec267bca5f455255b82d89b80",
+            "content": "sha256:4937c77c5044b7a2249693f921b74457ccaa4f806ce52abeba1e9124f8468916",
             "locator": {
-              "kind": "symbol",
-              "name": "requeued_same_generation"
+              "end": 36,
+              "kind": "line_range",
+              "start": 8
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:ae46f1071224d019b35287bac258967b277a0f5f16fd797d8ebcca4e20747d3c",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
           "kind": "code"
         }

@@ -166,6 +166,7 @@ No relevant external or domain documentation was found for this repository-local
 - The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`. [2]
 
 
+- `SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback. [3]
 
 
 
@@ -177,10 +178,14 @@ No relevant external or domain documentation was found for this repository-local
 - The serving payload carries optional dashboard build identity; omission does not fabricate a built or clean state. [7]
 - The canonical selector list identifies inherited Git variables to remove. [8]
 
+
 - The Git environment removes canonical repository selectors before execution. [9]
 
 
+
+
 - The shared Git runner applies caller-selected bounds and isolated repository environment; both probes here pass their 2s bound as `GitRunnerOptions(timeout=...)`. [10]
+
 
 
 

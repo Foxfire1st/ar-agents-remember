@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e398f22cf7540c1a362c9209ec7d6cab05ac41c2",
+            "blob": "9f730b48d344d86d05cc54a0c88b3126b645abe9",
             "content": "sha256:b12b7a0d62b351726c4377249d0b5bf0b95cd984581059e373f6e52de355d867",
             "locator": {
               "end": 36,
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e398f22cf7540c1a362c9209ec7d6cab05ac41c2",
+            "blob": "9f730b48d344d86d05cc54a0c88b3126b645abe9",
             "content": "sha256:a7dd2f1db2a5663f0d50ab1d69dc32bbd97bf4ba40e533fe36bf190216a02752",
             "locator": {
               "end": 112,
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e398f22cf7540c1a362c9209ec7d6cab05ac41c2",
+            "blob": "9f730b48d344d86d05cc54a0c88b3126b645abe9",
             "content": "sha256:337ab3ee7cffe9746a8e6c1f774530261ddd8dc8fe247d247efd2b22125f3e3c",
             "locator": {
               "end": 172,
@@ -74,14 +74,14 @@
       ]
     },
     "4": {
-      "note": "The README identifies this repository's package as version 3.0.3 and directs readers to the release notes.",
+      "note": "The README Status section identifies version 3.0.4, requires Python 3.14 and directs readers to the release notes before installation.",
       "targets": [
         {
           "anchor": {
-            "blob": "e398f22cf7540c1a362c9209ec7d6cab05ac41c2",
-            "content": "sha256:f343f360e3d8a994368964c72f660ee8f2262fe4e113408beb57981495d86ab8",
+            "blob": "9f730b48d344d86d05cc54a0c88b3126b645abe9",
+            "content": "sha256:60736690b3f6aecc8d1de1ca44edfe045a218a5958d27add98a573590bffe023",
             "locator": {
-              "end": 198,
+              "end": 200,
               "kind": "line_range",
               "start": 192
             }

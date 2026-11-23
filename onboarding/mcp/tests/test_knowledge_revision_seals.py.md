@@ -102,11 +102,11 @@ No meaningful cross-repo references found.
 
 
 
-- The same revision keeps its seal when derived standing differs. [11]
+- The same revision keeps its seal when derived standing differs. [12]
 
 - The unit-regression lane selects mcp/tests/test_knowledge_revision_seals.py. [9]
 
-- The identity-branching fixture's replacement contract is knowledge-identity-branching-fixture. The artifact lists test_knowledge_revision_seals.py among its exact consumers. [10]
+- The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution. [10]
 
 - The payloads that seal the predecessor set, one per revision kind. [7]
 - The read-path recomputation that turns a row whose stored cells were rewritten behind its seal into a storage defect. [8]

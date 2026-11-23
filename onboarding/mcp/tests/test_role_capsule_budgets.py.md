@@ -10,7 +10,7 @@ Checks renewed measurements for every yielded capsule and declared step file aga
 
 ## Code Commentary
 
-`matrix_keys` yields every role/operation capsule the manifest produces plus the launcher's; `compiled_size` counts whitespace-split words of the freshly compiled instruction text, seals excluded; `detail_sizes` measures each manifest-declared step file's complete source text and `digest_size` the separately delivered `core/every-role.md`. Live sizes are checked against the current record `skills/l-01-agent-lifecycles/capsule-budgets-current.json` through the test-support helper `capsule_budget_d695`: every capsule, declared detail and the digest must equal its renewed measurement and fit its authored ceiling; the declared-detail population must equal the manifest's step details, while four linked ordinary templates are measured and identity-checked but carry no word limit; and the frozen historical registry `capsule-budgets.json`, its snapshot helper, the predecessor `capsule-budgets-d694.json` record and helper must match the hashes the record names.
+`matrix_keys` yields every role/operation capsule the manifest produces plus the launcher's; `compiled_size` counts whitespace-split words of the freshly compiled instruction text, seals excluded; `detail_sizes` measures each manifest-declared step file's complete source text and `digest_size` the separately delivered `core/every-role.md`. Live sizes are checked against the current record `skills/l-01-agent-lifecycles/capsule-budgets-current.json` through the test-support helper `capsule_budget_d695`: every capsule, declared detail and the digest must equal its renewed measurement and fit its authored ceiling; the declared-detail population must equal the manifest's step details, while eight linked ordinary templates are measured and identity-checked without a word ceiling; and the frozen historical registry `capsule-budgets.json`, its snapshot helper, the predecessor `capsule-budgets-d694.json` record and helper must match the hashes the record names.
 
 The historical registry `capsule-budgets.json` keeps its own frozen checks. Its capped eleven-tenths guard, with ceilings of 4631 words for Architect, 4513 for Manager, 4100 for Curator, 4000 for Reviewer and Bootstrap, 3700 for other roles, 2700 for details and 1474 for the digest, is exercised on fixture registries. `test_d681_preserves_history_and_only_the_24_named_limits` pins its decision records and historical sizes by fingerprint and admits only the named limits plus one exact detail approval; provisional measurements keep their old limits and reject unbound records; and the handover projection budgets keep their 3300-token ceiling and formula. `test_full_matrix_binds_admitted_sources_and_rendered_identities` binds each matrix row to its admitted source revisions and rendered digest, and `test_changed_source_inside_budget_requires_a_fresh_measurement` makes a changed source stale even inside its old slack.
 
@@ -24,7 +24,9 @@ The current record sets capsule ceilings of 5500 words for Architect, 4600 for M
 
 
 
+
 - The historical-registry guard rejects missing/orphan entries, a recorded size that differs from the measured one, any actual/stored/budget size over its supplied ceiling, a budget different from min(ceil(stored size_words*11/10), ceiling) unless a named approved limit applies, and actual size over budget. `capsule_ceiling` selects Architect 4631, Manager 4513, Curator 4100, Reviewer/Bootstrap 4000 and 3700 for other roles; its callers guard details at 2700 and the shared digest at 1474. [2]
+
 
 - The historical-registry capsule ceilings by role. [5]
 

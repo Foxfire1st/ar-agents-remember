@@ -3,16 +3,43 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`selected_preparation_intents` owns the corresponding behavior described above.",
+      "note": "Selected preparation checks the retained leg intent and output against the owning operation and certification.",
       "targets": [
         {
           "anchor": {
-            "blob": "b0dc75488f84e9b970fce1a584c4600297291e84",
-            "content": "sha256:7ba7c5fca3aecea0293eacd8b8632ff8bf507c93d9a67cf7f4f1e3a9cf5a2947",
+            "blob": "98c00867427cb19068a59abf2f733f9a48ea0e35",
+            "content": "sha256:cb9bfbb0986df6bab4421f851d6883eb4e30cd0ef607ea7b7ab5158dce666b3f",
             "locator": {
-              "kind": "symbol",
-              "name": "selected_preparation_intents"
+              "end": 44,
+              "kind": "line_range",
+              "start": 26
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d5810286c6ba0f42132a86a999f88868681ebfd",
+            "content": "sha256:68ebdcd5f77a54b69a720955289e6b44a83588c0b48ca98312230ca6e2590938",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d5810286c6ba0f42132a86a999f88868681ebfd",
+            "content": "sha256:edbd54679a5da0ade58dc9c4d42e0bf83f4c0926dc4dd168a92461a8558ca333",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
           },
           "kind": "code"
         }
@@ -23,7 +50,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0dc75488f84e9b970fce1a584c4600297291e84",
+            "blob": "98c00867427cb19068a59abf2f733f9a48ea0e35",
             "content": "sha256:eac209b3805133f5c44832117e8af7f65437b471c1a6d8cdd5ddc312d1fb7b45",
             "locator": {
               "kind": "symbol",
@@ -39,7 +66,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0dc75488f84e9b970fce1a584c4600297291e84",
+            "blob": "98c00867427cb19068a59abf2f733f9a48ea0e35",
             "content": "sha256:227d617982c38355938143ebec66ae06f43e55dc1309bf8ec34b71ecde5bc75c",
             "locator": {
               "kind": "symbol",

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
+    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
     "role": "curator",
-    "statement": "The affected FAQ passages still describe task_doc as the task-document tool and closeout as the paired commit path, while W10 adds round stamps and a closeout summary sentence when no memory review fact can be recorded.",
-    "task": "261112-KNO-L3",
+    "statement": "The FAQ still describes path-based card reads, the index scoped to the loaded build and memory tree, and task creation through task_doc.",
+    "task": "261112-BUG-L12",
     "uncommitted": true
   },
   "document": "docs/FAQ.md",
@@ -66,7 +66,7 @@
       "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
     },
     {
-      "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
+      "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -86,7 +86,7 @@
       "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
     },
     {
-      "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+      "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -96,7 +96,7 @@
       "path": "mcp/src/agents_remember/kernel/coordination_context/setting_values.py"
     },
     {
-      "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
+      "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
     },

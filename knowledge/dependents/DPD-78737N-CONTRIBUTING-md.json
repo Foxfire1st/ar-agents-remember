@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "The contributor instructions still describe assignment of each test file to one of seven lanes after W10 registers eleven additional unit-regression files and two integration files without moving any existing file.",
-    "task": "261112-KNO-L3",
+    "statement": "The contributor guide still describes the seven-lane selection and catalog workflow, with the native stdio memory case selected through stress-durability.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "40307e6e68a31b9df9fdf909bf3e69a5cb7709f6",
+      "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },

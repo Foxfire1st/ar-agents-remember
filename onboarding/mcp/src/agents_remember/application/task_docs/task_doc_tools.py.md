@@ -224,11 +224,13 @@ After the ordinary candidate passes validation, task_doc_tools derives alignment
 
 - Computes alignment advice after candidate validation, adds it only to successful publication results. [41]
 
+The generic review operation delegates through the route-aware recorder with the resolved task binding. When an addition publishes a route BLOCK, that recorder uses the existing review state and the supplied verdict reference.
+
 ## Evidence
 
-- Edit preparation binds review stamps before recording the memory round. [42]
-- File-option dispatch preserves mutual exclusion and uses the returned raw-byte digest. [43]
-- The extracted reader accepts the same confined class of file inputs and computes the same SHA-256 digest. [44]
+- Edit preparation binds review stamps before recording the memory round. [45]
+- File-option dispatch preserves mutual exclusion and uses the returned raw-byte digest. [46]
+- The extracted reader accepts the same confined class of file inputs and computes the same SHA-256 digest. [47]
 
 
 

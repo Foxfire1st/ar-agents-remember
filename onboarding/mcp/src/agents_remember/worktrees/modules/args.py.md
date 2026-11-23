@@ -12,9 +12,9 @@ instead of a loosely typed `argparse.Namespace`.
 
 The internal transport carries one normalized code/memory closeout input and the actual landed code/memory-content commits. Integration has no separate ledger commit message, and PR landing has no ledger commit argument. Consumer-cache data never enters the Git output tuple.
 
-`WorktreeArgs` carries the optional `certification_profile: Path | None` field: the configured repository-relative certification profile reference forwarded by the application entry points and lifecycle worker into closeout/integration, which the quality gate resolves and admits before any code commit.
+`WorktreeArgs` retains an optional `certification_profile: Path | None` for callers with an explicit profile reference. This field does not establish a worker or automatic certification step for ordinary closeout and integration.
 
-`WorktreeArgs` carries worker-injected operation key/generation, candidate-tree, and progress callback fields; CLI namespaces cannot populate these plane-owned controls.
+`WorktreeArgs` carries plane-owned operation identity, candidate-tree and progress fields. Direct landing can supply its generation and callback. Ordinary synchronous adapters leave the operation callback unset.
 
 The DTO carries no authored knowledge-reconciliation field (`knowledge_resolution` does not exist), and `sync_input_refusal` admits only `continue` or `cancel` as a resolution action.
 
@@ -84,18 +84,24 @@ No configured external source applies.
 
 ### Repo-Internal References
 
+
 - `WorktreeArgs` implements the retained boundary described above. The following current source boundaries establish the ledger-retirement behavior. [10]
+
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-- `report_operation_progress` publishes progress through the exact worker-owned callback. [13]
+
+- Direct-landing arguments carry the optional journal callback. Ordinary operation arguments describe the synchronous tool call. [13]
+
 
 - Public sync choice and resolution-action vocabularies are owned once by the worktree model. [14]
 
 - Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`) [15]
 
 
+
 - Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. [16]
+
 
 
 - Gate delegation policy model (kernel-owned since L9). [17]
@@ -115,16 +121,20 @@ facts between modules. Public callers still address the canonical task and never
 operation, process, lease, or approval identifiers.
 ## 260821-CLIVE-L1 Internal Transport
 
-`WorktreeArgs` carries no raw code and memory closeout message strings. Closeout execution receives one optional `EffectiveCloseoutInput`, populated only after validation; integration and PR landing carry only their actual code/memory output facts. This prevents worker, preview, recovery, and commit code from independently normalizing or defaulting closeout subjects.
+`WorktreeArgs` carries no raw code and memory closeout message strings. Closeout execution receives one optional `EffectiveCloseoutInput`, populated only after validation; integration and PR landing carry only their actual code/memory output facts. Preview, recovery and publication can use the same admitted messages and enabled legs.
 ## 260821-CLIVE-L2 Current Contract
 
 The current source seams include `WorktreeArgs`, `report_operation_progress`. This module remains a public execution adapter over closed admission and exact mutation-owner reread; it does not duplicate reader exception families or lifecycle authority.
 ### Reconciled Source Evidence
 
+
 - Inputs shared by the worktree application layer, CLI, and domain functions. [11]
 
 
-- Advance the plane-owned operation when this call runs under its detached worker. Source caption: `report_operation_progress` [12]
+
+
+- Direct-landing arguments carry the optional journal callback. Ordinary operation arguments describe the synchronous tool call. [12]
+
 
 
 ## Current Landed Composition

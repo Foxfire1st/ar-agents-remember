@@ -22,7 +22,9 @@ STATUS_TABLE applies its first matching row: unreadable host preserves receipt f
 - Checks bytes, inode and mtime unchanged on failed/unreadable state and response-only unreachable reason. [5]
 
 
-- Answered refusal persists as failed across refreshes without rewrite and blocks another Revive. [6]
+
+- Refresh preserves the failed Revive status and reason. A second Revive refuses after agent-state without a resume call. [6]
+
 
 
 - Observing the same session open clears prior resume refusal. [7]

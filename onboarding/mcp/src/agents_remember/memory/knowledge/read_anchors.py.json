@@ -174,26 +174,53 @@
       ]
     },
     "13": {
-      "note": "The resolver calls the replace-proofed `_tree_exists` probe before consulting process-lifetime content tables. Availability is not retained in those tables; the lower Git runner may reuse a successful identical probe within one active request memo scope. The two residuals remain stated in the module docstring.",
+      "note": "The current production callers are the two resolver wrappers. The requested resolver checks tree availability before observing the exact path and recorded blob identity. Warmed content can remain available after blob loss under that identity.",
       "targets": [
         {
           "anchor": {
             "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:b47621a27defc5426917edd8933fd829b1d411ddc075e4511d57c563d9bf660f",
+            "content": "sha256:0245345ac16f6155c43ef2f82a434cffddd7453659999acaa0d29a95d68f6d0d",
             "locator": {
-              "kind": "file"
+              "end": 166,
+              "kind": "line_range",
+              "start": 84
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
+              "end": 248,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "content": "sha256:0d50cccef16dfdc1e1798c646bbc47948783e6662cc59dd7de3373dc37942128",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 287
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "content": "sha256:a95a9a2f387ca01240586b929093e4cf4c1103565f83612c6fd63a8c82749fcf",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 387
+            }
           },
           "kind": "code"
         }
@@ -204,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:a1e619b09a94dc7184ec1cddedce393267506cd55c6b29341d82885c08d8b05c",
             "locator": {
               "kind": "symbol",
@@ -216,7 +243,7 @@
         },
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:891f54bfde7ea955ccfd00677b92922fda14e8be7672f51bdcf33a802eb58c8b",
             "locator": {
               "kind": "symbol",
@@ -228,7 +255,7 @@
         },
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:ed6a6768e30a5ae6ce728d95ce8d94089466ddf369ed22d678550f1a1b9b1f4d",
             "locator": {
               "kind": "symbol",
@@ -240,7 +267,7 @@
         },
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:c4ba63173ceac4c2cbe54e5f9fc9b50dbd88e7258425f570017b9bc44d16bf4d",
             "locator": {
               "kind": "symbol",
@@ -257,12 +284,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "126a64801a1628c8cc4eafa3bfa4dd8c6d076bde",
+            "blob": "b6f33379e6184a3f66a3f15339e17ad8fc5e0e1a",
             "content": "sha256:bd36e26e779aac9628ad337ed5e71785b8a28b394d4dfa1f46e4611a276f62e1",
             "locator": {
-              "end": 298,
+              "end": 301,
               "kind": "line_range",
-              "start": 187
+              "start": 190
             },
             "path": "mcp/tests/test_read_anchor_memo.py"
           },
@@ -270,12 +297,12 @@
         },
         {
           "anchor": {
-            "blob": "126a64801a1628c8cc4eafa3bfa4dd8c6d076bde",
+            "blob": "b6f33379e6184a3f66a3f15339e17ad8fc5e0e1a",
             "content": "sha256:a1d35d0d1ae71413dd8872293e990a39da151935110d1f8693df927cc563e0e9",
             "locator": {
-              "end": 511,
+              "end": 569,
               "kind": "line_range",
-              "start": 387
+              "start": 445
             },
             "path": "mcp/tests/test_read_anchor_memo.py"
           },

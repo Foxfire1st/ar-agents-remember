@@ -87,7 +87,7 @@ The route fixture's summary callback accepts the optional comparison-number argu
 - The four test definitions check matching stored-worklist unexplained-kind counts and auxiliary-file fallbacks, damaged-side code-fact refusal, counted-change witness attribution, and parametrized answered/open/undecided verdicts. The parameter table supplies two cases rather than two additional declarations. [24]
 
 
-- The exact fixture uses higher revision numbers for the unchanged statement and guarantee. [26]
+- The exact fixture uses higher revision numbers for the unchanged statement and guarantee. [27]
 - The version-only successor counts as a revision. A same-guarantee member change stays membership-only. [11]
 
 - The unit-regression lane selects mcp/tests/test_review_intent_summary.py. [23]

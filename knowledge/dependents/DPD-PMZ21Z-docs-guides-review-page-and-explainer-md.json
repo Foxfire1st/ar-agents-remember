@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The guide's selected family and invariant rows still show the documented change kinds and Curator history steps, with state and writer now displayed separately from both.",
-    "task": "261112-KNO-L3",
+    "statement": "The review-page guide correctly describes the launcher listing the offered models for a harness and the explainer resolving its own settings through the shared host-profile rule.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,7 +66,7 @@
       "path": "dashboard/src/panels/review/ChangeBadges.tsx"
     },
     {
-      "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
+      "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
       "kind": "file",
       "path": "dashboard/src/panels/review/changeTriage.ts"
     },
@@ -96,7 +96,7 @@
       "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.tsx"
     },
     {
-      "blob": "392da2790215a14029683debf1ea5da601663cd9",
+      "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
       "kind": "file",
       "path": "dashboard/src/explainer/model.ts"
     },
@@ -106,7 +106,7 @@
       "path": "dashboard/src/explainer/ExplainerColumnPanels.tsx"
     },
     {
-      "blob": "4f4e31a01188b7ab72b746eeaf82d2988cf39614",
+      "blob": "6c95ed1ae68a5a166477b1ca1a93c5a9a421b87d",
       "kind": "file",
       "path": "dashboard/src/explainer/FirstRequestForm.tsx"
     },
@@ -126,17 +126,17 @@
       "path": "mcp/src/agents_remember/mcp/tools/explainer_control.py"
     },
     {
-      "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+      "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
     {
-      "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
+      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },
     {
-      "blob": "d6e90d156860c962fff038b03cb9b5271791b2a3",
+      "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
     },
@@ -161,7 +161,7 @@
       "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
     },
     {
-      "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
+      "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
       "kind": "file",
       "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
     },
@@ -196,7 +196,7 @@
       "path": "mcp/src/agents_remember/application/review_worklist_answers.py"
     },
     {
-      "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+      "blob": "d150d3d4a3d2225914a9438a89c5b3faa980f15c",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/review_frame_store.py"
     },
@@ -206,12 +206,12 @@
       "path": "mcp/src/agents_remember/application/master_architect_record.py"
     },
     {
-      "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
+      "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
     {
-      "blob": "d6a81b841bf29a345dc9d7857710af32751ee689",
+      "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },
@@ -231,7 +231,7 @@
       "path": "mcp/src/agents_remember/canvas/explainer_access.py"
     },
     {
-      "blob": "f1a614c3853985134f11c860f66383388eb5da04",
+      "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_service.py"
     },
@@ -241,7 +241,7 @@
       "path": "mcp/src/agents_remember/canvas/explainer_server.py"
     },
     {
-      "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
+      "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
     },
@@ -251,12 +251,12 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
     {
-      "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+      "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -279,6 +279,32 @@
       "blob": "5be275cdd2395153066434e87495d4996544b70a",
       "kind": "file",
       "path": "dashboard/src/grammar/Media.tsx"
+    },
+    {
+      "anchor": {
+        "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+        "content": "sha256:a944503f0a793990c545d10b39d41a29fb496ca1874a34698600c5395d9a3590",
+        "locator": {
+          "kind": "symbol",
+          "name": "handle_build"
+        },
+        "path": "mcp/src/agents_remember/serving/explainer_routes.py"
+      },
+      "heading": "The intent review before work starts",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
+        "content": "sha256:6d7f703faeddb933b076136cdf3cd7a1f92407ce3693b988ff3e31c32ec93695",
+        "locator": {
+          "kind": "symbol",
+          "name": "PLANNED_REQUEST"
+        },
+        "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+      },
+      "heading": "The intent review before work starts",
+      "kind": "anchor"
     }
   ]
 }

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The differing-mode and absent-mode create cases in test_explainer_host.py protect the initial receipt. A host mode that differs from the request still permits creation and remains the observation. An absent report stays null. Both cases keep the requested choice separately, so a future change cannot fill or overwrite the observed value from the request while these tests pass."
+  },
+  "applicability": "Initial explainer seat creation or adoption and its stored launch provenance.",
+  "conditions": [
+    "For a fresh create, the applied check covers provider when reported and the applicable model, effort and feature values. An adopted active seat is read from the host and bypasses this fresh-create check.",
+    "Create and adoption record the host mode observation beside the requested mode in the initial launch provenance. The observed mode can be null."
+  ],
+  "exclusions": [
+    "A later resume does not promise to replace the stored initial mode provenance."
+  ],
+  "id": "INV-Z71VXZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/75b99339-78f1-44b3-9fa7-8185d6315f4e/role-launch/W5-clean-checks.log, section 'focused pytest' (133 passed, 262 subtests, exit 0; includes test_explainer_host.py's differing and absent observation cases). W7 continuity: paseo_explainer_host.py and test_explainer_host.py are byte-identical between W5 and W7.",
+        "W7 applied check and Worker R11-explainer-records-observed-mode evidence."
+      ],
+      "path": "w7-handoff-v3.json"
+    },
+    "handoffEntry": "R11-explainer-records-observed-mode",
+    "leaf": "261112-BUG-L11",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The explainer's applied check covers provider, model, effort and feature values; the mode is recorded as the host reports it, apart from the requested choice.",
+  "status": "proposed",
+  "supersedes": []
+}

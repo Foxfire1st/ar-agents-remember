@@ -109,4 +109,4 @@ No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
 
-- The unit-regression lane selects mcp/tests/test_knowledge_route_chain.py. [12]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_route_chain.py`. [12]

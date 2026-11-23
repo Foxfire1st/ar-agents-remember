@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:d46df0f1a209ea08dbf58ea59225e9a658583a98b0daa133f082b69c9a03eb1d",
         "locator": {
-          "end": 546,
+          "end": 570,
           "kind": "line_range",
-          "start": 546
+          "start": 570
         }
       },
       "id": "RLZ-0YC8HB",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:a39d85e8eea0a0302b95121cf39c0c9b51cefaa2ae03024471383733afa53e8b",
         "locator": {
           "kind": "symbol",
@@ -40,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:f2e6da2ead26f6599ade1ce3b6ea5332292aa259b65644e7661145749a2a1e6a",
         "locator": {
-          "end": 509,
+          "end": 533,
           "kind": "line_range",
-          "start": 509
+          "start": 533
         }
       },
       "id": "RLZ-35JMQA",
@@ -59,12 +59,12 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:f895a0fd1a357f0a850937f85392e97429902a73f6f07d3418dc92c77437c661",
         "locator": {
-          "end": 497,
+          "end": 521,
           "kind": "line_range",
-          "start": 479
+          "start": 503
         }
       },
       "id": "RLZ-3SFDSE",
@@ -78,7 +78,7 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:0dce181c2ce4f0edf162a3772b3b5f11e628575894740df84b887f82477945a9",
         "locator": {
           "kind": "symbol",
@@ -96,7 +96,7 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:033c53898970dcd641a0cba582376169eab4d4089c414238887144c2e9beefbd",
         "locator": {
           "kind": "symbol",
@@ -114,12 +114,12 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:ef1cb9473a9b3f11e6baa224930e4d30220a0a49ad5fcf52173504ae512c582f",
         "locator": {
-          "end": 457,
+          "end": 481,
           "kind": "line_range",
-          "start": 457
+          "start": 481
         }
       },
       "id": "RLZ-5F5AGJ",
@@ -133,12 +133,12 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:5b5d478a5da8085cf5cd64e26fa6d51caad18c2518a1969f20cebb32767b46dc",
         "locator": {
-          "end": 460,
+          "end": 484,
           "kind": "line_range",
-          "start": 460
+          "start": 484
         }
       },
       "id": "RLZ-5GERWP",
@@ -152,12 +152,12 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:f649a1a5e5f91224b368fe8584c9bce97933e5ffe20e249313226b31b1d6038a",
         "locator": {
-          "end": 208,
+          "end": 231,
           "kind": "line_range",
-          "start": 200
+          "start": 223
         }
       },
       "id": "RLZ-645WGZ",
@@ -171,7 +171,7 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:58b97f4dc2c21138f7fc628d79773d32ab55bd761beeb31ed639bedfd0b86519",
         "locator": {
           "kind": "symbol",
@@ -189,12 +189,12 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:ecf5217348563a4381f569317ba3b67f49fec33a99700cc49d9fc4876ed9aa9f",
         "locator": {
-          "end": 559,
+          "end": 583,
           "kind": "line_range",
-          "start": 549
+          "start": 573
         }
       },
       "id": "RLZ-76V41E",
@@ -208,12 +208,12 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:0dce181c2ce4f0edf162a3772b3b5f11e628575894740df84b887f82477945a9",
         "locator": {
-          "end": 289,
+          "end": 312,
           "kind": "line_range",
-          "start": 287
+          "start": 310
         }
       },
       "id": "RLZ-9CP18T",
@@ -227,8 +227,8 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
-        "content": "sha256:7ed744ab627d402113afe4684874a13c629adb422c4573b9371debc2d12020a9",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+        "content": "sha256:45e6b45f00be2920dd47f3e59b44b5b155fa5d044b34d2ac3b8c2b9f79161961",
         "locator": {
           "kind": "symbol",
           "name": "roleAgentOverrideFor"
@@ -240,17 +240,17 @@
         "handoffEntry": "L71-CURRENT242-W-17",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The existing override helper carries the feature map while deriving model/effort/tier override, with no second launcher or compatibility carrier.",
+      "rationale": "The shared override helper carries the selected mode and feature map together with agent, model and effort choices.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:b1522eddde970b91717f48e4aa4bd27fde6de7cb35713f518273b0c398b871d4",
         "locator": {
-          "end": 464,
+          "end": 488,
           "kind": "line_range",
-          "start": 462
+          "start": 486
         }
       },
       "id": "RLZ-ETENDE",
@@ -264,7 +264,26 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+        "content": "sha256:754108c69455013bb0d1c7f4e59abe6ed15ac6dde66c888b54cd985b91b206e5",
+        "locator": {
+          "end": 114,
+          "kind": "line_range",
+          "start": 108
+        }
+      },
+      "id": "RLZ-K1JG59",
+      "invariant": "INV-7DMXZ3",
+      "origin": {
+        "handoffEntry": "curate-w7-dashboard-mode-wire",
+        "leaf": "261112-BUG-L11"
+      },
+      "rationale": "Dashboard-only mode override carrier supports the replacement mode rule.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:e1fe3c59ac6e79abc9e6f9db635dd8018e4ca5abe0b0fa4f3a743612e92b7a64",
         "locator": {
           "kind": "symbol",
@@ -282,7 +301,7 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:7949c36caa3d602fd123b659c70e6cc475743d745728c6320bc98cb84fdadd04",
         "locator": {
           "kind": "symbol",
@@ -300,12 +319,31 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+        "content": "sha256:d9a6d4e5b8397e605c45dd4ceccbdc2c7f95805e9fc3d56031130fe03cfcc5cb",
+        "locator": {
+          "end": 83,
+          "kind": "line_range",
+          "start": 81
+        }
+      },
+      "id": "RLZ-Q3NMZ5",
+      "invariant": "INV-7DMXZ3",
+      "origin": {
+        "handoffEntry": "curate-w7-dashboard-mode-wire",
+        "leaf": "261112-BUG-L11"
+      },
+      "rationale": "Dashboard catalog carrier for host-supplied default, with the resolver and backend projection as enforcement.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:53bc62c6f94ce720ce27f9c66b971190b40201fa9d5ba41d315ec861799b83df",
         "locator": {
-          "end": 234,
+          "end": 257,
           "kind": "line_range",
-          "start": 211
+          "start": 234
         }
       },
       "id": "RLZ-QQW438",
@@ -319,12 +357,12 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:5848b7133ad9624a1e5a18fb174b3ef8f36bdbd8dc77309b78cee32ccf0b2c37",
         "locator": {
-          "end": 512,
+          "end": 536,
           "kind": "line_range",
-          "start": 511
+          "start": 535
         }
       },
       "id": "RLZ-RF6974",
@@ -338,12 +376,31 @@
     },
     {
       "anchor": {
-        "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+        "content": "sha256:e94ce744138d811be42f0b09155b403c8b40d85032929844d944b28d2867fae2",
+        "locator": {
+          "end": 131,
+          "kind": "line_range",
+          "start": 118
+        }
+      },
+      "id": "RLZ-YA5DE4",
+      "invariant": "INV-6SGHBB",
+      "origin": {
+        "handoffEntry": "curate-w7-step-up-observed-mode",
+        "leaf": "261112-BUG-L11"
+      },
+      "rationale": "The dashboard receipt types preserve observed mode as a distinct field alongside request data.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
         "content": "sha256:e71c07959e53da84b159bdd65d26224598219d2772fc838ff8a2019b050fe180",
         "locator": {
-          "end": 544,
+          "end": 568,
           "kind": "line_range",
-          "start": 544
+          "start": 568
         }
       },
       "id": "RLZ-YDM5E1",
@@ -362,12 +419,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
             "content": "sha256:3752bb5f787b286ba1d696879ac26b78cb3ffe5cd7e0f2ef994ccd632d289800",
             "locator": {
-              "end": 364,
+              "end": 387,
               "kind": "line_range",
-              "start": 336
+              "start": 359
             }
           },
           "kind": "code"
@@ -393,16 +450,32 @@
       ]
     },
     "11": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 9",
+      "note": "The launcher model carries the requested step-up reason, an explicit mode override, and optional receipt choice metadata with a distinct observed-mode field.",
       "targets": [
         {
           "anchor": {
-            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
-            "content": "sha256:13fbcafc5ae9bb05d6cabbc5da84898fe988f69b864f8bb501fdd724654f2283",
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:d5ca7854947eb170138d5b1a254e32cad21347d6878b4f57f6253b8290a2937b",
             "locator": {
-              "end": 132,
+              "end": 155,
               "kind": "line_range",
-              "start": 76
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Override construction retains a named mode and removes an empty override that restates the role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:45e6b45f00be2920dd47f3e59b44b5b155fa5d044b34d2ac3b8c2b9f79161961",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleAgentOverrideFor"
             }
           },
           "kind": "code"
@@ -410,16 +483,15 @@
       ]
     },
     "2": {
-      "note": "Choice validation matches host IDs or labels without case and retains configured values when catalog data is unknown, instead of silently selecting an alternative.",
+      "note": "Launch validation uses host agent, model, effort and tier catalog data. It leaves mode applicability to the host.",
       "targets": [
         {
           "anchor": {
-            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
-            "content": "sha256:b1348ebbf91c56c4434d1a9029ba5328f63d342e3dfc2ba5221d4df8b31822a2",
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:89de4ad24acd63f44ecee80568820736e297518521f3709aea57d67a0264e307",
             "locator": {
-              "end": 496,
-              "kind": "line_range",
-              "start": 451
+              "kind": "symbol",
+              "name": "launchChoiceProblem"
             }
           },
           "kind": "code"
@@ -431,12 +503,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
             "content": "sha256:dc8da94864d0dddfc3abbc784e7e58e951f3ae7018a0e03b52017c72fd3f4a15",
             "locator": {
-              "end": 520,
+              "end": 544,
               "kind": "line_range",
-              "start": 502
+              "start": 526
             }
           },
           "kind": "code"
@@ -444,12 +516,12 @@
       ]
     },
     "4": {
-      "note": "The current source implements this file’s stated Investigator boundary.",
+      "note": "The launcher model keys selected Investigator executions by request and preserves the original Projects storage slot.",
       "targets": [
         {
           "anchor": {
-            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
-            "content": "sha256:264ce58590be97e6f6bf241fea1ab0b23c36c4f6346745a8e117f0bcc53f0d3a",
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:ed096b2b398d49533c76cf87064ea4d4ce85adea063aadade3bbbfadf4d7e83b",
             "locator": {
               "kind": "file"
             }
@@ -463,12 +535,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
             "content": "sha256:7772cb0776ba30b4ff02c26afb253dcb92286df2c38b1049dbc73957d09ac00c",
             "locator": {
-              "end": 364,
+              "end": 387,
               "kind": "line_range",
-              "start": 318
+              "start": 341
             }
           },
           "kind": "code"
@@ -480,12 +552,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
             "content": "sha256:9afc25e9dd74e822070a4893adadcb7f3a41223bcb1a3ef953852d4de9a2fb9c",
             "locator": {
-              "end": 395,
+              "end": 418,
               "kind": "line_range",
-              "start": 374
+              "start": 397
             }
           },
           "kind": "code"
@@ -511,14 +583,14 @@
       ]
     },
     "8": {
-      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: Current source; preserved L88 property 6",
+      "note": "The backend checks the explicit reason and the configured failed-review threshold. A step-up reads mode from its own settings row. Other launch fields follow the same-harness and model inheritance rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
             "locator": {
-              "end": 84,
+              "end": 87,
               "kind": "line_range",
               "start": 23
             },
@@ -533,12 +605,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
             "content": "sha256:7772cb0776ba30b4ff02c26afb253dcb92286df2c38b1049dbc73957d09ac00c",
             "locator": {
-              "end": 364,
+              "end": 387,
               "kind": "line_range",
-              "start": 318
+              "start": 341
             }
           },
           "kind": "code"

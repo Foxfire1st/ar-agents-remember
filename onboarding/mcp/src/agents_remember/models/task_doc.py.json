@@ -71,12 +71,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 297,
+              "end": 312,
               "kind": "line_range",
-              "start": 252
+              "start": 267
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
           },
@@ -167,12 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
             "content": "sha256:6eaa928fb670973674af4da511285c97ed6b1acbe4acb66d758ab21805e3bb29",
             "locator": {
-              "end": 826,
+              "end": 828,
               "kind": "line_range",
-              "start": 649
+              "start": 651
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -185,12 +185,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
-            "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
+            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "content": "sha256:66fa6da7f95ae38c7d6c2aef3061dfdd31dc4694b46b7ff6b65621edd1f402fd",
             "locator": {
-              "end": 347,
-              "kind": "line_range",
-              "start": 334
+              "kind": "symbol",
+              "name": "_publish_task_doc_candidate"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -198,10 +197,12 @@
         },
         {
           "anchor": {
-            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
-            "content": "sha256:b93e061169ce574cbd24dcb580c2b828d14634b846839a7e6af46203f2d05f97",
+            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
-              "kind": "file"
+              "end": 347,
+              "kind": "line_range",
+              "start": 334
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -214,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
+            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
             "content": "sha256:4c41eeb73d547a361a9886505f37ee554236b88d5903a84294f59c8d37179fba",
             "locator": {
               "kind": "symbol",
@@ -262,12 +263,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+            "blob": "268fb78a4dd9640215b95691eb653e535db39358",
             "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
             "locator": {
-              "end": 298,
+              "end": 309,
               "kind": "line_range",
-              "start": 225
+              "start": 236
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },
@@ -276,14 +277,14 @@
       ]
     },
     "9": {
-      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
             "locator": {
-              "end": 84,
+              "end": 87,
               "kind": "line_range",
               "start": 23
             },

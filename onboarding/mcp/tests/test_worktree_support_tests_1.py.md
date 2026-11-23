@@ -19,20 +19,19 @@ and task/worktree artifacts.
 
 The scenario creates a sprint with an atomic master and leaf, starts that leaf with external
 memory, and checks the exact series/leaf branch and parent-contract relationships. It verifies the
-leaf document's lifecycle/enclosure binding references and checks that reattach preserves them. Start also asserts inProgress on both the leaf document and exact master row; abandon later asserts abandoned on both. The retained lifecycleId is an enclosure binding, not session activity or heartbeat inference.
+leaf document's lifecycle ID and enclosure references. Reattach must preserve the enclosure references. Start also asserts inProgress on both the leaf document and exact master row; abandon later asserts abandoned on both. The retained lifecycleId is an enclosure binding, not session activity or heartbeat inference.
 
 The early-closeout helper alters binding facts to prove refusal, then restores the task document.
 The queue helper publishes fixture curator evidence, declares a closeout door with priority
 judgment and typed admission, then reads the one member’s canonical leaf-task address. The
 fixture pairs the memory base with a `Code-Commit` trailer and calls public first conversion
 before evidence publication, asserting return 0. It removes the layout marker before abandon;
-abandon then removes the leaf enclosure while the parent series contract and its branch remain.
+abandon then leaves the leaf code worktree and code branch absent while the parent series contract and branch remain.
 
 ### Conventions
 
 The card describes this retained method rather than restoring earlier split-family tests from
-history. Shared support builds the repositories and typed inputs; the case checks public behavior
-at its stated boundaries and does not stand in for every closeout route.
+history. Shared support builds temporary Git repositories. The test invokes manager start, attach and abandon, direct closeout entry, the conversion command function and queue tools.
 
 ### Invariants And Boundaries
 
@@ -57,7 +56,7 @@ No configured external domain-documentation evidence.
 
 ### Repo-Internal References
 
-These repository-relative targets and exact ranges were checked against the L9 working source.
+The earlier working-candidate inspection used L9. The references below describe the retained assertions in W8.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
 
@@ -80,6 +79,8 @@ This file owns no ambient cross-repository authority. Any external-memory reposi
 
 - The fixture queue and early refusal helpers retain typed inputs and exact bindings. [1]
 
-- The retained lifecycle scenario preserves the parent through start/attach/abandon. [2]
+
+- The scenario verifies the start and reattach binding, the abandoned leaf states, removal of the leaf code worktree and branch, and preservation of the parent series contract and branch. [2]
+
 
 - Shared closeout-input helpers are background support, not called by this retained scenario. [3]

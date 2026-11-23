@@ -12,7 +12,7 @@
 
 Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest bootstrap and certifying startup are distinct. `pytest_bootstrap.py` supplies optional seeded collection ordering, an isolated cache directory for the pytest process, and the check that a test restores owned module-level state. Per-test restored rows, module-boundary reset rows and constant-for-tests rows have distinct treatments in a closed register; the register's collection-reset pass touches only already-loaded product owners. The module fixture separately imports the explicit kernel worktree-service holder and resets that object before and after the module; it is outside the syntactic collection census. The ordinary bootstrap carries no certifying or external-service capability. `certifying_bootstrap.py` admits a Dagger quality process before resolving the candidate test process.
 
-The route also owns the instruction-wording registries, readers, delivery and pointer checks, and capsule audience and budget fixtures used to check the shipped instruction corpus, plus a few single-regression helpers. These helpers do not hold an AR seat or author knowledge. Test qualification, completed curation, semantic acceptance and Git publication retain their separate authorities; running a bootstrap or validator does not itself supply acceptance. Canonical skill sources and their sole generated package copy belong to the synchronization owner, `scripts/sync-skills.py`; no harness skill mirror is produced.
+The route also owns the instruction-wording registries, readers, delivery and pointer checks, and capsule audience and budget fixtures used to check the shipped instruction corpus, plus a few single-regression helpers. The [tool-answer fixture helper](tool_answer_fixtures.py.md) owns real temporary paths of controlled width and temporary XDG settings for row measurements. These helpers do not hold an AR seat or author knowledge. Test qualification, completed curation, semantic acceptance and Git publication retain their separate authorities; running a bootstrap or validator does not itself supply acceptance. Canonical skill sources and their sole generated package copy belong to the synchronization owner, `scripts/sync-skills.py`; no harness skill mirror is produced.
 
 The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.
 
@@ -31,7 +31,9 @@ The closed product-process register now includes agents_remember.kernel.primitiv
 
 ## Construction And Operating Model
 
-Ordinary local pytest uses the reusable bootstrap. Its random-order option defaults to no seed, so collection is shuffled only when a seed is supplied. Session isolation supplies a temporary cache location; autouse fixtures restore registered mutable mappings after each test and reset registered process state before and after each module. Certifying entry uses `prepare_certifying_pytest_bootstrap`, which obtains Dagger admission before its own candidate setup.
+The reset register names the process owners for TypeScript anchor inputs and lifecycle journal records. Tests of native calls observe separate request scopes that clear their own state.
+
+Ordinary local pytest uses the reusable bootstrap. Pytest configuration installs the shared test loop factory for Runner and the public asyncio loop constructor. Cleanup restores both aliases. The factory caps idle selector waits at 50 milliseconds so a denied wake-up send cannot leave a queued callback waiting for a socket event. Test-authored dashboard and historical-review children use the same factory. Its random-order option defaults to no seed, so collection is shuffled only when a seed is supplied. Session isolation supplies a temporary cache location; autouse fixtures restore registered mutable mappings after each test and reset registered process state before and after each module. Certifying entry uses `prepare_certifying_pytest_bootstrap`, which obtains Dagger admission before its own candidate setup.
 
 Dependency analysis reconstructs the current file population, module ownership and relationships on each build. Per-file facts can be reused from a disposable store using a key that includes the analysis implementation, Python version, module identity, package identity and source bytes. The lane and lifecycle validators compare declarations with that source-derived population and ownership graph.
 
@@ -127,20 +129,31 @@ The generated route index lists the source files of this route and their cards.
 
 - The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]
 
-- The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control. [26]
 
-- **Historical source-bound reference account, not an operative override:** The register assigns distinct reset, restored and constant treatments. [19]
+- The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded. [26]
 
-- The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. [27]
 
-- The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets. [28]
+
+- The process register declares separate reset, restored and constant-for-tests treatments. [19]
+
+
+
+- The closeout digest-file stats, lifecycle location cache and process-owned lifecycle operation-record memo use ordinary _clear resets between test modules. [27]
+
+
+
+- The process register retains closeout and worktree landing-chain cache resets. It omits the former ambient session and log owners. [28]
+
 
 - The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors. [14]
 
-- The collection register and explicit kernel service-holder reset are separate module-isolation paths; new explainer and watcher collections join the closed register. [29]
+
+- The collection register and explicit kernel service-holder reset are separate module-isolation paths. The collection register includes the explainer and watcher collections. [29]
+
 
 - Six instruction helpers own checkout-local renewal loading, digest traceability, policy/wording projection, pointer parsing and binding controls, and source-derived audience/link comparisons. [30]
 - Manifest step derivation collects actions and reader-role associations for classified Markdown references from first-message and detail pointers. [31]
 
-- Fixture Git uses a private HOME and captures command failure output. [32]
-- Crossing fixture controls compare attributed state and writer before and after selecting or converting bytes. [33]
+- The shared factory bounds selector idle waits, and pytest restores its two factory aliases at cleanup. [32]
+- Fixture Git uses a private HOME and captures command failure output. [34]
+- Crossing fixture controls compare attributed state and writer before and after selecting or converting bytes. [35]

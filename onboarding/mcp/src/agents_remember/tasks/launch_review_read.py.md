@@ -24,7 +24,7 @@ The governing workflow opens an independent memory review after CODE PASS on the
 
 - Reason admission, threshold and differing-harness/model inheritance boundary. [2]
 - Launch scope opts in to review-only tolerance and forwards the same request reason. [3]
-- Child start opts into tolerance after root identity validation; context does not cross exec. [4]
+- Child start enters the review-tolerance scope after root validation. Context variables do not cross exec. [4]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [5]
 
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [1]

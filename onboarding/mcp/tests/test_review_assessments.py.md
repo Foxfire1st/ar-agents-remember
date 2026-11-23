@@ -13,9 +13,9 @@ rather than reinterpreted, that absence is never rendered as a favourable dispos
 `knowledgeReview` checklist section is a factual, report-only section of the one artifact.
 
 Nothing here fakes a contract or a store, and no case claims a survival it did not read back. The
-publication route's real behaviour — the authenticated caller, the evidence-byte destination and the
-post-cleanup read-back — is exercised against a real external-memory leaf enclosure in
-`mcp/tests/test_curator_review_assessment_publication.py`; this module is the hermetic half.
+integration fixture in `mcp/tests/test_curator_review_assessment_publication.py` uses a real
+external-memory leaf enclosure to verify authenticated authorship, the evidence-byte destination and
+read-back after the fixture removes the enclosure reports directory.
 
 ## Code Commentary
 
@@ -32,37 +32,30 @@ Seven test classes, each owning one property rather than one function:
 - `TestSubjectShape` — a family subject names the family's own record and its revisions; the revision
   lists are required for a revision-bearing kind and refused for `comparison`.
 - `TestExaminedInputBinding` — the binding uses the shipped contract's two own vocabularies; the policy
-  requires exactly the clause-five inputs; a relocated input with identical content is **not**
-  equivalent; an input that can no longer be read is a mismatch rather than a pass; a moved input
-  marks the binding stale with its exact identity.
-- `TestEvidenceBytesAreRecordedAsThreeFacts` — each cited byte is recorded with path, digest and size.
-- `TestReadStates` — the three recorded states plus `none-recorded` are reported distinctly; a
-  projection cannot report a disposition for an absent subject; a count that contradicts its records
-  is refused; per-item coverage is not inherited from a sibling.
-- `TestKnowledgeReviewSection` — the section moves no count and adds no finding; it is written into the
-  one checklist artifact; an unresolved signal is reported as its own state rather than a clearance.
+  requires exactly the clause-five inputs; a different candidate Git tree identity marks the binding stale; a missing observation records an unreadable-or-absent gap. The moved-input case asserts the exact disputed identity and both tree IDs.
+- `TestEvidenceBytesAreRecordedAsThreeFacts` supplies path, digest and size to the evidence-byte
+  fixture and checks that the binding identity records the path and digest. It also checks refusal
+  of missing or uncited published bytes and invalid paths.
+- `TestReadStates` checks four per-assessment binding states and six subject-summary states,
+  including `none-recorded`. It rejects inconsistent counts and statuses and checks that a sibling’s
+  measurement leaves an uncovered assessment `not-measured`.
+- `TestKnowledgeReviewSection` checks that the unresolved row appears in the report, that the
+  report and attestation are the only two files emitted, and that an unresolved row leaves the
+  case’s readiness status and actionable count unchanged.
 
-`_Binding` at the top is the module's own small builder for a well-formed assessment, so each case
-varies exactly the field it is about instead of restating the whole record; `_Published` at the bottom
-serves the cases that need a stored projection.
+`_Binding` supplies the overrides that `_bound` passes to the assessment builder. `_Published`
+pairs one citation with one supplied evidence-byte object for the citation-matching cases.
 
 ### Conventions
 
-- Registered in `mcp/tests/test-evidence-lanes.toml` as a **unit-regression** member: every case is
-  hermetic (temporary directories, in-process state, no integration marker, no repository or
-  subprocess), so the default unit lane is each one's behaviour-preserving classification.
-- Each case names a distinct failure in the leaf's clause envelope; none is a variant of another, and
-  no case asserts the *absence* of an operation, which would be a source census rather than a
-  behavioural check.
+- Every case uses temporary directories and in-process state. The cases require no integration marker, repository or subprocess.
+- The behavioral cases check model inputs, state projections, binding identities, and checklist output.
 
 ### Invariants And Boundaries
 
-- **No case here claims a survival it did not read back** — that property belongs to the integration
-  module, which drives the real publication path.
-- **No fake contract and no fake store.** The module builds records and projections in process; it
-  never stands up an enclosure.
-- **Structural claims only.** A case asserts that a shape is refused or that a state is reported; no
-  case asserts that a finding is true.
+- The module builds records and projections in process. Checklist cases write and reopen
+  temporary report and attestation files.
+- Model checks establish shape and state behavior. A stored finding remains the authored claim.
 
 ## Evidence
 
@@ -75,7 +68,9 @@ serves the cases that need a stored projection.
 - The state projection the read cases drive. [4]
 
 
-- The report-only section the checklist cases assert. [5]
+
+- The checklist cases check the report-only assessment row and the unchanged readiness status and actionable count. [5]
+
 
 
 
@@ -97,4 +92,4 @@ would be a source census rather than a behavioural check; and the leaf recorded 
 
 - The archived KS-R15@v1 packet preserves the creating leaf’s distinct-type requirement, former external-memory scope rail and report-only checklist boundary (§3.2, §6.9 and §8.2). This document supports the historical omission rationale, not a current implementation claim. \[6] [6]
 
-- The unit-regression lane selects mcp/tests/test_review_assessments.py. [1]
+- The `unit-regression` lane selects `mcp/tests/test_review_assessments.py`. [1]

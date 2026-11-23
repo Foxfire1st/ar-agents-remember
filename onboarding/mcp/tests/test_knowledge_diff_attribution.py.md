@@ -11,8 +11,7 @@ exact path-namespace lookup and the partition in which each measured changed pat
 [`test_knowledge_diff_scope.py`](test_knowledge_diff_scope.py.md). `260921-ICR-L57` moved them here
 verbatim when that module crossed the 1200-line rail; the split itself added, dropped or changed no case. The current module additionally defines the exact path-namespace lookup test. The module
 runs the same real comparison, over the fixture-built candidate snapshots and real Git trees that
-`diff_scope_test_support` builds. It is marked `pytest.mark.evidence_unit` and registered in the
-**unit-regression** lane beside its sibling.
+`diff_scope_test_support` builds. It is marked `pytest.mark.evidence_unit`.
 
 The properties, one case each:
 
@@ -90,7 +89,8 @@ No Domain Documentation source is configured for this slice.
 - `test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution` supplies the current fixture or assertion described above. [16]
 - `test_an_unavailable_partition_states_no_total_and_never_a_measured_zero` supplies the current fixture or assertion described above. [17]
 
-- Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [18]
+
+- The stale-mapping case builds its candidate with test-only realization seeds and the text-tree fixture builder. [18]
 
 
 
@@ -124,7 +124,9 @@ No configured domain documentation could be checked.
 - The stale-mapping case builds test-only fixture claims and reads their resolutions through `_candidate_claim_resolutions`; no current `_author_candidate_claim` helper is defined in this module. [26]
 
 
-- The incompleteness cases: one uninspected snapshot turns every unmapped change undetermined; a legitimately empty side counts as completely inspected. [27]
+
+- An uninspected snapshot leaves the unmapped path undetermined. The paired known-empty and inspected sides instead give complete attribution coverage and confirm the unmapped path is unregistered. [27]
+
 
 - The honesty cases: an unavailable partition states no total and never a measured zero; a partial observation states its denominator's scope. [28]
 
@@ -141,17 +143,15 @@ No cross-repository behaviour is exercised here. The fixture's Git trees are tem
 
 No configured cross-repository evidence is claimed.
 
-- The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.
 
-- The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.
 
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:352-352 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:800-800 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1202-1202 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2029-2029 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2740-2740 - the bytes it recorded now occur 50 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2783-2783 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3299-3299 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
-- The unit-regression lane selects mcp/tests/test_knowledge_diff_attribution.py. [30]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_diff_attribution.py`. [30]
 
-- The lifecycle catalog lists `test_knowledge_diff_attribution.py` as an exact consumer of `_user_settings_guard.py`, `anchor_fixture_models.py`, `diff_scope_test_support.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_review_fact_test_support.py`, `knowledge_row_codec_test_support.py`, `knowledge_rows_test_support.py`, `read_scope_test_support.py`. [31]
+- The lifecycle catalog lists the module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. [31]
 
 - RowStore writes text-tree fixture rows without the retired production admission plane. [19]

@@ -162,18 +162,43 @@
       ]
     },
     "4": {
-      "note": "Receipt restoration invokes the detail validator. Anchor: `_restore_launch_handover`",
+      "note": "Held-seat opening calls restoration before sending the opening message. With neither recorded artifact reference, the helper validates the saved instruction details directly.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e380d46baf00b445d92c0d0581b30b4fce11bd2",
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:098c33dab7a0ef8167a0807a3f3733f13c5b32d876513b784f185fb564027f7e",
+            "locator": {
+              "end": 506,
+              "kind": "line_range",
+              "start": 482
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8af465a831b807b61b0df2d8374da5be208b1161",
             "content": "sha256:f5c487e735e506bf84e89636232d3d09d9c4fa9b21c675b058a268d843496cac",
             "locator": {
-              "end": 172,
+              "end": 170,
               "kind": "line_range",
-              "start": 155
+              "start": 153
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:598f867f3d08595fc6430cd4e2d34d6dff272682455807db81d33e589fc5b57e",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 102
+            }
           },
           "kind": "code"
         }

@@ -26,10 +26,7 @@ The shared config/request/resolution/render helpers stay here.
 
 ### Logic
 
-**The lane declaration is collection input, not an execution receipt.** The module declares
-`pytest.mark.evidence_unit`, is selected in unit-regression, and is named by seven exact-scope
-lifecycle artifact records. Parsed source registrations, not old line offsets or module counts,
-are the current authority. No lane membership proves a test ran.
+The module declares `pytest.mark.evidence_unit`. Catalog declarations establish evidence selection and support ownership.
 
 **`REPOSITORY_LEAF` and `FORBIDDEN_FIELD_NAMES` are the module's two declared vocabularies.**
 `REPOSITORY_LEAF = "260915-ks-l22"` names the leaf the resolution reports. `FORBIDDEN_FIELD_NAMES` is a
@@ -133,8 +130,7 @@ None recorded.
 
 ## Historical Coverage Replaced By L57
 
-The following earlier card text is retained as historical material, with the three sealed obsolete numeric catalog references withdrawn, not current coverage.
-Its citation markers and table rows are inert inside this fence. Canonical curator assessment
+The quoted card records older coverage. Its two-consumer description, catalog coordinates and citation rows are historical. Current lane and artifact evidence appears below. Canonical curator assessment
 authoring is not claimed deleted merely because these reviewer tests/builders were removed.
 
 ```markdown
@@ -343,4 +339,4 @@ stays here, and that module imports it.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:395-395 - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:830-830 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1215-1215 - the bytes it recorded now occur 9 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2072-2072 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2753-2753 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2813-2813 - the bytes it recorded now occur 61 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3316-3316 - the bytes it recorded now occur 87 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:125-661 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit eb0b0e98596d07e4e206e7936c20f86d8123e401; mcp/tests/evidence-lifecycle.toml:663-747 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b17c1ce5a93fd41d985352915ce1c30feb0fecb2; mcp/tests/evidence-lifecycle.toml:1552-2083 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8b0254263c6998b1d4814b2e97c1bd231d39350f; mcp/tests/evidence-lifecycle.toml:2793-2830 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/tests/evidence-lifecycle.toml:2393-2477 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a416985be1ec9cf8ec92f64882f50ca012518ac4; mcp/tests/evidence-lifecycle.toml:2847-2899 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417; mcp/tests/evidence-lifecycle.toml:2422-2459 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- The lifecycle catalog lists `test_knowledge_review_surface.py` as an exact consumer of `_user_settings_guard.py`, `anchor_fixture_models.py`, `diff_scope_test_support.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_review_fact_test_support.py`, `knowledge_row_codec_test_support.py`, `knowledge_rows_test_support.py`, `read_scope_test_support.py`. [21]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_surface.py` (`mcp/tests/test-evidence-lanes.toml:280`). The lifecycle catalog lists the module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. [21]

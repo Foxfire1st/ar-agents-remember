@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "docs/host.md is unchanged between the leaf base and the selected code tree. Its pin/download and host-status sections describe the host, rather than dashboard media-byte handling or worktree lifecycle answer projection. In the selected implementation, the compact worktree_status answer keeps lifecycleOperationCount and runningOperation, while the saved whole result still carries lifecycleOperations; runningOperation is present only for a queued or running operation. The recorded-landing answer can also carry staleEntries. These are separate from the host page's pin, download and host-status fields; no replacement of lifecycleOperations in the whole result is claimed. This confirmation is limited to that comparison and those sections, not a fresh verification of every host-page statement.",
-    "task": "261112-BUG-L7",
+    "statement": "The host guide correctly directs Antigravity role starts to ACP, grounds fresh native refusal and exact-agent Retry in their implementing paths, and distinguishes pinned ACP forwarding from the installed Default-mode witness.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/paseo_node_paths.py"
     },
     {
-      "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+      "blob": "527bea1216f068c31565a638ad3b095eadbcc37a",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py"
     },
@@ -76,7 +76,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_harness_homes.py"
     },
     {
-      "blob": "6463b43ab293f7d1e7cb525891b1e346d2e8f98c",
+      "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
     },
@@ -86,12 +86,12 @@
       "path": "mcp/src/agents_remember/package_data/host-harness-homes.json"
     },
     {
-      "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -111,12 +111,12 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/paseo-plugin.json"
     },
     {
-      "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+      "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
     },
     {
-      "blob": "61f51e32545075f0c3a400773e296c06920f7044",
+      "blob": "24e8d0fea6b826394b656b7aa5bce3993d5eabbe",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
     },
@@ -126,7 +126,7 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_log.ts"
     },
     {
-      "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+      "blob": "9e10958ad95558f1846ccfe0170975c559d03227",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
@@ -136,12 +136,12 @@
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
     {
-      "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+      "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
     {
-      "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+      "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -161,9 +161,93 @@
       "path": "mcp/src/agents_remember/serving/media.py"
     },
     {
-      "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+      "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/worktree_status.py"
+    },
+    {
+      "anchor": {
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+        "content": "sha256:bfd43cdf46e5c32a4de2c2ed61c10d966ef1d8d86de4e336e599dd21ec8e0658",
+        "locator": {
+          "end": 247,
+          "kind": "line_range",
+          "start": 233
+        },
+        "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+      },
+      "heading": "Antigravity role agents",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+        "content": "sha256:de3748c8e518eaf23bd7a75dcd82ba7c55338795f738f9d83c2ee19b9c071a54",
+        "locator": {
+          "end": 579,
+          "kind": "line_range",
+          "start": 559
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+      },
+      "heading": "Antigravity role agents",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+        "content": "sha256:5e597b4f0667c3ce70b87d2d6b595b7e5c5d4e24757dc61c50b155a20b3276ff",
+        "locator": {
+          "end": 736,
+          "kind": "line_range",
+          "start": 719
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+      },
+      "heading": "Antigravity role agents",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "9a8be2d7a128c8ec0502d5bbc7f1415844c4f258",
+        "content": "sha256:9039079a9c18657697b69de3637560bb35c8c8f73193d15822a63caeefc6a660",
+        "locator": {
+          "end": 1220,
+          "kind": "line_range",
+          "start": 1211
+        },
+        "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
+      },
+      "heading": "Antigravity role agents",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "9a8be2d7a128c8ec0502d5bbc7f1415844c4f258",
+        "content": "sha256:640558fa0d2bc53d72071b9bb2ea627b20f2fb921c3042c3017ee114aafb0c6d",
+        "locator": {
+          "end": 2226,
+          "kind": "line_range",
+          "start": 2223
+        },
+        "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
+      },
+      "heading": "Antigravity role agents",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "9a8be2d7a128c8ec0502d5bbc7f1415844c4f258",
+        "content": "sha256:2d7b2dfed964d4a5971c6a426572fcffe2cdb2ef3077814cddc991c173974df9",
+        "locator": {
+          "end": 2798,
+          "kind": "line_range",
+          "start": 2784
+        },
+        "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
+      },
+      "heading": "Antigravity role agents",
+      "kind": "anchor"
     }
   ]
 }

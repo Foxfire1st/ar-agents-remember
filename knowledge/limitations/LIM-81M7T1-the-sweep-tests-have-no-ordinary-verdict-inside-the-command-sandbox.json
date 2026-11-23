@@ -22,7 +22,7 @@
   },
   "revision": 1,
   "schema": "ar-limitation/v1",
-  "status": "proposed",
+  "status": "retired",
   "unsupported": [
     "No cause is established for the missing completion inside the command sandbox.",
     "No equivalence between the command sandbox and the outside route is claimed beyond the recorded runs.",

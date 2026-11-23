@@ -23,6 +23,8 @@ Readers open existing index datasets through SQLite read-only handles. The store
 
 ## Construction And Ownership
 
+Conversion reuse follows the current request owner when one is active. The reviewer child separately retains exact-byte document parses under entry and graph-weight limits and validates placement for each input file.
+
 ### Lifecycle and first baseline
 
 `baseline.py` resolves lifecycle requests and consumes drift/ledger information. On converted memory, attributed history takes precedence as `already-adopted`; otherwise the payload distinguishes unavailable history, old-format cards, validator violations and actionable drift. Old-format-card detection belongs to first adoption, not ordinary validation of an existing baseline. Metadata-key first cells and Update History headings count; incidental prose mentions do not. `accept_drift` accepts stale anchors only, never legacy-card or validator refusals.
@@ -59,7 +61,7 @@ The application seam binds the read-only selected snapshot, permits a task-free 
 
 `read_anchors.py` observes recorded attribution against the requested tree, preserves its identity on every outcome, and never supplies content, reanchors ranges, searches for a replacement locator, or substitutes HEAD, a branch, a worktree or Markdown. No requested tree is a supported `not_requested` state. A resolver probes tree availability when constructed, not once per anchor. Exact symbols carry all defining extents; file locators carry no resolved range. An exact recorded blob with an out-of-bounds or unreadable line range remains `exact_recorded_blob` but has no resolved range and states why. Blob identity and usable locator extent are deliberately separate facts.
 
-`read_anchor_memo.py` owns bounded, thread-safe LRU storage; `read_anchors.py` owns admission of successful content answers. Keys include repository root and complete object IDs, and grammar identity for parsed definitions. Refs and abbreviations are not admitted. Definite path absence can be remembered as an immutable tree-content answer, but object-store availability is not such an answer. Two named residuals remain: a tree still present after a previously read blob becomes unavailable may receive remembered blob content, and resolver-less observation skips the tree probe. The inherited account identifies curator ingest as the production resolver-less caller and says it measures membership in the same run; that caller-specific assertion is retained as historical intent rather than freshly adjudicated here.
+`read_anchor_memo.py` owns bounded, thread-safe LRU storage; `read_anchors.py` owns admission of successful content answers. Keys include repository root and complete object IDs, and grammar identity for parsed definitions. Refs and abbreviations are not admitted. Definite path absence can be remembered as an immutable tree-content answer, but object-store availability is not such an answer. The requested anchor resolver checks exact tree availability, path and recorded blob identity. Warmed locator content can remain available after that blob becomes unreadable. The unrequested wrapper reports that no tree was selected. Those are the two production call sites of this implementation.
 
 `tree_observation.py` owns the shared source vocabulary and probe seam. `TreeChange` preserves the raw Git path, status, renderability, mode-change flag and reason for unknown content. Unavailable measurement differs from an empty measured change set. `TreePaths` checks agreement when entries are supplied, and requires partial state when unrepresentable paths are supplied; it does not require entries for every nonempty path-only value. Non-UTF-8 pathnames remain preserved separately and make the report partial. The display carries this limitation beside counts. The inherited production measurement uses delimiter-safe `git diff --raw -z --no-renames`, with acquisition owned by `application/review_source_inventory.py` rather than a second display-layer measurement.
 
@@ -171,7 +173,9 @@ Anchor: Build charter, `ParsedTree`, `_parse_knowledge_file`
 
 - Retained reference account (no fresh execution or acceptance inferred): The absence refusal, naming proof claims when the leaf read asks. [13]
 
-- Retained reference account (no fresh execution or acceptance inferred): The owner's rule: answers only, keyed by complete ids, availability never remembered, and the two residuals. [16]
+
+- The requested anchor resolver checks the selected tree. Its unrequested sibling reports that no tree was selected. Both call the same anchor implementation. [16]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The memo module's tables and admission test. [17]
 
@@ -249,6 +253,9 @@ Anchor: Build charter, `ParsedTree`, `_parse_knowledge_file`
 
 
 
+- The index builder reads a memory snapshot and reports the file and reason for each recorded parse or placement problem. [103]
+
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The pure conversion, its version pin and its validation. [107]
 
@@ -273,7 +280,9 @@ Numbered findings [116] and [149] describe converted carryover planning, convers
 
 - Retained reference account (no fresh execution or acceptance inferred): The reconsideration step resolves the endpoint and asks for the approval. [129]
 
-- Retained reference account (no fresh execution or acceptance inferred): A kept gate verdict is served only when no recorded observation changed. [130]
+
+- A kept gate verdict is served only while its recorded observations match. [130]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The manifest lookup returns the highest approved version. [131]
 
@@ -322,7 +331,9 @@ Numbered findings [116] and [149] describe converted carryover planning, convers
 
 - Selection freezes directly containing families before expansion; paging preserves total and cumulative counts. [157]
 
-- Anchor observation retains two named availability residuals and exact-blob identity can lack a resolved range. [158]
+
+- A selected tree can identify the exact recorded blob while retained content resolves its locator after blob loss. A cold missing blob can preserve the identity without a resolved locator. [158]
+
 
 - Attribution requires a measured denominator and licensed side inspection; no inspected sides license no absence. [159]
 
@@ -362,10 +373,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowle
 - KnowledgeIndexCache binds its namespace to the loaded build digest and uses a private namespace when that digest is unavailable; only known-build datasets are reused. [175]
 - open_cached_index opens only the loaded build namespace and performs no usage bookkeeping; an unknown digest yields no reusable index. [176]
 
-- Index build derives current standing and writer evidence from one selected tree. [177]
-- The declared cache schema stores both current standing and per-revision writer evidence. [178]
-- Revision-standing conversion plans stored state-word removal and companion review facts. [179]
-- Crossing merges authored fields and applies selected-side or product writer evidence. [180]
+- Index build derives current standing and writer evidence from one selected tree. [181]
+- The declared cache schema stores both current standing and per-revision writer evidence. [182]
+- Revision-standing conversion plans stored state-word removal and companion review facts. [183]
+- Crossing merges authored fields and applies selected-side or product writer evidence. [184]
 
 - Retained reference account (no fresh execution or acceptance inferred): The two proof lookups. [113]
 - Retained reference account (no fresh execution or acceptance inferred): The count model that refuses its own arithmetic contradiction at construction. [44]
@@ -374,7 +385,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowle
 - Projection uses deterministic identities, store-owned seals and retains retired/unprojectable facts in direct index tables. [154]
 - Retained reference account (no fresh execution or acceptance inferred): The store's own seal on each projected revision row. [8]
 - Retained reference account (no fresh execution or acceptance inferred): The index keeps each history file by path. [117]
-- Retained reference account (no fresh execution or acceptance inferred): The build, which names every failing file. [103]
 - Retained reference account (no fresh execution or acceptance inferred): The captured-state key. [102]
 - Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion. [150]
 - Retained reference account (no fresh execution or acceptance inferred): The capture copies the index with its time. [119]

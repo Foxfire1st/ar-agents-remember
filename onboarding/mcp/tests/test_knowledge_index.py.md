@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R23 rules 1–5 and the Failure rule: sources, key, answers, partial state, cache and the `knowledge-index` command.** The main fixture builds a real memory tree in a real Git repository (`write_review_tree`) and indexes it through the public cache, so the key, capture and Git-object reads use production code. Registered in the `unit-regression` lane. Source includes the two-value index-flag parameterization, root-route, duplicate-history-row and sparse-checkout cases; this card does not claim a fresh collected-case count.
+**MIK-R23 rules 1–5 and the Failure rule: sources, key, answers, partial state, cache and the `knowledge-index` command.** The main fixture builds a real memory tree in a real Git repository (`write_review_tree`) and indexes it through the public cache, so the key, capture and Git-object reads use production code. Source includes the two-value index-flag parameterization, root-route, duplicate-history-row and sparse-checkout cases; this card does not claim a fresh collected-case count.
 
 ## Code Commentary
 
@@ -80,4 +80,4 @@ No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
 
-- The unit-regression lane selects mcp/tests/test_knowledge_index.py. [8]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_index.py`. [8]

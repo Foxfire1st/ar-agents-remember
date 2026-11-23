@@ -376,14 +376,16 @@
       ]
     },
     "16": {
-      "note": "The changed-card regression asserts worklist/gate agreement for an authored updated row without a separately bound trace item; source assertions are not fresh execution acceptance.",
+      "note": "The changed-card regression reapplies settlement to the worklist items and checks an authored updated row, no separate trace item, countedChange and gate acceptance.",
       "targets": [
         {
           "anchor": {
             "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:66b6cbe0523bee0559e9bd323bd871e4d0c69c177ace2e539a62ba7c626ca2e0",
+            "content": "sha256:8e9a8be94e4e64839b86edf71ccdcb51eed9a7a000148edef7347c9357f3044d",
             "locator": {
-              "kind": "file"
+              "end": 642,
+              "kind": "line_range",
+              "start": 604
             }
           },
           "kind": "test"
@@ -580,7 +582,7 @@
       ]
     },
     "7": {
-      "note": "Non-text changes bound to the C blob.",
+      "note": "The mode-change file item binds the candidate blob. The test also checks binary classification, a new subject for a second binary change and refusal of a writer input naming another object.",
       "targets": [
         {
           "anchor": {
@@ -733,7 +735,7 @@
       ]
     },
     "9": {
-      "note": "Symlink, deleted binary and uncovered deletion (review N6): the direct onboarding row explicitly binds candidate source blobs.",
+      "note": "The symlink and deleted binary identify their distinct candidate subjects. The uncovered deletion is answered by a directly committed onboarding row with the explicit candidate blob.",
       "targets": [
         {
           "anchor": {
@@ -743,126 +745,6 @@
               "end": 489,
               "kind": "line_range",
               "start": 424
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:bcd09ac45d6a2be26f2753afbc5e7e1ad825700d63ae21ce5161a1365b0b8324",
-            "locator": {
-              "end": 111,
-              "kind": "line_range",
-              "start": 105
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:ea8af6798a349cd76104b1866c3d6b60e5a8cb0e87afbb7a8deeb022a9a61850",
-            "locator": {
-              "end": 534,
-              "kind": "line_range",
-              "start": 534
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:f9ed76d1cc24c10044a4b373bd8a456d19c96582b0f9480c6a0f51adfc129658",
-            "locator": {
-              "end": 542,
-              "kind": "line_range",
-              "start": 540
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:e4296d08709f4320672df517f42eb8232301a4b69e0a7ff19a289155acea41bd",
-            "locator": {
-              "end": 552,
-              "kind": "line_range",
-              "start": 551
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:5a505c96501c3ed2c6886178e76539931f887d5180bb6d948a2e384cfe9bf8a0",
-            "locator": {
-              "end": 710,
-              "kind": "line_range",
-              "start": 708
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:9f68873e11601d0b5d86606e5809e1e96b11d4d77c5d8c7cbd4cb840e25a585b",
-            "locator": {
-              "end": 484,
-              "kind": "line_range",
-              "start": 419
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:028348ab592134c811016fff61abab64928e986a4df9caf0c2d83f00d75342b1",
-            "locator": {
-              "end": 529,
-              "kind": "line_range",
-              "start": 529
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:e0103164eefc0b78f15263848dfa214033ed1a2b93a5a43b768874d50e610061",
-            "locator": {
-              "end": 537,
-              "kind": "line_range",
-              "start": 535
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:df9dad9062b1d02f31a80978cc019643fd56b186dc2a200212159c1b8d8f05d0",
-            "locator": {
-              "end": 547,
-              "kind": "line_range",
-              "start": 546
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:47e6b88b212099c88411ed3f80841de5ab2bf5ecca08e87156b382e2e4cf5ce4",
-            "locator": {
-              "end": 705,
-              "kind": "line_range",
-              "start": 703
             }
           },
           "kind": "test"

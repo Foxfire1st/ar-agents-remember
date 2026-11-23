@@ -12,15 +12,13 @@ Purely projects one retained lifecycle operation generation for public status co
 
 ### Logic
 
-The operation-specific result projection uses initial-door contradictions and direct-landing evidence, with no ledger byte/tree contradiction branch. Cache state does not replace the record-bound result, suppress a legal control, or recommend manual transaction recovery.
+Historical closeout and integration take the audit branch before any current intent or control classification. It retains the saved identity, failure and outcome after dropping embedded next-action fields. Recommendations, guidance and legal controls are absent. The live direct branch reads its result and applicable evidence, binds the recommendation and controls to the same record, and derives timestamps from that record.
 
-It combines the durable record with door, integration, direct, and organizational evidence, parses timestamps, and emits stable result/control-neutral fields.
+The direct status branch requires canonical `TaskIntentIdentity` to advertise legal controls. Otherwise it supplies `lifecycle-operation-task-intent-unavailable` with the model's bounded guidance, even when the control handler itself can admit the direct input's canonical leaf binding. The application-level status witness used a stored canonical intent stamp for that reason.
 
-Current missing-intent classification distinguishes recovery reuse from safe completion of an already requested cancellation. Missing canonical task intent cannot authorize retry or recovery. The bounded override names `lifecycle-operation-task-intent-unavailable`; terminal generations may retire and republish while active ones require their existing recovery authority or developer decision.
+`_operation_cancellable` derives the flag from a present contract, available intent and an exact `cancel` control. A compatible direct `termination-required` record can expose cancellation through the direct control predicate.
 
-`_operation_cancellable` is record-free: it requires a present contract, no blocking intent flag and an exact `cancel` legal control. It does not reconstruct permission from irreversible-boundary or retained-generation heuristics. `_exit_proven_cancellation_pending` preserves the existing cancellation surface when requested cancellation has proven worker exit. See `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:536-576`.
-
-Malformed or non-mapping public result evidence becomes the bounded `incoherent` envelope with expected/observed facts, no legal controls, no recommended action and `cancellable: false`; it is not a reusable operation result or an unhandled assertion. The canonical task intent is exposed only when present. See `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:480-517`.
+Malformed or non-mapping public result evidence becomes the bounded `incoherent` envelope with expected/observed facts, no legal controls, no recommended action and `cancellable: false`; it is not a reusable operation result or an unhandled assertion. The canonical task intent is exposed only when present. The projector binds this outcome in `_incoherent_operation_projection`.
 
 ### Conventions
 
@@ -32,8 +30,7 @@ the public function or model instead of re-deriving its lower-level state machin
 - Projection is read-only and cannot repair or advance state; ambiguous or stale inputs remain visible rather than being normalized away.
 - Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
   fallback or compatibility shadow.
-- A legacy missing-intent closeout/direct-landing generation projects the exact unavailable state
-  and never advertises recover/retry/cancel for reuse.
+- A direct record with missing task intent exposes the unavailable state and no legal controls. Older closeout and integration keep the separate audit projection.
 
 ### Todos
 
@@ -51,14 +48,20 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-- `_operation_specific_projected_result` projects initial-door and direct-landing evidence without ledger decisions. [1]
-- `_recommended_control` orders legal recommended controls without creating new authority. [2]
+
+- The live direct route projects its saved result and current action. Retained closeout and integration rows expose historical result and evidence for inspection. [1]
+
+- `_recommended_control` selects an already projected legal action. [2]
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-- Missing-intent blocking, the public unavailable override, and cancellability. (`legacy_intent_blocks_recovery`; `_legacy_intent_override`; `_operation_cancellable`) [3]
-- Exit-proven cancellation-pending state keeps its cancel surface. (`_exit_proven_cancellation_pending`; `_general_projected_result`) [4]
+- The unavailable override explains missing intent. The cancellable flag requires available intent, a present contract and an exact cancel control. [3]
+
+- An eligible direct termination-required row may offer exact cancel, derived from the direct control predicate. [4]
+
+
 - The wire now carries the canonical intent identity when present. (`_coherent_operation_projection`; `_incoherent_operation_projection`) [5]
+
 
 ### Cross-Repo References
 
@@ -67,9 +70,9 @@ protocol claim.
 
 No additional cross-repository evidence applies.
 
-## CCR-R02@v2 Legacy Intent Projection Barrier
+## Historical CCR-R02@v2 legacy intent projection barrier
 
-Per `requirements/CCR-R02-v2-normative-task-intent-identity.md` and the L25 repair (commit
+Before ordinary journal execution was retired, per `requirements/CCR-R02-v2-normative-task-intent-identity.md` and the L25 repair (commit
 `99dc249b`), a closeout or direct-landing generation whose task-intent state is absence can no
 longer project as an ordinary reusable generation merely because it is nonterminal; the public
 projection reports `lifecycle-operation-task-intent-unavailable` with `retire-and-republish` and
@@ -83,10 +86,12 @@ Both envelope builders — the coherent adapter and the incoherent refusal adapt
 record-bound status snapshot (including a wait snapshot) carries the durable meaningful-state
 cursor of the journal revision it projects.
 
+
 - Coherent envelope carries the record cursor. (`_coherent_operation_projection`) [6]
+
 - Incoherent refusal envelope carries the record cursor too. (`_incoherent_operation_projection`) [7]
 - The envelope field being populated. (`meaningfulRevision`) [8]
 
-## CCR-L42 current candidate
+## Recommendation and authority
 
-Recommended-control ordering now prefers `resume` before `recover` and `retry` when the public legal controls allow it; the projection remains record-bound and does not authorize a control by recommendation alone.
+`_recommended_action` checks preferred actions in the controls already projected for the exact record. A recommendation carries no additional control authority.

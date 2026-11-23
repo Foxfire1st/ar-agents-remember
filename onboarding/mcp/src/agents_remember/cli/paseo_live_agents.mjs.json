@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0ab582dd663d455dc656664d8318e003ef81510a",
-        "content": "sha256:5d4342a80589c7b2af3ef34b8e7213feb083db3f82e601c6560380fb184afa81",
+        "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+        "content": "sha256:4244307a5f34ffe05d2bc79871cfef156b658ad4022105e6fe77aea0f845738f",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-KQJGQM",
+      "invariant": "INV-MRV9R9",
+      "origin": {
+        "handoffEntry": "L10-curated-background-listing",
+        "leaf": "261112-BUG-L10"
+      },
+      "rationale": "The bridge builds its explicitly complete or incomplete live census here.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+        "content": "sha256:0556d3d40d00fad80eba6385ee715063b96ff7a91d0900463ef554803507e1a8",
         "locator": {
           "kind": "symbol",
           "name": "listLiveAgents"
@@ -16,20 +35,22 @@
         "handoffEntry": "L140-R1-F04",
         "leaf": "260928-MIK-L140"
       },
-      "rationale": "Sets complete only on the host's own word that no agents follow; a page without a next page ends the read, not the listing.",
+      "rationale": "Requests background agents explicitly and reports incomplete until the host marks the listing ended.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "Read the bounded live-agent census and stable OS process-start identity through the existing bridge. Only hasMore=false establishes completeness; an unreached agent remains unknown. PID, birth tick and boot identity are confirmed across the same host observation.",
+      "note": "Each live-agent request includes background agents. The answer retains unarchived IDs, reports explicit completeness and checks the answering process identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ab582dd663d455dc656664d8318e003ef81510a",
-            "content": "sha256:0dc3e06131daf18e1420ea8c1ff79b970b971b17b4199923730eb56f7b62f30f",
+            "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+            "content": "sha256:5a6516c480ed2d71a19897416ce510f4feb71fa5578821bfbdf54d9e0b21167b",
             "locator": {
-              "kind": "file"
+              "end": 54,
+              "kind": "line_range",
+              "start": 5
             }
           },
           "kind": "code"

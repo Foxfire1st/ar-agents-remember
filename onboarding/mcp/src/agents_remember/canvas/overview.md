@@ -28,21 +28,23 @@ The proof record is a generated artifact: it binds the served policy, the enforc
 
 ## Exact Evidence
 
+The grade-refresh reader uses a private spool for a complete Git blob. It keeps exact bytes or an unavailable result within the selected comparison reader. The spool closes within the read.
+
 The frame may ask to open something; the host decides what that is. `resolve_evidence_reference` answers only with a reference the revision's own admitted packet carries — a claim's basis, a claim, a collection item or a supplemental receipt — requires the packet and the binding to name the same comparison, and answers an unavailable or unsupported destination with its own limitation rather than substituting today's record. Two claims carrying one unnamed reference are refused as ambiguous instead of answered with a guessed basis.
 
 ## Presenter Authoring And Publication
 
 The standalone presenter native launch is retired. A bare `Presenter` now selects `UnconfiguredPresenterRunner` and refuses `no-confined-harness`; an explicitly supplied confined runner can still use the retained attempt implementation. The normal explainer uses its bound task server and the shared `AuthoringTools` implementation, with no standalone presenter server.
 
-The leaf’s environment lives outside worktrees, memory repositories and task folders. Build, Update, grades and Retire use its one leaf lock; the build writes snapshots, instructions, the packet and, for a planned binding, the plan’s requirement and declared effects under `planned/`, before binding last, then sends after releasing the lock. Update rebinds without waking a turn and refuses while in turn or retired. Retire waits for the lock and durably records the process tree, archive, process cleanup and workspace removal, preserving an unfinished receipt for retry. Retained pages and grades stay with the task.
+The leaf’s environment lives outside worktrees, memory repositories and task folders. Build, Update, grades and Retire use one leaf lock. Build writes snapshots, instructions, the packet, copied task and requirement inputs, and the leaf report manifest before binding last. It sends after releasing the lock. A moved Update refreshes those inputs and retains stage files. Update starts no turn and refuses while the seat is in turn. Retire records the process tree and finishes after archival, process cleanup and workspace removal, retaining an unfinished receipt for retry. Published pages and grades stay with the task.
 
 ## Readiness And The Prospective Load
 
-`check_page` is the static check a prospective revision passes before it is offered as ready: it follows the document’s own references, refuses one that leaves the revision or names no admitted asset, and reports reduced-motion and evidence-reference facts. It also derives the part map from static `data-part` and claim-id marks, refuses invalid parts, unknown or unmapped claims and unresolved bases, and carries the map into publication. A page declaring no parts is answered whole-page. `BrowserProspectiveLoad` performs the load itself in the selected browser through the package-owned runner, stages the exact prospective bytes, and downgrades a claim of success that contradicts its own observations. Before it stages a run, a product load makes its browser ready through `canvas.explainer_browser`: Playwright and its Chromium are fetched at that first explanation into one folder the product owns under the user's data home, with the Node the product already installs, and a load that cannot get them is `unavailable` with nothing published and no run folder left behind. A load that names its own Node is instrumented and fetches nothing, and a module a user names in `AR_PLAYWRIGHT` is used as given. The browser runner observes legacy evidence references and claim ids in separate bounded inventories, including marks scripts add during the load window; the trusted caller resolves both against the exact packet. A revision whose load fails or is unavailable is refused with the failure named to the presenter; the check says nothing about how good an explanation is.
+`check_page` is the static check a prospective revision passes before it is offered as ready: it follows the document’s own references, refuses one that leaves the revision or names no admitted asset, and reports reduced-motion and evidence-reference facts. It also derives the part map from static `data-part` and claim-id marks, refuses invalid parts, unknown or unmapped claims and unresolved bases, and carries the map into publication. A page declaring no parts is answered whole-page. `BrowserProspectiveLoad` performs the load itself in the selected browser through the package-owned runner, stages the exact prospective bytes, and downgrades a claim of success that contradicts its own observations. Before it stages a run, a product load makes its browser ready through `canvas.explainer_browser`: Playwright and its Chromium are fetched at that first explanation into one folder the product owns under the user's data home, with the Node the product already installs, and a load that cannot get them is `unavailable` with nothing published and no run folder left behind. A load that names its own Node is instrumented and fetches nothing, and a module a user names in `AR_PLAYWRIGHT` is used as given. During its bounded post-load observation window the runner collects basis references and claim IDs in separate inventories, including values added by scripts. Python accepts the full string inventories and resolves them against the bound packet. A revision whose load fails or is unavailable is refused with the failure named to the presenter; the check says nothing about how good an explanation is.
 
 ## The Pinned Kit
 
-`kit_files` indexes the shipped manifest's entries, and `_read_verified` compares an entry's size and digest before a byte is handed out, and `_read_verified` compares those values before a byte is handed out; `kit_assets` exposes those files under the contract path a page names them by, so a revision carries the kit as its own admitted assets, and no later check refuses a kit path, so a presenter may publish its own bytes there. A page names a kit library by that relative path; serving the published revision adds no check, because the frame route serves the revision's own admitted assets.
+The kit collector verifies selected shipped files against the shipped manifest and adds them under their contract paths. A page names a kit library by its relative path. The page asset route later reads from the live session’s revision and uses that revision’s recorded media type.
 
 ## Dashboard Write Guard
 
@@ -51,6 +53,10 @@ The dashboard is local and unauthenticated, which is a deployment posture and no
 **L184.** The presenter's send stays outside the limit check by design, so this route changes nothing beyond the presenter's own outbound path.
 
 The explainer’s categories and grades remain its judgment, separate from change badges and accepted knowledge. Grades bind to block fingerprints and the comparison at which they were made; unresolved target reads mark parts or grades stale with a reason. The target is the environment binding unless the view explicitly selects another comparison or reads after Retire. Stale grades keep their value in the judgment sort, and a stale-page message regenerates nothing until the developer sends it.
+
+Recorded and planned explanations use six private files for reading, selected changes, selected parts, individual explanations, the essay and the visual plan. The evidence-bearing essay precedes visual work. The explainer assembles the page from that essay and any helpful visual assets. A planned binding uses the current code and memory and describes the requirement's intended effects.
+
+Readiness checks actual media attributes. The prospective load and publication both serve WebM and MP4 with their video media types.
 
 ## Evidence
 
@@ -88,10 +94,13 @@ The explainer’s categories and grades remain its judgment, separate from chang
 
 - The static readiness check refuses a page that names something its revision does not carry. [13]
 
-- Kit files are carried under the manifest's contract path and compared with the manifest when carried; nothing refuses a kit path afterwards, so the kit is the page's offline toolbox and the sandbox is the boundary. [15]
+
 
 - A state-changing browser request from another page is refused with a named 403 before it reaches a route. [16]
 
 - Every request, reads included, answers only the dashboard's own host and port, against DNS rebinding. [17]
 
-- The current implementation introduces bound grades, per-part staleness and explicit regeneration; the existing isolated-page, evidence and kit guarantees remain. [20]
+- Grades, part staleness and regeneration operate on the bound evidence and immutable revision. [20]
+
+- Collecting shipped kit assets verifies each selected file against the shipped manifest and adds it under its contract path. [15]
+- Asset serving opens the live session’s revision and uses that revision’s recorded media type. [21]

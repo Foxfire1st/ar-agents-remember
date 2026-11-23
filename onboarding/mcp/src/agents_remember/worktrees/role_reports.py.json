@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "blob": "62215ea0a5252c997ca76c7b1680713485391419",
         "content": "sha256:b0fd75db266249dc184d51fdc14f5e8e679669b8ee3b8fa79b337df06cb8107e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "blob": "62215ea0a5252c997ca76c7b1680713485391419",
         "content": "sha256:b1e7d9ecc88a6a7945c6db1705d79ffc520b5d0a6c080177d759daa775e8865f",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "blob": "62215ea0a5252c997ca76c7b1680713485391419",
+        "content": "sha256:3f10ae98a4c8761409810abb12b5452035f0958e86103f6e6475a726e402539c",
+        "locator": {
+          "kind": "symbol",
+          "name": "canonical_execution_reports"
+        }
+      },
+      "id": "RLZ-AA1ZJM",
+      "invariant": "INV-29DEHG",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 1 — inputs",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The role's canonical collection supplies its report paths after the receipt archive drops the copy cache and local folders are removed.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "62215ea0a5252c997ca76c7b1680713485391419",
         "content": "sha256:1f9511937df21297f649ae38c73213d31257c221dfa45b811585a73871cc405b",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "blob": "62215ea0a5252c997ca76c7b1680713485391419",
         "content": "sha256:b1e7d9ecc88a6a7945c6db1705d79ffc520b5d0a6c080177d759daa775e8865f",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "blob": "62215ea0a5252c997ca76c7b1680713485391419",
         "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "blob": "62215ea0a5252c997ca76c7b1680713485391419",
         "content": "sha256:cef6aa881c187a14c3b5b9f06ce38dbd12940ec9f31ed1b22cbdfaf96e69b2b2",
         "locator": {
           "kind": "symbol",
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "blob": "62215ea0a5252c997ca76c7b1680713485391419",
         "content": "sha256:b383884d5fd979d25ec4170406b2bccb264cb72d69e34af2653c01c7319a09f1",
         "locator": {
           "kind": "symbol",
@@ -129,7 +147,26 @@
     },
     {
       "anchor": {
-        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "blob": "62215ea0a5252c997ca76c7b1680713485391419",
+        "content": "sha256:750163d382064732d0055cae8addbfdc8eb0e46b149f82892d466bbe3ed6e7ce",
+        "locator": {
+          "end": 284,
+          "kind": "line_range",
+          "start": 213
+        }
+      },
+      "id": "RLZ-KK0WAS",
+      "invariant": "INV-29DEHG",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 1 — inputs — additional realizations",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The report owner reads canonical report text and resolves explicitly cited measurements within each collection.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "62215ea0a5252c997ca76c7b1680713485391419",
         "content": "sha256:b0fd75db266249dc184d51fdc14f5e8e679669b8ee3b8fa79b337df06cb8107e",
         "locator": {
           "kind": "symbol",
@@ -152,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+            "blob": "62215ea0a5252c997ca76c7b1680713485391419",
             "content": "sha256:b0fd75db266249dc184d51fdc14f5e8e679669b8ee3b8fa79b337df06cb8107e",
             "locator": {
               "kind": "symbol",
@@ -168,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+            "blob": "62215ea0a5252c997ca76c7b1680713485391419",
             "content": "sha256:b383884d5fd979d25ec4170406b2bccb264cb72d69e34af2653c01c7319a09f1",
             "locator": {
               "kind": "symbol",
@@ -184,7 +221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+            "blob": "62215ea0a5252c997ca76c7b1680713485391419",
             "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
             "locator": {
               "kind": "symbol",
@@ -196,14 +233,32 @@
       ]
     },
     "4": {
-      "note": "Folder removal collects first and only then deletes.\n\nAnchor: `remove_group_role_folders`",
+      "note": "Group folder removal collects evidence before reclaiming the local folders.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
-            "content": "sha256:725585688b760e5247852a20d50e3cef020e41db6fa871005d737ba11f408c5f",
+            "blob": "62215ea0a5252c997ca76c7b1680713485391419",
+            "content": "sha256:a41f7f49868d231e1f5f61fb28917aefb6103a742c10945e7d8d9a8ddda16514",
             "locator": {
-              "kind": "file"
+              "end": 385,
+              "kind": "line_range",
+              "start": 332
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Canonical report discovery intersects cited JSON paths with eligible files in the execution collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62215ea0a5252c997ca76c7b1680713485391419",
+            "content": "sha256:3f10ae98a4c8761409810abb12b5452035f0958e86103f6e6475a726e402539c",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_execution_reports"
             }
           },
           "kind": "code"

@@ -4,11 +4,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Application entry point validates coordination-contained paths, delegates to the worktree finalizer, and then performs configured completion cleanup.",
+      "note": "The application confines the task address and delegates finalization to the configured owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
             "locator": {
               "kind": "symbol",
@@ -20,23 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:a2e06d4e0f56f44fcbc6df5216e5af4ce622a968e1b8e934b6a9a97777c8c880",
             "locator": {
-              "end": 905,
+              "end": 881,
               "kind": "line_range",
-              "start": 856
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
-            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
-            "locator": {
-              "kind": "file"
+              "start": 832
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -73,15 +62,16 @@
       ]
     },
     "3": {
-      "note": "The response boundary is `complete_tool_response`.",
+      "note": "The tool response boundary is complete_tool_response.",
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
             "locator": {
-              "kind": "symbol",
-              "name": "complete_tool_response"
+              "end": 527,
+              "kind": "line_range",
+              "start": 401
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -89,12 +79,12 @@
         },
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:8f58a59dd927e2dbbb576bf82611e6bced2dab7e3b4b9dfda59266f466da7f96",
             "locator": {
-              "end": 135,
+              "end": 137,
               "kind": "line_range",
-              "start": 135
+              "start": 137
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },

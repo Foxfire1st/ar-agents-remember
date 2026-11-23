@@ -124,7 +124,7 @@ No cross-repo boundary is crossed by this file.
 ### Repo-Internal References (continued)
 
 
-- The old typed value yields an empty record lifecycle field in the fixture result. [38]
+- The old typed value yields an empty record lifecycle field in the fixture result. [39]
 
 - The unit-regression lane selects mcp/tests/test_knowledge_leaf_read.py. [37]
 

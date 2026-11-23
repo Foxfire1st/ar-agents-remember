@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8b5044cb35d74cbcfe60b1c71c6b40add295550a",
-    "commit": "bb2d0b3725aa01485e820692b17e130fb65b1669",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The capsule page's statements about the held mark on the launcher and message filing under the master or sprint still hold; it does not describe the launcher's Sprint field, and the new no-sprint choice leaves its claims accurate.",
-    "task": "261112-RSM-L1",
+    "statement": "A held start still preserves its opening handover, and the launcher marks the selected bound role as held.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/reference/role-capsules.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+      "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
     },
     {
-      "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+      "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },

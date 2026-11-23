@@ -10,13 +10,13 @@
 
 ## Purpose
 
-Builds, invalidates, publishes, and serves the disposable sprint closeout scheduling projection. Canonical task documents and closeout doors are its inputs; the root operation journal owns a claimed lifecycle after admission. The directory also houses closeout preview, Git-output recovery, and staged-quality helpers. Their location does not give scheduling projection state lifecycle, commit, or certification authority.
+Builds, invalidates, publishes, and serves the disposable sprint closeout scheduling projection. Canonical task documents and closeout doors supply its scheduling inputs. Synchronous closeout keeps its transaction authority in the worktree closeout owner. The directory also houses closeout preview, Git-output recovery, and staged-quality helpers. Their location does not give scheduling projection state lifecycle, commit, or certification authority.
 
 ## Hot Path Summary
 
-Canonical changes classified as affecting semantic topology or completion readiness invalidate affected sprint projections to invalid-empty. Rebuild derives a fresh projection from current task topology, canonical waiting doors, candidate evidence, planning registers, and per-contract activation. Publication rechecks the exact current source identity before publishing valid-built. The queue exposes status, rebuild, and the first-ready admission fence; member and graph helpers compute readiness and deterministic order.
+Canonical changes classified as affecting semantic topology or completion readiness invalidate affected sprint projections to invalid-empty. Rebuild derives a fresh projection from current task topology, canonical waiting doors, candidate evidence, planning registers, and per-contract activation. Publication rechecks the exact current source identity before publishing valid-built. The queue exposes status and rebuild. Member and graph helpers compute readiness and deterministic order.
 
-Closeout preview describes code and memory-content writes plus informational cache refresh. Recovery proves accepted outputs from exact Git refs and journal commit identities without reconstructing ledger commit authority.
+Closeout preview describes code and memory-content writes plus informational cache refresh. Ordinary closeout recovery checks exact Git refs and accepted output identities. The direct-landing owner settles the kept history-closing receipt for its generation. Ledger refresh stays informational.
 
 If recovered memory history was closed without a review fact, the success response can explain that the leaf’s revisions stay proposed. Recovery reads the owner history from the memory commit it already proved.
 
@@ -38,7 +38,7 @@ task or door mutation
 
 Task publication validates its canonical sources, publishes task truth, and then invalidates and rebuilds affected projections. A projection failure is returned as a typed effect rather than permission to reject already-published task truth. Door publication similarly proves the canonical door write before refreshing its projection. Effective reads also treat a stored projection as invalid-empty when its current source fingerprint, classification, or members differ.
 
-`closeout_queue.py` exposes status and rebuild. Its first-ready fence is called by lifecycle claim admission while the task/door CAS mutex is held. The claim route transfers the waiting generation into root-journal authority; the projection itself performs no claim transition.
+`closeout_queue.py` exposes status and rebuild and retains a first-ready helper. The current synchronous closeout entry calls its worktree owner directly. Queue rows remain planning observations.
 
 ### Readiness, topology, and evidence
 
@@ -60,9 +60,9 @@ A malformed or mismatched activation snapshot becomes a typed source problem wit
 
 `closeout_preview.py` describes the ordinary closeout sequence: candidate/source checks, code commit, onboarding and entity metadata refresh, route overview metadata and index refresh, memory-content commit, derived cache refresh, and contract finalization. Series closeout instead reads exact named code and memory refs and records already-created commits. Ordinary external-memory closeout creates one attributed memory-content commit when content changed and otherwise records the existing output.
 
-`closeout_recovery.py` owns Git-output recovery rather than queue authority. It compares exact code and memory refs with accepted journal commit identities, checks leaf worktree cleanliness with the memory cache excluded, and proves memory-source ancestry. Series recovery reads named work-branch refs rather than requiring leaf worktree cleanliness. Missing, unreadable, malformed, or changed `memory.md` does not decide these Git proofs. Cache refresh follows the proven memory output and reports availability separately.
+`closeout_recovery.py` owns Git-output recovery rather than queue authority. It compares actual code and memory refs with the accepted commit identities when recovery input is supplied, checks leaf worktree cleanliness with the memory cache excluded, and proves memory-source ancestry. The optional progress callback can record evidence for an owning operation. Ordinary synchronous closeout supplies no operation journal callback. Series recovery reads named work-branch refs rather than requiring leaf worktree cleanliness. Missing, unreadable, malformed, or changed `memory.md` does not decide these Git proofs. Cache refresh follows the proven memory output and reports availability separately.
 
-The ordinary commit helper publishes an accepted tree through the shared tree-publication primitive, which runs no Git commit hook. Integration publication separately checks source refs, ancestry, checkout state, and landing authority, then moves the prepared code and memory refs by compare-and-swap without creating a merge commit.
+The ordinary commit helper calls the shared tree publisher. The publisher runs the configured pre-commit check explicitly before `commit-tree` creates the object and the ref moves. Integration publication separately checks source refs, ancestry, checkout state, and landing authority, then moves the prepared code and memory refs by compare-and-swap without creating a merge commit.
 
 `closeout_staged_quality.py` retains explicitly invoked staged preparation and quality execution. Preparation refuses a non-linked or conflicted worktree before staging, checks an optional candidate before/after staging and after a configured pre-commit hook, and returns the actual tree/hook result. Requested certification freezes its profile/admission through `quality/certification_records.py`; the old closeout certification admission consumer is removed. None of these helpers grants scheduling projection state mutation or certification authority.
 
@@ -73,7 +73,7 @@ The ordinary commit helper publishes an accepted tree through the shared tree-pu
 - Task authoring never waits on or seeks permission from projection state. Classified canonical changes drive invalidation and rebuild; projection invalidation cannot destroy retained lifecycle conflicts, commit evidence, or an in-flight operation.
 - Activation is read-only input. The queue cannot select, publish, release, archive, or repair an activation record.
 - Projection source problems and readiness reasons are bounded and typed. Capacity refusals are classified as invalid rather than unreadable because their sources were read but exceeded a bound. Their codes and shared classification are declared together in `closeout_queue_errors.py`.
-- Mutable blocker, QueueBinding, certification, consumption, and action-driven initial-state contracts are not operative scheduling-projection contracts. Door sources, root-journal claim ownership, and protected-ref landing authority are separate boundaries rather than queue compatibility mechanisms.
+- Mutable blocker, QueueBinding, certification, consumption, and action-driven initial-state contracts are not operative scheduling-projection contracts. Canonical door sources and protected-ref landing authority have their own owners. The retained first-ready helper checks a projection member when explicitly called. The ordinary closeout tool goes directly to its synchronous transaction owner.
 
 ### Quality-action intent and current enforcement
 
@@ -87,12 +87,16 @@ Historical labels such as final, landed, and resolved describe earlier curation 
 
 ## Evidence
 
-- Recovery derives the no-pass sentence only after finding the exact recorded memory output. [7]
+- Recovery derives the no-pass sentence only after finding the exact recorded memory output. [8]
 
 
 - Canonical census, readiness, source planes, and immutable snapshots construct fresh membership. [2]
 
-- Canonical publication precedes projection refresh; exact-current publication and first-ready admission do not give projection rows lifecycle authority. [3]
+
+
+- Canonical task and door publication precedes projection refresh. The retained first-ready helper can check projection readiness. The synchronous closeout owner separately admits and executes its transaction. [3]
+
+
 
 - Graph resolution uses the task terminal predicate; activation and capacity classifications retain their own deciding owners. [4]
 

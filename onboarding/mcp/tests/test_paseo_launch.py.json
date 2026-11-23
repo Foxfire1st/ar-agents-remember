@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7630b4f03f2e79c3a03b3552892457f28bd0cb98",
+        "blob": "d421b2ae9950536279c0e3787ecb0adf8df257e4",
         "content": "sha256:f0f9a5e4c0af53589b67b72220b5355183cdd3e1625994fa8a50537ca21ed247",
         "locator": {
           "kind": "symbol",
@@ -22,14 +22,40 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "Dispatch fixtures cover refusal boundaries, ACP task-server binding, feature-value merging and recovery notes at both report depths.",
       "targets": [
         {
           "anchor": {
-            "blob": "7630b4f03f2e79c3a03b3552892457f28bd0cb98",
-            "content": "sha256:a8990b0207d7102eb08de50307f0d286147cb3c2c55ebe5eefc3250d01c1fe3e",
+            "blob": "d421b2ae9950536279c0e3787ecb0adf8df257e4",
+            "content": "sha256:a0daaf995c2dc0376fd231379af2941a560be614a99f96b9d31a2c408b5b1aeb",
             "locator": {
-              "kind": "file"
+              "end": 491,
+              "kind": "line_range",
+              "start": 414
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d421b2ae9950536279c0e3787ecb0adf8df257e4",
+            "content": "sha256:0a5160ca9ebeb61bdc94f39b22a3a7f9491dd0f4dbc7ea59c3254602fabb0634",
+            "locator": {
+              "end": 525,
+              "kind": "line_range",
+              "start": 494
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d421b2ae9950536279c0e3787ecb0adf8df257e4",
+            "content": "sha256:668ffe27060a19a1eb16440b4ef4481e1838a3e7ccf0e334c45ba828dc9b1c9a",
+            "locator": {
+              "end": 616,
+              "kind": "line_range",
+              "start": 528
             }
           },
           "kind": "test"
@@ -37,14 +63,28 @@
       ]
     },
     "2": {
-      "note": "The launch fixture now imports `FakeRuntime`, `CATALOG` and `SERVER_ID` from `paseo_launch_test_support`; `CATALOG` remains exported for suites built on this fixture. `PaseoLaunchTestCase.setUp` wires the shared fake into catalog/launch/status bridge calls. This is fixture-owner relocation, not a change to launch identity, retry or holder-replacement semantics.",
+      "note": "The launch fixture reuses the shared fake runtime and connects it to catalogue, launch and status calls.",
       "targets": [
         {
           "anchor": {
-            "blob": "7630b4f03f2e79c3a03b3552892457f28bd0cb98",
-            "content": "sha256:a8990b0207d7102eb08de50307f0d286147cb3c2c55ebe5eefc3250d01c1fe3e",
+            "blob": "d421b2ae9950536279c0e3787ecb0adf8df257e4",
+            "content": "sha256:97d148c3198db7f7a9eddc7a2ac7686220c621d6e466840331e5fa2ad8e6685b",
             "locator": {
-              "kind": "file"
+              "end": 57,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d421b2ae9950536279c0e3787ecb0adf8df257e4",
+            "content": "sha256:3dee2092f41e3488e8ff7b7cbfbf8eb628ba7320eece84735aebb56db62ea406",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 230
             }
           },
           "kind": "test"

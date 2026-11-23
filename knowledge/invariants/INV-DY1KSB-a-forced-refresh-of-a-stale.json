@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A mixed selector is refused by the host and leaves the report stale."
+  },
+  "applicability": "Forced provider-limit usage refresh for a stale leaf report on Paseo 0.16.2.",
+  "conditions": [
+    "Ordinary reads select an agent.",
+    "The native host refuses agentId together with reportIds."
+  ],
+  "exclusions": [
+    "Fresh, non-leaf and error entries are not forced here."
+  ],
+  "id": "INV-DY1KSB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Worker L10-W5-USAGE and W5 evidence-6-version-sentences.md. mcp/tests/test_paseo_usage_reports.py::test_a_stale_leaf_entry_is_refreshed_by_report_id_alone."
+      ],
+      "path": "L10 curated W6 rules and history"
+    },
+    "handoffEntry": "L10-curated-usage-selector",
+    "leaf": "261112-BUG-L10",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A forced refresh of a stale Paseo usage report selects that report by reportIds alone.",
+  "status": "proposed",
+  "supersedes": []
+}

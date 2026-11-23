@@ -143,7 +143,9 @@ No configured live documentation source was available for this pass.
 
 - The run entry point it re-exports (since MIK-R09 a Git call that fails or times out makes the run `incomplete` naming `git`). [13]
 
-- The one recompute entry point it re-exports for L08's triggers (since MIK-R09 a Git failure is named `git`; the mandatory gate recomputes through `leaf_worklist` over its exact candidate). [14]
+
+- On a memo miss the mandatory gate computes its exact candidate worklist through leaf_worklist. An unsuccessful Git read reports the git input. [14]
+
 
 
 ### Cross-Repo References

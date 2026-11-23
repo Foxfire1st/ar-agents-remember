@@ -1,0 +1,84 @@
+{
+  "path": "docs/host.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e91f84dbf515304a6514531795df75b6c8953b25",
+        "content": "sha256:f8a25b7d9654be043a277deeec68c505e819b79869244af69727331d700d5984",
+        "locator": {
+          "end": 297,
+          "kind": "line_range",
+          "start": 275
+        }
+      },
+      "id": "RLZ-4HET4N",
+      "invariant": "INV-47MBEJ",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 6",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Anchors the fresh and Retry boundaries and the pinned ACP mapping.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The host guide states the native refusal, ACP route and the distinct installed witness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e91f84dbf515304a6514531795df75b6c8953b25",
+            "content": "sha256:ddf78d3fb7ee0308754e477130213cd62091b4c2ecfb290d3f2489d23d69403a",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 273
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Saved native Retry checks the recorded agent before the bridge's create branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:5e597b4f0667c3ce70b87d2d6b595b7e5c5d4e24757dc61c50b155a20b3276ff",
+            "locator": {
+              "end": 736,
+              "kind": "line_range",
+              "start": 719
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Paseo 0.16.2 forwards the mapped ACP servers to the session call.",
+      "targets": [
+        {
+          "document": {
+            "document": "https://github.com/getpaseo/paseo/blob/v0.16.2/packages/server/src/server/agent/providers/acp-agent.ts#L1864-L1876"
+          },
+          "kind": "external"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pinned ACP mapping carries the standard I/O server definition.",
+      "targets": [
+        {
+          "document": {
+            "document": "https://github.com/getpaseo/paseo/blob/v0.16.2/packages/server/src/server/agent/providers/acp-agent.ts#L3676-L3691"
+          },
+          "kind": "external"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,13 +1,17 @@
 {
   "anchor": {
-    "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
-    "content": "sha256:d909f4d53b0db6ee79f92f393ed8f3059eaa2583c683e98397f5c744c2f32a47",
+    "blob": "15309ad6b049930305c951f5d1694b2e0c9bc5ba",
+    "content": "sha256:4e8068bc61dd4491fd1e97252b0274416a41cd5dfe5cd96e05b58e967880c509",
     "locator": {
-      "end": 30,
+      "end": 33,
       "kind": "line_range",
       "start": 30
     },
     "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+  },
+  "closed": {
+    "reason": "The pick and bridge adapter headers and the controlling bundled host contract all name Paseo 0.16.2 in W5.",
+    "task": "261112-BUG-L10"
   },
   "id": "WKN-7DDHBZ",
   "kind": "debt",
@@ -19,12 +23,12 @@
     "leaf": "260928-MIK-L189",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L189"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "The plug-in's DOM adapter headers in pick.ts and bridge.ts still name Paseo 0.11.1 while this build pins @getpaseo/server 0.12.0, so a reader of the measurement code must reconcile two version claims across two files."
 }

@@ -3,15 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "ClosureProofStore keeps each closure with its witnesses and layout digests rather than alone.",
+      "note": "The disk store keeps up to 64 proof files by default. Each proof file holds the complete object-ID list and its witness, reference and layout stamps.",
       "targets": [
         {
           "anchor": {
-            "blob": "0c6500dcc307c8b462979486fa4971f27adba67a",
-            "content": "sha256:0347b058e333f1f0e738d67ba3d5bbd80e1ccd57b07c817d7b04b51e790dc2db",
+            "blob": "0a47c29b8d7e8c78acf70abdcb742dba492a361d",
+            "content": "sha256:8282df738bd144cc5fd8f0d4fb3cf3d8c6eb9836d719d0ebf2440ee4e8e21a27",
             "locator": {
-              "kind": "symbol",
-              "name": "ClosureProofStore"
+              "end": 35,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a47c29b8d7e8c78acf70abdcb742dba492a361d",
+            "content": "sha256:25e548420e2e49c1232ed21c5b9e269c77fbd3bc64c63fafcade5d9e579b433b",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 101
             }
           },
           "kind": "code"

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
-    "statement": "The writers-view and knowledge-write passages describe bounded writer aggregates and their full report, the typed-state refusal and the caller-derived writer stamp.",
-    "task": "261112-KNO-L3",
+    "statement": "The MCP reference describes the typed role contracts, same-request reconciliation and single-seat boundary, task-document review and synchronous closeout, and six overflow declarations by wire Boolean, including the integrity refusal with ok true, bounded landing debt and its next step, whole-field fitting, named omissions and exact result locators.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -53,7 +53,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
     },
     {
-      "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+      "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
     },
@@ -78,7 +78,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
     {
-      "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+      "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
     },
@@ -93,7 +93,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "3f91234661460904091f50cb41164456aa515f04",
+      "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -143,7 +143,7 @@
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+      "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
     },
@@ -163,7 +163,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
     },
     {
-      "blob": "a4c81afd001136ccb209cc1f91a87644b418cd50",
+      "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -183,12 +183,12 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_field_homes.py"
     },
     {
-      "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+      "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/review_history.py"
     },
     {
-      "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+      "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
@@ -248,7 +248,7 @@
       "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py"
     },
     {
-      "blob": "9ba18ba55892e8f0b93f5fc884c00071c23e31e0",
+      "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
     },
@@ -283,7 +283,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/master_review_gate.py"
     },
     {
-      "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+      "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_response.py"
     },
@@ -293,7 +293,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
     },
     {
-      "blob": "d6a81b841bf29a345dc9d7857710af32751ee689",
+      "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },
@@ -313,7 +313,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
     },
     {
-      "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+      "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
     },
@@ -326,6 +326,32 @@
       "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+    },
+    {
+      "anchor": {
+        "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+        "content": "sha256:9bfc3dc0a03ede235ffacd9b7022d894b039b115264c8b05e0e28a88faf14559",
+        "locator": {
+          "kind": "symbol",
+          "name": "declared_short_fields"
+        },
+        "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+      },
+      "heading": "Tool answers",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+        "content": "sha256:3ebb97025105171a88b5a176c9a9d9e5317c5116b3bc90648c6a27d044a3dbe7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refused_check"
+        },
+        "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+      },
+      "heading": "Tool answers",
+      "kind": "anchor"
     }
   ]
 }

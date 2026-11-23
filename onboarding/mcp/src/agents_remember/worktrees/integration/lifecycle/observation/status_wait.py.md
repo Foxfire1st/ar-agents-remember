@@ -9,9 +9,8 @@
 Read-only bounded wait on lifecycle meaningful-state changes (CCR-R15). The wait is addressed by
 canonical contract, operation kind, expected public generation, and an opaque typed afterRevision
 (the durable meaningful-state cursor of a prior snapshot). It never accepts an operation key or
-PID, never acquires the lifecycle/queue/gate/worker authority, and never writes the journal: every
-read goes through `LifecycleOperationStore.read` (lock-free), so waiters can neither block
-writers nor mutate state.
+PID. Its wait uses lock-free `LifecycleOperationStore.read` calls and leaves journal state
+unchanged. The public status-wait controller that originally used this observer was removed.
 
 ## Code Commentary
 

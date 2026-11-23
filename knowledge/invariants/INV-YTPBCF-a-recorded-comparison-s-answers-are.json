@@ -8,12 +8,11 @@
   },
   "applicability": "The reviewer's reads of a recorded comparison: its task-context intent, its entries and its tree view.",
   "conditions": [
-    "A live comparison is not a recorded one and is never served from this store.",
     "An answer is kept only when observations taken before and after its computation agree."
   ],
   "exclusions": [
-    "A live comparison's answers, computed on every read.",
-    "The change-set cache's own accepted gap, which this statement does not extend."
+    "Whole live reviews and the live subject catalogue can reuse a result on a freshly proven comparison witness.",
+    "The change-set cache’s separately accepted exact-key reuse gap."
   ],
   "id": "INV-YTPBCF",
   "origin": {
@@ -27,9 +26,9 @@
     "leaf": "260928-MIK-L177",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A recorded comparison's answers are served again unchanged only while every input they are a function of still holds — its record's bytes, its generation directories, its worklist and the readability of every recorded tree — and the kept answer is byte-identical to a fresh computation of those inputs, while a live comparison is computed on every read.",
+  "statement": "A recorded comparison answer is reusable only while its record, generation inputs, worklist and recorded tree readability still match, and the reused answer is byte-identical to a fresh computation.",
   "status": "proposed",
   "supersedes": []
 }

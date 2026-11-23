@@ -9,6 +9,10 @@ Code `reviewState` and the candidate’s pre-closeout `memoryReviewState` are in
 
 A memory round can retain the reviewed memory tree, verdict, recorder and original handover stamps. Older rounds omit fields they never stored. Closeout evaluates the last recorded memory round against its selected source before recording the review fact.
 
+A sanctioned addition stores its description in `baselineFindings` and its ID and route in
+`addedFindings`. The amendment records the reopened verdict separately from counted rounds.
+The route BLOCK uses `addedFindingIds` to name the open additions. These fields are review evidence.
+
 `tasks/` owns the persisted `ar-task-document/v1` work-content model and its Markdown rendering. JSON holds plans, progress, decisions, references, review evidence, and optional lifecycle/enclosure bindings. Markdown is a generated view; it is not parsed back into task authority. Light and master documents write to `task.json`/`task.md`; a `subTask` uses its slug. This lets planning and running work share a task-document source while runtime lifecycle, enclosure, Git, and queue owners retain their separate responsibilities.
 
 The route also owns structural sprint/master/leaf addressing, canonical parent-row/leaf binding, normative task-intent projection, completion-readiness predicates, execution-graph validation, semantic topology identity, and same-root leaf-to-master synchronization. Structural addressing does not itself select a live runtime occupant. Reopening an enclosure belongs above this route in `worktrees`; its document reset still uses the task persistence owner.
@@ -187,9 +191,9 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - A kept view ignores every task document it did not read. [29]
 - A document that begins to claim the leaf is not hidden by a kept view. [30]
 
-- The persisted round distinguishes code and memory evidence and carries optional reviewed-tree and writer facts. [59]
+- The persisted round distinguishes code and memory evidence and carries optional reviewed-tree and writer facts. [61]
 
-- Closeout checks the last recorded memory round. That round must itself pass, name a usable verdict reference and name the exact closeout memory tree. A later block leaves an earlier pass ineligible. [60]
+- Closeout records a memory review fact only when the memory review lane has no open findings and its last recorded round passes, carries a usable verdict reference, and names the exact pre-write memory tree. A later block leaves an earlier pass ineligible. An open finding withholds the fact even when the earlier passing round remains recorded. [62]
 
 - Retained reference account (no fresh execution or acceptance inferred): The `task_doc` application entry point authors documents through this package. Anchor: `task_doc_tool` [5]
 

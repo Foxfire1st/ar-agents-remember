@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
         "content": "sha256:35b46b16e26283431beb31ebcbe623858e42207cc2dac364badb7fd97dd46597",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
         "content": "sha256:a79bcd7620a4552898646b497b41c9bdca69ec742036fb20188632af66986e0b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
         "content": "sha256:da4be66fad4859a66e09de02a3344c3a147af096446e81d83be37d38bce4f1f5",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
         "content": "sha256:ec340444e43d62304c3e19ff3ee9773631aa4d14527c4d45aebd525550cd3d1c",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
         "content": "sha256:807064e599e8c1d00db8002d3485c51832adb1dbd9d818dfeafc9abbc22d9732",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
         "content": "sha256:d3f74e604eac6700c9b5849ce63e0b0be852bc492a34f201e9fac52f2cf91089",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
         "content": "sha256:d52ef903dd6a1641e59edd538283183cbbe911ec7d39817f3787e70b1ab54409",
         "locator": {
           "kind": "symbol",
@@ -124,10 +124,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
-        "content": "sha256:9dee62ec7a331a29d3d48db203963a44ed4a961491936bb2777310066c1c6ee6",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "content": "sha256:42d38daf02b893c35902b9729391307f74c28d5937bc3b2a36af9f1027984064",
         "locator": {
-          "end": 120,
+          "end": 121,
           "kind": "line_range",
           "start": 120
         }
@@ -138,12 +138,12 @@
         "handoffEntry": "L62-CUR-6db-attach-INV-CV3MW4",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "The Worker stage oracle now points to the repository memory-layer handover checks and a clean copy of final bytes.",
+      "rationale": "The Worker stage wording test requires handover checks on a clean copy of the frozen candidate and names both the Reviewer and Manager as report recipients.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
         "content": "sha256:2dbaab4852fc1c95bca0dc735510379693e43c1bf198438e89efe440d4c9f92c",
         "locator": {
           "kind": "symbol",
@@ -161,7 +161,7 @@
     },
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
         "content": "sha256:1be6f50cdf983c8f06ae5c45d6b069ec5a0e7c4dd9a9b092e905e412c30a152a",
         "locator": {
           "kind": "symbol",
@@ -179,7 +179,7 @@
     },
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
         "content": "sha256:bdebe569c19b4148f8e3fd4df02667a7a21eb6c6bd8f8534979d8a438928481c",
         "locator": {
           "end": 152,
@@ -198,7 +198,7 @@
     },
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
         "content": "sha256:35b46b16e26283431beb31ebcbe623858e42207cc2dac364badb7fd97dd46597",
         "locator": {
           "end": 626,
@@ -217,8 +217,8 @@
     },
     {
       "anchor": {
-        "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
-        "content": "sha256:c77a22ea98483b365ec562dd0d12836f0c896255d9bcb9b9dd7386c6240bf58d",
+        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "content": "sha256:f6c8eda0f3fcc573232744df8cbf57a0502c26fb6dc91c0059da961dffeaa141",
         "locator": {
           "end": 441,
           "kind": "line_range",
@@ -241,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
             "content": "sha256:af98bd8aa55fb122c2c941301dd2eb8bef5362a48b52102b2c69487ad0b990b0",
             "locator": {
               "kind": "symbol",
@@ -257,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
             "content": "sha256:ec340444e43d62304c3e19ff3ee9773631aa4d14527c4d45aebd525550cd3d1c",
             "locator": {
               "kind": "symbol",
@@ -273,7 +273,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
+            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
             "content": "sha256:2705e46482371922d94e3970e0acf1bbda85cbd87350ce62dfeb248111b2d881",
             "locator": {
               "kind": "symbol",
@@ -289,8 +289,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
-            "content": "sha256:c0af15c0ed6b84f106f97561d2c558798e25ff8e23406a49eed5af8e5bbcfe59",
+            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+            "content": "sha256:26bc0620b4566f0920efdfd7cbcdcb26b1eb1dea3f10026f2428e230e9dcd384",
             "locator": {
               "kind": "symbol",
               "name": "STAGE_CONTRACTS"
@@ -301,12 +301,12 @@
       ]
     },
     "5": {
-      "note": "Worker stage completion requires the handover checks named in workspace.memoryRoot/system/coding-guidelines.md on a clean copy of final bytes. A dedicated control rejects replacement by or reinsertion of the retired fixed focused-tests/lint/type sentence. Curator stage facets directly preserve covered-write recovery, manual provenance and stop boundaries. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "note": "Worker stage completion requires the handover checks named in workspace.memoryRoot/system/coding-guidelines.md on a clean copy of the frozen candidate and reports to the Reviewer and Manager. A dedicated control rejects replacement by or reinsertion of the retired fixed focused-tests/lint/type sentence. Curator stage facets directly preserve covered-write recovery, manual provenance and stop boundaries. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
-            "content": "sha256:9df75e396735eddf2453b16f37b61b73d009fe93c03e7b54dbacfe1e0f36b949",
+            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+            "content": "sha256:7e8d49dca75aa03b8514fcd1f7ef9ae02e6abae977b31624997ed3c29d2e2d44",
             "locator": {
               "kind": "symbol",
               "name": "STAGE_PARTS"
@@ -316,8 +316,8 @@
         },
         {
           "anchor": {
-            "blob": "287e37afe1ab390a6b72c9520fe0dceebd3b1872",
-            "content": "sha256:9075a6ffa113b2cbcc3759bedd0b578965ebe45e0ad7cabc7fb8d8cb04d8920e",
+            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+            "content": "sha256:aafc62f80429ca0d7204b7e5944656236e036610eb32621ae40053b190613649",
             "locator": {
               "end": 153,
               "kind": "line_range",

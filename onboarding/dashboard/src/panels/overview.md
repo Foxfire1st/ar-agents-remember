@@ -363,7 +363,9 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 
 - The remaining Operations rowState and treeRows modules own task-row facts and hierarchy; the removed chat activity indicator supplies no current state owner. [192]
 
+
 - The hand-kept snapshot payload provides the generated timestamp. [57]
+
 
 - **The two readers share one hoisted helper — `unlistedPathNote` (`FamilyReviewCenter.tsx:87`), called by the member attribution at `:139` and by the family expression row at `:275` — while each renders a listed path separately: the attribution inlines its own branch and the family side uses `listedOrPlainPath` (`:286`), so no two-shared-owner guarantee holds.** [112]
 
@@ -517,12 +519,12 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 - Selected semantic details retain the subject worklist/knowledge notice owner; page-level Worklist is separate. [122]
 - Current family owners for the review page account. [211]
 
-- The Records branch gives each record row optional state and writer text through the shared formatter. [227]
+- The Records branch gives each record row optional state and writer text through the shared formatter. [234]
 
-- The record heading displays supplied revision state and compact writer alongside record status and optional currentness. [228]
-- Record links can display the supplied revision state and writer beside their link. [229]
+- The record heading displays supplied revision state and compact writer alongside record status and optional currentness. [235]
+- Record links can display the supplied revision state and writer beside their link. [236]
 
-- The sidebar formats supplied state and writer through the shared formatter. [230]
-- KnowledgeTree passes the optional standing text to ExplorerTree as row detail. [231]
-- ExplorerTree renders the detail as a wrapping second line. [232]
-- The family detail lists its members through RecordLink. [233]
+- The sidebar formats supplied state and writer through the shared formatter. [237]
+- KnowledgeTree passes the optional standing text to ExplorerTree as row detail. [238]
+- ExplorerTree renders the detail as a wrapping second line. [239]
+- The family detail lists its members through RecordLink. [240]

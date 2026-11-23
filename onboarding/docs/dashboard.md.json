@@ -3,12 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5b24684fc2d27520b113e72cd25071b604bcb2d7",
+        "blob": "956aa5676ac7e04fa67a45d66a093ca145789084",
+        "content": "sha256:16d78ed5ce3e1a8c849848cbe3a3752629cb745916c18a5cd86e479e72cc4dd4",
+        "locator": {
+          "end": 180,
+          "kind": "line_range",
+          "start": 180
+        }
+      },
+      "id": "RLZ-5V66K6",
+      "invariant": "INV-TRCBNZ",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 2",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Explains clearing held options, renewing the snapshot and reading the shown model in order.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "956aa5676ac7e04fa67a45d66a093ca145789084",
         "content": "sha256:564f24fc08af9e74e81c8add3c7f5e77f051b9db0d41080531a01b5620bd247d",
         "locator": {
-          "end": 127,
+          "end": 129,
           "kind": "line_range",
-          "start": 125
+          "start": 127
         }
       },
       "id": "RLZ-9NWQP5",
@@ -19,8 +38,95 @@
       },
       "rationale": "The Sprint and Master control rows no longer require a sprint for a standalone master.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "956aa5676ac7e04fa67a45d66a093ca145789084",
+        "content": "sha256:ddab2868457d4a8f0cfcb52006bd4ed1b1261f6d0486c3adb85c5584776ca7cf",
+        "locator": {
+          "end": 195,
+          "kind": "line_range",
+          "start": 193
+        }
+      },
+      "id": "RLZ-ECNX51",
+      "invariant": "INV-J2SF5K",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 1",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Explains the selectable inventory, the shown provider/model read and reuse of held options.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "956aa5676ac7e04fa67a45d66a093ca145789084",
+        "content": "sha256:0329e130ac8f552e548165776fe5e12f64ccd3ab60de746effceebff168ff68c",
+        "locator": {
+          "end": 203,
+          "kind": "line_range",
+          "start": 197
+        }
+      },
+      "id": "RLZ-PX0EHZ",
+      "invariant": "INV-1DBF74",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 5",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Explains saved inventory, omitted feature overrides on fresh Start, exact Retry and unchecked fallback.",
+      "role": "presentation"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The guide describes ordered Refresh, selectable saved inventory, and the separate treatment of feature overrides on Start and Retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956aa5676ac7e04fa67a45d66a093ca145789084",
+            "content": "sha256:109130f6b711f7fdfffa03de85b8046e9d8788377d3fd46826e760d855cb2bbf",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pane waits for current metadata, caches each shown pair, and sends feature overrides on new Start only with fresh options.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+            "content": "sha256:31e1ff14d04084f54bad5ce0ccbe54b38baf4b987a7ab48903488981851f6295",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "821f21c80bdb705adf01849d194ac6ef9bfb6375",
+            "content": "sha256:a6d210598c8fa19164f4da857ace115d3f4892461ad7a05948752174798977f3",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

@@ -408,15 +408,16 @@
       ]
     },
     "27": {
-      "note": "The closeout gate recomputes its worklist and reads no earlier persisted document.",
+      "note": "The standalone cold recomputation computes the worklist without reading an earlier persisted document.",
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:d933a755a1153049feff1f7157f4afed912fe5f0ff83b43663061e60bc24506f",
             "locator": {
-              "kind": "symbol",
-              "name": "recompute_for_gate"
+              "end": 270,
+              "kind": "line_range",
+              "start": 251
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },

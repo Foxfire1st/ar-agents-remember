@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "70142b8e0cf0d9760491f30298a95537c265702c",
-        "content": "sha256:eee96ae3691247bb9175e605fd4ccc5fa800adfc0d50c1692d21141932766ab9",
+        "blob": "fd31649de774f5e9402709806dc805c1abf5b852",
+        "content": "sha256:16dd98763251893d17c7ddc8d968757952e0cbdbb873a8561683c6172eeba301",
         "locator": {
           "kind": "file"
         }
@@ -21,14 +21,30 @@
   ],
   "references": {
     "1": {
-      "note": "The source defines this file's responsibility and the boundaries described here.\n\nAnchor: Current declared source extent",
+      "note": "The source defines the adapter fixtures and their asserted boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "70142b8e0cf0d9760491f30298a95537c265702c",
-            "content": "sha256:eee96ae3691247bb9175e605fd4ccc5fa800adfc0d50c1692d21141932766ab9",
+            "blob": "fd31649de774f5e9402709806dc805c1abf5b852",
+            "content": "sha256:16dd98763251893d17c7ddc8d968757952e0cbdbb873a8561683c6172eeba301",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The native identity discovery case creates its project under a short temporary root. Paseo flattens the absolute project path into one filename component, so the case owns that width while exercising fresh, stale and ambiguous records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd31649de774f5e9402709806dc805c1abf5b852",
+            "content": "sha256:b5fe6d8cb40ab73046b176ef848d4a370f85309e08b37b80bf01958debf1b49a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_identity_discovery_requires_unique_fresh_exact_project"
             }
           },
           "kind": "test"

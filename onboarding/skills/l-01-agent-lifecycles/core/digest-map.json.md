@@ -19,9 +19,11 @@ Stable source-unit IDs retain their baseline provenance and authored semantic me
 
 
 
+
 ### Repo-Internal References (renewed)
 
 - The unit definition explains ID preservation and the role vocabulary. Anchor: `unitDefinition` [2]
+
 - The authored digest block records its path, semantic places and retained ceiling-authority decisions; generated current digest hash and size are stored in derived.digest. [4]
 
 - Current units distinguish reference evidence from selected digest lines; retired units keep their record. [3]

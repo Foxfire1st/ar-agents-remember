@@ -1,0 +1,3335 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L18",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-00FGZ8",
+      "items": [
+        "sha256:6fe8085ffdfe25f086082cd3f464c7368331ea2d414901f194a4026b4070baf1"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits. The historical attribution assigned Investigator policy to the registrar. The W2 registrar delegates the typed call to the policy owner. The immutable memory base c79c2640d7a24295ff3fff3049d90cfe884214f0 preserves reference 2 and its original supports.",
+      "sources": [
+        {
+          "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+          "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/role_agents.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0AHRZ5",
+      "items": [
+        "sha256:eeae3b119049619f6d5457dc19496e435ec4edad699c2bbe83d3a4ad68e9e57a"
+      ],
+      "reason": "Describe journal reuse under native request and dashboard process ownership.",
+      "sources": [
+        {
+          "blob": "386d55399e7014305d244c238a4168be81704750",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_record_cache.py"
+        },
+        {
+          "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0ANVCY",
+      "items": [
+        "sha256:425e9c24e8c5d190d0cc88738565171736db17151def80dc2f766f425fb18fc1"
+      ],
+      "reason": "Describe how exact TypeScript anchor inputs and unresolved answers use the active request owner, with a separate process memo for unscoped callers.",
+      "sources": [
+        {
+          "blob": "6304a991e5187181bfa80c1a5cf6e586c6069b99",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0CK79Z",
+      "items": [
+        "sha256:bd6515e6d24174bac861e3699d3195ce521ee3e13e32b0bc0f0c644b2f81ae32"
+      ],
+      "reason": "The module description records the charged-byte ceiling alongside the entry limit and witness qualification. Its memo definition applies the ceiling.",
+      "subject": "hunk:sha256:bd6515e6d24174bac861e3699d3195ce521ee3e13e32b0bc0f0c644b2f81ae32"
+    },
+    {
+      "considered": [
+        "FAM-GPNRVQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-0HAVBD",
+      "items": [
+        "sha256:db3a5d420f83c95800a5bd2a919227122aa6257051d473ce162c89a15af5d931"
+      ],
+      "reason": "Whole-object spool allocation is distinct from the existing resolved-tree and evidence-range promises.",
+      "revision": 1,
+      "subject": "membership:INV-03CT75"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:3a6f3c9a9799ed9aa36ee658e0f57efe681d5704ad5d184682812bc0bea547fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:dc44cac147a4b2c72aca6fc606426f712c933c5ff1ba8017be4f5cb0d82b0449",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:4e84a1e0ac9cbe0c8afb17e3de0218b5134da675b5f862bfb7f371b5518fbfa8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:1629e291661bcc6750b4f89e567cd811a9d4969d78dd014de0a83a18862c9273",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0MF57M",
+      "items": [
+        "sha256:07eff5856d73ffcc46d8fc738f64b156795c469c1de69189d37a710cf505342b"
+      ],
+      "reason": "The new support artifacts name the native stress test as their exact consumer. The lifecycle catalog, stress-durability lane and executable contract name the same test.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0NT836",
+      "items": [
+        "sha256:771c1a7cd7a4d5df32470b89fe7c507922be379cecf0e4d255e42c299f19f73e"
+      ],
+      "reason": "Reconfirm the document against the paired W3 source and refresh its affected support links. The shipped tool details retain their scoped quality, worklist and reply contracts while W2 separates detached computation ownership from the retained run registry.",
+      "revision": 11,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "considered": [
+        "FAM-EASWS6"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-0PF70D",
+      "items": [
+        "sha256:d27e3bc592dcd684f3919ec418f298cfb14c084122b705fcdfe36ae875545dd6"
+      ],
+      "reason": "Shared alternate history preserves a fixed-size comparison witness under the existing generation family without changing that family’s stable-input obligations.",
+      "revision": 1,
+      "subject": "membership:INV-60GH3Y"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0SCZFZ",
+      "items": [
+        "sha256:2b26a7067e675afd5defb36af5cc4d6c149b6c7cadead41cc23c11d74d1d3a9f"
+      ],
+      "reason": "Describe re-fit against the final hint and running omission count, including exact locator retention.",
+      "sources": [
+        {
+          "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/tool_answer.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0V44WP",
+      "items": [
+        "sha256:242bce64f0a90125f457a7ad96421948c92ce13eca482e02d1663f1c256bdaac"
+      ],
+      "reason": "The server drops its CancelScope import after moving cancellation draining to the thread worker module.",
+      "subject": "hunk:sha256:242bce64f0a90125f457a7ad96421948c92ce13eca482e02d1663f1c256bdaac"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0YQ87V",
+      "items": [
+        "sha256:82237b2e9d0cc89fb333fd43a0c9f5b164486e221e89e335d4e3b21f5be9194f"
+      ],
+      "reason": "Reconfirm the document against the paired W3 source and refresh its affected support links. The contributor guide still describes the seven-lane selection and catalog workflow, with the native stdio memory case selected through stress-durability.",
+      "revision": 9,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0ZCCYT",
+      "items": [
+        "sha256:f1a46790492e74f6fc1d1a9e489415784f3fb7b3a604571815c8a44ffe870462"
+      ],
+      "reason": "Explain bounded whole-parse route reuse and preserve the separation from worklist item identity.",
+      "sources": [
+        {
+          "blob": "08cb842723272236e27ee050892ceb8f45133f7a",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/route_context.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/route_context.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "141dbff7ec35bacf0f84ee6a6b2ae8eb24559931",
+            "content": "sha256:be5e918b7e5825f69452b7cce5bfcadc636a21070b3e62e8ebf7c208b9b01e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedAnswerReuse"
+            },
+            "path": "mcp/src/agents_remember/serving/review_answer_reuse.py"
+          },
+          "before": {
+            "blob": "141dbff7ec35bacf0f84ee6a6b2ae8eb24559931",
+            "content": "sha256:be5e918b7e5825f69452b7cce5bfcadc636a21070b3e62e8ebf7c208b9b01e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedAnswerReuse"
+            },
+            "path": "mcp/src/agents_remember/serving/review_answer_reuse.py"
+          },
+          "id": "RLZ-V4HXV2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-10Z1JA",
+      "items": [],
+      "reason": "Remove the overbroad live exclusion. The answer owner admits only whole live reviews and the live subject catalogue on a proven current comparison witness, with source inputs reobserved and the answer required to name the same comparison. Its recorded-input guarantee is preserved. Correct the size-and-age rationale to reflect the current count, byte and disk limits and exact input validation.",
+      "revision": 2,
+      "subject": "INV-YTPBCF"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19P897",
+          "revision": 1
+        },
+        {
+          "id": "INV-BBPPS5",
+          "revision": 3
+        },
+        {
+          "id": "INV-HHZP57",
+          "revision": 1
+        },
+        {
+          "id": "INV-PKBCZ0",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z2HVKA",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-1A8HWX",
+      "items": [
+        "sha256:90a7eaede8f95179c717c63e7ce7a16a416e155265e341b58d36f2d7d322d8ad"
+      ],
+      "reason": "The corrected view member retains exact consumed-read currentness and the one repeat on moved observations. The independent child computation, in-flight sharing, worker drain, compare-once and serving-boundary obligations remain under the same joint guarantee.",
+      "revision": 1,
+      "subject": "FAM-TYKA3T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1KJFN3",
+      "items": [],
+      "reason": "The historical transport caption used Git subprocess references. The current fixed transport case binds StdioServerParameters and ClientSession in its own source. The immutable memory base c79c2640d7a24295ff3fff3049d90cfe884214f0 preserves reference 1 and its original supports.",
+      "sources": [
+        {
+          "blob": "a7d265030c66bd9f274a452635e3fec5c3bc7d9d",
+          "path": "mcp/tests/test_mcp_stdio_transport.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mcp_stdio_transport.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1RVJD2",
+      "items": [
+        "sha256:26bf8d249b90b16c487a6f3d6f8de8afb08b28853bab08037ca6d08a56c8877e"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/code.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1S2N4P",
+      "items": [
+        "sha256:03bb661d4afdd74caa4195eef9aa6d04c051739d042338e9a0f2313f0accd847"
+      ],
+      "reason": "Describe the detached computation’s fresh request and definition scopes while preserving registry ownership.",
+      "sources": [
+        {
+          "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
+          "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/memory_quality/runs.py"
+    },
+    {
+      "considered": [
+        "FAM-DBX1PN",
+        "FAM-H734XJ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-2C2GVZ",
+      "items": [
+        "sha256:43e58dadf333b2b2e6a7131e2ffd4df2bb5797be749139d9a1594f4a74ff58fe"
+      ],
+      "reason": "The fixed stdio regression establishes one measured workload envelope and preserves the distinct selection and isolation contracts.",
+      "revision": 1,
+      "subject": "membership:INV-FZY2XS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:4e84a1e0ac9cbe0c8afb17e3de0218b5134da675b5f862bfb7f371b5518fbfa8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:1629e291661bcc6750b4f89e567cd811a9d4969d78dd014de0a83a18862c9273",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:3a6f3c9a9799ed9aa36ee658e0f57efe681d5704ad5d184682812bc0bea547fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:dc44cac147a4b2c72aca6fc606426f712c933c5ff1ba8017be4f5cb0d82b0449",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-2JP52Y",
+      "items": [
+        "sha256:27b0f2aa4d37c30dd240f3d425282efd433007dcd24769554712fedc18c07e36"
+      ],
+      "reason": "The stress case registers fixture support that uses its own disposable enclosure. These catalog additions preserve the existing declarations for the private scratch-root contract.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2NHDDK",
+      "items": [
+        "sha256:fc988b0c15a83c9e4fdd3e9d2faa7409b81764ea92f0826c4e6424d02265426a"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
+          "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_leaf_view_memo.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2NJ1FR",
+      "items": [
+        "sha256:61068a6960ac9bb476e2bd7a9cd964e4e8c17fdc2ea8f16990dfc962aaf2d2fd"
+      ],
+      "reason": "The asynchronous runner imports the request context manager. The worker creates its independent scope at the call site.",
+      "subject": "hunk:sha256:61068a6960ac9bb476e2bd7a9cd964e4e8c17fdc2ea8f16990dfc962aaf2d2fd"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2WW357",
+      "items": [
+        "sha256:556140b6f494351729ca2b5440a4068d64e36ea8b1149fbd0456c1bc10c15bd0",
+        "sha256:9c0176e1b098382bbc9de4808e6a7f83fb5d3f79d59749e6be34eed0573ce0bf",
+        "sha256:c82f5853e3cf78695bd549de7ee00bd36e33511b9caf55421e94049571b14cd4",
+        "sha256:f2c23f8683def48564bdd97403e33f887814adce6485a149e20a8fba6dc5f26c",
+        "sha256:f3c53f3f2043951ffaf4e1490a1e70973ed7c81c5f567c2139048f509d89fa88"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "73055592d2c4494f43711b168bcf158af218ed35",
+          "path": "mcp/src/agents_remember/canvas/explainer_target.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_target.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2YK8HK",
+      "items": [
+        "sha256:17711f88b9edafc7f2124d855a24178daa6e0d05b4781701def873632f1feb6d",
+        "sha256:20ace7a41a24a4a8b0ae01b105ac918444578803aabb7ebc0ae3019391ac8d24",
+        "sha256:4c496c8f71e98ade9b287f6f51d5658dd10b1fa8f064c00e89b378ca679c2bc7",
+        "sha256:56b23846edff8b554118c6d28460a5900ab27bbd7f7ced5fd178e3072fee3527",
+        "sha256:736e0ff26dfa6748fdc7a5eaa433eee27f3b44f2e53fd3ebbcd6ba0446524da0",
+        "sha256:7aeb3af525dd8c7ca75b9adb0458bced24d1d389ef5e698496eb0b0ef2629180",
+        "sha256:821856014087019eab23544b01ade40cdef2c640b4598f533cdfcd34a5fb3246",
+        "sha256:89c81e881ddfb3a196f66033cb32d5d2f09d68b5529d944dd36aee50a7a97654",
+        "sha256:8ad75e0bf5ee5abc5b56c7ddfb1c8704bb0b536cefa6c248b155e39c72b11d92",
+        "sha256:9337f2c75ff1575ca33ba3af393860cce9e307b5280c6eaad46b3310222db95b",
+        "sha256:93b6ad84397aae5b89c436bc933232371a6781c39facc86f34586b6a94666630",
+        "sha256:a041d6314664e23088caf9ebd18cb503a02dfe4c92f332d7cbf66a819c7db77a",
+        "sha256:b7fdd0671ef5b92e91a5784014e381576e7a7a0f7f76d5e7c7aab9a5d55814f5",
+        "sha256:ddad08ab3c9aa8bec74df01f70141aa3fd806f88cbb53e1c9022830ccfddc9bd",
+        "sha256:eac8666c10aa286e8e0be5e75f8ca2768e20a1734770aacd6c28c474d86958d3"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "cf983d28c316e8d696d598c2e66b9f9933a2e914",
+          "path": "mcp/src/agents_remember/worktrees/modules/kept_capture.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/kept_capture.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2YQDZT",
+      "items": [
+        "sha256:09970f941b3ccc0c5595c451b76211c86eed79932b53001265f997c9f7c8182f",
+        "sha256:0e13489df9b48e6138fbc04d4ea96dac116c359b7a5af47de7ad65269c5b00f3",
+        "sha256:1b7c6741c6c8d0510aea27cdd5aa508c37629464d2673d8171163580b8ef5d00",
+        "sha256:27a6bcf0c772368f64d6124b0398fc11ef23c3d85320b983aa23283d448783b5",
+        "sha256:53b29261926c021ddcc120674144e37106a23b300694d78ea2102743ec83cd41",
+        "sha256:5aaf1c5cb3ff55af2f7a15817cff9a288d8f9fe1685ba8ece3afe5afe52299c6",
+        "sha256:731a80ef14601572541f551f4ece370e1d40c525e525a83b34ddccb141e1e7f0",
+        "sha256:91151c0cf9077632f9197ecf4b8d3bba821c133013cc10c57d1a88fd454f7395",
+        "sha256:b1f13562407803492870669a521c98eb56d6eb8d5d911611002543865993b6d1",
+        "sha256:c905bc9b03a08ebe08ae6995d40fcf2b5bf3cd86d49ad26ec653f61095e9ae9a",
+        "sha256:c9cfbb2b33b91a2580b7b67dda6d11f0207a57592344519dc4b23ae59391d89b",
+        "sha256:e89f6c1abc094e9613743fbe8c06c8cb749fe27e18441a032c693beb929f7f3b",
+        "sha256:f530a556ad61d84e7e5857e84ef41b6df87b425c31616bd9ece488e6f37163c1"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test.",
+      "sources": [
+        {
+          "blob": "f97ddaaf8497ca3bef1fe8d9b42bcb4da9d45405",
+          "path": "mcp/tests/test_definition_scope_boundaries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_definition_scope_boundaries.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f18b21d0d255bce3024a2cd8726367c521764fab",
+            "content": "sha256:e336fcebbb5bfa5752a5f8a4cad8567f3efb2bee13a963ddda04df90cc8941a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/worktrees-c09.md"
+          },
+          "before": {
+            "blob": "5c2e34678ffb61bf83b54ee89ff7e5a980e786bd",
+            "content": "sha256:e7bb0f85076069efcd956196f243565f9cd47017ad1c51093ee7c267a81cbbb0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/worktrees-c09.md"
+          },
+          "id": "RLZ-9SXB41"
+        },
+        {
+          "after": {
+            "blob": "e0f70f991c3b38c1dbc9f586c0c6b70303b451cd",
+            "content": "sha256:8c9fe4e5e16f91df0f3c45a00356d8bcefc9400fd0b71e7891581bd34aee2c5f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "790ac3f803478ff3e76f642052011bd93a276d21",
+            "content": "sha256:597fd87051305e76dde1f726038f1e52cbad7c853dd5b4d64aa1ccfbe34c4b76",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-RZ1XP1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-31CSR0",
+      "items": [
+        "sha256:64bb043b8cc05bf553969f936b26545a1f762ae203578fbb5f9ca3a148ea45b4"
+      ],
+      "reason": "The two references add or refine the landing-answer fields. Their separate descriptions of synchronous closeout and integration and the preserved journal guidance still apply.",
+      "revision": 1,
+      "subject": "INV-760TKM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-34G9QB",
+      "items": [
+        "sha256:31bbbdb672bdd0aacac09fa6866b0130df482f9c6a3c803848c0f2e98f67c027"
+      ],
+      "reason": "The synchronous wrapper drops its partial import after forwarding arguments through the common worker bridge.",
+      "subject": "hunk:sha256:31bbbdb672bdd0aacac09fa6866b0130df482f9c6a3c803848c0f2e98f67c027"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3K18HY",
+      "items": [
+        "sha256:688ce662bd0f72f0555ca5bc1a51d7e700925ebb768ff2866ea283dbead358fb"
+      ],
+      "reason": "The re-witnessing helper accepts the centralized ProvenClosure type with the same layout, object, witness and reference fields. Its proof checks still consume those fields.",
+      "subject": "hunk:sha256:688ce662bd0f72f0555ca5bc1a51d7e700925ebb768ff2866ea283dbead358fb"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3S4REA",
+      "items": [
+        "sha256:342d7968e61007e5a48be905b82b8c15b712ae8bc2fa68de0fb0928e23f55218"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3Y9W3H",
+      "items": [
+        "sha256:22c1c08c1b07aa25aa77c2c1ac70f631a3dda6064e99c891d018b05d1c738f07",
+        "sha256:56ae58bc248c6bbbefd497f80f5337879b464614e0e00a9a7c40bac9ce686541",
+        "sha256:612b316f5b6de8562176b15f714f30547696247c4bd3ae7aaf1380c12682c65a",
+        "sha256:aebf88e180e005b092ed0049850a4c3746be007727982c02e4ada1e01f2efd18"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test.",
+      "sources": [
+        {
+          "blob": "b6f33379e6184a3f66a3f15339e17ad8fc5e0e1a",
+          "path": "mcp/tests/test_read_anchor_memo.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_read_anchor_memo.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4D55D6",
+      "items": [
+        "sha256:34033d91853ca4d15ef571cfd0954b2298d314904d9f65cc519e3e63f4624bf4"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+          "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/code_objects.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4PYXN5",
+      "items": [
+        "sha256:07e4f6200175ea6bb1cee7133c93e5db153fe8a63ff77404b221be20071b777b",
+        "sha256:1e1e55004880170e3f755b6e0bda0c36edeeda4ef87de5a9f7b199a0833aea3e",
+        "sha256:8eb500aaad3d5b0616c5f2283ed4a55435cc64c4de6faad52d7cfef9c84f5407",
+        "sha256:e9d1852dac80b3eed84bb64857aa42b67344f89d443181dd01e4ee0f90995af4"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test.",
+      "sources": [
+        {
+          "blob": "a9e0c8433732f1e0c0bc28160b0555010cab4b64",
+          "path": "mcp/tests/test_object_census_witness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_object_census_witness.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4SPCW9",
+      "items": [
+        "sha256:d557a404509878221e19f5376036cbaaee4e1ca12c2d1d76c1d016718b8993cc"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+          "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_answer_preparation.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5YPFVJ",
+          "revision": 3
+        },
+        {
+          "id": "INV-KE2ZHT",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJN5GP",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-4YX0ND",
+      "items": [
+        "sha256:39a577db686c5217c11f1a0b706c0df82ac6cd57a0b2a1849dbfb1f85336da3c"
+      ],
+      "reason": "The closed state registry still records treatment, reason and reset owner, and module isolation keeps its program-owned reset behavior. The separate private tmux ownership and service binding member duties remain. The corrected proof extent encompasses the registry.",
+      "revision": 4,
+      "subject": "FAM-3FTGSA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-53ECZD",
+      "items": [
+        "sha256:b1e8e4ff440027accfec8fcfca9460b923528fddfcc4267f1366bbdec29e4239"
+      ],
+      "reason": "Describe the shared request-thread runner and its two registered start callers.",
+      "sources": [
+        {
+          "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+          "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-MGGEBY",
+          "revision": 2
+        },
+        {
+          "id": "INV-VDWN33",
+          "revision": 3
+        },
+        {
+          "id": "INV-WQ8YGE",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0KED3",
+          "revision": 2
+        },
+        {
+          "id": "INV-XZYGEB",
+          "revision": 3
+        },
+        {
+          "id": "INV-YK0D2W",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0BXKJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-54DPQF",
+      "items": [
+        "sha256:ed408ba419c754021b222e0ad5de5396568804dd848068d700bc9f507139afd2"
+      ],
+      "reason": "The native task-entry guarantee and all current member routes hold. Test reset targets now follow the process owners for citation and lifecycle data. The change adds no task membership, stage, activity, age or browser task-map authority.",
+      "revision": 4,
+      "subject": "FAM-14NZRC"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5A3QQ5",
+      "items": [],
+      "reason": "Reconfirm the existing document claim against the current code and refresh the affected support links. The resolver reference still describes the shaped context packet and the blocks in its complete recorded result.",
+      "revision": 5,
+      "subject": "DPD-EJ2Y7Z"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5P5K5M",
+      "items": [],
+      "reason": "Reconfirm the existing document claim against the current code and refresh the affected support links. The setup guide’s unmatched caller-harness refusal and hosted Architect entry continue to agree with Bootstrap and dashboard selection behavior.",
+      "revision": 8,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5Q8ENK",
+      "items": [
+        "sha256:c6fd4e10f1f5dcaf2c156e1b8a1827c76351ab30823dfd0815f9120600b74087"
+      ],
+      "reason": "Reconfirm the existing document claim against the current code and refresh the affected support links. The features page still describes declared tool inputs, response bounds and the locator for the complete result; read_ar_files still declares the removed refresh argument so it can refuse it by name.",
+      "revision": 15,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5YMBAS",
+      "items": [
+        "sha256:36eb50f47f5c1ca998762545af310e5ed1535d21bc0be447ec1c55b4fece9c01",
+        "sha256:3e6786b73206682442694bffee6b4c39cd6eb4dc00f13ab9e18f21f037d09af8",
+        "sha256:b252445d6a88bd3a7656d08f3cc82b42a2f79d302fb28a2f8d021653995aa84a",
+        "sha256:d2761ce3f4635f28c382ab5cedc01c8350b839c944adea1b733499b9881b6aaf",
+        "sha256:ed70e42d6efff683ec3e5f16e9622fdc50cc103b7b66a954df1954448c20076c",
+        "sha256:f9e62d988cd614895fad52fbac8156d46e50e0529843ebffb586444e51ea24ff",
+        "sha256:f9fbbfd507159462c8f40f71b2d8814de16f286b198b8f1af3cf18e63e01789d"
+      ],
+      "reason": "Describe the saved-debt dry-run and apply case, full result and optional compact response fields, and the measured boundary controls.",
+      "sources": [
+        {
+          "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
+          "path": "mcp/tests/test_record_landing_stale_debt.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_record_landing_stale_debt.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-60ANFX",
+      "items": [
+        "sha256:12ebc0f8e342c636f7b9637ea78c0f215fe58b4f92f348df686398a810dc1bda",
+        "sha256:cf460b4021e4323052045070ed7b33ce2a48d6384f7368cb1301665ee2bac8ed"
+      ],
+      "reason": "Record the revision verified in the six-record L19 sync reconciliation. The architecture describes a separate task-bound tool server for an admitted provider that takes one, four durable write cases and private temporary spools for Git batch framing, review evidence and Explainer blob reads.",
+      "revision": 6,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6J72W1",
+      "items": [
+        "sha256:cbadf29a698c8aaf25d18e885df46f890ceaef78019d29472993842621b92153"
+      ],
+      "reason": "Record the revision verified in the six-record L19 sync reconciliation. The OpenClaw guide describes a tool-calling chat without an OpenClaw role provider on the pinned host build, where implicit Bootstrap is refused and naming an offered agent bypasses caller-harness inference.",
+      "revision": 4,
+      "subject": "DPD-6528VF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6YNAG5",
+      "items": [
+        "sha256:0e630ca1749815df35798e5f85f875ac99f5dccfaf23f4eed2922ea31387be20"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "6304a991e5187181bfa80c1a5cf6e586c6069b99",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0HBKP9",
+          "revision": 1
+        },
+        {
+          "id": "INV-2172NS",
+          "revision": 1
+        },
+        {
+          "id": "INV-5M9WY3",
+          "revision": 4
+        },
+        {
+          "id": "INV-61Y147",
+          "revision": 1
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-7MH0BR",
+          "revision": 2
+        },
+        {
+          "id": "INV-9MF6HZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-EKE1RV",
+          "revision": 1
+        },
+        {
+          "id": "INV-N3M9G4",
+          "revision": 3
+        },
+        {
+          "id": "INV-TY4BR7",
+          "revision": 1
+        },
+        {
+          "id": "INV-W8WBTB",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-794BYV",
+      "items": [
+        "sha256:5f5999dbb4c75e695e1427c0f08e5ee192e8ce0df7fc0b8e4582ca3dd50f027b"
+      ],
+      "reason": "Correct the historical age condition in the failed-read member. The family requires exact source, conversion, capture, literal patch and successful observed view reuse and already treats failed observations as ineligible. Current byte and entry limits and witness-based reuse preserve those obligations.",
+      "revision": 2,
+      "subject": "FAM-4ZNEN9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7EC3G7",
+      "items": [
+        "sha256:11458c8473b0330e45c1d7183e115019870cc672a010cdb71d2085e69263b28b",
+        "sha256:2a5a8175e94f9eaaabbf3e527b4f9a4533f653b2b2e108ec86510865dd7be1dc",
+        "sha256:65d133b5dcd5ce22a928a015018770b24ace9145315720eb7f44d1b00263462c",
+        "sha256:72f6f2d1fb1471976f948b7af2da11a66161911e3527d8e5be56756e3e87dbf6",
+        "sha256:a0ef1a35756d902b104803aa5402b476f8039ed06f40efc725bc621bddd6fb67",
+        "sha256:acee029e95ba18ab98fe8af5a5da11bd59235eb694c7a8821540cddb08773525",
+        "sha256:f9557439a4a62189f37d0f9e096daec9f5a36d87e04a90d262f07e4dcda0ad64"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test.",
+      "sources": [
+        {
+          "blob": "93b9ba5c393fe3efac16c9954997ff25a7c8068a",
+          "path": "mcp/tests/test_explainer_worktrees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_worktrees.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7KK1Q8",
+      "items": [
+        "sha256:c2c4b40fb510432d8d5f32e3990df866abad9b15890121f3f1b4450b1679c57f"
+      ],
+      "reason": "The server imports the common thread runner. The calling wrappers select the work it must drain.",
+      "subject": "hunk:sha256:c2c4b40fb510432d8d5f32e3990df866abad9b15890121f3f1b4450b1679c57f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+            "content": "sha256:9d0578d8c94f81f1123cfa0b61d878ba9d9e0178f26f87b5d739d1f96dca05e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "before": {
+            "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+            "content": "sha256:0ec10a5fa8298786b17a4f1069ec014773d091f1604f3be8c77b141ec266e771",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "id": "RLZ-T4017A"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-7P53VT",
+      "items": [
+        "sha256:53e3e7a0f41d3109ab05cac91cc23fb04357f353283ec6ebaf4a812a50eb11c5"
+      ],
+      "reason": "The native request owns and clears variable-size Git observations, while the shared object history keeps its existing entry limit and stores a fixed-size alternate digest. The dashboard retains the existing observation and cancellation bounds.",
+      "revision": 1,
+      "subject": "INV-GDWJKR"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-83XRQ4",
+      "items": [
+        "sha256:4a97ccd6e786323e7eb662b1fb5600243a9821a7ff1b84f12b212d962202b612"
+      ],
+      "reason": "The Git module imports the temporary-file factory used by its batch transport. The batch operation creates and closes the spool.",
+      "subject": "hunk:sha256:4a97ccd6e786323e7eb662b1fb5600243a9821a7ff1b84f12b212d962202b612"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:4e84a1e0ac9cbe0c8afb17e3de0218b5134da675b5f862bfb7f371b5518fbfa8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:1629e291661bcc6750b4f89e567cd811a9d4969d78dd014de0a83a18862c9273",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8AQ0A2",
+      "items": [
+        "sha256:7d2069ab40f5042738280bd118abac3e1a3f5ad9d528332b466092463d2131ad"
+      ],
+      "reason": "The stress-durability lane now registers the native memory regression module that exists in this tree. The older retired rail stays absent.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8BF9HY",
+      "items": [
+        "sha256:8a16b66a776f7faf1de509c59548bd83e4c5ebc262f68a4560565011778561ea",
+        "sha256:f9afa09f8cd238e9e24c47663791569f570c868c07d6de0539068100a030b5ff"
+      ],
+      "reason": "Charges bounded memo entries for reachable Python data.",
+      "sources": [
+        {
+          "blob": "f7a3ffcc2ffdcf26cbb1082f09dacf5fb7222001",
+          "path": "mcp/src/agents_remember/kernel/memory_graph.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/memory_graph.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8D787J",
+      "items": [
+        "sha256:17cf5fe1601b8eac6ce7de3186e823caeadc385f6aea386cf2fceb3a0f0b0f9f"
+      ],
+      "reason": "Describe the landing declarations, validation, list cap and independent fitting of nested children.",
+      "sources": [
+        {
+          "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8QK37Y",
+      "items": [
+        "sha256:a964b50e5aaa26f2ca9880ae60264914e569d5718c76f4adecbb14473dd01a67"
+      ],
+      "reason": "The lifecycle reader drops the dataclass import after moving the cache entry and its lock to the record cache module.",
+      "subject": "hunk:sha256:a964b50e5aaa26f2ca9880ae60264914e569d5718c76f4adecbb14473dd01a67"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8SR5VW",
+      "items": [
+        "sha256:72ae3f0962f9467cfd75719b67c21d9756cef65a0265a64eece17e020238a7f4"
+      ],
+      "reason": "The teardown docstring identifies the input pipe it closes. The calling temporary-file context now owns stdout storage.",
+      "subject": "hunk:sha256:72ae3f0962f9467cfd75719b67c21d9756cef65a0265a64eece17e020238a7f4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "content": "sha256:5799bdee2243f040ff359fe66b08402b0228dc5b300306480febb2bf14c6d980",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "before": {
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:310a67575a14cff92e1bcebd1e8f270cfcfc70b25eb6681a972f6fbad24bfbbb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "id": "RLZ-C3R4TK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8Z1F7K",
+      "items": [
+        "sha256:a928a03cfa4c978bf9926ec3ed579baf18b6958fb1cbcdb98310ee0e6ff66253"
+      ],
+      "reason": "The role-start handlers use the common drainable worker after constructing the same typed input. Permission mode still comes from the existing launch authorities.",
+      "revision": 4,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
+            "content": "sha256:4999a24ee0d81b0ecbd7ec9e8cf23a90455a7147eb469a344808bcc92e308560",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Relations"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_relations.py"
+          },
+          "id": "RLZ-7C179R"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "21897b270c5bc01d83034606213689b999539778",
+            "content": "sha256:7bbd2722672874ace9a38c37df2e0585cb69daa540ed9bf41227095ee6413382",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_bound_source"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+          },
+          "id": "RLZ-T34YVV"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
+            "content": "sha256:2349c8e74115b2ecd9e2d680599ec1a4fe15cd52e4fa9c5c2d06a6348b8b00e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_populations"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_packet.py"
+          },
+          "id": "RLZ-XGFCB9"
+        }
+      ],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-9MBZAZ",
+      "items": [
+        "sha256:6ace6826e39011743e065cf08cea5c77478546808b98b68f4fbaa3ae5ce85764"
+      ],
+      "reason": "Preserve the historical hard-budget contract and its three former realizations in history. MIK-R211@v5 rule 2, following D566, removed packet and investigation work caps. The bound source now reads the complete blob, the packet carries complete populations with omission accounting, and the relationship reader indexes the full name listing. The separate review-page paging preservation has its own owners. It supplies no proof of these former work caps.",
+      "revision": 1,
+      "subject": "INV-YFTJNQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9PEK68",
+      "items": [
+        "sha256:128b9d392f09fd3672efcf0ab0fdd334d9e9f03dad8d963922c6025099af5c1c",
+        "sha256:1a45d858f8de737d829d81f730a04d246257f0fa4bf8a4545f7021909402a899",
+        "sha256:7a5d6897c90dfae27a75ed9b8812d4c6532d868e753eeccbafe35c0606aa4df8"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test. Name the unscoped test path actually exercised.",
+      "sources": [
+        {
+          "blob": "de891aa4dd916994f99ea0e83f1c07ab7e13e09c",
+          "path": "mcp/tests/test_idle_stat_witnesses.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_idle_stat_witnesses.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9QMH6Q",
+      "items": [
+        "sha256:b53fa6a169341aeece0e02764e3d87b5f8a9b50c19b6f0d33a18f1e980784057"
+      ],
+      "reason": "The review reader uses the centralized closure proof value and aliases the existing process tables. Native proof lookup and retention select their request-local tables through the new owner.",
+      "subject": "hunk:sha256:b53fa6a169341aeece0e02764e3d87b5f8a9b50c19b6f0d33a18f1e980784057"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-A6GAFT",
+      "items": [
+        "sha256:689833e361c1f378e7313fceb30306c115ea7e00f8df504316786cd51db6a97e"
+      ],
+      "reason": "Reconfirm the document against the paired W3 source and refresh its affected support links. The README still describes exact paired closeout for a leaf, and W2 continues to hold open or stale work through that leaf gate.",
+      "revision": 6,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AHAK4G",
+      "items": [
+        "sha256:44c6e3e41138b044fcd20678a904bc94406af23d40746c89527427996c138e29"
+      ],
+      "reason": "The gate imports the relocated candidate-parse store and its admission helper. The helper owns the retention decision.",
+      "subject": "hunk:sha256:44c6e3e41138b044fcd20678a904bc94406af23d40746c89527427996c138e29"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AHMP3P",
+      "items": [
+        "sha256:02e9389f710f799265a64fbb2371e9e40ad97dfd37720c4946ad8e56769d8728",
+        "sha256:9dfb2f3c43949b5878a7054cefb3930107bd3f18260366630b7cb09bf3b69b9d"
+      ],
+      "reason": "Runs blocking native tool work in a thread while preserving its request context.",
+      "sources": [
+        {
+          "blob": "16c9244c6c6d7b49e26f835cf992ae04304056f5",
+          "path": "mcp/src/agents_remember/mcp/thread_workers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/thread_workers.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AJX7JW",
+      "items": [
+        "sha256:17f0d6c55652eae2a9d82e3f509f6f3e3404e70652d82f48ad313b9b9f5527f7"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+          "path": "mcp/src/agents_remember/kernel/git_command.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/git_command.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AM95RC",
+      "items": [
+        "sha256:1ee00a8a70569e4abf239f05830ecfebef2b59f2b046d7b8ccc7c0dbf62db3d2"
+      ],
+      "reason": "The review reader imports the helper that chooses its closure tables. The lookup call sites now make that selection.",
+      "subject": "hunk:sha256:1ee00a8a70569e4abf239f05830ecfebef2b59f2b046d7b8ccc7c0dbf62db3d2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AW1XX9",
+      "items": [
+        "sha256:7ab370216b7138a658ac9d96055149c94c7cd96e0f7731b58f2313b8a953a95d",
+        "sha256:f1eeefac88001abee165973cc4285fba751df0167dac44f407a72f8440ea48ea"
+      ],
+      "reason": "Exercises the native stdio tool server's bounded-memory regression through the actual subprocess. Document release selection and the instrumentation controls for both separately launched children.",
+      "sources": [
+        {
+          "blob": "65a22267d1c85b114460c09b8c5ba15c53fc7fa8",
+          "path": "mcp/tests/test_mcp_memory_bounded_stdio.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mcp_memory_bounded_stdio.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AYJD7B",
+      "items": [
+        "sha256:be28d7bd15544bcc3582b258b44744f78fccc8bc9dc61e680dd3aa682cf1681d"
+      ],
+      "reason": "Identify the two process cache owners that the reset register now names.",
+      "sources": [
+        {
+          "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/global_state.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-B12RF8",
+      "items": [
+        "sha256:6a65454ee8fb3d41e63bba1dec66705fde765383610051e7d327874f0822a972"
+      ],
+      "reason": "Record the revision verified in the six-record L19 sync reconciliation. The Cursor guide describes a tool-calling chat without a Cursor role provider on the pinned host build, where implicit Bootstrap is refused and naming an offered agent bypasses caller-harness inference.",
+      "revision": 4,
+      "subject": "DPD-21GMJ5"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-B65ZXW",
+      "items": [
+        "sha256:32eb1bc064abac1a975ab3cf2f2132ff82ce076504c63cab699bfec57061506e",
+        "sha256:8f576cc91a65db327ba3ad29bebeaf647bfd3c92f22c6c8580b5053bf953963c"
+      ],
+      "reason": "Record the revision verified in the six-record L19 sync reconciliation. The MCP reference describes the typed role contracts, same-request reconciliation and single-seat boundary, task-document review and synchronous closeout, and six overflow declarations by wire Boolean, including the integrity refusal with ok true, bounded landing debt and its next step, whole-field fitting, named omissions and exact result locators.",
+      "revision": 11,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BB2RF8",
+      "items": [
+        "sha256:769f8c83cd9640f774ac7a27430af2d3441c7de4ca83a2e16997f82012c722f8"
+      ],
+      "reason": "The existing process cache moves behind a named wrapper for callers without a request owner. It delegates to the same parser and preserves the previous process path.",
+      "subject": "hunk:sha256:769f8c83cd9640f774ac7a27430af2d3441c7de4ca83a2e16997f82012c722f8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BD2SPD",
+      "items": [
+        "sha256:66d26db46a684d8a09c79e322cadfa5c3536836d58979b467c5e10436a3f4a0e"
+      ],
+      "reason": "The file removes the old 64 KiB chunk-list read size. Frame payload reads now use the common spool reader.",
+      "subject": "hunk:sha256:66d26db46a684d8a09c79e322cadfa5c3536836d58979b467c5e10436a3f4a0e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BG8XSS",
+      "items": [
+        "sha256:7b97c0b137eabc122cb264bc2eaf0476bee398d10922cbcf444e4bba15d78664"
+      ],
+      "reason": "The gate drops the memo class import because the candidate-parse module now constructs that memo.",
+      "subject": "hunk:sha256:7b97c0b137eabc122cb264bc2eaf0476bee398d10922cbcf444e4bba15d78664"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BJ2WGF",
+      "items": [
+        "sha256:4d4acc1b2f767c0c562ab7ffa62fdc2f6faf4f66f715c7a22d26535638406fe7",
+        "sha256:82dad1a76036d4450fc37c9faf8388286105110169c63077fe483a7bbffd824d"
+      ],
+      "reason": "Drives a fixed native stdio workload and captures Linux memory readings after each reply.",
+      "sources": [
+        {
+          "blob": "3d085155b1d33d66eb9d606c2f0ceedf9bc24818",
+          "path": "mcp/tests/mcp_memory_bounded_stdio_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/mcp_memory_bounded_stdio_support.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BJY8KX",
+      "items": [
+        "sha256:b5d7aa9542ce27ff4677e51589aee3a4eb73655c9a115d202e4de2d3065e3f61"
+      ],
+      "reason": "Explain why a later request can use the retained private index after the earlier witness has cleared.",
+      "sources": [
+        {
+          "blob": "cf983d28c316e8d696d598c2e66b9f9933a2e914",
+          "path": "mcp/src/agents_remember/worktrees/modules/kept_capture.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "considered": [
+        "FAM-GPNRVQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-BXD0QX",
+      "items": [
+        "sha256:84baea5e83f1caf994495a77f155bfc8e0c4aabd5a1834144b1769603f8afde6"
+      ],
+      "reason": "Binary Git batch framing is a separate transport concern from comparison-bound evidence and its range receipts.",
+      "revision": 1,
+      "subject": "membership:INV-HEDEKR"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:8d3ef09438ee2c52caadee125063bfefca466ce0885983ac124914895a396457",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "content": "sha256:e056777fc950f723afb2628217470913514b02b53ec179cfc7d146c69d7a1eb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP.call_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-VWKSMD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-CETW4Q",
+      "items": [
+        "sha256:f59b60628ada31935f6d78b9b6585085954cd03aa5b71984e87a00f89da99a67"
+      ],
+      "reason": "The new request wrapper calls the existing installed-staleness check before dispatch. The check still distinguishes publication writes from reads, previews and messages.",
+      "revision": 1,
+      "subject": "INV-9SKGX1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:9fcb6f70c40e8c8624e088d4eb8a8db1b14109fa1fe66489391bd7f5da3c6954",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "content": "sha256:f357c291c49a5146de20765aadbc6b4cf3766142fbd04a10e61c591d32bcd962",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-1563PY"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-CG6B0A",
+      "items": [],
+      "reason": "Bind the entire mutable-state register, including the changed TypeScript and journal entries. The listed treatments and reasons govern the same reset and restore checks.",
+      "revision": 1,
+      "subject": "INV-KE2ZHT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CW48NW",
+      "items": [
+        "sha256:1826d9e46fdb8983b7e8f22ff9713dbc5dbffa8b684fb9cd18a1a66df79c724c",
+        "sha256:67540d99c32ada86de1965dd499c42d4737f915629baebcd630e8aa5692bfabf",
+        "sha256:699a44a878bf632a9c401b17582ac3d83b8dbfcea0757f37b20632094705a47c",
+        "sha256:7d9aae8f473ac4c69237cb818fa6047503fe6e3ad8460892dea9f37b65e05ca5",
+        "sha256:8de44fef799d3c74365955b81ff73852e6eff3fead50f4a3ce688bfdbe9306ae",
+        "sha256:98574a674fd483a00a3568075e5aa0a10407faec322ade563232db9fa5f308d0",
+        "sha256:b420cf78d517bcd923c7c04466cf948682914e809d84138cb672bcfd9aafb362",
+        "sha256:cbdd4d7295d7485541d6da8bb55a2bf964329f1be64a03e41d3a1fb5f4b760a5"
+      ],
+      "reason": "Describe the actual Git runner instrumentation.",
+      "sources": [
+        {
+          "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
+          "path": "mcp/tests/test_git_command.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_git_command.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D14ZC7",
+      "items": [
+        "sha256:e759ba21813311b1a7fad4f84d574d4c8287ba557233e15ec76d846badab9337"
+      ],
+      "reason": "The lifecycle reader imports the operation-record cache selector. The read path calls it after observing a journal stat identity.",
+      "subject": "hunk:sha256:e759ba21813311b1a7fad4f84d574d4c8287ba557233e15ec76d846badab9337"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D2HSQP",
+      "items": [
+        "sha256:8f58cfaa756eb2ef765b37386d1cd4af9db07111ea9a2a7356351ca5b1dcd58d"
+      ],
+      "reason": "The guard imports the existing list ceiling from the declaration module so ordinary shaping and the new declaration can share the same value. The shaping and declared-value call sites enforce the bound.",
+      "subject": "hunk:sha256:8f58cfaa756eb2ef765b37386d1cd4af9db07111ea9a2a7356351ca5b1dcd58d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D6CB39",
+      "items": [
+        "sha256:a4a7be8b45b4799598f7f6e6c6003e8115c0b621d0957d41f1a92481d11e0406"
+      ],
+      "reason": "Identify the process cache reset targets and separately scoped native owner cleanup.",
+      "sources": [
+        {
+          "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D6QH5C",
+      "items": [
+        "sha256:6f7d7ab19cad0ae8b79738eaecb8d24426bffaf14622ac486f0d2a0360bca7ce",
+        "sha256:7972ccfbb7e600b31871a2bad0905cea3cb4082182003acde346f05cbbc72e21",
+        "sha256:b308d788255c0937bebdf3abc5ce6fb5a389cb4d65ff947d7ac6554f33671f4b",
+        "sha256:b32e170022fe32b6a7cc2e596d4a50c566f3382f8b09fbc0a33710f1d3410430"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test.",
+      "sources": [
+        {
+          "blob": "37fd335ecba222cbaacb2815fd1496398fb3a62b",
+          "path": "mcp/tests/test_review_closure_rewitness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_closure_rewitness.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DGRHY8",
+      "items": [
+        "sha256:0a92db3288a2329e8b60bfd8c947fcc13171e738a1183e522fec8b3fdb013fec",
+        "sha256:49e9551c79a24e009f6b165b089ec89c97244281b6ed8e8255b8bb4b7f9a98a7",
+        "sha256:d1d535e063262bb8caf8de0f847352a4d13af65f7321e64992a6395be1037613"
+      ],
+      "reason": "Explain request and process closure owners and the answer owner’s revalidation of the disk envelope.",
+      "sources": [
+        {
+          "blob": "0a47c29b8d7e8c78acf70abdcb742dba492a361d",
+          "path": "mcp/src/agents_remember/application/review_closure_proofs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_closure_proofs.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DWDC52",
+      "items": [
+        "sha256:0167b4540bd1ed4ffc9167255461152242d394b0188d005e024ec124a20de7ed"
+      ],
+      "reason": "Release certification selects the native stdio stress case, whose warm-index child and measured server omit Coverage startup so instrumentation cannot alter its memory readings.",
+      "revision": 9,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+            "content": "sha256:d236e545e25288d12e7febc294f7f736a52bdcec42ef12352169a0503c24a4ae",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+          },
+          "before": "absent",
+          "id": "RLZ-00A3WC"
+        },
+        {
+          "after": {
+            "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+            "content": "sha256:92904d9deb67cf500bbd5851bdc4445fbaed7cf3aa62f6c2418f843723d6b4dc",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+          },
+          "before": "absent",
+          "id": "RLZ-9M5PF9"
+        },
+        {
+          "after": {
+            "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+            "content": "sha256:4599fcb71c9bb55a2f64033b2aae78c97c2081b3f7fcb367c3af47607419792b",
+            "locator": {
+              "kind": "symbol",
+              "name": "fit_declared_short_fields"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+          },
+          "before": {
+            "blob": "56973919b5cead4a39077faa4cd0cd4364324a00",
+            "content": "sha256:2866eda4f74b92f8c2231d8bc7111088a0e83172c6f1abc8871d0585af99a71a",
+            "locator": {
+              "kind": "symbol",
+              "name": "fit_declared_short_fields"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+          },
+          "id": "RLZ-FWPNRK"
+        },
+        {
+          "after": {
+            "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+            "content": "sha256:49922269576cc6d970aec69526e0cb1e0789995ebcd33536c68c9f5de1b94aac",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+          },
+          "before": "absent",
+          "id": "RLZ-QQJ83G"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-DZRQHE",
+      "items": [
+        "sha256:a65a93d2e6023f51582f8b05a5140749253937bb6820b66dc1f82fd39b0c027f"
+      ],
+      "reason": "The landing route extends the existing whole-value or named-omission fit discipline to typed state, next action, count and capped key list. The existing fitter now measures each child independently while preserving retained siblings.",
+      "revision": 1,
+      "subject": "INV-WJ9ZD7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E3B34A",
+      "items": [
+        "sha256:1b55f56cf51ff30e3d0b69195a02c05a1cf78f049bc34d7b52aa699da97e0410"
+      ],
+      "reason": "The gate drops its old eight-entry-only candidate-parse table. The candidate-parse module now owns the table and enforces the byte budget before copying a parse.",
+      "subject": "hunk:sha256:1b55f56cf51ff30e3d0b69195a02c05a1cf78f049bc34d7b52aa699da97e0410"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EK4WQ5",
+      "items": [
+        "sha256:3450c64a29c7513cab0f279ef89605c69d44acc88a2f14035990582e030f8055"
+      ],
+      "reason": "The guard removes the old local definition after relocating the existing list ceiling to the declaration module. The ordinary shaping path still uses the same ceiling.",
+      "subject": "hunk:sha256:3450c64a29c7513cab0f279ef89605c69d44acc88a2f14035990582e030f8055"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ERF6TK",
+      "items": [
+        "sha256:c99e35ab2731090566161daae51d1f863cedcda3ecaef1c700d7037b65c10f6c"
+      ],
+      "reason": "The lifecycle reader drops threading after moving cache locking into the record cache module.",
+      "subject": "hunk:sha256:c99e35ab2731090566161daae51d1f863cedcda3ecaef1c700d7037b65c10f6c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ERTPVX",
+      "items": [
+        "sha256:7d92725a30e14ea84ddba3480622c8cd88181246eb161a64b36486cfa7532106"
+      ],
+      "reason": "The evidence reader imports the common blob-body helper. The frame parser supplies the declared size and available spool extent when it invokes that helper.",
+      "subject": "hunk:sha256:7d92725a30e14ea84ddba3480622c8cd88181246eb161a64b36486cfa7532106"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ESPKS7",
+      "items": [
+        "sha256:cf8b4031edaa035843a02456819b219047f279d1cafaab55e2762e6472c11c57"
+      ],
+      "reason": "The reader removes the process-only record table, miss sentinel and accessors. The record cache module now owns those functions and selects their request or process lifetime.",
+      "subject": "hunk:sha256:cf8b4031edaa035843a02456819b219047f279d1cafaab55e2762e6472c11c57"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EXVNVY",
+      "items": [
+        "sha256:b68ec3dd7ea6d1b228464b809f236ca813221bcba288b12ed7a3cc84a9e5517f"
+      ],
+      "reason": "This relocated constant and comment provide the existing list ceiling to both shaping paths. The actual cap is applied at the ordinary list projector and at declared-value extraction.",
+      "subject": "hunk:sha256:b68ec3dd7ea6d1b228464b809f236ca813221bcba288b12ed7a3cc84a9e5517f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EYB815",
+      "items": [
+        "sha256:99321e5bb3591d4d6651bcef040952d0f010d3c15523ddc158be918c13c16d0f"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "066e5b1e038b22ebc8fd8d88ab25a710957f88b0",
+          "path": "mcp/src/agents_remember/serving/changeset_generation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/changeset_generation.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EZ62WB",
+      "items": [
+        "sha256:17fd6904c0601d125fd2328ee6596b278baacd79332bc4e40afc29e61cd006fe",
+        "sha256:32f1cc091ac3826d5d76102251fa16a52d3945a32faf4b0c9be3847285ce6f79",
+        "sha256:5a505d01ca5a9edc39bbaacbb32af15327a44ae2a17a29523b9deebc0e04976a",
+        "sha256:8e4daaf8729afdcee5da570f691c2b3be840388b0b5a9eec919211cc1591d0b2",
+        "sha256:e2af929a228bbd92d4737de1628e4a106c0d4c84b74f523df87ab5e4f8b3e0c7",
+        "sha256:e3b8532446144bb60e3556641b6491c98503b1c4009928fbe78db912ddca76aa"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test.",
+      "sources": [
+        {
+          "blob": "6225987c6e00d97ca42132b37ecbb0446f5ba773",
+          "path": "mcp/tests/test_knowledge_conversion.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_conversion.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EZS11W",
+      "items": [
+        "sha256:b1353a608485112368bd5d63e8e47ede66c40a167293e8f4814988c21115b367"
+      ],
+      "reason": "The review reader drops the memo class import after moving closure-table construction to the closure proof owner.",
+      "subject": "hunk:sha256:b1353a608485112368bd5d63e8e47ede66c40a167293e8f4814988c21115b367"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FN9HAC",
+      "items": [
+        "sha256:0e3f35653c9228aa81d439e1010503da37e52f0d2891dac84da46028c4943fdc",
+        "sha256:32c1e893b5c6183290f9dbb49c5ea6b0b0a75a20646c7ae178a427f9ff37c827",
+        "sha256:40921dfebdd32b8434dc3f7560ad248aaa40381f3f9dec3a7edd53c5072a1785",
+        "sha256:807562a74447385675efa7b41fbb0af8bed0c6ceaede3c3bb6281d61b871f707",
+        "sha256:86391c7246f64e5feb6a3ed900d654c56a227c9533bd7071728d5131b4391e25",
+        "sha256:990c63c4e89175890f6544e84b129d0d09ced8f42813470a440d733a30549f97",
+        "sha256:a3ce180a5666c2c3b0c1314662e197eb1cedadde305489f510e06670689018d4",
+        "sha256:b5e5a3a6ae8f0e161c229f850d9db00c54c98d9e07d17617756b771a61ad3eb4",
+        "sha256:ef2c2745d0c19a2e7c72b35006c58e47f4a75acb67e8dd350e70e2a4a0b91546",
+        "sha256:ef6e8c1945ccc8902fe230556dd68bb942158e5eac63d3c10e63a371a9122903",
+        "sha256:f654091745dcd0997b2f6459987f9dbdf5d72f5062d0259ac79a3dec2c0985ca"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test.",
+      "sources": [
+        {
+          "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
+          "path": "mcp/tests/test_mcp_dispatch_concurrency.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mcp_dispatch_concurrency.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FPR6FW",
+      "items": [
+        "sha256:06bae114341ba9815a790f44209b05bd12857957ed9d0c8489fc5907f7aacb9f",
+        "sha256:3c323ad5493b8320ea4e62b9050be0be9ae9d4324aa5f76f95efc66645e16c66",
+        "sha256:3d2c6e6917398ec870f12920eb32107943890b0b6c12c2c9ac9ba38fe55ba93f",
+        "sha256:84ee98236abe2f101a6173958afbaeed9c57a48c616d277a0dd0aca5cf366cb4",
+        "sha256:84f922e2d1e611ca096fcaf810a6365513ae0bfeb96d394a4d66f2d38d55d8aa"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test.",
+      "sources": [
+        {
+          "blob": "8099afa4418e202775ac827c140579dbee444b9b",
+          "path": "mcp/tests/test_review_validation_reuse.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_validation_reuse.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G1G6PH",
+      "items": [
+        "sha256:82c9b5584fb4d59ae886a4af6d11142b21ce3655dd256877f018dbd9fc28ce5a",
+        "sha256:842cf6f5703405ef151209eb7462c5699e5693cbe61865ebdaabb3f6b9ad66e1",
+        "sha256:accae4fb23d18c19fb90ce158125506c6d6a8c1857ae3f337e85320b82d26969",
+        "sha256:b1cacb3ab1c266f45aac63d29982481e2361ff9d170cccc1f7e4d17d5a3c208d",
+        "sha256:ce0d1ccc4f5eaa5f501c9bc8f8658428f8f5ce2cc9bd61d8c45ff74f41c72600",
+        "sha256:d0c6b350650a68a8174f9167556583eb5a865fedbba46bf82bbf7af5cbe82d19",
+        "sha256:fa04e16c86c168a79fb323eb9b6f439464a6f0ed5d57d6c11edf2aa81591f6a5"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "9af77edef766f5bdf85a45e19d65bf7080afe69c",
+          "path": "mcp/src/agents_remember/memory/conversion/base.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/base.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-G599J8",
+      "items": [
+        "sha256:1bc7372feb391b47c7ba9419167091abecd54d8bc1fb110a7e1ed9bd62392274"
+      ],
+      "reason": "Reconfirm the document against the paired W3 source and refresh its affected support links. The covered C09 closeout reference still binds the quality gate to the exact candidate with its worklist and observed inputs.",
+      "revision": 5,
+      "subject": "DPD-9K25G8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "before": {
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:8ec9fa9c67ef661e617e2a1fd5d91e1f659cb1d41ff8208cce462f290df64f42",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "id": "RLZ-GA7X4W"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G6JNZ4",
+      "items": [
+        "sha256:5149c06f65fe546ee453f271a886084b1db24175b62437aa7fc0ed5a5c17335a"
+      ],
+      "reason": "The role-start handlers still construct typed inputs and resolve their lazy payload builders before offloading. Registration and discovery keep their existing initialization boundaries.",
+      "revision": 1,
+      "subject": "INV-990KQM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GBFHC8",
+      "items": [
+        "sha256:9593f1bbbb56ba83cce0a75987145fd6ee0188cb81db79b2420e53d19443c606",
+        "sha256:fc3cee5d6694abe8a134260cbe836289e9a2c5f98ea3297b84f3163be213c847"
+      ],
+      "reason": "Keeps reusable parses of exact candidate memory snapshots for the leaf knowledge gate.",
+      "sources": [
+        {
+          "blob": "565ebc2f19472e0cd7a300fb76627b9439204942",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/candidate_parses.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/candidate_parses.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GD8VGN",
+      "items": [
+        "sha256:6383c8e9540ec6dd85b34b629f05ff26527d3060699ee26091d6e5c8a40f23b2"
+      ],
+      "reason": "Record the revision verified in the six-record L19 sync reconciliation. The concepts page describes role-launcher selection, bounded overflow and the complete-result log, candidate-bound quality and gate authority, and synchronous closeout and integration alongside their historical audit records.",
+      "revision": 12,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GGREVX",
+      "items": [
+        "sha256:7dc3517ad74247288ebeed5c83d83ffe0bde139f65a8016d5f8edc956d5a7216",
+        "sha256:933109c4d8b3fe43081dc22d2c4d50b46f318504f23d868da3f5c003a793586f",
+        "sha256:acf16252886ec79abd16730b7b86881f1779bb45a79584ef847c6fe55804a97c",
+        "sha256:bde32327961c4eb66bfb721a9d928efd96f3a1e3a1f902e63a0bdb2a64fa7dcb",
+        "sha256:d4900167154e7559a394d6089567fab364a5c02336e8d9a8384f6dad61034303",
+        "sha256:d999eda25b00822b849993f8682ec0fd88b6d0f474df4fccc2cf1728ecaace4e",
+        "sha256:e4f43b88fcdafe08f9abf3b43717b24fbad40daba33318333b2af47160b17aef",
+        "sha256:ffe67408dc3d7ade7442217e09b4f57e536875f2756cefb35c6e1b0d0f526712"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test. Specify which repeated lookups the owner can reuse.",
+      "sources": [
+        {
+          "blob": "2668de0dbd12e6a7d845380c650d2cbce313f008",
+          "path": "mcp/tests/test_git_object_memo.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_git_object_memo.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GKKFNQ",
+      "items": [
+        "sha256:27caddab9292f0576b426460fa93d75e69d5c3c92391b26c47cf3add9984d2db"
+      ],
+      "reason": "Describe variable native observations, dashboard process owners and fixed-size shared generation history.",
+      "sources": [
+        {
+          "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+          "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+        },
+        {
+          "blob": "066e5b1e038b22ebc8fd8d88ab25a710957f88b0",
+          "path": "mcp/src/agents_remember/serving/changeset_generation.py"
+        },
+        {
+          "blob": "fcad47cc51567624074eb9ffa90db9717f34c744",
+          "path": "mcp/src/agents_remember/serving/heap_diag.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GPZBV5",
+      "items": [
+        "sha256:633f9c2133545353dc7f47f3806d38cecb922a3429628bd7964441f71739b91d"
+      ],
+      "reason": "Describe request-owned conversion reuse and byte-bounded reviewer child parses.",
+      "sources": [
+        {
+          "blob": "9af77edef766f5bdf85a45e19d65bf7080afe69c",
+          "path": "mcp/src/agents_remember/memory/conversion/base.py"
+        },
+        {
+          "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+          "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+        },
+        {
+          "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
+          "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+        },
+        {
+          "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f97ddaaf8497ca3bef1fe8d9b42bcb4da9d45405",
+            "content": "sha256:b76378d207c9f551a2614de32fe70a2732499df6f7119e0e3e417b8a8c36633d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_background_worker_gets_isolated_scope_without_inheriting_starting_call"
+            },
+            "path": "mcp/tests/test_definition_scope_boundaries.py"
+          },
+          "before": {
+            "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
+            "content": "sha256:9d77ca63cc0d445c44452b53a37f669b3ccb8057a43b8972b4f75d2322b012c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_background_worker_gets_isolated_scope_without_inheriting_starting_call"
+            },
+            "path": "mcp/tests/test_definition_scope_boundaries.py"
+          },
+          "id": "PRF-7XMQ70"
+        },
+        {
+          "after": {
+            "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
+            "content": "sha256:800e9795e3c2782a3450b9c03a1e7d1a5850845f293febf0cb73112eaf470050",
+            "locator": {
+              "kind": "symbol",
+              "name": "_complete_quality_run"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
+          },
+          "before": {
+            "blob": "42003e355d7caf9887db71524da64fa975e3aa14",
+            "content": "sha256:5cd5edf7604e85854b572094cecb14d6d7140f3f28957329243b0f1bd0bf0e33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_complete_quality_run"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
+          },
+          "id": "RLZ-FAV7J5"
+        },
+        {
+          "after": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:8d3ef09438ee2c52caadee125063bfefca466ce0885983ac124914895a396457",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "content": "sha256:e056777fc950f723afb2628217470913514b02b53ec179cfc7d146c69d7a1eb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP.call_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-FSMKXF"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GQBRZ6",
+      "items": [
+        "sha256:9228320bb3adbbe9a367158c3dfabe9ceab57c342b6648d7964c127efe70c78f"
+      ],
+      "reason": "The public tool call now owns request memos around the existing definition scope. The detached quality worker opens both scopes independently, and the isolation test counts a separate parse for each owner.",
+      "revision": 1,
+      "subject": "INV-F1J9BH"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H31743",
+      "items": [
+        "sha256:8fbedb93d428b959e2ea98302983cd738e36d74ca9b8aa25ed474ab5254e7587"
+      ],
+      "reason": "The review reader imports the process closure tables from their new owner. The import itself makes no request or process selection.",
+      "subject": "hunk:sha256:8fbedb93d428b959e2ea98302983cd738e36d74ca9b8aa25ed474ab5254e7587"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H5CTGG",
+      "items": [
+        "sha256:189a8c8f3876ba9b864af453add8c946b4ed2b2bfc91e7260ac8c796dc5cd464",
+        "sha256:30fa9e1afc5a9b5bafcae6297a77a7eaf62b1301bada0bd653a8c2dc4036dc32",
+        "sha256:f9b71b06313d4c18aae706027ba126d2e7a09f88544f810a65c05c8d0946956c"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "fcad47cc51567624074eb9ffa90db9717f34c744",
+          "path": "mcp/src/agents_remember/serving/heap_diag.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/heap_diag.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HMR6AC",
+      "items": [
+        "sha256:d40a3f15996569b5678ae7e556ddbfb13154fe9e02d30c86dad9eb0e21ef4320"
+      ],
+      "reason": "Describe exact candidate reuse and retained-graph budget ownership in the leaf gate.",
+      "sources": [
+        {
+          "blob": "565ebc2f19472e0cd7a300fb76627b9439204942",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/candidate_parses.py"
+        },
+        {
+          "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+        },
+        {
+          "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
+        },
+        {
+          "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+        },
+        {
+          "blob": "08cb842723272236e27ee050892ceb8f45133f7a",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/route_context.py"
+        },
+        {
+          "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
+          "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
+        },
+        {
+          "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+          "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
+        },
+        {
+          "blob": "0a47c29b8d7e8c78acf70abdcb742dba492a361d",
+          "path": "mcp/src/agents_remember/application/review_closure_proofs.py"
+        },
+        {
+          "blob": "81cd1e501ae98d5876fd20aee9f68b74b092cd88",
+          "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+        },
+        {
+          "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
+          "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+        },
+        {
+          "blob": "a073f8cf2613bdb78fd89e3306c28e121fd4a8ba",
+          "path": "mcp/src/agents_remember/application/review_memo_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HND8KQ",
+      "items": [
+        "sha256:10510c042f46ce2d4fddb7cf547dbab306fa95c3a22ffff7c432592082b0241e",
+        "sha256:3832e6689295ae4ae0d4b1a3f2962fdc80fa7c1b9fbe1aefa8aa2e9f56abde64",
+        "sha256:9a66f011f9efc509c1873113fd9a99140723fbb948adfca295522e9fbb50a431"
+      ],
+      "reason": "Correct the persisted memo keys and adapter and envelope duties.",
+      "sources": [
+        {
+          "blob": "a073f8cf2613bdb78fd89e3306c28e121fd4a8ba",
+          "path": "mcp/src/agents_remember/application/review_memo_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_memo_store.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
+            "content": "sha256:3c1b280f14f8c2c670f0921f7cff56e9271498bd45cb43b2a4df8eca176e2242",
+            "locator": {
+              "kind": "symbol",
+              "name": "remembered"
+            },
+            "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+          },
+          "before": {
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "content": "sha256:3c1b280f14f8c2c670f0921f7cff56e9271498bd45cb43b2a4df8eca176e2242",
+            "locator": {
+              "kind": "symbol",
+              "name": "remembered"
+            },
+            "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+          },
+          "id": "RLZ-3BXC5B"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HVGW2V",
+      "items": [],
+      "reason": "Correct the live view scope and recovered evidence. The remembered owner re-observes recorded inputs and replays matching rows. Keep the rejection of failed observations.",
+      "revision": 3,
+      "subject": "INV-BBPPS5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:1265ddd815d30bd9f670e25e3b816285ec9abd5c043d19fb3ffca9d78f546ed7",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 372
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-7TS022"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HXPT6K",
+      "items": [
+        "sha256:24107b5f26c46c808bc7ac7931b5c6f1595a5d1c9a8df08df88ea2ad872b625b"
+      ],
+      "reason": "The host-activity reset clears retained endings and role records between test modules. Current task stage, host activity and event time facts remain owned by the projection.",
+      "revision": 3,
+      "subject": "INV-VDWN33"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J10PB7",
+      "items": [
+        "sha256:bd1ab94b0b95d81f82b1e9f23b892e198d4a42368a8915682b666434a97224fb"
+      ],
+      "reason": "Describe when the compact landing answer can retain the outcome, next step, debt count and capped keys.",
+      "sources": [
+        {
+          "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+        },
+        {
+          "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-J1CB5P",
+      "items": [
+        "sha256:18a0379d9e5456d75937b62250cde26ac09804518ab95b916b364c1c112fb080"
+      ],
+      "reason": "Reconfirm the document against the paired W3 source and refresh its affected support links. W2 retains the caller, seat and dispatch checks that support the reached security scope while adding cleanup after those checks and joined work.",
+      "revision": 5,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0VAC47",
+          "revision": 2
+        },
+        {
+          "id": "INV-180VCA",
+          "revision": 2
+        },
+        {
+          "id": "INV-ANKVYJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-B7J1PZ",
+          "revision": 2
+        },
+        {
+          "id": "INV-CQSY2Z",
+          "revision": 3
+        },
+        {
+          "id": "INV-E8S0YF",
+          "revision": 1
+        },
+        {
+          "id": "INV-GWG9HD",
+          "revision": 1
+        },
+        {
+          "id": "INV-JRV850",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJFNBQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MDE1ZN",
+          "revision": 1
+        },
+        {
+          "id": "INV-QN78E9",
+          "revision": 2
+        },
+        {
+          "id": "INV-SYBT3F",
+          "revision": 2
+        },
+        {
+          "id": "INV-WJ9ZD7",
+          "revision": 1
+        },
+        {
+          "id": "INV-XJ7GV5",
+          "revision": 2
+        },
+        {
+          "id": "INV-Y3TD13",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-J5GS9G",
+      "items": [
+        "sha256:690948a620f15b7194b68c32aa9ab64cec58d85231496b7b9e1c2390a12180c9"
+      ],
+      "reason": "The 15 member obligations and four routes still give the same answer and record guarantee. In W6 eligible landing values follow the existing fitting policy. The exact locator and final hint remain, and any fitting outcome or action precedes the locator. The wider envelope, secret handling, root routing, logging budgets, accounting and documented per-tool checks remain supported.",
+      "revision": 3,
+      "subject": "FAM-8SX6BT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J9VBS0",
+      "items": [
+        "sha256:883c5f77377de32ffdeeb3c3a5749d8d58d6d30dcefecafdf8b767f682df80e0"
+      ],
+      "reason": "The review reader imports the shared recording helper. Calls to the helper still follow a successful proof or witness check.",
+      "subject": "hunk:sha256:883c5f77377de32ffdeeb3c3a5749d8d58d6d30dcefecafdf8b767f682df80e0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JCN78F",
+      "items": [
+        "sha256:b04119dc4223bb781e4d165dacd341f8e28c1d3ee8b31ee726dad93f6e015d01"
+      ],
+      "reason": "Describe the grade-refresh read’s exact blob spool and lifetime.",
+      "sources": [
+        {
+          "blob": "73055592d2c4494f43711b168bcf158af218ed35",
+          "path": "mcp/src/agents_remember/canvas/explainer_target.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JM15NY",
+      "items": [
+        "sha256:cab296ebd28e7a68cbebfb43454589669b4f9de3ba2168ac5a5e0bad698bff88"
+      ],
+      "reason": "Record the revision verified in the six-record L19 sync reconciliation. The Bootstrap guide limits validation to known host offerings and describes per-start harness, model and effort overrides, which the request worker forwards to the same launch owner and drains on cancellation.",
+      "revision": 4,
+      "subject": "DPD-1DXK6Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JR61VK",
+      "items": [
+        "sha256:12ac5cec40cd4d93f5a1e78e30154b1c85b1a03f895c0e1436aa1cc4a1bc4ed1"
+      ],
+      "reason": "Refresh the existing class anchor. W2 adds request ownership and allocator trimming around the existing dispatch. Argument admission still follows the same registered handlers and the earlier observation stays open.",
+      "revision": 3,
+      "subject": "WKN-P01MFZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K1G5E1",
+      "items": [
+        "sha256:0aee73ed605fcd542bc1647693ecf8e58567e5a9391cf7770037551013374426",
+        "sha256:74da557c567e5c08f4a0072168e4021f2957d1ea343e9b36bc5aa2c23e355517"
+      ],
+      "reason": "Generates deterministic synthetic code and converted memory for the native stdio memory regression.",
+      "sources": [
+        {
+          "blob": "d1b58995adbdd8cdbeec8c26e6b356b13176778a",
+          "path": "mcp/tests/mcp_memory_bounded_corpus.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/mcp_memory_bounded_corpus.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-03QFAC",
+          "revision": 1
+        },
+        {
+          "id": "INV-16DDNJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-18QNN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-5VVSTD",
+          "revision": 2
+        },
+        {
+          "id": "INV-6VNAR5",
+          "revision": 1
+        },
+        {
+          "id": "INV-8FY445",
+          "revision": 1
+        },
+        {
+          "id": "INV-D3JV0V",
+          "revision": 1
+        },
+        {
+          "id": "INV-FXEPWM",
+          "revision": 1
+        },
+        {
+          "id": "INV-GAVZC0",
+          "revision": 1
+        },
+        {
+          "id": "INV-GGF749",
+          "revision": 1
+        },
+        {
+          "id": "INV-K2YX74",
+          "revision": 1
+        },
+        {
+          "id": "INV-R298WE",
+          "revision": 2
+        },
+        {
+          "id": "INV-S75HA1",
+          "revision": 1
+        },
+        {
+          "id": "INV-T4EVM5",
+          "revision": 1
+        },
+        {
+          "id": "INV-TE5W2D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VASQQX",
+          "revision": 1
+        },
+        {
+          "id": "INV-YFTJNQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZAW3HJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZPHKZB",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-KC7RNQ",
+      "items": [
+        "sha256:0adba0ee6488b1e5cd09711d9e20fd534970dae08655f7965549b6b96bb6e2fb"
+      ],
+      "reason": "Remove the historical cross-route hard-cap member after the approved removal of those budgets. The comparison binding, exact owners and trees, truthful population limits, current proof and frame retention still form the same comparison-bound guarantee. Nearby pagination and frame store limits retain their own scope.",
+      "revision": 4,
+      "subject": "FAM-GPNRVQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KER9KH",
+      "items": [
+        "sha256:333e670b21a8a2929dac7018541aa17f1ee67ad6f9e2afe59b19a92981ba557d",
+        "sha256:d23ad3056d4e7958e2566b0edc8617ddaf4f579ba0a3029bc1464156575f77a0"
+      ],
+      "reason": "Converts a completed capture from one native stdio server into regression measurements.",
+      "sources": [
+        {
+          "blob": "fd06da88d5ad9adf9118d8b596913833424647d9",
+          "path": "mcp/tests/mcp_memory_bounded_receipts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/mcp_memory_bounded_receipts.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KF4K1M",
+      "items": [
+        "sha256:1173664155dfee764aea38639bf749e74898d33ffbed19022589aa796a86a94f"
+      ],
+      "reason": "This docstring records the new charged-byte ceiling and the existing least-recently-used policy. The memo initialization enforces both ceilings.",
+      "subject": "hunk:sha256:1173664155dfee764aea38639bf749e74898d33ffbed19022589aa796a86a94f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:4e84a1e0ac9cbe0c8afb17e3de0218b5134da675b5f862bfb7f371b5518fbfa8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "0a992fc18648f6c49f10a570195cd00a77b40d7f",
+            "content": "sha256:1629e291661bcc6750b4f89e567cd811a9d4969d78dd014de0a83a18862c9273",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:3a6f3c9a9799ed9aa36ee658e0f57efe681d5704ad5d184682812bc0bea547fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "d8a614375316b5233411201916453bc5935890f4",
+            "content": "sha256:dc44cac147a4b2c72aca6fc606426f712c933c5ff1ba8017be4f5cb0d82b0449",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-KHQ19T",
+      "items": [
+        "sha256:a8df313b4eec98be270b15c34a0e018bda571bd101b146e539c002a7db88e793"
+      ],
+      "reason": "The evidence catalogs register the native memory stress case and additional consumers of existing review support. The silent turn-end rules and their test selections stay in force.",
+      "revision": 6,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MS4PT8",
+      "items": [
+        "sha256:995fbc4c4dd5f573a106108b75a54eec907b6d6e1be6684ff23a6b33fcb1f95a"
+      ],
+      "reason": "The server imports the request memo context manager. The public call boundary opens that scope and closes it before trim.",
+      "subject": "hunk:sha256:995fbc4c4dd5f573a106108b75a54eec907b6d6e1be6684ff23a6b33fcb1f95a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N574DV",
+      "items": [
+        "sha256:43aad27957c8da330a8c6197b78678b65fc09e0c5cccdf162d8bf7882726b81c",
+        "sha256:6eaa2aa3d05a18f7dbc885583b5765458bf5f54c41eeb66b641fcf67d33461d5",
+        "sha256:8eedea3736669462582987fdf35509ab25269523eae6aa4407e7146d36162962",
+        "sha256:c792593e97a5c52d811c68c4edee7dc14b92b36cf66383d7f948b69c8991516d"
+      ],
+      "reason": "Explain packed-reference witness validation, copy isolation and native request versus process ownership.",
+      "sources": [
+        {
+          "blob": "0db194c56647961c78e76ba5922ab36f97e93fdc",
+          "path": "mcp/src/agents_remember/kernel/git_reference_files.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/git_reference_files.py"
+    },
+    {
+      "considered": [
+        "FAM-TYKA3T",
+        "FAM-4ZNEN9"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-NJ92X8",
+      "items": [
+        "sha256:908fcc51e6033864a8d36dc00b75c5cb8a9a2175983136b17a71aacde841545a"
+      ],
+      "reason": "The reviewer child parse budget is independent of candidate identity, eligibility and child lifecycle.",
+      "revision": 1,
+      "subject": "membership:INV-CZXXR2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NPD26C",
+      "items": [
+        "sha256:a08fa8d26df8e1e18976d086a585d921e3b6b50c9486cb6a3a36e95c6df811be"
+      ],
+      "reason": "Describe the 16-entry and 8 MiB verdict retention limits and preserve exact observed-input reuse.",
+      "sources": [
+        {
+          "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/memo.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NZHQK8",
+      "items": [
+        "sha256:eb0fc89816b215eb1df1658407bf3092b7b41d3bbb11bc513cb1bdc05430de78"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits. Attribute the log context to the inner execution method and preserve the outer request lifetime.",
+      "sources": [
+        {
+          "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+          "path": "mcp/src/agents_remember/mcp/server.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/server.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19ZN9E",
+          "revision": 1
+        },
+        {
+          "id": "INV-9SKGX1",
+          "revision": 1
+        },
+        {
+          "id": "INV-AN0K8G",
+          "revision": 1
+        },
+        {
+          "id": "INV-B6D2SA",
+          "revision": 1
+        },
+        {
+          "id": "INV-GJTCT9",
+          "revision": 1
+        },
+        {
+          "id": "INV-HCG93S",
+          "revision": 1
+        },
+        {
+          "id": "INV-PVW2XJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-P281CC",
+      "items": [
+        "sha256:33260e8a4df9dde000027aeefe36dd95918bddd406e798de56d4948819ff5475"
+      ],
+      "reason": "The request wrapper adds memo ownership and trimming. The existing tool-call implementation still annotates currentness and refuses the declared stale installed-build publications before dispatch. The other serving-build members and routes retain their guarantees.",
+      "revision": 1,
+      "subject": "FAM-7EBNVZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:30f6f571cc68f363ec3ce74d65e1543d2a13a29bc8af4eb6ea08403d1b5d65cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_threaded"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
+            "locator": {
+              "kind": "symbol",
+              "name": "_threaded"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-GA8TM7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-P2VG8F",
+      "items": [
+        "sha256:2c2d4fa04432516d2aaa10d1294a39fdfc27e560a43990352dd68c1be663605d"
+      ],
+      "reason": "The synchronous wrapper still carries call context into its worker and the dispatcher keeps its FIFO write lock. The wrapper delegates cancellation draining to the common thread bridge and still owns the synchronous handoff.",
+      "revision": 1,
+      "subject": "INV-T3CE64"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P2YYSY",
+      "items": [
+        "sha256:5bcac53d005c0e28350a2dc77ce7c979596edc5d365aa8daea3aebe92238a0f6",
+        "sha256:90c6f024cc858cd6b05e7ece66497bf8cfb28df7bf1a8527d32ead396082d0f0"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test.",
+      "sources": [
+        {
+          "blob": "65361deb4d428a8cfbdc897909f3a2bc58c4ccc9",
+          "path": "mcp/tests/test_reviewer_worklist_warm.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_reviewer_worklist_warm.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P93HJD",
+      "items": [
+        "sha256:da03aba31d4d0e915cad7a4a972f6c6d4d6f94de61c9a143a2bfb6ebbc889aeb"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/gate.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-PAG98W",
+      "items": [
+        "sha256:9d7902364acd0d110e7fef2f32647354c19205ba051c8551beea8b799942a932"
+      ],
+      "reason": "Reconfirm the document against the paired W3 source and refresh its affected support links. The tool details still describe leaf-bound quality, worklist and role-gated replies, with W2 retaining the run registry and adding an independently scoped computation owner.",
+      "revision": 11,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
+            "content": "sha256:75b1dc54367cd13ab96afbc375f7046af3c25da4289dc819b599683387f31371",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_record_landing_tool_names_the_entries_it_keeps"
+            },
+            "path": "mcp/tests/test_record_landing_stale_debt.py"
+          },
+          "before": {
+            "blob": "52aea3ebe91a587cca92d20676665c8a1754c6e2",
+            "content": "sha256:6594c61b13b0f1f35557837587f90f6218f31098bcc3439d475e9aac918e4a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_record_landing_tool_names_the_entries_it_keeps"
+            },
+            "path": "mcp/tests/test_record_landing_stale_debt.py"
+          },
+          "id": "PRF-5AH1XT"
+        },
+        {
+          "after": {
+            "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
+            "content": "sha256:c9387725afcb0cbe471a9760e892ebc264a7e64b1dd6f5bd26a9c312a96a4ae9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_landing_answer_shapes_fit_the_controlled_locator"
+            },
+            "path": "mcp/tests/test_record_landing_stale_debt.py"
+          },
+          "before": "absent",
+          "id": "PRF-9ARM5S"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-PDT5VB",
+      "items": [
+        "sha256:d1adf1960cb4b281af4a94c1e3b0082e585e6cc50ac5dfacd550ef024ed07a17"
+      ],
+      "reason": "The complete result and master record still identify the debt. The public short form conditionally keeps the declared count and capped identifiers and can omit those fields to retain the exact locator. Evidence (W6-landing-debt-delivery): W6-F01-route-review.md, current saved-debt pipeline and two outcomes × five delivered answer shapes.",
+      "revision": 2,
+      "subject": "INV-6H0QQG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PPXXWB",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Reconcile current catalog declarations with 18 contracts, 120 artifacts and 793 lane modules, including one stress-durability case. W2 verifies the recording count and declared consumers. The baseline note also cited issue 414 and F27 as historic disposition; the catalog does not support that linkage. The immutable memory base c79c2640d7a24295ff3fff3049d90cfe884214f0 preserves reference 320 and its original supports.",
+      "sources": [
+        {
+          "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q69A49",
+      "items": [
+        "sha256:23935085a626496164dffc2c3c0bb6bada6a65fc704d50066639022211f0b189",
+        "sha256:3f456c0a087215f849071655950a4b54d7d40ad3de74a341dd3f11c25fb18095"
+      ],
+      "reason": "Owns computation memos for one native tool call or detached quality computation.",
+      "sources": [
+        {
+          "blob": "9c5b733b58bfb20cbe67b26797f4adff45a16eb8",
+          "path": "mcp/src/agents_remember/kernel/request_memo.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/request_memo.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QEDTQG",
+      "items": [
+        "sha256:dc25de9f62d7714c031aefbca541f0da2fc72f742c39c9cbd8b8f1b2ba1a9480"
+      ],
+      "reason": "This comment reflects that shared object history retains an identity for the alternate paths. The fingerprint helper and history write implement the representation.",
+      "subject": "hunk:sha256:dc25de9f62d7714c031aefbca541f0da2fc72f742c39c9cbd8b8f1b2ba1a9480"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-QH1G1K",
+      "items": [
+        "sha256:245498c7a1019f80572a75eb9e82ed76d5f0a0d5870b8180b59f1fb892a535b0"
+      ],
+      "reason": "The leaf-view and index-build anchors changed because BUG-R18 bounds the currently retained data. The leaf-view memo keeps up to four views and charges retained keys, values and read witnesses to eight MiB. The shared document-parse memo adds a 256 MiB limit to its entry limit. These repairs leave the prior decision about the cut implementation in force. The W2 proofs measure the approved tool-server memory contract, while reviving that wider alternative still requires its separate first-view and index nonregression evidence.",
+      "subject": "reconsider:DEC-H24NXK#1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+            "content": "sha256:9d0578d8c94f81f1123cfa0b61d878ba9d9e0178f26f87b5d739d1f96dca05e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "before": {
+            "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+            "content": "sha256:0ec10a5fa8298786b17a4f1069ec014773d091f1604f3be8c77b141ec266e771",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetCache"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+          },
+          "id": "RLZ-SZGGGM"
+        },
+        {
+          "after": {
+            "blob": "066e5b1e038b22ebc8fd8d88ab25a710957f88b0",
+            "content": "sha256:377b8061e6d276047099ff2173f98e2702f5b1ebf3b04eef22bf3d04ece5c7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_generation.py"
+          },
+          "before": {
+            "blob": "3a27a5ac7863ea62a93595be3a7f9023e111bb1a",
+            "content": "sha256:3dfde8b95de259bc4d75a84fcb878d20ca20208fb70078bb943bddc87f4e84c2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_generation.py"
+          },
+          "id": "RLZ-Z68Z1X"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-QSGZ4B",
+      "items": [
+        "sha256:810c435688974024beb2945d3e1568aed9a17666f67219faf10006c2031434c5"
+      ],
+      "reason": "The new memo lifetimes and stored alternate-path digest preserve the landed key and native working-view computation. The current census still supplies the full input for generating each new object revision.",
+      "revision": 2,
+      "subject": "INV-7TMGB0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RC5AAQ",
+      "items": [
+        "sha256:5d4193c90a6af3f456469041f45963ac149f150486b9b96c1f425d1713aefb12"
+      ],
+      "reason": "Child teardown closes its remaining input pipe and continues to reap the child. The temporary-file context closes the stdout spool.",
+      "subject": "hunk:sha256:5d4193c90a6af3f456469041f45963ac149f150486b9b96c1f425d1713aefb12"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-REQ2MM",
+      "items": [
+        "sha256:347406750a9d7be5e8fc18df6686554e48b8b5e5024e4978bd08a96c7421b26e"
+      ],
+      "reason": "The Git module imports the common frame parser. The batch operation passes the completed spool to it after running Git.",
+      "subject": "hunk:sha256:347406750a9d7be5e8fc18df6686554e48b8b5e5024e4978bd08a96c7421b26e"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-7TMGB0",
+          "revision": 2
+        },
+        {
+          "id": "INV-BRGWKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-C1RTSG",
+          "revision": 3
+        },
+        {
+          "id": "INV-GDWJKR",
+          "revision": 1
+        },
+        {
+          "id": "INV-M46Y3E",
+          "revision": 1
+        },
+        {
+          "id": "INV-NPEQB1",
+          "revision": 1
+        },
+        {
+          "id": "INV-QK8XNM",
+          "revision": 2
+        },
+        {
+          "id": "INV-WC3BS4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WNHAWD",
+          "revision": 2
+        },
+        {
+          "id": "INV-YTPBCF",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZNXX7H",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-SANSTS",
+      "items": [
+        "sha256:d1242c9508ba095690b50e75cb1381430585c528734ca0aca82f229668d72b2d"
+      ],
+      "reason": "Remove the retired maximum-age member and its obsolete admission rationale. The active member now accurately scopes the recorded input guarantee and names the separately witnessed live reuse. The native census and fixed-size shared alternate witness preserve the family’s guarantees.",
+      "revision": 5,
+      "subject": "FAM-EASWS6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TGGRG5",
+      "items": [
+        "sha256:11c03e693e35a5e614207830e88ed56cf3e7a94884262f3804cd2eba5465f7b8",
+        "sha256:40f2ee200358b74b68d76134efa8574aac4382895e336227f6fc649f1daeda0c",
+        "sha256:9190563fca8828ebbaff5a9a924118fe438bfb6b3ead81395cdc2e74e2a475f8"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test.",
+      "sources": [
+        {
+          "blob": "b6d41da9542bd4200cf43825ad356f6de1d86791",
+          "path": "mcp/tests/test_kept_capture_index.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_kept_capture_index.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V0NYWF",
+      "items": [
+        "sha256:ecd4ac1621d8c2aae542707ab96b1c8ed2bf6fe1b2ffd240dafc5bd39f3eec16"
+      ],
+      "reason": "Describe native request ownership, cancellation drain and trim alongside the separate detached and shared owners. The old dispatcher caption described the previous route. The current route gives ownership and argument dispatch to separate blocks in W2. The immutable memory base c79c2640d7a24295ff3fff3049d90cfe884214f0 preserves reference 290 and its original supports. The old batch reader caption is superseded by the current private spool contract in the Git command card. The immutable memory base c79c2640d7a24295ff3fff3049d90cfe884214f0 preserves reference 93 and its original supports. Refresh the testing-guide citation after checking the inherited reference claim.",
+      "sources": [
+        {
+          "blob": "b81241b1ecdcba97b81a57938e795ed5daf041a1",
+          "path": "mcp/src/agents_remember/kernel/git_blob_frames.py"
+        },
+        {
+          "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+          "path": "mcp/src/agents_remember/kernel/git_command.py"
+        },
+        {
+          "blob": "0db194c56647961c78e76ba5922ab36f97e93fdc",
+          "path": "mcp/src/agents_remember/kernel/git_reference_files.py"
+        },
+        {
+          "blob": "f7a3ffcc2ffdcf26cbb1082f09dacf5fb7222001",
+          "path": "mcp/src/agents_remember/kernel/memory_graph.py"
+        },
+        {
+          "blob": "9c5b733b58bfb20cbe67b26797f4adff45a16eb8",
+          "path": "mcp/src/agents_remember/kernel/request_memo.py"
+        },
+        {
+          "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+          "path": "mcp/src/agents_remember/mcp/server.py"
+        },
+        {
+          "blob": "16c9244c6c6d7b49e26f835cf992ae04304056f5",
+          "path": "mcp/src/agents_remember/mcp/thread_workers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V31H62",
+      "items": [
+        "sha256:fe20ade4f4ac65a0c21290b670db22a9e96749871c223f5baa48fc3f11e3af77"
+      ],
+      "reason": "Route readers to the landing-debt pipeline and shared guard checks that cover the compact answer.",
+      "sources": [
+        {
+          "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "d1b58995adbdd8cdbeec8c26e6b356b13176778a",
+          "path": "mcp/tests/mcp_memory_bounded_corpus.py"
+        },
+        {
+          "blob": "3bbe4b8a03979ebc79e7adf376c3a3142e9d974f",
+          "path": "mcp/tests/mcp_memory_bounded_fixture.py"
+        },
+        {
+          "blob": "fd06da88d5ad9adf9118d8b596913833424647d9",
+          "path": "mcp/tests/mcp_memory_bounded_receipts.py"
+        },
+        {
+          "blob": "3d085155b1d33d66eb9d606c2f0ceedf9bc24818",
+          "path": "mcp/tests/mcp_memory_bounded_stdio_support.py"
+        },
+        {
+          "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "f97ddaaf8497ca3bef1fe8d9b42bcb4da9d45405",
+          "path": "mcp/tests/test_definition_scope_boundaries.py"
+        },
+        {
+          "blob": "93b9ba5c393fe3efac16c9954997ff25a7c8068a",
+          "path": "mcp/tests/test_explainer_worktrees.py"
+        },
+        {
+          "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
+          "path": "mcp/tests/test_git_command.py"
+        },
+        {
+          "blob": "2668de0dbd12e6a7d845380c650d2cbce313f008",
+          "path": "mcp/tests/test_git_object_memo.py"
+        },
+        {
+          "blob": "de891aa4dd916994f99ea0e83f1c07ab7e13e09c",
+          "path": "mcp/tests/test_idle_stat_witnesses.py"
+        },
+        {
+          "blob": "b6d41da9542bd4200cf43825ad356f6de1d86791",
+          "path": "mcp/tests/test_kept_capture_index.py"
+        },
+        {
+          "blob": "6225987c6e00d97ca42132b37ecbb0446f5ba773",
+          "path": "mcp/tests/test_knowledge_conversion.py"
+        },
+        {
+          "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
+          "path": "mcp/tests/test_mcp_dispatch_concurrency.py"
+        },
+        {
+          "blob": "65a22267d1c85b114460c09b8c5ba15c53fc7fa8",
+          "path": "mcp/tests/test_mcp_memory_bounded_stdio.py"
+        },
+        {
+          "blob": "a9e0c8433732f1e0c0bc28160b0555010cab4b64",
+          "path": "mcp/tests/test_object_census_witness.py"
+        },
+        {
+          "blob": "b6f33379e6184a3f66a3f15339e17ad8fc5e0e1a",
+          "path": "mcp/tests/test_read_anchor_memo.py"
+        },
+        {
+          "blob": "9f93b1355d5b397a70905cba62141f351ad6cf3a",
+          "path": "mcp/tests/test_record_landing_stale_debt.py"
+        },
+        {
+          "blob": "37fd335ecba222cbaacb2815fd1496398fb3a62b",
+          "path": "mcp/tests/test_review_closure_rewitness.py"
+        },
+        {
+          "blob": "0f6f705ecabdf4f073272b9a4ffaa4ebe913499a",
+          "path": "mcp/tests/test_review_evidence_eof.py"
+        },
+        {
+          "blob": "922fa26c27916a8869e90c3b025fd64de882d97b",
+          "path": "mcp/tests/test_review_incremental_memos.py"
+        },
+        {
+          "blob": "8099afa4418e202775ac827c140579dbee444b9b",
+          "path": "mcp/tests/test_review_validation_reuse.py"
+        },
+        {
+          "blob": "65361deb4d428a8cfbdc897909f3a2bc58c4ccc9",
+          "path": "mcp/tests/test_reviewer_worklist_warm.py"
+        },
+        {
+          "blob": "1ed7da7b3f895c20012a5a680d83bcea0da5f5fb",
+          "path": "mcp/tests/test_tool_answer_guard.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V573MB",
+      "items": [
+        "sha256:da53db64e329cdd104f99171aa1a9b7664f13ff4fdf29b5cd1da5807a523934e"
+      ],
+      "reason": "The tree-change docstring drops the former path-count weighting description. Git still supplies the exact changed paths and the memo initialization now accounts for bytes.",
+      "subject": "hunk:sha256:da53db64e329cdd104f99171aa1a9b7664f13ff4fdf29b5cd1da5807a523934e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "content": "sha256:72a688f915684c1ddd30725f3df07c80b1a8fc7f31547b33d6ccd51253735983",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fit_the_cut_hint"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": {
+            "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
+            "content": "sha256:4269e176dd86ed861ecbdb7c36b0af961efc7fab9d0a129ef6af3d5960616391",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fit_the_cut_hint"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "id": "RLZ-395R92"
+        },
+        {
+          "after": {
+            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "content": "sha256:7df5bf93190ee076eb11090ddf100143bc33b9073090b77b7aef404c610ae5de",
+            "locator": {
+              "end": 665,
+              "kind": "line_range",
+              "start": 655
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": "absent",
+          "id": "RLZ-558WX5"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-VA9CAD",
+      "items": [
+        "sha256:ab1e735d30caa1d6bee71769eec40328ba35b5db376ac99af4d520c191176650"
+      ],
+      "reason": "When re-guarding, the specific declared child determines whether it had been retained. The final hint measures and uses the running dropped-field count while keeping the exact locator.",
+      "revision": 2,
+      "subject": "INV-QN78E9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VFCP62",
+      "items": [
+        "sha256:2ac89c735ea36ba6bc7e63a0320d4518c73746cc242aff0b80246f4e5bd460ea",
+        "sha256:52c1ed22a45a68ca97098137b363e45a455481a0849586ffe89c2aa878b5fa04"
+      ],
+      "reason": "Reuses parsed lifecycle journal records against the journal store's file observation.",
+      "sources": [
+        {
+          "blob": "386d55399e7014305d244c238a4168be81704750",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_record_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_record_cache.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-VNEN00",
+      "items": [
+        "sha256:7bf0658bb42ee3e06fc61ef9dca260ee06eefe9ac81141be7aeed3482af340e7"
+      ],
+      "reason": "The registered start workers now drain before cancellation leaves the request scope. The same typed fields still reach launch selection and creation. The provider offerings, permissions, mode precedence and receipt guarantees retain their prior member routes.",
+      "revision": 4,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VWHBH3",
+      "items": [
+        "sha256:be3bf61705f496b9030dd6dab53f4802a67fcb975fd0f32a68b53ad344f63616"
+      ],
+      "reason": "The file imports the temporary-file factory and the binary stream annotation required by the private-spool path. The fetch context owns the spool lifetime.",
+      "subject": "hunk:sha256:be3bf61705f496b9030dd6dab53f4802a67fcb975fd0f32a68b53ad344f63616"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VWPJ2N",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Reconcile current catalog declarations with 18 contracts, 120 artifacts and 793 lane modules, including one stress-durability case.",
+      "sources": [
+        {
+          "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W3JC4M",
+      "items": [
+        "sha256:87d71a05e7256d84f81b7f771cd07ac6038280610d8847adee600e85052eb3c2",
+        "sha256:db76370e7cdbc9c0d086146ecc334bfd5b838d8899146b79903e1c68287e031e"
+      ],
+      "reason": "Decodes exact Git blob bodies from binary batch output.",
+      "sources": [
+        {
+          "blob": "b81241b1ecdcba97b81a57938e795ed5daf041a1",
+          "path": "mcp/src/agents_remember/kernel/git_blob_frames.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/git_blob_frames.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WAFW5V",
+      "items": [
+        "sha256:9b9e645c20cb3e66a4b91093f779fd6914dc50f023196faf34675ab5da47c238"
+      ],
+      "reason": "The evidence reader imports os to read the spool descriptor size. The frame reader applies that size when it checks the payload.",
+      "subject": "hunk:sha256:9b9e645c20cb3e66a4b91093f779fd6914dc50f023196faf34675ab5da47c238"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WTJAZK",
+      "items": [
+        "sha256:f4efb941049a689c4e4a6090ecd7a0f9b8470d511412316ea029f9c134eb4131"
+      ],
+      "reason": "Reconfirm the document against the paired W3 source and refresh its affected support links. The evidence-system description continues to apply to the existing stress-durability lane with the native stdio case and its four permanent shared supports.",
+      "revision": 8,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X529E8",
+      "items": [
+        "sha256:5d68807ad2900253940156431ef9dccde94f3b026aac46a4d7dffb81f1969c6d",
+        "sha256:c670aab5ff64bbd5fa0360416fd5b467b7e0a1b7e7c86564b639f3db55241bd2"
+      ],
+      "reason": "Describe the regression exercising final hint fitting with the current omission count.",
+      "sources": [
+        {
+          "blob": "1ed7da7b3f895c20012a5a680d83bcea0da5f5fb",
+          "path": "mcp/tests/test_tool_answer_guard.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_answer_guard.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XA15JN",
+      "items": [
+        "sha256:09f5ed1ec79ed3f05113e6b23500f6fef8d36b0d0b6661a3c7c34557c0193894",
+        "sha256:6d6c0dec4829a8685fd8adc7bf921809efb2cd0a36c9a619031ee198289aed58",
+        "sha256:70e9cb4f531df1658593f4613c229da5412268691293e1f3db4b508ca55becb3",
+        "sha256:7ff9046d2b6c810910f1bdfe5bed0fb1dd5e1c1d6fc04395ec06aa66f410b84a"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test.",
+      "sources": [
+        {
+          "blob": "922fa26c27916a8869e90c3b025fd64de882d97b",
+          "path": "mcp/tests/test_review_incremental_memos.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_incremental_memos.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XF8B9N",
+      "items": [
+        "sha256:e27b69d6f4d1cbb318b34722de260b409d31ac490bb3332e520c6d1a7ba3b90e",
+        "sha256:f80c020bfe510ef767bd5aa205899d9890db1e6e5f3c294d2a2a73a2bcc78154"
+      ],
+      "reason": "Builds private paired Git repositories, a leaf and server settings for the native stdio memory regression.",
+      "sources": [
+        {
+          "blob": "3bbe4b8a03979ebc79e7adf376c3a3142e9d974f",
+          "path": "mcp/tests/mcp_memory_bounded_fixture.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/mcp_memory_bounded_fixture.py"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-XGEHEB",
+      "items": [],
+      "reason": "Replace the former 900-second condition with the current four-entry and 8 MiB limits. The same-key test at test_review_read_latency.py lines 748 through 794 exercises reuse after that former cutoff and separation from other keys.",
+      "revision": 4,
+      "subject": "INV-5M9WY3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XQW3AQ",
+      "items": [
+        "sha256:556f8c42006ffdd88cba3663477df178aefec2727fb4b7069b739f6c3cefd150"
+      ],
+      "reason": "The citation module imports the request owner selector. The TypeScript anchor lookup chooses its cache through that selector.",
+      "subject": "hunk:sha256:556f8c42006ffdd88cba3663477df178aefec2727fb4b7069b739f6c3cefd150"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XS1B0Y",
+      "items": [
+        "sha256:90b4e6b01548223cfe6f35b5d3c11545d48f0222dae67f88fee8ddc595fcb54b"
+      ],
+      "reason": "Withdraw the obsolete paged and byte-window claims from the whole-object reader.",
+      "sources": [
+        {
+          "blob": "81cd1e501ae98d5876fd20aee9f68b74b092cd88",
+          "path": "mcp/src/agents_remember/application/review_evidence_read.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_evidence_read.py"
+    },
+    {
+      "considered": [
+        "FAM-61DY2V",
+        "FAM-4ZNEN9"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-YQJA2B",
+      "items": [
+        "sha256:72eb2a96a09328c52977a2d441be86d2c0469a1b33f8f83b2b704a4617da4747"
+      ],
+      "reason": "Retained graph pricing supplies a separate limit while the reached families continue to determine exact-input reuse and publication authority.",
+      "revision": 1,
+      "subject": "membership:INV-QEKWKH"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YW6TQ4",
+      "items": [
+        "sha256:ccea016d4ef5954fb7c9c73388622450f4568bc6f95d000b37927586bdb09a0e"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+          "path": "mcp/src/agents_remember/serving/changeset_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/changeset_cache.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YX5F9R",
+      "items": [
+        "sha256:5d993e738f9667e068432f210b1798d37da18a226b07256ed7028a0204fd1b24"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge_index/build.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z1S24K",
+      "items": [
+        "sha256:8e37b1e401ee7f16ff1b376fe45190a478e8d32c186962817cdd1683ebc51e83",
+        "sha256:a59449bc63d4e07d2cbb470dedff6397399d0fa0a135a021285d16873089d330"
+      ],
+      "reason": "Explain the changed executable assertions and keep each claim scoped to its test.",
+      "sources": [
+        {
+          "blob": "0f6f705ecabdf4f073272b9a4ffaa4ebe913499a",
+          "path": "mcp/tests/test_review_evidence_eof.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_evidence_eof.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZDH40W",
+      "items": [
+        "sha256:ca9c12fe9a3b518e06c07e75695e604a88e2060e88566e0c2b316f0038edac24"
+      ],
+      "reason": "The decision moves to revision 6 because its fired source links now point to the current implementation. Its chosen alternative and the separate first-view and index reconsideration condition survive.",
+      "revision": 6,
+      "subject": "DEC-H24NXK"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZEPZQJ",
+      "items": [
+        "sha256:4fa22d375193e61282d2d8d901e68f7aa4a9b00c784034c6c17057d52c71bc84"
+      ],
+      "reason": "Reconfirm the existing document claim against the current code and refresh the affected support links. The MCP package README still names the tool groups for the 44-tool ordinary roster and bound explainer extras and points to the updated Tool answers reference.",
+      "revision": 9,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZW8AE2",
+      "items": [
+        "sha256:ad55a462e4bf579bb1c445da76d53e7051e74177dd9a5739d0d3d9241e568d60",
+        "sha256:adbb5b4794fb0849fe89d32229ea1e379e17163fc246ace030fe1e2862d237fe",
+        "sha256:ed7ccb1c71f331a4d1af52150db218e27e345e88cd4c5818223d411708879c8d"
+      ],
+      "reason": "Renew the source card to describe the current W2 route, ownership and limits.",
+      "sources": [
+        {
+          "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
+          "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

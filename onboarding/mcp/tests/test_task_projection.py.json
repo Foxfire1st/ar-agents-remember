@@ -287,50 +287,16 @@
       ]
     },
     "4": {
-      "note": "The structural import-surface case: no writer, no transport, no task-JSON reader.",
+      "note": "The structural case scans direct task_projection Python modules. It rejects listed writer and transport import substrings and top-level json imports.",
       "targets": [
         {
           "anchor": {
             "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
-            "content": "sha256:92f9bfe4953fb8b8fad0b239f44df9d07de1cb0692ae79255c0c2eea41f949c0",
+            "content": "sha256:cfbac671c94d6be0f6c60305f839550fd43a34e6b585ad60a5f15879736920a8",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_projection_modules_import_no_writer_transport_or_task_json_reader"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
-            "content": "sha256:114eb89807360014692832da27a8a76854aa77a30c3982d3dc7463d03f5757d6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_WRITE_OR_TRANSPORT_MARKERS"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
-            "content": "sha256:64249431232aa8132fbc51839d7883dfc45e7fbcaafd49377b91e87619a317ec",
-            "locator": {
-              "end": 764,
+              "end": 1144,
               "kind": "line_range",
-              "start": 738
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
-            "content": "sha256:6429d6733ce2742d30278d299b0d7d7786eab23820c12be0c4dc8b2404de4fc7",
-            "locator": {
-              "end": 736,
-              "kind": "line_range",
-              "start": 719
+              "start": 1099
             }
           },
           "kind": "test"
@@ -355,7 +321,7 @@
       ]
     },
     "6": {
-      "note": "The altitude case: sprint history reaches an orchestrator but never a leaf.",
+      "note": "The altitude fixture checks that the Orchestrator receives the sprint decision and the leaf excludes it. A separate assertion checks the leaf's master-log reference.",
       "targets": [
         {
           "anchor": {
@@ -371,7 +337,7 @@
       ]
     },
     "7": {
-      "note": "The failure-taxonomy case: each unresolvable input has its own status.",
+      "note": "Named resolution failures return their asserted projection statuses. The registry census also accounts for declared unreachable statuses.",
       "targets": [
         {
           "anchor": {

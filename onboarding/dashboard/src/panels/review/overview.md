@@ -12,7 +12,7 @@ What governs the look is the memory layer's design text, not this card: [`system
 
 ## Hot Path Summary
 
-Start at ReviewSurface for the question-bound read cycle, retained comparison frame and cache. reading/useReviewPage composes the shared model, selection, walk and scroll owners. changeSetOrder builds the pure model; tree/ReviewTree renders its compact navigation and reading/ReadingColumn renders its content. The shell supplies the leaf’s retained explainer column outside this route, defaulting to its placeholder while no seat exists. A landed leaf's review opens the comparison its enclosure records as delivered; the page keeps that default apart from the highest recorded number and states once when the comparison on screen is not that pair. The Explanation tab's own first line, and its "No explanation yet" block when no page exists, say the explainer's browser sentence while a first fetch is pending and the last failed fetch's words once it failed — both read from the state, with no new control.
+Start at ReviewSurface for the question-bound read cycle, retained comparison frame and cache. reading/useReviewPage composes the shared model, selection, walk and scroll owners. changeSetOrder builds the pure model; tree/ReviewTree renders its compact navigation and reading/ReadingColumn renders its content. The shell supplies the leaf’s retained explainer column outside this route, defaulting to its placeholder while no seat exists. A landed leaf's review opens the comparison its enclosure records as delivered; the page keeps that default apart from the highest recorded number and states once when the comparison on screen is not that pair. The Explanation tab can show a pending browser notice in its first line. A retained revision can show a last-render failure above the page. When the body chooses the “No explanation yet” block, the block shows the last-render failure if present. A build, request form or unreadable state can use the body instead. The empty block offers an end-to-end explanation and describes optional grades.
 
 ## Construction And Ownership
 
@@ -70,6 +70,7 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/reading/Techni
 
 - The Review \| Explanation switch stays in the top line. Each shown or compared saved revision carries its own binding, time, isolated frame and trusted stale list, and a claim return selects its resolved Review block with the walked tree retained. Published categories and grades feed the one change-set model: a category’s declared scale orders drawn changed blocks with Priority ties and an Ungraded (n) group, while chips retain presenter-inference labels, reasons and stale marks. Before work exists, the planned page uses the product’s planned · no changes line, an intended notice and deterministic-only effect orders with inert packet bodies. A matching live no-work move renews deterministic reads; work-bearing moves present the watcher’s notice and explicit Update instead of waking an explainer. [11]
 
-- The tree’s single trailing cell may include a state tag with writer role and model in its title. [12]
-- Review member rows show supplied state and writer next to their location counts. [13]
-- Same-revision and equal-wording family guarantee blocks label both snapshot states. [14]
+- The header shows a pending browser notice or a last-render failure for a retained revision. The “No explanation yet” block shows a last-render failure when present. [12]
+- The tree’s single trailing cell may include a state tag with writer role and model in its title. [15]
+- Review member rows show supplied state and writer next to their location counts. [16]
+- Same-revision and equal-wording family guarantee blocks label both snapshot states. [17]

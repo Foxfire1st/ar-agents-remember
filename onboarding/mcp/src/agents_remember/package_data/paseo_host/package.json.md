@@ -10,10 +10,10 @@ The host package manifest whose single dependency is the contract's exact host r
 
 ## Code Commentary
 
-The manifest's `dependencies` names `@getpaseo/cli` at the contract's version; a drift from the contract refuses release concordance, and the provision installs from the shipped lock rather than from this manifest's resolution.
+The manifest's `dependencies` names `@getpaseo/cli` at the contract's version; a drift from the contract refuses release concordance. Provisioning copies this manifest and the shipped lock into staging and runs `npm ci` there.
 
 
 ## Evidence
 
 
-- The exact host dependency the manifest declares. [1]
+- The manifest declares exactly one host dependency, `@getpaseo/cli` 0.16.2. [1]

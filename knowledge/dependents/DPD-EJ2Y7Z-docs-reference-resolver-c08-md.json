@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
-    "statement": "The page holds: the answer-shape change adds the framework keys `runningOperation` and `cut`, and a cut answer now keeps `log` and ends with its `cut` object; the resolver's own records and their order are unchanged.",
-    "task": "261112-BUG-L7",
+    "statement": "The resolver reference still describes the shaped context packet and the blocks in its complete recorded result.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/reference/resolver-c08.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -68,7 +68,7 @@
       "path": "mcp/src/agents_remember/kernel/git_facts.py"
     },
     {
-      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

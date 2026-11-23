@@ -89,7 +89,7 @@ None.
 
 ## Current Contract
 
-memoryReviewState is classified EVIDENCE, as are ReviewState.recordedRounds and every ReviewRound field (round, kind, findingsRemain, verdictRef, memoryTree, recordedBy, handedOverBy, verdict). Recursive classification therefore handles the new nested model and pure review-evidence deltas remain acceptance-evidence rather than topology/intent/readiness invalidation. Exhaustiveness remains fail-closed; classification itself does not authenticate verdicts or choose launch escalation.
+The review evidence plane includes `memoryReviewState`, `ReviewState.recordedRounds` and every `ReviewRound` field: `round`, `kind`, `findingsRemain`, `verdictRef`, `memoryTree`, `recordedBy`, `handedOverBy` and `verdict`. It also includes `ReviewState.addedFindings`, `ReviewState.addedFindingRounds`, their nested fields and `RouteReviewRecord.addedFindingIds`. Recursive classification treats these deltas as acceptance evidence and requires complete coverage of persisted fields. The caller authenticates verdicts and owns launch escalation.
 
 
 The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
@@ -102,7 +102,7 @@ RouteReviewRecord.baseCommit is classified EVIDENCE beside candidateTree. The fi
 
 ## Evidence
 
-- The evidence classifier marks every recorded review round field, including the exact tree and attributed review facts, as EVIDENCE. [18]
+- The evidence classifier marks every recorded review round field, including the exact tree and attributed review facts, as EVIDENCE. [19]
 
 
 - The new review-base stamp belongs to the existing evidence plane. [16]

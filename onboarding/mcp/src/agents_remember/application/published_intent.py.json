@@ -552,14 +552,16 @@
       ]
     },
     "34": {
-      "note": "The one Git command this route runs, through the shared owner.\n\nAnchor: `run_git`",
+      "note": "Published intent delegates its source pair to the held code-tree owner. That owner uses the shared Git runner for the HEAD tree and checkout status before it selects the commit tree or captures a dirty worktree.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
-              "kind": "file"
+              "end": 225,
+              "kind": "line_range",
+              "start": 170
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -567,11 +569,48 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:564257e3a65dba1cd26b91783e12978c4a018d6e31b9465869588e47d0c56c30",
             "locator": {
-              "kind": "symbol",
-              "name": "run_git"
+              "end": 451,
+              "kind": "line_range",
+              "start": 426
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0e16888c5a50b682656243fe3fc8bfa44ae76c9",
+            "content": "sha256:d956f84d6604754edbc7ab9d773e85ab77d9bc210bada5e1ef2a24285b66e6b4",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/application/worktree_code_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0e16888c5a50b682656243fe3fc8bfa44ae76c9",
+            "content": "sha256:cc9360bc2e8ee841ddd920f49139c44b5dee5f4623199c81ab3e041f76f208de",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/src/agents_remember/application/worktree_code_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:44921560a9d5681dc45ee5e1808f8595ae4f497d2458666814c83965fd8b1418",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -903,7 +942,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "blob": "d0ba560f511a8acf55bb33a3f0afb56909f26690",
             "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
             "locator": {
               "kind": "symbol",
