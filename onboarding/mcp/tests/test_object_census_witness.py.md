@@ -10,11 +10,9 @@ A test suite for object census witness.py.md: it drives the behaviour the commen
 
 ## Code Commentary
 
-Two identical requests run one census, witnessed by test_two_identical_requests_run_one_census
+The native cases verify within-request reuse and release for small and large alternate populations. The shared history test checks the fixed-size alternate fingerprint and the different revision transitions under strict and tolerant addition policy.
 
-## Boundaries
-
-The obligation above is the whole of what this file must keep true; the route account says what the surrounding surface promises.
+Two identical unscoped change-set snapshots run one census, as checked by `test_two_identical_requests_run_one_census`.
 
 ## Evidence
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "The policy's scoped host installation and address still describe the product after the pinned package lock changes and the endpoint registration remains the same.",
-    "task": "261112-BUG-L10",
+    "statement": "W2 retains the caller, seat and dispatch checks that support the reached security scope while adding cleanup after those checks and joined work.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "SECURITY.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+      "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },

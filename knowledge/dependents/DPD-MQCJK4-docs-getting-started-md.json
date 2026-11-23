@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
-    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
     "statement": "The setup guide’s unmatched caller-harness refusal and hosted Architect entry continue to agree with Bootstrap and dashboard selection behavior.",
-    "task": "261112-BUG-L19",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -76,7 +76,7 @@
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
     {
-      "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
+      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

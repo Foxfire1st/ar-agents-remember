@@ -55,7 +55,9 @@ No relevant external documentation is needed.
 ### Repo-Internal References
 
 
+
 - `run_git` is imported from the kernel git command module rather than defined locally, and both helpers here pass `GIT_METADATA_TIMEOUT_SECONDS` from it. [1]
+
 
 - Cross-repo entries are parsed from settings before this module resolves repository state. [2]
 - External memory ledger parsing supplies memory compatibility facts. [3]

@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-        "content": "sha256:f357c291c49a5146de20765aadbc6b4cf3766142fbd04a10e61c591d32bcd962",
+        "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+        "content": "sha256:9fcb6f70c40e8c8624e088d4eb8a8db1b14109fa1fe66489391bd7f5da3c6954",
         "locator": {
-          "end": 320,
+          "end": 438,
           "kind": "line_range",
-          "start": 118
+          "start": 149
         }
       },
       "id": "RLZ-1563PY",
@@ -18,15 +18,17 @@
         "handoffEntry": "MIK-R87@v1 4",
         "leaf": "260928-MIK-L87"
       },
-      "rationale": "The closed register owns treatment and reason for each source-discovered mutable state.",
+      "rationale": "Lists each registered mutable process state with its treatment, reason and reset owner for the test isolation checks.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-        "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+        "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+        "content": "sha256:1265ddd815d30bd9f670e25e3b816285ec9abd5c043d19fb3ffca9d78f546ed7",
         "locator": {
-          "kind": "file"
+          "end": 381,
+          "kind": "line_range",
+          "start": 372
         }
       },
       "id": "RLZ-7TS022",
@@ -35,7 +37,7 @@
         "handoffEntry": "INV-VDWN33",
         "leaf": "260928-MIK-L184"
       },
-      "rationale": "Shared state that survives between cases is how a suite becomes order-dependent.",
+      "rationale": "Resets retained host-publication endings and role records between test modules, so fixtures for task activity and event time start from their own host observations.",
       "role": "support"
     }
   ],
@@ -45,7 +47,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
             "content": "sha256:ffcae9eeee6545e17885b99259aff32e190c7f7246443f57580d5dc308160253",
             "locator": {
               "kind": "symbol",
@@ -57,12 +59,12 @@
       ]
     },
     "10": {
-      "note": "The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "note": "The closeout digest-file stats, lifecycle location cache and process-owned lifecycle operation-record memo use ordinary _clear resets between test modules.",
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
             "locator": {
               "kind": "file"
             }
@@ -72,12 +74,12 @@
       ]
     },
     "11": {
-      "note": "The reset register also forgets master-architect host adapters, explainer in-flight send/build ledgers, and per-root move watches between modules. The obsolete `worktrees.services._current` row and its resetter are removed because the service supplier is now one holder object; the shared pytest module fixture resets that holder explicitly before and after each module. These declarations do not claim a reset was executed in this inspection.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "note": "The reset register discards loaded master-architect host adapters, Explainer send and build ledgers, and per-root move watches between test modules.",
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
             "locator": {
               "kind": "file"
             }
@@ -87,11 +89,11 @@
       ]
     },
     "2": {
-      "note": "Process snapshot/restore uses one typed owner.\n\nAnchor: `_PytestProcessState` `begin_pytest_process` `end_pytest_process`",
+      "note": "Process snapshot and restore use one typed state owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
             "content": "sha256:cc9d5c3656d5622c4c4b6fb88b49adeee1266da659b6887d71283ffb81724162",
             "locator": {
               "kind": "symbol",
@@ -102,7 +104,7 @@
         },
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
             "content": "sha256:8aef1c2a76ebeda48c8c7b6f0fd4404d64af40c72638c5e1eb9f8695e54ef77a",
             "locator": {
               "kind": "symbol",
@@ -113,7 +115,7 @@
         },
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
             "content": "sha256:d2530de545842cfcc3d49962b1d11f78af8555fd6fbe9b89aaee99a7bbd32402",
             "locator": {
               "kind": "symbol",
@@ -124,8 +126,8 @@
         },
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
             "locator": {
               "kind": "file"
             }
@@ -135,12 +137,12 @@
       ]
     },
     "3": {
-      "note": "The closed register gives every state a treatment and causal rationale.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "note": "The closed register gives each registered process state one treatment and a reason.",
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
             "locator": {
               "kind": "file"
             }
@@ -154,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
             "content": "sha256:80068ea5fda12ee371d15fa0b0015285dc018e4d29308d159ed6f4214ffcab8d",
             "locator": {
               "kind": "symbol",
@@ -170,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
             "content": "sha256:fecf325cce31d06171e585a777aa0d59ef6f55ee13e0b4b5e09a9b3c28567d37",
             "locator": {
               "kind": "symbol",
@@ -186,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
             "content": "sha256:b526214cf1d90732f739832b696528694ec2db83e24ee3732b5b86a29b7e6201",
             "locator": {
               "kind": "symbol",
@@ -198,12 +200,12 @@
       ]
     },
     "8": {
-      "note": "Loaded-owner reset includes delegated sweep and tool-writer cleanup.",
+      "note": "Resetting loaded owners delegates sweep cleanup and tool-writer cleanup to their resetters.",
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
             "locator": {
               "kind": "file"
             }
@@ -213,12 +215,12 @@
       ]
     },
     "9": {
-      "note": "The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "note": "The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded.",
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
             "locator": {
               "kind": "file"
             }

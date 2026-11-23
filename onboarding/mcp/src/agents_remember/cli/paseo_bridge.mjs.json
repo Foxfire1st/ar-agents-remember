@@ -432,12 +432,12 @@
         },
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:0cbc15e510272679d65974207885303ddc8b1a76810adf338e8dbe141a63cda4",
             "locator": {
-              "end": 117,
+              "end": 127,
               "kind": "line_range",
-              "start": 109
+              "start": 119
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -445,12 +445,12 @@
         },
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:8dd61413c66954ced6d132211298b59efc8c7075b21c811b020d1ce3acbdc875",
             "locator": {
-              "end": 324,
+              "end": 319,
               "kind": "line_range",
-              "start": 309
+              "start": 304
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

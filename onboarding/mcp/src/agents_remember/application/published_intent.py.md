@@ -180,7 +180,9 @@ No configured domain documentation could be checked.
 - The dataset identity reader reused here: it answers an identity or a reason, and never raises for a caller. [32]
 
 
-- The one Git command this route runs, through the shared owner. [34]
+
+- Published intent delegates its source pair to the held code-tree owner. That owner uses the shared Git runner for the HEAD tree and checkout status before it selects the commit tree or captures a dirty worktree. [34]
+
 
 - The scope-selection rule the read reports when a seed selects nothing, and the recorded-but-real selection it serves instead of refusing. [35]
 - The typed seeds and budget this route constructs, and the policy version the recorded block carries. [36]

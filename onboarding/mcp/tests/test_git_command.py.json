@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+        "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
         "content": "sha256:3a6229ba7b175b8691e2b00a9ac2c461f0bf314317ebce471dcc175552f2cc03",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+        "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
         "content": "sha256:745995f60f4fffc4b6c9b3b6a3f8c3d4ec6149cd8a0addff6d9dcf4fc0e4a292",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+        "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
         "content": "sha256:4a48a27af0bdba4a500091b9863d89a1faf0c712320a8b09083597f8cffc73ec",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+        "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
         "content": "sha256:69dc7199f5dffa790503cd032a4e556feac4af2c790f51a015a8ac30616645a1",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+        "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
         "content": "sha256:ba45f8ede8e79d36317604c3ba963101d5bd833d5a666a4dab6125ae28974187",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+            "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
             "content": "sha256:676304c234827e6348dc0cdf7d0cc0f3f0fd90ce375297f50376db3ef0de816c",
             "locator": {
               "end": 13,
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+            "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
             "content": "sha256:ee05a19a8109a1f15593c5de761babfa378111af3ccc2aca00a2753000926686",
             "locator": {
               "kind": "symbol",
@@ -123,12 +123,12 @@
       ]
     },
     "12": {
-      "note": "A repeated blob read inside the block starts no Git process and never crosses repositories.",
+      "note": "A repeated blob read reuses the answer inside its block. A second repository without the object refuses.",
       "targets": [
         {
           "anchor": {
-            "blob": "6be6699be944142714bfb6d286ace562d78f9710",
-            "content": "sha256:f24594dae9f4ec026808a93251153b7b42cca2bfa242601eb1e504d54caf3b2c",
+            "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
+            "content": "sha256:41e807674f4bf939e7d8d7ae2e0103f8b8dce721f99be730bb6b227e0078b5f8",
             "locator": {
               "kind": "symbol",
               "name": "SharedBlobReadTests"
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+            "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
             "content": "sha256:4c55f99f34d1f80e631348a13b53057fdb0e6990db1612c51dd593f7b395cc40",
             "locator": {
               "kind": "symbol",
@@ -159,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+            "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
             "content": "sha256:3f91938e8a966ce5b1a2c36f1822b3abacb8ddbe05363d7d6869edf7fb1a23fe",
             "locator": {
               "kind": "symbol",
@@ -171,12 +171,12 @@
       ]
     },
     "15": {
-      "note": "The private preparation cases.\n\nAnchor: `PrivateGitPreparationTests`",
+      "note": "The private preparation cases inspect real Git fixtures under sealed authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "6be6699be944142714bfb6d286ace562d78f9710",
-            "content": "sha256:5ce162812ff528cce3952f6b9243d2b5ba766c5642f7fc7a194e7c8c1e1ef34b",
+            "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
+            "content": "sha256:4935e08a43a84966cb3e44c348455b80514a70ece0ec2d51e003a5496fdc1944",
             "locator": {
               "kind": "file"
             }
@@ -186,12 +186,12 @@
       ]
     },
     "16": {
-      "note": "The block under test.\n\nAnchor: `shared_blob_reads`",
+      "note": "The block under test.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:44921560a9d5681dc45ee5e1808f8595ae4f497d2458666814c83965fd8b1418",
             "locator": {
               "kind": "file"
             },
@@ -202,12 +202,12 @@
       ]
     },
     "17": {
-      "note": "Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. The removed private-commit executor supplies no live hook policy; retained spelling is data, never a skip on surviving routes.",
+      "note": "Tree publication runs pre-commit before ref movement and reports native ref-transaction refusal. The message check removes only the required Commit-Check-Pass trailer before comparison with porcelain.",
       "targets": [
         {
           "anchor": {
-            "blob": "6be6699be944142714bfb6d286ace562d78f9710",
-            "content": "sha256:5ce162812ff528cce3952f6b9243d2b5ba766c5642f7fc7a194e7c8c1e1ef34b",
+            "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
+            "content": "sha256:4935e08a43a84966cb3e44c348455b80514a70ece0ec2d51e003a5496fdc1944",
             "locator": {
               "kind": "file"
             }
@@ -245,7 +245,7 @@
         },
         {
           "anchor": {
-            "blob": "09c03bd445b55ab18d6b0eda658b02049fb82cca",
+            "blob": "2668de0dbd12e6a7d845380c650d2cbce313f008",
             "content": "sha256:75444170b559528ae174923b9b1caf8f8f59481562b376136cb275f29cea7aba",
             "locator": {
               "kind": "symbol",

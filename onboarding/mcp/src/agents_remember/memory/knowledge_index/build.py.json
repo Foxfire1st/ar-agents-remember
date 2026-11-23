@@ -3,7 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+        "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
+        "content": "sha256:d1cb68ad06097b43c9ff6933105fcfffa44ecc18b6fad2005c614e42170596da",
+        "locator": {
+          "end": 141,
+          "kind": "line_range",
+          "start": 139
+        }
+      },
+      "id": "RLZ-E7NV4T",
+      "invariant": "INV-CZXXR2",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-CZXXR2",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "This declaration limits the reviewer’s shared document parses to 256 MiB and 65,536 entries.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
+        "content": "sha256:63e360f91194186c22a59b6fc853edc9bb143671a2f1ab78939faf12c5a80e58",
+        "locator": {
+          "kind": "symbol",
+          "name": "kept_document_parses"
+        }
+      },
+      "id": "RLZ-N78GMY",
+      "invariant": "INV-CZXXR2",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — reviewer child parses",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The child scope keeps a budgeted document memo across worklists.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
         "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
         "locator": {
           "kind": "symbol",
@@ -18,6 +55,24 @@
       },
       "rationale": "The index persists the complete existing row document together with its history metadata.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
+        "content": "sha256:d69b010fe15c199e2ff460e09858de2d0e976e6db6d20592cd97662361aeeb46",
+        "locator": {
+          "kind": "symbol",
+          "name": "_reader"
+        }
+      },
+      "id": "RLZ-ZAA224",
+      "invariant": "INV-CZXXR2",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — reviewer child parses",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The reader keys the result by the exact document bytes and admits the parsed model through the weighted memo.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:d1e9aa64c956aa0f1796f8f6a96ac62bfb06d8f889cb22b0ef22b021fb551653",
             "locator": {
               "end": 88,
@@ -43,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:f8a19eaf294390813cc3d6e4fe5126d9223d2343e400541ea37dd367763884d0",
             "locator": {
               "kind": "symbol",
@@ -59,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
             "locator": {
               "kind": "symbol",
@@ -71,14 +126,16 @@
       ]
     },
     "2": {
-      "note": "The parsed tree and its completeness.\n\nAnchor: `ParsedTree`",
+      "note": "`ParsedTree` holds the parsed documents and recorded problems. Problems make its state partial.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
-            "content": "sha256:1b22516606ea65bb761f776cdebad477c86dc5d066d891472a45a2bce23137eb",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
+            "content": "sha256:5736dba745886008da1286e2e3f80f9f7a726abee7a6c70019449bf5834f26ef",
             "locator": {
-              "kind": "file"
+              "end": 126,
+              "kind": "line_range",
+              "start": 105
             }
           },
           "kind": "code"
@@ -90,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:50338a20987465f4fb984f54f86c618c7b89ac2c504d5c6db6b9cf32c6a1ea44",
             "locator": {
               "kind": "symbol",
@@ -106,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:ba4b3cb06011e3c1a22e9748aed9c8d66e2d0be2019d1f5c948dd566e78cc50e",
             "locator": {
               "kind": "symbol",
@@ -122,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:7bcf09c0ef7bd024665c5239842344ffd4efab1d13397fa859b93c8e50776693",
             "locator": {
               "kind": "symbol",
@@ -133,7 +190,7 @@
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:8039957364408c96e2f0cb139c6a0ebfc2903dbf62c183504a45d3e4ec24f099",
             "locator": {
               "kind": "symbol",
@@ -144,7 +201,7 @@
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:83786254cb1c6ba01dbdbdb8080fccf86b7db73359a32c8b6b36b668252b92d8",
             "locator": {
               "kind": "symbol",
@@ -155,7 +212,7 @@
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:c24f1b920e33f706375685894361121aa7b8dbabe06c9ec36d0d76421128becd",
             "locator": {
               "kind": "symbol",
@@ -166,7 +223,7 @@
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:c19bb9830ed09e05975a186139949c60dc16e2dfec09f2fd8dc964aae4c335fb",
             "locator": {
               "kind": "symbol",
@@ -177,7 +234,7 @@
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:c5c9db12cb8f6a83d479bbffeb65e74639debb54f72394a99891d906010921a6",
             "locator": {
               "kind": "symbol",
@@ -188,7 +245,7 @@
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
             "locator": {
               "kind": "symbol",
@@ -204,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:553db5bd42c2f97e64f517be601274d4040befce7a4f33f88bc2887a9334535e",
             "locator": {
               "kind": "symbol",

@@ -72,7 +72,9 @@ No configured domain documentation could be checked.
 
 
 
+
 - The one Git runner: `GIT_REPOSITORY_SELECTOR_ENV` and `git_environment` scrub all eight repository selectors, `run_git` preserves non-UTF-8 record identity via `errors="surrogateescape"`, `_run_git` here passes its 30s bound through `GitRunnerOptions(timeout=...)`, and `GIT_METADATA_TIMEOUT_SECONDS = 30` is the class this census names. [2]
+
 
 
 ### Cross-Repo References

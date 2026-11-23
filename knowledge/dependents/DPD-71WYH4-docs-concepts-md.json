@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
-    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
-    "statement": "The role-launcher definition still agrees with the role and task choices and the optional host harness, model and effort selections.",
-    "task": "261112-BUG-L19",
+    "statement": "The concepts page describes role-launcher selection, bounded overflow and the complete-result log, candidate-bound quality and gate authority, and synchronous closeout and integration alongside their historical audit records.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -126,7 +126,7 @@
       "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
     },
     {
-      "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+      "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     },
@@ -356,7 +356,7 @@
       "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
     },
     {
-      "blob": "3c1c869f493f68755e20a825d5e84db44ed38a54",
+      "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
     },
@@ -371,7 +371,7 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
+      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

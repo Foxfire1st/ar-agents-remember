@@ -1074,16 +1074,56 @@
       ]
     },
     "3": {
-      "note": "The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response.  Anchor: `_knowledge_gate_and_worklist`, `_knowledge_briefs`",
+      "note": "The controller summarizes the worklist returned by the exact candidate gate. That gate can reuse an observed verdict or compute one.",
       "targets": [
         {
           "anchor": {
             "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
-            "content": "sha256:52f08d5ee85c00d08d65558dcfc05c043c5a1eb91a66b562efa56726350d1eed",
+            "content": "sha256:4278122b5b2d16ab14bb73eb7e96236a27ab4949edaf09ffc8fae426e058581c",
             "locator": {
-              "kind": "symbol",
-              "name": "_knowledge_gate_and_worklist"
+              "end": 576,
+              "kind": "line_range",
+              "start": 535
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "content": "sha256:d976967b1a2c57f7ececc0f1a66823d898b17bc1c7a8aef8caecbf0cd8ccdba7",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 367
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+            "content": "sha256:88add5984e7a433e38a2a8f71a219bae81d4dff022614b5aff8b50d5a7767b0d",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
           },
           "kind": "code"
         }
@@ -1284,26 +1324,56 @@
       ]
     },
     "6": {
-      "note": "The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path.  Anchor: `_attach_curator_checklist`",
+      "note": "The checklist receives the current worklist and its path whether the gate computes or reuses the verdict.",
       "targets": [
         {
           "anchor": {
             "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
-            "content": "sha256:9e419dfdd31128ccf5ceac3e59beb60b4635163009e3fb334f5fa77592dc182c",
+            "content": "sha256:4278122b5b2d16ab14bb73eb7e96236a27ab4949edaf09ffc8fae426e058581c",
             "locator": {
-              "kind": "symbol",
-              "name": "_attach_curator_checklist"
+              "end": 576,
+              "kind": "line_range",
+              "start": 535
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
-            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
-              "kind": "file"
-            }
+              "end": 313,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "content": "sha256:d976967b1a2c57f7ececc0f1a66823d898b17bc1c7a8aef8caecbf0cd8ccdba7",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 367
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+            "content": "sha256:88add5984e7a433e38a2a8f71a219bae81d4dff022614b5aff8b50d5a7767b0d",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
           },
           "kind": "code"
         }

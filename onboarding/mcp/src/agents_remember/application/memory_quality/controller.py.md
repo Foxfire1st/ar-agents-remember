@@ -200,8 +200,8 @@ worklist applies (both memory sides unconverted, which is every production leaf 
   `curatorActionableCount`; open advisory items remain report-only (see the L09 section below). The section still only renders.
 - **Trigger split (architect ruling 1).** This run is one of the two triggers L08 wires; the other is
   managed-sync completion. Closeout validation and landing pre-commit evaluation are L09's; since L09 this run
-  also recomputes through the gate over its exact candidate, and `_knowledge_worklist` remains the plain
-  recompute for a scope the gate does not apply to.
+  also asks the gate to judge its exact candidate, and `_knowledge_worklist` remains the plain
+  recompute for a scope where the gate does not apply.
 - **Historical pre-cutover behaviour:** with no worklist, neither the response field nor the section appeared. MIK-R46 now refuses unconverted quality input before scanning.
 
 
@@ -267,8 +267,7 @@ The curator publication is one of MIK-R09's leaf routes. `_execute_memory_qualit
 - **`_knowledge_gate`** evaluates `knowledge_gate.evaluate_leaf_gate(contract, CandidateTrees(code_tree,
   memory_tree))` over the exact candidate this publication attests (`_curator_candidate_inputs`, captured before the
   scan). It returns `None` for a scope that publishes no curator report, a non-leaf or non-external scope, and every
-  unconverted leaf, whose run is unchanged. The gate recomputes the worklist over those trees and persists it; that
-  worklist is the one summarized (`knowledgeWorklist`) and rendered. Where no gate applies, `_knowledge_worklist`
+  unconverted leaf, whose run is unchanged. The gate returns the worklist from a compatible retained verdict or fresh evaluation. It persists the result for the contract. The controller summarizes and renders that worklist. Where no gate applies, `_knowledge_worklist`
   recomputes as before.
 - **`_knowledge_briefs`**, imported from `memory_quality.knowledge_inputs`, adds
   `knowledgeWorklist` and, when the gate ran, `knowledgeGate` (`GateResult.brief()`:
@@ -282,8 +281,7 @@ The curator publication is one of MIK-R09's leaf routes. `_execute_memory_qualit
   finding is dropped because the gate already names it (`_onboarding_findings_beside`).
 - `_prepared_findings` (the census blockers as repair findings) was split out of `_attach_curator_checklist` to keep
   it within the statement limit; its radon score fell from D 24 to D 21.
-- **The memo.** The closeout validator evaluates the same key (`evaluate_leaf_gate` resolves the same parent tip), so
-  one memory-quality run recomputes the gate once and its two validator reads are served from the memo.
+- **The memo.** A closeout validator using the same key can reuse the gate result when it fit the retention limits, was eligible for retention and its recorded reads still match.
 - **Historical pre-cutover behaviour:** with no gate and no worklist, neither `knowledgeGate` nor
   `knowledgeWorklist` appeared; this curation's recorded runs returned neither. MIK-R46 now refuses
   unconverted input before a quality scan; absence of these fields is no clean-result warrant.
@@ -538,7 +536,9 @@ measured at all.
 
 
 
-- The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response.  Anchor: `_knowledge_gate_and_worklist`, `_knowledge_briefs` [3]
+
+- The controller summarizes the worklist returned by the exact candidate gate. That gate can reuse an observed verdict or compute one. [3]
+
 
 
 
@@ -550,7 +550,9 @@ measured at all.
 
 
 
-- The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path.  Anchor: `_attach_curator_checklist` [6]
+
+- The checklist receives the current worklist and its path whether the gate computes or reuses the verdict. [6]
+
 
 
 

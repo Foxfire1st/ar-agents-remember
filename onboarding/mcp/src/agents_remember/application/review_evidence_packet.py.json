@@ -110,24 +110,6 @@
       },
       "rationale": "The packet must carry measured supplemental read losses explicitly and preserve the bound planned owner/reference; these are genuine preparation semantics.",
       "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
-        "content": "sha256:2349c8e74115b2ecd9e2d680599ec1a4fe15cd52e4fa9c5c2d06a6348b8b00e5",
-        "locator": {
-          "kind": "symbol",
-          "name": "_admit_populations"
-        }
-      },
-      "id": "RLZ-XGFCB9",
-      "invariant": "INV-YFTJNQ",
-      "origin": {
-        "handoffEntry": "L102-F04",
-        "leaf": "260928-MIK-L102"
-      },
-      "rationale": "Ordinary, resumed and symlink reads are streamed with measured consumption; an offset beyond MAX_SCAN_BYTES now refuses before any blob read (independent actualRead=0). Resumed prefix work is deducted from the finite scan budget. Packet path/collection caps, relationship path/byte/depth/page caps, bounded ls-tree streaming and a per-walk indexed lookup remain enforced; two-size and boundary tests pass. This credits bounded legitimate investigation, not unlimited-store-reader behavior owned by F10.",
-      "role": "enforcement"
     }
   ],
   "references": {
@@ -164,14 +146,40 @@
       ]
     },
     "5": {
-      "note": "The current implementation adds intended source admission and receipt-bound omission accounting; no previous valid full-identity or population-bound statement is removed.\n\nAnchor: `comparison_binding`, `build_evidence_packet`, `intended_source_root`, `intended_receipt_ids`, `_omissions_for`",
+      "note": "Intended sources are selected by the exact leaf and admitted receipt identities. The builder accounts for supplied and unread collection populations.",
       "targets": [
         {
           "anchor": {
             "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
-            "content": "sha256:d5cd08f1e3d3613b167c77458e23a225dbca17c0d5c848d03c473bdf08a7eab2",
+            "content": "sha256:2349c8e74115b2ecd9e2d680599ec1a4fe15cd52e4fa9c5c2d06a6348b8b00e5",
             "locator": {
-              "kind": "file"
+              "end": 249,
+              "kind": "line_range",
+              "start": 230
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
+            "content": "sha256:9e6c9930e6db0465d5f32a53143d8607cdbf0a8b5e2fe08f6039f3b00d5a4648",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 303
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
+            "content": "sha256:b38d07b84286e485281a1d1c40d5717aab1cfa95a3bf23ddc6c0d87c2ea6df6f",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 322
             }
           },
           "kind": "code"

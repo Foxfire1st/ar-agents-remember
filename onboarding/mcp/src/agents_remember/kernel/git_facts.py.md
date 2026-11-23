@@ -46,14 +46,7 @@ All git calls go through the shared `run_git` runner imported from
 `kernel/git_command.py` (F14) — this module no longer defines its own private
 `_run_git`. Callers read `returncode`/`stdout` rather than relying on raises.
 
-**Every call names its timeout class; none of them defaults.** `GitRunnerOptions.timeout`
-cit:([`GitRunnerOptions`], mcp/src/agents_remember/kernel/git_command.py:115-128) defaults to
-`GIT_LOCAL_TIMEOUT_SECONDS` (300), and inheriting that default is what this module deliberately does
-not do: the timeout class belongs to the command, not to the module the call sits in. `_git_stdout`'s
-`timeout` is therefore **keyword-only and required** (L121), so no call site here can silently take
-the 300s default — a new probe that forgets it is a `TypeError`, not a five-minute hang.
-
-The assignments (cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:149-213)), with the reasoning carried in the code comments:
+Each probe chooses its timeout class explicitly. `GitRunnerOptions.timeout` defaults to 300 seconds. `_git_stdout` requires an explicit keyword-only timeout and passes it to the shared runner. The table shows the local command choices.
 
 | Command | Bound | Why |
 | --- | --- | --- |
@@ -106,13 +99,17 @@ No relevant external documentation is needed for git-facts assembly.
 The shared git runner and the context-packet consumer are the direct evidence.
 
 
+
 - Git invocations are delegated to the shared `run_git` runner rather than a private wrapper. [1]
+
 
 - The local default bound is 300 seconds. [2]
 - The ordinary remote bound is 120 seconds. [3]
 - The metadata bound is 30 seconds. [4]
 
+
 - The shared Git runner applies caller-selected bounds and isolated repository environment. [5]
+
 
 - The other kernel caller of `branch --show-current` and `rev-parse HEAD` names the same metadata bound, so one command means one bound. [6]
 
@@ -128,3 +125,5 @@ code repos and external-memory repos, but its contract is local to this file.
 No meaningful cross-repo references found.
 
 - Metadata facts use short bounds and feed context assembly rather than a removed resolver tool. [7]
+
+- The shared runner defines the timeout bands and default. Git fact probes choose and pass their own timeout values. \[8] [8]

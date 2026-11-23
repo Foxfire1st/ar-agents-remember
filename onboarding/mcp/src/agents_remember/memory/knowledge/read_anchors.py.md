@@ -26,7 +26,7 @@ object ids** (tree entries, blob lines, per-blob definitions), so repeated obser
 anchors — every owner of one review, every subject of one comparison — costs one Git read and one parse
 per object instead of one per observation. The tables live in
 [`read_anchor_memo.py`](read_anchor_memo.py.md); **what may be remembered, and what never is, is decided
-here** (see *The process-lifetime memo* below). Responses are byte-identical with and without it.
+here** (see *The process-lifetime memo* below). Warmed content can remain available under its recorded identity when the requested tree and matching path still resolve after a blob becomes unavailable.
 
 ## Code Commentary
 
@@ -160,16 +160,10 @@ stale" true:
   An unavailable probe reports `recorded_object_unavailable`; this is not a process-lifetime
   availability guarantee. The earlier blocked positive-probe cache was process-lifetime
   (review L56-R1-F1).
-- **Two documented residuals sit outside that guard** (they are in the module docstring, not defects to
-  "fix" silently): a repository that still holds the tree but has lost one of its blobs (corruption, or
-  a partial clone whose promisor never supplied it) is answered from memory for a blob read earlier in
-  the same process; and a caller of `observe_anchor` that builds no resolver skips the probe altogether.
-  The one such production caller is curator ingest (`knowledge_curator_ingest._observe`), which reads the
-  tree's membership in the same run before it observes.
+- **Warmed content can survive blob loss under the same recorded identity.** The requested resolver checks tree availability and matches the path and recorded blob ID before using retained content. The only production callers of `observe_anchor` are the requested and unrequested resolver wrappers. The unrequested wrapper returns the outcome for a read with no named tree.
 - **No invalidation exists and none is needed**: every key is an immutable object id. The bounds cap
   memory only (see the memo card for their approximate-weight semantics).
-- **Nothing about the response changed.** Base and memo candidate served sha256-identical bodies on
-  every review route measured (66 URLs); the memo is invisible to callers and no signature changed.
+- The historical base and memo comparison measured SHA-256-identical bodies across its 66 review URLs. That comparison records the measured routes.
 
 ### Conventions
 
@@ -199,8 +193,7 @@ stale" true:
 - **`path_absent` is reported only for a real absence**, and every other refusal names its own cause.
 - **A remembered answer is only ever a content fact keyed by complete object ids**, never a failure,
   never an abbreviation or ref. This process-lifetime content memo does not retain availability;
-  the lower Git runner has the separate request-scoped successful-probe reuse described above. The observation
-  a caller receives is the one the unremembered path gives.
+  the lower Git runner can reuse a successful probe within the request. Available warmed content under the same recorded identity can be returned after blob loss while tree and path resolution still succeed.
 - **Boundary.** This module observes. It does not decide which anchors a selection exposes (that is
   `read.py`'s `resolve_anchor` seam), does not select, does not page, does not refuse a read, and writes
   nothing.
@@ -266,7 +259,11 @@ No meaningful cross-repo references found.
 - **The memo's three content answers: a tree entry (or its definite absence), a blob's lines as a tuple and a blob's definitions per grammar — each remembered only after Git or the parser answered, and only for a complete id.** [12]
 
 
-- The resolver calls the replace-proofed `_tree_exists` probe before consulting process-lifetime content tables. Availability is not retained in those tables; the lower Git runner may reuse a successful identical probe within one active request memo scope. The two residuals remain stated in the module docstring. [13]
+
+
+- The current production callers are the two resolver wrappers. The requested resolver checks tree availability before observing the exact path and recorded blob identity. Warmed content can remain available after blob loss under that identity. [13]
+
+
 
 
 - **The cases that pin the memo: one read per object and identical answers, a failure asked again, an abbreviation never remembered, a pruned or revoked tree reported unavailable, no cross-repository or cross-grammar reuse.**  Anchor: "test_repeated_observations_answer_identically_from_one_read_per_object"; "test_a_failure_is_never_remembered_and_the_later_success_is_observed"; "test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered"; "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered"; "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" [15]

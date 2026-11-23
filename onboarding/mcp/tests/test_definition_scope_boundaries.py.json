@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
-        "content": "sha256:9d77ca63cc0d445c44452b53a37f669b3ccb8057a43b8972b4f75d2322b012c0",
+        "blob": "f97ddaaf8497ca3bef1fe8d9b42bcb4da9d45405",
+        "content": "sha256:b76378d207c9f551a2614de32fe70a2732499df6f7119e0e3e417b8a8c36633d",
         "locator": {
           "kind": "symbol",
           "name": "test_background_worker_gets_isolated_scope_without_inheriting_starting_call"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
+        "blob": "f97ddaaf8497ca3bef1fe8d9b42bcb4da9d45405",
         "content": "sha256:2b36b22a898be682d26156e2f30cc3a3064a593fb8a5e1a2cd223ff125150615",
         "locator": {
           "kind": "symbol",
@@ -39,12 +39,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "MCP dispatch shares a synchronous handler context within one call.",
+      "note": "The registered synchronous handler reuses its Python definition and TypeScript anchor memo within one native call. The next call parses the inputs again.",
       "targets": [
         {
           "anchor": {
-            "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
-            "content": "sha256:f231fd199b19a9a5a9fdaf615c96c1bbb0c0a6068223b0fbf08cf7dcc8937ee7",
+            "blob": "f97ddaaf8497ca3bef1fe8d9b42bcb4da9d45405",
+            "content": "sha256:c51cafd138c5e14dd5b555c733cadbd32dcc0ef7738958f95d66f292a85f1478",
             "locator": {
               "kind": "symbol",
               "name": "test_common_mcp_boundary_shares_sync_handler_context_and_discards_between_calls"
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
+            "blob": "f97ddaaf8497ca3bef1fe8d9b42bcb4da9d45405",
             "content": "sha256:5eca81054a51c7611861db479c30f65b000f68ac0390efc0fe7a4d9709616fef",
             "locator": {
               "kind": "symbol",
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
+            "blob": "f97ddaaf8497ca3bef1fe8d9b42bcb4da9d45405",
             "content": "sha256:2b36b22a898be682d26156e2f30cc3a3064a593fb8a5e1a2cd223ff125150615",
             "locator": {
               "kind": "symbol",
@@ -87,12 +87,12 @@
       ]
     },
     "4": {
-      "note": "A background worker owns a context separate from its starting call.",
+      "note": "A detached quality worker reparses the named definitions and anchors in its own context.",
       "targets": [
         {
           "anchor": {
-            "blob": "df5a67802a756cd0a94e0474c4a47b69dbdacb3e",
-            "content": "sha256:9d77ca63cc0d445c44452b53a37f669b3ccb8057a43b8972b4f75d2322b012c0",
+            "blob": "f97ddaaf8497ca3bef1fe8d9b42bcb4da9d45405",
+            "content": "sha256:b76378d207c9f551a2614de32fe70a2732499df6f7119e0e3e417b8a8c36633d",
             "locator": {
               "kind": "symbol",
               "name": "test_background_worker_gets_isolated_scope_without_inheriting_starting_call"

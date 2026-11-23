@@ -134,12 +134,12 @@
       ]
     },
     "103": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The build, which names every failing file.\n\nAnchor: `build_index` `parse_tree`",
+      "note": "The index builder reads a memory snapshot and reports the file and reason for each recorded parse or placement problem.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
-            "content": "sha256:1b22516606ea65bb761f776cdebad477c86dc5d066d891472a45a2bce23137eb",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
+            "content": "sha256:af4d874fcd1051413f6ddaba13dfe4a0a8d600a72809cb7f9ec2e71538af936e",
             "locator": {
               "kind": "file"
             },
@@ -277,7 +277,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "blob": "9af77edef766f5bdf85a45e19d65bf7080afe69c",
             "content": "sha256:3faedd1b6cc0a694f6ddad75f8a8de7e8a16d3a83166e8f66c11fa6a632c721a",
             "locator": {
               "kind": "symbol",
@@ -426,7 +426,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:f8a19eaf294390813cc3d6e4fe5126d9223d2343e400541ea37dd367763884d0",
             "locator": {
               "kind": "symbol",
@@ -531,14 +531,16 @@
       ]
     },
     "130": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): A kept gate verdict is served only when no recorded observation changed.\n\nAnchor: `remembered`",
+      "note": "A kept gate verdict is served only while its recorded observations match.",
       "targets": [
         {
           "anchor": {
-            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
-            "content": "sha256:1ff71cf107836b013b2df97b909ec83371429f9410fcd6d6fcf6d1ec0e689ae6",
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+            "content": "sha256:ab8c43d7462271b00d28215b0e6389d0cdc911c320e0f8965db1a09a52f004d8",
             "locator": {
-              "kind": "file"
+              "end": 159,
+              "kind": "line_range",
+              "start": 149
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
           },
@@ -1024,7 +1026,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:f8a19eaf294390813cc3d6e4fe5126d9223d2343e400541ea37dd367763884d0",
             "locator": {
               "kind": "symbol",
@@ -1036,7 +1038,7 @@
         },
         {
           "anchor": {
-            "blob": "3f30cb61911fe33cd1497bd64104a13303adf8f7",
+            "blob": "74a6e987e75f395e1b99ad0c5ce852d2a6fc2799",
             "content": "sha256:a1eb9c5a1437d966c6e34ca359b106e674ec24809253dfff719653964bbabf01",
             "locator": {
               "end": 15,
@@ -1197,15 +1199,16 @@
       ]
     },
     "158": {
-      "note": "Anchor observation retains two named availability residuals and exact-blob identity can lack a resolved range.",
+      "note": "A selected tree can identify the exact recorded blob while retained content resolves its locator after blob loss. A cold missing blob can preserve the identity without a resolved locator.",
       "targets": [
         {
           "anchor": {
             "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
+            "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
             "locator": {
-              "kind": "symbol",
-              "name": "_observed_line_range"
+              "end": 248,
+              "kind": "line_range",
+              "start": 195
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
           },
@@ -1214,11 +1217,24 @@
         {
           "anchor": {
             "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:d1193c1689e185dc7f9189687b0c2304394d8eb9984e1fc87d0945d23496257c",
+            "content": "sha256:ed64a5daddb1ed12baaf24282cd1149aed2469a528b5fc52b182ea1712d1c43b",
             "locator": {
-              "end": 34,
+              "end": 373,
               "kind": "line_range",
-              "start": 17
+              "start": 326
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "content": "sha256:a95a9a2f387ca01240586b929093e4cf4c1103565f83612c6fd63a8c82749fcf",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 387
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
           },
@@ -1256,16 +1272,16 @@
       ]
     },
     "16": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The owner's rule: answers only, keyed by complete ids, availability never remembered, and the two residuals.",
+      "note": "The requested anchor resolver checks the selected tree. Its unrequested sibling reports that no tree was selected. Both call the same anchor implementation.",
       "targets": [
         {
           "anchor": {
             "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:d1193c1689e185dc7f9189687b0c2304394d8eb9984e1fc87d0945d23496257c",
+            "content": "sha256:e8c77574bd5ade8cf84872075080d750f769cb2e722e4cddd4810394d0dcbf06",
             "locator": {
-              "end": 34,
+              "end": 127,
               "kind": "line_range",
-              "start": 17
+              "start": 76
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
           },
@@ -1325,12 +1341,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:75ceed5fdbc73b3c33dd126ed61ff898767712276d67e603b8b4ec88aec4c5fe",
             "locator": {
-              "end": 291,
+              "end": 293,
               "kind": "line_range",
-              "start": 281
+              "start": 283
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },
@@ -1495,7 +1511,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:c4ba63173ceac4c2cbe54e5f9fc9b50dbd88e7258425f570017b9bc44d16bf4d",
             "locator": {
               "kind": "symbol",
@@ -1507,7 +1523,7 @@
         },
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:a1e619b09a94dc7184ec1cddedce393267506cd55c6b29341d82885c08d8b05c",
             "locator": {
               "kind": "symbol",
@@ -1519,7 +1535,7 @@
         },
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:891f54bfde7ea955ccfd00677b92922fda14e8be7672f51bdcf33a802eb58c8b",
             "locator": {
               "kind": "symbol",
@@ -1531,7 +1547,7 @@
         },
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:ed6a6768e30a5ae6ce728d95ce8d94089466ddf369ed22d678550f1a1b9b1f4d",
             "locator": {
               "kind": "symbol",
@@ -1701,7 +1717,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
             "content": "sha256:a955743b9fa00eb0e6ea52f2d310950bf517c2471adc80030d5478c815e6a1e0",
             "locator": {
               "kind": "symbol",
@@ -1713,7 +1729,7 @@
         },
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
             "content": "sha256:57c63d42827354cbfafd543d94611297372fa8a782554d7a775f5f21371749d3",
             "locator": {
               "end": 229,

@@ -87,7 +87,9 @@ Current source: The current lifecycle catalog declares test_evidence_catalog_gat
 
 
 
+
 - The lifecycle catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer of mcp/tests/_evidence_catalog_fixture.py, mcp/tests/_user_settings_guard.py and mcp/tests/fixtures/repository_profiles/node/package-lock.json. These artifact registrations establish no invocation or passing result. [26]
+
 
 
 

@@ -3,15 +3,40 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "_Stored is the on-disk shape a memo is kept in, keyed by blob.",
+      "note": "_Stored binds a named live memo to its row encoder and decoder. _Rows represents the encoded disk rows, and _question selects a memo by its name.",
       "targets": [
         {
           "anchor": {
-            "blob": "a7178c6909db11cc6d53483a91bc8cd3d3df94c9",
-            "content": "sha256:c5f84050ca1207128c371b1f573d3e51e63f8285ac42ba62239eee9741364f93",
+            "blob": "a073f8cf2613bdb78fd89e3306c28e121fd4a8ba",
+            "content": "sha256:bc3ba8ad53778ab9e6f7f2d400c7405775d1ee8b24e0faa8afbe1c3d6b40da79",
             "locator": {
-              "kind": "symbol",
-              "name": "_Stored"
+              "end": 120,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a073f8cf2613bdb78fd89e3306c28e121fd4a8ba",
+            "content": "sha256:d839f9a9f6f9bdb44f86454e276d117f85c80b038b77bb355b7c7698968bb951",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a073f8cf2613bdb78fd89e3306c28e121fd4a8ba",
+            "content": "sha256:3a2388c5b0c3daada2ab8167c76d913993046621f8ae963a6baa2690c07c98c8",
+            "locator": {
+              "end": 352,
+              "kind": "line_range",
+              "start": 340
             }
           },
           "kind": "code"

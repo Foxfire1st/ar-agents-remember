@@ -31,6 +31,8 @@ The closed product-process register now includes agents_remember.kernel.primitiv
 
 ## Construction And Operating Model
 
+The reset register names the process owners for TypeScript anchor inputs and lifecycle journal records. Tests of native calls observe separate request scopes that clear their own state.
+
 Ordinary local pytest uses the reusable bootstrap. Pytest configuration installs the shared test loop factory for Runner and the public asyncio loop constructor. Cleanup restores both aliases. The factory caps idle selector waits at 50 milliseconds so a denied wake-up send cannot leave a queued callback waiting for a socket event. Test-authored dashboard and historical-review children use the same factory. Its random-order option defaults to no seed, so collection is shuffled only when a seed is supplied. Session isolation supplies a temporary cache location; autouse fixtures restore registered mutable mappings after each test and reset registered process state before and after each module. Certifying entry uses `prepare_certifying_pytest_bootstrap`, which obtains Dagger admission before its own candidate setup.
 
 Dependency analysis reconstructs the current file population, module ownership and relationships on each build. Per-file facts can be reused from a disposable store using a key that includes the analysis implementation, Python version, module identity, package identity and source bytes. The lane and lifecycle validators compare declarations with that source-derived population and ownership graph.
@@ -125,13 +127,21 @@ The generated route index lists the source files of this route and their cards.
 
 - The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]
 
-- The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control. [26]
 
-- **Historical source-bound reference account, not an operative override:** The register assigns distinct reset, restored and constant treatments. [19]
+- The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded. [26]
 
-- The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. [27]
 
-- The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets. [28]
+
+- The process register declares separate reset, restored and constant-for-tests treatments. [19]
+
+
+
+- The closeout digest-file stats, lifecycle location cache and process-owned lifecycle operation-record memo use ordinary _clear resets between test modules. [27]
+
+
+
+- The process register retains closeout and worktree landing-chain cache resets. It omits the former ambient session and log owners. [28]
+
 
 - The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors. [14]
 

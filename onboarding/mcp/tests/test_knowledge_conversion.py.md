@@ -12,6 +12,8 @@ which lives here, beside its only consumer, rather than in the product (review R
 
 ## Code Commentary
 
+The converted-base case verifies reuse inside one scope and separately owned conversions in a nested scope and the process owner.
+
 ### Logic
 
 - `test_a_card_becomes_prose_one_evidence_section_and_numbered_references` checks:
@@ -82,7 +84,9 @@ The cases and the renderer.
 - A refused conversion writes nothing. [4]
 - Back to prose. [5]
 
-- The version 1 golden digest. [6]
+
+- The version 1 test compares a hash of the converted paths and bytes with the golden fixture digest. [6]
+
 
 
 

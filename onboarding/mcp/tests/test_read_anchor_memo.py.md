@@ -14,6 +14,8 @@ availability changes, and check isolation. A separate in-memory case checks the 
 
 ## Code Commentary
 
+The byte memo case charges both the key and the value, evicts by least recent use and skips oversized entries. The request ownership case shares owners with a joined thread, isolates concurrent scopes and checks that copied scope state is clear at exit.
+
 ### Logic
 
 - **Fixtures.** `tree` writes one parsed module (a constant, a class with a method, a function) and one
@@ -93,7 +95,9 @@ No meaningful cross-repo references found.
 - The repeated pass returns identical observations and makes one availability probe. The first pass looks up each of three paths once, reads two blobs and parses the Python module once. [3]
 - A failed probe, lookup or blob read is asked again; only the success is remembered.  Anchor: "test_a_failure_is_never_remembered_and_the_later_success_is_observed" [4]
 - An abbreviated id is never remembered; the admission test's refusals.  Anchor: "test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered" [5]
-- Weight-bounded LRU eviction, refusal of oversized values, and the concurrent bound.  Anchor: "test_the_memo_evicts_the_least_recently_used_past_its_weight_bound"; "test_concurrent_readers_share_answers_and_the_bound_holds" [6]
+
+- The named cases check weight-bounded LRU eviction, oversized-value refusal and the same bound during concurrent access. [6]
+
 - **A pruned or revoked tree reported unavailable for every anchor, not answered from memory.**  Anchor: "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered" [7]
 - The empty and blobless neighbors cannot receive another repository’s cached tree or content answers. The same blob under Python and TypeScript paths resolves the expected symbols in both query orders. [8]
 

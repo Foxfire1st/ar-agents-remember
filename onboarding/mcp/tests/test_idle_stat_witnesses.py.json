@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_idle_stat_witnesses.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "de891aa4dd916994f99ea0e83f1c07ab7e13e09c",
+        "content": "sha256:3b5570ff099b80e8305d8d3258e3c2be5d0debfe927e5b3e66b51291b9f864d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_large_native_packed_refs_are_shared_only_inside_each_request"
+        }
+      },
+      "facet": "Large packed-ref tables reuse the same observation within a call and leave no native entries after exit.",
+      "id": "PRF-6BRMHC",
+      "invariant": "INV-141H2J",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — native repository observations",
+        "leaf": "261112-BUG-L18"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c985e0e1a699b7e5f0426e1dd853ec4e7b84683",
+            "blob": "de891aa4dd916994f99ea0e83f1c07ab7e13e09c",
             "content": "sha256:a01ebb7bafafbd8a5525b88f6b0d927e198c6494373259499e3548ca68d7fc59",
             "locator": {
               "kind": "symbol",

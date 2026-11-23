@@ -26,6 +26,8 @@ Starts the configured MCP application with the ordinary registration families an
 
 ## Code Commentary
 
+A native invocation opens a lazy request memo and clears its shared owner map after all joined work exits. Both registered role-start workers retain that scope through cancellation while their thread drains. The native call then attempts allocator trim in a worker thread. Detached quality has its own computation scope.
+
 ### Logic
 
 `create_server(config)` composes the application and server in the following order:
@@ -57,7 +59,7 @@ Inside the tool-call context, a server with config reads its build currentness o
 
 ### Tool-call logging at the transport boundary (MIK-R108 rule 3)
 
-`call_tool` brackets every call in `tool_call_context` carrying the exact arguments, start time and
+`_execute_tool_call` brackets every call in `tool_call_context` carrying the exact arguments, start time and
 this server's config (`_agents_remember_config`, set once by `create_server`) to the answer boundary,
 which logs the completed call; a call that raises is logged here by `_log_raised_tool_call` and
 re-raised, with the log write itself never raising. Refusals raised by registered tools happen inside the
@@ -81,9 +83,7 @@ in-process; `_declared` is a plain module-level dict with no reset, so a declara
 factory would stamp `"mcp"` onto the interpreter and every later test in it — including tests that
 exercise the dashboard's own write paths. `main` runs once, in a process that exists only to be the
 MCP server, so the wrapper declares a fact about the process rather than about whoever last built a
-server object. The dashboard declares its role on both real entry paths: `_dev_app` for the reload
-worker and `run` for the foreground/daemon command path cit:([`_dev_app`, `run`], mcp/src/agents_remember/cli/dashboard.py:133-169; mcp/src/agents_remember/cli/dashboard.py:249-284).
-worker and `run` for the foreground/daemon command path cit:([`_dev_app`, `run`], mcp/src/agents_remember/cli/dashboard.py:166-196; mcp/src/agents_remember/cli/dashboard.py:276-311).
+server object. The dashboard declares its durable-store role in `_dev_app` for the reload worker and in `run` for the foreground or daemon command.
 
 What the declaration does **not** buy is durability. Every append and every rewrite of all six logs
 takes that log's `flock` unconditionally, in every process, declared or not; the role only decides
@@ -159,7 +159,7 @@ Every tool call owns one definition scope around its complete dispatch. Synchron
 
 ## Synchronous dispatch and write ordering
 
-After the applicable explainer-tool seat checks, `_dispatch_tool` runs a synchronous registered function through `asyncio.to_thread` on a per-call Tool copy. FastMCP still validates the original arguments, injects context and converts the result. The worker receives the call's ContextVars; async handlers retain their existing event-loop path.
+After the applicable explainer-tool seat checks, `_dispatch_tool` wraps a synchronous registered function on a per-call Tool copy and runs it through the shared request-thread helper. FastMCP validates the original arguments, injects context and converts the result. The worker receives the call's context. Each async handler owns any worker it starts.
 
 Potentially mutating synchronous calls hold one per-server lock until their worker stops. Cancellation does not release it while the thread is alive, including repeated cancellation. Centrally declared read-only calls and explicitly nonwriting modes bypass the lock; the bypass is a dispatch policy, not host-wide purity or permission. A string-coercible false value does not satisfy the strict boolean checks.
 
@@ -170,7 +170,9 @@ Potentially mutating synchronous calls hold one per-server lock until their work
 - Declared reads and explicit nonwriting modes bypass the synchronous write lock. [11]
 
 
+
 - Cancellation drains the shielded worker before releasing its caller. [12]
+
 
 
 
@@ -201,3 +203,5 @@ Potentially mutating synchronous calls hold one per-server lock until their work
 ## Retirements
 
 - Initialization installs the worktree supplier and every ordinary tool family, adding the four explainer tools for a bound launch. list_tools schedules start_after_discovery after its answer exists; call_tool invokes the same latch before applicable explainer-seat checks. The latch starts the sweep even without config and dashboard supervision only with config/settings. [9]
+
+- The dashboard declares its durable-store role on the reload-worker and foreground or daemon entry paths. \[15] [15]

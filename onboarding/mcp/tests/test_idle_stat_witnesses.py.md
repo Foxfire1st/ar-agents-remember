@@ -10,11 +10,9 @@ A test suite for idle stat witnesses.py.md: it drives the behaviour the commenta
 
 ## Code Commentary
 
+With both test tag populations, a native request reads packed references once and returns copies that preserve its memo. A later request rereads the file. Unscoped reads reuse the separate process owner.
+
 An unchanged configuration file is not hashed again, witnessed by test_an_unchanged_configuration_file_is_not_hashed_again
-
-## Boundaries
-
-The obligation above is the whole of what this file must keep true; the route account says what the surrounding surface promises.
 
 ## Evidence
 

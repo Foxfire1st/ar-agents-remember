@@ -446,22 +446,6 @@
         }
       ]
     },
-    "131": {
-      "note": "**Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The Git runner gives the child no standard input unless text is passed.\n\nAnchor: `run_git`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "132": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): The vendored vocabulary is verified before tiktoken reads it.",
       "targets": [
@@ -2220,16 +2204,42 @@
       ]
     },
     "317": {
-      "note": "The invariant gate recomputes and treats open/incomplete/refusing inputs as repair findings; the local legacy applicability rule does not own cutover refusal.",
+      "note": "The invariant gate reuses a compatible observed verdict or recomputes from exact sides. Open items, incomplete inputs and refusing validator violations are repair findings. The local legacy applicability rule leaves cutover refusal to its own owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
-            "content": "sha256:b98f34753d256efb09111e7053b5f37280f7e2a8c1c75fcfa48463b43eb35366",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "content": "sha256:92e8dd7884583dddeb79fa994756c0f42711be2f945f72040cc477b74ba74b34",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "content": "sha256:ed85d601d3d5be61cb9f76b13a9a1e2f5748a84422aa515a6701771822827f9d",
             "locator": {
               "end": 27,
               "kind": "line_range",
-              "start": 1
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "content": "sha256:10ed4e2dc9a7d097938ab7b4f6cac722ddfddf6e8b5416a61437a5eb242f06d7",
+            "locator": {
+              "end": 310,
+              "kind": "line_range",
+              "start": 290
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },
@@ -2426,12 +2436,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
             "locator": {
-              "end": 165,
+              "end": 167,
               "kind": "line_range",
-              "start": 152
+              "start": 154
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2439,12 +2449,12 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:453fa60fd7e1d14c0171d456f4d8bcd58d5be2255a14c3ed6fcf169ae0f9e1ed",
             "locator": {
-              "end": 181,
+              "end": 183,
               "kind": "line_range",
-              "start": 168
+              "start": 170
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2452,12 +2462,12 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:62a77742ee64fab78b698abd24ce333efdd8b6f9f5fb5aef63ec057c5d4806ab",
             "locator": {
-              "end": 299,
+              "end": 301,
               "kind": "line_range",
-              "start": 284
+              "start": 286
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2465,12 +2475,12 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:19eb270696db7904b422537e31cb29711f22efe2107a395be2a2d4f496a9fe4b",
             "locator": {
-              "end": 448,
+              "end": 450,
               "kind": "line_range",
-              "start": 395
+              "start": 397
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2818,7 +2828,7 @@
         },
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
             "content": "sha256:ab2d1870feb094de29e4d04437eefe49a20c1bc949e4e6926fe96408cbb78683",
             "locator": {
               "end": 192,
@@ -2831,7 +2841,7 @@
         },
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
             "content": "sha256:da0b54225087c70b68ff362613557c5860bca7d5204c26c5b19d565be6316b87",
             "locator": {
               "end": 182,
@@ -4912,7 +4922,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1b37e4512c41640d3bfdcf863bb702060adeefb",
+            "blob": "3c6e0239bfeaad43239f0725759b605a205ed12e",
             "content": "sha256:5cc762b4d189331c5ded06ea6a39b7807b870900c2568f4f91a9e5adec263710",
             "locator": {
               "end": 23,
@@ -5070,8 +5080,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1b37e4512c41640d3bfdcf863bb702060adeefb",
-            "content": "sha256:7a6ce2acaef43c714cd4cf042d5a40ca0c4f26254778df5705b8e6558cc0ee4e",
+            "blob": "3c6e0239bfeaad43239f0725759b605a205ed12e",
+            "content": "sha256:90329b2fbca51ed4d927deda8f373c4a35b82e1b2df24b952d8d7ac92c8f07fa",
             "locator": {
               "kind": "file"
             },
@@ -5315,16 +5325,16 @@
       ]
     },
     "73": {
-      "note": "The internal knowledge-page threshold is 8,000 tokens; the mounted knowledge_read naming pager uses a 4,000-token delivered bound and a 20-entry list cap.",
+      "note": "The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read naming pager uses a 4,000-token delivered bound and a 20-entry list cap.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
-            "content": "sha256:f22e58ff1fe77b4f47af62e9e2c356b9825ee1a4f8f7c76d6bcdcd69174e1f86",
+            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "content": "sha256:6ea1a6086fc01dc18f9bfda9d7f0f859bedde538a3b906d26eb1dd273768545e",
             "locator": {
-              "end": 38,
+              "end": 122,
               "kind": "line_range",
-              "start": 32
+              "start": 119
             },
             "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
           },
@@ -5332,14 +5342,14 @@
         },
         {
           "anchor": {
-            "blob": "3ca35899b3442845bc4d436978e020b268c9de8c",
-            "content": "sha256:6ea1a6086fc01dc18f9bfda9d7f0f859bedde538a3b906d26eb1dd273768545e",
+            "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+            "content": "sha256:4546a0d7a1ed0c18c9aebed2654f6954e56203867d89a8aacc49fe5b55170bac",
             "locator": {
-              "end": 125,
+              "end": 8,
               "kind": "line_range",
-              "start": 122
+              "start": 6
             },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+            "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
           },
           "kind": "code"
         },

@@ -9,7 +9,7 @@
   "conditions": [
     "Every gate finding is shown and is knowledge-stale-at-landing; an empty or truncated set is not admitted as debt.",
     "The independent landed-chain proof, reachability and every other admission predicate pass before stale-only debt is accepted.",
-    "The public projection retains staleEntries; apply persists nonempty record keys through the shared writer."
+    "For admitted stale debt, the projection before list shaping and the cut retains complete staleEntries, as does the saved result. Apply persists non-empty record keys through the shared writer. The cut answer delivers the count and capped record keys only when each fits."
   ],
   "exclusions": [
     "Converted-leaf pair judgment, mixed findings, missing targets, unreachable commits and invalid master history remain refusals."
@@ -27,9 +27,9 @@
     "leaf": "261112-BUG-L3",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Recording a landing whose work already stands on its source line does not refuse for stale entries: it names them in its answer and keeps them in the master's record as debt.",
+  "statement": "Recording a landing whose work already stands on its source line does not refuse for stale entries. The complete tool result names those entries, and the master’s record keeps them as debt. A short answer keeps only the declared debt fields that fit.",
   "status": "proposed",
   "supersedes": []
 }

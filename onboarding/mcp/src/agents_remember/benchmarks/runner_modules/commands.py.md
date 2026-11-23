@@ -24,7 +24,7 @@ already holds a commit.
 ### Every Command Goes Through The Canonical Runner
 
 Neither function spawns anything. Both call `kernel.git_command.run_git`
-cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:149-213), which is what supplies the
+and use its
 repository-selector scrub, `core.longpaths=true`, the narrowed `safe.directory`, the declared stdin
 and the timeout class. This module composes no argv of its own and imports no `subprocess`.
 
@@ -32,7 +32,7 @@ The two call sites differ only in what they tell the command:
 
 - `run_git_command` cit:([`run_git_command`], mcp/src/agents_remember/benchmarks/runner_modules/commands.py:22-47) passes
   `GitRunnerOptions(work_dir=work_dir, timeout=timeout)`.
-  cit:([`GitRunnerOptions`], mcp/src/agents_remember/kernel/git_command.py:115-128) `work_dir` separates *where git runs* from
+  `work_dir` separates *where git runs* from
   *which repository the command is about*: `git clone <url> <dest>` cannot run inside `<dest>`,
   because `<dest>` is what it is about to create.
 - `repo_has_commit` cit:([`repo_has_commit`], mcp/src/agents_remember/benchmarks/runner_modules/commands.py:50-57) passes
@@ -77,10 +77,16 @@ No external Domain Documentation source is configured for this memory repo.
 
 - The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
 - The route-local overview summarizes how this module fits into the benchmark runner split.
+
 - The one Git runner both call sites go through, and the option object that carries `work_dir` and the timeout class. [3]
+
+
 - `git_environment()` and the `GIT_REPOSITORY_SELECTOR_ENV` tuple the runner strips with. [4]
+
 - The destructive argv this module is handed: `clone`, `fetch --all --tags`, `checkout --detach`, `reset --hard`, `clean -fdx`. [5]
 
 ### Cross-Repo References
 
 No configured sibling repository is required for this module.
+
+- The benchmark wrappers use the canonical Git command and pass the work directory and timeout through runner options. \[6] [6]

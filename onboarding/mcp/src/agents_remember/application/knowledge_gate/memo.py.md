@@ -50,8 +50,9 @@ to an enclosing recorder even when no key is returned.
 
 ### Bounds
 
-`GATE_MEMO` is a `BoundedMemo` of `CAPACITY` 16 verdicts, least recently used first out.
-Unchanged observations permit reuse at any age; size eviction limits retention.
+`GATE_MEMO` keeps up to 16 verdicts and charges up to 8 MiB for their keys, results and read witnesses.
+It evicts least recently used entries to fit both limits. An oversized verdict stays available to the
+current caller. Unchanged observations permit reuse at any age.
 
 ### Dependency observations when constructing and reusing a key
 
@@ -75,10 +76,14 @@ replay does not turn incomplete or conflicting inputs into cacheable results.
 - The key's fields. [12]
 - A kept verdict is current when no recorded observation changed. 
 
+
 - The key from contract bytes, the strict task lookup and the build stamp. [14]
 
 
-- A kept verdict is served while its recorded observations remain unchanged, at any age. Anchor: `remembered` [15]
+
+
+- A kept verdict is served while its recorded observations remain unchanged, at any age. [15]
+
 
 - Only a memoisable verdict without a failed observation is kept. 
 

@@ -17,9 +17,9 @@ conversion-format version. So the mechanical conversion itself never counts as a
 - `pinned_version(tree)` reads the `conversion` value of a converted tree's `knowledge/layout.json`.
 - `converted_base(memory_repository, treeish, *, code_repository, code_commit, version)` reads the memory
   tree from Git (`inputs.memory_from_git`) into a temporary scratch, converts it with `convert_memory`, and
-  returns it as a `KnowledgeTree`, the way the validator reads trees. Results are memoized per process by
-  (repository, tree, version, code commit), with at most 8 entries, because the result is a pure function
-  of those inputs.
+  returns it as a `KnowledgeTree`, the way the validator reads trees. The exact key holds repository, tree, version and paired code commit.
+  A scoped request keeps up to eight conversions until its owner exits. A caller outside that scope
+  uses the separate process memo with the same key and limit.
 - `own_paired_code_commit(memory_repository, treeish)` returns the code commit a memory commit's
   `Code-Commit` trailer names.
 - `GitBaseConverter` is the composition-bound converter the validator's commit route uses
@@ -68,7 +68,9 @@ No configured live documentation source was available for this pass.
 The converter, its binding and the rule 7 helper.
 
 - The layout marker's pinned version. [1]
-- One base converted and memoized as a validator tree. [2]
+
+- `converted_base` returns a validator tree and reuses it under the exact conversion key in the selected owner’s cache. [2]
+
 - The base's own paired code commit. [3]
 - The commit route's converter, with the documented fallback-card difference. [4]
 - Rule 7 for any comparison consumer. [5]

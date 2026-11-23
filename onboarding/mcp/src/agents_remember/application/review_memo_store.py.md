@@ -6,11 +6,13 @@
 
 ## Purpose
 
-The review's blob-keyed memos, kept on disk between processes.
+Persists symbol spans, blob-pair diffs, tree search paths and each search's latest-tree origin.
 
 ## Code Commentary
 
-Memos are keyed by blob and stored on disk, so a second process answers from the same observation the first one measured instead of re-deriving it. A memo is only usable while the blob it was keyed on is the blob being asked about.
+Every row retains the complete key its calculation needs. The store namespace binds source, grammars and Git identity. A consumer still reads or probes the required object before using an answer.
+
+Restore admits saved rows through the resident memo and then replays entries already held. Save merges disk and resident rows under that memo's entry and configured byte limits. Encoding keeps the newest rows that fit the separate disk envelope.
 
 ## Boundaries
 
@@ -18,4 +20,5 @@ The detail this module owns stops at its own boundary; the route account above s
 
 ## Evidence
 
-- _Stored is the on-disk shape a memo is kept in, keyed by blob. [1]
+
+- _Stored binds a named live memo to its row encoder and decoder. _Rows represents the encoded disk rows, and _question selects a memo by its name. [1]

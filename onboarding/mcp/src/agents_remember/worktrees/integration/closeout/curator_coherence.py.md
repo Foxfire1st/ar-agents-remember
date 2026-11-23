@@ -48,9 +48,7 @@ cit:([`require_current_curator_coherence`, `_require_current_dependencies`], mcp
 **The mandatory invariant gate (MIK-R09 rule 3, leaf 260928-MIK-L09).** After every other check passes,
 `require_current_curator_coherence` calls `_require_knowledge_gate(contract, observation)`, which asks
 `worktrees.knowledge_gate.leaf_gate_refusal` over the very code and memory candidate trees this authority binds
-(`observation.code_candidate_tree`, `observation.memory_candidate_tree`). On converted memory the gate recomputes the
-worklist, decides every item through its kind's predicate and runs the validator (as a leaf publication, against the
-parent line's memory tip); an open non-advisory item, incomplete run or refusing violation raises `curator-coherence-knowledge-gate-refused`
+(`observation.code_candidate_tree`, `observation.memory_candidate_tree`). On converted memory the gate judges those exact trees using a compatible retained verdict or a fresh worklist and validator evaluation against the parent line's memory tip. An open non-advisory item, incomplete run or refusing violation raises `curator-coherence-knowledge-gate-refused`
 with next action `memory_quality_check`, naming every refusing finding. Open advisory items remain report-only and do not cause this refusal. A converted leaf with no bound gate refuses
 (`GATE_UNBOUND`). An unconverted leaf is refused here with the central `legacy-format` message; a failed marker probe keeps its named error rather than being classified as legacy. The curator-coherence record,
 its identity checks and pair identity are unchanged (MIK-R09 Preservation): the gate is one more refusal after them.

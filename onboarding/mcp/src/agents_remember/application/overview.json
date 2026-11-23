@@ -5194,12 +5194,25 @@
       ]
     },
     "360": {
-      "note": "The shared hunk and non-text definitions.\n\nAnchor: `change_hunks` `non_text_linked`",
+      "note": "The worklist and reviewer share `change_hunks` for text hunks and file-level changes. The worklist uses `non_text_linked` for file-level linkage.",
       "targets": [
         {
           "anchor": {
-            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
-            "content": "sha256:128341c2daa465fc7a6d31d357de1118c7ada3c2b1b632fc20571de3e11343cf",
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
+            "content": "sha256:11585a1ae94100e7cdae9228394a6ce0d0d41fa109edf13642d3c29ad5a055a1",
+            "locator": {
+              "end": 738,
+              "kind": "line_range",
+              "start": 719
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
+            "content": "sha256:c5b27222966b7935990985d026fae619a76fe89b102ce34a8877bf34e6329250",
             "locator": {
               "kind": "file"
             },
@@ -5215,18 +5228,6 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
-            "content": "sha256:11585a1ae94100e7cdae9228394a6ce0d0d41fa109edf13642d3c29ad5a055a1",
-            "locator": {
-              "kind": "symbol",
-              "name": "change_hunks"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
           },
           "kind": "code"
         }
@@ -5286,7 +5287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
@@ -5303,7 +5304,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:1bdaf20eba2683f61a7c70c38e03cadf404c58ac35756da2b13dc2622c14afec",
             "locator": {
               "kind": "symbol",
@@ -5315,7 +5316,7 @@
         },
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:15e4109da4c18ecb3ae57aca4269ee660bb93f8af9032624151dcba152be5af5",
             "locator": {
               "kind": "symbol",
@@ -5361,7 +5362,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
             "content": "sha256:aab67928384bb56185a5012e48968fc984b9903efe98efd451719d8da9852db6",
             "locator": {
               "kind": "symbol",
@@ -5373,7 +5374,7 @@
         },
         {
           "anchor": {
-            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
             "content": "sha256:ab8c43d7462271b00d28215b0e6389d0cdc911c320e0f8965db1a09a52f004d8",
             "locator": {
               "kind": "symbol",
@@ -5703,7 +5704,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
@@ -5934,7 +5935,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
             "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
             "locator": {
               "kind": "symbol",
@@ -5951,7 +5952,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
             "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
             "locator": {
               "kind": "symbol",
@@ -6017,12 +6018,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:027365c573f2f3cba7df33db92946c3dbb8192948b786e09b2eb659de02648ac",
             "locator": {
-              "end": 107,
+              "end": 109,
               "kind": "line_range",
-              "start": 106
+              "start": 108
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -8544,7 +8545,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42003e355d7caf9887db71524da64fa975e3aa14",
+            "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
             "content": "sha256:06cb7125dc8179179670e65165110453332938e89d4109a6ce0c74c4fd324bec",
             "locator": {
               "kind": "symbol",
@@ -8590,12 +8591,12 @@
       ]
     },
     "523": {
-      "note": "A complete leaf closeout adds entry-currentness findings for changed paths using the shared master-landing predicate with a direct recorded-base comparison. [523]\n\nAnchor: `_entry_currentness`",
+      "note": "For a complete paired leaf worklist, the closeout gate checks changed paths with the master landing entry-currentness predicate. It compares the recorded code base directly with the candidate tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
-            "content": "sha256:c9af0cd83705a0ac8a63f4ac93d98e84a8f3ea57164fbe4d25b67849994a25e1",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "content": "sha256:f2b4130375f63d47d07bb5640070119ddc54d6de7525f085a95abbf57abea189",
             "locator": {
               "kind": "file"
             },

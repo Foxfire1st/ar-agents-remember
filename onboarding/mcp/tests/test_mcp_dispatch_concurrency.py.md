@@ -10,6 +10,8 @@ Exercises real MCP dispatch concurrency, write ordering and per-call context iso
 
 ## Code Commentary
 
+The trim tests check that success, refusal and exceptions settle their scopes before allocator trim. A blocked trim yields to the event loop and drains through repeated cancellation. The registered start cases keep the journal owner through cancellation until each role-start worker exits, then check scope cleanup before trim.
+
 The transport test keeps a long synchronous tool blocked while a registered quality poll and a read complete. A cancellation test proves the next synchronous write waits until the first worker drains. Conditional-read cases distinguish strict boolean flags from coercible strings. Concurrent calls keep ContextVars, memo dictionaries, recorded reads and answer-log caller data separate; an async-handler case retains its original event-loop behavior.
 
 ### Invariants And Boundaries

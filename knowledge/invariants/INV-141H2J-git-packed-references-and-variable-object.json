@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A process-wide memo of variable Git observations can retain large reference maps and alternate witnesses after their native caller has finished."
+  },
+  "applicability": "Packed-reference parsing and variable Git object census observations under native request ownership.",
+  "conditions": [
+    "Reuse is limited to the exact observed file identity or object witness while the request is active.",
+    "Changed or unavailable observations take the current read path."
+  ],
+  "exclusions": [
+    "The dashboard retains its existing process-owned bounded reuse."
+  ],
+  "id": "INV-141H2J",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "bug-r18-W2-expanded-evidence.md, L18-F04, both large-input and dashboard witness checks."
+      ],
+      "path": "BUG-L18 W2 affected knowledge and initial history"
+    },
+    "handoffEntry": "BUG-R18@v1 item 5 — native repository observations",
+    "leaf": "261112-BUG-L18",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Git packed references and variable object-store witnesses used by a native tool are shared within its request lifetime.",
+  "status": "proposed",
+  "supersedes": []
+}

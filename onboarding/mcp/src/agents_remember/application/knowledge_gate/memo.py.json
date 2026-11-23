@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+        "content": "sha256:ad04419ef9439b7fa3e28b949be2f26ad8cb9f2cef8bccceedeef7d05756c49b",
+        "locator": {
+          "kind": "symbol",
+          "name": "remember"
+        }
+      },
+      "id": "RLZ-2Z0Y81",
+      "invariant": "INV-QEKWKH",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — shared memo bounds",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The gate binds a validated verdict to its observed reads and charges the retained value graph.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
         "content": "sha256:a4b8c3d8f66fe43c7e3fc954b66e599bc720b6e9248ca90b7cdb72c8a7ba807d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
         "content": "sha256:c5a9d47dc523af4fae2607acdf66554200cd2e8bd1f4c866c038d40df8626399",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,26 @@
     },
     {
       "anchor": {
-        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+        "content": "sha256:3243d16e1d6b99ef7ce3be195b45469c3ed36910fd2d881d39fd0ec7855eed02",
+        "locator": {
+          "end": 96,
+          "kind": "line_range",
+          "start": 94
+        }
+      },
+      "id": "RLZ-MB3HJ1",
+      "invariant": "INV-QEKWKH",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-QEKWKH",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "This initialization applies both the retained-byte allowance and entry limit to keys, verdicts and read witnesses.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
         "content": "sha256:ad04419ef9439b7fa3e28b949be2f26ad8cb9f2cef8bccceedeef7d05756c49b",
         "locator": {
           "kind": "symbol",
@@ -57,7 +94,26 @@
     },
     {
       "anchor": {
-        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+        "content": "sha256:760243145b8ae039ccb5aca5f4651856344013c9dad1205a8a77cd9bcda81626",
+        "locator": {
+          "end": 67,
+          "kind": "line_range",
+          "start": 67
+        }
+      },
+      "id": "RLZ-NBFYM1",
+      "invariant": "INV-QEKWKH",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-QEKWKH",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "This constant sets the gate verdict memo’s eight MiB retained-byte allowance.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
         "content": "sha256:ab8c43d7462271b00d28215b0e6389d0cdc911c320e0f8965db1a09a52f004d8",
         "locator": {
           "kind": "symbol",
@@ -75,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
         "content": "sha256:e400485720addf668d9714aae3e9dcec952731a90ef9e533ed61f8b4314a6b58",
         "locator": {
           "kind": "symbol",
@@ -98,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
             "content": "sha256:aab67928384bb56185a5012e48968fc984b9903efe98efd451719d8da9852db6",
             "locator": {
               "kind": "symbol",
@@ -110,14 +166,16 @@
       ]
     },
     "14": {
-      "note": "The key from contract bytes, the strict task lookup and the build stamp.\n\nAnchor: `memo_key`",
+      "note": "The key from contract bytes, the strict task lookup and the build stamp.",
       "targets": [
         {
           "anchor": {
-            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
-            "content": "sha256:1ff71cf107836b013b2df97b909ec83371429f9410fcd6d6fcf6d1ec0e689ae6",
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+            "content": "sha256:d95f05732be7fdccf66028ec8adf539d0dd2af05f3b55b7122573976db020a91",
             "locator": {
-              "kind": "file"
+              "end": 146,
+              "kind": "line_range",
+              "start": 104
             }
           },
           "kind": "code"
@@ -125,14 +183,16 @@
       ]
     },
     "15": {
-      "note": "A kept verdict is served while its recorded observations remain unchanged, at any age.\n\nAnchor: `remembered`",
+      "note": "A kept verdict is served while its recorded observations remain unchanged, at any age.",
       "targets": [
         {
           "anchor": {
-            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
-            "content": "sha256:1ff71cf107836b013b2df97b909ec83371429f9410fcd6d6fcf6d1ec0e689ae6",
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+            "content": "sha256:ab8c43d7462271b00d28215b0e6389d0cdc911c320e0f8965db1a09a52f004d8",
             "locator": {
-              "kind": "file"
+              "end": 159,
+              "kind": "line_range",
+              "start": 149
             }
           },
           "kind": "code"
@@ -144,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
@@ -263,12 +323,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
             "content": "sha256:d95f05732be7fdccf66028ec8adf539d0dd2af05f3b55b7122573976db020a91",
             "locator": {
-              "end": 142,
+              "end": 146,
               "kind": "line_range",
-              "start": 100
+              "start": 104
             }
           },
           "kind": "code"

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
         "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
         "content": "sha256:3c1b280f14f8c2c670f0921f7cff56e9271498bd45cb43b2a4df8eca176e2242",
         "locator": {
           "kind": "symbol",
@@ -34,12 +34,12 @@
         "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
         "leaf": "260928-MIK-L42"
       },
-      "rationale": "Serves a kept view only when it is young enough and its recorded rows report no change, and replays the kept rows into the caller's recording.",
+      "rationale": "For the exact key, re-observes every recorded input and serves the kept parts while the observations agree. Replays the kept reads into the caller’s recording.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
         "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,26 @@
     },
     {
       "anchor": {
-        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
+        "content": "sha256:760243145b8ae039ccb5aca5f4651856344013c9dad1205a8a77cd9bcda81626",
+        "locator": {
+          "end": 97,
+          "kind": "line_range",
+          "start": 97
+        }
+      },
+      "id": "RLZ-8SDKMQ",
+      "invariant": "INV-QEKWKH",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-QEKWKH",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "This constant sets the reviewer leaf-view memo’s eight MiB retained-byte allowance.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
         "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
         "locator": {
           "kind": "symbol",
@@ -75,7 +94,26 @@
     },
     {
       "anchor": {
-        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
+        "content": "sha256:5879eff26b6e6cbc64e5a525e9b6f91ae22b3de807303402ec5076bb3411db8c",
+        "locator": {
+          "end": 133,
+          "kind": "line_range",
+          "start": 131
+        }
+      },
+      "id": "RLZ-G4TN5P",
+      "invariant": "INV-QEKWKH",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-QEKWKH",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "This initialization limits the reviewer leaf-view memo to four entries and charges the retained keys, view parts and witnesses to its byte allowance.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
         "content": "sha256:a44ed17da93f424b5040882b8ec98265b35fc46404d42057532b091232ec097c",
         "locator": {
           "kind": "symbol",
@@ -93,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
         "content": "sha256:d4396dd07e2b5208d4339a2d6847e2bb632b0126860ed40f62e7bd9870405579",
         "locator": {
           "kind": "symbol",
@@ -116,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
             "content": "sha256:ac71b894fbfa7e24f72510bc047d8f61524a44ef94b66366ff5c5a28b0dc56b0",
             "locator": {
               "kind": "symbol",
@@ -195,14 +233,16 @@
       ]
     },
     "16": {
-      "note": "Count and age bounds, and no answer for another key.\n\nAnchor: `test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key`",
+      "note": "The memo evicts by entry count, reuses the same observed key past the former cutoff and misses for another key.",
       "targets": [
         {
           "anchor": {
             "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
-            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "content": "sha256:c9da3e4a9c6484f5ec0b0bc65d32aefbd3ca62f1b742dd9bda1ce5b39350cf72",
             "locator": {
-              "kind": "file"
+              "end": 794,
+              "kind": "line_range",
+              "start": 748
             },
             "path": "mcp/tests/test_review_read_latency.py"
           },
@@ -231,12 +271,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
             "content": "sha256:a61e6c42933e90c535fd55c7b5d38af3c8a6b73b5e14dd3b0505ba857fb1d40c",
             "locator": {
-              "end": 115,
+              "end": 117,
               "kind": "line_range",
-              "start": 110
+              "start": 112
             }
           },
           "kind": "code"
@@ -261,7 +301,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
             "content": "sha256:a61e6c42933e90c535fd55c7b5d38af3c8a6b73b5e14dd3b0505ba857fb1d40c",
             "locator": {
               "kind": "symbol",
@@ -277,7 +317,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
             "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
             "locator": {
               "kind": "symbol",
@@ -293,7 +333,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
             "content": "sha256:9e266c70363803ee282c5a5b8109f245643c5952b4fdcbd86e1ed93428de29ab",
             "locator": {
               "kind": "symbol",
@@ -305,14 +345,16 @@
       ]
     },
     "7": {
-      "note": "The key is built with the task lookup's reads recorded; several conditions give no key.\n\nAnchor: `leaf_view_key`",
+      "note": "The lookup records task-document reads while building the exact view key and replays those observations to the caller before any return from recorded key construction. If the candidate or its inputs cannot be identified, the view has no key.",
       "targets": [
         {
           "anchor": {
-            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
-            "content": "sha256:108498f60b2ba7cab98c94deea783f7d08f2ff07b0af76a617c932d4172363f9",
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
+            "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
             "locator": {
-              "kind": "file"
+              "end": 171,
+              "kind": "line_range",
+              "start": 137
             }
           },
           "kind": "code"
@@ -324,7 +366,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
             "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
             "locator": {
               "kind": "symbol",

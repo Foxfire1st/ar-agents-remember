@@ -131,7 +131,9 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 - The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [12]
 
 
+
 - The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [1]
+
 
 
 - Exact profile scope and suite execution. [13]

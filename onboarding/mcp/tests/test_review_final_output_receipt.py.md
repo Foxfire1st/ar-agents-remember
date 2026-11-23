@@ -76,4 +76,5 @@ No meaningful cross-repo references found.
 
 
 
+
 - The lane manifest registers this module in unit-regression. The lifecycle catalog names it as a consumer of `_user_settings_guard.py` and the Node package-lock fixture. [24]

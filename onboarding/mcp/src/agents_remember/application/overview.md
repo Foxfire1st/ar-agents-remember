@@ -53,6 +53,8 @@ Ordinary operations guarded for converted knowledge refuse legacy memory using c
 
 ## Construction And Ownership
 
+The leaf knowledge gate charges retained Python graphs in its shared verdict and candidate parse memos. An oversized value stays available to the current evaluation and stays outside shared retention. Exact candidate files, code-tree reads and gate witnesses still determine whether reuse is valid. Detached quality calculations open their own request memo before computing a result.
+
 Review read composition shares successful immutable Git/tree/blob observations and capture proof only within the request. Worktree reuse still checks HEAD and exact physical/index inputs; unavailable sides keep their prior error/absence policy. Answers remain self-contained and current-entry serialization remains baseline-compatible. Worklist evaluation runs even when identical serialized bytes need no publication. The native serving change-set and intent-summary caches are separate app-scoped owners: intent-summary resolution reports the selected inputs before counting so those owners can revalidate consumed dependencies across requests. This does not extend the request-local review memo or turn a cached summary into semantic acceptance.
 
 direct_execution_grants owns architect admission and pre-start grant mutation/reclamation. task_scoped_mcp retains exact enclosure readers and adds canonical granted-leaf/master-series readers; callers supply identities, not roots, and current grant authority is not a launch receipt or runtime setting.
@@ -910,7 +912,9 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - The one classification: where it differs from the gate, stated once. [356]
 - The exact-blob rule and the hunk classes. [357]
 - The gate's non-text linkage, unknown over a side not read whole (F3). [358]
-- The shared hunk and non-text definitions. [360]
+
+- The worklist and reviewer share `change_hunks` for text hunks and file-level changes. The worklist uses `non_text_linked` for file-level linkage. [360]
+
 - The gate over a leaf's exact candidate: probe, tip, memo, recorded evaluation. [363]
 - Rule 2's invariant and family rows. [365]
 - The memo's key and reuse. [366]
@@ -1138,4 +1142,5 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 - evaluate_answer computes the named records' currentness and may raise CURRENTNESS_FAILURES; failure_document separately constructs the failure block with unverifiableReason. [284]
 - Complete whole-file dependent version tokens are compared using exact confirmation and selected-tree project versions; unchanged other bytes and prefix identity are preserved, without claiming semantic package ownership for identical dependency tokens. \[522] [522]
-- A complete leaf closeout adds entry-currentness findings for changed paths using the shared master-landing predicate with a direct recorded-base comparison. \[523] [523]
+
+- For a complete paired leaf worklist, the closeout gate checks changed paths with the master landing entry-currentness predicate. It compares the recorded code base directly with the candidate tree. [523]

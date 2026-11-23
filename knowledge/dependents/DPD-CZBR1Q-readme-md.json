@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "The page holds: the packaging change raises the build requirement, the licence field's new form and a table of project links, and the dashboard change adds a route that answers a file's bytes; no sentence of this page names either. Its own sentence that the knowledge gate has no waiver holds as it stands, because a master's recorded landing keeps a stale entry as the master's debt and the gate itself still refuses.",
-    "task": "261112-BUG-L7",
+    "statement": "The README still describes exact paired closeout for a leaf, and W2 continues to hold open or stale work through that leaf gate.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -81,7 +81,7 @@
       "path": "dashboard/src/panels/knowledge-reader/PathViews.tsx"
     },
     {
-      "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+      "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     },

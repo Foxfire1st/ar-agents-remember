@@ -543,8 +543,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1b37e4512c41640d3bfdcf863bb702060adeefb",
-            "content": "sha256:7a6ce2acaef43c714cd4cf042d5a40ca0c4f26254778df5705b8e6558cc0ee4e",
+            "blob": "3c6e0239bfeaad43239f0725759b605a205ed12e",
+            "content": "sha256:90329b2fbca51ed4d927deda8f373c4a35b82e1b2df24b952d8d7ac92c8f07fa",
             "locator": {
               "kind": "file"
             },
@@ -1730,7 +1730,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
             "locator": {
               "kind": "symbol",
@@ -1960,12 +1960,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:027365c573f2f3cba7df33db92946c3dbb8192948b786e09b2eb659de02648ac",
             "locator": {
-              "end": 107,
+              "end": 109,
               "kind": "line_range",
-              "start": 106
+              "start": 108
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -1978,7 +1978,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:3a31c5b3a4bed1879a357ff6dcaef0c098db99e1e1f85d6e23fd0b745fa6ed1d",
             "locator": {
               "kind": "symbol",
@@ -2554,7 +2554,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
             "content": "sha256:abafcdb467fd570de9c45647ea00c8748d46a43a39359b135720ca1eff1ffcfd",
             "locator": {
               "kind": "symbol",
@@ -2753,23 +2753,6 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/unexplained.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "290": {
-      "note": "**Retained historical source account — superseded by the current route account:** Dispatch advertisement is closed and undeclared inputs refuse before handler  Anchor: `AgentsRememberMCP`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
-            "content": "sha256:687956c05de8b266552f9ed0cb18a352984ee6d81949e693337a57078f5624c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "AgentsRememberMCP"
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         }
@@ -2991,7 +2974,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
@@ -3102,12 +3085,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:33f1d32477b37638c86ec184e8c16b16d0a5476d58ae37993cd8a98b469d5a69",
             "locator": {
-              "end": 107,
+              "end": 109,
               "kind": "line_range",
-              "start": 59
+              "start": 61
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -3873,7 +3856,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:1e06d97e083599f069fbf8c197960b4a72ec7557850d39b67dbe97b28275be67",
             "locator": {
               "kind": "symbol",
@@ -3974,12 +3957,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
             "content": "sha256:10004a703d1b63a9d916d01657e7dd958858a60bfad259f2d60f639c470121f2",
             "locator": {
-              "end": 620,
+              "end": 606,
               "kind": "line_range",
-              "start": 596
+              "start": 582
             },
             "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
           },
@@ -3987,12 +3970,12 @@
         },
         {
           "anchor": {
-            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
             "content": "sha256:ed8a369839637c8031a71ff216bdda0f223ead1f5b712878aa578144ee2b24aa",
             "locator": {
-              "end": 1094,
+              "end": 1080,
               "kind": "line_range",
-              "start": 1073
+              "start": 1059
             },
             "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
           },
@@ -5031,17 +5014,31 @@
       ]
     },
     "389": {
-      "note": "Synchronous dispatch keeps validation and orders writes through worker completion.\n\nAnchor: `AgentsRememberMCP._dispatch_tool`",
+      "note": "Synchronous dispatch preserves the framework validation path and waits for the worker before releasing its write lock.",
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
-            "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:ee806e58be6dddf4bd579ad212840f71480e83400fefcefd4ffc7f019a55782f",
             "locator": {
-              "kind": "symbol",
-              "name": "_threaded"
+              "end": 187,
+              "kind": "line_range",
+              "start": 152
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16c9244c6c6d7b49e26f835cf992ae04304056f5",
+            "content": "sha256:8270eb64bb55bec46ee910fba95941cf2303221cd04753f4019076d6e81336e9",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/mcp/thread_workers.py"
           },
           "kind": "code"
         }
@@ -5259,12 +5256,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:d032e052e8eac28082e7a8e32830a9eb5cd82040d6932e926ad92da5a055c8a8",
             "locator": {
-              "end": 137,
+              "end": 147,
               "kind": "line_range",
-              "start": 124
+              "start": 134
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -5436,12 +5433,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:0cbc15e510272679d65974207885303ddc8b1a76810adf338e8dbe141a63cda4",
             "locator": {
-              "end": 117,
+              "end": 127,
               "kind": "line_range",
-              "start": 109
+              "start": 119
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -5449,12 +5446,12 @@
         },
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:8dd61413c66954ced6d132211298b59efc8c7075b21c811b020d1ce3acbdc875",
             "locator": {
-              "end": 324,
+              "end": 319,
               "kind": "line_range",
-              "start": 309
+              "start": 304
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -6316,7 +6313,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:c8e601b2afcab622ae91ef823d293c4bb88c0940043fea6600a5d8b5d197ffb5",
             "locator": {
               "kind": "symbol",
@@ -6614,22 +6611,6 @@
               "name": "is_excluded_from_knowledge"
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "93": {
-      "note": "**Retained historical source account — superseded by the current route account:** The batch blob reader.\n\nAnchor: `read_git_blobs_bytes`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
           "kind": "code"
         }

@@ -118,7 +118,9 @@ No external Domain Documentation source is configured for this memory repo.
 - The reducer composer that reads `status["landing"]` into the node. [3]
 
 
-- The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default; the branch probe here overrides that default through `GitRunnerOptions(timeout=...)`. [4]
+
+- The remote-branch probe passes its timeout to the shared Git runner. The pull-request probe passes the same timeout and scrubbed environment to its own gh process. [4]
+
 
 
 - The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead.  Anchor: "observe: LandingObserver = landing_refs" [5]

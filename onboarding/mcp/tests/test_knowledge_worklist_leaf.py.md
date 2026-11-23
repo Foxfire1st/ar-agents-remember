@@ -185,4 +185,5 @@ Current source: The current lifecycle catalog declares test_knowledge_worklist_l
 
 
 
+
 - The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event. [40]

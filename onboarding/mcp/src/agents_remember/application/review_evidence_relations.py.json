@@ -22,24 +22,6 @@
     {
       "anchor": {
         "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
-        "content": "sha256:4999a24ee0d81b0ecbd7ec9e8cf23a90455a7147eb469a344808bcc92e308560",
-        "locator": {
-          "kind": "symbol",
-          "name": "_Relations"
-        }
-      },
-      "id": "RLZ-7C179R",
-      "invariant": "INV-YFTJNQ",
-      "origin": {
-        "handoffEntry": "L102-F04",
-        "leaf": "260928-MIK-L102"
-      },
-      "rationale": "Ordinary, resumed and symlink reads are streamed with measured consumption; an offset beyond MAX_SCAN_BYTES now refuses before any blob read (independent actualRead=0). Resumed prefix work is deducted from the finite scan budget. Packet path/collection caps, relationship path/byte/depth/page caps, bounded ls-tree streaming and a per-walk indexed lookup remain enforced; two-size and boundary tests pass. This credits bounded legitimate investigation, not unlimited-store-reader behavior owned by F10.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
         "content": "sha256:32f534b54c5e3103deb3d576b27c24e4b2d0ac59b5a9727c1a3e0f3c53daf106",
         "locator": {
           "kind": "symbol",
@@ -67,6 +49,47 @@
             "locator": {
               "kind": "symbol",
               "name": "_parse_memory_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The relationship reader indexes the complete bound listing and returns the selected walk with observed path and byte counts. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
+            "content": "sha256:c2146083041a2c09c8ba47111f6e5a9939df353868e5b14e49481266f887bbd8",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
+            "content": "sha256:6dff66857b002bdfbeeda6dcbba9e7ed9c6bb07a24be7a9750085a5f46da8bcc",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
+            "content": "sha256:3adb079660ed1457e1ed6290819763c2792a5789dc8146ce322cf06cc825b86b",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 290
             }
           },
           "kind": "code"

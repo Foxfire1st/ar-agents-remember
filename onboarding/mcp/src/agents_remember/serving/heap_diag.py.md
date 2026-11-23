@@ -6,13 +6,13 @@
 
 ## Purpose
 
-`heap_diag.py` provides the dashboard daemon's opt-in heap-growth evidence and optional glibc arena reclamation. It keeps diagnostic cost out of normal serving while giving an operator a bounded way to distinguish Python-object retention from allocator fragmentation.
+`heap_diag.py` provides opt-in dashboard heap tracing and the glibc trim helper used by native MCP calls and the dashboard.
 
 ## Code Commentary
 
 ### Logic
 
-`AR_HEAP_DIAG` starts `tracemalloc` only when explicitly enabled. `heap_diag_loop` samples slowly, takes and formats snapshots in worker threads, and logs RSS, traced heap, GC counters, and allocation growth against the prior snapshot. `AR_MALLOC_TRIM` independently enables a cached best-effort `malloc_trim(0)` call on glibc; unsupported platforms return `None` rather than claiming reclamation occurred.
+`AR_HEAP_DIAG` starts `tracemalloc` only when explicitly enabled. `heap_diag_loop` samples slowly, takes and formats snapshots in worker threads, and logs RSS, traced heap, GC counters, and allocation growth against the prior snapshot. `AR_MALLOC_TRIM` enables the dashboard's periodic trim work. Native calls attempt trim after their scopes unwind. The helper calls `malloc_trim(0)` when available, returns one for release, zero when no pages were released, and `None` when the hook is unavailable.
 
 ### Conventions
 
@@ -20,7 +20,7 @@ Environment parsing is deliberately local and truthy-only. The diagnostic carrie
 
 ### Invariants And Boundaries
 
-The module must not start tracing, allocate diagnostic work, or schedule a loop unless its opt-in flag is present. Snapshot/report formatting is off the event loop, but its GIL-atomic remainder is documented as bounded rather than hidden.
+Dashboard tracing and periodic trim scheduling each require their own opt-in flag. Snapshot/report formatting is off the event loop, but its GIL-atomic remainder is documented as bounded rather than hidden.
 
 ### Todos
 
@@ -36,7 +36,7 @@ No relevant external documentation is configured for this opt-in daemon diagnost
 
 ### Repo-Internal References
 
-The serving lifespan owns scheduling; this module owns only flags, snapshots, formatting, and allocator trimming.
+The dashboard lifespan owns its periodic scheduling. Native call finalization owns the per-call trim attempt.
 
 
 

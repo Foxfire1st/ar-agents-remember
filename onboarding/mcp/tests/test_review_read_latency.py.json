@@ -355,6 +355,49 @@
         }
       ]
     },
+    "25": {
+      "note": "The current count test reuses a matching key after the former cutoff. The implementation caps entry count and retained bytes, and the weighted memo test exercises both. [25]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:c9da3e4a9c6484f5ec0b0bc65d32aefbd3ca62f1b742dd9bda1ce5b39350cf72",
+            "locator": {
+              "end": 794,
+              "kind": "line_range",
+              "start": 748
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
+            "content": "sha256:8a4703f87dc857d615dddc67a302e18d8bd38fbcc4cb805eca3233a86a98ae7e",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6f33379e6184a3f66a3f15339e17ad8fc5e0e1a",
+            "content": "sha256:5dd651d82824d450983570afcf4503c02f16853a8a398fd7e04f9688b38f7c3c",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 334
+            },
+            "path": "mcp/tests/test_read_anchor_memo.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "6": {
       "note": "The module docstring: the port every case enters through and the machine-independent counts.",
       "targets": [

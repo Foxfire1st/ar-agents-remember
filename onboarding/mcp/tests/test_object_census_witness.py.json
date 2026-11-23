@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_object_census_witness.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a9e0c8433732f1e0c0bc28160b0555010cab4b64",
+        "content": "sha256:4fde0daeedb64fa9fa2306cf3c488837442300a0147a084f79172bf68601cc06",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_native_pack_and_alternate_witnesses_leave_with_the_request"
+        }
+      },
+      "facet": "Native census witness reuse ends with the call, while direct unscoped reads reuse their process owner.",
+      "id": "PRF-QJ01XA",
+      "invariant": "INV-141H2J",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — native repository observations",
+        "leaf": "261112-BUG-L18"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a9e0c8433732f1e0c0bc28160b0555010cab4b64",
+        "content": "sha256:3b8ce66d3b921a28162ede2bbf5ef61ecffcd85e398903112f28d468dfd97ca6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_native_generation_keeps_a_fixed_size_alternate_fingerprint"
+        }
+      },
+      "facet": "Strict and tolerant revision transitions follow the full incoming census. Shared history retains the fixed-size digest of the current alternate paths.",
+      "id": "PRF-V0BGCC",
+      "invariant": "INV-60GH3Y",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — shared alternate history",
+        "leaf": "261112-BUG-L18"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cdeed8c81d1a1a836c203cb5d6b71ab08f8ab2be",
+            "blob": "a9e0c8433732f1e0c0bc28160b0555010cab4b64",
             "content": "sha256:9c5d25aa5502f79a2bf34281688263a11df6bbf831a809bb8c98635ec4b30893",
             "locator": {
               "kind": "symbol",
