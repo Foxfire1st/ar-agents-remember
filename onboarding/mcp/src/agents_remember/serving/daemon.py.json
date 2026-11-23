@@ -81,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54b818118629a276761c14d24046428232306f6e",
+            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
             "content": "sha256:38409c107f8114307c4aa61909f095a291191bfe0be3a0a79a25bd351a165f19",
             "locator": {
               "end": 777,
@@ -178,15 +178,14 @@
       ]
     },
     "4": {
-      "note": "The version comparator uses installed package metadata with the source-checkout release fallback.",
+      "note": "The version comparator uses installed package metadata with the source-checkout release fallback.\n\nAnchor: `_resolve_server_version`",
       "targets": [
         {
           "anchor": {
-            "blob": "32fd4d0c91d8a841770a9763fb83890cd69b9cf6",
-            "content": "sha256:c7aeb2da007bbdd61a228365be64bc8858c266b74e280c827e81eb4b48c12e22",
+            "blob": "003669887cb4a8992f2a3ad954940027d29762ef",
+            "content": "sha256:1490529d8372b9d3391ae0a33817df276080c800b4c4e8e547fada4e55de8866",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_server_version"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/version.py"
           },

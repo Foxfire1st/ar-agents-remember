@@ -9,7 +9,7 @@
   "applicability": "Every message to a limited recipient on role_message, the developer's tray send and report_to_architect.",
   "conditions": [
     "The message is held with the reason and the reset time, also when the recipient is idle.",
-    "It is released by the first sweep after the reset, in order, when the recipient is ready.",
+    "For a recipient ready to receive, the first sweep after reset delivers held messages in order within its 15-second budget. Any eligible messages left by that sweep's bound are due within 30 seconds of reset.",
     "An archived recipient found through the publication's ended stamp is still answered, and a closed session keeps its messages waiting."
   ],
   "exclusions": [
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L184",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A message to a limited seat waits for the reset and is released the moment the seat can take it.",
+  "statement": "A message to a limited seat waits for reset. When the recipient is ready, the first post-reset sweep delivers held messages in order. Eligible messages left by the sweep's bound are due within 30 seconds of reset.",
   "status": "proposed",
   "supersedes": []
 }

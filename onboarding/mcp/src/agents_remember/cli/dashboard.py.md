@@ -29,7 +29,7 @@ Daemon/status/stop reject sim/reload; `_run_daemon_command` hands them to `cli/d
 Parser defaults remain loopback host, config-driven port, interval1.0 and optional heartbeat, with sim/speed, no-access-log and mutually exclusive control flags. Loopback is a default, not authentication. Native role routes and archive services do not themselves accept/commit/finalize a task.
 
 
-The composition root binds the projector's host-activity refresher, `host_activity_reconcile`, to the real bridge read `bridge_call(runtime, "host-activity-snapshot", {})`; this is the one place that crossing is made.
+The composition root binds the projector's host-activity refresher to `RoleRegistryActivityReader`. Its attempt restores missing receipt-backed role records and evaluates reclaimable rows before a qualified boot can read the bridge activity snapshot. A later independent publication can retry an incomplete attempt.
 
 ## Invariants And Boundaries
 
@@ -52,10 +52,13 @@ Configuration identity, admitted watch/reference roots, read availability, deliv
 
 
 
+
 - The composition root wires PaseoExplainerHost, application ports and the master contract locator into serving. _master_contract uses the declared master series contract or existing canonical folder contract; no other line is borrowed. Anchor: `PaseoExplainerHost` [72]
+
 
 
 - The daemon, status and stop commands delegate to the dashboard daemon adapter with this module's host observe and host start. [73]
 
 
-- The host-activity refresher is bound to the real bridge read in the composition root. Anchor: `host_activity_reconcile` [74]
+
+- The dashboard binds a registry-aware activity reader. A qualifying attempt checks role records before reading the activity snapshot. [74]

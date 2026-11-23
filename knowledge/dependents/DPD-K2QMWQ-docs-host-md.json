@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
-    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The host guide correctly directs Antigravity role starts to ACP, grounds fresh native refusal and exact-agent Retry in their implementing paths, and distinguishes pinned ACP forwarding from the installed Default-mode witness.",
-    "task": "261112-BUG-L19",
+    "statement": "The host guide’s resumable-after-stop and Antigravity exact-agent Retry descriptions still match the host settings and bridge.",
+    "task": "261112-BUG-L20",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "54b818118629a276761c14d24046428232306f6e",
+      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -136,12 +136,12 @@
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
     {
-      "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
+      "blob": "17713c670d76851b21ce84043ed05e450c1a0d53",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
     {
-      "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+      "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -195,8 +195,8 @@
     },
     {
       "anchor": {
-        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
-        "content": "sha256:5e597b4f0667c3ce70b87d2d6b595b7e5c5d4e24757dc61c50b155a20b3276ff",
+        "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+        "content": "sha256:88890c4ffbc0c6525cec6141638a35f4faa3e4e9cf958e1b6c6e522cccea024a",
         "locator": {
           "end": 736,
           "kind": "line_range",

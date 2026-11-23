@@ -861,6 +861,10 @@
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
       "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
+    "file:mcp/src/agents_remember/cli/role_registry_recovery.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json"
+    ],
     "file:mcp/src/agents_remember/cli/role_retire.py": [
       "knowledge/dependents/DPD-10YCT2-docs-tool-details-md.json",
       "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
@@ -1548,6 +1552,10 @@
     "file:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js": [
       "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json"
     ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
     "file:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
       "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
@@ -1643,7 +1651,9 @@
     ],
     "file:mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py": [
       "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
-      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
     ],
     "file:mcp/src/agents_remember/serving/paseo/paseo_provision.py": [
       "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",

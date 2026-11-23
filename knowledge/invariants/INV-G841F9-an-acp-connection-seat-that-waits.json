@@ -10,7 +10,9 @@
     "The seat's declaration is a line starting `WAITING FOR SUBAGENTS:` in its last assistant message of the turn.",
     "The check that follows a declared end repeats what the plugin's own verdict says rather than a list copied from the host.",
     "A seat on any provider, ACP or not, that declares a helper wait has a declared wait; a seat that declares nothing keeps the ordinary silent-end path, and the plugin's provider verdict only decides whether the launch appends the declaration instruction and which closing sentence the seat message carries.",
-    "The plugin's verdict file is written by staging and rename and read by both the launch and the turn-end decision."
+    "The plugin's verdict file is written by staging and rename and read by both the launch and the turn-end decision.",
+    "Closing the session cancels its helper wait and its pending check.",
+    "A blocked check can re-arm under the permission or unavailable-host gates."
   ],
   "exclusions": [
     "No component is installed on the host for this provision; the plugin ships in its existing install copy.",
@@ -28,9 +30,9 @@
     "leaf": "260928-MIK-L203",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A seat that waits for its own helpers ends the waiting turn with a WAITING FOR SUBAGENTS declaration and progress report, is asked for progress every 3 minutes while idle, and no harness gains any installed component.",
+  "statement": "A seat waiting for its helpers declares WAITING FOR SUBAGENTS and reports progress. An eligible declaring end can arm one progress check after three minutes, or earlier if a simultaneous background check is due sooner. A successful check consumes its timer. Another successful check needs another declaring end. The plug-in adds no installed harness component.",
   "status": "proposed",
   "supersedes": []
 }

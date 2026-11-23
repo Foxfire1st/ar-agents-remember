@@ -110,7 +110,9 @@ protocol.
 
 
 
+
 - The version comparator uses installed package metadata with the source-checkout release fallback. [4]
+
 
 
 

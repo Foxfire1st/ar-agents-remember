@@ -10,7 +10,7 @@ Pin role re-registration across host restart and stale closed listings until an 
 
 ## Code Commentary
 
-The fixture runs the real TypeScript HostActivityPublisher in a disposable Node process with injected native listings/events, alongside fake host launch/resume receipts and real role-registration files. Listing-before-warmup, registration-before-listing and explicit revive orders preserve reopened role facts through stale ended listings and concurrent launches. A later turn_started publication produces known works activity; later native close/archive or new-boot ended facts may reclaim the registration. This is mixed native-publisher/fake-host composition, not paid-agent, real-host delivery or acceptance evidence.
+The fixture runs the real TypeScript HostActivityPublisher in a disposable Node process with injected native listings/events, alongside fake host launch/resume receipts and real role-registration files. Listing-before-warmup, registration-before-listing and explicit revive orders preserve reopened role facts through closed listings and concurrent launches. A later turn_started publication produces known works activity. A close keeps the registration, and a later positive archive can reclaim it. Startup and new-boot tests restore receipt-backed records ahead of snapshot publication. Incomplete qualification waits for a later independent publication before trying again. This is mixed native-publisher/fake-host composition, not paid-agent, real-host delivery or acceptance evidence.
 
 ## Evidence
 
@@ -18,6 +18,9 @@ The fixture runs the real TypeScript HostActivityPublisher in a disposable Node 
 - Warmup registration before late listing preserves the same role facts. [2]
 - Explicit revive before late listing uses the same protection. [3]
 
+
 - Shared composition drives actual Node publisher, injected listings/resume and first-turn task activity. [4]
 
-- Later close/archive and new-boot ended evidence reclaim the registered role. [5]
+
+
+- Dashboard startup restores a missing receipt-backed seat before each boot snapshot. [5]

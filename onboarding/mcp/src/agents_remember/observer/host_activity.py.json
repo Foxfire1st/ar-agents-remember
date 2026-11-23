@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
-        "content": "sha256:4068df6c631fa984e595da9b3abc5135a913ac457dfbbeeba2b26ca5cd9423d3",
+        "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+        "content": "sha256:cc6a5d7ffca9abe085722699bdaf4383ee1e93d17341190a36cd7b8fb308f6aa",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,26 @@
     },
     {
       "anchor": {
-        "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
-        "content": "sha256:4068df6c631fa984e595da9b3abc5135a913ac457dfbbeeba2b26ca5cd9423d3",
+        "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+        "content": "sha256:9ba870ad9c81b7dbfe0410715ff825dce3d8c3c90ce9ab16d6ab0b139ed77b27",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishedAgentActivity"
+        }
+      },
+      "id": "RLZ-JVAKDG",
+      "invariant": "INV-GJYZGB",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 1",
+        "leaf": "261112-BUG-L20"
+      },
+      "rationale": "The Python wire reader preserves closed and archive as distinct host facts.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+        "content": "sha256:cc6a5d7ffca9abe085722699bdaf4383ee1e93d17341190a36cd7b8fb308f6aa",
         "locator": {
           "kind": "file"
         }
@@ -37,7 +55,7 @@
     },
     {
       "anchor": {
-        "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+        "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
         "content": "sha256:ea494ea06174759ceaa98fb0fa4ed9ddbb474248fc239c5e139413aa8466460a",
         "locator": {
           "kind": "symbol",
@@ -56,14 +74,40 @@
   ],
   "references": {
     "1": {
-      "note": "Define the shared validated host publication and default-unknown retained activity facts.\n\nAnchor: `PublishedAgentActivity`",
+      "note": "Define the shared validated host publication and default-unknown retained activity facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
-            "content": "sha256:4068df6c631fa984e595da9b3abc5135a913ac457dfbbeeba2b26ca5cd9423d3",
+            "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+            "content": "sha256:9ba870ad9c81b7dbfe0410715ff825dce3d8c3c90ce9ab16d6ab0b139ed77b27",
             "locator": {
-              "kind": "file"
+              "end": 93,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+            "content": "sha256:a11190345954066193af9f3596871300d38b55d901857a3819559dedef35e8e5",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+            "content": "sha256:7cb5727d3d5ccc7b511949aa2c764caae258a85fc6850fa9df1bd9a757d9c96d",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 123
             }
           },
           "kind": "code"

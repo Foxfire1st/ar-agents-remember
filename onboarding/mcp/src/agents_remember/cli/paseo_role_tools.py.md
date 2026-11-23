@@ -137,7 +137,9 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 - Readback, provenance and retry advice are extracted without changing receipt identity. [17]
 
 
-- On valid saved receipt context, role-facts publication belongs to pre-launch/replay and receipt-aware resume, not to the post-answer projection; filesystem/runtime publication is best effort, not host execution or plugin-consumption evidence. [18]
+
+- Prepared launch and receipt-aware resume publish role facts before their host call. The answer builder projects the saved receipt. Best-effort publication establishes no plug-in consumption. [18]
+
 
 
 ## The caller's own harness and the override rule

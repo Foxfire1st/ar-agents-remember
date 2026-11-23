@@ -31,6 +31,8 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 
 `readCatalog` defaults to metadata, which lists enabled provider and model choices without feature queries. Selected mode reads features for one specified provider and model. Explicit Refresh renews the provider snapshot before querying its current offerings. During saved native Antigravity Retry, the bridge looks up the exact recorded agent. It can deliver the saved first message to that agent. A missing agent produces a typed refusal before creation. `creationFeatureValues` checks configured feature values when an answer is available, matching IDs before labels without case through `namedOption`. A failed, timed-out or malformed feature listing passes configured values through unchecked; a known-empty offering refuses them.
 
+`role-registry` dispatches to `readRoleRegistry` for unarchived history or exact canonical UUID reads. The exact result distinguishes a positive archive timestamp and a successful null; the dedicated reader carries completeness and daemon identity.
+
 ## Evidence
 
 
@@ -46,7 +48,9 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 - A provider still loading at the discovery deadline keeps its identity and any known modes and fetch time. An unanswered model or mode listing remains unknown. [3]
 
 
+
 - The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface. [4]
+
 
 
 
@@ -63,3 +67,5 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 
 - The host-activity reconciliation opts into background agents and asks only open, unarchived AR role seats for subagents. [8]
 - An ordinary usage read names the agent. A forced refresh for a stale leaf report names its report ID alone. [9]
+
+- The bridge dispatches role-registry to its dedicated history and exact-read helper. [10]

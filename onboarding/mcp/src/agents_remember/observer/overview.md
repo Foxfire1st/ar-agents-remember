@@ -44,11 +44,11 @@ A new read-side module, `observer/provider_limits.py`, reads the product's one l
 
 ### One native task model
 
-TaskState separates planned/started/aborted/completed stage from optional works/waiting/paused/unknown activity and eventAt. A non-started canonical stage wins over host activity. An unavailable/incomplete host observation cannot prove paused; a complete known host may establish works from in-turn/permission agents, and also from an agent whose state is not ended while its running subagent count is above zero, whose contributing time is that subagent activity's; otherwise waiting while a bound seat's declared wait still has its check to come, and paused when none does. A waiting task serves `waitingSeats`, one entry per waiting seat naming the agent, its role, what it waits for, since when, the check due and the seat's own words. A started task with none of its agents working or waiting and at least one of them limited carries the served limited word while every count and the grouping keep saying paused. The timestamp comes from working contributors when present, otherwise from the earliest waiting seat's start for a waiting task, otherwise from the observed agents, not a generated heartbeat or elapsed-age counter.
+TaskState separates planned/started/aborted/completed stage from optional works/waiting/paused/unknown activity and eventAt. A non-started canonical stage wins over host activity. An unavailable/incomplete host observation cannot prove paused; a complete known host may establish works from in-turn/permission agents, and also from an agent with an open session and a running subagent, whose contributing time is that subagent activity's; otherwise waiting while a bound open seat has a declared wait and an armed check within its grace period, and paused when none does. A waiting task serves `waitingSeats`, one entry per waiting seat naming the agent, its role, what it waits for, since when, the check due and the seat's own words. A started task with none of its agents working or waiting and at least one of them limited carries the served limited word while every count and the grouping keep saying paused. The timestamp comes from working contributors when present, otherwise from the earliest waiting seat's start for a waiting task, otherwise from the observed agents, not a generated heartbeat or elapsed-age counter.
 
 The task-entry producer keeps repository-qualified document identity, optional document references, ordered parent/children links, authoritative step counts, summaries and exact contract bindings together. A declared file-less child can be a native entry without a document reference; consumers must not invent a document jump. Declared-parent checks and the single-parent acyclic membership guard prevent another client-side series/lifecycle hierarchy. The retained explicit orchestrates relation resolves only a unique same-repository commanded master; this is a named task-domain compatibility relation, not a broad title/filename guess.
 
-HostActivityPublication carries bootId, complete, the agent map and ignoredEvents. PublishedAgentActivity admits in-turn, permission, idle and ended; supplied eventAt must include a timezone. A seat's optional `declaredWait` — what it waits for (subagent and/or background), since when, the plugin's next check while one is armed and the background declaration's own words — is admitted with timezone-aware times and every other key refused, and it never moves the host's state or eventAt. The pure projection receives a HostActivitySnapshot with known, agents, ignored_agents, the one `limits` file and the native `boot_id`. Publication completeness, caller/task binding and ignored-agent accounting are distinct facts; the ignoredEvents and ignored_agents cells are not interchangeable counters.
+HostActivityPublication carries bootId, complete, the agent map and ignoredEvents. PublishedAgentActivity admits in-turn, permission, idle, closed and ended. Supplied eventAt and archivedAt carry timezones. A seat's optional `declaredWait` — what it waits for (subagent and/or background), since when, the plugin's next check while one is armed and the background declaration's own words — is admitted with timezone-aware times and every other key refused, and it never moves the host's state or eventAt. The pure projection receives a HostActivitySnapshot with known, agents, ignored_agents, the one `limits` file and the native `boot_id`. Publication completeness, caller/task binding and ignored-agent accounting are distinct facts; the ignoredEvents and ignored_agents cells are not interchangeable counters.
 
 ### Workspace Event River
 
@@ -287,13 +287,17 @@ No external Domain Documentation source is configured for this memory. Current i
 - Native state separates canonical stage, optional host activity and contributing eventAt. [39]
 
 
+
 - Terminal/planned stage wins; an unknown host cannot establish paused or waiting, and timestamp selection uses the working agents, else the earliest waiting seat's declared-wait start, else the observed agents. [40]
+
 
 
 - The one task join creates native identity/membership and binds contracts by exact task identity. [41]
 
 
+
 - Published host states admit only the declared vocabulary and timezone-aware event timestamps. [42]
+
 
 - The host publication separately carries boot identity, completeness, agent facts and ignoredEvents. [43]
 - The completed-call writer is bounded and failure-counting; it is not the removed ambient/read.packet emitter. [44]

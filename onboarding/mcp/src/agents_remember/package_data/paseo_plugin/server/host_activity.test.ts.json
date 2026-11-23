@@ -1,16 +1,52 @@
 {
   "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "47f4eed6640a0c96aa628e0279e2365c4cc6cb66",
+        "content": "sha256:caec3f85da75f3c2dfcb79fde0b50931a1b448c465404a445f96195842229983",
+        "locator": {
+          "kind": "symbol",
+          "name": "a close following archive preserves the archive state and time"
+        }
+      },
+      "facet": "Fires archive then close and checks that its ended state and archive timestamp survive.",
+      "id": "PRF-J5C3RR",
+      "invariant": "INV-GJYZGB",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 1",
+        "leaf": "261112-BUG-L20"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "47f4eed6640a0c96aa628e0279e2365c4cc6cb66",
+        "content": "sha256:0179503da8629918f801d964697892ee6a0f413a9e3e5080d78cc35c70eb1a69",
+        "locator": {
+          "kind": "symbol",
+          "name": "a host listing keeps a closed seat visible and its next turn counts as work"
+        }
+      },
+      "facet": "Lists a role as closed without active helper state, then shows its next turn as in-turn.",
+      "id": "PRF-YM2FXS",
+      "invariant": "INV-GJYZGB",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 1",
+        "leaf": "261112-BUG-L20"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Boot and permission/terminal transitions.\n\nAnchor: host transitions preserve permission waits through turn end and individual resolutions",
+      "note": "Boot and permission/terminal transitions.",
       "targets": [
         {
           "anchor": {
-            "blob": "25207ba888fc5c73284a02e966d71607802dfaf0",
-            "content": "sha256:3cc180fc6d601a23745ec6933ad7c7daafd338e962722c609ec59a0881766bad",
+            "blob": "47f4eed6640a0c96aa628e0279e2365c4cc6cb66",
+            "content": "sha256:abbc7ce3654bf4e3baf63506f9f8bc646b708c236e28d6662c79423b6678ff37",
             "locator": {
-              "end": 83,
+              "end": 114,
               "kind": "line_range",
               "start": 47
             }
@@ -24,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25207ba888fc5c73284a02e966d71607802dfaf0",
+            "blob": "47f4eed6640a0c96aa628e0279e2365c4cc6cb66",
             "content": "sha256:3bee247a91f3456105c48efa8b19546bef06c50bdb0e17fbab91a0f7758eef03",
             "locator": {
-              "end": 127,
+              "end": 158,
               "kind": "line_range",
-              "start": 85
+              "start": 116
             }
           },
           "kind": "test"
@@ -37,16 +73,28 @@
       ]
     },
     "3": {
-      "note": "One file and turn-start age through permission/reconciliation.",
+      "note": "The publisher replaces one file and leaves no transition history. The turn-start timestamp survives permission events and reconciliation.",
       "targets": [
         {
           "anchor": {
-            "blob": "25207ba888fc5c73284a02e966d71607802dfaf0",
-            "content": "sha256:1929d95f87eacc442cd697d919909602fd7f1069ca8e9165993de2954a671882",
+            "blob": "47f4eed6640a0c96aa628e0279e2365c4cc6cb66",
+            "content": "sha256:95ed335a8a4b2da4f0a7ae4a38cc9ee358c7719b819495df66fe89fc43a33da2",
             "locator": {
-              "end": 144,
+              "end": 170,
               "kind": "line_range",
-              "start": 117
+              "start": 160
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47f4eed6640a0c96aa628e0279e2365c4cc6cb66",
+            "content": "sha256:819a6b0bb5e492709cb684d9bfe4e0972889358c099da4d11f3d42b91aa3cf14",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 173
             }
           },
           "kind": "test"
@@ -58,25 +106,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25207ba888fc5c73284a02e966d71607802dfaf0",
+            "blob": "47f4eed6640a0c96aa628e0279e2365c4cc6cb66",
             "content": "sha256:1a8ccf4efd29b28c827d08fb455aee830d6b0e99a82997e971c2ae64556f323b",
             "locator": {
-              "end": 208,
+              "end": 239,
               "kind": "line_range",
-              "start": 198
+              "start": 229
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "25207ba888fc5c73284a02e966d71607802dfaf0",
+            "blob": "47f4eed6640a0c96aa628e0279e2365c4cc6cb66",
             "content": "sha256:59d639de4ee98b0d8b96f238144bdf551faade15dff76024c52d885452365294",
             "locator": {
-              "end": 248,
+              "end": 279,
               "kind": "line_range",
-              "start": 223
+              "start": 254
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The separate Python task-entry regression leaves a closed seat paused despite stale helper and wait fields, then projects work on the next turn.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+            "content": "sha256:f616649353165bd6f9eb30f39d61bfa825c2383ec2b65df9c07e01d507e488f7",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 537
+            },
+            "path": "mcp/tests/test_task_entries.py"
           },
           "kind": "test"
         }

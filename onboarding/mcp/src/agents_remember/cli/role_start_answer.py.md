@@ -26,7 +26,9 @@ This answer builder does not publish role facts: the obsolete post-answer plugin
 - Ordinary rejection retains new-request advice. [4]
 
 
-- On valid saved receipt context, role-facts publication belongs to pre-launch/replay and receipt-aware resume, not to the post-answer projection; filesystem/runtime publication is best effort, not host execution or plugin-consumption evidence. [5]
+
+- Prepared launch and receipt-aware resume publish role facts before their host call. The answer builder projects the saved receipt. Best-effort publication establishes no plug-in consumption. [5]
+
 
 
 ## The continuation a bootstrap answer names

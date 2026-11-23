@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+        "blob": "e7b762eca7991dbf3206d85614ed9ff6bf3d8914",
         "content": "sha256:4244307a5f34ffe05d2bc79871cfef156b658ad4022105e6fe77aea0f845738f",
         "locator": {
           "end": 29,
@@ -22,7 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+        "blob": "e7b762eca7991dbf3206d85614ed9ff6bf3d8914",
+        "content": "sha256:60e26e40bf4207fe13d5ec27e67b1514c24f6f1fc49f3c4f70ffd8a6bcb91eed",
+        "locator": {
+          "kind": "symbol",
+          "name": "readRoleRegistry"
+        }
+      },
+      "id": "RLZ-ZTJE9W",
+      "invariant": "INV-MT07ZE",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 2, 3, 5",
+        "leaf": "261112-BUG-L20"
+      },
+      "rationale": "The bridge reads unarchived history and asks exact UUIDs for archive timestamps or authoritative absence.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e7b762eca7991dbf3206d85614ed9ff6bf3d8914",
         "content": "sha256:0556d3d40d00fad80eba6385ee715063b96ff7a91d0900463ef554803507e1a8",
         "locator": {
           "kind": "symbol",
@@ -45,12 +63,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+            "blob": "e7b762eca7991dbf3206d85614ed9ff6bf3d8914",
             "content": "sha256:5a6516c480ed2d71a19897416ce510f4feb71fa5578821bfbdf54d9e0b21167b",
             "locator": {
               "end": 54,
               "kind": "line_range",
               "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Registry history includes unarchived background and unavailable persisted roles. Exact results distinguish archive, absence and incomplete observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7b762eca7991dbf3206d85614ed9ff6bf3d8914",
+            "content": "sha256:7d319ba783ac7d43278c9095eb94237bee1ef22156cfb09d241d5b9680c202a8",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 60
             }
           },
           "kind": "code"
