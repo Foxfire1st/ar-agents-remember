@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "The examined evidence-system clauses remain consistent with seven accepting lanes and catalog-owned metadata after four test-module registrations and twelve consumer links were added.",
-    "task": "261112-BUG-L9",
+    "statement": "The evidence-system description continues to apply to the existing stress-durability lane with the native stdio case and its four permanent shared supports.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+      "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
+      "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

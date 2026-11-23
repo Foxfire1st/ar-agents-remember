@@ -3626,12 +3626,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
-            "content": "sha256:3ddc7ae1afef1eb6f21798e7acd08bee784418f7b945a9919e371660d0891edd",
+            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
+            "content": "sha256:1d879072ff5faf6f25c5aae9a0e0491e510a598b9e6e0487812f29c2a196f766",
             "locator": {
-              "end": 1954,
+              "end": 8,
               "kind": "line_range",
-              "start": 1801
+              "start": 1
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },

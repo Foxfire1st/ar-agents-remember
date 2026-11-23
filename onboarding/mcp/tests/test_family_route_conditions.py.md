@@ -91,7 +91,9 @@ No configured live documentation source was available for this pass.
 - The boundary example. [8]
 - An ambiguous rename target. [9]
 - The registered kind and its row lookup. [10]
-- Q1: a route dead at B is not charged. [11]
+
+- An unreached family is not charged for a route already dead at the base. When the same route is removed inside the leaf's range, the worklist raises route_path_absent. [11]
+
 - Q5: the suggestion follows renames. [12]
 
 
@@ -105,5 +107,6 @@ No cross-repo boundary is crossed by this file.
 
 - `test_a_carried_dead_route_the_validator_refuses_is_a_mandatory_item`: current carried-route refusal, mandatory worklist item, failed changed-only answer, rerouted repair and retired exemption. [5]
 - Current source delta inspected statically: Replace carried-route PASS with refusal, qualify historical debt reporting and rename its caption; preserve reroute and retired boundaries. [14]
+
 
 - The lane registration. Anchor: "mcp/tests/test_family_route_conditions.py" Anchor: "mcp/tests/test_family_route_conditions.py" [13]

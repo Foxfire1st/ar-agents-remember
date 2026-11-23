@@ -4,12 +4,12 @@
       "spans_locations",
       "prevents_costly_mistake"
     ],
-    "justification": "Five independently consumed packaging locations must agree, or provisioning can install a host different from the contract or compile a plugin against another SDK; the installed-host transition and future-version compatibility are not inferred from these pins."
+    "justification": "The four exact pin declarations must agree or provisioning and plugin typechecking can select different host releases. The native manifest independently declares the supported minimum."
   },
-  "applicability": "The packaged build selecting Paseo 0.15.4: release-owned host contract, reproducible host package tree and lock, plugin SDK dependency and host requirement.",
+  "applicability": "The packaged build selecting Paseo 0.16.2: release-owned host contract, reproducible host package tree and lock, plugin SDK dependency and host requirement.",
   "conditions": [
-    "The build selects the exact 0.15.4 host release; package declarations and the npm-written lock agree.",
-    "The plugin's SDK dependency names the same release and its host requirement is Paseo >=0.15.0, because addHook exists only from 0.15.0."
+    "The build selects the exact 0.16.2 host release; package declarations and the npm-written lock agree.",
+    "The plugin SDK pins the host release. The native plugin manifest states the minimum supported host as Paseo >=0.15.0."
   ],
   "exclusions": [
     "An already running older host remains observable until explicit provision; this statement claims no developer-installation upgrade.",
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L123",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "The Paseo host pin, its whole npm lock and the plugin's @getpaseo/plugin devDependency move together to 0.15.4, and the plugin requires Paseo >=0.15.0.",
+  "statement": "The bundled Paseo host contract, host manifest and complete npm lock pin @getpaseo/cli to 0.16.2. The plugin development SDK pins the same release and the plugin manifest requires Paseo >=0.15.0.",
   "status": "proposed",
   "supersedes": []
 }

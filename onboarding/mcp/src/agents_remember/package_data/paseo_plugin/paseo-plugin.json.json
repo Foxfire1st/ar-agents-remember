@@ -34,7 +34,7 @@
         "handoffEntry": "MIK-R123@v1:pin-0.11.1",
         "leaf": "260928-MIK-L123"
       },
-      "rationale": "The plugin declares the host it requires; the requirement line follows the pinned host.",
+      "rationale": "The native plugin manifest states its minimum supported Paseo version.",
       "role": "support"
     }
   ],

@@ -28,7 +28,7 @@ historical card wording, not a current census of a defined helper category. The 
 ### Logic
 
 Four comparisons, including a comparison of a **figure written in prose** against
-the source it describes. Ranges are derived against the **current 1110-line** source.
+the source it describes. The symbols name the current comparison owners.
 
 - `check_leaf_document_against_contract` (441-542) — the enclosure contract is the **authority**
   side and the leaf document's `status` is the subject. Two rules are reported and they are not
@@ -135,6 +135,8 @@ known further gap carried by this file at this revision.” That is the earlier
 curator's reported knowledge state; the named limitations above remain, and
 this attribution makes no new exhaustive claim about current gaps.
 
+Leaf-document discovery excludes enclosures and worktrees only in the path relative to the selected task root. It decodes candidate JSON files and keeps the task document schema. The matcher indexes the stated leaf ID.
+
 ## Evidence
 
 Earlier citation wording, retained for custody: “The lane this module’s contract suite is registered in, so the fail-closed manifest admits it. Source caption: `mcp/tests/test_record_integrity.py`.” The current lane catalog still declares that test module; this is membership evidence, not a fresh execution or acceptance result.
@@ -151,7 +153,7 @@ External domain documentation is not configured in this memory root.
 ### Repo-Internal References
 
 The source owners below establish these file-local behaviors; this read does not claim a test or
-certification pass. Every range was derived against the current 1110-line source.
+certification pass. Current source anchors are recorded in the numbered evidence.
 
 - The report prefix every rendered comparison carries. [1]
 - The enclosure-contract glob the tree walk resolves. [2]
@@ -176,7 +178,9 @@ certification pass. Every range was derived against the current 1110-line source
 - The coordination root as an input rather than a hard-coded layout, or a refusal naming it. [22]
 - The run that joins the figure comparison only when claims are supplied. [23]
 - The runner, its repeatable inputs, and the exit status that reports a finding. [24]
-- The 37 cases that pin these behaviours against the historical artifacts, in both directions. [25]
+
+- Comparison cases exercise historical artifacts and owned fixtures in both directions. [25]
+
 
 ### Cross-Repo References
 
@@ -198,3 +202,5 @@ No cross-repository evidence is required for these file-local claims.
 - The status sets select recognized comparison cases; they do not reject every unknown status. [4]
 
 - The master-row comparison selects early, late or general mismatch rules for its findings. [15]
+
+- The scanner applies the exclusion to relative path parts and admits the expected task document shape. [27]

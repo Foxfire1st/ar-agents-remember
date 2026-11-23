@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
             "content": "sha256:da779c827da3795c878647e500000544381770373d5fd6645487b11952e94740",
             "locator": {
-              "end": 573,
+              "end": 561,
               "kind": "line_range",
-              "start": 564
+              "start": 552
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -120,12 +120,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
-            "content": "sha256:0de4b39e321f1100f1a868ff3d4bc28433945437b62ad749fac3727114969976",
+            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
+            "content": "sha256:fd844a94f0df0cb3b6403e4eae5f6c768c9cfd184e219d2211b327c409814cd0",
             "locator": {
-              "end": 1814,
+              "end": 65,
               "kind": "line_range",
-              "start": 1158
+              "start": 65
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -133,12 +133,10 @@
         },
         {
           "anchor": {
-            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
-            "content": "sha256:fd844a94f0df0cb3b6403e4eae5f6c768c9cfd184e219d2211b327c409814cd0",
+            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
+            "content": "sha256:1276446760efb327c94f5aa1003ba50e18d92bd894e438710af0e715d64a056e",
             "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 65
+              "kind": "file"
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -151,12 +149,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
-            "content": "sha256:9dd7595ae252103b646e3c43eca51203f5dbba8407504429e616c502435f55ee",
+            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
+            "content": "sha256:1276446760efb327c94f5aa1003ba50e18d92bd894e438710af0e715d64a056e",
             "locator": {
-              "end": 1190,
-              "kind": "line_range",
-              "start": 13
+              "kind": "file"
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -186,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
             "content": "sha256:76f4bba25921a170cf4794a40f63ddb0b477af01c3e612fa787f7555a95100e1",
             "locator": {
               "end": 541,
@@ -199,7 +195,7 @@
         },
         {
           "anchor": {
-            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
             "content": "sha256:fd844a94f0df0cb3b6403e4eae5f6c768c9cfd184e219d2211b327c409814cd0",
             "locator": {
               "end": 65,
@@ -363,7 +359,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
             "content": "sha256:048d2be48e5d33c20e3cf9ed45c3edc5ca0c7ab1bb6ad6008e2c4c2d29162b8b",
             "locator": {
               "end": 7,
@@ -436,12 +432,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
             "content": "sha256:b84bb5fef68c7da2997f26eacdf572410d2f35298b0e8d5959899a076ad27eea",
             "locator": {
-              "end": 532,
+              "end": 520,
               "kind": "line_range",
-              "start": 530
+              "start": 518
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -454,12 +450,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
             "content": "sha256:250a4cc506ffd6cdba6ae28d95148729085d0e8eece9c0f2b3d52da1667698ce",
             "locator": {
-              "end": 544,
+              "end": 532,
               "kind": "line_range",
-              "start": 539
+              "start": 527
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -467,7 +463,7 @@
         },
         {
           "anchor": {
-            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
             "content": "sha256:562db58d8bb2e4814b99dc78dc03d57ef14958bc34bd8b5409f00b644b5638c4",
             "locator": {
               "end": 185,

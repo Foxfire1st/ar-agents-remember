@@ -58,7 +58,9 @@ No Domain Documentation source is configured for this slice.
 
 
 
-- Fixture construction imports the shared diff/read-scope test support and rebuilds its candidate text population; this is not production write admission. [25]
+
+- The fixture imports diff and read-scope test helpers. It rebuilds the candidate text population with the successor claim and added realization paths. [25]
+
 
 
 
@@ -72,23 +74,35 @@ No Domain Documentation source is configured for this slice.
 - build_pagination_fixture builds the shared diff fixture, adds extra realization paths and returns its candidate fixture. [28]
 
 
-- The composition, the real route and the query builder every page is read through. [30]
+
+- The HTTP walk builds queries for the registered route, whose port invokes production composition. The direct walk invokes composition through compose_page. [30]
 
 
-- The walk helper and the two independent answer readers the cases compare the published counts with. [31]
+
+
+- The cursor walk checks each published cumulative count against a separate call to the comparison owner for the same request. It also reads the page item IDs from that owner. [31]
+
 
 - **A complete comparison is one page: no remainder and no cursor, so a whole selection is never presentable as a truncated one.** [32]
 - The large comparison walk reads every page through HTTP and checks the union, counts, scope and terminal cursor without duplicate or loss. [33]
 - Item windows partition the comparison population exactly and their rendered claim-row union matches the whole comparison. [34]
-- **The packet's failure example: a cursor whose generation moved is refused with the new-generation action, and the response is the first page of the comparison that is there now.** [36]
+- A stale cursor returns a reset with the new-generation action and differing identities. The reset has no continued-from cursor and hands back a cursor that continues the moved comparison. [36]
 - **The page-size boundary admitted by the route itself: 64 served, 65 and −1 refused by name with no uncaught request-model error.** [37]
 
-- The entry case asserts unpaged subject review reads at both fixture sizes and independently verifies that driving the entry catalogue calls no comparison or view owner. [39]
+
+- At both fixture sizes the unpaged subject read has no page. The larger entry catalogue then returns its subject count without calling the patched comparison or view functions. [39]
+
 
 - ReviewCollectionPage validates total arithmetic, continuation availability, reset reason and continued-from identity. [40]
 - The transport case checks named input refusals and the page-size bound, including 64 admitted and 65 or negative sizes refused. [41]
 
-- The removed records collection is a named refusal on first, unsized, continued and crossed requests. The serialized guard requires the evidence field to be absent, not an empty measured channel. [22]
+
+- The first, unsized, continued and crossed requests for the removed records collection return the named refusal. The crossed request’s model dump omits evidence. [22]
+
 - PaginationFixture holds shared test-support fixture state and builds its request/resolution; build_pagination_fixture composes that fixture. Neither is shipped public-store write admission. [29]
 
-- One unit-regression membership and seven exact-scope lifecycle artifact records name this module. These source declarations are neither a six-row census nor test execution. [42]
+
+
+
+
+- The lane manifest registers this module in unit-regression. Seven lifecycle artifact consumer declarations also name it. [42]

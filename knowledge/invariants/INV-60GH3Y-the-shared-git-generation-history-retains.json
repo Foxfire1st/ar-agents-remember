@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Keeping all alternate paths in shared history would retain variable path data even though the history only needs an equality witness."
+  },
+  "applicability": "The shared Git object generation history's entries keyed by repository and addition policy.",
+  "conditions": [
+    "A SHA-256 fingerprint of sorted length-framed alternate path bytes supplies equality.",
+    "A revision transition uses the complete incoming census and the existing addition policy."
+  ],
+  "exclusions": [
+    "The request may still need current alternate paths to discover and measure the full object store."
+  ],
+  "id": "INV-60GH3Y",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "bug-r18-W2-expanded-evidence.md, L18-F04, exact revision-transition and retained graph checks."
+      ],
+      "path": "BUG-L18 W2 affected knowledge and initial history"
+    },
+    "handoffEntry": "BUG-R18@v1 item 5 — shared alternate history",
+    "leaf": "261112-BUG-L18",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The shared Git generation history retains a fixed-size digest of the sorted alternate paths and continues to derive each new revision from the full incoming census.",
+  "status": "proposed",
+  "supersedes": []
+}

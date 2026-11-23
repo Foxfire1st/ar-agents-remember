@@ -413,7 +413,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Pure plan step 5 with both converted merge-side bases; `merge_reports` findings report in sync context, distinct from real transaction validation.",
+      "note": "The pure plan checks step 5 over both converted merge-side bases. Validation returns refusing findings, leaving sync-merge report-only findings outside that list.",
       "targets": [
         {
           "anchor": {
@@ -430,47 +430,11 @@
         {
           "anchor": {
             "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:4000178d91b48ae43949a6350baba2acb17522c7a71d04227c88472ecab03efb",
+            "content": "sha256:df714df8fa9cd453c979be515ea2fa7c124e185c66461b411ab68bd570e50322",
             "locator": {
-              "end": 87,
+              "end": 278,
               "kind": "line_range",
-              "start": 86
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:28aa9d432a4caa2979df45c02e3f141550c660f3adeb67ce072c0dcb5aefca0f",
-            "locator": {
-              "end": 277,
-              "kind": "line_range",
-              "start": 276
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:cf6870de9bbda95db3291e66e2559334e450419b2e9961fd9a8986c095535db0",
-            "locator": {
-              "end": 308,
-              "kind": "line_range",
-              "start": 308
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:5c704f6e614194bcdbd5a5aabdb097b03361e8264233481c9eff3958921ba255",
-            "locator": {
-              "end": 656,
-              "kind": "line_range",
-              "start": 652
+              "start": 274
             }
           },
           "kind": "test"
@@ -478,15 +442,16 @@
       ]
     },
     "10": {
-      "note": "Overlapping edits reach the curator; a failed step changes nothing.",
+      "note": "The injected conversion failure leaves the leaf HEAD unchanged and creates no MERGE_HEAD. The retry records overlapping edits in its payload, report and conflict markers for Curator resolution.",
       "targets": [
         {
           "anchor": {
             "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:4e4830a84005983da07a3c5589b501f73475627a3565c79bb4c4e1725268f4fd",
+            "content": "sha256:ed8d8d4bd18bb3b35a8bfa9084824037db47bb6c479cb0cef790b6b720d546f0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_crossing_leaves_overlapping_edits_to_the_curator_and_a_failed_step_changes_nothing"
+              "end": 841,
+              "kind": "line_range",
+              "start": 788
             }
           },
           "kind": "test"
@@ -498,12 +463,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:33b4b865c5c5115dd7a22ed4473ff30e50bbc9a1ec3048676cad3730f5be890a",
             "locator": {
-              "end": 816,
+              "end": 227,
               "kind": "line_range",
-              "start": 1
+              "start": 227
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -608,15 +573,16 @@
       ]
     },
     "18": {
-      "note": "A true conflict stays one item at the incoming number.",
+      "note": "The fixture edits reference 1 differently on both sides and produces one sidecar conflict for references.1, naming the differing authored fields.",
       "targets": [
         {
           "anchor": {
             "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
             "content": "sha256:a38aca35bdacc1e3fcb7496d8d0d6050fcbb2b3f35aefedbfa16fffe60cec29f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_true_conflict_stays_one_item_at_the_incoming_number"
+              "end": 1122,
+              "kind": "line_range",
+              "start": 1098
             }
           },
           "kind": "test"
@@ -714,16 +680,16 @@
       ]
     },
     "23": {
-      "note": "The real managed route rather than the pure plan: the fixture's sync crosses an unconverted leaf into a converted line, lands `synced`, and persists the worklist recomputed at its new base pair.",
+      "note": "The managed sync crosses the unconverted leaf into the converted line, returns `synced`, and persists a complete worklist bound to the new code and memory bases.",
       "targets": [
         {
           "anchor": {
             "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:4000178d91b48ae43949a6350baba2acb17522c7a71d04227c88472ecab03efb",
+            "content": "sha256:a415f42adf2d9a67877766e335426f5d5ab7642013fa2768c5097bdfe8f3dd8c",
             "locator": {
-              "end": 87,
+              "end": 750,
               "kind": "line_range",
-              "start": 86
+              "start": 733
             }
           },
           "kind": "test"
@@ -731,35 +697,11 @@
         {
           "anchor": {
             "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:28aa9d432a4caa2979df45c02e3f141550c660f3adeb67ce072c0dcb5aefca0f",
+            "content": "sha256:b89837e41a09ea1e53535a391bf9f21a470fd7a4ffdfd806128382385d688d85",
             "locator": {
-              "end": 277,
+              "end": 770,
               "kind": "line_range",
-              "start": 276
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:cf6870de9bbda95db3291e66e2559334e450419b2e9961fd9a8986c095535db0",
-            "locator": {
-              "end": 308,
-              "kind": "line_range",
-              "start": 308
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:5c704f6e614194bcdbd5a5aabdb097b03361e8264233481c9eff3958921ba255",
-            "locator": {
-              "end": 656,
-              "kind": "line_range",
-              "start": 652
+              "start": 762
             }
           },
           "kind": "test"
@@ -793,7 +735,7 @@
       ]
     },
     "5": {
-      "note": "Long markers in one valid row with paired source blobs supplied to marker transport.",
+      "note": "The fixture supplies a blob for the card path. The accumulated markers form one valid row and the long marker splits without losing content.",
       "targets": [
         {
           "anchor": {
@@ -803,54 +745,6 @@
               "end": 311,
               "kind": "line_range",
               "start": 285
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:4000178d91b48ae43949a6350baba2acb17522c7a71d04227c88472ecab03efb",
-            "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 86
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:28aa9d432a4caa2979df45c02e3f141550c660f3adeb67ce072c0dcb5aefca0f",
-            "locator": {
-              "end": 277,
-              "kind": "line_range",
-              "start": 276
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:cf6870de9bbda95db3291e66e2559334e450419b2e9961fd9a8986c095535db0",
-            "locator": {
-              "end": 308,
-              "kind": "line_range",
-              "start": 308
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:5c704f6e614194bcdbd5a5aabdb097b03361e8264233481c9eff3958921ba255",
-            "locator": {
-              "end": 656,
-              "kind": "line_range",
-              "start": 652
             }
           },
           "kind": "test"
@@ -874,7 +768,7 @@
       ]
     },
     "7": {
-      "note": "Base conversion uses the base's own code commit and removes base-converted refusal, while the non-merge commit still refuses carried-stale.",
+      "note": "The base converter uses the base's own code commit. Converting that base clears the base-converted refusal and leaves the carried-stale refusal in the non-merge commit.",
       "targets": [
         {
           "anchor": {
@@ -884,54 +778,6 @@
               "end": 656,
               "kind": "line_range",
               "start": 608
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:4000178d91b48ae43949a6350baba2acb17522c7a71d04227c88472ecab03efb",
-            "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 86
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:28aa9d432a4caa2979df45c02e3f141550c660f3adeb67ce072c0dcb5aefca0f",
-            "locator": {
-              "end": 277,
-              "kind": "line_range",
-              "start": 276
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:cf6870de9bbda95db3291e66e2559334e450419b2e9961fd9a8986c095535db0",
-            "locator": {
-              "end": 308,
-              "kind": "line_range",
-              "start": 308
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:5c704f6e614194bcdbd5a5aabdb097b03361e8264233481c9eff3958921ba255",
-            "locator": {
-              "end": 656,
-              "kind": "line_range",
-              "start": 652
             }
           },
           "kind": "test"

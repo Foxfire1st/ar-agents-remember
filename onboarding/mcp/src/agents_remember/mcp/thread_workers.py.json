@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/mcp/thread_workers.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "16c9244c6c6d7b49e26f835cf992ae04304056f5",
+        "content": "sha256:8270eb64bb55bec46ee910fba95941cf2303221cd04753f4019076d6e81336e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_in_request_thread"
+        }
+      },
+      "id": "RLZ-A35Y1N",
+      "invariant": "INV-V4WR2R",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — registered role-start drain",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The shared thread runner drains its worker before propagating cancellation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The shielded worker drains before the caller propagates its exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16c9244c6c6d7b49e26f835cf992ae04304056f5",
+            "content": "sha256:8270eb64bb55bec46ee910fba95941cf2303221cd04753f4019076d6e81336e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_in_request_thread"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

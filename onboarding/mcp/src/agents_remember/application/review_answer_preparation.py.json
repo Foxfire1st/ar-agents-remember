@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+        "content": "sha256:2295058bb573635dfc0f5726d02eec6eb83e2f8c4c5c59fd653fc5524e158a6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_bodies_not_yet_consumed"
+        }
+      },
+      "id": "RLZ-57QV65",
+      "invariant": "INV-HPHVCN",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-HPHVCN",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The overlap optimization uses the latest observation of the active request owner to decide which object bodies still need reading.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+        "content": "sha256:cddd17a03fbd99207299dcc92bd3648c5d9a0af3a3b810bbfc94a0ebc3b0b63e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_stored_closure_holds"
+        }
+      },
+      "id": "RLZ-8P5XM7",
+      "invariant": "INV-HPHVCN",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-HPHVCN",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "A durable closure proof is re-observed before it seeds this request’s computation memo. Its separate disk store remains available to later requests.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
         "content": "sha256:3b531d18e4ddfd744ca18834e4dc03feb7b88e882fa7fad47c193f0e1e890b44",
         "locator": {
           "kind": "symbol",
@@ -21,7 +57,43 @@
     },
     {
       "anchor": {
-        "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+        "content": "sha256:3eb98c795829ee651be0b51b22df12267e72cc847c2305426390f761e406eefa",
+        "locator": {
+          "kind": "symbol",
+          "name": "_rewitnessed_closure"
+        }
+      },
+      "id": "RLZ-T67V7H",
+      "invariant": "INV-HPHVCN",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-HPHVCN",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "A refreshed proof is retained through the request-owner helper after witnessing its objects again.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+        "content": "sha256:7b782fb1dce99b93d77e8150bb926ab3b2c9b6b81730fab293cf78adcb6e9c00",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_closure_holds"
+        }
+      },
+      "id": "RLZ-VDW09S",
+      "invariant": "INV-HPHVCN",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-HPHVCN",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The held closure proof comes from the exact-tree table for the active request owner.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
         "content": "sha256:c4866907e0c2184039e7c5d32238e955def26a603b5cb608ff88e058e3596a55",
         "locator": {
           "kind": "symbol",
@@ -36,6 +108,24 @@
       },
       "rationale": "The object dependency: each of the four recorded trees is probed before any reuse, because equal object counts do not establish that a tree can still be read.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
+        "content": "sha256:43c5c64e40eea047c8214d54dfd4a669da762d540f401d6f67c8b65d958cb821",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prove_closure"
+        }
+      },
+      "id": "RLZ-ZKYJ3Z",
+      "invariant": "INV-HPHVCN",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-HPHVCN",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "A newly proved closure enters the active owner’s table only after its current witness checks agree.",
+      "role": "support"
     }
   ],
   "references": {
@@ -44,12 +134,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
             "content": "sha256:c13e962c161a7055c95e61b20a4b7188edb71d09eaf3af788d642ecb4997c0f3",
             "locator": {
-              "end": 1125,
+              "end": 1111,
               "kind": "line_range",
-              "start": 1109
+              "start": 1095
             }
           },
           "kind": "code"
@@ -61,12 +151,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
             "content": "sha256:0105135ae4aa8e43019e4e328ac58bf8206dfb739b3c3436336f643ea357e7bd",
             "locator": {
-              "end": 106,
+              "end": 108,
               "kind": "line_range",
-              "start": 98
+              "start": 100
             }
           },
           "kind": "code"
@@ -78,12 +168,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
             "content": "sha256:b668a4946ed81bed143d0f00d6fc3369b7c69cc2747674cea85d7693a99d9e83",
             "locator": {
-              "end": 208,
+              "end": 210,
               "kind": "line_range",
-              "start": 183
+              "start": 185
             }
           },
           "kind": "code"
@@ -95,12 +185,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
             "content": "sha256:3b531d18e4ddfd744ca18834e4dc03feb7b88e882fa7fad47c193f0e1e890b44",
             "locator": {
-              "end": 1070,
+              "end": 1056,
               "kind": "line_range",
-              "start": 536
+              "start": 522
             }
           },
           "kind": "code"
@@ -112,12 +202,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
             "content": "sha256:91da9aa53fb0333de3f580263f105b60ff6dae819b22f4d59ab81db92a4488e4",
             "locator": {
-              "end": 991,
+              "end": 977,
               "kind": "line_range",
-              "start": 934
+              "start": 920
             }
           },
           "kind": "code"
@@ -129,12 +219,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
             "content": "sha256:073e396da65095b7c9f909135a6ce8a01db73fd6028c7b7d0f9626ca7b9fea83",
             "locator": {
-              "end": 1093,
+              "end": 1079,
               "kind": "line_range",
-              "start": 1073
+              "start": 1059
             }
           },
           "kind": "code"

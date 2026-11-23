@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "ce6ff51ceff24cba0157410140585c0ba80a0203",
+    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
     "role": "curator",
-    "statement": "The page holds: the concepts page's task-document entry gained the atomic master's terminal-stage precondition and the `abandon-master-not-terminal` refusal, and the roadmap's own sentences name no status and no refusal.",
-    "task": "261112-BUG-L7",
+    "statement": "The roadmap's knowledge, drift, worklist and benchmark links still reach their definitions after Concepts adds staged explanation and video.",
+    "task": "261112-BUG-L13",
     "uncommitted": true
   },
   "document": "ROADMAP.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
     },
     {
-      "blob": "add7cf32a42fb39d468b72e2d68c545f2beeb2c1",
+      "blob": "b477c24f5467a62878fbff415391912ac303f2b0",
       "kind": "file",
       "path": "docs/concepts.md"
     },

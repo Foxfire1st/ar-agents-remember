@@ -232,13 +232,15 @@ The governing workflow opens an independent memory review after CODE PASS on the
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict.
 
+The document API re-exports the review-addition request and amended-round types from the review model.
+
 ## Evidence
 
 
 - Worker/Curator typed review census, record-only exclusion and unknown history. [23]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [24]
 - Launch scope opts in to review-only tolerance and forwards the same request reason. [25]
-- Child start opts into tolerance after root identity validation; context does not cross exec. [26]
+- Child start enters the review-tolerance scope after root validation. Context variables do not cross exec. [26]
 - Record-only memory identity comes from memory authority, never the sibling code root. [27]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [28]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [29]

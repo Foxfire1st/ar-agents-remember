@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
-    "statement": "All four changed areas between the leaf base and this final code tree are covered: read_ar_files reads a card's entry half when Markdown is absent, names that JSON file with cardStatus sidecar-only and cardState currentness, and entry-half coverage does not itself make the route index stale; master abandon measures already-landed work by ancestry and returns landedWork with state, branch and line plus the no-work-lost summary; a recorded master's landing keeps stale-only findings as staleEntries debt only after the landing-chain proof passes, while other refusals remain. The archive passage covers the dry-run row survey without row repair, one refusal naming every blocked still-live commanded master and its open work, and enclosure retirement through abandonment's existing checks only for commanded masters that move with the sprint. A master also commanded by another live sprint stays where it is and its enclosures are skipped by retirement. These changed passages agree with the named implementation; other passages were not re-reviewed in this pass.",
-    "task": "261112-BUG-L7",
+    "statement": "The MCP reference describes the typed role contracts, same-request reconciliation and single-seat boundary, task-document review and synchronous closeout, and six overflow declarations by wire Boolean, including the integrity refusal with ok true, bounded landing debt and its next step, whole-field fitting, named omissions and exact result locators.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -53,7 +53,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
     },
     {
-      "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+      "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
     },
@@ -93,7 +93,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "3f91234661460904091f50cb41164456aa515f04",
+      "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -143,7 +143,7 @@
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+      "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
     },
@@ -163,7 +163,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
     },
     {
-      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -183,12 +183,12 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_field_homes.py"
     },
     {
-      "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+      "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/review_history.py"
     },
     {
-      "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+      "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
@@ -283,7 +283,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/master_review_gate.py"
     },
     {
-      "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+      "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_response.py"
     },
@@ -326,6 +326,32 @@
       "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+    },
+    {
+      "anchor": {
+        "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+        "content": "sha256:9bfc3dc0a03ede235ffacd9b7022d894b039b115264c8b05e0e28a88faf14559",
+        "locator": {
+          "kind": "symbol",
+          "name": "declared_short_fields"
+        },
+        "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
+      },
+      "heading": "Tool answers",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+        "content": "sha256:3ebb97025105171a88b5a176c9a9d9e5317c5116b3bc90648c6a27d044a3dbe7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refused_check"
+        },
+        "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+      },
+      "heading": "Tool answers",
+      "kind": "anchor"
     }
   ]
 }

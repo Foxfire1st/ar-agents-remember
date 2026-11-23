@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
-    "statement": "The changed cache passage correctly describes loaded-build isolation and one age/size eviction over every SQLite namespace, while the unchanged passages were not reverified.",
-    "task": "261112-BUG-L9",
+    "statement": "The features page still describes declared tool inputs, response bounds and the locator for the complete result; read_ar_files still declares the removed refresh argument so it can refuse it by name.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -58,12 +58,12 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
     {
-      "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+      "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -88,17 +88,17 @@
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/cli.py"
     },
     {
-      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
     {
-      "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+      "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
     {
-      "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+      "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
     },
@@ -233,12 +233,31 @@
       "path": "mcp/src/agents_remember/benchmarks/runner.py"
     },
     {
-      "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
-      "kind": "file",
-      "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+      "anchor": {
+        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_closeout_apply_tool"
+        },
+        "path": "mcp/src/agents_remember/application/worktree_tools.py"
+      },
+      "kind": "anchor"
     },
     {
-      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "anchor": {
+        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_integrate_tool"
+        },
+        "path": "mcp/src/agents_remember/application/worktree_tools.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
@@ -269,6 +288,11 @@
       },
       "heading": "Loaded build identity",
       "kind": "anchor"
+    },
+    {
+      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     }
   ]
 }

@@ -6,11 +6,11 @@
 
 ## Purpose
 
-A worktree's kept capture index: a review read's capture writes only what moved.
+Produces the native capture tree from a private Git index that can be reused.
 
 ## Code Commentary
 
-A capture writes only what moved against the kept index, and the index is what says a tree is already captured, so a second read does not re-capture an unchanged tree.
+The capture lock protects the retained index and its witness check. When the real index, tracked paths, eligible untracked names and HEAD still match, the capture returns the witnessed tree. Native calls hold that witness in their request owner. A later native request can use the settled retained index to run add and write-tree again.
 
 ## Boundaries
 
@@ -18,4 +18,5 @@ The detail this module owns stops at its own boundary; the route account above s
 
 ## Evidence
 
-- kept_candidate_tree answers a tree from the kept index when nothing moved. [1]
+
+- Under the capture lock, kept_candidate_tree returns the witnessed tree when the private index still exists and its captured observations still agree. A witness miss takes the native kept-index capture path. [1]

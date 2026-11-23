@@ -6,15 +6,19 @@
 
 ## Purpose and current source account
 
-Ordered status-table cases distinguish unavailable host, absent/archived agent, closed session, permission wait, running/failed/cancelled/idle turns and unknown states. Refresh uses read commands, preserves an unreachable receipt, and scopes lock duration to the bridge call. Revive resumes the recorded agent only under retained task scope; resume refusal persists until the host shows an open session.
+Ordered status-table cases distinguish unavailable host, absent/archived agent, closed session, permission wait, running/failed/cancelled/idle turns and unknown states. Refresh uses read commands, preserves an unreachable receipt, and keeps receipt liveness calls outside the dispatch lock. Revive resumes the recorded agent only under retained task scope; resume refusal persists until the host shows an open session.
 
-For options requests, the lock-scope regression expects a fresh `catalog` read while the launch lock is free, followed by `agent-state` with the lock held. If catalog discovery fails, the options answer uses saved catalog data marked `source = saved` with a non-null `readAt`, and keeps the same catalog-before-agent ordering. When a later fresh question fails, the returned models remain the saved models and `readAt` remains the original answer time. With the launch lock already held, options still asks for the catalog but refuses before reading the agent. [1]
+The options regression expects `catalog` and the subsequent `agent-state` read to run while the launch lock is free. If catalog discovery fails, the options answer uses saved catalog data marked `source = saved` with a non-null `readAt`, and keeps the same catalog-before-agent ordering. When a later fresh question fails, the returned models remain the saved models and `readAt` remains the original answer time. With the launch lock already held, both forms of Options return before contacting the host. [1]
 
-The failed fresh catalog question returns the saved options answer rather than a refusal. With the launch lock held, refresh refuses without a bridge call; options still asks the fresh catalog and then refuses before reading the agent. Both refusal responses name a launch in progress. [1]
+The result route and both options requests report a launch in progress before contacting the host when the launch lock is held. Parked task-bound, Investigator and taskless legacy receipt reads allow Start to reach admission. The replacement and migration cases ensure an earlier observation cannot replace a newer or already migrated receipt. [1]
 
-New-start tests require a fresh `catalog` query before `agent-state` in the open-execution-rule cases, unreadable-agent refusal and held-seat refusal. In the replacing-start test, a plain request is first refused and a subsequent replacing request succeeds; their combined command history is `catalog`, `agent-state`, `catalog`, `agent-state`, `agent-archive`, `workspace-open`, `agent-create`. Each attempt makes its own catalog query before reading the agent. [1]
+The open-execution and unreadable-holder cases assert `catalog` then `agent-state`. The failed-Revive case separately checks that a plain Start is refused and a replacing Start archives the holder before creating the successor. Across those two commands it asserts `catalog`, `agent-state`, `catalog`, `agent-state`, `agent-archive`, `workspace-open`, `agent-create`.
+
+- The open-execution cases assert catalog before agent-state. The failed-Revive case checks the combined refused and replacing Start trace. [2]
+
 
 ## Evidence
 
 
-- The scoped current source carries the module/document behavior described above. [1]
+
+- Tests cover status, Revive, saved catalogue answers, lock-free host reads and launch-in-progress responses with zero host calls. [1]

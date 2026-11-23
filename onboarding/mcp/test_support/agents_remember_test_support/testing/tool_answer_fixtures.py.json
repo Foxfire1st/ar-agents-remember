@@ -1,0 +1,42 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/tool_answer_fixtures.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b65810c081b954dd3a798998188d053274ab4360",
+        "content": "sha256:9a92d98284235ba227f8bc6d3897f48105dd50f94120080884e3e092449b8c9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "fixed_width_row_case_root"
+        }
+      },
+      "id": "RLZ-NG8FYH",
+      "invariant": "INV-G6KRTM",
+      "origin": {
+        "handoffEntry": "BUG-R17@v1 rule 4",
+        "leaf": "261112-BUG-L17"
+      },
+      "rationale": "Supplies owned authored root widths to exact tool-answer size checks.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The helper owns the real temporary root, width calculation, local XDG paths and cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b65810c081b954dd3a798998188d053274ab4360",
+            "content": "sha256:9a92d98284235ba227f8bc6d3897f48105dd50f94120080884e3e092449b8c9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixed_width_row_case_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

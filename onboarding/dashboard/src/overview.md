@@ -6,7 +6,7 @@
 
 ## Purpose
 
-A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and reports the request's selected model plus its step-up source — the host's observed model replaces it only when the host reports an applied model — with unreported mode/features explicit. This adds no chat navigation or acceptance authority.
+A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. The launcher labels the base mode, notes and feature chips as non-applied after step-up. The receipt supplies the model and its step-up source, and the status shows the host’s observed mode when available. A receipt without an observed mode shows “Mode/features unreported”. This adds no chat navigation or acceptance authority.
 
 The dashboard is the operator-facing React cockpit for server-composed task, lifecycle, enclosure, observer and native-host evidence. Its browser layer presents that evidence and requests explicitly owned operations; it does not become lifecycle, candidate-selection, certification, recovery, commit or integration authority.
 
@@ -24,7 +24,7 @@ TaskSummary supplies revision-qualified prose, optional nonGoals, acceptance, co
 
 Start at cockpit/Cockpit.tsx for shared inputs, retained layers and the Operations review slot; cockpit/layout.tsx owns responsive shell styles, cockpit/reviewPage.tsx positions the review and shared chat column, and cockpit/reviewHash.ts owns the review address. cockpit/serving-build-stamp/ owns the top bar's serving-build stamp, which keeps the boot-time build identity, the live build currentness of the serving process's Python files and the client-bundle comparison distinct. Above 40rem the reading column scrolls inside the review grid; at 40rem and below the review main covers the screen and scrolls the stacked tree and reading content. Retained readers and native chat keep their own activation and data owners.
 
-For native role execution, follow `cockpit/RoleChats.tsx`, the role-launch model and launcher children, then `PaseoChatFrame.tsx` and its frame controller. The native Paseo role route retains canonical scope and exact request identity through RoleChatsPane composition, roleChatControls actions/storage, roleChatOptionsLoader adoption and RoleChatsView presentation. The shared RoleLauncher composes local controls with pure readiness/display and selection-repair owners; model/effort/tier and converted-memory/publication authorities remain separate. It admits a master that no sprint commands: the Sprint field's empty choice is “No sprint”, the Master field lists the masters the served tree places outside every sprint, a standalone master and its tasks bind without a sprint through `cockpit/document-chat/model.ts`, and only the Orchestrator still requires a sprint. The mounted cases live in `cockpit/role-launcher/RoleLauncher.standalone.test.tsx`. The launcher separates canonical document scope, options scope and exact execution request identity. Saved request receipts are matched by UUID rather than substituted by another execution with the same role. Result/report, Retry, Revive and restore remain tied to the selected request. Backend capacity and host execution remain backend responsibilities; a local receipt or missing browser guard is not evidence about the entire launch call path. The current ordinary public MCP roster contains 44 names in `models/tools/public_roster.py`; earlier 39/40/41-name populations are historical, and this source count establishes no execution result.
+For native role execution, follow `cockpit/RoleChats.tsx`, the role-launch model and launcher children, then `PaseoChatFrame.tsx` and its frame controller. The native Paseo role route retains canonical scope and exact request identity through RoleChatsPane composition, roleChatControls actions/storage, roleChatOptionsLoader adoption and RoleChatsView presentation. The shared RoleLauncher composes local controls with pure readiness, display and document selection repair. The mode selector lists the chosen harness’s modes and names the applicable default and its source in the first option. A chosen mode travels in the launch override even if a catalog refresh stops listing it. Paseo decides whether the mode applies. The launcher admits a master that no sprint commands: the Sprint field's empty choice is “No sprint”, the Master field lists the masters the served tree places outside every sprint, a standalone master and its tasks bind without a sprint through `cockpit/document-chat/model.ts`, and only the Orchestrator still requires a sprint. The mounted cases live in `cockpit/role-launcher/RoleLauncher.standalone.test.tsx`. The launcher separates canonical document scope, options scope and exact execution request identity. Saved request receipts are matched by UUID rather than substituted by another execution with the same role. Result/report, Retry, Revive and restore remain tied to the selected request. Backend capacity and host execution remain backend responsibilities; a local receipt or missing browser guard is not evidence about the entire launch call path. The current ordinary public MCP roster contains 44 names in `models/tools/public_roster.py`; earlier 39/40/41-name populations are historical, and this source count establishes no execution result.
 
 For task artifacts, start at `data/taskArtifacts.ts` and the cockpit's notes/requirements takeover. The shared artifact takeover selects `notes-reader`, `requirements-reader`, `decisions-reader` or `report-reader` from the artifact kind; these are takeover markers, not additional product-bar modes.
 
@@ -76,7 +76,7 @@ TaskEntry uses planned/started/aborted/completed stages and optional works/waiti
 
 Generated task/projection shapes retain organizational super-to-leaf lineage, sprint seats and master references, optional execution-graph views, and independently mounted closeout scheduling visibility for graph-less sequential sprints. Closeout scheduling is disposable exact-current projection state: classifications, ordering, priorities, source conditions/problems and repair actions remain producer-owned. Audited discard-before-start identity, reason, timestamp and proof are distinct from completion; discarded work never increments completion. JSON Schema owns numeric/string/fingerprint/collection refinements, while TypeScript documents refinements it cannot structurally enforce.
 
-The lifecycle-operation envelope includes schema/state-matrix versions, incoherent status and optional meaningful revision/task intent. Meaningful revision is a server observation cursor; task intent is a canonical digest. The recovery phase `recovering-private-preparation` is projected through the existing enclosure lifecycle-operation diagnostics and adds no frontend recovery command. Ledger display remains distinct from transaction authority; removal of ledger-mutation vocabulary does not mean removal of displayed ledger evidence. The inherited publication boundary permits real code and memory outputs, not invented ledger transaction outputs. Python 3.14's local `$defs` enum representation does not itself change the vocabulary's meaning.
+The lifecycle-operation envelope includes schema/state-matrix versions, incoherent status and optional meaningful revision/task intent. Meaningful revision is a server observation cursor; task intent is a canonical digest. The existing enclosure diagnostics can display the retained `recovering-private-preparation` phase from an older record. The generated wire field carries a stored phase. Current executable recovery controls belong to direct landing. Ledger display remains distinct from transaction authority; removal of ledger-mutation vocabulary does not mean removal of displayed ledger evidence. The inherited publication boundary permits real code and memory outputs, not invented ledger transaction outputs. Python 3.14's local `$defs` enum representation does not itself change the vocabulary's meaning.
 
 ### Change sets and Intent Review
 
@@ -340,13 +340,15 @@ Current review ownership is anchored by ReviewSurface/PageReading; the separate 
 
 ## Current Behavior
 
-Opening the role launcher asks for fresh choices. While that answer is pending nothing is shown until it settles, unless Paseo's saved answer for the same scope is on show: the saved choices then carry this page's remembered role defaults, are selectable, and a start may use them (MIK-R215). Provenance stays explicit — saved, fresh or unknown — rather than an invented failure. The component that used to hold that display was deleted; the behaviour now lives in `cockpit/roleChatExecutionView.ts` and `cockpit/RoleChatsView.tsx`, and its catalog cases in `cockpit/role-launcher/RoleLauncher.catalog.test.tsx`. Settled parts distinguish fresh, saved and unknown data. Known offerings reject unsupported selections; unknown inventory keeps configured values unchecked. Host IDs and labels match without case, and a catalog refresh does not erase configured overrides. The catalog notice describes choices and provenance; it does not grant permissions or alter execution results.
+Opening the role launcher reads scoped catalogue metadata. While metadata is pending, the matching saved inventory can show selectable choices with remembered role defaults (MIK-R215). The launcher asks for features for the shown provider and model after metadata settles and keeps each answer in the pane until Refresh. Refresh renews metadata before new selected options. A new Start omits explicit feature overrides while shown-model options are pending or nonfresh. Saved Retry keeps its original payload. Matching saved inventory keeps an otherwise eligible Start available while requests settle. While metadata is pending, Start stays disabled if there is no matching saved response. A settled response with an empty agent list and unknown discovery can leave a configured choice unchecked and eligible, subject to the ordinary selection and execution checks. Fresh, saved and unknown provenance inform choice checks. The pane offers Refresh and surfaces action failures through the failure line. The launcher’s catalog checks cover agent, model, effort and service tier. Applicable known non-mode offering failures refuse before creation. A catalog part with neither a fresh nor a saved answer leaves its configured values unchecked. Paseo receives named modes even when its catalog does not list them. The backend separately rejects permission-bearing or unclassified feature keys in a start call regardless of feature-offer availability. Host IDs and labels match without case, and a catalog refresh does not erase configured overrides.
+
 
 the task entry's page reads now end with the task they belong to. The change-set bar, the changed-intent summary and the full task body each own an `AbortController` and abort on selection change/unmount; `abortableRead.ts` distinguishes an aborted read from a failure, and the stores keep a same-key live joiner alive. The mounted chat case `document-chat/newChatWhilePageReadPending.test.tsx` holds four abandoned page producers and still dispatches and binds the selected leaf's chat before any of them completes. No lifecycle or task-state authority moves into the browser.
 
 **L184.** The tray and the detail panels now show a served provider limit: its word with the time left where a display clock exists, the bare word with the exact reset in hover and accessible name where none does, and one scan in the test tree forbids computing a limit anywhere in application source.
 
 ## Evidence
+
 
 - Both master readers now ask for the per-leaf breakdown.
 
@@ -374,7 +376,7 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 Anchor: `useReviewCatalogue` `DocChangeSetBar` 
 
-- Retired at the fifth freeze d59c3493: dashboard/src/test/setup.ts:4-7 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cf5ef507f2542d6cd2f9d37a6b72148d3b91b340; dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/reviewTransport.ts:162-190 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d21bc8a6c5d30e2394a72d056bff216b766407c2; dashboard/src/data/files.ts::FilesApiError - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/review/ReviewReadCycle.ts::memoryWatchActions - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/Cockpit.tsx::ChangeSetTakeover - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/files.ts::getJson - cited by 2 anchors in this card; the name occurs 6 times in that file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/conditionalReads.ts::read - the symbol it cited now occurs 11 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.tsx - the component was deleted at the fifth freeze d59c3493; its behaviour now lives in dashboard/src/cockpit/roleChatExecutionView.ts and dashboard/src/cockpit/RoleChatsView.tsx, which the card cites; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.test.tsx - the test was deleted at the fifth freeze d59c3493 with the component it exercised; the catalog cases live in dashboard/src/cockpit/role-launcher/RoleLauncher.catalog.test.tsx. Retired means the anchor no longer stands, not that the cited subject was deleted.
+- Retired at the fifth freeze d59c3493: dashboard/src/test/setup.ts:4-7 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cf5ef507f2542d6cd2f9d37a6b72148d3b91b340; dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/reviewTransport.ts:162-190 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d21bc8a6c5d30e2394a72d056bff216b766407c2; dashboard/src/data/files.ts::FilesApiError - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/review/ReviewReadCycle.ts::memoryWatchActions - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/Cockpit.tsx::ChangeSetTakeover - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/files.ts::getJson - cited by 2 anchors in this card; the name occurs 6 times in that file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/conditionalReads.ts::read - the symbol it cited now occurs 11 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.tsx - the component was deleted at the fifth freeze d59c3493; the separate status line was removed. Saved and unknown provenance still inform choice checks in dashboard/src/cockpit/roleChatExecutionView.ts and dashboard/src/cockpit/RoleChatsView.tsx; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.test.tsx - the test was deleted at the fifth freeze d59c3493 with the component it exercised; the catalog cases live in dashboard/src/cockpit/role-launcher/RoleLauncher.catalog.test.tsx. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - Operations retains its mounted task, ordinary diff, intent review and notes surfaces across a bottom-tab visit. [97]
 - The tab handler restores an owned remembered reader, dismisses one whose served task is absent after hydration, and resets on a repeated Operations press. [98]
@@ -421,7 +423,9 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Current imported source owns this scoped route boundary: the cockpit's persistent Chats layer mounts the Role-chats pane. [34]
 
-- The route's Role-chats pane owner. [35]
+
+- RoleChatsPane renders the shared launcher view with scoped options, role launch controls and the existing frame and report owner. [35]
+
 
 - The route's embedded chat frame. [36]
 
@@ -429,7 +433,9 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Bounded source guard scans dashboard test and support files. [39]
 
-- RoleChatsPane binds the current role-launch selection to document/options scopes, request controls and the options loader, then passes that state to RoleChatsView. This composition is shared across roles; it does not itself implement an Investigator-specific selection or execution rule. [40]
+
+- RoleChatsPane supplies the current scope, request controls, metadata and independent refresh generations. [40]
+
 
 > - The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof. [41] [42] [43]
 
@@ -466,9 +472,13 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - The vocabulary tuples and their derived types are generated from the producer schema; `Metrics` carries only the ignored-host-agent count, and the per-stage and per-activity buckets are the `TaskCounts` fields the projection and each task entry carry. [12]
 
+
 - The generated lifecycle mirror carries the cursor beside coherent identity and version fields.  Anchor: "export interface LifecycleOperationProjection {" [16]
 
+
+
 - The fixture supplies a meaningful revision for the sample operation. [17]
+
 
 - Unknown chat ownership does not hide the frame; only confirmed absence does. [62]
 
@@ -484,7 +494,16 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Topology maps the bound task through shared status presentation; an unbound enclosure is idle. [71]
 
-- A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and reports the request's selected model plus its step-up source — the host's observed model replaces it only when the host reports an applied model — with unreported mode/features explicit. This adds no chat navigation or acceptance authority. [72]
+
+- The configured Step up button sends canonical document scope and a trimmed nonblank reason. The status shows the host’s observed mode when present and uses the requested choice’s provenance in hover. Without an observation it labels the mode unreported. [72]
+
+
+- Mounted cases distinguish observed mode from requested mode and preserve the unreported state. [99]
+
+- The ordinary selector offers the selected harness’s modes, identifies the default source and keeps a chosen mode if it drops out of the list. [100]
+- The launch refuses applicable catalog-governed agent, model and effort failures before creation, and independently refuses permission-bearing or unknown-bearing start-call feature keys. It forwards a named mode even when the host does not list it. [101]
+
+
 
 - Current shell owners for the review page account. [75]
 
@@ -569,3 +588,4 @@ Anchor: `ReviewSourceInventory` `intentReview` [28]
 - Current watch owners for the review page account. [84]
 - Current composition owners for the review page account. [87]
 - Current details owners for the review page account. [89]
+- Matching saved inventory keeps eligible Start available while metadata is pending. With a settled response that has an empty agent list and unknown discovery, a configured selection can pass the catalog check unchecked. The mounted launcher shows no separate catalog-status line. [102]

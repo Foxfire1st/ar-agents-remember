@@ -14,8 +14,8 @@ and lifecycle services, plus the shared request-reference validator.
 ### Logic
 
 `CloseoutQueueError` retains both machine-readable `status` and exact `detail` attributes while the
-base exception carries them together, preserving task-domain refusal facts through queue adapters
-and detached worker diagnostics.
+base exception carries them together. Queue readers and synchronous closeout and integration
+adapters can preserve the same typed refusal facts.
 `queue_task_ref` (extracted from `closeout_queue.py` in 260815-DAG-L13) validates one
 request-carried task-document reference, failing closed with `closeout-queue-reference-required` /
 `closeout-queue-reference-invalid`.

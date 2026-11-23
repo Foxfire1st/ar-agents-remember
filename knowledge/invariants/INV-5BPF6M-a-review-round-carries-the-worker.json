@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The implementation and acceptance operations must agree so the Reviewer can pass a freeze without an expensive post-pass run."
+  },
+  "applicability": "Worker freezes and independent code review rounds.",
+  "conditions": [
+    "The task and review mode select the focused tests and fast tier."
+  ],
+  "exclusions": [
+    "The post-pass final checks and the landing hook."
+  ],
+  "id": "INV-5BPF6M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/25ccbad9-32c7-4ade-819a-351d146060b6/evidence-2-search.txt",
+        "W7 passed tree and full persisted L12 worklist",
+        "W8 Worker report, F11 scope and checks on tree 98f7d6c529f1456cbfd00f3fde7e1fa51a118d8c, and mcp/tests/test_l84_unique_detail_pointers.py. W7 test evidence remains in the original report."
+      ],
+      "path": "W7-knowledge-handoff.json"
+    },
+    "handoffEntry": "BUG-R12@v1 §2",
+    "leaf": "261112-BUG-L12",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A review round carries the Worker's focused tests and the fast commit-hook checks and none of the requirement's listed final checks.",
+  "status": "proposed",
+  "supersedes": []
+}

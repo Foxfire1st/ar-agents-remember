@@ -21,6 +21,10 @@ task_doc authoring no longer exposes successful get/read_steps projections or st
 
 `task_doc_tool` resolves the task address, dispatches special operations or prepares an ordinary candidate, validates that candidate, and publishes or previews it. Publication rechecks accepted source bytes, derives affected projection scopes, writes task truth, invalidates those scopes, and rebuilds projections independently. `task_unstarted_evidence.py` checks actual code/memory-content and integrated commit cells; an existing enclosure is independent started evidence, and task, locator, lifecycle-operation, seat, and report facts also participate.
 
+`record_review` and `record_route_review` share the fixed-list transition for sanctioned additions.
+When the document carries route evidence, either operation can publish a BLOCK with a supplied
+verdict reference. A changed repair tree needs a fresh routed verdict for closeout to use.
+
 ## Construction
 
 ### Dispatch And Candidate Validation

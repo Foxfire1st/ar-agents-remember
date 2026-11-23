@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "3": {
-      "note": "The sole current_branch_name helper uses the kernel Git runner and yields unknown-branch for failed or empty branch lookup.\n\nAnchor: `run_git` `current_branch_name`",
+      "note": "The sole current_branch_name helper uses the kernel Git runner and yields unknown-branch for failed or empty branch lookup.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:44921560a9d5681dc45ee5e1808f8595ae4f497d2458666814c83965fd8b1418",
             "locator": {
               "kind": "file"
             },

@@ -1,11 +1,15 @@
 {
   "anchor": {
-    "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
-    "content": "sha256:bf2334d4766ecba74a7f3460f2285622ec3c75db9bccdd87d868084b1a68042c",
+    "blob": "3bfb96e6ed6a81ddf7fe14c3f5c6233f50d7b095",
+    "content": "sha256:84bba4a9c8cc64fda6fa5c2b257a63443afeb454ccb676e26ac6dc03dd9cad7f",
     "locator": {
       "kind": "file"
     },
     "path": "mcp/tests/test_tool_answer_guard.py"
+  },
+  "closed": {
+    "reason": "Exact ordinary and scratch runs and five consecutive ordinary passes verify the F07 fixture that measures the bare bound and requires its real locator to cross it, and W4 retains those test and runtime bytes.",
+    "task": "261112-BUG-L17"
   },
   "id": "WKN-6QCP3S",
   "kind": "debt",
@@ -17,12 +21,12 @@
     "leaf": "260928-MIK-L118",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L118"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "Intermittent exact-edge guard failure: Worker reproduced 2/20 on landed c861abfe and 0/20 on A014 in the measured batches (earlier candidate batch 1/3). Worker attributes the narrow token margin to random temporary-folder and time-stamped log names. Baseline reproduction established for this case only. Outside the five-item D305–D309 reopen; recorded and left, no repair or new task."
 }

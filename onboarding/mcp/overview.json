@@ -194,10 +194,35 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
-            "content": "sha256:56b5e27f222e481d77c5760b238104d27c95262040c09905bc27cd95c3f5b0a3",
+            "blob": "43557a7153b2c4c2e541126f53df702a88b73cb9",
+            "content": "sha256:559a51d453e9eeef62c3f1e4cf5bf326a241e0c9769bf4e54574fd36c7dd902c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte"
+            },
+            "path": "mcp/tests/test_historical_committed_leaf_review.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "43557a7153b2c4c2e541126f53df702a88b73cb9",
+            "content": "sha256:04e8055bea0e55512a30f7180869204f0ac58e8cc22163086695a58ab010404a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_fresh_process_reconstructs_the_same_recorded_comparison"
+            },
+            "path": "mcp/tests/test_historical_committed_leaf_review.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "43557a7153b2c4c2e541126f53df702a88b73cb9",
+            "content": "sha256:13019ce5e337dbce16ab2984912d5c3aee6d8eebb485398f648afec896e33698",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_later_task_does_not_contaminate_the_recorded_comparison"
             },
             "path": "mcp/tests/test_historical_committed_leaf_review.py"
           },
@@ -518,8 +543,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1b37e4512c41640d3bfdcf863bb702060adeefb",
-            "content": "sha256:7a6ce2acaef43c714cd4cf042d5a40ca0c4f26254778df5705b8e6558cc0ee4e",
+            "blob": "3c6e0239bfeaad43239f0725759b605a205ed12e",
+            "content": "sha256:90329b2fbca51ed4d927deda8f373c4a35b82e1b2df24b952d8d7ac92c8f07fa",
             "locator": {
               "kind": "file"
             },
@@ -758,7 +783,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+            "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
             "content": "sha256:896fdd7b511626d78b5cabb93db1be4c16a9e801b46276eef3d039c681d2cdbb",
             "locator": {
               "end": 27,
@@ -1705,7 +1730,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
             "locator": {
               "kind": "symbol",
@@ -1765,16 +1790,16 @@
       ]
     },
     "229": {
-      "note": "The Paseo launch adapter builds the repeatable role-launch call with the chosen agent identity, workspace, first-message data, parent identity and this build's task tool-server binding.",
+      "note": "The repeatable saved launch call contains the agent identity, workspace, first-message state, parent identity and configured task tool-server binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:bd3463851f2f456aa68f5813a450c69e2f6a8ec844daad2c0fd47aa518cb705d",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
             "locator": {
-              "end": 475,
+              "end": 483,
               "kind": "line_range",
-              "start": 455
+              "start": 419
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -1935,12 +1960,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:027365c573f2f3cba7df33db92946c3dbb8192948b786e09b2eb659de02648ac",
             "locator": {
-              "end": 107,
+              "end": 109,
               "kind": "line_range",
-              "start": 106
+              "start": 108
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -1953,7 +1978,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:3a31c5b3a4bed1879a357ff6dcaef0c098db99e1e1f85d6e23fd0b745fa6ed1d",
             "locator": {
               "kind": "symbol",
@@ -2529,7 +2554,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
             "content": "sha256:abafcdb467fd570de9c45647ea00c8748d46a43a39359b135720ca1eff1ffcfd",
             "locator": {
               "kind": "symbol",
@@ -2610,7 +2635,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
             "content": "sha256:527858aaaf2a6ebe16c028201fbd79c8c09ed72cf4237f0f087a999d6d5295c3",
             "locator": {
               "end": 25,
@@ -2728,23 +2753,6 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/unexplained.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "290": {
-      "note": "**Retained historical source account — superseded by the current route account:** Dispatch advertisement is closed and undeclared inputs refuse before handler  Anchor: `AgentsRememberMCP`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
-            "content": "sha256:687956c05de8b266552f9ed0cb18a352984ee6d81949e693337a57078f5624c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "AgentsRememberMCP"
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         }
@@ -2966,7 +2974,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
@@ -3011,14 +3019,16 @@
       ]
     },
     "302": {
-      "note": "**Retained historical source account — superseded by the current route account:** Leaf sibling handover supplies canonical role/task arguments",
+      "note": "**Retained historical source account — superseded by the current route account:** Leaf sibling handover supplies canonical role/task arguments.",
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
-            "content": "sha256:ca9880cbd12bd1e65dcde9fd1499cf5dc673bbdccf4b20bdd76b17c5b5f521db",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:24f5ce386d9c4f4b6c4b097184cfa8139218598bdefb3f92a5111eaf9945db3f",
             "locator": {
-              "kind": "file"
+              "end": 869,
+              "kind": "line_range",
+              "start": 850
             },
             "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
           },
@@ -3027,15 +3037,16 @@
       ]
     },
     "303": {
-      "note": "**Retained historical source account — superseded by the current route account:** Replay retains agent identity and typed created/refused/no-answer outcomes; held launch calls omit the first host prompt\n\nAnchor: `LaunchOutcome` `build_launch_call`",
+      "note": "**Retained historical source account — superseded by the current route account:** Replay retains agent identity and typed created/refused/no-answer outcomes. Held launch calls omit the first host prompt.",
       "targets": [
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:66e3ff7eb372e8b0c2a4ad46552a56cd0e540b056dea776bcf9fa1f003abba14",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:9456e110b70c734f9124a6d082ca53fe8afb43343d4611e7d47484115835cf8c",
             "locator": {
-              "kind": "symbol",
-              "name": "LaunchOutcome"
+              "end": 134,
+              "kind": "line_range",
+              "start": 115
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -3043,24 +3054,12 @@
         },
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
             "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
             "locator": {
-              "kind": "symbol",
-              "name": "build_launch_call"
-            },
-            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:0dcff59e0a5dd3f825d2a48820357ca3c8699bdcfb90f1d381c3fef16fbcaecb",
-            "locator": {
-              "end": 20,
+              "end": 483,
               "kind": "line_range",
-              "start": 1
+              "start": 419
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -3068,10 +3067,12 @@
         },
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:99a41d0f497b0385ad9139971f8cc4bd1a53c8f845d7ba8fdda07c1222040542",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:70a382c2b54b0125df1d500da21f204ba24890de8b652dcacc210f71514eddcd",
             "locator": {
-              "kind": "file"
+              "end": 682,
+              "kind": "line_range",
+              "start": 626
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -3084,12 +3085,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:33f1d32477b37638c86ec184e8c16b16d0a5476d58ae37993cd8a98b469d5a69",
             "locator": {
-              "end": 107,
+              "end": 109,
               "kind": "line_range",
-              "start": 59
+              "start": 61
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -3194,12 +3195,12 @@
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:44a4a3c46c23bb58709ed5a5622cc1fd4d8a18c4400f8d5214151d68a146c18d",
             "locator": {
-              "end": 251,
+              "end": 252,
               "kind": "line_range",
-              "start": 247
+              "start": 248
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -3207,12 +3208,12 @@
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:07107728aaac2fd5b429aacacfaae0cce32c6156b7a8da8a80e5c859560b5c09",
             "locator": {
-              "end": 797,
+              "end": 800,
               "kind": "line_range",
-              "start": 778
+              "start": 781
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -3535,12 +3536,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
             "content": "sha256:3cefb35aac64c3af861a9ed705c8e1b98dabcb4009fc97a9ed9b18591136b342",
             "locator": {
-              "end": 130,
+              "end": 128,
               "kind": "line_range",
-              "start": 95
+              "start": 93
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -3548,12 +3549,12 @@
         },
         {
           "anchor": {
-            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
             "content": "sha256:0412845a63d724ab768d7f1a812e018e0f0faa3f0f16d6206b8b89609d41dc61",
             "locator": {
-              "end": 128,
+              "end": 126,
               "kind": "line_range",
-              "start": 93
+              "start": 91
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -3630,14 +3631,14 @@
       ]
     },
     "330": {
-      "note": "User alternatives select by manual/prior/threshold facts with no cross-scope choice carry.\n\nAnchor: Current source; preserved L88 property 324",
+      "note": "User alternatives select by manual, prior or threshold facts. Mode comes from the alternative row, and other scope-bound choices are cleared across scopes.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:ac093d6b5a4eea28a4db8eedd16a5c4d354a599e08f75d762f56fd86071f2683",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:f809131a7402b6feb4b1c9f6aa02b2de335a2bf656c57a07f9d34400aeedaf2b",
             "locator": {
-              "end": 111,
+              "end": 114,
               "kind": "line_range",
               "start": 32
             },
@@ -3652,12 +3653,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
             "content": "sha256:d156649dee6626036467c78b24418be0fddb44d7cdd18fbd9d1f2ba4845c34bb",
             "locator": {
-              "end": 240,
+              "end": 251,
               "kind": "line_range",
-              "start": 233
+              "start": 244
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },
@@ -3666,11 +3667,11 @@
       ]
     },
     "332": {
-      "note": "Replacement rechecks idle and pending permission at every saved archival call.",
+      "note": "The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free.",
       "targets": [
         {
           "anchor": {
-            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+            "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
             "content": "sha256:0d46d328ef0398cb6dcd18226369bc3b10c1fc5dba4c504d87093b30bcd2ddaf",
             "locator": {
               "end": 314,
@@ -3678,6 +3679,19 @@
               "start": 262
             },
             "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+            "content": "sha256:6df95fda0cb671cc252d11c53fa499a41c17fc8e41442c0001a1cc37d303da42",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
           "kind": "code"
         }
@@ -3720,14 +3734,14 @@
       ]
     },
     "335": {
-      "note": "Only settled empty stepped-up creation failures retain saved-call retry.\n\nAnchor: Current source; preserved L88 property 329",
+      "note": "An eligible settled empty step-up retains its ordinary retryable call. If the recorded native Antigravity agent is absent, Retry settles the refusal and drops the call.",
       "targets": [
         {
           "anchor": {
-            "blob": "ccb1e9b293a9d30073d916aee6085e1ff47f6420",
-            "content": "sha256:61c4e9ff3174d88b2d951a307ebbdcee24d97a19d54ea5c80d052036f5dafa8d",
+            "blob": "cc48a16958cc6f53b7eb022faa7e4a91e960dda3",
+            "content": "sha256:0f050f92294b30d17fd5a933a438be1a7ae4205b68457d79c19c73bb601bb17d",
             "locator": {
-              "end": 81,
+              "end": 87,
               "kind": "line_range",
               "start": 54
             },
@@ -3842,7 +3856,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:1e06d97e083599f069fbf8c197960b4a72ec7557850d39b67dbe97b28275be67",
             "locator": {
               "kind": "symbol",
@@ -3876,7 +3890,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ec4c4fce720e19a599f8c48c9500f3f0afdfb63",
+            "blob": "e208f8071de2a5e03b4ef2e219911997583ba06a",
             "content": "sha256:f90369ebb6a1e9a200bdf02875931ed2cc489aa535fad98987e28075f3ab7340",
             "locator": {
               "end": 20,
@@ -3894,7 +3908,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ec4c4fce720e19a599f8c48c9500f3f0afdfb63",
+            "blob": "e208f8071de2a5e03b4ef2e219911997583ba06a",
             "content": "sha256:4474886a3f15296f84a61ac2db08f96c7d1d1590f7ce6aa229a8fc182f5e2d7b",
             "locator": {
               "end": 58,
@@ -3943,12 +3957,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
             "content": "sha256:10004a703d1b63a9d916d01657e7dd958858a60bfad259f2d60f639c470121f2",
             "locator": {
-              "end": 620,
+              "end": 606,
               "kind": "line_range",
-              "start": 596
+              "start": 582
             },
             "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
           },
@@ -3956,12 +3970,12 @@
         },
         {
           "anchor": {
-            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "blob": "88cba9304ac02ba9a625cf432436b298327a390c",
             "content": "sha256:ed8a369839637c8031a71ff216bdda0f223ead1f5b712878aa578144ee2b24aa",
             "locator": {
-              "end": 1094,
+              "end": 1080,
               "kind": "line_range",
-              "start": 1073
+              "start": 1059
             },
             "path": "mcp/src/agents_remember/application/review_answer_preparation.py"
           },
@@ -4190,12 +4204,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:c968c1884cff2af1a86b7b33d364870c7af2cc16de93126ea32c6bee30f4b8f2",
             "locator": {
-              "end": 1219,
+              "end": 1222,
               "kind": "line_range",
-              "start": 1158
+              "start": 1161
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -4203,12 +4217,12 @@
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
             "locator": {
-              "end": 1248,
+              "end": 1251,
               "kind": "line_range",
-              "start": 1187
+              "start": 1190
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -4270,7 +4284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+            "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
             "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
               "end": 28,
@@ -4602,7 +4616,7 @@
       ]
     },
     "370": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "The Paseo runtime reads its configured host block. Launch builds a seat-bound stdio server definition, and admitted leaf reads derive their roots from the canonical task and enclosure.",
       "targets": [
         {
           "anchor": {
@@ -4619,10 +4633,12 @@
         },
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:99a41d0f497b0385ad9139971f8cc4bd1a53c8f845d7ba8fdda07c1222040542",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
             "locator": {
-              "kind": "file"
+              "end": 261,
+              "kind": "line_range",
+              "start": 234
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -4631,9 +4647,11 @@
         {
           "anchor": {
             "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
-            "content": "sha256:b80f9f3d8fe83b34866640bdbc4a54bf311a5d8cbe191016cacd7342436adc59",
+            "content": "sha256:17df578b5e73e52a6b79bf11643479b083b18956c05b1c857e4cf610a76d9d19",
             "locator": {
-              "kind": "file"
+              "end": 56,
+              "kind": "line_range",
+              "start": 25
             },
             "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
           },
@@ -4866,16 +4884,44 @@
       ]
     },
     "383": {
-      "note": "Settings-selected launch requests same-build bound task server, preapproved surface and capsule system prompt without initial prompt; this is source wiring, not fresh native suppression acceptance.",
+      "note": "The explainer uses the settings-selected launch and a bound task server. Creating the seat and sending its request are separate operations.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
-            "content": "sha256:22f922325e6a4377d0e9f188d3531b210b7fbfffa810889b3790cf01bd1ee03a",
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:28471640ada6b28f6a3292dd603b9fb61a278e3dd72bc50847fdc7105d7747df",
             "locator": {
-              "kind": "file"
+              "end": 408,
+              "kind": "line_range",
+              "start": 372
             },
-            "path": "mcp/src/agents_remember/package_data/canvas/review-presenter.md"
+            "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:f1639f770e5c8cbec134bf9d6db3d25b1c96daaa6b392f2ecee21034490c4c83",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 445
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:2f8117f76864f49eb9d93afb08c82d48a5d908bfcee7db3e5035808f2a01add8",
+            "locator": {
+              "end": 556,
+              "kind": "line_range",
+              "start": 534
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
           },
           "kind": "code"
         }
@@ -4920,7 +4966,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:c66af9c85cd326f4a585ffaf27da472e2b8490f9b8ccc51ed0f0e125ca59bfbd",
             "locator": {
               "kind": "symbol",
@@ -4968,17 +5014,31 @@
       ]
     },
     "389": {
-      "note": "Synchronous dispatch keeps validation and orders writes through worker completion.\n\nAnchor: `AgentsRememberMCP._dispatch_tool`",
+      "note": "Synchronous dispatch preserves the framework validation path and waits for the worker before releasing its write lock.",
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
-            "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:ee806e58be6dddf4bd579ad212840f71480e83400fefcefd4ffc7f019a55782f",
             "locator": {
-              "kind": "symbol",
-              "name": "_threaded"
+              "end": 187,
+              "kind": "line_range",
+              "start": 152
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16c9244c6c6d7b49e26f835cf992ae04304056f5",
+            "content": "sha256:8270eb64bb55bec46ee910fba95941cf2303221cd04753f4019076d6e81336e9",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/mcp/thread_workers.py"
           },
           "kind": "code"
         }
@@ -5018,16 +5078,57 @@
       ]
     },
     "391": {
-      "note": "Each operation asks fresh; its local context shares the answer, and saved-only reads do not discover or write.\n\nAnchor: `launcher_catalog_question`; `launcher_catalog`; `_question_catalog`; `saved_launcher_catalog`",
+      "note": "The direct options route requests its exact pair. The pane reuses that answer, and Start validation uses a separate operation-local memo. Saved-only display reads skip discovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:c7d15fb56b5bdca39b29cca81da03564171a310bda07746c8fb9ab82ea57cd35",
             "locator": {
-              "kind": "file"
+              "end": 153,
+              "kind": "line_range",
+              "start": 75
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0554881d5c79e63acbf12acfb1e13cb65cdbe98d",
+            "content": "sha256:0570e65b14ca8d8a261e2abf430c428c0249c35c5d5f2744e1cea8eba02eec67",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog_features.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "content": "sha256:5fe191cf7114f08dbe30c2f5ed30949cf9bfa98a663431f88b23d042f350baba",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+            "content": "sha256:9507f194f1fcd5aef67148991aa444ab80f8cd3917b081a28f8e384489751e57",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
           },
           "kind": "code"
         }
@@ -5155,12 +5256,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:d032e052e8eac28082e7a8e32830a9eb5cd82040d6932e926ad92da5a055c8a8",
             "locator": {
-              "end": 137,
+              "end": 147,
               "kind": "line_range",
-              "start": 124
+              "start": 134
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -5332,12 +5433,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:0cbc15e510272679d65974207885303ddc8b1a76810adf338e8dbe141a63cda4",
             "locator": {
-              "end": 117,
+              "end": 127,
               "kind": "line_range",
-              "start": 109
+              "start": 119
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -5345,14 +5446,254 @@
         },
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:8dd61413c66954ced6d132211298b59efc8c7075b21c811b020d1ce3acbdc875",
             "locator": {
-              "end": 324,
+              "end": 319,
               "kind": "line_range",
-              "start": 309
+              "start": 304
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "406": {
+      "note": "The bounded live-agent census requests background agents and reports completeness only when the host explicitly ends its listing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+            "content": "sha256:0556d3d40d00fad80eba6385ee715063b96ff7a91d0900463ef554803507e1a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "listLiveAgents"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "407": {
+      "note": "Fresh create checks the reported provider and requested model, effort and features. Create and adoption record the normalized host mode alongside the request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:302cd79c82905900f3d5925ff76910de4abad71c85332a6926da2859ccfe0e1f",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:5c8c243063cb2dc15c5655d6a185aca67db52b81183407f90b1984ff9ce0bb12",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:7fd6fcc3f35c8c7624b210b36258e3b2f1abfd9722ef4f07d682ce4926491fe1",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 461
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+            "content": "sha256:79e195a96f3e9e2eaf5b37174386757137637c8785fa01fba3da498de0e982ae",
+            "locator": {
+              "end": 521,
+              "kind": "line_range",
+              "start": 508
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "408": {
+      "note": "A step-up row contributes its mode on its effective harness. An explicit launcher mode wins, and if no named mode applies the host default requires known modes and an advertised value. Otherwise no mode is sent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2180646ada633e3ccf9e292f1c4fd632d5d32a6f",
+            "content": "sha256:2d16f22fe0635e7383596d9fc01127f661a01f0506d511c89c382c1d5675e187",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:002082cab6d8e0e50e216016e007ee4393ff8d98442ead0d1d9d3d10f6e777c8",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:45c14a3a984936634088d098d4a94d833017537623d05eb3b0e925b88ad1846d",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+            "content": "sha256:194d1b7b154648b320a7be0b7e0f5e63bfed7f43d41e01ee812d9781c1bb81fb",
+            "locator": {
+              "end": 378,
+              "kind": "line_range",
+              "start": 357
+            },
+            "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:9cf4969d72e6b64d7baa6fd0fa8a90b07965987e21e11e707f22bfdd4532121d",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 346
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:5f67a7a9003eb64471e805484105c55d118baff4839f8c2c587757c886b68262",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 424
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
+            "locator": {
+              "end": 551,
+              "kind": "line_range",
+              "start": 529
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "409": {
+      "note": "Known offerings govern rejection of unsupported non-mode selections. Start-call feature authority is checked independently, and an unlisted mode passes to the host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:b4fd32d47e3e4d3008d98f87a5e9d950193d9c6a0ff8ff3efeb69a03e39b0a37",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 332
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
+            "locator": {
+              "end": 551,
+              "kind": "line_range",
+              "start": 529
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:d404cd58769bfa7c2f69daf66d58e0df6d3fe80804a854cdf5120fe9f2b33c75",
+            "locator": {
+              "end": 712,
+              "kind": "line_range",
+              "start": 672
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:98995d13e12caa2233c05fbc2a282a604e44aaab99876d4258742e2854b16dc4",
+            "locator": {
+              "end": 857,
+              "kind": "line_range",
+              "start": 838
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:f66ae3ea84b30c53cafb4af9078fe5e8acf39ae35764436ec796c75aa8b44f7c",
+            "locator": {
+              "end": 915,
+              "kind": "line_range",
+              "start": 901
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
           "kind": "code"
         }
@@ -5607,7 +5948,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
             "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
             "locator": {
               "kind": "symbol",
@@ -5972,7 +6313,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:c8e601b2afcab622ae91ef823d293c4bb88c0940043fea6600a5d8b5d197ffb5",
             "locator": {
               "kind": "symbol",
@@ -6270,22 +6611,6 @@
               "name": "is_excluded_from_knowledge"
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "93": {
-      "note": "**Retained historical source account — superseded by the current route account:** The batch blob reader.\n\nAnchor: `read_git_blobs_bytes`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
           "kind": "code"
         }

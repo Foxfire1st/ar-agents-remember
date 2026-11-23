@@ -28,11 +28,11 @@ DirectLandingOperationInput retains canonical leafTaskDocumentRef, optional code
 
 ### Signal and transaction models
 
-The package marker introduces no facade. The former responses.py session state/phase vocabulary and lifecycle-id signal response are historical only. The retained asynchronous transaction-operation vocabulary belongs to operation_kinds.py; native task state is a separate model, not a rename of the deleted signal response.
+The package marker introduces no facade. The former responses.py session state/phase vocabulary and lifecycle-id signal response are historical only. The stored operation-kind vocabulary belongs to operation_kinds.py. The models read historical closeout and integration records while direct landing executes synchronously. Native task state has its own model.
 
 `CloseoutOperationInput` retains normalized effective input, approval note, gate-policy snapshots and corrective dispositions. `IntegrateOperationInput` retains strategy, gate-policy snapshots and the completion-seat choice. Their discriminated union also admits the separate direct-landing input.
 
-`LifecycleOperationRecord` is the strict schema-3.0 internal snapshot. It retains accepted identity, generation, revisions, worker ownership, mutation evidence, recovery commits, cancellation and termination evidence, legacy migration proof, preparation, door publication and optional certification selections. The public `LifecycleOperationProjection` is a coherent task-addressed envelope with versioned identity and component bindings, worker and approval observations, recommendations, legal controls and an optional meaningful-state cursor. Its declared fields omit raw operation keys, worker PIDs, leases and process fingerprints; this is not a blanket secrecy guarantee for every nested result value or identity digest.
+`LifecycleOperationRecord` is the strict schema-3.0 snapshot. Its decoder retains accepted identity, generation, revisions, preparation, mutation evidence, recovery commits, cancellation, migration, publication and certification evidence while stripping retired worker ownership fields and leg commands. The public `LifecycleOperationProjection` binds versioned identity to result, approval, recommendation and applicable controls and carries an optional meaningful-state cursor. It declares no worker observation, process ID, lease or process fingerprint. Nested values remain subject to their own schema and producer.
 
 `LifecycleFinalizeTaskResponse` declares terminal task facts, blockers, cleanup and archive results, projection effects and atomic-series activation facts. `outsideScratch` names the root a completed-cleanup retry removed, and `outsideScratchReconcile` carries the sweep that runs beside every ending answer. It declares neither completion-seat result sets nor edge proof; the producer emits cleanup/archive/projection and activation facts. Its `agentArchive` defaults to an empty mapping; finalization forwards an archive report when the cleanup or abandon result supplies one.
 
@@ -42,13 +42,13 @@ The package marker introduces no facade. The former responses.py session state/p
 
 The standing enclosure contract is that cleanup follows external archival, receipt and readback, and successor publication cites the exact terminal predecessor. Verification of the executing cleanup and successor owners remains an uncertainty of this bounded review.
 
-`preparation.py`, `preparation_state.py` and `prepared_memory.py` separate intent and raw output identity, retained command observations, and logical versus physical execution views. `OperationPreparationState` admits only the ordered code/memory-content prefix. Command kinds form an ordered create/materialize/commit prefix; earlier commands must have succeeded before later commands are admitted. The output-command check requires an observed original commit command when the selection carries command history. It does not impose that condition on an output with an empty command tuple.
+`preparation.py`, `preparation_state.py` and `prepared_memory.py` describe private intent, output identity and logical/physical execution views. Each selected leg retains its exact intent and may retain the exact prepared output. `OperationPreparationState` admits only the ordered code/memory-content prefix and requires each leg before the last to have an output.
 
-Transition validation preserves selected identity and prior commands, refuses clearing or restarting command history, and permits late terminal observation only under the original worker or proved-exit authority. A prepared-code execution view binds its references and digest while leaving actual repository and Git readback to its owner. None of these models turns a private commit into a published mutation.
+Preparation belongs to the exact stored closeout key and generation and requires its selected certification. The decoder drops legacy command observations. A prepared-code execution view retains its reference identities and digest. Actual Git readback stays with its owner. Private outputs and published mutations remain separate.
 
 ### Certification and curator generations
 
-`certification.py` and `integration_certification.py` own retained selected-reference vocabulary. The operation record separately retains closeout selection, integration selection and completed organizational quality certification. When completion certification is present, validation requires the original frozen run and four original gate certificates, exact selected integration references, completion identity and admitted integration code commit. The retained fields describe explicit or historical certification authority; their presence alone does not show that ordinary transaction workers select or require them.
+`certification.py` and `integration_certification.py` own retained selected-reference vocabulary. The stored operation separately represents closeout selection, integration selection and completed organizational quality certification. When completion certification is present, validation requires the original frozen run, four original gate certificates, exact integration references, completion identity and admitted code commit. These are retained evidence models. Ordinary closeout and integration execute in their synchronous routes.
 
 `CuratorQualityAttestation` and `CuratorCoherenceRecord` carry `MemoryCandidatePairIdentity`, whose cells distinguish repository, contract, roots, branches, bases and onboarding root. The model documents the cache location as informational and excluded from the contract-digest projection. The public coherence response declares pair identity and typed mismatch/recovery fields (`pairField`, `expected`, `observed`, `nextArgs`); pair identity is optional in that response shape, so model declarations alone do not prove that every prepared, published, valid or refused response populates it.
 
@@ -89,15 +89,17 @@ manifest-versus-physical-artifact validation ownership.
 - Actual Git head/tree facts are distinct from filtered content-tree facts. The mutation snapshot owner excludes root `memory.md` from its isolated content, index and candidate trees when memory-cache filtering is selected, while retaining actual head/tree facts. The surviving kernel `ExistingGitPreparationBinding` explicitly separates immutable Git `tree` from optional `memory_content_tree` in the admitted memory-cache domain. The old prepared-memory reuse/new-output consumers are removed, not the actual-versus-filtered model distinction. These are consumer-source predicates, not effects performed by the model or execution evidence from this account.
 - Selected certification belongs to its exact operation key and generation. Completed integration certification must bind the original selection and admitted code commit; structurally valid references do not prove stored publication bytes.
 - `recordRevision` and `meaningfulRevision` have different purposes. The meaningful-state subset includes both certification selection cells; the store's transition checks require meaningful revision to advance precisely when that subset changes. The public envelope carries the meaningful cursor separately from its record-bound identity.
-- Worker exit requires an observation timestamp. Cancellation evidence requires nonempty expected facts and exact observed equality. Its `workerExitProven` field is a boolean declaration; this model's own validator does not require it to be true. Executing cancellation authority requires separate verification.
-- Accepted input, source/target authority, mutation history, irreversible boundaries and worker facts belong to durable operation state rather than being inferred from queue presence. The original retry/recovery/successor and legacy fail-closed behavioral promises are retained as contracts requiring their executing owners' confirmation.
+- Cancellation evidence requires nonempty expected facts and exact observed equality. Its historical `workerExitProven` boolean belongs to the stored evidence shape.
+- Accepted input, source and target authority, mutation history and irreversible evidence belong to durable operation state. Historical closeout and integration rows remain readable. Current generation-bound controls belong to direct landing.
 - Assessment currentness must report what was measured. Missing measurement is not favorable evidence, a failed measurement is not an empty successful measurement, and a summary cannot contradict its entries.
 
 ## Authority uncertainties
 
 No lifecycle authority or task-status record was assigned to this review. Historical leaf names and dates are not current status or acceptance evidence. No test, differential probe, installation or product validation was executed. The earlier 80-shape probe and registered-tool regression claim are historical assertions whose evidence was not examined.
 
-The original claim that normal closeout/integration workers do not select, populate or require retained certification fields is not established by model optionality or the examined generation constructor alone. Confirmation belongs to the executing workers. Likewise, deletion provenance for `door_response.py`, `successor.py` and the retired ledger intent, schema-1 removability, queue-invalidation survival, and the complete integration/refusal behavior remain outside the deciding source excerpts examined here. These uncertainties do not assign a new lifecycle status or change standing intent.
+> **Historical source account:**
+>
+> The original claim that normal closeout/integration workers do not select, populate or require retained certification fields is not established by model optionality or the examined generation constructor alone. Confirmation belongs to the executing workers. Likewise, deletion provenance for `door_response.py`, `successor.py` and the retired ledger intent, schema-1 removability, queue-invalidation survival, and the complete integration/refusal behavior remain outside the deciding source excerpts examined here. These uncertainties do not assign a new lifecycle status or change standing intent.
 
 ## File-Level Onboarding Map
 
@@ -106,7 +108,7 @@ The original claim that normal closeout/integration workers do not select, popul
 
 - [`__init__.py.md`](__init__.py.md) — side-effect-free package marker.
 - [`finalize.py.md`](finalize.py.md) — terminal task-finalization response.
-- [`operation.py.md`](operation.py.md) — asynchronous lifecycle operation inputs, record, and projection re-export.
+- [`operation.py.md`](operation.py.md) — stored lifecycle inputs, generation record and projection re-export.
 - [`certification.py.md`](certification.py.md) — exact closeout selection, retained memory observations and append-only original terminal history.
 - [`integration_certification.py.md`](integration_certification.py.md) — full integration selection, original completion identity and retained interrupted terminals.
 - [preparation.py](preparation.py.md), [preparation_state.py](preparation_state.py.md) and [prepared_memory.py](prepared_memory.py.md) — private preparation vocabulary and logical/physical execution views.
@@ -129,22 +131,34 @@ Read the focused model card, then its producer and consumer references. Use the 
 
 > Retained earlier citation wording: - Finalization declares terminal facts, cleanup/archive and activation facts; it declares neither edge proof nor completion-seat result sets. [2]
 
-- Asynchronous operation records keep private execution identity out of the declared public projection fields. [3]
+
+- The strict journal reader decodes retained kinds and drops retired worker fields. The public envelope binds result, approval, recommendation and available direct controls. [3]
+
 - Recovery records have code and memory-content output-commit fields. [4]
 - A filtered content head does not replace actual Git head/tree facts. [5]
 - Prepared state has an ordered two-leg prefix. [6]
 - Closeout and integrate inputs retain their kind-specific accepted decisions. [7]
 - Organizational completion proof requires original full-prefix references and the exact selected integration authority. [8]
 - Enclosure address models. [9]
-- Worker termination evidence. [10]
+
+- The cancellation evidence shape retains a historical worker-exit boolean. [10]
+
+
 - The durable record owns both revisions; its meaningful subset includes both selected certification cells. [11]
+
+
 - The public envelope carries the wait cursor beside versioned identity and component bindings. [12]
+
+
 - Strict operation decoding explicitly represents missing legacy task intent. [13]
 
 
 
 
-- Preparation output-command requirements are conditional on retained command history; transitions preserve original observations. [16]
+
+
+- Private preparations retain exact selected references and the ordered leg prefix. A preceding leg needs an output. The stored operation key, generation and original certification bind ownership. [16]
+
 - Measured binding status separates failure, disagreement and incomplete coverage. [17]
 
 - Finalization forwards supplied agent archive reports. [19]

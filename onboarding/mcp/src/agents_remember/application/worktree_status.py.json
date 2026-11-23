@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
-        "content": "sha256:efc531c9e0d3563a93b032399e1f9ad6a87a34c4ac7f101010c8c8d4d597605c",
+        "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
+        "content": "sha256:c0f9b848be97b41a72c57609ec73c4ee1d6919e2a29bbdf8292b5e01b203beec",
         "locator": {
           "kind": "symbol",
           "name": "_replace_operation_status"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
-        "content": "sha256:6151c0040f1d26cd22fe203af4ca2890912f1ae0a99402b6952e2413029e09bb",
+        "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
+        "content": "sha256:903e193013f7c074e0546b63e1f047e2d2a80abc49592d73889e4181ffd9682a",
         "locator": {
           "kind": "symbol",
           "name": "_running_operation_line"
@@ -35,12 +35,12 @@
         "handoffEntry": "L3-W5-06",
         "leaf": "261112-BUG-L3"
       },
-      "rationale": "The status answer is assembled here, so the sentence that survives the size guard is written here.",
+      "rationale": "Filters the compact status sentence to queued or running direct landings before formatting kind, generation and state.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+        "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
         "content": "sha256:091220bb585535ea642658ad232fd027452f9c2d7532385ae6734b4dc7c49ce1",
         "locator": {
           "kind": "symbol",
@@ -55,6 +55,25 @@
       },
       "rationale": "Projects the reopened state with the start the caller should take, so the reset is observable before anyone starts a seat.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
+        "content": "sha256:1d8c2c2bf2bb0d637b724c31b0aff383b9270f6b5d0707df26e7d715d533ea14",
+        "locator": {
+          "end": 485,
+          "kind": "line_range",
+          "start": 468
+        }
+      },
+      "id": "RLZ-ZPEK4T",
+      "invariant": "INV-760TKM",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 5",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Selects only queued and running direct landings for the compact live operation line.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -63,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
@@ -79,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
             "content": "sha256:1b97622f91e3e1329be0d662200baff45172fd9d34e044df786fdcb044cf9a3c",
             "locator": {
               "kind": "symbol",
@@ -95,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
             "content": "sha256:8034b4eefed84fe7c576395d4e9697a35bdb0a320f4f575131f781e40552b100",
             "locator": {
               "kind": "symbol",
@@ -111,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:e78c9a3a5f40cbe4afaccc30894f1b7e29d5e43ec2f9b1a3329a675dc7df6639",
             "locator": {
               "end": 411,
@@ -124,7 +143,7 @@
         },
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
               "end": 440,
@@ -177,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
@@ -193,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
             "content": "sha256:1b97622f91e3e1329be0d662200baff45172fd9d34e044df786fdcb044cf9a3c",
             "locator": {
               "kind": "symbol",
@@ -265,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:da6442ddbc9ab51798a8763b482d86031483726576330312b47e718f9d890ae8",
             "locator": {
               "end": 161,
@@ -278,7 +297,7 @@
         },
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:949de5dbb02f9f8dc74e0bed9e0574b4f42a37dc8d9a3756a8f64770eb2f84f6",
             "locator": {
               "end": 149,
@@ -291,7 +310,7 @@
         },
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:1998c2ee3ff1f4d0556889ee1b9c039832ac696cf40f0bb1dcb6e811070183f3",
             "locator": {
               "end": 366,
@@ -340,7 +359,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:5a174031bc1f5315b5542fc4a2056871bc874be6a8c35560fdfd71e068178c47",
             "locator": {
               "end": 307,
@@ -353,7 +372,7 @@
         },
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:68b68d00346b96e09a03ec58fe4c3608d997584b98f9485efeb913ba3f444fbb",
             "locator": {
               "end": 299,
@@ -371,7 +390,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:5a174031bc1f5315b5542fc4a2056871bc874be6a8c35560fdfd71e068178c47",
             "locator": {
               "end": 307,
@@ -384,7 +403,7 @@
         },
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:68b68d00346b96e09a03ec58fe4c3608d997584b98f9485efeb913ba3f444fbb",
             "locator": {
               "end": 299,
@@ -420,7 +439,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:3f49f08cd439ee60abb2c2af519250694a720edd770b6a9fa23dba9acee42740",
             "locator": {
               "end": 48,

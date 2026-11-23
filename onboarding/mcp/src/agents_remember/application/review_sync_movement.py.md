@@ -124,7 +124,9 @@ movement is folded into the staleness the review publishes**, while an absence s
 - **The reopen channel reading the same durable record for itself, with the same location-then-generation order.** [24]
 
 
+
 - The sync tool's projection point, where the write half is attached after the Git work has finished. [25]
+
 
 
 - The live review labels the exact memory input a sync moved. [26]

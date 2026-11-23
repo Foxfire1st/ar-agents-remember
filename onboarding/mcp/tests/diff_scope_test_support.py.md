@@ -10,7 +10,7 @@ Builds the two-snapshot knowledge and Git fixture used by the diff and review re
 
 ## Code Commentary
 
-`build_diff_fixture` builds the read-scope topology twice — baseline and candidate — as two text trees through the rows builder, the candidate carrying exactly one authored change of each kind the packet distinguishes: a revised statement (another revision number of the same text ID, reported as removal beside unrelated addition), a source change with no record change, a removed and an added realization, and unchanged siblings. Both trees mint the same text IDs in the same order, so unchanged rows project the same UUIDs on both sides and pair as themselves. The selected source trees and logical identities remain independently observable.
+`build_diff_fixture` builds the read-scope topology twice — baseline and candidate — as two text trees through the rows builder, the candidate carrying exactly one authored change of each kind the packet distinguishes: a revised statement (another revision number of the same text ID, reported in separate removal and addition items), a source change with no record change, a removed and an added realization, and unchanged siblings. Both trees mint the same text IDs in the same order, so unchanged rows project the same UUIDs on both sides and pair as themselves. The selected source trees and logical identities remain independently observable.
 
 Fixture rows are written by RowStore and realization constructors imported from knowledge_rows_test_support. Claim digests are re-sealed through the test-only encoder in `knowledge_row_codec_test_support`, which hashes the row values with the production canonical-JSON digest primitive. Production read/comparison owners consume those text trees. The helper provides no canonical writer, lock or claim_no_rewrite enforcement.
 
@@ -84,14 +84,20 @@ No Domain Documentation source is configured for this slice.
 - `rebuild_after_tree` supplies the current fixture or assertion described above. [41]
 
 
-- Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [42]
+
+- The diff fixture builds the baseline and candidate with the shared read fixture and uses the resulting test row store to find the candidate claim. [42]
+
 
 
 - RowStore writes text-tree fixture rows without the retired production admission plane. [43]
 
 
-- **The candidate's two new source paths, its revised statement and its authored words, and the whole candidate tree rebuilt by one call.** [56]
-- The three small value types: one candidate-only realization's identities, one side of the comparison, and the fixture with every identity a case asserts against. [57]
+
+- Two paths belong only to the candidate. The rebuild helper passes the revised retry text and the caller’s selected changes to the shared fixture builder. [56]
+
+
+- AddedRealization stores the added claim and anchor identities. DiffSide holds one snapshot and its Git facts. DiffFixture supplies both sides and the comparison identities. [57]
+
 
 - **The fixture builder: the shared baseline, the rebuilt candidate tree carrying the whole candidate-side delta, and the two live trees.** [58]
 
@@ -99,7 +105,9 @@ No Domain Documentation source is configured for this slice.
 
 - **The added claim, whose recorded identity is the blob the candidate tree really holds.** [61]
 
-- **The candidate tree, the object-store borrow that lets one repository name both trees, and the hermetic Git environment.** [62]
+
+- The fixture writes the candidate Git tree, points each repository at the other’s object store, and runs Git with an explicit environment. [62]
+
 - **The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.** [63]
 
 - **The baseline fixture this module builds on.** [64]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "The page holds: the new route answers the bytes of a picture or a video under the same read rules, the dashboard gained one route, and the packaging change adds the licence field and the project links; no supported-version, report or disclosure sentence depends on them.",
-    "task": "261112-BUG-L7",
+    "statement": "W2 retains the caller, seat and dispatch checks that support the reached security scope while adding cleanup after those checks and joined work.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "SECURITY.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+      "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -76,12 +76,12 @@
       "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
     },
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+      "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
@@ -111,7 +111,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
     },
     {
-      "blob": "ea14b3fc4bd1e9a1885ee565de76ee39656ec26f",
+      "blob": "35f29aba0e4b605f09b297b0774caa5bc705842e",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
     }

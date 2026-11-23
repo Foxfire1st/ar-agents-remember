@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
-        "content": "sha256:226243af578a1991bdde83d7cd74b6f6a014c39efb20e48e7a0cbd474ca578c2",
+        "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
+        "content": "sha256:98f98f0da3a72976597a9f4700dcbbe3dcfcb9f23d333be71cc0392d7ba4072a",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
-        "content": "sha256:226243af578a1991bdde83d7cd74b6f6a014c39efb20e48e7a0cbd474ca578c2",
+        "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
+        "content": "sha256:98f98f0da3a72976597a9f4700dcbbe3dcfcb9f23d333be71cc0392d7ba4072a",
         "locator": {
           "kind": "file"
         }
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
             "content": "sha256:08fd4c678367505913cec7c8f518284e86983114365e0ace8fd824f4a5351510",
             "locator": {
               "end": 1562,
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
             "content": "sha256:de7a9a2b766a346bf335e024dd411cbde184c3bd15734856db8aa94b8382d688",
             "locator": {
-              "end": 2961,
+              "end": 2880,
               "kind": "line_range",
-              "start": 2946
+              "start": 2865
             }
           },
           "kind": "code"
@@ -107,24 +107,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
             "content": "sha256:28ece8176b3079718fe68b53b0699ea398356ddeaa64ead23615cc7eb26b4d96",
             "locator": {
-              "end": 2543,
+              "end": 2462,
               "kind": "line_range",
-              "start": 2508
+              "start": 2427
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
             "content": "sha256:a62e52110d70c6915b6cfac3e59f21f770f8b72e83e49c417e9137ef9cbf6582",
             "locator": {
-              "end": 2821,
+              "end": 2740,
               "kind": "line_range",
-              "start": 2642
+              "start": 2561
             }
           },
           "kind": "code"
@@ -136,24 +136,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
             "content": "sha256:4fff23359a56b850b9fde5ac1cb651839f91cc207f9a5c1797a67d4f44eeac83",
             "locator": {
-              "end": 2688,
+              "end": 2607,
               "kind": "line_range",
-              "start": 2674
+              "start": 2593
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
             "content": "sha256:b0655f9af5de3025e2bcdd48921d052387ff776d332aa46dd99e0a51d1015b3c",
             "locator": {
-              "end": 3190,
+              "end": 3109,
               "kind": "line_range",
-              "start": 3119
+              "start": 3038
             }
           },
           "kind": "code"
@@ -165,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
             "content": "sha256:3d163ef9c8b6f0b233ca0b1ea53c0aa93528cd28d158bfd8aaa82d3b800c0364",
             "locator": {
               "end": 2,
@@ -182,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
             "content": "sha256:86fcac0c5945509626938cce67b13b16e99be6eae647e0eed2753d8448428d46",
             "locator": {
               "end": 46,
@@ -195,16 +195,14 @@
       ]
     },
     "6": {
-      "note": "The optional task-intent reference on the lifecycle operation projection.\n\nAnchor: `null`; \"taskIntent\"",
+      "note": "The optional task-intent reference on the lifecycle operation projection.",
       "targets": [
         {
           "anchor": {
-            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
-            "content": "sha256:eb4f79755eff93d54725906fe8bf4c1690bbce5de6de74236e9e572c92fdf856",
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
+            "content": "sha256:98f98f0da3a72976597a9f4700dcbbe3dcfcb9f23d333be71cc0392d7ba4072a",
             "locator": {
-              "end": 1648,
-              "kind": "line_range",
-              "start": 1638
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -216,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
             "content": "sha256:f96067877ac97df77c4da0cf77d05f0e0809220a9ece9807d98580c193fbed3e",
             "locator": {
               "end": 450,
@@ -229,16 +227,14 @@
       ]
     },
     "8": {
-      "note": "The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants.\n\nAnchor: `type`; \"One coherent, task-addressed lifecycle journal observation.\"; \"incoherent\"",
+      "note": "The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants.",
       "targets": [
         {
           "anchor": {
-            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
-            "content": "sha256:71e5839fb83a7787d8ecf6c3ae6051dd016be94dc896294661d807999b936238",
+            "blob": "0a1e75162fe6e7bf406070442671cebec39634ce",
+            "content": "sha256:98f98f0da3a72976597a9f4700dcbbe3dcfcb9f23d333be71cc0392d7ba4072a",
             "locator": {
-              "end": 1670,
-              "kind": "line_range",
-              "start": 1384
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -246,15 +242,16 @@
       ]
     },
     "9": {
-      "note": "The generated TypeScript mirror requires the legalControls array on its operation observation.\n\nAnchor: `string`",
+      "note": "The generated TypeScript mirror requires the legalControls array on its operation observation.",
       "targets": [
         {
           "anchor": {
-            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
-            "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
+            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
+            "content": "sha256:1e8dcd4d0de939997e84b63be374b12baa726481047761a5f27a26e693697fb1",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleOperationProjection"
+              "end": 334,
+              "kind": "line_range",
+              "start": 279
             },
             "path": "dashboard/src/types/projection.ts"
           },

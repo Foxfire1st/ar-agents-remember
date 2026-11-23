@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
-    "statement": "The changed index passage correctly limits reuse to the selected memory tree and loaded build, while the unchanged passages were not reverified.",
-    "task": "261112-BUG-L9",
+    "statement": "The concepts page describes role-launcher selection, bounded overflow and the complete-result log, candidate-bound quality and gate authority, and synchronous closeout and integration alongside their historical audit records.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/application/context_packet.py"
     },
     {
-      "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+      "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/role_launcher.py"
     },
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/tasks/store.py"
     },
     {
-      "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+      "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
@@ -126,12 +126,12 @@
       "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
     },
     {
-      "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+      "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     },
     {
-      "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+      "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
     },
@@ -196,7 +196,7 @@
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
     {
-      "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+      "blob": "62215ea0a5252c997ca76c7b1680713485391419",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/role_reports.py"
     },
@@ -206,7 +206,7 @@
       "path": "mcp/src/agents_remember/tasks/task_paths.py"
     },
     {
-      "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+      "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/route_review.py"
     },
@@ -221,7 +221,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_runtime.py"
     },
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -246,7 +246,7 @@
       "path": "mcp/src/agents_remember/cli/role_handover_file.py"
     },
     {
-      "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+      "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_step_up.py"
     },
@@ -301,17 +301,17 @@
       "path": "mcp/src/agents_remember/canvas/kit.py"
     },
     {
-      "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+      "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
     },
     {
-      "blob": "f1a614c3853985134f11c860f66383388eb5da04",
+      "blob": "ed247cdb9c51911cd9ceef881176719bb4a4a7a5",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_service.py"
     },
     {
-      "blob": "2efc0689986925be972c37f8fff310afce761c25",
+      "blob": "91c232fdc6b96e3e5a19b11c6d4546285c98af9b",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge/review_frame.py"
     },
@@ -321,22 +321,22 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
     {
-      "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+      "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/every-role.md"
     },
     {
-      "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+      "blob": "775f056813e59e9f1426a560af777dc2be162c85",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
+      "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
     {
-      "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+      "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/review.md"
     },
@@ -346,7 +346,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
     {
-      "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+      "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
@@ -356,12 +356,12 @@
       "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
     },
     {
-      "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
+      "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
     },
     {
-      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
@@ -371,12 +371,12 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
+      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
     {
-      "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+      "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_response.py"
     },
@@ -422,6 +422,16 @@
       },
       "heading": "Loaded build identity",
       "kind": "anchor"
+    },
+    {
+      "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+    },
+    {
+      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     }
   ]
 }

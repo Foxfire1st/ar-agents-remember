@@ -41,6 +41,8 @@ behavior, no enforced authorship separation).
 - The typed task-intent forms are re-exported, not re-defined here; their home is
   `models/task_intent`.
 
+The package re-exports the review-addition request and amended-round types from the task-document API.
+
 ## Evidence
 
 ### Repo-Internal References

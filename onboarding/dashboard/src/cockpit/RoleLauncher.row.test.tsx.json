@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Mounted assertions protect controls-only rendering, accessible names, selected-label/source hovers, informational chips, and shared recipe identity; overfull checks are DOM/source checks rather than pixel measurement.",
+      "note": "Mounted row tests cover the shared control structure, fixture-projected choices and action readiness.",
       "targets": [
         {
           "anchor": {
-            "blob": "6124c93eeb42a155aa7065bfa1408d6400319c69",
-            "content": "sha256:ba5a0f0a2dca1922b369f5d79a250aebc232bdb88f33b523c090f150f51bcb2b",
+            "blob": "08999c138062f7bbbcd93036eb85a3a8b3a61ad6",
+            "content": "sha256:7ae0aa9199eda674c287bc2b67856d6e1d50b067da8dba43e1eb695a1cced990",
             "locator": {
               "kind": "file"
             }
@@ -18,37 +18,40 @@
       ]
     },
     "2": {
-      "note": "The default fixture supplies mode and choice provenance plus instruction metadata.",
+      "note": "Fixtures supply offered modes, choice provenance and instruction metadata. Model-specific replies reuse the requested model’s fixture data.",
       "targets": [
         {
           "anchor": {
-            "blob": "6124c93eeb42a155aa7065bfa1408d6400319c69",
-            "content": "sha256:a88451883c11d0f73b0dbf50009758677ad534538385522f18aa643d126ca16a",
+            "blob": "08999c138062f7bbbcd93036eb85a3a8b3a61ad6",
+            "content": "sha256:80fa435649c4a38e88f761d67a1f692c12fd478c7a29dc9b62a5844ea30bb9fd",
             "locator": {
-              "kind": "symbol",
-              "name": "roleDefaultsFixture"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6124c93eeb42a155aa7065bfa1408d6400319c69",
-            "content": "sha256:5cb3e9725bb5c3c04b7c7e213e7a44ddcaabd094b0b2b653108271d5d5f852f8",
-            "locator": {
-              "end": 90,
+              "end": 45,
               "kind": "line_range",
-              "start": 70
+              "start": 26
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6124c93eeb42a155aa7065bfa1408d6400319c69",
-            "content": "sha256:ba5a0f0a2dca1922b369f5d79a250aebc232bdb88f33b523c090f150f51bcb2b",
+            "blob": "08999c138062f7bbbcd93036eb85a3a8b3a61ad6",
+            "content": "sha256:e27ff9ece828694e5f929bb9f85fdcfc4d4adab4f04bbda2d30473c88fb62f45",
             "locator": {
-              "kind": "file"
+              "end": 135,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08999c138062f7bbbcd93036eb85a3a8b3a61ad6",
+            "content": "sha256:1bc4929482a1a12ea32f13ff5bb7bb8613b1e869229e68a3fd7175b93a2a13a9",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 137
             }
           },
           "kind": "test"
@@ -56,12 +59,12 @@
       ]
     },
     "3": {
-      "note": "Retains compact-row accessibility, source/label hovers, permission-owned chips, shared recipe and overfull DOM/source controls. The new case mounts RoleLauncher, prompts for a reason, asserts role plus stepUp only, and renders both status owners with host-default then observed-model text.",
+      "note": "Source and mounted assertions cover the compact control row and the configured Step up reason and actions.",
       "targets": [
         {
           "anchor": {
-            "blob": "6124c93eeb42a155aa7065bfa1408d6400319c69",
-            "content": "sha256:ba5a0f0a2dca1922b369f5d79a250aebc232bdb88f33b523c090f150f51bcb2b",
+            "blob": "08999c138062f7bbbcd93036eb85a3a8b3a61ad6",
+            "content": "sha256:7ae0aa9199eda674c287bc2b67856d6e1d50b067da8dba43e1eb695a1cced990",
             "locator": {
               "kind": "file"
             }

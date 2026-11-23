@@ -3,15 +3,52 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Workspace, creation, message, get and archive commands against the real script and fake client.",
+      "note": "Real-bridge fixtures cover workspace open, creation outcomes, first-message delivery, and exact agent get and archive.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3e9a4d12bf8633b9abb9436528e77bae366981e",
+            "blob": "5e13a344083a5dd1f2816313d6b739b929e550a8",
             "content": "sha256:88e4726b19c54c4c99242bdaeabad9e709b1447c41411ccd4e6b75d30eb3ce54",
             "locator": {
-              "kind": "symbol",
-              "name": "test_workspace_open_reuses_or_creates_through_the_public_client"
+              "end": 500,
+              "kind": "line_range",
+              "start": 476
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e13a344083a5dd1f2816313d6b739b929e550a8",
+            "content": "sha256:4f9451df842410df591d465371b25b40df03a5d144638ac2e4a77586350eab4c",
+            "locator": {
+              "end": 749,
+              "kind": "line_range",
+              "start": 588
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e13a344083a5dd1f2816313d6b739b929e550a8",
+            "content": "sha256:8205525d6ebf87cb8668ea78eb1a072a5a4baa63fcd5aa53f5b1746cdf640a9f",
+            "locator": {
+              "end": 916,
+              "kind": "line_range",
+              "start": 789
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e13a344083a5dd1f2816313d6b739b929e550a8",
+            "content": "sha256:fad9db4943ae7d5d1342974a52d0c02e916ac674c98bd057943508fc7556d194",
+            "locator": {
+              "end": 991,
+              "kind": "line_range",
+              "start": 918
             }
           },
           "kind": "test"
@@ -23,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3e9a4d12bf8633b9abb9436528e77bae366981e",
+            "blob": "5e13a344083a5dd1f2816313d6b739b929e550a8",
             "content": "sha256:228b1cc3cf1f005098c942a50ca5ea775720284d5c8817a1bb1818145713e7ae",
             "locator": {
               "kind": "symbol",
@@ -39,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3e9a4d12bf8633b9abb9436528e77bae366981e",
+            "blob": "5e13a344083a5dd1f2816313d6b739b929e550a8",
             "content": "sha256:2b65b9c73e88e00e53428936bb9e7ab495e8532da493ba1346a982c61350d3e2",
             "locator": {
               "end": 166,

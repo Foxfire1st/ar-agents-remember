@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
         "content": "sha256:270242269aad9f08fca1cc861d39d3d766a5d901f514702c82b0a6ccd746ac6d",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,26 @@
     },
     {
       "anchor": {
-        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+        "content": "sha256:ce585a05e817ac7c850a0e1ad34c3830a2b543bfa8caf5e879a42662ee773fa3",
+        "locator": {
+          "end": 419,
+          "kind": "line_range",
+          "start": 406
+        }
+      },
+      "id": "RLZ-2WG6NC",
+      "invariant": "INV-TRCBNZ",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 2",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Renews discovery before catalogue metadata is answered.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
         "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
         "locator": {
           "kind": "symbol",
@@ -40,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
         "content": "sha256:dde3196997ecb99484b431c4bdcdea7319f9ffbfb3abdd7b98bbdbbdcabe1e6c",
         "locator": {
           "kind": "symbol",
@@ -58,10 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
-        "content": "sha256:26798fe49fa61570a56da80682902293b42ca5b6ac48c535d13801526466fc6a",
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+        "content": "sha256:11b325738516c0049bdb6735d8bb9588aaf172c939f4e19596a859c82246cf59",
         "locator": {
-          "kind": "file"
+          "end": 439,
+          "kind": "line_range",
+          "start": 391
         }
       },
       "id": "RLZ-7J6Y4G",
@@ -70,15 +91,36 @@
         "handoffEntry": "L71-CURRENT242-W-01",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The host bridge returns actual provider/model/mode/feature offerings and the wire metadata the Python resolver consumes; it is the boundary to host capability, not another catalog.",
+      "rationale": "Separates host provider metadata from the features for a named pair.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
-        "content": "sha256:26798fe49fa61570a56da80682902293b42ca5b6ac48c535d13801526466fc6a",
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+        "content": "sha256:327d5fbcc12efdf4f28c687485e0a6234298c271026cb333385fb3334a86b999",
         "locator": {
-          "kind": "file"
+          "end": 701,
+          "kind": "line_range",
+          "start": 669
+        }
+      },
+      "id": "RLZ-8FFN5K",
+      "invariant": "INV-DY1KSB",
+      "origin": {
+        "handoffEntry": "L10-curated-usage-selector",
+        "leaf": "261112-BUG-L10"
+      },
+      "rationale": "The bridge selects the stale leaf report and refreshes by its report ID.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+        "content": "sha256:628dfca1128773e22c2b092fad35ad24aa219a2fff93af60b6442948df59aef2",
+        "locator": {
+          "end": 703,
+          "kind": "line_range",
+          "start": 649
         }
       },
       "id": "RLZ-AM4R8J",
@@ -87,12 +129,31 @@
         "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
         "leaf": "260928-MIK-L184"
       },
-      "rationale": "This bridge is the one process that takes the plugin's answer and then asks it for the list, so the number has to be carried here.",
+      "rationale": "Reads host usage reports by agent and preserves the last observation if refresh fails.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+        "content": "sha256:d4d1f8a53afc2055357352246b9b9b0f2a61a4a7d5570f2b83c18b9056fb1569",
+        "locator": {
+          "end": 728,
+          "kind": "line_range",
+          "start": 728
+        }
+      },
+      "id": "RLZ-BMAVX4",
+      "invariant": "INV-47MBEJ",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 6",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Refuses an absent saved agent before the host can create it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
         "content": "sha256:75900b8557745b97f613a702c436f4f9d035483edaad70c0f851b9bb1b7f84ea",
         "locator": {
           "kind": "symbol",
@@ -110,7 +171,7 @@
     },
     {
       "anchor": {
-        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
         "content": "sha256:eb965c50d97b4d583cefe1ad5bd54453088164b6884bd14d6eedd34e169811a9",
         "locator": {
           "kind": "symbol",
@@ -128,7 +189,26 @@
     },
     {
       "anchor": {
-        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+        "content": "sha256:07da0822e9c263b96c934e4d1057b59aada3bba410b1cb2c267752819263bb89",
+        "locator": {
+          "end": 615,
+          "kind": "line_range",
+          "start": 596
+        }
+      },
+      "id": "RLZ-HFGK3E",
+      "invariant": "INV-MRV9R9",
+      "origin": {
+        "handoffEntry": "L10-curated-background-listing",
+        "leaf": "261112-BUG-L10"
+      },
+      "rationale": "Subagent activity reconciliation pages over AR role seats here.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
         "content": "sha256:270242269aad9f08fca1cc861d39d3d766a5d901f514702c82b0a6ccd746ac6d",
         "locator": {
           "kind": "symbol",
@@ -146,7 +226,7 @@
     },
     {
       "anchor": {
-        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
         "content": "sha256:6c07cdcacec59018a2d37926c78d7c5116144e7adfd092686dc81af532beb3fb",
         "locator": {
           "kind": "symbol",
@@ -164,7 +244,7 @@
     },
     {
       "anchor": {
-        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
         "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
         "locator": {
           "kind": "symbol",
@@ -182,7 +262,7 @@
     },
     {
       "anchor": {
-        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
         "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
         "locator": {
           "kind": "symbol",
@@ -200,7 +280,7 @@
     },
     {
       "anchor": {
-        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",
@@ -223,36 +303,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:dc4b0ba7d331f26aac77692912e4b0a24eb1526a7618e6d7b3d902492fb188a0",
             "locator": {
-              "end": 1435,
+              "end": 1438,
               "kind": "line_range",
-              "start": 1425
+              "start": 1428
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
             "locator": {
-              "end": 1464,
+              "end": 1467,
               "kind": "line_range",
-              "start": 1454
+              "start": 1457
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:0d5e445b019128ecebe46e232d30f49c6695f2761a825540af92458db1082715",
             "locator": {
-              "end": 1197,
+              "end": 1200,
               "kind": "line_range",
-              "start": 1187
+              "start": 1190
             }
           },
           "kind": "code"
@@ -260,16 +340,15 @@
       ]
     },
     "2": {
-      "note": "`agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`.",
+      "note": "`agents-live` requests background agents, retains unarchived IDs and reports a complete census only after the host explicitly ends the listing.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ab582dd663d455dc656664d8318e003ef81510a",
-            "content": "sha256:9680ca44d3e83fb4e89e64c53f89776491a4d176dd3d936e566a422fc4098387",
+            "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+            "content": "sha256:0556d3d40d00fad80eba6385ee715063b96ff7a91d0900463ef554803507e1a8",
             "locator": {
-              "end": 28,
-              "kind": "line_range",
-              "start": 5
+              "kind": "symbol",
+              "name": "listLiveAgents"
             },
             "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
           },
@@ -277,65 +356,42 @@
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
-            "content": "sha256:80f6449fd43c2ba54bc140818c827de48a6769a360d8f11d04c7b1c77c65f6a2",
+            "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+            "content": "sha256:359756e738d2fe0e9fdbcf3d4d79f86374bedcbd1650418d0e3e28adc3ae9078",
             "locator": {
-              "end": 266,
+              "end": 29,
               "kind": "line_range",
-              "start": 249
-            }
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "A still-loading provider retains discovered modes/default mode/fetched time; missing modes and unanswered models remain unknown rather than successful empty lists. Catalog discovery keeps enabled provider identities at the deadline instead of treating still-loading models as a whole-catalog timeout.",
+      "note": "A provider still loading at the discovery deadline keeps its identity and any known modes and fetch time. An unanswered model or mode listing remains unknown.",
       "targets": [
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
-            "content": "sha256:651a5ea43c69f6ee656c77fa70f99b7d95a5bfd7bba72d7bfcc07a7eb0fa7340",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:f024dc4d8931f1506ca8cf9bf8e098b904dcc62150b32dc352a7e9df632e2382",
             "locator": {
-              "end": 490,
+              "end": 439,
               "kind": "line_range",
-              "start": 478
+              "start": 406
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
-            "content": "sha256:45132b987e67cb2f1f3b5f04d0a99fa24f027deb38b5574a95e9e7cec047086e",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:e07aa5fd9174a29ae4edf0f78b600fac1147937404ed678de7dcf48248d68b42",
             "locator": {
-              "end": 492,
+              "end": 515,
               "kind": "line_range",
-              "start": 484
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
-            "content": "sha256:39043f275a0350151a247964773c654a3185b5b092bb205f10f99b3b8ea7a641",
-            "locator": {
-              "end": 444,
-              "kind": "line_range",
-              "start": 418
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
-            "content": "sha256:4238e748b54b426a4e652fe949ddc419d78191483bb0568cb7e240a58c129343",
-            "locator": {
-              "end": 499,
-              "kind": "line_range",
-              "start": 494
+              "start": 485
             }
           },
           "kind": "code"
@@ -347,12 +403,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:80f6449fd43c2ba54bc140818c827de48a6769a360d8f11d04c7b1c77c65f6a2",
             "locator": {
-              "end": 266,
+              "end": 267,
               "kind": "line_range",
-              "start": 249
+              "start": 250
             }
           },
           "kind": "code"
@@ -360,16 +416,28 @@
       ]
     },
     "5": {
-      "note": "`agentCreation` no longer imposes the old Claude-only review-presenter fence or injects `tools: ''` / `strict-mcp-config`. The settings role uses the normal harness launch; the bound server registers AR’s general tools plus four explainer-owned tools and checks the launched seat on calls to those four. Retained `presenter-transcript` and `presenter-cancel` remain legacy presenter operations, while `agent-cancel` targets the exact explainer seat and request.",
+      "note": "`agentCreation` uses the selected settings role and supplies its applied options. The bound tool server registers the general tools and four explainer tools, and checks the launched seat on calls to those four.",
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:20e02571125f009388fa844e2361c729e88207cc2b0cfcf4451d2a4fc74de55f",
+            "locator": {
+              "end": 942,
+              "kind": "line_range",
+              "start": 894
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:0cbc15e510272679d65974207885303ddc8b1a76810adf338e8dbe141a63cda4",
             "locator": {
-              "end": 117,
+              "end": 127,
               "kind": "line_range",
-              "start": 109
+              "start": 119
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -377,24 +445,14 @@
         },
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:8dd61413c66954ced6d132211298b59efc8c7075b21c811b020d1ce3acbdc875",
             "locator": {
-              "end": 324,
+              "end": 319,
               "kind": "line_range",
-              "start": 309
+              "start": 304
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
-            "content": "sha256:26798fe49fa61570a56da80682902293b42ca5b6ac48c535d13801526466fc6a",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "code"
         }
@@ -405,19 +463,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:c968c1884cff2af1a86b7b33d364870c7af2cc16de93126ea32c6bee30f4b8f2",
             "locator": {
-              "end": 1219,
+              "end": 1222,
               "kind": "line_range",
-              "start": 1158
+              "start": 1161
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "5ec4c4fce720e19a599f8c48c9500f3f0afdfb63",
+            "blob": "e208f8071de2a5e03b4ef2e219911997583ba06a",
             "content": "sha256:b64dbf12f1d75397980d4e00a8d9cd7dd0bf4466d3565d651723d079dd0679da",
             "locator": {
               "end": 21,
@@ -430,7 +488,7 @@
         },
         {
           "anchor": {
-            "blob": "5ec4c4fce720e19a599f8c48c9500f3f0afdfb63",
+            "blob": "e208f8071de2a5e03b4ef2e219911997583ba06a",
             "content": "sha256:eb841119c142e5bdabb37b0080a5cdbc4a07988a80f88c299b0779f190953a3a",
             "locator": {
               "end": 28,
@@ -443,24 +501,24 @@
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
             "locator": {
-              "end": 1248,
+              "end": 1251,
               "kind": "line_range",
-              "start": 1187
+              "start": 1190
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:587762a7b859ee62f1826f00eabd576184420aeb0195a7097a90aee22bed0429",
             "locator": {
-              "end": 940,
+              "end": 943,
               "kind": "line_range",
-              "start": 881
+              "start": 884
             }
           },
           "kind": "code"
@@ -468,14 +526,71 @@
       ]
     },
     "7": {
-      "note": "agent-cancel validates agentId/requestId, finds only that id, cancels it and re-reads it. agentState includes provider, lastUserMessageAt and lastStatus; absent activeTurn is null rather than false. The removed review-presenter Claude-only fence is replaced by server-surface enforcement, not a new native harness fence. The native state response includes provider and last-message/status fields, and distinguishes absent activeTurn from false by reporting null.\n\nAnchor: `cancelSeat`, `agentState`",
+      "note": "`agent-cancel` acts on the identified agent and returns its re-read state. The state reports provider, last user-message time and last status. Absent active-turn state is null.",
       "targets": [
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
-            "content": "sha256:26798fe49fa61570a56da80682902293b42ca5b6ac48c535d13801526466fc6a",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:75900b8557745b97f613a702c436f4f9d035483edaad70c0f851b9bb1b7f84ea",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "cancelSeat"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:dde3196997ecb99484b431c4bdcdea7319f9ffbfb3abdd7b98bbdbbdcabe1e6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The host-activity reconciliation opts into background agents and asks only open, unarchived AR role seats for subagents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:001006e278ad5f22fd0dba2388a5ab0c9291f7310eec55869301795cc24697e1",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 554
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:346399eb9d5c2d43844d087331c5d11bbdeceb411d0c15d57ef8a9655982bf35",
+            "locator": {
+              "end": 645,
+              "kind": "line_range",
+              "start": 573
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "An ordinary usage read names the agent. A forced refresh for a stale leaf report names its report ID alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:5114bb1f4a1670f6cc7f37e5c8a08abc9ba7e69b8e841bb7abfd1b862cc0329f",
+            "locator": {
+              "kind": "symbol",
+              "name": "usageEntriesFor"
             }
           },
           "kind": "code"

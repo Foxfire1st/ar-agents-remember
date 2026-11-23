@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The current `_cancellable_closeout_facts` boundary implements the preparation contract above.",
+      "note": "`_cancellable_closeout_facts` checks unchanged logical refs when the supplied record carries retained private preparation.",
       "targets": [
         {
           "anchor": {
-            "blob": "9d4bdbff20752e646d50f9d805834cbb2eb1edca",
+            "blob": "5c0fa22cc352e90bf9767a6ee2aa1d85c224166c",
             "content": "sha256:8b29bca233b0fee8609060b5e51191ba27c971229d4ef84e7b5a869bb8534ccd",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d4bdbff20752e646d50f9d805834cbb2eb1edca",
+            "blob": "5c0fa22cc352e90bf9767a6ee2aa1d85c224166c",
             "content": "sha256:68fb75fee856514b9742f0f390ac491e1b2363f08f9b366da2c9076e0079abea",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d4bdbff20752e646d50f9d805834cbb2eb1edca",
+            "blob": "5c0fa22cc352e90bf9767a6ee2aa1d85c224166c",
             "content": "sha256:8b29bca233b0fee8609060b5e51191ba27c971229d4ef84e7b5a869bb8534ccd",
             "locator": {
               "kind": "symbol",
@@ -51,15 +51,28 @@
       ]
     },
     "4": {
-      "note": "The module defines `prove_cancellable_git`; `unchanged_integration_refs` as its public seam.",
+      "note": "`prove_cancellable_git` derives exact no-output evidence. `unchanged_integration_refs` remains the ref-comparison helper for stored integration evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "9d4bdbff20752e646d50f9d805834cbb2eb1edca",
-            "content": "sha256:bc8472c11e4ade131e99f8d227aec90a6b1b1e08c67269477ad373fb17846667",
+            "blob": "5c0fa22cc352e90bf9767a6ee2aa1d85c224166c",
+            "content": "sha256:d2a291ad36281151e715ecda034dc0393651c0a4acaad26333a072e10c2bbdc6",
             "locator": {
-              "kind": "symbol",
-              "name": "prove_cancellable_git"
+              "end": 83,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c0fa22cc352e90bf9767a6ee2aa1d85c224166c",
+            "content": "sha256:ea5815cde7b6b70168d85629a3d9482412520f6d523483872619d817b8d27810",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 212
             }
           },
           "kind": "code"

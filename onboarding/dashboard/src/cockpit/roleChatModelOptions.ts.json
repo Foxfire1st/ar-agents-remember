@@ -1,0 +1,86 @@
+{
+  "path": "dashboard/src/cockpit/roleChatModelOptions.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+        "content": "sha256:744d6f4b808837ca9245a1d338505d6e224b8c56a5ddec31a7020c7cfdc41360",
+        "locator": {
+          "end": 150,
+          "kind": "line_range",
+          "start": 49
+        }
+      },
+      "id": "RLZ-JCRA6D",
+      "invariant": "INV-J2SF5K",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 1",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Chooses the shown pair, requests its options and keeps answers in the panel's cache.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Each request and cached answer is bound to the resolved pair and the active Refresh generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+            "content": "sha256:307a5237c69fc7c23c13ad83a7f2a5aee21ee1feec33c5b1158dc273baed3ef1",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pane requests its shown pair after current metadata. The Start dispatcher strips feature values when the pair lacks a fresh answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+            "content": "sha256:31e1ff14d04084f54bad5ce0ccbe54b38baf4b987a7ab48903488981851f6295",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+            "content": "sha256:6c360375319b465e03ccb1ba803e19f8fa9aaf95c63b366f9d792a0f52a78d17",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "821f21c80bdb705adf01849d194ac6ef9bfb6375",
+            "content": "sha256:e6c40cf2198c74ee4df9f495861f94ec34c2cf00c9b4356930d1424a6018a45a",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

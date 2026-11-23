@@ -99,7 +99,7 @@
       ]
     },
     "7": {
-      "note": "Retried durable input is checked against its accepted plan. (`require_effective_closeout_plan`)",
+      "note": "When the synchronous owner has no accepted recovery commit tuple, it checks the accepted plan's route and contract identity without deriving it again from Git.",
       "targets": [
         {
           "anchor": {
@@ -109,6 +109,19 @@
               "kind": "symbol",
               "name": "require_effective_closeout_plan"
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:3ff9ca9c5b9faa04746b1492757e756dd6df8699729beb48c605b1f704e58467",
+            "locator": {
+              "end": 1118,
+              "kind": "line_range",
+              "start": 1093
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
           "kind": "code"
         }

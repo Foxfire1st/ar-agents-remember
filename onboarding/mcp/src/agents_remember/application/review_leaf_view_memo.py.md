@@ -37,8 +37,7 @@ computed and not kept. A caller that never performs the lookup records none of t
 
 ### Serving a kept view
 
-`remembered(key)` returns the kept parts only when the entry is at most `MAX_AGE_SECONDS` old and
-`changed_observations` reports no change of its recorded rows. The check repeats every recorded path
+`remembered(key)` returns the kept parts when `changed_observations` reports no change of its recorded rows. The check repeats every recorded path
 resolution and existence probe first and reads files only when all of them still give the recorded
 answer. On a hit the kept rows are replayed into the caller's recording block.
 
@@ -59,9 +58,7 @@ decides beforehand whether the parts are settled.
 
 ### Bounds
 
-`LEAF_VIEW_MEMO` is a `BoundedMemo` of `CAPACITY` 4 entries, least recently used first out.
-`MAX_AGE_SECONDS` is the gate memo's value, 900 seconds. A live request captures both worktrees before it
-gets here, so an edit of a worktree is a new tree and a new key.
+`LEAF_VIEW_MEMO` keeps up to four entries and charges up to 8 MiB for their keys, view parts and read witnesses. It evicts least recently used entries to fit both bounds. A fitting view can serve a later request at any age while its observations still agree. A live request captures both worktrees, so a worktree change can supply a new tree and key.
 
 After the nested gate-key construction recording closes, `leaf_view_key` replays those actual reads into the caller before checking whether the gate key is absent. This preserves enclosing read custody even on that refusal. Ruled-out sibling observations remain distinguished from admitted kept task dependencies; replay does not invent a read or turn an unconsumed candidate into a dependency.
 
@@ -76,9 +73,11 @@ After the nested gate-key construction recording closes, `leaf_view_key` replays
 - The two bounds.
 - The key's fields. [6]
 
-- The key is built with the task lookup's reads recorded; several conditions give no key. [7]
 
-- A kept view is served only when young enough and unchanged, and its rows are replayed. 
+- The lookup records task-document reads while building the exact view key and replays those observations to the caller before any return from recorded key construction. If the candidate or its inputs cannot be identified, the view has no key. [7]
+
+
+- A kept view is served when its observations still agree, and its rows are replayed.
 - A read with other bytes or an unnamed read is a move; a named document that was not read is not. [9]
 - Task reads are the JSON files directly in the task folder. [10]
 - Failed, absent or moved inputs keep the parts out of the memo. 
@@ -89,7 +88,9 @@ After the nested gate-key construction recording closes, `leaf_view_key` replays
 - A second document that claims the leaf is computed again and answers incomplete. [14]
 - Not read, same bytes, other bytes, a conflict and an unnamed document, each judged. [15]
 
-- Count and age bounds, and no answer for another key. [16]
+
+- The memo evicts by entry count, reuses the same observed key past the former cutoff and misses for another key. [16]
+
 
 
 - A view behind which a read failed is not kept. [17]

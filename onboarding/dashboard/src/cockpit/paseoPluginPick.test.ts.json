@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
         "content": "sha256:2652e89299d479172d5582b3de348303a0a95e29456222fd5c253be22e2e6fb3",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
         "content": "sha256:3879b00ce9b27faedcdb40c52504ad1bc40e0f1f9b37d19ba84e9092db5ac4e5",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
         "content": "sha256:bd9350653b6b44bf9c5884b20fbd3abc6d0aa37637210e76c8e0cb59b84f4258",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
         "content": "sha256:97b6bc1d59bd7b38de62657ceec8cc8e9a7fa193b869dc97fe204ecab5378e42",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
         "content": "sha256:755774a8cac732920f0e5494943834f9b2f9e16dcb37b66e3d54ca466a26e21b",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
         "content": "sha256:91df952762ccc0535c7f38041f997314bfe2fcdc44c18469568f4466b6847446",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
         "content": "sha256:10398479e5da2ee87ba1405f273a10b6c54ce80fcf0397642e490439ea804f80",
         "locator": {
           "kind": "symbol",
@@ -128,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+            "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
             "content": "sha256:46e52ed800fa21cfeacaa7d6248918a26faff7a83dd4166769e9a41ea5bb85cb",
             "locator": {
               "end": 289,
@@ -145,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+            "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
             "content": "sha256:75c85df1ca63aee48172818c15c2d34661738e92aeb9bef0b3d92dfe074b0714",
             "locator": {
               "end": 439,
@@ -162,12 +162,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+            "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
             "content": "sha256:c0afd20ca0f8ff0c42997fd7d188813b85dad55489230a85f638da5eec77828b",
             "locator": {
               "end": 601,
               "kind": "line_range",
               "start": 442
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The fixture names the 0.16.2 web build and the React DOM 19.2.3 row-prop representation it models.\n\nAnchor: \"React DOM 19.2.3\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b93617bb3d1f7b133a45ab626d249b1090425f0",
+            "content": "sha256:3f995989a35eecf8d1a58068f19e5aaa6aa5837781cc74c27241b53e89f64abd",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 5
             }
           },
           "kind": "test"

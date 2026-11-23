@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-        "content": "sha256:ac093d6b5a4eea28a4db8eedd16a5c4d354a599e08f75d762f56fd86071f2683",
+        "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+        "content": "sha256:f809131a7402b6feb4b1c9f6aa02b2de335a2bf656c57a07f9d34400aeedaf2b",
         "locator": {
           "kind": "symbol",
           "name": "select_step_up"
@@ -22,15 +22,16 @@
   ],
   "references": {
     "1": {
-      "note": "Threshold/manual/prior selection uses scoped choices and sanitized provenance.",
+      "note": "Threshold, manual and prior selection carry scoped choices and sanitized provenance.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:ac093d6b5a4eea28a4db8eedd16a5c4d354a599e08f75d762f56fd86071f2683",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:f809131a7402b6feb4b1c9f6aa02b2de335a2bf656c57a07f9d34400aeedaf2b",
             "locator": {
-              "kind": "symbol",
-              "name": "select_step_up"
+              "end": 114,
+              "kind": "line_range",
+              "start": 32
             }
           },
           "kind": "code"
@@ -42,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
             "content": "sha256:e67063904a03911799ff1da6808c97b1946ce5547c6c7c8e55572ade67f8411c",
             "locator": {
               "kind": "symbol",
@@ -58,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
             "content": "sha256:af56bd1828bf5bab8bb58518a671be4a4ed128dc74c06fb075bfae604adfbd20",
             "locator": {
               "kind": "symbol",
@@ -74,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
             "content": "sha256:be91a03f7c25cf3c966cca8e65af7a960cefab7604604a96f66b2a121ead2861",
             "locator": {
               "kind": "symbol",
@@ -91,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
             "content": "sha256:d156649dee6626036467c78b24418be0fddb44d7cdd18fbd9d1f2ba4845c34bb",
             "locator": {
               "kind": "symbol",
@@ -117,6 +118,114 @@
             "path": "mcp/tests/test_role_step_up.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The alternative row supplies defaults on its effective harness without inheriting the original mode. Final resolution takes an explicit launcher mode first and omits mode when no applicable named mode or known advertised default exists. The Step up button sends scope and reason without agent override.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2180646ada633e3ccf9e292f1c4fd632d5d32a6f",
+            "content": "sha256:2d16f22fe0635e7383596d9fc01127f661a01f0506d511c89c382c1d5675e187",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:002082cab6d8e0e50e216016e007ee4393ff8d98442ead0d1d9d3d10f6e777c8",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:45c14a3a984936634088d098d4a94d833017537623d05eb3b0e925b88ad1846d",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+            "content": "sha256:194d1b7b154648b320a7be0b7e0f5e63bfed7f43d41e01ee812d9781c1bb81fb",
+            "locator": {
+              "end": 378,
+              "kind": "line_range",
+              "start": 357
+            },
+            "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:9cf4969d72e6b64d7baa6fd0fa8a90b07965987e21e11e707f22bfdd4532121d",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 346
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:5f67a7a9003eb64471e805484105c55d118baff4839f8c2c587757c886b68262",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 424
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
+            "locator": {
+              "end": 551,
+              "kind": "line_range",
+              "start": 529
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb679f7ebe908f402c7206a7e41321494d12c943",
+            "content": "sha256:757a092abb1b2a892ef8fd929175b839064825ac85bab2ce5ceb897b8ebc9dc8",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/cockpit/role-launcher/StepUpControl.tsx"
+          },
+          "kind": "code"
         }
       ]
     }

@@ -1,5 +1,58 @@
 {
   "path": "mcp/tests/test_review_validation_reuse.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "8099afa4418e202775ac827c140579dbee444b9b",
+        "content": "sha256:e998107e4bc62e05e9ba06c6352d0e5b66d781567e01f9266a82930d35dbb88e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_leaf_view_reuses_exact_small_parts_but_recomputes_oversized_parts"
+        }
+      },
+      "facet": "Leaf-view parts use the same bounded reuse pattern.",
+      "id": "PRF-3MJX2E",
+      "invariant": "INV-QEKWKH",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — shared memo bounds",
+        "leaf": "261112-BUG-L18"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8099afa4418e202775ac827c140579dbee444b9b",
+        "content": "sha256:d93d85155f27ea13bb9b2966a8e1525f7c20ebd1af06b6935a8b4c0b2f7c0662",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_candidate_parse_weight_evicts_a_small_side_and_skips_an_oversized_side"
+        }
+      },
+      "facet": "A charged candidate parse can evict a smaller item, while an oversized parse stays outside retention.",
+      "id": "PRF-RH7S8Q",
+      "invariant": "INV-QEKWKH",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — shared memo bounds",
+        "leaf": "261112-BUG-L18"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8099afa4418e202775ac827c140579dbee444b9b",
+        "content": "sha256:fe7e4d2366e33c6ff5b117203e895029b8cc3e407ed69b6b9bfa8c9d92d49f5e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_gate_reuses_exact_small_verdicts_but_recomputes_oversized_verdicts"
+        }
+      },
+      "facet": "A reusable small verdict survives and an oversized verdict is recomputed.",
+      "id": "PRF-S8VV0M",
+      "invariant": "INV-QEKWKH",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — shared memo bounds",
+        "leaf": "261112-BUG-L18"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5ccb898286e5590196b7a81eaba6c417a725bc8",
+            "blob": "8099afa4418e202775ac827c140579dbee444b9b",
             "content": "sha256:d9a75736f1407e73c0674659416af17b394a6a4bb2b1cafacdd8f8a8910568a5",
             "locator": {
               "kind": "symbol",

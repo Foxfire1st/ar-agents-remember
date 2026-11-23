@@ -142,9 +142,9 @@ No external Domain Documentation source is configured for this memory repo.
 - The retained catch-up helper consumes supplied divergence after the retained setup composition; ordinary enabled-provider setup does not create that CGC divergence through the excluded seed branch. [5]
 
 
-| The canonical selector list identifies inherited Git variables to remove. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:55-64 |
-| The Git environment removes canonical repository selectors before execution. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:140-146 |
-| The shared Git runner applies caller-selected bounds and isolated repository environment; the catch-up diff passes its 60s bound as `GitRunnerOptions(timeout=...)`. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213 |
+| The canonical selector list identifies inherited Git variables to remove. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:61-70 |
+| The Git environment removes canonical repository selectors before execution. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:154-167 |
+| The shared Git runner applies caller-selected bounds and isolated repository environment; the catch-up diff passes its 60s bound as `GitRunnerOptions(timeout=...)`. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:122-142; mcp/src/agents_remember/kernel/git_command.py:154-178; mcp/src/agents_remember/providers/cgc/seed.py:421-444 |
 
 ## Historical worktree-seeding integration
 

@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_reviewer_worklist_warm.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "65361deb4d428a8cfbdc897909f3a2bc58c4ccc9",
+        "content": "sha256:7522db8e40e3742c8f392c77e25d61239bfbed3b34b811d823ec7a10b3307989",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_document_parse_memo_evicts_by_retained_history_size"
+        }
+      },
+      "facet": "Large retained parse graphs evict older history parses and oversized documents stay outside the memo.",
+      "id": "PRF-XW16CQ",
+      "invariant": "INV-CZXXR2",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — reviewer child parses",
+        "leaf": "261112-BUG-L18"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f10023415aaad10d1d454904db37534c6cadd2f5",
+            "blob": "65361deb4d428a8cfbdc897909f3a2bc58c4ccc9",
             "content": "sha256:3257e68d804fd408f4ef87e51c12a542edffc342eeafb912037cd3162511b1bf",
             "locator": {
               "kind": "symbol",

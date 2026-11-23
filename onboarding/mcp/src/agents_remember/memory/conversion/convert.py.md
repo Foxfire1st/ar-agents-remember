@@ -114,10 +114,14 @@ The entry point, its version pin and its steps.
 - The whole tree is validated before anything is returned for writing. [8]
 - The conversion's steps, the no-op and the marker. [9]
 
-- Determinism, the version refusal and the no-op. [11]
+
+- The fixture checks deterministic conversion, refusal of an unsupported format version, and a no-op on converted input. [11]
 
 
-- Version 1's pinned bytes. [12]
+
+
+- The version 1 regression compares the converted fixture bytes with their pinned digest. [12]
+
 
 - A refused conversion writes nothing and names what failed. [13]
 

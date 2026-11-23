@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "098c95e349d5ad612918557d3ab578b4974ef58a",
+            "blob": "cc8cd6ba9ed6c676cd078c14e1f8a31273573be4",
             "content": "sha256:9881fc66658ae3e701a98b28fbcde02326f523eb7b9d36ad3e03b7ad724cb6db",
             "locator": {
               "kind": "symbol",
@@ -19,11 +19,11 @@
       ]
     },
     "2": {
-      "note": "Diagnostic readiness stays non certifying with matching rails",
+      "note": "A diagnostic observation has rails equal to the certified gate’s rails and a distinct plan digest. The complete input’s certified readiness remains true.",
       "targets": [
         {
           "anchor": {
-            "blob": "098c95e349d5ad612918557d3ab578b4974ef58a",
+            "blob": "cc8cd6ba9ed6c676cd078c14e1f8a31273573be4",
             "content": "sha256:a8f6c56eda0ee6edfa35b5d95bb5c2c99fd95e18cf896494913ee6940745194c",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "098c95e349d5ad612918557d3ab578b4974ef58a",
+            "blob": "cc8cd6ba9ed6c676cd078c14e1f8a31273573be4",
             "content": "sha256:8cd8129b2bff3cd13ef794a630934dc230acfe683adb827ab00f9ef78132cc90",
             "locator": {
               "kind": "symbol",
@@ -51,23 +51,12 @@
       ]
     },
     "4": {
-      "note": "Recovery refuses same id decoder byte drift",
+      "note": "The same-ID decoder case changes the accepted decoder bytes, keeps the publication generation, and requires rendering to raise a dependency mismatch.",
       "targets": [
         {
           "anchor": {
-            "blob": "098c95e349d5ad612918557d3ab578b4974ef58a",
+            "blob": "cc8cd6ba9ed6c676cd078c14e1f8a31273573be4",
             "content": "sha256:61a962b56a8deee253dbbae7e010b84b5fd1b24141b64c8551561cd47d2005a1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_recovery_refuses_same_id_decoder_byte_drift"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "098c95e349d5ad612918557d3ab578b4974ef58a",
-            "content": "sha256:b8d6ca0d7df36c79bac252392c3f00f06bbd778806b4bb274c4be31b7d9d82ff",
             "locator": {
               "end": 92,
               "kind": "line_range",
@@ -75,6 +64,24 @@
             }
           },
           "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The repository test-evidence policy reports coverage and CRAP outside its enforcing rails. Its production-function review threshold is 20.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "345e9e4cdeb8701bb31e267faa00c4e6b6bbeb44",
+            "content": "sha256:1b490afc7a2f73cf4ea622b3eb6b6d4f0daac20db5d3da3bdf21796ebcfe3a2f",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "docs/design/python-test-evidence.md"
+          },
+          "kind": "code"
         }
       ]
     }

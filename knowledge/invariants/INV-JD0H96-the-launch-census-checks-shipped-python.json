@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents a dormant module launch from passing ordinary import checks after its destination is deleted."
+  },
+  "applicability": "Shipped Agents Remember Python package launches and console entry points.",
+  "conditions": [
+    "The module filename is resolved from the admitted literal or constant form, and a console target resolves to a function definition.",
+    "Unresolved supported launch forms are reported unless the published declaration supplies their scope and reason."
+  ],
+  "exclusions": [
+    "Development scripts, test support, prose commands and Git's -m are outside this census."
+  ],
+  "id": "INV-JD0H96",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Worker successor report, Primary acceptance block and sealed-finding checks."
+      ],
+      "path": "w7-authoring-draft.json"
+    },
+    "handoffEntry": "BUG-R15@v1 item 4",
+    "leaf": "261112-BUG-L15",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The launch census checks shipped Python module targets and console functions against files.",
+  "status": "proposed",
+  "supersedes": []
+}

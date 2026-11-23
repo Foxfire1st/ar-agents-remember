@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
         "content": "sha256:8b942d37948d9ea6ee056b247a1ed2487ebaa8d4801c9a75ab91b8b76ff5fd5f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
         "content": "sha256:f0645cbf5ebcd04807840b1e129ecdb6d3e5c1083a52f797a5760741e06591d1",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
-        "content": "sha256:bd2bd231808093322d036319a79b2890f799ed316aa587cce9ddd77491fb8dc4",
+        "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+        "content": "sha256:e60c61c498338df3205d76894dd5b09a3e1005cc97e593f5cd557a2b1947fd5e",
         "locator": {
           "kind": "symbol",
           "name": "_survey_operations"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
         "content": "sha256:8c1e9770cbb0bd51d7bb9f1e75c123ae56fc5ba570bee5e5f3f9694d6d58b040",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,26 @@
     },
     {
       "anchor": {
-        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
-        "content": "sha256:bd2bd231808093322d036319a79b2890f799ed316aa587cce9ddd77491fb8dc4",
+        "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+        "content": "sha256:e60c61c498338df3205d76894dd5b09a3e1005cc97e593f5cd557a2b1947fd5e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_survey_operations"
+        }
+      },
+      "id": "RLZ-G0DQHN",
+      "invariant": "INV-760TKM",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 5",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Points addressable retained records to the appropriate synchronous operation or direct-landing control.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+        "content": "sha256:e60c61c498338df3205d76894dd5b09a3e1005cc97e593f5cd557a2b1947fd5e",
         "locator": {
           "kind": "symbol",
           "name": "_survey_operations"
@@ -93,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
-        "content": "sha256:bd2bd231808093322d036319a79b2890f799ed316aa587cce9ddd77491fb8dc4",
+        "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+        "content": "sha256:e60c61c498338df3205d76894dd5b09a3e1005cc97e593f5cd557a2b1947fd5e",
         "locator": {
           "kind": "symbol",
           "name": "_survey_operations"
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
         "content": "sha256:f0645cbf5ebcd04807840b1e129ecdb6d3e5c1083a52f797a5760741e06591d1",
         "locator": {
           "kind": "symbol",
@@ -129,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
         "content": "sha256:8b942d37948d9ea6ee056b247a1ed2487ebaa8d4801c9a75ab91b8b76ff5fd5f",
         "locator": {
           "kind": "symbol",
@@ -169,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
             "content": "sha256:8c1e9770cbb0bd51d7bb9f1e75c123ae56fc5ba570bee5e5f3f9694d6d58b040",
             "locator": {
               "kind": "symbol",
@@ -181,15 +199,16 @@
       ]
     },
     "7": {
-      "note": "Operation remedies depend on live locators and current authority.",
+      "note": "Retirement routes refused stored closeout and integration evidence to their synchronous calls when a live locator permits tool action. Other named generations keep generation-bound control guidance. An unfinished sync has its own remedy.",
       "targets": [
         {
           "anchor": {
-            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
-            "content": "sha256:bd2bd231808093322d036319a79b2890f799ed316aa587cce9ddd77491fb8dc4",
+            "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
+            "content": "sha256:e60c61c498338df3205d76894dd5b09a3e1005cc97e593f5cd557a2b1947fd5e",
             "locator": {
-              "kind": "symbol",
-              "name": "_survey_operations"
+              "end": 447,
+              "kind": "line_range",
+              "start": 362
             }
           },
           "kind": "code"
@@ -201,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
             "content": "sha256:8eae2d5b012e85d5bdfeb6c0696ac07fad4edc7810e23514f9d8f6b8a2a67ea6",
             "locator": {
               "kind": "symbol",
@@ -217,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "blob": "b49b32625b84c6f4a34ea0f1c7b30c6425c923da",
             "content": "sha256:50bcfd9c2110013f981a0612b2505c26b77b79d56a70423f8ea1794c214f95ec",
             "locator": {
               "kind": "symbol",

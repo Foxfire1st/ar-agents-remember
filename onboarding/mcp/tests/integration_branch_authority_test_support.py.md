@@ -20,7 +20,7 @@ Build configured disposable repository/topology and closed-leaf fixtures for int
 
 `_authority_fixture` constructs the exact code/memory repositories, protected branches, task topology, selected profile configuration, and sibling atomic-series contract. External baseline memory is a real content commit with Code-Commit attribution; its ledger is refreshed only as an untracked cache.
 
-`_closed_external_leaf_worktrees` materializes the ordinary leaf worktrees and onboarding root, creates the converted knowledge/layout.json marker and authored no_impact coverage for onboarding:candidate.txt, creates actual code and attributed memory commits, refreshes the disposable cache, and records only the two output cells. Its optional evidence step delegates to `_publish_completed_closeout_fixture`; these fixture writes do not establish independently qualified curator coherence or acceptance. `_publish_completed_closeout_fixture` enters the selected/ordinary lifecycle input owner before publishing the fixture's completed state; its explicit final-source override models target changes after admission. `_doc` remains the small task-model builder.
+`_closed_external_leaf_worktrees` materializes the ordinary leaf worktrees and onboarding root, creates the converted knowledge marker and authored no-impact coverage, then commits code and attributed memory. It refreshes the disposable cache and records two output cells. When requested, `_publish_completed_closeout_fixture` binds fixture services, loads the contract, and writes and reloads the completed fixture with the same output pair. The optional branch override varies the recorded final code source. `_doc` builds the task model.
 
 Unused atomic-landing/door/preview builders and their ledger-only commit machinery were removed. Support code itself is not collected scenario coverage.
 
@@ -52,15 +52,25 @@ No domain-documentation source is configured for this slice. The behavior descri
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
 
+
 - Closed external leaves are backed by two actual commits and a disposable cache. [1]
 
 
-- Optional lifecycle admission precedes fixture finalization. [2]
+
+
+
+- The fixture publisher writes and reloads an already-completed contract with the retained output pair and optional final-source override. [2]
+
+
+
 
 
 - Configured repository, profile, protected branches, and task topology. [3]
 
+
+
 - Consumers retain ownership, cache-independence, and CAS scenarios. [4]
+
 
 ### Cross-Repo References
 

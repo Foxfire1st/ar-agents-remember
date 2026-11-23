@@ -1,7 +1,26 @@
 {
   "path": "mcp/src/agents_remember/serving/heap_diag.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fcad47cc51567624074eb9ffa90db9717f34c744",
+        "content": "sha256:a3d4c2f75c25e19472b348f392d9ef4da5a92c2022e415ce858716bba4af90e4",
+        "locator": {
+          "kind": "symbol",
+          "name": "trim_malloc"
+        }
+      },
+      "id": "RLZ-G05YBC",
+      "invariant": "INV-JB9D62",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — allocator high mark",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "This helper returns free allocator pages when the platform provides the glibc hook.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The app lifespan starts the diagnostic and trim loops only when their flags are enabled. Anchor: `start_heap_tracing`",

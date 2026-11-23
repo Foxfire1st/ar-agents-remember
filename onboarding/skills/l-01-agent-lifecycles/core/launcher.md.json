@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
-        "content": "sha256:08d7ac8bc44d256776de89e0dbcc1c097e9f8448707cf063a24db68d1a8bcb2d",
+        "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
+        "content": "sha256:df97cad78c77873d7101e258358c846543f712d98291b781d67f10916d6090db",
         "locator": {
           "end": 22,
           "kind": "line_range",
@@ -28,7 +28,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+            "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
             "content": "sha256:a4d1702b9c6a9b3ffecf65bdd1adc3379bcc11b77ce820a0553ce031ead44b66",
             "locator": {
               "end": 30,
@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+            "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
             "content": "sha256:f5006efe88892423512fd1bd4f6060f6365541918aa37754acaf663afb43365c",
             "locator": {
               "end": 36,
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+            "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
             "content": "sha256:65262dc7f264fa8b770af9f8507a60980867770dd40340f0dba03ff5cdf06914",
             "locator": {
               "end": 40,
@@ -109,12 +109,68 @@
         }
       ]
     },
+    "15": {
+      "note": "Launch settings and host data supply an applicable permission mode at creation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
+            "content": "sha256:d76e0d20597041d95c519996a777c5f90064a60843304e5b896b4dd525a2af7d",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b5fccf3e44f37b581034f88aece40728722f17d",
+            "content": "sha256:f6cad09e64771c0562f477176bbac5e6e3164496fcb291278e0e64b4a8f49f9a",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "docs/roles.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:03486b1da4a44c77a9cb965476fa8f9db5d3f0fbafdd3127ca21d3ee475ec203",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 345
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:b0aedec5125e7a9ab2a347fbf26618023f1a8302ba3b7c6b309cbd0a0747ac5e",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 452
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "8": {
       "note": "Unbound free chat has no role binding or worktree; research stays inline and does not become a role.",
       "targets": [
         {
           "anchor": {
-            "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+            "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
             "content": "sha256:dd96ffced9938f6479df7a6238d4ba7175b6d2d01cd6d03b58771e6ceba94a3b",
             "locator": {
               "end": 11,
@@ -131,8 +187,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
-            "content": "sha256:975d2a451b84999118d770f178f6a8ca55195826818e543a26718d8a77695a71",
+            "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
+            "content": "sha256:0f78c458506581b75ef33747f35ca579bd78c7a56fba69143422008a190304e0",
             "locator": {
               "end": 24,
               "kind": "line_range",

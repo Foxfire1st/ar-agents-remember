@@ -1,0 +1,40 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/ModeOverrideSelect.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The first option labels the default and its source. The selected value and missing-offer option retain an explicit mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25bf36570c564790806ae653e4f1cbfa0d958e5d",
+            "content": "sha256:5ef17d25e9e20ca8275bf9b72a55ad4cc763e6a119ecbebfa8567ab3f885010f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ModeOverrideSelect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Changing the mode updates the launch override and carries the model, effort and feature values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:45e6b45f00be2920dd47f3e59b44b5b155fa5d044b34d2ac3b8c2b9f79161961",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleAgentOverrideFor"
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

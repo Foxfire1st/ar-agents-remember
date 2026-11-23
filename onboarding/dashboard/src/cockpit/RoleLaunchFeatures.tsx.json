@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
         "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
         "content": "sha256:5a56dc01cee577221dded10630b7848a3434d846fdb2332cdf274638f7c80aba",
         "locator": {
           "end": 41,
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
         "content": "sha256:e0d79930e5a47a875ee44bf38cbd164ad4946d28c8ca3c2ba05c32830286f514",
         "locator": {
           "end": 24,
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
-        "content": "sha256:e35d363ea0c0769d4eefb5b11118d0e50e1cf0f355fdc7ae55d488c60f6b2854",
+        "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
+        "content": "sha256:d53d8119487a1ae9079c5088f9fed06a8f67b17323ea9c4379433a75f52fbcb0",
         "locator": {
           "kind": "symbol",
           "name": "RoleLaunchDefaults"
@@ -72,12 +72,12 @@
         "handoffEntry": "L71-CURRENT242-W-17",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "Ordinary defaults present the mode and optional instruction metadata with provenance; the basePreview branch labels both as non-applied Base previews for a stepped-up execution.",
+      "rationale": "The ordinary branch retains the instruction chip and its provenance. The stepped-up branch labels base mode and instructions as previews.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
         "content": "sha256:8cafdaad8fb9fa8b8677aeb34b78b8e22c971ebcb781a99ca6c2c27fcfd705bd",
         "locator": {
           "end": 135,
@@ -96,7 +96,7 @@
     },
     {
       "anchor": {
-        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
         "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
         "locator": {
           "kind": "symbol",
@@ -119,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
             "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
             "locator": {
               "kind": "symbol",
@@ -135,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
             "content": "sha256:beb1dc01ed8c6a7ddacdf6986b39bbe91aa47a708a081eaacf0ac025cbdda884",
             "locator": {
               "kind": "symbol",
@@ -147,16 +147,15 @@
       ]
     },
     "3": {
-      "note": "The ordinary ready defaults composition draws the host mode and optional instruction chips; basePreview labels them as non-applied Base previews.\n\nAnchor: Current substantive owner; original historical evidence remains in the memory base",
+      "note": "Ready ordinary defaults render the instructions chip. The preview branch labels the base mode and optional instructions as non-applied.",
       "targets": [
         {
           "anchor": {
-            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
-            "content": "sha256:3f9e66aaf9e547933bfddf9dc79310cf8126d7a068156eac880b468ed5138a7d",
+            "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
+            "content": "sha256:d53d8119487a1ae9079c5088f9fed06a8f67b17323ea9c4379433a75f52fbcb0",
             "locator": {
-              "end": 213,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "RoleLaunchDefaults"
             }
           },
           "kind": "code"
@@ -168,12 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
             "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
             "locator": {
-              "end": 240,
+              "end": 251,
               "kind": "line_range",
-              "start": 175
+              "start": 186
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },
@@ -182,14 +181,14 @@
       ]
     },
     "5": {
-      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "note": "The backend checks the explicit reason and the configured failed-review threshold. A step-up reads mode from its own settings row. Other launch fields follow the same-harness and model inheritance rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
             "locator": {
-              "end": 84,
+              "end": 87,
               "kind": "line_range",
               "start": 23
             },
@@ -204,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
             "content": "sha256:7d419396057235240001b1b041f2bf663423dec70fc501bea19a9c8d50f7176f",
             "locator": {
               "end": 145,
@@ -217,16 +216,15 @@
       ]
     },
     "7": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L184–L213",
+      "note": "The instruction chip appears when notes are present and identifies their source and baseline treatment.",
       "targets": [
         {
           "anchor": {
-            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
-            "content": "sha256:e35d363ea0c0769d4eefb5b11118d0e50e1cf0f355fdc7ae55d488c60f6b2854",
+            "blob": "e0af34aedc785a3cbcf6653a375cc6db8f457f0c",
+            "content": "sha256:465a0f32e598bf768feb53506f290c904acb661e0c0b58a2883459c027ff3a5f",
             "locator": {
-              "end": 213,
-              "kind": "line_range",
-              "start": 184
+              "kind": "symbol",
+              "name": "InstructionsChip"
             }
           },
           "kind": "code"

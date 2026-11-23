@@ -20,6 +20,216 @@
         }
       ]
     },
+    "100": {
+      "note": "The ordinary selector offers the selected harness’s modes, identifies the default source and keeps a chosen mode if it drops out of the list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25bf36570c564790806ae653e4f1cbfa0d958e5d",
+            "content": "sha256:23f586f9bf9624f684a5dca2fea1e93c457686abf08f51f32f5abac2c8e23a02",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "dashboard/src/cockpit/role-launcher/ModeOverrideSelect.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "101": {
+      "note": "The launch refuses applicable catalog-governed agent, model and effort failures before creation, and independently refuses permission-bearing or unknown-bearing start-call feature keys. It forwards a named mode even when the host does not list it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:b4fd32d47e3e4d3008d98f87a5e9d950193d9c6a0ff8ff3efeb69a03e39b0a37",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 332
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
+            "locator": {
+              "end": 551,
+              "kind": "line_range",
+              "start": 529
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:88f7cc7c5c0980e5901b6360a5674bb0e1f091c49587c406e9afca984eed093d",
+            "locator": {
+              "end": 714,
+              "kind": "line_range",
+              "start": 672
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:4dbb4d258d00e659098add02584bff171c4ac97afc9821194f3f7cfdf93eedcf",
+            "locator": {
+              "end": 915,
+              "kind": "line_range",
+              "start": 909
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "102": {
+      "note": "Matching saved inventory keeps eligible Start available while metadata is pending. With a settled response that has an empty agent list and unknown discovery, a configured selection can pass the catalog check unchecked. The mounted launcher shows no separate catalog-status line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "821f21c80bdb705adf01849d194ac6ef9bfb6375",
+            "content": "sha256:444c32f1b0e907dbe1245fa6a174a4a8ed0b637d22f18a99bb24dfd9b993c819",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "048b32b6982011c16588c213c0e77d2c806b8886",
+            "content": "sha256:b48673f228293f174d0711ec94007ede82850ec36fbb210a4c78af09c3f8633c",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "dashboard/src/cockpit/roleChatExecutionView.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9587f2f625e895a2933a3474ec4cfab7f630fdc0",
+            "content": "sha256:52cc94fcb358aeaf1bbef412313954442891c30ecc80a4c3e5f2c89be6bc52c8",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "dashboard/src/cockpit/role-launcher/roleLauncherReadiness.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9587f2f625e895a2933a3474ec4cfab7f630fdc0",
+            "content": "sha256:d5372224738d6383300f87859323a20ef703f4356b1634538e513c6740fc91a5",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "dashboard/src/cockpit/role-launcher/roleLauncherReadiness.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
+            "content": "sha256:8d87115e45a40832bb2083b5baf17e3d23c36a2595e57c1e8864fb76d418bd02",
+            "locator": {
+              "end": 1035,
+              "kind": "line_range",
+              "start": 1003
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:9847c20aaaf04fbf7961c5ed515c85e558d4bf60ec38e52e55e0e6b5bd69b57e",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 519
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:7fe3c4b8ea6fc1f7829c91e543face56acb25e1ab922da66ee58d3b42626cdcb",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 546
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:dd9da0e260fbe28fdbec9343e12f6594d463e7aea14aebf6702ba324aa75579b",
+            "locator": {
+              "end": 629,
+              "kind": "line_range",
+              "start": 601
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:27947e2886962c8e1ac6e7f5cbee84a495eb0834496e138706848e032dc5cf87",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 475
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49924393da60112d2b2d603aefea43b5b6d3e44",
+            "content": "sha256:e2aac63e23625b3e61f0f5ec132f80dc5848bfcfc5bf0f3c7120ac70144c4122",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.catalog.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "11": {
       "note": "Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file.",
       "targets": [
@@ -79,7 +289,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
             "content": "sha256:3392bfcc22276f192aed9fa84c970db0395da4b0b61a2f84855546c3b833b504",
             "locator": {
               "kind": "symbol",
@@ -142,7 +352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:d4945166328f159cff259a52f805972a28f69bea9e3327b38aeea8b992c026b1",
             "locator": {
               "kind": "symbol",
@@ -155,29 +365,16 @@
       ]
     },
     "16": {
-      "note": "The generated lifecycle mirror carries the cursor beside coherent identity and version fields. Anchor: \"export interface LifecycleOperationProjection {\"\n\nAnchor: \"export interface LifecycleOperationProjection {\"",
+      "note": "The generated lifecycle mirror carries the cursor beside coherent identity and version fields.  Anchor: \"export interface LifecycleOperationProjection {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
-            "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
+            "blob": "cee4871b92016c1a482cc0a12d710722ae2f8868",
+            "content": "sha256:1e8dcd4d0de939997e84b63be374b12baa726481047761a5f27a26e693697fb1",
             "locator": {
-              "end": 292,
+              "end": 334,
               "kind": "line_range",
-              "start": 263
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
-            "content": "sha256:516e1efcab915cbb3d91c8d2699f5aa34c47dd203545c1688e71b29b0b6880d1",
-            "locator": {
-              "end": 303,
-              "kind": "line_range",
-              "start": 274
+              "start": 279
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -186,16 +383,16 @@
       ]
     },
     "17": {
-      "note": "The fixture supplies a meaningful revision for the sample operation.\n\nAnchor: `meaningfulRevision`",
+      "note": "The fixture supplies a meaningful revision for the sample operation.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
-            "content": "sha256:7cb94c53a35ca6b3b3e5beae9ada33afec15c308a60ee91655f97dae7eb83208",
+            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
+            "content": "sha256:b3aef66b9f34eae8b9828a80aa3f57e86f30e104a2cc3ecc8906efc2755d04f9",
             "locator": {
-              "end": 689,
+              "end": 685,
               "kind": "line_range",
-              "start": 689
+              "start": 641
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -711,14 +908,16 @@
       ]
     },
     "35": {
-      "note": "The route's Role-chats pane owner.",
+      "note": "RoleChatsPane renders the shared launcher view with scoped options, role launch controls and the existing frame and report owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
-            "content": "sha256:75963cacf0433c265325b78bc40b9a20945fdbed2896e5536b9636c1e4567617",
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:afa7181a145ba93710bb28c128bced59ce88c123fc755a6df115af37e7ce0db1",
             "locator": {
-              "kind": "file"
+              "end": 134,
+              "kind": "line_range",
+              "start": 48
             },
             "path": "dashboard/src/cockpit/RoleChats.tsx"
           },
@@ -797,16 +996,16 @@
       ]
     },
     "40": {
-      "note": "RoleChatsPane binds the current role-launch selection to document/options scopes, request controls and the options loader, then passes that state to RoleChatsView. This composition is shared across roles; it does not itself implement an Investigator-specific selection or execution rule.",
+      "note": "RoleChatsPane supplies the current scope, request controls, metadata and independent refresh generations.",
       "targets": [
         {
           "anchor": {
-            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
-            "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+            "blob": "ebdf830e83d1050b9263295efdfe37f13c6818da",
+            "content": "sha256:a17f4bdcafe2b5653c6e205dba3fe689ec592128930d61d73860e5dd3de74048",
             "locator": {
-              "end": 133,
+              "end": 128,
               "kind": "line_range",
-              "start": 48
+              "start": 75
             },
             "path": "dashboard/src/cockpit/RoleChats.tsx"
           },
@@ -1594,16 +1793,16 @@
       ]
     },
     "72": {
-      "note": "A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and reports the request's selected model plus its step-up source — the host's observed model replaces it only when the host reports an applied model — with unreported mode/features explicit. This adds no chat navigation or acceptance authority.\n\nAnchor: Current source; preserved L88 property 65",
+      "note": "The configured Step up button sends canonical document scope and a trimmed nonblank reason. The status shows the host’s observed mode when present and uses the requested choice’s provenance in hover. Without an observation it labels the mode unreported.",
       "targets": [
         {
           "anchor": {
-            "blob": "49001f5ff9548e3c0b4a3ba3b69a05fb6fc8646f",
-            "content": "sha256:535316a94eebd817ef3d0c5f01db1c9fd275d85b44caa7168cb9aa5647a3c946",
+            "blob": "eb679f7ebe908f402c7206a7e41321494d12c943",
+            "content": "sha256:310e206f9793276211d7de0cf81cbaaf8604324351aaed6f83d133c88af1b55c",
             "locator": {
-              "end": 24,
+              "end": 38,
               "kind": "line_range",
-              "start": 1
+              "start": 5
             },
             "path": "dashboard/src/cockpit/role-launcher/StepUpControl.tsx"
           },
@@ -1611,14 +1810,27 @@
         },
         {
           "anchor": {
-            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
-            "content": "sha256:3f9e66aaf9e547933bfddf9dc79310cf8126d7a068156eac880b468ed5138a7d",
+            "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
+            "content": "sha256:e94ce744138d811be42f0b09155b403c8b40d85032929844d944b28d2867fae2",
             "locator": {
-              "end": 213,
+              "end": 131,
               "kind": "line_range",
-              "start": 1
+              "start": 118
             },
-            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa67492c22dfb0af1fca1cc4c454ffcac086b375",
+            "content": "sha256:d6c2707ff3aa64881b04913c64c8567224457b1e3b5caa630dcb2c8e1512e554",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_choices.py"
           },
           "kind": "code"
         }
@@ -2368,6 +2580,24 @@
             "path": "dashboard/src/cockpit/tabMemory.ts"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "99": {
+      "note": "Mounted cases distinguish observed mode from requested mode and preserve the unreported state.\n\nAnchor: \"names the mode a receipt reports and holds the unreported case\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1a73e2b93bb47101f79caae02930d779c6f82d7",
+            "content": "sha256:b313a5d242e1d59f8c09edca0c16f4f509c6c80568d38944657b694529373eb0",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "dashboard/src/cockpit/RoleChats.stepUp.integration.test.tsx"
+          },
+          "kind": "test"
         }
       ]
     }

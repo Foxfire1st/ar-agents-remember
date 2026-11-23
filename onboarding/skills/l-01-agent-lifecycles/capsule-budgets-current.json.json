@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
-        "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
+        "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+        "content": "sha256:d45c9ccf891b5c558a018c170e9b8c45048a3796c04c36ea33d9929f19e22e71",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+        "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
         "content": "sha256:a0abc4ead569d8a67d67a8e01a8d07edd5dc33813d24be486be77735cda4a99a",
         "locator": {
           "end": 6163,
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+        "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
         "content": "sha256:86ffd298030ed1ed89b21939e6217dcec9fce742e95fc56ab8222d99068d4014",
         "locator": {
           "end": 5103,
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
-        "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
+        "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+        "content": "sha256:d45c9ccf891b5c558a018c170e9b8c45048a3796c04c36ea33d9929f19e22e71",
         "locator": {
           "kind": "file"
         }
@@ -80,24 +80,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
-            "content": "sha256:75af2672431670155e3a4078c58f19ccd71fcff86f96995a806e2f67f6e2f7e1",
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:1556b38430b0b91643d0aca13936052e01cf50233bcb7f447833531577dd9011",
             "locator": {
-              "end": 159,
+              "end": 15,
               "kind": "line_range",
-              "start": 144
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+              "start": 3
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
-            "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:e0384fd7a2fb1b964c2b6d2a3453d3456017a6a0751411176817ae3633b28718",
             "locator": {
-              "kind": "file"
+              "end": 6163,
+              "kind": "line_range",
+              "start": 6153
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "content": "sha256:29003e58e34f21d06bf126021342d7f538729b4a3f2c94eaacb35a9cdbb6fac2",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
           "kind": "code"
         }
@@ -122,7 +136,7 @@
       ]
     },
     "3": {
-      "note": "Current generated measurements include ordinary linked templates.",
+      "note": "Generated ordinary-template measurements record the Manager brief at 1,465 words and its exact source SHA-256.",
       "targets": [
         {
           "anchor": {
@@ -139,10 +153,24 @@
         },
         {
           "anchor": {
-            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
-            "content": "sha256:b5ada6f52140db683a50714e499197395dfbf727bd291f2d9df51aa1b7d0a7ba",
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:d2a99a56f3fa742f84d2816c74c9e744d44d60bc8a611338c826c6d824f2c99c",
             "locator": {
-              "kind": "file"
+              "end": 6269,
+              "kind": "line_range",
+              "start": 6264
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:729ad9ab17f38fcc282f57aeb4b3661dded8ee274d2fa1fa5b67eed5b8858973",
+            "locator": {
+              "end": 6651,
+              "kind": "line_range",
+              "start": 6648
             }
           },
           "kind": "code"
@@ -154,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
             "content": "sha256:f8f8b8c92cf7bbc546918ecbd81a64ce055160bc40252f448e919df93cc9d4ed",
             "locator": {
               "end": 6177,

@@ -122,7 +122,9 @@ when this run would have created the marker (nothing was written), and the case'
 - The recorded authority's consumers: first-baseline adoption and branch mutation. [7]
 - The branches case set that holds this behavior end to end. [8]
 
+
 - The one git runner this module's `git init` goes through: `git_environment` strips `GIT_REPOSITORY_SELECTOR_ENV`, `GIT_LOCAL_TIMEOUT_SECONDS = 300` is the default bound, and `run_git` applies both. [9]
+
 
 
 - The failed-Git early return reports the marker as not created. [10]

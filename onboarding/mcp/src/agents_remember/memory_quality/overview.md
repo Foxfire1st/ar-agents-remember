@@ -27,11 +27,15 @@ The checklist's actionable count is exactly repairable findings plus missing onb
 
 Interactive `finalFullCatalog` remains a non-certifying readiness projection: the controller supplies no affected-closure plan digest and the catalog reports `finalizationEligible: false`. The prepared application adapter and its production affected-execution/final-certification composition were removed. Core certificate issuance and finalization still require their exact result, prefix and current-memory-input authority, but their existence is not a live Gate-5 producer or successful certification execution.
 
-`extents.definition_scope` owns reusable definition results for one operation and enters `grammars.parsing_scope` for diagnostic parse trees. Nested operations join the active scope; both owners clear their retained state at scope exit. Calls outside a scope parse independently.
+`extents.definition_scope` owns reusable definition results for one operation and enters `grammars.parsing_scope` for diagnostic parse trees. Nested operations join the active scope; both owners clear their retained state at scope exit. Definition extraction outside its definition scope parses independently.
+
+TypeScript anchor parsing memoizes each exact input, including an unresolved spelling, in the active request. Callers without a request owner use the separate process memo.
 
 MCP tool dispatch and finite CLI handlers establish the operation boundary; the dashboard server handler remains outside it. A background quality worker enters its own fresh context and definition scope. Completed validation results remain independently computed.
 
 ## Construction And Ownership
+
+A detached quality computation starts its own request memo and definition scopes. The run registry keeps its existing result ownership and repeatable poll behavior. A retained result has a separate lifetime from the computation that produced it.
 
 `check.py` owns the public package runner, available-check population and pre/post-refresh populations. `integrity/onboarding_drift_check/` owns legacy discovery, classification and bounded summaries. Git reads use the kernel Git-command owner rather than private runners; its repository-selector isolation matters because a verdict must describe the named repository. `models/drift.py` owns the shared status vocabulary. The classifier packet uses required status and optional detail fields; consumers read optional fields with `.get`.
 
@@ -258,6 +262,11 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 
 - definition_scope owns call-local definition results, joins nested scopes, enters parsing_scope and clears retained values on exit. [99]
 - parsing_scope retains diagnostic parse trees only within the active call and clears them on exit. [100]
+
 - MCP dispatch enters one definition scope before tool validation and handler execution. [101]
+
 - Finite command handlers enter definition_scope; parser registration leaves the dashboard handler unwrapped. [102]
-- A background quality worker owns a fresh Context and definition scope for its work. [103]
+
+- The background quality worker starts in a fresh context and opens its own request memo and definition scopes for the computation. [103]
+
+- TypeScript anchor parsing reuses exact inputs and unresolved answers within one native request. Unscoped callers use the separate process memo. \[104] [104]

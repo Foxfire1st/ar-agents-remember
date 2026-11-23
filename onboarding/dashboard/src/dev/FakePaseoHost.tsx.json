@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
-        "content": "sha256:bb4cc6a75b9dcdc539056a6084c3919bc210b3a8704fd8ddf34157cabd8654e1",
+        "blob": "9c8efdcbd323446cafc9ccd6316ff1824e19cec8",
+        "content": "sha256:e50400741ed39b46a03ab34e7e64bba0dd8338ff83f890fdc486a685d8df262e",
         "locator": {
           "end": 8,
           "kind": "line_range",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
-        "content": "sha256:3baf427123d4616f83a628e7d51e5edcc6f3c08811f106eb2f578c9835988e1c",
+        "blob": "9c8efdcbd323446cafc9ccd6316ff1824e19cec8",
+        "content": "sha256:42df71903ff8179bd4331d3c1ba9f02dfa75d4b7d3a7cf12bd27a0fdd9e35070",
         "locator": {
           "end": 80,
           "kind": "line_range",
@@ -46,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
+            "blob": "9c8efdcbd323446cafc9ccd6316ff1824e19cec8",
             "content": "sha256:7cea2441050e26f33a024ea5169233cde9d604f6fa6a573e1d55bd742527d81c",
             "locator": {
               "kind": "symbol",
@@ -58,12 +58,12 @@
       ]
     },
     "2": {
-      "note": "An opened agent's workspace is resolved from the fake's own agent table, never from the frame.",
+      "note": "The fake resolves an opened agent’s workspace from its own agent table.",
       "targets": [
         {
           "anchor": {
-            "blob": "53e1143222b86e5440474c01f85daaff2896c07c",
-            "content": "sha256:cea66ea9daa0e4f089242c9e07ded96f8e773c625b5acf9b5c85fe1931700946",
+            "blob": "9c8efdcbd323446cafc9ccd6316ff1824e19cec8",
+            "content": "sha256:79fc0100a2ba066ab1a7cfcb53de6f61d06d4be7f0558a666709ee2417e8775e",
             "locator": {
               "kind": "symbol",
               "name": "createFakeClient"

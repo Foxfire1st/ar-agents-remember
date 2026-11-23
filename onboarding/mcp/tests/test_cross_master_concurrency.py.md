@@ -18,7 +18,7 @@ Verify independent atomic masters sharing one protected source pair, private wor
 
 ### Logic
 
-QueueFixture builds two atomic masters with the same code/memory source branches and distinct work branches. The nine scenarios verify independent activation records/readiness, A-only private content, B leaf landing while A remains unfinished, activation release without publication, stale/non-fast-forward publication refusal, explicit checkpoint availability, genuine graph dependencies, and graph-less concurrency.
+QueueFixture builds two atomic masters with the same code/memory source branches and distinct work branches. The nine scenarios verify independent activation records and readiness, absence of A’s code and memory on the shared source refs, absence of A’s code in B’s code worktree and branch, B leaf landing while A remains unfinished, activation release without publication, stale/non-fast-forward publication refusal, explicit checkpoint availability, genuine graph dependencies, and graph-less concurrency.
 
 The full completion scenario lands A's first leaf and completes B through ordinary closeout/integration. A's stopped interval is represented by before/after private-state snapshots; this is not execution coverage of the public pause tool. A then uses the public sync, starts its remaining leaf, and completes through ordinary closeout/integration without a checkpoint substitute.
 
@@ -31,7 +31,7 @@ Scenarios compose the shared queue, checkpoint, and closeout fixtures under a de
 ### Invariants And Boundaries
 
 - A sibling selection, release, or landing cannot replace another master's activation record.
-- Unpublished work remains private and a stale publication cannot overwrite a sibling.
+- The privacy case checks both shared source refs and B’s code worktree and branch. The stale-publication case checks that B’s publication survives.
 - A reconciled master finishes through ordinary closeout and integration.
 - Both masters' real code and memory histories survive; cache bytes are not retention proof.
 - Only the authored dependency graph creates predecessor waiting; graph absence does not serialize independent masters.
@@ -51,18 +51,28 @@ No domain-documentation source is configured for this slice. The behavior descri
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
 
-- Independent activation, private content, and sibling leaf landing. [1]
+
+
+- Separate activation leaves both masters ready. A’s private code and memory are absent from their respective shared source refs. A’s code is also absent from B’s code worktree and code branch. A separate case lands B’s leaf while A remains active. [1]
+
+
+
 
 
 - Release and conflicting publication preserve sibling state. [2]
 
 
-- Ordinary resume/reconciliation/completion preserves actual histories. [3]
+
+
+- The master completes the synchronous transaction after its sibling lands, retaining the actual histories. [3]
+
 
 - The stopped interval is represented by snapshots, not a pause-tool call. [4]
 - Checkpoint and authored/absent dependency behavior remain distinct. [5]
 
+
 - Fixture commits are two actual outputs with Git-owned attribution. [6]
+
 
 
 ### Cross-Repo References

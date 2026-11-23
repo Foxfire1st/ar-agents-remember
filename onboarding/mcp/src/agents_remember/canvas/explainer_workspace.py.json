@@ -3,7 +3,119 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
+        "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+        "content": "sha256:37b419ca3d70b3042ff82856fb10de7eb26399a0023534722290e394c74c7975",
+        "locator": {
+          "end": 627,
+          "kind": "line_range",
+          "start": 591
+        }
+      },
+      "id": "RLZ-1K5Q28",
+      "invariant": "INV-W55VKB",
+      "origin": {
+        "handoffEntry": "Moved explainer Update refreshes the reading inputs and preserves its stage files",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The moved update creates missing folders, refreshes the reading inputs and writes the binding last without clearing the stage files.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+        "content": "sha256:1e70ba5759bf957560bddb33a248be6fe25ddb5e7948265fdd3467bd39e53732",
+        "locator": {
+          "end": 508,
+          "kind": "line_range",
+          "start": 396
+        }
+      },
+      "id": "RLZ-7RXQTE",
+      "invariant": "INV-29DEHG",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 1 — inputs — additional realizations",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The workspace writer collects reports from the selected leaf’s active and archived execution receipts and records each admitted path and SHA-256.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+        "content": "sha256:c44c2b04c06ca7b9635843f9b04c260951dbadc22c6b71a02fcb028a2a959c55",
+        "locator": {
+          "kind": "symbol",
+          "name": "_copy_inputs"
+        }
+      },
+      "id": "RLZ-ASD06Q",
+      "invariant": "INV-29DEHG",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 1 — inputs",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The writer copies the task and packets, lists report paths and SHA-256, and names the task report root in the empty notice.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+        "content": "sha256:9a853051d1f1b05f35cacb0358062de185eea93e488907162561a3ff7a455bd7",
+        "locator": {
+          "end": 556,
+          "kind": "line_range",
+          "start": 525
+        }
+      },
+      "id": "RLZ-FDXKB6",
+      "invariant": "INV-29DEHG",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 1 — inputs — additional realizations",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "Document preparation records the copied inputs and refreshes the reading files for the binding.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+        "content": "sha256:16a5660afdca652265cc49df99f43563d9431aef98f63068000d6d49ec53bceb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_copy_planned_documents"
+        }
+      },
+      "id": "RLZ-FQYACC",
+      "invariant": "INV-ET42V0",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 4 — planned variant",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The workspace copies the planned binding's documents into planned/ for the reading stage.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+        "content": "sha256:9c17fc478d466befd7b8efcee68a2205d7d3bc9635d3dbac9efa5c3891927945",
+        "locator": {
+          "end": 777,
+          "kind": "line_range",
+          "start": 768
+        }
+      },
+      "id": "RLZ-G07P1D",
+      "invariant": "INV-W55VKB",
+      "origin": {
+        "handoffEntry": "Moved explainer Update refreshes the reading inputs and preserves its stage files",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The turn grants name the existing stage and input destinations.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
         "content": "sha256:eeaf885739fc090909da529a44511b3d35d16cdbb648d02998ee811ac0ff59f1",
         "locator": {
           "kind": "symbol",
@@ -22,16 +134,16 @@
   ],
   "references": {
     "1": {
-      "note": "Every input is written before the binding, so a failed build never claims an environment\n\nAnchor: `def build_environment(`",
+      "note": "Build writes the inputs before it publishes the binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
-            "content": "sha256:4acb672ff41342a7f27f7a388b1dbfaa9f6e78a4710e955fafebc860b73b08e5",
+            "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+            "content": "sha256:fc46c4fbe1c207df4c919c39488e2a588ffacdb64a632b72d8233a945a1fb930",
             "locator": {
-              "end": 469,
+              "end": 581,
               "kind": "line_range",
-              "start": 439
+              "start": 560
             }
           },
           "kind": "code"
@@ -39,16 +151,27 @@
       ]
     },
     "2": {
-      "note": "An Update moves the same two worktrees and binds last; a failed moved Update leaves no binding",
+      "note": "A moved update refreshes the inputs and binding after preserving existing stage artifacts. An unchanged binding returns current.",
       "targets": [
         {
           "anchor": {
-            "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
-            "content": "sha256:7c05be08abe3d0b602d20eb2b617ec5bfd2801973dcd26112baca0be5f6edf0a",
+            "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+            "content": "sha256:5a7a6b17908cf41ab047964184dac35d092290d7242b18828b3bd1975f6e17aa",
             "locator": {
-              "end": 509,
+              "kind": "symbol",
+              "name": "update_environment"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+            "content": "sha256:37b419ca3d70b3042ff82856fb10de7eb26399a0023534722290e394c74c7975",
+            "locator": {
+              "end": 627,
               "kind": "line_range",
-              "start": 470
+              "start": 591
             }
           },
           "kind": "code"
@@ -56,16 +179,16 @@
       ]
     },
     "5": {
-      "note": "The process tree is recorded in a receipt before the seat is archived or any file is removed\n\nAnchor: `def retire_workspace(`",
+      "note": "Retire stores the process snapshot in a receipt before archival and removal.",
       "targets": [
         {
           "anchor": {
-            "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
-            "content": "sha256:b196680dd4b1d60e94ad39d32df6748662cd0c6a9bc1ba2192a37535121c573c",
+            "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+            "content": "sha256:8f3b81cfc880bc9bb50e71e7d23224641a398de9b75bf18123c55e54967a220e",
             "locator": {
-              "end": 737,
+              "end": 865,
               "kind": "line_range",
-              "start": 713
+              "start": 841
             }
           },
           "kind": "code"
@@ -73,16 +196,16 @@
       ]
     },
     "6": {
-      "note": "Archive, process end and removal are each recorded, and the receipt finishes only after the workspace is gone\n\nAnchor: `def settle_retire(`",
+      "note": "Retire finishes its receipt after archival, process cleanup and workspace removal.",
       "targets": [
         {
           "anchor": {
-            "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
-            "content": "sha256:1b5cd04aafffc95bbf2206bc82fb00f8c2402a1a6e2a391e35b463200a36e38d",
+            "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+            "content": "sha256:c2bab341f9b63d7e8eb527f906de2ab5a96e05454f11b60f1356c456ddf041d5",
             "locator": {
-              "end": 820,
+              "end": 948,
               "kind": "line_range",
-              "start": 761
+              "start": 889
             }
           },
           "kind": "code"
@@ -90,15 +213,43 @@
       ]
     },
     "7": {
-      "note": "A planned binding's folder receives the plan as text before the binding, and a recorded binding copies none.",
+      "note": "Recorded and planned bindings refresh shared reading inputs. The planned binding additionally receives the planned effects and packets.",
       "targets": [
         {
           "anchor": {
-            "blob": "eec120cd1a7e7328bead03713ee66a2b7fc3b442",
-            "content": "sha256:16a5660afdca652265cc49df99f43563d9431aef98f63068000d6d49ec53bceb",
+            "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+            "content": "sha256:d3e5d7df77d35fbac6f4ffea4f11edde28be205d324cddff11cd1fe0bb44d3d6",
             "locator": {
               "kind": "symbol",
-              "name": "_copy_planned_documents"
+              "name": "_copy_documents"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+            "content": "sha256:6d577d656cf05912231ab6c657787d124fdec0961334a5fdffd61457e9698820",
+            "locator": {
+              "end": 557,
+              "kind": "line_range",
+              "start": 509
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A populated report manifest gives the path and SHA-256 of each selected report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+            "content": "sha256:c44c2b04c06ca7b9635843f9b04c260951dbadc22c6b71a02fcb028a2a959c55",
+            "locator": {
+              "kind": "symbol",
+              "name": "_copy_inputs"
             }
           },
           "kind": "code"

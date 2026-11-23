@@ -5,9 +5,9 @@
 
 ## Purpose
 
-This route owns task-derived branch authority, exact code/external-memory landing, journal-backed closeout and direct-landing recovery, and terminal enclosure evidence. Its purpose is to distinguish an admitted candidate, an actual Git output, a protected-ref landing, and a terminal task edge. A cache, queue row, latest report, ambient checkout or inferred task completion cannot replace the evidence belonging to the relevant owner.
+This route owns task-derived branch authority, exact code and external-memory landing, direct-landing journal recovery and terminal enclosure evidence. The admitted candidate, the actual Git output and the protected-ref update each have their own evidence owner.
 
-The package contains several execution surfaces. The public integration application route calls the landing implementation in process. The retained lifecycle controller also supports journal-selected generations and detached workers. Direct landing is synchronous. These distinctions matter: the presence of lifecycle journals does not mean the current public integration call creates or claims one, and the in-process integration route does not establish that detached lifecycle support was deleted.
+The public integration route calls the landing implementation in process. Direct landings retain a journal generation for their accepted input and recovery. Older closeout and integration journal rows remain readable for audit.
 
 The governing route is [worktrees](../overview.md). Original route/status/coverage metadata and reference identities remain parent-owned.
 
@@ -37,9 +37,9 @@ Preview parent admission is narrow. `require_parent_series` reloads an existing 
 
 Lifecycle location owns locator/manifest/journal addressing and publication. Binding owns pure canonical identities, serialization and digest construction. The store strictly reads schema 3.0, checks canonical operation-kind filenames, distinguishes absence from unreadable or malformed state, and serializes its own observations and mutations with `exclusive_access`. Record revisions advance exactly once; meaningful revisions advance only for meaningful changes. Candidate identity, task intent, input, generation, integration authority and other accepted envelope fields are immutable, with separate monotonic/fill-only checks for mutation, certification, publication, preparation, cancellation and termination evidence.
 
-Generation, control, worker and observation responsibilities remain separated below `lifecycle/`. A matching accepted fingerprint observes the same generation; conflicting nonterminal work refuses. Failed generations require explicit task-addressed controls. Cancelled closeout replacement requires the current waiting door, cancelled disposition and proven worker exit. The default lifecycle execution launcher is detached-worker launch; newly created operations verify dependencies before launch. Direct landing explicitly cannot use that launcher. Worker launch failure publishes bounded retry/recovery evidence, retaining prepared-closeout recovery when applicable. Worker PID/lease/process identity cannot be silently replaced or cleared before proven exit, and termination history is append-only.
+Generation recovery, controls and observation have separate owners below `lifecycle/`. A matching direct fingerprint observes its generation. An admitted direct recovery keeps that generation and its mutation evidence. Status projects historical closeout and integration rows for audit, without controls or next-step guidance. An addressed control request returns a typed refusal naming the corresponding synchronous tool.
 
-Closeout admission owns candidate/plan normalization and provenance; the generic controller receives a supplied candidate and explicit integration authority instead of inferring kind-specific authority from ambient state. Closeout reconciliation precedes operation creation/claim processing. The closeout door lives at `<worktree_group>/reports/closeout-door.json`, with the operation's own publication taking precedence when present. Claiming requires the exact waiting generation, matching task/contract identity, canonical task intent and dependencies. Disposable queue projection remains a downstream readiness/status view rather than the owner of commit, retry, recovery or cancellation proof. Some integration lifecycle modules consume queue helpers directly; the former blanket statement that this package never imports the queue application layer is not an accurate description of those imports.
+Closeout admission owns candidate and plan normalization. The synchronous closeout tool proves current authority against its contract and returns the state reached and its actual paired commit outputs. The queue is a readiness projection. Historical door evidence remains readable through its own classifiers.
 
 Door reading has a specific observation limit: `read_published_door` returns absence for unreadable, malformed or invalid journal contents, and `live_closeout_door` can fall back to that reader when located-store observation fails. This local behavior does not prove that a complete mutation path accepts invalid authority. The initial-door recovery classifier separately requires developer decision for a canonical closeout record lacking create-time door intent, except its explicit legacy-migration case; it does not synthesize normal recovery intent.
 
@@ -51,7 +51,7 @@ Direct landing retains accepted input and journals memory mutation before provin
 
 Completed-integration reopening is an ancestry decision over newly produced legs: differing code or memory output reopens only when it is not already on the recorded source branch. Exact source-head admission is a separate owner in `modules/closeout.py`: permitted heads include the recorded base and, for completed or checkpointed integration, that contract's recorded landed head. Unrelated source movement still refuses. The older settings-only description should not be used as the complete current reopen predicate.
 
-Terminal evidence reading and archive publication are separate owners. The reader accepts owned enclosure artifacts, checks operation-kind filenames and archivable records, and bounds archived entries to 1,024 files and 64 MiB. It requires terminal status, valid cleanup retry disposition, observed worker-exit/termination resolution, and resolved mutations/publications. Unowned artifacts refuse by name instead of being discarded. A pre-move sync journal is classified as removed working state rather than archived landing evidence; only completed, cancelled or quarantined sync state permits that removal. Current terminal evidence remains readable without adoption. Archive publication requires exact external archive/receipt/locator proof before root deletion; interrupted publication reuses exact bytes, while changed cleanup requests or source evidence refuse.
+Terminal evidence reading and archive publication have separate owners. The reader accepts owned enclosure artifacts, checks operation-kind filenames and archivable records, and bounds archived entries to 1,024 files and 64 MiB. It requires the exact terminal status, valid cleanup disposition and resolved mutation or publication evidence.
 
 Finalization resolves task targets and unresolved-work blockers, performs or verifies cleanup, and only then reconciles task documents. Cleanup refusal leaves documents unchanged. Successful reconciliation completes the bound leaf and its immediate parent row; it does not infer that the parent master is completed. Series finalization has explicit master/sprint target machinery. Terminal atomic-series activation release precedes root-task archival in that finalization flow; release failure blocks archival and preserves the canonical identity needed to retry.
 
@@ -75,9 +75,9 @@ The card's 260821-CLIVE-L1/L2 and final door-to-journal accounts preserve the se
 
 The IAS frozen activation account says activation and sync shared protected-source serialization, with remote fetch before authority and local tips/pins/finalization under it. Current activation still records reconciling, syncs, rereads the contract/source pair and publishes active only when both bases are current; terminal release remains exact and preserves a different selection. However, current sync explicitly says no lock is held across the call. Older activation docstrings still mention repository integration authority. The inherited whole-transaction serialization promise therefore remains a named historical limit, not a proven current guarantee or a conclusion that every surrounding caller lacks a guard.
 
-The closeout-door cut attributed to `fad9808e` and de-entanglement cuts attributed to `a583beb8`, `1a0919c1`, `6982c6a7`, `173bb01e`, `0b63d6fc`, `be517eec` and `deb032fb` were not historically replayed. The present tree supports absence of the named legacy package and removed integration-quality/claim-transfer/publication-fence/organizational-completion-integration files, and presence of the relocated memory-quality/private-preparation owners. It also retains door journals, operation journals, locator publication, worker modules and detached launch support. Thus the historical assertion that all door/operation/journal planes or detached workers were deleted cannot describe this checkout. The old accepted concurrent-task-write loss and the eight-importer closeout-input support hub remain historical limits whose old witnesses were not examined; they are not measured current outcomes.
+The closeout-door cut attributed to `fad9808e` and de-entanglement cuts attributed to `a583beb8`, `1a0919c1`, `6982c6a7`, `173bb01e`, `0b63d6fc`, `be517eec` and `deb032fb` were not historically replayed. The present tree supports absence of the named legacy package and removed integration-quality/claim-transfer/publication-fence/organizational-completion-integration files, and presence of the relocated memory-quality/private-preparation owners. Door evidence, operation record decoding and locator publication survive. BUG-R15 removes the detached worker package and ordinary operation launcher. The old accepted concurrent-task-write loss and the eight-importer closeout-input support hub remain historical limits whose old witnesses were not examined; they are not measured current outcomes.
 
-260824-PDLS preserves the intent that collision classification, topology repair, archive proof and direct-landing execution have named owners without creating a second authority or permanent compatibility reader. CCR-R18@v1 / 260831-CCR-L18's observed-exit archive responsibility is now visibly in `terminal_enclosure_evidence.py`, consumed by the archive publisher. CCR-R12@v5's prepared-pair/ref-safety boundary remains relevant, but its broad absence-of-quality language is limited by the current converted-knowledge predicate.
+260824-PDLS preserves the intent that collision classification, topology repair, archive proof and direct-landing execution have named owners without creating a second authority or permanent compatibility reader. CCR-R18@v1 / 260831-CCR-L18 recorded the earlier worker-exit archive boundary. The current archive evaluator checks terminal state, retry disposition, and resolved mutation and publication evidence. CCR-R12@v5's prepared-pair/ref-safety boundary remains relevant, but its broad absence-of-quality language is limited by the current converted-knowledge predicate.
 
 260831-LOCR-L29/L30/L31's unreachable-finalization incident explains why landing and reclamation were separated. Its report about task documents remaining planning/inProgress is historical incident evidence, not a reproduced current failure. LOCR-L30/L34 checkpoint admission and candidate revalidation remain visible; L36's reconciled-memory distinction and 260913-LCA-L11's route-specific `LandingAdmission` survive as historical design context. Current checkpoint capture calls `series_memory_closeout`. The former exact ledger mapping, preserved ledger prefix/shape, per-row truth, source-blob/header promises and the developer ruling dated 2026-09-14T08:15+02:00 belong to the superseded ledger account. None becomes a current cache-admission rule by being retained here.
 
@@ -102,7 +102,9 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 - Retained reference account (no fresh execution or acceptance inferred): Direct landing recovery. [6]
 
-- Retained reference account (no fresh execution or acceptance inferred): Public operation projection derives legal controls and recovery surfaces from retained journal evidence. [7]
+
+- Direct projections derive current controls and recovery facts. Older closeout and integration projections preserve their saved outcome and state for audit. [7]
+
 - Retained reference account (no fresh execution or acceptance inferred): The landing output carrier has only code and memory-content commits. [8]
 - Retained reference account (no fresh execution or acceptance inferred): Only actual memory ancestry determines this integration proof. [9]
 > - Retained reference account (no fresh execution or acceptance inferred): Direct memory writes exclude the consumer cache. [10] [11]
@@ -128,14 +130,22 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Checkpoint publication requires the captured candidate and revalidates it against live capture. [19]
 
 
-- Strict schema-3 operation state has its own authority lock and immutable accepted envelope. [20]
 
-- Lifecycle defaults retain detached launch; direct landing explicitly refuses that launcher. [21]
+
+- The canonical lifecycle journal validates schema 3.0 and the operation kind for its path. Its authority lock serializes record transitions, which preserve the generation identity and durable input. [20]
+
+
+
+
+- Ordinary closeout and integration run in their tools. Direct landings keep generation-bound journal controls. [21]
+
 
 - Default services bind the current memory/gate ports without a prepared producer or continuation; separately, explicit core finalization authority requires exact green Gates 1–5 and current Gate-5 memory inputs. These contracts do not make certification an ordinary closeout prerequisite. [22]
 - Memory cache exclusion occurs in isolated tree capture; direct publication stages the exact judged tree. [23]
 - Index copy obtains bytes and timestamp from one open file and restores the timestamp. [24]
-- Bounded terminal reading owns canonical filenames, worker-exit proof and unowned-artifact refusal. [25]
+
+- Terminal enclosure evidence checks the exact stored disposition and preserved ownership. [25]
+
 
 > Retained earlier citation wording: - Landing and finalization have separate reclamation/task-publication owners; application integration has configurable seat effects. [26]
 

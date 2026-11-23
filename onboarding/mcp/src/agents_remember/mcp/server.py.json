@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
         "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+        "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP.call_tool"
+        }
+      },
+      "id": "RLZ-60GHTP",
+      "invariant": "INV-V4WR2R",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — registered role-start drain",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The dispatch owner clears request state before calling the allocator trim.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
         "content": "sha256:312d3f75f123cb354fd03fd95f8dd3fc94d3693499546a4be82abdd2bf7cf3a9",
         "locator": {
           "kind": "symbol",
@@ -40,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
         "content": "sha256:0e6725422a3eeea913b4bcd5b3deadefa0ea96e4ce447473d731c92ff3196b21",
         "locator": {
           "kind": "symbol",
@@ -58,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
         "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
@@ -76,7 +94,25 @@
     },
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+        "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP.call_tool"
+        }
+      },
+      "id": "RLZ-CG6DV5",
+      "invariant": "INV-HPHVCN",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — request ownership",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The common dispatch boundary opens a request scope around native tool execution.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
         "content": "sha256:fdfd078bb233e7616bdacc47766168eea5c696b7cf50c0a719787b863b635663",
         "locator": {
           "kind": "symbol",
@@ -94,11 +130,29 @@
     },
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
-        "content": "sha256:e056777fc950f723afb2628217470913514b02b53ec179cfc7d146c69d7a1eb1",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+        "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP.call_tool"
+        }
+      },
+      "id": "RLZ-FKY2PR",
+      "invariant": "INV-JB9D62",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — allocator high mark",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The dispatch finalizer awaits trim after scoped execution exits.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+        "content": "sha256:8d3ef09438ee2c52caadee125063bfefca466ce0885983ac124914895a396457",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP._execute_tool_call"
         }
       },
       "id": "RLZ-FSMKXF",
@@ -107,13 +161,13 @@
         "handoffEntry": "BUG-R09@v3 rule 1",
         "leaf": "261112-BUG-L9"
       },
-      "rationale": "Every MCP tool enters this dispatch, which owns its complete definition scope.",
+      "rationale": "Every public tool call delegates here from its request memo scope. This method owns the separate definition scope through dispatch.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
-        "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+        "content": "sha256:30f6f571cc68f363ec3ce74d65e1543d2a13a29bc8af4eb6ea08403d1b5d65cf",
         "locator": {
           "kind": "symbol",
           "name": "_threaded"
@@ -125,12 +179,12 @@
         "handoffEntry": "MIK-R213@v1 rule 1",
         "leaf": "260928-MIK-L202"
       },
-      "rationale": "The worker bridge carries ContextVars and drains cancellation before the ordering lock can release.",
+      "rationale": "The synchronous wrapper delegates to the common thread bridge, which carries ContextVars and drains cancellation before the dispatch ordering lock can release.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
         "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
@@ -148,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
         "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
         "locator": {
           "kind": "symbol",
@@ -166,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
         "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
@@ -184,11 +238,11 @@
     },
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
-        "content": "sha256:e056777fc950f723afb2628217470913514b02b53ec179cfc7d146c69d7a1eb1",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+        "content": "sha256:8d3ef09438ee2c52caadee125063bfefca466ce0885983ac124914895a396457",
         "locator": {
           "kind": "symbol",
-          "name": "AgentsRememberMCP.call_tool"
+          "name": "AgentsRememberMCP._execute_tool_call"
         }
       },
       "id": "RLZ-VWKSMD",
@@ -202,12 +256,12 @@
     },
     {
       "anchor": {
-        "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
         "content": "sha256:e55057a9ca722d256995f6908c4f087e8376cb23ba670ddfe858c7846364ce6d",
         "locator": {
-          "end": 333,
+          "end": 328,
           "kind": "line_range",
-          "start": 329
+          "start": 324
         }
       },
       "id": "RLZ-WR0C2S",
@@ -226,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
             "locator": {
               "kind": "symbol",
@@ -242,12 +296,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:fdfd078bb233e7616bdacc47766168eea5c696b7cf50c0a719787b863b635663",
             "locator": {
-              "end": 156,
+              "end": 166,
               "kind": "line_range",
-              "start": 142
+              "start": 152
             }
           },
           "kind": "code"
@@ -259,7 +313,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:b500dba00d72e964c33584080b15292c3ca591ab4f4a69285f610cdcfdf8b851",
             "locator": {
               "kind": "symbol",
@@ -275,12 +329,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
-            "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:30f6f571cc68f363ec3ce74d65e1543d2a13a29bc8af4eb6ea08403d1b5d65cf",
             "locator": {
-              "kind": "symbol",
-              "name": "_threaded"
+              "end": 187,
+              "kind": "line_range",
+              "start": 183
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16c9244c6c6d7b49e26f835cf992ae04304056f5",
+            "content": "sha256:8270eb64bb55bec46ee910fba95941cf2303221cd04753f4019076d6e81336e9",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/mcp/thread_workers.py"
           },
           "kind": "code"
         }
@@ -291,12 +359,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:cc4728a41e6f4052321429b9b65a0577f08f5890549c914edd2b55e2d572a7a8",
             "locator": {
-              "end": 137,
+              "end": 147,
               "kind": "line_range",
-              "start": 118
+              "start": 128
             }
           },
           "kind": "code"
@@ -308,13 +376,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:dddcc4e6d80d9521a9a274fd9fdd0b9ac6d21651000e906e9f9702aa2482fc3c",
             "locator": {
-              "end": 333,
+              "end": 328,
               "kind": "line_range",
-              "start": 328
+              "start": 323
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The dashboard declares its durable-store role on the reload-worker and foreground or daemon entry paths. [15]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54b818118629a276761c14d24046428232306f6e",
+            "content": "sha256:74cd97abd5406b17a2c7a00a502a873c545bfd7c790ef3cf3225bc0e788103e3",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 665
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "54b818118629a276761c14d24046428232306f6e",
+            "content": "sha256:e85303d2086405c13ad45f808fd6ae05d6b7a01bf381aca4101c6ee6741902f2",
+            "locator": {
+              "end": 800,
+              "kind": "line_range",
+              "start": 780
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
           "kind": "code"
         }
@@ -471,7 +570,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:623450c4c9e101bc8c5b6858ee7c0c1b15b27a9579668bba5dcce472ee7d4017",
             "locator": {
               "kind": "symbol",
@@ -487,7 +586,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
             "locator": {
               "kind": "symbol",
@@ -503,7 +602,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
             "locator": {
               "end": 92,
@@ -515,12 +614,12 @@
         },
         {
           "anchor": {
-            "blob": "5559f3ad51968170d7196aff5a19e880d981db3e",
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
             "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
             "locator": {
-              "end": 359,
+              "end": 354,
               "kind": "line_range",
-              "start": 336
+              "start": 331
             }
           },
           "kind": "code"

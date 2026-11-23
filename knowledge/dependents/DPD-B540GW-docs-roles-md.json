@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The page holds: the coordination text now reads a closeout's generation from `runningOperation` while the operation is queued or running and otherwise from `lifecycleOperations`, and the roles page names no generation, no status field and no refusal.",
-    "task": "261112-BUG-L7",
+    "statement": "The Roles guide’s dashboard role and task selection, available role_start overrides and permission-mode order still agree with the admitted-start route.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+      "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/role_launcher.py"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
     {
-      "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+      "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -126,7 +126,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
     },
     {
-      "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+      "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
@@ -136,42 +136,42 @@
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
     {
-      "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+      "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
     },
     {
-      "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+      "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
     {
-      "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+      "blob": "5c00de98823ae8d0ddbdd099bf55902a15dcf453",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/launcher.md"
     },
     {
-      "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+      "blob": "775f056813e59e9f1426a560af777dc2be162c85",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+      "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
     },
     {
-      "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+      "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/route_review.py"
     },
     {
-      "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+      "blob": "8df1753c138980d015641171fd9ced522dfc5664",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
     {
-      "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+      "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     }

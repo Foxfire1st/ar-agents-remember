@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "blob": "712aed3c9a71e9b1a6404e12c1224c5c2b751852",
             "content": "sha256:d40aa87012b3b10aabac28476b26ae2c827c1f0d6de300fb8cba325792ab0521",
             "locator": {
               "kind": "symbol",
@@ -20,7 +20,7 @@
         },
         {
           "anchor": {
-            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "blob": "712aed3c9a71e9b1a6404e12c1224c5c2b751852",
             "content": "sha256:ae2287bf16d25ee0dfbc758a66f46a77f7b71493c6ecf4949cef591ddc09a163",
             "locator": {
               "kind": "symbol",
@@ -183,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f89c07d5c76650bfb7a058e9cdd8e721a48e1e5a",
+            "blob": "ef07cbf9743d369be2ddfe76bd02738aecb7efb9",
             "content": "sha256:c829e5b3d2fee5c0ff65c71bb9d28c03c60ce2eb2d25fde667b99860e36c1644",
             "locator": {
               "end": 17,
@@ -196,7 +196,7 @@
         },
         {
           "anchor": {
-            "blob": "f89c07d5c76650bfb7a058e9cdd8e721a48e1e5a",
+            "blob": "ef07cbf9743d369be2ddfe76bd02738aecb7efb9",
             "content": "sha256:f38ec2d7de66d3b2f2555ac4eb1ff38f8da270d0d98d24495943170e2fce4b47",
             "locator": {
               "end": 78,
@@ -209,7 +209,7 @@
         },
         {
           "anchor": {
-            "blob": "f89c07d5c76650bfb7a058e9cdd8e721a48e1e5a",
+            "blob": "ef07cbf9743d369be2ddfe76bd02738aecb7efb9",
             "content": "sha256:77226cdbd4cf59d05780f7a0a8feea64cc67414d9977459a5b7982208d349f68",
             "locator": {
               "end": 111,
@@ -423,7 +423,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "blob": "712aed3c9a71e9b1a6404e12c1224c5c2b751852",
             "content": "sha256:c3efb44186b31cc466a9c863b21521527f8f28b4ef2de202d85649dc2c11e9cb",
             "locator": {
               "kind": "symbol",
@@ -436,28 +436,16 @@
       ]
     },
     "20": {
-      "note": "Strict schema-3 operation state has its own authority lock and immutable accepted envelope.",
+      "note": "The canonical lifecycle journal validates schema 3.0 and the operation kind for its path. Its authority lock serializes record transitions, which preserve the generation identity and durable input.",
       "targets": [
         {
           "anchor": {
-            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
-            "content": "sha256:93e3600055a2f4be4f6eebdc109a231d3115e85db536bfd371080e6183a0a55f",
+            "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
+            "content": "sha256:eba1c9fe237ae6fb48a429d9a82046da4027d367bc40a14f07518bbdbefa9913",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleOperationStore"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
-            "content": "sha256:75c39d3c0d84f8f0c16ccfd241fa36581dde7adce2675cae23717e7938dbda85",
-            "locator": {
-              "end": 383,
+              "end": 467,
               "kind": "line_range",
-              "start": 308
+              "start": 464
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
           },
@@ -465,12 +453,12 @@
         },
         {
           "anchor": {
-            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
-            "content": "sha256:8534584206ec4ebd8eca4d6a78ff42a06bff9fea1076d0ff6a62622d89c01dff",
+            "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
+            "content": "sha256:91044d7ea499e93209d052e20cb3feafb97a27df7e70573fbd51b3883dd79277",
             "locator": {
-              "end": 651,
+              "end": 540,
               "kind": "line_range",
-              "start": 525
+              "start": 470
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
           },
@@ -478,23 +466,51 @@
         },
         {
           "anchor": {
-            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
-            "content": "sha256:3724168940b2ae8f43ac0f9177c37db71689b097dc2bfe904f5d032732d5f88c",
+            "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
+            "content": "sha256:87461444e0b32193671801785ff6d62e12d172795e7f4e59c2a240703a3d876e",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
-            "content": "sha256:ae62ecfe397de287d5099cd535649bc5f24da59486d34c7eed336b52fd7a66db",
-            "locator": {
-              "end": 381,
+              "end": 863,
               "kind": "line_range",
-              "start": 306
+              "start": 842
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
+            "content": "sha256:5c87f1f202d2a88a62ebd60af23388306a053e79732196fa5dfbedf3f9dfdea1",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 352
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
+            "content": "sha256:b047ad2b8a631c3be1585ddcbc6cd765c772a2fc8efb2cca3b7757e45ccc1cce",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 438
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ffd496cb082bcbefc2d089e5df42c3665852f0c",
+            "content": "sha256:889ddc43e49e1e491f69a4c1e08b0112c28dd1043326b48d485b14bcfe63571e",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 242
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
           },
@@ -503,29 +519,31 @@
       ]
     },
     "21": {
-      "note": "Lifecycle defaults retain detached launch; direct landing explicitly refuses that launcher.",
+      "note": "Ordinary closeout and integration run in their tools. Direct landings keep generation-bound journal controls.",
       "targets": [
         {
           "anchor": {
-            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
-            "content": "sha256:ea67298c66c527f3b17dd24acbff9ef4cc888f75f70c436d860d23118aa2838b",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "content": "sha256:3d0849c889d58c090cf88c69dbc773bfb7dc65d726aa07f911e4a98f74201fe2",
             "locator": {
-              "kind": "symbol",
-              "name": "_operation_execution"
+              "end": 425,
+              "kind": "line_range",
+              "start": 387
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
-            "content": "sha256:078cb53c91a747a1c64a7ba26deaadc3b247dc91b4c79855576643001feb4e26",
+            "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+            "content": "sha256:9484d946d88e820406e4ebfd0d88e165685e1ec599af602227e22b3cc64d4da7",
             "locator": {
-              "kind": "symbol",
-              "name": "launch_detached_worker"
+              "end": 82,
+              "kind": "line_range",
+              "start": 46
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
           },
           "kind": "code"
         }
@@ -635,7 +653,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
             "locator": {
               "kind": "symbol",
@@ -648,16 +666,29 @@
       ]
     },
     "25": {
-      "note": "Bounded terminal reading owns canonical filenames, worker-exit proof and unowned-artifact refusal.\n\nAnchor: canonical evidence reader",
+      "note": "Terminal enclosure evidence checks the exact stored disposition and preserved ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
-            "content": "sha256:fb99b73861004a43b72a8746d956864a89b0a457fd2c9a54fd2257c8ee8f9c79",
+            "blob": "2cc4102fc9005b89c8d955d038b446040ff7e520",
+            "content": "sha256:0d74275229344b8e7589308b805cb500b474c858ce1ceaacd8c6db53bbafca98",
             "locator": {
-              "end": 212,
+              "end": 132,
               "kind": "line_range",
-              "start": 33
+              "start": 57
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2cc4102fc9005b89c8d955d038b446040ff7e520",
+            "content": "sha256:8274d94452757b80e6e091a8086734e47f07c3e618cc80941cef8056d835543b",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 169
             },
             "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
           },
@@ -670,12 +701,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:ab53844328620871d7158937a5bdfc2830bccb901f7f81fe1a3fbca62d45d276",
             "locator": {
-              "end": 545,
+              "end": 544,
               "kind": "line_range",
-              "start": 508
+              "start": 507
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -934,12 +965,12 @@
         },
         {
           "anchor": {
-            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
             "content": "sha256:bb8ca008b295162e540ceb5fe199d463faee8d2a2133161358f6c02b224c4a9f",
             "locator": {
-              "end": 120,
+              "end": 74,
               "kind": "line_range",
-              "start": 120
+              "start": 74
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
@@ -947,12 +978,12 @@
         },
         {
           "anchor": {
-            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
             "content": "sha256:2b7a3f458448b900d425419a9822adcfb019ab2e8c15b95e9b5713525f9ab1e0",
             "locator": {
-              "end": 167,
+              "end": 118,
               "kind": "line_range",
-              "start": 165
+              "start": 116
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
@@ -1027,11 +1058,11 @@
       ]
     },
     "7": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Public operation projection derives legal controls and recovery surfaces from retained journal evidence.",
+      "note": "Direct projections derive current controls and recovery facts. Older closeout and integration projections preserve their saved outcome and state for audit.",
       "targets": [
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
             "content": "sha256:2a93ceb2cd2bba8b07d2ce242e2567ae6207922b3170f8e0fbd6884bf970f530",
             "locator": {
               "kind": "symbol",
@@ -1043,11 +1074,12 @@
         },
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
-            "content": "sha256:95a0f7f9e891cc5d961e40a825c23bf3525854dadfc906a83d57108c4b932a94",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+            "content": "sha256:4687c38e9032221beea78af88ea57223dc6a5444aba8843ed28dc70d12e59118",
             "locator": {
-              "kind": "symbol",
-              "name": "_projected_operation_result"
+              "end": 283,
+              "kind": "line_range",
+              "start": 208
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
           },
@@ -1055,11 +1087,12 @@
         },
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
-            "content": "sha256:02733c3c2502bbc568aff0a43397e7827a47df13570b0142dd1fcb92fbb8431f",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+            "content": "sha256:c79666a2bddf67e22c8ad7dcb2e770b00a6011ac78babc0e274ea311b5d513ed",
             "locator": {
-              "kind": "symbol",
-              "name": "_operation_specific_projected_result"
+              "end": 495,
+              "kind": "line_range",
+              "start": 478
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
           },

@@ -1,0 +1,73 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/renew-paseo-fixture.mjs",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d9e8a0d7007a23e15221a2ca59b9549f28c2c807",
+        "content": "sha256:d96c27cec263dd94176b2e9a5ee821be8c80fddf0b91e0ed9b949f0be2c12e3d",
+        "locator": {
+          "end": 119,
+          "kind": "line_range",
+          "start": 69
+        }
+      },
+      "id": "RLZ-HW9R6R",
+      "invariant": "INV-5JH1KE",
+      "origin": {
+        "handoffEntry": "L10-curated-fixture-copy",
+        "leaf": "261112-BUG-L10"
+      },
+      "rationale": "Renewal selects the pinned installed packages and the verification branch checks the README and recorded copy.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The command reads the host pin and checks the installed package versions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9e8a0d7007a23e15221a2ca59b9549f28c2c807",
+            "content": "sha256:56fea860ebd0916d618d302b88ef3d7ec2a921ed1b4f0a6a0c014772768513aa",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9e8a0d7007a23e15221a2ca59b9549f28c2c807",
+            "content": "sha256:0be1703f2b374bb0ab84f59a05c5fd53dd57424562863fa3a8e4409cfc34c8ae",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The check branch verifies the README and the copy. Renewal writes the copied subtree and provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9e8a0d7007a23e15221a2ca59b9549f28c2c807",
+            "content": "sha256:1d351d3f370e558556da111304dd3a759e4ca59cfa373ce7b99438de0f1b59b9",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

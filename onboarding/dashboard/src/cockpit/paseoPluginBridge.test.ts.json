@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
+        "blob": "5b0ef7f71d21cdfa42d7b69beda571f468de68a2",
         "content": "sha256:6e3711f8b1ea29d65c8fb1710fb04778e713bc3c700c336269ec7040dd05206f",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
+        "blob": "5b0ef7f71d21cdfa42d7b69beda571f468de68a2",
         "content": "sha256:8f2fe8738bec3fd24b71037ef8b3f51bfb299d10382ab4c5a7e169bb6a24c9d8",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
-        "content": "sha256:a56815f0a8c202461de117e7754f6b15d7a48107d3ea6c0f8a61f7f086efcf80",
+        "blob": "5b0ef7f71d21cdfa42d7b69beda571f468de68a2",
+        "content": "sha256:2397d21b2402171ac3d798ec1417ec336b0c4b563b4e8cc8fc9ade0754c2ece8",
         "locator": {
           "end": 97,
           "kind": "line_range",
@@ -53,7 +53,7 @@
         "handoffEntry": "MIK-R123@v1:sentences-0.11.1",
         "leaf": "260928-MIK-L123"
       },
-      "rationale": "The moved compact fixture comment retains its 0.11.1 source pin, not a new host confirmation.",
+      "rationale": "The compact fixture attributes its modeled display signs to pinned Paseo 0.16.2.",
       "role": "support"
     }
   ],
@@ -63,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
+            "blob": "5b0ef7f71d21cdfa42d7b69beda571f468de68a2",
             "content": "sha256:9decb38393f068dd1586140f04380fabc9b10b8eaddac5e277150b4ea4e04d3c",
             "locator": {
               "end": 390,
@@ -80,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
+            "blob": "5b0ef7f71d21cdfa42d7b69beda571f468de68a2",
             "content": "sha256:6e3711f8b1ea29d65c8fb1710fb04778e713bc3c700c336269ec7040dd05206f",
             "locator": {
               "end": 617,
@@ -97,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
+            "blob": "5b0ef7f71d21cdfa42d7b69beda571f468de68a2",
             "content": "sha256:8f2fe8738bec3fd24b71037ef8b3f51bfb299d10382ab4c5a7e169bb6a24c9d8",
             "locator": {
               "end": 635,
@@ -110,12 +110,12 @@
       ]
     },
     "4": {
-      "note": "The compact DOM fixture retains its explicit 0.11.1 source pin.\n\nAnchor: \"chat. Pinned @getpaseo/server 0.11.1.\"",
+      "note": "The compact DOM fixture names the pinned @getpaseo/server 0.16.2 release.\n\nAnchor: \"Pinned @getpaseo/server 0.16.2.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
-            "content": "sha256:a56815f0a8c202461de117e7754f6b15d7a48107d3ea6c0f8a61f7f086efcf80",
+            "blob": "5b0ef7f71d21cdfa42d7b69beda571f468de68a2",
+            "content": "sha256:2397d21b2402171ac3d798ec1417ec336b0c4b563b4e8cc8fc9ade0754c2ece8",
             "locator": {
               "end": 97,
               "kind": "line_range",

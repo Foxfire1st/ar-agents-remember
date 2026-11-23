@@ -81,7 +81,7 @@ the production path to drive.
 - The complete `mcp/tests/evidence-lifecycle.toml` declares this module as an exact
   consumer of `_user_settings_guard.py`, `curator_coherence_test_support.py` and
   `fixtures/repository_profiles/node/package-lock.json`. The current catalog has
-  **17 contracts and 116 artifacts**. The earlier 13/54 consumer-addition account
+  **18 contracts and 120 artifacts**. The earlier 13/54 consumer-addition account
   describes the creating leaf's source epoch and is not the current catalog population.
 - `_tool_publish` and `_tool_publish_bare_name` reach the **application** boundary
   (`curator_coherence_tool`) for returned refusal-code assertions. The author-field case instead
@@ -178,8 +178,22 @@ assessment, and the same `curator_coherence_subject_assessment_state` projection
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1951-1951 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" [1]
-- The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" [2]
+
+
+- The lane catalog declares this suite in integration. [1]
+
+
+
+
+- The lane catalog declares this suite in integration. [2]
+
+
+
+
+
 - The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation. [3]
+
+
+
 - The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. [4]
 - The record's `assessments` collection that the publish action accepts holds each assessment identity once, a rule kept separate from judgment-to-candidate coverage. [6]

@@ -4,15 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The unit marker, the fixture, the seed and the public-seam driver every case uses.",
+      "note": "The unit marker, per-test fixture builder, identity seed and application comparison driver.",
       "targets": [
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
             "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
             "locator": {
-              "kind": "symbol",
-              "name": "pytestmark"
+              "end": 47,
+              "kind": "line_range",
+              "start": 47
             }
           },
           "kind": "test"
@@ -22,8 +23,9 @@
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
             "content": "sha256:9ab933a025c006b785e30de6053488b4f4df789d99d5ccef255413f54db5aa19",
             "locator": {
-              "kind": "symbol",
-              "name": "fixture"
+              "end": 58,
+              "kind": "line_range",
+              "start": 54
             }
           },
           "kind": "test"
@@ -33,8 +35,9 @@
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
             "content": "sha256:21e0116ccc01bad8e77724e0b820a374828bdc0d9136c366d71a045aaed78f17",
             "locator": {
-              "kind": "symbol",
-              "name": "diff_seed"
+              "end": 68,
+              "kind": "line_range",
+              "start": 61
             }
           },
           "kind": "test"
@@ -44,8 +47,9 @@
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
             "content": "sha256:9eb12fcbe341dcc7e38f40d3e4b30ebe873a4e888bf17948c22dd72885fa3737",
             "locator": {
-              "kind": "symbol",
-              "name": "run_diff"
+              "end": 106,
+              "kind": "line_range",
+              "start": 71
             }
           },
           "kind": "test"
@@ -128,16 +132,16 @@
       ]
     },
     "13": {
-      "note": "The no-trees expansion that claims no change set.\n\nAnchor: \"test_the_expansion_of_a_comparison_that_observed_no_trees_claims_no_change_set\"",
+      "note": "The comparison still returns a page without named code trees. The source expansion carries neither a measured unattributed path nor an unattributed-path limitation.",
       "targets": [
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
-            "content": "sha256:06040644e1177fef0bfb0b28f3bac7b152e792e217375a409b8062eb433afb24",
+            "content": "sha256:28cffbb855e3be388ebcc917e58558a32ecd9c4b70c0a524e49d196ce775ccef",
             "locator": {
-              "end": 677,
+              "end": 714,
               "kind": "line_range",
-              "start": 640
+              "start": 677
             }
           },
           "kind": "test"
@@ -215,12 +219,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:5187759dd6296819d4d34463de47bcd6c46909ea7c53d6a826bbb51edef3ba1a",
             "locator": {
-              "end": 5062,
+              "end": 1346,
               "kind": "line_range",
-              "start": 1
+              "start": 1310
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -228,7 +232,20 @@
         },
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:2e75aecef7732387589ac0894f66fe040076563eefec8e87d1a4b653ba254593",
+            "locator": {
+              "end": 5039,
+              "kind": "line_range",
+              "start": 5036
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
             "content": "sha256:c855e7d5734aee727fc185e5ae0d6e0feef339e7b35ad5d149e83c61d603fc54",
             "locator": {
               "end": 234,
@@ -242,16 +259,29 @@
       ]
     },
     "16": {
-      "note": "**The unit-lane row this module occupies, and the governed support artifact it consumes.** Anchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\" Anchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\"",
+      "note": "The lifecycle catalog binds the diff-scope support artifact to the exact baseline-union proof node.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:5187759dd6296819d4d34463de47bcd6c46909ea7c53d6a826bbb51edef3ba1a",
             "locator": {
-              "end": 5062,
+              "end": 1346,
               "kind": "line_range",
-              "start": 1
+              "start": 1310
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:2e75aecef7732387589ac0894f66fe040076563eefec8e87d1a4b653ba254593",
+            "locator": {
+              "end": 5039,
+              "kind": "line_range",
+              "start": 5036
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -465,16 +495,16 @@
       ]
     },
     "3": {
-      "note": "**The revised statement as removal beside unrelated addition, and the divergent revision groups an identity seed retains per side.**",
+      "note": "The comparison shows the two exact revisions of one identity as separate removal and addition items. The identity seed retains one selected revision in each side's group.",
       "targets": [
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
-            "content": "sha256:f58a833d689e7dd2332312d73dce1fc75f99e18180a7e087a18bf89c66f5aaa4",
+            "content": "sha256:28e81beba35c8b7e6816c2e61e9ea36dacf014ba041111db6c19bf2ad7f04f9b",
             "locator": {
-              "end": 148,
+              "end": 169,
               "kind": "line_range",
-              "start": 111
+              "start": 132
             }
           },
           "kind": "test"
@@ -482,11 +512,11 @@
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
-            "content": "sha256:0e701a73ad260212e555372c4fdab6c372d71895c08f61e6fa04de3d2a88d02e",
+            "content": "sha256:9cedd9427637cd642cd6a79b0479f21237a7f352f4b5f596a03e1bb6a386b19b",
             "locator": {
-              "end": 378,
+              "end": 373,
               "kind": "line_range",
-              "start": 350
+              "start": 343
             }
           },
           "kind": "test"
@@ -494,16 +524,16 @@
       ]
     },
     "4": {
-      "note": "**The source-only change: `record_field_changed=False` with `source_observation_changed=True`, on identical recorded anchors.**",
+      "note": "Both claims at the rewritten path retain their recorded source identities. The comparison reports a source-observation change and no record-field change for each.",
       "targets": [
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
-            "content": "sha256:bb55581afadc33f565d5d5ff78784b89fca94e583f743848c06857a6cc22d4af",
+            "content": "sha256:2d7b23204017465b024ec3a0413b4845b71c0a80377a37d62d2fe9c002052cf6",
             "locator": {
-              "end": 193,
+              "end": 214,
               "kind": "line_range",
-              "start": 151
+              "start": 172
             }
           },
           "kind": "test"
@@ -511,16 +541,16 @@
       ]
     },
     "5": {
-      "note": "The statement-only change that still returns the attributed code.\n\nAnchor: \"test_a_statement_revision_with_an_unmoved_source_reports_the_change_and_keeps_the_code_visible\"",
+      "note": "The new revision remains an added record with a candidate-side exact-recorded-blob attribution. The case asserts no source-observation change.",
       "targets": [
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
-            "content": "sha256:f3ed20619f70bdf491d98e42ca79b0f8cf1d3c3f5536f8759ca43d72c5a51dd1",
+            "content": "sha256:538602d128551b7a89be8f0f2bc4a010d2c8dce221993e0323013ec39f5652d0",
             "locator": {
-              "end": 219,
+              "end": 246,
               "kind": "line_range",
-              "start": 189
+              "start": 217
             }
           },
           "kind": "test"
@@ -545,16 +575,16 @@
       ]
     },
     "7": {
-      "note": "**The packet's first non-conforming example, and the node `M1`/`M2` kill.**\n\nAnchor: \"test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"",
+      "note": "The removed realization retains its baseline anchor at exact_recorded_blob in the comparison union, and its path remains attributed.",
       "targets": [
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
-            "content": "sha256:701eeeb9e956666efd3487adfd3bb7f6121d905792d4ef98de5d97b1f723a2a2",
+            "content": "sha256:01b96d95a32086cce401e101566384603e719f797336ca7ee06ee5568a9ad7cb",
             "locator": {
-              "end": 309,
+              "end": 337,
               "kind": "line_range",
-              "start": 276
+              "start": 304
             }
           },
           "kind": "test"
@@ -562,16 +592,16 @@
       ]
     },
     "8": {
-      "note": "**The explicit per-side selectors addressing two different exact revisions of one identity.**",
+      "note": "The explicit before and after selectors name different revisions of the same invariant. The union reports the old revision on the before side and the new revision on the after side.",
       "targets": [
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
-            "content": "sha256:bdd72fb19530b17b9def8bb0a662916820da845a1fa6e06d705d328fa70d7772",
+            "content": "sha256:1c86576475f1a474c061c6fd8eb492c4093ea5c6b2df4fd3524b82aaa490570a",
             "locator": {
-              "end": 395,
+              "end": 423,
               "kind": "line_range",
-              "start": 364
+              "start": 392
             }
           },
           "kind": "test"
@@ -579,19 +609,45 @@
       ]
     },
     "9": {
-      "note": "The present-outside-versus-absent distinction asserted side by side, and the coverage decision's two selection- and probe-based rules -- another exact revision selected, or the record held by the other side's tables -- with no authored edge participating.",
+      "note": "The test distinguishes an unselected revision from a removed realization. The coverage implementation checks for another selected revision of the same identity before probing whether the other side stores the item.",
       "targets": [
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
-            "content": "sha256:c54c7e8c89d37d07086c708d505d276719a4e0c6c067dffcc3c26b0d1b7a611a",
+            "content": "sha256:107a8ce351ab4f7c71f83a12db9eece14c85747173afb84bbc73030f1e956dd6",
             "locator": {
-              "end": 504,
+              "end": 456,
               "kind": "line_range",
-              "start": 398
+              "start": 426
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad181bee71830f01ceecfa0e450848eb85ae7902",
+            "content": "sha256:13f066b2844d43e0465db87615acd7dbe1272f01c4f00337382444ade1a797e2",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 369
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad181bee71830f01ceecfa0e450848eb85ae7902",
+            "content": "sha256:5d96e5fe232c0367c5cdf5fdb913aefbc87da29ed4d36cca46919dedb2155772",
+            "locator": {
+              "end": 436,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff.py"
+          },
+          "kind": "code"
         }
       ]
     }

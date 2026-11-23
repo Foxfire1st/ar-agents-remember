@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "The examined contributor clauses retain the same lane selection, budget and canonicalization policy while four registered test modules extend the existing catalog.",
-    "task": "261112-BUG-L9",
+    "statement": "The contributor guide still describes the seven-lane selection and catalog workflow, with the native stdio memory case selected through stress-durability.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+      "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },

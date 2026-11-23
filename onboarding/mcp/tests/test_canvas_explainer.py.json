@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_canvas_explainer.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "94d9adcaff8989a85e72dd919a7ebc6c50e4be63",
+        "content": "sha256:e86793009310835dc571baf983a8cee97fc0e8c9c405a13245a593f87cb1c182",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_build_copies_the_task_document_and_packets_and_names_the_reports"
+        }
+      },
+      "facet": "Build lists the selected leaf's exact report paths and SHA-256 values and excludes sibling reports.",
+      "id": "PRF-4MBBHD",
+      "invariant": "INV-29DEHG",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 1 — inputs",
+        "leaf": "261112-BUG-L13"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "94d9adcaff8989a85e72dd919a7ebc6c50e4be63",
+        "content": "sha256:23b3387ef84a875c607906746b235ed34d92a3e1ab958632112d3b8abf94ad67",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_moved_update_refreshes_the_inputs_and_keeps_the_stage_files"
+        }
+      },
+      "facet": "Moved Update recreates missing folders, finds the task copy and new packet, removes the old packet and preserves existing stage file content.",
+      "id": "PRF-EP6CNR",
+      "invariant": "INV-W55VKB",
+      "origin": {
+        "handoffEntry": "Moved explainer Update refreshes the reading inputs and preserves its stage files",
+        "leaf": "261112-BUG-L13"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "2": {
@@ -7,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24140561b934e3ab5c626a50ca1f0ba256dcd0d8",
+            "blob": "94d9adcaff8989a85e72dd919a7ebc6c50e4be63",
             "content": "sha256:0fe0a623b8c246bf7d587d11ceb4fdd8dc2e6fe11828040cbce51023b3647feb",
             "locator": {
               "kind": "symbol",
@@ -23,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24140561b934e3ab5c626a50ca1f0ba256dcd0d8",
+            "blob": "94d9adcaff8989a85e72dd919a7ebc6c50e4be63",
             "content": "sha256:e9439d39aa86a0177c773b08a17e606abd4532023a0f30506bd794f6e401333f",
             "locator": {
               "kind": "symbol",
@@ -35,28 +71,67 @@
       ]
     },
     "6": {
-      "note": "Registered detached worktrees and same-worktree Update",
+      "note": "Build checks out registered detached worktrees and creates the standard workspace directories.",
       "targets": [
         {
           "anchor": {
-            "blob": "24140561b934e3ab5c626a50ca1f0ba256dcd0d8",
-            "content": "sha256:4c4d1e712acc9a354b0929ce2b5453000f35c11eaf099df97fbeaea723a91072",
+            "blob": "94d9adcaff8989a85e72dd919a7ebc6c50e4be63",
+            "content": "sha256:a8f2e56c236bcff3d38dbcbdc1387ab6734c6e7baf777db5219e291bfcf728d5",
             "locator": {
-              "end": 150,
+              "end": 165,
               "kind": "line_range",
-              "start": 118
+              "start": 132
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "7": {
+      "note": "Update reuses the registered worktrees and moves them to the new tree identities.",
+      "targets": [
         {
           "anchor": {
-            "blob": "24140561b934e3ab5c626a50ca1f0ba256dcd0d8",
+            "blob": "94d9adcaff8989a85e72dd919a7ebc6c50e4be63",
             "content": "sha256:5bc7a6ff1ea55ebb9a335df2249affc544725cdaecec934010310b2d4e9de83a",
             "locator": {
-              "end": 209,
+              "end": 352,
               "kind": "line_range",
-              "start": 168
+              "start": 311
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The selected-leaf manifest includes the exact active, archived and closed reports and cited measurements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d9adcaff8989a85e72dd919a7ebc6c50e4be63",
+            "content": "sha256:e86793009310835dc571baf983a8cee97fc0e8c9c405a13245a593f87cb1c182",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Moved Update checks task-copy presence, replacement of the old packet, recreation of missing folders and preservation of the existing stage file content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d9adcaff8989a85e72dd919a7ebc6c50e4be63",
+            "content": "sha256:23b3387ef84a875c607906746b235ed34d92a3e1ab958632112d3b8abf94ad67",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 355
             }
           },
           "kind": "test"

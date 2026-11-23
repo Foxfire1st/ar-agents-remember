@@ -12,7 +12,7 @@ Declare that recorded comparisons retain exact answers across cleanup, interpret
 
 A fresh converted-tree world per case supplies the actual serving collaborators/routes. The original recorded subject read is compared byte-for-byte after deleting its live group, for both explicit recorded and default reads. The same case separately preserves selector-free inventory/tree limitations and task_context/no comparison through cleanup; it does not turn source inspection into a knowledge comparison.
 
-The restart leg writes the four configuration roots, route and params, then invokes sys.executable with a child app composed from those roots. Its PYTHONPATH prepends candidate mcp/src but retains inherited entries. Status bytes and served body are compared with the prior recorded answer: a fresh interpreter is tested, not a fully source-only environment or native daemon restart.
+The restart leg writes the four configuration roots, route and params, then invokes sys.executable with a child app composed from those roots. The child supplies `new_test_event_loop` as the `TestClient` loop factory. Its PYTHONPATH prepends candidate mcp/src but retains inherited entries. Status bytes and served body are compared with the prior recorded answer: a fresh interpreter is tested, not a fully source-only environment or native daemon restart.
 
 A later real commit on the fixture code repository must not enter recorded inventory or alter the binding/body. Pre-feature landed source remains measured with legacy-unavailable unresolved knowledge; catalogue refusal names the unavailable knowledge. Historical JSON with two not-selected halves reopens typed absence while the test forbids every APSW Connection.
 
@@ -26,7 +26,9 @@ The nine declared functions assert controlled Git/converted-memory and in-proces
 
 ## Evidence
 
-- The fresh child uses the actual serving composition and explicit configuration descriptor, with inherited import paths visible. [38]
+
+- The fresh child uses the actual serving composition and explicit configuration descriptor, and passes the shared test loop factory to `TestClient`. The launcher preserves inherited import paths. [38]
+
 - Recorded selected bytes and selector-free task-context facts survive cleanup independently. [39]
 - A fresh interpreter and later fixture commit retain exact recorded answers. [40]
 - Legacy source/typed absence and lost range retain distinct measured/unavailable/refused facts. [41]

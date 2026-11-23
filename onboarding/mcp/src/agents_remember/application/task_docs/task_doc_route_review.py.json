@@ -4,8 +4,46 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
-        "content": "sha256:83a554087c833ae3e138f92564eb9e53a7d5a47fa1838be2020f32f3edced74a",
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "content": "sha256:af358db9ecedfb71478020b72b40386707ad8829336bd9ce4b9bae14c45cfa73",
+        "locator": {
+          "end": 442,
+          "kind": "line_range",
+          "start": 442
+        }
+      },
+      "id": "RLZ-4GBF8D",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The route builder keeps amendment fields in the fixed-list state while building the route verdict.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "content": "sha256:402323846ac2def37c00ac34c94243ba1dd34df90dc3f1e4f911ab4f6f312686",
+        "locator": {
+          "end": 486,
+          "kind": "line_range",
+          "start": 482
+        }
+      },
+      "id": "RLZ-4J29G2",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The checked route record is carried into the updated document after the fixed-list transition.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "content": "sha256:6ebd3d2977e14e21a18bc025bddd1eb80d10d6adfdcf687eafacd096d3fdcb74",
         "locator": {
           "kind": "symbol",
           "name": "_state_payload"
@@ -22,7 +60,44 @@
     },
     {
       "anchor": {
-        "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "content": "sha256:de367c407f0803a066943856a19c128d648389b22f3a6972d4be2f958a317e87",
+        "locator": {
+          "end": 375,
+          "kind": "line_range",
+          "start": 331
+        }
+      },
+      "id": "RLZ-9JM4DY",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "Both recorders share the transition and the route BLOCK publication path.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "content": "sha256:727a920d86623acd77232bba20dded771443ce2defee389e665c52932a30c9ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_reopened_route_verdict"
+        }
+      },
+      "id": "RLZ-ASNQNA",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The organizational route lane cannot keep attesting a PASS after a sanctioned addition reopens it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
         "content": "sha256:6aba0097d56ada16731dab87617af5e7cf99708fdb95ec181d35e838eec7933d",
         "locator": {
           "kind": "symbol",
@@ -40,7 +115,119 @@
     },
     {
       "anchor": {
-        "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "content": "sha256:3028e7aa4280f636859aaac53c537c9474766f4d80f4c9556a7b9208206b8749",
+        "locator": {
+          "end": 167,
+          "kind": "line_range",
+          "start": 167
+        }
+      },
+      "id": "RLZ-KHQFJD",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The routed record checks that an added finding reopens the verdict.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "content": "sha256:53681c3952521c95f18c99f897d1775df8622116ee11c1416f11a3ed71c3cd9c",
+        "locator": {
+          "end": 205,
+          "kind": "line_range",
+          "start": 202
+        }
+      },
+      "id": "RLZ-MQDT4W",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The leaf route calls the same amendment transition for existing route evidence.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "content": "sha256:f3a40986ea257482e8124b20796a2163c0dd316e1f24dec060834fb5bd1db4a0",
+        "locator": {
+          "end": 464,
+          "kind": "line_range",
+          "start": 446
+        }
+      },
+      "id": "RLZ-N7DB82",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The routed addition preserves the blocked outcome and avoids generic route replacement outside the authorized seam.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "content": "sha256:0c0f9da88175c56da03d6e4c7de72d1602629b0fe208039391d41043f6f0b7b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record_task_review_bound"
+        }
+      },
+      "id": "RLZ-PAYF71",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "Both operations share the fixed-list transition and publish the same new blocking route record; generic repair recording does not publish routed evidence.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "content": "sha256:1b8610144ea70b607558c8009e6a68f9cb43c388bfda10a687377904a3984328",
+        "locator": {
+          "end": 179,
+          "kind": "line_range",
+          "start": 172
+        }
+      },
+      "id": "RLZ-S67Y7F",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The master route uses the sanctioned amendment before the ordinary verdict builder.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "content": "sha256:323e719d110aa071de09e3206eb25dab1112f86273de629521817c9926883b89",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record_routed_addition"
+        }
+      },
+      "id": "RLZ-W8X079",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The routed operation recognizes a sanctioned addition before ordinary blocked-unit validation and sends it through fixed-list recording.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
         "content": "sha256:053c06b33c063ad5db944d7b08e92717c8092fa45cc43a7fbcbafdd6b4bf20ea",
         "locator": {
           "kind": "symbol",
@@ -63,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
             "content": "sha256:5b0b1da1b7bddbef985732db4362271d8eef6d8cd459c67301688f0e548ac47b",
             "locator": {
               "kind": "symbol",
@@ -74,7 +261,7 @@
         },
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
             "content": "sha256:19aad386da9c48607155adfeb5de918b8135089ba67641f65b2f3c37e5a59f4d",
             "locator": {
               "kind": "symbol",
@@ -85,20 +272,20 @@
         },
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
             "content": "sha256:ec5cbf5520d96b9d79914936c7895b3acfaca595518db455a2c23b2ae7404438",
             "locator": {
-              "end": 53,
+              "end": 55,
               "kind": "line_range",
-              "start": 44
+              "start": 46
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
-            "content": "sha256:6c1cf0824b0ba3b76ab9168bfe39e9796d88e3e0c86b0411cd86930e2091839c",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "content": "sha256:ef0b3450271ff5deefeb67ff31a2f2e3978eac177cdb638a9acc305fa54e7f6b",
             "locator": {
               "kind": "file"
             }
@@ -112,12 +299,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
             "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
             "locator": {
-              "end": 240,
+              "end": 251,
               "kind": "line_range",
-              "start": 175
+              "start": 186
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },
@@ -126,14 +313,14 @@
       ]
     },
     "11": {
-      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
             "locator": {
-              "end": 84,
+              "end": 87,
               "kind": "line_range",
               "start": 23
             },
@@ -148,12 +335,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 296,
+              "end": 311,
               "kind": "line_range",
-              "start": 251
+              "start": 266
             }
           },
           "kind": "code"
@@ -161,16 +348,15 @@
       ]
     },
     "13": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L155–L169",
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
-            "content": "sha256:7b13234f8b9b05929657a69a1f5438b3b935f2f9ce8a1f42048ddeac5711e5d5",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "content": "sha256:aaa681c1652a4cb8c278283614c8031199a9af2663097f8b1a3e2bf9a4743c13",
             "locator": {
-              "end": 169,
-              "kind": "line_range",
-              "start": 155
+              "kind": "symbol",
+              "name": "_record_route_review_bound"
             }
           },
           "kind": "code"
@@ -182,12 +368,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 296,
+              "end": 311,
               "kind": "line_range",
-              "start": 251
+              "start": 266
             }
           },
           "kind": "code"
@@ -195,16 +381,16 @@
       ]
     },
     "15": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L320–L378",
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L378–L443",
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
-            "content": "sha256:6ec8f6f2932d1d526240344cc4a3780cad32e644b7a047115abb62c8304a4e0b",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "content": "sha256:a34f31385bd6041c8953f37f1f823f2da4314abb3609b96573aff1dec13cb366",
             "locator": {
-              "end": 378,
+              "end": 443,
               "kind": "line_range",
-              "start": 320
+              "start": 378
             }
           },
           "kind": "code"
@@ -216,12 +402,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
             "content": "sha256:fd496c2c78f8fbceeb940b6e0f4ea57864326819f6c295a34484e1a6cb5daf6f",
             "locator": {
-              "end": 497,
+              "end": 585,
               "kind": "line_range",
-              "start": 461
+              "start": 549
             }
           },
           "kind": "code"
@@ -229,14 +415,15 @@
       ]
     },
     "2": {
-      "note": "The binding form that records a review over the resolved candidate document and re-validates.\n\nAnchor: `_record_route_review_bound`",
+      "note": "The binding form that records a review over the resolved candidate document and re-validates.",
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
-            "content": "sha256:6c1cf0824b0ba3b76ab9168bfe39e9796d88e3e0c86b0411cd86930e2091839c",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "content": "sha256:aaa681c1652a4cb8c278283614c8031199a9af2663097f8b1a3e2bf9a4743c13",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_record_route_review_bound"
             }
           },
           "kind": "code"
@@ -248,7 +435,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
             "content": "sha256:2c13594de1ce9714a2b21408eb4f1d0d3d9d08c1abc8382b0b0234296596edb3",
             "locator": {
               "kind": "symbol",
@@ -264,7 +451,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
             "content": "sha256:fb124fced687eb7abeb40d511d845fc4d1b44e290bf302c1be359e2cfd9eb2a9",
             "locator": {
               "kind": "symbol",
@@ -276,14 +463,15 @@
       ]
     },
     "5": {
-      "note": "The route-review authority rule (create/replace cannot author or change evidence).\n\nAnchor: `_enforce_route_review_authority`",
+      "note": "The route-review authority rule (create/replace cannot author or change evidence).",
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
-            "content": "sha256:6c1cf0824b0ba3b76ab9168bfe39e9796d88e3e0c86b0411cd86930e2091839c",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "content": "sha256:48dfee1d461e823fbfdf24959e8586573b2ebeda396a91a30cd0b0fa8dc7124e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_enforce_route_review_authority"
             }
           },
           "kind": "code"
@@ -291,14 +479,15 @@
       ]
     },
     "6": {
-      "note": "The stamping owner it delegates to; now takes the resolved candidate document.\n\nAnchor: `build_route_review`",
+      "note": "The ordinary leaf builder stamps the intent of the exact resolved leaf document.",
       "targets": [
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
-            "content": "sha256:28f91e1f645dd0e8946a9e15c5b3dcd0fd513bc4342a259de6fcc55edc1a594f",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+            "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "build_route_review"
             },
             "path": "mcp/src/agents_remember/worktrees/route_review.py"
           },
@@ -311,7 +500,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:cb4b111e923137661468aa784ee449c699836dcd393da4f0d3e0f36cdfa79340",
             "locator": {
               "kind": "symbol",
@@ -324,16 +513,15 @@
       ]
     },
     "8": {
-      "note": "The facade that dispatches into this module. Anchor: `task_doc_tool`",
+      "note": "The task_doc facade dispatches ordinary and routed review recording through its candidate-preparation function.",
       "targets": [
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "content": "sha256:d7e70d984a470c5bc403b5afc7e2fcbd7ec816f8793f135902c3c0769d94a78d",
             "locator": {
-              "end": 1186,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "_prepare_task_doc_edit"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -346,12 +534,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
-            "content": "sha256:8e3f1377893a1f8769dc4fc6fafa162b050297444eb241739c8e36a0155c1fb9",
+            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "content": "sha256:19aad386da9c48607155adfeb5de918b8135089ba67641f65b2f3c37e5a59f4d",
             "locator": {
-              "end": 343,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "_enforce_branch_addressed_policy"
             }
           },
           "kind": "code"

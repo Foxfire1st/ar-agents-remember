@@ -10,6 +10,8 @@ Extract source bindings and test-case diagnostics with tree-sitter.
 
 ## Code Commentary
 
+A scoped call reuses each exact TypeScript anchor input, including an unresolved spelling, until its request owner clears. Calls outside that scope use a separate process memo. Loaded grammars and parsed test-file trees keep their own owners.
+
 `Binding` records a construct's widened extent, its declaration line and whether it is a test case. A decorated Python definition includes its decorators in the extent while retaining the actual `def` or `class` declaration line. An exported script declaration includes its export syntax.
 
 `grammar_of` chooses a grammar by path; `parsed` tells whether the file supports parsed definitions. `typescript_anchor_identifier` recognizes a direct identifier rooted by a complete TypeScript call or generic spelling. `language` loads each grammar once; grammar-load failures propagate.
@@ -32,7 +34,9 @@ Within a definition scope, eligible JavaScript, TypeScript and TSX test inputs r
 
 - `grammar_of` selects the grammar for a path. [2]
 - `parsed` identifies files whose definitions can be parsed. [3]
-- `typescript_anchor_identifier` recognizes a complete direct TypeScript anchor spelling. [4]
+
+- `typescript_anchor_identifier` recognizes a complete direct TypeScript anchor spelling. A native request reuses the exact input’s answer until the request memo clears. [4]
+
 - `language` loads the chosen grammar and propagates load failures. [6]
 - `_walk` traverses every node in document order. [8]
 - `_widened` includes decoration or export syntax. [9]

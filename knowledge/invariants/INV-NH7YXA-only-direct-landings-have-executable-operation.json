@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Keeps the live projection and mutation owner aligned so an old journal cannot advertise a control that always refuses."
+  },
+  "applicability": "The registered operation status and control tools.",
+  "conditions": [
+    "An operation record can be read and its contract is addressable.",
+    "Current executable journal controls apply to a direct landing when its generation and legal-action checks pass."
+  ],
+  "exclusions": [
+    "Historical closeout and integration rows are inspection evidence."
+  ],
+  "id": "INV-NH7YXA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Worker successor report, Primary acceptance block and sealed-finding checks."
+      ],
+      "path": "w7-authoring-draft.json"
+    },
+    "handoffEntry": "BUG-R15@v1 item 1",
+    "leaf": "261112-BUG-L15",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Only direct landings have executable operation-journal controls.",
+  "status": "proposed",
+  "supersedes": []
+}

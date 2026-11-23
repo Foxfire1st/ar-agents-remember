@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Reading the flat subprocess payload together with individual bodies would allocate a second complete transport copy on a common path."
+  },
+  "applicability": "Binary native Git batch blob reads using the validated frame reader.",
+  "conditions": [
+    "The private spool carries subprocess output directly.",
+    "Matching object identity, blob type, size, delimiters and input exhaustion are required for an accepted batch."
+  ],
+  "exclusions": [
+    "The individually requested blob bodies may remain resident while the caller consumes them.",
+    "Single-object Explainer and grade reads use their own frame contracts."
+  ],
+  "id": "INV-HEDEKR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The blob-spool test and bug-r18-item-2-ordinary-results.md, Git file and shared-memory measurements."
+      ],
+      "path": "BUG-L18 W2 affected knowledge and initial history"
+    },
+    "handoffEntry": "BUG-R18@v1 item 3 — Git blob reads",
+    "leaf": "261112-BUG-L18",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Native Git blob reads consume validated object frames from a private spool without allocating an aggregate in-memory subprocess reply.",
+  "status": "proposed",
+  "supersedes": []
+}

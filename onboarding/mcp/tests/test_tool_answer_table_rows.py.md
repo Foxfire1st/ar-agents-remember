@@ -20,6 +20,9 @@ A row is authored, never synthesized: the ownership cases compare the implementa
 
 ### Repo-Internal References
 
-- Each rule-6 failure mode fails its gate, and a production-proven row is the one shape allowed without case payloads. [1]
 
-- Every authored row's owner matches the roster, and a removed tool has no row and no owner. [2]
+- The row-gate cases reject the tested invalid shapes. A shaped row that names its production derivation can omit static case payloads. [1]
+
+
+
+- Each authored row owner matches the roster. The removed tools checked here have neither a row nor an owner. [2]

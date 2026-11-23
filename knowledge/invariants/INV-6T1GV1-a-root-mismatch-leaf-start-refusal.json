@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The three-root child test exercises long loaded and requested paths, checks the cap and every mismatched label and verifies zero backend starts."
+  },
+  "applicability": "The private leaf enclosure child JSON refusal for mismatched selected roots.",
+  "conditions": [
+    "The requested and loaded root settings differ, before entering the start scope."
+  ],
+  "exclusions": [
+    "The parent may wrap the child result in a separate bounded terminal summary."
+  ],
+  "id": "INV-6T1GV1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/17_the-whole-test-lanes-pass-on-the-issu-20a404b481-ar/role-reports/worker/54168612-802f-4e9e-8581-5ae4bcd30ec0/role-launch/BUG-L17-W2-code-quality.md"
+      ],
+      "path": "W4-curator-ingest.json"
+    },
+    "handoffEntry": "48c1c392-751b-4803-b74c-ff1d307b1e6d ruling 2",
+    "leaf": "261112-BUG-L17",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A root-mismatch leaf-start refusal states that nothing started and keeps every mismatched root label inside the fixed output cap.",
+  "status": "proposed",
+  "supersedes": []
+}

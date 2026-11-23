@@ -6,12 +6,11 @@
 
 ## Purpose
 
-Owns journal-retained closeout-door publication intent/proof and the resulting disposable-projection
-refresh effects for lifecycle operations.
+Implements retained door-publication intent and evidence helpers. Current ordinary closeout runs synchronously without applying this journal route.
 
 ## Code Commentary
 
-Only closeout and direct-landing records may carry door intent. An unfinished intent must settle
+The retained record helper handles the door-intent fields of closeout and direct-landing shapes. A door-bearing direct record is historical and offers no current journal controls. An unfinished intent must settle
 before another is accepted. Publication re-reads configured authority, then publishes the door
 generation into the contract's own door journal (`<worktree_group>/reports/closeout-door.json`) before
 downstream projections are refreshed.

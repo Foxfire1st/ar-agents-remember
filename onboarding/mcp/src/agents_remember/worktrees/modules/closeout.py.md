@@ -154,8 +154,8 @@ dashboard writes — and `controlplane.evaluate_closeout_gate(..., policy=args.g
 unless a `closeout-approval` gate is `approved` by the developer or by a
 policy-valid delegated orchestration decision (a model self-approval, owner
 self-approval, missing required reviewer verdict evidence, or an
-`open`/`rejected`/`applied` gate blocks; a gateless lifecycle consumes the approval and nonblank
-note already persisted by the canonical journaled closeout operation). Both preview and apply payloads carry a `closeout_gate` block
+`open`/`rejected`/`applied` gate blocks). Apply also requires explicit approval and a nonblank note
+on the admitted call. Both preview and apply payloads carry a `closeout_gate` block
 (`enforced` / `permitted` / `gateId` / `reason`) for the commit-approval relay.
 
 **Since 260731-EFA-L5 that enforcement is two functions, not one, and this is the section to read
@@ -315,12 +315,10 @@ always has.
 > note persisted by the canonical closeout operation; the retired synchronous chat/CLI apply path is
 > not a fallback.
 
-Approval consumption and mutation recovery are deliberately separate facts. The gate claim proves
-that this accepted operation may proceed; it does not prove that Git changed, retain a generation,
-or make recovery cells authoritative. Per-leg mutation evidence or the exact canonical finalized-
-contract hash decides closeout generation retention. A restart therefore reconciles the same
-accepted effective input and repository evidence instead of inferring safety from the approval or
-phase alone.
+The approval claim permits the accepted transaction to proceed. Git reads and commit proofs establish
+which outputs exist. On a completed call the coordinator returns the state reached, its contract
+address and the actual code and memory-content commits. If a call is interrupted, inspect the Git
+output and recorded contract facts before repeating the synchronous operation.
 ### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
@@ -351,11 +349,15 @@ The following current source boundaries establish the ledger-retirement behavior
 
 
 
+
 - Defines the `WorktreeArgs` dataclass that types every closeout entry point and helper. [6]
+
 
 - The pure closeout-gate policy this module enforces (slice 6b). (`evaluate_gate`; `evaluate_closeout_gate`; the `GateGuard` value and `CONSUMED_APPROVAL_GATE_KINDS` it reads live in the controlplane store, `controlplane/store.py`, not here.) [7]
 
+
 - The gate policy threaded through `WorktreeArgs`. [8]
+
 
 
 - `GateStore.claim_approval` — the compare-and-swap this module now spends an approval through: fold, policy verdict and the `applied` append inside one held `exclusive_access`. It is the only way to spend one; `_mark_closeout_gate_applied` was deleted. (`claim_approval`) [9]
@@ -380,7 +382,9 @@ The following current source boundaries establish the ledger-retirement behavior
 - Closeout amends its contract through `amend_contract`, passing the free-text commit and approval fields by `replace` and the vocabulary cells through `ContractCells`. (`_amended_closeout_contract`) [20]
 
 
-### 260815-DAG-L3 Claim/Certification History, Replaced By Journal Evidence
+### Historical DAG-L3 Claim/Certification And Journal Evidence
+
+This dated account describes the former detached closeout route.
 
 The commit worker no longer claims or certifies a queue candidate. The lifecycle owner atomically
 transfers the exact first-ready waiting door into the enclosure-external journal before launching
@@ -474,7 +478,9 @@ point of the state. They are reviewed and deliberately unchanged; do not "fix" t
 - `worktrees/modules/guidance.py:267` is the `completed` branch of `_post_integration_phase`; its
   sibling `checkpointed` branch at `:307` is what the checkpoint uses instead.
 
-## 260731-EFA-L1 Current Commit-Gate Delta
+## Historical 260731-EFA-L1 Commit-Gate Delta
+
+The former strict source-quality wrapper is recorded here as history.
 
 The three quality-gate call sites — `code_quality_gate_preview` in `closeout_preview_payload`, and
 `code_quality_gate_preview` plus `requires_strict_code_quality` in `closeout_result` — now pass
@@ -520,21 +526,28 @@ refusal. Revalidation and commit ordering are unchanged.
 ## 260815-DAG-L4 Integration-Authority Impact
 
 Task-derived integration refs remain mechanically non-ordinary: repository defaults, sprint supers,
-and active atomic-series refs are censused across code and external memory. Closeout admission is the
-exact door plus journaled operation generation; protected-ref landing and terminal capabilities stay
-with their own owners. Stale topology, aliases, ambient checkouts, and torn recovery fail closed.
+and active atomic-series refs are censused across code and external memory. The historical DAG-L4
+closeout route used a door and journal generation. The current transaction uses its accepted
+contract, candidate and approval. Protected-ref landing and terminal capabilities stay with their owners.
 
 ## 260815-DAG Master Full-Gate Repair
 
 Imports updated to the moved queue/integration packages (`worktrees/queue/*`, `worktrees/integration/integration_branch_authority`); the closeout quality-facts composition was extracted into `_closeout_quality_facts` — the attestations, code-quality gate, memory-quality preflight, and strict-quality requirement for both the resuming and fresh paths.
 
-## 260821-CLIVE-L1 Closeout Coordinator
+## Historical 260821-CLIVE-L1 Closeout Coordinator
+
+This account describes the former journal-owned closeout route.
 
 Closeout execution now requires journaled mutation authority and one validated `EffectiveCloseoutInput`. Entry validates the accepted plan before recovery or mutation and returns the typed value to the coordinator; preview renders that plan, code commit and external consumers receive that value explicitly, and external-memory content and cache refresh are owned by `closeout_external.py`. Immediately before publication, the locked callback reloads the contract and rechecks contract identity, authority, workbench state, and the accepted candidate so validation cannot be separated from mutation by a stale object. The old generated ledger subject, raw message fallbacks, optional private guards, and shadow intent are removed. Contract finalization publishes the exact canonical hash, allowing verified-existing/no-op completion without fabricated Git evidence. The operation journal records lifecycle evidence; any later queue refresh is a disposable scheduling effect, never certification.
 
-## 260821-CLIVE-L2 Current Contract
+## Synchronous Closeout Contract
 
-The current source seams include `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result`. Closeout uses closed admission, immutable generation input, root-journal mutation evidence, and same-generation recovery. Missing commit-message or other input errors are refused before authority; retries cannot amend accepted intent or strand work behind queue state.
+The current source seams include `closeout_changed_paths`, `closeout_preview_payload` and
+`closeout_result`. The adapter draws the accepted leg messages from one normalized input. Apply
+validates the candidate against the current contract, runs the applicable gate and publishes the
+paired outputs in the same call. When publication was interrupted, use the previous result and the
+actual repository and contract evidence to decide which effect remains. Required curation and
+coherence validation precede apply under the separate Manager procedure.
 
 ### Reconciled Source Evidence
 
@@ -561,7 +574,9 @@ The current source seams include `closeout_changed_paths`, `closeout_preview_pay
 - The closeout entry threads the healed contract through preflight, the gate's preflight and the locked publication callback. (`closeout_result`; `_publish_closeout_candidate`; `_closeout_entry`) [28]
 
 
-## 260821-CLIVE Journal-Owned Claim Boundary
+## Historical 260821-CLIVE Journal-Owned Claim Boundary
+
+This dated account describes former worker dispatch and queue transfer.
 
 This commit worker no longer claims or certifies a mutable queue candidate before/after its Git and
 contract work. The lifecycle-operation owner transfers the exact first-ready waiting door into the
@@ -570,7 +585,9 @@ revalidate contract, review, tree, quality, and repository authority and publish
 and contract finalization; recovery/certification is inferred from the retained journal and Git
 evidence, never repaired through a stale row.
 
-## MCAR-L02 Shared Coherence Preflight
+## Historical MCAR-L02 Shared Coherence Preflight
+
+This account describes the retired `_memory_quality_before_refresh` path.
 
 `_memory_quality_before_refresh` now requires the current structured curator-coherence authority
 before citation checks or expensive code validation and records its exact record digest and
@@ -579,13 +596,22 @@ hardcoded legacy report cannot pass one boundary and fail another. The validated
 projection is threaded through preview, body-gate admission, and `ExternalCloseoutEvidence`, so
 the post-code-commit memory refresh consumes the same decisions instead of re-deriving them.
 
-## MCAR-L03 Preview, Apply, And Recovery Pairing
+## Historical MCAR-L03 Preview, Apply, And Recovery Pairing
+
+This account describes the former coherence-pair handoff.
 
 Preview obtains the pair from the current coherence authority and reports it. Normal completed
 apply carries that same accepted pair. Post-commit finalization recovery re-proves the exact
 contract-addressed pair directly, because pre-commit candidate-tree evidence is expected to become
 stale after commits; it never re-resolves from repository id. The pair policy lives in the focused
 closeout pairing module rather than adding another resolver to this orchestration module.
+
+## Current Evidence And Returned Result
+
+When the checklist requires coherence, the Manager confirms the Curator has validated the
+structured record before applying. The apply performs the applicable invariant gate and returns
+the transaction result. A completed result names the actual output commits. The application
+wrapper can attach a final-output receipt and separately measured external-Git observations.
 
 ## Governing Overview
 

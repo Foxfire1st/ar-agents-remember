@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Closed external leaves are backed by two actual commits and a disposable cache.\n\nAnchor: `_closed_external_leaf_worktrees`",
+      "note": "Closed external leaves are backed by two actual commits and a disposable cache.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
-            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
+            "blob": "19c095b4634f19eeefb55736335ad24e8960a985",
+            "content": "sha256:72074ef59564f7876078c9cccdd5397989718b3d2f0741923ae1683aa2e6c5cd",
             "locator": {
-              "kind": "file"
+              "end": 134,
+              "kind": "line_range",
+              "start": 43
             }
           },
           "kind": "test"
@@ -18,14 +20,16 @@
       ]
     },
     "2": {
-      "note": "Optional lifecycle admission precedes fixture finalization.\n\nAnchor: `_publish_completed_closeout_fixture`",
+      "note": "The fixture publisher writes and reloads an already-completed contract with the retained output pair and optional final-source override.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
-            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
+            "blob": "19c095b4634f19eeefb55736335ad24e8960a985",
+            "content": "sha256:cfc7266c63474ed8068034ab0e5d066a97e0ac9c58ae723dff23811d98fb90d9",
             "locator": {
-              "kind": "file"
+              "end": 157,
+              "kind": "line_range",
+              "start": 137
             }
           },
           "kind": "test"
@@ -33,14 +37,16 @@
       ]
     },
     "3": {
-      "note": "Configured repository, profile, protected branches, and task topology.\n\nAnchor: `_authority_fixture`",
+      "note": "Configured repository, profile, protected branches, and task topology.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
-            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
+            "blob": "19c095b4634f19eeefb55736335ad24e8960a985",
+            "content": "sha256:1b0e14efb0ce8099a1d12cfa226a6526329fbe743227ca4cdb7db15b99a2e56f",
             "locator": {
-              "kind": "file"
+              "end": 308,
+              "kind": "line_range",
+              "start": 160
             }
           },
           "kind": "test"
@@ -52,11 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
-            "content": "sha256:5531733451c3fb886f1cb15c34c058422fb4a06dba377947b0aaf566115ccb21",
+            "blob": "f514fcff680eec8da520dcb68b88fb5be662691d",
+            "content": "sha256:4332d74b2669c4bd7056ed604241978f47cc9bb5c1ba6f863d2cdc243b711d4d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race"
+              "end": 157,
+              "kind": "line_range",
+              "start": 74
             },
             "path": "mcp/tests/test_integration_branch_authority.py"
           },
@@ -69,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "blob": "19c095b4634f19eeefb55736335ad24e8960a985",
             "content": "sha256:72074ef59564f7876078c9cccdd5397989718b3d2f0741923ae1683aa2e6c5cd",
             "locator": {
               "kind": "symbol",

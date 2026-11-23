@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A count-only bound on the repaired stores permits one large parsed or computed value to dominate their retained memory."
+  },
+  "applicability": "The repaired shared tool and reviewer memo paths that charge retained Python graphs.",
+  "conditions": [
+    "An entry is weighed from its key and value and skipped when its own charge exceeds the retained-byte allowance. The active caller may still receive the computed result.",
+    "Insertion and least recently used eviction run under the same lock. Both aggregate limits hold when the insertion returns."
+  ],
+  "exclusions": [
+    "Temporary allocations, unrelated observation memos with separate units, and the async run registry have separate ownership."
+  ],
+  "id": "INV-QEKWKH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "bug-r18-item-2-cache-census.md and the exact-small and oversized gate, view, and candidate-parse reuse tests."
+      ],
+      "path": "BUG-L18 W2 affected knowledge and initial history"
+    },
+    "handoffEntry": "BUG-R18@v1 item 5 — shared memo bounds",
+    "leaf": "261112-BUG-L18",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Graph-charged tool-server and reviewer memos reject individually oversized entries and finish each insertion with the retained entries within both configured ceilings.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -14,7 +14,7 @@ The canonical worker report retains exact candidate, immutable requirement-attem
 
 ## Current composition and authoring contract
 
-An optional visual walkthrough is governed by the Worker role, which points to `reference/writing/visual-explainers.md` before one is added to the freeze report; it supplements and never replaces required report sections or acceptance. The template's own pointers lead to `core/acceptance.md` sections, `operations/implementation.md#verify-the-final-candidate`, `operations/review.md#boundaries` and `reference/message-handover.md`.
+An optional visual walkthrough is governed by the Worker role, which points to `reference/writing/visual-explainers.md` before one is added to the freeze report; it supplements and never replaces required report sections or acceptance. The template's own pointers lead to `core/acceptance.md` sections, `operations/implementation.md#check-the-candidate-before-each-freeze`, `operations/review.md#boundaries` and `reference/message-handover.md`.
 
 The report remains the Worker's main-loop artifact at the supplied path, not delegated to a helper. Requirement attempt journal anchors, immutable expanded evidence, exact checks, separate durable-evidence hold point, direct handover evidence, harness contributions and respawn state retain their existing contracts. A shorter label, diagram or host turn-end signal proves no semantic acceptance.
 
@@ -32,7 +32,7 @@ independent reviewer recover the leaf from recorded state without relying on the
 ### Logic
 
 The report records completed work, one acceptance envelope for the leaf-owned primary revision,
-separate preservation checks for adjacent requirements, an explicit command/result table, the
+separate preservation checks for adjacent requirements, a command/result table for the review round, the
 separately governed durable-evidence promotion decision, issues and remaining work, curator inputs,
 retrieval evidence, escalations, and respawn state. The primary acceptance block ties a delivery
 claim to concrete artifacts and a verification claim to evidence that names the behavior
@@ -71,7 +71,7 @@ None.
 
 ## CCR-R12@v5 Handoff Boundary
 
-This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry the complete memory-quality result that normal curation always runs; full code quality, full-suite tests, certification, and review are explicit requests rather than automatic template gates.
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry the complete memory-quality result that normal curation always runs; full code quality, full-suite tests, certification, and review are explicit requests rather than automatic template gates. The requirement's listed final checks run once after the code pass and have a distinct report that names the tree.
 
 ## Evidence
 

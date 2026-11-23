@@ -4,15 +4,43 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The workflow statement: nine operations, with the two preview/apply pairs appearing twice on purpose.\n\nAnchor: `WORKFLOW_OPERATIONS`",
+      "note": "The nine-operation declaration repeats integration and finalization for preview and apply, and the ordered test compares it with the walk.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:f6c104244f87e83b53dade29f4d2c132681eab51f06e1b82a891bbd7dd188ef9",
             "locator": {
-              "kind": "file"
+              "end": 61,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:9efe7bc5e587b6afb144ec5bd01a6790ef2513a8be38e580d74097399cb54823",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 92
             }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:d30fae5b4a85ee0ad00f9d04987bb52e368d0a02f1f69cbe2bd6357ec9d63000",
+            "locator": {
+              "end": 800,
+              "kind": "line_range",
+              "start": 763
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
           "kind": "test"
         }
@@ -65,47 +93,67 @@
       ]
     },
     "12": {
-      "note": "The disposable world: real repositories, a real server, one session per call.",
+      "note": "The disposable world constructs two Git repositories and a registered server. Each call opens an in-memory client session.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:a2392fc7be864b37f59c37e023895e8a1d8104ec3eae26ff65a1f4db27047cb4",
             "locator": {
-              "kind": "file"
-            }
+              "end": 391,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
           "kind": "test"
         }
       ]
     },
     "13": {
-      "note": "Invoking one registered tool exactly as a consumer does, with the raise itself as the arm.  Anchor: `call`",
+      "note": "The call wrapper invokes a registered tool through an in-memory MCP session and distinguishes a structured result, a server ToolError with rendered detail, and a client-side exception.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:bad3617490d465178a0e7b98e9408bd1968ab852e41b9c312f11946c6bd69907",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:8324db0c9c168d19abbca627c61b5f785d08d2ca100f9efd06e0fa3422e27981",
             "locator": {
-              "end": 443,
+              "end": 391,
               "kind": "line_range",
-              "start": 431
-            }
+              "start": 375
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
           "kind": "test"
         }
       ]
     },
     "14": {
-      "note": "The single walk of the chain, the hops it produced, and the three arrangements.\n\nAnchor: `WorkflowChainObservation`",
+      "note": "The observation performs one ordered walk, three follow-on arrangements and separate operational-triple probes.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:3de4780e850a8bca4296dbc997a2129550b555698cdcda4f49239f4afe221c89",
             "locator": {
-              "kind": "file"
-            }
+              "end": 576,
+              "kind": "line_range",
+              "start": 554
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:2f3d852a0922f884e75d79f3d167caa8e8cc5e6eb311188be87f1fcff448da9d",
+            "locator": {
+              "end": 805,
+              "kind": "line_range",
+              "start": 725
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
           "kind": "test"
         }
@@ -130,16 +178,42 @@
       ]
     },
     "19": {
-      "note": "The addressed-sibling case first asserts that the sibling produced a landing hint, then checks every returned contract-path channel remains outside that sibling enclosure and any next tool is public.",
+      "note": "The fixture starts a sibling and verifies its enclosure exists. It opens a separate in-memory MCP connection for a dry-run finalization addressed to the target contract and computes raw guidance for that target. The sibling case requires a raw hint for the target, excludes the sibling from present address values and checks public-tool membership when a top-level next tool exists.",
       "targets": [
         {
           "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:8324db0c9c168d19abbca627c61b5f785d08d2ca100f9efd06e0fa3422e27981",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 375
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:981974c9307e8268a4d14c039e5504cc7d6bd516acd4592e764e721d7bbe8aa3",
+            "locator": {
+              "end": 850,
+              "kind": "line_range",
+              "start": 820
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
             "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:f5c06ceff0a5d25c525636cbb681dc31ea72e230fbe67b37b787cc039b18d33c",
+            "content": "sha256:f2de37a0ada847c79104c827e9ad670cc32b7b08a1bc2c8a87f949670bd4305b",
             "locator": {
               "end": 204,
               "kind": "line_range",
-              "start": 182
+              "start": 162
             }
           },
           "kind": "test"
@@ -147,14 +221,29 @@
       ]
     },
     "2": {
-      "note": "Each operation's own state vocabulary, and the terminal cleanup cell.\n\nAnchor: `EXPECTED_STATES`",
+      "note": "Each declared operation-state pair is required to occur. The terminal contract cleanup cell must be completed.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:a65a165cb54d55273b82f73be6777c7ba7379e134039953793594a64abd7e399",
             "locator": {
-              "kind": "file"
+              "end": 74,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:7fa2e0c8f048ecb86adfd7fa6e5d6afc6a444cd90f3f50e5f115ee06a144d030",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 109
             }
           },
           "kind": "test"
@@ -179,7 +268,7 @@
       ]
     },
     "21": {
-      "note": "Every hop's own triple called verbatim, so the channel a case does not call is not a channel it can see.",
+      "note": "Every observed hop with a top-level next tool has a matching probe of the published tool and arguments. The assertion forbids an unclassified raise and names finalization as the observed no-triple tool.",
       "targets": [
         {
           "anchor": {
@@ -192,21 +281,47 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:25c7a497f8d9b06f368d69ba7dbacb5abb2bac8329003bca240955f4a922bbc1",
+            "locator": {
+              "end": 922,
+              "kind": "line_range",
+              "start": 892
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "22": {
-      "note": "The second producer of the same recommendation, driven in the same world rather than cited.",
+      "note": "The sibling retry-provider-setup fixture reaches blocked. Its published triple is also driven and its outcome must be an answer or an argument-model refusal.",
       "targets": [
         {
           "anchor": {
             "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:a42a2a4639eb7d5334053afb3223d1bb5f427c61177c6f8b2addb84e888ac214",
+            "content": "sha256:f56ebf7ff2d9712c9967361014cffdfec6e9002818ad7bf90d7b418edf342b4d",
             "locator": {
-              "end": 256,
+              "end": 272,
               "kind": "line_range",
-              "start": 229
+              "start": 247
             }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:dfdfb36490654c27cf433806b868ae94163298650e7bd7da8322bdc9c3f81973",
+            "locator": {
+              "end": 995,
+              "kind": "line_range",
+              "start": 924
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
           "kind": "test"
         }
@@ -332,27 +447,43 @@
       ]
     },
     "3": {
-      "note": "Expected phase labels are literal test inputs; observed phase membership and endpoints come from product guidance over the walk’s contract.\n\nAnchor: `EXPECTED_PHASES`",
+      "note": "The test uses literal expected phases and asserts membership and endpoints over phases the fixture obtained from the contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:ff8aa0c088786de93413005a94af30adebafb79e9241a47132b3f6b3b7e26602",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:97c46f72c18bdfe4fd6821ade3ff7f0e8034820dc003570ef6beffb68c95701b",
             "locator": {
-              "end": 122,
+              "end": 82,
               "kind": "line_range",
-              "start": 109
-            }
+              "start": 77
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
             "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "content": "sha256:66b6247aa7f3b4fd2b99d97d80852251835d65813613cc8d21f5b23fd28bcfa3",
             "locator": {
-              "kind": "file"
+              "end": 122,
+              "kind": "line_range",
+              "start": 116
             }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:1e0974c3150ae79c1b0eeb2b7f25fe14c23d631081cf6870080b5481176695a4",
+            "locator": {
+              "end": 720,
+              "kind": "line_range",
+              "start": 703
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
           "kind": "test"
         }
@@ -376,7 +507,7 @@
       ]
     },
     "31": {
-      "note": "The withhold is real, counted, and explained in both directions.",
+      "note": "The withhold test compares exact tool counts and requires at least one withheld hop with a top-level next tool.",
       "targets": [
         {
           "anchor": {
@@ -427,7 +558,7 @@
       ]
     },
     "34": {
-      "note": "Cleanup and closeout requirement declarations are asserted; the test docstring’s historical four-site account disagrees with current three-site guidance.",
+      "note": "The case asserts the cleanup and closeout declarations and the absence of closeout-pending hops. Current phase guidance has three required-argument sites, including carryover.",
       "targets": [
         {
           "anchor": {
@@ -440,6 +571,32 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:7e625df731f57d98f2f21af26ce84c82a1622f1e46e28db0c90f326010b525db",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 274
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:0d7867e76db6328493405fc204b46ea00f96470e5cba83190711d9d6add4b536",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -448,12 +605,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:59e0e1653d5a589fe09a0646e0ece6d41f34bb59394ec582e7af93d79916c9f6",
             "locator": {
-              "end": 816,
+              "end": 641,
               "kind": "line_range",
-              "start": 1
+              "start": 641
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -466,7 +623,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:e78c9a3a5f40cbe4afaccc30894f1b7e29d5e43ec2f9b1a3329a675dc7df6639",
             "locator": {
               "end": 411,
@@ -479,7 +636,7 @@
         },
         {
           "anchor": {
-            "blob": "7829e143a48062b2ea30cb4e9d4ac2e57ae2f4c5",
+            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:850212135859df7ef2a304d5f3f9d63aefef33ff7824ecd1c284930d65f229cc",
             "locator": {
               "end": 397,
@@ -515,7 +672,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
             "locator": {
               "kind": "symbol",
@@ -528,14 +685,29 @@
       ]
     },
     "4": {
-      "note": "The callability pin, with the repair rule stated at the constant.\n\nAnchor: `GUIDANCE_STEPS_MISSING_REQUIRED_ARGS`",
+      "note": "The support declaration has one live callability pin and directs repair and removal of that entry together. The test asserts exact equality with the observed missing-field map.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:be14a4bfee90061b5cec524cbde58494b7e2d02d86ed70d1f03c7098f732a95b",
             "locator": {
-              "kind": "file"
+              "end": 120,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:3e14af6ab317b9a857fe564b85409b03f9d988045ceb7b627a34478389f0bb99",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 208
             }
           },
           "kind": "test"
@@ -656,14 +828,16 @@
       ]
     },
     "46": {
-      "note": "The closeout intent_note requirement is declared by _pre_integration_phase and asserted on a constructed declaring contract.\n\nAnchor: `_pre_integration_phase`",
+      "note": "The closeout intent_note declaration is asserted on a fixture contract whose closeout status was changed to not-started after apply.",
       "targets": [
         {
           "anchor": {
             "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
-            "content": "sha256:c5a2fd084e668cadc10135510d3635ab841914e4f4cfafe640271cfe0bf18e67",
+            "content": "sha256:0d7867e76db6328493405fc204b46ea00f96470e5cba83190711d9d6add4b536",
             "locator": {
-              "kind": "file"
+              "end": 404,
+              "kind": "line_range",
+              "start": 362
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },
@@ -671,15 +845,15 @@
         },
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
-            "content": "sha256:c8d5b3f1af5cfecddc5f379e3b0a88962b9e5b4cc585010519455d97b599c56b",
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:eac032458b7014cad99ffaea669bf227fd183bb87f3d56990afbc2f9404af295",
             "locator": {
-              "kind": "symbol",
-              "name": "_pre_integration_phase"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+              "end": 499,
+              "kind": "line_range",
+              "start": 479
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
@@ -701,15 +875,29 @@
       ]
     },
     "48": {
-      "note": "The `recommendedAction` residual (`T127`): `_recommended_action` in `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:429-460` constructs `LifecycleRecommendedAction` at line 450 with `tool=\"worktree_status\"` at line 452 and contract-only arguments at line 453.  Anchor: `LifecycleRecommendedAction`",
+      "note": "The `recommendedAction` residual (T127) is outside the tested `nextTool` and `nextArgs` channel. At `lifecycle_operation_projection.py:343–364`, the retained branch constructs `LifecycleRecommendedAction` at line 359, sets `worktree_status` at line 361 and supplies contract-only arguments at line 362.",
       "targets": [
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
-            "content": "sha256:7d7217bdb7fbb22366c2641172fb4802a66f724d0aff8418c990774f981cf7af",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+            "content": "sha256:ec6d9dbde6e5c45bf4da8c849cd2b4b164ff4f0e8a5f8181e7b666b7adec300e",
             "locator": {
-              "kind": "symbol",
-              "name": "_recommended_action"
+              "end": 235,
+              "kind": "line_range",
+              "start": 208
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+            "content": "sha256:c44112b3c2a9d0ac9f11792f7905730e8285c3627e5532ba05dfbe9bb8a95739",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 343
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
           },
@@ -718,31 +906,73 @@
       ]
     },
     "49": {
-      "note": "The `RecoveryRoute` producer (`T130`) that publishes an uncallable triple as `nextTool`/`nextArgs`.",
+      "note": "The no-control fallback returns worktree_status with contract_path only. Task-unstarted evidence can publish that tuple as a next move, but the registered status call also requires repo_id.",
       "targets": [
         {
           "anchor": {
             "blob": "3a5b76f8edef3f6348d35d03c421fa11f0458b9c",
             "content": "sha256:cfd259820d6ded63c7bb14d34ab02729cfffce52bcaa6be90a7c71c3d2f2a224",
             "locator": {
-              "kind": "symbol",
-              "name": "_projection_without_control"
+              "end": 467,
+              "kind": "line_range",
+              "start": 457
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a5b76f8edef3f6348d35d03c421fa11f0458b9c",
+            "content": "sha256:446b71bb0a5b1934c3c32bd6629930a796e70171a39906021293ac7814a32f34",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:331b58139722f7fafdd3d8f2ba9b21a3de8a17159f4fd914b5a5ac2987e0fce5",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 143
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The withhold pinned by tool and count, so repairing the producers is a visible edit.\n\nAnchor: `WITHHELD_GUIDANCE_HOPS`",
+      "note": "The support declaration pins exact withheld counts. The case compares those counts and requires an observed withheld hop with a top-level next tool.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:1641f2fbe0cfee79a659dd90a2bef32a855233d22b63a77b522fb2e511898590",
             "locator": {
-              "kind": "file"
+              "end": 136,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:6c20aab7356881c81bfd36b6eb3aea4e61849b29d1e286ca5b5c42de29c0cc27",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 328
             }
           },
           "kind": "test"
@@ -851,16 +1081,16 @@
       ]
     },
     "56": {
-      "note": "The first call exactly as given, then again with only what the model named as missing.",
+      "note": "The walk initially calls with prepared arguments. A non-answer leads to one retry with available values for fields reported missing.",
       "targets": [
         {
           "anchor": {
             "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
-            "content": "sha256:181df23669533574e6ab7a25e4268a3958495fee3e5df53429ef3c70304d3b5e",
+            "content": "sha256:685f203edcbe701778d86c1fcc94b4ee4480df92fddb287c1277a0be38d348ac",
             "locator": {
-              "end": 677,
+              "end": 682,
               "kind": "line_range",
-              "start": 657
+              "start": 662
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -869,16 +1099,16 @@
       ]
     },
     "57": {
-      "note": "Execute one recommended step as given, then again with only the arguments it omitted.",
+      "note": "The walk prepares arguments, calls and conditionally retries, then records the call metadata, final reply, phase and guidance in a Hop.",
       "targets": [
         {
           "anchor": {
             "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
-            "content": "sha256:e2436774778df01b2fab0c6d9f53e5d75cb80a13139771ece9f0b4cfa3050a05",
+            "content": "sha256:e1bccccdeeea8960e48893d501acb31c431a37bf1d4bf941bf0f78cdacbd6663",
             "locator": {
-              "end": 718,
+              "end": 723,
               "kind": "line_range",
-              "start": 657
+              "start": 648
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -887,16 +1117,16 @@
       ]
     },
     "58": {
-      "note": "The ordered walk, the sibling arrangement, the retry producer, the stale base, the probe.",
+      "note": "These support methods own the ordered walk, sibling arrangement, retry setup producer, stale-base arrangement and operational probes.",
       "targets": [
         {
           "anchor": {
             "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
-            "content": "sha256:6b226bb6d04887c1bf0e91c498fa15b687d6149f7d1d64f88a55f141f1056b34",
+            "content": "sha256:2f3d852a0922f884e75d79f3d167caa8e8cc5e6eb311188be87f1fcff448da9d",
             "locator": {
-              "end": 800,
+              "end": 805,
               "kind": "line_range",
-              "start": 720
+              "start": 725
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -905,11 +1135,11 @@
         {
           "anchor": {
             "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
-            "content": "sha256:7787f3c4cf117817b7ae8cab7dfd63060c14888e58d6dbd849a902cf9be269a7",
+            "content": "sha256:cdcfc0a21c0b9eee0e931707d0511b48e4a550df5a0b6cd179dd5434acbd8a37",
             "locator": {
-              "end": 846,
+              "end": 851,
               "kind": "line_range",
-              "start": 802
+              "start": 807
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -918,11 +1148,11 @@
         {
           "anchor": {
             "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
-            "content": "sha256:4de8d23cc2463d985a614115cf7232315ab97655813393439a49d4890875b7ac",
+            "content": "sha256:dfdfb36490654c27cf433806b868ae94163298650e7bd7da8322bdc9c3f81973",
             "locator": {
-              "end": 990,
+              "end": 995,
               "kind": "line_range",
-              "start": 919
+              "start": 924
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -931,11 +1161,11 @@
         {
           "anchor": {
             "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
-            "content": "sha256:b974715c4249450e61a5b8552c42abd8918fb18a31c0a8a6624a83746e6028ed",
+            "content": "sha256:4ad42a87bc265a7621b07b3696c574e5b9f19e60de95c8abbd1e68d1203da71a",
             "locator": {
-              "end": 883,
+              "end": 888,
               "kind": "line_range",
-              "start": 848
+              "start": 853
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -944,11 +1174,11 @@
         {
           "anchor": {
             "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
-            "content": "sha256:3e8a091e0d8cecab8d9b090c3548afc2aa986c33255195cca865e9284ccebe9f",
+            "content": "sha256:36e2d3de861794b909486faacdb57f1339b284d4583879d04b8fd9363e24b762",
             "locator": {
-              "end": 917,
+              "end": 922,
               "kind": "line_range",
-              "start": 901
+              "start": 906
             },
             "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
@@ -957,44 +1187,116 @@
       ]
     },
     "6": {
-      "note": "The raisers that escape as an exception instead of a typed refusal (`T34` on `T87`'s state).\n\nAnchor: `STALE_BASE_RAISERS`",
+      "note": "The stale-base non-answer pin names closeout preview. The case compares the exact non-answer set for the driven closeout preview and sync calls and checks rendered stale-lineage and remedy text.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:c91a1bc0cb3a3b6f084b32de2ae10455120b806fcde7c8feffb78ab0f8233acf",
             "locator": {
-              "kind": "file"
+              "end": 149,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:d335673cf828593cfeb53b4695068887715c114cefab136e74da360d7e017c5d",
+            "locator": {
+              "end": 424,
+              "kind": "line_range",
+              "start": 395
             }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:4ad42a87bc265a7621b07b3696c574e5b9f19e60de95c8abbd1e68d1203da71a",
+            "locator": {
+              "end": 888,
+              "kind": "line_range",
+              "start": 853
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
           "kind": "test"
         }
       ]
     },
     "7": {
-      "note": "Values for arguments a recommendation leaves to the caller — values, never a population.",
+      "note": "The support values fill declared or reported missing arguments in the fixture. The test derives argument names from the call results.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:f0264a4563bcf0c14d6b555d2dbb2927928a8a95317f4e068acc6ec141615311",
             "locator": {
-              "kind": "file"
-            }
+              "end": 166,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:da7f9ab9e506453bb966c35c9812bdefd52accd8900e3eb257b2c823a6c27652",
+            "locator": {
+              "end": 682,
+              "kind": "line_range",
+              "start": 648
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:12f7b894c72792bed3d39a30618573b10ef04a57e8c34f02379785736ee9c831",
+            "locator": {
+              "end": 1014,
+              "kind": "line_range",
+              "start": 999
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
           },
           "kind": "test"
         }
       ]
     },
     "8": {
-      "note": "The two refusal arms separated by model identity, never by wording.\n\nAnchor: `classify_call`",
+      "note": "The classifier extracts the model name from tool error detail and checks it against the expected tool argument model.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:179f105168f5baffc1ea28bb0b185823f3c36a385ad393f17ef8e1769a40640c",
             "locator": {
-              "kind": "file"
+              "end": 204,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:604c714b8eb1b19fb2fdc00ac2bae3137165a28c28d32947d4626e8bf6ef7e18",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 281
             }
           },
           "kind": "test"
@@ -1002,14 +1304,29 @@
       ]
     },
     "9": {
-      "note": "The fields a tool's own argument model named as required and absent.\n\nAnchor: `missing_required_args`",
+      "note": "The helper extracts missing-field names from non-returned call detail. The classifier control asserts the two-field and one-field closeout argument cases.",
       "targets": [
         {
           "anchor": {
-            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
-            "content": "sha256:73364a706f5dba74b5a307558c73a1602546e217514aae7b22e47750eb826617",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:0aaf70bbebeb59c71454a460c15bde3f59432628fcc8338f49cc838a7013b7ae",
             "locator": {
-              "kind": "file"
+              "end": 235,
+              "kind": "line_range",
+              "start": 227
+            },
+            "path": "mcp/tests/workflow_chain_guidance_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "76605183c2ee447abb1caf3359098c4153002cb9",
+            "content": "sha256:604c714b8eb1b19fb2fdc00ac2bae3137165a28c28d32947d4626e8bf6ef7e18",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 281
             }
           },
           "kind": "test"

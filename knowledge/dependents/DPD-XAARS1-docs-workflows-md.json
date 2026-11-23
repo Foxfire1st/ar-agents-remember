@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "d97c375e34ebb494000914a016c9248e847d7c95",
+    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
     "role": "curator",
-    "statement": "The sentence that the knowledge gate has no waiver now says beside it that a master's recorded landing whose chain proof passes and whose only findings are stale entries keeps them as the master's debt and lands; the rest of the page was not read again.",
-    "task": "261112-BUG-L7",
+    "statement": "The workflow guide explains synchronous closeout and integration, names the replacement for an absent or matching retired generation, and identifies the distinct mismatch refusal while preserving direct-landing journal guidance.",
+    "task": "261112-BUG-L15",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
     {
-      "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+      "blob": "932aaabe88db480dbb4e4164e864b736ac94fef3",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
@@ -91,17 +91,17 @@
       "path": "mcp/src/agents_remember/application/direct_execution_grants.py"
     },
     {
-      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
     {
-      "blob": "b55831de01a31229148df21d4199d8411b00f926",
+      "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/worktree_tools.py"
     },
     {
-      "blob": "f6e783f8816a6d765467e38ed1359b68cbce5200",
+      "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
@@ -111,7 +111,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/planning.md"
     },
     {
-      "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+      "blob": "8df1753c138980d015641171fd9ced522dfc5664",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/integration_resolution_handoff.py"
     },
     {
-      "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+      "blob": "65597f52711773d7755f813da12995da8fc98197",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
     },

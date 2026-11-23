@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
+    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
     "role": "curator",
-    "statement": "The examined bootstrap clauses remain consistent with import isolation, selection and fixture ownership while the lane catalog gains four test modules.",
-    "task": "261112-BUG-L9",
+    "statement": "Release certification selects the native stdio stress case, whose warm-index child and measured server omit Coverage startup so instrumentation cannot alter its memory readings.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,12 +31,12 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
+      "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+      "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
     },
@@ -64,6 +64,73 @@
       "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+    },
+    {
+      "anchor": {
+        "blob": "3bbe4b8a03979ebc79e7adf376c3a3142e9d974f",
+        "content": "sha256:dd8bf626f1696fd400e31a3849e4a80a760853ab2a7ed6fe32251e6c5e14f45d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_warm_index"
+        },
+        "path": "mcp/tests/mcp_memory_bounded_fixture.py"
+      },
+      "heading": "Uninstrumented warm-index child",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "3d085155b1d33d66eb9d606c2f0ceedf9bc24818",
+        "content": "sha256:b339770887b57e6cd195a3caaead1d9462ce3c14570df67813856e00cfd640c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_child_parameters"
+        },
+        "path": "mcp/tests/mcp_memory_bounded_stdio_support.py"
+      },
+      "heading": "Uninstrumented measured server",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "3d085155b1d33d66eb9d606c2f0ceedf9bc24818",
+        "content": "sha256:0db0090abe8ad1939fb3ec6d81139f02acdf6ae51cd0ab5e1810a44c02d36aed",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_selection"
+        },
+        "path": "mcp/tests/mcp_memory_bounded_stdio_support.py"
+      },
+      "heading": "Measured workload",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+        "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
+        "locator": {
+          "end": 815,
+          "kind": "line_range",
+          "start": 812
+        },
+        "path": "mcp/tests/test-evidence-lanes.toml"
+      },
+      "heading": "Stress-durability case selection",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+        "content": "sha256:920f9c91a233b6fea2889eee929b0c3dcad1799a845c7874bd4a4cb04294cb0c",
+        "locator": {
+          "end": 73,
+          "kind": "line_range",
+          "start": 68
+        },
+        "path": "pyproject.toml"
+      },
+      "heading": "Default Coverage subprocess configuration",
+      "kind": "anchor"
     }
   ]
 }

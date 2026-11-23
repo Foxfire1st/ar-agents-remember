@@ -15,7 +15,7 @@ locator lands in a blob, which lines two blobs differ in, and which file of C bi
 
 - **Hunks.** `CodeTrees.hunks(old, new)` runs `git diff` with `BLOB_DIFF_ARGS` on two blobs and parses
   the zero-context hunk headers (`parse_hunks`). Equal blobs have no hunks; a binary pair answers `None`.
-  A failed diff raises `CodeReadError`. Results are cached per blob pair for the run.
+  A failed diff raises `CodeReadError`. Each code comparison keeps its hunk results for the current work. The shared hunk, grep and changed-path stores charge the retained key and result. A hunk hit still requires both blobs in the selected repository. Oversized answers can serve the current caller.
 - **Pinned diff options.** `BLOB_DIFF_ARGS` is `diff --no-ext-diff --no-textconv --no-color
   --diff-algorithm=myers --no-indent-heuristic --unified=0 --inter-hunk-context=0 --src-prefix=a/
   --dst-prefix=b/`. The hunks are therefore a function of the two blobs alone, whatever the user's Git
@@ -124,11 +124,15 @@ locator lands in a blob, which lines two blobs differ in, and which file of C bi
 - The blob diff with its failure and cache. [22]
 
 
-- The one path that binds a name once. [24]
+
+- `CodeTrees.unique_binder` returns a path only when the candidate binds the requested name once in exactly one file. [24]
+
 
 - A changed path's hunks, or none for a file-level change. [25]
 
-- The object reader's batched prefetch. [26]
+
+- The object reader batches uncached blobs and reports a failed batch as `CodeObjectError`. [26]
+
 
 - One batch for the changed blobs, answers from the cache afterwards, and a missing tree reported where it is used. [27]
 
@@ -149,7 +153,9 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 
-- The hunk, range, content-identity and hit rules. [29]
+
+- `CodeTrees` resolves ranges and content identities against the selected side and obtains the hunks used by the hit rules. [29]
+
 
 - The pinned zero-context blob diff. [30]
 - One hunk and its document form. [31]
@@ -157,10 +163,14 @@ No configured live documentation source was available for this pass.
 - Binary pairs give `None`. [33]
 - The image of a line range, or no mapping. [34]
 
-- The hunks of a blob pair, cached, with a named failure. [35]
+
+- `CodeTrees.hunks` returns the blob pair’s cached or newly computed zero-context hunks, returns `None` for binary changes, and raises `CodeReadError` on a failed diff. [35]
 
 
-- Whether the store holds a blob; a Git failure is a `CodeReadError`, never absent (R3-2). [36]
+
+
+- `CodeTrees.has_blob` reports a Git observation failure as `CodeReadError`. A missing blob returns false. [36]
+
 
 - A line range mapped from its recorded blob; an unknown blob has no mapping. [38]
 - The mechanical unique match of definition 6. 

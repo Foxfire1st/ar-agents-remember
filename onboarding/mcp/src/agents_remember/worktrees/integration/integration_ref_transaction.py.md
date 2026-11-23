@@ -62,7 +62,9 @@ These current source spans identify the implementation owners and the specific a
 
 - Ordered expected-old CAS retains a torn pair on a memory race. [3]
 - Owned checkout refresh excludes only memory cache state. [4]
+
 - Real Git regression for cache independence and competing memory CAS. [5]
+
 
 ### Cross-Repo References
 

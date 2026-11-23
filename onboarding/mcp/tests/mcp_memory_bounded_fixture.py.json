@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/mcp_memory_bounded_fixture.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Git pair records the memory commit's code attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bbe4b8a03979ebc79e7adf376c3a3142e9d974f",
+            "content": "sha256:3ef13d271de8f3b091a82807879a1472c08db6ea096cd08b2f16be6cc327224e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git_pair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Index warming runs before the measured server starts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bbe4b8a03979ebc79e7adf376c3a3142e9d974f",
+            "content": "sha256:dd8bf626f1696fd400e31a3849e4a80a760853ab2a7ed6fe32251e6c5e14f45d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_warm_index"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The builder returns the configuration and identities used by the driver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bbe4b8a03979ebc79e7adf376c3a3142e9d974f",
+            "content": "sha256:98982a38e757427eb68b9420bb03851d43ec87d2898f4fe26de35a5d43bad5c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -34,6 +34,8 @@ No file-local implementation change is requested by this reconciliation.
 
 The declared-mode arm retains its configured coordination root and asserts the retired direct_execution_enabled field is absent, rather than enabling direct execution through settings. The settings file is temporary fixture state. The declared-but-unenforced mode-boundary limitation remains; this is not real-account execution evidence.
 
+The retired package-shape case constructs its candidate layout outside the host coordination ancestry. It still requires settings discovery to choose the fixture’s ancestor default.
+
 ## Evidence
 
 ### Docs References
@@ -67,7 +69,9 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 - Any mode declaration lifts the primary refusal and the write confinement, with the refusal itself as the positive control. [9]
 
-- An installed coordination root is recognised by its system, memory-repos and tasks directories without a skills directory; a package-source shape is not. [11]
+
+- Installed discovery accepts the system, memory-repos and tasks directory shape without skills. The retired package-shaped case uses its own ancestor scope. [11]
+
 
 
 - The reserved lifecycle-operation mode is declarable by any caller, and reports as a writer of every store `mcp` owns. [10]
@@ -77,3 +81,5 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+- The retired package-shape case constructs its candidate layout outside the host coordination ancestry. It still requires settings discovery to choose the fixture’s ancestor default. [12]

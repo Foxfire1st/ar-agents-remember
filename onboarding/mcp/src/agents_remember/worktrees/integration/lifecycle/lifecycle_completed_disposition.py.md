@@ -6,13 +6,13 @@
 
 ## Purpose
 
-Determines whether a completed closeout or direct operation has a legal terminal disposition.
+Checks exact completed-owner eligibility and an idle integration claim for journal disposition. The current public disposition is direct-landing retirement.
 
 ## Code Commentary
 
 ### Logic
 
-It checks integration-claim idleness, exact retained owner and completed-but-unintegrated state before terminal disposition. A completed direct landing is recognised by the shared `completed_direct_owner` predicate from its own doorless record: kind, derived fingerprint/key identity, active disposition, completed status and the generation pinned by the control caller. The closeout-owner branch and worker-exit guard remain independent. Direct supersede is refused because the record claims no door; retire is its owner disposition.
+It checks integration-claim idleness, exact retained owner and completed-but-unintegrated state before terminal disposition. A completed direct landing is recognised by the shared `completed_direct_owner` predicate from its own doorless record: kind, derived fingerprint/key identity, active disposition, completed status and the generation pinned by the control caller. The helper retains a separate closeout-owner check for stored door evidence. Direct supersede is refused because the record claims no door; retire is its owner disposition.
 
 ### Conventions
 
@@ -21,7 +21,7 @@ the public function or model instead of re-deriving its lower-level state machin
 
 ### Invariants And Boundaries
 
-- Completed status alone does not authorize disposition: integration must be incomplete, its claim idle and worker exit proven. A direct owner is not inferred from a door publication; a stored direct record carrying a door is not an exact owner.
+- Completed status alone does not authorize disposition: integration must be incomplete and its claim must be idle. A direct owner is not inferred from a door publication; a stored direct record carrying a door is not an exact owner.
 - Missing, unreadable, ambiguous, or conflicting authority fails loudly; this file does not add a
   fallback or compatibility shadow.
 
@@ -41,7 +41,9 @@ No configured external domain source applies; this is repository-owned behavior.
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-- Direct retire uses the shared owner predicate while existing integration and worker guards stay in force; direct supersede is refused. [2]
+
+- Completed disposition checks exact ownership and an idle integration claim. [2]
+
 
 ### Cross-Repo References
 

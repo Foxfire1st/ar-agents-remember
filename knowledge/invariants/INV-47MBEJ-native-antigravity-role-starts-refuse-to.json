@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The native provider discards the bound task server, and saved-request reconciliation must preserve existing agents while preventing an unbound replacement."
+  },
+  "applicability": "AR role starts selecting native Antigravity or Antigravity ACP under D890 and D896.",
+  "conditions": [
+    "A fresh native Antigravity start returns ACP guidance before workspace preparation.",
+    "Saved native Retry looks up the exact recorded agent. Known absence settles HTTP 409 before native creation.",
+    "The admitted ACP path preserves the per-seat stdio definition and exact saved create input."
+  ],
+  "exclusions": [
+    "An unreadable host remains unresolved.",
+    "The installed AR 3.0.3 and Paseo 0.15.4 Default witness does not establish Auto behavior or a live 0.16.2 observation."
+  ],
+  "id": "INV-47MBEJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Exact W4 red and W5 green regression on starting and unknown receipts, existing-agent delivery and exact ACP replay, and pinned 0.16.2 absence trace showing a lookup with zero creates. D896 live ACP witness on installed 0.15.4 and pinned 0.16.2 adapter source are distinct."
+      ],
+      "path": "W6-curator-ingest.json"
+    },
+    "handoffEntry": "BUG-R19@v1 item 6",
+    "leaf": "261112-BUG-L19",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Native Antigravity role starts refuse to create a seat because the plug-in drops the task tool server. Retry can reconcile the recorded seat. The Antigravity ACP provider receives its own stdio task server and replays the saved launch.",
+  "status": "proposed",
+  "supersedes": []
+}

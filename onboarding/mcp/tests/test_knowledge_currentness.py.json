@@ -131,25 +131,16 @@
       ]
     },
     "15": {
-      "note": "A failing step never refuses.\n\nAnchor: `test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read`",
+      "note": "An injected IndexMismatchError leaves the read in view state with the invariant and realization IDs. Currentness gives the failure reason and the fixture statement stays out of the serialized response.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
-            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
         {
           "anchor": {
             "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
             "content": "sha256:8eafa74e77e1208a1bc9f6b56f8deb48035926357fd13502a59e0e4d8f265a4d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read"
+              "end": 780,
+              "kind": "line_range",
+              "start": 751
             }
           },
           "kind": "test"
@@ -161,12 +152,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:ea533393f6ab58b54c02b6526a92b2a9d597d162f1fd77dbfe7a1fbceab5cbb8",
             "locator": {
-              "end": 816,
+              "end": 228,
               "kind": "line_range",
-              "start": 1
+              "start": 228
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -280,25 +271,16 @@
       ]
     },
     "6": {
-      "note": "Git failures and no caching of them.\n\nAnchor: `test_a_failed_or_timed_out_git_call_is_unverifiable_with_its_reason`",
+      "note": "An injected Git timeout reports the entry as unverifiable. The next read observes the real tree and finds the edit stale.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
-            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
         {
           "anchor": {
             "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
             "content": "sha256:e6a12fb3e414bb8b9b3d368a8c6b5a5a4cb475722ec9f460b65408220f29d169",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_failed_or_timed_out_git_call_is_unverifiable_with_its_reason"
+              "end": 435,
+              "kind": "line_range",
+              "start": 423
             }
           },
           "kind": "test"

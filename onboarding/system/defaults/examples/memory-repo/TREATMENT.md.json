@@ -1,18 +1,36 @@
 {
   "path": "system/defaults/examples/memory-repo/TREATMENT.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8c8a2e946dfeb8c463793106ccc3339d1d17af9f",
+        "content": "sha256:d0d5c52098a4416361eb345da77e73b9a8cadaf2c57e8cd116cf055ae4c95bb2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KXZF5Z",
+      "invariant": "INV-X073BM",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 3 — text carries the content",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The shipped example treatment is the memory design text the rule governs; it now says the essay leads and figures respond.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The treatment steers how a page looks, reads, moves and responds, and nothing beyond that",
+      "note": "The example treatment presents an essay that carries the full explanation. Figures support the essay where they help. The still form preserves the whole explanation.",
       "targets": [
         {
           "anchor": {
-            "blob": "8d74270e0b2dbebeace25d1b300669ff7aca6d74",
-            "content": "sha256:bc7c2c447b42b25e612bad51e135752fea675ebfaab17c9e2a6fce99d986b29f",
+            "blob": "8c8a2e946dfeb8c463793106ccc3339d1d17af9f",
+            "content": "sha256:3a03c77f852bbfb0fc5243682a5a21383dde45b181736176906303cc03002917",
             "locator": {
-              "end": 5,
+              "end": 40,
               "kind": "line_range",
-              "start": 5
+              "start": 20
             }
           },
           "kind": "code"

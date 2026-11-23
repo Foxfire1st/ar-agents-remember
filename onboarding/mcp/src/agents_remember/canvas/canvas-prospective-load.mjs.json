@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "67f8b73c7c956edb2e18c92195e786684ec8777b",
+        "blob": "8d8045494c3ebf5053d563548de4f4fe855b8fad",
         "content": "sha256:7e4d589221ed230128e199fcf17807340b453e4d7f473e3c32f426e5aeeef9b6",
         "locator": {
-          "end": 248,
+          "end": 250,
           "kind": "line_range",
-          "start": 210
+          "start": 212
         }
       },
       "id": "RLZ-713HTD",
@@ -22,12 +22,31 @@
     },
     {
       "anchor": {
-        "blob": "67f8b73c7c956edb2e18c92195e786684ec8777b",
+        "blob": "8d8045494c3ebf5053d563548de4f4fe855b8fad",
+        "content": "sha256:5c3e336aa38f1bb9c975ef9c19e575d4b7445ac16b9a6b0fbfd09edf4869e82e",
+        "locator": {
+          "end": 44,
+          "kind": "line_range",
+          "start": 30
+        }
+      },
+      "id": "RLZ-NDTCG2",
+      "invariant": "INV-R9CTWA",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 6 — video is a figure — additional realizations",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The prospective loader serves the admitted WebM and MP4 assets with the matching media type.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8d8045494c3ebf5053d563548de4f4fe855b8fad",
         "content": "sha256:c8defcc4e5bc2874591abcf998d20afbb46e8c60f3d64f4f9610561b4f745f93",
         "locator": {
-          "end": 361,
+          "end": 363,
           "kind": "line_range",
-          "start": 316
+          "start": 318
         }
       },
       "id": "RLZ-QQ4TZ4",
@@ -41,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "67f8b73c7c956edb2e18c92195e786684ec8777b",
+        "blob": "8d8045494c3ebf5053d563548de4f4fe855b8fad",
         "content": "sha256:4856cafdbe73ebb1342c888b1e7bb6d731f83adfb70ae9e43aaa5c384581c65a",
         "locator": {
-          "end": 185,
+          "end": 187,
           "kind": "line_range",
-          "start": 152
+          "start": 154
         }
       },
       "id": "RLZ-TV9FAW",
@@ -55,22 +74,22 @@
         "handoffEntry": "L183-curator-test-facet-02",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "The model-free DOM observation separates basis references from claim ids and reports empty attributes as unresolved. Each inventory is bounded; the trusted Python caller resolves it against the exact packet.",
+      "rationale": "The DOM observation separates nonempty basis references from claim IDs and reports empty attributes as unresolved.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The prospective Chromium observation keeps basis references and claim ids separate through bounded post-load mutations; Python resolves both against the immutable packet. Load, isolation and paint observations establish no explanation correctness or arbitrary later-script behavior.",
+      "note": "The prospective server selects the WebM and MP4 MIME types from the same extension table as other assets.",
       "targets": [
         {
           "anchor": {
-            "blob": "67f8b73c7c956edb2e18c92195e786684ec8777b",
-            "content": "sha256:c8defcc4e5bc2874591abcf998d20afbb46e8c60f3d64f4f9610561b4f745f93",
+            "blob": "8d8045494c3ebf5053d563548de4f4fe855b8fad",
+            "content": "sha256:5c3e336aa38f1bb9c975ef9c19e575d4b7445ac16b9a6b0fbfd09edf4869e82e",
             "locator": {
-              "end": 361,
+              "end": 44,
               "kind": "line_range",
-              "start": 316
+              "start": 30
             }
           },
           "kind": "code"

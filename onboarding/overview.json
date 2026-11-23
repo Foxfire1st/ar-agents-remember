@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
             "content": "sha256:4e77b2a1a88bc765ec36507e0e735caefa2e8b5fc79ab93ed78346ea10fddc65",
             "locator": {
               "kind": "symbol",
@@ -446,22 +446,6 @@
         }
       ]
     },
-    "131": {
-      "note": "**Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The Git runner gives the child no standard input unless text is passed.\n\nAnchor: `run_git`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "132": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): The vendored vocabulary is verified before tiktoken reads it.",
       "targets": [
@@ -485,12 +469,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "blob": "cc7256c264f26cfec9ea56dae7ad2ffb6f0136bb",
             "content": "sha256:a66e9b5d8ddc4563dd8b825b990dfac971f4b2bf3f06491854fa3928bf526db3",
             "locator": {
-              "end": 67,
+              "end": 69,
               "kind": "line_range",
-              "start": 62
+              "start": 64
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },
@@ -503,7 +487,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -641,12 +625,12 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
             "locator": {
-              "end": 277,
+              "end": 276,
               "kind": "line_range",
-              "start": 197
+              "start": 196
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -988,7 +972,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:57b461db3dcb97557fa3361023f8de23e327901659cd1425b5889f368fd94649",
             "locator": {
               "end": 74,
@@ -1600,14 +1584,29 @@
       ]
     },
     "291": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Task-addressed lifecycle controls.\n\nAnchor: `control_operation`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Task-addressed lifecycle controls.",
       "targets": [
         {
           "anchor": {
-            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
-            "content": "sha256:3f90c50c3cf755de33cd7969389cbafe4078f75f930504c6cdc2b24542b3dd9a",
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:ba6d9b36f76649d9f2c1dfd998576371323954e8e20327f7cfa8216509d06eea",
             "locator": {
-              "kind": "file"
+              "end": 88,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:7aa277ded5582d5af283a4f6d9a10ad5aaabb6fc5dca672ef7b775249aecef2b",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 116
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
@@ -1620,7 +1619,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
             "content": "sha256:2a93ceb2cd2bba8b07d2ce242e2567ae6207922b3170f8e0fbd6884bf970f530",
             "locator": {
               "kind": "symbol",
@@ -1931,7 +1930,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
             "content": "sha256:527858aaaf2a6ebe16c028201fbd79c8c09ed72cf4237f0f087a999d6d5295c3",
             "locator": {
               "end": 25,
@@ -2191,7 +2190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:3975ddc1f60620446aeac3015498f3a7bf168671a74106312224692c56a7b0a4",
             "locator": {
               "end": 76,
@@ -2205,16 +2204,42 @@
       ]
     },
     "317": {
-      "note": "The invariant gate recomputes and treats open/incomplete/refusing inputs as repair findings; the local legacy applicability rule does not own cutover refusal.",
+      "note": "The invariant gate reuses a compatible observed verdict or recomputes from exact sides. Open items, incomplete inputs and refusing validator violations are repair findings. The local legacy applicability rule leaves cutover refusal to its own owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
-            "content": "sha256:b98f34753d256efb09111e7053b5f37280f7e2a8c1c75fcfa48463b43eb35366",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "content": "sha256:92e8dd7884583dddeb79fa994756c0f42711be2f945f72040cc477b74ba74b34",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "content": "sha256:ed85d601d3d5be61cb9f76b13a9a1e2f5748a84422aa515a6701771822827f9d",
             "locator": {
               "end": 27,
               "kind": "line_range",
-              "start": 1
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "content": "sha256:10ed4e2dc9a7d097938ab7b4f6cac722ddfddf6e8b5416a61437a5eb242f06d7",
+            "locator": {
+              "end": 310,
+              "kind": "line_range",
+              "start": 290
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },
@@ -2411,12 +2436,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
             "locator": {
-              "end": 165,
+              "end": 167,
               "kind": "line_range",
-              "start": 152
+              "start": 154
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2424,12 +2449,12 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:453fa60fd7e1d14c0171d456f4d8bcd58d5be2255a14c3ed6fcf169ae0f9e1ed",
             "locator": {
-              "end": 181,
+              "end": 183,
               "kind": "line_range",
-              "start": 168
+              "start": 170
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2437,12 +2462,12 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:62a77742ee64fab78b698abd24ce333efdd8b6f9f5fb5aef63ec057c5d4806ab",
             "locator": {
-              "end": 299,
+              "end": 301,
               "kind": "line_range",
-              "start": 284
+              "start": 286
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2450,12 +2475,12 @@
         },
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:19eb270696db7904b422537e31cb29711f22efe2107a395be2a2d4f496a9fe4b",
             "locator": {
-              "end": 448,
+              "end": 450,
               "kind": "line_range",
-              "start": 395
+              "start": 397
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2803,7 +2828,7 @@
         },
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
             "content": "sha256:ab2d1870feb094de29e4d04437eefe49a20c1bc949e4e6926fe96408cbb78683",
             "locator": {
               "end": 192,
@@ -2816,7 +2841,7 @@
         },
         {
           "anchor": {
-            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
             "content": "sha256:da0b54225087c70b68ff362613557c5860bca7d5204c26c5b19d565be6316b87",
             "locator": {
               "end": 182,
@@ -2914,7 +2939,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
             "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
             "locator": {
               "end": 58,
@@ -2999,12 +3024,12 @@
         },
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 149
+              "start": 151
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -3025,7 +3050,7 @@
         },
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3038,12 +3063,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -3113,12 +3138,12 @@
         },
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 149
+              "start": 151
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -3139,7 +3164,7 @@
         },
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3152,12 +3177,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -3253,12 +3278,12 @@
         },
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 149
+              "start": 151
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -3279,7 +3304,7 @@
         },
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3292,12 +3317,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -3349,12 +3374,12 @@
         },
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 149
+              "start": 151
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -3375,7 +3400,7 @@
         },
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3388,12 +3413,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -3445,12 +3470,12 @@
         },
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 149
+              "start": 151
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -3471,7 +3496,7 @@
         },
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3484,12 +3509,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -3541,12 +3566,12 @@
         },
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 149
+              "start": 151
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -3567,7 +3592,7 @@
         },
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3580,12 +3605,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -3637,12 +3662,12 @@
         },
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 149
+              "start": 151
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -3663,7 +3688,7 @@
         },
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3676,12 +3701,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -3707,8 +3732,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
-            "content": "sha256:d20df717b378f566eed4a0b8759c045e05844f53711d396f36e5d77c8d44a2bb",
+            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+            "content": "sha256:50378ea34b53a8c0475ba1b689c0ca605c2f57780e85c4b560e19a2d4c0127bb",
             "locator": {
               "end": 68,
               "kind": "line_range",
@@ -3720,12 +3745,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
             "content": "sha256:cdbec88c2933dfcb8d388f31778f22b9fb5d578329bd0cafcc5fba25d13b8e9c",
             "locator": {
-              "end": 118,
+              "end": 120,
               "kind": "line_range",
-              "start": 98
+              "start": 100
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -3733,7 +3758,7 @@
         },
         {
           "anchor": {
-            "blob": "dc1a3a4b857a74f896b6369fc9fd63b6c61b7cd6",
+            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
             "content": "sha256:6f17fc68facf1fdd20605843b11269ac6c0e4112a019fb80a9ccb49ce83c99e1",
             "locator": {
               "end": 134,
@@ -3777,12 +3802,12 @@
         },
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 149
+              "start": 151
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -3803,7 +3828,7 @@
         },
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3816,12 +3841,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -3873,12 +3898,12 @@
         },
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 149
+              "start": 151
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -3899,7 +3924,7 @@
         },
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3912,12 +3937,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -3985,12 +4010,12 @@
         },
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 149
+              "start": 151
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -4011,7 +4036,7 @@
         },
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -4024,12 +4049,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -4081,12 +4106,12 @@
         },
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
-            "content": "sha256:6f8f2d817c4e38fcbaa511f68a7f4c1c8b71ada3acdab12b41980a098b4fd0a7",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
-              "end": 157,
+              "end": 159,
               "kind": "line_range",
-              "start": 149
+              "start": 151
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -4107,7 +4132,7 @@
         },
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -4120,12 +4145,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -4151,12 +4176,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "blob": "8df1753c138980d015641171fd9ced522dfc5664",
             "content": "sha256:ccc8390918d834c06073f607a6aaf9bffcd58acbbe4d032ccd858b44c0690592",
             "locator": {
-              "end": 88,
+              "end": 96,
               "kind": "line_range",
-              "start": 78
+              "start": 86
             },
             "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
           },
@@ -4285,14 +4310,14 @@
       ]
     },
     "358": {
-      "note": "Current PUBLIC_TOOLS has 44 names, including mounted knowledge_write and user_settings_init; converted MQC answers carry cut/added counts and bounded first rows. Complete lists remain in the whole result and are available in a detail log only when that result was retained. Static source, not execution or live-advertisement acceptance.",
+      "note": "The source roster contains 44 tools, including knowledge_write and user_settings_init. Converted memory-quality status includes bounded first rows and cut and added counts. Complete lists stay in the whole result and its detail log when recording succeeds.",
       "targets": [
         {
           "anchor": {
             "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
-            "content": "sha256:80377872702b56644d88e0950f44352601e8b003c926376d446829b06503f07b",
+            "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
             "locator": {
-              "end": 71,
+              "end": 74,
               "kind": "line_range",
               "start": 22
             },
@@ -4315,12 +4340,12 @@
         },
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
             "locator": {
-              "end": 519,
+              "end": 527,
               "kind": "line_range",
-              "start": 396
+              "start": 401
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -4450,11 +4475,50 @@
       ]
     },
     "365": {
-      "note": "Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,327 words against an equal ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run.",
+      "note": "Current capsule ceilings live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`: Architect 5,500 words; Manager 4,600; Curator 4,537; Reviewer 4,200; Bootstrap 4,000; Orchestrator 3,800; other roles 3,742. `decision.measuredCurrentRenewalBug08` records D821’s removal of per-item budgets in favor of growth under the applicable ceiling and D822’s named role ceilings. Its preceding renewal account is `measuredCurrentRenewalBug07`. The current facts under `derived.current_measurements` cover 34 capsules and 38 declared step details; step details have a 2,500-word ceiling, and the separately delivered every-role digest measures 2,324 words against a 2,327-word ceiling. The tables record 289 words for `reference/coordination/shared/master-state.md`, checked against the shared step-detail ceiling. The older `measuredCurrentRenewalWaitsAndCodingGuidelines.limitRule` describes the superseded per-item regime, not present growth policy. The live guard checks renewed measurements and ceilings, authenticates the frozen `capsule-budgets.json` history by hash, checks its retained handover token rows and prints its provisional measurements as historical diagnostics. These are stored declarations and source-defined checks, not a new compilation or test run.",
       "targets": [
         {
           "anchor": {
-            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:1556b38430b0b91643d0aca13936052e01cf50233bcb7f447833531577dd9011",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:c50f9e867d6d8ecfd6d01aba46170a274d11249ebb6817911173b74efc6ebea7",
+            "locator": {
+              "end": 5111,
+              "kind": "line_range",
+              "start": 5100
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:a21d8fbeade96f460c50dc5451345a3d1b287f7a4a3bb84239ef8d0d75a3f85b",
+            "locator": {
+              "end": 5396,
+              "kind": "line_range",
+              "start": 5396
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
             "content": "sha256:9c5f28574f34d8206f5408394964aaf4ccfd8c658438df035a4fce7285c6ca7e",
             "locator": {
               "end": 6178,
@@ -4467,12 +4531,12 @@
         },
         {
           "anchor": {
-            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
-            "content": "sha256:8d6069064c657e014f754a7196420cd9de32438fa3bf54e5d3a8381f7c463ead",
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:ba80962f583954fd6940b04297b85ef1121fcbce8c715f40ffb5457bbb0e0750",
             "locator": {
               "end": 6265,
               "kind": "line_range",
-              "start": 6185
+              "start": 6186
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
@@ -4514,19 +4578,6 @@
               "start": 142
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5144c3080493e1977d2106b739c77146b273e8e3",
-            "content": "sha256:a21d8fbeade96f460c50dc5451345a3d1b287f7a4a3bb84239ef8d0d75a3f85b",
-            "locator": {
-              "end": 5396,
-              "kind": "line_range",
-              "start": 5396
-            },
-            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
           },
           "kind": "code"
         }
@@ -4589,7 +4640,7 @@
         },
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -4602,12 +4653,12 @@
         },
         {
           "anchor": {
-            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:f724c5c7e64d64f12e34cdc46514fe5e413dd7757ee04cc88edb68f8b8e2ef25",
             "locator": {
-              "end": 961,
+              "end": 964,
               "kind": "line_range",
-              "start": 928
+              "start": 931
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -4628,12 +4679,12 @@
         },
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:26314183153c205234615424aaee58bbfa3120a3fd659c0fd3c256f1c4ac5c00",
             "locator": {
-              "end": 924,
+              "end": 892,
               "kind": "line_range",
-              "start": 866
+              "start": 834
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -4641,12 +4692,12 @@
         },
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:21054e547db35c4914f56821694f436ea35b2a6a0ba612deb4b68c010c7c69ac",
             "locator": {
-              "end": 983,
+              "end": 951,
               "kind": "line_range",
-              "start": 973
+              "start": 941
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -4771,7 +4822,7 @@
         },
         {
           "anchor": {
-            "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
             "content": "sha256:790f9bbaf224d7945aa19ac524f2d05bdab9bc5e8a53200cc1f51c68983ad7e6",
             "locator": {
               "end": 161,
@@ -4784,7 +4835,7 @@
         },
         {
           "anchor": {
-            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
             "content": "sha256:8d29e140ddd3d61e07c4e50481a745a5c699cc8c6d22b54b9bead5dc726e22c6",
             "locator": {
               "end": 65,
@@ -4836,12 +4887,12 @@
         },
         {
           "anchor": {
-            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
             "content": "sha256:ce161272614d41159cb2cd2461007466b8db6bf4c3ad9725c46b82b598305c20",
             "locator": {
-              "end": 68,
+              "end": 69,
               "kind": "line_range",
-              "start": 51
+              "start": 52
             },
             "path": "mcp/src/agents_remember/models/role_launcher.py"
           },
@@ -4871,7 +4922,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1b37e4512c41640d3bfdcf863bb702060adeefb",
+            "blob": "3c6e0239bfeaad43239f0725759b605a205ed12e",
             "content": "sha256:5cc762b4d189331c5ded06ea6a39b7807b870900c2568f4f91a9e5adec263710",
             "locator": {
               "end": 23,
@@ -5029,8 +5080,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1b37e4512c41640d3bfdcf863bb702060adeefb",
-            "content": "sha256:7a6ce2acaef43c714cd4cf042d5a40ca0c4f26254778df5705b8e6558cc0ee4e",
+            "blob": "3c6e0239bfeaad43239f0725759b605a205ed12e",
+            "content": "sha256:90329b2fbca51ed4d927deda8f373c4a35b82e1b2df24b952d8d7ac92c8f07fa",
             "locator": {
               "kind": "file"
             },
@@ -5274,16 +5325,16 @@
       ]
     },
     "73": {
-      "note": "The internal knowledge-page threshold is 8,000 tokens; the mounted knowledge_read naming pager uses a 4,000-token delivered bound and a 20-entry list cap.",
+      "note": "The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read naming pager uses a 4,000-token delivered bound and a 20-entry list cap.",
       "targets": [
         {
           "anchor": {
-            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
-            "content": "sha256:f22e58ff1fe77b4f47af62e9e2c356b9825ee1a4f8f7c76d6bcdcd69174e1f86",
+            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "content": "sha256:6ea1a6086fc01dc18f9bfda9d7f0f859bedde538a3b906d26eb1dd273768545e",
             "locator": {
-              "end": 31,
+              "end": 122,
               "kind": "line_range",
-              "start": 25
+              "start": 119
             },
             "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
           },
@@ -5291,14 +5342,14 @@
         },
         {
           "anchor": {
-            "blob": "e873d19084240c718c7f7df0bc9c8d5caf609131",
-            "content": "sha256:6ea1a6086fc01dc18f9bfda9d7f0f859bedde538a3b906d26eb1dd273768545e",
+            "blob": "01e9be961a7defc04ce875f6b36852119d4aec3e",
+            "content": "sha256:4546a0d7a1ed0c18c9aebed2654f6954e56203867d89a8aacc49fe5b55170bac",
             "locator": {
-              "end": 123,
+              "end": 8,
               "kind": "line_range",
-              "start": 120
+              "start": 6
             },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+            "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
           },
           "kind": "code"
         },
@@ -5481,12 +5532,12 @@
       ]
     },
     "86": {
-      "note": "The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder.\n\nAnchor: `Handle a developer-declared takeover`",
+      "note": "The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder.  Anchor: `Handle a developer-declared takeover`",
       "targets": [
         {
           "anchor": {
-            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
-            "content": "sha256:81d7ff8fc8c18376dcadb68e747b9ee15ff4e928242e7fc0a8c710a84c89cb19",
+            "blob": "775f056813e59e9f1426a560af777dc2be162c85",
+            "content": "sha256:00c5c6738dbba46727a916f6bc65c8efe98daf91f546b98d681279418a965740",
             "locator": {
               "end": 55,
               "kind": "line_range",
@@ -5550,12 +5601,12 @@
         },
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:7928e80a269ad98095e1ab1f7a6085424da6acfb557dc9969c3f5f15ec78cbbb",
             "locator": {
-              "end": 301,
+              "end": 283,
               "kind": "line_range",
-              "start": 262
+              "start": 244
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -5762,7 +5813,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+            "blob": "775f056813e59e9f1426a560af777dc2be162c85",
             "content": "sha256:ad81b5d92d457e5c9612b50047488a6ad3ecfb1a52ed7213bde9a3dd7a539c4d",
             "locator": {
               "end": 22,
@@ -5775,7 +5826,7 @@
         },
         {
           "anchor": {
-            "blob": "9e4e3e6531811214aba62dbb06412b541a438c5e",
+            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
             "content": "sha256:ba076d3aa54b13a95ebc27070ad5a248ec1f4db724e808c1a7af5bb4c88355ea",
             "locator": {
               "end": 81,
@@ -5806,12 +5857,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
             "content": "sha256:ac79289be96ec4ae39eb257c5d7f746466b05dc237ddb41377085cffaca6b20e",
             "locator": {
-              "end": 838,
+              "end": 839,
               "kind": "line_range",
-              "start": 821
+              "start": 822
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

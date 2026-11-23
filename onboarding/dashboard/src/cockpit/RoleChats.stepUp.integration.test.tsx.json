@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9de16a07eb461a9c55d19ae95b60dc70a2f5a76e",
+            "blob": "b1a73e2b93bb47101f79caae02930d779c6f82d7",
             "content": "sha256:b116ffd76dc9299784e4374779356f6ddbb406159ba76b6ccf9b26ab02c8ae30",
             "locator": {
-              "end": 71,
+              "end": 72,
               "kind": "line_range",
-              "start": 47
+              "start": 48
             }
           },
           "kind": "test"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9de16a07eb461a9c55d19ae95b60dc70a2f5a76e",
+            "blob": "b1a73e2b93bb47101f79caae02930d779c6f82d7",
             "content": "sha256:2d5b23ed935057a85553d5d4d897e870618746edfff67079c1b0b3e95e67b89c",
             "locator": {
-              "end": 78,
+              "end": 79,
               "kind": "line_range",
-              "start": 73
+              "start": 74
             }
           },
           "kind": "test"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9de16a07eb461a9c55d19ae95b60dc70a2f5a76e",
+            "blob": "b1a73e2b93bb47101f79caae02930d779c6f82d7",
             "content": "sha256:347061bd5fcd1e1fae9eddbf791dccd8123e3604ba671c329b930260247a83b4",
             "locator": {
-              "end": 89,
+              "end": 90,
               "kind": "line_range",
-              "start": 80
+              "start": 81
             }
           },
           "kind": "test"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9de16a07eb461a9c55d19ae95b60dc70a2f5a76e",
+            "blob": "b1a73e2b93bb47101f79caae02930d779c6f82d7",
             "content": "sha256:25bc10c73c830faf891b781554e281f35d4f861b0e5a65d7c461f83ac7bdfb62",
             "locator": {
-              "end": 95,
+              "end": 96,
               "kind": "line_range",
-              "start": 91
+              "start": 92
             }
           },
           "kind": "test"
@@ -71,16 +71,33 @@
       ]
     },
     "5": {
-      "note": "Source assertion: marks the real row's base choices non-applied after a cross-harness step-up receipt. The declaration is not an execution receipt.\n\nAnchor: marks the real row's base choices non-applied after a cross-harness step-up receipt",
+      "note": "The mounted test presents base options beside the reported step-up state without showing the base values as applied.",
       "targets": [
         {
           "anchor": {
-            "blob": "9de16a07eb461a9c55d19ae95b60dc70a2f5a76e",
-            "content": "sha256:3b406408c08facbdffe671567468922f3e3bf7f167e51cf928e7b8bb441bf3dc",
+            "blob": "b1a73e2b93bb47101f79caae02930d779c6f82d7",
+            "content": "sha256:74dac1a8c40fe2b88c44375756f92aa085fba4dfae734789bcfa9104a0edb069",
             "locator": {
-              "end": 131,
+              "end": 165,
               "kind": "line_range",
-              "start": 97
+              "start": 125
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A top-level observed mode wins over the requested value in the displayed receipt, with a separate unreported case.\n\nAnchor: \"names the mode a receipt reports and holds the unreported case\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1a73e2b93bb47101f79caae02930d779c6f82d7",
+            "content": "sha256:b313a5d242e1d59f8c09edca0c16f4f509c6c80568d38944657b694529373eb0",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 98
             }
           },
           "kind": "test"

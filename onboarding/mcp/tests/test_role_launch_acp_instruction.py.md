@@ -27,8 +27,6 @@ byte comparison rather than on someone noticing later that a seat's prompt drift
 
 ## Frame
 
-The fixture configures a real Paseo runtime through the launch route, so the test exercises the
-route rather than a helper: the instruction is appended where the runtime actually builds its
-prompt. What a seat does once it has declared is covered by
+The test dispatches through the role launch route with a fake Paseo bridge. It checks the stored handover and create payload where the route prepares the first prompt. What a seat does once it has declared is covered by
 `server/subagent_wait.test.ts`; which providers the plugin places on an ACP connection, and so
 which launches get the sentence, by `server/acp_providers.test.ts`.

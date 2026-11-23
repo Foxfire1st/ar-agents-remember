@@ -4,15 +4,28 @@
   "realizes": [],
   "references": {
     "19": {
-      "note": "`TreeReceiptFixture` supplies the current fixture or assertion described above.",
+      "note": "The fixture initializes separate temporary code and memory Git repositories, binds a leaf contract and supplies the comparison and commit-pair helpers.",
       "targets": [
         {
           "anchor": {
             "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
-            "content": "sha256:3ad7e4b59069321bbb7137bd8380813a68e60273f8605b040319ac41066be6fd",
+            "content": "sha256:d67382ff3a6360e89c3e3702b9cbfe96f05e90e8ee7e5fda48a58c2b4a434be7",
             "locator": {
-              "kind": "symbol",
-              "name": "TreeReceiptFixture"
+              "end": 97,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:fcc81cadf6a8e8df8110424e5ee53afa003c40ffe79f5b2bf168b68c388a1bfb",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 101
             }
           },
           "kind": "test"
@@ -20,7 +33,7 @@
       ]
     },
     "20": {
-      "note": "`test_receipts_bind_both_delivered_trees_and_keep_both_result_keys` supplies the current fixture or assertion described above.",
+      "note": "The case attaches closeout and integration receipts to supplied completion results and reads them back. Both receipt blocks bind to the reviewed pair.",
       "targets": [
         {
           "anchor": {
@@ -94,16 +107,42 @@
       ]
     },
     "24": {
-      "note": "The lane row and the exact-scope consumer rows (the _user_settings_guard.py and Node package-lock artifacts) this module is registered in.",
+      "note": "The lane manifest registers this module in unit-regression. The lifecycle catalog names it as a consumer of `_user_settings_guard.py` and the Node package-lock fixture.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
             "locator": {
-              "end": 5062,
+              "end": 486,
               "kind": "line_range",
-              "start": 1
+              "start": 486
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
+            "locator": {
+              "end": 653,
+              "kind": "line_range",
+              "start": 653
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
+            "locator": {
+              "end": 3048,
+              "kind": "line_range",
+              "start": 3048
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

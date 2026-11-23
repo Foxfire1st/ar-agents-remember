@@ -18,6 +18,8 @@ module, an automatic module fixture resets already-loaded reset owners from the 
 register. Per-test snapshots remain confined to restored rows; constant-for-tests rows survive
 deferred imports rather than being erased at module boundaries.
 
+During pytest configuration the plugin installs `new_test_event_loop` for both Runner's loop factory and the public asyncio loop constructor. Pytest cleanup restores both aliases.
+
 ## Invariants And Boundaries
 
 - This module imports no Dagger admission, worktree service, or provider code.
@@ -35,7 +37,12 @@ The module-boundary fixture resets the worktree service holder as well as the cl
 - Shared hooks own ordering and process cleanup. [1]
 
 
-- Already-loaded process state is reset before and after each module. [2]
+
+- The module fixture resets already-loaded registered owners before and after each test module. [2]
+
 - Per-test restoration runs before leak failure. [3]
 
+
 - The module-boundary fixture resets the worktree service holder as well as the closed mutable-state register, before the module and in its `finally` cleanup. The holder is one object rather than a module-level collection the syntactic scanner discovers; an earlier module's server supplier cannot serve the next module's worktree operation. [4]
+
+- Both asyncio aliases use the shared test loop factory until pytest cleanup. [5]

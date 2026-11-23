@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "362b8a9fc3c3ddc0c47166e65016bef79346a7a1",
+        "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
         "content": "sha256:d08309beeb0c0f52fa43370b1aa3df3e8f1cc4cd98aaae7c3add50fb23023c9b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "362b8a9fc3c3ddc0c47166e65016bef79346a7a1",
+        "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
         "content": "sha256:1981ed9d08ad144170b2eb59a174104b429a044acf2bcc8268d32495f25ab1a1",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,24 @@
     },
     {
       "anchor": {
-        "blob": "362b8a9fc3c3ddc0c47166e65016bef79346a7a1",
+        "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
+        "content": "sha256:8ff93425a8f317bd047a6ec5bc45ffbe9b25ca36bdd244f05d7a633ddb718863",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_trim_follows_success_refusal_and_error_after_call_scope_exits"
+        }
+      },
+      "facet": "Trim follows scope exit for success, refusal and an exception.",
+      "id": "PRF-QBSTGE",
+      "invariant": "INV-JB9D62",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — allocator high mark",
+        "leaf": "261112-BUG-L18"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
         "content": "sha256:20030558c3f26272ca9d9f9bb886cc2fef5670d39791f7d22703febc5e148f4f",
         "locator": {
           "kind": "symbol",
@@ -51,6 +68,23 @@
         "handoffEntry": "MIK-R213@v1 rule 1",
         "leaf": "260928-MIK-L202"
       }
+    },
+    {
+      "anchor": {
+        "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
+        "content": "sha256:ae20c19a70adf94a8809d5d72973b32bfa24382dcff83b54795cfa710a917d8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cancelled_role_start_drains_before_clearing_journal_and_trimming"
+        }
+      },
+      "facet": "Both registered start variants keep their journal owner until their cancelled worker drains.",
+      "id": "PRF-ZQN6QF",
+      "invariant": "INV-V4WR2R",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — registered role-start drain",
+        "leaf": "261112-BUG-L18"
+      }
     }
   ],
   "realizes": [],
@@ -60,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "362b8a9fc3c3ddc0c47166e65016bef79346a7a1",
+            "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
             "content": "sha256:d08309beeb0c0f52fa43370b1aa3df3e8f1cc4cd98aaae7c3add50fb23023c9b",
             "locator": {
-              "end": 104,
+              "end": 120,
               "kind": "line_range",
-              "start": 52
+              "start": 68
             }
           },
           "kind": "test"
@@ -77,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "362b8a9fc3c3ddc0c47166e65016bef79346a7a1",
+            "blob": "31b83cb4c0b2caa466772bb067cfd227901956cb",
             "content": "sha256:f9208b23ca9497e53217d4f411eaa89d395738fcb8f0f1a055061280d90c401d",
             "locator": {
               "kind": "symbol",

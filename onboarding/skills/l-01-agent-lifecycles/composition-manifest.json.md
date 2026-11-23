@@ -229,7 +229,9 @@ The curator role's `tools` list requests `knowledge_write` beside `knowledge_rea
 
 - The core-source map's lifecycle-frame entry names task worktree records and the landing chain's lifecycle, not session adoption; the lifecycle-frame source points to the public worktree_start, worktree_attach and terminal-lifecycle references. [4]
 
+
 - The manifest retains canonical Investigator with seven declared tool IDs and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role. [14]
+
 
 
 

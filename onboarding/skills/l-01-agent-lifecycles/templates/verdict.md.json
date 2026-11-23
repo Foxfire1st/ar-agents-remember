@@ -4,8 +4,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
-        "content": "sha256:d4bea4b0dbcaee213fbc156a9c5c9f32e2cf4c21383ad51f0d45eb9912a2e04f",
+        "blob": "11336746503723e0772e73c309956b9748bbec4c",
+        "content": "sha256:2e5d409bd81ebdf2d00635ef576a0fb9a9676373e2e425bec1e875c8d7205260",
+        "locator": {
+          "end": 245,
+          "kind": "line_range",
+          "start": 245
+        }
+      },
+      "id": "RLZ-2DXFZ4",
+      "invariant": "INV-5BPF6M",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §2",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The verdict's evidence lens is where a Reviewer records whether a full suite ran, so it names the final checks as the other occasion.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "11336746503723e0772e73c309956b9748bbec4c",
+        "content": "sha256:2811afc3e2bf80b3b9b1b681d6dfffd41f8c69ce48152f532870271e6fe476b4",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+        "blob": "11336746503723e0772e73c309956b9748bbec4c",
         "content": "sha256:e723ce82b895b1372a026ff77a394eab399373700e675bc530c48b8c3742d07b",
         "locator": {
           "end": 114,
@@ -40,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+        "blob": "11336746503723e0772e73c309956b9748bbec4c",
         "content": "sha256:dfff712ff9e62d449c9b6cb28ad7a4b36e61f0b70120c88ffdf444b7ea5b4a1a",
         "locator": {
           "end": 123,
@@ -59,10 +78,12 @@
     },
     {
       "anchor": {
-        "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
-        "content": "sha256:d4bea4b0dbcaee213fbc156a9c5c9f32e2cf4c21383ad51f0d45eb9912a2e04f",
+        "blob": "11336746503723e0772e73c309956b9748bbec4c",
+        "content": "sha256:01e8726f339d3eb31140aa200e6a8a582ad503c8f4319e8aa9c26681557c92c7",
         "locator": {
-          "kind": "file"
+          "end": 104,
+          "kind": "line_range",
+          "start": 86
         }
       },
       "id": "RLZ-WG14EH",
@@ -81,7 +102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
             "content": "sha256:b2e61626bb31a8f18e598c6ec372e324fc9577239c45a1f759cb3cc1f1bb981e",
             "locator": {
               "end": 85,
@@ -93,7 +114,7 @@
         },
         {
           "anchor": {
-            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "blob": "cc7256c264f26cfec9ea56dae7ad2ffb6f0136bb",
             "content": "sha256:d18bdb2380981863da13cbae8089abad4ea89455af89fd843acc37b80d31060e",
             "locator": {
               "end": 58,
@@ -111,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
             "content": "sha256:59504bf3f05646d070e33657503923adf813c96fb731ede95f6c0c2567d3ea82",
             "locator": {
               "end": 9,
@@ -123,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
             "content": "sha256:bd293692969e36e2cf439c616ebdada63a4067637511d7a89029648553b52a45",
             "locator": {
               "end": 211,
@@ -136,11 +157,11 @@
       ]
     },
     "3": {
-      "note": "A delta verification appends a dated section to the same verdict, records the preceding result, exact outstanding IDs and their fixed/unfixed dispositions, and retains earlier accepted adjudications; successor findings enter only through the review operation's two sanctioned routes.",
+      "note": "A delta verification appends a dated section to the same verdict, records the preceding result, exact outstanding IDs and their fixed/unfixed dispositions, and retains earlier accepted adjudications; successor findings enter only through the review operation's three sanctioned routes.",
       "targets": [
         {
           "anchor": {
-            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
             "content": "sha256:60537296c416b9236127764638e080d79056249ce69d710944c79b91a798a6cf",
             "locator": {
               "end": 367,
@@ -152,12 +173,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:1618eb4898622a22fd01727a5ffa53eaac96796682b735bf5cf864959ff3a3c5",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:9b07c2f58e4f0fb93835d37a61b435fb9d4762ce39be65159276132caed47a14",
             "locator": {
-              "end": 132,
+              "end": 137,
               "kind": "line_range",
-              "start": 127
+              "start": 131
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -170,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
             "content": "sha256:1b3a2d2aa792e2d810b3c86716837f5954b077854cfbac5dceedb57325f99353",
             "locator": {
               "end": 19,
@@ -182,7 +203,7 @@
         },
         {
           "anchor": {
-            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
             "content": "sha256:714e9a22fd362d57951d79a9c84bd6c1e61e55c906e545914057f6953c225c85",
             "locator": {
               "end": 148,
@@ -194,7 +215,7 @@
         },
         {
           "anchor": {
-            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
             "content": "sha256:8c342f4bf69d6ec06504119fcaeac6de72e78789cb1d69e7dadda45437ae900e",
             "locator": {
               "end": 369,
@@ -207,11 +228,11 @@
       ]
     },
     "5": {
-      "note": "Reviewer records its ordinary CODE begin/result under the task document; Manager retains gate acceptance and recorded beyond-settings approval. Code PASS first goes to Manager to start Curator; peer artifacts travel directly as files, MEMORY stays separate and ready-for-closeout names both verdicts. Repaired-item verification is an ordinary round within the settings limit.",
+      "note": "Reviewer records its ordinary CODE begin/result under the task document; Manager retains gate acceptance and recorded beyond-settings approval. Code PASS first goes to Manager to start Curator; peer artifacts travel directly as files, MEMORY stays separate and ready-for-closeout names both verdicts and any required final-check evidence. Repaired-item verification is an ordinary round within the settings limit.",
       "targets": [
         {
           "anchor": {
-            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
             "content": "sha256:714e9a22fd362d57951d79a9c84bd6c1e61e55c906e545914057f6953c225c85",
             "locator": {
               "end": 148,
@@ -223,7 +244,7 @@
         },
         {
           "anchor": {
-            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
             "content": "sha256:8c342f4bf69d6ec06504119fcaeac6de72e78789cb1d69e7dadda45437ae900e",
             "locator": {
               "end": 369,
@@ -235,12 +256,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
             "content": "sha256:6913ea0e53f0eb04fe025c9cfe4c2376b7fa77a5ad52ccdfbe64ef3a5603ca38",
             "locator": {
-              "end": 71,
+              "end": 73,
               "kind": "line_range",
-              "start": 66
+              "start": 68
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -248,12 +269,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
             "content": "sha256:48b8445332fed459a4e21ba40ee8348dc0597f51af95642ce0308eff17ce44d8",
             "locator": {
-              "end": 102,
+              "end": 104,
               "kind": "line_range",
-              "start": 98
+              "start": 100
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -261,12 +282,12 @@
         },
         {
           "anchor": {
-            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
-            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 114
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -275,12 +296,12 @@
       ]
     },
     "6": {
-      "note": "Verdict structure binds exact independent candidate evidence, immutable per-attempt adjudication and monotonic sealed successor scope, and names the bound catalogs in its Catalog Binding section (a verdict without it is incomplete); CODE and MEMORY remain separate and no verdict decides the gate.",
+      "note": "Verdict structure binds exact independent candidate evidence, immutable per-attempt adjudication and narrowing of the sealed scope in ordinary successor adjudication, and names the bound catalogs in its Catalog Binding section (a verdict without it is incomplete); CODE and MEMORY remain separate and no verdict decides the gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
-            "content": "sha256:fae0ec9da6bef848c722481d2bdd02e4b2caf5ef5ba2ef9d980744585bf2a4b2",
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "content": "sha256:3cb36e449f4e38c07a1c109f4ca789471ec3679c429b0f47180ac428621f0c62",
             "locator": {
               "end": 44,
               "kind": "line_range",
@@ -291,7 +312,7 @@
         },
         {
           "anchor": {
-            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
             "content": "sha256:714e9a22fd362d57951d79a9c84bd6c1e61e55c906e545914057f6953c225c85",
             "locator": {
               "end": 148,
@@ -303,7 +324,7 @@
         },
         {
           "anchor": {
-            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
             "content": "sha256:60537296c416b9236127764638e080d79056249ce69d710944c79b91a798a6cf",
             "locator": {
               "end": 367,
@@ -333,8 +354,8 @@
         },
         {
           "anchor": {
-            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
-            "content": "sha256:8ff35a30909bc3945180cc36abe71d74b0dc4204910e2a15c66fa52d36a571ff",
+            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "content": "sha256:25e0ba502d971f66d7bb1e4781b5b2ddd5f148fc229b2a07242890a678b2b3e2",
             "locator": {
               "end": 72,
               "kind": "line_range",

@@ -567,7 +567,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0aed1c8550b83a64fa71af8871b0623b396a49",
+            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
@@ -5194,12 +5194,25 @@
       ]
     },
     "360": {
-      "note": "The shared hunk and non-text definitions.\n\nAnchor: `change_hunks` `non_text_linked`",
+      "note": "The worklist and reviewer share `change_hunks` for text hunks and file-level changes. The worklist uses `non_text_linked` for file-level linkage.",
       "targets": [
         {
           "anchor": {
-            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
-            "content": "sha256:128341c2daa465fc7a6d31d357de1118c7ada3c2b1b632fc20571de3e11343cf",
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
+            "content": "sha256:11585a1ae94100e7cdae9228394a6ce0d0d41fa109edf13642d3c29ad5a055a1",
+            "locator": {
+              "end": 738,
+              "kind": "line_range",
+              "start": 719
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04e986b673eaa3d90fd48d5a8a80677b614d13cd",
+            "content": "sha256:c5b27222966b7935990985d026fae619a76fe89b102ce34a8877bf34e6329250",
             "locator": {
               "kind": "file"
             },
@@ -5215,18 +5228,6 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
-            "content": "sha256:11585a1ae94100e7cdae9228394a6ce0d0d41fa109edf13642d3c29ad5a055a1",
-            "locator": {
-              "kind": "symbol",
-              "name": "change_hunks"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
           },
           "kind": "code"
         }
@@ -5286,7 +5287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
@@ -5303,7 +5304,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:1bdaf20eba2683f61a7c70c38e03cadf404c58ac35756da2b13dc2622c14afec",
             "locator": {
               "kind": "symbol",
@@ -5315,7 +5316,7 @@
         },
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:15e4109da4c18ecb3ae57aca4269ee660bb93f8af9032624151dcba152be5af5",
             "locator": {
               "kind": "symbol",
@@ -5361,7 +5362,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
             "content": "sha256:aab67928384bb56185a5012e48968fc984b9903efe98efd451719d8da9852db6",
             "locator": {
               "kind": "symbol",
@@ -5373,7 +5374,7 @@
         },
         {
           "anchor": {
-            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
             "content": "sha256:ab8c43d7462271b00d28215b0e6389d0cdc911c320e0f8965db1a09a52f004d8",
             "locator": {
               "kind": "symbol",
@@ -5703,7 +5704,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
             "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
@@ -5934,7 +5935,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
             "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
             "locator": {
               "kind": "symbol",
@@ -5951,7 +5952,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
             "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
             "locator": {
               "kind": "symbol",
@@ -6017,12 +6018,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:027365c573f2f3cba7df33db92946c3dbb8192948b786e09b2eb659de02648ac",
             "locator": {
-              "end": 107,
+              "end": 109,
               "kind": "line_range",
-              "start": 106
+              "start": 108
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -7117,7 +7118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+            "blob": "9e10958ad95558f1846ccfe0170975c559d03227",
             "content": "sha256:b2f0cb7b94e3dafa7d280e836159aeccd592b57d7d7ded1274769761662edf7d",
             "locator": {
               "kind": "symbol",
@@ -7540,12 +7541,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:bf895a7868d9b4e1a21a419b242360e1159533d5437b36380fbea589b819b6d5",
             "locator": {
-              "end": 393,
+              "end": 398,
               "kind": "line_range",
-              "start": 373
+              "start": 378
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -7553,12 +7554,12 @@
         },
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:8c982bfd69612cce66b87e4dab58b41df38e0248d3e0d6849c14d399fc740be5",
             "locator": {
-              "end": 442,
+              "end": 447,
               "kind": "line_range",
-              "start": 421
+              "start": 426
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -7628,12 +7629,12 @@
         },
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
             "locator": {
-              "end": 775,
+              "end": 734,
               "kind": "line_range",
-              "start": 612
+              "start": 571
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -7641,12 +7642,12 @@
         },
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:f283095054de1829707b97db5c978052fbfffc613c11a174edf16fadb8929a9f",
             "locator": {
-              "end": 924,
+              "end": 892,
               "kind": "line_range",
-              "start": 877
+              "start": 845
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -7793,26 +7794,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:7e87864407ba990037b6b009e45c52085bdd3767d360afd4516af3be93421340",
             "locator": {
               "kind": "symbol",
               "name": "_task_document_copy_lists"
             },
             "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
-            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
-            "locator": {
-              "end": 1186,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
           "kind": "code"
         },
@@ -7841,6 +7829,17 @@
             "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "content": "sha256:8ecf8d42ace1b7b2403bfe710d8c6cb3ab03a7c3e146586c11c6e386098e3bea",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -7865,7 +7864,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:60e27a120bfb8dc9f33714fb08d00eefa653f16db19cf2acb29230f633cf6a6c",
             "locator": {
               "kind": "symbol",
@@ -8546,7 +8545,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42003e355d7caf9887db71524da64fa975e3aa14",
+            "blob": "5dbcd986148ccd8f29097b43f070a013d772b075",
             "content": "sha256:06cb7125dc8179179670e65165110453332938e89d4109a6ce0c74c4fd324bec",
             "locator": {
               "kind": "symbol",
@@ -8592,12 +8591,12 @@
       ]
     },
     "523": {
-      "note": "A complete leaf closeout adds entry-currentness findings for changed paths using the shared master-landing predicate with a direct recorded-base comparison. [523]\n\nAnchor: `_entry_currentness`",
+      "note": "For a complete paired leaf worklist, the closeout gate checks changed paths with the master landing entry-currentness predicate. It compares the recorded code base directly with the candidate tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "141f7f91ee6d58897e6df9df85b42db544d819eb",
-            "content": "sha256:c9af0cd83705a0ac8a63f4ac93d98e84a8f3ea57164fbe4d25b67849994a25e1",
+            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "content": "sha256:f2b4130375f63d47d07bb5640070119ddc54d6de7525f085a95abbf57abea189",
             "locator": {
               "kind": "file"
             },

@@ -12,7 +12,7 @@ Specify the tray-pick portion of the pinned Paseo plugin bridge against represen
 
 ### Logic
 
-The fixtures model the pinned Paseo 0.11.1 chat root, message/tool row ids, React DOM row props and host-recorded timestamps; they also draw Paseo's sidebar and a terminal pane beside the chat, each with its own rectangle, and a message box carrying its own left. The installed bridge runs against a fake trusted page with fake timers and a fake resize observer; the class/style watch is the environment's own MutationObserver, reached through the page rather than replaced by a fake.
+The fixtures model the pinned Paseo 0.16.2 chat root, message/tool row IDs, React DOM 19.2.3 row props and host-recorded timestamps; they also draw Paseo's sidebar and a terminal pane beside the chat, each with its own rectangle, and a message box carrying its own left. The installed bridge runs against a fake trusted page with fake timers and a fake resize observer; the class/style watch is the environment's own MutationObserver, reached through the page rather than replaced by a fake.
 
 Cases assert an explicit add offer preserves selection/focus, supplies each user/assistant/tool/older message’s own time, and never pages the host timeline. An unrecorded message stays unadded until its row has a recorded time. Unsupported/missing DOM or time yields the named notice/refusal, and split/no-agent or outside-row highlights supply no pick.
 
@@ -27,3 +27,5 @@ The DOM and row-prop values are explicitly modeled pinned inputs; this file does
 - Selection-preserving add and no timeline read [1]
 - Unrecorded time, unreadable DOM, copy preference and no-agent boundaries [2]
 - Composer measurement, reservation and grace/recovery cases [3]
+
+- The fixture names the 0.16.2 web build and the React DOM 19.2.3 row-prop representation it models. [4]

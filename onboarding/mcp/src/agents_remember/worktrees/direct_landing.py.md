@@ -112,13 +112,17 @@ No configured external domain-documentation evidence.
 References 3, 5 and 6 below are re-authored for the current retained-record retry and select → close → judge implementation. Reference 7 and the create-mode reference retain the landed L94 account. Other original L9 references and test descriptions retain their original historical evidence scope; they are not fresh execution or current gate-order certification.
 
 
+
 - Current direct request, canonical-leaf grant admission, verify-existing code proof and pure pair preview; the retired settings gate is not current. [7]
+
 
 - Memory admission captures the prepared content snapshot and typed candidate (since MIK-R09 in `_operation_candidate`, after the gate's closing). [8]
 
 
 
+
 - Generation creation and action-required public projection. [9]
+
 
 
 
@@ -146,7 +150,10 @@ source is configured for this file's claims.
 No additional configured cross-repository evidence is claimed.
 
 
+
 - Direct landing separates verify-existing from pre-code judged create mode and same-generation paired recovery. [13]
+
+
 
 
 

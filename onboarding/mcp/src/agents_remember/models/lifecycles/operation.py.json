@@ -1,18 +1,37 @@
 {
   "path": "mcp/src/agents_remember/models/lifecycles/operation.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
+        "content": "sha256:834d3d3a1723653ef6030628d380544a1497e89097fc7a0adca2150758f6d468",
+        "locator": {
+          "kind": "symbol",
+          "name": "LifecycleOperationRecord"
+        }
+      },
+      "id": "RLZ-Y702X8",
+      "invariant": "INV-5QFWCA",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 3",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Accepts stored records with retired worker fields stripped during validation.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The current `_require_altitude_authority` boundary implements the preparation contract above.\n\nAnchor: `_require_altitude_authority`",
+      "note": "The current `_require_altitude_authority` boundary implements the preparation contract above.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
-            "content": "sha256:80627f82ee4e1248f61228ebdca1564abe74e2109c1abdf2e6afc1290d394f5c",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
+            "content": "sha256:105b728373585d8ae36cfd8a1435e37cd918534c623f0d1bac9ceebe8f5d9017",
             "locator": {
-              "end": 641,
+              "end": 642,
               "kind": "line_range",
-              "start": 592
+              "start": 620
             }
           },
           "kind": "code"
@@ -20,29 +39,43 @@
       ]
     },
     "10": {
-      "note": "The public projection intentionally omits private execution identifiers.",
+      "note": "The reader drops retired worker fields and preparation commands. The projections of retained closeout and integration rows preserve audit evidence without offering journal controls.",
       "targets": [
         {
           "anchor": {
-            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
-            "content": "sha256:5ec3b41e02623b995cb350315b0b85c4ebc0f03a7ded88863768b609411b082e",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
+            "content": "sha256:9d5d778d7ca7cf5d1ebdd335be4a88bf6d69c565dc6baf70fa9f0831ce22e052",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleOperationProjection"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py"
+              "end": 461,
+              "kind": "line_range",
+              "start": 341
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
-            "content": "sha256:aba7a6aacf32b85d742fb8c0df0a57c9439b84fac5ae320a08c9e5086324b709",
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+            "content": "sha256:4bc0404f88f1d2c25af72d8e9080f43f0893a47a9a413919f3284fc8cd9865af",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleWorkerObservation"
+              "end": 214,
+              "kind": "line_range",
+              "start": 208
             },
-            "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py"
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+            "content": "sha256:b746baef64c849c8873d2ccba5246b3f25d22f3a60a05aaabe73407a84e8bcaf",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 267
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
           },
           "kind": "code"
         }
@@ -69,7 +102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:d4945166328f159cff259a52f805972a28f69bea9e3327b38aeea8b992c026b1",
             "locator": {
               "kind": "symbol",
@@ -80,7 +113,7 @@
         },
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:90bea8be85a0ad2f0a8ff2cf52aa048ee45dccd44a5814fc2a4c23cffd9de7a2",
             "locator": {
               "kind": "symbol",
@@ -96,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:ebe22dbde64181f3ca7ecd375d103a6e2032839a0027103a85bde3eb7757c6ff",
             "locator": {
               "kind": "symbol",
@@ -112,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:1a63465bb927801d1d35ed91f3ff60c83d2b605827f821fb469a4ab2378b40fc",
             "locator": {
               "kind": "symbol",
@@ -123,7 +156,7 @@
         },
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:1e33e0c3516cadd82e021206d2d45f65c586346e197ed20c60cb16a8b635d3fe",
             "locator": {
               "kind": "symbol",
@@ -139,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:d4945166328f159cff259a52f805972a28f69bea9e3327b38aeea8b992c026b1",
             "locator": {
               "kind": "symbol",
@@ -155,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:ebe22dbde64181f3ca7ecd375d103a6e2032839a0027103a85bde3eb7757c6ff",
             "locator": {
               "kind": "symbol",
@@ -171,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:be1e96e6b7c887885ef205ccea36132dcd0cdccc35623d9f760310a7bccbb460",
             "locator": {
               "kind": "symbol",
@@ -187,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:aeef8b2db6c2fafc0601d06adba4123113fdccaaa10cadc5f8eb417453b42b11",
             "locator": {
               "kind": "symbol",
@@ -203,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:06bc65e3a156b79db09b5916fee8f36feafa8bb4bfbcb0f5c01ebd8b9c476714",
             "locator": {
               "kind": "symbol",
@@ -215,16 +248,30 @@
       ]
     },
     "2": {
-      "note": "The current `_require_cancellation_evidence` boundary implements the preparation contract above.",
+      "note": "The record validator binds cancellation evidence to the cancelled generation and its retained preparation intent digests. Direct proof supplies the historical marker from the no-output check.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:be1e96e6b7c887885ef205ccea36132dcd0cdccc35623d9f760310a7bccbb460",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_cancellation_evidence"
+              "end": 877,
+              "kind": "line_range",
+              "start": 859
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c0fa22cc352e90bf9767a6ee2aa1d85c224166c",
+            "content": "sha256:bd37d20f00b63beb8a3cb02b89161b7e57f42790724aa02df07bdeff02707a14",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py"
           },
           "kind": "code"
         }
@@ -235,7 +282,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:22bc6bca42fddb7a20cc6aeb3bc98a6a88d89ec11a2af3178025e7fab356b847",
             "locator": {
               "kind": "symbol",
@@ -251,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:d4945166328f159cff259a52f805972a28f69bea9e3327b38aeea8b992c026b1",
             "locator": {
               "kind": "symbol",
@@ -262,7 +309,7 @@
         },
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:06bc65e3a156b79db09b5916fee8f36feafa8bb4bfbcb0f5c01ebd8b9c476714",
             "locator": {
               "kind": "symbol",
@@ -278,7 +325,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:6c8837dbdbd9baaf3cbb55bc1cf370d0f4072927c3622f2aa79c9deb83243d33",
             "locator": {
               "kind": "symbol",
@@ -289,7 +336,7 @@
         },
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:fea07215b0d8f84ac64ebe8a45a507ac875979c2aff2a02118954b8a4cc17ded",
             "locator": {
               "kind": "symbol",
@@ -305,7 +352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:889eb9e188da88d5fe7591330d94e044ac29ce28e65004870f4efc720334f3b8",
             "locator": {
               "kind": "symbol",
@@ -316,7 +363,7 @@
         },
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:60ffe14086f76d874b1b11c68a19dd05bc39ff89b7d6858af233cb558f0ad513",
             "locator": {
               "kind": "symbol",
@@ -332,7 +379,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:60ffe14086f76d874b1b11c68a19dd05bc39ff89b7d6858af233cb558f0ad513",
             "locator": {
               "kind": "symbol",
@@ -348,7 +395,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:3e023e8a39c382cfcfa86a99b799050c51bcb8eaaf8309257d60e3c211e8f655",
             "locator": {
               "kind": "symbol",
@@ -359,7 +406,7 @@
         },
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:6162c2eef2ea1b0463ef21597f4141409e91bc46fff195ca641785444de10e7b",
             "locator": {
               "kind": "symbol",
@@ -375,7 +422,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:8dd89f143ab8df92e9afa3fb62b225f04dc7c5a9acfd5502e31024224ea652d6",
             "locator": {
               "kind": "symbol",
@@ -386,7 +433,7 @@
         },
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:0635220f17ee9a3518b8099e1f6dad56d5fc771982cf7961751ee8d1ed8d9fb2",
             "locator": {
               "kind": "symbol",
@@ -402,7 +449,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
             "content": "sha256:9c53d0202943dfa6492618940e596cdbb1299d0e6fe6b0cda8669de4b8b2e497",
             "locator": {
               "kind": "symbol",
@@ -413,11 +460,12 @@
         },
         {
           "anchor": {
-            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
-            "content": "sha256:a14895a41e27b356c6786293df4b9cde446c3c1312fc36e6506e1cc1583a818e",
+            "blob": "efef2681b87b271276723fd76845e14dc59f18cd",
+            "content": "sha256:db99c8dfea45cc3bcb4f5f36c8a8b0c8cf6d8dfcb1ab27eed5e761236ebf72e8",
             "locator": {
-              "kind": "symbol",
-              "name": "_MEANINGFUL_STATE_FIELDS"
+              "end": 591,
+              "kind": "line_range",
+              "start": 545
             }
           },
           "kind": "code"

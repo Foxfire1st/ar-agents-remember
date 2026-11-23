@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/fixtures/lifecycle/old-writer-closeout-record.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lifecycle catalog pins the recording to the old writer, its digest and its exact consumers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:c04790d4c50875e925c5f5bca15c428adebf8772ad05ed113d6e2648cc0b60ff",
+            "locator": {
+              "end": 2403,
+              "kind": "line_range",
+              "start": 2386
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reader keeps the recorded generation and prepared output and drops the command bodies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c073a83e98bdc9010f9167304c691f34b85b7318",
+            "content": "sha256:6c85226fa9283ef36a9623c2a9ce579274cda10ebc93e6e1f7e281c66f06e030",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_retained_old_build_record_loads_with_its_command_leg"
+            },
+            "path": "mcp/tests/test_lifecycle_operation_journal_retired.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

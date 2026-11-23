@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+        "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
         "content": "sha256:cadf3b92b7d49152696d69d21238fd85898b5caa826eceae3786c70bcc965510",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+        "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
         "content": "sha256:57c32a416ee982d4ef32c218a5e4c36fb9c2d34f89193a06760cf10637896ff8",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
-        "content": "sha256:28ce14e95d693ca6f1455cb97298e719c61cc59da89b3d2901893c9199e5e19f",
+        "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+        "content": "sha256:9484d946d88e820406e4ebfd0d88e165685e1ec599af602227e22b3cc64d4da7",
+        "locator": {
+          "kind": "symbol",
+          "name": "legal_operation_controls"
+        }
+      },
+      "id": "RLZ-AG68DY",
+      "invariant": "INV-NH7YXA",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 1",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Offers controls from a direct generation and leaves obsolete journal kinds for inspection.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+        "content": "sha256:8e3857ebd73c433555a6555f03bc8c152a499c07f43781d61c9a0344bfc9e916",
         "locator": {
           "kind": "symbol",
           "name": "_without_legacy_generation_reuse"
@@ -52,21 +70,40 @@
         "handoffEntry": "L94-CODE-F04",
         "leaf": "260928-MIK-L94"
       },
-      "rationale": "Exempts a bound direct-landing generation from the legacy recover/retry strip, so the public worktree_operation_control recover call executes its advertised action on a mechanically recoverable cut instead of refusing it.",
+      "rationale": "Applies the legacy reuse guard on direct controls and preserves recover or retry for a compatible canonical direct generation.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+        "content": "sha256:9484d946d88e820406e4ebfd0d88e165685e1ec599af602227e22b3cc64d4da7",
+        "locator": {
+          "kind": "symbol",
+          "name": "legal_operation_controls"
+        }
+      },
+      "id": "RLZ-PT7QXY",
+      "invariant": "INV-JKACW8",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 2",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "Derives direct controls from their current generation and its evidence.",
+      "role": "unclassified"
     }
   ],
   "references": {
     "1": {
-      "note": "`_recovery_evidence_controls` uses initial-door and direct-landing evidence without a ledger-recovery classifier.",
+      "note": "The direct-landing control projector derives applicable actions from the exact generation and its evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
-            "content": "sha256:d8c4211602b3526af93b586a8d536d0af5c9c8ad02ad3812b6bdbe14aa1c1a3d",
+            "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+            "content": "sha256:9484d946d88e820406e4ebfd0d88e165685e1ec599af602227e22b3cc64d4da7",
             "locator": {
-              "kind": "symbol",
-              "name": "_recovery_evidence_controls"
+              "end": 82,
+              "kind": "line_range",
+              "start": 46
             }
           },
           "kind": "code"
@@ -74,31 +111,16 @@
       ]
     },
     "2": {
-      "note": "`_resume_control` requests fresh messages for enabled code and memory legs.",
+      "note": "The direct-landing control projector derives applicable actions from the exact generation and its evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
-            "content": "sha256:54a9129eada47ca06e11fc8b7a1a4807771735e884dc778d287f2656064072bc",
+            "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+            "content": "sha256:cebf2bada5e96a2527c2664d099fcc036a05b23357ee51fd2b4cc3ecf5eac00b",
             "locator": {
-              "kind": "symbol",
-              "name": "_resume_control"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "`_integration_control` constructs integration arguments with no ledger commit subject.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
-            "content": "sha256:fe850989cc7d8c401c086c7c8cf938437cb30e2d623a2ce698bdcbfe45423957",
-            "locator": {
-              "kind": "symbol",
-              "name": "_integration_control"
+              "end": 133,
+              "kind": "line_range",
+              "start": 122
             }
           },
           "kind": "code"
@@ -110,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
             "content": "sha256:f06fa090af964a9f8936477b92737cf271cc62746d9ff581aa8cc78a1364f9a9",
             "locator": {
               "kind": "symbol",
@@ -122,15 +144,30 @@
       ]
     },
     "5": {
-      "note": "Missing compatible taskIntent withholds legacy reuse only when admitted direct leaf input is also absent; direct canonical-leaf binding preserves controls.\n\nAnchor: `_without_legacy_generation_reuse` `_direct_generation_bound`",
+      "note": "A compatible task-intent record or accepted direct leaf binding permits generation reuse at control time. The status projection separately requires exact task intent.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
-            "content": "sha256:55f534cea5d95b295b098c2bba487721a8c4db77d8e06f18acd465332d328667",
+            "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+            "content": "sha256:f08e33fca45b28c7ae3fbdc800bcebab72c4b46114bce76616088379c915820b",
             "locator": {
-              "kind": "file"
+              "end": 102,
+              "kind": "line_range",
+              "start": 85
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e960b08a49abe2c78f16d998eff0b2de6f8754f",
+            "content": "sha256:1f89bfdae7362ab4fa00956724408e6c38a158c98c9bb59db7d42bef1fbe3e63",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 208
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
           },
           "kind": "code"
         }
@@ -141,18 +178,6 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
-            "content": "sha256:d8c4211602b3526af93b586a8d536d0af5c9c8ad02ad3812b6bdbe14aa1c1a3d",
-            "locator": {
-              "end": 191,
-              "kind": "line_range",
-              "start": 181
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "b7cf5d8bc1072379437f9008a7e43f97c869764b",
             "content": "sha256:57199e9248e66a069a4c92ed5f42d21f2c439cc0534277bc86d0bd7304ee71a1",
             "locator": {
@@ -161,6 +186,19 @@
               "start": 97
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+            "content": "sha256:915059596accd2500c8008aa4cb6bcec5e584f7a2ac408297c339c6607ef5324",
+            "locator": {
+              "end": 1468,
+              "kind": "line_range",
+              "start": 1439
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
           },
           "kind": "code"
         },
@@ -180,14 +218,16 @@
       ]
     },
     "7": {
-      "note": "Exact completed direct owners are offered retire subject to disposition eligibility; direct supersede is unavailable.\n\nAnchor: `_completed_direct_controls`",
+      "note": "Exact completed direct owners are offered retire subject to disposition eligibility; direct supersede is unavailable.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
-            "content": "sha256:55f534cea5d95b295b098c2bba487721a8c4db77d8e06f18acd465332d328667",
+            "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+            "content": "sha256:751458ad1f6b2c2fd3cb07c188c3e01d6961ddb3a9b99c118f4d36aaa0466ee7",
             "locator": {
-              "kind": "file"
+              "end": 204,
+              "kind": "line_range",
+              "start": 162
             }
           },
           "kind": "code"
@@ -195,14 +235,16 @@
       ]
     },
     "8": {
-      "note": "Earlier door-bearing direct records remain readable but offer no controls.\n\nAnchor: `legal_operation_controls`",
+      "note": "Earlier door-bearing direct records remain readable but offer no controls.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
-            "content": "sha256:55f534cea5d95b295b098c2bba487721a8c4db77d8e06f18acd465332d328667",
+            "blob": "b6e41957319900548b3ee74c8e50658fc8672b3e",
+            "content": "sha256:e0fe0f91d395a7a75b79e7f5736c2d3e3d72626a32c555e5051ee35533a0eb5d",
             "locator": {
-              "kind": "file"
+              "end": 63,
+              "kind": "line_range",
+              "start": 46
             }
           },
           "kind": "code"

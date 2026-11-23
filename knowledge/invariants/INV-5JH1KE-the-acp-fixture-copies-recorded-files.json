@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A modeled directory or stale provider manifest can silently validate the wrong ACP provider classification."
+  },
+  "applicability": "The checked-in ACP discovery fixture and its renew and check command.",
+  "conditions": [
+    "The source server, protocol, plugin and CLI package versions match the host contract.",
+    "The manifest records copied paths, byte counts and SHA-256 digests."
+  ],
+  "exclusions": [
+    "This fixture is a selected source distribution copy. It does not witness behavior of an installed host."
+  ],
+  "id": "INV-5JH1KE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Worker L10-W5-FIXTURE and Reviewer L10-F03. Exact 19-file installed-source comparison in W5-pinned-host-and-fixture-memory-review.md."
+      ],
+      "path": "L10 curated W6 rules and history"
+    },
+    "handoffEntry": "L10-curated-fixture-copy",
+    "leaf": "261112-BUG-L10",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The ACP fixture copies recorded files from an installed distribution at the host pin. Renewal preserves an existing README. The --check command requires that README and verifies the recorded file list and copied bytes.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -6,14 +6,13 @@
     ],
     "justification": "The choke's strip-and-cap behavior is proved by the named passing guard cases; as a single-file member it rides the family's joint guarantee."
   },
-  "applicability": "Every tool answer leaving the server through the shaping choke.",
+  "applicability": "The shared tool answer shaping and overflow guard.",
   "conditions": [
-    "The answer passes the choke after the guard, whatever its size.",
-    "Retained list items keep their order, count and location through the cap."
+    "The ordinary projection caps lists at each level through retained items.",
+    "The overflow exception applies to an eligible declared list from the validated whole result that fits the measured short answer."
   ],
   "exclusions": [
-    "The whole detail result beside the log, which keeps everything the answer drops.",
-    "Dashboard and command-line surfaces, which keep the whole result."
+    "The separately recorded whole detail result and whole-result dashboard and command-line surfaces."
   ],
   "id": "INV-B7J1PZ",
   "origin": {
@@ -27,9 +26,9 @@
     "leaf": "260928-MIK-L108",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The common shaping choke strips the four envelope fields from every answer and caps lists recursively through retained items, preserving order, count and location while the whole detail result is unchanged.",
+  "statement": "Default answer shaping strips the four envelope fields and recursively caps ordinary lists through retained items, preserving order, counts and location. The overflow guard can retain a correctly typed declared list from the validated whole result in full when it fits. Answer shaping leaves the whole detail result intact.",
   "status": "proposed",
   "supersedes": []
 }

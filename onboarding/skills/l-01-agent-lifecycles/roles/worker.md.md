@@ -2,7 +2,7 @@
 
 ## Stage starts and completion
 
-The Manager starts the Worker at build, the Reviewer when the Worker asks at its first freeze and the Curator after code PASS; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
+The Manager starts the Worker at build, the Reviewer when the Worker asks at its first freeze and the Curator after code PASS; Worker cannot start its checker or accept/publish its own implementation. Its stage requires the candidate to meet the requirement and pass its clean-copy freeze checks. The Worker runs the listed final checks once on the code-passed tree and reports to the Reviewer and Manager. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
 
 ## Message/file transport
 
@@ -65,7 +65,7 @@ Those records live in one physical leaf journal shared as an ordered append-only
 independent reviewer. The separate worker turn report links newly appended attempt anchors and
 does not duplicate their authority.
 
-Closeout, integration, task acceptance and admitted memory remain with their owning AR/Curator seats. Worker leaves the code candidate uncommitted and writes the exact canonical report, then freezes the candidate and sends it directly to the leaf's Reviewer; after code PASS it sends its structured hand-off list to the Curator. The Manager receives only its authority or recovery matters, not routine report notices or relayed contents. A question for the developer goes to the parent named in the handover; a Worker without a parent asks in its own chat.
+Closeout, integration, task acceptance and admitted memory remain with their owning AR/Curator seats. Worker leaves the code candidate uncommitted and writes the exact canonical report, then freezes the candidate and sends it directly to the leaf's Reviewer; after code PASS it sends its structured hand-off list to the Curator. The report of the requirement’s listed final checks goes to the Reviewer and Manager. Other notices to the Manager cover the first freeze and authority or recovery matters. A question for the developer goes to the parent named in the handover; a Worker without a parent asks in its own chat.
 
 The Manager starts Worker at build, Reviewer when the Worker asks at the first freeze and Curator after code PASS, each with its own start. No seat starts the one that checks it. Worker starts no role. Unknown results and compaction recover the same task/agent/report rather than inventing a new owner.
 
@@ -93,23 +93,23 @@ The Manager starts Worker at build, Reviewer when the Worker asks at the first f
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, certification, and independent review are explicit operations only; curation is the standing exception — the curator always runs it complete — and it is not this seat's to run. Requested reviews retain the sealed finding list and monotonic finding set under the settings limit.
+This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, certification and independent review require explicit authority. A requirement's Final checks section authorizes its listed runs. Normal curation runs its complete quality operation. Requested reviews retain the sealed finding list and narrowing of ordinary successor findings, with additions through the three sanctioned routes under the settings limit.
 
 ## Current composition and authoring contract
 
 Worker implements the approved leaf only, leaves code uncommitted, uses memory read-only, supplies exact evidence/journal/report and hands freeze to Reviewer then its producer list to Curator after code PASS. It starts no checker and owns no gate, curation or publication.
 
-For code changes the Worker reads `system/coding-guidelines.md` under `workspace.memoryRoot` in full before the first source edit and follows it for every line of source, tests and product messages, and tells a helper that takes code work to do the same. The Worker writes instruction texts (skills, role files, capsules or templates) according to `system/skill-writing-guidelines.md` under `workspace.memoryRoot` when present and does not edit that guideline. When the requirement's planned structure leaves types, modules or signatures open, it completes the skeleton first, without bodies, sends it to its Manager and writes the bodies after the Architect's answer. After changing source code it reports code-quality results with `system/code-quality-report-template.md` in the resolved memory root. At each freeze it regenerates the scripted Curator list and its binding for the frozen tree, and before freezing a product-code removal or rename it proves that the whole test tree collects on the final bytes.
+For code changes the Worker reads `system/coding-guidelines.md` under `workspace.memoryRoot` in full before the first source edit and follows it for every line of source, tests and product messages, and tells a helper that takes code work to do the same. The Worker writes instruction texts (skills, role files, capsules or templates) according to `system/skill-writing-guidelines.md` under `workspace.memoryRoot` when present and does not edit that guideline. When the requirement's planned structure leaves types, modules or signatures open, it completes the skeleton first, without bodies, sends it to its Manager and writes the bodies after the Architect's answer. After changing source code it reports code-quality results with `system/code-quality-report-template.md` in the resolved memory root. At each freeze it regenerates the scripted Curator list and its binding for the frozen tree, and before freezing a product-code removal or rename it proves that the whole test tree collects on the frozen tree.
 
 After its own build/evidence part is complete, Worker marks only matching task steps done through task_doc on agents-remember-task with set_step/id/note. Without matching steps it reports that and sets nothing; incomplete, blocked, progress and escalation reports never mark unfinished work done. This narrow bookkeeping instruction does not authorize review/curation steps, task status or acceptance.
 
-If the same check or finding remains failing after three repairs of its own, Worker stops repairing, records what was tried/fails and tells Manager, who decides step-up or another response. This local stop is not an automatic failed-review-round counter and names no model. Required final-byte focused tests/lint/types and truthful blocked evidence remain unchanged. The role text names hand-over values by their full path, `documents[0].taskDocReadArgs.rendered_path`, `documents[0].taskDocReadArgs.json_path`, `workspace.memoryRoot`, `workspace.scratchRoot` and `workspace.outsideScratchRoot`.
+If the same check or finding remains failing after three repairs of its own, Worker stops repairing, records what was tried/fails and tells Manager, who decides step-up or another response. This local stop is not an automatic failed-review-round counter and names no model. Required freeze focused tests/lint/types and truthful blocked evidence remain unchanged. The role text names hand-over values by their full path, `documents[0].taskDocReadArgs.rendered_path`, `documents[0].taskDocReadArgs.json_path`, `workspace.memoryRoot`, `workspace.scratchRoot` and `workspace.outsideScratchRoot`.
 
 Procedures sit behind "Before you …, read" pointers: `operations/implementation.md` (outputs, frozen-candidate handover, measurement handover, sync, sealed-finding repair, costly small repair, boundaries), `operations/orientation.md`, `operations/recovery.md`, `templates/turn-report.md#shape`, `templates/curator-handoff-list.md`, and the detail files `reference/tasks/document-authoring.md`, `reference/knowledge/use.md`, `reference/knowledge/commands.md`, `reference/knowledge/serving-build.md`, `reference/sandbox-actors.md`, `reference/message-handover.md` and `reference/writing/visual-explainers.md`.
 
 ## Direct repair and source-owned sync
 
-Worker repairs a sealed finding directly in its own task files. No plan, account, census, approval or Manager go-ahead precedes that repair. The supported whole commit check and the freeze remain required. The freeze gives each repaired finding its own ID, cause, files and line ranges, discriminating failing-before/passing-after test and result; unrelated changes are listed separately. After code PASS, the direct Curator handoff carries those same entries and changed paths.
+Worker repairs a sealed finding directly in its own task files. No plan, account, census, approval or Manager go-ahead precedes that repair. The repair freeze carries focused tests and fast commit-hook checks. The freeze gives each repaired finding its own ID, cause, files and line ranges, discriminating failing-before/passing-after test and result; unrelated changes are listed separately. After code PASS, the direct Curator handoff carries those same entries and changed paths.
 
 When the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests once and tells Manager; Manager uses its closeout preview. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.
 
@@ -125,7 +125,7 @@ These are instruction obligations, not proof that a particular Worker run compli
 
 ## Stage Boundary
 
-The Worker ends with a requirement-satisfying candidate, focused tests/lint/types passing on final bytes, and its report with the Reviewer. A failed or unrun check is reported as such only when it cannot be made to pass on its own ground.
+The Worker ends with a requirement-satisfying candidate, focused tests and fast checks passing on the frozen candidate. The Worker sends the listed final-check results to the Reviewer and Manager. After a failed final check, the same Reviewer reviews the repair. After that pass, run the failed tests or failed step and the repair's focused tests on the successor, and keep those results with the original report. A failed or unrun check is reported as such only when it cannot be made to pass on its own ground.
 
 Own work/instrument slips and invalid caller input are repaired through the same admitted tool and work continues. Stops remain permission prompts, correct-input product/AR refusals or unowned state, requirement-meaning questions, and effects outside the worktree/scratch/task. An unfinished final turn sends what is awaited, and from whom, to its parent with `role_message` on `agents-remember-task`. Worker/Reviewer repairs answer the required property and construction, not a succession of examples; extra-round requests carry that account.
 
@@ -135,7 +135,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 The Worker's temporary-work section names the real `workspace.outsideScratchRoot` beside the real `workspace.scratchRoot` and sends there what must not live under the projects home — a sandbox root above all — and one short `TMPDIR` when a tool refuses the scratch path, with `XDG_CONFIG_HOME` kept inside `workspace.scratchRoot`. Everything else stays in `workspace.scratchRoot`; no agent names another location or removes the outside root, which the product deletes with the enclosure. Agent-authored temporaries stay out of code, memory and task folders, and product/tooling, test-runner and explicitly admitted repository sandbox temporaries keep their own owners.
 
-- Worker implements only the selected leaf's approved primary requirement and preservation constraints; its handover supplies canonical task, exact packet, paired roots, contract and report path, and its completed stage requires final-byte handover checks plus a report with Reviewer. [1]
+- The Worker implements the selected leaf's approved primary requirement and preservation constraints. The handover supplies the canonical task, exact packet, paired roots, contract and report path. Completion requires clean-copy handover checks on the frozen candidate and any listed final checks once on the code-passed tree, with reports to the Reviewer and Manager. [1]
 
 - Worker reads the exact rendered/JSON locations in its handover, verifies paired roots, writes code only and reads memory as context; a missing binding is reported from its canonical source and field without guessing a different task or workspace. [2]
 
@@ -149,7 +149,7 @@ The Worker's temporary-work section names the real `workspace.outsideScratchRoot
 
 - Worker owns code and its build/evidence step completion, not memory, review, lifecycle/status, commits or acceptance; its completed matching own steps may be marked done through task_doc and unfinished work is never marked complete. [7]
 
-- Worker stage completion requires the requirement met and coding-guidelines handover checks passing on a clean copy of final candidate bytes. It repairs failing checks on its own ground and reports checks it cannot pass or run without relabelling them. [9]
+- Worker stage completion requires meeting the requirement, passing coding-guidelines handover checks on a clean copy of the frozen candidate and running any listed final checks once on the code-passed tree. The Worker repairs its own failing checks and reports those it cannot pass or run. [9]
 
 - Worker escalates three unsuccessful own repairs and costly/repeated small repairs to Manager, preserves build-only authority, and uses the bounded writer ladder only for its admitted tool class while validation/transaction guards retain their stops. [11]
 
@@ -159,6 +159,6 @@ The Worker's temporary-work section names the real `workspace.outsideScratchRoot
 
 - After three unsuccessful own repairs of the same check or finding, Worker records its attempts and remaining failure and tells Manager rather than continuing that repair loop. [14]
 
-- Worker stage completion requires final-byte coding-guidelines checks on a clean copy and its report with Reviewer; its own failing checks are repaired rather than bypassed or excused as pre-existing. [15]
+- Worker stage completion requires coding-guidelines checks on a clean copy of the frozen candidate. Listed final checks run once on the code-passed tree, with their report to the Reviewer and Manager. The Worker repairs its own failing checks and reports those it cannot pass or run. [15]
 
 - A sealed finding in the Worker's own task files is repaired directly without prior plan, census or Manager go-ahead, and the freeze reports per-finding failing-before/passing-after evidence; supported sync remains implementation-owned. [16]

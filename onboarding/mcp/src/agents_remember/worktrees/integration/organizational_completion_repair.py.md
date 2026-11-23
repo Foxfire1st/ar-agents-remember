@@ -6,27 +6,24 @@
 
 ## Purpose
 
-Owns the integration-journal repair transition after a final organizational quality-gate failure:
-it validates the exact failed generation and repair evidence and publishes one deterministic
-waiting successor from the claimed predecessor. Projection refresh records the scheduling effect
-but never owns the repair lifecycle.
+Retains proof and reset helpers for organizational integration records written by the former journal route. Those helpers bind the failed generation and exact repair evidence to a deterministic waiting successor. Current ordinary integration runs in one synchronous call. Public control of a retained integration record returns the synchronous replacement before reconciliation.
 
 ## Code Commentary
 
 ### Logic
 
-`record_organizational_completion_repair` persists repair evidence for the exact failed integration generation. The record binds operation and contract/task identity, the claimed door's sprint/candidate/master refs, the code/memory-content commit pair, and exact accepted/reset contract hashes.
+The legacy evidence writer `record_organizational_completion_repair` binds the failed record to its operation and task identities, the claimed door's sprint/candidate/master refs, the code and memory-content commits, and the accepted and reset contract hashes. The current production integration route does not invoke this writer.
 
-Preparation reloads the durable cancelled journal and accepted contract, validates the named failure and ownership, compares the two commit values with integration authority, and constructs the deterministic waiting successor. Before writing it, the owner proves unchanged integration refs and source branches. Publication converges only on the accepted or exact reset bytes; a third contract state refuses. Scheduling projections do not own this reset.
+Given an exact cancelled integration journal and accepted contract, the retained preparation helper checks the named failure and ownership, compares the two commit values with integration authority, and constructs the deterministic waiting successor. It checks unchanged integration refs and source branches before publication, which converges only on accepted or exact reset bytes. The current public handler refuses the integration kind before it can reach cancellation.
 
 ### Conventions
 
-Use the current integration journal and canonical contract/task refs. Commit comparisons are two-tuples; the separate sprint/candidate/master task binding remains a three-part identity. Source Git refs and serialized contract hashes retain their original roles.
+The retained helper reads the exact integration journal and canonical contract and task refs. Commit comparisons are two-tuples, while the separate sprint/candidate/master task binding is a three-part identity. Git refs and serialized contract hashes retain their original roles.
 
 ### Invariants And Boundaries
 
 - The mutating repair owner accepts no caller-supplied lifecycle record.
-- Cancellation persists its durable cancelled journal before invoking the repair mutator.
+- The older cancellation route persisted its cancelled journal before invoking the repair mutator.
 - Only the exact failed final-leaf integration owner and accepted code/memory pair may reopen closeout.
 - Repair refuses if the actual code or memory super moved after the failed operation.
 - Cache bytes, ledger rows and a third ledger commit are absent from reset authority; code-only repair rejects any memory integration authority.
@@ -49,7 +46,7 @@ No external domain source is configured.
 
 These same-repository owners preserve exact journal, pair, task and ref authority. The cache contributes no repair evidence and this module does not infer it from disk state.
 
-- Repair evidence is persisted at the exact failed-operation seam. [1]
+- The legacy evidence writer binds repair evidence at the exact failed-operation seam. [1]
 - The durable reset identity contains the code/memory pair and exact contract hashes. [2]
 - Preparation proves cancelled ownership, matching pair/task binding and exact reset state. [3]
 - Operation and code/memory source authorities are revalidated. [4]
@@ -68,9 +65,9 @@ No distinct cross-repository evidence source is configured for this file.
 
 Organizational completion reset now hashes the exact `contract_publication_text` that `write_contract` publishes. This keeps reset identity aligned with closeout finalization and prevents normalization/serialization drift between proof and the resulting file. It does not confer queue or closeout lifecycle ownership on organizational repair.
 
-## 260821-CLIVE-L2 Current Contract
+## 260821-CLIVE-L2 Retained Contract
 
-The current source seams include `OrganizationalRepairPublicationError`, `OrganizationalRepairState`, `classify_organizational_completion_repair`. Organizational completion and repair are canonical integration-journal transitions with exact candidate, ref, quality, and cancellation evidence. The queue may schedule a door candidate but does not own failure repair or reopening lifecycle state.
+The original integration-journal transition bound the exact candidate, refs, quality verdict and cancellation evidence. `OrganizationalRepairPublicationError`, `OrganizationalRepairState` and `classify_organizational_completion_repair` still read and report the retained reset evidence. This compatibility preserves journal history after synchronous integration replaced that public control path.
 
 ### Reconciled Source Evidence
 
@@ -80,11 +77,10 @@ The current source seams include `OrganizationalRepairPublicationError`, `Organi
 
 ## 260821-CLIVE Repair Successor Publication
 
-Repair resolves the claimed door's task refs live through `live_closeout_door` rather than a queue
-binding or long integration lock; the short task-publication lock was removed from this route. Failed organizational quality creates a fresh deterministic
-waiting successor from the exact claimed predecessor and repair-journal timestamp. Operation state,
-commits, refs, and repair evidence must still match; a claimed generation is never mutated into a
-pseudo-cancelled door.
+The older repair transition resolved the claimed door's task refs through `live_closeout_door`.
+A failed organizational quality check created a deterministic waiting successor from the exact
+claimed predecessor and repair-journal timestamp. Operation state, commits, refs and repair
+evidence had to match. The original transition kept the claimed door intact.
 
 
 ## PDLS Reconciliation

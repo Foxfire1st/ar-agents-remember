@@ -124,7 +124,9 @@ each returns what the plain call returns and raises what it raises.
 - A failed root probe is recorded as unreadable and the view is not kept. 
 - A malformed row from the child is refused by the parent. [24]
 
+
 - Every file the gate reads is in its read set, and a conflicting read is never kept. [25]
+
 
 - The direct JSON listing of a folder is recorded as one `json-files:` row, empty listing included. [26]
 

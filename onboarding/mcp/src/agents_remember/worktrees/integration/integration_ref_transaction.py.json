@@ -136,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
+            "blob": "f514fcff680eec8da520dcb68b88fb5be662691d",
             "content": "sha256:d1b769266ca2c06857744a419ea02ee250028be95719299bd5a1ff835a81951d",
             "locator": {
               "kind": "symbol",
@@ -148,11 +148,12 @@
         },
         {
           "anchor": {
-            "blob": "870d51231e0a0c0995ce92cdc4cc02d81a7c5b87",
-            "content": "sha256:5531733451c3fb886f1cb15c34c058422fb4a06dba377947b0aaf566115ccb21",
+            "blob": "f514fcff680eec8da520dcb68b88fb5be662691d",
+            "content": "sha256:4332d74b2669c4bd7056ed604241978f47cc9bb5c1ba6f863d2cdc243b711d4d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race"
+              "end": 157,
+              "kind": "line_range",
+              "start": 74
             },
             "path": "mcp/tests/test_integration_branch_authority.py"
           },

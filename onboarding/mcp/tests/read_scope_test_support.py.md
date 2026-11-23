@@ -95,7 +95,9 @@ No Domain Documentation source is configured for this slice.
 - `_create_realization` supplies the current fixture or assertion described above. [14]
 
 
-- Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [15]
+
+- The read fixture opens the test row store, builds the graph there and returns its projected record identities. [15]
+
 
 
 - RowStore writes text-tree fixture rows without the retired production admission plane. [16]

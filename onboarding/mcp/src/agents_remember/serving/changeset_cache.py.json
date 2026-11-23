@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+        "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
         "content": "sha256:53c856b7d45bc71f230bff53c92a5ed40b6cfe8857f7fafb5f8b83fb17522b0d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+        "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
         "content": "sha256:09ca8abb3bb0cc2c8c8e735571a03c7afdeb83412e1f8011cf77456df0c68ea5",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,45 @@
     },
     {
       "anchor": {
-        "blob": "a8a781425fec891612af4838bc49e7409a23f974",
-        "content": "sha256:0ec10a5fa8298786b17a4f1069ec014773d091f1604f3be8c77b141ec266e771",
+        "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+        "content": "sha256:2719a1de990d9e12da6d6936c7b86a3f6f8e339e8356d4c09fd2290b6a6f9e1f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_alternate_fingerprint"
+        }
+      },
+      "id": "RLZ-7JFBKA",
+      "invariant": "INV-60GH3Y",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-60GH3Y",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "Length-framed path bytes feed the fixed-size SHA-256 fingerprint used to compare retained alternate-path history.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+        "content": "sha256:6bf30aaa648188df19ff5f9cef8e602781cc3e7c63d8d8aa2320d1ee5c27db76",
+        "locator": {
+          "end": 220,
+          "kind": "line_range",
+          "start": 220
+        }
+      },
+      "id": "RLZ-8MFB9H",
+      "invariant": "INV-60GH3Y",
+      "origin": {
+        "handoffEntry": "Curator-W3-coverage-INV-60GH3Y",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The shared object history stores bytes for the alternate-path fingerprint instead of retaining a tuple of paths.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+        "content": "sha256:9d0578d8c94f81f1123cfa0b61d878ba9d9e0178f26f87b5d739d1f96dca05e6",
         "locator": {
           "kind": "symbol",
           "name": "ChangesetCache"
@@ -57,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "a8a781425fec891612af4838bc49e7409a23f974",
-        "content": "sha256:0ec10a5fa8298786b17a4f1069ec014773d091f1604f3be8c77b141ec266e771",
+        "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+        "content": "sha256:9d0578d8c94f81f1123cfa0b61d878ba9d9e0178f26f87b5d739d1f96dca05e6",
         "locator": {
           "kind": "symbol",
           "name": "ChangesetCache"
@@ -72,16 +109,34 @@
       },
       "rationale": "The cache's result, repository/layout and per-read object maps are capacity-bounded; an abandoned read admits nothing.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+        "content": "sha256:734cb5b2bdb07d399061d3cd37dbe3b5f1a9a1e3e2b41f72b87b9caed80afec7",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangesetCache._object_revision"
+        }
+      },
+      "id": "RLZ-YSE128",
+      "invariant": "INV-60GH3Y",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — shared alternate history",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The generation lookup uses the fingerprint for retained equality and the full current tuple to derive the next revision.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "2": {
-      "note": "All three retained tables are bounded and LRU.\n\nAnchor: `ChangesetCache`",
+      "note": "The app's result and layout LRUs have configurable capacity. The shared object-history LRU has its own 1,024-entry capacity.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8a781425fec891612af4838bc49e7409a23f974",
-            "content": "sha256:3f4ef8779f96b1087b7bc6122b1cad18e4fc23138aaeace3f8021c5859c9c581",
+            "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+            "content": "sha256:b77991c478f7ceb11e8c000f0432f51bb2e93f8483050188b1a37a0c59f7a865",
             "locator": {
               "kind": "file"
             }
@@ -91,15 +146,91 @@
       ]
     },
     "3": {
-      "note": "Reuse requires exact observed generations and returns isolated copies; otherwise native computation runs.\n\nAnchor: `cached_read`",
+      "note": "Observed ref-keyed and working reads re-observe their inputs. A route may retain a typed refusal on a matching unknown working stamp. An immutable ID hit skips object and presentation probes. The explicit master range can also use its bounded disk store.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8a781425fec891612af4838bc49e7409a23f974",
-            "content": "sha256:3f4ef8779f96b1087b7bc6122b1cad18e4fc23138aaeace3f8021c5859c9c581",
+            "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+            "content": "sha256:423b17dd19185bbf32cb6ac806a1c4b666b859f922fe873596d0baf031ee2f7e",
             "locator": {
-              "kind": "file"
+              "end": 18,
+              "kind": "line_range",
+              "start": 3
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+            "content": "sha256:53c856b7d45bc71f230bff53c92a5ed40b6cfe8857f7fafb5f8b83fb17522b0d",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+            "content": "sha256:1e069cea2341d01ed512b372824c77ba8afafd820e054b36cf87132ca9c118f7",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 300
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+            "content": "sha256:09ca8abb3bb0cc2c8c8e735571a03c7afdeb83412e1f8011cf77456df0c68ea5",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 444
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a35e01f464d5c06164340d02bdb01f138bb79a38",
+            "content": "sha256:c3dce7d7a7a5e9f3b897cc40ed437e502079df96aa12bf49ad9925f7ebd689c2",
+            "locator": {
+              "end": 520,
+              "kind": "line_range",
+              "start": 500
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa967a110b417a273179def211beadcbffa21efe",
+            "content": "sha256:7cc50d33cf2cb080510deaf9227fad12c9d02c1e97fc614422e1aad0eeada68f",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/serving/intent_summary_cache.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fce0218c0b6e646ca773875c9a13be469cb7a835",
+            "content": "sha256:c41be91139f76823ee9f4afca61b19997aded86bad22e722337f1ffc3baddf2b",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_ranges.py"
           },
           "kind": "code"
         }

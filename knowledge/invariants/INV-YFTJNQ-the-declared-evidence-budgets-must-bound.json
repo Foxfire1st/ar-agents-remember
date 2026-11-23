@@ -27,6 +27,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The declared evidence budgets must bound actual source/relationship work and packet populations, not only a text prefix after an unlimited read.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

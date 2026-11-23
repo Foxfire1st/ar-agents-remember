@@ -6,11 +6,11 @@
 
 ## Purpose
 
-Owns restart-safe proof and journaling around closeout's real code and memory outputs. Finalization recovery re-proves exact task refs and accepted source ancestry, without consulting a ledger row or creating a cache-maintenance commit.
+Owns restart-safe proof of closeout's real code and memory outputs. Finalization recovery re-proves exact task refs and accepted source ancestry, without consulting a ledger row or creating a cache-maintenance commit.
 
 ## CCR-R12@v5 Current Recovery Boundary
 
-Recovery proves accepted code trees, exact code and memory refs, and journaled mutation/publication evidence. The code writer uses the prepared staged-index helper with `--no-verify`. Memory recovery consumes an already accepted output and may refresh its disposable cache; it never creates a ledger commit.
+Recovery proves accepted code trees and exact code and memory refs. The shared publisher stages the accepted tree for the configured pre-commit check, creates the commit and publishes its ref. Memory recovery re-proves an accepted output before refreshing its disposable cache. There is no ledger commit.
 
 ## Code Commentary
 
@@ -20,11 +20,11 @@ Recovery proves accepted code trees, exact code and memory refs, and journaled m
 
 `_prove_memory_output` requires a nonempty accepted memory output, reads the exact named series ref or clean leaf HEAD, and proves that the accepted memory base is its ancestor. Leaf cleanliness excludes only root `memory.md`; source content changes still refuse. Cache refresh occurs after the proof and cannot replace it.
 
-`accepted_code_commit` either proves a clean existing output or journals intent, stages, commits, and proves the exact code mutation. It verifies the committed tree against the accepted candidate tree before returning. `resume_external_commits` reuses the proven memory output and publishes the code/memory recovery pair without replaying memory mutation.
+`accepted_code_commit` proves a clean existing output or delegates publication of the accepted code tree, then proves the committed tree. An operation-supplied progress callback can receive intent and proof facts. It verifies the committed tree against the accepted candidate tree before returning. `resume_external_commits` reuses the proven memory output and publishes the code/memory recovery pair without replaying memory mutation.
 
 ### Conventions
 
-Recovery state enters through typed `WorktreeArgs`; `report_operation_progress` publishes generation-bound facts. Verified-existing outputs do not acquire fabricated mutation evidence.
+Recovery state enters through typed `WorktreeArgs`. `report_operation_progress` sends evidence only to an explicitly supplied callback. Ordinary closeout uses exact Git and result evidence. Verified-existing outputs do not acquire fabricated mutation evidence.
 
 #### Invariants And Boundaries
 
@@ -78,11 +78,11 @@ L4 makes task-derived integration refs mechanically non-ordinary: repository def
 
 ## 260821-CLIVE-L1 Evidence-Aware Commit Recovery
 
-New code commits publish accepted mutation intent before Git and exact proof afterwards. Verified-existing commits report recovery cells without inventing a mutation. The same monotonic evidence principle remains for memory output; the removed ledger-recovery stage has no successor commit path. Direct-landing recovery remains outside this owner.
+The historical journal route recorded accepted mutation intent before Git and exact proof afterwards. Verified-existing outputs still avoid inventing a mutation. The same monotonic evidence principle remains for memory output; the removed ledger-recovery stage has no successor commit path. Direct-landing recovery remains outside this owner.
 
-## 260821-CLIVE-L2 Current Contract
+## Closeout Git Recovery Contract
 
-The current seams are `MemoryCloseoutOutcome`, `prove_closeout_recovery_commits`, `accepted_code_commit`, and `resume_external_commits`. They publish root-journal evidence from exact Git facts, independent of queue phase or ledger cache. The earlier package relocation did not make the queue an authority.
+The current seams are `MemoryCloseoutOutcome`, `prove_closeout_recovery_commits`, `accepted_code_commit`, and `resume_external_commits`. They prove actual outputs against the admitted tree, refs and source ancestry. An optional operation callback receives progress facts independently of queue phase and ledger cache. The earlier package relocation did not make the queue an authority.
 
 
 ## Retired Ledger Recovery Boundary

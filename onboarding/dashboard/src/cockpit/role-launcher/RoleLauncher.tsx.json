@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:576e9d51377d25993beaa73cbb22b6e1d2f4ecfb3d7c8cf27eed15a770948fe6",
         "locator": {
-          "end": 818,
+          "end": 795,
           "kind": "line_range",
-          "start": 817
+          "start": 794
         }
       },
       "id": "RLZ-0T0KXT",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
         "locator": {
           "kind": "symbol",
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:0fadfa1f4862c3c75262c2d832e79106e2fcae83c1923d4039c2935a795d51a7",
         "locator": {
-          "end": 1105,
+          "end": 1083,
           "kind": "line_range",
-          "start": 1091
+          "start": 1069
         }
       },
       "id": "RLZ-9FTBAR",
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
         "locator": {
           "kind": "symbol",
@@ -95,7 +95,26 @@
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
+        "content": "sha256:2a3f8dafa958e0c35195fcdd23084e38dd88769b7888451af258b78fefadf2a0",
+        "locator": {
+          "end": 746,
+          "kind": "line_range",
+          "start": 733
+        }
+      },
+      "id": "RLZ-DJZJ2C",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "curate-w7-dashboard-mode-controls",
+        "leaf": "261112-BUG-L11"
+      },
+      "rationale": "LauncherOverrideFields combines mode source and selector placement with the Base-preview label and is the common source for all three related hunks.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:68c3f34dd74ab7d0a11d05f1b89239b7681f897ef42e1372e9a347ef35cbea6a",
         "locator": {
           "kind": "symbol",
@@ -113,7 +132,7 @@
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:5d931fe05e0a2cc02ebbe1627537037e6b9b47d453f375cb2b921d49e21e1231",
         "locator": {
           "kind": "symbol",
@@ -131,12 +150,12 @@
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:74a4a0bf6399224b7bd7195c7c8a3e0eb5bab58f0faf288f23d851395bf5f88b",
         "locator": {
-          "end": 568,
+          "end": 545,
           "kind": "line_range",
-          "start": 566
+          "start": 543
         }
       },
       "id": "RLZ-GVWM81",
@@ -150,7 +169,7 @@
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
         "locator": {
           "kind": "symbol",
@@ -168,7 +187,7 @@
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
         "locator": {
           "kind": "symbol",
@@ -186,12 +205,12 @@
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
-        "content": "sha256:3ce7369a5577704e0156be3fde1ae43e6b2aa2c9eafabc52ca7ec8f99b6e715b",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
+        "content": "sha256:5665e8a72f5a8120d27b8eda966ccf02cff3c749df2d0947db9b07d3264cc16e",
         "locator": {
-          "end": 693,
+          "end": 687,
           "kind": "line_range",
-          "start": 587
+          "start": 565
         }
       },
       "id": "RLZ-N85X2R",
@@ -200,12 +219,12 @@
         "handoffEntry": "L71-CURRENT242-W-17",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The landed extracted owner passes the existing fifth featureValues operand on both model and effort changes and keeps the agentOverride agentId guard.",
+      "rationale": "Both the model and effort controls preserve the selected mode and feature map while rebuilding the agent override.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
         "locator": {
           "kind": "symbol",
@@ -223,12 +242,12 @@
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:696f8896048836abf48e1da40fed093d12aa0f2a229d7252984f71bf22bfab13",
         "locator": {
-          "end": 1063,
+          "end": 1040,
           "kind": "line_range",
-          "start": 976
+          "start": 953
         }
       },
       "id": "RLZ-TNTSC0",
@@ -242,7 +261,7 @@
     },
     {
       "anchor": {
-        "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+        "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
         "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
         "locator": {
           "kind": "symbol",
@@ -265,12 +284,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+            "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
             "content": "sha256:b1bb4a25b25a077f144005d93d9649d2ab97891acec17f0926c6b522308d3ce3",
             "locator": {
-              "end": 842,
+              "end": 819,
               "kind": "line_range",
-              "start": 832
+              "start": 809
             }
           },
           "kind": "code"
@@ -282,12 +301,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
             "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
             "locator": {
-              "end": 240,
+              "end": 251,
               "kind": "line_range",
-              "start": 175
+              "start": 186
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },
@@ -296,14 +315,14 @@
       ]
     },
     "12": {
-      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: Current source; preserved L88 property 9",
+      "note": "The backend checks the explicit reason and the configured failed-review threshold. A step-up reads mode from its own settings row. Other launch fields follow the same-harness and model inheritance rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
             "locator": {
-              "end": 84,
+              "end": 87,
               "kind": "line_range",
               "start": 23
             },
@@ -314,14 +333,16 @@
       ]
     },
     "2": {
-      "note": "Bound mode omits the reference fields the selection already determines.",
+      "note": "Reference fields follow the role and whether the row is bound to a document.",
       "targets": [
         {
           "anchor": {
-            "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
-            "content": "sha256:a4d72d3051fe3a36a63a807b47895d1e4c4d1ff2ffb90cbb8f81bbdba7536952",
+            "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
+            "content": "sha256:5d931fe05e0a2cc02ebbe1627537037e6b9b47d453f375cb2b921d49e21e1231",
             "locator": {
-              "kind": "file"
+              "end": 159,
+              "kind": "line_range",
+              "start": 153
             }
           },
           "kind": "code"
@@ -329,40 +350,40 @@
       ]
     },
     "3": {
-      "note": "Preparation is carried by the Start label rather than an extra ordinary status line.",
+      "note": "The Start label carries preparation progress. The action bar shows failure and step-up status separately, and the step-up chip uses the receipt’s observed mode when present.",
       "targets": [
         {
           "anchor": {
-            "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+            "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
             "content": "sha256:8b6e5f5f4a4cc02e4f7d96f245b49676c3521fc8e31461166314907a0e6f041a",
             "locator": {
-              "end": 186,
+              "end": 163,
               "kind": "line_range",
-              "start": 184
+              "start": 161
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+            "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
             "content": "sha256:e6d5ccc8b69c02c2baa25b2e5923c3e44b90539dfc1eed2f2993db9403ca70c4",
             "locator": {
-              "end": 1115,
+              "end": 1093,
               "kind": "line_range",
-              "start": 1108
+              "start": 1086
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+            "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
             "content": "sha256:696f8896048836abf48e1da40fed093d12aa0f2a229d7252984f71bf22bfab13",
             "locator": {
-              "end": 1063,
+              "end": 1040,
               "kind": "line_range",
-              "start": 976
+              "start": 953
             }
           },
           "kind": "code"
@@ -382,10 +403,10 @@
         },
         {
           "anchor": {
-            "blob": "49001f5ff9548e3c0b4a3ba3b69a05fb6fc8646f",
-            "content": "sha256:8b3204f9cfaa0b96877dbe0e13f93cbf23ac7aa0b4568643a0820c8145c0e554",
+            "blob": "eb679f7ebe908f402c7206a7e41321494d12c943",
+            "content": "sha256:4145f8c5e6a10ce0211a3e647c3300b0a4439a3a87c48e0ed4c75472c819a699",
             "locator": {
-              "end": 24,
+              "end": 38,
               "kind": "line_range",
               "start": 18
             },
@@ -417,12 +438,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+            "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
             "content": "sha256:1b82c274556b2944144ea73674c31503477db1b7786ae43f615e1ee735c9f4c4",
             "locator": {
-              "end": 59,
+              "end": 61,
               "kind": "line_range",
-              "start": 45
+              "start": 47
             }
           },
           "kind": "code"
@@ -434,12 +455,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+            "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
             "content": "sha256:05331be8d9ead03bbfb923615d590e1096e6b46362fd4eddc413b73934d8d931",
             "locator": {
-              "end": 174,
+              "end": 151,
               "kind": "line_range",
-              "start": 160
+              "start": 137
             }
           },
           "kind": "code"
@@ -447,16 +468,16 @@
       ]
     },
     "8": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 10",
+      "note": "The override row carries the shown model’s feature controls beside mode and shared failure presentation.",
       "targets": [
         {
           "anchor": {
-            "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
-            "content": "sha256:0ed142ed6c75866f1322e2dec119ef8f604322b6c36fc8a028ba077dd679a38d",
+            "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
+            "content": "sha256:060c3a8796154e531b56f2b4e05fd05a3cf443368ffeb4174f2b087687422899",
             "locator": {
-              "end": 802,
+              "end": 780,
               "kind": "line_range",
-              "start": 723
+              "start": 720
             }
           },
           "kind": "code"
@@ -468,12 +489,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+            "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
             "content": "sha256:4db9be4875f23f837d8a33716eec436ad511a2faad14073aaa6e03ffac1b0e5d",
             "locator": {
-              "end": 1062,
+              "end": 1039,
               "kind": "line_range",
-              "start": 933
+              "start": 910
             }
           },
           "kind": "code"

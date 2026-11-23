@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+            "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
             "content": "sha256:8871d41faeb01e4371a59eeaaa76181e2fbaf1d9f69eea9aaabeea8b1bda5a5a",
             "locator": {
               "end": 1,
@@ -165,12 +165,12 @@
       ]
     },
     "19": {
-      "note": "**Historical source-bound reference account, not an operative override:** The register assigns distinct reset, restored and constant treatments.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "note": "The process register declares separate reset, restored and constant-for-tests treatments.",
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
             "locator": {
               "kind": "file"
             },
@@ -294,7 +294,7 @@
         },
         {
           "anchor": {
-            "blob": "7e10ba05dabcb409c83e4f8a0ffd72bfd7ff0af0",
+            "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
             "content": "sha256:559a620ddf3cecf6031fca15109270df200731fea2295943100dabd6cf7ba67e",
             "locator": {
               "kind": "symbol",
@@ -363,12 +363,12 @@
       ]
     },
     "26": {
-      "note": "The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "note": "The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded.",
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
             "locator": {
               "kind": "file"
             },
@@ -379,12 +379,12 @@
       ]
     },
     "27": {
-      "note": "The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "note": "The closeout digest-file stats, lifecycle location cache and process-owned lifecycle operation-record memo use ordinary _clear resets between test modules.",
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
             "locator": {
               "kind": "file"
             },
@@ -395,12 +395,12 @@
       ]
     },
     "28": {
-      "note": "The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "note": "The process register retains closeout and worktree landing-chain cache resets. It omits the former ambient session and log owners.",
       "targets": [
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
             "locator": {
               "kind": "file"
             },
@@ -411,14 +411,15 @@
       ]
     },
     "29": {
-      "note": "The collection register and explicit kernel service-holder reset are separate module-isolation paths; new explainer and watcher collections join the closed register.\n\nAnchor: `reset_process_state_at_module_boundaries`, `PROCESS_MUTABLE_STATES`",
+      "note": "The collection register and explicit kernel service-holder reset are separate module-isolation paths. The collection register includes the explainer and watcher collections.",
       "targets": [
         {
           "anchor": {
-            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
-            "content": "sha256:8c3af6fff1c4b93d4f691cdcd4b598866af27bf07bbcd8701e833a27940cdd99",
+            "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
+            "content": "sha256:ac95057457dcb222f5dfdfa2229cedbea82c0456fb3cda4410340e909b15c3f6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "reset_process_state_at_module_boundaries"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
           },
@@ -426,10 +427,25 @@
         },
         {
           "anchor": {
-            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
-            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:19c6e6c7e29f33c8d15fab937469b8310dcf0edb768fd10fdefd8da3d56f5884",
             "locator": {
-              "kind": "file"
+              "end": 233,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:a29c11eb2f4bbfd563f3f47e204c9476a2f69c46715c5414b189234884110a20",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 356
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },
@@ -581,6 +597,50 @@
         }
       ]
     },
+    "32": {
+      "note": "The shared factory bounds selector idle waits, and pytest restores its two factory aliases at cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "770661c12cfe71564e30853965590e3e0a04177d",
+            "content": "sha256:9ee80313c260d3d6cc509aa03dbc1a9e38b80a36d916c7f398153d639033b9ec",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/event_loop.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "770661c12cfe71564e30853965590e3e0a04177d",
+            "content": "sha256:060521b87316b02e6ada58eeab426f413a8ebbce127bb4c1417a87da09e73126",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/event_loop.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
+            "content": "sha256:0de235338cb6d6e8480c77b395ce13f6b50373cb937da6e18e84a9b4030bb9e1",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "The rewrite computes both new catalogs before it writes either.",
       "targets": [
@@ -638,7 +698,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+            "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
             "content": "sha256:4373829e34c7085b32f70678c4dc4ab31cf2f9624fcddefdf4ee64e369df496c",
             "locator": {
               "kind": "symbol",

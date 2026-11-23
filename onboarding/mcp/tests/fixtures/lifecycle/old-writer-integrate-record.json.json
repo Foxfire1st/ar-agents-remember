@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/fixtures/lifecycle/old-writer-integrate-record.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lifecycle catalog pins the integration fixture to the old store and documents its synthetic termination outcome.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:5f9ff5362e63651ae0f459008cfaaa96c94c7bc9d8a4e7323e935105581bccab",
+            "locator": {
+              "end": 2422,
+              "kind": "line_range",
+              "start": 2405
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The registered boundary test reads the original bytes, checks the refusal and verifies that the journal remains unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccae36bb19ba6345e971e63a1b0abee749a88377",
+            "content": "sha256:598e8991f200867ac4d303d9bf9fbda5eba516deac62a8be74c0f63eec5a76af",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_registered_control_refuses_retained_old_records"
+            },
+            "path": "mcp/tests/test_lifecycle_operation_public_boundary.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

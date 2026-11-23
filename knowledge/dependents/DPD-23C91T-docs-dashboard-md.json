@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "All changed passages are covered: the tab table and File Viewer introduction include pictures and videos; Operations keeps its change set's file/filter and notes view across tab changes, returns to the task view when that view's task disappears, and a press on the already-open Operations tab returns to the task view. The notes paragraph covers media notes, notes without raw HTML, links to notes the reader can open and no navigation of the dashboard's own tab. File Viewer Markdown opens rendered with the Rendered/Source switch and cleaned repository HTML; the change-set page defaults to a line diff and offers its separate rendered toggle. The media paragraph names the supported picture/video types, player and type/size labels, the 16 MiB bound, the File Viewer/notes readers' too-large notice without requesting bytes, the change-set/Knowledge code readers' request and route refusal, and the non-media binary labels. The document-media paragraph covers repository paths, external https media without a referrer, unsupported image addresses shown as alternative text and notes without raw HTML. The final added paragraph covers same-repository file links opening the appropriate rendered/source/media view, linked headings and anchor-only scrolling, outside links in a new browser tab, missing-file links as explanatory text, and no link moving the dashboard's own tab. Its Back/Forward arrows traverse files opened by links or the tree, restore their scroll position and disable unavailable directions. The rest of the page was not reverified.",
-    "task": "261112-BUG-L7",
+    "statement": "The dashboard guide now correctly describes shown-pair option reads and reuse, ordered Refresh, and saved model choices with new Start omitting feature overrides until fresh options are ready while Retry replays the saved request.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/dashboard.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "dashboard/src/cockpit/Cockpit.tsx"
     },
     {
-      "blob": "9fd26bd6eb9545691e0a4f73ae8b16fa1585a78d",
+      "blob": "cd4c4a00df96929ccc38d0999d3611018afc6272",
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },
@@ -36,7 +36,7 @@
       "path": "dashboard/src/cockpit/role-launcher/roleLauncherReadiness.ts"
     },
     {
-      "blob": "462daf2928baf29511da7b2f41acf6eae18c8805",
+      "blob": "6bf63f72d17d6b51cd08739639fef91727b006ef",
       "kind": "file",
       "path": "dashboard/src/cockpit/roleLaunchModel.ts"
     },
@@ -136,7 +136,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_warmup.py"
     },
     {
-      "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+      "blob": "b438c549043394858be1d55426d334bbdcc1e62a",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
     },
@@ -180,7 +180,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_status.py"
     },
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
@@ -323,6 +323,90 @@
       "blob": "99140cdd87f91d4ef198e7bf792bf5a31072e2fd",
       "kind": "file",
       "path": "dashboard/src/grammar/documentMarkdown.ts"
+    },
+    {
+      "anchor": {
+        "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+        "content": "sha256:9507f194f1fcd5aef67148991aa444ab80f8cd3917b081a28f8e384489751e57",
+        "locator": {
+          "end": 83,
+          "kind": "line_range",
+          "start": 49
+        },
+        "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
+      },
+      "heading": "Where the choices come from",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+        "content": "sha256:fc78b8d841c742efc8baa06ae3e7dbba1cbd3084366712e84c893c5ba8e5e13b",
+        "locator": {
+          "end": 145,
+          "kind": "line_range",
+          "start": 118
+        },
+        "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
+      },
+      "heading": "Where the choices come from",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "0c8ec2f3d1d7878495b7ee358fd82f4e46d76ff0",
+        "content": "sha256:3d2ceed76bf0157a11cc4e686595491e62638d11a5d1c74d998ac134fdc50f33",
+        "locator": {
+          "end": 272,
+          "kind": "line_range",
+          "start": 243
+        },
+        "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+      },
+      "heading": "The buttons",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "821f21c80bdb705adf01849d194ac6ef9bfb6375",
+        "content": "sha256:10cf548b8fc3ed3354da2acd4d37e02c289a08ec9acffdc92ba16ec00ed15782",
+        "locator": {
+          "end": 151,
+          "kind": "line_range",
+          "start": 134
+        },
+        "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+      },
+      "heading": "Where the choices come from",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "821f21c80bdb705adf01849d194ac6ef9bfb6375",
+        "content": "sha256:aecac30076872ec8d16980cc261880695b2cb5c518b72ad98efb1ef673075f21",
+        "locator": {
+          "end": 223,
+          "kind": "line_range",
+          "start": 181
+        },
+        "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+      },
+      "heading": "The buttons",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+        "content": "sha256:5fe191cf7114f08dbe30c2f5ed30949cf9bfa98a663431f88b23d042f350baba",
+        "locator": {
+          "end": 234,
+          "kind": "line_range",
+          "start": 219
+        },
+        "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+      },
+      "heading": "Where the choices come from",
+      "kind": "anchor"
     }
   ]
 }

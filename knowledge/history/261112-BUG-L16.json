@@ -1,0 +1,224 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L16",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-1DH2HC",
+      "items": [
+        "sha256:6ca6d052fc185d724c15e96aed7198cb5a7ca5ee5fdf0521cb601e757b405bc4",
+        "sha256:7da8b797b31447db94e5c89815de6bf9214e0241c078554036df50f4657d2cea"
+      ],
+      "reason": "Describe how the test loop bounds selector waits, checks pending callbacks after a denied send, and retains standard asyncio shutdown.",
+      "sources": [
+        {
+          "blob": "770661c12cfe71564e30853965590e3e0a04177d",
+          "path": "mcp/test_support/agents_remember_test_support/testing/event_loop.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/event_loop.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R16",
+          "packet": "requirements/BUG-R16-v1-the-tool-tests-do-not-hang-in-a-codex-sandbox.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "retired",
+      "effect": "retire",
+      "id": "ROW-3XYVYS",
+      "items": [],
+      "reason": "Keep the earlier sandbox observation as history. The current shared selector handles the wake-up failure that could leave the test executor join waiting. The former timeout observation remains evidence for its original frozen candidate. The passed W2 bytes complete the current sweep cases inside Codex and the injected-denial control verifies the repaired callback path.",
+      "revision": 1,
+      "subject": "LIM-81M7T1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-48V5N3",
+      "items": [
+        "sha256:78674eb3c1bfcc4470214b545098c05f6ee1a8ea95b69d17501e1c4cfe4a4724"
+      ],
+      "reason": "Record the injected socket failure and classified payload assertion, and name what the existing retained-list control actually checks.",
+      "sources": [
+        {
+          "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
+          "path": "mcp/tests/test_tool_entry_point_controls.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_entry_point_controls.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6N7ARY",
+      "items": [
+        "sha256:d2b2eb645e1eaf0801aafcd662838a88b12d60e2ea909d61f2a999986b064168"
+      ],
+      "reason": "These imports supply the socket mock and EPERM constant. The complete denial control supplies the behavioral proof.",
+      "subject": "hunk:sha256:d2b2eb645e1eaf0801aafcd662838a88b12d60e2ea909d61f2a999986b064168"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7G1V3S",
+      "items": [
+        "sha256:a3fc047d70c63ed6a51e45d736de7dec3b9e0e8a15b6bfb20284101701315b28"
+      ],
+      "reason": "Explain the shared test loop factory in the pytest operating model and its explicit test-authored child consumers.",
+      "sources": [
+        {
+          "blob": "770661c12cfe71564e30853965590e3e0a04177d",
+          "path": "mcp/test_support/agents_remember_test_support/testing/event_loop.py"
+        },
+        {
+          "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
+          "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G45MBZ",
+      "items": [
+        "sha256:a2239fed33651d831b8cb88ab75c229c4cf20f5cfdd05d5446f162a2785a2b77"
+      ],
+      "reason": "This import provides a name for pytest configuration. Factory installation and cleanup carry the invariant in pytest_configure.",
+      "subject": "hunk:sha256:a2239fed33651d831b8cb88ab75c229c4cf20f5cfdd05d5446f162a2785a2b77"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H9TG8M",
+      "items": [
+        "sha256:46c8fe963c95a2c6da6a18e9452dc48e7eb9b1a96ccaf0ed41e477fc81fb3a73",
+        "sha256:69a7961cac8c0f9b703d94d434b92d2b83388656e8967e7dc981075f94d2b3b8",
+        "sha256:aacbb203352bd33efd2c0a88d0cfeecf1ea8641a7e7758dff82735a7fce81863",
+        "sha256:d05e2337de283515850ebe1d8ee2bdb8fe59f48cbf03cce9bb97f20dd602931b"
+      ],
+      "reason": "Record test-child factory construction and the candidate test-support import path while preserving the startup assertions.",
+      "sources": [
+        {
+          "blob": "22df2bae34011fefb15c937c98ca65522e69d257",
+          "path": "mcp/tests/test_dashboard_autostart_after_discovery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_dashboard_autostart_after_discovery.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HFCD2C",
+      "items": [
+        "sha256:f5c5334233849a220357f1e9a95296026756d0d041ca29226e986dbbad715dbb"
+      ],
+      "reason": "Revision 7 confirms the guide's ordinary pytest and candidate isolation clauses against the W2 bootstrap. All nine dependency links retain their scope, and the bootstrap link now names the current source blob.",
+      "revision": 7,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HSHKE0",
+      "items": [
+        "sha256:9882b06c0983211a5a6d80b65c3165fa51dfc4578ec147a79ff1856e775fe20f"
+      ],
+      "reason": "This import provides a name for pytest configuration. Factory installation and cleanup carry the invariant in pytest_configure.",
+      "subject": "hunk:sha256:9882b06c0983211a5a6d80b65c3165fa51dfc4578ec147a79ff1856e775fe20f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PKHNJT",
+      "items": [
+        "sha256:00b4529296680cb77ad87f8e56305a904513d35b29634cd7e18176681b3e6f28"
+      ],
+      "reason": "Explain both factory aliases, their pytest cleanup, and preserve the existing module-state responsibilities.",
+      "sources": [
+        {
+          "blob": "3e7ce2d88be1b2bb346d42f401f765ad254b0098",
+          "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-0ZEX0D",
+          "revision": 1
+        },
+        {
+          "id": "INV-2S0FEY",
+          "revision": 1
+        },
+        {
+          "id": "INV-W4XGR4",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0BRG0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-RNSH7W",
+      "items": [],
+      "reason": "Add the shared factory member and its testing-support route to account for callback progress when a socket wake-up is denied. Keep the existing reader composition, phase budgets, classification, and Git helper exclusions.",
+      "revision": 2,
+      "subject": "FAM-TG3WK0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SCS68C",
+      "items": [
+        "sha256:97f9910369bc1be62bd86f2953d1ed106cfe3f1c643a2b996aa562c0e8f20112",
+        "sha256:be6643d999defbef20c3feeb1ff315d3b4cc9f8cbb0acd389fc797ce535c2731",
+        "sha256:c2b815c1d500c3f648bf5ed03cab1a1ef42011e58a44af235f45241930083ea0"
+      ],
+      "reason": "Record explicit TestClient loop construction in the fresh child and preserve its inherited import-path boundary and exact comparison assertions.",
+      "sources": [
+        {
+          "blob": "43557a7153b2c4c2e541126f53df702a88b73cb9",
+          "path": "mcp/tests/test_historical_committed_leaf_review.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_historical_committed_leaf_review.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-THF8YH",
+      "items": [
+        "sha256:938914f2e08793bb606233e60dde3feb000e98e0d38f106d4d4c7e09b122f628"
+      ],
+      "reason": "This import provides a name for pytest configuration. Factory installation and cleanup carry the invariant in pytest_configure.",
+      "subject": "hunk:sha256:938914f2e08793bb606233e60dde3feb000e98e0d38f106d4d4c7e09b122f628"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XZ8RMS",
+      "items": [
+        "sha256:8fbc46e1307eda2aa6290e33887ebd503289b5fe14c5a8142dc692bf517519b3"
+      ],
+      "reason": "Explain the ordinary tool-world socket-denial control and the shared test loop it exercises.",
+      "sources": [
+        {
+          "blob": "22df2bae34011fefb15c937c98ca65522e69d257",
+          "path": "mcp/tests/test_dashboard_autostart_after_discovery.py"
+        },
+        {
+          "blob": "43557a7153b2c4c2e541126f53df702a88b73cb9",
+          "path": "mcp/tests/test_historical_committed_leaf_review.py"
+        },
+        {
+          "blob": "0faf7ddf50db48da53ac25cac1a389603754ce38",
+          "path": "mcp/tests/test_tool_entry_point_controls.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

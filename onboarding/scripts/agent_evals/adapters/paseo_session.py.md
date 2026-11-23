@@ -12,8 +12,8 @@ Resolves the created fixture actor's persisted provider session and checks runti
 
 ### Invariants And Boundaries
 
-The read concerns that exact actor record, not a fresh agent inventory.
+The read opens only the exact actor record. It uses the pinned host's stored-agent path and checks its provider session identity against runtime information when that information is present.
 
 ## Evidence
 
-- The source defines this file's responsibility and the boundaries described here. [1]
+- The adapter resolves the bound stored-agent record and checks its persisted identity and any runtime identity. [1]

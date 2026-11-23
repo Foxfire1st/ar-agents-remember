@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+        "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
         "content": "sha256:228f4980caa3a3d96933ccf66e514d1e51e62bcd7446ab903f7a3a587981b706",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+        "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
         "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+        "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
         "content": "sha256:c0a0083e5af950803268da591f22446716628738e57d7f8e2d54f180372ec5b9",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,25 @@
     },
     {
       "anchor": {
-        "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+        "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+        "content": "sha256:032539c90a6959c16332f1c0c884b82ec12b42f658148bfe1897d693a8903fd2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_batch_blobs"
+        }
+      },
+      "id": "RLZ-7WN79G",
+      "invariant": "INV-HEDEKR",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — Git blob reads",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The batch reader streams Git stdout into an anonymous scratch file and consumes framed bodies within the file's lifetime.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
         "content": "sha256:5eaec5043b48ad5d243ddf92eaf49ff4c2d3c1b68b1603733c1b8e558496c4c8",
         "locator": {
           "kind": "symbol",
@@ -76,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+        "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
         "content": "sha256:62a77742ee64fab78b698abd24ce333efdd8b6f9f5fb5aef63ec057c5d4806ab",
         "locator": {
           "kind": "symbol",
@@ -94,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+        "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
         "content": "sha256:1e06d97e083599f069fbf8c197960b4a72ec7557850d39b67dbe97b28275be67",
         "locator": {
           "kind": "symbol",
@@ -112,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+        "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
         "content": "sha256:8c357bd749a5ff5e48b879374a25213bb7e06baff5e880fad1a0e306c2c9b94a",
         "locator": {
           "kind": "symbol",
@@ -135,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:9be6edd7629b87ba159b0a5805c8d9965ced076237c86d4585d132efd11a3ae5",
             "locator": {
               "kind": "symbol",
@@ -151,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
             "locator": {
               "kind": "symbol",
@@ -163,14 +181,16 @@
       ]
     },
     "33": {
-      "note": "The options object: work directory, input, timeout and identity.\n\nAnchor: `GitRunnerOptions`",
+      "note": "The options object: work directory, input, timeout and identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:2961fa2dde6ec5d075bbc287e727285dea9bac2eb0dd590f9bfbf6262e1d3a6d",
             "locator": {
-              "kind": "file"
+              "end": 142,
+              "kind": "line_range",
+              "start": 121
             }
           },
           "kind": "code"
@@ -178,14 +198,16 @@
       ]
     },
     "34": {
-      "note": "The existing general runner remains text-mode through the shared setup.\n\nAnchor: `run_git`",
+      "note": "The existing general runner remains text-mode through the shared setup.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
-              "kind": "file"
+              "end": 225,
+              "kind": "line_range",
+              "start": 170
             }
           },
           "kind": "code"
@@ -197,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:8b566e81821aac98495e378833d2904270c3d535c635f9e8f878f26ab12421f5",
             "locator": {
               "kind": "symbol",
@@ -213,12 +235,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:6228fc9b31cee580abb2018fa37c6b4bdfbc4edc0451c74889ea99e07cdf6702",
             "locator": {
-              "end": 399,
+              "end": 401,
               "kind": "line_range",
-              "start": 368
+              "start": 370
             }
           },
           "kind": "code"
@@ -230,12 +252,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:4bda05bd5379a7a23bd8864a0d7fce7a0d03fb9a546b486c6f1a85e153940699",
             "locator": {
-              "end": 99,
+              "end": 101,
               "kind": "line_range",
-              "start": 96
+              "start": 98
             }
           },
           "kind": "code"
@@ -247,12 +269,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:ba106bfbc0260beb21bbc745fa63ba4779c042da3bdcf345a7b5f3dcf88575f2",
             "locator": {
-              "end": 107,
+              "end": 109,
               "kind": "line_range",
-              "start": 101
+              "start": 103
             }
           },
           "kind": "code"
@@ -264,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:8c357bd749a5ff5e48b879374a25213bb7e06baff5e880fad1a0e306c2c9b94a",
             "locator": {
               "kind": "symbol",
@@ -280,7 +302,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:5d6aa665636eb1550936699d4cfb0a3bc1ed69266481470ded0e5339e9fef9d6",
             "locator": {
               "kind": "symbol",
@@ -296,7 +318,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
             "locator": {
               "kind": "symbol",
@@ -308,14 +330,16 @@
       ]
     },
     "42": {
-      "note": "The shared-read block: one dictionary per block, reset on exit.\n\nAnchor: `shared_blob_reads`",
+      "note": "The shared-read block: one dictionary per block, reset on exit.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:4c394d7b1cd2f5f65cf7e1fa9a157462cac5ccb00af031cb97f9860b114c9af5",
             "locator": {
-              "kind": "file"
+              "end": 701,
+              "kind": "line_range",
+              "start": 684
             }
           },
           "kind": "code"
@@ -323,14 +347,16 @@
       ]
     },
     "43": {
-      "note": "The batched reader answers held blobs from the block and reads only the others.\n\nAnchor: `read_git_blobs_bytes`",
+      "note": "The shared block returns held blobs by repository and reads only its remaining IDs. A caller's explicit object inputs bypass the shared memo.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:3b02cfcf34463d979affee39a23b6c6460592c0053f339cde9a3e30335850f69",
             "locator": {
-              "kind": "file"
+              "end": 738,
+              "kind": "line_range",
+              "start": 704
             }
           },
           "kind": "code"
@@ -342,7 +368,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:1216e62599880f30d4f676bda410d988a5f73fabbf6783dbdc99e07c6b65a0d2",
             "locator": {
               "kind": "symbol",
@@ -354,15 +380,30 @@
       ]
     },
     "45": {
-      "note": "One cat-file batch; a header that is not the requested blob raises.\n\nAnchor: `_batch_blobs`",
+      "note": "One private spool receives the Git batch. The decoder refuses unexpected objects, malformed frames and trailing bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:032539c90a6959c16332f1c0c884b82ec12b42f658148bfe1897d693a8903fd2",
             "locator": {
-              "kind": "file"
+              "end": 753,
+              "kind": "line_range",
+              "start": 741
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b81241b1ecdcba97b81a57938e795ed5daf041a1",
+            "content": "sha256:0cc381787f7e881d262da6c7d0eccb86797adf8e682931463317a575f24fed0d",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/kernel/git_blob_frames.py"
           },
           "kind": "code"
         }
@@ -373,7 +414,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:c8e601b2afcab622ae91ef823d293c4bb88c0940043fea6600a5d8b5d197ffb5",
             "locator": {
               "kind": "symbol",
@@ -389,7 +430,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:d6e601a17bc185d0885495f12b41adf50b514f3c3885efde325a7937ddc83573",
             "locator": {
               "kind": "symbol",
@@ -401,12 +442,12 @@
       ]
     },
     "51": {
-      "note": "A repeated blob read inside the block starts no Git process and never crosses repositories.",
+      "note": "A repeated blob read reuses the answer inside its block. A second repository without the object refuses.",
       "targets": [
         {
           "anchor": {
-            "blob": "6be6699be944142714bfb6d286ace562d78f9710",
-            "content": "sha256:f24594dae9f4ec026808a93251153b7b42cca2bfa242601eb1e504d54caf3b2c",
+            "blob": "e0bcb7011975094cc0497fe303e45ad9f23fa7fe",
+            "content": "sha256:41e807674f4bf939e7d8d7ae2e0103f8b8dce721f99be730bb6b227e0078b5f8",
             "locator": {
               "kind": "symbol",
               "name": "SharedBlobReadTests"
@@ -439,7 +480,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:228f4980caa3a3d96933ccf66e514d1e51e62bcd7446ab903f7a3a587981b706",
             "locator": {
               "kind": "symbol",
@@ -479,7 +520,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:1e06d97e083599f069fbf8c197960b4a72ec7557850d39b67dbe97b28275be67",
             "locator": {
               "kind": "symbol",
@@ -491,14 +532,16 @@
       ]
     },
     "55": {
-      "note": "Both public transports share environment scrubbing, identity validation and execution options.\n\nAnchor: `_git_run`",
+      "note": "The text, raw-byte and direct-output runners share the environment, identity and execution-option setup.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:f36f0c45a5766570bff0ad6156a0cdf69fb7d6ef06d5e9ea79c7d693f46b84eb",
             "locator": {
-              "kind": "file"
+              "end": 301,
+              "kind": "line_range",
+              "start": 170
             }
           },
           "kind": "code"
@@ -510,7 +553,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
             "content": "sha256:37ee6e0bc99af713ba0c8d4902d3462c3c19091267bcfd749b45b6b1ff67f730",
             "locator": {
               "kind": "symbol",
@@ -522,15 +565,40 @@
       ]
     },
     "57": {
-      "note": "The cancellation context supplies one event to the shared runner. [57]",
+      "note": "The cancellation context binds the signal, the runner chooses the wait path, and the group owner handles timeout or cancellation for a new session.",
       "targets": [
         {
           "anchor": {
-            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
-            "content": "sha256:24d160d2394cce2aa979a269e55962813f600d0225e6a8037a66514776902057",
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:435bf01fe37bee8e4257af1cc6f41e28af9f3add26416914dd91320b79638aa2",
             "locator": {
-              "kind": "symbol",
-              "name": "cancellable_git_commands"
+              "end": 582,
+              "kind": "line_range",
+              "start": 571
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:42844c6ebdb84dfecbaa8b9bd8b610de7caa65c59ff5db71c9dd1e0ac92b0f9d",
+            "locator": {
+              "end": 451,
+              "kind": "line_range",
+              "start": 397
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "content": "sha256:da4835f1a1607748c44f1be381196b70cd3a38ea65d3e406eb7a6f05896bc524",
+            "locator": {
+              "end": 521,
+              "kind": "line_range",
+              "start": 460
             }
           },
           "kind": "code"

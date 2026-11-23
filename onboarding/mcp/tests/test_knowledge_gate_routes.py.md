@@ -8,7 +8,7 @@
 
 ### STOP-delta current source contract
 
-The four refusal cases retain their original branches and complete world snapshots. _record checks the exact answer code, state and error detail rather than merely accepting a generic unsuccessful return.
+The recorded-landing dry runs compare the fixture-world snapshots. Their helper checks the refusal code and state and compares the error with the first detail line. The closeout case checks that Git mutation was never called and that the open history bytes were restored. The direct-landing case checks the named knowledge-gate refusal and that the refused preview and apply admitted no journal record.
 
 These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
 
@@ -74,8 +74,8 @@ probes call `integration_gate_block` directly with chain proof held passing; the
   `_close_gated_leaf` patched to fail if called); `test_cancelling_the_generation_restores_the_file_it_closed_but_never_a_later_edit`
   (N04); `test_another_generation_s_request_never_replaces_a_kept_closing` (N12, the reviewer's L96/L97 sequence);
   `test_a_closing_kept_by_a_call_that_ended_before_the_create_is_restored_at_the_next_apply` (N05);
-  `test_an_unreadable_closing_receipt_is_a_named_refusal_at_apply_and_at_cancel` (R2-5; the worker is never
-  terminated); `test_a_closing_the_memory_line_already_holds_is_never_restored`, parametrised over `sha1` and `sha256`
+  `test_an_unreadable_closing_receipt_is_a_named_refusal_at_apply_and_at_cancel` (R2-5, the typed unreadable-receipt refusal arrives before
+  `prove_cancellable_git` runs); `test_a_closing_the_memory_line_already_holds_is_never_restored`, parametrised over `sha1` and `sha256`
   memory repositories (R3-1; kills N16 and a hardcoded-SHA-1 mutation).
 - **F4:** `test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing` calls the
   integration gate helper with an explicit operation and chain proof held passing. It proves named
@@ -135,17 +135,23 @@ The configured direct-landing fixture grants the exact canonical gate_case/leaf.
 - The closeout refuses, restores the file and commits it closed once valid. [14]
 
 
+
 - Record landing refuses through its route entry. [15]
 
 
+
+
 - Direct landing preview and apply refuse through their entry. [16]
+
 
 
 - The recorded rows of the settings resolution, and a conflicting read that is never kept. [17]
 
 - Another parent tip is another evaluation. [18]
 
+
 - A failed Git read inside the gate is never a verdict. [19]
+
 
 - A marker probe Git cannot answer is never unconverted memory. [20]
 - The settings resolution whose rows the read-set test checks. [21]
@@ -161,10 +167,14 @@ No configured live documentation source was available for this pass.
 
 - The module docstring: each route test enters through its own entry point. [22]
 
+
 - A hand-closed history file is refused at closeout validation and recorded landing. [23]
 
 
+
+
 - Direct landing's route entries and its closing across calls. [24]
+
 
 
 - Master landing refuses anything not current; ghost subjects; the scoping. [25]
@@ -172,18 +182,30 @@ No configured live documentation source was available for this pass.
 - The exact trees re-anchor-check the file they just closed; an unavailable object. [26]
 - The admission base, the memo key and record landing on unconverted memory. [27]
 
+
 - Git failures, probes and the read set. [28]
 
 
 
-- R3-1 and R3-2. [29]
+
+
+
+- The unreadable closing receipt gives its named refusal at apply and cancel. Cancel refuses before the Git proof mock is called and retains the receipt. [29]
+- A closing already held by the memory commit stays closed in both SHA-1 and SHA-256 repositories. The settled receipt is removed. [35]
+- The missing-blob fixture gives the gate an unavailable line-range anchor. The evaluation keeps a complete worklist and names the entry as unverifiable. [36]
+
+
 
 - A Git failure asking for a recorded blob is named by the trees and the lane. [31]
+
 
 - An unwritable closing receipt restores the file and admits nothing. [32]
 
 
+
+
 - A hand-closed file is refused also one commit later and through a merge. [33]
+
 
 
 ### Cross-Repo References
@@ -195,6 +217,11 @@ No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
 
-- The four refusal cases retain their original branches and complete world snapshots. _record checks the exact answer code, state and error detail rather than merely accepting a generic unsuccessful return. [34]
+
+
+- The recorded-landing dry runs compare the fixture-world snapshots. Their helper checks the refusal code and state and compares the error with the first detail line. The closeout case checks that Git mutation was never called and that the open history bytes were restored. The direct-landing case checks the named knowledge-gate refusal and that the refused preview and apply admitted no journal record. [34]
+
+
+
 
 - The lane row. [30]

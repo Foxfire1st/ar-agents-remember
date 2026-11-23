@@ -10,16 +10,16 @@ The shipped explainer instructions, identical to the canonical canvas copy and b
 
 ## Code Commentary
 
-- The explainer receives bound code and memory candidate checkouts, one packet prepared at build and every Update, its own working folder, and for a planned binding the plan's requirement and declared effects under `planned/`. It may use its harness’s file, search, shell and Git tools, AR’s general tools and its four own tools; evidence still comes only from the packet and bound trees. It publishes from drafts through the confined product writer.
+- The explainer receives bound code and memory checkouts, a packet prepared at Build or moved Update, copied task and requirement inputs, and a report manifest. A planned binding also receives the plan and effects under `planned/`. The page is published through the product writer.
 - The instructions distinguish recorded and planned bindings, require claim-marked parts, and keep grades and interpretation apart from recorded verdicts or accepted knowledge.
 - Update rebinds the environment without a turn; only an explicit regeneration request asks for a revised page. A report to the architect attaches the path from the delivered message’s “Message file” line.
 - It carries the kit map: which tool suits which explanation, with search keywords rather than addresses.
 - It is byte-identical to the checkout copy the capsule text test reads.
 
+The explainer reads the evidence, selects changes and parts, and writes a self-contained explanation for each. It completes the essay before planning or making useful supporting visuals, then assembles the page. The first six files are private; `drafts/assets/index.html` is the seventh artifact. A planned binding explains current behavior and labels the requested effects as intended. Stale regeneration renews the affected explanations and the essay before their visuals.
+
 ## Evidence
 
 - The shipped capability text states the explainer assignment and bounds.
 
-- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/package_data/canvas/review-presenter.md:1-86 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
-- Bound candidate checkouts and normal tools [1]
+- The installed capability prescribes six private authoring files, followed by the page as the seventh artifact. [1]

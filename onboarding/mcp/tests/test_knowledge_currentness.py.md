@@ -85,7 +85,9 @@ No configured live documentation source was available for this pass.
 - Unverifiable reasons and the N1 order. [5]
 
 
-- Git failures and no caching of them. [6]
+
+- An injected Git timeout reports the entry as unverifiable. The next read observes the real tree and finds the edit stale. [6]
+
 
 - A missing recorded line-range blob. [7]
 - Precedence and `unrealized`. [8]
@@ -104,8 +106,8 @@ No configured live documentation source was available for this pass.
 - The published-intent block. [14]
 
 
-- A failing step never refuses. [15]
 
+- An injected IndexMismatchError leaves the read in view state with the invariant and realization IDs. Currentness gives the failure reason and the fixture statement stays out of the serialized response. [15]
 
 
 ### Cross-Repo References
@@ -115,5 +117,6 @@ No meaningful cross-repo references found: every case works in its own temporary
 No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
+
 
 - The lane row. Anchor: "mcp/tests/test_knowledge_currentness.py" Anchor: "mcp/tests/test_knowledge_currentness.py" [16]

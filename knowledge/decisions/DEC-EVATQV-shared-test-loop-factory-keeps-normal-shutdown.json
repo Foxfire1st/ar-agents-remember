@@ -1,0 +1,55 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "M717 chose shared selector construction over the incident patch's fixture-local task group and shutdown override."
+  },
+  "alternatives": [
+    {
+      "option": "Install one test-only asyncio loop factory with a bounded selector in pytest and explicit test-authored subprocesses.",
+      "reason": "The selector returns to check queued callbacks even when the wake-up send fails. The shared factory preserves ordinary asyncio runner and executor shutdown.",
+      "status": "chosen"
+    },
+    {
+      "option": "Adopt the incident patch's fixture-local task-group wake-up and shutdown override.",
+      "reason": "Fixture-local changes miss other test-owned loops and override asyncio shutdown where the shared selector can preserve it.",
+      "reconsider_when": "A supported test loop cannot use the shared selector and a measured denied wake-up still blocks that route.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Keep the test-owned factory in shared test support and use explicit factory injection for test-authored children.",
+    "Production server loop construction and shutdown remain outside this decision.",
+    "M717 requires factory injection without Python 3.14-deprecated event-loop-policy APIs. Pytest installs the shared test factory through asyncio.events.new_event_loop and asyncio.new_event_loop."
+  ],
+  "context": "A Codex sandbox refused the socket send used to wake test-owned asyncio loops. Queued tool callbacks and executor completions could remain pending across otherwise bounded protocol waits.",
+  "decider": "Architect, recorded by the Manager in M717 under BUG-R16@v1 and the developer's D876 approval.",
+  "id": "DEC-EVATQV",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-0ZEX0D"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/test_support/agents_remember_test_support/testing"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/MANAGER-RULINGS.md M717 and BUG-L16-first-report.md, Shared seam"
+      ],
+      "path": "BUG-L16-W2-curator-ingest.json"
+    },
+    "handoffEntry": "M717-test-loop-factory",
+    "leaf": "261112-BUG-L16",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

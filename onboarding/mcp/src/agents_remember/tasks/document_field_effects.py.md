@@ -89,7 +89,8 @@ None.
 
 ## Current Contract
 
-memoryReviewState is classified EVIDENCE, as are ReviewState.recordedRounds and every ReviewRound field (round, kind, findingsRemain, verdictRef). Recursive classification therefore handles the new nested model and pure review-evidence deltas remain acceptance-evidence rather than topology/intent/readiness invalidation. Exhaustiveness remains fail-closed; classification itself does not authenticate verdicts or choose launch escalation.
+memoryReviewState is classified EVIDENCE, as are ReviewState.recordedRounds and every ReviewRound field (round, kind, findingsRemain, verdictRef). Recursive classification therefore handles the new nested model and pure review-evidence deltas remain acceptance-evidence rather than topology/intent/readiness invalidation. The added finding references, amended round records and blocking route finding IDs are also
+classified as evidence. Exhaustiveness remains fail-closed; classification itself does not authenticate verdicts or choose launch escalation.
 
 
 The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.

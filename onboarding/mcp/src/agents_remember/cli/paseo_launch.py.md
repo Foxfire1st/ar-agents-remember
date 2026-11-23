@@ -12,6 +12,7 @@ The current source facts below replace the former operative inventory. The separ
 - A held `RoleLaunch` retains all resolved creation choices but omits `agent.prompt`; its compiled opening handover remains in the receipt for the first addressed work. An ordinary launch still sends its prompt at creation. This is product-held state, not a rewrite of the host’s idle state.
 - agent_create_input removes only agents-remember from an eligible supplied MCP map and forwards the provider options already saved in the agent definition. The internal serverExclusion record is not a host payload key. build_launch_call constructed the supported Claude providerOptions.disallowedTools with existing host deny rules preserved.
 - serviceTier is projected into featureValues.service_tier.
+- Saved native Antigravity Retry uses a bridge-only existing-agent marker. The bridge can reconcile the exact recorded agent. A known absence returns the ACP-directed refusal before creation. The marker does not go to Paseo.
 
 ## Recovery note bound
 
@@ -19,9 +20,11 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/cli/paseo_launch.py:371-424`.
-- Source comparison: `mcp/src/agents_remember/cli/paseo_launch.py:445-477`.
-- Source comparison: `mcp/src/agents_remember/cli/paseo_launch.py:480-558`.
+- The repeatable call binds the selected provider, session choices, workspace and configured tool-server identity. [10]
+
+- The recovery note keeps its complete locator and digest within the 600-character bound. [11]
+
+- The launch record keeps server-exclusion metadata. The outbound agent payload applies it and marks saved native Antigravity calls existing-only. [12]
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -62,10 +65,14 @@ is archived and refused when the response returns. Ordinary launches without a m
 
 - Frozen implementation of tool_server_definition supporting the stated file behavior. [1]
 
-- Frozen implementation of build_launch_call supporting the stated file behavior. [2]
+
+- The launch call preserves the selected provider, session choices, seat binding and first-message state for creation. [2]
 
 
-- Frozen implementation of run_launch_call supporting the stated file behavior. [3]
+
+
+- The runtime opens the saved workspace, checks the leaf closing boundary, submits the saved agent call and classifies the reply. [3]
+
 
 - Checks interpreter, -P module invocation, source, selected settings and single canonical server definition. [6]
 - Starts generated stdio server and checks serving build package root and binding from selected source. [7]
@@ -80,4 +87,5 @@ The launch outcome carries `workspace_preparation` (`created`, `found` or `opene
 
 </details>
 
-- The native task-server environment carries the host AR_PLAYWRIGHT value when present so the seat uses the host browser module; absence does not invent another installation or browser value. [9]
+
+- The task server receives the host AR_PLAYWRIGHT value when present so it can use the host browser module. [9]

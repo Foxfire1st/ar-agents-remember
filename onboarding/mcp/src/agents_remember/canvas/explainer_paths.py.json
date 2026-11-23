@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+        "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
         "content": "sha256:19a09a3583cced375829599447dbc755a880ec0417accd17135bd99bff7be0c9",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+        "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+        "content": "sha256:7568e0dff929a89dbd513eb2f1526acbc15038f46e059bbbd57b31d82f9ccdae",
+        "locator": {
+          "end": 437,
+          "kind": "line_range",
+          "start": 412
+        }
+      },
+      "id": "RLZ-BVT6WV",
+      "invariant": "INV-29DEHG",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 1 — inputs",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "ensure_leaf_workspace creates the input and stage directories alongside drafts and scratch under the workspace’s confinement checks.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
         "content": "sha256:19a09a3583cced375829599447dbc755a880ec0417accd17135bd99bff7be0c9",
         "locator": {
           "kind": "symbol",
@@ -36,20 +55,57 @@
       },
       "rationale": "The common path guard checks the inferred coordination authority and explicit root before state/environment writes or removals, holding symlinked ancestors and resolved escapes.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+        "content": "sha256:12c13de77c034d752da2587a3e6662a5b4a8c1d8e34d44eaa49068f5fcb51d90",
+        "locator": {
+          "kind": "symbol",
+          "name": "STAGES_DIRECTORY"
+        }
+      },
+      "id": "RLZ-KHWPRJ",
+      "invariant": "INV-0B3Q36",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 1 — stages",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The workspace builder creates the stage folder from this constant, outside drafts/ and therefore outside publishing and render checks.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+        "content": "sha256:a7375423c06e0fde0723d681a596cad24ce7973bf2499e6b0adac6880a104195",
+        "locator": {
+          "end": 438,
+          "kind": "line_range",
+          "start": 425
+        }
+      },
+      "id": "RLZ-VB5NJ0",
+      "invariant": "INV-0B3Q36",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 1 — stages — additional realizations",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "Workspace creation makes the private stage directory next to the input and draft directories.",
+      "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "A target and every ancestor below the coordination or task root are admitted, and a symlinked component is held rather than followed\n\nAnchor: `def guard_explainer_path(`",
+      "note": "The path guard rejects a symlinked target or ancestor under the admitted root.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+            "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
             "content": "sha256:19a09a3583cced375829599447dbc755a880ec0417accd17135bd99bff7be0c9",
             "locator": {
-              "end": 222,
+              "end": 231,
               "kind": "line_range",
-              "start": 206
+              "start": 215
             }
           },
           "kind": "code"
@@ -57,16 +113,15 @@
       ]
     },
     "2": {
-      "note": "The leaf's workspace and its three writable folders are created only after the landing folder is admitted, and a symlinked workspace is refused\n\nAnchor: `def ensure_leaf_workspace(`",
+      "note": "Workspace creation checks confinement and creates private input and stage directories alongside the drafts and scratch directories.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
-            "content": "sha256:7089934867fe8db0c5011575c02ce80409b61596d692fa82ec005de4ed0f54c2",
+            "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+            "content": "sha256:c57ace87a5382d3a848a28b2ee3d534e6d2500a0edd253afc83fcf0e26ad92d8",
             "locator": {
-              "end": 421,
-              "kind": "line_range",
-              "start": 395
+              "kind": "symbol",
+              "name": "ensure_leaf_workspace"
             }
           },
           "kind": "code"
@@ -74,16 +129,16 @@
       ]
     },
     "3": {
-      "note": "Every caller of the leaf lock names one file on disk, with no doubled suffix\n\nAnchor: `def leaf_lock_resource(`",
+      "note": "Leaf operations derive the same lock resource without duplicating its suffix.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+            "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
             "content": "sha256:5a0d50e887435d9afdd950b9f3eac4aceefe6eb2bde24ed8fa1cd26c0f7b0e5f",
             "locator": {
-              "end": 353,
+              "end": 362,
               "kind": "line_range",
-              "start": 338
+              "start": 347
             }
           },
           "kind": "code"
@@ -91,16 +146,16 @@
       ]
     },
     "5": {
-      "note": "A receipt id is one path segment, so it cannot leave the leaf's receipt folder\n\nAnchor: `def receipt_id_segment(`",
+      "note": "A receipt ID resolves to one admitted path segment.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+            "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
             "content": "sha256:d0ed25f0f8ea609ccdaf8ad49c8687c1eef09696153e78317f10635bb5faa406",
             "locator": {
-              "end": 376,
+              "end": 385,
               "kind": "line_range",
-              "start": 368
+              "start": 377
             }
           },
           "kind": "code"
@@ -108,16 +163,33 @@
       ]
     },
     "6": {
-      "note": "A repository the runtime does not name, or one with no checkout, is refused rather than resolved relative to the process\n\nAnchor: `def repository_path(`",
+      "note": "Repository selection requires a registered checkout.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+            "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
             "content": "sha256:a22b735307e407284520ba3e594ac5c437b2d867ad340a7e01549d914e295e4d",
             "locator": {
-              "end": 192,
+              "end": 201,
               "kind": "line_range",
-              "start": 172
+              "start": 181
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Workspace removal unregisters its checkouts and removes the workspace after checking for nested links.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+            "content": "sha256:a9b57917e1d385694fb1b4d9261534e7eb7766bda4c0e6a2701b1fea65ecb293",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 552
             }
           },
           "kind": "code"

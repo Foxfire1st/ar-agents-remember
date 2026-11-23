@@ -10,9 +10,9 @@ Mounted launcher presentation regressions: compact controls preserve accessible 
 
 ## Code Commentary
 
-The suite mounts the real RoleChatsPane against controlled options replies. It rejects the former defaults sentence and visible selector titles; verifies accessible names and hover text; checks host-labelled mode/source/description and foreign-agent `At start`; and checks complete displayed labels for defaults, explicit agent/model/effort/feature overrides and selected document titles. The Sprint selector's empty choice is asserted as “No sprint”, the real no-sprint option the standalone-master launcher offers. Permission-bearing features remain non-editable settings-owned chips; Instructions is present only with notes and its hover identifies the source. The existing service-tier disclosure retains its test id, text and hover as a shared chip.
+The suite mounts the real RoleChatsPane against controlled options replies. It rejects the former defaults sentence and visible selector titles; verifies accessible names and hover text; checks the mode selector’s offered values, empty first option and source, alongside settings-row and host-profile precedence and reset on an agent change; and checks complete displayed labels for defaults, explicit agent/model/effort/feature overrides and selected document titles. The Sprint selector's empty choice is asserted as “No sprint”, the real no-sprint option the standalone-master launcher offers. Permission-bearing features remain non-editable settings-owned chips; Instructions is present only with notes and its hover identifies the source. The existing service-tier disclosure retains its test id, text and hover as a shared chip.
 
-The shared-definition case compares actual rendered classes for ModeBar, every launcher selector, Start, Refresh and mode chips, then inspects raw consumer source to prevent a copied tab definition. The overfull case retains every extra feature, rejects an overflow menu and rejects wide-nowrap source. Fixture defaults include provenance and notes, and a long second-model label deliberately exercises override-hover recovery.
+The shared-definition case compares actual rendered classes for ModeBar, every launcher selector, Start, Refresh and the Instructions chip, then inspects raw consumer source to prevent a copied tab definition. The overfull case retains every extra feature, rejects an overflow menu and rejects wide-nowrap source. Fixture defaults include provenance and notes, and a long second-model label deliberately exercises override-hover recovery.
 
 ## Boundaries
 
@@ -25,14 +25,24 @@ The reasoned step-up case mounts `RoleLauncher`, asserts `{role, stepUp}` at `on
 ## Evidence
 
 
-- Mounted assertions protect controls-only rendering, accessible names, selected-label/source hovers, informational chips, and shared recipe identity; overfull checks are DOM/source checks rather than pixel measurement. [1]
+
+
+- Mounted row tests cover the shared control structure, fixture-projected choices and action readiness. [1]
 
 
 
-- The default fixture supplies mode and choice provenance plus instruction metadata. [2]
+
+
+
+
+- Fixtures supply offered modes, choice provenance and instruction metadata. Model-specific replies reuse the requested model’s fixture data. [2]
 
 
 
 
 
-- Retains compact-row accessibility, source/label hovers, permission-owned chips, shared recipe and overfull DOM/source controls. The new case mounts RoleLauncher, prompts for a reason, asserts role plus stepUp only, and renders both status owners with host-default then observed-model text. [3]
+
+
+
+
+- Source and mounted assertions cover the compact control row and the configured Step up reason and actions. [3]

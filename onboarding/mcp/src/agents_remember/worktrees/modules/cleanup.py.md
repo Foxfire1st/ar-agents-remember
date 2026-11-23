@@ -226,7 +226,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 - The bridge releases only an exact selected series and reports durable release failure. [3]
 
+
 - Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input. [4]
+
 
 - **Retained historical source account — superseded by the current contract:** `cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`. [5]
 - **Retained historical source account — superseded by the current contract:** Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. [6]
@@ -258,7 +260,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 - The bundle the cleanup outputs are validated through, and the builder that refuses a blockage with no reason. [13]
 
+
 - The forced L6-shape case: an already torn-down provider runtime finalizes on the first call, and a provider runtime that cannot be removed blocks with its own reason. [14]
+
 - Worktree tests cover cleanup preconditions and completed cleanup state. [15]
 
 ### Cross-Repo References

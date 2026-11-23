@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The same two environments affect owned fixture construction in several files, where explicit setup keeps the exercised authority and width independent of the enclosing host."
+  },
+  "applicability": "The repaired fixture mechanisms in the repository’s ordinary and task-scratch Python test settings.",
+  "conditions": [
+    "Fixture mode, path width, Git discovery or enclosure identity supplies an operand that determines the behavior under test."
+  ],
+  "exclusions": [
+    "Final whole-lane evidence and the census remain test and task evidence.",
+    "Each assertion still tests its original product contract."
+  ],
+  "id": "INV-G6KRTM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/17_the-whole-test-lanes-pass-on-the-issu-20a404b481-ar/role-reports/worker/54168612-802f-4e9e-8581-5ae4bcd30ec0/role-launch/BUG-L17-W2-code-quality.md"
+      ],
+      "path": "W4-curator-ingest.json"
+    },
+    "handoffEntry": "BUG-R17@v1 rule 4",
+    "leaf": "261112-BUG-L17",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The repaired fixture set states the modes, paths, and contracts it tests independently of the outer test process's umask, path depth or live coordination files.",
+  "status": "proposed",
+  "supersedes": []
+}

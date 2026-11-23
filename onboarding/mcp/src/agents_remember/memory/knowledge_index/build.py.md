@@ -10,6 +10,8 @@
 
 ## Code Commentary
 
+The reviewer child's enabled memo shares document parses keyed by the exact bytes' SHA-256 and retains up to 65,536 entries under a 256 MiB retained charge. Each tree still validates the document's placement. An oversized parse can serve the current reader without entering the memo.
+
 ### Logic
 
 - `parse_tree(snapshot)` walks indexed JSON files in sorted order into a `ParsedTree` (records, entries, file and route sidecars, histories, the layout marker, problems). Markdown prose companions are skipped before decoding and parsing; their bytes are retained by the snapshot for worklist comparison, not interpreted as JSON. A JSON file that fails to decode or parse is appended to `problems` with its path and the first 2,000 characters of the reason; `ParsedTree.state` is `partial` when any problem exists.
@@ -57,7 +59,9 @@ The parser, the builder and the row writers.
 
 - The builder's contract: one snapshot in, problems named, nothing derived. [1]
 
-- The parsed tree and its completeness. [2]
+
+- `ParsedTree` holds the parsed documents and recorded problems. Problems make its state partial. [2]
+
 
 - What one build reports. [3]
 

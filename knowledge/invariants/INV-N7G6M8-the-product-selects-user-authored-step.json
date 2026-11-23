@@ -8,11 +8,13 @@
   "applicability": "Role starts with a user-configured single step-up alternative, selected by failed-review threshold or a reasoned explicit request.",
   "conditions": [
     "Worker counts failing recorded code rounds and Curator counts failing recorded memory rounds; record-only checks add no try and other roles are on-request.",
-    "Validate selected alternatives against offered host choices before retirement; do not inherit permission/mode/features from a different provider/model scope.",
-    "Explicit same-start agent/model/effort retain fieldwise precedence."
+    "Validate the selected provider, model, effort and permitted features against known host offerings before retirement. Effort and feature inheritance retain their existing provider and model boundaries.",
+    "Explicit same-start agent/model/effort retain fieldwise precedence.",
+    "The selected step-up row supplies the mode for its effective harness. Its effective harness is the harness named in the step-up row, or the role defaults’ harness if the step-up row omits a harness. The step-up does not inherit the base role’s mode, including when the provider and model agree.",
+    "The shared launch resolver gives an explicit dashboard mode precedence. Otherwise the selected step-up row’s mode applies when the final launch harness matches the row’s effective harness and its authored provider binding allows the choice. If neither mode applies, the resolver uses the host-advertised default only when modes are known and the host advertises a default. With no resulting mode, the create request omits modeId."
   ],
   "exclusions": [
-    "No caller mode or permission-feature authority.",
+    "MCP role_start and role_start_set accept no explicit mode. Permission-bearing feature overrides still require authorized settings.",
     "No automatic step-up with absent/unknown counts or absent configuration, no nested alternative and no reset of review allowance."
   ],
   "id": "INV-N7G6M8",
@@ -27,7 +29,7 @@
     "leaf": "260928-MIK-L88",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The product selects user-authored step-up choices from persisted failed-review counts or an explicit reason while explicit same-start agent, model and effort overrides retain fieldwise precedence.",
   "status": "proposed",

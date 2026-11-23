@@ -153,7 +153,9 @@ The memory payload owner routes synchronous citation repair and background previ
 
 - The MCP adapter delegates completed-response ownership to the application. [11]
 
+
 - The application attaches bounded guidance and records the completed result after finalization. [12]
+
 
 - Wire validation and token finalization consume the enriched model in one serialization pass. [13]
 
@@ -198,7 +200,9 @@ The memory payload owner routes synchronous citation repair and background previ
 
 
 
-- Whole-result validation precedes supplied/default answer selection, logging and final guards. [47]
+
+- Whole-result validation precedes supplied or default answer selection, logging and final guards. [47]
+
 
 
 

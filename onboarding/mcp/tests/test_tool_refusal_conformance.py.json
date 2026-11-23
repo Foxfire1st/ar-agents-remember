@@ -20,7 +20,7 @@
       ]
     },
     "10": {
-      "note": "The hermeticity statement the module is held to: every fixture root inside the disposable world, no provider configured.",
+      "note": "The fixture check asserts settings path prefixes for code and memory, its coordination-root identity and an empty provider configuration.",
       "targets": [
         {
           "anchor": {
@@ -122,43 +122,55 @@
       ]
     },
     "14": {
-      "note": "The sweep whose benign half this module completes, and the world both share. Anchor: `EntryPointWorld`",
+      "note": "The refusal census uses the ordinary sibling EntryPointWorld. The main entry-point sweep imports the extracted support world and separately checks exception evidence in both classes.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
-            "content": "sha256:614c2bf8ff9a6dbe99d62f089cac8d9e8b863313a1234e97b104f8e717a95bc3",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:ef9f76506c19762d77e7f12fde69997ae3d1083763f727e48aa182a6e4e53801",
             "locator": {
-              "end": 410,
+              "end": 484,
               "kind": "line_range",
-              "start": 1
+              "start": 384
             },
-            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+            "path": "mcp/tests/tool_entry_point_world.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
             "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
-            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
+            "content": "sha256:420149d616f3a122f8f1047e8e9c79b6341a9c8ea0a4650e03f2bc2c9202c326",
             "locator": {
-              "end": 793,
+              "end": 63,
               "kind": "line_range",
-              "start": 1
+              "start": 50
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
-            "content": "sha256:a765e9d3152e20036f466b7a78a1b346674ef0982da12a06bb7cc0e11cfdbcf5",
+            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "content": "sha256:6fe8840750695632e4ecb2e656db27b8dcd522281fc6fc74a5489af9d51bc0fe",
             "locator": {
-              "end": 881,
+              "end": 408,
               "kind": "line_range",
-              "start": 1
+              "start": 397
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:e5a0d4ef00333378854ac4e5ddf5b4da92eaeb8354c47cff3dfe1b0337b37539",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 84
             },
-            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
           },
           "kind": "test"
         }
@@ -197,12 +209,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:b78fff81f43c6d30e5e8b25d49358e2b1ed7d8595b49fe2de0249401357402bf",
             "locator": {
-              "end": 816,
+              "end": 628,
               "kind": "line_range",
-              "start": 1
+              "start": 628
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -211,7 +223,7 @@
       ]
     },
     "18": {
-      "note": "The declared bare-raiser set has ten names. Both-direction census and invocation of declared failure inputs remain source assertions, not this Curator’s execution.",
+      "note": "The test source declares ten bare-raiser names and requires exact equality with the observed non-returned set.",
       "targets": [
         {
           "anchor": {

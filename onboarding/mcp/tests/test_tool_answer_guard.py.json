@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
+        "blob": "1ed7da7b3f895c20012a5a680d83bcea0da5f5fb",
         "content": "sha256:da7d6805f6a1696078e596bc3f1c4d0784f76de5511a94cb49027d361dc826be",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
+        "blob": "1ed7da7b3f895c20012a5a680d83bcea0da5f5fb",
         "content": "sha256:da7d6805f6a1696078e596bc3f1c4d0784f76de5511a94cb49027d361dc826be",
         "locator": {
           "kind": "symbol",
@@ -39,16 +39,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Shaping and failure preservation are asserted at the choke; the varied-path completion case keeps the final hint and saved detail even when the hint and answer exceed 400 tokens. Anchor: `ToolAnswerGuardTests`",
+      "note": "Shaping and failure preservation are asserted at the completion choke. The long-path case keeps the final cut hint and saved detail even when the exact locator pushes the answer above 400 tokens.",
       "targets": [
         {
           "anchor": {
-            "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
-            "content": "sha256:9ec13d9e8e138fc1e85aac033bb7231ada0771bdaafe1399ac0ca56bc9d17292",
+            "blob": "1ed7da7b3f895c20012a5a680d83bcea0da5f5fb",
+            "content": "sha256:1cd10b3a2bfc9876b70725d4f6541faaadbb3d88e708d0fec76c9743c2ba6f5d",
             "locator": {
-              "end": 403,
+              "end": 445,
               "kind": "line_range",
-              "start": 50
+              "start": 51
             }
           },
           "kind": "test"
@@ -56,12 +56,12 @@
       ]
     },
     "2": {
-      "note": "Final delivered measurements include bookkeeping. Anchor: `ToolAnswerFinalMeasureTests`",
+      "note": "The real completion probes check that final delivered answer measurement includes the attached result location and late log accounting.",
       "targets": [
         {
           "anchor": {
-            "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
-            "content": "sha256:c016160bdb4872d61c54b59e04dbba17b5f735dd6a64d422c66be9d585d04f84",
+            "blob": "1ed7da7b3f895c20012a5a680d83bcea0da5f5fb",
+            "content": "sha256:130f0e9eaad1d14cde31439922538559139947eafd1e0893717fc36488eb8beb",
             "locator": {
               "kind": "symbol",
               "name": "ToolAnswerFinalMeasureTests"
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
+            "blob": "1ed7da7b3f895c20012a5a680d83bcea0da5f5fb",
             "content": "sha256:b0d140c68a0a9e968e3524da869d1760741535a90fd3ae144d6f3f1a8386bf1a",
             "locator": {
               "kind": "symbol",
@@ -92,12 +92,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58ad812fde181763c524766aaca0dd6cbdcde57a",
+            "blob": "1ed7da7b3f895c20012a5a680d83bcea0da5f5fb",
             "content": "sha256:3108068fc7bdd707d12593ecb496d2aab5134efe925aa78cce0ece79b4891228",
             "locator": {
-              "end": 55,
+              "end": 56,
               "kind": "line_range",
-              "start": 51
+              "start": 52
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The exact-edge test measures both sides of the bound and checks the real delivery accounting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ed7da7b3f895c20012a5a680d83bcea0da5f5fb",
+            "content": "sha256:b3a700ee0fffeae61277ef9f436f61643af651f048755666ad11703ddf1bcb8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exact_edge_answer_guarded_by_its_log_location"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The scalar-shedding proof checks the updated dropped-field count, the exact locator and the measured cut ceiling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ed7da7b3f895c20012a5a680d83bcea0da5f5fb",
+            "content": "sha256:10f101f6e15d1c9de5933a327040c7e9dad4d7caf147aa471b014558dababf4d",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 115
             }
           },
           "kind": "test"

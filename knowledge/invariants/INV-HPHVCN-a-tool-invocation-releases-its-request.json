@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A dispatcher and its joined workers must agree on owner lifetime or a worker can retain and use stale request data."
+  },
+  "applicability": "Request-owned computation under native MCP dispatch.",
+  "conditions": [
+    "Workers joined by the invocation retain its scope until they exit.",
+    "A copied worker context shares the same keyed owners until scope exit."
+  ],
+  "exclusions": [
+    "Detached quality computations own separate scopes.",
+    "Process-shared, explicitly bounded memos have separate owners."
+  ],
+  "id": "INV-HPHVCN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The request-owner lifecycle test and native dispatch success, refusal, error, and cancellation proofs."
+      ],
+      "path": "BUG-L18 W2 affected knowledge and initial history"
+    },
+    "handoffEntry": "BUG-R18@v1 item 3 — request ownership",
+    "leaf": "261112-BUG-L18",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A tool invocation releases its request-owned computation state when it completes, including on refusal, error, or cancellation.",
+  "status": "proposed",
+  "supersedes": []
+}

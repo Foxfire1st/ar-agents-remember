@@ -1,14 +1,34 @@
 {
   "path": "mcp/src/agents_remember/cli/role_launch_outcome.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cc48a16958cc6f53b7eb022faa7e4a91e960dda3",
+        "content": "sha256:deec7c55a3c740540045f59d404a5587b6d96b8d1fcf752debfc43928d64541e",
+        "locator": {
+          "end": 61,
+          "kind": "line_range",
+          "start": 61
+        }
+      },
+      "id": "RLZ-36FEFX",
+      "invariant": "INV-47MBEJ",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 6",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Records the refusal and frees the selection for an ACP start.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Created/held/unknown results preserve prior lifecycle semantics.",
       "targets": [
         {
           "anchor": {
-            "blob": "ccb1e9b293a9d30073d916aee6085e1ff47f6420",
+            "blob": "cc48a16958cc6f53b7eb022faa7e4a91e960dda3",
             "content": "sha256:960687ba725703cfd98e745a0db18fa6d1bc861426c6548a6a9ed75897ae7f90",
             "locator": {
               "kind": "symbol",
@@ -20,15 +40,16 @@
       ]
     },
     "2": {
-      "note": "Only settled empty step-up refusals remain retryable.",
+      "note": "An eligible settled empty step-up can be retried. An absent native Antigravity agent instead closes the request with HTTP 409 and ACP guidance.",
       "targets": [
         {
           "anchor": {
-            "blob": "ccb1e9b293a9d30073d916aee6085e1ff47f6420",
-            "content": "sha256:61c4e9ff3174d88b2d951a307ebbdcee24d97a19d54ea5c80d052036f5dafa8d",
+            "blob": "cc48a16958cc6f53b7eb022faa7e4a91e960dda3",
+            "content": "sha256:0f050f92294b30d17fd5a933a438be1a7ae4205b68457d79c19c73bb601bb17d",
             "locator": {
-              "kind": "symbol",
-              "name": "_refused_outcome"
+              "end": 87,
+              "kind": "line_range",
+              "start": 54
             }
           },
           "kind": "code"
@@ -36,14 +57,16 @@
       ]
     },
     "3": {
-      "note": "The caller saves and reconciles task metadata around the host outcome. Anchor: `_execute_prepared_launch`",
+      "note": "The receipt owner records the task step-up decision before running the saved call and reconciles that decision after publishing the host outcome.",
       "targets": [
         {
           "anchor": {
-            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
-            "content": "sha256:5eaba6f2df4c4cc50e912ade63892bd6789a8319586e6ae78da30e0fe4ccb364",
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+            "content": "sha256:748234a24f955908386c3996bd744d282f350805fbdef64170d53e39caa0ae6c",
             "locator": {
-              "kind": "file"
+              "end": 133,
+              "kind": "line_range",
+              "start": 81
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },

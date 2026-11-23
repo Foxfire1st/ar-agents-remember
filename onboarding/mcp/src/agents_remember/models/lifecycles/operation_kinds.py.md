@@ -26,7 +26,7 @@ The file exposes typed values or one narrow operation boundary. Callers consume 
 
 - Preserve the module's single ownership seam; do not add a fallback reader or duplicate authority.
 - Expected refusal states remain typed and bounded, while unexpected programming faults remain loud.
-- Durable lifecycle facts live in the canonical root journal; scheduling projections may only consume them.
+- The canonical root journal retains direct generations and readable older closeout and integration records. Ordinary closeout and integration execute through the synchronous worktree routes.
 
 ### Todos
 
@@ -34,9 +34,9 @@ None recorded.
 
 ### CCR private preparation boundary
 
-`recovering-private-preparation` is a distinct lifecycle operation phase for retained private work before approval consumption. Callers must not translate it into `recovering-after-claim`.
+`recovering-private-preparation` remains a distinct stored phase for historical private work before approval consumption. Historical projection preserves its distinction from `recovering-after-claim`. Fresh direct recovery uses the admitted direct lifecycle phases.
 
-- The current `LifecycleOperationPhase` boundary implements the preparation contract above. [1]
+- The shared `LifecycleOperationPhase` vocabulary preserves the distinct private-preparation phase for retained evidence. [1]
 
 ## Evidence
 
@@ -61,12 +61,11 @@ No meaningful cross-repository boundary is owned by this file.
 
 No separate external implementation source applies to this file.
 
-## 2026-08-26 Shared Control Vocabulary
+## Historical 2026-08-26 Shared Control Vocabulary
 
-This cycle-free model owner now defines both `LifecycleOperationKind` and the closed
-`LifecycleControlAction` vocabulary: retry, recover, cancel, revise, retire, and supersede.
-Registration, request models, and lifecycle-control policy import the same literal set instead of
-redeclaring it across layers.
+The 2026-08-26 cycle-free model owner defined both `LifecycleOperationKind` and the then-current
+`LifecycleControlAction` set: retry, recover, cancel, revise, retire, and supersede.
+Registration, request models and policy used that shared set. The current vocabulary is recorded below.
 
 ## CCR-R18@v1 Centralized Status And Phase Vocabulary
 
@@ -76,4 +75,4 @@ The state matrix in `models/lifecycles/operation_projection.py` consumes these s
 
 ## CCR-L42 current candidate
 
-The closed `LifecycleControlAction` vocabulary now names `resume` in place of `revise`; `retry`, `recover`, `cancel`, `retire`, and `supersede` remain the other actions. Callers use `resume` for the successor path.
+The shared `LifecycleControlAction` vocabulary includes `retry`, `recover`, `resume`, `cancel`, `retire` and `supersede`. The public handler refuses ordinary historical generations before mutation. Use the advertised direct actions for a live direct generation.

@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
+        "content": "sha256:9193796c9dba99b7869aefabdde7d78e2f3165537b92dcde1661caa6667c1159",
+        "locator": {
+          "kind": "symbol",
+          "name": "BoundedMemo"
+        }
+      },
+      "id": "RLZ-8KSHJE",
+      "invariant": "INV-QEKWKH",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — shared memo bounds",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "The memo checks each entry’s weight before insertion and evicts least recently used entries under the insertion lock until both aggregate limits hold.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "**Content facts are functions of the id; availability is never remembered here; only complete ids are admitted; answers only.**\n\nAnchor: \"What is *not* a function of the id\"",
       "targets": [
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:1b6ff17f20f17bcdce4e952b5fcb4b57839244d3fedd3e9fd4cf43b1dc6decc3",
             "locator": {
               "end": 27,
@@ -25,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:c4ba63173ceac4c2cbe54e5f9fc9b50dbd88e7258425f570017b9bc44d16bf4d",
             "locator": {
               "kind": "symbol",
@@ -41,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:6cd60d6a37f5ae307dc4e5c38b4fddf2da6445ffcc141abb926b604b3ff2092d",
             "locator": {
               "kind": "symbol",
@@ -52,7 +71,7 @@
         },
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:99b959da4ce6745179b087bbf07e82922c2550089b609fc1e6683d99889e2429",
             "locator": {
               "kind": "symbol",
@@ -63,7 +82,7 @@
         },
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:f3f4d5c274f6a21e932e45aa545c0c821fc1ea72d07d217117cc636a32fd7b3d",
             "locator": {
               "kind": "symbol",
@@ -79,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:a1e619b09a94dc7184ec1cddedce393267506cd55c6b29341d82885c08d8b05c",
             "locator": {
               "kind": "symbol",
@@ -90,7 +109,7 @@
         },
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:891f54bfde7ea955ccfd00677b92922fda14e8be7672f51bdcf33a802eb58c8b",
             "locator": {
               "kind": "symbol",
@@ -101,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:ed6a6768e30a5ae6ce728d95ce8d94089466ddf369ed22d678550f1a1b9b1f4d",
             "locator": {
               "kind": "symbol",
@@ -117,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
+            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
             "content": "sha256:712cefe57298b0f6dae74656a096d4c23fc70206b81aeb6583acf29e025098a0",
             "locator": {
               "kind": "symbol",
@@ -181,16 +200,16 @@
       ]
     },
     "8": {
-      "note": "**The cases that pin the bound and concurrency.**\n\nAnchor: \"test_the_memo_evicts_the_least_recently_used_past_its_weight_bound\"; \"test_concurrent_readers_share_answers_and_the_bound_holds\"",
+      "note": "The named tests check weight-bounded eviction and agreement under concurrent access.",
       "targets": [
         {
           "anchor": {
-            "blob": "126a64801a1628c8cc4eafa3bfa4dd8c6d076bde",
-            "content": "sha256:68d55265668480b20862f65515738bf9bdd0bee7d87be763d483e44546e94ad1",
+            "blob": "b6f33379e6184a3f66a3f15339e17ad8fc5e0e1a",
+            "content": "sha256:724351986a8ed0cf12b28623afea799719fd4849d3b0f65b1575284d06420006",
             "locator": {
-              "end": 369,
+              "end": 427,
               "kind": "line_range",
-              "start": 301
+              "start": 304
             },
             "path": "mcp/tests/test_read_anchor_memo.py"
           },

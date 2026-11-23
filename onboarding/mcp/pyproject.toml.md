@@ -182,11 +182,12 @@ later reader does not have to reconstruct it from a report.
 - The MCP console entry point resolves through `agents_remember.mcp.__main__`. [8]
 
 
-- MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. Anchor: `_resolve_server_version` [9]
+
+- MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. [9]
 
 
 
-- The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy; `test_canvas_capsule_text.py` checks the generated capability copy against its source and checks the packaging declarations. [18]
+
 
 
 
@@ -211,3 +212,5 @@ later reader does not have to reconstruct it from a report.
 
 
 - Root pytest configuration selects four workers by default. [2]
+
+- Package data declares the general package-data tree and the canvas Markdown and JavaScript resources. Tests pin the general and Markdown patterns and check the generated capability copy against the source. [18]

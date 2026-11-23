@@ -1088,22 +1088,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
-            "content": "sha256:16909810c747239109ba8d1c32692dd59bbd28bca8f289821c345d0080ddb9c6",
+            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "content": "sha256:3a3c84122eeb05f2fd5368efcd2d815fc4d4586c1408a26b6b2477fd20be9c6d",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeArgs"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
-            "content": "sha256:aa5fda34dde0755a15aa9f1d706e5c0bfe973689ff8774eeb5c501a2726680d6",
-            "locator": {
-              "kind": "file"
+              "end": 100,
+              "kind": "line_range",
+              "start": 34
             },
             "path": "mcp/src/agents_remember/worktrees/modules/args.py"
           },
@@ -1133,11 +1123,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
-            "content": "sha256:16909810c747239109ba8d1c32692dd59bbd28bca8f289821c345d0080ddb9c6",
+            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "content": "sha256:d9fc278e8180e73d2d1603f3a3af0f702c03c9035b6b3bfbc72765f2058bec4b",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeArgs"
+              "end": 87,
+              "kind": "line_range",
+              "start": 86
             },
             "path": "mcp/src/agents_remember/worktrees/modules/args.py"
           },
@@ -1145,12 +1136,14 @@
         },
         {
           "anchor": {
-            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
-            "content": "sha256:aa5fda34dde0755a15aa9f1d706e5c0bfe973689ff8774eeb5c501a2726680d6",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "content": "sha256:37ef2749cdb38c04077c62e1ed5b5ce8b3386a326765f2949c22a18c778792fd",
             "locator": {
-              "kind": "file"
+              "end": 904,
+              "kind": "line_range",
+              "start": 896
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
           "kind": "code"
         }

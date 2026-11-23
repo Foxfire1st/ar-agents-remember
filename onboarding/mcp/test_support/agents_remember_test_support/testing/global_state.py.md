@@ -18,6 +18,8 @@ helpers.
 
 ## Code Commentary
 
+The TypeScript parser and lifecycle journal reset entries name the process-owned caches. Request scopes clear their own owner maps when they leave.
+
 `PROCESS_MUTABLE_STATES` is a closed register of syntactically discovered product process state.
 Each row names its owner, one treatment and the reason: `restored`, `reset`, or `constant for tests`.
 The companion source guard rejects unregistered, stale and duplicate rows; this is a governed
@@ -60,7 +62,9 @@ The reset register also forgets master-architect host adapters, explainer in-fli
 - The one owned state register is explicit. [1]
 
 
-- Process snapshot/restore uses one typed owner. [2]
+
+- Process snapshot and restore use one typed state owner. [2]
+
 
 
 
@@ -74,7 +78,9 @@ The reset register also forgets master-architect host adapters, explainer in-fli
 - Only process-owned spawned children are terminated and reaped. [7]
 
 
-- Loaded-owner reset includes delegated sweep and tool-writer cleanup. [8]
+
+- Resetting loaded owners delegates sweep cleanup and tool-writer cleanup to their resetters. [8]
+
 
 
 
@@ -96,15 +102,23 @@ and clears the slot, so the next test module builds a fresh pool. A further row 
 `serving.projections.host_activity._ENDINGS`. Both are entries in the declaration this module already
 keeps — process state a test module must not inherit — not a claim about production behaviour.
 
-- The reset register also forgets master-architect host adapters, explainer in-flight send/build ledgers, and per-root move watches between modules. The obsolete `worktrees.services._current` row and its resetter are removed because the service supplier is now one holder object; the shared pytest module fixture resets that holder explicitly before and after each module. These declarations do not claim a reset was executed in this inspection. [11]
+
+- The reset register discards loaded master-architect host adapters, Explainer send and build ledgers, and per-root move watches between test modules. [11]
 
 
-Anchor: `PROCESS_MUTABLE_STATES` [10]
 
 
-Anchor: `PROCESS_MUTABLE_STATES` [3]
+- The closeout digest-file stats, lifecycle location cache and process-owned lifecycle operation-record memo use ordinary _clear resets between test modules. [10]
 
 
-Anchor: `PROCESS_MUTABLE_STATES` [9]
+
+
+- The closed register gives each registered process state one treatment and a reason. [3]
+
+
+
+
+- The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded. [9]
+
 
 - Retired at the fifth freeze d59c3493: mcp/test_support/agents_remember_test_support/testing/global_state.py::PROCESS_MUTABLE_STATES - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -12,6 +12,8 @@ which lives here, beside its only consumer, rather than in the product (review R
 
 ## Code Commentary
 
+The converted-base case verifies reuse inside one scope and separately owned conversions in a nested scope and the process owner.
+
 ### Logic
 
 - `test_a_card_becomes_prose_one_evidence_section_and_numbered_references` checks:
@@ -82,7 +84,9 @@ The cases and the renderer.
 - A refused conversion writes nothing. [4]
 - Back to prose. [5]
 
-- The version 1 golden digest. [6]
+
+- The version 1 test compares a hash of the converted paths and bytes with the golden fixture digest. [6]
+
 
 
 
@@ -95,8 +99,11 @@ No cross-repo boundary is crossed by this file.
 ### Repo-Internal References (continued)
 
 - Rule 6 source assertions: deterministic conversion, version refusal and no-op, followed by based validation refusing the carried anchor at a deleted path (`R22.6-carried-stale`, exit 1). [3]
-- Current source delta inspected statically: Replace final converted-validation PASS with based carried-stale refusal; retain determinism, version, no-op and golden-input boundaries. [8]
+
+- The CLI source assertions cover refusal of an unsupported version, identical bytes in twin conversions, an already-converted rerun, and exit 1 with one carried-stale violation when validating against the committed conversion. A separate test checks the version 1 fixture digest. [8]
+
 
 - Equal-blob definition and changed-blob proof observations retain filename eligibility in either priming order. [9]
+
 
 - Its lane row. Anchor: "mcp/tests/test_knowledge_conversion.py" Anchor: "mcp/tests/test_knowledge_conversion.py" [7]

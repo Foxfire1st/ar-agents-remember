@@ -4,16 +4,29 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: \"mcp/tests/test_curator_review_assessment_publication.py\"; \"integration = [\"",
+      "note": "The lane catalog declares this suite in integration.",
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
             "locator": {
-              "end": 816,
+              "end": 666,
               "kind": "line_range",
-              "start": 1
+              "start": 666
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
+            "locator": {
+              "end": 695,
+              "kind": "line_range",
+              "start": 695
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -22,16 +35,29 @@
       ]
     },
     "2": {
-      "note": "The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: \"mcp/tests/test_curator_review_assessment_publication.py\"; \"integration = [\"",
+      "note": "The lane catalog declares this suite in integration.",
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
             "locator": {
-              "end": 816,
+              "end": 666,
               "kind": "line_range",
-              "start": 1
+              "start": 666
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
+            "locator": {
+              "end": 695,
+              "kind": "line_range",
+              "start": 695
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -44,12 +70,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff593e2a93b0de873b7994aef0bb0b570a6984a6",
-            "content": "sha256:7809f034b202ca744826083e4c9219b474c1b9a2489af1d5cfa21fe0f22c1031",
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
             "locator": {
-              "end": 5062,
+              "end": 1197,
               "kind": "line_range",
-              "start": 1
+              "start": 1197
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
+            "locator": {
+              "end": 2637,
+              "kind": "line_range",
+              "start": 2637
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

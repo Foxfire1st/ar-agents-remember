@@ -119,15 +119,16 @@
       ]
     },
     "11": {
-      "note": "The fixer checks every card first and refuses by name.",
+      "note": "A last-card resolution failure leaves both Markdown files unchanged before publication. The unscoped fixer names both invalid cards, while the single unrelated sidecar fix reports no unreadable sidecar.",
       "targets": [
         {
           "anchor": {
             "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
             "content": "sha256:ed88419723b25f19fefcdc74dbf6eeeb8d65dfe91a63d1b9edc03ed83c60b1f6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_fixer_checks_every_card_first_and_refuses_by_name"
+              "end": 810,
+              "kind": "line_range",
+              "start": 752
             }
           },
           "kind": "test"
@@ -135,15 +136,16 @@
       ]
     },
     "12": {
-      "note": "A leftover evidence line is refused, and only the named card loses references.",
+      "note": "A leftover citation marker causes a refusal and leaves the card bytes intact. After the marker is removed, the tree-wide authoring pass retains reference 2, and the named pass removes it while retaining reference numbers 1 and 3.",
       "targets": [
         {
           "anchor": {
             "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
             "content": "sha256:37cd4c36e753b21f43798cd6e35ce0a6ecd731186fd793367bd750ebada86437",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_leftover_evidence_line_is_refused_and_only_the_named_card_loses_references"
+              "end": 866,
+              "kind": "line_range",
+              "start": 813
             }
           },
           "kind": "test"
@@ -183,16 +185,16 @@
       ]
     },
     "17": {
-      "note": "Current source delta inspected statically: Repair converted quality/catalog outcome, carried/new classifications and 10-entry delivery; preserve L46 and content-only advisory cases.",
+      "note": "Static source checks cover the converted quality refusal and catalog drift item, the carried-versus-new anchor distinction, and the ten-entry delivery limit. Separate cases cover the content-only stale-reference advisory and the L46 conversion instructions.",
       "targets": [
         {
           "anchor": {
             "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
-            "content": "sha256:f2c8db1a703d205ea89bed27abe4826f2e0b1d16f9b364cbefa973704d58572f",
+            "content": "sha256:3c3d3f65432ccf0f88693246b8c608b500d4b766bebd92874850afe8d4d840d7",
             "locator": {
-              "end": 185,
+              "end": 167,
               "kind": "line_range",
-              "start": 182
+              "start": 137
             }
           },
           "kind": "test"
@@ -200,11 +202,11 @@
         {
           "anchor": {
             "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
-            "content": "sha256:98e62f9ceb8e199a58fd61cc3ce0658210474de709925d84f86b6b703a5fa94c",
+            "content": "sha256:504875f5044c050cfb6704c90a64f6fbe35bb8aab93a06c19da2a395c9a5744b",
             "locator": {
-              "end": 210,
+              "end": 258,
               "kind": "line_range",
-              "start": 209
+              "start": 170
             }
           },
           "kind": "test"
@@ -212,11 +214,11 @@
         {
           "anchor": {
             "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
-            "content": "sha256:5a2435e72653d004663217c93bfb58d810320209b8cc2e1ab9d5d32363c59360",
+            "content": "sha256:45d5d872f5f31b2c977e0eb75c2084fd6c8d021e9cda2b9f141c06d09d61b769",
             "locator": {
-              "end": 664,
+              "end": 686,
               "kind": "line_range",
-              "start": 659
+              "start": 625
             }
           },
           "kind": "test"
@@ -224,11 +226,11 @@
         {
           "anchor": {
             "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
-            "content": "sha256:838fe4fdb19e2ccd529aac09eed6db42bd1c57a50a4c7681150fe04acbfd0559",
+            "content": "sha256:89be81d41405e69f315fac3afa2ecd37b861a12e81ce45693c4ff794d9b3f04b",
             "locator": {
               "end": 930,
               "kind": "line_range",
-              "start": 926
+              "start": 913
             }
           },
           "kind": "test"
@@ -236,23 +238,11 @@
         {
           "anchor": {
             "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
-            "content": "sha256:b65e39946a52f0620e9ea99f99295206389d6dcfa7e12578dfa3d7b56b5eb5dd",
+            "content": "sha256:e629dd30b650bfdf5fcdd28d0fca43a19e682b64d192ec86db7c4cf79da592c9",
             "locator": {
-              "end": 662,
+              "end": 1156,
               "kind": "line_range",
-              "start": 657
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
-            "content": "sha256:b65e2ea026414cb96bab6d065afbc345d27bd39cd03862462db57cf79501eed9",
-            "locator": {
-              "end": 924,
-              "kind": "line_range",
-              "start": 920
+              "start": 1139
             }
           },
           "kind": "test"
@@ -260,15 +250,16 @@
       ]
     },
     "18": {
-      "note": "Separate implementation custody path: producer whole/result projection, finalized whole-result detail input, redaction, destination and size/budget/write controls; not a log-readback assertion in the conversion test.",
+      "note": "The test and implementation references cover producer results and their projections, detail inputs, log destination, redaction and write budgets.",
       "targets": [
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
-            "content": "sha256:99bc46c7921ea48b4c78521f65f7349e31b235dadd4edcab4e30d0fa0ba1b75b",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
             "locator": {
-              "kind": "symbol",
-              "name": "complete_tool_response"
+              "end": 527,
+              "kind": "line_range",
+              "start": 401
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -302,12 +293,12 @@
         },
         {
           "anchor": {
-            "blob": "df068536dcad3b876c3587c6724f0dab855067b8",
+            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
             "content": "sha256:00f84b602709b475ee1d0a3428da2d636e7979e3476cf8f3dd2f8a21fbcd181b",
             "locator": {
-              "end": 182,
+              "end": 184,
               "kind": "line_range",
-              "start": 162
+              "start": 164
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -483,12 +474,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
             "locator": {
-              "end": 816,
+              "end": 222,
               "kind": "line_range",
-              "start": 1
+              "start": 222
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

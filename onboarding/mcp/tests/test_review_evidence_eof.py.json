@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5c95125cbe06e217f9644af4a4e9089462e97099",
+        "blob": "0f6f705ecabdf4f073272b9a4ffaa4ebe913499a",
         "content": "sha256:ec43ab143d01494e85c8d46743e31d4563f0e5e78dcf503d79b663973b7a55bb",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5c95125cbe06e217f9644af4a4e9089462e97099",
+        "blob": "0f6f705ecabdf4f073272b9a4ffaa4ebe913499a",
         "content": "sha256:0c460407e0245581362a5e5ba8d37368af18320b74dbe6821d294a3d55b8c432",
         "locator": {
           "kind": "symbol",
@@ -34,6 +34,23 @@
         "handoffEntry": "MIK-R182@v1",
         "leaf": "260928-MIK-L180"
       }
+    },
+    {
+      "anchor": {
+        "blob": "0f6f705ecabdf4f073272b9a4ffaa4ebe913499a",
+        "content": "sha256:846381dab4a25674fd75413b942c6f7a73a5db237ba94de29e9ce95960b697da",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_whole_blob_transport_allocates_one_payload_copy"
+        }
+      },
+      "facet": "Complete history transport retains the exact body without a second payload-sized allocation.",
+      "id": "PRF-9BT8N6",
+      "invariant": "INV-03CT75",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 5 — Explainer blob capture",
+        "leaf": "261112-BUG-L18"
+      }
     }
   ],
   "realizes": [],
@@ -43,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c95125cbe06e217f9644af4a4e9089462e97099",
+            "blob": "0f6f705ecabdf4f073272b9a4ffaa4ebe913499a",
             "content": "sha256:0c460407e0245581362a5e5ba8d37368af18320b74dbe6821d294a3d55b8c432",
             "locator": {
               "kind": "symbol",
@@ -59,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c95125cbe06e217f9644af4a4e9089462e97099",
+            "blob": "0f6f705ecabdf4f073272b9a4ffaa4ebe913499a",
             "content": "sha256:ec43ab143d01494e85c8d46743e31d4563f0e5e78dcf503d79b663973b7a55bb",
             "locator": {
               "kind": "symbol",

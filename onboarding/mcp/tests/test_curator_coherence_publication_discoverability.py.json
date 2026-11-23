@@ -139,12 +139,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:0060146bbb3b5c2baa12506a71304262d78a482eab41c6ba94c0e2a6d3c2b0b5",
             "locator": {
-              "end": 816,
+              "end": 134,
               "kind": "line_range",
-              "start": 1
+              "start": 134
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -374,18 +374,32 @@
       ]
     },
     "9": {
-      "note": "**The one stubbed boundary: the real `prepare` over a stubbed observation, so the asserted summary is the one a caller receives.**",
+      "note": "The production prepare action constructs the response over stubbed source observation, predecessor, and canonical paths. It writes the candidate set in the scratch fixture.",
       "targets": [
         {
           "anchor": {
             "blob": "a2954294417e6bb9b24a36f5d824b64093280317",
             "content": "sha256:390087938587281992965c6d14609c17436d2ad9a5775b15c09dd753c5c78b5c",
             "locator": {
-              "kind": "symbol",
-              "name": "_prepared_payload"
+              "end": 147,
+              "kind": "line_range",
+              "start": 111
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e823c8c2adb79e581e45029265d6a0e09e481ac",
+            "content": "sha256:23536224bcc5dc1d36955a44793da1c70344126e5a7f714f428ad67d6f3f2690",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
         }
       ]
     }

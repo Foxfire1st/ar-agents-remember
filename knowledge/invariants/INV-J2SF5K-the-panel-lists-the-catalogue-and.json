@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Metadata and selected feature discovery use separate entry points, which keeps every listed model selectable without querying options for every pair."
+  },
+  "applicability": "The dashboard role launcher’s shown-model option lookup.",
+  "conditions": [
+    "The metadata generation is current and the pane has a provider and model selection.",
+    "A held answer for the pair is reused through selection and post-Start metadata rereads until Refresh."
+  ],
+  "exclusions": [
+    "Start itself can check its resolved model and validate supplied features during creation."
+  ],
+  "id": "INV-J2SF5K",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Mounted option tests carried from W2 by dashboard tree parity and unchanged-bridge wire proof in the W1 archive, validated for F08. CUR-F01 guide-to-source comparison and current mounted tests."
+      ],
+      "path": "W6-curator-ingest.json"
+    },
+    "handoffEntry": "BUG-R19@v1 item 1",
+    "leaf": "261112-BUG-L19",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The panel lists the catalogue and requests options for only its current provider and model, keeping each answer until Refresh.",
+  "status": "proposed",
+  "supersedes": []
+}

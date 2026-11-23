@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
+    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
     "role": "curator",
-    "statement": "The page holds: the packaging metadata and the dashboard's media route leave its two commands true. The tool reference it points at, `docs/reference/mcp-tools.md`, moved in this master's earlier change at six passages — the cut hint, the status paragraph, the weakness closure, the `worktree_status` row, the atomic-master abandon rule and the commit-check exception — and the page quotes none of them.",
-    "task": "261112-BUG-L7",
+    "statement": "The MCP package README still names the tool groups for the 44-tool ordinary roster and bound explainer extras and points to the updated Tool answers reference.",
+    "task": "261112-BUG-L18",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -46,7 +46,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
     {
-      "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+      "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "678f1f18dba660d35c4072fa0d645922638ddfb6",
+      "blob": "e0f70f991c3b38c1dbc9f586c0c6b70303b451cd",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

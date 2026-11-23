@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
-        "content": "sha256:be9d9c913c16b5803f00f5b9414094fb4a66f6cfd5e41abce610cec136c3218f",
+        "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+        "content": "sha256:eb3ac1bde13c70a0e8c7a42ddf9381509ac2da164c2011c906072a29fec939f6",
         "locator": {
           "kind": "file"
         }
@@ -15,22 +15,22 @@
         "handoffEntry": "L71-CURRENT242-W-17",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The mounted R71 assertions retain explicit speed submission and feature preservation through model/effort changes, and read resolved mode/instruction provenance through chips and hover.",
+      "rationale": "Mounted launcher assertions check explicit speed and feature preservation through model and effort edits, default mode provenance in the selector and the retained instruction chip.",
       "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "The launch-lock reread case enables fake time before mount, flushes the initial reply, then advances the 1,500 ms product reread in async `act`. Its no-status/no-alert and restored-Start assertions follow the actual reread opportunity; teardown restores real timers.",
+      "note": "A launch-in-progress options response schedules a 1,500 ms reread, with no status line or alert. Start returns after the reread.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
-            "content": "sha256:17be3c090d1fb2451483e4bd738d2fa3addc4e634f3de2eb70fd28a866d9cdad",
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:d092f25893dbf5da0ebcb81a6227fb0de3711016330e2ed721f4fc753fe0305d",
             "locator": {
-              "end": 173,
+              "end": 255,
               "kind": "line_range",
-              "start": 147
+              "start": 225
             }
           },
           "kind": "test"
@@ -38,16 +38,16 @@
       ]
     },
     "2": {
-      "note": "Configured tier, incompatible-model refusal and foreign-agent default disclosure remain asserted.",
+      "note": "The launcher displays configured tier and foreign default provenance, and marks a known unoffered model for replacement.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
-            "content": "sha256:a2ae369fd05974f67c97e4bfc0d5230fe7c250c894a763f6dcee7862b08c6bc6",
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:4133d2e174f77fa5e6b86e65bb967f389d5330abb4ac5055626067da0dcfc81b",
             "locator": {
-              "end": 85,
+              "end": 174,
               "kind": "line_range",
-              "start": 71
+              "start": 111
             }
           },
           "kind": "test"
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
             "content": "sha256:413ad7073a78fdb2cbd6e5963df05d9a04fd9a2f18f23eb0e4845a62daf20153",
             "locator": {
-              "end": 203,
+              "end": 215,
               "kind": "line_range",
-              "start": 178
+              "start": 190
             }
           },
           "kind": "test"
@@ -72,16 +72,74 @@
       ]
     },
     "4": {
-      "note": "Mounted R71 assertions read mode/instruction chips and their source hovers while retaining explicit-only feature submission and feature preservation.",
+      "note": "The launcher keeps explicit speed choices separate from effort and waits for the shown model’s Speed control before exercising an override.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
-            "content": "sha256:a896582639d1f296d7cc640534e25b566cc36e2f60b6bad67ffcc0c508d0302d",
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:e9a34b7197b84b1d9168d68192ee3a90510fbe7242aaec22500f1ecf29e0d889",
             "locator": {
-              "end": 255,
+              "end": 421,
               "kind": "line_range",
-              "start": 212
+              "start": 319
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Mounted dispatch carries the explicit mode before and after a model override.\n\nAnchor: \"carries the chosen mode in its override and keeps it across a model change\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:232b9d770912766addc39ec652afd000e8687220178258fbd79c4b0fd7f51c4f",
+            "locator": {
+              "end": 498,
+              "kind": "line_range",
+              "start": 426
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Matching saved inventory keeps eligible Start available during metadata and model-options refresh. The launcher shows no separate catalog-status line before or after settlement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:9847c20aaaf04fbf7961c5ed515c85e558d4bf60ec38e52e55e0e6b5bd69b57e",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 519
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:7fe3c4b8ea6fc1f7829c91e543face56acb25e1ab922da66ee58d3b42626cdcb",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 546
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:dd9da0e260fbe28fdbec9343e12f6594d463e7aea14aebf6702ba324aa75579b",
+            "locator": {
+              "end": 629,
+              "kind": "line_range",
+              "start": 601
             }
           },
           "kind": "test"

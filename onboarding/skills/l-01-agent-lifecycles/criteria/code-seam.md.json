@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "56cbc03e2c77342364358f8f0cb498b39f2b8d45",
+        "blob": "3cf8c904c85c61ce8aefea44b7afe96c3f7f3ce5",
         "content": "sha256:5adfbe9341e00cf2db8a63a34d4fab958a4b3d98ab93d609ee06996de6a1dfdf",
         "locator": {
           "end": 58,
@@ -19,6 +19,25 @@
       },
       "rationale": "The criterion itself.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3cf8c904c85c61ce8aefea44b7afe96c3f7f3ce5",
+        "content": "sha256:762141e68c3a7c9aac2cad6aed7dc22a9f68fd6096945d7b7d55b4fdd06d2e25",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 11
+        }
+      },
+      "id": "RLZ-BBQPVC",
+      "invariant": "INV-WEF33P",
+      "origin": {
+        "handoffEntry": "Curator W7 hunk attribution §4",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The shared criteria catalog forwards the three sanctioned finding sources.",
+      "role": "support"
     }
   ],
   "references": {
@@ -27,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56cbc03e2c77342364358f8f0cb498b39f2b8d45",
+            "blob": "3cf8c904c85c61ce8aefea44b7afe96c3f7f3ce5",
             "content": "sha256:cfc4e46ecfb95846e911666d17025f18dd90fc40f7d5d5b69721dfaa855825a3",
             "locator": {
               "end": 29,
@@ -44,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56cbc03e2c77342364358f8f0cb498b39f2b8d45",
+            "blob": "3cf8c904c85c61ce8aefea44b7afe96c3f7f3ce5",
             "content": "sha256:946957c33b8fad5f3047610de25b009567e42cee2b57b2025f61745ed846bbb6",
             "locator": {
               "end": 74,
@@ -61,8 +80,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56cbc03e2c77342364358f8f0cb498b39f2b8d45",
-            "content": "sha256:c3b81c76de343acfb9d143e8410c4d6fc7bd02f9e84664f06cee3e644bb9c4a1",
+            "blob": "3cf8c904c85c61ce8aefea44b7afe96c3f7f3ce5",
+            "content": "sha256:0d0e516ca90b15ba6cf288dc6b88a4d8864877ef8c98da5047e570f2d26871d8",
             "locator": {
               "end": 78,
               "kind": "line_range",
@@ -78,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56cbc03e2c77342364358f8f0cb498b39f2b8d45",
+            "blob": "3cf8c904c85c61ce8aefea44b7afe96c3f7f3ce5",
             "content": "sha256:8a996cc2cd295f837d7a9b3c37fa51c2385405c73bb7fdd440b3c2bf2c729923",
             "locator": {
               "end": 78,

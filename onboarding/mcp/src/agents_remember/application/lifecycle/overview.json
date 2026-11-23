@@ -50,12 +50,12 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:3402442a80b2b51e2a295d23bf0c2d10ffbd917d6b9148bb77e38aac11f311a1",
             "locator": {
-              "end": 928,
+              "end": 904,
               "kind": "line_range",
-              "start": 886
+              "start": 862
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -127,7 +127,7 @@
       ]
     },
     "4": {
-      "note": "Typed admission findings are projected completely; rail-failure and status-wait construction remains retained capability rather than a registered detached execution route.",
+      "note": "The application projects the selected certification admission findings and their bounded detail.",
       "targets": [
         {
           "anchor": {
@@ -143,13 +143,12 @@
         },
         {
           "anchor": {
-            "blob": "352d896a77b6b2f7a980cab40dc2f0736ed4553e",
-            "content": "sha256:09aad643d05563e620208cef073ee9418222b16a5f282a5dded5da640e803403",
+            "blob": "784e1bc60483d8754a1f8bbfbe4607e4559dbeaf",
+            "content": "sha256:80d5da2f49c7e6b0c8972619dcd17ff84133652a9b7309ef1d446831b4d571c7",
             "locator": {
-              "kind": "symbol",
-              "name": "terminal_worker_failure_result"
+              "kind": "file"
             },
-            "path": "mcp/src/agents_remember/application/lifecycle/terminal_rail_failure.py"
+            "path": "mcp/src/agents_remember/application/lifecycle/certification_refusal.py"
           },
           "kind": "code"
         }

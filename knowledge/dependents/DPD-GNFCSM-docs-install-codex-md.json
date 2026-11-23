@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The changed approval and timeout entries state the host configuration, recorded timeout and sandbox measurements cited by the Worker; the install steps, registration and role-setting instructions are unchanged, and this pass ran no new harness probe.",
-    "task": "261112-BUG-L7",
+    "statement": "The Codex guide correctly states the 300-second role-seat default, omission of a per-server timeout on both Paseo transports, and Codex’s rejection of a timeout-only server table.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/install/codex.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
     },
     {
-      "blob": "f7ddf469d09ffa892e43eaf4777567df0e78dbfc",
+      "blob": "9e10958ad95558f1846ccfe0170975c559d03227",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
@@ -79,6 +79,48 @@
       "blob": "39638c80596020e507e49021c3300935b8be9281",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/host_environment.py"
+    },
+    {
+      "anchor": {
+        "blob": "b33b0956cce071df6dbbad017f2532bc112d48a9",
+        "content": "sha256:0a8fbaa5df76b8825763f4772bb89fb9f5c9309d9823b46e40ecf1be03e44a95",
+        "locator": {
+          "end": 632,
+          "kind": "line_range",
+          "start": 625
+        },
+        "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+      },
+      "heading": "Settings of this harness",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "b33b0956cce071df6dbbad017f2532bc112d48a9",
+        "content": "sha256:c364b21249c31b21535a0833d38d20711fd35b379f3f6a2d41c58ffe48b58a13",
+        "locator": {
+          "end": 647,
+          "kind": "line_range",
+          "start": 633
+        },
+        "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+      },
+      "heading": "Settings of this harness",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "b33b0956cce071df6dbbad017f2532bc112d48a9",
+        "content": "sha256:5323aa8c2e43bb94dca037c3bc8628ef84a5c628f5daff4486169802519adaa5",
+        "locator": {
+          "end": 4537,
+          "kind": "line_range",
+          "start": 4532
+        },
+        "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+      },
+      "heading": "Settings of this harness",
+      "kind": "anchor"
     }
   ]
 }

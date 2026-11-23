@@ -25,33 +25,30 @@ expected side from a source the projection does not feed** — the fixture files
 task layer's own frozen vocabularies, or an independently parsed copy of the projection's output. A
 comparison whose two sides both came from the projection would be vacuous.
 
-The fixture is a `World`: one synthetic coordination root with an external memory repo (the topology
-the real enclosure uses), a code checkout, a memory worktree, a sprint/master/leaf document set, two
-leafless-packet requirement documents and generated enclosure contracts. `ContractSpec` and
-`BindingSpec` are the two value objects that vary one fact at a time, which is what keeps a case's
-failure attributable. `ALPHA_SPEC`/`BETA_SPEC` are the two sibling leaves the isolation cases project
-against.
+The fixture creates a synthetic coordination root and directories for the code, external memory and memory worktree.
+It writes sprint, master and four leaf documents and their enclosure fixtures. ALPHA, BETA and GAMMA have requirement
+packets. DELTA declares a missing packet. The `ContractSpec` and `BindingSpec` values parameterize the fixture.
+The isolation case compares ALPHA and BETA and also checks GAMMA's task-declared packet.
 
 Current source-defined cases and their assertion boundaries (11 definitions; no new collection or execution is claimed):
 
 | Case | Property |
 | --- | --- |
-| `test_two_leaves_project_their_own_scope_without_leaking_the_other` | Sibling leaves project their own scope without private-content leakage |
-| `test_sprint_decision_history_reaches_orchestrator_but_never_a_leaf` | Sprint history is injected at orchestrator altitude and referenced rather than injected for a leaf |
-| `test_each_frozen_operation_selects_its_own_channels_and_its_own_document` | Each declared operation selects its own channels and document |
+| `test_two_leaves_project_their_own_scope_without_leaking_the_other` | ALPHA and BETA hide each other's fixture text. GAMMA resolves its own task-declared packet without a supplied location. |
+| `test_sprint_decision_history_reaches_orchestrator_but_never_a_leaf` | The sprint decision reaches the Orchestrator. The leaf excludes sprint history and gets a reference to the master decision log. |
+| `test_each_frozen_operation_selects_its_own_channels_and_its_own_document` | Each frozen operation uses its declared leaf channels except portfolio. Selected rendered sections vary by operation. |
 | `test_the_launcher_seat_plan_is_thin_for_every_altitude_and_parent` | A launcher receives objective/scope at its own altitude, without role-operation channels or portfolio facts |
-| `test_every_unresolvable_input_returns_its_own_source_resolution_status` | Unresolvable inputs retain their own named refusal statuses |
+| `test_every_unresolvable_input_returns_its_own_source_resolution_status` | Named failure fixtures assert exact statuses. The registry partitions statuses between named cases and declared unreachable entries. |
 | `test_the_provider_refuses_a_branch_or_a_revision_its_scope_did_not_bind` | Wrong branch and wrong admitted task revision refuse distinctly; the matching binding remains usable |
 | `test_a_changed_task_revision_invalidates_the_previously_selected_projection` | New resolution rejects an old binding after a task edit; re-admission projects the new revision, and an already resolved scope retains its read revision |
 | `test_a_refused_and_a_successful_projection_leave_the_task_tree_byte_identical` | Success, a branch-mismatch refusal and an unresolved-requirement-packet refusal leave the task tree byte-identical |
-| `test_the_projection_modules_import_no_writer_transport_or_task_json_reader` | The package import surface contains no writer, transport or task-JSON reader |
+| `test_the_projection_modules_import_no_writer_transport_or_task_json_reader` | The AST scan checks direct package modules for the listed writer and transport import markers and top-level `json` imports. |
 | `test_the_projected_planes_keep_their_kinds_and_carry_every_obligation_verbatim` | One combined case distinguishes current/historical/proposal kinds, preserves obligations verbatim and reports a missing required section |
 | `test_the_provider_serves_the_compiler_protocol_and_the_knowledge_seam_is_optional` | The provider satisfies the compiler seam, a forged digest refuses, and an absent optional knowledge channel is reported |
 
 Two cases carry more weight than their size suggests. The **import-surface case** parses each
-module's AST and asserts no writer, transport or task-JSON import appears — that is what makes "read
-task truth through the owners" and "the projection is read-only" checkable properties rather than
-claims. The **byte-identical case** compares the task-tree digest before and after a successful projection,
+direct Python module's AST and checks imports against the listed writer and transport substrings and the
+`json` module. The fixture tests supply separate read-only behavior evidence. The **byte-identical case** compares the task-tree digest before and after a successful projection,
 a `projection-branch-mismatch` refusal and a `projection-requirement-packet-unresolved` refusal.
 It also requires the task-document bytes to equal the fixture baseline.
 
@@ -61,11 +58,10 @@ The synthetic tree must mirror the external-memory enclosure topology. A leaf en
 
 ### Invariants And Boundaries
 
-- **This module has its evidence-lane row.** `mcp/tests/test_task_projection.py` is listed in the `unit-regression` lane of `mcp/tests/test-evidence-lanes.toml` (current row `:595`). The fail-closed loader `load_lane_manifest` derives the expected test population from the Python test modules under `testpaths = ["mcp/tests"]` and raises `LaneManifestError` for any test file without an explicit lane; the `pytest_collection_modifyitems` hook calls it on every collection.
+- **This module has its evidence-lane row.** `mcp/tests/test_task_projection.py` is listed in the `unit-regression` lane of `mcp/tests/test-evidence-lanes.toml` (current row `:597`). The fail-closed loader `load_lane_manifest` derives the expected test population from the Python test modules under `testpaths = ["mcp/tests"]` and raises `LaneManifestError` for any test file without an explicit lane; the `pytest_collection_modifyitems` hook calls it on every collection.
 - **No case may compare the projection against itself.** The expected side comes from the fixture
   files on disk, a frozen vocabulary, or an independent parse — never from the projection's output.
-- The import-surface case walks every module in the package, so a new module is covered
-  automatically. Do not narrow it to a hand-written module list.
+- The import-surface case enumerates direct `task_projection/*.py` files, so another direct module enters its scan.
 - This module is a **shipped repository test**, not a task-local fixture. The leaf's mutation probe
   and live-evidence scripts are deliberately *not* promoted here; they are task-local artifacts in
   the coordination tree.
@@ -137,10 +133,12 @@ The cases, the fixture value objects that vary one fact at a time, and the seam 
 - The fixture world and the two spec value objects that keep a failure attributable. [1]
 - The generated enclosure contract, and the external-memory topology the fixture must reproduce. [2]
 - The two sibling leaves the isolation cases project against. [3]
-- The structural import-surface case: no writer, no transport, no task-JSON reader. [4]
 
-- The altitude case: sprint history reaches an orchestrator but never a leaf. [6]
-- The failure-taxonomy case: each unresolvable input has its own status. [7]
+- The structural case scans direct task_projection Python modules. It rejects listed writer and transport import substrings and top-level json imports. [4]
+
+
+- The altitude fixture checks that the Orchestrator receives the sprint decision and the leaf excludes it. A separate assertion checks the leaf's master-log reference. [6]
+- Named resolution failures return their asserted projection statuses. The registry census also accounts for declared unreachable statuses. [7]
 - The seam case: the provider satisfies the compiler protocol, and the knowledge channel is optional. [8]
 - The package the cases exercise, whose read plan they pin. [9]
 - The compiler seam these cases verify through, including its digest refusal.
@@ -170,5 +168,8 @@ No meaningful cross-repo references found.
 
 - The read-only case keeps task-document bytes and the task-tree digest unchanged after a successful projection, a projection-branch-mismatch refusal and a projection-requirement-packet-unresolved refusal. [5]
 
+
 - The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [13]
+
+
 - The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution. [21]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 45 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "role": "curator",
+    "statement": "The Settings reference’s catalog validation and provider-options projection still govern per-role settings choices and extra harness arguments.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,8 +46,8 @@
     },
     {
       "anchor": {
-        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
-        "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+        "content": "sha256:6f65805395b74e84622fcaddc827333a9e3af273cc57041dd8a2f53e423617dd",
         "locator": {
           "kind": "symbol",
           "name": "launcher_catalog"
@@ -124,7 +124,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_admission.py"
     },
     {
-      "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+      "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
@@ -164,7 +164,7 @@
       "path": "mcp/src/agents_remember/worktrees/role_handover_locator.py"
     },
     {
-      "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -177,6 +177,30 @@
       "blob": "f1c7b82e4146f0ca94137b49d845adef38178ff5",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py"
+    },
+    {
+      "anchor": {
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+        "content": "sha256:69f637c761167dc15d8b99a868e04068f45d10e52e2fecd4eacc1bf24bb2fc86",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_agent_selection"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+        "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_mode"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+      },
+      "kind": "anchor"
     }
   ]
 }

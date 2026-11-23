@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[Route overview](../overview.md)
+[Route overview](../../../../../../../../overview.md)
 
 ## Purpose
 
@@ -16,6 +16,8 @@ The copy the runtime carries, byte-identical to the tree's own example: process 
 
 The obligation above is the whole of what this file must keep true; the route account says what the surrounding surface promises.
 
+The shipped example governs the look and lets the essay guide the choice of figures.
+
 ## Evidence
 
-- The shipped copy holds process without values, as the tree's example does [1]
+- The shipped example governs the look and lets the essay guide the choice of figures. [1]

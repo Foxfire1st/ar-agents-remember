@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a711dd8f2066190599935a6531bcdc60c117b77c",
-        "content": "sha256:537930a12c35213fb22ec183acd7e25d62dbb7bd066623d99b56e584131715d9",
+        "blob": "3d975f27c0ce55d5ad95e49343385b48acafae0b",
+        "content": "sha256:bfb580362bc10048cbe740c2dbc26905d00fa985771edb63739f705d20405f1c",
         "locator": {
           "kind": "file"
         }
@@ -21,17 +21,41 @@
   ],
   "references": {
     "1": {
-      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "note": "The recorder registers the native hooks and refetches the exact owner's timeline for its recorded turn-ended event.",
       "targets": [
         {
           "anchor": {
-            "blob": "a711dd8f2066190599935a6531bcdc60c117b77c",
-            "content": "sha256:537930a12c35213fb22ec183acd7e25d62dbb7bd066623d99b56e584131715d9",
+            "blob": "3d975f27c0ce55d5ad95e49343385b48acafae0b",
+            "content": "sha256:a683bbe1c7219265511b87b5f75ab277b510bad1b6bb5bbe31610c43e13b425a",
             "locator": {
-              "kind": "file"
+              "end": 170,
+              "kind": "line_range",
+              "start": 136
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "In the 0.16.2 distribution, `plugins/runtime.js` applies `wireEvent` at 375 and adds the empty compatibility timeline at 1152–1155. `plugins/plugin-process.js:535` passes the input to the hook.",
+      "targets": [
+        {
+          "document": {
+            "document": "https://registry.npmjs.org/@getpaseo/server/-/server-0.16.2.tgz"
+          },
+          "kind": "external"
+        }
+      ]
+    },
+    "3": {
+      "note": "The 0.16.2 SDK declares the turn-end event at `dist/server/lifecycle.d.ts:107–117` without timeline history.",
+      "targets": [
+        {
+          "document": {
+            "document": "https://registry.npmjs.org/@getpaseo/plugin/-/plugin-0.16.2.tgz"
+          },
+          "kind": "external"
         }
       ]
     }

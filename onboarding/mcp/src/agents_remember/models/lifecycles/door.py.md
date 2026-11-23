@@ -86,13 +86,13 @@ No separate external implementation source applies to this file.
 
 ## 260821-CLIVE Canonical Door Contract
 
-The canonical source has exactly four dispositions: `waiting`, `deferred`, `withdrawn`, and
-`claimed`. Its immutable generation identity includes candidate, master, sprint, contract and tree
-facts, task-topology fingerprint, code/memory/review/admission/scheduling provenance, and
-predecessor edges. `claimed` additionally requires the exact operation identity. Cancel, retire,
-supersede, commit, certification, and integration outcomes belong to the lifecycle journal, not the
-door vocabulary. Public actions are limited to status, declare, defer, resume, withdraw, and
-provenance update with an exact action-specific payload matrix.
+The 260821-CLIVE door source used four dispositions: `waiting`, `deferred`, `withdrawn` and
+`claimed`. That contract's immutable generation identity carried candidate, master, sprint,
+contract, tree, topology, provenance and predecessor facts. A claim recorded the exact operation
+identity. That design assigned cancel, retire, supersede, commit, certification and integration
+outcomes to the ordinary lifecycle journal. It kept door actions to status, declare, defer,
+resume, withdraw and provenance update with an action-specific payload.
+Closeout and integration now run through their synchronous tools. Retained ordinary journal outcomes serve as audit evidence.
 
 ## 260831-CCR-R03 Declared Door Dependencies
 

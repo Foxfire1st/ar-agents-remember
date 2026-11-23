@@ -6,11 +6,11 @@
 
 ## Purpose
 
-Consumed object closures, kept on disk under the storage witnesses they were proven with.
+Keeps closure proofs for object bodies read in a recorded comparison.
 
 ## Code Commentary
 
-A consumed object's closure is stored beside the digest of the witnesses it was proven under, so a later read can tell a proof that still applies from one whose witnesses moved. The store answers with the stored closure only while that digest matches.
+The request and process memo owners each hold up to 64 exact-root proofs and 16 latest-repository proofs. Native calls use the request owner. When supplied, the disk store keeps up to 64 proof files by default. Each envelope records the complete object-ID list, witness digest, reference stamp and layout digest. The answer owner re-observes the current layout, references and object presence before it relies on a proof.
 
 ## Boundaries
 
@@ -18,4 +18,5 @@ The detail this module owns stops at its own boundary; the route account above s
 
 ## Evidence
 
-- ClosureProofStore keeps each closure with its witnesses and layout digests rather than alone. [1]
+
+- The disk store keeps up to 64 proof files by default. Each proof file holds the complete object-ID list and its witness, reference and layout stamps. [1]

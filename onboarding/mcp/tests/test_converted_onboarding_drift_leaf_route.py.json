@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+        "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
         "content": "sha256:6669261fe24c27fc09b5b38c3a49c639f4b04159b815db48854f39efb73a1665",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+        "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
         "content": "sha256:6669261fe24c27fc09b5b38c3a49c639f4b04159b815db48854f39efb73a1665",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+        "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
         "content": "sha256:116f20c356ac4d340fa3f2c4cc126016f9fa8fd202979134bdfc71d523be9c94",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+        "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
         "content": "sha256:116f20c356ac4d340fa3f2c4cc126016f9fa8fd202979134bdfc71d523be9c94",
         "locator": {
           "kind": "symbol",
@@ -70,19 +70,50 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+        "content": "sha256:053d694869db7f8cb46e859db5543f09414416d1db70ac63755a355f0a487ea2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_contract"
+        }
+      },
+      "id": "RLZ-RWSEAX",
+      "invariant": "INV-G6KRTM",
+      "origin": {
+        "handoffEntry": "BUG-R17@v1 rule 4",
+        "leaf": "261112-BUG-L17"
+      },
+      "rationale": "Builds the real leaf contract representation from fixture roots and paired commits.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The leaf route compares against the leaf base and agrees with the summary on a carried stale anchor.",
+      "note": "The leaf route compares against its fixture base when HEAD differs and shares the carried-stale disposition with the summary.",
       "targets": [
         {
           "anchor": {
-            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
-            "content": "sha256:134dc7ef3399ce68ba808ab74fab503c5589c784529b77e17d19a22fa875c154",
+            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "content": "sha256:d6b7d2e092b9d8daa53b591f28ba8c13dce72499d72a345ef3e2070608570e09",
             "locator": {
-              "end": 365,
+              "end": 281,
               "kind": "line_range",
-              "start": 273
+              "start": 236
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "content": "sha256:8cee6267b28a79d32bb14a3c5aa44ec227bdfd536bd55bfec09ef19c8314f0de",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 284
             }
           },
           "kind": "test"
@@ -94,12 +125,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
             "content": "sha256:1cef09cd763309befc3de7d116fa539d15c0a1d64561206d9c368666b95e464c",
             "locator": {
-              "end": 662,
+              "end": 630,
               "kind": "line_range",
-              "start": 493
+              "start": 461
             }
           },
           "kind": "test"
@@ -111,12 +142,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
             "content": "sha256:9078aba742605eed90dda358b945b706ea4bf722df3cb5c1456a57fb6522d826",
             "locator": {
-              "end": 615,
+              "end": 583,
               "kind": "line_range",
-              "start": 549
+              "start": 517
             }
           },
           "kind": "test"
@@ -124,14 +155,15 @@
       ]
     },
     "4": {
-      "note": "The live drift surfaces are the context_packet registration, docs/tool-details.md, the lifecycle skill's knowledge, curation and handoff files and the l-01-agent-lifecycles corpus.",
+      "note": "The static description case checks the scoped registration and the current drift guide words in paired in-repository sources.",
       "targets": [
         {
           "anchor": {
-            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
-            "content": "sha256:8817e1b1aecb2f4de8c68c77faf28b8f403a4a6f4173a959631c0736acf7bd17",
+            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "content": "sha256:e96e387e41dfe6b96e639b38e9747bf0c36efe6b2e4a497b7677ceb34b3fa1c1",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_descriptions_say_what_the_check_is"
             }
           },
           "kind": "test"

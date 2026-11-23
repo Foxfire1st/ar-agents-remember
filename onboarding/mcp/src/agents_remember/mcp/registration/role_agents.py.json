@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3f91234661460904091f50cb41164456aa515f04",
+        "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+        "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_role_agent_tools"
+        }
+      },
+      "id": "RLZ-6ND0CV",
+      "invariant": "INV-V4WR2R",
+      "origin": {
+        "handoffEntry": "BUG-R18@v1 item 3 — registered role-start drain",
+        "leaf": "261112-BUG-L18"
+      },
+      "rationale": "Both native role-start registrations call the shared draining worker.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
         "content": "sha256:d5fccfa00edaf41799345ca2547bb87aaf2a0a09355e4a3997599019a505cd27",
         "locator": {
           "kind": "symbol",
@@ -22,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "3f91234661460904091f50cb41164456aa515f04",
-        "content": "sha256:310a67575a14cff92e1bcebd1e8f270cfcfc70b25eb6681a972f6fbad24bfbbb",
+        "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+        "content": "sha256:5799bdee2243f040ff359fe66b08402b0228dc5b300306480febb2bf14c6d980",
         "locator": {
           "kind": "file"
         }
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "3f91234661460904091f50cb41164456aa515f04",
-        "content": "sha256:8ec9fa9c67ef661e617e2a1fd5d91e1f659cb1d41ff8208cce462f290df64f42",
+        "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+        "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
         "locator": {
           "kind": "symbol",
           "name": "register_role_agent_tools"
@@ -62,12 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f91234661460904091f50cb41164456aa515f04",
-            "content": "sha256:310a67575a14cff92e1bcebd1e8f270cfcfc70b25eb6681a972f6fbad24bfbbb",
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
             "locator": {
-              "end": 211,
+              "end": 209,
               "kind": "line_range",
-              "start": 1
+              "start": 85
             }
           },
           "kind": "code"
@@ -79,29 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
             "content": "sha256:3813693bdba56cad51f7ec9420d5c56cd59cccf4f0dc5990c6968fe5f36a82be",
             "locator": {
-              "end": 203,
+              "end": 204,
               "kind": "line_range",
-              "start": 180
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The current source implements this file’s stated Investigator boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3f91234661460904091f50cb41164456aa515f04",
-            "content": "sha256:39dab55c022bc0709501958f85a78da7c1f3addd5927b9dfa1f46c5eaf35c2e2",
-            "locator": {
-              "end": 141,
-              "kind": "line_range",
-              "start": 1
+              "start": 181
             }
           },
           "kind": "code"
@@ -109,16 +110,16 @@
       ]
     },
     "3": {
-      "note": "The existing typed start/message/set registrars remain the public surface. Current compact descriptions advertise start ok/id/handover and message wait/held/cancellation outcomes plus the longer reference. Mode/feature policy, attachments/hashes, capacity, successor and receipt authority stay with the input/application/reference owners, not a claim that every detail is still inline in the short docstrings. Held answer overrides remain distinct from ordinary compact delivery.",
+      "note": "The typed role start, role start set and role message declarations expose the public inputs and compact descriptions. The payload owners retain launch, message and receipt policy.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f91234661460904091f50cb41164456aa515f04",
-            "content": "sha256:310a67575a14cff92e1bcebd1e8f270cfcfc70b25eb6681a972f6fbad24bfbbb",
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
             "locator": {
-              "end": 211,
+              "end": 209,
               "kind": "line_range",
-              "start": 1
+              "start": 85
             }
           },
           "kind": "code"
@@ -126,16 +127,16 @@
       ]
     },
     "4": {
-      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "note": "Workers read failed tries from typed code rounds and Curators from typed memory rounds. Record-only checks create no counted review round. Incomplete typed history leaves the count unknown.",
       "targets": [
         {
           "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
             "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
             "locator": {
-              "end": 240,
+              "end": 251,
               "kind": "line_range",
-              "start": 175
+              "start": 186
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },
@@ -144,14 +145,14 @@
       ]
     },
     "5": {
-      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
-            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "blob": "44ab1947b9265873e68b729ed3eadbaa9de20956",
+            "content": "sha256:7caac7aa600902172ffc18daae305c426b89bd067310c7ab095496e66a625481",
             "locator": {
-              "end": 84,
+              "end": 87,
               "kind": "line_range",
               "start": 23
             },
@@ -162,16 +163,28 @@
       ]
     },
     "6": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L68–L104",
+      "note": "The caller harness name comes from MCP initialization. Role start forwards step_up into RoleStartCall and delegates launch through the shared request thread.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f91234661460904091f50cb41164456aa515f04",
-            "content": "sha256:3f8073c584feeaddac1f37c933b10989bf48c89890b4cf4a4afc3fbf54da2ef1",
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "content": "sha256:657f593e3e436906b417024f5f642d403e08fe9d49a20fb85617cad97694e5d8",
             "locator": {
-              "end": 100,
+              "end": 82,
               "kind": "line_range",
-              "start": 64
+              "start": 65
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "content": "sha256:8439e2c586ae37a52345a195a76133ed74b3a3f25c52fa565b22d7d4bd93999e",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 85
             }
           },
           "kind": "code"
@@ -183,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
             "content": "sha256:657f593e3e436906b417024f5f642d403e08fe9d49a20fb85617cad97694e5d8",
             "locator": {
               "kind": "symbol",
@@ -199,12 +212,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f91234661460904091f50cb41164456aa515f04",
-            "content": "sha256:8ec9fa9c67ef661e617e2a1fd5d91e1f659cb1d41ff8208cce462f290df64f42",
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
             "locator": {
-              "end": 208,
+              "end": 209,
               "kind": "line_range",
-              "start": 84
+              "start": 85
             }
           },
           "kind": "code"
@@ -212,17 +225,30 @@
       ]
     },
     "9": {
-      "note": "Role calls build their existing strict call models, then resolve the existing payload before offloading it. Registration imports no role payload implementation.",
+      "note": "The role registrars build typed calls and delegate to their payload owners. Both start handlers use the shared request-thread helper, which drains blocking work before propagating cancellation.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f91234661460904091f50cb41164456aa515f04",
-            "content": "sha256:310a67575a14cff92e1bcebd1e8f270cfcfc70b25eb6681a972f6fbad24bfbbb",
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
             "locator": {
-              "end": 211,
+              "end": 209,
               "kind": "line_range",
-              "start": 1
+              "start": 85
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16c9244c6c6d7b49e26f835cf992ae04304056f5",
+            "content": "sha256:8270eb64bb55bec46ee910fba95941cf2303221cd04753f4019076d6e81336e9",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/mcp/thread_workers.py"
           },
           "kind": "code"
         }

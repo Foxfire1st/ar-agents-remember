@@ -10,11 +10,11 @@ The launch's outcomes against the fake bridge: what is written to a receipt, whi
 
 ## Code Commentary
 
-`LaunchOutcomeTests` requires each answer of the runtime to be written to the receipt, a launch without a usable answer to stay retryable, and a 300,000-byte first message to launch as data. `RepeatAndConflictTests` requires a repeated request to converge on the same agent, a conflicting or second request to refuse with nothing changed, and a new start on a closed leaf execution to refuse while naming the holder. A replacing start retires the holder and starts in one call, refuses a running holder without the word, and a task-bound receipt is created exclusively.
+`LaunchOutcomeTests` checks recorded creation and refusal outcomes, retryable unknown outcomes after an unanswered host call, and a 300,000-byte first message sent as data. `RepeatAndConflictTests` requires a repeated request to converge on the same agent, a conflicting or second request to refuse with nothing changed, and a new start on a closed leaf execution to refuse while naming the holder. A replacing start retires the holder and starts in one call, refuses a running holder without the word, and a task-bound receipt is created exclusively.
 
 ## Invariants And Boundaries
 
-A refusal is asserted together with the world being unchanged, so a refusal that left a seat behind fails. The oversized first message is sent as data, not truncated into the prompt path.
+The refused conflict cases preserve the existing receipt and agent. Saved native Antigravity Retry reuses the recorded agent if present. An absent recorded agent produces HTTP 409 with ACP guidance and leaves the host agent set unchanged. The ACP regression checks the saved create payload, including its task server, is replayed exactly. The oversized first message is sent as data, not truncated into the prompt path.
 
 ## Fresh catalog reads before outcomes
 
@@ -24,7 +24,10 @@ A new start asks catalog metadata before the retained holder/refusal, archive or
 
 ### Repo-Internal References
 
-- Every runtime answer is written to the receipt and an unusable one leaves the launch retryable. [1]
+
+- The bridge outcome is stored in the receipt. Timeout without a usable answer leaves the tested launch retryable. [1]
 
 
-- A repeat converges on one agent; a conflict refuses and changes nothing, naming the holder it found. [2]
+
+
+- A repeat converges on one agent. A conflicting request leaves the saved execution unchanged. A fresh request on a closed execution names its holder. [2]

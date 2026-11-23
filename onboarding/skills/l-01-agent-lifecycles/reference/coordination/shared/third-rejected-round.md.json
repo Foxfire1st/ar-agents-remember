@@ -1,13 +1,33 @@
 {
   "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/third-rejected-round.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0c9ac3ef1f63c30cb433f3cbd981ecaa60ab742e",
+        "content": "sha256:47b485c17d97b3436d0c99e8538ca390f06511049362df8c34d97839bd8cecc4",
+        "locator": {
+          "end": 9,
+          "kind": "line_range",
+          "start": 9
+        }
+      },
+      "id": "RLZ-G24MHS",
+      "invariant": "INV-55QF39",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §5",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The third-rejected-round file is the home of the switch decision, so the telling duty lives beside it.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The third rejected round is judged from the sealed finding trail and does not automatically require a stronger model.",
       "targets": [
         {
           "anchor": {
-            "blob": "be4b0a258b5d0b1395aef3e038992225e6382427",
+            "blob": "0c9ac3ef1f63c30cb433f3cbd981ecaa60ab742e",
             "content": "sha256:2e0fb4a58214220647ee0e1967de61b241cc68f7d89c892311c4d1f6338dcc20",
             "locator": {
               "end": 5,
@@ -24,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be4b0a258b5d0b1395aef3e038992225e6382427",
+            "blob": "0c9ac3ef1f63c30cb433f3cbd981ecaa60ab742e",
             "content": "sha256:ecd1617afa435808f42e00fe649ebb4a9de36b715c4e92d5be499330f3e85691",
             "locator": {
               "end": 7,
@@ -41,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be4b0a258b5d0b1395aef3e038992225e6382427",
+            "blob": "0c9ac3ef1f63c30cb433f3cbd981ecaa60ab742e",
             "content": "sha256:3ac48591ef63161cd22bc7315252d26fd8301c911fb91930564073d612b07a7e",
             "locator": {
-              "end": 9,
+              "end": 11,
               "kind": "line_range",
-              "start": 9
+              "start": 11
             }
           },
           "kind": "code"
@@ -58,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be4b0a258b5d0b1395aef3e038992225e6382427",
+            "blob": "0c9ac3ef1f63c30cb433f3cbd981ecaa60ab742e",
             "content": "sha256:ff29cb67403a08a0b5dad61d0980fe46455c10ae035099ca3f45a2bee5f1dc24",
             "locator": {
-              "end": 11,
+              "end": 13,
               "kind": "line_range",
-              "start": 11
+              "start": 13
             }
           },
           "kind": "code"

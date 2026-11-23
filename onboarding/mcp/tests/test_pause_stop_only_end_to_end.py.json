@@ -103,12 +103,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 816,
+              "end": 731,
               "kind": "line_range",
-              "start": 1
+              "start": 731
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -178,12 +178,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "71f1ea63f0847c6d3ffb74043dfc3aaf073f92da",
-            "content": "sha256:c130e9d214d7d0cadafd4a435e48ae2104a128bae024abd0c98717fd59d90c42",
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 816,
+              "end": 731,
               "kind": "line_range",
-              "start": 1
+              "start": 731
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -196,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
             "content": "sha256:f239aaed53e583a0aa6274b05c3059a122ae73f4d75c2cf63103598131127abf",
             "locator": {
               "end": 175,
@@ -425,12 +425,12 @@
         },
         {
           "anchor": {
-            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
             "content": "sha256:a8768b1add6b6636c56184ec2fc8ee90c3210ab32314cb7477c3ff41aad2379c",
             "locator": {
-              "end": 516,
+              "end": 515,
               "kind": "line_range",
-              "start": 467
+              "start": 466
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

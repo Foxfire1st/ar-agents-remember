@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module defines `LifecycleControlRequestError`; `validate_lifecycle_control_request` as its public seam.",
+      "note": "`LifecycleControlRequestError` and `validate_lifecycle_control_request` own authority-free request validation.",
       "targets": [
         {
           "anchor": {

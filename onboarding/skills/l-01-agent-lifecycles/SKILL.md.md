@@ -119,4 +119,4 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 - `curator-handoff-list.md` is the producers' contract for the Curator hand-off: Workers and Reviewers send their own lists directly, and Managers and Orchestrators relay none. [19]
 
-- Semantic requirement versions and exact-candidate formal attempts keep separate immutable lineage; internal reruns mint no attempt. Reviewer records bind the exact attempt and candidate. Accepted attempts stay closed, and observations outside the sealed findings list go through the parent to the developer without adding or reopening findings or resetting review. [8]
+- Semantic requirement versions and exact-candidate formal attempts keep separate immutable lineage. Internal reruns create no formal attempt. Reviewer records bind the exact attempt and candidate, and accepted attempts remain closed. The three sanctioned routes govern additions to the sealed findings list. Other out-of-list observations go through the parent to the developer. [8]

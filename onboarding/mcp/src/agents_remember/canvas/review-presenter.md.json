@@ -1,17 +1,77 @@
 {
   "path": "mcp/src/agents_remember/canvas/review-presenter.md",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+        "content": "sha256:1b53086abd38efe768e5203e24f452bb763deae5806ae341d8b0bab8a571e491",
+        "locator": {
+          "end": 49,
+          "kind": "line_range",
+          "start": 22
+        }
+      },
+      "id": "RLZ-015ETW",
+      "invariant": "INV-0B3Q36",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 1 — stages",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The capability names each intermediate stage file and the final page destination.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+        "content": "sha256:415fa9c9cf0b8a738d3eb3a5c8313b0aeb11140bfaa1b96ee054c9bc3e293fff",
+        "locator": {
+          "end": 63,
+          "kind": "line_range",
+          "start": 60
+        }
+      },
+      "id": "RLZ-3PSMK2",
+      "invariant": "INV-X073BM",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 3 — text carries the content",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The capability text states the rule that replaces the old motion-first instruction.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+        "content": "sha256:57c7a68bb8871dc04c5c835895afe5599a83700dcf9d55182fb36875fc0ce0ab",
+        "locator": {
+          "end": 55,
+          "kind": "line_range",
+          "start": 51
+        }
+      },
+      "id": "RLZ-KXTPD1",
+      "invariant": "INV-ET42V0",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rule 4 — planned variant",
+        "leaf": "261112-BUG-L13"
+      },
+      "rationale": "The capability text gives the planned variant and the intended marking.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The capability text states the received assignment, the owed output and the bounds.",
+      "note": "The capability prescribes the six private authoring files, followed by page assembly as the seventh artifact.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
-            "content": "sha256:22f922325e6a4377d0e9f188d3531b210b7fbfffa810889b3790cf01bd1ee03a",
+            "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+            "content": "sha256:d833ffc03a155f6506f7af8e0b198adca842a044314493134ce0b71af1ef80f1",
             "locator": {
-              "kind": "file"
+              "end": 62,
+              "kind": "line_range",
+              "start": 27
             }
           },
           "kind": "code"
@@ -19,16 +79,28 @@
       ]
     },
     "2": {
-      "note": "The capability text names bound candidate checkouts and copied inputs, permits harness, general AR and explainer-owned tools, and preserves the role and evidence boundaries.",
+      "note": "The capability names the bound workspace inputs, tools and evidence limits.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5aadeff6355ae9126e8ff2286938c9a03ebe6d8",
-            "content": "sha256:c57badce3e112b2b785e4b39131045281ece2255f054ae45cdd1c69bc1097127",
+            "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+            "content": "sha256:d860d6257a3fd4ee05156b7b87709572bf381560f204193740a20b4694caf334",
             "locator": {
-              "end": 26,
+              "end": 20,
               "kind": "line_range",
-              "start": 1
+              "start": 3
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+            "content": "sha256:0270004776f9f7584181784a8d8f9d2b3d89c9ba617d5ce424e59c0d77812bf8",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 64
             }
           },
           "kind": "code"

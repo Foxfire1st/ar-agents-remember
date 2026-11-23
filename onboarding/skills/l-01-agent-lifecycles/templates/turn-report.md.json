@@ -1,13 +1,33 @@
 {
   "path": "skills/l-01-agent-lifecycles/templates/turn-report.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f006109b42218c96e425d550b56ad2faf18ba6b8",
+        "content": "sha256:09c46a014e2cbbec12a327ef6ef1090c90061a1d6bd8b7d777e00e272d58583a",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-HTBCQ8",
+      "invariant": "INV-5BPF6M",
+      "origin": {
+        "handoffEntry": "BUG-R12@v1 §2",
+        "leaf": "261112-BUG-L12"
+      },
+      "rationale": "The report template's pointer names the freeze checks and no longer points at a final-candidate section.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Every briefed manifestation receives an immutable candidate-bound worker record that cites its exact requirement anchor in the frozen expanded-evidence artifact, which holds the complete acceptance envelope once.",
       "targets": [
         {
           "anchor": {
-            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
+            "blob": "f006109b42218c96e425d550b56ad2faf18ba6b8",
             "content": "sha256:2c1187d830491626bb757818fe771b97af664517c699240eb41da477977a5edd",
             "locator": {
               "end": 98,
@@ -24,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
+            "blob": "f006109b42218c96e425d550b56ad2faf18ba6b8",
             "content": "sha256:14c1826ab9930719877331ee26d1f31c6a695f7cc62f226b218c8f48ce37043f",
             "locator": {
-              "end": 161,
+              "end": 163,
               "kind": "line_range",
-              "start": 149
+              "start": 151
             }
           },
           "kind": "code"
@@ -41,24 +61,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
+            "blob": "f006109b42218c96e425d550b56ad2faf18ba6b8",
             "content": "sha256:fe0511ac6270d1088839ec1c18125dd18d9c69e3c787368dadb3d07311eda1ff",
             "locator": {
-              "end": 149,
+              "end": 151,
               "kind": "line_range",
-              "start": 144
+              "start": 146
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
+            "blob": "f006109b42218c96e425d550b56ad2faf18ba6b8",
             "content": "sha256:09fc3341fad9960866b6337f2ca3aac49c8449f051fb5997ec1ad02ec3795ec5",
             "locator": {
-              "end": 190,
+              "end": 192,
               "kind": "line_range",
-              "start": 185
+              "start": 187
             }
           },
           "kind": "code"
@@ -70,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
+            "blob": "f006109b42218c96e425d550b56ad2faf18ba6b8",
             "content": "sha256:e65ab97e4236149855d94b3fde5709df7e89c6db67edbf4ceae8de5221e3571b",
             "locator": {
               "end": 27,
@@ -87,10 +107,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90fd7edc80943b84e31d2e6db8b935979cbab7ca",
-            "content": "sha256:78e7d8c471b0d8badb9e2dca78c6f45bcfefacfbf62022b7f93903a0a12dbd1a",
+            "blob": "f006109b42218c96e425d550b56ad2faf18ba6b8",
+            "content": "sha256:67ca3513d6b2c90f7115ae52ba0d83a754595b8903a8c284e69429d07334cdab",
             "locator": {
-              "end": 190,
+              "end": 192,
               "kind": "line_range",
               "start": 1
             }
@@ -104,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
             "content": "sha256:ae77c7eff1226d8870397005080d03c0f99eabf310dcbc00e03863b866aeb500",
             "locator": {
               "end": 79,

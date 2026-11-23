@@ -7,11 +7,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd3a451cd2d8d11babd38a9e1466c2900e4ab398",
-            "content": "sha256:ba154deab572a3910cc0834597449f3ea7b597b2e74120fe1fd7cdad6d2bafc3",
+            "blob": "4d113daa7ebc489a1ace707109b331f59a65d19b",
+            "content": "sha256:a70dfec483f52745749a11b4efc14119a3c5b202fe619f770968d372aac0dc21",
             "locator": {
-              "kind": "symbol",
-              "name": "raise_live_evidence_decision"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -23,7 +22,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd3a451cd2d8d11babd38a9e1466c2900e4ab398",
+            "blob": "4d113daa7ebc489a1ace707109b331f59a65d19b",
             "content": "sha256:f2d69d82de9a7cb16e45edd3dd35656c381f6456d99674c94783029fb90f92ae",
             "locator": {
               "kind": "symbol",
@@ -39,22 +38,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd3a451cd2d8d11babd38a9e1466c2900e4ab398",
-            "content": "sha256:ba154deab572a3910cc0834597449f3ea7b597b2e74120fe1fd7cdad6d2bafc3",
+            "blob": "4d113daa7ebc489a1ace707109b331f59a65d19b",
+            "content": "sha256:f2d69d82de9a7cb16e45edd3dd35656c381f6456d99674c94783029fb90f92ae",
             "locator": {
               "kind": "symbol",
-              "name": "raise_live_evidence_decision"
+              "name": "immutable_recovery_refusal"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bd3a451cd2d8d11babd38a9e1466c2900e4ab398",
-            "content": "sha256:f2d69d82de9a7cb16e45edd3dd35656c381f6456d99674c94783029fb90f92ae",
+            "blob": "4d113daa7ebc489a1ace707109b331f59a65d19b",
+            "content": "sha256:a70dfec483f52745749a11b4efc14119a3c5b202fe619f770968d372aac0dc21",
             "locator": {
-              "kind": "symbol",
-              "name": "immutable_recovery_refusal"
+              "kind": "file"
             }
           },
           "kind": "code"

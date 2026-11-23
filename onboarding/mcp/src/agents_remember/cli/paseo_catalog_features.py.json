@@ -1,16 +1,68 @@
 {
   "path": "mcp/src/agents_remember/cli/paseo_catalog_features.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0554881d5c79e63acbf12acfb1e13cb65cdbe98d",
+        "content": "sha256:cc5ab173ae74ce175fdc2c5f170d8b2fdd934cef72bb8e67e8ca912a8c1fee7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "launcher_model_options"
+        }
+      },
+      "id": "RLZ-1A9CAN",
+      "invariant": "INV-002A1G",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-05",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Projects the selected pair’s host feature offerings and their permission-bearing classification.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0554881d5c79e63acbf12acfb1e13cb65cdbe98d",
+        "content": "sha256:df8f5d9f3276db7a49efae4175a2b12d7906f7b4de951445cf36bef763e11d0a",
+        "locator": {
+          "end": 98,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-N64TMY",
+      "invariant": "INV-J2SF5K",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 1",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Asks the host for the specified pair and records the answer's discovery state.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The source implements the behavior and boundaries described above.",
+      "note": "The options route projects one pair. Start deduplicates selected feature reads within its operation. Both use the runtime-scoped durable result merger.",
       "targets": [
         {
           "anchor": {
-            "blob": "08b047e4b10a698d7e7d0b412eaebf5455f43780",
-            "content": "sha256:d34a8ebcd8e95f74c4a159bd3ba5031265e8d7092c956d1d79fafaabd113b308",
+            "blob": "0554881d5c79e63acbf12acfb1e13cb65cdbe98d",
+            "content": "sha256:300fbddaf8b038113816cccf011996fa8d8a4d7699677d3a5f3c74449e9b6978",
             "locator": {
-              "kind": "file"
+              "end": 61,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0554881d5c79e63acbf12acfb1e13cb65cdbe98d",
+            "content": "sha256:e530abed84a87ae6d2125af5b3f69249e6f31fd9e56e4cd6c52c258780fc5ff2",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 71
             }
           },
           "kind": "code"

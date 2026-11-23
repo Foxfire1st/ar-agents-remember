@@ -1,6 +1,24 @@
 {
   "path": "mcp/tests/test_explainer_planned_binding.py",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "bca560e908a765b37cf2eed5bc0f4acdab715219",
+        "content": "sha256:0c0e6246905c7ee8be9c8553052cbb9b11a4c7d7d34d5a441f74939a864f6d06",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_blank_planned_build_sends_the_planned_first_request"
+        }
+      },
+      "facet": "The mounted Build route accepts a blank planned request and delivers the exact requirement-and-planned-effects wording to the recording host.",
+      "id": "PRF-8W85MZ",
+      "invariant": "INV-453GX6",
+      "origin": {
+        "handoffEntry": "BUG-R13@v1 rules 4 and 7 — planned first request",
+        "leaf": "261112-BUG-L13"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -8,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68aa84a49458805257b83b478739a57f54fee955",
+            "blob": "bca560e908a765b37cf2eed5bc0f4acdab715219",
             "content": "sha256:603a8c2a62d6d575f6bb7188945f34dfe4549abc79e4b480391e73d68e30ae0f",
             "locator": {
               "kind": "symbol",
@@ -24,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68aa84a49458805257b83b478739a57f54fee955",
+            "blob": "bca560e908a765b37cf2eed5bc0f4acdab715219",
             "content": "sha256:0839d498e5c8bbcdab24cb1fc67ee0f8f5c9cc008111e982a357c030db7ea2e1",
             "locator": {
               "kind": "symbol",
@@ -40,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68aa84a49458805257b83b478739a57f54fee955",
+            "blob": "bca560e908a765b37cf2eed5bc0f4acdab715219",
             "content": "sha256:0a906a72d029934f61bbe5d06c3db76d980b1ba5ffdd1846875c90583cf99d3a",
             "locator": {
               "kind": "symbol",
@@ -56,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68aa84a49458805257b83b478739a57f54fee955",
+            "blob": "bca560e908a765b37cf2eed5bc0f4acdab715219",
             "content": "sha256:00ac79b0463b3f1cf1988665d668494c6492036c2f326779a098639356ec842d",
             "locator": {
               "kind": "symbol",
@@ -68,16 +86,33 @@
       ]
     },
     "6": {
-      "note": "One planned comparison bound across worktrees and documents",
+      "note": "The planned environment test binds the packet, grants, stored binding and both worktrees to one measured comparison.",
       "targets": [
         {
           "anchor": {
-            "blob": "68aa84a49458805257b83b478739a57f54fee955",
+            "blob": "bca560e908a765b37cf2eed5bc0f4acdab715219",
             "content": "sha256:3cfd64533a8b815a96afe1e7714bb9eee91a55001cfa69a5e9f73e761768fcf6",
             "locator": {
-              "end": 419,
+              "end": 438,
               "kind": "line_range",
-              "start": 355
+              "start": 374
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The mounted Build regression submits planned history with an empty message and no picks, then checks HTTP 200, the delivery flag and the exact message recorded by the host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bca560e908a765b37cf2eed5bc0f4acdab715219",
+            "content": "sha256:82c3869e75e60807966170ec1abdb0ec09fb5bfcaab257cd88763b6ef22224cf",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 271
             }
           },
           "kind": "test"
