@@ -45,7 +45,7 @@ Converted knowledge is authored text: onboarding cards and sidecars plus records
 
 The retained published_intent block declares the 8,000 `tiktoken:o200k_base` threshold. Mounted knowledge_read leaf pages instead cut their delivered naming projection against bound_for("knowledge_read") and TOOL_ANSWER_LIST_MAX - 1, reserving the header entry; the internal threshold is not the public answer bound. Counts distinguish total, returned, and remaining selection. Continuations bind memory tree, seed, policy/order, and the code tree measured on the first page; mismatches require restarting the seed. Deferred seeds remain visible; an excessive queued tail is refused as `seed_queue_exceeded`. Internally, a single indivisible oversized row is returned whole with its explicit flag; the mounted `knowledge_read` answer adds no such exception, and its public answer guard replaces any over-bound answer with its short form. Currentness is measured against the selected code tree, never silently against HEAD: current, stale, unverifiable, and unrealized remain visible, and reads do not re-anchor or judge.
 
-For authoring, repository foundation is regular work in the real Architect task, through its contract-scoped `knowledge-ingest` or mounted `knowledge_write`; ordinary leaf and crossing admissions retain their own contract rules. Ordinary ingest requires a nonblank authorization reference. Planning reads, resolves, validates and reports without writing; `--commit` writes files, not Git history. The writer validates the resulting tree and owner history before publication, while registry-declared writer deferrals name their later refusing commit/landing route. The leaf route supplies its paired memory base for counted-card comparison, falling back to the operation base only when unresolved. New onboarding, membership/no-family and decision/facet record judgments are distinct row domains with writer-owned source/revision fields; they do not license an unsupported producer. Authored realization rationale is required rather than manufactured. Mechanical carry supplies no semantic disposition. Crossing resolves existing conflicting records at one revision above the higher side rather than authoring new records.
+For authoring, repository foundation is regular work in the real Architect task, through its contract-scoped `knowledge-ingest` or mounted `knowledge_write`; ordinary leaf and crossing admissions retain their own contract rules. Ordinary ingest requires a nonblank authorization reference. Planning reads, resolves, validates and reports without writing; `--commit` writes files, not Git history. The writer validates the resulting tree and owner history before publication, while registry-declared writer deferrals name their later refusing commit/landing route. For counted-card comparison, the leaf route supplies the contract’s recorded memory base (`K_B`). If the writer cannot read that base in the candidate’s format, it uses the persisted worklist’s counted-change flag for the subject, including `false`. It compares against the operation base when both the recorded base and the subject flag are unavailable. New onboarding, membership/no-family and decision/facet record judgments are distinct row domains with writer-owned source/revision fields; they do not license an unsupported producer. Authored realization rationale is required rather than manufactured. Mechanical carry supplies no semantic disposition. Crossing resolves existing conflicting records at one revision above the higher side rather than authoring new records.
 
 For leaf maintenance, the worklist compares exact B/K_B/C/K_C, task declarations and maintenance scope. It classifies entries and record changes, reaches families once, reconciles planned effects, checks routes, classifies unexplained changes and surfaces one-hop reconsideration. New or newly unlisted live invariants raise membership work; changed surviving base decisions/facets compare both JSON and retained unparsed Markdown. Only the leaf's own open raise with an otherwise status-only reconsideration mark is exempt. The final sorted/digested list includes the membership and touched-record kinds and subject-based planning marks on the kinds passed through planning. Unreadable input is named incomplete scope. Persisted worklists are projections. The mandatory gate uses a compatible observed verdict or recomputes it from the exact inputs.
 
@@ -669,7 +669,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 
 - **Retained historical source account — superseded by the current route account:** Each kind's own predicate, registered beside the kind. [4]
-- **Retained historical source account — superseded by the current route account:** The worktree layer's probes, the unbound refusal and the closeout's own write. [5]
+
+- The worktree layer probes whether the converted leaf gate applies and refuses an unbound gate. It passes the exact candidate trees and any judged memory commit to the gate. Closeout separately marks the owner’s history closed. [5]
+
 - **Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file. [6]
 - **Retained historical source account — superseded by the current route account:** The one rule, named for its three writers. [8]
 - **Retained historical source account — superseded by the current route account:** The finalizer dispatches a leaf with a named master to _named_parent and a leaf without that name to _folder_parent. [9]
@@ -835,7 +837,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** The shared-read block of the batched blob reader. [239]
 - **Retained historical source account — superseded by the current route account:** The composition root creates the process owner. [240]
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:252-252 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted [241]
-- **Retained historical source account — superseded by the current route account:** The waiting bound counts computations, not the requests sharing them. [242]
+
+- The worklist process test admits twelve requests sharing one computation, fills the eight distinct computation slots, then checks that the next distinct computation is refused. [242]
+
 - **Retained historical source account — superseded by the current route account:** A build mismatch asks for a dashboard restart. [243]
 - **Retained historical source account — superseded by the current route account:** Every parsed diff names its own prefix, colour and driver options. [244]
 - **Retained historical source account — superseded by the current route account:** Bytes the child consumed are identified across a change and restore, a conflict, an absence and a read error. [245]
@@ -867,7 +871,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** Ingest plans by default, writes files only, and refuses unconverted memory [294]
 - **Retained historical source account — superseded by the current route account:** Worklist scope is one-pass and insertion/deletion linkage is side-specific [295]
 - **Retained historical source account — superseded by the current route account:** Closeout invokes mandatory candidate gate before publication [296]
-- **Retained historical source account — superseded by the current route account:** Exact memory output is validated/gated against parent tip with leaf-publication context [297]
+
+- Fresh and recovered closeout validate the exact memory output as a leaf publication against the parent memory tip. The separate worklist gate uses the contract’s recorded bases and the exact candidate trees. A committed pair supplies the judged memory commit for the ancestry check. [297]
+
 - **Retained historical source account — superseded by the current route account:** Integration/checkpoint preview and apply encounter knowledge boundary; leaf and series predicates differ [298]
 
 - **Retained historical source account — superseded by the current route account:** Investigator refuses leaf selection and validates canonical topology [301]
@@ -946,7 +952,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - The shared-read block of the batched blob reader. [239]
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:150-150 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted [371]
 - It supplies the owner's shutdown to the app. [241]
-- The waiting bound counts computations, not the requests sharing them. [372]
+
+- The worklist process test admits twelve requests sharing one computation, fills the eight distinct computation slots, then checks that the next distinct computation is refused. [372]
+
 - A build mismatch asks for a dashboard restart. [243]
 - Every parsed diff names its own prefix, colour and driver options. [244]
 - Bytes the child consumed are identified across a change and restore, a conflict, an absence and a read error. [245]
@@ -979,7 +987,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - `PUBLIC_TOOLS` is one literal tuple of 44 public names, including the native role, retirement and knowledge operations and excluding `dispatch_agent`. The landing-answer helper keeps cut and added counts and bounds inline rows; the Curator's curation operation requires an independent statement-by-statement fact-check before closeout. [288]
 
-- The shared application route resolves the paired memory base and passes that base, the contract-bound code root and worklist to the normal knowledge writer. [315]
+
+- The shared writer route establishes the contract’s recorded memory base for card comparison and passes it with the contract-bound code worktree and persisted worklist. It passes no card base when it cannot establish the recorded commit. [315]
+
 - Source bindings, membership and record models. [313]
 
 - Non-author statement/diff/omission fact-check. [314]

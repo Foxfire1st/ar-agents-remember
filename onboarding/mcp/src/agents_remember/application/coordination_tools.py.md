@@ -59,7 +59,9 @@ repo is disallowed or a path escapes the coordination root.
 
 
 
+
 - `AuthorityError` is the authority-violation error type the guards raise. [4]
+
 
 
 ## Series-Contract Notes

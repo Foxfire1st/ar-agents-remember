@@ -36,7 +36,7 @@ Source existence is checked before card lookup, so a source-absent row cannot ac
 
 The separate `knowledge_read` route selects text trees through derived indexes. Its source-context path selections use family-complete selection and continuation machinery: entries at the path, their invariants, one expanded family hop, other families advertised without recursive expansion, and the governing route chain. A family seed expands that family directly. Currentness observes the code tree the read names; it does not replace that tree with working-tree bytes. Paired ordinary reads historically observe `HEAD^{tree}` and disclose that uncommitted edits are excluded; explicit knowledge reads use their declared code tree.
 
-The file writer reads a handoff, authors records/entries/history, mechanically carries surviving anchors and validates the whole output before writing. During a merge it validates against both merge parents, `HEAD` and `MERGE_HEAD`, each converted when the candidate needs it, and the memory-quality check reads the same bases through `knowledge_writer/base_side.py`. A proof may name a JavaScript or TypeScript case by its exact lines when no name reaches it, and a still_rejected reconsideration row may re-point a fired link to where its code now lives; the range is resolved in `knowledge_writer/case_proof.py`, the re-point in `knowledge_writer/repoint.py`, and the command's own raise refusal and its four fixed causes in `knowledge_write_command.py`. A `raise` the command cannot publish is refused whole and names the mounted `knowledge_write` with the absolute contract and hand-off paths. Onboarding rows receive candidate source sets and counted flags, and a known paired memory base governs comparison rather than a persisted flag. Membership/no-family and decision/facet record rows use canonical subject aliases, stable rerun identities and candidate revisions; foreign-owner evidence survives reason-only rewrites without duplication. New row kinds do not authorize unsupported producers. Registry-declared writer reports allow across-run repair and name the later refusing route. The existing overview-order/numbered-citation validation and task-owned reconsideration questions remain. File writing is explicit and is not Git acceptance.
+The file writer reads a handoff, authors records/entries/history, mechanically carries surviving anchors and validates the whole output before writing. During a merge it validates against both merge parents, `HEAD` and `MERGE_HEAD`, each converted when the candidate needs it, and the memory-quality check reads the same bases through `knowledge_writer/base_side.py`. A proof may name a JavaScript or TypeScript case by its exact lines when no name reaches it, and a still_rejected reconsideration row may re-point a fired link to where its code now lives; the range is resolved in `knowledge_writer/case_proof.py`, the re-point in `knowledge_writer/repoint.py`, and the command's own raise refusal and its four fixed causes in `knowledge_write_command.py`. A `raise` the command cannot publish is refused whole and names the mounted `knowledge_write` with the absolute contract and hand-off paths. Onboarding rows receive candidate source sets and counted flags, and the writer compares cards against the readable recorded leaf memory base in the candidate's format. An unavailable recorded comparison uses a persisted count for the subject when present, then the operation base. Leaf worklist, trace and live review use the memory base recorded by the leaf contract, with ancestry established against the memory worktree's HEAD or the judged memory commit. Membership/no-family and decision/facet record rows use canonical subject aliases, stable rerun identities and candidate revisions; foreign-owner evidence survives reason-only rewrites without duplication. New row kinds do not authorize unsupported producers. Registry-declared writer reports allow across-run repair and name the later refusing route. The existing overview-order/numbered-citation validation and task-owned reconsideration questions remain. File writing is explicit and is not Git acceptance.
 
 Onboarding source selection preserves existing trace authority. Without a trace item, uncovered unexplained groups supply their complete member-path union; the existing snapshot authoring owner binds candidate blobs. The selector does not trust blob values from group metadata or alter the gate's equality check.
 
@@ -839,7 +839,9 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - The converted-tree selection for the ordinary read, tried first. [262]
 - The one dataset resolution every knowledge read applies. [263]
 - A page from a partial index is never presented as complete. [264]
+
 - The operation: read, author, check history, render, validate, then write or refuse. [265]
+
 - Route rules are reports inside the writer only. [266]
 - Another owner's origin is kept exactly; its evidence is queued for this owner's history row. [267]
 - Every row of the owner's history file is checked against the candidate. [268]
@@ -917,7 +919,9 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 
 - The gate over a leaf's exact candidate: probe, tip, memo, recorded evaluation. [363]
 - Rule 2's invariant and family rows. [365]
-- The memo's key and reuse. [366]
+
+- The gate memo’s key binds the recorded memory base and the judged memory commit or observed leaf HEAD. Reuse rechecks the reads consumed by the verdict. [366]
+
 - The symmetric linkage. [369]
 - The facts computed once per read over the lane; a dataset review unchanged. [370]
 - Implementation (a) with only the carry exempt, and (b) through the lane's links. [371]
@@ -938,13 +942,26 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - Current imported source owns this scoped route boundary. [389]
 - Joining a computation in flight; the bound applies only to a new one. [390] [437]
 - The child's handlers, alarm, parent-death signal and parent check. [391]
+
 - The memo's key of exact identities. [392]
+
 - Which inputs moved: a read task document that differs or is unnamed, and every recorded row that changed. [394]
 - Recorded rows are rechecked with path selections first. [395]
-- Identical requests share one child and others wait for one of two slots. [402] [441]
-- The waiting bound counts computations, not the requests sharing them. [403] [442]
-- A killed dashboard takes the child and its Git process with it. [404] [443]
+
+- Identical requests share one child and others wait for one of two slots. [402]
+- Identical requests share one child and others wait for one of two slots. [441]
+
+
+- The waiting bound counts computations, not the requests sharing them. [403]
+- The waiting bound counts computations, not the requests sharing them. [442]
+
+
+- A killed dashboard takes the child and its Git process with it. Anchor: `test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it` [404]
+- A killed dashboard takes the child and its Git process with it. Anchor: `test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it` [443]
+
+
 - The parent side: one request to the process owner, the reply's rows replayed, an error raised. [411]
+
 - The limits: two children, eight computations, sixty seconds, and the child's own deadline. [413]
 
 - This source owns the route’s Investigator selection or execution boundary. [414]
@@ -989,7 +1006,9 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - **Retained historical source account — superseded by the current route account:** Legacy onboarding returns a named legacy knowledge block; converted references use sidecars. [488]
 - **Retained historical source account — superseded by the current route account:** Projection scope includes explicit role and launcher rows. [461]
 
+
 - Writer validates before finish and appends raised questions before knowledge files. [462]
+
 
 - **Retained historical source account — superseded by the current route account:** Each gate kind has its own predicate and changed records require governing rows. [463]
 - **Retained historical source account — superseded by the current route account:** Every retained revision is a head; multiple heads remain ambiguous. [464]
@@ -1048,7 +1067,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** **The inventory value and the two honesty rules: the count is the list's own length, and a name that is not valid text is carried by its byte form in a measured, partial inventory.** [246]
 - **Historical source-bound reference account, not an operative override:** **The source pane: the inventory first and unconditionally, then the comparison's own attribution facts carried verbatim or stated as not measured.** [247]
 - **Historical source-bound reference account, not an operative override:** **The declaration of the inventory's own limit at the top level of the response.** [251]
+
 - **Historical source-bound reference account, not an operative override:** **The cases that measure the route's new entry and the source half through the real composition and the real route.** [253]
+
 - **Historical source-bound reference account, not an operative override:** The summary: preflight, both sides read, classification. [257]
 - **Historical source-bound reference account, not an operative override:** The catalogue caller delegating to it. [259]
 - **Historical source-bound reference account, not an operative override:** The one recompute entry point L08's triggers call (since MIK-R09 a Git failure is named `git`; the gate recomputes over its exact candidate) and the port adapter. [278]
@@ -1060,16 +1081,26 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** History rows by the item's subject and its `facts.row`. [342]
 - **Historical source-bound reference account, not an operative override:** The lane and file reads dispatched; a focused answer. [361]
 - **Historical source-bound reference account, not an operative override:** The entry's count on the summary. [362]
-- **Historical source-bound reference account, not an operative override:** The worklist over the exact candidate, shared with direct landing. [368]
+
+- The leaf worklist accepts exact candidate trees. Direct landing supplies its own explicit sides to the same worklist composition. [368]
+
 - **Historical source-bound reference account, not an operative override:** The composition's one call. [373]
 - **Historical source-bound reference account, not an operative override:** Each owner's row about a subject from its latest attempt file. [384]
+
 - **Historical source-bound reference account, not an operative override:** Recording a new comparison takes turns inside one process. [396]
+
+
 - **Historical source-bound reference account, not an operative override:** One pin: the same tree is success, another tree is refused, a held lock is retried. [397]
+
 - **Historical source-bound reference account, not an operative override:** The options every parsed diff passes. [398]
 - **Historical source-bound reference account, not an operative override:** Three Git questions for the knowledge diff. [399]
+
 - **Historical source-bound reference account, not an operative override:** The child's answer equals the in-process worklist, with its source reads, at two result sizes. [400]
+
 - **Historical source-bound reference account, not an operative override:** Transport failures are explicit, not kept, and the next read recovers. [401]
+
 - **Historical source-bound reference account, not an operative override:** Four concurrent first reads answer alike from one child. [405]
+
 - **Historical source-bound reference account, not an operative override:** The reviewer's diff reads do not depend on the user's Git configuration. [406]
 - **Historical source-bound reference account, not an operative override:** A kept view ignores every task document it did not read. [407]
 - **Historical source-bound reference account, not an operative override:** A task document that changes while the view is computed makes it compute again. [408]
@@ -1132,7 +1163,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - Report placement resolves the bound canonical task only when it has exactly one matching leaf enclosure. [490]
 - The quality controller and worktree adapter bind an independent admitted landing base with bounded landing observations; scoped-reader roots separately derive from canonical leaf/enclosure admission. [498]
 - **Historical source-bound reference account, not an operative override:** **The pre-publication recheck (for a tree comparison, the memory candidate is recaptured first, MIK-R25) and the refusal that carries both identities, with the one recapture action.** [234]
+
 - **Historical source-bound reference account, not an operative override:** Capture, pin and record a live leaf's four trees; none for an unconverted leaf. [320]
+
 - Where an entry lands, and its bounded excerpt. [340]
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:191-212 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted. [341]
 - The three reads. [359]
@@ -1143,4 +1176,5 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - evaluate_answer computes the named records' currentness and may raise CURRENTNESS_FAILURES; failure_document separately constructs the failure block with unverifiableReason. [284]
 - Complete whole-file dependent version tokens are compared using exact confirmation and selected-tree project versions; unchanged other bytes and prefix identity are preserved, without claiming semantic package ownership for identical dependency tokens. \[522] [522]
 
-- For a complete paired leaf worklist, the closeout gate checks changed paths with the master landing entry-currentness predicate. It compares the recorded code base directly with the candidate tree. [523]
+
+- For a complete leaf worklist the closeout gate checks changed paths using the master landing entry-currentness predicate. It compares the recorded code base directly with the candidate tree. [523]

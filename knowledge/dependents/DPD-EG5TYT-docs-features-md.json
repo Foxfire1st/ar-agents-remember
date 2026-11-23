@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
-    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
+    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The features page still describes declared tool inputs, response bounds and the locator for the complete result; read_ar_files still declares the removed refresh argument so it can refuse it by name.",
-    "task": "261112-BUG-L18",
+    "statement": "The features page still describes exact-candidate judgments and paired closeout with code attribution on the memory commit.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -53,7 +53,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
     },
     {
-      "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+      "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },

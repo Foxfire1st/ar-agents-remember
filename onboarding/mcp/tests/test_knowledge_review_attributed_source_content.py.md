@@ -39,7 +39,9 @@ No meaningful cross-repo references found.
 - **The module's own statement of the admitted population and one case per property.** [15]
 - The lane marker, the three population paths and the two refusal constants. [16]
 - **Attributed admission without counting, and the unlinked refusal.** [17]
+
 - **Comparison isolation and historical bytes.** [18]
+
 - **The two review-fix cases: exact spelling, and a link scope size cannot fail or an unread half cannot negate.** [19]
 - The population paths the fixture's knowledge links. [20]
 - The owners under test. [21]

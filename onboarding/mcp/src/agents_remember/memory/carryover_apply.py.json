@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
-        "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+        "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+        "content": "sha256:93f20e53753f18e1b1db20174f095af6c2114477ae33eb6b6b8dd1fb2c34c195",
         "locator": {
           "kind": "symbol",
           "name": "apply_converted"
@@ -18,6 +18,24 @@
       },
       "rationale": "Owns staging, exact-tree validation, transactional byte restoration, worklist recomputation and repeat safety.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+        "content": "sha256:a455a9fc904e4d7782e4f5f5b22f1e2052df0bc49bf3f230afad396df66763f9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_base_for"
+        }
+      },
+      "id": "RLZ-NVS62B",
+      "invariant": "INV-MZ13SJ",
+      "origin": {
+        "handoffEntry": "L21-W2 additional realization INV-MZ13SJ",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "The transaction establishes the receiving base before it prepares writes and reads it in the candidate format.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
             "content": "sha256:a3d5cd48aa87647d73776d1c5657de174bf0c17f8c9f0549bd3f58b4e3ffb0b7",
             "locator": {
               "kind": "symbol",
@@ -37,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
             "content": "sha256:ed5f18a7bba7cde9e32cd65bd6a9d3072d155b3a5d9f87544f8984624f5e48f8",
             "locator": {
               "kind": "symbol",
@@ -53,22 +71,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
             "content": "sha256:e16fa5d0395c4b788502e374b4adb4357861d732cd6310243c8ac659cc9b0cfe",
             "locator": {
-              "kind": "symbol",
-              "name": "_conflicts"
+              "end": 135,
+              "kind": "line_range",
+              "start": 122
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
-            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "content": "sha256:60507d6640efffe8e06ed10d2bf1f3d6a86612470bd17a85944ebbd7b5bcb31e",
             "locator": {
-              "kind": "symbol",
-              "name": "apply_converted"
+              "end": 250,
+              "kind": "line_range",
+              "start": 214
             }
           },
           "kind": "code"
@@ -78,8 +98,9 @@
             "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
             "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
             "locator": {
-              "kind": "symbol",
-              "name": "_apply_carryover_for_request"
+              "end": 379,
+              "kind": "line_range",
+              "start": 310
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
           },
@@ -88,37 +109,40 @@
       ]
     },
     "3": {
-      "note": "Validation and restoration: Apply writes prepared units, regenerates route indexes with explicit target storage, validates the exact tree against official code and the paired memory base (converting an old-format base through the existing converter), and splits refusing from report-only findings. On refusal/error it restores the pre-call knowledge/onboarding bytes, modes, caches and directory topology, including local edits, not HEAD.",
+      "note": "Before writing, apply establishes the receiving leaf’s recorded memory base. It validates the resulting tree against that base and official code, and recomputes the worklist against the same base. An unavailable base returns carryover-failed before writes. Validator refusals or later failures restore the owned pre-call bytes, modes, and directory topology.",
       "targets": [
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
-            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "content": "sha256:178fc9a30cc5cf8d7f8c1ab31d474b1c16992575ec91203bfcc06cde8a5eae64",
             "locator": {
-              "kind": "symbol",
-              "name": "apply_converted"
+              "end": 293,
+              "kind": "line_range",
+              "start": 235
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
-            "content": "sha256:b268c784858dfadae7ab5f25ce811d709db08720103fcc3e923df4eb56edb7b8",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "content": "sha256:a455a9fc904e4d7782e4f5f5b22f1e2052df0bc49bf3f230afad396df66763f9",
             "locator": {
-              "kind": "symbol",
-              "name": "_base_for"
+              "end": 157,
+              "kind": "line_range",
+              "start": 138
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
             "content": "sha256:ed5f18a7bba7cde9e32cd65bd6a9d3072d155b3a5d9f87544f8984624f5e48f8",
             "locator": {
-              "kind": "symbol",
-              "name": "_Tree"
+              "end": 88,
+              "kind": "line_range",
+              "start": 37
             }
           },
           "kind": "code"
@@ -130,11 +154,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
-            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "content": "sha256:c71c5f93f9045480841f80d1e9896337238a28cacb07f4a8539b7014223714a1",
             "locator": {
-              "kind": "symbol",
-              "name": "apply_converted"
+              "end": 293,
+              "kind": "line_range",
+              "start": 265
             }
           },
           "kind": "code"

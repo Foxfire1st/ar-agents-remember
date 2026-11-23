@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "fb12aee86865d66f4af23d54ffc5918b1cba66c3",
+    "commit": "3450a1a1552db524bdbace93c3992311a778a53e",
     "role": "curator",
-    "statement": "The architecture guide describes user-directed dashboard commands and automatic startup or qualifying-publication registry reconciliation, including receipt-backed restoration and eligible reclamation.",
-    "task": "261112-BUG-L20",
+    "statement": "The architecture guide accurately describes receipt-backed dashboard registry reconciliation and the private storage and recorded comparisons used by read-side review.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/kernel/git_command.py"
     },
     {
-      "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+      "blob": "b0ded045994c0f33f08b592285a3ef8070d98581",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
     },

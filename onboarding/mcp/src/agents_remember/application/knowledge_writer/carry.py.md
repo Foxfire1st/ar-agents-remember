@@ -75,7 +75,9 @@ No configured live documentation source was available for this pass.
 - Only the owner's open row with the old `after` is updated. [6]
 
 
-- The call in every writer operation. [7]
+
+- The call in every writer operation. Anchor: `write_knowledge` [7]
+
 
 
 

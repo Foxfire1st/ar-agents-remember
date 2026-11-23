@@ -473,12 +473,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
             "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
-              "end": 481,
+              "end": 485,
               "kind": "line_range",
-              "start": 453
+              "start": 457
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -486,12 +486,12 @@
         },
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
             "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
             "locator": {
-              "end": 587,
+              "end": 591,
               "kind": "line_range",
-              "start": 484
+              "start": 488
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -499,7 +499,7 @@
         },
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
             "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
             "locator": {
               "end": 125,
@@ -512,12 +512,12 @@
         },
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
             "content": "sha256:10ce5b547e465ec1531e4b6cd70f0cd3cfa872e71008466f7b03f79cd2bde23d",
             "locator": {
-              "end": 651,
+              "end": 655,
               "kind": "line_range",
-              "start": 630
+              "start": 634
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },

@@ -123,11 +123,15 @@ No configured domain documentation could be checked.
 - The inventory owner re-used for the leaf change set. [11]
 - The wire literals this module fills and the validator that ties attributed context to `unchanged` and `requested_generation`. [12]
 
-- **The cases: attributed admission without counting, unlinked refusal, and undetermined refusal.** [13]
+
+- **The cases: attributed admission without counting, unlinked refusal, and undetermined refusal.** Anchor: `test_an_unchanged_path_a_recorded_realization_links_opens_as_context_without_counting` `test_an_unchanged_path_no_recorded_realization_links_is_still_refused` `test_an_unreadable_snapshot_leaves_the_link_undetermined_rather_than_absent` [13]
 
 
 
-- Unconverted knowledge states its unavailability without canonical initialization; tree proof entries still admit their exact unchanged path. [14]
+
+
+- Unconverted knowledge states its unavailability without canonical initialization; tree proof entries still admit their exact unchanged path. Anchor: `test_unconverted_knowledge_names_its_unavailability_without_canonical_initialization` `test_a_tree_index_links_a_path_its_proof_entry_is_anchored_at` [14]
+
 
 
 
@@ -136,5 +140,6 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
 
 - An unchanged test file named only by a proof is refused before that proof exists and admitted once the proof is authored. [15]

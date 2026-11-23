@@ -398,7 +398,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - **The composition the task-context answer reaches, which is where the complete inventory is measured.** [66]
 
+
 - **The case that admits exactly the two reviewable selector kinds and refuses every other spelling, and the case that drives the same route with no selector parameters at all.** [67]
+
 
 - **The third route constant, GET-only, with the comment recording why it is a third path rather than a payload field: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump.** [68]
 

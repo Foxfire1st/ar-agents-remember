@@ -22,7 +22,9 @@ Local implementation and executable evidence do not replace requirement authorit
 
 
 
+
 - Hold a request-local proof of equal physical snapshots spanning a private-index capture. Reuse requires the same tree and current index/file snapshot, plus current HEAD when the caller supplied a head binding. Memory review supplies the bracketed memory HEAD; the future-code helper omits this optional binding and checks its route identity separately. Unreadable or changed bound operands force re-derivation. [1]
+
 
 
 ## Current source evidence

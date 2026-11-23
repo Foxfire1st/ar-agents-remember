@@ -104,10 +104,14 @@ The cited source establishes the current contracts and boundaries described abov
 - The default bundle's MIK-R09 binding: the mandatory gate's port adapter. [6]
 
 
+
 - The default bundle's MIK-R08 binding: the worklist recompute port adapter. [7]
 
 
+
+
 - The default bundle's MIK-R08 binding: the worklist recompute port adapter. [12]
+
 
 
 - The default bundle's MIK-R25 binding: the review-artifact archive hook. [8]

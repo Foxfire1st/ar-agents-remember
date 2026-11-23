@@ -156,7 +156,9 @@ served body together.
 - The lane marker and the content-class constants, one path per class the packet names. [2]
 - **The content classes materialized for real: a blob, a symlink, a gitlink, a mode change, a type change, an oversized document and a name that is not a line.** [4]
 
-- **The shared R01 production fixture these cases extend rather than duplicate.** [5]
+
+- **The shared R01 production fixture these cases extend rather than duplicate.** Anchor: `content_fixture` `build_endpoint_fixture` `EndpointFixture` [5]
+
 
 
 - **The routes wired as the composition root wires them, over the real application owners.**
@@ -202,6 +204,7 @@ Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3372 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 
 
 

@@ -35,9 +35,12 @@ All assertions are declared source, not freshly executed counts, timings, native
 - Four-tree records/pins, first-read effects and repeated no-write state remain declared. [38]
 - Leaf-wide currentness/worklist and selected-subject Git budgets retain their precise fixture populations. [39]
 - Capture memo equality and cache-constructor failure/sharing assertions remain explicit. [40]
+
 - Partial, reopen/conversion, derived-index-only and legacy source-only paths retain typed side facts. [41]
+
 - Archive/route and focused-entry assertions preserve pin ownership, bounds and code-side identities. [42]
 - The four after-memory values and optional symbol names are compared with their exact index definitions; lane answers omit them. [43]
 - Absent/faulted memory reads keep entries/reasons and are not retained; successful reads can then settle. [44]
 - Code absence versus unreadable and latest history attempts retain distinct owner facts. [45]
+
 - Excerpts/placement cache and proof-only unchanged-path admission retain their finite/read-only contracts. [46]

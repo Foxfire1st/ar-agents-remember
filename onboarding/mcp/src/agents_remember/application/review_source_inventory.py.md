@@ -265,7 +265,9 @@ No meaningful cross-repo references found.
 - A count is a value or a reason, never both. [37]
 
 
+
 - The retained parsed-diff test checks PARSED_DIFF_OPTIONS in the current combined _RAW_ARGS and prefix/colour/driver options in code.BLOB_DIFF_ARGS. The former separate raw/numstat tuple account is historical. [38]
+
 
 
 - The review body is identical under a hostile Git configuration. [39]
@@ -291,7 +293,9 @@ No meaningful cross-repo references found.
 
 - **The cases that measure this module against real repositories: population and per-path status against an independent Git observation, the tab/newline name, one entry per renderability kind, unavailable versus measured-empty with its control, the paths-only partial rendering, and the non-UTF-8 byte form.** [61]
 
-- **The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.** [63]
+
+- **The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.** Anchor: `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all` [63]
+
 
 - Retired at the fifth freeze d59c3493: dashboard/src/panels/changeset/ChangeSetViewer.tsx:253-294 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted.
 

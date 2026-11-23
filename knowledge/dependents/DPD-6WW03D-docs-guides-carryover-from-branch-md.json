@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The carryover guide's plan and apply behavior remains correct when carryover opens the knowledge index through the cache helper for the selected tree.",
-    "task": "261112-BUG-L10",
+    "statement": "The carry-over guide correctly states that apply establishes the receiving leaf's recorded memory base before writing and uses that base for both validation and the worklist.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "docs/guides/carryover-from-branch.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+      "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/carryover_apply.py"
     },
@@ -49,6 +49,11 @@
       "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+    },
+    {
+      "blob": "e3948d3c81258cf0fe5cb1c4855dcdddc8d3b152",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_worklist/recorded_base.py"
     }
   ]
 }

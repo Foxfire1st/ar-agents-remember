@@ -537,7 +537,9 @@ measured at all.
 
 
 
+
 - The controller summarizes the worklist returned by the exact candidate gate. That gate can reuse an observed verdict or compute one. [3]
+
 
 
 
@@ -551,7 +553,9 @@ measured at all.
 
 
 
+
 - The checklist receives the current worklist and its path whether the gate computes or reuses the verdict. [6]
+
 
 
 

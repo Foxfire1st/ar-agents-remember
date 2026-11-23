@@ -85,7 +85,9 @@ No external Domain Documentation entries are configured. Source and test asserti
 - The driver treats this store as the sole current generation and routes recovery from its strict outcomes. [11]
 
 
-- Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. [12]
+
+- Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. Anchor: `cancel_sync` [12]
+
 
 
 

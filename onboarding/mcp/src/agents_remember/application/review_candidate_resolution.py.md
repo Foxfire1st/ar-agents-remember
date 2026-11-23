@@ -225,7 +225,9 @@ memory trees (never a copy); a pin failure or an unreadable side is a `ReviewRef
 - **The case module that measures the bound endpoints through the real resolution, the real capture and the real comparison.** [40]
 
 
-- The live pair: four trees for converted memory; otherwise source identities and explicit legacy-unavailable knowledge sides, never a dataset fallback. [41]
+
+- Live resolution opens the captured comparison when either memory side is converted. A named failure resolving the recorded base propagates as a refusal. Without converted memory, it returns source identities with legacy-unavailable knowledge sides. [41]
+
 
 
 - A derived index answers its own namespace; any other file answers none. [42]

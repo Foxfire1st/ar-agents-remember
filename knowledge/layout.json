@@ -364,7 +364,16 @@
     "file:mcp/src/agents_remember/application/knowledge_worklist/generated_copies.py": [
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
     ],
+    "file:mcp/src/agents_remember/application/knowledge_worklist/leaf.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
     "file:mcp/src/agents_remember/application/knowledge_worklist/link_targets.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_worklist/recorded_base.py": [
+      "knowledge/dependents/DPD-6WW03D-docs-guides-carryover-from-branch-md.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
     ],
     "file:mcp/src/agents_remember/application/knowledge_worklist/registry.py": [
@@ -1923,6 +1932,9 @@
     ],
     "file:mcp/src/agents_remember/worktrees/series_merge_admission.py": [
       "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/sync_source_strategy.py": [
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
     ],
     "file:mcp/src/agents_remember/worktrees/task_document_copies.py": [
       "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"

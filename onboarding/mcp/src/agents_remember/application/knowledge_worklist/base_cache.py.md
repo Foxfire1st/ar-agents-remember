@@ -83,7 +83,9 @@ K_B on every run (about 30 s on the real tree):
 - The gate reads its converted K_B through it. [5]
 
 
-- The cache holds the Markdown, and a v1 file is ignored and rewritten. [6]
+
+- The cache holds the Markdown, and a v1 file is ignored and rewritten. Anchor: `test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf` [6]
+
 
 
 ### Best-effort eviction under per-file races

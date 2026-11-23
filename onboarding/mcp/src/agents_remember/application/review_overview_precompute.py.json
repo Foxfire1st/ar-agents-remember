@@ -1,17 +1,61 @@
 {
   "path": "mcp/src/agents_remember/application/review_overview_precompute.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f8681f4e589d236326554b167a0d6b0261fbe430",
+        "content": "sha256:75bd59ca8b67d26f1d1045d4e4a6e5902a5f80e49c39837b64e33500032bdd6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_captured"
+        }
+      },
+      "id": "RLZ-8V2T1K",
+      "invariant": "INV-CV043K",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 1 live recorded base identity",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "Chooses reuse for a watched capture using the same live identity.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
-      "note": "OverviewPrecompute builds the leaf-wide view before it is asked for and keys it on the trees digest.",
+      "note": "OverviewPrecompute builds the live leaf-wide view before the page asks for it. Its build identity includes the comparison trees, the converted base tree when present, and the exact recorded memory-base commit.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ca9569b7e2d6609248b68b78a0c854e2e961f70",
-            "content": "sha256:f6c4db3ede299aa10b03f205269f406de1b29929b5fae524c06421cf2f954d6e",
+            "blob": "f8681f4e589d236326554b167a0d6b0261fbe430",
+            "content": "sha256:ef5751939335a8decee8168ba7c1d3e52770970ebf2b02af12c1af6c8fbab68a",
             "locator": {
-              "kind": "symbol",
-              "name": "OverviewPrecompute"
+              "end": 137,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8681f4e589d236326554b167a0d6b0261fbe430",
+            "content": "sha256:f3a5d04380304c2ee8cb5de23332dfff3fdfd1fa2a1cbc59e2cae2a4c3e032ee",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 302
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8681f4e589d236326554b167a0d6b0261fbe430",
+            "content": "sha256:e3310b2673d4a3dfcb158bb425ab4dc2abd4d1dc091ae9b7ae3570c0be8df51d",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 374
             }
           },
           "kind": "code"

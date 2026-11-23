@@ -156,7 +156,9 @@ errors if raised after admission begins. An unselected repository returns before
 
 
 
-- **The case module that measures the bound range, the immovable endpoint, the state answered instead of a refusal, the route's own `200`, and the one-half degradation.** [13]
+
+- **The case module that measures the bound range, the immovable endpoint, the state answered instead of a refusal, the route's own `200`, and the one-half degradation.** Anchor: `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it` `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head` `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` [13]
+
 
 
 ### Cross-Repo References

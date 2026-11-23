@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_review_live_answers.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "45cc9e7680746a43e3621d23dace0c43ba41de2a",
+        "content": "sha256:c979b81349e42275e3d149f7469684caa77cd795e16357cb5181cf2eb2785bb8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_same_tree_sync_updates_the_live_worklist_binding_and_keeps_the_numbered_record"
+        }
+      },
+      "facet": "A native sync with identical trees keeps the live count via the new recorded base and leaves the older numbered record readable.",
+      "id": "PRF-XV4QE5",
+      "invariant": "INV-CV043K",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 1 live recorded base identity",
+        "leaf": "261112-BUG-L21"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "619ebc9e0bf52e200ebed967515d32a17c2a051d",
+            "blob": "45cc9e7680746a43e3621d23dace0c43ba41de2a",
             "content": "sha256:9fd4df6e68ce1401ecc453640615708a19e095cce045d2a103feb62b288e8ea0",
             "locator": {
               "kind": "symbol",

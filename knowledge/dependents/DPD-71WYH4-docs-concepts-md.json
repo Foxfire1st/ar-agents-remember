@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "860cbf9a7ac70f3fdb2423bcddc66b3a0b5c1106",
+    "commit": "3450a1a1552db524bdbace93c3992311a778a53e",
     "role": "curator",
-    "statement": "The concepts guide still distinguishes archived role agents and accurately describes the plug-in’s hand-off signal.",
-    "task": "261112-BUG-L20",
+    "statement": "The concepts guide accurately describes archived seats and the plug-in’s hand-off signal, and it ties the leaf worklist and mandatory gate to the contract’s bases and the exact candidate trees.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
+      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/kernel/direct_execution_grants.py"
     },
     {
-      "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+      "blob": "214430d732f18ec7eee37028d988408c84ec78b6",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
     },
@@ -126,7 +126,7 @@
       "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
     },
     {
-      "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+      "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     },
@@ -432,6 +432,11 @@
       "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
+    },
+    {
+      "blob": "e3948d3c81258cf0fe5cb1c4855dcdddc8d3b152",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_worklist/recorded_base.py"
     }
   ]
 }

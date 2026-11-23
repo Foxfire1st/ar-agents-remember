@@ -56,16 +56,42 @@
       ]
     },
     "102": {
-      "note": "**Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): A review comparison on converted memory is four Git trees pinned by refs.",
+      "note": "Historical source-bound reference account. A converted review compares four Git trees. Live recording pins the uncommitted candidate trees and preserves their recorded memory-base binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
-            "content": "sha256:d5f3a51648e530c865d620beda11d1ea1d153ffb54066f09fde040e685a9038e",
+            "blob": "b0ded045994c0f33f08b592285a3ef8070d98581",
+            "content": "sha256:6134394d2b2955b2921f34adeb5d787d5b93bd04c2eeeea756989527b1cd7cf8",
             "locator": {
-              "end": 30,
+              "end": 210,
               "kind": "line_range",
-              "start": 1
+              "start": 181
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0ded045994c0f33f08b592285a3ef8070d98581",
+            "content": "sha256:daf58324f7a30980db71d5828e07c6f745e84dc49ea4c1e51c1de114d6fd0269",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 277
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0ded045994c0f33f08b592285a3ef8070d98581",
+            "content": "sha256:696004246eaa8e2ef3fe460683ed1bbdf1473bc22597c5e08892739aa6be41fa",
+            "locator": {
+              "end": 724,
+              "kind": "line_range",
+              "start": 640
             },
             "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
           },
@@ -836,7 +862,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -1077,7 +1103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -1537,14 +1563,42 @@
       ]
     },
     "288": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree).\n\nAnchor: `external_closeout_commits`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree). Anchor: `external_closeout_commits`",
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:ed5c156b596e3fc22f63b820167b53a26bcdc91d1480a687c5ac8bee6e61bb08",
             "locator": {
-              "kind": "file"
+              "end": 121,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:fea0d2afa03e0381a722732efed577f89691a06ffe9a6c760f0f9bf43f069e0e",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:75c289abc3d8965a92f8dad4580ae6df9a5ea99250b245cbd3e79237bfce6251",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 547
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -2210,7 +2264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
             "content": "sha256:92e8dd7884583dddeb79fa994756c0f42711be2f945f72040cc477b74ba74b34",
             "locator": {
               "end": 16,
@@ -2223,7 +2277,7 @@
         },
         {
           "anchor": {
-            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
             "content": "sha256:ed85d601d3d5be61cb9f76b13a9a1e2f5748a84422aa515a6701771822827f9d",
             "locator": {
               "end": 27,
@@ -2236,12 +2290,12 @@
         },
         {
           "anchor": {
-            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
             "content": "sha256:10ed4e2dc9a7d097938ab7b4f6cac722ddfddf6e8b5416a61437a5eb242f06d7",
             "locator": {
-              "end": 310,
+              "end": 311,
               "kind": "line_range",
-              "start": 290
+              "start": 291
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },
@@ -4194,8 +4248,9 @@
             "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
             "content": "sha256:68acefba2d87996c8406ad10991412bec9b768d6e57c36a509db586c64789579",
             "locator": {
-              "kind": "symbol",
-              "name": "build_plan_for_request"
+              "end": 289,
+              "kind": "line_range",
+              "start": 202
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
           },
@@ -4206,8 +4261,9 @@
             "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
             "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
             "locator": {
-              "kind": "symbol",
-              "name": "_apply_carryover_for_request"
+              "end": 379,
+              "kind": "line_range",
+              "start": 310
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
           },
@@ -4215,11 +4271,12 @@
         },
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
-            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "content": "sha256:93f20e53753f18e1b1db20174f095af6c2114477ae33eb6b6b8dd1fb2c34c195",
             "locator": {
-              "kind": "symbol",
-              "name": "apply_converted"
+              "end": 293,
+              "kind": "line_range",
+              "start": 197
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },
@@ -4230,8 +4287,9 @@
             "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
             "content": "sha256:1b77c7102d619e92795861dac4712a6cc902d38e355639c21713f63669ebb10a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
+              "end": 621,
+              "kind": "line_range",
+              "start": 601
             },
             "path": "mcp/tests/test_converted_carryover.py"
           },
@@ -5167,14 +5225,42 @@
       ]
     },
     "51": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree.\n\nAnchor: `external_closeout_commits` `_commit_memory_content`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. Anchor: `external_closeout_commits` `_commit_memory_content`",
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:ed5c156b596e3fc22f63b820167b53a26bcdc91d1480a687c5ac8bee6e61bb08",
             "locator": {
-              "kind": "file"
+              "end": 121,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:fea0d2afa03e0381a722732efed577f89691a06ffe9a6c760f0f9bf43f069e0e",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:75c289abc3d8965a92f8dad4580ae6df9a5ea99250b245cbd3e79237bfce6251",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 547
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },

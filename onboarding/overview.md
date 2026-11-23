@@ -351,7 +351,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): Git attribution is the source of the consumer ledger. [50]
 
-- Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. [51]
+
+- Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. Anchor: `external_closeout_commits` `_commit_memory_content` [51]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Integration proves exact memory source ancestry independently of cache rows. [52]
 
@@ -462,7 +464,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The memory-repo tools example provides the `Code Quality` section. Anchor: `Code Quality` [284]
 
-- Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree). [288]
+
+- Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree). Anchor: `external_closeout_commits` [288]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Closed admission and one public projector. [289]
 
@@ -506,7 +510,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Named validator route policies. [330]
 
-- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): A review comparison on converted memory is four Git trees pinned by refs. [102]
+
+- Historical source-bound reference account. A converted review compares four Git trees. Live recording pins the uncommitted candidate trees and preserves their recorded memory-base binding. [102]
+
 
 
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Root manifest/journal location authority. [290]
@@ -679,4 +685,5 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
 - Carryover names file-sidecar, route-overview, memory-only-doc and entity-catalog candidates; its request supplies the code/source/target roots. Plan and apply require both memory roots to be converted and share the same conversion version; unconverted or mismatched memory is refused. [143]
+
 - Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing; ordinary leaf judgments and gated closeout own publication. [354]

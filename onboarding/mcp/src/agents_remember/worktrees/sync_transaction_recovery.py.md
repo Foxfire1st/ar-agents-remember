@@ -23,8 +23,7 @@ performs no ledger re-judgement: a completed memory side is proved as Git histor
 The completed answer comes from `completed_sync_result` in `sync_transaction_completion`, which reconstructs success and distinguishes a current pair from moved-again or
 explicit memory-skipped outcomes; "moved again" is read against the source branches the sync recorded, and a repository-default pass says the worktree carries that line with the pair unchanged and answers `syncSource`. `cancel_sync` first proves all-side ownership, then publishes cancelling, rolls back operation-owned output, returns every parked candidate, proves original contract bases, publishes cancelled and retires its stashes and authority. For a repository-default generation `_cancelled_contract` removes only the sync-log entry that generation wrote and never changes the pair.
 
-**A completed sync recomputes the leaf's worklist.** A sync on the contract's own line moved
-the base pair, so B and K_B moved with it (a repository-default sync keeps the pair). `with_recomputed_worklist(result, contract)` calls
+**A completed sync recomputes the leaf's worklist.** The recomputation reloads the saved contract. A contract-line sync advances B and advances K_B when memory participates. A memory-skipped sync retains K_B, and repository-default sync retains both recorded bases. `with_recomputed_worklist(result, contract)` calls
 `recompute_knowledge_worklist(contract)` and, when it returns a summary, sets
 `result.payload["knowledgeWorklist"]`; otherwise the result is untouched. `recompute_knowledge_worklist`
 looks up the bound `WorktreeServices.knowledge_worklist` port, reloads the contract (which now holds the new
@@ -92,10 +91,14 @@ No external Domain Documentation entries are configured. Source and test asserti
 - Rollback proof is centralized in the Git module. [3]
 
 
-- Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. [4]
+
+- Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. Anchor: `finalize_sync` `cancel_sync` [4]
 
 
-- The completed result gains the recomputed worklist summary; every failure leaves it unchanged. [5]
+
+
+- The completed result gains the recomputed worklist summary; every failure leaves it unchanged. Anchor: `with_recomputed_worklist`, `recompute_knowledge_worklist` [5]
+
 
 - The completed-branch proof addresses only operation-created heads and reads no ledger rows. [6]
 

@@ -18,17 +18,8 @@ Both sides may share the existing index-cache owner, but cache construction rema
 
 ### The four sides of a live comparison
 
-- `memory_converted(contract)` returns `True` when the memory worktree or the official
-  memory tip holds the layout marker, and `False` for answered unconverted applicability
-  (or absent repository/line inputs). `official_line_converted` first resolves the named
-  tip with `rev-parse --verify --quiet`; failure or no answer is named error text, never
-  a legacy classification. `live_review_trees` turns that string into a memory-side
-  `candidate_unresolved` refusal before capture/pin/record; only an answered unconverted
-  case (or absent worktree/repository) returns `None`.
-- `_live_draft` resolves B from the contract's code base commit, pairs K_B with `paired_memory_commit`
-  (the worklist's own pairing), and captures K_C through a private index (`_capture`). C is the tree the
-  caller captured. A side that cannot be resolved raises `TreeSideUnreadable` and becomes a
-  `candidate_unresolved` refusal naming the side.
+- Live review verifies the contract's recorded memory base against the real memory worktree's HEAD. The layout check examines the worktree and the recorded base. An unestablished base is a `candidate_unresolved` refusal naming the memory base. The legacy result requires established unconverted sides.
+- `_live_draft` resolves B from the contract's code base commit, uses the established K_B and captures K_C through a private index. C is the tree supplied by the caller. A side that cannot be resolved becomes a `candidate_unresolved` refusal naming that side.
 - `_candidate_side` marks a candidate as committed when the tip of the durable source line holds exactly
   its tree; a committed side records the commit and needs no ref.
 - When K_B lacks the layout marker and K_C has it, K_B is compared as its conversion (`_conversion`,
@@ -43,16 +34,18 @@ Both sides may share the existing index-cache owner, but cache construction rema
 - `review_ref(task_id, leaf_id, n)` is `refs/ar/review/<task directory name>/<leaf>/<n>`. A segment that
   is empty, `.`, `..` or contains a slash or backslash raises `ValueError`. `review_task_id` is the task
   folder's name and reads nothing from the folder.
-- `_record` serializes recording inside one process with the lock `_RECORDING` and calls `_recorded`.
-  Readers of one dashboard that open the same new comparison at the same moment therefore take turns.
-- `_recorded` reuses the latest record when it has the same four trees (`same_trees`), creating a pin
-  again when it has gone. Otherwise the new number is one more than the highest recorded number and the
-  highest existing ref number, the candidates are pinned, and only then is
-  `notes/reports/review-comparisons/<leaf>/<n>.json` published through
-  `review_comparison_publication.publish_comparison_record`, which links a private temporary file into
-  place so the create itself decides the winner (MIK-R195 F05). A call that loses that race publishes
-  nothing: it returns the winning record when that record holds the same four trees, and otherwise
-  `publication_refusal` names the number that went to another pair. The former
+- `_record` serializes recording inside one process with `_RECORDING` and passes its matcher to
+  `_recorded`. The shared helper reuses the latest record accepted by that matcher and recreates any missing pin.
+- Live review supplies `same_live_comparison`. It requires the same recorded memory-base commit as well
+  as `same_trees` identity: the same task and leaf, four repository/tree pairs, and converted base.
+  Delivered review reuses the oldest `same_trees` match and uses that matcher by default when it needs to
+  record a new comparison.
+- When reuse fails, the new number follows both the highest recorded number and the highest existing
+  ref number. The helper pins the candidates and publishes
+  `notes/reports/review-comparisons/<leaf>/<n>.json` through
+  `review_comparison_publication.publish_comparison_record`, whose exclusive create decides the winner
+  (MIK-R195 F05). The caller that loses the race returns the winner if the same matcher accepts it.
+  Otherwise `publication_refusal` names the occupied number. The former
   `is_file()`-then-`atomic_write_bytes` pair could replace the bytes of a record an earlier reader had
   already answered with.
 - `_pin` pins each candidate that has a ref. `_create_pin` makes one pin with
@@ -85,7 +78,9 @@ Both sides may share the existing index-cache owner, but cache construction rema
 ## Evidence
 
 - The comparison, each memory side's index, the live flag and the code sides. 
-- A tree comparison applies when the worktree or the official line holds the layout marker. [23]
+
+- An available live memory worktree is compared when its layout marker or the readable recorded memory base marks converted memory. A failure to establish that base returns the named memory-base refusal before capture. [23]
+
 - The task segment of a review ref is the task directory's name. [24]
 - The ref name and the refused segments. [25]
 - Capture, pin, record and open a live leaf's comparison. 
@@ -95,8 +90,10 @@ Both sides may share the existing index-cache owner, but cache construction rema
 - The held converted tree is used only for the same inputs and while Git holds it. [30]
 - Converted files are written as objects only. [31]
 - The recording lock and the pin retry constants. [32]
+
 - Recording takes turns inside one process. [33]
-- Reuse on the same trees, else number, pin, write; a record another reader wrote first is returned. 
+
+- The recorder uses the caller’s matcher for latest-record reuse and for a publication-race winner. Live review also matches the recorded memory-base commit. Delivered review uses `same_trees`.
 - Each candidate with a ref is pinned; a refusal removes only the pins this call created. [35]
 - One pin: same tree is success, another tree is refused, a held lock is retried. [36]
 - Each memory side is opened through its tree's index. [37]
@@ -105,7 +102,9 @@ Both sides may share the existing index-cache owner, but cache construction rema
 - A pin another reader made is kept and not rolled back; a ref naming another tree is refused; a held lock is waited out. [40]
 - Four concurrent first reads of a new comparison give four equal answers. [41]
 - Committed candidates need no ref, and a failed pin refuses naming repository and ref. [43]
+
 - A converted base tree that Git holds is not written again. [44]
+
 
 ## 260928-MIK-L177 The Comparison's Memory Capture Carries Its Census
 
@@ -116,7 +115,9 @@ not move while the comparison was composed became cheaper, not weaker.
 
 - The record is published by an exclusive create, so a lost race answers the winning record or refuses by name instead of replacing bytes a reader already holds. 
 
-- The current implementation moves shared payload types and reduces redundant Git observations without changing create-only pins, full operands or named unavailable-history behavior. [46]
+
+- ReviewTrees and TreeKnowledge live in the shared model owner. Live capture records its exact comparison inputs, uses create-only pins, and opens unavailable tree sides with named reasons. [46]
+
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_trees.py::ReviewTrees - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::live_review_trees - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::_live_draft - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::recheck_memory_candidate - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::_recorded - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 

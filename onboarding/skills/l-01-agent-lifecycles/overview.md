@@ -170,7 +170,9 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 
 - The procedure these carriers delegate to, and its own statement that there is no taskless entry to it: a curator's authoring seat is opened on a task document, and reading the knowledge state before such a task exists stays with the bootstrap seat. [34]
 
+
 - Authored migration prose uses the shared writing profile, and proposed rewrites receive independent meaning review before the normal writer publishes. [91]
+
 
 - Normal knowledge authoring uses the mounted knowledge_write or the admitted serving-build command-line writer; only the tool and input class of a covered correct write admit open manual recovery, and the derived index is never edited. [24]
 

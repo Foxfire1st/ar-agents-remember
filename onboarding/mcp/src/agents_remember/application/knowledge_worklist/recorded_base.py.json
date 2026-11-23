@@ -1,0 +1,93 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/recorded_base.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e3948d3c81258cf0fe5cb1c4855dcdddc8d3b152",
+        "content": "sha256:f65622933f80499a1abf732d933042eba0942f31cce5a2adda26a475eaf3354f",
+        "locator": {
+          "kind": "symbol",
+          "name": "recorded_memory_base"
+        }
+      },
+      "id": "RLZ-ACHHRJ",
+      "invariant": "INV-D0AHQA",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 1",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "Resolves the contract's recorded commit and tree and proves its ancestry of the candidate.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e3948d3c81258cf0fe5cb1c4855dcdddc8d3b152",
+        "content": "sha256:f65622933f80499a1abf732d933042eba0942f31cce5a2adda26a475eaf3354f",
+        "locator": {
+          "kind": "symbol",
+          "name": "recorded_memory_base"
+        }
+      },
+      "id": "RLZ-D40JZG",
+      "invariant": "INV-YV48D0",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 2",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "Fails explicitly on a missing commit, unreadable tree or invalid ancestor relationship.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The leaf base is the contract's readable commit and tree, with ancestry checked against the judged memory commit or the real memory worktree's HEAD.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3948d3c81258cf0fe5cb1c4855dcdddc8d3b152",
+            "content": "sha256:f65622933f80499a1abf732d933042eba0942f31cce5a2adda26a475eaf3354f",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_memory_base"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Git revision failures become a recorded-memory-base error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3948d3c81258cf0fe5cb1c4855dcdddc8d3b152",
+            "content": "sha256:fb9a6c8c88a0df6c2b93f06bcdc59c736bce7150d66bd309d883d45819990a12",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The leaf pair judgment refuses an unrelated judged commit even when its memory tree matches the accepted one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+            "content": "sha256:6c17e2943f22637e2726cbc28dd0d3a5731b4f7cc6ef9533bcb13dfb9330e937",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pair_gate_checks_ancestry_of_the_judged_commit_even_when_the_tree_is_unchanged"
+            },
+            "path": "mcp/tests/test_recorded_leaf_memory_base.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

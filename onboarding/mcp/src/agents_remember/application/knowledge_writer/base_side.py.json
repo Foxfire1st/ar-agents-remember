@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+        "blob": "0428cbae9adf847060e3bc0ba3fa57cb86f0d501",
         "content": "sha256:d1f3ddb98fb4902f4eda549b67c107eeaa920b63d559a647e4dfbc6f3a7c0239",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+        "blob": "0428cbae9adf847060e3bc0ba3fa57cb86f0d501",
         "content": "sha256:102c95c7aff0814095c3666debacae754b4df8a8bde7f3d898140bbf0db0433a",
         "locator": {
           "kind": "symbol",
@@ -36,20 +36,62 @@
       },
       "rationale": "Reads MERGE_HEAD; absence means no merge in progress.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0428cbae9adf847060e3bc0ba3fa57cb86f0d501",
+        "content": "sha256:69f22f6bca63f4624a798779bbf88dac750765ceec65fcc0d943849a8b088c41",
+        "locator": {
+          "kind": "symbol",
+          "name": "recorded_card_base"
+        }
+      },
+      "id": "RLZ-448BM3",
+      "invariant": "INV-WN53V2",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 4 writer card comparison",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "Reuses the operation converter on the recorded commit for the separately scoped card comparison.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The module docstring: one base for every reader, and a named problem when it cannot be built.\n\nAnchor: \"so one base is\"",
+      "note": "The writer uses memory HEAD as its operation base. During a merge it also validates against MERGE_HEAD. The card comparison uses the recorded leaf base. Matching memory commit, format version, and code commit inputs share a conversion.",
       "targets": [
         {
           "anchor": {
-            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
-            "content": "sha256:acc8d8a85fbad896cd9cb5f3d398efefa0426fe4b858b477c800d4786d667ecc",
+            "blob": "0428cbae9adf847060e3bc0ba3fa57cb86f0d501",
+            "content": "sha256:b97b92cbdb9b050ccaedb235440faf6810277247f012ef664e8fb9f15fc306ac",
             "locator": {
-              "end": 28,
+              "end": 16,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0428cbae9adf847060e3bc0ba3fa57cb86f0d501",
+            "content": "sha256:69f22f6bca63f4624a798779bbf88dac750765ceec65fcc0d943849a8b088c41",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0428cbae9adf847060e3bc0ba3fa57cb86f0d501",
+            "content": "sha256:bdbd0752c7d85bf21305120e423b87300488f37f90c3e523e091899d5ea650fa",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 207
             }
           },
           "kind": "code"
@@ -61,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+            "blob": "0428cbae9adf847060e3bc0ba3fa57cb86f0d501",
             "content": "sha256:bdbd0752c7d85bf21305120e423b87300488f37f90c3e523e091899d5ea650fa",
             "locator": {
               "kind": "symbol",
@@ -77,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+            "blob": "0428cbae9adf847060e3bc0ba3fa57cb86f0d501",
             "content": "sha256:b3bf5b0752cb28a39d930b6747c2c5cf95ad3be3c8cde7b90d86bdf0f2a20042",
             "locator": {
               "kind": "symbol",
@@ -93,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+            "blob": "0428cbae9adf847060e3bc0ba3fa57cb86f0d501",
             "content": "sha256:83d6754f0fe43591c89b710ad6a6b6c474c54b6a9ad86621f3b86c060bf7d51c",
             "locator": {
               "kind": "symbol",
@@ -109,11 +151,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
-            "content": "sha256:f216c1e5ab8e725242ca791fa8d1076802b01890395eafcca883da4b26928e1b",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "content": "sha256:5a1fb5ce64d36ed8a536fb2a134ac7dd791974824b19c496b518883ab6718e14",
             "locator": {
-              "kind": "symbol",
-              "name": "load"
+              "end": 228,
+              "kind": "line_range",
+              "start": 206
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py"
           },

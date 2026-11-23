@@ -47,4 +47,5 @@ Read `selection.py` for exact stored object type checks, original terminal publi
 
 - Original terminal readback recompiles results, verifies publication/evidence and requires a green result for a selected certificate. [11]
 
+
 - Ordinary converted-memory gates and legacy cutover refusal survive outside the retired prepared-closeout path. [14]

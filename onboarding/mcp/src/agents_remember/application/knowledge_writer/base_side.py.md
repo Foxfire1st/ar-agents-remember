@@ -15,6 +15,8 @@ wrong revisions, empty `before` anchors and false `R22.6` refusals. During a mer
 is a second validation base, converted by the same rule through the same cache, so an anchor the incoming side
 carries is judged as carried.
 
+The recorded leaf memory base serves a separate onboarding-card comparison in the candidate's format. When it needs conversion, it shares the operation converter and uses the base's readable `Code-Commit` or the recorded code base.
+
 ## Code Commentary
 
 ### Logic
@@ -73,14 +75,18 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The module docstring: one base for every reader, and a named problem when it cannot be built. [1]
+
+- The writer uses memory HEAD as its operation base. During a merge it also validates against MERGE_HEAD. The card comparison uses the recorded leaf base. Matching memory commit, format version, and code commit inputs share a conversion. [1]
+
 
 - The writer's bases for a memory worktree, HEAD and during a merge MERGE_HEAD, or the named problem. [2]
 
 - A side's tree, HEAD's or MERGE_HEAD's, or its conversion when that side is unconverted and the candidate is converted. [3]
 
 - What converting an unconverted base reads, and where it is cached. [4]
+
 - The state loads its base through this module. [5]
+
 - An unconverted HEAD is compared through its converted base: the next revision, the base's before anchor, one cache file. [6]
 - A trailerless HEAD converts at the gate's code base, and an unreadable one refuses. [7]
 

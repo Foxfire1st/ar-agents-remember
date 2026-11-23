@@ -156,7 +156,9 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:79-106 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 806649b91bdce18f7b915bfbbf6727967f4e7a88. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- Retained reference account (no fresh execution or acceptance inferred): The closeout closes the history file and validates and gates its exact tree, restoring on refusal. [1]
+
+- Retained reference account. Ordinary converted closeout closes its history file and validates the exact memory output. The memory publication block restores its own unchanged preparations on refusal before publication returns. [1]
+
 
 
 
@@ -217,7 +219,9 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. [28]
 
-- Retained reference account (no fresh execution or acceptance inferred): External closeout chooses substantive memory output and refreshes the cache afterwards. [29]
+
+- Retained reference account (no fresh execution or acceptance inferred): External closeout chooses substantive memory output and refreshes the cache afterwards. Anchor: `external_closeout_commits` [29]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Carryover completion is actual memory ancestry. [31]
 
@@ -258,7 +262,9 @@ These superseded descriptions retain their historical wording; the current accou
 - Retained reference account (no fresh execution or acceptance inferred): The prepared sandbox reobserves actual comparison source selection before manifest publication. [47]
 
 
-- Retained reference account (no fresh execution or acceptance inferred): The closeout's memory side asks the lock before any stamping or commit. [51]
+
+- Retained reference account (no fresh execution or acceptance inferred): The closeout's memory side asks the lock before any stamping or commit. Anchor: `external_closeout_commits` [51]
+
 
 - Historical cutover-only leaf-integration account. Current _leaf_landing_lock rejudges a converted landed/landing-line memory pair; only the neither-side-converted branch falls back to leaf_cutover_refusal. [52]
 
@@ -286,11 +292,17 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Fresh approval claim precedes code output, then external-memory output; journal-authorized resume uses its recorded claim. [65]
 
-- External output locks unconverted cutover, closes converted owner history, commits/reuses output and refreshes cache afterwards. [66]
 
-- Exact converted output receives validator plus mandatory gate, and recovered output is judged again. [67]
+- External output locks unconverted cutover, closes converted owner history, commits/reuses output and refreshes cache afterwards. Anchor: `external_closeout_commits` [66]
 
-- Memory publication rechecks admitted tip/tree, restores owned preparations on failure and proves the published commit afterwards. [68]
+
+
+- Exact converted output receives validator plus mandatory gate, and recovered output is judged again. Anchor: `_refuse_ungated_memory` `require_gated_recovery` [67]
+
+
+
+- Memory publication rechecks the admitted tip and judged tree, restores owned preparations on failure before publication returns, and proves the published commit afterwards. [68]
+
 
 - Integration/checkpoint apply shares handover and knowledge admission before ancestry proof and preview/apply split. [69]
 
@@ -328,11 +340,8 @@ These superseded descriptions retain their historical wording; the current accou
 
 - **Retained historical source account — superseded by the current route account:** Fresh approval claim precedes code output, then external-memory output; journal-authorized resume uses its recorded claim. [65]
 
-- **Retained historical source account — superseded by the current route account:** External output locks unconverted cutover, closes converted owner history, commits/reuses output and refreshes cache afterwards. [66]
 
-- **Retained historical source account — superseded by the current route account:** Exact converted output receives validator plus mandatory gate, and recovered output is judged again. [67]
 
-- **Retained historical source account — superseded by the current route account:** Memory publication rechecks admitted tip/tree, restores owned preparations on failure and proves the published commit afterwards. [68]
 
 - **Retained historical source account — superseded by the current route account:** Integration/checkpoint apply shares handover and knowledge admission before ancestry proof and preview/apply split. [69]
 

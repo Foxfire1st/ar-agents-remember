@@ -1,0 +1,238 @@
+{
+  "path": "mcp/tests/test_recorded_leaf_memory_base.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+        "content": "sha256:9f6384fb6500164c25423612c57b10429ce60a971a1b68390edc9b2a329e2878",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unestablished_base_refuses_live_review"
+        }
+      },
+      "facet": "An unestablished recorded base refuses the live comparison.",
+      "id": "PRF-1H7J2N",
+      "invariant": "INV-YV48D0",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 2",
+        "leaf": "261112-BUG-L21"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+        "content": "sha256:eb18f0005333137dc4bd3c1a3b1cfd15a558811627d706b55b735e4c2cf7d459",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_trace_gate_refuses_an_updated_row_for_an_inherited_card"
+        }
+      },
+      "facet": "The trace gate treats a card from the other parent as inherited.",
+      "id": "PRF-F4QNNF",
+      "invariant": "INV-D0AHQA",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 1",
+        "leaf": "261112-BUG-L21"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+        "content": "sha256:63e56b15b5c822a77fe0c2ab4385f01ebd5d86704ddc299c83769b3b6bac3d44",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_worklist_marks_neither_parent_lines_invariant_as_changed"
+        }
+      },
+      "facet": "Disjoint revisions inherited from both parents are already in the recorded base.",
+      "id": "PRF-HNM7NW",
+      "invariant": "INV-D0AHQA",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 1",
+        "leaf": "261112-BUG-L21"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+        "content": "sha256:0e0b8cf4ae14c37af7274422739ba3336d3b85dd5e930a09640df564c6e86182",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_writer_refuses_an_updated_row_for_an_inherited_card"
+        }
+      },
+      "facet": "A card inherited unchanged from the other memory line does not earn an updated row.",
+      "id": "PRF-JKMR1Q",
+      "invariant": "INV-D0AHQA",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 1",
+        "leaf": "261112-BUG-L21"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+        "content": "sha256:da0cf65026b006e6830142db849f05fd7c9b6bd906ab34783e5d44fb27104d1b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_live_review_compares_against_the_recorded_merge"
+        }
+      },
+      "facet": "The live review uses the untrailed merge named in the contract.",
+      "id": "PRF-ND5GC5",
+      "invariant": "INV-D0AHQA",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 1",
+        "leaf": "261112-BUG-L21"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+        "content": "sha256:0d99bb7f805bc262e862bb9808b3bef43196449f437fefc8869cda6ad2d962d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unestablished_base_makes_worklist_incomplete"
+        }
+      },
+      "facet": "Missing, unreadable and unrelated recorded bases give a named incomplete worklist.",
+      "id": "PRF-RJVJVJ",
+      "invariant": "INV-YV48D0",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 2",
+        "leaf": "261112-BUG-L21"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+        "content": "sha256:7ba1b862f73c4d963ca9068388c25275934f54a0f9e05280d0ab0ea3a710f67d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_writer_uses_held_card_count_or_operation_base_if_recorded_base_is_invalid"
+        }
+      },
+      "facet": "When unavailable, a true or false held count takes precedence over the operation base.",
+      "id": "PRF-SSD5H3",
+      "invariant": "INV-YV48D0",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 2",
+        "leaf": "261112-BUG-L21"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+        "content": "sha256:6c17e2943f22637e2726cbc28dd0d3a5731b4f7cc6ef9533bcb13dfb9330e937",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_pair_gate_checks_ancestry_of_the_judged_commit_even_when_the_tree_is_unchanged"
+        }
+      },
+      "facet": "An unrelated commit with the same tree cannot reuse the verdict for the actual descendant.",
+      "id": "PRF-W9XD4Y",
+      "invariant": "INV-YV48D0",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 2",
+        "leaf": "261112-BUG-L21"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+        "content": "sha256:ec9fb8cbd222bad6ec56f0c339ce708bce5cdd7cf1264251ffbad820dd0df639",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_writer_counts_only_real_card_edits_after_conversion"
+        }
+      },
+      "facet": "Ordinary conversion and an unrelated code edit earn no updated row, while a real card edit answers both the trace and writer under either code-base choice.",
+      "id": "PRF-ZN9TAR",
+      "invariant": "INV-WN53V2",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 4 writer card comparison",
+        "leaf": "261112-BUG-L21"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture asserts two merge parents and an absent trailer, then passes the merge as the recorded base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+            "content": "sha256:b8638ba1c4a1ede0578e2380ad7185e620a82317c8c479099c1fdc21312e71de",
+            "locator": {
+              "kind": "symbol",
+              "name": "merged_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Converted base comparison rejects a mechanical-only card update and admits the authored card edit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+            "content": "sha256:ec9fb8cbd222bad6ec56f0c339ce708bce5cdd7cf1264251ffbad820dd0df639",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_writer_counts_only_real_card_edits_after_conversion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Missing, unreadable and unrelated inputs exercise the caller-specific responses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+            "content": "sha256:b1225d21638845efac874e0d50623face08e1fbff6d2af72b5bcd139ffe8c39a",
+            "locator": {
+              "kind": "symbol",
+              "name": "invalid_base"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+            "content": "sha256:23183e33d341622ff34f0b97a2618189261f6e9cec534365e3acb61396952fe3",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Identical trees with unrelated commit ancestry do not share the pair gate's authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+            "content": "sha256:6c17e2943f22637e2726cbc28dd0d3a5731b4f7cc6ef9533bcb13dfb9330e937",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pair_gate_checks_ancestry_of_the_judged_commit_even_when_the_tree_is_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
