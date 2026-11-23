@@ -355,12 +355,27 @@
         },
         {
           "anchor": {
-            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
-            "content": "sha256:169cd09ef917795325317f364b432751267cf3d46f674364b6e170a89b401570",
+            "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
+            "content": "sha256:f446406acb7d15b3a151eeb8f3e6dcb72216c6ec96923d8ecb50b909d70c5696",
             "locator": {
-              "kind": "file"
+              "end": 186,
+              "kind": "line_range",
+              "start": 123
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:5a5c4f47f8364e929f773c384fae0cc2ce8bc3c390fd6fabf3568e5b71a52a22",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 469
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
           },
           "kind": "code"
         }

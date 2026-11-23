@@ -10,11 +10,11 @@ A test suite for review overview precompute.py.md: it drives the behaviour the c
 
 ## Code Commentary
 
-A turn end hands its capture to the leaf-wide build and a page open does not build it again
+A turn end hands its capture to the leaf-wide build and a page open reuses that build. The supersession case changes either the code tree or only the recorded memory-base commit and checks that the latest capture wins.
 
 ## Boundaries
 
-The obligation above is the whole of what this file must keep true; the route account says what the surrounding surface promises.
+A same-tree capture can supersede an in-flight build when its recorded memory-base commit changes.
 
 ## Evidence
 

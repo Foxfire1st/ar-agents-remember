@@ -119,13 +119,17 @@ No cross-repo boundary is crossed by this file.
 - Hunks on their changed lines at each side's recorded blob, before and after curation. [7]
 - Links, revisions, proofs and membership. [8]
 
-- An unread side and a partial index (review F3). [9]
+
+- An unread side and a partial index (review F3). Anchor: `test_an_unreadable_side_is_never_unexplained_and_the_readable_side_still_links` `test_a_partial_index_makes_only_its_unparsed_files_unknown` `_gate_unknown_on_a_partial_side` [9]
+
 
 - Bounded reasons (review F4). [10]
 - Unmeasured change sets carry no count. [11]
 - One focused question per request. [12]
 - The live tree leaf, and long paths answered typed (review F2). [13]
+
 - A dataset review's entry has no attribution. [14]
+
 
 
 - The module's lane row. Anchor: "mcp/tests/test_review_unexplained_lane.py" Anchor: "mcp/tests/test_review_unexplained_lane.py" [15]

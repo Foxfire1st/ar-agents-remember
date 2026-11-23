@@ -71,12 +71,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
-            "content": "sha256:bfe6d6b14af7466022314bff5012200cd1fb382c043dcdda58972c2a9912dea7",
+            "blob": "79d594f19005ef10e2e3c9dd04a5e9553b687305",
+            "content": "sha256:1ff58e949ac75e1df0d582965ccbc0e88b80755391158cdf67fbacf2f6e31ff7",
             "locator": {
-              "kind": "file"
+              "end": 214,
+              "kind": "line_range",
+              "start": 205
             },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:e2929b7bdbaddc726dad4a500480406c9b7862ff2a5fd0e00d165a145401c8af",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 226
+            }
           },
           "kind": "code"
         }
@@ -215,12 +229,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
-            "content": "sha256:bfe6d6b14af7466022314bff5012200cd1fb382c043dcdda58972c2a9912dea7",
+            "blob": "79d594f19005ef10e2e3c9dd04a5e9553b687305",
+            "content": "sha256:1ff58e949ac75e1df0d582965ccbc0e88b80755391158cdf67fbacf2f6e31ff7",
             "locator": {
-              "kind": "file"
+              "end": 214,
+              "kind": "line_range",
+              "start": 205
             },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:e2929b7bdbaddc726dad4a500480406c9b7862ff2a5fd0e00d165a145401c8af",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 226
+            }
           },
           "kind": "code"
         }

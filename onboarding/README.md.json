@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e01c0011e7abe3ff62dd2d91165f2f07908174c6",
-        "content": "sha256:dbcfaa17db59b99eeea9b3155ac5865b6463ca29ae9945ce311c48ed150354c8",
+        "blob": "8ce9014b62634b589b6ace0c0fb81e844f8fd659",
+        "content": "sha256:5ce4a7b851715da54c93de5156c0e7f5cba5178ff8f259782283c60784abc1df",
         "locator": {
           "end": 194,
           "kind": "line_range",
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "664623e8d6b6a7f866beac8580c9f6cfce12a3d1",
+            "blob": "8ce9014b62634b589b6ace0c0fb81e844f8fd659",
             "content": "sha256:b12b7a0d62b351726c4377249d0b5bf0b95cd984581059e373f6e52de355d867",
             "locator": {
               "end": 36,
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "664623e8d6b6a7f866beac8580c9f6cfce12a3d1",
+            "blob": "8ce9014b62634b589b6ace0c0fb81e844f8fd659",
             "content": "sha256:a7dd2f1db2a5663f0d50ab1d69dc32bbd97bf4ba40e533fe36bf190216a02752",
             "locator": {
               "end": 112,
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "664623e8d6b6a7f866beac8580c9f6cfce12a3d1",
+            "blob": "8ce9014b62634b589b6ace0c0fb81e844f8fd659",
             "content": "sha256:337ab3ee7cffe9746a8e6c1f774530261ddd8dc8fe247d247efd2b22125f3e3c",
             "locator": {
               "end": 172,
@@ -74,12 +74,12 @@
       ]
     },
     "4": {
-      "note": "The status section states release 3.0.5, the Python requirement, and where to read release notes.",
+      "note": "The status section states release 3.0.6, the Python requirement, and where to read release notes.",
       "targets": [
         {
           "anchor": {
-            "blob": "664623e8d6b6a7f866beac8580c9f6cfce12a3d1",
-            "content": "sha256:2b5c4bcb1bce1ce50f4a731a8435d513ee37f378d6145a48262712d8b909c611",
+            "blob": "8ce9014b62634b589b6ace0c0fb81e844f8fd659",
+            "content": "sha256:baa00e80b917aba767a72ca2300ede3c92982c8cf07c3364067aa201ac7e323e",
             "locator": {
               "end": 200,
               "kind": "line_range",

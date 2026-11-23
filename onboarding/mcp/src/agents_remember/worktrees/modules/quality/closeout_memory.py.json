@@ -79,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
             "content": "sha256:b309983d7bf830a9b76b8a571c2ab9743d19a1361c927d2c6276cdc0f215ca47",
             "locator": {
               "end": 73,
@@ -104,7 +104,7 @@
         },
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
             "content": "sha256:64b3a0ab502d4792d8af8c0305da95a427c5130fe0086c260147bbd6bf980c10",
             "locator": {
               "end": 66,
@@ -122,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
             "content": "sha256:8385b407d04ef3482b301045b0cabb8d93f69f6102d0b3c2c13d1b52ceceffb6",
             "locator": {
               "end": 134,
@@ -135,7 +135,7 @@
         },
         {
           "anchor": {
-            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
             "content": "sha256:7c22d91e6252549ff5ff5b8f63dbc7bd68f9eb0498b32b119f296e52cc962e5d",
             "locator": {
               "end": 140,
@@ -148,7 +148,7 @@
         },
         {
           "anchor": {
-            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
             "content": "sha256:5d5d779dd74b12741f4568c99eafe0b34ef4537996a3e158236c205e5da99841",
             "locator": {
               "end": 124,
@@ -166,12 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
             "content": "sha256:a22230d4939b490a9a8a620bea45791e3feed11a85e2ca29164e8751e0942ac9",
             "locator": {
-              "end": 357,
+              "end": 365,
               "kind": "line_range",
-              "start": 351
+              "start": 359
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },

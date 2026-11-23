@@ -472,12 +472,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
-            "content": "sha256:de3fc038b33181c2e6fe5f7edeac472f1f53f70e6374ec7dd198410fc5cec6cd",
+            "blob": "79d594f19005ef10e2e3c9dd04a5e9553b687305",
+            "content": "sha256:27911db64e7ffa910da7f2c935f32d0f795e6f626f30f6613eb95ef854e25054",
             "locator": {
-              "end": 162,
+              "end": 161,
               "kind": "line_range",
-              "start": 125
+              "start": 129
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
           },

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Tests of a leaf's worklist from its contract: pairing the memory base by trailer, following a sync,
+Tests of a leaf's worklist from its contract: selecting the recorded bases across fixture-written contract states,
 persistence beside the contract, the surfaces that show the worklist, the writer's carrying of moved
 anchors, the converted-base cache, and the read-ahead of changed blobs. The fixture (`Leaf`) is a real code
 repository and a real converted memory repository on `main`, with a task root that holds the leaf's task
@@ -16,9 +16,7 @@ document and its series contract in the leaf's enclosure.
 
 The changed writer calls explicitly supply the current `leaf_worklist(load_contract(...))`. The controller case now starts from a fresh shared memory clone with no copied route-index cache, excludes derived indexes, and lets the real index builder and proof-count computation run. Its report-enabled arm asserts the persisted worklist, built root index, zero stale indexes and informational wording that gates nothing. Both report modes return the computed proof count; the disabled arm only additionally checks that no report exists, rather than inheriting every persistence assertion. A separate cache-store case deletes an old file between listing and stat and asserts the new cache entry remains loadable. These are source cases, not a controller/cache/Git run or MEMORY certification.
 
-- **Pairing and persistence.** A leaf pairs its memory base by the `Code-Commit` trailer, follows its sync,
-  and persists the worklist beside its contract. A base that no memory commit pairs with gives an
-  `incomplete` worklist naming the pairing.
+- **Pairing and persistence.** The worklist reads both recorded bases and persists beside the contract. The fixture writes three contract states and calls the worklist directly. It models a contract-line sync with memory by advancing both recorded bases, then a code-only contract-line sync by advancing the code base and retaining `K_B`. Repository-default sync can bring in memory while keeping both recorded bases. A missing recorded memory base yields an incomplete worklist naming `K_B`.
 - **Scope and conversion.** The task document's maintenance scope classifies every entry. An unconverted
   base is compared as its conversion. Converted bases are cached by memory commit, conversion version and
   code commit; the second run reads the cache.
@@ -44,8 +42,7 @@ The changed writer calls explicitly supply the current `leaf_worklist(load_contr
   the series contract (`contract`) and the task document (`task_document`, optionally with
   `knowledgeMaintenanceScope`) under the leaf `260928-MIK-L99`.
 - **Covered obligations:**
-  - K_B paired by `Code-Commit` trailer at the fork point, after a sync, and through an ancestor; the file
-    persisted beside the contract; no pairing is `incomplete` naming `pairing`;
+  - The test calls the worklist on the fork contract, the contract with both advanced bases, and the code-only contract that retains the advanced `K_B`. It checks persistence beside the contract. The separate missing-base case returns an incomplete worklist naming `K_B`.
   - the task document's maintenance scope classifies every entry;
   - an unconverted base compared as its conversion;
   - the writer's carry of blobs and covering rows, and that it never edits another owner's row or a closed
@@ -86,8 +83,12 @@ The changed writer calls explicitly supply the current `leaf_worklist(load_contr
 - The controller source exercises a fresh shared clone, real index building, informational proof counts and distinct report modes; cache store tolerates listing/stat disappearance. [41]
 
 - The module docstring: the fixture's repositories and task root. [17]
-- Pairing by trailer, following a sync and persisting beside the contract. [18]
-- A base without a paired memory commit is incomplete. [19]
+
+- The fixture writes the fork, advanced-pair and code-only contract states and calls the worklist directly. The worklist reads the recorded bases and persists beside the contract. [18]
+
+
+- A missing recorded memory base yields an incomplete worklist naming K_B. [19]
+
 - An unconverted base is compared as its conversion. [20]
 - Converted bases are cached. [21]
 - The recompute never raises. [22]
@@ -113,13 +114,17 @@ No configured live documentation source was available for this pass.
 
 
 
-- The leaf fixture: real repositories plus the task root and enclosure. Anchor: `converted_memory` [27]
+
+- The leaf fixture creates real code and memory repositories, a task root and an enclosure contract. [27]
+
 
 
 
 
 - The leaf's contract and task document. [28]
-- Pairing by trailer and persistence. [29]
+
+- The recorded pair is compared and the worklist persists beside the contract. [29]
+
 - The task document's maintenance scope. [30]
 
 
@@ -133,7 +138,9 @@ No configured live documentation source was available for this pass.
 
 
 
+
 - A writer-authored proof raises its invariant. Anchor: `test_a_proof_authored_through_the_writer_raises_its_invariant_when_its_test_changes` [34]
+
 
 
 
@@ -182,6 +189,7 @@ and in `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_
 - The census-derived consumer row. In merged A3 this reference cites all 2 artifact blocks whose exact consumers list names this module. The earlier occurrence count and first-occurrence wording described unrelated narrow text, already unrelated in the parked source, and did not establish this module's consumer membership. Those targets are replaced by this complete membership set. Former member identity is not recovered or claimed. [Past-epoch source caption, detached from live reference 40. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit not identified. No historical event or intent inferred.]
 
 Current source: The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event.
+
 
 
 

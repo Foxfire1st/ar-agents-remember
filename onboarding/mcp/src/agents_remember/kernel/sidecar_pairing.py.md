@@ -95,7 +95,9 @@ missing components retain `FileNotFoundError`.
 
 
 
+
 - The `AuthorityError` raised on an out-of-root / absolute path. [7]
+
 
 
 

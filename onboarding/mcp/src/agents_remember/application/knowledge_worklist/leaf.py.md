@@ -6,7 +6,7 @@
 
 ## Current source account — Leaf orchestration and extracted completion ownership
 
-This module retains contract-to-four-side selection, marker applicability, exact paired/held-base reads and persistence. CandidateTrees, CapturedBase and ExplicitSides are imported from leaf_inputs; worklist_over, onboarding trace-side construction, recomputation and the worktree port are imported from leaf_completion. The public facade remains available, but removed helper implementations are not local definitions. Neither-side-converted retains the existing gate; unreadable probes remain named incomplete inputs.
+This module retains contract-to-four-side selection, marker applicability, recorded and held-base reads and persistence. `CandidateTrees` comes from `worktrees/services.py`. `CapturedBase` and `ExplicitSides` come from `leaf_inputs.py`. `worklist_over`, onboarding trace-side construction, recomputation and the worktree port are imported from leaf_completion. The public facade remains available, but removed helper implementations are not local definitions. The worklist reads K_B from the leaf contract and checks its ancestry against the judged memory commit or the memory worktree's HEAD. A held comparison supplies the base captured with its four sides. If both readable memory sides lack the layout marker, the converted worklist does not apply. An unestablished K_B or unreadable probe yields an incomplete input.
 
 This source-bound correction covers the described L54 seams only. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
 
@@ -398,7 +398,7 @@ The complete predecessor below preserves useful explanations and incoming correc
 
 - The explicitly named sides, with the held base tree.
 
-- K_B's commit by the Code-Commit trailer.
+- K_B's commit comes from the leaf worktree contract or the explicit held comparison.
 - The sides: the held tree for an unconverted K_B, the cache without one, the snapshot for a converted K_B, and the pairing.
 - The conversion of an unconverted K_B through the cache.
 - The marker probe, on the held tree when a base is given.
@@ -414,13 +414,13 @@ The complete predecessor below preserves useful explanations and incoming correc
 - The reviewer passes the comparison's candidate trees and base commits.
 
 
-- On the leaf route, the task's expected effects and maintenance scope are read before resolving its memory/code pairing. The common worklist_over composition, used by leaf_worklist and the direct-landing gate, adds onboarding items to a complete run over that run's sides before settling unexplained items against their onboarding traces.
+- On the leaf route, the applicability probe runs before the unheld comparison resolves the recorded memory base. After base resolution, the worklist reads the task's expected effects and maintenance scope. The common worklist_over composition, used by leaf_worklist and the direct-landing gate, adds onboarding items to a complete run over that run's sides before settling unexplained items against their onboarding traces.
 
 
 - The gate's side request from the contract.
 
 
-- The gate chooser: `None` keeps today's gate; a failure is an incomplete side, and since MIK-R09 so is a marker probe Git cannot answer (`layout marker: …`).
+- The trace gate chooser returns no sides for an unconverted leaf. It validates the recorded memory base before its marker probe. A failure to establish that base names `K_B` and an unresolved marker probe names `layout marker`.
 
 
 - An unconverted leaf gets no sides and no worklist.
@@ -455,7 +455,7 @@ The complete predecessor below preserves useful explanations and incoming correc
 - The exact candidate as Git trees.
 
 - The cheap probe and the gate's applicability.
-- A probe Git cannot answer is an `incomplete` worklist naming `layout marker`.
+- An unresolved candidate or held-tree marker probe yields an `incomplete` worklist naming `layout marker`. Failure to read the marker from the contract's recorded memory commit names `K_B`.
 - The fail-closed reads, with the strict maintenance scope.
 
 - The full worklist over explicit sides, shared with direct landing.
@@ -473,20 +473,20 @@ The complete predecessor below preserves useful explanations and incoming correc
 
 - The explicitly named sides.
 
-- K_B by trailer, or `incomplete` naming the pairing.
+- `K_B` comes from the contract’s recorded memory base or from the base already resolved for a held comparison.
 - The sides, the both-unconverted `None`, and the pairing document.
 - K_B as its conversion, through the read-or-convert path shared with the onboarding gate; since MIK-R10 the same cached files also give the route coverage.
 
 - The run over named sides, which since MIK-R11 also passes the leaf's declared effects; unreadable input is `incomplete`.
 
-- A leaf's run from its contract, with the cheap applicability probe (since MIK-R09 through `has_layout_marker`, and a probe Git cannot answer is `incomplete` naming `layout marker`); then (MIK-R11) the declaration and (MIK-R09) the strict maintenance scope, whose unresolved document makes the run `incomplete`; a complete run then gains the onboarding items.
+- The leaf worklist probes the candidate and, when needed, the held tree or the recorded commit for the marker. It then resolves the recorded base for an unheld comparison. An applicable worklist reads the declaration and strict maintenance scope, reports an unresolved task document as incomplete and adds onboarding items after a complete comparison.
 
 
 
 - The port adapter the composition binds.
 
-- Pairing by trailer, following the sync, and persistence beside the contract.
-- No pairing commit is `incomplete` naming the pairing.
+- After sync the worklist reads the recorded base from the saved contract and persists beside it.
+- Failure to establish the recorded memory base yields `incomplete` naming `K_B`.
 - An unconverted base is compared as its conversion.
 
 

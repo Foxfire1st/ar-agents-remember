@@ -1056,14 +1056,16 @@
       ]
     },
     "5": {
-      "note": "Closeout retains entity-fingerprint and derived route-index refresh before exact converted-memory publication, not legacy metadata stamps.\n\nAnchor: `_refresh_external_memory`",
+      "note": "Closeout retains entity-fingerprint and derived route-index refresh before exact converted-memory publication, not legacy metadata stamps. Anchor: `_refresh_external_memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:dcf76e699746ce6261ae83ad37ffcde7a86ee11fd269821e5461df2be4cf9a90",
             "locator": {
-              "kind": "file"
+              "end": 105,
+              "kind": "line_range",
+              "start": 93
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -1071,11 +1073,12 @@
         },
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
             "content": "sha256:10ce5b547e465ec1531e4b6cd70f0cd3cfa872e71008466f7b03f79cd2bde23d",
             "locator": {
-              "kind": "symbol",
-              "name": "_refresh_external_memory"
+              "end": 655,
+              "kind": "line_range",
+              "start": 634
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },

@@ -1,0 +1,2937 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L21",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-049RTV",
+      "items": [
+        "sha256:92d3d91e08fa3a6c73fbf37f0b4eb7dc52a9ed7d230a4cce5161136ed2d64040"
+      ],
+      "reason": "Exports the card-base helper so the writer can call its existing resolver.",
+      "subject": "hunk:sha256:92d3d91e08fa3a6c73fbf37f0b4eb7dc52a9ed7d230a4cce5161136ed2d64040"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1CS8DN",
+          "revision": 1
+        },
+        {
+          "id": "INV-5XX92M",
+          "revision": 1
+        },
+        {
+          "id": "INV-9MH0V9",
+          "revision": 1
+        },
+        {
+          "id": "INV-FPG5GW",
+          "revision": 1
+        },
+        {
+          "id": "INV-MZ13SJ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-04JQAZ",
+      "items": [
+        "sha256:9a41964c8f22aaef4cffb7f3858c3a2243f580d9176e34ef3ae73c9a13749dd2"
+      ],
+      "reason": "Exact-tree validation and worktree-only rollback still govern apply. The carry-over member now identifies the shared receiving-leaf base and its before-write refusal.",
+      "revision": 1,
+      "subject": "FAM-VZ9C23"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0JQWR7",
+      "items": [
+        "sha256:1456bb3286b2f18c0ae13efc329b7dc701b0c027fd0c6a79d4479dd6796cd4e6"
+      ],
+      "reason": "Imports the helper used by MemoryState.recorded_card_base_files.",
+      "subject": "hunk:sha256:1456bb3286b2f18c0ae13efc329b7dc701b0c027fd0c6a79d4479dd6796cd4e6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0K45T4",
+      "items": [
+        "sha256:240426b5175f38bc759b5f8e6eeed9ff8bad79a1464c4ef6810fcf0d1b3abcb5"
+      ],
+      "reason": "Documents the fixture case where code-only sync retains K_B.",
+      "subject": "hunk:sha256:240426b5175f38bc759b5f8e6eeed9ff8bad79a1464c4ef6810fcf0d1b3abcb5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-11SK3A",
+      "items": [
+        "sha256:cae3e898d0c566e350ca1837fd92fb45a10255e5d4cc718a7806772168534b1a"
+      ],
+      "reason": "The port carries the captured tree IDs with the optional judged memory commit.",
+      "sources": [
+        {
+          "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+          "path": "mcp/src/agents_remember/worktrees/services.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/services.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-1DEATN",
+      "items": [
+        "sha256:eb33b6a57655c423bd91359c5f59eae8dd8dbd5d69b40b3cb49d34bb2c95f183"
+      ],
+      "reason": "The MCP reference accurately describes the knowledge writer’s plan and file-write modes and the turn-end line that goes to the current Manager when the recorded parent is archived.",
+      "revision": 13,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1K8H0B",
+      "items": [
+        "sha256:00a41436f2093282a5d239e671e32cbe975feb76b78182b9fcf0832555ce5003",
+        "sha256:4c6bbfee9468f9d2f6106bd18569dc1ac935994cdf6ad114764d220b489b4ca1",
+        "sha256:86559f556f44996ca588d11e18b7ceca05983059d259e303e7779cba13b1051b",
+        "sha256:ade2eabe4e95c9d918c2176dbbf5d1c86866e7761bbda08c2daa8c51dff05f63",
+        "sha256:b05a28e833dc28ab5e4a606786d6b07ffc65c601acbefd0ecf783c63828445e1",
+        "sha256:b51efc22c599ec8f7dada27240be865e83e826fa7f8069a6803695470a05c4ed"
+      ],
+      "reason": "The adapter forwards the exact comparison carrier, including the optional judged memory commit, to the existing leaf gate.",
+      "sources": [
+        {
+          "blob": "498b820bd6494307859bca60adaa0683064ffd10",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/adapter.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/adapter.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1RRQ8F",
+      "items": [
+        "sha256:a62ddd6b261de51369790298dc3e597667f8aaf1cfc5d42eab8a9f08c1e17365"
+      ],
+      "reason": "The live comparison resolves the leaf contract’s memory base and includes its exact commit in reuse. Numbered reopen remains bound to the saved comparison.",
+      "sources": [
+        {
+          "blob": "b0ded045994c0f33f08b592285a3ef8070d98581",
+          "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_tree_comparison.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-23TB7S",
+      "items": [
+        "sha256:58c0c761edf6543a1261e0d13599c0260d62c804dc9c344ec9c231e7d7121b63"
+      ],
+      "reason": "Documents or stores the memo identity that the memo-key realization computes and the gate compares.",
+      "subject": "hunk:sha256:58c0c761edf6543a1261e0d13599c0260d62c804dc9c344ec9c231e7d7121b63"
+    },
+    {
+      "considered": [
+        "FAM-DGPZ0R",
+        "FAM-NQQP2T",
+        "FAM-4ZNEN9"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-25EVF5",
+      "items": [],
+      "reason": "The existing families cover trace answers, publication and live review independently. This invariant spans their comparison inputs without changing any family membership.",
+      "revision": 1,
+      "subject": "membership:INV-D0AHQA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2CKFS2",
+      "items": [
+        "sha256:fa83e14466af5110a5655fed08a93bed5ab6482c3772648dd305946a0c71d43f"
+      ],
+      "reason": "Imports the comparison carrier used by the bound leaf gate.",
+      "subject": "hunk:sha256:fa83e14466af5110a5655fed08a93bed5ab6482c3772648dd305946a0c71d43f"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-2FEFMA",
+      "items": [
+        "sha256:10daa90e294af9d288635c25363b20c33905913ae8c2bed3478e5f89f77175e2"
+      ],
+      "reason": "The architecture guide accurately describes receipt-backed dashboard registry reconciliation and the private storage and recorded comparisons used by read-side review.",
+      "revision": 8,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2NQP6W",
+      "items": [
+        "sha256:5f32d73250b37e21159c465fc371172eb0f45f537e9e9f44c7c9db36e9f01438"
+      ],
+      "reason": "The no-knowledge fixture establishes a real legacy base before the existing source-only endpoint assertions.",
+      "sources": [
+        {
+          "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+          "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_review_source_endpoints.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-2P3560",
+      "items": [
+        "sha256:3896b966a2b15cdd2a5032251575ed48cbcef0f04b2b444677fb7d0e18e6fb9f"
+      ],
+      "reason": "The reference correctly states where the leaf's comparison bases come from and which memory commit establishes ancestry in live and pair judgments.",
+      "revision": 4,
+      "subject": "DPD-TXRND9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-314PJJ",
+      "items": [
+        "sha256:9006076d0fbff1971cb64be137a66124365dabc3aac029bdea4be4e8675741fe"
+      ],
+      "reason": "The module introduction describes the recorded inputs, conversion basis and incomplete result implemented by the resolver and worklist.",
+      "subject": "hunk:sha256:9006076d0fbff1971cb64be137a66124365dabc3aac029bdea4be4e8675741fe"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-33QYEZ",
+      "items": [
+        "sha256:27b9a22d1ef07415075747fff2acf4f4565b8b74c9f4e5da32cd7711b52dad3a",
+        "sha256:b4e84b44c5443350cafa4f70e7e98989f24eaf8408701adbd4878f840614ae14",
+        "sha256:fdc083095d4e49e634db426e88717e863b1fa14fb955765f324d3bc2cd93b5db",
+        "sha256:ff91785e5c46fbaa4da4fccc2f55b64bc275ebd0c5d1abd90a9a65594142cd03"
+      ],
+      "reason": "The fixture advances the real legacy memory base before checking the existing unavailable and attributed source results.",
+      "sources": [
+        {
+          "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
+          "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_review_attributed_source_content.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-3CWPCS",
+      "items": [
+        "sha256:16e96da8a07e976b265d44e54298d3fc51710d4e4f044768346182f740a651a3"
+      ],
+      "reason": "The external-memory guide still describes an exact-tree gate that refuses paired closeout publication while required worklist items remain unresolved.",
+      "revision": 3,
+      "subject": "DPD-9F0Q8G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5702dcd367e420a23e27109f1c2efce4351f7229",
+            "content": "sha256:404f99f7800b5627628b21ccad22f992fca570bc844f3aa94a687b80fbf4c894",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_view_key"
+            },
+            "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+          },
+          "before": {
+            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
+            "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_view_key"
+            },
+            "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+          },
+          "id": "RLZ-3EFTEY"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-3HKX1G",
+      "items": [
+        "sha256:e7d5924ab08589796c6fcb9e04a812ff360b1f360f1e8053fec17817d3cac892"
+      ],
+      "reason": "The live memo now includes the recorded base commit and judged or observed memory commit so equal trees cannot reuse a view from another base. Read admission and retention limits still govern.",
+      "revision": 5,
+      "subject": "INV-5M9WY3"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0HBKP9",
+          "revision": 1
+        },
+        {
+          "id": "INV-2172NS",
+          "revision": 1
+        },
+        {
+          "id": "INV-5M9WY3",
+          "revision": 5
+        },
+        {
+          "id": "INV-61Y147",
+          "revision": 1
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-7MH0BR",
+          "revision": 2
+        },
+        {
+          "id": "INV-9MF6HZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-EKE1RV",
+          "revision": 1
+        },
+        {
+          "id": "INV-N3M9G4",
+          "revision": 3
+        },
+        {
+          "id": "INV-TY4BR7",
+          "revision": 1
+        },
+        {
+          "id": "INV-W8WBTB",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-3K3EDK",
+      "items": [
+        "sha256:47bdcd621e979929635b84cc931ce905c6b7a67826f17f0a27c5f9fa09e1e2ad"
+      ],
+      "reason": "The retained live view verifies exact comparison inputs and observed dependencies. The two revised identity conditions strengthen the existing guarantee.",
+      "revision": 2,
+      "subject": "FAM-4ZNEN9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3MBN0F",
+      "items": [
+        "sha256:64abb7d640dcec4f398e400a4d9c2aae3e3d54954b0492b8bfc8ad28a0989477"
+      ],
+      "reason": "Imports the resolver’s typed failure so the applicability control can retain the named incomplete judgment.",
+      "subject": "hunk:sha256:64abb7d640dcec4f398e400a4d9c2aae3e3d54954b0492b8bfc8ad28a0989477"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3ZMT7Q",
+      "items": [
+        "sha256:4849c7cc4826bfcdcc6a63d49a91766b067b49c4f1101664705c186bdb28a29c",
+        "sha256:6130ea86f82f44276e2b5663f35e9c5a27c3165c983e1e99c08d68ce4cbcb2e5"
+      ],
+      "reason": "The card describes the current ownership of CandidateTrees and distinguishes candidate tree IDs from the optional judged commit.",
+      "sources": [
+        {
+          "blob": "96ec8f20e7fa867e308b007426a82a10f8e97fce",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_inputs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/leaf_inputs.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-43KCGK",
+      "items": [
+        "sha256:aaee44a55c528d43d9c737d860a7364b5cac9e76de107e998f654fa5ee2aa546"
+      ],
+      "reason": "The trace fixture now asserts the K_B diagnostic independently of the existing marker and blob cases.",
+      "subject": "hunk:sha256:aaee44a55c528d43d9c737d860a7364b5cac9e76de107e998f654fa5ee2aa546"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-4HKDRT",
+      "items": [
+        "sha256:6b2d2af337e12f4d1c47a4c5bf4c5d0aad345dd4d7b689d2b6ac15d64ae2848a"
+      ],
+      "reason": "The certification profile's schema refusals and selections still apply after the separate leaf memory-base error was added.",
+      "revision": 4,
+      "subject": "DPD-FR0VZP"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-4HZDGP",
+      "items": [
+        "sha256:97ef3e9d6ee3ee9adeb96c338792a3feab6b90e45fbd98aeab6400feb5713c14"
+      ],
+      "reason": "The workflow correctly explains that a participating contract-source memory sync advances the recorded base to the incoming tip and a repository-default sync keeps the recorded pair.",
+      "revision": 6,
+      "subject": "DPD-XAARS1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4JR2DT",
+      "items": [
+        "sha256:d71ea8ab5e545ba2ea03ca1e683ed2294a1269643963d47f66dc6316851e5899"
+      ],
+      "reason": "Documents the exact contract and source identities that the live memo already binds.",
+      "subject": "hunk:sha256:d71ea8ab5e545ba2ea03ca1e683ed2294a1269643963d47f66dc6316851e5899"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4NRDD5",
+      "items": [
+        "sha256:2170f53b2b159d85aea42609372e91c717f1b5aadae9d896a1f8d63e268ecdc4"
+      ],
+      "reason": "The worklist resolves the recorded memory base or uses the explicitly held comparison. An unestablished base answers incomplete as K_B.",
+      "sources": [
+        {
+          "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4RJF2T",
+      "items": [
+        "sha256:5639cc83426d67a32eba3b97d697f962f3cc874b572f21fb7e1812e19daf6474"
+      ],
+      "reason": "Keeps a failed recorded-base check eligible for diagnosis. The worklist and recorded-base resolver own the failure obligation.",
+      "subject": "hunk:sha256:5639cc83426d67a32eba3b97d697f962f3cc874b572f21fb7e1812e19daf6474"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-527RS4",
+      "items": [
+        "sha256:d15258522bee33211cb037be31d4530cb6194c499b13fd5e5437f08ed1c9fbc5"
+      ],
+      "reason": "The evidence-system description still matches the manifests, which place the new leaf-memory-base case in unit regression and register its shared supports.",
+      "revision": 9,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-56H67R",
+      "items": [
+        "sha256:0ac2fd0245096cd2349b63aea76bfc780df0592de7909a5ad64da970a0f9c9e8",
+        "sha256:41fc058569cfaa6831b60c67a269598e3f3593bb5b3833aefd50782500d085eb",
+        "sha256:70b52898e28192ee643cb49275e0de09ea5dd0e0c66a962eec7683a1ddc6ffbc",
+        "sha256:8fa6f3a1a04921de1ed3f19dc0ff00ddf8aadc953105558ed548b377e0bdd10b",
+        "sha256:9df8bd411db6439ac24775fd5f6dc3c8a73ad20f2df18e19a1fd89c5d2f55731",
+        "sha256:a580a6c9e9349e35ff616efed151346b761e17d3379a80be52ea54bb4c1613a9",
+        "sha256:a861b95325d9d424605c77b4abb97756c13ed1d907ce942eeff8cb4cf207253b",
+        "sha256:b559f05a405f9f6c7686b0597c28f0dc023f700e0955f2cb8ddf9d0d8615ab46",
+        "sha256:b6634188c72a0b076eaa10eaa0c79546a33bcec21b517832e203777b0558b4ce"
+      ],
+      "reason": "The trace compares the recorded memory base with the candidate bytes after verifying ancestry against the real memory worktree HEAD.",
+      "sources": [
+        {
+          "blob": "79d594f19005ef10e2e3c9dd04a5e9553b687305",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5C141W",
+      "items": [
+        "sha256:735b877657fe9b723730ffcd6e004a03c4efecab78c23eb706d0be319278c9b3"
+      ],
+      "reason": "Carries the exact candidate trees and optional judged commit across the existing service boundary. The resolver and caller enforce the comparison.",
+      "subject": "hunk:sha256:735b877657fe9b723730ffcd6e004a03c4efecab78c23eb706d0be319278c9b3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5H3ADH",
+      "items": [
+        "sha256:d413c74c7cbbc91bff317a8d248de8a57721b6201bfb4d7eb90cd5ae2330aab0"
+      ],
+      "reason": "Updates the fixture comment to name the original recorded base.",
+      "subject": "hunk:sha256:d413c74c7cbbc91bff317a8d248de8a57721b6201bfb4d7eb90cd5ae2330aab0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-60F3DP",
+      "items": [
+        "sha256:c022b058de30d64f0ee8bf559b506f926b4f7f0602b90c4df5f0a01792f3db2f"
+      ],
+      "reason": "Replaces the attribution import with the shared resolver and its typed error. The writer route owns the response.",
+      "subject": "hunk:sha256:c022b058de30d64f0ee8bf559b506f926b4f7f0602b90c4df5f0a01792f3db2f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-63WET1",
+      "items": [
+        "sha256:ef747f7ad40b5f917b1428c99d588fff490c841773cbc59df22c6a9d39b80163"
+      ],
+      "reason": "Imports the shared resolver and the typed error used by the worklist comparison.",
+      "subject": "hunk:sha256:ef747f7ad40b5f917b1428c99d588fff490c841773cbc59df22c6a9d39b80163"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-654HQN",
+      "items": [
+        "sha256:55ba5633a45dcefea4b2defe52370373987c5b59f41b1fca26b36687d283b733"
+      ],
+      "reason": "The new card explains the untrailed merge, conversion and exact-pair fixtures and the caller-specific failure assertions.",
+      "sources": [
+        {
+          "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+          "path": "mcp/tests/test_recorded_leaf_memory_base.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_recorded_leaf_memory_base.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-65MYQR",
+      "items": [
+        "sha256:eaed759022153b7e6e674920ac6dbf10426a53eefe32675c2f41b07d466a8499"
+      ],
+      "reason": "Removes the former source-branch existence short circuit. The resolver owns the repository, commit, tree and ancestry checks.",
+      "subject": "hunk:sha256:eaed759022153b7e6e674920ac6dbf10426a53eefe32675c2f41b07d466a8499"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:8a3a6ff9abc63a8fa6a28328037c4df71f4cd71c4a4f75f369e714295c8f636a",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_pair_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:fa255cd6387c747835427a38e516275a8ec6e507086fbbbf5e19bf83ebc72987",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_pair_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-7TKTT1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-66BZFG",
+      "items": [
+        "sha256:b52be13caf99e0460316c3df4e417915849923f85c5e582db04ad127b7dc54c2"
+      ],
+      "reason": "The gate still judges the exact code and memory pair with its caller-supplied validator bases. The judged memory commit is carried into that worklist comparison to establish ancestry.",
+      "revision": 1,
+      "subject": "INV-M0J963"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-66SZR1",
+      "items": [
+        "sha256:80abf2b4193f8019a81b591270866c16593d205b61772b5697c73250148aac3d"
+      ],
+      "reason": "Records the current fixture base before testing the modified proof hunk.",
+      "subject": "hunk:sha256:80abf2b4193f8019a81b591270866c16593d205b61772b5697c73250148aac3d"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-6AQP7F",
+      "items": [
+        "sha256:6b2612eb6f16c3f5e05ea9485150f8fa6c83f798e2750421015d5619289a5d28"
+      ],
+      "reason": "The patch changes the existing memo key to include the recorded memory base. It does not restore the rejected wider shared-cache implementation or establish the first-view and index nonregression or retained memory behavior required for that alternative.",
+      "subject": "reconsider:DEC-H24NXK#1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6PZN0H",
+      "items": [
+        "sha256:035426e84dbc0676e24342234efb58321bb05ac3112d68f624106eeec06668d0",
+        "sha256:27eaf4376ee4abd78cf18ba1a20417935d14b36e6d22341b7572e1d32c09544c",
+        "sha256:6ce79e910bc8f83852de26ddf5c7f8d320d95b5f3c9de733c2debf48e1412173",
+        "sha256:e05aa0ebc4d07c266676731bfb2f3faad6a48ed720ba03e755462cfdac6ce8e4",
+        "sha256:f3ace16fe80f793cf76f9565837eff6a7da43487c6b205f0c8c4961086ae377f"
+      ],
+      "reason": "The fixture records an exact base for converted and legacy sides. The tree capture and legacy rendering obligations retain their previous assertions.",
+      "sources": [
+        {
+          "blob": "1e4dbd157a0f001f0ab0521750b0dbeeaf8205a3",
+          "path": "mcp/tests/test_review_git_trees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_git_trees.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6S38T4",
+      "items": [
+        "sha256:fb4badb253b30805d0c205c3022d059bd6a5ec792386949d03364ea4e1f5b39e"
+      ],
+      "reason": "Imports cached_property for the operation-scoped recorded-card read.",
+      "subject": "hunk:sha256:fb4badb253b30805d0c205c3022d059bd6a5ec792386949d03364ea4e1f5b39e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:4e84a1e0ac9cbe0c8afb17e3de0218b5134da675b5f862bfb7f371b5518fbfa8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-710GC6",
+      "items": [
+        "sha256:a375c255b933a44aada986aa9a56c0617d67164ec5002e92a10a5bf2b65c7401"
+      ],
+      "reason": "The new lane registration names the added tracked test module. It leaves the released certification and removed provider-runtime rail rules intact.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-745TNG",
+      "items": [
+        "sha256:012408181ae003cefc0f2afc0f14e55027ab074088ecf8fe3f4e987aa70034f9",
+        "sha256:200868084bf90fa185e512c3dca44020f9d01bea3885ac1320a4cf15489fb6da",
+        "sha256:331a06f511682f41b58a0b9662711feacfa616a5cdbb380e77e8e03cf6483ff9",
+        "sha256:5db763fec4dbd465893d42b0168f7910847cae40338ef50f2ef4faf76801ed3f",
+        "sha256:669e608f4a39f55de8f8a9934ab1a9e1ae15541b9de820959f16858b91d5d21e",
+        "sha256:69387478a049f67ea5e86aedd6e9f0a32c30d4ed685db69bd76f3a718e465680",
+        "sha256:7d38639a07ea0c7c521fd51f08766199ab6f9ff0cb2c7bdf11ca762cfae6e35e",
+        "sha256:ae93d0d834b0fe5536f39b3b51dc7f51e0ced51a642f634191d75307ed3ff7dc"
+      ],
+      "reason": "Both a changed code tree and a same-tree memory-base change can supersede an in-flight build.",
+      "sources": [
+        {
+          "blob": "60684c5849d6fb10f5b6cdc7f8408ca3f4aaf3fb",
+          "path": "mcp/tests/test_review_overview_precompute.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_overview_precompute.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-791YVD",
+      "items": [
+        "sha256:f681325230ef432b4f8b77359e609e952b5d6ecb14215bfa6f4b51b84fd47327"
+      ],
+      "reason": "Removes old reader and Git-error imports after the card read moves to MemoryState and the shared converter.",
+      "subject": "hunk:sha256:f681325230ef432b4f8b77359e609e952b5d6ecb14215bfa6f4b51b84fd47327"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7EHJQJ",
+      "items": [
+        "sha256:bd157489e70c68424db70fbcb4527058c29354927d3d668aedaaebf613461c01"
+      ],
+      "reason": "The fixture names the exact recorded base in the live comparison key and retains observation, latency and bounded-memo assertions.",
+      "sources": [
+        {
+          "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+          "path": "mcp/tests/test_review_read_latency.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_read_latency.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7JZMT3",
+      "items": [
+        "sha256:d734274cd380b8e855a7c5c5099c0d4a885b466878e27033cf1af820a0122ab4"
+      ],
+      "reason": "Carries the exact candidate trees and optional judged commit across the existing service boundary. The resolver and caller enforce the comparison.",
+      "subject": "hunk:sha256:d734274cd380b8e855a7c5c5099c0d4a885b466878e27033cf1af820a0122ab4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7MDZ8M",
+      "items": [
+        "sha256:19ce2ea6cfe2a507b31b295750c93859e62d5ceda9c032bf6c203b40e68b56a3"
+      ],
+      "reason": "Documents the exact contract and source identities that the live memo already binds.",
+      "subject": "hunk:sha256:19ce2ea6cfe2a507b31b295750c93859e62d5ceda9c032bf6c203b40e68b56a3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7ZPV0M",
+      "items": [
+        "sha256:28d5e85123d7fef8e36c9c28a1345b7184a51939a61ef4ae33c2508d9e62e51e",
+        "sha256:2cb2f5b407d4233b6aea29884ed77970d8263f442ac55e17da9f1e0b20e62b27",
+        "sha256:fa1bd794201c9ea5ddcb136718819a114773135f8ba57654c06ec09f25c2664c"
+      ],
+      "reason": "The fixtures supply the correct recorded memory base and exercise an exact unreadable-base case. The source-bound matching and counted-change requirements remain.",
+      "sources": [
+        {
+          "blob": "166a2dccebfa1bd1deeb7b24c7edd12b59e8193c",
+          "path": "mcp/tests/test_onboarding_trace_gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_onboarding_trace_gate.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-81MZ8R",
+      "items": [
+        "sha256:1c2762ecb6c15a50a862e78ad948aa05085f6b946e374724e73f3bf3f7f173e6",
+        "sha256:6b275ee478b582ea5e984320e6537d1d4f79d242b33b2f64db38d3d980301f8f",
+        "sha256:71e6f51c085e746312886525f5d306efbe84da6b76e5cc5e5215aa4d724ba0cc",
+        "sha256:a678b55cd9920574b712033f16f39a8b6020d14c29b160a24483f8125153c445",
+        "sha256:aa571f1cc756ce9601966d1577d0ddb76fd7cafa29fe6b6c9f1ae4050014aab4",
+        "sha256:b1fa297f604d9d1e3978fc52da3b485b5d5620c592d9177435ab13105f1b1311",
+        "sha256:e35ceee944d9c8f05deae16ff3b0b1ac82ed3950d3a7cf4294b028e668a24595",
+        "sha256:fe6ede1d7b4ad34f23336c6041573f0d18d15c2aa9b4aaf95099eaf415103ca1"
+      ],
+      "reason": "The carry-over tests distinguish inherited and carried changes using one recorded base, and check that an unrelated base refuses before writing.",
+      "sources": [
+        {
+          "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
+          "path": "mcp/tests/test_carryover_apply_transaction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_carryover_apply_transaction.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "417ebaf9a63383080fa4e65b4a78376050b55121",
+            "content": "sha256:a5c147627fe1f8cf5e8db8ff55b1c3f722040ac28b8e516b13dad98b58e66c5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "before": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:432ff046e10433c7569e56f86456caa342921364f14b881c5fa017a21fd151a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "id": "RLZ-FP4XHH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-89WNH5",
+      "items": [
+        "sha256:2dea17b51cbc8d8802a2a23ea16002491dfa83aeadfee9636aececb22da13dc1"
+      ],
+      "reason": "Positive legacy classification still uses the layout marker after base admission, while an unanswered probe or base has its own error.",
+      "revision": 3,
+      "subject": "INV-JT28KJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "content": "sha256:07182f3ea45d8fbf8c0f452d68a919c7313a740053b13a68ee94b4a1f8088f1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "Authoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+          },
+          "before": {
+            "blob": "a60ad6a111d01f6b6a98df801abfb28ace85d559",
+            "content": "sha256:cf0fd35b0a38af51fe5cc67f4faafae8dad22d0724349568943658a56416ba98",
+            "locator": {
+              "kind": "symbol",
+              "name": "Authoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+          },
+          "id": "RLZ-87J2WX"
+        },
+        {
+          "after": {
+            "blob": "fda2d33b76fa7dc7d21a24af285e448572786400",
+            "content": "sha256:29cc9184d4ff872c98a7a17a8b47d4d51da4d3a1721f1696257b12998b57fb56",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "before": {
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "content": "sha256:270de0b58f2581259be3857348d89891d64fcfa74e1c32e195c1aa2e1b2c6dfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "id": "RLZ-999BVN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8MGZPP",
+      "items": [
+        "sha256:708e4f2e8ce891a64a67a4287b6f2d971573069f294a0d89c704d986b01266ff"
+      ],
+      "reason": "The dependent read continues to name the exact source tip used to confirm its links. The writer card-base input is independent of that tip.",
+      "revision": 1,
+      "subject": "INV-VWRJR7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-93SDNF",
+      "items": [
+        "sha256:93b42277d53ded435b7bbfda817d153a0ec3897cf37c5628e92da68393cf16ea",
+        "sha256:c3e9eae4cbbacfc4e777f3909f76f57a0aa9fdb624763e35378e0203f9e238c8"
+      ],
+      "reason": "The concepts guide accurately describes archived seats and the plug-in’s hand-off signal, and it ties the leaf worklist and mandatory gate to the contract’s bases and the exact candidate trees.",
+      "revision": 14,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-94P24W",
+      "items": [
+        "sha256:9d617bf3f0f52edf0fd7bd0e33fa270d57978c94300bda8697ac565c11dbe74b"
+      ],
+      "reason": "The writer route supplies the established recorded leaf memory commit for fresh counted-card comparison.",
+      "sources": [
+        {
+          "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+          "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_write_route.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+            "content": "sha256:73131678c3db3d9aec04f4be66fb3ac229f386778e51cc5ba0138f4ee9c4e832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:3a6f3c9a9799ed9aa36ee658e0f57efe681d5704ad5d184682812bc0bea547fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:4e84a1e0ac9cbe0c8afb17e3de0218b5134da675b5f862bfb7f371b5518fbfa8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-9RFHMT",
+      "items": [
+        "sha256:1012d65a9d0e833e62b4e311a3fc94dc20bc88d74055035c1b4a6e3722ca2137"
+      ],
+      "reason": "The new test has one unit lane and three exact consumer declarations. Existing identity, duplicate detection and removal obligations are unchanged.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:4e84a1e0ac9cbe0c8afb17e3de0218b5134da675b5f862bfb7f371b5518fbfa8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+            "content": "sha256:73131678c3db3d9aec04f4be66fb3ac229f386778e51cc5ba0138f4ee9c4e832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:3a6f3c9a9799ed9aa36ee658e0f57efe681d5704ad5d184682812bc0bea547fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-A3KNF2",
+      "items": [
+        "sha256:33fa43ab47671812f66d0e9993fb59439fae4f7f78506f3472ee1b28588fda5b"
+      ],
+      "reason": "The catalogs add the recorded-base test to the unit lane and its supports. The existing silent-end evidence entries and their selection still hold.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ACXW4T",
+      "items": [
+        "sha256:0ad5cb203d730767a6d5f03c16acff87ebd266039bda15e5d64c2f87b0894127"
+      ],
+      "reason": "Describes recomputation from the saved or retained bases without changing the sync transaction.",
+      "subject": "hunk:sha256:0ad5cb203d730767a6d5f03c16acff87ebd266039bda15e5d64c2f87b0894127"
+    },
+    {
+      "considered": [
+        "FAM-DGPZ0R",
+        "FAM-NQQP2T",
+        "FAM-4ZNEN9"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-AT72TH",
+      "items": [],
+      "reason": "The existing families cover trace answers, publication and live review independently. This invariant spans their comparison inputs without changing any family membership.",
+      "revision": 1,
+      "subject": "membership:INV-WN53V2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ATGBP6",
+      "items": [
+        "sha256:f52d69455c5cb017082150ebafcaa9c4d0cffa712042a766ed3482ff9d40a349"
+      ],
+      "reason": "The writer compares the recorded base in the candidate format. Only when it cannot do so does the persisted subject count or operation base decide.",
+      "sources": [
+        {
+          "blob": "fda2d33b76fa7dc7d21a24af285e448572786400",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AW0XS1",
+      "items": [
+        "sha256:1a3bb1e551852dfbb33b82e1e5d9ca9c98bb009ebca213bb6d57105e81457e86"
+      ],
+      "reason": "Declares the typed error shared by the callers that map it to their own responses.",
+      "subject": "hunk:sha256:1a3bb1e551852dfbb33b82e1e5d9ca9c98bb009ebca213bb6d57105e81457e86"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B0P49K",
+      "items": [
+        "sha256:034f3fe04220f0df6f36bc81ca8fc48148f040853e0b48f673606558e4ca79c0",
+        "sha256:182433e3e96209e24f7ca6b55f689d4ff99e36ee34d5d04a09b461f9373af464",
+        "sha256:1b0145b63f0f90cc0cf7664c7d187cd9f1fb7a4b7f9a84f2268cf92649972474",
+        "sha256:5aa12e43e90e0f689e5cc798246dc0404aa670446fef87357a55b0f61d4dcf01",
+        "sha256:72f19e70089b7d2dc267646be0f3f4316e203fdbb696020aa5e6bad3c4a3f78e",
+        "sha256:7fcef9cc48a7c70a25ae0b7e85d04453f806a633cb8e67b14298811b56c554b6",
+        "sha256:be9779aa725d7b82864c61914f7c5883134795e9fb5b8afbe06177f6a4d9fd48"
+      ],
+      "reason": "The live-review test distinguishes an established legacy input from refusal to resolve the recorded base.",
+      "sources": [
+        {
+          "blob": "1e640afd7c1913ab1177a397155c59da4ad86447",
+          "path": "mcp/tests/test_legacy_refusal_envelope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_legacy_refusal_envelope.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B1P96M",
+      "items": [
+        "sha256:011d3592295c099a1fe592138eae127740344bde9136dfa33f693e340757d9fe",
+        "sha256:6f1f328fee982aa66715f22fbb4326b3fe42c5d592d122bbeec0382e11bbde46"
+      ],
+      "reason": "Contract mode uses its recorded code and memory bases. Explicit mode compares the four supplied sides.",
+      "sources": [
+        {
+          "blob": "5d99232060bf4011483e80360016059bed9fa89a",
+          "path": "mcp/src/agents_remember/cli/knowledge_worklist.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/knowledge_worklist.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B36J7M",
+      "items": [
+        "sha256:71a11f40b5000eb67a15466131bfe41b8da3625f2313aa17d483853f236f131b"
+      ],
+      "reason": "Passes the base already established by leaf_worklist to a private helper.",
+      "subject": "hunk:sha256:71a11f40b5000eb67a15466131bfe41b8da3625f2313aa17d483853f236f131b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B6AR32",
+      "items": [
+        "sha256:0965ab9f824947129de9b44b2155e9b76a8234c25025b1addf26e5019cffdaef"
+      ],
+      "reason": "Updates the explanatory text for separate validator and recorded card bases and their shared conversion machinery.",
+      "subject": "hunk:sha256:0965ab9f824947129de9b44b2155e9b76a8234c25025b1addf26e5019cffdaef"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B77CAN",
+      "items": [
+        "sha256:80ce9d0b4035870152780c019d453b28660c47a31bea2798d339d97695966d8d"
+      ],
+      "reason": "Changes the carry-over dependency to the recorded-base resolver. The actual check occurs in _base_for.",
+      "subject": "hunk:sha256:80ce9d0b4035870152780c019d453b28660c47a31bea2798d339d97695966d8d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B8KYDA",
+      "items": [
+        "sha256:0e2b2d39007a8e61de299648a4d865323c85f6d26944abea8f8fc77ab45367de",
+        "sha256:3888694b76c3fac3f8a21f03c55f17691e025a467833304a9a01a1cc263d4984"
+      ],
+      "reason": "The fixture binds the installed memory worktree and a valid recorded base before invoking the existing change-kind filters.",
+      "sources": [
+        {
+          "blob": "c56b044d692ae36eacdef758b19a47c3b1dc90aa",
+          "path": "mcp/tests/test_review_change_kinds.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_change_kinds.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BVHSSY",
+      "items": [
+        "sha256:8543a587c5c7b4ada3c54efe08e628094b817fedfa3064842d465e4d4f103c7a"
+      ],
+      "reason": "Removes the retired trailer-history search after its callers move to the recorded-base resolver.",
+      "subject": "hunk:sha256:8543a587c5c7b4ada3c54efe08e628094b817fedfa3064842d465e4d4f103c7a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C42K16",
+      "items": [
+        "sha256:da03aba31d4d0e915cad7a4a972f6c6d4d6f94de61c9a143a2bfb6ebbc889aeb"
+      ],
+      "reason": "The gate checks the recorded base without treating a failed read as legacy. It passes the judged memory commit or observed HEAD to the worklist.",
+      "sources": [
+        {
+          "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/gate.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C93NQ0",
+      "items": [
+        "sha256:17839bc09ae7e327961d766c01768cbf769baa58b7767774ca0cf7790be5c508"
+      ],
+      "reason": "Advances the fixture’s recorded memory base for the participating sync before rerunning the comparison.",
+      "subject": "hunk:sha256:17839bc09ae7e327961d766c01768cbf769baa58b7767774ca0cf7790be5c508"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CD30SR",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The new test is selected in unit regression. The parsed catalog has 653 unit-regression modules and 794 modules in total.",
+      "sources": [
+        {
+          "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CJAEZH",
+      "items": [
+        "sha256:29a9c364cebbf2a776929377565f623eba8bca1cc6540a2412b34a4dbeb3896c"
+      ],
+      "reason": "Current route evidence retains its supported anchors. Retired duplicate evidence prose stays in the historical comparison outside the current card.",
+      "sources": [
+        {
+          "blob": "417ebaf9a63383080fa4e65b4a78376050b55121",
+          "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+        },
+        {
+          "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+          "path": "mcp/src/agents_remember/worktrees/services.py"
+        },
+        {
+          "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-CVJ02R",
+      "items": [
+        "sha256:5171062177fcf286e0a3b11ac33cf0ba4bb96ad4b8b574d49206691e239e5ead",
+        "sha256:6b2415f69bcde6767ea111da1b89c4e362304afc3d93ca3419e2b66ec0c63d24"
+      ],
+      "reason": "The README’s Status version agrees with project metadata, and its paired-closeout account still applies with dashboard startup registry recovery and the leaf gate’s exact-candidate checks.",
+      "revision": 8,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CWCWRE",
+      "items": [
+        "sha256:e4bbd2524fd43b4ead2c040c1e7276b35c2196393038e15b198ee94b92fa8695"
+      ],
+      "reason": "Removes the private lookup’s former exception arm. The leaf worklist boundary now names the shared resolver error.",
+      "subject": "hunk:sha256:e4bbd2524fd43b4ead2c040c1e7276b35c2196393038e15b198ee94b92fa8695"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CXPEH7",
+      "items": [
+        "sha256:26d0d9a974474b8dd3273b868f5d9d70523378768e2ae62d635374e631bc8976"
+      ],
+      "reason": "Removes old reader and Git-error imports after the card read moves to MemoryState and the shared converter.",
+      "subject": "hunk:sha256:26d0d9a974474b8dd3273b868f5d9d70523378768e2ae62d635374e631bc8976"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D0A48D",
+      "items": [
+        "sha256:a1a14c230a3e48af5bca6965007fa9f39f5de826cd3de2005743c1c352554c7d"
+      ],
+      "reason": "The LeafViewKey annotation stores the commit and tree tuple. The leaf_view_key realization supplies those exact values and owns the live reuse obligation.",
+      "subject": "hunk:sha256:a1a14c230a3e48af5bca6965007fa9f39f5de826cd3de2005743c1c352554c7d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D1DC94",
+      "items": [
+        "sha256:2430e7e7eef8dd17b95e5bd22b928d21d2930ed290378b2addf6a67b00484453"
+      ],
+      "reason": "Current route evidence retains its supported anchors. Retired duplicate evidence prose stays in the historical comparison outside the current card.",
+      "sources": [
+        {
+          "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+          "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
+            "content": "sha256:1dd92c7757a0fbaf4afdf856231ebaae9e613a26975c90bd1248ab8b2eb11c4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_child_parity_source_reads_and_held_conversion_at_two_result_sizes"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:2be328ae3701d0e632c29eeda20e618e705c7dc04c492545aba3ef24ddd1d57b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_child_parity_source_reads_and_held_conversion_at_two_result_sizes"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "PRF-FK9NKE"
+        },
+        {
+          "after": {
+            "blob": "96f428f7ed103996bb5fc0505bb9d312e50b662a",
+            "content": "sha256:edf8c1c24456efdbe01a27173dd6e4cf73a5a5e24126d1d3a7c44c7e08506604",
+            "locator": {
+              "kind": "symbol",
+              "name": "isolated_leaf_worklist"
+            },
+            "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py"
+          },
+          "before": {
+            "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
+            "content": "sha256:28d150c1d0542f6b041c67516ed7e8beb1bab925267b740cbd75c04b7bde8a6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "isolated_leaf_worklist"
+            },
+            "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py"
+          },
+          "id": "RLZ-52ACVE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-D8KR6B",
+      "items": [
+        "sha256:b1a82bf484df830041c5b64394cc77325524834d82551cd2126d38cc153964f9"
+      ],
+      "reason": "The child still processes the four explicitly held sides and performs neither a second base lookup nor a second capture. The candidate wire contains the two tree IDs.",
+      "revision": 1,
+      "subject": "INV-19P897"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DBCW56",
+      "items": [
+        "sha256:081e7a6b03b08d4276a42460d5d6ecb1e335aed7a3af20fdf9ea4315ee358977"
+      ],
+      "reason": "Carries the exact candidate trees and optional judged commit across the existing service boundary. The resolver and caller enforce the comparison.",
+      "subject": "hunk:sha256:081e7a6b03b08d4276a42460d5d6ecb1e335aed7a3af20fdf9ea4315ee358977"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DJ74YC",
+      "items": [
+        "sha256:c7087e657fa1da07b17c1fd3d1a0da02081c91a9e4351345ea05edfe9fb8d0a4"
+      ],
+      "reason": "The fixture writes the fork, advanced-pair and code-only contract states and calls the worklist directly. The worklist reads the recorded bases and persists beside the contract. A separate test checks that a missing recorded base produces an incomplete worklist naming K_B.",
+      "sources": [
+        {
+          "blob": "607beeeb7d7e98cdb39fe08eef7599c18962fd13",
+          "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_worklist_leaf.py"
+    },
+    {
+      "considered": [
+        "FAM-4ZNEN9",
+        "FAM-TYKA3T"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-DKHKJZ",
+      "items": [],
+      "reason": "Those families retain their existing exact reuse and child process guarantees. This invariant attributes the commit identity shared by recording, precompute and memo without changing those memberships.",
+      "revision": 1,
+      "subject": "membership:INV-CV043K"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DPR3JY",
+      "items": [
+        "sha256:60a313dfa556158c7b2b7bbd61c071c1c775c7ac1abd35de69181bd557fae86c"
+      ],
+      "reason": "Describes recomputation from the saved or retained bases without changing the sync transaction.",
+      "subject": "hunk:sha256:60a313dfa556158c7b2b7bbd61c071c1c775c7ac1abd35de69181bd557fae86c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DZA586",
+      "items": [
+        "sha256:4fd0570385199955d248a3b7ebe0ad5e6170a1c6d9be42b7536503aac7063fea"
+      ],
+      "reason": "Sets a missing K_B as the exact unavailable input for the worklist test.",
+      "subject": "hunk:sha256:4fd0570385199955d248a3b7ebe0ad5e6170a1c6d9be42b7536503aac7063fea"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EBQ5WK",
+      "items": [
+        "sha256:8663e5508dc39db2b2020e81ebb219e062cafb33d1ecc77286e7e897d0b1536e"
+      ],
+      "reason": "Documents the request field and the counted flag priority. The comparison logic is in the writer’s history-row owner.",
+      "subject": "hunk:sha256:8663e5508dc39db2b2020e81ebb219e062cafb33d1ecc77286e7e897d0b1536e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EE9JJY",
+      "items": [
+        "sha256:f621c41728d3138bc9908da290d66db3acb8b5230ffcdf9252cf52320f8b79d8"
+      ],
+      "reason": "Imports the contract type for the carry-over base helper’s annotation.",
+      "subject": "hunk:sha256:f621c41728d3138bc9908da290d66db3acb8b5230ffcdf9252cf52320f8b79d8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ERHNJ2",
+      "items": [
+        "sha256:8f18a792aa096ff19e7c431b045bd9d824769acdc15d2b3b3512641d84d1e16a"
+      ],
+      "reason": "The model route still exposes typed comparison carriers and the same record format. The live matcher is documented in the review-trees card.",
+      "sources": [
+        {
+          "blob": "214430d732f18ec7eee37028d988408c84ec78b6",
+          "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-FRX3PT",
+      "items": [
+        "sha256:61020a5079ee6df698a2331f089cbad1d3150232708024fb45975b4352d5e015"
+      ],
+      "reason": "The carry-over guide correctly states that apply establishes the receiving leaf's recorded memory base before writing and uses that base for both validation and the worklist.",
+      "revision": 3,
+      "subject": "DPD-6WW03D"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FTY1FG",
+      "items": [
+        "sha256:3d7f82f0ed5b726cf68e582d0229b20f313aecfdf491a037f52c78ffe6fcef22"
+      ],
+      "reason": "The writer account identifies the recorded-card comparison and its existing subject-count and operation-base paths.",
+      "sources": [
+        {
+          "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FVY6RS",
+      "items": [
+        "sha256:f0f01e8a3fcd018d76caca55e6e18e6d837384676a01f97a22d23240f01ddba7"
+      ],
+      "reason": "The new card explains the exact commit, tree and ancestry required by the recorded-base resolver and the typed failure boundary.",
+      "sources": [
+        {
+          "blob": "e3948d3c81258cf0fe5cb1c4855dcdddc8d3b152",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/recorded_base.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/recorded_base.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+            "content": "sha256:7c1cf5a5422d5788e1e9f673fc9f56d8ef6cae94b5ef665fe5a2a00ac25ecd08",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "before": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:d60f5903dad836bed90d610df54f3b1c4e4dc506538f44275f33e9dfc143955e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "id": "PRF-45KFFF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FX9Z31",
+      "items": [
+        "sha256:2cb19e5a820e4b06b6177f9a1277bd296571e89cdbc5001413f0e0538e70705f"
+      ],
+      "reason": "The held conversion is reused only for matching conversion inputs with an existing Git tree. The changed live base operand does not relax that check.",
+      "revision": 1,
+      "subject": "INV-2172NS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GGENE4",
+      "items": [
+        "sha256:734e406f22f7744ba833a5a3e9e90faabe41cc54f1ec811166197dd351aa4f2c",
+        "sha256:880c12f8075c7ba9a8b73679fbdfe21cc6e470d42141d2744fc9ed5c0aba7c41",
+        "sha256:c18fd17a0edadf3873e66ed35f1db99a3953173d905d9880ac9d746595a9c457",
+        "sha256:d6daa52aab309e19b5cc0962caca83cbf9d2a03cad6fd290928e5fd2ff8f2687",
+        "sha256:e62e81ac1ec3a74b15e77c68ede46126ba3534ffbe9b2545736f2fc20b226aa9",
+        "sha256:f189400fff63fadc4bccfc4e90ee632e79f266b56321e2db64812d46321c12ee",
+        "sha256:fc0461006819d586ce1d2f43f777703f424aaf173da0cf6517bf8d92e00d42f1"
+      ],
+      "reason": "A same-tree capture with a new recorded memory-base commit supersedes the older build.",
+      "sources": [
+        {
+          "blob": "f8681f4e589d236326554b167a0d6b0261fbe430",
+          "path": "mcp/src/agents_remember/application/review_overview_precompute.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_overview_precompute.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GTKC8B",
+      "items": [
+        "sha256:67d7fdbd89f0ff7f98b9c40ccad732f4d9f05e2da9e0344b3a7e2b240290b39e"
+      ],
+      "reason": "The fixture checks an unestablished recorded K_B as its own incomplete trace input, independent of the marker and candidate probe cases.",
+      "sources": [
+        {
+          "blob": "74519f758d6faf1f95c7cd79d9e1a22174238cf2",
+          "path": "mcp/tests/test_knowledge_gate_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_gate_routes.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b0ded045994c0f33f08b592285a3ef8070d98581",
+            "content": "sha256:4b7aa4da58dacb23e83bd1f9ebef6cf3259209a685fcd0a5b1b837697e8c91bf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "before": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:c016af62caf6f04f18066e62fabd1018fc831aa02e8bb03fa4d3710046da3063",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "id": "RLZ-A9Z2XZ"
+        },
+        {
+          "after": {
+            "blob": "214430d732f18ec7eee37028d988408c84ec78b6",
+            "content": "sha256:8f33cf09eea1d867a0328f9e8f86bad12f3da7972f3dc65505abe922a75cc442",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+          },
+          "before": {
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+            "content": "sha256:a3b3d00a11bafeaee340b1e8c0feb41a41144d9351d24487e35d54f116c36fcc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+          },
+          "id": "RLZ-ZHZJNK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GV96YB",
+      "items": [
+        "sha256:177d7feb455fe5de9ef3347c32ac1224b011ea258a3ce6487565af87acad968f"
+      ],
+      "reason": "An established legacy input still answers source-only. Invalid recorded bases and failed marker probes continue to have named refusal paths.",
+      "revision": 3,
+      "subject": "INV-YJZKYC"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H03YRR",
+      "items": [
+        "sha256:3f91d57dec089eadac48348c103a340f844e95707efe2baaea2cc3c72af9f90f"
+      ],
+      "reason": "Recomputation reloads the saved contract. Skipping memory preserves K_B and repository-default sync preserves both recorded bases.",
+      "sources": [
+        {
+          "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HC4ZSQ",
+      "items": [
+        "sha256:88e5e7677737de25d1956d469e4a19d1a52befdf097ff9c8f77a695446d71a30"
+      ],
+      "reason": "The wire holds the two candidate trees and held base. The child consumes them without resolving a second base.",
+      "sources": [
+        {
+          "blob": "96f428f7ed103996bb5fc0505bb9d312e50b662a",
+          "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/reviewer_worklist_child.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-HGG3NG",
+      "items": [
+        "sha256:4a1e31d82bf70358e54e238ac136dfc5c84aab08944eed9321b2de627bceff36"
+      ],
+      "reason": "The base-commit key change triggered reconsideration. The wider shared-cache alternative remains rejected, and its fired code link now names the current memo implementation.",
+      "revision": 7,
+      "subject": "DEC-H24NXK"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HNCY2Z",
+      "items": [
+        "sha256:7df9235045b57df11aa4358e37ffecc4bd8ae3164256f90a0d990d3bdbc504b7"
+      ],
+      "reason": "Checks the diagnostic names K_B for the missing memory operand.",
+      "subject": "hunk:sha256:7df9235045b57df11aa4358e37ffecc4bd8ae3164256f90a0d990d3bdbc504b7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "96f428f7ed103996bb5fc0505bb9d312e50b662a",
+            "content": "sha256:edf8c1c24456efdbe01a27173dd6e4cf73a5a5e24126d1d3a7c44c7e08506604",
+            "locator": {
+              "kind": "symbol",
+              "name": "isolated_leaf_worklist"
+            },
+            "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py"
+          },
+          "before": {
+            "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
+            "content": "sha256:28d150c1d0542f6b041c67516ed7e8beb1bab925267b740cbd75c04b7bde8a6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "isolated_leaf_worklist"
+            },
+            "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py"
+          },
+          "id": "RLZ-60HKWA"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JFAV1V",
+      "items": [
+        "sha256:57d00c6cd04dcebf391da6af5a2baa881f54ad29a8c70dd1a16917715fa3fdac"
+      ],
+      "reason": "Reuse still requires complete, currently matching observations. The child receives the captured bases rather than repeating a lookup.",
+      "revision": 3,
+      "subject": "INV-BBPPS5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JMA999",
+      "items": [
+        "sha256:b8e975bd21de217f47e2712615ee1d490c1687cd79b37a8c7561bdd3311fd65f"
+      ],
+      "reason": "Updates the explanatory text for separate validator and recorded card bases and their shared conversion machinery.",
+      "subject": "hunk:sha256:b8e975bd21de217f47e2712615ee1d490c1687cd79b37a8c7561bdd3311fd65f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JWQACW",
+      "items": [
+        "sha256:1fc21ebb84a14016eeb2444d8833c597acddf0b1f9092cbd2269d7bf22dd1197",
+        "sha256:3da9e73af5298df82e0336cabec3784737380b689ebd0ded53d6cfcea7435d38",
+        "sha256:404897361602af7a969a863e1ac28d1c5ca3cc1bb3375fa7d8efffe041cca691",
+        "sha256:96da93ae20c68f31ae68bb4349a18b84cbcad3cf90aa256be08c04a9200b0606",
+        "sha256:aaad27f67c0ecb78e2bb2e38c88768a331a05a7829fc4c4b2af2e95d51b3ceef",
+        "sha256:d27d3bcaf8f23584cb042591aba1fc747ba6c15300c4a5c461f9ffb87a42eef8",
+        "sha256:dd47c9490cca12062264f30bb6099bfeec83f6a75da4e64004fcf495a73c4aa0",
+        "sha256:e4e5d4760da00b5e5617d500490f0b212b1dd03540f82d6f1738969546b1aee0"
+      ],
+      "reason": "The native sync regression verifies exact live reuse and count binding when the four trees match but the base commit changes.",
+      "sources": [
+        {
+          "blob": "45cc9e7680746a43e3621d23dace0c43ba41de2a",
+          "path": "mcp/tests/test_review_live_answers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_live_answers.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K7TZGM",
+      "items": [
+        "sha256:92f11b95f9af067e8cbc19f2433f4d870e56d1eff8aed40447f3883ce6001d9a",
+        "sha256:9a79dee7b1df7f23dd1f3692a6de4d8e8826bf6ee504d142a3b162890ac08cf7",
+        "sha256:a36bceb11cbdee99b0a97ff05bcb7f546143eff315d7093b43ed3ca2e7646e5b",
+        "sha256:ab6fccc0c38db57ed3aac2c8fd5856b55ea674bc727552dc27d31843147656f7"
+      ],
+      "reason": "The dataset fixture now commits legacy input and records that base before the existing no-attribution assertion.",
+      "sources": [
+        {
+          "blob": "99896de847cf457209b32c62e5db1eb7b85cdb3a",
+          "path": "mcp/tests/test_review_unexplained_lane.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_unexplained_lane.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
+            "content": "sha256:488f8b9ce6965cf69f1a0449bad8debb4f3a0d10eed3fa5e848d082581c1cb9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carryover_judges_only_leaf_and_carried_changes_after_memory_sync"
+            },
+            "path": "mcp/tests/test_carryover_apply_transaction.py"
+          },
+          "before": "absent",
+          "id": "PRF-H97N1X"
+        },
+        {
+          "after": {
+            "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
+            "content": "sha256:0686e26712bec26858e0d0f34cb0c2b595cac43a5c68b7fd282fa8606ff0f144",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unrelated_recorded_base_refuses_carryover_before_any_write"
+            },
+            "path": "mcp/tests/test_carryover_apply_transaction.py"
+          },
+          "before": "absent",
+          "id": "PRF-TF1KEE"
+        },
+        {
+          "after": {
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "content": "sha256:93f20e53753f18e1b1db20174f095af6c2114477ae33eb6b6b8dd1fb2c34c195",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_converted"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+          },
+          "before": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_converted"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+          },
+          "id": "RLZ-MA1Q10"
+        },
+        {
+          "after": {
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "content": "sha256:a455a9fc904e4d7782e4f5f5b22f1e2052df0bc49bf3f230afad396df66763f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_for"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+          },
+          "before": "absent",
+          "id": "RLZ-NVS62B"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-KDHQXB",
+      "items": [
+        "sha256:f11e7740f8d576fa81d681cf8dcd4a6b0c764e71ba27fae7e27e19385a9b1fd3"
+      ],
+      "reason": "Apply establishes the receiving leaf’s recorded ancestor before writing. The validator and worklist use that same memory base, with the official code and owned rollback unchanged. Evidence (L21-W2 additional realization INV-MZ13SJ): BUG-R21@v1 rule 3 W2. mcp/tests/test_carryover_apply_transaction.py::test_carryover_judges_only_leaf_and_carried_changes_after_memory_sync. mcp/tests/test_carryover_apply_transaction.py::test_unrelated_recorded_base_refuses_carryover_before_any_write.",
+      "revision": 2,
+      "subject": "INV-MZ13SJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KFSN34",
+      "items": [
+        "sha256:8bbca4e22cc27780382d6a2b3eba599e27ef8b0110f56b7eb09ebc63f6d5ade1"
+      ],
+      "reason": "The import follows the shared CandidateTrees type into the worktree service boundary.",
+      "subject": "hunk:sha256:8bbca4e22cc27780382d6a2b3eba599e27ef8b0110f56b7eb09ebc63f6d5ade1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7dae9040baa0515a180e80c9087493f4f174f64c",
+            "content": "sha256:eb78367acff80eb3189230d261e74d46b7ed9a8134362980c647ea6e62176f41",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/uv.lock"
+          },
+          "before": {
+            "blob": "1ce1daf838e477fa056e928ba17e4bd873899c6f",
+            "content": "sha256:e8e8bc7a055936697c4660a37f1202a70d09940aa1cd7da5df988250d19995ea",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/uv.lock"
+          },
+          "id": "RLZ-7M3P2R"
+        },
+        {
+          "after": {
+            "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
+            "content": "sha256:780e2e62d63243b1d16ca6fce86db386b03b63818b07777b6f09f478c78689df",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "before": {
+            "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+            "content": "sha256:0efbc28abe7b47ede5f4ac5efadb6fb68a8eed9a9ebc503cf0901612a27dbb5a",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "id": "RLZ-A4TZZ0"
+        },
+        {
+          "after": {
+            "blob": "393e94f256070902f2e90853cb7135bcea711381",
+            "content": "sha256:343d3a559e4162769dbd646f53825e8513f4bc169c5dd9266049c712f7ab2f41",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "before": {
+            "blob": "6c35df665ffac7bf152c3badf993d303ed12c451",
+            "content": "sha256:5cf8c5695ef7f0adabe7518965c8252699c2b9724d211cb784f8ae187a99c7c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "id": "RLZ-YGKGJR"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KP8P9H",
+      "items": [
+        "sha256:b970b859843814efea13bf5773682a0f03ed4a75aa4ec44b176d8d9a009cbdc2"
+      ],
+      "reason": "The established equality obligation across project metadata, the package lock entry and the source-checkout fallback survives the authorized release. The version-neutral wording and the re-recorded realizations implement the Architect’s 22:22:34Z decision.",
+      "revision": 4,
+      "subject": "INV-BQFZCR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MYH5Q4",
+      "items": [
+        "sha256:6384075919d09ef88cd5a3e4c3dfd8ac61a6fa67bf1f442a0a021b0d319a9d42"
+      ],
+      "reason": "The child parity test guards that the held comparison causes no second base resolution, capture or conversion.",
+      "sources": [
+        {
+          "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
+          "path": "mcp/tests/test_reviewer_worklist_process.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_reviewer_worklist_process.py"
+    },
+    {
+      "considered": [
+        "FAM-DGPZ0R",
+        "FAM-NQQP2T",
+        "FAM-4ZNEN9"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-MZMV0V",
+      "items": [],
+      "reason": "The existing families cover trace answers, publication and live review independently. This invariant spans their comparison inputs without changing any family membership.",
+      "revision": 1,
+      "subject": "membership:INV-YV48D0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N1931Q",
+      "items": [
+        "sha256:aea859fc020f11448f2e5d6111b99d73e4d3a8a11808166084c4e42dde2cc8e8"
+      ],
+      "reason": "The operation validation bases and recorded card comparison have separate inputs but share the existing conversion machinery.",
+      "sources": [
+        {
+          "blob": "0428cbae9adf847060e3bc0ba3fa57cb86f0d501",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/base_side.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/base_side.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N9WS4W",
+      "items": [
+        "sha256:1ac6e7c6ba7af2ca74f8c945e62df3e7529f3e8e1bca70f7edf08894785c26b8"
+      ],
+      "reason": "Updates the explanatory text for separate validator and recorded card bases and their shared conversion machinery.",
+      "subject": "hunk:sha256:1ac6e7c6ba7af2ca74f8c945e62df3e7529f3e8e1bca70f7edf08894785c26b8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NFRXFY",
+      "items": [
+        "sha256:a59d36eb357dee0549574ee497ec54fc9639a0a96742b74d51526acfb36985a7"
+      ],
+      "reason": "Documents or stores the memo identity that the memo-key realization computes and the gate compares.",
+      "subject": "hunk:sha256:a59d36eb357dee0549574ee497ec54fc9639a0a96742b74d51526acfb36985a7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NG1ETW",
+      "items": [
+        "sha256:373856c2c9a3c23b6805f1ae56b440025ac2159a5eada0d52415408a9970c314"
+      ],
+      "reason": "Explains the separate bases and the existing operation merge revision rule in the module introduction.",
+      "subject": "hunk:sha256:373856c2c9a3c23b6805f1ae56b440025ac2159a5eada0d52415408a9970c314"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NGYVZP",
+      "items": [
+        "sha256:44778462da45b4a1c2714f933f8e2fcd08f0f98f60a4fb6e50dd3b76246fa05d"
+      ],
+      "reason": "Removes the private helper’s former memory lookup after the worklist establishes and passes its base.",
+      "subject": "hunk:sha256:44778462da45b4a1c2714f933f8e2fcd08f0f98f60a4fb6e50dd3b76246fa05d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NKFN2E",
+      "items": [
+        "sha256:5a77fe0bae97d7bb6ff3903bf58b56cf87545cee26ab85519e469757eda13454"
+      ],
+      "reason": "The worktree wrapper still gates the exact candidate through the bound port and retains positive marker classification. The formal comparison carrier propagates the judged commit.",
+      "sources": [
+        {
+          "blob": "417ebaf9a63383080fa4e65b4a78376050b55121",
+          "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/knowledge_gate.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NPMTRV",
+      "items": [
+        "sha256:9d732e936d424410c44aa688654eeafb5e218b6af77b55df733a60fcfbe67fc3"
+      ],
+      "reason": "The MCP overview records the leaf gate and writer route at the recorded base, and its package pin and lock references still describe their existing responsibilities after the release value changes.",
+      "sources": [
+        {
+          "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
+          "path": "mcp/pyproject.toml"
+        },
+        {
+          "blob": "5d99232060bf4011483e80360016059bed9fa89a",
+          "path": "mcp/src/agents_remember/cli/knowledge_worklist.py"
+        },
+        {
+          "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
+          "path": "mcp/src/agents_remember/errors.py"
+        },
+        {
+          "blob": "7dae9040baa0515a180e80c9087493f4f174f64c",
+          "path": "mcp/uv.lock"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P2EHWB",
+      "items": [
+        "sha256:b31544b2503ada8597164b6ad73f259ac33d7f69db6a389af6caf06cd35305ab"
+      ],
+      "reason": "Removes old reader and Git-error imports after the card read moves to MemoryState and the shared converter.",
+      "subject": "hunk:sha256:b31544b2503ada8597164b6ad73f259ac33d7f69db6a389af6caf06cd35305ab"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PC503V",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The current catalog lists the worklist regression as a consumer of the settings guard, portable Node lockfile and read-boundary oracle.",
+      "sources": [
+        {
+          "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q1SMS3",
+      "items": [
+        "sha256:7e133bee2364e79420ec7b6c3586c82d8871c2b4f8b2ba69fc7dbc2966f610c0",
+        "sha256:a6eaa5c2a921b7b6890251f6bb7406522493811819a4d3f8f51e4ad9adb17ade"
+      ],
+      "reason": "The single edited comment names the recorded base in the fixture. The queue’s inputs and inspected behavior are unchanged.",
+      "sources": [
+        {
+          "blob": "72bc85cd4b6174d230fbe6e23292512ef716e712",
+          "path": "mcp/tests/test_closeout_queue.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_closeout_queue.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q64YKH",
+      "items": [
+        "sha256:26883c484cbbdc4efd39d19fce0c12c4df2b7900589fbd94690e458761084df4"
+      ],
+      "reason": "An exact pair judgment passes the judged memory commit as ancestry input while retaining the caller’s validator bases.",
+      "sources": [
+        {
+          "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+          "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QBEACD",
+      "items": [
+        "sha256:a08fa8d26df8e1e18976d086a585d921e3b6b50c9486cb6a3a36e95c6df811be"
+      ],
+      "reason": "Gate reuse includes the recorded base and judged or observed memory commit in its exact candidate identity.",
+      "sources": [
+        {
+          "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/memo.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-QJ5N6Q",
+      "items": [
+        "sha256:80b7ff82f7b185fc71d5612b7c481fa8515c7cfaf54c1d0292b053e2e552a4cb"
+      ],
+      "reason": "The C09 reference still describes a shared preview and apply verdict over the exact candidate trees.",
+      "revision": 6,
+      "subject": "DPD-9K25G8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R0KVR2",
+      "items": [
+        "sha256:fc988b0c15a83c9e4fdd3e9d2faa7409b81764ea92f0826c4e6424d02265426a"
+      ],
+      "reason": "Live reuse binds the exact memory-base commit alongside candidate, base and conversion trees.",
+      "sources": [
+        {
+          "blob": "5702dcd367e420a23e27109f1c2efce4351f7229",
+          "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_leaf_view_memo.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R53KSS",
+      "items": [
+        "sha256:10bcbf200839ec728d477e81ec28e545aab104efc42b23d7d967a07416429355",
+        "sha256:5e90a8877db011e5ae9fbaf0836da54a556e877f2a91f52e81083e0588a33c9b",
+        "sha256:5faa4a32d80606d8210e0181c3e1a0f5b896f9cc3d368dddb94667bef7604feb",
+        "sha256:b9301f77736a80d45fbfee67a64789eba44cbc407964dcbbb93d91987b75d954",
+        "sha256:cc4cc60969d4ed3423318ebf9f65606b881a6236848090f956543fa5853e3778"
+      ],
+      "reason": "The case compares against the recorded memory base and carries the current subject count when the recorded side is unavailable.",
+      "sources": [
+        {
+          "blob": "f361eedd4f41726791df78e3b5821d126c86c867",
+          "path": "mcp/tests/test_mik_r53_onboarding_gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mik_r53_onboarding_gate.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 5
+        },
+        {
+          "id": "INV-3BGCAT",
+          "revision": 2
+        },
+        {
+          "id": "INV-3FA4VG",
+          "revision": 1
+        },
+        {
+          "id": "INV-5JEN5D",
+          "revision": 1
+        },
+        {
+          "id": "INV-6DFQ9P",
+          "revision": 3
+        },
+        {
+          "id": "INV-78GNBA",
+          "revision": 2
+        },
+        {
+          "id": "INV-9CSYZS",
+          "revision": 1
+        },
+        {
+          "id": "INV-HAQRFD",
+          "revision": 1
+        },
+        {
+          "id": "INV-KSJZS0",
+          "revision": 1
+        },
+        {
+          "id": "INV-M0J963",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-RFJ0T3",
+      "items": [
+        "sha256:c8269efe450443aab9db687b248fa2735bf88d5266e4d8aa5de2216c87a4611c"
+      ],
+      "reason": "Pair routes still judge their actual captured candidates before publication or recording. The added judged commit supplies the ancestry witness without replacing the validator bases.",
+      "revision": 3,
+      "subject": "FAM-NQQP2T"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RVMBB6",
+      "items": [
+        "sha256:c1fabfa300796faa99356bd13563452d6b2e52681ed68fb671e8674950cd5def"
+      ],
+      "reason": "Replaces the attribution import with the shared resolver and its typed error. The writer route owns the response.",
+      "subject": "hunk:sha256:c1fabfa300796faa99356bd13563452d6b2e52681ed68fb671e8674950cd5def"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RY26R3",
+      "items": [
+        "sha256:a640b0910d3f3fe5b5e27ecea772e20c2afd8c14f11ae6eb22ee1b69743c27fb",
+        "sha256:adfcf8daadabcb5b90cabeba621a0f848a621177cb1548f16c637aa76f6d5b2c"
+      ],
+      "reason": "The fixture docstring acknowledges recorded bases. Its explicit equivalent-copy source coverage and row assertions are unchanged.",
+      "sources": [
+        {
+          "blob": "2f0f540cb2f268ebd773c1887848b81cc6fa0f44",
+          "path": "mcp/tests/test_mik_r173_card_row_binds_every_copy.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mik_r173_card_row_binds_every_copy.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RZPF7Q",
+      "items": [
+        "sha256:459e81b30bece66ed46604d413d0b4b3651a0f16cf891666d6e95ee9c81dd1d7"
+      ],
+      "reason": "The memory route retains external carry-over as a worktree-only transaction with exact-tree validation, rollback and separate leaf publication. The receiving-base selection belongs to apply.",
+      "sources": [
+        {
+          "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+          "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-S3JQJM",
+      "items": [
+        "sha256:9d2c193a33c5127722c34773246271b6b7d89ec05fb0e880bed200f43d27dfd0"
+      ],
+      "reason": "The pytest bootstrap guide still correctly describes the selected native stdio stress case and its uninstrumented warm-index child and measured server.",
+      "revision": 10,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SCCYXA",
+      "items": [
+        "sha256:61ebcbd99131b416fdae9ea9dc5dd34e00b0935d11a0579af306e4fefecab285"
+      ],
+      "reason": "The general error taxonomy still applies. RecordedMemoryBaseError lets its callers keep their existing distinct incomplete, refused and unavailable responses.",
+      "sources": [
+        {
+          "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
+          "path": "mcp/src/agents_remember/errors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/errors.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-SJX4M4",
+      "items": [
+        "sha256:4df3227bde49c3625e0fd6cff8de00fcfb01ff16bdef113971aec3b90f887111"
+      ],
+      "reason": "The contributor guide's seven-lane assignment and catalog procedure still apply to the new worklist test's unit-regression placement.",
+      "revision": 10,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SXGPJX",
+      "items": [
+        "sha256:81c80768e657ff5190c51b2adab71966fb390e90d2c3596db402d26a4d439f49",
+        "sha256:9b260e15f231199291fde2c87d369c05768e70bf9dd42c7b2a3b362d532e9a3e"
+      ],
+      "reason": "The F05 card records the empty converted ancestor in the contract and the populated candidate. Its current source asserts both sides are inspected and the empty before side contributes zero mappings.",
+      "sources": [
+        {
+          "blob": "b04b2d84e920fde36816532999d3d7abd2656212",
+          "path": "mcp/tests/test_knowledge_review_attribution_precedence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_review_attribution_precedence.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T7MG6F",
+      "items": [
+        "sha256:e9975b8206dbcb8ff6c56350f260d7e7762bc7ba4c908872074bcde8ef84e473"
+      ],
+      "reason": "Documents the request field and the counted flag priority. The comparison logic is in the writer’s history-row owner.",
+      "subject": "hunk:sha256:e9975b8206dbcb8ff6c56350f260d7e7762bc7ba4c908872074bcde8ef84e473"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TAHWX3",
+      "items": [
+        "sha256:fd47c4b43c5e99f7aca2692ec5c7bf372dfd1380c057c7dd5b85554a4bbab06f"
+      ],
+      "reason": "The request and authoring boundary distinguish the recorded side for cards from operation and validator bases.",
+      "sources": [
+        {
+          "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/writer.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TDHRCE",
+      "items": [
+        "sha256:8f4def9ffdab6b7454bb80fe49614ad4ddfe9da26838fbb04ad81f7e225aea2c"
+      ],
+      "reason": "Apply admits the receiving leaf’s recorded memory base before writing and uses it for official-code validation and worklist recomputation.",
+      "sources": [
+        {
+          "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+          "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/carryover_apply.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TFJ2F9",
+      "items": [
+        "sha256:e90532305d643990bd5db1330373c4804e8c1ce406e046d064a76d7ec128ea10"
+      ],
+      "reason": "The module introduction describes the recorded inputs, conversion basis and incomplete result implemented by the resolver and worklist.",
+      "subject": "hunk:sha256:e90532305d643990bd5db1330373c4804e8c1ce406e046d064a76d7ec128ea10"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TV919R",
+      "items": [
+        "sha256:91c8940b9e314f3611905e7cf80b3f95c8821a2efb59407d85c4d4173594e366"
+      ],
+      "reason": "The file explains the recorded card read independently from operation revisions and the merge validator bases.",
+      "sources": [
+        {
+          "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/memory_state.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0APWSR",
+          "revision": 2
+        },
+        {
+          "id": "INV-2FA2B5",
+          "revision": 2
+        },
+        {
+          "id": "INV-7V4K9G",
+          "revision": 4
+        },
+        {
+          "id": "INV-HGJNDG",
+          "revision": 2
+        },
+        {
+          "id": "INV-HYZSDK",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-TZ5385",
+      "items": [
+        "sha256:5f5dceb03775914d15359300950b1cdb5041704243100f98db7f19e930f6cc9f"
+      ],
+      "reason": "The leaf trace and its verification derive the same item and candidate source set. Establishing the recorded ancestor restores their shared comparison basis.",
+      "revision": 2,
+      "subject": "FAM-DGPZ0R"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "content": "sha256:5a1fb5ce64d36ed8a536fb2a134ac7dd791974824b19c496b518883ab6718e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py"
+          },
+          "before": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:f216c1e5ab8e725242ca791fa8d1076802b01890395eafcca883da4b26928e1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py"
+          },
+          "id": "RLZ-37C6YX"
+        },
+        {
+          "after": {
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "content": "sha256:2152bb780f3ece16518e62c3f2425da3c069022541d24f0186340ac27ddd67ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryState"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py"
+          },
+          "before": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:a2395b54511ebd6053dc5994c21946a4ade91a4bbc946fb789c18acb68ad4fb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryState"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py"
+          },
+          "id": "RLZ-WNE09J"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-VVRPTF",
+      "items": [
+        "sha256:061111ade8c6e9a68bbce7909cc6543d1c310a2f526318f7331329f0e0292438"
+      ],
+      "reason": "The obligation concerns validation during a merge. The writer’s operation bases and its separate recorded card-comparison base have distinct purposes.",
+      "revision": 2,
+      "subject": "INV-EZEJQD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VWN5WF",
+      "items": [
+        "sha256:862a60005c848762212aea0ef070d26da6877139dd6b4b53267f448744c5b4c2"
+      ],
+      "reason": "Renames the existing proof to identify the recorded pair it exercises.",
+      "subject": "hunk:sha256:862a60005c848762212aea0ef070d26da6877139dd6b4b53267f448744c5b4c2"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19P897",
+          "revision": 1
+        },
+        {
+          "id": "INV-BBPPS5",
+          "revision": 3
+        },
+        {
+          "id": "INV-HHZP57",
+          "revision": 1
+        },
+        {
+          "id": "INV-PKBCZ0",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z2HVKA",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-W0R980",
+      "items": [
+        "sha256:790c834fdc176fa013db771b90714e98f711b317e874617d8163a6315c6d6908"
+      ],
+      "reason": "The live child still uses the captured comparison and returns its verdict or refusal. Same-tree live views now include the captured base commit. Recorded reopen and child isolation stay distinct.",
+      "revision": 1,
+      "subject": "FAM-TYKA3T"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-W80F6G",
+      "items": [
+        "sha256:f4353d2d384caf37f7e39c137c12bfc6fca06fc85664387046f8df667cd4200c"
+      ],
+      "reason": "The features page still describes exact-candidate judgments and paired closeout with code attribution on the memory commit.",
+      "revision": 16,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+            "content": "sha256:4e84a1e0ac9cbe0c8afb17e3de0218b5134da675b5f862bfb7f371b5518fbfa8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+            "content": "sha256:73131678c3db3d9aec04f4be66fb3ac229f386778e51cc5ba0138f4ee9c4e832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "eb8607a2320c8d7377f0117f43665298b27685f6",
+            "content": "sha256:3a6f3c9a9799ed9aa36ee658e0f57efe681d5704ad5d184682812bc0bea547fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WFQ0AD",
+      "items": [
+        "sha256:9475931d535fbf910497f6a9bbc2c00ae33eddcb34945a4583550f523c333d64"
+      ],
+      "reason": "The changed catalogs keep the generation-scoped scratch root cases and bind the new test independently.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:2a88445cf4b2a4107565296539834a4f3423c5f76f36e5f267aade5c5b0ab1c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "before": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:84e896178f95f5b455a12673239c99b93dbef512fa8389c0992780e32e188365",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "id": "PRF-XJ7PEW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WKXWX8",
+      "items": [
+        "sha256:177f778ce18ccde21fd068958d055d86c5f08c2483fd090babb920aa289d30f8"
+      ],
+      "reason": "The fixture advances the real memory worktree and records its base before re-reading. The view’s unavailable and current-source response shapes are unaffected.",
+      "revision": 2,
+      "subject": "INV-ZMW639"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WYGPE6",
+      "items": [
+        "sha256:34c772a60bc54585bcb3e217382f44f7e5efc182e28c49ae02f7b85bdb7deb88"
+      ],
+      "reason": "The application route explains the recorded base, ancestry and writer comparison across worklist, trace, review and authoring.",
+      "sources": [
+        {
+          "blob": "498b820bd6494307859bca60adaa0683064ffd10",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/adapter.py"
+        },
+        {
+          "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+        },
+        {
+          "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
+        },
+        {
+          "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+        },
+        {
+          "blob": "79d594f19005ef10e2e3c9dd04a5e9553b687305",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
+        },
+        {
+          "blob": "96ec8f20e7fa867e308b007426a82a10f8e97fce",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_inputs.py"
+        },
+        {
+          "blob": "e3948d3c81258cf0fe5cb1c4855dcdddc8d3b152",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/recorded_base.py"
+        },
+        {
+          "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+          "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+        },
+        {
+          "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+        },
+        {
+          "blob": "fda2d33b76fa7dc7d21a24af285e448572786400",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+        },
+        {
+          "blob": "0428cbae9adf847060e3bc0ba3fa57cb86f0d501",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/base_side.py"
+        },
+        {
+          "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py"
+        },
+        {
+          "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+        },
+        {
+          "blob": "5702dcd367e420a23e27109f1c2efce4351f7229",
+          "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+        },
+        {
+          "blob": "f8681f4e589d236326554b167a0d6b0261fbe430",
+          "path": "mcp/src/agents_remember/application/review_overview_precompute.py"
+        },
+        {
+          "blob": "b0ded045994c0f33f08b592285a3ef8070d98581",
+          "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+        },
+        {
+          "blob": "96f428f7ed103996bb5fc0505bb9d312e50b662a",
+          "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-X1DWQF",
+      "items": [
+        "sha256:91f97045575f77f7692f66b2b94a022c3e0390877cb5b5c95b750727efcd7578"
+      ],
+      "reason": "The roadmap's worklist link still reaches the section that explains how changes bring knowledge back for judgment.",
+      "revision": 6,
+      "subject": "DPD-3P9XTZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XADQC7",
+      "items": [
+        "sha256:780545b5bb02aac68a6c511d1b9812c1a58de3839de19322485c30fa464ef198"
+      ],
+      "reason": "The resolver card records 3.0.6 for the source-checkout fallback and retains installed distribution metadata as authoritative.",
+      "sources": [
+        {
+          "blob": "393e94f256070902f2e90853cb7135bcea711381",
+          "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/primitives/version.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XAVWNQ",
+      "items": [
+        "sha256:57120db289f7ee2982078104be3cd2e0c6993ac4c87f9d46510e1b802c979186"
+      ],
+      "reason": "The two comparison predicates distinguish live commit identity from tree-only delivered matching.",
+      "sources": [
+        {
+          "blob": "214430d732f18ec7eee37028d988408c84ec78b6",
+          "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/review_trees.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b0ded045994c0f33f08b592285a3ef8070d98581",
+            "content": "sha256:24d427bc556d48caa53b735b34e1779bd4772ceebfe654666156d4b1f03378af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "before": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:639461df1cf6867c5e472adf9cb432084a999d67bbd9006f9b0505bfc108bf85",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "id": "RLZ-9ZHMCX"
+        },
+        {
+          "after": {
+            "blob": "b0ded045994c0f33f08b592285a3ef8070d98581",
+            "content": "sha256:518ddc9abe7a07ac1824868fb7db5c9e62a57bc642539ddde4e2527ab8f75b92",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "before": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:b3ce7ef4d39ebc9b5e9b7196685ffdfe273801560075609975f116f379c16c9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "id": "RLZ-W6SNEZ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-XKF5WP",
+      "items": [
+        "sha256:6c1e39941b1b0509c374b0918dc5f6fa8e1965aa7c6e74bf812f1f470fb53d2e"
+      ],
+      "reason": "Live record reuse and the race winner must match the exact recorded memory-base commit in addition to the four trees and converted base. Delivered and numbered comparison behavior remains governed by their existing paths.",
+      "revision": 3,
+      "subject": "INV-Z2HVKA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XWJTQX",
+      "items": [
+        "sha256:e311f365062b543e6be92a9ff6b39a6f2309a28a7ba25d2e9abb60bd4edef0f7"
+      ],
+      "reason": "Removes attribution imports used only by the retired trailer search.",
+      "subject": "hunk:sha256:e311f365062b543e6be92a9ff6b39a6f2309a28a7ba25d2e9abb60bd4edef0f7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y3GK4P",
+      "items": [
+        "sha256:b45c781a6baa5ca8cc7edc37a0670c2ea018d26625eabff7f2d016cf515e83dd"
+      ],
+      "reason": "The import follows the shared CandidateTrees type into the worktree service boundary.",
+      "subject": "hunk:sha256:b45c781a6baa5ca8cc7edc37a0670c2ea018d26625eabff7f2d016cf515e83dd"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YH9DSP",
+      "items": [
+        "sha256:e2fd6554c7848563004e6e367823881ffa129bca98bcb1f793cd69c1fbbfd7a1"
+      ],
+      "reason": "The route’s metadata-or-source version resolver description still applies. The fallback literal belongs to the version file and its file card.",
+      "sources": [
+        {
+          "blob": "393e94f256070902f2e90853cb7135bcea711381",
+          "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/primitives/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YJ7ATE",
+      "items": [
+        "sha256:b037e62d4a75ba33350adc80019815c62116948aaccdb5a8a94709273169a4f3"
+      ],
+      "reason": "The manifest card’s release-related evidence now binds the 3.0.6 metadata and the resolver. Its Python 3.14 and dependency descriptions retain the same meaning.",
+      "sources": [
+        {
+          "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
+          "path": "mcp/pyproject.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/pyproject.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8ce9014b62634b589b6ace0c0fb81e844f8fd659",
+            "content": "sha256:5ce4a7b851715da54c93de5156c0e7f5cba5178ff8f259782283c60784abc1df",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "README.md"
+          },
+          "before": {
+            "blob": "e01c0011e7abe3ff62dd2d91165f2f07908174c6",
+            "content": "sha256:dbcfaa17db59b99eeea9b3155ac5865b6463ca29ae9945ce311c48ed150354c8",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "README.md"
+          },
+          "id": "RLZ-5R1WWT"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YKS8NQ",
+      "items": [
+        "sha256:fa90d5f224be33869d3668351620dc8d40b4ce1e38f253bf26016978963650a9"
+      ],
+      "reason": "The public Status sentence gives the package metadata’s version. The version-neutral wording and the re-recorded README realization implement the Architect’s 22:22:34Z decision.",
+      "revision": 4,
+      "subject": "INV-MG3HK1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fda2d33b76fa7dc7d21a24af285e448572786400",
+            "content": "sha256:66304b2213740ebaac3f0843141f15d491b0d6927a6012990cf18ff0d798bd5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring._onboarding_row"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "before": {
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "content": "sha256:6f944a3e348583a6689ba670e262926babba617d5e56556a5b769363b45d3c51",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring._onboarding_row"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "id": "RLZ-051AWY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z3J3X2",
+      "items": [
+        "sha256:61b1d398d4c45e400c9d77ca901f5c2737d6c28d31adf4322ce448b44662d5f5"
+      ],
+      "reason": "The existing source-set binding still uses the exact candidate sources named by the worklist, including sources shared by an overview judgment.",
+      "revision": 4,
+      "subject": "INV-7V4K9G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z41JSW",
+      "items": [
+        "sha256:ec02990d9e1aaaf0bad00251f4f2122c0c51617f9836ed32dc927205385feed6"
+      ],
+      "reason": "Removes the private unreadable-base exception. The counted-change operation now handles an unavailable side through its admitted comparison order.",
+      "subject": "hunk:sha256:ec02990d9e1aaaf0bad00251f4f2122c0c51617f9836ed32dc927205385feed6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z5ZWZ6",
+      "items": [
+        "sha256:3d7d3da853a0c574f88c0e414a44969557f827cc09c80e2550a92ab9c117b56e"
+      ],
+      "reason": "The test route explains recorded-base comparisons, exact commit ancestry, conversion, carryover and live reuse. Reference 1536 remains evidence for the unchanged unreadable-half case, and its source binding now includes the attribution fixture revision.",
+      "sources": [
+        {
+          "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
+          "path": "mcp/tests/test_carryover_apply_transaction.py"
+        },
+        {
+          "blob": "72bc85cd4b6174d230fbe6e23292512ef716e712",
+          "path": "mcp/tests/test_closeout_queue.py"
+        },
+        {
+          "blob": "74519f758d6faf1f95c7cd79d9e1a22174238cf2",
+          "path": "mcp/tests/test_knowledge_gate_routes.py"
+        },
+        {
+          "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
+          "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+        },
+        {
+          "blob": "b04b2d84e920fde36816532999d3d7abd2656212",
+          "path": "mcp/tests/test_knowledge_review_attribution_precedence.py"
+        },
+        {
+          "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+          "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+        },
+        {
+          "blob": "607beeeb7d7e98cdb39fe08eef7599c18962fd13",
+          "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+        },
+        {
+          "blob": "1e640afd7c1913ab1177a397155c59da4ad86447",
+          "path": "mcp/tests/test_legacy_refusal_envelope.py"
+        },
+        {
+          "blob": "2f0f540cb2f268ebd773c1887848b81cc6fa0f44",
+          "path": "mcp/tests/test_mik_r173_card_row_binds_every_copy.py"
+        },
+        {
+          "blob": "f361eedd4f41726791df78e3b5821d126c86c867",
+          "path": "mcp/tests/test_mik_r53_onboarding_gate.py"
+        },
+        {
+          "blob": "166a2dccebfa1bd1deeb7b24c7edd12b59e8193c",
+          "path": "mcp/tests/test_onboarding_trace_gate.py"
+        },
+        {
+          "blob": "92f210ce896f3d0228072730f4485d26eaf88854",
+          "path": "mcp/tests/test_recorded_leaf_memory_base.py"
+        },
+        {
+          "blob": "c56b044d692ae36eacdef758b19a47c3b1dc90aa",
+          "path": "mcp/tests/test_review_change_kinds.py"
+        },
+        {
+          "blob": "1e4dbd157a0f001f0ab0521750b0dbeeaf8205a3",
+          "path": "mcp/tests/test_review_git_trees.py"
+        },
+        {
+          "blob": "45cc9e7680746a43e3621d23dace0c43ba41de2a",
+          "path": "mcp/tests/test_review_live_answers.py"
+        },
+        {
+          "blob": "60684c5849d6fb10f5b6cdc7f8408ca3f4aaf3fb",
+          "path": "mcp/tests/test_review_overview_precompute.py"
+        },
+        {
+          "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+          "path": "mcp/tests/test_review_read_latency.py"
+        },
+        {
+          "blob": "99896de847cf457209b32c62e5db1eb7b85cdb3a",
+          "path": "mcp/tests/test_review_unexplained_lane.py"
+        },
+        {
+          "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
+          "path": "mcp/tests/test_reviewer_worklist_process.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
+            "content": "sha256:a9db3af14d40cf1a85efc3f3908a6614b7718f3859750e77a623a46588420b77",
+            "locator": {
+              "kind": "symbol",
+              "name": "memo_key"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
+          },
+          "before": {
+            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+            "content": "sha256:c5a9d47dc523af4fae2607acdf66554200cd2e8bd1f4c866c038d40df8626399",
+            "locator": {
+              "kind": "symbol",
+              "name": "memo_key"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
+          },
+          "id": "RLZ-CCQGJK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z82VYW",
+      "items": [
+        "sha256:ac4f937ad85622394d6dd770f899d8ce4db7c5ad1e04f40c2d7cf02f4ecd860f"
+      ],
+      "reason": "The memo still rechecks recorded dependencies before reuse. Its added commit keys supply inputs without changing the read-witness check.",
+      "revision": 1,
+      "subject": "INV-7PGZ9Y"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+            "content": "sha256:3d7a8f4c1b5bff4e83668f5ca61807de4dfd2d97ff73c509699050eb8290ff84",
+            "locator": {
+              "end": 798,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "before": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:8a3d32e86d5e64aa7e12b559654d3e5ce2e4f7d65558ca7dcd8465e54c810805",
+            "locator": {
+              "end": 798,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "id": "RLZ-AKBEXR"
+        },
+        {
+          "after": {
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
+            "content": "sha256:cb8a024569d26b45956312e2e99a88d45a88dbafe9fa008b8329fc8a21f45953",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "before": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "id": "RLZ-K1YHXZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZB4WDW",
+      "items": [
+        "sha256:eb79eff41f4ffa0ba204f84c47606c9936b6917335c12061c3bf9855f9c76c98"
+      ],
+      "reason": "The historical attachments moved with the tests’ recorded-base adaptation. The latency fixture checks the recorded memory-base commit and tree alongside the reused converted read tree. The child-process fixture checks that the child uses the captured inputs without a second capture, base lookup, or conversion. INV-TJE3KM remains retired.",
+      "revision": 1,
+      "subject": "INV-TJE3KM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZW0G69",
+      "items": [
+        "sha256:e6adf912a1a52c29d1d45bcf491a4cabe111fc087bf4242749106b2ceb719283"
+      ],
+      "reason": "The fixture injects a missing recorded K_B instead of mutating the source branch.",
+      "subject": "hunk:sha256:e6adf912a1a52c29d1d45bcf491a4cabe111fc087bf4242749106b2ceb719283"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
-    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
+    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The covered C09 closeout reference still binds the quality gate to the exact candidate with its worklist and observed inputs.",
-    "task": "261112-BUG-L18",
+    "statement": "The C09 reference still describes a shared preview and apply verdict over the exact candidate trees.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
     },
     {
       "anchor": {
-        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
         "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
         "locator": {
           "kind": "symbol",
@@ -169,7 +169,7 @@
     },
     {
       "anchor": {
-        "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+        "blob": "417ebaf9a63383080fa4e65b4a78376050b55121",
         "content": "sha256:eb3dbe24602b4c8d3323b3383bbc854a47a9aed380f600ac28cc4b4dea436941",
         "locator": {
           "kind": "symbol",
@@ -279,7 +279,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
     },
     {
-      "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+      "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     }

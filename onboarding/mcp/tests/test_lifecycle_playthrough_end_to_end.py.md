@@ -184,7 +184,9 @@ No external domain claim is required.
 - The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing. [7]
 
 
+
 - The shared world fixture and Git helper this module composes instead of re-implementing. [8]
+
 
 
 - The leaf closeout recording it imports rather than duplicating. [9]
@@ -212,7 +214,9 @@ No meaningful cross-repo references found.
 
 
 
+
 - Five exact artifact-consumer entries name this suite, covering the user-settings guard, checkpoint landing, Curator coherence, the Node lockfile fixture and writer worklist support. [11]
+
 
 
 

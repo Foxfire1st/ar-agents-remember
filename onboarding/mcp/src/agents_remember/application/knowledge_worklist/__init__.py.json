@@ -103,12 +103,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
             "content": "sha256:d933a755a1153049feff1f7157f4afed912fe5f0ff83b43663061e60bc24506f",
             "locator": {
-              "end": 270,
+              "end": 271,
               "kind": "line_range",
-              "start": 251
+              "start": 252
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },
@@ -116,12 +116,12 @@
         },
         {
           "anchor": {
-            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
             "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
-              "end": 313,
+              "end": 314,
               "kind": "line_range",
-              "start": 273
+              "start": 274
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },

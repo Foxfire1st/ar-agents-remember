@@ -1396,7 +1396,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
             "content": "sha256:fff151a6307bda42be3463b93fa856c06d89c102c0b0b1145dea883cfd4e0541",
             "locator": {
               "kind": "symbol",
@@ -1408,7 +1408,7 @@
         },
         {
           "anchor": {
-            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
             "content": "sha256:b3ec6e7db7a750909e0cec4db8326ba6803ae8f9a6bccafe1e21cab116283d91",
             "locator": {
               "kind": "symbol",
@@ -1420,7 +1420,7 @@
         },
         {
           "anchor": {
-            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
             "content": "sha256:1f76b2f5730cd5afddf1be51ba95a35027e6de25d2def8094c0c17227f264944",
             "locator": {
               "kind": "symbol",
@@ -1432,7 +1432,7 @@
         },
         {
           "anchor": {
-            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
             "content": "sha256:f284d3f654cf707b2d61c77f2fd3beeca6f990d0761cdc646f39151fb0c71f34",
             "locator": {
               "kind": "symbol",
@@ -1694,8 +1694,9 @@
             "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:d86784400b4e517a756a4981dd0f2dc9c26fceca88faf2b966d6387c599bb099",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_transport_admits_exactly_the_two_reviewable_selector_kinds"
+              "end": 249,
+              "kind": "line_range",
+              "start": 231
             },
             "path": "mcp/tests/test_knowledge_review_resolution_and_route.py"
           },
@@ -1703,11 +1704,12 @@
         },
         {
           "anchor": {
-            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
-            "content": "sha256:84e896178f95f5b455a12673239c99b93dbef512fa8389c0992780e32e188365",
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:2a88445cf4b2a4107565296539834a4f3423c5f76f36e5f267aade5c5b0ab1c2",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
+              "end": 739,
+              "kind": "line_range",
+              "start": 700
             },
             "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
           },
@@ -2315,7 +2317,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
             "content": "sha256:70af368c577d7976553c7af0697fc514b5f8853c37291dcff61d2a58753d2404",
             "locator": {
               "kind": "symbol",
@@ -2332,7 +2334,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
             "content": "sha256:aea809871ea10d0252b4d985e8b91cb1df3d5efdca848ccb5f7dd05606e4d00e",
             "locator": {
               "kind": "symbol",

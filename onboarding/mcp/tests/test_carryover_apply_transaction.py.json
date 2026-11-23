@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+        "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
         "content": "sha256:d1bab4bd8492b157d1eef80446b127e52090d2662aba2f8a8fabb766d4d8b880",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+        "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
         "content": "sha256:a2e641432f39fe04b8405cc2a1d22edf9266b26b3f98e9c3987dde65f2439a48",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+        "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
         "content": "sha256:8567baf503c934a69d48eb3b373bdade5887a956d7984ca6db79951d998c10d6",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+        "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
         "content": "sha256:464f58b97e3575eb286031fda55c5af5da3f89f1132f8cf58d42ea4b2dc5cdce",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,24 @@
     },
     {
       "anchor": {
-        "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+        "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
+        "content": "sha256:488f8b9ce6965cf69f1a0449bad8debb4f3a0d10eed3fa5e848d082581c1cb9c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_carryover_judges_only_leaf_and_carried_changes_after_memory_sync"
+        }
+      },
+      "facet": "Inherited merge changes are outside the carried and receiving leaf changes.",
+      "id": "PRF-H97N1X",
+      "invariant": "INV-MZ13SJ",
+      "origin": {
+        "handoffEntry": "L21-W2 additional realization INV-MZ13SJ",
+        "leaf": "261112-BUG-L21"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
         "content": "sha256:57ee24b3f9c72fc797f1f50f0df24e1a6bb25e5674133476667e0c014e997768",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,24 @@
     },
     {
       "anchor": {
-        "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+        "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
+        "content": "sha256:0686e26712bec26858e0d0f34cb0c2b595cac43a5c68b7fd282fa8606ff0f144",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unrelated_recorded_base_refuses_carryover_before_any_write"
+        }
+      },
+      "facet": "An unrelated base produces the carry-over refusal before file mutation.",
+      "id": "PRF-TF1KEE",
+      "invariant": "INV-MZ13SJ",
+      "origin": {
+        "handoffEntry": "L21-W2 additional realization INV-MZ13SJ",
+        "leaf": "261112-BUG-L21"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
         "content": "sha256:d5a5985e3799e3aff380e99088961f41ccfe13302313d3171ff701caec740bb2",
         "locator": {
           "kind": "symbol",
@@ -105,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+        "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
         "content": "sha256:ec5d011c573e71deb2a874773fd14a0117e59ae1f26d4abec8a488aa4ccb794a",
         "locator": {
           "kind": "symbol",
@@ -128,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+            "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
             "content": "sha256:ec5d011c573e71deb2a874773fd14a0117e59ae1f26d4abec8a488aa4ccb794a",
             "locator": {
               "kind": "symbol",
@@ -144,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+            "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
             "content": "sha256:d5a5985e3799e3aff380e99088961f41ccfe13302313d3171ff701caec740bb2",
             "locator": {
               "kind": "symbol",
@@ -160,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+            "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
             "content": "sha256:8567baf503c934a69d48eb3b373bdade5887a956d7984ca6db79951d998c10d6",
             "locator": {
               "kind": "symbol",
@@ -176,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+            "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
             "content": "sha256:a2e641432f39fe04b8405cc2a1d22edf9266b26b3f98e9c3987dde65f2439a48",
             "locator": {
               "kind": "symbol",
@@ -192,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+            "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
             "content": "sha256:97a7281915a2efde964aa908dedd594f72defa20bedb8a829d874a91ee287b92",
             "locator": {
               "kind": "symbol",
@@ -203,7 +237,7 @@
         },
         {
           "anchor": {
-            "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+            "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
             "content": "sha256:d1bab4bd8492b157d1eef80446b127e52090d2662aba2f8a8fabb766d4d8b880",
             "locator": {
               "kind": "symbol",
@@ -219,7 +253,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+            "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
             "content": "sha256:047967f254f0c7891b834b355f0b2e4cac3834405b489ddf26e6589599a2f2a0",
             "locator": {
               "kind": "symbol",
@@ -235,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1924b51233db77b29a3c229cba7e9547c7d660f",
+            "blob": "53cf6040216a8d8fb9a909514a6ed06d6c6cf147",
             "content": "sha256:464f58b97e3575eb286031fda55c5af5da3f89f1132f8cf58d42ea4b2dc5cdce",
             "locator": {
               "kind": "symbol",
@@ -276,15 +310,16 @@
       ]
     },
     "9": {
-      "note": "The transaction skips equal writes, refreshes indexes and validates the whole memory tree before success; refusal restores the saved write extent and reports surviving differences against HEAD.",
+      "note": "The transaction skips equal writes, refreshes indexes and validates the whole tree. A validator refusal or a failure after writing starts restores the saved write extent. The refusal reports surviving differences against HEAD.",
       "targets": [
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
-            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "content": "sha256:178fc9a30cc5cf8d7f8c1ab31d474b1c16992575ec91203bfcc06cde8a5eae64",
             "locator": {
-              "kind": "symbol",
-              "name": "apply_converted"
+              "end": 293,
+              "kind": "line_range",
+              "start": 235
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },
@@ -292,11 +327,12 @@
         },
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
             "content": "sha256:92410b0306078a832114a39a44a5d978a8daab55bdb1e7c3bc38095fb9d1dd27",
             "locator": {
-              "kind": "symbol",
-              "name": "_refused"
+              "end": 194,
+              "kind": "line_range",
+              "start": 178
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },

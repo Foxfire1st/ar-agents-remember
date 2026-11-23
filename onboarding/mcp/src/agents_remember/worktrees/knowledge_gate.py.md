@@ -25,7 +25,9 @@ Otherwise the gate is unchanged. **Applicability (rule 6).** `converted_memory(r
 - Disabled contract refused before the cutover probe [19]
 
 
+
 - Disabled contract refused before the validator gate [21]
+
 
 
 - Disabled contract refused before the direct verdict [22]

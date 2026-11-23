@@ -10,11 +10,11 @@ A test suite for review live answers.py.md: it drives the behaviour the commenta
 
 ## Code Commentary
 
-A live task-context answer is computed once while its inputs are identical
+A live task-context answer is computed once while its inputs are identical. A native sync can advance the recorded memory base commit without changing the four trees. The test verifies the new worklist binding, hides counts from the previous or a different binding, and reopens the earlier numbered record unchanged.
 
 ## Boundaries
 
-The obligation above is the whole of what this file must keep true; the route account says what the surrounding surface promises.
+The tests distinguish live comparison identity from the identity of a stored numbered comparison.
 
 ## Evidence
 

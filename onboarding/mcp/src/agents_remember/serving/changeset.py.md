@@ -251,7 +251,9 @@ says so. The two modes are never mixed.
 - **The new collaborator: which exact Git objects a committed range binds, the three absence kinds, and the named absence an unrecorded endpoint reports.** [10]
 
 
-- **The cases that measure the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read, the route's own `200`, and the one-half degradation.** [11]
+
+- **The cases that measure the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read, the route's own `200`, and the one-half degradation.** Anchor: `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it` `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head` `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` [11]
+
 
 
 ## Generation-bound master net
@@ -321,7 +323,9 @@ an empty `stateDetail`.
 - **The doc-reader entry point that publishes the absence as the body's `state`/`stateDetail`.** [20]
 - **The served vocabulary of the two states.** [21]
 
-- **The cases that measure this change: the state discriminator with the head absent from the detail, the route-level status, and the one-half degradation.** [22]
+
+- **The cases that measure this change: the state discriminator with the head absent from the detail, the route-level status, and the one-half degradation.** Anchor: `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head` `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` [22]
+
 
 
 

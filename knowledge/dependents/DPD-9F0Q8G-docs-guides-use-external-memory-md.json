@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
-    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
+    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The external-memory guide still describes the paired worktree routes. The direct-landing input and exact recovery binding remain.",
-    "task": "261112-BUG-L15",
+    "statement": "The external-memory guide still describes an exact-tree gate that refuses paired closeout publication while required worklist items remain unresolved.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "docs/guides/use-external-memory.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+      "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },

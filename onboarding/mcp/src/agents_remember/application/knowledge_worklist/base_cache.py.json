@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
             "content": "sha256:47d34ec02ba7efc6da6518bb94a9e1f563b607a6d9f65bc77b7f75f35d8ad15d",
             "locator": {
               "kind": "symbol",
@@ -103,12 +103,12 @@
         },
         {
           "anchor": {
-            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
             "content": "sha256:9288d7cfad8d974a86997e11ad38a36711719704df57881dabb0d879d89f7d43",
             "locator": {
-              "end": 373,
+              "end": 344,
               "kind": "line_range",
-              "start": 345
+              "start": 316
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },
@@ -121,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b66bb2d88d03bb9634cb9fea69ce829ab37c545d",
+            "blob": "607beeeb7d7e98cdb39fe08eef7599c18962fd13",
             "content": "sha256:d18fd70894e0d97b5c2558ce098100f31b3fd328ae799b05ee7658604cbfad7f",
             "locator": {
               "kind": "symbol",
@@ -215,14 +215,16 @@
       ]
     },
     "6": {
-      "note": "The cache holds the Markdown, and a v1 file is ignored and rewritten.\n\nAnchor: `test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf`",
+      "note": "The cache holds the Markdown, and a v1 file is ignored and rewritten. Anchor: `test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf`",
       "targets": [
         {
           "anchor": {
-            "blob": "7af13aa07c1543371cdd9dbf1bb97c2299b1447d",
-            "content": "sha256:006050f548e527e4b63776577bda4bc91d61ddb3c0fe28708754169dcb8a4a71",
+            "blob": "166a2dccebfa1bd1deeb7b24c7edd12b59e8193c",
+            "content": "sha256:af0129c6e33ed59b56e94261fab08de3413b38c3453490089d68ddcfa45c49be",
             "locator": {
-              "kind": "file"
+              "end": 680,
+              "kind": "line_range",
+              "start": 626
             },
             "path": "mcp/tests/test_onboarding_trace_gate.py"
           },

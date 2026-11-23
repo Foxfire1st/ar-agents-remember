@@ -102,7 +102,9 @@ No external source is required for this repository-owned classification proof.
 - The single declaration that owns the capacity codes and their classification. [6]
 - The raiser that publishes the code the first case reads back. [7]
 
+
 - The fixture constants this module composes. The fixture this module composes instead of rebuilding the world. [8]
+
 
 
 
@@ -124,10 +126,14 @@ by this focused module.
 
 ### Repo-Internal References (continued)
 
+
 - The fixture's repositories are real temporary Git repositories created per case, not mocks. [11]
 
 
+
+
 - The fixture's repositories are real temporary Git repositories created per case, not mocks. [12]
+
 
 - The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence.
 
@@ -143,7 +149,9 @@ Current source: The current lifecycle catalog declares this module as an exact c
 
 
 
+
 - The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence. The `curator_coherence_test_support.py` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. The `writer_worklist_test_support.py` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. [9]
+
 
 
 

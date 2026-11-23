@@ -191,7 +191,9 @@ assessment, and the same `curator_coherence_subject_assessment_state` projection
 
 
 
+
 - The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation. [3]
+
 
 
 

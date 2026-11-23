@@ -71,10 +71,14 @@ No configured domain evidence applies to the file-local claims above.
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 
+
 - `QueueFixture` is the task/door fixture retained for non-queue lifecycle suites and carries no three-commit `close_contract` helper; its constructor builds the code and memory repositories, ledger, task documents and contracts, and seeds no cache [1]
 
 
+
+
 - `QueueFixture` is the fixture class the non-queue lifecycle suites build their task, door and projection state from; it has no three-commit `close_contract` convenience method [2]
+
 
 - Master. [3]
 - The master builder writes a canonical atomic master document with the given execution nature and one commanded subtask row. [4]
@@ -88,10 +92,14 @@ The retained source anchors below support the fixture roles and assertion bounda
 - Grade. [12]
 - The grade builder returns the priority and judgment id pair the register rows reference. [13]
 
+
 - `QueueFixture` is the shared task, door and projection fixture class [14]
 
 
+
+
 - The retained task/door/projection fixture class that non-queue lifecycle suites construct [15]
+
 
 
 - Command a canonical leaf with no work started: the master's subtask row, the leaf's task document and its judgment and priority register rows are written, while no enclosure contract, branch or worktree exists [16]

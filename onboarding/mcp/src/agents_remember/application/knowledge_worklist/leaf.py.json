@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+        "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
+        "content": "sha256:0500dc13f37074273efde1a8520cc828ae32946eb7875039c2ef5974d41bd017",
+        "locator": {
+          "kind": "symbol",
+          "name": "_missing"
+        }
+      },
+      "id": "RLZ-3FVK6C",
+      "invariant": "INV-YV48D0",
+      "origin": {
+        "handoffEntry": "L21-W2 additional realization INV-YV48D0",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "The worklist names K_B when commit or ancestry cannot be established.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
         "content": "sha256:7451fad2a7395cbb0945efec59e2915caa9d695b48c363d98ac7d3e0e4a580f9",
         "locator": {
           "kind": "symbol",
@@ -18,6 +36,60 @@
         "leaf": "260928-MIK-L81"
       },
       "rationale": "The one existing writer compares exact text at its publication boundary and leaves every caller evaluation and currentness check intact.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
+        "content": "sha256:af82232ac87f7f0a60ae86b3826fafc37edd588ec2d7f309fc064797db20046d",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_worklist"
+        }
+      },
+      "id": "RLZ-KYVPCG",
+      "invariant": "INV-D0AHQA",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 1",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "Uses the established memory base with the recorded code base when computing the leaf's required judgments.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
+        "content": "sha256:6bb8a685a706a74e25cc76afc492ee242d76d3cfdbe41034c433f6a249b2fc68",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_converted"
+        }
+      },
+      "id": "RLZ-W80M70",
+      "invariant": "INV-D0AHQA",
+      "origin": {
+        "handoffEntry": "L21-W2 additional realization INV-D0AHQA",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "If the candidate lacks the converted marker, the applicability probe reads it from the held base tree when supplied, or from the contract’s recorded memory commit. An unheld comparison validates the recorded base and its ancestry after the probe.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "535f1e63afa036ab2dc115361cd589a3e04f2068",
+        "content": "sha256:0ee1bff09f9c1ac4c9b2652292c4128c77e1f7a83c79f79156a8dadddb857c68",
+        "locator": {
+          "kind": "symbol",
+          "name": "_trace_gate_converted"
+        }
+      },
+      "id": "RLZ-Z4N6RE",
+      "invariant": "INV-D0AHQA",
+      "origin": {
+        "handoffEntry": "L21-W2 additional realization INV-D0AHQA",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "The trace and worklist use the same recorded commit to check converted applicability.",
       "role": "enforcement"
     }
   ],

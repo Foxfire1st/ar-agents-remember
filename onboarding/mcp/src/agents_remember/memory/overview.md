@@ -373,7 +373,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowle
 
 - The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [173]
 
+
 - Converted carryover requires matching layouts and exact recovery-leaf authority, writes paired worktree units and leaves curator rows/publication to ordinary closeout. [174]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The package map. [101]
 - The conversion and index packages describe their module boundaries. [106]

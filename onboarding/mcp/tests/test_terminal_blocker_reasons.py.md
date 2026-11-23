@@ -174,7 +174,9 @@ No external source is required for this repository-owned blocker contract.
 - The bundle and the builder the invariant-owner cases drive directly. [18]
 - The producer whose reason the refusal carries, including the post-reclaim branch this module forces. [19]
 
-- The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. [20]
+
+- The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. Anchor: `ProviderLifecyclePort` `build_default_worktree_services` [20]
+
 
 
 
@@ -192,7 +194,9 @@ No external source is required for this repository-owned blocker contract.
 
 
 
+
 - Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection. [28]
+
 
 
 

@@ -12,6 +12,8 @@ rule 1).** Both writer entry points run the functions here — `agents-remember 
 both pass one `WriteSubmission`. The two routes therefore cannot disagree about the contract guard, the
 authorization reference, the worklist checks or the refusals: the tool can do nothing the command cannot.
 
+The leaf route establishes the contract's recorded memory base before passing it to the writer's card comparison. An unavailable base leaves that comparison to the persisted-count or operation-base path.
+
 ## Code Commentary
 
 ### Logic

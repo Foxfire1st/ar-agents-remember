@@ -1108,7 +1108,7 @@
         },
         {
           "anchor": {
-            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
             "content": "sha256:9b6d1a212554071ee118e57d287c7882ca8befc04490eaa4ff1595d943c8cf46",
             "locator": {
               "end": 126,
@@ -1574,12 +1574,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1edca68afa84b2a3b1d31713824ff746ce36beb1",
-            "content": "sha256:f9c613ca64e273d9e8d01e01e5707ee6ca788784d795350dc210177a34cadb31",
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:0d8da11461cd5094a0959947ad28984526fc48b351c86cf6bcd2570ba121eed3",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55fa09ca360f1a84a7c36f4dcf79b5d174cd4793",
+            "content": "sha256:e381e9b560fa509b0cfb55565e80991a857a68ec657ee42e22fe3f56df5fe788",
             "locator": {
               "kind": "file"
             },
-            "path": "docs/guides/carryover-from-branch.md"
+            "path": "skills/l-01-agent-lifecycles/reference/writing/technical-english-profile.md"
           },
           "kind": "code"
         }

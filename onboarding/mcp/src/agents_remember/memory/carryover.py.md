@@ -89,9 +89,13 @@ source is configured for this file's claims.
 No additional configured cross-repository evidence is claimed.
 
 - Candidate comparison and explicit review selection. [1]
+
 - Apply checks the converted formats, the configured code and external-memory authority and an ordinary checkout, then writes selected candidates into the open recovery leaf without committing; closeout commits the judged tree. [2]
+
 - Target storage is established from effective explicit settings. [3]
 - Public legacy carryover asserts conversion guidance and no observed ref/index/content/cache mutation. [5]
 - Converted carryover selects paired cards against official code and imports them into the exact recovery worktree without a commit or carried history. [8]
+
 - Carryover performs worktree validation/restore without staging, committing or refreshing a ledger. [9]
+
 - Converted carryover requires equal converted formats; unconverted input retains central conversion refusal. [10]

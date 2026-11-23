@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
-    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
+    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "Release certification selects the native stdio stress case, whose warm-index child and measured server omit Coverage startup so instrumentation cannot alter its memory readings.",
-    "task": "261112-BUG-L18",
+    "statement": "The pytest bootstrap guide still correctly describes the selected native stdio stress case and its uninstrumented warm-index child and measured server.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+      "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+        "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
         "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
         "locator": {
-          "end": 815,
+          "end": 816,
           "kind": "line_range",
-          "start": 812
+          "start": 813
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },

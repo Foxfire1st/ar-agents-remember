@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The worklist, trace, writer and live review must agree on which inherited memory the leaf is judged against after a sync merge."
+  },
+  "applicability": "A leaf comparison over the leaf worktree contract and its candidate memory.",
+  "conditions": [
+    "The call resolves its own live comparison or receives an explicit judged candidate commit."
+  ],
+  "exclusions": [
+    "Explicit held comparison sides keep their captured base.",
+    "Master and direct-landing comparisons select their own bases.",
+    "The writer retains its admitted response when a recorded card comparison cannot be made."
+  ],
+  "id": "INV-D0AHQA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "BUG-R21-W2 code freeze and evidence archive, including exact successor and W1 failure witnesses",
+        "BUG-R21@v1 W2, exact source and independent W2 CODE PASS"
+      ],
+      "path": "L21-W2-recorded-base-obligations"
+    },
+    "handoffEntry": "BUG-R21@v1 rule 1",
+    "leaf": "261112-BUG-L21",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A leaf compares the candidate memory against the tree of the recorded memory base in its worktree contract.",
+  "status": "proposed",
+  "supersedes": []
+}
