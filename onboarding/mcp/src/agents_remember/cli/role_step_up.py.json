@@ -139,12 +139,12 @@
         },
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:002082cab6d8e0e50e216016e007ee4393ff8d98442ead0d1d9d3d10f6e777c8",
             "locator": {
-              "end": 234,
+              "end": 238,
               "kind": "line_range",
-              "start": 229
+              "start": 233
             },
             "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
           },
@@ -177,12 +177,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:9cf4969d72e6b64d7baa6fd0fa8a90b07965987e21e11e707f22bfdd4532121d",
             "locator": {
-              "end": 365,
+              "end": 362,
               "kind": "line_range",
-              "start": 349
+              "start": 346
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -190,12 +190,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:5f67a7a9003eb64471e805484105c55d118baff4839f8c2c587757c886b68262",
             "locator": {
-              "end": 434,
+              "end": 431,
               "kind": "line_range",
-              "start": 427
+              "start": 424
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -203,12 +203,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
             "locator": {
-              "end": 554,
+              "end": 551,
               "kind": "line_range",
-              "start": 532
+              "start": 529
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },

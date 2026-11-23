@@ -1295,7 +1295,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3e9a4d12bf8633b9abb9436528e77bae366981e",
+            "blob": "5e13a344083a5dd1f2816313d6b739b929e550a8",
             "content": "sha256:c3fa19e1df608a70426c73d1197726203bbda116485c1370cebef29583c98040",
             "locator": {
               "kind": "symbol",
@@ -6804,55 +6804,16 @@
       ]
     },
     "1732": {
-      "note": "`paseo_launch_test_support` owns the shared hand-written stateful runtime/catalog and fixture-derived dispatch expectations. Catalog ownership and source assertions are not live-host or executed acceptance proof. LaunchRefusalTests and DeepLaunchFolderTests inherit that support through PaseoLaunchTestCase. Status test classes, and the document-chat read/tree classes, inherit it through `StatusTestCase`. The first-start preparation class has its separate `RoleToolsTestCase` base. Document-chat source cases assert one-census tree discovery, unknown versus empty, corruption isolation, repeated receipt-path reads and byte budgets. `test_paseo_status_bridge` composes the production Node listing script with a controlled daemon client. `test_paseo_frame` asserts settings-bound provision-command disclosure.",
+      "note": "Launch, status and document-chat tests share the stateful launch fixture through their own test classes.",
       "targets": [
         {
           "anchor": {
-            "blob": "7630b4f03f2e79c3a03b3552892457f28bd0cb98",
-            "content": "sha256:d563c6f7f2573602a6b4d069c9f4b544654074f346f15688e05d8352fd800004",
+            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "content": "sha256:444b3c1935e385f395d793859351f9d1afa026a7f680fafa8ce69bbcd9fc75d1",
             "locator": {
-              "end": 52,
+              "end": 101,
               "kind": "line_range",
-              "start": 45
-            },
-            "path": "mcp/tests/test_paseo_launch.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7630b4f03f2e79c3a03b3552892457f28bd0cb98",
-            "content": "sha256:1e5f503f78e1839b36a499700a46405edd994ccfb14b18817ecd12046442e965",
-            "locator": {
-              "end": 394,
-              "kind": "line_range",
-              "start": 213
-            },
-            "path": "mcp/tests/test_paseo_launch.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
-            "content": "sha256:562026286f8361e0a2188ac4d3b3899667b5b5897732f7d7d882adde0c089d19",
-            "locator": {
-              "end": 98,
-              "kind": "line_range",
-              "start": 23
-            },
-            "path": "mcp/tests/test_paseo_status.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "68d8e484f74b3f8bde6a3f11fb4eb94c45f86e6f",
-            "content": "sha256:7ba8fd704b579da8fb6992c54da0e9df61a4b708d0660a5937ea5f98e24b48c4",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
+              "start": 56
             },
             "path": "mcp/tests/paseo_launch_test_support.py"
           },
@@ -6860,10 +6821,36 @@
         },
         {
           "anchor": {
-            "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
-            "content": "sha256:2f626c53c192c52e922d90192a149fbb15e56806c3c2dec153503906e4330400",
+            "blob": "d421b2ae9950536279c0e3787ecb0adf8df257e4",
+            "content": "sha256:3dee2092f41e3488e8ff7b7cbfbf8eb628ba7320eece84735aebb56db62ea406",
             "locator": {
-              "end": 128,
+              "end": 261,
+              "kind": "line_range",
+              "start": 230
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "content": "sha256:bf511dc3c6a5f5dca693150c9d88747adc799c1c32205a7784015c0ebb49f3b9",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+            "content": "sha256:1b5ba2394884a19b6a281fdbd03246d3c0376d66244587a4363e6b5bdeee9f34",
+            "locator": {
+              "end": 44,
               "kind": "line_range",
               "start": 42
             },
@@ -6874,9 +6861,9 @@
         {
           "anchor": {
             "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
-            "content": "sha256:f271736f3c097339f39c649991c95943bd9d1ce4cfacdb8127f92b9f8bf51362",
+            "content": "sha256:da92c1c5e18b5e3346822694a27184986d37db6077785ad71f297ab8294144ea",
             "locator": {
-              "end": 359,
+              "end": 133,
               "kind": "line_range",
               "start": 131
             },
@@ -6887,39 +6874,13 @@
         {
           "anchor": {
             "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
-            "content": "sha256:5b9415847f48a148a72761562e346ab6ba20b46f1991ea0484d636884f018c33",
+            "content": "sha256:16639e69d60ac4aad2e75114bd2325bd90f90f9ced4eb0ca9a3f53851e46ff6a",
             "locator": {
-              "end": 468,
+              "end": 364,
               "kind": "line_range",
               "start": 362
             },
             "path": "mcp/tests/test_role_document_chats.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
-            "content": "sha256:6849c977cdcb55559f0bef5229cc1e62ff7034b7dacd19890f47bad731f78590",
-            "locator": {
-              "end": 518,
-              "kind": "line_range",
-              "start": 165
-            },
-            "path": "mcp/tests/test_paseo_status_bridge.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "894337341a71e224837a3c71a9c77a3e457f04fc",
-            "content": "sha256:3fc44a9a4769d0b10674ce6539134be17fd386b325029a62881fe8cf0f68c0b6",
-            "locator": {
-              "end": 180,
-              "kind": "line_range",
-              "start": 122
-            },
-            "path": "mcp/tests/test_paseo_frame.py"
           },
           "kind": "test"
         }
@@ -10602,16 +10563,16 @@
       ]
     },
     "21": {
-      "note": "The Paseo launch, replay and runtime cases.",
+      "note": "Launch cases cover refusals, unanswered catalogues, ACP task-server binding and the merge of feature values.",
       "targets": [
         {
           "anchor": {
-            "blob": "7630b4f03f2e79c3a03b3552892457f28bd0cb98",
-            "content": "sha256:560f034921c2c6face74b7d27f18e8cadabeab3eebac441ecf16996fdcb7cd6f",
+            "blob": "d421b2ae9950536279c0e3787ecb0adf8df257e4",
+            "content": "sha256:a0daaf995c2dc0376fd231379af2941a560be614a99f96b9d31a2c408b5b1aeb",
             "locator": {
-              "end": 475,
+              "end": 491,
               "kind": "line_range",
-              "start": 397
+              "start": 414
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },
@@ -10619,27 +10580,14 @@
         },
         {
           "anchor": {
-            "blob": "54a24300c0ac14f8e309b1cb70d30c4654bf0559",
-            "content": "sha256:fb392ecca32eb983469841a07838f7c2d258d0261087b718d50f37b04920e811",
+            "blob": "d421b2ae9950536279c0e3787ecb0adf8df257e4",
+            "content": "sha256:0a5160ca9ebeb61bdc94f39b22a3a7f9491dd0f4dbc7ea59c3254602fabb0634",
             "locator": {
-              "end": 220,
+              "end": 525,
               "kind": "line_range",
-              "start": 158
+              "start": 494
             },
-            "path": "mcp/tests/test_paseo_launch_repeat.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a625f100c801bea1cb9717637d2070e265404514",
-            "content": "sha256:958ce5bff582828fbea0cfae93ecec16978bcbc151bcfa4f22b3a1db14c86284",
-            "locator": {
-              "end": 164,
-              "kind": "line_range",
-              "start": 78
-            },
-            "path": "mcp/tests/test_paseo_runtime.py"
+            "path": "mcp/tests/test_paseo_launch.py"
           },
           "kind": "test"
         }

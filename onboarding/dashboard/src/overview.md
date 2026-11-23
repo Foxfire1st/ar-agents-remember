@@ -340,13 +340,15 @@ Current review ownership is anchored by ReviewSurface/PageReading; the separate 
 
 ## Current Behavior
 
-Opening the role launcher asks for fresh choices. While that answer is pending nothing is shown until it settles, unless Paseo's saved answer for the same scope is on show: the saved choices then carry this page's remembered role defaults, are selectable, and a start may use them (MIK-R215). Provenance stays explicit — saved, fresh or unknown — rather than an invented failure. The component that used to hold that display was deleted; the behaviour now lives in `cockpit/roleChatExecutionView.ts` and `cockpit/RoleChatsView.tsx`, and its catalog cases in `cockpit/role-launcher/RoleLauncher.catalog.test.tsx`. Settled parts distinguish fresh, saved and unknown data. The launcher’s catalog checks cover agent, model, effort and service tier. Applicable known non-mode offering failures refuse before creation. A catalog part with neither a fresh nor a saved answer leaves its configured values unchecked. Paseo receives named modes even when its catalog does not list them. The backend separately rejects permission-bearing or unclassified feature keys in a start call regardless of feature-offer availability. Host IDs and labels match without case, and a catalog refresh does not erase configured overrides. The catalog notice describes choices and provenance; it does not grant permissions or alter execution results.
+Opening the role launcher reads scoped catalogue metadata. While metadata is pending, the matching saved inventory can show selectable choices with remembered role defaults (MIK-R215). The launcher asks for features for the shown provider and model after metadata settles and keeps each answer in the pane until Refresh. Refresh renews metadata before new selected options. A new Start omits explicit feature overrides while shown-model options are pending or nonfresh. Saved Retry keeps its original payload. Matching saved inventory keeps an otherwise eligible Start available while requests settle. While metadata is pending, Start stays disabled if there is no matching saved response. A settled response with an empty agent list and unknown discovery can leave a configured choice unchecked and eligible, subject to the ordinary selection and execution checks. Fresh, saved and unknown provenance inform choice checks. The pane offers Refresh and surfaces action failures through the failure line. The launcher’s catalog checks cover agent, model, effort and service tier. Applicable known non-mode offering failures refuse before creation. A catalog part with neither a fresh nor a saved answer leaves its configured values unchecked. Paseo receives named modes even when its catalog does not list them. The backend separately rejects permission-bearing or unclassified feature keys in a start call regardless of feature-offer availability. Host IDs and labels match without case, and a catalog refresh does not erase configured overrides.
+
 
 the task entry's page reads now end with the task they belong to. The change-set bar, the changed-intent summary and the full task body each own an `AbortController` and abort on selection change/unmount; `abortableRead.ts` distinguishes an aborted read from a failure, and the stores keep a same-key live joiner alive. The mounted chat case `document-chat/newChatWhilePageReadPending.test.tsx` holds four abandoned page producers and still dispatches and binds the selected leaf's chat before any of them completes. No lifecycle or task-state authority moves into the browser.
 
 **L184.** The tray and the detail panels now show a served provider limit: its word with the time left where a display clock exists, the bare word with the exact reset in hover and accessible name where none does, and one scan in the test tree forbids computing a limit anywhere in application source.
 
 ## Evidence
+
 
 - Both master readers now ask for the per-leaf breakdown.
 
@@ -374,7 +376,7 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 Anchor: `useReviewCatalogue` `DocChangeSetBar` 
 
-- Retired at the fifth freeze d59c3493: dashboard/src/test/setup.ts:4-7 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cf5ef507f2542d6cd2f9d37a6b72148d3b91b340; dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/reviewTransport.ts:162-190 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d21bc8a6c5d30e2394a72d056bff216b766407c2; dashboard/src/data/files.ts::FilesApiError - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/review/ReviewReadCycle.ts::memoryWatchActions - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/Cockpit.tsx::ChangeSetTakeover - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/files.ts::getJson - cited by 2 anchors in this card; the name occurs 6 times in that file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/conditionalReads.ts::read - the symbol it cited now occurs 11 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.tsx - the component was deleted at the fifth freeze d59c3493; its behaviour now lives in dashboard/src/cockpit/roleChatExecutionView.ts and dashboard/src/cockpit/RoleChatsView.tsx, which the card cites; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.test.tsx - the test was deleted at the fifth freeze d59c3493 with the component it exercised; the catalog cases live in dashboard/src/cockpit/role-launcher/RoleLauncher.catalog.test.tsx. Retired means the anchor no longer stands, not that the cited subject was deleted.
+- Retired at the fifth freeze d59c3493: dashboard/src/test/setup.ts:4-7 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cf5ef507f2542d6cd2f9d37a6b72148d3b91b340; dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/reviewTransport.ts:162-190 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d21bc8a6c5d30e2394a72d056bff216b766407c2; dashboard/src/data/files.ts::FilesApiError - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/review/ReviewReadCycle.ts::memoryWatchActions - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/Cockpit.tsx::ChangeSetTakeover - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/files.ts::getJson - cited by 2 anchors in this card; the name occurs 6 times in that file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/conditionalReads.ts::read - the symbol it cited now occurs 11 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.tsx - the component was deleted at the fifth freeze d59c3493; the separate status line was removed. Saved and unknown provenance still inform choice checks in dashboard/src/cockpit/roleChatExecutionView.ts and dashboard/src/cockpit/RoleChatsView.tsx; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.test.tsx - the test was deleted at the fifth freeze d59c3493 with the component it exercised; the catalog cases live in dashboard/src/cockpit/role-launcher/RoleLauncher.catalog.test.tsx. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - Operations retains its mounted task, ordinary diff, intent review and notes surfaces across a bottom-tab visit. [97]
 - The tab handler restores an owned remembered reader, dismisses one whose served task is absent after hydration, and resets on a repeated Operations press. [98]
@@ -421,7 +423,9 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Current imported source owns this scoped route boundary: the cockpit's persistent Chats layer mounts the Role-chats pane. [34]
 
-- The route's Role-chats pane owner. [35]
+
+- RoleChatsPane renders the shared launcher view with scoped options, role launch controls and the existing frame and report owner. [35]
+
 
 - The route's embedded chat frame. [36]
 
@@ -429,7 +433,9 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Bounded source guard scans dashboard test and support files. [39]
 
-- RoleChatsPane binds the current role-launch selection to document/options scopes, request controls and the options loader, then passes that state to RoleChatsView. This composition is shared across roles; it does not itself implement an Investigator-specific selection or execution rule. [40]
+
+- RoleChatsPane supplies the current scope, request controls, metadata and independent refresh generations. [40]
+
 
 > - The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof. [41] [42] [43]
 
@@ -582,3 +588,4 @@ Anchor: `ReviewSourceInventory` `intentReview` [28]
 - Current watch owners for the review page account. [84]
 - Current composition owners for the review page account. [87]
 - Current details owners for the review page account. [89]
+- Matching saved inventory keeps eligible Start available while metadata is pending. With a settled response that has an empty agent list and unknown discovery, a configured selection can pass the catalog check unchecked. The mounted launcher shows no separate catalog-status line. [102]

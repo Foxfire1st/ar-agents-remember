@@ -3,14 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "The shared fixture records bridge calls and derives the handover artifacts, recovery note and task-server definition from each launch request.",
       "targets": [
         {
           "anchor": {
-            "blob": "68d8e484f74b3f8bde6a3f11fb4eb94c45f86e6f",
-            "content": "sha256:90b4b0e682b7d0fdb75ac517942eb006cf6a6144bd754f5b6fe172156fab0dd9",
+            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "content": "sha256:444b3c1935e385f395d793859351f9d1afa026a7f680fafa8ce69bbcd9fc75d1",
             "locator": {
-              "kind": "file"
+              "end": 101,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "content": "sha256:dcde1f198c2c832d22e722ef5888cac2191fa5abf1580d83cefe487ec535958f",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 234
             }
           },
           "kind": "test"
@@ -18,14 +32,40 @@
       ]
     },
     "2": {
-      "note": "The module additionally owns `FakeRuntime`, its catalog/server constants and recorded launch-call set. This in-memory bridge stand-in holds agents/workspaces across calls, preserves before/after-effect failure scenarios and supplies state/archive/resume plus `agents-live` answers; `unlisted` makes the census incomplete. `GivenToAgentExpectations` derives the data a dispatch gives an agent, but its first-message line comes from the production `artifact_line`, so only the data is independent and the formatting is shared. Launch/status/document-chat suites share the fake, not a live harness or production host.",
+      "note": "The stateful fake records calls, can fail before or after an effect, and supports incomplete live listings. Fixture message formatting uses the production artifact helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "68d8e484f74b3f8bde6a3f11fb4eb94c45f86e6f",
-            "content": "sha256:90b4b0e682b7d0fdb75ac517942eb006cf6a6144bd754f5b6fe172156fab0dd9",
+            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "content": "sha256:444b3c1935e385f395d793859351f9d1afa026a7f680fafa8ce69bbcd9fc75d1",
             "locator": {
-              "kind": "file"
+              "end": 101,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "content": "sha256:98eec091e67093e668374bf075c8c3332a09b7210ce94094d13bca30d05c8926",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "content": "sha256:bdf14b8771ce3cbcf957705221e97bb0c6d84b995dd10fed111ad4791d048ea2",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 284
             }
           },
           "kind": "test"
@@ -33,16 +73,16 @@
       ]
     },
     "3": {
-      "note": "FakeRuntime._agent_create now records a serviceTier only when featureValues actually contains service_tier, separately copies any supplied featureValues map and retains modeId when supplied. This supports permission-feature-only payloads without a service-tier KeyError and exposes submitted choices to the controlled observations. Default-model and idempotent agent-state behavior remain.\n\nAnchor: Current test/support source",
+      "note": "Creation records supplied feature values and mode. It records a service tier only when the supplied feature map contains one.",
       "targets": [
         {
           "anchor": {
-            "blob": "68d8e484f74b3f8bde6a3f11fb4eb94c45f86e6f",
-            "content": "sha256:90b4b0e682b7d0fdb75ac517942eb006cf6a6144bd754f5b6fe172156fab0dd9",
+            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "content": "sha256:fd6c853b89536f46d29cdf3a490cab0e2c58ecc451491bfc2535434322d047e9",
             "locator": {
-              "end": 396,
+              "end": 163,
               "kind": "line_range",
-              "start": 1
+              "start": 127
             }
           },
           "kind": "test"

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/cockpit/roleChatModelOptions.test-utils.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The local response fixture selects exactly the requested pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b853ca31c46a651232bfcb3f8644f64bae85988e",
+            "content": "sha256:703c8d2b5a2e7c3cb4d9c745a952b8ad4be7777d1c9760ed9cb546257b206073",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

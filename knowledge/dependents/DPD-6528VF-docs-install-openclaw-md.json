@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The OpenClaw installation page still describes a tool-calling harness with no host provider for role agents on the pinned build.",
-    "task": "261112-BUG-L10",
+    "statement": "The OpenClaw guide’s implicit Bootstrap refusal still applies when the configured host has no OpenClaw provider, and naming an offered agent bypasses caller-harness inference.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/install/openclaw.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+      "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },

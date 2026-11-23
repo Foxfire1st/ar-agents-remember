@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e25e17f06e29ac98439d8d47cb8b7cb493075401",
-    "commit": "b708054f82fadb23624fff2be1ffe948cb3d1d50",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The Roles guide remains aligned with Manager closeout ownership, final checks and the Reviewer repair route. Coordination now supplies the synchronous retry procedure.",
-    "task": "261112-BUG-L15",
+    "statement": "The Roles guide’s dashboard role and task selection, available role_start overrides and permission-mode order still agree with the admitted-start route.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "c0f08919a57323df496e9dbec2fe06e2e6006d89",
+      "blob": "c49370426012a0a0637fafede1120b124ca3ef42",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/role_launcher.py"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
     {
-      "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+      "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -171,7 +171,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
     {
-      "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+      "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     }

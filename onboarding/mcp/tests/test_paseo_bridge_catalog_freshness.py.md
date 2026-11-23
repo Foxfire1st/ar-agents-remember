@@ -10,7 +10,7 @@ Checks the real JavaScript bridge against a fake Paseo client, keeping successfu
 
 ## Code Commentary
 
-The fixture extends AgentCommandScriptTests with controlled provider discovery, model, feature and configuration responses. Cases assert that a failed part is omitted with its own error while successful parts survive. A discovery deadline can use the available provider snapshot; an unanswered discovery and snapshot still fail. Metadata mode reads no model features, and selected mode asks only the named provider/model, even when metadata is unavailable. Explicit refresh invokes the provider refresh; ordinary questions still reach Paseo.
+The fixture extends AgentCommandScriptTests with controlled provider discovery, model, feature and configuration responses. Cases assert that a failed part is omitted with its own error while successful parts survive. A discovery deadline can use the available provider snapshot; an unanswered discovery and snapshot still fail. Default and explicit metadata requests skip model features. The six-provider fixture lists all 350 models in the returned catalogue and checks Refresh runs before discovery. Selected mode requests only the named pair, even when metadata is unavailable. Creation with a supplied feature value validates it against one model and submits one create request.
 
 ## Invariants And Boundaries
 
@@ -21,11 +21,17 @@ These are source assertions over the real bridge and a fake client, not a report
 ### Repo-Internal References
 
 - Successful empty lists retain read time; ordinary and refresh questions reach the provider boundary. [1]
-- Model, mode, effort, feature and tool-server failures stay distinct from valid parts. [2]
+
+- Model, mode, effort and tool-server failures leave other metadata parts available. [2]
+
 - Unavailable discovery fails; an available provider snapshot can survive a discovery wait. [3]
-- Timed-out model, feature and configuration parts remain unknown while other answers survive. [4]
+
+- Timed-out model listing and tool-server configuration leave another provider’s model available. [4]
+
 - Metadata mode reads provider/model metadata without querying features. [5]
-- Selected mode queries only the chosen model and names unanswered feature parts. [6]
+
+- One selected-model query distinguishes offered, explicitly empty, unavailable and timed-out feature answers. [6]
+
 
 ## Docs References
 

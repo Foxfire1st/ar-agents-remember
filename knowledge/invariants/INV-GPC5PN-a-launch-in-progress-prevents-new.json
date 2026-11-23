@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "A host read blocked by the runtime must leave the launch lock available, while a stale observation cannot overwrite a replacement receipt."
+  },
+  "applicability": "Role launcher Options requests and the receipt observations they apply.",
+  "conditions": [
+    "The early Options check returns before catalogue or receipt host access while the dispatch lock is already held.",
+    "Non-taskless receipt liveness is read outside the lock. The locked comparison applies the observation only to the same receipt contents."
+  ],
+  "exclusions": [
+    "Taskless option listings read saved execution data. Taskless Result uses an exact saved request and validates its address."
+  ],
+  "id": "INV-GPC5PN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "F01 parked Architect options/result and concurrent migration tests, busy zero-host and stale receipt checks on W3."
+      ],
+      "path": "W6-curator-ingest.json"
+    },
+    "handoffEntry": "BUG-R19@v1 item 3",
+    "leaf": "261112-BUG-L19",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A launch in progress prevents new options host calls, and receipt reads apply observations only after revalidating the unchanged receipt.",
+  "status": "proposed",
+  "supersedes": []
+}

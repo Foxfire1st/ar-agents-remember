@@ -54,14 +54,16 @@
       ]
     },
     "2": {
-      "note": "The second start reaches the held dispatch lock before pending is asserted.\n\nAnchor: `test_starts_run_one_at_a_time_and_a_start_waits_for_the_one_before_it`",
+      "note": "The serialization test observes the second Start reaching the held dispatch lock before it checks that the call remains pending.",
       "targets": [
         {
           "anchor": {
-            "blob": "841d52ef5c315e34b668b69e69ba64186ca21855",
-            "content": "sha256:b36b23b371b59d98d26d9ef05437656e6d7ca752e237a5d1aee1f10e36f8b738",
+            "blob": "1d8396a770f021c11debb8be26d2ffc255a34530",
+            "content": "sha256:515d79f812a63b5a96aee250d737b66136d8d676024112cc373b84bad46eb3c0",
             "locator": {
-              "kind": "file"
+              "end": 726,
+              "kind": "line_range",
+              "start": 671
             },
             "path": "mcp/tests/test_paseo_role_tools_start.py"
           },
@@ -115,14 +117,16 @@
       ]
     },
     "6": {
-      "note": "The role, task and report registration exists before agent-create begins, under the existing dispatch lock.\n\nAnchor: `test_a_start_runs_the_launchers_path_with_the_caller_as_parent`",
+      "note": "The create observer sees the role, task and report registration under the dispatch lock before the host creates the agent.",
       "targets": [
         {
           "anchor": {
-            "blob": "841d52ef5c315e34b668b69e69ba64186ca21855",
-            "content": "sha256:b36b23b371b59d98d26d9ef05437656e6d7ca752e237a5d1aee1f10e36f8b738",
+            "blob": "1d8396a770f021c11debb8be26d2ffc255a34530",
+            "content": "sha256:40f343cdfce17fa60e43dfec42fa4f148ec756bcb1f73f1670f408ec396e47a6",
             "locator": {
-              "kind": "file"
+              "end": 425,
+              "kind": "line_range",
+              "start": 345
             },
             "path": "mcp/tests/test_paseo_role_tools_start.py"
           },

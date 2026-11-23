@@ -9,13 +9,13 @@
   "applicability": "Every consumer of the configured Paseo catalog when it needs current launch-choice or provider-capability information: launcher views and rechecks, new role starts and their preparation, tool-server acceptance/status checks, caller-harness/native-tool checks, settings initialization that needs offered harnesses, and settings-driven explainer starts.",
   "conditions": [
     "The shared stored answer is scoped by install prefix, home, listen address and runtime version.",
-    "Each top-level operation requests fresh host data; nested work in the same operation may share its answer.",
+    "Each fresh server operation may share its own host answers. A pane-held model answer or saved-only display uses existing data. A held launch lock returns before the options route reads the host.",
     "Unavailable parts use only their corresponding successful saved part; unknown parts are not represented as empty offered sets.",
     "Explicitly unoffered provider, model and effort choices for an answered catalog part are refused before durable preparation. Feature choices retain their own offering and authority checks.",
     "Every catalog consumer uses the same configured-host resolver and saved-part policy."
   ],
   "exclusions": [
-    "A saved-only display is not authority to start without the fresh request finishing.",
+    "A saved-only display can supply choices while fresh metadata is pending. An actual new Start still resolves choices on the server.",
     "Unavailable metadata does not prove a configured value unsupported.",
     "No promise of successful host creation follows from unchecked choices.",
     "Service-tier capability behavior retains its separate owner; freshness does not authorize permission-bearing start-call feature values.",
@@ -34,9 +34,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "Every launcher view and role start asks the configured Paseo runtime for current choices. A view reads full offers; a start reads provider/model metadata and then only the selected model's features. Within one operation the answer may be shared, but no process-lifetime cache controls later views or starts. Unavailable parts use the shared last successful answer with its timestamp; a part with no current or saved answer leaves configured values unchecked. Known agent/model/effort choices are validated before workspace or enclosure creation. Launcher rechecks, role-start preparation, tool-server checks, caller-harness checks, settings initialization and settings-driven explainer starts use this same resolver and saved-part policy.",
+  "statement": "A launcher metadata request reads choices from the configured Paseo runtime. The panel requests feature options for the shown provider and model when it has no held answer for that pair. A new role start reads provider and model metadata and checks features for its resolved pair when needed. Within one operation the answer may be shared, but no process-lifetime cache controls later views or starts. Unavailable parts use the shared last successful answer with its timestamp; a part with no current or saved answer leaves configured values unchecked. Known agent/model/effort choices are validated before workspace or enclosure creation. Launcher rechecks, role-start preparation, tool-server checks, caller-harness checks, settings initialization and settings-driven explainer starts use this same resolver and saved-part policy.",
   "status": "proposed",
   "supersedes": []
 }

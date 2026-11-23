@@ -1790,16 +1790,16 @@
       ]
     },
     "229": {
-      "note": "The Paseo launch adapter builds the repeatable role-launch call with the chosen agent identity, workspace, first-message data, parent identity and this build's task tool-server binding.",
+      "note": "The repeatable saved launch call contains the agent identity, workspace, first-message state, parent identity and configured task tool-server binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:bd3463851f2f456aa68f5813a450c69e2f6a8ec844daad2c0fd47aa518cb705d",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
             "locator": {
-              "end": 475,
+              "end": 483,
               "kind": "line_range",
-              "start": 455
+              "start": 419
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -3036,14 +3036,16 @@
       ]
     },
     "302": {
-      "note": "**Retained historical source account — superseded by the current route account:** Leaf sibling handover supplies canonical role/task arguments",
+      "note": "**Retained historical source account — superseded by the current route account:** Leaf sibling handover supplies canonical role/task arguments.",
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
-            "content": "sha256:ca9880cbd12bd1e65dcde9fd1499cf5dc673bbdccf4b20bdd76b17c5b5f521db",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:24f5ce386d9c4f4b6c4b097184cfa8139218598bdefb3f92a5111eaf9945db3f",
             "locator": {
-              "kind": "file"
+              "end": 869,
+              "kind": "line_range",
+              "start": 850
             },
             "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
           },
@@ -3052,15 +3054,16 @@
       ]
     },
     "303": {
-      "note": "**Retained historical source account — superseded by the current route account:** Replay retains agent identity and typed created/refused/no-answer outcomes; held launch calls omit the first host prompt\n\nAnchor: `LaunchOutcome` `build_launch_call`",
+      "note": "**Retained historical source account — superseded by the current route account:** Replay retains agent identity and typed created/refused/no-answer outcomes. Held launch calls omit the first host prompt.",
       "targets": [
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:66e3ff7eb372e8b0c2a4ad46552a56cd0e540b056dea776bcf9fa1f003abba14",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:9456e110b70c734f9124a6d082ca53fe8afb43343d4611e7d47484115835cf8c",
             "locator": {
-              "kind": "symbol",
-              "name": "LaunchOutcome"
+              "end": 134,
+              "kind": "line_range",
+              "start": 115
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -3068,24 +3071,12 @@
         },
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
             "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
             "locator": {
-              "kind": "symbol",
-              "name": "build_launch_call"
-            },
-            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:0dcff59e0a5dd3f825d2a48820357ca3c8699bdcfb90f1d381c3fef16fbcaecb",
-            "locator": {
-              "end": 20,
+              "end": 483,
               "kind": "line_range",
-              "start": 1
+              "start": 419
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -3093,10 +3084,12 @@
         },
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:99a41d0f497b0385ad9139971f8cc4bd1a53c8f845d7ba8fdda07c1222040542",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:70a382c2b54b0125df1d500da21f204ba24890de8b652dcacc210f71514eddcd",
             "locator": {
-              "kind": "file"
+              "end": 682,
+              "kind": "line_range",
+              "start": 626
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -3219,7 +3212,7 @@
         },
         {
           "anchor": {
-            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:44a4a3c46c23bb58709ed5a5622cc1fd4d8a18c4400f8d5214151d68a146c18d",
             "locator": {
               "end": 252,
@@ -3232,7 +3225,7 @@
         },
         {
           "anchor": {
-            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:07107728aaac2fd5b429aacacfaae0cce32c6156b7a8da8a80e5c859560b5c09",
             "locator": {
               "end": 800,
@@ -3560,12 +3553,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
             "content": "sha256:3cefb35aac64c3af861a9ed705c8e1b98dabcb4009fc97a9ed9b18591136b342",
             "locator": {
-              "end": 130,
+              "end": 128,
               "kind": "line_range",
-              "start": 95
+              "start": 93
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -3573,12 +3566,12 @@
         },
         {
           "anchor": {
-            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
             "content": "sha256:0412845a63d724ab768d7f1a812e018e0f0faa3f0f16d6206b8b89609d41dc61",
             "locator": {
-              "end": 128,
+              "end": 126,
               "kind": "line_range",
-              "start": 93
+              "start": 91
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -3691,11 +3684,11 @@
       ]
     },
     "332": {
-      "note": "Replacement rechecks idle and pending permission at every saved archival call.",
+      "note": "The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free.",
       "targets": [
         {
           "anchor": {
-            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+            "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
             "content": "sha256:0d46d328ef0398cb6dcd18226369bc3b10c1fc5dba4c504d87093b30bcd2ddaf",
             "locator": {
               "end": 314,
@@ -3703,6 +3696,19 @@
               "start": 262
             },
             "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+            "content": "sha256:6df95fda0cb671cc252d11c53fa499a41c17fc8e41442c0001a1cc37d303da42",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
           "kind": "code"
         }
@@ -3745,14 +3751,14 @@
       ]
     },
     "335": {
-      "note": "Only settled empty stepped-up creation failures retain saved-call retry.\n\nAnchor: Current source; preserved L88 property 329",
+      "note": "An eligible settled empty step-up retains its ordinary retryable call. If the recorded native Antigravity agent is absent, Retry settles the refusal and drops the call.",
       "targets": [
         {
           "anchor": {
-            "blob": "ccb1e9b293a9d30073d916aee6085e1ff47f6420",
-            "content": "sha256:61c4e9ff3174d88b2d951a307ebbdcee24d97a19d54ea5c80d052036f5dafa8d",
+            "blob": "cc48a16958cc6f53b7eb022faa7e4a91e960dda3",
+            "content": "sha256:0f050f92294b30d17fd5a933a438be1a7ae4205b68457d79c19c73bb601bb17d",
             "locator": {
-              "end": 81,
+              "end": 87,
               "kind": "line_range",
               "start": 54
             },
@@ -4215,7 +4221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:c968c1884cff2af1a86b7b33d364870c7af2cc16de93126ea32c6bee30f4b8f2",
             "locator": {
               "end": 1222,
@@ -4228,7 +4234,7 @@
         },
         {
           "anchor": {
-            "blob": "ce8fc3e0be583cbcd243bafdfc43fa49e6bc8a29",
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
             "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
             "locator": {
               "end": 1251,
@@ -4627,7 +4633,7 @@
       ]
     },
     "370": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "The Paseo runtime reads its configured host block. Launch builds a seat-bound stdio server definition, and admitted leaf reads derive their roots from the canonical task and enclosure.",
       "targets": [
         {
           "anchor": {
@@ -4644,10 +4650,12 @@
         },
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:99a41d0f497b0385ad9139971f8cc4bd1a53c8f845d7ba8fdda07c1222040542",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
             "locator": {
-              "kind": "file"
+              "end": 261,
+              "kind": "line_range",
+              "start": 234
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -4656,9 +4664,11 @@
         {
           "anchor": {
             "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
-            "content": "sha256:b80f9f3d8fe83b34866640bdbc4a54bf311a5d8cbe191016cacd7342436adc59",
+            "content": "sha256:17df578b5e73e52a6b79bf11643479b083b18956c05b1c857e4cf610a76d9d19",
             "locator": {
-              "kind": "file"
+              "end": 56,
+              "kind": "line_range",
+              "start": 25
             },
             "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
           },
@@ -4973,7 +4983,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:c66af9c85cd326f4a585ffaf27da472e2b8490f9b8ccc51ed0f0e125ca59bfbd",
             "locator": {
               "kind": "symbol",
@@ -5071,18 +5081,57 @@
       ]
     },
     "391": {
-      "note": "Each operation asks fresh. Its local context shares the answer and saved-only reads do not discover or write.",
+      "note": "The direct options route requests its exact pair. The pane reuses that answer, and Start validation uses a separate operation-local memo. Saved-only display reads skip discovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
-            "content": "sha256:53bf8a68d4b8f346b828ad9b7c4baceee74d929800ded721070be227860a9c5b",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:c7d15fb56b5bdca39b29cca81da03564171a310bda07746c8fb9ab82ea57cd35",
             "locator": {
-              "end": 144,
+              "end": 153,
               "kind": "line_range",
-              "start": 78
+              "start": 75
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0554881d5c79e63acbf12acfb1e13cb65cdbe98d",
+            "content": "sha256:0570e65b14ca8d8a261e2abf430c428c0249c35c5d5f2744e1cea8eba02eec67",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog_features.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "content": "sha256:5fe191cf7114f08dbe30c2f5ed30949cf9bfa98a663431f88b23d042f350baba",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+            "content": "sha256:9507f194f1fcd5aef67148991aa444ab80f8cd3917b081a28f8e384489751e57",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
           },
           "kind": "code"
         }
@@ -5505,12 +5554,12 @@
         },
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:002082cab6d8e0e50e216016e007ee4393ff8d98442ead0d1d9d3d10f6e777c8",
             "locator": {
-              "end": 234,
+              "end": 238,
               "kind": "line_range",
-              "start": 229
+              "start": 233
             },
             "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
           },
@@ -5544,12 +5593,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:9cf4969d72e6b64d7baa6fd0fa8a90b07965987e21e11e707f22bfdd4532121d",
             "locator": {
-              "end": 365,
+              "end": 362,
               "kind": "line_range",
-              "start": 349
+              "start": 346
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -5557,12 +5606,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:5f67a7a9003eb64471e805484105c55d118baff4839f8c2c587757c886b68262",
             "locator": {
-              "end": 434,
+              "end": 431,
               "kind": "line_range",
-              "start": 427
+              "start": 424
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -5570,12 +5619,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
             "locator": {
-              "end": 554,
+              "end": 551,
               "kind": "line_range",
-              "start": 532
+              "start": 529
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -5588,12 +5637,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:b4fd32d47e3e4d3008d98f87a5e9d950193d9c6a0ff8ff3efeb69a03e39b0a37",
             "locator": {
-              "end": 369,
+              "end": 366,
               "kind": "line_range",
-              "start": 335
+              "start": 332
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -5601,12 +5650,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
             "locator": {
-              "end": 554,
+              "end": 551,
               "kind": "line_range",
-              "start": 532
+              "start": 529
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -5614,12 +5663,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:d404cd58769bfa7c2f69daf66d58e0df6d3fe80804a854cdf5120fe9f2b33c75",
             "locator": {
-              "end": 715,
+              "end": 712,
               "kind": "line_range",
-              "start": 675
+              "start": 672
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -5627,12 +5676,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:98995d13e12caa2233c05fbc2a282a604e44aaab99876d4258742e2854b16dc4",
             "locator": {
-              "end": 863,
+              "end": 857,
               "kind": "line_range",
-              "start": 844
+              "start": 838
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -5640,12 +5689,12 @@
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:f66ae3ea84b30c53cafb4af9078fe5e8acf39ae35764436ec796c75aa8b44f7c",
             "locator": {
-              "end": 921,
+              "end": 915,
               "kind": "line_range",
-              "start": 907
+              "start": 901
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },

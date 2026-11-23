@@ -7628,12 +7628,12 @@
         },
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
             "locator": {
-              "end": 775,
+              "end": 734,
               "kind": "line_range",
-              "start": 612
+              "start": 571
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -7641,12 +7641,12 @@
         },
         {
           "anchor": {
-            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
             "content": "sha256:f283095054de1829707b97db5c978052fbfffc613c11a174edf16fadb8929a9f",
             "locator": {
-              "end": 924,
+              "end": 892,
               "kind": "line_range",
-              "start": 877
+              "start": 845
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -7793,7 +7793,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:7e87864407ba990037b6b009e45c52085bdd3767d360afd4516af3be93421340",
             "locator": {
               "kind": "symbol",

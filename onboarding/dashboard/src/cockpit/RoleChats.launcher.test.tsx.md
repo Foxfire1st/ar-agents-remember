@@ -10,7 +10,7 @@ The suite checks catalog-supported launcher selection, explicit options states, 
 
 ## Code Commentary
 
-The unoffered-model fixture keeps Start disabled until an offered model is selected. The model-list failure fixture leaves the agent selectable without inventing a model. A launch lock rereads by itself without an ordinary status line — the case asserts no status or alert before and after the reread — while other refusals stay errors until an explicit successful action clears them (MIK-R75 rule 3). The host-offered speed value remains on the role agent across supported model overrides; a known unsupported tier/model disables Start, and another agent displays provider default. The speed-only case submits the explicit speed feature, leaves the mode selector at its first option and shows permission-bearing features as settings-owned chips. The test checks the first mode option and hover for the host label and settings source, and checks the optional Instructions chip and its source and replacement status. The explicit-mode case submits the chosen mode and keeps it through a model change. The dispatch assertions remain the payload-preservation boundary. Fresh-view tests replace same-origin answers rather than merging them. Pending-view tests display only the timestamped saved disk catalog and origin, hide an older fresh answer and its defaults, and keep Start disabled until fresh options settle.
+The unoffered-model fixture keeps Start disabled until an offered model is selected. The model-list failure fixture leaves the agent selectable without inventing a model. A launch lock rereads by itself without an ordinary status line — the case asserts no status or alert before and after the reread — while other refusals stay errors until an explicit successful action clears them (MIK-R75 rule 3). The host-offered speed value remains on the role agent across supported model overrides; a known unsupported tier/model disables Start, and another agent displays provider default. The speed-only case submits the explicit speed feature, leaves the mode selector at its first option and shows permission-bearing features as settings-owned chips. The test checks the first mode option and hover for the host label and settings source, and checks the optional Instructions chip and its source and replacement status. The explicit-mode case submits the chosen mode and keeps it through a model change. The dispatch assertions remain the payload-preservation boundary. Fresh-view tests replace same-origin answers rather than merging them. Pending-view tests replace an older display with matching saved inventory. An otherwise eligible Start stays enabled while metadata or shown-model options are pending. The launcher displays no separate catalog-status line before or after settlement.
 
 ## Invariants And Boundaries
 
@@ -22,7 +22,12 @@ The current source and test assertions below establish the documented ownership;
 
 
 
-- The mounted model fixture keeps Start disabled while the role model is unoffered and enables it after an offered model is selected. The other case checks configured speed, an incompatible model, and a foreign-agent default. [2]
+
+- The launcher displays configured tier and foreign default provenance, and marks a known unoffered model for replacement. [2]
+
+- Matching saved inventory keeps eligible Start available during metadata and model-options refresh. The launcher shows no separate catalog-status line before or after settlement. [6]
+
+
 
 
 
@@ -34,7 +39,9 @@ The current source and test assertions below establish the documented ownership;
 
 
 
-- The mounted speed-only case checks the mode selector default and source, Instructions and settings-owned features. [4]
+
+- The launcher keeps explicit speed choices separate from effort and waits for the shown model’s Speed control before exercising an override. [4]
+
 - Mounted dispatch carries the explicit mode before and after a model override. [5]
 
 
@@ -43,4 +50,5 @@ The current source and test assertions below establish the documented ownership;
 ### Clock And Settlement Evidence
 
 
-- The launch-lock reread case enables fake time before mount, flushes the initial reply, then advances the 1,500 ms product reread in async `act`. Its no-status/no-alert and restored-Start assertions follow the actual reread opportunity; teardown restores real timers. [1]
+
+- A launch-in-progress options response schedules a 1,500 ms reread, with no status line or alert. Start returns after the reread. [1]

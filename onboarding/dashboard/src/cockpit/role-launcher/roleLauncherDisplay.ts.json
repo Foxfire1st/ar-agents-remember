@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "resolveAgentChoice is a current owner of the behavior described above.",
+      "note": "The explicit model wins. The configured role choice supplies model and effort where it applies, and foreign choices use host defaults.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d53e1170ea541f8cd1cd39e66697d6d77484a8f",
-            "content": "sha256:997a2d6491cb7e4362ef0665049e9066cc6ed66aeeb460a80c98f3580e3e1b96",
+            "blob": "23f7484a66b7e15d051fa8ce702cc7a3175f7db4",
+            "content": "sha256:37c5f7a08b0d70faa1e352026134ff1f416203d8d07294be10c2453d49636ce2",
             "locator": {
-              "kind": "symbol",
-              "name": "resolveAgentChoice"
+              "end": 76,
+              "kind": "line_range",
+              "start": 23
             }
           },
           "kind": "code"
@@ -23,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d53e1170ea541f8cd1cd39e66697d6d77484a8f",
+            "blob": "23f7484a66b7e15d051fa8ce702cc7a3175f7db4",
             "content": "sha256:f0cb5e0d7495fc15dd9b4df9925ff16991a2fc8a8b12d3de1e7cf8bcc2721df3",
             "locator": {
               "kind": "symbol",
@@ -39,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d53e1170ea541f8cd1cd39e66697d6d77484a8f",
+            "blob": "23f7484a66b7e15d051fa8ce702cc7a3175f7db4",
             "content": "sha256:5111818d06b646c027b9649f6e1b61d7c7b1be781a93c7644e95eed5e1dffe85",
             "locator": {
               "kind": "symbol",
@@ -50,12 +51,12 @@
         },
         {
           "anchor": {
-            "blob": "2d53e1170ea541f8cd1cd39e66697d6d77484a8f",
+            "blob": "23f7484a66b7e15d051fa8ce702cc7a3175f7db4",
             "content": "sha256:112f081439ef45ce7734ac26173b0018a150bcd0f3ad0f1626d09910215d87cd",
             "locator": {
-              "end": 189,
+              "end": 195,
               "kind": "line_range",
-              "start": 117
+              "start": 123
             }
           },
           "kind": "code"

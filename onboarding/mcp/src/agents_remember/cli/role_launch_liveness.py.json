@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+        "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
         "content": "sha256:fe67014225f7601da3d42996d7f8a37bb82a036d4ce1597f9be7fda7114b34d0",
         "locator": {
           "kind": "symbol",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+        "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
         "content": "sha256:784243a52fdd92c085e7878f22e824d1273e31ebb71ea9f786c36661821eb62c",
         "locator": {
-          "end": 503,
+          "end": 512,
           "kind": "line_range",
-          "start": 456
+          "start": 465
         }
       },
       "id": "RLZ-7CJ59T",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+        "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
         "content": "sha256:fe67014225f7601da3d42996d7f8a37bb82a036d4ce1597f9be7fda7114b34d0",
         "locator": {
-          "end": 427,
+          "end": 436,
           "kind": "line_range",
-          "start": 388
+          "start": 397
         }
       },
       "id": "RLZ-7FJJDH",
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
-        "content": "sha256:d50fdc1880e9960c3005b929057f234787a220d435edcf1b55b56d25735dce49",
+        "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
+        "content": "sha256:a1ce1f9b474495a426323655e44aa00b2680df195905f8838d3b9adc57d99d23",
         "locator": {
           "kind": "symbol",
           "name": "_refresh_execution"
@@ -78,8 +78,8 @@
     },
     {
       "anchor": {
-        "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
-        "content": "sha256:5ab0bd5e33bf52916e4d66a348431ab2e3ff375a3df7763bffc469e4f706493f",
+        "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
+        "content": "sha256:44c6f11693d2a7bcc050a26d71d31734069e163040d14edfe0e226d1891005e9",
         "locator": {
           "kind": "file"
         }
@@ -95,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+        "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
         "content": "sha256:b899be83916082b41cd49fc8be07bb667884652ed0513ac4c0e662015e6c2825",
         "locator": {
           "kind": "symbol",
@@ -114,15 +114,16 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of _refresh_execution supporting the stated file behavior.",
+      "note": "Execution refresh reads the recorded agent and applies its observation. A receipt without a confirmed host agent is projected without a host read.",
       "targets": [
         {
           "anchor": {
-            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
-            "content": "sha256:d50fdc1880e9960c3005b929057f234787a220d435edcf1b55b56d25735dce49",
+            "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
+            "content": "sha256:8f610bf33cbdbf5f66608be2852fb6bff54d61089d8ea50ff98554378667e8fd",
             "locator": {
-              "kind": "symbol",
-              "name": "_refresh_execution"
+              "end": 394,
+              "kind": "line_range",
+              "start": 359
             }
           },
           "kind": "code"
@@ -134,12 +135,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
             "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
             "locator": {
-              "end": 333,
+              "end": 341,
               "kind": "line_range",
-              "start": 317
+              "start": 325
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -186,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+            "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
             "content": "sha256:0db3b02f2816d5da1b415bf0cf67490767f964841e53d76e76e6d8a6bd94e643",
             "locator": {
               "end": 215,
@@ -203,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+            "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
             "content": "sha256:b899be83916082b41cd49fc8be07bb667884652ed0513ac4c0e662015e6c2825",
             "locator": {
               "end": 130,
@@ -215,7 +216,7 @@
         },
         {
           "anchor": {
-            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+            "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
             "content": "sha256:9e0c01f500e0cb88e0eb0069a1ab664eaa7e0bf30a24a7f268293562170a06c4",
             "locator": {
               "end": 129,
@@ -232,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+            "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
             "content": "sha256:d84281db465d5841a0fcf72d14b3b680bcabf8815b621b1887174fc69798a8a2",
             "locator": {
               "end": 233,
@@ -245,17 +246,30 @@
       ]
     },
     "16": {
-      "note": "Every saved archival call renews host liveness.",
+      "note": "The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free.",
       "targets": [
         {
           "anchor": {
-            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
-            "content": "sha256:ac7c58ca6d51602365024f34ec8ce9d092e2ffc3324d56587294c1723d9e9d21",
+            "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
+            "content": "sha256:0d46d328ef0398cb6dcd18226369bc3b10c1fc5dba4c504d87093b30bcd2ddaf",
             "locator": {
-              "end": 255,
+              "end": 314,
               "kind": "line_range",
-              "start": 236
+              "start": 262
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+            "content": "sha256:6df95fda0cb671cc252d11c53fa499a41c17fc8e41442c0001a1cc37d303da42",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
           "kind": "code"
         }
@@ -293,25 +307,16 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of _apply_reading supporting the stated file behavior.\n\nAnchor: `_apply_reading`",
+      "note": "The current reading updates changed lifecycle fields. An unreachable reading preserves the receipt and labels the response as last known.",
       "targets": [
         {
           "anchor": {
-            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
-            "content": "sha256:5ab0bd5e33bf52916e4d66a348431ab2e3ff375a3df7763bffc469e4f706493f",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+            "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
             "content": "sha256:fe67014225f7601da3d42996d7f8a37bb82a036d4ce1597f9be7fda7114b34d0",
             "locator": {
-              "kind": "symbol",
-              "name": "_apply_reading"
+              "end": 436,
+              "kind": "line_range",
+              "start": 397
             }
           },
           "kind": "code"
@@ -319,25 +324,16 @@
       ]
     },
     "3": {
-      "note": "Frozen implementation of _revive_agent supporting the stated file behavior.\n\nAnchor: `_revive_agent`",
+      "note": "Revive republishes the recorded role binding and resumes only the same eligible closed host agent. A recorded refusal remains until that session is observed open.",
       "targets": [
         {
           "anchor": {
-            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
-            "content": "sha256:5ab0bd5e33bf52916e4d66a348431ab2e3ff375a3df7763bffc469e4f706493f",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+            "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
             "content": "sha256:784243a52fdd92c085e7878f22e824d1273e31ebb71ea9f786c36661821eb62c",
             "locator": {
-              "kind": "symbol",
-              "name": "_revive_agent"
+              "end": 512,
+              "kind": "line_range",
+              "start": 465
             }
           },
           "kind": "code"
@@ -365,12 +361,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
             "content": "sha256:e4afb6d90874acffbb83852849e459d90170be3a4c5b4a7002c6f206915cc46e",
             "locator": {
-              "end": 147,
+              "end": 155,
               "kind": "line_range",
-              "start": 104
+              "start": 112
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -379,16 +375,16 @@
       ]
     },
     "7": {
-      "note": "Answered refusal persists as failed across refreshes without rewrite and blocks another Revive.",
+      "note": "Refresh preserves the failed Revive status and reason. A second Revive refuses after agent-state without a resume call.",
       "targets": [
         {
           "anchor": {
-            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
-            "content": "sha256:963077096a20bb9298fa5170b8715db17b6b1c3c0b7da52cadf0c03d82c41557",
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
+            "content": "sha256:c1cdf40fe6e3e7b91fcf5007ec8f0be6e5eccb500957bd94db2c9232b7c58f59",
             "locator": {
-              "end": 834,
+              "end": 1037,
               "kind": "line_range",
-              "start": 807
+              "start": 1018
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -401,12 +397,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
             "content": "sha256:c5934a51fedfeab0a012fa793a1de9770fd08325837549d47589227e57912c9e",
             "locator": {
-              "end": 885,
+              "end": 1083,
               "kind": "line_range",
-              "start": 871
+              "start": 1069
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -419,12 +415,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
             "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
             "locator": {
-              "end": 585,
+              "end": 783,
               "kind": "line_range",
-              "start": 565
+              "start": 763
             },
             "path": "mcp/tests/test_paseo_status.py"
           },

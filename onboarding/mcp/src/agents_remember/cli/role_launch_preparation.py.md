@@ -108,7 +108,9 @@ The `roleTools.usage` value this module compiles now tells a role that a reply i
 
 ## Evidence
 
-- Frozen implementation of prepare_role_handover supporting the stated file behavior. [1]
+
+- The shared preparer resolves launch choices before workspace preparation, then compiles the bound task readers and handover. [1]
+
 
 - Frozen implementation of _ar_mcp_context supporting the stated file behavior. [2]
 
@@ -118,7 +120,9 @@ The `roleTools.usage` value this module compiles now tells a role that a reply i
 
 
 
-- Checks rejected choices create no receipt, workspace, agent or enclosure. [6]
+
+- Launch validation rejects unoffered selections. An unoffered model refuses before the workspace resolver is called. [6]
+
 
 - Changed/missing saved scope refuses with both pairs, no bridge/write/enclosure creation. [7]
 
@@ -152,7 +156,9 @@ Anchor:
 
 Source: mcp/src/agents_remember/cli/role_launch_preparation.py
 
-- Checks that every view and start asks fresh and explicit refresh rescans provider discovery. [5]
+
+- Independent views read fresh metadata, Start reads metadata then its selected pair, and explicit Refresh renews discovery. [5]
+
 
 
 </details>
@@ -171,12 +177,18 @@ Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-963
 
 ## Evidence
 
-- Select and catalog-validate before workspace creation. [11]
+
+- Selection validation and the native Antigravity refusal run before workspace and enclosure preparation. [11]
+
 
 - Defaults extraction preserves host-role lookup. [12]
 
-- The preparer carries bound canonical/read-copy metadata, composes source-bound instructions and preserves parent/peer routing. Source inspection establishes these implementation boundaries, not live-host execution or acceptance. [10]
-- Detail-bound composition enters the existing handover and message binding. [13]
+
+- The preparer compiles instructions, names the canonical task and copied documents, and records the starter and leaf peers through their bound role addresses. [10]
+
+
+- The handover composes source-bound details and includes the resulting instruction digest in the immutable message binding. [13]
+
 
 
 

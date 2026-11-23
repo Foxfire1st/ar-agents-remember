@@ -18,9 +18,10 @@ Presentation, not selection repair, options loading, backend permission or final
 
 ## Evidence
 
-- resolveAgentChoice is a current owner of the behavior described above. [1]
+
+- The explicit model wins. The configured role choice supplies model and effort where it applies, and foreign choices use host defaults. [1]
+
 
 - displayedModelLabel is a current owner of the behavior described above. [2]
 
 - The empty mode-selection option derives its value and provenance from the selected harness and resolved role defaults. [3]
-

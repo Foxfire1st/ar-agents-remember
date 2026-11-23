@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/cockpit/RoleChats.modelOptions.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6f3fbcdb14b2216f3905824f419fe91a48684e90",
+        "content": "sha256:a88d855178a7fa8050a39a3ff3e3bcf34fe78fe910d31d4698c7230149235f73",
+        "locator": {
+          "kind": "symbol",
+          "name": "retains the model and starts with defaults when the host cannot read its options"
+        }
+      },
+      "facet": "A failed feature query leaves the model selectable and a Start proceeds without explicit feature values.",
+      "id": "PRF-1HGB0K",
+      "invariant": "INV-1DBF74",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 5",
+        "leaf": "261112-BUG-L19"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f3fbcdb14b2216f3905824f419fe91a48684e90",
+        "content": "sha256:dd9d0170f80b1aa4fefcc69c00e014653611e26dbd481de66c42fa9c5b6ffe40",
+        "locator": {
+          "kind": "symbol",
+          "name": "Refresh retries a held lock, renews metadata first and drops previous-generation replies"
+        }
+      },
+      "facet": "The refreshed metadata request precedes selected options and replies from the previous generation are ignored.",
+      "id": "PRF-PKMM7P",
+      "invariant": "INV-TRCBNZ",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 2",
+        "leaf": "261112-BUG-L19"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f3fbcdb14b2216f3905824f419fe91a48684e90",
+        "content": "sha256:1d7b3b82f6c713aef871c3546f9c8aef4984817593a1c56b0b439b2206beb0b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "queries each newly shown provider and model, reusing its answer across roles and documents"
+        }
+      },
+      "facet": "Each displayed pair is queried once and cached across role and document choices.",
+      "id": "PRF-XKA48T",
+      "invariant": "INV-J2SF5K",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 1",
+        "leaf": "261112-BUG-L19"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The mounted cases assert request bodies and visible launcher state across opening, selection, Refresh, Start and Retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f3fbcdb14b2216f3905824f419fe91a48684e90",
+            "content": "sha256:1fcc3d983f5d3511574c163817ab495b4f6f0055e5448e8869e454338c3d9227",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:da9bb84ab152d8536f1b564e85fc8e34c877b27ff313d5c52d3f751764b17d81",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:21f0800be2a7997db8296707a004b040b28dba444cb781207687a04bf3ee2259",
         "locator": {
           "kind": "symbol",
@@ -40,26 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
-        "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
-        "locator": {
-          "kind": "symbol",
-          "name": "launcher_options"
-        }
-      },
-      "id": "RLZ-1A9CAN",
-      "invariant": "INV-002A1G",
-      "origin": {
-        "handoffEntry": "L71-CURRENT242-W-05",
-        "leaf": "260928-MIK-L71"
-      },
-      "rationale": "The public options route exposes offered controls and their sources for onboarding and the dashboard; it is not a guessed static feature list.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
-        "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+        "content": "sha256:d115f8d21320f900e3dedd25aa478a30fc186864fbce03a07355ef3bffcf6f8d",
         "locator": {
           "kind": "symbol",
           "name": "launcher_options"
@@ -71,13 +53,13 @@
         "handoffEntry": "L202-A6b-shared-fresh-catalog",
         "leaf": "260928-MIK-L202"
       },
-      "rationale": "Requests full offers for a launcher view and returns the catalog's current/saved/unknown provenance.",
+      "rationale": "Returns role defaults and scoped catalogue metadata without feature fan-out.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
-        "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+        "content": "sha256:6f65805395b74e84622fcaddc827333a9e3af273cc57041dd8a2f53e423617dd",
         "locator": {
           "kind": "symbol",
           "name": "launcher_catalog"
@@ -94,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
         "locator": {
           "kind": "symbol",
@@ -112,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
-        "content": "sha256:620526a163bd5b191428039bdfb97ab0ce593c22b9ec51e2f05bb1ea55895ec4",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+        "content": "sha256:3dcd0adf88a37933435ec7101f47bf93b0d6d67cc6a822717b855e43fdb382bb",
         "locator": {
           "kind": "symbol",
           "name": "launcher_catalog_question"
@@ -130,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:69f637c761167dc15d8b99a868e04068f45d10e52e2fecd4eacc1bf24bb2fc86",
         "locator": {
           "kind": "symbol",
@@ -148,10 +130,12 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
-        "content": "sha256:c41effe9759b118d49fa0cc900ee67bce26c52bb7b80b59a64557563ae360a27",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+        "content": "sha256:47d0306c62a4c60f2586311d531522b0d47ce65c249b07248df790d28bd7b097",
         "locator": {
-          "kind": "file"
+          "end": 446,
+          "kind": "line_range",
+          "start": 442
         }
       },
       "id": "RLZ-J15B66",
@@ -160,12 +144,12 @@
         "handoffEntry": "NEW-R192-EXTRA-ARGS",
         "leaf": "260928-MIK-L184"
       },
-      "rationale": "This is where the launch record is assembled from the plan, so a plan the start did not build leaves the field out of the record.",
+      "rationale": "Attaches a nonempty harness-argument plan to the resolved launch options with its provenance.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:54b6ef2a933944520c73acab6fbbcf27cb55859f30f861d728f627d6fcde5299",
         "locator": {
           "kind": "symbol",
@@ -183,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:d6760aa54784fc632ef9b14625915a343b8caf98e0d524bcbdeb1e2e57c253c9",
         "locator": {
           "kind": "symbol",
@@ -201,7 +185,26 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+        "content": "sha256:d115f8d21320f900e3dedd25aa478a30fc186864fbce03a07355ef3bffcf6f8d",
+        "locator": {
+          "end": 232,
+          "kind": "line_range",
+          "start": 196
+        }
+      },
+      "id": "RLZ-PBVSKD",
+      "invariant": "INV-1DBF74",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 5",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Uses model metadata and the saved catalogue without asking for every model's options.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:40c6195a6d5fe3993fdd56133bde208da01b7adffd23af71e23dfa57f5342ca5",
         "locator": {
           "kind": "symbol",
@@ -219,7 +222,7 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:ce43da070683e060637f2c7bb5280bedae7908e8eb563e6bce8e16d92696e922",
         "locator": {
           "kind": "symbol",
@@ -237,7 +240,7 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:69f637c761167dc15d8b99a868e04068f45d10e52e2fecd4eacc1bf24bb2fc86",
         "locator": {
           "kind": "symbol",
@@ -255,7 +258,7 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:66a8b3fc57f621f7f7d97009ee3df3c3d0e7e05bc491e30032c9f07b48e5d835",
         "locator": {
           "kind": "symbol",
@@ -273,8 +276,8 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
-        "content": "sha256:9c2ca81f6a5216bcf902204da2632f872bba64b511ad27977b39bb6c3f004ab3",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+        "content": "sha256:57dcf45cd1f6fb27b6976b8c071f05fd4a87012c55322fc19387a8d4a0e3d323",
         "locator": {
           "kind": "symbol",
           "name": "_question_catalog"
@@ -291,7 +294,7 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:ce43da070683e060637f2c7bb5280bedae7908e8eb563e6bce8e16d92696e922",
         "locator": {
           "kind": "symbol",
@@ -309,7 +312,7 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
         "content": "sha256:40c6195a6d5fe3993fdd56133bde208da01b7adffd23af71e23dfa57f5342ca5",
         "locator": {
           "kind": "symbol",
@@ -327,8 +330,8 @@
     },
     {
       "anchor": {
-        "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
-        "content": "sha256:8a9b221e6e947655d7e8c9a202ee41d6a9b1a1c2b902f7b82c40a496208bfe76",
+        "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+        "content": "sha256:85a06aa7fb378f0553c306fad40c22b575e0c8110a75772e45c80e6276b32478",
         "locator": {
           "kind": "symbol",
           "name": "paseo_catalog_scope"
@@ -346,16 +349,56 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of launcher_catalog supporting the stated file behavior.",
+      "note": "The metadata reader shares its answer within an operation. Start validation memoizes selected-pair answers. The direct model-options branch queries its supplied pair and the pane keeps its answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
-            "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:1fdb1385ba3f70195d0d58d960e8fd0b8b748920bea506db0fb6b1dbc7035dbd",
             "locator": {
-              "kind": "symbol",
-              "name": "launcher_catalog"
+              "end": 140,
+              "kind": "line_range",
+              "start": 75
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0554881d5c79e63acbf12acfb1e13cb65cdbe98d",
+            "content": "sha256:0570e65b14ca8d8a261e2abf430c428c0249c35c5d5f2744e1cea8eba02eec67",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog_features.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "content": "sha256:5fe191cf7114f08dbe30c2f5ed30949cf9bfa98a663431f88b23d042f350baba",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c5533926f11113ddb2cc813604988d2f775292f",
+            "content": "sha256:9507f194f1fcd5aef67148991aa444ab80f8cd3917b081a28f8e384489751e57",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
           },
           "kind": "code"
         }
@@ -366,12 +409,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:ce43da070683e060637f2c7bb5280bedae7908e8eb563e6bce8e16d92696e922",
             "locator": {
-              "end": 837,
+              "end": 831,
               "kind": "line_range",
-              "start": 810
+              "start": 804
             }
           },
           "kind": "code"
@@ -383,36 +426,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:03486b1da4a44c77a9cb965476fa8f9db5d3f0fbafdd3127ca21d3ee475ec203",
             "locator": {
-              "end": 365,
+              "end": 362,
               "kind": "line_range",
-              "start": 348
+              "start": 345
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:5f67a7a9003eb64471e805484105c55d118baff4839f8c2c587757c886b68262",
             "locator": {
-              "end": 434,
+              "end": 431,
               "kind": "line_range",
-              "start": 427
+              "start": 424
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
             "content": "sha256:b0aedec5125e7a9ab2a347fbf26618023f1a8302ba3b7c6b309cbd0a0747ac5e",
             "locator": {
-              "end": 450,
+              "end": 453,
               "kind": "line_range",
-              "start": 449
+              "start": 452
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -425,12 +468,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e84ab41c4069ebd86ae8687b0fd9e9a5cd0e53aa",
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
             "content": "sha256:6e1e9914f4cc0d0fbe3a0f34fc74430708e260aa16b1b528ff2fca05686bbe4f",
             "locator": {
-              "end": 628,
+              "end": 626,
               "kind": "line_range",
-              "start": 606
+              "start": 604
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -443,12 +486,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:69f637c761167dc15d8b99a868e04068f45d10e52e2fecd4eacc1bf24bb2fc86",
             "locator": {
-              "end": 442,
+              "end": 439,
               "kind": "line_range",
-              "start": 238
+              "start": 235
             }
           },
           "kind": "code"
@@ -460,12 +503,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:4d49785357172ac07242a523135076e79f19c3b0df5243054109e7bca22db8e2",
             "locator": {
-              "end": 722,
+              "end": 719,
               "kind": "line_range",
-              "start": 675
+              "start": 672
             }
           },
           "kind": "code"
@@ -473,16 +516,16 @@
       ]
     },
     "4": {
-      "note": "Checks that every view and start asks fresh and explicit refresh rescans provider discovery.",
+      "note": "Two independent views request metadata. Start reads metadata and its selected pair, and Refresh requests provider rediscovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "00532bdbe263591821e2365606c47747da6ed99a",
-            "content": "sha256:66809e1332ee7087d3d160d114770950a23628d2cf1a3cc43e0ecebac4291bde",
+            "blob": "debdfc475e0f77d4708f4db7631496c4015fcdfb",
+            "content": "sha256:e4dc0a7a740d7eab71bab501f77d22161cdd163a7466d55527101a7c544b10ef",
             "locator": {
-              "end": 237,
+              "end": 276,
               "kind": "line_range",
-              "start": 178
+              "start": 264
             },
             "path": "mcp/tests/test_paseo_catalog.py"
           },
@@ -495,12 +538,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00532bdbe263591821e2365606c47747da6ed99a",
+            "blob": "debdfc475e0f77d4708f4db7631496c4015fcdfb",
             "content": "sha256:b9895886bde75c0eda26d00974e48f0f41f404818c1da3fde921471c5125d980",
             "locator": {
-              "end": 374,
+              "end": 419,
               "kind": "line_range",
-              "start": 303
+              "start": 348
             },
             "path": "mcp/tests/test_paseo_catalog.py"
           },
@@ -509,15 +552,16 @@
       ]
     },
     "6": {
-      "note": "Options include the configured alternative.",
+      "note": "Launcher options expose metadata, resolved sources and any configured step-up alternative.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
-            "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
+            "content": "sha256:d115f8d21320f900e3dedd25aa478a30fc186864fbce03a07355ef3bffcf6f8d",
             "locator": {
-              "kind": "symbol",
-              "name": "launcher_options"
+              "end": 232,
+              "kind": "line_range",
+              "start": 196
             }
           },
           "kind": "code"
@@ -529,12 +573,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:f2bc8e53d75dafa5b479dc412432bd659774c4da230f34a39c36fa3746170a8f",
             "locator": {
-              "end": 442,
+              "end": 439,
               "kind": "line_range",
-              "start": 335
+              "start": 332
             }
           },
           "kind": "code"
@@ -559,12 +603,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+            "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
             "content": "sha256:97504366f9da7c1af4b264edb05eef9a592df204edfeb099162bb6467753cb62",
             "locator": {
-              "end": 554,
+              "end": 551,
               "kind": "line_range",
-              "start": 532
+              "start": 529
             }
           },
           "kind": "code"

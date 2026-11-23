@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The W7 catalog reports no Pi mode list or default, so a Pi settings row with no named mode resolves to an omitted create mode field.",
-    "task": "261112-BUG-L11",
+    "statement": "The Pi guide’s default-path omission still applies when no named mode is supplied and the host advertises no Pi default.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/install/pi.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/src/agents_remember/kernel/harnesses.py"
     },
     {
-      "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },

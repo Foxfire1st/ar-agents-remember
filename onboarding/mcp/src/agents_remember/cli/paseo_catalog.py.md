@@ -12,7 +12,7 @@ Owns launcher catalog discovery, host role-profile reads, source-precedence sele
 
 The explainer's settings role supplies launch choices, the host profile, settings sources and field origins to the shared role-launch resolver.
 
-Each operation asks Paseo afresh. A view asks for the full catalog; a start asks metadata and then the selected model’s features. A ContextVar shares these answers only within the current operation. The durable store is scoped by install prefix, home, listen and version and supplies only unanswered parts from their last successful answer. `resolve_agent_selection` resolves each choice by source precedence — explicit start call, host role profile, our settings, host default — while keeping lower choices bound to their authored provider/model: an incompatible lower value is omitted with its source and reason rather than reinterpreted. `read_host_role` reads the running host's profiles through a read-only bridge call; the first exact role-name match wins and an unreadable catalog falls back to role settings with the reason recorded. The resolver applies a launcher-chosen mode first, then the applicable host profile's mode and the settings row's mode on its own harness. With no applicable named mode, it uses the host-advertised default when the selected harness's modes are known and the host advertises one. Without an applicable choice the start omits mode. A matching listed name or label resolves to its ID. An unmatched named mode passes through for the host to handle. With unknown offers, the named choice or its absence is preserved. Features resolve per offered host metadata: `service_tier` and `fast_mode` are speed choices a start call may state, while permission-bearing and unknown-bearing values are refused and belong in user settings or the host profile. `serviceTier` stays independent of effort, is revalidated for model overrides, matches offered IDs before labels without case, and is never replaced with a different offered choice. There is no local fast-to-priority alias. `launcher_options` publishes resolved values with per-choice sources. The request-digest owner removes empty override feature maps before hashing.
+A metadata request lists provider and model choices. The panel queries the direct model-options route for the shown pair and keeps its answer in the pane. Start validates its resolved pair when needed. Its operation-local catalog shares metadata and memoizes selected-pair answers. The durable store is scoped by install prefix, home, listen and version and supplies only unanswered parts from their last successful answer. `resolve_agent_selection` resolves each choice by source precedence — explicit start call, host role profile, our settings, host default — while keeping lower choices bound to their authored provider/model: an incompatible lower value is omitted with its source and reason rather than reinterpreted. `read_host_role` reads the running host's profiles through a read-only bridge call; the first exact role-name match wins and an unreadable catalog falls back to role settings with the reason recorded. The resolver applies a launcher-chosen mode first, then the applicable host profile's mode and the settings row's mode on its own harness. With no applicable named mode, it uses the host-advertised default when the selected harness's modes are known and the host advertises one. Without an applicable choice the start omits mode. A matching listed name or label resolves to its ID. An unmatched named mode passes through for the host to handle. With unknown offers, the named choice or its absence is preserved. Features resolve per offered host metadata: `service_tier` and `fast_mode` are speed choices a start call may state, while permission-bearing and unknown-bearing values are refused and belong in user settings or the host profile. `serviceTier` stays independent of effort, is revalidated for model overrides, matches offered IDs before labels without case, and is never replaced with a different offered choice. There is no local fast-to-priority alias. `launcher_options` publishes resolved values with per-choice sources. The request-digest owner removes empty override feature maps before hashing.
 
 
 The resolver adds `extraArgs` to the launch options only when the selected harness has a nonempty plan.
@@ -25,7 +25,9 @@ Runtime identity, explicit provider refresh, host-profile discovery, per-choice 
 
 ## Evidence
 
-- Options include the configured alternative. [6]
+
+- Launcher options expose metadata, resolved sources and any configured step-up alternative. [6]
+
 
 
 
@@ -42,7 +44,11 @@ Runtime identity, explicit provider refresh, host-profile discovery, per-choice 
 
 
 
-- Frozen implementation of launcher_catalog supporting the stated file behavior. [1]
+
+
+- The metadata reader shares its answer within an operation. Start validation memoizes selected-pair answers. The direct model-options branch queries its supplied pair and the pane keeps its answer. [1]
+
+
 
 
 
@@ -57,7 +63,9 @@ Runtime identity, explicit provider refresh, host-profile discovery, per-choice 
 
 
 
-- Checks that every view and start asks fresh and explicit refresh rescans provider discovery. [4]
+
+- Two independent views request metadata. Start reads metadata and its selected pair, and Refresh requests provider rediscovery. [4]
+
 
 
 

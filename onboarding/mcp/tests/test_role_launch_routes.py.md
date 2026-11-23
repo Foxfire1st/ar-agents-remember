@@ -28,7 +28,7 @@ dispatch, and the identity a taskless execution keeps across a revive.
   projects architect dispatch reachable through the routes.
 - **Taskless identity.** `TasklessExecutionIdentityTests` keeps a taskless request address exact and a
   bound revive unchanged, replays a same request while a second intent gets its own receipt and report,
-  and confines the one-time history-id migration to matching taskless ids.
+  and checks the options route returns the migrated current and archived taskless IDs while leaving foreign and Investigator receipt files in place.
 - **Standalone selections.** `StandaloneMasterSelectionTests` admits a manager, a leaf crew and an
   Investigator on a master that no sprint commands, keeps a commanded master's exact-sprint requirement,
   and refuses a sprint supplied for a standalone master.
@@ -46,4 +46,5 @@ app so each case observes the answer the dashboard receives.
 ## Evidence
 
 
-- Report links, projection reuse, the public execution result, dispatch and taskless identity are asserted through the routes. [1]
+
+- Fixtures cover canonical report links, binding reuse, public result fields, project dispatch and taskless identity. [1]

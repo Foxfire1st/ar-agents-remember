@@ -1,12 +1,17 @@
 {
   "anchor": {
-    "blob": "e2375a78428dce9741f276eb6edf1f3f24f431b6",
-    "content": "sha256:bbac68a49582dc2ae9a74d1a6ba653e75de65aa0036f200bd155eace56ba8091",
+    "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+    "content": "sha256:a82b0108b65417661402d17fbb334d7b33c48fbd13fc9ee36116f7599d0216ab",
     "locator": {
       "kind": "symbol",
       "name": "recovery_note"
     },
     "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+  },
+  "closed": {
+    "commit": "b17c1ce5a93fd41d985352915ce1c30feb0fecb2",
+    "reason": "The recovery note names a bounded handover locator whose length is independent of the report folder depth.",
+    "task": "260928-MIK-L199"
   },
   "id": "WKN-J8RS6F",
   "kind": "fault",
@@ -25,12 +30,12 @@
     "leaf": "260928-MIK-L197",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928_maintained-invariant-knowledge"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "A role launch is refused when the handover artifact's path cannot be named inside the 600-character recovery note, so a launch from a deep enclosure never starts."
 }

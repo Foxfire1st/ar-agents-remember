@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "c375805a33bdec85009bc25985d34e5748398a86",
-    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The Tool answers reference describes all five declaration rows by wire Boolean, including the integrity refusal with ok true, and matches the fitting, omission and exact-locator behavior.",
-    "task": "261112-BUG-L17",
+    "statement": "The role-tool reference’s same-request reconciliation and single-seat boundary still hold after option-side receipt observation moved outside the write lock.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -143,7 +143,7 @@
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+      "blob": "17fba3f8ed5760153e88d8ed6fb1512f8e1e92df",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
     },

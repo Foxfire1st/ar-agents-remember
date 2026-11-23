@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a949616333e66c3b9f7c9a8f33c9a3a9c9fa8e4e",
-    "commit": "240e3a647ff49955c1e4762801ec793e002aa243",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The Codex installation guide describes the observed auto-review default and the start call source for an explicit launcher mode.",
-    "task": "261112-BUG-L11",
+    "statement": "The Codex guide correctly states the 300-second role-seat default, omission of a per-server timeout on both Paseo transports, and Codex’s rejection of a timeout-only server table.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/install/codex.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "6ef98915f52ea21ef28c1295d4d30b8687deb3dc",
+      "blob": "960570fd8cca7ae2b03709ba08c2e8e74abc269a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -88,6 +88,34 @@
           "end": 632,
           "kind": "line_range",
           "start": 625
+        },
+        "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+      },
+      "heading": "Settings of this harness",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "b33b0956cce071df6dbbad017f2532bc112d48a9",
+        "content": "sha256:c364b21249c31b21535a0833d38d20711fd35b379f3f6a2d41c58ffe48b58a13",
+        "locator": {
+          "end": 647,
+          "kind": "line_range",
+          "start": 633
+        },
+        "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+      },
+      "heading": "Settings of this harness",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "b33b0956cce071df6dbbad017f2532bc112d48a9",
+        "content": "sha256:5323aa8c2e43bb94dca037c3bc8628ef84a5c628f5daff4486169802519adaa5",
+        "locator": {
+          "end": 4537,
+          "kind": "line_range",
+          "start": 4532
         },
         "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
       },

@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:98fbd77b7672b4cca22fe605161433c316af3e43afe3fc9d0b5a2144001621dd",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
-        "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+        "content": "sha256:9e2112c3ecf7b247ed629b2336636724bddf609dddbd2c51988847e0fd8f827d",
         "locator": {
           "kind": "symbol",
           "name": "prepare_role_handover"
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:d978199794e7d4da26ff9f5485d80bc07bebf8ca36115cb94b84d03f7587add1",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
         "locator": {
           "kind": "symbol",
@@ -112,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:8aeb4c9c5feaf03555182b2ce173b50d4b63d042afdcedddcfccbd9cfb055bda",
         "locator": {
           "kind": "symbol",
@@ -130,12 +130,12 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:3767742eb1562b12475352ffa77c55c949963aa02e68c37efbdb7ef62757e084",
         "locator": {
-          "end": 362,
+          "end": 368,
           "kind": "line_range",
-          "start": 362
+          "start": 368
         }
       },
       "id": "RLZ-702R9Y",
@@ -149,8 +149,8 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
-        "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+        "content": "sha256:9e2112c3ecf7b247ed629b2336636724bddf609dddbd2c51988847e0fd8f827d",
         "locator": {
           "kind": "symbol",
           "name": "prepare_role_handover"
@@ -167,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
         "locator": {
           "kind": "symbol",
@@ -185,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:ae9169abae6738fc9a561547d75cdeb72f64e1473ecaf76aed6a1ac03b18a254",
         "locator": {
           "kind": "symbol",
@@ -203,7 +203,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:d978199794e7d4da26ff9f5485d80bc07bebf8ca36115cb94b84d03f7587add1",
         "locator": {
           "kind": "symbol",
@@ -221,8 +221,8 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
-        "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+        "content": "sha256:9e2112c3ecf7b247ed629b2336636724bddf609dddbd2c51988847e0fd8f827d",
         "locator": {
           "kind": "symbol",
           "name": "prepare_role_handover"
@@ -239,7 +239,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:ad12b44aa8d3cf322c080cbac6c1ca03847216bf2dc5936bb9d47489caaf37e6",
         "locator": {
           "kind": "symbol",
@@ -257,7 +257,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
         "locator": {
           "kind": "symbol",
@@ -275,7 +275,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:5e5430e36b61196467b614c0fd413bde32b78ef6de480fea36c5113b711a5667",
         "locator": {
           "kind": "symbol",
@@ -293,7 +293,26 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+        "content": "sha256:b87b6ecc7d7e28f1b9c34f446df57cb88dc7385093c958c95d89e1c88af1b2d0",
+        "locator": {
+          "end": 239,
+          "kind": "line_range",
+          "start": 239
+        }
+      },
+      "id": "RLZ-HZ21DS",
+      "invariant": "INV-47MBEJ",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 6",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Refuses the resolved native provider before preparing a fresh role.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:a22825664b51defd28eec8a582fb0e965eb88368f049472166db4e2d8324a82b",
         "locator": {
           "kind": "symbol",
@@ -311,7 +330,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
         "locator": {
           "kind": "symbol",
@@ -329,8 +348,8 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
-        "content": "sha256:ca9880cbd12bd1e65dcde9fd1499cf5dc673bbdccf4b20bdd76b17c5b5f521db",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+        "content": "sha256:fb5bd881df99ae7cd65d83c29ea1e7f5732604c0263ee4541e03877d8d14e579",
         "locator": {
           "kind": "file"
         }
@@ -346,7 +365,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
         "locator": {
           "kind": "symbol",
@@ -364,7 +383,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:7239e89abf19a0e115b20e40550cab8f02158f841b9f839ba1434cfb9191030a",
         "locator": {
           "kind": "symbol",
@@ -382,7 +401,7 @@
     },
     {
       "anchor": {
-        "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
         "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
         "locator": {
           "kind": "symbol",
@@ -401,15 +420,16 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of prepare_role_handover supporting the stated file behavior.",
+      "note": "The shared preparer resolves launch choices before workspace preparation, then compiles the bound task readers and handover.",
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
-            "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:9e2112c3ecf7b247ed629b2336636724bddf609dddbd2c51988847e0fd8f827d",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_role_handover"
+              "end": 278,
+              "kind": "line_range",
+              "start": 221
             }
           },
           "kind": "code"
@@ -417,14 +437,52 @@
       ]
     },
     "10": {
-      "note": "The preparer carries bound canonical/read-copy metadata, composes source-bound instructions and preserves parent/peer routing. Source inspection establishes these implementation boundaries, not live-host execution or acceptance.\n\nAnchor: `_compile_handover`",
+      "note": "The preparer compiles instructions, names the canonical task and copied documents, and records the starter and leaf peers through their bound role addresses.",
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
-            "content": "sha256:ca9880cbd12bd1e65dcde9fd1499cf5dc673bbdccf4b20bdd76b17c5b5f521db",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:db51230583b517fbafaf251c76f72732a0c65fb6f840efe1be01a70a1fcddf45",
             "locator": {
-              "kind": "file"
+              "end": 650,
+              "kind": "line_range",
+              "start": 598
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:dfd148f257fbb6f4010fc33b5fac16db6bc6d5b1d8f3e876305f8cf50cdee644",
+            "locator": {
+              "end": 689,
+              "kind": "line_range",
+              "start": 665
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:fc25f7952bcf2d168166291416b33b21818d721b8900178e5f980011ef624725",
+            "locator": {
+              "end": 769,
+              "kind": "line_range",
+              "start": 692
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:24f5ce386d9c4f4b6c4b097184cfa8139218598bdefb3f92a5111eaf9945db3f",
+            "locator": {
+              "end": 869,
+              "kind": "line_range",
+              "start": 850
             }
           },
           "kind": "code"
@@ -432,15 +490,16 @@
       ]
     },
     "11": {
-      "note": "Select and catalog-validate before workspace creation.",
+      "note": "Selection validation and the native Antigravity refusal run before workspace and enclosure preparation.",
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
-            "content": "sha256:4970820acf2a339998c58d56cfc7183b9ced6c386736e55939cf86311636cb90",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:6ef3b096da27c5d6310b04e67c67d2a31bfd3cdc23656a0965201f225f5075fc",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_role_handover"
+              "end": 253,
+              "kind": "line_range",
+              "start": 233
             }
           },
           "kind": "code"
@@ -452,7 +511,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
             "locator": {
               "kind": "symbol",
@@ -464,15 +523,30 @@
       ]
     },
     "13": {
-      "note": "Detail-bound composition enters the existing handover and message binding.\n\nAnchor: `_compile_handover`",
+      "note": "The handover composes source-bound details and includes the resulting instruction digest in the immutable message binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
-            "content": "sha256:ca9880cbd12bd1e65dcde9fd1499cf5dc673bbdccf4b20bdd76b17c5b5f521db",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "content": "sha256:28a17dfd5801e8f115a48e8895d91819689272b4d03bc0b40656faa9e22d0a09",
             "locator": {
-              "kind": "file"
+              "end": 688,
+              "kind": "line_range",
+              "start": 665
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:776cedf3f10fad549c1183da81edda0774134783577531b94f5ce206acf45b93",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
           },
           "kind": "code"
         }
@@ -501,7 +575,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:c0ad5b8761a4da6a95ad5469b1e425605ac63fdf93b6f1d8a86f30d0a5412c53",
             "locator": {
               "kind": "symbol",
@@ -517,7 +591,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:5e5430e36b61196467b614c0fd413bde32b78ef6de480fea36c5113b711a5667",
             "locator": {
               "kind": "symbol",
@@ -533,7 +607,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:98fbd77b7672b4cca22fe605161433c316af3e43afe3fc9d0b5a2144001621dd",
             "locator": {
               "kind": "symbol",
@@ -549,7 +623,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:327c2ecef707377b3d1753bab2d319f8df963473f4c308575a916c6f9c33c75b",
             "locator": {
               "kind": "symbol",
@@ -583,7 +657,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:7239e89abf19a0e115b20e40550cab8f02158f841b9f839ba1434cfb9191030a",
             "locator": {
               "kind": "symbol",
@@ -594,12 +668,12 @@
         },
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:fc63e6bf96780c8d60f22ab7f3189afb2231b725c74b61ca8ce0e05d5592b65e",
             "locator": {
-              "end": 768,
+              "end": 774,
               "kind": "line_range",
-              "start": 749
+              "start": 755
             }
           },
           "kind": "code"
@@ -607,14 +681,16 @@
       ]
     },
     "5": {
-      "note": "Checks that every view and start asks fresh and explicit refresh rescans provider discovery.",
+      "note": "Independent views read fresh metadata, Start reads metadata then its selected pair, and explicit Refresh renews discovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "00532bdbe263591821e2365606c47747da6ed99a",
-            "content": "sha256:817cdeefa8b95db11a58fd768757678dc592e15af853085683cc8b70eb7e87c9",
+            "blob": "debdfc475e0f77d4708f4db7631496c4015fcdfb",
+            "content": "sha256:e4dc0a7a740d7eab71bab501f77d22161cdd163a7466d55527101a7c544b10ef",
             "locator": {
-              "kind": "file"
+              "end": 276,
+              "kind": "line_range",
+              "start": 264
             },
             "path": "mcp/tests/test_paseo_catalog.py"
           },
@@ -623,16 +699,16 @@
       ]
     },
     "6": {
-      "note": "Checks rejected choices create no receipt, workspace, agent or enclosure.\n\nAnchor: `LaunchValidationTests.test_a_launch_is_validated_against_the_catalog_before_anything_is_created`",
+      "note": "Launch validation rejects unoffered selections. An unoffered model refuses before the workspace resolver is called.",
       "targets": [
         {
           "anchor": {
-            "blob": "00532bdbe263591821e2365606c47747da6ed99a",
-            "content": "sha256:76deccd2f509435da730cdd3a5519c9a381776b2e2ca596aebb34dc673bf64a8",
+            "blob": "debdfc475e0f77d4708f4db7631496c4015fcdfb",
+            "content": "sha256:b9895886bde75c0eda26d00974e48f0f41f404818c1da3fde921471c5125d980",
             "locator": {
-              "end": 336,
+              "end": 419,
               "kind": "line_range",
-              "start": 293
+              "start": 348
             },
             "path": "mcp/tests/test_paseo_catalog.py"
           },
@@ -645,12 +721,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
+            "blob": "764d359b8c3408eacbb73224e97b349900a4b40e",
             "content": "sha256:065f2da2237b8d035a7eed918e1b3abbdc0f46b150f0d3b8b0b5d357cf8b6b37",
             "locator": {
-              "end": 818,
+              "end": 1016,
               "kind": "line_range",
-              "start": 788
+              "start": 986
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -663,12 +739,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:3c96cf01a54136f94f456533307ae5eac3b4f1cf7a29741c60c47628d4c97c9f",
             "locator": {
-              "end": 1090,
+              "end": 1096,
               "kind": "line_range",
-              "start": 1089
+              "start": 1095
             }
           },
           "kind": "code"
@@ -680,7 +756,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "271bfce9b2331a8a20e6411cf5bae3b70efb3c8f",
+            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
             "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
             "locator": {
               "kind": "symbol",

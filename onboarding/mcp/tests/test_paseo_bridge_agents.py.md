@@ -29,6 +29,7 @@ from a refusal. A service tier travels as native creation data, and a tier exclu
   tier is native creation data and an unsupported one stops before create, and
   `test_agent_create_uses_the_given_id_and_tells_created_existing_and_refused_apart` keeps the three outcomes
   apart under the id it was given.
+- **Native Antigravity Retry.** The real bridge returns a typed absence for a missing saved agent and a distinct lookup failure when the lookup is unavailable. The existing agent case sends the saved first message with its original message ID.
 - **Choice matching at create.** `test_create_matches_option_ids_then_labels_without_case` checks
   both a named model and native defaults: IDs win over colliding labels, `fast`/`Fast` map through
   the offered label to `priority`, and `ULTRAFAST` maps to `ultrafast`.
@@ -60,7 +61,9 @@ the production ones — the fake is only the daemon behind them.
 ## Evidence
 
 
-- Workspace, creation, message, get and archive commands against the real script and fake client. [1]
+
+- Real-bridge fixtures cover workspace open, creation outcomes, first-message delivery, and exact agent get and archive. [1]
+
 
 
 

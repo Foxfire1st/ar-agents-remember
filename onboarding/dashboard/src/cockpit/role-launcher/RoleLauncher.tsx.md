@@ -14,7 +14,7 @@ The extracted role launcher: one row of controls that fills or accepts a selecti
 
 Extra controls or narrower space wrap by whole controls, without an overflow menu; the strip is not an unconditional fixed-height or wide-nowrap container. Reply length still cannot grow it because execution/reply prose is absent. During preparation, the Start label carries the shared progress phase; failures retain the existing single actionable line. The [mode selector](ModeOverrideSelect.tsx.md) sits beside the agent, model and effort controls. Optional Instructions and permission-bearing features use chips. Selectable features share the row’s selector. Service-tier disclosure keeps its test id as a shared chip; while the selected execution is stepped up, its Base label and hover explicitly deny that it is the applied tier.
 
-The Chats pane and document rail share this extracted owner. Bound callers hide references already determined by their selection and retain uncertainty/retry identity. Ordinary singleton and Projects bound rows prohibit a second open-request start; selected sprint/master Investigator rows retain their backend-admitted per-request exception. Choice ordering and start/options payloads retain their existing owners. RoleCatalogStatus displays per-part saved timestamps or unchecked-state explanations. While fresh options are pending it labels the displayed disk snapshot and its origin; these are catalog provenance, not execution replies. A selected bound seat with status `held` is labeled “(held)” and counts as a live occupant, disabling another ordinary bound Start. That state extension does not change the shared visual authority or add execution prose. Explicit model and effort changes retain feature values and mode. An agent change clears earlier mode, model, effort and feature overrides. Readiness uses known agent, model, effort and service-tier offers and reports a mismatch. Unknown catalog parts can preserve configured values for a host attempt. The host judges mode applicability. No second workspace list, report navigation or execution-prose surface is introduced.
+The Chats pane and document rail share this extracted owner. Bound callers hide references already determined by their selection and retain uncertainty/retry identity. Ordinary singleton and Projects bound rows prohibit a second open-request start; selected sprint/master Investigator rows retain their backend-admitted per-request exception. Choice ordering and start/options payloads retain their existing owners. The row renders feature controls for the resolved shown model. The shown model stays selectable and carries the pending indicator while its features are being discovered. A selected bound seat with status `held` is labeled “(held)” and counts as a live occupant, disabling another ordinary bound Start. That state extension does not change the shared visual authority or add execution prose. Explicit model and effort changes retain feature values and mode. An agent change clears earlier mode, model, effort and feature overrides. Readiness uses known agent, model, effort and service-tier offers and reports a mismatch. Unknown catalog parts can preserve configured values for a host attempt. The host judges mode applicability. No second workspace list, report navigation or execution-prose surface is introduced.
 
 ## Current Contract
 
@@ -34,7 +34,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 
 
-- Bound mode omits the reference fields the selection already determines. [2]
+
+- Reference fields follow the role and whether the row is bound to a document. [2]
+
 
 
 
@@ -72,7 +74,9 @@ Ordinary singleton and Projects bound rows still adopt an open request and disab
 
 
 
-- The override fields compose the mode selector beside agent, model and effort, and pass the resolved label only to the Base mode preview. The separate failure resolver combines the present choice, catalog and execution problems. [8]
+
+- The override row carries the shown model’s feature controls beside mode and shared failure presentation. [8]
+
 
 
 

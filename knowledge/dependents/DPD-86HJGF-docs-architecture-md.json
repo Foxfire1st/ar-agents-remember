@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ffdefe504eb9d265dee808b79151772ba7871606",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
+    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
     "role": "curator",
-    "statement": "The changed architecture paragraph now describes one MCP call, finite CLI command or background quality worker, and explicitly leaves dashboard serving without a definition scope. The loaded-build index account remains current. Only these changed passages and their named lifetime owners were checked.",
-    "task": "261112-BUG-L9",
+    "statement": "For an admitted role start whose provider takes a tool server, the architecture account of a separate bound agents-remember-task process agrees with the launch definition.",
+    "task": "261112-BUG-L19",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "dc459886ddafcd7dc40d94011335f4d304d3b038",
+      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
     {
-      "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },

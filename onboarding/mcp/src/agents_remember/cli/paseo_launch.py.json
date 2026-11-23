@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:a685eb497828defe10452def100b63f3cf707e2fbfa0d7c9e4edf53bcf2fdb50",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:98c152e6a21d39f762c75d2c1b99ced73a8efca43d56e73a1864df8efa558d99",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-        "content": "sha256:99a41d0f497b0385ad9139971f8cc4bd1a53c8f845d7ba8fdda07c1222040542",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+        "content": "sha256:9c3b965c0d2c92736f231310bd1555795d3ef5aac786a2d132db22af28eb7bbe",
         "locator": {
           "kind": "file"
         }
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-        "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+        "content": "sha256:70a382c2b54b0125df1d500da21f204ba24890de8b652dcacc210f71514eddcd",
         "locator": {
           "kind": "symbol",
           "name": "run_launch_call"
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:a82b0108b65417661402d17fbb334d7b33c48fbd13fc9ee36116f7599d0216ab",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,26 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+        "content": "sha256:66cbd3e374e81718d46e14824061905ab7d785aa33422b3fa584e6d96899973b",
+        "locator": {
+          "end": 570,
+          "kind": "line_range",
+          "start": 559
+        }
+      },
+      "id": "RLZ-BRK9VA",
+      "invariant": "INV-47MBEJ",
+      "origin": {
+        "handoffEntry": "BUG-R19@v1 item 6",
+        "leaf": "261112-BUG-L19"
+      },
+      "rationale": "Limits a saved native call to the recorded agent.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
         "locator": {
           "kind": "symbol",
@@ -147,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
         "locator": {
           "kind": "symbol",
@@ -165,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
         "locator": {
           "kind": "symbol",
@@ -183,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -201,8 +220,8 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-        "content": "sha256:5af30fa7f2b0102d719cfa66cc1c67342d88fc9e8f3798687c44a876c421edd5",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+        "content": "sha256:66cbd3e374e81718d46e14824061905ab7d785aa33422b3fa584e6d96899973b",
         "locator": {
           "kind": "symbol",
           "name": "agent_create_input"
@@ -214,12 +233,12 @@
         "handoffEntry": "MIK-R132@v1 rule 4",
         "leaf": "260928-MIK-L113"
       },
-      "rationale": "Builds what the host is handed from the agent definition alone; the record `serverExclusion` of the launch call is no key of it.",
+      "rationale": "Derives bridge input from the saved launch. serverExclusion stays in the product call, and existingOnly controls bridge reconciliation without entering the Paseo create payload.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:a82b0108b65417661402d17fbb334d7b33c48fbd13fc9ee36116f7599d0216ab",
         "locator": {
           "kind": "symbol",
@@ -237,7 +256,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:ced19ea6b174f056a8a1a08c19beae94f6b0d78ab2659cc9b98e33781f3681e4",
         "locator": {
           "kind": "symbol",
@@ -255,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
         "locator": {
           "kind": "symbol",
@@ -273,7 +292,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
         "locator": {
           "kind": "symbol",
@@ -291,7 +310,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
         "locator": {
           "kind": "symbol",
@@ -309,8 +328,8 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-        "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+        "content": "sha256:70a382c2b54b0125df1d500da21f204ba24890de8b652dcacc210f71514eddcd",
         "locator": {
           "kind": "symbol",
           "name": "run_launch_call"
@@ -327,7 +346,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:a685eb497828defe10452def100b63f3cf707e2fbfa0d7c9e4edf53bcf2fdb50",
         "locator": {
           "kind": "symbol",
@@ -345,7 +364,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:a685eb497828defe10452def100b63f3cf707e2fbfa0d7c9e4edf53bcf2fdb50",
         "locator": {
           "kind": "symbol",
@@ -363,7 +382,7 @@
     },
     {
       "anchor": {
-        "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
         "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
         "locator": {
           "kind": "symbol",
@@ -386,7 +405,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
             "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
             "locator": {
               "kind": "symbol",
@@ -397,15 +416,104 @@
         }
       ]
     },
-    "2": {
-      "note": "Frozen implementation of build_launch_call supporting the stated file behavior.\n\nAnchor: `build_launch_call`",
+    "10": {
+      "note": "The repeatable call binds the selected provider, session choices, workspace and configured tool-server identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:99a41d0f497b0385ad9139971f8cc4bd1a53c8f845d7ba8fdda07c1222040542",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
             "locator": {
-              "kind": "file"
+              "end": 483,
+              "kind": "line_range",
+              "start": 419
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The recovery note keeps its complete locator and digest within the 600-character bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:40e6ba044aecc821e0c17344e614ff65da6f7a78df11aef4c90d46423107243d",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:a82b0108b65417661402d17fbb334d7b33c48fbd13fc9ee36116f7599d0216ab",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The launch record keeps server-exclusion metadata. The outbound agent payload applies it and marks saved native Antigravity calls existing-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:887738f2dad83b76f8360c013dcdc425912b7b8584be5d6efeba4f1ef5985c40",
+            "locator": {
+              "end": 483,
+              "kind": "line_range",
+              "start": 463
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:ced19ea6b174f056a8a1a08c19beae94f6b0d78ab2659cc9b98e33781f3681e4",
+            "locator": {
+              "end": 556,
+              "kind": "line_range",
+              "start": 532
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:66cbd3e374e81718d46e14824061905ab7d785aa33422b3fa584e6d96899973b",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 559
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The launch call preserves the selected provider, session choices, seat binding and first-message state for creation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
+            "locator": {
+              "end": 483,
+              "kind": "line_range",
+              "start": 419
             }
           },
           "kind": "code"
@@ -413,14 +521,16 @@
       ]
     },
     "3": {
-      "note": "Frozen implementation of run_launch_call supporting the stated file behavior.\n\nAnchor: `run_launch_call`",
+      "note": "The runtime opens the saved workspace, checks the leaf closing boundary, submits the saved agent call and classifies the reply.",
       "targets": [
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:99a41d0f497b0385ad9139971f8cc4bd1a53c8f845d7ba8fdda07c1222040542",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:70a382c2b54b0125df1d500da21f204ba24890de8b652dcacc210f71514eddcd",
             "locator": {
-              "kind": "file"
+              "end": 682,
+              "kind": "line_range",
+              "start": 626
             }
           },
           "kind": "code"
@@ -480,14 +590,28 @@
       ]
     },
     "9": {
-      "note": "The native task-server environment carries the host AR_PLAYWRIGHT value when present so the seat uses the host browser module; absence does not invent another installation or browser value.\n\nAnchor: `_CARRIED_VARIABLES`",
+      "note": "The task server receives the host AR_PLAYWRIGHT value when present so it can use the host browser module.",
       "targets": [
         {
           "anchor": {
-            "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
-            "content": "sha256:99a41d0f497b0385ad9139971f8cc4bd1a53c8f845d7ba8fdda07c1222040542",
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:7e3ab3bd4c80561f0f210d96ef771c443d58c32765c6a3d91c6d4b99b42906b4",
             "locator": {
-              "kind": "file"
+              "end": 87,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 234
             }
           },
           "kind": "code"

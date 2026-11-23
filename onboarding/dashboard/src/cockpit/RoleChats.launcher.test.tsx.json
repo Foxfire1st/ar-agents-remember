@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
-        "content": "sha256:417e93f9a44d33e68a70e868db67198dcf8fdb8a1fe0ad772c9a082447a1b052",
+        "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+        "content": "sha256:eb3ac1bde13c70a0e8c7a42ddf9381509ac2da164c2011c906072a29fec939f6",
         "locator": {
           "kind": "file"
         }
@@ -21,16 +21,16 @@
   ],
   "references": {
     "1": {
-      "note": "The launch-lock reread case enables fake time before mount, flushes the initial reply, then advances the 1,500 ms product reread in async `act`. Its no-status/no-alert and restored-Start assertions follow the actual reread opportunity; teardown restores real timers.",
+      "note": "A launch-in-progress options response schedules a 1,500 ms reread, with no status line or alert. Start returns after the reread.",
       "targets": [
         {
           "anchor": {
-            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
-            "content": "sha256:17be3c090d1fb2451483e4bd738d2fa3addc4e634f3de2eb70fd28a866d9cdad",
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:d092f25893dbf5da0ebcb81a6227fb0de3711016330e2ed721f4fc753fe0305d",
             "locator": {
-              "end": 179,
+              "end": 255,
               "kind": "line_range",
-              "start": 153
+              "start": 225
             }
           },
           "kind": "test"
@@ -38,28 +38,16 @@
       ]
     },
     "2": {
-      "note": "The mounted model fixture keeps Start disabled while the role model is unoffered and enables it after an offered model is selected. The other case checks configured speed, an incompatible model, and a foreign-agent default.",
+      "note": "The launcher displays configured tier and foreign default provenance, and marks a known unoffered model for replacement.",
       "targets": [
         {
           "anchor": {
-            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
-            "content": "sha256:5b5ae72bf31c63571e135f7a85d4e7eeb90a4f106d92e745db3a1b61f7f10768",
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:4133d2e174f77fa5e6b86e65bb967f389d5330abb4ac5055626067da0dcfc81b",
             "locator": {
-              "end": 129,
+              "end": 174,
               "kind": "line_range",
-              "start": 105
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
-            "content": "sha256:0ecedd2eed7a6eda1bba94f2efb70870895bbf41bd902f147573fbb609513e16",
-            "locator": {
-              "end": 168,
-              "kind": "line_range",
-              "start": 131
+              "start": 111
             }
           },
           "kind": "test"
@@ -71,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
             "content": "sha256:413ad7073a78fdb2cbd6e5963df05d9a04fd9a2f18f23eb0e4845a62daf20153",
             "locator": {
-              "end": 209,
+              "end": 215,
               "kind": "line_range",
-              "start": 184
+              "start": 190
             }
           },
           "kind": "test"
@@ -84,16 +72,16 @@
       ]
     },
     "4": {
-      "note": "The mounted speed-only case checks the mode selector default and source, Instructions and settings-owned features.\n\nAnchor: \"submits only an explicit speed feature and offers the mode beside it\"",
+      "note": "The launcher keeps explicit speed choices separate from effort and waits for the shown model’s Speed control before exercising an override.",
       "targets": [
         {
           "anchor": {
-            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
-            "content": "sha256:5a82e94e11ce68d2d711e24117f3e428c06702cd6c76d49bef42a10c9719b49d",
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:e9a34b7197b84b1d9168d68192ee3a90510fbe7242aaec22500f1ecf29e0d889",
             "locator": {
-              "end": 416,
+              "end": 421,
               "kind": "line_range",
-              "start": 313
+              "start": 319
             }
           },
           "kind": "test"
@@ -105,12 +93,53 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73ad19e19dbe7c4e18144f15c2456576eb10fa86",
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
             "content": "sha256:232b9d770912766addc39ec652afd000e8687220178258fbd79c4b0fd7f51c4f",
             "locator": {
-              "end": 492,
+              "end": 498,
               "kind": "line_range",
-              "start": 420
+              "start": 426
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Matching saved inventory keeps eligible Start available during metadata and model-options refresh. The launcher shows no separate catalog-status line before or after settlement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:9847c20aaaf04fbf7961c5ed515c85e558d4bf60ec38e52e55e0e6b5bd69b57e",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 519
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:7fe3c4b8ea6fc1f7829c91e543face56acb25e1ab922da66ee58d3b42626cdcb",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 546
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8f9f2cdf42ad6deef226e4d518e07fc54705a7b5",
+            "content": "sha256:dd9da0e260fbe28fdbec9343e12f6594d463e7aea14aebf6702ba324aa75579b",
+            "locator": {
+              "end": 629,
+              "kind": "line_range",
+              "start": 601
             }
           },
           "kind": "test"

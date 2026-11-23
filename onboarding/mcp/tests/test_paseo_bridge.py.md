@@ -23,8 +23,7 @@ and that the script's header declares each command and non-public entry point it
   as `node_not_installed` with no process spawned; the cases replace `product_node` on `paseo_running_node`, the
   module the bridge resolves its Node through, and the real-script cases replace `communication_node`.
 - **The real script.** `BridgeScriptTests` (skipped when `node` is not on `PATH`) runs the script
-  against `FAKE_DAEMON_CLIENT`/`FAKE_CLIENT_ROOT`: the catalog lists ready, enabled providers with their
-  models and thinking options, script failures are named, and a second daemon is refused.
+  against `FAKE_DAEMON_CLIENT`/`FAKE_CLIENT_ROOT`. An ordinary catalogue reply lists ready, enabled providers and their model and thinking metadata. Feature and service-tier fields are absent from those model rows. The cases name script failures and refuse a second daemon.
 - **Provider options.** `BridgeProviderOptionsTests` proves `agentCreation` hands the host the provider
   options under the name each client reads, and only those it reads.
 - **The header as contract.** `BridgeScriptHeaderTests` reads the script text and requires its header to
@@ -55,4 +54,5 @@ The catalog cases distinguish successful empty listings from unanswered parts. M
 
 
 
-- Catalog shape, script failures and provider-option naming against the real script and fake client. [3]
+
+- The real-script fixture checks catalogue metadata and named failures. The payload cases check the provider option names consumed by the host. [3]

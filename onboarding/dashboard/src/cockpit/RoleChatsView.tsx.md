@@ -11,7 +11,7 @@ Render the shared role launcher, receipt-selected native chat frame, tray dock a
 ## Code Commentary
 
 The view threads one native TaskEntry array into the launcher, derives the frame target and the frame scope from a named chat first and from the current scoped execution only
-as the fallback, and supplies launch readiness, progress, current errors and actions from their control owners. The catalog projection receives only a saved disk snapshot matching the current options scope; it does not merge cached defaults or inventory with fresh options. Report display hides the existing role pane and renders the shared report reader alongside it. A bound document row renders its launcher without a second native frame. [1]
+as the fallback, and supplies launch readiness, progress, current errors and actions from their control owners. The inventory projection uses settled metadata or the matching saved snapshot. It keeps each inventory intact. The view requests the shown model’s options separately. A new Start omits feature overrides until that pair has a fresh answer. Saved Retry retains its original request. Report display hides the existing role pane and renders the shared report reader alongside it. A bound document row renders its launcher without a second native frame. [1]
 
 For an active unbound Chats page outside the report reader, the view publishes the chat actually named by the frame channel. Before that channel has reported a value after a load it publishes no chat at all: neither the launcher's native
 target nor the descriptor's availability stands in, so a request that the frame has not acknowledged stays
@@ -29,7 +29,11 @@ The frame's shown-chat report is separate from the launcher's current execution.
 ## Evidence
 
 
-- RoleChatsView composes the shared launcher, optional native frame, conditional dock and report reader. [1]
+
+
+- The view uses matching saved or settled metadata, asks for the shown pair, and keeps eligible Start available on saved inventory. It omits nonfresh feature values for new Start and composes the shared launcher, native frame, conditional dock and report reader. [1]
+
+
 
 
 - The presentation hook supplies the frame target and scope through chatFrameTarget/chatFrameScope, preferring the named chat and otherwise using the current scoped execution and document selection; this request is separate from observed shown-chat identity.

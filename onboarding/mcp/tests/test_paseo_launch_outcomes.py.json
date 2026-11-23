@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e1dc94b219bf66b192bfdc8b7692d6887a97c99c",
+        "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "e1dc94b219bf66b192bfdc8b7692d6887a97c99c",
+        "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "e1dc94b219bf66b192bfdc8b7692d6887a97c99c",
+        "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
         "content": "sha256:efb058c8ca5c6a9df9153a195baff04ee4188e2855945750b226565550720f3b",
         "locator": {
           "kind": "symbol",
@@ -56,14 +56,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Every runtime answer is written to the receipt and an unusable one leaves the launch retryable.",
+      "note": "The bridge outcome is stored in the receipt. Timeout without a usable answer leaves the tested launch retryable.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1dc94b219bf66b192bfdc8b7692d6887a97c99c",
-            "content": "sha256:e0d6e9d4049af10fa0342f77b038419519fcec65b92680ff7826062dffb2b3c1",
+            "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
+            "content": "sha256:e203e6b94a73446f191642540ae2bbe035d5d60b6761519333b1b2b6429ac051",
             "locator": {
-              "kind": "file"
+              "end": 112,
+              "kind": "line_range",
+              "start": 27
             }
           },
           "kind": "test"
@@ -71,14 +73,40 @@
       ]
     },
     "2": {
-      "note": "A repeat converges on one agent; a conflict refuses and changes nothing, naming the holder it found.",
+      "note": "A repeat converges on one agent. A conflicting request leaves the saved execution unchanged. A fresh request on a closed execution names its holder.",
       "targets": [
         {
           "anchor": {
-            "blob": "e1dc94b219bf66b192bfdc8b7692d6887a97c99c",
-            "content": "sha256:e0d6e9d4049af10fa0342f77b038419519fcec65b92680ff7826062dffb2b3c1",
+            "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
+            "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
-              "kind": "file"
+              "end": 248,
+              "kind": "line_range",
+              "start": 208
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
+            "content": "sha256:0ca41870503516849cc83516b7c86a8465ae6e716b46132551c8120fdb3b5f9f",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
+            "content": "sha256:3255f6078b262815b19b8364f1b1bd7b67503eafbe64183d3528b6032984a16f",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 296
             }
           },
           "kind": "test"

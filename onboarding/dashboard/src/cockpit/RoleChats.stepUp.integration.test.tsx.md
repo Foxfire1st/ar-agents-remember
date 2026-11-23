@@ -27,5 +27,7 @@ This card describes assertion/support/document source, not a test invocation, in
 - Source assertion: retains ordinary and legacy %s storage without inventing step-up. The declaration is not an execution receipt. [2]
 - Source assertion: retries an ordinary saved %s request through the pane without step-up. The declaration is not an execution receipt. [3]
 - Source assertion: decodes only a nonempty string step-up reason (%j). The declaration is not an execution receipt. [4]
-- The cross-harness fixture marks base choices as non-applied and leaves the mode options available. [5]
+
+- The mounted test presents base options beside the reported step-up state without showing the base values as applied. [5]
+
 - A top-level observed mode wins over the requested value in the displayed receipt, with a separate unreported case. [6]
