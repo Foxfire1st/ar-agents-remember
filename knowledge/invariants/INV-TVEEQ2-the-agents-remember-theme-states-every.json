@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Omitting a kit colour lets the host silently derive replacement fills and text, recreating the embedded chat regression on a host update."
+  },
+  "applicability": "The Agents Remember dark theme registered with the Paseo plugin kit for embedded chat.",
+  "conditions": [
+    "The client registers the complete colour object with addTheme.",
+    "The kit type is required in the plugin type check."
+  ],
+  "exclusions": [
+    "Standalone host themes and user colour settings.",
+    "The Architect's separate post-release visual observation."
+  ],
+  "id": "INV-TVEEQ2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The Worker report's Clean-copy checks record npm run typecheck on the full declaration and TS1360 with surface3 removed in the scratch mutation."
+      ],
+      "path": "L10 W8 Curator ingest"
+    },
+    "handoffEntry": "BUG-R10@v2 rule 7 palette contract",
+    "leaf": "261112-BUG-L10",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Agents Remember theme states every colour in the Paseo plugin kit's theme contract, including the six fills and faint-text values that the host can otherwise derive.",
+  "status": "proposed",
+  "supersedes": []
+}

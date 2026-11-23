@@ -5273,14 +5273,14 @@
       ]
     },
     "69": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The attribute rules preserve generated JavaScript whitespace and tokenizer vocabulary bytes, and union-merge the two test-evidence catalogs.",
+      "note": "Git exempts generated dashboard chunks from trailing-whitespace checks and vendored Paseo server fixtures from whitespace checks. The tokenizer vocabulary is marked as non-text, and Git union-merges the two test catalogs.",
       "targets": [
         {
           "anchor": {
-            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
-            "content": "sha256:4cbb77b0e957d5709d6ff27b831c8c2cfdbf61c17faf73baa716a55a984e0fde",
+            "blob": "8ba953f47dd956107e1ca39d86f158fe2c082b6f",
+            "content": "sha256:56019f903922e7e6f3e02362ac30f9a7fafcd017e60b56af185681e09294942e",
             "locator": {
-              "end": 21,
+              "end": 26,
               "kind": "line_range",
               "start": 1
             },

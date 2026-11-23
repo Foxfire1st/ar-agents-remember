@@ -28,6 +28,9 @@ A Worker, Reviewer or Curator that stops without handing off is sent back to its
 
 The client also carries the tray channel. `index.client.tsx` keeps supported theme/screen/RPC wiring separate from the pinned DOM adapters under `client/`. The bridge negotiates `pick` and `showing` with the trusted parent: `showing` reports the chat actually displayed, independently of a pending navigation request, and names no agent for missing/load-failed or ambiguous chat identity. Tray chat highlights can copy through the host copy handler and offer a non-modal Add control; only clicking Add posts a pick. Each pick carries the displayed agent, message ID and time from that row's own recorded timeline data. A row without recorded time is refused in place, and unreadable adapter structure produces a named notice rather than invented provenance. The same channel observes the message-box rectangle for an external tray dock — the box's own left and width beside its vertical edge, the pair optional as a unit — and reserves finite tray-height padding in the chat scroll root; missing composer measurement is named, and teardown disconnects every observer, including the class/style watch over the box and its ancestors that re-measures a layout move resizing nothing, and releases the reservation. These pinned DOM/React-property adapters are explicit unsupported host seams; source declarations and local tests do not establish live-host acceptance.
 
+The embedded theme supplies the complete SDK palette to preserve the chat colours across the
+host's change in default fills. The plugin's type check requires every palette key.
+
 ## Load-Bearing Files
 
 - `index.client.tsx`: supported contribution wiring and the explicit boundary to unsupported client adapters.
@@ -66,7 +69,8 @@ The plugin subscribes once per boot to provider subagent updates, publishes the 
 
 - Parent-wake handlers request steer on admitted sends. A parent already in a turn may take the line immediately only when the product knows its provider preserves that turn. [5]
 
-- Supported client contributions remain separate from explicitly pinned DOM adapters. [6]
+- The entry registers the complete typed palette and delegates web behavior to the client helpers. [6]
+
 - The displayed chat is observed independently and published only to a dashboard that negotiates showing. [7]
 - Trusted parent messages negotiate and control the tray channel, with complete teardown. [8]
 - Message time comes from the exact row record; offer activation preserves the highlight and focus. [9]

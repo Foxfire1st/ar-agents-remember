@@ -502,12 +502,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "blob": "8ba953f47dd956107e1ca39d86f158fe2c082b6f",
             "content": "sha256:34df96ed5a8a5386d6d09ea07dc5c3776e4a71e3428e8298efe846d699887986",
             "locator": {
-              "end": 21,
+              "end": 26,
               "kind": "line_range",
-              "start": 15
+              "start": 20
             },
             "path": ".gitattributes"
           },

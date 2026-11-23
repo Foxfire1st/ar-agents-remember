@@ -75,7 +75,7 @@ than a hand-built dict, with unavailable facts dropped by the caller's `exclude_
 stamp never fakes a hash or digest it could not resolve.
 
 `resolve_serving_build(*, anchor=None)` composes the stamp: `version` from
-`agents_remember.mcp.SERVER_VERSION` (the same identity the daemon's restart-on-version-mismatch
+`agents_remember.kernel.primitives.version.SERVER_VERSION` (the same identity the daemon's restart-on-version-mismatch
 uses), `commit` via `_git_short_head` (`git rev-parse --short HEAD` anchored at the installed
 package directory — git walks up to the enclosing checkout), `booted_at` from
 `observer.events.now_iso()`. `_git_short_head` is best-effort by construction: fixed argv, a 2 s
