@@ -7652,12 +7652,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
             "content": "sha256:32c24f5c4cd069b3c10f0f2eca065933911edc4ae355994a9c1e0ff68819e71a",
             "locator": {
-              "end": 48,
+              "end": 49,
               "kind": "line_range",
-              "start": 39
+              "start": 40
             },
             "path": "mcp/tests/test_task_entries.py"
           },
@@ -7665,12 +7665,12 @@
         },
         {
           "anchor": {
-            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
             "content": "sha256:7ecf6390cfea81857ec4dfe1408b0ef03d1efb6c5e07d2c709f7e0a8a4c7ff79",
             "locator": {
-              "end": 78,
+              "end": 79,
               "kind": "line_range",
-              "start": 51
+              "start": 52
             },
             "path": "mcp/tests/test_task_entries.py"
           },
@@ -7792,12 +7792,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
             "content": "sha256:3cf2b91b810b06fa1919857793ea531d4bdc3c96f5680ba50d66ff447e83ed0c",
             "locator": {
-              "end": 371,
+              "end": 369,
               "kind": "line_range",
-              "start": 296
+              "start": 294
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -7805,12 +7805,12 @@
         },
         {
           "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
             "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
             "locator": {
-              "end": 493,
+              "end": 491,
               "kind": "line_range",
-              "start": 417
+              "start": 415
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -10298,12 +10298,12 @@
         },
         {
           "anchor": {
-            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
             "content": "sha256:d4bb8765ab973e2f722954b1c7701419052efe4c297a1a0e4d1fb843b1d26011",
             "locator": {
-              "end": 240,
+              "end": 245,
               "kind": "line_range",
-              "start": 176
+              "start": 181
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
           },
@@ -10311,12 +10311,12 @@
         },
         {
           "anchor": {
-            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
             "content": "sha256:39cb504eaac64ed3a22935364c9543883c8db10f167e75a4b60458125f8f607b",
             "locator": {
-              "end": 324,
+              "end": 326,
               "kind": "line_range",
-              "start": 315
+              "start": 317
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },
@@ -10324,12 +10324,12 @@
         },
         {
           "anchor": {
-            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-            "content": "sha256:ff650477ec406cf29541d30994a74807828d9c174aaae31946f31b6ac5f4926f",
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:5ea2997d99ce518ac11d6c15c397eb8e46b0e5df53ccc75cb551773a4bc6229c",
             "locator": {
-              "end": 466,
+              "end": 1816,
               "kind": "line_range",
-              "start": 437
+              "start": 1665
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },
@@ -10337,12 +10337,12 @@
         },
         {
           "anchor": {
-            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-            "content": "sha256:3bc4eb3a2240a912fe2b172a61c947b85e07ff16b07df69152c0405c04a776f3",
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:1142cfbd1ae541198bc26fed46c42d6dc6ca58b07e3062cbac82249890b606ab",
             "locator": {
-              "end": 1108,
+              "end": 1128,
               "kind": "line_range",
-              "start": 1090
+              "start": 1109
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },
@@ -10350,12 +10350,12 @@
         },
         {
           "anchor": {
-            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-            "content": "sha256:776c5edb49ad62c047e22d0c7cbe0910ddf837be5b6bdff9627fec3c539ef059",
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:1b458b1f78c056665985f224ceca9c45945b5480ba223148289e59730fd0595c",
             "locator": {
-              "end": 1528,
+              "end": 1563,
               "kind": "line_range",
-              "start": 1490
+              "start": 1524
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },
@@ -10363,12 +10363,12 @@
         },
         {
           "anchor": {
-            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-            "content": "sha256:d16887d956abf9090121dfdd140470bb887251c4bdd43be59f8d186bc2e2d210",
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:40a86abf268f8db09d6a33f368dcbe2eabd92235ef6472baba9e5bd15ab0ea79",
             "locator": {
-              "end": 1771,
+              "end": 2216,
               "kind": "line_range",
-              "start": 1630
+              "start": 2144
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },
@@ -10376,12 +10376,12 @@
         },
         {
           "anchor": {
-            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-            "content": "sha256:12dfddabe10d921dca0624a5bee8f519c818c5e42a8768a8e71b60a5c60fd473",
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:7a679b8b1d1416873dff24a2f0245365e025965de2134c95965a13216a0b6c46",
             "locator": {
-              "end": 2176,
+              "end": 2428,
               "kind": "line_range",
-              "start": 2098
+              "start": 2368
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },
@@ -10389,25 +10389,12 @@
         },
         {
           "anchor": {
-            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-            "content": "sha256:ff9c404cfd17e3f52905165b3f131e390015dfa35ebeaa3eccc4992d83ed5ac5",
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:c4bde52dbc2b0e2469663b0280c0ea031e7f6496c45541a08bd15e561d5f174e",
             "locator": {
-              "end": 2399,
+              "end": 2614,
               "kind": "line_range",
-              "start": 2340
-            },
-            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-            "content": "sha256:12d179d6f6e530c7341ae51abb0a4fa05e1d02da823e74f2d322ee2aca62b924",
-            "locator": {
-              "end": 2579,
-              "kind": "line_range",
-              "start": 2440
+              "start": 2480
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },
@@ -10562,6 +10549,24 @@
               "start": 115
             },
             "path": "mcp/tests/test_tool_answer_guard.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1843": {
+      "note": "A closed seat’s stale helper and wait fields leave the task paused. Its next turn contributes work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+            "content": "sha256:f616649353165bd6f9eb30f39d61bfa825c2383ec2b65df9c07e01d507e488f7",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 537
+            },
+            "path": "mcp/tests/test_task_entries.py"
           },
           "kind": "test"
         }

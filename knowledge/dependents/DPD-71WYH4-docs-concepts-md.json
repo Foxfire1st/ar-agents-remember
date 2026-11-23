@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
-    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
+    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The concepts page describes role-launcher selection, bounded overflow and the complete-result log, candidate-bound quality and gate authority, and synchronous closeout and integration alongside their historical audit records.",
-    "task": "261112-BUG-L18",
+    "statement": "The concepts guide still distinguishes archived role agents and accurately describes the plug-in’s hand-off signal.",
+    "task": "261112-BUG-L20",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
+      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -271,7 +271,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon_config.py"
     },
     {
-      "blob": "ff9215b1a2f313985809b74a48a92580c95cea2c",
+      "blob": "181aa50525655219a506be03191d7c72a2a5354d",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
     },
@@ -316,7 +316,7 @@
       "path": "mcp/src/agents_remember/models/knowledge/review_frame.py"
     },
     {
-      "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+      "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },

@@ -511,9 +511,13 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Root manifest/journal location authority. [290]
 
+
 - The server builds entries from authored documents and declared relations, independently binding worktrees. [335]
 
+
+
 - Host authority requires a complete current-boot reconciliation and armed supervisor observation before role-agent task binding. [336]
+
 
 - The dashboard store retains bounded body/preparation resources by document reference and revision without taking task-state authority. [338]
 
@@ -568,7 +572,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - The docs index owns the start-here, install, operational and reference map. Anchor: `Start here`. [276]
 
+
 - The runtime layout reference states that no part of the product starts, indexes or queries a search provider. [282]
+
 
 
 - Retained reference account (no fresh execution or acceptance inferred): The hook gate's tiers. [122]

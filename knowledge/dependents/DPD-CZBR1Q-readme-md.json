@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
-    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
+    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The README still describes exact paired closeout for a leaf, and W2 continues to hold open or stale work through that leaf gate.",
-    "task": "261112-BUG-L18",
+    "statement": "The README’s exact paired closeout description remains accurate with dashboard boot-time registry recovery.",
+    "task": "261112-BUG-L20",
     "uncommitted": true
   },
   "document": "README.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
+      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "54b818118629a276761c14d24046428232306f6e",
+      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },

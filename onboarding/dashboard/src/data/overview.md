@@ -146,7 +146,9 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 
 - The entry's summary read and its re-validation generation. [18]
 
+
 - The server builds one native task forest from declared child rows; the browser no longer runs the removed creation-order hierarchy helper. [24]
+
 
 - The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. [25]
 
@@ -246,7 +248,9 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 
 - The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; no separate series-child consumer union is part of the native entry model. [26]
 
+
 - Membership links each child to one deterministic parent and rejects a cycle; the removed series creation-sort builder is not the current producer. [27]
+
 
 - The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. [28]
 

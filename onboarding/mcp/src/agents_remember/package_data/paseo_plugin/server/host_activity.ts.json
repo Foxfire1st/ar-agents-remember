@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+        "blob": "534586931977668702d528b74d51d09f2a58a834",
         "content": "sha256:dc63de2522f1ac561f541ae7c2d3be17c4948cba8d8092507906642aec6141e0",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
-        "content": "sha256:f6c4033a8c4dc1ac9c6f131fbf8349ceb78cc079d7b3b7d6d2a74be5967255d5",
+        "blob": "534586931977668702d528b74d51d09f2a58a834",
+        "content": "sha256:6e74e0e7c715b6e79fa189d5fa114b75c8577df86f8420f481ae5bd13b7213a3",
         "locator": {
           "kind": "file"
         }
@@ -38,12 +38,12 @@
     },
     {
       "anchor": {
-        "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
-        "content": "sha256:3096a7635d2c8e877b340a43d698b57006f6639c98f6881baea46d8b12f43fb4",
+        "blob": "534586931977668702d528b74d51d09f2a58a834",
+        "content": "sha256:1544f3a2c0cd73c5ef107e71896b495e5c80b12b8a8d6efd27957e18f937b7db",
         "locator": {
-          "end": 190,
+          "end": 198,
           "kind": "line_range",
-          "start": 190
+          "start": 187
         }
       },
       "id": "RLZ-62NJVX",
@@ -52,13 +52,13 @@
         "handoffEntry": "MIK-R60@v9.7",
         "leaf": "260928-MIK-L60"
       },
-      "rationale": "Publishes the open wait per agent without touching state or eventAt.",
+      "rationale": "Records the declaration mutation without moving the host activity state or event timestamp.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
-        "content": "sha256:f6c4033a8c4dc1ac9c6f131fbf8349ceb78cc079d7b3b7d6d2a74be5967255d5",
+        "blob": "534586931977668702d528b74d51d09f2a58a834",
+        "content": "sha256:6e74e0e7c715b6e79fa189d5fa114b75c8577df86f8420f481ae5bd13b7213a3",
         "locator": {
           "kind": "file"
         }
@@ -74,8 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
-        "content": "sha256:015c3d7c55694a28709850c24890a583e948b9552d07ed643f26ac163040b692",
+        "blob": "534586931977668702d528b74d51d09f2a58a834",
+        "content": "sha256:10a92f0a201b4854214ea31c7c93d2959aa3617fb87e38a05d4a1e1fe08d45e9",
         "locator": {
           "kind": "symbol",
           "name": "HostActivityPublisher"
@@ -92,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
-        "content": "sha256:f6c4033a8c4dc1ac9c6f131fbf8349ceb78cc079d7b3b7d6d2a74be5967255d5",
+        "blob": "534586931977668702d528b74d51d09f2a58a834",
+        "content": "sha256:6e74e0e7c715b6e79fa189d5fa114b75c8577df86f8420f481ae5bd13b7213a3",
         "locator": {
           "kind": "file"
         }
@@ -109,12 +109,12 @@
     },
     {
       "anchor": {
-        "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+        "blob": "534586931977668702d528b74d51d09f2a58a834",
         "content": "sha256:bc65fc2f41322b25b6eb49f373f4d0891c9f15bfbd2c6cef70704aeae2ba3887",
         "locator": {
-          "end": 329,
+          "end": 338,
           "kind": "line_range",
-          "start": 291
+          "start": 300
         }
       },
       "id": "RLZ-HKM57V",
@@ -128,7 +128,26 @@
     },
     {
       "anchor": {
-        "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+        "blob": "534586931977668702d528b74d51d09f2a58a834",
+        "content": "sha256:55336f460776bc2cd7096e0288c1ffe7d346086041656e415a8818b43fb30ba4",
+        "locator": {
+          "end": 531,
+          "kind": "line_range",
+          "start": 510
+        }
+      },
+      "id": "RLZ-REFE1D",
+      "invariant": "INV-3WWG5K",
+      "origin": {
+        "handoffEntry": "M1-F07 declared wait publication",
+        "leaf": "261112-BUG-L20"
+      },
+      "rationale": "The publisher carries an open session’s declared wait and its check due time when present. Closed and ended observations omit those fields.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "534586931977668702d528b74d51d09f2a58a834",
         "content": "sha256:af09b043612cbf3744dc93871622238a9d03fc2fd52ae06ca4ec1a94e94536c4",
         "locator": {
           "kind": "symbol",
@@ -143,6 +162,24 @@
       },
       "rationale": "Registers each hook with server.addHook.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "534586931977668702d528b74d51d09f2a58a834",
+        "content": "sha256:10a92f0a201b4854214ea31c7c93d2959aa3617fb87e38a05d4a1e1fe08d45e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "HostActivityPublisher"
+        }
+      },
+      "id": "RLZ-W7NPAD",
+      "invariant": "INV-GJYZGB",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 1",
+        "leaf": "261112-BUG-L20"
+      },
+      "rationale": "The publisher reconciles role-bound host observations and preserves the archive through a later close event.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -151,12 +188,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
-            "content": "sha256:46f09631fe83ff27c8e641f6c2645b7a37306d573906f43f7fc7ba94b315b495",
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:b490751763722a00551196c0bd67bec0620c46ed195b71e8913b6ee6e0dbacb0",
             "locator": {
-              "end": 143,
+              "end": 298,
               "kind": "line_range",
-              "start": 101
+              "start": 204
             }
           },
           "kind": "code"
@@ -168,12 +205,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
             "content": "sha256:bc65fc2f41322b25b6eb49f373f4d0891c9f15bfbd2c6cef70704aeae2ba3887",
             "locator": {
-              "end": 329,
+              "end": 338,
               "kind": "line_range",
-              "start": 291
+              "start": 300
             }
           },
           "kind": "code"
@@ -185,12 +222,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
-            "content": "sha256:e2c43e0d39c5ad7cbbb554f536c7124bee0ad338d0cc1ecca2208920e1150846",
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:036cb5587ec93fce8efc1cfc003e4a06d9a0f1be5d7e73a68014d6975fb58861",
             "locator": {
-              "end": 232,
+              "end": 543,
               "kind": "line_range",
-              "start": 204
+              "start": 502
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:38b0f87c1ea040d5d508f8a12b426319542f54015013bfd035901c3f6b9043de",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 547
             }
           },
           "kind": "code"
@@ -202,12 +251,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
             "content": "sha256:2e86fde224ca9822088f747a0778aa636dfb49df07ae966470e9eda6ab97114b",
             "locator": {
-              "end": 622,
+              "end": 629,
               "kind": "line_range",
-              "start": 569
+              "start": 576
             }
           },
           "kind": "code"
@@ -219,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
             "content": "sha256:7429bf7c971a89a711bef8875b08d591a0179eccda5ad68d0c0152648b93aba5",
             "locator": {
               "end": 43,
@@ -231,24 +280,24 @@
         },
         {
           "anchor": {
-            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
             "content": "sha256:12106014b1a9c8e85f5c88e609b9551f018668acbe6fea993a1d2a8fc4f4facd",
             "locator": {
-              "end": 479,
+              "end": 488,
               "kind": "line_range",
-              "start": 474
+              "start": 483
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
-            "content": "sha256:69a3b1116db63d6bb56133f6cf5ead1d860af823c1d18ae6fdc2458ca4d55c9b",
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:036cb5587ec93fce8efc1cfc003e4a06d9a0f1be5d7e73a68014d6975fb58861",
             "locator": {
-              "end": 532,
+              "end": 543,
               "kind": "line_range",
-              "start": 493
+              "start": 502
             }
           },
           "kind": "code"

@@ -9,11 +9,11 @@
   },
   "applicability": "Every native role message the product holds because its recipient could not take it, whether the hold is a recipient's ended turn or a provider limit.",
   "conditions": [
-    "The serving loop runs the held-delivery tick; delivery follows the host's own activity record where it shows the recipient's turn end.",
+    "The serving loop runs the held-delivery tick; delivery follows the host's own activity record where it shows the recipient idle, closed or ended.",
     "The sweep stays the fallback and visits receipts that hold messages before the other receipts.",
-    "The recipient is idle without an open permission at the moment of delivery.",
-    "The one limit check reads the limit file before the send and holds a limited recipient's message with the reason and the reset time, also when the recipient is idle.",
-    "For a limited recipient the drain pauses with outcome provider-limit before any host read, and a recipient the publication shows ended gets one host read per ended stamp; a tick that finds an agent limited delivers nothing to it in that tick, and the first sweep after the reset delivers what waits, in order, within that sweep, the 30 s bound counting from the reset."
+    "A closed session may be reopened by ordinary delivery. A running turn or an open permission still defers a send under the existing policy.",
+    "The provider limit check reads the limit file before the ordinary recipient host read. The provider-limit hold carries the reset time.",
+    "A limited recipient published ended may receive one exact archive-or-absence confirmation for a new event stamp, or for the boot stamp when event time is absent. Confirmed archive or absence resolves waiting messages as undelivered. An unreachable host releases the drain claim with a host-unreachable outcome. Otherwise the hold remains until reset. A closed session incurs no confirmation read. After reset, eligible messages drain in order when the bounded receipt cursor reaches the recipient. Later ticks can be needed."
   ],
   "exclusions": [
     "No later message is needed or sent to trigger the delivery.",
@@ -32,9 +32,9 @@
     "leaf": "260928-MIK-L171",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A message held because its recipient could not take it is delivered when that recipient's turn ends, by the product's own tick with no further message sent, in bounded units that never build a per-tick census. A recipient held by a provider limit waits for the reset instead, and the answer that names a reset is the provider-limit hold's: an ordinary hold names no reset it does not have.",
+  "statement": "A held message can be delivered after the activity publication reports the recipient idle, closed or ended and ordinary delivery gates allow it. The product’s own tick visits bounded units without a whole per-tick census. A provider-limit hold carries its reset time. An ended observation during that hold can be confirmed as archive or absence, resolving its waiting messages undelivered.",
   "status": "proposed",
   "supersedes": []
 }

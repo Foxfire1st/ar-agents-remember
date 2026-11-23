@@ -16,7 +16,11 @@ Addresses name either an exact minted agent UUID or a role with its required can
 
 ## Repo-Internal References
 
-- The source implements the behavior and boundaries described above. [1]
+
+
+- An exact role-message recipient uses a canonical UUID from a launch receipt. Registry recovery uses the same predicate to select registered IDs for exact lookup. [1]
+
+
 
 
 
@@ -27,3 +31,5 @@ No domain-documentation source is configured for this repository.
 ## Cross-Repo References
 
 No external repository is cited by this file card.
+
+The canonical role-agent UUID predicate is also used by registry recovery. Recovery uses it to select exact host reads.

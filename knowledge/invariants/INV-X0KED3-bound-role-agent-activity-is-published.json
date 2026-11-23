@@ -9,8 +9,9 @@
   },
   "applicability": "Every place that decides whether an agent is in a turn.",
   "conditions": [
-    "Activity intake itself stays event-driven and reconciled once per boot.",
-    "The held-delivery tick reads the publication every three seconds for held delivery only."
+    "Activity intake itself stays event-driven and qualified per boot after registry recovery and a matching snapshot.",
+    "The three-second held-delivery tick shares one stat-keyed parse of the complete publication. Idle, closed or ended observations can trigger the recipient check, and the same ending IDs reach the explainer turn-end callback when wired. Usage uses separate stamps and a bound port, and runs only on a new stamped idle observation of a registered role agent.",
+    "A recovery attempt that cannot qualify the registry returns before snapshot invocation. Another independent publication or startup can retry it."
   ],
   "exclusions": [
     "No idle status polling and no second status store exist for activity.",
@@ -33,9 +34,9 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Bound role-agent activity is published from host transitions and reconciled once per boot; the activity publication is not polled for status, while the held-delivery tick reads it on its own short interval to see turn ends and to hold a message for a recipient reported in a turn.",
+  "statement": "Bound role-agent activity is published from host transitions and qualified per boot after registry recovery and a matching snapshot. Task activity is event driven. The held-delivery tick shares a parsed publication for recipient ending observations and a separate stamped idle usage selection. A separate send-time turn check can hold a message for a recipient in a turn.",
   "status": "proposed",
   "supersedes": []
 }

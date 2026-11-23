@@ -1,0 +1,4157 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L20",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0EF4PB",
+      "items": [
+        "sha256:a756abad50eb6fc081ec8fe9d1c5970f2a9a94419d985a27dce1976641a7a1f5"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+          "path": "mcp/src/agents_remember/observer/task_entries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/task_entries.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0RC3KP",
+      "items": [
+        "sha256:5bdc6fbaa746fed263e18450a5310b9174828919e231284a7413b39ab24dd257"
+      ],
+      "reason": "The concepts guide still distinguishes archived role agents and accurately describes the plug-in’s hand-off signal. The W4 confirmation refreshes the dependent record and its supporting source observations.",
+      "revision": 13,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0RCEAD",
+      "items": [
+        "sha256:50e3bd11057fe63e27601a051e1871dcacec4786c00869fcf5db1eed196c4747"
+      ],
+      "reason": "The documentation index still directs readers to install, host and dashboard guidance. The W4 confirmation refreshes the dependent record and its supporting source observations.",
+      "revision": 5,
+      "subject": "DPD-06057Y"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:6e74e0e7c715b6e79fa189d5fa114b75c8577df86f8420f481ae5bd13b7213a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "before": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:f6c4033a8c4dc1ac9c6f131fbf8349ceb78cc079d7b3b7d6d2a74be5967255d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "id": "RLZ-CE6HQ3"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0RS4ZM",
+      "items": [
+        "sha256:0af326ec2f704d283695acfdad0cb6ae9060c7098db582f504b2c5476cfccefe"
+      ],
+      "reason": "The activity publisher clears child work on close, and the work predicate rejects stale helper state from a closed session.",
+      "revision": 2,
+      "subject": "INV-2ANNY5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-17K3TA",
+      "items": [
+        "sha256:901334c4ac666d8f8a001add6ad7de85b5581f481ab9070613b835aa13e0dd24"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "397666453e42dbbdec1c61cade273ede88d84e4b",
+          "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/provider_limit_drain.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1WYH8R",
+      "items": [
+        "sha256:79ed3d099b04f65274dcb02d7a32257d30bc2936c1454486f4a16682f727a748"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "47f4eed6640a0c96aa628e0279e2365c4cc6cb66",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.test.ts"
+        },
+        {
+          "blob": "534586931977668702d528b74d51d09f2a58a834",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+        },
+        {
+          "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+        },
+        {
+          "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+        },
+        {
+          "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+        },
+        {
+          "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1XMQSE",
+      "items": [
+        "sha256:9decd71953799be1f29b95b120ffbadd6ab128be0e066cf3b924eac59d6f86ad"
+      ],
+      "reason": "The caller delegates role identity construction to the extracted shared helper.",
+      "subject": "hunk:sha256:9decd71953799be1f29b95b120ffbadd6ab128be0e066cf3b924eac59d6f86ad"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2FH831",
+      "items": [
+        "sha256:23fb5b1281ba3076ec18bcda79742992294cff080d5abf2df531d49262a014b4"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2HCVPD",
+      "items": [],
+      "reason": "The native entry and deterministic membership citations point to the current forest builder and its cycle-safe parent selection.",
+      "sources": [
+        {
+          "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+          "path": "mcp/src/agents_remember/observer/task_entries.py"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2HNE5W",
+      "items": [
+        "sha256:0e851975784acba945540fdd6c9faabf1bfde9570819b0bc80d9407b9c3f138b"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+          "path": "mcp/tests/test_task_entries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_task_entries.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2SMATE",
+      "items": [
+        "sha256:94063c677d77db0d4ccab64b8b9ce3359a392571ae07b8b93978244fb8743b62"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "17713c670d76851b21ce84043ed05e450c1a0d53",
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-30Q2JX",
+      "items": [
+        "sha256:f6974b92cf50ed5c36d2b8d45828ba82f0764fa85067f8444f5ec3f16100de1c"
+      ],
+      "reason": "The roles guide still distinguishes the archived-parent alternate and dashboard Revive from retirement. The W4 confirmation refreshes the dependent record and its supporting source observations.",
+      "revision": 8,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "17713c670d76851b21ce84043ed05e450c1a0d53",
+            "content": "sha256:69ddc30b878f57535f2ef8151a6d0fec9a669ce47404a4e42c7406645a5b935f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+          },
+          "before": {
+            "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
+            "content": "sha256:72a0f5577cbad8f50efd274462baeb04eb4e3ce689d012dd22e85d43ebc8840f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+          },
+          "id": "RLZ-4GTTNN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-36EK4E",
+      "items": [
+        "sha256:1f86efaef4193f4e83329c957f10ddb170b118801473abbf6dd230bea26d10c6"
+      ],
+      "reason": "No provider configuration key or install/activation behavior changes.",
+      "revision": 1,
+      "subject": "INV-ZNXNZC"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3D1H12",
+      "items": [
+        "sha256:94ce51584c64c766b3d6eee50404d08e138765b308ae00a4888b2edbd295beec"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+          "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_role_recipients.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3GNPXN",
+      "items": [
+        "sha256:6d02f8448d09de5c481177345c0b04a8a3a26180ed0e0367a3087557a32619d1"
+      ],
+      "reason": "The install overview still gives the Bootstrap and dashboard opening sequence without a separate registry recovery operation. The W4 confirmation refreshes the dependent record and its supporting source observations.",
+      "revision": 5,
+      "subject": "DPD-XV7QBE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:c3a046543a6f6f7a7103cb121c262c9e5b92bb775be24d5cb7f614bae8f2938d",
+            "locator": {
+              "kind": "symbol",
+              "name": "the last line is shortened to 300 characters"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:c3a046543a6f6f7a7103cb121c262c9e5b92bb775be24d5cb7f614bae8f2938d",
+            "locator": {
+              "kind": "symbol",
+              "name": "the last line is shortened to 300 characters"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-09JM5B"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:7f9357d76cece40b447f597a588c43a0e8e597ebda9792b4c892223347f5bccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "a line for a parent in a turn waits for that turn and is not sent into it (MIK-R172@v2 rule 6)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:7f9357d76cece40b447f597a588c43a0e8e597ebda9792b4c892223347f5bccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "a line for a parent in a turn waits for that turn and is not sent into it (MIK-R172@v2 rule 6)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-0VFQAF"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:c32eac5534c057e557a0f4edf0dc39d4c6d2f92fba3b46ad677e0e8dc34f5358",
+            "locator": {
+              "kind": "symbol",
+              "name": "a Hermes row that shows no recipient is a hand-off but keeps the parent's line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:c32eac5534c057e557a0f4edf0dc39d4c6d2f92fba3b46ad677e0e8dc34f5358",
+            "locator": {
+              "kind": "symbol",
+              "name": "a Hermes row that shows no recipient is a hand-off but keeps the parent's line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-1A2PEY"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:0d8d143294ebaa7bd28c5a584bb1fb62dfde1700278687512accb40f33b1737f",
+            "locator": {
+              "kind": "symbol",
+              "name": "a refused return gives the line (MIK-R172 rule 4)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:0d8d143294ebaa7bd28c5a584bb1fb62dfde1700278687512accb40f33b1737f",
+            "locator": {
+              "kind": "symbol",
+              "name": "a refused return gives the line (MIK-R172 rule 4)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-1PXCQM"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:71ec7fd1279ea5dfe4fdbc9d548ef1ed5e3643dafd7d259d51589dbba61674c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "a parent whose provider is unknown is treated as one that does not steer"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:71ec7fd1279ea5dfe4fdbc9d548ef1ed5e3643dafd7d259d51589dbba61674c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "a parent whose provider is unknown is treated as one that does not steer"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-5DNF5B"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:cdde4e3b554f9983ce065886e826e027ad684bd35e97ba88cd82b7e5ec0d1c73",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn-end order survives an in-flight prior flush (L172-R4-F02, schedule one)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:cdde4e3b554f9983ce065886e826e027ad684bd35e97ba88cd82b7e5ec0d1c73",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn-end order survives an in-flight prior flush (L172-R4-F02, schedule one)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-6CBT49"
+        },
+        {
+          "after": {
+            "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
+            "content": "sha256:4dd9c9c7e8d2fc55ab6335dae55029e8b4872c28101cbd83137f611fb195ecfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "F06: incomplete pagination never admits a seat wake; a complete listing does"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "before": {
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:4dd9c9c7e8d2fc55ab6335dae55029e8b4872c28101cbd83137f611fb195ecfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "F06: incomplete pagination never admits a seat wake; a complete listing does"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "id": "PRF-6MFPDJ"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:e30a950ed9f66cd4d454d62a4f74eb2a7c433589a0d3d9665a4043be1570e700",
+            "locator": {
+              "kind": "symbol",
+              "name": "a seat archived or waiting on a permission when the wait ends gets nothing, and a row is written"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:e30a950ed9f66cd4d454d62a4f74eb2a7c433589a0d3d9665a4043be1570e700",
+            "locator": {
+              "kind": "symbol",
+              "name": "a seat archived or waiting on a permission when the wait ends gets nothing, and a row is written"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-7AZVA0"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:aa94192f3c8ed38177ec0a8176c14b76dcc63d34031261058f12274aa8daaf29",
+            "locator": {
+              "kind": "symbol",
+              "name": "every row shape of rule 1 is a hand-off, the L104 row's escaped answer included"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:aa94192f3c8ed38177ec0a8176c14b76dcc63d34031261058f12274aa8daaf29",
+            "locator": {
+              "kind": "symbol",
+              "name": "every row shape of rule 1 is a hand-off, the L104 row's escaped answer included"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-7KDFB2"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:36124d2aa25ea8afd89e09cb6a48e4e71c5f84bcbaeed95c1dc3a09bc2ca19c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "the third end's marked line comes only at the end of its wait, and a turn start inside that wait cancels it"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:36124d2aa25ea8afd89e09cb6a48e4e71c5f84bcbaeed95c1dc3a09bc2ca19c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "the third end's marked line comes only at the end of its wait, and a turn start inside that wait cancels it"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-9WHSVB"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:7ed48b55cdeb12dba6e278cdac1fe094a6e9eaa933507e7d5e54a9c98b6dba5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "an agent whose recorded parent is archived wakes the current Manager of its master"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-AYCHW1"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:1dea8a869df4fbaa45106b9481b2537fb2e95e22f37da77fe37b4d0befebd48b",
+            "locator": {
+              "kind": "symbol",
+              "name": "held lines are sent in the order the turns ended, across a requeue (rule 6)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:1dea8a869df4fbaa45106b9481b2537fb2e95e22f37da77fe37b4d0befebd48b",
+            "locator": {
+              "kind": "symbol",
+              "name": "held lines are sent in the order the turns ended, across a requeue (rule 6)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-BHBAB8"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:4b39e636211ec348b87125f552cf1efb2efd60522fe8b90e1d5f03a8153ac046",
+            "locator": {
+              "kind": "symbol",
+              "name": "a child found by its paseo.parent-agent-id label holds the seat, also when its turn began before the plugin loaded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:4b39e636211ec348b87125f552cf1efb2efd60522fe8b90e1d5f03a8153ac046",
+            "locator": {
+              "kind": "symbol",
+              "name": "a child found by its paseo.parent-agent-id label holds the seat, also when its turn began before the plugin loaded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-CWKV66"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:49d372d200894d99cad37a40559ced49e062a4a8057f4294d13dc06370c1a1c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "a second batch is not sent into the parent turn the first batch started (L172-R4-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:49d372d200894d99cad37a40559ced49e062a4a8057f4294d13dc06370c1a1c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "a second batch is not sent into the parent turn the first batch started (L172-R4-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-DKQNE4"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:7662dfb40ec88220c875919e61b3093378778df26db513c6747319bb9c128170",
+            "locator": {
+              "kind": "symbol",
+              "name": "a leaf seat starts no role, so a role_start row is no hand-off (rule 2, v5)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:7662dfb40ec88220c875919e61b3093378778df26db513c6747319bb9c128170",
+            "locator": {
+              "kind": "symbol",
+              "name": "a leaf seat starts no role, so a role_start row is no hand-off (rule 2, v5)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-DT4XZG"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:91c9a4f28f6bc3cf705e73553fa930bd44e66e3197dd087c1cb17722fe929817",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider history is reclaimed on archive and capped (L172-R4-F03)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:91c9a4f28f6bc3cf705e73553fa930bd44e66e3197dd087c1cb17722fe929817",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider history is reclaimed on archive and capped (L172-R4-F03)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-FHYFYQ"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:73e6d62ab3483c120504b294ccbc55d93452f69d1498d717a34377086b22e64c",
+            "locator": {
+              "kind": "symbol",
+              "name": "a silent end sends one line with the facts and the agent's last line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:73e6d62ab3483c120504b294ccbc55d93452f69d1498d717a34377086b22e64c",
+            "locator": {
+              "kind": "symbol",
+              "name": "a silent end sends one line with the facts and the agent's last line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-GQ2EVM"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:9a28b609546eb6a4f1fbb19204749e5b2ed5ff91c92df864b8604f14faa742be",
+            "locator": {
+              "kind": "symbol",
+              "name": "the third and the fourth silent end each give the parent the marked line and the seat nothing"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:9a28b609546eb6a4f1fbb19204749e5b2ed5ff91c92df864b8604f14faa742be",
+            "locator": {
+              "kind": "symbol",
+              "name": "the third and the fourth silent end each give the parent the marked line and the seat nothing"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-HFMEC6"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:b4d955c0f0149c2e4e1a89ea2c444947724665795bb13c065c58bd9d29a0aae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "an empty last text says no text and an unreadable one says so"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:b4d955c0f0149c2e4e1a89ea2c444947724665795bb13c065c58bd9d29a0aae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "an empty last text says no text and an unreadable one says so"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-JBJD6A"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:34e2c008f921658b4dafa829be4331b3b4cceba17d4e1c6b842be2106788eaee",
+            "locator": {
+              "kind": "symbol",
+              "name": "a parent whose provider is known to steer gets the line at once (MIK-R172@v2 rule 6)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:34e2c008f921658b4dafa829be4331b3b4cceba17d4e1c6b842be2106788eaee",
+            "locator": {
+              "kind": "symbol",
+              "name": "a parent whose provider is known to steer gets the line at once (MIK-R172@v2 rule 6)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-KCYXP2"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:f576654d8678badd8189f5f4e05e6dfebfbcb2feebb373cd7caf4eeec51538b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn-end order survives Manager rebinding (L172-R4-F02, schedule two)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:f576654d8678badd8189f5f4e05e6dfebfbcb2feebb373cd7caf4eeec51538b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn-end order survives Manager rebinding (L172-R4-F02, schedule two)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-M4B1KY"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:7ed48b55cdeb12dba6e278cdac1fe094a6e9eaa933507e7d5e54a9c98b6dba5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "an agent whose recorded parent is archived wakes the current Manager of its master"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-M65N8C"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:349bf3a5f00712194e05b8e09370aa5ced9da29fed823576c9eeebd31d8bfac1",
+            "locator": {
+              "kind": "symbol",
+              "name": "a real failed send keeps the debt and is retried in order, once (L172-R4-F02 retry)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:349bf3a5f00712194e05b8e09370aa5ced9da29fed823576c9eeebd31d8bfac1",
+            "locator": {
+              "kind": "symbol",
+              "name": "a real failed send keeps the debt and is retried in order, once (L172-R4-F02 retry)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-PFG976"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:76ce9a73110b214716ddd00ec9a633570a932b405a50dfbaf87a2f1a2f2092e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "a held line reaches the successor when the archive has no alternate yet (L172-R1-F02)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:76ce9a73110b214716ddd00ec9a633570a932b405a50dfbaf87a2f1a2f2092e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "a held line reaches the successor when the archive has no alternate yet (L172-R1-F02)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-QSEPFH"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:41bf125751f1bc5879bfc14ea82acdcea49d5ea72d717220f64d452a40e0592a",
+            "locator": {
+              "kind": "symbol",
+              "name": "L181-C1-F07: the exact captured rows drive the required cases"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:41bf125751f1bc5879bfc14ea82acdcea49d5ea72d717220f64d452a40e0592a",
+            "locator": {
+              "kind": "symbol",
+              "name": "L181-C1-F07: the exact captured rows drive the required cases"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-SM302G"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:70ed98f0d16d6cf24ee9ab276eec993b652746390c441cdb986766469252905d",
+            "locator": {
+              "kind": "symbol",
+              "name": "a Hermes row and a Codex row of a role_message to the parent suppress MIK-R172's line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:70ed98f0d16d6cf24ee9ab276eec993b652746390c441cdb986766469252905d",
+            "locator": {
+              "kind": "symbol",
+              "name": "a Hermes row and a Codex row of a role_message to the parent suppress MIK-R172's line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-SV6WCY"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:7a9500b08383a8d4fc6a85ffbcadf52be4c6d9179b393370381ddb62d3a91cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "a completed leaf turn with no hand-off sends the seat the message after the wait, and its parent no line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:7a9500b08383a8d4fc6a85ffbcadf52be4c6d9179b393370381ddb62d3a91cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "a completed leaf turn with no hand-off sends the seat the message after the wait, and its parent no line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-TN0488"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:765b81961c2b8d6a1fe3889d6d961c80871438f799c883ea040994809c4faaba",
+            "locator": {
+              "kind": "symbol",
+              "name": "an empty ended turn says no text, never an earlier turn's text (L172-R1-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:765b81961c2b8d6a1fe3889d6d961c80871438f799c883ea040994809c4faaba",
+            "locator": {
+              "kind": "symbol",
+              "name": "an empty ended turn says no text, never an earlier turn's text (L172-R1-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-VEZBDV"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:bf63407c151714dd5e5e018e0889ed7f45b346f4ca3c094fc982ecc23a883c25",
+            "locator": {
+              "kind": "symbol",
+              "name": "an agent the agent list does not hold is named in the host log once"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:bf63407c151714dd5e5e018e0889ed7f45b346f4ca3c094fc982ecc23a883c25",
+            "locator": {
+              "kind": "symbol",
+              "name": "an agent the agent list does not hold is named in the host log once"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-ZSC2T3"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:db0b636696bd5b3d1e9635092ffb6ca5628d987fd3d59dc05bae30b33e43842a",
+            "locator": {
+              "kind": "symbol",
+              "name": "a return in an earlier turn does not silence this turn's line (L172-R1-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:db0b636696bd5b3d1e9635092ffb6ca5628d987fd3d59dc05bae30b33e43842a",
+            "locator": {
+              "kind": "symbol",
+              "name": "a return in an earlier turn does not silence this turn's line (L172-R1-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "PRF-ZXQ4R7"
+        },
+        {
+          "after": {
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:16c4fbca624f83d3a4d55e7ccb29f6d450957ba957e857cd24ae23b883e6ac5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "readHostState"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "content": "sha256:6c340d20221d34f93cf0686eeb0432d180d831167babf8ba0f89e8544397abdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "readHostState"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-09MB1T"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:40a86abf268f8db09d6a33f368dcbe2eabd92235ef6472baba9e5bd15ab0ea79",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliverSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:7a4da18424562fd671e13cbf7c848b7a8e7ea8f07cd8f6940f81930112264296",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliverSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-0DRPF9"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:ef50419252e4831af82c29406368bcb1f2139f5ce1acb70fd72073436e519c2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "recogniseArTool"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:ef50419252e4831af82c29406368bcb1f2139f5ce1acb70fd72073436e519c2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "recogniseArTool"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-0T6GGZ"
+        },
+        {
+          "after": {
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:a34076072c31c9d2ff07aed12fe89607e7e8a32988dbf045f9d87ecc0258c328",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "content": "sha256:6fa1ad0856163ab84ae6cff86e2b2dddab559b817d4a3d797ee22805709e78aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-1HAN2T"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:c6af59ecd758dfc6eb723f66f106f868a8dda887bcc2ed08c7d9273cd817e330",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeSeatWakeMessage"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:c6af59ecd758dfc6eb723f66f106f868a8dda887bcc2ed08c7d9273cd817e330",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeSeatWakeMessage"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-1K6N1F"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:1b458b1f78c056665985f224ceca9c45945b5480ba223148289e59730fd0595c",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnStarted"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:776c5edb49ad62c047e22d0c7cbe0910ddf837be5b6bdff9627fec3c539ef059",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnStarted"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-1V0Y9T"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:b6b127b1042ef423bac37449efcf8848eb557d88c0248fa7441e1e52637ec9b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_ENDED_STEERING_PROVIDERS"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:b6b127b1042ef423bac37449efcf8848eb557d88c0248fa7441e1e52637ec9b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_ENDED_STEERING_PROVIDERS"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-29Q98S"
+        },
+        {
+          "after": {
+            "blob": "397666453e42dbbdec1c61cade273ede88d84e4b",
+            "content": "sha256:189a7b1117d3b83faa45356a2c39d841f615308ae94b787d085b61d1e3d24243",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+          },
+          "before": {
+            "blob": "edf195a0285cdb34259d89dedf60c5f5a40deaa0",
+            "content": "sha256:b02c54876ffd21e5e46ed68f288099cc7187aad6ee54bc66a26203bd595b98b0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+          },
+          "id": "RLZ-3FFFJ8"
+        },
+        {
+          "after": {
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:ddb73c38f72efb8147723458eeb998bb570b22285988b20f69fa587c41dfcf9b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "content": "sha256:7c3b80456cdcedc15c9975d4b728f49be66de3cabbf73e114a3c61946c33eadd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-55H239"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:ca72ad2f29c29cd58140c79465097bfac1f0965238665f1a939de5a2995c67ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_ENDED_SILENT_LIMIT"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:ca72ad2f29c29cd58140c79465097bfac1f0965238665f1a939de5a2995c67ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_ENDED_SILENT_LIMIT"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-564E0R"
+        },
+        {
+          "after": {
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:3a81f54404a2eb7a0d1f1c86bdd394d1be61542af325e73076ffeaba09f38421",
+            "locator": {
+              "kind": "symbol",
+              "name": "PARENT_AGENT_ID_LABEL"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "content": "sha256:3a81f54404a2eb7a0d1f1c86bdd394d1be61542af325e73076ffeaba09f38421",
+            "locator": {
+              "kind": "symbol",
+              "name": "PARENT_AGENT_ID_LABEL"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-5CTT1H"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:b9b235f19d4d4d73249b9a94adc99c25866c028ce2725bc55f69820bf2a1efbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeTurnEndedLine"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:b9b235f19d4d4d73249b9a94adc99c25866c028ce2725bc55f69820bf2a1efbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeTurnEndedLine"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-712BJ3"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:c26d4f857189685526dda3be63e065c8a620bca4f7ce8f111867f7eed85531ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:7a06f391200c1bb79902b7e2afbf001601f5291b35952c3f781cf626a03f0f39",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-78JFRR"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:2ad498cf0bed73347fa52f7b42f85316e47eb5b274ae89abd9754367b7ab3216",
+            "locator": {
+              "kind": "symbol",
+              "name": "answerRecipient"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:2ad498cf0bed73347fa52f7b42f85316e47eb5b274ae89abd9754367b7ab3216",
+            "locator": {
+              "kind": "symbol",
+              "name": "answerRecipient"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-83YK6G"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:e4ed96af13cff1b1091394a881610a3b3b2d8764e5f0061b90e497f2fdb494a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_ENDED_SEAT_ROLES"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:e4ed96af13cff1b1091394a881610a3b3b2d8764e5f0061b90e497f2fdb494a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_ENDED_SEAT_ROLES"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-9T3E30"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:4ac1528fb5317e026596112e580c262deaa621540cbb470dfba054ff9152bf8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "flushHeldLines"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:0f96a19cc4dc31a83e67a3ce77e864f7feff84413886be212e4b9bbbea5ddadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "flushHeldLines"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-9VEJKT"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:1142cfbd1ae541198bc26fed46c42d6dc6ca58b07e3062cbac82249890b606ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "notSilentReason"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:cf61d04dcebc481bf1a340ae4f4c9d77ba86b6dbc6d70645558646c4855289c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "notSilentReason"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-9X24HB"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:ea776985022075902a3e2e5dbea25978d4e4f37cf2ae7875bb4b5871bf405853",
+            "locator": {
+              "kind": "symbol",
+              "name": "seatIsAcp"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:ea776985022075902a3e2e5dbea25978d4e4f37cf2ae7875bb4b5871bf405853",
+            "locator": {
+              "kind": "symbol",
+              "name": "seatIsAcp"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-C0NV62"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:407560a892544b91781a105ad60d9f0a59568ce91219f1b4d20ad8b5a51c5435",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedOutcome"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:407560a892544b91781a105ad60d9f0a59568ce91219f1b4d20ad8b5a51c5435",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedOutcome"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-C1JYFW"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:eb1f7c34a7996aee06d083bd795366fa0c857dc7487dccd465cc1ff8dbdf468c",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnHasReturnToParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:eb1f7c34a7996aee06d083bd795366fa0c857dc7487dccd465cc1ff8dbdf468c",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnHasReturnToParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-C1KP4R"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:2563114c90d0bac3a177989383c568e47dbbe21ca267c9b1e14ad14056d80793",
+            "locator": {
+              "kind": "symbol",
+              "name": "providerOf"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:2563114c90d0bac3a177989383c568e47dbbe21ca267c9b1e14ad14056d80793",
+            "locator": {
+              "kind": "symbol",
+              "name": "providerOf"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-CCGKX4"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:08571a69b76192b77f97c0e7dc71810f9fee02ba406c5975c01c5f1ef7b73382",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "2007b005eb4ba89964ebb41a870915307060f822",
+            "content": "sha256:60560e3d68dd0fd3ab2703c2940b140dcfa16532b1809f00c706fb2467fb5c43",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "RLZ-CTTYCZ"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:15afe7a97faf90393a520c120490f4a53f6dcd14f13334307fd12b49d84567b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidateRecipients"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:15afe7a97faf90393a520c120490f4a53f6dcd14f13334307fd12b49d84567b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidateRecipients"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-D21Q7D"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:1f6e34d477cb1bdce6d40ecfb641d39cd938d5af505b9d22bbf204eb430a7ff3",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteAgentArchived"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:f3d9e62990d0c9b700a100368a4507c7850a39d7b87db5268479f51ff27cd3bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteAgentArchived"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-D5653M"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:e5c1eca9c1f3fbe1a426f837a47e845ff07ebe2195a9ba72b709fa0ccd72dec7",
+            "locator": {
+              "kind": "symbol",
+              "name": "parentMayTakeLineNow"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:81aad7cf399048070716d06f5891d04190e358632570300aa5eda9335877faa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "parentMayTakeLineNow"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-DKJY6H"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:c4bde52dbc2b0e2469663b0280c0ea031e7f6496c45541a08bd15e561d5f174e",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:cc818def2774ef6475094983284ce3b1a94e95913d3317e3514cc5eab2a05705",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-EC5NRM"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:39db5eafb3be0e7944a99c8cc58a9344e822d915c10783caa5c36acc625028e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnSlice"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:39db5eafb3be0e7944a99c8cc58a9344e822d915c10783caa5c36acc625028e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnSlice"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-EKDSGQ"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:70f46a5a43ecac69b1c9c0a7c8a5d81a28cdc043b53bd411d0d8424891161cc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveWakeParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:8a3aaab7ecab50d39c4b31b8b1a8557b6a9d683ec012d9342f76158bb6fa7ab2",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveWakeParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-F0RH12"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:c50c309d8c9ee558fb06496b5e0a08b7bee19d3247a4afeddbb7698d1bd81055",
+            "locator": {
+              "kind": "symbol",
+              "name": "rememberParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:c50c309d8c9ee558fb06496b5e0a08b7bee19d3247a4afeddbb7698d1bd81055",
+            "locator": {
+              "kind": "symbol",
+              "name": "rememberParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-FDDHF5"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:d35493a494343594c49a07c0d19e75ae00187e8a58c92b12f8e29166c4228cdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "markThirdSilentEnd"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:d35493a494343594c49a07c0d19e75ae00187e8a58c92b12f8e29166c4228cdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "markThirdSilentEnd"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-FDGFTT"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:61657ff8afe0e3ecc8a3984c539c5eba715d81dd147997eb2003c696fe2525cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:fa6194c4e9c2a5e00e7d7f7df253bee119d7ff7e9581e3c23eeec0e6e7658ccc",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-H3YF9Z"
+        },
+        {
+          "after": {
+            "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
+            "content": "sha256:b154635e80477267caa38faa447a14f72b2de440dffd25aa4a345a3ca8f3eb62",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "before": {
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:823022bcd388f9af0ab0610b43c0e69c92c54dd0e280c451f9bb2d11ee758912",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "id": "RLZ-H55V5C"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:e849bf3b385184f6fd49c3108d60621e40ea6fe181d43bf9d93e80b2778db5f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_ENDED_PROVIDER_LIMIT"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:e849bf3b385184f6fd49c3108d60621e40ea6fe181d43bf9d93e80b2778db5f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_ENDED_PROVIDER_LIMIT"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-HD9RDK"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:470225853713d92c49d01fc42b1cc1c9ec438bc4bc353370afcf3febd7bc07aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanupSeatWaits"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:16341b351fbdb37064bc08c7744bae3644eb0e825bf77653c5c55fb36a2edf69",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanupSeatWaits"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-HTHGJ3"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:de3480e09ce7d2f3c90d97895001cfcebd49d40600ada729447660bd0101b4ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "keepTurnEndOrder"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:de3480e09ce7d2f3c90d97895001cfcebd49d40600ada729447660bd0101b4ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "keepTurnEndOrder"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-J5K3GT"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:ff687f1496efef565939cb4c7861dab7c03641ae48a3d251a0f791f53fc05b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnRows"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:ff687f1496efef565939cb4c7861dab7c03641ae48a3d251a0f791f53fc05b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnRows"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-KGDGST"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:52e7e2ce22ed393204843ca9e7860e1427ed194dffe4ab3db60e209fb020fb5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "declaresSubagentWait"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:52e7e2ce22ed393204843ca9e7860e1427ed194dffe4ab3db60e209fb020fb5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "declaresSubagentWait"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-KPNG0F"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:2e106f3cb77bcccf6e95ad3fd4e9953d335092cb6277d5a266311f0ddc397e69",
+            "locator": {
+              "kind": "symbol",
+              "name": "PendingSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:588bbad49de7d6b3f762363c53260414dd75fd3fbb9c7c829fa47bee469446ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "PendingSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-NPV0EE"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:64621326da2727c0cfa17f919728b748c64c7efbbd77f9e7623ea8d09d9761e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "lastLineOfTurn"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:64621326da2727c0cfa17f919728b748c64c7efbbd77f9e7623ea8d09d9761e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "lastLineOfTurn"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-NT30EH"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:7a679b8b1d1416873dff24a2f0245365e025965de2134c95965a13216a0b6c46",
+            "locator": {
+              "kind": "symbol",
+              "name": "scheduleSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:1f80d3f671d47c5358971c0641e614d3e01a327285c66111703285c9a5166968",
+            "locator": {
+              "kind": "symbol",
+              "name": "scheduleSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-PK93PB"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:3d9b87d103d9ced2451b51daa62ef18a2414e3cc6e123789b09522c9b14994fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "bumpSeatEpoch"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:319a57dab885172b456aca6473505501ca0e060bd8ab38a163497b57b098e7fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "bumpSeatEpoch"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-QTACEM"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:28463891a1ab18c88bdd18386b8dda2e7de35ce0eed0a13592f2c0d9a857b0b1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:4bf60dafdc11c7063ca60db7be33dc8d24a4e216ad4ac7758d39a3d343ae1320",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-RDK1XC"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:650f3573b5b41e241967e99cbf467d147556d65473f455dea0c52aacee1c413b",
+            "locator": {
+              "kind": "symbol",
+              "name": "rememberProvider"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:650f3573b5b41e241967e99cbf467d147556d65473f455dea0c52aacee1c413b",
+            "locator": {
+              "kind": "symbol",
+              "name": "rememberProvider"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-RTMAJK"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:4ac1528fb5317e026596112e580c262deaa621540cbb470dfba054ff9152bf8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "flushHeldLines"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:0f96a19cc4dc31a83e67a3ce77e864f7feff84413886be212e4b9bbbea5ddadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "flushHeldLines"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-S39QFR"
+        },
+        {
+          "after": {
+            "blob": "2b4312936a2e00d347d8affe118775496e853029",
+            "content": "sha256:b7ba6bb2e4b709f60415bb7e86ffd51189c78f3701a4280a05b2d7186d85f6de",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_held_delivery_tick_cost.py"
+          },
+          "before": {
+            "blob": "97511bd70fc020deed59748c6653ba243b990ba8",
+            "content": "sha256:606ae145d3592edcb95b9bb15f5d9919a280bfc60b4f208494b8ed0fe812d899",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_held_delivery_tick_cost.py"
+          },
+          "id": "RLZ-SQ7ZGB"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:92433a95cd48a87929e83e125e14f5cd203e3263316b604d95ee1dbb39abd4bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "answerText"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:92433a95cd48a87929e83e125e14f5cd203e3263316b604d95ee1dbb39abd4bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "answerText"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-TAM2KN"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:beb9d23fe873ebe1fbe8955068612264d02a4a3fadaf260fbd0166a2d6e557a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnHasHandoff"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:beb9d23fe873ebe1fbe8955068612264d02a4a3fadaf260fbd0166a2d6e557a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnHasHandoff"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-V2BPZZ"
+        },
+        {
+          "after": {
+            "blob": "181aa50525655219a506be03191d7c72a2a5354d",
+            "content": "sha256:faba0990269151d16328f42510bfcf2e1e0d071b3ecb1e869ed6f0c1f3920a15",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+          },
+          "before": {
+            "blob": "ff9215b1a2f313985809b74a48a92580c95cea2c",
+            "content": "sha256:d60420abbb49571da0d8e06fceed50ea60ec3ac8b7d5a287a18497fc605c7595",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+          },
+          "id": "RLZ-VXB4Y7"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:16605a1322a83536cfbf7c0c90021be4e3a58d8708985413faaa38f28e12d1a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "scheduleWaitCheck"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:024060f0da47372d598a0feecb5e0b9766f05b686ab23b09af9df92dd3b3cf5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "scheduleWaitCheck"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-WVVR4F"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:931e4c238a9d7b100e83777308be573f6ebbb0fc8378fc3643dbb08b40878c17",
+            "locator": {
+              "kind": "symbol",
+              "name": "currentManagerOf"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:f657b26103b4299ea7c702e3c25feef8aeffc35894366f58395c5583729677a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "currentManagerOf"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-YWH75T"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:c4bde52dbc2b0e2469663b0280c0ea031e7f6496c45541a08bd15e561d5f174e",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:cc818def2774ef6475094983284ce3b1a94e95913d3317e3514cc5eab2a05705",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-ZA95M4"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:c4bde52dbc2b0e2469663b0280c0ea031e7f6496c45541a08bd15e561d5f174e",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:cc818def2774ef6475094983284ce3b1a94e95913d3317e3514cc5eab2a05705",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-ZT2RRK"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3QVSCW",
+      "items": [
+        "sha256:b609cb09317d1ca348d11525b7bf9992d50e67cc58fc4a7657374964a25a5ab6"
+      ],
+      "reason": "Separates an open seat's deferred work from pending parent notification after a reversible close. F04 and F05 distinguish handoff and declaring work, suppress a late check after closure, preserve the separate wait publication, and correct the archived-recipient proof facet. Evidence (M1-F07 archived parent routing proof): mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts::an agent whose recorded parent is archived wakes the current Manager of its master",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-50HTYG",
+      "items": [
+        "sha256:89e4d90468807cb875f90c9d9cfb4ce62b96b24f565f3df0e5311cb0d4e3c13e"
+      ],
+      "reason": "Imports supply typed archive timestamps and parsing to the existing writer.",
+      "subject": "hunk:sha256:89e4d90468807cb875f90c9d9cfb4ce62b96b24f565f3df0e5311cb0d4e3c13e"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-562D78",
+      "items": [
+        "sha256:3a477f3dadbcf3565cd005872ea8ec73256799fca94c9a4eddb6ea5d4f7af08f"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5NBGTD",
+      "items": [
+        "sha256:5295d9fdea69a3d9eb003a859d40bd2f433378393315e3dc4a6ee41d84052f38"
+      ],
+      "reason": "The getting-started guide’s Bootstrap and dashboard opening sequence still applies with startup registry reconciliation. The W4 confirmation refreshes the dependent record and its supporting source observations.",
+      "revision": 9,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5S8NRV",
+      "items": [
+        "sha256:13cc0dcb2719a84a78459d65f032af670369a7ad37856a1639431577ef681a1e"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "181aa50525655219a506be03191d7c72a2a5354d",
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-62NS1T",
+      "items": [
+        "sha256:b4c0136321628717cca757d9aa55cbaee3612c8efbe0ca5d85c262cc28638940"
+      ],
+      "reason": "The renamed receipt helper shares the launch identity and adds no new role identity source.",
+      "subject": "hunk:sha256:b4c0136321628717cca757d9aa55cbaee3612c8efbe0ca5d85c262cc28638940"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+            "content": "sha256:628dfca1128773e22c2b092fad35ad24aa219a2fff93af60b6442948df59aef2",
+            "locator": {
+              "end": 705,
+              "kind": "line_range",
+              "start": 651
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:628dfca1128773e22c2b092fad35ad24aa219a2fff93af60b6442948df59aef2",
+            "locator": {
+              "end": 703,
+              "kind": "line_range",
+              "start": 649
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-AM4R8J"
+        },
+        {
+          "after": {
+            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "content": "sha256:ffa380e9b6a04ea1453e40bd8c9763381fd8b150fa0792cd81270331c6a6d73e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "54b818118629a276761c14d24046428232306f6e",
+            "content": "sha256:ececd143ba63630979eee3d7002af9021ff2da858f8cc8915797bcb8f9dcd6c9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-HPJZAR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-6B8FY3",
+      "items": [
+        "sha256:50dfb6d01bde3960dec95b60829ef3cfc44c72c4aa7815c53e4773f0db4bd6ca"
+      ],
+      "reason": "The new registry bridge command does not supply limit data. Usage-report ownership and existing notification path remain.",
+      "revision": 1,
+      "subject": "INV-BCXFH9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6J2FR9",
+      "items": [
+        "sha256:09ea689f3b3a9b3e45f051313e934f2d61c32010a20d7ac0a2d7180fe90fbd62"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+          "path": "mcp/tests/test_paseo_role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_role_agents.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6JZ6CR",
+      "items": [
+        "sha256:b3b5c473547f537252723cd76ce6fe5a64421c1bc985e80037b46d257478b123"
+      ],
+      "reason": "The host guide’s resumable-after-stop and Antigravity exact-agent Retry descriptions still match the host settings and bridge. The W4 confirmation refreshes the dependent record and its supporting source observations.",
+      "revision": 8,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6XX567",
+      "items": [
+        "sha256:bf8b92ec116bff55b2fb8ae267c12dce12eff74795852da0059471fb578db99b"
+      ],
+      "reason": "Delete-only cleanup of the now-unused state import.",
+      "subject": "hunk:sha256:bf8b92ec116bff55b2fb8ae267c12dce12eff74795852da0059471fb578db99b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+            "content": "sha256:07da0822e9c263b96c934e4d1057b59aada3bba410b1cb2c267752819263bb89",
+            "locator": {
+              "end": 617,
+              "kind": "line_range",
+              "start": 598
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "46f61e5f6b5eb2b7c8cd5041a1a15d6fc397812e",
+            "content": "sha256:07da0822e9c263b96c934e4d1057b59aada3bba410b1cb2c267752819263bb89",
+            "locator": {
+              "end": 615,
+              "kind": "line_range",
+              "start": 596
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-HFGK3E"
+        },
+        {
+          "after": {
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:bc65fc2f41322b25b6eb49f373f4d0891c9f15bfbd2c6cef70704aeae2ba3887",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "before": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:bc65fc2f41322b25b6eb49f373f4d0891c9f15bfbd2c6cef70704aeae2ba3887",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 291
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "id": "RLZ-HKM57V"
+        },
+        {
+          "after": {
+            "blob": "e7b762eca7991dbf3206d85614ed9ff6bf3d8914",
+            "content": "sha256:4244307a5f34ffe05d2bc79871cfef156b658ad4022105e6fe77aea0f845738f",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
+          },
+          "before": {
+            "blob": "061ec967d34e03c55048b889cba5df719691c63b",
+            "content": "sha256:4244307a5f34ffe05d2bc79871cfef156b658ad4022105e6fe77aea0f845738f",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
+          },
+          "id": "RLZ-KQJGQM"
+        },
+        {
+          "after": {
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:a2692d7d076ee9c56ebdd9313b5ea827f7ee2190451d845d4683776c4a1ad98a",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "content": "sha256:490c5d5e66a67e68c7fc573c87ab93fa62c5646a6af32d9ed5c67305d631613b",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-Q8M9EY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7DYP3N",
+      "items": [
+        "sha256:20492bcb670724bc31583d2cf3f86fe9e8db3ffbf3febd234c6ec44c9f20f03e"
+      ],
+      "reason": "Both activity and catalog routes retain background agents. The new registry history also requests background agents.",
+      "revision": 1,
+      "subject": "INV-MRV9R9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7PGD2T",
+      "items": [],
+      "reason": "The answer projection keeps its scope while the reference identifies the receipt-derived publication and best-effort boundary.",
+      "sources": [
+        {
+          "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+          "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_start_answer.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7TF7HE",
+      "items": [
+        "sha256:889fd363c38bdd69e6d3edfc8ed4e469d8234edde25ac3ef6c228db0a266bcff"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+          "path": "mcp/src/agents_remember/cli/dashboard.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/dashboard.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:6e74e0e7c715b6e79fa189d5fa114b75c8577df86f8420f481ae5bd13b7213a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "before": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:f6c4033a8c4dc1ac9c6f131fbf8349ceb78cc079d7b3b7d6d2a74be5967255d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "id": "RLZ-4VTSTZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8QSHJF",
+      "items": [
+        "sha256:add46986ae5e889d663bbe5603120677d1a1b25cd8ec7e61c25472adc0672fc5"
+      ],
+      "reason": "Close clears activity. A currently admitted prompt still has the same agent and prompt identity and the same completeness limits.",
+      "revision": 1,
+      "subject": "INV-XERGJ0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8ZR9V1",
+      "items": [],
+      "reason": "The package version evidence cites the current metadata-first version resolver and retains the lock and packaging anchors.",
+      "sources": [
+        {
+          "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
+          "path": "mcp/pyproject.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/pyproject.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-909N5K",
+      "items": [
+        "sha256:4ad4bfeb56a7dcb0868ffb7d7dad6db04c6ff8815644a11c8464e0764f21ae01"
+      ],
+      "reason": "The MCP reference still describes parent turn-end delivery and the archived-parent Manager route. The W4 confirmation refreshes the dependent record and its supporting source observations.",
+      "revision": 12,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-9C2F9P",
+      "items": [
+        "sha256:1ca942f302d0756d5ad7025b0e3686387e3eb3abcb692fd594777c982028480e"
+      ],
+      "reason": "The package README’s dashboard entry points and tool groups still match the existing commands with registry recovery behind dashboard startup. The W4 confirmation refreshes the dependent record and its supporting source observations.",
+      "revision": 10,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9MKA8R",
+      "items": [],
+      "reason": "The task forest, boot-and-supervisor qualification and runtime layout descriptions use their current owning source anchors.",
+      "sources": [
+        {
+          "blob": "fbbd516333a03712b6ce51c6d5b989d2993f7e1b",
+          "path": "docs/reference/runtime-layout.md"
+        },
+        {
+          "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+          "path": "mcp/src/agents_remember/observer/task_entries.py"
+        },
+        {
+          "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+          "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9S1J7H",
+      "items": [
+        "sha256:53239a0a931f3c8ce059ad7ffe794288d77ab73e45be0dbc5e0b88232c3241dd"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "d6c1e1c987e94ba2e07c90e56183a129fc848e18",
+          "path": "mcp/src/agents_remember/cli/role_registry_recovery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_registry_recovery.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AQJWS6",
+      "items": [
+        "sha256:4184d178173d41983549b5f78bf8498f3b0921070d58e45bd0c212133c8fb8ca"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+          "path": "mcp/src/agents_remember/cli/dashboard.py"
+        },
+        {
+          "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+        },
+        {
+          "blob": "e7b762eca7991dbf3206d85614ed9ff6bf3d8914",
+          "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
+        },
+        {
+          "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+          "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+        },
+        {
+          "blob": "397666453e42dbbdec1c61cade273ede88d84e4b",
+          "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+        },
+        {
+          "blob": "ed67a8139e3c2333b37f39992a46802e3aa0397a",
+          "path": "mcp/src/agents_remember/cli/role_activity.py"
+        },
+        {
+          "blob": "d6c1e1c987e94ba2e07c90e56183a129fc848e18",
+          "path": "mcp/src/agents_remember/cli/role_registry_recovery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AYR8C1",
+      "items": [],
+      "reason": "The task-state precedence and separate worktree-binding citations now use their current source extents.",
+      "sources": [
+        {
+          "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+          "path": "mcp/src/agents_remember/observer/task_entries.py"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-B1YAK1",
+      "items": [
+        "sha256:5c5792c63ebe5b86353e3e6e435da2f2913eb11e449ffa5dbad7d6f867054282"
+      ],
+      "reason": "The README’s exact paired closeout description remains accurate with dashboard boot-time registry recovery. The W4 confirmation refreshes the dependent record and its supporting source observations.",
+      "revision": 7,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
+            "content": "sha256:217b64e857ba57dc2d284cf99e5ce709c02be745748ab4b9ce4772bced1ce4fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "closing a seat preserves the parent lines owed to it and about it"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-G739BS"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:8faf10fa03bf85ab1f797fbdd96c3ab887a97c971fa701af60a47dbdfb70ab21",
+            "locator": {
+              "kind": "symbol",
+              "name": "closing a seat cancels its wake without restarting it"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-GXFX4E"
+        },
+        {
+          "after": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:4832000904c12aad8c177fc0b46e815eebb9d7e609f970480480b6abb1f4241d",
+            "locator": {
+              "kind": "symbol",
+              "name": "a close during a turn-end read keeps its parent notification"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-NHCYKW"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-B4XPB8",
+      "items": [],
+      "reason": "F04 distinguishes archived subject from archived recipient. F07 separates no-send cancellation, ordinary closed-parent routing and the successful parent notification during a close race.",
+      "revision": 1,
+      "subject": "INV-TD175J"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BC9XHZ",
+      "items": [
+        "sha256:f7f0e7268d7d8d510f8a1dbe3e61315b92b736cabaae0002360cd3266392cf25"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "ed67a8139e3c2333b37f39992a46802e3aa0397a",
+          "path": "mcp/src/agents_remember/cli/role_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_activity.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BMJ98D",
+      "items": [
+        "sha256:bbba7ffd3312acb69c7abf04b4aa9a8c6a9d97f2a70bba9f095c6e01ba5c998c"
+      ],
+      "reason": "Delete-only removal of the former boot-specific end comparison. The current positive archive comparison carries the obligation.",
+      "subject": "hunk:sha256:bbba7ffd3312acb69c7abf04b4aa9a8c6a9d97f2a70bba9f095c6e01ba5c998c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BX8B3H",
+      "items": [
+        "sha256:6cada6ad0cb29b391f57b2cb4b85638a5abf9ff30cde6d7ad4e5e2671220e5a8"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "47f4eed6640a0c96aa628e0279e2365c4cc6cb66",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.test.ts"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CN4T2N",
+      "items": [
+        "sha256:929afec6add604df649f54821317611f050c2dbbaf4bdfe757f4b7ead244c8a1"
+      ],
+      "reason": "The host file table attributes role records to Python registration and dashboard reconciliation and distinguishes resumable closure from archived activity.",
+      "revision": 4,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CTA5E7",
+      "items": [
+        "sha256:80b502903f26c875c629fa2d60c7d57f907c935dd99fd89fe5361a05f03353f3"
+      ],
+      "reason": "One dispatcher entry exposes the existing role-registry reader to Python. The reader owns the qualification and result semantics.",
+      "subject": "hunk:sha256:80b502903f26c875c629fa2d60c7d57f907c935dd99fd89fe5361a05f03353f3"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CXYY6K",
+      "items": [
+        "sha256:255244ed100325e1c0714bdb4b34c90a93bc9a6d2f34b35fd18b0c92e3f8d996"
+      ],
+      "reason": "The security policy’s local listener, browser request and host provisioning descriptions still match the dashboard and host settings. The W4 confirmation refreshes the dependent record and its supporting source observations.",
+      "revision": 6,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D4HWNR",
+      "items": [
+        "sha256:84f3123ca8b6d35a06ae07e5a68d4d151beeaa6d6641a5906ab4ef318c524a1a"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "adaefb77347cc1e07b571c8d40967b6b06a329fd",
+          "path": "mcp/tests/test_role_revival_registration.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_revival_registration.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "content": "sha256:f17911c1f0a21f888ea3a15a8177d6138c86961b685bacb7cb49f126b4e5ed66",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "54b818118629a276761c14d24046428232306f6e",
+            "content": "sha256:b0dcad1800444bdfd7bb14ae582321e0eeddf55e8993c65bd2e99fc23ebb06a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-XKDX4F"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DCTHPA",
+      "items": [
+        "sha256:b15f56e63a195686657a73bb8b305c4b50dd8dea051ec02360736491d8245050"
+      ],
+      "reason": "Dashboard composition adds a registry reader at the host-activity port and does not change moved-watcher ownership or review-open triggers.",
+      "revision": 1,
+      "subject": "INV-15M226"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+            "content": "sha256:cc6a5d7ffca9abe085722699bdaf4383ee1e93d17341190a36cd7b8fb308f6aa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/host_activity.py"
+          },
+          "before": {
+            "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+            "content": "sha256:4068df6c631fa984e595da9b3abc5135a913ac457dfbbeeba2b26ca5cd9423d3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/host_activity.py"
+          },
+          "id": "RLZ-N7TG5B"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DFK03R",
+      "items": [
+        "sha256:af30e964b0ee7fe331daf10d215d37dce5931da5b6b093c328bfeab354c20290"
+      ],
+      "reason": "The stall window and reset owner are unchanged. Updated publication types preserve unknown and trustworthy-observation boundaries.",
+      "revision": 2,
+      "subject": "INV-0DZX66"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DHD0QX",
+      "items": [
+        "sha256:73d357dc6ec82e95f6f437fba87f5efa5ed11ad3697c0197c6bbf778963f3246"
+      ],
+      "reason": "The documentation summary still describes how Bootstrap opens the dashboard and where to find host, role and task guidance. The W4 confirmation refreshes the dependent record and its supporting source observations.",
+      "revision": 9,
+      "subject": "DPD-633P3W"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E3FZ22",
+      "items": [],
+      "reason": "The reader card now distinguishes the bounded live census, complete unarchived history and exact UUID observations.",
+      "sources": [
+        {
+          "blob": "e7b762eca7991dbf3206d85614ed9ff6bf3d8914",
+          "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_live_agents.mjs"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EC9KP4",
+      "items": [
+        "sha256:5c228fa1ac65d25ab79d25486d6ae04514925edc78898dbf71b58bc2ea1ca1c4"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "534586931977668702d528b74d51d09f2a58a834",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-EPZGGA",
+      "items": [
+        "sha256:db1eaf5b1e6f83498b53fa099b07dc792fd5fc7d52025014cc10bcc5b209e18c"
+      ],
+      "reason": "The Hermes guide’s permission-mode priority and message holds still apply with the registry command and parent delivery changes. The W4 confirmation refreshes the dependent record and its supporting source observations.",
+      "revision": 8,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F72RCR",
+      "items": [],
+      "reason": "The Status card states release 3.0.5 and links to its release notes under the admitted inherited-anchor repair.",
+      "sources": [
+        {
+          "blob": "664623e8d6b6a7f866beac8580c9f6cfce12a3d1",
+          "path": "README.md"
+        }
+      ],
+      "subject": "onboarding:README.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-FH01KW",
+      "items": [
+        "sha256:37790379e28e891bf54e5f8f3a4f8256e4f83af983e4b5f42c2de43bfba437ad"
+      ],
+      "reason": "The runtime settings reference explains that disabling idle cleanup keeps sessions open and that a session closed by another route retains its role record and can reopen.",
+      "revision": 13,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FZX25Z",
+      "items": [
+        "sha256:19d55479cfe151d9ca3f1a4f269ac9c3667cc8922054bc34d86bd4795d95dad1"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "2b4312936a2e00d347d8affe118775496e853029",
+          "path": "mcp/tests/test_held_delivery_tick_cost.py"
+        },
+        {
+          "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+          "path": "mcp/tests/test_host_activity_projection.py"
+        },
+        {
+          "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+          "path": "mcp/tests/test_paseo_role_agents.py"
+        },
+        {
+          "blob": "adaefb77347cc1e07b571c8d40967b6b06a329fd",
+          "path": "mcp/tests/test_role_revival_registration.py"
+        },
+        {
+          "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+          "path": "mcp/tests/test_task_entries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-MGGEBY",
+          "revision": 2
+        },
+        {
+          "id": "INV-VDWN33",
+          "revision": 4
+        },
+        {
+          "id": "INV-WQ8YGE",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0KED3",
+          "revision": 3
+        },
+        {
+          "id": "INV-XZYGEB",
+          "revision": 3
+        },
+        {
+          "id": "INV-YK0D2W",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0BXKJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-GA3M21",
+      "items": [
+        "sha256:9d9c461f0d49461e371e20d55b9f450120ddfa74d111aecf7b92980dc4234c86"
+      ],
+      "reason": "The same members and routes still supply one task entry. Work and waiting require the stated session evidence, and boot qualification now includes registry recovery. F05 makes an eligible declared wait take precedence over paused with a provider limit.",
+      "revision": 5,
+      "subject": "FAM-14NZRC"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J8KQ0K",
+      "items": [
+        "sha256:3021417deb97430dfa3db265c152b667951871ac21f5b4d98122834492e77dbe"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+          "path": "mcp/tests/test_host_activity_projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_host_activity_projection.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JXH7AP",
+      "items": [],
+      "reason": "The receipt publication citation accounts for saved launch or resume before the host call and separates the answer projection.",
+      "sources": [
+        {
+          "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+          "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_role_tools.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1d4a994a29693ad93a517d83984c99e9db3d58f3",
+            "content": "sha256:4b802679d74b2d39ff8bdb8a34c527f7f06e50826470f0c2181439e868f9df13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_limited_recipient_costs_no_host_read"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "before": {
+            "blob": "1d4a994a29693ad93a517d83984c99e9db3d58f3",
+            "content": "sha256:4b802679d74b2d39ff8bdb8a34c527f7f06e50826470f0c2181439e868f9df13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_limited_recipient_costs_no_host_read"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "id": "PRF-NHBTWC"
+        },
+        {
+          "after": {
+            "blob": "1d4a994a29693ad93a517d83984c99e9db3d58f3",
+            "content": "sha256:3cc11313fce611e6bb0c6b5b7da917072f9f73c2f815eb36a291c6f82c83487f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stored_fact_holds_the_message_with_its_reset_time"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "before": {
+            "blob": "1d4a994a29693ad93a517d83984c99e9db3d58f3",
+            "content": "sha256:3cc11313fce611e6bb0c6b5b7da917072f9f73c2f815eb36a291c6f82c83487f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stored_fact_holds_the_message_with_its_reset_time"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "id": "PRF-RCQ0ZA"
+        },
+        {
+          "after": {
+            "blob": "a94fb0eefe03baa22d2108314328d8f8beb836dd",
+            "content": "sha256:3eb1ae8a7672e8faddbf2bd99aa09ab2d2ef89a10bf77fe71fbea4af9e53a5a8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_delivery.py"
+          },
+          "before": {
+            "blob": "a94fb0eefe03baa22d2108314328d8f8beb836dd",
+            "content": "sha256:3eb1ae8a7672e8faddbf2bd99aa09ab2d2ef89a10bf77fe71fbea4af9e53a5a8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/developer_delivery.py"
+          },
+          "id": "RLZ-YTMFR6"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KC5AQT",
+      "items": [],
+      "reason": "The Architect's 18:12:59Z ruling restates approved timing for a limited recipient. D399 in ar-coordination/tasks/agents-remember/0_archive/260928_maintained-invariant-knowledge/DEVELOPER-DIRECTION.md (lines 1574–1577) requires delivery when the seat is available and ready. MIK-R190@v1 rule 10 in ar-coordination/tasks/agents-remember/0_archive/260928_maintained-invariant-knowledge/requirements/MIK-R190-v1-ar-reads-paseos-standard-signals-running-subagents-and-usage-limits.md sets the first sweep and its 15-second budget. MIK-R171@v2 rule 1 in ar-coordination/tasks/agents-remember/0_archive/260928_maintained-invariant-knowledge/requirements/MIK-R171-v2-a-message-reaches-its-recipient.md supplies the 30-second bound, counted from reset by rule 10. Issue 681 tracks verification of that bound when held receipts exceed one sweep's capacity.",
+      "revision": 2,
+      "subject": "INV-E27J2R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KC6X48",
+      "items": [
+        "sha256:87d97284f7f7c452458fdb4d5bceb0dc428259767a5c4f702427c4dd82a6d63d"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+            "content": "sha256:ce11ac28796d46072b4c57e4e02bd0a1d8b373bb9a372f3e77c9a7ba1bdb170e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exact_archive_requires_a_complete_usable_reply"
+            },
+            "path": "mcp/tests/test_paseo_role_agents.py"
+          },
+          "before": "absent",
+          "id": "PRF-8PJWNZ"
+        },
+        {
+          "after": {
+            "blob": "181aa50525655219a506be03191d7c72a2a5354d",
+            "content": "sha256:faba0990269151d16328f42510bfcf2e1e0d071b3ecb1e869ed6f0c1f3920a15",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_role_agent"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+          },
+          "before": "absent",
+          "id": "RLZ-FKGS9J"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-KXHD9E",
+      "items": [],
+      "reason": "F01 and F07 clarify archive chronology, the legacy-row case and proof scope. Exact absence alone uses the receipt-position protection.",
+      "revision": 1,
+      "subject": "INV-MT07ZE"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-M2MG65",
+      "items": [
+        "sha256:a9c7e2b5cdf93f0bbbd374f68720bce60d4295b4e50516978f29f5a32dca0fb4"
+      ],
+      "reason": "The shared registry writer protects registration ordering independently of dashboard task projection. INV-X0KED3 already carries the input qualification part of the FAM-14NZRC guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-MT07ZE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
+            "content": "sha256:1bf475d4b7bf0c67a58143c912b916a13a42ddc2de43e21d600813a6c5277e47",
+            "locator": {
+              "kind": "symbol",
+              "name": "Paseo 0.16.2 hook shape: the turn read through refetch recognises a hand-over"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "before": {
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:1bf475d4b7bf0c67a58143c912b916a13a42ddc2de43e21d600813a6c5277e47",
+            "locator": {
+              "kind": "symbol",
+              "name": "Paseo 0.16.2 hook shape: the turn read through refetch recognises a hand-over"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "id": "PRF-1KVMKN"
+        },
+        {
+          "after": {
+            "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
+            "content": "sha256:ff24c0b4be99c9f2cb10f2dc1b16c7c4c00495bc1db9971bffd7cce51ba255c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "a refetch that throws gives an unreadable last line, not an empty one"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "before": {
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:ff24c0b4be99c9f2cb10f2dc1b16c7c4c00495bc1db9971bffd7cce51ba255c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "a refetch that throws gives an unreadable last line, not an empty one"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "id": "PRF-8NXZ1G"
+        },
+        {
+          "after": {
+            "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
+            "content": "sha256:8132484220b8321d94c2784e11dc05be1e07ffe7401204b3d9968039e65c5441",
+            "locator": {
+              "kind": "symbol",
+              "name": "the rows read through refetch keep their turn id, so an earlier turn's hand-over does not count"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "before": {
+            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "content": "sha256:8132484220b8321d94c2784e11dc05be1e07ffe7401204b3d9968039e65c5441",
+            "locator": {
+              "kind": "symbol",
+              "name": "the rows read through refetch keep their turn id, so an earlier turn's hand-over does not count"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts"
+          },
+          "id": "PRF-8X7DK7"
+        },
+        {
+          "after": {
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:01e300a63fc3e5ec4598ed5b7d689328c394e9ae85f6ce753592536fdd55fc20",
+            "locator": {
+              "kind": "symbol",
+              "name": "readTurnTimeline"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "content": "sha256:01e300a63fc3e5ec4598ed5b7d689328c394e9ae85f6ce753592536fdd55fc20",
+            "locator": {
+              "kind": "symbol",
+              "name": "readTurnTimeline"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-6CDZFK"
+        },
+        {
+          "after": {
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:a34076072c31c9d2ff07aed12fe89607e7e8a32988dbf045f9d87ecc0258c328",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "content": "sha256:6fa1ad0856163ab84ae6cff86e2b2dddab559b817d4a3d797ee22805709e78aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-HAGFJ4"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-M4C40T",
+      "items": [
+        "sha256:d9862c15007a3f9b268d95bc6942ca71de0f29ce0f52d6cced4f7c6eee6f892b"
+      ],
+      "reason": "The separate close hook leaves timeline refetch and turn-ID adjudication intact.",
+      "revision": 2,
+      "subject": "INV-HERZ7X"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+            "content": "sha256:ea7ebcd825c3467b51e92cc36f14598960e6b026bb10e306ffc648233c47cec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_seat_whose_declared_wait_is_still_to_be_checked_shows_as_waiting"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "before": {
+            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "content": "sha256:ea7ebcd825c3467b51e92cc36f14598960e6b026bb10e306ffc648233c47cec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_seat_whose_declared_wait_is_still_to_be_checked_shows_as_waiting"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "id": "PRF-CNE222"
+        },
+        {
+          "after": {
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+            "content": "sha256:f60076a4aea489e289115eaf00902add2ec0d7a26a1ccf91ebaeef3d6f1522dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_waiting_is_counted_on_its_own"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "before": {
+            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "content": "sha256:f60076a4aea489e289115eaf00902add2ec0d7a26a1ccf91ebaeef3d6f1522dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_waiting_is_counted_on_its_own"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "id": "PRF-MA4G6G"
+        },
+        {
+          "after": {
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+            "content": "sha256:eaf2cb3600ab28ac0175f39f89d85f41316ac7854956690c54e19fc21ef560ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wait_past_its_check_no_wait_and_an_ended_seat_are_paused_and_work_wins"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "before": {
+            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "content": "sha256:eaf2cb3600ab28ac0175f39f89d85f41316ac7854956690c54e19fc21ef560ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wait_past_its_check_no_wait_and_an_ended_seat_are_paused_and_work_wins"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "id": "PRF-SHEDX2"
+        },
+        {
+          "after": {
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:1544f3a2c0cd73c5ef107e71896b495e5c80b12b8a8d6efd27957e18f937b7db",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "before": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:3096a7635d2c8e877b340a43d698b57006f6639c98f6881baea46d8b12f43fb4",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "id": "RLZ-62NJVX"
+        },
+        {
+          "after": {
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+            "content": "sha256:4630f102f8f2ac6f7a3c69ef1795a315caaa687366fe9d02378a08c20bf00fc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_waiting_seats"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "before": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:4630f102f8f2ac6f7a3c69ef1795a315caaa687366fe9d02378a08c20bf00fc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_waiting_seats"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "id": "RLZ-KHS853"
+        },
+        {
+          "after": {
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+            "content": "sha256:63270e270b3de548860b6b02e119669e6165e8de93c867266711ef4af68398df",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent_waits"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "before": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:080ae29ef3eaf13d80df4263139b135e70617c2eaff70fcaab27708060994246",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent_waits"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "id": "RLZ-M3YHT5"
+        },
+        {
+          "after": {
+            "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+            "content": "sha256:ea494ea06174759ceaa98fb0fa4ed9ddbb474248fc239c5e139413aa8466460a",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeclaredWait"
+            },
+            "path": "mcp/src/agents_remember/observer/host_activity.py"
+          },
+          "before": {
+            "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+            "content": "sha256:ea494ea06174759ceaa98fb0fa4ed9ddbb474248fc239c5e139413aa8466460a",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeclaredWait"
+            },
+            "path": "mcp/src/agents_remember/observer/host_activity.py"
+          },
+          "id": "RLZ-R8M94T"
+        },
+        {
+          "after": {
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:55336f460776bc2cd7096e0288c1ffe7d346086041656e415a8818b43fb30ba4",
+            "locator": {
+              "end": 531,
+              "kind": "line_range",
+              "start": 510
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-REFE1D"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-M9YWMG",
+      "items": [
+        "sha256:7b091c6077056b02d0718601dda8543421a4e773dfd28693e280b717148f0f55"
+      ],
+      "reason": "A closed session cannot contribute waiting from an obsolete declaration. F07 grounds wait mutation and publication suppression independently.",
+      "revision": 2,
+      "subject": "INV-3WWG5K"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-MC5A38",
+      "items": [
+        "sha256:300463016022afc95c1e5240cbcf2be7f9d1ecae46a10612a23f9d9fbd635acb"
+      ],
+      "reason": "The Operations table requires an open session for helper-only work and for a declared wait with an armed check still within its grace period. A task pauses when known host activity shows neither work nor waiting.",
+      "revision": 7,
+      "subject": "DPD-23C91T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MJTE74",
+      "items": [
+        "sha256:32615260edd7c080a9951bd273d0c7b60accc2d751658a17c189c99dc4617370"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+          "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/host_activity.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:52e7e2ce22ed393204843ca9e7860e1427ed194dffe4ab3db60e209fb020fb5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "declaresSubagentWait"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:52e7e2ce22ed393204843ca9e7860e1427ed194dffe4ab3db60e209fb020fb5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "declaresSubagentWait"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-2TSVG0"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:93349ee20c7931ec88573112544bb9404e5ae6ef6dd2f357df86a952c587ae3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeSubagentWaitCheck"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:93349ee20c7931ec88573112544bb9404e5ae6ef6dd2f357df86a952c587ae3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeSubagentWaitCheck"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-5QCS4J"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:16605a1322a83536cfbf7c0c90021be4e3a58d8708985413faaa38f28e12d1a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "scheduleWaitCheck"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:024060f0da47372d598a0feecb5e0b9766f05b686ab23b09af9df92dd3b3cf5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "scheduleWaitCheck"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-C1VRTM"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-MPDRS3",
+      "items": [
+        "sha256:66c46a801817b23e67fafca9e5fda1e3d2332e84d89e7eaf7f84e4dde8cfe4b4"
+      ],
+      "reason": "The helper-declaration route survives across providers, with checks confined to an open session. F05 names the single check per declaration, the renewal after successful send and the guarded retry of blocked checks.",
+      "revision": 3,
+      "subject": "INV-G841F9"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-N64ZDN",
+      "items": [
+        "sha256:907a092af05fb2a2ebc1450c2a982e09c2f498f5e26e6bac7ef6d2f82742ab58"
+      ],
+      "reason": "Preserving held parent lines concerns the parent notification path, which supplies no native task stage or membership facts to FAM-14NZRC.",
+      "revision": 1,
+      "subject": "membership:INV-TD175J"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NFZX9R",
+      "items": [
+        "sha256:36c097643fa6a116218db0a35ba7bb7d9a92a23b16aeefba857c00e8f43a4d23"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+          "path": "mcp/src/agents_remember/observer/host_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/host_activity.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+            "content": "sha256:b0bf53728de4411d8749e98977b4e10f4c738ce7008aaa357f16a50f9d6b6b5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recipient_by_selection"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "before": {
+            "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+            "content": "sha256:b0bf53728de4411d8749e98977b4e10f4c738ce7008aaa357f16a50f9d6b6b5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recipient_by_selection"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "id": "RLZ-87W4MJ"
+        },
+        {
+          "after": {
+            "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+            "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_agents"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "before": {
+            "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+            "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_agents"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "id": "RLZ-A9DFWX"
+        },
+        {
+          "after": {
+            "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+            "content": "sha256:ed392ca66a3f81b9c2848c4fc72d14c710b551e31285ae29f819dbef76bb0eda",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "before": {
+            "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+            "content": "sha256:9cd22d3c00022098be833639a251d8330d80fb5056bb39cbc80a94ac8356974e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "id": "RLZ-HJ854G"
+        },
+        {
+          "after": {
+            "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+            "content": "sha256:8537b3a00f61a8e35243a931c88f5adeafb1bec33dbf3b886dff697a3de13e7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recipient_by_id"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "before": {
+            "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+            "content": "sha256:ebc1a4ad94a8accb33e831864452ec335ea91e81251b9bee90dff501552948a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recipient_by_id"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "id": "RLZ-PYXJN6"
+        },
+        {
+          "after": {
+            "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+            "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_recipient"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "before": {
+            "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+            "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_recipient"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "id": "RLZ-VQW9WE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Q0C7AM",
+      "items": [
+        "sha256:8ae2533358d67de5a7844c7a669b00a5136df8d5a583fd0d1afd8a835a249cf5"
+      ],
+      "reason": "Canonical UUID validation is shared with recovery. Recipient selection, ambiguity and reply semantics remain the same.",
+      "revision": 2,
+      "subject": "INV-R9S24S"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q24ZVR",
+      "items": [],
+      "reason": "Serving build identity now cites the current kernel version resolver's metadata-first lookup and release fallback.",
+      "sources": [
+        {
+          "blob": "0a98d07922b6fc1d752ba17136ea7a1634652373",
+          "path": "mcp/src/agents_remember/serving/build_info.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/build_info.py"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-R23XB7",
+      "items": [
+        "sha256:d63db54f2a37034543b6945e6fdfd976e6eb896736c994ede51ee313cbbf5f6a"
+      ],
+      "reason": "The close/next-turn/archive lifecycle also serves registry and notification paths beyond the single task-entry guarantee. INV-VDWN33 already carries the task-activity predicate in FAM-14NZRC.",
+      "revision": 1,
+      "subject": "membership:INV-GJYZGB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "content": "sha256:ffa380e9b6a04ea1453e40bd8c9763381fd8b150fa0792cd81270331c6a6d73e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "54b818118629a276761c14d24046428232306f6e",
+            "content": "sha256:ececd143ba63630979eee3d7002af9021ff2da858f8cc8915797bcb8f9dcd6c9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-DDMK3M"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RAVXTR",
+      "items": [
+        "sha256:acce97f8d1ac6e6cb0c4eb7355d746617f5f63e981d0d61a2de956f70d37b49d"
+      ],
+      "reason": "The existing serving read port is still composed above serving, now with the registry-aware implementation.",
+      "revision": 1,
+      "subject": "INV-QBWBNV"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "17713c670d76851b21ce84043ed05e450c1a0d53",
+            "content": "sha256:8c68db359fff338a685aecdecd705519dc6a0dfd7d406c6a52914b7011b68a32",
+            "locator": {
+              "kind": "symbol",
+              "name": "IDLE_RUNTIME_CLEANUP_SETTING"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+          },
+          "before": {
+            "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
+            "content": "sha256:8c68db359fff338a685aecdecd705519dc6a0dfd7d406c6a52914b7011b68a32",
+            "locator": {
+              "kind": "symbol",
+              "name": "IDLE_RUNTIME_CLEANUP_SETTING"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+          },
+          "id": "RLZ-AHMJ5V"
+        },
+        {
+          "after": {
+            "blob": "17713c670d76851b21ce84043ed05e450c1a0d53",
+            "content": "sha256:cbb9d87e887018d75f0aacbdb5cbc658eaa98764360290a538be52fc1655c312",
+            "locator": {
+              "kind": "symbol",
+              "name": "daemon_settings"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+          },
+          "before": {
+            "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
+            "content": "sha256:63f825e477b21812828ec6f699d67a1522c2cce1c7f3a24fb65bbfeb126d8bbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "daemon_settings"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+          },
+          "id": "RLZ-PTCH31"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RTFEWK",
+      "items": [
+        "sha256:e37e0c63b4cf3f7f3f686aec916542f4ef8f2f082a379f0238b8747ba9fb60bf"
+      ],
+      "reason": "The live idleRuntimeCleanup setting remains false. Its comment now accounts for reversible closure.",
+      "revision": 1,
+      "subject": "INV-MAZGMS"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S4GTPN",
+      "items": [
+        "sha256:79fb01bc606064293794adaf124c0a059a98f9ef9211f7d6d54ecb6abfaefe65"
+      ],
+      "reason": "The bridge command header enumerates the registry route. The contract is carried by the actual route implementation.",
+      "subject": "hunk:sha256:79fb01bc606064293794adaf124c0a059a98f9ef9211f7d6d54ecb6abfaefe65"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SW6ZGP",
+      "items": [
+        "sha256:2277aa33e762daaa2aa0ce94962a0f63979a4453a42d83830434a9984cee849e"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "181aa50525655219a506be03191d7c72a2a5354d",
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+        },
+        {
+          "blob": "17713c670d76851b21ce84043ed05e450c1a0d53",
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TKFTNY",
+      "items": [
+        "sha256:27447651c6bcc4b0bd0213d1a946dc57a798cea2345471523b6d5a38278d981b"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+          "path": "mcp/src/agents_remember/observer/host_activity.py"
+        },
+        {
+          "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+          "path": "mcp/src/agents_remember/observer/task_entries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TXW6VH",
+      "items": [],
+      "reason": "The version fallback prose and evidence now name current release 3.0.5 under the admitted inherited anchor correction.",
+      "sources": [
+        {
+          "blob": "003669887cb4a8992f2a3ad954940027d29762ef",
+          "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/primitives/version.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V35973",
+      "items": [
+        "sha256:1f04f5794e86cfc12bfbbb7b0ec5bbdfb9a8450b8b1a28e4e209065b218c7324"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+          "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VNRQFQ",
+      "items": [
+        "sha256:fc1db82823a529e15b527482417057b87688720faba59c6394cc06477d0fcef2"
+      ],
+      "reason": "Delete-only factoring of receipt validation and identity construction into the shared helper.",
+      "subject": "hunk:sha256:fc1db82823a529e15b527482417057b87688720faba59c6394cc06477d0fcef2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VT7NQD",
+      "items": [
+        "sha256:ddd866e86674a96126d908d376b81acae51854dcee197c552a567d0e3cc32669"
+      ],
+      "reason": "The shared receipt serializer preserves the launch facts and lets registry recovery use the same identity construction.",
+      "subject": "hunk:sha256:ddd866e86674a96126d908d376b81acae51854dcee197c552a567d0e3cc32669"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VYNDNX",
+      "items": [
+        "sha256:3614156e5568f7a5f4fcf954628c0e8af8e39c6888e95f2192f83c535a252158"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "2b4312936a2e00d347d8affe118775496e853029",
+          "path": "mcp/tests/test_held_delivery_tick_cost.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_held_delivery_tick_cost.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-W1T4PK",
+      "items": [
+        "sha256:13f3968a0d06f3c31f9ad3c9491e0e9eb4db0f13aa7bc13349a4f7e946afc6ff"
+      ],
+      "reason": "The architecture guide describes user-directed dashboard commands and automatic startup or qualifying-publication registry reconciliation, including receipt-backed restoration and eligible reclamation.",
+      "revision": 7,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+            "content": "sha256:46902c6a77c26ab7e215a1dfa22ea6f0dda46f3b130a16a75cc72ec7465898a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stage_has_priority_over_host_activity"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "before": {
+            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "content": "sha256:46902c6a77c26ab7e215a1dfa22ea6f0dda46f3b130a16a75cc72ec7465898a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stage_has_priority_over_host_activity"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "id": "PRF-2MEC8T"
+        },
+        {
+          "after": {
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+            "content": "sha256:7ecf6390cfea81857ec4dfe1408b0ef03d1efb6c5e07d2c709f7e0a8a4c7ff79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_work_and_permission_win_and_event_time_comes_from_a_contributor_in_every_order"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "before": {
+            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "content": "sha256:7ecf6390cfea81857ec4dfe1408b0ef03d1efb6c5e07d2c709f7e0a8a4c7ff79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_work_and_permission_win_and_event_time_comes_from_a_contributor_in_every_order"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "id": "PRF-JNM2YQ"
+        },
+        {
+          "after": {
+            "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+            "content": "sha256:cc6a5d7ffca9abe085722699bdaf4383ee1e93d17341190a36cd7b8fb308f6aa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/host_activity.py"
+          },
+          "before": {
+            "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+            "content": "sha256:4068df6c631fa984e595da9b3abc5135a913ac457dfbbeeba2b26ca5cd9423d3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/host_activity.py"
+          },
+          "id": "RLZ-1TPG1E"
+        },
+        {
+          "after": {
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+            "content": "sha256:5a984d22b4292af5c06c2637207ecf4aa720ddb93e33d5bdb2746a82e1499228",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "before": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:6c429c875db19fdc9ee8d700401a84c60ec6f922410d1526babcd79dbdcc0f52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "id": "RLZ-4RDRMH"
+        },
+        {
+          "after": {
+            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+            "content": "sha256:4019781e54a885042524f070c0a233d3e5b4b0e03d8b3969828b2ddd99297d41",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_host_activity_projection.py"
+          },
+          "before": {
+            "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+            "content": "sha256:aa5e6d560be3d021718f86967a82451f985366932011b2f98da33aebc1dc6e45",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_host_activity_projection.py"
+          },
+          "id": "RLZ-7FNE6M"
+        },
+        {
+          "after": {
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+            "content": "sha256:17c03ea692ccc4e8b7b67c5631d314bcf168092e273dac608bf5f9e47ef4224d",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_state"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "before": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:97b5afbcb4c4f92a14c39ada1467d8a0b0098a8ad5d950e0f7b481bd53adf329",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_state"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "id": "RLZ-FJEEV2"
+        },
+        {
+          "after": {
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:6e74e0e7c715b6e79fa189d5fa114b75c8577df86f8420f481ae5bd13b7213a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "before": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:f6c4033a8c4dc1ac9c6f131fbf8349ceb78cc079d7b3b7d6d2a74be5967255d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "id": "RLZ-FZ0D1M"
+        },
+        {
+          "after": {
+            "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+            "content": "sha256:3f58f05948f03bafa6ae12c93570f7bd48488df0aedf038b557876d67c9af63d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "before": {
+            "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
+            "content": "sha256:bdff12ea41d26dcc2816d777441d8833df29687f28f3ba4c08c94a05d7897673",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "id": "RLZ-MZV75N"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WG8PZA",
+      "items": [
+        "sha256:22b0041e241deca4d0ca8dc1cdd14969bdcf8379d6d7729fc5e985fc1f7638a8"
+      ],
+      "reason": "Work and waiting exclude stale work fields on a closed session while preserving priority and timestamp ownership.",
+      "revision": 4,
+      "subject": "INV-VDWN33"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WP6VQ7",
+      "items": [],
+      "reason": "The bridge explanation now names role-registry dispatch and its dedicated history and exact routes alongside agents-live.",
+      "sources": [
+        {
+          "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_bridge.mjs"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:cd053c2c480809b1ab77496b255b149939dd6bf13c75866bb4412a6b83d258b7",
+            "locator": {
+              "end": 2567,
+              "kind": "line_range",
+              "start": 2546
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:024060f0da47372d598a0feecb5e0b9766f05b686ab23b09af9df92dd3b3cf5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "scheduleWaitCheck"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-47VRN3"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:31e1bbc109bebe79b3c367fe04d33838f9728e166f415c8fcf19f55f76b0b1f4",
+            "locator": {
+              "end": 1588,
+              "kind": "line_range",
+              "start": 1569
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-QT0FCM"
+        },
+        {
+          "after": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:c6af59ecd758dfc6eb723f66f106f868a8dda887bcc2ed08c7d9273cd817e330",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeSeatWakeMessage"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+            "content": "sha256:c6af59ecd758dfc6eb723f66f106f868a8dda887bcc2ed08c7d9273cd817e330",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeSeatWakeMessage"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-WF3WNG"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-X5KP55",
+      "items": [
+        "sha256:417f3af7499bdb04c765dc7992e610fdce70a9704616375ae116e6c1d2516060"
+      ],
+      "reason": "A close ends the outstanding declaration and cancels its check; the generation recheck prevents a late arm. F04 separates declared wait from a real handoff and the generation-checked arm.",
+      "revision": 2,
+      "subject": "INV-CAAWDR"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X7SYRA",
+      "items": [
+        "sha256:fa3d588a0e8f32f2848cf44f6227572b722096c376adf1b4d6bfcf6771e9d5bd"
+      ],
+      "reason": "The dispatcher imports the existing owner of the registry read. The import makes no independent decision.",
+      "subject": "hunk:sha256:fa3d588a0e8f32f2848cf44f6227572b722096c376adf1b4d6bfcf6771e9d5bd"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+            "content": "sha256:2095eadc8d81129028081ff92b4ea384efa13f7e58c2a0b7bc420e05fdd8b50f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_periodic_full_and_degraded_wakes_retain_host_without_reads"
+            },
+            "path": "mcp/tests/test_host_activity_projection.py"
+          },
+          "before": {
+            "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+            "content": "sha256:2095eadc8d81129028081ff92b4ea384efa13f7e58c2a0b7bc420e05fdd8b50f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_periodic_full_and_degraded_wakes_retain_host_without_reads"
+            },
+            "path": "mcp/tests/test_host_activity_projection.py"
+          },
+          "id": "PRF-145T4R"
+        },
+        {
+          "after": {
+            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+            "content": "sha256:119ef6476994b169a5ca6d240ee16c65bf20b2f4fd5900c344599af48207d8f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_new_host_boot_and_a_new_dashboard_each_require_the_whole_read"
+            },
+            "path": "mcp/tests/test_host_activity_projection.py"
+          },
+          "before": {
+            "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+            "content": "sha256:119ef6476994b169a5ca6d240ee16c65bf20b2f4fd5900c344599af48207d8f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_new_host_boot_and_a_new_dashboard_each_require_the_whole_read"
+            },
+            "path": "mcp/tests/test_host_activity_projection.py"
+          },
+          "id": "PRF-643PEQ"
+        },
+        {
+          "after": {
+            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+            "content": "sha256:98abdf1dced38ae3bf7966eccbd1a9bd5b454e6c44b7680f6903f167e74cc6f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_idle_heartbeats_do_not_read_activity_or_launch_another_snapshot"
+            },
+            "path": "mcp/tests/test_host_activity_projection.py"
+          },
+          "before": {
+            "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+            "content": "sha256:98abdf1dced38ae3bf7966eccbd1a9bd5b454e6c44b7680f6903f167e74cc6f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_idle_heartbeats_do_not_read_activity_or_launch_another_snapshot"
+            },
+            "path": "mcp/tests/test_host_activity_projection.py"
+          },
+          "id": "PRF-NGD3WQ"
+        },
+        {
+          "after": {
+            "blob": "ed67a8139e3c2333b37f39992a46802e3aa0397a",
+            "content": "sha256:4df62a309c9297b418d3a432286648b3977d819b0b295b3f0f20bb8e6a6c4455",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/src/agents_remember/cli/role_activity.py"
+          },
+          "before": {
+            "blob": "c7802873c1a67ff9cf7024b59cd2ad83838feaf8",
+            "content": "sha256:4df62a309c9297b418d3a432286648b3977d819b0b295b3f0f20bb8e6a6c4455",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/src/agents_remember/cli/role_activity.py"
+          },
+          "id": "RLZ-9GVD09"
+        },
+        {
+          "after": {
+            "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+            "content": "sha256:b89e535d05d3270d1d44c2c5e169d84c685f30b6849c2808453bd7d6303eec60",
+            "locator": {
+              "kind": "symbol",
+              "name": "HostActivityInput"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "before": {
+            "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
+            "content": "sha256:6941ec4be98b823f901850057093baf95b36c905fab1c7e1ab546cb4799fd799",
+            "locator": {
+              "kind": "symbol",
+              "name": "HostActivityInput"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "id": "RLZ-FJCF4Y"
+        },
+        {
+          "after": {
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:10a92f0a201b4854214ea31c7c93d2959aa3617fb87e38a05d4a1e1fe08d45e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "HostActivityPublisher"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "before": {
+            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "content": "sha256:015c3d7c55694a28709850c24890a583e948b9552d07ed643f26ac163040b692",
+            "locator": {
+              "kind": "symbol",
+              "name": "HostActivityPublisher"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "id": "RLZ-FQ42W2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-XWWJZD",
+      "items": [
+        "sha256:55613193f3510075db10b1c2393eebd9069de040d8fa5673744e39d973f7ebfa"
+      ],
+      "reason": "Startup and qualifying new activity drive receipt-backed recovery before host snapshot, with independent input as the retry boundary. F06 keeps status intake event driven and distinguishes the held-delivery, usage and explainer consumers of the recurring tick.",
+      "revision": 3,
+      "subject": "INV-X0KED3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YQMZM2",
+      "items": [],
+      "reason": "Daemon version comparison cites the current kernel resolver and release fallback.",
+      "sources": [
+        {
+          "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+          "path": "mcp/src/agents_remember/serving/daemon.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/daemon.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z7KC6K",
+      "items": [
+        "sha256:3808f93abf51ad7f17e84c812e18c11f3005e932a9252cca3d461177b196a8c8"
+      ],
+      "reason": "The current explanation now describes the applicable closed and archived activity, recovery or controlled test behavior on W4.",
+      "sources": [
+        {
+          "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+            "content": "sha256:5e4a32d2dc7df5a3a35bfcdd918b414675462cc2158dea4ba2c5276e65f6c595",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn_ended_agents"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "before": {
+            "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
+            "content": "sha256:cd6884e70f791efa0a595ae5119772d23ec8e3e14ec4a95fbe2e53fdd8f98aa5",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn_ended_agents"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "id": "RLZ-M56SSK"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZR4X01",
+      "items": [
+        "sha256:9c5874ee201b0ec986ad09ebb60ad88359c9eee8296b9b52d2ed88b5b6c80576"
+      ],
+      "reason": "The held-delivery reader rechecks closure while usage accounting retains its separate stamped-idle rule. F03 makes explicit the ended exception to ordinary pre-read pausing and the bounded post-reset traversal.",
+      "revision": 3,
+      "subject": "INV-4DQMNE"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

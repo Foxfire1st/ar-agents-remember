@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The page holds: the packaging metadata and the dashboard's media route are named in no install step, and the browser section tells the fetch as the code makes it.",
-    "task": "261112-BUG-L7",
+    "statement": "The install overview still gives the Bootstrap and dashboard opening sequence without a separate registry recovery operation.",
+    "task": "261112-BUG-L20",
     "uncommitted": true
   },
   "document": "docs/install/README.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "54b818118629a276761c14d24046428232306f6e",
+      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },

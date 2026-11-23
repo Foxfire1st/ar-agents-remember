@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
-    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The dashboard guide now correctly describes shown-pair option reads and reuse, ordered Refresh, and saved model choices with new Start omitting feature overrides until fresh options are ready while Retry replays the saved request.",
-    "task": "261112-BUG-L19",
+    "statement": "The Operations table requires an open session for helper-only work and for a declared wait with an armed check still within its grace period. A task pauses when known host activity shows neither work nor waiting.",
+    "task": "261112-BUG-L20",
     "uncommitted": true
   },
   "document": "docs/dashboard.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
     },
     {
-      "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+      "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
       "kind": "file",
       "path": "mcp/src/agents_remember/observer/task_entries.py"
     },
@@ -200,7 +200,7 @@
       "path": "mcp/src/agents_remember/observer/provider_limits.py"
     },
     {
-      "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+      "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
       "kind": "file",
       "path": "mcp/src/agents_remember/observer/host_activity.py"
     },
@@ -406,6 +406,42 @@
         "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
       },
       "heading": "Where the choices come from",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+        "content": "sha256:349958ad29d9023a1585a1dbcd5ac4459a1ecf200fe0d5b38c420a1e747acbe6",
+        "locator": {
+          "kind": "symbol",
+          "name": "agent_works"
+        },
+        "path": "mcp/src/agents_remember/observer/task_entries.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+        "content": "sha256:63270e270b3de548860b6b02e119669e6165e8de93c867266711ef4af68398df",
+        "locator": {
+          "kind": "symbol",
+          "name": "agent_waits"
+        },
+        "path": "mcp/src/agents_remember/observer/task_entries.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+        "content": "sha256:9ba870ad9c81b7dbfe0410715ff825dce3d8c3c90ce9ab16d6ab0b139ed77b27",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishedAgentActivity"
+        },
+        "path": "mcp/src/agents_remember/observer/host_activity.py"
+      },
       "kind": "anchor"
     }
   ]

@@ -386,14 +386,14 @@
       ]
     },
     "18": {
-      "note": "On valid saved receipt context, role-facts publication belongs to pre-launch/replay and receipt-aware resume, not to the post-answer projection; filesystem/runtime publication is best effort, not host execution or plugin-consumption evidence.\n\nAnchor: Current receipt publication versus answer projection",
+      "note": "Prepared launch and receipt-aware resume publish role facts before their host call. The answer builder projects the saved receipt. Best-effort publication establishes no plug-in consumption.",
       "targets": [
         {
           "anchor": {
-            "blob": "c7802873c1a67ff9cf7024b59cd2ad83838feaf8",
-            "content": "sha256:2d9fcd4224b3aa8a1056860ebc8387fe9f8f371fd84a9ab8c81eaac043799bf1",
+            "blob": "ed67a8139e3c2333b37f39992a46802e3aa0397a",
+            "content": "sha256:848e228dcfbf37a58064be066e884e709befe8a1a199f2e1bbe475981e604e29",
             "locator": {
-              "end": 63,
+              "end": 73,
               "kind": "line_range",
               "start": 13
             },
@@ -560,7 +560,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+            "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
             "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
             "locator": {
               "kind": "symbol",

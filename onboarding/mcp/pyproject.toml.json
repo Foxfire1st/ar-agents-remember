@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "5dd23ae44c63e5914f626006ad7a81374ac1a55f",
+        "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
         "content": "sha256:80c99862448ab92d6ee65fde88d7667d360c1d35eedfa1e7fe46ebea3024294a",
         "locator": {
           "end": 17,
@@ -291,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dd23ae44c63e5914f626006ad7a81374ac1a55f",
+            "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
             "content": "sha256:67390565a8665a2378ea8acf015a4c3ac444ae57f5394d6f15e32a44bf786726",
             "locator": {
               "end": 20,
@@ -308,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dd23ae44c63e5914f626006ad7a81374ac1a55f",
+            "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
             "content": "sha256:56d5658353a8b7c8d238f402dd65aa85f57d171c9bbc54740712e71650b8f7ab",
             "locator": {
               "end": 108,
@@ -395,7 +395,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dd23ae44c63e5914f626006ad7a81374ac1a55f",
+            "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
             "content": "sha256:e6b563e4acbcd80bd201904b19939ce2f5ff3a1958b8d7af3c1296e2e7249a98",
             "locator": {
               "end": 24,
@@ -407,7 +407,7 @@
         },
         {
           "anchor": {
-            "blob": "5dd23ae44c63e5914f626006ad7a81374ac1a55f",
+            "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
             "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
             "locator": {
               "end": 31,
@@ -424,7 +424,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dd23ae44c63e5914f626006ad7a81374ac1a55f",
+            "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
             "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
               "end": 28,
@@ -459,7 +459,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d33b90fb5193505b1e09fb7156e1411f82ac5093",
+            "blob": "f1308f23329e1b4d4ace2fc50cc4fc98a03ec7e0",
             "content": "sha256:6dc0cecbeac8ccc41e1a05a96799d5652d7940b5d02dc7f4ca1f476d278107e1",
             "locator": {
               "end": 43,
@@ -472,7 +472,7 @@
         },
         {
           "anchor": {
-            "blob": "d33b90fb5193505b1e09fb7156e1411f82ac5093",
+            "blob": "f1308f23329e1b4d4ace2fc50cc4fc98a03ec7e0",
             "content": "sha256:580b200c0d480ad867ae427f11fe588174b8408f3b0487eb5068933f04f651b0",
             "locator": {
               "end": 111,
@@ -521,12 +521,12 @@
       ]
     },
     "9": {
-      "note": "MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback.\n\nAnchor: \"SERVER_VERSION\"",
+      "note": "MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "32fd4d0c91d8a841770a9763fb83890cd69b9cf6",
-            "content": "sha256:5e9ec8c178e5a77040e42806f78755b73aee2558a83cc35d76f4b49344144af4",
+            "blob": "003669887cb4a8992f2a3ad954940027d29762ef",
+            "content": "sha256:b4caae7e37061d27e870bbd1e3d75b2c97aded1918ae32853e7f9c2d53d8bfff",
             "locator": {
               "end": 23,
               "kind": "line_range",

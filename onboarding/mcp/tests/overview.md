@@ -31,7 +31,7 @@ The grouping regressions exercise writer-authored source maps for cardless delet
 
 Native task/status protection now follows the single server producer. `test_task_entries.py` declares native-stage precedence over host activity, `in-turn`/permission precedence over idle/ended observations, contributor-owned event times, explicit unknown-versus-paused, missing-document/addressless entries, ordered membership with documented-subTask explicit-master precedence and genuinely absent-master fallback, preserved subTask unresolvable master literals, once-only full-content disagreement reporting, deterministic conflict/cycle handling, reachability and shared counts. `test_task_document.py` asserts that mirrored master status follows the native document even when step progress disagrees. Start/abandon source cases inspect both the leaf and mirrored parent stage; the series topology case prepares and publishes one master/sprint batch. These assertion bodies are not fresh execution or acceptance evidence.
 
-`test_host_activity_projection.py` protects startup/new-boot reconciliation, unknown authority, notification-only intake and no extra activity reads during idle/full/degraded safety wakes. `test_host_supervisor.py` describes real child/pidfd fixtures with controlled identity inspection, double identity proof, one exit invalidation and unknown on subscription failure; it is not a run against a native host here. Role registration/revival tests combine the actual TypeScript publisher in a Node child with controlled native listings/events and a fake runtime, checking registration-before-resume, restart ordering and later-end reclamation. Those process boundaries do not prove a paid turn or installed-host adoption.
+`test_host_activity_projection.py` protects startup/new-boot reconciliation, unknown authority, notification-only intake and no extra activity reads during idle/full/degraded safety wakes. `test_host_supervisor.py` describes real child/pidfd fixtures with controlled identity inspection, double identity proof, one exit invalidation and unknown on subscription failure; it is not a run against a native host here. Role registration/revival tests combine the actual TypeScript publisher in a Node child with controlled native listings/events and a fake runtime, checking registration-before-resume, restart ordering, later archive reclamation and receipt-backed restoration. Those process boundaries do not prove a paid turn or installed-host adoption.
 
 `test_changeset_cache.py`, `test_intent_summary_cache.py` and `test_task_document_body_cache.py` declare native-byte/conditional-return parity, consumed-input invalidation, unreadable/racing-input non-reuse and bounded retention. Selected cases address object loss/restoration, index-byte versus timestamp changes, ignored/input selection changes, grant changes, HTTP body revalidation and symlink confinement; the intent concurrency case blocks its reader while another change-set route completes. Warm-cache zero-Git/zero-reparse assertions describe their controlled scenarios, not measured fleet latency, CPU, whole-build performance or fresh runtime results. Raw workspace Event River rows retain task `scopeKey`, without `lifecycleId`/`sessionId`; they are diagnostic events, not task stage/activity.
 
@@ -587,9 +587,13 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 The explainer tests check bound reading inputs, moved Update with preserved stage files, and exact essay-first defaults. The capability cases pin the shipped stage wording and 1,500-word budget. Separate video cases check the runner's media map, the static attributes and the store's publication and readback.
 
+The task-entry fixture supplies stale helper work and an obsolete declared wait to a closed seat. It observes paused with no waiting seats, then work on the next turn (test_task_entries.py:537–560). Separate fixtures cover archive timestamp ordering and receipt-backed registry restoration before the dashboard snapshot.
+
 ## Evidence
 
 ### Repo-Internal References
+
+- A closed seat’s stale helper and wait fields leave the task paused. Its next turn contributes work. [1843]
 
 - The lifted-decision test source first asserts a version-mismatched requirement endpoint is reported with refusal and unchanged memory, then repairs that endpoint and asserts the decision is written and an identical second ingest is unchanged. These are test assertions, not a new execution result. [1443]
 
@@ -1693,7 +1697,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - Startup compacts the river and schedules projection and enabled recurring owners before yielding. The shutdown fixture substitutes projector priming and identifies the archive-recovery coroutine. Archive recovery bounds each scan by entry count, depth and time. The installer lists retired Observer stores. Serving adds watcher health to a copy of the projection. [1835]
 
 
+
 - The plugin registers one in-memory turn tracker and forwards agent.turn.after with turn identity and outcome. A completed eligible silent end arms a sixty-second wait. A new turn cancels that wait and delivery checks current host facts. A failed held-line send stays queued for ordered retry. Helper and background declarations go through wait tracking and scheduling. [1836]
+
 
 
 - test_definition_scope.py declares focused checks for scope reuse, fresh operations and source-content identity; this is source-described coverage, not a new test execution. [1837]

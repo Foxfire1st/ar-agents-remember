@@ -10,8 +10,8 @@ What a held-message drain owes a recipient whose provider limit is running: wait
 
 ## Code Commentary
 
-Waiting out a limit must cost no host read. For a limited recipient the drain therefore pauses with outcome `provider-limit` before any read, and the first sweep after the reset delivers what waits, in order, within that sweep.
+The drain checks the provider limit before its ordinary recipient read. During an active limit an `ended` publication may trigger one archive-or-absence confirmation for a new event stamp, with the boot as its fallback stamp. An ordinary `closed` recipient waits for reset without that read.
 
-The one read a drain still owes is for a recipient the publication shows `ended`: an archive ends its waiting messages, a closed session keeps them waiting, and that reading is paid once per `ended` stamp rather than on every sweep. The order is part of the rule — the limit comes first and costs no host read; only then, and only for a stamped `ended` recipient, is one reading taken.
+A confirmed archive or absence resolves held messages as undelivered. An unreachable host returns `host-unreachable` and releases the drain claim. The remaining limited cases retain their messages with `provider-limit`. After reset, eligible messages drain in order when the bounded rotating receipt cursor reaches the recipient, which can take later ticks.
 
 Both decisions are policy, so they live here rather than in the held-message store's own module: that module owns the store and the drain, this one decides when they wait.

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
-    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
+    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The architecture describes a separate task-bound tool server for an admitted provider that takes one, four durable write cases and private temporary spools for Git batch framing, review evidence and Explainer blob reads.",
-    "task": "261112-BUG-L18",
+    "statement": "The architecture guide describes user-directed dashboard commands and automatic startup or qualifying-publication registry reconciliation, including receipt-backed restoration and eligible reclamation.",
+    "task": "261112-BUG-L20",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
+      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "54b818118629a276761c14d24046428232306f6e",
+      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -261,6 +261,42 @@
         "path": "mcp/src/agents_remember/mcp/server.py"
       },
       "heading": "Dispatch definition scope",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+        "content": "sha256:f17911c1f0a21f888ea3a15a8177d6138c86961b685bacb7cb49f126b4e5ed66",
+        "locator": {
+          "kind": "symbol",
+          "name": "serving_collaborators"
+        },
+        "path": "mcp/src/agents_remember/cli/dashboard.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "d6c1e1c987e94ba2e07c90e56183a129fc848e18",
+        "content": "sha256:c4e7b434d65168237e397bc265bd8ca30407210caca93b148d53eacc80c1496f",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleRegistryActivityReader"
+        },
+        "path": "mcp/src/agents_remember/cli/role_registry_recovery.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "181aa50525655219a506be03191d7c72a2a5354d",
+        "content": "sha256:ee06b2b03bd796be16575ee98ce0da0a8a7db2ce5796b7bc5fa109638311c65c",
+        "locator": {
+          "kind": "symbol",
+          "name": "reconcile_role_agents"
+        },
+        "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+      },
       "kind": "anchor"
     }
   ]

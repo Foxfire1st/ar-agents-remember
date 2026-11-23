@@ -482,9 +482,13 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Unknown chat ownership does not hide the frame; only confirmed absence does. [62]
 
+
 - Authored stage wins over host observation; only started tasks receive bound contributor activity and eventAt. [65]
 
+
+
 - Declared task sources become one entry forest with worktree binding kept separate from task admission. [66]
+
 
 - Task-status words consume served activity/stage, while the shared display clock formats event age rather than deciding task state. [67]
 

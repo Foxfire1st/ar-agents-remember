@@ -22,15 +22,14 @@
   ],
   "references": {
     "1": {
-      "note": "Package metadata and source-checkout fallback are selected through the explicit resolver.",
+      "note": "Package metadata and source-checkout fallback are selected through the explicit resolver.\n\nAnchor: `_resolve_server_version`",
       "targets": [
         {
           "anchor": {
-            "blob": "32fd4d0c91d8a841770a9763fb83890cd69b9cf6",
-            "content": "sha256:c7aeb2da007bbdd61a228365be64bc8858c266b74e280c827e81eb4b48c12e22",
+            "blob": "003669887cb4a8992f2a3ad954940027d29762ef",
+            "content": "sha256:1490529d8372b9d3391ae0a33817df276080c800b4c4e8e547fada4e55de8866",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_server_version"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -38,15 +37,14 @@
       ]
     },
     "2": {
-      "note": "Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity.",
+      "note": "Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity.\n\nAnchor: `_resolve_server_version`",
       "targets": [
         {
           "anchor": {
-            "blob": "32fd4d0c91d8a841770a9763fb83890cd69b9cf6",
-            "content": "sha256:c7aeb2da007bbdd61a228365be64bc8858c266b74e280c827e81eb4b48c12e22",
+            "blob": "003669887cb4a8992f2a3ad954940027d29762ef",
+            "content": "sha256:1490529d8372b9d3391ae0a33817df276080c800b4c4e8e547fada4e55de8866",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_server_version"
+              "kind": "file"
             }
           },
           "kind": "code"

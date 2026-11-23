@@ -10,7 +10,10 @@ The leaf rule is its own group: a completed leaf turn with no hand-off sends the
 
 The size assertion checks the source constants, not settings reload. The contributed-handler cases invoke the actual `registerParentWakeEvents` against a mock `addHook` registry with the pinned host's hook names and a host sender whose timeline read returns an empty, readable turn. The end event carries no `timeline` field. The suite remains a host-free composition: it consumes captured row values, not live SDK callbacks, and proves no plugin load, live delivery or cross-harness wakeup.
 
+Close cancels the seat's own deferred work. A close during an active turn-end read preserves the parent notification, and a declaration cannot arm a check after the seat's work has stopped.
+
 ## Evidence
+
 
 
 - The host-free suite retains suppression/deferral/retry/restart controls and adds actual parent-wake registration against a mock registry with explicit steer sends. [1]

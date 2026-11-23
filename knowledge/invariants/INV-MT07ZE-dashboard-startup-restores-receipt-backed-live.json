@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation spans publication, uptake or delivery locations and is exercised by the named focused controlled cases."
+  },
+  "applicability": "Dashboard startup and qualifying host activity input that reconcile the product role-agent registry.",
+  "conditions": [
+    "Restore positively observed unarchived role agents with usable receipts.",
+    "Exact reclamation requires a complete usable reply, and exact absence also requires an absent or settled receipt and a matching registry row under the lock.",
+    "A positive archive must be newer than a usable registration timestamp. The writer also admits positive archive for a legacy row with no usable registration timestamp.",
+    "A complete history permits exact reads of registered canonical IDs omitted from its inventory. Receipt enumeration before exact reads can also identify unfinished receipt-backed IDs to look up. Enumeration triggered only by an exact null judges absence without adding more IDs."
+  ],
+  "exclusions": [
+    "A listing omission, cut or malformed exact reply cannot authorize removal.",
+    "This route does not start or resume a session and does not probe every historical finished receipt."
+  ],
+  "id": "INV-MT07ZE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W3 clean-candidate Python tests and W2 byte-identical bridge registry probe.",
+        "W4 verified current registration comparison at mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py:124–139",
+        "mcp/tests/test_paseo_role_agents.py::test_exact_archive_requires_a_complete_usable_reply"
+      ],
+      "path": "W4-knowledge-plan.json"
+    },
+    "handoffEntry": "BUG-R20@v1 rule 2, 3, 5",
+    "leaf": "261112-BUG-L20",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Dashboard startup and qualifying host activity restore receipt-backed live role records before activity reconciliation. An incomplete attempt waits for independent input. An unchanged row can be reclaimed on a qualifying archive or confirmed exact absence. Starting and replayable receipts preserve a row on exact absence.",
+  "status": "proposed",
+  "supersedes": []
+}

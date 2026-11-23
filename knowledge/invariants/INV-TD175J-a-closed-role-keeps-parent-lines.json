@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation spans publication, uptake or delivery locations and is exercised by the named focused controlled cases."
+  },
+  "applicability": "The plug-in parent notification and seat-owned deferred work for registered role agents.",
+  "conditions": [
+    "A host close observation cancels the seat’s deferred work.",
+    "A closed parent with its role record remains eligible under the existing send gates.",
+    "The tracker rebinds an archived recipient’s held lines if it knows an alternate it has not marked archived. Otherwise the lines stay owed for later resolution. Delivery checks the resolved recipient separately."
+  ],
+  "exclusions": [
+    "Plug-in cleanup still clears waits and held lines across a plug-in restart.",
+    "The plug-in does not decide when the host closes or reopens a seat."
+  ],
+  "id": "INV-TD175J",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W2 plug-in tests on byte-identical W3 plug-in source.",
+        "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts::closing a seat cancels its wake without restarting it",
+        "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts::a close during a turn-end read keeps its parent notification",
+        "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.test.ts::closing a seat preserves the parent lines owed to it and about it"
+      ],
+      "path": "W4-knowledge-plan.json"
+    },
+    "handoffEntry": "BUG-R20@v1 rule 4",
+    "leaf": "261112-BUG-L20",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Closing a role seat cancels its own pending work and preserves parent lines held to it or about it. A recorded closed parent remains eligible under the ordinary send gates. Archive drops held lines about an archived subject. It rebinds a line owed to an archived recipient to a known alternate the tracker has not marked archived, or retains it for later Manager resolution. The ordinary send gates still apply.",
+  "status": "proposed",
+  "supersedes": []
+}

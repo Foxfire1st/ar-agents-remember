@@ -184,12 +184,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
             "content": "sha256:cdb0044c2001f0f3cdbd1905a3d7dc263819d2b8b247408926a60dd6b868ecec",
             "locator": {
-              "end": 186,
+              "end": 188,
               "kind": "line_range",
-              "start": 141
+              "start": 143
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
           },
@@ -197,12 +197,12 @@
         },
         {
           "anchor": {
-            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
             "content": "sha256:bc65fc2f41322b25b6eb49f373f4d0891c9f15bfbd2c6cef70704aeae2ba3887",
             "locator": {
-              "end": 329,
+              "end": 338,
               "kind": "line_range",
-              "start": 291
+              "start": 300
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
           },
@@ -210,12 +210,25 @@
         },
         {
           "anchor": {
-            "blob": "9d6766b3c235efa78fa6c02c5c4f9671bc20eb77",
-            "content": "sha256:4f157729aa8bef60ba2f2d303cac39a67a8cbd0bcddfd79678a41ccc81c0143c",
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:036cb5587ec93fce8efc1cfc003e4a06d9a0f1be5d7e73a68014d6975fb58861",
             "locator": {
-              "end": 515,
+              "end": 543,
               "kind": "line_range",
-              "start": 452
+              "start": 502
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "534586931977668702d528b74d51d09f2a58a834",
+            "content": "sha256:38b0f87c1ea040d5d508f8a12b426319542f54015013bfd035901c3f6b9043de",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 547
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
           },
@@ -228,12 +241,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
             "content": "sha256:5e4cc22e9361afa335dbef84d586c9fc21d81ffa3edf7ba9a7ac05ae7212b3c4",
             "locator": {
-              "end": 238,
+              "end": 243,
               "kind": "line_range",
-              "start": 217
+              "start": 222
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
           },
@@ -241,12 +254,12 @@
         },
         {
           "anchor": {
-            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-            "content": "sha256:78c929d1438efa5f432494604f629b70d9f2adc604f388a63649c1ac2891cb53",
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:e5c1eca9c1f3fbe1a426f837a47e845ff07ebe2195a9ba72b709fa0ccd72dec7",
             "locator": {
-              "end": 1422,
+              "end": 1424,
               "kind": "line_range",
-              "start": 1396
+              "start": 1418
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
           },
