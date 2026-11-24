@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_lex.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0ae68f32a7f4ef721e028192739767ec0bd6f212",
+        "content": "sha256:6505432564977c7e55bac52249beff12c6aeab7317e6691ce4ae5c23db55bd04",
+        "locator": {
+          "kind": "symbol",
+          "name": "code_lines"
+        }
+      },
+      "id": "RLZ-7BV8CR",
+      "invariant": "INV-WZ8R0Q",
+      "origin": {
+        "handoffEntry": "SUB-R01-lean-source",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Masks literal and comment text while keeping physical positions.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`code_lines` produces masked physical lines for the declaration scan.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ae68f32a7f4ef721e028192739767ec0bd6f212",
+            "content": "sha256:6505432564977c7e55bac52249beff12c6aeab7317e6691ce4ae5c23db55bd04",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

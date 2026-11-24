@@ -132,12 +132,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
-            "content": "sha256:f1074777d3c06b5f3bd9218e1c713851df0484c1440bc40030370ab5a587c4ee",
+            "blob": "ae16d74a33458080aa55a8b266d767c97f9d1bb1",
+            "content": "sha256:0ab3b9071871d1f6023e2c30e61bd9ebb2d8451963b0fd1b36c185aedb107a61",
             "locator": {
-              "end": 3540,
+              "end": 3545,
               "kind": "line_range",
-              "start": 3501
+              "start": 3505
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

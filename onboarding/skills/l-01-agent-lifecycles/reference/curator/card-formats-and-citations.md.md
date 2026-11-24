@@ -18,6 +18,8 @@ Layout: a file card explains one source file on its own, using the file-card tem
 
 Citations: evidence is authored as a Finding/Anchor/Source table for `citation_fix`, with `path:start-end` line ranges, a bare path for a whole file, or a `://` URL for evidence outside the paired code tree. Each changed claim, count and prose line reference is checked against code, a prose line reference lies inside its citation anchor, and passing structural checks and authentic anchors do not prove prose true. Changed cards are previewed and repaired in one `citation_fix` call with one `documents` list, not one call per card; the batch keeps successful cards and leaves refused ones, so a partial result is not a completed batch. Semantic or ambiguous items stay Curator decisions, and no unimplemented citation feature is claimed. Reference refresh, note revision, withdrawal and source-rename steps keep surviving numbers and move entries through the writer before the card.
 
+A Lean citation can use the written declaration name or its full name. A full name distinguishes multiple verified matches. If the scope leaves both keys unverifiable, leave the Anchor cell empty and cite `path:start-end` in Source. Plain identifiers search ranged sources in row order. Extended Lean names can search bare Lean paths, which also keep their whole-file target.
+
 Entity catalog: one selective `entities.md` with exact inventory and fingerprint headings, one fingerprint row per entity, and `git-blob-set-v1` SHA-256 fingerprints over sorted evidence paths; a changed fingerprint calls for review, not an automatic prose change.
 
 ## Evidence
@@ -25,7 +27,9 @@ Entity catalog: one selective `entities.md` with exact inventory and fingerprint
 - History dispositions for invariants, and family rows' own schema and `examined` binding. [1]
 - Card and overview scope, templates and overview section order with citation lines last. [2]
 - Cards keep current prose and numbered evidence only; the fixer and the writer own sidecar fields; trace rows are `updated` or `no_impact`. [3]
-- Citation input format, external URLs and the rule that structural checks do not prove prose true. [4]
+
+- Citation input format, external URLs and the rule that structural checks do not prove prose true. Lean citations use exact names, with ranged sources for plain identifiers and explicit line ranges for unverifiable scope. [4]
+
 - One named `citation_fix` batch per wave, with partial results and refusals kept visible. [5]
 - Refreshing, revising, withdrawing and renaming references. [6]
 - Entity catalog scope, headings and fingerprint algorithm. [7]

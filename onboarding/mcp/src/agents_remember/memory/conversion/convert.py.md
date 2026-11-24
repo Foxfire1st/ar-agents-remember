@@ -16,6 +16,8 @@ evidence names.
 
 ## Code Commentary
 
+Format 1 explicitly selects `CitationReader.FORMAT_1` before splitting cards or consulting the code object reader. Live converted-card authoring relies on the row parser’s `CitationReader.LIVE` default and can produce Lean symbol targets. The format 1 regression pins the converted output files for a card citing Lean.
+
 ### Logic
 
 - `convert_memory(memory, objects, *, paired_commit, version="1")`:
