@@ -30,8 +30,7 @@ and one timed-out creation.
   selected sprint with the worktree owner when the leaf enclosure is missing.
 - **Report paths.** `RoleReportPathIsolationTests` keeps manager reports master-local and request-unique,
   and leaf reports task-local with one file per request.
-- **Folder and grant.** `R71FolderAndGrantTests` grants only the supported Claude route and refuses an
-  external link before creating any child.
+- **Folder and grant.** `R71FolderAndGrantTests` checks the exact ordinary grant for Codex and Claude and its omission for Pi and Hermes. A separate case refuses an external link before creating any child.
 
 ### Conventions
 
@@ -49,11 +48,14 @@ Reusing an enclosure reports its resolved `referenceRoot`; failure to copy an ag
 ## Evidence
 
 
+
 - Scoped compilation, taskless planning, repeats, enclosure binding, report isolation and folder/grant preparation are asserted here. [1]
 
 
 
+
 - Taskless Architect planning passes `role=architect` to the resolver and keeps the existing binding, no-invented-task and no-invented-repository assertions. [2]
+
 
 
 - Reusing an enclosure reports its resolved `referenceRoot`; failure to copy an agreed-reference source is returned as a `referenceWarning` naming that leaf file, while the existing enclosure is still reused and no new start is called. The fixture deliberately has no leaf file, so the test checks a named warning rather than claiming a successful copy. [3]

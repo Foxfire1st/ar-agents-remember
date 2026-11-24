@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a8d4a67d35b664148541468ac88e4d4b7e48bfd4",
+        "blob": "8b57f4aa75b82c8d2c0cd5ec549ebbce38ef23b5",
+        "content": "sha256:231a41c3c31657121c933a059703ff01525158dc836d3bff5cf8de63b6e0c697",
+        "locator": {
+          "kind": "symbol",
+          "name": "R71FolderAndGrantTests.test_r71_launch_builder_grants_its_task_server_tools_by_provider"
+        }
+      },
+      "facet": "The launch builder sets the exact Codex and Claude grants on the seat's own server and omits a policy for Pi and Hermes.",
+      "id": "PRF-999KRN",
+      "invariant": "INV-Z17EHY",
+      "origin": {
+        "handoffEntry": "BUG-R31@v1-start-grant",
+        "leaf": "261112-BUG-L31"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8b57f4aa75b82c8d2c0cd5ec549ebbce38ef23b5",
         "content": "sha256:36553ea2f6b5acc2ed882d02f71eb91baf557355edfe3f524305ca6669fc0d86",
         "locator": {
           "kind": "symbol",
@@ -26,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8d4a67d35b664148541468ac88e4d4b7e48bfd4",
-            "content": "sha256:354b52757fad79276e4088a2283e445bbb9e6c1b4dd171fff275a46a0f45c5bf",
+            "blob": "8b57f4aa75b82c8d2c0cd5ec549ebbce38ef23b5",
+            "content": "sha256:efecf7be8355532ddd8881c2ac27a9718529becdd118726a3d1951ea52e91c9d",
             "locator": {
               "kind": "file"
             }
@@ -41,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8d4a67d35b664148541468ac88e4d4b7e48bfd4",
+            "blob": "8b57f4aa75b82c8d2c0cd5ec549ebbce38ef23b5",
             "content": "sha256:7e7417f305e99bebbb282e4c928b98eba9c576375a946033e4ec6a46673e4f5b",
             "locator": {
-              "end": 537,
+              "end": 538,
               "kind": "line_range",
-              "start": 399
+              "start": 400
             }
           },
           "kind": "test"
@@ -54,14 +71,16 @@
       ]
     },
     "3": {
-      "note": "Reusing an enclosure reports its resolved `referenceRoot`; failure to copy an agreed-reference source is returned as a `referenceWarning` naming that leaf file, while the existing enclosure is still reused and no new start is called. The fixture deliberately has no leaf file, so the test checks a named warning rather than claiming a successful copy.\n\nAnchor: `test_missing_leaf_enclosure_passes_selected_sprint_to_worktree_owner`",
+      "note": "Reusing an enclosure reports its resolved `referenceRoot`; failure to copy an agreed-reference source is returned as a `referenceWarning` naming that leaf file, while the existing enclosure is still reused and no new start is called. The fixture deliberately has no leaf file, so the test checks a named warning rather than claiming a successful copy.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8d4a67d35b664148541468ac88e4d4b7e48bfd4",
-            "content": "sha256:354b52757fad79276e4088a2283e445bbb9e6c1b4dd171fff275a46a0f45c5bf",
+            "blob": "8b57f4aa75b82c8d2c0cd5ec549ebbce38ef23b5",
+            "content": "sha256:358372c986016199f6cc63c500dbec88edd5b40eb8b26955488786b7885facfe",
             "locator": {
-              "kind": "file"
+              "end": 930,
+              "kind": "line_range",
+              "start": 906
             }
           },
           "kind": "test"

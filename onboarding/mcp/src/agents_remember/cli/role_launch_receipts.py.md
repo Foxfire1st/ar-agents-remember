@@ -99,7 +99,9 @@ Selected-task Investigator receipts are per request rather than singleton select
 
 
 
+
 - Before workspace-open and agent-create, the observer sees the starting receipt, its saved agent ID and the stored artifact. [5]
+
 
 
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]

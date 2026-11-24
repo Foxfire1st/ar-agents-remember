@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The shared provider policy supplies both ordinary and explainer creation paths, and the ordinary launch receipt reports the applied names. Mounted-server tests compare each advertised surface with its grant. Create-payload tests assert the exact grant and server throughout the role launch routes."
+  },
+  "applicability": "New Paseo ordinary role seats and bound review-explainer seats for the exact provider ID codex.",
+  "conditions": [
+    "The ordinary launch supplies the task-server definition when the provider accepts MCP definitions.",
+    "The bound explainer uses the public roster and its four additional advertised tools on the same server.",
+    "The grant and enabled roster of the bound task server come from the build that creates the seat. Paseo keeps that grant on resume and reload."
+  ],
+  "exclusions": [
+    "Grants for other provider IDs, including a provider derived from Codex.",
+    "A seat running before this change or created from an earlier saved launch payload.",
+    "Tools added after creation until the seat is replaced.",
+    "Shell commands and calls to a different MCP server."
+  ],
+  "id": "INV-Z17EHY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "BUG-R31-W3-freeze.md and the F07 full launch-payload comparison in the W2 controls archive."
+      ],
+      "path": "l31-knowledge-authoring-reviewed.json"
+    },
+    "handoffEntry": "BUG-R31@v1-start-grant",
+    "leaf": "261112-BUG-L31",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A new Codex seat receives per-tool approval for every tool its starting build offers on its own task server.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "eb92d53bd6de812e9d52fc2ae1898fbb432b5b1b",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "6584649caa95199219a959979b0491a095d0d6a9",
+    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
     "role": "curator",
-    "statement": "The Claude Code guide correctly describes implicit Bootstrap using the caller’s offered Claude provider and explicit selection with agent=\"claude\".",
-    "task": "261112-BUG-L22",
+    "statement": "The Claude Code guide's implicit Bootstrap and explicit Claude selection still agree with the offered provider. The ordinary Claude launch retains the server_info grant on its own task server.",
+    "task": "261112-BUG-L31",
     "uncommitted": true
   },
   "document": "docs/install/claude-code.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+      "blob": "ed433f1461603a846547ab141a794294a4c4054a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },

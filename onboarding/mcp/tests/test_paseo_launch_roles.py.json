@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d09cdc288861533fd56cd32869aedacf27642698",
+        "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+        "content": "sha256:a1a3c738bbd631de7ef74808256190cf14edbc5fea3fc65d2172fe2febd444aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+        }
+      },
+      "facet": "The complete create payload for Architect, Orchestrator, Manager and Worker includes the bound Codex preapproval for each name in PUBLIC_TOOLS.",
+      "id": "PRF-58KYVX",
+      "invariant": "INV-Z17EHY",
+      "origin": {
+        "handoffEntry": "BUG-R31@v1-start-grant",
+        "leaf": "261112-BUG-L31"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
         "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "d09cdc288861533fd56cd32869aedacf27642698",
+        "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
         "content": "sha256:815ab33c18ab4bf09cd07fd01e0ddbd0bc8bee09a6923e6a1cab07f26d6e6438",
         "locator": {
           "kind": "symbol",
@@ -37,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "d09cdc288861533fd56cd32869aedacf27642698",
-        "content": "sha256:4437049c5c98b476c57900b5768540bee61555e2dc838fbc8502d113198d2fd8",
+        "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+        "content": "sha256:a1a3c738bbd631de7ef74808256190cf14edbc5fea3fc65d2172fe2febd444aa",
         "locator": {
           "kind": "symbol",
           "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
@@ -56,14 +73,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Each role class gets one agent in its own folder, with title, labels and reachable paths.",
+      "note": "Architect, Orchestrator, Manager and Worker each get one agent in their own folder with title, labels and reachable paths. The fixture checks each complete Codex create input.",
       "targets": [
         {
           "anchor": {
-            "blob": "d09cdc288861533fd56cd32869aedacf27642698",
-            "content": "sha256:269adb322f91cacca6ec3d268e754f7b53c788f9c71cf5c48ddbd7785d3ce6ff",
+            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+            "content": "sha256:a1a3c738bbd631de7ef74808256190cf14edbc5fea3fc65d2172fe2febd444aa",
             "locator": {
-              "kind": "file"
+              "end": 273,
+              "kind": "line_range",
+              "start": 77
             }
           },
           "kind": "test"
@@ -75,8 +94,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d09cdc288861533fd56cd32869aedacf27642698",
-            "content": "sha256:269adb322f91cacca6ec3d268e754f7b53c788f9c71cf5c48ddbd7785d3ce6ff",
+            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+            "content": "sha256:23345d4bccda212ba54e15d5e802c7e6e077b31df7a3f324550eedb9c80a93a4",
             "locator": {
               "kind": "file"
             }
@@ -90,8 +109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d09cdc288861533fd56cd32869aedacf27642698",
-            "content": "sha256:269adb322f91cacca6ec3d268e754f7b53c788f9c71cf5c48ddbd7785d3ce6ff",
+            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+            "content": "sha256:23345d4bccda212ba54e15d5e802c7e6e077b31df7a3f324550eedb9c80a93a4",
             "locator": {
               "kind": "file"
             }
@@ -101,12 +120,12 @@
       ]
     },
     "4": {
-      "note": "Sequential child preparation leaves the caller's binding environment exact.\n\nAnchor: `test_sequential_fresh_leaves_preserve_the_callers_binding`",
+      "note": "Sequential child preparation leaves the caller's binding environment exact.",
       "targets": [
         {
           "anchor": {
-            "blob": "d09cdc288861533fd56cd32869aedacf27642698",
-            "content": "sha256:269adb322f91cacca6ec3d268e754f7b53c788f9c71cf5c48ddbd7785d3ce6ff",
+            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+            "content": "sha256:23345d4bccda212ba54e15d5e802c7e6e077b31df7a3f324550eedb9c80a93a4",
             "locator": {
               "kind": "file"
             }

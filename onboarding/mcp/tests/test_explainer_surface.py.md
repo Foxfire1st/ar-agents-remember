@@ -16,10 +16,14 @@ An invalid, non-JSON or empty binding refuses service. An ordinary server with n
 
 The four explainer tools refuse a forged seat and serve their launched seat. A new generation refuses the old server's explainer calls, and a marker pointing to another environment refuses. These tests establish binding and advertisement; page delivery and workspace removal belong to their own tests.
 
+The mounted-server cases check that the Codex startup grant matches the ordinary or bound advertisement on its respective server.
+
 ## Evidence
 
 
-- A bound server advertises general tools and exactly four explainer additions. [5]
+
+- The bound server advertises the public roster with exactly four explainer additions. The test compares the complete advertisement with the Codex grant. [5]
+
 - General tools answer an explainer under their normal admission. [6]
 - The four bound tools refuse a forged launched seat. [7]
 

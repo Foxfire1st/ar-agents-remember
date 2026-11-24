@@ -450,12 +450,12 @@
         },
         {
           "anchor": {
-            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
             "content": "sha256:b0aedec5125e7a9ab2a347fbf26618023f1a8302ba3b7c6b309cbd0a0747ac5e",
             "locator": {
-              "end": 453,
+              "end": 440,
               "kind": "line_range",
-              "start": 452
+              "start": 439
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },

@@ -78,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
             "content": "sha256:5589a062a0131069d27a1db2b7237611c1b4fb83ea41289d1ab023986803ff38",
             "locator": {
-              "end": 343,
+              "end": 342,
               "kind": "line_range",
-              "start": 309
+              "start": 308
             },
             "path": "mcp/tests/test_explainer_host.py"
           },
