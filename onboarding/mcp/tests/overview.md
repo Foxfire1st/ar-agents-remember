@@ -169,7 +169,7 @@ Landing regression suites distinguish exact-pair refusal, authentic history owne
 
 ### Call-scoped parsing, build identity and measured coherence
 
-`test_definition_scope.py` covers scope reuse, fresh operations and source-content identity. `test_definition_scope_boundaries.py` covers MCP, finite CLI and background operation boundaries. `test_knowledge_index_build_identity.py` covers loaded-build cache isolation, unknown-build non-reuse and same-build reuse after a process restart. `test_curator_coherence_measured_quality.py` covers unchanged quality after publication, measured-binding invalidation and historical record readability. These are source-described assertions and establish no new execution result.
+`test_definition_scope.py` covers scope reuse, fresh operations and source-content identity. `test_definition_scope_boundaries.py` covers MCP, finite CLI and background operation boundaries. `test_knowledge_index_build_identity.py` covers loaded-build cache isolation, private unknown-build reads, reuse after restart, cold lookup contention, shared failure and retry, and pruning of abandoned build files. `test_curator_coherence_measured_quality.py` covers unchanged quality after publication, measured-binding invalidation and historical record readability. These are source-described assertions and establish no new execution result.
 
 ### Landing-report regression scope
 
@@ -675,7 +675,9 @@ The recorded-base suite tests inheritance across an untrailed memory merge, exac
 
 
 
+
 - The partial-index case preserves the remaining invariant answer and marks that answer and the cache report partial. [1472]
+
 
 
 
@@ -1655,7 +1657,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - The case asserts a missing before acceptance_ref and an after reference beginning with text-knowledge:. It asserts the lifecycle as proposed before and accepted after. [1755]
 
+
 - The partial-index case preserves the remaining invariant answer and marks that answer and the cache report partial. [1756]
+
 - The synthetic catalog builder writes artifact category and fidelity metadata; this is fixture declaration. [1757]
 - The four exception/unwired transport controls require ACTIONABLE fields; typed domain refusals are asserted separately in their own body shape. [1758]
 - The shared synthetic evidence catalog builder produces fixture metadata; its declarations do not establish production composition or test execution. [1759]
@@ -1740,7 +1744,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - The definition-scope tests check native MCP, finite CLI, dashboard and detached quality boundaries. The journal cases distinguish request-local reuse from process ownership. [1838]
 
-- test_knowledge_index_build_identity.py declares focused checks for loaded-build cache isolation, unknown-build non-reuse and same-build reuse after a process restart; this is source-described coverage, not a new test execution. [1839]
+
+- The build-identity tests cover loaded-build isolation, reuse after restart, private unknown-build reads, cold lookup contention, failure and retry, and temporary-file eviction. [1839]
+
 - test_curator_coherence_measured_quality.py declares focused checks for unchanged quality after publication, measured-binding invalidation and historical record readability; this is source-described coverage, not a new test execution. [1840]
 
 - Task-context endpoint cases retain a measured source inventory when knowledge is wholly unavailable or one knowledge half is damaged; both named-subject requests refuse with 404 candidate_dataset_absent. [1659]
