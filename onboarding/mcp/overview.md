@@ -20,7 +20,7 @@ MIK-R112 changes the retrieval account: harness-native onboarding and source sea
 
 ## Hot Path Summary
 
-The served task-status owner is `observer/task_entries.py`: one qualified `TaskEntry` joins native task documents, declared children, bound worktrees and the host publication. Native `planning`, `inProgress`, `abandoned` and `Completed` map to `planned`, `started`, `aborted` and `completed`; progress, an enclosure's landing operation and raw Event River rows do not decide task stage. Only started tasks carry host activity: known bound agents in a turn (`in-turn` or `permission`) or not ended with a running provider subagent yield `works`; without one, a seat whose declared wait still has its check to come yields `waiting` and the task names its `waitingSeats`; an otherwise complete known host view yields `paused`, and unavailable/unreconciled host authority yields `unknown`. `eventAt` is the latest contributing working/permission event, for a waiting task the earliest start of its seats' declared waits, or otherwise the latest observed bound-agent event; it is not a tool-call heartbeat or a server-computed age. Parent/children links and direct-child counts are produced together in declared order, with documented-subTask master precedence and absent-master list fallback, deterministic single-parent/cycle protection, and visible entries even when a declared child has no document. A documented subTask's present unresolvable master stays unbound and is reported with its original literal; a present master that names another task stays unbound and is reported with its normalized record master instead. Other listed document kinds are placed from the list subject to identity/cycle guards, not a general kind-rejection or own-master-validation rule. List/record disagreements are served once per declaring master rather than discarded. Browser consumers use this served entry and the shared `TaskStatusWord`/status clock for wording and event age rather than rebuilding status or membership.
+The served task-status owner is `observer/task_entries.py`: one qualified `TaskEntry` joins native task documents, declared children, bound worktrees and the host publication. Native `planning`, `inProgress`, `abandoned` and `Completed` map to `planned`, `started`, `aborted` and `completed`; progress, an enclosure's landing operation and raw Event River rows do not decide task stage. Only started tasks carry host activity: known bound agents in a turn (`in-turn` or `permission`) or open with a running provider subagent yield `works`; without one, an open seat with a declared wait and an armed check still within its grace period yields `waiting` and the task names its `waitingSeats`; an otherwise complete known host view yields `paused`, and unavailable/unreconciled host authority yields `unknown`. `eventAt` is the latest contributing working/permission event, for a waiting task the earliest start of its seats' declared waits, or otherwise the latest observed bound-agent event; it is not a tool-call heartbeat or a server-computed age. Parent/children links and direct-child counts are produced together in declared order, with documented-subTask master precedence and absent-master list fallback, deterministic single-parent/cycle protection, and visible entries even when a declared child has no document. A documented subTask's present unresolvable master stays unbound and is reported with its original literal; a present master that names another task stays unbound and is reported with its normalized record master instead. Other listed document kinds are placed from the list subject to identity/cycle guards, not a general kind-rejection or own-master-validation rule. List/record disagreements are served once per declaring master rather than discarded. Browser consumers use this served entry and the shared `TaskStatusWord`/status clock for wording and event age rather than rebuilding status or membership.
 
 Host intake belongs to the existing dashboard/plugin bridge and filesystem invalidation, not periodic activity polling or a process-global ambient lifecycle. `HostActivityInput` requires an armed native supervisor-exit subscription and a complete publication acknowledged for the current plugin boot before joining published agent IDs to their AR role/task records; absent, incomplete or unreconciled authority remains unknown. MCP startup installs the workspace tool-event writer, not an ambient lifecycle. Event River `scopeKey` is diagnostic task attribution; landing-chain lifecycle/operation fields remain contract-owned and are not a second task-status source.
 
@@ -45,7 +45,7 @@ Converted knowledge is authored text: onboarding cards and sidecars plus records
 
 The retained published_intent block declares the 8,000 `tiktoken:o200k_base` threshold. Mounted knowledge_read leaf pages instead cut their delivered naming projection against bound_for("knowledge_read") and TOOL_ANSWER_LIST_MAX - 1, reserving the header entry; the internal threshold is not the public answer bound. Counts distinguish total, returned, and remaining selection. Continuations bind memory tree, seed, policy/order, and the code tree measured on the first page; mismatches require restarting the seed. Deferred seeds remain visible; an excessive queued tail is refused as `seed_queue_exceeded`. Internally, a single indivisible oversized row is returned whole with its explicit flag; the mounted `knowledge_read` answer adds no such exception, and its public answer guard replaces any over-bound answer with its short form. Currentness is measured against the selected code tree, never silently against HEAD: current, stale, unverifiable, and unrealized remain visible, and reads do not re-anchor or judge.
 
-For authoring, repository foundation is regular work in the real Architect task, through its contract-scoped `knowledge-ingest` or mounted `knowledge_write`; ordinary leaf and crossing admissions retain their own contract rules. Ordinary ingest requires a nonblank authorization reference. Planning reads, resolves, validates and reports without writing; `--commit` writes files, not Git history. The writer validates the resulting tree and owner history before publication, while registry-declared writer deferrals name their later refusing commit/landing route. The leaf route supplies its paired memory base for counted-card comparison, falling back to the operation base only when unresolved. New onboarding, membership/no-family and decision/facet record judgments are distinct row domains with writer-owned source/revision fields; they do not license an unsupported producer. Authored realization rationale is required rather than manufactured. Mechanical carry supplies no semantic disposition. Crossing resolves existing conflicting records at one revision above the higher side rather than authoring new records.
+For authoring, repository foundation is regular work in the real Architect task, through its contract-scoped `knowledge-ingest` or mounted `knowledge_write`; ordinary leaf and crossing admissions retain their own contract rules. Ordinary ingest requires a nonblank authorization reference. Planning reads, resolves, validates and reports without writing; `--commit` writes files, not Git history. The writer validates the resulting tree and owner history before publication, while registry-declared writer deferrals name their later refusing commit/landing route. For counted-card comparison, the leaf route supplies the contract’s recorded memory base (`K_B`). If the writer cannot read that base in the candidate’s format, it uses the persisted worklist’s counted-change flag for the subject, including `false`. It compares against the operation base when both the recorded base and the subject flag are unavailable. New onboarding, membership/no-family and decision/facet record judgments are distinct row domains with writer-owned source/revision fields; they do not license an unsupported producer. Authored realization rationale is required rather than manufactured. Mechanical carry supplies no semantic disposition. Crossing resolves existing conflicting records at one revision above the higher side rather than authoring new records.
 
 For leaf maintenance, the worklist compares exact B/K_B/C/K_C, task declarations and maintenance scope. It classifies entries and record changes, reaches families once, reconciles planned effects, checks routes, classifies unexplained changes and surfaces one-hop reconsideration. New or newly unlisted live invariants raise membership work; changed surviving base decisions/facets compare both JSON and retained unparsed Markdown. Only the leaf's own open raise with an otherwise status-only reconsideration mark is exempt. The final sorted/digested list includes the membership and touched-record kinds and subject-based planning marks on the kinds passed through planning. Unreadable input is named incomplete scope. Persisted worklists are projections. The mandatory gate uses a compatible observed verdict or recomputes it from the exact inputs.
 
@@ -64,7 +64,7 @@ Task workspace preparation is owned by `cli/paseo_workspaces.mjs`, dispatched by
 
 The tray attachment adapter is `cli/paseo_send_attachments.mjs`. `sendExtras` returns only nonempty validated image and text-attachment lists: null, absent and empty lists add no option fields, while a non-list or malformed entry raises the named `invalid_bridge_payload` failure instead of returning a partial extras object. Images require nonempty data text and an `image/` MIME prefix; this adapter does not decode or validate the base64 bytes. Text attachments require `type: "text"`, `mimeType: "text/plain"`, string text, and an omitted, null or string title. The module imports the bridge failure helper and does not itself import Paseo’s client package, read an agent or send a message. The bridge owns when these extras enter the host send options.
 
-The existing CLI/serving boundary admits automatic loading after a real configured host process start, not after a page load. PID, birth ticks and boot identity bind one shared OS lease/progress record; two timeline-resume lanes admit only eligible tree agents with a known sufficient memory reading, clicked-pending priority and drained retirement. Unknown process identity does not consume a start. Unreadable daemon-home or task-root intake retries within the give-up window; persistent failure in that branch reaching the window consumes the exact start with its given-up reason. Claim publication, candidate-read and initial-progress failures have separate retry/release paths without that branch's give-up check. Per-agent failures remain explicit. No message, refresh/unarchive or host restart is part of this feature. Role/task/report identity is now published through `cli/role_activity.py` before initial launch, held-seat opening, explicit revival, delivery resume or automatic warmup can expose the agent's first host event. Tree intake carries the canonical receipt's report path into the warmup run, and warmup republishes that receipt identity before its single timeline resume. Registration is best-effort, not start acceptance; boot/time-qualified registration prevents an older ended observation from reclaiming a freshly reopened role, while a later native end or a new boot can reclaim it. This changes activity attribution, not the warmup's permission, retention or task-stage authority. Explainer seats are explicitly excluded from automatic warmup: they resume when their chat is shown or written to, not merely because the host restarted.
+The existing CLI/serving boundary admits automatic loading after a real configured host process start, not after a page load. PID, birth ticks and boot identity bind one shared OS lease/progress record; two timeline-resume lanes admit only eligible tree agents with a known sufficient memory reading, clicked-pending priority and drained retirement. Unknown process identity does not consume a start. Unreadable daemon-home or task-root intake retries within the give-up window; persistent failure in that branch reaching the window consumes the exact start with its given-up reason. Claim publication, candidate-read and initial-progress failures have separate retry/release paths without that branch's give-up check. Per-agent failures remain explicit. No message, refresh/unarchive or host restart is part of this feature. Role/task/report identity is now published through `cli/role_activity.py` before initial launch, held-seat opening, explicit revival, delivery resume or automatic warmup can expose the agent's first host event. Tree intake carries the canonical receipt's report path into the warmup run, and warmup republishes that receipt identity before its single timeline resume. Registration is best effort. Ordinary registration can prune another row on a positive archive newer than its usable registration timestamp. A positive archive can also prune a legacy row with no usable registration timestamp. An ordinary turn end, session close or new plug-in boot leaves the registration in place. This changes activity attribution, not the warmup's permission, retention or task-stage authority. Explainer seats are explicitly excluded from automatic warmup: they resume when their chat is shown or written to, not merely because the host restarted.
 
 Root `docs/` remains authored documentation, not one of the three runtime synchronizer targets. The packaged tool-details.md is separate. Mirror-only cards with no realization/proof entries are retired with their complete original bytes in Git and the renewal intake archive; canonical docs and existing governing cards retain their authority.
 
@@ -108,7 +108,7 @@ Historical pre-L57 contract, not a current response or producer: `review_evidenc
 
 Recorded-read scopes collect file identities and selection observations from shared readers. Conflicting/unreadable observations cannot occupy memo slots; selection changes are checked before target bytes, including JSON-file selection. Worklist process ownership is transient, not a durable job store: identical requests share a flight; at most two children run and eight computations run/wait; sharers do not consume extra computation slots. Parent deadline is 60 s and child deadline 65 s. Whole process groups are reclaimed, abandoned flights stop only when no requester remains, and a child build mismatch names dashboard restart. The protocol deliberately adds no arbitrary total result-byte cap to supported worklist/read-set collections.
 
-Paseo host installation/provision/status/stop, pinned host/Node packaging, native bridge/catalog/frame integration, launch receipts whose execution fields are rewritten while their message-binding projections stay write-once, identity-bound task tools, closed-leaf agent archival, and bounded archive reconciliation have separate owners. Explicit/native-default model choices retain native permission/tool behavior. Investigator selection is resolved from canonical sprint/master topology, where a master that no sprint commands is a selection of its own; leaf selection is refused. Task-owned receipt discovery, complete-set capacity, and exact execution lookup do not introduce another lifecycle or retention store. A Manager start separately records the hosted Architect behind its starter, following an Orchestrator's recorded parent only after checking that it is an Architect; launcher starts and unrelated starters write no such address. The Architect's `explainer_control claim` is the other writer of that master-to-Architect record, not a role-launch receipt or acceptance result.
+Paseo host installation/provision/status/stop, pinned host/Node packaging, native bridge/catalog/frame integration, launch receipts whose execution fields are rewritten while their message-binding projections stay write-once, identity-bound task tools, closed-leaf agent archival, and bounded archive reconciliation have separate owners. Explicit/native-default model choices retain native permission/tool behavior. Investigator selection is resolved from canonical sprint/master topology, where a master that no sprint commands is a selection of its own; leaf selection is refused. Task-owned receipt discovery, complete-set capacity, and exact execution lookup do not introduce another lifecycle or retention store. A Manager start separately records the hosted Architect behind its starter, following an Orchestrator's recorded parent only after checking that it is an Architect; launcher starts and unrelated starters write no such address. The Architect's `explainer_control claim` is the other writer of that master-to-Architect record, not a role-launch receipt or acceptance result. The dashboard startup or later qualifying activity input reconciles role-registry records before qualifying the plug-in boot. Receipts supply missing role facts. Registry reconciliation can remove an unchanged row on a qualifying archive or confirmed exact absence. Positive archive uses the same timestamp comparison, including its legacy-row case. Exact absence preserves a row with a starting or replayable receipt.
 
 The conversation subsystem now retains only `mcp/native_helpers/conversation_library`: its `protocol.ts` declares handshake/list/read/resolve-resume-target helpers and pages with decimal offset/ordinal cursors, not signed purpose/scope/epoch/generation ones. The former hosted-control runtime, independently owned active/library/control children, private exact-identity IPC and hydration machinery are historical; the current serving composition contains no such runtime. Native history/evidence domains stay distinct; hydration uses native authority rather than a flattened transcript cache. Control acknowledgements do not equal settlement, ambiguous post-write loss does not justify blind resend, raw vendor evidence is not public control data, and fixture/version observations cannot independently promote capabilities.
 
@@ -669,7 +669,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 
 - **Retained historical source account — superseded by the current route account:** Each kind's own predicate, registered beside the kind. [4]
-- **Retained historical source account — superseded by the current route account:** The worktree layer's probes, the unbound refusal and the closeout's own write. [5]
+
+- The worktree layer probes whether the converted leaf gate applies and refuses an unbound gate. It passes the exact candidate trees and any judged memory commit to the gate. Closeout separately marks the owner’s history closed. [5]
+
 - **Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file. [6]
 - **Retained historical source account — superseded by the current route account:** The one rule, named for its three writers. [8]
 - **Retained historical source account — superseded by the current route account:** The finalizer dispatches a leaf with a named master to _named_parent and a leaf without that name to _folder_parent. [9]
@@ -784,7 +786,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 
 
+
 - The composition root's adapters for the review, the entry list, the source-content read, the tree view and the knowledge reader, each bound to this configuration. [193]
+
 
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [268]
@@ -809,7 +813,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** The composition root's third review port, and the registration call that passes all three collaborators. Anchor: `read_review_source_content` [216]
+
 
 
 - **Retained historical source account — superseded by the current route account:** **The two new owners this route reaches: the application module's own statement of what it answers and does not own, and the vocabulary's own statement of why it is separate from the review payload.** [217]
@@ -831,7 +837,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** The shared-read block of the batched blob reader. [239]
 - **Retained historical source account — superseded by the current route account:** The composition root creates the process owner. [240]
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:252-252 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted [241]
-- **Retained historical source account — superseded by the current route account:** The waiting bound counts computations, not the requests sharing them. [242]
+
+- The worklist process test admits twelve requests sharing one computation, fills the eight distinct computation slots, then checks that the next distinct computation is refused. [242]
+
 - **Retained historical source account — superseded by the current route account:** A build mismatch asks for a dashboard restart. [243]
 - **Retained historical source account — superseded by the current route account:** Every parsed diff names its own prefix, colour and driver options. [244]
 - **Retained historical source account — superseded by the current route account:** Bytes the child consumed are identified across a change and restore, a conflict, an absence and a read error. [245]
@@ -863,7 +871,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** Ingest plans by default, writes files only, and refuses unconverted memory [294]
 - **Retained historical source account — superseded by the current route account:** Worklist scope is one-pass and insertion/deletion linkage is side-specific [295]
 - **Retained historical source account — superseded by the current route account:** Closeout invokes mandatory candidate gate before publication [296]
-- **Retained historical source account — superseded by the current route account:** Exact memory output is validated/gated against parent tip with leaf-publication context [297]
+
+- Fresh and recovered closeout validate the exact memory output as a leaf publication against the parent memory tip. The separate worklist gate uses the contract’s recorded bases and the exact candidate trees. A committed pair supplies the judged memory commit for the ancestry check. [297]
+
 - **Retained historical source account — superseded by the current route account:** Integration/checkpoint preview and apply encounter knowledge boundary; leaf and series predicates differ [298]
 
 - **Retained historical source account — superseded by the current route account:** Investigator refuses leaf selection and validates canonical topology [301]
@@ -896,7 +906,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - The composition root supplies the application adapters to the serving collaborators. Anchor: `ServingCollaborators` [360]
+
 
 
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:240-242 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7. Retired means the anchor no longer stands, not that the cited subject was deleted [361]
@@ -940,7 +952,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - The shared-read block of the batched blob reader. [239]
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:150-150 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted [371]
 - It supplies the owner's shutdown to the app. [241]
-- The waiting bound counts computations, not the requests sharing them. [372]
+
+- The worklist process test admits twelve requests sharing one computation, fills the eight distinct computation slots, then checks that the next distinct computation is refused. [372]
+
 - A build mismatch asks for a dashboard restart. [243]
 - Every parsed diff names its own prefix, colour and driver options. [244]
 - Bytes the child consumed are identified across a change and restore, a conflict, an absence and a read error. [245]
@@ -973,7 +987,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - `PUBLIC_TOOLS` is one literal tuple of 44 public names, including the native role, retirement and knowledge operations and excluding `dispatch_agent`. The landing-answer helper keeps cut and added counts and bounds inline rows; the Curator's curation operation requires an independent statement-by-statement fact-check before closeout. [288]
 
-- The shared application route resolves the paired memory base and passes that base, the contract-bound code root and worklist to the normal knowledge writer. [315]
+
+- The shared writer route establishes the contract’s recorded memory base for card comparison and passes it with the contract-bound code worktree and persisted worklist. It passes no card base when it cannot establish the recorded commit. [315]
+
 - Source bindings, membership and record models. [313]
 
 - Non-author statement/diff/omission fact-check. [314]
@@ -983,8 +999,12 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 
 
+
 - Task stage is authored; only started tasks receive known bound host activity and contributing event time. [324]
+
+
 - Complete current-boot host reconciliation and the supervisor subscription precede binding activity to tasks. [325]
+
 - Replayed role launch publishes receipt identity before invoking its host launch call. [326]
 - TaskSummary bodies use a separate bounded generation-qualified cache, with content-derived revision. [327]
 - Obsolete terminal lock cleanup requires a complete canonical-contract census and preserves any subject not proved terminal. [328]

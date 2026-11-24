@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
-    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
+    "codeTree": "860cbf9a7ac70f3fdb2423bcddc66b3a0b5c1106",
+    "commit": "3450a1a1552db524bdbace93c3992311a778a53e",
     "role": "curator",
-    "statement": "The README still describes exact paired closeout for a leaf, and W2 continues to hold open or stale work through that leaf gate.",
-    "task": "261112-BUG-L18",
+    "statement": "The README’s Status version agrees with project metadata, and its paired-closeout account still applies with dashboard startup registry recovery and the leaf gate’s exact-candidate checks.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "README.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
+      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "54b818118629a276761c14d24046428232306f6e",
+      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -81,7 +81,7 @@
       "path": "dashboard/src/panels/knowledge-reader/PathViews.tsx"
     },
     {
-      "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+      "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     },

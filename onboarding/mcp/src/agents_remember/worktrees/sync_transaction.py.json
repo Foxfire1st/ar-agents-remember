@@ -309,11 +309,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
-            "content": "sha256:508ca301ab0193366606183c55a9dc3ecca5ca52fb0b3c65d03d7e2044c5b87d",
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:f01b2d073129861a364db8a516c5f45f4b3ad9e6038aade4edfecb87bbc593ce",
             "locator": {
-              "kind": "symbol",
-              "name": "finalize_sync"
+              "end": 82,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+            "content": "sha256:182f0898c0a315fe18da674e2d52a3d2868f0efc305017301c26c88369efb9e2",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 78
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
           },
@@ -321,10 +334,25 @@
         },
         {
           "anchor": {
-            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
-            "content": "sha256:49a16a4d82b78900965c3ad0fa38ede749418938846086882583afaceb0e8758",
+            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+            "content": "sha256:d74213ca3a35f9ea8fedc15c9e4e70fa2bd9985de2a2135a5ef02a4a6501ce15",
             "locator": {
-              "kind": "file"
+              "end": 186,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+            "content": "sha256:444d17161f68e749e5db42f23b58cd06eecfb7566f09ac3f42dfb4f13f559144",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 399
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
           },

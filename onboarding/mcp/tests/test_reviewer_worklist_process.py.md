@@ -34,7 +34,7 @@ comparison pin is idempotent. The module is in the `integration` lane.
   without a child, the child's process ID differs from the test's, its interpreter is the running one and
   its module path lies in its own package root, every read of the child is in the caller's recording, and
   the request carries the comparison's candidate trees and held base tree. A repeated read starts no child. The larger reply is
-  more than 65,536 bytes. A child in which `paired_memory_commit`, `_captured_code`, `directory_snapshot`
+  more than 65,536 bytes. A child in which `recorded_memory_base`, `_captured_code`, `directory_snapshot`
   and both `converted_base_files` raise still gives the same body, so the child does no second capture,
   pairing or conversion.
 - `test_real_child_transport_failures_are_explicit_uncached_and_recoverable` runs fourteen faulty children:
@@ -109,7 +109,9 @@ comparison pin is idempotent. The module is in the `integration` lane.
 
 
 
-- The child's document, reads and body equal the in-process computation at two sizes. [1]
+
+- The child’s document, reads and body equal the computation in the calling process at two sizes. The supplied comparison avoids a second base lookup, capture or conversion. [1]
+
 
 - Fourteen faulty children, the numeric cases through the route, and a failed launch. [2]
 - Disconnect, deadline, shutdown and a queued computation. [3]

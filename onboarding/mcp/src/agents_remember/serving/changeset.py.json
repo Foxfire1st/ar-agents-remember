@@ -229,14 +229,55 @@
       ]
     },
     "11": {
-      "note": "**The cases that measure the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read, the route's own `200`, and the one-half degradation.**\n\nAnchor: `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it` `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head` `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half`",
+      "note": "**The cases that measure the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read, the route's own `200`, and the one-half degradation.** Anchor: `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it` `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head` `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half`",
       "targets": [
         {
           "anchor": {
-            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
-            "content": "sha256:91c1b85a30cbccf442e19689900ba8562dfe13602e76ff33b891c159b3c82ba1",
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:fff151a6307bda42be3463b93fa856c06d89c102c0b0b1145dea883cfd4e0541",
             "locator": {
-              "kind": "file"
+              "end": 629,
+              "kind": "line_range",
+              "start": 601
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:b3ec6e7db7a750909e0cec4db8326ba6803ae8f9a6bccafe1e21cab116283d91",
+            "locator": {
+              "end": 650,
+              "kind": "line_range",
+              "start": 632
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:1f76b2f5730cd5afddf1be51ba95a35027e6de25d2def8094c0c17227f264944",
+            "locator": {
+              "end": 676,
+              "kind": "line_range",
+              "start": 653
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:f284d3f654cf707b2d61c77f2fd3beeca6f990d0761cdc646f39151fb0c71f34",
+            "locator": {
+              "end": 697,
+              "kind": "line_range",
+              "start": 679
             },
             "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
           },
@@ -452,14 +493,55 @@
       ]
     },
     "22": {
-      "note": "**The cases that measure this change: the state discriminator with the head absent from the detail, the route-level status, and the one-half degradation.**\n\nAnchor: `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head` `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half`",
+      "note": "**The cases that measure this change: the state discriminator with the head absent from the detail, the route-level status, and the one-half degradation.** Anchor: `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head` `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half`",
       "targets": [
         {
           "anchor": {
-            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
-            "content": "sha256:91c1b85a30cbccf442e19689900ba8562dfe13602e76ff33b891c159b3c82ba1",
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:fff151a6307bda42be3463b93fa856c06d89c102c0b0b1145dea883cfd4e0541",
             "locator": {
-              "kind": "file"
+              "end": 629,
+              "kind": "line_range",
+              "start": 601
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:b3ec6e7db7a750909e0cec4db8326ba6803ae8f9a6bccafe1e21cab116283d91",
+            "locator": {
+              "end": 650,
+              "kind": "line_range",
+              "start": 632
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:1f76b2f5730cd5afddf1be51ba95a35027e6de25d2def8094c0c17227f264944",
+            "locator": {
+              "end": 676,
+              "kind": "line_range",
+              "start": 653
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:f284d3f654cf707b2d61c77f2fd3beeca6f990d0761cdc646f39151fb0c71f34",
+            "locator": {
+              "end": 697,
+              "kind": "line_range",
+              "start": 679
             },
             "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
           },

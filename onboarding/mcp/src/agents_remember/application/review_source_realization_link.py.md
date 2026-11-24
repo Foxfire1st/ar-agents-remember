@@ -123,7 +123,9 @@ No configured domain documentation could be checked.
 - The namespace record (the record beside the bytes, or, since MIK-R25, a derived knowledge index's own namespace) and the path-seed shape rule. [12]
 
 
-- **Cases: cross-comparison refusal, recorded historical bytes after the tree moves, closed leaf, padded spellings, and the lowered selection bound.** [13]
+
+- **Cases: cross-comparison refusal, recorded historical bytes after the tree moves, closed leaf, padded spellings, and the lowered selection bound.** Anchor: `test_a_path_linked_only_in_another_comparison_is_refused_for_this_one` `test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes` `test_a_closed_leaf_opens_its_attributed_path_from_the_retained_generation` `test_a_padded_spelling_is_never_admitted_as_attributed_context` `test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path` [13]
+
 
 
 ### Cross-Repo References

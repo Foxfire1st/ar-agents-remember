@@ -113,37 +113,49 @@ No configured live documentation source was available for this pass.
 - The fixture builds real code and converted memory repositories plus a leaf contract; the executable cases call the trace gate and controller, not a closeout trace entry. [1]
 
 
-- The leaf fixture. [2]
+
+- The leaf fixture. Anchor: `Leaf` `leaf` [2]
 
 
 
 
-- A missing trace produces named open findings, result.ok=false and refusal() naming both file and route. [5]
+
+
+- A missing trace produces named open findings, result.ok=false and refusal() naming both file and route. Anchor: `test_a_missing_trace_is_one_named_repair_finding_and_the_closeout_refuses` [5]
+
 
 
 - The writer's carry is not a trace. [6]
 
 
-- Mixed-format sides return not-ok gate results with named refusal and persist incomplete worklists, never vacuous success. [9]
+
+- Mixed-format sides return not-ok gate results with named refusal and persist incomplete worklists, never vacuous success. Anchor: `test_mixed_formats_are_an_incomplete_side_never_a_vacuous_pass` [9]
+
 
 
 - An unreadable K_C sidecar keeps its item open. [10]
 - An unreadable K_B sidecar is an input problem; a repair counts. [11]
 
+
 - Unreadable history and unestablished sides are findings. [12]
+
 
 
 - The conversion counts for nothing; a v1 cache file is rewritten. [13]
 
 
 
-- Each open item counts once toward `curatorActionableCount`: the three gate items — the two traces and the uncovered file's `unexplained_hunk` — plus the card's reference anchor that the appended source makes stale, so four beside a gate `openItemCount` of three. [15]
+
+- Each open item counts once toward `curatorActionableCount`: the three gate items — the two traces and the uncovered file's `unexplained_hunk` — plus the card's reference anchor that the appended source makes stale, so four beside a gate `openItemCount` of three. Anchor: `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` [15]
+
 
 
 - The items are in the persisted worklist. [16]
 - An unconverted leaf is refused before either gate runs, with the conversion step. [17]
 
-- The memory-quality run gives the converted check its comparison base. [19]
+
+- The memory-quality run gives the converted check its comparison base. Anchor: `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` [19]
+
 
 
 

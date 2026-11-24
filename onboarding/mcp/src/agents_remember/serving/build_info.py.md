@@ -167,7 +167,11 @@ No relevant external or domain documentation was found for this repository-local
 
 
 
+
+
 - `SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback. [3]
+
+
 
 
 

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+        "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
         "content": "sha256:ad04419ef9439b7fa3e28b949be2f26ad8cb9f2cef8bccceedeef7d05756c49b",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+        "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
         "content": "sha256:a4b8c3d8f66fe43c7e3fc954b66e599bc720b6e9248ca90b7cdb72c8a7ba807d",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
-        "content": "sha256:c5a9d47dc523af4fae2607acdf66554200cd2e8bd1f4c866c038d40df8626399",
+        "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
+        "content": "sha256:a9db3af14d40cf1a85efc3f3908a6614b7718f3859750e77a623a46588420b77",
         "locator": {
           "kind": "symbol",
           "name": "memo_key"
@@ -57,12 +57,12 @@
     },
     {
       "anchor": {
-        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+        "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
         "content": "sha256:3243d16e1d6b99ef7ce3be195b45469c3ed36910fd2d881d39fd0ec7855eed02",
         "locator": {
-          "end": 96,
+          "end": 99,
           "kind": "line_range",
-          "start": 94
+          "start": 97
         }
       },
       "id": "RLZ-MB3HJ1",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+        "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
         "content": "sha256:ad04419ef9439b7fa3e28b949be2f26ad8cb9f2cef8bccceedeef7d05756c49b",
         "locator": {
           "kind": "symbol",
@@ -94,12 +94,12 @@
     },
     {
       "anchor": {
-        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+        "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
         "content": "sha256:760243145b8ae039ccb5aca5f4651856344013c9dad1205a8a77cd9bcda81626",
         "locator": {
-          "end": 67,
+          "end": 68,
           "kind": "line_range",
-          "start": 67
+          "start": 68
         }
       },
       "id": "RLZ-NBFYM1",
@@ -113,7 +113,25 @@
     },
     {
       "anchor": {
-        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+        "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
+        "content": "sha256:a9db3af14d40cf1a85efc3f3908a6614b7718f3859750e77a623a46588420b77",
+        "locator": {
+          "kind": "symbol",
+          "name": "memo_key"
+        }
+      },
+      "id": "RLZ-SMW899",
+      "invariant": "INV-YV48D0",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 2",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "Includes the recorded base and the judged memory commit in the memo identity even if content trees have not changed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
         "content": "sha256:ab8c43d7462271b00d28215b0e6389d0cdc911c320e0f8965db1a09a52f004d8",
         "locator": {
           "kind": "symbol",
@@ -131,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+        "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
         "content": "sha256:e400485720addf668d9714aae3e9dcec952731a90ef9e533ed61f8b4314a6b58",
         "locator": {
           "kind": "symbol",
@@ -150,15 +168,16 @@
   ],
   "references": {
     "12": {
-      "note": "The key's fields.",
+      "note": "The gate key includes the recorded memory base commit and the judged memory commit or leaf HEAD.",
       "targets": [
         {
           "anchor": {
-            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
-            "content": "sha256:aab67928384bb56185a5012e48968fc984b9903efe98efd451719d8da9852db6",
+            "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
+            "content": "sha256:d4b42cb2dd49b5cf1ed57e93a6fe8eda83f2a972f1eb01e2074d896fe4c0cf53",
             "locator": {
-              "kind": "symbol",
-              "name": "GateMemoKey"
+              "end": 84,
+              "kind": "line_range",
+              "start": 72
             }
           },
           "kind": "code"
@@ -166,16 +185,16 @@
       ]
     },
     "14": {
-      "note": "The key from contract bytes, the strict task lookup and the build stamp.",
+      "note": "The memo key binds exact contract and task bytes, the build stamp, and the recorded and judged or observed memory commits.",
       "targets": [
         {
           "anchor": {
-            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
-            "content": "sha256:d95f05732be7fdccf66028ec8adf539d0dd2af05f3b55b7122573976db020a91",
+            "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
+            "content": "sha256:fdbba4ef5af93e7ef0224542987e1c18fae687ea00683cff0ad97bb15ff80370",
             "locator": {
-              "end": 146,
+              "end": 150,
               "kind": "line_range",
-              "start": 104
+              "start": 122
             }
           },
           "kind": "code"
@@ -187,12 +206,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+            "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
             "content": "sha256:ab8c43d7462271b00d28215b0e6389d0cdc911c320e0f8965db1a09a52f004d8",
             "locator": {
-              "end": 159,
+              "end": 164,
               "kind": "line_range",
-              "start": 149
+              "start": 154
             }
           },
           "kind": "code"
@@ -204,7 +223,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
             "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
@@ -272,12 +291,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d057d05b21e36984449b7905f09ef154bcb0aa05",
+            "blob": "74519f758d6faf1f95c7cd79d9e1a22174238cf2",
             "content": "sha256:5bae2b601a32ad52c309042834bab9db010b8ecb0c5f31b4a592b44e74cfe2c6",
             "locator": {
-              "end": 1024,
+              "end": 1018,
               "kind": "line_range",
-              "start": 991
+              "start": 985
             },
             "path": "mcp/tests/test_knowledge_gate_routes.py"
           },
@@ -290,7 +309,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d057d05b21e36984449b7905f09ef154bcb0aa05",
+            "blob": "74519f758d6faf1f95c7cd79d9e1a22174238cf2",
             "content": "sha256:208b8ef141a1c32d17061d4ba27d38bd67d44d2ba97e3898f030725c419679f5",
             "locator": {
               "kind": "symbol",
@@ -303,14 +322,16 @@
       ]
     },
     "23": {
-      "note": "The worktree layer's gate port calls the gate.\n\nAnchor: `leaf_refusal`",
+      "note": "The worktree layer's gate port passes the exact candidate carrier to the gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
-            "content": "sha256:f224a678847d934667500b2c69209c217c2d7113c4f49614e40712875215c2e1",
+            "blob": "498b820bd6494307859bca60adaa0683064ffd10",
+            "content": "sha256:c0f9f92b5354e3fece40cef0b8a7ba1b77998cdb24310a6150cd2dccbf30dedb",
             "locator": {
-              "kind": "file"
+              "end": 40,
+              "kind": "line_range",
+              "start": 25
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/adapter.py"
           },
@@ -323,12 +344,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
-            "content": "sha256:d95f05732be7fdccf66028ec8adf539d0dd2af05f3b55b7122573976db020a91",
+            "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
+            "content": "sha256:040bcc0aeed2b3068d8683fccd3273c63842f4286c857f1c4ffc622dc5173e75",
             "locator": {
-              "end": 146,
+              "end": 150,
               "kind": "line_range",
-              "start": 104
+              "start": 103
             }
           },
           "kind": "code"

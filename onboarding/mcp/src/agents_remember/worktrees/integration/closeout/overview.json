@@ -285,12 +285,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
-            "content": "sha256:a930db3f4dc85af046f9406ddbf73dc6403c686d0fe99ceadede5c82c73c30fa",
+            "blob": "417ebaf9a63383080fa4e65b4a78376050b55121",
+            "content": "sha256:eef13987a34229cd649ed3696f96e29fac806a2224f5b4e826951aa8a4314f2b",
             "locator": {
-              "end": 241,
+              "end": 242,
               "kind": "line_range",
-              "start": 191
+              "start": 192
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -311,12 +311,12 @@
         },
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:3b9e6e573fa71d95f9e69ddc01590078df8a07595832f36a5ba2913b04d43a1a",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:90e6016760aacae24d2263898a065a53c4e63de8285397f907c0d02fc9d4ed0b",
             "locator": {
-              "end": 276,
+              "end": 352,
               "kind": "line_range",
-              "start": 226
+              "start": 294
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },

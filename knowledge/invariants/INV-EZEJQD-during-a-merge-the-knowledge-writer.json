@@ -10,7 +10,7 @@
     "MERGE_HEAD exists beside HEAD in the memory work tree."
   ],
   "exclusions": [
-    "A tree with no merge in progress, which compares against its recorded base only."
+    "Validation when no merge is in progress and the separate leaf recorded-base card comparison."
   ],
   "id": "INV-EZEJQD",
   "origin": {
@@ -24,7 +24,7 @@
     "leaf": "260928-MIK-L60",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "During a merge the knowledge writer and the memory-quality check validate against both merge parents: HEAD and MERGE_HEAD are both comparison bases.",
   "status": "proposed",

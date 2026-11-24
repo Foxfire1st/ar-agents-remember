@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
         "content": "sha256:46902c6a77c26ab7e215a1dfa22ea6f0dda46f3b130a16a75cc72ec7465898a9",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
         "content": "sha256:9f77aaed92cee2256fa2177958c1a138558b8b0a13b14c2b33ccab9a976c9233",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
         "content": "sha256:7790eb1bf3d61bb572693f096ca46d0a2f8e4bd39fc7f12fa200be0ea0c3294c",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
         "content": "sha256:ea7ebcd825c3467b51e92cc36f14598960e6b026bb10e306ffc648233c47cec3",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
         "content": "sha256:7ecf6390cfea81857ec4dfe1408b0ef03d1efb6c5e07d2c709f7e0a8a4c7ff79",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
         "content": "sha256:f60076a4aea489e289115eaf00902add2ec0d7a26a1ccf91ebaeef3d6f1522dc",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,24 @@
     },
     {
       "anchor": {
-        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+        "content": "sha256:f616649353165bd6f9eb30f39d61bfa825c2383ec2b65df9c07e01d507e488f7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_closed_seat_pauses_until_its_next_turn"
+        }
+      },
+      "facet": "Rejects stale helper work and wait for a closed session and counts work on the next turn.",
+      "id": "PRF-NARHPF",
+      "invariant": "INV-GJYZGB",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 1",
+        "leaf": "261112-BUG-L20"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
         "content": "sha256:33a79e3a123d8bedddd5e4c5c1eb95028ff21b12dcd4a4dff8e6d4fcbb8b0189",
         "locator": {
           "kind": "symbol",
@@ -122,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
         "content": "sha256:eaf2cb3600ab28ac0175f39f89d85f41316ac7854956690c54e19fc21ef560ae",
         "locator": {
           "kind": "symbol",
@@ -139,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
         "content": "sha256:e8446165df3ff8fd7a9ad9ad1d07047bb19b80c4e552c6583aa805d3c675ac54",
         "locator": {
           "kind": "symbol",
@@ -162,12 +179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
             "content": "sha256:46902c6a77c26ab7e215a1dfa22ea6f0dda46f3b130a16a75cc72ec7465898a9",
             "locator": {
-              "end": 48,
+              "end": 49,
               "kind": "line_range",
-              "start": 29
+              "start": 30
             }
           },
           "kind": "test"
@@ -179,12 +196,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
             "content": "sha256:7ecf6390cfea81857ec4dfe1408b0ef03d1efb6c5e07d2c709f7e0a8a4c7ff79",
             "locator": {
-              "end": 78,
+              "end": 79,
               "kind": "line_range",
-              "start": 51
+              "start": 52
             }
           },
           "kind": "test"
@@ -196,8 +213,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
-            "content": "sha256:618bdc6591a3428d16b44c0d4bdec0b055330616eb8c1e08a1ef2be7a40ca2d2",
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+            "content": "sha256:f52bf6c7b0aef33a58c258be41a1c0e4da9c8e3a122c421faede367514c31206",
             "locator": {
               "kind": "file"
             }
@@ -207,12 +224,12 @@
       ]
     },
     "4": {
-      "note": "Only reciprocal declared membership sets parent; all entries remain reachable once.\n\nAnchor: `test_only_declared_reciprocal_membership_sets_parent_and_all_tasks_are_reachable`",
+      "note": "The listed leaves attach with reciprocal links, unlisted records stay roots, and traversal reaches every task once.\n\nAnchor: `test_only_declared_reciprocal_membership_sets_parent_and_all_tasks_are_reachable`",
       "targets": [
         {
           "anchor": {
-            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
-            "content": "sha256:618bdc6591a3428d16b44c0d4bdec0b055330616eb8c1e08a1ef2be7a40ca2d2",
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+            "content": "sha256:f52bf6c7b0aef33a58c258be41a1c0e4da9c8e3a122c421faede367514c31206",
             "locator": {
               "kind": "file"
             }
@@ -226,8 +243,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
-            "content": "sha256:618bdc6591a3428d16b44c0d4bdec0b055330616eb8c1e08a1ef2be7a40ca2d2",
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+            "content": "sha256:f52bf6c7b0aef33a58c258be41a1c0e4da9c8e3a122c421faede367514c31206",
             "locator": {
               "kind": "file"
             }
@@ -241,8 +258,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
-            "content": "sha256:618bdc6591a3428d16b44c0d4bdec0b055330616eb8c1e08a1ef2be7a40ca2d2",
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+            "content": "sha256:f52bf6c7b0aef33a58c258be41a1c0e4da9c8e3a122c421faede367514c31206",
             "locator": {
               "kind": "file"
             }
@@ -256,7 +273,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
             "content": "sha256:33a79e3a123d8bedddd5e4c5c1eb95028ff21b12dcd4a4dff8e6d4fcbb8b0189",
             "locator": {
               "kind": "symbol",
@@ -272,7 +289,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
             "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
             "locator": {
               "kind": "symbol",
@@ -284,16 +301,33 @@
         },
         {
           "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
             "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
             "locator": {
-              "end": 493,
+              "end": 491,
               "kind": "line_range",
-              "start": 417
+              "start": 415
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared-wait validation rejects a naive timestamp, an empty or unknown wait kind, an unexpected field and a detail over 300 characters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bda2d7f40dcba7b16d3c89a272965b7e82dec75",
+            "content": "sha256:70f42e34ec2f0eff8a48aa21d5ab643ea1342e8c4a0ec5a0e107096a5e9fd112",
+            "locator": {
+              "end": 576,
+              "kind": "line_range",
+              "start": 563
+            }
+          },
+          "kind": "test"
         }
       ]
     }

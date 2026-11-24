@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "366c52629297ce37095d2660482c4f6750898913",
-        "content": "sha256:6c340d20221d34f93cf0686eeb0432d180d831167babf8ba0f89e8544397abdc",
+        "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+        "content": "sha256:16c4fbca624f83d3a4d55e7ccb29f6d450957ba957e857cd24ae23b883e6ac5f",
         "locator": {
           "kind": "symbol",
           "name": "readHostState"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "366c52629297ce37095d2660482c4f6750898913",
-        "content": "sha256:6fa1ad0856163ab84ae6cff86e2b2dddab559b817d4a3d797ee22805709e78aa",
+        "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+        "content": "sha256:a34076072c31c9d2ff07aed12fe89607e7e8a32988dbf045f9d87ecc0258c328",
         "locator": {
           "kind": "symbol",
           "name": "registerParentWakeEvents"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "366c52629297ce37095d2660482c4f6750898913",
-        "content": "sha256:7c3b80456cdcedc15c9975d4b728f49be66de3cabbf73e114a3c61946c33eadd",
+        "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+        "content": "sha256:ddb73c38f72efb8147723458eeb998bb570b22285988b20f69fa587c41dfcf9b",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "366c52629297ce37095d2660482c4f6750898913",
+        "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
         "content": "sha256:3a81f54404a2eb7a0d1f1c86bdd394d1be61542af325e73076ffeaba09f38421",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "366c52629297ce37095d2660482c4f6750898913",
+        "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
         "content": "sha256:01e300a63fc3e5ec4598ed5b7d689328c394e9ae85f6ce753592536fdd55fc20",
         "locator": {
           "kind": "symbol",
@@ -92,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "366c52629297ce37095d2660482c4f6750898913",
-        "content": "sha256:6fa1ad0856163ab84ae6cff86e2b2dddab559b817d4a3d797ee22805709e78aa",
+        "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+        "content": "sha256:a34076072c31c9d2ff07aed12fe89607e7e8a32988dbf045f9d87ecc0258c328",
         "locator": {
           "kind": "symbol",
           "name": "registerParentWakeEvents"
@@ -110,12 +110,12 @@
     },
     {
       "anchor": {
-        "blob": "366c52629297ce37095d2660482c4f6750898913",
-        "content": "sha256:490c5d5e66a67e68c7fc573c87ab93fa62c5646a6af32d9ed5c67305d631613b",
+        "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+        "content": "sha256:a2692d7d076ee9c56ebdd9313b5ea827f7ee2190451d845d4683776c4a1ad98a",
         "locator": {
-          "end": 119,
+          "end": 124,
           "kind": "line_range",
-          "start": 80
+          "start": 81
         }
       },
       "id": "RLZ-Q8M9EY",
@@ -126,6 +126,24 @@
       },
       "rationale": "The turn adapter waits for a complete host listing before using seat and child facts.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+        "content": "sha256:a34076072c31c9d2ff07aed12fe89607e7e8a32988dbf045f9d87ecc0258c328",
+        "locator": {
+          "kind": "symbol",
+          "name": "registerParentWakeEvents"
+        }
+      },
+      "id": "RLZ-X67Y54",
+      "invariant": "INV-TD175J",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 4",
+        "leaf": "261112-BUG-L20"
+      },
+      "rationale": "Distinct close and archive hooks feed the parent wake tracker.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -134,24 +152,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "366c52629297ce37095d2660482c4f6750898913",
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
             "content": "sha256:2e2a5653b7678a034932e70724c31d7b973ebeb62c0359dc7502d9ae93e7ddf6",
             "locator": {
-              "end": 173,
+              "end": 178,
               "kind": "line_range",
-              "start": 161
+              "start": 166
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "366c52629297ce37095d2660482c4f6750898913",
-            "content": "sha256:f27a2bf0e40ad2b84615fb123285e13a933dca75367cc997f19377c7d75f0986",
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:757d015b1348dca123c53406a0657dc0518a1da4266c09c475bbc08f6055131f",
             "locator": {
-              "end": 278,
+              "end": 285,
               "kind": "line_range",
-              "start": 210
+              "start": 215
             }
           },
           "kind": "code"
@@ -185,12 +203,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "366c52629297ce37095d2660482c4f6750898913",
-            "content": "sha256:782164429cca1d56fdd915b95cffe20b23e26a3e034933904b726be6b3a439a8",
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:16c4fbca624f83d3a4d55e7ccb29f6d450957ba957e857cd24ae23b883e6ac5f",
             "locator": {
-              "end": 134,
+              "end": 140,
               "kind": "line_range",
-              "start": 75
+              "start": 76
             }
           },
           "kind": "code"

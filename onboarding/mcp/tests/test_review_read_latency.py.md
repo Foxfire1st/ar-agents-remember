@@ -15,7 +15,7 @@ and Git children do not depend on the machine. The module also exports the helpe
 
 ## Code Commentary
 
-- **One resolution.** A subject read matches a direct `read_knowledge_review` answer and has a judgment, resolves once and captures each worktree once; the unchanged resolve-time baseline stands for the remembered trees during the publication recheck. The recheck still refuses a candidate that moved while the review was composed.
+- **One resolution.** The warm composition matches the direct answer and resolves once without recapturing either worktree while its witnesses hold. The kept page answer needs no resolution or recapture. The publication check still refuses a candidate that moves during composition.
 - **Converted base.** A converted base tree that Git holds is not written again; each mismatched input
   and an absent tree are written again.
 - **Leaf-wide view.** `test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison`
@@ -36,8 +36,7 @@ and Git children do not depend on the machine. The module also exports the helpe
   the document as offending input and an action that says to retry. Nothing is kept, and the next read equals a fresh read of the original inputs.
 - **Memo bounds.** The view memo holds at most four entries and up to 8 MiB of retained keys, view parts and witnesses. The count test reuses the same key after the former cutoff while its observations still hold and misses for another key. The byte-bound test exercises eviction and individually oversized values. A recorded comparison or a leaf whose memory head or parent tip is unreadable has no live key.
 - **Retired knowledge-diff subjects:** the aggregate three-Git-question/per-file-parity and literal two-size patch-selection cases were removed from this module. Its thirteen current top-level test definitions retain resolution/capture counts, exact supplied candidate/base operands, no leaf memory-tree diff, observed task-read refusal/recovery, bounded memo reuse and freshness; no current literal aggregate patch proof is claimed. The recorded leaf-view case reads a bound complete stored worklist as `persisted`, with the child's exact CRLF-byte identity imported into the parent. A missing worklist has source `absent`, no state or items, and an imported `ABSENT` identity; both readable outcomes retain code facts. Malformed JSON and a directory at the worklist path refuse with the observed byte or unreadable identity. None of these recorded reads enters `LEAF_VIEW_MEMO`.
-- **Freshness.** A read after an edit shows the new content, also for a same-size rewrite in the second of
-  the index write, and nothing composed is kept on the server.
+- **Freshness.** An unmoved live read reuses its answer. Edits to either side, including a same-size rewrite in the second of the index write, yield a fresh comparison.
 
 The same-size, same-second Git rewrite scenario imports the single `rewrite_in_the_second_of_the_index_write` owner from [knowledge_index_test_support.py](knowledge_index_test_support.py.md). Its real clock alignment is the scenario's subject; the 120-second alignment guard does not assert scheduler speed. The original captured-tree/currentness assertions remain at this file's test owner.
 
@@ -50,27 +49,39 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 
 - The module docstring: the port every case enters through and the machine-independent counts. [6]
 
+
 - The four review ports as the routes call them. [7]
 
+
 - The recheck refuses a moved candidate. [9]
+
 - A held converted base tree is not written again. [10]
 
+
+
 - The leaf-wide view passes the captured trees and base commits and is computed once. [11]
+
+
 
 
 
 - An incomplete worklist recomputes and is not kept; the next complete worklist may be memoized, while changed/conflicting external-input observations cause misses. No memory-patch failure/recovery is asserted. [12]
 
 
+
 - An unreadable or absent task input is observed and nothing is kept. [13]
 - An edit restored during the computation is computed twice and answered as inputs_changing. [14]
 - The memo's bounds and keys. 
 
-- A read after an edit shows the new content.  Anchor: `test_a_read_after_an_edit_shows_the_new_content_and_nothing_composed_is_kept` [18]
+
+- An unmoved live read reuses its answer. Edits to either side, including same-size rewrites in the index-write second, yield a new comparison. [18]
 
 
 
-- The subject read matches direct read_knowledge_review composition, carries judgment, resolves once and captures each worktree once. [8]
+
+
+- The directly composed subject answer matches the one on the live port and carries a judgment. The warm composition resolves once and reuses both held worktree captures; the kept page answer resolves nothing. [8]
+
 
 - The live leaf view computes once for an unchanged exact comparison, with subsequent edits changing the computation key. [20]
 - An explicit negative assertion forbids a diff invocation containing both comparison memory trees. [21]
@@ -90,5 +101,6 @@ Three further retained declarations cover recorded answers: identical closed-tre
 - The measured live entry read passes None and retains one-resolution/capture and index assertions.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/test_review_read_latency.py:229-274 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 9547923129aa0b49d6b4f93a758f4fce70233745; mcp/tests/test_review_read_latency.py::test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 9547923129aa0b49d6b4f93a758f4fce70233745. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 
 - The current count test reuses a matching key after the former cutoff. The implementation caps entry count and retained bytes, and the weighted memo test exercises both. \[25] [25]

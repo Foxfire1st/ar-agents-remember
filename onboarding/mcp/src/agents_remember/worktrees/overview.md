@@ -122,7 +122,7 @@ The KS-L35 7db50f8f → 8dfc11b8 merge with official 8dd62345 and its 22 added c
 
 The pause account's measured 60-module closure, five direct imports and zero-of-twelve publication modules, plus real temporary-world stop/playthrough claims, are historical. Its stated static-AST limit remains: dynamic imports were not followed and the proof was per module, not process-wide. The seal-removal policy remains inherited intent; a local helper's lack of a seal is not by itself whole-call-path absence. The inspected pause also has the later removed-memory-mode refusal.
 
-MIK-L09's former rule-6 gap was subsequently implemented through L37's cutover lock and strengthened by MIK-R46's unconditional legacy boundary; completely unchanged unconverted behavior and inertness are historical pre-cutover claims, not current never-converted exceptions. Its prepared-closeout history-closing limit remains in present code. Candidate invariant claims were marked not ingested and gain no new invariant status here. The unconverted.sh comparison at base 904e804b and memory tree 20ccf39a…, ONT crossing at 48b06d96b with 46 jointly changed cards, fixture corrections, fifteen master-row repair count and historical public-route test claims are not fresh verification.
+MIK-L09's former rule-6 gap was subsequently implemented through L37's cutover lock and strengthened by MIK-R46's unconditional legacy boundary; completely unchanged unconverted behavior and inertness are historical pre-cutover claims, not current never-converted exceptions. The prepared-closeout history-closing limit is historical. Ordinary converted-leaf closeout closes the owner’s latest history file before validating the exact memory output. Candidate invariant claims were marked not ingested and gain no new invariant status here. The unconverted.sh comparison at base 904e804b and memory tree 20ccf39a…, ONT crossing at 48b06d96b with 46 jointly changed cards, fixture corrections, fifteen master-row repair count and historical public-route test claims are not fresh verification.
 
 Retain the inherited review-artifact deletion policy's accepted TOCTOU window and the named-master resolution differences excluded from MIK-L38. Detailed old decision records, receipts, real repository measurements, child quality/coherence/candidate-resolver contracts and inaccessible prior witnesses cannot be replaced by invented current proofs; where not examined here they remain inherited intent or named uncertainty. The original assertions that no cross-repository or domain-documentation source was configured are memory-context observations, not newly verified configuration facts.
 
@@ -213,7 +213,9 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - The door keeps the original record-digest provenance while checking its other inputs. [105]
 
 - Retained reference account (no fresh execution or acceptance inferred): Current custody/release of historical pins; no creation. [1] [6]
-- Task observation, knowledge validation, the knowledge crossing, the worklist recompute, the review-artifact archive hook and the mandatory invariant gate use explicit service ports; `WorktreeServices` carries each as a field. [8]
+
+- The worktree service bundle exposes typed ports for memory-quality task observation, knowledge validation, crossings, worklist recomputation, review-artifact cleanup and the invariant gate. [8]
+
 - Retained reference account (no fresh execution or acceptance inferred): The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. [9]
 - Retained reference account (no fresh execution or acceptance inferred): The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. [10]
 - Retained reference account (no fresh execution or acceptance inferred): The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf. [11]
@@ -224,7 +226,9 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Sync recovery reads its canonical enclosure-root reports journal first, with the old lifecycle location only a legacy fallback; operation observations do not derive transaction state from task prose. [15]
 
 - Retained reference account (no fresh execution or acceptance inferred): The sync driver retains content conflicts for continuation, permits only continue or cancel as resolution actions, and validates a staged retained merge before completing it; knowledge content is resolved in the memory worktree, not through an authored-reconcile action. [16]
-- Retained reference account (no fresh execution or acceptance inferred): Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. [17]
+
+- Retained reference account (no fresh execution or acceptance inferred): Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. Anchor: `cancel_sync` `recover_unreadable_journal` `recover_missing_journal` [17]
+
 
 - Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. [18]
 - Retained reference account (no fresh execution or acceptance inferred): A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. [19]
@@ -245,7 +249,9 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - Supported staged continuation and cancellation guidance. [41]
 - Retained reference account (no fresh execution or acceptance inferred): The route helper: marker probe, fail-closed on unreadable trees, refusal without a paired code commit or a bound validator. [42]
-- Retained reference account (no fresh execution or acceptance inferred): The port the helper calls (since MIK-R09 with a `leaf_refusal` twin) and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, `review_artifact_cleanup`, since MIK-R25, and `knowledge_gate`, since MIK-R09). [43]
+
+- Retained reference account (no fresh execution or acceptance inferred): The port the helper calls (since MIK-R09 with a `leaf_refusal` twin) and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, `review_artifact_cleanup`, since MIK-R25, and `knowledge_gate`, since MIK-R09). Anchor: `KnowledgeValidationPort` `WorktreeServices` [43]
+
 
 - The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). [44]
 - Retained reference account (no fresh execution or acceptance inferred): The driver maps the refusal to its own state with a recovery line. [45]
@@ -257,25 +263,39 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Retained reference account (no fresh execution or acceptance inferred): The port and its request and view. [49]
 - The unconverted-line refusal (MIK-R46 rule 1): a tree whose official line is converted converts only through the crossing sync, and the cutover lock refuses any other attempt by name. [50]
 - Retained reference account (no fresh execution or acceptance inferred): The durable report and the master-line history file closed at commit. [51]
-- Retained reference account (no fresh execution or acceptance inferred): The port and the bundle field (which since MIK-R09 also carries `knowledge_gate`). [52]
+
+- Retained reference account (no fresh execution or acceptance inferred): The port and the bundle field (which since MIK-R09 also carries `knowledge_gate`). Anchor: `KnowledgeWorklistPort` `WorktreeServices` [52]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): The completed result gains the summary; every failure leaves it unchanged. [53]
+
 - Retained reference account (no fresh execution or acceptance inferred): The `continue` replay recomputes too. [54]
 - Retained reference account (no fresh execution or acceptance inferred): The archive hook's request and port. [55]
 - Retained reference account (no fresh execution or acceptance inferred): The conditional finalizer helper acts only on archived or would-archive results; a series archive skip invokes no cleanup. [56]
 - Retained reference account (no fresh execution or acceptance inferred): Finalize resolves a leaf naming none through the shared helper. [57]
 - Retained reference account (no fresh execution or acceptance inferred): Reopen resolves a leaf naming none through the same helper. [58]
 - Retained reference account (no fresh execution or acceptance inferred): Reopen's placement guard on the leaf and the master. [59]
-- Retained reference account (no fresh execution or acceptance inferred): The layer's probes, the unbound refusal and the closeout's own write. [60]
-- Retained reference account (no fresh execution or acceptance inferred): The closeout validator's and the landings' gate. [61]
-- Retained reference account (no fresh execution or acceptance inferred): The direct landing's closing, kept and settled per generation. [62]
-- Retained reference account (no fresh execution or acceptance inferred): The port, the landing request and the direct verdict. [63]
+
+- Retained reference account (no fresh execution or acceptance inferred): The layer's probes, the unbound refusal and the closeout's own write. Anchor: `converted_memory` `GATE_UNBOUND` `close_owner_history` [60]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The closeout validator's and the landings' gate. Anchor: `leaf_gate_refusal` `landing_gate_refusal` [61]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The direct landing's closing, kept and settled per generation. Anchor: `keep_direct_closing` `settle_direct_closing` [62]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The port, the landing request and the direct verdict. Anchor: `KnowledgeGatePort` `LandingGateRequest` `DirectGateVerdict` [63]
+
 
 - Direct apply selects the history source, closes it, then judges the retained closed tree with restore on refusal; exact retry reuses the retained generation. [64]
 
 
 - The unconditional legacy-input refusal and its recovery wording. [65]
 - Task recovery guidance never invokes removed get: an established safe leaf can offer task_doc.replace with the exact slug, contract and fields, while an unknown leaf or parent path offers file repair without a guessed mutation. Launch copies contain the own leaf plus declared local requirements, name missing sources without failing launch solely for absence, and refresh/reclaim on canonical publication under the existing rollback and copy budgets. Status copy drift is informational; missing notice is not universal byte equality. Packet-owned refusal presentation preserves the central conversion sentence and single probe-made case, with exact sync args or quoted separate first-conversion argv and no step for unknown. These accounts change neither canonical-file authority, checkpoint/pause distinction, cleanup/reclamation eligibility, paired source lineage nor sync behavior. [99]
-- Retained reference account (no fresh execution or acceptance inferred): The worktree layer's helper that names the leaf's line. [66]
+
+- Retained reference account (no fresh execution or acceptance inferred): The worktree layer's helper that names the leaf's line. Anchor: `leaf_cutover_refusal` [66]
+
 - Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission. [67]
 - Retained reference account (no fresh execution or acceptance inferred): The closeout closes a reopened leaf's latest attempt. [68]
 
@@ -298,13 +318,14 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - **Retained historical source account — superseded by the current route account:** Sync lock skips absent, already-current and skip sides; moving candidates alone park [82]
 - **Retained historical source account — superseded by the current route account:** Report selection does not include aligned-card count alone [83]
 - **Retained historical source account — superseded by the current route account:** Memory merge validates exact staged tree before commit and proves pinned parents [84]
+
 - **Retained historical source account — superseded by the current route account:** Completion publishes journal before cleanup; worklist failures omit summary [85]
+
 - **Retained historical source account — superseded by the current route account:** Malformed explicitly selected copy contracts raise; indeterminate failures depend on own refresh [86]
 - **Retained historical source account — superseded by the current route account:** Checkpoint captures its own refs and rechecks them at publication [87]
 - **Retained historical source account — superseded by the current route account:** Abandoned rows omit required enclosures but existing contracts still parse and completed landings refuse [88]
 - **Retained historical source account — superseded by the current route account:** Chain enumerates additions and bounds ancestry admission to positions inside the step [89]
 - **Retained historical source account — superseded by the current route account:** Completed closeout alone freezes history; latest attempt is closed with reversible exact-byte restoration [90]
-- **Retained historical source account — superseded by the current route account:** Prepared converted closeout still refuses history closing; landing combines validation and gate [91]
 - **Retained historical source account — superseded by the current route account:** Pause checks removed memory mode, exact series identity and observed vacancy [92]
 - **Retained historical source account — superseded by the current route account:** Series reopen preserves landing on reconstruction and tolerates missing/unreadable task document as a report fact [93]
 
@@ -327,7 +348,9 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Shared native reapply expectation uses the carried-head rule and effective worktree context, never an alternate or plain-file fallback. [96]
 
 - Binary staged bytes remain exact in cancellation ownership comparisons. [97]
-- Native merge faults are propagated before any cancellation mutation, and later work the transaction does not own is saved and named rather than refused. [98]
+
+- Cancellation assesses both sides before publishing its cancelling state. Later work joins the save extent before discard. A successful cancellation reports saved files and any deduplicated merge-fault evidence associated with that saved state. [98]
+
 
 
 - The start-progress owner suppresses lineage-refused beats before any progress write. [100]
@@ -335,4 +358,5 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Start binds and mirrors admitted stage through task-fact publication; explicit attach preserves stage and dry-run publishes nothing. [101]
 - Native stage preparation preserves absent documents, promotes only admitted input stages and prepares matching master-row synchronization. [102]
 - Abandon publication restores task and contract sources on publication failure; this does not recreate prior reclaimed resources. [103]
+
 - The neutral process holder supports an explicitly named lazy supplier: first lookup retains its bundle and reset clears bundle and supplier. Start/creation checks every leaf stage, planning attach checks before re-entry, and task-stage publication refuses planning/abandoned-to-inProgress while intent review is open; existing later-stage attach remains separate. [106]

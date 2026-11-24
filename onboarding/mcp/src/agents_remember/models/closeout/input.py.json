@@ -295,14 +295,16 @@
       ]
     },
     "9": {
-      "note": "The worktree and direct routes render attributed memory messages at their real commit seams (since MIK-R09 the worktree route first validates a converted leaf's exact tree); no ledger commit is produced.\n\nAnchor: `_commit_memory_content` `_direct_memory_commit`",
+      "note": "The worktree and direct routes render attributed memory messages at their real commit seams (since MIK-R09 the worktree route first validates a converted leaf's exact tree); no ledger commit is produced. Anchor: `_commit_memory_content` `_direct_memory_commit`",
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:840ba0fb8dfdf16660bb52454a5f3658895880ef4ab80bb75355c8d1a06abb64",
             "locator": {
-              "kind": "file"
+              "end": 590,
+              "kind": "line_range",
+              "start": 543
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -311,33 +313,11 @@
         {
           "anchor": {
             "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:41d08a6dbcb3eb262f4bd5a757022983784d0b77e9cc89108038789754647e50",
+            "content": "sha256:6c129d1c95a4e718fb3a409087939b3eb724506a25b42af45eef40519238d6e5",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
-            "locator": {
-              "kind": "symbol",
-              "name": "_commit_memory_content"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:d55ef03d9421165196bd4bf02c64554ea14fa011dad895ac5600779f6986b837",
-            "locator": {
-              "kind": "symbol",
-              "name": "_direct_memory_commit"
+              "end": 393,
+              "kind": "line_range",
+              "start": 308
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },

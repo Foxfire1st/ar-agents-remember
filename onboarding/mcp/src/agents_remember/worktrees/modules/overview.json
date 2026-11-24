@@ -2,14 +2,55 @@
   "path": "mcp/src/agents_remember/worktrees/modules",
   "references": {
     "1": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The closeout closes the history file and validates and gates its exact tree, restoring on refusal.\n\nAnchor: `_refuse_ungated_memory` `_commit_memory_content`",
+      "note": "Retained reference account. Ordinary converted closeout closes its history file and validates the exact memory output. The memory publication block restores its own unchanged preparations on refusal before publication returns.",
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:dcf76e699746ce6261ae83ad37ffcde7a86ee11fd269821e5461df2be4cf9a90",
             "locator": {
-              "kind": "file"
+              "end": 105,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:fea0d2afa03e0381a722732efed577f89691a06ffe9a6c760f0f9bf43f069e0e",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:ccbf15353158bf8524a3c73960b7dfb8969b796a95abd59b6857c5ee0c766a64",
+            "locator": {
+              "end": 529,
+              "kind": "line_range",
+              "start": 519
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:840ba0fb8dfdf16660bb52454a5f3658895880ef4ab80bb75355c8d1a06abb64",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 543
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -459,14 +500,29 @@
       ]
     },
     "29": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): External closeout chooses substantive memory output and refreshes the cache afterwards.\n\nAnchor: `external_closeout_commits`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): External closeout chooses substantive memory output and refreshes the cache afterwards. Anchor: `external_closeout_commits`",
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:d48089fade4cda88d51092caf127af9a48b72045b41b95081bb3612208f777eb",
             "locator": {
-              "kind": "file"
+              "end": 121,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:75c289abc3d8965a92f8dad4580ae6df9a5ea99250b245cbd3e79237bfce6251",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 547
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -1027,14 +1083,16 @@
       ]
     },
     "51": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The closeout's memory side asks the lock before any stamping or commit.\n\nAnchor: `external_closeout_commits`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The closeout's memory side asks the lock before any stamping or commit. Anchor: `external_closeout_commits`",
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:dcf76e699746ce6261ae83ad37ffcde7a86ee11fd269821e5461df2be4cf9a90",
             "locator": {
-              "kind": "file"
+              "end": 105,
+              "kind": "line_range",
+              "start": 93
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -1107,7 +1165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -1316,14 +1374,29 @@
       ]
     },
     "66": {
-      "note": "External output locks unconverted cutover, closes converted owner history, commits/reuses output and refreshes cache afterwards.\n\nAnchor: `external_closeout_commits`",
+      "note": "External output locks unconverted cutover, closes converted owner history, commits/reuses output and refreshes cache afterwards. Anchor: `external_closeout_commits`",
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:ed5c156b596e3fc22f63b820167b53a26bcdc91d1480a687c5ac8bee6e61bb08",
             "locator": {
-              "kind": "file"
+              "end": 121,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:75c289abc3d8965a92f8dad4580ae6df9a5ea99250b245cbd3e79237bfce6251",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 547
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -1332,14 +1405,29 @@
       ]
     },
     "67": {
-      "note": "Exact converted output receives validator plus mandatory gate, and recovered output is judged again.\n\nAnchor: `_refuse_ungated_memory` `require_gated_recovery`",
+      "note": "Exact converted output receives validator plus mandatory gate, and recovered output is judged again. Anchor: `_refuse_ungated_memory` `require_gated_recovery`",
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:fea0d2afa03e0381a722732efed577f89691a06ffe9a6c760f0f9bf43f069e0e",
             "locator": {
-              "kind": "file"
+              "end": 205,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:434b3fcc7768078a051b0fbabb8576598a25dac5b5070b70f16158d0f815d205",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 406
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -1348,14 +1436,29 @@
       ]
     },
     "68": {
-      "note": "Memory publication rechecks admitted tip/tree, restores owned preparations on failure and proves the published commit afterwards.\n\nAnchor: `_commit_memory_content`",
+      "note": "Memory publication rechecks the admitted tip and judged tree, restores owned preparations on failure before publication returns, and proves the published commit afterwards.",
       "targets": [
         {
           "anchor": {
-            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:ccbf15353158bf8524a3c73960b7dfb8969b796a95abd59b6857c5ee0c766a64",
             "locator": {
-              "kind": "file"
+              "end": 529,
+              "kind": "line_range",
+              "start": 519
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "content": "sha256:4af10d72abb3eb6cd336d4d3b05431939f5fb2a395ed903308a6fa696cac81da",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 537
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },

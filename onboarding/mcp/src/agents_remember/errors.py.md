@@ -90,7 +90,9 @@ The error families preserve distinct authority, recovery and transport meanings.
 
 
 
+
 - **The tokenizer vocabulary and the grammar an install cannot supply: the counter's missing vendored vocabulary and a citation check's missing grammar, each raised rather than downloaded or approximated.** Current anchors: `TokenizerVocabularyError`, `GrammarUnavailableError`. The earlier `ConversationCompositionError`, `HarnessAdapterDisconnectedError` and `NativeHistoryLimitExceeded` names are historical, not classes in this source. [5]
+
 
 
 - Control-plane translation preserves the durable-store error family. [6]
@@ -111,7 +113,9 @@ The error families preserve distinct authority, recovery and transport meanings.
 
 
 
+
 - **The retention owner's typed failure, whose status distinguishes a ref the record never held, a ref that has moved and a ref that could not be deleted.**  Anchor: `CodeObjectRetentionError` [18]
+
 
 
 - **The deletion owner's typed failure, raised before anything is recorded or removed.** [19]

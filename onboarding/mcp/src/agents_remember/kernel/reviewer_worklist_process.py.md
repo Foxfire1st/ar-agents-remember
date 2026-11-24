@@ -145,25 +145,37 @@ moment the flight is created until its thread has reaped the child.
 - The child ends its whole group, or itself alone when it leads none. [21]
 - The child's handlers, alarm, parent-death signal and parent check. [22]
 
-- Four identical requests get one child; three other computations get one each, and at most two children run at once. [23]
+
+- Four identical requests get one child; three other computations get one each, and at most two children run at once. Anchor: `test_identical_requests_share_one_child_and_others_wait_for_one_of_two_slots` [23]
+
 
 
 - The controlled test starts twelve requesters for one flight, including eleven additional sharers, and seven other computations. It expects refusal of a ninth distinct computation, then nineteen answers and eight children after release. These are stored assertions, not a fresh timing measurement. 
 
 
-- Overload is raised at once past the bound and at the deadline for a flight without a child. [25]
+
+- Overload is raised at once past the bound and at the deadline for a flight without a child. Anchor: `test_overload_is_refused_only_past_the_waiting_bound_or_the_deadline_and_says_so` [25]
 
 
-- A leaving requester does not stop a shared child; the last one reaps it before returning. [26]
 
 
-- A request that arrives while a cancelled flight is reaped starts its own computation. [27]
+- A leaving requester does not stop a shared child; the last one reaps it before returning. Anchor: `test_a_cancelled_requester_leaves_the_shared_child_to_the_others_and_the_last_reaps_it` [26]
 
 
-- A killed parent takes the child and its Git process with it. [28]
 
 
-- The child's own alarm ends it and its Git process. [29]
+- A request that arrives while a cancelled flight is reaped starts its own computation. Anchor: `test_a_request_arriving_while_a_cancelled_flight_is_reaped_starts_its_own_computation` [27]
+
+
+
+
+- A killed parent takes the child and its Git process with it. Anchor: `test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it` [28]
+
+
+
+
+- The child's own alarm ends it and its Git process. Anchor: `test_the_child_and_its_git_children_end_at_its_own_deadline` [29]
+
 
 - Malformed, truncated, misidentified and non-finite replies are refused and nothing is kept. [30]
 

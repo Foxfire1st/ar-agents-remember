@@ -100,15 +100,14 @@
       ]
     },
     "40": {
-      "note": "Terminal/planned stage wins; an unknown host cannot establish paused or waiting, and timestamp selection uses the working agents, else the earliest waiting seat's declared-wait start, else the observed agents.",
+      "note": "Terminal/planned stage wins; an unknown host cannot establish paused or waiting, and timestamp selection uses the working agents, else the earliest waiting seat's declared-wait start, else the observed agents.\n\nAnchor: `task_state`",
       "targets": [
         {
           "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
-            "content": "sha256:97b5afbcb4c4f92a14c39ada1467d8a0b0098a8ad5d950e0f7b481bd53adf329",
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+            "content": "sha256:5a984d22b4292af5c06c2637207ecf4aa720ddb93e33d5bdb2746a82e1499228",
             "locator": {
-              "kind": "symbol",
-              "name": "task_state"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -121,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
             "content": "sha256:8ca067a86d2ee83d9c1b56d58218d06b03dc5fe4f8d930335be216512b7848c0",
             "locator": {
               "kind": "symbol",
@@ -134,15 +133,14 @@
       ]
     },
     "42": {
-      "note": "Published host states admit only the declared vocabulary and timezone-aware event timestamps.",
+      "note": "Published host states admit only the declared vocabulary and timezone-aware event timestamps.\n\nAnchor: `PublishedAgentActivity`",
       "targets": [
         {
           "anchor": {
-            "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
-            "content": "sha256:e9491d4291d3092cc13624c060fde336375bc9669ad67b7b731ef73a933a68a3",
+            "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
+            "content": "sha256:cc6a5d7ffca9abe085722699bdaf4383ee1e93d17341190a36cd7b8fb308f6aa",
             "locator": {
-              "kind": "symbol",
-              "name": "PublishedAgentActivity"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/host_activity.py"
           },
@@ -155,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+            "blob": "30796084c46058cf14e00e4aff7de46e6e646552",
             "content": "sha256:52aeb74957de86c9196f6f2ed21f0b958f7adaba398fc727905cbe2f5773717b",
             "locator": {
               "kind": "symbol",
@@ -435,7 +433,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
             "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
             "locator": {
               "kind": "symbol",
@@ -447,12 +445,12 @@
         },
         {
           "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
             "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
             "locator": {
-              "end": 493,
+              "end": 491,
               "kind": "line_range",
-              "start": 417
+              "start": 415
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },

@@ -62,13 +62,19 @@ the port answers 503 with `status: unavailable`.
 - The route: own executor, 503 without a port, 400 for a refused selection, one serialized result. 
 - The request context that binds cancellation and arrival. [14]
 
-- A tree read answers in under a second while the default executor is full. [15]
+
+- A tree read answers in under a second while the default executor is full. Anchor: `test_a_busy_default_executor_cannot_delay_a_tree_read` [15]
 
 
-- A client disconnect and a shutdown each stop the child and its Git process through the real route. [16]
 
 
-- The deadline runs from the request's arrival, so work before the child spends it. [17]
+- A client disconnect and a shutdown each stop the child and its Git process through the real route. Anchor: `_route_stop` [16]
+
+
+
+
+- The deadline runs from the request's arrival, so work before the child spends it. Anchor: `test_the_requests_deadline_runs_from_its_arrival_and_the_child_gets_what_is_left` [17]
+
 
 - The route serves the port and refuses when it is not wired. [18]
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ce6ff51ceff24cba0157410140585c0ba80a0203",
-    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
+    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The roadmap's knowledge, drift, worklist and benchmark links still reach their definitions after Concepts adds staged explanation and video.",
-    "task": "261112-BUG-L13",
+    "statement": "The roadmap's worklist link still reaches the section that explains how changes bring knowledge back for judgment.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "ROADMAP.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
     },
     {
-      "blob": "b477c24f5467a62878fbff415391912ac303f2b0",
+      "blob": "fa480a4feebfc50cdfdca38a2db587deffc52415",
       "kind": "file",
       "path": "docs/concepts.md"
     },

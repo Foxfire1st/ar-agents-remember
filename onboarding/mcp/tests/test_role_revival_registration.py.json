@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_role_revival_registration.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "adaefb77347cc1e07b571c8d40967b6b06a329fd",
+        "content": "sha256:b1354941864360aefc83550b689812b790d8a2ed474b66d513d53d7f93cf8342",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_incomplete_recovery_retries_only_on_independent_input"
+        }
+      },
+      "facet": "Counts calls on an incomplete attempt and requires later independent input to retry.",
+      "id": "PRF-99AFD4",
+      "invariant": "INV-MT07ZE",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 2, 3, 5",
+        "leaf": "261112-BUG-L20"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "adaefb77347cc1e07b571c8d40967b6b06a329fd",
+        "content": "sha256:d814e12ab4b6a5617f32d435229e62fadbf013afe66b7004350b782be7263c85",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dashboard_heals_a_missing_seat_before_each_boot_publication"
+        }
+      },
+      "facet": "Restores distinct missing identities before activity publication for two boots.",
+      "id": "PRF-AG4X63",
+      "invariant": "INV-MT07ZE",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 2, 3, 5",
+        "leaf": "261112-BUG-L20"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f3b78375e007ad1e02861e17209228045cb0378",
+            "blob": "adaefb77347cc1e07b571c8d40967b6b06a329fd",
             "content": "sha256:471df8601870347338dccea3f430a204bd5967d5858f0bb82b479e397689aee0",
             "locator": {
               "kind": "symbol",
@@ -23,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f3b78375e007ad1e02861e17209228045cb0378",
+            "blob": "adaefb77347cc1e07b571c8d40967b6b06a329fd",
             "content": "sha256:70e4b7ae4a4dc17b5682a8d052a1a892c3dac4bae1a2f0060711a641da5775c0",
             "locator": {
               "kind": "symbol",
@@ -39,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f3b78375e007ad1e02861e17209228045cb0378",
+            "blob": "adaefb77347cc1e07b571c8d40967b6b06a329fd",
             "content": "sha256:edc442fc4016b5427b285b6bf60ca2ec2be0d13963cabd74a53ef2f582792620",
             "locator": {
               "kind": "symbol",
@@ -55,8 +91,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f3b78375e007ad1e02861e17209228045cb0378",
-            "content": "sha256:1d0884fafe9593beb6a7307dcebdaf6416c7e05f514cab5553ecea098197bdac",
+            "blob": "adaefb77347cc1e07b571c8d40967b6b06a329fd",
+            "content": "sha256:641fc5921ec98323726fb8ad702fcb65dd48a5955d20413903a5e1e16383492f",
             "locator": {
               "kind": "file"
             }
@@ -66,15 +102,14 @@
       ]
     },
     "5": {
-      "note": "Later close/archive and new-boot ended evidence reclaim the registered role.",
+      "note": "Dashboard startup restores a missing receipt-backed seat before each boot snapshot.\n\nAnchor: `test_dashboard_heals_a_missing_seat_before_each_boot_publication`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f3b78375e007ad1e02861e17209228045cb0378",
-            "content": "sha256:7c1cadd39c1b4fe2f51a70d4aeef579b81390171a8986b8de2a50ac60eaa54df",
+            "blob": "adaefb77347cc1e07b571c8d40967b6b06a329fd",
+            "content": "sha256:641fc5921ec98323726fb8ad702fcb65dd48a5955d20413903a5e1e16383492f",
             "locator": {
-              "kind": "symbol",
-              "name": "_assert_end_reclaimers"
+              "kind": "file"
             }
           },
           "kind": "test"

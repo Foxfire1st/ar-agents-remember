@@ -363,17 +363,23 @@ The following complete predecessor retains useful explanations, old observations
 
 - A proof is written from its symbol or from the lines of one running case that no name reaches, and the titles it pairs with are reported as its outcome. [57]
 
-- A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case. [58]
+
+- A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case. Anchor: `_proof_locator` [58]
 
 
-- The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written. [59]
+
+
+- The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written. Anchor: `Authoring` [59]
+
 
 
 - Both forms become proofs once faceted; an absent test and a bare test file are reported. [1]
 
 - No sidecar until the facet is authored; a blank facet is refused and writes nothing. [2]
 
-- A moved marker row answers while its recorded sources hold, preserves marker and source provenance through a writer rewrite, and reopens after a further source edit. [5]
+
+- A moved marker row answers while its recorded sources hold, preserves marker and source provenance through a writer rewrite, and reopens after a further source edit. Anchor: `test_a_moved_marker_row_binds_its_sources_and_reopens_on_change` [5]
+
 
 - The task owner's answer about a decision, injected into the writer. [6]
 - The resolver field; `None` has no task owner. [7]
@@ -390,22 +396,32 @@ The following complete predecessor retains useful explanations, old observations
 - The refusals of a wrong subject or an extra field. [27]
 - A `raise` refused without a task owner, on a check refusal and on an append refusal writes nothing. [28]
 
-- The operation: entries, records, rows, then unstored foreign evidence refuses. [30]
+
+- The operation: entries, records, rows, then unstored foreign evidence refuses. Anchor: `run` [30]
 
 
-- ID assignment and rerun reuse. [31]
 
 
-- Origin: own records gain evidence, another owner's origin is kept exactly. [32]
+- ID assignment and rerun reuse. Anchor: `_assign_ids` [31]
+
+
+
+
+- Origin: own records gain evidence, another owner's origin is kept exactly. Anchor: `_origin` [32]
+
 
 - Revision once per leaf against the base. [33]
 
-- Records of any kind, with defaults and resolved links. [34]
+
+- Records of any kind, with defaults and resolved links. Anchor: `_write_record` [34]
+
 
 - Realization and proof entries upserted in the sidecar. [35]
 - A rerun removes only this owner's unnamed entries. [36]
 
+
 - What became of a test the evidence names, and a test file named without a test is `unresolvable`. [37]
+
 
 
 - The conforming example: decision, realization and proof, validated.
@@ -419,10 +435,14 @@ The following complete predecessor retains useful explanations, old observations
 
 - A cover revises a realization entry's rationale in place. [51]
 
+
 - Row mechanics record the invariant's or family's own revision. [52]
 
 
-- Current source delta inspected statically: Refresh inherited-row facts and stale no_impact-only, dispatch and permanent-report captions while retaining origin, revision, relocation and attempt mechanics. [53]
+
+
+- The authoring state carries worklist item, trace source and count inputs and the recorded memory base for fresh card comparison. The row author checks the counted change and dispatches requests by their typed subjects. [53]
+
 
 - A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical. Anchor: `test_a_moved_row_whose_after_names_another_path_relocates_the_entry` [16]
 - The conforming example: decision, realization and proof, validated. Anchor: `test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files` [41]

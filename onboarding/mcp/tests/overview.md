@@ -31,7 +31,7 @@ The grouping regressions exercise writer-authored source maps for cardless delet
 
 Native task/status protection now follows the single server producer. `test_task_entries.py` declares native-stage precedence over host activity, `in-turn`/permission precedence over idle/ended observations, contributor-owned event times, explicit unknown-versus-paused, missing-document/addressless entries, ordered membership with documented-subTask explicit-master precedence and genuinely absent-master fallback, preserved subTask unresolvable master literals, once-only full-content disagreement reporting, deterministic conflict/cycle handling, reachability and shared counts. `test_task_document.py` asserts that mirrored master status follows the native document even when step progress disagrees. Start/abandon source cases inspect both the leaf and mirrored parent stage; the series topology case prepares and publishes one master/sprint batch. These assertion bodies are not fresh execution or acceptance evidence.
 
-`test_host_activity_projection.py` protects startup/new-boot reconciliation, unknown authority, notification-only intake and no extra activity reads during idle/full/degraded safety wakes. `test_host_supervisor.py` describes real child/pidfd fixtures with controlled identity inspection, double identity proof, one exit invalidation and unknown on subscription failure; it is not a run against a native host here. Role registration/revival tests combine the actual TypeScript publisher in a Node child with controlled native listings/events and a fake runtime, checking registration-before-resume, restart ordering and later-end reclamation. Those process boundaries do not prove a paid turn or installed-host adoption.
+`test_host_activity_projection.py` protects startup/new-boot reconciliation, unknown authority, notification-only intake and no extra activity reads during idle/full/degraded safety wakes. `test_host_supervisor.py` describes real child/pidfd fixtures with controlled identity inspection, double identity proof, one exit invalidation and unknown on subscription failure; it is not a run against a native host here. Role registration/revival tests combine the actual TypeScript publisher in a Node child with controlled native listings/events and a fake runtime, checking registration-before-resume, restart ordering, later archive reclamation and receipt-backed restoration. Those process boundaries do not prove a paid turn or installed-host adoption.
 
 `test_changeset_cache.py`, `test_intent_summary_cache.py` and `test_task_document_body_cache.py` declare native-byte/conditional-return parity, consumed-input invalidation, unreadable/racing-input non-reuse and bounded retention. Selected cases address object loss/restoration, index-byte versus timestamp changes, ignored/input selection changes, grant changes, HTTP body revalidation and symlink confinement; the intent concurrency case blocks its reader while another change-set route completes. Warm-cache zero-Git/zero-reparse assertions describe their controlled scenarios, not measured fleet latency, CPU, whole-build performance or fresh runtime results. Raw workspace Event River rows retain task `scopeKey`, without `lifecycleId`/`sessionId`; they are diagnostic events, not task stage/activity.
 
@@ -587,9 +587,15 @@ Current source: The replacement after-discovery test source asserts one joint sw
 
 The explainer tests check bound reading inputs, moved Update with preserved stage files, and exact essay-first defaults. The capability cases pin the shipped stage wording and 1,500-word budget. Separate video cases check the runner's media map, the static attributes and the store's publication and readback.
 
+The task-entry fixture supplies stale helper work and an obsolete declared wait to a closed seat. It observes paused with no waiting seats, then work on the next turn (test_task_entries.py:537–560). Separate fixtures cover archive timestamp ordering and receipt-backed registry restoration before the dashboard snapshot.
+
+The recorded-base suite tests inheritance across an untrailed memory merge, exact commit ancestry and converted onboarding cards. The carry-over tests judge inherited memory and carried payloads against one receiving-leaf base. The live review and precompute cases distinguish a changed memory-base commit even when the captured trees match.
+
 ## Evidence
 
 ### Repo-Internal References
+
+- A closed seat’s stale helper and wait fields leave the task paused. Its next turn contributes work. [1843]
 
 - The lifted-decision test source first asserts a version-mismatched requirement endpoint is reported with refusal and unchanged memory, then repairs that endpoint and asserts the decision is written and an identical second ingest is unchanged. These are test assertions, not a new execution result. [1443]
 
@@ -948,7 +954,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - Reviewer landing wording is checked in each discovered root's delivered Reviewer role section and its emitted instructions, not in a separate step-8 detail. The discovered roots are the canonical tree and its packaged serving copy. [1782]
 
+
 - Current Reviewer source cases distinguish required judgment/semantic side states and retained assessment count consistency from the retired reviewer envelope; latency and memory-watch modules protect their separate read/observation boundaries. No execution is asserted. [1784]
+
 
 - Numbered comparisons preserve their own outline/counts and retained catalogue answers; route admission refuses negative input before the port and forwards positive input unchanged. [1789]
 
@@ -1109,7 +1117,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - The review port captures one code and one memory witness on the first read. The leaf worklist uses those witnesses without capturing its own, and repeated or pinned reads reuse the one computation. [498]
 
-- The child's document, reads and body equal the computation in the calling process at two sizes. [499]
+
+- The real child matches the in-process worklist, source reads and answer body at both response sizes. It uses the held capture and conversion without a second base lookup. [499]
+
 
 - The source case admits twelve waiters sharing one computation and nineteen across eight computations, then refuses one more distinct computation. [500]
 
@@ -1155,7 +1165,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The lane row. Source caption: `mcp/tests/test_knowledge_reader.py` [1428]
 
 - The cards-read case and its four helpers. [1429]
+
 - The proof admission at the route. [1430]
+
 - The Q8 case. [1431]
 - The budget and resumption case. [1433]
 - The lacking-revision case on resume and fresh read. [1434]
@@ -1174,6 +1186,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
+
 - The current unit-regression lane selects test_knowledge_leaf_read.py. The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1445]
 
 
@@ -1181,7 +1194,10 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
+
+
 - The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1446]
+
 
 
 
@@ -1269,7 +1285,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 793 distinct test modules across its lane identities. [1498]
+
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 794 distinct test modules across its lane identities. [1498]
+
 
 
 
@@ -1330,14 +1348,18 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 793 distinct test modules across its lane identities. [1529]
+
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 794 distinct test modules across its lane identities. [1529]
 
 
 
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 793 distinct test modules across its lane identities. [1530]
+
+
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 794 distinct test modules across its lane identities. [1530]
+
 
 
 
@@ -1473,7 +1495,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
+
 - The evidence registry has twelve exact-consumer rows that name `mcp/tests/test_terminal_blocker_reasons.py`. [1638]
+
 
 
 
@@ -1503,7 +1527,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 793 distinct test modules across its lane identities. [1647]
+
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 794 distinct test modules across its lane identities. [1647]
+
 
 
 
@@ -1511,13 +1537,17 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The attributed-source-content module exports the _pair test scaffold. [1651]
 - The publication-input cases in their new home, asserting the declaration is the model's own field order. [1652]
 
+
 - The source-endpoint cases exercise captured, recorded and unrecorded endpoint resolution, source inventory and task-context selection through production composition. [1653]
+
 
 - Review resolution delegates closed and recorded comparisons, uses the shared live candidate capture, and reads recorded committed ranges through their endpoint resolver. [1654]
 - `_selection()` resolves published intent, asserts a `PublishedIntentSelection`, and returns it to the invalid-seed case. [1655]
 - The memory initializer reports an unconverted memory tree as legacy-format. [1657]
 
+
 - **The no-datasets fixture shape and the selector-less request the task-context cases use.** [1658]
+
 
 
 - Real-repository inventory cases cover renames, binary content, spaces, tabs and newlines, non-renderable paths, unavailable or partial inputs and non-UTF8 pathnames. [1660]
@@ -1582,7 +1612,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
+
 - The lifecycle catalog declares test_landing_report.py among the consumers of _user_settings_guard.py, curator_coherence_test_support.py and the Node package-lock fixture; this named subset is not its whole declared artifact population. These are declarations and source assertions, not a fresh run. The `curator_coherence_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_landing_report.py` as an exact consumer. ENVELOPE_LOSING_RAISERS is empty. The sweep compares its observed error-arm population with that pin. No executable STATE_DEPENDENT_RAISERS or ambient lifecycle-state matrix remains in the sweep support. None remains in the entry-point world. None remains in the sweep module. lifecycle_finalize_task has an ordinary contract-addressed dry-run request in the main benign table. [1723]
+
 
 
 
@@ -1614,7 +1646,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
+
 - The current lifecycle catalog declares test_landing_report.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/landing_report_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `curator_coherence_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_landing_report.py` as an exact consumer. The `landing_report_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. [1753]
+
 
 
 
@@ -1637,7 +1671,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The changed-row refusal passes `world.gate().worklist` into `WriteRequest`. [1770]
 - The selected static task-entry case asserts authored-stage precedence over host activity and an unknown-host outcome (`test_task_entries.py::test_stage_has_priority_over_host_activity`); event contribution and the known-empty-host outcome are asserted by the module’s other case. Not executed here. [1776]
 - The selected evidence-packet case asserts that a foreign repository with equal trees is never this comparison (`test_review_evidence_packet.py::test_f01_a_foreign_repository_with_equal_trees_is_never_this_comparison`); the packet, read, claim and prepared-address contracts are asserted by the module's other cases, not by this one. [1787]
+
 - No-knowledge task-context source cases assert All changes wording, absence of `. ` in the statement and inventory truth without browser-layout evidence. [1795]
+
 
 - Capsule-serving cases check catalog escape, an unservable index, a directory-name mismatch and idempotent extension registration. [1801]
 
@@ -1645,7 +1681,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 18 lifecycle contracts and 120 artifacts. The parsed lane catalog contains 793 selected lane members. [1808]
+
+- The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 18 lifecycle contracts and 120 artifacts. The parsed lane catalog contains 794 selected lane members. [1808]
+
 
 
 
@@ -1693,7 +1731,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - Startup compacts the river and schedules projection and enabled recurring owners before yielding. The shutdown fixture substitutes projector priming and identifies the archive-recovery coroutine. Archive recovery bounds each scan by entry count, depth and time. The installer lists retired Observer stores. Serving adds watcher health to a copy of the projection. [1835]
 
 
+
 - The plugin registers one in-memory turn tracker and forwards agent.turn.after with turn identity and outcome. A completed eligible silent end arms a sixty-second wait. A new turn cancels that wait and delivery checks current host facts. A failed held-line send stays queued for ordered retry. Helper and background declarations go through wait tracking and scheduling. [1836]
+
 
 
 - test_definition_scope.py declares focused checks for scope reuse, fresh operations and source-content identity; this is source-described coverage, not a new test execution. [1837]
@@ -1702,7 +1742,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - test_knowledge_index_build_identity.py declares focused checks for loaded-build cache isolation, unknown-build non-reuse and same-build reuse after a process restart; this is source-described coverage, not a new test execution. [1839]
 - test_curator_coherence_measured_quality.py declares focused checks for unchanged quality after publication, measured-binding invalidation and historical record readability; this is source-described coverage, not a new test execution. [1840]
+
 - Task-context endpoint cases retain a measured source inventory when knowledge is wholly unavailable or one knowledge half is damaged; both named-subject requests refuse with 404 candidate_dataset_absent. [1659]
+
 - The catalog-census test checks equality between governed and cataloged artifact paths and equality between declared and referenced contract IDs. [1731]
 
 - The frame-store restart case opens the latest revision through a fresh store after ten publications and checks retained revision usage. [1788]

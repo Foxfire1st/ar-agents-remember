@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Defines immutable explicit code/memory operands shared by leaf capture and completion. These frozen dataclasses describe selected operands. Constructing them neither captures Git state nor grants authority; a held converted K_B and a memory base revision are distinct fields.",
+      "note": "CapturedBase holds the code and memory base commits and the immutable memory read tree. ExplicitSides holds the selected operands and carries the held base tree separately from the memory base commit.",
       "targets": [
         {
           "anchor": {
-            "blob": "0856ebe0d011d42fa7fea2707c26da0e124945cc",
-            "content": "sha256:b8acb0781c1201abb28cf628e5dbe54c93accce1b88e84d13a26d6d2c15bdce0",
+            "blob": "96ec8f20e7fa867e308b007426a82a10f8e97fce",
+            "content": "sha256:aa6e0f83a6c8a610bfb3d7fe954ec04ff03b0ec471cd7de40a449818613c4c6d",
             "locator": {
-              "kind": "file"
+              "end": 45,
+              "kind": "line_range",
+              "start": 11
             }
           },
           "kind": "code"

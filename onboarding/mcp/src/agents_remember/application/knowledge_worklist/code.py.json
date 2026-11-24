@@ -358,7 +358,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b66bb2d88d03bb9634cb9fea69ce829ab37c545d",
+            "blob": "607beeeb7d7e98cdb39fe08eef7599c18962fd13",
             "content": "sha256:0ce0d8b09fe446eae103436346e55cb41b36e1e6300b7d5aa90f8b87faf24161",
             "locator": {
               "kind": "symbol",
@@ -371,14 +371,16 @@
       ]
     },
     "28": {
-      "note": "The blob diff carries its own prefixes, colour and driver options.\n\nAnchor: `test_every_parsed_diff_names_its_own_prefix_colour_and_driver`",
+      "note": "The blob diff carries its own prefixes, colour and driver options. Anchor: `test_every_parsed_diff_names_its_own_prefix_colour_and_driver`",
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
-            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
+            "content": "sha256:df8be32d1605fc21c05c3cf918478e992e85d68a9e29c775ce1fff05c2ce70eb",
             "locator": {
-              "kind": "file"
+              "end": 782,
+              "kind": "line_range",
+              "start": 779
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },

@@ -344,7 +344,9 @@ The following current source boundaries establish the ledger-retirement behavior
 
 
 
-- Closeout retains entity-fingerprint and derived route-index refresh before exact converted-memory publication, not legacy metadata stamps. [5]
+
+- Closeout retains entity-fingerprint and derived route-index refresh before exact converted-memory publication, not legacy metadata stamps. Anchor: `_refresh_external_memory` [5]
+
 
 
 

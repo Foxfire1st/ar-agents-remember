@@ -177,26 +177,16 @@
       ]
     },
     "13": {
-      "note": "**The cases: attributed admission without counting, unlinked refusal, and undetermined refusal.**\n\nAnchor: `test_an_unchanged_path_a_recorded_realization_links_opens_as_context_without_counting` `test_an_unchanged_path_no_recorded_realization_links_is_still_refused` `test_an_unreadable_snapshot_leaves_the_link_undetermined_rather_than_absent`",
+      "note": "**The cases: attributed admission without counting, unlinked refusal, and undetermined refusal.** Anchor: `test_an_unchanged_path_a_recorded_realization_links_opens_as_context_without_counting` `test_an_unchanged_path_no_recorded_realization_links_is_still_refused` `test_an_unreadable_snapshot_leaves_the_link_undetermined_rather_than_absent`",
       "targets": [
         {
           "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
-            "content": "sha256:4f7ecc8772618d62abc5902fc65b5a8b5e48a7d69e4e689e810128c571ba4261",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
             "content": "sha256:d70366a961d71e0818f3c98a04f891c2885dde06ba6d0a42e71312fd65fe615f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_unchanged_path_a_recorded_realization_links_opens_as_context_without_counting"
+              "end": 157,
+              "kind": "line_range",
+              "start": 136
             },
             "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
           },
@@ -204,11 +194,12 @@
         },
         {
           "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
             "content": "sha256:b5f4d04e637162b34ef94f05f0089dbf7d118af8a51aa975521f7091f2749128",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_unchanged_path_no_recorded_realization_links_is_still_refused"
+              "end": 170,
+              "kind": "line_range",
+              "start": 160
             },
             "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
           },
@@ -216,11 +207,23 @@
         },
         {
           "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
             "content": "sha256:aa6769f725a27fe9635549a30b6835d37141876f12f22e2af38a25860ac95881",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_unreadable_snapshot_leaves_the_link_undetermined_rather_than_absent"
+              "end": 310,
+              "kind": "line_range",
+              "start": 287
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
+            "content": "sha256:e23cdb7774d0ed907092ed6576d7e9c8d84c129a6857485ed1cb26b4b4ec5e1e",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
           },
@@ -229,14 +232,16 @@
       ]
     },
     "14": {
-      "note": "Unconverted knowledge states its unavailability without canonical initialization; tree proof entries still admit their exact unchanged path.\n\nAnchor: `test_unconverted_knowledge_names_its_unavailability_without_canonical_initialization` `test_a_tree_index_links_a_path_its_proof_entry_is_anchored_at`",
+      "note": "Unconverted knowledge states its unavailability without canonical initialization; tree proof entries still admit their exact unchanged path. Anchor: `test_unconverted_knowledge_names_its_unavailability_without_canonical_initialization` `test_a_tree_index_links_a_path_its_proof_entry_is_anchored_at`",
       "targets": [
         {
           "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
-            "content": "sha256:4f7ecc8772618d62abc5902fc65b5a8b5e48a7d69e4e689e810128c571ba4261",
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
+            "content": "sha256:91a9b3d3212dcbf0b0eef408a48bd0cd073db4ce7b0d1b0f612a3238c7127ad7",
             "locator": {
-              "kind": "file"
+              "end": 333,
+              "kind": "line_range",
+              "start": 313
             },
             "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
           },
@@ -244,23 +249,23 @@
         },
         {
           "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
-            "content": "sha256:e5906148e5babd55358f6fd4b174151ff26af19c205f255869e39ff2096775fb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_unconverted_knowledge_names_its_unavailability_without_canonical_initialization"
-            },
-            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
             "content": "sha256:a4daad0b40316963239d44a883e69a8a38023e421fc146a21c0afd6a528db652",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_tree_index_links_a_path_its_proof_entry_is_anchored_at"
+              "end": 397,
+              "kind": "line_range",
+              "start": 336
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
+            "content": "sha256:e23cdb7774d0ed907092ed6576d7e9c8d84c129a6857485ed1cb26b4b4ec5e1e",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
           },
@@ -273,11 +278,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7cd142e24cb3953c51ca264f3e13b72b3a7a475a",
-            "content": "sha256:fcb7164803a03ddef8f525daca1ea7839ee704354a2dea175af4f7345d92ff66",
+            "blob": "1e4dbd157a0f001f0ab0521750b0dbeeaf8205a3",
+            "content": "sha256:da43045d0b1e72acc74de3ca0150969c73f024f32310b27a3b7e5053f638b369",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_unchanged_path_only_a_proof_names_opens_in_a_tree_review"
+              "end": 1193,
+              "kind": "line_range",
+              "start": 1128
             },
             "path": "mcp/tests/test_review_git_trees.py"
           },

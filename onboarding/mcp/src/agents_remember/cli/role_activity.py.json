@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c7802873c1a67ff9cf7024b59cd2ad83838feaf8",
+        "blob": "ed67a8139e3c2333b37f39992a46802e3aa0397a",
         "content": "sha256:4df62a309c9297b418d3a432286648b3977d819b0b295b3f0f20bb8e6a6c4455",
         "locator": {
-          "end": 63,
+          "end": 73,
           "kind": "line_range",
-          "start": 60
+          "start": 70
         }
       },
       "id": "RLZ-9GVD09",
@@ -27,12 +27,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7802873c1a67ff9cf7024b59cd2ad83838feaf8",
-            "content": "sha256:64ba8532cdb432763b80608e5f697c7ef552cc5cf5c4e76dc54c97cdc163c8f9",
+            "blob": "ed67a8139e3c2333b37f39992a46802e3aa0397a",
+            "content": "sha256:b3a47ae7ae869522ad91e2099e959c5e2608fb02dc5e39db0821f26397f53021",
             "locator": {
-              "kind": "symbol",
-              "name": "publish_role_agent_for_plugin"
+              "end": 73,
+              "kind": "line_range",
+              "start": 65
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+            "content": "sha256:aed9f9a03506e91a515043a8ae70dfe190916c7ef7ec5b90ca3652dccf310007",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
           "kind": "code"
         }

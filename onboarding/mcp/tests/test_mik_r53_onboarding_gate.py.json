@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe1984e1a41b271b4b1343aefb3f3f1b8f1bc1dd",
+            "blob": "f361eedd4f41726791df78e3b5821d126c86c867",
             "content": "sha256:93f1985cfd72fb34eb56ad306febb2ae32729919addd0dfdeaf5d750723ae0a3",
             "locator": {
               "end": 226,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe1984e1a41b271b4b1343aefb3f3f1b8f1bc1dd",
+            "blob": "f361eedd4f41726791df78e3b5821d126c86c867",
             "content": "sha256:a5276bb6aae18273e273ac937376e900bd1d69de0c8c3a8ae7d52f00a2c1c9c7",
             "locator": {
               "end": 313,
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe1984e1a41b271b4b1343aefb3f3f1b8f1bc1dd",
+            "blob": "f361eedd4f41726791df78e3b5821d126c86c867",
             "content": "sha256:01e90ef00a244ec65b873b0ff8170d783fa70e6f905dcab41665e40259a0c26f",
             "locator": {
               "end": 434,
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe1984e1a41b271b4b1343aefb3f3f1b8f1bc1dd",
+            "blob": "f361eedd4f41726791df78e3b5821d126c86c867",
             "content": "sha256:ad30c3ac25529c97d8c57f45023a79372947396985b6c75eec0d1aa4ceffa413",
             "locator": {
               "end": 554,
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe1984e1a41b271b4b1343aefb3f3f1b8f1bc1dd",
+            "blob": "f361eedd4f41726791df78e3b5821d126c86c867",
             "content": "sha256:8d5621d1a84a9fccc93d7da308cc10e0134fb9d165b04de08d10c0423f7ba773",
             "locator": {
               "end": 604,
@@ -88,11 +88,11 @@
       ]
     },
     "6": {
-      "note": "Paired-base comparisons and stale-counted-flag regressions distinguish operation HEAD from the leaf base.",
+      "note": "The writer distinguishes operation HEAD from its leaf’s recorded base. The held counted flag decides when the recorded base is unavailable; a readable recorded base controls the count.",
       "targets": [
         {
           "anchor": {
-            "blob": "fe1984e1a41b271b4b1343aefb3f3f1b8f1bc1dd",
+            "blob": "f361eedd4f41726791df78e3b5821d126c86c867",
             "content": "sha256:0511f6ea1556b595726f829dfb7a22431fca38a99478c7bdd5097166195174c9",
             "locator": {
               "end": 877,
@@ -104,10 +104,10 @@
         },
         {
           "anchor": {
-            "blob": "fe1984e1a41b271b4b1343aefb3f3f1b8f1bc1dd",
-            "content": "sha256:5c5d937a538d92b29d33dba02596e4e2f3a5463b19a8463b0a796e89669ede4a",
+            "blob": "f361eedd4f41726791df78e3b5821d126c86c867",
+            "content": "sha256:f8fac3ef3b13625857e3990064ffddc48b9a176e51ea2b2c2d81f180bc67b0a9",
             "locator": {
-              "end": 972,
+              "end": 977,
               "kind": "line_range",
               "start": 942
             }
@@ -121,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe1984e1a41b271b4b1343aefb3f3f1b8f1bc1dd",
+            "blob": "f361eedd4f41726791df78e3b5821d126c86c867",
             "content": "sha256:28982d105df53c3bab880d15dd9b74162a4f7f2e91dad05239f4924ca4d6578b",
             "locator": {
               "end": 915,
@@ -133,24 +133,24 @@
         },
         {
           "anchor": {
-            "blob": "fe1984e1a41b271b4b1343aefb3f3f1b8f1bc1dd",
+            "blob": "f361eedd4f41726791df78e3b5821d126c86c867",
             "content": "sha256:83420dda0a0e01ef96612b12fd5731726869da7e19c3ca22640bf5e7c3c814a5",
             "locator": {
-              "end": 1020,
+              "end": 1025,
               "kind": "line_range",
-              "start": 989
+              "start": 994
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "fe1984e1a41b271b4b1343aefb3f3f1b8f1bc1dd",
+            "blob": "f361eedd4f41726791df78e3b5821d126c86c867",
             "content": "sha256:f4d0471ebf8b3e1c8310a69875d015945bd99d24e3ab0326d7c19b0df7e01af2",
             "locator": {
-              "end": 1076,
+              "end": 1081,
               "kind": "line_range",
-              "start": 1042
+              "start": 1047
             }
           },
           "kind": "test"

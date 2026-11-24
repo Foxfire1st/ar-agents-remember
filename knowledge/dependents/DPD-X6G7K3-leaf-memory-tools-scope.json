@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
-    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
+    "codeTree": "fb12aee86865d66f4af23d54ffc5918b1cba66c3",
+    "commit": "3450a1a1552db524bdbace93c3992311a778a53e",
     "role": "curator",
-    "statement": "The MCP reference describes the typed role contracts, same-request reconciliation and single-seat boundary, task-document review and synchronous closeout, and six overflow declarations by wire Boolean, including the integrity refusal with ok true, bounded landing debt and its next step, whole-field fitting, named omissions and exact result locators.",
-    "task": "261112-BUG-L18",
+    "statement": "The MCP reference accurately describes the knowledge writer’s plan and file-write modes and the turn-end line that goes to the current Manager when the recorded parent is archived.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -153,7 +153,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+      "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
@@ -248,7 +248,7 @@
       "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py"
     },
     {
-      "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+      "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
     },

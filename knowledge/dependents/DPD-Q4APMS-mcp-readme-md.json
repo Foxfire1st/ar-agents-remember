@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe525622d642d0f59500c9ae0b0b72ea88fabb4",
-    "commit": "699a0bcb59d90cd799f44d00f68eb81c3c131a6f",
+    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The MCP package README still names the tool groups for the 44-tool ordinary roster and bound explainer extras and points to the updated Tool answers reference.",
-    "task": "261112-BUG-L18",
+    "statement": "The package README’s dashboard entry points and tool groups still match the existing commands with registry recovery behind dashboard startup.",
+    "task": "261112-BUG-L20",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
+      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "54b818118629a276761c14d24046428232306f6e",
+      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },

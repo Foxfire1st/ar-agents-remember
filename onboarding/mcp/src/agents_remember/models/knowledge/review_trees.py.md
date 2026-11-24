@@ -12,7 +12,7 @@ Define the durable four-tree comparison record, the delivered-comparison value a
 
 The comparison schema remains ar-review-tree-comparison/v1. Each side names its repository and tree plus an optional commit or review pin under refs/ar/review; these declarations do not enforce commit/ref exclusivity or perform Git reads. A converted base records its memory commit, conversion version, anchoring code commit and produced tree, with no database copy.
 
-same_trees compares task/leaf, four repository/tree pairs and converted base. It ignores number, timestamp and commit/ref spelling. Number zero represents closed-leaf committed endpoints that need no independent pin or comparison record.
+same_trees compares task/leaf, four repository/tree pairs and converted base. It ignores number, timestamp and commit/ref spelling. Live reuse calls `same_live_comparison`, which also requires the exact memory-base commit. Number zero represents closed-leaf committed endpoints that need no independent pin or comparison record.
 
 `ReviewDeliveredComparison` carries the pair a landed leaf delivered and the notice about the comparison on screen: `state` is `delivered`, `differs` or `unavailable`, `statement` is the page's one line, `comparison` is the number whose four trees are the pair, and the six tree/commit fields are that pair's identities. `detail` names what failed when the delivery could not be established. Carrying these fields states no review of the pair.
 

@@ -15,9 +15,7 @@ services.
 
 ### Logic
 
-- `leaf_refusal(contract, *, code_tree, memory_tree, parent_memory_tip, persist_worklist=True)` forwards the explicit persistence selection and evaluates `evaluate_leaf_gate` over
-  `CandidateTrees(code, memory)` with the tip the caller read, and returns `None` (not applicable, or a pass) or
-  `GateResult.refusal()`.
+- `leaf_refusal(contract, candidate, *, parent_memory_tip, persist_worklist=True)` forwards the captured trees, optional judged memory commit and persistence choice to the leaf gate, with the parent memory tip the caller read. It returns the gate refusal or `None` when the gate passes or does not apply.
 - `direct_verdict(contract, *, code_commit, memory_tree)` delegates to `direct.direct_verdict`.
 - `landing_refusal(request)` delegates to `landing.landing_refusal`.
 
@@ -47,10 +45,14 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 
-- The port implementation: recompute over the exact trees, decide, validate. [1]
+
+- The port passes the exact candidate trees and optional judged memory commit to the leaf gate. [1]
 
 
-- The leaf refusal over the candidate trees. [2]
+
+
+- The leaf refusal forwards the candidate carrier, caller-supplied parent memory tip and worklist persistence choice. [2]
+
 
 
 - The direct and landing answers. [3]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The page holds: the packaging change sets a build requirement, a licence field and a table of project links, and the profile's schema fields and selectors are unchanged.",
-    "task": "261112-BUG-L7",
+    "statement": "The certification profile's schema refusals and selections still apply after the separate leaf memory-base error was added.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "docs/reference/repository-certification-profile.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -81,7 +81,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
     },
     {
-      "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+      "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
       "kind": "file",
       "path": "mcp/src/agents_remember/errors.py"
     },
@@ -102,7 +102,7 @@
     },
     {
       "anchor": {
-        "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
+        "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
         "content": "sha256:66cada310dbc541a08fade0b82a0c6b3b7465ec50c95e11a52c7b1d93f43ecc7",
         "locator": {
           "kind": "symbol",
@@ -128,7 +128,7 @@
       "path": ".dagger/src/agents_remember_quality/profile_execution.py"
     },
     {
-      "blob": "9858c29ece3ba35a27289f5b473accda39884ae8",
+      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }

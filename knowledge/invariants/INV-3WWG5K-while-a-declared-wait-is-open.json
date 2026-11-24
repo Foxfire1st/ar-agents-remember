@@ -7,7 +7,7 @@
   },
   "applicability": "AR's task, operations and stall-watch surfaces while a declared wait is open.",
   "conditions": [
-    "A declared wait is open and its check is still to come."
+    "An open session holds a declaration with an armed check. The wait counts before the due time plus sixty seconds when work does not take precedence."
   ],
   "exclusions": [
     "Paseo's own agent list, which AR does not change."
@@ -24,9 +24,9 @@
     "leaf": "260928-MIK-L60",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "While a declared wait is open, AR's surfaces show the seat and its task as waiting (what for, since when, check due): the host-activity record carries declaredWait without moving the host's idle state, the task projection reports activity 'waiting' with waitingSeats, the dashboard task and operations views show it, and the stall watch treats a seat whose check is still to come (plus 60 s grace) as busy; Paseo's own agent list is untouched.",
+  "statement": "While an open session has a declared wait with an armed check within its grace period, AR's surfaces show the seat and its task as waiting (what for, since when, check due): the host-activity record carries declaredWait without moving the host's idle state, the task projection reports activity 'waiting' with waitingSeats, the dashboard task and operations views show it, and the stall watch treats a seat whose check is still to come (plus 60 s grace) as busy; Paseo's own agent list is untouched.",
   "status": "proposed",
   "supersedes": []
 }

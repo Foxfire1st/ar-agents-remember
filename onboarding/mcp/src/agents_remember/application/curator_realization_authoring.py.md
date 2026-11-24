@@ -99,4 +99,5 @@ this shape is a same-repository skill file (`skills/l-01-agent-lifecycles/templa
 
 No meaningful cross-repo references found.
 
+
 - Converted target parsing collects the pure guard's named problems and the writer refuses the whole handoff before its physical write step. Anchor: `_targets` `write_knowledge` [8]

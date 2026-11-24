@@ -291,12 +291,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
+            "blob": "79d594f19005ef10e2e3c9dd04a5e9553b687305",
             "content": "sha256:3cb8a543d732ea06c4ab9a18f5942b93c08652327a951a5f5cf58ee5cf83e24e",
             "locator": {
-              "end": 78,
+              "end": 82,
               "kind": "line_range",
-              "start": 76
+              "start": 80
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
           },
@@ -304,12 +304,12 @@
         },
         {
           "anchor": {
-            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
+            "blob": "79d594f19005ef10e2e3c9dd04a5e9553b687305",
             "content": "sha256:41d6beee0030108837165c928f5c4f7652f325700e0f354a1f47e5bc5c7fe92c",
             "locator": {
-              "end": 122,
+              "end": 126,
               "kind": "line_range",
-              "start": 103
+              "start": 107
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
           },
