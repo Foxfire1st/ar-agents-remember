@@ -1245,7 +1245,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - The lane manifest declares test_knowledge_index.py in unit-regression. Membership establishes no execution. [1473]
 
-- The baseline and the pinned report-only set. [1474]
+- The based converted fixture passes with carried legacy debt. Registration pins the merge-report and migration-debt sets and contains zero plain report-only rules. [1474]
 - The managed sync refuses, keeps the merge staged, and syncs after the repair. [1475]
 
 - The lane manifest declares test_knowledge_validator.py in unit-regression. Membership establishes no execution. [1476]

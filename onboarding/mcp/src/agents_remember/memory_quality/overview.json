@@ -289,12 +289,12 @@
       ]
     },
     "30": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The package's module map and public API.\n\nAnchor: `__all__`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The package's module map and public API.\n\nAnchor: “__all__”",
       "targets": [
         {
           "anchor": {
-            "blob": "90c178d21dac02b7f5589fbfc5443b679bdfc624",
-            "content": "sha256:2f99836721965ba499b03b38d5131c865967da7a43f25717f49677f6c5bd3840",
+            "blob": "cd41fa3873133c9a2d33fcff29a356f294993f24",
+            "content": "sha256:9f0cd3eedd19c0e6fd8a45e36f940d5ec62bcb17498e970be5d217ad23a92571",
             "locator": {
               "kind": "file"
             },
@@ -1287,12 +1287,12 @@
       ]
     },
     "78": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Adoption-only card discovery is sorted and root-relative; unreadable files remain with validator/drift owners.",
+      "note": "Adoption-only card discovery scans sorted onboarding Markdown, including dot-directory cards. It skips I/O read errors. Invalid UTF-8 raises a decoding error.",
       "targets": [
         {
           "anchor": {
-            "blob": "86dcf9173a4e07e5e056b38f0aec2223cbc2814f",
-            "content": "sha256:ee93a535bd952fef0f778e273e3d67f3dc1bef7e23061f095bba75c6f1ed3eb9",
+            "blob": "bf9a6bb1af3d34fcdba3e374012e26dff321e5e2",
+            "content": "sha256:27ca7311d6d7401fb40dabf95159591c3c5ded6eb32e897f584f8903b3e442b2",
             "locator": {
               "kind": "symbol",
               "name": "find_legacy_cards"

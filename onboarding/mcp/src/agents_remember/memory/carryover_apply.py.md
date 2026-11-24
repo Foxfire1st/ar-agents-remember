@@ -12,7 +12,7 @@ Implements converted carryover’s worktree-only transaction after the caller ad
 
 ### Payload confinement
 
-Only onboarding Markdown/JSON pairs and schema record units enter the write extent. Paths must be canonical relative paths; derived indexes, hidden parents, symlinks and nonregular files are refused. Record JSON may omit an absent Markdown companion; onboarding units may not.
+The write extent accepts onboarding Markdown/JSON pairs, including pairs under dot directories, and admitted knowledge record units. Paths must be canonical relative paths. The shared predicate rejects derived route indexes. The transaction also rejects symlinks and nonregular files. A record JSON may stand alone. An onboarding document needs the Markdown and JSON pair.
 
 ### Conflict and retry safety
 
@@ -28,7 +28,7 @@ Worklist recomputation uses persist=False. Success reports carried-into-worktree
 
 ## Evidence
 
-- Payload confinement: Only onboarding Markdown/JSON pairs and schema record units enter the write extent. Paths must be canonical relative paths; derived indexes, hidden parents, symlinks and nonregular files are refused. Record JSON may omit an absent Markdown companion; onboarding units may not. [1]
+- Payload confinement covers canonical relative onboarding pairs, including pairs under dot directories, and admitted knowledge record units. The shared predicate rejects derived route indexes. The transaction rejects symlinks and nonregular files. A record JSON may stand alone, while an onboarding document needs both files. [1]
 
 - Before writing, apply establishes the receiving leaf’s recorded memory base. It validates the resulting tree against that base and official code, and recomputes the worklist against the same base. An unavailable base returns carryover-failed before writes. Validator refusals or later failures restore the owned pre-call bytes, modes, and directory topology. [3]
 

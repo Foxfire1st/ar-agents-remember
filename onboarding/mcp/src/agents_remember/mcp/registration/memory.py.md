@@ -151,7 +151,7 @@ No configured external domain source applies.
 
 
 - The scope object the citation operations share: it carries one named document or a bounded list of them, and refuses both selectors, an empty list, or a list outside `citation_fix`. [12]
-- The one scope value the citation operations share: the application entry points default to `DEFAULT_CITATION_OPERATION_SCOPE`, and the registration constructs the named-document scope it passes in. [13]
+- The shared citation scope defaults to the whole card population when no document selector is supplied. [13]
 
 ### Cross-Repo References
 

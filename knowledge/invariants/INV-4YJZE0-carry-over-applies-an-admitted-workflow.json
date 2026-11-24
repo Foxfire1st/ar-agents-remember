@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The public carry-over regression prevents the hidden workflow path from being excluded from a selected paired payload that ordinary file cards can carry."
+  },
+  "applicability": "A selected file-card payload entering the public converted carry-over apply.",
+  "conditions": [
+    "The eligible hidden source has a selected Markdown and JSON pair and the receiving leaf’s recorded base is admitted."
+  ],
+  "exclusions": [
+    "Payload admission keeps its existing pairing, path and exact validation requirements."
+  ],
+  "id": "INV-4YJZE0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/24_a-card-under-a-dot-directory-is-knowledge-ar/role-reports/worker/e92cbcbf-2651-4fc9-8194-309aed746b98/role-launch/261112-BUG-L24-worker-e92cbcbf-2651-4fc9-8194-309aed746b98.W3.md — Primary acceptance and Checks"
+      ],
+      "path": "L24-curator-current-pair-ingest.json"
+    },
+    "handoffEntry": "BUG-R24@v1 rule 6 carry-over",
+    "leaf": "261112-BUG-L24",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Carry-over applies an admitted workflow card and sidecar under a dot directory as a paired unit.",
+  "status": "proposed",
+  "supersedes": []
+}

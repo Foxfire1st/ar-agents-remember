@@ -146,12 +146,12 @@
         },
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:b143ff68b0ae2b07137e444ffdf386416deb01e9840112d08b516a9331379fe5",
             "locator": {
-              "end": 258,
+              "end": 259,
               "kind": "line_range",
-              "start": 235
+              "start": 236
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },
@@ -181,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eff75cfe71497b48d454a561d5d3aca2ae1159fe",
+            "blob": "6ab05091b01f84c4711b9973d5b08e5467bdd92f",
             "content": "sha256:548c6edaf741e1e024a0136e091ac908823d30deeca2992d8343074dfb216744",
             "locator": {
               "kind": "symbol",
@@ -248,12 +248,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:e549c5e5d715523bde14701766b6538cd55dc1b5572a78199bd52d298e3ffbb9",
             "locator": {
-              "end": 293,
+              "end": 294,
               "kind": "line_range",
-              "start": 251
+              "start": 252
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },
@@ -261,12 +261,12 @@
         },
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:92410b0306078a832114a39a44a5d978a8daab55bdb1e7c3bc38095fb9d1dd27",
             "locator": {
-              "end": 194,
+              "end": 195,
               "kind": "line_range",
-              "start": 178
+              "start": 179
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },

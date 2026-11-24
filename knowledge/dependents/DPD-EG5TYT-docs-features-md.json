@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "711779a641b574d228218fbfe9ba70e6a05c81e0",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "49fab585ece9c48d13a6335c031e727fb70954b0",
+    "commit": "0f86cb870b8e828165dfce88b0f0be1cc4f6ab47",
     "role": "curator",
-    "statement": "The task-isolation section correctly describes the build-and-tree cache identity and the shared age and size eviction policy for SQLite files.",
-    "task": "261112-BUG-L23",
+    "statement": "The features page still describes deterministic citation repair and build-and-tree cache identity on the synchronized code, which counts eligible dot-directory cards while retaining the loaded-build namespace and shared eviction policy.",
+    "task": "261112-BUG-L24",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -163,7 +163,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_currentness/state.py"
     },
     {
-      "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+      "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/memory_tools.py"
     },

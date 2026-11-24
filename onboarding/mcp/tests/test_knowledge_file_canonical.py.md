@@ -7,8 +7,9 @@
 ## Purpose
 
 Tests of the canonical JSON formatter (`models/knowledge_files/canonical.py`) and of the
-`knowledge-format` command. Each formatting case checks that the output is canonical and stable under a
-second pass, and that the parsed value is unchanged apart from the order of identified-entry arrays.
+`knowledge-format` command. `test_formatter_is_idempotent_and_preserves_content` checks a second
+formatting pass and parsed-value preservation for one deliberately untidy document, after sorting
+its `realizes` entries by ID. Separate cases cover array order, refusal, and CLI path selection.
 
 ## Code Commentary
 
@@ -22,10 +23,11 @@ second pass, and that the parsed value is unchanged apart from the order of iden
   one repeated key; two repeated keys among five pairs, where the message must be
   `repeats key(s): ['a', 'b']`; a repeated key inside a nested object; `NaN`; a byte-order mark; bytes that
   are not UTF-8; and truncated JSON. Each must raise `CanonicalFormatError` with the named reason.
-- `test_knowledge_format_command_checks_rewrites_and_skips_caches` runs the command through the package's
-  `main` on a temporary tree. `--check` exits 1, names the file and writes nothing. A rewrite exits 0 and
-  keeps the parsed value. The route-index cache `overview.index.json` and a file in a hidden directory are
-  left untouched. A file with a repeated key exits 2 and is left as it was.
+- `test_knowledge_format_command_checks_rewrites_and_skips_caches` exercises ordinary, equivalent
+  and containing operands over converted memory, including check mode on `onboarding/`. Check mode
+  reports noncanonical files and writes nothing. A rewrite formats ordinary settings and
+  dot-directory JSON under `knowledge/` and `onboarding/` while preserving the route-index cache
+  and the `.git` sentinel. Invalid JSON exits 2 and keeps its bytes.
 
 ### Logic
 
@@ -37,9 +39,10 @@ second pass, and that the parsed value is unchanged apart from the order of iden
   it fails under the earlier sort-any-`id`-array rule).
 - `test_formatter_refuses_input_it_cannot_reformat_without_changing_content` covers repeated keys,
   `NaN`, a BOM, invalid UTF-8 and truncated JSON.
-- `test_knowledge_format_command_checks_rewrites_and_skips_caches` runs `main(["knowledge-format",
-  …])` on a temporary tree: `--check` exits 1 and writes nothing; a rewrite exits 0; the
-  `overview.index.json` cache and a hidden-directory file are untouched.
+- `test_knowledge_format_preserves_dot_directories_outside_memory_roots` places `knowledge/.private/`
+  and `onboarding/.private/` below an outside operand. It checks that settings are formatted and
+  both sentinels keep their bytes. `test_knowledge_format_prunes_dot_directories_in_unconverted_memory`
+  checks that the dot-directory sentinel keeps its bytes when the conversion marker is absent.
 
 ### Conventions
 
@@ -58,7 +61,7 @@ None recorded.
 - Idempotence and content preservation on the untidy document. [6]
 - Only declared positions are sorted. [7]
 - The seven refused inputs, three of them repeated keys. [8]
-- The command's exit codes and skipped files. [9]
+- Check mode reports noncanonical files without writing. Rewrite mode formats dot-directory content inside converted memory and ordinary settings, preserves the route cache and .git sentinel, and returns exit 2 for invalid JSON. [9]
 - The hook under test. [10]
 
 ### Docs References
@@ -78,7 +81,7 @@ The cases cover `canonical.py` and `cli/knowledge_format.py`.
 - Idempotence and content preservation. [11]
 - Only declared positions are sorted. [12]
 - Content-changing input is refused. [13]
-- The command's exit codes and skip rules. [14]
+- The outside-root and unconverted-root cases format ordinary settings while preserving dot-directory sentinel bytes. [14]
 
 
 ### Cross-Repo References

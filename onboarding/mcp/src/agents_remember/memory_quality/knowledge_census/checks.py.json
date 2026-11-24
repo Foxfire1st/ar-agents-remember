@@ -19,14 +19,15 @@
       ]
     },
     "10": {
-      "note": "Status histories are append-only; merges keep both parents.\n\nAnchor: `test_route_statuses_are_append_only_and_merges_keep_both_parents`",
+      "note": "Status histories are append-only; merges keep both parents.\n\nAnchor: “test_route_statuses_are_append_only_and_merges_keep_both_parents”",
       "targets": [
         {
           "anchor": {
-            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
-            "content": "sha256:b40ae183cb29323e6722290d48381090cdf2409a64257c867483bc9824419d43",
+            "blob": "d37eaf26135da54294fadefaa7de3a34990565b1",
+            "content": "sha256:7429a2aa17a97e3094650b4e1333f669c0497f7dfc07527dbbe2c49fd02db772",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_route_statuses_are_append_only_and_merges_keep_both_parents"
             },
             "path": "mcp/tests/test_knowledge_census_files.py"
           },
@@ -35,14 +36,15 @@
       ]
     },
     "11": {
-      "note": "Routes whose slug ends like a pinned file still append.\n\nAnchor: `test_routes_whose_slug_ends_like_a_pinned_file_still_append`",
+      "note": "Routes whose slug ends like a pinned file still append.\n\nAnchor: “test_routes_whose_slug_ends_like_a_pinned_file_still_append”",
       "targets": [
         {
           "anchor": {
-            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
-            "content": "sha256:b40ae183cb29323e6722290d48381090cdf2409a64257c867483bc9824419d43",
+            "blob": "d37eaf26135da54294fadefaa7de3a34990565b1",
+            "content": "sha256:ad84fc43b784bd779b4bd562d7a39684b9bd0a076649efddaded45d78fd2c892",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_routes_whose_slug_ends_like_a_pinned_file_still_append"
             },
             "path": "mcp/tests/test_knowledge_census_files.py"
           },
@@ -51,14 +53,15 @@
       ]
     },
     "12": {
-      "note": "A recorded claim's identity and cohort fields are stable.\n\nAnchor: `test_a_recorded_claims_identity_and_cohort_fields_are_stable`",
+      "note": "A recorded claim's identity and cohort fields are stable.\n\nAnchor: “test_a_recorded_claims_identity_and_cohort_fields_are_stable”",
       "targets": [
         {
           "anchor": {
-            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
-            "content": "sha256:b40ae183cb29323e6722290d48381090cdf2409a64257c867483bc9824419d43",
+            "blob": "d37eaf26135da54294fadefaa7de3a34990565b1",
+            "content": "sha256:03be4883403f80c77a43048b7ba12c1613c39eed509d74e5453fd3dc5365bcce",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_recorded_claims_identity_and_cohort_fields_are_stable"
             },
             "path": "mcp/tests/test_knowledge_census_files.py"
           },
@@ -201,14 +204,15 @@
       ]
     },
     "9": {
-      "note": "A recorded assessment is never edited; a correction appends.\n\nAnchor: `test_a_recorded_assessment_is_never_edited_and_a_correction_appends`",
+      "note": "A recorded assessment is never edited; a correction appends.\n\nAnchor: “test_a_recorded_assessment_is_never_edited_and_a_correction_appends”",
       "targets": [
         {
           "anchor": {
-            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
-            "content": "sha256:b40ae183cb29323e6722290d48381090cdf2409a64257c867483bc9824419d43",
+            "blob": "d37eaf26135da54294fadefaa7de3a34990565b1",
+            "content": "sha256:b0402d12fa11b2494a47ed1d8bddb00b6102b4a458c0b79a7de420e2c0317bbb",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_recorded_assessment_is_never_edited_and_a_correction_appends"
             },
             "path": "mcp/tests/test_knowledge_census_files.py"
           },

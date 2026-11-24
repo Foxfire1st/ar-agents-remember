@@ -1,0 +1,897 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L24",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-06VR13",
+      "items": [
+        "sha256:26a6b9ecce0617d42d2aadd6bd0b2b75c78792f177eb0aeb5ba3713b3b0b234a",
+        "sha256:2d2fb81e7ea3577c1d87053c7e8ea2579259dd445dc55c1735b048dab9734be8",
+        "sha256:a281bcf4d63b3819e7e7c7b92c6fd172fb491d0534c9534572507038b32f1500",
+        "sha256:b2a18609901c9748353769db4747dd4b6bc9d45ca8775525dd5bcbeea7fa8373",
+        "sha256:b3414048ee56fa87fc2f0ea3e3d87092f65c348bc817cfd100f724770f469385",
+        "sha256:f554a6b8bf2832d4dc29502850d2a6612d9df2f71a20b69323a86ddb18b87054",
+        "sha256:f990dcd2dba5c061ec2417980f158b6074d12535b9917fa2f7e57db0fddc79ab"
+      ],
+      "reason": "The card now describes the hidden workflow pair, exact reader parity and marker diagnostic.",
+      "sources": [
+        {
+          "blob": "8c3d7127e9f29ec6f3774e36a1ed7c9f9b0939c5",
+          "path": "mcp/tests/test_knowledge_validator_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_validator_routes.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0D26NG",
+      "items": [
+        "sha256:872fc343b161b84a6e92d07c4ec0e9097a454fd516fcc5c0404cfde03bc09d0a",
+        "sha256:c9d6b8050a6bcc25917ce78b38a4dd936b9fb27d0450b9cba5af1c4816ff7130"
+      ],
+      "reason": "The fixture sentence removes an obsolete hidden-path assertion. The card's template and evidence-layout contract remains accurate.",
+      "sources": [
+        {
+          "blob": "d2e45ab1ba49f6e29875047dcc9e6194fa4503e0",
+          "path": "mcp/tests/test_curator_card_layouts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_curator_card_layouts.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0JJHVM",
+      "items": [
+        "sha256:3c4f90adcbc8678cfd818cd87d238041dc9c897f844224a00ca6e23db6483e67"
+      ],
+      "reason": "Renewed the memory-tool and legacy-scan source links after verifying that the documented scanner covers legacy markers in cards under dot directories within onboarding.",
+      "revision": 2,
+      "subject": "DPD-ZN7CD9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1J2Y9B",
+      "items": [
+        "sha256:7919e52074229bdc7ffac62160804744e6c19dc3a126bc37925a20352b7b59eb"
+      ],
+      "reason": "The validator section now states the common memory-root selection used by the direct and Git tree readers.",
+      "sources": [
+        {
+          "blob": "cd41fa3873133c9a2d33fcff29a356f294993f24",
+          "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py"
+        },
+        {
+          "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
+          "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py"
+        },
+        {
+          "blob": "bf9a6bb1af3d34fcdba3e374012e26dff321e5e2",
+          "path": "mcp/src/agents_remember/memory_quality/legacy_cards.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2TK57A",
+      "items": [
+        "sha256:3762aa53537b3d9bd0b9ea3cd0bb6d5b5e0302948b8690a383424f26813ecfae"
+      ],
+      "reason": "The private fixture creates schema-appropriate Python or workflow text. The public carry-over proof establishes the behavior.",
+      "subject": "hunk:sha256:3762aa53537b3d9bd0b9ea3cd0bb6d5b5e0302948b8690a383424f26813ecfae"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-44K2DH",
+      "items": [
+        "sha256:454b8bb050e0385628e67ec9e728a1b3fff0e14c4fad4f8d1df1f5c39422892c"
+      ],
+      "reason": "The card now explains the scan's wider path selection and retains the same readable-card and adoption boundaries.",
+      "sources": [
+        {
+          "blob": "bf9a6bb1af3d34fcdba3e374012e26dff321e5e2",
+          "path": "mcp/src/agents_remember/memory_quality/legacy_cards.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/legacy_cards.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4NSVNY",
+      "items": [
+        "sha256:113014e0a61cfea43f264e8e6b9211515cb982698692242216ff3fb119576963"
+      ],
+      "reason": "The fixture mirrors the selected source into onboarding and creates the needed directories. The paired carry-over test owns the procedure's contract.",
+      "subject": "hunk:sha256:113014e0a61cfea43f264e8e6b9211515cb982698692242216ff3fb119576963"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4YRMCF",
+      "items": [
+        "sha256:494061c03159e7ee7e6a5a7fd9f8f1e995c5a4c5501568ceba449b00987a4c1b",
+        "sha256:82d9f9dc82acd39fac40701ceb21275cd462b91d19a10a08376c4d920b5a4520"
+      ],
+      "reason": "The inventory explanation now includes dot-directory artifact rows and retains route-cache exclusion.",
+      "sources": [
+        {
+          "blob": "44b3fad830714dbbed83da33525682ccb9ee6dd5",
+          "path": "mcp/src/agents_remember/memory/knowledge_census/inventory.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge_census/inventory.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-50TTJ0",
+      "items": [
+        "sha256:1494fda48e71d7ed077dac8640873e1b391608fc5410c1c16a526ae02e93062e",
+        "sha256:3d7c6cc5eeb2f7eebbaaf273ff34526686381b57c02923f88636b308e271233b",
+        "sha256:522007ea7d234ef13b23672e2c4b09b65527642c52b43f5facb3f15205edebef",
+        "sha256:96818c1ce42b20a9e722f6e281156f87e87ef33d3c9bdfdc4bb5930a22cf9021",
+        "sha256:d2c5cdf95762886607824204c6657b5864604124dc47e89efeebbc0607ad0df0",
+        "sha256:fc9b8a074550a4054d4e6472b20b0f9067ec00bfa91bfa9fcc0c61a9c328a57c"
+      ],
+      "reason": "The proof description now covers both ordinary and hidden workflow pairs, preserved state and repeat behavior.",
+      "sources": [
+        {
+          "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
+          "path": "mcp/tests/test_converted_carryover.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_converted_carryover.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6M1PEK",
+      "items": [
+        "sha256:e1fa4f2cf864f1dd4f21ad3c0be491fcad7c4e75e716e41647ea1fbbc65e0434"
+      ],
+      "reason": "The deleted comment misstated memory-directory pruning. The card's source-listing and cited-file behavior remains accurate.",
+      "sources": [
+        {
+          "blob": "88fa96bd3c304e7d111e2e5cb3cabb11fc3d22df",
+          "path": "mcp/tests/test_memory_quality_source_files.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_quality_source_files.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-7FW426",
+      "items": [
+        "sha256:e78df9c118767e5f87144b6f075e46e10e949a57c7759272434fed395f4fe281"
+      ],
+      "reason": "Renewed the carry-over guide’s payload source link after verifying that eligible dot-directory workflow pairs use the documented selected-unit, recorded-base and validation rules.",
+      "revision": 4,
+      "subject": "DPD-6WW03D"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-13QTT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-4XD2ZF",
+          "revision": 3
+        },
+        {
+          "id": "INV-DE9ZZF",
+          "revision": 3
+        },
+        {
+          "id": "INV-QR6DSA",
+          "revision": 2
+        },
+        {
+          "id": "INV-TJADR1",
+          "revision": 4
+        }
+      ],
+      "id": "ROW-7KX4WT",
+      "items": [
+        "sha256:0b62a3833b6982c2020680de33e2c02646ef7892845b44727232f7ca24ed1218"
+      ],
+      "reason": "The shared path filter lets the existing first-baseline legacy detector see readable dot-directory cards and the validator see their references. INV-QR6DSA keeps that admission rule. INV-13QTT2 keeps the measured fixer conditions, INV-4XD2ZF keeps the current-card and evidence grammar, INV-DE9ZZF keeps initialization before attributed baseline and new-root foundation, and INV-TJADR1 keeps the observed knowledge-state and next-step handoff. The obligations still jointly distinguish optional onboarding, baseline attribution and Architect-owned foundation. Keep the five members, six routes and revision 4.",
+      "revision": 4,
+      "subject": "FAM-VDDPC6"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-9P1JXE",
+      "items": [
+        "sha256:3c29a23a1f42e5bcb6e6327e35ec287f69fd1698f86952ae328e75cc6b24f7a1"
+      ],
+      "reason": "Renewed the guide’s card-authoring and memory-tool source links after verifying that named-card selection and separation of moved anchors from stale content still apply to cards in dot directories.",
+      "revision": 4,
+      "subject": "DPD-TCXJRQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B2TQ1V",
+      "items": [
+        "sha256:744a4203d27208a3fcc81eae695f1d6c98066468421626ff07faca1df8ce2226"
+      ],
+      "reason": "The import exposes the shared selector to payload checking. The call in the check carries the admitted path behavior.",
+      "subject": "hunk:sha256:744a4203d27208a3fcc81eae695f1d6c98066468421626ff07faca1df8ce2226"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
+            "content": "sha256:59f849752ce2df7f7714eb4917d83048dc8ea423791bd2d2211216a85892943e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
+            },
+            "path": "mcp/tests/test_converted_carryover.py"
+          },
+          "before": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:1b77c7102d619e92795861dac4712a6cc902d38e355639c21713f63669ebb10a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
+            },
+            "path": "mcp/tests/test_converted_carryover.py"
+          },
+          "id": "PRF-S2SEFN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-B5TF4G",
+      "items": [
+        "sha256:78f6541bc288f1f65622735f3f45efc9b3ec4215671b76480caf89acc70cbbc4"
+      ],
+      "reason": "Payload checking now admits an eligible pair below a dot directory through the common memory exclusion predicate. The recorded-base prerequisite, paired writes, route refresh, exact-tree validation and owned rollback still govern apply. The existing public proof covers both ordinary and dot-directory execution, an unchanged HEAD and index, and a repeat with nothing to carry. The existing final-run validator refusal proof separately shows restoration of prior bytes, modes, Git index and created directories. Preserve revision 2 and re-anchor the changed public proof.",
+      "revision": 2,
+      "subject": "INV-MZ13SJ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1CS8DN",
+          "revision": 1
+        },
+        {
+          "id": "INV-5XX92M",
+          "revision": 1
+        },
+        {
+          "id": "INV-9MH0V9",
+          "revision": 1
+        },
+        {
+          "id": "INV-FPG5GW",
+          "revision": 1
+        },
+        {
+          "id": "INV-MZ13SJ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-BPZ816",
+      "items": [
+        "sha256:345d8694652b7cda4ccda6dce820c03884cbd903d911462b6246d42730443e47"
+      ],
+      "reason": "Dot-directory admission lets an already selected workflow pair reach the existing worktree-only carryover transaction. INV-FPG5GW preserves the document pair and evidence tiers, INV-MZ13SJ preserves recorded-base validation, target edits, rollback and noncommitting apply, INV-9MH0V9 preserves matched conversion-format admission, INV-1CS8DN preserves official-code anchor observation, and INV-5XX92M preserves dependency closure and unequal-record protection. The existing memory and application routes still connect these obligations to ordinary curator judgment and gated publication. Keep the five members, two routes and revision 1.",
+      "revision": 1,
+      "subject": "FAM-VZ9C23"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BZBYTE",
+      "items": [
+        "sha256:6dff4dc1f0b002b81d991d0ad26b7b4f4736a184dd006aa77545fde3c284de08"
+      ],
+      "reason": "The shared world now accepts a feature path for the converted proof fixture. The card's own attribution and unconverted-refusal coverage stays accurate.",
+      "sources": [
+        {
+          "blob": "6ab05091b01f84c4711b9973d5b08e5467bdd92f",
+          "path": "mcp/tests/test_memory_attribution_producers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_attribution_producers.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D6ESXK",
+      "items": [
+        "sha256:cad7af02e895cc09af15cd7c53d61304375e439275a23f5c72a0fdcb090f33bf"
+      ],
+      "reason": "The deleted comment attributed obsolete dot pruning to the readers. The surviving fixture still tests source listing and citation verification.",
+      "subject": "hunk:sha256:cad7af02e895cc09af15cd7c53d61304375e439275a23f5c72a0fdcb090f33bf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E1R7F5",
+      "items": [
+        "sha256:737bb6aaa8ae744031debf4069f02d0c4891ab7a27a743bdc1c0ec7bb0462ace"
+      ],
+      "reason": "The deletion removes the old traversal prune. The retained walk and shared file filter carry the current memory-path obligation.",
+      "subject": "hunk:sha256:737bb6aaa8ae744031debf4069f02d0c4891ab7a27a743bdc1c0ec7bb0462ace"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E76WGK",
+      "items": [
+        "sha256:9f086e38d1467c09591badba8a71ccc55a8234efb7902f783a75576149c19927"
+      ],
+      "reason": "The private fixture parameter lets the converted proof exercise the same world at a workflow path. The public test owns the paired carry-over guarantee.",
+      "subject": "hunk:sha256:9f086e38d1467c09591badba8a71ccc55a8234efb7902f783a75576149c19927"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E98H82",
+      "items": [
+        "sha256:718a8d887dfd3898541f56721e3aecd4350dfca9afa33e21c52e86fc4950b993"
+      ],
+      "reason": "The fixture stages the mirrored card it just authored. The public carry-over test owns the observed pair and target-state guarantee.",
+      "subject": "hunk:sha256:718a8d887dfd3898541f56721e3aecd4350dfca9afa33e21c52e86fc4950b993"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EQ31DN",
+      "items": [
+        "sha256:c295a1f7d34dcf76a227818e3b8ce7e724c9ba26d2d48be502f1770278898ca3"
+      ],
+      "reason": "The repository memory section now states where dot-directory traversal applies and which generated route caches the shared predicate excludes.",
+      "sources": [
+        {
+          "blob": "e09b3eacede7c4b7bba1049696e3e1042aa0c9bf",
+          "path": "mcp/src/agents_remember/cli/knowledge_format.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-F1JGX8",
+      "items": [
+        "sha256:cb45b24368f89e3da9e522b09afd969645af98571abea7682afe435bc53a249f"
+      ],
+      "reason": "Renewed the feature guide’s citation-tool source link after verifying that bulk fallback counts include eligible dot-directory cards while preserving the documented evidence and report shapes.",
+      "revision": 19,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F8SKHM",
+      "items": [
+        "sha256:5c785b6728caa945fc7dfed93e35d6bdaa1d812d8468378489614cc81366a038"
+      ],
+      "reason": "The card now states the route-cache-only predicate and matching directory and Git snapshot visibility.",
+      "sources": [
+        {
+          "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
+          "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GYWB29",
+      "items": [
+        "sha256:f30cfb00f0cac9fb5f1cadb50b4d41177848b6a2c80c967a6637e3c1b0446b24"
+      ],
+      "reason": "The card now explains the root-relative fallback count and its inclusion of dot-directory Markdown.",
+      "sources": [
+        {
+          "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+          "path": "mcp/src/agents_remember/application/memory_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/memory_tools.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HCTAFF",
+      "items": [
+        "sha256:9aeb37a5b9b568a7177557e6130beac0a6c1a9a32047333a5d5f087f5da8b5c5"
+      ],
+      "reason": "The local version token implements the already recorded projection-cache contract. The loader and regression establish that earlier projections cannot supply the current one.",
+      "subject": "hunk:sha256:9aeb37a5b9b568a7177557e6130beac0a6c1a9a32047333a5d5f087f5da8b5c5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HP8HCB",
+      "items": [
+        "sha256:3ea57488400f230e5302f4e543d1a71a71e27b8f69524b610c2bce01ecb9333c"
+      ],
+      "reason": "The index and census sections now state their shared dot-directory traversal and preserve the generated-cache, census and comparison-byte boundaries.",
+      "sources": [
+        {
+          "blob": "736a9d388c150a826532e5a204f6e473991d6711",
+          "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+        },
+        {
+          "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
+          "path": "mcp/src/agents_remember/memory/conversion/card_authoring.py"
+        },
+        {
+          "blob": "44b3fad830714dbbed83da33525682ccb9ee6dd5",
+          "path": "mcp/src/agents_remember/memory/knowledge_census/inventory.py"
+        },
+        {
+          "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HQTBSV",
+      "items": [
+        "sha256:12c5cc49f205b4d592be59744f5b7092dde95099b6efb800a780e3368ce15f3b",
+        "sha256:26920a28263afe4ffaa94db367c0b95d9874ceb7b9ce05cc49676c581db141cc",
+        "sha256:6a4f7ca8192505c25ea1531e34eac39efa27173e782a368e838838d9c6618ad2"
+      ],
+      "reason": "The proof description now names the hidden workflow pair, exact governing route and excluded route cache.",
+      "sources": [
+        {
+          "blob": "d37eaf26135da54294fadefaa7de3a34990565b1",
+          "path": "mcp/tests/test_knowledge_census_files.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_census_files.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HRTM1Y",
+      "items": [
+        "sha256:32705f6635baf7127f27311aaeb0d38d3a9062595a754a97a4d4ba896f6a2a71"
+      ],
+      "reason": "The card explains that both reader routes retain dot directories and share the cache exclusion.",
+      "sources": [
+        {
+          "blob": "587f7c66a2347f7f8fd2baa361cddeaeb6a5453c",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/tree_coverage.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_reader/tree_coverage.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HXBDFF",
+      "items": [
+        "sha256:3a9aa78378f6805921531290be3ed10bbc748a31c5f5939a645e106ab3e9ad85"
+      ],
+      "reason": "The fixture selects the chosen source suffix via the existing path rules. The permanent proof establishes the behavior without changing the path-rule contract.",
+      "subject": "hunk:sha256:3a9aa78378f6805921531290be3ed10bbc748a31c5f5939a645e106ab3e9ad85"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JP10F7",
+      "items": [
+        "sha256:6d8f8b35dd90c639451a6d42b50c9467b44af9fc9936aa20b0b8c99a757a3771"
+      ],
+      "reason": "The card now names the v3 discriminator, the v2 projection it replaces, and inclusion of dot-directory paths.",
+      "sources": [
+        {
+          "blob": "cea9d89696b869613b28b77a0fada0d6372c4fda",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/base_cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/base_cache.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K9AX0A",
+      "items": [
+        "sha256:22a596f53b773abb0495d7f3761c8f983739d2fd2d5e3669df26f5762659cea2",
+        "sha256:33c67523e1cceac73df4ad990e74e911d700be97b796ade8ad773eceb598d174",
+        "sha256:7017e8eca612bfc10f94fa1423ac6da26f3570b4c5963bfa252c48262a6e1dd4",
+        "sha256:90de1f811c36289401904dcbb55b193bac85c05e986cccd9111d34d37756a17e",
+        "sha256:bdbb1a3c2d7c9c671d9ecf2713b327d319b209e424aa37dff1cd54663814c431",
+        "sha256:c0ece90dc107d373e4dc1d20a4ba6947cf08ce6bf1b693d54b06c38abbd68323"
+      ],
+      "reason": "The card now gives resolved converted-root containment and preserves ordinary traversal outside those subtrees.",
+      "sources": [
+        {
+          "blob": "e09b3eacede7c4b7bba1049696e3e1042aa0c9bf",
+          "path": "mcp/src/agents_remember/cli/knowledge_format.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/knowledge_format.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KJT4M8",
+      "items": [
+        "sha256:f568d7fed2e2553f62446b74e9277c4dab5cb639a616282552f14634ca02ef5e"
+      ],
+      "reason": "The import provides the shared predicate. The bulk card selector carries its applied path behavior.",
+      "subject": "hunk:sha256:f568d7fed2e2553f62446b74e9277c4dab5cb639a616282552f14634ca02ef5e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M1B65R",
+      "items": [
+        "sha256:8275f2089772fefd2c95d1bccd13bc8184df8a49e233b6d47e90ce55fb567042"
+      ],
+      "reason": "The display-name helper only strips the overview names and card suffixes. Snapshot enumeration now removes cache files upstream through the shared predicate.",
+      "subject": "hunk:sha256:8275f2089772fefd2c95d1bccd13bc8184df8a49e233b6d47e90ce55fb567042"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MTQGKM",
+      "items": [
+        "sha256:7dc6918875167ab229fb4170dd93e2639d880ab80512110b89e04bbbad3d14e8"
+      ],
+      "reason": "The import connects the scanner to the shared predicate. The adopted legacy rule remains anchored at the scan.",
+      "subject": "hunk:sha256:7dc6918875167ab229fb4170dd93e2639d880ab80512110b89e04bbbad3d14e8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NY5DT4",
+      "items": [
+        "sha256:5e3be7ff2f59cbb9f6ebfb5ac0bafac2ff0d49f4d8469015d6714144789f29ea",
+        "sha256:a5606374ca41387b2006146df9272b2ec9e729fd03d00ce7734e20df70465e7c",
+        "sha256:b9d9c9133f06d442837f2a9babab3e466baaedd79ce1303090ce82dd29788ae0"
+      ],
+      "reason": "The card now describes both the malformed dot-named card fixture and retained sidecar below a dot directory.",
+      "sources": [
+        {
+          "blob": "4ca65397b8e96a8db7409c43db097e9532ba60e7",
+          "path": "mcp/tests/test_knowledge_validator.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_validator.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P3VZ2G",
+      "items": [
+        "sha256:8f4def9ffdab6b7454bb80fe49614ad4ddfe9da26838fbb04ad81f7e225aea2c"
+      ],
+      "reason": "The card now describes admitted hidden-directory document pairs while preserving path and transaction prerequisites.",
+      "sources": [
+        {
+          "blob": "736a9d388c150a826532e5a204f6e473991d6711",
+          "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/carryover_apply.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P9T0DP",
+      "items": [
+        "sha256:3f638a153c511aa6b142d08b5b6da2a4781fb08490e854dfeacdc6c9c400cc7b"
+      ],
+      "reason": "The import makes the shared predicate available to the cache selector. Its use in the selector owns the behavior.",
+      "subject": "hunk:sha256:3f638a153c511aa6b142d08b5b6da2a4781fb08490e854dfeacdc6c9c400cc7b"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PCMNB6",
+      "items": [
+        "sha256:0ba3790ba595455a3301fde1cf4a50c4b0cc1b024cd1791b2e8595b961eea0c9",
+        "sha256:0d73e65d3c2a8cc14f1f91ace6d7336f582d6c2f69a87f56013ca7622ff24ec0",
+        "sha256:321e8501b3b6ea82f665c2efd5487310a24e9a8155c134524a445aca88ff4774",
+        "sha256:3815174d170cba95cae755121b42a85b1bbf4150eea881a22f2d3c656b06677d",
+        "sha256:38a8760dad94392a72613814a3a050c96b193c27f318fb4abad669bf9dcc067a",
+        "sha256:45b7d08b0777b2cde01d7465128704019b5a6e433f58bc17de6cf5fe52d7dfd4",
+        "sha256:9f161a29130a4c16afec562caa5c120f8da27c84aa662f53af7c072fb61782dd",
+        "sha256:d5f19500b37ce444353a8561f7d4217e5b450ac45b97f62cf73f1fe965b0f864",
+        "sha256:e699c0616f8c45c69c04bdb62490923f11aa7185f5aa98cae09e60fac63f6f16",
+        "sha256:e9fef61f6868dd98ff2d3f3c944bf08cc9656cac9c1c42ca6ac52d6bb1180a60"
+      ],
+      "reason": "The card now describes the formatter's converted-root, outside-root and unconverted-root tests.",
+      "sources": [
+        {
+          "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
+          "path": "mcp/tests/test_knowledge_file_canonical.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_file_canonical.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PR97KM",
+      "items": [
+        "sha256:1f1c2e274ffa45466249dc4fb43b2b0ccce69b15313e0d12492c00f4c898c551"
+      ],
+      "reason": "This module docstring describes the index selector and comparison-byte contracts registered with their executable constructs. It adds no independent obligation.",
+      "subject": "hunk:sha256:1f1c2e274ffa45466249dc4fb43b2b0ccce69b15313e0d12492c00f4c898c551"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SAP0M3",
+      "items": [
+        "sha256:2a37081b8268439fce8e0606658180f870262f9782c6deda6890d38adbb3408b"
+      ],
+      "reason": "The knowledge-reader route now explains why directory presence and coverage retain eligible hidden-directory cards.",
+      "sources": [
+        {
+          "blob": "587f7c66a2347f7f8fd2baa361cddeaeb6a5453c",
+          "path": "mcp/src/agents_remember/application/knowledge_reader/tree_coverage.py"
+        },
+        {
+          "blob": "cea9d89696b869613b28b77a0fada0d6372c4fda",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/base_cache.py"
+        },
+        {
+          "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+          "path": "mcp/src/agents_remember/application/memory_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TB7MFY",
+      "items": [
+        "sha256:418468b4f777eb5e5b595a3fb388e874276d98b701128115d8fbe15b636fd110"
+      ],
+      "reason": "The deletion removes a duplicate synthetic-directory filter. The retained file filter owns the generated-cache exclusion.",
+      "subject": "hunk:sha256:418468b4f777eb5e5b595a3fb388e874276d98b701128115d8fbe15b636fd110"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cd41fa3873133c9a2d33fcff29a356f294993f24",
+            "content": "sha256:9f0cd3eedd19c0e6fd8a45e36f940d5ec62bcb17498e970be5d217ad23a92571",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py"
+          },
+          "before": {
+            "blob": "90c178d21dac02b7f5589fbfc5443b679bdfc624",
+            "content": "sha256:2f99836721965ba499b03b38d5131c865967da7a43f25717f49677f6c5bd3840",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py"
+          },
+          "id": "RLZ-J2XFRR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-TE6SS0",
+      "items": [
+        "sha256:64da53f1d3fb67548957c0f1ffb9bd72075a760c0c21f300ad479ea9e1cb3f23"
+      ],
+      "reason": "The validator package now exports the shared knowledge-path exclusion. The initializer still loads validate_tree, whose validator module imports the reference-anchor rule and applies the same exact-pair blob and content checks, with the same publication refusal and sync or authoring repair-debt routes. The expanded input includes references under dot directories, and the same rule judges them. Preserve invariant revision 1 and its witnesses; re-anchor the touched initializer.",
+      "revision": 1,
+      "subject": "INV-033XSD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VMQDWM",
+      "items": [
+        "sha256:3d7fdb325282d1ee7e97f3ec3e79d302c0bd8d9745527c444c1c350799f4d3ba"
+      ],
+      "reason": "The card now states that bulk discovery includes eligible Markdown under dot directories and keeps explicit single-card selection.",
+      "sources": [
+        {
+          "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
+          "path": "mcp/src/agents_remember/memory/conversion/card_authoring.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/card_authoring.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W8VP8F",
+      "items": [
+        "sha256:9c21473d4b3fa208404fbde6593b38edeb73a747bcd054e4b3c4fcda682d7c21"
+      ],
+      "reason": "The card now explains dot-directory JSON discovery while retaining the census and Markdown comparison boundaries.",
+      "sources": [
+        {
+          "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge_index/tree.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XQS1KD",
+      "items": [
+        "sha256:6089f0aa91ecc80d731a30a5bef471cb47026c7afe3e8083d4ae3c81859170a4"
+      ],
+      "reason": "The import wires the shared predicate into the fallback count. The calling construct carries the count's path-selection behavior.",
+      "subject": "hunk:sha256:6089f0aa91ecc80d731a30a5bef471cb47026c7afe3e8083d4ae3c81859170a4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bf9a6bb1af3d34fcdba3e374012e26dff321e5e2",
+            "content": "sha256:27ca7311d6d7401fb40dabf95159591c3c5ded6eb32e897f584f8903b3e442b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_legacy_cards"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/legacy_cards.py"
+          },
+          "before": {
+            "blob": "86dcf9173a4e07e5e056b38f0aec2223cbc2814f",
+            "content": "sha256:ee93a535bd952fef0f778e273e3d67f3dc1bef7e23061f095bba75c6f1ed3eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_legacy_cards"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/legacy_cards.py"
+          },
+          "id": "RLZ-T6G3MN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XXH4Q0",
+      "items": [
+        "sha256:02d9821aef93592768fbd2bccb49499bec206fbd8efeaa22faec0249e6295986"
+      ],
+      "reason": "The first-baseline detector now checks readable Markdown below dot directories through the shared exclusion predicate. The legacy format signs, blocked-legacy-cards response, named card paths, stale-reference check and accept_drift boundary still have their existing meaning. The final run verifies the existing legacy-sign, drift, prose-mention and adopted-repository cases. Preserve revision 2 and re-anchor the detector.",
+      "revision": 2,
+      "subject": "INV-QR6DSA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y35GSP",
+      "items": [
+        "sha256:3c3f78dd9dbb4e224a11973dbed7c84351f745d1041947dae99980be96dcca22"
+      ],
+      "reason": "The exact validator fixture evidence now distinguishes carried migration debt and the rule registry from the ordinary report projection.",
+      "sources": [
+        {
+          "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
+          "path": "mcp/tests/test_converted_carryover.py"
+        },
+        {
+          "blob": "d2e45ab1ba49f6e29875047dcc9e6194fa4503e0",
+          "path": "mcp/tests/test_curator_card_layouts.py"
+        },
+        {
+          "blob": "d37eaf26135da54294fadefaa7de3a34990565b1",
+          "path": "mcp/tests/test_knowledge_census_files.py"
+        },
+        {
+          "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
+          "path": "mcp/tests/test_knowledge_file_canonical.py"
+        },
+        {
+          "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
+          "path": "mcp/tests/test_knowledge_index.py"
+        },
+        {
+          "blob": "4ca65397b8e96a8db7409c43db097e9532ba60e7",
+          "path": "mcp/tests/test_knowledge_validator.py"
+        },
+        {
+          "blob": "8c3d7127e9f29ec6f3774e36a1ed7c9f9b0939c5",
+          "path": "mcp/tests/test_knowledge_validator_routes.py"
+        },
+        {
+          "blob": "6ab05091b01f84c4711b9973d5b08e5467bdd92f",
+          "path": "mcp/tests/test_memory_attribution_producers.py"
+        },
+        {
+          "blob": "88fa96bd3c304e7d111e2e5cb3cabb11fc3d22df",
+          "path": "mcp/tests/test_memory_quality_source_files.py"
+        },
+        {
+          "blob": "346618fc1ffeaea60a35ac57fadcb471ac70984e",
+          "path": "mcp/tests/test_onboarding_trace_gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YAX1CK",
+      "items": [
+        "sha256:24bece611a79fa06dc3a7541df4e48f77eb76f09b5539a2e42f23378100e851a",
+        "sha256:2a2af794532c5a475c263485bcc08f8055497f3ef9173f4b879551a58a078912",
+        "sha256:3960032daed82b10480109ff16d42c15138925fecac303d9a3d5b04e2ec356fe",
+        "sha256:5caffb0637476a8d3673e582b24c943bd5d62e39e9b7d63eab8958f0dd44b6fe",
+        "sha256:7a8a3c83e939ba7e1877a8ca8ca80c93910fb2f01e88f6ce09cbe7c9a214f85f",
+        "sha256:a4d1c26cde99a40d214b5177593d7d2133ce30b6e2f5a6e9a7270063a0e25328",
+        "sha256:c2d0786f5c8fd9fd7f125994d33cda350b3b10c7653fdc5ceadfc252563a6e03",
+        "sha256:df4ace92a4b3b64b76a24a2670608d346f8efa56f6865a69704c52b7c4344c81",
+        "sha256:ecd83d294212c6025986d0e94dce4b0fc58f1140911258c77e6a879613846d4e"
+      ],
+      "reason": "The card now describes matching direct/Git inclusion and the workflow sidecar index result.",
+      "sources": [
+        {
+          "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
+          "path": "mcp/tests/test_knowledge_index.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_index.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YYHZD9",
+      "items": [
+        "sha256:05180edf266928b347a7bc1fb680c291ecf903f76001a34434d1bdf84da2731d",
+        "sha256:1932e8b8151fc91e92f9a3e93bac287a770fb5ba8ad36eac88938f69435bf463",
+        "sha256:2cb2f5b407d4233b6aea29884ed77970d8263f442ac55e17da9f1e0b20e62b27",
+        "sha256:95435f798d510fc16e2d24456666c7a81a335890c774a316ac21b708c1327856",
+        "sha256:d2358b99c64475d644f4eeda461afecf50ac14af82d73e57b5ecfb2f22bb6eb0",
+        "sha256:d2dab4023b2bd470becb147e89f6b243907f33f5bf6a316432b3784baa2903d2",
+        "sha256:d634056d19ed7ba4df9482c327e9f46d45278bc66933924f62fe04f0718f6f65"
+      ],
+      "reason": "The card now names writer and seeded workflow acceptance and the discarded v1 and v2 projections.",
+      "sources": [
+        {
+          "blob": "346618fc1ffeaea60a35ac57fadcb471ac70984e",
+          "path": "mcp/tests/test_onboarding_trace_gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_onboarding_trace_gate.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z68M50",
+      "items": [
+        "sha256:869f502b43ef7fc22326a7b695cf6bcd29b6468f7c7a48b96703837c78523cea"
+      ],
+      "reason": "The card now names the shared path predicate exposed by the package API.",
+      "sources": [
+        {
+          "blob": "cd41fa3873133c9a2d33fcff29a356f294993f24",
+          "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZPQYKT",
+      "items": [
+        "sha256:7da3d6e4dbde80189b7bc0af7ff1903b7f14c1c42364efa32eaa823101cce007"
+      ],
+      "reason": "The fixture materializes the same relative file at both branch sides to supply the exact dot-path carry-over proof. The branch setup carries no independent invariant.",
+      "subject": "hunk:sha256:7da3d6e4dbde80189b7bc0af7ff1903b7f14c1c42364efa32eaa823101cce007"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
+            "content": "sha256:59f849752ce2df7f7714eb4917d83048dc8ea423791bd2d2211216a85892943e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
+            },
+            "path": "mcp/tests/test_converted_carryover.py"
+          },
+          "before": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:1b77c7102d619e92795861dac4712a6cc902d38e355639c21713f63669ebb10a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
+            },
+            "path": "mcp/tests/test_converted_carryover.py"
+          },
+          "id": "PRF-6PH4K4"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZVWSQS",
+      "items": [
+        "sha256:0c9949b28e2e2cbfda9d7e74f214e89aa9871e16e6ab125d5cf750c7c45aa047"
+      ],
+      "reason": "The existing public carryover case now exercises an ordinary file card and an eligible workflow card below a dot directory. Both plans select a file-sidecar pair with current anchors, and both applies write the exact Markdown and JSON bytes. Pair selection and the existing code evidence tiers keep their meaning, so re-anchor the existing proof at revision 1.",
+      "revision": 1,
+      "subject": "INV-FPG5GW"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

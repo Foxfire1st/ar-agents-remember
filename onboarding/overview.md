@@ -686,4 +686,4 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
 - Carryover names file-sidecar, route-overview, memory-only-doc and entity-catalog candidates; its request supplies the code/source/target roots. Plan and apply require both memory roots to be converted and share the same conversion version; unconverted or mismatched memory is refused. [143]
 
-- Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing; ordinary leaf judgments and gated closeout own publication. [354]
+- Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing. The public apply proof covers eligible dot-directory pairs. Ordinary leaf judgments and gated closeout own publication. [354]

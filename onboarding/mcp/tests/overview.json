@@ -129,12 +129,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
+            "blob": "8c3d7127e9f29ec6f3774e36a1ed7c9f9b0939c5",
             "content": "sha256:be805a112edd340234e4ebb5ad4b0f04d2e9fdc9e035eabb18488204b5e41c08",
             "locator": {
-              "end": 488,
+              "end": 506,
               "kind": "line_range",
-              "start": 432
+              "start": 450
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },
@@ -775,10 +775,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
-            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
+            "blob": "4ca65397b8e96a8db7409c43db097e9532ba60e7",
+            "content": "sha256:bbd9c327613f4d68d165ad77f34e957df6c2dfee8dd1cbecbd97c50031c16083",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_forged_legacy_id_does_not_make_a_record_exported"
             },
             "path": "mcp/tests/test_knowledge_validator.py"
           },
@@ -862,7 +863,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "166a2dccebfa1bd1deeb7b24c7edd12b59e8193c",
+            "blob": "346618fc1ffeaea60a35ac57fadcb471ac70984e",
             "content": "sha256:72c2d974998cfde3b0a0c091f3a200ed3efff9a1aa87849c5c3c5ca9eff6f26a",
             "locator": {
               "end": 6,
@@ -1003,10 +1004,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
-            "content": "sha256:b40ae183cb29323e6722290d48381090cdf2409a64257c867483bc9824419d43",
+            "blob": "d37eaf26135da54294fadefaa7de3a34990565b1",
+            "content": "sha256:b0402d12fa11b2494a47ed1d8bddb00b6102b4a458c0b79a7de420e2c0317bbb",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_recorded_assessment_is_never_edited_and_a_correction_appends"
             },
             "path": "mcp/tests/test_knowledge_census_files.py"
           },
@@ -1053,7 +1055,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7164ce2913bb49a4a09c10b5a1e098e2f07ae21c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:c8d0758a2993716516d8d13d17f86d4c5bcf9a31877b3cb01af414839345552c",
             "locator": {
               "kind": "symbol",
@@ -1087,7 +1089,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7164ce2913bb49a4a09c10b5a1e098e2f07ae21c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:c8d0758a2993716516d8d13d17f86d4c5bcf9a31877b3cb01af414839345552c",
             "locator": {
               "kind": "symbol",
@@ -1118,14 +1120,15 @@
       ]
     },
     "1474": {
-      "note": "The baseline and the pinned report-only set.",
+      "note": "The based converted fixture passes with carried legacy debt. Registration pins the merge-report and migration-debt sets and contains zero plain report-only rules.",
       "targets": [
         {
           "anchor": {
-            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
-            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
+            "blob": "4ca65397b8e96a8db7409c43db097e9532ba60e7",
+            "content": "sha256:d38a0f24fa4613f25693a4f13d309e73b2f7e9a727c2f7031d6c735e9f3ba834",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_converted_fixture_tree_passes_every_rule"
             },
             "path": "mcp/tests/test_knowledge_validator.py"
           },
@@ -1138,7 +1141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
+            "blob": "8c3d7127e9f29ec6f3774e36a1ed7c9f9b0939c5",
             "content": "sha256:d73742d5ac37b6faa2d79865d288edaae714ac2231a2e8147bdc911c5fd9e969",
             "locator": {
               "kind": "symbol",
@@ -7242,7 +7245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7164ce2913bb49a4a09c10b5a1e098e2f07ae21c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:c8d0758a2993716516d8d13d17f86d4c5bcf9a31877b3cb01af414839345552c",
             "locator": {
               "kind": "symbol",
@@ -8981,7 +8984,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+            "blob": "88fa96bd3c304e7d111e2e5cb3cabb11fc3d22df",
             "content": "sha256:b9bcabd71b8ab10ddb36e9f12a806b2e2a18f7496d47536b238ebb6251655ae2",
             "locator": {
               "end": 62,
@@ -8994,12 +8997,12 @@
         },
         {
           "anchor": {
-            "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+            "blob": "88fa96bd3c304e7d111e2e5cb3cabb11fc3d22df",
             "content": "sha256:926ea048d078cdf0868a3638e490f777eaa5251c0e759defcfe1bcf41f15884d",
             "locator": {
-              "end": 246,
+              "end": 244,
               "kind": "line_range",
-              "start": 231
+              "start": 229
             },
             "path": "mcp/tests/test_memory_quality_source_files.py"
           },
@@ -9007,12 +9010,12 @@
         },
         {
           "anchor": {
-            "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+            "blob": "88fa96bd3c304e7d111e2e5cb3cabb11fc3d22df",
             "content": "sha256:fe192b4c13a3e9aedac140c517214cf4ade6e5a932113dcd1b3a7c99e5e584f0",
             "locator": {
-              "end": 345,
+              "end": 343,
               "kind": "line_range",
-              "start": 264
+              "start": 262
             },
             "path": "mcp/tests/test_memory_quality_source_files.py"
           },
@@ -9020,12 +9023,12 @@
         },
         {
           "anchor": {
-            "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+            "blob": "88fa96bd3c304e7d111e2e5cb3cabb11fc3d22df",
             "content": "sha256:fc9b5b9906f40313092dbd45de145bfb2f0b641a6e88438ed090f0a559cf6d2d",
             "locator": {
-              "end": 363,
+              "end": 361,
               "kind": "line_range",
-              "start": 348
+              "start": 346
             },
             "path": "mcp/tests/test_memory_quality_source_files.py"
           },
@@ -10138,7 +10141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eff75cfe71497b48d454a561d5d3aca2ae1159fe",
+            "blob": "6ab05091b01f84c4711b9973d5b08e5467bdd92f",
             "content": "sha256:0cd8b39f3acde071508327ad5f77d101895a87b7a830df54b50d26ed9b9dc074",
             "locator": {
               "end": 246,

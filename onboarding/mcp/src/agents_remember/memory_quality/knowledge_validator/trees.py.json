@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
         "content": "sha256:083c47bbcdf32fb13b088c4fa0e6cedeaee1982b7c66ae5b3caf76023e89547f",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
         "content": "sha256:9ac3b845fea5ca04fe41a003ac2e460cbe104bdfca98f9602462121f3475b174",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
         "content": "sha256:bc2984a5bce312feb5ea33efa1dbbfacec12c5a19e140135d506bc73322fc8ee",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,25 @@
     },
     {
       "anchor": {
-        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
+        "content": "sha256:b64063360060c01a18b98116b0cbc5c859009fd55e9d2beceda8f4c12e2ac41a",
+        "locator": {
+          "kind": "symbol",
+          "name": "knowledge_tree_from_git"
+        }
+      },
+      "id": "RLZ-GGS70A",
+      "invariant": "INV-EYSSS1",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 1",
+        "leaf": "261112-BUG-L24"
+      },
+      "rationale": "Selects the same knowledge paths from the regular blobs of the named Git tree.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
         "content": "sha256:bc2984a5bce312feb5ea33efa1dbbfacec12c5a19e140135d506bc73322fc8ee",
         "locator": {
           "kind": "symbol",
@@ -76,7 +94,25 @@
     },
     {
       "anchor": {
-        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
+        "content": "sha256:ef0476c376e3398128198803a442f843eadb3d9e45398c5e7b55c622aebcf907",
+        "locator": {
+          "kind": "symbol",
+          "name": "knowledge_tree_from_directory"
+        }
+      },
+      "id": "RLZ-NM1XR4",
+      "invariant": "INV-EYSSS1",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 1",
+        "leaf": "261112-BUG-L24"
+      },
+      "rationale": "Walks the knowledge and onboarding roots, includes ordinary dot directories under the existing traversal rules, and reads files admitted by the shared cache exclusion.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
         "content": "sha256:9226866b0e6aea01313acf27e9f5c63e7af01d3eab698717af76b7b21c91c92a",
         "locator": {
           "kind": "symbol",
@@ -94,7 +130,25 @@
     },
     {
       "anchor": {
-        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
+        "content": "sha256:16c71a5be091ef28e6bbc5e00c9c31757940febf3bbafadfc8e5518f3ffd0221",
+        "locator": {
+          "kind": "symbol",
+          "name": "is_excluded_from_knowledge"
+        }
+      },
+      "id": "RLZ-RXY583",
+      "invariant": "INV-EYSSS1",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 1",
+        "leaf": "261112-BUG-L24"
+      },
+      "rationale": "Defines the shared exclusion for generated route-index cache files.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
         "content": "sha256:f168e7c4ca8e967b8e0ead5a497a30f5ebeb9254fbb9354ea136c6519b5a65cd",
         "locator": {
           "kind": "symbol",
@@ -113,12 +167,12 @@
   ],
   "references": {
     "1": {
-      "note": "The shared exclusion predicate: cache files and hidden directories only.",
+      "note": "The shared exclusion predicate recognizes generated route-index caches.",
       "targets": [
         {
           "anchor": {
-            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
-            "content": "sha256:312f01489db650ccd1a6f99d36ea871efa7ddecdf6df5314c968292a8ec2e31a",
+            "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
+            "content": "sha256:16c71a5be091ef28e6bbc5e00c9c31757940febf3bbafadfc8e5518f3ffd0221",
             "locator": {
               "kind": "symbol",
               "name": "is_excluded_from_knowledge"
@@ -128,7 +182,7 @@
         },
         {
           "anchor": {
-            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
             "content": "sha256:b415f592f50a05e11543c7caf8ad45a8308c83244ef7bc9eb17ca7abd6b018c1",
             "locator": {
               "kind": "symbol",
@@ -140,14 +194,15 @@
       ]
     },
     "10": {
-      "note": "Only the history files of a commit that is not a comparison base.  Anchor: `history_tree_from_git`",
+      "note": "The history reader loads only files under knowledge/history/.",
       "targets": [
         {
           "anchor": {
-            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
-            "content": "sha256:1d565dc70a6799571f26b7358c170b127906c80d70fa5ec70d0a3feef7bca359",
+            "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
+            "content": "sha256:fdbba1495ad2b56c6c908dfb85dfc4275e6ea626edc1c6b71f06528bc1c0b757",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "history_tree_from_git"
             }
           },
           "kind": "code"
@@ -159,12 +214,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
             "content": "sha256:1cd7d74b478d57a2640924890747b4be3f1bb90a0ab21907c1077afd37519fe0",
             "locator": {
-              "end": 148,
+              "end": 138,
               "kind": "line_range",
-              "start": 138
+              "start": 128
             }
           },
           "kind": "code"
@@ -176,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
             "content": "sha256:bc2984a5bce312feb5ea33efa1dbbfacec12c5a19e140135d506bc73322fc8ee",
             "locator": {
               "kind": "symbol",
@@ -192,7 +247,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
             "content": "sha256:339aef4512e94345d3b3f1783fa1c390ed850f1962a1984f90b0e9652d447946",
             "locator": {
               "kind": "symbol",
@@ -208,10 +263,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
-            "content": "sha256:1d565dc70a6799571f26b7358c170b127906c80d70fa5ec70d0a3feef7bca359",
+            "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
+            "content": "sha256:934d292692824f50361c109cad7ebfe1eabcd84fbcd4442845e1e1ebf6d56213",
             "locator": {
-              "kind": "file"
+              "end": 202,
+              "kind": "line_range",
+              "start": 79
             }
           },
           "kind": "code"
@@ -236,12 +293,12 @@
       ]
     },
     "5": {
-      "note": "The directory reader prunes dot directories.",
+      "note": "The directory reader includes dot directories under both memory roots and excludes route-index caches.",
       "targets": [
         {
           "anchor": {
-            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
-            "content": "sha256:cdb1520662f37b5cf55a86f420d51b6e9bf672179b0670971cb603e64fceb945",
+            "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
+            "content": "sha256:ef0476c376e3398128198803a442f843eadb3d9e45398c5e7b55c622aebcf907",
             "locator": {
               "kind": "symbol",
               "name": "knowledge_tree_from_directory"
@@ -252,14 +309,16 @@
       ]
     },
     "6": {
-      "note": "The Git readers: regular files only, blobs read in one batch as exact bytes.  Anchor: `_tree_blobs` `knowledge_tree_from_git` `code_tree_from_git`",
+      "note": "Git tree selection keeps regular blobs, and the knowledge reader reads their exact bytes in one batch.",
       "targets": [
         {
           "anchor": {
-            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
-            "content": "sha256:1d565dc70a6799571f26b7358c170b127906c80d70fa5ec70d0a3feef7bca359",
+            "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
+            "content": "sha256:d091bc02036994f28d6e0aa9f570ff1f5c7862fefe5e29162fc783cf02f4fae8",
             "locator": {
-              "kind": "file"
+              "end": 301,
+              "kind": "line_range",
+              "start": 246
             }
           },
           "kind": "code"
@@ -267,15 +326,15 @@
       ]
     },
     "7": {
-      "note": "The formatter shares the predicate.",
+      "note": "The formatter uses the shared cache predicate and includes dot directories under converted knowledge and onboarding roots.",
       "targets": [
         {
           "anchor": {
-            "blob": "afce21dceaadba6f8064fc3dec3b80af7bccf765",
-            "content": "sha256:f92bfbf299e6245829812ffb5c6f0e29b453005a56e327d9120172061b11ab4a",
+            "blob": "e09b3eacede7c4b7bba1049696e3e1042aa0c9bf",
+            "content": "sha256:f2ca79362c322b5140484a1be3ead378e583235896169f6fcb4d5b6d1c57c2cc",
             "locator": {
               "kind": "symbol",
-              "name": "iter_json_files"
+              "name": "_directory_json_files"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_format.py"
           },
@@ -284,14 +343,15 @@
       ]
     },
     "8": {
-      "note": "A dot-named card and its sidecar are validated.\n\nAnchor: `test_a_dot_named_card_and_its_sidecar_are_validated`",
+      "note": "A dot-named card and its sidecar are validated.\n\nAnchor: “test_a_dot_named_card_and_its_sidecar_are_validated”",
       "targets": [
         {
           "anchor": {
-            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
-            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
+            "blob": "4ca65397b8e96a8db7409c43db097e9532ba60e7",
+            "content": "sha256:80e727d1ffcddb65ff7fa993fda2da6ff8815924859e52b706dc0690b10a5be7",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_dot_named_card_and_its_sidecar_are_validated"
             },
             "path": "mcp/tests/test_knowledge_validator.py"
           },
@@ -300,12 +360,12 @@
       ]
     },
     "9": {
-      "note": "The Git reader reads exact bytes, ignores the cache, and matches the directory reader.",
+      "note": "Git and directory snapshots both retain the workflow card and sidecar, exclude the cache, and expose the card’s missing reference to validation.",
       "targets": [
         {
           "anchor": {
-            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
-            "content": "sha256:fa057418ad5d31763eec79e6c14e24de4b3f34df2c76cb183b4ec5a9c34bc8cd",
+            "blob": "8c3d7127e9f29ec6f3774e36a1ed7c9f9b0939c5",
+            "content": "sha256:474fafcd5d4c64ab673941af60bdb8cd1c51bc92dd7a7915b75ec046d197575c",
             "locator": {
               "kind": "symbol",
               "name": "test_git_trees_are_read_exactly_and_the_route_index_cache_is_ignored"

@@ -14,7 +14,10 @@
 
 `test_a_merge_moved_row_refuses_at_leaf_publication` takes the same real moved-row merge into the leaf-publication validator and requires `R09-history-rows`, never the report-only merged spelling. Ordinary managed-sync merge treatment remains separate.
 
-- `test_git_trees_are_read_exactly_and_the_route_index_cache_is_ignored`: exact bytes through `read_git_blobs_bytes`, the cache and hidden directories skipped, a dot-named card read, and the directory and Git readers equal.
+- `test_git_trees_are_read_exactly_and_the_route_index_cache_is_ignored` checks exact Git blob bytes
+  and directory/Git reader parity. Both readers keep the dot-named card and the workflow card
+  and sidecar under a dot directory. The route-index cache stays excluded. The test requires a
+  named refusal for the workflow card’s planted marker.
 - `test_the_commit_route_adapter_refuses_naming_every_violation`: `GitKnowledgeValidation` over real commits: unconverted memory passes, a converted commit over an unconverted base is refused, an unreadable base is refused ("cannot read"), and a hand-added `[4]` is refused with its rendered line.
 - `test_the_worktree_route_never_commits_converted_memory_unvalidated`: `memory_commit_refusal` refuses with no bound validator, with no paired code commit, and for an unreadable (`"0"*40`) tree, and passes unconverted memory.
 - `test_the_managed_sync_refuses_a_merge_with_duplicate_ids_until_it_is_repaired`: a real `SyncFixture` sync is refused with `sync-knowledge-validation-refused` and the recovery line; `HEAD` is unchanged and `MERGE_HEAD` is the source; after `git rm` and a rerun, the sync completes with exact parents.
@@ -59,7 +62,7 @@ No configured live documentation source was available for this pass.
 
 The route cases.
 
-- The Git readers. [1]
+- Git and directory readers retain the same workflow card and sidecar under a dot directory. They retain a dot-named card and omit the route-index cache. The validator finds the planted marker error in the workflow card. [1]
 - The adapter and the worktree gate. [2]
 - The managed sync refusal and repair, and the conforming parallel sync. [3]
 - A sync merge refuses a history row only when the leaf's own side had it wrong (MIK-R09). [5]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "f02e677bea3b795aa6d72a53917f585e9bbebe28",
-    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
+    "codeTree": "ed769cabdb7274515cf681f7ad55b1bd1e724580",
+    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
     "role": "curator",
-    "statement": "The refresh guide still directs the reader from the context-packet action line to the complete drift counts in the recorded result.",
-    "task": "261112-BUG-L17",
+    "statement": "The named-card repair guidance still holds because selecting a card relative to onboarding and distinguishing mechanically moved anchors from stale content work the same for cards below dot directories.",
+    "task": "261112-BUG-L24",
     "uncommitted": true
   },
   "document": "docs/guides/refresh-stale-onboarding.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+      "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/conversion/card_authoring.py"
     },
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reference_anchors.py"
     },
     {
-      "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+      "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/memory_tools.py"
     },

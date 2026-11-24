@@ -72,7 +72,7 @@ The reference rules and their registration.
 - A hand-added marker without a reference is refused. [5]
 
 
-- The boundary example: one parent deleted a file the other's card cites. [6]
+- When a merge parent carries the anchor and the other deleted its code path, the merge reports the carried stale reference. [6]
 
 
 ### Cross-Repo References

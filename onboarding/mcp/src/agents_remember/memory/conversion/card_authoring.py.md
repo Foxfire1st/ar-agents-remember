@@ -38,7 +38,7 @@ on a converted tree) calls `author_card_references` to turn it into references.
 
 ### Conventions
 
-- `_cards` lists every `.md` under `onboarding/` outside dot-directories within the memory tree, or the one card `only` names (refused when it names no card). Hidden ancestors of the selected memory root do not hide that whole tree: filtering uses root-relative path parts.
+- `_cards` lists Markdown files under `onboarding/`, including files in dot directories. Bulk selection applies the shared knowledge exclusion predicate to memory-root-relative paths. An explicit `only` selects one existing Markdown card.
 - The authored finding's markers are escaped (`escape_markers`) so a literal `[n]` in the finding is not read as a
   reference.
 
@@ -89,10 +89,10 @@ No configured live documentation source was available for this pass.
 - A re-authoring is refused while another evidence line still cites its number. [5]
 - The sidecar a card without one gets. [6]
 
-- The fixer calls this module on a converted tree, scoped to one document when one is named. [7]
+- Converted citation fixing authors the references of the selected card. A document list applies that operation to each named card. [7]
 
 
-- Tree-wide enumeration excludes hidden entries relative to the memory root, not hidden ancestors outside that root. [11]
+- Bulk enumeration visits Markdown under onboarding, including dot directories, and applies the shared predicate to memory-root-relative paths. An explicitly named Markdown card follows its own selection path. [11]
 
 - Two tables with no blank line between them are refused when either holds citations. [8]
 - A delimiter row: every cell three dashes or more. [9]

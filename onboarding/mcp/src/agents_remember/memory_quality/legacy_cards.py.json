@@ -4,8 +4,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "86dcf9173a4e07e5e056b38f0aec2223cbc2814f",
-        "content": "sha256:ee93a535bd952fef0f778e273e3d67f3dc1bef7e23061f095bba75c6f1ed3eb9",
+        "blob": "bf9a6bb1af3d34fcdba3e374012e26dff321e5e2",
+        "content": "sha256:27ca7311d6d7401fb40dabf95159591c3c5ded6eb32e897f584f8903b3e442b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "find_legacy_cards"
+        }
+      },
+      "id": "RLZ-G4HV2F",
+      "invariant": "INV-S4WA6F",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 3 bulk readers",
+        "leaf": "261112-BUG-L24"
+      },
+      "rationale": "Scans readable legacy cards across onboarding directories.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bf9a6bb1af3d34fcdba3e374012e26dff321e5e2",
+        "content": "sha256:27ca7311d6d7401fb40dabf95159591c3c5ded6eb32e897f584f8903b3e442b2",
         "locator": {
           "kind": "symbol",
           "name": "find_legacy_cards"
@@ -27,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86dcf9173a4e07e5e056b38f0aec2223cbc2814f",
+            "blob": "bf9a6bb1af3d34fcdba3e374012e26dff321e5e2",
             "content": "sha256:72142bff26b074df513dcae41fc6d4e668a50dabc7c3086d96949a1ac09b4d65",
             "locator": {
               "kind": "symbol",
@@ -39,12 +57,12 @@
       ]
     },
     "2": {
-      "note": "Discovery is root-relative, sorted, Markdown-only and leaves unreadable-file handling to its callers.",
+      "note": "Discovery scans sorted onboarding Markdown, including dot-directory cards. It skips I/O read errors. Invalid UTF-8 raises a decoding error.",
       "targets": [
         {
           "anchor": {
-            "blob": "86dcf9173a4e07e5e056b38f0aec2223cbc2814f",
-            "content": "sha256:ee93a535bd952fef0f778e273e3d67f3dc1bef7e23061f095bba75c6f1ed3eb9",
+            "blob": "bf9a6bb1af3d34fcdba3e374012e26dff321e5e2",
+            "content": "sha256:27ca7311d6d7401fb40dabf95159591c3c5ded6eb32e897f584f8903b3e442b2",
             "locator": {
               "kind": "symbol",
               "name": "find_legacy_cards"
