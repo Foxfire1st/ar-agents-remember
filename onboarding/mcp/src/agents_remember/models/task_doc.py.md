@@ -17,6 +17,8 @@
 
 ### Current Contract
 
+`TaskDocResponse` admits optional warning text, including the notice from a recorded review whose step-up advice could not read settings.
+
 TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Removed-read refusal permits missing parsed identity only for ok=false/code=operation-removed; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional `masterSync` carries its error, masterDocPath and renderedPath fields; updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused.
 
 ### Logic
@@ -190,3 +192,5 @@ Source: mcp/src/agents_remember/models/task_doc.py
 
 
 - TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Removed-read refusal permits missing parsed identity only for ok=false/code=operation-removed; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional `masterSync` carries its error, masterDocPath and renderedPath fields; updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused. [7]
+
+- The strict response accepts optional warning text. [14]

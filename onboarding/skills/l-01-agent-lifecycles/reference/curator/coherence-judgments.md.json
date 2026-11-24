@@ -1,13 +1,33 @@
 {
   "path": "skills/l-01-agent-lifecycles/reference/curator/coherence-judgments.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0933522e58be01db918406b80d48e1bc7e5d4822",
+        "content": "sha256:c1bc82c219d78ddd1220a4533b8605d77cb1200678efdb51cc9f5e615e5f8df1",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-B7V3KF",
+      "invariant": "INV-J0B614",
+      "origin": {
+        "handoffEntry": "BUG-R25@v1 part 1",
+        "leaf": "261112-BUG-L25"
+      },
+      "rationale": "Defines evidence, reuse and current candidate verification for every judgment set.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The full catalog projection is not a leaf gate.\n\nAnchor: `finalFullCatalog`",
       "targets": [
         {
           "anchor": {
-            "blob": "10513955b43f3b4b2afbc651d7f9c1cc30d72893",
+            "blob": "0933522e58be01db918406b80d48e1bc7e5d4822",
             "content": "sha256:3eccdc6857969670abcb463c2ce4d191ef34b5da2460233c56e89002ec287720",
             "locator": {
               "end": 5,
@@ -20,14 +40,48 @@
       ]
     },
     "2": {
-      "note": "Publication binds the requirement revision, delivery attempt and per-judgment evidence file.\n\nAnchor: `semantic_requirement_revision`",
+      "note": "Publication binds the requirement revision, delivery attempt and per-judgment evidence file.",
       "targets": [
         {
           "anchor": {
-            "blob": "10513955b43f3b4b2afbc651d7f9c1cc30d72893",
+            "blob": "0933522e58be01db918406b80d48e1bc7e5d4822",
             "content": "sha256:f0f2207a22acf6f48c623f3efa1db797c23dd6f01645a793c6ad0c771f77362a",
             "locator": {
-              "end": 7,
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The disposition table defines each judgment outcome.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0933522e58be01db918406b80d48e1bc7e5d4822",
+            "content": "sha256:c7d491241ca00eb89db934ac97631fadb65457e26c5c7e7838ef7c92bace1685",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Read evidence for each prepared surface and resolve every judgment. Carry a judgment only after confirming from current evidence that its surface and evidence are unchanged. A change to the surface, evidence or disposition requires a fresh judgment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0933522e58be01db918406b80d48e1bc7e5d4822",
+            "content": "sha256:bfb0791702980c0c366fc85e0c9fc17c9b1fabdd95d1573c5e6071c2b9fe9c0d",
+            "locator": {
+              "end": 9,
               "kind": "line_range",
               "start": 7
             }
@@ -36,17 +90,17 @@
         }
       ]
     },
-    "3": {
-      "note": "The disposition table defines each judgment outcome.\n\nAnchor: `capture-candidate`",
+    "5": {
+      "note": "Preparation supplies the report for checking both trees and the candidate-set digest. A matching binding permits direct publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "10513955b43f3b4b2afbc651d7f9c1cc30d72893",
-            "content": "sha256:c7d491241ca00eb89db934ac97631fadb65457e26c5c7e7838ef7c92bace1685",
+            "blob": "0933522e58be01db918406b80d48e1bc7e5d4822",
+            "content": "sha256:78c87113fa6799c7a657f0d71e3ec52164d36ac5ae732b8ad7187a804505f8a1",
             "locator": {
-              "end": 19,
+              "end": 11,
               "kind": "line_range",
-              "start": 9
+              "start": 11
             }
           },
           "kind": "code"

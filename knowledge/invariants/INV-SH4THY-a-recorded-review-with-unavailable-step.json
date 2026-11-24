@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The response schema accepts the warning and the write projection retains it for fitting. The registered tool test exercises both delivery forms and validates the stored original."
+  },
+  "applicability": "Successful task_doc record_review results with remaining findings and a warning from unreadable step-up settings.",
+  "conditions": [
+    "The review has already been recorded.",
+    "The shared overflow fitter retains as much warning text as the answer bound allows and signals a cut."
+  ],
+  "exclusions": [
+    "The original warning in a whole result is independent of short-form truncation.",
+    "Other causes of warning and review refusal conditions are outside this obligation."
+  ],
+  "id": "INV-SH4THY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_doc_review_public.py::test_recorded_review_answer_keeps_settings_warning"
+      ],
+      "path": "L25-current-ingest.json"
+    },
+    "handoffEntry": "BUG-R25@v1 part 2",
+    "leaf": "261112-BUG-L25",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A recorded review with unavailable step-up settings keeps the successful outcome and its warning in the whole response, the write projection and the short answer.",
+  "status": "proposed",
+  "supersedes": []
+}

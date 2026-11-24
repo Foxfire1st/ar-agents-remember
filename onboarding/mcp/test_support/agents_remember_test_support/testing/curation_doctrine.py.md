@@ -28,7 +28,7 @@ in which the sentence is a defect **when it returns**, and it keeps a retained d
 developer request still governs full code quality and full tests — from reading as a regression.
 
 `CURATION_POLICY_STATEMENTS` names only `operations/curation.md` and `roles/curator.md`.
-The operation tuple declares its complete-curation rule, the `prepare`, `publish`, `validate` order, the complete check set with a per-check result, the full `memory_quality_check` operation, repair or escalation of every Curator-actionable finding, the repeat-until-ready condition and the coherence continuation. The Curator role tuple declares two pointer sentences that send the reader to the operation's complete-curation-checks and authority-gates sections before it acts, each naming the tool it asks for (`memory_quality_check` and `curator_coherence` on `agents-remember-task`).
+The operation tuple declares its complete-curation rule, the successful-preparation, per-candidate or empty publication, and validation sequence, the complete check set with a per-check result, the full `memory_quality_check` operation, repair or escalation of every Curator-actionable finding, the repeat-until-ready condition and the coherence continuation. The Curator role tuple declares two pointer sentences that send the reader to the operation's complete-curation-checks and authority-gates sections before it acts, each naming the tool it asks for (`memory_quality_check` and `curator_coherence` on `agents-remember-task`).
 `missing_curation_policy_statements` reports a missing file or a file that lacks any one of its
 declared clauses; a source passes only when every declared clause is present.
 The canonical test checks every marker, while exact generated-copy byte equality is the
@@ -118,7 +118,10 @@ This card uses repository-owned code and test references and invokes no sibling-
 
 - The required-rule table names the exact clauses each compact curation source must state, keyed by shipped path. [2]
 
-- The operation tuple carries `COMPLETE_CURATION_RULE` and the six other curation clauses; the Curator tuple carries two pointer sentences into the operation's sections. [8]
+
+
+- The operation tuple carries `COMPLETE_CURATION_RULE` and the six other curation clauses, including publication with one judgment per candidate or an empty list; the Curator tuple carries two pointer sentences into the operation's sections. [8]
+
 - A compact source passes only when every declared clause is present. [9]
 
 

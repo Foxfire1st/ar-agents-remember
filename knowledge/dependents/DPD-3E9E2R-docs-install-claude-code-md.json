@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6584649caa95199219a959979b0491a095d0d6a9",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "93057354d8e50736992889cbf7edeb4a8166f21c",
+    "commit": "c54f3316c39204306abde7213c87ba9dd78bd0a4",
     "role": "curator",
-    "statement": "The Claude Code guide's implicit Bootstrap and explicit Claude selection still agree with the offered provider. The ordinary Claude launch retains the server_info grant on its own task server.",
-    "task": "261112-BUG-L31",
+    "statement": "The Claude Code guide still accurately describes explicit Claude selection, implicit Bootstrap and the ordinary seat’s server_info grant, which use launch bindings separate from the recorded-review warning projection.",
+    "task": "261112-BUG-L25",
     "uncommitted": true
   },
   "document": "docs/install/claude-code.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon_config.py"
     },
     {
-      "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+      "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
