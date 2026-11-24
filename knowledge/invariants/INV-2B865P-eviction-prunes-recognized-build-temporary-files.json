@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The eviction cases exercise an active local path, a live builder in another process, a reaped process and ambiguous filenames with a live PID."
+  },
+  "applicability": "Cleanup of recognized knowledge-index build temporary files during cache eviction.",
+  "conditions": [
+    "A registered local temporary path is retained.",
+    "For any unregistered recognized path, only ProcessLookupError from the PID probe establishes absence.",
+    "A live, reused or indeterminate PID leaves the file in place."
+  ],
+  "exclusions": [
+    "Ordinary age and size eviction of SQLite files.",
+    "The builder’s own cleanup.",
+    "Unrecognized temporary names."
+  ],
+  "id": "INV-2B865P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_index_build_identity.py::test_eviction_removes_dead_builder_temp_and_keeps_live_builder_temp, mcp/tests/test_knowledge_index_build_identity.py::test_eviction_keeps_registered_and_ambiguous_current_pid_temps, mcp/tests/test_knowledge_index_build_identity.py::test_two_processes_share_one_cold_index"
+      ],
+      "path": "full-ingest.json"
+    },
+    "handoffEntry": "BUG-R23@v1 rule 3",
+    "leaf": "261112-BUG-L23",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Eviction prunes recognized build temporary files only when their owners are known to be gone.",
+  "status": "proposed",
+  "supersedes": []
+}

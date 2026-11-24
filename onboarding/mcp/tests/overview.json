@@ -1053,7 +1053,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "blob": "7164ce2913bb49a4a09c10b5a1e098e2f07ae21c",
             "content": "sha256:c8d0758a2993716516d8d13d17f86d4c5bcf9a31877b3cb01af414839345552c",
             "locator": {
               "kind": "symbol",
@@ -1087,10 +1087,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
-            "content": "sha256:028af42e654053e9c70b5bdd1411098600d33892c4478532a7757df1fdff6063",
+            "blob": "7164ce2913bb49a4a09c10b5a1e098e2f07ae21c",
+            "content": "sha256:c8d0758a2993716516d8d13d17f86d4c5bcf9a31877b3cb01af414839345552c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_file_failing_its_schema_marks_the_index_partial_and_is_named"
             },
             "path": "mcp/tests/test_knowledge_index.py"
           },
@@ -7241,10 +7242,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
-            "content": "sha256:028af42e654053e9c70b5bdd1411098600d33892c4478532a7757df1fdff6063",
+            "blob": "7164ce2913bb49a4a09c10b5a1e098e2f07ae21c",
+            "content": "sha256:c8d0758a2993716516d8d13d17f86d4c5bcf9a31877b3cb01af414839345552c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_file_failing_its_schema_marks_the_index_partial_and_is_named"
             },
             "path": "mcp/tests/test_knowledge_index.py"
           },
@@ -10439,12 +10441,12 @@
       ]
     },
     "1839": {
-      "note": "test_knowledge_index_build_identity.py declares focused checks for loaded-build cache isolation, unknown-build non-reuse and same-build reuse after a process restart; this is source-described coverage, not a new test execution.",
+      "note": "The build-identity tests cover loaded-build isolation, reuse after restart, private unknown-build reads, cold lookup contention, failure and retry, and temporary-file eviction.",
       "targets": [
         {
           "anchor": {
-            "blob": "2bb0153ad1ec85bfd16714cae0945fc706106681",
-            "content": "sha256:a031d26f5fd5de8454c5c2eaa6a0f5ea5f7a4791a5744e18abb41b8728f83805",
+            "blob": "544c37c322180c6c245802bb0f9de5e02d7e6260",
+            "content": "sha256:13bf5f463d64f838bf11645228e88f778ef7d09b3995989401c813d3dfe30861",
             "locator": {
               "kind": "file"
             },

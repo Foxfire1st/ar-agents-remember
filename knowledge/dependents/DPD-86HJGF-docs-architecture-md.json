@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "fb12aee86865d66f4af23d54ffc5918b1cba66c3",
-    "commit": "3450a1a1552db524bdbace93c3992311a778a53e",
+    "codeTree": "711779a641b574d228218fbfe9ba70e6a05c81e0",
+    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
     "role": "curator",
-    "statement": "The architecture guide accurately describes receipt-backed dashboard registry reconciliation and the private storage and recorded comparisons used by read-side review.",
-    "task": "261112-BUG-L21",
+    "statement": "The architecture guide correctly places the disposable SQLite index outside Git working trees and limits reuse to the selected text tree and the loaded build’s source digest.",
+    "task": "261112-BUG-L23",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
+      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -122,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
-        "content": "sha256:c953503aa6afe66c046070e4713c0438b86ccab1d9e76a42e4cf596ea1ad226a",
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:5e934e7c35e4b849bc5713c201ec85cee9227fc4aff9ce16b0331e69779ca539",
         "locator": {
           "kind": "symbol",
           "name": "KnowledgeIndexCache"

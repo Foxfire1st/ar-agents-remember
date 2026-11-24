@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "711779a641b574d228218fbfe9ba70e6a05c81e0",
+    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
     "role": "curator",
-    "statement": "The reference correctly states where the leaf's comparison bases come from and which memory commit establishes ancestry in live and pair judgments.",
-    "task": "261112-BUG-L21",
+    "statement": "The reference correctly describes recorded-base ancestry for leaf worklists and known-build cold lookup coordination, including both lock acquisition exceptions and eviction of abandoned build files.",
+    "task": "261112-BUG-L23",
     "uncommitted": true
   },
   "document": "docs/reference/knowledge-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -268,8 +268,8 @@
     },
     {
       "anchor": {
-        "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
-        "content": "sha256:c953503aa6afe66c046070e4713c0438b86ccab1d9e76a42e4cf596ea1ad226a",
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:5e934e7c35e4b849bc5713c201ec85cee9227fc4aff9ce16b0331e69779ca539",
         "locator": {
           "kind": "symbol",
           "name": "KnowledgeIndexCache"
@@ -301,6 +301,45 @@
       "blob": "e3948d3c81258cf0fe5cb1c4855dcdddc8d3b152",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_worklist/recorded_base.py"
+    },
+    {
+      "anchor": {
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:7dcebc5be7932e9974e6e8a3ae261d8b3207c1233f7a82133a1527cb2ff0ab9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache._lookup"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+      },
+      "heading": "Derived index and reads",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:dc62fc59e55fa8633279c7d7d9fd2673e579221133fdf4fb58fbfe1967157349",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache._build_cold"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+      },
+      "heading": "Derived index and reads",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:58acd08123b6a50374b98c6e2791ad55d22c234aa4083439191c8f2d5445c600",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache._prune_temporary"
+        },
+        "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+      },
+      "heading": "Derived index and reads",
+      "kind": "anchor"
     }
   ]
 }
