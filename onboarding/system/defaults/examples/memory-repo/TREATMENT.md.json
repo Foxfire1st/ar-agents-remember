@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8c8a2e946dfeb8c463793106ccc3339d1d17af9f",
-        "content": "sha256:d0d5c52098a4416361eb345da77e73b9a8cadaf2c57e8cd116cf055ae4c95bb2",
+        "blob": "b33501754d27f14834f1e990dad121cfb504724d",
+        "content": "sha256:fb661353b246b9eca9c445ac70be05f1eb795c9f73c03a2c1a3ef3ed49840af0",
         "locator": {
           "kind": "file"
         }
@@ -15,22 +15,58 @@
         "handoffEntry": "BUG-R13@v1 rule 3 — text carries the content",
         "leaf": "261112-BUG-L13"
       },
-      "rationale": "The shipped example treatment is the memory design text the rule governs; it now says the essay leads and figures respond.",
+      "rationale": "The example treatment connects the completed evidence essay to a central driven figure and full still content.",
       "role": "unclassified"
     }
   ],
   "references": {
     "1": {
-      "note": "The example treatment presents an essay that carries the full explanation. Figures support the essay where they help. The still form preserves the whole explanation.",
+      "note": "The example requires a complete still explanation and a figure the reader drives through the central mechanism, marked intended for a planned comparison. The dashboard quiet control has dashboard scope.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c8a2e946dfeb8c463793106ccc3339d1d17af9f",
-            "content": "sha256:3a03c77f852bbfb0fc5243682a5a21383dde45b181736176906303cc03002917",
+            "blob": "b33501754d27f14834f1e990dad121cfb504724d",
+            "content": "sha256:f48a37123263e83d8bbb34d5716c1f824f098baab8b9e1c778e1e251497d1aad",
             "locator": {
-              "end": 40,
+              "end": 21,
               "kind": "line_range",
-              "start": 20
+              "start": 10
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b33501754d27f14834f1e990dad121cfb504724d",
+            "content": "sha256:1ea26000b1bbc8a543f5d5d4a9796a1acc6d9b3b280f5f2960fdfb1b8203439a",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b33501754d27f14834f1e990dad121cfb504724d",
+            "content": "sha256:7fd40b62917bb1d542258e005b19d518f983e075c16bcf6d6f3f00d665f5a165",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b33501754d27f14834f1e990dad121cfb504724d",
+            "content": "sha256:78333a1a094626b4ceb14b7a3d1d583c26ba769a4f60ab94b6ed30ae52c5488c",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 146
             }
           },
           "kind": "code"

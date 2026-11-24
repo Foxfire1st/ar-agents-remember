@@ -66,13 +66,13 @@ the run, in eight ordered beats:
 
 - One real temporary world per case, `TemporaryDirectory` cleanup in `tearDown`, and the module is
   marked `pytestmark = pytest.mark.integration` (code line 48).
-- Registered in the **integration** lane of `mcp/tests/test-evidence-lanes.toml` (row 718). That
+- Registered in the **integration** lane of `mcp/tests/test-evidence-lanes.toml` (row 722). That
   manifest is fail-closed — `load_lane_manifest` derives the repository's actual test modules and
   refuses a manifest that omits one — so an unregistered module is a hard load failure.
 - The complete lifecycle catalog declares five exact artifact-consumer relationships:
-  `_user_settings_guard.py` (`:451`), `checkpoint_landing_test_support.py` (`:1052`),
-  `curator_coherence_test_support.py` (`:1228`), the Node `package-lock.json` fixture
-  (`:2843`) and `writer_worklist_test_support.py` (`:4829`). These declarations
+  `_user_settings_guard.py` (`:454`), `checkpoint_landing_test_support.py` (`:1082`),
+  `curator_coherence_test_support.py` (`:1258`), the Node `package-lock.json` fixture
+  (`:2879`) and `writer_worklist_test_support.py` (`:4948`). These declarations
   establish dependency ownership, not runtime consumption or execution. The coherence
   support is reached transitively through `QueueFixture`; the current
   `closeout_input_test_support.py` exact-consumer list does not name this module.

@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
         "content": "sha256:1f73e4b8b876fd17aeaea5ee1d51a0dd37966bb39079cba48c47c3d0cedc06ba",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
-        "content": "sha256:90282a7f64911198aee6ce9675174723c5a11b6eab1a19085b35b360d3428b6e",
+        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "content": "sha256:7f77b8a90fd7125587e866f73ffef13f43c2a38e0ec966ceac3a895b975c07c3",
         "locator": {
           "kind": "symbol",
           "name": "_read_result"
@@ -40,7 +40,26 @@
     },
     {
       "anchor": {
-        "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "content": "sha256:f438162ccd63fb40a29c5ac4b8387e1141de50565bb0283c031d24771971cb17",
+        "locator": {
+          "end": 112,
+          "kind": "line_range",
+          "start": 110
+        }
+      },
+      "id": "RLZ-AEN404",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Carries separate DOM observation and loaded asset names in the staged load result.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
         "content": "sha256:5505812c0632523c3a24e23a476a842aba3f4221b29c9aefc30e1d4b43dadf08",
         "locator": {
           "kind": "symbol",
@@ -58,7 +77,63 @@
     },
     {
       "anchor": {
-        "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "content": "sha256:3e6b62e146caa2247625e0566f72f378995ba9511dcaebd039fb04f47da2cead",
+        "locator": {
+          "end": 132,
+          "kind": "line_range",
+          "start": 117
+        }
+      },
+      "id": "RLZ-AP5KNB",
+      "invariant": "INV-ES66EB",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §1 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "The load report explains a failure to observe visible text, controls or graphics.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "content": "sha256:f5965fdb0136c51741052066af5b9ddaa1d8739eec0e974861ec6f4a326acdc1",
+        "locator": {
+          "end": 109,
+          "kind": "line_range",
+          "start": 96
+        }
+      },
+      "id": "RLZ-BYMD1Q",
+      "invariant": "INV-ES66EB",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §1 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Carries whether the ordinary load observed visible page content alongside checked page status.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "content": "sha256:12a0488932a37386c68e0f954ea3a34a67c8494547e925794ac57bba63938243",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observed_faults"
+        }
+      },
+      "id": "RLZ-DC213B",
+      "invariant": "INV-9C8QB5",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §2",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Replaces reduced_motion_ok and motion_faults/motion_hints gating with visible_content_ok so moving pages pass without motion remarks while blank/unpainted documents still fail.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
         "content": "sha256:0fc710c93f5f9507b15a3a212bd84f320be74141d10a63a89101cffe0cef03e6",
         "locator": {
           "kind": "symbol",
@@ -76,8 +151,8 @@
     },
     {
       "anchor": {
-        "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
-        "content": "sha256:9ac4b3136a9fcffa906316c9a0efed30f5aa918ea51cc147fcf81d65d4127252",
+        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "content": "sha256:f66dc5798d1cb133835e860bfa8b2361cc5c0a3fc767284902c35c5040c346af",
         "locator": {
           "kind": "symbol",
           "name": "BrowserProspectiveLoad"
@@ -89,22 +164,60 @@
         "handoffEntry": "MIK-R104-r14-readiness-and-load",
         "leaf": "260928-MIK-L104"
       },
-      "rationale": "The load is the second, stronger gate; it stages the exact bytes and loads them once in the selected browser.",
+      "rationale": "Stages the selected bytes for the ordinary model-free browser load. A separately run advisory sweep can record interaction coverage without changing eligibility.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "content": "sha256:340f9c28363c88858e6c1d2d6e4fabb65b3edc70cdf72edfaa954cb2f8b6ac3f",
+        "locator": {
+          "end": 575,
+          "kind": "line_range",
+          "start": 548
+        }
+      },
+      "id": "RLZ-NKSYG9",
+      "invariant": "INV-ES66EB",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §1 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Visible-content faults and other observed failures can downgrade a nominally loaded result before publication.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "content": "sha256:f168df9e7e16261dfff1b3f35f774aa4703d41e7e81a2d4bfedfa471263bec1f",
+        "locator": {
+          "end": 181,
+          "kind": "line_range",
+          "start": 161
+        }
+      },
+      "id": "RLZ-NMF7FS",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Accepts and reads optional browser inventory observations for the report.",
+      "role": "support"
     }
   ],
   "references": {
     "3": {
-      "note": "The Python reader accepts separate basis-reference and claim-ID string inventories and validates them and the static part map against the bound packet.",
+      "note": "The Python reader validates separate basis and claim inventories and the marked parts against the static part map and bound packet. Loaded assets and DOM inventory are separate observations.",
       "targets": [
         {
           "anchor": {
-            "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
-            "content": "sha256:9d02a3cbfe4859632e3738ff3e13709cf906abcd99ad9978da8c1610cd477660",
+            "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+            "content": "sha256:bff505b3b1e71c7ed11618f163c3f9681a6fb7b69dcf29d7c08ee643dab952eb",
             "locator": {
-              "end": 521,
+              "end": 545,
               "kind": "line_range",
-              "start": 464
+              "start": 467
             }
           },
           "kind": "code"
@@ -116,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+            "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
             "content": "sha256:5505812c0632523c3a24e23a476a842aba3f4221b29c9aefc30e1d4b43dadf08",
             "locator": {
               "kind": "symbol",
@@ -132,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+            "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
             "content": "sha256:0d6456514f9007f9521244994aa78ad90166a551b7679ef0177a74c264273b5d",
             "locator": {
               "kind": "symbol",

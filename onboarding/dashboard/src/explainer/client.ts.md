@@ -4,6 +4,8 @@
 
 [Route overview](../overview.md)
 
+The state reader prefers the host workspace ID when it appears in available payload shapes. The legacy path fallback supports an older response that has no host ID.
+
 ## Purpose
 
 The explainer's four routes as the dashboard reads and posts them: one state read and the Send, Update and Retire presses, each answer parsed into the shape the column draws.

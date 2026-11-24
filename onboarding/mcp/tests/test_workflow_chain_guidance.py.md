@@ -108,7 +108,7 @@ Every call goes through the **production entry point** — a registered tool ove
 `call` returns a three-way arm (`RAISED ToolError` with rendered detail text, `RAISED <Exception>` with no payload, or
 `RETURNED` with `structuredContent`), so "did it raise" is itself the measurement.
 
-The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:641-641`, inside
+The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:645-645`, inside
 the array opening at `:5-5`). Registry placement is a source fact, not this survey’s collection
 or execution evidence.
 

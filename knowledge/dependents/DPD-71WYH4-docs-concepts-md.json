@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "711779a641b574d228218fbfe9ba70e6a05c81e0",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
+    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
     "role": "curator",
-    "statement": "The knowledge-index entry correctly describes a derived SQLite cache outside Git, reuse by loaded source digest and selected memory tree, and knowledge writes to the text tree.",
-    "task": "261112-BUG-L23",
+    "statement": "The concepts guide follows the private task copies, report provenance, supplied starters and exemplar, and staged essay and figures to a page with reference-based kit carry, a reader-driven central mechanism and complete still content.",
+    "task": "261124-EXP-L1",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
     },
     {
-      "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+      "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
       "kind": "file",
       "path": "dashboard/src/cockpit/Cockpit.tsx"
     },
@@ -146,7 +146,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+      "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
@@ -301,7 +301,7 @@
       "path": "mcp/src/agents_remember/canvas/kit.py"
     },
     {
-      "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+      "blob": "a5ef51116eced20249c8e763ec01115b9e6e5d76",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
     },
@@ -424,12 +424,12 @@
       "kind": "anchor"
     },
     {
-      "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+      "blob": "13cf3b30543d7aa5f15a6e42b3993580c1986ab3",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
     },
     {
-      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+      "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },

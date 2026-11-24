@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "49fab585ece9c48d13a6335c031e727fb70954b0",
-    "commit": "0f86cb870b8e828165dfce88b0f0be1cc4f6ab47",
+    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
+    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
     "role": "curator",
-    "statement": "The features page still describes deterministic citation repair and build-and-tree cache identity on the synchronized code, which counts eligible dot-directory cards while retaining the loaded-build namespace and shared eviction policy.",
-    "task": "261112-BUG-L24",
+    "statement": "The features overview describes the private evidence-bearing essay before figure design and page assembly, with a reader-driven central mechanism and a complete still form.",
+    "task": "261124-EXP-L1",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -290,7 +290,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+      "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     }

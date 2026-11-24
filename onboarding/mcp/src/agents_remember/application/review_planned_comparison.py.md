@@ -17,7 +17,7 @@ The application tier's composition point for the explainer routes: it re-exports
 
 ## Evidence
 
-- The application adapters reach serving as one injected value, not a module-global binding [1]
+- The application ports give serving the frame, evidence, comparison and optional revision inventory readers. [1]
 - A frame area that cannot be measured reports itself unavailable with its limit, not a partial sum [2]
 - Re-admission marks a missing source unavailable and a changed one changed [3]
 - The watcher's capture and lane ports are bound beside the explainer's own [4]

@@ -4,6 +4,8 @@
 
 [Route overview](overview.md)
 
+The workspace paths name separate starter and exemplar reference copies. The folder-copy helper can omit top-level names when seeding a draft, and the workspace provenance reader supplies the host workspace ID to the HTTP responses.
+
 ## Purpose
 
 Where one leaf's explainer environment lives: its folder outside every worktree and task folder, its generation counter, its one lock, its receipts, and the confinement every path below it passes.

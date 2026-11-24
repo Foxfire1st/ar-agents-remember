@@ -768,12 +768,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
             "content": "sha256:e4d997ab0b0bec4730706a3c282ac7e68b2edc63aeceac66ed02965fcc8b6eb1",
             "locator": {
-              "end": 216,
+              "end": 217,
               "kind": "line_range",
-              "start": 194
+              "start": 195
             },
             "path": "mcp/src/agents_remember/serving/explainer_routes.py"
           },

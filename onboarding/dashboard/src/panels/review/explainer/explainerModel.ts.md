@@ -24,4 +24,4 @@ The pure decisions behind the explanation page — labels, phase, shown and comp
 - The removal set excludes the pinned revision and any already removed one [3]
 - Only the task total's refusal offers the removal control [4]
 - The regeneration label and message are built from the stale parts and stale grades, and absent when nothing is stale [5]
-- The standfirst states time, revision, binding, kind and retirement from the shown row [6]
+- The shown revision supplies time, binding, kind and retirement in the standfirst. Its known interaction coverage and inventory can add their own summary. [6]

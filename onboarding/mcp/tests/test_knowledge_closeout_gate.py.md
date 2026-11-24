@@ -11,7 +11,7 @@ route (18 top-level test definitions and 1,361 physical source lines by static i
 one family (`INV-AAAAAA` with entries on `land` and `keep` in `pkg/a.py`, `INV-BBBBBB` with `sibling` in `pkg/b.py`),
 the official `main` line in both repositories and the leaf's own `leaf` branches, so the parent line's memory tip and
 the leaf's own memory commits are different commits. Registered in the `unit-regression` lane
-(`test-evidence-lanes.toml:220`). The fixture world is module-local, by the dependency-ownership census's rule (a
+(`test-evidence-lanes.toml:223`). The fixture world is module-local, by the dependency-ownership census's rule (a
 separate support module was an unregistered evidence artifact on the worker's first integration run);
 `test_knowledge_gate_routes.py` imports it.
 

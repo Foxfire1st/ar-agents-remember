@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "HTML media attributes and static marks are checked in readiness. The ordinary load covers dynamic marks and the sweep reports bounded observations. The tests distinguish admissible motion from actual media or evidence failures and unvisited controls."
+  },
+  "applicability": "Readiness, ordinary browser load and advisory interaction passes for a staged explainer revision.",
+  "conditions": [
+    "The static check and ordinary load protect the bound assets, evidence, claims, media controls and visible content.",
+    "An incomplete interaction sweep reports unvisited controls and passes as advisory coverage."
+  ],
+  "exclusions": [
+    "Dashboard interface effects preferences.",
+    "The separate physical-byte admission for publication."
+  ],
+  "id": "INV-ES66EB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_readiness.py::test_css_motion_passes_static_readiness_while_html_media_controls_stay_enforced; mcp/tests/test_canvas_motion.py::test_js_inserted_bad_evidence_reference_fails_in_browser; mcp/tests/test_canvas_motion.py::test_js_inserted_valid_citation_and_claim_pass_in_browser; mcp/tests/test_canvas_motion.py::test_interactive_sweep_deadline_keeps_unvisited_out_of_errors"
+      ],
+      "path": "EXP-L1 independent curated records and source judgments"
+    },
+    "handoffEntry": "EXP-R01@v2 §1",
+    "leaf": "261124-EXP-L1",
+    "task": "261124-EXP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Static readiness and interactive browser checks protect reader safety, honesty, and access without failing ambitious pages for using motion, kit libraries, canvas, SVG, or many controls.",
+  "status": "proposed",
+  "supersedes": []
+}

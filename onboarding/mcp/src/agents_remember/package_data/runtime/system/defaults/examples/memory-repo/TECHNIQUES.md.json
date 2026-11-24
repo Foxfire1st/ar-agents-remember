@@ -3,16 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The shipped example offers a technique where it helps an essay part.",
+      "note": "The example lists interactive techniques and still forms. It gives the Sandbox the default under D931 and treats inline evidence marks as part of the line rhythm.",
       "targets": [
         {
           "anchor": {
-            "blob": "93688e4f1d6ffe3b73a531ed9faca32ffed0daea",
-            "content": "sha256:2d1ba9a0e5cc44fc323b5ffb8174612bc92a56c6c03f41cbcd8217e9ee84ae50",
+            "blob": "d159b0d826963248b5cd432e0ad5b196eadcd053",
+            "content": "sha256:07ed41084a6f93159754a3bd1c973dad3a1166cfe7c1b26213aa45993bafb22a",
             "locator": {
-              "end": 15,
+              "end": 12,
               "kind": "line_range",
-              "start": 1
+              "start": 3
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d159b0d826963248b5cd432e0ad5b196eadcd053",
+            "content": "sha256:a22278215e028d550bda7f9d7b51626197239ccceb5cab2386c081ee06705488",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 48
             }
           },
           "kind": "code"

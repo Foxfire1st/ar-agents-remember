@@ -48,7 +48,7 @@ The three cases:
 The module imports exactly two names — `TerminalResult` and `terminal_result_blockers` — from the validator, with no test-support import. This direct import shape does not establish absence of evidence-catalog dependencies: the catalog declares this module as a consumer of the global user-settings guard and Node lockfile artifacts. Its five helpers construct typed terminal results or plain snapshot dictionaries for the assertions.
 
 **The current lane registration is the manifest row**: this module carries **no `pytestmark`** and appears in
-`unit-regression` at `mcp/tests/test-evidence-lanes.toml:606`. Membership selects evidence and establishes no execution.
+`unit-regression` at `mcp/tests/test-evidence-lanes.toml:610`. Membership selects evidence and establishes no execution.
 
 
 ### Invariants And Boundaries
@@ -108,7 +108,7 @@ The earlier failure text and L14 attribution remain historical. The current [] a
 > The earlier leaf’s recorded append-at-end account describes its historical catalog, not the current row position.
 > The earlier append-only registration was recorded at historical `mcp/tests/test-evidence-lanes.toml:192`; that source-epoch coordinate is not current navigation.
 
-The current unit-regression selector is line 606; the old 599 locator is mechanically refreshed, while the original 192 registration account is preserved as history.
+The current unit-regression selector is line 610; the old 599 locator is mechanically refreshed, while the original 192 registration account is preserved as history.
 
 ## Evidence
 

@@ -56,7 +56,7 @@ keeps guidance to the same contract, and withholds guidance to another contract.
 Plain module-level pytest functions plus the small builders and stubs above them
 (`_Contract` supplies the closed-result fixture); no `unittest`, no `pytest` marks, so the
 module is in the default selection and its lane is **`unit-regression`**
-(`mcp/tests/test-evidence-lanes.toml:455`). The address fixtures share `OWN`, `OWN_ENCLOSURE` and `OTHER`.
+(`mcp/tests/test-evidence-lanes.toml:459`). The address fixtures share `OWN`, `OWN_ENCLOSURE` and `OTHER`.
 
 ### Invariants And Boundaries
 

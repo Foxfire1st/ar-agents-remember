@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
+    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
     "role": "curator",
-    "statement": "The evidence-system description still matches the manifests, which place the new leaf-memory-base case in unit regression and register its shared supports.",
-    "task": "261112-BUG-L21",
+    "statement": "The evidence-system design’s lane and lifecycle assignments still describe the three new canvas suites and the browser helper shared by the two browser suites.",
+    "task": "261124-EXP-L1",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+      "blob": "7b3a681aa4f34a13b8739cc19381ce0ea2b6be7b",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+      "blob": "9d55d258c73dae1ed32d177e81fce8db61565447",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

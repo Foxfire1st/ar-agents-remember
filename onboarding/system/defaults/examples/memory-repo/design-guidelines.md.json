@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The example guides typography, layout and interaction. The markup keeps the full explanation readable before script runs.",
+      "note": "The example asks the designer and reviewer to operate the central figure with keyboard and narrow widths, read the full explanation in the initial markup and apply reduced-motion and quiet checks to dashboard surfaces.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6fd48dd2f87ea00a05732e61a0e9fb4c8415ec3",
+            "blob": "e00c9570947763da3c5ec25d37720793382ec4e8",
             "content": "sha256:5ea8549734a2615dfd834eea8a27efc2f75a1ca3edf5ad21e2d7831dc4bf8249",
             "locator": {
               "end": 7,
@@ -19,24 +19,36 @@
         },
         {
           "anchor": {
-            "blob": "e6fd48dd2f87ea00a05732e61a0e9fb4c8415ec3",
-            "content": "sha256:573542a29a3920ef501d07e30df30da3db21b0c6bea59468d9ab79835255ab2f",
+            "blob": "e00c9570947763da3c5ec25d37720793382ec4e8",
+            "content": "sha256:1989de357d6616588cfea39b223a2f3a824666857d42a0a273140b3f2164ab36",
             "locator": {
-              "end": 72,
+              "end": 76,
               "kind": "line_range",
-              "start": 60
+              "start": 69
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e6fd48dd2f87ea00a05732e61a0e9fb4c8415ec3",
-            "content": "sha256:1145ac2924a2a502a6106b7415942a74f0d0b8bd582968788b9e70e1216ca06d",
+            "blob": "e00c9570947763da3c5ec25d37720793382ec4e8",
+            "content": "sha256:b1c199f464876c8ec051720f3af4f39ca2f183aa7a96e9485ee4e9ba7822a620",
             "locator": {
-              "end": 99,
+              "end": 110,
               "kind": "line_range",
-              "start": 90
+              "start": 93
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00c9570947763da3c5ec25d37720793382ec4e8",
+            "content": "sha256:a20b43a476cb0b4eb89d84833dbcfc9b3554fa725799243e078a001b77d63a08",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 138
             }
           },
           "kind": "code"

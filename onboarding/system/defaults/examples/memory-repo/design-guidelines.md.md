@@ -20,4 +20,4 @@ The obligation above is the whole of what this file must keep true; the route ac
 
 ## Evidence
 
-- The example guides typography, layout and interaction. The markup keeps the full explanation readable before script runs. [1]
+- The example asks the designer and reviewer to operate the central figure with keyboard and narrow widths, read the full explanation in the initial markup and apply reduced-motion and quiet checks to dashboard surfaces. [1]

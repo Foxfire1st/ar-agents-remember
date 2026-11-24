@@ -53,13 +53,13 @@ coordination root the other closeout boundary suites use. It drives production o
 `_problem`, because the classification decision is the subject rather than a public surface.
 
 The module is registered in the **integration** lane of
-`mcp/tests/test-evidence-lanes.toml:684`. It composes the real `QueueFixture` over
+`mcp/tests/test-evidence-lanes.toml:688`. It composes the real `QueueFixture` over
 temporary Git repositories and drives production graph admission and projection.
 The complete `mcp/tests/evidence-lifecycle.toml` declares four exact artifact
-consumer relationships: `_user_settings_guard.py` (`:205`),
-`curator_coherence_test_support.py` (`:1177`),
-`fixtures/repository_profiles/node/package-lock.json` (`:2597`) and
-`writer_worklist_test_support.py` (`:4811`). These declarations are dependency
+consumer relationships: `_user_settings_guard.py` (`:208`),
+`curator_coherence_test_support.py` (`:1207`),
+`fixtures/repository_profiles/node/package-lock.json` (`:2633`) and
+`writer_worklist_test_support.py` (`:4930`). These declarations are dependency
 ownership accounting, not proof of runtime consumption, execution or acceptance.
 The shared coherence support is reached transitively through `test_closeout_queue`,
 which imports `curator_coherence_test_support` and `test_worktree_support`; the latter

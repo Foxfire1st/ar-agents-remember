@@ -217,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "346cd25bf8a0d1a81e469e397609156fbc51826c",
+            "blob": "6c09da3948b2789d46d7aa0df59aae7fd7a34eda",
             "content": "sha256:605afa8968090b3428a7975ba8dd3513ea93e4e7d250f74bda7955bd3eaa0282",
             "locator": {
               "end": 338,
@@ -230,12 +230,12 @@
         },
         {
           "anchor": {
-            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
             "content": "sha256:6454816986269d0c04eebe083e9a2ebb78d741102690320e150f6e0a57651328",
             "locator": {
-              "end": 110,
+              "end": 111,
               "kind": "line_range",
-              "start": 70
+              "start": 71
             },
             "path": "mcp/src/agents_remember/serving/explainer_routes.py"
           },
@@ -243,12 +243,12 @@
         },
         {
           "anchor": {
-            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
             "content": "sha256:e4d997ab0b0bec4730706a3c282ac7e68b2edc63aeceac66ed02965fcc8b6eb1",
             "locator": {
-              "end": 216,
+              "end": 217,
               "kind": "line_range",
-              "start": 194
+              "start": 195
             },
             "path": "mcp/src/agents_remember/serving/explainer_routes.py"
           },

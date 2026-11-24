@@ -7,9 +7,10 @@
   },
   "applicability": "Every retained explanation revision and every staleness answer the review page shows.",
   "conditions": [
-    "A part id satisfies the shared part-id grammar and is not the reserved whole-page id.",
-    "A claim belongs to one part and every claim of the revision belongs to a part.",
-    "Staleness is computed per basis, so a part is stale when one of its claims' bases moved."
+    "A part ID satisfies the shared grammar and is not the reserved whole-page ID.",
+    "A claim belongs to one part and every claim of a mapped revision belongs to a part.",
+    "A part is stale when one of its claims’ bases moved.",
+    "A store caller can supply separate revision limits. The default explainer has no per-revision file or byte ceiling."
   ],
   "exclusions": [
     "A revision stored before part maps, which is answered whole-page.",
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L102",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A retained revision carries the part map readiness admitted for it, and a staleness answer names each stale part with the reason its claim bases moved, falling back to the whole page when a revision holds no usable part map or holds a stale claim no part admits; a revision's bounds are bytes per revision and bytes per task, the lineage and revision-count ceilings are gone, and a retained revision leaves the store only through the developer's removal control.",
+  "statement": "A retained revision carries its admitted part map. Staleness names affected parts and the reasons their claim bases moved, with a whole-page answer when the revision has no usable part map or a stale claim belongs to no part. The task-wide byte cap governs default explainer publication. A retained revision leaves the store only through the developer’s removal control.",
   "status": "proposed",
   "supersedes": []
 }

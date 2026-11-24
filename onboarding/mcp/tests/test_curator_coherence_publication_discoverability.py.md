@@ -68,13 +68,13 @@ The module imports the production declaration rather than a copy (`PUBLICATION_M
 set and the shape validator that refuses them cannot drift apart. `_CONTRACT_PATH` (`:52`) is a real
 enclosure-shaped path, and `_REFUSAL_PREFIX` (`:53`) is asserted before being stripped. The module
 carries **no `pytestmark`**; its current lane declaration is `unit-regression` at
-`mcp/tests/test-evidence-lanes.toml:134`. The former card recorded append-only
+`mcp/tests/test-evidence-lanes.toml:137`. The former card recorded append-only
 registration at its earlier source epoch; this is not a claim that the current row
 was appended at the end of the catalog. Its direct imports include `agents_remember`
 models, `pydantic` and `pytest`; direct imports do not determine the complete governed
 consumer population. The merged `mcp/tests/evidence-lifecycle.toml` declares this module
-on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py` at line 237
-and `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2629.
+on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py` at line 240
+and `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2665.
 These are catalog declarations, not fresh collection or execution evidence.
 
 ### Invariants And Boundaries

@@ -4,6 +4,8 @@
 
 [Route overview](overview.md)
 
+The common revision-row shape can carry an inventory summary or omission for that revision when the frame reader supplies it. The frame manifest and recorded or planned comparison semantics stay independent of these fields.
+
 ## Purpose
 
 Pure task-document, series-contract and frame-manifest helpers for planned comparisons and page rows — the vocabulary both serving and application read without either importing the other.

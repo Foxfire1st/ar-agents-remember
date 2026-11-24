@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4e2b7861807756639324908d7a400831e20dc28c",
-    "commit": "3450a1a1552db524bdbace93c3992311a778a53e",
+    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
+    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
     "role": "curator",
-    "statement": "The setup guide’s Bootstrap and dashboard opening sequence remains current with registry recovery, and its refusal guidance explains how to find an omitted detail and select an offered harness.",
-    "task": "261112-BUG-L22",
+    "statement": "The setup guide still directs the reader to Retry when the embedded chat control is unavailable, while a transient unavailable agent during a selected chat open has its own bounded retry path.",
+    "task": "261124-EXP-L1",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
+      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts"
     },
     {
-      "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+      "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
       "kind": "file",
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },

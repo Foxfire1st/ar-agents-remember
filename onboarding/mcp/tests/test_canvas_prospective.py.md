@@ -4,6 +4,8 @@
 
 [governing route overview](overview.md)
 
+The fixture covers visible-content eligibility, advisory interactions and the distinct DOM and loaded-asset inventories. Its bound document has the normal revision binding without an effects field or dataset bridge.
+
 ## Purpose
 
 The prospective load before publication: a failed or unavailable load refuses publication and keeps the last ready revision, a loaded revision publishes exactly the assets the loader saw, and the static check never stands in for a load.

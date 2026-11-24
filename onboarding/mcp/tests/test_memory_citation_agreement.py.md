@@ -54,7 +54,7 @@ rather than reach for a checkout that may not exist on the machine running them
 (`live_onboarding_root`, `:268-279`), and the mechanism cases build their worlds under
 `tempfile.TemporaryDirectory`.
 
-The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:330`), so the module is in
+The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:333`), so the module is in
 the **default selection** and the unit population a full run collects — it is not an integration-only
 or manually-invoked lane. The surviving live budget/worklist/heading cases additionally require `AR_ONBOARDING_ROOT` to name a
 memory tree ; without it they skip, and the retained mechanism cases still enforce their own budget/heading derivations. **A green lane run is therefore never evidence that the pins

@@ -10,7 +10,7 @@
 (11 named test definitions).** The core comparison reopens base and candidate trees from two temporary Git repositories with `reopened_trees`.
 The failure cases can supply a tree ID Git cannot read. The focused route test binds a stub port, while the live-leaf
 route and dataset cases use the `world` fixture imported from `test_review_git_trees.py`. Registered in the
-`unit-regression` lane (`mcp/tests/test-evidence-lanes.toml:520`).
+`unit-regression` lane (`mcp/tests/test-evidence-lanes.toml:524`).
 
 ## Code Commentary
 

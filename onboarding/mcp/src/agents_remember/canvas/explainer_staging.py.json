@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_staging.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "93c2214a895b14359c03ec975657f74a7870895f",
+        "content": "sha256:fff10a135292558fce5817916add015b7838c93cca2e6c0dbd9e020387e30404",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_published_inventory"
+        }
+      },
+      "id": "RLZ-GKS0GJ",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Reads the typed publication and any constructed inventory, uses stored or guarded persistence outcomes, and records a saved omission under the caller’s task lock.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "93c2214a895b14359c03ec975657f74a7870895f",
+        "content": "sha256:f69f46c5d984f2352e87061cc1b673850374fb8cd8d06d27428d351c98312e79",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_working_directory"
+        }
+      },
+      "id": "RLZ-YTS48X",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Owns request-scoped publish staging allocation, preservation, and reclamation so retries preserve active staged bytes and concurrent renders never clobber one another.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Request staging preserves active draft ownership during allocation and cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93c2214a895b14359c03ec975657f74a7870895f",
+            "content": "sha256:593d42506e436e26f69cffdc04bd3fe63cd3e141f61a83dfd9178507dc4ff02b",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

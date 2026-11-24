@@ -36,15 +36,29 @@
       ]
     },
     "13": {
-      "note": "The static readiness check refuses a page that names something its revision does not carry.",
+      "note": "Static readiness checks subresource containment and availability and verifies any draft kit assets against shipped bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
-            "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+            "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+            "content": "sha256:d9d0bc21723a5a058e6badce5473bd3ad067fa63a87f3a1ff22471559d8597c9",
             "locator": {
-              "kind": "symbol",
-              "name": "check_page"
+              "end": 202,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/canvas/readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+            "content": "sha256:529f73ba8da4fb47078f91a4dba2a9eeeba3b89a4a0e4738c3bbccf4043e6a18",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 448
             },
             "path": "mcp/src/agents_remember/canvas/readiness.py"
           },
@@ -109,12 +123,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
-            "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+            "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+            "content": "sha256:2f6dba4c2388a559af96ff7ebc318e5bb32679e422495f794b8d9569b85f5471",
             "locator": {
-              "end": 528,
+              "end": 328,
               "kind": "line_range",
-              "start": 498
+              "start": 250
             },
             "path": "mcp/src/agents_remember/canvas/readiness.py"
           },

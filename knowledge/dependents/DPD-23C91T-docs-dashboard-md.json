@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
+    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
     "role": "curator",
-    "statement": "The Operations table requires an open session for helper-only work and for a declared wait with an armed check still within its grace period. A task pauses when known host activity shows neither work nor waiting.",
-    "task": "261112-BUG-L20",
+    "statement": "The dashboard guide’s manual Retry still reloads the unavailable embedded chat control, including after the addition of a bounded retry for the selected agent and workspace, and the Effects control still applies to the dashboard.",
+    "task": "261124-EXP-L1",
     "uncommitted": true
   },
   "document": "docs/dashboard.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+      "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
       "kind": "file",
       "path": "dashboard/src/cockpit/Cockpit.tsx"
     },
@@ -116,7 +116,7 @@
       "path": "dashboard/src/cockpit/roleChatResult.ts"
     },
     {
-      "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+      "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
       "kind": "file",
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },

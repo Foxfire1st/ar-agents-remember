@@ -1,0 +1,63 @@
+{
+  "path": "mcp/src/agents_remember/application/review_frame_usage.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c4676e33b11bf37eaf88d520dca2f7b1dd7442b6",
+        "content": "sha256:d9ff8f03d62b26dcf1f314172fe57c2dab110386e3fa94900d0c577c5ef60532",
+        "locator": {
+          "end": 122,
+          "kind": "line_range",
+          "start": 91
+        }
+      },
+      "id": "RLZ-5SDDTQ",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Combines retained revision directories, drafts and pointer, reclamation and seat-generation metadata for one lineage.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c4676e33b11bf37eaf88d520dca2f7b1dd7442b6",
+        "content": "sha256:22d4caeac06e0c15877419e55dac9f31c675c14959f269ec02b8f438f2f26a66",
+        "locator": {
+          "end": 145,
+          "kind": "line_range",
+          "start": 125
+        }
+      },
+      "id": "RLZ-A0CZQ3",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Totals the metered lineage usage across task leaves and frames after checking path containment.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Revision usage counts the files stored under the admitted revision directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4676e33b11bf37eaf88d520dca2f7b1dd7442b6",
+            "content": "sha256:a7c6b4b748e89d51918df9e4ccdd73191d99476ef05f4bd29407b6e7b60f4904",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -10,7 +10,7 @@ The model-free load of a prospective revision before its ready pointer moves. It
 
 ## Code Commentary
 
-- `BrowserProspectiveLoad.load` refuses a path that leaves the staging directory, runs the child once, and treats an unreadable answer as an unavailable load rather than a pass.
+- `BrowserProspectiveLoad.load` refuses a path that leaves the staging directory, runs the ordinary load, and treats an unreadable answer as an unavailable load. An optional separate diagnostic process records interaction coverage.
 - Before it stages a run folder, `load` calls `_browser_unready`: a load that runs on the product's own Node asks `canvas.explainer_browser` to make the module and Chromium ready, and a refusal becomes an `unavailable` load named `browser` with nothing published and no run folder left behind. A caller that names its own `node` is an instrumented load: it brings its own browser and nothing is fetched for it. The browser the load used travels in `ProspectiveResult.browser` and in the render answer.
 - A `loaded` answer that names its own faults is downgraded, so a pass cannot contradict its own observations.
 - `StaticProspectiveLoad` stands in a load's place and says so, which keeps the difference between a static check and a real load visible.
@@ -29,4 +29,4 @@ The Python reader accepts the browser’s full basis-reference and claim-ID stri
 - The load makes the product's browser ready before it stages a run folder, and a load that names its own Node fetches nothing. [4]
 - The browser the load used travels in the load's result. [5]
 
-- The Python reader accepts separate basis-reference and claim-ID string inventories and validates them and the static part map against the bound packet. [3]
+- The Python reader validates separate basis and claim inventories and the marked parts against the static part map and bound packet. Loaded assets and DOM inventory are separate observations. [3]

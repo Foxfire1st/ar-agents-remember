@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ce6ff51ceff24cba0157410140585c0ba80a0203",
-    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
+    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
+    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
     "role": "curator",
-    "statement": "The kit design still separates the static readiness check for a kit page or a plain page from the separate Chromium load.",
-    "task": "261112-BUG-L13",
+    "statement": "The kit design describes references contained relative to the referring file, automatic carry of shipped bytes, companions and notices, verification of draft kit bytes and private use of the supplied specimens.",
+    "task": "261124-EXP-L1",
     "uncommitted": true
   },
   "document": "docs/design/canvas-kit.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/canvas/kit.py"
     },
     {
-      "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+      "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/readiness.py"
     },
@@ -41,7 +41,7 @@
       "path": "mcp/tests/test_canvas_kit.py"
     },
     {
-      "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+      "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/prospective.py"
     },
@@ -64,6 +64,30 @@
       "blob": "eb15c8f953dacb85aa2b7a13e76144c934012484",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_browser.py"
+    },
+    {
+      "anchor": {
+        "blob": "27db2f3972496d714e9d6401b99f11335432d2a4",
+        "content": "sha256:ff463f4efb55d1b6b3ee7195f450829f3cb910d89bc8a13a0b2ab8d40003fc08",
+        "locator": {
+          "kind": "symbol",
+          "name": "verify_kit_assets"
+        },
+        "path": "mcp/src/agents_remember/canvas/kit_references.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "27db2f3972496d714e9d6401b99f11335432d2a4",
+        "content": "sha256:2f1741b05140672e77d03d7b088a5e4f512e7b0f36d86407dd2f45c6337dc005",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_kit_references"
+        },
+        "path": "mcp/src/agents_remember/canvas/kit_references.py"
+      },
+      "kind": "anchor"
     }
   ]
 }

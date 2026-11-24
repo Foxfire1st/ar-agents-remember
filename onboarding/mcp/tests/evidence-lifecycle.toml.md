@@ -2,7 +2,7 @@
 
 ## Current paired source contract — scoped assertions and incoming catalogs
 
-The current parsed catalog declares 18 contracts and 120 artifacts. The recorded leaf memory-base test is an exact consumer of the canonical user-settings guard, portable Node lockfile and read-boundary oracle support. The bounded native tool-server memory contract names the stdio regression as its executable evidence and the corpus, fixture, driver and receipt reader as its permanent support. Compared with base91bb7e2d, L57 adds two permanent integration/local-composition shared supports: `review_curator_fixture_support.py`, with three consumers and an integrity-rejection replacement node, and `reviewer_leaf_view_support.py`, with five consumers and a real-child-parity replacement node. The current catalog declares three exact consumers for `review_curator_fixture_support.py` and eight for `reviewer_leaf_view_support.py`. The latter includes `test_review_validation_reuse.py`. The merged A3 snapshot had three and seven. Eight existing artifact consumer lists change; that earlier delta preserved then-existing non-consumer fields and contract rows. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
+The current parsed catalog declares 18 contracts and 121 artifacts. The recorded leaf memory-base test is an exact consumer of the canonical user-settings guard, portable Node lockfile and read-boundary oracle support. The bounded native tool-server memory contract names the stdio regression as its executable evidence and the corpus, fixture, driver and receipt reader as its permanent support. Compared with base91bb7e2d, L57 adds two permanent integration/local-composition shared supports: `review_curator_fixture_support.py`, with three consumers and an integrity-rejection replacement node, and `reviewer_leaf_view_support.py`, with five consumers and a real-child-parity replacement node. The current catalog declares three exact consumers for `review_curator_fixture_support.py` and eight for `reviewer_leaf_view_support.py`. The latter includes `test_review_validation_reuse.py`. The merged A3 snapshot had three and seven. Eight existing artifact consumer lists change; that earlier delta preserved then-existing non-consumer fields and contract rows. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
 
 The held catalog declares consumers for held queues, native retirement, role_start_set, comparison changesets, the citation/quality/packaging shaped memory-tool row modules, coherence file transport, takeover and uv-minimum bootstrap modules. The permanent tool_answer_l110_rows support has an artifact declaration and a replacement test node. The role-agent and role-message declarations remain on the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime rows, and the settings-guard and Node-lockfile rows also declare the four native-attention modules, with `test_attention_native_inputs.py` declared on the Paseo-runtime row. test_paseo_role_agents.py is declared on settings-guard, Node-lockfile and Paseo-runtime; test_role_message_files.py on those three plus Paseo-launch; test_role_message_wording.py on Node-lockfile. These are present catalog declarations, not a source-diff account or evidence of invocation. Node-lockfile membership follows the syntactic dependency oracle and does not by itself establish use of that particular fixture. The existing nine Doc14 fixture rows and validator support also declare `test_mik_r53_judgment_rows.py` and `test_mik_r53_report_only_rules.py`; writer support declares judgment_rows and onboarding_gate; the Node lockfile row declares all three. This extends consumer reachability only, not artifact/contract identity, lane assignment or execution.
 
@@ -77,12 +77,12 @@ The current artifact paths and every exact consumer list are canonically sorted.
 
 The current Node-lockfile artifact still declares native reapply and now also task-document Order; membership alone proves no invocation.
 
-Native reapply and task-document Order remain declared on the existing Node lockfile artifact; task-document Order also remains on the settings guard. Declarations and canonical ordering establish no invocation or acceptance. The current parsed inventory is 18 contracts/120 artifacts.
+Native reapply and task-document Order remain declared on the existing Node lockfile artifact; task-document Order also remains on the settings guard. Declarations and canonical ordering establish no invocation or acceptance. The current parsed inventory is 18 contracts/121 artifacts.
 
 
 ### Current Contract
 
-The current source TOML declares 18 contract rows and 120 artifact rows, including the retained `canvas-host-and-presenter-cases` contract and its shared-support artifact. The retired closeout fixture-support artifact is absent from this current catalog. The remaining R111 shaped-row support retains its declaration and replacement contract. Counts are source inventory, not executed catalog validation or acceptance.
+The current source TOML declares 18 contract rows and 121 artifact rows, including the retained `canvas-host-and-presenter-cases` contract and its shared-support artifact. The retired closeout fixture-support artifact is absent from this current catalog. The remaining R111 shaped-row support retains its declaration and replacement contract. Counts are source inventory, not executed catalog validation or acceptance.
 Native source-reference currency alone cannot establish semantic correspondence.
 
 
@@ -226,7 +226,7 @@ The catalog declares the grant, dashboard, direct-leaf integration/role-start an
 
 ## Task-Document Order Consumer
 
-`mcp/tests/test_task_document_order.py` is an exact declared consumer of both `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and the canonical support artifact `mcp/tests/_user_settings_guard.py`. The current parsed inventory has 18 contracts and 120 artifacts (the retained canvas contract and shared-support artifact included). These registrations change consumer membership, not artifact identity, lifetime, fidelity, replacement contract or other metadata. TOML declaration/parsing is not fixture use, loader or test execution.
+`mcp/tests/test_task_document_order.py` is an exact declared consumer of both `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and the canonical support artifact `mcp/tests/_user_settings_guard.py`. The current parsed inventory has 18 contracts and 121 artifacts (the retained canvas contract and shared-support artifact included). These registrations change consumer membership, not artifact identity, lifetime, fidelity, replacement contract or other metadata. TOML declaration/parsing is not fixture use, loader or test execution.
 
 
 - Existing Node package-lock artifact includes test_task_document_order.py as an exact consumer; no new artifact/contract or executed invocation is inferred.
@@ -249,7 +249,7 @@ The derived lifecycle catalogue registers `test_review_evidence_packet.py` and `
 
 ## Composed consumer selection
 
-The composed catalog still declares 18 contracts and 120 artifacts. The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules declared in the lane catalog. The Paseo runtime support also declares test_l192_projection_watch_roots.py. The retired test_provider_current_state.py is absent from the catalog consumer lists. The after-discovery regression and retained publication/landing-workflow modules remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result.
+The composed catalog still declares 18 contracts and 121 artifacts. The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules declared in the lane catalog. The Paseo runtime support also declares test_l192_projection_watch_roots.py. The retired test_provider_current_state.py is absent from the catalog consumer lists. The after-discovery regression and retained publication/landing-workflow modules remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result.
 
 The catalog declares `mcp/tests/test_explainer_browser.py` in the consumer lists of the settings-guard and portable Node-lockfile artifacts. A consumer registration states reachability, not invocation.
 
@@ -355,7 +355,7 @@ The held source retains test_comparison_changeset.py on seven exact artifact row
 
 ## Historical catalog observations
 
-The card at memory revision `81cfe4a89f5ffb222bd09640410d268d3fbef254` reported a historical L112 post-L74 held-source account: `test_comparison_changeset.py` was then listed on six artifact rows, including `read_scope_test_support.py` under `knowledge-read-scope-cases`, and the reported population was 13 contract rows and 93 artifact rows. That paragraph supplied no immutable held-source identity, so these figures are retained as the earlier card's reported observation, not as an independently re-established source population. The report described read-only TOML parsing and declarations, not loader/test execution or CODE/MEMORY acceptance. The current frozen source has seven matching artifact rows and 18 contract/120 artifact rows.
+The card at memory revision `81cfe4a89f5ffb222bd09640410d268d3fbef254` reported a historical L112 post-L74 held-source account: `test_comparison_changeset.py` was then listed on six artifact rows, including `read_scope_test_support.py` under `knowledge-read-scope-cases`, and the reported population was 13 contract rows and 93 artifact rows. That paragraph supplied no immutable held-source identity, so these figures are retained as the earlier card's reported observation, not as an independently re-established source population. The report described read-only TOML parsing and declarations, not loader/test execution or CODE/MEMORY acceptance. The current frozen source has seven matching artifact rows and 18 contract/121 artifact rows.
 
 Historical source-epoch measurement: at code commit `450ade9c7faf2d71efa8412298275f2b5045a5b3`, `mcp/tests/evidence-lifecycle.toml` contained 13 contract rows and 90 artifact rows. The earlier 13/90 observation belongs only to the named `450ade9c/e06f241b` epoch (memory commit `e06f241b37545ee3132d82c13cdc6580452918f5`). This is a historical source observation, not the current catalog population, loader/test execution or CODE/MEMORY acceptance.
 
@@ -375,7 +375,7 @@ The catalog declares `mcp/tests/test_mik_r177_gate_groups_identical_copies.py` a
 
 ## MIK-R118/R124 mark-suite consumers
 
-The source declares `mcp/tests/test_mik_r118_r124_marks.py` as a consumer on sixteen existing artifacts: `_user_settings_guard.py` and the Node-profile `package-lock.json`, `anchor_fixture_models.py`, the nine `fixtures/knowledge_files/` records (including `layout.json`), and `knowledge_index_test_support.py`, `knowledge_rows_test_support.py`, `knowledge_validator_test_support.py` and `knowledge_writer_test_support.py`. The current parsed inventory is 18 contracts and 120 artifacts. This is consumer reachability, not an execution claim.
+The source declares `mcp/tests/test_mik_r118_r124_marks.py` as a consumer on sixteen existing artifacts: `_user_settings_guard.py` and the Node-profile `package-lock.json`, `anchor_fixture_models.py`, the nine `fixtures/knowledge_files/` records (including `layout.json`), and `knowledge_index_test_support.py`, `knowledge_rows_test_support.py`, `knowledge_validator_test_support.py` and `knowledge_writer_test_support.py`. The current parsed inventory is 18 contracts and 121 artifacts. This is consumer reachability, not an execution claim.
 
 ## Current account — this leaf's lifecycle rows
 
@@ -497,11 +497,11 @@ Block-wide ranges become stale on any edit inside their block.
 
 Current source: The current lifecycle catalog declares test_knowledge_paging.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py, mcp/tests/tool_entry_point_world.py. These are source declarations, not invocation, code delivery or acceptance evidence.
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
 
 
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
 
 - The current catalog declares the module on exact artifact consumer lists; membership establishes no execution. Recorded citation-source custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); mcp/tests/evidence-lifecycle.toml blob 75c3628ea7fdf965c61cf6348418abf4e6e1143a (available); recorded commits memory 3f3312878029055ef6bda7c2b1c118915f3a7aa5.
 
@@ -522,7 +522,7 @@ Block-wide ranges become stale on any edit inside their block.
 
 Current source: The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence.
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
 
 - Existing Node package-lock fixture keeps its hand-authored authority, independent-boundary fidelity, permanent lifetime, replacement contract and exact consumer scope; declaration is not invocation.
 
@@ -563,23 +563,23 @@ Current source: The knowledge-diff-cases, knowledge-generation-cases, knowledge-
 
 - The retired closeout fixture-support artifact formerly declared the retained code/memory transaction replacement. It is absent from the merged A3 catalog.
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
 
 - Closeout-input support declares test_automatic_post_integration_cleanup.py and test_cleanup_repeated_archive_ready.py among its exact consumers.
 
 Current source: Closeout-input support declares test_automatic_post_integration_cleanup.py and test_cleanup_repeated_archive_ready.py among its exact consumers.
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
 
 - The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution. Recorded citation-source custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); recorded commits memory 3f3312878029055ef6bda7c2b1c118915f3a7aa5.
 
@@ -594,19 +594,19 @@ Current source: The current lifecycle catalog declares test_worktree_own_environ
 
 - Historical pre-L43 catalog ownership/reachability witness; not a current registration or execution claim.
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
 
 - The role-agent and role-message consumer additions belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution.
 
-- The parked-candidate module consumes the existing checkpoint-landing support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1033-1058`
+- The parked-candidate module consumes the existing checkpoint-landing support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1063-1088`
 
 Current source: The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of checkpoint_landing_test_support.py.
 
-- The parked-candidate module consumes the existing Curator coherence support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1147-1312`
+- The parked-candidate module consumes the existing Curator coherence support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1170-1336`
 
 Current source: The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of curator_coherence_test_support.py.
 
-- The parked-candidate module consumes the existing knowledge-conversion support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:3480-3519`
+- The parked-candidate module consumes the existing knowledge-conversion support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:3533-3572`
 
 Current source: The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of knowledge_conversion_test_support.py.
 
@@ -617,7 +617,7 @@ The current catalog declares three exact consumers for `review_curator_fixture_s
 - The L110 shared-support artifact declares the refusal suite as a transitive consumer through test_tool_answer_table; declarations establish reachability, not execution.
 
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence.
 
 - The held consumers of `mcp/tests/curator_coherence_test_support.py` include `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Recorded citation-source custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); mcp/tests/evidence-lifecycle.toml blob 0b04e782b9627695554aeeebd05967506794d78d (available); recorded commits memory 3f3312878029055ef6bda7c2b1c118915f3a7aa5.
 
@@ -740,7 +740,7 @@ Current source: The portable Node package-lock artifact declares test_developer_
 
 
 
-Current source: The current parsed catalog declares 18 contracts and 120 artifacts. These are source declarations, not execution or acceptance evidence.
+Current source: The current parsed catalog declares 18 contracts and 121 artifacts. These are source declarations, not execution or acceptance evidence.
 
 - Existing artifact consumer lists take this leaf's modules, the list holding the moved curator-instruction module among them.
 
@@ -750,7 +750,7 @@ Current source: The current lifecycle catalog declares test_curator_instruction_
 
 
 
-Current source: The catalog declares 18 contracts and 120 artifacts, including extracted support owners; declarations and replacement nodes are not invocation evidence.
+Current source: The catalog declares 18 contracts and 121 artifacts, including extracted support owners; declarations and replacement nodes are not invocation evidence.
 
 - The current settings-guard and Node-lockfile artifact rows both declare test_task_document_order.py as a consumer. Contract/artifact identity and non-consumer metadata are distinct from membership; these declarations establish neither execution nor acceptance. Recorded citation-source custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); recorded commits memory 3f3312878029055ef6bda7c2b1c118915f3a7aa5.
 
@@ -773,11 +773,11 @@ Current source: The current catalog names test_dashboard_autostart_after_discove
 
 - The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules declared in the lane catalog. The Paseo runtime support also declares test_l192_projection_watch_roots.py. The retired test_provider_current_state.py is absent from the catalog consumer lists. The after-discovery regression and retained publication/landing-workflow modules remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result.
 
-Current source: The current catalog declares 18 contracts and 120 artifacts. The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules selected in the unit-regression lane: test_l192_projection_watch_roots.py, test_l192_provider_safety_prose.py, test_l192_provider_status_closure.py, test_l192_provider_stop_chain.py, test_l192_retired_acknowledgement_reclamation.py, test_l192_retired_start_progress.py, test_l192_root_advice_has_no_removed_parameter.py, test_l192_root_instruction_parameter.py, test_l192_safety_stop_authority_settings.py. Paseo runtime support also declares test_l192_projection_watch_roots.py. test_provider_current_state.py is absent from the catalog consumer lists. test_dashboard_autostart_after_discovery.py, test_publication_merge_admission.py and test_landing_workflow_setting.py remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result.
+Current source: The current catalog declares 18 contracts and 121 artifacts. The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules selected in the unit-regression lane: test_l192_projection_watch_roots.py, test_l192_provider_safety_prose.py, test_l192_provider_status_closure.py, test_l192_provider_stop_chain.py, test_l192_retired_acknowledgement_reclamation.py, test_l192_retired_start_progress.py, test_l192_root_advice_has_no_removed_parameter.py, test_l192_root_instruction_parameter.py, test_l192_safety_stop_authority_settings.py. Paseo runtime support also declares test_l192_projection_watch_roots.py. test_provider_current_state.py is absent from the catalog consumer lists. test_dashboard_autostart_after_discovery.py, test_publication_merge_admission.py and test_landing_workflow_setting.py remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result.
 
 
 
-The dispatch and preview regression modules join the existing settings-guard and Node-lockfile consumer lists. Citation-preview cases also join the existing converted-knowledge and memory-quality-sync dependencies. These additions retain all previous consumers and the 18 contract/120 artifact identities.
+The catalog at code revision `a440c9e898c1a8cba77e31ea6fc83cf5051e56bb` declared 18 contracts and 120 artifacts. It lists `mcp/tests/test_citation_preview_runs.py` on three artifact consumer lists, the settings guard `mcp/tests/_user_settings_guard.py` at line 192, the Node lockfile fixture `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2587, and converted-knowledge test support `mcp/tests/knowledge_conversion_test_support.py` at line 3516.
 
 ## Evidence references
 
@@ -1071,7 +1071,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [233]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [233]
 
 
 
@@ -1103,7 +1103,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [237]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [237]
 
 
 
@@ -1164,7 +1164,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [246]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [246]
 
 
 
@@ -1178,7 +1178,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [248]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [248]
 
 
 
@@ -1187,7 +1187,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [249]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [249]
 
 
 
@@ -1196,7 +1196,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [250]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [250]
 
 
 
@@ -1205,7 +1205,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [251]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [251]
 
 
 
@@ -1214,7 +1214,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [253]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [253]
 
 
 
@@ -1228,7 +1228,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [255]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [255]
 
 
 
@@ -1237,7 +1237,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [256]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [256]
 
 
 
@@ -1276,7 +1276,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [265]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [265]
 
 
 
@@ -1345,7 +1345,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 120 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [274]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [274]
 
 
 
@@ -1599,7 +1599,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The current parsed catalog declares 18 contracts and 120 artifacts. These are source declarations, not execution or acceptance evidence. Anchor: file [311]
+- The current parsed catalog declares 18 contracts and 121 artifacts. These are source declarations, not execution or acceptance evidence. Anchor: file [311]
 
 
 
@@ -1620,7 +1620,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The catalog declares 18 contracts and 120 artifacts, including extracted support owners; declarations and replacement nodes are not invocation evidence. Anchor: file [315]
+- The catalog declares 18 contracts and 121 artifacts, including extracted support owners; declarations and replacement nodes are not invocation evidence. Anchor: file [315]
 
 
 
@@ -1659,7 +1659,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
-- The lifecycle catalog declares 18 contracts and 120 artifacts. The lane catalog declares nine L192 retired-provider tests in unit-regression. Both the settings-guard and Node-lockfile rows name all nine, and Paseo runtime support names the projection-watch-roots test. Both shared rows still declare the after-discovery, publication-merge-admission and landing-workflow-setting tests. The retired `test_provider_current_state.py` has no declared consumer relationship. [319]
+- The lifecycle catalog declares 18 contracts and 121 artifacts. The lane catalog declares nine L192 retired-provider tests in unit-regression. Both the settings-guard and Node-lockfile rows name all nine, and Paseo runtime support names the projection-watch-roots test. Both shared rows still declare the after-discovery, publication-merge-admission and landing-workflow-setting tests. The retired `test_provider_current_state.py` has no declared consumer relationship. [319]
 
 
 

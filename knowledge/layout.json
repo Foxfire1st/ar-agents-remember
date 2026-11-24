@@ -468,8 +468,14 @@
     "file:mcp/src/agents_remember/application/review_external_git_movement.py": [
       "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
     ],
+    "file:mcp/src/agents_remember/application/review_frame_inventory.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
     "file:mcp/src/agents_remember/application/review_frame_store.py": [
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/review_frame_usage.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
     ],
     "file:mcp/src/agents_remember/application/review_tree_comparison.py": [
       "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json"
@@ -633,6 +639,9 @@
     ],
     "file:mcp/src/agents_remember/canvas/kit.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/kit_references.py": [
       "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
     ],
     "file:mcp/src/agents_remember/canvas/policy.py": [
@@ -1166,6 +1175,7 @@
     ],
     "file:mcp/src/agents_remember/mcp/registration/explainer_tools.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json",
       "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/mcp/registration/knowledge.py": [

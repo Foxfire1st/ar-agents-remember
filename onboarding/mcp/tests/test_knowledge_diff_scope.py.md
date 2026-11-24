@@ -9,7 +9,7 @@
 **The comparison's unit population: thirteen cases over the shared two-snapshot fixture, running
 in-process over temporary fixture repositories, with no network and no integration marker**
 (`pytestmark = pytest.mark.evidence_unit`). The module is registered in the **unit-regression** lane at
-`mcp/tests/test-evidence-lanes.toml:234`.
+`mcp/tests/test-evidence-lanes.toml:237`.
 
 **The attribution partition's original nine-case cohort lives next door; that sibling now has ten source test definitions.** `260921-ICR-L4` appended nine `ICR-R04@v1`
 cases here (22 cases, 1384 lines). `260921-ICR-L57` moved them verbatim into

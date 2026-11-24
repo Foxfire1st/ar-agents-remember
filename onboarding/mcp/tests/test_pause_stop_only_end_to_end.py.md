@@ -77,7 +77,7 @@ believed.
 
 ### Conventions
 
-- Lane `integration` in `mcp/tests/test-evidence-lanes.toml` (line 731), and every case is
+- Lane `integration` in `mcp/tests/test-evidence-lanes.toml` (line 735), and every case is
   `unittest`-style in one class with a temporary directory per case.
 - The module drives public entry points only. Like `test_checkpoint_landing_end_to_end.py`, it exists
   because a seam-level suite can be fully green while the composition a caller reaches is wrong.

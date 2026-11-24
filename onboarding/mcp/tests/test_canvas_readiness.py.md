@@ -4,6 +4,8 @@
 
 [governing route overview](overview.md)
 
+Static cases admit CSS motion and check actual HTML media elements for autoplay, loop and controls. Markup-like JavaScript text gains no static evidence authority.
+
 ## Purpose
 
 The static readiness check: an admitted self-contained page is ready, a page that requests the network is not, a page that escapes its revision or names a missing asset is not, and an evidence reference must be one the packet carries.

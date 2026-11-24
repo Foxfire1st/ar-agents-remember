@@ -4,6 +4,8 @@
 
 [Route overview](../overview.md)
 
+The request form continues polling while Send or its Build is live. Stale pre-build reads cannot end an outstanding Send. Cancel clears the pending ask for its matching address.
+
 ## Purpose
 
 The review panel's comparison-scoped first-request and build form.

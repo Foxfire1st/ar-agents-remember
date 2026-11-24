@@ -47,7 +47,7 @@ No configured domain documentation; source owners support this current account.
 
 
 
-- `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. [69]
+- The Effects or Calm control flips the dashboard document’s effects state and persists the preference as calm-cockpit. [69]
 - The boot-time effects flag it persists to. [70]
 - The honest-motion gate the rail transition + the toggle drive. [71]
 - Cockpit wires connectState and one connectEvents raw Event River consumer, plus the ready hydration marker; no seat-event reconciler. [72]

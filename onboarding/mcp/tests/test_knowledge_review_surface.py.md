@@ -27,7 +27,7 @@ The shared config/request/resolution/render helpers stay here.
 ### Logic
 
 **The lane declaration is collection input, not an execution receipt.** The module declares
-`pytest.mark.evidence_unit` and is selected once in unit-regression at row 275. Seven exact-scope lifecycle artifact records name it: the user-settings guard, anchor fixture models, diff-scope support, Node lockfile fixture, knowledge row codec support, knowledge rows support and read-scope support. These catalog entries establish evidence selection and support ownership.
+`pytest.mark.evidence_unit` and is selected once in unit-regression at row 278. Seven exact-scope lifecycle artifact records name it: the user-settings guard, anchor fixture models, diff-scope support, Node lockfile fixture, knowledge row codec support, knowledge rows support and read-scope support. These catalog entries establish evidence selection and support ownership.
 
 **`REPOSITORY_LEAF` and `FORBIDDEN_FIELD_NAMES` are the module's two declared vocabularies.**
 `REPOSITORY_LEAF = "260915-ks-l22"` names the leaf the resolution reports. `FORBIDDEN_FIELD_NAMES` is a

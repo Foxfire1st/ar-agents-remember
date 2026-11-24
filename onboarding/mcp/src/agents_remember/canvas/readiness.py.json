@@ -4,11 +4,11 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
-        "content": "sha256:f9474feffca88962942c78c13460932cf2371715489cb2c795aa60bcd2384517",
+        "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+        "content": "sha256:40adc04ab6759db549e6bd9cfc4da3e84ce79cf98ba71b3d9e943a46ae00425e",
         "locator": {
           "kind": "symbol",
-          "name": "_check_motion"
+          "name": "_check_media_controls"
         }
       },
       "id": "RLZ-350297",
@@ -22,12 +22,31 @@
     },
     {
       "anchor": {
-        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+        "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+        "content": "sha256:aca7b8cc58229b2f2647a493089b179a15e21bff6c696f082e481fa134db865a",
+        "locator": {
+          "end": 64,
+          "kind": "line_range",
+          "start": 63
+        }
+      },
+      "id": "RLZ-3FGBM6",
+      "invariant": "INV-ES66EB",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §1 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Defines the parsed HTML and SVG scope for static media and evidence checks.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
         "content": "sha256:42e4578497f5c027745989243c82586b26d26cd43bf9b655c407319e557eb29d",
         "locator": {
-          "end": 108,
+          "end": 102,
           "kind": "line_range",
-          "start": 73
+          "start": 67
         }
       },
       "id": "RLZ-6BBWM8",
@@ -41,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
-        "content": "sha256:6be5fa9a44e505f3a4a7b84019f39891d809eb80a44170e259ceb88f7b493d10",
+        "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+        "content": "sha256:1d0df9cd9f08fe6c3ecfbe03046c406c4e02e9c53c187c29f3a388489fa2c535",
         "locator": {
-          "end": 65,
+          "end": 61,
           "kind": "line_range",
-          "start": 61
+          "start": 57
         }
       },
       "id": "RLZ-8QW9AX",
@@ -60,8 +79,8 @@
     },
     {
       "anchor": {
-        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
-        "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+        "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+        "content": "sha256:529f73ba8da4fb47078f91a4dba2a9eeeba3b89a4a0e4738c3bbccf4043e6a18",
         "locator": {
           "kind": "symbol",
           "name": "check_page"
@@ -78,7 +97,7 @@
     },
     {
       "anchor": {
-        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+        "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
         "content": "sha256:da065cab7c0c24f92ff8a8d46b10ab79880a77ab4599e18b50b7d10f52d49953",
         "locator": {
           "kind": "symbol",
@@ -96,8 +115,26 @@
     },
     {
       "anchor": {
-        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
-        "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+        "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+        "content": "sha256:5b5272c6e7fd102f7b3e6de6309892fda24172d4fc3cf8daf16cffd194a8148d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_evidence"
+        }
+      },
+      "id": "RLZ-J2QWQY",
+      "invariant": "INV-ES66EB",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §1",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Scopes static data-evidence scanning to HTML and SVG assets while the ordinary browser load checks dynamically inserted evidence and claim citations over a bounded post-load window.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+        "content": "sha256:529f73ba8da4fb47078f91a4dba2a9eeeba3b89a4a0e4738c3bbccf4043e6a18",
         "locator": {
           "kind": "symbol",
           "name": "check_page"
@@ -114,12 +151,12 @@
     },
     {
       "anchor": {
-        "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
-        "content": "sha256:f9474feffca88962942c78c13460932cf2371715489cb2c795aa60bcd2384517",
+        "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+        "content": "sha256:40adc04ab6759db549e6bd9cfc4da3e84ce79cf98ba71b3d9e943a46ae00425e",
         "locator": {
-          "end": 495,
+          "end": 445,
           "kind": "line_range",
-          "start": 468
+          "start": 419
         }
       },
       "id": "RLZ-PMH973",
@@ -130,6 +167,44 @@
       },
       "rationale": "Readiness refuses autoplay, loop and missing controls based on the parsed attributes.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+        "content": "sha256:d9d0bc21723a5a058e6badce5473bd3ad067fa63a87f3a1ff22471559d8597c9",
+        "locator": {
+          "end": 202,
+          "kind": "line_range",
+          "start": 164
+        }
+      },
+      "id": "RLZ-RQMC7R",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Checks that detected references stay inside the revision, names missing or escaping assets and refuses mismatched reserved kit bytes.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+        "content": "sha256:c9f29bab241785dd0497be3abbd282606420aad31ffdcd0cd28a94c95ccc237d",
+        "locator": {
+          "end": 467,
+          "kind": "line_range",
+          "start": 448
+        }
+      },
+      "id": "RLZ-Z190YH",
+      "invariant": "INV-ES66EB",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §1",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "The static eligibility checklist runs the allowed authored-content and evidence checks. It contains no retired motion-word check.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -138,11 +213,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
-            "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+            "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+            "content": "sha256:d9d0bc21723a5a058e6badce5473bd3ad067fa63a87f3a1ff22471559d8597c9",
             "locator": {
-              "kind": "symbol",
-              "name": "check_page"
+              "end": 202,
+              "kind": "line_range",
+              "start": 164
             }
           },
           "kind": "code"
@@ -154,7 +230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+            "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
             "content": "sha256:87c4b7a2ab9bddcbc487dbf31f0164a3d3ce560ad4b64336ff201e79f358c39c",
             "locator": {
               "kind": "symbol",
@@ -170,12 +246,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
-            "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+            "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+            "content": "sha256:2f6dba4c2388a559af96ff7ebc318e5bb32679e422495f794b8d9569b85f5471",
             "locator": {
-              "end": 528,
+              "end": 328,
               "kind": "line_range",
-              "start": 498
+              "start": 250
             }
           },
           "kind": "code"
@@ -187,12 +263,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
-            "content": "sha256:f9474feffca88962942c78c13460932cf2371715489cb2c795aa60bcd2384517",
+            "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
+            "content": "sha256:40adc04ab6759db549e6bd9cfc4da3e84ce79cf98ba71b3d9e943a46ae00425e",
             "locator": {
-              "end": 495,
+              "end": 445,
               "kind": "line_range",
-              "start": 468
+              "start": 419
             }
           },
           "kind": "code"

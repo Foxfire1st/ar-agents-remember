@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6584649caa95199219a959979b0491a095d0d6a9",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
+    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
     "role": "curator",
-    "statement": "The canvas host design still describes the prepared inputs, stage files and video readiness. The explainer continues to create through the normal review-presenter settings route and now shares the provider grant policy on its bound server. The workspace writer's selected report digests and empty-notice root are preserved.",
-    "task": "261112-BUG-L31",
+    "statement": "The host design keeps grant, asset, evidence, browser paint and physical storage checks binding, describes the interaction sweep and inventory as advisory, and records inventory omission and bounded-response spill locations while preserving publication identity.",
+    "task": "261124-EXP-L1",
     "uncommitted": true
   },
   "document": "docs/design/canvas-host.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "ba79fc48cc97689f936b1a0038c1cea35a33f307",
+      "blob": "948b6c3366b76d4f5b044acee6df260a111d469f",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/policy.py"
     },
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/canvas/evidence.py"
     },
     {
-      "blob": "94202ef0e8242f7b86d4e988c3bda15a70c3b717",
+      "blob": "7ae14f370a3f71848c0ad4c5c089c7579bff58fc",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/readiness.py"
     },
@@ -66,7 +66,7 @@
       "path": "mcp/src/agents_remember/canvas/presenter_tools.py"
     },
     {
-      "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+      "blob": "da5e9b1beec72b1ae136a19ea8ec92850da1e301",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_server.py"
     },
@@ -91,12 +91,12 @@
       "path": "mcp/src/agents_remember/cli/role_instructions.py"
     },
     {
-      "blob": "99662226cca319589b818f5083eff3400d12ae14",
+      "blob": "6b6b5bcc16b8e1f874cae855057079820f53ebaa",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
     },
     {
-      "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+      "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
       "kind": "file",
       "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx"
     },
@@ -116,24 +116,48 @@
       "path": "mcp/src/agents_remember/models/knowledge/review_evidence.py"
     },
     {
-      "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+      "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/explainer_routes.py"
     },
     {
-      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+      "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },
     {
-      "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+      "blob": "7d4137758fd4b2b6260fc1e6eb162c57948808a2",
       "kind": "file",
       "path": "dashboard/src/panels/review/explainer/RevisionFrame.tsx"
     },
     {
-      "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+      "blob": "13cf3b30543d7aa5f15a6e42b3993580c1986ab3",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+    },
+    {
+      "anchor": {
+        "blob": "9d53559330f7a2630fa85c830765525b6cafa3de",
+        "content": "sha256:6cac3d48524103467a899f40da2f9945d5948ea8f1a890c9b4972355f7a538d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_revision_inventory_staging"
+        },
+        "path": "mcp/src/agents_remember/application/review_frame_inventory.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "c4676e33b11bf37eaf88d520dca2f7b1dd7442b6",
+        "content": "sha256:44d6921e07ae659a61a810b01921afe48acd3811db16783d80240b1c64b30656",
+        "locator": {
+          "kind": "symbol",
+          "name": "revision_usage_bytes"
+        },
+        "path": "mcp/src/agents_remember/application/review_frame_usage.py"
+      },
+      "kind": "anchor"
     }
   ]
 }

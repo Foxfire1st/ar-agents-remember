@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/starters/shiki-magic-move/index.html",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Before and After switch operates on snippets already present in the still form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8325ac35b2ee6735c81f58f73fc5b37a27aa7fc5",
+            "content": "sha256:853778dcfe9670ca0225b04933a128286397959192a08a688bf980ac103b2b4c",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

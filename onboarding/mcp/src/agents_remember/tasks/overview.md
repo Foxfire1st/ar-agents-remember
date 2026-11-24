@@ -15,6 +15,8 @@ The route BLOCK uses `addedFindingIds` to name the open additions. These fields 
 
 The route also owns structural sprint/master/leaf addressing, canonical parent-row/leaf binding, normative task-intent projection, completion-readiness predicates, execution-graph validation, semantic topology identity, and same-root leaf-to-master synchronization. Structural addressing does not itself select a live runtime occupant. Reopening an enclosure belongs above this route in `worktrees`; its document reset still uses the task persistence owner.
 
+The comparison-bound retained revision projection can include the addressed frame’s optional advisory inventory or omission.
+
 ## Hot Path Summary
 
 master_order derives ordinary-master waves and dependency facts from declared waitsFor and each matched child's document stage, falling back to the authored row only without that child document. Matched child titles likewise take precedence over row-name fallback. Waves are supplied to Markdown and projection, never stored, and dependency readiness is not a second host/task activity source. Backend progress.py owns major-only counts and current-work labels that can name nested work units. Frontend dashboard/src/panels/detail-panel/model.ts::stepDisplayState infers an unfinished major's displayed current state from active or done children; it does not author canonical status. completion_blockers separately examines every major and child obligation. Optional nonGoals, acceptance, completedAt and waitsFor remain compatible with old field absence, and new normative fields participate in intent/effect classification.

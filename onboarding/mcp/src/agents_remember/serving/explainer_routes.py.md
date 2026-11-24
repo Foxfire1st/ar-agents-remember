@@ -4,6 +4,8 @@
 
 [Route overview](overview.md)
 
+Build returns the provenance host workspace ID when available and falls back to the physical workspace path otherwise, both in workspaceId and the nested Seat result. State reads stored host identity separately and can report null when there is no recorded ID.
+
 ## Purpose
 
 HTTP request parsing and route handlers for the explainer's bound composition.
@@ -23,3 +25,5 @@ The detail this module owns stops at its own boundary; the route account above s
 - handle_state answers a request only for the seat this process holds. [1]
 
 - The Build handler forwards the validated history to the builder. When the composed message is blank and history is planned, the builder sends the requirement-and-planned-effects request. [2]
+
+- Build returns the provenance host workspace ID when available and falls back to the physical workspace path otherwise, both in workspaceId and the nested Seat result. State reads stored host identity separately and can report null when there is no recorded ID. [3]

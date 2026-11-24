@@ -4,6 +4,8 @@
 
 [Route overview](../overview.md)
 
+The directly mounted Operations-mode column follows the placeholder through Build to a live seat. A scripted agent-not-found followed by supported ready retries the selection in the same iframe. A separate matching-clear case closes the request form in this component fixture.
+
 ## Purpose
 
 Specifies the review page's explainer column rule by rule: the selection, the placeholder that starts nothing, the form, the build, a Send aimed at an archived explainer, Retire, and that no model turn starts.
@@ -24,3 +26,5 @@ Specifies the review page's explainer column rule by rule: the selection, the pl
 - The case `keeps his request when the build fails, and names the step` shows a refused build keeping the request and reusing its id [4]
 
 - Retired at the fifth freeze d59c3493: dashboard/src/explainer/ExplainerColumn.test.tsx:365-377 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The directly mounted Operations-mode column follows the placeholder through Build to a live seat. A scripted agent-not-found followed by supported ready retries the selection in the same iframe. A separate matching-clear case closes the request form in this component fixture. [5]

@@ -320,12 +320,12 @@
         },
         {
           "anchor": {
-            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+            "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
             "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
             "locator": {
-              "end": 166,
+              "end": 173,
               "kind": "line_range",
-              "start": 149
+              "start": 156
             },
             "path": "mcp/tests/test_canvas_capsule_text.py"
           },
@@ -333,12 +333,12 @@
         },
         {
           "anchor": {
-            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+            "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
             "content": "sha256:96633be3e4921f5dc51fa3c971bcc98be26a154294ee73278e4a63de8676a3db",
             "locator": {
-              "end": 258,
+              "end": 265,
               "kind": "line_range",
-              "start": 250
+              "start": 257
             },
             "path": "mcp/tests/test_canvas_capsule_text.py"
           },

@@ -7,12 +7,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df374b656dbcfbcc3b7280bd9b068cdd57520388",
+            "blob": "be48138797fc740db4b56879ddf01f7b663b5f60",
             "content": "sha256:65f82a3625a55f705d0a6805a57fc717321d3e1a62a5226c774851c41cda0326",
             "locator": {
-              "end": 70,
+              "end": 74,
               "kind": "line_range",
-              "start": 70
+              "start": 74
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The mounted request fixture shows Send and polling, completion closing the form, and a live rail phase with the chat holder visible. Its assertions stop at the holder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be48138797fc740db4b56879ddf01f7b663b5f60",
+            "content": "sha256:9214e116a13e0a976ac54e57fdee84f1ff26a9f4462bfdc6c8aaf01a7098710f",
+            "locator": {
+              "end": 548,
+              "kind": "line_range",
+              "start": 537
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "be48138797fc740db4b56879ddf01f7b663b5f60",
+            "content": "sha256:854fffbcacf08663a8185a7acb185b4be292b9014c9ff76dbf1e9c582d06912e",
+            "locator": {
+              "end": 597,
+              "kind": "line_range",
+              "start": 580
             }
           },
           "kind": "test"
