@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "4e2b7861807756639324908d7a400831e20dc28c",
+    "commit": "3450a1a1552db524bdbace93c3992311a778a53e",
     "role": "curator",
-    "statement": "The getting-started guide’s Bootstrap and dashboard opening sequence still applies with startup registry reconciliation.",
-    "task": "261112-BUG-L20",
+    "statement": "The setup guide’s Bootstrap and dashboard opening sequence remains current with registry recovery, and its refusal guidance explains how to find an omitted detail and select an offered harness.",
+    "task": "261112-BUG-L22",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -76,7 +76,7 @@
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
     {
-      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+      "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
     },
     {
-      "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+      "blob": "210872f08a0a898df592f68e2330120a451b3ea5",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
     },

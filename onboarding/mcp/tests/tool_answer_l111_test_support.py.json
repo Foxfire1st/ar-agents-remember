@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
+        "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
+        "content": "sha256:e28160ad9b3544bfabb2848e8509387b35fc5735e8ad566bfc6240d4e91e2c7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_l111_role_start_largest"
+        }
+      },
+      "id": "RLZ-4APCJC",
+      "invariant": "INV-RF4W8Q",
+      "origin": {
+        "handoffEntry": "BUG-R22@v1 §4",
+        "leaf": "261112-BUG-L22"
+      },
+      "rationale": "Retains the captured deep response shape for the existing table sizing gate.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
         "content": "sha256:f9b71afca0e6013d1fafb809f404d8a680817229fc4d8d9b1c937b4329d84550",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
+        "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
         "content": "sha256:5c627b538f581ba4e53cc14ee5bf5d80f848b20046cb841aa534e05ebdb1b3c1",
         "locator": {
           "kind": "symbol",
@@ -44,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
+            "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
             "content": "sha256:f9b71afca0e6013d1fafb809f404d8a680817229fc4d8d9b1c937b4329d84550",
             "locator": {
               "kind": "symbol",
@@ -60,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
+            "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
             "content": "sha256:5a239dc42af40bcdbee58742203d70dac2f1db9a7243566b74f6e72fb15712ac",
             "locator": {
               "kind": "symbol",
@@ -76,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
+            "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
             "content": "sha256:8ba499ffc4184b09520db9275a8540d67a7667ce62dd2fcd666b536aec275cd0",
             "locator": {
               "kind": "symbol",
@@ -92,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
+            "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
             "content": "sha256:5cd33fcc73bfc937f72af914b9c247f4340b7542163a05797d6371e358d65ee0",
             "locator": {
               "kind": "symbol",
@@ -108,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
+            "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
             "content": "sha256:062ab2011d66a37f4f8522616ed7aab9bb766710c2727625948c0a9cb087dc9d",
             "locator": {
               "kind": "symbol",
@@ -124,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
+            "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
             "content": "sha256:1930e91bcffc0d3b27868af9fa080d818c42607600de3c201ebdedabe5dc7ddd",
             "locator": {
               "kind": "symbol",
@@ -140,12 +158,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07d12e460f8b26d322f31b6f9d28652293ba8e48",
+            "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
             "content": "sha256:17459c2fc015adcd234abf2995369e98ee02cebfecaa2b265d561a12c8235813",
             "locator": {
               "end": 603,
               "kind": "line_range",
               "start": 585
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The deep-root role_start case carries the recorded locator, handover path and log path for the sizing gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
+            "content": "sha256:e28160ad9b3544bfabb2848e8509387b35fc5735e8ad566bfc6240d4e91e2c7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_l111_role_start_largest"
             }
           },
           "kind": "test"

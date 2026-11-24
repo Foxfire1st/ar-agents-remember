@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "A warning about a successful operation must stay observable when the shared guard cuts its answer, including after logging changes."
+  },
+  "applicability": "String warnings in over-bound answers handled by the shared short-form guard.",
+  "conditions": [
+    "The guard counts the recorded locator and final cut hint when fitting warning text.",
+    "Error text has priority over warning text.",
+    "A true warningCut marker survives a refit."
+  ],
+  "exclusions": [
+    "Uncut tool answers.",
+    "Recovering full warning text when detail recording fails."
+  ],
+  "id": "INV-2N79MT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L22-W2-freeze-report.md — BUG-R22@v1 acceptance and commands"
+      ],
+      "path": "L22-W2-curated-handoff-v2"
+    },
+    "handoffEntry": "BUG-R22@v1 §1",
+    "leaf": "261112-BUG-L22",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The shared short form keeps warning text to the available budget and marks any cut, retaining the marker alone when no text fits.",
+  "status": "proposed",
+  "supersedes": []
+}

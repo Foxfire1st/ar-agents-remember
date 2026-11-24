@@ -72,6 +72,24 @@
       },
       "rationale": "Binds the typed refusal and replacement arguments to the requested kind and current contract.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "65597f52711773d7755f813da12995da8fc98197",
+        "content": "sha256:65cf92ff20a4a676d1185a9ef72af907d6993e0ffd81ab360d45ffd4f6f30830",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_generation"
+        }
+      },
+      "id": "RLZ-RZ1XP1",
+      "invariant": "INV-760TKM",
+      "origin": {
+        "handoffEntry": "BUG-R15@v1 item 5",
+        "leaf": "261112-BUG-L15"
+      },
+      "rationale": "The generation check distinguishes absent historical operations and stale generations. A matching historical record proceeds to the retired-operation response naming the synchronous replacement tool.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -86,6 +104,40 @@
               "end": 350,
               "kind": "line_range",
               "start": 320
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A matching record is checked for retirement before reconciliation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:a7735c6322b0cfdc3846d00c7e8792dbdf7a43e30fa01fc955bcc57effab1d8b",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The generation check distinguishes absent historical records from a mismatch and binds the mismatch answer to both generations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:65cf92ff20a4a676d1185a9ef72af907d6993e0ffd81ab360d45ffd4f6f30830",
+            "locator": {
+              "end": 692,
+              "kind": "line_range",
+              "start": 656
             }
           },
           "kind": "code"
@@ -132,6 +184,77 @@
               "end": 350,
               "kind": "line_range",
               "start": 320
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The public tool table describes absent, matching and stale generation cases and the replacement calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b07e4ba39d073330dfcddff8057990ce854bc40",
+            "content": "sha256:af3a43997e5a6d21aace827cc88ef71f98fde2ce4d8f10516965c75f6b090768",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 288
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The operation journal guide describes inline closeout, the historical audit record and generation-bound controls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f18b21d0d255bce3024a2cd8726367c521764fab",
+            "content": "sha256:6dc6e89de0e5ee012a5cebda60e2969371faf838c9aff2c5046ccc23293ea33b",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "docs/reference/worktrees-c09.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The integration guide describes the inline call and its lack of an operation journal record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f18b21d0d255bce3024a2cd8726367c521764fab",
+            "content": "sha256:9950f8eb795e95b65ffff9e4f56eda0871c8f425073b819b71c3c4c6ad42977d",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "docs/reference/worktrees-c09.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "An absent or matching historical record receives the replacement tool, with record details when present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:3d17b46d4bedf8f6c6b44f70e0537280eb3f07062c45dcc70a1a4aa7fdf92af6",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 180
             }
           },
           "kind": "code"
