@@ -278,11 +278,11 @@
       ]
     },
     "7": {
-      "note": "The cache tests cover reuse, rebuilding after corruption or quiescent directory deletion, eviction, and refusal inside a Git working tree.",
+      "note": "The cache tests cover reuse, rebuilding after corruption or quiescent directory deletion, eviction, and refusal to create a cache inside a Git working tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "7164ce2913bb49a4a09c10b5a1e098e2f07ae21c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:706c00f8e2bd01f9559c938864789083a69952c129a4aff3e06f389a692a02fb",
             "locator": {
               "kind": "symbol",
@@ -294,7 +294,7 @@
         },
         {
           "anchor": {
-            "blob": "7164ce2913bb49a4a09c10b5a1e098e2f07ae21c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:f6cc02aeae7ad68edf6715db1a5657f50ed03633b5677c517b4cf0d854a232a7",
             "locator": {
               "kind": "symbol",
@@ -306,8 +306,8 @@
         },
         {
           "anchor": {
-            "blob": "7164ce2913bb49a4a09c10b5a1e098e2f07ae21c",
-            "content": "sha256:f2001808a18864adeafdddb1615972f8aad215d103b38d9f0b49748d5f6b6859",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
+            "content": "sha256:ee9c19362228759d6042ca51a14b379e565fbca5bebb997309e8b0d947220a4a",
             "locator": {
               "kind": "symbol",
               "name": "test_the_cache_is_never_placed_inside_a_git_working_tree"
@@ -323,7 +323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7164ce2913bb49a4a09c10b5a1e098e2f07ae21c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:ba9a51bb05419c5c919c4516d9bfb58c2c822519aa7098289778528e6d48114f",
             "locator": {
               "kind": "symbol",

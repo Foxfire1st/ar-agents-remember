@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**The public face of the mandatory knowledge validator (MIK-R22): integrity checked at the memory commit boundary, because text files are the source of truth for knowledge (D18).** The package docstring maps each module to its job, and this module re-exports the API that callers and later packets use: the registry (`ValidationRule`, `register_rule`, `registered_rules`, `ValidationContext`, `Finding`), the report (`Violation`, `ValidationReport`, `KnowledgeValidationError`), the tree inputs and readers, and `validate_tree`, `validation_applies` and `require_valid_commit`.
+**The public face of the mandatory knowledge validator (MIK-R22): integrity checked at the memory commit boundary, because text files are the source of truth for knowledge (D18).** The package docstring maps each module to its job, and this module re-exports the API that callers and later packets use: the registry (`ValidationRule`, `register_rule`, `registered_rules`, `ValidationContext`, `Finding`), the report (`Violation`, `ValidationReport`, `KnowledgeValidationError`), the tree inputs, readers and shared `is_excluded_from_knowledge` predicate, and `validate_tree`, `validation_applies` and `require_valid_commit`.
 
 ## Code Commentary
 
@@ -29,7 +29,7 @@
 ### Conventions
 
 - The package lives in `memory_quality` (rank 11). The worktree layer reaches it only through `worktrees.services.KnowledgeValidationPort`, bound by `application/worktree_services.py`.
-- Test and route code import from this package root; `commit_route` and `trees.is_excluded_from_knowledge` are imported by module path.
+- Test and route code import the public API from this package root. The package re-exports `is_excluded_from_knowledge` from `trees`. Callers that need `commit_route` import that module directly.
 
 ### Invariants And Boundaries
 
@@ -69,7 +69,7 @@ No configured live documentation source was available for this pass.
 The re-exported API and the module map.
 
 
-- The re-exported names, `writer_reported_rule_ids` included. [1]
+- The package re-exports the validator API, including its shared exclusion predicate and writer-reported rule IDs. [1]
 
 - Importing the validator registers the rule modules, MIK-R04's route rules and MIK-R27's admission rules included. [2]
 

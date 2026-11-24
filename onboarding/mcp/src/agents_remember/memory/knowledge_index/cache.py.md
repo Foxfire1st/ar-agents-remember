@@ -74,6 +74,6 @@ No cross-repo boundary is crossed by this file.
 - Reuse selects the loaded build's matching tree key and index format; builds publish through a temporary file and rename. [6]
 
 
-- The cache tests cover reuse, rebuilding after corruption or quiescent directory deletion, eviction, and refusal inside a Git working tree. [7]
+- The cache tests cover reuse, rebuilding after corruption or quiescent directory deletion, eviction, and refusal to create a cache inside a Git working tree. [7]
 
 - An edited working tree is never answered from the previous content. [8]

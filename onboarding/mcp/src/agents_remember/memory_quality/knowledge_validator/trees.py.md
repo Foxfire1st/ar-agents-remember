@@ -6,16 +6,16 @@
 
 ## Purpose
 
-**The two inputs the validator reads.** A `KnowledgeTree` is the exact bytes of every file under `knowledge/` and `onboarding/` of one memory tree, keyed by repository-relative POSIX path; it is *converted* exactly when it holds `knowledge/layout.json` (MIK-R21 rule 1). A `CodeTree` answers three questions: does the paired code tree hold a file at this path (anchor path existence, MIK-R22 rule 6), does it hold a directory at this path (a family route, MIK-R04 rule 1), and, since MIK-R198, what exact bytes does that file hold at the commit — `CodePathSet` carries them, so the anchor guard compares a recorded content identity with the paired tree's own bytes and reads each cited file once instead of once per anchor. All three can be read from a working directory or from Git.
+**The two inputs the validator reads.** A `KnowledgeTree` holds the exact bytes of the included files under `knowledge/` and `onboarding/`, keyed by repository-relative POSIX path; it is *converted* exactly when it holds `knowledge/layout.json` (MIK-R21 rule 1). A `CodeTree` answers three questions: does the paired code tree hold a file at this path (anchor path existence, MIK-R22 rule 6), does it hold a directory at this path (a family route, MIK-R04 rule 1), and, since MIK-R198, what exact bytes does that file hold at the commit — `CodePathSet` carries them, so the anchor guard compares a recorded content identity with the paired tree's own bytes and reads each cited file once instead of once per anchor. All three can be read from a working directory or from Git.
 
 ## Code Commentary
 
 ### Logic
 
-- `is_excluded_from_knowledge(relative)` is the one predicate for "not knowledge": a `*.index.json` route-index cache, or a path with a dot-named *directory* component (such as `.ar-index/`). A dot-named *file* is knowledge, so `onboarding/.git-blame-ignore-revs.md` is validated (review R1 finding 1). `cli/knowledge_format.py` imports the same predicate.
+- `is_excluded_from_knowledge(relative)` recognizes generated `*.index.json` route-index caches. Dot-prefixed filenames and directory components under either knowledge root remain visible. `cli/knowledge_format.py` shares the cache predicate and owns its directory-operand traversal.
 - `is_knowledge_path` adds the `knowledge/` or `onboarding/` prefix.
-- `knowledge_tree_from_directory` walks both roots with `os.walk`, pruning dot directories, and reads each file's bytes.
-- `knowledge_tree_from_git` resolves the tree-ish with `rev-parse --verify`, lists regular files (`100644`/`100755` blobs) from `read_git_tree_bytes`, and reads all wanted blobs through one `kernel.git_command.read_git_blobs_bytes` call, so the bytes are exact: no decoding and no newline normalisation.
+- `knowledge_tree_from_directory` walks both roots with `os.walk`, including dot directories, and reads the bytes of each regular file selected by the shared path predicate.
+- `knowledge_tree_from_git` resolves the tree-ish with `rev-parse --verify`, selects regular files (`100644`/`100755` blobs) under both roots using the shared path predicate, and reads all selected blobs through one `kernel.git_command.read_git_blobs_bytes` call. The result keeps their exact bytes and line endings.
 - `code_tree_from_git` returns a `CodePathSet` of regular Git paths. The standalone working-tree validator uses `code_tree_from_working_directory`: Git cached and ordinary untracked, nonignored paths filtered to current regular non-symlink files. The separate raw `CodeDirectory` answers direct filesystem `has_file`; it is not this Git-visible input owner.
 - `has_directory` (MIK-R04): `CodePathSet` derives a cached `directories` set, every directory that holds a file of the set at any depth, and answers the root route `.` (`ROOT_ROUTE_PATH`) as always present; `CodeDirectory` answers with `is_dir()`, which also holds for `.`. The empty string and a file path are not directories.
 - A tree-ish that names no tree raises `KnowledgeTreeReadError` (a `ValueError`).
@@ -30,7 +30,7 @@
 
 ### Invariants And Boundaries
 
-- The route-index cache is never read as knowledge, and no file escapes validation by its name.
+- Dot-prefixed names stay visible inside both roots. Generated route-index caches stay outside the knowledge input.
 - Git bytes are read raw, so the canonical-format check sees what will be committed.
 - `converted` is decided by the marker alone.
 - The two implementations can disagree on a directory that holds only ignored or untracked files (`__pycache__`, a build directory): `CodeDirectory` sees it, the Git `CodePathSet` of a commit route does not. This mirrors `has_file`/`is_file` and is accepted (review R1 finding 3).
@@ -57,7 +57,7 @@ No configured live documentation source was available for this pass.
 
 The predicate, the tree types and the two readers.
 
-- The shared exclusion predicate: cache files and hidden directories only. [1]
+- The shared exclusion predicate recognizes generated route-index caches. [1]
 - A tree is converted exactly when it holds the layout marker. [2]
 
 
@@ -66,23 +66,23 @@ The predicate, the tree types and the two readers.
 
 
 - Both code trees answer directory existence, the root route included. [4]
-- The directory reader prunes dot directories. [5]
+- The directory reader includes dot directories under both memory roots and excludes route-index caches. [5]
 
 
 
-- The Git readers: regular files only, blobs read in one batch as exact bytes.  Anchor: `_tree_blobs` `knowledge_tree_from_git` `code_tree_from_git` [6]
+- Git tree selection keeps regular blobs, and the knowledge reader reads their exact bytes in one batch. [6]
 
 
-- The formatter shares the predicate. [7]
+- The formatter uses the shared cache predicate and includes dot directories under converted knowledge and onboarding roots. [7]
 
 - A dot-named card and its sidecar are validated. [8]
 
-- The Git reader reads exact bytes, ignores the cache, and matches the directory reader. [9]
+- Git and directory snapshots both retain the workflow card and sidecar, exclude the cache, and expose the card’s missing reference to validation. [9]
 
 
 
 
-- Only the history files of a commit that is not a comparison base.  Anchor: `history_tree_from_git` [10]
+- The history reader loads only files under knowledge/history/. [10]
 
 
 ### Cross-Repo References

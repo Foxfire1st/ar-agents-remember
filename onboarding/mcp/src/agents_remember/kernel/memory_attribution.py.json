@@ -127,14 +127,16 @@
       ]
     },
     "5": {
-      "note": "The source census and behavioral renderer case keep the producer seam visible.\n\nAnchor: `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module` `test_every_census_producer_reaches_the_shared_renderer`",
+      "note": "The source census and behavioral renderer case keep the producer seam visible.\n\nAnchor: “test_the_attribution_key_is_named_and_rendered_in_exactly_one_module” “test_every_census_producer_reaches_the_shared_renderer”",
       "targets": [
         {
           "anchor": {
-            "blob": "eff75cfe71497b48d454a561d5d3aca2ae1159fe",
-            "content": "sha256:b3b163e90641170b5ed89ce084eabbe56863b01c866821d4bdb7848fcbd98e0d",
+            "blob": "6ab05091b01f84c4711b9973d5b08e5467bdd92f",
+            "content": "sha256:35ae4f5b132e3c941680fdfc23bfcf01594bab95f27125b9b7703fff504aa06a",
             "locator": {
-              "kind": "file"
+              "end": 298,
+              "kind": "line_range",
+              "start": 249
             },
             "path": "mcp/tests/test_memory_attribution_producers.py"
           },
@@ -252,7 +254,7 @@
         },
         {
           "anchor": {
-            "blob": "eff75cfe71497b48d454a561d5d3aca2ae1159fe",
+            "blob": "6ab05091b01f84c4711b9973d5b08e5467bdd92f",
             "content": "sha256:ced14d403ed5ebd28221d17d2c6fbac90a385cc0401269dbdc53f56f5c6b8535",
             "locator": {
               "end": 7,
@@ -265,7 +267,7 @@
         },
         {
           "anchor": {
-            "blob": "eff75cfe71497b48d454a561d5d3aca2ae1159fe",
+            "blob": "6ab05091b01f84c4711b9973d5b08e5467bdd92f",
             "content": "sha256:351669163bb90f4b39d78caf3477eac80cf10188e54c8fa1b21e52ee16c7e542",
             "locator": {
               "end": 170,
@@ -278,7 +280,7 @@
         },
         {
           "anchor": {
-            "blob": "eff75cfe71497b48d454a561d5d3aca2ae1159fe",
+            "blob": "6ab05091b01f84c4711b9973d5b08e5467bdd92f",
             "content": "sha256:b0845ddda97a8c1b4e2b8f93e62349a972ca86ef619138caf6bbe3def69316df",
             "locator": {
               "end": 64,

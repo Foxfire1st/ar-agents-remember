@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "ed769cabdb7274515cf681f7ad55b1bd1e724580",
+    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
     "role": "curator",
-    "statement": "The carry-over guide correctly states that apply establishes the receiving leaf's recorded memory base before writing and uses that base for both validation and the worklist.",
-    "task": "261112-BUG-L21",
+    "statement": "The guide’s selected-unit, recorded-base and exact validation description still holds when the selected pair is for an eligible workflow source under a dot directory.",
+    "task": "261112-BUG-L24",
     "uncommitted": true
   },
   "document": "docs/guides/carryover-from-branch.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+      "blob": "736a9d388c150a826532e5a204f6e473991d6711",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/carryover_apply.py"
     },

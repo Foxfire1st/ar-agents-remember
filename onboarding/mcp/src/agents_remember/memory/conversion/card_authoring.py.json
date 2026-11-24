@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+        "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
+        "content": "sha256:ac2f8dcdb39a2cef8baa253fc03db80774c199eb8036079ce22783c1214287ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "_cards"
+        }
+      },
+      "id": "RLZ-028ZAH",
+      "invariant": "INV-S4WA6F",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 3 bulk readers",
+        "leaf": "261112-BUG-L24"
+      },
+      "rationale": "Uses the shared memory-relative rule for bulk card authoring.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
         "content": "sha256:62c1a50033b5de441daec0db1ebd868d41b9b026dc6a447afc0028966e5716f5",
         "locator": {
           "kind": "symbol",
@@ -27,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
             "content": "sha256:1b10e8e484c7ab7f4cf9318f509ab899baee3e2121464936ffb2c721c78d8d7f",
             "locator": {
               "end": 40,
@@ -56,12 +74,12 @@
       ]
     },
     "11": {
-      "note": "Tree-wide enumeration excludes hidden entries relative to the memory root, not hidden ancestors outside that root.",
+      "note": "Bulk enumeration visits Markdown under onboarding, including dot directories, and applies the shared predicate to memory-root-relative paths. An explicitly named Markdown card follows its own selection path.",
       "targets": [
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
-            "content": "sha256:7e3d5e175fa1a2b9ffbde9cf235a00ec17d67124e2d0816b434062d27d3d3510",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
+            "content": "sha256:ac2f8dcdb39a2cef8baa253fc03db80774c199eb8036079ce22783c1214287ca",
             "locator": {
               "kind": "symbol",
               "name": "_cards"
@@ -76,24 +94,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
             "content": "sha256:ebe72fd903a85084a3498718717fbf90cc6ecc92ffcf5b7803bab6b1c2f96d21",
             "locator": {
-              "end": 110,
+              "end": 111,
               "kind": "line_range",
-              "start": 106
+              "start": 107
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
             "content": "sha256:e7a68952117962dcdd994bf3fd162c2d9e9d8b8d21444fd5a46a130f1256bdf4",
             "locator": {
-              "end": 240,
+              "end": 241,
               "kind": "line_range",
-              "start": 231
+              "start": 232
             }
           },
           "kind": "code"
@@ -118,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
             "content": "sha256:9d3fbd5c0cfdfbead4c902953d9802b9d2dd4cfa712d461b3174a814aa78cb4c",
             "locator": {
               "kind": "symbol",
@@ -134,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
             "content": "sha256:8daa6629906d4c216d6ce6135c557b82d9c064f4c8c0ef755fcd60cbf5d6777e",
             "locator": {
               "kind": "symbol",
@@ -150,36 +168,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
             "content": "sha256:14d5f4ea97b2f8ed7170ff5549d33528e493359b93959273ce694e621b9fe148",
             "locator": {
-              "end": 269,
+              "end": 270,
               "kind": "line_range",
-              "start": 251
+              "start": 252
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
             "content": "sha256:ebe72fd903a85084a3498718717fbf90cc6ecc92ffcf5b7803bab6b1c2f96d21",
             "locator": {
-              "end": 110,
+              "end": 111,
               "kind": "line_range",
-              "start": 106
+              "start": 107
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
             "content": "sha256:e7a68952117962dcdd994bf3fd162c2d9e9d8b8d21444fd5a46a130f1256bdf4",
             "locator": {
-              "end": 240,
+              "end": 241,
               "kind": "line_range",
-              "start": 231
+              "start": 232
             }
           },
           "kind": "code"
@@ -204,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
             "content": "sha256:c8fb1829ffe2f8da2520f380d0fe0d9bd7c48974b7861e33b7cacc2444a4634c",
             "locator": {
               "kind": "symbol",
@@ -220,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
             "content": "sha256:3c14c12500a9f14b25be8fd9c376810b7d6716a252d633d9435d951122bdb7d3",
             "locator": {
               "kind": "symbol",
@@ -232,14 +250,15 @@
       ]
     },
     "7": {
-      "note": "The fixer calls this module on a converted tree, scoped to one document when one is named.\n\nAnchor: `_converted_citation_fix`",
+      "note": "Converted citation fixing authors the references of the selected card. A document list applies that operation to each named card.\n\nAnchor: “_converted_citation_fix”",
       "targets": [
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
-            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_converted_citation_fix"
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -252,7 +271,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
             "content": "sha256:82dfd3e55eeae211238e5f46695e37de83130fee22142419132fb53db93f623e",
             "locator": {
               "kind": "symbol",
@@ -268,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "590b3734a48e0a86d0027cb2cc4408faaf1e1333",
+            "blob": "d57c9db3b908f183237e31804d2c25ac7f3faa88",
             "content": "sha256:380a00b881e365da16c6bbb64325b8c4cf6d9c8af01af937f0c085aca07c1914",
             "locator": {
               "kind": "symbol",

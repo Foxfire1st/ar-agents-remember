@@ -6641,12 +6641,12 @@
       ]
     },
     "92": {
-      "note": "**Retained historical source account — superseded by the current route account:** The shared exclusion predicate.",
+      "note": "The current shared predicate excludes generated route-index caches.",
       "targets": [
         {
           "anchor": {
-            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
-            "content": "sha256:312f01489db650ccd1a6f99d36ea871efa7ddecdf6df5314c968292a8ec2e31a",
+            "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
+            "content": "sha256:16c71a5be091ef28e6bbc5e00c9c31757940febf3bbafadfc8e5518f3ffd0221",
             "locator": {
               "kind": "symbol",
               "name": "is_excluded_from_knowledge"
@@ -6696,12 +6696,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "afce21dceaadba6f8064fc3dec3b80af7bccf765",
+            "blob": "e09b3eacede7c4b7bba1049696e3e1042aa0c9bf",
             "content": "sha256:62a65e23014aa6518250679fda941c0011f4a49c16e0bb3129a702440ab2f73c",
             "locator": {
-              "end": 12,
+              "end": 13,
               "kind": "line_range",
-              "start": 11
+              "start": 12
             },
             "path": "mcp/src/agents_remember/cli/knowledge_format.py"
           },

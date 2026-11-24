@@ -33,12 +33,12 @@
         },
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:1241a301b4ac6bc54f52b34ab848f3998dce747edc772fb77afb4a955bdab508",
             "locator": {
-              "end": 258,
+              "end": 259,
               "kind": "line_range",
-              "start": 251
+              "start": 252
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },

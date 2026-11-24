@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The authoring, legacy scan and citation count routes use the same memory-relative namespace so hidden cards remain visible to all three consumers."
+  },
+  "applicability": "Bulk converted-card authoring, legacy-card scanning and the citation-fix document-count fallback.",
+  "conditions": [
+    "Each route enumerates eligible Markdown paths below onboarding/ and filters using the path relative to the memory root."
+  ],
+  "exclusions": [
+    "Explicit citation selections or a supplied scanned-document count take precedence over fallback enumeration.",
+    "The existing legacy marker and read-failure rules still apply."
+  ],
+  "id": "INV-S4WA6F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/24_a-card-under-a-dot-directory-is-knowledge-ar/role-reports/worker/e92cbcbf-2651-4fc9-8194-309aed746b98/role-launch/261112-BUG-L24-worker-e92cbcbf-2651-4fc9-8194-309aed746b98.W3.md — Primary acceptance and Checks"
+      ],
+      "path": "L24-curator-current-pair-ingest.json"
+    },
+    "handoffEntry": "BUG-R24@v1 rule 3 bulk readers",
+    "leaf": "261112-BUG-L24",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Bulk card discovery and counts use memory-relative paths under onboarding.",
+  "status": "proposed",
+  "supersedes": []
+}

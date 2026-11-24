@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b868f9aa540862d0ed9b6fb637b571ca65c26f85",
+            "blob": "44b3fad830714dbbed83da33525682ccb9ee6dd5",
             "content": "sha256:a4c3c9f0f94783105515e95f61ae79408c6049398db25b161e8dde860da92b01",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b868f9aa540862d0ed9b6fb637b571ca65c26f85",
+            "blob": "44b3fad830714dbbed83da33525682ccb9ee6dd5",
             "content": "sha256:d28a77220a699dcc741275648f0593b8e1a9ed1ef20c30a66403d7be7af8f1d4",
             "locator": {
               "kind": "symbol",
@@ -51,7 +51,7 @@
         },
         {
           "anchor": {
-            "blob": "b868f9aa540862d0ed9b6fb637b571ca65c26f85",
+            "blob": "44b3fad830714dbbed83da33525682ccb9ee6dd5",
             "content": "sha256:55a2adc339911a61106f7c9e45788ff5ced8b8900cf92ad26de52c2ed3d40ff1",
             "locator": {
               "kind": "symbol",
@@ -67,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b868f9aa540862d0ed9b6fb637b571ca65c26f85",
+            "blob": "44b3fad830714dbbed83da33525682ccb9ee6dd5",
             "content": "sha256:2e457ef68dd1f78a4d3ada0109da5e928fb52643dfabbff66cde6cdcdf36fc48",
             "locator": {
               "kind": "symbol",
@@ -83,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b868f9aa540862d0ed9b6fb637b571ca65c26f85",
+            "blob": "44b3fad830714dbbed83da33525682ccb9ee6dd5",
             "content": "sha256:0486f897e3514385ce6430a5f794328714fbc33ec279dc117a10e62aa7a01643",
             "locator": {
               "kind": "symbol",
@@ -95,12 +95,12 @@
       ]
     },
     "6": {
-      "note": "Inventory rows carry their governing onboarding route.",
+      "note": "Inventory artifact rows include the workflow card and sidecar under a dot directory, give them the root onboarding route, and leave generated route caches out.",
       "targets": [
         {
           "anchor": {
-            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
-            "content": "sha256:c9c3f729152f504b69db957bf4d8c4386e7e3da32906e2537a25808f438094d3",
+            "blob": "d37eaf26135da54294fadefaa7de3a34990565b1",
+            "content": "sha256:3b3be04c67ac4c2779aec924e4006e60c6b1caabb3a6d7d8b9b63d613b9a2f02",
             "locator": {
               "kind": "symbol",
               "name": "test_inventory_rows_carry_their_governing_onboarding_route"
@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "blob": "d37eaf26135da54294fadefaa7de3a34990565b1",
             "content": "sha256:eabdfc5125ebe668e656f8041681703a2a8e3e2a4b69f13470ad4fb8959b6598",
             "locator": {
               "kind": "symbol",

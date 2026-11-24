@@ -257,12 +257,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "166a2dccebfa1bd1deeb7b24c7edd12b59e8193c",
+            "blob": "346618fc1ffeaea60a35ac57fadcb471ac70984e",
             "content": "sha256:7ee1d97610a7dae11b6e65ca08578bcec3f2535952e02809d307d9e7ae5ef1cc",
             "locator": {
-              "end": 786,
+              "end": 836,
               "kind": "line_range",
-              "start": 763
+              "start": 813
             },
             "path": "mcp/tests/test_onboarding_trace_gate.py"
           },

@@ -15,8 +15,11 @@ rules.** Over the fixture census of `knowledge_census_test_support`, each case c
 
 - **Formats.** Every census file parses by schema and is canonical; route slugs are readable and
   injective; the models refuse inconsistent claims and statuses.
-- **Inventory.** Rows carry their governing route; `take_inventory` pins exact commits over real
-  `tmp_path` Git repositories and refuses `no-such-branch` and an all-zero commit.
+- **Inventory.** Rows carry their governing route.
+  `test_inventory_rows_carry_their_governing_onboarding_route` places the workflow Markdown and
+  sidecar under `onboarding/.github/workflows/` at the root route and excludes the generated
+  route-index cache. `take_inventory` pins exact commits over real `tmp_path` Git repositories
+  and refuses `no-such-branch` and an all-zero commit.
 - **Writer.** The writer-positive cases assert successful appends; this does not imply every completed-migration fixture passes the validator; refusals (including an unconverted tree) write nothing; an
   interrupted `create` can be repeated; model refusals are `CensusWriteError`.
 - **Rules.** The nine census rules are registered and refusing. Wave-one marks every route migrated,

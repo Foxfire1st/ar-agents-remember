@@ -27,8 +27,8 @@ no file content: the inventory is mechanical, and claims are agent work (D11).
   no `route`. This is a helper relocation, not a second route-selection implementation.
 - `build_inventory` (the Git-free part, used by the tests): one source row per code path in scope, routed
   by its onboarding location `onboarding/<path>.md`, and one artifact row per memory path under
-  `onboarding/` that `is_knowledge_path` accepts (the `*.index.json` cache and hidden directories are
-  excluded), routed by its own location. Rows are sorted.
+  `onboarding/` that `is_knowledge_path` accepts, including artifacts under dot directories and excluding
+  generated `*.index.json` route caches. Each artifact uses the route of its own location. Rows are sorted.
 - `in_scope`: an empty scope means every file; otherwise a path equal to or under a scope directory.
 
 ### Conventions
@@ -66,7 +66,7 @@ Commit resolution, the route walk and the two builders.
 
 
 
-- Inventory rows carry their governing onboarding route. [6]
+- Inventory artifact rows include the workflow card and sidecar under a dot directory, give them the root onboarding route, and leave generated route caches out. [6]
 - Exact commits are pinned and an unreadable baseline refused. [7]
 
 ### Cross-Repo References

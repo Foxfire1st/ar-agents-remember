@@ -18,6 +18,24 @@
       },
       "rationale": "This onboarding boundary refuses a root file whose card subject would collide with the root overview.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+        "content": "sha256:e4cf5f835555c65af186f06a11534e10656730b545d1ea1891879d3f5581c940",
+        "locator": {
+          "kind": "symbol",
+          "name": "counted_change"
+        }
+      },
+      "id": "RLZ-RADDKA",
+      "invariant": "INV-M0Q4XS",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 6 writer and gate",
+        "leaf": "261112-BUG-L24"
+      },
+      "rationale": "Compares the card bytes selected by the shared tree readers when deciding whether the change counts.",
+      "role": "enforcement"
     }
   ],
   "references": {

@@ -23,6 +23,10 @@ call the trace gate and memory-quality controller; they do not exercise a closeo
 - **Rule 2 and the examples.** `test_the_conforming_example_and_the_route_case` (a prose edit with its `updated` row, plus a
   "test-only rename" `no_impact` row; only the nearest route; `onboarding:overview` for a root-level file) and
   `test_a_missing_trace_is_one_named_repair_finding_and_the_closeout_refuses`.
+- **Workflow card.** `test_an_updated_workflow_card_satisfies_the_closeout_gate` makes the workflow
+  source eligible through `pathRules`. The writer and seeded-row variants edit the source and its
+  Markdown card, bind the row to the current source blob, and require a counted change and a
+  passing leaf gate.
 - **Rows.** `test_rows_are_only_about_changed_files_and_the_registry_rule_is_both_halves` (unnecessary rows
   remain report-only; the registered kind now declares five facts including `sourceBlobs`;
   `onboarding_item_open` rejects counted-edit-only and `satisfiedBy: counted-change` identities);
@@ -37,8 +41,9 @@ call the trace gate and memory-quality controller; they do not exercise a closeo
   `test_an_unreadable_base_sidecar_is_an_incomplete_input_and_a_repair_counts`;
   `test_unreadable_history_and_unestablished_sides_are_findings_never_a_pass`.
 - **The converting leaf.** `test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf` builds a
-  legacy K_B (`_legacy_card`), converts it, and shows that only a change beyond the conversion counts. It also
-  writes a `knowledge-worklist-base/v1` cache file and shows it is ignored and rewritten as v2.
+  legacy K_B (`_legacy_card`), converts it, and shows that only a change beyond the conversion
+  counts. It writes each of the v1 and v2 cache projections and requires the rebuilt v3 projection
+  and the same open trace.
 - **Enforcement.** `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count`
   drives the controller (`_run_controller`). Since MIK-R09 (leaf 260928-MIK-L09) `_run_controller` captures the real
   candidate trees (the gate judges exact trees), and the case asserts `curatorActionableCount` 4 beside
@@ -141,7 +146,7 @@ No configured live documentation source was available for this pass.
 
 
 
-- The conversion counts for nothing; a v1 cache file is rewritten. [13]
+- Only edits beyond migration count. Version 1 and version 2 base-cache projections are ignored and rebuilt as version 3 without closing the open trace. [13]
 
 
 

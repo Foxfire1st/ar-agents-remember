@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The workflow gate regression prevents a legal hidden-source card update from leaving an otherwise satisfied leaf stuck at the onboarding gate."
+  },
+  "applicability": "Counted file-card edits in the leaf onboarding trace and closeout gate.",
+  "conditions": [
+    "The source is eligible under the repository path rules.",
+    "The current card has a counted Markdown or sidecar-reference change, and the source-bound updated row matches the candidate."
+  ],
+  "exclusions": [
+    "A missing authored row, an ineligible source or a conversion-only change cannot satisfy this rule. Changes confined to mechanical anchor fields, realizes or proves do not count."
+  ],
+  "id": "INV-M0Q4XS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/24_a-card-under-a-dot-directory-is-knowledge-ar/role-reports/worker/e92cbcbf-2651-4fc9-8194-309aed746b98/role-launch/261112-BUG-L24-worker-e92cbcbf-2651-4fc9-8194-309aed746b98.W3.md — Primary acceptance and Checks"
+      ],
+      "path": "L24-curator-current-pair-ingest.json"
+    },
+    "handoffEntry": "BUG-R24@v1 rule 6 writer and gate",
+    "leaf": "261112-BUG-L24",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A source admitted by path rules can satisfy its updated judgment with a current card change under a dot directory.",
+  "status": "proposed",
+  "supersedes": []
+}
