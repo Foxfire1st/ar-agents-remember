@@ -8,6 +8,8 @@
 
 Own the parent wrapper and child entry point for exact-tree worklist computation and its accompanying review facts. The kernel process owner still owns execution/coalescing and reply admission; this module does not introduce a second worklist implementation or a persistent result cache.
 
+The child wire carries the two candidate tree IDs and the already captured code and memory bases. It uses those supplied sides without resolving another memory base.
+
 ## Code Commentary
 
 `isolated_leaf_worklist` serializes the contract, candidate trees and captured base, derives the serving build identity, and optionally adds a `review` payload when supplied `trees`. It calls the supplied process owner or the module’s default owner (registered for shutdown at interpreter exit). Returned read observations are replayed **before** the error check. A computation error raises `WorklistProcessError`; otherwise a non-None review result is merged into `(document or {})` under `_review`. Thus a review-facts adjunct can exist without a worklist-state field; that is not an invented complete worklist. Without the adjunct, the original document/None is returned.
@@ -22,7 +24,9 @@ Actual BASE/current source adds optional review input/result, recorded/live bran
 
 No domain documentation source is configured. Current repository source establishes these local claims; former test/timing accounts below remain historical only.
 
-- Default process ownership, optional review input, read replay before error and document/adjunct return. [10]
+
+- Default process ownership, optional review input, read replay before error and document/adjunct return. Anchor: parent boundary [10]
+
 - Exact contract fields and typed path/tuple reconstruction. [11]
 - Request/build validation, shared recorded computation, recorded/live owner branch and explicit reply fields.
 - The one child entry point owns lifetime, JSON framing and dedicated build-mismatch exit.

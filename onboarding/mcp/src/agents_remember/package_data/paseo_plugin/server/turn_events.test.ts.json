@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+        "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
         "content": "sha256:1bf475d4b7bf0c67a58143c912b916a13a42ddc2de43e21d600813a6c5277e47",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+        "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
         "content": "sha256:4dd9c9c7e8d2fc55ab6335dae55029e8b4872c28101cbd83137f611fb195ecfa",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+        "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
         "content": "sha256:ff24c0b4be99c9f2cb10f2dc1b16c7c4c00495bc1db9971bffd7cce51ba255c1",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+        "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
         "content": "sha256:8132484220b8321d94c2784e11dc05be1e07ffe7401204b3d9968039e65c5441",
         "locator": {
           "kind": "symbol",
@@ -68,13 +68,30 @@
         "handoffEntry": "L10-curated-turn-history",
         "leaf": "261112-BUG-L10"
       }
+    },
+    {
+      "anchor": {
+        "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
+        "content": "sha256:217b64e857ba57dc2d284cf99e5ce709c02be745748ab4b9ce4772bced1ce4fc",
+        "locator": {
+          "kind": "symbol",
+          "name": "closing a seat preserves the parent lines owed to it and about it"
+        }
+      },
+      "facet": "New lines to a closed parent and held lines to or about closed seats reach the parent. Archive learned by hook or listing selects the alternate.",
+      "id": "PRF-G739BS",
+      "invariant": "INV-TD175J",
+      "origin": {
+        "handoffEntry": "M1-F07 closed seat proof separation",
+        "leaf": "261112-BUG-L20"
+      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
-        "content": "sha256:823022bcd388f9af0ab0610b43c0e69c92c54dd0e280c451f9bb2d11ee758912",
+        "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
+        "content": "sha256:b154635e80477267caa38faa447a14f72b2de440dffd25aa4a345a3ca8f3eb62",
         "locator": {
           "kind": "file"
         }
@@ -95,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
             "content": "sha256:4dd9c9c7e8d2fc55ab6335dae55029e8b4872c28101cbd83137f611fb195ecfa",
             "locator": {
               "end": 75,
@@ -112,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
             "content": "sha256:268bc842893dcc6d4029d33ec2a4bd4ce4325181646cac6686219058eba0d339",
             "locator": {
               "end": 246,
@@ -124,12 +141,41 @@
         },
         {
           "anchor": {
-            "blob": "2b2a90a4d8d3c92e8d20fbefdbae8110d861d7d2",
+            "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
             "content": "sha256:7b806ca88936af3a176914498be785cd722c8829ee44286d3ec6615b5766e3c4",
             "locator": {
               "end": 322,
               "kind": "line_range",
               "start": 267
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reopened-child case is registered only with the supplied registry fixture. Its adapter injects the next turn and its end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
+            "content": "sha256:8ec9c293ee30f6517a85ca5ca4e8b65092acbe3582e3d3c2f9291bca8ff787b8",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 380
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ce0aab59bd27c6b8ade32bba83454c5ea2c8a6d4",
+            "content": "sha256:cbc5ce413c4479f8e17f1b8c89577b96f249258a8b2d0f48ea9157bb520a2dda",
+            "locator": {
+              "end": 430,
+              "kind": "line_range",
+              "start": 425
             }
           },
           "kind": "test"

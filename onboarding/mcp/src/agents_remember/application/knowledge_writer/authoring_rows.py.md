@@ -14,7 +14,7 @@ Author judgment rows in the owner's writable history while preserving product-re
 
 It validates and writes eight judgment row kinds -- invariant, family, onboarding trace, unexplained change, planned, reconsideration, membership and record -- and fills each row's items, revisions, source bindings and anchors. Membership and decision/facet record judgments are separate kinds, not family rows.
 
-`_onboarding_row` accepts `updated` or `no_impact` and rejects covers, effect, because, examined, considered and ref. It fills `sources` from the candidate code snapshot as `{path, blob}`, with `absent` for deletion. A card subject takes every source of the leaf's persisted worklist item of its subject -- a file card's identical-copy group as much as a route overview's governed files -- so the row binds a whole group of copies; a card no item names binds its own path, and an overview no item covers is refused. `_row_sources` owns that choice and `_onboarding_row` supplies it to the row. It preserves crossing marker text and rerun IDs. An `updated` row requires a real counted Markdown or reference change from the paired memory base to the produced candidate; realizes/proves-only and mechanical reference carrying do not count. A named paired base controls even if a persisted counted flag disagrees; an unreadable named base refuses. Without that base, a persisted flag is used when available, otherwise the operation's own base is compared. Ordinary unchanged-card judgments use `no_impact`; this describes the writer, not a backfill instruction for the bounded L53 rollout.
+`_onboarding_row` accepts `updated` or `no_impact` and rejects covers, effect, because, examined, considered and ref. It fills `sources` from the candidate code snapshot as `{path, blob}`, with `absent` for deletion. A card subject takes every source of the leaf's persisted worklist item of its subject -- a file card's identical-copy group as much as a route overview's governed files -- so the row binds a whole group of copies; a card no item names binds its own path, and an overview no item covers is refused. `_row_sources` owns that choice and `_onboarding_row` supplies it to the row. It preserves crossing marker text and rerun IDs. An `updated` row requires a real counted Markdown or reference change from the recorded memory base to the produced candidate. Realization-only, proof-only and mechanical reference changes do not count. The writer compares a readable recorded base in the candidate's format even when the persisted counted flag disagrees. If the recorded card comparison is unavailable, the writer uses a persisted flag for that subject when present, then compares with the operation base. Ordinary unchanged-card judgments use `no_impact`; this describes the writer, not a backfill instruction for the bounded L53 rollout.
 
 `_membership_row` canonicalizes `membership:<INV>`, bare-invariant and resolvable `handoff:` no_family forms before stored-row lookup, preserving rerun identity. It stores the candidate invariant revision and validates each `considered` family; an invariant listed by any produced-tree family refuses. It rejects covers, effect, because, examined and ref.
 
@@ -47,14 +47,18 @@ A reconsideration `raise` checks the task-owner question port before changing th
 
 ### Repo-Internal References
 
-- History-row assembly reloads the attempt after any row placements and preserves its produced written revisions. [8]
-- The re-point revision's writer evidence survives beside its judgment row. [9]
+- History-row assembly reloads the attempt after any row placements and preserves its produced written revisions. [10]
+- The re-point revision's writer evidence survives beside its judgment row. [11]
+
 
 
 - Source-inspected authoring: onboarding rows fill candidate source bindings and require counted change for `updated`; canonical membership and decision/facet constructors preserve rerun IDs and foreign evidence. This is static implementation evidence, not a fresh run or acceptance. [1]
 
 
-- Current source delta inspected statically: Add membership/record constructors, onboarding source/base precedence and foreign-evidence preservation; retain the family section, propose no judgment rows. [3]
+
+
+- Onboarding rows bind source paths at the code candidate. The fresh card comparison uses the recorded memory base in the candidate format. When unavailable, the persisted subject count precedes the operation base. Membership, record and foreign-evidence row rules retain their owners. [3]
+
 
 
 - Invariant covers admit destination paths on moved, extended, changed and deleted rows; the helper refusal wording is narrower than its caller allowlist. [4]

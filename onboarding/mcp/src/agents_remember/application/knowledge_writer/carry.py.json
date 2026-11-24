@@ -101,14 +101,16 @@
       ]
     },
     "7": {
-      "note": "The call in every writer operation.",
+      "note": "The writer calls carry_entries after authoring and before checking the owner’s history.",
       "targets": [
         {
           "anchor": {
-            "blob": "a416f07cd2b10ac1e83cf28c6fdeb362a5938c4f",
-            "content": "sha256:2ab37c36d4e6f06d8f0c9f698b481559d1d7e02d225a274d0708984febda56ac",
+            "blob": "1b9c5dafe07a227f63206ed03cb03b8d643be897",
+            "content": "sha256:3f87edf8c07c7b3127661d4099c999ef868b78f14488f3ead434784fb55c0931",
             "locator": {
-              "kind": "file"
+              "end": 166,
+              "kind": "line_range",
+              "start": 164
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },
@@ -121,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b66bb2d88d03bb9634cb9fea69ce829ab37c545d",
+            "blob": "607beeeb7d7e98cdb39fe08eef7599c18962fd13",
             "content": "sha256:2e165bf0b18977bafbafa57181e561d69edcbc7c8df9624004a31fcc390aa925",
             "locator": {
               "kind": "symbol",
@@ -138,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b66bb2d88d03bb9634cb9fea69ce829ab37c545d",
+            "blob": "607beeeb7d7e98cdb39fe08eef7599c18962fd13",
             "content": "sha256:de92200ab1ef77d40740f40d55d8c4176fd03703c8dff3ea08a3b75281b90689",
             "locator": {
               "kind": "symbol",

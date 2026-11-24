@@ -1,0 +1,101 @@
+{
+  "attempt": 2,
+  "closed": true,
+  "leaf": "261112-BUG-L10",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5E1PED",
+      "items": [
+        "sha256:82ea9f35bc91813313c19c33d4b1a7f50c20680c8b9e4adce8d56e57058bc9c7"
+      ],
+      "reason": "The type-only import supplies the SDK type used by the complete palette declaration. It has no runtime behavior or independent obligation.",
+      "subject": "hunk:sha256:82ea9f35bc91813313c19c33d4b1a7f50c20680c8b9e4adce8d56e57058bc9c7"
+    },
+    {
+      "considered": [
+        "FAM-DBX1PN",
+        "FAM-H734XJ",
+        "FAM-QH2SJV",
+        "FAM-Z69A94",
+        "FAM-14NZRC",
+        "FAM-JY9AN3",
+        "FAM-Q5J2ZC",
+        "FAM-RT2XDA",
+        "FAM-2BRZW7",
+        "FAM-6M4B49",
+        "FAM-N17BB4"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-EKXKEB",
+      "items": [
+        "sha256:f9ae25eed935b41075841dc62aaa24ed5f3341c0021e8854d3c68275799b2cc7"
+      ],
+      "reason": "The palette declaration governs embedded chat colours. The selected-agent and native-task-entry families govern navigation, displayed identity and state. Other governing route families cover launcher, refusal, settings, lifecycle or repository guarantees. The complete palette is an independent guarantee of the theme contribution.",
+      "revision": 1,
+      "subject": "membership:INV-TVEEQ2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EPNFQK",
+      "items": [
+        "sha256:7b5f1685359ee99a13b990beb0ac2c39967f7d31fa5bfcfcbc9ba6b5b51f9b09"
+      ],
+      "reason": "Record why the supported theme contribution supplies all palette values to preserve the previous chat colours.",
+      "sources": [
+        {
+          "blob": "48c2c186fd05ba62fd0c2436e182fb873620af96",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FFCCJ8",
+      "items": [
+        "sha256:728c4d6a2a9e63a8a5969f389a7f59bf49094819e5726fff54aa5dd9b188fb9c"
+      ],
+      "reason": "Correct the scope of Git's whitespace exemptions and keep the existing catalog and tokenizer explanations.",
+      "sources": [
+        {
+          "blob": "8ba953f47dd956107e1ca39d86f158fe2c082b6f",
+          "path": ".gitattributes"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "considered": [
+        "FAM-DBX1PN",
+        "FAM-H734XJ",
+        "FAM-QH2SJV",
+        "FAM-Z69A94"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-FGVA7N",
+      "items": [
+        "sha256:74d0d4ee6497a20f4c7090b77bc0b179a546e3b4489cbd113250e9cda52892ed"
+      ],
+      "reason": "The fixture rule governs Git whitespace validation of byte-preserved Paseo server fixtures. The shared catalog family governs union merge and refusal of invalid catalogs. The environment, selected-case and Python families govern other mechanisms. The fixture rule already expresses the connection between staged checking and preserving upstream bytes.",
+      "revision": 1,
+      "subject": "membership:INV-S1VHC9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NSDXR9",
+      "items": [
+        "sha256:d3d61a846ffe85c10da59737265a3de18ac603ae810088edcb51c40866ec4748"
+      ],
+      "reason": "Explain the complete palette and compile-time requirement beside the unchanged contribution and navigation contract.",
+      "sources": [
+        {
+          "blob": "48c2c186fd05ba62fd0c2436e182fb873620af96",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

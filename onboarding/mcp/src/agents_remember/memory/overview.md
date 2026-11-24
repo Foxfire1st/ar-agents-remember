@@ -363,7 +363,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowle
 
 - The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [173]
 
+
 - Converted carryover requires matching layouts and exact recovery-leaf authority, writes paired worktree units and leaves curator rows/publication to ordinary closeout. [174]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The package map. [101]
 - The conversion and index packages describe their module boundaries. [106]
@@ -373,10 +375,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowle
 - KnowledgeIndexCache binds its namespace to the loaded build digest and uses a private namespace when that digest is unavailable; only known-build datasets are reused. [175]
 - open_cached_index opens only the loaded build namespace and performs no usage bookkeeping; an unknown digest yields no reusable index. [176]
 
-- Index build derives current standing and writer evidence from one selected tree. [181]
-- The declared cache schema stores both current standing and per-revision writer evidence. [182]
-- Revision-standing conversion plans stored state-word removal and companion review facts. [183]
-- Crossing merges authored fields and applies selected-side or product writer evidence. [184]
+- Index build derives current standing and writer evidence from one selected tree. [185]
+- The declared cache schema stores both current standing and per-revision writer evidence. [186]
+- Revision-standing conversion plans stored state-word removal and companion review facts. [187]
+- Crossing merges authored fields and applies selected-side or product writer evidence. [188]
 
 - Retained reference account (no fresh execution or acceptance inferred): The two proof lookups. [113]
 - Retained reference account (no fresh execution or acceptance inferred): The count model that refuses its own arithmetic contradiction at construction. [44]

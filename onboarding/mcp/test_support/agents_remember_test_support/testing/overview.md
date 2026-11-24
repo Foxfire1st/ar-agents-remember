@@ -155,5 +155,5 @@ The generated route index lists the source files of this route and their cards.
 - Manifest step derivation collects actions and reader-role associations for classified Markdown references from first-message and detail pointers. [31]
 
 - The shared factory bounds selector idle waits, and pytest restores its two factory aliases at cleanup. [32]
-- Fixture Git uses a private HOME and captures command failure output. [34]
-- Crossing fixture controls compare attributed state and writer before and after selecting or converting bytes. [35]
+- Fixture Git uses a private HOME and captures command failure output. [36]
+- Crossing fixture controls compare attributed state and writer before and after selecting or converting bytes. [37]

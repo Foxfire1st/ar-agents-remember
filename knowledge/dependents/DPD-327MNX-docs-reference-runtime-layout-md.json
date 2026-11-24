@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
-    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The runtime-layout reference’s distinct leaf and other role scratch and report folders still agree with preparation for an admitted launch.",
-    "task": "261112-BUG-L19",
+    "statement": "The host file table attributes role records to Python registration and dashboard reconciliation and distinguishes resumable closure from archived activity.",
+    "task": "261112-BUG-L20",
     "uncommitted": true
   },
   "document": "docs/reference/runtime-layout.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -96,7 +96,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/tool_reports.py"
     },
     {
-      "blob": "ff9215b1a2f313985809b74a48a92580c95cea2c",
+      "blob": "181aa50525655219a506be03191d7c72a2a5354d",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
     },
@@ -124,6 +124,45 @@
       "blob": "2319cd59f5fe4cb132f6cf2dc90b3c4a2a718e60",
       "kind": "file",
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/execution.py"
+    },
+    {
+      "anchor": {
+        "blob": "181aa50525655219a506be03191d7c72a2a5354d",
+        "content": "sha256:faba0990269151d16328f42510bfcf2e1e0d071b3ecb1e869ed6f0c1f3920a15",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_role_agent"
+        },
+        "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+      },
+      "heading": "What the install does for the host",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "d6c1e1c987e94ba2e07c90e56183a129fc848e18",
+        "content": "sha256:913ecbb9965cc8844da094c189e3a7d939ca4b221923a68318e986a6113ecddb",
+        "locator": {
+          "kind": "symbol",
+          "name": "recover_role_registry"
+        },
+        "path": "mcp/src/agents_remember/cli/role_registry_recovery.py"
+      },
+      "heading": "What the install does for the host",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "534586931977668702d528b74d51d09f2a58a834",
+        "content": "sha256:10a92f0a201b4854214ea31c7c93d2959aa3617fb87e38a05d4a1e1fe08d45e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "HostActivityPublisher"
+        },
+        "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+      },
+      "heading": "What the install does for the host",
+      "kind": "anchor"
     }
   ]
 }

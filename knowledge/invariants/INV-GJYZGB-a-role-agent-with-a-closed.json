@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation spans publication, uptake or delivery locations and is exercised by the named focused controlled cases."
+  },
+  "applicability": "Role agents admitted by the product registry and represented in the Paseo activity publication.",
+  "conditions": [
+    "A session may close and later start a new turn.",
+    "Archive is a separate host event and its ended state survives any later close."
+  ],
+  "exclusions": [
+    "Agents outside the role registry do not contribute activity to this publication."
+  ],
+  "id": "INV-GJYZGB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W3 clean-candidate focused Python and plug-in runs."
+      ],
+      "path": "W4-knowledge-plan.json"
+    },
+    "handoffEntry": "BUG-R20@v1 rule 1",
+    "leaf": "261112-BUG-L20",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A role agent with a closed session is inactive and remains known in the activity publication, its next turn shows as active, and an archive keeps its end through a following close.",
+  "status": "proposed",
+  "supersedes": []
+}

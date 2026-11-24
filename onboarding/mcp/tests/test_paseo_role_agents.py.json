@@ -1,17 +1,120 @@
 {
   "path": "mcp/tests/test_paseo_role_agents.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+        "content": "sha256:ce11ac28796d46072b4c57e4e02bd0a1d8b373bb9a372f3e77c9a7ba1bdb170e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_exact_archive_requires_a_complete_usable_reply"
+        }
+      },
+      "facet": "A complete usable exact reply with a fixed positive archive removes the omitted row. Cut and malformed exact replies preserve it.",
+      "id": "PRF-8PJWNZ",
+      "invariant": "INV-MT07ZE",
+      "origin": {
+        "handoffEntry": "M1-F07 exact archive reply proof",
+        "leaf": "261112-BUG-L20"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+        "content": "sha256:325a7b434ee67ea035043ea07813f6246566c177cbcad8c54ec39d660db88651",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dashboard_does_not_read_receipts_without_recovery_work"
+        }
+      },
+      "facet": "Makes no receipt enumeration without missing identities or usable exact absence.",
+      "id": "PRF-H2Z9CT",
+      "invariant": "INV-MT07ZE",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 2, 3, 5",
+        "leaf": "261112-BUG-L20"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+        "content": "sha256:4882fe9326ed1ca50845433ac073bb853a0414175db1795ebf2d1e19d70c90f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dashboard_heals_from_receipts_before_snapshot_and_does_not_probe_finished_gaps"
+        }
+      },
+      "facet": "Restores receipt-backed rows before activity, preserves a starting receipt, and avoids exact calls for finished gaps.",
+      "id": "PRF-HKNYZA",
+      "invariant": "INV-MT07ZE",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 2, 3, 5",
+        "leaf": "261112-BUG-L20"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+        "content": "sha256:53989e4fd6d1f00291bae79d8257abafaf7c8f49302858c1fd7b8c7ec3c60f65",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_registration_keeps_a_legacy_end_without_archive_evidence"
+        }
+      },
+      "facet": "Preserves a row on a legacy ended state without an archive timestamp.",
+      "id": "PRF-SS89HK",
+      "invariant": "INV-MT07ZE",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 2, 3, 5",
+        "leaf": "261112-BUG-L20"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+        "content": "sha256:34f419be7575a96123eabbc6030bc0c5ebbc83e670ae40a8ed7ca2df0a1f4c5d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_registration_reclaims_only_explicitly_ended_roles"
+        }
+      },
+      "facet": "Compares positive archive evidence with the registration time across boot changes and repeated registration.",
+      "id": "PRF-X206B6",
+      "invariant": "INV-MT07ZE",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 2, 3, 5",
+        "leaf": "261112-BUG-L20"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+        "content": "sha256:9e1313728c64f0468caa6a18b94af50b49d00e491dd199fb398ca00bdf9106d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_reconciliation_preserves_registrations_made_during_host_reads"
+        }
+      },
+      "facet": "Preserves a row registered after the inventory baseline under the shared writer lock.",
+      "id": "PRF-ZFBJ1N",
+      "invariant": "INV-MT07ZE",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 2, 3, 5",
+        "leaf": "261112-BUG-L20"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Round-trip and unchanged republish preserve fact data and file mtime.",
+      "note": "Published facts round-trip. Same-identity republish refreshes registration time, and merging preserves other agents.\n\nAnchor: `RoleAgentPublishTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "b790812b7fd8b9dda8310afaf6b27e4e1e720038",
-            "content": "sha256:08aac0a0196a05c30d1bb2ab4d4fc51f53983d02b7b27e5feb78cf9a9e8cd8de",
+            "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+            "content": "sha256:9378bdae520a223cf9393679126f2eb186aa437d982fbf3d42e9d90f6b0cc807",
             "locator": {
-              "kind": "symbol",
-              "name": "RoleAgentPublishTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -23,8 +126,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b790812b7fd8b9dda8310afaf6b27e4e1e720038",
-            "content": "sha256:b91265be81d154f0adfa5bdfc7bab065f3ce7c38cdc454cd8e89e28ed7cbaf9f",
+            "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+            "content": "sha256:9378bdae520a223cf9393679126f2eb186aa437d982fbf3d42e9d90f6b0cc807",
             "locator": {
               "kind": "file"
             }
@@ -34,15 +137,14 @@
       ]
     },
     "3": {
-      "note": "Only authoritative ended occurrences reclaim registration; revival supersedes older ends at both fixture sizes.",
+      "note": "A positive archive reclaims a valid registration only when it is newer. An older archive, a close and listing omission preserve the row.\n\nAnchor: `test_registration_reclaims_only_explicitly_ended_roles`",
       "targets": [
         {
           "anchor": {
-            "blob": "b790812b7fd8b9dda8310afaf6b27e4e1e720038",
-            "content": "sha256:ef16bcc6fcf9ced2317016136a6abb09b37a70538dc3512da091f53dff0158ae",
+            "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+            "content": "sha256:9378bdae520a223cf9393679126f2eb186aa437d982fbf3d42e9d90f6b0cc807",
             "locator": {
-              "kind": "symbol",
-              "name": "test_registration_reclaims_only_explicitly_ended_roles"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -50,15 +152,14 @@
       ]
     },
     "4": {
-      "note": "Concurrent registrations retain every published agent fact.",
+      "note": "Concurrent registrations retain every published agent's facts.\n\nAnchor: `test_concurrent_role_registrations_preserve_each_others_facts`",
       "targets": [
         {
           "anchor": {
-            "blob": "b790812b7fd8b9dda8310afaf6b27e4e1e720038",
-            "content": "sha256:9af7a7a35274afdef35c47589cbbf75bdbf1a89237e6aec64a5e5d954b190d25",
+            "blob": "7033b881cdd439484f4267249994fd9dcca2bbe3",
+            "content": "sha256:9378bdae520a223cf9393679126f2eb186aa437d982fbf3d42e9d90f6b0cc807",
             "locator": {
-              "kind": "symbol",
-              "name": "test_concurrent_role_registrations_preserve_each_others_facts"
+              "kind": "file"
             }
           },
           "kind": "test"

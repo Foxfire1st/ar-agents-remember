@@ -119,8 +119,8 @@ The knowledge-command registry also exposes handoff-check, delegating its argume
 
 ## Evidence
 
-- The command parser registers text conversion and standing/state conversion separately. [22]
-- The derived-state adapter selects a plan by default and exposes an explicit apply operation. [23]
+- The command parser registers text conversion and standing/state conversion separately. [24]
+- The derived-state adapter selects a plan by default and exposes an explicit apply operation. [25]
 
 
 ### Repo-Internal References

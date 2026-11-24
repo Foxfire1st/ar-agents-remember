@@ -238,7 +238,9 @@ No meaningful cross-repo references found.
 
 - The resolution this module re-uses to bind the leaf, and the shipped recheck it calls for currentness rather than inventing a second capture. 
 
+
 - **The attributed-unchanged cases: admission without counting, cross-comparison refusal, historical bytes after the tree moves, exact spelling, and undetermined refusal.** [31]
+
 
 
 - The retained source-content route accepts exact generation input, invokes its typed port and serializes content or refusal; the application assembles the requested sides and their generation/admission facts without a current SourceContent renderer. [32]

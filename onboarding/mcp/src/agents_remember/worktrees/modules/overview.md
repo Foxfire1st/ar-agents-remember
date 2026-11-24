@@ -379,17 +379,17 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Start and retry share the retired-provider gate and return before the retained background setup branch. [93]
 
-- External closeout reads the review before closing history, closes before derived refresh and calls the closing's restore operation if refresh fails. [95]
+- External closeout reads the review before closing history, closes before derived refresh and calls the closing's restore operation if refresh fails. [96]
 
 - Retained reference account (no fresh execution or acceptance inferred): Closeout public execution boundary. [41]
 - Retained reference account (no fresh execution or acceptance inferred): The preview answers the refused preview for a leaf the gate refuses. [56]
 
-- Retained reference account (no fresh execution or acceptance inferred): The closeout closes the history file and validates and gates its exact tree, restoring on refusal. [1]
-- Retained reference account (no fresh execution or acceptance inferred): External closeout chooses substantive memory output and refreshes the cache afterwards. [29]
-- Retained reference account (no fresh execution or acceptance inferred): The closeout's memory side asks the lock before any stamping or commit. [51]
+- Ordinary converted closeout closes its history file and validates and gates the exact memory output. A failure before memory publication returns restores the preparations still holding the bytes closeout wrote. [1]
+- External closeout selects the substantive memory output and refreshes the cache afterwards. [29]
+- A fresh leaf closeout checks the cutover lock if its memory is unconverted. Recovery of an already recorded memory output takes the recovery path first. [51]
 - The packet-owned landing and terminal routes preserve domain predicates, check order and refusal-before-write while returning recognized task-state failures as state/code/sentence answers. Dry abandon, cleanup and refused closeout agree with the blocked real call rather than promising success; recognized CloseoutQueueError retains its original code. Cleanup's archive-ready/non-rejudgment branch is now factored through _cleanup_terminal_branch, not a new cleanup permission or force override. Integration distinguishes unfinished checkpoint from completed master. Record landing's conversion next step consumes one central probe-made case: exact merge-memory arguments for a converted line, actual first-conversion argv plus shlex.join display for never-converted input, none for unknown. Unrecognized caller/I/O/internal errors remain fail-closed exceptions, and this presentation changes neither sync nor publication authority. [86]
 
 - Closeout asks the converted candidate gate before publication, then rereads authority/candidate inside the publication owner. [64]
-- External output locks unconverted cutover, closes converted owner history, commits/reuses output and refreshes cache afterwards. [66]
-- Exact converted output receives validator plus mandatory gate, and recovered output is judged again. [67]
-- Memory publication rechecks admitted tip/tree, restores owned preparations on failure and proves the published commit afterwards. [68]
+- Fresh leaf closeout checks unconverted-memory cutover, closes owner history, commits or reuses the admitted memory output, and refreshes the cache. Converted recovery separately gates an already recorded output. [66]
+- The validator and mandatory gate judge the exact converted memory output, including recovered output. [67]
+- Memory publication rechecks the admitted tip and judged tree. A failure before publication returns restores its owned preparations where their bytes still match. Proof of the published commit runs afterwards. [68]

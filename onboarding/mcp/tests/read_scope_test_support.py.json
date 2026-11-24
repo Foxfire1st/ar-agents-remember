@@ -364,12 +364,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4414,
+              "end": 4314,
               "kind": "line_range",
-              "start": 4366
+              "start": 4266
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -377,12 +377,12 @@
         },
         {
           "anchor": {
-            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
             "content": "sha256:cb641267e11b8aec644ea6ca3e0ee68f833e7a2d4d2c480e3ee02aba12f59d59",
             "locator": {
-              "end": 5161,
+              "end": 5057,
               "kind": "line_range",
-              "start": 5158
+              "start": 5054
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -390,7 +390,7 @@
         }
       ]
     },
-    "25": {
+    "27": {
       "note": "The optional reviewer leaf creates an exact review fact for the fixture’s extra record.",
       "targets": [
         {
@@ -406,7 +406,7 @@
         }
       ]
     },
-    "26": {
+    "28": {
       "note": "The fixture captures its Git tree through the isolated shared helper.",
       "targets": [
         {

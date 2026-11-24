@@ -558,12 +558,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
+            "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
             "content": "sha256:ab8c43d7462271b00d28215b0e6389d0cdc911c320e0f8965db1a09a52f004d8",
             "locator": {
-              "end": 159,
+              "end": 164,
               "kind": "line_range",
-              "start": 149
+              "start": 154
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
           },
@@ -1355,12 +1355,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3740b5f5bd804088a98c762d8267af9da4f7586f",
+            "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
             "content": "sha256:75ceed5fdbc73b3c33dd126ed61ff898767712276d67e603b8b4ec88aec4c5fe",
             "locator": {
-              "end": 293,
+              "end": 294,
               "kind": "line_range",
-              "start": 283
+              "start": 284
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },
@@ -1647,10 +1647,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
-            "content": "sha256:19cfdc182aaa3507362169f9d2b1166cbe09295f05bb1e7ede20664e0e966194",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "content": "sha256:93f20e53753f18e1b1db20174f095af6c2114477ae33eb6b6b8dd1fb2c34c195",
             "locator": {
-              "kind": "file"
+              "end": 293,
+              "kind": "line_range",
+              "start": 197
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },
@@ -1709,7 +1711,7 @@
         }
       ]
     },
-    "181": {
+    "185": {
       "note": "Index build derives current standing and writer evidence from one selected tree.",
       "targets": [
         {
@@ -1726,7 +1728,7 @@
         }
       ]
     },
-    "182": {
+    "186": {
       "note": "The declared cache schema stores both current standing and per-revision writer evidence.\n\nAnchor: `INDEX_FORMAT`",
       "targets": [
         {
@@ -1742,7 +1744,7 @@
         }
       ]
     },
-    "183": {
+    "187": {
       "note": "Revision-standing conversion plans stored state-word removal and companion review facts.",
       "targets": [
         {
@@ -1759,7 +1761,7 @@
         }
       ]
     },
-    "184": {
+    "188": {
       "note": "Crossing merges authored fields and applies selected-side or product writer evidence.",
       "targets": [
         {

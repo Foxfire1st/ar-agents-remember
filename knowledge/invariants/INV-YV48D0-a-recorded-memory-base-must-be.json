@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Two commits can share a tree but have unrelated ancestry, so exact pair judgment requires the judged commit as well as its content."
+  },
+  "applicability": "A read of the recorded leaf memory base for a live or exact pair comparison.",
+  "conditions": [
+    "Git can read the recorded base commit and tree.",
+    "The recorded base is an ancestor of the judged memory commit, or of the real memory worktree HEAD when no commit is supplied. A commit is its own ancestor for this comparison."
+  ],
+  "exclusions": [
+    "A captured directory or a tree identifier does not witness commit ancestry.",
+    "Each caller maps failure to its own existing response."
+  ],
+  "id": "INV-YV48D0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "BUG-R21-W2 code freeze and evidence archive, including exact successor and W1 failure witnesses",
+        "BUG-R21@v1 W2, exact source and independent W2 CODE PASS"
+      ],
+      "path": "L21-W2-recorded-base-obligations"
+    },
+    "handoffEntry": "BUG-R21@v1 rule 2",
+    "leaf": "261112-BUG-L21",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A recorded memory base must be readable and an ancestor of the judged memory commit or live memory HEAD for a leaf comparison to use it.",
+  "status": "proposed",
+  "supersedes": []
+}

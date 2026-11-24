@@ -23,10 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6384aff2bd1b7fc17ef90559c01de9dd981edd1",
-            "content": "sha256:a4de9ee8c6b591b0091a78d72003ef4b9e35b302d3fc058d6dd28726c683844a",
+            "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
+            "content": "sha256:11142066d10a588715d80e9487d69f7495be79aba5644cb41370aeb7b90280d3",
             "locator": {
-              "kind": "file"
+              "end": 700,
+              "kind": "line_range",
+              "start": 690
             },
             "path": "mcp/src/agents_remember/errors.py"
           },

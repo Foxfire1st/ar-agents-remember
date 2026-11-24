@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The port implementation: recompute over the exact trees, decide, validate.",
+      "note": "The port passes the exact candidate trees and optional judged memory commit to the leaf gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
-            "content": "sha256:22147f0f4120bd845beffdf25314be66e2e2a0f4000fbcee91725f22b40cb9c7",
+            "blob": "498b820bd6494307859bca60adaa0683064ffd10",
+            "content": "sha256:c0f9f92b5354e3fece40cef0b8a7ba1b77998cdb24310a6150cd2dccbf30dedb",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeGate"
+              "end": 40,
+              "kind": "line_range",
+              "start": 25
             }
           },
           "kind": "code"
@@ -19,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "The leaf refusal over the candidate trees.\n\nAnchor: `KnowledgeGate.leaf_refusal`",
+      "note": "The leaf refusal forwards the candidate carrier, caller-supplied parent memory tip and worklist persistence choice.",
       "targets": [
         {
           "anchor": {
-            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
-            "content": "sha256:8dfac2fbdb13213ef9b0822fd2752a82b4c9591184903e0d1ac36200a8de5931",
+            "blob": "498b820bd6494307859bca60adaa0683064ffd10",
+            "content": "sha256:c0f9f92b5354e3fece40cef0b8a7ba1b77998cdb24310a6150cd2dccbf30dedb",
             "locator": {
               "end": 40,
               "kind": "line_range",
@@ -40,24 +41,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
+            "blob": "498b820bd6494307859bca60adaa0683064ffd10",
             "content": "sha256:f10d37ba4e7f6db150572373878db5fad883cad21227a845cec0bbe1b0de1aa1",
             "locator": {
-              "end": 57,
+              "end": 56,
               "kind": "line_range",
-              "start": 42
+              "start": 41
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
+            "blob": "498b820bd6494307859bca60adaa0683064ffd10",
             "content": "sha256:52a47b90aced3ef39cfe72ce87955c6e18d48b31aed192a55763f4917dcfe796",
             "locator": {
-              "end": 72,
+              "end": 71,
               "kind": "line_range",
-              "start": 71
+              "start": 70
             }
           },
           "kind": "code"

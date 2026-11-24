@@ -8,7 +8,7 @@
 
 Authoring remains an in-memory editor rather than the disk publisher. It allocates same-document handles through assign_entries, restores recorded refreshes, and processes authoring entries before attachments through ordered_entries. Origin evidence handling is delegated to record_origin, including explicit replacement for an owned record while foreign origin remains intact. Decision alternative edits without explicit links invoke remap_links, which preserves addressed option identity or refuses ambiguity. coordination_root is carried as a separate task-plane input.
 
-This source-bound correction covers the described L54 seams only. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
+This source-bound correction covers the described L54 seams and the current row-input binding. Authoring passes the recorded card-comparison base and worklist source and count facts to the history mixin. The mixin compares a readable recorded base in the candidate’s format, then uses the persisted subject count or operation base when unavailable. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
 
 ### Record revisions and writer provenance
 
@@ -37,24 +37,16 @@ A record request with `remove: true` removes the stored record file and its Mark
 - Placement delegates revision calculation and records the writer before storing the record. [33]
 - Record fields are merged and links are resolved before placement. The decision default is its lifecycle word active. [34]
 - An unmerged record resolves above the higher side. Other records compare meaning with the applicable base. [44]
-- A raised or new revision carries the resolved writer and its exact meaning digest in the open attempt. [63]
-- Base-number placements retain the base stamp and unchanged same-writer placements retain the prior stamp. [64]
+- A raised or new revision carries the resolved writer and its exact meaning digest in the open attempt. [65]
+- Base-number placements retain the base stamp and unchanged same-writer placements retain the prior stamp. [66]
 
 - Every dependent write is a confirmation of the task's tip, refused without this task's attribution and judgment.
-
-
-
-
-
 
 
 - Origin/evidence and decision alternatives delegate to their explicit owners. [55]
 
 
-
 - Decision updates remap links before anchored link resolution. [61]
-
-
 
 
 ## Inherited source-epoch account (non-operative)
@@ -365,14 +357,19 @@ The following complete predecessor retains useful explanations, old observations
 - A proof is written from its symbol or from the lines of one running case that no name reaches, and the titles it pairs with are reported as its outcome. [57]
 
 
+- A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case. Anchor: `_proof_locator` [58]
 
+
+- The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written. Anchor: `Authoring` [59]
 
 
 - Both forms become proofs once faceted; an absent test and a bare test file are reported. [1]
 
 - No sidecar until the facet is authored; a blank facet is refused and writes nothing. [2]
 
-- A moved marker row answers while its recorded sources hold, preserves marker and source provenance through a writer rewrite, and reopens after a further source edit. [5]
+
+- A moved marker row answers while its recorded sources hold, preserves marker and source provenance through a writer rewrite, and reopens after a further source edit. Anchor: `test_a_moved_marker_row_binds_its_sources_and_reopens_on_change` [5]
+
 
 - The task owner's answer about a decision, injected into the writer. [6]
 - The resolver field; `None` has no task owner. [7]
@@ -389,20 +386,23 @@ The following complete predecessor retains useful explanations, old observations
 - The refusals of a wrong subject or an extra field. [27]
 - A `raise` refused without a task owner, on a check refusal and on an append refusal writes nothing. [28]
 
-- The operation: entries, records, rows, then unstored foreign evidence refuses.
+
+- The writer assigns handles, restores refreshes, processes entries and records, and writes judgment rows. Foreign evidence requires the current owner’s row. [30]
 
 
-- ID assignment and rerun reuse.
+- An explicit ID addresses a stored record. Otherwise the writer reuses the owner’s origin match or mints an ID. [31]
 
 
-- Origin: own records gain evidence, another owner's origin is kept exactly.
+- An owning record can append or replace its evidence. Foreign origin is preserved and its evidence goes to the current owner’s history row. [32]
 
+
+- Fields and links are resolved before record placement. A decision without a lifecycle status defaults to active. [34]
 
 
 - Realization and proof entries upserted in the sidecar. [35]
 - A rerun removes only this owner's unnamed entries. [36]
 
-- What became of a test the evidence names, and a test file named without a test is `unresolvable`.
+- A named test yields a proof, awaits a curator facet, or is reported unresolvable. A bare test file needs a test name. [37]
 
 
 - The conforming example: decision, realization and proof, validated.
@@ -415,10 +415,11 @@ The following complete predecessor retains useful explanations, old observations
 
 - A cover revises a realization entry's rationale in place. [51]
 
-- Row mechanics record the invariant's or family's own revision.
+- The history row records the resolved invariant or family’s own revision. [52]
 
 
-- Current source delta inspected statically: Refresh inherited-row facts and stale no_impact-only, dispatch and permanent-report captions while retaining origin, revision, relocation and attempt mechanics. [53]
+- The authoring state carries worklist item, trace source and count inputs and the recorded memory base for fresh card comparison. The row author checks the counted change and dispatches requests by their typed subjects. [53]
+
 
 - A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical. Anchor: `test_a_moved_row_whose_after_names_another_path_relocates_the_entry` [16]
 - The conforming example: decision, realization and proof, validated. Anchor: `test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files` [41]
@@ -429,9 +430,4 @@ The following complete predecessor retains useful explanations, old observations
 - The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written. [59]
 
 - The refusal names the invariant and the alternatives. [18]
-- The operation: entries, records, rows, then unstored foreign evidence refuses. [30]
-- ID assignment and rerun reuse. [31]
-- Origin: own records gain evidence, another owner's origin is kept exactly. [32]
-- What became of a test the evidence names, and a test file named without a test is `unresolvable`. [37]
-- The history row takes the revision from the resolved invariant or family. [52]
 - The writer delegates the anchored place and closure checks to the weakness helper. A current closure without a commit records its reason and owning task. [62]

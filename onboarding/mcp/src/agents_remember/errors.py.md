@@ -94,6 +94,7 @@ The error families preserve distinct authority, recovery and transport meanings.
 
 
 
+
 - Control-plane translation preserves the durable-store error family. [6]
 
 - Host registry translation preserves typed pre-launch authority refusal. [7]
@@ -109,6 +110,7 @@ The error families preserve distinct authority, recovery and transport meanings.
 - The refusal that proves `None` is never a substitute for an unprojectable admitted task. [15]
 - The case that pins the failure taxonomy: each unresolvable input returns its own status. [16]
 - The typed failure of a two-leg atomic publish, subclassing both the domain family and `OSError` so existing `except OSError` call sites keep observing it. [17]
+
 
 
 

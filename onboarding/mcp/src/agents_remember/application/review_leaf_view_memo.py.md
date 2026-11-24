@@ -24,7 +24,7 @@ The key holds:
 - the gate memo's key for the same candidate (`gate_memo.memo_key`): the candidate code and memory trees,
   the contract's path and the SHA-256 of its bytes, the parent line's memory tip, the leaf's memory
   `HEAD`, the SHA-256 of the leaf's task document, and the build stamp;
-- the comparison's code base tree, memory base tree, and the tree the before side is read as;
+- the comparison's code base tree, recorded memory base commit and tree, and the tree the before side is read as;
 - `task_reads`: the byte rows that the strict task lookup recorded while the gate key was built, limited
   to JSON files directly in the task folder (`_task_reads`).
 
@@ -71,10 +71,14 @@ After the nested gate-key construction recording closes, `leaf_view_key` replays
 ## Evidence
 
 - The two bounds.
+
 - The key's fields. [6]
 
 
+
+
 - The lookup records task-document reads while building the exact view key and replays those observations to the caller before any return from recorded key construction. If the candidate or its inputs cannot be identified, the view has no key. [7]
+
 
 
 - A kept view is served when its observations still agree, and its rows are replayed.
@@ -89,7 +93,10 @@ After the nested gate-key construction recording closes, `leaf_view_key` replays
 - Not read, same bytes, other bytes, a conflict and an unnamed document, each judged. [15]
 
 
+
 - The memo evicts by entry count, reuses the same observed key past the former cutoff and misses for another key. [16]
+
+
 
 
 
@@ -97,9 +104,12 @@ After the nested gate-key construction recording closes, `leaf_view_key` replays
 
 
 
+
 - The kept value includes the worklist and its optional code-change facts; the actual caller propagates those facts. [18]
 - Caller admission requires readable/settled/decided/facts inputs, then remember separately checks failed/absent/moved observations.
 - LeafViewParts has worklist and optional code_changes, not worklist alone. [20]
+
 - Nested gate-key observations are replayed before the absent-key return. [21]
+
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:301-359 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; mcp/src/agents_remember/application/review_leaf_view_memo.py:218-227 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 9547923129aa0b49d6b4f93a758f4fce70233745; mcp/src/agents_remember/application/review_leaf_view_memo.py:97-98 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/application/review_leaf_view_memo.py::remembered - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_leaf_view_memo.py::remember - the bytes it recorded now occur 17 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

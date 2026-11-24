@@ -8,7 +8,7 @@
   },
   "applicability": "Every task, agent row and master count the product shows for a role seat with a provider subagent, and the plugin's own publication of that activity.",
   "conditions": [
-    "A subagent the host reports as running counts while it runs, including after its parent's turn ends.",
+    "A subagent the host reports as running counts while its seat has an open session, including after its parent's turn ends.",
     "The age of a seat that works only through subagents runs from the oldest running subagent's start.",
     "A seat holding a running subagent is not idle for the send-back, and a running subagent makes its holder busy for a step-up, which never interrupts that holder whatever interruption word is given.",
     "Retirement or replacement of a seat that holds a running subagent, unlike a step-up, needs the word that its work may be interrupted, and a refusal names the subagent."
@@ -30,9 +30,9 @@
     "leaf": "260928-MIK-L184",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A running provider subagent is work: it is counted, its age runs from when it started, and a seat that holds one is not idle.",
+  "statement": "A running provider subagent is work while its seat's session is open: it is counted, its age runs from when it started, and a seat that holds one is not idle.",
   "status": "proposed",
   "supersedes": []
 }

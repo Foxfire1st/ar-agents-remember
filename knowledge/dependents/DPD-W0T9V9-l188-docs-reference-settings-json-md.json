@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
-    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The Settings reference’s catalog validation and provider-options projection still govern per-role settings choices and extra harness arguments.",
-    "task": "261112-BUG-L19",
+    "statement": "The runtime settings reference explains that disabling idle cleanup keeps sessions open and that a session closed by another route retains its role record and can reopen.",
+    "task": "261112-BUG-L20",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -124,7 +124,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_admission.py"
     },
     {
-      "blob": "29a7f0471f5a836b5351b2cd3bd146e24c29997e",
+      "blob": "17713c670d76851b21ce84043ed05e450c1a0d53",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
@@ -200,6 +200,45 @@
         },
         "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
       },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "17713c670d76851b21ce84043ed05e450c1a0d53",
+        "content": "sha256:cbb9d87e887018d75f0aacbdb5cbc658eaa98764360290a538be52fc1655c312",
+        "locator": {
+          "kind": "symbol",
+          "name": "daemon_settings"
+        },
+        "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+      },
+      "heading": "paseoRuntime",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "534586931977668702d528b74d51d09f2a58a834",
+        "content": "sha256:9d1fc8baeead008d5962176c5430ab5ef34dd832c80d7c427ab337995f7b6371",
+        "locator": {
+          "kind": "symbol",
+          "name": "publicationState"
+        },
+        "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
+      },
+      "heading": "paseoRuntime",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "181aa50525655219a506be03191d7c72a2a5354d",
+        "content": "sha256:faba0990269151d16328f42510bfcf2e1e0d071b3ecb1e869ed6f0c1f3920a15",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_role_agent"
+        },
+        "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+      },
+      "heading": "paseoRuntime",
       "kind": "anchor"
     }
   ]

@@ -75,4 +75,4 @@ No meaningful cross-repository reference applies.
 
 No separate external implementation source applies to this file.
 
-- The worktree and direct routes render attributed memory messages at their real commit seams (since MIK-R09 the worktree route first validates a converted leaf's exact tree); no ledger commit is produced. [9]
+- Worktree closeout and direct landing attribute each new memory-content commit to the verified code commit. Ordinary converted-leaf closeout gates its exact memory output first. Ledger data is a derived cache. [9]

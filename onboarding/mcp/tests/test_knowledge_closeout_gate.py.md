@@ -115,7 +115,9 @@ No configured live documentation source was available for this pass.
 - The memo and the approval state. [9]
 
 
+
 - The memo key carries the parent memory tip and the leaf memory HEAD. The test supplies those two commits and checks reuse of the remembered verdict. [12]
+
 
 
 

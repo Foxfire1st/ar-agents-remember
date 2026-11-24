@@ -1095,12 +1095,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e729c6fe38268a4aa8d5dda40ef8a35ebcceda4f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:5a5c4f47f8364e929f773c384fae0cc2ce8bc3c390fd6fabf3568e5b71a52a22",
             "locator": {
-              "end": 503,
+              "end": 502,
               "kind": "line_range",
-              "start": 470
+              "start": 469
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
           },
@@ -1108,12 +1108,12 @@
         },
         {
           "anchor": {
-            "blob": "a416f07cd2b10ac1e83cf28c6fdeb362a5938c4f",
+            "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
             "content": "sha256:9b6d1a212554071ee118e57d287c7882ca8befc04490eaa4ff1595d943c8cf46",
             "locator": {
-              "end": 131,
+              "end": 126,
               "kind": "line_range",
-              "start": 128
+              "start": 123
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },
@@ -1574,12 +1574,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1edca68afa84b2a3b1d31713824ff746ce36beb1",
-            "content": "sha256:f9c613ca64e273d9e8d01e01e5707ee6ca788784d795350dc210177a34cadb31",
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:0d8da11461cd5094a0959947ad28984526fc48b351c86cf6bcd2570ba121eed3",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55fa09ca360f1a84a7c36f4dcf79b5d174cd4793",
+            "content": "sha256:e381e9b560fa509b0cfb55565e80991a857a68ec657ee42e22fe3f56df5fe788",
             "locator": {
               "kind": "file"
             },
-            "path": "docs/guides/carryover-from-branch.md"
+            "path": "skills/l-01-agent-lifecycles/reference/writing/technical-english-profile.md"
           },
           "kind": "code"
         }

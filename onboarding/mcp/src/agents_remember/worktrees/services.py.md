@@ -26,7 +26,7 @@ Since MIK-R09, `KnowledgeValidationPort.leaf_refusal(...)` judges a commit that 
 
 **`KnowledgeGatePort`.** Composition binds the exact-tree gate. `leaf_refusal` takes `persist_worklist=True`; landing refusal callers set it false. `direct_verdict` and `direct_source` take optional `leaf_id`, so named ownership survives the port rather than being inferred independently. `LandingGateRequest` carries memory bases, paired code and code base, optional leaf owner, frozen commits and optional `series_contract`. Since MIK-R124 it also carries `master_end` — true only for the landing that finishes a master, so that landing refuses the documents its own tasks made stale and examines every document, while a checkpoint reports and refuses nothing — and `document_base`, the contract's original code/memory pair, kept apart from the validator's comparison bases so cumulative document debt is measured from where the master began. The series contract identifies the owner population for every newly closed history file. Recorded leaf landing requires the named memory base; recorded master landing uses its series code base for net staleness. A recorded closeout's parent-frozen files remain frozen when the judged commit descends from that closeout; a hand-closed unrelated commit freezes nothing.
 
-The worktree layer reaches it only through `worktrees/knowledge_gate.py`, whose marker probes decide applicability first.
+The worktree layer reaches it through `worktrees/knowledge_gate.py`. `CandidateTrees` holds the exact code and memory trees and the optional judged memory commit. The marker probe and recorded-base checks decide the applicability and ancestry inputs.
 
 `KnowledgeCrossingPort.plan(request)` (MIK-R24 rule 8) runs steps 1-4 of a crossing sync over three memory commits. The `CrossingRequest` names the memory repository, the (merge base, own, incoming) commits, the paired code repository and commit, and who performs the sync (`owner_kind` `leaf` or `master`, with `owner_id`). It returns a `CrossingPlanView`: `files` maps every `knowledge/` and `onboarding/` path of the merged tree to its bytes (`None` = absent), `conflicts` are `(path, item, reason)` triples for the curator, `conflict_versions` holds the converted base, own and incoming bytes of each conflicted path, and `report` is the crossing report. A failing step raises `CrossingStepFailed`, whose message names the step; nothing has been written by then. The adapter (`memory/conversion/crossing_port.GitKnowledgeCrossing`) lives above this layer, and the worktree layer calls the port only through `worktrees/knowledge_crossing.crossing_plan`.
 
@@ -82,11 +82,15 @@ The protocols establish the downward dependency boundary and the application sup
 - The knowledge validator's commit-route port: candidate tree, bases and paired code commit in, refusal text or `None` out; since MIK-R09 a `leaf_refusal` twin that takes a `LeafPublication`. [2]
 
 
+
 - The mandatory gate's port, its landing request and the direct-landing verdict (MIK-R09). [3]
 
 
 
+
+
 - The mandatory gate's port, its landing request and the direct-landing verdict (MIK-R09). [23]
+
 
 
 
@@ -96,11 +100,16 @@ The protocols establish the downward dependency boundary and the application sup
 - Registry population and task/memory observations have distinct service ports. [7]
 The removed certification continuation is not a current service capability; surviving gate and validation ports retain their own owners and refusal boundaries.
 
-- The bundle exposes optional capabilities, including `knowledge_validation`, `knowledge_crossing`, `knowledge_worklist`, (since MIK-R25) `review_artifact_cleanup` and (since MIK-R09) `knowledge_gate`; provider setup inputs stay opaque. [9]
+
+- The bundle exposes optional capabilities, including `knowledge_validation`, `knowledge_crossing`, `knowledge_worklist`, (since MIK-R25) `review_artifact_cleanup` and (since MIK-R09) `knowledge_gate`; provider setup inputs stay opaque. Anchor: `WorktreeServices` [9]
+
+
 
 
 
 - Bind the composition-provided services for this process. [10]
+
+
 
 
 
@@ -110,7 +119,10 @@ The removed certification continuation is not a current service capability; surv
 
 
 
-- Reading unbound worktree services refuses instead of constructing ambient owners. [12]
+
+
+- The bound service lookup constructs services once when composition supplied a lazy builder. It refuses when neither a bundle nor a supplier is available. [12]
+
 
 
 
@@ -134,14 +146,18 @@ No cross-repository evidence is required for these file-local claims.
 
 The prepared-memory certification service and continuation were removed. Retained private preparation models are not bundle capabilities or proof of a current producer; exact-tree converted memory publication remains with its own gate and transaction owners.
 
-- `TerminalGuard` owns the corresponding behavior described above. [16]
+
+- `TerminalGuard` owns the corresponding behavior described above. Anchor: `TerminalGuard` [16]
+
 
 - `CitationGuardPort` owns the corresponding behavior described above. [17]
 
 - `WorktreeServicesUnboundError` owns the corresponding behavior described above. [18]
 
 
+
 - Bind the composition-provided services for this process. [19]
+
 
 
 - `reset_worktree_services` owns the corresponding behavior described above. [20]
@@ -149,4 +165,5 @@ The prepared-memory certification service and continuation were removed. Retaine
 
 The default application composition installs no `PreparedCloseoutContinuation` or `PreparedMemoryCertificationAdapter`. Its remaining mandatory gate/validation ports keep their own missing-port refusals; binding is not execution or certification evidence.
 
-- The services facade directly re-exports the same light process binding functions and exception, preserving object identity while startup names a supplier without importing service composition. Optional explainer_root scopes task-owned environment retirement. None means leaf finalize/abandon/cleanup touches no explainer file. [24]
+
+- The services facade imports the shared process-binding functions and exception directly. The cleanup request carries an optional explainer root for task-owned environment retirement. [24]

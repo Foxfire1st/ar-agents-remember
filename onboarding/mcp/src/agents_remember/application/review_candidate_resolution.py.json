@@ -268,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
             "content": "sha256:564140faa47e724db0dd9192e84cf504d73c80c27791a19f1e9cb654eb79b75d",
             "locator": {
               "kind": "symbol",
@@ -281,14 +281,16 @@
       ]
     },
     "41": {
-      "note": "The live pair: four trees for converted memory; otherwise source identities and explicit legacy-unavailable knowledge sides, never a dataset fallback.",
+      "note": "Live resolution opens the captured comparison when either memory side is converted. A named failure resolving the recorded base propagates as a refusal. Without converted memory, it returns source identities with legacy-unavailable knowledge sides.",
       "targets": [
         {
           "anchor": {
-            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
-            "content": "sha256:c016af62caf6f04f18066e62fabd1018fc831aa02e8bb03fa4d3710046da3063",
+            "blob": "b0ded045994c0f33f08b592285a3ef8070d98581",
+            "content": "sha256:6134394d2b2955b2921f34adeb5d787d5b93bd04c2eeeea756989527b1cd7cf8",
             "locator": {
-              "kind": "file"
+              "end": 210,
+              "kind": "line_range",
+              "start": 181
             },
             "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
           },
@@ -297,9 +299,11 @@
         {
           "anchor": {
             "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
-            "content": "sha256:8de3b4a99e46a7a49e39828cefaeed2dd86dcfc20fc33eb37b8f80a4de26b653",
+            "content": "sha256:1048677485b9d7a25cc429abe9365cd2d264b278c7097db437b9bacaac0b70ea",
             "locator": {
-              "kind": "file"
+              "end": 267,
+              "kind": "line_range",
+              "start": 234
             }
           },
           "kind": "code"

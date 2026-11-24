@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6384aff2bd1b7fc17ef90559c01de9dd981edd1",
+            "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
             "content": "sha256:40dffc28ab77ec0131cea0d37f8c28fd5b0ba94936a0ed8641b31051a64d67df",
             "locator": {
               "kind": "symbol",
@@ -123,12 +123,12 @@
         },
         {
           "anchor": {
-            "blob": "c6384aff2bd1b7fc17ef90559c01de9dd981edd1",
+            "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
             "content": "sha256:3a379ff84418e4c16c25c2faa91970d67269f3da67190758076822245508e96e",
             "locator": {
-              "end": 31,
+              "end": 35,
               "kind": "line_range",
-              "start": 22
+              "start": 26
             },
             "path": "mcp/src/agents_remember/errors.py"
           },

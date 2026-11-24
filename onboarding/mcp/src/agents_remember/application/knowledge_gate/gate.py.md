@@ -43,8 +43,7 @@ The gate observes the candidate memory tree before looking for a reusable parsed
 - **`evaluate_leaf_gate(contract, candidate, *, parent_memory_tip=None)`**:
   1. `_applies` returns false for a non-leaf contract or one without a memory worktree; otherwise it
      delegates applicability to `leaf_gate_applies(contract, candidate)`. A false result returns `None`
-     before tip resolution or evaluation. A probe Git cannot answer (`SubprocessError`, `LayoutProbeError`)
-     is **applicable**, never an exemption: evaluation continues so its unreadable input can be reported.
+     before tip resolution or evaluation. A failed marker probe or recorded-base check remains applicable so evaluation can report its unreadable input. The worklist receives the explicit judged memory commit for a pair or the observed leaf memory HEAD for a live candidate.
   2. With no tip given, `_resolved_tip` reads the parent line's memory tip from the contract
      (`worktrees.knowledge_gate.parent_memory_tip`); a failure is one `incomplete` finding (`parent memory line`), and
      that result is not memoised.
@@ -176,7 +175,8 @@ No configured live documentation source was available for this pass.
 
 
 
-- Probe, tip, memo, then the recorded evaluation. Anchor: `evaluate_leaf_gate` `_applies` `_resolved_tip` [6]
+
+- The leaf gate probes applicability, resolves the parent tip and memory HEAD, checks memo reuse, and evaluates the exact candidate on a miss. [6]
 
 
 
@@ -185,7 +185,10 @@ No configured live documentation source was available for this pass.
 
 
 
-- The evaluation and the judgment. Anchor: `_evaluate` `judge` [7]
+
+
+- Evaluation supplies the judged memory commit or leaf HEAD when recomputing the worklist before the gate judges that result. [7]
+
 
 
 
@@ -235,7 +238,9 @@ No configured live documentation source was available for this pass.
 
 
 - Cold evaluation replays its collected reads before memo admission; memo-hit worklist persistence remains optional. [20]
-- Applicability delegates to leaf_gate_applies and treats unreadable layout probes as applicable. [21]
+
+- Applicability delegates to leaf_gate_applies and retains failed layout probes or recorded-base checks for the named incomplete result. [21]
+
 
 ### Cross-Repo References
 

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
+        "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
         "content": "sha256:a6b07b45c63823bf9788ef74b4aecc45883351cfa7eb3ddf4fb9d39e650f5d15",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
-        "content": "sha256:6941ec4be98b823f901850057093baf95b36c905fab1c7e1ab546cb4799fd799",
+        "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+        "content": "sha256:b89e535d05d3270d1d44c2c5e169d84c685f30b6849c2808453bd7d6303eec60",
         "locator": {
           "kind": "symbol",
           "name": "HostActivityInput"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
-        "content": "sha256:cd6884e70f791efa0a595ae5119772d23ec8e3e14ec4a95fbe2e53fdd8f98aa5",
+        "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+        "content": "sha256:5e4a32d2dc7df5a3a35bfcdd918b414675462cc2158dea4ba2c5276e65f6c595",
         "locator": {
           "kind": "symbol",
           "name": "turn_ended_agents"
@@ -52,13 +52,13 @@
         "handoffEntry": "MIK-R171@v1 rule 1",
         "leaf": "260928-MIK-L171"
       },
-      "rationale": "It reads the host's own activity publication and answers which agents have just ended a turn - the observation this rule rests on rather than the sending call's reply.",
+      "rationale": "The held-delivery tick rechecks idle, closed and ended publication observations and deduplicates event stamps.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
-        "content": "sha256:bdff12ea41d26dcc2816d777441d8833df29687f28f3ba4c08c94a05d7897673",
+        "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+        "content": "sha256:3f58f05948f03bafa6ae12c93570f7bd48488df0aedf038b557876d67c9af63d",
         "locator": {
           "kind": "file"
         }
@@ -75,14 +75,16 @@
   ],
   "references": {
     "1": {
-      "note": "Intake the plugin’s event-driven host publication only at startup or host invalidation, reconciling boot identity before exposing known activity.\n\nAnchor: `HostActivityInput`",
+      "note": "Intake the plugin’s event-driven host publication only at startup or host invalidation, reconciling boot identity before exposing known activity.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
-            "content": "sha256:bdff12ea41d26dcc2816d777441d8833df29687f28f3ba4c08c94a05d7897673",
+            "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+            "content": "sha256:b89e535d05d3270d1d44c2c5e169d84c685f30b6849c2808453bd7d6303eec60",
             "locator": {
-              "kind": "file"
+              "end": 316,
+              "kind": "line_range",
+              "start": 229
             }
           },
           "kind": "code"

@@ -308,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
             "content": "sha256:3538b780e7fc2603231d6fe2e08b54e103f3363dc08a12c232e5172874b6a1d1",
             "locator": {
               "kind": "symbol",
@@ -325,12 +325,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d057d05b21e36984449b7905f09ef154bcb0aa05",
+            "blob": "74519f758d6faf1f95c7cd79d9e1a22174238cf2",
             "content": "sha256:5bae2b601a32ad52c309042834bab9db010b8ecb0c5f31b4a592b44e74cfe2c6",
             "locator": {
-              "end": 1024,
+              "end": 1018,
               "kind": "line_range",
-              "start": 991
+              "start": 985
             },
             "path": "mcp/tests/test_knowledge_gate_routes.py"
           },

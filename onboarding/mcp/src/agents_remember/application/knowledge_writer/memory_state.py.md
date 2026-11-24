@@ -11,6 +11,8 @@ candidate K_C is the non-hidden knowledge/onboarding files selected by the share
 (`knowledge_tree_from_directory`). The operation edits parsed copies of the JSON documents it touches;
 nothing reaches disk until `MemoryState.write` is called with the validated result.
 
+The recorded card base is read separately from the operation's revision and validator bases. `recorded_card_base_files` obtains the recorded side in the candidate's format for counted-change comparisons.
+
 ## Code Commentary
 
 ### Logic
@@ -87,7 +89,9 @@ No configured live documentation source was available for this pass.
 The candidate, the owner, the base and the write.
 
 - Who authors the operation, and whether a document names it. [1]
-- The base is the memory worktree's `HEAD`, or its conversion when the candidate is converted and `HEAD` is not; a base that cannot be built is a named problem. [2]
+
+- The writer loads its operation base from memory HEAD and converts it when required. It retains a named problem when the operation base cannot be built. [2]
+
 - Every ID the tree holds, including history row IDs. [3]
 - Rerun ID reuse by origin. [4]
 - A record keeps its file unless a new slug renames it. [5]

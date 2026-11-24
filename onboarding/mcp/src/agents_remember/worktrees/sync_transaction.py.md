@@ -156,7 +156,9 @@ No external Domain Documentation entries are configured. Source and test asserti
 - Pinned authority and parked-work restoration remain separate owners. [41]
 
 
+
 - Terminal finalization/cancellation and damaged-journal recovery are delegated. [42]
+
 
 
 - Fresh sync judges exact moving-side formats independent of converted memory elsewhere; retained transaction recovery is separate [43]

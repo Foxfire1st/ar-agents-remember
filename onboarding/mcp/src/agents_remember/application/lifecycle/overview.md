@@ -72,4 +72,4 @@ The preserved table statuses are onboarding metadata, not operative lifecycle pr
 
 - Unreadable contract observations prefer retained strict journals and otherwise preserve proven initial publication loss as a developer-decision refusal. [5]
 
-- Ordinary converted-leaf closeout checks its mandatory gate before approval or code publication and validates its exact memory output and recovered output before memory publication. [3]
+- Ordinary converted-leaf closeout checks its mandatory gate before claiming approval or publishing code. It validates and gates its exact memory output, including a recovered output, before recording it. [3]

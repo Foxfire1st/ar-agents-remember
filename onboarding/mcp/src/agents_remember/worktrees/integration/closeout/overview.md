@@ -110,7 +110,9 @@ The closeout door first allows the recorded candidate tree itself. For a differe
 
 
 
+
 - Converted leaf closeout evaluates its exact candidate through the mandatory invariant gate and refuses an unbound gate; unconverted memory uses the central cutover refusal. No removed prepared-certification adapter is an alternate route. [8]
+
 
 - Exact accepted and recovered pair identities and source-branch reintegration predicates have shared owners. [9]
 - Both coherence assessment projections delegate supplied per-record measurements to the binding owner. [10]

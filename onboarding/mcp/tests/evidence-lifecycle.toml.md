@@ -2,7 +2,7 @@
 
 ## Current paired source contract — scoped assertions and incoming catalogs
 
-The current parsed catalog declares 18 contracts and 121 artifacts. The bounded native tool-server memory contract names the stdio regression as its executable evidence and the corpus, fixture, driver and receipt reader as its permanent support. Compared with base91bb7e2d, L57 adds two permanent integration/local-composition shared supports: `review_curator_fixture_support.py`, with three consumers and an integrity-rejection replacement node, and `reviewer_leaf_view_support.py`, with five consumers and a real-child-parity replacement node. The current catalog declares three exact consumers for `review_curator_fixture_support.py` and eight for `reviewer_leaf_view_support.py`. The latter includes `test_review_validation_reuse.py`. The merged A3 snapshot had three and seven. Eight existing artifact consumer lists change; that earlier delta preserved then-existing non-consumer fields and contract rows. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
+The current parsed catalog declares 18 contracts and 121 artifacts. The recorded leaf memory-base test is an exact consumer of the canonical user-settings guard, portable Node lockfile and read-boundary oracle support. The bounded native tool-server memory contract names the stdio regression as its executable evidence and the corpus, fixture, driver and receipt reader as its permanent support. Compared with base91bb7e2d, L57 adds two permanent integration/local-composition shared supports: `review_curator_fixture_support.py`, with three consumers and an integrity-rejection replacement node, and `reviewer_leaf_view_support.py`, with five consumers and a real-child-parity replacement node. The current catalog declares three exact consumers for `review_curator_fixture_support.py` and eight for `reviewer_leaf_view_support.py`. The latter includes `test_review_validation_reuse.py`. The merged A3 snapshot had three and seven. Eight existing artifact consumer lists change; that earlier delta preserved then-existing non-consumer fields and contract rows. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
 
 The held catalog declares consumers for held queues, native retirement, role_start_set, comparison changesets, the citation/quality/packaging shaped memory-tool row modules, coherence file transport, takeover and uv-minimum bootstrap modules. The permanent tool_answer_l110_rows support has an artifact declaration and a replacement test node. The role-agent and role-message declarations remain on the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime rows, and the settings-guard and Node-lockfile rows also declare the four native-attention modules, with `test_attention_native_inputs.py` declared on the Paseo-runtime row. test_paseo_role_agents.py is declared on settings-guard, Node-lockfile and Paseo-runtime; test_role_message_files.py on those three plus Paseo-launch; test_role_message_wording.py on Node-lockfile. These are present catalog declarations, not a source-diff account or evidence of invocation. Node-lockfile membership follows the syntactic dependency oracle and does not by itself establish use of that particular fixture. The existing nine Doc14 fixture rows and validator support also declare `test_mik_r53_judgment_rows.py` and `test_mik_r53_report_only_rules.py`; writer support declares judgment_rows and onboarding_gate; the Node lockfile row declares all three. This extends consumer reachability only, not artifact/contract identity, lane assignment or execution.
 
@@ -803,11 +803,17 @@ In the earlier 18-contract, 120-artifact snapshot, the dispatch and preview regr
 - The referenced transaction test definition exists in the current source. [215]
 
 
-- The shared build_endpoint_fixture builder composes the existing diff fixture and an optional external-memory enclosure for synthetic-identity composition tests. [217]
 
-- The shared build_endpoint_fixture builder composes the existing diff fixture and an optional external-memory enclosure for synthetic-identity composition tests. [219]
+- The shared build_endpoint_fixture builder composes the existing diff fixture and an optional external-memory enclosure for synthetic-identity composition tests. Anchor: build_endpoint_fixture [217]
 
-- The shared build_endpoint_fixture builder composes the existing diff fixture and an optional external-memory enclosure for synthetic-identity composition tests. [222]
+
+
+- The shared build_endpoint_fixture builder composes the existing diff fixture and an optional external-memory enclosure for synthetic-identity composition tests. Anchor: build_endpoint_fixture [219]
+
+
+
+- The shared build_endpoint_fixture builder composes the existing diff fixture and an optional external-memory enclosure for synthetic-identity composition tests. Anchor: build_endpoint_fixture [222]
+
 
 
 - The referenced transaction test definition exists in the current source. [252]
@@ -920,7 +926,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The catalog declares nine fixture artifacts under mcp/tests/fixtures/knowledge_files/, each introduced by 260928-MIK-L21 and each naming node:mcp/tests/test_knowledge_census_files.py::test_every_census_file_parses_by_schema_and_is_canonical as its replacement contract. This is the complete named nine-artifact class; catalog declarations do not establish execution. Anchor: file [14]
+
 
 
 
@@ -932,7 +940,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. Anchor: file [95]
+
 
 
 
@@ -946,7 +956,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The current lifecycle catalog declares test_converted_onboarding_drift.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/converted_onboarding_drift_support.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `converted_onboarding_drift_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `curator_coherence_test_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. It is not declared on knowledge_conversion_test_support.py. Anchor: file [99]
+
 
 
 
@@ -968,7 +980,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The member-source cases are registered on the read-scope artifact's exact consumer list in canonical ascending order. Anchor: `mcp/tests/test_review_family_member_sources.py` Anchor: file [218]
+
 
 
 
@@ -980,7 +994,10 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The read-scope artifact declares test_knowledge_review_attributed_source_content.py as an exact consumer. Anchor: file [223]
+
+
 
 
 
@@ -994,7 +1011,11 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The lifecycle catalog declares test_knowledge_conversion_toolchain.py on the curator_coherence_test_support.py and read_scope_test_support.py consumer lists. These are declarations, not invocation or acceptance. The read_scope_test_support.py row lists test_knowledge_conversion_toolchain.py. generation_test_support.py declares test_knowledge_read_boundaries.py and test_knowledge_read_paths.py among its consumers. Anchor: file [225]
+
+
 
 
 
@@ -1007,7 +1028,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file [227]
+
 
 
 
@@ -1019,7 +1042,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file [229]
+
 
 
 
@@ -1031,7 +1056,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file [231]
+
 
 
 
@@ -1051,13 +1078,17 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The current lifecycle catalog declares test_planned_knowledge_effects.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_planned_knowledge_effects.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_planned_knowledge_effects.py` as an exact consumer. Anchor: file [234]
 
 
 
 
 
+
 - The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file [235]
+
 
 
 
@@ -1076,7 +1107,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file [238]
+
 
 
 
@@ -1088,9 +1121,11 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The Node package-lock fixture declares internal-hand-authored authority, independent-boundary fidelity, permanent lifetime, its replacement contract and exact consumer scope. Declaration is not invocation. Anchor: file [240]
 - The current catalog declares mcp/tests/test_knowledge_route_chain.py on ten exact artifact consumer lists. Anchor: file [241]
 - The current lifecycle catalog declares test_reconsideration_surfacing.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_reconsideration_surfacing.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_reconsideration_surfacing.py` as an exact consumer. Anchor: file [242]
+
 
 
 
@@ -1113,6 +1148,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 - The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. Anchor: file [246]
+
 
 
 
@@ -1158,6 +1194,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - Closeout-input support names the same retained code/memory transaction replacement node. Anchor: file [254]
 
 
@@ -1177,7 +1214,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The registered-preview comparator artifact declares its replacement contract and exact consumers test_master_retirement_readiness.py and test_worktree_start_preview.py. Declaration is not invocation. Anchor: file [260]
+
 
 
 
@@ -1190,7 +1229,11 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The permanent shared settings guard declares its owner, replacement node and exact consumers. Anchor: file [262]
+
+
 
 
 
@@ -1208,13 +1251,17 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The portable L37 attempt-1 and attempt-2 history fixtures are separate permanent fixture artifacts for the same recorded-meaning regression consumer. Anchor: file [266]
 
 
 
 
 
+
 - The role-agent and role-message consumer declarations belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution. Anchor: file [267]
+
+
 
 
 
@@ -1228,6 +1275,8 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of curator_coherence_test_support.py. Anchor: file [269]
 
 
@@ -1235,7 +1284,10 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of knowledge_conversion_test_support.py. Anchor: file [270]
+
 
 
 
@@ -1268,6 +1320,8 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The held consumers of `mcp/tests/anchor_fixture_models.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file [275]
 
 
@@ -1275,7 +1329,10 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The catalog declares test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/curator_coherence_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account. Anchor: file [276]
+
 
 
 
@@ -1329,7 +1386,10 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The held consumers of `mcp/tests/knowledge_rows_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file [286]
+
+
 
 
 
@@ -1343,7 +1403,11 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The read_boundary_oracle_test_support.py artifact declares test_abandoned_series_closeout.py, test_closeout_refusal_aftermath.py, test_direct_landing_leaf_identity.py, test_enclosure_without_remains.py, test_knowledge_gate_routes.py and test_master_chain_public_routes.py among its exact consumers, alongside its retained metadata and other consumers. Declaration is not execution. Anchor: file [288]
+
+
 
 
 
@@ -1357,7 +1421,11 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The existing Node package-lock artifact declares test_task_document_order.py as an exact consumer; membership is not execution. Anchor: file [290]
+
+
 
 
 
@@ -1371,7 +1439,11 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The native-worklist support artifact mcp/tests/writer_worklist_test_support.py declares mcp/tests/test_closeout_live_gate.py and mcp/tests/test_workspace_wake_zero_census.py as exact consumers. The current declaration establishes dependency reachability, not execution. Anchor: file [292]
+
+
 
 
 
@@ -1385,7 +1457,11 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The settings-guard and Node-lockfile artifact lists both declare test_sync_cancel_deletions.py as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_sync_cancel_deletions.py` as an exact consumer. Anchor: file [294]
+
+
 
 
 
@@ -1407,7 +1483,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The current catalog declares three exact consumers for review_curator_fixture_support.py and eight for reviewer_leaf_view_support.py, including test_review_validation_reuse.py. [297]
+
 
 
 
@@ -1422,7 +1500,10 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The Node package-lock artifact declares test_route_review_clean_sync_door.py as an exact consumer. This is source reachability, not an Owner closure plan or execution evidence. Anchor: file [299]
+
 
 
 
@@ -1439,7 +1520,10 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution. Anchor: file [302]
+
+
 
 
 
@@ -1451,7 +1535,10 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The five test_review_evidence_ modules — bounded_collections, eof, intended, packet and residuals — are declared as exact consumers of _user_settings_guard.py and the portable Node package-lock fixture, and of no other artifact. Catalog membership is not execution. The portable Node package-lock fixture row lists the same five modules. No other artifact row in the catalog lists any of the five modules. Anchor: file [305]
+
 
 
 
@@ -1463,7 +1550,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The portable Node package-lock artifact declares test_developer_messages.py as an exact consumer and has independent-boundary fidelity. Anchor: file [308]
+
 
 
 
@@ -1482,7 +1571,10 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The current lifecycle catalog declares test_curator_instruction_wording.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py, mcp/tests/lifecycle_enclosure_test_support.py, mcp/tests/paseo_launch_test_support.py, mcp/tests/paseo_role_tools_test_support.py, mcp/tests/paseo_runtime_test_support.py, mcp/tests/role_first_message_support.py, mcp/tests/role_instruction_wording_support.py and mcp/tests/writer_worklist_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. Anchor: file [313]
+
 
 
 
@@ -1499,7 +1591,11 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
+
 - The current settings-guard and Node-lockfile artifact rows both declare test_task_document_order.py as a consumer. Contract/artifact identity and non-consumer metadata are distinct from membership; these declarations establish neither execution nor acceptance. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_task_document_order.py` as an exact consumer. Anchor: file [316]
+
+
 
 
 
@@ -1531,7 +1627,10 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The catalog declares the browser suite as a consumer of the settings-guard and portable Node-lockfile artifacts. Anchor: file [325]
+
+
 
 
 

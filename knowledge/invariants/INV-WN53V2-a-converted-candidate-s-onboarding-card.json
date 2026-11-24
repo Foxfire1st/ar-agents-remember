@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Comparing converted output with a raw legacy card mistakes conversion formatting for authored content and admits an inaccurate updated history row."
+  },
+  "applicability": "A writer comparing the onboarding card of a converted leaf memory candidate with an unconverted recorded base.",
+  "conditions": [
+    "The recorded memory base is readable and established.",
+    "Conversion uses the version pinned by the candidate format and the same converter as the operation."
+  ],
+  "exclusions": [
+    "The operation bases for record revisions, frozen history and validation retain their own HEAD and merge-parent inputs.",
+    "When the recorded card side cannot be built, a persisted subject count or the operation base decides."
+  ],
+  "id": "INV-WN53V2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "BUG-R21-W2 code freeze and evidence archive, including exact successor and W1 failure witnesses"
+      ],
+      "path": "L21-W2-recorded-base-obligations"
+    },
+    "handoffEntry": "BUG-R21@v1 rule 4 writer card comparison",
+    "leaf": "261112-BUG-L21",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A converted candidate's onboarding card comparison uses the conversion of its unconverted recorded base at the base's readable own trailer or the recorded code base.",
+  "status": "proposed",
+  "supersedes": []
+}

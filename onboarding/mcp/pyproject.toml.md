@@ -183,7 +183,11 @@ later reader does not have to reconstruct it from a report.
 
 
 
+
+
 - MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. [9]
+
+
 
 
 

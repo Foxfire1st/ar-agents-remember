@@ -125,8 +125,9 @@
             "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
             "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
             "locator": {
-              "kind": "symbol",
-              "name": "_apply_carryover_for_request"
+              "end": 379,
+              "kind": "line_range",
+              "start": 310
             }
           },
           "kind": "code"
@@ -136,19 +137,21 @@
             "blob": "079e802775e9ec4fe80515d847c3aceb1946d358",
             "content": "sha256:047d65803de69b070b49ef1793c2c009a5250a1480b912c88941b3d97f539b4b",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_carryover_authority"
+              "end": 418,
+              "kind": "line_range",
+              "start": 382
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
-            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "content": "sha256:b143ff68b0ae2b07137e444ffdf386416deb01e9840112d08b516a9331379fe5",
             "locator": {
-              "kind": "symbol",
-              "name": "apply_converted"
+              "end": 258,
+              "kind": "line_range",
+              "start": 235
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },
@@ -245,11 +248,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
-            "content": "sha256:50b2b06976b30da45bfcbba7554be1d4e868458fb2ea3584e87633fb1c3885d0",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "content": "sha256:e549c5e5d715523bde14701766b6538cd55dc1b5572a78199bd52d298e3ffbb9",
             "locator": {
-              "kind": "symbol",
-              "name": "apply_converted"
+              "end": 293,
+              "kind": "line_range",
+              "start": 251
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },
@@ -257,11 +261,12 @@
         },
         {
           "anchor": {
-            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
             "content": "sha256:92410b0306078a832114a39a44a5d978a8daab55bdb1e7c3bc38095fb9d1dd27",
             "locator": {
-              "kind": "symbol",
-              "name": "_refused"
+              "end": 194,
+              "kind": "line_range",
+              "start": 178
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },

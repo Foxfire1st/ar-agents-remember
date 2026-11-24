@@ -269,14 +269,16 @@
       ]
     },
     "13": {
-      "note": "**Cases: cross-comparison refusal, recorded historical bytes after the tree moves, closed leaf, padded spellings, and the lowered selection bound.**\n\nAnchor: `test_a_path_linked_only_in_another_comparison_is_refused_for_this_one` `test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes` `test_a_closed_leaf_opens_its_attributed_path_from_the_retained_generation` `test_a_padded_spelling_is_never_admitted_as_attributed_context` `test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path`",
+      "note": "**Cases: cross-comparison refusal, recorded historical bytes after the tree moves, closed leaf, padded spellings, and the lowered selection bound.** Anchor: `test_a_path_linked_only_in_another_comparison_is_refused_for_this_one` `test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes` `test_a_closed_leaf_opens_its_attributed_path_from_the_retained_generation` `test_a_padded_spelling_is_never_admitted_as_attributed_context` `test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
-            "content": "sha256:4f7ecc8772618d62abc5902fc65b5a8b5e48a7d69e4e689e810128c571ba4261",
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
+            "content": "sha256:aa2a60e493f736807a27e53ea0146ccc3206be4eda0d015463a833274ee9a252",
             "locator": {
-              "kind": "file"
+              "end": 190,
+              "kind": "line_range",
+              "start": 173
             },
             "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
           },
@@ -284,23 +286,12 @@
         },
         {
           "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
-            "content": "sha256:7bbc9e7dfed79e65b20eaf2e0849f7218fe90927136e619991fd3b13f69a5fac",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_path_linked_only_in_another_comparison_is_refused_for_this_one"
-            },
-            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
             "content": "sha256:3dc9ddf1f8d5fac8720ff2aa75bbd9c609e8a5280195d0b8df5344bd632caa9e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes"
+              "end": 229,
+              "kind": "line_range",
+              "start": 193
             },
             "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
           },
@@ -308,11 +299,12 @@
         },
         {
           "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
             "content": "sha256:d7ec1eb1845df3bf24feec266350742adf96310815ade2db0d7677825cd7e606",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_closed_leaf_opens_its_attributed_path_from_the_retained_generation"
+              "end": 246,
+              "kind": "line_range",
+              "start": 232
             },
             "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
           },
@@ -320,11 +312,12 @@
         },
         {
           "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
             "content": "sha256:a106a785d11d775de2dbf51735afe26592c9a63c2898e28a6995b83e9aa0a3f0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_padded_spelling_is_never_admitted_as_attributed_context"
+              "end": 263,
+              "kind": "line_range",
+              "start": 249
             },
             "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
           },
@@ -332,11 +325,23 @@
         },
         {
           "anchor": {
-            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
             "content": "sha256:a5c5eb8aabdd1c83dee386edc801dcb89b560a1e569df0fc4788f2d66657ff5f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path"
+              "end": 284,
+              "kind": "line_range",
+              "start": 266
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7c0cccbb205522b16538e16bace95756826bb4b8",
+            "content": "sha256:e23cdb7774d0ed907092ed6576d7e9c8d84c129a6857485ed1cb26b4b4ec5e1e",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
           },

@@ -39,14 +39,29 @@
       ]
     },
     "12": {
-      "note": "Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs.\n\nAnchor: `cancel_sync`",
+      "note": "Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. Anchor: `cancel_sync`",
       "targets": [
         {
           "anchor": {
-            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
-            "content": "sha256:49a16a4d82b78900965c3ad0fa38ede749418938846086882583afaceb0e8758",
+            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+            "content": "sha256:444d17161f68e749e5db42f23b58cd06eecfb7566f09ac3f42dfb4f13f559144",
             "locator": {
-              "kind": "file"
+              "end": 490,
+              "kind": "line_range",
+              "start": 399
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+            "content": "sha256:9bdf79f0a04fb919cae29d06ddad576b1c37fc0efd8afd1f82c9e25e788a6b22",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 532
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
           },

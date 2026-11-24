@@ -80,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54b818118629a276761c14d24046428232306f6e",
+            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
             "content": "sha256:00de5bcebb10bb4d21c1347d005b80ba95cf5e36812c63f8316210c43d759ea4",
             "locator": {
               "end": 824,
@@ -310,7 +310,7 @@
         }
       ]
     },
-    "22": {
+    "24": {
       "note": "The command parser registers text conversion and standing/state conversion separately.",
       "targets": [
         {
@@ -326,7 +326,7 @@
         }
       ]
     },
-    "23": {
+    "25": {
       "note": "The derived-state adapter selects a plan by default and exposes an explicit apply operation.",
       "targets": [
         {

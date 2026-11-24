@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b6636e91991169cfc8bd1fb847969206c23afce7",
-    "commit": "f3628031bfde4d91f64b589645f4d27aa328e8ff",
+    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The contributor guide still describes the seven-lane selection and catalog workflow, with the native stdio memory case selected through stress-durability.",
-    "task": "261112-BUG-L18",
+    "statement": "The contributor guide's seven-lane assignment and catalog procedure still apply to the new worklist test's unit-regression placement.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "e5a6f0b9703d108bf215f123c7b20f02217fdd19",
+      "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },

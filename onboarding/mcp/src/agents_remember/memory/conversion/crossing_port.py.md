@@ -65,7 +65,7 @@ No meaningful cross-repo references found: the file reads and writes only the me
 No cross-repo boundary is crossed by this file.
 
 
-- The plan binds product stamp time to the two input commits. [5]
+- The plan binds product stamp time to the two input commits. [6]
 
 - The adapter. [1]
 - The conversion port loads worktree-owned plan/result/error types only when a crossing plan is requested; it preserves conversion and failed-step behavior. [4]

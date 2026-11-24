@@ -1012,7 +1012,7 @@
         }
       ]
     },
-    "42": {
+    "45": {
       "note": "The extracted validator compares code and applicable external-memory heads to the contract's base and legitimate integrated heads.",
       "targets": [
         {
@@ -1029,7 +1029,7 @@
         }
       ]
     },
-    "43": {
+    "46": {
       "note": "The contract accepts the recorded base and its own completed or checkpointed output.",
       "targets": [
         {
@@ -1046,7 +1046,7 @@
         }
       ]
     },
-    "44": {
+    "47": {
       "note": "The final successful result appends the note supplied by the memory outcome.",
       "targets": [
         {
@@ -1063,16 +1063,16 @@
       ]
     },
     "5": {
-      "note": "Closeout retains entity-fingerprint and derived route-index refresh before exact converted-memory publication, not legacy metadata stamps.",
+      "note": "Closeout refreshes entity fingerprints and derived route indexes before the exact converted memory publication. The refresh leaves the legacy stamp lists empty.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e0ad4a62fe65adb86fac18115c7da4416065bbe",
-            "content": "sha256:10ce5b547e465ec1531e4b6cd70f0cd3cfa872e71008466f7b03f79cd2bde23d",
+            "blob": "450f147d13088be636534ca816b5b784144d4487",
+            "content": "sha256:90fb412c4c21134ba842533241f7f0757f68bb7f9beb59271b2560a4b8c21f55",
             "locator": {
-              "end": 669,
+              "end": 116,
               "kind": "line_range",
-              "start": 648
+              "start": 103
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -1080,10 +1080,12 @@
         },
         {
           "anchor": {
-            "blob": "3e0ad4a62fe65adb86fac18115c7da4416065bbe",
-            "content": "sha256:c1a362ea32cc6491ccc848bd2f4e93d060a26235c2da93951aaf66f7cdb36a72",
+            "blob": "450f147d13088be636534ca816b5b784144d4487",
+            "content": "sha256:10ce5b547e465ec1531e4b6cd70f0cd3cfa872e71008466f7b03f79cd2bde23d",
             "locator": {
-              "kind": "file"
+              "end": 673,
+              "kind": "line_range",
+              "start": 652
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },

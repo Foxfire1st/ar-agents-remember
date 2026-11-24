@@ -96,9 +96,8 @@ protocol.
   is refused, never stopped.
 - One `ensure` at a time per coordination root (flock); `lock-held` is a skip,
   not an error.
-- `DaemonEndpoint.version` is read from installed package metadata and `source_digest` is the
-  installed Python source digest, both when the endpoint is built — the comparators that make an
-  install (through `runtime_install`) or the next boot restart the daemon.
+- `DaemonEndpoint` defaults to the kernel release identity and the installed Python source
+  digest. The daemon compares both when deciding whether to adopt the running process or restart it.
 
 ## Evidence
 
@@ -110,7 +109,9 @@ protocol.
 - The MCP boot seam calling `maybe_autostart_dashboard`. [3]
 
 
+
 - The version comparator uses installed package metadata with the source-checkout release fallback. [4]
+
 
 
 

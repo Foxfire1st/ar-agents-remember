@@ -153,7 +153,9 @@ The configured direct-landing fixture grants the exact canonical gate_case/leaf.
 - A failed Git read inside the gate is never a verdict. [19]
 
 
-- A marker probe Git cannot answer is never unconverted memory. [20]
+
+- A failed candidate marker probe retains its layout-marker error, and an unreadable recorded base is separately named as K_B by the trace read. [20]
+
 - The settings resolution whose rows the read-set test checks. [21]
 
 ### Docs References

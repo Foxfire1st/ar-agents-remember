@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "9ba18ba55892e8f0b93f5fc884c00071c23e31e0",
+        "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
         "content": "sha256:2105ef345d9479c31408dee38a5ba1f1a03b627d81fdd3e6e7e8a00228bd4682",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,26 @@
     },
     {
       "anchor": {
-        "blob": "9ba18ba55892e8f0b93f5fc884c00071c23e31e0",
-        "content": "sha256:545f8843f8b01ce838af23b5f86126bf41266fac680b0fba2825044a24ff6fc6",
+        "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+        "content": "sha256:ee024c46e11dd69a99ae879a6178508692907da75e6bea6bc285903adf52d5b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_memory_base"
+        }
+      },
+      "id": "RLZ-MYD99V",
+      "invariant": "INV-D0AHQA",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 1",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "Passes the established recorded base to the writer's separate onboarding card comparison.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+        "content": "sha256:4939767aced256f099dd7694079880510d556e4bd949f9526b61adcb5a6a7531",
         "locator": {
           "kind": "symbol",
           "name": "leaf_write_report"
@@ -76,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "9ba18ba55892e8f0b93f5fc884c00071c23e31e0",
+        "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
         "content": "sha256:f2d33b0a8d65e2b5cb81516998f3280a3eb04dfa627971261b56bd36633d0f8f",
         "locator": {
           "kind": "symbol",
@@ -118,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ba18ba55892e8f0b93f5fc884c00071c23e31e0",
+            "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
             "content": "sha256:2105ef345d9479c31408dee38a5ba1f1a03b627d81fdd3e6e7e8a00228bd4682",
             "locator": {
               "kind": "symbol",
@@ -134,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ba18ba55892e8f0b93f5fc884c00071c23e31e0",
+            "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
             "content": "sha256:ae24b893172283fbc98e8fd3f76b9c9387a5d6f7c85b71a7f8cf3aa8e6ba3389",
             "locator": {
               "kind": "symbol",
@@ -161,7 +179,7 @@
         }
       ]
     },
-    "4": {
+    "7": {
       "note": "The caller stamp comes from the runtime binding and receipt, with a reason when the coordination root is missing.",
       "targets": [
         {
@@ -177,7 +195,7 @@
         }
       ]
     },
-    "5": {
+    "8": {
       "note": "The crossing writer carries its owner and caller stamp with the selected series code.",
       "targets": [
         {
@@ -193,7 +211,7 @@
         }
       ]
     },
-    "6": {
+    "9": {
       "note": "The wave writer carries the wave owner and a caller stamp.",
       "targets": [
         {

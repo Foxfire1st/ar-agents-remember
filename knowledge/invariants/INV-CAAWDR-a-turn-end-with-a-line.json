@@ -7,7 +7,9 @@
   },
   "applicability": "A seat's turn that ends with a background-process wait.",
   "conditions": [
-    "The ending line starts with WAITING FOR BACKGROUND: and names each process, its pid or log and its expected end."
+    "The last assistant message has a line beginning WAITING FOR BACKGROUND:. The parser reads its text and optional check timing.",
+    "A closed or archived session cannot arm a check.",
+    "The work generation and exact declaration must remain current after the parent notification path returns. Scheduling also requires a pending-check slot."
   ],
   "exclusions": [
     "An undeclared turn end, which is a silent end."
@@ -24,9 +26,9 @@
     "leaf": "260928-MIK-L60",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A turn end with a line starting `WAITING FOR BACKGROUND:` declares a background-process wait (each process: what, pid or log, expected end); it is not a silent end, gives the parent nothing, arms the plugin's check (3 minutes by default, `check in <N> minutes` with N clamped to 1-30 and the row saying so), the check asks the seat for each process's state, the seat's next undeclared end or its archiving ends the wait, one end may declare both waits and one check asks about both, and each event is a turn-end row.",
+  "statement": "A turn end with a line starting `WAITING FOR BACKGROUND:` declares a process wait. The declaration instructions ask for each process, its PID or log, and its expected end. A declaration alone sends no parent line. A same-turn handoff keeps the ordinary parent rules. A still-current declaration may arm one check after the handoff path returns. The default is three minutes and a declared delay is clamped to 1–30 minutes. One check can ask about both an open helper and background declaration. A later end that omits the background declaration, close or archive ends that wait.",
   "status": "proposed",
   "supersedes": []
 }

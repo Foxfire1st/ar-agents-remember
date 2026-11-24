@@ -210,10 +210,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
-            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
+            "content": "sha256:df8be32d1605fc21c05c3cf918478e992e85d68a9e29c775ce1fff05c2ce70eb",
             "locator": {
-              "kind": "file"
+              "end": 782,
+              "kind": "line_range",
+              "start": 779
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -247,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
             "content": "sha256:08db73be2e9e8e5bef50cfd8de5ef65754d258fb290cb2af54edfd6fc215cc48",
             "locator": {
               "kind": "symbol",
@@ -646,14 +648,55 @@
       ]
     },
     "63": {
-      "note": "**The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.**\n\nAnchor: `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all`",
+      "note": "**The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.** Anchor: `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all`",
       "targets": [
         {
           "anchor": {
-            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
-            "content": "sha256:91c1b85a30cbccf442e19689900ba8562dfe13602e76ff33b891c159b3c82ba1",
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:2a88445cf4b2a4107565296539834a4f3423c5f76f36e5f267aade5c5b0ab1c2",
             "locator": {
-              "kind": "file"
+              "end": 739,
+              "kind": "line_range",
+              "start": 700
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:9d28c71bdbf0fce29f7812bc3f7b52d8741c45a5417d8fbb5282671e4dd8733f",
+            "locator": {
+              "end": 775,
+              "kind": "line_range",
+              "start": 748
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:84c59d31977e5671b74522dc856e15610355af59650f1d127609e095ac821a9c",
+            "locator": {
+              "end": 801,
+              "kind": "line_range",
+              "start": 778
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:70908d33b59472dab68a0ad49673e31ecba0f54f176d4dea5fc0e4c8de759771",
+            "locator": {
+              "end": 833,
+              "kind": "line_range",
+              "start": 809
             },
             "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
           },

@@ -120,12 +120,12 @@
       ]
     },
     "3": {
-      "note": "`SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback.\n\nAnchor: \"SERVER_VERSION\"",
+      "note": "`SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "c02d5f6f0d5ffd938a425723eb62783233464520",
-            "content": "sha256:ec2992e23b75f506c703b93043b3885b4d3ecd01e9de1c99ca4623ee017bd629",
+            "blob": "393e94f256070902f2e90853cb7135bcea711381",
+            "content": "sha256:17ac1eb6abe957157dc56e89f81680d44bacc3b0c6129637d0cfaff2712b2163",
             "locator": {
               "end": 23,
               "kind": "line_range",

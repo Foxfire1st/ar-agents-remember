@@ -8,7 +8,7 @@
 
 **CLI adapter `agents-remember knowledge-worklist` (MIK-R08).** It computes the change-to-knowledge
 worklist for a leaf (`--contract`), exactly as the curator's memory-quality run does and persisted beside
-the contract, or for four explicitly named sides (evidence runs on scratch copies), and prints it as JSON.
+the contract using its recorded code and memory bases. The explicit form compares the four supplied sides. Both forms print JSON.
 
 ## Code Commentary
 
@@ -56,7 +56,9 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The two forms and the exit statuses. [1]
+
+- Contract mode uses both recorded bases and persists beside the leaf contract. Explicit mode compares the four named sides and writes only a named output. Both print JSON; exit statuses distinguish complete, incomplete and nonapplicable comparisons. [1]
+
 - The arguments. [2]
 - Explicit sides, with named argument errors. [3]
 - The optional coordination root for requirement endpoints (MIK-R14), in the usage line, the parser and the sides. [4]

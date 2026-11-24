@@ -160,7 +160,7 @@ Current Python package metadata accepts `>=3.14,<3.15`; managed development/CI p
 
 Retain the hook account with its scope: fast pre-commit checks staged generated assets, lint, format, typing, test catalogs and dashboard checks; targeted pre-push repeats deterministic checks; neither runs tests; the full tier refuses host full-suite execution and names the pinned Dagger graph. Staged isolation parks/restores unstaged and untracked content except during in-progress Git operations, refuses a moved stash and gives recovery instructions. The shared repository stash can contain an interrupted gate's entry. The quality wrapper reports relevant untracked inputs separately and runs the staged candidate in a separate clone; missing diagnostic input or calculation failure fails its rail, while production metric threshold findings remain nonblocking reports.
 
-The two test catalogs remain canonical classification/lifecycle data, union-merged by Git attributes. Their repair command orders/deduplicates known lists, derives consumers when source supports them and removes obsolete paths except the named all-consumers-missing case; it does not invent rows or assign lanes. Invalid forms and interleaved union rows refuse with named repair, and base-revision parsing uses the same reader. No catalog row count or byte digest is pinned. Generated shipped dashboard JavaScript alone has its named whitespace exemption; vendored tokenizer bytes are marked binary to prevent line-ending changes.
+The two test catalogs remain canonical classification/lifecycle data, union-merged by Git attributes. Their repair command orders/deduplicates known lists, derives consumers when source supports them and removes obsolete paths except the named all-consumers-missing case; it does not invent rows or assign lanes. Invalid forms and interleaved union rows refuse with named repair, and base-revision parsing uses the same reader. No catalog row count or byte digest is pinned. Git exempts generated dashboard JavaScript from trailing-whitespace checks and skips whitespace checks for the byte-preserved Paseo server fixtures. The vendored tokenizer vocabulary is marked binary to prevent line-ending changes.
 
 ## Historical And Verification Limits
 
@@ -355,7 +355,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - The read_ar_files naming entry point returns knowledge locations and measured states, with no source, card, overview or published-intent body. [61]
 
-- Retained reference account (no fresh execution or acceptance inferred): The attribute rules preserve generated JavaScript whitespace and tokenizer vocabulary bytes, and union-merge the two test-evidence catalogs. [69]
+- Git exempts generated dashboard chunks from trailing-whitespace checks and vendored Paseo server fixtures from whitespace checks. The tokenizer vocabulary is marked as non-text, and Git union-merges the two test catalogs. [69]
 
 - Retained reference account (no fresh execution or acceptance inferred): The rewrite that the `--write` command runs. [70]
 
@@ -501,14 +501,20 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Named validator route policies. [330]
 
-- **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): A review comparison on converted memory is four Git trees pinned by refs. [102]
+
+- Historical source-bound reference account. A converted review compares four Git trees. Live recording pins the uncommitted candidate trees and preserves their recorded memory-base binding. [102]
+
 
 
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Root manifest/journal location authority. [290]
 
+
 - The server builds entries from authored documents and declared relations, independently binding worktrees. [335]
 
+
+
 - Host authority requires a complete current-boot reconciliation and armed supervisor observation before role-agent task binding. [336]
+
 
 - The dashboard store retains bounded body/preparation resources by document reference and revision without taking task-state authority. [338]
 
@@ -563,7 +569,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - The docs index owns the start-here, install, operational and reference map. Anchor: `Start here`. [276]
 
+
 - The runtime layout reference states that no part of the product starts, indexes or queries a search provider. [282]
+
 
 
 - Retained reference account (no fresh execution or acceptance inferred): The hook gate's tiers. [122]
@@ -667,12 +675,13 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Instruction renewal uses the declared skills copy owner, projects the certification profile and copies canonical tool details into packaged runtime docs. [370]
 
 - Carryover names file-sidecar, route-overview, memory-only-doc and entity-catalog candidates; its request supplies the code/source/target roots. Plan and apply require both memory roots to be converted and share the same conversion version; unconverted or mismatched memory is refused. [143]
+
 - Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing; ordinary leaf judgments and gated closeout own publication. [354]
 
 - build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
 
-- Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree). [288]
-- Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. [51]
+- Fresh converted-leaf closeout validates and gates the exact memory tree after closing owner history. It then writes one memory-content output or reuses the unchanged tip. Recovery judges the recorded output again. [288]
+- Fresh converted-leaf closeout closes owner history and gates the exact memory output before committing it or reusing the unchanged tip. Recovery gates the already recorded output. [51]
 - Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses. [75]
 - The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed. [30]
 

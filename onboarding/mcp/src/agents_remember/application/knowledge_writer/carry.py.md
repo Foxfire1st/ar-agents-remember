@@ -75,20 +75,13 @@ No configured live documentation source was available for this pass.
 - Only the owner's open row with the old `after` is updated. [6]
 
 
-
-
+- The writer calls carry after authoring and before checking the owner’s history. [7]
 
 
 - Blobs and covering rows are carried. Anchor: `test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them` [8]
 
 
-
-
-
-
 - Another owner's row and a closed file are untouched. Anchor: `test_carrying_never_edits_another_owners_row_or_a_closed_history_file` [9]
-
-
 
 
 ### Cross-Repo References
@@ -97,5 +90,3 @@ No meaningful cross-repo references found: the carry edits the in-memory state o
 one code snapshot.
 
 No cross-repo boundary is crossed by this file.
-
-- The call in every writer operation. [7]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:7a4da18424562fd671e13cbf7c848b7a8e7ea8f07cd8f6940f81930112264296",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:40a86abf268f8db09d6a33f368dcbe2eabd92235ef6472baba9e5bd15ab0ea79",
         "locator": {
           "kind": "symbol",
           "name": "deliverSeatWake"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:ef50419252e4831af82c29406368bcb1f2139f5ce1acb70fd72073436e519c2c",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:c6af59ecd758dfc6eb723f66f106f868a8dda887bcc2ed08c7d9273cd817e330",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:776c5edb49ad62c047e22d0c7cbe0910ddf837be5b6bdff9627fec3c539ef059",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:1b458b1f78c056665985f224ceca9c45945b5480ba223148289e59730fd0595c",
         "locator": {
           "kind": "symbol",
           "name": "noteTurnStarted"
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:b6b127b1042ef423bac37449efcf8848eb557d88c0248fa7441e1e52637ec9b5",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:52e7e2ce22ed393204843ca9e7860e1427ed194dffe4ab3db60e209fb020fb5d",
         "locator": {
           "kind": "symbol",
@@ -106,16 +106,17 @@
         "handoffEntry": "MIK-R216@v1",
         "leaf": "260928-MIK-L203"
       },
-      "rationale": "This detector is what turns the keyword line into the third way to end a turn, read as a signal from the last assistant message only on ACP seats.",
+      "rationale": "The parser recognizes a seat's last-assistant helper declaration on any provider.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:024060f0da47372d598a0feecb5e0b9766f05b686ab23b09af9df92dd3b3cf5a",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:cd053c2c480809b1ab77496b255b149939dd6bf13c75866bb4412a6b83d258b7",
         "locator": {
-          "kind": "symbol",
-          "name": "scheduleWaitCheck"
+          "end": 2567,
+          "kind": "line_range",
+          "start": 2546
         }
       },
       "id": "RLZ-47VRN3",
@@ -124,12 +125,12 @@
         "handoffEntry": "MIK-R60@v8.1-5",
         "leaf": "260928-MIK-L60"
       },
-      "rationale": "Arms the check for either or both waits (renamed from scheduleSubagentCheck).",
+      "rationale": "The declaration branch applies ordinary handoff notification, then checks the work generation and the declaration identity before arming its check.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:ca72ad2f29c29cd58140c79465097bfac1f0965238665f1a939de5a2995c67ae",
         "locator": {
           "kind": "symbol",
@@ -147,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:93349ee20c7931ec88573112544bb9404e5ae6ef6dd2f357df86a952c587ae3f",
         "locator": {
           "kind": "symbol",
@@ -165,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:b9b235f19d4d4d73249b9a94adc99c25866c028ce2725bc55f69820bf2a1efbd",
         "locator": {
           "kind": "symbol",
@@ -183,8 +184,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:7a06f391200c1bb79902b7e2afbf001601f5291b35952c3f781cf626a03f0f39",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:c26d4f857189685526dda3be63e065c8a620bca4f7ce8f111867f7eed85531ae",
         "locator": {
           "kind": "symbol",
           "name": "TurnEndedTracker"
@@ -201,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:2ad498cf0bed73347fa52f7b42f85316e47eb5b274ae89abd9754367b7ab3216",
         "locator": {
           "kind": "symbol",
@@ -219,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:e4ed96af13cff1b1091394a881610a3b3b2d8764e5f0061b90e497f2fdb494a5",
         "locator": {
           "kind": "symbol",
@@ -237,8 +238,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:0f96a19cc4dc31a83e67a3ce77e864f7feff84413886be212e4b9bbbea5ddadf",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:4ac1528fb5317e026596112e580c262deaa621540cbb470dfba054ff9152bf8e",
         "locator": {
           "kind": "symbol",
           "name": "flushHeldLines"
@@ -255,8 +256,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:cf61d04dcebc481bf1a340ae4f4c9d77ba86b6dbc6d70645558646c4855289c2",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:1142cfbd1ae541198bc26fed46c42d6dc6ca58b07e3062cbac82249890b606ab",
         "locator": {
           "kind": "symbol",
           "name": "notSilentReason"
@@ -273,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:ea776985022075902a3e2e5dbea25978d4e4f37cf2ae7875bb4b5871bf405853",
         "locator": {
           "kind": "symbol",
@@ -286,12 +287,12 @@
         "handoffEntry": "L203-INV-1ZKP4R-r5",
         "leaf": "260928-MIK-L203"
       },
-      "rationale": "This gate decides whether a declaration counts at all, taking the provider from the plugin's discovery rather than from a name or a list, so the same keyword line ends nothing on a provider that is not on ACP.",
+      "rationale": "The plug-in's ACP verdict selects the role launch instruction and wake sentence. Declaring a wait does not depend on that verdict.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:407560a892544b91781a105ad60d9f0a59568ce91219f1b4d20ad8b5a51c5435",
         "locator": {
           "kind": "symbol",
@@ -309,7 +310,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:eb1f7c34a7996aee06d083bd795366fa0c857dc7487dccd465cc1ff8dbdf468c",
         "locator": {
           "kind": "symbol",
@@ -327,8 +328,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:024060f0da47372d598a0feecb5e0b9766f05b686ab23b09af9df92dd3b3cf5a",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:16605a1322a83536cfbf7c0c90021be4e3a58d8708985413faaa38f28e12d1a6",
         "locator": {
           "kind": "symbol",
           "name": "scheduleWaitCheck"
@@ -345,7 +346,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:2563114c90d0bac3a177989383c568e47dbbe21ca267c9b1e14ad14056d80793",
         "locator": {
           "kind": "symbol",
@@ -363,7 +364,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:15afe7a97faf90393a520c120490f4a53f6dcd14f13334307fd12b49d84567b3",
         "locator": {
           "kind": "symbol",
@@ -381,8 +382,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:f3d9e62990d0c9b700a100368a4507c7850a39d7b87db5268479f51ff27cd3bd",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:1f6e34d477cb1bdce6d40ecfb641d39cd938d5af505b9d22bbf204eb430a7ff3",
         "locator": {
           "kind": "symbol",
           "name": "noteAgentArchived"
@@ -399,8 +400,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:81aad7cf399048070716d06f5891d04190e358632570300aa5eda9335877faa8",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:e5c1eca9c1f3fbe1a426f837a47e845ff07ebe2195a9ba72b709fa0ccd72dec7",
         "locator": {
           "kind": "symbol",
           "name": "parentMayTakeLineNow"
@@ -417,8 +418,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:cc818def2774ef6475094983284ce3b1a94e95913d3317e3514cc5eab2a05705",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:c4bde52dbc2b0e2469663b0280c0ea031e7f6496c45541a08bd15e561d5f174e",
         "locator": {
           "kind": "symbol",
           "name": "noteTurnEnded"
@@ -435,7 +436,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:39db5eafb3be0e7944a99c8cc58a9344e822d915c10783caa5c36acc625028e4",
         "locator": {
           "kind": "symbol",
@@ -453,8 +454,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:8a3aaab7ecab50d39c4b31b8b1a8557b6a9d683ec012d9342f76158bb6fa7ab2",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:70f46a5a43ecac69b1c9c0a7c8a5d81a28cdc043b53bd411d0d8424891161cc9",
         "locator": {
           "kind": "symbol",
           "name": "resolveWakeParent"
@@ -471,7 +472,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:c50c309d8c9ee558fb06496b5e0a08b7bee19d3247a4afeddbb7698d1bd81055",
         "locator": {
           "kind": "symbol",
@@ -489,7 +490,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:d35493a494343594c49a07c0d19e75ae00187e8a58c92b12f8e29166c4228cdc",
         "locator": {
           "kind": "symbol",
@@ -507,8 +508,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:fa6194c4e9c2a5e00e7d7f7df253bee119d7ff7e9581e3c23eeec0e6e7658ccc",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:61657ff8afe0e3ecc8a3984c539c5eba715d81dd147997eb2003c696fe2525cc",
         "locator": {
           "kind": "symbol",
           "name": "createTurnEndedTracker"
@@ -525,7 +526,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:e849bf3b385184f6fd49c3108d60621e40ea6fe181d43bf9d93e80b2778db5f4",
         "locator": {
           "kind": "symbol",
@@ -543,8 +544,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:16341b351fbdb37064bc08c7744bae3644eb0e825bf77653c5c55fb36a2edf69",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:470225853713d92c49d01fc42b1cc1c9ec438bc4bc353370afcf3febd7bc07aa",
         "locator": {
           "kind": "symbol",
           "name": "cleanupSeatWaits"
@@ -561,7 +562,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:de3480e09ce7d2f3c90d97895001cfcebd49d40600ada729447660bd0101b4ec",
         "locator": {
           "kind": "symbol",
@@ -579,7 +580,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:ff687f1496efef565939cb4c7861dab7c03641ae48a3d251a0f791f53fc05b33",
         "locator": {
           "kind": "symbol",
@@ -597,7 +598,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:52e7e2ce22ed393204843ca9e7860e1427ed194dffe4ab3db60e209fb020fb5d",
         "locator": {
           "kind": "symbol",
@@ -615,8 +616,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:588bbad49de7d6b3f762363c53260414dd75fd3fbb9c7c829fa47bee469446ce",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:2e106f3cb77bcccf6e95ad3fd4e9953d335092cb6277d5a266311f0ddc397e69",
         "locator": {
           "kind": "symbol",
           "name": "PendingSeatWake"
@@ -633,7 +634,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:64621326da2727c0cfa17f919728b748c64c7efbbd77f9e7623ea8d09d9761e9",
         "locator": {
           "kind": "symbol",
@@ -651,8 +652,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:1f80d3f671d47c5358971c0641e614d3e01a327285c66111703285c9a5166968",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:7a679b8b1d1416873dff24a2f0245365e025965de2134c95965a13216a0b6c46",
         "locator": {
           "kind": "symbol",
           "name": "scheduleSeatWake"
@@ -669,8 +670,45 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:319a57dab885172b456aca6473505501ca0e060bd8ab38a163497b57b098e7fd",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:c4bde52dbc2b0e2469663b0280c0ea031e7f6496c45541a08bd15e561d5f174e",
+        "locator": {
+          "kind": "symbol",
+          "name": "noteTurnEnded"
+        }
+      },
+      "id": "RLZ-PTKFRD",
+      "invariant": "INV-TD175J",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 4",
+        "leaf": "261112-BUG-L20"
+      },
+      "rationale": "The ended turn resolves the current recipient and preserves the closed parent's delivery path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:31e1bbc109bebe79b3c367fe04d33838f9728e166f415c8fcf19f55f76b0b1f4",
+        "locator": {
+          "end": 1588,
+          "kind": "line_range",
+          "start": 1569
+        }
+      },
+      "id": "RLZ-QT0FCM",
+      "invariant": "INV-CAAWDR",
+      "origin": {
+        "handoffEntry": "M1-F04 close ends declared work",
+        "leaf": "261112-BUG-L20"
+      },
+      "rationale": "The close work boundary clears the current declaration and cancels its pending check while preserving held parent obligations.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:3d9b87d103d9ced2451b51daa62ef18a2414e3cc6e123789b09522c9b14994fa",
         "locator": {
           "kind": "symbol",
           "name": "bumpSeatEpoch"
@@ -687,8 +725,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:4bf60dafdc11c7063ca60db7be33dc8d24a4e216ad4ac7758d39a3d343ae1320",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:28463891a1ab18c88bdd18386b8dda2e7de35ce0eed0a13592f2c0d9a857b0b1",
         "locator": {
           "kind": "file"
         }
@@ -704,7 +742,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:650f3573b5b41e241967e99cbf467d147556d65473f455dea0c52aacee1c413b",
         "locator": {
           "kind": "symbol",
@@ -722,8 +760,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:0f96a19cc4dc31a83e67a3ce77e864f7feff84413886be212e4b9bbbea5ddadf",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:4ac1528fb5317e026596112e580c262deaa621540cbb470dfba054ff9152bf8e",
         "locator": {
           "kind": "symbol",
           "name": "flushHeldLines"
@@ -740,7 +778,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:92433a95cd48a87929e83e125e14f5cd203e3263316b604d95ee1dbb39abd4bd",
         "locator": {
           "kind": "symbol",
@@ -758,7 +796,7 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:beb9d23fe873ebe1fbe8955068612264d02a4a3fadaf260fbd0166a2d6e557a2",
         "locator": {
           "kind": "symbol",
@@ -776,7 +814,25 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:b62e01a9d400d46408216d373564909e7c41726e41fedf80d0f68e63748e1dac",
+        "locator": {
+          "kind": "symbol",
+          "name": "noteAgentClosed"
+        }
+      },
+      "id": "RLZ-VFK68A",
+      "invariant": "INV-TD175J",
+      "origin": {
+        "handoffEntry": "BUG-R20@v1 rule 4",
+        "leaf": "261112-BUG-L20"
+      },
+      "rationale": "The close event ends seat-owned work while keeping the lines already owed.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
         "content": "sha256:c6af59ecd758dfc6eb723f66f106f868a8dda887bcc2ed08c7d9273cd817e330",
         "locator": {
           "kind": "symbol",
@@ -794,8 +850,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:024060f0da47372d598a0feecb5e0b9766f05b686ab23b09af9df92dd3b3cf5a",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:16605a1322a83536cfbf7c0c90021be4e3a58d8708985413faaa38f28e12d1a6",
         "locator": {
           "kind": "symbol",
           "name": "scheduleWaitCheck"
@@ -812,8 +868,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:f657b26103b4299ea7c702e3c25feef8aeffc35894366f58395c5583729677a5",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:931e4c238a9d7b100e83777308be573f6ebbb0fc8378fc3643dbb08b40878c17",
         "locator": {
           "kind": "symbol",
           "name": "currentManagerOf"
@@ -830,8 +886,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:cc818def2774ef6475094983284ce3b1a94e95913d3317e3514cc5eab2a05705",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:c4bde52dbc2b0e2469663b0280c0ea031e7f6496c45541a08bd15e561d5f174e",
         "locator": {
           "kind": "symbol",
           "name": "noteTurnEnded"
@@ -848,8 +904,8 @@
     },
     {
       "anchor": {
-        "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-        "content": "sha256:cc818def2774ef6475094983284ce3b1a94e95913d3317e3514cc5eab2a05705",
+        "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+        "content": "sha256:c4bde52dbc2b0e2469663b0280c0ea031e7f6496c45541a08bd15e561d5f174e",
         "locator": {
           "kind": "symbol",
           "name": "noteTurnEnded"
@@ -867,14 +923,16 @@
   ],
   "references": {
     "2": {
-      "note": "Descendant restart removes held lines and invalidates claimed ancestor lines.\n\nAnchor: `noteTurnStarted`",
+      "note": "Descendant restart removes held lines and invalidates claimed ancestor lines.",
       "targets": [
         {
           "anchor": {
-            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-            "content": "sha256:4bf60dafdc11c7063ca60db7be33dc8d24a4e216ad4ac7758d39a3d343ae1320",
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:1b458b1f78c056665985f224ceca9c45945b5480ba223148289e59730fd0595c",
             "locator": {
-              "kind": "file"
+              "end": 1563,
+              "kind": "line_range",
+              "start": 1524
             }
           },
           "kind": "code"
@@ -882,14 +940,28 @@
       ]
     },
     "3": {
-      "note": "Synchronous claim ownership and send-point rechecks prevent overlapping flushes owning one deferred line.\n\nAnchor: `flushHeldLines`",
+      "note": "Synchronous claim ownership and send-point rechecks prevent overlapping flushes owning one deferred line.",
       "targets": [
         {
           "anchor": {
-            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-            "content": "sha256:4bf60dafdc11c7063ca60db7be33dc8d24a4e216ad4ac7758d39a3d343ae1320",
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:4ac1528fb5317e026596112e580c262deaa621540cbb470dfba054ff9152bf8e",
             "locator": {
-              "kind": "file"
+              "end": 1695,
+              "kind": "line_range",
+              "start": 1665
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:807c19c94e9bdc01bd4b9e0c41fc52b89dd10bdca51033a16b109d30932ed630",
+            "locator": {
+              "end": 1815,
+              "kind": "line_range",
+              "start": 1740
             }
           },
           "kind": "code"
@@ -897,14 +969,28 @@
       ]
     },
     "4": {
-      "note": "Role/parent facts, return and permission state decide whether a silent end produces, holds or drops the parent's line.\n\nAnchor: `noteTurnEnded`",
+      "note": "Role/parent facts, return and permission state decide whether a silent end produces, holds or drops the parent's line.",
       "targets": [
         {
           "anchor": {
-            "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
-            "content": "sha256:4bf60dafdc11c7063ca60db7be33dc8d24a4e216ad4ac7758d39a3d343ae1320",
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:a61f4b79e9246e514ae09a18811ad5bd7ed69007c3a6b2f242fb99c1949c26fb",
             "locator": {
-              "kind": "file"
+              "end": 2464,
+              "kind": "line_range",
+              "start": 2434
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:c4bde52dbc2b0e2469663b0280c0ea031e7f6496c45541a08bd15e561d5f174e",
+            "locator": {
+              "end": 2614,
+              "kind": "line_range",
+              "start": 2480
             }
           },
           "kind": "code"

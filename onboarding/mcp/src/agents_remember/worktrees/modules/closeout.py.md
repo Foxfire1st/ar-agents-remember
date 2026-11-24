@@ -307,9 +307,9 @@ The successful closed result appends any no-pass sentence from the memory closeo
 
 ## Evidence
 
-- The extracted validator compares code and applicable external-memory heads to the contract's base and legitimate integrated heads. [42]
-- The contract accepts the recorded base and its own completed or checkpointed output. [43]
-- The final successful result appends the note supplied by the memory outcome. [44]
+- The extracted validator compares code and applicable external-memory heads to the contract's base and legitimate integrated heads. [45]
+- The contract accepts the recorded base and its own completed or checkpointed output. [46]
+- The final successful result appends the note supplied by the memory outcome. [47]
 
 
 ### Approval Claim And Mutation Evidence
@@ -697,7 +697,7 @@ On converted memory three places of this module ask the mandatory invariant gate
 
 - The source-head validator compares the current source tips with their recorded base or this contract's own landed output. [2]
 
-- Closeout retains entity-fingerprint and derived route-index refresh before exact converted-memory publication, not legacy metadata stamps. [5]
+- Closeout refreshes entity fingerprints and derived route indexes before the exact converted memory publication. The refresh leaves the legacy stamp lists empty. [5]
 - The accepted source heads include the base and the result of this contract's recorded checkpoint or completed integration. [23]
 - The accepted source heads include the base and the result of this contract's recorded checkpoint or completed integration. [26]
 - The source-state boundary settles an admitted stale break and validates the healed contract's immediate source heads. Candidate revalidation returns that contract. [22]

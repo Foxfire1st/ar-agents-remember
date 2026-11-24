@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
-        "content": "sha256:f216c1e5ab8e725242ca791fa8d1076802b01890395eafcca883da4b26928e1b",
+        "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+        "content": "sha256:5a1fb5ce64d36ed8a536fb2a134ac7dd791974824b19c496b518883ab6718e14",
         "locator": {
           "kind": "symbol",
           "name": "load"
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+        "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+        "content": "sha256:6aa9b848d0957549450d3a92543d90bfe2db7931e34fa311ac6a16a0c76d461a",
+        "locator": {
+          "kind": "symbol",
+          "name": "recorded_card_base_files"
+        }
+      },
+      "id": "RLZ-N3BM20",
+      "invariant": "INV-WN53V2",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 4 writer card comparison",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "Supplies the candidate format and the request's code and cache inputs for the recorded side.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
         "content": "sha256:236642db2982595241c732e3f784105e83f865c26b7c32d6078107786a77f4d5",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
-        "content": "sha256:a2395b54511ebd6053dc5994c21946a4ade91a4bbc946fb789c18acb68ad4fb7",
+        "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+        "content": "sha256:2152bb780f3ece16518e62c3f2425da3c069022541d24f0186340ac27ddd67ac",
         "locator": {
           "kind": "symbol",
           "name": "MemoryState"
@@ -62,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
             "content": "sha256:4dfaad9e45c6ff3c960d14ed11483937b3c05b37f90e892b282d288b47de68b9",
             "locator": {
               "kind": "symbol",
@@ -78,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
             "content": "sha256:236642db2982595241c732e3f784105e83f865c26b7c32d6078107786a77f4d5",
             "locator": {
               "kind": "symbol",
@@ -94,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
             "content": "sha256:2188eb4a780fe71e67a6752b27128cbb721c36bf77b223e652c8907f8e3a9efe",
             "locator": {
               "kind": "symbol",
@@ -105,7 +123,7 @@
         },
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
             "content": "sha256:98908690330e3a35692f9c0bb713bdd9467044654aa4a3eeccbde1dd813475c2",
             "locator": {
               "kind": "symbol",
@@ -163,15 +181,16 @@
       ]
     },
     "2": {
-      "note": "The base is the memory worktree's `HEAD`, or its conversion when the candidate is converted and `HEAD` is not; a base that cannot be built is a named problem.",
+      "note": "The writer loads its operation base from memory HEAD and converts it when required. It retains a named problem when the operation base cannot be built.",
       "targets": [
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
-            "content": "sha256:f216c1e5ab8e725242ca791fa8d1076802b01890395eafcca883da4b26928e1b",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "content": "sha256:5a1fb5ce64d36ed8a536fb2a134ac7dd791974824b19c496b518883ab6718e14",
             "locator": {
-              "kind": "symbol",
-              "name": "load"
+              "end": 228,
+              "kind": "line_range",
+              "start": 206
             }
           },
           "kind": "code"
@@ -183,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
             "content": "sha256:ce1e7420efa6a3c7891ef51c2457127074312dff5d3c3c4b0dd3ad2d5d797e71",
             "locator": {
               "kind": "symbol",
@@ -199,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
             "content": "sha256:28b3fc95cdbb893b59686a47f7bf48c0425cf1d6242140502f451e7ac0f7c27d",
             "locator": {
               "kind": "symbol",
@@ -215,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
             "content": "sha256:1f669d7feea5dbeb3cff2e275d1f04e2f5af342b826f6404dfe6235355c1f647",
             "locator": {
               "kind": "symbol",
@@ -231,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
             "content": "sha256:b1f16b93b6865cb61f7e3871b7df161583dc3e5fe0a0c2c54b7a1616e86a738d",
             "locator": {
               "kind": "symbol",
@@ -247,7 +266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
             "content": "sha256:45cc2b94b6500faf4a316a268483a4f4e8d320e33d6cfc827dafcf0149286758",
             "locator": {
               "kind": "symbol",
@@ -263,7 +282,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
             "content": "sha256:07e9259706dd6623930d89b396120f99cbd927582e66a30b3ae4f01f1762f6cc",
             "locator": {
               "kind": "symbol",
@@ -279,12 +298,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
             "content": "sha256:c10d0bf5da41c75ed112aa9769e3ecbfc7a133641b6d3770609c22f4fd002ae5",
             "locator": {
-              "end": 479,
+              "end": 490,
               "kind": "line_range",
-              "start": 476
+              "start": 487
             }
           },
           "kind": "code"

@@ -11,6 +11,8 @@ rule 1).** Both writer entry points run the functions here — `agents-remember 
 `knowledge-bootstrap` through `cli/knowledge_write_route.py`, and the mounted `knowledge_write` tool — and
 both pass one `WriteSubmission`. Both routes use the same contract, authorization and worklist checks. The caller supplies the runtime context for question publication and writer attribution.
 
+The leaf route establishes the contract's recorded memory base before passing it to the writer's card comparison. An unavailable base leaves that comparison to the persisted-count or operation-base path.
+
 ## Code Commentary
 
 ### Logic
@@ -58,9 +60,9 @@ No additional work is asserted by this card.
 ## Evidence
 
 - Both entry points share leaf-write admission and pass the request's owner, question port and caller stamp to the writer. [3]
-- The caller stamp comes from the runtime binding and receipt, with a reason when the coordination root is missing. [4]
-- The crossing writer carries its owner and caller stamp with the selected series code. [5]
-- The wave writer carries the wave owner and a caller stamp. [6]
+- The caller stamp comes from the runtime binding and receipt, with a reason when the coordination root is missing. [7]
+- The crossing writer carries its owner and caller stamp with the selected series code. [8]
+- The wave writer carries the wave owner and a caller stamp. [9]
 
 ### Docs References
 

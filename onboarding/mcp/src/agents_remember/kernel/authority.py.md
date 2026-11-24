@@ -67,6 +67,7 @@ Two module-level helpers operate on an `McpRuntimeConfig`:
 
 
 
+
 - Worktree application entry points consume these guards for repo resolution and path confinement. [3]
 
 

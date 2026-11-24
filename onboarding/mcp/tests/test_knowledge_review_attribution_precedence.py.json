@@ -4,12 +4,12 @@
   "realizes": [],
   "references": {
     "10": {
-      "note": "`test_an_empty_converted_base_counts_as_completely_inspected_for_absence` owns the current boundary described above.",
+      "note": "`test_an_empty_converted_base_counts_as_completely_inspected_for_absence` exercises the recorded empty memory base with the populated candidate.",
       "targets": [
         {
           "anchor": {
-            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
-            "content": "sha256:c7830afe8bd8ac54ff56c7f3747d52847807474f9de8bded225366c4c17f1414",
+            "blob": "b04b2d84e920fde36816532999d3d7abd2656212",
+            "content": "sha256:2d3a855ea51b2d1ae73d456d89efb5f8976bb62f92228fb0122355fd9cefa84b",
             "locator": {
               "kind": "symbol",
               "name": "test_an_empty_converted_base_counts_as_completely_inspected_for_absence"
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "blob": "b04b2d84e920fde36816532999d3d7abd2656212",
             "content": "sha256:6984c5db6e9442ccd83da7cad9eeb5ecf6bcdb706e9b86af68b6dbe0ea10b1d9",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "blob": "b04b2d84e920fde36816532999d3d7abd2656212",
             "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
             "locator": {
               "end": 126,
@@ -52,31 +52,31 @@
         },
         {
           "anchor": {
-            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "blob": "b04b2d84e920fde36816532999d3d7abd2656212",
             "content": "sha256:773107394bbdc64fce4ae5f0c2bfb2e3ba7a795611781ce0ac1f9bc2e3ff98f2",
             "locator": {
-              "end": 184,
+              "end": 187,
               "kind": "line_range",
-              "start": 161
+              "start": 164
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "blob": "b04b2d84e920fde36816532999d3d7abd2656212",
             "content": "sha256:6984c5db6e9442ccd83da7cad9eeb5ecf6bcdb706e9b86af68b6dbe0ea10b1d9",
             "locator": {
-              "end": 217,
+              "end": 220,
               "kind": "line_range",
-              "start": 187
+              "start": 190
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "blob": "b04b2d84e920fde36816532999d3d7abd2656212",
             "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
             "locator": {
               "kind": "symbol",
@@ -106,16 +106,16 @@
       ]
     },
     "15": {
-      "note": "The empty-base case: a real empty converted Git base counts as completely inspected for absence; no canonical origin record invents its emptiness.",
+      "note": "The fixture records an empty converted ancestor as the leaf memory base and retains the populated candidate. Review inspects both sides, finds zero before mappings and reports zero unknown results.",
       "targets": [
         {
           "anchor": {
-            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
-            "content": "sha256:7edfdc9e03455a7af97d73a53e7c78abfbf8d7a58056d1cf8bdf3b118fde124e",
+            "blob": "b04b2d84e920fde36816532999d3d7abd2656212",
+            "content": "sha256:2d3a855ea51b2d1ae73d456d89efb5f8976bb62f92228fb0122355fd9cefa84b",
             "locator": {
-              "end": 157,
+              "end": 161,
               "kind": "line_range",
-              "start": 128
+              "start": 129
             }
           },
           "kind": "test"
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "blob": "b04b2d84e920fde36816532999d3d7abd2656212",
             "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
             "locator": {
               "kind": "symbol",

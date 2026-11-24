@@ -87,7 +87,7 @@ Historical labels such as final, landed, and resolved describe earlier curation 
 
 ## Evidence
 
-- Recovery derives the no-pass sentence only after finding the exact recorded memory output. [8]
+- Recovery derives the no-pass sentence only after finding the exact recorded memory output. [9]
 
 
 - Canonical census, readiness, source planes, and immutable snapshots construct fresh membership. [2]

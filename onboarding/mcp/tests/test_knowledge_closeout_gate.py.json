@@ -164,12 +164,12 @@
         },
         {
           "anchor": {
-            "blob": "adc31584a09b3cce811c29ce7a2d7df96eddaea0",
-            "content": "sha256:c5a9d47dc523af4fae2607acdf66554200cd2e8bd1f4c866c038d40df8626399",
+            "blob": "9cf9990ebcac4a8f761b77ec30a3a0e9c01c7e40",
+            "content": "sha256:fc5b1857eb705a0c5740e4b7026f0e94f8be12b9cf0a3839a72ffffdd852c11d",
             "locator": {
-              "end": 146,
+              "end": 165,
               "kind": "line_range",
-              "start": 119
+              "start": 122
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
           },

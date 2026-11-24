@@ -3,12 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "49bc0254b05c78be08015d6c53867af815a22478",
+        "blob": "48c2c186fd05ba62fd0c2436e182fb873620af96",
+        "content": "sha256:964f297cc6d6c518d8a3f8f1e0c5448e13a3e02985eafd3e1068e9d12615b1d9",
+        "locator": {
+          "end": 82,
+          "kind": "line_range",
+          "start": 66
+        }
+      },
+      "id": "RLZ-FCQQQF",
+      "invariant": "INV-TVEEQ2",
+      "origin": {
+        "handoffEntry": "BUG-R10@v2 rule 7 palette contract",
+        "leaf": "261112-BUG-L10"
+      },
+      "rationale": "The object supplies the complete palette to addTheme and uses Required<PluginThemeColors> to make omitted keys fail the plugin type check.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "48c2c186fd05ba62fd0c2436e182fb873620af96",
         "content": "sha256:3572a6c5dbbd277289e479b29507bcbca9cd86525a97ad543d5bfafe9c952317",
         "locator": {
-          "end": 47,
+          "end": 48,
           "kind": "line_range",
-          "start": 47
+          "start": 48
         }
       },
       "id": "RLZ-KH1XR2",
@@ -22,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "49bc0254b05c78be08015d6c53867af815a22478",
+        "blob": "48c2c186fd05ba62fd0c2436e182fb873620af96",
         "content": "sha256:2435dd76eddda2e36714e64353544bafd0588204102d720d76d5f8fbb6ffc0d9",
         "locator": {
           "kind": "symbol",
@@ -45,7 +64,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "49bc0254b05c78be08015d6c53867af815a22478",
+            "blob": "48c2c186fd05ba62fd0c2436e182fb873620af96",
             "content": "sha256:2435dd76eddda2e36714e64353544bafd0588204102d720d76d5f8fbb6ffc0d9",
             "locator": {
               "kind": "symbol",
@@ -57,15 +76,27 @@
       ]
     },
     "2": {
-      "note": "The entry contributes the theme/open screen and delegates the web page and typed embed-list RPC to the client helper.",
+      "note": "The entry contributes the complete SDK palette and open screen and delegates the web page and typed embed-list RPC to the client helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "49bc0254b05c78be08015d6c53867af815a22478",
-            "content": "sha256:63f9553a6aebbe56eb3ff37576b0426d198157245e0b5cbcba931f64545ee0d0",
+            "blob": "48c2c186fd05ba62fd0c2436e182fb873620af96",
+            "content": "sha256:d1bade69c77dc74f54fdbcb166f811b3455a00ae2aedf416243757c9adbd95fb",
             "locator": {
               "kind": "symbol",
               "name": "contribute"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48c2c186fd05ba62fd0c2436e182fb873620af96",
+            "content": "sha256:384a5379f30602168dc94668ba9b0592f6cf217dcf606cf2f7f9caa1eff3673a",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 60
             }
           },
           "kind": "code"

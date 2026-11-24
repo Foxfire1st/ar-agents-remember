@@ -102,4 +102,4 @@ returned summary alone.
 - Private machine settings pre-exist both installations and retain their bytes. Anchor: `user_settings_path_for_write` [8]
 - The unavailable-capsule-path regression requires the refusal message to contain the shared renewal command while preserving the selected mode and writing no coordination root or startup file. [15]
 
-- The lifecycle catalog lists the module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. [6] [7]
+- The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. [6] [7]

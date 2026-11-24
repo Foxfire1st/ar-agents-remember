@@ -148,7 +148,9 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 
 - The entry's summary read and its re-validation generation. [18]
 
+
 - The server builds one native task forest from declared child rows; the browser no longer runs the removed creation-order hierarchy helper. [24]
+
 
 - The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. [25]
 
@@ -242,7 +244,9 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 
 - The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; no separate series-child consumer union is part of the native entry model. [26]
 
+
 - Membership links each child to one deterministic parent and rejects a cycle; the removed series creation-sort builder is not the current producer. [27]
+
 
 - The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. [28]
 
@@ -306,6 +310,6 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 - The family mirror owns the family wire shapes and the review client re-exports them. [55]
 - **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** [56]
 - The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. [85]
-- The Knowledge reader record and summaries carry optional revision state and writer fields. [121]
-- Intent Review outline rows carry the candidate revision state and compact writer shape. [122]
-- Same-revision family comparisons retain both snapshot operands. [123]
+- The Knowledge reader record and summaries carry optional revision state and writer fields. [124]
+- Intent Review outline rows carry the candidate revision state and compact writer shape. [125]
+- Same-revision family comparisons retain both snapshot operands. [126]

@@ -136,7 +136,9 @@ locator lands in a blob, which lines two blobs differ in, and which file of C bi
 
 - One batch for the changed blobs, answers from the cache afterwards, and a missing tree reported where it is used. [27]
 
-- The blob diff carries its own prefixes, colour and driver options. [28]
+
+- The blob diff carries its own prefixes, colour and driver options. Anchor: `test_every_parsed_diff_names_its_own_prefix_colour_and_driver` [28]
+
 
 
 ### Docs References

@@ -5,7 +5,7 @@
 [Governing route overview](overview.md)
 ## Purpose
 
-Owns the external-memory content leg of the admitted closeout transaction after the code output is accepted. The shared `leaf_pair_refusal` also judges recovery, recorded leaf landing and leaf integration with caller-supplied validator bases and a worklist recomputed over the exact commit trees. A new memory-content commit carries the accepted code commit in its `Code-Commit:` trailer; the later disposable ledger refresh is informational and creates no commit.
+Owns the external-memory content leg of the admitted closeout transaction after the code output is accepted. The shared `leaf_pair_refusal` also judges recovery, recorded leaf landing and leaf integration with caller-supplied validator bases and a worklist recomputed over the exact commit trees. The pair judgment supplies the judged memory commit as the ancestry witness for the worklist's recorded base. A new memory-content commit carries the accepted code commit in its `Code-Commit:` trailer; the later disposable ledger refresh is informational and creates no commit.
 ## Code Commentary
 
 A series delegates to its series owner. An ordinary leaf resumes a recorded memory output only after the recovery gate; otherwise it reads the qualifying review fact against the pre-write memory tree and closes the latest owner history file with that fact when available. It then refreshes entity fingerprints and generated route indexes and calls `_commit_memory_content`. Card/overview stamping is removed and the corresponding refreshed lists are empty. Unconverted leaf input refuses before refresh/publication.
@@ -132,9 +132,9 @@ enforcement cannot disagree.
 
 ## Evidence
 
-- The last recorded memory round supplies a fact only with a passing result, usable verdict reference and exact reviewed memory tree. [53]
-- The closing writes its optional review fact with the flag and preserves closed histories. [54]
-- A newly closed history without a fact produces a note about proposed revisions. [55]
+- The last recorded memory round supplies a fact only with a passing result, usable verdict reference and exact reviewed memory tree. [56]
+- The closing writes its optional review fact with the flag and preserves closed histories. [57]
+- A newly closed history without a fact produces a note about proposed revisions. [58]
 
 - Every catalog row is evidence-checked against the candidate tree, planned or not; absent evidence is the unconditional check, while an unsupported algorithm and a missing value are diagnosed from the plan's rows. [50]
 

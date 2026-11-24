@@ -1614,24 +1614,12 @@
       ]
     },
     "65": {
-      "note": "Authored stage wins over host observation; only started tasks receive bound contributor activity and eventAt.",
+      "note": "Authored stage wins over host observation; only started tasks receive bound contributor activity and eventAt.\n\nAnchor: `task_state`",
       "targets": [
         {
           "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
-            "content": "sha256:97b5afbcb4c4f92a14c39ada1467d8a0b0098a8ad5d950e0f7b481bd53adf329",
-            "locator": {
-              "kind": "symbol",
-              "name": "task_state"
-            },
-            "path": "mcp/src/agents_remember/observer/task_entries.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
-            "content": "sha256:6c429c875db19fdc9ee8d700401a84c60ec6f922410d1526babcd79dbdcc0f52",
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+            "content": "sha256:5a984d22b4292af5c06c2637207ecf4aa720ddb93e33d5bdb2746a82e1499228",
             "locator": {
               "kind": "file"
             },
@@ -1642,24 +1630,12 @@
       ]
     },
     "66": {
-      "note": "Declared task sources become one entry forest with worktree binding kept separate from task admission.",
+      "note": "Declared task sources become one entry forest with worktree binding kept separate from task admission.\n\nAnchor: `build_task_entries` · `_bind_worktrees`",
       "targets": [
         {
           "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
-            "content": "sha256:8ca067a86d2ee83d9c1b56d58218d06b03dc5fe4f8d930335be216512b7848c0",
-            "locator": {
-              "kind": "symbol",
-              "name": "build_task_entries"
-            },
-            "path": "mcp/src/agents_remember/observer/task_entries.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
-            "content": "sha256:6c429c875db19fdc9ee8d700401a84c60ec6f922410d1526babcd79dbdcc0f52",
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
+            "content": "sha256:5a984d22b4292af5c06c2637207ecf4aa720ddb93e33d5bdb2746a82e1499228",
             "locator": {
               "kind": "file"
             },
@@ -1820,7 +1796,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
             "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
             "locator": {
               "kind": "symbol",
@@ -1832,12 +1808,12 @@
         },
         {
           "anchor": {
-            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "blob": "461651fb3faf19ad5d81f35ed38c99076bc36bba",
             "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
             "locator": {
-              "end": 493,
+              "end": 491,
               "kind": "line_range",
-              "start": 417
+              "start": 415
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },

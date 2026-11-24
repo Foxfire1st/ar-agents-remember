@@ -8,7 +8,8 @@
   "applicability": "The admitted converted carryover apply transaction in the recovery leaf memory worktree.",
   "conditions": [
     "Selection and exact external-memory leaf authority are admitted before apply; code worktree remains clean at selected official tip.",
-    "Prepared document/sidecar and missing/resumable record payloads are written only to knowledge/onboarding; route indexes regenerate before exact-tree validator judgment against the paired leaf memory base and official code.",
+    "Before writing, apply establishes that the receiving leaf’s recorded memory base and tree are readable and that the base is an ancestor of the receiving memory worktree’s HEAD. Failure returns carryover-failed before writes or index refresh.",
+    "Prepared pairs and admitted records are written to knowledge and onboarding. Apply regenerates route indexes and validates the exact resulting tree against official code and that recorded memory base. The recomputed leaf worklist uses the same base.",
     "Validator refusals and exceptions restore the pre-apply owned write extent, including preexisting bytes, modes, indexes and created directory topology; target edits/deletions are not overwritten.",
     "Already-equal payloads skip writes but repeat still validates the whole tree and recomputes the worklist without persisting it."
   ],
@@ -31,7 +32,7 @@
     "leaf": "260928-MIK-L56",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Apply writes selected converted pairs, regenerates indexes, validates the exact tree, restores on refusal, and never commits or overwrites target edits.",
   "status": "proposed",

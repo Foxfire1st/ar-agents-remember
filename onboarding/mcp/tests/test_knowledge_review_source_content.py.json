@@ -710,8 +710,46 @@
       ]
     },
     "5": {
-      "note": "**The shared R01 production fixture these cases extend rather than duplicate.**\n\nAnchor: `content_fixture` `build_endpoint_fixture` `EndpointFixture`",
+      "note": "**The shared R01 production fixture these cases extend rather than duplicate.** Anchor: `content_fixture` `build_endpoint_fixture` `EndpointFixture`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
+            "content": "sha256:71c084d5c2e0d8ac7a2af262f02f85b4b47492a9c2eb83054886b4fdec56301f",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:7a71c6aa065e4c675cc52debce57c452cc234e283c30bce536b251b1bb363146",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 214
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:63ec7b796d7c0062b9b913f86887f9d59ac926d08cd886085837eb6517ac4f90",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
@@ -724,45 +762,10 @@
         },
         {
           "anchor": {
-            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
-            "content": "sha256:91c1b85a30cbccf442e19689900ba8562dfe13602e76ff33b891c159b3c82ba1",
+            "blob": "b6a070007fd81451e3774b00e40abbda09cc3f54",
+            "content": "sha256:2f0d7ffe8d6d5cecf2b4d11b8a351382997eb75539dfbca4909268fabd515f6f",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
-            "content": "sha256:71c084d5c2e0d8ac7a2af262f02f85b4b47492a9c2eb83054886b4fdec56301f",
-            "locator": {
-              "kind": "symbol",
-              "name": "content_fixture"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
-            "content": "sha256:7a71c6aa065e4c675cc52debce57c452cc234e283c30bce536b251b1bb363146",
-            "locator": {
-              "kind": "symbol",
-              "name": "build_endpoint_fixture"
-            },
-            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
-            "content": "sha256:63ec7b796d7c0062b9b913f86887f9d59ac926d08cd886085837eb6517ac4f90",
-            "locator": {
-              "kind": "symbol",
-              "name": "EndpointFixture"
             },
             "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
           },

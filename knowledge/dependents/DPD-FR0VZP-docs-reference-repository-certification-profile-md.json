@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8fe450a99e381238eee385e2c5a4183e3a6b43aa",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The profile reference still describes certification-specific checks and the separation from ordinary closeout, since the error addition is specific to state conversion.",
-    "task": "261112-KNO-L3",
+    "statement": "The certification profile's schema refusals and selections still apply after the separate leaf memory-base error was added.",
+    "task": "261112-BUG-L21",
     "uncommitted": true
   },
   "document": "docs/reference/repository-certification-profile.md",
@@ -81,7 +81,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
     },
     {
-      "blob": "c6384aff2bd1b7fc17ef90559c01de9dd981edd1",
+      "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
       "kind": "file",
       "path": "mcp/src/agents_remember/errors.py"
     },
@@ -102,7 +102,7 @@
     },
     {
       "anchor": {
-        "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
+        "blob": "43e1333bb75cff7b34bf707d22110a24ffd2f49d",
         "content": "sha256:66cada310dbc541a08fade0b82a0c6b3b7465ec50c95e11a52c7b1d93f43ecc7",
         "locator": {
           "kind": "symbol",
@@ -128,7 +128,7 @@
       "path": ".dagger/src/agents_remember_quality/profile_execution.py"
     },
     {
-      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
+      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }

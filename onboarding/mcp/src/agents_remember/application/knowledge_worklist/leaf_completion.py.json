@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "79d594f19005ef10e2e3c9dd04a5e9553b687305",
+        "content": "sha256:27911db64e7ffa910da7f2c935f32d0f795e6f626f30f6613eb95ef854e25054",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_onboarding_trace_sides"
+        }
+      },
+      "id": "RLZ-33A3EW",
+      "invariant": "INV-D0AHQA",
+      "origin": {
+        "handoffEntry": "BUG-R21@v1 rule 1",
+        "leaf": "261112-BUG-L21"
+      },
+      "rationale": "Supplies the recorded base to the onboarding trace comparison while reading candidate bytes from the selected directory.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Completes explicit leaf comparisons with onboarding trace, settles uncovered changes and persists a recomputed worklist through the existing leaf owner. Unreadable candidate blobs are not unchanged source. A returned worklist can exist without a persisted enclosure file; None means inapplicability, not a successful empty comparison. This module composes domain owners rather than creating another recomputation route.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
-            "content": "sha256:159502ec9b5882f729f7cd3679a6e8aa2e459cefb1387baa59aef5d5dae8b656",
+            "blob": "79d594f19005ef10e2e3c9dd04a5e9553b687305",
+            "content": "sha256:ec18dd36d77868cd46f55f802ad6b6b9482d0c9ae42f25657b76912c3812a763",
             "locator": {
               "kind": "file"
             }

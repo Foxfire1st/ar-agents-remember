@@ -342,10 +342,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e729c6fe38268a4aa8d5dda40ef8a35ebcceda4f",
-            "content": "sha256:7deebe5422dbfc8df43b1426ec12c3bccb1944ea75ca5f662a25be544b865a5b",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
             "locator": {
-              "end": 897,
+              "end": 909,
               "kind": "line_range",
               "start": 1
             },
@@ -355,12 +355,27 @@
         },
         {
           "anchor": {
-            "blob": "a416f07cd2b10ac1e83cf28c6fdeb362a5938c4f",
-            "content": "sha256:2ab37c36d4e6f06d8f0c9f698b481559d1d7e02d225a274d0708984febda56ac",
+            "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
+            "content": "sha256:f446406acb7d15b3a151eeb8f3e6dcb72216c6ec96923d8ecb50b909d70c5696",
             "locator": {
-              "kind": "file"
+              "end": 186,
+              "kind": "line_range",
+              "start": 123
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:5a5c4f47f8364e929f773c384fae0cc2ce8bc3c390fd6fabf3568e5b71a52a22",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 469
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
           },
           "kind": "code"
         }

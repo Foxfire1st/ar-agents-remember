@@ -25,11 +25,13 @@ Otherwise the gate is unchanged. **Applicability (rule 6).** `converted_memory(r
 - Disabled contract refused before the cutover probe [19]
 
 
+
 - Disabled contract refused before the validator gate [21]
+
 
 
 - Disabled contract refused before the direct verdict [22]
 
 - Conversion probe reads one marker, nothing else [23]
 
-- The owner history closing adds an eligible review fact only in the same write that closes the file. [24]
+- The owner history closing adds an eligible review fact only in the same write that closes the file. [25]

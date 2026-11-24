@@ -20,14 +20,28 @@
       ]
     },
     "2": {
-      "note": "The one operation it exports.",
+      "note": "The package exports write_knowledge as its writer operation.",
       "targets": [
         {
           "anchor": {
-            "blob": "a416f07cd2b10ac1e83cf28c6fdeb362a5938c4f",
-            "content": "sha256:2ab37c36d4e6f06d8f0c9f698b481559d1d7e02d225a274d0708984febda56ac",
+            "blob": "d613d748cfff5dc483056f3aee7708018c7727e5",
+            "content": "sha256:d2f68cd15296b0b7ddbf40c4bcf74df9f0ad899838769f54380b27d1a2fbc9c4",
             "locator": {
-              "kind": "file"
+              "end": 33,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b9c5dafe07a227f63206ed03cb03b8d643be897",
+            "content": "sha256:fca76d26f1f7ea8823a5d5812a3fcafaafdfcf117dcd4ba759cdc88f841d7a66",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 128
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },

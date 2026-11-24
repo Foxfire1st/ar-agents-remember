@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+        "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
         "content": "sha256:b0bf53728de4411d8749e98977b4e10f4c738ce7008aaa357f16a50f9d6b6b5d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+        "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
         "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
-        "content": "sha256:9cd22d3c00022098be833639a251d8330d80fb5056bb39cbc80a94ac8356974e",
+        "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+        "content": "sha256:ed392ca66a3f81b9c2848c4fc72d14c710b551e31285ae29f819dbef76bb0eda",
         "locator": {
           "kind": "file"
         }
@@ -56,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
-        "content": "sha256:ebc1a4ad94a8accb33e831864452ec335ea91e81251b9bee90dff501552948a5",
+        "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+        "content": "sha256:8537b3a00f61a8e35243a931c88f5adeafb1bec33dbf3b886dff697a3de13e7b",
         "locator": {
           "kind": "symbol",
           "name": "_recipient_by_id"
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+        "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
         "content": "sha256:be6da47b0d113d53282861f60b1f4ffc4f6cb342652c347a3744ff10933c8461",
         "locator": {
           "kind": "symbol",
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
+        "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
         "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
         "locator": {
           "kind": "symbol",
@@ -111,15 +111,43 @@
   ],
   "references": {
     "1": {
-      "note": "The source implements the behavior and boundaries described above.",
+      "note": "An exact role-message recipient uses a canonical UUID from a launch receipt. Registry recovery uses the same predicate to select registered IDs for exact lookup.",
       "targets": [
         {
           "anchor": {
-            "blob": "16f25d8cc69c9a34dc60a7a3013d67bd3620308d",
-            "content": "sha256:9cd22d3c00022098be833639a251d8330d80fb5056bb39cbc80a94ac8356974e",
+            "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+            "content": "sha256:02feb35c1294317d50604efd642515477bc0a270513f09507d7ad8034b71224b",
             "locator": {
-              "kind": "file"
+              "end": 144,
+              "kind": "line_range",
+              "start": 98
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6c1e1c987e94ba2e07c90e56183a129fc848e18",
+            "content": "sha256:6acfaafe853ee3d7d11f041812ad78f55a3946405d31d84f5cca8d1db65194a8",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/cli/role_registry_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6c1e1c987e94ba2e07c90e56183a129fc848e18",
+            "content": "sha256:0a0d26b83e510678ae21568ddb1986bc2bd1366f33591e830c31a4288e0245d9",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/src/agents_remember/cli/role_registry_recovery.py"
           },
           "kind": "code"
         }

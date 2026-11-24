@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
-        "content": "sha256:d60f5903dad836bed90d610df54f3b1c4e4dc506538f44275f33e9dfc143955e",
+        "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+        "content": "sha256:7c1cf5a5422d5788e1e9f673fc9f56d8ef6cae94b5ef665fe5a2a00ac25ecd08",
         "locator": {
           "kind": "symbol",
           "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
         "content": "sha256:6d9953dcbd159e4a05c7aa8e18efb049fd42ea51b3ec62685e425f1b2591e285",
         "locator": {
           "end": 307,
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
         "content": "sha256:4c3f3a30d164c6bb0614de5ad42b2ad7e705671deae823ac73778c8d6bed1948",
         "locator": {
           "kind": "symbol",
@@ -55,7 +55,7 @@
     },
     {
       "anchor": {
-        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
         "content": "sha256:86a85d1897b8cf55eea94527e0dff80a2d826bfa31e5713d74512cd72f116636",
         "locator": {
           "kind": "symbol",
@@ -72,7 +72,7 @@
     },
     {
       "anchor": {
-        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
         "content": "sha256:0c9d99fb6ddff32557344dd65f9f7c659a13da3f9d899712575050e7a177ff57",
         "locator": {
           "end": 275,
@@ -90,7 +90,7 @@
     },
     {
       "anchor": {
-        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
         "content": "sha256:5c738541ebcebefb5c54b397c881ae93421a101ecff354e2f5b4ec0845707c9f",
         "locator": {
           "kind": "symbol",
@@ -107,7 +107,7 @@
     },
     {
       "anchor": {
-        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
         "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
         "locator": {
           "kind": "symbol",
@@ -124,7 +124,7 @@
     },
     {
       "anchor": {
-        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
         "content": "sha256:1032fcb8f96d63f8fcf3e79397ad48101ed7286e0412ede151587bdc099956ed",
         "locator": {
           "kind": "symbol",
@@ -143,8 +143,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
-        "content": "sha256:8a3d32e86d5e64aa7e12b559654d3e5ce2e4f7d65558ca7dcd8465e54c810805",
+        "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+        "content": "sha256:3d7a8f4c1b5bff4e83668f5ca61807de4dfd2d97ff73c509699050eb8290ff84",
         "locator": {
           "end": 798,
           "kind": "line_range",
@@ -167,11 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
-            "content": "sha256:d60f5903dad836bed90d610df54f3b1c4e4dc506538f44275f33e9dfc143955e",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+            "content": "sha256:7c1cf5a5422d5788e1e9f673fc9f56d8ef6cae94b5ef665fe5a2a00ac25ecd08",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
+              "end": 471,
+              "kind": "line_range",
+              "start": 394
             }
           },
           "kind": "test"
@@ -179,14 +180,15 @@
       ]
     },
     "11": {
-      "note": "The leaf-wide view passes the captured trees and base commits and is computed once.\n\nAnchor: `test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison`",
+      "note": "The leaf-wide view passes the captured trees and base commits and is computed once.",
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
-            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+            "content": "sha256:1032fcb8f96d63f8fcf3e79397ad48101ed7286e0412ede151587bdc099956ed",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
             }
           },
           "kind": "test"
@@ -198,10 +200,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
-            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+            "content": "sha256:4c3f3a30d164c6bb0614de5ad42b2ad7e705671deae823ac73778c8d6bed1948",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_view_behind_which_a_read_failed_is_never_kept"
             }
           },
           "kind": "test"
@@ -213,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
             "content": "sha256:86a85d1897b8cf55eea94527e0dff80a2d826bfa31e5713d74512cd72f116636",
             "locator": {
               "kind": "symbol",
@@ -229,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
             "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
             "locator": {
               "kind": "symbol",
@@ -241,14 +244,15 @@
       ]
     },
     "18": {
-      "note": "A read after an edit shows the new content.  Anchor: `test_a_read_after_an_edit_shows_the_new_content_and_nothing_composed_is_kept`",
+      "note": "An unmoved live read reuses its answer. Edits to either side, including same-size rewrites in the index-write second, yield a new comparison.",
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
-            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+            "content": "sha256:7869e259631dd3754adbf4066981e7155d75164ad061c4c3e280d8a573dd58b1",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_read_after_an_edit_shows_the_new_content_and_an_unmoved_one_is_the_kept_answer"
             }
           },
           "kind": "test"
@@ -277,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
             "content": "sha256:1032fcb8f96d63f8fcf3e79397ad48101ed7286e0412ede151587bdc099956ed",
             "locator": {
               "kind": "symbol",
@@ -293,12 +297,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
             "content": "sha256:df4ccd09aae1a4267a4b2fe41b84991219c431b0ead6fae6eb636ea13ef50341",
             "locator": {
-              "end": 497,
+              "end": 499,
               "kind": "line_range",
-              "start": 492
+              "start": 494
             }
           },
           "kind": "test"
@@ -310,12 +314,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
             "content": "sha256:513da189787a4d586882ec602c928e8e05d81b70635116cf08a3ef294e54eb36",
             "locator": {
-              "end": 508,
+              "end": 510,
               "kind": "line_range",
-              "start": 498
+              "start": 500
             }
           },
           "kind": "test"
@@ -327,7 +331,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
             "content": "sha256:ef22b8c17e735a9cf6ccb3a4d336bf7fd842d6cb4dbb413c4ad716605beeefd5",
             "locator": {
               "kind": "symbol",
@@ -343,7 +347,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
             "content": "sha256:abdcd3490edf8c45a3db6ae73ce98fddf53ac8800db5b5e05ce8cb0529067ec1",
             "locator": {
               "end": 128,
@@ -360,19 +364,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
-            "content": "sha256:c9da3e4a9c6484f5ec0b0bc65d32aefbd3ca62f1b742dd9bda1ce5b39350cf72",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+            "content": "sha256:2b691a2bb4f306d50a39bc71d1d04eec55cc3c8ac9eaa9dd870f6f0f1c61bba6",
             "locator": {
-              "end": 794,
+              "end": 796,
               "kind": "line_range",
-              "start": 748
+              "start": 750
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0f3f7ba10ec239520aa5091f90ee0efde94489f4",
+            "blob": "5702dcd367e420a23e27109f1c2efce4351f7229",
             "content": "sha256:8a4703f87dc857d615dddc67a302e18d8bd38fbcc4cb805eca3233a86a98ae7e",
             "locator": {
               "end": 58,
@@ -403,7 +407,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
             "content": "sha256:b61466af54b91b3256a9fd3896f54c206295f1d815d8a0cce5d13ee518fa8a12",
             "locator": {
               "end": 16,
@@ -416,14 +420,15 @@
       ]
     },
     "7": {
-      "note": "The four review ports as the routes call them.\n\nAnchor: `Ports`",
+      "note": "The four review ports as the routes call them.",
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
-            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+            "content": "sha256:4db84f326f1b5ab7157747e61247ad2d9fbcdb7b42b6421eb81137b7e283e97b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "Ports"
             }
           },
           "kind": "test"
@@ -431,14 +436,15 @@
       ]
     },
     "8": {
-      "note": "The subject read matches direct read_knowledge_review composition, carries judgment, resolves once and captures each worktree once.\n\nAnchor: `test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck`",
+      "note": "The directly composed subject answer matches the one on the live port and carries a judgment. The warm composition resolves once and reuses both held worktree captures; the kept page answer resolves nothing.",
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
-            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
+            "content": "sha256:0e94987226b6345d7b63975c27191ceb279950a091751c0269e178aaa37fad08",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_warm_read_resolves_once_and_captures_nothing_while_each_worktree_witness_holds"
             }
           },
           "kind": "test"
@@ -450,7 +456,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "blob": "e6189c4c3415cdea43f862a76077fd64b8364d67",
             "content": "sha256:f601641214b1eb356b7fa0682c3ebb92975611a6f4a7c21f4cbc6efd13d878f3",
             "locator": {
               "kind": "symbol",

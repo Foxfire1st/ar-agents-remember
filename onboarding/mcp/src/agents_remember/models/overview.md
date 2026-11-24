@@ -287,7 +287,9 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - The reconsider links and MIK-R14's subject. [48]
 
+
 - The ref namespace and the durable record. [49]
+
 
 - The subjects, the row subject and the gate predicate. [51]
 

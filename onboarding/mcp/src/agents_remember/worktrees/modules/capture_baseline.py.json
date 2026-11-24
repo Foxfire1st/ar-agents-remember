@@ -102,19 +102,35 @@
         {
           "anchor": {
             "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
-            "content": "sha256:fa41376d20bebde74e198a4628e7be49cea729c672da48d5d08947c10df93847",
+            "content": "sha256:5abd6778b1e3c0093700f6fad7002204a7cfb6c0eeffc989aac6c95925d3ea42",
             "locator": {
-              "kind": "file"
+              "end": 148,
+              "kind": "line_range",
+              "start": 85
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
-            "content": "sha256:c016af62caf6f04f18066e62fabd1018fc831aa02e8bb03fa4d3710046da3063",
+            "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+            "content": "sha256:3f15464234a6c9b83c5b624f3385345a508380f8572ff3574e60e851f2ffd816",
             "locator": {
-              "kind": "file"
+              "end": 222,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0ded045994c0f33f08b592285a3ef8070d98581",
+            "content": "sha256:255e1982262c2f39dc07d7ef75bc29705282501467bb620404a8af062a143bf7",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 329
             },
             "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
           },
@@ -123,9 +139,11 @@
         {
           "anchor": {
             "blob": "1feda3e0e721c91e435f6b638b26c88dc538b55b",
-            "content": "sha256:777220ef238380cec7dc741f8164393c60d3a2b29c88373ffdd887fc0ad282bc",
+            "content": "sha256:482d8cfbe854079cc2c34312d7fa3dd172432431c1c104ed225cb39b01b752d5",
             "locator": {
-              "kind": "file"
+              "end": 99,
+              "kind": "line_range",
+              "start": 36
             },
             "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
           },

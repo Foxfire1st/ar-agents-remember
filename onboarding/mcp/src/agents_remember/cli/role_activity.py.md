@@ -10,6 +10,9 @@ Publish receipt-bound role identity before native start or resume can emit its f
 
 `publish_receipt_role_agent` validates stored selection and agent/report identity, then publishes role, qualified task/master/sprint key (or Projects) and reportPath. Missing runtime/report or config/filesystem failure is best effort; malformed selection validation can still raise. `resume_role_agent` publishes before native resume. Neither boundary proves plugin consumption or task acceptance.
 
+Receipt identity construction is shared with dashboard registry recovery. Runtime, report, role and task facts must be usable before the receipt can publish a row.
+
 ## Evidence
+
 
 - Publish receipt-bound role identity before native start or resume can emit its first event. [1]

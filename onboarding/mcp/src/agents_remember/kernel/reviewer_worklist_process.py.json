@@ -399,14 +399,16 @@
       ]
     },
     "23": {
-      "note": "Four identical requests get one child; three other computations get one each, and at most two children run at once.\n\nAnchor: `test_identical_requests_share_one_child_and_others_wait_for_one_of_two_slots`",
+      "note": "Four identical requests get one child; three other computations get one each, and at most two children run at once. Anchor: `test_identical_requests_share_one_child_and_others_wait_for_one_of_two_slots`",
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
-            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
+            "content": "sha256:d26f8d92dde2b76d75d5bca83084ad6c40e19d182ecd33b300d8bd4402fdd25f",
             "locator": {
-              "kind": "file"
+              "end": 435,
+              "kind": "line_range",
+              "start": 405
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -419,7 +421,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
             "content": "sha256:3fb8e2a96cf5bd585f0d87fa236ff1d553e7f84c2ca578796e7bea069bd1f48b",
             "locator": {
               "kind": "symbol",
@@ -432,14 +434,16 @@
       ]
     },
     "25": {
-      "note": "Overload is raised at once past the bound and at the deadline for a flight without a child.\n\nAnchor: `test_overload_is_refused_only_past_the_waiting_bound_or_the_deadline_and_says_so`",
+      "note": "Overload is raised at once past the bound and at the deadline for a flight without a child. Anchor: `test_overload_is_refused_only_past_the_waiting_bound_or_the_deadline_and_says_so`",
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
-            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
+            "content": "sha256:17bb2254f821a00b3feef292f750d20cce1e19d4938e9bc1493b55fbb9db8cb9",
             "locator": {
-              "kind": "file"
+              "end": 470,
+              "kind": "line_range",
+              "start": 438
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -448,14 +452,16 @@
       ]
     },
     "26": {
-      "note": "A leaving requester does not stop a shared child; the last one reaps it before returning.\n\nAnchor: `test_a_cancelled_requester_leaves_the_shared_child_to_the_others_and_the_last_reaps_it`",
+      "note": "A leaving requester does not stop a shared child; the last one reaps it before returning. Anchor: `test_a_cancelled_requester_leaves_the_shared_child_to_the_others_and_the_last_reaps_it`",
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
-            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
+            "content": "sha256:3f9808c734c58bd1100361e2538828de5a62f7b78e6a48ec8b2ee8dba4775cad",
             "locator": {
-              "kind": "file"
+              "end": 522,
+              "kind": "line_range",
+              "start": 473
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -464,14 +470,16 @@
       ]
     },
     "27": {
-      "note": "A request that arrives while a cancelled flight is reaped starts its own computation.\n\nAnchor: `test_a_request_arriving_while_a_cancelled_flight_is_reaped_starts_its_own_computation`",
+      "note": "A request that arrives while a cancelled flight is reaped starts its own computation. Anchor: `test_a_request_arriving_while_a_cancelled_flight_is_reaped_starts_its_own_computation`",
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
-            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
+            "content": "sha256:e5ff1a21f6a66e83f06c7d1bfd6b59835f70719e1722147b20645953fee0164c",
             "locator": {
-              "kind": "file"
+              "end": 976,
+              "kind": "line_range",
+              "start": 931
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -480,14 +488,16 @@
       ]
     },
     "28": {
-      "note": "A killed parent takes the child and its Git process with it.\n\nAnchor: `test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it`",
+      "note": "A killed parent takes the child and its Git process with it. Anchor: `test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it`",
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
-            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
+            "content": "sha256:1a203303ad32e30c6354249d3bd6b29ea0acebd5cdac69545ad0679462fc8b1f",
             "locator": {
-              "kind": "file"
+              "end": 733,
+              "kind": "line_range",
+              "start": 686
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -496,14 +506,16 @@
       ]
     },
     "29": {
-      "note": "The child's own alarm ends it and its Git process.\n\nAnchor: `test_the_child_and_its_git_children_end_at_its_own_deadline`",
+      "note": "The child's own alarm ends it and its Git process. Anchor: `test_the_child_and_its_git_children_end_at_its_own_deadline`",
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
-            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
+            "content": "sha256:284ca56a5db3b744fd63c41b57ba2a4ae8824b9192dd5c202d57bf113108c494",
             "locator": {
-              "kind": "file"
+              "end": 683,
+              "kind": "line_range",
+              "start": 663
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -532,7 +544,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "blob": "4500261a93b7d10284bd541bf35c015953cff7e3",
             "content": "sha256:3538b780e7fc2603231d6fe2e08b54e103f3363dc08a12c232e5172874b6a1d1",
             "locator": {
               "kind": "symbol",

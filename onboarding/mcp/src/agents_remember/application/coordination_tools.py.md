@@ -61,6 +61,7 @@ repo is disallowed or a path escapes the coordination root.
 
 
 
+
 ## Series-Contract Notes
 
 The context application entry point still resolves nested active task roots and a specific leaf enclosure —
